@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:13.815346-07:00
 description: "Convertire una data in una stringa significa trasformare l'oggetto DateTime\
   \ in una rappresentazione testuale. I programmatori lo fanno per visualizzare\u2026"
-lastmod: 2024-02-18 23:08:55.899650
+lastmod: 2024-02-19 22:05:02.509206
 model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformare l'oggetto DateTime\
   \ in una rappresentazione testuale. I programmatori lo fanno per visualizzare\u2026"

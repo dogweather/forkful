@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/arduino/finding-the-length-of-a-string/
 date: 2024-01-20 17:46:38.846670-07:00
 description: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to sprawdzenie,\
   \ ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to, by zarz\u0105dza\u0107\
   \ danymi tekstowymi, walidowa\u0107 wej\u015Bcia lub\u2026"
-lastmod: 2024-02-18 23:08:49.861367
+lastmod: 2024-02-19 22:04:54.806400
 model: gpt-4-1106-preview
 summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to sprawdzenie, ile\
   \ znak\xF3w zawiera. Programi\u015Bci robi\u0105 to, by zarz\u0105dza\u0107 danymi\

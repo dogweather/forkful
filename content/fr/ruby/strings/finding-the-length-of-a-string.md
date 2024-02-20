@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/ruby/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:12.431292-07:00
 description: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est simplement\
   \ compter le nombre de caract\xE8res qu'elle contient. Les programmeurs le font\
   \ pour valider\u2026"
-lastmod: 2024-02-18 23:09:09.395102
+lastmod: 2024-02-19 22:05:17.058605
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est simplement compter\
   \ le nombre de caract\xE8res qu'elle contient. Les programmeurs le font pour valider\u2026"

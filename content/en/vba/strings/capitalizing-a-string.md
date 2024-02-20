@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/capitalizing-a-string/
 date: 2024-02-01 21:30:41.189641-07:00
 description: "Capitalizing a string in Visual Basic for Applications (VBA) involves\
   \ converting the first character of each word in a string to uppercase while ensuring\u2026"
-lastmod: 2024-02-18 23:09:10.873292
+lastmod: 2024-02-19 22:05:18.387864
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in Visual Basic for Applications (VBA) involves converting\
   \ the first character of each word in a string to uppercase while ensuring\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/go/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:37.783522-07:00
@@ -14,7 +12,7 @@ description: "\u0915\u0902\u092A\u094D\u092F\u0942\u091F\u0930 \u092A\u094D\u093
   \u0948 \u091C\u094B \u0921\u0947\u0935\u0932\u092A\u0930\u094D\u0938 \u0915\u094B\
   \ \u0909\u0928\u0915\u0947 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\
   \ \u0915\u0947\u2026"
-lastmod: 2024-02-18 23:09:02.490208
+lastmod: 2024-02-19 22:05:10.492813
 model: gpt-4-0125-preview
 summary: "\u0915\u0902\u092A\u094D\u092F\u0942\u091F\u0930 \u092A\u094D\u0930\u094B\
   \u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u092E\u0947\u0902, \"\u0921\u0940\

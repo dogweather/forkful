@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/searching-and-replacing-text/
 date: 2024-02-03 17:50:18.481726-07:00
 description: "Searching and replacing text in C involves identifying specific substrings\
   \ within a larger string and substituting them with different substrings.\u2026"
-lastmod: 2024-02-18 23:09:11.507813
+lastmod: 2024-02-19 22:05:18.959629
 model: gpt-4-0125-preview
 summary: "Searching and replacing text in C involves identifying specific substrings\
   \ within a larger string and substituting them with different substrings.\u2026"

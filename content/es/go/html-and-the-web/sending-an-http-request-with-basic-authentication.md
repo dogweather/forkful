@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:52.918102-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Go implica\
   \ agregar un encabezado de autorizaci\xF3n a tu solicitud que incluya un nombre\
   \ de usuario y\u2026"
-lastmod: 2024-02-18 23:09:09.454970
+lastmod: 2024-02-19 22:05:17.114463
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Go implica agregar\
   \ un encabezado de autorizaci\xF3n a tu solicitud que incluya un nombre de usuario\

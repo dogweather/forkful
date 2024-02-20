@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:13.505463-07:00
 description: "Les tableaux associatifs, connus sous le nom de `std::map` ou `std::unordered_map`\
   \ en C++, comblent le foss\xE9 entre les indices de tableau et les donn\xE9es\u2026"
-lastmod: 2024-02-18 23:09:09.152646
+lastmod: 2024-02-19 22:05:16.827173
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus sous le nom de `std::map` ou `std::unordered_map`\
   \ en C++, comblent le foss\xE9 entre les indices de tableau et les donn\xE9es\u2026"

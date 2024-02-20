@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/working-with-toml/
 date: 2024-01-26 04:20:53.540368-07:00
 description: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplagte,\
   \ Minimale Spr\xE5k) data ved bruk av Elixir. Programmerere bruker det til \xE5\
   \ h\xE5ndtere\u2026"
-lastmod: 2024-02-18 23:08:53.627410
+lastmod: 2024-02-19 22:04:59.755241
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplagte,\
   \ Minimale Spr\xE5k) data ved bruk av Elixir. Programmerere bruker det til \xE5\

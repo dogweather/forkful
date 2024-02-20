@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/java/concatenating-strings/
 date: 2024-01-20 17:35:10.967983-07:00
 description: "String concatenation is the process of linking strings together. Programmers\
   \ use it to combine text, like creating sentences dynamically in a program or\u2026"
-lastmod: 2024-02-18 23:09:00.105225
+lastmod: 2024-02-19 22:05:08.084361
 model: gpt-4-1106-preview
 summary: "String concatenation is the process of linking strings together. Programmers\
   \ use it to combine text, like creating sentences dynamically in a program or\u2026"

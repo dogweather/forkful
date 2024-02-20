@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/logging/
 date: 2024-01-25 02:04:08.781778-07:00
 description: "Logging is essentially the software equivalent of a ship's log; it's\
   \ a way to record events that happen while an application is running. Programmers\
   \ do it\u2026"
-lastmod: 2024-02-18 23:09:10.730379
+lastmod: 2024-02-19 22:05:18.259054
 model: gpt-4-1106-preview
 summary: "Logging is essentially the software equivalent of a ship's log; it's a way\
   \ to record events that happen while an application is running. Programmers do it\u2026"

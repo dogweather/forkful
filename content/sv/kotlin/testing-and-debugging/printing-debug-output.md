@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/printing-debug-output/
 date: 2024-01-20 17:52:52.021948-07:00
 description: "Debug-utskrifter anv\xE4nds f\xF6r att sp\xE5ra vad som h\xE4nder i\
   \ din kod p\xE5 ett enkelt s\xE4tt. Programmerare anv\xE4nder det f\xF6r att snabbt\
   \ fels\xF6ka och f\xF6lja\u2026"
-lastmod: 2024-02-18 23:08:51.752657
+lastmod: 2024-02-19 22:04:57.087887
 model: gpt-4-1106-preview
 summary: "Debug-utskrifter anv\xE4nds f\xF6r att sp\xE5ra vad som h\xE4nder i din\
   \ kod p\xE5 ett enkelt s\xE4tt. Programmerare anv\xE4nder det f\xF6r att snabbt\

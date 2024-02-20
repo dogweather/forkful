@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/cpp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:17.534269-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
   \ credenciales de usuario y contrase\xF1a codificadas en base64 en el encabezado\
   \ de la\u2026"
-lastmod: 2024-02-18 23:09:10.309884
+lastmod: 2024-02-19 22:05:17.879522
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
   \ credenciales de usuario y contrase\xF1a codificadas en base64 en el encabezado\

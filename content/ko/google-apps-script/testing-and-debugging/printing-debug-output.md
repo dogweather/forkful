@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:13.284859-07:00
@@ -13,7 +11,7 @@ description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCD9C\uB825\uD558\uB294 \uA
   \uC791\uC744 \uCD94\uC801\uD558\uACE0 \uC9C4\uB2E8\uD558\uC5EC, \uADF8\uB4E4\uC758\
   \ Google Apps Script \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC758 \uC815\uD655\uC131\
   \uACFC\u2026"
-lastmod: 2024-02-18 23:09:05.560183
+lastmod: 2024-02-19 22:05:13.475969
 model: gpt-4-0125-preview
 summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCD9C\uB825\uD558\uB294 \uAC83\uC740\
   \ \uCF54\uB4DC\uC5D0 \uC804\uB7B5\uC801\uC73C\uB85C \uB85C\uADF8 \uBB38\uC744 \uBC30\

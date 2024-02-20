@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:04.003157-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
   \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat hy\xF6dynt\xE4v\xE4\
   t niit\xE4 tekstin ja datan\u2026"
-lastmod: 2024-02-18 23:09:07.123233
+lastmod: 2024-02-19 22:05:15.001153
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
   \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat hy\xF6dynt\xE4v\xE4\

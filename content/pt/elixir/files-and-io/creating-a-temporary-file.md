@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/creating-a-temporary-file/
 date: 2024-01-20 17:39:50.680198-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 uma maneira de gerar um arquivo\
   \ que s\xF3 precisa existir durante a execu\xE7\xE3o do seu programa. Programadores\
   \ fazem isso para\u2026"
-lastmod: 2024-02-18 23:08:57.862971
+lastmod: 2024-02-19 22:05:05.334210
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 uma maneira de gerar um arquivo que\
   \ s\xF3 precisa existir durante a execu\xE7\xE3o do seu programa. Programadores\

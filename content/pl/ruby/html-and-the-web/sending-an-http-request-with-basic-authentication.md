@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:37.871553-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
   \ to proces dodawania nag\u0142\xF3wka autoryzacyjnego do \u017C\u0105dania HTTP,\
   \ aby potwierdzi\u0107, \u017Ce mamy dost\u0119p. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:50.125434
+lastmod: 2024-02-19 22:04:55.114341
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
   \ to proces dodawania nag\u0142\xF3wka autoryzacyjnego do \u017C\u0105dania HTTP,\

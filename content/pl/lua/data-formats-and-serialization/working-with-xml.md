@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/working-with-xml/
 date: 2024-01-26 04:33:40.553697-07:00
 description: "Praca z XML polega na analizie i manipulowaniu dokumentami XML za pomoc\u0105\
   \ kodu. Programi\u015Bci robi\u0105 to, aby czyta\u0107, pisa\u0107 i modyfikowa\u0107\
   \ dane w strukturalnym,\u2026"
-lastmod: 2024-02-18 23:08:49.764417
+lastmod: 2024-02-19 22:04:54.702969
 model: gpt-4-0125-preview
 summary: "Praca z XML polega na analizie i manipulowaniu dokumentami XML za pomoc\u0105\
   \ kodu. Programi\u015Bci robi\u0105 to, aby czyta\u0107, pisa\u0107 i modyfikowa\u0107\

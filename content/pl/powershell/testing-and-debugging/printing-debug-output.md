@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/printing-debug-output/
 date: 2024-01-20 17:53:19.158196-07:00
 description: "Wypisywanie informacji debugowania to spos\xF3b pokazywania wewn\u0119\
   trznej pracy programu. Programi\u015Bci robi\u0105 to, by \u015Bledzi\u0107 b\u0142\
   \u0119dy i monitorowa\u0107, co si\u0119 dzieje\u2026"
-lastmod: 2024-02-18 23:08:49.831448
+lastmod: 2024-02-19 22:04:54.773830
 model: gpt-4-1106-preview
 summary: "Wypisywanie informacji debugowania to spos\xF3b pokazywania wewn\u0119trznej\
   \ pracy programu. Programi\u015Bci robi\u0105 to, by \u015Bledzi\u0107 b\u0142\u0119\

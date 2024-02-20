@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:46.598586-07:00
 description: "Een tekstbestand lezen betekent het verkrijgen van de inhoud van een\
   \ bestand in je script. Programmeurs doen dit om met gegevens, configuratie te werken\u2026"
-lastmod: 2024-02-18 23:09:02.061128
+lastmod: 2024-02-19 22:05:10.084909
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent het verkrijgen van de inhoud van een bestand\
   \ in je script. Programmeurs doen dit om met gegevens, configuratie te werken\u2026"

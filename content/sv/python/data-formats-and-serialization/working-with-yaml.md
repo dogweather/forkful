@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/python/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:06.329685-07:00
 description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett format\
   \ f\xF6r serialisering av data som \xE4r l\xE4sbart f\xF6r m\xE4nniskor. Programmerare\
   \ anv\xE4nder YAML f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.441265
+lastmod: 2024-02-19 22:04:56.745559
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett format\
   \ f\xF6r serialisering av data som \xE4r l\xE4sbart f\xF6r m\xE4nniskor. Programmerare\

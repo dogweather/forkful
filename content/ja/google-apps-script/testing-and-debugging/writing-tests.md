@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/google-apps-script/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:10:02.969924-07:00
 description: "Google Apps\u2026"
-lastmod: 2024-02-18 23:08:54.526622
+lastmod: 2024-02-19 22:05:00.719392
 model: gpt-4-0125-preview
 summary: "Google Apps\u2026"
 title: "\u30C6\u30B9\u30C8\u306E\u4F5C\u6210"

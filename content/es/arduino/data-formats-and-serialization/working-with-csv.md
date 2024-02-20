@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/arduino/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:41.660723-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) en Arduino implica\
   \ leer y escribir en archivos CSV generalmente almacenados en una tarjeta SD, lo\u2026"
-lastmod: 2024-02-18 23:09:10.287179
+lastmod: 2024-02-19 22:05:17.861311
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) en Arduino implica\
   \ leer y escribir en archivos CSV generalmente almacenados en una tarjeta SD, lo\u2026"

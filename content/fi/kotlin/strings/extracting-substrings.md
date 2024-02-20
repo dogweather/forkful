@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/kotlin/extracting-substrings/
 date: 2024-01-20 17:45:56.829704-07:00
 description: "Substring on osajono, pala isompaa merkkijonoa. Koodarit kaivavat substringeja\
   \ datan parsimiseen, tietojen n\xE4ytt\xE4miseen tai yksinkertaisesti, koska\u2026"
-lastmod: 2024-02-18 23:09:07.563162
+lastmod: 2024-02-19 22:05:15.413494
 model: gpt-4-1106-preview
 summary: "Substring on osajono, pala isompaa merkkijonoa. Koodarit kaivavat substringeja\
   \ datan parsimiseen, tietojen n\xE4ytt\xE4miseen tai yksinkertaisesti, koska\u2026"

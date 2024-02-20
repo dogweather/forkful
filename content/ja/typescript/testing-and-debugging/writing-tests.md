@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/typescript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:04.066524-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.685542
+lastmod: 2024-02-19 22:05:00.947310
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30C6\u30B9\u30C8\u306E\u4F5C\u6210"

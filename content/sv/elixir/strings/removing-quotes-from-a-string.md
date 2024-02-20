@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:25.677192-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
   gsnar dessa extra omslag f\xF6r att f\xE5 fram den klara texten inuti. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.491135
+lastmod: 2024-02-19 22:04:56.800345
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
   gsnar dessa extra omslag f\xF6r att f\xE5 fram den klara texten inuti. Programmerare\

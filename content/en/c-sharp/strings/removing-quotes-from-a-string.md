@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/removing-quotes-from-a-string/
 date: 2024-01-25 20:50:27.610858-07:00
 description: "Removing quotes from a string in C# means you're taking out those pesky\
   \ double (`\"`) or single (`'`) quote characters wrapping your text. Programmers\
   \ do\u2026"
-lastmod: 2024-02-18 23:09:11.042495
+lastmod: 2024-02-19 22:05:18.543386
 model: gpt-4-1106-preview
 summary: "Removing quotes from a string in C# means you're taking out those pesky\
   \ double (`\"`) or single (`'`) quote characters wrapping your text. Programmers\

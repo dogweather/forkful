@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/working-with-xml/
 date: 2024-01-26 04:35:14.218896-07:00
 description: "\"XML \uC791\uC5C5\"\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC744 \uC0AC\
   \uC6A9\uD558\uC5EC XML(eXtensible Markup Language) \uD30C\uC77C\uC744 \uC77D\uACE0\
@@ -10,7 +8,7 @@ description: "\"XML \uC791\uC5C5\"\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC744 \u
   \uC801\uC778 \uD2B9\uC131\uACFC \uC790\uCCB4 \uAE30\uC220 \uD615\uC2DD \uB54C\uBB38\
   \uC5D0 \uB370\uC774\uD130 \uAD50\uD658\uC5D0 \uB110\uB9AC \uC0AC\uC6A9\uB418\uAE30\
   \u2026"
-lastmod: 2024-02-18 23:09:05.662910
+lastmod: 2024-02-19 22:05:13.576700
 model: gpt-4-0125-preview
 summary: "\"XML \uC791\uC5C5\"\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC744 \uC0AC\uC6A9\
   \uD558\uC5EC XML(eXtensible Markup Language) \uD30C\uC77C\uC744 \uC77D\uACE0, \uC0DD\

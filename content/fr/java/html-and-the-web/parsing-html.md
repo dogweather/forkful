@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/java/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:19.183377-07:00
 description: "L'analyse HTML implique de fouiller dans le balisage pour extraire des\
   \ donn\xE9es comme du texte, des liens ou d'autres \xE9l\xE9ments. Nous le faisons\
   \ pour\u2026"
-lastmod: 2024-02-18 23:09:08.626098
+lastmod: 2024-02-19 22:05:16.398308
 model: gpt-4-0125-preview
 summary: "L'analyse HTML implique de fouiller dans le balisage pour extraire des donn\xE9\
   es comme du texte, des liens ou d'autres \xE9l\xE9ments. Nous le faisons pour\u2026"

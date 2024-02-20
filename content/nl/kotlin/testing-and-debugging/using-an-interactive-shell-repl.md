@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:24.155386-07:00
 description: "Een REPL (Read-Eval-Print Loop) is een eenvoudige, interactieve computerprogrammeeromgeving.\
   \ Programmeurs gebruiken het voor snelle codeerproeven, het\u2026"
-lastmod: 2024-02-18 23:09:01.807435
+lastmod: 2024-02-19 22:05:09.823926
 model: gpt-4-0125-preview
 summary: "Een REPL (Read-Eval-Print Loop) is een eenvoudige, interactieve computerprogrammeeromgeving.\
   \ Programmeurs gebruiken het voor snelle codeerproeven, het\u2026"

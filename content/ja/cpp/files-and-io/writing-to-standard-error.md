@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/cpp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:54.380592-07:00
@@ -14,7 +12,7 @@ description: "C++\u3067\u6A19\u6E96\u30A8\u30E9\u30FC\uFF08`stderr`\uFF09\u306B\
   \u529B\u3068\u30A8\u30E9\u30FC\u30E1\u30C3\u30BB\u30FC\u30B8\u3092\u533A\u5225\u3059\
   \u308B\u3053\u3068\u306B\u3088\u308A\u3001\u30C7\u30D0\u30C3\u30B0\u3068\u30A8\u30E9\
   \u30FC\u51E6\u7406\u3092\u5BB9\u6613\u306B\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.205832
+lastmod: 2024-02-19 22:05:01.690217
 model: gpt-4-0125-preview
 summary: "C++\u3067\u6A19\u6E96\u30A8\u30E9\u30FC\uFF08`stderr`\uFF09\u306B\u66F8\u304D\
   \u8FBC\u3080\u3053\u3068\u306F\u3001\u30E1\u30A4\u30F3\u30D7\u30ED\u30B0\u30E9\u30E0\

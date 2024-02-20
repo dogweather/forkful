@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:16.332326-07:00
 description: "Het lezen van command line argumenten betekent het ophalen van de data\
   \ die naar een programma wordt doorgegeven wanneer je het start vanuit een terminal\u2026"
-lastmod: 2024-02-18 23:09:02.154809
+lastmod: 2024-02-19 22:05:10.172551
 model: gpt-4-0125-preview
 summary: "Het lezen van command line argumenten betekent het ophalen van de data die\
   \ naar een programma wordt doorgegeven wanneer je het start vanuit een terminal\u2026"

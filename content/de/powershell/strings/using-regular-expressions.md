@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/powershell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:31.959069-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die ein Suchmuster\
   \ bilden, das haupts\xE4chlich f\xFCr die Stringsuche und -manipulation verwendet\
   \ wird.\u2026"
-lastmod: 2024-02-18 23:09:05.088461
+lastmod: 2024-02-19 22:05:13.023380
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die ein Suchmuster\
   \ bilden, das haupts\xE4chlich f\xFCr die Stringsuche und -manipulation verwendet\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/vba/writing-tests/
 date: 2024-02-01 21:30:11.390251-07:00
 description: "Writing tests in programming involves creating specific procedures to\
   \ validate the functionality and performance of your code segments, ensuring they\
   \ work\u2026"
-lastmod: 2024-02-18 23:09:10.893555
+lastmod: 2024-02-19 22:05:18.406293
 model: gpt-4-0125-preview
 summary: "Writing tests in programming involves creating specific procedures to validate\
   \ the functionality and performance of your code segments, ensuring they work\u2026"

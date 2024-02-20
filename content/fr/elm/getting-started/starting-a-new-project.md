@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elm/starting-a-new-project/
 date: 2024-01-20 18:03:12.800214-07:00
 description: "Lancer un nouveau projet en Elm, c'est cr\xE9er un point de d\xE9part\
   \ propre pour coder une appli web fonctionnelle et r\xE9active. On fait \xE7a pour\
   \ structurer\u2026"
-lastmod: 2024-02-18 23:09:08.734976
+lastmod: 2024-02-19 22:05:16.443810
 model: gpt-4-1106-preview
 summary: "Lancer un nouveau projet en Elm, c'est cr\xE9er un point de d\xE9part propre\
   \ pour coder une appli web fonctionnelle et r\xE9active. On fait \xE7a pour structurer\u2026"

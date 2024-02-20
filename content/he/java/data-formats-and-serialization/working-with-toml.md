@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/java/working-with-toml/
 date: 2024-01-26 04:23:33.265105-07:00
 description: "TOML \u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\u05D5\
   \u05EA \u05E9\u05DC Tom's Obvious, Minimal Language. \u05D6\u05D4\u05D5 \u05E4\u05D5\
@@ -10,7 +8,7 @@ description: "TOML \u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D
   \u05D9\u05DD \u05D1\u05D5 \u05DE\u05DB\u05D9\u05D5\u05D5\u05DF \u05E9\u05D4\u05D5\
   \u05D0 \u05E7\u05DC \u05DC\u05E7\u05E8\u05D9\u05D0\u05D4, \u05E7\u05DC \u05DC\u05DB\
   \u05EA\u05D9\u05D1\u05D4 \u05D5\u05DE\u05DE\u05D5\u05E4\u05D4\u2026"
-lastmod: 2024-02-18 23:08:52.733788
+lastmod: 2024-02-19 22:04:58.393261
 model: gpt-4-0125-preview
 summary: "TOML \u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\u05D5\
   \u05EA \u05E9\u05DC Tom's Obvious, Minimal Language. \u05D6\u05D4\u05D5 \u05E4\u05D5\

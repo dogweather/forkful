@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/javascript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:37.398493-07:00
 description: "Scrivere su standard error (stderr) in JavaScript riguarda l'indirizzare\
   \ messaggi di errore o qualsiasi informazione critica verso un flusso specifico\
   \ e\u2026"
-lastmod: 2024-02-18 23:08:56.268788
+lastmod: 2024-02-19 22:05:02.903157
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in JavaScript riguarda l'indirizzare\
   \ messaggi di errore o qualsiasi informazione critica verso un flusso specifico\

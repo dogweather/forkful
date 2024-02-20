@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/elm/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:28.987127-07:00
@@ -10,7 +8,7 @@ description: "\u5728 Elm \u4E2D\u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u7F16\u5199\
   \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C3D\u65E9\u53D1\u73B0\u9519\u8BEF\
   \uFF0C\u7B80\u5316\u7EF4\u62A4\uFF0C\u5E76\u63D0\u9AD8\u4ED6\u4EEC\u7684\u5E94\u7528\
   \u7A0B\u5E8F\u7684\u8D28\u91CF\u548C\u53EF\u9760\u6027\u3002"
-lastmod: 2024-02-18 23:08:59.061658
+lastmod: 2024-02-19 22:05:06.704115
 model: gpt-4-0125-preview
 summary: "\u5728 Elm \u4E2D\u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u7F16\u5199\u6D4B\u8BD5\
   \u7528\u4F8B\u6765\u9A8C\u8BC1\u4F60\u7684 Elm \u4EE3\u7801\u7684\u6B63\u786E\u6027\

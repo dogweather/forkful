@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/typescript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:43.594163-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex ovat tehokas mallin vastaavuuden\
   \ etsimisen ja hakemisen ty\xF6kalu ohjelmoinnissa. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t regexi\xE4 teht\xE4viin\u2026"
-lastmod: 2024-02-18 23:09:07.307933
+lastmod: 2024-02-19 22:05:15.199595
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex ovat tehokas mallin vastaavuuden\
   \ etsimisen ja hakemisen ty\xF6kalu ohjelmoinnissa. Ohjelmoijat k\xE4ytt\xE4v\xE4\

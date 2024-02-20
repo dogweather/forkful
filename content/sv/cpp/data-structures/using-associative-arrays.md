@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:24.072921-07:00
 description: "Associativa arrayer, k\xE4nda som `std::map` eller `std::unordered_map`\
   \ i C++, \xF6verbryggar klyftan mellan arrayindex och verkliga data, vilket l\xE5\
   ter dig\u2026"
-lastmod: 2024-02-18 23:08:52.077057
+lastmod: 2024-02-19 22:04:57.438736
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, k\xE4nda som `std::map` eller `std::unordered_map`\
   \ i C++, \xF6verbryggar klyftan mellan arrayindex och verkliga data, vilket l\xE5\

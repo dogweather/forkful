@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/writing-a-text-file/
 date: 2024-02-03 19:03:17.004048-07:00
 description: "Writing to a text file in Elixir is an essential skill for developers,\
   \ allowing for data persistence, logging, or exporting human-readable content.\u2026"
-lastmod: 2024-02-18 23:09:10.783830
+lastmod: 2024-02-19 22:05:18.307279
 model: gpt-4-0125-preview
 summary: "Writing to a text file in Elixir is an essential skill for developers, allowing\
   \ for data persistence, logging, or exporting human-readable content.\u2026"

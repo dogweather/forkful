@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/lua/printing-debug-output/
 date: 2024-01-20 17:53:05.561298-07:00
 description: "Printing debug output is chucking info onto your screen to see what's\
   \ up with your code. Programmers do it to track down gremlins in the machine\u2014\
   bugs."
-lastmod: 2024-02-18 23:09:11.181170
+lastmod: 2024-02-19 22:05:18.669636
 model: gpt-4-1106-preview
 summary: "Printing debug output is chucking info onto your screen to see what's up\
   \ with your code. Programmers do it to track down gremlins in the machine\u2014\

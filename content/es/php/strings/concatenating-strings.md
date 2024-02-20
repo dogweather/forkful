@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/php/concatenating-strings/
 date: 2024-01-20 17:35:18.330087-07:00
 description: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
   \ concatenan para combinar textos, como nombres y apellidos, o para construir\u2026"
-lastmod: 2024-02-18 23:09:10.065150
+lastmod: 2024-02-19 22:05:17.660060
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
   \ concatenan para combinar textos, como nombres y apellidos, o para construir\u2026"

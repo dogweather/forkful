@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/swift/printing-debug-output/
 date: 2024-01-20 17:53:36.671081-07:00
 description: "Vamos falar sobre impress\xE3o de sa\xEDdas de depura\xE7\xE3o: \xE9\
   \ colocar na tela informa\xE7\xF5es do que est\xE1 rolando no seu c\xF3digo. Fazemos\
   \ isso para saber o que est\xE1\u2026"
-lastmod: 2024-02-18 23:08:58.493502
+lastmod: 2024-02-19 22:05:05.986184
 model: gpt-4-1106-preview
 summary: "Vamos falar sobre impress\xE3o de sa\xEDdas de depura\xE7\xE3o: \xE9 colocar\
   \ na tela informa\xE7\xF5es do que est\xE1 rolando no seu c\xF3digo. Fazemos isso\

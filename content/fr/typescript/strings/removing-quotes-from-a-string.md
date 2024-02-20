@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:22.120580-07:00
 description: "Enlever les guillemets d'une cha\xEEne signifie retirer les caract\xE8\
   res de guillemets simples (`'`) ou doubles (`\"`) qui d\xE9finissent les litt\xE9\
   raux de cha\xEEne\u2026"
-lastmod: 2024-02-18 23:09:08.468413
+lastmod: 2024-02-19 22:05:16.254934
 model: gpt-4-0125-preview
 summary: "Enlever les guillemets d'une cha\xEEne signifie retirer les caract\xE8res\
   \ de guillemets simples (`'`) ou doubles (`\"`) qui d\xE9finissent les litt\xE9\

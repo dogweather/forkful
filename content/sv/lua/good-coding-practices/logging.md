@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/lua/logging/
 date: 2024-01-26 01:07:29.274461-07:00
 description: "Loggning \xE4r praxisen att spela in h\xE4ndelser, fel och andra betydande\
   \ datapunkter som intr\xE4ffar inom livscykeln f\xF6r en mjukvaruapplikation. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.924669
+lastmod: 2024-02-19 22:04:57.272148
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r praxisen att spela in h\xE4ndelser, fel och andra betydande\
   \ datapunkter som intr\xE4ffar inom livscykeln f\xF6r en mjukvaruapplikation. Programmerare\u2026"

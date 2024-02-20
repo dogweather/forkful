@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:26.648378-07:00
 description: "Comprobar si un directorio existe en Go es cr\xEDtico para aplicaciones\
   \ que interact\xFAan con el sistema de archivos, para evitar errores al intentar\
   \ acceder o\u2026"
-lastmod: 2024-02-18 23:09:09.472549
+lastmod: 2024-02-19 22:05:17.130516
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en Go es cr\xEDtico para aplicaciones\
   \ que interact\xFAan con el sistema de archivos, para evitar errores al intentar\

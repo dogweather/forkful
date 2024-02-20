@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/getting-the-current-date/
 date: 2024-02-03 19:03:03.288829-07:00
 description: "Obtaining the current date in Java is a fundamental operation that allows\
   \ programmers to manipulate date objects for operations such as logging, date\u2026"
-lastmod: 2024-02-18 23:09:10.941037
+lastmod: 2024-02-19 22:05:18.449871
 model: gpt-4-0125-preview
 summary: "Obtaining the current date in Java is a fundamental operation that allows\
   \ programmers to manipulate date objects for operations such as logging, date\u2026"

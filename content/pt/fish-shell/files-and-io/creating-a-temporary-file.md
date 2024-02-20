@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/creating-a-temporary-file/
 date: 2024-01-20 17:40:00.934827-07:00
 description: "Criar um arquivo tempor\xE1rio serve para ter um espa\xE7o de armazenamento\
   \ seguro e ef\xEAmero, \xF3timo para processamento interm\xE9dio de dados. Programadores\
   \ fazem\u2026"
-lastmod: 2024-02-18 23:08:58.594811
+lastmod: 2024-02-19 22:05:06.093744
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio serve para ter um espa\xE7o de armazenamento\
   \ seguro e ef\xEAmero, \xF3timo para processamento interm\xE9dio de dados. Programadores\

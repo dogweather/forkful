@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c-sharp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:18.329002-07:00
@@ -14,7 +12,7 @@ description: "CSV (\u0915\u0949\u092E\u093E-\u0938\u0947\u092A\u0930\u0947\u091F
   \u0927\u093F\u0924\u094D\u0935 \u0915\u0930\u0924\u0940 \u0939\u0948\u0902, \u092A\
   \u094D\u0930\u0924\u094D\u092F\u0947\u0915 \u092E\u093E\u0928 \u0915\u094B \u0905\
   \u0932\u0917 \u0915\u0930\u0928\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.387097
+lastmod: 2024-02-19 22:05:11.378779
 model: gpt-4-0125-preview
 summary: "CSV (\u0915\u0949\u092E\u093E-\u0938\u0947\u092A\u0930\u0947\u091F\u0947\
   \u0921 \u0935\u0948\u0932\u094D\u092F\u0942\u091C\u093C) \u092B\u093C\u093E\u0907\

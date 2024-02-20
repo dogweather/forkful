@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/java/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:40.778268-07:00
 description: "Scrivere su standard error (stderr) implica l'invio di messaggi di errore\
   \ e diagnostica alla console o al terminale. I programmatori lo fanno per separare\u2026"
-lastmod: 2024-02-18 23:08:55.781214
+lastmod: 2024-02-19 22:05:02.386251
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) implica l'invio di messaggi di errore\
   \ e diagnostica alla console o al terminale. I programmatori lo fanno per separare\u2026"

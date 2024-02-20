@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:04.649259-07:00
 description: "Converting a date to a string in PowerShell means changing a `DateTime`\
   \ object into a text format. Programmers do it to format dates for display, logs,\u2026"
-lastmod: 2024-02-18 23:09:11.285494
+lastmod: 2024-02-19 22:05:18.757254
 model: gpt-4-1106-preview
 summary: "Converting a date to a string in PowerShell means changing a `DateTime`\
   \ object into a text format. Programmers do it to format dates for display, logs,\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elm/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:24.335405-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Elm:ss\xE4\
   \ tarkoittaa tekstuaalisen tiedon, joka edustaa p\xE4iv\xE4m\xE4\xE4ri\xE4 ja aikoja,\
   \ muuntamista muotoon, jonka Elm voi\u2026"
-lastmod: 2024-02-18 23:09:07.539253
+lastmod: 2024-02-19 22:05:15.392143
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Elm:ss\xE4 tarkoittaa\
   \ tekstuaalisen tiedon, joka edustaa p\xE4iv\xE4m\xE4\xE4ri\xE4 ja aikoja, muuntamista\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:20.745401-07:00
@@ -11,7 +9,7 @@ description: "C\uC5D0\uC11C \uAE30\uBCF8 \uC778\uC99D\uC744 \uD3EC\uD568\uD55C H
   \uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774\uB294 HTTP \uC694\uCCAD\uC5D0 \uB2E8\
   \uC21C \uC778\uC99D \uB808\uC774\uC5B4\uB97C \uCD94\uAC00\uD558\uB294 \uC77C\uBC18\
   \uC801\uC778 \uBC29\uBC95\uC73C\uB85C, \uC81C\uD55C\uB41C \uC790\uC6D0\uC5D0\u2026"
-lastmod: 2024-02-18 23:09:06.951513
+lastmod: 2024-02-19 22:05:14.837083
 model: gpt-4-0125-preview
 summary: "C\uC5D0\uC11C \uAE30\uBCF8 \uC778\uC99D\uC744 \uD3EC\uD568\uD55C HTTP \uC694\
   \uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC790\uACA9\uC99D\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/searching-and-replacing-text/
 date: 2024-01-20 17:57:20.434006-07:00
 description: "S\xF8k og erstatt tekst er prosessen med \xE5 finne strenger innenfor\
   \ en tekst og bytte dem ut med noe annet. Vi programmerere gj\xF8r dette for \xE5\
   \ endre data,\u2026"
-lastmod: 2024-02-18 23:08:53.879296
+lastmod: 2024-02-19 22:05:00.046520
 model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt tekst er prosessen med \xE5 finne strenger innenfor en\
   \ tekst og bytte dem ut med noe annet. Vi programmerere gj\xF8r dette for \xE5 endre\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/haskell/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:56:31.571496-07:00
@@ -14,7 +12,7 @@ description: "\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435 \u0434\u043
   \ \u043E\u0434\u043D\u043E\u043C\u0443 \u0438 \u0442\u043E\u043C\u0443 \u0436\u0435\
   \ \u043C\u043E\u043C\u0435\u043D\u0442\u0443 \u0432\u0440\u0435\u043C\u0435\u043D\
   \u0438.\u2026"
-lastmod: 2024-02-18 23:08:57.064006
+lastmod: 2024-02-19 22:05:04.114871
 model: gpt-4-0125-preview
 summary: "\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435 \u0434\u0432\u0443\
   \u0445 \u0434\u0430\u0442 \u0437\u0430\u043A\u043B\u044E\u0447\u0430\u0435\u0442\

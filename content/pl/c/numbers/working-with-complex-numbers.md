@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:08.294353-07:00
 description: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej, reprezentowane jako `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym\
   \ z `-1`. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:50.073325
+lastmod: 2024-02-19 22:04:55.056962
 model: gpt-4-0125-preview
 summary: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej, reprezentowane jako `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym\

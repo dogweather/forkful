@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:58.013267-07:00
 description: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
   \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was\u2026"
-lastmod: 2024-02-18 23:09:05.391724
+lastmod: 2024-02-19 22:05:13.311180
 model: gpt-4-0125-preview
 summary: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
   \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/interpolating-a-string/
 date: 2024-01-20 17:50:05.803938-07:00
 description: "Interpolar uma string \xE9 encaixar valores de vari\xE1veis dentro dela.\
   \ Programadores usam isso para facilitar a montagem de mensagens din\xE2micas ou\
   \ para exibir\u2026"
-lastmod: 2024-02-18 23:08:58.396788
+lastmod: 2024-02-19 22:05:05.883557
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 encaixar valores de vari\xE1veis dentro dela.\
   \ Programadores usam isso para facilitar a montagem de mensagens din\xE2micas ou\

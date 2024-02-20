@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:14:58.600226-07:00
 description: "Haskell\uC5D0\uC11C\uC758 \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\
   \uB294 REPL(Read-Eval-Print Loop)\uC740 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uCF54\uB4DC\
@@ -8,7 +6,7 @@ description: "Haskell\uC5D0\uC11C\uC758 \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \
   . \uC774\uB294 \uBE60\uB978 \uD53C\uB4DC\uBC31, \uD568\uC218 \uD14C\uC2A4\uD305\
   \ \uBC0F \uC5B8\uC5B4 \uD559\uC2B5\uC744 \uC704\uD55C \uB180\uC774\uD130\uC640 \uAC19\
   \uC2B5\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.289153
+lastmod: 2024-02-19 22:05:14.208909
 model: gpt-4-0125-preview
 summary: "Haskell\uC5D0\uC11C\uC758 \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294\
   \ REPL(Read-Eval-Print Loop)\uC740 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uCF54\uB4DC \uC870\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/using-regular-expressions/
 date: 2024-02-03 19:03:07.240000-07:00
 description: "Regular expressions, or regex, are sequences of characters that form\
   \ a search pattern, often used for string matching or manipulation tasks. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.386878
+lastmod: 2024-02-19 22:05:18.848886
 model: gpt-4-0125-preview
 summary: "Regular expressions, or regex, are sequences of characters that form a search\
   \ pattern, often used for string matching or manipulation tasks. Programmers\u2026"

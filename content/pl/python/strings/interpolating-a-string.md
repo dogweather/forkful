@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pl/python/interpolating-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 21:23:59.921095-07:00
 description: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017C\
   e\u0144 wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\
   \ jej do dynamicznego wstawiania warto\u015Bci do ci\u0105g\xF3w\u2026"
-lastmod: 2024-02-18 23:08:49.198227
+lastmod: 2024-02-19 22:04:54.118943
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017Ce\u0144\
   \ wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\

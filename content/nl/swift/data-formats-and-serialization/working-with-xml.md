@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:31.885458-07:00
 description: "Werken met XML betekent het parseren en genereren van XML-gegevens in\
   \ Swift. Programmeurs doen dit voor gegevensuitwisseling, vooral wanneer ze integreren\u2026"
-lastmod: 2024-02-18 23:09:02.255952
+lastmod: 2024-02-19 22:05:10.268771
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren en genereren van XML-gegevens in Swift.\
   \ Programmeurs doen dit voor gegevensuitwisseling, vooral wanneer ze integreren\u2026"

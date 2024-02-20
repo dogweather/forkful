@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/python/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:56.731124-07:00
 description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve ler e escrever\
   \ dados em arquivos CSV, um formato comum para armazenamento de dados tabulares.\u2026"
-lastmod: 2024-02-18 23:08:57.783266
+lastmod: 2024-02-19 22:05:05.247715
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve ler e escrever\
   \ dados em arquivos CSV, um formato comum para armazenamento de dados tabulares.\u2026"

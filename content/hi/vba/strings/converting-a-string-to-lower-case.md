@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/vba/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:49.195407-07:00
@@ -14,7 +12,7 @@ description: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u09
   \u092F\u093E \u0939\u094B\u0924\u0940 \u0939\u0948\u0964 \u092F\u0939 \u092A\u094D\
   \u0930\u0915\u094D\u0930\u093F\u092F\u093E \u0935\u093F\u092D\u093F\u0928\u094D\u0928\
   \ \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\u2026"
-lastmod: 2024-02-18 23:09:03.010265
+lastmod: 2024-02-19 22:05:11.007979
 model: gpt-4-0125-preview
 summary: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B\
   \ \u0932\u094B\u0905\u0930\u0915\u0947\u0938 \u092E\u0947\u0902 \u092C\u0926\u0932\

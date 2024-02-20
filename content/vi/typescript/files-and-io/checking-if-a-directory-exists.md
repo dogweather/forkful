@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/typescript/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:31.562503-07:00
@@ -9,7 +7,7 @@ description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA
   \ s\u1EF1 c\xF3 m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc t\u1EEB n\xF3\
   \ ho\u1EB7c ghi v\xE0o n\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3\u2026"
-lastmod: 2024-02-18 23:08:50.431289
+lastmod: 2024-02-19 22:04:55.489168
 model: gpt-4-0125-preview
 summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4\
   ng l\xE0 \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng folder th\u1EF1c s\u1EF1\

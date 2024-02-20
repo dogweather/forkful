@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:13.801135-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i\
   \ Go inneb\xE6rer \xE5 legge til en autorisasjonsheader til foresp\xF8rselen din\
   \ som inkluderer et\u2026"
-lastmod: 2024-02-18 23:08:53.435544
+lastmod: 2024-02-19 22:04:59.546053
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i Go inneb\xE6\
   rer \xE5 legge til en autorisasjonsheader til foresp\xF8rselen din som inkluderer\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/comparing-two-dates/
 date: 2024-01-20 17:32:58.239587-07:00
 description: "Comparing two dates means judging which one's earlier, later, or if\
   \ they're the same moment in time. Programmers do it to sort events, figure out\u2026"
-lastmod: 2024-02-18 23:09:11.108217
+lastmod: 2024-02-19 22:05:18.603161
 model: gpt-4-1106-preview
 summary: "Comparing two dates means judging which one's earlier, later, or if they're\
   \ the same moment in time. Programmers do it to sort events, figure out\u2026"

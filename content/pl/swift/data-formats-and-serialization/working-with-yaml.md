@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/swift/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:03.553010-07:00
 description: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla\
   \ cz\u0142owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania.\u2026"
-lastmod: 2024-02-18 23:08:49.972719
+lastmod: 2024-02-19 22:04:54.923941
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla cz\u0142\
   owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania.\u2026"

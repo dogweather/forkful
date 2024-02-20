@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/php/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:42.859233-07:00
 description: "JSON oder JavaScript Object Notation ist ein leichtgewichtiges Daten-Austauschformat,\
   \ das sowohl f\xFCr Menschen einfach zu lesen und zu schreiben als auch\u2026"
-lastmod: 2024-02-18 23:09:04.985127
+lastmod: 2024-02-19 22:05:12.924633
 model: gpt-4-0125-preview
 summary: "JSON oder JavaScript Object Notation ist ein leichtgewichtiges Daten-Austauschformat,\
   \ das sowohl f\xFCr Menschen einfach zu lesen und zu schreiben als auch\u2026"

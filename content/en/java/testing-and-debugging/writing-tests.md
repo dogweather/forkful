@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/writing-tests/
 date: 2024-02-03 19:03:32.538932-07:00
 description: "Writing tests in Java is about verifying that your code behaves as expected\
   \ under various conditions. Programmers write tests to prevent bugs, ensure\u2026"
-lastmod: 2024-02-18 23:09:10.934458
+lastmod: 2024-02-19 22:05:18.443872
 model: gpt-4-0125-preview
 summary: "Writing tests in Java is about verifying that your code behaves as expected\
   \ under various conditions. Programmers write tests to prevent bugs, ensure\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:02.284697-07:00
 description: "Organizzare il codice in funzioni in C comporta la suddivisione di compiti\
   \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili. Questa pratica\u2026"
-lastmod: 2024-02-18 23:08:56.344389
+lastmod: 2024-02-19 22:05:02.982895
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni in C comporta la suddivisione di compiti\
   \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili. Questa pratica\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/rounding-numbers/
 date: 2024-01-26 03:47:26.001825-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn\
   \ tarkkuuteen. Ohjelmoijat tekev\xE4t n\xE4in hallitakseen numeerista tulostetta\
   \ luettavuuden,\u2026"
-lastmod: 2024-02-18 23:09:07.313147
+lastmod: 2024-02-19 22:05:15.204534
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn tarkkuuteen.\
   \ Ohjelmoijat tekev\xE4t n\xE4in hallitakseen numeerista tulostetta luettavuuden,\u2026"

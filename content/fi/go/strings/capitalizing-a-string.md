@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:56.976210-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4\
   \ annetun merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on\
   \ pienaakkonen,\u2026"
-lastmod: 2024-02-18 23:09:07.064920
+lastmod: 2024-02-19 22:05:14.945598
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4 annetun\
   \ merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on pienaakkonen,\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:18.653614-07:00
@@ -13,7 +11,7 @@ description: "\uB8E8\uBE44\uC5D0\uC11C\uC758 \uC815\uADDC\uC2DD(regex)\uC740 \uB
   \uC0AC, \uD30C\uC2F1, \uBB38\uC790\uC5F4 \uC870\uC791\uACFC \uAC19\uC740 \uC791\uC5C5\
   \uC744 \uC704\uD574 regex\uB97C \uD65C\uC6A9\uD558\uB294\uB370, \uC774\uB294 \uD14D\
   \uC2A4\uD2B8\u2026"
-lastmod: 2024-02-18 23:09:07.007060
+lastmod: 2024-02-19 22:05:14.890439
 model: gpt-4-0125-preview
 summary: "\uB8E8\uBE44\uC5D0\uC11C\uC758 \uC815\uADDC\uC2DD(regex)\uC740 \uBB38\uC790\
   \uC5F4 \uB0B4\uC5D0\uC11C \uBB38\uC790 \uC870\uD569\uC744 \uB9E4\uCE58\uD558\uAE30\

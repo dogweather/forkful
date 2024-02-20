@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:23.666645-07:00
 description: "Het afhandelen van fouten in Python (of elke programmeertaal) gaat over\
   \ het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met\u2026"
-lastmod: 2024-02-18 23:09:01.441916
+lastmod: 2024-02-19 22:05:09.472103
 model: gpt-4-0125-preview
 summary: "Het afhandelen van fouten in Python (of elke programmeertaal) gaat over\
   \ het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met\u2026"

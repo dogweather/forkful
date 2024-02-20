@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:42.921967-07:00
@@ -13,7 +11,7 @@ description: "C#\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC791\uC131\uC740 
   \uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC138\
   \uC158 \uAC04\uC5D0 \uB370\uC774\uD130\uB97C \uC720\uC9C0\uD558\uAC70\uB098 \uC2DC\
   \uC2A4\uD15C \uAC04\uC5D0 \uC815\uBCF4\uB97C\u2026"
-lastmod: 2024-02-18 23:09:06.249336
+lastmod: 2024-02-19 22:05:14.172113
 model: gpt-4-0125-preview
 summary: "C#\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC791\uC131\uC740 \uD504\
   \uB85C\uADF8\uB798\uBC0D \uBC29\uC2DD\uC73C\uB85C \uD30C\uC77C \uC2DC\uC2A4\uD15C\

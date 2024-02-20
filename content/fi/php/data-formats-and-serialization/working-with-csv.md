@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/php/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:15.706053-07:00
 description: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\xE4\
   \xE4 datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\u2026"
-lastmod: 2024-02-18 23:09:07.736215
+lastmod: 2024-02-19 22:05:15.572737
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\xE4\xE4\
   \ datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\u2026"

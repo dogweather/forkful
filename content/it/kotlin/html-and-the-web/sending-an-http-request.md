@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/sending-an-http-request/
 date: 2024-01-20 18:00:17.164851-07:00
 description: "Mandare una richiesta HTTP significa comunicare con un server web: invii\
   \ una richiesta, lui ti risponde. Lo facciamo per prelevare dati, inviare form,\u2026"
-lastmod: 2024-02-18 23:08:55.842963
+lastmod: 2024-02-19 22:05:02.451370
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP significa comunicare con un server web: invii\
   \ una richiesta, lui ti risponde. Lo facciamo per prelevare dati, inviare form,\u2026"

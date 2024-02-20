@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/reading-command-line-arguments/
 date: 2024-01-20 17:55:43.038233-07:00
 description: "Reading command line arguments allows a C# program to process user inputs\
   \ given at launch. Programmers use this to customize app behavior without altering\u2026"
-lastmod: 2024-02-18 23:09:11.069622
+lastmod: 2024-02-19 22:05:18.568106
 model: gpt-4-1106-preview
 summary: "Reading command line arguments allows a C# program to process user inputs\
   \ given at launch. Programmers use this to customize app behavior without altering\u2026"

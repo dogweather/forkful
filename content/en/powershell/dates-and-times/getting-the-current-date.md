@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/getting-the-current-date/
 date: 2024-02-03 19:02:40.928755-07:00
 description: "Retrieving the current date in PowerShell is about fetching the system\u2019\
   s current date and time. This operation is fundamental for tasks such as logging,\u2026"
-lastmod: 2024-02-18 23:09:11.284415
+lastmod: 2024-02-19 22:05:18.756314
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in PowerShell is about fetching the system\u2019\
   s current date and time. This operation is fundamental for tasks such as logging,\u2026"

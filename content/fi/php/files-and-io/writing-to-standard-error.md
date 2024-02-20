@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/php/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:18.358640-07:00
 description: "Virheviestien kirjoittaminen standardivirheeseen (stderr) PHP:ss\xE4\
   \ tarkoittaa virheilmoitusten tai diagnostiikkatietojen ohjaamista erill\xE4\xE4\
   n\u2026"
-lastmod: 2024-02-18 23:09:07.729544
+lastmod: 2024-02-19 22:05:15.566529
 model: gpt-4-0125-preview
 summary: "Virheviestien kirjoittaminen standardivirheeseen (stderr) PHP:ss\xE4 tarkoittaa\
   \ virheilmoitusten tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n\u2026"

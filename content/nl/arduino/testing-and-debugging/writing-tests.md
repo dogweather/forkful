@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/arduino/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:49.340125-07:00
 description: "Testen schrijven betekent het cre\xEBren van een set voorwaarden om\
   \ te controleren of je code zich gedraagt zoals verwacht. Programmeurs doen dit\
   \ om fouten\u2026"
-lastmod: 2024-02-18 23:09:02.141600
+lastmod: 2024-02-19 22:05:10.159894
 model: gpt-4-0125-preview
 summary: "Testen schrijven betekent het cre\xEBren van een set voorwaarden om te controleren\
   \ of je code zich gedraagt zoals verwacht. Programmeurs doen dit om fouten\u2026"

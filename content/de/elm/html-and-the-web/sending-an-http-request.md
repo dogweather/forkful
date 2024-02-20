@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/elm/sending-an-http-request/
 date: 2024-01-20 17:59:39.752330-07:00
 description: "HTTP-Anfragen werden genutzt, um mit Webservern zu kommunizieren \u2013\
   \ Daten zu holen und zu senden. Programmierer brauchen diese, um Webanwendungen\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.778169
+lastmod: 2024-02-19 22:05:12.726899
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen werden genutzt, um mit Webservern zu kommunizieren \u2013\
   \ Daten zu holen und zu senden. Programmierer brauchen diese, um Webanwendungen\

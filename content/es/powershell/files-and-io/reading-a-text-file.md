@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/reading-a-text-file/
 date: 2024-01-20 17:55:00.882962-07:00
 description: "Leer un archivo de texto significa acceder y obtener su contenido. Los\
   \ programadores lo hacen para manipular datos, configurar software o simplemente\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:10.234554
+lastmod: 2024-02-19 22:05:17.815143
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto significa acceder y obtener su contenido. Los programadores\
   \ lo hacen para manipular datos, configurar software o simplemente para\u2026"

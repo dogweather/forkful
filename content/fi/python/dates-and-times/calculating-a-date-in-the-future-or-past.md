@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:42.565912-07:00
 description: "Ajanlaskennassa tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4\
   r\xE4n laskeminen tarkoittaa tietyn ajanjakson lis\xE4\xE4mist\xE4 tai poistamista\
   \ nykyhetkest\xE4. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.198100
+lastmod: 2024-02-19 22:05:15.096430
 model: gpt-4-1106-preview
 summary: "Ajanlaskennassa tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4\
   n laskeminen tarkoittaa tietyn ajanjakson lis\xE4\xE4mist\xE4 tai poistamista nykyhetkest\xE4\

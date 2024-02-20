@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/typescript/starting-a-new-project/
 date: 2024-01-20 18:04:43.412537-07:00
 description: "Ein neues Projekt zu beginnen bedeutet, eine frische Codebasis anzulegen,\
   \ um eine Idee oder L\xF6sung umzusetzen. Programmierer starten neue Projekte, um\u2026"
-lastmod: 2024-02-18 23:09:04.597320
+lastmod: 2024-02-19 22:05:12.555157
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu beginnen bedeutet, eine frische Codebasis anzulegen,\
   \ um eine Idee oder L\xF6sung umzusetzen. Programmierer starten neue Projekte, um\u2026"

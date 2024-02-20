@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/java/concatenating-strings/
 date: 2024-01-20 17:34:55.071772-07:00
 description: "La concatenaci\xF3n de cadenas de texto (strings) en Java es simplemente\
   \ el proceso de unir dos o m\xE1s cadenas para formar una nueva. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:09.836400
+lastmod: 2024-02-19 22:05:17.452209
 model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas de texto (strings) en Java es simplemente\
   \ el proceso de unir dos o m\xE1s cadenas para formar una nueva. Los programadores\u2026"

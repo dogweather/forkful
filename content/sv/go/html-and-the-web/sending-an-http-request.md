@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:38.975129-07:00
 description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att initiera ett anrop fr\xE5\
   n din Go-applikation till en webbserver, API eller n\xE5gon annan HTTP-baserad tj\xE4\
   nst.\u2026"
-lastmod: 2024-02-18 23:08:51.329911
+lastmod: 2024-02-19 22:04:56.621572
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att initiera ett anrop fr\xE5n\
   \ din Go-applikation till en webbserver, API eller n\xE5gon annan HTTP-baserad tj\xE4\

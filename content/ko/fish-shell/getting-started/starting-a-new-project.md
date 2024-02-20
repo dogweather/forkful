@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/starting-a-new-project/
 date: 2024-01-20 18:03:41.148159-07:00
 description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
   \ \uAC74, \uC5EC\uB7EC\uBD84\uC774 \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C\
@@ -10,7 +8,7 @@ description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB2
   \ \uC790\uC2E0\uC758 \uAE30\uC220\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574\
   \ \uC774\uB807\uAC8C \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.882064
+lastmod: 2024-02-19 22:05:14.770993
 model: gpt-4-1106-preview
 summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74\
   , \uC5EC\uB7EC\uBD84\uC774 \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C \uC2E4\

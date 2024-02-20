@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/php/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:22.443214-07:00
 description: "\xC5 hente den gjeldende datoen i PHP er en grunnleggende oppgave som\
   \ lar deg hente og manipulere systemets dato og klokkeslett. Dette er avgj\xF8rende\
   \ for\u2026"
-lastmod: 2024-02-18 23:08:53.985330
+lastmod: 2024-02-19 22:05:00.160912
 model: gpt-4-0125-preview
 summary: "\xC5 hente den gjeldende datoen i PHP er en grunnleggende oppgave som lar\
   \ deg hente og manipulere systemets dato og klokkeslett. Dette er avgj\xF8rende\

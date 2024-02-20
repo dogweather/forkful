@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/swift/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:35:01.384095-07:00
 description: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les\
   \ messages d'erreur de votre programme ou les sorties de diagnostic vers un flux\
   \ s\xE9par\xE9,\u2026"
-lastmod: 2024-02-18 23:09:09.227011
+lastmod: 2024-02-19 22:05:16.893871
 model: gpt-4-0125-preview
 summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les messages\
   \ d'erreur de votre programme ou les sorties de diagnostic vers un flux s\xE9par\xE9\

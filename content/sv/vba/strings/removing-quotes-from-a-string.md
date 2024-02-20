@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:33.126710-07:00
 description: "Att ta bort citationstecken fr\xE5n en str\xE4ng i VBA inneb\xE4r att\
   \ ta bort f\xF6rekomster av enkla (`'`) eller dubbla (`\"`) citationstecken som\
   \ kan inkapsla eller\u2026"
-lastmod: 2024-02-18 23:08:51.613707
+lastmod: 2024-02-19 22:04:56.935259
 model: gpt-4-0125-preview
 summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng i VBA inneb\xE4r att ta\
   \ bort f\xF6rekomster av enkla (`'`) eller dubbla (`\"`) citationstecken som kan\

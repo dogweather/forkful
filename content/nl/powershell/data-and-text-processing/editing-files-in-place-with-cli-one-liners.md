@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/powershell/editing-files-in-place-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:41.441612-07:00
 description: "Bestanden ter plaatse bewerken met CLI one-liners in PowerShell gaat\
   \ over het direct wijzigen van bestanden vanaf de opdrachtregel, zonder de noodzaak\
   \ om\u2026"
-lastmod: 2024-02-18 23:09:02.087193
+lastmod: 2024-02-19 22:05:10.108829
 model: gpt-4-0125-preview
 summary: "Bestanden ter plaatse bewerken met CLI one-liners in PowerShell gaat over\
   \ het direct wijzigen van bestanden vanaf de opdrachtregel, zonder de noodzaak om\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:00.018751-07:00
 description: "Omvandling av en textstr\xE4ng till gemener inneb\xE4r att alla versaler\
   \ i en text blir sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder detta f\xF6r att\
   \ standardisera text\u2026"
-lastmod: 2024-02-18 23:08:51.737440
+lastmod: 2024-02-19 22:04:57.071451
 model: gpt-4-1106-preview
 summary: "Omvandling av en textstr\xE4ng till gemener inneb\xE4r att alla versaler\
   \ i en text blir sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder detta f\xF6r att\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:47.450584-07:00
@@ -8,7 +6,7 @@ description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c 
   y th\xF4ng tin t\u1EEB m\u1ED9t t\xE0i li\u1EC7u .txt v\xE0o ch\u01B0\u01A1ng tr\xEC\
   nh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
   \u1EC3 truy c\u1EADp v\xE0 thao t\xE1c d\u1EEF li\u1EC7u: c\xE0i\u2026"
-lastmod: 2024-02-18 23:08:51.155453
+lastmod: 2024-02-19 22:04:56.406914
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c l\u1EA5\
   y th\xF4ng tin t\u1EEB m\u1ED9t t\xE0i li\u1EC7u .txt v\xE0o ch\u01B0\u01A1ng tr\xEC\

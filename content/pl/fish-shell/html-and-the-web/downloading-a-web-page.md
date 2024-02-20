@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/downloading-a-web-page/
 date: 2024-01-20 17:44:05.141254-07:00
 description: "\u015Aci\u0105ganie strony internetowej to proces zapisywania zawarto\u015B\
   ci z internetu na lokalnym dysku. Programi\u015Bci to robi\u0105, by analizowa\u0107\
   \ dane, testowa\u0107 aplikacje\u2026"
-lastmod: 2024-02-18 23:08:50.035573
+lastmod: 2024-02-19 22:04:55.014548
 model: gpt-4-1106-preview
 summary: "\u015Aci\u0105ganie strony internetowej to proces zapisywania zawarto\u015B\
   ci z internetu na lokalnym dysku. Programi\u015Bci to robi\u0105, by analizowa\u0107\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/swift/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:50.335244-07:00
 description: "Escribir pruebas en Swift implica crear y ejecutar c\xF3digo que verifica\
   \ la correcci\xF3n de otras unidades de c\xF3digo en tu aplicaci\xF3n. Los programadores\
   \ lo\u2026"
-lastmod: 2024-02-18 23:09:10.361961
+lastmod: 2024-02-19 22:05:17.924828
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Swift implica crear y ejecutar c\xF3digo que verifica\
   \ la correcci\xF3n de otras unidades de c\xF3digo en tu aplicaci\xF3n. Los programadores\

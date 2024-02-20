@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:26.228763-07:00
@@ -13,7 +11,7 @@ description: "C++\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC5D0 \uC4F0\uAE30
   \uC5D0 \uD544\uC218\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
   \uB798\uBA38\uB4E4\uC740 \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589 \uC911\uC5D0 \uC0DD\
   \uC131\uB41C \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uAC70\uB098\u2026"
-lastmod: 2024-02-18 23:09:06.712287
+lastmod: 2024-02-19 22:05:14.608064
 model: gpt-4-0125-preview
 summary: "C++\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC5D0 \uC4F0\uAE30\uB294\
   \ \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uAC70\uB098 \uC5F4\uACE0 \uAC70\uAE30\uC5D0\

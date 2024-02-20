@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/concatenating-strings/
 date: 2024-01-20 17:34:59.859798-07:00
 description: "Concat\xE9ner des chaines, c'est les coller bout \xE0 bout. On le fait\
   \ pour assembler des morceaux de texte, comme les noms et adjectifs ou des donn\xE9\
   es avec du\u2026"
-lastmod: 2024-02-18 23:09:08.960718
+lastmod: 2024-02-19 22:05:16.649961
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des chaines, c'est les coller bout \xE0 bout. On le fait pour\
   \ assembler des morceaux de texte, comme les noms et adjectifs ou des donn\xE9es\

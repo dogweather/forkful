@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:24.092708-07:00
@@ -8,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cung c\u1EA5p m\u1ED9t c\
   ch \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao t\xE1c v\u1EDBi c\xE1c chu\u1ED7\
   i s\u1EED d\u1EE5ng c\xE1c m\u1EABu \u0111\xE3 \u0111\u1ECBnh ngh\u0129a. L\u1EAD\
   p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng m\u1ED9t\u2026"
-lastmod: 2024-02-18 23:08:51.222695
+lastmod: 2024-02-19 22:04:56.490452
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cung c\u1EA5p m\u1ED9t c\xE1ch\
   \ \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao t\xE1c v\u1EDBi c\xE1c chu\u1ED7\

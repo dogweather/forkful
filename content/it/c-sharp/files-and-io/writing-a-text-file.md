@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c-sharp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:35.810939-07:00
 description: "Scrivere un file di testo in C# comporta la creazione o modifica programmatica\
   \ di file di testo sul file system - un compito fondamentale per molte\u2026"
-lastmod: 2024-02-18 23:08:55.906520
+lastmod: 2024-02-19 22:05:02.516339
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in C# comporta la creazione o modifica programmatica\
   \ di file di testo sul file system - un compito fondamentale per molte\u2026"

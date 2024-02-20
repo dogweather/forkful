@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/clojure/sending-an-http-request/
 date: 2024-01-20 17:59:29.490386-07:00
 description: "Enviar uma solicita\xE7\xE3o HTTP \xE9 como fazer uma pergunta a um\
   \ site e esperar uma resposta. Programadores fazem isso para interagir com APIs,\
   \ coletar dados ou\u2026"
-lastmod: 2024-02-18 23:08:57.799633
+lastmod: 2024-02-19 22:05:05.265007
 model: gpt-4-1106-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP \xE9 como fazer uma pergunta a um site\
   \ e esperar uma resposta. Programadores fazem isso para interagir com APIs, coletar\

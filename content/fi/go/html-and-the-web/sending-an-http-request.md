@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/go/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:40.363062-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen merkitsee puhelun aloittamista Go-sovelluksestasi\
   \ web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun.\u2026"
-lastmod: 2024-02-18 23:09:07.080989
+lastmod: 2024-02-19 22:05:14.961760
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen merkitsee puhelun aloittamista Go-sovelluksestasi\
   \ web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun.\u2026"

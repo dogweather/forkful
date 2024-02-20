@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:33.900186-07:00
@@ -8,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xF4ng c\u1EE5 \u0
   \u1EC3 t\xECm ki\u1EBFm m\u1EABu trong v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEA\
   n s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ki\u1EC3m tra, ho\u1EB7\
   c thao t\xE1c d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch\u2026"
-lastmod: 2024-02-18 23:08:50.639860
+lastmod: 2024-02-19 22:04:55.757575
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xF4ng c\u1EE5 \u0111\u1EC3\
   \ t\xECm ki\u1EBFm m\u1EABu trong v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn s\u1EED\

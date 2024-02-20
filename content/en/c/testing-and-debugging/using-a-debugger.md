@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/using-a-debugger/
 date: 2024-02-03 17:50:08.776489-07:00
 description: "Debuggers in C are specialized tools that allow developers to step through\
   \ their code, inspect variables, and monitor the execution flow. This process is\u2026"
-lastmod: 2024-02-18 23:09:11.527147
+lastmod: 2024-02-19 22:05:18.977298
 model: gpt-4-0125-preview
 summary: "Debuggers in C are specialized tools that allow developers to step through\
   \ their code, inspect variables, and monitor the execution flow. This process is\u2026"

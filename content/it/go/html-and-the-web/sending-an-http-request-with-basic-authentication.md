@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:06.848360-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base in Go comporta\
   \ l'aggiunta di un'intestazione di autorizzazione alla tua richiesta che include\
   \ un\u2026"
-lastmod: 2024-02-18 23:08:55.431916
+lastmod: 2024-02-19 22:05:02.012341
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base in Go comporta l'aggiunta\
   \ di un'intestazione di autorizzazione alla tua richiesta che include un\u2026"

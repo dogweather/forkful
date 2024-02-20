@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/refactoring/
 date: 2024-01-26 01:17:16.608337-07:00
 description: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\
   \ rydde\u2026"
-lastmod: 2024-02-18 23:08:53.901830
+lastmod: 2024-02-19 22:05:00.071022
 model: gpt-4-0125-preview
 summary: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\

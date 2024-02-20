@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/clojure/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:50.435958-07:00
 description: "L'analisi di una data da una stringa in Clojure consiste nel convertire\
   \ le rappresentazioni testuali di date ed orari in una forma pi\xF9 utilizzabile\
   \ (ad\u2026"
-lastmod: 2024-02-18 23:08:55.569731
+lastmod: 2024-02-19 22:05:02.160580
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa in Clojure consiste nel convertire\
   \ le rappresentazioni testuali di date ed orari in una forma pi\xF9 utilizzabile\

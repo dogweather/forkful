@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/vba/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:13.829313-07:00
 description: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
   \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\u2026"
-lastmod: 2024-02-18 23:08:49.454066
+lastmod: 2024-02-19 22:04:54.380092
 model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
   \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\u2026"

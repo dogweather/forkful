@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elm/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:26.516638-07:00
 description: "Analiza daty z ci\u0105gu znak\xF3w w Elm polega na konwertowaniu informacji\
   \ tekstowych przedstawiaj\u0105cych daty i czasy na format, kt\xF3ry Elm mo\u017C\
   e zrozumie\u0107 i\u2026"
-lastmod: 2024-02-18 23:08:49.528047
+lastmod: 2024-02-19 22:04:54.461643
 model: gpt-4-0125-preview
 summary: "Analiza daty z ci\u0105gu znak\xF3w w Elm polega na konwertowaniu informacji\
   \ tekstowych przedstawiaj\u0105cych daty i czasy na format, kt\xF3ry Elm mo\u017C\

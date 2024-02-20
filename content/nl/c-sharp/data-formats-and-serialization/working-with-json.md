@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:17.080361-07:00
 description: "Werken met JSON betekent het verwerken en genereren van JSON (JavaScript\
   \ Object Notation) data in uw applicaties. Programmeurs doen dit omdat JSON een\u2026"
-lastmod: 2024-02-18 23:09:01.875581
+lastmod: 2024-02-19 22:05:09.892087
 model: gpt-4-0125-preview
 summary: "Werken met JSON betekent het verwerken en genereren van JSON (JavaScript\
   \ Object Notation) data in uw applicaties. Programmeurs doen dit omdat JSON een\u2026"

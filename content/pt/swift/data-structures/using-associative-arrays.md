@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/swift/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:10.230636-07:00
 description: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem\
   \ armazenar e gerenciar dados em pares chave-valor. Programadores os usam para organizar\u2026"
-lastmod: 2024-02-18 23:08:58.484337
+lastmod: 2024-02-19 22:05:05.976559
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem armazenar\
   \ e gerenciar dados em pares chave-valor. Programadores os usam para organizar\u2026"

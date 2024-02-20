@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/python/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:44.760902-07:00
 description: "\"Een debugger gebruiken\" gaat over het stapsgewijs doorlopen van je\
   \ Python-code om bugs te ontdekken en het gedrag te begrijpen. We doen dit omdat\
   \ het\u2026"
-lastmod: 2024-02-18 23:09:01.438760
+lastmod: 2024-02-19 22:05:09.468982
 model: gpt-4-0125-preview
 summary: "\"Een debugger gebruiken\" gaat over het stapsgewijs doorlopen van je Python-code\
   \ om bugs te ontdekken en het gedrag te begrijpen. We doen dit omdat het\u2026"

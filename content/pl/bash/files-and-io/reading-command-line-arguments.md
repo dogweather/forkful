@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/reading-command-line-arguments/
 date: 2024-01-20 17:55:28.350388-07:00
 description: "Czytanie argument\xF3w z linii polece\u0144 pozwala skryptom Bash przyjmowa\u0107\
   \ dane wej\u015Bciowe podczas uruchamiania. U\u017Cywamy tego, bo to elastyczny\
   \ spos\xF3b na\u2026"
-lastmod: 2024-02-18 23:08:49.800430
+lastmod: 2024-02-19 22:04:54.740865
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w z linii polece\u0144 pozwala skryptom Bash przyjmowa\u0107\
   \ dane wej\u015Bciowe podczas uruchamiania. U\u017Cywamy tego, bo to elastyczny\

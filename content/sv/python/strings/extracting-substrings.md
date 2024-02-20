@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/extracting-substrings/
 date: 2024-01-20 17:46:23.618271-07:00
 description: "Extrahering av substr\xE4ngar inneb\xE4r att v\xE4lja specifika delar\
   \ av en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera\
   \ specifika data, som\u2026"
-lastmod: 2024-02-18 23:08:51.411484
+lastmod: 2024-02-19 22:04:56.712667
 model: gpt-4-1106-preview
 summary: "Extrahering av substr\xE4ngar inneb\xE4r att v\xE4lja specifika delar av\
   \ en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera specifika\

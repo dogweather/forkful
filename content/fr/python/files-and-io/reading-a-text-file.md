@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/reading-a-text-file/
 date: 2024-01-20 17:55:07.735854-07:00
 description: "Lire un fichier texte en Python, c'est collecter les donn\xE9es d'un\
   \ fichier stock\xE9 sur disque pour les utiliser dans un programme. C'est essentiel\
   \ car un\u2026"
-lastmod: 2024-02-18 23:09:08.359404
+lastmod: 2024-02-19 22:05:16.155773
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte en Python, c'est collecter les donn\xE9es d'un fichier\
   \ stock\xE9 sur disque pour les utiliser dans un programme. C'est essentiel car\

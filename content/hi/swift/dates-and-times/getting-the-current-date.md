@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/swift/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:05.465586-07:00
@@ -13,7 +11,7 @@ description: "Swift \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u092
   \u0924\u093E \u0939\u0948 \u091C\u092C \u0910\u092A \u091A\u0932\u093E\u0908 \u091C\
   \u093E \u0930\u0939\u0940 \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\
   \u0930\u093E\u092E\u0930\u094B\u0902 \u0915\u094B\u2026"
-lastmod: 2024-02-18 23:09:03.986695
+lastmod: 2024-02-19 22:05:11.968852
 model: gpt-4-0125-preview
 summary: "Swift \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928 \u0924\
   \u093E\u0930\u0940\u0916 \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0915\u0930\

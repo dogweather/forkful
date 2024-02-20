@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/sending-an-http-request/
 date: 2024-01-20 18:00:06.622860-07:00
 description: "HTTP-Anfragen sind der Weg, wie deine Webseite oder Anwendung mit anderen\
   \ Servern und APIs spricht. Wir nutzen sie, um Daten zu holen, zu senden oder\u2026"
-lastmod: 2024-02-18 23:09:04.958769
+lastmod: 2024-02-19 22:05:12.898706
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind der Weg, wie deine Webseite oder Anwendung mit anderen\
   \ Servern und APIs spricht. Wir nutzen sie, um Daten zu holen, zu senden oder\u2026"

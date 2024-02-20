@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/rounding-numbers/
 date: 2024-01-26 03:43:33.205790-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn desimaalitarkkuuteen. Py\xF6rist\xE4\
   mme numeroita\u2026"
-lastmod: 2024-02-18 23:09:07.223186
+lastmod: 2024-02-19 22:05:15.121089
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn desimaalitarkkuuteen. Py\xF6rist\xE4\

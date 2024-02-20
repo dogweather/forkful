@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/downloading-a-web-page/
 date: 2024-01-20 17:44:55.669420-07:00
 description: "Descargar una p\xE1gina web significa traer el contenido de esa p\xE1\
   gina a tu dispositivo local o servidor. Los programadores lo hacen para an\xE1lisis\
   \ de datos,\u2026"
-lastmod: 2024-02-18 23:09:09.701493
+lastmod: 2024-02-19 22:05:17.329372
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa traer el contenido de esa p\xE1gina\
   \ a tu dispositivo local o servidor. Los programadores lo hacen para an\xE1lisis\

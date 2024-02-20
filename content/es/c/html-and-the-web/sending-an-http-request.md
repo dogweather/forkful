@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:33.576318-07:00
 description: "Enviar una solicitud HTTP implica crear y enviar una solicitud a un\
   \ servidor web para recuperar o enviar datos. Los programadores hacen esto en C\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:10.497522
+lastmod: 2024-02-19 22:05:18.049195
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP implica crear y enviar una solicitud a un servidor\
   \ web para recuperar o enviar datos. Los programadores hacen esto en C para\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:02.386410-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c t
   c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c truy\u1EC1n t\xEAn ng\u01B0\u1EDDi d\xF9\
   ng v\xE0 m\u1EADt kh\u1EA9u qua m\u1EA1ng \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1\
   c t\xE0i nguy\xEAn \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7. L\u1EADp\u2026"
-lastmod: 2024-02-18 23:08:51.184983
+lastmod: 2024-02-19 22:04:56.444145
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
   c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c truy\u1EC1n t\xEAn ng\u01B0\u1EDDi d\xF9\

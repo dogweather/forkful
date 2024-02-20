@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:31.081860-07:00
@@ -13,7 +11,7 @@ description: "PowerShell \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937
   \u092F\u093E\u092A\u093F\u0924 \u0915\u0930\u0924\u0940 \u0939\u0948\u0902, \u092F\
   \u0939 \u0938\u0941\u0928\u093F\u0936\u094D\u091A\u093F\u0924 \u0915\u0930\u0924\
   \u0940 \u0939\u0948\u0902 \u0915\u093F\u2026"
-lastmod: 2024-02-18 23:09:03.744565
+lastmod: 2024-02-19 22:05:11.730308
 model: gpt-4-0125-preview
 summary: "PowerShell \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u0923\
   \ \u0932\u093F\u0916\u0928\u0947 \u0915\u093E \u092E\u0924\u0932\u092C \u0910\u0938\

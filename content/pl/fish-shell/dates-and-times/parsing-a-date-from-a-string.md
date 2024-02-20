@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/fish-shell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:25.591683-07:00
 description: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie\
   \ zakodowanej w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format,\
   \ kt\xF3ry\u2026"
-lastmod: 2024-02-18 23:08:50.045881
+lastmod: 2024-02-19 22:04:55.025654
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie zakodowanej\
   \ w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format, kt\xF3ry\u2026"

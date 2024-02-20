@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/php/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:59.590839-07:00
 description: "L'analisi di una data da una stringa in PHP implica la conversione di\
   \ testo che rappresenta una data e/o un orario in un oggetto PHP `DateTime` o in\
   \ altri\u2026"
-lastmod: 2024-02-18 23:08:55.979658
+lastmod: 2024-02-19 22:05:02.592741
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa in PHP implica la conversione di testo\
   \ che rappresenta una data e/o un orario in un oggetto PHP `DateTime` o in altri\u2026"

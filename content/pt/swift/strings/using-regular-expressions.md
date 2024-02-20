@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/swift/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:18.952259-07:00
 description: "Express\xF5es regulares, ou regex, s\xE3o sequ\xEAncias de caracteres\
   \ que formam um padr\xE3o de busca, frequentemente usadas para tarefas de correspond\xEA\
   ncia ou\u2026"
-lastmod: 2024-02-18 23:08:58.481364
+lastmod: 2024-02-19 22:05:05.973598
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares, ou regex, s\xE3o sequ\xEAncias de caracteres que\
   \ formam um padr\xE3o de busca, frequentemente usadas para tarefas de correspond\xEA\

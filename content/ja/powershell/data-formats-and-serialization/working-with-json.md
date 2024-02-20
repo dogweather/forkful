@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/powershell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:35.790664-07:00
 description: "PowerShell\u3068JSON\uFF08JavaScript Object\u2026"
-lastmod: 2024-02-18 23:08:55.134265
+lastmod: 2024-02-19 22:05:01.585098
 model: gpt-4-0125-preview
 summary: "PowerShell\u3068JSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"

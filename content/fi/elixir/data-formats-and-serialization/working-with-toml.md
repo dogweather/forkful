@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/working-with-toml/
 date: 2024-01-26 04:20:50.772412-07:00
 description: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious, Minimal\
   \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.298911
+lastmod: 2024-02-19 22:05:15.191290
 model: gpt-4-0125-preview
 summary: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious, Minimal\
   \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria. Ohjelmoijat\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/go/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:01.094763-07:00
@@ -13,7 +11,7 @@ description: "Go \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928 \
   \u0947\u0902 \"Hello, World!\" \u0915\u0947 \u0938\u092E\u093E\u0928 \u0939\u0948\
   \u0964 \u0932\u0949\u0917\u093F\u0902\u0917 \u0914\u0930 \u0938\u092E\u092F-\u091A\
   \u093F\u0939\u094D\u0928\u093F\u0924\u2026"
-lastmod: 2024-02-18 23:09:02.505495
+lastmod: 2024-02-19 22:05:10.508019
 model: gpt-4-0125-preview
 summary: "Go \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928 \u0926\u093F\
   \u0928\u093E\u0902\u0915 \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0915\u0930\

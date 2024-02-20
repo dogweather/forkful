@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:42.538266-07:00
 description: "Zast\u0119powanie tekstu to podmiana jednego ci\u0105gu znak\xF3w innym.\
   \ Programi\u015Bci robi\u0105 to, by szybko modyfikowa\u0107 dane czy kod - poprawiaj\u0105\
   \ b\u0142\u0119dy, aktualizuj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.895387
+lastmod: 2024-02-19 22:04:54.843431
 model: gpt-4-1106-preview
 summary: "Zast\u0119powanie tekstu to podmiana jednego ci\u0105gu znak\xF3w innym.\
   \ Programi\u015Bci robi\u0105 to, by szybko modyfikowa\u0107 dane czy kod - poprawiaj\u0105\

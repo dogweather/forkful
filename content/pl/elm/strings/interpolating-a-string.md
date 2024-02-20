@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elm/interpolating-a-string/
 date: 2024-01-20 17:50:38.903551-07:00
 description: "Interpolacja string\xF3w pozwala nam wplata\u0107 warto\u015Bci zmiennych\
   \ w ci\u0105gi tekstowe, u\u0142atwiaj\u0105c dynamiczne tworzenie tre\u015Bci.\
   \ Programi\u015Bci u\u017Cywaj\u0105 interpolacji,\u2026"
-lastmod: 2024-02-18 23:08:49.505578
+lastmod: 2024-02-19 22:04:54.436984
 model: gpt-4-1106-preview
 summary: "Interpolacja string\xF3w pozwala nam wplata\u0107 warto\u015Bci zmiennych\
   \ w ci\u0105gi tekstowe, u\u0142atwiaj\u0105c dynamiczne tworzenie tre\u015Bci.\

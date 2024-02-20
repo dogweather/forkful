@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:11.261117-07:00
 description: "REPL(Read-Eval-Print Loop, \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uBC18\
   \uBCF5)\uC740 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uD55C \uBC88\uC5D0 \uD558\uB098\
@@ -10,7 +8,7 @@ description: "REPL(Read-Eval-Print Loop, \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 
   \ \uBE60\uB978 \uD14C\uC2A4\uD2B8, \uD559\uC2B5, \uB514\uBC84\uAE45 \uB610\uB294\
   \ \uC989\uC11D\uC5D0\uC11C \uACC4\uC0B0\uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574\
   \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.627330
+lastmod: 2024-02-19 22:05:13.541734
 model: gpt-4-0125-preview
 summary: "REPL(Read-Eval-Print Loop, \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uBC18\
   \uBCF5)\uC740 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uD55C \uBC88\uC5D0 \uD558\uB098\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/kotlin/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:30.930803-07:00
@@ -12,7 +10,7 @@ description: "CSV (Comma-Separated Values) \u0915\u0947 \u0938\u093E\u0925 \u091
   \u0930\u0942\u092A, CSV \u092B\u093C\u093E\u0907\u0932\u094B\u0902 \u0938\u0947\
   \ \u0921\u0947\u091F\u093E \u092A\u0922\u093C\u0928\u0947 \u0914\u0930 \u0909\u0938\
   \ \u092A\u0930 \u0932\u093F\u0916\u0928\u0947 \u0915\u093E \u0915\u093E\u092E\u2026"
-lastmod: 2024-02-18 23:09:03.309881
+lastmod: 2024-02-19 22:05:11.303410
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\
   \u092E \u0915\u0930\u0928\u093E \u0938\u093E\u0926\u093E \u092A\u093E\u0920 \u092E\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/php/extracting-substrings/
 date: 2024-01-20 17:46:21.425376-07:00
 description: "Substringien poiminta tarkoittaa isommasta merkkijonosta tietyn osan\
   \ eli alamerkkijonon erottamista. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 datan r\xE4\
   \xE4t\xE4l\xF6intiin,\u2026"
-lastmod: 2024-02-18 23:09:07.699701
+lastmod: 2024-02-19 22:05:15.539300
 model: gpt-4-1106-preview
 summary: "Substringien poiminta tarkoittaa isommasta merkkijonosta tietyn osan eli\
   \ alamerkkijonon erottamista. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 datan r\xE4\

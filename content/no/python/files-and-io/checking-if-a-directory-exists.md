@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/python/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:14.987121-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Python handler om \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe i filsystemet f\xF8r man utf\xF8rer operasjoner\
   \ som \xE5 lese eller\u2026"
-lastmod: 2024-02-18 23:08:53.538038
+lastmod: 2024-02-19 22:04:59.657762
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Python handler om \xE5 verifisere tilstedev\xE6\
   relsen av en mappe i filsystemet f\xF8r man utf\xF8rer operasjoner som \xE5 lese\

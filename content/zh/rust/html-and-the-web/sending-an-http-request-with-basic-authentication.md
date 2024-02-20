@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/rust/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:47.845181-07:00
 description: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\
   \u5C31\u662F\u7528\u7528\u6237\u540D\u548C\u5BC6\u7801\u5411\u670D\u52A1\u5668\u8BF7\
@@ -8,7 +6,7 @@ description: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u
   \u62A4\u654F\u611F\u63A5\u53E3\u7684\u5B89\u5168\uFF0C\u53EA\u8BA9\u9A8C\u8BC1\u8FC7\
   \u7684\u7528\u6237\u8BBF\u95EE\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:58.941027
+lastmod: 2024-02-19 22:05:06.537602
 model: gpt-4-1106-preview
 summary: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u5C31\
   \u662F\u7528\u7528\u6237\u540D\u548C\u5BC6\u7801\u5411\u670D\u52A1\u5668\u8BF7\u6C42\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/c-sharp/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:11.423234-07:00
@@ -14,7 +12,7 @@ description: "\u05D1\u05D9\u05D8\u05D5\u05D9\u05D9\u05DD \u05E8\u05D2\u05D5\u05D
   \u05D5\u05E0\u05D9\u05DD \u05D1\u05E6\u05D5\u05E8\u05D4 \u05D9\u05E2\u05D9\u05DC\
   \u05D4. \u05D4\u05DE\u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05DE\u05E9\u05EA\u05DE\
   \u05E9\u05D9\u05DD\u2026"
-lastmod: 2024-02-18 23:08:52.831257
+lastmod: 2024-02-19 22:04:58.555327
 model: gpt-4-0125-preview
 summary: "\u05D1\u05D9\u05D8\u05D5\u05D9\u05D9\u05DD \u05E8\u05D2\u05D5\u05DC\u05E8\
   \u05D9\u05D9\u05DD (regex) \u05D1-C# \u05D4\u05DD \u05DB\u05DC\u05D9 \u05E2\u05D5\

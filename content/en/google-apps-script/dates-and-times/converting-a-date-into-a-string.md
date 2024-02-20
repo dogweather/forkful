@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/converting-a-date-into-a-string/
 date: 2024-02-01 21:12:12.817086-07:00
 description: "Converting dates into strings is a fundamental task that enables programmers\
   \ to manipulate and display date information in a human-readable format. This\u2026"
-lastmod: 2024-02-18 23:09:10.650911
+lastmod: 2024-02-19 22:05:18.187233
 model: gpt-4-0125-preview
 summary: "Converting dates into strings is a fundamental task that enables programmers\
   \ to manipulate and display date information in a human-readable format. This\u2026"

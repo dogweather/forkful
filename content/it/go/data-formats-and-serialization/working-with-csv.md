@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:43.003009-07:00
 description: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per lo\
   \ scambio di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione\
   \ con la maggior\u2026"
-lastmod: 2024-02-18 23:08:55.456044
+lastmod: 2024-02-19 22:05:02.038368
 model: gpt-4-0125-preview
 summary: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per lo scambio\
   \ di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione con la maggior\u2026"

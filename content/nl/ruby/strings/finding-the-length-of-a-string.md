@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:28.076545-07:00
 description: "De lengte van een string vinden betekent het tellen van de karakters.\
   \ Het is basis maar cruciaal voor taken zoals validatie, tekstverwerking, en het\u2026"
-lastmod: 2024-02-18 23:09:02.410056
+lastmod: 2024-02-19 22:05:10.415381
 model: gpt-4-0125-preview
 summary: "De lengte van een string vinden betekent het tellen van de karakters. Het\
   \ is basis maar cruciaal voor taken zoals validatie, tekstverwerking, en het\u2026"

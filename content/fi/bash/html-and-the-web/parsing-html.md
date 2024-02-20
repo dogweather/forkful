@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/bash/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:45.806141-07:00
 description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja sis\xE4\
   ll\xF6n seulomista tiedon poimimiseksi. Ohjelmoijat tekev\xE4t sit\xE4 p\xE4\xE4\
   st\xE4kseen k\xE4siksi\u2026"
-lastmod: 2024-02-18 23:09:07.802254
+lastmod: 2024-02-19 22:05:15.632951
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja sis\xE4\
   ll\xF6n seulomista tiedon poimimiseksi. Ohjelmoijat tekev\xE4t sit\xE4 p\xE4\xE4\

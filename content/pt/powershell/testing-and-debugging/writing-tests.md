@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/powershell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:36.328771-07:00
 description: "Escrever testes em PowerShell envolve criar scripts que validam automaticamente\
   \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte\u2026"
-lastmod: 2024-02-18 23:08:58.372304
+lastmod: 2024-02-19 22:05:05.857348
 model: gpt-4-0125-preview
 summary: "Escrever testes em PowerShell envolve criar scripts que validam automaticamente\
   \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte\u2026"

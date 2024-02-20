@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/kotlin/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:43.834640-07:00
 description: "Convertir una cadena a min\xFAsculas transforma todos los caracteres\
   \ alfab\xE9ticos en su equivalente en min\xFAsculas. Esto es \xFAtil para uniformizar\
   \ datos,\u2026"
-lastmod: 2024-02-18 23:09:09.922053
+lastmod: 2024-02-19 22:05:17.530369
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas transforma todos los caracteres alfab\xE9\
   ticos en su equivalente en min\xFAsculas. Esto es \xFAtil para uniformizar datos,\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:33.515194-07:00
@@ -8,7 +6,7 @@ description: "Ghi log trong C bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i d\xF2ng ch\u1E
   y v\xE0 c\xE1c s\u1EF1 ki\u1EC7n \u0111\xE1ng ch\xFA \xFD c\u1EE7a m\u1ED9t ch\u01B0\
   \u01A1ng tr\xECnh trong qu\xE1 tr\xECnh th\u1EF1c thi, cung c\u1EA5p m\u1ED9t c\xE1\
   i nh\xECn c\u1EE5 th\u1EC3 v\u1EC1\u2026"
-lastmod: 2024-02-18 23:08:51.241838
+lastmod: 2024-02-19 22:04:56.514860
 model: gpt-4-0125-preview
 summary: "Ghi log trong C bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i d\xF2ng ch\u1EA3y v\xE0\
   \ c\xE1c s\u1EF1 ki\u1EC7n \u0111\xE1ng ch\xFA \xFD c\u1EE7a m\u1ED9t ch\u01B0\u01A1\

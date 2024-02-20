@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/downloading-a-web-page/
 date: 2024-01-20 17:45:05.246525-07:00
 description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\
   \uB137\uC5D0\uC11C HTML \uBB38\uC11C\uB97C \uB85C\uCEEC \uC7A5\uCE58\uB85C \uAC00\
@@ -9,7 +7,7 @@ description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD
   \uCE20\uB97C \uBD84\uC11D\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.882135
+lastmod: 2024-02-19 22:05:13.817859
 model: gpt-4-1106-preview
 summary: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\uB137\
   \uC5D0\uC11C HTML \uBB38\uC11C\uB97C \uB85C\uCEEC \uC7A5\uCE58\uB85C \uAC00\uC838\

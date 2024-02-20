@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/java/interpolating-a-string/
 date: 2024-01-20 17:51:11.692932-07:00
 description: "Interpolar una cadena significa insertar valores dentro de una string\
   \ de forma din\xE1mica para construir un mensaje. Los programadores lo hacen para\
   \ hacer\u2026"
-lastmod: 2024-02-18 23:09:09.830213
+lastmod: 2024-02-19 22:05:17.446582
 model: gpt-4-1106-preview
 summary: "Interpolar una cadena significa insertar valores dentro de una string de\
   \ forma din\xE1mica para construir un mensaje. Los programadores lo hacen para hacer\u2026"

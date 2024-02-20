@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/javascript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:41.006016-07:00
 description: "YAML, die Abk\xFCrzung f\xFCr YAML Ain't Markup Language, ist ein menschenlesbares\
   \ Daten-Serialisierungsformat. Programmierer verwenden es oft f\xFCr\u2026"
-lastmod: 2024-02-18 23:09:05.300462
+lastmod: 2024-02-19 22:05:13.224371
 model: gpt-4-0125-preview
 summary: "YAML, die Abk\xFCrzung f\xFCr YAML Ain't Markup Language, ist ein menschenlesbares\
   \ Daten-Serialisierungsformat. Programmierer verwenden es oft f\xFCr\u2026"

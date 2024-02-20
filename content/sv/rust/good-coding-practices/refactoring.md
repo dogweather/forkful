@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/refactoring/
 date: 2024-01-26 03:37:17.978527-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator-kod\u2014\
   \xE4ndra faktoriseringen\u2014utan att f\xF6r\xE4ndra dess externa beteende. Programmerare\
   \ g\xF6r det\u2026"
-lastmod: 2024-02-18 23:08:51.591795
+lastmod: 2024-02-19 22:04:56.911363
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator-kod\u2014\
   \xE4ndra faktoriseringen\u2014utan att f\xF6r\xE4ndra dess externa beteende. Programmerare\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/google-apps-script/searching-and-replacing-text/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:09.209367-07:00
 description: "La recherche et le remplacement de texte dans Google Apps Script impliquent\
   \ d'identifier de mani\xE8re programmatique des cha\xEEnes sp\xE9cifiques dans un\u2026"
-lastmod: 2024-02-18 23:09:08.269379
+lastmod: 2024-02-19 22:05:16.075117
 model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte dans Google Apps Script impliquent\
   \ d'identifier de mani\xE8re programmatique des cha\xEEnes sp\xE9cifiques dans un\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/creating-a-temporary-file/
 date: 2024-01-20 17:41:33.600849-07:00
 description: "Cr\xE9er un fichier temporaire, c'est juste \xE9crire des donn\xE9es\
   \ qui n'ont pas besoin de rester longtemps. Les programmeurs le font pour stocker\
   \ des trucs de\u2026"
-lastmod: 2024-02-18 23:09:09.230457
+lastmod: 2024-02-19 22:05:16.897058
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est juste \xE9crire des donn\xE9es qui\
   \ n'ont pas besoin de rester longtemps. Les programmeurs le font pour stocker des\

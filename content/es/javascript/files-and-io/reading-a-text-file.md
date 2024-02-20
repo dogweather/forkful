@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:48.661598-07:00
 description: "Leer un archivo de texto en JavaScript es simplemente acceder al contenido\
   \ almacenado en un archivo de texto (.txt) y trabajar con \xE9l en tu programa.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.424019
+lastmod: 2024-02-19 22:05:17.979823
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en JavaScript es simplemente acceder al contenido\
   \ almacenado en un archivo de texto (.txt) y trabajar con \xE9l en tu programa.\

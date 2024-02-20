@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/powershell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:23.285344-07:00
 description: "Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle\
   \ Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend\u2026"
-lastmod: 2024-02-18 23:09:05.112252
+lastmod: 2024-02-19 22:05:13.045947
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle\
   \ Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend\u2026"

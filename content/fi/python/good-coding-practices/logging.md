@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/python/logging/
 date: 2024-01-26 01:08:25.680327-07:00
 description: "Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman\
   \ suorituksen aikana, tarjoten j\xE4ljityspolkua j\xE4lkianalyysiin ja reaaliaikaiseen\u2026"
-lastmod: 2024-02-18 23:09:07.190584
+lastmod: 2024-02-19 22:05:15.081441
 model: gpt-4-1106-preview
 summary: "Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman suorituksen\
   \ aikana, tarjoten j\xE4ljityspolkua j\xE4lkianalyysiin ja reaaliaikaiseen\u2026"

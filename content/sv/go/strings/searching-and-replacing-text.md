@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:28.648025-07:00
 description: "Att s\xF6ka och ers\xE4tta text i programmering underl\xE4ttar modifiering\
   \ och hantering av str\xE4ngar, vilket \xE4r en grundl\xE4ggande uppgift i datahantering\
   \ och\u2026"
-lastmod: 2024-02-18 23:08:51.317512
+lastmod: 2024-02-19 22:04:56.607387
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i programmering underl\xE4ttar modifiering\
   \ och hantering av str\xE4ngar, vilket \xE4r en grundl\xE4ggande uppgift i datahantering\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/ruby/using-a-debugger/
 date: 2024-01-26 04:09:50.159908-07:00
 description: "Rubyssa debuggerin k\xE4ytt\xF6 antaa ohjelmoijille supervoiman pys\xE4\
   ytt\xE4\xE4 koodinsa, tarkastella muuttujia ja k\xE4yd\xE4 l\xE4pi koodiaan rivi\
   \ rivilt\xE4. Ihmiset tekev\xE4t\u2026"
-lastmod: 2024-02-18 23:09:08.187723
+lastmod: 2024-02-19 22:05:16.000314
 model: gpt-4-0125-preview
 summary: "Rubyssa debuggerin k\xE4ytt\xF6 antaa ohjelmoijille supervoiman pys\xE4\
   ytt\xE4\xE4 koodinsa, tarkastella muuttujia ja k\xE4yd\xE4 l\xE4pi koodiaan rivi\

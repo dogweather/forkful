@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/java/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:45.717129-07:00
 description: "Obtenir la date actuelle en Java est une op\xE9ration fondamentale qui\
   \ permet aux programmeurs de manipuler des objets de date pour des op\xE9rations\
   \ telles que\u2026"
-lastmod: 2024-02-18 23:09:08.639876
+lastmod: 2024-02-19 22:05:16.410883
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Java est une op\xE9ration fondamentale qui permet\
   \ aux programmeurs de manipuler des objets de date pour des op\xE9rations telles\

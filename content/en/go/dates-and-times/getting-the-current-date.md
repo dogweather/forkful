@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/getting-the-current-date/
 date: 2024-02-03 17:50:03.342127-07:00
 description: "Getting the current date in Go is a fundamental task for programmers,\
   \ akin to \"Hello, World!\" in its ubiquity. It's essential for tasks ranging from\u2026"
-lastmod: 2024-02-18 23:09:10.607206
+lastmod: 2024-02-19 22:05:18.148674
 model: gpt-4-0125-preview
 summary: "Getting the current date in Go is a fundamental task for programmers, akin\
   \ to \"Hello, World!\" in its ubiquity. It's essential for tasks ranging from\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/go/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:15.984431-07:00
 description: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji\
   \ o wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i\u2026"
-lastmod: 2024-02-18 23:08:49.105474
+lastmod: 2024-02-19 22:04:54.044186
 model: gpt-4-0125-preview
 summary: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji o\
   \ wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i\u2026"

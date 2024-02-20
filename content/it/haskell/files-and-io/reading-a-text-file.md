@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/haskell/reading-a-text-file/
 date: 2024-01-20 17:54:36.829276-07:00
 description: "Leggere un file di testo permette ai programmi di processare dati salvati\
   \ su disco. Programmatori lo fanno per analizzare, modificare o semplicemente\u2026"
-lastmod: 2024-02-18 23:08:55.946780
+lastmod: 2024-02-19 22:05:02.558182
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo permette ai programmi di processare dati salvati\
   \ su disco. Programmatori lo fanno per analizzare, modificare o semplicemente\u2026"

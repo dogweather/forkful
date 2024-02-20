@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:02.441241-07:00
 description: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Gro\xDF\
   buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren.\u2026"
-lastmod: 2024-02-18 23:09:05.175526
+lastmod: 2024-02-19 22:05:13.106519
 model: gpt-4-1106-preview
 summary: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Gro\xDF\
   buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren.\u2026"

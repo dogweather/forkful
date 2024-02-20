@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/arduino/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:31.113454-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, alle\
   \ Instanzen von einfachen (`'`) oder doppelten (`\"`) Anf\xFChrungszeichen, die\
   \ den Text\u2026"
-lastmod: 2024-02-18 23:09:05.133452
+lastmod: 2024-02-19 22:05:13.065728
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, alle Instanzen\
   \ von einfachen (`'`) oder doppelten (`\"`) Anf\xFChrungszeichen, die den Text\u2026"

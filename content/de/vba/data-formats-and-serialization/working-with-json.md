@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/vba/working-with-json/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:39.801247-07:00
 description: "JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat,\
   \ das sowohl f\xFCr Menschen leicht zu lesen und zu schreiben als auch f\xFCr\u2026"
-lastmod: 2024-02-18 23:09:04.714194
+lastmod: 2024-02-19 22:05:12.666411
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat,\
   \ das sowohl f\xFCr Menschen leicht zu lesen und zu schreiben als auch f\xFCr\u2026"

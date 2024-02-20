@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:09.852088-07:00
 description: "Envoyer une requ\xEAte HTTP avec authentification basique, c'est transmettre\
   \ vos identifiants (username/password) en s\xE9curis\xE9 pour acc\xE9der \xE0 une\
   \ ressource.\u2026"
-lastmod: 2024-02-18 23:09:08.922283
+lastmod: 2024-02-19 22:05:16.614283
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec authentification basique, c'est transmettre\
   \ vos identifiants (username/password) en s\xE9curis\xE9 pour acc\xE9der \xE0 une\

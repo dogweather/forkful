@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/working-with-complex-numbers/
 date: 2024-01-26 04:46:17.702589-07:00
 description: "Kompleksiluvut, jotka koostuvat reaaliosasta ja imagin\xE4\xE4riosasta\
   \ (yleens\xE4 kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka\
   \ ovat\u2026"
-lastmod: 2024-02-18 23:09:07.312129
+lastmod: 2024-02-19 22:05:15.203424
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaaliosasta ja imagin\xE4\xE4riosasta (yleens\xE4\
   \ kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka ovat\u2026"

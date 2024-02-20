@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/working-with-complex-numbers/
 date: 2024-01-26 04:36:59.125319-07:00
 description: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria.\
   \ Programadores os utilizam em campos como processamento de sinal, mec\xE2nica qu\xE2\
   ntica, e\u2026"
-lastmod: 2024-02-18 23:08:58.317510
+lastmod: 2024-02-19 22:05:05.799433
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria. Programadores\
   \ os utilizam em campos como processamento de sinal, mec\xE2nica qu\xE2ntica, e\u2026"

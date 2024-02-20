@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/lua/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:29.440636-07:00
 description: "Lavorare con file CSV (Valori Separati da Virgola) comporta l'analisi\
   \ e la generazione di dati di testo organizzati in righe e colonne, utilizzando\
   \ le\u2026"
-lastmod: 2024-02-18 23:08:56.032461
+lastmod: 2024-02-19 22:05:02.649301
 model: gpt-4-0125-preview
 summary: "Lavorare con file CSV (Valori Separati da Virgola) comporta l'analisi e\
   \ la generazione di dati di testo organizzati in righe e colonne, utilizzando le\u2026"

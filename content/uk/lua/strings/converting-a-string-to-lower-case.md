@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/lua/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:52.480864-07:00
 description: ''
-lastmod: 2024-02-18 23:09:00.546838
+lastmod: 2024-02-19 22:05:08.514801
 model: gpt-4-1106-preview
 summary: ''
 title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0440\

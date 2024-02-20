@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/extracting-substrings/
 date: 2024-01-20 17:45:10.137751-07:00
 description: "Extraer subcadenas significa obtener partes espec\xEDficas de una cadena\
   \ de texto. Los programadores lo hacen para filtrar datos, manejar entradas del\u2026"
-lastmod: 2024-02-18 23:09:10.153349
+lastmod: 2024-02-19 22:05:17.740786
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas significa obtener partes espec\xEDficas de una cadena\
   \ de texto. Los programadores lo hacen para filtrar datos, manejar entradas del\u2026"

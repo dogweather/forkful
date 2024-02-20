@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:46.309129-07:00
 description: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter\
   \ van een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"
-lastmod: 2024-02-18 23:09:01.319001
+lastmod: 2024-02-19 22:05:09.353549
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van\
   \ een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"

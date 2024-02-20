@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/using-a-debugger/
 date: 2024-01-26 03:48:19.193934-07:00
 description: "Att anv\xE4nda en debugger inneb\xE4r att du utrustar dig sj\xE4lv med\
   \ ett f\xF6rstoringsglas f\xF6r att granska din kod. Programmerare g\xF6r detta\
   \ f\xF6r att krossa buggar,\u2026"
-lastmod: 2024-02-18 23:08:51.466508
+lastmod: 2024-02-19 22:04:56.773545
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda en debugger inneb\xE4r att du utrustar dig sj\xE4lv med ett\
   \ f\xF6rstoringsglas f\xF6r att granska din kod. Programmerare g\xF6r detta f\xF6\

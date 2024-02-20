@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:11.425280-07:00
 description: "\uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790 \uC0AD\uC81C\uB294 \uBB38\
   \uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC774\uB098 \uBB38\uC790\uB97C\
@@ -10,7 +8,7 @@ description: "\uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790 \uC0AD\uC81C\uB294 \u
   \uBD84\uC744 \uC81C\uAC70\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC790\
   \uC8FC \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.731006
+lastmod: 2024-02-19 22:05:13.642502
 model: gpt-4-1106-preview
 summary: "\uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790 \uC0AD\uC81C\uB294 \uBB38\uC790\
   \uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC774\uB098 \uBB38\uC790\uB97C \uCC3E\

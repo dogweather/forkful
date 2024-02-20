@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/arduino/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:26.960869-07:00
 description: "\xC5 analysere en dato fra en streng i Arduino involverer \xE5 trekke\
   \ ut og konvertere datokomponentene (\xE5r, m\xE5ned, dag) fra en tekstlig representasjon\
   \ til et\u2026"
-lastmod: 2024-02-18 23:08:54.151623
+lastmod: 2024-02-19 22:05:00.339093
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Arduino involverer \xE5 trekke ut\
   \ og konvertere datokomponentene (\xE5r, m\xE5ned, dag) fra en tekstlig representasjon\

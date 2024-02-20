@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/downloading-a-web-page/
 date: 2024-01-20 17:44:16.039786-07:00
 description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania danych\
   \ z serwera. Programi\u015Bci robi\u0105 to, by pracowa\u0107 z tre\u015Bci\u0105\
   \ offline, analizowa\u0107 dane czy integrowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.567815
+lastmod: 2024-02-19 22:04:54.494703
 model: gpt-4-1106-preview
 summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania danych z serwera.\
   \ Programi\u015Bci robi\u0105 to, by pracowa\u0107 z tre\u015Bci\u0105 offline,\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/kotlin/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:46.852757-07:00
 description: "En REPL (Read-Eval-Print Loop) er et enkelt, interaktivt programmeringsmilj\xF8\
   . Programmerere bruker det for raske kodingstester, teste kodebiter eller l\xE6\
   re\u2026"
-lastmod: 2024-02-18 23:08:53.853967
+lastmod: 2024-02-19 22:05:00.012725
 model: gpt-4-0125-preview
 summary: "En REPL (Read-Eval-Print Loop) er et enkelt, interaktivt programmeringsmilj\xF8\
   . Programmerere bruker det for raske kodingstester, teste kodebiter eller l\xE6\

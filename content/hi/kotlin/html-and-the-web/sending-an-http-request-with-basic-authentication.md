@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/kotlin/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:14.373941-07:00
 description: "HTTP request \u092D\u0947\u091C\u0928\u093E \u090F\u0915 \u0935\u0947\
   \u092C \u0938\u0930\u094D\u0935\u0930 \u0938\u0947 \u0921\u0947\u091F\u093E \u092E\
@@ -9,7 +7,7 @@ description: "HTTP request \u092D\u0947\u091C\u0928\u093E \u090F\u0915 \u0935\u0
   \u094D\u0935\u0930 \u0915\u094B username \u0914\u0930 password \u092D\u0947\u091C\
   \u0915\u0930 \u0905\u092A\u0928\u0940 \u092A\u0939\u091A\u093E\u0928 \u0938\u093E\
   \u092C\u093F\u0924 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964\u2026"
-lastmod: 2024-02-18 23:09:03.268417
+lastmod: 2024-02-19 22:05:11.262532
 model: gpt-4-1106-preview
 summary: "HTTP request \u092D\u0947\u091C\u0928\u093E \u090F\u0915 \u0935\u0947\u092C\
   \ \u0938\u0930\u094D\u0935\u0930 \u0938\u0947 \u0921\u0947\u091F\u093E \u092E\u093E\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/haskell/extracting-substrings/
 date: 2024-01-20 17:46:08.650962-07:00
 description: "Estrarre sottosequenze (o sottostringhe) significa prendere parti specifiche\
   \ di una stringa. Questo \xE8 utile per analisi, manipolazioni, e controllo di\u2026"
-lastmod: 2024-02-18 23:08:55.919562
+lastmod: 2024-02-19 22:05:02.529395
 model: gpt-4-1106-preview
 summary: "Estrarre sottosequenze (o sottostringhe) significa prendere parti specifiche\
   \ di una stringa. Questo \xE8 utile per analisi, manipolazioni, e controllo di\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/writing-to-standard-error/
 date: 2024-02-01 21:30:22.654809-07:00
 description: "Writing to standard error in Visual Basic for Applications (VBA) involves\
   \ directing error messages or diagnostics apart from standard output, usually to\u2026"
-lastmod: 2024-02-18 23:09:10.905933
+lastmod: 2024-02-19 22:05:18.417706
 model: gpt-4-0125-preview
 summary: "Writing to standard error in Visual Basic for Applications (VBA) involves\
   \ directing error messages or diagnostics apart from standard output, usually to\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/c/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:43.813371-07:00
 description: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
   \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"
-lastmod: 2024-02-18 23:09:09.354137
+lastmod: 2024-02-19 22:05:17.020941
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
   \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"

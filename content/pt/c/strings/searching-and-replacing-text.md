@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/c/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:25.026823-07:00
 description: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
   ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"
-lastmod: 2024-02-18 23:08:58.603002
+lastmod: 2024-02-19 22:05:06.102417
 model: gpt-4-0125-preview
 summary: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
   ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"

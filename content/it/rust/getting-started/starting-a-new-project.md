@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/rust/starting-a-new-project/
 date: 2024-01-20 18:04:17.026416-07:00
 description: "Partire con un nuovo progetto \xE8 eccitante; \xE8 l'atto di creare\
   \ un ambiente di codice da zero. I programmatori lo fanno perch\xE9 vogliono trasformare\
   \ le idee\u2026"
-lastmod: 2024-02-18 23:08:55.680841
+lastmod: 2024-02-19 22:05:02.279545
 model: gpt-4-1106-preview
 summary: "Partire con un nuovo progetto \xE8 eccitante; \xE8 l'atto di creare un ambiente\
   \ di codice da zero. I programmatori lo fanno perch\xE9 vogliono trasformare le\

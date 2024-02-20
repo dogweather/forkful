@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:40.344673-07:00
 description: "En la programaci\xF3n Bash, comprobar si un directorio existe es un\
   \ mecanismo de control esencial utilizado para verificar la presencia de un directorio\u2026"
-lastmod: 2024-02-18 23:09:10.182787
+lastmod: 2024-02-19 22:05:17.768013
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n Bash, comprobar si un directorio existe es un mecanismo\
   \ de control esencial utilizado para verificar la presencia de un directorio\u2026"

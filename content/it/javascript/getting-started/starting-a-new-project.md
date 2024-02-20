@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/javascript/starting-a-new-project/
 date: 2024-01-20 18:03:59.259362-07:00
 description: "Partire con un nuovo progetto JavaScript significa gettare le basi per\
   \ un\u2019applicazione. I programmatori lo fanno per trasformare idee in realt\xE0\
   \ digitale,\u2026"
-lastmod: 2024-02-18 23:08:56.253342
+lastmod: 2024-02-19 22:05:02.886841
 model: gpt-4-1106-preview
 summary: "Partire con un nuovo progetto JavaScript significa gettare le basi per un\u2019\
   applicazione. I programmatori lo fanno per trasformare idee in realt\xE0 digitale,\u2026"

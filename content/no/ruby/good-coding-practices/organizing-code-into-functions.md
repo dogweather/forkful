@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/ruby/organizing-code-into-functions/
 date: 2024-01-26 01:11:46.688282-07:00
 description: "\xC5 organisere kode i funksjoner deler scriptet ditt inn i gjenbrukbare\
   \ deler. Det handler om \xE5 gj\xF8re koden din ren, h\xE5ndterbar og mindre feilutsatt.\u2026"
-lastmod: 2024-02-18 23:08:54.443662
+lastmod: 2024-02-19 22:05:00.606583
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner deler scriptet ditt inn i gjenbrukbare\
   \ deler. Det handler om \xE5 gj\xF8re koden din ren, h\xE5ndterbar og mindre feilutsatt.\u2026"

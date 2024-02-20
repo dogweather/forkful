@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/arduino/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:49.262097-07:00
 description: ''
-lastmod: 2024-02-18 23:09:00.821829
+lastmod: 2024-02-19 22:05:08.878751
 model: gpt-4-1106-preview
 summary: ''
 title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0434\

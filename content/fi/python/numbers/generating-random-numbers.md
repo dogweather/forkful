@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/generating-random-numbers/
 date: 2024-01-27 20:35:24.551513-07:00
 description: "Satunnaislukujen tuottaminen tarkoittaa sellaisten lukujen luomista,\
   \ joita ei voida kohtuullisesti ennakoida paremmin kuin sattuman kautta, mik\xE4\
   \ on\u2026"
-lastmod: 2024-02-18 23:09:07.179172
+lastmod: 2024-02-19 22:05:15.053174
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen tarkoittaa sellaisten lukujen luomista, joita\
   \ ei voida kohtuullisesti ennakoida paremmin kuin sattuman kautta, mik\xE4 on\u2026"

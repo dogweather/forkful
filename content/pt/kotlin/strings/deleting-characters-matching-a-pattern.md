@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:52.883098-07:00
 description: "Remover caracteres que correspondem a um padr\xE3o \xE9 uma opera\xE7\
   \xE3o de filtragem de strings para mold\xE1-las conforme a necessidade. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.085928
+lastmod: 2024-02-19 22:05:05.565765
 model: gpt-4-1106-preview
 summary: "Remover caracteres que correspondem a um padr\xE3o \xE9 uma opera\xE7\xE3\
   o de filtragem de strings para mold\xE1-las conforme a necessidade. Programadores\

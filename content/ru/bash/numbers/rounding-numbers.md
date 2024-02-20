@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/bash/rounding-numbers/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:01:42.291805-07:00
@@ -15,7 +13,7 @@ description: "\u041E\u043A\u0440\u0443\u0433\u043B\u0435\u043D\u0438\u0435 \u044
   \ \u0434\u043B\u044F \u0434\u0430\u043D\u043D\u043E\u0433\u043E \u043A\u043E\u043D\
   \u0442\u0435\u043A\u0441\u0442\u0430. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\
   \u043C\u0438\u0441\u0442\u044B\u2026"
-lastmod: 2024-02-18 23:08:57.194835
+lastmod: 2024-02-19 22:05:04.323468
 model: gpt-4-0125-preview
 summary: "\u041E\u043A\u0440\u0443\u0433\u043B\u0435\u043D\u0438\u0435 \u0447\u0438\
   \u0441\u0435\u043B \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442 \u043E\u0442\

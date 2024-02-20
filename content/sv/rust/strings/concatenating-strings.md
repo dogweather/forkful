@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/concatenating-strings/
 date: 2024-01-20 17:35:31.814330-07:00
 description: "Sammanfogning av str\xE4ngar \xE4r processen att limma ihop textstycken\
   \ f\xF6r att skapa en ny, sammanh\xE4ngande text. Programmerare g\xF6r detta f\xF6\
   r att bygga\u2026"
-lastmod: 2024-02-18 23:08:51.576228
+lastmod: 2024-02-19 22:04:56.893882
 model: gpt-4-1106-preview
 summary: "Sammanfogning av str\xE4ngar \xE4r processen att limma ihop textstycken\
   \ f\xF6r att skapa en ny, sammanh\xE4ngande text. Programmerare g\xF6r detta f\xF6\

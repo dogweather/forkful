@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:12.048431-07:00
 description: "L'impression de sorties de d\xE9bogage consiste \xE0 g\xE9n\xE9rer des\
   \ messages de journal temporaires et informatifs qui peuvent aider les programmeurs\
   \ \xE0 comprendre\u2026"
-lastmod: 2024-02-18 23:09:09.359004
+lastmod: 2024-02-19 22:05:17.025387
 model: gpt-4-0125-preview
 summary: "L'impression de sorties de d\xE9bogage consiste \xE0 g\xE9n\xE9rer des messages\
   \ de journal temporaires et informatifs qui peuvent aider les programmeurs \xE0\

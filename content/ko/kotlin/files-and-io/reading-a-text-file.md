@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/reading-a-text-file/
 date: 2024-01-20 17:55:06.515102-07:00
 description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294 \uAC83\uC740 \uD30C\
   \uC77C\uC5D0\uC11C \uBB38\uC790 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\uB294\
@@ -9,7 +7,7 @@ description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294 \uAC83\uC740 \u
   \ \uC790\uB3D9\uD654 \uB4F1\uC744 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.178793
+lastmod: 2024-02-19 22:05:14.108986
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294 \uAC83\uC740 \uD30C\uC77C\
   \uC5D0\uC11C \uBB38\uC790 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\uB294 \uD504\

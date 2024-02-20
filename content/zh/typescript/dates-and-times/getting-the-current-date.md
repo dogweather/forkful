@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/typescript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:58.939012-07:00
@@ -10,7 +8,7 @@ description: "\u5728 TypeScript \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u548C
   \u671F\u548C\u65F6\u95F4\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u9700\u8981\
   \u8FD9\u4E2A\u529F\u80FD\u6765\u521B\u5EFA\u65F6\u95F4\u6233\u3001\u6392\u7A0B\u548C\
   \u5176\u4ED6\u5E94\u7528\u4E2D\u7684\u65F6\u95F4\u654F\u611F\u7279\u6027\u3002"
-lastmod: 2024-02-18 23:08:58.913057
+lastmod: 2024-02-19 22:05:06.500020
 model: gpt-4-0125-preview
 summary: "\u5728 TypeScript \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u548C\u65F6\
   \u95F4\uFF0C\u4E00\u4E2A\u6784\u5EFA\u4E8E JavaScript \u4E4B\u4E0A\u7684\u8BED\u8A00\

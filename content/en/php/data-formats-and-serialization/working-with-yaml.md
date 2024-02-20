@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/working-with-yaml/
 date: 2024-02-03 19:03:21.023196-07:00
 description: "YAML, which stands for \"YAML Ain't Markup Language\", is a human-readable\
   \ data serialization format that is commonly used for configuration files.\u2026"
-lastmod: 2024-02-18 23:09:11.157423
+lastmod: 2024-02-19 22:05:18.648047
 model: gpt-4-0125-preview
 summary: "YAML, which stands for \"YAML Ain't Markup Language\", is a human-readable\
   \ data serialization format that is commonly used for configuration files.\u2026"

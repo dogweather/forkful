@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:25.519893-07:00
 description: "Het downloaden van een webpagina betekent het ophalen van de HTML van\
   \ een gegeven URL om lokaal te bekijken of te gebruiken. Programmeurs doen dit voor\u2026"
-lastmod: 2024-02-18 23:09:01.804199
+lastmod: 2024-02-19 22:05:09.820847
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina betekent het ophalen van de HTML van een\
   \ gegeven URL om lokaal te bekijken of te gebruiken. Programmeurs doen dit voor\u2026"

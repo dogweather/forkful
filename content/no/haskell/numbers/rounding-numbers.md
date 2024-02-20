@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/haskell/rounding-numbers/
 date: 2024-01-26 03:44:48.160787-07:00
 description: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste heltall eller\
   \ angitt desimalplass. Programmerere runder av tall for \xE5 kontrollere presisjon,\
   \ tilpasse\u2026"
-lastmod: 2024-02-18 23:08:53.929992
+lastmod: 2024-02-19 22:05:00.100462
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste heltall eller\
   \ angitt desimalplass. Programmerere runder av tall for \xE5 kontrollere presisjon,\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/handling-errors/
 date: 2024-01-21 21:19:09.389800-07:00
 description: "Handling errors in Bash scripting is about anticipating where things\
   \ might go sideways and dealing with it gracefully. Why? Well, it keeps your script\u2026"
-lastmod: 2024-02-18 23:09:11.237478
+lastmod: 2024-02-19 22:05:18.714035
 model: gpt-4-1106-preview
 summary: "Handling errors in Bash scripting is about anticipating where things might\
   \ go sideways and dealing with it gracefully. Why? Well, it keeps your script\u2026"

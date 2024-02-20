@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:31.752282-07:00
@@ -14,7 +12,7 @@ description: "\u0935\u093F\u0936\u0947\u0937 \u092A\u0948\u091F\u0930\u094D\u092
   \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0909\u092A\u092F\u094B\u0917 \u0915\
   \u0940 \u091C\u093E\u0924\u0940 \u0939\u0948\u0964 Google \u0910\u092A\u094D\u0938\
   \u2026"
-lastmod: 2024-02-18 23:09:02.536269
+lastmod: 2024-02-19 22:05:10.538580
 model: gpt-4-0125-preview
 summary: "\u0935\u093F\u0936\u0947\u0937 \u092A\u0948\u091F\u0930\u094D\u0928 \u0915\
   \u0947 \u0938\u093E\u0925 \u092E\u0947\u0932 \u0916\u093E\u0928\u0947 \u0935\u093E\

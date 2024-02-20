@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/deleting-characters-matching-a-pattern/
 date: 2024-02-03 17:50:02.671575-07:00
 description: "Deleting characters matching a specific pattern from strings in C is\
   \ about removing all instances of certain characters that fit predefined criteria.\u2026"
-lastmod: 2024-02-18 23:09:11.506849
+lastmod: 2024-02-19 22:05:18.958752
 model: gpt-4-0125-preview
 summary: "Deleting characters matching a specific pattern from strings in C is about\
   \ removing all instances of certain characters that fit predefined criteria.\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/getting-the-current-date/
 date: 2024-02-03 19:02:47.219646-07:00
 description: "Retrieving the current date in C++ is a fundamental task for programs\
   \ that need to process or display dates based on the system's clock. It's essential\u2026"
-lastmod: 2024-02-18 23:09:11.365625
+lastmod: 2024-02-19 22:05:18.829463
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in C++ is a fundamental task for programs that\
   \ need to process or display dates based on the system's clock. It's essential\u2026"

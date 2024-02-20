@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:12.590511-07:00
 description: "Konvertering av dato til streng handler om \xE5 endre et datoobjekt\
   \ til en tekstrepresentasjon. Dette er nyttig for \xE5 vise datoer lesevennlig for\
   \ brukere\u2026"
-lastmod: 2024-02-18 23:08:53.535322
+lastmod: 2024-02-19 22:04:59.654591
 model: gpt-4-1106-preview
 summary: "Konvertering av dato til streng handler om \xE5 endre et datoobjekt til\
   \ en tekstrepresentasjon. Dette er nyttig for \xE5 vise datoer lesevennlig for brukere\u2026"

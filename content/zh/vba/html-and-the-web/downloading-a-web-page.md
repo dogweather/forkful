@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:45.821450-07:00
@@ -9,7 +7,7 @@ description: "\u5728Visual Basic for Applications (VBA)\u4E2D\u4E0B\u8F7D\u7F51\
   \u5BB9\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u6B64\u4EFB\u52A1\u6765\u7A0B\
   \u5E8F\u5316\u5730\u5904\u7406\u6216\u5206\u6790\u7F51\u7AD9\u7684\u5185\u5BB9\uFF0C\
   \u4ECEExcel\u3001Access\u6216\u5176\u4ED6Office\u5E94\u7528\u7A0B\u5E8F\u4E2D\u3002"
-lastmod: 2024-02-18 23:08:58.979489
+lastmod: 2024-02-19 22:05:06.591929
 model: gpt-4-0125-preview
 summary: "\u5728Visual Basic for Applications (VBA)\u4E2D\u4E0B\u8F7D\u7F51\u9875\u6D89\
   \u53CA\u4ECE\u4E92\u8054\u7F51\u4E0A\u83B7\u53D6\u7F51\u9875\u7684HTML\u5185\u5BB9\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/typescript/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:46.458283-07:00
 description: "Das Umwandeln eines Datums in einen String ist der Prozess, bei dem\
   \ ein Datum als lesbare Zeichenkette dargestellt wird. Programmierer nutzen dies,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:04.608850
+lastmod: 2024-02-19 22:05:12.566058
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String ist der Prozess, bei dem ein\
   \ Datum als lesbare Zeichenkette dargestellt wird. Programmierer nutzen dies, um\u2026"

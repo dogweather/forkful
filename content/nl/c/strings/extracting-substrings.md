@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:41.797843-07:00
 description: "Het extraheren van substrings in C omvat het cre\xEBren van een kleinere\
   \ string (substring) uit een grotere string op basis van gespecificeerde criteria,\u2026"
-lastmod: 2024-02-18 23:09:02.360235
+lastmod: 2024-02-19 22:05:10.367347
 model: gpt-4-0125-preview
 summary: "Het extraheren van substrings in C omvat het cre\xEBren van een kleinere\
   \ string (substring) uit een grotere string op basis van gespecificeerde criteria,\u2026"

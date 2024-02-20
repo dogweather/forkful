@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/concatenating-strings/
 date: 2024-01-20 17:34:57.608654-07:00
 description: "String concatenation is like making a sandwich, but instead of bread\
   \ and fillings, you're stacking words together to form a sentence or a phrase.\u2026"
-lastmod: 2024-02-18 23:09:11.004968
+lastmod: 2024-02-19 22:05:18.509065
 model: gpt-4-1106-preview
 summary: "String concatenation is like making a sandwich, but instead of bread and\
   \ fillings, you're stacking words together to form a sentence or a phrase.\u2026"

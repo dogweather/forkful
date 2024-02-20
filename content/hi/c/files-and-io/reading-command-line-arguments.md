@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:24.239339-07:00
@@ -14,7 +12,7 @@ description: "\u0938\u0940 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092
   \u0940 \u0905\u0928\u0941\u092E\u0924\u093F \u0926\u0947\u0924\u093E \u0939\u0948\
   , \u091C\u093F\u0938\u0938\u0947 \u0932\u091A\u0940\u0932\u093E\u092A\u0928 \u0914\
   \u0930 \u0909\u092A\u092F\u094B\u0917\u093F\u0924\u093E\u2026"
-lastmod: 2024-02-18 23:09:04.241917
+lastmod: 2024-02-19 22:05:12.214772
 model: gpt-4-0125-preview
 summary: "\u0938\u0940 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\
   \u0902\u0917 \u092E\u0947\u0902, \u0915\u092E\u093E\u0902\u0921 \u0932\u093E\u0907\

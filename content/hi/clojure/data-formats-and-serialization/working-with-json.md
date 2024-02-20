@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/clojure/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:06.543499-07:00
@@ -14,7 +12,7 @@ description: "\u0915\u094D\u0932\u094B\u091C\u093C\u0930 \u092E\u0947\u0902 JSON
   \u093F\u0902\u0917\u094D\u0938 \u0915\u094B \u092A\u093E\u0930\u094D\u0938 \u0915\
   \u0930\u0928\u0947 \u0914\u0930 \u0907\u0938\u0915\u0947 \u0935\u093F\u092A\u0930\
   \u0940\u0924\u2026"
-lastmod: 2024-02-18 23:09:02.764511
+lastmod: 2024-02-19 22:05:10.762752
 model: gpt-4-0125-preview
 summary: "\u0915\u094D\u0932\u094B\u091C\u093C\u0930 \u092E\u0947\u0902 JSON (\u091C\
   \u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\u091F \u0911\u092C\

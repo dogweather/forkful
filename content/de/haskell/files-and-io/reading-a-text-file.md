@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/haskell/reading-a-text-file/
 date: 2024-01-20 17:54:35.492674-07:00
 description: "Das Einlesen einer Textdatei bedeutet, Daten vom Datentr\xE4ger in den\
   \ Arbeitsspeicher zu laden, um sie mit einem Programm zu verarbeiten. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.935924
+lastmod: 2024-02-19 22:05:12.875851
 model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei bedeutet, Daten vom Datentr\xE4ger in den Arbeitsspeicher\
   \ zu laden, um sie mit einem Programm zu verarbeiten. Programmierer\u2026"

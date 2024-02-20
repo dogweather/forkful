@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/powershell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:36.484239-07:00
 description: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa\
   \ virhesanomien tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan,\
   \ joka on\u2026"
-lastmod: 2024-02-18 23:09:07.871675
+lastmod: 2024-02-19 22:05:15.694705
 model: gpt-4-0125-preview
 summary: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa virhesanomien\
   \ tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan, joka on\u2026"

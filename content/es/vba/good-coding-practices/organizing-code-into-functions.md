@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:26.902246-07:00
 description: "Organizar el c\xF3digo en funciones en Visual Basic para Aplicaciones\
   \ (VBA) implica desglosar un programa en piezas m\xE1s peque\xF1as y manejables\
   \ conocidas como\u2026"
-lastmod: 2024-02-18 23:09:09.803410
+lastmod: 2024-02-19 22:05:17.422237
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones en Visual Basic para Aplicaciones (VBA)\
   \ implica desglosar un programa en piezas m\xE1s peque\xF1as y manejables conocidas\

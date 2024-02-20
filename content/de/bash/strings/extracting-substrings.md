@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/extracting-substrings/
 date: 2024-01-20 17:44:55.636805-07:00
 description: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Textabschnitte\
   \ aus l\xE4ngeren Strings herauszul\xF6sen. Das ist n\xFCtzlich, wenn du Daten bearbeiten\u2026"
-lastmod: 2024-02-18 23:09:05.040334
+lastmod: 2024-02-19 22:05:12.977559
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Textabschnitte\
   \ aus l\xE4ngeren Strings herauszul\xF6sen. Das ist n\xFCtzlich, wenn du Daten bearbeiten\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/google-apps-script/concatenating-strings/
 date: 2024-02-01 21:12:01.346171-07:00
 description: "Concatenating strings involves combining two or more strings into a\
   \ single string. Programmers do this to dynamically construct messages, URLs, or\
   \ any\u2026"
-lastmod: 2024-02-18 23:09:10.631238
+lastmod: 2024-02-19 22:05:18.169566
 model: gpt-4-0125-preview
 summary: "Concatenating strings involves combining two or more strings into a single\
   \ string. Programmers do this to dynamically construct messages, URLs, or any\u2026"

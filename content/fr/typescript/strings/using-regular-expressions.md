@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/typescript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:05.333545-07:00
 description: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant de\
   \ correspondance et de recherche de motifs en programmation. Les programmeurs utilisent\u2026"
-lastmod: 2024-02-18 23:09:08.470597
+lastmod: 2024-02-19 22:05:16.256923
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant de correspondance\
   \ et de recherche de motifs en programmation. Les programmeurs utilisent\u2026"

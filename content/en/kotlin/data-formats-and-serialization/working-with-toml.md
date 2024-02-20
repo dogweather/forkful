@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/working-with-toml/
 date: 2024-01-25 03:39:56.036260-07:00
 description: "TOML stands for Tom's Obvious, Minimal Language. It's used for configuration\
   \ files because it's easy to read and write for humans, while still being easy\u2026"
-lastmod: 2024-02-18 23:09:11.035915
+lastmod: 2024-02-19 22:05:18.537173
 model: gpt-4-1106-preview
 summary: "TOML stands for Tom's Obvious, Minimal Language. It's used for configuration\
   \ files because it's easy to read and write for humans, while still being easy\u2026"

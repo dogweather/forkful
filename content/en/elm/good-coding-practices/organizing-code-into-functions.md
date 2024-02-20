@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/organizing-code-into-functions/
 date: 2024-01-25 02:59:38.101508-07:00
 description: "Dumping all your code into one big pile? Bad idea. Breaking it up into\
   \ functions? Good idea. It keeps your Elm code clean, reusable, and easier to test.\u2026"
-lastmod: 2024-02-18 23:09:10.977364
+lastmod: 2024-02-19 22:05:18.483718
 model: gpt-4-1106-preview
 summary: "Dumping all your code into one big pile? Bad idea. Breaking it up into functions?\
   \ Good idea. It keeps your Elm code clean, reusable, and easier to test.\u2026"

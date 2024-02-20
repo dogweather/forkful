@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/fish-shell/working-with-yaml/
 date: 2024-02-03 19:03:10.609396-07:00
 description: "Working with YAML involves parsing and manipulating YAML (YAML Ain't\
   \ Markup Language) files, a data serialization format used for configuration files,\
   \ in\u2026"
-lastmod: 2024-02-18 23:09:11.501116
+lastmod: 2024-02-19 22:05:18.953406
 model: gpt-4-0125-preview
 summary: "Working with YAML involves parsing and manipulating YAML (YAML Ain't Markup\
   \ Language) files, a data serialization format used for configuration files, in\u2026"

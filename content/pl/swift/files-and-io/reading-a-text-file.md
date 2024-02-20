@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/reading-a-text-file/
 date: 2024-01-20 17:55:33.977595-07:00
 description: "Czytanie pliku tekstowego to operacja pobierania danych zapisanych w\
   \ pliku na dysku. Programi\u015Bci robi\u0105 to, aby wczytywa\u0107 konfiguracje,\
   \ analizowa\u0107 dane lub\u2026"
-lastmod: 2024-02-18 23:08:49.969813
+lastmod: 2024-02-19 22:04:54.920874
 model: gpt-4-1106-preview
 summary: "Czytanie pliku tekstowego to operacja pobierania danych zapisanych w pliku\
   \ na dysku. Programi\u015Bci robi\u0105 to, aby wczytywa\u0107 konfiguracje, analizowa\u0107\

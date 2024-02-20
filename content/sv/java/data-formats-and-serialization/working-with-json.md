@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:04.571921-07:00
 description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att hantera\
   \ detta l\xE4tta datautbytesformat inuti dina Java-applikationer. Programmerare\
   \ v\xE4ljer\u2026"
-lastmod: 2024-02-18 23:08:51.689899
+lastmod: 2024-02-19 22:04:57.019014
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att hantera\
   \ detta l\xE4tta datautbytesformat inuti dina Java-applikationer. Programmerare\

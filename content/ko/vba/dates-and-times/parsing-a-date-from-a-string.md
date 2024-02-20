@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:45.909122-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4\
   \uC0B0 \uB610\uB294 \uD615\uC2DD \uC9C0\uC815 \uB4F1\uC758 \uBAA9\uC801\uC73C\uB85C\
   \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBCF4\uB2E4\
   \ \uD6A8\uACFC\uC801\uC73C\uB85C\u2026"
-lastmod: 2024-02-18 23:09:05.968447
+lastmod: 2024-02-19 22:05:13.903064
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C\
   \ \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uB97C \uB098\

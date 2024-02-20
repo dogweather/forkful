@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:26.389268-07:00
 description: "Convertir una cadena a min\xFAsculas significa cambiar todas las letras\
   \ may\xFAsculas de un texto a su forma min\xFAscula. Los programadores hacen esto\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:09.589370
+lastmod: 2024-02-19 22:05:17.235188
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas significa cambiar todas las letras\
   \ may\xFAsculas de un texto a su forma min\xFAscula. Los programadores hacen esto\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/parsing-html/
 date: 2024-01-20 15:33:21.585946-07:00
 description: "El parseo de HTML implica descomponer el c\xF3digo HTML en componentes\
   \ para manipularlo o extraer informaci\xF3n espec\xEDfica. Los programadores lo\
   \ hacen para\u2026"
-lastmod: 2024-02-18 23:09:10.213127
+lastmod: 2024-02-19 22:05:17.795548
 summary: "El parseo de HTML implica descomponer el c\xF3digo HTML en componentes para\
   \ manipularlo o extraer informaci\xF3n espec\xEDfica. Los programadores lo hacen\
   \ para\u2026"

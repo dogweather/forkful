@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c-sharp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:28.258862-07:00
 description: "REPL, \u092F\u093E Read-Eval-Print \u0932\u0942\u092A, \u0906\u092A\u0915\
   \u094B C# \u0915\u094B\u0921 \u091F\u093E\u0907\u092A \u0915\u0930\u0928\u0947 \u0914\
@@ -11,7 +9,7 @@ description: "REPL, \u092F\u093E Read-Eval-Print \u0932\u0942\u092A, \u0906\u092
   \ \u0924\u094D\u0935\u0930\u093F\u0924 \u092A\u094D\u0930\u092F\u094B\u0917, \u0921\
   \u093F\u092C\u0917\u093F\u0902\u0917, \u092F\u093E C# \u0938\u0940\u0916\u0928\u0947\
   \u2026"
-lastmod: 2024-02-18 23:09:03.349039
+lastmod: 2024-02-19 22:05:11.341246
 model: gpt-4-0125-preview
 summary: "REPL, \u092F\u093E Read-Eval-Print \u0932\u0942\u092A, \u0906\u092A\u0915\
   \u094B C# \u0915\u094B\u0921 \u091F\u093E\u0907\u092A \u0915\u0930\u0928\u0947 \u0914\

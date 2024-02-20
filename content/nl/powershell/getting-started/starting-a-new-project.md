@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/powershell/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:28.085806-07:00
 description: "Een nieuw project starten gaat over het leggen van de fundamenten voor\
   \ je codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten\
   \ of\u2026"
-lastmod: 2024-02-18 23:09:02.092654
+lastmod: 2024-02-19 22:05:10.113812
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten gaat over het leggen van de fundamenten voor je\
   \ codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten of\u2026"

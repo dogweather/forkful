@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:57.306406-07:00
 description: "Ein Datum als String zu konvertieren bedeutet, es in eine lesbare Textform\
   \ umzuwandeln \u2013 praktisch, wenn Daten f\xFCr Menschen aufbereitet oder in einem\u2026"
-lastmod: 2024-02-18 23:09:04.974380
+lastmod: 2024-02-19 22:05:12.914520
 model: gpt-4-1106-preview
 summary: "Ein Datum als String zu konvertieren bedeutet, es in eine lesbare Textform\
   \ umzuwandeln \u2013 praktisch, wenn Daten f\xFCr Menschen aufbereitet oder in einem\u2026"

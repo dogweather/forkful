@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:51.321877-07:00
 description: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w danym\
   \ tek\u015Bcie. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\
   \ czy dane wprowadzone przez u\u017Cytkownika pasuj\u0105 do\u2026"
-lastmod: 2024-02-18 23:08:49.550846
+lastmod: 2024-02-19 22:04:54.486549
 model: gpt-4-1106-preview
 summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w danym\
   \ tek\u015Bcie. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\

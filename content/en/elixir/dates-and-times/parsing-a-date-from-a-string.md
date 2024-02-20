@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:44.156330-07:00
 description: "Parsing a date from a string in Elixir involves converting text representations\
   \ of dates and times into Elixir's native date structures, allowing for more\u2026"
-lastmod: 2024-02-18 23:09:10.774810
+lastmod: 2024-02-19 22:05:18.299291
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Elixir involves converting text representations\
   \ of dates and times into Elixir's native date structures, allowing for more\u2026"

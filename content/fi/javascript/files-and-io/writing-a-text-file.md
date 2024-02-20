@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/javascript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:30.211979-07:00
 description: "Tekstitiedoston kirjoittaminen JavaScriptill\xE4 liittyy usein datan\
   \ luomiseen ja tallentamiseen yksinkertaisessa, luettavassa muodossa lokitusta,\u2026"
-lastmod: 2024-02-18 23:09:08.055866
+lastmod: 2024-02-19 22:05:15.862990
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen JavaScriptill\xE4 liittyy usein datan luomiseen\
   \ ja tallentamiseen yksinkertaisessa, luettavassa muodossa lokitusta,\u2026"

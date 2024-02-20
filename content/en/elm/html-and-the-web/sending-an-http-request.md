@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/sending-an-http-request/
 date: 2024-01-20 17:59:24.222044-07:00
 description: "In Elm, sending an HTTP request is how your app talks to other web services\
   \ to exchange data. Programmers do this to fetch or send info to servers,\u2026"
-lastmod: 2024-02-18 23:09:10.968705
+lastmod: 2024-02-19 22:05:18.475287
 model: gpt-4-1106-preview
 summary: "In Elm, sending an HTTP request is how your app talks to other web services\
   \ to exchange data. Programmers do this to fetch or send info to servers,\u2026"

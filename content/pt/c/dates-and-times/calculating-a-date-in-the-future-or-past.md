@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:47.088080-07:00
 description: "Calcular uma data no futuro ou passado envolve determinar uma data espec\xED\
   fica adicionando ou subtraindo um certo n\xFAmero de dias, meses ou anos de uma\
   \ data\u2026"
-lastmod: 2024-02-18 23:08:58.633593
+lastmod: 2024-02-19 22:05:06.134827
 model: gpt-4-0125-preview
 summary: "Calcular uma data no futuro ou passado envolve determinar uma data espec\xED\
   fica adicionando ou subtraindo um certo n\xFAmero de dias, meses ou anos de uma\

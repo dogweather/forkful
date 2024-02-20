@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/typescript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:08.930809-07:00
 description: "Calcular datas futuras ou passadas \xE9 um jeito de lidar com intervalos\
   \ de tempo em programa\xE7\xE3o. Programadores fazem isso para agendar eventos,\
   \ fazer\u2026"
-lastmod: 2024-02-18 23:08:57.898145
+lastmod: 2024-02-19 22:05:05.371400
 model: gpt-4-1106-preview
 summary: "Calcular datas futuras ou passadas \xE9 um jeito de lidar com intervalos\
   \ de tempo em programa\xE7\xE3o. Programadores fazem isso para agendar eventos,\

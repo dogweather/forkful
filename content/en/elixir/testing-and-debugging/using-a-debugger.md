@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/using-a-debugger/
 date: 2024-01-25 20:50:36.208411-07:00
 description: "Using a debugger in Elixir involves stepping through your code, inspecting\
   \ variables, and tracking flows to squash bugs. Programmers do it to make sense\u2026"
-lastmod: 2024-02-18 23:09:10.770113
+lastmod: 2024-02-19 22:05:18.294946
 model: gpt-4-1106-preview
 summary: "Using a debugger in Elixir involves stepping through your code, inspecting\
   \ variables, and tracking flows to squash bugs. Programmers do it to make sense\u2026"

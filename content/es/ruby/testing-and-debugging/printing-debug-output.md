@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/ruby/printing-debug-output/
 date: 2024-01-20 17:53:42.441048-07:00
 description: "Imprimir salida de depuraci\xF3n en Ruby significa mostrar en consola\
   \ lo que est\xE1 pasando dentro de tu c\xF3digo. Los programadores lo hacen para\
   \ entender y\u2026"
-lastmod: 2024-02-18 23:09:10.555265
+lastmod: 2024-02-19 22:05:18.101475
 model: gpt-4-1106-preview
 summary: "Imprimir salida de depuraci\xF3n en Ruby significa mostrar en consola lo\
   \ que est\xE1 pasando dentro de tu c\xF3digo. Los programadores lo hacen para entender\

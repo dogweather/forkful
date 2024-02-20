@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/printing-debug-output/
 date: 2024-01-20 17:52:49.178700-07:00
 description: "Printing debug output is tossing little bread crumbs of information\
   \ into the console to track down bugs. It's quick, dirty, and effective for\u2026"
-lastmod: 2024-02-18 23:09:10.933545
+lastmod: 2024-02-19 22:05:18.443028
 model: gpt-4-1106-preview
 summary: "Printing debug output is tossing little bread crumbs of information into\
   \ the console to track down bugs. It's quick, dirty, and effective for\u2026"

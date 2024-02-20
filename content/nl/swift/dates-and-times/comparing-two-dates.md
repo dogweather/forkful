@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:49.517361-07:00
 description: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip of\
   \ het ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"
-lastmod: 2024-02-18 23:09:02.242852
+lastmod: 2024-02-19 22:05:10.256638
 model: gpt-4-0125-preview
 summary: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip of het\
   \ ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"

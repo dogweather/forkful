@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/starting-a-new-project/
 date: 2024-01-20 18:03:11.979230-07:00
 description: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho limpo\
   \ para desenvolver c\xF3digo desde o come\xE7o. Programadores fazem isso para organizar\
   \ melhor\u2026"
-lastmod: 2024-02-18 23:08:58.450385
+lastmod: 2024-02-19 22:05:05.940561
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho limpo\
   \ para desenvolver c\xF3digo desde o come\xE7o. Programadores fazem isso para organizar\

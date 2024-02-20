@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/searching-and-replacing-text/
 date: 2024-01-20 17:58:53.513971-07:00
 description: "Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsit\xE4\xE4\
   n tekstikatkelmia ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
   t\xE4 automatisoidakseen\u2026"
-lastmod: 2024-02-18 23:09:07.348239
+lastmod: 2024-02-19 22:05:15.237560
 model: gpt-4-1106-preview
 summary: "Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsit\xE4\xE4n\
   \ tekstikatkelmia ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\

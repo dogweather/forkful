@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/java/concatenating-strings/
 date: 2024-01-20 17:34:51.308108-07:00
 description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est juste les coller\
   \ bout \xE0 bout. Les devs font \xE7a tout le temps pour construire des textes,\
   \ comme les messages\u2026"
-lastmod: 2024-02-18 23:09:08.619591
+lastmod: 2024-02-19 22:05:16.392424
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est juste les coller bout\
   \ \xE0 bout. Les devs font \xE7a tout le temps pour construire des textes, comme\

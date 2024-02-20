@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/printing-debug-output/
 date: 2024-01-20 17:53:11.693928-07:00
 description: "Drucken von Debug-Output ist, wenn wir programminterne Daten zur Laufzeit\
   \ ausgeben, um Fehler zu finden und den Programmfluss zu verstehen. Wir machen\u2026"
-lastmod: 2024-02-18 23:09:05.426073
+lastmod: 2024-02-19 22:05:13.345434
 model: gpt-4-1106-preview
 summary: "Drucken von Debug-Output ist, wenn wir programminterne Daten zur Laufzeit\
   \ ausgeben, um Fehler zu finden und den Programmfluss zu verstehen. Wir machen\u2026"

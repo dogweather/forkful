@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/java/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:57.764279-07:00
 description: "Rimuovere le virgolette da una stringa significa eliminare i segni di\
   \ citazione\u2014singoli (' '), doppi (\" \") o entrambi\u2014dai dati di testo.\
   \ I programmatori\u2026"
-lastmod: 2024-02-18 23:08:55.754808
+lastmod: 2024-02-19 22:05:02.357868
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa eliminare i segni di citazione\u2014\
   singoli (' '), doppi (\" \") o entrambi\u2014dai dati di testo. I programmatori\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/handling-errors/
 date: 2024-01-26 00:53:27.481693-07:00
 description: "Virheiden k\xE4sittely tarkoittaa sellaisen koodin kirjoittamista, joka\
   \ ennakoi ja k\xE4sittelee virhetilanteita. Ohjelmoijat tekev\xE4t sit\xE4 tehd\xE4\
   kseen\u2026"
-lastmod: 2024-02-18 23:09:07.466056
+lastmod: 2024-02-19 22:05:15.348007
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely tarkoittaa sellaisen koodin kirjoittamista, joka\
   \ ennakoi ja k\xE4sittelee virhetilanteita. Ohjelmoijat tekev\xE4t sit\xE4 tehd\xE4\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/extracting-substrings/
 date: 2024-01-20 17:46:24.192808-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744\
   \ \uCD94\uCD9C\uD55C\uB2E4\uB294 \uAC74, \uD070 \uBB38\uC790\uC5F4 \uC548\uC5D0\uC11C\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC7
   \ \uBD84\uD574\uD558\uACE0, \uD544\uC694\uD55C \uC815\uBCF4\uB9CC \uACE8\uB77C\uB0B4\
   \uAE30 \uC704\uD574 \uC774 \uACFC\uC815\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.533947
+lastmod: 2024-02-19 22:05:14.440937
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\
   \uCD9C\uD55C\uB2E4\uB294 \uAC74, \uD070 \uBB38\uC790\uC5F4 \uC548\uC5D0\uC11C \uC6D0\

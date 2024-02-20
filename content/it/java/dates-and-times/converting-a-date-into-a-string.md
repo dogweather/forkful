@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:02.938633-07:00
 description: "Convertire una data in una stringa significa trasformare l'oggetto `Date`\
   \ che rappresenta un momento preciso nel tempo in una sequenza di caratteri\u2026"
-lastmod: 2024-02-18 23:08:55.776563
+lastmod: 2024-02-19 22:05:02.381334
 model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformare l'oggetto `Date`\
   \ che rappresenta un momento preciso nel tempo in una sequenza di caratteri\u2026"

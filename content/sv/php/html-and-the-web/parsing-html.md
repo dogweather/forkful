@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/php/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:49.592629-07:00
 description: "Att tolka HTML med PHP inneb\xE4r att extrahera specifik information\
   \ fr\xE5n HTML-dokument. Programmerare utf\xF6r denna uppgift f\xF6r att automatisera\u2026"
-lastmod: 2024-02-18 23:08:51.876130
+lastmod: 2024-02-19 22:04:57.217976
 model: gpt-4-0125-preview
 summary: "Att tolka HTML med PHP inneb\xE4r att extrahera specifik information fr\xE5\
   n HTML-dokument. Programmerare utf\xF6r denna uppgift f\xF6r att automatisera\u2026"

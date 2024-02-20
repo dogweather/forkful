@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/python/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:20.835334-07:00
 description: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pierwszego\
   \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery.\
   \ Operacja ta jest powszechnie\u2026"
-lastmod: 2024-02-18 23:08:49.188406
+lastmod: 2024-02-19 22:04:54.115789
 model: gpt-4-0125-preview
 summary: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pierwszego\
   \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery.\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:43.133098-07:00
@@ -14,7 +12,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97
   \ \uBC1C\uACAC\uD558\uACE0 \uCF54\uB4DC \uD488\uC9C8\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\
   \uBA70, \uBBF8\uB798\uC758 \uCF54\uB4DC \uC720\uC9C0\uBCF4\uC218\uC640 \uD5A5\uC0C1\
   \uC744\u2026"
-lastmod: 2024-02-18 23:09:05.958497
+lastmod: 2024-02-19 22:05:13.893349
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\
   \uC131\uD55C\uB2E4\uB294 \uAC83\uC740 \uD2B9\uC815 \uC808\uCC28\uB97C \uC0DD\uC131\

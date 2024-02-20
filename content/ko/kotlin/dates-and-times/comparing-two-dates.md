@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/comparing-two-dates/
 date: 2024-01-20 17:33:29.179456-07:00
 description: "\uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30, \uC989 \uB450 \uB0A0\uC9DC\uAC00\
   \ \uAC19\uACE0, \uB354 \uC774\uB978\uC9C0, \uB2A6\uC740\uC9C0 \uD655\uC778\uD558\
@@ -8,7 +6,7 @@ description: "\uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30, \uC989 \uB450 \uB0A0\uC9DC\
   , \uB370\uC774\uD130 \uC815\uB82C \uB4F1 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C\
   \ \uC790\uC8FC \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.170958
+lastmod: 2024-02-19 22:05:14.101903
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30, \uC989 \uB450 \uB0A0\uC9DC\uAC00\
   \ \uAC19\uACE0, \uB354 \uC774\uB978\uC9C0, \uB2A6\uC740\uC9C0 \uD655\uC778\uD558\

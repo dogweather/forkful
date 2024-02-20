@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/python/logging/
 date: 2024-01-26 01:08:10.869886-07:00
 description: "Logging ist der Prozess der Aufzeichnung von Anwendungsereignissen,\
   \ w\xE4hrend ein Programm l\xE4uft, und bietet eine Art Spur f\xFCr die Analyse\
   \ nach dem Versagen\u2026"
-lastmod: 2024-02-18 23:09:04.468826
+lastmod: 2024-02-19 22:05:12.432983
 model: gpt-4-1106-preview
 summary: "Logging ist der Prozess der Aufzeichnung von Anwendungsereignissen, w\xE4\
   hrend ein Programm l\xE4uft, und bietet eine Art Spur f\xFCr die Analyse nach dem\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/vba/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:59.539951-07:00
@@ -13,7 +11,7 @@ description: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u043B\u043
   \u0442\u043E\u0447\u0443\u0432\u0430\u0442\u0438 \u0430\u0431\u043E \u0431\u0443\
   \u0442\u0438 \u0432\u0431\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u043C\u0438\
   \ \u0432 \u0440\u044F\u0434\u043E\u043A. \u0426\u044F\u2026"
-lastmod: 2024-02-18 23:09:00.020922
+lastmod: 2024-02-19 22:05:08.002031
 model: gpt-4-0125-preview
 summary: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u043B\u0430\u043F\
   \u043E\u043A \u0437 \u0440\u044F\u0434\u043A\u0430 \u0443 VBA \u043F\u0435\u0440\

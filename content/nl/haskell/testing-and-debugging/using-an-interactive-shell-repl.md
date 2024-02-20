@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:11.542633-07:00
 description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), in Haskell laat\
   \ je codefragmenten live uitvoeren. Het is een speeltuin voor snelle feedback, het\u2026"
-lastmod: 2024-02-18 23:09:01.900711
+lastmod: 2024-02-19 22:05:09.924552
 model: gpt-4-0125-preview
 summary: "Een interactieve shell, of REPL (Read-Eval-Print Loop), in Haskell laat\
   \ je codefragmenten live uitvoeren. Het is een speeltuin voor snelle feedback, het\u2026"

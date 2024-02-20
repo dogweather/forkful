@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/working-with-complex-numbers/
 date: 2024-01-26 04:42:52.821052-07:00
 description: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir\
   \ as ra\xEDzes quadradas de n\xFAmeros negativos, onde a unidade 'imagin\xE1ria'\
   \ i \xE9 igual \xE0 raiz\u2026"
-lastmod: 2024-02-18 23:08:58.095248
+lastmod: 2024-02-19 22:05:05.575557
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir as\
   \ ra\xEDzes quadradas de n\xFAmeros negativos, onde a unidade 'imagin\xE1ria' i\

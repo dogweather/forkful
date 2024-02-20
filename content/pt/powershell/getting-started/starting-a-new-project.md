@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/starting-a-new-project/
 date: 2024-01-20 18:04:26.632335-07:00
 description: "Iniciar um novo projeto em PowerShell \xE9 como abrir um livro branco;\
   \ voc\xEA cria um espa\xE7o para desenvolver scripts e solu\xE7\xF5es automatizadas.\
   \ Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.369448
+lastmod: 2024-02-19 22:05:05.854369
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em PowerShell \xE9 como abrir um livro branco; voc\xEA\
   \ cria um espa\xE7o para desenvolver scripts e solu\xE7\xF5es automatizadas. Programadores\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:12.715245-07:00
 description: "Stringinterpolatie stelt je in staat om variabelen of expressies binnen\
   \ een string in te voegen. We doen dit voor schonere, beter leesbare code die\u2026"
-lastmod: 2024-02-18 23:09:02.404686
+lastmod: 2024-02-19 22:05:10.410240
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt je in staat om variabelen of expressies binnen\
   \ een string in te voegen. We doen dit voor schonere, beter leesbare code die\u2026"

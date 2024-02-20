@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/c-sharp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:17.497638-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi tarkoittaa `DateTime`-olioiden\
   \ esitt\xE4mist\xE4 luettavassa muodossa. Koodaajat tekev\xE4t t\xE4m\xE4n, jotta\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tietoja\u2026"
-lastmod: 2024-02-18 23:09:07.633180
+lastmod: 2024-02-19 22:05:15.478213
 model: gpt-4-1106-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi tarkoittaa `DateTime`-olioiden\
   \ esitt\xE4mist\xE4 luettavassa muodossa. Koodaajat tekev\xE4t t\xE4m\xE4n, jotta\

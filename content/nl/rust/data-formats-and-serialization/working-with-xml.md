@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:56.919248-07:00
 description: "XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige\
   \ neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy\u2026"
-lastmod: 2024-02-18 23:09:01.645589
+lastmod: 2024-02-19 22:05:09.667475
 model: gpt-4-0125-preview
 summary: "XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige\
   \ neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy\u2026"

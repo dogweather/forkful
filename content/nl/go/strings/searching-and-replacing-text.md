@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:16.379682-07:00
 description: "Zoeken en vervangen van tekst in programmeren vergemakkelijkt het wijzigen\
   \ en beheren van strings, wat een fundamentele taak is bij gegevensmanipulatie en\u2026"
-lastmod: 2024-02-18 23:09:01.321390
+lastmod: 2024-02-19 22:05:09.355667
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst in programmeren vergemakkelijkt het wijzigen\
   \ en beheren van strings, wat een fundamentele taak is bij gegevensmanipulatie en\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:53.173733-07:00
 description: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
   \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\
   \ komplexa\u2026"
-lastmod: 2024-02-18 23:08:52.243670
+lastmod: 2024-02-19 22:04:57.627569
 model: gpt-4-0125-preview
 summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
   \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\

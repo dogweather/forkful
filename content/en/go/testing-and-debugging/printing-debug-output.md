@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/go/printing-debug-output/
 date: 2024-02-03 17:50:09.547841-07:00
 description: "In computer programming, \"Printing debug output\" involves producing\
   \ detailed informational messages that help developers understand the execution\
   \ flow of\u2026"
-lastmod: 2024-02-18 23:09:10.599330
+lastmod: 2024-02-19 22:05:18.141640
 model: gpt-4-0125-preview
 summary: "In computer programming, \"Printing debug output\" involves producing detailed\
   \ informational messages that help developers understand the execution flow of\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/fish-shell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:00.502856-07:00
 description: "Pisanie test\xF3w w Fish Shell polega na tworzeniu skrypt\xF3w, kt\xF3\
   re automatycznie uruchamiaj\u0105 Tw\xF3j kod w celu zweryfikowania jego zachowania\
   \ wzgl\u0119dem\u2026"
-lastmod: 2024-02-18 23:08:50.040182
+lastmod: 2024-02-19 22:04:55.019590
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Fish Shell polega na tworzeniu skrypt\xF3w, kt\xF3re\
   \ automatycznie uruchamiaj\u0105 Tw\xF3j kod w celu zweryfikowania jego zachowania\

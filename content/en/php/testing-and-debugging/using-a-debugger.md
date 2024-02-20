@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/php/using-a-debugger/
 date: 2024-01-25 20:50:12.403589-07:00
 description: "A debugger is a tool that helps programmers understand what their code\
   \ is actually doing as it runs. It\u2019s the magnifying glass that lets us zoom\
   \ in on\u2026"
-lastmod: 2024-02-18 23:09:11.141620
+lastmod: 2024-02-19 22:05:18.633841
 model: gpt-4-1106-preview
 summary: "A debugger is a tool that helps programmers understand what their code is\
   \ actually doing as it runs. It\u2019s the magnifying glass that lets us zoom in\

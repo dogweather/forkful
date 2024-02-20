@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:10.387653-07:00
@@ -14,7 +12,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uAC00 \uCC98\uB9AC\uB97C \uC704\uD574 \uC900\uBE44\uD558\uAC70\uB098 \uB2E4\uB978\
   \ \uC2DC\uC2A4\uD15C \uBC0F \uC9C0\uC5ED \uAC04\uC758 \uD638\uD658\uC131\uC744 \uBCF4\
   \uC7A5\uD558\uAE30\u2026"
-lastmod: 2024-02-18 23:09:05.458015
+lastmod: 2024-02-19 22:05:13.376318
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uD14D\uC2A4\uD2B8 \uCC98\uB9AC\uC5D0\uC11C \uC77C\uAD00\uC131\uACFC\

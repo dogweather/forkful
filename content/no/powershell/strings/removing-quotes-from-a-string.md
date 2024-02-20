@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:37.397621-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng i PowerShell fjerner enkle\
   \ (`'`) eller doble (`\"`) anf\xF8rselstegn som er lagt rundt teksten din. Programmerere\
   \ trenger\u2026"
-lastmod: 2024-02-18 23:08:54.087385
+lastmod: 2024-02-19 22:05:00.272406
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i PowerShell fjerner enkle (`'`)\
   \ eller doble (`\"`) anf\xF8rselstegn som er lagt rundt teksten din. Programmerere\

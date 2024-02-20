@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:10.558506-07:00
 description: "Wyra\u017Cenia regularne (regex) s\u0105 wzorcami u\u017Cywanymi do\
   \ dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci\
   \ wykorzystuj\u0105 je do wyszukiwania,\u2026"
-lastmod: 2024-02-18 23:08:49.135306
+lastmod: 2024-02-19 22:04:54.074290
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) s\u0105 wzorcami u\u017Cywanymi do dopasowywania\
   \ kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci wykorzystuj\u0105\

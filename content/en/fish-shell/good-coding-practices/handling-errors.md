@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/handling-errors/
 date: 2024-01-21 21:19:23.845730-07:00
 description: Error handling lets your script deal with the unexpected gracefully.
   We do it to manage failure without turning our user's hair gray.
-lastmod: 2024-02-18 23:09:11.488749
+lastmod: 2024-02-19 22:05:18.941768
 model: gpt-4-1106-preview
 summary: Error handling lets your script deal with the unexpected gracefully. We do
   it to manage failure without turning our user's hair gray.

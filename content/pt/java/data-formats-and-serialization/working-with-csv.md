@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/java/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:22.866362-07:00
 description: "Trabalhar com arquivos CSV envolve ler e escrever dados para arquivos\
   \ de Valores Separados por V\xEDrgula (CSV), um formato popular para troca de dados\u2026"
-lastmod: 2024-02-18 23:08:58.041202
+lastmod: 2024-02-19 22:05:05.518523
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV envolve ler e escrever dados para arquivos de\
   \ Valores Separados por V\xEDrgula (CSV), um formato popular para troca de dados\u2026"

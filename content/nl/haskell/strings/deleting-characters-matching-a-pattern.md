@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:45.201706-07:00
 description: "Karakters verwijderen die overeenkomen met een specifiek patroon gaat\
   \ over het doorzoeken van tekst en het verwijderen van delen die je niet nodig hebt.\u2026"
-lastmod: 2024-02-18 23:09:01.880950
+lastmod: 2024-02-19 22:05:09.897274
 model: gpt-4-0125-preview
 summary: "Karakters verwijderen die overeenkomen met een specifiek patroon gaat over\
   \ het doorzoeken van tekst en het verwijderen van delen die je niet nodig hebt.\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/ruby/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:09.891689-07:00
@@ -15,7 +13,7 @@ description: "Ruby\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306B\u
   \u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B\u306A\u3069\u306E\u7406\u7531\u3067\u3001\
   \u3053\u306E\u30BF\u30B9\u30AF\u3092\u983B\u7E41\u306B\u5B9F\u884C\u3057\u307E\u3059\
   \u3002"
-lastmod: 2024-02-18 23:08:55.408063
+lastmod: 2024-02-19 22:05:01.985207
 model: gpt-4-0125-preview
 summary: "Ruby\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306B\u66F8\u304D\
   \u8FBC\u3080\u3053\u3068\u306F\u3001\u51FA\u529B\u3084\u30C7\u30FC\u30BF\u3092\u6C38\

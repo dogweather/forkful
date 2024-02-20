@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/python/interpolating-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:24:04.242459-07:00
 description: "L'interpolazione di stringhe \xE8 il metodo di incorporamento di espressioni\
   \ all'interno di letterali di stringa. I programmatori lo usano per inserire\u2026"
-lastmod: 2024-02-18 23:08:55.508160
+lastmod: 2024-02-19 22:05:02.094186
 model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe \xE8 il metodo di incorporamento di espressioni\
   \ all'interno di letterali di stringa. I programmatori lo usano per inserire\u2026"

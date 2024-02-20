@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/working-with-yaml/
 date: 2024-01-19
 description: "YAML ist ein Format f\xFCr Daten, das auf Menschen ausgerichtet ist.\
   \ Programmierer nutzen es, weil es einfach zu lesen und zu schreiben ist und sich\
   \ gut f\xFCr\u2026"
-lastmod: 2024-02-18 23:09:04.848183
+lastmod: 2024-02-19 22:05:12.793139
 summary: "YAML ist ein Format f\xFCr Daten, das auf Menschen ausgerichtet ist. Programmierer\
   \ nutzen es, weil es einfach zu lesen und zu schreiben ist und sich gut f\xFCr\u2026"
 title: Arbeiten mit YAML

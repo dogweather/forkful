@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/using-an-interactive-shell-repl/
 date: 2024-02-03 17:50:02.783417-07:00
 description: "An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows\
   \ programmers to type in expressions or code and immediately see results,\u2026"
-lastmod: 2024-02-18 23:09:11.524322
+lastmod: 2024-02-19 22:05:18.974686
 model: gpt-4-0125-preview
 summary: "An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows\
   \ programmers to type in expressions or code and immediately see results,\u2026"

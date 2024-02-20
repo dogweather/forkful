@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/generating-random-numbers/
 date: 2024-01-27 20:34:39.616658-07:00
 description: "G\xE9n\xE9rer des nombres al\xE9atoires en PHP consiste \xE0 produire\
   \ des valeurs impr\xE9visibles dans une plage sp\xE9cifi\xE9e, ce qui est essentiel\
   \ pour des t\xE2ches comme\u2026"
-lastmod: 2024-02-18 23:09:08.917929
+lastmod: 2024-02-19 22:05:16.610262
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en PHP consiste \xE0 produire des\
   \ valeurs impr\xE9visibles dans une plage sp\xE9cifi\xE9e, ce qui est essentiel\

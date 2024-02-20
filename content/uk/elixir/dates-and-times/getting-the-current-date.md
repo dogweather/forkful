@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/elixir/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
@@ -15,7 +13,7 @@ description: "\u041E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043F\u043
   \ \u0434\u043B\u044F \u043B\u043E\u0433\u0443\u0432\u0430\u043D\u043D\u044F, \u043C\
   \u0430\u0440\u043A\u0443\u0432\u0430\u043D\u043D\u044F \u0434\u0430\u043D\u0438\u0445\
   \ \u0430\u0431\u043E\u2026"
-lastmod: 2024-02-18 23:08:59.896090
+lastmod: 2024-02-19 22:05:07.822223
 model: gpt-4-0125-preview
 summary: "\u041E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043F\u043E\u0442\
   \u043E\u0447\u043D\u043E\u0457 \u0434\u0430\u0442\u0438 \u0432 Elixir \u043F\u0435\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/getting-the-current-date/
 date: 2024-02-03 19:02:31.376532-07:00
 description: "Retrieving the current date in Haskell involves obtaining the system's\
   \ current time and transforming it into a readable date format. Programmers do this\u2026"
-lastmod: 2024-02-18 23:09:11.106299
+lastmod: 2024-02-19 22:05:18.601424
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in Haskell involves obtaining the system's current\
   \ time and transforming it into a readable date format. Programmers do this\u2026"

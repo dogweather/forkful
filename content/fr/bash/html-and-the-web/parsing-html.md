@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/bash/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:35.591596-07:00
 description: "L'analyse du HTML implique de passer au crible la structure et le contenu\
   \ d'un fichier HTML pour en extraire des informations. Les programmeurs le font\u2026"
-lastmod: 2024-02-18 23:09:09.016902
+lastmod: 2024-02-19 22:05:16.701714
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML implique de passer au crible la structure et le contenu\
   \ d'un fichier HTML pour en extraire des informations. Les programmeurs le font\u2026"

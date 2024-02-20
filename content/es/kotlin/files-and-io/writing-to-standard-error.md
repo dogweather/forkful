@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/kotlin/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:41.942388-07:00
 description: "Escribir en el error est\xE1ndar (stderr) se trata de enviar mensajes\
   \ de error y diagn\xF3sticos a un flujo separado, distinto del salida est\xE1ndar\
   \ (stdout), lo\u2026"
-lastmod: 2024-02-18 23:09:09.953930
+lastmod: 2024-02-19 22:05:17.559135
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) se trata de enviar mensajes de\
   \ error y diagn\xF3sticos a un flujo separado, distinto del salida est\xE1ndar (stdout),\

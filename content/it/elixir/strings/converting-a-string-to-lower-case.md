@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elixir/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:02.568509-07:00
 description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabeticamentici in lettere minuscole, utile per garantire la consistenza dei\u2026"
-lastmod: 2024-02-18 23:08:55.588549
+lastmod: 2024-02-19 22:05:02.180737
 model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabeticamentici in lettere minuscole, utile per garantire la consistenza dei\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/removing-quotes-from-a-string/
 date: 2024-01-25 20:49:59.692157-07:00
 description: "Removing quotes from a string means stripping away those extra double\
   \ or single quotation marks that you don't actually need in the processed text.\u2026"
-lastmod: 2024-02-18 23:09:10.960253
+lastmod: 2024-02-19 22:05:18.467069
 model: gpt-4-1106-preview
 summary: "Removing quotes from a string means stripping away those extra double or\
   \ single quotation marks that you don't actually need in the processed text.\u2026"

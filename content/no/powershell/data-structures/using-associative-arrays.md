@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/powershell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:36.641748-07:00
 description: "Assosiative tabeller, ogs\xE5 kjent som hashtabeller eller ordb\xF8\
   ker i PowerShell, lar deg lagre data i n\xF8kkel-verdipar, noe som gj\xF8r datahenting\
   \ enkel og\u2026"
-lastmod: 2024-02-18 23:08:54.091942
+lastmod: 2024-02-19 22:05:00.277324
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, ogs\xE5 kjent som hashtabeller eller ordb\xF8ker i\
   \ PowerShell, lar deg lagre data i n\xF8kkel-verdipar, noe som gj\xF8r datahenting\

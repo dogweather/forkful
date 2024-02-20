@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:37.192585-07:00
 description: "Escribir un archivo de texto en Go implica crear y escribir cadenas\
   \ de datos en un archivo de texto nuevo o existente. Los programadores hacen esto\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:09.477177
+lastmod: 2024-02-19 22:05:17.134825
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Go implica crear y escribir cadenas de datos\
   \ en un archivo de texto nuevo o existente. Los programadores hacen esto para\u2026"

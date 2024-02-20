@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:36.152978-07:00
@@ -14,7 +12,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4 \uBC
   \uC885 \uBCC0\uC218 \uB0B4\uC6A9\uC744 \uD3EC\uD568\uD55C \uBB38\uC790\uC5F4\uC744\
   \ \uD6A8\uC728\uC801\uC774\uACE0 \uAE54\uB054\uD558\uAC8C \uAD6C\uC131\uD569\uB2C8\
   \uB2E4."
-lastmod: 2024-02-18 23:09:06.926550
+lastmod: 2024-02-19 22:05:14.813475
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4 \uBCF4\uAC04\
   \uC740 \uB9AC\uD130\uB7F4 \uBB38\uC790\uC5F4 \uB0B4\uC5D0 \uD45C\uD604\uC2DD\uC744\

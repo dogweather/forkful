@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:15.660312-07:00
 description: "Att ta bort citationstecken fr\xE5n en str\xE4ng i PowerShell inneb\xE4\
   r att man tar bort enkla (`'`) eller dubbla (`\"`) citationstecken som omsluter\
   \ din text.\u2026"
-lastmod: 2024-02-18 23:08:51.990385
+lastmod: 2024-02-19 22:04:57.344330
 model: gpt-4-0125-preview
 summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng i PowerShell inneb\xE4\
   r att man tar bort enkla (`'`) eller dubbla (`\"`) citationstecken som omsluter\

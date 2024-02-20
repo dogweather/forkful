@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/extracting-substrings/
 date: 2024-01-20 17:46:21.805021-07:00
 description: "Extracting substrings means grabbing a smaller piece from a larger string\u2014\
   kind of like slicing a cake to get a piece you actually want to eat. Programmers\u2026"
-lastmod: 2024-02-18 23:09:10.837846
+lastmod: 2024-02-19 22:05:18.355731
 model: gpt-4-1106-preview
 summary: "Extracting substrings means grabbing a smaller piece from a larger string\u2014\
   kind of like slicing a cake to get a piece you actually want to eat. Programmers\u2026"

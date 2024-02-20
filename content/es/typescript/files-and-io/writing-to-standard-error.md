@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:29.624815-07:00
 description: "En TypeScript, escribir en el error est\xE1ndar (stderr) es un proceso\
   \ de enviar mensajes de error o registros directamente al flujo de salida de error\
   \ del\u2026"
-lastmod: 2024-02-18 23:09:09.720825
+lastmod: 2024-02-19 22:05:17.346913
 model: gpt-4-0125-preview
 summary: "En TypeScript, escribir en el error est\xE1ndar (stderr) es un proceso de\
   \ enviar mensajes de error o registros directamente al flujo de salida de error\

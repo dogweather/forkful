@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/using-a-debugger/
 date: 2024-01-25 20:50:12.035385-07:00
 description: "Using a debugger means you're equipping yourself with a magnifying glass\
   \ to scrutinize your code. Programmers do this to squash bugs, understand flow,\
   \ and\u2026"
-lastmod: 2024-02-18 23:09:10.728443
+lastmod: 2024-02-19 22:05:18.257348
 model: gpt-4-1106-preview
 summary: "Using a debugger means you're equipping yourself with a magnifying glass\
   \ to scrutinize your code. Programmers do this to squash bugs, understand flow,\

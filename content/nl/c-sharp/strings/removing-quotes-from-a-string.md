@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/removing-quotes-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:59.729456-07:00
 description: "Het verwijderen van aanhalingstekens uit een tekenreeks in C# betekent\
   \ dat je die vervelende dubbele (`\"`) of enkele (`'`) aanhalingstekens die je tekst\u2026"
-lastmod: 2024-02-18 23:09:01.838944
+lastmod: 2024-02-19 22:05:09.855362
 model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een tekenreeks in C# betekent dat\
   \ je die vervelende dubbele (`\"`) of enkele (`'`) aanhalingstekens die je tekst\u2026"

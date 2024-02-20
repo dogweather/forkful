@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/javascript/logging/
 date: 2024-01-26 01:07:28.812419-07:00
 description: "JavaScript bietet direkt nach der Installation eine einfache M\xF6glichkeit,\
   \ Nachrichten in die Konsole zu loggen: ```javascript console.log('Diese Nachricht\u2026"
-lastmod: 2024-02-18 23:09:05.285606
+lastmod: 2024-02-19 22:05:13.209834
 model: gpt-4-1106-preview
 summary: "JavaScript bietet direkt nach der Installation eine einfache M\xF6glichkeit,\
   \ Nachrichten in die Konsole zu loggen: ```javascript console.log('Diese Nachricht\u2026"

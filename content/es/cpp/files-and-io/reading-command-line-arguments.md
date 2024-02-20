@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/cpp/reading-command-line-arguments/
 date: 2024-01-20 17:55:39.200202-07:00
 description: "Leer argumentos de la l\xEDnea de comandos permite que tu programa en\
   \ C++ sea flexible y reciba datos externos al iniciarse. Los programamos as\xED\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:10.328502
+lastmod: 2024-02-19 22:05:17.894885
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que tu programa en C++\
   \ sea flexible y reciba datos externos al iniciarse. Los programamos as\xED para\u2026"

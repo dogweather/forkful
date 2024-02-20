@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/downloading-a-web-page/
 date: 2024-02-03 17:50:09.875050-07:00
 description: "Downloading a web page in C involves programmatically accessing the\
   \ content of a web page over the internet and saving it locally for processing or\u2026"
-lastmod: 2024-02-18 23:09:11.521388
+lastmod: 2024-02-19 22:05:18.971958
 model: gpt-4-0125-preview
 summary: "Downloading a web page in C involves programmatically accessing the content\
   \ of a web page over the internet and saving it locally for processing or\u2026"

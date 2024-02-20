@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:46.626436-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to zabieg, gdzie wybierasz\
   \ i eliminujesz okre\u015Blone sekwencje tekstu z wi\u0119kszej ca\u0142o\u015B\
   ci. Programi\u015Bci to robi\u0105, aby\u2026"
-lastmod: 2024-02-18 23:08:49.811294
+lastmod: 2024-02-19 22:04:54.752394
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to zabieg, gdzie wybierasz\
   \ i eliminujesz okre\u015Blone sekwencje tekstu z wi\u0119kszej ca\u0142o\u015B\

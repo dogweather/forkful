@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/fish-shell/logging/
 date: 2024-01-26 01:03:16.814951-07:00
 description: "Logging ist im Grunde das Festhalten, was Ihre Anwendung gerade macht\
   \ \u2013 ein Tagebuch, wenn man so will, aber f\xFCr Code. Programmierer tun dies,\
   \ um den\u2026"
-lastmod: 2024-02-18 23:09:05.333236
+lastmod: 2024-02-19 22:05:13.254798
 model: gpt-4-1106-preview
 summary: "Logging ist im Grunde das Festhalten, was Ihre Anwendung gerade macht \u2013\
   \ ein Tagebuch, wenn man so will, aber f\xFCr Code. Programmierer tun dies, um den\u2026"

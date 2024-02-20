@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/capitalizing-a-string/
 date: 2024-02-03 19:02:44.302416-07:00
 description: "Capitalizing a string involves modifying the first letter of each word\
   \ in the string to uppercase while ensuring the rest remain lowercase. This common\u2026"
-lastmod: 2024-02-18 23:09:10.914477
+lastmod: 2024-02-19 22:05:18.425590
 model: gpt-4-0125-preview
 summary: "Capitalizing a string involves modifying the first letter of each word in\
   \ the string to uppercase while ensuring the rest remain lowercase. This common\u2026"

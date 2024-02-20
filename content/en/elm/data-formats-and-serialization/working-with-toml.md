@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/working-with-toml/
 date: 2024-01-25 03:39:51.313256-07:00
 description: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ language. Elm programmers use it to manage configuration data because it's human-\u2026"
-lastmod: 2024-02-18 23:09:10.994573
+lastmod: 2024-02-19 22:05:18.499245
 model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ language. Elm programmers use it to manage configuration data because it's human-\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/working-with-complex-numbers/
 date: 2024-01-25 02:59:46.766554-07:00
 description: "Complex numbers expand our number system to include the square roots\
   \ of negative numbers, where the 'imaginary' unit i equals the square root of -1.\u2026"
-lastmod: 2024-02-18 23:09:11.006853
+lastmod: 2024-02-19 22:05:18.510803
 model: gpt-4-1106-preview
 summary: "Complex numbers expand our number system to include the square roots of\
   \ negative numbers, where the 'imaginary' unit i equals the square root of -1.\u2026"

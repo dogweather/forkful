@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/go/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:37.354543-07:00
 description: "Satunnaislukujen generointi ohjelmoinnissa on kyse sellaisten lukusarjojen\
   \ luomisesta, joita ei voida kohtuullisesti ennustaa paremmin kuin sattumalta.\u2026"
-lastmod: 2024-02-18 23:09:07.079878
+lastmod: 2024-02-19 22:05:14.960725
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen generointi ohjelmoinnissa on kyse sellaisten lukusarjojen\
   \ luomisesta, joita ei voida kohtuullisesti ennustaa paremmin kuin sattumalta.\u2026"

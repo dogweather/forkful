@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/powershell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:00.886331-07:00
 description: "Analizar una fecha de una cadena se trata de reconocer y convertir fechas\
   \ escritas en forma de texto a un tipo de datos de fecha que PowerShell pueda\u2026"
-lastmod: 2024-02-18 23:09:10.225841
+lastmod: 2024-02-19 22:05:17.807084
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena se trata de reconocer y convertir fechas\
   \ escritas en forma de texto a un tipo de datos de fecha que PowerShell pueda\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/arduino/creating-a-temporary-file/
 date: 2024-01-20 17:40:01.039974-07:00
 description: "Att skapa en tempor\xE4r fil \xE4r processen att g\xF6ra en tillf\xE4\
   llig dataf\xF6rvaring som typiskt anv\xE4nds och raderas under programmets exekvering.\
   \ Programmerare\u2026"
-lastmod: 2024-02-18 23:08:52.062331
+lastmod: 2024-02-19 22:04:57.422544
 model: gpt-4-1106-preview
 summary: "Att skapa en tempor\xE4r fil \xE4r processen att g\xF6ra en tillf\xE4llig\
   \ dataf\xF6rvaring som typiskt anv\xE4nds och raderas under programmets exekvering.\

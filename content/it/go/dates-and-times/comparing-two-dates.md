@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:40.162844-07:00
 description: "Comparare due date nella programmazione \xE8 un compito fondamentale\
   \ che permette agli sviluppatori di valutare la relazione cronologica tra le date.\
   \ Questi\u2026"
-lastmod: 2024-02-18 23:08:55.445362
+lastmod: 2024-02-19 22:05:02.027070
 model: gpt-4-0125-preview
 summary: "Comparare due date nella programmazione \xE8 un compito fondamentale che\
   \ permette agli sviluppatori di valutare la relazione cronologica tra le date. Questi\u2026"

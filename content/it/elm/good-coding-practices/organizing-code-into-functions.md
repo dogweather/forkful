@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elm/organizing-code-into-functions/
 date: 2024-01-26 01:10:38.543193-07:00
 description: "Mettere tutto il tuo codice in un grande mucchio? Brutta idea. Dividerlo\
   \ in funzioni? Buona idea. Mantiene il tuo codice Elm pulito, riutilizzabile e pi\xF9\
   \u2026"
-lastmod: 2024-02-18 23:08:55.811170
+lastmod: 2024-02-19 22:05:02.417721
 model: gpt-4-1106-preview
 summary: "Mettere tutto il tuo codice in un grande mucchio? Brutta idea. Dividerlo\
   \ in funzioni? Buona idea. Mantiene il tuo codice Elm pulito, riutilizzabile e pi\xF9\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/searching-and-replacing-text/
 date: 2024-01-20 17:57:57.492309-07:00
 description: Searching and replacing text lets you find strings and swap them out.
   Programmers use it to update code, refactor, or change data quickly.
-lastmod: 2024-02-18 23:09:11.081381
+lastmod: 2024-02-19 22:05:18.578740
 model: gpt-4-1106-preview
 summary: Searching and replacing text lets you find strings and swap them out. Programmers
   use it to update code, refactor, or change data quickly.

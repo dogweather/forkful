@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/ruby/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:48.334621-07:00
 description: "Dato-operasjoner lar oss beregne fremtidige eller fortidige datoer.\
   \ Programmerere trenger dette for funksjoner som utl\xF8psfrister, planlegging og\u2026"
-lastmod: 2024-02-18 23:08:54.451309
+lastmod: 2024-02-19 22:05:00.614778
 model: gpt-4-1106-preview
 summary: "Dato-operasjoner lar oss beregne fremtidige eller fortidige datoer. Programmerere\
   \ trenger dette for funksjoner som utl\xF8psfrister, planlegging og\u2026"

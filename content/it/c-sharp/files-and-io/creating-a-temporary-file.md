@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/creating-a-temporary-file/
 date: 2024-01-20 17:40:25.472025-07:00
 description: "Creare file temporanei significa generare file destinati a essere utilizzati\
   \ solo per la durata di una sessione o di una specifica operazione. I\u2026"
-lastmod: 2024-02-18 23:08:55.907488
+lastmod: 2024-02-19 22:05:02.517328
 model: gpt-4-1106-preview
 summary: "Creare file temporanei significa generare file destinati a essere utilizzati\
   \ solo per la durata di una sessione o di una specifica operazione. I\u2026"

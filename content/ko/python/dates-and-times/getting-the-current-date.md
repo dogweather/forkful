@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:48.080246-07:00
@@ -12,7 +10,7 @@ description: "\uD30C\uC774\uC36C\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uA
   \uC0C9\uD558\uB294 \uAC83\uACFC \uAD00\uB828\uC774 \uC788\uC73C\uBA70, \uC2DC\uAC04\
   \uC801 \uB9E5\uB77D\uC5D0 \uB530\uB77C \uB2EC\uB77C\uC9C0\uB294 \uC791\uC5C5\uC5D0\
   \uB294 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.641436
+lastmod: 2024-02-19 22:05:13.555653
 model: gpt-4-0125-preview
 summary: "\uD30C\uC774\uC36C\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\
   \uC624\uB294 \uAC83\uC740 \uB85C\uAE45, \uB370\uC774\uD130 \uBD84\uC11D, \uC2DC\uAC04\

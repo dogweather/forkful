@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:48.352485-07:00
@@ -14,7 +12,7 @@ description: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uC740 \uD2B9\uC815 \uADDC\uCE59\uC
   \uC744 \uC81C\uACF5\uD558\uAC70\uB098, \uB9E4\uC6B0 \uC791\uC740 \uBCC0\uB3D9\uC5D0\
   \ \uBBFC\uAC10\uD55C \uC815\uD655\uD55C \uC218\uD559 \uC5F0\uC0B0\uC744 \uBCF4\uC7A5\
   \uD558\uAE30\u2026"
-lastmod: 2024-02-18 23:09:06.942638
+lastmod: 2024-02-19 22:05:14.828704
 model: gpt-4-0125-preview
 summary: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uC740 \uD2B9\uC815 \uADDC\uCE59\uC5D0 \uB530\
   \uB77C \uC22B\uC790\uC758 \uC790\uB9BF\uC218\uB97C \uC870\uC815\uD558\uC5EC \uAC00\

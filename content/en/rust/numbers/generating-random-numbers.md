@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/generating-random-numbers/
 date: 2024-01-27 20:26:12.558353-07:00
 description: "Generating random numbers in Rust involves utilizing libraries to produce\
   \ unpredicted numerical values, which is indispensable for tasks ranging from\u2026"
-lastmod: 2024-02-18 23:09:10.844468
+lastmod: 2024-02-19 22:05:18.361695
 model: gpt-4-0125-preview
 summary: "Generating random numbers in Rust involves utilizing libraries to produce\
   \ unpredicted numerical values, which is indispensable for tasks ranging from\u2026"

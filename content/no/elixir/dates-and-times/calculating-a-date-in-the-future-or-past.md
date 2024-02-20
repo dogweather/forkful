@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:52.206089-07:00
 description: "Beregning av en dato i fremtiden eller fortiden er prosessen med \xE5\
   \ legge til eller trekke fra dager, m\xE5neder eller \xE5r fra en bestemt dato.\
   \ Programmerere\u2026"
-lastmod: 2024-02-18 23:08:53.617732
+lastmod: 2024-02-19 22:04:59.744840
 model: gpt-4-1106-preview
 summary: "Beregning av en dato i fremtiden eller fortiden er prosessen med \xE5 legge\
   \ til eller trekke fra dager, m\xE5neder eller \xE5r fra en bestemt dato. Programmerere\u2026"

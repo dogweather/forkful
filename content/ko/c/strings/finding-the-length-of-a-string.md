@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:42.641716-07:00
@@ -13,7 +11,7 @@ description: "C\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\u
   \ \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4. \uBC84\uD37C \uC624\uBC84\uD50C\
   \uB85C\uB294 \uBCF4\uC548 \uCDE8\uC57D\uC810\uC774\uB098 \uD504\uB85C\uADF8\uB7A8\
   \ \uCDA9\uB3CC\uB85C \uC774\uC5B4\uC9C8 \uC218\u2026"
-lastmod: 2024-02-18 23:09:06.935534
+lastmod: 2024-02-19 22:05:14.821920
 model: gpt-4-0125-preview
 summary: "C\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\
   \uC740 \uB110 \uC885\uB8CC \uBB38\uC790 `\\0` \uC804\uC758 \uBB38\uC790 \uC218\uB97C\

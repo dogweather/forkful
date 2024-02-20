@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/python/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:00:58.020265-07:00
@@ -14,7 +12,7 @@ description: "\u0427\u0442\u0435\u043D\u0438\u0435 \u0442\u0435\u043A\u0441\u044
   \u043C\u0438\u0441\u0442\u044B \u0447\u0438\u0442\u0430\u044E\u0442 \u0444\u0430\
   \u0439\u043B\u044B, \u0447\u0442\u043E\u0431\u044B \u0438\u0441\u043F\u043E\u043B\
   \u044C\u0437\u043E\u0432\u0430\u0442\u044C\u2026"
-lastmod: 2024-02-18 23:08:56.553839
+lastmod: 2024-02-19 22:05:03.285948
 model: gpt-4-0125-preview
 summary: "\u0427\u0442\u0435\u043D\u0438\u0435 \u0442\u0435\u043A\u0441\u0442\u043E\
   \u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430 \u0432 Python \u2014 \u044D\

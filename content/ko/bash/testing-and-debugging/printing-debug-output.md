@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/printing-debug-output/
 date: 2024-01-20 17:52:19.098857-07:00
 description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\
   \uAC8C \uC2E4\uD589\uB418\uB294\uC9C0 \uD655\uC778\uD558\uB294 \uBA54\uC2DC\uC9C0\
@@ -9,7 +7,7 @@ description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB
   \ \uB3D9\uC791\uC744 \uC774\uD574\uD558\uAE30 \uC704\uD574 \uC774\uAC78 \uC0AC\uC6A9\
   \uD574\uC694."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.488845
+lastmod: 2024-02-19 22:05:14.398061
 model: gpt-4-1106-preview
 summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\uAC8C\
   \ \uC2E4\uD589\uB418\uB294\uC9C0 \uD655\uC778\uD558\uB294 \uBA54\uC2DC\uC9C0\uB97C\

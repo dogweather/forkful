@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/lua/comparing-two-dates/
 date: 2024-01-20 17:33:39.091355-07:00
 description: "Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen\
   \ Reihenfolge zu vergleichen. Programmierer nutzen dies, um Zeitabl\xE4ufe zu\u2026"
-lastmod: 2024-02-18 23:09:05.020399
+lastmod: 2024-02-19 22:05:12.958402
 model: gpt-4-1106-preview
 summary: "Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen\
   \ Reihenfolge zu vergleichen. Programmierer nutzen dies, um Zeitabl\xE4ufe zu\u2026"

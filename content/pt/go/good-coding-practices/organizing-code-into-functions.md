@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:30.742805-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\xF3\
   digo em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas. Esta\
   \ abordagem real\xE7a a\u2026"
-lastmod: 2024-02-18 23:08:57.674604
+lastmod: 2024-02-19 22:05:05.132498
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\xF3digo\
   \ em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas. Esta\

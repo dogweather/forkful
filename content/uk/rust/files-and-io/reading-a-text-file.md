@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/rust/reading-a-text-file/
 date: 2024-01-20 17:55:09.110956-07:00
 description: "Reading a text file means pulling text data from a file on your system\
   \ - it's basic I/O. Programmers need this to access and manipulate data, like configs\u2026"
-lastmod: 2024-02-18 23:08:59.998349
+lastmod: 2024-02-19 22:05:07.979110
 model: gpt-4-1106-preview
 summary: "Reading a text file means pulling text data from a file on your system -\
   \ it's basic I/O. Programmers need this to access and manipulate data, like configs\u2026"

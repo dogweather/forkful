@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:31.670616-07:00
 description: "Calculating future or past dates involves manipulating dates to find\
   \ out what they'll be after a certain period or what they were. Programmers do this\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:10.737211
+lastmod: 2024-02-19 22:05:18.265213
 model: gpt-4-1106-preview
 summary: "Calculating future or past dates involves manipulating dates to find out\
   \ what they'll be after a certain period or what they were. Programmers do this\

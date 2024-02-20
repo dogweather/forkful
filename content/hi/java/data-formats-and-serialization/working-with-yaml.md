@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/java/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:09.690729-07:00
@@ -12,7 +10,7 @@ description: "YAML, \u091C\u093F\u0938\u0947 \"YAML Ain't Markup Language\" \u09
   \u093F\u0938\u0947 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930\
   \ \u0915\u0949\u0928\u094D\u092B\u093C\u093F\u0917\u0930\u0947\u0936\u0928 \u092B\
   \u093E\u0907\u0932\u094B\u0902, \u0921\u0947\u091F\u093E\u2026"
-lastmod: 2024-02-18 23:09:03.152307
+lastmod: 2024-02-19 22:05:11.147989
 model: gpt-4-0125-preview
 summary: "YAML, \u091C\u093F\u0938\u0947 \"YAML Ain't Markup Language\" \u0915\u0947\
   \ \u0932\u093F\u090F \u091B\u094B\u091F\u093E \u0915\u093F\u092F\u093E \u091C\u093E\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/working-with-complex-numbers/
 date: 2024-01-26 04:45:19.054577-07:00
 description: "I numeri complessi hanno una parte reale e una immaginaria e sono fondamentali\
   \ in vari campi come ingegneria, fisica e grafica computerizzata. Gli\u2026"
-lastmod: 2024-02-18 23:08:55.674695
+lastmod: 2024-02-19 22:05:02.272859
 model: gpt-4-0125-preview
 summary: "I numeri complessi hanno una parte reale e una immaginaria e sono fondamentali\
   \ in vari campi come ingegneria, fisica e grafica computerizzata. Gli\u2026"

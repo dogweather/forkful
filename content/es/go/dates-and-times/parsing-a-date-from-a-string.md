@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/go/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:01.144022-07:00
 description: "Parsear una fecha de un string en Go implica convertir la fecha representada\
   \ como texto en un formato m\xE1s utilizable (por ejemplo, `time.Time`). Los\u2026"
-lastmod: 2024-02-18 23:09:09.466763
+lastmod: 2024-02-19 22:05:17.125200
 model: gpt-4-0125-preview
 summary: "Parsear una fecha de un string en Go implica convertir la fecha representada\
   \ como texto en un formato m\xE1s utilizable (por ejemplo, `time.Time`). Los\u2026"

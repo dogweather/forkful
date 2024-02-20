@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/powershell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:40.125826-07:00
 description: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automatiskt\
   \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\
   \ att den beter\u2026"
-lastmod: 2024-02-18 23:08:52.007416
+lastmod: 2024-02-19 22:04:57.362389
 model: gpt-4-0125-preview
 summary: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automatiskt\
   \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\

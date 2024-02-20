@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:15.736573-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c s\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i tro
   \ Elixir bao g\u1ED3m vi\u1EC7c b\u01B0\u1EDBc t\u1EEBng d\xF2ng m\xE3, ki\u1EC3\
   m tra c\xE1c bi\u1EBFn, v\xE0 theo d\xF5i quy tr\xECnh \u0111\u1EC3 t\xECm v\xE0\
   \ s\u1EEDa l\u1ED7i. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:50.373837
+lastmod: 2024-02-19 22:04:55.416519
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c s\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Elixir\
   \ bao g\u1ED3m vi\u1EC7c b\u01B0\u1EDBc t\u1EEBng d\xF2ng m\xE3, ki\u1EC3m tra c\xE1\

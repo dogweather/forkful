@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:09.482167-07:00
 description: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9ralement\
   \ se d\xE9barrasser des guillemets doubles (\") ou simples (') superflus. Les programmeurs\
   \ font cela\u2026"
-lastmod: 2024-02-18 23:09:08.326714
+lastmod: 2024-02-19 22:05:16.126063
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9ralement se\
   \ d\xE9barrasser des guillemets doubles (\") ou simples (') superflus. Les programmeurs\

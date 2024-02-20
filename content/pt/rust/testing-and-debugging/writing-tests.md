@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/rust/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:10.772977-07:00
 description: "Escrever testes em Rust envolve criar verifica\xE7\xF5es automatizadas\
   \ para assegurar que seu c\xF3digo executa conforme o esperado. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:57.932355
+lastmod: 2024-02-19 22:05:05.405577
 model: gpt-4-0125-preview
 summary: "Escrever testes em Rust envolve criar verifica\xE7\xF5es automatizadas para\
   \ assegurar que seu c\xF3digo executa conforme o esperado. Programadores fazem isso\

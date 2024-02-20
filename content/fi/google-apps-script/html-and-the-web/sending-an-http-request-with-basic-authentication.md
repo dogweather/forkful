@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:28.045815-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla sis\xE4lt\xE4\
   \xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan koodaamisen pyynn\xF6n otsikkoon suojattujen\
   \ resurssien k\xE4ytt\xF6\xF6n.\u2026"
-lastmod: 2024-02-18 23:09:07.134827
+lastmod: 2024-02-19 22:05:15.012349
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla sis\xE4lt\xE4\xE4\
   \ k\xE4ytt\xE4j\xE4nimen ja salasanan koodaamisen pyynn\xF6n otsikkoon suojattujen\

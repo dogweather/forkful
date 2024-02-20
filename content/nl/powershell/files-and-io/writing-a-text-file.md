@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:55.124870-07:00
 description: "Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf.\
   \ Programmeurs doen dit voor logboekregistratie, configuratie of het opslaan van\u2026"
-lastmod: 2024-02-18 23:09:02.112062
+lastmod: 2024-02-19 22:05:10.132503
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf.\
   \ Programmeurs doen dit voor logboekregistratie, configuratie of het opslaan van\u2026"

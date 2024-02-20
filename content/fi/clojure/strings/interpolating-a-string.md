@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/interpolating-a-string/
 date: 2024-01-20 17:50:38.113165-07:00
 description: "String-interpoloinnissa sijoitetaan muuttujia tai lausekkeita osaksi\
   \ merkkijonoja. Koodarit tekev\xE4t t\xE4t\xE4 dynaamisten tekstien luomiseen ja\
   \ koodin\u2026"
-lastmod: 2024-02-18 23:09:07.213822
+lastmod: 2024-02-19 22:05:15.112485
 model: gpt-4-1106-preview
 summary: "String-interpoloinnissa sijoitetaan muuttujia tai lausekkeita osaksi merkkijonoja.\
   \ Koodarit tekev\xE4t t\xE4t\xE4 dynaamisten tekstien luomiseen ja koodin\u2026"

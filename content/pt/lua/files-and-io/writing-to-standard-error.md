@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/lua/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:41.522942-07:00
 description: "Escrever no erro padr\xE3o (stderr) trata de direcionar mensagens de\
   \ erro e sa\xEDdas de diagn\xF3stico para um canal separado, distinto da sa\xED\
   da padr\xE3o (stdout).\u2026"
-lastmod: 2024-02-18 23:08:58.298247
+lastmod: 2024-02-19 22:05:05.778336
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) trata de direcionar mensagens de erro\
   \ e sa\xEDdas de diagn\xF3stico para um canal separado, distinto da sa\xEDda padr\xE3\

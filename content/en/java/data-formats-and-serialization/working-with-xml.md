@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/working-with-xml/
 date: 2024-01-25 03:39:39.784719-07:00
 description: "Working with XML entails parsing, querying, and manipulating XML documents\
   \ with Java. Programmers do it for data interchange, configuration management,\u2026"
-lastmod: 2024-02-18 23:09:10.954580
+lastmod: 2024-02-19 22:05:18.461977
 model: gpt-4-1106-preview
 summary: "Working with XML entails parsing, querying, and manipulating XML documents\
   \ with Java. Programmers do it for data interchange, configuration management,\u2026"

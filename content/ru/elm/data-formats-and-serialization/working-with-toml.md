@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/elm/working-with-toml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:50.801338-07:00
@@ -12,7 +10,7 @@ description: "TOML, \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u0435
   \u0440\u0438\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438 \u0434\u0430\u043D\u043D\
   \u044B\u0445. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\
   \u044B \u043D\u0430 Elm\u2026"
-lastmod: 2024-02-18 23:08:56.921302
+lastmod: 2024-02-19 22:05:03.892907
 model: gpt-4-0125-preview
 summary: "TOML, \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u043E\
   \u0442 Tom's Obvious, Minimal Language (\u0422\u043E\u043C\u0430 \u041F\u0440\u043E\

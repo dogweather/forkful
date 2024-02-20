@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/swift/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:40.671803-07:00
@@ -13,7 +11,7 @@ description: "\uC815\uADDC \uD45C\uD604\uC2DD, \uB610\uB294 regex\uB294 \uAC80\u
   \ \uC774\uB97C \uD65C\uC6A9\uD558\uC5EC, \uB2E4\uC591\uD55C \uD504\uB85C\uADF8\uB798\
   \uBC0D \uC5B8\uC5B4\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uCC98\uB9AC \uBC0F \uC870\uC791\
   \ \uC791\uC5C5\uC5D0 \uC788\uC5B4 \uD544\uC218\u2026"
-lastmod: 2024-02-18 23:09:06.733550
+lastmod: 2024-02-19 22:05:14.627562
 model: gpt-4-0125-preview
 summary: "\uC815\uADDC \uD45C\uD604\uC2DD, \uB610\uB294 regex\uB294 \uAC80\uC0C9 \uD328\
   \uD134\uC744 \uD615\uC131\uD558\uB294 \uBB38\uC790\uC758 \uC5F0\uC18D\uC774\uBA70\

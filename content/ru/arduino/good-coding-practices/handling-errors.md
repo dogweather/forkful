@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/arduino/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:58:48.548260-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043E\u044
   \u0442\u043E, \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u0435\u0434\u043E\u0442\
   \u0432\u0440\u0430\u0442\u0438\u0442\u044C \u043F\u043E\u043B\u043E\u043C\u043A\u0443\
   \ \u0432\u0430\u0448\u0435\u0433\u043E Arduino,\u2026"
-lastmod: 2024-02-18 23:08:57.316775
+lastmod: 2024-02-19 22:05:04.516766
 model: gpt-4-0125-preview
 summary: "\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043E\u0448\u0438\
   \u0431\u043E\u043A \u0432 \u0432\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0433\

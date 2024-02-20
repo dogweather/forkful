@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:55.678499-07:00
 description: "Converting a date to a string means taking a date object and turning\
   \ it into readable text. Programmers do this to display dates to users or to format\u2026"
-lastmod: 2024-02-18 23:09:11.107268
+lastmod: 2024-02-19 22:05:18.602305
 model: gpt-4-1106-preview
 summary: "Converting a date to a string means taking a date object and turning it\
   \ into readable text. Programmers do this to display dates to users or to format\u2026"

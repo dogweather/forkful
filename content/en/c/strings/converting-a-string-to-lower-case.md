@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/converting-a-string-to-lower-case/
 date: 2024-02-03 17:50:08.457437-07:00
 description: "Converting a string to lowercase in C involves transforming all uppercase\
   \ letters in a given string to their corresponding lowercase equivalents.\u2026"
-lastmod: 2024-02-18 23:09:11.509759
+lastmod: 2024-02-19 22:05:18.961391
 model: gpt-4-0125-preview
 summary: "Converting a string to lowercase in C involves transforming all uppercase\
   \ letters in a given string to their corresponding lowercase equivalents.\u2026"

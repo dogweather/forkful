@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/c-sharp/logging/
 date: 2024-01-26 01:01:01.388589-07:00
 description: "Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista\
   \ suoritusaikana. Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston\u2026"
-lastmod: 2024-02-18 23:09:07.627652
+lastmod: 2024-02-19 22:05:15.472962
 model: gpt-4-1106-preview
 summary: "Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista suoritusaikana.\
   \ Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston\u2026"

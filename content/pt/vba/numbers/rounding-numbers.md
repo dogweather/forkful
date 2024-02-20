@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:57.014944-07:00
 description: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\xFA\
   mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais.\
   \ Programadores\u2026"
-lastmod: 2024-02-18 23:08:57.968124
+lastmod: 2024-02-19 22:05:05.442052
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\xFA\
   mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais.\

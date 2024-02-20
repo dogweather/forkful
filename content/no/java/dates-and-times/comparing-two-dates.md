@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/java/comparing-two-dates/
 date: 2024-01-20 17:33:13.461909-07:00
 description: "Sammenligne to datoer betyr \xE5 finne ut om de er identiske, eller\
   \ hvilken som kommer f\xF8r eller etter den andre. Dette er kritisk i oppgaver som\
   \ sortering\u2026"
-lastmod: 2024-02-18 23:08:53.782375
+lastmod: 2024-02-19 22:04:59.924338
 model: gpt-4-1106-preview
 summary: "Sammenligne to datoer betyr \xE5 finne ut om de er identiske, eller hvilken\
   \ som kommer f\xF8r eller etter den andre. Dette er kritisk i oppgaver som sortering\u2026"

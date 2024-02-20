@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/python/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:38.357981-07:00
 description: "Arrays associativos, conhecidos em Python como dicion\xE1rios, mapeiam\
   \ chaves para valores, facilitando a recupera\xE7\xE3o, modifica\xE7\xE3o ou rastreamento\
   \ de dados\u2026"
-lastmod: 2024-02-18 23:08:57.754271
+lastmod: 2024-02-19 22:05:05.216626
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos em Python como dicion\xE1rios, mapeiam chaves\
   \ para valores, facilitando a recupera\xE7\xE3o, modifica\xE7\xE3o ou rastreamento\

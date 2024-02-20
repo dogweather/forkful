@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c-sharp/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:58.410052-07:00
 description: "Een tekstbestand lezen is het ophalen van gegevens uit een bestand dat\
   \ tekst bevat. Programmeurs doen dit om configuraties te laden, gegevens te lezen\
   \ of\u2026"
-lastmod: 2024-02-18 23:09:01.871426
+lastmod: 2024-02-19 22:05:09.887867
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen is het ophalen van gegevens uit een bestand dat tekst\
   \ bevat. Programmeurs doen dit om configuraties te laden, gegevens te lezen of\u2026"

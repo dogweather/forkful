@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/go/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:29.597722-07:00
 description: "Enviar una solicitud HTTP involucra iniciar una llamada desde tu aplicaci\xF3\
   n Go a un servidor web, API o cualquier otro servicio basado en HTTP. Los\u2026"
-lastmod: 2024-02-18 23:09:09.451472
+lastmod: 2024-02-19 22:05:17.111226
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP involucra iniciar una llamada desde tu aplicaci\xF3\
   n Go a un servidor web, API o cualquier otro servicio basado en HTTP. Los\u2026"

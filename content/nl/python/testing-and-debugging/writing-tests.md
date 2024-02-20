@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:17.675957-07:00
 description: "Testen schrijven betekent code maken om te controleren of andere code\
   \ goed werkt. We doen dit om bugs te vangen, betrouwbaarheid te garanderen en updates\u2026"
-lastmod: 2024-02-18 23:09:01.437722
+lastmod: 2024-02-19 22:05:09.467993
 model: gpt-4-0125-preview
 summary: "Testen schrijven betekent code maken om te controleren of andere code goed\
   \ werkt. We doen dit om bugs te vangen, betrouwbaarheid te garanderen en updates\u2026"

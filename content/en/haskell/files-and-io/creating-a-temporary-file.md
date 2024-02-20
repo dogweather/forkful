@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/creating-a-temporary-file/
 date: 2024-01-20 17:40:14.826647-07:00
 description: "Creating a temporary file means making a file for short-term use, usually\
   \ for managing data during a program's execution. Programmers do this to avoid\u2026"
-lastmod: 2024-02-18 23:09:11.114867
+lastmod: 2024-02-19 22:05:18.609400
 model: gpt-4-1106-preview
 summary: "Creating a temporary file means making a file for short-term use, usually\
   \ for managing data during a program's execution. Programmers do this to avoid\u2026"

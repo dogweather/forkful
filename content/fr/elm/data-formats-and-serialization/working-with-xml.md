@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elm/working-with-xml/
 date: 2024-01-26 04:30:07.652469-07:00
 description: "Travailler avec XML signifie analyser, transformer et g\xE9n\xE9rer\
   \ des documents XML en Elm. Cela est r\xE9alis\xE9 pour interagir avec de nombreux\
   \ services web et\u2026"
-lastmod: 2024-02-18 23:09:08.761233
+lastmod: 2024-02-19 22:05:16.467309
 model: gpt-4-0125-preview
 summary: "Travailler avec XML signifie analyser, transformer et g\xE9n\xE9rer des\
   \ documents XML en Elm. Cela est r\xE9alis\xE9 pour interagir avec de nombreux services\

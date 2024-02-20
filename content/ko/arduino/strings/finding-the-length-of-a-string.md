@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:04.049974-07:00
 description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB34\uC5C7\uC774\
   \uACE0, \uC65C \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774\uAC83\uC744 \uD560\
@@ -11,7 +9,7 @@ description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB34\uC5C7\uC
   \uC790\uC5F4\uC758 \uD06C\uAE30\uB97C \uC54C\uC544\uC57C \uD560 \uB54C \uC774\uB97C\
   \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.606144
+lastmod: 2024-02-19 22:05:14.509353
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB34\uC5C7\uC774\uACE0\
   , \uC65C \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774\uAC83\uC744 \uD560\uAE4C\

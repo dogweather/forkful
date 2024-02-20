@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/bash/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:16.458369-07:00
 description: "L'\xE9criture sur l'erreur standard (stderr) en Bash consiste \xE0 diriger\
   \ les messages d'erreur ou toute sortie de diagnostic importante s\xE9par\xE9e de\
   \ la sortie\u2026"
-lastmod: 2024-02-18 23:09:09.036993
+lastmod: 2024-02-19 22:05:16.721158
 model: gpt-4-0125-preview
 summary: "L'\xE9criture sur l'erreur standard (stderr) en Bash consiste \xE0 diriger\
   \ les messages d'erreur ou toute sortie de diagnostic importante s\xE9par\xE9e de\

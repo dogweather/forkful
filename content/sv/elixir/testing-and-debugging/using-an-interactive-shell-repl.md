@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:09.969061-07:00
 description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig\
   \ prova kodsnuttar i realtid. Elixir-programmerare anv\xE4nder REPL, kallad IEx\
   \ (Interactive\u2026"
-lastmod: 2024-02-18 23:08:51.504103
+lastmod: 2024-02-19 22:04:56.814920
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig prova\
   \ kodsnuttar i realtid. Elixir-programmerare anv\xE4nder REPL, kallad IEx (Interactive\u2026"

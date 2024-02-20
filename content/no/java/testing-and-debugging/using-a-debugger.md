@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/java/using-a-debugger/
 date: 2024-01-26 03:50:05.803260-07:00
 description: "\xC5 bruke en debugger betyr \xE5 benytte et verkt\xF8y for \xE5 teste\
   \ og fikse feil i koden din. Programmerere gj\xF8r dette for \xE5 forst\xE5 flyten\
   \ i applikasjonene sine,\u2026"
-lastmod: 2024-02-18 23:08:53.775063
+lastmod: 2024-02-19 22:04:59.916152
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en debugger betyr \xE5 benytte et verkt\xF8y for \xE5 teste og\
   \ fikse feil i koden din. Programmerere gj\xF8r dette for \xE5 forst\xE5 flyten\

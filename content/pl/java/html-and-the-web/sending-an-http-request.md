@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/sending-an-http-request/
 date: 2024-01-20 17:59:58.453227-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikacja z serwerem w sieci;\
   \ mo\u017Cna prosi\u0107 o dane lub wysy\u0142a\u0107 je. Programi\u015Bci to robi\u0105\
   , by pobiera\u0107 informacje, autoryzowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.474791
+lastmod: 2024-02-19 22:04:54.402850
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikacja z serwerem w sieci;\
   \ mo\u017Cna prosi\u0107 o dane lub wysy\u0142a\u0107 je. Programi\u015Bci to robi\u0105\

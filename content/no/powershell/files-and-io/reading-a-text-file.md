@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/reading-a-text-file/
 date: 2024-01-20 17:54:51.774665-07:00
 description: "\xC5 lese en tekstfil betyr \xE5 f\xE5 tilgang til innholdet i filen\
   \ via et program. Programmerere gj\xF8r dette for \xE5 behandle data, konfigurere\
   \ programmer, eller\u2026"
-lastmod: 2024-02-18 23:08:54.117272
+lastmod: 2024-02-19 22:05:00.304202
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 f\xE5 tilgang til innholdet i filen via\
   \ et program. Programmerere gj\xF8r dette for \xE5 behandle data, konfigurere programmer,\

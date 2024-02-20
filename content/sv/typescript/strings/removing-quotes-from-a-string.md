@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:30.128781-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man tar\
   \ bort de omgivande enkla (`'`) eller dubbla (`\"`) citattecknen som definierar\
   \ str\xE4nglitteraler i\u2026"
-lastmod: 2024-02-18 23:08:51.532102
+lastmod: 2024-02-19 22:04:56.845121
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man tar bort\
   \ de omgivande enkla (`'`) eller dubbla (`\"`) citattecknen som definierar str\xE4\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/downloading-a-web-page/
 date: 2024-01-20 17:43:44.533230-07:00
 description: "Baixar uma p\xE1gina da web \xE9 o processo de pegar o conte\xFAdo de\
   \ uma p\xE1gina atrav\xE9s da Internet e salv\xE1-lo localmente. Programadores fazem\
   \ isso para an\xE1lise\u2026"
-lastmod: 2024-02-18 23:08:58.448459
+lastmod: 2024-02-19 22:05:05.938589
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 o processo de pegar o conte\xFAdo de uma\
   \ p\xE1gina atrav\xE9s da Internet e salv\xE1-lo localmente. Programadores fazem\

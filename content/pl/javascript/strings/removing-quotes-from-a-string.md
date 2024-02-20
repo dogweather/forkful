@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:32.873795-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
   \ si\u0119 tych irytuj\u0105cych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 namiesza\u0107\
   \ w twoim kodzie, szczeg\xF3lnie kiedy\u2026"
-lastmod: 2024-02-18 23:08:49.982058
+lastmod: 2024-02-19 22:04:54.934099
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie si\u0119\
   \ tych irytuj\u0105cych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 namiesza\u0107\

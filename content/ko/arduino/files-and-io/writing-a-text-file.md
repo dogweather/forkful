@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:07.238092-07:00
@@ -13,7 +11,7 @@ description: "\uC544\uB450\uC774\uB178\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC7
   \uB85D\uD558\uAC70\uB098, \uAD6C\uC131\uC744 \uC800\uC7A5\uD558\uAC70\uB098, \uC2DC\
   \uAC04\uC774 \uC9C0\uB0A8\uC5D0 \uB530\uB77C \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
   \ \uC774\uBCA4\uD2B8\uB97C \uAE30\uB85D\uD558\uAE30 \uC704\uD574 \uC774\u2026"
-lastmod: 2024-02-18 23:09:06.647736
+lastmod: 2024-02-19 22:05:14.548612
 model: gpt-4-0125-preview
 summary: "\uC544\uB450\uC774\uB178\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744\
   \ \uC791\uC131\uD55C\uB2E4\uB294 \uAC83\uC740 SD \uCE74\uB4DC\uB098 \uBE44\uC2B7\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:23.427753-07:00
 description: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre\xEB\
   ert en verstuurt naar een webserver om gegevens op te halen of in te dienen.\u2026"
-lastmod: 2024-02-18 23:09:02.369276
+lastmod: 2024-02-19 22:05:10.376334
 model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre\xEBert\
   \ en verstuurt naar een webserver om gegevens op te halen of in te dienen.\u2026"

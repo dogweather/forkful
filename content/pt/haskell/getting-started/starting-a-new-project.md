@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/haskell/starting-a-new-project/
 date: 2024-01-20 18:03:36.552613-07:00
 description: "Come\xE7ar um novo projeto em Haskell envolve criar a estrutura base\
   \ de um programa, definindo seus m\xF3dulos e depend\xEAncias. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:58.199854
+lastmod: 2024-02-19 22:05:05.671554
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto em Haskell envolve criar a estrutura base de\
   \ um programa, definindo seus m\xF3dulos e depend\xEAncias. Programadores fazem\

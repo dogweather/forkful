@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/python/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:48.467993-07:00
@@ -12,7 +10,7 @@ description: "\u89E3\u6790HTML\u6D89\u53CA\u5206\u6790\u7F51\u9875\u7684HTML\u4E
   \u5F0F\u4E0E\u7F51\u7AD9\u4E92\u52A8\u6216\u4ECE\u7F51\u7AD9\u63D0\u53D6\u6570\u636E\
   \u3001\u81EA\u52A8\u5316\u4EFB\u52A1\u6216\u6D4B\u8BD5Web\u5E94\u7528\u7A0B\u5E8F\
   \u3002"
-lastmod: 2024-02-18 23:08:58.788870
+lastmod: 2024-02-19 22:05:06.332331
 model: gpt-4-0125-preview
 summary: "\u89E3\u6790HTML\u6D89\u53CA\u5206\u6790\u7F51\u9875\u7684HTML\u4EE3\u7801\
   \u4EE5\u63D0\u53D6\u7279\u5B9A\u4FE1\u606F\u6216\u5143\u7D20\uFF0C\u8FD9\u662F\u7F51\

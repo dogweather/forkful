@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/google-apps-script/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:56.422363-07:00
 description: "A extra\xE7\xE3o de substrings envolve pegar uma por\xE7\xE3o de uma\
   \ string - essencialmente, criar uma nova string a partir de uma parte de uma existente.\u2026"
-lastmod: 2024-02-18 23:08:57.703348
+lastmod: 2024-02-19 22:05:05.162933
 model: gpt-4-0125-preview
 summary: "A extra\xE7\xE3o de substrings envolve pegar uma por\xE7\xE3o de uma string\
   \ - essencialmente, criar uma nova string a partir de uma parte de uma existente.\u2026"

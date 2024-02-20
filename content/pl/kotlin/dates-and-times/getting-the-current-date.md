@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/kotlin/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:18.587367-07:00
 description: "W programowaniu, uzyskanie aktualnej daty to podstawowe zadanie, kt\xF3\
   re umo\u017Cliwia programistom dost\u0119p, wy\u015Bwietlanie lub manipulowanie\
   \ bie\u017C\u0105c\u0105 dat\u0105 w ich\u2026"
-lastmod: 2024-02-18 23:08:49.579459
+lastmod: 2024-02-19 22:04:54.506954
 model: gpt-4-0125-preview
 summary: "W programowaniu, uzyskanie aktualnej daty to podstawowe zadanie, kt\xF3\
   re umo\u017Cliwia programistom dost\u0119p, wy\u015Bwietlanie lub manipulowanie\

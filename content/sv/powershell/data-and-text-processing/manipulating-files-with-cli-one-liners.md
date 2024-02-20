@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:22.811186-07:00
 description: "Att manipulera filer med CLI-enradare i PowerShell handlar om att snabbt\
   \ \xE4ndra, flytta eller erh\xE5lla fildata direkt fr\xE5n kommandoraden. Programmerare\
   \ g\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.998807
+lastmod: 2024-02-19 22:04:57.353335
 model: gpt-4-0125-preview
 summary: "Att manipulera filer med CLI-enradare i PowerShell handlar om att snabbt\
   \ \xE4ndra, flytta eller erh\xE5lla fildata direkt fr\xE5n kommandoraden. Programmerare\

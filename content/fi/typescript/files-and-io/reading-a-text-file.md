@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/reading-a-text-file/
 date: 2024-01-20 17:55:22.953079-07:00
 description: "Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostosta\
   \ ohjelman k\xE4ytett\xE4v\xE4ksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta he\
   \ voivat k\xE4sitell\xE4 tai\u2026"
-lastmod: 2024-02-18 23:09:07.337577
+lastmod: 2024-02-19 22:05:15.227588
 model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostosta ohjelman\
   \ k\xE4ytett\xE4v\xE4ksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta he voivat k\xE4\

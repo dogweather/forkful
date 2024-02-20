@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/parsing-html/
 date: 2024-01-20 15:31:08.369871-07:00
 description: "Parsing HTML handlar om att tolka och omvandla HTML-kod till n\xE5got\
   \ som programmets logik kan hantera. Vi g\xF6r det f\xF6r att kunna manipulera,\
   \ analysera och\u2026"
-lastmod: 2024-02-18 23:08:51.707599
+lastmod: 2024-02-19 22:04:57.038454
 summary: "Parsing HTML handlar om att tolka och omvandla HTML-kod till n\xE5got som\
   \ programmets logik kan hantera. Vi g\xF6r det f\xF6r att kunna manipulera, analysera\
   \ och\u2026"

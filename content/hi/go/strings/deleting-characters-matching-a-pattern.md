@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/go/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:45.293801-07:00
@@ -14,7 +12,7 @@ description: "\u0935\u093F\u0936\u093F\u0937\u094D\u091F \u092A\u0948\u091F\u093
   \ \u0915\u0940 \u0936\u0943\u0902\u0916\u0932\u093E \u0915\u094B \u0939\u091F\u093E\
   \u0928\u093E, \u091C\u094B \u0906\u092E\u0924\u094C\u0930 \u092A\u0930 \u090F\u0915\
   \u2026"
-lastmod: 2024-02-18 23:09:02.452573
+lastmod: 2024-02-19 22:05:10.456398
 model: gpt-4-0125-preview
 summary: "\u0935\u093F\u0936\u093F\u0937\u094D\u091F \u092A\u0948\u091F\u0930\u094D\
   \u0928 \u0938\u0947 \u092E\u0947\u0932 \u0916\u093E\u0928\u0947 \u0935\u093E\u0932\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/clojure/searching-and-replacing-text/
 date: 2024-01-20 17:58:02.627932-07:00
 description: "Cercare e sostituire testo \xE8 una tecnica per identificare stringhe\
   \ specifiche e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
-lastmod: 2024-02-18 23:08:55.547320
+lastmod: 2024-02-19 22:05:02.136416
 model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo \xE8 una tecnica per identificare stringhe specifiche\
   \ e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"

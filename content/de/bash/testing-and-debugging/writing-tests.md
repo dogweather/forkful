@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/bash/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:29.592467-07:00
 description: "Testen in Bash bedeutet, Testf\xE4lle zu scripten, um die Funktionalit\xE4\
   t Ihrer Bash-Skripte zu validieren. Programmierer f\xFChren Tests durch, um\u2026"
-lastmod: 2024-02-18 23:09:05.058186
+lastmod: 2024-02-19 22:05:12.994029
 model: gpt-4-0125-preview
 summary: "Testen in Bash bedeutet, Testf\xE4lle zu scripten, um die Funktionalit\xE4\
   t Ihrer Bash-Skripte zu validieren. Programmierer f\xFChren Tests durch, um\u2026"

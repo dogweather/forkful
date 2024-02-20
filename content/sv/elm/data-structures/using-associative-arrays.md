@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/elm/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:01.848732-07:00
 description: "Associativa arrayer, eller som Elm kallar dem, Ordb\xF6cker, mappar\
   \ nycklar till v\xE4rden p\xE5 ett s\xE4tt som g\xF6r uppslag, infogning och borttagning\
   \ av v\xE4rden\u2026"
-lastmod: 2024-02-18 23:08:51.703159
+lastmod: 2024-02-19 22:04:57.033429
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller som Elm kallar dem, Ordb\xF6cker, mappar nycklar\
   \ till v\xE4rden p\xE5 ett s\xE4tt som g\xF6r uppslag, infogning och borttagning\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/typescript/concatenating-strings/
 date: 2024-01-20 17:36:18.566942-07:00
 description: "String concatenation \u0926\u094B \u092F\u093E \u0926\u094B \u0938\u0947\
   \ \u0905\u0927\u093F\u0915 strings \u0915\u094B \u091C\u094B\u0921\u093C\u0928\u0947\
@@ -10,7 +8,7 @@ description: "String concatenation \u0926\u094B \u092F\u093E \u0926\u094B \u0938
   \ \u0915\u0930\u0928\u0947 \u092F\u093E \u092E\u0947\u0938\u0947\u091C\u0947\u0938\
   \ \u0915\u094D\u0930\u093F\u090F\u091F \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\
   \u093F\u090F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964"
-lastmod: 2024-02-18 23:09:02.864814
+lastmod: 2024-02-19 22:05:10.863261
 model: gpt-4-1106-preview
 summary: "String concatenation \u0926\u094B \u092F\u093E \u0926\u094B \u0938\u0947\
   \ \u0905\u0927\u093F\u0915 strings \u0915\u094B \u091C\u094B\u0921\u093C\u0928\u0947\

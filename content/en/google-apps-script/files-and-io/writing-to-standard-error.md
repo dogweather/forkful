@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/writing-to-standard-error/
 date: 2024-02-01 21:12:05.531485-07:00
 description: "Writing to standard error (stderr) in programming languages is about\
   \ directing error messages and diagnostics to a separate stream, apart from the\u2026"
-lastmod: 2024-02-18 23:09:10.655916
+lastmod: 2024-02-19 22:05:18.191885
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in programming languages is about directing\
   \ error messages and diagnostics to a separate stream, apart from the\u2026"

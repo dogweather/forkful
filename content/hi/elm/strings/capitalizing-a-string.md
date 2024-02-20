@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elm/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:55.328571-07:00
@@ -13,7 +11,7 @@ description: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u09
   \ \u092E\u0947\u0902 \u092A\u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\
   \u0930\u0928\u093E \u091C\u092C\u0915\u093F \u092C\u093E\u0915\u0940 \u0915\u094B\
   \ \u091B\u094B\u091F\u0947 \u092E\u093E\u092E\u0932\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.160964
+lastmod: 2024-02-19 22:05:11.156838
 model: gpt-4-0125-preview
 summary: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B\
   \ \u092C\u0921\u093C\u0947 \u0905\u0915\u094D\u0937\u0930 \u092E\u0947\u0902 \u092C\

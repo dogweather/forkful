@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/calculating-a-date-in-the-future-or-past/
 date: 2024-02-01 21:12:11.382059-07:00
 description: "Calculating a date in the future or the past is about manipulating date\
   \ objects to find dates beyond or before the present date, respectively. Programmers\u2026"
-lastmod: 2024-02-18 23:09:10.652931
+lastmod: 2024-02-19 22:05:18.189171
 model: gpt-4-0125-preview
 summary: "Calculating a date in the future or the past is about manipulating date\
   \ objects to find dates beyond or before the present date, respectively. Programmers\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elm/downloading-a-web-page/
 date: 2024-01-20 17:43:54.263147-07:00
 description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
   \ le r\xE9seau. Les programmeurs font \xE7a pour acc\xE9der et utiliser des donn\xE9\
   es, souvent dynamiques,\u2026"
-lastmod: 2024-02-18 23:09:08.732834
+lastmod: 2024-02-19 22:05:16.441905
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via le\
   \ r\xE9seau. Les programmeurs font \xE7a pour acc\xE9der et utiliser des donn\xE9\

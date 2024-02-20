@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/rust/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:13.071685-07:00
 description: "Analizar una fecha desde una cadena es una tarea com\xFAn al tratar\
   \ con entradas de usuario o al leer datos de archivos, lo cual implica convertir\
   \ datos en\u2026"
-lastmod: 2024-02-18 23:09:09.759327
+lastmod: 2024-02-19 22:05:17.381883
 model: gpt-4-0125-preview
 summary: "Analizar una fecha desde una cadena es una tarea com\xFAn al tratar con\
   \ entradas de usuario o al leer datos de archivos, lo cual implica convertir datos\

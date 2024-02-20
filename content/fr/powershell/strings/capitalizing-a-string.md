@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/powershell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:03.889028-07:00
 description: "Mettre en majuscule une cha\xEEne dans PowerShell consiste \xE0 transformer\
   \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule tout en laissant\
   \ le reste de\u2026"
-lastmod: 2024-02-18 23:09:09.046931
+lastmod: 2024-02-19 22:05:16.730391
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne dans PowerShell consiste \xE0 transformer\
   \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule tout en laissant\

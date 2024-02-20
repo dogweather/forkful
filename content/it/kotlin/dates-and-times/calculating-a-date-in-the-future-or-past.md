@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:30.183884-07:00
 description: "Calcolare una data nel futuro o nel passato significa semplicemente\
   \ aggiungere o togliere giorni, mesi o anni dalla data corrente. Questo \xE8 fondamentale\u2026"
-lastmod: 2024-02-18 23:08:55.858894
+lastmod: 2024-02-19 22:05:02.467795
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato significa semplicemente aggiungere\
   \ o togliere giorni, mesi o anni dalla data corrente. Questo \xE8 fondamentale\u2026"

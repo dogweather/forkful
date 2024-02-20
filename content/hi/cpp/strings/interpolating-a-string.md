@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/cpp/interpolating-a-string/
 date: 2024-01-20 17:50:41.785867-07:00
 description: "String interpolation \u092E\u0947\u0902 \u0939\u092E variables \u0914\
   \u0930 expressions \u0915\u094B straightway strings \u0915\u0947 \u0905\u0902\u0926\
@@ -8,7 +6,7 @@ description: "String interpolation \u092E\u0947\u0902 \u0939\u092E variables \u0
   \u0947 \u0915\u094B\u0921 read \u0915\u0930\u0928\u093E \u0914\u0930 write \u0915\
   \u0930\u0928\u093E \u0926\u094B\u0928\u094B\u0902 \u0906\u0938\u093E\u0928 \u0939\
   \u094B \u091C\u093E\u0924\u093E \u0939\u0948\u0964\u2026"
-lastmod: 2024-02-18 23:09:03.864031
+lastmod: 2024-02-19 22:05:11.846707
 model: gpt-4-1106-preview
 summary: "String interpolation \u092E\u0947\u0902 \u0939\u092E variables \u0914\u0930\
   \ expressions \u0915\u094B straightway strings \u0915\u0947 \u0905\u0902\u0926\u0930\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:46.939396-07:00
@@ -8,7 +6,7 @@ description: "Shell t\u01B0\u01A1ng t\xE1c, hay V\xF2ng l\u1EB7p \u0110\u1ECDc-\
   \xE1nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n nh\u1EADp c\xE1c l\u1EC7nh PowerShell\
   \ v\xE0 nh\u1EADn ph\u1EA3n h\u1ED3i t\u1EE9c th\xEC. L\u1EADp tr\xECnh vi\xEAn\
   \ s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 nhanh\u2026"
-lastmod: 2024-02-18 23:08:50.936036
+lastmod: 2024-02-19 22:04:56.132145
 model: gpt-4-0125-preview
 summary: "Shell t\u01B0\u01A1ng t\xE1c, hay V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1\
   nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n nh\u1EADp c\xE1c l\u1EC7nh PowerShell\

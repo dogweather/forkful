@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/arduino/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:51.881896-07:00
 description: "Escribir un archivo de texto en Arduino implica guardar datos en un\
   \ archivo en una tarjeta SD o un m\xF3dulo de almacenamiento similar, a menudo para\
   \ fines\u2026"
-lastmod: 2024-02-18 23:09:10.281636
+lastmod: 2024-02-19 22:05:17.857114
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Arduino implica guardar datos en un archivo\
   \ en una tarjeta SD o un m\xF3dulo de almacenamiento similar, a menudo para fines\u2026"

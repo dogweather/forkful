@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:27.043380-07:00
 description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla\
   \ stora bokst\xE4ver till sm\xE5 i en given text. Programmerare g\xF6r det f\xF6\
   r att standardisera\u2026"
-lastmod: 2024-02-18 23:08:51.531190
+lastmod: 2024-02-19 22:04:56.844145
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla stora\
   \ bokst\xE4ver till sm\xE5 i en given text. Programmerare g\xF6r det f\xF6r att\

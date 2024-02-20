@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/typescript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:54.323474-07:00
 description: "Obtener la fecha actual en TypeScript, un lenguaje construido sobre\
   \ JavaScript, te permite acceder y manipular la informaci\xF3n de la fecha y hora\
   \ actuales.\u2026"
-lastmod: 2024-02-18 23:09:09.714147
+lastmod: 2024-02-19 22:05:17.341088
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en TypeScript, un lenguaje construido sobre JavaScript,\
   \ te permite acceder y manipular la informaci\xF3n de la fecha y hora actuales.\u2026"

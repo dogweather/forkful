@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:38.327929-07:00
@@ -12,7 +10,7 @@ description: "\u5728 Google Apps \u811A\u672C\u4E2D\u83B7\u53D6\u5F53\u524D\u65E
   \u8FD9\u4E00\u529F\u80FD\u8FDB\u884C\u52A8\u6001\u5185\u5BB9\u751F\u6210\u3001\u622A\
   \u6B62\u65E5\u671F\u8DDF\u8E2A\u4EE5\u53CA\u5728 Google Docs\u3001Sheets \u548C\u5176\
   \u4ED6 Google \u670D\u52A1\u5185\u7684\u8C03\u5EA6\u3002"
-lastmod: 2024-02-18 23:08:58.760989
+lastmod: 2024-02-19 22:05:06.293557
 model: gpt-4-0125-preview
 summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\
   \u662F\u5173\u4E8E\u83B7\u53D6\u5B9E\u65F6\u65E5\u671F\u548C\u65F6\u95F4\u7684\u5E38\

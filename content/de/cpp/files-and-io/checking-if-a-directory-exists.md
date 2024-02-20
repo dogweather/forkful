@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/cpp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:56.732375-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen,\
   \ ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen\
   \ wie\u2026"
-lastmod: 2024-02-18 23:09:05.204076
+lastmod: 2024-02-19 22:05:13.133003
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen,\
   \ ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen\

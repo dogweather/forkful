@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/printing-debug-output/
 date: 2024-01-20 17:52:35.831459-07:00
 description: "Skriva ut fels\xF6kningsdata g\xF6r det l\xE4ttare att se vad ditt program\
   \ egentligen g\xF6r. Programmerare anv\xE4nder det f\xF6r att hitta buggar och f\xF6\
   rst\xE5 programfl\xF6det."
-lastmod: 2024-02-18 23:08:51.712026
+lastmod: 2024-02-19 22:04:57.043263
 model: gpt-4-1106-preview
 summary: "Skriva ut fels\xF6kningsdata g\xF6r det l\xE4ttare att se vad ditt program\
   \ egentligen g\xF6r. Programmerare anv\xE4nder det f\xF6r att hitta buggar och f\xF6\

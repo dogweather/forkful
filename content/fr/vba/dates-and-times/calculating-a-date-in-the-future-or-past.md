@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:06.976600-07:00
 description: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
   \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\
   es d'une date\u2026"
-lastmod: 2024-02-18 23:09:08.595162
+lastmod: 2024-02-19 22:05:16.370194
 model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
   \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\

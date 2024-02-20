@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/arduino/searching-and-replacing-text/
 date: 2024-01-20 17:57:10.953758-07:00
 description: "Text suchen und ersetzen bedeutet, bestimmte Zeichenfolgen in einem\
   \ Text zu finden und sie durch andere zu ersetzen. Programmierer nutzen es, um Fehler\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.130545
+lastmod: 2024-02-19 22:05:13.062955
 model: gpt-4-1106-preview
 summary: "Text suchen und ersetzen bedeutet, bestimmte Zeichenfolgen in einem Text\
   \ zu finden und sie durch andere zu ersetzen. Programmierer nutzen es, um Fehler\

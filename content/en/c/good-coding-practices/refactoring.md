@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c/refactoring/
 date: 2024-02-03 17:50:13.202592-07:00
 description: "Refactoring in programming involves restructuring existing code without\
   \ changing its external behavior, aiming to improve nonfunctional attributes such\
   \ as\u2026"
-lastmod: 2024-02-18 23:09:11.530865
+lastmod: 2024-02-19 22:05:18.980706
 model: gpt-4-0125-preview
 summary: "Refactoring in programming involves restructuring existing code without\
   \ changing its external behavior, aiming to improve nonfunctional attributes such\

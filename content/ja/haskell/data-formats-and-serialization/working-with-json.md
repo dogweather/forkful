@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/haskell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:09.255032-07:00
 description: "Haskell\u3067\u306EJSON\uFF08JavaScript Object\u2026"
-lastmod: 2024-02-18 23:08:54.976628
+lastmod: 2024-02-19 22:05:01.357584
 model: gpt-4-0125-preview
 summary: "Haskell\u3067\u306EJSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"

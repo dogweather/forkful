@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:57.060537-07:00
@@ -8,7 +6,7 @@ description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3n th\xE0nh ch\u1EE
   \ th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3\
   \ c\xE1c k\xFD t\u1EF1 trong v\u0103n b\u1EA3n th\xE0nh c\xE1c bi\u1EBFn th\u1EC3\
   \ ch\u1EEF th\u01B0\u1EDDng c\u1EE7a ch\xFAng, nh\u01B0 chuy\u1EC3n \"Hello,\u2026"
-lastmod: 2024-02-18 23:08:50.300332
+lastmod: 2024-02-19 22:04:55.332010
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3n th\xE0nh ch\u1EEF th\u01B0\
   \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\

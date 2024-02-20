@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:01.772013-07:00
 description: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentication)\uC744\
   \ \uCD94\uAC00\uD558\uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\
@@ -10,7 +8,7 @@ description: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentica
   \uC548\uC774 \uD544\uC694\uD55C \uB9AC\uC18C\uC2A4\uC5D0 \uC561\uC138\uC2A4\uD560\
   \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.149081
+lastmod: 2024-02-19 22:05:14.083019
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentication)\uC744\
   \ \uCD94\uAC00\uD558\uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\

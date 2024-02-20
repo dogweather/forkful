@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/php/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:25.631493-07:00
@@ -14,7 +12,7 @@ description: "PHP \u092E\u0947\u0902 \u091F\u0947\u0915\u094D\u0938\u094D\u091F 
   \ \u0921\u0947\u091F\u093E \u0915\u094B \u0938\u0902\u0917\u094D\u0930\u0939\u0940\
   \u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0915\u0930\u0924\
   \u0947 \u0939\u0948\u0902,\u2026"
-lastmod: 2024-02-18 23:09:03.533829
+lastmod: 2024-02-19 22:05:11.523370
 model: gpt-4-0125-preview
 summary: "PHP \u092E\u0947\u0902 \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u092B\
   \u093C\u093E\u0907\u0932 \u0932\u093F\u0916\u0928\u093E \u090F\u0915 \u092B\u093C\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/typescript/rounding-numbers/
 date: 2024-01-26 03:46:54.448527-07:00
 description: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezifische\
   \ Genauigkeit. Programmierer tun dies, um die numerische Ausgabe f\xFCr Lesbarkeit,\u2026"
-lastmod: 2024-02-18 23:09:04.591286
+lastmod: 2024-02-19 22:05:12.549471
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezifische\
   \ Genauigkeit. Programmierer tun dies, um die numerische Ausgabe f\xFCr Lesbarkeit,\u2026"

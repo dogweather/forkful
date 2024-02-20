@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/creating-a-temporary-file/
 date: 2024-01-20 17:40:33.182738-07:00
 description: "V\xE4liaikaistiedoston luominen on prosessi, jossa tehd\xE4\xE4n tilap\xE4\
   inen tiedosto datan v\xE4liaikaista s\xE4ilytyst\xE4 tai k\xE4sittely\xE4 varten.\
   \ Ohjelmoijat tekev\xE4t sen,\u2026"
-lastmod: 2024-02-18 23:09:08.056990
+lastmod: 2024-02-19 22:05:15.863999
 model: gpt-4-1106-preview
 summary: "V\xE4liaikaistiedoston luominen on prosessi, jossa tehd\xE4\xE4n tilap\xE4\
   inen tiedosto datan v\xE4liaikaista s\xE4ilytyst\xE4 tai k\xE4sittely\xE4 varten.\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/ruby/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:53.694868-07:00
 description: "JSON (Notaci\xF3n de Objetos de JavaScript) es un formato ligero de\
   \ intercambio de datos, prevalente en aplicaciones web para el intercambio de datos\
   \ entre\u2026"
-lastmod: 2024-02-18 23:09:10.575454
+lastmod: 2024-02-19 22:05:18.120261
 model: gpt-4-0125-preview
 summary: "JSON (Notaci\xF3n de Objetos de JavaScript) es un formato ligero de intercambio\
   \ de datos, prevalente en aplicaciones web para el intercambio de datos entre\u2026"

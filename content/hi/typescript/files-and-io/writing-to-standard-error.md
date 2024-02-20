@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:35:34.434242-07:00
@@ -13,7 +11,7 @@ description: "TypeScript \u092E\u0947\u0902, \u092E\u093E\u0928\u0915 \u0924\u09
   \u0923 \u0915\u0947 \u0924\u094D\u0930\u0941\u091F\u093F \u0906\u0909\u091F\u092A\
   \u0941\u091F \u0938\u094D\u091F\u094D\u0930\u0940\u092E \u092E\u0947\u0902 \u092D\
   \u0947\u091C\u093E \u091C\u093E\u0924\u093E \u0939\u0948\u2026"
-lastmod: 2024-02-18 23:09:02.909329
+lastmod: 2024-02-19 22:05:10.908080
 model: gpt-4-0125-preview
 summary: "TypeScript \u092E\u0947\u0902, \u092E\u093E\u0928\u0915 \u0924\u094D\u0930\
   \u0941\u091F\u093F (stderr) \u092E\u0947\u0902 \u0932\u093F\u0916\u0928\u093E \u090F\

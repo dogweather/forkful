@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/java/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:20.716569-07:00
 description: "Travailler avec des fichiers CSV implique la lecture et l'\xE9criture\
   \ de donn\xE9es dans des fichiers aux valeurs s\xE9par\xE9es par des virgules (CSV),\
   \ un format\u2026"
-lastmod: 2024-02-18 23:09:08.709048
+lastmod: 2024-02-19 22:05:16.422929
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV implique la lecture et l'\xE9criture de\
   \ donn\xE9es dans des fichiers aux valeurs s\xE9par\xE9es par des virgules (CSV),\

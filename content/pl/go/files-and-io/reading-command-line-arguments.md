@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:31.194111-07:00
 description: "Odczytywanie argument\xF3w wiersza polece\u0144 w Go polega na ekstrakcji\
   \ argument\xF3w dostarczonych do programu podczas jego wywo\u0142ania z terminala\
   \ lub wiersza\u2026"
-lastmod: 2024-02-18 23:08:49.115688
+lastmod: 2024-02-19 22:04:54.054477
 model: gpt-4-0125-preview
 summary: "Odczytywanie argument\xF3w wiersza polece\u0144 w Go polega na ekstrakcji\
   \ argument\xF3w dostarczonych do programu podczas jego wywo\u0142ania z terminala\

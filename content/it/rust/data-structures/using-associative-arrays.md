@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/rust/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:47.035062-07:00
 description: "Gli array associativi, o come li chiamano i Rustaceans \"hash map\"\
   , sono collezioni che memorizzano dati in coppie chiave-valore. I programmatori\
   \ li\u2026"
-lastmod: 2024-02-18 23:08:55.673797
+lastmod: 2024-02-19 22:05:02.271899
 model: gpt-4-0125-preview
 summary: "Gli array associativi, o come li chiamano i Rustaceans \"hash map\", sono\
   \ collezioni che memorizzano dati in coppie chiave-valore. I programmatori li\u2026"

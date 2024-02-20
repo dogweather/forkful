@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c-sharp/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:08.064625-07:00
@@ -13,7 +11,7 @@ description: "YAML\u306F\u300CYAML Ain't Markup Language\u300D\u306E\u7565\u3067
   \u30B9\u30C8\u30EC\u30FC\u30B8\u306BXML\u3084JSON\u306A\u3069\u306E\u4ED6\u306E\u30C7\
   \u30FC\u30BF\u5F62\u5F0F\u3068\u6BD4\u3079\u3066YAML\u3092\u3088\u304F\u4F7F\u7528\
   \u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.936204
+lastmod: 2024-02-19 22:05:01.298574
 model: gpt-4-0125-preview
 summary: "YAML\u306F\u300CYAML Ain't Markup Language\u300D\u306E\u7565\u3067\u3001\
   \u4EBA\u9593\u304C\u8AAD\u3081\u308B\u30C7\u30FC\u30BF\u30B7\u30EA\u30A2\u30E9\u30A4\

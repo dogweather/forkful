@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:54.009709-07:00
 description: "Remover aspas de uma string significa eliminar quaisquer marcas de cita\xE7\
   \xE3o\u2014simples (' '), duplas (\" \") ou ambas\u2014dos dados de texto. Programadores\
   \ fazem\u2026"
-lastmod: 2024-02-18 23:08:58.006914
+lastmod: 2024-02-19 22:05:05.482502
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa eliminar quaisquer marcas de cita\xE7\
   \xE3o\u2014simples (' '), duplas (\" \") ou ambas\u2014dos dados de texto. Programadores\

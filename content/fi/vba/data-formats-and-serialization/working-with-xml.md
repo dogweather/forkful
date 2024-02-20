@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/working-with-xml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:51.862755-07:00
 description: "XML:n k\xE4sittely Visual Basic for Applicationsissa (VBA) sis\xE4lt\xE4\
   \xE4 XML-dokumenttien j\xE4sent\xE4misen, luomisen ja muokkaamisen Microsoft Office\
   \ -sovellusten\u2026"
-lastmod: 2024-02-18 23:09:07.439291
+lastmod: 2024-02-19 22:05:15.323077
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Visual Basic for Applicationsissa (VBA) sis\xE4lt\xE4\
   \xE4 XML-dokumenttien j\xE4sent\xE4misen, luomisen ja muokkaamisen Microsoft Office\

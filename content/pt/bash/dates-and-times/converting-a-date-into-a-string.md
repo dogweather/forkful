@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:51.750689-07:00
 description: "Converter datas em strings \xE9 uma maneira de formatar as informa\xE7\
   \xF5es de data e hora em um texto leg\xEDvel ou em um padr\xE3o espec\xEDfico para\
   \ armazenamento e\u2026"
-lastmod: 2024-02-18 23:08:58.336737
+lastmod: 2024-02-19 22:05:05.819651
 model: gpt-4-1106-preview
 summary: "Converter datas em strings \xE9 uma maneira de formatar as informa\xE7\xF5\
   es de data e hora em um texto leg\xEDvel ou em um padr\xE3o espec\xEDfico para armazenamento\

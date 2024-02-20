@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:59.584527-07:00
 description: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uC774\
   \uB780 \uD2B9\uC815 \uB0A0\uB85C\uBD80\uD130 \uC77C\uC815 \uAE30\uAC04\uC744 \uB354\
@@ -9,7 +7,7 @@ description: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uC
   \uC0B0, \uAE30\uB150\uC77C, \uC608\uC815\uB41C \uC774\uBCA4\uD2B8 \uAD00\uB9AC \uB4F1\
   \uC744 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.704374
+lastmod: 2024-02-19 22:05:14.600429
 model: gpt-4-1106-preview
 summary: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uC774\uB780\
   \ \uD2B9\uC815 \uB0A0\uB85C\uBD80\uD130 \uC77C\uC815 \uAE30\uAC04\uC744 \uB354\uD558\

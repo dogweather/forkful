@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:17.620295-07:00
 description: "CSV-bestanden (Comma-Separated Values) vertegenwoordigen tabelgegevens\
   \ in platte tekst. Programmeurs gebruiken CSV's om datasets te importeren en te\u2026"
-lastmod: 2024-02-18 23:09:02.446586
+lastmod: 2024-02-19 22:05:10.450724
 model: gpt-4-0125-preview
 summary: "CSV-bestanden (Comma-Separated Values) vertegenwoordigen tabelgegevens in\
   \ platte tekst. Programmeurs gebruiken CSV's om datasets te importeren en te\u2026"

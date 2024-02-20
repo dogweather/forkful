@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/google-apps-script/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:14.797240-07:00
@@ -13,7 +11,7 @@ description: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D
   \ HTML \u0434\u043B\u044F \u0440\u0456\u0437\u043D\u043E\u043C\u0430\u043D\u0456\
   \u0442\u043D\u0438\u0445 \u0446\u0456\u043B\u0435\u0439, \u0442\u0430\u043A\u0438\
   \u0445 \u044F\u043A \u0432\u0435\u0431-\u2026"
-lastmod: 2024-02-18 23:08:59.740939
+lastmod: 2024-02-19 22:05:07.577708
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F\
   \ \u0432\u0435\u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0438 \u0437\u0430\

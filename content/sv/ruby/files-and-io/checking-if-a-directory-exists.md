@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:17.757912-07:00
 description: "Att kontrollera om en katalog finns i Ruby l\xE5ter programmerare verifiera\
   \ n\xE4rvaron av en katalog innan de utf\xF6r operationer som att l\xE4sa filer\
   \ eller skapa\u2026"
-lastmod: 2024-02-18 23:08:52.308915
+lastmod: 2024-02-19 22:04:57.700410
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Ruby l\xE5ter programmerare verifiera\
   \ n\xE4rvaron av en katalog innan de utf\xF6r operationer som att l\xE4sa filer\

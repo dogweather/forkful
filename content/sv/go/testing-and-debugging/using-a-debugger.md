@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:09.034247-07:00
 description: "Att anv\xE4nda en fels\xF6kare i Go-programmering inneb\xE4r att man\
   \ anv\xE4nder verktyg eller funktioner f\xF6r att inspektera och modifiera tillst\xE5\
   ndet hos ett k\xF6rande\u2026"
-lastmod: 2024-02-18 23:08:51.338165
+lastmod: 2024-02-19 22:04:56.630581
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda en fels\xF6kare i Go-programmering inneb\xE4r att man anv\xE4\
   nder verktyg eller funktioner f\xF6r att inspektera och modifiera tillst\xE5ndet\

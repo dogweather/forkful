@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:03.270702-07:00
 description: "Het omzetten van een datum naar een tekenreeks in C betreft het vertalen\
   \ van een datumstructuur of tijdstempel naar een voor mensen leesbaar formaat.\u2026"
-lastmod: 2024-02-18 23:09:02.385844
+lastmod: 2024-02-19 22:05:10.392045
 model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een tekenreeks in C betreft het vertalen\
   \ van een datumstructuur of tijdstempel naar een voor mensen leesbaar formaat.\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/lua/interpolating-a-string/
 date: 2024-01-20 17:51:29.330391-07:00
 description: "Merkkijonojen interpolaatio tarkoittaa muuttujien tai lausekkeiden arvojen\
   \ \"upottamista\" merkkijonoihin. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten\u2026"
-lastmod: 2024-02-18 23:09:07.742487
+lastmod: 2024-02-19 22:05:15.578639
 model: gpt-4-1106-preview
 summary: "Merkkijonojen interpolaatio tarkoittaa muuttujien tai lausekkeiden arvojen\
   \ \"upottamista\" merkkijonoihin. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten\u2026"

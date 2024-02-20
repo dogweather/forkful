@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/working-with-complex-numbers/
 date: 2024-01-26 04:44:06.874603-07:00
 description: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria,\
   \ geralmente escritos como `a + bi`. Eles s\xE3o cruciais em matem\xE1tica avan\xE7\
   ada, f\xEDsica,\u2026"
-lastmod: 2024-02-18 23:08:58.234731
+lastmod: 2024-02-19 22:05:05.709227
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria, geralmente\
   \ escritos como `a + bi`. Eles s\xE3o cruciais em matem\xE1tica avan\xE7ada, f\xED\

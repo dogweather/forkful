@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:40.407752-07:00
 description: "Parsing a date from a string in Haskell involves converting textual\
   \ representations of dates into a structured format that the program can manipulate.\u2026"
-lastmod: 2024-02-18 23:09:11.105346
+lastmod: 2024-02-19 22:05:18.600552
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Haskell involves converting textual representations\
   \ of dates into a structured format that the program can manipulate.\u2026"

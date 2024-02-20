@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/sending-an-http-request/
 date: 2024-01-20 18:00:36.171704-07:00
 description: "HTTP-Anfragen erm\xF6glichen es, mit Webdiensten zu kommunizieren. Programmierer\
   \ nutzen sie, um Daten zu senden und zu empfangen, was f\xFCr moderne Anwendungen\u2026"
-lastmod: 2024-02-18 23:09:05.230913
+lastmod: 2024-02-19 22:05:13.157917
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen erm\xF6glichen es, mit Webdiensten zu kommunizieren. Programmierer\
   \ nutzen sie, um Daten zu senden und zu empfangen, was f\xFCr moderne Anwendungen\u2026"

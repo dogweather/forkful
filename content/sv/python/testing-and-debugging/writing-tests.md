@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/python/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:45.815007-07:00
 description: "Att skriva tester i Python inneb\xE4r att skapa automatiserade skript\
   \ f\xF6r att validera korrektheten i din kod. Programmerare g\xF6r detta f\xF6r\
   \ att s\xE4kerst\xE4lla\u2026"
-lastmod: 2024-02-18 23:08:51.425188
+lastmod: 2024-02-19 22:04:56.727763
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Python inneb\xE4r att skapa automatiserade skript f\xF6\
   r att validera korrektheten i din kod. Programmerare g\xF6r detta f\xF6r att s\xE4\

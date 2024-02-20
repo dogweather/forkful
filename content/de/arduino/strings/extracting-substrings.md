@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/arduino/extracting-substrings/
 date: 2024-01-20 17:44:58.321543-07:00
 description: "Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess\
   \ des Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:05.134481
+lastmod: 2024-02-19 22:05:13.066794
 model: gpt-4-1106-preview
 summary: "Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess des\
   \ Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das, um\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/clojure/concatenating-strings/
 date: 2024-01-20 17:34:52.497455-07:00
 description: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di caratteri.\
   \ I programmatori lo fanno per costruire messaggi, combinare dati o semplicemente\u2026"
-lastmod: 2024-02-18 23:08:55.553421
+lastmod: 2024-02-19 22:05:02.143072
 model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di caratteri.\
   \ I programmatori lo fanno per costruire messaggi, combinare dati o semplicemente\u2026"

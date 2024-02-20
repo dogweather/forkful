@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elm/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:37.898661-07:00
 description: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan\
   \ serialisointiformaatti ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa\
   \ tai datan\u2026"
-lastmod: 2024-02-18 23:09:07.551152
+lastmod: 2024-02-19 22:05:15.402694
 model: gpt-4-0125-preview
 summary: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan serialisointiformaatti\
   \ ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa tai datan\u2026"

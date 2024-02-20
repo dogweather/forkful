@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/haskell/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:59.170029-07:00
@@ -8,7 +6,7 @@ description: "S\u1ED1 ph\u1EE9c, bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0
   t ph\u1EA7n \u1EA3o, l\xE0 c\u1EA7n thi\u1EBFt trong c\xE1c l\u0129nh v\u1EF1c t\xED\
   nh to\xE1n kh\xE1c nhau nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD, v\xE0 x\u1EED\
   \ l\xFD t\xEDn hi\u1EC7u. L\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:50.738238
+lastmod: 2024-02-19 22:04:55.882921
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c, bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
   t ph\u1EA7n \u1EA3o, l\xE0 c\u1EA7n thi\u1EBFt trong c\xE1c l\u0129nh v\u1EF1c t\xED\

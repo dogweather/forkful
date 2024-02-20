@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/searching-and-replacing-text/
 date: 2024-01-20 17:57:37.450373-07:00
 description: "Rechercher et remplacer du texte, c'est modifier automatiquement une\
   \ cha\xEEne de caract\xE8res par une autre. Les programmeurs utilisent cette technique\
   \ pour\u2026"
-lastmod: 2024-02-18 23:09:09.098917
+lastmod: 2024-02-19 22:05:16.778045
 model: gpt-4-1106-preview
 summary: "Rechercher et remplacer du texte, c'est modifier automatiquement une cha\xEE\
   ne de caract\xE8res par une autre. Les programmeurs utilisent cette technique pour\u2026"

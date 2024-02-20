@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/concatenating-strings/
 date: 2024-01-20 17:34:35.722202-07:00
 description: "Konkatenacja to fancy termin na \u0142\u0105czenie string\xF3w, tworzenie\
   \ z nich d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Programi\u015Bci to robi\u0105\
   , gdy potrzebuj\u0105 zbudowa\u0107 warto\u015Bci, takie\u2026"
-lastmod: 2024-02-18 23:08:50.026836
+lastmod: 2024-02-19 22:04:55.004838
 model: gpt-4-1106-preview
 summary: "Konkatenacja to fancy termin na \u0142\u0105czenie string\xF3w, tworzenie\
   \ z nich d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Programi\u015Bci to robi\u0105\

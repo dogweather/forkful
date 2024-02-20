@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:51.853224-07:00
 description: "De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving\
   \ die individuele gebruikersinvoer neemt, deze evalueert en het resultaat\u2026"
-lastmod: 2024-02-18 23:09:01.761239
+lastmod: 2024-02-19 22:05:09.780027
 model: gpt-4-0125-preview
 summary: "De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving\
   \ die individuele gebruikersinvoer neemt, deze evalueert en het resultaat\u2026"

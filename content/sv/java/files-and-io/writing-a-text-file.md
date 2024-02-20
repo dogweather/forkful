@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:13.497732-07:00
 description: "Att skriva en textfil i Java handlar om att anv\xE4nda spr\xE5kets m\xF6\
   jligheter f\xF6r att skapa och skriva inneh\xE5ll till filer p\xE5 filsystemet.\
   \ Programmerare g\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.686942
+lastmod: 2024-02-19 22:04:57.015812
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Java handlar om att anv\xE4nda spr\xE5kets m\xF6\
   jligheter f\xF6r att skapa och skriva inneh\xE5ll till filer p\xE5 filsystemet.\

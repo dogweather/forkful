@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/using-a-debugger/
 date: 2024-01-26 03:49:42.390443-07:00
 description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ytt\xF6\xE4\
   \ koodisi testaamiseen ja virheiden korjaamiseen. Ohjelmoijat tekev\xE4t n\xE4in\
   \ ymm\xE4rt\xE4\xE4kseen sovellustensa\u2026"
-lastmod: 2024-02-18 23:09:07.462955
+lastmod: 2024-02-19 22:05:15.345267
 model: gpt-4-0125-preview
 summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ytt\xF6\xE4 koodisi\
   \ testaamiseen ja virheiden korjaamiseen. Ohjelmoijat tekev\xE4t n\xE4in ymm\xE4\

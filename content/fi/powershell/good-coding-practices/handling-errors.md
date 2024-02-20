@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/powershell/handling-errors/
 date: 2024-01-26 00:57:58.607513-07:00
 description: "Virheiden k\xE4sittely PowerShellissa tarkoittaa mahdollisten ongelmien\
   \ ennakointia ja niiden sujuvaa hallintaa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n est\xE4\
   \xE4kseen\u2026"
-lastmod: 2024-02-18 23:09:07.861401
+lastmod: 2024-02-19 22:05:15.685752
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely PowerShellissa tarkoittaa mahdollisten ongelmien\
   \ ennakointia ja niiden sujuvaa hallintaa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n est\xE4\

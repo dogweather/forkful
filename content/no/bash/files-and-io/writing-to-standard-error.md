@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/bash/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:27.762491-07:00
 description: "\xC5 skrive til standard feil (stderr) i Bash handler om \xE5 dirigere\
   \ feilmeldinger eller viktig diagnostisk utdata separat fra standard utdata (stdout).\u2026"
-lastmod: 2024-02-18 23:08:54.074011
+lastmod: 2024-02-19 22:05:00.257687
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) i Bash handler om \xE5 dirigere feilmeldinger\
   \ eller viktig diagnostisk utdata separat fra standard utdata (stdout).\u2026"

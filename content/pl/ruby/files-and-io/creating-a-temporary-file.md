@@ -1,9 +1,7 @@
 ---
-aliases:
-- /pl/ruby/creating-a-temporary-file/
 date: 2024-01-20 17:41:32.401596-07:00
 description: ''
-lastmod: 2024-02-18 23:08:50.144898
+lastmod: 2024-02-19 22:04:55.135260
 model: gpt-4-1106-preview
 summary: ''
 title: Tworzenie pliku tymczasowego

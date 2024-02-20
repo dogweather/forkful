@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:13.473899-07:00
 description: "En programaci\xF3n inform\xE1tica, \"Imprimir salida de depuraci\xF3\
   n\" implica producir mensajes informativos detallados que ayudan a los desarrolladores\
   \ a\u2026"
-lastmod: 2024-02-18 23:09:09.458551
+lastmod: 2024-02-19 22:05:17.117688
 model: gpt-4-0125-preview
 summary: "En programaci\xF3n inform\xE1tica, \"Imprimir salida de depuraci\xF3n\"\
   \ implica producir mensajes informativos detallados que ayudan a los desarrolladores\

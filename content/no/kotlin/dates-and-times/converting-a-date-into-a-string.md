@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/kotlin/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:44.306442-07:00
 description: "\xC5 konvertere en dato til en streng er \xE5 omdanne et Date-objekt\
   \ til en tekstrepresentasjon. Vi gj\xF8r dette for \xE5 gj\xF8re datoer leselige\
   \ for mennesker eller\u2026"
-lastmod: 2024-02-18 23:08:53.863502
+lastmod: 2024-02-19 22:05:00.029458
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng er \xE5 omdanne et Date-objekt til\
   \ en tekstrepresentasjon. Vi gj\xF8r dette for \xE5 gj\xF8re datoer leselige for\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:57.344496-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res permet de la manipuler\
   \ comme texte, simplifiant l\u2019affichage et le stockage. Les programmeurs font\
   \ cette\u2026"
-lastmod: 2024-02-18 23:09:08.982330
+lastmod: 2024-02-19 22:05:16.670013
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la manipuler\
   \ comme texte, simplifiant l\u2019affichage et le stockage. Les programmeurs font\

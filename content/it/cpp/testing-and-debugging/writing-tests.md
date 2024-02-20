@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/cpp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:58.917894-07:00
 description: "Scrivere test in C++ implica creare piccoli programmi autocontenuti\
   \ che verificano automaticamente il comportamento di sezioni del tuo codice. I\u2026"
-lastmod: 2024-02-18 23:08:56.175671
+lastmod: 2024-02-19 22:05:02.804826
 model: gpt-4-0125-preview
 summary: "Scrivere test in C++ implica creare piccoli programmi autocontenuti che\
   \ verificano automaticamente il comportamento di sezioni del tuo codice. I\u2026"

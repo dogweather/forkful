@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:55.912776-07:00
 description: "Het genereren van willekeurige getallen in Ruby houdt in dat er getallen\
   \ worden gecre\xEBerd die logischerwijs niet voorspeld kunnen worden. Dit is\u2026"
-lastmod: 2024-02-18 23:09:02.415513
+lastmod: 2024-02-19 22:05:10.420566
 model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Ruby houdt in dat er getallen\
   \ worden gecre\xEBerd die logischerwijs niet voorspeld kunnen worden. Dit is\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/elixir/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:13.193706-07:00
@@ -13,7 +11,7 @@ description: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u0443 \u043C\u043
   \u043E\u0431\u043B\u044F\u0442\u044C \u0446\u0435 \u0434\u043B\u044F \u043F\u0440\
   \u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0457 \u0432\u0437\u0430\u0454\u043C\u043E\
   \u0434\u0456\u0457 \u0437 \u0432\u0435\u0431-\u2026"
-lastmod: 2024-02-18 23:08:59.882084
+lastmod: 2024-02-19 22:05:07.798948
 model: gpt-4-0125-preview
 summary: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u0443 \u043C\u043E\u0432\
   \u0456 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\

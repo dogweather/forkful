@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/kotlin/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:22.454499-07:00
@@ -14,7 +12,7 @@ description: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3044\u3066
   \u30E0\u30B9\u30BF\u30F3\u30D4\u30F3\u30B0\u30A4\u30D9\u30F3\u30C8\u304B\u3089\u65E5\
   \u4ED8\u306B\u57FA\u3065\u304F\u8A08\u7B97\u307E\u3067\u3001\u3042\u3089\u3086\u308B\
   \u3053\u3068\u306B\u3068\u3063\u3066\u91CD\u8981\u3067\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.889135
+lastmod: 2024-02-19 22:05:01.233061
 model: gpt-4-0125-preview
 summary: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3044\u3066\u3001\
   \u73FE\u5728\u306E\u65E5\u4ED8\u3092\u53D6\u5F97\u3059\u308B\u3053\u3068\u306F\u3001\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/kotlin/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:20.181974-07:00
@@ -13,7 +11,7 @@ description: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u5904\u7406\
   \u6216\u8F6C\u6362\uFF0C\u5BF9\u4E8E\u4ECE\u7B80\u5355\u5B57\u7B26\u4E32\u64CD\u4F5C\
   \u5230\u590D\u6742\u6587\u672C\u5206\u6790\u7684\u4EFB\u52A1\u6765\u8BF4\uFF0C\u8FD9\
   \u662F\u4E0D\u53EF\u6216\u7F3A\u7684\u3002"
-lastmod: 2024-02-18 23:08:59.086579
+lastmod: 2024-02-19 22:05:06.738315
 model: gpt-4-0125-preview
 summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u5904\u7406\u6587\u672C\
   \u7684\u4E00\u79CD\u5F3A\u5927\u5DE5\u5177\uFF0C\u5141\u8BB8\u7A0B\u5E8F\u5458\u4F7F\

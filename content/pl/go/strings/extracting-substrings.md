@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:47.144020-07:00
 description: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na pobieraniu okre\u015B\
   lonych fragment\xF3w ci\u0105gu na podstawie ich pozycji. Programi\u015Bci cz\u0119\
   sto wykonuj\u0105 t\u0119 operacj\u0119, aby\u2026"
-lastmod: 2024-02-18 23:08:49.084543
+lastmod: 2024-02-19 22:04:54.022528
 model: gpt-4-0125-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na pobieraniu okre\u015Blonych\
   \ fragment\xF3w ci\u0105gu na podstawie ich pozycji. Programi\u015Bci cz\u0119sto\

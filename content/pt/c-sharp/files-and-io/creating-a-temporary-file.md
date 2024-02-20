@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/creating-a-temporary-file/
 date: 2024-01-20 17:39:49.482433-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 a pr\xE1tica de gerar um arquivo\
   \ destinado a armazenar dados temporariamente durante a execu\xE7\xE3o de um programa.\
   \ Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.176367
+lastmod: 2024-02-19 22:05:05.646459
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 a pr\xE1tica de gerar um arquivo destinado\
   \ a armazenar dados temporariamente durante a execu\xE7\xE3o de um programa. Programadores\u2026"

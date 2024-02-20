@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:02.388773-07:00
@@ -10,7 +8,7 @@ description: "\u5C06\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u4E00
   \u606F\u3002\u8FD9\u5BF9\u4E8E\u521B\u5EFA\u7528\u6237\u754C\u9762\u3001\u751F\u6210\
   \u62A5\u544A\u6216\u5728\u4F7F\u7528Google Apps Script\u5F00\u53D1\u7684\u5E94\u7528\
   \u7A0B\u5E8F\u4E2D\u8BB0\u5F55\u4FE1\u606F\u81F3\u5173\u91CD\u8981\u3002"
-lastmod: 2024-02-18 23:08:58.762039
+lastmod: 2024-02-19 22:05:06.294928
 model: gpt-4-0125-preview
 summary: "\u5C06\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u4E00\u4E2A\
   \u57FA\u7840\u4EFB\u52A1\uFF0C\u5B83\u4F7F\u7A0B\u5E8F\u5458\u80FD\u591F\u4EE5\u4EBA\

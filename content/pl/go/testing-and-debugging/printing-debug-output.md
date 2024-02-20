@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:27.073231-07:00
 description: "W programowaniu komputerowym \"Drukowanie wyj\u015Bcia debugowania\"\
   \ polega na produkowaniu szczeg\xF3\u0142owych komunikat\xF3w informacyjnych, kt\xF3\
   re pomagaj\u0105 programistom\u2026"
-lastmod: 2024-02-18 23:08:49.100982
+lastmod: 2024-02-19 22:04:54.039467
 model: gpt-4-0125-preview
 summary: "W programowaniu komputerowym \"Drukowanie wyj\u015Bcia debugowania\" polega\
   \ na produkowaniu szczeg\xF3\u0142owych komunikat\xF3w informacyjnych, kt\xF3re\

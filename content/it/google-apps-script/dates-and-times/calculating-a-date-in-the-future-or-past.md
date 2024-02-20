@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/google-apps-script/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:56.326257-07:00
 description: "Calcolare una data nel futuro o nel passato consiste nel manipolare\
   \ gli oggetti data per trovare date oltre o prima della data attuale, rispettivamente.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.492565
+lastmod: 2024-02-19 22:05:02.077395
 model: gpt-4-0125-preview
 summary: "Calcolare una data nel futuro o nel passato consiste nel manipolare gli\
   \ oggetti data per trovare date oltre o prima della data attuale, rispettivamente.\

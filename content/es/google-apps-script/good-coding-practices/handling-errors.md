@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:54.078176-07:00
 description: "El manejo de errores en Google Apps Script trata sobre prever, capturar\
   \ y responder a excepciones o errores que ocurren durante la ejecuci\xF3n del script.\u2026"
-lastmod: 2024-02-18 23:09:09.516263
+lastmod: 2024-02-19 22:05:17.169745
 model: gpt-4-0125-preview
 summary: "El manejo de errores en Google Apps Script trata sobre prever, capturar\
   \ y responder a excepciones o errores que ocurren durante la ejecuci\xF3n del script.\u2026"

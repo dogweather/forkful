@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/haskell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:00.092330-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
   rer \xE5 inkludere brukernavn og passord for \xE5 f\xE5 tilgang til beskyttede ressurser.\u2026"
-lastmod: 2024-02-18 23:08:53.934670
+lastmod: 2024-02-19 22:05:00.105556
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
   rer \xE5 inkludere brukernavn og passord for \xE5 f\xE5 tilgang til beskyttede ressurser.\u2026"

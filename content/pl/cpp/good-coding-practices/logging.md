@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/logging/
 date: 2024-01-26 01:01:15.996001-07:00
 description: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zdarze\u0144\
   , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego. Programi\u015B\
   ci loguj\u0105, aby\u2026"
-lastmod: 2024-02-18 23:08:49.917993
+lastmod: 2024-02-19 22:04:54.865609
 model: gpt-4-1106-preview
 summary: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zdarze\u0144\
   , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego. Programi\u015B\

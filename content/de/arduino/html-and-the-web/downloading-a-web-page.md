@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/arduino/downloading-a-web-page/
 date: 2024-01-20 17:43:43.645851-07:00
 description: "Herunterladen einer Webseite bedeutet, deren Inhalte \xFCber das Internet\
   \ auf dein Ger\xE4t zu laden. Programmierer tun das, um Daten zu sammeln oder Webdienste\u2026"
-lastmod: 2024-02-18 23:09:05.144793
+lastmod: 2024-02-19 22:05:13.077088
 model: gpt-4-1106-preview
 summary: "Herunterladen einer Webseite bedeutet, deren Inhalte \xFCber das Internet\
   \ auf dein Ger\xE4t zu laden. Programmierer tun das, um Daten zu sammeln oder Webdienste\u2026"

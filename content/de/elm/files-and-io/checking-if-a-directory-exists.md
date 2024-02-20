@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/elm/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:21.353731-07:00
 description: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu best\xE4\
   tigen, ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist. Programmierer\
   \ machen dies,\u2026"
-lastmod: 2024-02-18 23:09:04.796717
+lastmod: 2024-02-19 22:05:12.744604
 model: gpt-4-0125-preview
 summary: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu best\xE4tigen,\
   \ ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist. Programmierer machen\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/google-apps-script/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:37.058308-07:00
 description: "Arrotondare i numeri, un concetto fondamentale nella programmazione\
   \ informatica, implica l'aggiustamento di un numero al suo intero pi\xF9 vicino\
   \ o a un\u2026"
-lastmod: 2024-02-18 23:08:55.472058
+lastmod: 2024-02-19 22:05:02.055442
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri, un concetto fondamentale nella programmazione informatica,\
   \ implica l'aggiustamento di un numero al suo intero pi\xF9 vicino o a un\u2026"

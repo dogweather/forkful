@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/writing-to-standard-error/
 date: 2024-02-03 19:03:31.575552-07:00
 description: "Writing to standard error (stderr) is about directing error messages\
   \ and diagnostic outputs to a separate channel, distinct from standard output (stdout).\u2026"
-lastmod: 2024-02-18 23:09:11.194673
+lastmod: 2024-02-19 22:05:18.682168
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) is about directing error messages and\
   \ diagnostic outputs to a separate channel, distinct from standard output (stdout).\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:01.742452-07:00
 description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visual\
   \ Basic for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie\
   \ zawiera. Programi\u015Bci cz\u0119sto wykonuj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.424044
+lastmod: 2024-02-19 22:04:54.347884
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visual Basic\
   \ for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie zawiera.\

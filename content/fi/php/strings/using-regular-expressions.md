@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/php/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:49.591718-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) PHP:ss\xE4 ovat malleja, joita\
   \ k\xE4ytet\xE4\xE4n merkkijonossa hahmojen yhdistelmien etsimiseen, mahdollistaen\
   \ kehittyneet haku- ja\u2026"
-lastmod: 2024-02-18 23:09:07.700748
+lastmod: 2024-02-19 22:05:15.540288
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) PHP:ss\xE4 ovat malleja, joita\
   \ k\xE4ytet\xE4\xE4n merkkijonossa hahmojen yhdistelmien etsimiseen, mahdollistaen\

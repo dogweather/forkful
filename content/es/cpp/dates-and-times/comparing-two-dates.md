@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/cpp/comparing-two-dates/
 date: 2024-01-20 17:32:46.982365-07:00
 description: "Comparar dos fechas significa verificar si son iguales, cu\xE1l es anterior\
   \ o posterior. Los programadores lo hacen para rastrear eventos, validar per\xED\
   odos\u2026"
-lastmod: 2024-02-18 23:09:10.325167
+lastmod: 2024-02-19 22:05:17.892043
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas significa verificar si son iguales, cu\xE1l es anterior\
   \ o posterior. Los programadores lo hacen para rastrear eventos, validar per\xED\

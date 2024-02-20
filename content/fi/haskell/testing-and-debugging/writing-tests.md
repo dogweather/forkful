@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/haskell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:46.439533-07:00
 description: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten\
   \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"
-lastmod: 2024-02-18 23:09:07.669937
+lastmod: 2024-02-19 22:05:15.511917
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten\
   \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"

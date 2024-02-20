@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/typescript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:31.282845-07:00
 description: "Escrever um arquivo de texto em TypeScript \xE9 uma habilidade crucial\
   \ para a persist\xEAncia de dados, configura\xE7\xF5es ou gera\xE7\xE3o de logs.\
   \ Programadores\u2026"
-lastmod: 2024-02-18 23:08:57.903714
+lastmod: 2024-02-19 22:05:05.376625
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em TypeScript \xE9 uma habilidade crucial para\
   \ a persist\xEAncia de dados, configura\xE7\xF5es ou gera\xE7\xE3o de logs. Programadores\u2026"

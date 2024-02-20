@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/printing-debug-output/
 date: 2024-01-20 17:52:59.077649-07:00
 description: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe dans\
   \ le code pendant son ex\xE9cution. Cela aide \xE0 rep\xE9rer les erreurs et \xE0\
   \ comprendre le flux\u2026"
-lastmod: 2024-02-18 23:09:08.972472
+lastmod: 2024-02-19 22:05:16.660898
 model: gpt-4-1106-preview
 summary: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe dans\
   \ le code pendant son ex\xE9cution. Cela aide \xE0 rep\xE9rer les erreurs et \xE0\

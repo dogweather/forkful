@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/kotlin/interpolating-a-string/
 date: 2024-01-20 17:51:09.625047-07:00
 description: "String-Interpolation erm\xF6glicht es, Variablen und Ausdr\xFCcke direkt\
   \ in Strings einzuf\xFCgen, was den Code lesbarer und die String-Konstruktion einfacher\u2026"
-lastmod: 2024-02-18 23:09:04.811395
+lastmod: 2024-02-19 22:05:12.758600
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablen und Ausdr\xFCcke direkt\
   \ in Strings einzuf\xFCgen, was den Code lesbarer und die String-Konstruktion einfacher\u2026"

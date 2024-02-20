@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:01.711170-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) en Google Apps\
   \ Script implica leer, modificar y escribir archivos de texto plano donde cada l\xED\
   nea\u2026"
-lastmod: 2024-02-18 23:09:09.534470
+lastmod: 2024-02-19 22:05:17.186303
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) en Google Apps Script\
   \ implica leer, modificar y escribir archivos de texto plano donde cada l\xEDnea\u2026"

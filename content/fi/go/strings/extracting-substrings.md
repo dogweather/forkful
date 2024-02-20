@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:54.076270-07:00
 description: "Merkkijonojen osien poimiminen k\xE4sitt\xE4\xE4 tiettyjen merkkijonojen\
   \ osien hakemisen niiden sijaintien perusteella. Ohjelmoijat suorittavat t\xE4t\xE4\
   \ toimenpidett\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.071857
+lastmod: 2024-02-19 22:05:14.952780
 model: gpt-4-0125-preview
 summary: "Merkkijonojen osien poimiminen k\xE4sitt\xE4\xE4 tiettyjen merkkijonojen\
   \ osien hakemisen niiden sijaintien perusteella. Ohjelmoijat suorittavat t\xE4t\xE4\

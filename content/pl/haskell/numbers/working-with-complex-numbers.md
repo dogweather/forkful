@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/working-with-complex-numbers/
 date: 2024-01-26 04:41:52.666286-07:00
 description: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej, s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach obliczeniowych,\
   \ takich jak in\u017Cynieria, fizyka i\u2026"
-lastmod: 2024-02-18 23:08:49.647394
+lastmod: 2024-02-19 22:04:54.580072
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej, s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach obliczeniowych,\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/capitalizing-a-string/
 date: 2024-02-03 19:02:31.026318-07:00
 description: "Capitalizing a string in programming involves converting the first character\
   \ of the string to uppercase if it's not already, which is useful for\u2026"
-lastmod: 2024-02-18 23:09:10.996434
+lastmod: 2024-02-19 22:05:18.500952
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in programming involves converting the first character\
   \ of the string to uppercase if it's not already, which is useful for\u2026"

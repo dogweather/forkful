@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:24.626092-07:00
 description: "Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt\
   \ tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:02.384694
+lastmod: 2024-02-19 22:05:10.391019
 model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt\
   \ tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op\

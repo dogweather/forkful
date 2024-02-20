@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/writing-a-text-file/
 date: 2024-02-03 19:03:24.379648-07:00
 description: "Writing a text file in Bash allows you to automate data storage, logging,\
   \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"
-lastmod: 2024-02-18 23:09:11.248133
+lastmod: 2024-02-19 22:05:18.723620
 model: gpt-4-0125-preview
 summary: "Writing a text file in Bash allows you to automate data storage, logging,\
   \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"

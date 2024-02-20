@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:06.420847-07:00
 description: "En programmation, supprimer des caract\xE8res selon un motif, c'est\
   \ chercher et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte.\
   \ On fait \xE7a\u2026"
-lastmod: 2024-02-18 23:09:08.369499
+lastmod: 2024-02-19 22:05:16.165043
 model: gpt-4-1106-preview
 summary: "En programmation, supprimer des caract\xE8res selon un motif, c'est chercher\
   \ et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte. On fait\

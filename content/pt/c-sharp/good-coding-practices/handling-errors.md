@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/handling-errors/
 date: 2024-01-26 00:50:44.946263-07:00
 description: "O tratamento de erros em C# \xE9 sobre gerenciar o inesperado\u2014\
   como trope\xE7ar nos pr\xF3prios cadar\xE7os. Programas podem trope\xE7ar em dados\
   \ ruins ou conex\xF5es\u2026"
-lastmod: 2024-02-18 23:08:58.164710
+lastmod: 2024-02-19 22:05:05.634190
 model: gpt-4-1106-preview
 summary: "O tratamento de erros em C# \xE9 sobre gerenciar o inesperado\u2014como\
   \ trope\xE7ar nos pr\xF3prios cadar\xE7os. Programas podem trope\xE7ar em dados\

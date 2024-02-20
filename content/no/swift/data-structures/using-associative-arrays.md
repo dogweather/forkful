@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/swift/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:30.968796-07:00
 description: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og\
   \ h\xE5ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\
   \ data\u2026"
-lastmod: 2024-02-18 23:08:54.262501
+lastmod: 2024-02-19 22:05:00.409253
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og h\xE5\
   ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\

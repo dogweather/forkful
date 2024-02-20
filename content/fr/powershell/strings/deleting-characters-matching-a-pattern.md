@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:57.790307-07:00
 description: "Supprimer des caract\xE8res selon un motif, c'est utiliser une r\xE8\
   gle ou un mod\xE8le pour identifier et retirer certains \xE9l\xE9ments d'une cha\xEE\
   ne de caract\xE8res.\u2026"
-lastmod: 2024-02-18 23:09:09.048092
+lastmod: 2024-02-19 22:05:16.731454
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un motif, c'est utiliser une r\xE8gle\
   \ ou un mod\xE8le pour identifier et retirer certains \xE9l\xE9ments d'une cha\xEE\

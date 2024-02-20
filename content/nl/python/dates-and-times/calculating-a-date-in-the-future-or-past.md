@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:33.716872-07:00
 description: "Een toekomstige of verleden datum berekenen betekent het vinden van\
   \ een datum voor of na een specifiek tijdinterval. Programmeurs doen dit voor\u2026"
-lastmod: 2024-02-18 23:09:01.448330
+lastmod: 2024-02-19 22:05:09.478256
 model: gpt-4-0125-preview
 summary: "Een toekomstige of verleden datum berekenen betekent het vinden van een\
   \ datum voor of na een specifiek tijdinterval. Programmeurs doen dit voor\u2026"

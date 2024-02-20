@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/arduino/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:33.742545-07:00
 description: "Charaktere nach einem Muster l\xF6schen bedeutet, bestimmte Zeichen\
   \ aus einer Zeichenkette zu entfernen, die einem vorgegebenen Schema entsprechen.\u2026"
-lastmod: 2024-02-18 23:09:05.129525
+lastmod: 2024-02-19 22:05:13.062004
 model: gpt-4-1106-preview
 summary: "Charaktere nach einem Muster l\xF6schen bedeutet, bestimmte Zeichen aus\
   \ einer Zeichenkette zu entfernen, die einem vorgegebenen Schema entsprechen.\u2026"

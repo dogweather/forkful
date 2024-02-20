@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/powershell/searching-and-replacing-text/
 date: 2024-01-20 17:58:22.375441-07:00
 description: "Buscar y reemplazar texto es el proceso de encontrar una cadena espec\xED\
   fica y cambiarla por otra. Los programadores lo hacen para corregir errores,\u2026"
-lastmod: 2024-02-18 23:09:10.197403
+lastmod: 2024-02-19 22:05:17.781064
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es el proceso de encontrar una cadena espec\xED\
   fica y cambiarla por otra. Los programadores lo hacen para corregir errores,\u2026"

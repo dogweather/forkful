@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/arduino/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:30.880280-07:00
 description: "Analizar HTML en proyectos Arduino trata sobre extraer informaci\xF3\
   n de p\xE1ginas web. Los programadores hacen esto para permitir que sus dispositivos\
   \ Arduino\u2026"
-lastmod: 2024-02-18 23:09:10.259258
+lastmod: 2024-02-19 22:05:17.837462
 model: gpt-4-0125-preview
 summary: "Analizar HTML en proyectos Arduino trata sobre extraer informaci\xF3n de\
   \ p\xE1ginas web. Los programadores hacen esto para permitir que sus dispositivos\

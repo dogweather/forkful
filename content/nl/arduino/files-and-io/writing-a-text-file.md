@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:51.400223-07:00
 description: "Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens\
   \ als tekst in een bestand, meestal op een SD-kaart. Programmeurs doen dit om\u2026"
-lastmod: 2024-02-18 23:09:02.157999
+lastmod: 2024-02-19 22:05:10.175722
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens\
   \ als tekst in een bestand, meestal op een SD-kaart. Programmeurs doen dit om\u2026"

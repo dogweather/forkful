@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:54.982802-07:00
 description: "CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is\
   \ een plat tekstformaat voor tabelgegevens. Programmeurs gebruiken CSV om gemakkelijk\u2026"
-lastmod: 2024-02-18 23:09:01.551014
+lastmod: 2024-02-19 22:05:09.576450
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is een\
   \ plat tekstformaat voor tabelgegevens. Programmeurs gebruiken CSV om gemakkelijk\u2026"

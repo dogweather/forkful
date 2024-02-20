@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/working-with-json/
 date: 2024-01-19
 description: "JSON (JavaScript Object Notation) to format wymiany danych. Programi\u015B\
   ci u\u017Cywaj\u0105 go, bo jest lekki i \u0142atwy do czytania dla ludzi, a tak\u017C\
   e \u0142atwy do\u2026"
-lastmod: 2024-02-18 23:08:49.498973
+lastmod: 2024-02-19 22:04:54.429202
 summary: "JSON (JavaScript Object Notation) to format wymiany danych. Programi\u015B\
   ci u\u017Cywaj\u0105 go, bo jest lekki i \u0142atwy do czytania dla ludzi, a tak\u017C\
   e \u0142atwy do\u2026"

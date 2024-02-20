@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:09.861026-07:00
 description: "Complexe getallen breiden het idee van de eendimensionale getallenlijn\
   \ uit tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.\u2026"
-lastmod: 2024-02-18 23:09:01.984691
+lastmod: 2024-02-19 22:05:10.005903
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden het idee van de eendimensionale getallenlijn uit\
   \ tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.\u2026"

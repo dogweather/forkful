@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/working-with-yaml/
 date: 2024-02-03 19:03:21.192207-07:00
 description: "In Rust programming, working with YAML (YAML Ain't Markup Language)\
   \ is about parsing and generating data in YAML format, a human-friendly data\u2026"
-lastmod: 2024-02-18 23:09:10.868545
+lastmod: 2024-02-19 22:05:18.383517
 model: gpt-4-0125-preview
 summary: "In Rust programming, working with YAML (YAML Ain't Markup Language) is about\
   \ parsing and generating data in YAML format, a human-friendly data\u2026"

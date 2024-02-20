@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:20.473105-07:00
 description: "L'interpolazione di stringhe, nella programmazione, comporta la costruzione\
   \ di stringhe inserendo espressioni all'interno di stringhe letterali. I\u2026"
-lastmod: 2024-02-18 23:08:56.323676
+lastmod: 2024-02-19 22:05:02.960967
 model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe, nella programmazione, comporta la costruzione\
   \ di stringhe inserendo espressioni all'interno di stringhe letterali. I\u2026"

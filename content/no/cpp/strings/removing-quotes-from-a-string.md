@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:16.471903-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort disse\
   \ plagsomme doble eller enkle tegnene som omslutter teksten v\xE5r (' eller \").\
   \ Programmerere\u2026"
-lastmod: 2024-02-18 23:08:54.172546
+lastmod: 2024-02-19 22:05:00.360042
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort disse\
   \ plagsomme doble eller enkle tegnene som omslutter teksten v\xE5r (' eller \").\

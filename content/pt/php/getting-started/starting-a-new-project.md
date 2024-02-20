@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/php/starting-a-new-project/
 date: 2024-01-20 18:04:04.507321-07:00
 description: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma semente\
   \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta. Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.241536
+lastmod: 2024-02-19 22:05:05.716265
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma semente\
   \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta. Programadores\u2026"

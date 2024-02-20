@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/powershell/refactoring/
 date: 2024-01-26 03:37:22.479279-07:00
 description: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
   \ ohne sein externes Verhalten zu \xE4ndern, mit dem Ziel, nichtfunktionale\u2026"
-lastmod: 2024-02-18 23:09:05.109967
+lastmod: 2024-02-19 22:05:13.043776
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
   \ ohne sein externes Verhalten zu \xE4ndern, mit dem Ziel, nichtfunktionale\u2026"

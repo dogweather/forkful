@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/ruby/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:05.660565-07:00
 description: "Das Gro\xDFschreiben eines Strings in der Programmierung bezieht sich\
   \ oft darauf, den ersten Buchstaben eines Strings in Gro\xDFbuchstaben und den Rest\
   \ in\u2026"
-lastmod: 2024-02-18 23:09:05.403294
+lastmod: 2024-02-19 22:05:13.322248
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in der Programmierung bezieht sich oft\
   \ darauf, den ersten Buchstaben eines Strings in Gro\xDFbuchstaben und den Rest\

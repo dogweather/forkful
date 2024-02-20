@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/working-with-toml/
 date: 2024-01-26 04:18:58.542423-07:00
 description: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language, \xE9 um formato\
   \ de serializa\xE7\xE3o de dados. Os programadores curtem pela sua simplicidade\
   \ e legibilidade;\u2026"
-lastmod: 2024-02-18 23:08:58.348480
+lastmod: 2024-02-19 22:05:05.832402
 model: gpt-4-0125-preview
 summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language, \xE9 um formato\
   \ de serializa\xE7\xE3o de dados. Os programadores curtem pela sua simplicidade\

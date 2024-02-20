@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/typescript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:53.087265-07:00
 description: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleellinen\
   \ osa tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\u2026"
-lastmod: 2024-02-18 23:09:07.334334
+lastmod: 2024-02-19 22:05:15.224591
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleellinen osa\
   \ tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\u2026"

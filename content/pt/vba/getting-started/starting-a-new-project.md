@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/starting-a-new-project/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:31.990809-07:00
 description: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA)\
   \ envolve configurar um ambiente dentro de um aplicativo host, como o Excel, para\
   \ automatizar\u2026"
-lastmod: 2024-02-18 23:08:57.974715
+lastmod: 2024-02-19 22:05:05.448739
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
   \ configurar um ambiente dentro de um aplicativo host, como o Excel, para automatizar\u2026"

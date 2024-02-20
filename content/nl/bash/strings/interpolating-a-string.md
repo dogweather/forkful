@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/bash/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:54.284238-07:00
 description: "Stringinterpolatie stelt je in staat waarden in een string in te voegen.\
   \ Het is handig voor het cre\xEBren van aangepaste berichten, het automatiseren\
   \ van\u2026"
-lastmod: 2024-02-18 23:09:02.022125
+lastmod: 2024-02-19 22:05:10.049556
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt je in staat waarden in een string in te voegen.\
   \ Het is handig voor het cre\xEBren van aangepaste berichten, het automatiseren\

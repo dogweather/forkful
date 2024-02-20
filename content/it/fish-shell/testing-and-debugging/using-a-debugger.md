@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/fish-shell/using-a-debugger/
 date: 2024-01-26 03:48:55.675291-07:00
 description: "L'uso di un debugger riguarda lo schiacciare i bug\u2014gli errori fastidiosi\
   \ e che consumano tempo nel tuo codice. I programmatori eseguono il debug perch\xE9\
   \u2026"
-lastmod: 2024-02-18 23:08:56.299961
+lastmod: 2024-02-19 22:05:02.936120
 model: gpt-4-0125-preview
 summary: "L'uso di un debugger riguarda lo schiacciare i bug\u2014gli errori fastidiosi\
   \ e che consumano tempo nel tuo codice. I programmatori eseguono il debug perch\xE9\

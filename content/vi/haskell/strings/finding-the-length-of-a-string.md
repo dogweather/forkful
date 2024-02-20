@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/haskell/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:42.288157-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i 
   \ Haskell li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9\
   a bao nhi\xEAu k\xFD t\u1EF1. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\
   \ c\u1EA7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ki\u1EC3m so\xE1t\u2026"
-lastmod: 2024-02-18 23:08:50.734940
+lastmod: 2024-02-19 22:04:55.878566
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
   \ Haskell li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9\

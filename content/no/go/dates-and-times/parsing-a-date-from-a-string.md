@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/go/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:11.013444-07:00
 description: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
   \ representert som tekst til et mer brukbart format (f.eks. `time.Time`). Programmerere\u2026"
-lastmod: 2024-02-18 23:08:53.445868
+lastmod: 2024-02-19 22:04:59.557480
 model: gpt-4-0125-preview
 summary: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
   \ representert som tekst til et mer brukbart format (f.eks. `time.Time`). Programmerere\u2026"

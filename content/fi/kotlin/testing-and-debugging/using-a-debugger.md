@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/using-a-debugger/
 date: 2024-01-26 03:50:23.101377-07:00
 description: "Sukeltaminen debuggerin maailmaan on kaikkea muuta kuin koodisi l\xE4\
   pik\xE4ynti\xE4 askel askeleelta, koneiston py\xF6ritt\xE4mist\xE4 ja niiden kiusallisten\
   \ virheiden\u2026"
-lastmod: 2024-02-18 23:09:07.579637
+lastmod: 2024-02-19 22:05:15.428508
 model: gpt-4-0125-preview
 summary: "Sukeltaminen debuggerin maailmaan on kaikkea muuta kuin koodisi l\xE4pik\xE4\
   ynti\xE4 askel askeleelta, koneiston py\xF6ritt\xE4mist\xE4 ja niiden kiusallisten\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/fish-shell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:40.463361-07:00
 description: "Editar archivos directamente con l\xEDneas de comando (CLI one-liners)\
   \ se trata de hacer cambios directamente en los archivos desde la l\xEDnea de comando,\
   \ sin\u2026"
-lastmod: 2024-02-18 23:09:10.448518
+lastmod: 2024-02-19 22:05:18.001939
 model: gpt-4-0125-preview
 summary: "Editar archivos directamente con l\xEDneas de comando (CLI one-liners) se\
   \ trata de hacer cambios directamente en los archivos desde la l\xEDnea de comando,\

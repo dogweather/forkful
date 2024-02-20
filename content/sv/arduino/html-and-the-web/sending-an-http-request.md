@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/arduino/sending-an-http-request/
 date: 2024-01-20 17:59:04.638473-07:00
 description: "HTTP-beg\xE4ran skickar data till server f\xF6r att h\xE4mta eller \xE4\
   ndra resurser. Programmerare skickar dessa f\xF6r att interagera med webbtj\xE4\
   nster och API:er."
-lastmod: 2024-02-18 23:08:52.041490
+lastmod: 2024-02-19 22:04:57.399192
 model: gpt-4-1106-preview
 summary: "HTTP-beg\xE4ran skickar data till server f\xF6r att h\xE4mta eller \xE4\
   ndra resurser. Programmerare skickar dessa f\xF6r att interagera med webbtj\xE4\

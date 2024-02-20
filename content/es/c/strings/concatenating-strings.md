@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/concatenating-strings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:44.813933-07:00
 description: "La concatenaci\xF3n de cadenas en C involucra unir dos o m\xE1s cadenas\
   \ de extremo a extremo para formar una nueva cadena. Los programadores realizan\
   \ esta\u2026"
-lastmod: 2024-02-18 23:09:10.491600
+lastmod: 2024-02-19 22:05:18.043154
 model: gpt-4-0125-preview
 summary: "La concatenaci\xF3n de cadenas en C involucra unir dos o m\xE1s cadenas\
   \ de extremo a extremo para formar una nueva cadena. Los programadores realizan\

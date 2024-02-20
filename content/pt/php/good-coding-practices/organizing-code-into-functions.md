@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/organizing-code-into-functions/
 date: 2024-01-26 01:11:28.444969-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es trata-se de dividir seu c\xF3\
   digo em blocos reutiliz\xE1veis com prop\xF3sitos definidos. Fazemos isso para manter\
   \ as coisas\u2026"
-lastmod: 2024-02-18 23:08:58.246339
+lastmod: 2024-02-19 22:05:05.721472
 model: gpt-4-1106-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es trata-se de dividir seu c\xF3digo\
   \ em blocos reutiliz\xE1veis com prop\xF3sitos definidos. Fazemos isso para manter\

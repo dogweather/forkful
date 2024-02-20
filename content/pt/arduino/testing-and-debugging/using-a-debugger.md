@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/using-a-debugger/
 date: 2024-01-26 03:47:21.430683-07:00
 description: "Um depurador \xE9 uma ferramenta que ajuda voc\xEA a eliminar bugs no\
   \ seu c\xF3digo, permitindo pausar, investigar e descobrir o que realmente est\xE1\
   \ acontecendo por\u2026"
-lastmod: 2024-02-18 23:08:58.413555
+lastmod: 2024-02-19 22:05:05.901601
 model: gpt-4-0125-preview
 summary: "Um depurador \xE9 uma ferramenta que ajuda voc\xEA a eliminar bugs no seu\
   \ c\xF3digo, permitindo pausar, investigar e descobrir o que realmente est\xE1 acontecendo\

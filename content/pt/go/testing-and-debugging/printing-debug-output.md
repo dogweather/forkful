@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:15.687788-07:00
 description: "Na programa\xE7\xE3o de computadores, \"Imprimir sa\xEDda de depura\xE7\
   \xE3o\" envolve produzir mensagens detalhadas de informa\xE7\xE3o que ajudam os\
   \ desenvolvedores a entender\u2026"
-lastmod: 2024-02-18 23:08:57.671363
+lastmod: 2024-02-19 22:05:05.128728
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o de computadores, \"Imprimir sa\xEDda de depura\xE7\xE3\
   o\" envolve produzir mensagens detalhadas de informa\xE7\xE3o que ajudam os desenvolvedores\

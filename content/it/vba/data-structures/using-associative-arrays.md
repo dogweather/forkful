@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:20.512561-07:00
 description: "Gli array associativi, spesso noti come dizionari in Visual Basic for\
   \ Applications (VBA), consentono ai programmatori di creare collezioni di coppie\u2026"
-lastmod: 2024-02-18 23:08:55.715157
+lastmod: 2024-02-19 22:05:02.315973
 model: gpt-4-0125-preview
 summary: "Gli array associativi, spesso noti come dizionari in Visual Basic for Applications\
   \ (VBA), consentono ai programmatori di creare collezioni di coppie\u2026"

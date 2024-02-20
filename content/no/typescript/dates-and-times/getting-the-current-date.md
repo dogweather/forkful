@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/typescript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:03.770739-07:00
 description: "\xC5 hente den n\xE5v\xE6rende datoen i TypeScript, et spr\xE5k bygget\
   \ p\xE5 JavaScript, lar deg f\xE5 tilgang til og manipulere informasjon om den n\xE5\
   v\xE6rende datoen og\u2026"
-lastmod: 2024-02-18 23:08:53.655077
+lastmod: 2024-02-19 22:04:59.785773
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i TypeScript, et spr\xE5k bygget p\xE5\
   \ JavaScript, lar deg f\xE5 tilgang til og manipulere informasjon om den n\xE5v\xE6\

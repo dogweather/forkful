@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:40.339553-07:00
 description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel\
   \ (zoals 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken\
   \ ermee\u2026"
-lastmod: 2024-02-18 23:09:02.413245
+lastmod: 2024-02-19 22:05:10.418448
 model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (zoals\
   \ 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken ermee\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/fish-shell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:13.861291-07:00
 description: "Capitalizar una cadena significa modificarla de modo que la primera\
   \ letra est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula. Esta es\
   \ una tarea com\xFAn\u2026"
-lastmod: 2024-02-18 23:09:10.432872
+lastmod: 2024-02-19 22:05:17.987847
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena significa modificarla de modo que la primera letra\
   \ est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula. Esta es una tarea\

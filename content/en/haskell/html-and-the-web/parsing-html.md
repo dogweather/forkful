@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/haskell/parsing-html/
 date: 2024-02-03 19:02:38.300946-07:00
 description: "Parsing HTML in Haskell allows you to extract data, manipulate HTML\
   \ content, or interact with web pages programmatically. This operation is essential\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:11.093885
+lastmod: 2024-02-19 22:05:18.590061
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Haskell allows you to extract data, manipulate HTML content,\
   \ or interact with web pages programmatically. This operation is essential for\u2026"

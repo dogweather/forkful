@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/python/working-with-toml/
 date: 2024-01-26 04:25:34.432597-07:00
 description: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
   \ ist ein Daten-Serialisierungsformat \xE4hnlich wie JSON oder YAML, zielt jedoch\
   \ auf\u2026"
-lastmod: 2024-02-18 23:09:04.487078
+lastmod: 2024-02-19 22:05:12.450485
 model: gpt-4-0125-preview
 summary: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, ist\
   \ ein Daten-Serialisierungsformat \xE4hnlich wie JSON oder YAML, zielt jedoch auf\u2026"

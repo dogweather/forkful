@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/refactoring/
 date: 2024-01-26 03:36:52.343960-07:00
 description: "Refactoring ist der Prozess der Umstrukturierung von bestehendem Computercode,\
   \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer f\xFChren ein\u2026"
-lastmod: 2024-02-18 23:09:05.432179
+lastmod: 2024-02-19 22:05:13.351529
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess der Umstrukturierung von bestehendem Computercode,\
   \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer f\xFChren ein\u2026"

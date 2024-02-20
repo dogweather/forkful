@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/working-with-toml/
 date: 2024-01-26 04:26:11.605893-07:00
 description: "TOML est un langage de s\xE9rialisation de donn\xE9es lisible par l'homme,\
   \ souvent utilis\xE9 pour les configurations. Les programmeurs utilisent TOML pour\
   \ sa\u2026"
-lastmod: 2024-02-18 23:09:08.555504
+lastmod: 2024-02-19 22:05:16.334014
 model: gpt-4-0125-preview
 summary: "TOML est un langage de s\xE9rialisation de donn\xE9es lisible par l'homme,\
   \ souvent utilis\xE9 pour les configurations. Les programmeurs utilisent TOML pour\

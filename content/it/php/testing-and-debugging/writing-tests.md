@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/php/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.809549-07:00
 description: "Scrivere test nella programmazione implica la creazione e l'esecuzione\
   \ di script che verificano il comportamento del codice come previsto in varie\u2026"
-lastmod: 2024-02-18 23:08:55.974115
+lastmod: 2024-02-19 22:05:02.586752
 model: gpt-4-0125-preview
 summary: "Scrivere test nella programmazione implica la creazione e l'esecuzione di\
   \ script che verificano il comportamento del codice come previsto in varie\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:53.654368-07:00
 description: "Convertire una data in una stringa in Visual Basic for Applications\
   \ (VBA) \xE8 un processo utilizzato per modificare il tipo di dati di una data in\
   \ un\u2026"
-lastmod: 2024-02-18 23:08:55.735212
+lastmod: 2024-02-19 22:05:02.337186
 model: gpt-4-0125-preview
 summary: "Convertire una data in una stringa in Visual Basic for Applications (VBA)\
   \ \xE8 un processo utilizzato per modificare il tipo di dati di una data in un\u2026"

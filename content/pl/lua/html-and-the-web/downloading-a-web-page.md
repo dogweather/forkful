@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/downloading-a-web-page/
 date: 2024-01-20 17:44:43.679360-07:00
 description: "Pobieranie strony internetowej to proces uruchomienia kodu, kt\xF3ry\
   \ \u015Bci\u0105ga zawarto\u015B\u0107 strony www do analizy lub przetwarzania.\
   \ Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: 2024-02-18 23:08:49.738510
+lastmod: 2024-02-19 22:04:54.675392
 model: gpt-4-1106-preview
 summary: "Pobieranie strony internetowej to proces uruchomienia kodu, kt\xF3ry \u015B\
   ci\u0105ga zawarto\u015B\u0107 strony www do analizy lub przetwarzania. Programi\u015B\

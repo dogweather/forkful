@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/kotlin/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:51.350289-07:00
 description: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som lagrar\
   \ nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6r att effektivt organisera\
   \ och h\xE4mta\u2026"
-lastmod: 2024-02-18 23:08:51.743057
+lastmod: 2024-02-19 22:04:57.077845
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som lagrar nyckel-v\xE4\
   rdepar. Programmerare anv\xE4nder dem f\xF6r att effektivt organisera och h\xE4\

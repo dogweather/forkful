@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/haskell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:27.523475-07:00
 description: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ em muitas tarefas de programa\xE7\xE3o, permitindo a\xE7\xF5es condicionais com\
   \ base na presen\xE7a ou\u2026"
-lastmod: 2024-02-18 23:08:58.213369
+lastmod: 2024-02-19 22:05:05.686297
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ em muitas tarefas de programa\xE7\xE3o, permitindo a\xE7\xF5es condicionais com\

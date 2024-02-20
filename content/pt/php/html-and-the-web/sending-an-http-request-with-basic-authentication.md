@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:19.860910-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ que voc\xEA fornece um nome de usu\xE1rio e senha para acessar um recurso protegido\
   \ online.\u2026"
-lastmod: 2024-02-18 23:08:58.240601
+lastmod: 2024-02-19 22:05:05.715278
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ que voc\xEA fornece um nome de usu\xE1rio e senha para acessar um recurso protegido\

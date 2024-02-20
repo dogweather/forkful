@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/elm/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:10.712298-07:00
 description: "Tekstitiedoston kirjoittaminen Elm-kielell\xE4 sis\xE4lt\xE4\xE4 tekstuaalisen\
   \ datan luomisen ja tallentamisen tiedostoon Elm-sovelluksesta. Ohjelmoijat tarvitsevat\u2026"
-lastmod: 2024-02-18 23:09:07.548831
+lastmod: 2024-02-19 22:05:15.400641
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Elm-kielell\xE4 sis\xE4lt\xE4\xE4 tekstuaalisen\
   \ datan luomisen ja tallentamisen tiedostoon Elm-sovelluksesta. Ohjelmoijat tarvitsevat\u2026"

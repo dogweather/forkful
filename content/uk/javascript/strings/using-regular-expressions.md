@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/javascript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:33.799540-07:00
@@ -13,7 +11,7 @@ description: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0456 \u0432\u043
   \ \u0440\u044F\u0434\u043A\u0430\u0445. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\
   \u0456\u0441\u0442\u0438 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\
   \u0443\u044E\u0442\u044C \u0457\u0445 \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:09:01.017313
+lastmod: 2024-02-19 22:05:09.057882
 model: gpt-4-0125-preview
 summary: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0456 \u0432\u0438\u0440\
   \u0430\u0437\u0438 (\u0430\u0431\u043E regex) \u0432 JavaScript \u2014 \u0446\u0435\

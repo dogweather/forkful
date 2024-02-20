@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/ruby/downloading-a-web-page/
 date: 2024-01-20 17:44:32.863658-07:00
 description: "T\xE9l\xE9charger une page web, c\u2019est r\xE9cup\xE9rer son contenu\
   \ via le r\xE9seau. Les programmeurs font \xE7a pour analyser des donn\xE9es, tester\
   \ leur disponibilit\xE9, ou\u2026"
-lastmod: 2024-02-18 23:09:09.405988
+lastmod: 2024-02-19 22:05:17.068509
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c\u2019est r\xE9cup\xE9rer son contenu via\
   \ le r\xE9seau. Les programmeurs font \xE7a pour analyser des donn\xE9es, tester\

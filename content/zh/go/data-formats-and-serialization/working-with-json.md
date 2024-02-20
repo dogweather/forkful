@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:06.048671-07:00
@@ -12,7 +10,7 @@ description: "\u5728 Go \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u88
   \u548C\u65E0\u8BED\u8A00\u4F9D\u8D56\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\
   \u4F7F\u5F97\u5728\u4E0D\u540C\u7F16\u7A0B\u73AF\u5883\u95F4\u7B80\u5355\u5171\u4EAB\
   \u6570\u636E\u6210\u4E3A\u53EF\u80FD\u3002"
-lastmod: 2024-02-18 23:08:58.728945
+lastmod: 2024-02-19 22:05:06.247617
 model: gpt-4-0125-preview
 summary: "\u5728 Go \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\
   \u6CD5\uFF09\u6D89\u53CA\u5728 Go \u6570\u636E\u7ED3\u6784\u548C JSON \u683C\u5F0F\

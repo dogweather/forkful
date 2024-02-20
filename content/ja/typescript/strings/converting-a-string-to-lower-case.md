@@ -1,10 +1,8 @@
 ---
-aliases:
-- /ja/typescript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:19.815018-07:00
 description: ''
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.670340
+lastmod: 2024-02-19 22:05:00.925482
 model: gpt-4-1106-preview
 summary: ''
 title: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB"

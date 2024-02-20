@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/starting-a-new-project/
 date: 2024-01-20 18:04:00.235267-07:00
 description: "Zaczynanie nowego projektu to stawianie pierwszych krok\xF3w w kodzie.\
   \ Robimy to, by rozwi\u0105za\u0107 problem, nauczy\u0107 si\u0119 czego\u015B nowego\
   \ lub stworzy\u0107 co\u015B\u2026"
-lastmod: 2024-02-18 23:08:49.994517
+lastmod: 2024-02-19 22:04:54.947912
 model: gpt-4-1106-preview
 summary: "Zaczynanie nowego projektu to stawianie pierwszych krok\xF3w w kodzie. Robimy\
   \ to, by rozwi\u0105za\u0107 problem, nauczy\u0107 si\u0119 czego\u015B nowego lub\

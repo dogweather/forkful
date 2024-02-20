@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/javascript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:57.938512-07:00
 description: "Sending an HTTP request with basic authentication involves including\
   \ a username and password encoded in base64 within the request header. Programmers\
   \ do\u2026"
-lastmod: 2024-02-18 23:09:11.437681
+lastmod: 2024-02-19 22:05:18.894872
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves including a username\
   \ and password encoded in base64 within the request header. Programmers do\u2026"

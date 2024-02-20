@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/go/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:55.617845-07:00
 description: "Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden\
   \ Computer-Codes - das \xC4ndern der Faktorisierung - ohne dessen externes\u2026"
-lastmod: 2024-02-18 23:09:04.373541
+lastmod: 2024-02-19 22:05:12.342690
 model: gpt-4-0125-preview
 summary: "Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden\
   \ Computer-Codes - das \xC4ndern der Faktorisierung - ohne dessen externes\u2026"

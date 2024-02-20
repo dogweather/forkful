@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:27.253492-07:00
 description: "TOML, som st\xE5r f\xF6r Toms uppenbara, minimala spr\xE5k, \xE4r ett\
   \ data-serialiseringsformat som fr\xE4mst anv\xE4nds f\xF6r konfigurationsfiler.\
   \ Programmerare utnyttjar\u2026"
-lastmod: 2024-02-18 23:08:51.651451
+lastmod: 2024-02-19 22:04:56.976246
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r f\xF6r Toms uppenbara, minimala spr\xE5k, \xE4r ett data-serialiseringsformat\
   \ som fr\xE4mst anv\xE4nds f\xF6r konfigurationsfiler. Programmerare utnyttjar\u2026"

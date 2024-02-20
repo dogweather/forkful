@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/typescript/printing-debug-output/
 date: 2024-01-20 17:53:22.659427-07:00
 description: "Debug output is your flashlight in a dark code alley; it helps you spot\
   \ bugs by letting you peek into what your code's doing at runtime. Programmers do\
   \ it\u2026"
-lastmod: 2024-02-18 23:09:10.809886
+lastmod: 2024-02-19 22:05:18.330577
 model: gpt-4-1106-preview
 summary: "Debug output is your flashlight in a dark code alley; it helps you spot\
   \ bugs by letting you peek into what your code's doing at runtime. Programmers do\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/arduino/handling-errors/
 date: 2024-01-21 21:19:04.417596-07:00
 description: "Error handling in your programs catches the things unforeseen that'll\
   \ try to trip you up. You do it to keep your Arduino from having a meltdown when\
   \ the\u2026"
-lastmod: 2024-02-18 23:09:11.322474
+lastmod: 2024-02-19 22:05:18.790397
 model: gpt-4-1106-preview
 summary: "Error handling in your programs catches the things unforeseen that'll try\
   \ to trip you up. You do it to keep your Arduino from having a meltdown when the\u2026"

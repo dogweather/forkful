@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/using-a-debugger/
 date: 2024-01-26 03:49:55.091778-07:00
 description: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu\
   \ nutzen, mit denen man unter die Haube seines Codes schauen und ihn Schritt f\xFC\
   r\u2026"
-lastmod: 2024-02-18 23:09:05.283625
+lastmod: 2024-02-19 22:05:13.208084
 model: gpt-4-0125-preview
 summary: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu nutzen,\
   \ mit denen man unter die Haube seines Codes schauen und ihn Schritt f\xFCr\u2026"

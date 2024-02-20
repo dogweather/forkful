@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/concatenating-strings/
 date: 2024-01-20 17:35:01.804020-07:00
 description: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich ko\u0144c\xF3\
   w. Programi\u015Bci robi\u0105 to, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w \u2013\
   \ \u015Bcie\u017Cki do plik\xF3w, wiadomo\u015Bci, dynamiczne teksty\u2026"
-lastmod: 2024-02-18 23:08:49.645422
+lastmod: 2024-02-19 22:04:54.577936
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich ko\u0144c\xF3w.\
   \ Programi\u015Bci robi\u0105 to, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w \u2013\

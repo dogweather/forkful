@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/php/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:06.222548-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w PHP polega na kierowaniu\
   \ komunikat\xF3w b\u0142\u0119d\xF3w lub diagnozy oddzielnie od standardowego wyj\u015B\
   cia (stdout), co\u2026"
-lastmod: 2024-02-18 23:08:49.712775
+lastmod: 2024-02-19 22:04:54.649013
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w PHP polega na kierowaniu\
   \ komunikat\xF3w b\u0142\u0119d\xF3w lub diagnozy oddzielnie od standardowego wyj\u015B\

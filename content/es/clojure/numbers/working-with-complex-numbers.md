@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/working-with-complex-numbers/
 date: 2024-01-26 04:38:32.520940-07:00
 description: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una parte\
   \ adicional, la unidad imaginaria 'i'. Los programadores los utilizan en varios\
   \ dominios,\u2026"
-lastmod: 2024-02-18 23:09:09.596557
+lastmod: 2024-02-19 22:05:17.241963
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una parte adicional,\
   \ la unidad imaginaria 'i'. Los programadores los utilizan en varios dominios,\u2026"

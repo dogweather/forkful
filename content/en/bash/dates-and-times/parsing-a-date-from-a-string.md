@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/parsing-a-date-from-a-string/
 date: 2024-02-03 19:03:36.109719-07:00
 description: "Parsing a date from a string in Bash involves extracting and converting\
   \ date information from textual data into a format that Bash can manipulate or use\u2026"
-lastmod: 2024-02-18 23:09:11.239413
+lastmod: 2024-02-19 22:05:18.715758
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Bash involves extracting and converting\
   \ date information from textual data into a format that Bash can manipulate or use\u2026"

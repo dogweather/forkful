@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/c-sharp/creating-a-temporary-file/
 date: 2024-01-20 17:39:49.066635-07:00
 description: "Crear un archivo temporal significa hacer un fichero que se usa durante\
   \ una sesi\xF3n y luego se descarta o elimina autom\xE1ticamente. Los programadores\
   \ hacen\u2026"
-lastmod: 2024-02-18 23:09:10.003011
+lastmod: 2024-02-19 22:05:17.603485
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal significa hacer un fichero que se usa durante\
   \ una sesi\xF3n y luego se descarta o elimina autom\xE1ticamente. Los programadores\

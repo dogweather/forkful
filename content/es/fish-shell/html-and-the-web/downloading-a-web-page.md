@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/fish-shell/downloading-a-web-page/
 date: 2024-01-20 17:43:58.209939-07:00
 description: "Descargar una p\xE1gina web es traer su contenido, usualmente HTML,\
   \ a tu disco local. Los programadores necesitan hacer esto para an\xE1lisis de datos,\
   \ pruebas\u2026"
-lastmod: 2024-02-18 23:09:10.451904
+lastmod: 2024-02-19 22:05:18.005020
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es traer su contenido, usualmente HTML, a tu\
   \ disco local. Los programadores necesitan hacer esto para an\xE1lisis de datos,\

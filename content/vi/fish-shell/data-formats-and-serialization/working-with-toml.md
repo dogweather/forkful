@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:59.160555-07:00
@@ -8,7 +6,7 @@ description: "TOML l\xE0 \u0111\u1ECBnh d\u1EA1ng t\u1EC7p c\u1EA5u h\xECnh, d\u
   \ \u0111\u1ECDc v\xE0 vi\u1EBFt b\u1EDFi con ng\u01B0\u1EDDi, c\u0169ng nh\u01B0\
   \ d\u1EC5 d\xE0ng ph\xE2n t\xEDch v\xE0 t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c. L\u1EAD\
   p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7p\u2026"
-lastmod: 2024-02-18 23:08:51.212276
+lastmod: 2024-02-19 22:04:56.477534
 model: gpt-4-0125-preview
 summary: "TOML l\xE0 \u0111\u1ECBnh d\u1EA1ng t\u1EC7p c\u1EA5u h\xECnh, d\u1EC5 \u0111\
   \u1ECDc v\xE0 vi\u1EBFt b\u1EDFi con ng\u01B0\u1EDDi, c\u0169ng nh\u01B0 d\u1EC5\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:35.686605-07:00
@@ -13,7 +11,7 @@ description: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3051\u308B
   \u4F5C\u3092\u884C\u3044\u3001\u30C6\u30AD\u30B9\u30C8\u30C7\u30FC\u30BF\u3092\u52B9\
   \u7387\u7684\u306B\u66F4\u65B0\u3001\u30AF\u30EA\u30FC\u30F3\u30A2\u30C3\u30D7\u3001\
   \u307E\u305F\u306F\u5909\u63DB\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.464424
+lastmod: 2024-02-19 22:05:00.629524
 model: gpt-4-0125-preview
 summary: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3051\u308B\u30C6\
   \u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB\u306F\u3001\u6587\u5B57\u5217\

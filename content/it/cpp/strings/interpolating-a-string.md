@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/interpolating-a-string/
 date: 2024-01-20 17:50:30.694068-07:00
 description: "L'interpolazione di stringhe \xE8 il processo di inserimento di valori\
   \ variabili all'interno di una stringa. I programmatori la usano per costruire\u2026"
-lastmod: 2024-02-18 23:08:56.159843
+lastmod: 2024-02-19 22:05:02.787582
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe \xE8 il processo di inserimento di valori variabili\
   \ all'interno di una stringa. I programmatori la usano per costruire\u2026"

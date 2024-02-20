@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:07.614961-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res permet de l'afficher\
   \ selon un format lisible pour un humain. Les programmeurs font \xE7a pour enregistrer\
   \ ou\u2026"
-lastmod: 2024-02-18 23:09:08.352898
+lastmod: 2024-02-19 22:05:16.149851
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res permet de l'afficher selon\
   \ un format lisible pour un humain. Les programmeurs font \xE7a pour enregistrer\

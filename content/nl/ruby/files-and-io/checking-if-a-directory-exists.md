@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:17.938032-07:00
 description: "Controleren of een map bestaat betekent bevestigen of een map aanwezig\
   \ is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen voordat\
   \ ze\u2026"
-lastmod: 2024-02-18 23:09:02.438237
+lastmod: 2024-02-19 22:05:10.442490
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat betekent bevestigen of een map aanwezig is\
   \ in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen voordat ze\u2026"

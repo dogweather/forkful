@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:48.374381-07:00
 description: "REPL, or Read-Eval-Print Loop, is a programming environment for dynamically\
   \ testing Clojure code piece by piece. Coders use it for immediate feedback,\u2026"
-lastmod: 2024-02-18 23:09:10.725439
+lastmod: 2024-02-19 22:05:18.254760
 model: gpt-4-1106-preview
 summary: "REPL, or Read-Eval-Print Loop, is a programming environment for dynamically\
   \ testing Clojure code piece by piece. Coders use it for immediate feedback,\u2026"

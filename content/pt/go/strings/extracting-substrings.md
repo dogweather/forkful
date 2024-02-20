@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:27.899929-07:00
 description: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas de\
   \ uma string com base em suas posi\xE7\xF5es. Programadores frequentemente realizam\
   \ essa opera\xE7\xE3o para\u2026"
-lastmod: 2024-02-18 23:08:57.656711
+lastmod: 2024-02-19 22:05:05.110771
 model: gpt-4-0125-preview
 summary: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas de uma\
   \ string com base em suas posi\xE7\xF5es. Programadores frequentemente realizam\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:06.076563-07:00
 description: "Um REPL (Read-Eval-Print-Loop - Ler-Avaliar-Imprimir-Loop) \xE9 um ambiente\
   \ de programa\xE7\xE3o simples e interativo. Programadores o utilizam para experimenta\xE7\
   \xE3o\u2026"
-lastmod: 2024-02-18 23:08:58.451343
+lastmod: 2024-02-19 22:05:05.941499
 model: gpt-4-0125-preview
 summary: "Um REPL (Read-Eval-Print-Loop - Ler-Avaliar-Imprimir-Loop) \xE9 um ambiente\
   \ de programa\xE7\xE3o simples e interativo. Programadores o utilizam para experimenta\xE7\

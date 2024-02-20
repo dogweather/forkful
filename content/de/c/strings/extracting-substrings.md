@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:19.449615-07:00
 description: "Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer\
   \ kleineren Zeichenkette (Teilzeichenkette) aus einer gr\xF6\xDFeren Zeichenkette\
   \ basierend\u2026"
-lastmod: 2024-02-18 23:09:05.360450
+lastmod: 2024-02-19 22:05:13.281153
 model: gpt-4-0125-preview
 summary: "Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer kleineren\
   \ Zeichenkette (Teilzeichenkette) aus einer gr\xF6\xDFeren Zeichenkette basierend\u2026"

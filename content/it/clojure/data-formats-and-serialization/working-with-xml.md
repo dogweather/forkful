@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/clojure/working-with-xml/
 date: 2024-01-26 04:29:04.694659-07:00
 description: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
   \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\
   \ web,\u2026"
-lastmod: 2024-02-18 23:08:55.584029
+lastmod: 2024-02-19 22:05:02.176015
 model: gpt-4-0125-preview
 summary: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
   \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\

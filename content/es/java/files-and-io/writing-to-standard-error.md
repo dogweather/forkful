@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/java/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:30.444282-07:00
 description: "Escribir en el error est\xE1ndar (stderr) implica enviar mensajes de\
   \ error y diagn\xF3sticos a la consola o terminal. Los programadores lo hacen para\
   \ separar la\u2026"
-lastmod: 2024-02-18 23:09:09.862724
+lastmod: 2024-02-19 22:05:17.476061
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) implica enviar mensajes de error\
   \ y diagn\xF3sticos a la consola o terminal. Los programadores lo hacen para separar\

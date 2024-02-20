@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/clojure/starting-a-new-project/
 date: 2024-01-20 18:03:32.289010-07:00
 description: "Come\xE7ar um novo projeto \xE9 o processo de criar a base para seu\
   \ c\xF3digo em Clojure - \xE9 como preparar o terreno antes de construir uma casa.\
   \ Programadores\u2026"
-lastmod: 2024-02-18 23:08:57.803358
+lastmod: 2024-02-19 22:05:05.269409
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 o processo de criar a base para seu c\xF3\
   digo em Clojure - \xE9 como preparar o terreno antes de construir uma casa. Programadores\u2026"

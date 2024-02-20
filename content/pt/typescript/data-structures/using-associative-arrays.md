@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/typescript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:11.228743-07:00
 description: "Arrays associativos, ou objetos no TypeScript, permitem que voc\xEA\
   \ utilize strings (ou chaves) para acessar pares de valor. Programadores os usam\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:57.878156
+lastmod: 2024-02-19 22:05:05.350237
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou objetos no TypeScript, permitem que voc\xEA utilize\
   \ strings (ou chaves) para acessar pares de valor. Programadores os usam para\u2026"

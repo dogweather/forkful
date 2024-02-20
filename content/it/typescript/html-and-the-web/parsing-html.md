@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/typescript/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:13.585602-07:00
 description: "Analizzare l'HTML significa setacciare il codice HTML per trovare, estrarre\
   \ o manipolare informazioni. I programmatori lo fanno per interagire con i\u2026"
-lastmod: 2024-02-18 23:08:55.638255
+lastmod: 2024-02-19 22:05:02.234134
 model: gpt-4-0125-preview
 summary: "Analizzare l'HTML significa setacciare il codice HTML per trovare, estrarre\
   \ o manipolare informazioni. I programmatori lo fanno per interagire con i\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/typescript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:21.593123-07:00
 description: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Buchstaben\
   \ eines Textes in ihre entsprechende kleinbuchstabige Form zu konvertieren.\u2026"
-lastmod: 2024-02-18 23:09:04.582869
+lastmod: 2024-02-19 22:05:12.541516
 model: gpt-4-1106-preview
 summary: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Buchstaben eines\
   \ Textes in ihre entsprechende kleinbuchstabige Form zu konvertieren.\u2026"

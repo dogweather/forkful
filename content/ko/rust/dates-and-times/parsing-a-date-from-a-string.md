@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:28.564131-07:00
@@ -13,7 +11,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD5
   \uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. Rust\uC5D0\uC11C\uB294\
   \ \uB0A0\uC9DC\uC5D0 \uB300\uD55C \uBE44\uAD50, \uC0B0\uC220 \uC5F0\uC0B0 \uB610\
   \uB294 \uD615\uC2DD \uC9C0\uC815\uACFC \uAC19\uC740 \uC791\uC5C5\uC5D0\u2026"
-lastmod: 2024-02-18 23:09:05.899075
+lastmod: 2024-02-19 22:05:13.834418
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\uB294\
   \ \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uCC98\uB9AC\uD558\uAC70\uB098\

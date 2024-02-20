@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/using-a-debugger/
 date: 2024-01-25 20:50:25.605338-07:00
 description: "Using a debugger is like giving yourself x-ray vision to peek into your\
   \ code's execution. Programmers do it to spot bugs, understand program flow, and\u2026"
-lastmod: 2024-02-18 23:09:10.853067
+lastmod: 2024-02-19 22:05:18.369415
 model: gpt-4-1106-preview
 summary: "Using a debugger is like giving yourself x-ray vision to peek into your\
   \ code's execution. Programmers do it to spot bugs, understand program flow, and\u2026"

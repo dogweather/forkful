@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/haskell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:37.210856-07:00
 description: "Tests in Haskell zu schreiben, dient dazu, sicherzustellen, dass Ihre\
   \ Funktionen wie erwartet durch automatisierte \xDCberpr\xFCfungen arbeiten. Entwickler\
   \ tun\u2026"
-lastmod: 2024-02-18 23:09:04.920693
+lastmod: 2024-02-19 22:05:12.861969
 model: gpt-4-0125-preview
 summary: "Tests in Haskell zu schreiben, dient dazu, sicherzustellen, dass Ihre Funktionen\
   \ wie erwartet durch automatisierte \xDCberpr\xFCfungen arbeiten. Entwickler tun\u2026"

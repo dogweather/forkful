@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c-sharp/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:23.929652-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dun
   \ HTML th\xF4 t\u1EEB internet b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\xE3 l\u1EAD\
   p tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\
   \ n\xE0y \u0111\u1EC3 x\u1EED l\xFD d\u1EEF li\u1EC7u, t\u01B0\u01A1ng\u2026"
-lastmod: 2024-02-18 23:08:50.696952
+lastmod: 2024-02-19 22:04:55.829673
 model: gpt-4-0125-preview
 summary: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung HTML\
   \ th\xF4 t\u1EEB internet b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\xE3 l\u1EADp tr\xEC\

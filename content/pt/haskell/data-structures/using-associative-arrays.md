@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pt/haskell/using-associative-arrays/
 changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-30 19:11:24.446785-07:00
 description: "Arrays associativos, ou dicion\xE1rios, em Haskell s\xE3o todos sobre\
   \ mapear chaves a valores para uma busca r\xE1pida e um gerenciamento eficiente\
   \ de dados.\u2026"
-lastmod: 2024-02-18 23:08:58.192164
+lastmod: 2024-02-19 22:05:05.663359
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou dicion\xE1rios, em Haskell s\xE3o todos sobre mapear\
   \ chaves a valores para uma busca r\xE1pida e um gerenciamento eficiente de dados.\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/getting-the-current-date/
 date: 2024-02-03 19:02:56.530577-07:00
 description: "Getting the current date in programming is crucial for a myriad of reasons,\
   \ including logging, timestamping events, and scheduling tasks. In Clojure, a\u2026"
-lastmod: 2024-02-18 23:09:10.734266
+lastmod: 2024-02-19 22:05:18.262577
 model: gpt-4-0125-preview
 summary: "Getting the current date in programming is crucial for a myriad of reasons,\
   \ including logging, timestamping events, and scheduling tasks. In Clojure, a\u2026"

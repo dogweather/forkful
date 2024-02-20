@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/working-with-complex-numbers/
 date: 2024-01-26 04:44:51.433838-07:00
 description: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` och\
   \ `b` \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`). I programmering\
   \ anv\xE4nder vi\u2026"
-lastmod: 2024-02-18 23:08:51.416241
+lastmod: 2024-02-19 22:04:56.717911
 model: gpt-4-0125-preview
 summary: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` och `b`\
   \ \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`). I programmering\

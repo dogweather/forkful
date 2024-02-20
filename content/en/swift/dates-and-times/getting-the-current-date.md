@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/getting-the-current-date/
 date: 2024-02-03 19:02:47.182335-07:00
 description: "Getting the current date in Swift involves using the `Date` class to\
   \ access the date and time that the app is being run. Programmers need to fetch\
   \ the\u2026"
-lastmod: 2024-02-18 23:09:11.406904
+lastmod: 2024-02-19 22:05:18.867089
 model: gpt-4-0125-preview
 summary: "Getting the current date in Swift involves using the `Date` class to access\
   \ the date and time that the app is being run. Programmers need to fetch the\u2026"

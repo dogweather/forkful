@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/elixir/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:42.251444-07:00
 description: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen\
   \ aus HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"
-lastmod: 2024-02-18 23:09:04.549597
+lastmod: 2024-02-19 22:05:12.509321
 model: gpt-4-0125-preview
 summary: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus\
   \ HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"

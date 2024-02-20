@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/bash/comparing-two-dates/
 date: 2024-01-20 17:32:15.292828-07:00
 description: "Comparar dos fechas significa verificar cu\xE1l es anterior o si son\
   \ el mismo d\xEDa. Programadores hacen esto para gestionar eventos, vencimientos,\
   \ y ordenar\u2026"
-lastmod: 2024-02-18 23:09:10.180648
+lastmod: 2024-02-19 22:05:17.766118
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas significa verificar cu\xE1l es anterior o si son el\
   \ mismo d\xEDa. Programadores hacen esto para gestionar eventos, vencimientos, y\

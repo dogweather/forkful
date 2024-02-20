@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:52.216481-07:00
 description: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uD2B9\uC815 \uC77C\uC790\uB85C\uBD80\
   \uD130 \uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uCC3E\uB294 \uAC83\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uD2B9\uC815 \uC77C\uC790\uB85C\uB
   \ \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\
   \uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.902322
+lastmod: 2024-02-19 22:05:14.790001
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uD2B9\uC815 \uC77C\uC790\uB85C\uBD80\uD130\
   \ \uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uCC3E\uB294 \uAC83\uC785\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/rust/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:27.531579-07:00
 description: "Regulj\xE4ra uttryck, eller regex, l\xE5ter utvecklare s\xF6ka, matcha\
   \ och manipulera str\xE4ngar med avancerade m\xF6nsterpassningstekniker. I Rust\
   \ hj\xE4lper anv\xE4ndning\u2026"
-lastmod: 2024-02-18 23:08:51.574409
+lastmod: 2024-02-19 22:04:56.891822
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck, eller regex, l\xE5ter utvecklare s\xF6ka, matcha och\
   \ manipulera str\xE4ngar med avancerade m\xF6nsterpassningstekniker. I Rust hj\xE4\

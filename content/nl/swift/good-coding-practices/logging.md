@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:56.051492-07:00
 description: "Loggen is het proces van het vastleggen van applicatiegedragingen, fouten\
   \ en andere belangrijke informatie in een blijvend medium, zoals een bestand of\u2026"
-lastmod: 2024-02-18 23:09:02.236484
+lastmod: 2024-02-19 22:05:10.250387
 model: gpt-4-0125-preview
 summary: "Loggen is het proces van het vastleggen van applicatiegedragingen, fouten\
   \ en andere belangrijke informatie in een blijvend medium, zoals een bestand of\u2026"

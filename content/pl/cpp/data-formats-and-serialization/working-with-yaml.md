@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/cpp/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:49.006159-07:00
 description: "YAML, co oznacza YAML Ain't Markup Language, jest czytelnym dla cz\u0142\
   owieka formatem serializacji danych. Programi\u015Bci u\u017Cywaj\u0105 go do plik\xF3\
   w konfiguracyjnych,\u2026"
-lastmod: 2024-02-18 23:08:49.931790
+lastmod: 2024-02-19 22:04:54.880337
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza YAML Ain't Markup Language, jest czytelnym dla cz\u0142\
   owieka formatem serializacji danych. Programi\u015Bci u\u017Cywaj\u0105 go do plik\xF3\

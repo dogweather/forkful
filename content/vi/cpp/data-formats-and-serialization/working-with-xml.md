@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/cpp/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:46.771172-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED
   \ c\xFA ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c d\u1EEF li\u1EC7u XML (eXtensible Markup\
   \ Language - Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng). C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:51.070291
+lastmod: 2024-02-19 22:04:56.277487
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c d\u1EEF li\u1EC7u XML (eXtensible Markup Language\

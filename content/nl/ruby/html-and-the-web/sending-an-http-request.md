@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:51.071997-07:00
 description: "Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron\
   \ op het web. Programmeurs doen dit om te communiceren met API's, webinhoud te\u2026"
-lastmod: 2024-02-18 23:09:02.418941
+lastmod: 2024-02-19 22:05:10.423762
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron op\
   \ het web. Programmeurs doen dit om te communiceren met API's, webinhoud te\u2026"

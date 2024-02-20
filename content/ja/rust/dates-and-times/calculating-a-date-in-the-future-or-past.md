@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/rust/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:05.219397-07:00
 description: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\
   \u7B97\u3059\u308B\u3063\u3066\u3001\u3042\u308B\u65E5\u304B\u3089\u7279\u5B9A\u306E\
@@ -10,7 +8,7 @@ description: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092
   \u9650\u3092\u8A08\u7B97\u3057\u305F\u308A\u3059\u308B\u6642\u306B\u4FBF\u5229\u3060\
   \u304B\u3089\u3055\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.733496
+lastmod: 2024-02-19 22:05:01.015005
 model: gpt-4-1106-preview
 summary: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\
   \u7B97\u3059\u308B\u3063\u3066\u3001\u3042\u308B\u65E5\u304B\u3089\u7279\u5B9A\u306E\

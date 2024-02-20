@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:34.738001-07:00
@@ -8,7 +6,7 @@ description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, c\xF2n \u0111\u01B0\u1EE3c 
   i l\xE0 V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9\
   p l\u1EADp tr\xECnh vi\xEAn nh\u1EADp bi\u1EC3u th\u1EE9c ho\u1EB7c m\xE3 v\xE0\
   \ ngay l\u1EADp t\u1EE9c th\u1EA5y k\u1EBFt qu\u1EA3, t\u0103ng\u2026"
-lastmod: 2024-02-18 23:08:51.236319
+lastmod: 2024-02-19 22:04:56.507826
 model: gpt-4-0125-preview
 summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, c\xF2n \u0111\u01B0\u1EE3c g\u1ECD\
   i l\xE0 V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9\

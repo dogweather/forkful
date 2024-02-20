@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/clojure/printing-debug-output/
 date: 2024-01-20 17:52:14.983534-07:00
 description: "Stampare output di debug significa scrivere informazioni a schermo per\
   \ capire cosa sta succedendo nel tuo codice. I programmatori lo fanno per trovare\
   \ e\u2026"
-lastmod: 2024-02-18 23:08:55.563378
+lastmod: 2024-02-19 22:05:02.153722
 model: gpt-4-1106-preview
 summary: "Stampare output di debug significa scrivere informazioni a schermo per capire\
   \ cosa sta succedendo nel tuo codice. I programmatori lo fanno per trovare e\u2026"

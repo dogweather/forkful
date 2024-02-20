@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:55.637043-07:00
@@ -14,7 +12,7 @@ description: "\u090F\u0932\u093F\u0915\u094D\u0938\u093F\u0930 \u092E\u0947\u090
   \u0902\u091C\u0940 \u090F\u0915 \u092E\u0942\u0932\u094D\u092F \u0915\u0940 \u0913\
   \u0930 \u0938\u0902\u0915\u0947\u0924 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964\
   \ \u0935\u0947 \u0921\u0947\u091F\u093E \u0915\u094B\u2026"
-lastmod: 2024-02-18 23:09:02.789894
+lastmod: 2024-02-19 22:05:10.787769
 model: gpt-4-0125-preview
 summary: "\u090F\u0932\u093F\u0915\u094D\u0938\u093F\u0930 \u092E\u0947\u0902, \u0938\
   \u0902\u092C\u0926\u094D\u0927 \u0938\u0930\u0923\u093F\u092F\u093E\u0901, \u091C\

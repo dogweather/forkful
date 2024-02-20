@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/php/using-a-debugger/
 date: 2024-01-26 03:50:47.400388-07:00
 description: "Debuggeri on ty\xF6kalu, joka auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
   n, mit\xE4 heid\xE4n koodinsa todellisuudessa tekee sen suorittaessa. Se on suurennuslasi,\
   \ joka\u2026"
-lastmod: 2024-02-18 23:09:07.716376
+lastmod: 2024-02-19 22:05:15.554876
 model: gpt-4-0125-preview
 summary: "Debuggeri on ty\xF6kalu, joka auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
   n, mit\xE4 heid\xE4n koodinsa todellisuudessa tekee sen suorittaessa. Se on suurennuslasi,\

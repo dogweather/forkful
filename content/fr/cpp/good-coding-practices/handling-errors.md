@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/cpp/handling-errors/
 date: 2024-01-26 00:50:03.931001-07:00
 description: "G\xE9rer les erreurs implique de planifier pour les cas o\xF9 les choses\
   \ tournent mal. C'est essentiel car cela aide \xE0 \xE9viter les plantages et rend\
   \ votre\u2026"
-lastmod: 2024-02-18 23:09:09.169137
+lastmod: 2024-02-19 22:05:16.841922
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs implique de planifier pour les cas o\xF9 les choses\
   \ tournent mal. C'est essentiel car cela aide \xE0 \xE9viter les plantages et rend\

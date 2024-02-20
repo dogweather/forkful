@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/clojure/creating-a-temporary-file/
 date: 2024-01-20 17:39:59.150455-07:00
 description: "\xC5 lage en midlertidig fil er som \xE5 opprette et digitalt kritt-tavle;\
   \ du bruker det for \xE5 skrible ned info som ikke trenger \xE5 bli husket lenge.\u2026"
-lastmod: 2024-02-18 23:08:53.582724
+lastmod: 2024-02-19 22:04:59.707082
 model: gpt-4-1106-preview
 summary: "\xC5 lage en midlertidig fil er som \xE5 opprette et digitalt kritt-tavle;\
   \ du bruker det for \xE5 skrible ned info som ikke trenger \xE5 bli husket lenge.\u2026"

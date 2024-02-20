@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/bash/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:42.049969-07:00
@@ -14,7 +12,7 @@ description: "Bash \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928
   \ \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0936\u093E\u092E\u093F\u0932 \u0915\
   \u0930\u0924\u093E \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\
   \u093E\u092E\u0930 \u0932\u0949\u0917\u094D\u0938 \u0915\u094B\u2026"
-lastmod: 2024-02-18 23:09:03.675973
+lastmod: 2024-02-19 22:05:11.663527
 model: gpt-4-0125-preview
 summary: "Bash \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928 \u0926\
   \u093F\u0928\u093E\u0902\u0915 \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0915\

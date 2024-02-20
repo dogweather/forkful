@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/generating-random-numbers/
 date: 2024-01-27 20:26:09.319695-07:00
 description: "Generating random numbers in programming is about creating numbers that\
   \ lack any predictable pattern. Programmers do this for various reasons, including\u2026"
-lastmod: 2024-02-18 23:09:11.008733
+lastmod: 2024-02-19 22:05:18.512550
 model: gpt-4-0125-preview
 summary: "Generating random numbers in programming is about creating numbers that\
   \ lack any predictable pattern. Programmers do this for various reasons, including\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/searching-and-replacing-text/
 date: 2024-01-20 17:58:06.613952-07:00
 description: "Procurar e substituir texto \xE9 como uma opera\xE7\xE3o de busca e\
   \ troca, onde um trecho de texto \xE9 localizado e trocado por outro. Programadores\
   \ fazem isso para\u2026"
-lastmod: 2024-02-18 23:08:58.517824
+lastmod: 2024-02-19 22:05:06.011717
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 como uma opera\xE7\xE3o de busca e troca,\
   \ onde um trecho de texto \xE9 localizado e trocado por outro. Programadores fazem\

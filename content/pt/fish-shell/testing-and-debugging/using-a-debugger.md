@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/using-a-debugger/
 date: 2024-01-26 03:48:41.528340-07:00
 description: "Usar um depurador \xE9 tudo sobre esmagar bugs \u2014 os erros desagrad\xE1\
   veis e sugadores de tempo no seu c\xF3digo. Programadores depuram porque querem\
   \ encontrar e\u2026"
-lastmod: 2024-02-18 23:08:58.580014
+lastmod: 2024-02-19 22:05:06.078030
 model: gpt-4-0125-preview
 summary: "Usar um depurador \xE9 tudo sobre esmagar bugs \u2014 os erros desagrad\xE1\
   veis e sugadores de tempo no seu c\xF3digo. Programadores depuram porque querem\

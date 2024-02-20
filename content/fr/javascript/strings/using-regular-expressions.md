@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/javascript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:50.128733-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en JavaScript sont des motifs\
   \ utilis\xE9s pour correspondre \xE0 des combinaisons de caract\xE8res dans des\
   \ cha\xEEnes de\u2026"
-lastmod: 2024-02-18 23:09:09.244654
+lastmod: 2024-02-19 22:05:16.910354
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en JavaScript sont des motifs utilis\xE9\
   s pour correspondre \xE0 des combinaisons de caract\xE8res dans des cha\xEEnes de\u2026"

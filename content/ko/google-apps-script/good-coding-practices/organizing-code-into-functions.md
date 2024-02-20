@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:25.448207-07:00
@@ -13,7 +11,7 @@ description: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uA
   \uC218\uC131 \uBC0F \uC7AC\uC0AC\uC6A9\uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uACE0\
   \ \uBCF5\uC7A1\uD55C \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB354 \uC27D\uAC8C \uC774\uD574\
   \uD558\uACE0\u2026"
-lastmod: 2024-02-18 23:09:05.565314
+lastmod: 2024-02-19 22:05:13.481005
 model: gpt-4-0125-preview
 summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\uC740\
   \ Google Apps Script \uCF54\uB4DC\uB97C \uB17C\uB9AC\uC801\uC778 \uC138\uADF8\uBA3C\

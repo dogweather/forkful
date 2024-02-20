@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/javascript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:50.522295-07:00
 description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
   sbarhetsv\xE4nligt data-serialiseringsformat. Programmerare anv\xE4nder ofta detta\
   \ f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.184475
+lastmod: 2024-02-19 22:04:57.558630
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4sbarhetsv\xE4\
   nligt data-serialiseringsformat. Programmerare anv\xE4nder ofta detta f\xF6r\u2026"

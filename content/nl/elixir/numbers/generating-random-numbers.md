@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:04.688043-07:00
 description: "Het genereren van willekeurige getallen in Elixir is een fundamentele\
   \ programmeertaak, essentieel voor applicaties die onvoorspelbare resultaten nodig\u2026"
-lastmod: 2024-02-18 23:09:01.521759
+lastmod: 2024-02-19 22:05:09.548460
 model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Elixir is een fundamentele programmeertaak,\
   \ essentieel voor applicaties die onvoorspelbare resultaten nodig\u2026"

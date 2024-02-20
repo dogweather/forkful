@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/rounding-numbers/
 date: 2024-01-26 03:43:48.869077-07:00
 description: "Redondear n\xFAmeros consiste en eliminar los decimales para simplificar\
   \ tus datos o ajustarlos a formatos espec\xEDficos. Los programadores lo hacen para\u2026"
-lastmod: 2024-02-18 23:09:10.445198
+lastmod: 2024-02-19 22:05:17.998980
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros consiste en eliminar los decimales para simplificar\
   \ tus datos o ajustarlos a formatos espec\xEDficos. Los programadores lo hacen para\u2026"

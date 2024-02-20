@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/haskell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:53.950102-07:00
 description: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien\
   \ mit textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"
-lastmod: 2024-02-18 23:09:04.936978
+lastmod: 2024-02-19 22:05:12.876830
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien mit\
   \ textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"

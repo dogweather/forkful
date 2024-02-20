@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/reading-command-line-arguments/
 date: 2024-01-20 17:57:45.139776-07:00
 description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \uC0AC\
   \uC6A9\uC790\uAC00 \uCF58\uC194\uC5D0\uC11C \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589\
@@ -10,7 +8,7 @@ description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \u
   \uD558\uC5EC \uD504\uB85C\uADF8\uB7A8\uC758 \uB3D9\uC791\uC744 \uC870\uC808\uD558\
   \uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.908343
+lastmod: 2024-02-19 22:05:13.843543
 model: gpt-4-1106-preview
 summary: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \uC0AC\uC6A9\
   \uC790\uAC00 \uCF58\uC194\uC5D0\uC11C \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589 \uC2DC\

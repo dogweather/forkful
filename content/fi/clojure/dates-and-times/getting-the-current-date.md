@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/clojure/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:17.315610-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on ratkaisevan\
   \ t\xE4rke\xE4\xE4 monista syist\xE4, mukaan lukien lokitiedot, tapahtumien aikaleimat\
   \ ja teht\xE4vien\u2026"
-lastmod: 2024-02-18 23:09:07.239658
+lastmod: 2024-02-19 22:05:15.136220
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on ratkaisevan\
   \ t\xE4rke\xE4\xE4 monista syist\xE4, mukaan lukien lokitiedot, tapahtumien aikaleimat\

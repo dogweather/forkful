@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/reading-command-line-arguments/
 date: 2024-01-20 17:57:05.986863-07:00
 description: "\uBA85\uB839\uC904 \uC778\uC790(command line arguments)\uB97C \uC77D\
   \uB294 \uAC83\uC740 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0 \uC785\uB825\uC744 \uC804\uB2EC\
@@ -8,7 +6,7 @@ description: "\uBA85\uB839\uC904 \uC778\uC790(command line arguments)\uB97C \uC7
   \ \uC774\uB97C \uD65C\uC6A9\uD574 \uC720\uC5F0\uD558\uACE0 \uC7AC\uC0AC\uC6A9 \uAC00\
   \uB2A5\uD55C \uCF54\uB4DC\uB97C \uC791\uC131\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.578612
+lastmod: 2024-02-19 22:05:14.483279
 model: gpt-4-1106-preview
 summary: "\uBA85\uB839\uC904 \uC778\uC790(command line arguments)\uB97C \uC77D\uB294\
   \ \uAC83\uC740 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0 \uC785\uB825\uC744 \uC804\uB2EC\uD558\

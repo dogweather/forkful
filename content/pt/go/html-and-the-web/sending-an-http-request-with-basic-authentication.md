@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:08.332707-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em\
   \ Go envolve adicionar um cabe\xE7alho de autoriza\xE7\xE3o \xE0 sua requisi\xE7\
   \xE3o, que inclui um nome de usu\xE1rio e\u2026"
-lastmod: 2024-02-18 23:08:57.668128
+lastmod: 2024-02-19 22:05:05.124902
 model: gpt-4-0125-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em Go\
   \ envolve adicionar um cabe\xE7alho de autoriza\xE7\xE3o \xE0 sua requisi\xE7\xE3\

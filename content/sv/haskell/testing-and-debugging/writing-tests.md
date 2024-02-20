@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/haskell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:53.156310-07:00
 description: "Att skriva tester i Haskell handlar om att s\xE4kerst\xE4lla att dina\
   \ funktioner fungerar som f\xF6rv\xE4ntat genom automatiserade kontroller. Programmerare\
   \ g\xF6r det\u2026"
-lastmod: 2024-02-18 23:08:51.840487
+lastmod: 2024-02-19 22:04:57.178877
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Haskell handlar om att s\xE4kerst\xE4lla att dina funktioner\
   \ fungerar som f\xF6rv\xE4ntat genom automatiserade kontroller. Programmerare g\xF6\

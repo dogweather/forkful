@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:47.601690-07:00
 description: "\uB0A0\uC9DC\uB97C \uBBF8\uB798\uB098 \uACFC\uAC70\uB85C \uACC4\uC0B0\
   \uD558\uB294 \uAC83\uC740 \uD2B9\uC815 \uB0A0\uC9DC\uB85C\uBD80\uD130 \uC77C\uC815\
@@ -10,7 +8,7 @@ description: "\uB0A0\uC9DC\uB97C \uBBF8\uB798\uB098 \uACFC\uAC70\uB85C \uACC4\uC
   \uD0B9\uACFC \uAC19\uC740 \uAE30\uB2A5\uC5D0 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.639816
+lastmod: 2024-02-19 22:05:14.541020
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBBF8\uB798\uB098 \uACFC\uAC70\uB85C \uACC4\uC0B0\uD558\
   \uB294 \uAC83\uC740 \uD2B9\uC815 \uB0A0\uC9DC\uB85C\uBD80\uD130 \uC77C\uC815 \uAE30\

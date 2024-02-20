@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/bash/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:37.854650-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi trong Bash c\xF3
   a l\xE0 t\u1EA1o m\u1ED9t t\u1EADp tin m\xE0 c\xE1c k\u1ECBch b\u1EA3n c\u1EE7a\
   \ b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF\
   \ li\u1EC7u m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn. L\u1EADp tr\xECnh\u2026"
-lastmod: 2024-02-18 23:08:50.906823
+lastmod: 2024-02-19 22:04:56.095830
 model: gpt-4-0125-preview
 summary: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi trong Bash c\xF3 ngh\u0129\
   a l\xE0 t\u1EA1o m\u1ED9t t\u1EADp tin m\xE0 c\xE1c k\u1ECBch b\u1EA3n c\u1EE7a\

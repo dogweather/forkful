@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/printing-debug-output/
 date: 2024-01-20 17:53:25.994422-07:00
 description: "Wypisywanie danych debugowych to jak rozmowa z komputerem \u2013 wysy\u0142\
   asz mu pytanie i czekasz na odpowied\u017A. Programi\u015Bci to robi\u0105, aby\
   \ zrozumie\u0107, co dzieje si\u0119\u2026"
-lastmod: 2024-02-18 23:08:49.955422
+lastmod: 2024-02-19 22:04:54.905608
 model: gpt-4-1106-preview
 summary: "Wypisywanie danych debugowych to jak rozmowa z komputerem \u2013 wysy\u0142\
   asz mu pytanie i czekasz na odpowied\u017A. Programi\u015Bci to robi\u0105, aby\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/ruby/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:15.122923-07:00
 description: "Converter uma string para min\xFAsculas significa transformar todos\
   \ os caracteres alfab\xE9ticos para a forma min\xFAscula. Fazemos isso para padronizar\
   \ entradas\u2026"
-lastmod: 2024-02-18 23:08:58.650896
+lastmod: 2024-02-19 22:05:06.152146
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas significa transformar todos os caracteres\
   \ alfab\xE9ticos para a forma min\xFAscula. Fazemos isso para padronizar entradas\u2026"

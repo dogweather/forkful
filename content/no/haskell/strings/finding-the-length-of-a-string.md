@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/haskell/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:38.968317-07:00
 description: "\xC5 finne lengden p\xE5 en streng betyr ganske enkelt \xE5 telle antall\
   \ tegn i den. Vi gj\xF8r dette for \xE5 validere input, begrense tekst, og jobbe\
   \ effektivt med\u2026"
-lastmod: 2024-02-18 23:08:53.926288
+lastmod: 2024-02-19 22:05:00.096547
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden p\xE5 en streng betyr ganske enkelt \xE5 telle antall\
   \ tegn i den. Vi gj\xF8r dette for \xE5 validere input, begrense tekst, og jobbe\

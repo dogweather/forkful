@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elm/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:39.961251-07:00
@@ -8,7 +6,7 @@ description: "Tham s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p ng\u01B0\u1EDDi d\xF9ng
   \ c\u1EA5p d\u1EEF li\u1EC7u cho ch\u01B0\u01A1ng tr\xECnh c\u1EE7a h\u1ECD khi\
   \ h\u1ECD kh\u1EDFi ch\u1EA1y n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn \u0111\u1ECD\
   c c\xE1c tham s\u1ED1 n\xE0y \u0111\u1EC3 \u0111i\u1EC1u ch\u1EC9nh\u2026"
-lastmod: 2024-02-18 23:08:50.621456
+lastmod: 2024-02-19 22:04:55.733831
 model: gpt-4-0125-preview
 summary: "Tham s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p ng\u01B0\u1EDDi d\xF9ng cung\
   \ c\u1EA5p d\u1EEF li\u1EC7u cho ch\u01B0\u01A1ng tr\xECnh c\u1EE7a h\u1ECD khi\

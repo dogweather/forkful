@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/rust/organizing-code-into-functions/
 date: 2024-01-26 01:11:38.304032-07:00
 description: "Organizzare il codice in funzioni significa suddividere il programma\
   \ in blocchi riutilizzabili e modulari identificati da un nome. Lo facciamo per\
   \ rendere\u2026"
-lastmod: 2024-02-18 23:08:55.685511
+lastmod: 2024-02-19 22:05:02.284422
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni significa suddividere il programma in\
   \ blocchi riutilizzabili e modulari identificati da un nome. Lo facciamo per rendere\u2026"

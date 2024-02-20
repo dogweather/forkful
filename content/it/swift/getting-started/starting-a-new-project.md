@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/starting-a-new-project/
 date: 2024-01-20 18:04:27.108532-07:00
 description: "Iniziamo un nuovo progetto per dar vita alle nostre idee. Lo facciamo\
   \ per esplorare possibilit\xE0, risolvere problemi o creare qualcosa di unico."
-lastmod: 2024-02-18 23:08:56.213119
+lastmod: 2024-02-19 22:05:02.844186
 model: gpt-4-1106-preview
 summary: "Iniziamo un nuovo progetto per dar vita alle nostre idee. Lo facciamo per\
   \ esplorare possibilit\xE0, risolvere problemi o creare qualcosa di unico."

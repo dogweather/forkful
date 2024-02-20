@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:26.355589-07:00
 description: "Een tekstbestand lezen is informatie uit een .txt-document in je programma\
   \ halen. Programmeurs doen dit om toegang te krijgen tot en data te manipuleren:\u2026"
-lastmod: 2024-02-18 23:09:02.295761
+lastmod: 2024-02-19 22:05:10.306340
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen is informatie uit een .txt-document in je programma\
   \ halen. Programmeurs doen dit om toegang te krijgen tot en data te manipuleren:\u2026"

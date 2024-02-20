@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:11.113478-07:00
 description: "Czytanie pliku tekstowego w Go polega na dost\u0119pie i pobieraniu\
   \ tre\u015Bci z pliku zapisanego na dysku w celu przetworzenia lub analizy. Programi\u015B\
   ci cz\u0119sto\u2026"
-lastmod: 2024-02-18 23:08:49.117985
+lastmod: 2024-02-19 22:04:54.056684
 model: gpt-4-0125-preview
 summary: "Czytanie pliku tekstowego w Go polega na dost\u0119pie i pobieraniu tre\u015B\
   ci z pliku zapisanego na dysku w celu przetworzenia lub analizy. Programi\u015B\

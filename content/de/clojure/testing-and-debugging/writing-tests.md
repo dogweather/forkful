@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/clojure/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:58.077866-07:00
 description: "Tests in Clojure zu schreiben, \xE4hnlich wie in anderen Programmiersprachen,\
   \ umfasst das Erstellen von dediziertem Code, um zu verifizieren, dass Ihre\u2026"
-lastmod: 2024-02-18 23:09:04.510834
+lastmod: 2024-02-19 22:05:12.472753
 model: gpt-4-0125-preview
 summary: "Tests in Clojure zu schreiben, \xE4hnlich wie in anderen Programmiersprachen,\
   \ umfasst das Erstellen von dediziertem Code, um zu verifizieren, dass Ihre\u2026"

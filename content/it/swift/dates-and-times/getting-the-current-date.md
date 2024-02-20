@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/swift/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:00.270305-07:00
 description: "Ottenere la data corrente in Swift comporta l'uso della classe `Date`\
   \ per accedere alla data e all'ora in cui l'app viene eseguita. I programmatori\
   \ hanno\u2026"
-lastmod: 2024-02-18 23:08:56.222470
+lastmod: 2024-02-19 22:05:02.854215
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Swift comporta l'uso della classe `Date` per\
   \ accedere alla data e all'ora in cui l'app viene eseguita. I programmatori hanno\u2026"

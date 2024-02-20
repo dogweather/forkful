@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/vba/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:27.711655-07:00
 description: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
   \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"
-lastmod: 2024-02-18 23:09:04.687609
+lastmod: 2024-02-19 22:05:12.640778
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
   \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"

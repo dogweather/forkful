@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:58.737010-07:00
 description: "Analisar HTML no Google Apps Script envolve extrair dados de conte\xFA\
   do HTML, o que \xE9 particularmente \xFAtil ao interagir com p\xE1ginas da web ou\
   \ fontes de\u2026"
-lastmod: 2024-02-18 23:08:57.713112
+lastmod: 2024-02-19 22:05:05.173333
 model: gpt-4-0125-preview
 summary: "Analisar HTML no Google Apps Script envolve extrair dados de conte\xFAdo\
   \ HTML, o que \xE9 particularmente \xFAtil ao interagir com p\xE1ginas da web ou\

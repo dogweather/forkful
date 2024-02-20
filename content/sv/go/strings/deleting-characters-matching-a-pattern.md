@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:54.304364-07:00
 description: "Att ta bort tecken som matchar ett specifikt m\xF6nster handlar om att\
   \ eliminera vissa tecken eller sekvenser av tecken fr\xE5n str\xE4ngar, baserat\
   \ p\xE5 regler\u2026"
-lastmod: 2024-02-18 23:08:51.316413
+lastmod: 2024-02-19 22:04:56.606264
 model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster handlar om att eliminera\
   \ vissa tecken eller sekvenser av tecken fr\xE5n str\xE4ngar, baserat p\xE5 regler\u2026"

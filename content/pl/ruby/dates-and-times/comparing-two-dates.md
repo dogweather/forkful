@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/comparing-two-dates/
 date: 2024-01-20 17:33:37.504423-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
   niejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015Bci robi\u0105\
   \ to, aby obs\u0142u\u017Cy\u0107 terminy,\u2026"
-lastmod: 2024-02-18 23:08:50.137852
+lastmod: 2024-02-19 22:04:55.127913
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
   niejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015Bci robi\u0105\

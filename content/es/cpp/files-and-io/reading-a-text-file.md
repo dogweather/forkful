@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/cpp/reading-a-text-file/
 date: 2024-01-20 17:54:04.089128-07:00
 description: "Leer un archivo de texto en C++ significa extracci\xF3n de datos desde\
   \ un archivo en tu disco hacia tu programa. Programadores lo hacen para manejar\u2026"
-lastmod: 2024-02-18 23:09:10.330737
+lastmod: 2024-02-19 22:05:17.896857
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en C++ significa extracci\xF3n de datos desde un\
   \ archivo en tu disco hacia tu programa. Programadores lo hacen para manejar\u2026"

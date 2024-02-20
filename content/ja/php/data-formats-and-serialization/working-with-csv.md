@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/php/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:51.795911-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.015412
+lastmod: 2024-02-19 22:05:01.412754
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "CSV\u3068\u306E\u4F5C\u696D"

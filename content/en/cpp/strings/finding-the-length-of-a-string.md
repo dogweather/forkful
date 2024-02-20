@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/cpp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:04.612161-07:00
 description: "Finding the length of a string means determining how many characters\
   \ it contains. Programmers do this to validate input, set up loops, or prepare data\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:11.346671
+lastmod: 2024-02-19 22:05:18.812310
 model: gpt-4-1106-preview
 summary: "Finding the length of a string means determining how many characters it\
   \ contains. Programmers do this to validate input, set up loops, or prepare data\

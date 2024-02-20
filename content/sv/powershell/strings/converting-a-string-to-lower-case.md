@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:02.398702-07:00
 description: "Att konvertera en str\xE4ng till gemener betyder att \xE4ndra alla stora\
   \ bokst\xE4ver till sm\xE5. Programmerare g\xF6r detta f\xF6r att standardisera\
   \ data och underl\xE4tta\u2026"
-lastmod: 2024-02-18 23:08:51.989474
+lastmod: 2024-02-19 22:04:57.343352
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till gemener betyder att \xE4ndra alla stora\
   \ bokst\xE4ver till sm\xE5. Programmerare g\xF6r detta f\xF6r att standardisera\

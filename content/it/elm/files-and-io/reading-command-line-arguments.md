@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elm/reading-command-line-arguments/
 date: 2024-01-20 17:55:50.278043-07:00
 description: "La lettura degli argomenti da riga di comando consente al tuo programma\
   \ di accettare input dall'utente esterno al tuo codice. I programmatori lo usano\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:55.820515
+lastmod: 2024-02-19 22:05:02.427363
 model: gpt-4-1106-preview
 summary: "La lettura degli argomenti da riga di comando consente al tuo programma\
   \ di accettare input dall'utente esterno al tuo codice. I programmatori lo usano\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/arduino/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:39.898970-07:00
 description: "Converting a date to a string means changing a date's representation\
   \ from a format that programming understands, like day, month, and year integers,\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.326323
+lastmod: 2024-02-19 22:05:18.793899
 model: gpt-4-1106-preview
 summary: "Converting a date to a string means changing a date's representation from\
   \ a format that programming understands, like day, month, and year integers, to\u2026"

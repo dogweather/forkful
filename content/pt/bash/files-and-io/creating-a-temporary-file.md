@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/creating-a-temporary-file/
 date: 2024-01-20 17:39:33.123481-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 o processo de fazer um arquivo que\
   \ s\xF3 existe durante a execu\xE7\xE3o do programa ou at\xE9 ser explicitamente\
   \ removido.\u2026"
-lastmod: 2024-02-18 23:08:58.344366
+lastmod: 2024-02-19 22:05:05.828006
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de fazer um arquivo que s\xF3\
   \ existe durante a execu\xE7\xE3o do programa ou at\xE9 ser explicitamente removido.\u2026"

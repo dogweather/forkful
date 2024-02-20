@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/working-with-toml/
 date: 2024-01-26 04:26:32.389417-07:00
 description: "TOML (Tom's Obvious, Minimal Language) on data-serialisointiformaatti,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:08.015517
+lastmod: 2024-02-19 22:05:15.826077
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) on data-serialisointiformaatti, joka\
   \ on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\

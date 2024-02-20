@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elm/reading-command-line-arguments/
 date: 2024-01-20 17:56:32.818204-07:00
 description: "\uBA85\uB839\uC904 \uC778\uC218\uB294 \uD504\uB85C\uADF8\uB7A8\uC5D0\
   \ \uC785\uB825\uC73C\uB85C \uB118\uACA8\uC8FC\uB294 \uAC12\uB4E4\uC785\uB2C8\uB2E4\
@@ -9,7 +7,7 @@ description: "\uBA85\uB839\uC904 \uC778\uC218\uB294 \uD504\uB85C\uADF8\uB7A8\uC5
   \uB97C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.109077
+lastmod: 2024-02-19 22:05:14.044999
 model: gpt-4-1106-preview
 summary: "\uBA85\uB839\uC904 \uC778\uC218\uB294 \uD504\uB85C\uADF8\uB7A8\uC5D0 \uC785\
   \uB825\uC73C\uB85C \uB118\uACA8\uC8FC\uB294 \uAC12\uB4E4\uC785\uB2C8\uB2E4. \uD504\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/arduino/refactoring/
 date: 2024-01-26 01:16:33.640729-07:00
 description: "Refaktorisering \xE4r processen d\xE4r du omarbetar din kod f\xF6r att\
   \ f\xF6rb\xE4ttra dess struktur och l\xE4sbarhet utan att \xE4ndra det externa beteendet\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:52.051643
+lastmod: 2024-02-19 22:04:57.410875
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen d\xE4r du omarbetar din kod f\xF6r att f\xF6\
   rb\xE4ttra dess struktur och l\xE4sbarhet utan att \xE4ndra det externa beteendet\

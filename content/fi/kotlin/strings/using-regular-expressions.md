@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/kotlin/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:23.588643-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat tehokas v\xE4line tekstink\xE4\
   sittelyyn, joka mahdollistaa ohjelmoijien hakea, t\xE4sm\xE4t\xE4 ja manipuloida\
   \ merkkijonoja\u2026"
-lastmod: 2024-02-18 23:09:07.564218
+lastmod: 2024-02-19 22:05:15.414460
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat tehokas v\xE4line tekstink\xE4\
   sittelyyn, joka mahdollistaa ohjelmoijien hakea, t\xE4sm\xE4t\xE4 ja manipuloida\

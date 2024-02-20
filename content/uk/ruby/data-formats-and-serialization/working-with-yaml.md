@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/ruby/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:50.291014-07:00
@@ -11,7 +9,7 @@ description: "YAML, \u0449\u043E \u0440\u043E\u0437\u0448\u0438\u0444\u0440\u043
   \u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454\u0442\u044C\u0441\u044F \u0432\
   \ Ruby \u0434\u043B\u044F \u0444\u0430\u0439\u043B\u0456\u0432 \u043A\u043E\u043D\
   \u0444\u0456\u0433\u0443\u0440\u0430\u0446\u0456\u0457 \u0442\u0430\u2026"
-lastmod: 2024-02-18 23:09:01.310714
+lastmod: 2024-02-19 22:05:09.345520
 model: gpt-4-0125-preview
 summary: "YAML, \u0449\u043E \u0440\u043E\u0437\u0448\u0438\u0444\u0440\u043E\u0432\
   \u0443\u0454\u0442\u044C\u0441\u044F \u044F\u043A YAML Ain't Markup Language (YAML\

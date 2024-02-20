@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:30.808237-07:00
@@ -11,7 +9,7 @@ description: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u662F\u5173
   \u4F5C\uFF0C\u5305\u62EC\u6A21\u62DF\u3001\u6E38\u620F\u4EE5\u53CA\u5B89\u5168\u5E94\
   \u7528\uFF0C\u5728\u8FD9\u4E9B\u5E94\u7528\u4E2D\u4E0D\u53EF\u9884\u6D4B\u6027\u662F\
   \u529F\u80FD\u6216\u79D8\u5BC6\u7684\u5173\u952E\u3002"
-lastmod: 2024-02-18 23:08:58.703612
+lastmod: 2024-02-19 22:05:06.212365
 model: gpt-4-0125-preview
 summary: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u662F\u5173\u4E8E\
   \u521B\u5EFA\u4E00\u4E2A\u65E0\u6CD5\u901A\u8FC7\u6BD4\u968F\u673A\u9009\u62E9\u66F4\

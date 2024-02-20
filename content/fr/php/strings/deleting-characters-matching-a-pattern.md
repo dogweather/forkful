@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:42.274560-07:00
 description: "Supprimer des caract\xE8res selon un motif, c'est retirer des parties\
   \ sp\xE9cifiques d'une cha\xEEne en se basant sur un pattern (motif). Les d\xE9\
   veloppeurs font \xE7a\u2026"
-lastmod: 2024-02-18 23:09:08.904656
+lastmod: 2024-02-19 22:05:16.598377
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un motif, c'est retirer des parties sp\xE9\
   cifiques d'une cha\xEEne en se basant sur un pattern (motif). Les d\xE9veloppeurs\

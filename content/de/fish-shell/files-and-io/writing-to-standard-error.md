@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/fish-shell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:13.424864-07:00
 description: "Das Schreiben auf den Standardfehler (stderr) in der Fish Shell bedeutet,\
   \ Fehlermeldungen oder Diagnosen getrennt von der Standardausgabe (stdout) zu\u2026"
-lastmod: 2024-02-18 23:09:05.343632
+lastmod: 2024-02-19 22:05:13.264831
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) in der Fish Shell bedeutet,\
   \ Fehlermeldungen oder Diagnosen getrennt von der Standardausgabe (stdout) zu\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/bash/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:08.128092-07:00
 description: "Tekstitiedoston kirjoittaminen Bashissa mahdollistaa datan tallennuksen,\
   \ lokitiedostojen kirjoittamisen, asetusten m\xE4\xE4rittelyn ja paljon muuta\u2026"
-lastmod: 2024-02-18 23:09:07.824475
+lastmod: 2024-02-19 22:05:15.653182
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Bashissa mahdollistaa datan tallennuksen,\
   \ lokitiedostojen kirjoittamisen, asetusten m\xE4\xE4rittelyn ja paljon muuta\u2026"

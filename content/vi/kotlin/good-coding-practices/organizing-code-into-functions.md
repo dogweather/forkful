@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:10.580299-07:00
@@ -8,7 +6,7 @@ description: "T\u1ED5 ch\u1EE9c code v\xE0o trong c\xE1c h\xE0m ngh\u0129a l\xE0
   \ ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n th\xE0nh c\xE1c ph\u1EA7n c\xF3 th\u1EC3\
   \ t\xE1i s\u1EED d\u1EE5ng, m\u1ED7i ph\u1EA7n x\u1EED l\xFD m\u1ED9t nhi\u1EC7\
   m v\u1EE5 c\u1EE5 th\u1EC3. Ch\xFAng ta l\xE0m \u0111i\u1EC1u\u2026"
-lastmod: 2024-02-18 23:08:50.657418
+lastmod: 2024-02-19 22:04:55.779594
 model: gpt-4-0125-preview
 summary: "T\u1ED5 ch\u1EE9c code v\xE0o trong c\xE1c h\xE0m ngh\u0129a l\xE0 chia\
   \ ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n th\xE0nh c\xE1c ph\u1EA7n c\xF3 th\u1EC3\

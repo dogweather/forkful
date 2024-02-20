@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:28.062487-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de\
   \ doble eller enkle anf\xF8rselstegnene som omfavner teksten din. Kodingsfolk gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:54.004227
+lastmod: 2024-02-19 22:05:00.181878
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de doble\
   \ eller enkle anf\xF8rselstegnene som omfavner teksten din. Kodingsfolk gj\xF8r\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/lua/creating-a-temporary-file/
 date: 2024-01-20 17:40:39.397491-07:00
 description: "Creating a temporary file is the process of making a short-lived file\
   \ to store data that's only needed during the execution of a program. Programmers\
   \ do\u2026"
-lastmod: 2024-02-18 23:09:11.197517
+lastmod: 2024-02-19 22:05:18.684769
 model: gpt-4-1106-preview
 summary: "Creating a temporary file is the process of making a short-lived file to\
   \ store data that's only needed during the execution of a program. Programmers do\u2026"

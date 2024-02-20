@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/java/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:10.923123-07:00
 description: "Tarkastus siit\xE4, onko kansio olemassa Javassa, on perusteht\xE4v\xE4\
   , joka sis\xE4lt\xE4\xE4 tiedostoj\xE4rjestelm\xE4n kansion olemassaolon varmistamisen\
   \ ennen siit\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.473700
+lastmod: 2024-02-19 22:05:15.355024
 model: gpt-4-0125-preview
 summary: "Tarkastus siit\xE4, onko kansio olemassa Javassa, on perusteht\xE4v\xE4\
   , joka sis\xE4lt\xE4\xE4 tiedostoj\xE4rjestelm\xE4n kansion olemassaolon varmistamisen\

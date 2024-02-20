@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:11.461181-07:00
 description: "Encontrar o comprimento de uma string \xE9 descobrir quantos caracteres\
   \ ela cont\xE9m. Programadores fazem isso para validar entradas, manipular textos\
   \ ou\u2026"
-lastmod: 2024-02-18 23:08:58.358036
+lastmod: 2024-02-19 22:05:05.842283
 model: gpt-4-1106-preview
 summary: "Encontrar o comprimento de uma string \xE9 descobrir quantos caracteres\
   \ ela cont\xE9m. Programadores fazem isso para validar entradas, manipular textos\

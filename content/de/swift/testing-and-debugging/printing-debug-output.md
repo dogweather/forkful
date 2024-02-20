@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/printing-debug-output/
 date: 2024-01-20 17:53:25.471457-07:00
 description: "Printing debug output ist das Ausgeben von Nachrichten in der Konsole,\
   \ um zu verfolgen, was im Code passiert. Programmierer verwenden es, um Fehler zu\u2026"
-lastmod: 2024-02-18 23:09:05.237031
+lastmod: 2024-02-19 22:05:13.163576
 model: gpt-4-1106-preview
 summary: "Printing debug output ist das Ausgeben von Nachrichten in der Konsole, um\
   \ zu verfolgen, was im Code passiert. Programmierer verwenden es, um Fehler zu\u2026"

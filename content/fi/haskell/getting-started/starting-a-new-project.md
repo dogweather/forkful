@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/starting-a-new-project/
 date: 2024-01-20 18:03:57.146098-07:00
 description: "Aloitamme uuden projektin luomisen, koska meill\xE4 on visio tai ongelma,\
   \ johon etsimme ratkaisua. Haskellissa projekti tarkoittaa yleens\xE4 uuden paketin\
   \ tai\u2026"
-lastmod: 2024-02-18 23:09:07.666901
+lastmod: 2024-02-19 22:05:15.509131
 model: gpt-4-1106-preview
 summary: "Aloitamme uuden projektin luomisen, koska meill\xE4 on visio tai ongelma,\
   \ johon etsimme ratkaisua. Haskellissa projekti tarkoittaa yleens\xE4 uuden paketin\

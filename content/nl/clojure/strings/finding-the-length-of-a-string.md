@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/clojure/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:55.794499-07:00
 description: "De lengte van een string vinden in Clojure geeft het aantal karakters\
   \ in die string terug. Programmeurs hebben deze informatie vaak nodig om invoer\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.469674
+lastmod: 2024-02-19 22:05:09.498594
 model: gpt-4-0125-preview
 summary: "De lengte van een string vinden in Clojure geeft het aantal karakters in\
   \ die string terug. Programmeurs hebben deze informatie vaak nodig om invoer te\u2026"

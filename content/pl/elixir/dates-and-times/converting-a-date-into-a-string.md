@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elixir/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:19.672607-07:00
 description: "Konwersja daty na \u0142a\u0144cuch znak\xF3w pozwala na \u0142atw\u0105\
   \ prezentacj\u0119 i archiwizacj\u0119 danych czasowych. Programi\u015Bci robi\u0105\
   \ to, aby u\u0142atwi\u0107 ludziom czytanie i\u2026"
-lastmod: 2024-02-18 23:08:49.317586
+lastmod: 2024-02-19 22:04:54.233663
 model: gpt-4-1106-preview
 summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w pozwala na \u0142atw\u0105\
   \ prezentacj\u0119 i archiwizacj\u0119 danych czasowych. Programi\u015Bci robi\u0105\

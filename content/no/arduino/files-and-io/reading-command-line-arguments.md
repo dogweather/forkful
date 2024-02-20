@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/reading-command-line-arguments/
 date: 2024-01-20 17:55:29.609622-07:00
 description: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente inn data gitt\
   \ direkte til programmet ditt ved oppstart. Vi gj\xF8r dette for \xE5 tilpasse programoppf\xF8\
   rselen\u2026"
-lastmod: 2024-02-18 23:08:54.157482
+lastmod: 2024-02-19 22:05:00.345487
 model: gpt-4-1106-preview
 summary: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente inn data gitt direkte\
   \ til programmet ditt ved oppstart. Vi gj\xF8r dette for \xE5 tilpasse programoppf\xF8\

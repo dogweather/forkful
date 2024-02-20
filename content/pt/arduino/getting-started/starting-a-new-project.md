@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/starting-a-new-project/
 date: 2024-01-20 18:02:54.400249-07:00
 description: "Iniciar um novo projeto Arduino significa criar um esbo\xE7o (sketch)\
   \ do zero, um c\xF3digo que vai dar vida \xE0 sua ideia. Programadores pegam essa\
   \ rota para\u2026"
-lastmod: 2024-02-18 23:08:58.410709
+lastmod: 2024-02-19 22:05:05.898524
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto Arduino significa criar um esbo\xE7o (sketch) do\
   \ zero, um c\xF3digo que vai dar vida \xE0 sua ideia. Programadores pegam essa rota\

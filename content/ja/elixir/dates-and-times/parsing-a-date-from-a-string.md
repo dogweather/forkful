@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/elixir/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -15,7 +13,7 @@ description: "\u6587\u5B57\u5217\u304B\u3089\u65E5\u4ED8\u3092\u89E3\u6790\u3059
   \u3092\u9069\u5207\u306B\u6BD4\u8F03\u3001\u30BD\u30FC\u30C8\u3001\u307E\u305F\u306F\
   \u4FDD\u5B58\u3059\u308B\u305F\u3081\u306B\u4E00\u8CAB\u6027\u304C\u5FC5\u8981\u3060\
   \u304B\u3089\u3067\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.651972
+lastmod: 2024-02-19 22:05:00.901308
 model: gpt-4-0125-preview
 summary: "\u6587\u5B57\u5217\u304B\u3089\u65E5\u4ED8\u3092\u89E3\u6790\u3059\u308B\
   \u3068\u306F\u3001\"2023-04-05\"\u306E\u3088\u3046\u306A\u30C6\u30AD\u30B9\u30C8\

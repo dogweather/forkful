@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/java/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:16.083734-07:00
 description: "Convertir una fecha de una cadena implica convertir la representaci\xF3\
   n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\
   \ m\xE1s\u2026"
-lastmod: 2024-02-18 23:09:09.855062
+lastmod: 2024-02-19 22:05:17.469027
 model: gpt-4-0125-preview
 summary: "Convertir una fecha de una cadena implica convertir la representaci\xF3\
   n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\

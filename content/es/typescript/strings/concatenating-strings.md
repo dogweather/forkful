@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/concatenating-strings/
 date: 2024-01-20 17:35:37.738477-07:00
 description: "Concatenar cadenas es simplemente juntar dos o m\xE1s trozos de texto\
   \ en uno solo. Lo hacemos porque a veces necesitamos construir mensajes personalizados\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:09.694159
+lastmod: 2024-02-19 22:05:17.322875
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas es simplemente juntar dos o m\xE1s trozos de texto en\
   \ uno solo. Lo hacemos porque a veces necesitamos construir mensajes personalizados\

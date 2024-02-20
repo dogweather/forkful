@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/printing-debug-output/
 date: 2024-01-20 17:53:15.003968-07:00
 description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\
   \uAC8C \uB3D9\uC791\uD558\uB294\uC9C0 \uC774\uD574\uD558\uB824\uACE0 \uD560 \uB54C\
@@ -9,7 +7,7 @@ description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB
   \uD558\uACE0, \uC2E4\uD589 \uD750\uB984\uC744 \uCD94\uC801\uD558\uAE30 \uC704\uD574\
   \ \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.356226
+lastmod: 2024-02-19 22:05:14.272479
 model: gpt-4-1106-preview
 summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\uAC8C\
   \ \uB3D9\uC791\uD558\uB294\uC9C0 \uC774\uD574\uD558\uB824\uACE0 \uD560 \uB54C \uC4F0\

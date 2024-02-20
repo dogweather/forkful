@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/kotlin/rounding-numbers/
 date: 2024-01-26 03:45:20.807570-07:00
 description: "Zahlen zu runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen\
   \ bestimmten Genauigkeitsgrad anzupassen. Programmierer machen das, um die Lesbarkeit\u2026"
-lastmod: 2024-02-18 23:09:04.820814
+lastmod: 2024-02-19 22:05:12.767259
 model: gpt-4-0125-preview
 summary: "Zahlen zu runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen\
   \ bestimmten Genauigkeitsgrad anzupassen. Programmierer machen das, um die Lesbarkeit\u2026"

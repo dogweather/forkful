@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/ruby/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:15.605992-07:00
 description: "Att skriva med stor bokstav i programmering h\xE4nvisar ofta till att\
   \ konvertera det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener.\u2026"
-lastmod: 2024-02-18 23:08:52.277348
+lastmod: 2024-02-19 22:04:57.664853
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav i programmering h\xE4nvisar ofta till att konvertera\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener.\u2026"

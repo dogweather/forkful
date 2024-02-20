@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/google-apps-script/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:43.038471-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei in Google Apps Script beinhaltet\
   \ die Generierung einer Datei, die f\xFCr den kurzfristigen Gebrauch vorgesehen\
   \ ist,\u2026"
-lastmod: 2024-02-18 23:09:04.437040
+lastmod: 2024-02-19 22:05:12.402329
 model: gpt-4-0125-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei in Google Apps Script beinhaltet\
   \ die Generierung einer Datei, die f\xFCr den kurzfristigen Gebrauch vorgesehen\

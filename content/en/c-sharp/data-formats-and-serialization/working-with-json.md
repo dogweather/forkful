@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/working-with-json/
 date: 2024-02-03 19:03:12.550269-07:00
 description: "Working with JSON (JavaScript Object Notation) involves parsing, generating,\
   \ and querying JSON data, making it a critical skill for modern programming.\u2026"
-lastmod: 2024-02-18 23:09:11.075544
+lastmod: 2024-02-19 22:05:18.573424
 model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) involves parsing, generating,\
   \ and querying JSON data, making it a critical skill for modern programming.\u2026"

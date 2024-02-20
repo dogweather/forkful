@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/java/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:40.310061-07:00
 description: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", to standard serializacji\
   \ danych, kt\xF3ry jest czytelny dla cz\u0142owieka i kt\xF3rego programi\u015B\
   ci u\u017Cywaj\u0105 do plik\xF3w\u2026"
-lastmod: 2024-02-18 23:08:49.498017
+lastmod: 2024-02-19 22:04:54.428173
 model: gpt-4-0125-preview
 summary: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", to standard serializacji\
   \ danych, kt\xF3ry jest czytelny dla cz\u0142owieka i kt\xF3rego programi\u015B\

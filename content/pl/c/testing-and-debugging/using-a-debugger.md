@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:59.651462-07:00
 description: "Debuggery w j\u0119zyku C to specjalistyczne narz\u0119dzia, kt\xF3\
   re pozwalaj\u0105 programistom krok po kroku przegl\u0105da\u0107 sw\xF3j kod, inspekcjonowa\u0107\
   \ zmienne i monitorowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:50.084997
+lastmod: 2024-02-19 22:04:55.070006
 model: gpt-4-0125-preview
 summary: "Debuggery w j\u0119zyku C to specjalistyczne narz\u0119dzia, kt\xF3re pozwalaj\u0105\
   \ programistom krok po kroku przegl\u0105da\u0107 sw\xF3j kod, inspekcjonowa\u0107\

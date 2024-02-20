@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/kotlin/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:49.754023-07:00
 description: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu tietojen lukeminen\
   \ ja kirjoittaminen CSV-tiedostoihin, jotka ovat yleinen muoto taulukoiden tietojen\u2026"
-lastmod: 2024-02-18 23:09:07.599245
+lastmod: 2024-02-19 22:05:15.446645
 model: gpt-4-0125-preview
 summary: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu tietojen lukeminen\
   \ ja kirjoittaminen CSV-tiedostoihin, jotka ovat yleinen muoto taulukoiden tietojen\u2026"

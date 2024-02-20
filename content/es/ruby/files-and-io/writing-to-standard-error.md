@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/ruby/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:11.733505-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Ruby trata sobre dirigir\
   \ mensajes de error o diagn\xF3sticos a un flujo de salida separado, distinto de\
   \ la salida\u2026"
-lastmod: 2024-02-18 23:09:10.569998
+lastmod: 2024-02-19 22:05:18.115219
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Ruby trata sobre dirigir mensajes\
   \ de error o diagn\xF3sticos a un flujo de salida separado, distinto de la salida\u2026"

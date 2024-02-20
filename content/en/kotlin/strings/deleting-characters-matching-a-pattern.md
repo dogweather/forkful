@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:39.996968-07:00
 description: "Deleting characters that match a pattern is about finding and removing\
   \ specific sequences of characters in a string based on rules (the pattern).\u2026"
-lastmod: 2024-02-18 23:09:10.997419
+lastmod: 2024-02-19 22:05:18.501836
 model: gpt-4-1106-preview
 summary: "Deleting characters that match a pattern is about finding and removing specific\
   \ sequences of characters in a string based on rules (the pattern).\u2026"

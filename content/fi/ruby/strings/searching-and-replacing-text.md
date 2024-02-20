@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/ruby/searching-and-replacing-text/
 date: 2024-01-20 17:58:31.216170-07:00
 description: "Tekstin etsiminen ja korvaaminen tarkoittaa jonkin merkkijonon l\xF6\
   yt\xE4mist\xE4 ja muuttamista toiseksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4\
   \ toimintoa p\xE4ivitt\xE4ess\xE4\xE4n\u2026"
-lastmod: 2024-02-18 23:09:08.164440
+lastmod: 2024-02-19 22:05:15.978405
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen tarkoittaa jonkin merkkijonon l\xF6yt\xE4\
   mist\xE4 ja muuttamista toiseksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa\

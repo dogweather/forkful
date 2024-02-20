@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:52.170731-07:00
 description: "Tests schrijven in C betreft het cre\xEBren van kleinere, hulpprogramma's\
   \ of functies die automatisch de functionaliteit van je code verifi\xEBren. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.376880
+lastmod: 2024-02-19 22:05:10.383743
 model: gpt-4-0125-preview
 summary: "Tests schrijven in C betreft het cre\xEBren van kleinere, hulpprogramma's\
   \ of functies die automatisch de functionaliteit van je code verifi\xEBren. Programmeurs\u2026"

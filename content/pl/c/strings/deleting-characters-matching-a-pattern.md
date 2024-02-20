@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:32.802939-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca ze string\xF3\
   w w j\u0119zyku C polega na usuni\u0119ciu wszystkich instancji pewnych znak\xF3\
   w, kt\xF3re spe\u0142niaj\u0105\u2026"
-lastmod: 2024-02-18 23:08:50.062710
+lastmod: 2024-02-19 22:04:55.044732
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca ze string\xF3\
   w w j\u0119zyku C polega na usuni\u0119ciu wszystkich instancji pewnych znak\xF3\

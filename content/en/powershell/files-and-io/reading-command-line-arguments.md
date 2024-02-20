@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/reading-command-line-arguments/
 date: 2024-01-20 17:56:46.323173-07:00
 description: "Reading command line arguments lets scripts behave differently based\
   \ on inputs outside the code. Programmers use them because they make scripts flexible,\u2026"
-lastmod: 2024-02-18 23:09:11.289503
+lastmod: 2024-02-19 22:05:18.760790
 model: gpt-4-1106-preview
 summary: "Reading command line arguments lets scripts behave differently based on\
   \ inputs outside the code. Programmers use them because they make scripts flexible,\u2026"

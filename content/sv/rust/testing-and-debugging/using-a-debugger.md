@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/using-a-debugger/
 date: 2024-01-26 04:10:31.875153-07:00
 description: "Att anv\xE4nda en fels\xF6kare \xE4r som att ge dig sj\xE4lv r\xF6ntgensyn\
   \ f\xF6r att kika in i din kods utf\xF6rande. Programmerare g\xF6r detta f\xF6r\
   \ att hitta buggar, f\xF6rst\xE5\u2026"
-lastmod: 2024-02-18 23:08:51.588189
+lastmod: 2024-02-19 22:04:56.907349
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda en fels\xF6kare \xE4r som att ge dig sj\xE4lv r\xF6ntgensyn\
   \ f\xF6r att kika in i din kods utf\xF6rande. Programmerare g\xF6r detta f\xF6r\

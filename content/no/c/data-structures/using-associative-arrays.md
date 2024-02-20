@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:42.892958-07:00
 description: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\xF8\
   ker, er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon.\
   \ I motsetning\u2026"
-lastmod: 2024-02-18 23:08:54.386619
+lastmod: 2024-02-19 22:05:00.544244
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\xF8ker,\
   \ er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon. I\

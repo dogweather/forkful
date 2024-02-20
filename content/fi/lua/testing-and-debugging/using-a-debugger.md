@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/lua/using-a-debugger/
 date: 2024-01-26 03:50:47.916716-07:00
 description: "Debugger on ty\xF6kalu, jonka avulla voit tarkastella ja ohjata ohjelman\
   \ suoritusta, mik\xE4 tekee virheiden paikallistamisesta helppoa. Ohjelmoijat k\xE4\
   ytt\xE4v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.761844
+lastmod: 2024-02-19 22:05:15.596093
 model: gpt-4-0125-preview
 summary: "Debugger on ty\xF6kalu, jonka avulla voit tarkastella ja ohjata ohjelman\
   \ suoritusta, mik\xE4 tekee virheiden paikallistamisesta helppoa. Ohjelmoijat k\xE4\

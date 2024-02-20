@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/interpolating-a-string/
 date: 2024-01-20 17:51:12.090083-07:00
 description: "Interpoler une cha\xEEne de caract\xE8res, c'est y ins\xE9rer des variables\
   \ directement. On le fait pour simplifier la concat\xE9nation et rendre le code\
   \ plus lisible."
-lastmod: 2024-02-18 23:09:08.906795
+lastmod: 2024-02-19 22:05:16.600252
 model: gpt-4-1106-preview
 summary: "Interpoler une cha\xEEne de caract\xE8res, c'est y ins\xE9rer des variables\
   \ directement. On le fait pour simplifier la concat\xE9nation et rendre le code\

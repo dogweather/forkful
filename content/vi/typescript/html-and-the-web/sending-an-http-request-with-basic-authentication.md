@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/typescript/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:37.469562-07:00
@@ -8,7 +6,7 @@ description: "Trong TypeScript, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP
   i x\xE1c th\u1EF1c c\u01A1 b\u1EA3n c\xF3 ngh\u0129a l\xE0 truy\u1EC1n d\u1EEF li\u1EC7\
   u qua m\u1EA1ng v\u1EDBi m\u1ED9t combo \u0111\u01A1n gi\u1EA3n l\xE0 t\xEAn ng\u01B0\
   \u1EDDi d\xF9ng:m\u1EADt kh\u1EA9u \u0111\u1EC3\u2026"
-lastmod: 2024-02-18 23:08:50.414783
+lastmod: 2024-02-19 22:04:55.468249
 model: gpt-4-0125-preview
 summary: "Trong TypeScript, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDB\
   i x\xE1c th\u1EF1c c\u01A1 b\u1EA3n c\xF3 ngh\u0129a l\xE0 truy\u1EC1n d\u1EEF li\u1EC7\

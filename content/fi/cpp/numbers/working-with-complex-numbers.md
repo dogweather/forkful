@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/working-with-complex-numbers/
 date: 2024-01-26 04:38:05.270263-07:00
 description: "Kompleksiluvut laajentavat reaalilukuja lis\xE4\xE4m\xE4ll\xE4 imaginaariyksik\xF6\
   n, joka esitet\xE4\xE4n 'i':n\xE4, miss\xE4 i^2 = -1. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t niit\xE4 simulaatioissa,\u2026"
-lastmod: 2024-02-18 23:09:07.937327
+lastmod: 2024-02-19 22:05:15.754452
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat reaalilukuja lis\xE4\xE4m\xE4ll\xE4 imaginaariyksik\xF6\
   n, joka esitet\xE4\xE4n 'i':n\xE4, miss\xE4 i^2 = -1. Ohjelmoijat k\xE4ytt\xE4v\xE4\

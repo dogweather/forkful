@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/fish-shell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:10.426870-07:00
 description: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\
   \u7B97\u3059\u308B\u3068\u306F\u3001\u7279\u5B9A\u306E\u65E5\u304B\u3089\u65E5\u6570\
@@ -11,7 +9,7 @@ description: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092
   \u904E\u53BB\u306E\u30C7\u30FC\u30BF\u5206\u6790\u306E\u305F\u3081\u306B\u3053\u308C\
   \u3092\u884C\u3044\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:55.322035
+lastmod: 2024-02-19 22:05:01.864118
 model: gpt-4-1106-preview
 summary: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\
   \u7B97\u3059\u308B\u3068\u306F\u3001\u7279\u5B9A\u306E\u65E5\u304B\u3089\u65E5\u6570\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/haskell/reading-a-text-file/
 date: 2024-01-20 17:54:42.265959-07:00
 description: "\xC5 lese en tekstfil betyr \xE5 hente og bruke informasjon lagret i\
   \ en fil p\xE5 datamaskinen. Programmere gj\xF8r dette for \xE5 behandle data, konfigurere\
   \ programmer,\u2026"
-lastmod: 2024-02-18 23:08:53.951503
+lastmod: 2024-02-19 22:05:00.123981
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 hente og bruke informasjon lagret i en\
   \ fil p\xE5 datamaskinen. Programmere gj\xF8r dette for \xE5 behandle data, konfigurere\

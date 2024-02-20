@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/typescript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:50.085046-07:00
 description: "YAML, uma linguagem de serializa\xE7\xE3o de dados projetada para ser\
   \ amig\xE1vel para humanos, \xE9 frequentemente usada para arquivos de configura\xE7\
   \xE3o, mensagens\u2026"
-lastmod: 2024-02-18 23:08:57.905831
+lastmod: 2024-02-19 22:05:05.378779
 model: gpt-4-0125-preview
 summary: "YAML, uma linguagem de serializa\xE7\xE3o de dados projetada para ser amig\xE1\
   vel para humanos, \xE9 frequentemente usada para arquivos de configura\xE7\xE3o,\

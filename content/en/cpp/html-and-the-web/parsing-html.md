@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/parsing-html/
 date: 2024-01-20 15:30:08.873905-07:00
 description: "Parsing HTML means breaking down HTML content into something a program\
   \ can understand and manipulate. Programmers do this to extract data, manipulate\u2026"
-lastmod: 2024-02-18 23:09:11.353291
+lastmod: 2024-02-19 22:05:18.818203
 summary: "Parsing HTML means breaking down HTML content into something a program can\
   \ understand and manipulate. Programmers do this to extract data, manipulate\u2026"
 title: Parsing HTML

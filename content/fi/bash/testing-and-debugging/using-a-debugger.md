@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/using-a-debugger/
 date: 2024-01-26 03:47:27.348901-07:00
 description: "Debuggerin k\xE4ytt\xE4minen Bashissa tarkoittaa ty\xF6kaluihin turvautumista\
   \ skriptien testaamiseksi ja ongelmien l\xF6yt\xE4miseksi, kuten virheiden nappaamista,\
   \ jotka\u2026"
-lastmod: 2024-02-18 23:09:07.809362
+lastmod: 2024-02-19 22:05:15.639470
 model: gpt-4-0125-preview
 summary: "Debuggerin k\xE4ytt\xE4minen Bashissa tarkoittaa ty\xF6kaluihin turvautumista\
   \ skriptien testaamiseksi ja ongelmien l\xF6yt\xE4miseksi, kuten virheiden nappaamista,\

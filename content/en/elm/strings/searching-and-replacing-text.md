@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/elm/searching-and-replacing-text/
 date: 2024-01-20 17:57:40.115318-07:00
 description: "Searching and replacing text lets you find specific strings and swap\
   \ them out for something else. Programmers use it for everything from fixing typos\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:10.957452
+lastmod: 2024-02-19 22:05:18.464545
 model: gpt-4-1106-preview
 summary: "Searching and replacing text lets you find specific strings and swap them\
   \ out for something else. Programmers use it for everything from fixing typos to\u2026"

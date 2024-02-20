@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/java/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:26.274309-07:00
 description: "Converting a string to lower case means changing all the uppercase letters\
   \ within a string to their lowercase equivalents. Programmers do it for\u2026"
-lastmod: 2024-02-18 23:09:00.097039
+lastmod: 2024-02-19 22:05:08.076374
 model: gpt-4-1106-preview
 summary: "Converting a string to lower case means changing all the uppercase letters\
   \ within a string to their lowercase equivalents. Programmers do it for\u2026"

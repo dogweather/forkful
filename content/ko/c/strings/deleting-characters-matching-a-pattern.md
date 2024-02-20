@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:00.902634-07:00
@@ -14,7 +12,7 @@ description: "C\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\
   \uB825\uC774\uB098 \uCD94\uAC00\uC801\uC778 \uC870\uC791\uC744 \uC704\uD574 \uBB38\
   \uC790\uC5F4\uC744 \uC815\uB9AC\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744\
   \u2026"
-lastmod: 2024-02-18 23:09:06.922890
+lastmod: 2024-02-19 22:05:14.809934
 model: gpt-4-0125-preview
 summary: "C\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790\
   \ \uC0AD\uC81C\uD558\uAE30\uB294 \uC0AC\uC804\uC5D0 \uC815\uC758\uB41C \uAE30\uC900\

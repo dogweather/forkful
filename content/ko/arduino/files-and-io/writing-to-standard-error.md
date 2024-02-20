@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:44.934967-07:00
@@ -13,7 +11,7 @@ description: "\uC544\uB450\uC774\uB178 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11
   \ \uCD9C\uB825\uACFC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD558\uC5EC\
   \ \uB514\uBC84\uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uB354\uC6B1 \uAC04\uB2E8\
   \uD558\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.644582
+lastmod: 2024-02-19 22:05:14.545607
 model: gpt-4-0125-preview
 summary: "\uC544\uB450\uC774\uB178 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD45C\
   \uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\uB294 \uC624\uB958 \uBA54\uC2DC\uC9C0\

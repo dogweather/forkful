@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/handling-errors/
 date: 2024-01-26 00:52:16.263525-07:00
 description: "Tratar erros significa escrever c\xF3digo que pode lidar com situa\xE7\
   \xF5es inesperadas. Os programadores fazem isso para evitar falhas e para garantir\
   \ que seus\u2026"
-lastmod: 2024-02-18 23:08:57.851066
+lastmod: 2024-02-19 22:05:05.321497
 model: gpt-4-1106-preview
 summary: "Tratar erros significa escrever c\xF3digo que pode lidar com situa\xE7\xF5\
   es inesperadas. Os programadores fazem isso para evitar falhas e para garantir que\

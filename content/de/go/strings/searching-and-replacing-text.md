@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:25.520436-07:00
 description: "Die Suche und das Ersetzen von Text in der Programmierung erleichtert\
   \ die Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe\
   \ bei\u2026"
-lastmod: 2024-02-18 23:09:04.345860
+lastmod: 2024-02-19 22:05:12.316038
 model: gpt-4-0125-preview
 summary: "Die Suche und das Ersetzen von Text in der Programmierung erleichtert die\
   \ Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe bei\u2026"

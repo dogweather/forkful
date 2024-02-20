@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:05.347340-07:00
 description: "Escrever testes em Go envolve criar peda\xE7os de c\xF3digo pequenos\
   \ e gerenci\xE1veis que validam a funcionalidade e o comportamento da sua aplica\xE7\
   \xE3o.\u2026"
-lastmod: 2024-02-18 23:08:57.672404
+lastmod: 2024-02-19 22:05:05.129910
 model: gpt-4-0125-preview
 summary: "Escrever testes em Go envolve criar peda\xE7os de c\xF3digo pequenos e gerenci\xE1\
   veis que validam a funcionalidade e o comportamento da sua aplica\xE7\xE3o.\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:01.143013-07:00
 description: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
   \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"
-lastmod: 2024-02-18 23:09:02.391596
+lastmod: 2024-02-19 22:05:10.397413
 model: gpt-4-0125-preview
 summary: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
   \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"

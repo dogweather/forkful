@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/lua/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:44.566675-07:00
 description: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet mahdollistavat merkkijonojen\
   \ hakemisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t niit\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.746534
+lastmod: 2024-02-19 22:05:15.582318
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet mahdollistavat merkkijonojen\
   \ hakemisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat k\xE4ytt\xE4\

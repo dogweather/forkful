@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:41.083160-07:00
 description: "Het parsen van HTML in C omvat het analyseren van HTML-documenten om\
   \ gegevens, structuur of specifieke onderdelen effici\xEBnt te extraheren, vaak\
   \ als\u2026"
-lastmod: 2024-02-18 23:09:02.370381
+lastmod: 2024-02-19 22:05:10.377432
 model: gpt-4-0125-preview
 summary: "Het parsen van HTML in C omvat het analyseren van HTML-documenten om gegevens,\
   \ structuur of specifieke onderdelen effici\xEBnt te extraheren, vaak als\u2026"

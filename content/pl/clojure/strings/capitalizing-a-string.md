@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/clojure/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:03.165308-07:00
 description: "Kapitalizacja ci\u0105gu znak\xF3w polega na zmodyfikowaniu ci\u0105\
   gu tak, aby jego pierwszy znak by\u0142 wielk\u0105 liter\u0105, podczas gdy reszta\
   \ ci\u0105gu pozostaje niezmieniona.\u2026"
-lastmod: 2024-02-18 23:08:49.248108
+lastmod: 2024-02-19 22:04:54.159782
 model: gpt-4-0125-preview
 summary: "Kapitalizacja ci\u0105gu znak\xF3w polega na zmodyfikowaniu ci\u0105gu tak,\
   \ aby jego pierwszy znak by\u0142 wielk\u0105 liter\u0105, podczas gdy reszta ci\u0105\

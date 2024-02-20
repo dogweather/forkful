@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/cpp/working-with-toml/
 date: 2024-01-26 04:19:29.869297-07:00
 description: "TOML (Tom's Obvious, Minimal Language - Linguaggio Minimale ed Ovvio\
   \ di Tom) \xE8 un formato di serializzazione di dati facile da leggere grazie alla\
   \ sua\u2026"
-lastmod: 2024-02-18 23:08:56.194853
+lastmod: 2024-02-19 22:05:02.825018
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language - Linguaggio Minimale ed Ovvio di\
   \ Tom) \xE8 un formato di serializzazione di dati facile da leggere grazie alla\

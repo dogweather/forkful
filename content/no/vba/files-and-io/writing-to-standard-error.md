@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/vba/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:00.999102-07:00
 description: "\xC5 skrive til standardfeil i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 omdirigere feilmeldinger eller diagnostikk bort fra standard utdata, vanligvis\u2026"
-lastmod: 2024-02-18 23:08:53.745485
+lastmod: 2024-02-19 22:04:59.883808
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 omdirigere feilmeldinger eller diagnostikk bort fra standard utdata, vanligvis\u2026"

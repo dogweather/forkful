@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/rust/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:30.824451-07:00
 description: "\xC9crire sur l'erreur standard (stderr) en Rust consiste \xE0 diriger\
   \ les messages d'erreur et les diagnostics vers la console s\xE9par\xE9ment de la\
   \ sortie standard\u2026"
-lastmod: 2024-02-18 23:09:08.547183
+lastmod: 2024-02-19 22:05:16.326759
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Rust consiste \xE0 diriger les\
   \ messages d'erreur et les diagnostics vers la console s\xE9par\xE9ment de la sortie\

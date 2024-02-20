@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/elm/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:04.526793-07:00
 description: "Scrivere su standard error (stderr) riguarda il reindirizzamento di\
   \ messaggi di errore e diagnostica separati dall'output principale del programma,\
   \ che va\u2026"
-lastmod: 2024-02-18 23:08:55.821521
+lastmod: 2024-02-19 22:05:02.428358
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) riguarda il reindirizzamento di messaggi\
   \ di errore e diagnostica separati dall'output principale del programma, che va\u2026"

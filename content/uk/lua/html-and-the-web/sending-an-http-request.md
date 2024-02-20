@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/lua/sending-an-http-request/
 date: 2024-01-20 18:00:26.962788-07:00
 description: Sending an HTTP request is a way to communicate with web servers. Programmers
   do this to fetch data, submit forms, or interact with APIs.
-lastmod: 2024-02-18 23:09:00.562682
+lastmod: 2024-02-19 22:05:08.530157
 model: gpt-4-1106-preview
 summary: Sending an HTTP request is a way to communicate with web servers. Programmers
   do this to fetch data, submit forms, or interact with APIs.

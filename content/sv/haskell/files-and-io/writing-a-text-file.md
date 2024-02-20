@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/haskell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:09.676438-07:00
 description: "Att skriva till en textfil i Haskell handlar om att programmatiskt skapa\
   \ eller uppdatera filer med textinneh\xE5ll. Programmerare g\xF6r detta f\xF6r att\
   \ bevara\u2026"
-lastmod: 2024-02-18 23:08:51.855028
+lastmod: 2024-02-19 22:04:57.194666
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Haskell handlar om att programmatiskt skapa\
   \ eller uppdatera filer med textinneh\xE5ll. Programmerare g\xF6r detta f\xF6r att\

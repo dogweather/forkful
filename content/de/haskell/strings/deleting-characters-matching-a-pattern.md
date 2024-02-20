@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/haskell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:33.531069-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet,\
   \ bestimmte Zeichen aus einem String zu entfernen, die einem vorgegebenen Kriterium\u2026"
-lastmod: 2024-02-18 23:09:04.900028
+lastmod: 2024-02-19 22:05:12.842898
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
   \ Zeichen aus einem String zu entfernen, die einem vorgegebenen Kriterium\u2026"

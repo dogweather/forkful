@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/c-sharp/sending-an-http-request/
 date: 2024-01-20 17:59:30.128089-07:00
 description: "Sending an HTTP request means asking another system for data or a response\
   \ over the web. Programmers do it to interact with APIs, fetch web content, or\u2026"
-lastmod: 2024-02-18 23:09:00.335330
+lastmod: 2024-02-19 22:05:08.308787
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request means asking another system for data or a response\
   \ over the web. Programmers do it to interact with APIs, fetch web content, or\u2026"

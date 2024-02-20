@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:46.575014-07:00
 description: "Parsing a date from a string is about recognizing and converting written\
   \ dates in text form into a date data type that PowerShell can understand and work\u2026"
-lastmod: 2024-02-18 23:09:11.283374
+lastmod: 2024-02-19 22:05:18.755394
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string is about recognizing and converting written\
   \ dates in text form into a date data type that PowerShell can understand and work\u2026"

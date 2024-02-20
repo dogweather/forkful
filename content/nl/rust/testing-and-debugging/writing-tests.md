@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:42.288523-07:00
 description: "Tests schrijven betekent codefragmenten maken die controleren of andere\
   \ stukjes code goed werken. Programmeurs doen dit om bugs vroeg te vinden,\u2026"
-lastmod: 2024-02-18 23:09:01.623231
+lastmod: 2024-02-19 22:05:09.646077
 model: gpt-4-0125-preview
 summary: "Tests schrijven betekent codefragmenten maken die controleren of andere\
   \ stukjes code goed werken. Programmeurs doen dit om bugs vroeg te vinden,\u2026"

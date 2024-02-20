@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:58.105441-07:00
@@ -8,7 +6,7 @@ description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA
   i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 \u0111\u1EC3 x\xE1c minh\
   \ s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c trong h\u1EC7\
   \ th\u1ED1ng t\u1EADp tin tr\u01B0\u1EDBc khi\u2026"
-lastmod: 2024-02-18 23:08:50.525833
+lastmod: 2024-02-19 22:04:55.611818
 model: gpt-4-0125-preview
 summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i trong\
   \ Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 \u0111\u1EC3 x\xE1c minh s\u1EF1\

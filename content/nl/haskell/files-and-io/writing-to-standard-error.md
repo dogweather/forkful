@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/haskell/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:40.191547-07:00
 description: "Schrijven naar standaardfout (stderr) in Haskell laat je fouten en debug\
   \ informatie rapporteren, los van de standaarduitvoer (stdout). Dit wordt gedaan\
   \ om\u2026"
-lastmod: 2024-02-18 23:09:01.916944
+lastmod: 2024-02-19 22:05:09.940045
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) in Haskell laat je fouten en debug\
   \ informatie rapporteren, los van de standaarduitvoer (stdout). Dit wordt gedaan\

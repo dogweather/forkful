@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/organizing-code-into-functions/
 date: 2024-01-26 01:09:39.810653-07:00
 description: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3digo\
   \ em blocos menores e reutiliz\xE1veis. Fazemos isso para evitar repeti\xE7\xE3\
   o, tornar nosso c\xF3digo\u2026"
-lastmod: 2024-02-18 23:08:58.455145
+lastmod: 2024-02-19 22:05:05.945541
 model: gpt-4-1106-preview
 summary: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3digo em\
   \ blocos menores e reutiliz\xE1veis. Fazemos isso para evitar repeti\xE7\xE3o, tornar\

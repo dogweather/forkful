@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:02.508790-07:00
 description: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen,\
   \ aus einem String entfernen. Wir machen das, um unerw\xFCnschte Daten zu s\xE4\
   ubern\u2026"
-lastmod: 2024-02-18 23:09:05.404395
+lastmod: 2024-02-19 22:05:13.323292
 model: gpt-4-1106-preview
 summary: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen,\
   \ aus einem String entfernen. Wir machen das, um unerw\xFCnschte Daten zu s\xE4\

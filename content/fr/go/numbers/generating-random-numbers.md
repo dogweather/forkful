@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:29.914548-07:00
 description: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste\
   \ \xE0 cr\xE9er une s\xE9quence de nombres qui ne peut pas \xEAtre pr\xE9dite de\
   \ mani\xE8re raisonnable mieux\u2026"
-lastmod: 2024-02-18 23:09:08.227544
+lastmod: 2024-02-19 22:05:16.036217
 model: gpt-4-0125-preview
 summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste \xE0\
   \ cr\xE9er une s\xE9quence de nombres qui ne peut pas \xEAtre pr\xE9dite de mani\xE8\

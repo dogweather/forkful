@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/fish-shell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:43.308981-07:00
 description: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att tolka,\
   \ manipulera och generera data i ett tabellformat som \xE4r brett anv\xE4nt f\xF6\
   r datadelning\u2026"
-lastmod: 2024-02-18 23:08:52.229419
+lastmod: 2024-02-19 22:04:57.611377
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att tolka,\
   \ manipulera och generera data i ett tabellformat som \xE4r brett anv\xE4nt f\xF6\

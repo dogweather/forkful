@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/arduino/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:47.354267-07:00
 description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabetici in lettere minuscole. Lo si fa per uniformare i dati, semplificare\u2026"
-lastmod: 2024-02-18 23:08:56.122631
+lastmod: 2024-02-19 22:05:02.746751
 model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabetici in lettere minuscole. Lo si fa per uniformare i dati, semplificare\u2026"

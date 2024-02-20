@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:24.957930-07:00
@@ -8,7 +6,7 @@ description: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129a l
   \ thay \u0111\u1ED5i bi\u1EC3u di\u1EC5n c\u1EE7a ng\xE0y t\u1EEB m\u1ED9t \u0111\
   \u1ECBnh d\u1EA1ng m\xE0 l\u1EADp tr\xECnh hi\u1EC3u, nh\u01B0 s\u1ED1 nguy\xEA\
   n c\u1EE7a ng\xE0y, th\xE1ng v\xE0 n\u0103m, sang v\u0103n b\u1EA3n\u2026"
-lastmod: 2024-02-18 23:08:51.011725
+lastmod: 2024-02-19 22:04:56.204227
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129a l\xE0 thay\
   \ \u0111\u1ED5i bi\u1EC3u di\u1EC5n c\u1EE7a ng\xE0y t\u1EEB m\u1ED9t \u0111\u1ECB\

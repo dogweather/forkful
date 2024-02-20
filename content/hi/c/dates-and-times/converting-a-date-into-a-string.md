@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:10.397022-07:00
@@ -14,7 +12,7 @@ description: "C \u092E\u0947\u0902 \u090F\u0915 \u0926\u093F\u0928\u093E\u0902\u
   \ \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E \u0939\u0948\u0964 \u092A\
   \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930 \u0905\u0915\u094D\u0938\u0930\
   \u2026"
-lastmod: 2024-02-18 23:09:04.233937
+lastmod: 2024-02-19 22:05:12.207003
 model: gpt-4-0125-preview
 summary: "C \u092E\u0947\u0902 \u090F\u0915 \u0926\u093F\u0928\u093E\u0902\u0915 \u0915\
   \u094B \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u092E\u0947\u0902 \u092C\

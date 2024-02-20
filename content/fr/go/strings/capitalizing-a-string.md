@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:37.674346-07:00
 description: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer\
   \ en majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\
   \ pour s'assurer\u2026"
-lastmod: 2024-02-18 23:09:08.210426
+lastmod: 2024-02-19 22:05:16.021535
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer en\
   \ majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\

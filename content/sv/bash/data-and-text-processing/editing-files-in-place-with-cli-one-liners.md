@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:21:57.611676-07:00
 description: "F\xF6rest\xE4ll dig att du precis har uppt\xE4ckt att du beh\xF6ver\
   \ g\xF6ra en massuppdatering av flera konfigurationsfiler som ligger p\xE5 din server.\
   \ Du skulle kunna\u2026"
-lastmod: 2024-02-18 23:08:51.957383
+lastmod: 2024-02-19 22:04:57.308068
 model: gpt-4-0125-preview
 summary: "F\xF6rest\xE4ll dig att du precis har uppt\xE4ckt att du beh\xF6ver g\xF6\
   ra en massuppdatering av flera konfigurationsfiler som ligger p\xE5 din server.\

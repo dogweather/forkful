@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:03.985386-07:00
 description: "Die L\xE4nge eines Strings zu bestimmen bedeutet, die Anzahl der Zeichen\
   \ zu z\xE4hlen, die er enth\xE4lt. Das ist n\xFCtzlich, um Text zu verarbeiten,\
   \ Grenzen zu\u2026"
-lastmod: 2024-02-18 23:09:04.861959
+lastmod: 2024-02-19 22:05:12.806485
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu bestimmen bedeutet, die Anzahl der Zeichen\
   \ zu z\xE4hlen, die er enth\xE4lt. Das ist n\xFCtzlich, um Text zu verarbeiten,\

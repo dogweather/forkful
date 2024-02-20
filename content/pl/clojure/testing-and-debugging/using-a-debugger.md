@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/using-a-debugger/
 date: 2024-01-26 03:48:26.454487-07:00
 description: "U\u017Cywanie debugera oznacza, \u017Ce wyposa\u017Casz si\u0119 w lup\u0119\
   , aby przyjrze\u0107 si\u0119 swojemu kodowi. Programi\u015Bci robi\u0105 to, by\
   \ wypleni\u0107 b\u0142\u0119dy, zrozumie\u0107 przep\u0142yw oraz\u2026"
-lastmod: 2024-02-18 23:08:49.269191
+lastmod: 2024-02-19 22:04:54.182325
 model: gpt-4-0125-preview
 summary: "U\u017Cywanie debugera oznacza, \u017Ce wyposa\u017Casz si\u0119 w lup\u0119\
   , aby przyjrze\u0107 si\u0119 swojemu kodowi. Programi\u015Bci robi\u0105 to, by\

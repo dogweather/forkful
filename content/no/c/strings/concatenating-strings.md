@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/concatenating-strings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:51.893251-07:00
 description: "Strengsammensetning i C inneb\xE6rer \xE5 sl\xE5 sammen to eller flere\
   \ strenger ende-til-ende for \xE5 danne en ny streng. Programmerere utf\xF8rer denne\
   \ operasjonen for\u2026"
-lastmod: 2024-02-18 23:08:54.385597
+lastmod: 2024-02-19 22:05:00.543145
 model: gpt-4-0125-preview
 summary: "Strengsammensetning i C inneb\xE6rer \xE5 sl\xE5 sammen to eller flere strenger\
   \ ende-til-ende for \xE5 danne en ny streng. Programmerere utf\xF8rer denne operasjonen\

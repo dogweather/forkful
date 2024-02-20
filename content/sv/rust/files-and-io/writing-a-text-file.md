@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/rust/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:24.469038-07:00
 description: "Att skriva en textfil i Rust inneb\xE4r att skapa, skriva till och potentiellt\
   \ l\xE4gga till data i en fil p\xE5 filsystemet. Programmerare utf\xF6r denna operation\u2026"
-lastmod: 2024-02-18 23:08:51.601653
+lastmod: 2024-02-19 22:04:56.922053
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Rust inneb\xE4r att skapa, skriva till och potentiellt\
   \ l\xE4gga till data i en fil p\xE5 filsystemet. Programmerare utf\xF6r denna operation\u2026"

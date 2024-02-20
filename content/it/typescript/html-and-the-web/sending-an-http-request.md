@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/sending-an-http-request/
 date: 2024-01-20 18:00:53.527748-07:00
 description: "Inviare una richiesta HTTP significa richiedere dati o effettuare azioni\
   \ su un server remoto. I programmatori lo fanno per interagire con dati dinamici,\u2026"
-lastmod: 2024-02-18 23:08:55.637366
+lastmod: 2024-02-19 22:05:02.233053
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP significa richiedere dati o effettuare azioni\
   \ su un server remoto. I programmatori lo fanno per interagire con dati dinamici,\u2026"

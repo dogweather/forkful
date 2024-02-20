@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:12.884155-07:00
 description: "TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett\
   \ konfigurationsfilformat som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga\
   \ semantik. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.403809
+lastmod: 2024-02-19 22:04:56.703991
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett konfigurationsfilformat\
   \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\u2026"

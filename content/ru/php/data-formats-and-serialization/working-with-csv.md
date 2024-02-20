@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/php/working-with-csv/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:39.841012-07:00
@@ -13,7 +11,7 @@ description: "CSV, \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u0435 
   \u0430\u0442\u043E\u043C \u0444\u0430\u0439\u043B\u0430 \u0434\u043B\u044F \u0445\
   \u0440\u0430\u043D\u0435\u043D\u0438\u044F \u0442\u0430\u0431\u043B\u0438\u0447\u043D\
   \u044B\u0445\u2026"
-lastmod: 2024-02-18 23:08:57.126828
+lastmod: 2024-02-19 22:05:04.214131
 model: gpt-4-0125-preview
 summary: "CSV, \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u043E\
   \u0442 \"\u0417\u043D\u0430\u0447\u0435\u043D\u0438\u044F, \u0440\u0430\u0437\u0434\

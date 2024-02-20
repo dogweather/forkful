@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:53.311092-07:00
@@ -12,7 +10,7 @@ description: "CSV(Comma Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C 
   \uD574 \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uCC98\uB9AC\uD558\
   \uACE0 \uBD84\uC11D\uD558\uBA70, \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAC70\
   \uB098 \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\u2026"
-lastmod: 2024-02-18 23:09:06.916270
+lastmod: 2024-02-19 22:05:14.803474
 model: gpt-4-0125-preview
 summary: "CSV(Comma Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12\
   ) \uD30C\uC77C \uC791\uC5C5\uC740 \uD30C\uC2F1, \uC870\uC791 \uBC0F \uB370\uC774\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:39.525151-07:00
@@ -14,7 +12,7 @@ description: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902
   \u0920\u093F\u0924 \u0915\u0930\u0928\u093E \u0939\u094B\u0924\u093E \u0939\u0948\
   , \u091C\u093F\u0938\u0915\u093E \u0909\u0926\u094D\u0926\u0947\u0936\u094D\u092F\
   \ \u092A\u0920\u0928\u0940\u092F\u0924\u093E \u091C\u0948\u0938\u0947\u2026"
-lastmod: 2024-02-18 23:09:04.228038
+lastmod: 2024-02-19 22:05:12.201013
 model: gpt-4-0125-preview
 summary: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
   \ \u092E\u0947\u0902 \u0930\u093F\u092B\u0948\u0915\u094D\u091F\u0930\u093F\u0902\

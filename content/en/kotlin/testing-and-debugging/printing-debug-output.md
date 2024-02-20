@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/printing-debug-output/
 date: 2024-01-20 17:52:54.008715-07:00
 description: "Printing debug output is basically the programmer's way of sneaking\
   \ a peek at what's going on inside their code in real-time. It's crucial for tracking\u2026"
-lastmod: 2024-02-18 23:09:11.015459
+lastmod: 2024-02-19 22:05:18.518621
 model: gpt-4-1106-preview
 summary: "Printing debug output is basically the programmer's way of sneaking a peek\
   \ at what's going on inside their code in real-time. It's crucial for tracking\u2026"

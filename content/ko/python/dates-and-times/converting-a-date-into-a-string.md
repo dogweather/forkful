@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:42.168689-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC83\uC740, \uD30C\uC774\uC36C\uC5D0\uC11C `datetime` \uAC1D\uCCB4\uB97C\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2
   \uB984\uC5D0 \uC0AC\uC6A9\uD558\uAC70\uB098, \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uBCF4\
   \uAE30 \uC88B\uAC8C \uD45C\uD604\uD560 \uB54C \uD544\uC694\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.642876
+lastmod: 2024-02-19 22:05:13.557053
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\uB294\
   \ \uAC83\uC740, \uD30C\uC774\uC36C\uC5D0\uC11C `datetime` \uAC1D\uCCB4\uB97C \uD14D\

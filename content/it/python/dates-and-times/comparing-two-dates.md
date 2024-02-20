@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/comparing-two-dates/
 date: 2024-01-20 17:33:34.235781-07:00
 description: "Confrontare due date significa verificarne l'ordine cronologico. I programmatori\
   \ lo fanno per tracciare scadenze, confrontare eventi nel tempo o gestire\u2026"
-lastmod: 2024-02-18 23:08:55.533218
+lastmod: 2024-02-19 22:05:02.121095
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa verificarne l'ordine cronologico. I programmatori\
   \ lo fanno per tracciare scadenze, confrontare eventi nel tempo o gestire\u2026"

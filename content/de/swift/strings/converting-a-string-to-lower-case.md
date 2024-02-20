@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/swift/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:08.481933-07:00
 description: "Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, jeden\
   \ Gro\xDFbuchstaben in seinen entsprechenden Kleinbuchstaben zu \xFCberf\xFChren.\
   \ Das sorgt f\xFCr\u2026"
-lastmod: 2024-02-18 23:09:05.220153
+lastmod: 2024-02-19 22:05:13.148260
 model: gpt-4-1106-preview
 summary: "Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, jeden Gro\xDF\
   buchstaben in seinen entsprechenden Kleinbuchstaben zu \xFCberf\xFChren. Das sorgt\

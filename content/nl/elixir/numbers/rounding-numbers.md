@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:51.460870-07:00
 description: "Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde\
   \ voor eenvoud of om te voldoen aan een bepaalde precisie. Het is nuttig voor het\u2026"
-lastmod: 2024-02-18 23:09:01.520690
+lastmod: 2024-02-19 22:05:09.547246
 model: gpt-4-0125-preview
 summary: "Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde\
   \ voor eenvoud of om te voldoen aan een bepaalde precisie. Het is nuttig voor het\u2026"

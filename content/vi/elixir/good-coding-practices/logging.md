@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:30.606305-07:00
@@ -8,7 +6,7 @@ description: "Ghi nh\u1EADt k\xFD trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m l\
   \ k\u1EF9 thu\u1EADt ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n x\u1EA3y ra trong khi\
   \ m\u1ED9t ch\u01B0\u01A1ng tr\xECnh \u0111ang ch\u1EA1y, th\u01B0\u1EDDng l\xE0\
   \ v\xE0o m\u1ED9t t\u1EC7p ho\u1EB7c h\u1EC7 th\u1ED1ng b\xEAn\u2026"
-lastmod: 2024-02-18 23:08:50.375934
+lastmod: 2024-02-19 22:04:55.419162
 model: gpt-4-0125-preview
 summary: "Ghi nh\u1EADt k\xFD trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m l\xE0 k\u1EF9\
   \ thu\u1EADt ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n x\u1EA3y ra trong khi m\u1ED9\

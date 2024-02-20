@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/php/creating-a-temporary-file/
 date: 2024-01-20 17:40:53.952174-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr\
   \ kurzzeitige Nutzung zu generieren, die nach Gebrauch meist automatisch gel\xF6\
   scht wird.\u2026"
-lastmod: 2024-02-18 23:09:04.982862
+lastmod: 2024-02-19 22:05:12.922489
 model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr kurzzeitige\
   \ Nutzung zu generieren, die nach Gebrauch meist automatisch gel\xF6scht wird.\u2026"

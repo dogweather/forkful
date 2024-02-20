@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:56.986985-07:00
 description: "Tiedostosta tekstin lukeminen tarkoittaa tiedon ottamista tavallisesta\
   \ tekstimuodossa olevalta tiedostoltasi. Ohjelmoijat lukevat tiedostoja, koska se\
   \ on\u2026"
-lastmod: 2024-02-18 23:09:08.054834
+lastmod: 2024-02-19 22:05:15.862056
 model: gpt-4-1106-preview
 summary: "Tiedostosta tekstin lukeminen tarkoittaa tiedon ottamista tavallisesta tekstimuodossa\
   \ olevalta tiedostoltasi. Ohjelmoijat lukevat tiedostoja, koska se on\u2026"

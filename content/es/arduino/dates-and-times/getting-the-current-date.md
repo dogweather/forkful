@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/arduino/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:49.378801-07:00
 description: "Obtener la fecha actual en proyectos de Arduino implica la adquisici\xF3\
   n de informaci\xF3n en tiempo real que puede ser crucial para el registro, estampado\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:10.272295
+lastmod: 2024-02-19 22:05:17.849317
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en proyectos de Arduino implica la adquisici\xF3\
   n de informaci\xF3n en tiempo real que puede ser crucial para el registro, estampado\

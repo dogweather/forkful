@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:34.364456-07:00
@@ -12,7 +10,7 @@ description: "JSON(JavaScript Object Notation)\uC740 \uD074\uB77C\uC774\uC5B8\uD
   \uBD80\uD130 \uBC1B\uC740 \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uAC70\uB098\
   \ API \uC751\uB2F5\uC744 \uC704\uD55C \uB370\uC774\uD130 \uD3EC\uB9F7\uC73C\uB85C\
   \ JSON\uC744\u2026"
-lastmod: 2024-02-18 23:09:07.059038
+lastmod: 2024-02-19 22:05:14.940173
 model: gpt-4-0125-preview
 summary: "JSON(JavaScript Object Notation)\uC740 \uD074\uB77C\uC774\uC5B8\uD2B8\uC640\
   \ \uC11C\uBC84 \uAC04\uC758 \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD574 \uC6F9\

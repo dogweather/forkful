@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/clojure/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:08.468900-07:00
 description: "Een webpagina downloaden betekent het HTML van een URL ophalen, zodat\
   \ je programma ermee kan werken. Programmeurs doen dit om gegevens te schrapen,\u2026"
-lastmod: 2024-02-18 23:09:01.478262
+lastmod: 2024-02-19 22:05:09.506846
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het HTML van een URL ophalen, zodat je\
   \ programma ermee kan werken. Programmeurs doen dit om gegevens te schrapen,\u2026"

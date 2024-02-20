@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:22.666813-07:00
 description: "\xC5 finne lengden p\xE5 en streng inneb\xE6rer \xE5 telle antall tegn\
   \ den inneholder. Programmerere gj\xF8r dette for \xE5 validere inndata, iterere\
   \ gjennom tegn, eller\u2026"
-lastmod: 2024-02-18 23:08:53.885040
+lastmod: 2024-02-19 22:05:00.052527
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden p\xE5 en streng inneb\xE6rer \xE5 telle antall tegn den\
   \ inneholder. Programmerere gj\xF8r dette for \xE5 validere inndata, iterere gjennom\

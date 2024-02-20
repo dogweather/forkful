@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/arduino/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:54.481512-07:00
 description: "JSON, czyli Notacja Obiekt\xF3w JavaScript, to lekki format wymiany\
   \ danych, idealny do przechowywania danych lub plik\xF3w konfiguracyjnych w projektach\u2026"
-lastmod: 2024-02-18 23:08:49.890236
+lastmod: 2024-02-19 22:04:54.837934
 model: gpt-4-0125-preview
 summary: "JSON, czyli Notacja Obiekt\xF3w JavaScript, to lekki format wymiany danych,\
   \ idealny do przechowywania danych lub plik\xF3w konfiguracyjnych w projektach\u2026"

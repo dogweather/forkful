@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:54.481387-07:00
 description: "Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung f\xFCgen wir\
   \ Anmeldeinformationen in den Request-Header ein, um uns beim Server zu\u2026"
-lastmod: 2024-02-18 23:09:05.234037
+lastmod: 2024-02-19 22:05:13.160804
 model: gpt-4-1106-preview
 summary: "Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung f\xFCgen wir Anmeldeinformationen\
   \ in den Request-Header ein, um uns beim Server zu\u2026"

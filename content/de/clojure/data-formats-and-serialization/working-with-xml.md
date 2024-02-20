@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/clojure/working-with-xml/
 date: 2024-01-26 04:29:22.442067-07:00
 description: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine\
   \ Weise, die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist. Sie ist\
   \ ein\u2026"
-lastmod: 2024-02-18 23:09:04.533088
+lastmod: 2024-02-19 22:05:12.493767
 model: gpt-4-0125-preview
 summary: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine Weise,\
   \ die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist. Sie ist ein\u2026"

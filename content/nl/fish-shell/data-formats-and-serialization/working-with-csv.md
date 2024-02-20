@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:08.261235-07:00
 description: "Werken met CSV (Comma-Separated Values, komma-gescheiden waarden) omvat\
   \ het parseren en manipuleren van gegevens die gestructureerd zijn als rijen en\u2026"
-lastmod: 2024-02-18 23:09:02.350242
+lastmod: 2024-02-19 22:05:10.357946
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values, komma-gescheiden waarden) omvat\
   \ het parseren en manipuleren van gegevens die gestructureerd zijn als rijen en\u2026"

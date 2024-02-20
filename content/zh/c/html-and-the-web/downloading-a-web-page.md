@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:58.882371-07:00
@@ -11,7 +9,7 @@ description: "\u5728C\u8BED\u8A00\u4E2D\u4E0B\u8F7D\u7F51\u9875\u6D89\u53CA\u523
   \u7684\u64CD\u4F5C\uFF0C\u4EE5\u6D88\u8D39\u7F51\u7EDC\u670D\u52A1\u3001\u722C\u53D6\
   \u7F51\u9875\u5185\u5BB9\uFF0C\u6216\u76F4\u63A5\u4ECE\u4ED6\u4EEC\u7684\u5E94\u7528\
   \u7A0B\u5E8F\u4E0E\u5728\u7EBF\u8D44\u6E90\u8FDB\u884C\u4EA4\u4E91\u3002"
-lastmod: 2024-02-18 23:08:59.558089
+lastmod: 2024-02-19 22:05:07.375892
 model: gpt-4-0125-preview
 summary: "\u5728C\u8BED\u8A00\u4E2D\u4E0B\u8F7D\u7F51\u9875\u6D89\u53CA\u5230\u7A0B\
   \u5E8F\u6027\u5730\u8BBF\u95EE\u4E92\u8054\u7F51\u4E0A\u7684\u7F51\u9875\u5185\u5BB9\

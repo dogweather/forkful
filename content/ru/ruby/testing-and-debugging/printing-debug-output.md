@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/ruby/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:00:38.413543-07:00
@@ -14,7 +12,7 @@ description: "\u0412\u044B\u0432\u043E\u0434 \u043E\u0442\u043B\u0430\u0434\u043
   \u0430\u0447\u0435\u043D\u0438\u044F \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\
   \u044B\u0445 \u0438 \u043F\u043E\u0442\u043E\u043A \u043F\u0440\u043E\u0433\u0440\
   \u0430\u043C\u043C\u044B.\u2026"
-lastmod: 2024-02-18 23:08:57.623175
+lastmod: 2024-02-19 22:05:05.002353
 model: gpt-4-0125-preview
 summary: "\u0412\u044B\u0432\u043E\u0434 \u043E\u0442\u043B\u0430\u0434\u043E\u0447\
   \u043D\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438\

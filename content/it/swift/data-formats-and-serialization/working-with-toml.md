@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/working-with-toml/
 date: 2024-01-26 04:26:29.948785-07:00
 description: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di serializzazione\
   \ dei dati che \xE8 facile da leggere grazie alla sua chiara semantica. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:56.235065
+lastmod: 2024-02-19 22:05:02.867599
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di serializzazione\
   \ dei dati che \xE8 facile da leggere grazie alla sua chiara semantica. I programmatori\u2026"

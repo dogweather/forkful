@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/ruby/reading-a-text-file/
 date: 2024-01-20 17:55:07.293901-07:00
 description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans\
   \ nos programmes. On le fait pour traiter des donn\xE9es, pour configurer nos\u2026"
-lastmod: 2024-02-18 23:09:09.426308
+lastmod: 2024-02-19 22:05:17.087456
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans nos\
   \ programmes. On le fait pour traiter des donn\xE9es, pour configurer nos\u2026"

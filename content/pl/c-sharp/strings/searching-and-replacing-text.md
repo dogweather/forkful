@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/searching-and-replacing-text/
 date: 2024-01-20 17:57:48.915717-07:00
 description: "Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to,\
   \ aby modyfikowa\u0107 dane, poprawia\u0107 b\u0142\u0119dy, czy te\u017C dostosowywa\u0107\
   \ ci\u0105gi znak\xF3w pod\u2026"
-lastmod: 2024-02-18 23:08:49.596405
+lastmod: 2024-02-19 22:04:54.525613
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to, aby\
   \ modyfikowa\u0107 dane, poprawia\u0107 b\u0142\u0119dy, czy te\u017C dostosowywa\u0107\

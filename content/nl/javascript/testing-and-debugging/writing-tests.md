@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:58.054077-07:00
 description: "Tests schrijven in programmering controleert of code zich gedraagt zoals\
   \ verwacht\u2014als een quiz voor je functies. Programmeurs schrijven tests om bugs\u2026"
-lastmod: 2024-02-18 23:09:02.279904
+lastmod: 2024-02-19 22:05:10.291707
 model: gpt-4-0125-preview
 summary: "Tests schrijven in programmering controleert of code zich gedraagt zoals\
   \ verwacht\u2014als een quiz voor je functies. Programmeurs schrijven tests om bugs\u2026"

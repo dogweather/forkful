@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:46.569303-07:00
@@ -13,7 +11,7 @@ description: "C\u8A00\u8A9E\u3067\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306
   \u306E\u30C6\u30AD\u30B9\u30C8\u5165\u529B\u306E\u6A19\u6E96\u5316\u3001\u307E\u305F\
   \u306F\u5358\u306B\u51FA\u529B\u306E\u898B\u305F\u76EE\u306E\u4E00\u8CAB\u6027\u306E\
   \u305F\u3081\u306B\u3088\u304F\u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.336706
+lastmod: 2024-02-19 22:05:01.885027
 model: gpt-4-0125-preview
 summary: "C\u8A00\u8A9E\u3067\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\
   \u63DB\u3059\u308B\u3053\u3068\u306F\u3001\u4E0E\u3048\u3089\u308C\u305F\u6587\u5B57\

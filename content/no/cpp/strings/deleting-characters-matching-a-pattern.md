@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:41.348490-07:00
 description: "Slette tegn som matcher et m\xF8nster betyr \xE5 fjerne spesifikke karakterer\
   \ fra en streng som oppfyller gitte kriterier. Programmerere gj\xF8r dette for \xE5\
   \ rense\u2026"
-lastmod: 2024-02-18 23:08:54.168731
+lastmod: 2024-02-19 22:05:00.356277
 model: gpt-4-1106-preview
 summary: "Slette tegn som matcher et m\xF8nster betyr \xE5 fjerne spesifikke karakterer\
   \ fra en streng som oppfyller gitte kriterier. Programmerere gj\xF8r dette for \xE5\

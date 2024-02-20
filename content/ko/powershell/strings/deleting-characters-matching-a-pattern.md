@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:10.529185-07:00
 description: "\uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790\uB97C \uC0AD\
   \uC81C\uD558\uB294 \uAC83\uC740 \uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\
@@ -10,7 +8,7 @@ description: "\uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790\uB97C \uC
   , \uCC98\uB9AC\uB97C \uB2E8\uC21C\uD654\uD558\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\
   \uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.526844
+lastmod: 2024-02-19 22:05:14.433838
 model: gpt-4-1106-preview
 summary: "\uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\
   \uD558\uB294 \uAC83\uC740 \uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\

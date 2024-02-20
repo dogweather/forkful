@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/writing-to-standard-error/
 date: 2024-02-03 19:03:44.248510-07:00
 description: "Writing to standard error (stderr) in Arduino programming involves directing\
   \ error messages and diagnostics to a separate channel, ensuring they don't mix\u2026"
-lastmod: 2024-02-18 23:09:11.331166
+lastmod: 2024-02-19 22:05:18.798234
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Arduino programming involves directing\
   \ error messages and diagnostics to a separate channel, ensuring they don't mix\u2026"

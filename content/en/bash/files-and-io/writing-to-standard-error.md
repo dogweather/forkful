@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/writing-to-standard-error/
 date: 2024-02-03 19:03:22.660128-07:00
 description: "Writing to standard error (stderr) in Bash is about directing error\
   \ messages or any important diagnostic output separate from the standard output\u2026"
-lastmod: 2024-02-18 23:09:11.246227
+lastmod: 2024-02-19 22:05:18.721897
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Bash is about directing error messages\
   \ or any important diagnostic output separate from the standard output\u2026"

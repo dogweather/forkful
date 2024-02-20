@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pl/kotlin/working-with-complex-numbers/
 date: 2024-01-26 04:43:03.728446-07:00
 description: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiastki\
   \ kwadratowe z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\u2026"
-lastmod: 2024-02-18 23:08:49.553783
+lastmod: 2024-02-19 22:04:54.489674
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiastki kwadratowe\
   \ z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\u2026"

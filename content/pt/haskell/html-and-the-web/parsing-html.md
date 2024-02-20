@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/haskell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:11.815629-07:00
 description: "Analisar HTML em Haskell permite extrair dados, manipular conte\xFA\
   do HTML ou interagir com p\xE1ginas web programaticamente. Essa opera\xE7\xE3o \xE9\
   \ essencial para\u2026"
-lastmod: 2024-02-18 23:08:58.196968
+lastmod: 2024-02-19 22:05:05.668519
 model: gpt-4-0125-preview
 summary: "Analisar HTML em Haskell permite extrair dados, manipular conte\xFAdo HTML\
   \ ou interagir com p\xE1ginas web programaticamente. Essa opera\xE7\xE3o \xE9 essencial\

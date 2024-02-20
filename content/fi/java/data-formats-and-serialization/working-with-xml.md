@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/working-with-xml/
 date: 2024-01-26 04:32:35.888627-07:00
 description: "XML:n kanssa ty\xF6skentely k\xE4sitt\xE4\xE4 XML-dokumenttien j\xE4\
   sent\xE4misen, kyselyiden tekemisen ja manipuloinnin Java-kielell\xE4. Ohjelmoijat\
   \ tekev\xE4t t\xE4t\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.484567
+lastmod: 2024-02-19 22:05:15.364993
 model: gpt-4-0125-preview
 summary: "XML:n kanssa ty\xF6skentely k\xE4sitt\xE4\xE4 XML-dokumenttien j\xE4sent\xE4\
   misen, kyselyiden tekemisen ja manipuloinnin Java-kielell\xE4. Ohjelmoijat tekev\xE4\

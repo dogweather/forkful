@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/starting-a-new-project/
 date: 2024-01-20 18:03:55.780211-07:00
 description: "Ein neues Projekt zu starten bedeutet, von Grund auf einen frischen\
   \ Codebase zu erstellen. Programmierer machen das, um neue Ideen umzusetzen, Probleme\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.827180
+lastmod: 2024-02-19 22:05:12.773216
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, von Grund auf einen frischen Codebase\
   \ zu erstellen. Programmierer machen das, um neue Ideen umzusetzen, Probleme zu\u2026"

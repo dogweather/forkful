@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/cpp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:06.443239-07:00
 description: "\xC5 skrive tester i C++ inneb\xE6rer \xE5 lage sm\xE5, selvstendige\
   \ programmer som automatisk verifiserer oppf\xF8rselen til deler av koden. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:54.195627
+lastmod: 2024-02-19 22:05:00.376142
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i C++ inneb\xE6rer \xE5 lage sm\xE5, selvstendige programmer\
   \ som automatisk verifiserer oppf\xF8rselen til deler av koden. Programmerere gj\xF8\

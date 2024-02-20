@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:29.724641-07:00
 description: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum betyder att man\
   \ l\xE4gger till eller drar ifr\xE5n dagar till ett givet datum. Programmerare g\xF6\
   r det f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.974158
+lastmod: 2024-02-19 22:04:57.326558
 model: gpt-4-1106-preview
 summary: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum betyder att man l\xE4\
   gger till eller drar ifr\xE5n dagar till ett givet datum. Programmerare g\xF6r det\

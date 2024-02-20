@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/rust/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:19.747816-07:00
@@ -9,7 +7,7 @@ description: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\u
   gi\u1ED1ng nh\u01B0 vi\u1EC7c b\u1EA1n c\u1EAFt m\u1ED9t mi\u1EBFng b\xE1nh \u0111\
   \u1EC3 \u0103n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
   \ l\u1EA5y\u2026"
-lastmod: 2024-02-18 23:08:50.449602
+lastmod: 2024-02-19 22:04:55.512381
 model: gpt-4-0125-preview
 summary: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\u1ED9t\
   \ ph\u1EA7n nh\u1ECF h\u01A1n t\u1EEB m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1n\u2014\

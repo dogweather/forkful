@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/clojure/extracting-substrings/
 date: 2024-01-20 17:45:16.064856-07:00
 description: "Estrarre sottostringhe significa selezionare parti specifiche da una\
   \ stringa di testo. I programmatori lo fanno per analisi, manipolazione dati o\u2026"
-lastmod: 2024-02-18 23:08:55.550959
+lastmod: 2024-02-19 22:05:02.140314
 model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa selezionare parti specifiche da una stringa\
   \ di testo. I programmatori lo fanno per analisi, manipolazione dati o\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/fish-shell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:44.567942-07:00
 description: "Lavorare con file CSV (Comma Separated Values, Valori Separati da Virgola)\
   \ comporta l'analisi, manipolazione e generazione di dati in un formato tabellare\u2026"
-lastmod: 2024-02-18 23:08:56.317575
+lastmod: 2024-02-19 22:05:02.954684
 model: gpt-4-0125-preview
 summary: "Lavorare con file CSV (Comma Separated Values, Valori Separati da Virgola)\
   \ comporta l'analisi, manipolazione e generazione di dati in un formato tabellare\u2026"

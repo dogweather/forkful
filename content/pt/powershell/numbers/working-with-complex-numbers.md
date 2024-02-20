@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/working-with-complex-numbers/
 date: 2024-01-26 04:44:20.641419-07:00
 description: "N\xFAmeros complexos, aqueles com uma parte real e uma parte imagin\xE1\
   ria (como 3 + 4i), s\xE3o vitais em campos como engenharia, f\xEDsica e ci\xEAncia\
   \ de dados.\u2026"
-lastmod: 2024-02-18 23:08:58.360857
+lastmod: 2024-02-19 22:05:05.845206
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, aqueles com uma parte real e uma parte imagin\xE1\
   ria (como 3 + 4i), s\xE3o vitais em campos como engenharia, f\xEDsica e ci\xEAncia\

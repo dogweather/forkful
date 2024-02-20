@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/lua/handling-errors/
 date: 2024-01-26 00:55:28.746706-07:00
 description: "La gestione degli errori nella programmazione riguarda l'anticipare\
   \ l'inaspettato. \xC8 l'arte di pianificare per quando le cose non vanno come previsto\
   \ cos\xEC\u2026"
-lastmod: 2024-02-18 23:08:56.017955
+lastmod: 2024-02-19 22:05:02.633619
 model: gpt-4-1106-preview
 summary: "La gestione degli errori nella programmazione riguarda l'anticipare l'inaspettato.\
   \ \xC8 l'arte di pianificare per quando le cose non vanno come previsto cos\xEC\u2026"

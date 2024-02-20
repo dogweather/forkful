@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/using-regular-expressions/
 date: 2024-02-03 19:02:59.191386-07:00
 description: "Regular expressions (regex) in Ruby are patterns used to match character\
   \ combinations in strings, enabling developers to search for, match, and manipulate\u2026"
-lastmod: 2024-02-18 23:09:11.553987
+lastmod: 2024-02-19 22:05:19.001791
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Ruby are patterns used to match character\
   \ combinations in strings, enabling developers to search for, match, and manipulate\u2026"

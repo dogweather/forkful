@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/arduino/working-with-complex-numbers/
 date: 2024-01-26 04:36:47.038685-07:00
 description: "Komplekse tall har en reell del og en imagin\xE6r del, vanligvis skrevet\
   \ som `a + bi`. De er avgj\xF8rende for noen matte-tunge Arduino-prosjekter som\u2026"
-lastmod: 2024-02-18 23:08:54.136243
+lastmod: 2024-02-19 22:05:00.323646
 model: gpt-4-0125-preview
 summary: "Komplekse tall har en reell del og en imagin\xE6r del, vanligvis skrevet\
   \ som `a + bi`. De er avgj\xF8rende for noen matte-tunge Arduino-prosjekter som\u2026"

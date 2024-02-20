@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/working-with-toml/
 date: 2024-01-25 03:40:14.382289-07:00
 description: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ format akin to JSON or YAML, but aims for simplicity and readability. Programmers\u2026"
-lastmod: 2024-02-18 23:09:10.704843
+lastmod: 2024-02-19 22:05:18.236204
 model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ format akin to JSON or YAML, but aims for simplicity and readability. Programmers\u2026"

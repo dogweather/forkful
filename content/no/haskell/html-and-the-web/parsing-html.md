@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/haskell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:15.608836-07:00
 description: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data,\
   \ manipulere HTML-innhold eller interagere med nettsider programmatisk. Denne operasjonen\
   \ er\u2026"
-lastmod: 2024-02-18 23:08:53.932760
+lastmod: 2024-02-19 22:05:00.103465
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data, manipulere\
   \ HTML-innhold eller interagere med nettsider programmatisk. Denne operasjonen er\u2026"

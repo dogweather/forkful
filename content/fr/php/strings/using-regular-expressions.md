@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/php/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:31.244579-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en PHP sont des motifs utilis\xE9\
   s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte,\
   \ permettant\u2026"
-lastmod: 2024-02-18 23:09:08.911168
+lastmod: 2024-02-19 22:05:16.604101
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en PHP sont des motifs utilis\xE9\
   s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte,\

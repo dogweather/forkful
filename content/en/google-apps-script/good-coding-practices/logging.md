@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/logging/
 date: 2024-02-01 21:12:43.663761-07:00
 description: "Logging in programming involves recording events, errors, or notable\
   \ occurrences during runtime. Programmers do it to debug issues, monitor performance,\u2026"
-lastmod: 2024-02-18 23:09:10.645905
+lastmod: 2024-02-19 22:05:18.182736
 model: gpt-4-0125-preview
 summary: "Logging in programming involves recording events, errors, or notable occurrences\
   \ during runtime. Programmers do it to debug issues, monitor performance,\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/python/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:51.192241-07:00
 description: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105\
   \ klucze na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015B\
   ledzenie danych za pomoc\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.215318
+lastmod: 2024-02-19 22:04:54.126356
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105 klucze\
   \ na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015Bledzenie\

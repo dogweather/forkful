@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/powershell/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:26.096736-07:00
 description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi. Se puree tiedot\
   \ ihmisen luettavaan muotoon tai valmistelee ne tallennusta varten. Tiedon esitt\xE4\
   minen tietyss\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.866222
+lastmod: 2024-02-19 22:05:15.689934
 model: gpt-4-1106-preview
 summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi. Se puree tiedot ihmisen\
   \ luettavaan muotoon tai valmistelee ne tallennusta varten. Tiedon esitt\xE4minen\

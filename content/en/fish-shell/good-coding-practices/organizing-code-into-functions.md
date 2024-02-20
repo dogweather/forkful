@@ -1,13 +1,11 @@
 ---
-aliases:
-- /en/fish-shell/organizing-code-into-functions/
 changelog:
 - 2024-01-28, dogweather, reviewed and added links
 date: 2024-01-25 03:00:10.607473-07:00
 description: "Organizing code into functions is about bundling up bits of script to\
   \ do specific tasks. We do it because it makes code easier to read, test, and reuse\
   \ \u2014\u2026"
-lastmod: 2024-02-18 23:09:11.486772
+lastmod: 2024-02-19 22:05:18.939760
 model: gpt-4-1106-preview
 summary: "Organizing code into functions is about bundling up bits of script to do\
   \ specific tasks. We do it because it makes code easier to read, test, and reuse\

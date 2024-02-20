@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/vba/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:56.167226-07:00
@@ -12,7 +10,7 @@ description: "TOML, \u091C\u093F\u0938\u0915\u093E \u0905\u0930\u094D\u0925 \u09
   \u093C\u093F\u0917\u0930\u0947\u0936\u0928 \u092B\u093E\u0907\u0932\u094B\u0902\
   \ \u0915\u0947 \u0932\u093F\u090F \u0909\u092A\u092F\u094B\u0917 \u0915\u093F\u092F\
   \u093E \u091C\u093E\u0924\u093E \u0939\u0948\u0964\u2026"
-lastmod: 2024-02-18 23:09:03.080167
+lastmod: 2024-02-19 22:05:11.077157
 model: gpt-4-0125-preview
 summary: "TOML, \u091C\u093F\u0938\u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948\
   \ Tom's Obvious, Minimal Language, \u090F\u0915 \u0921\u093E\u091F\u093E \u0938\u0940\

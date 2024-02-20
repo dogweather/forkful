@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/extracting-substrings/
 date: 2024-01-20 17:46:16.521177-07:00
 description: "Wyodr\u0119bnianie podci\u0105g\xF3w to proces wycinania mniejszych\
   \ ci\u0105g\xF3w znak\xF3w z wi\u0119kszego. Programi\u015Bci robi\u0105 to, by\
   \ manipulowa\u0107 danymi tekstowymi \u2013 weryfikowa\u0107,\u2026"
-lastmod: 2024-02-18 23:08:49.548784
+lastmod: 2024-02-19 22:04:54.484350
 model: gpt-4-1106-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w to proces wycinania mniejszych ci\u0105\
   g\xF3w znak\xF3w z wi\u0119kszego. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\

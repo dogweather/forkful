@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/logging/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:09.076841-07:00
 description: "Logging i programmering involverer opptak av hendelser, feil eller merkbare\
   \ forekomster under kj\xF8retid. Programmerere gj\xF8r det for \xE5 feils\xF8ke\
   \ problemer,\u2026"
-lastmod: 2024-02-18 23:08:53.488107
+lastmod: 2024-02-19 22:04:59.602971
 model: gpt-4-0125-preview
 summary: "Logging i programmering involverer opptak av hendelser, feil eller merkbare\
   \ forekomster under kj\xF8retid. Programmerere gj\xF8r det for \xE5 feils\xF8ke\

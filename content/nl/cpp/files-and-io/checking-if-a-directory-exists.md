@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:36.688470-07:00
 description: "Controleren of een directory bestaat gaat over bevestigen of een gespecificeerde\
   \ map aanwezig is op het bestandssysteem. Programmeurs doen dit om fouten\u2026"
-lastmod: 2024-02-18 23:09:02.198628
+lastmod: 2024-02-19 22:05:10.214574
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat gaat over bevestigen of een gespecificeerde\
   \ map aanwezig is op het bestandssysteem. Programmeurs doen dit om fouten\u2026"

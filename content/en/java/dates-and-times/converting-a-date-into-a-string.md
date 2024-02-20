@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:19.621612-07:00
 description: "Converting a date to a string means representing a date object as readable\
   \ text that follows a specific pattern. Programmers do this to display dates to\u2026"
-lastmod: 2024-02-18 23:09:10.942000
+lastmod: 2024-02-19 22:05:18.450750
 model: gpt-4-1106-preview
 summary: "Converting a date to a string means representing a date object as readable\
   \ text that follows a specific pattern. Programmers do this to display dates to\u2026"

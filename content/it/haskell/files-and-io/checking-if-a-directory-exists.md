@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/haskell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:24.925853-07:00
 description: "Controllare se una directory esiste \xE8 un'operazione fondamentale\
   \ in molti compiti di programmazione, permettendo di eseguire azioni condizionali\
   \ basate\u2026"
-lastmod: 2024-02-18 23:08:55.943847
+lastmod: 2024-02-19 22:05:02.555048
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale in molti\
   \ compiti di programmazione, permettendo di eseguire azioni condizionali basate\u2026"

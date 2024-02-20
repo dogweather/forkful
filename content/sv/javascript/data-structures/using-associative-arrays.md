@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:51.133536-07:00
 description: "Associativa arrayer, eller som de mer korrekt kallas i JavaScript, objekt,\
   \ l\xE5ter dig koppla nycklar till v\xE4rden. Detta \xE4r extremt praktiskt n\xE4\
   r du beh\xF6ver\u2026"
-lastmod: 2024-02-18 23:08:52.157980
+lastmod: 2024-02-19 22:04:57.528603
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller som de mer korrekt kallas i JavaScript, objekt,\
   \ l\xE5ter dig koppla nycklar till v\xE4rden. Detta \xE4r extremt praktiskt n\xE4\

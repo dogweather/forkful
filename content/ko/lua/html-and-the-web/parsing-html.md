@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:48.132159-07:00
@@ -13,7 +11,7 @@ description: "HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD80\uD130 \uB370
   \ \uC870\uC791\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD558\
   \uBA70, \uC774\uB294 \uC6F9\uC0AC\uC774\uD2B8\uC5D0\uC11C \uB370\uC774\uD130\uB97C\
   \ \uC218\uB3D9\uC73C\uB85C\u2026"
-lastmod: 2024-02-18 23:09:06.413402
+lastmod: 2024-02-19 22:05:14.326662
 model: gpt-4-0125-preview
 summary: "HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD80\uD130 \uB370\uC774\
   \uD130\uC640 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uB9D0\uD558\

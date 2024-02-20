@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:56.520377-07:00
 description: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) tilbyr\
   \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5. Programmerere\
   \ bruker dem\u2026"
-lastmod: 2024-02-18 23:08:53.717366
+lastmod: 2024-02-19 22:04:59.852957
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) tilbyr\
   \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5. Programmerere\

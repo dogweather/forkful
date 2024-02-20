@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/clojure/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:48.745331-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet, tehokas ty\xF6kalu kuvioiden tunnistamiseen\
   \ ja datan k\xE4sittelyyn, ovat olennaisia tekstink\xE4sittelyteht\xE4viss\xE4 kuten\
   \ sy\xF6tteen\u2026"
-lastmod: 2024-02-18 23:09:07.217766
+lastmod: 2024-02-19 22:05:15.116254
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet, tehokas ty\xF6kalu kuvioiden tunnistamiseen\
   \ ja datan k\xE4sittelyyn, ovat olennaisia tekstink\xE4sittelyteht\xE4viss\xE4 kuten\

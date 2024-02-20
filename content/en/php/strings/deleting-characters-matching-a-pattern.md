@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:37.561708-07:00
 description: "Deleting characters matching a pattern in PHP is about finding specific\
   \ sequences of characters in strings and removing them. Programmers do this to clean\u2026"
-lastmod: 2024-02-18 23:09:11.121539
+lastmod: 2024-02-19 22:05:18.615442
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in PHP is about finding specific\
   \ sequences of characters in strings and removing them. Programmers do this to clean\u2026"

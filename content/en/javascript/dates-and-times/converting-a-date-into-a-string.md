@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:52.217820-07:00
 description: "Date to string conversion transforms a Date object into a readable text\
   \ format, because humans like \"April 1, 2023\" more than cryptic timestamps.\u2026"
-lastmod: 2024-02-18 23:09:11.449079
+lastmod: 2024-02-19 22:05:18.905690
 model: gpt-4-1106-preview
 summary: "Date to string conversion transforms a Date object into a readable text\
   \ format, because humans like \"April 1, 2023\" more than cryptic timestamps.\u2026"

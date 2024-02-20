@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:03.726485-07:00
@@ -8,7 +6,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t ch
   i l\xE0 vi\u1EC7c l\xE0m r\xF5 th\xF4ng tin ng\xE0y th\xE1ng \u0111\u01B0\u1EE3\
   c ch\u1EE9a trong v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
   n vi\u1EC7c n\xE0y \u0111\u1EC3 c\xF3 th\u1EC3 th\u1EF1c\u2026"
-lastmod: 2024-02-18 23:08:50.944596
+lastmod: 2024-02-19 22:04:56.143625
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7\
   i l\xE0 vi\u1EC7c l\xE0m r\xF5 th\xF4ng tin ng\xE0y th\xE1ng \u0111\u01B0\u1EE3\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/kotlin/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:06.420064-07:00
 description: "En la programaci\xF3n, obtener la fecha actual es una tarea fundamental\
   \ que permite a los desarrolladores acceder, mostrar o manipular la fecha actual\
   \ dentro\u2026"
-lastmod: 2024-02-18 23:09:09.947441
+lastmod: 2024-02-19 22:05:17.553418
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n, obtener la fecha actual es una tarea fundamental\
   \ que permite a los desarrolladores acceder, mostrar o manipular la fecha actual\

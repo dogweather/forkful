@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:34.947548-07:00
 description: "Capitalizzare una stringa comporta trasformare il primo carattere di\
   \ una data stringa in maiuscolo se \xE8 in minuscolo, assicurando cos\xEC che la\
   \ stringa si\u2026"
-lastmod: 2024-02-18 23:08:55.414528
+lastmod: 2024-02-19 22:05:01.993695
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa comporta trasformare il primo carattere di una\
   \ data stringa in maiuscolo se \xE8 in minuscolo, assicurando cos\xEC che la stringa\

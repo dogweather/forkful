@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:00.050871-07:00
 description: "Het controleren van het bestaan van een map in C# stelt je in staat\
   \ om te bevestigen of een specifieke map beschikbaar is in het bestandssysteem.\u2026"
-lastmod: 2024-02-18 23:09:01.868268
+lastmod: 2024-02-19 22:05:09.884849
 model: gpt-4-0125-preview
 summary: "Het controleren van het bestaan van een map in C# stelt je in staat om te\
   \ bevestigen of een specifieke map beschikbaar is in het bestandssysteem.\u2026"

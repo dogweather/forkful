@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/working-with-json/
 date: 2024-01-19
 description: "Working with JSON in Swift means dealing with a lightweight data format\
   \ for data interchange. Programmers use JSON to transmit data between a server and\
   \ a\u2026"
-lastmod: 2024-02-18 23:09:11.417535
+lastmod: 2024-02-19 22:05:18.876850
 summary: "Working with JSON in Swift means dealing with a lightweight data format\
   \ for data interchange. Programmers use JSON to transmit data between a server and\
   \ a\u2026"

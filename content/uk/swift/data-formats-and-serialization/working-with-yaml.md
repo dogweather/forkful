@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/swift/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:20.100598-07:00
@@ -12,7 +10,7 @@ description: "YAML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 \"YA
   \u043D\u0456\u043C \u0434\u043E \u043A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\
   \u0430\u0447\u0430, \u0434\u043B\u044F \u0432\u0441\u0456\u0445 \u043C\u043E\u0432\
   \u2026"
-lastmod: 2024-02-18 23:09:00.996820
+lastmod: 2024-02-19 22:05:09.037683
 model: gpt-4-0125-preview
 summary: "YAML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 \"YAML Ain't\
   \ Markup Language\" (YAML - \u0446\u0435 \u043D\u0435 \u043C\u043E\u0432\u0430 \u0440\

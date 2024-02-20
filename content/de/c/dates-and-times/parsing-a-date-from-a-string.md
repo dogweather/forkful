@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:01.464406-07:00
 description: "Das Parsen eines Datums aus einem String in C involviert die Umwandlung\
   \ von textuellen Datumsdarstellungen in ein Format, mit dem Programme effektiver\u2026"
-lastmod: 2024-02-18 23:09:05.384569
+lastmod: 2024-02-19 22:05:13.304428
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in C involviert die Umwandlung\
   \ von textuellen Datumsdarstellungen in ein Format, mit dem Programme effektiver\u2026"

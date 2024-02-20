@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/working-with-complex-numbers/
 date: 2024-01-26 04:43:44.149456-07:00
 description: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4\
   m\xE4\xE4n negatiivisten lukujen neli\xF6juuret, miss\xE4 'imaginaariyksikk\xF6\
   ' i on -1:n neli\xF6juuri. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.568521
+lastmod: 2024-02-19 22:05:15.418339
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4m\xE4\
   \xE4n negatiivisten lukujen neli\xF6juuret, miss\xE4 'imaginaariyksikk\xF6' i on\

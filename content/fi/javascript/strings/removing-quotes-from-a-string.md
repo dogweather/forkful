@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:59.053178-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa n\xE4iden kiusallisten\
   \ lainausmerkkien h\xE4vitt\xE4mist\xE4, jotka voivat sotkea koodiasi, erityisesti\
   \ kun olet\u2026"
-lastmod: 2024-02-18 23:09:08.022907
+lastmod: 2024-02-19 22:05:15.832694
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa n\xE4iden kiusallisten\
   \ lainausmerkkien h\xE4vitt\xE4mist\xE4, jotka voivat sotkea koodiasi, erityisesti\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elm/extracting-substrings/
 date: 2024-01-20 17:45:22.986945-07:00
 description: "Estrarre sottostringhe significa selezionare parti specifiche di una\
   \ stringa. I programmatori lo fanno per manipolare o analizzare testi in modo pi\xF9\
   \u2026"
-lastmod: 2024-02-18 23:08:55.795749
+lastmod: 2024-02-19 22:05:02.401358
 model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa selezionare parti specifiche di una stringa.\
   \ I programmatori lo fanno per manipolare o analizzare testi in modo pi\xF9\u2026"

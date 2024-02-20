@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/powershell/searching-and-replacing-text/
 date: 2024-01-20 17:58:32.922776-07:00
 description: "Suchen und Ersetzen von Text ist die Kunst, Zeichenketten in Daten zu\
   \ finden und sie durch andere zu ersetzen. Programmierer nutzen dies, um Daten schnell\u2026"
-lastmod: 2024-02-18 23:09:05.083488
+lastmod: 2024-02-19 22:05:13.018680
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text ist die Kunst, Zeichenketten in Daten zu finden\
   \ und sie durch andere zu ersetzen. Programmierer nutzen dies, um Daten schnell\u2026"

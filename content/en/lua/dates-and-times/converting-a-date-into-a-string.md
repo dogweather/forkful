@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:46.946180-07:00
 description: "Converting a date to a string is about changing how date/time data is\
   \ displayed. Programmers do this for readability, localization, or formatting\u2026"
-lastmod: 2024-02-18 23:09:11.189833
+lastmod: 2024-02-19 22:05:18.677770
 model: gpt-4-1106-preview
 summary: "Converting a date to a string is about changing how date/time data is displayed.\
   \ Programmers do this for readability, localization, or formatting\u2026"

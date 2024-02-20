@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:37.537457-07:00
@@ -12,7 +10,7 @@ description: "PHP\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uD30C
   \uC774\uB098 \uC678\uBD80 \uC18C\uC2A4\uC5D0\uC11C \uC628 \uB370\uC774\uD130\uB97C\
   \ \uB2E4\uB8F0 \uB54C, \uB370\uC774\uD130 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uC870\
   \uC791, \uC800\uC7A5 \uBC0F \uD45C\uC2DC\uB97C \uC704\uD574\u2026"
-lastmod: 2024-02-18 23:09:06.367448
+lastmod: 2024-02-19 22:05:14.283147
 model: gpt-4-0125-preview
 summary: "PHP\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uD30C\uC2F1\
   \uD558\uAE30\uB294 \uB0A0\uC9DC \uBC0F/\uB610\uB294 \uC2DC\uAC04\uC744 \uD45C\uD604\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/working-with-complex-numbers/
 date: 2024-01-26 04:36:48.404629-07:00
 description: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa, ja ne ilmaistaan\
   \ yleens\xE4 muodossa `a + bi`. Ne ovat elint\xE4rkeit\xE4 joissakin matematiikkaa\
   \ vaativissa\u2026"
-lastmod: 2024-02-18 23:09:07.893645
+lastmod: 2024-02-19 22:05:15.714372
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa, ja ne ilmaistaan\
   \ yleens\xE4 muodossa `a + bi`. Ne ovat elint\xE4rkeit\xE4 joissakin matematiikkaa\

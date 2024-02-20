@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:36.678485-07:00
 description: "\"Loggen\" is het bijhouden van een register van gebeurtenissen, transacties\
   \ of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.144888
+lastmod: 2024-02-19 22:05:10.162993
 model: gpt-4-0125-preview
 summary: "\"Loggen\" is het bijhouden van een register van gebeurtenissen, transacties\
   \ of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs\u2026"

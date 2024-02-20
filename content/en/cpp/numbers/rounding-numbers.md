@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/rounding-numbers/
 date: 2024-01-25 03:00:00.122618-07:00
 description: "Rounding numbers means tweaking a value to its nearest integer or specified\
   \ precision. Devs do it to simplify, conform to real-world constraints, or\u2026"
-lastmod: 2024-02-18 23:09:11.350502
+lastmod: 2024-02-19 22:05:18.815714
 model: gpt-4-1106-preview
 summary: "Rounding numbers means tweaking a value to its nearest integer or specified\
   \ precision. Devs do it to simplify, conform to real-world constraints, or\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/concatenating-strings/
 date: 2024-01-20 17:34:12.534016-07:00
 description: "La concat\xE9nation de cha\xEEnes, c'est simplement coller des bouts\
   \ de texte ensemble. On le fait souvent pour g\xE9n\xE9rer des messages, combiner\
   \ des donn\xE9es, ou\u2026"
-lastmod: 2024-02-18 23:09:08.818761
+lastmod: 2024-02-19 22:05:16.520112
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes, c'est simplement coller des bouts de\
   \ texte ensemble. On le fait souvent pour g\xE9n\xE9rer des messages, combiner des\

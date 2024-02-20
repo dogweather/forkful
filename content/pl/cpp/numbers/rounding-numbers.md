@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/rounding-numbers/
 date: 2024-01-26 03:44:01.042035-07:00
 description: "Zaokr\u0105glanie liczb oznacza dostosowanie warto\u015Bci do najbli\u017C\
   szej liczby ca\u0142kowitej lub okre\u015Blonej precyzji. Programi\u015Bci robi\u0105\
   \ to, aby upraszcza\u0107,\u2026"
-lastmod: 2024-02-18 23:08:49.904711
+lastmod: 2024-02-19 22:04:54.853562
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza dostosowanie warto\u015Bci do najbli\u017C\
   szej liczby ca\u0142kowitej lub okre\u015Blonej precyzji. Programi\u015Bci robi\u0105\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c/working-with-xml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:59.848917-07:00
 description: "Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt\
   \ en manipuleert met behulp van verschillende bibliotheken. Programmeurs werken\
   \ met\u2026"
-lastmod: 2024-02-18 23:09:02.400285
+lastmod: 2024-02-19 22:05:10.405829
 model: gpt-4-0125-preview
 summary: "Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt en\
   \ manipuleert met behulp van verschillende bibliotheken. Programmeurs werken met\u2026"

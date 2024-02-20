@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/lua/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:20.414469-07:00
 description: "Het schrijven van tests betekent het cre\xEBren van code die automatisch\
   \ jouw andere code op fouten controleert. Programmeurs doen dit om bugs vroegtijdig\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.995241
+lastmod: 2024-02-19 22:05:10.016196
 model: gpt-4-0125-preview
 summary: "Het schrijven van tests betekent het cre\xEBren van code die automatisch\
   \ jouw andere code op fouten controleert. Programmeurs doen dit om bugs vroegtijdig\

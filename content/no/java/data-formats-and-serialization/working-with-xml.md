@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/java/working-with-xml/
 date: 2024-01-26 04:32:38.768670-07:00
 description: "\xC5 jobbe med XML inneb\xE6rer parsing, sp\xF8rring og manipulering\
   \ av XML-dokumenter med Java. Programmerere gj\xF8r dette for datautveksling, konfigurasjonsstyring\u2026"
-lastmod: 2024-02-18 23:08:53.794174
+lastmod: 2024-02-19 22:04:59.936758
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, sp\xF8rring og manipulering av\
   \ XML-dokumenter med Java. Programmerere gj\xF8r dette for datautveksling, konfigurasjonsstyring\u2026"

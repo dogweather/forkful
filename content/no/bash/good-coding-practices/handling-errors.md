@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/handling-errors/
 date: 2024-01-26 00:50:13.161501-07:00
 description: "H\xE5ndtering av feil i Bash-skripting handler om \xE5 forutse hvor\
   \ ting kan g\xE5 galt og h\xE5ndtere det p\xE5 en god m\xE5te. Hvorfor? Vel, det\
   \ holder skriptet ditt\u2026"
-lastmod: 2024-02-18 23:08:54.065492
+lastmod: 2024-02-19 22:05:00.248500
 model: gpt-4-1106-preview
 summary: "H\xE5ndtering av feil i Bash-skripting handler om \xE5 forutse hvor ting\
   \ kan g\xE5 galt og h\xE5ndtere det p\xE5 en god m\xE5te. Hvorfor? Vel, det holder\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/finding-the-length-of-a-string/
 date: 2024-02-03 17:50:05.140580-07:00
 description: "Finding the length of a string in Go is about determining the number\
   \ of characters it contains. Programmers routinely perform this operation to manipulate\u2026"
-lastmod: 2024-02-18 23:09:10.587469
+lastmod: 2024-02-19 22:05:18.131101
 model: gpt-4-0125-preview
 summary: "Finding the length of a string in Go is about determining the number of\
   \ characters it contains. Programmers routinely perform this operation to manipulate\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/python/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:51.146303-07:00
 description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums in Python\
   \ bedeutet, ein Datum um eine bestimmte Zeitspanne zu verschieben. Programmierer\
   \ nutzen\u2026"
-lastmod: 2024-02-18 23:09:04.476271
+lastmod: 2024-02-19 22:05:12.440244
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums in Python bedeutet,\
   \ ein Datum um eine bestimmte Zeitspanne zu verschieben. Programmierer nutzen\u2026"

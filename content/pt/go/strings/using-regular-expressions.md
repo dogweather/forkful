@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:23.437775-07:00
 description: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o usadas para\
   \ procurar, combinar e manipular strings baseadas em padr\xF5es espec\xEDficos.\
   \ Programadores as\u2026"
-lastmod: 2024-02-18 23:08:57.657721
+lastmod: 2024-02-19 22:05:05.112064
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o usadas para\
   \ procurar, combinar e manipular strings baseadas em padr\xF5es espec\xEDficos.\

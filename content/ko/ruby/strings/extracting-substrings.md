@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/extracting-substrings/
 date: 2024-01-20 17:46:44.622784-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uBF51\
   \uC544\uB0B4\uB294 \uAC83\uC744 \"\uC11C\uBE0C\uC2A4\uD2B8\uB9C1 \uCD94\uCD9C\"\uC774\
@@ -8,7 +6,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uB
   \uAC00 \uD544\uC694\uD55C \uC815\uBCF4\uB9CC \uBE60\uB974\uAC8C \uCC3E\uAE30 \uC704\
   \uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.005517
+lastmod: 2024-02-19 22:05:14.888951
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uBF51\uC544\
   \uB0B4\uB294 \uAC83\uC744 \"\uC11C\uBE0C\uC2A4\uD2B8\uB9C1 \uCD94\uCD9C\"\uC774\uB77C\

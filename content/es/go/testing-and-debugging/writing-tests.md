@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:32.977797-07:00
 description: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo\
   \ manejables que validan la funcionalidad y el comportamiento de tu aplicaci\xF3\
   n. Los\u2026"
-lastmod: 2024-02-18 23:09:09.459729
+lastmod: 2024-02-19 22:05:17.118768
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo manejables\
   \ que validan la funcionalidad y el comportamiento de tu aplicaci\xF3n. Los\u2026"

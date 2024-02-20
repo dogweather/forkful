@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/python/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:18.473156-07:00
 description: "Los arreglos asociativos, conocidos en Python como diccionarios, mapean\
   \ claves a valores, facilitando la recuperaci\xF3n, modificaci\xF3n o seguimiento\
   \ de datos\u2026"
-lastmod: 2024-02-18 23:09:09.548451
+lastmod: 2024-02-19 22:05:17.199095
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos en Python como diccionarios, mapean\
   \ claves a valores, facilitando la recuperaci\xF3n, modificaci\xF3n o seguimiento\

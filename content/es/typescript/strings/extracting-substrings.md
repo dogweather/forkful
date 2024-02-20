@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/extracting-substrings/
 date: 2024-01-20 17:46:37.750659-07:00
 description: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una\
   \ cadena de texto. Programadores lo hacen para manipular, analizar o transformar\
   \ datos\u2026"
-lastmod: 2024-02-18 23:09:09.690899
+lastmod: 2024-02-19 22:05:17.320042
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una cadena\
   \ de texto. Programadores lo hacen para manipular, analizar o transformar datos\u2026"

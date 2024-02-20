@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:17.586174-07:00
 description: "Feils\xF8king i Google Apps Script (GAS) involverer prosessen med \xE5\
   \ identifisere og fjerne feil fra skript som er ment for \xE5 automatisere Google\
   \ Apps eller\u2026"
-lastmod: 2024-02-18 23:08:53.485810
+lastmod: 2024-02-19 22:04:59.600676
 model: gpt-4-0125-preview
 summary: "Feils\xF8king i Google Apps Script (GAS) involverer prosessen med \xE5 identifisere\
   \ og fjerne feil fra skript som er ment for \xE5 automatisere Google Apps eller\u2026"

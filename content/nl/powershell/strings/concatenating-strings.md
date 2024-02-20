@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/powershell/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:55.734342-07:00
 description: "Het combineren van strings, of concatenatie, is zoals het maken van\
   \ een trein van woorden. We doen het om teksten samen te voegen, zinnen te vormen,\
   \ of\u2026"
-lastmod: 2024-02-18 23:09:02.080312
+lastmod: 2024-02-19 22:05:10.102336
 model: gpt-4-0125-preview
 summary: "Het combineren van strings, of concatenatie, is zoals het maken van een\
   \ trein van woorden. We doen het om teksten samen te voegen, zinnen te vormen, of\u2026"

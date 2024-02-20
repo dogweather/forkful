@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:07.396267-07:00
 description: "Hier is een snel voorbeeld met behulp van JavaScript's Fetch API: ```javascript\
   \ const url = 'https://some-protected-resource.com/data'; const username =\u2026"
-lastmod: 2024-02-18 23:09:02.275478
+lastmod: 2024-02-19 22:05:10.287477
 model: gpt-4-0125-preview
 summary: "Hier is een snel voorbeeld met behulp van JavaScript's Fetch API: ```javascript\
   \ const url = 'https://some-protected-resource.com/data'; const username =\u2026"

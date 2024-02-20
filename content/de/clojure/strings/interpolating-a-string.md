@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/clojure/interpolating-a-string/
 date: 2024-01-20 17:50:42.707262-07:00
 description: "String-Interpolation erm\xF6glicht es, Variablen oder Ausdr\xFCcke in\
   \ einem String einzubetten, sodass der String deren Werte enth\xE4lt. Programmierer\
   \ nutzen dies\u2026"
-lastmod: 2024-02-18 23:09:04.492198
+lastmod: 2024-02-19 22:05:12.455351
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablen oder Ausdr\xFCcke in einem\
   \ String einzubetten, sodass der String deren Werte enth\xE4lt. Programmierer nutzen\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:56.212131-07:00
 description: "Trouver la longueur d'une cha\xEEne en Go consiste \xE0 d\xE9terminer\
   \ le nombre de caract\xE8res qu'elle contient. Les programmeurs effectuent r\xE9\
   guli\xE8rement cette\u2026"
-lastmod: 2024-02-18 23:09:08.220809
+lastmod: 2024-02-19 22:05:16.030700
 model: gpt-4-0125-preview
 summary: "Trouver la longueur d'une cha\xEEne en Go consiste \xE0 d\xE9terminer le\
   \ nombre de caract\xE8res qu'elle contient. Les programmeurs effectuent r\xE9guli\xE8\

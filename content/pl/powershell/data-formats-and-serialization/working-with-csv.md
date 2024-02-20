@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/powershell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:56.248166-07:00
 description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone\
   \ przecinkami) to cz\u0119ste zadanie podczas zarz\u0105dzania i manipulowania danymi\
   \ w\u2026"
-lastmod: 2024-02-18 23:08:49.850943
+lastmod: 2024-02-19 22:04:54.794691
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone przecinkami)\
   \ to cz\u0119ste zadanie podczas zarz\u0105dzania i manipulowania danymi w\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/elm/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:01.342313-07:00
 description: "Parser du HTML en Elm consiste \xE0 extraire des informations de documents\
   \ HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui\u2026"
-lastmod: 2024-02-18 23:09:08.731714
+lastmod: 2024-02-19 22:05:16.440843
 model: gpt-4-0125-preview
 summary: "Parser du HTML en Elm consiste \xE0 extraire des informations de documents\
   \ HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui\u2026"

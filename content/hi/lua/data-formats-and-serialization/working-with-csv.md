@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/lua/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:50.842665-07:00
@@ -13,7 +11,7 @@ description: "CSV (Comma-Separated Values) \u092B\u093C\u093E\u0907\u0932\u094B\
   \u093F\u092F\u094B\u0902 \u0914\u0930 \u0915\u0949\u0932\u092E\u094B\u0902 \u092E\
   \u0947\u0902 \u0935\u094D\u092F\u0935\u0938\u094D\u0925\u093F\u0924 \u0939\u094B\
   \u0924\u093E\u2026"
-lastmod: 2024-02-18 23:09:03.616796
+lastmod: 2024-02-19 22:05:11.605389
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) \u092B\u093C\u093E\u0907\u0932\u094B\u0902\
   \ \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u0930\u094D\u092F \u0915\u0930\u0928\

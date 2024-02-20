@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/typescript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:17.962964-07:00
 description: "Gli array associativi, o oggetti in TypeScript, ti permettono di usare\
   \ stringhe (o chiavi) per accedere a coppie di valori. I programmatori li usano\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:55.633752
+lastmod: 2024-02-19 22:05:02.229231
 model: gpt-4-0125-preview
 summary: "Gli array associativi, o oggetti in TypeScript, ti permettono di usare stringhe\
   \ (o chiavi) per accedere a coppie di valori. I programmatori li usano per\u2026"

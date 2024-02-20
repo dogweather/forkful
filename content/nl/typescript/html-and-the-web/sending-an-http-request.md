@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/typescript/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:41.249158-07:00
 description: "Het verzenden van een HTTP-verzoek is hoe je programma gegevens van\
   \ een server vraagt of gegevens naar een server stuurt. Programmeurs doen dit omdat\
   \ het\u2026"
-lastmod: 2024-02-18 23:09:01.569519
+lastmod: 2024-02-19 22:05:09.594472
 model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek is hoe je programma gegevens van een\
   \ server vraagt of gegevens naar een server stuurt. Programmeurs doen dit omdat\

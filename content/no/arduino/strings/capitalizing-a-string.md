@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/arduino/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:01.868856-07:00
 description: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 konvertere det\
   \ f\xF8rste tegnet i hvert ord i en streng til stor bokstav mens resten forblir\
   \ sm\xE5 bokstaver.\u2026"
-lastmod: 2024-02-18 23:08:54.125088
+lastmod: 2024-02-19 22:05:00.312686
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 konvertere det f\xF8\
   rste tegnet i hvert ord i en streng til stor bokstav mens resten forblir sm\xE5\

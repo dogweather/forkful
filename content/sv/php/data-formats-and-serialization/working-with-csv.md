@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/php/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:10.995563-07:00
 description: "Att arbeta med CSV (Comma-Separated Values - kommaavgr\xE4nsade v\xE4\
   rden) inneb\xE4r att l\xE4sa fr\xE5n och skriva data till CSV-filer, ett popul\xE4\
   rt format f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.899888
+lastmod: 2024-02-19 22:04:57.244657
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma-Separated Values - kommaavgr\xE4nsade v\xE4rden)\
   \ inneb\xE4r att l\xE4sa fr\xE5n och skriva data till CSV-filer, ett popul\xE4rt\

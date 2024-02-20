@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:49.030077-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en tekststreng i PHP betyr \xE5 strippe\
   \ bort de irriterende doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som kan\
   \ rotte til\u2026"
-lastmod: 2024-02-18 23:08:53.963757
+lastmod: 2024-02-19 22:05:00.137444
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en tekststreng i PHP betyr \xE5 strippe\
   \ bort de irriterende doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som kan\

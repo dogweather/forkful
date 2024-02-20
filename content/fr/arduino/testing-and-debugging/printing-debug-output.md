@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/printing-debug-output/
 date: 2024-01-20 17:51:50.012697-07:00
 description: "Imprimer un d\xE9bogage, c'est \xE9crire dans la console pour suivre\
   \ ce que fait votre programme. On le fait pour rep\xE9rer les bugs et comprendre\
   \ le flux\u2026"
-lastmod: 2024-02-18 23:09:09.117068
+lastmod: 2024-02-19 22:05:16.794498
 model: gpt-4-1106-preview
 summary: "Imprimer un d\xE9bogage, c'est \xE9crire dans la console pour suivre ce\
   \ que fait votre programme. On le fait pour rep\xE9rer les bugs et comprendre le\

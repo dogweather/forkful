@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:07.871410-07:00
 description: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
   \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.403491
+lastmod: 2024-02-19 22:05:15.289288
 model: gpt-4-0125-preview
 summary: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
   \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\

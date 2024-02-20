@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/working-with-toml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:37.510676-07:00
 description: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat\
   \ som er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks. Programmerere bruker\
   \ TOML for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.460407
+lastmod: 2024-02-19 22:04:59.573241
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat som\
   \ er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks. Programmerere bruker TOML\

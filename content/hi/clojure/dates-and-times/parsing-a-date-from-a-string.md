@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/clojure/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:49.797424-07:00
@@ -14,7 +12,7 @@ description: "Clojure \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\u
   \u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\
   \u0902 \u0939\u0948 (\u0909\u0926\u093E\u0939\u0930\u0923 \u0915\u0947 \u0932\u093F\
   \u090F,\u2026"
-lastmod: 2024-02-18 23:09:02.742542
+lastmod: 2024-02-19 22:05:10.741108
 model: gpt-4-0125-preview
 summary: "Clojure \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\
   \u0902\u0917 \u0938\u0947 \u0926\u093F\u0928\u093E\u0902\u0915 \u092A\u093E\u0930\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/sending-an-http-request/
 date: 2024-01-20 18:00:44.036075-07:00
 description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC6F9 \uC11C\
   \uBC84\uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\uD130\
@@ -9,7 +7,7 @@ description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC6F9 \uC
   \uD150\uCE20 \uB2E4\uC6B4\uB85C\uB4DC, \uC11C\uBC84\uC5D0 \uB370\uC774\uD130 \uC81C\
   \uCD9C \uB4F1\uC744 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.021007
+lastmod: 2024-02-19 22:05:14.903283
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC6F9 \uC11C\uBC84\
   \uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\uD130\uB97C\

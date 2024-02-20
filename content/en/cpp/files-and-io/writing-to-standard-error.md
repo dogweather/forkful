@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/writing-to-standard-error/
 date: 2024-02-03 19:03:33.912340-07:00
 description: "Writing to standard error (`stderr`) in C++ involves outputting error\
   \ messages or diagnostics that are separate from the main program output. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.371406
+lastmod: 2024-02-19 22:05:18.834715
 model: gpt-4-0125-preview
 summary: "Writing to standard error (`stderr`) in C++ involves outputting error messages\
   \ or diagnostics that are separate from the main program output. Programmers\u2026"

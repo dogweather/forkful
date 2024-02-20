@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:23.406072-07:00
 description: "Att kontrollera om en katalog finns i Go \xE4r avg\xF6rande f\xF6r applikationer\
   \ som interagerar med filsystemet, f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6\
   ker komma \xE5t\u2026"
-lastmod: 2024-02-18 23:08:51.348456
+lastmod: 2024-02-19 22:04:56.642011
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Go \xE4r avg\xF6rande f\xF6r applikationer\
   \ som interagerar med filsystemet, f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6\

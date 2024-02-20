@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elixir/interpolating-a-string/
 date: 2024-01-20 17:50:51.573034-07:00
 description: "La interpolaci\xF3n de cadenas en programaci\xF3n implica insertar din\xE1\
   micamente valores dentro de una cadena de texto. Los programadores la utilizan para\u2026"
-lastmod: 2024-02-18 23:09:09.633641
+lastmod: 2024-02-19 22:05:17.275950
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas en programaci\xF3n implica insertar din\xE1\
   micamente valores dentro de una cadena de texto. Los programadores la utilizan para\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:04.349248-07:00
 description: "Tilap\xE4isen tiedoston luominen Google Apps Scriptill\xE4 tarkoittaa\
   \ lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston generoimista, yleens\xE4\
   \ v\xE4liaikaista datan\u2026"
-lastmod: 2024-02-18 23:09:07.158800
+lastmod: 2024-02-19 22:05:15.034218
 model: gpt-4-0125-preview
 summary: "Tilap\xE4isen tiedoston luominen Google Apps Scriptill\xE4 tarkoittaa lyhytaikaiseen\
   \ k\xE4ytt\xF6\xF6n tarkoitetun tiedoston generoimista, yleens\xE4 v\xE4liaikaista\

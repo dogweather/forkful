@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:00.064764-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
   \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"
-lastmod: 2024-02-18 23:09:05.373088
+lastmod: 2024-02-19 22:05:13.293399
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
   \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"

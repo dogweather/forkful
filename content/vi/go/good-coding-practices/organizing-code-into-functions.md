@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:06.999144-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m trong Go b
   \ g\u1ED3m vi\u1EC7c chia nh\u1ECF code th\xE0nh c\xE1c kh\u1ED1i c\xF3 th\u1EC3\
   \ t\xE1i s\u1EED d\u1EE5ng, m\xF4-\u0111un th\u1EF1c hi\u1EC7n c\xE1c nhi\u1EC7\
   m v\u1EE5 c\u1EE5 th\u1EC3. Ph\u01B0\u01A1ng ph\xE1p\u2026"
-lastmod: 2024-02-18 23:08:50.176985
+lastmod: 2024-02-19 22:04:55.175167
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m trong Go bao g\u1ED3\
   m vi\u1EC7c chia nh\u1ECF code th\xE0nh c\xE1c kh\u1ED1i c\xF3 th\u1EC3 t\xE1i s\u1EED\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:00.052655-07:00
 description: "Het vergelijken van twee datums in Visual Basic for Applications (VBA)\
   \ behelst het bepalen van hun chronologische relatie tot elkaar. Programmeurs doen\u2026"
-lastmod: 2024-02-18 23:09:01.679561
+lastmod: 2024-02-19 22:05:09.700883
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums in Visual Basic for Applications (VBA) behelst\
   \ het bepalen van hun chronologische relatie tot elkaar. Programmeurs doen\u2026"

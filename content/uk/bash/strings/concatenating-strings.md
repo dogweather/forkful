@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/bash/concatenating-strings/
 date: 2024-01-20 17:34:14.697080-07:00
 description: Concatenating strings means sticking them together end-to-end. Programmers
   do it to build up texts, commands, or data based on logic and input.
-lastmod: 2024-02-18 23:09:00.630130
+lastmod: 2024-02-19 22:05:08.594860
 model: gpt-4-1106-preview
 summary: Concatenating strings means sticking them together end-to-end. Programmers
   do it to build up texts, commands, or data based on logic and input.

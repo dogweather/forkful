@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/haskell/working-with-csv/
 date: 2024-01-19
 description: "CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische\
   \ Daten speichern. Programmierer nutzen CSV, weil es ein weit verbreitetes, leicht\u2026"
-lastmod: 2024-02-18 23:09:04.941299
+lastmod: 2024-02-19 22:05:12.881165
 summary: "CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische\
   \ Daten speichern. Programmierer nutzen CSV, weil es ein weit verbreitetes, leicht\u2026"
 title: Arbeiten mit CSV-Dateien

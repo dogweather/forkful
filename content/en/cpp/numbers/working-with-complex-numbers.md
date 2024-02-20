@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/working-with-complex-numbers/
 date: 2024-01-25 03:00:11.130683-07:00
 description: "Complex numbers extend the real numbers by adding an imaginary unit,\
   \ represented as 'i', where i^2 = -1. Programmers use them for simulations, signal\u2026"
-lastmod: 2024-02-18 23:09:11.349530
+lastmod: 2024-02-19 22:05:18.814859
 model: gpt-4-1106-preview
 summary: "Complex numbers extend the real numbers by adding an imaginary unit, represented\
   \ as 'i', where i^2 = -1. Programmers use them for simulations, signal\u2026"

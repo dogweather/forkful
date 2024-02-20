@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:58.608216-07:00
 description: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande\
   \ uppgift som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet\
   \ innan man l\xE4ser\u2026"
-lastmod: 2024-02-18 23:08:51.683018
+lastmod: 2024-02-19 22:04:57.011471
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande uppgift\
   \ som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet innan\

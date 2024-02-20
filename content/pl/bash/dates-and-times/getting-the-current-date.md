@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/bash/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:00.408037-07:00
 description: "Pobieranie aktualnej daty w Bashu polega na u\u017Cywaniu wbudowanych\
   \ polece\u0144 do wy\u015Bwietlania daty i czasu w r\xF3\u017Cnych formatach. Programi\u015B\
   ci u\u017Cywaj\u0105 tej\u2026"
-lastmod: 2024-02-18 23:08:49.795593
+lastmod: 2024-02-19 22:04:54.735552
 model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w Bashu polega na u\u017Cywaniu wbudowanych polece\u0144\
   \ do wy\u015Bwietlania daty i czasu w r\xF3\u017Cnych formatach. Programi\u015B\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/organizing-code-into-functions/
 date: 2024-01-26 01:16:19.276639-07:00
 description: "Grupowanie kodu w funkcje polega na dzieleniu zada\u0144 na wielokrotnie\
   \ u\u017Cywalne fragmenty. Sprawia to, \u017Ce kod jest czytelny, mniej podatny\
   \ na b\u0142\u0119dy i\u2026"
-lastmod: 2024-02-18 23:08:49.958325
+lastmod: 2024-02-19 22:04:54.908631
 model: gpt-4-0125-preview
 summary: "Grupowanie kodu w funkcje polega na dzieleniu zada\u0144 na wielokrotnie\
   \ u\u017Cywalne fragmenty. Sprawia to, \u017Ce kod jest czytelny, mniej podatny\

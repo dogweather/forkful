@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/ruby/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:57:38.540094-07:00
@@ -14,7 +12,7 @@ description: "\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0438\u043
   \u0432, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u0443\u0434\u0430\u043B\
   \u0435\u043D\u0438\u0435 \u0445\u044D\u0448\u0442\u0435\u0433\u043E\u0432 \u0438\
   \u0437 \u0442\u0432\u0438\u0442\u043E\u0432.\u2026"
-lastmod: 2024-02-18 23:08:57.598048
+lastmod: 2024-02-19 22:05:04.962294
 model: gpt-4-0125-preview
 summary: "\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0438\u043C\u0432\
   \u043E\u043B\u043E\u0432, \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\

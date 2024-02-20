@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/rust/searching-and-replacing-text/
 date: 2024-01-20 17:58:50.479445-07:00
 description: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichenkombinationen\
   \ in einem Datenstrom zu finden und durch neue Inhalte zu ersetzen. Es ist ein\u2026"
-lastmod: 2024-02-18 23:09:04.625904
+lastmod: 2024-02-19 22:05:12.582122
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichenkombinationen\
   \ in einem Datenstrom zu finden und durch neue Inhalte zu ersetzen. Es ist ein\u2026"

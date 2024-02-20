@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/powershell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:12.700449-07:00
 description: "No PowerShell, verificar se um diret\xF3rio existe \xE9 uma tarefa comum\
   \ que ajuda os scripts a tomarem decis\xF5es baseadas na estrutura do sistema de\u2026"
-lastmod: 2024-02-18 23:08:58.382991
+lastmod: 2024-02-19 22:05:05.868621
 model: gpt-4-0125-preview
 summary: "No PowerShell, verificar se um diret\xF3rio existe \xE9 uma tarefa comum\
   \ que ajuda os scripts a tomarem decis\xF5es baseadas na estrutura do sistema de\u2026"

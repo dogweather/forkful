@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/typescript/working-with-toml/
 date: 2024-01-26 04:27:09.037599-07:00
 description: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et data serialiseringsformat\
   \ likt JSON eller YAML. Programm\xF8rer bruker det p\xE5 grunn av dets\u2026"
-lastmod: 2024-02-18 23:08:53.667365
+lastmod: 2024-02-19 22:04:59.798943
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et data serialiseringsformat\
   \ likt JSON eller YAML. Programm\xF8rer bruker det p\xE5 grunn av dets\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:59.426400-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to spos\xF3b na pozbycie\
   \ si\u0119 niechcianych fragment\xF3w tekstu \u2014 szybkie ci\u0119cie w danych.\
   \ Programi\u015Bci robi\u0105 to, gdy chc\u0105\u2026"
-lastmod: 2024-02-18 23:08:50.019696
+lastmod: 2024-02-19 22:04:54.974958
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to spos\xF3b na pozbycie si\u0119\
   \ niechcianych fragment\xF3w tekstu \u2014 szybkie ci\u0119cie w danych. Programi\u015B\

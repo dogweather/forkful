@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:38.984965-07:00
 description: "I Java l\xE5ter associativa arrayer, eller map, dig lagra nyckel-v\xE4\
   rde-par f\xF6r effektiv datauppslagning och manipulation. Programmerare anv\xE4\
   nder dem f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.662747
+lastmod: 2024-02-19 22:04:56.988673
 model: gpt-4-0125-preview
 summary: "I Java l\xE5ter associativa arrayer, eller map, dig lagra nyckel-v\xE4rde-par\
   \ f\xF6r effektiv datauppslagning och manipulation. Programmerare anv\xE4nder dem\

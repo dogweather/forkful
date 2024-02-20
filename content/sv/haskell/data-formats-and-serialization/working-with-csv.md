@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/haskell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:04.591923-07:00
 description: "Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerade\
   \ v\xE4rden) inneb\xE4r att tolka och generera filer som lagrar tabul\xE4r data\
   \ i ett enkelt,\u2026"
-lastmod: 2024-02-18 23:08:51.859047
+lastmod: 2024-02-19 22:04:57.199148
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerade\
   \ v\xE4rden) inneb\xE4r att tolka och generera filer som lagrar tabul\xE4r data\

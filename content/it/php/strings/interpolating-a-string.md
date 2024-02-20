@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/php/interpolating-a-string/
 date: 2024-01-20 17:51:24.527509-07:00
 description: "L'interpolazione di stringhe consente di incastrare variabili direttamente\
   \ dentro una stringa. Facilita la lettura e la scrittura del codice, rendendolo\u2026"
-lastmod: 2024-02-18 23:08:55.957710
+lastmod: 2024-02-19 22:05:02.569362
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe consente di incastrare variabili direttamente\
   \ dentro una stringa. Facilita la lettura e la scrittura del codice, rendendolo\u2026"

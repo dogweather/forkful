@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/extracting-substrings/
 date: 2024-01-20 17:45:24.292687-07:00
 description: "Extraire des sous-cha\xEEnes, c'est prendre des morceaux sp\xE9cifiques\
   \ d'une cha\xEEne de caract\xE8res. Pourquoi ? Pour analyser des donn\xE9es, valider\
   \ des entr\xE9es,\u2026"
-lastmod: 2024-02-18 23:09:08.421511
+lastmod: 2024-02-19 22:05:16.212485
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est prendre des morceaux sp\xE9cifiques\
   \ d'une cha\xEEne de caract\xE8res. Pourquoi ? Pour analyser des donn\xE9es, valider\

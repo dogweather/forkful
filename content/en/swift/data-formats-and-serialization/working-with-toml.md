@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/working-with-toml/
 date: 2024-01-25 03:39:30.893425-07:00
 description: "TOML (Tom's Obvious, Minimal Language) is a data serialization format\
   \ that\u2019s easy to read due to its clear semantics. Programmers use TOML for\u2026"
-lastmod: 2024-02-18 23:09:11.419568
+lastmod: 2024-02-19 22:05:18.878577
 model: gpt-4-1106-preview
 summary: "TOML (Tom's Obvious, Minimal Language) is a data serialization format that\u2019\
   s easy to read due to its clear semantics. Programmers use TOML for\u2026"

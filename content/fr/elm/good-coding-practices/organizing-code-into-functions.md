@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/elm/organizing-code-into-functions/
 date: 2024-01-26 01:09:54.283376-07:00
 description: "Entasser tout votre code dans un grand tas ? Mauvaise id\xE9e. Le d\xE9\
   couper en fonctions ? Bonne id\xE9e. Cela permet de garder votre code Elm propre,\u2026"
-lastmod: 2024-02-18 23:09:08.740607
+lastmod: 2024-02-19 22:05:16.448764
 model: gpt-4-1106-preview
 summary: "Entasser tout votre code dans un grand tas ? Mauvaise id\xE9e. Le d\xE9\
   couper en fonctions ? Bonne id\xE9e. Cela permet de garder votre code Elm propre,\u2026"

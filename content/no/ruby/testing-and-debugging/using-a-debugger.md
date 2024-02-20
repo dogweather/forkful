@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/using-a-debugger/
 date: 2024-01-26 04:09:45.451144-07:00
 description: "\xC5 bruke en debugger i Ruby gir programmerere en superkraft til \xE5\
   \ pause koden sin, inspisere variabler, og g\xE5 gjennom koden sin linje for linje.\
   \ Folk gj\xF8r\u2026"
-lastmod: 2024-02-18 23:08:54.442743
+lastmod: 2024-02-19 22:05:00.605597
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en debugger i Ruby gir programmerere en superkraft til \xE5 pause\
   \ koden sin, inspisere variabler, og g\xE5 gjennom koden sin linje for linje. Folk\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/javascript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:27.387209-07:00
 description: "Wyra\u017Cenia regularne (regex) w JavaScript s\u0105 wzorcami u\u017C\
   ywanymi do dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015B\
   ci u\u017Cywaj\u0105 ich do\u2026"
-lastmod: 2024-02-18 23:08:49.984043
+lastmod: 2024-02-19 22:04:54.936357
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w JavaScript s\u0105 wzorcami u\u017Cywanymi\
   \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015B\

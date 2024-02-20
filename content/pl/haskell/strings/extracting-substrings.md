@@ -1,9 +1,7 @@
 ---
-aliases:
-- /pl/haskell/extracting-substrings/
 date: 2024-01-20 17:45:52.690580-07:00
 description: '"'
-lastmod: 2024-02-18 23:08:49.642781
+lastmod: 2024-02-19 22:04:54.574997
 model: gpt-4-1106-preview
 summary: '"'
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"

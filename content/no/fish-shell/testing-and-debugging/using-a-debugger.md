@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/fish-shell/using-a-debugger/
 date: 2024-01-26 03:48:56.075823-07:00
 description: "\xC5 bruke en debugger handler om \xE5 knuse feil\u2014de ekle, tidsslukende\
   \ feilene i koden din. Programmerere debugger fordi de vil finne og fikse problemer\u2026"
-lastmod: 2024-02-18 23:08:54.356088
+lastmod: 2024-02-19 22:05:00.510986
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en debugger handler om \xE5 knuse feil\u2014de ekle, tidsslukende\
   \ feilene i koden din. Programmerere debugger fordi de vil finne og fikse problemer\u2026"

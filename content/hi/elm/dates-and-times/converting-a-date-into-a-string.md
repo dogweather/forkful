@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elm/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:40.470161-07:00
 description: "Dates \u0915\u094B strings \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\
   \u0947 \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0909\u0928\u094D\u0939\
@@ -10,7 +8,7 @@ description: "Dates \u0915\u094B strings \u092E\u0947\u0902 \u092C\u0926\u0932\u
   \u0930\u0924\u0947 \u0939\u0948\u0902 user interface \u092E\u0947\u0902 \u0924\u093E\
   \u0930\u0940\u0916\u0947\u0902 \u0926\u093F\u0916\u093E\u0928\u0947 \u092F\u093E\
   \ logs \u092E\u0947\u0902\u2026"
-lastmod: 2024-02-18 23:09:03.212939
+lastmod: 2024-02-19 22:05:11.208564
 model: gpt-4-1106-preview
 summary: "Dates \u0915\u094B strings \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\u0947\
   \ \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0909\u0928\u094D\u0939\u0947\

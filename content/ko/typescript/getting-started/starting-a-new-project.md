@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/typescript/starting-a-new-project/
 date: 2024-01-20 18:04:43.115131-07:00
 description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
   \ \uAC83\uC740 \uC77C\uC885\uC758 \uD145 \uBE48 \uCE94\uBC84\uC2A4\uC5D0 \uB2F9\uC2E0\
@@ -10,7 +8,7 @@ description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB2
   \uC744 \uAC1C\uBC1C\uD558\uAE30 \uC704\uD574 \uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C\
   \ \uC9C4\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.820473
+lastmod: 2024-02-19 22:05:13.732902
 model: gpt-4-1106-preview
 summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC83\
   \uC740 \uC77C\uC885\uC758 \uD145 \uBE48 \uCE94\uBC84\uC2A4\uC5D0 \uB2F9\uC2E0\uC758\

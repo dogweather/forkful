@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/arduino/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:59:04.572122-07:00
@@ -14,7 +12,7 @@ description: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438
   \u0435\u043B\u0430\u044F \u0432\u044B\u0432\u043E\u0434 \u0434\u0438\u043D\u0430\
   \u043C\u0438\u0447\u043D\u044B\u043C \u0438 \u043F\u043E\u043D\u044F\u0442\u043D\
   \u044B\u043C."
-lastmod: 2024-02-18 23:08:57.291969
+lastmod: 2024-02-19 22:05:04.476993
 model: gpt-4-0125-preview
 summary: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438\u044F\
   \ \u0441\u0442\u0440\u043E\u043A - \u044D\u0442\u043E \u0441\u043C\u0435\u0448\u0438\

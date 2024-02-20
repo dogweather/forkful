@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/fish-shell/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:44.253380-07:00
 description: "Rimuovere le virgolette da una stringa significa togliere quei fastidiosi\
   \ segni di virgoletta singola (' ') o doppia (\" \") dai tuoi dati di testo. I\u2026"
-lastmod: 2024-02-18 23:08:56.282086
+lastmod: 2024-02-19 22:05:02.917139
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa togliere quei fastidiosi\
   \ segni di virgoletta singola (' ') o doppia (\" \") dai tuoi dati di testo. I\u2026"

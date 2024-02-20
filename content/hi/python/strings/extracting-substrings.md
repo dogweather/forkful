@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/python/extracting-substrings/
 date: 2024-01-20 17:46:36.430970-07:00
 description: "\u0909\u092A\u0936\u092C\u094D\u0926 (substring) \u0928\u093F\u0915\u093E\
   \u0932\u0928\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0915\u093F\u0938\u0940\
@@ -12,7 +10,7 @@ description: "\u0909\u092A\u0936\u092C\u094D\u0926 (substring) \u0928\u093F\u091
   \u0940 \u0938\u0942\u091A\u0928\u093E \u092E\u0947\u0902 \u0938\u0947 \u0938\u093F\
   \u0930\u094D\u092B \u091C\u093C\u0930\u0942\u0930\u0940 \u0921\u0947\u091F\u093E\
   \u2026"
-lastmod: 2024-02-18 23:09:02.627333
+lastmod: 2024-02-19 22:05:10.628894
 model: gpt-4-1106-preview
 summary: "\u0909\u092A\u0936\u092C\u094D\u0926 (substring) \u0928\u093F\u0915\u093E\
   \u0932\u0928\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0915\u093F\u0938\u0940\

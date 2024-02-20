@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:25.143167-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien\
   \ yksitt\xE4isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista,\
   \ jotka\u2026"
-lastmod: 2024-02-18 23:09:07.305858
+lastmod: 2024-02-19 22:05:15.197659
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien yksitt\xE4\
   isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka\u2026"

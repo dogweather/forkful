@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:33.484827-07:00
 description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740\
   \ \uADF8 \uC548\uC5D0 \uC5BC\uB9C8\uB098 \uB9CE\uC740 \uBB38\uC790\uAC00 \uC788\uB294\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC
   \ \uB85C\uC9C1 \uD750\uB984 \uC81C\uC5B4\uB97C \uC704\uD574 \uC774\uB97C \uC790\uC8FC\
   \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.864210
+lastmod: 2024-02-19 22:05:14.754043
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uADF8\
   \ \uC548\uC5D0 \uC5BC\uB9C8\uB098 \uB9CE\uC740 \uBB38\uC790\uAC00 \uC788\uB294\uC9C0\

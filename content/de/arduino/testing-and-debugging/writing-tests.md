@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/arduino/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:28.240710-07:00
 description: "Tests im Arduino-Umfeld zu schreiben, bezieht sich auf den Prozess des\
   \ Erstellens von automatisierten Tests, die die Funktionalit\xE4t Ihres Codes auf\u2026"
-lastmod: 2024-02-18 23:09:05.148801
+lastmod: 2024-02-19 22:05:13.080900
 model: gpt-4-0125-preview
 summary: "Tests im Arduino-Umfeld zu schreiben, bezieht sich auf den Prozess des Erstellens\
   \ von automatisierten Tests, die die Funktionalit\xE4t Ihres Codes auf\u2026"

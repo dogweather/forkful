@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:22.074337-07:00
 description: "La interpolaci\xF3n de cadenas en Visual Basic para Aplicaciones (VBA)\
   \ se refiere al proceso de incrustar variables o expresiones dentro de un literal\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:09.780038
+lastmod: 2024-02-19 22:05:17.400810
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas en Visual Basic para Aplicaciones (VBA) se\
   \ refiere al proceso de incrustar variables o expresiones dentro de un literal de\u2026"

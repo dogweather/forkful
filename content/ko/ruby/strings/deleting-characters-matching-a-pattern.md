@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:57.851509-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB9DE\
   \uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uB370\uC774\uD130\
@@ -11,7 +9,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB
   \ \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.998503
+lastmod: 2024-02-19 22:05:14.882324
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB9DE\uB294\
   \ \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uB370\uC774\uD130\uB97C\

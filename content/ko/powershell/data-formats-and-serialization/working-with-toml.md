@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/working-with-toml/
 date: 2024-01-26 04:25:33.388975-07:00
 description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C\
   , \uBD84\uBA85\uD55C \uC758\uBBF8 \uCCB4\uACC4\uB85C \uC778\uD574 \uC77D\uAE30 \uC26C\
@@ -9,7 +7,7 @@ description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85
   \ \uAE30\uACC4\uC640 \uCE5C\uD654\uC801\uC778 \uADE0\uD615\uC744 \uB9DE\uCD98\uB2E4\
   \uB294 \uC774\uC810 \uB54C\uBB38\uC5D0 \uAD6C\uC131 \uD30C\uC77C\uB85C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.591091
+lastmod: 2024-02-19 22:05:14.494995
 model: gpt-4-0125-preview
 summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C, \uBD84\
   \uBA85\uD55C \uC758\uBBF8 \uCCB4\uACC4\uB85C \uC778\uD574 \uC77D\uAE30 \uC26C\uC6B4\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:35.314383-07:00
 description: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
   \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"
-lastmod: 2024-02-18 23:09:01.687627
+lastmod: 2024-02-19 22:05:09.708511
 model: gpt-4-0125-preview
 summary: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
   \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"

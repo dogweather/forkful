@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:03.944945-07:00
 description: "Omformning av en str\xE4ng till gemener inneb\xE4r att omvandla alla\
   \ stora bokst\xE4ver i en textstr\xE4ng till sm\xE5 bokst\xE4ver. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.490247
+lastmod: 2024-02-19 22:04:56.799389
 model: gpt-4-1106-preview
 summary: "Omformning av en str\xE4ng till gemener inneb\xE4r att omvandla alla stora\
   \ bokst\xE4ver i en textstr\xE4ng till sm\xE5 bokst\xE4ver. Programmerare g\xF6\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/vba/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:14.834838-07:00
 description: "Att extrahera delstr\xE4ngar i Visual Basic for Applications (VBA) inneb\xE4\
   r att isolera specifika delar av en str\xE4ng baserat p\xE5 givna kriterier. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.614754
+lastmod: 2024-02-19 22:04:56.936405
 model: gpt-4-0125-preview
 summary: "Att extrahera delstr\xE4ngar i Visual Basic for Applications (VBA) inneb\xE4\
   r att isolera specifika delar av en str\xE4ng baserat p\xE5 givna kriterier. Programmerare\u2026"

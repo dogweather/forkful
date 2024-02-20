@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/lua/using-regular-expressions/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:03.932201-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u043
   \ \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442 \u0438\u0445 \u0434\
   \u043B\u044F \u043F\u043E\u0438\u0441\u043A\u0430, \u0440\u0435\u0434\u0430\u043A\
   \u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F \u0438\u2026"
-lastmod: 2024-02-18 23:08:57.138459
+lastmod: 2024-02-19 22:05:04.232932
 model: gpt-4-0125-preview
 summary: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0432\u044B\
   \u0440\u0430\u0436\u0435\u043D\u0438\u044F, \u0438\u043B\u0438 regex, \u044D\u0442\

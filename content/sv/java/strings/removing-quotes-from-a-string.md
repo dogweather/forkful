@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:11.030429-07:00
 description: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
   \ bort alla citattecken\u2014enkla (' '), dubbla (\" \") eller b\xE5da\u2014fr\xE5\
   n textdata. Programmerare g\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.658107
+lastmod: 2024-02-19 22:04:56.983578
 model: gpt-4-0125-preview
 summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
   \ bort alla citattecken\u2014enkla (' '), dubbla (\" \") eller b\xE5da\u2014fr\xE5\

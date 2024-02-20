@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/swift/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:31.410353-07:00
 description: "Converter uma string para min\xFAsculas significa transformar todos\
   \ os caracteres alfab\xE9ticos do texto para a sua forma min\xFAscula. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.478624
+lastmod: 2024-02-19 22:05:05.970724
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas significa transformar todos os caracteres\
   \ alfab\xE9ticos do texto para a sua forma min\xFAscula. Programadores fazem isso\u2026"

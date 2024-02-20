@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:34.052072-07:00
@@ -8,7 +6,7 @@ description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem m\u1ED9t
   y c\xF3 s\u1EDBm h\u01A1n, gi\u1ED1ng h\u1EC7t, hay mu\u1ED9n h\u01A1n ng\xE0y kia\
   \ hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\
   \u1EC3 t\u1ED5 ch\u1EE9c s\u1EF1\u2026"
-lastmod: 2024-02-18 23:08:51.199970
+lastmod: 2024-02-19 22:04:56.462524
 model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem m\u1ED9t ng\xE0\
   y c\xF3 s\u1EDBm h\u01A1n, gi\u1ED1ng h\u1EC7t, hay mu\u1ED9n h\u01A1n ng\xE0y kia\

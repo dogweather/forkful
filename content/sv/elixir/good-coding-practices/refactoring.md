@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/refactoring/
 date: 2024-01-26 01:17:40.549844-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan\
   \ att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra icke-funktionella\
   \ attribut\u2026"
-lastmod: 2024-02-18 23:08:51.510499
+lastmod: 2024-02-19 22:04:56.821872
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan att\
   \ \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra icke-funktionella\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:05.947606-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att bli av med\
   \ de d\xE4r irriterande dubbla eller enkla citattecken som omsluter din text. Programmerare\
   \ g\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.450857
+lastmod: 2024-02-19 22:04:56.756111
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att bli av med de\
   \ d\xE4r irriterande dubbla eller enkla citattecken som omsluter din text. Programmerare\

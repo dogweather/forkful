@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pl/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 03:00:48.718434-07:00
 description: "Parsowanie HTML oznacza ekstrakcj\u0119 danych z dokument\xF3w HTML.\
   \ Programi\u015Bci robi\u0105 to, aby oddzia\u0142ywa\u0107 na zawarto\u015B\u0107\
   \ sieciow\u0105 lub j\u0105 modyfikowa\u0107, automatyzowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.991679
+lastmod: 2024-02-19 22:04:54.944807
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML oznacza ekstrakcj\u0119 danych z dokument\xF3w HTML. Programi\u015B\
   ci robi\u0105 to, aby oddzia\u0142ywa\u0107 na zawarto\u015B\u0107 sieciow\u0105\

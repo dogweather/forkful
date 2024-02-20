@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:32.007757-07:00
@@ -14,7 +12,7 @@ description: "C \u092E\u0947\u0902 \u0915\u094B\u0921 \u0915\u094B \u092B\u093C\
   \u093F\u092F\u093E \u0939\u0948\u0964 \u092F\u0939 \u092A\u094D\u0930\u0925\u093E\
   \ \u092A\u0920\u0928\u0940\u092F\u0924\u093E \u092C\u0922\u093C\u093E\u0924\u0940\
   \ \u0939\u0948,\u2026"
-lastmod: 2024-02-18 23:09:04.222248
+lastmod: 2024-02-19 22:05:12.195260
 model: gpt-4-0125-preview
 summary: "C \u092E\u0947\u0902 \u0915\u094B\u0921 \u0915\u094B \u092B\u093C\u0902\u0915\
   \u094D\u0936\u0902\u0938 \u092E\u0947\u0902 \u0935\u094D\u092F\u0935\u0938\u094D\

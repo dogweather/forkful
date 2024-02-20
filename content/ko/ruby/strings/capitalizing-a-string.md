@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:14.657483-07:00
@@ -13,7 +11,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4\uC75
   \ \uB9CC\uB4E4\uAC70\uB098 \uBE44\uAD50 \uBC0F \uC800\uC7A5\uC744 \uC704\uD55C \uB370\
   \uC774\uD130 \uC77C\uAD00\uC131\uC744 \uBCF4\uC7A5\uD558\uAE30 \uC704\uD574 \uC774\
   \uB7EC\uD55C \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.996908
+lastmod: 2024-02-19 22:05:14.880810
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uCCAB\
   \ \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uACE0 \uB098\uBA38\

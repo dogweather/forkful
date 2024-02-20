@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/organizing-code-into-functions/
 date: 2024-01-26 01:11:40.110029-07:00
 description: "Organizar el c\xF3digo en funciones consiste en descomponer tu programa\
   \ en bloques reutilizables y modulares identificados por un nombre. Hacemos esto\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:09.755053
+lastmod: 2024-02-19 22:05:17.378048
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones consiste en descomponer tu programa\
   \ en bloques reutilizables y modulares identificados por un nombre. Hacemos esto\

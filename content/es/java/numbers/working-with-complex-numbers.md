@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/java/working-with-complex-numbers/
 date: 2024-01-26 04:41:33.442263-07:00
 description: "Los n\xFAmeros complejos expanden la l\xEDnea de n\xFAmeros reales a\
   \ trav\xE9s de la adici\xF3n de una unidad imaginaria, `i`, donde `i^2 = -1`. Son\
   \ cruciales en campos\u2026"
-lastmod: 2024-02-18 23:09:09.838541
+lastmod: 2024-02-19 22:05:17.454184
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos expanden la l\xEDnea de n\xFAmeros reales a trav\xE9\
   s de la adici\xF3n de una unidad imaginaria, `i`, donde `i^2 = -1`. Son cruciales\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/php/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:37.804080-07:00
 description: "Gli array associativi in PHP sono come liste super-potenziati dove ogni\
   \ elemento pu\xF2 essere accesso utilizzando una chiave leggibile dall'uomo invece\
   \ che\u2026"
-lastmod: 2024-02-18 23:08:55.964111
+lastmod: 2024-02-19 22:05:02.576166
 model: gpt-4-0125-preview
 summary: "Gli array associativi in PHP sono come liste super-potenziati dove ogni\
   \ elemento pu\xF2 essere accesso utilizzando una chiave leggibile dall'uomo invece\

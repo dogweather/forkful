@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:54.095470-07:00
 description: "HTML parsen betekent het converteren van HTML-tekst naar een datastructuur\
   \ waarmee je programma kan werken. Programmeurs doen dit om de inhoud van\u2026"
-lastmod: 2024-02-18 23:09:01.757000
+lastmod: 2024-02-19 22:05:09.775849
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent het converteren van HTML-tekst naar een datastructuur\
   \ waarmee je programma kan werken. Programmeurs doen dit om de inhoud van\u2026"

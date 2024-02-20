@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/bash/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:28.251142-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n, `stderr`, xu\u1EA5t th\x
   ng b\xE1o l\u1ED7i ri\xEAng bi\u1EC7t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, `stdout`.\
   \ C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng `stderr` \u0111\u1EC3 b\xE1\
   o c\xE1o l\u1ED7i m\xE0 kh\xF4ng\u2026"
-lastmod: 2024-02-18 23:08:50.903520
+lastmod: 2024-02-19 22:04:56.091742
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n, `stderr`, xu\u1EA5t th\xF4ng b\xE1\
   o l\u1ED7i ri\xEAng bi\u1EC7t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, `stdout`. C\xE1\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:30.776829-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC83\uC740, PHP \uC5D0\uC11C \uD2B9\uC815\uD55C \uB0A0\uC9DC \uD615\uC2DD\
@@ -11,7 +9,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2
   \ \uD615\uD0DC\uC758 \uB370\uC774\uD130 \uCC98\uB9AC\uB97C \uC704\uD574 \uC774 \uC791\
   \uC5C5\uC744 \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.370694
+lastmod: 2024-02-19 22:05:14.286246
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\uB294\
   \ \uAC83\uC740, PHP \uC5D0\uC11C \uD2B9\uC815\uD55C \uB0A0\uC9DC \uD615\uC2DD\uC744\

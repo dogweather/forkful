@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/working-with-complex-numbers/
 date: 2024-01-25 03:00:01.693948-07:00
 description: "Complex numbers are a set of numbers of the form `a + bi`, where `a`\
   \ and `b` are real numbers, and `i` is the imaginary unit (`i^2 = -1`). In programming,\u2026"
-lastmod: 2024-02-18 23:09:10.675333
+lastmod: 2024-02-19 22:05:18.209804
 model: gpt-4-1106-preview
 summary: "Complex numbers are a set of numbers of the form `a + bi`, where `a` and\
   \ `b` are real numbers, and `i` is the imaginary unit (`i^2 = -1`). In programming,\u2026"

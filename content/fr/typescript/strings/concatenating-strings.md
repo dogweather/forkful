@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/typescript/concatenating-strings/
 date: 2024-01-20 17:35:36.428529-07:00
 description: "La concat\xE9nation de cha\xEEnes de caract\xE8res, c'est comme coller\
   \ des mots ensemble pour former des phrases. On la fait pour construire des messages\u2026"
-lastmod: 2024-02-18 23:09:08.472726
+lastmod: 2024-02-19 22:05:16.258893
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res, c'est comme coller des\
   \ mots ensemble pour former des phrases. On la fait pour construire des messages\u2026"

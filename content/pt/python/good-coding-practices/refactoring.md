@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/refactoring/
 date: 2024-01-26 03:37:09.183893-07:00
 description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo de computador\
   \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo.\
   \ Programadores fazem\u2026"
-lastmod: 2024-02-18 23:08:57.769295
+lastmod: 2024-02-19 22:05:05.233029
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo de computador\
   \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo.\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/working-with-xml/
 date: 2024-01-26 04:27:23.179307-07:00
 description: "Arbeid med XML p\xE5 Arduino inneb\xE6rer parsing og manipulering av\
   \ XML-data, som vanligvis kommer fra web-APIer eller konfigurasjonsfiler. Programmerere\
   \ gj\xF8r\u2026"
-lastmod: 2024-02-18 23:08:54.166551
+lastmod: 2024-02-19 22:05:00.354076
 model: gpt-4-0125-preview
 summary: "Arbeid med XML p\xE5 Arduino inneb\xE6rer parsing og manipulering av XML-data,\
   \ som vanligvis kommer fra web-APIer eller konfigurasjonsfiler. Programmerere gj\xF8\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:40.004612-07:00
 description: "\xC5 trekke ut delstrenger inneb\xE6rer \xE5 hente spesifikke deler\
   \ av en streng basert p\xE5 deres posisjoner. Programmerere utf\xF8rer ofte denne\
   \ operasjonen for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.424363
+lastmod: 2024-02-19 22:04:59.533637
 model: gpt-4-0125-preview
 summary: "\xC5 trekke ut delstrenger inneb\xE6rer \xE5 hente spesifikke deler av en\
   \ streng basert p\xE5 deres posisjoner. Programmerere utf\xF8rer ofte denne operasjonen\

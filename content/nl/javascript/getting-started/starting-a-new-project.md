@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:18.042571-07:00
 description: "Een nieuw project starten betekent het opzetten van een verse codebasis\
   \ voor je briljante idee\xEBn. Programmeurs doen dit om concepten om te zetten in\u2026"
-lastmod: 2024-02-18 23:09:02.276644
+lastmod: 2024-02-19 22:05:10.288595
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het opzetten van een verse codebasis\
   \ voor je briljante idee\xEBn. Programmeurs doen dit om concepten om te zetten in\u2026"

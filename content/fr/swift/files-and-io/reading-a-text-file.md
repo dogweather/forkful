@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/swift/reading-a-text-file/
 date: 2024-01-20 17:55:17.497244-07:00
 description: "La lecture de fichiers texte consiste \xE0 acc\xE9der au contenu stock\xE9\
   \ dans des fichiers sur le disque pour pouvoir le manipuler ou l'analyser. Les\u2026"
-lastmod: 2024-02-18 23:09:09.228149
+lastmod: 2024-02-19 22:05:16.894916
 model: gpt-4-1106-preview
 summary: "La lecture de fichiers texte consiste \xE0 acc\xE9der au contenu stock\xE9\
   \ dans des fichiers sur le disque pour pouvoir le manipuler ou l'analyser. Les\u2026"

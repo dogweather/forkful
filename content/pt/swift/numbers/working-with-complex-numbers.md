@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/swift/working-with-complex-numbers/
 date: 2024-01-26 04:45:49.161702-07:00
 description: "N\xFAmeros complexos possuem uma parte real e uma imagin\xE1ria (como\
   \ 3 + 4i). Programadores os utilizam no Swift para tarefas como processamento de\
   \ sinais,\u2026"
-lastmod: 2024-02-18 23:08:58.485353
+lastmod: 2024-02-19 22:05:05.977554
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos possuem uma parte real e uma imagin\xE1ria (como 3\
   \ + 4i). Programadores os utilizam no Swift para tarefas como processamento de sinais,\u2026"

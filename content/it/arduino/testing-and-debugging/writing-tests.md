@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/arduino/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:32.962186-07:00
 description: "Scrivere test nell'ambiente Arduino si riferisce al processo di creazione\
   \ di test automatizzati che validano la funzionalit\xE0 del tuo codice su dispositivi\u2026"
-lastmod: 2024-02-18 23:08:56.136675
+lastmod: 2024-02-19 22:05:02.761914
 model: gpt-4-0125-preview
 summary: "Scrivere test nell'ambiente Arduino si riferisce al processo di creazione\
   \ di test automatizzati che validano la funzionalit\xE0 del tuo codice su dispositivi\u2026"

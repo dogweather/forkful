@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/go/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:37.060729-07:00
 description: "Das Extrahieren von Teilzeichenketten beinhaltet das Abrufen spezifischer\
   \ Teile einer Zeichenkette basierend auf ihren Positionen. Programmierer f\xFChren\u2026"
-lastmod: 2024-02-18 23:09:04.350542
+lastmod: 2024-02-19 22:05:12.320419
 model: gpt-4-0125-preview
 summary: "Das Extrahieren von Teilzeichenketten beinhaltet das Abrufen spezifischer\
   \ Teile einer Zeichenkette basierend auf ihren Positionen. Programmierer f\xFChren\u2026"

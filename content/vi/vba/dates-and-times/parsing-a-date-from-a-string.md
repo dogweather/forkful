@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:35.875869-07:00
@@ -8,7 +6,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i 
   \ Visual Basic for Applications (VBA) \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7\
   c chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n bi\u1EC3u di\u1EC5n ng\xE0y th\xE0\
   nh ki\u1EC3u d\u1EEF li\u1EC7u ng\xE0y.\u2026"
-lastmod: 2024-02-18 23:08:50.520120
+lastmod: 2024-02-19 22:04:55.604639
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i trong\
   \ Visual Basic for Applications (VBA) \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:36.994591-07:00
 description: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
   \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\
   \ le flux\u2026"
-lastmod: 2024-02-18 23:09:08.499916
+lastmod: 2024-02-19 22:05:16.283683
 model: gpt-4-0125-preview
 summary: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
   \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\

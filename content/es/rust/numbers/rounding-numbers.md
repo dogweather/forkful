@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/rounding-numbers/
 date: 2024-01-26 03:46:43.869230-07:00
 description: "Redondear n\xFAmeros significa ajustarlos al n\xFAmero entero m\xE1\
   s cercano o a una fracci\xF3n con cierta precisi\xF3n. Los programadores redondean\
   \ n\xFAmeros para\u2026"
-lastmod: 2024-02-18 23:09:09.743433
+lastmod: 2024-02-19 22:05:17.367525
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa ajustarlos al n\xFAmero entero m\xE1s cercano\
   \ o a una fracci\xF3n con cierta precisi\xF3n. Los programadores redondean n\xFA\

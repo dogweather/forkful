@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/haskell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:25.262073-07:00
 description: "Att skriva till standardfel (stderr) i Haskell g\xF6r det m\xF6jligt\
   \ f\xF6r program att skilja sin utdata mellan normala resultat och felmeddelanden.\
   \ Detta \xE4r\u2026"
-lastmod: 2024-02-18 23:08:51.853088
+lastmod: 2024-02-19 22:04:57.192609
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Haskell g\xF6r det m\xF6jligt f\xF6\
   r program att skilja sin utdata mellan normala resultat och felmeddelanden. Detta\

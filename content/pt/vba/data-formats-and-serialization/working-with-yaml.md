@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:23.310552-07:00
 description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9\
   \ Uma Linguagem de Marca\xE7\xE3o), \xE9 uma linguagem de serializa\xE7\xE3o de\
   \ dados leg\xEDvel por humanos,\u2026"
-lastmod: 2024-02-18 23:08:57.996777
+lastmod: 2024-02-19 22:05:05.471851
 model: gpt-4-0125-preview
 summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9 Uma\
   \ Linguagem de Marca\xE7\xE3o), \xE9 uma linguagem de serializa\xE7\xE3o de dados\

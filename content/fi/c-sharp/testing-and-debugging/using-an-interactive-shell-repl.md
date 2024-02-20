@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/c-sharp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:22.205288-07:00
 description: "REPL eli Lue-Arvo-Tulosta Silmukka antaa sinun kirjoittaa C#-koodia\
   \ ja suorittaa sit\xE4 vuorovaikutteisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ nopeisiin\u2026"
-lastmod: 2024-02-18 23:09:07.622444
+lastmod: 2024-02-19 22:05:15.468071
 model: gpt-4-0125-preview
 summary: "REPL eli Lue-Arvo-Tulosta Silmukka antaa sinun kirjoittaa C#-koodia ja suorittaa\
   \ sit\xE4 vuorovaikutteisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 nopeisiin\u2026"

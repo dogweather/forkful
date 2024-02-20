@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/java/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:52.986340-07:00
 description: "Pobranie bie\u017C\u0105cej daty w Java to podstawowa operacja, kt\xF3\
   ra pozwala programistom manipulowa\u0107 obiektami dat do operacji takich jak logowanie,\
   \ obliczenia\u2026"
-lastmod: 2024-02-18 23:08:49.488371
+lastmod: 2024-02-19 22:04:54.417792
 model: gpt-4-0125-preview
 summary: "Pobranie bie\u017C\u0105cej daty w Java to podstawowa operacja, kt\xF3ra\
   \ pozwala programistom manipulowa\u0107 obiektami dat do operacji takich jak logowanie,\

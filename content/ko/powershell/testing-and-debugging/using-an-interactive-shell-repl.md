@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:52.796677-07:00
 description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 Read-Eval-Print\
   \ Loop (REPL)\uC740 PowerShell \uBA85\uB839\uC5B4\uB97C \uC785\uB825\uD558\uACE0\
@@ -10,7 +8,7 @@ description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 Read-Eval-Prin
   \uD558\uAC70\uB098, \uB514\uBC84\uAE45\uD558\uAC70\uB098, \uC804\uCCB4 \uC2A4\uD06C\
   \uB9BD\uD2B8\uB97C \uC791\uC131\uD558\uC9C0 \uC54A\uACE0 \uC0C8 \uBA85\uB839\uC5B4\
   \uB97C \uD559\uC2B5\uD560\u2026"
-lastmod: 2024-02-18 23:09:06.556885
+lastmod: 2024-02-19 22:05:14.462602
 model: gpt-4-0125-preview
 summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 Read-Eval-Print Loop\
   \ (REPL)\uC740 PowerShell \uBA85\uB839\uC5B4\uB97C \uC785\uB825\uD558\uACE0 \uC989\

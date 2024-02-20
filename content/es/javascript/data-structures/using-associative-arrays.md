@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:39.547055-07:00
 description: "Los arreglos asociativos, o como se conocen m\xE1s precisamente en JavaScript,\
   \ objetos, te permiten mapear claves a valores. Esto es extremadamente \xFAtil\u2026"
-lastmod: 2024-02-18 23:09:10.396913
+lastmod: 2024-02-19 22:05:17.955893
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o como se conocen m\xE1s precisamente en JavaScript,\
   \ objetos, te permiten mapear claves a valores. Esto es extremadamente \xFAtil\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:38.053732-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa Google Apps Script\
   \ -koodisi rakenteen j\xE4rjest\xE4mist\xE4 erottamalla loogiset osat toisistaan\
   \ selv\xE4sti erottuviksi\u2026"
-lastmod: 2024-02-18 23:09:07.141918
+lastmod: 2024-02-19 22:05:15.018813
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa Google Apps Script -koodisi\
   \ rakenteen j\xE4rjest\xE4mist\xE4 erottamalla loogiset osat toisistaan selv\xE4\

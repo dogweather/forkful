@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/cpp/interpolating-a-string/
 date: 2024-01-20 17:50:32.680269-07:00
 description: "L'interpolation de cha\xEEne permet d'ins\xE9rer des variables ou des\
   \ expressions dans une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent\
   \ pour construire\u2026"
-lastmod: 2024-02-18 23:09:09.145033
+lastmod: 2024-02-19 22:05:16.820188
 model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEne permet d'ins\xE9rer des variables ou des expressions\
   \ dans une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent pour construire\u2026"

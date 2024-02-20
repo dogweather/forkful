@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/javascript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:17.934729-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) JavaScriptiss\xE4 ovat malleja,\
   \ joita k\xE4ytet\xE4\xE4n merkkijonoissa merkkiyhdistelmien etsimiseen. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.024967
+lastmod: 2024-02-19 22:05:15.834567
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) JavaScriptiss\xE4 ovat malleja,\
   \ joita k\xE4ytet\xE4\xE4n merkkijonoissa merkkiyhdistelmien etsimiseen. Ohjelmoijat\

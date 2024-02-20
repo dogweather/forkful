@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/getting-the-current-date/
 date: 2024-02-03 19:02:48.540827-07:00
 description: "In programming, getting the current date is a fundamental task that\
   \ enables developers to access, display, or manipulate the current date within their\u2026"
-lastmod: 2024-02-18 23:09:11.023449
+lastmod: 2024-02-19 22:05:18.525691
 model: gpt-4-0125-preview
 summary: "In programming, getting the current date is a fundamental task that enables\
   \ developers to access, display, or manipulate the current date within their\u2026"

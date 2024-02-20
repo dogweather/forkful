@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:06.434955-07:00
 description: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 d\xE9terminer\
   \ une date sp\xE9cifique en ajoutant ou en soustrayant un certain nombre de jours,\
   \ de mois ou\u2026"
-lastmod: 2024-02-18 23:09:09.371921
+lastmod: 2024-02-19 22:05:17.037366
 model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 d\xE9terminer\
   \ une date sp\xE9cifique en ajoutant ou en soustrayant un certain nombre de jours,\

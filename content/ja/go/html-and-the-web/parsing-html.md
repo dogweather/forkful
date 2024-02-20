@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/go/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:46.466731-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.477619
+lastmod: 2024-02-19 22:05:00.650572
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "HTML\u306E\u89E3\u6790"

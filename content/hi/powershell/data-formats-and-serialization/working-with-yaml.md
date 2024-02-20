@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:02.629868-07:00
@@ -13,7 +11,7 @@ description: "YAML, \u091C\u093F\u0938\u0947 YAML Ain't Markup Language \u0915\u
   \u093C\u093F\u0917\u0930\u0947\u0936\u0928 \u092B\u093E\u0907\u0932\u094B\u0902\
   \ \u0914\u0930 \u092D\u093E\u0937\u093E\u0913\u0902 \u0915\u0947 \u092C\u0940\u091A\
   \u2026"
-lastmod: 2024-02-18 23:09:03.775581
+lastmod: 2024-02-19 22:05:11.760595
 model: gpt-4-0125-preview
 summary: "YAML, \u091C\u093F\u0938\u0947 YAML Ain't Markup Language \u0915\u0939\u093E\
   \ \u091C\u093E\u0924\u093E \u0939\u0948, \u090F\u0915 \u092E\u093E\u0928\u0935-\u092A\

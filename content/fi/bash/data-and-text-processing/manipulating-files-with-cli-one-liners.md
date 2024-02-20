@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:19.902608-07:00
 description: "Tiedostojen k\xE4sittely komentorivilt\xE4 (CLI, Command Line Interface)\
   \ yksirivisill\xE4 komennoilla tarkoittaa Bash-skriptien tai -komentojen k\xE4ytt\xF6\
   \xE4\u2026"
-lastmod: 2024-02-18 23:09:07.798809
+lastmod: 2024-02-19 22:05:15.629836
 model: gpt-4-0125-preview
 summary: "Tiedostojen k\xE4sittely komentorivilt\xE4 (CLI, Command Line Interface)\
   \ yksirivisill\xE4 komennoilla tarkoittaa Bash-skriptien tai -komentojen k\xE4ytt\xF6\

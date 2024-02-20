@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/downloading-a-web-page/
 date: 2024-01-20 17:44:43.398325-07:00
 description: "Ladataan web-sivu Pythonilla tarkoittaa sen sis\xE4ll\xF6n noutamista\
   \ internetist\xE4. Koodarit tekev\xE4t t\xE4t\xE4 datan analysointiin, sis\xE4ll\xF6\
   n ker\xE4\xE4miseen tai\u2026"
-lastmod: 2024-02-18 23:09:07.182319
+lastmod: 2024-02-19 22:05:15.056067
 model: gpt-4-1106-preview
 summary: "Ladataan web-sivu Pythonilla tarkoittaa sen sis\xE4ll\xF6n noutamista internetist\xE4\
   . Koodarit tekev\xE4t t\xE4t\xE4 datan analysointiin, sis\xE4ll\xF6n ker\xE4\xE4\

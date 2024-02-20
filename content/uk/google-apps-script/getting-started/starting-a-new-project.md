@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/google-apps-script/starting-a-new-project/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:53.296836-07:00
@@ -11,7 +9,7 @@ description: "\u041F\u043E\u0447\u0430\u0442\u043E\u043A \u043D\u043E\u0432\u043
   \u0443 \u0441\u043A\u0440\u0438\u043F\u0442\u0430 \u0432 \u0435\u043A\u043E\u0441\
   \u0438\u0441\u0442\u0435\u043C\u0456 Google (Google Drive, Docs, Sheets \u0442\u043E\
   \u0449\u043E) \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:08:59.743420
+lastmod: 2024-02-19 22:05:07.581357
 model: gpt-4-0125-preview
 summary: "\u041F\u043E\u0447\u0430\u0442\u043E\u043A \u043D\u043E\u0432\u043E\u0433\
   \u043E \u043F\u0440\u043E\u0435\u043A\u0442\u0443 \u0432 Google Apps Script (GAS)\

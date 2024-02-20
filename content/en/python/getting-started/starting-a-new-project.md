@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/python/starting-a-new-project/
 date: 2024-01-20 18:04:06.901675-07:00
 description: "Starting a new project is all about creating a fresh directory with\
   \ files set up for your new code adventure. It's like breaking ground on a building\
   \ site\u2026"
-lastmod: 2024-02-18 23:09:10.681994
+lastmod: 2024-02-19 22:05:18.215873
 model: gpt-4-1106-preview
 summary: "Starting a new project is all about creating a fresh directory with files\
   \ set up for your new code adventure. It's like breaking ground on a building site\u2026"

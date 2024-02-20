@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/rust/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:37.425892-07:00
@@ -13,7 +11,7 @@ description: "CSV (Comma-Separated Values) \u092B\u093C\u093E\u0907\u0932\u094B\
   \u093E \u0914\u0930 \u0909\u0928\u092E\u0947\u0902 \u0932\u093F\u0916\u0928\u093E\
   \ \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930\
   \ \u0910\u0938\u093E\u2026"
-lastmod: 2024-02-18 23:09:02.997472
+lastmod: 2024-02-19 22:05:10.995175
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) \u092B\u093C\u093E\u0907\u0932\u094B\u0902\
   \ \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E \u092E\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/lua/using-a-debugger/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:32.237200-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u0442\u043B\u0430\u0434\u0447\u0438\u043A - \u044D\u0442\u0
   \u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u043C\u043E\u043C\u0435\u043D\u0442\
   \u043E\u0432, \u0433\u0434\u0435 \u0447\u0442\u043E-\u0442\u043E \u0438\u0434\u0435\
   \u0442 \u043D\u0435 \u0442\u0430\u043A.\u2026"
-lastmod: 2024-02-18 23:08:57.156046
+lastmod: 2024-02-19 22:05:04.261589
 model: gpt-4-0125-preview
 summary: "\u041E\u0442\u043B\u0430\u0434\u0447\u0438\u043A - \u044D\u0442\u043E \u0438\
   \u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442, \u043F\u043E\u0437\u0432\

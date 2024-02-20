@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/arduino/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:39.648708-07:00
 description: "Nel contesto della programmazione Arduino, verificare se una directory\
   \ esiste su una scheda SD o su un modulo di memoria simile consente di leggere o\u2026"
-lastmod: 2024-02-18 23:08:56.147096
+lastmod: 2024-02-19 22:05:02.773916
 model: gpt-4-0125-preview
 summary: "Nel contesto della programmazione Arduino, verificare se una directory esiste\
   \ su una scheda SD o su un modulo di memoria simile consente di leggere o\u2026"

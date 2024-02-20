@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/refactoring/
 date: 2024-01-26 01:17:06.673610-07:00
 description: "Refatora\xE7\xE3o \xE9 o processo de alterar a estrutura interna de\
   \ um programa de computador sem alterar seu comportamento externo. Os programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.457853
+lastmod: 2024-02-19 22:05:05.948428
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de alterar a estrutura interna de um programa\
   \ de computador sem alterar seu comportamento externo. Os programadores fazem isso\u2026"

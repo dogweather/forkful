@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:52.828225-07:00
 description: "Reguliere expressies (regex) zijn patronen die worden gebruikt om karaktercombinaties\
   \ in tekst te vinden. Programmeurs gebruiken ze voor het zoeken,\u2026"
-lastmod: 2024-02-18 23:09:01.701766
+lastmod: 2024-02-19 22:05:09.722406
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) zijn patronen die worden gebruikt om karaktercombinaties\
   \ in tekst te vinden. Programmeurs gebruiken ze voor het zoeken,\u2026"

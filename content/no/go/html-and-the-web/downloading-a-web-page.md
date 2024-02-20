@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:06.302738-07:00
 description: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5\
   \ en nettside via HTTP/HTTPS-protokollen. Programmerere gj\xF8r ofte dette for web\
   \ scraping,\u2026"
-lastmod: 2024-02-18 23:08:53.434513
+lastmod: 2024-02-19 22:04:59.544957
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5 en\
   \ nettside via HTTP/HTTPS-protokollen. Programmerere gj\xF8r ofte dette for web\

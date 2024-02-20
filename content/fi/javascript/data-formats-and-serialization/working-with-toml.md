@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/working-with-toml/
 date: 2024-01-26 04:23:29.312415-07:00
 description: "TOML, lyhenne sanoista Tom\u2019s Obvious, Minimal Language, m\xE4\xE4\
   rittelee, miten konfiguraatiotiedostot rakennetaan. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t TOML:\xE4\xE4, koska se on\u2026"
-lastmod: 2024-02-18 23:09:08.061483
+lastmod: 2024-02-19 22:05:15.868104
 model: gpt-4-0125-preview
 summary: "TOML, lyhenne sanoista Tom\u2019s Obvious, Minimal Language, m\xE4\xE4rittelee,\
   \ miten konfiguraatiotiedostot rakennetaan. Ohjelmoijat k\xE4ytt\xE4v\xE4t TOML:\xE4\

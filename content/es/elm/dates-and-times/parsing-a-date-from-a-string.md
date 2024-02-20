@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/elm/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:01.758356-07:00
 description: "Analizar una fecha de una cadena en Elm implica convertir informaci\xF3\
   n textual que representa fechas y horas en un formato que Elm pueda entender y\u2026"
-lastmod: 2024-02-18 23:09:09.901038
+lastmod: 2024-02-19 22:05:17.511071
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena en Elm implica convertir informaci\xF3\
   n textual que representa fechas y horas en un formato que Elm pueda entender y\u2026"

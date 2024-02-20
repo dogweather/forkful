@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/ruby/comparing-two-dates/
 date: 2024-01-20 17:33:50.793272-07:00
 description: "Comparer deux dates en Ruby permet de d\xE9terminer laquelle est ant\xE9\
   rieure ou post\xE9rieure, ou bien si elles sont identiques. C'est crucial pour des\u2026"
-lastmod: 2024-02-18 23:09:09.420895
+lastmod: 2024-02-19 22:05:17.082479
 model: gpt-4-1106-preview
 summary: "Comparer deux dates en Ruby permet de d\xE9terminer laquelle est ant\xE9\
   rieure ou post\xE9rieure, ou bien si elles sont identiques. C'est crucial pour des\u2026"

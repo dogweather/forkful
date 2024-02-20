@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/creating-a-temporary-file/
 date: 2024-01-20 17:40:31.765207-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr\
   \ kurzzeitige Nutzung zu generieren, die typischerweise nach Gebrauch gel\xF6scht\
   \ wird.\u2026"
-lastmod: 2024-02-18 23:09:05.299399
+lastmod: 2024-02-19 22:05:13.223346
 model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr kurzzeitige\
   \ Nutzung zu generieren, die typischerweise nach Gebrauch gel\xF6scht wird.\u2026"

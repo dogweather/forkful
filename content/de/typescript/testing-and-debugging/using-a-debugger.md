@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/typescript/using-a-debugger/
 date: 2024-01-26 04:10:51.168303-07:00
 description: "Ein Debugger ist ein Werkzeug, das es Ihnen erm\xF6glicht, die inneren\
   \ Abl\xE4ufe Ihres Codes w\xE4hrend der Ausf\xFChrung zu untersuchen und zu \xE4\
   ndern. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.601575
+lastmod: 2024-02-19 22:05:12.559196
 model: gpt-4-0125-preview
 summary: "Ein Debugger ist ein Werkzeug, das es Ihnen erm\xF6glicht, die inneren Abl\xE4\
   ufe Ihres Codes w\xE4hrend der Ausf\xFChrung zu untersuchen und zu \xE4ndern. Programmierer\u2026"

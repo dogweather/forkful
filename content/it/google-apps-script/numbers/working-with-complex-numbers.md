@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:39.634245-07:00
 description: "I numeri complessi, rappresentati come una combinazione di unit\xE0\
   \ reali e immaginarie (ad es., 3 + 4i), sono fondamentali in vari problemi computazionali,\u2026"
-lastmod: 2024-02-18 23:08:55.471018
+lastmod: 2024-02-19 22:05:02.054331
 model: gpt-4-0125-preview
 summary: "I numeri complessi, rappresentati come una combinazione di unit\xE0 reali\
   \ e immaginarie (ad es., 3 + 4i), sono fondamentali in vari problemi computazionali,\u2026"

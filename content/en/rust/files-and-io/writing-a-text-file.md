@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/writing-a-text-file/
 date: 2024-02-03 19:03:20.005037-07:00
 description: "Writing a text file in Rust involves creating, writing to, and potentially\
   \ appending data to a file on the file system. Programmers perform this operation\u2026"
-lastmod: 2024-02-18 23:09:10.866665
+lastmod: 2024-02-19 22:05:18.381797
 model: gpt-4-0125-preview
 summary: "Writing a text file in Rust involves creating, writing to, and potentially\
   \ appending data to a file on the file system. Programmers perform this operation\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/powershell/using-a-debugger/
 date: 2024-01-26 04:09:01.050958-07:00
 description: "Debuggerin k\xE4ytt\xF6 tarkoittaa katkaisukohtien asettamista, koodin\
   \ l\xE4pik\xE4ynti\xE4 askel askeleelta, muuttujien tarkkailua ja ohjelman tilan\
   \ tarkastelua sen\u2026"
-lastmod: 2024-02-18 23:09:07.858220
+lastmod: 2024-02-19 22:05:15.682894
 model: gpt-4-0125-preview
 summary: "Debuggerin k\xE4ytt\xF6 tarkoittaa katkaisukohtien asettamista, koodin l\xE4\
   pik\xE4ynti\xE4 askel askeleelta, muuttujien tarkkailua ja ohjelman tilan tarkastelua\

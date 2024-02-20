@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/javascript/reading-command-line-arguments/
 date: 2024-01-20 17:56:21.650107-07:00
 description: "JavaScript\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\uFF0C\u5C31\
   \u662F\u83B7\u53D6\u5728\u7EC8\u7AEF\u8FD0\u884C\u811A\u672C\u65F6\u4F20\u5165\u7684\
@@ -8,7 +6,7 @@ description: "JavaScript\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\uFF0C\u
   \u8BA9\u7A0B\u5E8F\u66F4\u7075\u6D3B\uFF0C\u53EF\u6839\u636E\u4E0D\u540C\u7684\u53C2\
   \u6570\u6267\u884C\u4E0D\u540C\u7684\u4EFB\u52A1\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.493302
+lastmod: 2024-02-19 22:05:07.285954
 model: gpt-4-1106-preview
 summary: "JavaScript\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\uFF0C\u5C31\u662F\
   \u83B7\u53D6\u5728\u7EC8\u7AEF\u8FD0\u884C\u811A\u672C\u65F6\u4F20\u5165\u7684\u989D\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/elixir/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:19.288186-07:00
@@ -9,7 +7,7 @@ description: "\u5728Elixir\u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA
   \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4FDD\u8BC1\u8D28\u91CF\
   \uFF0C\u9632\u6B62\u56DE\u5F52\uFF0C\u5E76\u4FC3\u8FDB\u4EE3\u7801\u91CD\u6784\uFF0C\
   \u4F7F\u5F00\u53D1\u8FC7\u7A0B\u66F4\u52A0\u53EF\u9760\u548C\u9AD8\u6548\u3002"
-lastmod: 2024-02-18 23:08:58.869066
+lastmod: 2024-02-19 22:05:06.440677
 model: gpt-4-0125-preview
 summary: "\u5728Elixir\u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA\u81EA\
   \u52A8\u5316\u811A\u672C\u6765\u9A8C\u8BC1\u60A8\u7684\u4EE3\u7801\u7684\u884C\u4E3A\

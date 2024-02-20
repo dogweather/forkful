@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:57.407788-07:00
 description: "Werken met XML omvat het manipuleren en toegang krijgen tot gegevens\
   \ gestructureerd in de eXtensible Markup Language. Programmeurs werken met XML om\u2026"
-lastmod: 2024-02-18 23:09:02.118619
+lastmod: 2024-02-19 22:05:10.138634
 model: gpt-4-0125-preview
 summary: "Werken met XML omvat het manipuleren en toegang krijgen tot gegevens gestructureerd\
   \ in de eXtensible Markup Language. Programmeurs werken met XML om\u2026"

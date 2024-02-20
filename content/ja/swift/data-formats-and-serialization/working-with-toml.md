@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/swift/working-with-toml/
 date: 2024-01-26 04:26:45.459149-07:00
 description: "TOML\uFF08Tom's Obvious, Minimal Language\uFF09\u306F\u3001\u305D\u306E\
   \u660E\u5FEB\u306A\u30BB\u30DE\u30F3\u30C6\u30A3\u30AF\u30B9\u306E\u304A\u304B\u3052\
@@ -10,7 +8,7 @@ description: "TOML\uFF08Tom's Obvious, Minimal Language\uFF09\u306F\u3001\u305D\
   \u8AAD\u6027\u3068\u6A5F\u68B0\u306B\u3088\u308B\u7C21\u5358\u306A\u89E3\u6790\u304C\
   \u9375\u3068\u306A\u308B\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u306BTOML\u3092\u4F7F\
   \u7528\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.251622
+lastmod: 2024-02-19 22:05:01.758537
 model: gpt-4-0125-preview
 summary: "TOML\uFF08Tom's Obvious, Minimal Language\uFF09\u306F\u3001\u305D\u306E\u660E\
   \u5FEB\u306A\u30BB\u30DE\u30F3\u30C6\u30A3\u30AF\u30B9\u306E\u304A\u304B\u3052\u3067\

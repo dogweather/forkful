@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/kotlin/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:25.717251-07:00
 description: "Regulj\xE4ra uttryck (regex) \xE4r ett kraftfullt verktyg f\xF6r textbearbetning,\
   \ som m\xF6jligg\xF6r f\xF6r programmerare att s\xF6ka, matcha och manipulera textstr\xE4\
   ngar med\u2026"
-lastmod: 2024-02-18 23:08:51.740252
+lastmod: 2024-02-19 22:04:57.074701
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) \xE4r ett kraftfullt verktyg f\xF6r textbearbetning,\
   \ som m\xF6jligg\xF6r f\xF6r programmerare att s\xF6ka, matcha och manipulera textstr\xE4\

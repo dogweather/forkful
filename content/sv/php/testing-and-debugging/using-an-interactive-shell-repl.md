@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/php/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:05.962961-07:00
 description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig\
   \ skriva och k\xF6ra PHP-kod p\xE5 flygande fot. Det \xE4r idealiskt f\xF6r experiment,\
   \ fels\xF6kning\u2026"
-lastmod: 2024-02-18 23:08:51.879838
+lastmod: 2024-02-19 22:04:57.222084
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig skriva\
   \ och k\xF6ra PHP-kod p\xE5 flygande fot. Det \xE4r idealiskt f\xF6r experiment,\

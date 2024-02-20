@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elm/concatenating-strings/
 date: 2024-01-20 17:34:34.275788-07:00
 description: "String-Konkatenierung ist das Zusammenf\xFCgen von zwei oder mehreren\
   \ Textst\xFCcken zu einem einzigen String. Programmierer nutzen das, um dynamische\u2026"
-lastmod: 2024-02-18 23:09:04.773066
+lastmod: 2024-02-19 22:05:12.722102
 model: gpt-4-1106-preview
 summary: "String-Konkatenierung ist das Zusammenf\xFCgen von zwei oder mehreren Textst\xFC\
   cken zu einem einzigen String. Programmierer nutzen das, um dynamische\u2026"

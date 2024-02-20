@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:10.651349-07:00
 description: "Das L\xF6schen von Zeichen, die einem spezifischen Muster in Strings\
   \ in C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die\u2026"
-lastmod: 2024-02-18 23:09:05.354645
+lastmod: 2024-02-19 22:05:13.275618
 model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem spezifischen Muster in Strings in\
   \ C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:23.794694-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng C bao g\u1ED3m vi\u1EC7c tru
   \ c\u1EADp tr\u1EF1c ti\u1EBFp v\xE0o n\u1ED9i dung c\u1EE7a m\u1ED9t trang web\
   \ tr\xEAn internet v\xE0 l\u01B0u n\xF3 t\u1EA1i m\xE1y c\u1EE5c b\u1ED9 \u0111\u1EC3\
   \ x\u1EED l\xFD ho\u1EB7c s\u1EED d\u1EE5ng ngo\u1EA1i\u2026"
-lastmod: 2024-02-18 23:08:51.232849
+lastmod: 2024-02-19 22:04:56.503376
 model: gpt-4-0125-preview
 summary: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng C bao g\u1ED3m vi\u1EC7c truy c\u1EAD\
   p tr\u1EF1c ti\u1EBFp v\xE0o n\u1ED9i dung c\u1EE7a m\u1ED9t trang web tr\xEAn internet\

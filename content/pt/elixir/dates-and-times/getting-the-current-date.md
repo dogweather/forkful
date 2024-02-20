@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pt/elixir/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
@@ -8,7 +6,7 @@ date: 2024-02-03 19:09:25.137812-07:00
 description: "Obter a data atual em Elixir envolve acessar as informa\xE7\xF5es de\
   \ data e hora do sistema, uma tarefa comum para registro em log, marca\xE7\xE3o\
   \ de data ou qualquer\u2026"
-lastmod: 2024-02-18 23:08:57.854191
+lastmod: 2024-02-19 22:05:05.324792
 model: gpt-4-0125-preview
 summary: "Obter a data atual em Elixir envolve acessar as informa\xE7\xF5es de data\
   \ e hora do sistema, uma tarefa comum para registro em log, marca\xE7\xE3o de data\

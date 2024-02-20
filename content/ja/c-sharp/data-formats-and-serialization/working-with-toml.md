@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c-sharp/working-with-toml/
 date: 2024-01-26 04:20:32.055725-07:00
 description: "TOML\u306FTom's Obvious, Minimal Language\u306E\u7565\u3067\u3001\u305D\
   \u306E\u660E\u5FEB\u306A\u30BB\u30DE\u30F3\u30C6\u30A3\u30AF\u30B9\u306E\u304A\u304B\
@@ -11,7 +9,7 @@ description: "TOML\u306FTom's Obvious, Minimal Language\u306E\u7565\u3067\u3001\
   \u53EF\u8AAD\u6027\u3068\u30DE\u30B7\u30F3\u306E\u89E3\u6790\u53EF\u80FD\u6027\u306E\
   \u9593\u306E\u30D0\u30E9\u30F3\u30B9\u3092\u53D6\u308B\u305F\u3081\u306B\u5229\u7528\
   \u3057\u3066\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.938953
+lastmod: 2024-02-19 22:05:01.301981
 model: gpt-4-0125-preview
 summary: "TOML\u306FTom's Obvious, Minimal Language\u306E\u7565\u3067\u3001\u305D\u306E\
   \u660E\u5FEB\u306A\u30BB\u30DE\u30F3\u30C6\u30A3\u30AF\u30B9\u306E\u304A\u304B\u3052\

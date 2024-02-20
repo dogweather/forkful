@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:06.288146-07:00
 description: "Att ladda ner en webbsida i Google Apps Script inneb\xE4r att h\xE4\
   mta inneh\xE5llet p\xE5 en webbsida via HTML f\xF6r olika \xE4ndam\xE5l, s\xE5som\
   \ webbskrapning, dataextraktion\u2026"
-lastmod: 2024-02-18 23:08:51.377061
+lastmod: 2024-02-19 22:04:56.673171
 model: gpt-4-0125-preview
 summary: "Att ladda ner en webbsida i Google Apps Script inneb\xE4r att h\xE4mta inneh\xE5\
   llet p\xE5 en webbsida via HTML f\xF6r olika \xE4ndam\xE5l, s\xE5som webbskrapning,\

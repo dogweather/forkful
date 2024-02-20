@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/concatenating-strings/
 date: 2024-01-20 17:35:20.507995-07:00
 description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC740 \uC11C\uB85C\
   \ \uB2E4\uB978 \uBB38\uC790\uC5F4\uC744 \uBD99\uC5EC \uD558\uB098\uB85C \uB9CC\uB4DC\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC740 \uC11
   \uB9F7\uD558\uAE30 \uC704\uD574 \uAC1C\uBC1C\uC790\uB4E4\uC774 \uC790\uC8FC \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.538294
+lastmod: 2024-02-19 22:05:14.445130
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC740 \uC11C\uB85C\
   \ \uB2E4\uB978 \uBB38\uC790\uC5F4\uC744 \uBD99\uC5EC \uD558\uB098\uB85C \uB9CC\uB4DC\

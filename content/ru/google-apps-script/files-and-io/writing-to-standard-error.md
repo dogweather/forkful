@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/google-apps-script/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:18.988443-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u04
   \u0431\u043A\u0430\u0445 \u0438 \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\
   \u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\
   \u0446\u0438\u0438 \u0432\u2026"
-lastmod: 2024-02-18 23:08:56.501839
+lastmod: 2024-02-19 22:05:03.202505
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u043D\u0434\
   \u0430\u0440\u0442\u043D\u044B\u0439 \u043F\u043E\u0442\u043E\u043A \u043E\u0448\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/javascript/concatenating-strings/
 date: 2024-01-20 17:35:24.579938-07:00
 description: "La concat\xE9nation de cha\xEEnes est le processus de raccordement de\
   \ deux cha\xEEnes de texte ou plus en une seule. Les programmeurs le font pour construire\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:09.246817
+lastmod: 2024-02-19 22:05:16.912336
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes est le processus de raccordement de deux\
   \ cha\xEEnes de texte ou plus en une seule. Les programmeurs le font pour construire\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c-sharp/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:52.140839-07:00
 description: "Parsing av HTML i programmering inneb\xE6rer \xE5 analysere strukturen\
   \ til et HTML-dokument, noe som gj\xF8r det mulig for deg \xE5 trekke ut, manipulere\
   \ og samhandle\u2026"
-lastmod: 2024-02-18 23:08:53.891576
+lastmod: 2024-02-19 22:05:00.059621
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i programmering inneb\xE6rer \xE5 analysere strukturen til\
   \ et HTML-dokument, noe som gj\xF8r det mulig for deg \xE5 trekke ut, manipulere\

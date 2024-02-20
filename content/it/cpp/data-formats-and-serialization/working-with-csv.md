@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/cpp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:06.992077-07:00
 description: "Lavorare con i file CSV (Comma Separated Values - Valori Separati da\
   \ Virgola) consiste nel processare e manipolare dati memorizzati in un formato di\
   \ testo\u2026"
-lastmod: 2024-02-18 23:08:56.193884
+lastmod: 2024-02-19 22:05:02.824017
 model: gpt-4-0125-preview
 summary: "Lavorare con i file CSV (Comma Separated Values - Valori Separati da Virgola)\
   \ consiste nel processare e manipolare dati memorizzati in un formato di testo\u2026"

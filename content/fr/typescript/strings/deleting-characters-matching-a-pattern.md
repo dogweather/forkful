@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:01.260168-07:00
 description: "Supprimer des caract\xE8res selon un patron, c'est filtrer une cha\xEE\
   ne de caract\xE8res pour en \xE9liminer certains \xE9l\xE9ments. Les programmeurs\
   \ le font pour\u2026"
-lastmod: 2024-02-18 23:09:08.464256
+lastmod: 2024-02-19 22:05:16.251210
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un patron, c'est filtrer une cha\xEEne\
   \ de caract\xE8res pour en \xE9liminer certains \xE9l\xE9ments. Les programmeurs\

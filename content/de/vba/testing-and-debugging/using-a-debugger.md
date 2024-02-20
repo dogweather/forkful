@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/vba/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:59.994039-07:00
 description: "Die Verwendung eines Debuggers in Visual Basic f\xFCr Anwendungen (VBA)\
   \ beinhaltet das schrittweise Ausf\xFChren Ihres Codes, um dessen Ausf\xFChrungsfluss\
   \ und\u2026"
-lastmod: 2024-02-18 23:09:04.694604
+lastmod: 2024-02-19 22:05:12.647454
 model: gpt-4-0125-preview
 summary: "Die Verwendung eines Debuggers in Visual Basic f\xFCr Anwendungen (VBA)\
   \ beinhaltet das schrittweise Ausf\xFChren Ihres Codes, um dessen Ausf\xFChrungsfluss\

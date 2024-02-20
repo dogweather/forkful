@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/haskell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:30.516509-07:00
 description: "Das Umwandeln eines Datums in einen String ist die Darstellung eines\
   \ Datumsobjekts als Text. Programmierer nutzen das, um Datumsangaben nutzerfreundlich\u2026"
-lastmod: 2024-02-18 23:09:04.929446
+lastmod: 2024-02-19 22:05:12.869760
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String ist die Darstellung eines Datumsobjekts\
   \ als Text. Programmierer nutzen das, um Datumsangaben nutzerfreundlich\u2026"

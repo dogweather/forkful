@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/searching-and-replacing-text/
 date: 2024-01-20 17:56:57.507359-07:00
 description: "Teksts\xF8k og -erstattning lar deg finne spesifikke ord eller fraser\
   \ og endre dem til noe annet. Programmerere bruker dette for \xE5 oppdatere kode,\
   \ korrigere\u2026"
-lastmod: 2024-02-18 23:08:54.127154
+lastmod: 2024-02-19 22:05:00.314702
 model: gpt-4-1106-preview
 summary: "Teksts\xF8k og -erstattning lar deg finne spesifikke ord eller fraser og\
   \ endre dem til noe annet. Programmerere bruker dette for \xE5 oppdatere kode, korrigere\u2026"

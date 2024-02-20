@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:39.772151-07:00
 description: "Schrijven naar standaardfout (`stderr`) betekent het uitvoeren van foutmeldingen\
   \ en diagnostiek los van de standaarduitvoer (`stdout`). Programmeurs doen\u2026"
-lastmod: 2024-02-18 23:09:01.963453
+lastmod: 2024-02-19 22:05:09.984987
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (`stderr`) betekent het uitvoeren van foutmeldingen\
   \ en diagnostiek los van de standaarduitvoer (`stdout`). Programmeurs doen\u2026"

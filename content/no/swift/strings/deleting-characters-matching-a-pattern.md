@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/swift/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:02.287182-07:00
 description: "Sletting av tegn som matcher et m\xF8nster er prosessen der vi fjerner\
   \ spesifikke tegn eller sekvenser av tegn fra en streng. Vi gj\xF8r dette for \xE5\
   \ rense data,\u2026"
-lastmod: 2024-02-18 23:08:54.253980
+lastmod: 2024-02-19 22:05:00.400216
 model: gpt-4-1106-preview
 summary: "Sletting av tegn som matcher et m\xF8nster er prosessen der vi fjerner spesifikke\
   \ tegn eller sekvenser av tegn fra en streng. Vi gj\xF8r dette for \xE5 rense data,\u2026"

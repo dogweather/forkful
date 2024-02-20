@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/interpolating-a-string/
 date: 2024-01-20 17:50:20.262992-07:00
 description: "Interpolacja string\xF3w to wstawianie warto\u015Bci zmiennych do \u0142\
   a\u0144cucha tekstowego. Programi\u015Bci robi\u0105 to, \u017Ceby dynamicznie tworzy\u0107\
   \ tekst, na przyk\u0142ad\u2026"
-lastmod: 2024-02-18 23:08:49.768274
+lastmod: 2024-02-19 22:04:54.707110
 model: gpt-4-1106-preview
 summary: "Interpolacja string\xF3w to wstawianie warto\u015Bci zmiennych do \u0142\
   a\u0144cucha tekstowego. Programi\u015Bci robi\u0105 to, \u017Ceby dynamicznie tworzy\u0107\

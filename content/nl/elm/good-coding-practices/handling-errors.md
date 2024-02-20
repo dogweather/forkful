@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:34.674924-07:00
 description: "Foutafhandeling betekent het schrijven van code die kan anticiperen\
   \ op en omgaan met dingen die misgaan. Programmeurs doen dit om crashes te voorkomen,\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:01.767762
+lastmod: 2024-02-19 22:05:09.786345
 model: gpt-4-0125-preview
 summary: "Foutafhandeling betekent het schrijven van code die kan anticiperen op en\
   \ omgaan met dingen die misgaan. Programmeurs doen dit om crashes te voorkomen,\

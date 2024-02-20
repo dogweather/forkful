@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/java/rounding-numbers/
 date: 2024-01-26 03:45:00.207331-07:00
 description: "\xC5 runde av tall betyr \xE5 justere dem til en spesifisert grad av\
   \ presisjon. Programmerere gj\xF8r dette for \xE5 forenkle tall for lesbarhet, for\
   \ \xE5 m\xF8te visse\u2026"
-lastmod: 2024-02-18 23:08:53.766081
+lastmod: 2024-02-19 22:04:59.906147
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 justere dem til en spesifisert grad av presisjon.\
   \ Programmerere gj\xF8r dette for \xE5 forenkle tall for lesbarhet, for \xE5 m\xF8\

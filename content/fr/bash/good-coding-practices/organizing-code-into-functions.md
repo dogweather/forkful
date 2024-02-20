@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/organizing-code-into-functions/
 date: 2024-01-26 01:09:02.789254-07:00
 description: "Diviser le code en fonctions signifie d\xE9composer les scripts en blocs\
   \ plus petits, r\xE9utilisables, qui r\xE9alisent des t\xE2ches sp\xE9cifiques.\
   \ Cela rend le code\u2026"
-lastmod: 2024-02-18 23:09:09.025375
+lastmod: 2024-02-19 22:05:16.710132
 model: gpt-4-1106-preview
 summary: "Diviser le code en fonctions signifie d\xE9composer les scripts en blocs\
   \ plus petits, r\xE9utilisables, qui r\xE9alisent des t\xE2ches sp\xE9cifiques.\

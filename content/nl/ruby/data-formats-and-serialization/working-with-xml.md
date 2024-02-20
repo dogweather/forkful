@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:29.932388-07:00
 description: "Werken met XML betekent het parseren, genereren en manipuleren van XML\
   \ (eXtensible Markup Language) documenten met behulp van code. Programmeurs doen\
   \ dit\u2026"
-lastmod: 2024-02-18 23:09:02.448663
+lastmod: 2024-02-19 22:05:10.452717
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren, genereren en manipuleren van XML (eXtensible\
   \ Markup Language) documenten met behulp van code. Programmeurs doen dit\u2026"

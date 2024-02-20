@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/organizing-code-into-functions/
 date: 2024-01-26 01:11:59.926827-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din\
   \ i gjenbrukbare biter med spesifikke form\xE5l. Vi gj\xF8r det for \xE5 gj\xF8\
   re koden renere, enklere \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.529648
+lastmod: 2024-02-19 22:04:59.648213
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din i gjenbrukbare\
   \ biter med spesifikke form\xE5l. Vi gj\xF8r det for \xE5 gj\xF8re koden renere,\

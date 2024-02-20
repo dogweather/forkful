@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:53.510219-07:00
@@ -8,7 +6,7 @@ description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng G
   \ bao g\u1ED3m vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t kh\xF4ng gian l\xE0m vi\u1EC7\
   c v\xE0 kh\u1EDFi t\u1EA1o n\xF3 v\u1EDBi c\xE1c m\xF4-\u0111un Go c\u1EA7n thi\u1EBF\
   t. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
-lastmod: 2024-02-18 23:08:50.171332
+lastmod: 2024-02-19 22:04:55.167968
 model: gpt-4-0125-preview
 summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng Go bao\
   \ g\u1ED3m vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t kh\xF4ng gian l\xE0m vi\u1EC7\

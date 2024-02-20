@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:44.685815-07:00
 description: "Interaktiva skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig k\xF6\
   ra kod p\xE5 flyget, testa funktioner, algoritmer eller pilla med id\xE9er. De \xE4\
   r kodningens\u2026"
-lastmod: 2024-02-18 23:08:52.166279
+lastmod: 2024-02-19 22:04:57.537815
 model: gpt-4-0125-preview
 summary: "Interaktiva skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig k\xF6\
   ra kod p\xE5 flyget, testa funktioner, algoritmer eller pilla med id\xE9er. De \xE4\

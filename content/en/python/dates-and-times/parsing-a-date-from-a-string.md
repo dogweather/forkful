@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:33.694461-07:00
 description: "Parsing a date from a string involves converting textual date and time\
   \ information into a datetime object or equivalent structured format. This is\u2026"
-lastmod: 2024-02-18 23:09:10.690888
+lastmod: 2024-02-19 22:05:18.223883
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string involves converting textual date and time information\
   \ into a datetime object or equivalent structured format. This is\u2026"

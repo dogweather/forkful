@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/rust/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:54.270225-07:00
 description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet,\
   \ zu einem gegebenen Datum eine bestimmte Zeitdauer hinzuzuf\xFCgen oder abzuziehen.\u2026"
-lastmod: 2024-02-18 23:09:04.655772
+lastmod: 2024-02-19 22:05:12.610407
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet, zu\
   \ einem gegebenen Datum eine bestimmte Zeitdauer hinzuzuf\xFCgen oder abzuziehen.\u2026"

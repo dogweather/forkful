@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:39.831106-07:00
 description: "Le espressioni regolari (regex) sono pattern utilizzati per abbinare\
   \ combinazioni di caratteri in stringhe. I programmatori le utilizzano per cercare,\u2026"
-lastmod: 2024-02-18 23:08:55.466908
+lastmod: 2024-02-19 22:05:02.049942
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) sono pattern utilizzati per abbinare combinazioni\
   \ di caratteri in stringhe. I programmatori le utilizzano per cercare,\u2026"

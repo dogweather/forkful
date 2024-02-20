@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c-sharp/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:18.961038-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong C# b
   \ g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3\
   \ \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\xE3 x\xE1c \u0111\
   \u1ECBnh. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng c\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.693597
+lastmod: 2024-02-19 22:04:55.825331
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong C# bao g\u1ED3\
   m vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3 \u0111\

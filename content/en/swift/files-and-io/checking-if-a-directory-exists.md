@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/checking-if-a-directory-exists/
 date: 2024-02-03 19:02:41.389086-07:00
 description: "Checking if a directory exists in the filesystem is essential for managing\
   \ file structures from within your Swift applications. This task enables\u2026"
-lastmod: 2024-02-18 23:09:11.410736
+lastmod: 2024-02-19 22:05:18.870564
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in the filesystem is essential for managing\
   \ file structures from within your Swift applications. This task enables\u2026"

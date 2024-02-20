@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/lua/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:34.984319-07:00
 description: "L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati\
   \ e informazioni dai documenti HTML, che \xE8 cruciale per il web scraping, l'analisi\
   \ dei\u2026"
-lastmod: 2024-02-18 23:08:56.008643
+lastmod: 2024-02-19 22:05:02.623807
 model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati e informazioni\
   \ dai documenti HTML, che \xE8 cruciale per il web scraping, l'analisi dei\u2026"

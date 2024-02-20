@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:22.756164-07:00
 description: "Een HTTP-verzoek versturen is de handeling van het vragen om data of\
   \ actie aan een webserver. Programmeurs doen dit om te interacteren met API's,\u2026"
-lastmod: 2024-02-18 23:09:01.895332
+lastmod: 2024-02-19 22:05:09.919334
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen is de handeling van het vragen om data of actie\
   \ aan een webserver. Programmeurs doen dit om te interacteren met API's,\u2026"

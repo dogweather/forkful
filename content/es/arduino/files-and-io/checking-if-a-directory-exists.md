@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/arduino/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:44.363836-07:00
 description: "En el contexto de la programaci\xF3n en Arduino, comprobar si un directorio\
   \ existe en una tarjeta SD o m\xF3dulo de almacenamiento similar te permite leer\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:10.276557
+lastmod: 2024-02-19 22:05:17.853090
 model: gpt-4-0125-preview
 summary: "En el contexto de la programaci\xF3n en Arduino, comprobar si un directorio\
   \ existe en una tarjeta SD o m\xF3dulo de almacenamiento similar te permite leer\

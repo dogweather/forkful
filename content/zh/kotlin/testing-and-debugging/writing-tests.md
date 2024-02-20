@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/kotlin/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:11.589756-07:00
@@ -11,7 +9,7 @@ description: "\u5728 Kotlin \u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u5230\u7F
   \u65E9\u53D1\u73B0\u9519\u8BEF\uFF0C\u4FBF\u4E8E\u4EE3\u7801\u91CD\u6784\uFF0C\u5E76\
   \u4E14\u63D0\u4F9B\u6709\u5173\u8F6F\u4EF6\u7EC4\u4EF6\u9884\u671F\u5DE5\u4F5C\u65B9\
   \u5F0F\u7684\u6587\u6863\u3002"
-lastmod: 2024-02-18 23:08:59.098360
+lastmod: 2024-02-19 22:05:06.754032
 model: gpt-4-0125-preview
 summary: "\u5728 Kotlin \u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u5230\u7F16\u5199\
   \u80FD\u591F\u81EA\u52A8\u9A8C\u8BC1\u8F6F\u4EF6\u6A21\u5757\u529F\u80FD\u6B63\u786E\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/go/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:04.417003-07:00
 description: "Konvertering av en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
   \ som muliggj\xF8r uniformitet og konsistens i tekstbehandling, essensielt for\u2026"
-lastmod: 2024-02-18 23:08:53.422257
+lastmod: 2024-02-19 22:04:59.531304
 model: gpt-4-0125-preview
 summary: "Konvertering av en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
   \ som muliggj\xF8r uniformitet og konsistens i tekstbehandling, essensielt for\u2026"

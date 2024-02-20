@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:37.831684-07:00
 description: "Het verzenden van HTTP-verzoeken is een manier om met web servers te\
   \ communiceren door gegevens op te halen of te verzenden naar behoefte. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.322099
+lastmod: 2024-02-19 22:05:10.331097
 model: gpt-4-0125-preview
 summary: "Het verzenden van HTTP-verzoeken is een manier om met web servers te communiceren\
   \ door gegevens op te halen of te verzenden naar behoefte. Programmeurs\u2026"

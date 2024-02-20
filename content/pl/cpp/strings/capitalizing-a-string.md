@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/cpp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:12.375608-07:00
 description: "Kapitalizacja \u0142a\u0144cucha polega na zamianie pierwszego znaku\
   \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli jest\
   \ ona pisana ma\u0142\u0105 liter\u0105, zachowuj\u0105c przy tym\u2026"
-lastmod: 2024-02-18 23:08:49.893413
+lastmod: 2024-02-19 22:04:54.841308
 model: gpt-4-0125-preview
 summary: "Kapitalizacja \u0142a\u0144cucha polega na zamianie pierwszego znaku ka\u017C\
   dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli jest ona pisana\

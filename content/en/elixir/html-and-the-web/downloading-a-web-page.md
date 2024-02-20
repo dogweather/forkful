@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/downloading-a-web-page/
 date: 2024-01-20 17:43:49.455155-07:00
 description: "Downloading a web page means fetching its contents over the internet\u2014\
   essentially, what your browser does. Programmers do this to automate data extraction,\u2026"
-lastmod: 2024-02-18 23:09:10.764415
+lastmod: 2024-02-19 22:05:18.289786
 model: gpt-4-1106-preview
 summary: "Downloading a web page means fetching its contents over the internet\u2014\
   essentially, what your browser does. Programmers do this to automate data extraction,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/elixir/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:15.380096-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDF\
   buchstaben in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern. Es wird oft\
   \ verwendet, um\u2026"
-lastmod: 2024-02-18 23:09:04.538160
+lastmod: 2024-02-19 22:05:12.498598
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDFbuchstaben\
   \ in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern. Es wird oft verwendet,\

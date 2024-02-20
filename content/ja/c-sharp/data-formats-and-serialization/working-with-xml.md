@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c-sharp/working-with-xml/
 date: 2024-01-26 04:28:58.934152-07:00
 description: "XML\uFF08eXtensible Markup Language\uFF09\u306F\u3001\u30C7\u30FC\u30BF\
   \u3092\u8AAD\u307F\u3084\u3059\u3044\u5F62\u5F0F\u3067\u69CB\u9020\u5316\u3059\u308B\
@@ -9,7 +7,7 @@ description: "XML\uFF08eXtensible Markup Language\uFF09\u306F\u3001\u30C7\u30FC\
   \u63DB\u3001\u4ED5\u69D8\u304C\u8981\u6C42\u3059\u308B\u5834\u5408\uFF08SOAP\u3084\
   Web API\u3092\u8003\u3048\u3066\u307F\u3066\u304F\u3060\u3055\u3044\uFF09\u3067\
   XML\u3092\u6271\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.939885
+lastmod: 2024-02-19 22:05:01.303386
 model: gpt-4-0125-preview
 summary: "XML\uFF08eXtensible Markup Language\uFF09\u306F\u3001\u30C7\u30FC\u30BF\u3092\
   \u8AAD\u307F\u3084\u3059\u3044\u5F62\u5F0F\u3067\u69CB\u9020\u5316\u3059\u308B\u3053\

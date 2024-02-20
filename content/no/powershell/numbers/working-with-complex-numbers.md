@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/powershell/working-with-complex-numbers/
 date: 2024-01-26 04:44:14.801756-07:00
 description: "Komplekse tall, de som har en reell del og en imagin\xE6r del (som 3\
   \ + 4i), er essensielle i felt som ingeni\xF8rvitenskap, fysikk og datavitenskap.\u2026"
-lastmod: 2024-02-18 23:08:54.092898
+lastmod: 2024-02-19 22:05:00.278352
 model: gpt-4-0125-preview
 summary: "Komplekse tall, de som har en reell del og en imagin\xE6r del (som 3 + 4i),\
   \ er essensielle i felt som ingeni\xF8rvitenskap, fysikk og datavitenskap.\u2026"

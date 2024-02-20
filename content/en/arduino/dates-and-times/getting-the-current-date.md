@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/getting-the-current-date/
 date: 2024-02-03 19:02:37.384870-07:00
 description: "Getting the current date in Arduino projects involves obtaining real-time\
   \ information that can be crucial for logging, timestamping, or scheduling tasks.\u2026"
-lastmod: 2024-02-18 23:09:11.325337
+lastmod: 2024-02-19 22:05:18.793000
 model: gpt-4-0125-preview
 summary: "Getting the current date in Arduino projects involves obtaining real-time\
   \ information that can be crucial for logging, timestamping, or scheduling tasks.\u2026"

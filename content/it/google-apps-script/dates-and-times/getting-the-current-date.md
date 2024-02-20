@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/google-apps-script/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:24.671694-07:00
 description: "Ottenere la data corrente in Google Apps Script riguarda il recupero\
   \ della data e dell'ora attuali, un compito comune per l'automazione di compiti,\
   \ la\u2026"
-lastmod: 2024-02-18 23:08:55.489275
+lastmod: 2024-02-19 22:05:02.073835
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Google Apps Script riguarda il recupero della\
   \ data e dell'ora attuali, un compito comune per l'automazione di compiti, la\u2026"

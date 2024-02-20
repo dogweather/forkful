@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:16.106858-07:00
 description: "Regular expressions (regulj\xE4ra uttryck) i Java l\xE5ter dig definiera\
   \ specifika m\xF6nster f\xF6r att s\xF6ka, manipulera eller validera str\xE4ngar\
   \ i din kod.\u2026"
-lastmod: 2024-02-18 23:08:51.659956
+lastmod: 2024-02-19 22:04:56.985622
 model: gpt-4-0125-preview
 summary: "Regular expressions (regulj\xE4ra uttryck) i Java l\xE5ter dig definiera\
   \ specifika m\xF6nster f\xF6r att s\xF6ka, manipulera eller validera str\xE4ngar\

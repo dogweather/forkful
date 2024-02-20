@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/logging/
 date: 2024-01-26 01:01:13.907882-07:00
 description: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji i danych wyj\u015B\
   ciowych podczas jej dzia\u0142ania. Programi\u015Bci loguj\u0105, aby diagnozowa\u0107\
   \ b\u0142\u0119dy, monitorowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.616981
+lastmod: 2024-02-19 22:04:54.548871
 model: gpt-4-1106-preview
 summary: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji i danych wyj\u015B\
   ciowych podczas jej dzia\u0142ania. Programi\u015Bci loguj\u0105, aby diagnozowa\u0107\

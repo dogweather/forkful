@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/organizing-code-into-functions/
 date: 2024-01-25 02:59:47.815861-07:00
 description: "Organizing code into functions splits your script into reusable chunks.\
   \ It's all about making your code clean, manageable, and less buggy. Modular code\u2026"
-lastmod: 2024-02-18 23:09:11.571433
+lastmod: 2024-02-19 22:05:19.017654
 model: gpt-4-1106-preview
 summary: "Organizing code into functions splits your script into reusable chunks.\
   \ It's all about making your code clean, manageable, and less buggy. Modular code\u2026"

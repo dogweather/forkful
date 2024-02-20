@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/printing-debug-output/
 date: 2024-01-20 17:53:02.474623-07:00
 description: "Stampare l'output di debug significa visualizzare informazioni per capire\
   \ meglio cosa sta succedendo nel codice. Questa pratica \xE8 fondamentale per\u2026"
-lastmod: 2024-02-18 23:08:55.523745
+lastmod: 2024-02-19 22:05:02.110827
 model: gpt-4-1106-preview
 summary: "Stampare l'output di debug significa visualizzare informazioni per capire\
   \ meglio cosa sta succedendo nel codice. Questa pratica \xE8 fondamentale per\u2026"

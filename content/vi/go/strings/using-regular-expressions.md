@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:38.037501-07:00
@@ -8,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong l\u1EADp tr\xECnh \
   \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao\
   \ t\xE1c chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c m\u1EABu c\u1EE5 th\u1EC3. C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng cho\u2026"
-lastmod: 2024-02-18 23:08:50.158790
+lastmod: 2024-02-19 22:04:55.152017
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong l\u1EADp tr\xECnh \u0111\u01B0\
   \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao t\xE1\

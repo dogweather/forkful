@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/fish-shell/working-with-toml/
 date: 2024-01-26 04:21:29.031538-07:00
 description: "TOML \xE8 un formato di file di configurazione, facile da leggere e\
   \ scrivere per gli umani, e facile da analizzare e generare per le macchine. I\u2026"
-lastmod: 2024-02-18 23:08:56.318505
+lastmod: 2024-02-19 22:05:02.955666
 model: gpt-4-0125-preview
 summary: "TOML \xE8 un formato di file di configurazione, facile da leggere e scrivere\
   \ per gli umani, e facile da analizzare e generare per le macchine. I\u2026"

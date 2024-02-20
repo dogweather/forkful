@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/clojure/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:30.099619-07:00
 description: "Les expressions r\xE9guli\xE8res, un outil puissant pour la correspondance\
   \ de motifs et la manipulation de donn\xE9es, sont essentielles dans les t\xE2ches\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:08.375743
+lastmod: 2024-02-19 22:05:16.170727
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, un outil puissant pour la correspondance\
   \ de motifs et la manipulation de donn\xE9es, sont essentielles dans les t\xE2ches\

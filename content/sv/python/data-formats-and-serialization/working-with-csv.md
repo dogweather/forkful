@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/python/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:02.437181-07:00
 description: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
   n och skriva data till CSV-filer, ett vanligt format f\xF6r att lagra tabul\xE4\
   r data.\u2026"
-lastmod: 2024-02-18 23:08:51.443286
+lastmod: 2024-02-19 22:04:56.747833
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
   n och skriva data till CSV-filer, ett vanligt format f\xF6r att lagra tabul\xE4\

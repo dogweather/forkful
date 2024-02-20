@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:20.598906-07:00
 description: "\xC5 skrive til standardfeil (stderr) i Go involverer omdirigering av\
   \ feilmeldinger eller diagnostikk som ikke er ment for hovedutstr\xF8mmen. Programmerere\u2026"
-lastmod: 2024-02-18 23:08:53.453223
+lastmod: 2024-02-19 22:04:59.565252
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i Go involverer omdirigering av feilmeldinger\
   \ eller diagnostikk som ikke er ment for hovedutstr\xF8mmen. Programmerere\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/bash/interpolating-a-string/
 date: 2024-01-20 17:50:55.903408-07:00
 description: "String interpolation \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948\
   \ \u0935\u0948\u0930\u093F\u090F\u092C\u0932 \u092F\u093E \u090F\u0915\u094D\u0938\
@@ -11,7 +9,7 @@ description: "String interpolation \u0915\u093E \u092E\u0924\u0932\u092C \u0939\
   \u094B\u0902\u0915\u093F \u0921\u093E\u092F\u0928\u093E\u092E\u093F\u0915 \u0938\
   \u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u092C\u0928\u093E\u0928\u093E\
   \u2026"
-lastmod: 2024-02-18 23:09:03.627624
+lastmod: 2024-02-19 22:05:11.616000
 model: gpt-4-1106-preview
 summary: "String interpolation \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948\
   \ \u0935\u0948\u0930\u093F\u090F\u092C\u0932 \u092F\u093E \u090F\u0915\u094D\u0938\

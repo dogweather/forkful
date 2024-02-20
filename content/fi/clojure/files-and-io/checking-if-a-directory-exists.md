@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/clojure/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:10.989993-07:00
 description: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4 tiedostoj\xE4\
   rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi.\
   \ T\xE4m\xE4 teht\xE4v\xE4 on\u2026"
-lastmod: 2024-02-18 23:09:07.243926
+lastmod: 2024-02-19 22:05:15.140387
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4 tiedostoj\xE4\
   rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi.\

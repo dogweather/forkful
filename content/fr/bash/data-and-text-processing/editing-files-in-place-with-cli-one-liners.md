@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:21:18.345278-07:00
 description: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une\
   \ mise \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur\
   \ votre\u2026"
-lastmod: 2024-02-18 23:09:09.014519
+lastmod: 2024-02-19 22:05:16.699615
 model: gpt-4-0125-preview
 summary: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une mise\
   \ \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur votre\u2026"

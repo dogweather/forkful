@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/php/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:48.527320-07:00
 description: "Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijonojen\
   \ osien h\xE4vitt\xE4mist\xE4, jotka vastaavat tietty\xE4 kaavaa. Ohjelmoijat tekev\xE4\
   t t\xE4t\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.694775
+lastmod: 2024-02-19 22:05:15.534746
 model: gpt-4-1106-preview
 summary: "Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijonojen osien\
   \ h\xE4vitt\xE4mist\xE4, jotka vastaavat tietty\xE4 kaavaa. Ohjelmoijat tekev\xE4\

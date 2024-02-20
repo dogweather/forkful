@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/python/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:35:13.884833-07:00
@@ -12,7 +10,7 @@ description: "Python \u092E\u0947\u0902 \u092E\u093E\u0928\u0915 \u0924\u094D\u0
   \u0924\u093E \u0915\u094B \u092E\u093E\u0928\u0915 \u0906\u0909\u091F\u092A\u0941\
   \u091F (`stdout`) \u0938\u0947 \u0905\u0932\u0917 \u0924\u094D\u0930\u0941\u091F\
   \u093F \u0938\u094D\u091F\u094D\u0930\u0940\u092E\u2026"
-lastmod: 2024-02-18 23:09:02.678315
+lastmod: 2024-02-19 22:05:10.678762
 model: gpt-4-0125-preview
 summary: "Python \u092E\u0947\u0902 \u092E\u093E\u0928\u0915 \u0924\u094D\u0930\u0941\
   \u091F\u093F (standard error) \u092A\u0930 \u0932\u0947\u0916\u0928 \u0906\u092A\

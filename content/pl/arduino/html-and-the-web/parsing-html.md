@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/arduino/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:44.996071-07:00
 description: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji\
   \ ze stron internetowych. Programi\u015Bci robi\u0105 to, aby umo\u017Cliwi\u0107\
   \ ich urz\u0105dzeniom\u2026"
-lastmod: 2024-02-18 23:08:49.868030
+lastmod: 2024-02-19 22:04:54.813895
 model: gpt-4-0125-preview
 summary: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji\
   \ ze stron internetowych. Programi\u015Bci robi\u0105 to, aby umo\u017Cliwi\u0107\

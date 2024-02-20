@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/swift/starting-a-new-project/
 date: 2024-01-20 18:04:26.990123-07:00
 description: "Att starta ett nytt projekt i Swift inneb\xE4r att l\xE4gga grunden\
   \ f\xF6r en ny app eller funktion. Programmerare g\xF6r det f\xF6r att oms\xE4tta\
   \ id\xE9er till verklig kod\u2026"
-lastmod: 2024-02-18 23:08:52.125173
+lastmod: 2024-02-19 22:04:57.491874
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt i Swift inneb\xE4r att l\xE4gga grunden f\xF6\
   r en ny app eller funktion. Programmerare g\xF6r det f\xF6r att oms\xE4tta id\xE9\

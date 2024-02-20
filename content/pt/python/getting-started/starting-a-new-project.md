@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/starting-a-new-project/
 date: 2024-01-20 18:04:22.729974-07:00
 description: "Come\xE7ar um novo projeto \xE9 como plantar uma semente que voc\xEA\
   \ quer ver crescer em um software funcional. Programadores fazem isso para dar vida\
   \ a novas\u2026"
-lastmod: 2024-02-18 23:08:57.761850
+lastmod: 2024-02-19 22:05:05.224945
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 como plantar uma semente que voc\xEA quer\
   \ ver crescer em um software funcional. Programadores fazem isso para dar vida a\

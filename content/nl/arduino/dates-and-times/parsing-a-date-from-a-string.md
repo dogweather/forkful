@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:52.857588-07:00
 description: "Een datum uit een string parsen betekent het extraheren van de datumgegevens\
   \ zoals dag, maand en jaar, en deze converteren naar een formaat dat een\u2026"
-lastmod: 2024-02-18 23:09:02.148086
+lastmod: 2024-02-19 22:05:10.166061
 model: gpt-4-0125-preview
 summary: "Een datum uit een string parsen betekent het extraheren van de datumgegevens\
   \ zoals dag, maand en jaar, en deze converteren naar een formaat dat een\u2026"

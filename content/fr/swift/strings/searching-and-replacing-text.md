@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/searching-and-replacing-text/
 date: 2024-01-20 17:58:37.325811-07:00
 description: "Chercher et remplacer du texte, c'est un peu comme chasser les fautes\
   \ de frappe et les corriger. Programmers le font pour nettoyer des donn\xE9es, mettre\
   \ \xE0\u2026"
-lastmod: 2024-02-18 23:09:09.192051
+lastmod: 2024-02-19 22:05:16.862371
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est un peu comme chasser les fautes de\
   \ frappe et les corriger. Programmers le font pour nettoyer des donn\xE9es, mettre\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/interpolating-a-string/
 date: 2024-01-20 17:50:17.560921-07:00
 description: "Interpolering av en streng betyr \xE5 sette inn variabler eller uttrykk\
   \ inni en tekststreng. Programmere bruker det for \xE5 bygge dynamisk innhold og\
   \ meldinger."
-lastmod: 2024-02-18 23:08:54.042849
+lastmod: 2024-02-19 22:05:00.224201
 model: gpt-4-1106-preview
 summary: "Interpolering av en streng betyr \xE5 sette inn variabler eller uttrykk\
   \ inni en tekststreng. Programmere bruker det for \xE5 bygge dynamisk innhold og\

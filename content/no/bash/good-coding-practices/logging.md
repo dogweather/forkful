@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/logging/
 date: 2024-01-26 00:59:28.183435-07:00
 description: "Logging er praksisen med \xE5 registrere hendelser, feil og annen viktig\
   \ informasjon fra kj\xF8rende prosesser i et program til en fil eller en utdatastr\xF8\
   m.\u2026"
-lastmod: 2024-02-18 23:08:54.064570
+lastmod: 2024-02-19 22:05:00.247489
 model: gpt-4-1106-preview
 summary: "Logging er praksisen med \xE5 registrere hendelser, feil og annen viktig\
   \ informasjon fra kj\xF8rende prosesser i et program til en fil eller en utdatastr\xF8\

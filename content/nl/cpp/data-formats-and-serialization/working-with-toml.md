@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:44.409957-07:00
 description: "TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat\
   \ dat makkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.208189
+lastmod: 2024-02-19 22:05:10.223620
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat\
   \ dat makkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs\u2026"

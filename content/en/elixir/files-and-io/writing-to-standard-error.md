@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/writing-to-standard-error/
 date: 2024-02-03 19:03:30.310441-07:00
 description: "Writing to standard error (stderr) in Elixir is a method of directing\
   \ error messages and diagnostics separate from the main output (stdout). Programmers\u2026"
-lastmod: 2024-02-18 23:09:10.781802
+lastmod: 2024-02-19 22:05:18.305555
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Elixir is a method of directing error\
   \ messages and diagnostics separate from the main output (stdout). Programmers\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:05.708647-07:00
 description: "\xC5 slette tegn som matcher et m\xF8nster inneb\xE6rer \xE5 finne og\
   \ fjerne spesifikke tegnsekvenser fra en streng. Programmerere gj\xF8r dette for\
   \ \xE5 rense data,\u2026"
-lastmod: 2024-02-18 23:08:53.549378
+lastmod: 2024-02-19 22:04:59.670350
 model: gpt-4-1106-preview
 summary: "\xC5 slette tegn som matcher et m\xF8nster inneb\xE6rer \xE5 finne og fjerne\
   \ spesifikke tegnsekvenser fra en streng. Programmerere gj\xF8r dette for \xE5 rense\

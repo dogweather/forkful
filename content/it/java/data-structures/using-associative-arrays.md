@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/java/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:51.421733-07:00
 description: "In Java, gli array associativi, o mappe, consentono di memorizzare coppie\
   \ chiave-valore per una ricerca e una manipolazione efficienti dei dati. I\u2026"
-lastmod: 2024-02-18 23:08:55.759335
+lastmod: 2024-02-19 22:05:02.362711
 model: gpt-4-0125-preview
 summary: "In Java, gli array associativi, o mappe, consentono di memorizzare coppie\
   \ chiave-valore per una ricerca e una manipolazione efficienti dei dati. I\u2026"

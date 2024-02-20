@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/javascript/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:13.288557-07:00
 description: "Werken met XML betekent het parseren, manipuleren en produceren van\
   \ XML-inhoud met behulp van code. Programmeurs doen dit omdat XML veel gebruikt\
   \ wordt\u2026"
-lastmod: 2024-02-18 23:09:02.303268
+lastmod: 2024-02-19 22:05:10.313644
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren, manipuleren en produceren van XML-inhoud\
   \ met behulp van code. Programmeurs doen dit omdat XML veel gebruikt wordt\u2026"

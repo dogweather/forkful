@@ -1,13 +1,11 @@
 ---
-aliases:
-- /ja/c/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:29.951272-07:00
 description: "C\u8A00\u8A9E\u3067\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\
   \u524A\u9664\u3059\u308B\u3068\u306F\u3001\u5358\u4E00\uFF08' '\uFF09\u307E\u305F\
   \u306F\u4E8C\u91CD\uFF08\"\u2026"
-lastmod: 2024-02-18 23:08:55.337738
+lastmod: 2024-02-19 22:05:01.886202
 model: gpt-4-0125-preview
 summary: "C\u8A00\u8A9E\u3067\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\
   \u524A\u9664\u3059\u308B\u3068\u306F\u3001\u5358\u4E00\uFF08' '\uFF09\u307E\u305F\

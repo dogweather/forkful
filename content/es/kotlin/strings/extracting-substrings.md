@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/kotlin/extracting-substrings/
 date: 2024-01-20 17:46:00.519134-07:00
 description: "Extraer subcadenas significa sacar partes espec\xEDficas de un texto.\
   \ Los programadores lo hacen para analizar y manipular datos m\xE1s facilmente."
-lastmod: 2024-02-18 23:09:09.924105
+lastmod: 2024-02-19 22:05:17.532227
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas significa sacar partes espec\xEDficas de un texto. Los\
   \ programadores lo hacen para analizar y manipular datos m\xE1s facilmente."

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:08.011373-07:00
 description: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er enth\xE4\
   lt. Das ist wichtig, weil viele Programmieraufgaben, wie die Validierung von Eingaben\u2026"
-lastmod: 2024-02-18 23:09:05.224363
+lastmod: 2024-02-19 22:05:13.152207
 model: gpt-4-1106-preview
 summary: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er enth\xE4\
   lt. Das ist wichtig, weil viele Programmieraufgaben, wie die Validierung von Eingaben\u2026"

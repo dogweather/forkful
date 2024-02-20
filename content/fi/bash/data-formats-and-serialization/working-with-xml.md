@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/bash/working-with-xml/
 date: 2024-01-26 04:27:34.691183-07:00
 description: "XML:n k\xE4sittelyyn kuuluu j\xE4sennys, tietojen poiminta ja manipulointi\
   \ Laajennettavassa Merkint\xE4kieless\xE4 (Extensible Markup Language). Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.830953
+lastmod: 2024-02-19 22:05:15.659171
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittelyyn kuuluu j\xE4sennys, tietojen poiminta ja manipulointi\
   \ Laajennettavassa Merkint\xE4kieless\xE4 (Extensible Markup Language). Ohjelmoijat\u2026"

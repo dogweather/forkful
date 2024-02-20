@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/refactoring/
 date: 2024-01-25 02:11:48.246297-07:00
 description: "Refactoring is the art of tweaking existing code to improve its structure,\
   \ readability, and efficiency without altering its external behavior. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.186930
+lastmod: 2024-02-19 22:05:18.675123
 model: gpt-4-1106-preview
 summary: "Refactoring is the art of tweaking existing code to improve its structure,\
   \ readability, and efficiency without altering its external behavior. Programmers\u2026"

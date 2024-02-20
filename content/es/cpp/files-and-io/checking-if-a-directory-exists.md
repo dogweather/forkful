@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/cpp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:44.774452-07:00
 description: "Comprobar si un directorio existe trata de determinar la presencia de\
   \ un directorio en una ruta especificada antes de realizar operaciones como leer\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:10.327347
+lastmod: 2024-02-19 22:05:17.893884
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe trata de determinar la presencia de un\
   \ directorio en una ruta especificada antes de realizar operaciones como leer o\u2026"

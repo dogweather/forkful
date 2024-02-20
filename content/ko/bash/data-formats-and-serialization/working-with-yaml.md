@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:51.547578-07:00
@@ -12,7 +10,7 @@ description: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C
   . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uBCF5\uC7A1\uD55C \uAD6C\uC131\uC774\
   \ \uD3EC\uD568\uB41C \uD504\uB85C\uC81D\uD2B8\uB098 \uC27D\uAC8C \uD3B8\uC9D1 \uAC00\
   \uB2A5\uD55C \uB370\uC774\uD130\u2026"
-lastmod: 2024-02-18 23:09:06.517254
+lastmod: 2024-02-19 22:05:14.424665
 model: gpt-4-0125-preview
 summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C, \uC778\
   \uAC04\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uB370\uC774\uD130 \uC9C1\uB82C\uD654\

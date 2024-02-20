@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/python/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:35.538216-07:00
@@ -9,7 +7,7 @@ description: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA
   o th\xE0nh m\u1ED9t chu\u1ED7i m\u1EDBi. N\xF3 gi\u1ED1ng nh\u01B0 Lego chu\u1ED7\
   i. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng v\u0103\
   n\u2026"
-lastmod: 2024-02-18 23:08:50.258974
+lastmod: 2024-02-19 22:04:55.278981
 model: gpt-4-0125-preview
 summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v\u1EDB\
   i nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i \u0111\u1EC3 t\u1EA1o th\xE0\

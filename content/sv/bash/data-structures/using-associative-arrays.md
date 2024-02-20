@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/bash/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:43.361766-07:00
 description: "Associativa arrayer \xE4r som superladdade arrayer som l\xE5ter dig\
   \ anv\xE4nda str\xE4ngar som index ist\xE4llet f\xF6r enbart heltal. Programmerare\
   \ anv\xE4nder dem f\xF6r mer\u2026"
-lastmod: 2024-02-18 23:08:51.952613
+lastmod: 2024-02-19 22:04:57.302826
 model: gpt-4-0125-preview
 summary: "Associativa arrayer \xE4r som superladdade arrayer som l\xE5ter dig anv\xE4\
   nda str\xE4ngar som index ist\xE4llet f\xF6r enbart heltal. Programmerare anv\xE4\

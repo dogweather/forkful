@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/interpolating-a-string/
 date: 2024-01-20 17:51:42.804314-07:00
 description: "Interpolacja \u0142a\u0144cuch\xF3w pozwala wple\u015B\u0107 warto\u015B\
   ci zmiennych do tekstu. Programi\u015Bci u\u017Cywaj\u0105 jej dla czytelno\u015B\
   ci i wygody, eliminuj\u0105c potrzeb\u0119 ci\u0105g\u0142ego\u2026"
-lastmod: 2024-02-18 23:08:49.725720
+lastmod: 2024-02-19 22:04:54.661550
 model: gpt-4-1106-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w pozwala wple\u015B\u0107 warto\u015B\
   ci zmiennych do tekstu. Programi\u015Bci u\u017Cywaj\u0105 jej dla czytelno\u015B\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/searching-and-replacing-text/
 date: 2024-01-20 17:58:44.690394-07:00
 description: "Textsuche und -ersatz ist das Auffinden und Modifizieren von Zeichenfolgen\
   \ in einem Text. Programmierer nutzen dies, um Daten zu korrigieren, zu\u2026"
-lastmod: 2024-02-18 23:09:05.405363
+lastmod: 2024-02-19 22:05:13.324196
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz ist das Auffinden und Modifizieren von Zeichenfolgen\
   \ in einem Text. Programmierer nutzen dies, um Daten zu korrigieren, zu\u2026"

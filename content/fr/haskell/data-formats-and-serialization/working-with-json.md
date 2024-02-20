@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/haskell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:59.017489-07:00
 description: "Travailler avec le JSON (JavaScript Object Notation) en Haskell implique\
   \ de parser les donn\xE9es JSON en types Haskell et de convertir les types Haskell\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:08.899083
+lastmod: 2024-02-19 22:05:16.593227
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON (JavaScript Object Notation) en Haskell implique\
   \ de parser les donn\xE9es JSON en types Haskell et de convertir les types Haskell\

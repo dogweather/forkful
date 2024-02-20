@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/logging/
 date: 2024-01-26 01:02:40.692405-07:00
 description: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det\
   \ er en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\
   \ Utviklere\u2026"
-lastmod: 2024-02-18 23:08:53.570508
+lastmod: 2024-02-19 22:04:59.693260
 model: gpt-4-1106-preview
 summary: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det er\
   \ en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\

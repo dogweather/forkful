@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:08.134217-07:00
 description: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att\
   \ matcha dem mot ett m\xF6nster. Programmerare g\xF6r detta f\xF6r att st\xE4da\
   \ data, validera input eller\u2026"
-lastmod: 2024-02-18 23:08:52.278314
+lastmod: 2024-02-19 22:04:57.665939
 model: gpt-4-1106-preview
 summary: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att matcha\
   \ dem mot ett m\xF6nster. Programmerare g\xF6r detta f\xF6r att st\xE4da data, validera\

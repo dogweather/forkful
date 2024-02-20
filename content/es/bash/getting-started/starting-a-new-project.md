@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/bash/starting-a-new-project/
 date: 2024-01-20 18:02:52.887132-07:00
 description: "Iniciar un proyecto nuevo significa crear la base desde la que crecer\xE1\
   \ tu aplicaci\xF3n o script. Los programadores lo hacen para organizar sus ideas\
   \ y\u2026"
-lastmod: 2024-02-18 23:09:10.168123
+lastmod: 2024-02-19 22:05:17.754432
 model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo significa crear la base desde la que crecer\xE1\
   \ tu aplicaci\xF3n o script. Los programadores lo hacen para organizar sus ideas\

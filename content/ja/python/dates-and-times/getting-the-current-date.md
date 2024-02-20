@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/python/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:49.614694-07:00
@@ -13,7 +11,7 @@ description: "Python\u3067\u73FE\u5728\u306E\u65E5\u4ED8\u3092\u53D6\u5F97\u3059
   \u4E0D\u53EF\u6B20\u306A\u3001\u30B7\u30B9\u30C6\u30E0\u306E\u73FE\u5728\u306E\u65E5\
   \u4ED8\u3092\u53D6\u5F97\u3059\u308B\u3053\u3068\u306B\u95A2\u4FC2\u3057\u3066\u3044\
   \u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.573477
+lastmod: 2024-02-19 22:05:00.786667
 model: gpt-4-0125-preview
 summary: "Python\u3067\u73FE\u5728\u306E\u65E5\u4ED8\u3092\u53D6\u5F97\u3059\u308B\
   \u3053\u3068\u306F\u3001\u30ED\u30B0\u8A18\u9332\u3001\u30C7\u30FC\u30BF\u5206\u6790\

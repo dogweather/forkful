@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/lua/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:14.410424-07:00
 description: "Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatierten\
   \ Strings in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen\u2026"
-lastmod: 2024-02-18 23:09:05.029924
+lastmod: 2024-02-19 22:05:12.967462
 model: gpt-4-0125-preview
 summary: "Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatierten Strings\
   \ in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen\u2026"

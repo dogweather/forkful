@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:40.780977-07:00
 description: "Parsing a date from a string in PHP involves converting text that represents\
   \ a date and/or time into a PHP `DateTime` object or other date/time formats.\u2026"
-lastmod: 2024-02-18 23:09:11.146352
+lastmod: 2024-02-19 22:05:18.638244
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in PHP involves converting text that represents\
   \ a date and/or time into a PHP `DateTime` object or other date/time formats.\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/arduino/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:00.329249-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.162499
+lastmod: 2024-02-19 22:05:01.626208
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u73FE\u5728\u306E\u65E5\u4ED8\u306E\u53D6\u5F97"

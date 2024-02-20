@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/interpolating-a-string/
 date: 2024-01-20 17:50:20.546010-07:00
 description: "L'interpolazione di stringhe permette di inserire valori variabili all'interno\
   \ di una stringa. I programmatori la usano per costruire messaggi dinamici,\u2026"
-lastmod: 2024-02-18 23:08:56.037918
+lastmod: 2024-02-19 22:05:02.655060
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe permette di inserire valori variabili all'interno\
   \ di una stringa. I programmatori la usano per costruire messaggi dinamici,\u2026"

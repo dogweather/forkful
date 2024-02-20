@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/rust/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:51.576603-07:00
@@ -13,7 +11,7 @@ description: "\u5728Rust\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\u
   \u6765\u8FDB\u884C\u5168\u9762\u7684\u65E5\u671F\u548C\u65F6\u95F4\u64CD\u4F5C\uFF0C\
   \u56E0\u4E3A\u5B83\u7684\u529F\u80FD\u66F4\u4F18\u8D8A\uFF0C\u4F7F\u7528\u8D77\u6765\
   \u4E5F\u66F4\u52A0\u5BB9\u6613\u3002"
-lastmod: 2024-02-18 23:08:58.950402
+lastmod: 2024-02-19 22:05:06.550827
 model: gpt-4-0125-preview
 summary: "\u5728Rust\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\u4E2A\u5E38\
   \u89C1\u7684\u4EFB\u52A1\uFF0C\u7528\u4E8E\u65E5\u5FD7\u8BB0\u5F55\u3001\u57FA\u4E8E\

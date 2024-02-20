@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/ruby/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:39.283869-07:00
 description: "Att h\xE4mta det aktuella datumet \xE4r en v\xE4sentlig uppgift i n\xE4\
   stan alla programmeringsprojekt, fr\xE5n att logga aktiviteter i en applikation\
   \ till att generera\u2026"
-lastmod: 2024-02-18 23:08:52.305173
+lastmod: 2024-02-19 22:04:57.696154
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet \xE4r en v\xE4sentlig uppgift i n\xE4\
   stan alla programmeringsprojekt, fr\xE5n att logga aktiviteter i en applikation\

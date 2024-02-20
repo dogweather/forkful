@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/elm/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:11.899252-07:00
 description: "Escrever no erro padr\xE3o (stderr) \xE9 sobre redirecionar mensagens\
   \ de erro e diagn\xF3sticos separadamente da sa\xEDda principal do programa, que\
   \ vai para a sa\xEDda\u2026"
-lastmod: 2024-02-18 23:08:58.076163
+lastmod: 2024-02-19 22:05:05.555387
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) \xE9 sobre redirecionar mensagens de\
   \ erro e diagn\xF3sticos separadamente da sa\xEDda principal do programa, que vai\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:48.694052-07:00
 description: "Den interaktiva skalet, eller Read-Eval-Print Loopen (REPL), l\xE5ter\
   \ dig skriva PowerShell-kommandon och f\xE5 omedelbar \xE5terkoppling. Programmerare\
   \ anv\xE4nder\u2026"
-lastmod: 2024-02-18 23:08:52.005554
+lastmod: 2024-02-19 22:04:57.360359
 model: gpt-4-0125-preview
 summary: "Den interaktiva skalet, eller Read-Eval-Print Loopen (REPL), l\xE5ter dig\
   \ skriva PowerShell-kommandon och f\xE5 omedelbar \xE5terkoppling. Programmerare\

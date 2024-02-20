@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/concatenating-strings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:48.139581-07:00
 description: "Concatenar cadenas implica combinar dos o m\xE1s cadenas en una sola.\
   \ Los programadores hacen esto para construir din\xE1micamente mensajes, URLs o\
   \ cualquier\u2026"
-lastmod: 2024-02-18 23:09:09.496666
+lastmod: 2024-02-19 22:05:17.152460
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas implica combinar dos o m\xE1s cadenas en una sola. Los\
   \ programadores hacen esto para construir din\xE1micamente mensajes, URLs o cualquier\u2026"

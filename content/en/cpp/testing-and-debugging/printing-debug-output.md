@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/printing-debug-output/
 date: 2024-01-20 17:52:07.355145-07:00
 description: "Printing debug output is like having a conversation with your code;\
   \ you pepper in print statements to check on its health and what it's thinking.\u2026"
-lastmod: 2024-02-18 23:09:11.358025
+lastmod: 2024-02-19 22:05:18.822470
 model: gpt-4-1106-preview
 summary: "Printing debug output is like having a conversation with your code; you\
   \ pepper in print statements to check on its health and what it's thinking.\u2026"

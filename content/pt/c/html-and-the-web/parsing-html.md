@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:54.756179-07:00
 description: "Analisar HTML em C envolve examinar documentos HTML para extrair dados,\
   \ estrutura ou partes espec\xEDficas de forma eficiente, muitas vezes como precursor\
   \ da\u2026"
-lastmod: 2024-02-18 23:08:58.616722
+lastmod: 2024-02-19 22:05:06.116947
 model: gpt-4-0125-preview
 summary: "Analisar HTML em C envolve examinar documentos HTML para extrair dados,\
   \ estrutura ou partes espec\xEDficas de forma eficiente, muitas vezes como precursor\

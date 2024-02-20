@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/php/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:53.444683-07:00
 description: "Das Parsen eines Datums aus einem String in PHP beinhaltet das Umwandeln\
   \ von Text, der ein Datum und/oder eine Zeit repr\xE4sentiert, in ein PHP `DateTime`\u2026"
-lastmod: 2024-02-18 23:09:04.972176
+lastmod: 2024-02-19 22:05:12.912382
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in PHP beinhaltet das Umwandeln\
   \ von Text, der ein Datum und/oder eine Zeit repr\xE4sentiert, in ein PHP `DateTime`\u2026"

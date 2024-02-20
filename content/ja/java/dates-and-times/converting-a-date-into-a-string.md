@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/java/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:48.752006-07:00
 description: "Java\u3067\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\
   \u308B\u3063\u3066\u3001\u5177\u4F53\u7684\u306B\u306F`Date`\u30AA\u30D6\u30B8\u30A7\
@@ -10,7 +8,7 @@ description: "Java\u3067\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u
   \u304F\u8868\u793A\u3057\u305F\u308A\u3001\u7279\u5B9A\u306E\u5F62\u5F0F\u3067\u4FDD\
   \u5B58\u3057\u305F\u308A\u3059\u308B\u305F\u3081\u3055\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.812097
+lastmod: 2024-02-19 22:05:01.123776
 model: gpt-4-1106-preview
 summary: "Java\u3067\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\
   \u3063\u3066\u3001\u5177\u4F53\u7684\u306B\u306F`Date`\u30AA\u30D6\u30B8\u30A7\u30AF\

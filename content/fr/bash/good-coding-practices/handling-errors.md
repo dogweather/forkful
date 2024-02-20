@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/handling-errors/
 date: 2024-01-26 00:49:29.212956-07:00
 description: "G\xE9rer les erreurs dans les scripts Bash, c'est pr\xE9voir o\xF9 les\
   \ choses pourraient mal tourner et y faire face avec \xE9l\xE9gance. Pourquoi ?\
   \ Et bien, cela assure\u2026"
-lastmod: 2024-02-18 23:09:09.027469
+lastmod: 2024-02-19 22:05:16.712070
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs dans les scripts Bash, c'est pr\xE9voir o\xF9 les choses\
   \ pourraient mal tourner et y faire face avec \xE9l\xE9gance. Pourquoi ? Et bien,\

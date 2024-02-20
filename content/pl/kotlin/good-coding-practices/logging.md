@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/logging/
 date: 2024-01-26 01:08:23.836062-07:00
 description: "Logowanie, w swojej istocie, jest praktyk\u0105 rejestrowania zdarze\u0144\
   \ i danych z aplikacji oprogramowania do zewn\u0119trznego wyj\u015Bcia, takiego\
   \ jak plik lub\u2026"
-lastmod: 2024-02-18 23:08:49.575522
+lastmod: 2024-02-19 22:04:54.502768
 model: gpt-4-1106-preview
 summary: "Logowanie, w swojej istocie, jest praktyk\u0105 rejestrowania zdarze\u0144\
   \ i danych z aplikacji oprogramowania do zewn\u0119trznego wyj\u015Bcia, takiego\

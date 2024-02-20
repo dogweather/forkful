@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:02.314867-07:00
@@ -8,7 +6,7 @@ description: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1
   \ c\xF3 ngh\u0129a l\xE0 x\xE1c minh s\u1EF1 c\xF3 m\u1EB7t c\u1EE7a m\u1ED9t th\u01B0\
   \ m\u1EE5c trong h\u1EC7 th\u1ED1ng t\u1EC7p. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh c\xE1c l\u1ED7i nh\u01B0\u2026"
-lastmod: 2024-02-18 23:08:50.852847
+lastmod: 2024-02-19 22:04:56.027304
 model: gpt-4-0125-preview
 summary: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i c\xF3\
   \ ngh\u0129a l\xE0 x\xE1c minh s\u1EF1 c\xF3 m\u1EB7t c\u1EE7a m\u1ED9t th\u01B0\

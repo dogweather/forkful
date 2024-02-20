@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:15.519500-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base \xE8 uno dei metodi\
   \ per proteggere l'accesso alle risorse web. I programmatori lo utilizzano per\u2026"
-lastmod: 2024-02-18 23:08:55.765574
+lastmod: 2024-02-19 22:05:02.369555
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base \xE8 uno dei metodi\
   \ per proteggere l'accesso alle risorse web. I programmatori lo utilizzano per\u2026"

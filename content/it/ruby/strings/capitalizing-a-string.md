@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/ruby/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:13.688577-07:00
 description: "Capitalizzare una stringa nella programmazione spesso si riferisce alla\
   \ conversione del primo carattere di una stringa in maiuscolo e il resto in\u2026"
-lastmod: 2024-02-18 23:08:56.365417
+lastmod: 2024-02-19 22:05:03.004977
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa nella programmazione spesso si riferisce alla\
   \ conversione del primo carattere di una stringa in maiuscolo e il resto in\u2026"

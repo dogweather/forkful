@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/downloading-a-web-page/
 date: 2024-01-20 17:45:00.865969-07:00
 description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll via\
   \ internet. Programmerare g\xF6r det f\xF6r att analysera webbinneh\xE5ll, samla\
   \ data, eller f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.542270
+lastmod: 2024-02-19 22:04:56.856303
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll via internet.\
   \ Programmerare g\xF6r det f\xF6r att analysera webbinneh\xE5ll, samla data, eller\

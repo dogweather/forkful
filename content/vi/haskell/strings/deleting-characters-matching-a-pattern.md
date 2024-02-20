@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/haskell/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:06.332574-07:00
@@ -9,7 +7,7 @@ description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu c
   i b\u1ECF c\xE1c ph\u1EA7n b\u1EA1n kh\xF4ng c\u1EA7n. C\xE1c l\u1EADp tr\xECnh\
   \ vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\xE0m s\u1EA1ch d\u1EEF li\u1EC7\
   u,\u2026"
-lastmod: 2024-02-18 23:08:50.727477
+lastmod: 2024-02-19 22:04:55.868762
 model: gpt-4-0125-preview
 summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu c\u1EE5\
   \ th\u1EC3 l\xE0 v\u1EC1 vi\u1EC7c l\u1ECDc qua v\u0103n b\u1EA3n v\xE0 lo\u1EA1\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:25.757161-07:00
 description: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een\
   \ bestand dat bedoeld is om voor een korte duur gebruikt te worden, meestal als\
   \ kladruimte\u2026"
-lastmod: 2024-02-18 23:09:02.394895
+lastmod: 2024-02-19 22:05:10.400556
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een bestand\
   \ dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte\u2026"

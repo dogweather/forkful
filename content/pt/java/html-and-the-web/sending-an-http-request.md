@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/sending-an-http-request/
 date: 2024-01-20 17:59:58.337241-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados\
   \ ou a\xE7\xE3o de outro servidor atrav\xE9s da internet. Programadores fazem isso\
   \ para interagir com\u2026"
-lastmod: 2024-02-18 23:08:58.015350
+lastmod: 2024-02-19 22:05:05.491722
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados ou a\xE7\
   \xE3o de outro servidor atrav\xE9s da internet. Programadores fazem isso para interagir\

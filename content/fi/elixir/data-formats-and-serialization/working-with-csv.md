@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elixir/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:53.069348-07:00
 description: "CSV-tiedostojen (pilkuilla erotettujen arvojen) k\xE4sittelyyn kuuluu\
   \ tietojen lukemista ja kirjoittamista n\xE4ihin tiedostoihin, mik\xE4 on yleinen\
   \ tarve\u2026"
-lastmod: 2024-02-18 23:09:07.297796
+lastmod: 2024-02-19 22:05:15.190257
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotettujen arvojen) k\xE4sittelyyn kuuluu tietojen\
   \ lukemista ja kirjoittamista n\xE4ihin tiedostoihin, mik\xE4 on yleinen tarve\u2026"

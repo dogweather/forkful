@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/python/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:20.490541-07:00
 description: "Rimuovere le virgolette da una stringa significa solitamente eliminare\
   \ le superflue virgolette doppie (\") o singole ('). I programmatori fanno ci\xF2\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:55.510002
+lastmod: 2024-02-19 22:05:02.096131
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa solitamente eliminare le\
   \ superflue virgolette doppie (\") o singole ('). I programmatori fanno ci\xF2 per\u2026"

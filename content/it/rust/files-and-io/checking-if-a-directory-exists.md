@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/rust/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:34.338711-07:00
 description: "Nello sviluppo software, spesso \xE8 necessario verificare se una directory\
   \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file.\u2026"
-lastmod: 2024-02-18 23:08:55.694119
+lastmod: 2024-02-19 22:05:02.293513
 model: gpt-4-0125-preview
 summary: "Nello sviluppo software, spesso \xE8 necessario verificare se una directory\
   \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file.\u2026"

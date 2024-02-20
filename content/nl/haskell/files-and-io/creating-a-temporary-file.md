@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/haskell/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:09.714148-07:00
 description: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand\
   \ voor kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering\
   \ van\u2026"
-lastmod: 2024-02-18 23:09:01.920258
+lastmod: 2024-02-19 22:05:09.943167
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand voor\
   \ kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering\

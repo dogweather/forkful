@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/typescript/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:26.645593-07:00
 description: "Att parsa HTML inneb\xE4r att s\xE5lla igenom HTML-kod f\xF6r att hitta,\
   \ extrahera eller manipulera information. Programmerare g\xF6r det f\xF6r att interagera\
   \ med\u2026"
-lastmod: 2024-02-18 23:08:51.541360
+lastmod: 2024-02-19 22:04:56.855294
 model: gpt-4-0125-preview
 summary: "Att parsa HTML inneb\xE4r att s\xE5lla igenom HTML-kod f\xF6r att hitta,\
   \ extrahera eller manipulera information. Programmerare g\xF6r det f\xF6r att interagera\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:03.439862-07:00
 description: "L\xE4het\xE4mme HTTP-pyynt\xF6j\xE4 perusautentikoinnilla liitt\xE4\xE4\
   ksemme k\xE4ytt\xE4j\xE4tunnus-salasanapari verkkopalveluihin. T\xE4m\xE4 on vakiomenetelm\xE4\
   \ suojattujen resurssien\u2026"
-lastmod: 2024-02-18 23:09:07.943484
+lastmod: 2024-02-19 22:05:15.760057
 model: gpt-4-1106-preview
 summary: "L\xE4het\xE4mme HTTP-pyynt\xF6j\xE4 perusautentikoinnilla liitt\xE4\xE4\
   ksemme k\xE4ytt\xE4j\xE4tunnus-salasanapari verkkopalveluihin. T\xE4m\xE4 on vakiomenetelm\xE4\

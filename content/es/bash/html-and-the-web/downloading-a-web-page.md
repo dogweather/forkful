@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/downloading-a-web-page/
 date: 2024-01-20 17:43:21.582496-07:00
 description: "Descargar una p\xE1gina web significa guardar el contenido HTML en tu\
   \ PC. Los programadores lo hacen para procesar la info offline, testear o automatizar\u2026"
-lastmod: 2024-02-18 23:09:10.166081
+lastmod: 2024-02-19 22:05:17.752507
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa guardar el contenido HTML en tu PC.\
   \ Los programadores lo hacen para procesar la info offline, testear o automatizar\u2026"

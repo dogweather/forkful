@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/manipulating-files-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:24.100952-07:00
 description: "Bestanden manipuleren met CLI one-liners in PowerShell gaat over het\
   \ snel wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de\u2026"
-lastmod: 2024-02-18 23:09:02.086045
+lastmod: 2024-02-19 22:05:10.107758
 model: gpt-4-0125-preview
 summary: "Bestanden manipuleren met CLI one-liners in PowerShell gaat over het snel\
   \ wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de\u2026"

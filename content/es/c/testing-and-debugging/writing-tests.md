@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:31.670490-07:00
 description: "Escribir pruebas en C implica crear programas o funciones auxiliares\
   \ m\xE1s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3\
   digo. Los\u2026"
-lastmod: 2024-02-18 23:09:10.505668
+lastmod: 2024-02-19 22:05:18.056754
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en C implica crear programas o funciones auxiliares m\xE1\
   s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3digo.\

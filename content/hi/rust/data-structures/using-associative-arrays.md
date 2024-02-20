@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/rust/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:29.576559-07:00
@@ -13,7 +11,7 @@ description: "\u0938\u0902\u092C\u0926\u094D\u0927 \u090F\u0930\u0947, \u092F\u0
   \u0902 \u0938\u0902\u0917\u094D\u0930\u0939\u093F\u0924 \u0915\u0930\u0924\u0947\
   \ \u0939\u0948\u0902\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\
   \u0930\u094D\u0938 \u0909\u0928\u0915\u093E \u0909\u092A\u092F\u094B\u0917\u2026"
-lastmod: 2024-02-18 23:09:02.943205
+lastmod: 2024-02-19 22:05:10.941612
 model: gpt-4-0125-preview
 summary: "\u0938\u0902\u092C\u0926\u094D\u0927 \u090F\u0930\u0947, \u092F\u093E \u091C\
   \u0948\u0938\u093E \u0915\u093F Rustaceans \"\u0939\u0948\u0936 \u092E\u0948\u092A\

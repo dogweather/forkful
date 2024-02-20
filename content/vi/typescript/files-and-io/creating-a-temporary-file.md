@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/typescript/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:09.488181-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\x
   \ t\u1EA1o m\u1ED9t t\u1EC7p ch\u1EC9 c\u1EA7n thi\u1EBFt trong m\u1ED9t th\u1EDD\
   i gian ng\u1EAFn, th\u01B0\u1EDDng l\xE0 trong qu\xE1 tr\xECnh th\u1EF1c thi c\u1EE7\
   a m\u1ED9t ch\u01B0\u01A1ng tr\xECnh. L\u1EADp tr\xECnh\u2026"
-lastmod: 2024-02-18 23:08:50.436617
+lastmod: 2024-02-19 22:04:55.495939
 model: gpt-4-0125-preview
 summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t\u1EA1\
   o m\u1ED9t t\u1EC7p ch\u1EC9 c\u1EA7n thi\u1EBFt trong m\u1ED9t th\u1EDDi gian ng\u1EAF\

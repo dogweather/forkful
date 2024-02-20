@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/fish-shell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:34.274664-07:00
@@ -11,7 +9,7 @@ description: "\u5728 Fish Shell \u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u5230
   \u4E3A\u5B83\u786E\u4FDD\u4F60\u7684 Shell \u811A\u672C\u6309\u9884\u671F\u5DE5\u4F5C\
   \uFF0C\u80FD\u591F\u53CA\u65E9\u53D1\u73B0\u9519\u8BEF\u5E76\u7B80\u5316\u7EF4\u62A4\
   \u5DE5\u4F5C\u3002"
-lastmod: 2024-02-18 23:08:59.522571
+lastmod: 2024-02-19 22:05:07.326135
 model: gpt-4-0125-preview
 summary: "\u5728 Fish Shell \u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u5230\u521B\
   \u5EFA\u811A\u672C\uFF0C\u8FD9\u4E9B\u811A\u672C\u4F1A\u81EA\u52A8\u8FD0\u884C\u4F60\

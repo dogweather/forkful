@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/kotlin/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:05.976217-07:00
 description: "Tablice asocjacyjne, czyli mapy, w Kotlinie to kolekcje przechowuj\u0105\
   ce pary klucz-warto\u015B\u0107. Programi\u015Bci u\u017Cywaj\u0105 ich do efektywnego\
   \ organizowania i\u2026"
-lastmod: 2024-02-18 23:08:49.552728
+lastmod: 2024-02-19 22:04:54.488676
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czyli mapy, w Kotlinie to kolekcje przechowuj\u0105\
   ce pary klucz-warto\u015B\u0107. Programi\u015Bci u\u017Cywaj\u0105 ich do efektywnego\

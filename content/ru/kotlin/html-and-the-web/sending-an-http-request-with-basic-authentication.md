@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/kotlin/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:02:55.369674-07:00
@@ -14,7 +12,7 @@ description: "\u0411\u0430\u0437\u043E\u0432\u0430\u044F \u0430\u0443\u0442\u043
   \ \u0435\u0435 \u043A\u0430\u043A \u0431\u044B\u0441\u0442\u0440\u044B\u0439 \u0438\
   \ \u0433\u0440\u044F\u0437\u043D\u044B\u0439 \u0441\u043F\u043E\u0441\u043E\u0431\
   \ \u0434\u043E\u043A\u0430\u0437\u0430\u0442\u044C, \u043A\u0442\u043E\u2026"
-lastmod: 2024-02-18 23:08:56.943703
+lastmod: 2024-02-19 22:05:03.928419
 model: gpt-4-0125-preview
 summary: "\u0411\u0430\u0437\u043E\u0432\u0430\u044F \u0430\u0443\u0442\u0435\u043D\
   \u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u044F \u0434\u043E\u0431\u0430\u0432\

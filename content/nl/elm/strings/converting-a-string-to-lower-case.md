@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:42.217793-07:00
 description: "Een string converteren naar kleine letters betekent dat alle alfabetische\
   \ tekens worden omgezet naar hun kleine lettervorm. Programmeurs doen dit vaak\u2026"
-lastmod: 2024-02-18 23:09:01.744936
+lastmod: 2024-02-19 22:05:09.764089
 model: gpt-4-0125-preview
 summary: "Een string converteren naar kleine letters betekent dat alle alfabetische\
   \ tekens worden omgezet naar hun kleine lettervorm. Programmeurs doen dit vaak\u2026"

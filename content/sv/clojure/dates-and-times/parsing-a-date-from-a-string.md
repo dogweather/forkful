@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/clojure/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:56.098431-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng i Clojure handlar om att konvertera\
   \ textuella representationer av datum och tider till en mer anv\xE4ndbar form (t.ex.\u2026"
-lastmod: 2024-02-18 23:08:51.471027
+lastmod: 2024-02-19 22:04:56.778482
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Clojure handlar om att konvertera\
   \ textuella representationer av datum och tider till en mer anv\xE4ndbar form (t.ex.\u2026"

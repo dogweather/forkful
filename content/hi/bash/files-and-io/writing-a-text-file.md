@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/bash/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:03.571788-07:00
@@ -14,7 +12,7 @@ description: "Bash \u092E\u0947\u0902 \u090F\u0915 \u091F\u0947\u0915\u094D\u093
   \ \u092F\u0939 \u0936\u0947\u0932 \u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\
   \u091F\u093F\u0902\u0917 \u0915\u0947 \u0932\u093F\u090F \u090F\u0915 \u0906\u0927\
   \u093E\u0930\u092D\u0942\u0924\u2026"
-lastmod: 2024-02-18 23:09:03.690792
+lastmod: 2024-02-19 22:05:11.678090
 model: gpt-4-0125-preview
 summary: "Bash \u092E\u0947\u0902 \u090F\u0915 \u091F\u0947\u0915\u094D\u0938\u094D\
   \u091F \u092B\u093E\u0907\u0932 \u0932\u093F\u0916\u0928\u093E \u0906\u092A\u0915\

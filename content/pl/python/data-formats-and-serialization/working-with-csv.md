@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/python/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:03.767104-07:00
 description: "Praca z plikami CSV (Comma-Separated Values), czyli z warto\u015Bciami\
   \ rozdzielanymi przecinkami, polega na odczycie z plik\xF3w CSV oraz zapisywaniu\
   \ do nich\u2026"
-lastmod: 2024-02-18 23:08:49.245176
+lastmod: 2024-02-19 22:04:54.156683
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values), czyli z warto\u015Bciami rozdzielanymi\
   \ przecinkami, polega na odczycie z plik\xF3w CSV oraz zapisywaniu do nich\u2026"

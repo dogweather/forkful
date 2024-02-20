@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/concatenating-strings/
 date: 2024-01-20 17:35:17.283503-07:00
 description: "\u0141\u0105czenie napis\xF3w (string concatenation) to po\u0142\u0105\
   czenie dw\xF3ch czy wi\u0119cej napis\xF3w w jeden d\u0142u\u017Cszy. Programi\u015B\
   ci robi\u0105 to, aby tworzy\u0107 wiadomo\u015Bci, zestawia\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.731722
+lastmod: 2024-02-19 22:04:54.668010
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie napis\xF3w (string concatenation) to po\u0142\u0105czenie\
   \ dw\xF3ch czy wi\u0119cej napis\xF3w w jeden d\u0142u\u017Cszy. Programi\u015B\

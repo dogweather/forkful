@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/haskell/rounding-numbers/
 date: 2024-01-26 03:44:54.593241-07:00
 description: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chstgelegene ganze\
   \ Zahl oder eine angegebene Dezimalstelle anzupassen. Programmierer runden Zahlen,\
   \ um die\u2026"
-lastmod: 2024-02-18 23:09:04.911252
+lastmod: 2024-02-19 22:05:12.853461
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chstgelegene ganze Zahl\
   \ oder eine angegebene Dezimalstelle anzupassen. Programmierer runden Zahlen, um\

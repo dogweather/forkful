@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:40.481418-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh c
   \ th\u01B0\u1EDDng l\xE0 m\u1ED9t thao t\xE1c c\u01A1 b\u1EA3n gi\xFAp \u0111\u1EA3\
   m b\u1EA3o s\u1EF1 th\u1ED1ng nh\u1EA5t v\xE0 nh\u1EA5t qu\xE1n trong x\u1EED l\xFD\
   \ v\u0103n b\u1EA3n, r\u1EA5t c\u1EA7n thi\u1EBFt cho c\xE1c t\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.155241
+lastmod: 2024-02-19 22:04:55.147725
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
   \ th\u01B0\u1EDDng l\xE0 m\u1ED9t thao t\xE1c c\u01A1 b\u1EA3n gi\xFAp \u0111\u1EA3\

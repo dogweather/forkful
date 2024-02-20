@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:11.235825-07:00
 description: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),\
   \ is een alomtegenwoordig bestandsformaat voor het opslaan van tabelgegevens.\u2026"
-lastmod: 2024-02-18 23:09:01.969730
+lastmod: 2024-02-19 22:05:09.991270
 model: gpt-4-0125-preview
 summary: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),\
   \ is een alomtegenwoordig bestandsformaat voor het opslaan van tabelgegevens.\u2026"

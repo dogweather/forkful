@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/reading-command-line-arguments/
 date: 2024-01-20 17:57:06.134737-07:00
 description: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wprowadzonych\
   \ przez u\u017Cytkownika podczas wywo\u0142ywania programu. Programi\u015Bci u\u017C\
   ywaj\u0105 tego, by\u2026"
-lastmod: 2024-02-18 23:08:49.405121
+lastmod: 2024-02-19 22:04:54.327259
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wprowadzonych\
   \ przez u\u017Cytkownika podczas wywo\u0142ywania programu. Programi\u015Bci u\u017C\

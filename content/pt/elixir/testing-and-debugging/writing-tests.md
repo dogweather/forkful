@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/elixir/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:33.348225-07:00
 description: "Escrever testes em Elixir envolve a cria\xE7\xE3o de scripts automatizados\
   \ para validar o comportamento do seu c\xF3digo. Os programadores fazem isso para\u2026"
-lastmod: 2024-02-18 23:08:57.847318
+lastmod: 2024-02-19 22:05:05.317472
 model: gpt-4-0125-preview
 summary: "Escrever testes em Elixir envolve a cria\xE7\xE3o de scripts automatizados\
   \ para validar o comportamento do seu c\xF3digo. Os programadores fazem isso para\u2026"

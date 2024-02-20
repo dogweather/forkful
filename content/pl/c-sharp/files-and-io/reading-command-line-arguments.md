@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/reading-command-line-arguments/
 date: 2024-01-20 17:55:34.368422-07:00
 description: "(Co i Dlaczego?) Czytanie argument\xF3w linii komend to spos\xF3b, by\
   \ nasz program C# m\xF3g\u0142 otrzymywa\u0107 dane bezpo\u015Brednio od u\u017C\
   ytkownika za pomoc\u0105 terminala.\u2026"
-lastmod: 2024-02-18 23:08:49.625809
+lastmod: 2024-02-19 22:04:54.558313
 model: gpt-4-1106-preview
 summary: "(Co i Dlaczego?) Czytanie argument\xF3w linii komend to spos\xF3b, by nasz\
   \ program C# m\xF3g\u0142 otrzymywa\u0107 dane bezpo\u015Brednio od u\u017Cytkownika\

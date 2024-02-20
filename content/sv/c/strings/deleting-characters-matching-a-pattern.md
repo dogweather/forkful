@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:28.960676-07:00
 description: "Att ta bort tecken som matchar ett specifikt m\xF6nster fr\xE5n str\xE4\
   ngar i C handlar om att eliminera alla instanser av vissa tecken som passar f\xF6\
   rdefinierade\u2026"
-lastmod: 2024-02-18 23:08:52.233304
+lastmod: 2024-02-19 22:04:57.615748
 model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster fr\xE5n str\xE4\
   ngar i C handlar om att eliminera alla instanser av vissa tecken som passar f\xF6\

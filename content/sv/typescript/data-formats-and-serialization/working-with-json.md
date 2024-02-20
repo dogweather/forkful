@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/typescript/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:33.727342-07:00
 description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka\
   \ JSON-data till och fr\xE5n ett anv\xE4ndbart format i TypeScript. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.564157
+lastmod: 2024-02-19 22:04:56.879988
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka JSON-data\
   \ till och fr\xE5n ett anv\xE4ndbart format i TypeScript. Programmerare g\xF6r detta\

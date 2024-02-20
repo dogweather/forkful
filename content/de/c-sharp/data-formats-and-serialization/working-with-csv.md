@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c-sharp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:14.618285-07:00
 description: "CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Werte,\
   \ sind ein \xFCbliches Datenformat f\xFCr den Austausch, das tabellarische Daten\
   \ in\u2026"
-lastmod: 2024-02-18 23:09:04.895689
+lastmod: 2024-02-19 22:05:12.838797
 model: gpt-4-0125-preview
 summary: "CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Werte,\
   \ sind ein \xFCbliches Datenformat f\xFCr den Austausch, das tabellarische Daten\

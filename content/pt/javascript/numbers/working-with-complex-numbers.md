@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/working-with-complex-numbers/
 date: 2024-01-26 04:42:30.649773-07:00
 description: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma parte\
   \ imagin\xE1ria (como 3 + 4i). Eles aparecem em v\xE1rios problemas de programa\xE7\
   \xE3o, especialmente no\u2026"
-lastmod: 2024-02-18 23:08:58.526254
+lastmod: 2024-02-19 22:05:06.021089
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma parte imagin\xE1\
   ria (como 3 + 4i). Eles aparecem em v\xE1rios problemas de programa\xE7\xE3o, especialmente\

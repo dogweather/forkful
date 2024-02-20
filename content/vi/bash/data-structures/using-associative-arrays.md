@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/bash/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:23.190674-07:00
@@ -8,7 +6,7 @@ description: "M\u1EA3ng li\xEAn k\u1EBFt l\xE0 nh\u01B0 nh\u1EEFng m\u1EA3ng t\u
   ng c\u01B0\u1EDDng, cho ph\xE9p b\u1EA1n s\u1EED d\u1EE5ng chu\u1ED7i l\xE0m ch\u1EC9\
   \ m\u1EE5c thay v\xEC ch\u1EC9 c\xF3 s\u1ED1 nguy\xEAn. L\u1EADp tr\xECnh vi\xEA\
   n s\u1EED d\u1EE5ng ch\xFAng cho c\u1EA5u tr\xFAc d\u1EEF\u2026"
-lastmod: 2024-02-18 23:08:50.874951
+lastmod: 2024-02-19 22:04:56.055464
 model: gpt-4-0125-preview
 summary: "M\u1EA3ng li\xEAn k\u1EBFt l\xE0 nh\u01B0 nh\u1EEFng m\u1EA3ng t\u0103ng\
   \ c\u01B0\u1EDDng, cho ph\xE9p b\u1EA1n s\u1EED d\u1EE5ng chu\u1ED7i l\xE0m ch\u1EC9\

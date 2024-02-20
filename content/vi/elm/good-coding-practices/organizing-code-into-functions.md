@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elm/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:38.100081-07:00
@@ -9,7 +7,7 @@ description: "\u0110\u1ED5 t\u1EA5t c\u1EA3 m\xE3 c\u1EE7a b\u1EA1n v\xE0o m\u1E
   c h\xE0m? \xDD t\u01B0\u1EDFng t\u1ED1t. Vi\u1EC7c n\xE0y gi\u1EEF cho m\xE3 Elm\
   \ c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c s\u1EA1ch s\u1EBD, c\xF3 th\u1EC3 t\xE1\
   i s\u1EED d\u1EE5ng\u2026"
-lastmod: 2024-02-18 23:08:50.609838
+lastmod: 2024-02-19 22:04:55.719886
 model: gpt-4-0125-preview
 summary: "\u0110\u1ED5 t\u1EA5t c\u1EA3 m\xE3 c\u1EE7a b\u1EA1n v\xE0o m\u1ED9t \u0111\
   \u1ED1ng l\u1EDBn? \xDD t\u01B0\u1EDFng t\u1ED3i. Chia n\xF3 th\xE0nh c\xE1c h\xE0\

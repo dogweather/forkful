@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/typescript/working-with-toml/
 date: 2024-01-26 04:27:00.624311-07:00
 description: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un formato di\
   \ serializzazione dei dati simile a JSON o YAML. I programmatori lo utilizzano per\
   \ la sua\u2026"
-lastmod: 2024-02-18 23:08:55.663078
+lastmod: 2024-02-19 22:05:02.260406
 model: gpt-4-0125-preview
 summary: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un formato di serializzazione\
   \ dei dati simile a JSON o YAML. I programmatori lo utilizzano per la sua\u2026"

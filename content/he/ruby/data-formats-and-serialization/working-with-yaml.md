@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/ruby/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:41.693240-07:00
@@ -12,7 +10,7 @@ description: "YAML, \u05E9\u05E2\u05D5\u05DE\u05D3 \u05DC-YAML Ain't Markup Lang
   \u05D0\u05D4 \u05DC\u05D1\u05E0\u05D9 \u05D0\u05D3\u05DD. \u05EA\u05DB\u05E0\u05EA\
   \u05D9\u05DD \u05E0\u05DE\u05E9\u05DB\u05D9\u05DD \u05DC-YAML \u05DB\u05D0\u05E9\
   \u05E8 \u05D4\u05DD \u05E6\u05E8\u05D9\u05DB\u05D9\u05DD\u2026"
-lastmod: 2024-02-18 23:08:53.412394
+lastmod: 2024-02-19 22:04:59.518610
 model: gpt-4-0125-preview
 summary: "YAML, \u05E9\u05E2\u05D5\u05DE\u05D3 \u05DC-YAML Ain't Markup Language,\
   \ \u05DE\u05E9\u05DE\u05E9 \u05E8\u05D1\u05D5\u05EA \u05D1\u05E8\u05D5\u05D1\u05D9\

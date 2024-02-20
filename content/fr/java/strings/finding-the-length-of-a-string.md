@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/java/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:38.681256-07:00
 description: "Calculer la longueur d'une cha\xEEne de caract\xE8res, c'est simplement\
   \ compter les caract\xE8res qu'elle contient. Les programmeurs ont besoin de cette\
   \ info pour\u2026"
-lastmod: 2024-02-18 23:09:08.618516
+lastmod: 2024-02-19 22:05:16.391465
 model: gpt-4-1106-preview
 summary: "Calculer la longueur d'une cha\xEEne de caract\xE8res, c'est simplement\
   \ compter les caract\xE8res qu'elle contient. Les programmeurs ont besoin de cette\

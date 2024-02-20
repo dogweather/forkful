@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/lua/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:46.693435-07:00
 description: "REPL\u306FRead-Eval-Print Loop\u306E\u7565\u3067\u3001\u30B3\u30FC\u30C9\
   \u3092\u8FC5\u901F\u306B\u30C6\u30B9\u30C8\u3067\u304D\u308B\u30A4\u30F3\u30BF\u30E9\
@@ -8,7 +6,7 @@ description: "REPL\u306FRead-Eval-Print Loop\u306E\u7565\u3067\u3001\u30B3\u30FC
   \u30DE\u30FC\u306F\u3001\u5B9F\u9A13\u3001\u30C7\u30D0\u30C3\u30B0\u3001\u8A00\u8A9E\
   \u306E\u7279\u6027\u3092\u5B66\u3076\u305F\u3081\u306B\u3053\u308C\u3092\u4F7F\u7528\
   \u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.035481
+lastmod: 2024-02-19 22:05:01.442469
 model: gpt-4-0125-preview
 summary: "REPL\u306FRead-Eval-Print Loop\u306E\u7565\u3067\u3001\u30B3\u30FC\u30C9\
   \u3092\u8FC5\u901F\u306B\u30C6\u30B9\u30C8\u3067\u304D\u308B\u30A4\u30F3\u30BF\u30E9\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:21.325677-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to operacja, kt\xF3ra filtruje\
   \ nasz ci\u0105g znak\xF3w (string), usuwaj\u0105c okre\u015Blone elementy. Programi\u015B\
   ci wykonuj\u0105 t\u0119 operacj\u0119,\u2026"
-lastmod: 2024-02-18 23:08:49.374030
+lastmod: 2024-02-19 22:04:54.294357
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to operacja, kt\xF3ra filtruje\
   \ nasz ci\u0105g znak\xF3w (string), usuwaj\u0105c okre\u015Blone elementy. Programi\u015B\

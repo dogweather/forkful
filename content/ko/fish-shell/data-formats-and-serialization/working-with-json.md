@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:50.956016-07:00
@@ -12,7 +10,7 @@ description: "Fish Shell\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 
   \uC8FC \uC0AC\uC6A9\uB418\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uC6F9\uACFC \uC5B4\
   \uD50C\uB9AC\uCF00\uC774\uC158 \uAC1C\uBC1C\uC5D0\uC11C JSON\uC758 \uB9CC\uC5F0\uD568\
   \uC744 \uACE0\uB824\uD560 \uB54C, \uC258\uC5D0\uC11C\u2026"
-lastmod: 2024-02-18 23:09:06.914550
+lastmod: 2024-02-19 22:05:14.801833
 model: gpt-4-0125-preview
 summary: "Fish Shell\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 JSON \uB370\
   \uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uB294 \uAC83\uC744\

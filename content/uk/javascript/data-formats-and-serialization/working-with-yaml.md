@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/javascript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:59.457791-07:00
@@ -12,7 +10,7 @@ description: "YAML, \u0449\u043E \u0440\u043E\u0437\u0448\u0438\u0444\u0440\u043
   \u0430\u043D\u0438\u0445, \u043F\u0440\u0438\u0434\u0430\u0442\u043D\u0438\u0439\
   \ \u0434\u043B\u044F \u0447\u0438\u0442\u0430\u043D\u043D\u044F \u043B\u044E\u0434\
   \u0438\u043D\u043E\u044E.\u2026"
-lastmod: 2024-02-18 23:09:01.070891
+lastmod: 2024-02-19 22:05:09.109972
 model: gpt-4-0125-preview
 summary: "YAML, \u0449\u043E \u0440\u043E\u0437\u0448\u0438\u0444\u0440\u043E\u0432\
   \u0443\u0454\u0442\u044C\u0441\u044F \u044F\u043A YAML Ain't Markup Language (YAML\

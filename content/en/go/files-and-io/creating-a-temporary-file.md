@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/creating-a-temporary-file/
 date: 2024-02-03 17:50:13.471894-07:00
 description: "Creating a temporary file in Go allows for the generation of a non-persistent\
   \ file designed for short-term use, mainly for tasks such as storing interim\u2026"
-lastmod: 2024-02-18 23:09:10.615996
+lastmod: 2024-02-19 22:05:18.156498
 model: gpt-4-0125-preview
 summary: "Creating a temporary file in Go allows for the generation of a non-persistent\
   \ file designed for short-term use, mainly for tasks such as storing interim\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/reading-a-text-file/
 date: 2024-01-20 17:55:05.959383-07:00
 description: "Reading a text file is grabbing the content from a file that's structured\
   \ as human-readable text. Programmers do it to process or analyze the data, like\u2026"
-lastmod: 2024-02-18 23:09:10.824567
+lastmod: 2024-02-19 22:05:18.343752
 model: gpt-4-1106-preview
 summary: "Reading a text file is grabbing the content from a file that's structured\
   \ as human-readable text. Programmers do it to process or analyze the data, like\u2026"

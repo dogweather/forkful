@@ -1,12 +1,10 @@
 ---
-aliases:
-- /uk/ruby/starting-a-new-project/
 date: 2024-01-20 18:04:14.900178-07:00
 description: "Starting a new project (\u0456\u043D\u0456\u0446\u0456\u0430\u0446\u0456\
   \u044F \u043D\u043E\u0432\u043E\u0433\u043E \u043F\u0440\u043E\u0435\u043A\u0442\
   \u0443) means setting up the initial structure for your code \u2013 imagine it's\
   \ the foundation of a house you're\u2026"
-lastmod: 2024-02-18 23:09:01.276275
+lastmod: 2024-02-19 22:05:09.310921
 model: gpt-4-1106-preview
 summary: "Starting a new project (\u0456\u043D\u0456\u0446\u0456\u0430\u0446\u0456\
   \u044F \u043D\u043E\u0432\u043E\u0433\u043E \u043F\u0440\u043E\u0435\u043A\u0442\

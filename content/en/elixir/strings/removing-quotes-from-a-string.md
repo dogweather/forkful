@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/removing-quotes-from-a-string/
 date: 2024-01-25 20:50:15.047489-07:00
 description: "Stripping quotes from a string means shedding off those extra wrappers\
   \ to get the clean text inside. Programmers do this to sanitize input, avoid errors,\u2026"
-lastmod: 2024-02-18 23:09:10.753694
+lastmod: 2024-02-19 22:05:18.280003
 model: gpt-4-1106-preview
 summary: "Stripping quotes from a string means shedding off those extra wrappers to\
   \ get the clean text inside. Programmers do this to sanitize input, avoid errors,\u2026"

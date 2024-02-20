@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/typescript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:20.514203-07:00
 description: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych skrypt\xF3\
   w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu.\
   \ Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: 2024-02-18 23:08:49.351479
+lastmod: 2024-02-19 22:04:54.269804
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych skrypt\xF3\
   w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu.\

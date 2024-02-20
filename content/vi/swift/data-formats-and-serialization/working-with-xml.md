@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:29.566057-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED
   \ c\xFA ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u XML trong Swift. C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c trao\
   \ \u0111\u1ED5i d\u1EEF li\u1EC7u, \u0111\u1EB7c\u2026"
-lastmod: 2024-02-18 23:08:51.116665
+lastmod: 2024-02-19 22:04:56.338031
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u XML trong Swift. C\xE1c l\u1EADp tr\xEC\

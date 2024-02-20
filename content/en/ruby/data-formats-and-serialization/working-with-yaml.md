@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/working-with-yaml/
 date: 2024-02-03 19:03:11.899120-07:00
 description: "YAML, which stands for YAML Ain't Markup Language, is extensively used\
   \ in Ruby for configuration files and data serialization due to its human-readable\u2026"
-lastmod: 2024-02-18 23:09:11.585973
+lastmod: 2024-02-19 22:05:19.030730
 model: gpt-4-0125-preview
 summary: "YAML, which stands for YAML Ain't Markup Language, is extensively used in\
   \ Ruby for configuration files and data serialization due to its human-readable\u2026"

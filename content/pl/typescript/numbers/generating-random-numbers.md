@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/generating-random-numbers/
 date: 2024-01-27 20:35:47.077997-07:00
 description: "Generowanie losowych liczb w TypeScript polega na tworzeniu nieprzewidywalnych\
   \ warto\u015Bci numerycznych w okre\u015Blonym zakresie. Programi\u015Bci wykorzystuj\u0105\
   \ te\u2026"
-lastmod: 2024-02-18 23:08:49.344064
+lastmod: 2024-02-19 22:04:54.261656
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w TypeScript polega na tworzeniu nieprzewidywalnych\
   \ warto\u015Bci numerycznych w okre\u015Blonym zakresie. Programi\u015Bci wykorzystuj\u0105\

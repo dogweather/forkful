@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:44.044363-07:00
 description: "Zamiana pierwszej litery ka\u017Cdego wyrazu w ci\u0105gu znak\xF3w\
   \ na wielk\u0105 (capitalization) w Visual Basic for Applications (VBA) polega na\
   \ przekszta\u0142ceniu\u2026"
-lastmod: 2024-02-18 23:08:49.415097
+lastmod: 2024-02-19 22:04:54.338351
 model: gpt-4-0125-preview
 summary: "Zamiana pierwszej litery ka\u017Cdego wyrazu w ci\u0105gu znak\xF3w na wielk\u0105\
   \ (capitalization) w Visual Basic for Applications (VBA) polega na przekszta\u0142\

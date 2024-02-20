@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/typescript/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:04.610943-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c in \u1EA5n th\xF4ng tin debug gi\u1ED1ng nh\u01B0 chi\u1
   c \u0111\xE8n pin trong ng\xF5 t\u1ED1i c\u1EE7a m\xE3 l\u1EC7nh; n\xF3 gi\xFAp\
   \ b\u1EA1n ph\xE1t hi\u1EC7n l\u1ED7i b\u1EB1ng c\xE1ch cho ph\xE9p b\u1EA1n nh\xEC\
   n th\u1EA5u nh\u1EEFng g\xEC m\xE3 l\u1EC7nh\u2026"
-lastmod: 2024-02-18 23:08:50.418193
+lastmod: 2024-02-19 22:04:55.472566
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c in \u1EA5n th\xF4ng tin debug gi\u1ED1ng nh\u01B0 chi\u1EBFc \u0111\
   \xE8n pin trong ng\xF5 t\u1ED1i c\u1EE7a m\xE3 l\u1EC7nh; n\xF3 gi\xFAp b\u1EA1\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/handling-errors/
 date: 2024-01-26 00:56:33.033031-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w w PHP dotyczy zarz\u0105dzania i reagowania\
   \ na warunki, kt\xF3re zak\u0142\xF3caj\u0105 normalny przep\u0142yw programu, takie\
   \ jak brakuj\u0105ce pliki czy b\u0142\u0119dne dane\u2026"
-lastmod: 2024-02-18 23:08:49.703031
+lastmod: 2024-02-19 22:04:54.639251
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w PHP dotyczy zarz\u0105dzania i reagowania\
   \ na warunki, kt\xF3re zak\u0142\xF3caj\u0105 normalny przep\u0142yw programu, takie\

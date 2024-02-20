@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:20.223489-07:00
 description: "Parsowanie daty ze stringa w Go polega na konwersji daty przedstawionej\
   \ w formie tekstu na bardziej u\u017Cyteczny format (np. `time.Time`). Programi\u015B\
   ci\u2026"
-lastmod: 2024-02-18 23:08:49.108844
+lastmod: 2024-02-19 22:04:54.047621
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa w Go polega na konwersji daty przedstawionej\
   \ w formie tekstu na bardziej u\u017Cyteczny format (np. `time.Time`). Programi\u015B\

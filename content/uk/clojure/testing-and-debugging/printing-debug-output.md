@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/clojure/printing-debug-output/
 date: 2024-01-20 17:52:27.243650-07:00
 description: "Printing debug output is about showing intermediate results or variables\
   \ while your program is running. We do it to hunt bugs or just understand what's\u2026"
-lastmod: 2024-02-18 23:08:59.841506
+lastmod: 2024-02-19 22:05:07.733681
 model: gpt-4-1106-preview
 summary: "Printing debug output is about showing intermediate results or variables\
   \ while your program is running. We do it to hunt bugs or just understand what's\u2026"

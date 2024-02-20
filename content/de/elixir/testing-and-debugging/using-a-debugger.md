@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elixir/using-a-debugger/
 date: 2024-01-26 03:48:19.903448-07:00
 description: "Ein Debugger in Elixir zu verwenden, bedeutet, durch Ihren Code zu gehen,\
   \ Variablen zu inspizieren und Fl\xFCsse zu verfolgen, um Fehler zu beseitigen.\u2026"
-lastmod: 2024-02-18 23:09:04.556641
+lastmod: 2024-02-19 22:05:12.516149
 model: gpt-4-0125-preview
 summary: "Ein Debugger in Elixir zu verwenden, bedeutet, durch Ihren Code zu gehen,\
   \ Variablen zu inspizieren und Fl\xFCsse zu verfolgen, um Fehler zu beseitigen.\u2026"

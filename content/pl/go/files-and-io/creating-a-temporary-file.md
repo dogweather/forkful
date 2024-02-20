@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:33.820467-07:00
 description: "Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwa\u0142\
   ego przeznaczonego do u\u017Cytku kr\xF3tkoterminowego, g\u0142\xF3wnie do zada\u0144\
   \ takich jak\u2026"
-lastmod: 2024-02-18 23:08:49.120274
+lastmod: 2024-02-19 22:04:54.059127
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwa\u0142\
   ego przeznaczonego do u\u017Cytku kr\xF3tkoterminowego, g\u0142\xF3wnie do zada\u0144\

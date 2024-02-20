@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/concatenating-strings/
 date: 2024-01-20 17:34:09.900750-07:00
 description: "String concatenation is stitching together two or more strings end-to-end.\
   \ Programmers do it to build sentences, create messages, or combine input data\u2026"
-lastmod: 2024-02-18 23:09:11.347623
+lastmod: 2024-02-19 22:05:18.813158
 model: gpt-4-1106-preview
 summary: "String concatenation is stitching together two or more strings end-to-end.\
   \ Programmers do it to build sentences, create messages, or combine input data\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:36.684509-07:00
 description: "Att skriva till standardfel (stderr) inneb\xE4r att skicka felmeddelanden\
   \ och diagnostik till konsolen eller terminalen. Programmerare g\xF6r detta f\xF6\
   r att\u2026"
-lastmod: 2024-02-18 23:08:51.685060
+lastmod: 2024-02-19 22:04:57.013671
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) inneb\xE4r att skicka felmeddelanden\
   \ och diagnostik till konsolen eller terminalen. Programmerare g\xF6r detta f\xF6\

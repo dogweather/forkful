@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/python/reading-a-text-file/
 date: 2024-01-20 17:54:56.193566-07:00
 description: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in ein Programm zu\
   \ laden, um ihn zu verarbeiten. Programmierer machen das, weil Textdateien oft\u2026"
-lastmod: 2024-02-18 23:09:04.480455
+lastmod: 2024-02-19 22:05:12.444284
 model: gpt-4-1106-preview
 summary: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in ein Programm zu laden,\
   \ um ihn zu verarbeiten. Programmierer machen das, weil Textdateien oft\u2026"

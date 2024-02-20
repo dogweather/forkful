@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/logging/
 date: 2024-01-26 01:00:09.045190-07:00
 description: "A \"logging\" em programa\xE7\xE3o \xE9 o processo de registrar eventos,\
   \ estados e informa\xE7\xF5es em um arquivo ou em outro meio de sa\xEDda. Os programadores\
   \ fazem logs\u2026"
-lastmod: 2024-02-18 23:08:58.456097
+lastmod: 2024-02-19 22:05:05.946556
 model: gpt-4-1106-preview
 summary: "A \"logging\" em programa\xE7\xE3o \xE9 o processo de registrar eventos,\
   \ estados e informa\xE7\xF5es em um arquivo ou em outro meio de sa\xEDda. Os programadores\

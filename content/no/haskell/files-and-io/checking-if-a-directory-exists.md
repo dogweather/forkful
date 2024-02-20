@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/haskell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:26.455493-07:00
 description: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon i mange\
   \ programmeringsoppgaver, som tillater betingede handlinger basert p\xE5 tilstedev\xE6\
   relsen\u2026"
-lastmod: 2024-02-18 23:08:53.948455
+lastmod: 2024-02-19 22:05:00.120851
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon i mange\
   \ programmeringsoppgaver, som tillater betingede handlinger basert p\xE5 tilstedev\xE6\

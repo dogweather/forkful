@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/powershell/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:16.432071-07:00
 description: "Das Umwandeln eines Datums in einen String erm\xF6glicht es uns, das\
   \ Datum in einem benutzerfreundlichen oder spezifischen Format zu pr\xE4sentieren.\u2026"
-lastmod: 2024-02-18 23:09:05.113340
+lastmod: 2024-02-19 22:05:13.046947
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String erm\xF6glicht es uns, das Datum\
   \ in einem benutzerfreundlichen oder spezifischen Format zu pr\xE4sentieren.\u2026"

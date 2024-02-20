@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/elixir/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:13.448689-07:00
 description: "Converting a date to a string in Elixir turns the date from a struct\
   \ into a readable series of characters for display or storage. Programmers do it\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:10.776872
+lastmod: 2024-02-19 22:05:18.301191
 model: gpt-4-1106-preview
 summary: "Converting a date to a string in Elixir turns the date from a struct into\
   \ a readable series of characters for display or storage. Programmers do it to\u2026"

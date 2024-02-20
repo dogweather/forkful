@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:20.685467-07:00
@@ -12,7 +10,7 @@ description: "\u5728 C \u8BED\u8A00\u4E2D\u751F\u6210\u968F\u673A\u6570\u6D89\u5
   \u81F3\u5173\u91CD\u8981\uFF0C\u5176\u4E2D\u4E0D\u53EF\u9884\u6D4B\u6027\u6216\u6A21\
   \u62DF\u73B0\u5B9E\u4E16\u754C\u7684\u968F\u673A\u6027\u662F\u5FC5\u4E0D\u53EF\u5C11\
   \u7684\u3002"
-lastmod: 2024-02-18 23:08:59.555179
+lastmod: 2024-02-19 22:05:07.371903
 model: gpt-4-0125-preview
 summary: "\u5728 C \u8BED\u8A00\u4E2D\u751F\u6210\u968F\u673A\u6570\u6D89\u53CA\u521B\
   \u5EFA\u4E0D\u53EF\u9884\u6D4B\u7684\u503C\uFF0C\u5E76\u4E14\u8FD9\u4E9B\u503C\u9075\

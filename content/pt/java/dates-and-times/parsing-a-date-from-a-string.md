@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/java/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:20.408512-07:00
 description: "Analisar uma data a partir de uma string envolve converter a representa\xE7\
   \xE3o textual de uma data e hora em um objeto `Date` ou em um objeto `LocalDateTime`\u2026"
-lastmod: 2024-02-18 23:08:58.028053
+lastmod: 2024-02-19 22:05:05.504833
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve converter a representa\xE7\
   \xE3o textual de uma data e hora em um objeto `Date` ou em um objeto `LocalDateTime`\u2026"

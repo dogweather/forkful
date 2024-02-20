@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/arduino/interpolating-a-string/
 date: 2024-01-20 17:50:12.175783-07:00
 description: "La interpolaci\xF3n de cadenas permite insertar valores de variables\
   \ dentro de una cadena de texto, creando as\xED una cadena compuesta din\xE1micamente.\u2026"
-lastmod: 2024-02-18 23:09:10.246442
+lastmod: 2024-02-19 22:05:17.826097
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas permite insertar valores de variables dentro\
   \ de una cadena de texto, creando as\xED una cadena compuesta din\xE1micamente.\u2026"

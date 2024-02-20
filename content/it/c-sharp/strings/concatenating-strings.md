@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/concatenating-strings/
 date: 2024-01-20 17:34:42.744165-07:00
 description: "Concatenare le stringhe significa unirle in una sola. I programmatori\
   \ lo fanno per costruire testo dinamicamente, come combinare nome e cognome o generare\u2026"
-lastmod: 2024-02-18 23:08:55.879781
+lastmod: 2024-02-19 22:05:02.489516
 model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unirle in una sola. I programmatori lo\
   \ fanno per costruire testo dinamicamente, come combinare nome e cognome o generare\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/refactoring/
 date: 2024-01-25 02:11:48.247176-07:00
 description: "Refactoring is the process of restructuring existing code without changing\
   \ its external behavior to improve nonfunctional attributes. Programmers do it to\u2026"
-lastmod: 2024-02-18 23:09:11.489629
+lastmod: 2024-02-19 22:05:18.942644
 model: gpt-4-1106-preview
 summary: "Refactoring is the process of restructuring existing code without changing\
   \ its external behavior to improve nonfunctional attributes. Programmers do it to\u2026"

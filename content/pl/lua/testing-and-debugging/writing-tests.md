@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/lua/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:31.319974-07:00
 description: "Pisanie test\xF3w w programowaniu polega na tworzeniu ma\u0142ych, oddzielnych\
   \ kawa\u0142k\xF3w kodu, kt\xF3re automatycznie weryfikuj\u0105, czy r\xF3\u017C\
   ne cz\u0119\u015Bci aplikacji dzia\u0142aj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.743433
+lastmod: 2024-02-19 22:04:54.680622
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu ma\u0142ych, oddzielnych\
   \ kawa\u0142k\xF3w kodu, kt\xF3re automatycznie weryfikuj\u0105, czy r\xF3\u017C\

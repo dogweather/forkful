@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:42.375616-07:00
 description: "En Elixir, los arreglos asociativos, llamados Mapas, son colecciones\
   \ de pares clave-valor donde una clave \xFAnica apunta a un valor. Son extremadamente\u2026"
-lastmod: 2024-02-18 23:09:09.640915
+lastmod: 2024-02-19 22:05:17.282556
 model: gpt-4-0125-preview
 summary: "En Elixir, los arreglos asociativos, llamados Mapas, son colecciones de\
   \ pares clave-valor donde una clave \xFAnica apunta a un valor. Son extremadamente\u2026"

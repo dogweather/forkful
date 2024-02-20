@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/sending-an-http-request/
 date: 2024-01-20 18:01:04.176146-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de vous\
   \ fournir des donn\xE9es, ou d'y soumettre des infos. Les devs font \xE7a pour int\xE9\
   ragir avec\u2026"
-lastmod: 2024-02-18 23:09:08.478250
+lastmod: 2024-02-19 22:05:16.263906
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de vous\
   \ fournir des donn\xE9es, ou d'y soumettre des infos. Les devs font \xE7a pour int\xE9\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/java/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:12.395238-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en Java est une t\xE2che fondamentale\
   \ qui implique de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire du syst\xE8me de\
   \ fichiers avant de\u2026"
-lastmod: 2024-02-18 23:09:08.644060
+lastmod: 2024-02-19 22:05:16.414705
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Java est une t\xE2che fondamentale\
   \ qui implique de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire du syst\xE8me de\

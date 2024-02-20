@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:58.725051-07:00
@@ -8,7 +6,7 @@ description: "Trong Elixir, c\xE1c m\u1EA3ng li\xEAn k\u1EBFt, g\u1ECDi l\xE0 Ma
   \ l\xE0 collection c\u1EE7a c\xE1c c\u1EB7p key-value \u1EDF \u0111\xF3 m\u1ED9\
   t key duy nh\u1EA5t ch\u1EC9 \u0111\u1EBFn m\u1ED9t gi\xE1 tr\u1ECB. Ch\xFAng r\u1EA5\
   t ti\u1EC7n l\u1EE3i \u0111\u1EC3 l\u01B0u tr\u1EEF\u2026"
-lastmod: 2024-02-18 23:08:50.360225
+lastmod: 2024-02-19 22:04:55.400011
 model: gpt-4-0125-preview
 summary: "Trong Elixir, c\xE1c m\u1EA3ng li\xEAn k\u1EBFt, g\u1ECDi l\xE0 Maps, l\xE0\
   \ collection c\u1EE7a c\xE1c c\u1EB7p key-value \u1EDF \u0111\xF3 m\u1ED9t key duy\

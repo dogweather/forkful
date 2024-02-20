@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/concatenating-strings/
 date: 2024-01-20 17:35:06.973803-07:00
 description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w (string\xF3w) to\
   \ po prostu ich sklejanie. Czynimy to, by stworzy\u0107 zdania, wiadomo\u015Bci\
   \ czy dynamicznie budowane warto\u015Bci tekstowe w\u2026"
-lastmod: 2024-02-18 23:08:49.551765
+lastmod: 2024-02-19 22:04:54.487597
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w (string\xF3w) to po\
   \ prostu ich sklejanie. Czynimy to, by stworzy\u0107 zdania, wiadomo\u015Bci czy\

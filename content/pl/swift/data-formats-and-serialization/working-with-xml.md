@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/working-with-xml/
 date: 2024-01-26 04:36:01.119861-07:00
 description: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generowanie\
   \ danych XML. Programi\u015Bci robi\u0105 to dla wymiany danych, zw\u0142aszcza\
   \ podczas integracji z\u2026"
-lastmod: 2024-02-18 23:08:49.976517
+lastmod: 2024-02-19 22:04:54.928004
 model: gpt-4-0125-preview
 summary: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generowanie danych\
   \ XML. Programi\u015Bci robi\u0105 to dla wymiany danych, zw\u0142aszcza podczas\

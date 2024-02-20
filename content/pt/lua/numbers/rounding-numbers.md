@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/rounding-numbers/
 date: 2024-01-26 03:45:57.647203-07:00
 description: "Arredondar n\xFAmeros significa ajust\xE1-los ao inteiro mais pr\xF3\
   ximo ou a um determinado n\xFAmero de casas decimais. \xC9 um procedimento comum\
   \ na programa\xE7\xE3o para\u2026"
-lastmod: 2024-02-18 23:08:58.277373
+lastmod: 2024-02-19 22:05:05.754489
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao inteiro mais pr\xF3ximo\
   \ ou a um determinado n\xFAmero de casas decimais. \xC9 um procedimento comum na\

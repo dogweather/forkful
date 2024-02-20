@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/rust/working-with-csv/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:19.748144-07:00
@@ -14,7 +12,7 @@ description: "CSV, \u0447\u0442\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0435
   . \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u043E\
   \u0431\u043E\u0436\u0430\u044E\u0442 CSV \u0437\u0430 \u0435\u0433\u043E \u043F\u0440\
   \u043E\u0441\u0442\u043E\u0442\u0443\u2026"
-lastmod: 2024-02-18 23:08:56.762634
+lastmod: 2024-02-19 22:05:03.622146
 model: gpt-4-0125-preview
 summary: "CSV, \u0447\u0442\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442\
   \ \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F, \u0440\u0430\u0437\u0434\u0435\

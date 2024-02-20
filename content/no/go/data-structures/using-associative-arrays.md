@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/go/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:51.250459-07:00
 description: "Assosiative tabeller, kjent som maps i Go, lar deg lagre n\xF8kkel-verdi-par\
   \ der hver unike n\xF8kkel kartlegger til en verdi. Programmerere bruker maps for\u2026"
-lastmod: 2024-02-18 23:08:53.428449
+lastmod: 2024-02-19 22:04:59.538164
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent som maps i Go, lar deg lagre n\xF8kkel-verdi-par\
   \ der hver unike n\xF8kkel kartlegger til en verdi. Programmerere bruker maps for\u2026"

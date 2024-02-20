@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/arduino/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:59.300172-07:00
 description: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 convertir\
   \ le premier caract\xE8re de chaque mot en majuscule, tout en s'assurant que les\
   \ autres\u2026"
-lastmod: 2024-02-18 23:09:09.096761
+lastmod: 2024-02-19 22:05:16.776064
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 convertir\
   \ le premier caract\xE8re de chaque mot en majuscule, tout en s'assurant que les\

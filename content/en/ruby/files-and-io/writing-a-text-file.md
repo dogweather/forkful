@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/writing-a-text-file/
 date: 2024-02-03 19:03:14.348240-07:00
 description: "Writing to a text file in Ruby is a fundamental operation that allows\
   \ you to store output and data persistently, enabling data to be accessed or modified\u2026"
-lastmod: 2024-02-18 23:09:11.584058
+lastmod: 2024-02-19 22:05:19.029009
 model: gpt-4-0125-preview
 summary: "Writing to a text file in Ruby is a fundamental operation that allows you\
   \ to store output and data persistently, enabling data to be accessed or modified\u2026"

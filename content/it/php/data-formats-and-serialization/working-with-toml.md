@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/php/working-with-toml/
 date: 2024-01-26 04:24:37.474126-07:00
 description: "TOML, abbreviazione di Tom's Obvious, Minimal Language, \xE8 un formato\
   \ di dati simile a JSON o YAML, ma pi\xF9 facile da leggere per gli esseri umani.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.993578
+lastmod: 2024-02-19 22:05:02.607588
 model: gpt-4-0125-preview
 summary: "TOML, abbreviazione di Tom's Obvious, Minimal Language, \xE8 un formato\
   \ di dati simile a JSON o YAML, ma pi\xF9 facile da leggere per gli esseri umani.\

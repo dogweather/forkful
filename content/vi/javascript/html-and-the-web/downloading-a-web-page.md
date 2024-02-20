@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:13.690397-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1
   y HTML, CSS, JavaScript, v\xE0 b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7u n\xE0o kh\xE1\
   c t\u1EA1o n\xEAn trang t\u1EEB m\xE1y ch\u1EE7. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
-lastmod: 2024-02-18 23:08:51.134700
+lastmod: 2024-02-19 22:04:56.360908
 model: gpt-4-0125-preview
 summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y HTML,\
   \ CSS, JavaScript, v\xE0 b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7u n\xE0o kh\xE1c t\u1EA1\

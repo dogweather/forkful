@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:30.586517-07:00
 description: "HTTP-pyynt\xF6 perusautentikaatiolla on web-palvelimelle l\xE4hetetty\
   \ pyynt\xF6, jossa on k\xE4ytt\xE4j\xE4tunnus ja salasana. Koodarit k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 yksinkertaiseen\u2026"
-lastmod: 2024-02-18 23:09:07.273298
+lastmod: 2024-02-19 22:05:15.167520
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 perusautentikaatiolla on web-palvelimelle l\xE4hetetty pyynt\xF6\
   , jossa on k\xE4ytt\xE4j\xE4tunnus ja salasana. Koodarit k\xE4ytt\xE4v\xE4t t\xE4\

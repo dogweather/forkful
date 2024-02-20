@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:36.255126-07:00
 description: "Het converteren van een string naar kleine letters betekent dat elk\
   \ teken in de string een kleine letter wordt. Programmeurs doen dit voor consistentie\u2026"
-lastmod: 2024-02-18 23:09:01.791241
+lastmod: 2024-02-19 22:05:09.808385
 model: gpt-4-0125-preview
 summary: "Het converteren van een string naar kleine letters betekent dat elk teken\
   \ in de string een kleine letter wordt. Programmeurs doen dit voor consistentie\u2026"

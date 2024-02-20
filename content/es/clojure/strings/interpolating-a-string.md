@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/clojure/interpolating-a-string/
 date: 2024-01-20 17:50:51.737620-07:00
 description: "Interpolar una cadena significa insertar valores de variables o expresiones\
   \ en medio de un texto fijo. Los programadores lo hacen para construir strings\u2026"
-lastmod: 2024-02-18 23:09:09.588364
+lastmod: 2024-02-19 22:05:17.234266
 model: gpt-4-1106-preview
 summary: "Interpolar una cadena significa insertar valores de variables o expresiones\
   \ en medio de un texto fijo. Los programadores lo hacen para construir strings\u2026"

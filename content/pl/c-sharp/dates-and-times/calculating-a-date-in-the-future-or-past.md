@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:33.019139-07:00
 description: "Co to jest obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142\
   o\u015Bci? To po prostu wyliczanie nowej daty, dodaj\u0105c lub odejmuj\u0105c czas\
   \ od danej daty pocz\u0105tkowej.\u2026"
-lastmod: 2024-02-18 23:08:49.623827
+lastmod: 2024-02-19 22:04:54.556215
 model: gpt-4-1106-preview
 summary: "Co to jest obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015B\
   ci? To po prostu wyliczanie nowej daty, dodaj\u0105c lub odejmuj\u0105c czas od\

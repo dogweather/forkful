@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/java/searching-and-replacing-text/
 date: 2024-01-20 17:58:03.591840-07:00
 description: "S\xF8ke og erstatte tekst betyr \xE5 finne en spesifikk tekststreng\
   \ og bytte den ut med en annen. Programmerere bruker dette for \xE5 automatisere\
   \ koding,\u2026"
-lastmod: 2024-02-18 23:08:53.756866
+lastmod: 2024-02-19 22:04:59.895971
 model: gpt-4-1106-preview
 summary: "S\xF8ke og erstatte tekst betyr \xE5 finne en spesifikk tekststreng og bytte\
   \ den ut med en annen. Programmerere bruker dette for \xE5 automatisere koding,\u2026"

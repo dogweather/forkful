@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/ruby/writing-to-standard-error/
 date: 2024-02-03 19:03:35.880901-07:00
 description: "Writing to standard error (stderr) in Ruby is about directing error\
   \ messages or diagnostics to a separate output stream, distinct from the standard\
   \ output\u2026"
-lastmod: 2024-02-18 23:09:11.582092
+lastmod: 2024-02-19 22:05:19.027277
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Ruby is about directing error messages\
   \ or diagnostics to a separate output stream, distinct from the standard output\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/php/working-with-toml/
 date: 2024-01-26 04:25:17.645716-07:00
 description: "TOML, lyhenteen\xE4 Tom's Obvious, Minimal Language, on datamuoto, joka\
   \ muistuttaa JSONia tai YAMLia, mutta on ihmisten luettavissa helpompi. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.737284
+lastmod: 2024-02-19 22:05:15.573744
 model: gpt-4-0125-preview
 summary: "TOML, lyhenteen\xE4 Tom's Obvious, Minimal Language, on datamuoto, joka\
   \ muistuttaa JSONia tai YAMLia, mutta on ihmisten luettavissa helpompi. Ohjelmoijat\u2026"

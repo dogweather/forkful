@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:09.794660-07:00
 description: "Retirer les guillemets d'une cha\xEEne en Go consiste \xE0 \xE9liminer\
   \ les guillemets de d\xE9but et de fin (`\"` ou `'`) d'une cha\xEEne donn\xE9e.\
   \ Les programmeurs ont\u2026"
-lastmod: 2024-02-18 23:09:08.216789
+lastmod: 2024-02-19 22:05:16.027377
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne en Go consiste \xE0 \xE9liminer les\
   \ guillemets de d\xE9but et de fin (`\"` ou `'`) d'une cha\xEEne donn\xE9e. Les\

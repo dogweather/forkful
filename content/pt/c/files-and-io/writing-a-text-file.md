@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:37.226691-07:00
 description: "Escrever um arquivo de texto em C envolve criar ou abrir um arquivo\
   \ no modo de escrita e, em seguida, usar as fun\xE7\xF5es de E/S (Entrada/Sa\xED\
   da) de arquivos\u2026"
-lastmod: 2024-02-18 23:08:58.638902
+lastmod: 2024-02-19 22:05:06.140423
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em C envolve criar ou abrir um arquivo no modo\
   \ de escrita e, em seguida, usar as fun\xE7\xF5es de E/S (Entrada/Sa\xEDda) de arquivos\u2026"

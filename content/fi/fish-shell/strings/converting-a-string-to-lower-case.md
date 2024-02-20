@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:31.722334-07:00
 description: "Mit\xE4 ja Miksi? K\xE4\xE4nt\xE4minen merkkijono pieniksi kirjaimiksi\
   \ tarkoittaa kaikkien kirjainten muuttamista niiden pienikokoisiksi vastineiksi.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:08.067751
+lastmod: 2024-02-19 22:05:15.873893
 model: gpt-4-1106-preview
 summary: "Mit\xE4 ja Miksi? K\xE4\xE4nt\xE4minen merkkijono pieniksi kirjaimiksi tarkoittaa\
   \ kaikkien kirjainten muuttamista niiden pienikokoisiksi vastineiksi. Ohjelmoijat\u2026"

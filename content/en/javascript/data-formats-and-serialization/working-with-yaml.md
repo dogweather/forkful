@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/working-with-yaml/
 date: 2024-02-03 19:03:12.945585-07:00
 description: "YAML, short for YAML Ain't Markup Language, is a human-readable data\
   \ serialization format. Programmers often use it for configuration files and data\u2026"
-lastmod: 2024-02-18 23:09:11.457881
+lastmod: 2024-02-19 22:05:18.913575
 model: gpt-4-0125-preview
 summary: "YAML, short for YAML Ain't Markup Language, is a human-readable data serialization\
   \ format. Programmers often use it for configuration files and data\u2026"

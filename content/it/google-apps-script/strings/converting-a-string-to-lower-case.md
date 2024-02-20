@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:04.659748-07:00
 description: "Convertire una stringa in minuscolo in Google Apps Script, un linguaggio\
   \ di scripting basato su cloud per automatizzare compiti attraverso i prodotti\u2026"
-lastmod: 2024-02-18 23:08:55.463646
+lastmod: 2024-02-19 22:05:02.046510
 model: gpt-4-0125-preview
 summary: "Convertire una stringa in minuscolo in Google Apps Script, un linguaggio\
   \ di scripting basato su cloud per automatizzare compiti attraverso i prodotti\u2026"

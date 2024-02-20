@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/lua/comparing-two-dates/
 date: 2024-01-20 17:33:46.797489-07:00
 description: "Confrontare due date significa stabilire qual \xE8 la pi\xF9 recente\
   \ o se sono uguali. I programmatori fanno ci\xF2 per validare scadenze, calcolare\
   \ differenze\u2026"
-lastmod: 2024-02-18 23:08:56.022880
+lastmod: 2024-02-19 22:05:02.638964
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa stabilire qual \xE8 la pi\xF9 recente o se\
   \ sono uguali. I programmatori fanno ci\xF2 per validare scadenze, calcolare differenze\u2026"

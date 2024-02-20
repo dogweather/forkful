@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/kotlin/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:32.093244-07:00
 description: "Arbeid med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
   \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data i ren tekst.\u2026"
-lastmod: 2024-02-18 23:08:53.874181
+lastmod: 2024-02-19 22:05:00.041290
 model: gpt-4-0125-preview
 summary: "Arbeid med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
   \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data i ren tekst.\u2026"

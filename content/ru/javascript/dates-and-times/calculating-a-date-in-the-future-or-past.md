@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/javascript/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:55:44.361744-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0430\u0441\u0447\u0435\u0442 \u0431\u0443\u0434\u0443\u044
   \ \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u043E\u0439 \u0442\
   \u043E\u0447\u043A\u0438. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\
   \u0441\u0442\u0430\u043C \u044D\u0442\u043E \u0447\u0430\u0441\u0442\u043E\u2026"
-lastmod: 2024-02-18 23:08:57.476138
+lastmod: 2024-02-19 22:05:04.770364
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0441\u0447\u0435\u0442 \u0431\u0443\u0434\u0443\u0449\u0435\
   \u0439 \u0438\u043B\u0438 \u043F\u0440\u043E\u0448\u0435\u0434\u0448\u0435\u0439\

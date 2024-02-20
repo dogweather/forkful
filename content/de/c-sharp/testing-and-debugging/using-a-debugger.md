@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/using-a-debugger/
 date: 2024-01-26 03:48:09.939683-07:00
 description: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu\
   \ nutzen, um Code zu testen und zu diagnostizieren. Programmierer tun dies, um Bugs\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.876234
+lastmod: 2024-02-19 22:05:12.820627
 model: gpt-4-0125-preview
 summary: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu nutzen,\
   \ um Code zu testen und zu diagnostizieren. Programmierer tun dies, um Bugs zu\u2026"

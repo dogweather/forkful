@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:49.479567-07:00
 description: "Een nieuw project starten is als het planten van een zaadje in je digitale\
   \ tuin - je begint een frisse bundel idee\xEBn, en zet deze om in code die iets\u2026"
-lastmod: 2024-02-18 23:09:02.423167
+lastmod: 2024-02-19 22:05:10.427757
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten is als het planten van een zaadje in je digitale\
   \ tuin - je begint een frisse bundel idee\xEBn, en zet deze om in code die iets\u2026"

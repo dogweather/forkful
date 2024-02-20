@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/bash/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:54.067706-07:00
 description: "Immagina di aver appena scoperto di dover fare un aggiornamento batch\
   \ a diversi file di configurazione presenti sul tuo server. Potresti aprire ogni\
   \ file,\u2026"
-lastmod: 2024-02-18 23:08:56.048493
+lastmod: 2024-02-19 22:05:02.666300
 model: gpt-4-0125-preview
 summary: "Immagina di aver appena scoperto di dover fare un aggiornamento batch a\
   \ diversi file di configurazione presenti sul tuo server. Potresti aprire ogni file,\u2026"

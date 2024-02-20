@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:12.557861-07:00
 description: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
   \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\
   \ cela pour le\u2026"
-lastmod: 2024-02-18 23:09:08.231680
+lastmod: 2024-02-19 22:05:16.039616
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
   \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\

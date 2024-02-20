@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/clojure/extracting-substrings/
 date: 2024-01-20 17:45:21.873201-07:00
 description: "Substring \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\
   \ \u0915\u093E \u0939\u093F\u0938\u094D\u0938\u093E \u0939\u094B\u0924\u093E \u0939\
@@ -12,7 +10,7 @@ description: "Substring \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\
   \ \u0921\u093E\u091F\u093E \u092A\u094D\u0930\u094B\u0938\u0947\u0938 \u0915\u0930\
   \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0909\u092A\u092F\u094B\u0917 \u0915\
   \u0930\u0924\u0947\u2026"
-lastmod: 2024-02-18 23:09:02.704466
+lastmod: 2024-02-19 22:05:10.703853
 model: gpt-4-1106-preview
 summary: "Substring \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\
   \ \u0915\u093E \u0939\u093F\u0938\u094D\u0938\u093E \u0939\u094B\u0924\u093E \u0939\

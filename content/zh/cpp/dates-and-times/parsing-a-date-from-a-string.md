@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/cpp/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:40.398851-07:00
@@ -12,7 +10,7 @@ description: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F\u5305\u62EC\u89E3
   API\u4EA4\u4E92\u3002\u8FD9\u5BF9\u4E8E\u6570\u636E\u5904\u7406\u3001\u9A8C\u8BC1\
   \u4EE5\u53CA\u5728\u5E94\u7528\u7A0B\u5E8F\u4E2D\u8FDB\u884C\u65E5\u671F\u7B97\u672F\
   \u975E\u5E38\u91CD\u8981\u3002"
-lastmod: 2024-02-18 23:08:59.413489
+lastmod: 2024-02-19 22:05:07.178096
 model: gpt-4-0125-preview
 summary: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F\u5305\u62EC\u89E3\u91CA\
   \u5B57\u7B26\u4E32\u683C\u5F0F\u4EE5\u63D0\u53D6\u65E5\u671F\u7EC4\u4EF6\uFF0C\u5982\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/typescript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:40.616971-07:00
 description: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119\
   tno\u015Bci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3\
   w. Programi\u015Bci cz\u0119sto wykonuj\u0105 to\u2026"
-lastmod: 2024-02-18 23:08:49.366054
+lastmod: 2024-02-19 22:04:54.285479
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119tno\u015B\
   ci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3w.\

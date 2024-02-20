@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/getting-the-current-date/
 date: 2024-02-03 17:50:03.964838-07:00
 description: "Getting the current date in C involves tapping into the standard C library\
   \ to fetch and format the system's current date and time. Programmers often need\u2026"
-lastmod: 2024-02-18 23:09:11.532790
+lastmod: 2024-02-19 22:05:18.982521
 model: gpt-4-0125-preview
 summary: "Getting the current date in C involves tapping into the standard C library\
   \ to fetch and format the system's current date and time. Programmers often need\u2026"

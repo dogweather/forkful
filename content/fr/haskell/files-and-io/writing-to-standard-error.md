@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/haskell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:17.804092-07:00
 description: "\xC9crire dans l'erreur standard (stderr) en Haskell permet aux programmes\
   \ de diff\xE9rencier leur sortie entre les r\xE9sultats normaux et les messages\
   \ d'erreur.\u2026"
-lastmod: 2024-02-18 23:09:08.893489
+lastmod: 2024-02-19 22:05:16.588122
 model: gpt-4-0125-preview
 summary: "\xC9crire dans l'erreur standard (stderr) en Haskell permet aux programmes\
   \ de diff\xE9rencier leur sortie entre les r\xE9sultats normaux et les messages\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/refactoring/
 date: 2024-01-26 03:36:49.163251-07:00
 description: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza cambiarne il comportamento esterno. I programmatori eseguono il\u2026"
-lastmod: 2024-02-18 23:08:56.391072
+lastmod: 2024-02-19 22:05:03.031943
 model: gpt-4-0125-preview
 summary: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza cambiarne il comportamento esterno. I programmatori eseguono il\u2026"

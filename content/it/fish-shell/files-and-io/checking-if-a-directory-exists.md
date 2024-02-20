@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/fish-shell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:12.790200-07:00
 description: "Verificare se una directory esiste in Fish Shell permette agli script\
   \ di prendere decisioni basate sulla presenza o assenza di strutture di directory,\u2026"
-lastmod: 2024-02-18 23:08:56.309452
+lastmod: 2024-02-19 22:05:02.946362
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Fish Shell permette agli script di\
   \ prendere decisioni basate sulla presenza o assenza di strutture di directory,\u2026"

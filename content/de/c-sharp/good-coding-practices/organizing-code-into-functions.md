@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/organizing-code-into-functions/
 date: 2024-01-26 01:09:06.787921-07:00
 description: "Code in Funktionen zu organisieren ist, wie LEGO-Steine in Beh\xE4lter\
   \ zu sortieren \u2013 es macht das Finden und Verwenden einfacher. Wir tun dies,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:04.877261
+lastmod: 2024-02-19 22:05:12.821601
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren ist, wie LEGO-Steine in Beh\xE4lter zu\
   \ sortieren \u2013 es macht das Finden und Verwenden einfacher. Wir tun dies, um\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/comparing-two-dates/
 date: 2024-01-20 17:32:07.796866-07:00
 description: "Comparer deux dates, c'est v\xE9rifier si elles sont \xE9gales, savoir\
   \ laquelle est ant\xE9rieure ou post\xE9rieure. On le fait souvent pour g\xE9rer\
   \ des \xE9ch\xE9ances,\u2026"
-lastmod: 2024-02-18 23:09:09.032613
+lastmod: 2024-02-19 22:05:16.717070
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est v\xE9rifier si elles sont \xE9gales, savoir laquelle\
   \ est ant\xE9rieure ou post\xE9rieure. On le fait souvent pour g\xE9rer des \xE9\

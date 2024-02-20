@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/ruby/using-a-debugger/
 date: 2024-01-26 04:09:30.774007-07:00
 description: "Utilizar un depurador en Ruby otorga a los programadores un superpoder\
   \ para pausar su c\xF3digo, inspeccionar variables y avanzar a trav\xE9s de su c\xF3\
   digo l\xEDnea\u2026"
-lastmod: 2024-02-18 23:09:10.557356
+lastmod: 2024-02-19 22:05:18.103395
 model: gpt-4-0125-preview
 summary: "Utilizar un depurador en Ruby otorga a los programadores un superpoder para\
   \ pausar su c\xF3digo, inspeccionar variables y avanzar a trav\xE9s de su c\xF3\

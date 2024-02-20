@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/swift/printing-debug-output/
 date: 2024-01-20 17:53:16.117047-07:00
 description: "Printing debug output is displaying temporary messages in the console\
   \ to check if the code works right. Programmers do it to track variables, understand\u2026"
-lastmod: 2024-02-18 23:09:00.965476
+lastmod: 2024-02-19 22:05:09.006807
 model: gpt-4-1106-preview
 summary: "Printing debug output is displaying temporary messages in the console to\
   \ check if the code works right. Programmers do it to track variables, understand\u2026"

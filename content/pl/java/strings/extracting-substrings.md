@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/extracting-substrings/
 date: 2024-01-20 17:46:12.958077-07:00
 description: "Wycinanie podci\u0105g\xF3w to pobieranie fragment\xF3w z wi\u0119kszego\
   \ ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, by manipulowa\u0107 danymi,\
   \ wyci\u0105ga\u0107 informacje lub sprawdza\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.467091
+lastmod: 2024-02-19 22:04:54.394378
 model: gpt-4-1106-preview
 summary: "Wycinanie podci\u0105g\xF3w to pobieranie fragment\xF3w z wi\u0119kszego\
   \ ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, by manipulowa\u0107 danymi,\

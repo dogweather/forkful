@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/python/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:05.907354-07:00
 description: "Mettre une cha\xEEne en capitales signifie convertir le premier caract\xE8\
   re d'une cha\xEEne en majuscule et le reste en minuscule. Cette op\xE9ration est\
   \ couramment\u2026"
-lastmod: 2024-02-18 23:09:08.321212
+lastmod: 2024-02-19 22:05:16.121169
 model: gpt-4-0125-preview
 summary: "Mettre une cha\xEEne en capitales signifie convertir le premier caract\xE8\
   re d'une cha\xEEne en majuscule et le reste en minuscule. Cette op\xE9ration est\

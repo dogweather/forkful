@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/fish-shell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:13.587974-07:00
 description: "L'analyse du HTML consiste \xE0 extraire des donn\xE9es ou des informations\
   \ \xE0 partir de contenus HTML, une t\xE2che courante lorsqu'on traite des donn\xE9\
   es web. Les\u2026"
-lastmod: 2024-02-18 23:09:09.303387
+lastmod: 2024-02-19 22:05:16.972530
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML consiste \xE0 extraire des donn\xE9es ou des informations\
   \ \xE0 partir de contenus HTML, une t\xE2che courante lorsqu'on traite des donn\xE9\

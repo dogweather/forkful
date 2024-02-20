@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/rust/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:17.356845-07:00
 description: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 lese\
   \ fra og skrive til rene tekstfiler som lagrer tabul\xE6re data. Programmerere gj\xF8\
   r dette for\u2026"
-lastmod: 2024-02-18 23:08:53.707145
+lastmod: 2024-02-19 22:04:59.841767
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 lese fra\
   \ og skrive til rene tekstfiler som lagrer tabul\xE6re data. Programmerere gj\xF8\

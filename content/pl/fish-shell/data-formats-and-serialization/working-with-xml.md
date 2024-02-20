@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/working-with-xml/
 date: 2024-01-26 04:30:57.863462-07:00
 description: "Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowanym\
   \ formacie, u\u017Cywanym w konfiguracjach, komunikacji i wielu innych. Programi\u015B\
   ci\u2026"
-lastmod: 2024-02-18 23:08:50.060609
+lastmod: 2024-02-19 22:04:55.042353
 model: gpt-4-0125-preview
 summary: "Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowanym\
   \ formacie, u\u017Cywanym w konfiguracjach, komunikacji i wielu innych. Programi\u015B\

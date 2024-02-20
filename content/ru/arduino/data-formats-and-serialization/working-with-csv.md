@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/arduino/working-with-csv/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:39.403467-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 CSV (\u0437\u043D\u043
   \u043E \u0434\u0435\u0448\u0435\u0432\u043E, \u043F\u0440\u043E\u0441\u0442\u043E\
   \ \u0438 \u0443\u043D\u0438\u0432\u0435\u0440\u0441\u0430\u043B\u044C\u043D\u043E\
   , \u0447\u0442\u043E\u2026"
-lastmod: 2024-02-18 23:08:57.335145
+lastmod: 2024-02-19 22:05:04.545060
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 CSV (\u0437\u043D\u0430\u0447\
   \u0435\u043D\u0438\u044F, \u0440\u0430\u0437\u0434\u0435\u043B\u0435\u043D\u043D\

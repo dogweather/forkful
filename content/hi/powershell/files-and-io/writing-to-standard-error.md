@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:35:15.049183-07:00
@@ -12,7 +10,7 @@ description: "PowerShell \u092E\u0947\u0902 \u0938\u094D\u091F\u0948\u0902\u0921
   \ \u0938\u094D\u091F\u094D\u0930\u0940\u092E \u092A\u0930 \u092D\u0947\u091C\u0928\
   \u093E \u0939\u094B\u0924\u093E \u0939\u0948, \u091C\u094B \u0915\u093F \u0938\u094D\
   \u091F\u0948\u0902\u0921\u0930\u094D\u0921 \u0906\u0909\u091F\u092A\u0941\u091F\u2026"
-lastmod: 2024-02-18 23:09:03.768481
+lastmod: 2024-02-19 22:05:11.753624
 model: gpt-4-0125-preview
 summary: "PowerShell \u092E\u0947\u0902 \u0938\u094D\u091F\u0948\u0902\u0921\u0930\
   \u094D\u0921 \u090F\u0930\u0930 (stderr) \u092E\u0947\u0902 \u0932\u0947\u0916\u0928\

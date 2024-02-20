@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/reading-command-line-arguments/
 date: 2024-01-20 17:56:53.380860-07:00
 description: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30\uB294 \uC0AC\uC6A9\uC790\
   \uAC00 \uD504\uB85C\uADF8\uB7A8\uC744 \uC2DC\uC791\uD560 \uB54C \uC785\uB825\uD558\
@@ -10,7 +8,7 @@ description: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30\uB294 \uC0AC\uC6A9\u
   \uC758 \uD504\uB85C\uADF8\uB7A8\uC744 \uB9CC\uB4E4 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.049769
+lastmod: 2024-02-19 22:05:14.930761
 model: gpt-4-1106-preview
 summary: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30\uB294 \uC0AC\uC6A9\uC790\uAC00\
   \ \uD504\uB85C\uADF8\uB7A8\uC744 \uC2DC\uC791\uD560 \uB54C \uC785\uB825\uD558\uB294\

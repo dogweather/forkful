@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/typescript/starting-a-new-project/
 date: 2024-01-20 18:04:53.450958-07:00
 description: Starting a new coding project is like planting a seed. You do it to grow
   an app, tool, or service. You start fresh, excited about potential.
-lastmod: 2024-02-18 23:08:59.930907
+lastmod: 2024-02-19 22:05:07.875093
 model: gpt-4-1106-preview
 summary: Starting a new coding project is like planting a seed. You do it to grow
   an app, tool, or service. You start fresh, excited about potential.

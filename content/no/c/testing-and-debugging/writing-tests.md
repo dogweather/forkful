@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/c/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:19.432774-07:00
 description: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogrammer\
   \ eller funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere\u2026"
-lastmod: 2024-02-18 23:08:54.398014
+lastmod: 2024-02-19 22:05:00.556842
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogrammer eller\
   \ funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere\u2026"

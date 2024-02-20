@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/clojure/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:53.423163-07:00
 description: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u092A\u094D\u0930\
   \u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0935\u093E\u0924\u093E\u0935\
@@ -10,7 +8,7 @@ description: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u092A\u094D
   \u093E \u0938\u0915\u0924\u093E \u0939\u0948\u0964 \u0915\u094B\u0921\u0930\u094D\
   \u0938 \u0907\u0938\u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0924\u093E\u0924\
   \u094D\u0915\u093E\u0932\u093F\u0915\u2026"
-lastmod: 2024-02-18 23:09:02.728056
+lastmod: 2024-02-19 22:05:10.726866
 model: gpt-4-0125-preview
 summary: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u092A\u094D\u0930\
   \u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0935\u093E\u0924\u093E\u0935\

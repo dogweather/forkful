@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/working-with-xml/
 date: 2024-01-26 04:28:58.945406-07:00
 description: "XML (eXtensible Markup Language) dotyczy strukturyzowania danych w czytelnym\
   \ formacie. Programi\u015Bci \u017Congluj\u0105 XML-em do konfiguracji, wymiany\
   \ danych mi\u0119dzy\u2026"
-lastmod: 2024-02-18 23:08:49.636226
+lastmod: 2024-02-19 22:04:54.568105
 model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) dotyczy strukturyzowania danych w czytelnym\
   \ formacie. Programi\u015Bci \u017Congluj\u0105 XML-em do konfiguracji, wymiany\

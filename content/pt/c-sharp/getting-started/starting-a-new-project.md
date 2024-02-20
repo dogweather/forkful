@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/starting-a-new-project/
 date: 2024-01-20 18:03:11.744288-07:00
 description: "Come\xE7ar um novo projeto em C# \xE9 criar uma base de c\xF3digo do\
   \ zero que pode evoluir para qualquer coisa, desde uma aplica\xE7\xE3o simples at\xE9\
   \ um sistema\u2026"
-lastmod: 2024-02-18 23:08:58.158184
+lastmod: 2024-02-19 22:05:05.627134
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto em C# \xE9 criar uma base de c\xF3digo do zero\
   \ que pode evoluir para qualquer coisa, desde uma aplica\xE7\xE3o simples at\xE9\

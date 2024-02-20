@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:59.078163-07:00
@@ -11,7 +9,7 @@ description: "\u5728Go\u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u88AB\u79F0\u4E3A\u66
   \u7D22\u3001\u4FEE\u6539\u6570\u636E\uFF0C\u4EE5\u53CA\u7EF4\u62A4\u4E00\u4E2A\u53EF\
   \u4EE5\u901A\u8FC7\u552F\u4E00\u952E\u5FEB\u901F\u8BBF\u95EE\u7684\u5143\u7D20\u96C6\
   \u5408\u3002"
-lastmod: 2024-02-18 23:08:58.700846
+lastmod: 2024-02-19 22:05:06.208561
 model: gpt-4-0125-preview
 summary: "\u5728Go\u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u88AB\u79F0\u4E3A\u6620\u5C04\
   \uFF08maps\uFF09\uFF0C\u5B83\u5141\u8BB8\u4F60\u5B58\u50A8\u952E\u503C\u5BF9\uFF0C\

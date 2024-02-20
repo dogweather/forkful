@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/using-a-debugger/
 date: 2024-02-01 21:11:59.606220-07:00
 description: "Debugging in Google Apps Script (GAS) involves the process of identifying\
   \ and removing errors from scripts intended to automate Google Apps or build web\u2026"
-lastmod: 2024-02-18 23:09:10.644001
+lastmod: 2024-02-19 22:05:18.181027
 model: gpt-4-0125-preview
 summary: "Debugging in Google Apps Script (GAS) involves the process of identifying\
   \ and removing errors from scripts intended to automate Google Apps or build web\u2026"

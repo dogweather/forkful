@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/using-associative-arrays/
 date: 2024-01-30 18:57:25.397240-07:00
 description: "Associative arrays, known in Python as dictionaries, map keys to values,\
   \ making it easy to retrieve, modify, or track data by a unique identifier.\u2026"
-lastmod: 2024-02-18 23:09:10.674363
+lastmod: 2024-02-19 22:05:18.208881
 model: gpt-4-0125-preview
 summary: "Associative arrays, known in Python as dictionaries, map keys to values,\
   \ making it easy to retrieve, modify, or track data by a unique identifier.\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/go/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:06.646208-07:00
 description: "Logging i programvareutvikling er prosessen med \xE5 registrere informasjon\
   \ om et programs utf\xF8relse, designet for \xE5 spore dets oppf\xF8rsel og diagnostisere\u2026"
-lastmod: 2024-02-18 23:08:53.442799
+lastmod: 2024-02-19 22:04:59.554082
 model: gpt-4-0125-preview
 summary: "Logging i programvareutvikling er prosessen med \xE5 registrere informasjon\
   \ om et programs utf\xF8relse, designet for \xE5 spore dets oppf\xF8rsel og diagnostisere\u2026"

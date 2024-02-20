@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/organizing-code-into-functions/
 date: 2024-01-25 02:59:35.207552-07:00
 description: "Chunking code into functions is like sorting LEGO bricks into bins\u2014\
   it makes finding and using them easier. We do this to avoid repetition, to simplify\u2026"
-lastmod: 2024-02-18 23:09:11.059975
+lastmod: 2024-02-19 22:05:18.559227
 model: gpt-4-1106-preview
 summary: "Chunking code into functions is like sorting LEGO bricks into bins\u2014\
   it makes finding and using them easier. We do this to avoid repetition, to simplify\u2026"

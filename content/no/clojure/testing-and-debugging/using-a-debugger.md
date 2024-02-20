@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/using-a-debugger/
 date: 2024-01-26 03:48:42.513574-07:00
 description: "\xC5 bruke en debugger betyr at du utstyrer deg selv med et forst\xF8\
   rrelsesglass for \xE5 granske koden din. Programmerere gj\xF8r dette for \xE5 knuse\
   \ feil, forst\xE5\u2026"
-lastmod: 2024-02-18 23:08:53.568746
+lastmod: 2024-02-19 22:04:59.691239
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en debugger betyr at du utstyrer deg selv med et forst\xF8rrelsesglass\
   \ for \xE5 granske koden din. Programmerere gj\xF8r dette for \xE5 knuse feil, forst\xE5\

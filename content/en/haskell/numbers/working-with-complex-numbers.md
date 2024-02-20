@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/working-with-complex-numbers/
 date: 2024-01-25 02:59:41.358296-07:00
 description: "Complex numbers, consisting of a real and imaginary part, are essential\
   \ in various computational fields like engineering, physics, and signal processing.\u2026"
-lastmod: 2024-02-18 23:09:11.090131
+lastmod: 2024-02-19 22:05:18.586635
 model: gpt-4-1106-preview
 summary: "Complex numbers, consisting of a real and imaginary part, are essential\
   \ in various computational fields like engineering, physics, and signal processing.\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:22.856308-07:00
 description: "Het verwijderen van tekens die overeenkomen met een patroon betekent\
   \ het uitsluiten van specifieke sequenties uit een string. Programmeurs doen dit\
   \ voor\u2026"
-lastmod: 2024-02-18 23:09:02.165468
+lastmod: 2024-02-19 22:05:10.182918
 model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een patroon betekent het\
   \ uitsluiten van specifieke sequenties uit een string. Programmeurs doen dit voor\u2026"

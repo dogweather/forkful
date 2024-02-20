@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:35.887326-07:00
 description: "Los arreglos asociativos, conocidos en otros lenguajes como mapas o\
   \ diccionarios, son pares clave-valor utilizados para la b\xFAsqueda y manipulaci\xF3\
   n\u2026"
-lastmod: 2024-02-18 23:09:10.492725
+lastmod: 2024-02-19 22:05:18.044273
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos en otros lenguajes como mapas o diccionarios,\
   \ son pares clave-valor utilizados para la b\xFAsqueda y manipulaci\xF3n\u2026"

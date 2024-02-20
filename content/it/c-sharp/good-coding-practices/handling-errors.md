@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/handling-errors/
 date: 2024-01-26 00:50:10.744079-07:00
 description: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
   \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"
-lastmod: 2024-02-18 23:08:55.895355
+lastmod: 2024-02-19 22:05:02.505108
 model: gpt-4-1106-preview
 summary: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
   \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"

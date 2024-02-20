@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/elm/working-with-complex-numbers/
 date: 2024-01-26 04:39:23.662224-07:00
 description: "Komplekse tall er en kombinasjon av reelle tall og imagin\xE6re tall,\
   \ som `a + bi`, der `i` er kvadratroten av -1. De er n\xF8kkelen i felt som\u2026"
-lastmod: 2024-02-18 23:08:53.805128
+lastmod: 2024-02-19 22:04:59.948710
 model: gpt-4-0125-preview
 summary: "Komplekse tall er en kombinasjon av reelle tall og imagin\xE6re tall, som\
   \ `a + bi`, der `i` er kvadratroten av -1. De er n\xF8kkelen i felt som\u2026"

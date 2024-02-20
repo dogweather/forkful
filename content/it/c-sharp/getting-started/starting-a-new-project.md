@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/c-sharp/starting-a-new-project/
 date: 2024-01-20 18:03:14.287298-07:00
 description: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il primo\
   \ passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa\
   \ di\u2026"
-lastmod: 2024-02-18 23:08:55.888530
+lastmod: 2024-02-19 22:05:02.498283
 model: gpt-4-1106-preview
 summary: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il primo\
   \ passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa\

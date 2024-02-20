@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c-sharp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:15.826089-07:00
 description: "\xC5 f\xE5 tak i dagens dato i C# inneb\xE6rer \xE5 hente dagens dato-\
   \ og tidsdetaljer fra systemet. Programmerere trenger ofte \xE5 f\xE5 tilgang til\
   \ denne informasjonen\u2026"
-lastmod: 2024-02-18 23:08:53.903852
+lastmod: 2024-02-19 22:05:00.073246
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 tak i dagens dato i C# inneb\xE6rer \xE5 hente dagens dato- og\
   \ tidsdetaljer fra systemet. Programmerere trenger ofte \xE5 f\xE5 tilgang til denne\

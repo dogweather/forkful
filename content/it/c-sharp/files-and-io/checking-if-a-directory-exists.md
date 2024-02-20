@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c-sharp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:06.823694-07:00
 description: "Controllare se una directory esiste in C# implica verificare la presenza\
   \ di una cartella in un percorso specificato nel file system. I programmatori lo\u2026"
-lastmod: 2024-02-18 23:08:55.902276
+lastmod: 2024-02-19 22:05:02.512216
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in C# implica verificare la presenza\
   \ di una cartella in un percorso specificato nel file system. I programmatori lo\u2026"

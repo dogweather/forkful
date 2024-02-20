@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/arduino/working-with-complex-numbers/
 date: 2024-01-26 04:36:51.380777-07:00
 description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil,\
   \ \xFCblicherweise dargestellt als `a + bi`. Sie sind entscheidend f\xFCr einige\u2026"
-lastmod: 2024-02-18 23:09:05.139698
+lastmod: 2024-02-19 22:05:13.071999
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, \xFC\
   blicherweise dargestellt als `a + bi`. Sie sind entscheidend f\xFCr einige\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:53.066699-07:00
 description: "Converter strings para min\xFAsculas significa transformar todas as\
   \ letras de uma string para a sua forma min\xFAscula. Programadores fazem isso para\
   \ padronizar\u2026"
-lastmod: 2024-02-18 23:08:58.088640
+lastmod: 2024-02-19 22:05:05.568610
 model: gpt-4-1106-preview
 summary: "Converter strings para min\xFAsculas significa transformar todas as letras\
   \ de uma string para a sua forma min\xFAscula. Programadores fazem isso para padronizar\u2026"

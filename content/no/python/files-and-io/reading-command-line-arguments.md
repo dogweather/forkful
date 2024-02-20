@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/reading-command-line-arguments/
 date: 2024-01-20 17:56:49.590353-07:00
 description: "Kommandolinjeargumenter lar brukere gi inndata direkte til et program\
   \ n\xE5r de kj\xF8rer det fra en terminal. Programmerere henter disse argumentene\
   \ for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.539002
+lastmod: 2024-02-19 22:04:59.658818
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar brukere gi inndata direkte til et program n\xE5\
   r de kj\xF8rer det fra en terminal. Programmerere henter disse argumentene for \xE5\

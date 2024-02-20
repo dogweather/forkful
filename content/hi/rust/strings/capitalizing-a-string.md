@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/rust/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:32.294251-07:00
@@ -14,7 +12,7 @@ description: "Rust \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\u093
   \u093C\u093E (\u0905\u092A\u0930\u0915\u0947\u0938) \u0939\u094B, \u091C\u092C\u0915\
   \u093F \u092C\u093E\u0915\u0940 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\
   \u2026"
-lastmod: 2024-02-18 23:09:02.925469
+lastmod: 2024-02-19 22:05:10.923925
 model: gpt-4-0125-preview
 summary: "Rust \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\
   \u0902\u0917 \u0915\u094B \u0915\u0948\u092A\u093F\u091F\u0932\u093E\u0907\u091C\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/starting-a-new-project/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:01.259396-07:00
@@ -13,7 +11,7 @@ description: "\u5728 Google Apps \u811A\u672C\uFF08GAS\uFF09\u4E2D\u542F\u52A8\u
   \uFF0C\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u64CD\u7EB5\u8C37\u6B4C\u670D\u52A1\uFF0C\u6216\
   \u521B\u5EFA\u81EA\u5B9A\u4E49\u63D2\u4EF6\uFF0C\u8282\u7701\u65F6\u95F4\u5E76\u5229\
   \u7528\u8C37\u6B4C\u7684\u57FA\u7840\u8BBE\u65BD\u7684\u529B\u91CF\u3002"
-lastmod: 2024-02-18 23:08:58.750900
+lastmod: 2024-02-19 22:05:06.278924
 model: gpt-4-0125-preview
 summary: "\u5728 Google Apps \u811A\u672C\uFF08GAS\uFF09\u4E2D\u542F\u52A8\u4E00\u4E2A\
   \u65B0\u9879\u76EE\u6D89\u53CA\u5728\u8C37\u6B4C\u751F\u6001\u7CFB\u7EDF\u5185\uFF08\

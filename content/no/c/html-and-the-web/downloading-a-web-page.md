@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:01.166716-07:00
 description: "\xC5 laste ned en nettside i C inneb\xE6rer \xE5 programmert f\xE5 tilgang\
   \ til innholdet p\xE5 en nettside over internett og lagre det lokalt for behandling\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:54.392824
+lastmod: 2024-02-19 22:05:00.551237
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside i C inneb\xE6rer \xE5 programmert f\xE5 tilgang\
   \ til innholdet p\xE5 en nettside over internett og lagre det lokalt for behandling\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/vba/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:53.101465-07:00
 description: "Comparar duas datas em Visual Basic for Applications (VBA) envolve determinar\
   \ a rela\xE7\xE3o cronol\xF3gica entre elas. Programadores fazem isso para executar\u2026"
-lastmod: 2024-02-18 23:08:57.987954
+lastmod: 2024-02-19 22:05:05.462809
 model: gpt-4-0125-preview
 summary: "Comparar duas datas em Visual Basic for Applications (VBA) envolve determinar\
   \ a rela\xE7\xE3o cronol\xF3gica entre elas. Programadores fazem isso para executar\u2026"

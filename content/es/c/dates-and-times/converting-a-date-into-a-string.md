@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:51.891412-07:00
 description: "Convertir una fecha en una cadena en C implica traducir una estructura\
   \ de fecha o marcar una fecha en un formato legible por humanos. Los programadores\
   \ a\u2026"
-lastmod: 2024-02-18 23:09:10.515023
+lastmod: 2024-02-19 22:05:18.065249
 model: gpt-4-0125-preview
 summary: "Convertir una fecha en una cadena en C implica traducir una estructura de\
   \ fecha o marcar una fecha en un formato legible por humanos. Los programadores\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:00.366256-07:00
 description: "Mik\xE4 ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti\
   \ on datan siistimist\xE4. Tehd\xE4\xE4n n\xE4timp\xE4\xE4, helpommin k\xE4sitelt\xE4\
   v\xE4\xE4."
-lastmod: 2024-02-18 23:09:07.211897
+lastmod: 2024-02-19 22:05:15.110687
 model: gpt-4-1106-preview
 summary: "Mik\xE4 ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti\
   \ on datan siistimist\xE4. Tehd\xE4\xE4n n\xE4timp\xE4\xE4, helpommin k\xE4sitelt\xE4\

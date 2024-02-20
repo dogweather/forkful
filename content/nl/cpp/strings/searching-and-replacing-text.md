@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:59.966260-07:00
 description: "Zoeken en vervangen van tekst is het vinden van specifieke strings binnen\
   \ een grotere string en deze omwisselen voor iets anders. Programmeurs gebruiken\u2026"
-lastmod: 2024-02-18 23:09:02.166534
+lastmod: 2024-02-19 22:05:10.183913
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst is het vinden van specifieke strings binnen\
   \ een grotere string en deze omwisselen voor iets anders. Programmeurs gebruiken\u2026"

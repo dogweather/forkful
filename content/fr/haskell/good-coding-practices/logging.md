@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/haskell/logging/
 date: 2024-01-26 01:06:55.335383-07:00
 description: "La journalisation en programmation consiste essentiellement \xE0 laisser\
   \ une trace de miettes de pain sous forme d'\xE9v\xE9nements ou de messages enregistr\xE9\
   s, qui\u2026"
-lastmod: 2024-02-18 23:09:08.882272
+lastmod: 2024-02-19 22:05:16.578124
 model: gpt-4-1106-preview
 summary: "La journalisation en programmation consiste essentiellement \xE0 laisser\
   \ une trace de miettes de pain sous forme d'\xE9v\xE9nements ou de messages enregistr\xE9\

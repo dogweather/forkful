@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:01.124295-07:00
 description: "Associatieve arrays, of hash maps, laten je data opslaan als sleutel-waarde\
   \ paren, wat het makkelijker maakt om informatie te organiseren en op te halen\u2026"
-lastmod: 2024-02-18 23:09:02.315081
+lastmod: 2024-02-19 22:05:10.324786
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, of hash maps, laten je data opslaan als sleutel-waarde\
   \ paren, wat het makkelijker maakt om informatie te organiseren en op te halen\u2026"

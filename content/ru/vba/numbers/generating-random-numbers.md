@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/vba/generating-random-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:37.603847-07:00
@@ -13,7 +11,7 @@ description: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043
   \ \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u0441\u0442\u0438 \u0438\u043B\
   \u0438 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u0447\u0438\u0432\u043E\u0441\u0442\
   \u0438,\u2026"
-lastmod: 2024-02-18 23:08:56.781665
+lastmod: 2024-02-19 22:05:03.651310
 model: gpt-4-0125-preview
 summary: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043B\u0443\
   \u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 Visual\

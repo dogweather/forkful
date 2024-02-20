@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/lua/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:29.563630-07:00
 description: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
   \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de\u2026"
-lastmod: 2024-02-18 23:09:10.117157
+lastmod: 2024-02-19 22:05:17.707635
 model: gpt-4-0125-preview
 summary: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
   \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de\u2026"

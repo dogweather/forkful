@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/go/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:15.527968-07:00
 description: "Het lezen van commandoregelargumenten in Go houdt in dat je de argumenten\
   \ die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal\
   \ of\u2026"
-lastmod: 2024-02-18 23:09:01.355745
+lastmod: 2024-02-19 22:05:09.388680
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten in Go houdt in dat je de argumenten\
   \ die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal\

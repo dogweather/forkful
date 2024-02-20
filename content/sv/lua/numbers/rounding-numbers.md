@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/rounding-numbers/
 date: 2024-01-26 03:45:46.299743-07:00
 description: "Att avrunda tal inneb\xE4r att justera dem till n\xE4rmaste heltal eller\
   \ specificerad decimalsiffra. Det \xE4r en grundl\xE4ggande del i programmering\
   \ f\xF6r att minska\u2026"
-lastmod: 2024-02-18 23:08:51.913668
+lastmod: 2024-02-19 22:04:57.259969
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att justera dem till n\xE4rmaste heltal eller\
   \ specificerad decimalsiffra. Det \xE4r en grundl\xE4ggande del i programmering\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/rounding-numbers/
 date: 2024-01-26 03:44:22.228952-07:00
 description: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych,\
   \ aby upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\
   ci robi\u0105 to dla\u2026"
-lastmod: 2024-02-18 23:08:50.029706
+lastmod: 2024-02-19 22:04:55.008109
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych, aby\
   \ upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\

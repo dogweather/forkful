@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/php/working-with-xml/
 date: 2024-01-26 04:34:01.870210-07:00
 description: "XML \xE9 uma linguagem de marca\xE7\xE3o usada para armazenar e transportar\
   \ dados. Programadores trabalham com XML para permitir a interoperabilidade entre\u2026"
-lastmod: 2024-02-18 23:08:58.265231
+lastmod: 2024-02-19 22:05:05.741174
 model: gpt-4-0125-preview
 summary: "XML \xE9 uma linguagem de marca\xE7\xE3o usada para armazenar e transportar\
   \ dados. Programadores trabalham com XML para permitir a interoperabilidade entre\u2026"

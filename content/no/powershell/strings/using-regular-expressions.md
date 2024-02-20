@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/powershell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:43.918618-07:00
 description: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som former et s\xF8\
   kem\xF8nster, prim\xE6rt brukt for strengs\xF8king og manipulasjon. Programmerere\
   \ utnytter regex i\u2026"
-lastmod: 2024-02-18 23:08:54.089221
+lastmod: 2024-02-19 22:05:00.274421
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som former et s\xF8kem\xF8\
   nster, prim\xE6rt brukt for strengs\xF8king og manipulasjon. Programmerere utnytter\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:11.188552-07:00
 description: "REPL (Read-Eval-Print-Loop, p\u0119tla czytaj-wykonuj-wypisz) to proste\
   \ \u015Brodowisko programistyczne interaktywne. Programi\u015Bci u\u017Cywaj\u0105\
   \ go do eksperymentowania z\u2026"
-lastmod: 2024-02-18 23:08:49.913113
+lastmod: 2024-02-19 22:04:54.860506
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print-Loop, p\u0119tla czytaj-wykonuj-wypisz) to proste\
   \ \u015Brodowisko programistyczne interaktywne. Programi\u015Bci u\u017Cywaj\u0105\

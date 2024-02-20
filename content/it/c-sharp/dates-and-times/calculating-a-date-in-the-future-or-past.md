@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:06.426096-07:00
 description: "Calcolare una data nel futuro o nel passato significa semplicemente\
   \ determinare esattamente una data prima o dopo un certo punto temporale. I\u2026"
-lastmod: 2024-02-18 23:08:55.901350
+lastmod: 2024-02-19 22:05:02.511086
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato significa semplicemente determinare\
   \ esattamente una data prima o dopo un certo punto temporale. I\u2026"

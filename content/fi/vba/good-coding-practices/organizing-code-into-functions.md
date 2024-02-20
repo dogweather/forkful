@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:48.087391-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications\
   \ (VBA) -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin\
   \ osiin, joita\u2026"
-lastmod: 2024-02-18 23:09:07.417344
+lastmod: 2024-02-19 22:05:15.302423
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications (VBA)\
   \ -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin osiin,\

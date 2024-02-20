@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/haskell/organizing-code-into-functions/
 date: 2024-01-26 01:11:59.633384-07:00
 description: "Haskell \u092E\u0947\u0902 \u0915\u094B\u0921 \u0915\u094B \u092B\u0902\
   \u0915\u094D\u0936\u0902\u0938 \u092E\u0947\u0902 \u0935\u094D\u092F\u0935\u0938\
@@ -10,7 +8,7 @@ description: "Haskell \u092E\u0947\u0902 \u0915\u094B\u0921 \u0915\u094B \u092B\
   \u092E\u093F\u0924 \u092C\u094D\u0932\u0949\u0915\u094B\u0902 \u092E\u0947\u0902\
   \ \u092C\u093E\u0902\u091F\u0928\u093E\u0964 \u0915\u094D\u092F\u094B\u0902? \u092F\
   \u0939 \u0906\u092A\u0915\u0947 \u0915\u094B\u0921 \u0915\u094B DRY (Don't Repeat\u2026"
-lastmod: 2024-02-18 23:09:03.433372
+lastmod: 2024-02-19 22:05:11.423978
 model: gpt-4-1106-preview
 summary: "Haskell \u092E\u0947\u0902 \u0915\u094B\u0921 \u0915\u094B \u092B\u0902\u0915\
   \u094D\u0936\u0902\u0938 \u092E\u0947\u0902 \u0935\u094D\u092F\u0935\u0938\u094D\

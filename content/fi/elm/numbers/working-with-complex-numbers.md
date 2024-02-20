@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/working-with-complex-numbers/
 date: 2024-01-26 04:39:26.918818-07:00
 description: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4\
   , kuten `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla\
   \ kuten\u2026"
-lastmod: 2024-02-18 23:09:07.497100
+lastmod: 2024-02-19 22:05:15.376682
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4, kuten\
   \ `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla kuten\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:35.759511-07:00
 description: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
   \ imaginaire, repr\xE9sent\xE9es comme `a + bi` o\xF9 `i` est la racine carr\xE9\
   e de `-1`. Les\u2026"
-lastmod: 2024-02-18 23:09:09.347971
+lastmod: 2024-02-19 22:05:17.015343
 model: gpt-4-0125-preview
 summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
   \ imaginaire, repr\xE9sent\xE9es comme `a + bi` o\xF9 `i` est la racine carr\xE9\

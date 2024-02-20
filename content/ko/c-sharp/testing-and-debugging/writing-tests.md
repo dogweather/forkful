@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:23.786852-07:00
@@ -14,7 +12,7 @@ description: "C#\uC5D0\uC11C \uD14C\uC2A4\uD2B8 \uC791\uC131\uC740 \uCF54\uB4DC\
   \uC874 \uAE30\uB2A5\uC744 \uAE68\uB728\uB9AC\uC9C0 \uC54A\uB3C4\uB85D \uD558\uC5EC\
   \ \uC18C\uD504\uD2B8\uC6E8\uC5B4\uC758 \uD488\uC9C8\uACFC \uC2E0\uB8B0\uC131\uC744\
   \u2026"
-lastmod: 2024-02-18 23:09:06.225403
+lastmod: 2024-02-19 22:05:14.150124
 model: gpt-4-0125-preview
 summary: "C#\uC5D0\uC11C \uD14C\uC2A4\uD2B8 \uC791\uC131\uC740 \uCF54\uB4DC\uC758\
   \ \uAE30\uB2A5\uC744 \uAC80\uC99D\uD558\uAE30 \uC704\uD574 \uC790\uB3D9 \uC2A4\uD06C\

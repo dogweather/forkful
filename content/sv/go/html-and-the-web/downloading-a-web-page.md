@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:15.307881-07:00
 description: "Att ladda ner en webbsida handlar om att h\xE4mta HTML-inneh\xE5llet\
   \ p\xE5 en webbsida via HTTP/HTTPS-protokollet. Programmerare g\xF6r ofta detta\
   \ f\xF6r webbskrapning,\u2026"
-lastmod: 2024-02-18 23:08:51.331931
+lastmod: 2024-02-19 22:04:56.623766
 model: gpt-4-0125-preview
 summary: "Att ladda ner en webbsida handlar om att h\xE4mta HTML-inneh\xE5llet p\xE5\
   \ en webbsida via HTTP/HTTPS-protokollet. Programmerare g\xF6r ofta detta f\xF6\

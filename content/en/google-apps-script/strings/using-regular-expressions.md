@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/using-regular-expressions/
 date: 2024-02-01 21:12:17.926556-07:00
 description: "Regular Expressions (regex) are patterns used to match character combinations\
   \ in strings. Programmers utilize them for searching, editing, or manipulating\u2026"
-lastmod: 2024-02-18 23:09:10.629281
+lastmod: 2024-02-19 22:05:18.167834
 model: gpt-4-0125-preview
 summary: "Regular Expressions (regex) are patterns used to match character combinations\
   \ in strings. Programmers utilize them for searching, editing, or manipulating\u2026"

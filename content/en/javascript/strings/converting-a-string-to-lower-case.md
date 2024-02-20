@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:31.875730-07:00
 description: "Converting a string to lowercase means transforming all the characters\
   \ within it to their lower case counterparts. Programmers do it for consistency,\u2026"
-lastmod: 2024-02-18 23:09:11.425302
+lastmod: 2024-02-19 22:05:18.883678
 model: gpt-4-1106-preview
 summary: "Converting a string to lowercase means transforming all the characters within\
   \ it to their lower case counterparts. Programmers do it for consistency,\u2026"

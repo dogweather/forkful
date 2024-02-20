@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/rounding-numbers/
 date: 2024-01-25 02:59:42.587583-07:00
 description: "Rounding numbers is trimming a number to a specific precision. Programmers\
   \ do it to control numerical output for readability, display purposes, or when\u2026"
-lastmod: 2024-02-18 23:09:10.802262
+lastmod: 2024-02-19 22:05:18.323693
 model: gpt-4-1106-preview
 summary: "Rounding numbers is trimming a number to a specific precision. Programmers\
   \ do it to control numerical output for readability, display purposes, or when\u2026"

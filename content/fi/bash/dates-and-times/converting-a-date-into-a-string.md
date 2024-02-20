@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:46.690789-07:00
 description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, koska j\xE4sennellyt\
   \ formaatit on helpompi jakaa ja k\xE4sitell\xE4. Joskus tarvitaan tarkkaa muotoilua,\
   \ esimerkiksi\u2026"
-lastmod: 2024-02-18 23:09:07.817004
+lastmod: 2024-02-19 22:05:15.646475
 model: gpt-4-1106-preview
 summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, koska j\xE4sennellyt\
   \ formaatit on helpompi jakaa ja k\xE4sitell\xE4. Joskus tarvitaan tarkkaa muotoilua,\

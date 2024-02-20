@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:18.769653-07:00
 description: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
   \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"
-lastmod: 2024-02-18 23:09:01.406717
+lastmod: 2024-02-19 22:05:09.438320
 model: gpt-4-0125-preview
 summary: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
   \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"

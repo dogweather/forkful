@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:12.573935-07:00
 description: "\xC5 finne lengden av en streng handler om \xE5 telle antall tegn den\
   \ inneholder. Programmerere gj\xF8r dette for \xE5 validere input, formatere tekst,\
   \ eller behandle\u2026"
-lastmod: 2024-02-18 23:08:54.175605
+lastmod: 2024-02-19 22:05:00.363088
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden av en streng handler om \xE5 telle antall tegn den inneholder.\
   \ Programmerere gj\xF8r dette for \xE5 validere input, formatere tekst, eller behandle\u2026"

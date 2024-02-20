@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/sending-an-http-request/
 date: 2024-01-20 18:00:21.709792-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 kommunisere med en webserver\
   \ for \xE5 hente eller sende informasjon. Programmerere gj\xF8r dette for \xE5 integrere\
   \ og\u2026"
-lastmod: 2024-02-18 23:08:54.097502
+lastmod: 2024-02-19 22:05:00.283304
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 kommunisere med en webserver\
   \ for \xE5 hente eller sende informasjon. Programmerere gj\xF8r dette for \xE5 integrere\

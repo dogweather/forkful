@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/elm/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:02.952252-07:00
 description: "Deletar caracteres que seguem um padr\xE3o espec\xEDfico \xE9 basicamente\
   \ filtrar texto. Programadores fazem isso para limpar dados, validar input ou simplificar\u2026"
-lastmod: 2024-02-18 23:08:58.045208
+lastmod: 2024-02-19 22:05:05.522653
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que seguem um padr\xE3o espec\xEDfico \xE9 basicamente\
   \ filtrar texto. Programadores fazem isso para limpar dados, validar input ou simplificar\u2026"

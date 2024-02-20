@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elixir/printing-debug-output/
 date: 2024-01-20 17:52:16.590140-07:00
 description: "La impresi\xF3n de informaci\xF3n de depuraci\xF3n es simplemente mostrar\
   \ datos en la consola para entender qu\xE9 est\xE1 ocurriendo en el c\xF3digo. Los\
   \ programadores la\u2026"
-lastmod: 2024-02-18 23:09:09.651422
+lastmod: 2024-02-19 22:05:17.291973
 model: gpt-4-1106-preview
 summary: "La impresi\xF3n de informaci\xF3n de depuraci\xF3n es simplemente mostrar\
   \ datos en la consola para entender qu\xE9 est\xE1 ocurriendo en el c\xF3digo. Los\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/c-sharp/logging/
 date: 2024-01-26 01:00:24.457971-07:00
 description: "El registro (logging) es el proceso de grabar eventos de aplicaciones\
   \ y salida de datos durante el tiempo de ejecuci\xF3n. Los programadores realizan\u2026"
-lastmod: 2024-02-18 23:09:09.989047
+lastmod: 2024-02-19 22:05:17.590748
 model: gpt-4-1106-preview
 summary: "El registro (logging) es el proceso de grabar eventos de aplicaciones y\
   \ salida de datos durante el tiempo de ejecuci\xF3n. Los programadores realizan\u2026"

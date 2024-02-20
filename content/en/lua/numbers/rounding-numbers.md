@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/rounding-numbers/
 date: 2024-01-25 03:00:08.560012-07:00
 description: "Rounding numbers means adjusting them to the nearest integer or specified\
   \ decimal place. It's a staple in programming for reducing complexity, enhancing\u2026"
-lastmod: 2024-02-18 23:09:11.173504
+lastmod: 2024-02-19 22:05:18.662680
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to the nearest integer or specified\
   \ decimal place. It's a staple in programming for reducing complexity, enhancing\u2026"

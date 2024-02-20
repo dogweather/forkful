@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/parsing-html/
 date: 2024-01-20 15:33:38.456428-07:00
 description: "Parsing HTML means tearing apart a chuck of HTML code to grasp its structure\
   \ and content. Programmers do it to extract data, manipulate content, or\u2026"
-lastmod: 2024-02-18 23:09:11.563696
+lastmod: 2024-02-19 22:05:19.010656
 summary: "Parsing HTML means tearing apart a chuck of HTML code to grasp its structure\
   \ and content. Programmers do it to extract data, manipulate content, or\u2026"
 title: Parsing HTML

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/reading-command-line-arguments/
 date: 2024-01-20 17:55:34.838097-07:00
 description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC218\uB97C \uC77D\uB294\uB2E4\
   \uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790\uAC00 \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589\
@@ -10,7 +8,7 @@ description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC218\uB97C \uC77D\uB294\uB
   \uB7A8 \uB3D9\uC791\uC744 \uC870\uC815\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.642996
+lastmod: 2024-02-19 22:05:14.544069
 model: gpt-4-1106-preview
 summary: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC218\uB97C \uC77D\uB294\uB2E4\uB294\
   \ \uAC83\uC740 \uC0AC\uC6A9\uC790\uAC00 \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589 \uC2DC\

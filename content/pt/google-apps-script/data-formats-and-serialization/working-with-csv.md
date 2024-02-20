@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:22.348840-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgulas) no Google\
   \ Apps Script envolve ler, modificar e escrever arquivos de texto simples onde cada\u2026"
-lastmod: 2024-02-18 23:08:57.741488
+lastmod: 2024-02-19 22:05:05.202618
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgulas) no Google\
   \ Apps Script envolve ler, modificar e escrever arquivos de texto simples onde cada\u2026"

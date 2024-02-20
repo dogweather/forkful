@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:07.244802-07:00
 description: "TOML is een configuratiebestandsformaat dat gemakkelijk te lezen is\
   \ vanwege de duidelijke semantiek. Programmeurs gebruiken TOML om app-configuraties\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:02.447607
+lastmod: 2024-02-19 22:05:10.451715
 model: gpt-4-0125-preview
 summary: "TOML is een configuratiebestandsformaat dat gemakkelijk te lezen is vanwege\
   \ de duidelijke semantiek. Programmeurs gebruiken TOML om app-configuraties en\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/swift/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:43.952308-07:00
 description: "Scrivere sull'errore standard (stderr) consiste nel dirigere i messaggi\
   \ di errore o l'output di diagnostica del tuo programma su un flusso separato,\u2026"
-lastmod: 2024-02-18 23:08:56.228117
+lastmod: 2024-02-19 22:05:02.860094
 model: gpt-4-0125-preview
 summary: "Scrivere sull'errore standard (stderr) consiste nel dirigere i messaggi\
   \ di errore o l'output di diagnostica del tuo programma su un flusso separato,\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:19.269579-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
   \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\
   \ T\xE4m\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.138889
+lastmod: 2024-02-19 22:05:15.939607
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
   \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\

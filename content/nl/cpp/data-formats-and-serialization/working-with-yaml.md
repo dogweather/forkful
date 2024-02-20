@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/working-with-yaml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:58.687308-07:00
 description: "Werken met YAML houdt in dat je gegevens parseert en genereert in de\
   \ voor mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het\
   \ voor\u2026"
-lastmod: 2024-02-18 23:09:02.205086
+lastmod: 2024-02-19 22:05:10.220703
 model: gpt-4-0125-preview
 summary: "Werken met YAML houdt in dat je gegevens parseert en genereert in de voor\
   \ mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het voor\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:23.412968-07:00
@@ -13,7 +11,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uD654\uD55C\uB2E4\uB29
   \ \uD2B9\uC815 \uD3EC\uB9F7\uD305 \uAE30\uC900\uC744 \uCDA9\uC871\uC2DC\uD0A4\uAE30\
   \ \uC704\uD574 \uD754\uD788 \uC218\uD589\uB418\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4\
   ."
-lastmod: 2024-02-18 23:09:06.852667
+lastmod: 2024-02-19 22:05:14.743108
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uD654\uD55C\uB2E4\uB294 \uAC83\
   \uC740 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C, \uB098\uBA38\uC9C0 \uBB38\

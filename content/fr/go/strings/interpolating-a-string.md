@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:24.667467-07:00
 description: "L'interpolation de cha\xEEne est une m\xE9thode pour construire des\
   \ cha\xEEnes qui incorporent des variables, permettant la cr\xE9ation dynamique\
   \ de cha\xEEnes. Les\u2026"
-lastmod: 2024-02-18 23:09:08.214087
+lastmod: 2024-02-19 22:05:16.025105
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEne est une m\xE9thode pour construire des cha\xEE\
   nes qui incorporent des variables, permettant la cr\xE9ation dynamique de cha\xEE\

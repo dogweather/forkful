@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/writing-to-standard-error/
 date: 2024-02-03 19:03:34.687650-07:00
 description: "Writing to standard error (stderr) involves outputting error messages\
   \ and diagnostics to the console or terminal. Programmers do it to separate error\u2026"
-lastmod: 2024-02-18 23:09:10.946777
+lastmod: 2024-02-19 22:05:18.455073
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) involves outputting error messages and\
   \ diagnostics to the console or terminal. Programmers do it to separate error\u2026"

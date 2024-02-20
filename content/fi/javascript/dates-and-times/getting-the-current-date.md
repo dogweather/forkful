@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/javascript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:59.912331-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen JavaScriptill\xE4 on perusteht\xE4\
   v\xE4, johon kuuluu t\xE4m\xE4n p\xE4iv\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan\
   \ noutaminen ja mahdollisesti manipulointi.\u2026"
-lastmod: 2024-02-18 23:09:08.046982
+lastmod: 2024-02-19 22:05:15.855196
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen JavaScriptill\xE4 on perusteht\xE4\
   v\xE4, johon kuuluu t\xE4m\xE4n p\xE4iv\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan\

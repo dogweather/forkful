@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/fish-shell/downloading-a-web-page/
 date: 2024-01-20 17:44:06.562048-07:00
 description: "Scaricare una pagina web significa copiare il suo contenuto HTML localmente\
   \ attraverso internet. I programmatori lo fanno per analisi dati, testare siti,\u2026"
-lastmod: 2024-02-18 23:08:56.294493
+lastmod: 2024-02-19 22:05:02.929854
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa copiare il suo contenuto HTML localmente\
   \ attraverso internet. I programmatori lo fanno per analisi dati, testare siti,\u2026"

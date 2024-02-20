@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/refactoring/
 date: 2024-01-26 01:17:10.313249-07:00
 description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza cambiarne il comportamento esterno. I programmatori lo fanno per\u2026"
-lastmod: 2024-02-18 23:08:55.896526
+lastmod: 2024-02-19 22:05:02.506061
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza cambiarne il comportamento esterno. I programmatori lo fanno per\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/javascript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:16.552590-07:00
 description: "Lavorare con CSV (Valori Separati da Virgola) in JavaScript comporta\
   \ l'analisi o la generazione di file CSV per ingerire dati tabellari da fonti esterne\u2026"
-lastmod: 2024-02-18 23:08:56.274710
+lastmod: 2024-02-19 22:05:02.909447
 model: gpt-4-0125-preview
 summary: "Lavorare con CSV (Valori Separati da Virgola) in JavaScript comporta l'analisi\
   \ o la generazione di file CSV per ingerire dati tabellari da fonti esterne\u2026"

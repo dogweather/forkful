@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/swift/working-with-complex-numbers/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:26.212738-07:00
@@ -13,7 +11,7 @@ description: "\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u043D\u044B\u0435
   \ \u0438\u0445 \u0432 Swift \u0434\u043B\u044F \u0437\u0430\u0434\u0430\u0447, \u0442\
   \u0430\u043A\u0438\u0445 \u043A\u0430\u043A \u043E\u0431\u0440\u0430\u0431\u043E\
   \u0442\u043A\u0430 \u0441\u0438\u0433\u043D\u0430\u043B\u043E\u0432,\u2026"
-lastmod: 2024-02-18 23:08:57.401755
+lastmod: 2024-02-19 22:05:04.650180
 model: gpt-4-0125-preview
 summary: "\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u043D\u044B\u0435 \u0447\
   \u0438\u0441\u043B\u0430 \u0438\u043C\u0435\u044E\u0442 \u0434\u0435\u0439\u0441\

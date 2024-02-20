@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/haskell/organizing-code-into-functions/
 date: 2024-01-26 01:10:49.130642-07:00
 description: "\xC5 organisere kode i funksjoner i Haskell betyr \xE5 bryte ned koden\
   \ din i gjenbrukbare, navngitte blokker. Hvorfor? Det holder koden din DRY (Don't\
   \ Repeat\u2026"
-lastmod: 2024-02-18 23:08:53.940159
+lastmod: 2024-02-19 22:05:00.111626
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner i Haskell betyr \xE5 bryte ned koden din\
   \ i gjenbrukbare, navngitte blokker. Hvorfor? Det holder koden din DRY (Don't Repeat\u2026"

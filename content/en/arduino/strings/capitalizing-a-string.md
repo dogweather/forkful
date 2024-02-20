@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/capitalizing-a-string/
 date: 2024-02-03 19:02:39.565422-07:00
 description: "Capitalizing a string involves converting the first character of each\
   \ word in a string to uppercase while ensuring the rest remain lowercase. This\u2026"
-lastmod: 2024-02-18 23:09:11.299068
+lastmod: 2024-02-19 22:05:18.769504
 model: gpt-4-0125-preview
 summary: "Capitalizing a string involves converting the first character of each word\
   \ in a string to uppercase while ensuring the rest remain lowercase. This\u2026"

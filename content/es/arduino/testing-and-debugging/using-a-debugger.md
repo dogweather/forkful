@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/arduino/using-a-debugger/
 date: 2024-01-26 03:47:03.698352-07:00
 description: "Un depurador es una herramienta que te ayuda a aplastar errores en tu\
   \ c\xF3digo permiti\xE9ndote pausar, indagar y descubrir qu\xE9 est\xE1 pasando\
   \ realmente bajo el\u2026"
-lastmod: 2024-02-18 23:09:10.265693
+lastmod: 2024-02-19 22:05:17.843327
 model: gpt-4-0125-preview
 summary: "Un depurador es una herramienta que te ayuda a aplastar errores en tu c\xF3\
   digo permiti\xE9ndote pausar, indagar y descubrir qu\xE9 est\xE1 pasando realmente\

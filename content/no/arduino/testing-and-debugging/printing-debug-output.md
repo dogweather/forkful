@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/printing-debug-output/
 date: 2024-01-20 17:51:54.266485-07:00
 description: "\xC5 skrive ut feils\xF8kingsdata (\"debug output\") handler om \xE5\
   \ vise programdata og -tilstander til skjermen for \xE5 forst\xE5 hva koden faktisk\
   \ gj\xF8r. Programmerere\u2026"
-lastmod: 2024-02-18 23:08:54.144368
+lastmod: 2024-02-19 22:05:00.331757
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut feils\xF8kingsdata (\"debug output\") handler om \xE5 vise\
   \ programdata og -tilstander til skjermen for \xE5 forst\xE5 hva koden faktisk gj\xF8\

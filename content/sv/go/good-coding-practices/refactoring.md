@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/go/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:08.615365-07:00
 description: "Refaktorisering i programmering inneb\xE4r omstrukturering av befintlig\
   \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende.\u2026"
-lastmod: 2024-02-18 23:08:51.342232
+lastmod: 2024-02-19 22:04:56.635245
 model: gpt-4-0125-preview
 summary: "Refaktorisering i programmering inneb\xE4r omstrukturering av befintlig\
   \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende.\u2026"

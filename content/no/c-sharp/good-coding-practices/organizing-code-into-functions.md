@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/organizing-code-into-functions/
 date: 2024-01-26 01:09:23.840515-07:00
 description: "\xC5 organisere kode i funksjoner er som \xE5 sortere LEGO-klosser i\
   \ bokser \u2013 det gj\xF8r det enklere \xE5 finne og bruke dem. Vi gj\xF8r dette\
   \ for \xE5 unng\xE5 gjentakelse,\u2026"
-lastmod: 2024-02-18 23:08:53.899161
+lastmod: 2024-02-19 22:05:00.068007
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner er som \xE5 sortere LEGO-klosser i bokser\
   \ \u2013 det gj\xF8r det enklere \xE5 finne og bruke dem. Vi gj\xF8r dette for \xE5\

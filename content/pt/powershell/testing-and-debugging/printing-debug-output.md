@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/printing-debug-output/
 date: 2024-01-20 17:53:24.489868-07:00
 description: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa ver\
   \ o que seu c\xF3digo est\xE1 realmente fazendo. Programadores imprimem mensagens\
   \ de depura\xE7\xE3o\u2026"
-lastmod: 2024-02-18 23:08:58.371331
+lastmod: 2024-02-19 22:05:05.856351
 model: gpt-4-1106-preview
 summary: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa ver o\
   \ que seu c\xF3digo est\xE1 realmente fazendo. Programadores imprimem mensagens\

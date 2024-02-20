@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/working-with-yaml/
 date: 2024-02-03 19:03:28.960635-07:00
 description: "YAML, which stands for YAML Ain't Markup Language, is a highly readable\
   \ data serialization format often used for configuration files, data storage, and\u2026"
-lastmod: 2024-02-18 23:09:11.033065
+lastmod: 2024-02-19 22:05:18.534407
 model: gpt-4-0125-preview
 summary: "YAML, which stands for YAML Ain't Markup Language, is a highly readable\
   \ data serialization format often used for configuration files, data storage, and\u2026"

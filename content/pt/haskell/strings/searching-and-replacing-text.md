@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/haskell/searching-and-replacing-text/
 date: 2024-01-20 17:58:02.773936-07:00
 description: "Procurar e substituir texto \xE9 uma tarefa comum na programa\xE7\xE3\
   o: significa encontrar sequ\xEAncias de caracteres e troc\xE1-las por outras. Fazemos\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:58.184663
+lastmod: 2024-02-19 22:05:05.655043
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 uma tarefa comum na programa\xE7\xE3o:\
   \ significa encontrar sequ\xEAncias de caracteres e troc\xE1-las por outras. Fazemos\

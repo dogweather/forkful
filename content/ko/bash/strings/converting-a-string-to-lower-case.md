@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:54.760705-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\
   \uB294 \uAC83\uC740 \uB300\uBB38\uC790\uB97C \uC77C\uAD00\uB41C \uC18C\uBB38\uC790\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uD560 \uB54C \uB300\uC18C\uBB38\uC790\uC758 \uCC28\uC774\uB97C \uC5C6\uC560\uAE30\
   \ \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.461627
+lastmod: 2024-02-19 22:05:14.372230
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uB300\uBB38\uC790\uB97C \uC77C\uAD00\uB41C \uC18C\uBB38\uC790 \uD615\

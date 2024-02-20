@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/handling-errors/
 date: 2024-01-21 21:19:08.204031-07:00
 description: "Handling errors means writing code that can deal with things going sideways.\
   \ Programmers do it to prevent crashes and to make sure their programs can\u2026"
-lastmod: 2024-02-18 23:09:10.772925
+lastmod: 2024-02-19 22:05:18.297533
 model: gpt-4-1106-preview
 summary: "Handling errors means writing code that can deal with things going sideways.\
   \ Programmers do it to prevent crashes and to make sure their programs can\u2026"

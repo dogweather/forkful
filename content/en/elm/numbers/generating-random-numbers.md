@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/generating-random-numbers/
 date: 2024-01-27 20:26:19.358617-07:00
 description: "Generating random numbers in Elm involves creating unpredictable numerical\
   \ values that are essential for applications like games, simulations, and\u2026"
-lastmod: 2024-02-18 23:09:10.967745
+lastmod: 2024-02-19 22:05:18.474306
 model: gpt-4-0125-preview
 summary: "Generating random numbers in Elm involves creating unpredictable numerical\
   \ values that are essential for applications like games, simulations, and\u2026"

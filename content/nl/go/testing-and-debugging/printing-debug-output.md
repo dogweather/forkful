@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:13.766586-07:00
 description: "In computerprogrammering betekent \"Debug-output afdrukken\" het produceren\
   \ van gedetailleerde informatieve berichten die ontwikkelaars helpen de\u2026"
-lastmod: 2024-02-18 23:09:01.341349
+lastmod: 2024-02-19 22:05:09.374868
 model: gpt-4-0125-preview
 summary: "In computerprogrammering betekent \"Debug-output afdrukken\" het produceren\
   \ van gedetailleerde informatieve berichten die ontwikkelaars helpen de\u2026"

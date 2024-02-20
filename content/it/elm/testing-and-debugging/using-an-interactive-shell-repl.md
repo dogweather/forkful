@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elm/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:31.996309-07:00
 description: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione semplice\
   \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il\u2026"
-lastmod: 2024-02-18 23:08:55.807403
+lastmod: 2024-02-19 22:05:02.413689
 model: gpt-4-0125-preview
 summary: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione semplice\
   \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il\u2026"

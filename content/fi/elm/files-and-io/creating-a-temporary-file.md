@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/creating-a-temporary-file/
 date: 2024-01-20 17:40:13.191330-07:00
 description: "Luodaan v\xE4liaikainen tiedosto: se on tilap\xE4inen s\xE4ilytyspaikka\
   \ datalle. K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tietoa, jota ei\
   \ tarvitse s\xE4ilytt\xE4\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.550046
+lastmod: 2024-02-19 22:05:15.401721
 model: gpt-4-1106-preview
 summary: "Luodaan v\xE4liaikainen tiedosto: se on tilap\xE4inen s\xE4ilytyspaikka\
   \ datalle. K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tietoa, jota ei\

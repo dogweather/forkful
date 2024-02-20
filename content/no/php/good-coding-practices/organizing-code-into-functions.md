@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/organizing-code-into-functions/
 date: 2024-01-26 01:11:38.477086-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din\
   \ i gjenbrukbare blokker med definerte form\xE5l. Vi gj\xF8r dette for \xE5 holde\
   \ ting ryddig,\u2026"
-lastmod: 2024-02-18 23:08:53.980580
+lastmod: 2024-02-19 22:05:00.155797
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din i gjenbrukbare\
   \ blokker med definerte form\xE5l. Vi gj\xF8r dette for \xE5 holde ting ryddig,\u2026"

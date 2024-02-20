@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/fish-shell/sending-an-http-request/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:23.172435-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430
   . \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0438\
   \u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442 HTTP-\u0437\u0430\u043F\u0440\
   \u043E\u0441\u044B \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:08:57.509352
+lastmod: 2024-02-19 22:05:04.823281
 model: gpt-4-0125-preview
 summary: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\
   \u0440\u043E\u0441\u043E\u0432 \u2014 \u044D\u0442\u043E \u0441\u043F\u043E\u0441\

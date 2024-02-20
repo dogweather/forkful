@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/lua/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:33.558533-07:00
 description: "Debugoutput afdrukken is informatie op je scherm gooien om te zien wat\
   \ er aan de hand is met je code. Programmeurs doen dit om gremlins in de machine\
   \ op\u2026"
-lastmod: 2024-02-18 23:09:01.994197
+lastmod: 2024-02-19 22:05:10.015186
 model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken is informatie op je scherm gooien om te zien wat er\
   \ aan de hand is met je code. Programmeurs doen dit om gremlins in de machine op\u2026"

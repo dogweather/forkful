@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:22.162841-07:00
@@ -13,7 +11,7 @@ description: "Go \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uB514\uBC84\uAC70\u
   \ \uD6A8\uC728\uC801\uC73C\uB85C \uBC84\uADF8\uB97C \uCC3E\uACE0 \uC218\uC815\uD558\
   \uACE0, \uC131\uB2A5\uC744 \uCD5C\uC801\uD654\uD558\uBA70, \uCF54\uB4DC\uC758 \uC815\
   \uD655\uC131\uC744 \uBCF4\uC7A5\uD558\uAE30 \uC704\uD574 \uC774\uB97C\u2026"
-lastmod: 2024-02-18 23:09:05.489604
+lastmod: 2024-02-19 22:05:13.407268
 model: gpt-4-0125-preview
 summary: "Go \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uB514\uBC84\uAC70\uB97C \uC0AC\
   \uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \uC2E4\uD589 \uC911\uC778 \uD504\uB85C\uADF8\

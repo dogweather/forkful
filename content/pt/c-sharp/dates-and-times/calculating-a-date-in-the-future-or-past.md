@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:32.635604-07:00
 description: "Calcular datas no futuro ou passado \xE9 simplesmente determinar um\
   \ dia espec\xEDfico antes ou depois de um determinado ponto no tempo. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.170456
+lastmod: 2024-02-19 22:05:05.640274
 model: gpt-4-1106-preview
 summary: "Calcular datas no futuro ou passado \xE9 simplesmente determinar um dia\
   \ espec\xEDfico antes ou depois de um determinado ponto no tempo. Programadores\

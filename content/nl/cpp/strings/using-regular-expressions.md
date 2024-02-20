@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:19.603019-07:00
 description: "Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties\
   \ in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie,\u2026"
-lastmod: 2024-02-18 23:09:02.171825
+lastmod: 2024-02-19 22:05:10.188941
 model: gpt-4-0125-preview
 summary: "Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties\
   \ in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie,\u2026"

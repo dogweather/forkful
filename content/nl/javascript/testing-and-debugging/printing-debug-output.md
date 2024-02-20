@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:35.640748-07:00
 description: "Debugoutput afdrukken in JavaScript gaat over het tonen van variabelen,\
   \ fouten of andere informatie die helpt om snel te begrijpen wat je code doet.\u2026"
-lastmod: 2024-02-18 23:09:02.278855
+lastmod: 2024-02-19 22:05:10.290722
 model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken in JavaScript gaat over het tonen van variabelen,\
   \ fouten of andere informatie die helpt om snel te begrijpen wat je code doet.\u2026"

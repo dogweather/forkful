@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/python/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:55.531588-07:00
@@ -13,7 +11,7 @@ description: "\u9023\u60F3\u914D\u5217\u306FPython\u3067\u306F\u8F9E\u66F8\u3068
   \u30AF\u30BB\u30B9\u52B9\u7387\u3068\u8907\u96D1\u306A\u30C7\u30FC\u30BF\u69CB\u9020\
   \u3092\u8868\u73FE\u3059\u308B\u67D4\u8EDF\u6027\u306E\u305F\u3081\u306B\u305D\u308C\
   \u3089\u3092\u4F7F\u7528\u3057\u3066\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.557254
+lastmod: 2024-02-19 22:05:00.761737
 model: gpt-4-0125-preview
 summary: "\u9023\u60F3\u914D\u5217\u306FPython\u3067\u306F\u8F9E\u66F8\u3068\u3057\
   \u3066\u77E5\u3089\u308C\u3066\u304A\u308A\u3001\u30AD\u30FC\u3092\u5024\u306B\u30DE\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c-sharp/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:05.493844-07:00
 description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
   sbart data-serialiseringsformat. Programmerare anv\xE4nder det ofta f\xF6r konfigurationsfiler,\
   \ inter-\u2026"
-lastmod: 2024-02-18 23:08:51.815844
+lastmod: 2024-02-19 22:04:57.152033
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4sbart\
   \ data-serialiseringsformat. Programmerare anv\xE4nder det ofta f\xF6r konfigurationsfiler,\

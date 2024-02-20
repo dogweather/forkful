@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/ruby/extracting-substrings/
 date: 2024-01-20 17:46:29.967487-07:00
 description: "Extraer substrings significa sacar partes espec\xEDficas de un string.\
   \ Lo hacemos para manipular, analizar o modificar datos de manera m\xE1s precisa."
-lastmod: 2024-02-18 23:09:10.538318
+lastmod: 2024-02-19 22:05:18.086192
 model: gpt-4-1106-preview
 summary: "Extraer substrings significa sacar partes espec\xEDficas de un string. Lo\
   \ hacemos para manipular, analizar o modificar datos de manera m\xE1s precisa."

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/php/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:09.766875-07:00
 description: "Los arreglos asociativos en PHP son como listas supercargadas donde\
   \ cada elemento se puede acceder utilizando una clave legible por humanos en lugar\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:10.066212
+lastmod: 2024-02-19 22:05:17.661003
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos en PHP son como listas supercargadas donde cada\
   \ elemento se puede acceder utilizando una clave legible por humanos en lugar de\u2026"

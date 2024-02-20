@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c-sharp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:26.131664-07:00
 description: "Att skriva med stor bokstav i en str\xE4ng i C# inneb\xE4r att omvandla\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal om det inte redan \xE4r det.\
   \ Denna \xE4ndring kan\u2026"
-lastmod: 2024-02-18 23:08:51.778040
+lastmod: 2024-02-19 22:04:57.112400
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav i en str\xE4ng i C# inneb\xE4r att omvandla\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal om det inte redan \xE4r det.\

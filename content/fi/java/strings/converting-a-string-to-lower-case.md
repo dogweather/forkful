@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/java/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:45.419134-07:00
 description: "Muuttaa stringin pieniksi kirjaimiksi. Teemme n\xE4in muun muassa tiedon\
   \ normalisointiin ja vertailuihin, jolloin isot kirjaimet eiv\xE4t vaikuta tulokseen."
-lastmod: 2024-02-18 23:09:07.444431
+lastmod: 2024-02-19 22:05:15.327871
 model: gpt-4-1106-preview
 summary: "Muuttaa stringin pieniksi kirjaimiksi. Teemme n\xE4in muun muassa tiedon\
   \ normalisointiin ja vertailuihin, jolloin isot kirjaimet eiv\xE4t vaikuta tulokseen."

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/powershell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:53.264094-07:00
@@ -12,7 +10,7 @@ description: "\u6B63\u898F\u8868\u73FE\uFF08regex\uFF09\u306F\u691C\u7D22\u30D1\
   \u305D\u306E\u52B9\u7387\u6027\u3068\u67D4\u8EDF\u6027\u304B\u3089\u3001PowerShell\u3067\
   \u306E\u30C7\u30FC\u30BF\u691C\u8A3C\u3001\u89E3\u6790\u3001\u5909\u63DB\u306A\u3069\
   \u306E\u30BF\u30B9\u30AF\u306Bregex\u3092\u6D3B\u7528\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.103859
+lastmod: 2024-02-19 22:05:01.542932
 model: gpt-4-0125-preview
 summary: "\u6B63\u898F\u8868\u73FE\uFF08regex\uFF09\u306F\u691C\u7D22\u30D1\u30BF\u30FC\
   \u30F3\u3092\u5F62\u6210\u3059\u308B\u6587\u5B57\u306E\u5217\u3067\u3042\u308A\u3001\

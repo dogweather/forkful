@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/printing-debug-output/
 date: 2024-01-20 17:52:21.679613-07:00
 description: "La impresi\xF3n de salidas de depuraci\xF3n (debug output) es un m\xE9\
   todo para mostrar informaci\xF3n de un programa mientras se ejecuta. Los programadores\
   \ lo usan\u2026"
-lastmod: 2024-02-18 23:09:09.605849
+lastmod: 2024-02-19 22:05:17.250449
 model: gpt-4-1106-preview
 summary: "La impresi\xF3n de salidas de depuraci\xF3n (debug output) es un m\xE9todo\
   \ para mostrar informaci\xF3n de un programa mientras se ejecuta. Los programadores\

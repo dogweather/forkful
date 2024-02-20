@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:35.517985-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ \xE5 tilf\xF8ye brukernavn og passord i en foresp\xF8rsel for \xE5 f\xE5 tilgang\
   \ til beskyttede\u2026"
-lastmod: 2024-02-18 23:08:54.438275
+lastmod: 2024-02-19 22:05:00.600608
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ \xE5 tilf\xF8ye brukernavn og passord i en foresp\xF8rsel for \xE5 f\xE5 tilgang\

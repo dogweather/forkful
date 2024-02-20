@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/cpp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:09.752457-07:00
 description: "Capitalizzare una stringa significa convertire il carattere iniziale\
   \ di ogni parola nella stringa in maiuscolo, se esse sono in minuscolo, mantenendo\u2026"
-lastmod: 2024-02-18 23:08:56.157084
+lastmod: 2024-02-19 22:05:02.784567
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa significa convertire il carattere iniziale di\
   \ ogni parola nella stringa in maiuscolo, se esse sono in minuscolo, mantenendo\u2026"

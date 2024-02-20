@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/ruby/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:42.363799-07:00
 description: "Quitar las comillas de una cadena significa despojar esos signos de\
   \ comillas dobles o simples que envuelven los valores de texto. Los programadores\
   \ a\u2026"
-lastmod: 2024-02-18 23:09:10.537290
+lastmod: 2024-02-19 22:05:18.085267
 model: gpt-4-0125-preview
 summary: "Quitar las comillas de una cadena significa despojar esos signos de comillas\
   \ dobles o simples que envuelven los valores de texto. Los programadores a\u2026"

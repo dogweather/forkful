@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c-sharp/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:29.271107-07:00
@@ -8,7 +6,7 @@ description: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng h\u1EC7 th\u1ED1ng s\u1ED1 c\u
   a ch\xFAng ta \u0111\u1EC3 bao g\u1ED3m s\u1ED1 \u1EA3o, cho ph\xE9p ch\xFAng ta\
   \ gi\u1EA3i c\xE1c ph\u01B0\u01A1ng tr\xECnh kh\xF4ng c\xF3 nghi\u1EC7m th\u1EF1\
   c. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi\u2026"
-lastmod: 2024-02-18 23:08:50.691329
+lastmod: 2024-02-19 22:04:55.822549
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng h\u1EC7 th\u1ED1ng s\u1ED1 c\u1EE7a\
   \ ch\xFAng ta \u0111\u1EC3 bao g\u1ED3m s\u1ED1 \u1EA3o, cho ph\xE9p ch\xFAng ta\

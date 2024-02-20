@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/ruby/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:50.713841-07:00
 description: "Analizar HTML significa desglosar un trozo de c\xF3digo HTML para comprender\
   \ su estructura y contenido. Los programadores lo hacen para extraer datos,\u2026"
-lastmod: 2024-02-18 23:09:10.550086
+lastmod: 2024-02-19 22:05:18.096851
 model: gpt-4-0125-preview
 summary: "Analizar HTML significa desglosar un trozo de c\xF3digo HTML para comprender\
   \ su estructura y contenido. Los programadores lo hacen para extraer datos,\u2026"

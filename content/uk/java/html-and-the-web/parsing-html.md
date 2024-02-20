@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/java/parsing-html/
 date: 2024-01-20 15:32:11.518269-07:00
 description: Parsing HTML means extracting data from HTML files. Programmers do this
   to interact with web content, automate tasks, or scrape data.
-lastmod: 2024-02-18 23:09:00.115502
+lastmod: 2024-02-19 22:05:08.094671
 summary: Parsing HTML means extracting data from HTML files. Programmers do this to
   interact with web content, automate tasks, or scrape data.
 title: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML"

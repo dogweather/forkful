@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elm/organizing-code-into-functions/
 date: 2024-01-26 01:10:02.367190-07:00
 description: "Wrzucenie ca\u0142ego twojego kodu do jednej wielkiej sterty? Z\u0142\
   y pomys\u0142. Podzielenie go na funkcje? Dobry pomys\u0142. Dzi\u0119ki temu kod\
   \ Elm jest czysty,\u2026"
-lastmod: 2024-02-18 23:08:49.524293
+lastmod: 2024-02-19 22:04:54.457552
 model: gpt-4-1106-preview
 summary: "Wrzucenie ca\u0142ego twojego kodu do jednej wielkiej sterty? Z\u0142y pomys\u0142\
   . Podzielenie go na funkcje? Dobry pomys\u0142. Dzi\u0119ki temu kod Elm jest czysty,\u2026"

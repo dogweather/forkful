@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/lua/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:27.349636-07:00
 description: "Las expresiones regulares en la programaci\xF3n permiten la b\xFAsqueda\
   \ y manipulaci\xF3n de cadenas basadas en patrones espec\xEDficos. Los programadores\
   \ las\u2026"
-lastmod: 2024-02-18 23:09:10.108731
+lastmod: 2024-02-19 22:05:17.699700
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares en la programaci\xF3n permiten la b\xFAsqueda\
   \ y manipulaci\xF3n de cadenas basadas en patrones espec\xEDficos. Los programadores\

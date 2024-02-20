@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:04.993894-07:00
 description: "Supprimer les guillemets d'une cha\xEEne en C# signifie que vous retirez\
   \ ces caract\xE8res de guillemets doubles (`\"`) ou simples (`'`) qui entourent\
   \ votre\u2026"
-lastmod: 2024-02-18 23:09:08.814257
+lastmod: 2024-02-19 22:05:16.516118
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne en C# signifie que vous retirez\
   \ ces caract\xE8res de guillemets doubles (`\"`) ou simples (`'`) qui entourent\

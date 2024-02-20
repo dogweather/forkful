@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/vba/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:38.193716-07:00
 description: "Visual Basic for Applications (VBA)\u2026"
-lastmod: 2024-02-18 23:08:54.753745
+lastmod: 2024-02-19 22:05:01.041698
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications (VBA)\u2026"
 title: "\u9023\u60F3\u914D\u5217\u306E\u4F7F\u7528"

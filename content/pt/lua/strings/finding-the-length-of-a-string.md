@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/lua/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:41.283724-07:00
 description: "Descobrir o comprimento de uma string \xE9 basicamente saber quantos\
   \ caracteres ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
-lastmod: 2024-02-18 23:08:58.273605
+lastmod: 2024-02-19 22:05:05.750203
 model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string \xE9 basicamente saber quantos caracteres\
   \ ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"

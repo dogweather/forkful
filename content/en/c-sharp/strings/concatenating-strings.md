@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/concatenating-strings/
 date: 2024-01-20 17:34:24.305814-07:00
 description: "Concatenation is the process of sticking strings together end-to-end.\
   \ We do it because often we need to combine words or symbols to create phrases,\u2026"
-lastmod: 2024-02-18 23:09:11.046420
+lastmod: 2024-02-19 22:05:18.546966
 model: gpt-4-1106-preview
 summary: "Concatenation is the process of sticking strings together end-to-end. We\
   \ do it because often we need to combine words or symbols to create phrases,\u2026"

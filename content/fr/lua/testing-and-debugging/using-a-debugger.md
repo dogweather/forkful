@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/using-a-debugger/
 date: 2024-01-26 03:50:08.143505-07:00
 description: "Un d\xE9bogueur est un outil qui vous permet d'inspecter et de contr\xF4\
   ler l'ex\xE9cution d'un programme, facilitant ainsi la d\xE9tection des probl\xE8\
   mes. Les\u2026"
-lastmod: 2024-02-18 23:09:08.974648
+lastmod: 2024-02-19 22:05:16.662949
 model: gpt-4-0125-preview
 summary: "Un d\xE9bogueur est un outil qui vous permet d'inspecter et de contr\xF4\
   ler l'ex\xE9cution d'un programme, facilitant ainsi la d\xE9tection des probl\xE8\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/arduino/refactoring/
 date: 2024-01-26 01:16:29.828554-07:00
 description: "Refactorizar es el proceso de reorganizar tu c\xF3digo para mejorar\
   \ su estructura y legibilidad sin alterar el comportamiento externo o la funcionalidad.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.269887
+lastmod: 2024-02-19 22:05:17.847083
 model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de reorganizar tu c\xF3digo para mejorar su estructura\
   \ y legibilidad sin alterar el comportamiento externo o la funcionalidad. Los\u2026"

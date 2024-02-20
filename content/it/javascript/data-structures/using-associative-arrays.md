@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:44.879743-07:00
 description: "Gli array associativi, o come sono pi\xF9 correttamente noti in JavaScript,\
   \ gli oggetti, ti permettono di mappare chiavi a valori. Questo \xE8 estremamente\u2026"
-lastmod: 2024-02-18 23:08:56.245966
+lastmod: 2024-02-19 22:05:02.879154
 model: gpt-4-0125-preview
 summary: "Gli array associativi, o come sono pi\xF9 correttamente noti in JavaScript,\
   \ gli oggetti, ti permettono di mappare chiavi a valori. Questo \xE8 estremamente\u2026"

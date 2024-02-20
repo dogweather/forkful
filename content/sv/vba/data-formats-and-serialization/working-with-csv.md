@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:49.977988-07:00
 description: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att l\xE4\
   sa fr\xE5n eller skriva till vanliga textfiler d\xE4r dataf\xE4lten \xE4r separerade\
   \ med kommatecken.\u2026"
-lastmod: 2024-02-18 23:08:51.650390
+lastmod: 2024-02-19 22:04:56.975104
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att l\xE4sa\
   \ fr\xE5n eller skriva till vanliga textfiler d\xE4r dataf\xE4lten \xE4r separerade\

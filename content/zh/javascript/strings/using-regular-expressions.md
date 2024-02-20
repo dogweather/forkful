@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/javascript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:12.851599-07:00
@@ -10,7 +8,7 @@ description: "\u5728JavaScript\u4E2D\uFF0C\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08re
   \u3001\u63D0\u53D6\u548C\u64CD\u7EB5\u6587\u672C\uFF0C\u5141\u8BB8\u4F7F\u7528\u7B80\
   \u6D01\u7684\u4EE3\u7801\u6267\u884C\u5F3A\u5927\u7684\u5B57\u7B26\u4E32\u5904\u7406\
   \u64CD\u4F5C\u3002"
-lastmod: 2024-02-18 23:08:59.470568
+lastmod: 2024-02-19 22:05:07.255814
 model: gpt-4-0125-preview
 summary: "\u5728JavaScript\u4E2D\uFF0C\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\
   \u662F\u7528\u4E8E\u5728\u5B57\u7B26\u4E32\u4E2D\u5339\u914D\u5B57\u7B26\u7EC4\u5408\

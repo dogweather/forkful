@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:53.447751-07:00
 description: "Calculating a future or past date means figuring out what the calendar\
   \ will say after or before a specified amount of time. Programmers do it for anything\u2026"
-lastmod: 2024-02-18 23:09:10.861929
+lastmod: 2024-02-19 22:05:18.377530
 model: gpt-4-1106-preview
 summary: "Calculating a future or past date means figuring out what the calendar will\
   \ say after or before a specified amount of time. Programmers do it for anything\u2026"

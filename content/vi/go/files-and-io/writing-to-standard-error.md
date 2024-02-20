@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:33.281762-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Go b
   \ g\u1ED3m vi\u1EC7c ch\u1EC9 \u0111\u1EA1o c\xE1c th\xF4ng b\xE1o l\u1ED7i ho\u1EB7\
   c ch\u1EA9n \u0111o\xE1n kh\xF4ng d\xE0nh cho d\xF2ng xu\u1EA5t ch\xEDnh. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
-lastmod: 2024-02-18 23:08:50.189491
+lastmod: 2024-02-19 22:04:55.191091
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Go bao g\u1ED3\
   m vi\u1EC7c ch\u1EC9 \u0111\u1EA1o c\xE1c th\xF4ng b\xE1o l\u1ED7i ho\u1EB7c ch\u1EA9\

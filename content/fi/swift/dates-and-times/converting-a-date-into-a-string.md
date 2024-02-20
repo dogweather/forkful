@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:37.325190-07:00
 description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi jotta se olisi helpompi\
   \ n\xE4ytt\xE4\xE4 k\xE4ytt\xE4j\xE4lle. T\xE4m\xE4 tehd\xE4\xE4n k\xE4ytt\xE4j\xE4\
   yst\xE4v\xE4llisten muotojen ja paikallisten\u2026"
-lastmod: 2024-02-18 23:09:08.002400
+lastmod: 2024-02-19 22:05:15.814091
 model: gpt-4-1106-preview
 summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi jotta se olisi helpompi\
   \ n\xE4ytt\xE4\xE4 k\xE4ytt\xE4j\xE4lle. T\xE4m\xE4 tehd\xE4\xE4n k\xE4ytt\xE4j\xE4\

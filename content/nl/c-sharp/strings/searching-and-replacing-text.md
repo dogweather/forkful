@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:03.299782-07:00
 description: "Tekst in strings zoeken en vervangen stelt je in staat gegevens te updaten\
   \ zonder handmatige wijzigingen. Programmeurs hebben dit nodig om\u2026"
-lastmod: 2024-02-18 23:09:01.835771
+lastmod: 2024-02-19 22:05:09.852021
 model: gpt-4-0125-preview
 summary: "Tekst in strings zoeken en vervangen stelt je in staat gegevens te updaten\
   \ zonder handmatige wijzigingen. Programmeurs hebben dit nodig om\u2026"

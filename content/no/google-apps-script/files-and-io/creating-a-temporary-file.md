@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/google-apps-script/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:51.843648-07:00
 description: "\xC5 lage en midlertidig fil i Google Apps Script inneb\xE6rer \xE5\
   \ generere en fil som er ment for kortvarig bruk, typisk for mellomliggende databehandling,\u2026"
-lastmod: 2024-02-18 23:08:53.502024
+lastmod: 2024-02-19 22:04:59.617653
 model: gpt-4-0125-preview
 summary: "\xC5 lage en midlertidig fil i Google Apps Script inneb\xE6rer \xE5 generere\
   \ en fil som er ment for kortvarig bruk, typisk for mellomliggende databehandling,\u2026"

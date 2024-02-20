@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/rust/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:56.687492-07:00
 description: "Att h\xE4mta det aktuella datumet i Rust \xE4r en vanlig uppgift f\xF6\
   r s\xE5dana saker som loggning, tidsbaserade operationer eller helt enkelt f\xF6\
   r att visa datumet.\u2026"
-lastmod: 2024-02-18 23:08:51.593882
+lastmod: 2024-02-19 22:04:56.913718
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i Rust \xE4r en vanlig uppgift f\xF6r\
   \ s\xE5dana saker som loggning, tidsbaserade operationer eller helt enkelt f\xF6\

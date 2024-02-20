@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c-sharp/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:12.933555-07:00
@@ -12,7 +10,7 @@ description: "YAML, \u091C\u093F\u0938\u0915\u093E \u0905\u0930\u094D\u0925 \u09
   \u094D\u0938 \u0905\u0915\u094D\u0938\u0930 \u0907\u0938\u0915\u093E \u0909\u092A\
   \u092F\u094B\u0917 \u0915\u0949\u0928\u094D\u092B\u093C\u093F\u0917\u0930\u0947\u0936\
   \u0928 \u092B\u093E\u0907\u0932\u094B\u0902,\u2026"
-lastmod: 2024-02-18 23:09:03.383386
+lastmod: 2024-02-19 22:05:11.375269
 model: gpt-4-0125-preview
 summary: "YAML, \u091C\u093F\u0938\u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948\
   \ YAML Ain't Markup Language, \u090F\u0915 \u092E\u093E\u0928\u0935-\u092A\u0920\

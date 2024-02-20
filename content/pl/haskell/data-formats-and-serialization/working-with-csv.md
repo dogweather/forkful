@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/haskell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:51.022036-07:00
 description: "Praca z CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecinkami)\
   \ polega na parsowaniu oraz generowaniu plik\xF3w, kt\xF3re przechowuj\u0105 dane\
   \ tabelaryczne w\u2026"
-lastmod: 2024-02-18 23:08:49.674882
+lastmod: 2024-02-19 22:04:54.610000
 model: gpt-4-0125-preview
 summary: "Praca z CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecinkami)\
   \ polega na parsowaniu oraz generowaniu plik\xF3w, kt\xF3re przechowuj\u0105 dane\

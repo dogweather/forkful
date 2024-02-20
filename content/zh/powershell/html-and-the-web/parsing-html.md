@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/powershell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:39.550825-07:00
@@ -11,7 +9,7 @@ description: "\u5728 PowerShell \u4E2D\u89E3\u6790 HTML \u610F\u5473\u7740\u89E3
   \u5185\u5BB9\uFF0C\u6216\u8005\u81EA\u52A8\u5316\u8868\u5355\u63D0\u4EA4\u548C\u5176\
   \u4ED6\u7F51\u7EDC\u4EA4\u4E92\uFF0C\u800C\u4E0D\u9700\u8981\u7F51\u7EDC\u6D4F\u89C8\
   \u5668\u3002"
-lastmod: 2024-02-18 23:08:59.329989
+lastmod: 2024-02-19 22:05:07.062196
 model: gpt-4-0125-preview
 summary: "\u5728 PowerShell \u4E2D\u89E3\u6790 HTML \u610F\u5473\u7740\u89E3\u6790\
   \ HTML \u5185\u5BB9\u4EE5\u63D0\u53D6\u7279\u5B9A\u6570\u636E\u6216\u81EA\u52A8\u5316\

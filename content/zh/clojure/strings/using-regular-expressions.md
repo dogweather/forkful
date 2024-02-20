@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/clojure/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:33.856445-07:00
@@ -11,7 +9,7 @@ description: "\u6B63\u5219\u8868\u8FBE\u5F0F\u662F\u5904\u7406\u6587\u672C\u4EFB
   \u6CDB\u4F7F\u7528\u5B83\u4EEC\u6765\u9AD8\u6548\u3001\u7B80\u6D01\u5730\u5904\u7406\
   \u590D\u6742\u7684\u5B57\u7B26\u4E32\u89E3\u6790\u548C\u6570\u636E\u9A8C\u8BC1\u4EFB\
   \u52A1\u3002"
-lastmod: 2024-02-18 23:08:58.819362
+lastmod: 2024-02-19 22:05:06.374063
 model: gpt-4-0125-preview
 summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\u662F\u5904\u7406\u6587\u672C\u4EFB\u52A1\
   \uFF08\u5982\u9A8C\u8BC1\u8F93\u5165\u3001\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\

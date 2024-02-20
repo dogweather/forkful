@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/c/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:15.156817-07:00
 description: "Generare numeri casuali in C comporta la creazione di valori che sono\
   \ imprevedibili e seguono una specifica distribuzione, come uniforme o normale.\
   \ Questa\u2026"
-lastmod: 2024-02-18 23:08:56.334132
+lastmod: 2024-02-19 22:05:02.972078
 model: gpt-4-0125-preview
 summary: "Generare numeri casuali in C comporta la creazione di valori che sono imprevedibili\
   \ e seguono una specifica distribuzione, come uniforme o normale. Questa\u2026"

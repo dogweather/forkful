@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:11.855130-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet,\
   \ bestimmte Teile aus einem String zu entfernen, die einem vorgegebenen Muster folgen.\u2026"
-lastmod: 2024-02-18 23:09:04.945385
+lastmod: 2024-02-19 22:05:12.885326
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
   \ Teile aus einem String zu entfernen, die einem vorgegebenen Muster folgen.\u2026"

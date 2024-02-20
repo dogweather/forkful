@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/java/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:18.828145-07:00
 description: "Een nieuw Java-project starten is alsof je een nieuw doek klaarzet voor\
   \ je meesterwerk. Programmeurs zetten nieuwe projecten op om idee\xEBn om te zetten\
   \ in\u2026"
-lastmod: 2024-02-18 23:09:01.713817
+lastmod: 2024-02-19 22:05:09.734148
 model: gpt-4-0125-preview
 summary: "Een nieuw Java-project starten is alsof je een nieuw doek klaarzet voor\
   \ je meesterwerk. Programmeurs zetten nieuwe projecten op om idee\xEBn om te zetten\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/powershell/searching-and-replacing-text/
 date: 2024-01-20 17:58:27.282402-07:00
 description: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u662F\u904D\u5386\u5B57\u7B26\
   \u4E32\uFF0C\u627E\u51FA\u7279\u5B9A\u6A21\u5F0F\u5E76\u7528\u65B0\u5185\u5BB9\u66FF\
@@ -8,7 +6,7 @@ description: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u662F\u904D\u5386\u5B57
   \u5FEB\u901F\u66F4\u65B0\u4EE3\u7801\u3001\u4FEE\u590D\u9519\u8BEF\u6216\u5904\u7406\
   \u6570\u636E\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.316704
+lastmod: 2024-02-19 22:05:07.044914
 model: gpt-4-1106-preview
 summary: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u662F\u904D\u5386\u5B57\u7B26\
   \u4E32\uFF0C\u627E\u51FA\u7279\u5B9A\u6A21\u5F0F\u5E76\u7528\u65B0\u5185\u5BB9\u66FF\

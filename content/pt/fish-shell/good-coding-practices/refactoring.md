@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/refactoring/
 date: 2024-01-26 01:17:59.547396-07:00
 description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo existente\
   \ sem alterar seu comportamento externo para melhorar atributos n\xE3o funcionais.\
   \ Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.583992
+lastmod: 2024-02-19 22:05:06.082071
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo existente sem\
   \ alterar seu comportamento externo para melhorar atributos n\xE3o funcionais. Programadores\u2026"

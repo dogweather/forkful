@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/php/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:54.050359-07:00
 description: "\xC9crire un fichier texte en PHP implique de cr\xE9er ou d'ouvrir un\
   \ fichier et d'y ins\xE9rer du contenu. Les programmeurs font cela pour persister\
   \ des donn\xE9es,\u2026"
-lastmod: 2024-02-18 23:09:08.942941
+lastmod: 2024-02-19 22:05:16.633189
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en PHP implique de cr\xE9er ou d'ouvrir un fichier\
   \ et d'y ins\xE9rer du contenu. Les programmeurs font cela pour persister des donn\xE9\

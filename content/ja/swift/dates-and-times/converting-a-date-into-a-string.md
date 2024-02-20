@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/swift/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:28.656185-07:00
 description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u3068\
   \u3044\u3046\u306E\u306F\u3001`Date` \u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092\u30C6\
@@ -11,7 +9,7 @@ description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B
   \u5B57\u5217\u5F62\u5F0F\u3067\u4FDD\u5B58\u30FB\u901A\u4FE1\u3059\u308B\u305F\u3081\
   \u306B\u884C\u3044\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:55.240350
+lastmod: 2024-02-19 22:05:01.743325
 model: gpt-4-1106-preview
 summary: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u3068\
   \u3044\u3046\u306E\u306F\u3001`Date` \u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092\u30C6\

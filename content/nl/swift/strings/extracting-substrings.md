@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:27.970541-07:00
 description: "Het extraheren van substrings betekent dat je slechts een deel van een\
   \ string pakt\u2014alsof je een lint knipt tot de lengte die je nodig hebt. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.217007
+lastmod: 2024-02-19 22:05:10.231712
 model: gpt-4-0125-preview
 summary: "Het extraheren van substrings betekent dat je slechts een deel van een string\
   \ pakt\u2014alsof je een lint knipt tot de lengte die je nodig hebt. Programmeurs\u2026"

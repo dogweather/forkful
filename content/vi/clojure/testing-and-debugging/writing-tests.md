@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:18.016567-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EBFt test c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 l\u1EC7nh 
   m tra xem m\xE3 l\u1EC7nh kh\xE1c c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\
   \u1EE3i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m v\u1EADy \u0111\u1EC3 b\u1EAF\
   t l\u1ED7i, \u0111\u1EA3m b\u1EA3o \u0111\u1ED9 tin c\u1EADy\u2026"
-lastmod: 2024-02-18 23:08:50.318793
+lastmod: 2024-02-19 22:04:55.355833
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 l\u1EC7nh ki\u1EC3\
   m tra xem m\xE3 l\u1EC7nh kh\xE1c c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/interpolating-a-string/
 date: 2024-01-20 17:50:17.096727-07:00
 description: String interpolation lets you build strings using embedded expressions.
   It makes code readable and formatting a breeze.
-lastmod: 2024-02-18 23:09:11.040649
+lastmod: 2024-02-19 22:05:18.541716
 model: gpt-4-1106-preview
 summary: String interpolation lets you build strings using embedded expressions. It
   makes code readable and formatting a breeze.

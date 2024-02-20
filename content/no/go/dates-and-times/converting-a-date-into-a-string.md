@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:28.203043-07:00
 description: "\xC5 konvertere en dato til en streng i Go inneb\xE6rer \xE5 transformere\
   \ et `time.Time`-objekt til et leselig strengformat. Programmerere utf\xF8rer ofte\
   \ denne\u2026"
-lastmod: 2024-02-18 23:08:53.447925
+lastmod: 2024-02-19 22:04:59.559718
 model: gpt-4-0125-preview
 summary: "\xC5 konvertere en dato til en streng i Go inneb\xE6rer \xE5 transformere\
   \ et `time.Time`-objekt til et leselig strengformat. Programmerere utf\xF8rer ofte\

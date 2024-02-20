@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/cpp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:01.868413-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sobre\
   \ processar e manipular dados armazenados em um formato de texto simples, onde cada\
   \ linha\u2026"
-lastmod: 2024-02-18 23:08:58.472010
+lastmod: 2024-02-19 22:05:05.963712
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sobre\
   \ processar e manipular dados armazenados em um formato de texto simples, onde cada\

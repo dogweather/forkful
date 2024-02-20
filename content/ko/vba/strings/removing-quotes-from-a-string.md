@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:33.092116-07:00
@@ -13,7 +11,7 @@ description: "VBA\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\
   \uC774\uBA70, \uB370\uC774\uD130\uBCA0\uC774\uC2A4 \uCFFC\uB9AC, JSON \uD30C\uC2F1\
   \ \uB610\uB294 \uB2E8\uC21C\uD788 \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158 \uC778\uD130\
   \uD398\uC774\uC2A4\u2026"
-lastmod: 2024-02-18 23:09:05.931946
+lastmod: 2024-02-19 22:05:13.866876
 model: gpt-4-0125-preview
 summary: "VBA\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C\
   \ \uC81C\uAC70\uD558\uB294 \uAC83\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0 \uD3EC\uD568\

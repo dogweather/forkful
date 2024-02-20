@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:15.901214-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EBFt test trong C bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c c
   \u01A1ng tr\xECnh ph\u1EE5 ho\u1EB7c ch\u1EE9c n\u0103ng nh\u1ECF h\u01A1n gi\xFA\
   p t\u1EF1 \u0111\u1ED9ng ki\u1EC3m tra t\xEDnh n\u0103ng c\u1EE7a m\xE3 l\u1EC7\
   nh. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
-lastmod: 2024-02-18 23:08:51.238545
+lastmod: 2024-02-19 22:04:56.510649
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test trong C bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c ch\u01B0\
   \u01A1ng tr\xECnh ph\u1EE5 ho\u1EB7c ch\u1EE9c n\u0103ng nh\u1ECF h\u01A1n gi\xFA\

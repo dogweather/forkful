@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/haskell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:27.093385-07:00
 description: "Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen der\
   \ aktuellen Systemzeit und deren Umwandlung in ein lesbares Datumsformat. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.928369
+lastmod: 2024-02-19 22:05:12.868780
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen der aktuellen\
   \ Systemzeit und deren Umwandlung in ein lesbares Datumsformat. Programmierer\u2026"

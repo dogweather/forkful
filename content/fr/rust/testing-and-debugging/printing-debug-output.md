@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/printing-debug-output/
 date: 2024-01-20 17:53:20.346733-07:00
 description: "En Rust, afficher des informations de d\xE9bogage, c'est montrer l'\xE9\
   tat d'une variable ou ce qui se passe dans un programme. \xC7a aide les d\xE9veloppeurs\
   \ \xE0\u2026"
-lastmod: 2024-02-18 23:09:08.531781
+lastmod: 2024-02-19 22:05:16.312740
 model: gpt-4-1106-preview
 summary: "En Rust, afficher des informations de d\xE9bogage, c'est montrer l'\xE9\
   tat d'une variable ou ce qui se passe dans un programme. \xC7a aide les d\xE9veloppeurs\

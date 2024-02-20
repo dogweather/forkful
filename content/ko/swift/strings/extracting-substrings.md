@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/swift/extracting-substrings/
 date: 2024-01-20 17:47:07.387354-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\
   \uCD9C\uD558\uB294 \uAC83\uC740 \uB370\uC774\uD130\uB97C \uC790\uB974\uACE0 \uC870\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uC
   \uC5F4\uC744 \uBD84\uC11D\uD558\uAE30 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC790\
   \uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.731922
+lastmod: 2024-02-19 22:05:14.625979
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\uCD9C\
   \uD558\uB294 \uAC83\uC740 \uB370\uC774\uD130\uB97C \uC790\uB974\uACE0 \uC870\uC791\

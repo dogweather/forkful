@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:35.241015-07:00
@@ -8,7 +6,7 @@ description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch ch\u01B0\u01A
   ng tr\xECnh c\u1EE7a b\u1EA1n y\xEAu c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB web, gi\u1ED1\
   ng nh\u01B0 c\xE1ch b\u1EA1n y\xEAu c\u1EA7u m\u1ED9t th\u1EE7 th\u01B0 v\u1EC1\
   \ m\u1ED9t quy\u1EC3n s\xE1ch. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
-lastmod: 2024-02-18 23:08:50.364932
+lastmod: 2024-02-19 22:04:55.405666
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch ch\u01B0\u01A1ng tr\xEC\
   nh c\u1EE7a b\u1EA1n y\xEAu c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB web, gi\u1ED1ng nh\u01B0\

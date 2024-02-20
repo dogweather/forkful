@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/arduino/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:46.658973-07:00
 description: "I konteksten av Arduino-programmering, er det \xE5 sjekke om en mappe\
   \ eksisterer p\xE5 et SD-kort eller lignende lagringsmodul essensielt for \xE5 kunne\
   \ lese eller\u2026"
-lastmod: 2024-02-18 23:08:54.156506
+lastmod: 2024-02-19 22:05:00.344408
 model: gpt-4-0125-preview
 summary: "I konteksten av Arduino-programmering, er det \xE5 sjekke om en mappe eksisterer\
   \ p\xE5 et SD-kort eller lignende lagringsmodul essensielt for \xE5 kunne lese eller\u2026"

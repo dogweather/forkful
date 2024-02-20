@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/swift/extracting-substrings/
 date: 2024-01-20 17:46:28.602465-07:00
 description: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\
   \ mer\u2026"
-lastmod: 2024-02-18 23:08:54.258572
+lastmod: 2024-02-19 22:05:00.405245
 model: gpt-4-1106-preview
 summary: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\

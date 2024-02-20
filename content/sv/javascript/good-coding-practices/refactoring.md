@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/refactoring/
 date: 2024-01-26 01:42:10.939875-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\
   \ utan att \xE4ndra dess externa beteende. Programmerare g\xF6r det f\xF6r att f\xF6\
   rb\xE4ttra de icke-\u2026"
-lastmod: 2024-02-18 23:08:52.172719
+lastmod: 2024-02-19 22:04:57.545269
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
   \ att \xE4ndra dess externa beteende. Programmerare g\xF6r det f\xF6r att f\xF6\

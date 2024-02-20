@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/haskell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:26.316284-07:00
@@ -10,7 +8,7 @@ description: "\u5C06\u5B57\u7B26\u4E32\u7684\u9996\u5B57\u6BCD\u8F6C\u6362\u4E3A
   \u5927\u5199\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u683C\u5F0F\
   \u5316\u8F93\u51FA\u3001\u9075\u5FAA\u6587\u672C\u4E2D\u7684\u8BED\u6CD5\u6B63\u786E\
   \u6027\u6216\u6539\u5584\u751F\u6210\u6570\u636E\u7684\u53EF\u8BFB\u6027\u3002"
-lastmod: 2024-02-18 23:08:59.155409
+lastmod: 2024-02-19 22:05:06.834978
 model: gpt-4-0125-preview
 summary: "\u5C06\u5B57\u7B26\u4E32\u7684\u9996\u5B57\u6BCD\u8F6C\u6362\u4E3A\u5927\
   \u5199\uFF0C\u540C\u65F6\u786E\u4FDD\u5176\u4F59\u5B57\u6BCD\u4FDD\u6301\u5C0F\u5199\

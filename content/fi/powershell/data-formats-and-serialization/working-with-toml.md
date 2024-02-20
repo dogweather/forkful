@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/powershell/working-with-toml/
 date: 2024-01-26 04:25:00.336120-07:00
 description: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta.\u2026"
-lastmod: 2024-02-18 23:09:07.879867
+lastmod: 2024-02-19 22:05:15.701726
 model: gpt-4-0125-preview
 summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta.\u2026"

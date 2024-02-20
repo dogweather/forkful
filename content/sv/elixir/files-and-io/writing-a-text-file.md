@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/elixir/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:47.699405-07:00
 description: "Att skriva till en textfil i Elixir \xE4r en viktig f\xE4rdighet f\xF6\
   r utvecklare, vilket m\xF6jligg\xF6r datalagring, loggning eller exportering av\
   \ m\xE4nniskol\xE4sbar\u2026"
-lastmod: 2024-02-18 23:08:51.520627
+lastmod: 2024-02-19 22:04:56.832518
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Elixir \xE4r en viktig f\xE4rdighet f\xF6r\
   \ utvecklare, vilket m\xF6jligg\xF6r datalagring, loggning eller exportering av\

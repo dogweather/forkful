@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:48.869090-07:00
 description: "\xC9crire sur l'erreur standard (stderr) dans les langues de programmation\
   \ consiste \xE0 diriger les messages d'erreur et les diagnostics vers un flux s\xE9\
   par\xE9,\u2026"
-lastmod: 2024-02-18 23:09:08.309593
+lastmod: 2024-02-19 22:05:16.111110
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) dans les langues de programmation\
   \ consiste \xE0 diriger les messages d'erreur et les diagnostics vers un flux s\xE9\

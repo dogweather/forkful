@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c-sharp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:48.274918-07:00
 description: "C#:ssa vakiovirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
   \ ja diagnostiikkatietojen ohjaamista erill\xE4\xE4n s\xE4\xE4nn\xF6llisest\xE4\
   \ tulosteesta (stdout)\u2026"
-lastmod: 2024-02-18 23:09:07.638532
+lastmod: 2024-02-19 22:05:15.483134
 model: gpt-4-0125-preview
 summary: "C#:ssa vakiovirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
   \ ja diagnostiikkatietojen ohjaamista erill\xE4\xE4n s\xE4\xE4nn\xF6llisest\xE4\

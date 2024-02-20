@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/java/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:48.321703-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC83\uC740, Date \uAC1D\uCCB4\uB97C \uC77D\uAE30 \uC26C\uC6B4 \uD14D\uC2A4\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2
   \ \uC0AC\uC6A9\uC790 \uC778\uD130\uD398\uC774\uC2A4\uC5D0 \uBCF4\uC5EC\uC8FC\uAE30\
   \ \uC704\uD574 \uBCC0\uD658\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.038644
+lastmod: 2024-02-19 22:05:13.975819
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\uB294\
   \ \uAC83\uC740, Date \uAC1D\uCCB4\uB97C \uC77D\uAE30 \uC26C\uC6B4 \uD14D\uC2A4\uD2B8\

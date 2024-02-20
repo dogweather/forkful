@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/working-with-toml/
 date: 2024-01-26 04:25:38.570581-07:00
 description: "TOML ist ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik\
   \ leicht zu lesen ist. Programmierer nutzen TOML, um App-Konfigurationen und\u2026"
-lastmod: 2024-02-18 23:09:05.448244
+lastmod: 2024-02-19 22:05:13.366879
 model: gpt-4-0125-preview
 summary: "TOML ist ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik\
   \ leicht zu lesen ist. Programmierer nutzen TOML, um App-Konfigurationen und\u2026"

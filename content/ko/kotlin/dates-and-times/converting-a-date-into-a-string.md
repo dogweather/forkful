@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:02.474611-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uB0A0\uC9DC \uB370\uC774\uD130\uB97C \uD14D\uC2A4\uD2B8 \uD615\uD0DC\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB2
   \uB098 \uD30C\uC77C\uC5D0 \uC800\uC7A5\uD560 \uB54C \uD544\uC694\uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.169451
+lastmod: 2024-02-19 22:05:14.100754
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
   \uC740 \uB0A0\uC9DC \uB370\uC774\uD130\uB97C \uD14D\uC2A4\uD2B8 \uD615\uD0DC\uB85C\

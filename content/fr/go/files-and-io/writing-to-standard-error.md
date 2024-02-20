@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:13.782899-07:00
 description: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger les\
   \ messages d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie\u2026"
-lastmod: 2024-02-18 23:09:08.255385
+lastmod: 2024-02-19 22:05:16.062771
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger les messages\
   \ d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie\u2026"

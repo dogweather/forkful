@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/swift/parsing-html/
 date: 2024-01-20 15:34:07.510905-07:00
 description: "L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine\
   \ web. I programmatori lo fanno per analizzare, manipolare o estrarre informazioni\
   \ in\u2026"
-lastmod: 2024-02-18 23:08:56.210504
+lastmod: 2024-02-19 22:05:02.841417
 summary: "L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine web.\
   \ I programmatori lo fanno per analizzare, manipolare o estrarre informazioni in\u2026"
 title: Analisi dell'HTML

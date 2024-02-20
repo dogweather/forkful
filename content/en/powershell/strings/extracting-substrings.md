@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/extracting-substrings/
 date: 2024-01-20 17:46:26.921300-07:00
 description: "Extracting substrings means plucking out smaller parts from a string\
   \ based on certain criteria. Programmers extract substrings to manipulate and analyze\u2026"
-lastmod: 2024-02-18 23:09:11.260982
+lastmod: 2024-02-19 22:05:18.735033
 model: gpt-4-1106-preview
 summary: "Extracting substrings means plucking out smaller parts from a string based\
   \ on certain criteria. Programmers extract substrings to manipulate and analyze\u2026"

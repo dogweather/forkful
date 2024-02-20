@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/c-sharp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:18.344600-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ at du legger til et brukernavn og passord i foresp\xF8rselen for tilgangskontroll.\u2026"
-lastmod: 2024-02-18 23:08:53.893560
+lastmod: 2024-02-19 22:05:00.061768
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ at du legger til et brukernavn og passord i foresp\xF8rselen for tilgangskontroll.\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/fish-shell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:01.235358-07:00
 description: "El an\xE1lisis (parseo) de HTML se trata de extraer datos o informaci\xF3\
   n del contenido HTML, una tarea com\xFAn al trabajar con datos web. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.450790
+lastmod: 2024-02-19 22:05:18.003892
 model: gpt-4-0125-preview
 summary: "El an\xE1lisis (parseo) de HTML se trata de extraer datos o informaci\xF3\
   n del contenido HTML, una tarea com\xFAn al trabajar con datos web. Los programadores\u2026"

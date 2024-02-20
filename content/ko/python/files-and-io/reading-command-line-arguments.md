@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/reading-command-line-arguments/
 date: 2024-01-20 17:56:50.289078-07:00
 description: "(\uBB34\uC5C7\uACFC \uC65C?) \uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790\
   \ \uC77D\uAE30\uB294 \uD130\uBBF8\uB110\uC774\uB098 \uBA85\uB839 \uD504\uB86C\uD504\
@@ -10,7 +8,7 @@ description: "(\uBB34\uC5C7\uACFC \uC65C?) \uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC77
   \ \uC785\uB825\uC744 \uCEE4\uC2A4\uD140\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC8E0\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.648833
+lastmod: 2024-02-19 22:05:13.562853
 model: gpt-4-1106-preview
 summary: "(\uBB34\uC5C7\uACFC \uC65C?) \uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790\
   \ \uC77D\uAE30\uB294 \uD130\uBBF8\uB110\uC774\uB098 \uBA85\uB839 \uD504\uB86C\uD504\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/sending-an-http-request/
 date: 2024-01-20 18:00:46.112683-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. Les programmeurs font \xE7a pour int\xE9ragir avec des APIs, r\xE9cup\xE9\
   rer des fichiers, ou\u2026"
-lastmod: 2024-02-18 23:09:08.525403
+lastmod: 2024-02-19 22:05:16.306889
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. Les programmeurs font \xE7a pour int\xE9ragir avec des APIs, r\xE9cup\xE9\

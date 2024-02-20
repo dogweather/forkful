@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/lua/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:01.330893-07:00
 description: "Het genereren van willekeurige getallen in programmeren gaat over het\
   \ produceren van onvoorspelbare numerieke waarden die gebruikt kunnen worden voor\
   \ een\u2026"
-lastmod: 2024-02-18 23:09:01.986808
+lastmod: 2024-02-19 22:05:10.008022
 model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in programmeren gaat over het produceren\
   \ van onvoorspelbare numerieke waarden die gebruikt kunnen worden voor een\u2026"

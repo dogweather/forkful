@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:08.774994-07:00
 description: "Reguliere expressies, of regex, is een krachtig patroonzoek- en -matchinghulpmiddel\
   \ in programmeren. Programmeurs gebruiken regex voor taken zoals het\u2026"
-lastmod: 2024-02-18 23:09:01.561819
+lastmod: 2024-02-19 22:05:09.586905
 model: gpt-4-0125-preview
 summary: "Reguliere expressies, of regex, is een krachtig patroonzoek- en -matchinghulpmiddel\
   \ in programmeren. Programmeurs gebruiken regex voor taken zoals het\u2026"

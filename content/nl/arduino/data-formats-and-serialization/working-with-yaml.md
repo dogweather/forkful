@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/working-with-yaml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:24.039567-07:00
 description: "YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te begrijpen\
   \ gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken\u2026"
-lastmod: 2024-02-18 23:09:02.160172
+lastmod: 2024-02-19 22:05:10.177828
 model: gpt-4-0125-preview
 summary: "YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te begrijpen\
   \ gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken\u2026"

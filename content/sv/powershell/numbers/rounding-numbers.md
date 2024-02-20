@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/rounding-numbers/
 date: 2024-01-26 03:46:31.386364-07:00
 description: "Att avrunda tal handlar om att justera ett v\xE4rde till n\xE4rmaste\
   \ heltal eller angiven decimalplats. Programmerare avrundar tal f\xF6r att f\xF6\
   renkla data,\u2026"
-lastmod: 2024-02-18 23:08:51.996839
+lastmod: 2024-02-19 22:04:57.351382
 model: gpt-4-0125-preview
 summary: "Att avrunda tal handlar om att justera ett v\xE4rde till n\xE4rmaste heltal\
   \ eller angiven decimalplats. Programmerare avrundar tal f\xF6r att f\xF6renkla\

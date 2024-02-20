@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/handling-errors/
 date: 2024-01-21 21:19:37.063922-07:00
 description: "Error handling is about dealing with things when they go sideways. Programmers\
   \ do it to handle the unexpected, ensuring their Rust programs are robust and\u2026"
-lastmod: 2024-02-18 23:09:10.856020
+lastmod: 2024-02-19 22:05:18.372152
 model: gpt-4-1106-preview
 summary: "Error handling is about dealing with things when they go sideways. Programmers\
   \ do it to handle the unexpected, ensuring their Rust programs are robust and\u2026"

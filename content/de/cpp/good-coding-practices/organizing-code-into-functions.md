@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/organizing-code-into-functions/
 date: 2024-01-26 01:09:29.131365-07:00
 description: "Code in Funktionen zu unterteilen, bedeutet, den Code in kleinere, wiederverwendbare\
   \ St\xFCcke zu zerlegen. Wir tun dies, um Wiederholungen zu vermeiden,\u2026"
-lastmod: 2024-02-18 23:09:05.194836
+lastmod: 2024-02-19 22:05:13.124330
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu unterteilen, bedeutet, den Code in kleinere, wiederverwendbare\
   \ St\xFCcke zu zerlegen. Wir tun dies, um Wiederholungen zu vermeiden,\u2026"

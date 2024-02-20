@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/vba/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:30.446347-07:00
@@ -14,7 +12,7 @@ description: "\u0935\u093F\u091C\u0941\u0905\u0932 \u092C\u0947\u0938\u093F\u091
   \ \u092E\u0948\u0915\u094D\u0930\u094B \u092F\u093E \u090F\u092A\u094D\u0932\u093F\
   \u0915\u0947\u0936\u0928 \u092E\u0947\u0902 \u0917\u0924\u093F\u0936\u0940\u0932\
   \ \u0930\u0942\u092A \u0938\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.055348
+lastmod: 2024-02-19 22:05:11.052235
 model: gpt-4-0125-preview
 summary: "\u0935\u093F\u091C\u0941\u0905\u0932 \u092C\u0947\u0938\u093F\u0915 \u092B\
   \u0949\u0930 \u090F\u092A\u094D\u0932\u093F\u0915\u0947\u0936\u0928\u094D\u0938\

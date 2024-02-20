@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:51.692282-07:00
@@ -11,7 +9,7 @@ description: "\u5728 Go \u4E2D\u521B\u5EFA\u4E00\u4E2A\u4E34\u65F6\u6587\u4EF6\u
   \u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u4E00\u529F\u80FD\u6765\u5B89\u5168\u5730\
   \u5904\u7406\u6570\u636E\uFF0C\u800C\u65E0\u9700\u5F71\u54CD\u6C38\u4E45\u6587\u4EF6\
   \u7CFB\u7EDF\u6216\u9700\u8981\u624B\u52A8\u6E05\u7406\u3002"
-lastmod: 2024-02-18 23:08:58.726910
+lastmod: 2024-02-19 22:05:06.244579
 model: gpt-4-0125-preview
 summary: "\u5728 Go \u4E2D\u521B\u5EFA\u4E00\u4E2A\u4E34\u65F6\u6587\u4EF6\u53EF\u4EE5\
   \u751F\u6210\u4E00\u4E2A\u8BBE\u8BA1\u7528\u4E8E\u77ED\u671F\u4F7F\u7528\u7684\u975E\

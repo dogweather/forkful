@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/java/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:14.580505-07:00
@@ -13,7 +11,7 @@ description: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u09
   \ `Date` \u0911\u092C\u094D\u091C\u0947\u0915\u094D\u091F \u092F\u093E \u090F\u0915\
   \ \u0905\u0927\u093F\u0915 \u0906\u0927\u0941\u0928\u093F\u0915 `LocalDateTime`\
   \ \u0911\u092C\u094D\u091C\u0947\u0915\u094D\u091F\u2026"
-lastmod: 2024-02-18 23:09:03.132262
+lastmod: 2024-02-19 22:05:11.128414
 model: gpt-4-0125-preview
 summary: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\u0947\
   \ \u0926\u093F\u0928\u093E\u0902\u0915 \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\

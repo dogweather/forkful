@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:10.206674-07:00
@@ -8,7 +6,7 @@ description: "X\u1EED l\xFD l\u1ED7i trong Go bao g\u1ED3m vi\u1EC7c nh\u1EADn b
   t v\xE0 ph\u1EA3n h\u1ED3i tr\u1EA1ng th\xE1i l\u1ED7i trong ch\u01B0\u01A1ng tr\xEC\
   nh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n x\u1EED l\xFD\
   \ l\u1ED7i \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o \u1EE9ng d\u1EE5ng\u2026"
-lastmod: 2024-02-18 23:08:50.179230
+lastmod: 2024-02-19 22:04:55.177982
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i trong Go bao g\u1ED3m vi\u1EC7c nh\u1EADn bi\u1EBF\
   t v\xE0 ph\u1EA3n h\u1ED3i tr\u1EA1ng th\xE1i l\u1ED7i trong ch\u01B0\u01A1ng tr\xEC\

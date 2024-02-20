@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/vba/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:36.886492-07:00
 description: "Tests in der Programmierung zu schreiben bedeutet, spezifische Verfahren\
   \ zu erstellen, um die Funktionalit\xE4t und Leistung Ihrer Codeabschnitte zu\u2026"
-lastmod: 2024-02-18 23:09:04.693452
+lastmod: 2024-02-19 22:05:12.646267
 model: gpt-4-0125-preview
 summary: "Tests in der Programmierung zu schreiben bedeutet, spezifische Verfahren\
   \ zu erstellen, um die Funktionalit\xE4t und Leistung Ihrer Codeabschnitte zu\u2026"

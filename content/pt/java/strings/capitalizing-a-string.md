@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/java/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:43.926143-07:00
 description: "Capitalizar uma string envolve modificar a primeira letra de cada palavra\
   \ na string para mai\xFAscula enquanto assegura que o restante permane\xE7a em\u2026"
-lastmod: 2024-02-18 23:08:58.002209
+lastmod: 2024-02-19 22:05:05.477526
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve modificar a primeira letra de cada palavra\
   \ na string para mai\xFAscula enquanto assegura que o restante permane\xE7a em\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/bash/handling-errors/
 date: 2024-01-26 00:36:56.268023-07:00
 description: "Fehlerbehandlung in Bash-Skripten bedeutet, vorherzusehen, wo Probleme\
   \ auftreten k\xF6nnten, und diese elegant zu behandeln. Warum? Nun, es h\xE4lt Ihr\
   \ Skript\u2026"
-lastmod: 2024-02-18 23:09:05.062238
+lastmod: 2024-02-19 22:05:12.997801
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in Bash-Skripten bedeutet, vorherzusehen, wo Probleme auftreten\
   \ k\xF6nnten, und diese elegant zu behandeln. Warum? Nun, es h\xE4lt Ihr Skript\u2026"

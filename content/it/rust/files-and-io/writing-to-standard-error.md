@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/rust/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:24.480567-07:00
 description: "Scrivere su standard error (stderr) in Rust significa indirizzare messaggi\
   \ di errore e diagnostica alla console separatamente dall'output standard\u2026"
-lastmod: 2024-02-18 23:08:55.696026
+lastmod: 2024-02-19 22:05:02.295508
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Rust significa indirizzare messaggi\
   \ di errore e diagnostica alla console separatamente dall'output standard\u2026"

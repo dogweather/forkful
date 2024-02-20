@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/rust/checking-if-a-directory-exists/
 date: 2024-02-03 19:02:53.046161-07:00
 description: "In software development, it's often necessary to check if a directory\
   \ exists to avoid errors when attempting to access, read, or write files. Rust,\
   \ being\u2026"
-lastmod: 2024-02-18 23:09:10.862895
+lastmod: 2024-02-19 22:05:18.378394
 model: gpt-4-0125-preview
 summary: "In software development, it's often necessary to check if a directory exists\
   \ to avoid errors when attempting to access, read, or write files. Rust, being\u2026"

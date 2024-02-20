@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/logging/
 date: 2024-01-26 01:03:15.155397-07:00
 description: "Registrar (logging) \xE9 essencialmente o processo de grava\xE7\xE3\
   o de eventos e sa\xEDdas de dados de um software enquanto ele est\xE1 em execu\xE7\
   \xE3o, pense nisso como o\u2026"
-lastmod: 2024-02-18 23:08:58.066873
+lastmod: 2024-02-19 22:05:05.545366
 model: gpt-4-1106-preview
 summary: "Registrar (logging) \xE9 essencialmente o processo de grava\xE7\xE3o de\
   \ eventos e sa\xEDdas de dados de um software enquanto ele est\xE1 em execu\xE7\xE3\

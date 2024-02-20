@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/writing-tests/
 date: 2024-02-03 19:03:30.729590-07:00
 description: "Writing tests in C# involves creating automated scripts to validate\
   \ the functionality of your code, ensuring it behaves as expected. Programmers do\
   \ it to\u2026"
-lastmod: 2024-02-18 23:09:11.058012
+lastmod: 2024-02-19 22:05:18.557461
 model: gpt-4-0125-preview
 summary: "Writing tests in C# involves creating automated scripts to validate the\
   \ functionality of your code, ensuring it behaves as expected. Programmers do it\

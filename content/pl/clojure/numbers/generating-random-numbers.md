@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/generating-random-numbers/
 date: 2024-01-27 20:33:08.803763-07:00
 description: "Generowanie liczb losowych w programowaniu polega na tworzeniu warto\u015B\
   ci, kt\xF3rych nie mo\u017Cna logicznie przewidzie\u0107 z g\xF3ry. Programi\u015B\
   ci robi\u0105 to z r\xF3\u017Cnych\u2026"
-lastmod: 2024-02-18 23:08:49.260756
+lastmod: 2024-02-19 22:04:54.173192
 model: gpt-4-0125-preview
 summary: "Generowanie liczb losowych w programowaniu polega na tworzeniu warto\u015B\
   ci, kt\xF3rych nie mo\u017Cna logicznie przewidzie\u0107 z g\xF3ry. Programi\u015B\

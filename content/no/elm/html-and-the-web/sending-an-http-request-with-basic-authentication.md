@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/elm/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:47.287386-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ at man legger til brukernavn og passord i foresp\xF8rselen for tilgangskontroll.\u2026"
-lastmod: 2024-02-18 23:08:53.810647
+lastmod: 2024-02-19 22:04:59.954392
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ at man legger til brukernavn og passord i foresp\xF8rselen for tilgangskontroll.\u2026"

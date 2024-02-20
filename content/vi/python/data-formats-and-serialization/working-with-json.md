@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/python/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:40.622214-07:00
@@ -8,7 +6,7 @@ description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\
   ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u ph\u1ED5 bi\u1EBFn tr\xEAn web. L\u1EAD\
   p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng JSON \u0111\u1EC3 d\u1EC5 d\xE0ng truy\u1EC1\
   n d\u1EEF li\u1EC7u gi\u1EEFa m\xE1y ch\u1EE7\u2026"
-lastmod: 2024-02-18 23:08:50.291687
+lastmod: 2024-02-19 22:04:55.321074
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
   ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u ph\u1ED5 bi\u1EBFn tr\xEAn web. L\u1EAD\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/swift/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:52.706474-07:00
 description: "Een tijdelijk bestand maken is het cre\xEBren van een kortstondig bestand\
   \ om gegevens op te slaan die niet op lange termijn nodig zijn. Programmeurs doen\
   \ dit\u2026"
-lastmod: 2024-02-18 23:09:02.250357
+lastmod: 2024-02-19 22:05:10.263776
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand maken is het cre\xEBren van een kortstondig bestand\
   \ om gegevens op te slaan die niet op lange termijn nodig zijn. Programmeurs doen\

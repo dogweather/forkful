@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:53.221031-07:00
 description: "Het starten van een nieuw project in TypeScript draait allemaal om het\
   \ opzetten van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"
-lastmod: 2024-02-18 23:09:01.573785
+lastmod: 2024-02-19 22:05:09.598594
 model: gpt-4-0125-preview
 summary: "Het starten van een nieuw project in TypeScript draait allemaal om het opzetten\
   \ van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"

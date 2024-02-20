@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/ruby/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:01.919353-07:00
 description: "HTML zu parsen bedeutet, ein St\xFCck HTML-Code zu zerlegen, um seine\
   \ Struktur und seinen Inhalt zu erfassen. Programmierer machen das, um Daten zu\u2026"
-lastmod: 2024-02-18 23:09:05.421113
+lastmod: 2024-02-19 22:05:13.339064
 model: gpt-4-0125-preview
 summary: "HTML zu parsen bedeutet, ein St\xFCck HTML-Code zu zerlegen, um seine Struktur\
   \ und seinen Inhalt zu erfassen. Programmierer machen das, um Daten zu\u2026"

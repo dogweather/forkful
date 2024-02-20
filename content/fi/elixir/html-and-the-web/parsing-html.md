@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/elixir/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:46.961334-07:00
 description: "HTML:n j\xE4sent\xE4minen Elixiriss\xE4 tarkoittaa tietojen poimimista\
   \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n ohjelmallisesti vuorovaikuttaakseen\u2026"
-lastmod: 2024-02-18 23:09:07.271242
+lastmod: 2024-02-19 22:05:15.165651
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Elixiriss\xE4 tarkoittaa tietojen poimimista HTML-dokumenteista.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n ohjelmallisesti vuorovaikuttaakseen\u2026"

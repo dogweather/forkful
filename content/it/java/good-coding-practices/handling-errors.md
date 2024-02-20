@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/java/handling-errors/
 date: 2024-01-26 00:53:36.234682-07:00
 description: "Gestire gli errori significa scrivere codice che anticipa e affronta\
   \ le situazioni in cui le cose vanno storte. I programmatori lo fanno per rendere\
   \ il\u2026"
-lastmod: 2024-02-18 23:08:55.772723
+lastmod: 2024-02-19 22:05:02.377255
 model: gpt-4-1106-preview
 summary: "Gestire gli errori significa scrivere codice che anticipa e affronta le\
   \ situazioni in cui le cose vanno storte. I programmatori lo fanno per rendere il\u2026"

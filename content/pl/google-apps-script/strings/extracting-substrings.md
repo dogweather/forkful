@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:50.434038-07:00
 description: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na wzi\u0119ciu cz\u0119\
   \u015Bci ci\u0105gu - w zasadzie tworzeniu nowego ci\u0105gu z cz\u0119\u015Bci\
   \ istniej\u0105cego. Programi\u015Bci robi\u0105 to z wielu powod\xF3w, w\u2026"
-lastmod: 2024-02-18 23:08:49.134157
+lastmod: 2024-02-19 22:04:54.073159
 model: gpt-4-0125-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na wzi\u0119ciu cz\u0119\u015B\
   ci ci\u0105gu - w zasadzie tworzeniu nowego ci\u0105gu z cz\u0119\u015Bci istniej\u0105\

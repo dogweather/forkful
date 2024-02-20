@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/swift/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:49.340442-07:00
 description: "Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (REPL,\
   \ por sus siglas en ingl\xE9s), te permite programar de manera interactiva. Los\u2026"
-lastmod: 2024-02-18 23:09:10.359815
+lastmod: 2024-02-19 22:05:17.922895
 model: gpt-4-0125-preview
 summary: "Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (REPL, por\
   \ sus siglas en ingl\xE9s), te permite programar de manera interactiva. Los\u2026"

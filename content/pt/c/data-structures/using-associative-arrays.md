@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:44.658219-07:00
 description: "Arrays associativos, conhecidos em outras linguagens como mapas ou dicion\xE1\
   rios, s\xE3o pares de chave-valor usados para a busca e manipula\xE7\xE3o eficiente\
   \ de\u2026"
-lastmod: 2024-02-18 23:08:58.611326
+lastmod: 2024-02-19 22:05:06.111276
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos em outras linguagens como mapas ou dicion\xE1\
   rios, s\xE3o pares de chave-valor usados para a busca e manipula\xE7\xE3o eficiente\

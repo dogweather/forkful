@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/swift/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:37.460158-07:00
 description: "Lavorare con JSON in Swift significa occuparsi di un formato di dati\
   \ leggero per lo scambio di dati. I programmatori usano JSON per trasmettere dati\
   \ tra\u2026"
-lastmod: 2024-02-18 23:08:56.233035
+lastmod: 2024-02-19 22:05:02.865395
 model: gpt-4-0125-preview
 summary: "Lavorare con JSON in Swift significa occuparsi di un formato di dati leggero\
   \ per lo scambio di dati. I programmatori usano JSON per trasmettere dati tra\u2026"

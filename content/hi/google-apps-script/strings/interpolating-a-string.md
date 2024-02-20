@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:37.090147-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script \u092E\u0947\u0902 \u0938\u094D\u091F\u094D\u09
   \u0947 \u0915\u0940 \u0905\u0928\u0941\u092E\u0924\u093F \u0926\u0947\u0924\u093E\
   \ \u0939\u0948, \u091C\u093F\u0938\u0938\u0947 \u0905\u0927\u093F\u0915 \u092A\u0920\
   \u0928\u0940\u092F \u0914\u0930 \u0930\u0916-\u0930\u0916\u093E\u0935\u2026"
-lastmod: 2024-02-18 23:09:02.540141
+lastmod: 2024-02-19 22:05:10.542313
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 \u0938\u094D\u091F\u094D\u0930\u093F\
   \u0902\u0917 \u0907\u0902\u091F\u0930\u092A\u094B\u0932\u0947\u0936\u0928, \u0938\

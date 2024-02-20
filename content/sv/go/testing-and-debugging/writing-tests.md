@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/go/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:06.881604-07:00
 description: "Att skriva tester i Go inneb\xE4r att skapa sm\xE5, hanterbara bitar\
   \ av kod som validerar funktionaliteten och beteendet hos din applikation. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.337130
+lastmod: 2024-02-19 22:04:56.629403
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Go inneb\xE4r att skapa sm\xE5, hanterbara bitar av\
   \ kod som validerar funktionaliteten och beteendet hos din applikation. Programmerare\u2026"

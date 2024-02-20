@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/java/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:57.132684-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet das\
   \ \xDCbermitteln von Benutzername und Passwort in einem Base64-codierten Header.\u2026"
-lastmod: 2024-02-18 23:09:04.736606
+lastmod: 2024-02-19 22:05:12.687773
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet das \xDC\
   bermitteln von Benutzername und Passwort in einem Base64-codierten Header.\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/refactoring/
 date: 2024-01-25 02:12:18.877401-07:00
 description: "Refactoring is the process of reworking your code to improve its structure\
   \ and readability without altering the external behavior or functionality.\u2026"
-lastmod: 2024-02-18 23:09:11.323395
+lastmod: 2024-02-19 22:05:18.791226
 model: gpt-4-1106-preview
 summary: "Refactoring is the process of reworking your code to improve its structure\
   \ and readability without altering the external behavior or functionality.\u2026"

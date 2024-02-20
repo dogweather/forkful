@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/downloading-a-web-page/
 date: 2024-01-20 17:44:28.395010-07:00
 description: "(Po co i dlaczego?) Pobieranie strony internetowej to proces \u015B\
   ci\u0105gania jej zawarto\u015Bci, by przetworzy\u0107 je lokalnie. Programi\u015B\
   ci robi\u0105 to, aby odczyta\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.693590
+lastmod: 2024-02-19 22:04:54.630156
 model: gpt-4-1106-preview
 summary: "(Po co i dlaczego?) Pobieranie strony internetowej to proces \u015Bci\u0105\
   gania jej zawarto\u015Bci, by przetworzy\u0107 je lokalnie. Programi\u015Bci robi\u0105\

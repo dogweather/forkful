@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:13.246900-07:00
 description: "Convertir una cadena a min\xFAsculas implica transformar todos los caracteres\
   \ en may\xFAsculas de una cadena a sus equivalentes en min\xFAsculas. Este proceso\
   \ es\u2026"
-lastmod: 2024-02-18 23:09:09.781213
+lastmod: 2024-02-19 22:05:17.401887
 model: gpt-4-0125-preview
 summary: "Convertir una cadena a min\xFAsculas implica transformar todos los caracteres\
   \ en may\xFAsculas de una cadena a sus equivalentes en min\xFAsculas. Este proceso\

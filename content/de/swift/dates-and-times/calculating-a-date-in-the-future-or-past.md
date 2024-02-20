@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:53.492713-07:00
 description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist das\
   \ Ermitteln eines spezifischen Zeitpunkts vor oder nach einem bekannten Datum.\u2026"
-lastmod: 2024-02-18 23:09:05.248384
+lastmod: 2024-02-19 22:05:13.174419
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist das Ermitteln\
   \ eines spezifischen Zeitpunkts vor oder nach einem bekannten Datum.\u2026"

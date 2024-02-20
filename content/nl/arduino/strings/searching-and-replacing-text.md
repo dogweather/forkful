@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:04.294119-07:00
 description: "Tekst zoeken en vervangen stelt je in staat om specifieke tekens of\
   \ reeksen te vinden in een tekst en deze te vervangen door iets anders. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.122101
+lastmod: 2024-02-19 22:05:10.141783
 model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen stelt je in staat om specifieke tekens of reeksen\
   \ te vinden in een tekst en deze te vervangen door iets anders. Programmeurs\u2026"

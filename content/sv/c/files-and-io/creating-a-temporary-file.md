@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:51.091691-07:00
 description: "Att skapa en tempor\xE4r fil i C inneb\xE4r att generera en fil som\
   \ \xE4r avsedd att anv\xE4ndas under en kort tid, vanligtvis som skr\xE4putrymme\
   \ f\xF6r databehandling\u2026"
-lastmod: 2024-02-18 23:08:52.271097
+lastmod: 2024-02-19 22:04:57.657719
 model: gpt-4-0125-preview
 summary: "Att skapa en tempor\xE4r fil i C inneb\xE4r att generera en fil som \xE4\
   r avsedd att anv\xE4ndas under en kort tid, vanligtvis som skr\xE4putrymme f\xF6\

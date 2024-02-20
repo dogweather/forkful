@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/c/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:33.272742-07:00
@@ -14,7 +12,7 @@ description: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0432\u0440\u043
   \ \u043A\u0440\u0430\u0442\u043A\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\
   \u043E\u0433\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\
   \u0438\u044F, \u043E\u0431\u044B\u0447\u043D\u043E \u043A\u0430\u043A\u2026"
-lastmod: 2024-02-18 23:08:57.589518
+lastmod: 2024-02-19 22:05:04.949525
 model: gpt-4-0125-preview
 summary: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0432\u0440\u0435\u043C\
   \u0435\u043D\u043D\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430 \u043D\u0430\

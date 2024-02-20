@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:31.699876-07:00
 description: "Het versturen van een HTTP-verzoek is een manier voor programma's om\
   \ via het web te communiceren, door het vragen om gegevens of het indienen ervan.\u2026"
-lastmod: 2024-02-18 23:09:01.848763
+lastmod: 2024-02-19 22:05:09.865848
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek is een manier voor programma's om via\
   \ het web te communiceren, door het vragen om gegevens of het indienen ervan.\u2026"

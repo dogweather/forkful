@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/printing-debug-output/
 date: 2024-01-20 17:53:33.165506-07:00
 description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uC758 \uC791\uB3D9\
   \uC744 \uD655\uC778\uD558\uAE30 \uC704\uD574 \uC911\uAC04 \uACB0\uACFC\uB97C \uCF58\
@@ -9,7 +7,7 @@ description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uC758 \uC791\uB
   \uC758 \uD750\uB984\uC744 \uC774\uD574\uD558\uAE30 \uC704\uD574 \uC774 \uBC29\uBC95\
   \uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.029512
+lastmod: 2024-02-19 22:05:14.911297
 model: gpt-4-1106-preview
 summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uC758 \uC791\uB3D9\uC744\
   \ \uD655\uC778\uD558\uAE30 \uC704\uD574 \uC911\uAC04 \uACB0\uACFC\uB97C \uCF58\uC194\

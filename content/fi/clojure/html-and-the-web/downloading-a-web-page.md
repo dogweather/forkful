@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/clojure/downloading-a-web-page/
 date: 2024-01-20 17:43:52.850732-07:00
 description: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"
-lastmod: 2024-02-18 23:09:07.227211
+lastmod: 2024-02-19 22:05:15.124762
 model: gpt-4-1106-preview
 summary: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"

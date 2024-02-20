@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/swift/downloading-a-web-page/
 date: 2024-01-20 17:44:50.561381-07:00
 description: "Descargar una p\xE1gina web es traer el contenido de una URL a tu aplicaci\xF3\
   n. Lo hacemos para procesar, mostrar o analizar datos en nuestras apps."
-lastmod: 2024-02-18 23:09:10.356729
+lastmod: 2024-02-19 22:05:17.920177
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es traer el contenido de una URL a tu aplicaci\xF3\
   n. Lo hacemos para procesar, mostrar o analizar datos en nuestras apps."

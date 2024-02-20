@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/arduino/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:55.950401-07:00
@@ -13,7 +11,7 @@ description: "JSON, \u0430\u0431\u043E JavaScript Object Notation, \u0446\u0435 
   \ \u0430\u0431\u043E \u0444\u0430\u0439\u043B\u0456\u0432 \u043A\u043E\u043D\u0444\
   \u0456\u0433\u0443\u0440\u0430\u0446\u0456\u0457 \u0432 \u043F\u0440\u043E\u0435\
   \u043A\u0442\u0430\u0445\u2026"
-lastmod: 2024-02-18 23:09:00.840080
+lastmod: 2024-02-19 22:05:08.896323
 model: gpt-4-0125-preview
 summary: "JSON, \u0430\u0431\u043E JavaScript Object Notation, \u0446\u0435 \u043B\
   \u0435\u0433\u043A\u043E\u0432\u0430\u0433\u0438\u0439 \u0444\u043E\u0440\u043C\u0430\

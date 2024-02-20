@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/lua/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:35.216372-07:00
 description: "\xC5 jobbe med JSON i Lua inneb\xE6rer \xE5 tolke JSON-formaterte strenger\
   \ til Lua-tabeller og omvendt, noe som muliggj\xF8r enkel datautveksling mellom\
   \ Lua-\u2026"
-lastmod: 2024-02-18 23:08:54.036307
+lastmod: 2024-02-19 22:05:00.217139
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Lua inneb\xE6rer \xE5 tolke JSON-formaterte strenger\
   \ til Lua-tabeller og omvendt, noe som muliggj\xF8r enkel datautveksling mellom\

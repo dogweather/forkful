@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/organizing-code-into-functions/
 date: 2024-01-25 02:59:34.955331-07:00
 description: "Organizing code into functions is about wrapping up chunks of code that\
   \ perform specific tasks and giving them a name. It's done to make code reusable,\u2026"
-lastmod: 2024-02-18 23:09:11.279483
+lastmod: 2024-02-19 22:05:18.751933
 model: gpt-4-1106-preview
 summary: "Organizing code into functions is about wrapping up chunks of code that\
   \ perform specific tasks and giving them a name. It's done to make code reusable,\u2026"

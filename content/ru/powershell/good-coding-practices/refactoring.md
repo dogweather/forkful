@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/powershell/refactoring/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:02:00.387141-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0435\u0444\u0430\u043A\u0442\u043E\u0440\u0438\u043D\u0433
   \u0432\u0435\u0434\u0435\u043D\u0438\u044F, \u0446\u0435\u043B\u044C \u043A\u043E\
   \u0442\u043E\u0440\u043E\u0433\u043E - \u0443\u043B\u0443\u0447\u0448\u0438\u0442\
   \u044C\u2026"
-lastmod: 2024-02-18 23:08:57.268292
+lastmod: 2024-02-19 22:05:04.439922
 model: gpt-4-0125-preview
 summary: "\u0420\u0435\u0444\u0430\u043A\u0442\u043E\u0440\u0438\u043D\u0433 - \u044D\
   \u0442\u043E \u043F\u0440\u043E\u0446\u0435\u0441\u0441 \u0440\u0435\u0441\u0442\

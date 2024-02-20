@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/python/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:08.923746-07:00
 description: "Die L\xE4nge eines Strings herauszufinden bedeutet, die Anzahl der enthaltenen\
   \ Zeichen zu z\xE4hlen. Programmierer tun dies, um Eingaben zu validieren,\u2026"
-lastmod: 2024-02-18 23:09:04.452673
+lastmod: 2024-02-19 22:05:12.417450
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings herauszufinden bedeutet, die Anzahl der enthaltenen\
   \ Zeichen zu z\xE4hlen. Programmierer tun dies, um Eingaben zu validieren,\u2026"

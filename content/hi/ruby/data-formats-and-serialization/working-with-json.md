@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/ruby/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:57.481899-07:00
@@ -14,7 +12,7 @@ description: "JSON (\u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F
   \u092E\u092F \u0915\u0947 \u0932\u093F\u090F \u0935\u0947\u092C \u0905\u0928\u0941\
   \u092A\u094D\u0930\u092F\u094B\u0917\u094B\u0902 \u092E\u0947\u0902 \u092A\u094D\
   \u0930\u091A\u0932\u093F\u0924\u2026"
-lastmod: 2024-02-18 23:09:04.336779
+lastmod: 2024-02-19 22:05:12.307188
 model: gpt-4-0125-preview
 summary: "JSON (\u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F\u092A\
   \u094D\u091F \u0911\u092C\u094D\u091C\u0947\u0915\u094D\u091F \u0928\u094B\u091F\

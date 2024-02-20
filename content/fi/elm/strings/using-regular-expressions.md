@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elm/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:49.350347-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ohjelmoinnissa ovat malleja,\
   \ joita k\xE4ytet\xE4\xE4n merkkiyhdistelmien vastaavuuden tarkistamiseen merkkijonoissa.\
   \ Elm:ss\xE4, kuten\u2026"
-lastmod: 2024-02-18 23:09:07.492866
+lastmod: 2024-02-19 22:05:15.372644
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ohjelmoinnissa ovat malleja, joita\
   \ k\xE4ytet\xE4\xE4n merkkiyhdistelmien vastaavuuden tarkistamiseen merkkijonoissa.\

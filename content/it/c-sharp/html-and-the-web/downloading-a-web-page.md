@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/c-sharp/downloading-a-web-page/
 date: 2024-01-20 17:43:42.256294-07:00
 description: "Scaricare una pagina web significa prelevare il suo contenuto via HTTP\
   \ o HTTPS. I programmatori lo fanno per analizzare dati, verificare disponibilit\xE0\
   \ o\u2026"
-lastmod: 2024-02-18 23:08:55.886693
+lastmod: 2024-02-19 22:05:02.496403
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa prelevare il suo contenuto via HTTP o\
   \ HTTPS. I programmatori lo fanno per analizzare dati, verificare disponibilit\xE0\

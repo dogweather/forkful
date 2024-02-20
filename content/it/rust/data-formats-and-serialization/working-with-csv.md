@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/rust/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:04.552937-07:00
 description: "Lavorare con file CSV (Valori Separati da Virgola) consiste nel leggere\
   \ e scrivere file di testo semplice che memorizzano dati tabellari. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:55.701889
+lastmod: 2024-02-19 22:05:02.301637
 model: gpt-4-0125-preview
 summary: "Lavorare con file CSV (Valori Separati da Virgola) consiste nel leggere\
   \ e scrivere file di testo semplice che memorizzano dati tabellari. I programmatori\u2026"

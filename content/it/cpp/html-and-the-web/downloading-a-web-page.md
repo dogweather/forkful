@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/downloading-a-web-page/
 date: 2024-01-20 17:43:43.937391-07:00
 description: "Scaricare una pagina web significa raccogliere dati da Internet direttamente\
   \ nel tuo programma. I programmatori lo fanno per analizzare contenuti,\u2026"
-lastmod: 2024-02-18 23:08:56.171324
+lastmod: 2024-02-19 22:05:02.800117
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa raccogliere dati da Internet direttamente\
   \ nel tuo programma. I programmatori lo fanno per analizzare contenuti,\u2026"

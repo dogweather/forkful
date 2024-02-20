@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/rust/printing-debug-output/
 date: 2024-01-20 17:53:09.331161-07:00
 description: "Il debug consiste nel stampare informazioni di output per controllare\
   \ lo stato del tuo programma. Programmatori fanno ci\xF2 per diagnosticare e sistemare\
   \ i\u2026"
-lastmod: 2024-02-18 23:08:55.682717
+lastmod: 2024-02-19 22:05:02.281495
 model: gpt-4-1106-preview
 summary: "Il debug consiste nel stampare informazioni di output per controllare lo\
   \ stato del tuo programma. Programmatori fanno ci\xF2 per diagnosticare e sistemare\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c-sharp/parsing-html/
 date: 2024-01-20 15:30:46.117574-07:00
 description: "HTML parsing \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 HTML\
   \ documents \u0938\u0947 data extract \u0915\u0930\u0928\u093E\u0964 Programmers\
@@ -8,7 +6,7 @@ description: "HTML parsing \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 HT
   \ pages \u0938\u0947 information \u0928\u093F\u0915\u093E\u0932\u0928\u0947 \u0915\
   \u0947 \u0932\u093F\u090F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902, \u091C\u0948\
   \u0938\u0947 \u0915\u093F web\u2026"
-lastmod: 2024-02-18 23:09:03.342238
+lastmod: 2024-02-19 22:05:11.334601
 summary: "HTML parsing \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 HTML documents\
   \ \u0938\u0947 data extract \u0915\u0930\u0928\u093E\u0964 Programmers \u0907\u0938\
   \u0915\u093E \u0907\u0938\u094D\u0924\u0947\u092E\u093E\u0932 web pages \u0938\u0947\

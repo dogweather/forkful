@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/typescript/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:49.623689-07:00
 description: "HTML parseren betekent het doorzoeken van HTML-code om informatie te\
   \ vinden, te extraheren of te manipuleren. Programmeurs doen dit om te interageren\
   \ met\u2026"
-lastmod: 2024-02-18 23:09:01.570568
+lastmod: 2024-02-19 22:05:09.595501
 model: gpt-4-0125-preview
 summary: "HTML parseren betekent het doorzoeken van HTML-code om informatie te vinden,\
   \ te extraheren of te manipuleren. Programmeurs doen dit om te interageren met\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/swift/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:00.132208-07:00
 description: "Een nieuw project starten is gewoon je mouwen oprollen en de initi\xEB\
   le omgeving en bestanden voor je codeeravontuur opzetten. Programmeurs beginnen\
   \ nieuwe\u2026"
-lastmod: 2024-02-18 23:09:02.230028
+lastmod: 2024-02-19 22:05:10.244305
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten is gewoon je mouwen oprollen en de initi\xEBle\
   \ omgeving en bestanden voor je codeeravontuur opzetten. Programmeurs beginnen nieuwe\u2026"

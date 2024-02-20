@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/typescript/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:55.102019-07:00
 description: "Het extraheren van substrings betekent het uitkiezen van specifieke\
   \ stukken van een string. Dit is handig voor taken zoals het parseren van gegevens,\
   \ het\u2026"
-lastmod: 2024-02-18 23:09:01.560783
+lastmod: 2024-02-19 22:05:09.585911
 model: gpt-4-0125-preview
 summary: "Het extraheren van substrings betekent het uitkiezen van specifieke stukken\
   \ van een string. Dit is handig voor taken zoals het parseren van gegevens, het\u2026"

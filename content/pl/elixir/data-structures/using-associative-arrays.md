@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.334125-07:00
 description: "W Elixirze, tablice asocjacyjne, zwane Mapami, to kolekcje par klucz-warto\u015B\
   \u0107, gdzie unikalny klucz wskazuje na warto\u015B\u0107. S\u0105 niesamowicie\
   \ przydatne do\u2026"
-lastmod: 2024-02-18 23:08:49.299063
+lastmod: 2024-02-19 22:04:54.214169
 model: gpt-4-0125-preview
 summary: "W Elixirze, tablice asocjacyjne, zwane Mapami, to kolekcje par klucz-warto\u015B\
   \u0107, gdzie unikalny klucz wskazuje na warto\u015B\u0107. S\u0105 niesamowicie\

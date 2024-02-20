@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:37.882662-07:00
 description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla\
   \ versaler i en str\xE4ng till deras motsvarigheter i gemener. Denna process \xE4\
   r avg\xF6rande f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.612671
+lastmod: 2024-02-19 22:04:56.934098
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla versaler\
   \ i en str\xE4ng till deras motsvarigheter i gemener. Denna process \xE4r avg\xF6\

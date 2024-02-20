@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:28.450876-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBA85\uB839\uC904 
   \ \uD504\uB85C\uADF8\uB7A8\uC758 \uB3D9\uC791\uC774\uB098 \uCD9C\uB825\uC744 \uBCC0\
   \uD654\uC2DC\uD0A4\uB294 \uB370 \uC0AC\uC6A9\uB418\uC5B4, \uC790\uB3D9\uD654 \uBC0F\
   \ \uC2A4\uD06C\uB9BD\uD305\u2026"
-lastmod: 2024-02-18 23:09:05.978415
+lastmod: 2024-02-19 22:05:13.913130
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\
   \uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uC2E4\uD589 \uC2DC \uD504\uB85C\uADF8\uB7A8\

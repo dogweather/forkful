@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/comparing-two-dates/
 date: 2024-01-20 17:33:47.637902-07:00
 description: "Comparar duas datas \xE9 o ato de verificar se s\xE3o iguais, se uma\
   \ \xE9 anterior \xE0 outra ou se \xE9 mais recente. Programadores fazem isso para\
   \ manipular e validar\u2026"
-lastmod: 2024-02-18 23:08:57.941306
+lastmod: 2024-02-19 22:05:05.414856
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 o ato de verificar se s\xE3o iguais, se uma \xE9\
   \ anterior \xE0 outra ou se \xE9 mais recente. Programadores fazem isso para manipular\

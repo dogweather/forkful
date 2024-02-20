@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/working-with-xml/
 date: 2024-01-26 04:30:26.617499-07:00
 description: "XML:n k\xE4sittely tarkoittaa tietojen k\xE4sittely\xE4 laajalti k\xE4\
   ytetyss\xE4, rakenteellisessa muodossa, jota k\xE4ytet\xE4\xE4n konfiguraatioissa,\
   \ viestinn\xE4ss\xE4 ja muussa.\u2026"
-lastmod: 2024-02-18 23:09:08.110920
+lastmod: 2024-02-19 22:05:15.913488
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely tarkoittaa tietojen k\xE4sittely\xE4 laajalti k\xE4ytetyss\xE4\
   , rakenteellisessa muodossa, jota k\xE4ytet\xE4\xE4n konfiguraatioissa, viestinn\xE4\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/java/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:28.500154-07:00
 description: "CSV-tiedostojen k\xE4sittelyyn kuuluu lukeminen ja kirjoittaminen pilkuilla\
   \ erotettuihin arvoihin (CSV) tiedostoihin, mik\xE4 on suosittu tiedonvaihdon muoto,\u2026"
-lastmod: 2024-02-18 23:09:07.482324
+lastmod: 2024-02-19 22:05:15.363095
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen k\xE4sittelyyn kuuluu lukeminen ja kirjoittaminen pilkuilla\
   \ erotettuihin arvoihin (CSV) tiedostoihin, mik\xE4 on suosittu tiedonvaihdon muoto,\u2026"

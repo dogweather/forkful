@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:03.768832-07:00
 description: "La lecture des arguments de la ligne de commande dans Visual Basic pour\
   \ Applications (VBA) implique l'acc\xE8s aux param\xE8tres pass\xE9s \xE0 votre\
   \ programme lors\u2026"
-lastmod: 2024-02-18 23:09:08.597573
+lastmod: 2024-02-19 22:05:16.372471
 model: gpt-4-0125-preview
 summary: "La lecture des arguments de la ligne de commande dans Visual Basic pour\
   \ Applications (VBA) implique l'acc\xE8s aux param\xE8tres pass\xE9s \xE0 votre\

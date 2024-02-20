@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/comparing-two-dates/
 date: 2024-01-20 17:32:39.082920-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat to sprawdzenie, kt\xF3ra jest wcze\u015B\
   niejsza, czy p\xF3\u017Aniejsza, albo czy s\u0105 identyczne. Programi\u015Bci robi\u0105\
   \ to, aby zarz\u0105dza\u0107 terminami,\u2026"
-lastmod: 2024-02-18 23:08:49.923946
+lastmod: 2024-02-19 22:04:54.872074
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzenie, kt\xF3ra jest wcze\u015Bniejsza,\
   \ czy p\xF3\u017Aniejsza, albo czy s\u0105 identyczne. Programi\u015Bci robi\u0105\

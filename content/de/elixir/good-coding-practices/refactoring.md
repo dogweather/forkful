@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elixir/refactoring/
 date: 2024-01-26 01:17:30.267966-07:00
 description: "Das Refactoring ist der Prozess der Umstrukturierung bestehenden Codes,\
   \ ohne dessen externes Verhalten zu \xE4ndern. Es zielt darauf ab, nichtfunktionale\u2026"
-lastmod: 2024-02-18 23:09:04.560618
+lastmod: 2024-02-19 22:05:12.519944
 model: gpt-4-0125-preview
 summary: "Das Refactoring ist der Prozess der Umstrukturierung bestehenden Codes,\
   \ ohne dessen externes Verhalten zu \xE4ndern. Es zielt darauf ab, nichtfunktionale\u2026"

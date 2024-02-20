@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/working-with-toml/
 date: 2024-01-26 04:20:25.463370-07:00
 description: "Travailler avec TOML signifie que vous manipulez des donn\xE9es dans\
   \ un format minimaliste \"Tom's Obvious, Minimal Language\", populaire pour les\
   \ fichiers de\u2026"
-lastmod: 2024-02-18 23:09:08.412590
+lastmod: 2024-02-19 22:05:16.204412
 model: gpt-4-0125-preview
 summary: "Travailler avec TOML signifie que vous manipulez des donn\xE9es dans un\
   \ format minimaliste \"Tom's Obvious, Minimal Language\", populaire pour les fichiers\

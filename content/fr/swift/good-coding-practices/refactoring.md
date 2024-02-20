@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/swift/refactoring/
 date: 2024-01-26 03:36:51.311926-07:00
 description: "La refactorisation est le processus de restructuration du code informatique\
   \ existant sans en changer le comportement externe. Les programmeurs le font\u2026"
-lastmod: 2024-02-18 23:09:09.217849
+lastmod: 2024-02-19 22:05:16.885656
 model: gpt-4-0125-preview
 summary: "La refactorisation est le processus de restructuration du code informatique\
   \ existant sans en changer le comportement externe. Les programmeurs le font\u2026"

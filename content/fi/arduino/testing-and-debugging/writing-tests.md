@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/arduino/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:40.752498-07:00
 description: "Testien kirjoittaminen Arduino-ymp\xE4rist\xF6ss\xE4 tarkoittaa automatisoitujen\
   \ testien luomista, jotka varmistavat koodisi toimivuuden Arduino-laitteissa.\u2026"
-lastmod: 2024-02-18 23:09:07.902845
+lastmod: 2024-02-19 22:05:15.722914
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Arduino-ymp\xE4rist\xF6ss\xE4 tarkoittaa automatisoitujen\
   \ testien luomista, jotka varmistavat koodisi toimivuuden Arduino-laitteissa.\u2026"

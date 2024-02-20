@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/java/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:23.433070-07:00
 description: "Parsowanie daty z ci\u0105gu polega na przekszta\u0142ceniu tekstowej\
   \ reprezentacji daty i czasu na obiekt `Date` lub nowocze\u015Bniejszy obiekt `LocalDateTime`.\u2026"
-lastmod: 2024-02-18 23:08:49.487283
+lastmod: 2024-02-19 22:04:54.416669
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu polega na przekszta\u0142ceniu tekstowej reprezentacji\
   \ daty i czasu na obiekt `Date` lub nowocze\u015Bniejszy obiekt `LocalDateTime`.\u2026"

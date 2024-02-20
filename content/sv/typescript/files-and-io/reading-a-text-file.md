@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/reading-a-text-file/
 date: 2024-01-20 17:55:08.929178-07:00
 description: "L\xE4sning av en textfil inneb\xE4r att h\xE4mta data fr\xE5n en fil\
   \ som \xE4r lagrad p\xE5 disken. Programmerare g\xF6r detta f\xF6r att bearbeta,\
   \ visa eller transformera\u2026"
-lastmod: 2024-02-18 23:08:51.560278
+lastmod: 2024-02-19 22:04:56.875721
 model: gpt-4-1106-preview
 summary: "L\xE4sning av en textfil inneb\xE4r att h\xE4mta data fr\xE5n en fil som\
   \ \xE4r lagrad p\xE5 disken. Programmerare g\xF6r detta f\xF6r att bearbeta, visa\

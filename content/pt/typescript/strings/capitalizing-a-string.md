@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/typescript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:41.338634-07:00
 description: "Capitalizar uma string envolve modificar o primeiro caractere de uma\
   \ string dada para mai\xFAsculo se ele estiver em min\xFAsculo, muitas vezes deixando\
   \ o resto\u2026"
-lastmod: 2024-02-18 23:08:57.868854
+lastmod: 2024-02-19 22:05:05.340499
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve modificar o primeiro caractere de uma string\
   \ dada para mai\xFAsculo se ele estiver em min\xFAsculo, muitas vezes deixando o\

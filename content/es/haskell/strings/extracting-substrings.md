@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/haskell/extracting-substrings/
 date: 2024-01-20 17:45:43.423230-07:00
 description: "Extraer subcadenas significa tomar trozos espec\xEDficos de un texto.\
   \ Los programadores lo hacen para analizar, transformar o simplemente acceder a\
   \ partes\u2026"
-lastmod: 2024-02-18 23:09:10.015958
+lastmod: 2024-02-19 22:05:17.615281
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas significa tomar trozos espec\xEDficos de un texto. Los\
   \ programadores lo hacen para analizar, transformar o simplemente acceder a partes\u2026"

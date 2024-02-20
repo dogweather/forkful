@@ -1,10 +1,8 @@
 ---
-aliases:
-- /ja/elm/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:11.728636-07:00
 description: ''
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.853393
+lastmod: 2024-02-19 22:05:01.182444
 model: gpt-4-1106-preview
 summary: ''
 title: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\u7B97\

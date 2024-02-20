@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/haskell/interpolating-a-string/
 date: 2024-01-20 17:51:03.445283-07:00
 description: "La interpolaci\xF3n de cadenas permite insertar valores dentro de una\
   \ cadena de texto, y los programadores la usan para construir strings din\xE1micamente\
   \ y\u2026"
-lastmod: 2024-02-18 23:09:10.012761
+lastmod: 2024-02-19 22:05:17.612479
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas permite insertar valores dentro de una cadena\
   \ de texto, y los programadores la usan para construir strings din\xE1micamente\

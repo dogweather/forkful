@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/working-with-xml/
 date: 2024-01-25 03:39:46.745957-07:00
 description: "Working with XML involves manipulating and accessing data structured\
   \ in the eXtensible Markup Language. Programmers work with XML to enable\u2026"
-lastmod: 2024-02-18 23:09:11.298142
+lastmod: 2024-02-19 22:05:18.768664
 model: gpt-4-1106-preview
 summary: "Working with XML involves manipulating and accessing data structured in\
   \ the eXtensible Markup Language. Programmers work with XML to enable\u2026"

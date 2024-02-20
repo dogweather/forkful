@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/extracting-substrings/
 date: 2024-01-20 17:46:05.335070-07:00
 description: "Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmoijat\
   \ tekev\xE4t sit\xE4, kun tarvitsevat k\xE4sitell\xE4 merkkijonojen erityisi\xE4\
   \ segmenttej\xE4 \u2013\u2026"
-lastmod: 2024-02-18 23:09:07.654666
+lastmod: 2024-02-19 22:05:15.497822
 model: gpt-4-1106-preview
 summary: "Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmoijat\
   \ tekev\xE4t sit\xE4, kun tarvitsevat k\xE4sitell\xE4 merkkijonojen erityisi\xE4\

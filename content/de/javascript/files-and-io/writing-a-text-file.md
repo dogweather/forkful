@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/javascript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:16.378032-07:00
 description: "Das Schreiben einer Textdatei in JavaScript bezieht sich oft auf das\
   \ Erstellen und Speichern von Daten in einem einfachen, lesbaren Format f\xFCr\u2026"
-lastmod: 2024-02-18 23:09:05.298285
+lastmod: 2024-02-19 22:05:13.222286
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in JavaScript bezieht sich oft auf das Erstellen\
   \ und Speichern von Daten in einem einfachen, lesbaren Format f\xFCr\u2026"

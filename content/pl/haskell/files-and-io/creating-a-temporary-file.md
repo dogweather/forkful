@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/creating-a-temporary-file/
 date: 2024-01-20 17:40:24.484283-07:00
 description: "Tworzenie tymczasowych plik\xF3w to proces generowania plik\xF3w, kt\xF3\
   re istniej\u0105 tylko przez kr\xF3tki czas, zazwyczaj do przechowania danych mi\u0119\
   dzyoperacyjnych.\u2026"
-lastmod: 2024-02-18 23:08:49.671818
+lastmod: 2024-02-19 22:04:54.606780
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowych plik\xF3w to proces generowania plik\xF3w, kt\xF3\
   re istniej\u0105 tylko przez kr\xF3tki czas, zazwyczaj do przechowania danych mi\u0119\

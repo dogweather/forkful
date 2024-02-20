@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:03.664893-07:00
 description: "\xC5 konvertere en dato til en streng i C inneb\xE6rer \xE5 oversette\
   \ en datostuktur eller tidsstempel til et menneskelesbart format. Programmerere\
   \ utf\xF8rer ofte\u2026"
-lastmod: 2024-02-18 23:08:54.406017
+lastmod: 2024-02-19 22:05:00.565626
 model: gpt-4-0125-preview
 summary: "\xC5 konvertere en dato til en streng i C inneb\xE6rer \xE5 oversette en\
   \ datostuktur eller tidsstempel til et menneskelesbart format. Programmerere utf\xF8\

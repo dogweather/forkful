@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/swift/writing-to-standard-error/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:06:25.932281-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u04
   \u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044B\u0439 \u0434\u043B\u044F \u043E\
   \u0448\u0438\u0431\u043E\u043A, \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\
   \u0439 \u043E\u0442\u2026"
-lastmod: 2024-02-18 23:08:57.428859
+lastmod: 2024-02-19 22:05:04.693354
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u043D\u0434\
   \u0430\u0440\u0442\u043D\u044B\u0439 \u043F\u043E\u0442\u043E\u043A \u043E\u0448\

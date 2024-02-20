@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/elm/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:20.976899-07:00
@@ -14,7 +12,7 @@ description: "\u6A19\u6E96\u30A8\u30E9\u30FC\uFF08stderr\uFF09\u306B\u66F8\u304D
   \u76E3\u8996\u306B\u4E0D\u53EF\u6B20\u306A\u74B0\u5883\u3067\u3001\u30A8\u30E9\u30FC\
   \u51E6\u7406\u3068\u30ED\u30B0\u8A18\u9332\u3092\u3088\u308A\u6271\u3044\u3084\u3059\
   \u304F\u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.856081
+lastmod: 2024-02-19 22:05:01.186822
 model: gpt-4-0125-preview
 summary: "\u6A19\u6E96\u30A8\u30E9\u30FC\uFF08stderr\uFF09\u306B\u66F8\u304D\u8FBC\
   \u3080\u3053\u3068\u306F\u3001\u30E1\u30A4\u30F3\u30D7\u30ED\u30B0\u30E9\u30E0\u306E\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/go/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:21.945433-07:00
 description: "Komennoriviparametrien lukeminen Go:ssa tarkoittaa ohjelmalle sen k\xE4\
   ynnistyksen yhteydess\xE4 terminaalista tai komentokehotteesta annettujen argumenttien\u2026"
-lastmod: 2024-02-18 23:09:07.103366
+lastmod: 2024-02-19 22:05:14.982823
 model: gpt-4-0125-preview
 summary: "Komennoriviparametrien lukeminen Go:ssa tarkoittaa ohjelmalle sen k\xE4\
   ynnistyksen yhteydess\xE4 terminaalista tai komentokehotteesta annettujen argumenttien\u2026"

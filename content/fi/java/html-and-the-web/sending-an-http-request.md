@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/sending-an-http-request/
 date: 2024-01-20 17:59:58.354885-07:00
 description: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n, ohjelmat voivat pyyt\xE4\xE4\
   \ tietoa tai l\xE4hett\xE4\xE4 dataa web-palvelimelle. Ohjelmoijat tekev\xE4t sen,\
   \ koska se on netin kanssak\xE4ymisen\u2026"
-lastmod: 2024-02-18 23:09:07.454799
+lastmod: 2024-02-19 22:05:15.337404
 model: gpt-4-1106-preview
 summary: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n, ohjelmat voivat pyyt\xE4\xE4 tietoa\
   \ tai l\xE4hett\xE4\xE4 dataa web-palvelimelle. Ohjelmoijat tekev\xE4t sen, koska\

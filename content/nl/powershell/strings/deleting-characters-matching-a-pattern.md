@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/powershell/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:01.596003-07:00
 description: "Het verwijderen van tekens die overeenkomen met een bepaald patroon\
   \ gaat over het wegstrippen van ongewenste delen van je strings \u2014 denk aan\
   \ het opschonen\u2026"
-lastmod: 2024-02-18 23:09:02.071602
+lastmod: 2024-02-19 22:05:10.094162
 model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een bepaald patroon gaat\
   \ over het wegstrippen van ongewenste delen van je strings \u2014 denk aan het opschonen\u2026"

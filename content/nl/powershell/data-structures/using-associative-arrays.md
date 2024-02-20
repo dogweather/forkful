@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/powershell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:34.690871-07:00
 description: "Associatieve arrays, ook bekend als hash-tabellen of woordenboeken in\
   \ PowerShell, stellen je in staat om gegevens op te slaan in sleutel-waardeparen,\
   \ wat\u2026"
-lastmod: 2024-02-18 23:09:02.081419
+lastmod: 2024-02-19 22:05:10.103382
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, ook bekend als hash-tabellen of woordenboeken in PowerShell,\
   \ stellen je in staat om gegevens op te slaan in sleutel-waardeparen, wat\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/clojure/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:57.293657-07:00
@@ -14,7 +12,7 @@ description: "Clojure \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u0
   \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0938\u092E\u0930\u094D\u092A\u093F\
   \u0924 \u0915\u094B\u0921 \u092C\u0928\u093E\u0928\u0947 \u0915\u094B \u0936\u093E\
   \u092E\u093F\u0932\u2026"
-lastmod: 2024-02-18 23:09:02.731722
+lastmod: 2024-02-19 22:05:10.730364
 model: gpt-4-0125-preview
 summary: "Clojure \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u0923 \u0932\
   \u0947\u0916\u0928, \u0905\u0928\u094D\u092F \u092A\u094D\u0930\u094B\u0917\u094D\

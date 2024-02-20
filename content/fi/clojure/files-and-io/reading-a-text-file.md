@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/reading-a-text-file/
 date: 2024-01-20 17:54:05.962758-07:00
 description: "\"Mik\xE4 ja Miksi?\" Tekstitiedoston lukeminen tarkoittaa tiedon hakemista\
   \ levylt\xE4 ohjelmaan. Ohjelmoijat tekev\xE4t sen datan k\xE4sittelyyn, analysointiin\
   \ tai\u2026"
-lastmod: 2024-02-18 23:09:07.247045
+lastmod: 2024-02-19 22:05:15.143365
 model: gpt-4-1106-preview
 summary: "\"Mik\xE4 ja Miksi?\" Tekstitiedoston lukeminen tarkoittaa tiedon hakemista\
   \ levylt\xE4 ohjelmaan. Ohjelmoijat tekev\xE4t sen datan k\xE4sittelyyn, analysointiin\

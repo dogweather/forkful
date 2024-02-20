@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:56.382469-07:00
 description: "Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious,\
   \ Minimal Language) data met Haskell. Programmeurs doen dit om gemakkelijk\u2026"
-lastmod: 2024-02-18 23:09:01.924449
+lastmod: 2024-02-19 22:05:09.947098
 model: gpt-4-0125-preview
 summary: "Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious, Minimal\
   \ Language) data met Haskell. Programmeurs doen dit om gemakkelijk\u2026"

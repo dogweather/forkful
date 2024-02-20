@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:13.245625-07:00
 description: "REPL, czyli P\u0119tla Czytaj-Ewaluuj-Drukuj, to \u015Brodowisko programistyczne\
   \ do dynamicznego testowania kodu Clojure kawa\u0142ek po kawa\u0142ku. Programi\u015B\
   ci u\u017Cywaj\u0105 go,\u2026"
-lastmod: 2024-02-18 23:08:49.266373
+lastmod: 2024-02-19 22:04:54.179279
 model: gpt-4-0125-preview
 summary: "REPL, czyli P\u0119tla Czytaj-Ewaluuj-Drukuj, to \u015Brodowisko programistyczne\
   \ do dynamicznego testowania kodu Clojure kawa\u0142ek po kawa\u0142ku. Programi\u015B\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/vba/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:47.180514-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) dans Visual Basic pour Applications\
   \ (VBA) offrent un moyen puissant de rechercher, correspondre et manipuler des\u2026"
-lastmod: 2024-02-18 23:09:08.566167
+lastmod: 2024-02-19 22:05:16.343918
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) dans Visual Basic pour Applications\
   \ (VBA) offrent un moyen puissant de rechercher, correspondre et manipuler des\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c-sharp/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:17.236156-07:00
 description: "De huidige datum in C# krijgen betekent het hier-en-nu van de klok van\
   \ je systeem plukken. Het is handig voor tijdstempels, logs, of elke functie die\
   \ een\u2026"
-lastmod: 2024-02-18 23:09:01.863911
+lastmod: 2024-02-19 22:05:09.880391
 model: gpt-4-0125-preview
 summary: "De huidige datum in C# krijgen betekent het hier-en-nu van de klok van je\
   \ systeem plukken. Het is handig voor tijdstempels, logs, of elke functie die een\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/fish-shell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:29.285556-07:00
 description: "Ein HTTP-Request mit Basisauthentifizierung beinhaltet das Senden von\
   \ Benutzername und Passwort in kodierter Form zum Server, um Zugriff zu erhalten.\u2026"
-lastmod: 2024-02-18 23:09:05.325830
+lastmod: 2024-02-19 22:05:13.247891
 model: gpt-4-1106-preview
 summary: "Ein HTTP-Request mit Basisauthentifizierung beinhaltet das Senden von Benutzername\
   \ und Passwort in kodierter Form zum Server, um Zugriff zu erhalten.\u2026"

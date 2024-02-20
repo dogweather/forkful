@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/comparing-two-dates/
 date: 2024-01-20 17:32:30.043659-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
   niejsza, a kt\xF3ra p\xF3\u017Aniejsza lub czy s\u0105 identyczne. W programowaniu\
   \ robimy to, aby zarz\u0105dza\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.276824
+lastmod: 2024-02-19 22:04:54.190507
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
   niejsza, a kt\xF3ra p\xF3\u017Aniejsza lub czy s\u0105 identyczne. W programowaniu\

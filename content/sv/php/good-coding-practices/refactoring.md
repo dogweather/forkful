@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/php/refactoring/
 date: 2024-01-26 01:55:11.952605-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess externa beteende. Programmerare refaktoriserar f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.886337
+lastmod: 2024-02-19 22:04:57.229294
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess externa beteende. Programmerare refaktoriserar f\xF6r att\u2026"

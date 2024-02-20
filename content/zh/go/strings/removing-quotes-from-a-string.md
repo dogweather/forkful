@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:26.647024-07:00
@@ -11,7 +9,7 @@ description: "\u5728 Go \u4E2D\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u
   \u5730\u89E3\u6790\u6587\u672C\u6570\u636E\u6216\u4E3A\u8FDB\u4E00\u6B65\u5904\u7406\
   \u9700\u8981\u65E0\u5F15\u53F7\u5185\u5BB9\u7684\u5B57\u7B26\u4E32\u505A\u51C6\u5907\
   \u3002"
-lastmod: 2024-02-18 23:08:58.696181
+lastmod: 2024-02-19 22:05:06.202161
 model: gpt-4-0125-preview
 summary: "\u5728 Go \u4E2D\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7\u662F\
   \u6307\u53BB\u9664\u7ED9\u5B9A\u5B57\u7B26\u4E32\u9996\u5C3E\u7684\u5F15\u53F7(`\"\

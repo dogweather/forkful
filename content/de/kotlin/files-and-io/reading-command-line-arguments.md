@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/kotlin/reading-command-line-arguments/
 date: 2024-01-20 17:56:26.674346-07:00
 description: "Kommandozeilenargumente sind die Parameter, die beim Starten eines Programms\
   \ \xFCber die Konsole \xFCbergeben werden. Sie erm\xF6glichen es, dass Programme\u2026"
-lastmod: 2024-02-18 23:09:04.842887
+lastmod: 2024-02-19 22:05:12.788094
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind die Parameter, die beim Starten eines Programms\
   \ \xFCber die Konsole \xFCbergeben werden. Sie erm\xF6glichen es, dass Programme\u2026"

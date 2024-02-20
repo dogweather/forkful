@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/bash/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:39.297029-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String beinhaltet das\
   \ Entfernen der Anf\xFChrungszeichen, die den String einschlie\xDFen. Programmierer\
   \ m\xF6chten\u2026"
-lastmod: 2024-02-18 23:09:05.039304
+lastmod: 2024-02-19 22:05:12.976588
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String beinhaltet das Entfernen\
   \ der Anf\xFChrungszeichen, die den String einschlie\xDFen. Programmierer m\xF6\

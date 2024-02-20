@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/php/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:47.116903-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in PHP sind Muster, die verwendet werden,\
   \ um Zeichenkombinationen in Zeichenketten abzugleichen, wodurch komplexe Such-\
   \ und\u2026"
-lastmod: 2024-02-18 23:09:04.951587
+lastmod: 2024-02-19 22:05:12.891602
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in PHP sind Muster, die verwendet werden,\
   \ um Zeichenkombinationen in Zeichenketten abzugleichen, wodurch komplexe Such-\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/javascript/rounding-numbers/
 date: 2024-01-26 03:46:00.448057-07:00
 description: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
   mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:10.399125
+lastmod: 2024-02-19 22:05:17.957849
 model: gpt-4-0125-preview
 summary: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
   mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\

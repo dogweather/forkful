@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/downloading-a-web-page/
 date: 2024-01-20 17:43:29.348322-07:00
 description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
   \ Internet. Les programmeurs font \xE7a pour interagir avec des donn\xE9es en ligne,\
   \ collecter des\u2026"
-lastmod: 2024-02-18 23:09:09.113854
+lastmod: 2024-02-19 22:05:16.791671
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via Internet.\
   \ Les programmeurs font \xE7a pour interagir avec des donn\xE9es en ligne, collecter\

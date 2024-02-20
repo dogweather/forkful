@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/lua/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:54.155607-07:00
 description: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
   \ reprezentacji dat i czasu na format, kt\xF3ry mo\u017Cna \u0142atwo manipulowa\u0107\
   , przechowywa\u0107 lub\u2026"
-lastmod: 2024-02-18 23:08:49.749220
+lastmod: 2024-02-19 22:04:54.686891
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
   \ reprezentacji dat i czasu na format, kt\xF3ry mo\u017Cna \u0142atwo manipulowa\u0107\

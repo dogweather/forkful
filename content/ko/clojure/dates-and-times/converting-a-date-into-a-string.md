@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:16.623239-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBC14\uAFB8\uB294 \uAC83\
   \uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uC77C\uBC18\uC801\uC73C\uB85C\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBC14\uAFB8\uB294 \uA
   \uD558\uAE30 \uC26C\uC6B4 \uD615\uD0DC\uB85C \uB0A0\uC9DC\uB97C \uBCF4\uC5EC\uC8FC\
   \uAE30 \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.708099
+lastmod: 2024-02-19 22:05:13.620418
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBC14\uAFB8\uB294 \uAC83\uC740\
   \ \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\

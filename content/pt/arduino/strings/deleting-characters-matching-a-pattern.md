@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:55.769499-07:00
 description: "Deletar caracteres que combinam com um padr\xE3o \xE9 basicamente filtrar\
   \ a nossa string, tirando tudo que n\xE3o queremos. Programadores fazem isso pra\
   \ limpar\u2026"
-lastmod: 2024-02-18 23:08:58.395004
+lastmod: 2024-02-19 22:05:05.881575
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que combinam com um padr\xE3o \xE9 basicamente filtrar\
   \ a nossa string, tirando tudo que n\xE3o queremos. Programadores fazem isso pra\

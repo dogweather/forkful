@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/handling-errors/
 date: 2024-01-26 00:57:13.390668-07:00
 description: "Att hantera fel i Python (eller i n\xE5got programmeringsspr\xE5k) handlar\
   \ om att f\xF6rv\xE4nta sig det ov\xE4ntade \u2013 det \xE4r konsten att hantera\
   \ situationer p\xE5 ett\u2026"
-lastmod: 2024-02-18 23:08:51.428837
+lastmod: 2024-02-19 22:04:56.731821
 model: gpt-4-1106-preview
 summary: "Att hantera fel i Python (eller i n\xE5got programmeringsspr\xE5k) handlar\
   \ om att f\xF6rv\xE4nta sig det ov\xE4ntade \u2013 det \xE4r konsten att hantera\

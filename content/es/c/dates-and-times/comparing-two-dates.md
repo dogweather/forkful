@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:25.254573-07:00
 description: "Comparar dos fechas en C implica determinar la relaci\xF3n cronol\xF3\
   gica entre ellas: si una fecha precede a la otra o si son iguales. Esta capacidad\
   \ es\u2026"
-lastmod: 2024-02-18 23:09:10.516200
+lastmod: 2024-02-19 22:05:18.066261
 model: gpt-4-0125-preview
 summary: "Comparar dos fechas en C implica determinar la relaci\xF3n cronol\xF3gica\
   \ entre ellas: si una fecha precede a la otra o si son iguales. Esta capacidad es\u2026"

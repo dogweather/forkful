@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/organizing-code-into-functions/
 date: 2024-01-26 01:08:48.444438-07:00
 description: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na\
   \ mniejsze, wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015B\
   lone zadania. Sprawia to, \u017Ce kod\u2026"
-lastmod: 2024-02-18 23:08:49.790420
+lastmod: 2024-02-19 22:04:54.730187
 model: gpt-4-1106-preview
 summary: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na mniejsze,\
   \ wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015Blone zadania.\

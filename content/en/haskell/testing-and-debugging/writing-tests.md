@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/writing-tests/
 date: 2024-02-03 19:03:27.757892-07:00
 description: "Writing tests in Haskell is about ensuring your functions work as expected\
   \ through automated checks. Programmers do it to catch bugs early, facilitate\u2026"
-lastmod: 2024-02-18 23:09:11.099712
+lastmod: 2024-02-19 22:05:18.595368
 model: gpt-4-0125-preview
 summary: "Writing tests in Haskell is about ensuring your functions work as expected\
   \ through automated checks. Programmers do it to catch bugs early, facilitate\u2026"

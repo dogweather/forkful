@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/haskell/refactoring/
 date: 2024-01-26 01:37:21.580167-07:00
 description: "La refactorizaci\xF3n es el proceso de ajustar tu c\xF3digo sin cambiar\
   \ su comportamiento externo. Se trata de limpiar y organizar tu acto para hacer\
   \ el c\xF3digo\u2026"
-lastmod: 2024-02-18 23:09:10.036939
+lastmod: 2024-02-19 22:05:17.634137
 model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n es el proceso de ajustar tu c\xF3digo sin cambiar\
   \ su comportamiento externo. Se trata de limpiar y organizar tu acto para hacer\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/haskell/sending-an-http-request/
 date: 2024-01-20 17:59:49.199568-07:00
 description: "HTTP-Anfragen erm\xF6glichen die Kommunikation mit Web-Servern: Daten\
   \ anfragen oder senden. Programmierer brauchen das f\xFCr Web-Interaktionen, APIs\
   \ und\u2026"
-lastmod: 2024-02-18 23:09:04.913270
+lastmod: 2024-02-19 22:05:12.855338
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen erm\xF6glichen die Kommunikation mit Web-Servern: Daten anfragen\
   \ oder senden. Programmierer brauchen das f\xFCr Web-Interaktionen, APIs und\u2026"

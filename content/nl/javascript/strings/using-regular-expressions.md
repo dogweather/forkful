@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:55.374484-07:00
 description: "Reguliere expressies, gewoonlijk bekend als regex, zijn patronen die\
   \ gebruikt worden om combinaties van karakters in strings te matchen. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.264554
+lastmod: 2024-02-19 22:05:10.277130
 model: gpt-4-0125-preview
 summary: "Reguliere expressies, gewoonlijk bekend als regex, zijn patronen die gebruikt\
   \ worden om combinaties van karakters in strings te matchen. Programmeurs\u2026"

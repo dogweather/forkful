@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:16.140317-07:00
 description: "Sending an HTTP request with basic authentication involves adding a\
   \ username and password to a request for restricted resources. Programmers do it\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:10.723432
+lastmod: 2024-02-19 22:05:18.252986
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves adding a username\
   \ and password to a request for restricted resources. Programmers do it to\u2026"

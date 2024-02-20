@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/rounding-numbers/
 date: 2024-01-26 03:45:42.849436-07:00
 description: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss punkt\
   \ i ett tal. Programmerare avrundar f\xF6r att kontrollera precision, hantera minne\
   \ eller g\xF6ra\u2026"
-lastmod: 2024-02-18 23:08:52.159827
+lastmod: 2024-02-19 22:04:57.530660
 model: gpt-4-0125-preview
 summary: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss punkt i ett\
   \ tal. Programmerare avrundar f\xF6r att kontrollera precision, hantera minne eller\

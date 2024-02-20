@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/interpolating-a-string/
 date: 2024-01-20 17:51:08.674992-07:00
 description: "Interpolar uma string \xE9 o ato de integrar vari\xE1veis e express\xF5\
   es dentro de uma string. Programadores fazem isso porque \xE9 uma maneira din\xE2\
   mica e flex\xEDvel\u2026"
-lastmod: 2024-02-18 23:08:58.269014
+lastmod: 2024-02-19 22:05:05.745167
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 o ato de integrar vari\xE1veis e express\xF5\
   es dentro de uma string. Programadores fazem isso porque \xE9 uma maneira din\xE2\

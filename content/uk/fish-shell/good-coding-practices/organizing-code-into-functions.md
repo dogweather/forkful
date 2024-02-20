@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/fish-shell/organizing-code-into-functions/
 changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -15,7 +13,7 @@ description: "\u041E\u0440\u0433\u0430\u043D\u0456\u0437\u043E\u0432\u0443\u0432
   \u0438\u043C\u043E \u0446\u0435, \u0442\u043E\u043C\u0443 \u0449\u043E \u0446\u0435\
   \ \u0440\u043E\u0431\u0438\u0442\u044C \u043A\u043E\u0434 \u043B\u0435\u0433\u0448\
   \u0438\u043C \u0434\u043B\u044F \u0447\u0438\u0442\u0430\u043D\u043D\u044F,\u2026"
-lastmod: 2024-02-18 23:09:01.123215
+lastmod: 2024-02-19 22:05:09.160448
 model: gpt-4-0125-preview
 summary: "\u041E\u0440\u0433\u0430\u043D\u0456\u0437\u043E\u0432\u0443\u0432\u0430\
   \u0442\u0438 \u043A\u043E\u0434 \u0443 \u0444\u0443\u043D\u043A\u0446\u0456\u0457\

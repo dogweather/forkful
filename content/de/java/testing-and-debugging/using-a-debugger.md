@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/java/using-a-debugger/
 date: 2024-01-26 03:49:30.157433-07:00
 description: "Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben\
   \ von Fehlern im Code einzusetzen. Programmierer tun dies, um den Ablauf ihrer\u2026"
-lastmod: 2024-02-18 23:09:04.741559
+lastmod: 2024-02-19 22:05:12.692463
 model: gpt-4-0125-preview
 summary: "Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben von\
   \ Fehlern im Code einzusetzen. Programmierer tun dies, um den Ablauf ihrer\u2026"

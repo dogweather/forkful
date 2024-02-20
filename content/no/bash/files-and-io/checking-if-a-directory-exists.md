@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:50.514844-07:00
 description: "I Bash-programmering er det \xE5 sjekke om en mappe eksisterer en essensiell\
   \ kontrollmekanisme som brukes for \xE5 verifisere tilstedev\xE6relsen av en mappe\
   \ f\xF8r\u2026"
-lastmod: 2024-02-18 23:08:54.072089
+lastmod: 2024-02-19 22:05:00.255629
 model: gpt-4-0125-preview
 summary: "I Bash-programmering er det \xE5 sjekke om en mappe eksisterer en essensiell\
   \ kontrollmekanisme som brukes for \xE5 verifisere tilstedev\xE6relsen av en mappe\

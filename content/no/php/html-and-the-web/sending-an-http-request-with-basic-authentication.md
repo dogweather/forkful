@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/php/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:02.333303-07:00
 description: "Sending av en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
   rer \xE5 inkludere brukernavn og passord for tilgangskontroll hos en server. Programmere\u2026"
-lastmod: 2024-02-18 23:08:53.975071
+lastmod: 2024-02-19 22:05:00.149724
 model: gpt-4-1106-preview
 summary: "Sending av en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
   rer \xE5 inkludere brukernavn og passord for tilgangskontroll hos en server. Programmere\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/google-apps-script/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:42.547154-07:00
@@ -15,7 +13,7 @@ description: "\u30B3\u30FC\u30C9\u3092\u95A2\u6570\u306B\u7DE8\u6210\u3059\u308B
   \u30FC\u30C9\u306E\u53EF\u8AAD\u6027\u3001\u4FDD\u5B88\u6027\u3001\u304A\u3088\u3073\
   \u518D\u5229\u7528\u6027\u3092\u9AD8\u3081\u308B\u305F\u3081\u306B\u3053\u308C\u3092\
   \u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.528564
+lastmod: 2024-02-19 22:05:00.722703
 model: gpt-4-0125-preview
 summary: "\u30B3\u30FC\u30C9\u3092\u95A2\u6570\u306B\u7DE8\u6210\u3059\u308B\u3068\
   \u306F\u3001Google Apps \u30B9\u30AF\u30EA\u30D7\u30C8\u306E\u30B3\u30FC\u30C9\u3092\

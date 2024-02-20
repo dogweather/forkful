@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/php/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:37.177260-07:00
 description: "Rimuovere le virgolette da una stringa in PHP significa eliminare quei\
   \ fastidiosi caratteri di virgoletta doppia (`\"`) o singola (`'`) che possono\u2026"
-lastmod: 2024-02-18 23:08:55.959516
+lastmod: 2024-02-19 22:05:02.571217
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa in PHP significa eliminare quei fastidiosi\
   \ caratteri di virgoletta doppia (`\"`) o singola (`'`) che possono\u2026"

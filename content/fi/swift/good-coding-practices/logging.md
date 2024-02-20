@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/logging/
 date: 2024-01-26 01:09:07.334748-07:00
 description: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4\
   \ tietoja tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon\
   \ tai\u2026"
-lastmod: 2024-02-18 23:09:07.996657
+lastmod: 2024-02-19 22:05:15.809022
 model: gpt-4-1106-preview
 summary: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4 tietoja\
   \ tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon tai\u2026"

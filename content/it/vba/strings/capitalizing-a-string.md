@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:30.516454-07:00
 description: "Capitalizzare una stringa in Visual Basic for Applications (VBA) significa\
   \ convertire il primo carattere di ogni parola in una stringa in maiuscolo,\u2026"
-lastmod: 2024-02-18 23:08:55.704730
+lastmod: 2024-02-19 22:05:02.304707
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in Visual Basic for Applications (VBA) significa\
   \ convertire il primo carattere di ogni parola in una stringa in maiuscolo,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/haskell/extracting-substrings/
 date: 2024-01-20 17:46:07.683145-07:00
 description: "Extrair substrings significa pegar partes espec\xEDficas de uma string.\
   \ Programadores fazem isso para manipular, analisar ou transformar dados baseados\
   \ em\u2026"
-lastmod: 2024-02-18 23:08:58.188331
+lastmod: 2024-02-19 22:05:05.659111
 model: gpt-4-1106-preview
 summary: "Extrair substrings significa pegar partes espec\xEDficas de uma string.\
   \ Programadores fazem isso para manipular, analisar ou transformar dados baseados\

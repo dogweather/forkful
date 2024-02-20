@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/typescript/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:25.830087-07:00
 description: "Rimuovere le virgolette da una stringa significa togliere i caratteri\
   \ di virgoletta singola (`'`) o doppia (`\"`) che definiscono le stringhe letterali\
   \ nel\u2026"
-lastmod: 2024-02-18 23:08:55.629256
+lastmod: 2024-02-19 22:05:02.224424
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa togliere i caratteri di\
   \ virgoletta singola (`'`) o doppia (`\"`) che definiscono le stringhe letterali\

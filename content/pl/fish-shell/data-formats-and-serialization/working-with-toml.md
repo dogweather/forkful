@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/working-with-toml/
 date: 2024-01-26 04:21:59.595882-07:00
 description: "TOML to format pliku konfiguracyjnego, \u0142atwy do odczytu i zapisu\
   \ przez ludzi, oraz \u0142atwy do przetwarzania i generowania przez maszyny. Programi\u015B\
   ci u\u017Cywaj\u0105\u2026"
-lastmod: 2024-02-18 23:08:50.059700
+lastmod: 2024-02-19 22:04:55.041378
 model: gpt-4-0125-preview
 summary: "TOML to format pliku konfiguracyjnego, \u0142atwy do odczytu i zapisu przez\
   \ ludzi, oraz \u0142atwy do przetwarzania i generowania przez maszyny. Programi\u015B\

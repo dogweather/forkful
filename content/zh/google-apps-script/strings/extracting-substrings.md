@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:57.235455-07:00
@@ -13,7 +11,7 @@ description: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u6D89\u53CA\u53D6\u51FA\u5B57
   \u5904\u7406\u8F93\u5165\uFF0C\u4F7F\u5F97\u5B50\u5B57\u7B26\u4E32\u63D0\u53D6\u6210\
   \u4E3A\u4EFB\u4F55\u811A\u672C\u5DE5\u5177\u7BB1\u4E2D\u7684\u591A\u529F\u80FD\u5DE5\
   \u5177\u3002"
-lastmod: 2024-02-18 23:08:58.739060
+lastmod: 2024-02-19 22:05:06.262348
 model: gpt-4-0125-preview
 summary: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u6D89\u53CA\u53D6\u51FA\u5B57\u7B26\
   \u4E32\u7684\u4E00\u90E8\u5206\u2014\u2014\u672C\u8D28\u4E0A\u662F\u4ECE\u73B0\u6709\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/handling-errors/
 date: 2024-01-26 00:54:13.994961-07:00
 description: "Tratar erros significa escrever c\xF3digo que antecipa e lida com as\
   \ coisas dando errado. Programadores fazem isso para tornar o software robusto,\
   \ evitando\u2026"
-lastmod: 2024-02-18 23:08:58.026183
+lastmod: 2024-02-19 22:05:05.502824
 model: gpt-4-1106-preview
 summary: "Tratar erros significa escrever c\xF3digo que antecipa e lida com as coisas\
   \ dando errado. Programadores fazem isso para tornar o software robusto, evitando\u2026"

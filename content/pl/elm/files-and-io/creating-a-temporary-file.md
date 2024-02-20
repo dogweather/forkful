@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elm/creating-a-temporary-file/
 date: 2024-01-20 17:40:06.788192-07:00
 description: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry istnieje\
   \ tylko na czas dzia\u0142ania aplikacji. Programi\u015Bci u\u017Cywaj\u0105 tej\
   \ techniki, aby\u2026"
-lastmod: 2024-02-18 23:08:49.537593
+lastmod: 2024-02-19 22:04:54.472204
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry istnieje\
   \ tylko na czas dzia\u0142ania aplikacji. Programi\u015Bci u\u017Cywaj\u0105 tej\

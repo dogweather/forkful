@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/working-with-xml/
 date: 2024-01-26 04:33:18.961514-07:00
 description: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami\
   \ XML - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych.\
   \ Programi\u015Bci robi\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.593465
+lastmod: 2024-02-19 22:04:54.522268
 model: gpt-4-0125-preview
 summary: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami XML\
   \ - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych. Programi\u015B\

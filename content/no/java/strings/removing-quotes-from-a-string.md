@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/java/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:56.009629-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe ut eventuelle\
   \ anf\xF8rselstegn\u2014enten enkle (' '), doble (\" \"), eller begge\u2014fra tekstdatatene.\u2026"
-lastmod: 2024-02-18 23:08:53.759479
+lastmod: 2024-02-19 22:04:59.898951
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe ut eventuelle\
   \ anf\xF8rselstegn\u2014enten enkle (' '), doble (\" \"), eller begge\u2014fra tekstdatatene.\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/rust/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:19.545967-07:00
 description: "Eliminar comillas de una cadena en Rust consiste en deshacerse de caracteres\
   \ de comillas innecesarios que podr\xEDan estar envolviendo tus datos de texto.\u2026"
-lastmod: 2024-02-18 23:09:09.736171
+lastmod: 2024-02-19 22:05:17.360848
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena en Rust consiste en deshacerse de caracteres\
   \ de comillas innecesarios que podr\xEDan estar envolviendo tus datos de texto.\u2026"

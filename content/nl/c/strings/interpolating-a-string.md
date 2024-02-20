@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:19.343320-07:00
 description: "String interpolatie, in programmeren, houdt in dat strings worden opgebouwd\
   \ door expressies in te sluiten binnen letterlijke strings. Programmeurs doen\u2026"
-lastmod: 2024-02-18 23:09:02.356906
+lastmod: 2024-02-19 22:05:10.364193
 model: gpt-4-0125-preview
 summary: "String interpolatie, in programmeren, houdt in dat strings worden opgebouwd\
   \ door expressies in te sluiten binnen letterlijke strings. Programmeurs doen\u2026"

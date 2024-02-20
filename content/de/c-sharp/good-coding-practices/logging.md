@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/logging/
 date: 2024-01-26 01:00:15.006700-07:00
 description: "Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und\
   \ Datenausgaben w\xE4hrend der Laufzeit. Programmierer verwenden Logging, um Fehler\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.878243
+lastmod: 2024-02-19 22:05:12.822515
 model: gpt-4-1106-preview
 summary: "Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und Datenausgaben\
   \ w\xE4hrend der Laufzeit. Programmierer verwenden Logging, um Fehler zu\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/sending-an-http-request/
 date: 2024-01-20 18:00:25.981787-07:00
 description: "Enviar una solicitud HTTP permite a tu programa hablar con otros sistemas\
   \ a trav\xE9s de la web; es como enviar un mensaje que pide datos o que ejecute\
   \ una\u2026"
-lastmod: 2024-02-18 23:09:10.212139
+lastmod: 2024-02-19 22:05:17.794638
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP permite a tu programa hablar con otros sistemas\
   \ a trav\xE9s de la web; es como enviar un mensaje que pide datos o que ejecute\

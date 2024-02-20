@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ru/elm/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:56:42.888036-07:00
 description: null
-lastmod: 2024-02-18 23:08:56.916798
+lastmod: 2024-02-19 22:05:03.886235
 model: gpt-4-0125-preview
 summary: null
 title: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0432\u0440\u0435\u043C\u0435\

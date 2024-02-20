@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/vba/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:46.344913-07:00
 description: "HTML parsen in Visual Basic for Applications (VBA) houdt in dat specifieke\
   \ informatie uit een HTML-document wordt ge\xEBxtraheerd. Programmeurs doen dit\
   \ om\u2026"
-lastmod: 2024-02-18 23:09:01.663278
+lastmod: 2024-02-19 22:05:09.684542
 model: gpt-4-0125-preview
 summary: "HTML parsen in Visual Basic for Applications (VBA) houdt in dat specifieke\
   \ informatie uit een HTML-document wordt ge\xEBxtraheerd. Programmeurs doen dit\

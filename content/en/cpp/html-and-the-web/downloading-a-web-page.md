@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/cpp/downloading-a-web-page/
 date: 2024-01-20 17:43:28.647391-07:00
 description: "Downloading a web page simply means fetching its content, usually in\
   \ HTML format, to either view or process locally. Programmers download web pages\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.354210
+lastmod: 2024-02-19 22:05:18.819026
 model: gpt-4-1106-preview
 summary: "Downloading a web page simply means fetching its content, usually in HTML\
   \ format, to either view or process locally. Programmers download web pages to\u2026"

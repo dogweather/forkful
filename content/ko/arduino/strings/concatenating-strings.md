@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/concatenating-strings/
 date: 2024-01-20 17:34:15.810610-07:00
 description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC5F4\
   \ \uC870\uAC01\uB4E4\uC744 \uD558\uB098\uB85C \uD569\uCE58\uB294 \uC791\uC5C5\uC785\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC
   \uC8FC\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.607497
+lastmod: 2024-02-19 22:05:14.510629
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC5F4 \uC870\
   \uAC01\uB4E4\uC744 \uD558\uB098\uB85C \uD569\uCE58\uB294 \uC791\uC5C5\uC785\uB2C8\

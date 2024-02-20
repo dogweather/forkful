@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/starting-a-new-project/
 date: 2024-02-03 17:50:05.177003-07:00
 description: "Starting a new project in Go involves setting up a workspace and initializing\
   \ it with the necessary Go modules. Programmers do this to organize code,\u2026"
-lastmod: 2024-02-18 23:09:10.597338
+lastmod: 2024-02-19 22:05:18.139866
 model: gpt-4-0125-preview
 summary: "Starting a new project in Go involves setting up a workspace and initializing\
   \ it with the necessary Go modules. Programmers do this to organize code,\u2026"

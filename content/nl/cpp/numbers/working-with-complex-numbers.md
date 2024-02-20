@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:20.862198-07:00
 description: "Complexe getallen breiden de re\xEBle getallen uit door een imaginair\
   \ eenheid toe te voegen, voorgesteld als 'i', waarbij i^2 = -1. Programmeurs gebruiken\
   \ ze\u2026"
-lastmod: 2024-02-18 23:09:02.176094
+lastmod: 2024-02-19 22:05:10.193011
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallen uit door een imaginair eenheid\
   \ toe te voegen, voorgesteld als 'i', waarbij i^2 = -1. Programmeurs gebruiken ze\u2026"

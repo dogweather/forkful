@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/rust/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:47.151032-07:00
 description: "I programvareutvikling er det ofte n\xF8dvendig \xE5 sjekke om en mappe\
   \ eksisterer for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5 f\xE5 tilgang til,\
   \ lese, eller skrive filer.\u2026"
-lastmod: 2024-02-18 23:08:53.699278
+lastmod: 2024-02-19 22:04:59.833394
 model: gpt-4-0125-preview
 summary: "I programvareutvikling er det ofte n\xF8dvendig \xE5 sjekke om en mappe\
   \ eksisterer for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5 f\xE5 tilgang til,\

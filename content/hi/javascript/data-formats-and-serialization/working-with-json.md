@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:01.867100-07:00
@@ -14,7 +12,7 @@ description: "JSON (\u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F
   \u094B\u0924\u093E \u0939\u0948 \u0914\u0930 \u092E\u0936\u0940\u0928\u094B\u0902\
   \ \u0926\u094D\u0935\u093E\u0930\u093E \u092A\u093E\u0930\u094D\u0938 \u0914\u0930\
   \ \u091C\u0947\u0928\u0930\u0947\u091F\u2026"
-lastmod: 2024-02-18 23:09:04.082430
+lastmod: 2024-02-19 22:05:12.063646
 model: gpt-4-0125-preview
 summary: "JSON (\u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F\u092A\
   \u094D\u091F \u0911\u092C\u094D\u091C\u0947\u0915\u094D\u091F \u0928\u094B\u091F\

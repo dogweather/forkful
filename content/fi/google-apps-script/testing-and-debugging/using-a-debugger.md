@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:35.319760-07:00
 description: "Google Apps Scriptin (GAS) virheenkorjaus k\xE4sitt\xE4\xE4 prosessin,\
   \ jossa skripteist\xE4 tunnistetaan ja poistetaan virheit\xE4. N\xE4m\xE4 skriptit\
   \ on tarkoitettu Google\u2026"
-lastmod: 2024-02-18 23:09:07.140725
+lastmod: 2024-02-19 22:05:15.017733
 model: gpt-4-0125-preview
 summary: "Google Apps Scriptin (GAS) virheenkorjaus k\xE4sitt\xE4\xE4 prosessin, jossa\
   \ skripteist\xE4 tunnistetaan ja poistetaan virheit\xE4. N\xE4m\xE4 skriptit on\

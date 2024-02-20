@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:19.754490-07:00
@@ -13,7 +11,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD5
   \uB294 \uB0A0\uC9DC \uBE44\uAD50, \uC5F0\uC0B0, \uD3EC\uB9F7\uD305 \uBC0F \uC9C0\
   \uC5ED\uD654\uC640 \uAC19\uC740 \uC791\uC5C5\uC744 \uAC00\uB2A5\uD558\uAC8C \uD558\
   \uC5EC \uC18C\uD504\uD2B8\uC6E8\uC5B4\uC5D0\uC11C \uC2A4\uCF00\uC904\uB9C1,\u2026"
-lastmod: 2024-02-18 23:09:06.896543
+lastmod: 2024-02-19 22:05:14.784735
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\uB294\
   \ \uAC83\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0 \uC778\uCF54\uB529\uB41C \uB0A0\uC9DC\

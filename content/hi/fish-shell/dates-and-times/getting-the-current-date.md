@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/fish-shell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:33.232090-07:00
@@ -14,7 +12,7 @@ description: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902
   \u0930\u093E\u092A\u094D\u0924 \u0915\u0930\u0928\u0947 \u0914\u0930 \u092E\u0947\
   \u0928\u093F\u092A\u0941\u0932\u0947\u091F \u0915\u0930\u0928\u0947 \u0915\u0940\
   \ \u0905\u0928\u0941\u092E\u0924\u093F \u0926\u0947\u0924\u093E\u2026"
-lastmod: 2024-02-18 23:09:04.148459
+lastmod: 2024-02-19 22:05:12.124296
 model: gpt-4-0125-preview
 summary: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
   \ \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928 \u0926\u093F\u0928\

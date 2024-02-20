@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/arduino/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:55.440404-07:00
 description: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som definerer s\xF8\
   kem\xF8nstre, prim\xE6rt brukt for strengsammenligning og manipulering. Programmerere\
   \ utnytter\u2026"
-lastmod: 2024-02-18 23:08:54.131979
+lastmod: 2024-02-19 22:05:00.319611
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som definerer s\xF8kem\xF8\
   nstre, prim\xE6rt brukt for strengsammenligning og manipulering. Programmerere utnytter\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/haskell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:50.079146-07:00
 description: "Regul\xE4re Ausdr\xFCcke in der Programmierung sind Zeichenfolgen, die\
   \ ein Suchmuster definieren und typischerweise f\xFCr die Suche und Manipulation\
   \ von\u2026"
-lastmod: 2024-02-18 23:09:04.906042
+lastmod: 2024-02-19 22:05:12.848540
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke in der Programmierung sind Zeichenfolgen, die ein\
   \ Suchmuster definieren und typischerweise f\xFCr die Suche und Manipulation von\u2026"

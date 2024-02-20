@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/swift/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:22.743644-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
   \ y generar datos estructurados a partir de archivos de texto donde cada l\xEDnea\u2026"
-lastmod: 2024-02-18 23:09:10.382688
+lastmod: 2024-02-19 22:05:17.943652
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
   \ y generar datos estructurados a partir de archivos de texto donde cada l\xEDnea\u2026"

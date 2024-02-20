@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/typescript/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:34.386349-07:00
@@ -13,7 +11,7 @@ description: "Read-Eval-Print-Loop (REPL) \u2014 \u044D\u0442\u043E \u043F\u0440
   \ \u0438 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0440\u0435\
   \u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\
   \u0430\u0442\u0435\u043B\u044E.\u2026"
-lastmod: 2024-02-18 23:08:56.686974
+lastmod: 2024-02-19 22:05:03.501228
 model: gpt-4-0125-preview
 summary: "Read-Eval-Print-Loop (REPL) \u2014 \u044D\u0442\u043E \u043F\u0440\u043E\
   \u0433\u0440\u0430\u043C\u043C\u043D\u0430\u044F \u0441\u0440\u0435\u0434\u0430\

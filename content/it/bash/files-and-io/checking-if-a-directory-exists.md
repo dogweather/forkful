@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:41.913627-07:00
 description: "Nella programmazione Bash, verificare se una directory esiste \xE8 un\
   \ meccanismo di controllo essenziale usato per verificare la presenza di una directory\u2026"
-lastmod: 2024-02-18 23:08:56.066122
+lastmod: 2024-02-19 22:05:02.686197
 model: gpt-4-0125-preview
 summary: "Nella programmazione Bash, verificare se una directory esiste \xE8 un meccanismo\
   \ di controllo essenziale usato per verificare la presenza di una directory\u2026"

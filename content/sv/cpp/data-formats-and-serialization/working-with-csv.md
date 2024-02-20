@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/cpp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:12.731212-07:00
 description: "Att arbeta med CSV-filer (v\xE4rden separerade med kommatecken) handlar\
   \ om att bearbeta och manipulera data lagrad i ett enkelt textformat, d\xE4r varje\
   \ rad i\u2026"
-lastmod: 2024-02-18 23:08:52.105511
+lastmod: 2024-02-19 22:04:57.470223
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (v\xE4rden separerade med kommatecken) handlar\
   \ om att bearbeta och manipulera data lagrad i ett enkelt textformat, d\xE4r varje\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/python/sending-an-http-request/
 date: 2024-01-20 18:00:13.264394-07:00
 description: "Enviar una solicitud HTTP significa pedirle algo a un servidor web.\
   \ Programadores hacen esto para interactuar con APIs, descargar archivos o comunicarse\u2026"
-lastmod: 2024-02-18 23:09:09.552779
+lastmod: 2024-02-19 22:05:17.202907
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP significa pedirle algo a un servidor web. Programadores\
   \ hacen esto para interactuar con APIs, descargar archivos o comunicarse\u2026"

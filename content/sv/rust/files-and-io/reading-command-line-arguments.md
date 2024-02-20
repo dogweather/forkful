@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/reading-command-line-arguments/
 date: 2024-01-20 17:56:44.488223-07:00
 description: "L\xE4sning av kommandoradsargument l\xE5ter programmet hantera indata\
   \ den f\xE5r vid start. Programmerare g\xF6r detta f\xF6r att till\xE5ta flexibilitet\
   \ och\u2026"
-lastmod: 2024-02-18 23:08:51.598705
+lastmod: 2024-02-19 22:04:56.918990
 model: gpt-4-1106-preview
 summary: "L\xE4sning av kommandoradsargument l\xE5ter programmet hantera indata den\
   \ f\xE5r vid start. Programmerare g\xF6r detta f\xF6r att till\xE5ta flexibilitet\

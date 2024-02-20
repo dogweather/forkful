@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/creating-a-temporary-file/
 date: 2024-01-20 17:40:37.906889-07:00
 description: "Tillf\xE4lliga filer \xE4r tempor\xE4ra storage-enheter som program\
   \ anv\xE4nder f\xF6r att hantera data under k\xF6rning. Programmerare skapar dem\
   \ f\xF6r att f\xF6rhindra\u2026"
-lastmod: 2024-02-18 23:08:51.771557
+lastmod: 2024-02-19 22:04:57.105890
 model: gpt-4-1106-preview
 summary: "Tillf\xE4lliga filer \xE4r tempor\xE4ra storage-enheter som program anv\xE4\
   nder f\xF6r att hantera data under k\xF6rning. Programmerare skapar dem f\xF6r att\

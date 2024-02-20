@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/reading-command-line-arguments/
 date: 2024-01-20 17:55:42.179585-07:00
 description: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uD504\
   \uB85C\uADF8\uB7A8 \uC2E4\uD589 \uC2DC \uC0AC\uC6A9\uC790\uAC00 \uC81C\uACF5\uD55C\
@@ -10,7 +8,7 @@ description: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\uC740 \u
   \uB85C \uC870\uC815\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.707626
+lastmod: 2024-02-19 22:05:14.603452
 model: gpt-4-1106-preview
 summary: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uD504\uB85C\
   \uADF8\uB7A8 \uC2E4\uD589 \uC2DC \uC0AC\uC6A9\uC790\uAC00 \uC81C\uACF5\uD55C \uC635\

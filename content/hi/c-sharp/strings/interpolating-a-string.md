@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c-sharp/interpolating-a-string/
 date: 2024-01-20 17:50:25.589944-07:00
 description: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\
   \u0948 \u091C\u093F\u0938\u0938\u0947 \u0939\u092E variables \u0914\u0930 expressions\
@@ -9,7 +7,7 @@ description: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \
   \u0921 \u0915\u094B \u0914\u0930 \u0905\u0927\u093F\u0915 \u092A\u0920\u0928\u0940\
   \u092F \u0914\u0930 \u092E\u0947\u0902\u091F\u0947\u0928 \u0915\u0930\u0928\u0947\
   \ \u092E\u0947\u0902\u2026"
-lastmod: 2024-02-18 23:09:03.320594
+lastmod: 2024-02-19 22:05:11.314016
 model: gpt-4-1106-preview
 summary: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\u0948\
   \ \u091C\u093F\u0938\u0938\u0947 \u0939\u092E variables \u0914\u0930 expressions\

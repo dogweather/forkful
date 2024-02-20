@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/lua/refactoring/
 date: 2024-01-26 01:45:42.902855-07:00
 description: "Refactorizar es el arte de ajustar c\xF3digo existente para mejorar\
   \ su estructura, legibilidad y eficiencia sin alterar su comportamiento externo.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.128553
+lastmod: 2024-02-19 22:05:17.718046
 model: gpt-4-0125-preview
 summary: "Refactorizar es el arte de ajustar c\xF3digo existente para mejorar su estructura,\
   \ legibilidad y eficiencia sin alterar su comportamiento externo. Los\u2026"

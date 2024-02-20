@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:41.754667-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Rust polega na\
   \ usuni\u0119ciu zb\u0119dnych dodatkowych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105\
   \ otacza\u0107 dane tekstowe. Programi\u015Bci robi\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.378257
+lastmod: 2024-02-19 22:04:54.298396
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Rust polega na usuni\u0119\
   ciu zb\u0119dnych dodatkowych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 otacza\u0107\

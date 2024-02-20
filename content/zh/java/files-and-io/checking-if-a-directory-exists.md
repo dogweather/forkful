@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/java/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:58.107741-07:00
@@ -12,7 +10,7 @@ description: "\u5728Java\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u
   \u7EDF\u4EA4\u4E92\u7684\u7A0B\u5E8F\u4E2D\u51FA\u73B0\u9519\u8BEF\u6216\u5F02\u5E38\
   \u5F88\u5173\u952E\uFF0C\u786E\u4FDD\u7A0B\u5E8F\u6267\u884C\u66F4\u52A0\u987A\u7545\
   \uFF0C\u7528\u6237\u4F53\u9A8C\u66F4\u4F73\u3002"
-lastmod: 2024-02-18 23:08:59.033659
+lastmod: 2024-02-19 22:05:06.666238
 model: gpt-4-0125-preview
 summary: "\u5728Java\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u662F\u4E00\
   \u4E2A\u57FA\u672C\u4EFB\u52A1\uFF0C\u5B83\u6D89\u53CA\u5728\u4ECE\u76EE\u5F55\u8BFB\

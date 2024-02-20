@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/ruby/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:26.376529-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Ruby polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub informacji diagnostycznych do oddzielnego\
   \ strumienia\u2026"
-lastmod: 2024-02-18 23:08:50.141958
+lastmod: 2024-02-19 22:04:55.132194
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Ruby polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub informacji diagnostycznych do oddzielnego\

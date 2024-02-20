@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/interpolating-a-string/
 date: 2024-01-20 17:50:42.385195-07:00
 description: "\"Co i dlaczego?\" Interpolacja napis\xF3w to proces wstawiania warto\u015B\
   ci zmiennych do ci\u0105g\xF3w znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 tego,\
   \ aby tworzy\u0107 dynamiczne teksty i\u2026"
-lastmod: 2024-02-18 23:08:50.021484
+lastmod: 2024-02-19 22:04:54.977022
 model: gpt-4-1106-preview
 summary: "\"Co i dlaczego?\" Interpolacja napis\xF3w to proces wstawiania warto\u015B\
   ci zmiennych do ci\u0105g\xF3w znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 tego,\

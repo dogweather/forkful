@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/typescript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:47.769775-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD328\uD134\uC5D0 \uC77C\uCE58\uD558\
   \uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uC815\uD574\uC9C4\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD328\uD134\uC5D0 \uC77C\uCE58\uD5
   \uB97C \uC815\uC81C\uD558\uAC70\uB098 \uC785\uB825\uC744 \uAC80\uC99D\uD560 \uB54C\
   \ \uC774 \uBC29\uBC95\uC774 \uD754\uD788 \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.796334
+lastmod: 2024-02-19 22:05:13.708872
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294\
   \ \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uC815\uD574\uC9C4 \uADDC\

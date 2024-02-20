@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:11.822075-07:00
@@ -11,7 +9,7 @@ description: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u63D0\u53
   \u8BC1\u548C\u683C\u5F0F\u5316\u7B49\u4EFB\u52A1\uFF0C\u5728\u8FD9\u4E9B\u4EFB\u52A1\
   \u4E2D\uFF0C\u64CD\u7EB5\u548C\u63D0\u53D6\u6587\u672C\u6570\u636E\u7684\u4FE1\u606F\
   \u81F3\u5173\u91CD\u8981\u3002"
-lastmod: 2024-02-18 23:08:58.969804
+lastmod: 2024-02-19 22:05:06.578131
 model: gpt-4-0125-preview
 summary: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u63D0\u53D6\u5B50\
   \u5B57\u7B26\u4E32\u6D89\u53CA\u6839\u636E\u7ED9\u5B9A\u7684\u6807\u51C6\u9694\u79BB\

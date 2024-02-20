@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/go/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:26.774137-07:00
@@ -11,7 +9,7 @@ description: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB
   \u306B\u30D5\u30A3\u30FC\u30C9\u30D0\u30C3\u30AF\u3092\u5F97\u308B\u3053\u3068\u304C\
   \u3067\u304D\u307E\u3059\u3002\u3053\u306E\u30A2\u30D7\u30ED\u30FC\u30C1\u306F\u3001\
   \u5F93\u6765\u306E\u7DE8\u96C6-\u30B3\u30F3\u30D1\u30A4\u30EB-\u2026"
-lastmod: 2024-02-18 23:08:54.481464
+lastmod: 2024-02-19 22:05:00.656534
 model: gpt-4-0125-preview
 summary: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\u307E\
   \u305F\u306FRead-Eval-Print Loop\uFF08REPL\uFF09\u3092\u4F7F\u7528\u3059\u308B\u3068\

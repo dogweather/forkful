@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/refactoring/
 date: 2024-01-26 01:17:56.862409-07:00
 description: "Refaktorisering \xE4r i grund och botten v\xE5rst\xE4dning av din kodbas\
   \ \u2013 det handlar om att omstrukturera befintlig kod utan att \xE4ndra dess externa\
   \ beteende.\u2026"
-lastmod: 2024-02-18 23:08:51.717550
+lastmod: 2024-02-19 22:04:57.049397
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r i grund och botten v\xE5rst\xE4dning av din kodbas\
   \ \u2013 det handlar om att omstrukturera befintlig kod utan att \xE4ndra dess externa\

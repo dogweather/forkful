@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/powershell/downloading-a-web-page/
 date: 2024-01-20 17:44:23.682755-07:00
 description: "Scaricare una pagina web significa prendere il suo contenuto da internet\
   \ e salvarlo localmente. I programmatori lo fanno per analizzare dati, testare\u2026"
-lastmod: 2024-02-18 23:08:56.093346
+lastmod: 2024-02-19 22:05:02.715694
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa prendere il suo contenuto da internet\
   \ e salvarlo localmente. I programmatori lo fanno per analizzare dati, testare\u2026"

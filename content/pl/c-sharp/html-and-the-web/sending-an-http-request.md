@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/sending-an-http-request/
 date: 2024-01-20 17:59:47.152601-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikowanie si\u0119 z serwerem\
   \ \u2013 wysy\u0142asz komend\u0119, serwer odpowiada. Programi\u015Bci robi\u0105\
   \ to, by pobiera\u0107 dane, wysy\u0142a\u0107 informacje,\u2026"
-lastmod: 2024-02-18 23:08:49.607491
+lastmod: 2024-02-19 22:04:54.538291
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikowanie si\u0119 z serwerem\
   \ \u2013 wysy\u0142asz komend\u0119, serwer odpowiada. Programi\u015Bci robi\u0105\

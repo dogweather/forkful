@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/ruby/capitalizing-a-string/
 date: 2024-02-03 19:02:29.358527-07:00
 description: "Capitalizing a string in programming often refers to converting the\
   \ first character of a string to uppercase and the rest to lowercase. Programmers\
   \ do\u2026"
-lastmod: 2024-02-18 23:09:11.547189
+lastmod: 2024-02-19 22:05:18.995731
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in programming often refers to converting the first\
   \ character of a string to uppercase and the rest to lowercase. Programmers do\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c-sharp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:42.001160-07:00
 description: "Escrever no erro padr\xE3o (stderr) em C# envolve direcionar mensagens\
   \ de erro e diagn\xF3sticos separadamente da sa\xEDda regular (stdout) para ajudar\
   \ usu\xE1rios e\u2026"
-lastmod: 2024-02-18 23:08:58.173404
+lastmod: 2024-02-19 22:05:05.643310
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em C# envolve direcionar mensagens de\
   \ erro e diagn\xF3sticos separadamente da sa\xEDda regular (stdout) para ajudar\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elm/working-with-toml/
 date: 2024-01-26 04:21:28.530501-07:00
 description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C\
   , \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uC5B8\uC5B4\uC785\uB2C8\uB2E4. Elm \uD504\
@@ -9,7 +7,7 @@ description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85
   \uD551\uB418\uACE0 \uC0AC\uB78C\uC774 \uC77D\uAE30 \uC26C\uC6B4 \uC774\uC720\uB85C\
   \ \uAD6C\uC131 \uB370\uC774\uD130\uB97C \uAD00\uB9AC\uD558\uAE30 \uC704\uD574 \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.121274
+lastmod: 2024-02-19 22:05:14.056480
 model: gpt-4-0125-preview
 summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C, \uB370\
   \uC774\uD130 \uC9C1\uB82C\uD654 \uC5B8\uC5B4\uC785\uB2C8\uB2E4. Elm \uD504\uB85C\

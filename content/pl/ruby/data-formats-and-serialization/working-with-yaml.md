@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/ruby/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:32.647378-07:00
 description: "YAML, co oznacza YAML Ain't Markup Language (YAML to nie j\u0119zyk\
   \ znacznik\xF3w), jest intensywnie u\u017Cywany w Ruby dla plik\xF3w konfiguracyjnych\
   \ oraz serializacji\u2026"
-lastmod: 2024-02-18 23:08:50.145643
+lastmod: 2024-02-19 22:04:55.136094
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza YAML Ain't Markup Language (YAML to nie j\u0119zyk znacznik\xF3\
   w), jest intensywnie u\u017Cywany w Ruby dla plik\xF3w konfiguracyjnych oraz serializacji\u2026"

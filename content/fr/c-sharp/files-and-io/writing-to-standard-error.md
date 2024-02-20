@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c-sharp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:39.263891-07:00
 description: "\xC9crire sur l'erreur standard (stderr) en C# implique de diriger les\
   \ messages d'erreur et les diagnostics s\xE9par\xE9ment de la sortie r\xE9guli\xE8\
   re (stdout) pour\u2026"
-lastmod: 2024-02-18 23:09:08.845903
+lastmod: 2024-02-19 22:05:16.545080
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en C# implique de diriger les messages\
   \ d'erreur et les diagnostics s\xE9par\xE9ment de la sortie r\xE9guli\xE8re (stdout)\

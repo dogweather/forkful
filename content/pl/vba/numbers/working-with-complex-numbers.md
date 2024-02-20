@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:01.647764-07:00
 description: "Praca z liczbami zespolonymi polega na wykonywaniu operacji matematycznych\
   \ na liczbach, kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105\
   , jak i urojon\u0105. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:49.427250
+lastmod: 2024-02-19 22:04:54.351325
 model: gpt-4-0125-preview
 summary: "Praca z liczbami zespolonymi polega na wykonywaniu operacji matematycznych\
   \ na liczbach, kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105\

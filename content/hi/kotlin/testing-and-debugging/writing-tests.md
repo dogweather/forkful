@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/kotlin/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:50.902257-07:00
@@ -14,7 +12,7 @@ description: "Kotlin \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u09
   \ \u0938\u094D\u0928\u093F\u092A\u0947\u091F\u094D\u0938 \u0915\u094B \u0924\u0948\
   \u092F\u093E\u0930 \u0915\u0930\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0939\
   \u0948,\u2026"
-lastmod: 2024-02-18 23:09:03.275196
+lastmod: 2024-02-19 22:05:11.269149
 model: gpt-4-0125-preview
 summary: "Kotlin \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u0923 (Tests)\
   \ \u0932\u093F\u0916\u0928\u093E \u0906\u092A\u0915\u0947 \u0938\u0949\u092B\u094D\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/swift/rounding-numbers/
 date: 2024-01-26 03:46:53.768510-07:00
 description: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una\
   \ precisi\xF3n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados.\
   \ Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.352269
+lastmod: 2024-02-19 22:05:17.916331
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una precisi\xF3\
   n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados. Los programadores\u2026"

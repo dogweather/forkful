@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c-sharp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:23.304138-07:00
 description: "C#:ssa t\xE4m\xE4nhetkisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen tarkoittaa\
   \ j\xE4rjestelm\xE4st\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tietojen noutamista.\
   \ Ohjelmoijat tarvitsevat usein p\xE4\xE4sy\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.632038
+lastmod: 2024-02-19 22:05:15.477153
 model: gpt-4-0125-preview
 summary: "C#:ssa t\xE4m\xE4nhetkisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen tarkoittaa\
   \ j\xE4rjestelm\xE4st\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tietojen noutamista.\

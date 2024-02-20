@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/rust/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:18.991405-07:00
 description: "Code organiseren in functies gaat over het opsplitsen van je programma\
   \ in herbruikbare, modulaire stukken die door een naam ge\xEFdentificeerd worden.\
   \ We\u2026"
-lastmod: 2024-02-18 23:09:01.625400
+lastmod: 2024-02-19 22:05:09.648154
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies gaat over het opsplitsen van je programma in\
   \ herbruikbare, modulaire stukken die door een naam ge\xEFdentificeerd worden. We\u2026"

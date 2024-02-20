@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:14.392285-07:00
@@ -13,7 +11,7 @@ description: "Python\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30\uB
   \uC758 \uC800\uC7A5\uC5D0 \uD544\uC218\uC801\uC774\uC5B4\uC11C \uD504\uB85C\uADF8\
   \uB798\uBA38\uC758 \uAE30\uBCF8\uC801\uC774\uBA74\uC11C\uB3C4 \uD544\uC218\uC801\
   \uC778 \uB3C4\uAD6C\uB85C \uB9CC\uB4ED\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.653619
+lastmod: 2024-02-19 22:05:13.567426
 model: gpt-4-0125-preview
 summary: "Python\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30\uB294 \uD30C\
   \uC77C\uC744 \uC0DD\uC131\uD558\uAC70\uB098 \uC5F4\uACE0 \uD14D\uC2A4\uD2B8\uB97C\

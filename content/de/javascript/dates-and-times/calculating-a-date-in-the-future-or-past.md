@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:11.852953-07:00
 description: "Datum-Berechnungen sind n\xF6tig, um Vergangenheits- oder Zukunftsdaten\
   \ zu ermitteln. Programmierer nutzen dies f\xFCr Features wie Erinnerungen, Zeitabl\xE4\
   ufe\u2026"
-lastmod: 2024-02-18 23:09:05.293002
+lastmod: 2024-02-19 22:05:13.217248
 model: gpt-4-1106-preview
 summary: "Datum-Berechnungen sind n\xF6tig, um Vergangenheits- oder Zukunftsdaten\
   \ zu ermitteln. Programmierer nutzen dies f\xFCr Features wie Erinnerungen, Zeitabl\xE4\

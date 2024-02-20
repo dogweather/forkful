@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/starting-a-new-project/
 date: 2024-01-20 18:03:22.413063-07:00
 description: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour\
   \ d\xE9velopper une application. Les programmeurs font \xE7a pour organiser le code,\
   \ g\xE9rer les\u2026"
-lastmod: 2024-02-18 23:09:08.387503
+lastmod: 2024-02-19 22:05:16.181438
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour d\xE9\
   velopper une application. Les programmeurs font \xE7a pour organiser le code, g\xE9\

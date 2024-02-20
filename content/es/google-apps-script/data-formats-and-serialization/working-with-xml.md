@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/working-with-xml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:25.301285-07:00
 description: "Trabajar con XML en Google Apps Script permite a los programadores analizar,\
   \ manipular y generar datos XML, esencial para servicios web y configuraciones.\u2026"
-lastmod: 2024-02-18 23:09:09.536864
+lastmod: 2024-02-19 22:05:17.188522
 model: gpt-4-0125-preview
 summary: "Trabajar con XML en Google Apps Script permite a los programadores analizar,\
   \ manipular y generar datos XML, esencial para servicios web y configuraciones.\u2026"

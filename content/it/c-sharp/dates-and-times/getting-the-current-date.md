@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c-sharp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:13.729724-07:00
 description: "Ottenere la data corrente in C# implica il recupero dei dettagli della\
   \ data e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di\u2026"
-lastmod: 2024-02-18 23:08:55.898647
+lastmod: 2024-02-19 22:05:02.508175
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in C# implica il recupero dei dettagli della data\
   \ e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di\u2026"

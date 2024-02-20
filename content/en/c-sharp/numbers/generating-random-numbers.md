@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/generating-random-numbers/
 date: 2024-01-27 20:26:21.009989-07:00
 description: "Generating random numbers in C# involves the creation of unpredictable\
   \ numeric values within a specified range. Programmers use these methods to implement\u2026"
-lastmod: 2024-02-18 23:09:11.050336
+lastmod: 2024-02-19 22:05:18.550440
 model: gpt-4-0125-preview
 summary: "Generating random numbers in C# involves the creation of unpredictable numeric\
   \ values within a specified range. Programmers use these methods to implement\u2026"

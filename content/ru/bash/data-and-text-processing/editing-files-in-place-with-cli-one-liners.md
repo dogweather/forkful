@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/bash/editing-files-in-place-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:58:49.299313-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044C\u0442\u0435
   \u043D\u043D\u044B\u0445 \u0444\u0430\u0439\u043B\u043E\u0432 \u043D\u0430 \u0432\
   \u0430\u0448\u0435\u043C \u0441\u0435\u0440\u0432\u0435\u0440\u0435. \u0412\u044B\
   \ \u043C\u043E\u0433\u043B\u0438 \u0431\u044B\u2026"
-lastmod: 2024-02-18 23:08:57.198710
+lastmod: 2024-02-19 22:05:04.329508
 model: gpt-4-0125-preview
 summary: "\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044C\u0442\u0435, \u0447\
   \u0442\u043E \u0432\u044B \u0442\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u043E\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /en/python/interpolating-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 date: 2024-01-20 17:51:28.373461-07:00
 description: "String interpolation is the method of embedding expressions within string\
   \ literals. Programmers use it to dynamically insert values into strings, which\u2026"
-lastmod: 2024-02-18 23:09:10.667670
+lastmod: 2024-02-19 22:05:18.202538
 model: gpt-4-1106-preview
 summary: "String interpolation is the method of embedding expressions within string\
   \ literals. Programmers use it to dynamically insert values into strings, which\u2026"

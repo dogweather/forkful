@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/concatenating-strings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:53.673816-07:00
 description: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 eller\
   \ flera str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng. Programmerare\
   \ utf\xF6r denna operation f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.241602
+lastmod: 2024-02-19 22:04:57.625266
 model: gpt-4-0125-preview
 summary: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 eller flera\
   \ str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng. Programmerare utf\xF6\

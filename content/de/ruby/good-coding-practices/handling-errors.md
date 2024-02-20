@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/handling-errors/
 date: 2024-01-26 00:57:03.472496-07:00
 description: "Fehlerbehandlung geht darum, in Codes das Unerwartete zu erwarten \u2013\
   \ Fehler und Probleme anmutig zu managen, ohne dass das Programm abst\xFCrzt. Entwickler\u2026"
-lastmod: 2024-02-18 23:09:05.431190
+lastmod: 2024-02-19 22:05:13.350598
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung geht darum, in Codes das Unerwartete zu erwarten \u2013\
   \ Fehler und Probleme anmutig zu managen, ohne dass das Programm abst\xFCrzt. Entwickler\u2026"

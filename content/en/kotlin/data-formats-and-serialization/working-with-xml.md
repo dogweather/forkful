@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/working-with-xml/
 date: 2024-01-25 03:39:32.673164-07:00
 description: "Working with XML involves parsing, creating, and manipulating XML documents\u2014\
   a markup language for data storage and transfer. Programmers do it because\u2026"
-lastmod: 2024-02-18 23:09:11.036856
+lastmod: 2024-02-19 22:05:18.538064
 model: gpt-4-1106-preview
 summary: "Working with XML involves parsing, creating, and manipulating XML documents\u2014\
   a markup language for data storage and transfer. Programmers do it because\u2026"

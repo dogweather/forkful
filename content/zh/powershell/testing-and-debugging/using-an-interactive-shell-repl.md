@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/powershell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:50.929403-07:00
 description: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\
   \u5FAA\u73AF\uFF08REPL\uFF09\uFF0C\u8BA9\u4F60\u80FD\u591F\u8F93\u5165PowerShell\u547D\
@@ -8,7 +6,7 @@ description: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8BFB\u53D6-\u6C42\u503C-\u625
   \u5B83\u6765\u5FEB\u901F\u6D4B\u8BD5\u4EE3\u7801\u7247\u6BB5\u3001\u8C03\u8BD5\u6216\
   \u5728\u4E0D\u7F16\u5199\u5B8C\u6574\u811A\u672C\u7684\u60C5\u51B5\u4E0B\u5B66\u4E60\
   \u65B0\u547D\u4EE4\u3002"
-lastmod: 2024-02-18 23:08:59.333462
+lastmod: 2024-02-19 22:05:07.066800
 model: gpt-4-0125-preview
 summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\
   \u5FAA\u73AF\uFF08REPL\uFF09\uFF0C\u8BA9\u4F60\u80FD\u591F\u8F93\u5165PowerShell\u547D\

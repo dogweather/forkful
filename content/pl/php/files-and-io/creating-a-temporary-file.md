@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/creating-a-temporary-file/
 date: 2024-01-20 17:41:21.884177-07:00
 description: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo,\
   \ zanim uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105\
   \ to, by zarz\u0105dza\u0107 danymi\u2026"
-lastmod: 2024-02-18 23:08:49.716005
+lastmod: 2024-02-19 22:04:54.652098
 model: gpt-4-1106-preview
 summary: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo, zanim\
   \ uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105 to, by\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/powershell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:09.279202-07:00
@@ -14,7 +12,7 @@ description: "PowerShell\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u
   \u81EA\u52D5\u5316\u3001\u30C7\u30FC\u30BF\u5206\u6790\u3001\u4ED6\u306E\u30A2\u30D7\
   \u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u3084\u30B9\u30AF\u30EA\u30D7\u30C8\u3068\u306E\
   \u7D71\u5408\u3092\u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.131448
+lastmod: 2024-02-19 22:05:01.581847
 model: gpt-4-0125-preview
 summary: "PowerShell\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u3092\u66F8\
   \u304F\u3053\u3068\u306F\u3001\u30C6\u30AD\u30B9\u30C8\u30D9\u30FC\u30B9\u306E\u30D5\

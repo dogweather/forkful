@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:15.859130-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Ruby gj\xF8r det mulig for programmerere\
   \ \xE5 bekrefte tilstedev\xE6relsen av en mappe f\xF8r de utf\xF8rer operasjoner\
   \ som \xE5 lese\u2026"
-lastmod: 2024-02-18 23:08:54.452270
+lastmod: 2024-02-19 22:05:00.615802
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Ruby gj\xF8r det mulig for programmerere\
   \ \xE5 bekrefte tilstedev\xE6relsen av en mappe f\xF8r de utf\xF8rer operasjoner\

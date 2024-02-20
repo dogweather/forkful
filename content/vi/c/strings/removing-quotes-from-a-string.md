@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:33.310842-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t
   i trong C bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t n\u1ED9i dung v\u0103n b\u1EA3\
   n m\xE0 kh\xF4ng c\u1EA7n d\u1EA5u ngo\u1EB7c \u0111\u01A1n (' ') ho\u1EB7c d\u1EA5\
   u ngo\u1EB7c k\xE9p (\" \"). Qu\xE1\u2026"
-lastmod: 2024-02-18 23:08:51.220417
+lastmod: 2024-02-19 22:04:56.487620
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
   i trong C bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t n\u1ED9i dung v\u0103n b\u1EA3\

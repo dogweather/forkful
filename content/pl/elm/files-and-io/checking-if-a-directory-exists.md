@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elm/checking-if-a-directory-exists/
 date: 2024-01-19
 description: "\"Co i dlaczego?\" Sprawdzanie istnienia katalogu pozwala potwierdzi\u0107\
   , czy dany folder jest dost\u0119pny w systemie plik\xF3w. Programi\u015Bci robi\u0105\
   \ to, aby unikn\u0105\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.532768
+lastmod: 2024-02-19 22:04:54.466821
 summary: "\"Co i dlaczego?\" Sprawdzanie istnienia katalogu pozwala potwierdzi\u0107\
   , czy dany folder jest dost\u0119pny w systemie plik\xF3w. Programi\u015Bci robi\u0105\
   \ to, aby unikn\u0105\u0107\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/javascript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:01.999548-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w JavaScript jest podstawowym zadaniem,\
   \ obejmuj\u0105cym pobieranie i ewentualnie manipulowanie dzisiejsz\u0105 dat\u0105\
   \ i czasem. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:50.004000
+lastmod: 2024-02-19 22:04:54.958105
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w JavaScript jest podstawowym zadaniem,\
   \ obejmuj\u0105cym pobieranie i ewentualnie manipulowanie dzisiejsz\u0105 dat\u0105\

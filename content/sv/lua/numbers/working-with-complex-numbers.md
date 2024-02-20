@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/working-with-complex-numbers/
 date: 2024-01-26 04:43:29.358433-07:00
 description: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till ett\
   \ tv\xE5dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel.\
   \ Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.912773
+lastmod: 2024-02-19 22:04:57.258974
 model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till ett tv\xE5\
   dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel. Programmerare\u2026"

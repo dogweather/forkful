@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/fish-shell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:37.073119-07:00
 description: "Las expresiones regulares (regex) en Fish Shell te permiten buscar,\
   \ coincidir y manipular cadenas basadas en patrones espec\xEDficos. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.439991
+lastmod: 2024-02-19 22:05:17.994292
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Fish Shell te permiten buscar, coincidir\
   \ y manipular cadenas basadas en patrones espec\xEDficos. Los programadores\u2026"

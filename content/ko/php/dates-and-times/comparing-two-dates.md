@@ -1,13 +1,11 @@
 ---
-aliases:
-- /ko/php/comparing-two-dates/
 date: 2024-01-20 17:33:56.746970-07:00
 description: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74 \uD2B9\uC815\
   \ \uB450 \uC2DC\uC810\uC744 \uB300\uC870\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC77C\
   \uC815 \uAD00\uB9AC, \uB370\uC774\uD130 \uC815\uB82C, \uC720\uD6A8 \uAE30\uAC04\
   \ \uD655\uC778 \uAC19\uC740 \uACBD\uC6B0\uC5D0 \uC4F0\uC5EC\uC694."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.371947
+lastmod: 2024-02-19 22:05:14.287416
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74 \uD2B9\uC815 \uB450\
   \ \uC2DC\uC810\uC744 \uB300\uC870\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC77C\uC815\

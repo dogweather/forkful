@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/using-a-debugger/
 date: 2024-01-26 03:48:39.304563-07:00
 description: "L'utilisation d'un d\xE9bogueur est essentiellement une question d'\xE9\
   limination des bugs \u2013 ces erreurs r\xE9pugnantes et chronophages dans votre\
   \ code. Les\u2026"
-lastmod: 2024-02-18 23:09:09.310845
+lastmod: 2024-02-19 22:05:16.979397
 model: gpt-4-0125-preview
 summary: "L'utilisation d'un d\xE9bogueur est essentiellement une question d'\xE9\
   limination des bugs \u2013 ces erreurs r\xE9pugnantes et chronophages dans votre\

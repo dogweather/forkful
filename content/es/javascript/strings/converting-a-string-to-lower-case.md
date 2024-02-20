@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/javascript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:53.186882-07:00
 description: "Convertir una cadena a min\xFAsculas es transformar todos los caracteres\
   \ alfab\xE9ticos en un texto para que no haya may\xFAsculas. Se hace para estandarizar\u2026"
-lastmod: 2024-02-18 23:09:10.390377
+lastmod: 2024-02-19 22:05:17.950277
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas es transformar todos los caracteres\
   \ alfab\xE9ticos en un texto para que no haya may\xFAsculas. Se hace para estandarizar\u2026"

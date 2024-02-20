@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elixir/organizing-code-into-functions/
 date: 2024-01-26 01:09:26.706817-07:00
 description: "Organizar el c\xF3digo en funciones significa agrupar operaciones relacionadas\
   \ en bloques reutilizables. Lo hacemos para mejorar la legibilidad y\u2026"
-lastmod: 2024-02-18 23:09:09.654517
+lastmod: 2024-02-19 22:05:17.294797
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones significa agrupar operaciones relacionadas\
   \ en bloques reutilizables. Lo hacemos para mejorar la legibilidad y\u2026"

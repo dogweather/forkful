@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/kotlin/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:10.890579-07:00
 description: "Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie\
   \ i generowanie danych JSON. Programi\u015Bci robi\u0105 to, aby \u0142atwo wymienia\u0107\
   \ dane\u2026"
-lastmod: 2024-02-18 23:08:49.590506
+lastmod: 2024-02-19 22:04:54.519104
 model: gpt-4-0125-preview
 summary: "Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie\
   \ i generowanie danych JSON. Programi\u015Bci robi\u0105 to, aby \u0142atwo wymienia\u0107\

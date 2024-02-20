@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/generating-random-numbers/
 date: 2024-01-27 20:35:24.712662-07:00
 description: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa ep\xE4determinististen\
   \ tai ennustamattomien numeeristen arvojen luomista. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t\u2026"
-lastmod: 2024-02-18 23:09:07.985227
+lastmod: 2024-02-19 22:05:15.798402
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa ep\xE4determinististen\
   \ tai ennustamattomien numeeristen arvojen luomista. Ohjelmoijat k\xE4ytt\xE4v\xE4\

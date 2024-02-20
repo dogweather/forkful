@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:04.191292-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
   \ um m\xE9todo de incluir credenciais de usu\xE1rio e senha na cabe\xE7alho de uma\
   \ requisi\xE7\xE3o para acessar\u2026"
-lastmod: 2024-02-18 23:08:58.157244
+lastmod: 2024-02-19 22:05:05.626105
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 um\
   \ m\xE9todo de incluir credenciais de usu\xE1rio e senha na cabe\xE7alho de uma\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:48.339093-07:00
 description: "Extraire des sous-cha\xEEnes consiste \xE0 prendre une portion d'une\
   \ cha\xEEne de caract\xE8res - en cr\xE9ant essentiellement une nouvelle cha\xEE\
   ne \xE0 partir d'une partie\u2026"
-lastmod: 2024-02-18 23:09:08.274487
+lastmod: 2024-02-19 22:05:16.079631
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes consiste \xE0 prendre une portion d'une cha\xEE\
   ne de caract\xE8res - en cr\xE9ant essentiellement une nouvelle cha\xEEne \xE0 partir\

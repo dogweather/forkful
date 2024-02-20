@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/downloading-a-web-page/
 date: 2024-01-20 17:43:19.436091-07:00
 description: "Scaricare una pagina web significa prelevare tutti i dati che la compongono\
   \ dalla rete per salvarla localmente. I programmatori fanno ci\xF2 per analizzare\u2026"
-lastmod: 2024-02-18 23:08:56.051442
+lastmod: 2024-02-19 22:05:02.669658
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa prelevare tutti i dati che la compongono\
   \ dalla rete per salvarla localmente. I programmatori fanno ci\xF2 per analizzare\u2026"

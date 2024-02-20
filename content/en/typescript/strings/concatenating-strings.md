@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/concatenating-strings/
 date: 2024-01-20 17:35:31.345834-07:00
 description: "Concatenating strings is sticking two or more strings together to form\
   \ one. Programmers do it to construct messages, create dynamic content, or anything\u2026"
-lastmod: 2024-02-18 23:09:10.799409
+lastmod: 2024-02-19 22:05:18.321124
 model: gpt-4-1106-preview
 summary: "Concatenating strings is sticking two or more strings together to form one.\
   \ Programmers do it to construct messages, create dynamic content, or anything\u2026"

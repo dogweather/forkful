@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/javascript/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:00.948515-07:00
 description: "Code organiseren in functies verdeelt taken in herbruikbare stukken,\
   \ waardoor de code schoner en beter onderhoudbaar wordt. Dit doen we om redundantie\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:02.282078
+lastmod: 2024-02-19 22:05:10.293747
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies verdeelt taken in herbruikbare stukken, waardoor\
   \ de code schoner en beter onderhoudbaar wordt. Dit doen we om redundantie te\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/using-a-debugger/
 date: 2024-01-26 03:50:35.687650-07:00
 description: "Un depurador es una herramienta que ayuda a los programadores a entender\
   \ qu\xE9 est\xE1 haciendo su c\xF3digo realmente mientras se ejecuta. Es la lupa\
   \ que nos\u2026"
-lastmod: 2024-02-18 23:09:10.078831
+lastmod: 2024-02-19 22:05:17.672489
 model: gpt-4-0125-preview
 summary: "Un depurador es una herramienta que ayuda a los programadores a entender\
   \ qu\xE9 est\xE1 haciendo su c\xF3digo realmente mientras se ejecuta. Es la lupa\

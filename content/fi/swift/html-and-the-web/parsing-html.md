@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/swift/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:30.800522-07:00
 description: "HTML:n j\xE4sent\xE4minen viittaa HTML-sis\xE4ll\xF6n rakenteen purkamiseen\
   \ ja tulkitsemiseen, tyypillisesti tiettyjen tietojen poimimiseksi tai t\xE4m\xE4\
   n sis\xE4ll\xF6n\u2026"
-lastmod: 2024-02-18 23:09:07.987343
+lastmod: 2024-02-19 22:05:15.800336
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen viittaa HTML-sis\xE4ll\xF6n rakenteen purkamiseen\
   \ ja tulkitsemiseen, tyypillisesti tiettyjen tietojen poimimiseksi tai t\xE4m\xE4\

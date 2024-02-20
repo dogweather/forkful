@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/java/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:52.664013-07:00
 description: "W Javie tablice asocjacyjne, czyli mapy, pozwalaj\u0105 przechowywa\u0107\
   \ pary klucz-warto\u015B\u0107 do wydajnego wyszukiwania i manipulowania danymi.\
   \ Programi\u015Bci u\u017Cywaj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.470941
+lastmod: 2024-02-19 22:04:54.398545
 model: gpt-4-0125-preview
 summary: "W Javie tablice asocjacyjne, czyli mapy, pozwalaj\u0105 przechowywa\u0107\
   \ pary klucz-warto\u015B\u0107 do wydajnego wyszukiwania i manipulowania danymi.\

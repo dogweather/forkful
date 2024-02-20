@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/arduino/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:58.557754-07:00
 description: "Datum-Berechnungen erlauben die Ermittlung vergangener oder zuk\xFC\
   nftiger Tage. Programmierer nutzen diese, um Zeitintervalle zu verwalten, Ereignisse\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.159605
+lastmod: 2024-02-19 22:05:13.091277
 model: gpt-4-1106-preview
 summary: "Datum-Berechnungen erlauben die Ermittlung vergangener oder zuk\xFCnftiger\
   \ Tage. Programmierer nutzen diese, um Zeitintervalle zu verwalten, Ereignisse zu\u2026"

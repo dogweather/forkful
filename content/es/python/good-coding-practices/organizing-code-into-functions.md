@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/python/organizing-code-into-functions/
 date: 2024-01-26 01:11:44.189681-07:00
 description: "Organizar el c\xF3digo en funciones consiste en desglosar tu c\xF3digo\
   \ en bloques reutilizables con fines espec\xEDficos. Lo hacemos para que el c\xF3\
   digo sea m\xE1s\u2026"
-lastmod: 2024-02-18 23:09:09.562428
+lastmod: 2024-02-19 22:05:17.211777
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones consiste en desglosar tu c\xF3digo en\
   \ bloques reutilizables con fines espec\xEDficos. Lo hacemos para que el c\xF3digo\

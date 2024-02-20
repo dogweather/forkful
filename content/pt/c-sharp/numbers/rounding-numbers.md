@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/rounding-numbers/
 date: 2024-01-26 03:43:40.737426-07:00
 description: "Arredondar n\xFAmeros significa ajust\xE1-los ao valor de lugar mais\
   \ pr\xF3ximo\u2014pense em simplific\xE1-los. Programadores arredondam para controlar\
   \ a precis\xE3o,\u2026"
-lastmod: 2024-02-18 23:08:58.152502
+lastmod: 2024-02-19 22:05:05.620675
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao valor de lugar mais pr\xF3\
   ximo\u2014pense em simplific\xE1-los. Programadores arredondam para controlar a\

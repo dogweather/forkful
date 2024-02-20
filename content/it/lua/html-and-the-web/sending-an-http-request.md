@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/lua/sending-an-http-request/
 date: 2024-01-20 18:00:02.414069-07:00
 description: "Inviare una richiesta HTTP significa chiedere dati o servizi da un server\
   \ web. I programmatori lo fanno per scaricare pagine, interagire con API o inviare\u2026"
-lastmod: 2024-02-18 23:08:56.007746
+lastmod: 2024-02-19 22:05:02.622840
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP significa chiedere dati o servizi da un server\
   \ web. I programmatori lo fanno per scaricare pagine, interagire con API o inviare\u2026"

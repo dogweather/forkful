@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:31.325356-07:00
 description: "Standaardfout, vaak aangeduid als stderr, is een vooraf gedefinieerde\
   \ bestandsstroom voor het loggen van foutmeldingen. Programmeurs gebruiken het om\u2026"
-lastmod: 2024-02-18 23:09:01.451604
+lastmod: 2024-02-19 22:05:09.481248
 model: gpt-4-0125-preview
 summary: "Standaardfout, vaak aangeduid als stderr, is een vooraf gedefinieerde bestandsstroom\
   \ voor het loggen van foutmeldingen. Programmeurs gebruiken het om\u2026"

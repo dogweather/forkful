@@ -1,6 +1,4 @@
 ---
-aliases:
-- /fi/elixir/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
@@ -8,7 +6,7 @@ date: 2024-02-03 19:09:36.803762-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Elixirissa k\xE4sitt\xE4\
   \xE4 j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tiedon saavuttamisen,\
   \ yleinen teht\xE4v\xE4 lokitukseen, datan leimaamiseen\u2026"
-lastmod: 2024-02-18 23:09:07.284977
+lastmod: 2024-02-19 22:05:15.178410
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Elixirissa k\xE4sitt\xE4\xE4\
   \ j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tiedon saavuttamisen, yleinen\

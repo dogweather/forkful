@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/interpolating-a-string/
 date: 2024-01-20 17:50:36.479815-07:00
 description: "Interpolar una cadena consiste en insertar variables o expresiones en\
   \ medio de una cadena de texto. Programadores lo hacen para construir mensajes\u2026"
-lastmod: 2024-02-18 23:09:10.435953
+lastmod: 2024-02-19 22:05:17.990632
 model: gpt-4-1106-preview
 summary: "Interpolar una cadena consiste en insertar variables o expresiones en medio\
   \ de una cadena de texto. Programadores lo hacen para construir mensajes\u2026"

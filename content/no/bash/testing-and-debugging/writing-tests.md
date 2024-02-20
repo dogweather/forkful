@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/bash/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:34.576252-07:00
 description: "\xC5 skrive tester i Bash inneb\xE6rer \xE5 lage testtilfeller for \xE5\
   \ validere funksjonaliteten til Bash-skriptene dine. Programmerere utf\xF8rer tester\
   \ for \xE5 sikre at\u2026"
-lastmod: 2024-02-18 23:08:54.061850
+lastmod: 2024-02-19 22:05:00.244444
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Bash inneb\xE6rer \xE5 lage testtilfeller for \xE5\
   \ validere funksjonaliteten til Bash-skriptene dine. Programmerere utf\xF8rer tester\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:12.266329-07:00
 description: "Los n\xFAmeros complejos, representados como una combinaci\xF3n de unidades\
   \ reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas\u2026"
-lastmod: 2024-02-18 23:09:09.498987
+lastmod: 2024-02-19 22:05:17.154561
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, representados como una combinaci\xF3n de unidades\
   \ reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas\u2026"

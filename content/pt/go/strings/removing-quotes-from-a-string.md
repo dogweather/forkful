@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:17.275975-07:00
 description: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de abertura\
   \ e fechamento (`\"` ou `'`) de uma determinada string. Programadores frequentemente\u2026"
-lastmod: 2024-02-18 23:08:57.655684
+lastmod: 2024-02-19 22:05:05.108489
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de abertura\
   \ e fechamento (`\"` ou `'`) de uma determinada string. Programadores frequentemente\u2026"

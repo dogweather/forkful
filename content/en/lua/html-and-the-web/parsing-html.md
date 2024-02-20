@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/parsing-html/
 date: 2024-02-03 19:02:44.853028-07:00
 description: "Parsing HTML involves extracting data and information from HTML documents,\
   \ which is crucial for web scraping, data analysis, and automation tasks.\u2026"
-lastmod: 2024-02-18 23:09:11.176312
+lastmod: 2024-02-19 22:05:18.665215
 model: gpt-4-0125-preview
 summary: "Parsing HTML involves extracting data and information from HTML documents,\
   \ which is crucial for web scraping, data analysis, and automation tasks.\u2026"

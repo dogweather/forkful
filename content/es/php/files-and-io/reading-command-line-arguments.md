@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/reading-command-line-arguments/
 date: 2024-01-20 17:56:33.727719-07:00
 description: "Leer argumentos de la l\xEDnea de comandos en PHP permite que tus scripts\
   \ entiendan e interpreten datos de entrada proporcionados al ejecutarse. \xBFPor\
   \ qu\xE9? Es\u2026"
-lastmod: 2024-02-18 23:09:10.090640
+lastmod: 2024-02-19 22:05:17.683169
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos en PHP permite que tus scripts\
   \ entiendan e interpreten datos de entrada proporcionados al ejecutarse. \xBFPor\

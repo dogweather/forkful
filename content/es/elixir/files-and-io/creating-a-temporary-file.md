@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elixir/creating-a-temporary-file/
 date: 2024-01-20 17:40:33.186684-07:00
 description: "Crear un archivo temporal significa hacer un archivo que se espera que\
   \ sea utilizado durante una operaci\xF3n y luego descartado. Los programadores los\
   \ usan\u2026"
-lastmod: 2024-02-18 23:09:09.677964
+lastmod: 2024-02-19 22:05:17.308310
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal significa hacer un archivo que se espera que sea\
   \ utilizado durante una operaci\xF3n y luego descartado. Los programadores los usan\u2026"

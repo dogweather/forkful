@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/using-a-debugger/
 date: 2024-01-26 04:11:09.321612-07:00
 description: "Debugger on ty\xF6kalu, jonka avulla voit tutkia ja muuttaa koodisi\
   \ sis\xE4isi\xE4 toimintoja sen suorituksen aikana. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t sit\xE4 virheiden\u2026"
-lastmod: 2024-02-18 23:09:07.323837
+lastmod: 2024-02-19 22:05:15.214369
 model: gpt-4-0125-preview
 summary: "Debugger on ty\xF6kalu, jonka avulla voit tutkia ja muuttaa koodisi sis\xE4\
   isi\xE4 toimintoja sen suorituksen aikana. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\

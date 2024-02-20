@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:10.583956-07:00
 description: "Das Ausgeben von Debug-Informationen bedeutet, tempor\xE4re, informative\
   \ Protokollnachrichten zu generieren, die Programmierern helfen k\xF6nnen, den Ablauf\
   \ und\u2026"
-lastmod: 2024-02-18 23:09:05.376536
+lastmod: 2024-02-19 22:05:13.296684
 model: gpt-4-0125-preview
 summary: "Das Ausgeben von Debug-Informationen bedeutet, tempor\xE4re, informative\
   \ Protokollnachrichten zu generieren, die Programmierern helfen k\xF6nnen, den Ablauf\

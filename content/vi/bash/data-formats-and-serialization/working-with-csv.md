@@ -1,11 +1,9 @@
 ---
-aliases:
-- /vi/bash/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:12.503092-07:00
 description: ''
-lastmod: 2024-02-18 23:08:50.909784
+lastmod: 2024-02-19 22:04:56.098987
 model: gpt-4-0125-preview
 summary: ''
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"

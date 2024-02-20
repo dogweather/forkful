@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/logging/
 date: 2024-01-25 02:03:50.226321-07:00
 description: "Logging is essentially the process of recording events and data outputs\
   \ from a piece of software as it runs, think of it as the software's diary.\u2026"
-lastmod: 2024-02-18 23:09:10.978323
+lastmod: 2024-02-19 22:05:18.484604
 model: gpt-4-1106-preview
 summary: "Logging is essentially the process of recording events and data outputs\
   \ from a piece of software as it runs, think of it as the software's diary.\u2026"

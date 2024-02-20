@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:56.701694-07:00
 description: "Leggere un file di testo in Visual Basic for Applications (VBA) implica\
   \ l'accesso programmatico ed estrazione del contenuto di un file di testo\u2026"
-lastmod: 2024-02-18 23:08:55.741447
+lastmod: 2024-02-19 22:05:02.343845
 model: gpt-4-0125-preview
 summary: "Leggere un file di testo in Visual Basic for Applications (VBA) implica\
   \ l'accesso programmatico ed estrazione del contenuto di un file di testo\u2026"

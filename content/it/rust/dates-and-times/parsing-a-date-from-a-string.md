@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/rust/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:20.690532-07:00
 description: "L'analisi di una data da una stringa \xE8 un compito comune quando si\
   \ gestiscono input dell'utente o si leggono dati da file, e coinvolge la conversione\
   \ dei\u2026"
-lastmod: 2024-02-18 23:08:55.689346
+lastmod: 2024-02-19 22:05:02.288414
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa \xE8 un compito comune quando si gestiscono\
   \ input dell'utente o si leggono dati da file, e coinvolge la conversione dei\u2026"

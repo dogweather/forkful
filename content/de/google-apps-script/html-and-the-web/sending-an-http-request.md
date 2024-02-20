@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/google-apps-script/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:32.246607-07:00
 description: "Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert\
   \ eine Anfrage an einen externen Webserver oder eine API zu stellen.\u2026"
-lastmod: 2024-02-18 23:09:04.409608
+lastmod: 2024-02-19 22:05:12.376966
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert\
   \ eine Anfrage an einen externen Webserver oder eine API zu stellen.\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/working-with-xml/
 date: 2024-01-26 04:33:27.267805-07:00
 description: "Trabalhar com XML envolve analisar e manipular documentos XML usando\
   \ c\xF3digo. Programadores fazem isso para ler, escrever e modificar dados em um\
   \ formato\u2026"
-lastmod: 2024-02-18 23:08:58.306157
+lastmod: 2024-02-19 22:05:05.787222
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML envolve analisar e manipular documentos XML usando c\xF3\
   digo. Programadores fazem isso para ler, escrever e modificar dados em um formato\u2026"

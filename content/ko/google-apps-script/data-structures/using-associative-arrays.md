@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:59.111208-07:00
@@ -12,7 +10,7 @@ description: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Google Apps Script(JavaScript\uC75
   \uC131\uC744 \uB2E4\uB8F0 \uB54C\uB098 \uC804\uD1B5\uC801\uC778 \uBC30\uC5F4\uC758\
   \ \uC120\uD615 \uC800\uC7A5 \uBC0F \uC811\uADFC \uBAA8\uB378\uC774 \uCDA9\uBD84\uD558\
   \uC9C0 \uC54A\uC744\u2026"
-lastmod: 2024-02-18 23:09:05.542916
+lastmod: 2024-02-19 22:05:13.459193
 model: gpt-4-0125-preview
 summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Google Apps Script(JavaScript\uC758 \uD55C\
   \ \uBCC0\uC885)\uC5D0\uC11C \uAC1D\uCCB4\uB85C \uC54C\uB824\uC838 \uC788\uC73C\uBA70\

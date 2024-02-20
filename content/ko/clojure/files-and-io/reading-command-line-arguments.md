@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/reading-command-line-arguments/
 date: 2024-01-20 17:55:46.510218-07:00
 description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB780 \uD504\
   \uB85C\uADF8\uB7A8 \uC2E4\uD589 \uC2DC \uC785\uB825\uD55C \uD14D\uC2A4\uD2B8\uB97C\
@@ -10,7 +8,7 @@ description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB780 \u
   \uB098\uB9AC\uC624\uC5D0 \uB9DE\uAC8C \uC2E4\uD589\uD558\uAE30 \uC704\uD568\uC785\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.713965
+lastmod: 2024-02-19 22:05:13.626150
 model: gpt-4-1106-preview
 summary: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB780 \uD504\uB85C\
   \uADF8\uB7A8 \uC2E4\uD589 \uC2DC \uC785\uB825\uD55C \uD14D\uC2A4\uD2B8\uB97C \uCC98\

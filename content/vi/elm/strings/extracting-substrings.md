@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elm/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:43.182592-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con ngh\u0129a l\xE
   \ l\u1EA5y c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 ra kh\u1ECFi m\u1ED9t chu\u1ED7i. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
   \ c\xF4 l\u1EADp, thao t\xE1c, ho\u1EB7c ph\xE2n t\xEDch\u2026"
-lastmod: 2024-02-18 23:08:50.591473
+lastmod: 2024-02-19 22:04:55.695759
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con ngh\u0129a l\xE0 l\u1EA5\
   y c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 ra kh\u1ECFi m\u1ED9t chu\u1ED7i. C\xE1c l\u1EAD\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:33.590645-07:00
@@ -11,7 +9,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C HTML\uC744 \uD30C\u
   \uC774\uD130\uB97C \uC77D\uACE0 \uCC98\uB9AC\uD558\uB294 \uACFC\uC815\uC744 \uC790\
   \uB3D9\uD654\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4\
   . \uC608\uB97C \uB4E4\uC5B4, \uC6F9\uC0AC\uC774\uD2B8 \uCF58\uD150\uCE20\uB97C\u2026"
-lastmod: 2024-02-18 23:09:05.948410
+lastmod: 2024-02-19 22:05:13.883460
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C HTML\uC744 \uD30C\uC2F1\uD558\
   \uB294 \uAC83\uC740 HTML \uBB38\uC11C\uC5D0\uC11C \uD2B9\uC815 \uC815\uBCF4\uB97C\

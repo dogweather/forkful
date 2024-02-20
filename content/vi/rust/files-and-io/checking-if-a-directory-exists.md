@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/rust/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:06.602766-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1E
   n t\u1EA1i trong Rust l\xE0 \u0111\u1EC3 x\xE1c minh m\u1ED9t th\u01B0 m\u1EE5c\
   \ c\xF3 m\u1EB7t tr\xEAn h\u1EC7 th\u1ED1ng t\u1EADp tin. L\u1EADp tr\xECnh vi\xEA\
   n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ng\u0103n\u2026"
-lastmod: 2024-02-18 23:08:50.478011
+lastmod: 2024-02-19 22:04:55.549570
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
   i trong Rust l\xE0 \u0111\u1EC3 x\xE1c minh m\u1ED9t th\u01B0 m\u1EE5c c\xF3 m\u1EB7\

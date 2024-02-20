@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/lua/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:34.389717-07:00
 description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, auf Deutsch \u201E\
   durch Kommas getrennte Werte\u201C) umfasst das Parsen und Generieren von Textdaten,\
   \ die in\u2026"
-lastmod: 2024-02-18 23:09:05.031057
+lastmod: 2024-02-19 22:05:12.968564
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, auf Deutsch \u201Edurch\
   \ Kommas getrennte Werte\u201C) umfasst das Parsen und Generieren von Textdaten,\

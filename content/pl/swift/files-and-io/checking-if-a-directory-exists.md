@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/swift/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:46.097436-07:00
 description: "Sprawdzanie, czy katalog istnieje w systemie plik\xF3w, jest niezb\u0119\
   dne do zarz\u0105dzania strukturami plik\xF3w w aplikacjach Swift. To zadanie umo\u017C\
   liwia\u2026"
-lastmod: 2024-02-18 23:08:49.966877
+lastmod: 2024-02-19 22:04:54.917797
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w systemie plik\xF3w, jest niezb\u0119\
   dne do zarz\u0105dzania strukturami plik\xF3w w aplikacjach Swift. To zadanie umo\u017C\

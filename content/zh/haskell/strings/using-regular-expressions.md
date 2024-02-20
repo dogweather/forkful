@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/haskell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:52.263568-07:00
@@ -11,7 +9,7 @@ description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u6B63\u5219\u8868\u8FBE\u5F0F\u662F
   \u7B26\u4E32\u5339\u914D\u5230\u590D\u6742\u7684\u6587\u672C\u5904\u7406\u7684\u4EFB\
   \u52A1\uFF0C\u5229\u7528\u5B83\u4EEC\u5728\u5904\u7406\u6587\u672C\u6570\u636E\u65B9\
   \u9762\u7684\u6548\u7387\u548C\u591A\u529F\u80FD\u6027\u3002"
-lastmod: 2024-02-18 23:08:59.161201
+lastmod: 2024-02-19 22:05:06.842568
 model: gpt-4-0125-preview
 summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u6B63\u5219\u8868\u8FBE\u5F0F\u662F\u5B9A\
   \u4E49\u641C\u7D22\u6A21\u5F0F\u7684\u5B57\u7B26\u5E8F\u5217\uFF0C\u901A\u5E38\u7528\

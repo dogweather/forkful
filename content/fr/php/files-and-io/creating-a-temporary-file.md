@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/creating-a-temporary-file/
 date: 2024-01-20 17:41:04.515571-07:00
 description: "La cr\xE9ation d'un fichier temporaire permet de stocker des donn\xE9\
   es de mani\xE8re \xE9ph\xE9m\xE8re pendant l\u2019ex\xE9cution d\u2019un script.\
   \ Les programmeurs utilisent des\u2026"
-lastmod: 2024-02-18 23:09:08.944038
+lastmod: 2024-02-19 22:05:16.634186
 model: gpt-4-1106-preview
 summary: "La cr\xE9ation d'un fichier temporaire permet de stocker des donn\xE9es\
   \ de mani\xE8re \xE9ph\xE9m\xE8re pendant l\u2019ex\xE9cution d\u2019un script.\

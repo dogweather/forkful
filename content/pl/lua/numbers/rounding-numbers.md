@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/rounding-numbers/
 date: 2024-01-26 03:45:54.975555-07:00
 description: "Zaokr\u0105glanie liczb oznacza dostosowywanie ich do najbli\u017Cszej\
   \ liczby ca\u0142kowitej lub okre\u015Blonego miejsca po przecinku. Jest to podstawowy\
   \ element w\u2026"
-lastmod: 2024-02-18 23:08:49.734661
+lastmod: 2024-02-19 22:04:54.671322
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza dostosowywanie ich do najbli\u017Cszej liczby\
   \ ca\u0142kowitej lub okre\u015Blonego miejsca po przecinku. Jest to podstawowy\

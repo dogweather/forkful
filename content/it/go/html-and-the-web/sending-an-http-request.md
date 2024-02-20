@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:32.744521-07:00
 description: "Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata\
   \ dalla tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato\u2026"
-lastmod: 2024-02-18 23:08:55.428857
+lastmod: 2024-02-19 22:05:02.008753
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata dalla\
   \ tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/downloading-a-web-page/
 date: 2024-01-20 17:44:19.238569-07:00
 description: "Scaricare una pagina web significa prelevare il contenuto HTML di una\
   \ pagina da Internet. I programmatori fanno questo per processare dati, alimentare\u2026"
-lastmod: 2024-02-18 23:08:55.764690
+lastmod: 2024-02-19 22:05:02.368560
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa prelevare il contenuto HTML di una pagina\
   \ da Internet. I programmatori fanno questo per processare dati, alimentare\u2026"

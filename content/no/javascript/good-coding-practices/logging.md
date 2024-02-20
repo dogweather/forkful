@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/logging/
 date: 2024-01-26 01:07:14.755801-07:00
 description: "Logging, kort fortalt, er som \xE5 f\xF8re en dagbok for din applikasjon\
   \ \u2013 det registrerer hendelser, feil og andre vesentlige handlinger som finner\
   \ sted mens\u2026"
-lastmod: 2024-02-18 23:08:54.315111
+lastmod: 2024-02-19 22:05:00.466833
 model: gpt-4-1106-preview
 summary: "Logging, kort fortalt, er som \xE5 f\xF8re en dagbok for din applikasjon\
   \ \u2013 det registrerer hendelser, feil og andre vesentlige handlinger som finner\

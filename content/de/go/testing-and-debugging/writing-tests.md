@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/go/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:46.089911-07:00
 description: "Tests in Go zu schreiben, bedeutet, kleine, handhabbare Code-Schnipsel\
   \ zu erstellen, die die Funktionalit\xE4t und das Verhalten Ihrer Anwendung validieren.\u2026"
-lastmod: 2024-02-18 23:09:04.367828
+lastmod: 2024-02-19 22:05:12.336948
 model: gpt-4-0125-preview
 summary: "Tests in Go zu schreiben, bedeutet, kleine, handhabbare Code-Schnipsel zu\
   \ erstellen, die die Funktionalit\xE4t und das Verhalten Ihrer Anwendung validieren.\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:46.195393-07:00
 description: "Testien kirjoittaminen C-kielell\xE4 tarkoittaa pienempien, apuohjelmien\
   \ tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden.\u2026"
-lastmod: 2024-02-18 23:09:08.136691
+lastmod: 2024-02-19 22:05:15.937401
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C-kielell\xE4 tarkoittaa pienempien, apuohjelmien\
   \ tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden.\u2026"

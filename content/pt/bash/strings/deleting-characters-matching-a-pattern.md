@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:43.307365-07:00
 description: "Apagar caracteres que correspondem a um padr\xE3o s\xE3o t\xE9cnicas\
   \ usadas para limpar strings - eliminar o que n\xE3o \xE9 necess\xE1rio ou formatar\
   \ texto. Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.308135
+lastmod: 2024-02-19 22:05:05.789443
 model: gpt-4-1106-preview
 summary: "Apagar caracteres que correspondem a um padr\xE3o s\xE3o t\xE9cnicas usadas\
   \ para limpar strings - eliminar o que n\xE3o \xE9 necess\xE1rio ou formatar texto.\

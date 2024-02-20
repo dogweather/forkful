@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/bash/searching-and-replacing-text/
 date: 2024-01-20 17:57:07.531157-07:00
 description: "La ricerca e la sostituzione di testo permettono di trovare stringhe\
   \ specifiche e modificarle velocemente. I programmatori lo fanno per correggere\
   \ errori,\u2026"
-lastmod: 2024-02-18 23:08:56.037083
+lastmod: 2024-02-19 22:05:02.654170
 model: gpt-4-1106-preview
 summary: "La ricerca e la sostituzione di testo permettono di trovare stringhe specifiche\
   \ e modificarle velocemente. I programmatori lo fanno per correggere errori,\u2026"

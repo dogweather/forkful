@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/java/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:28.575657-07:00
 description: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 legge\
   \ til eller trekke fra tid fra en gitt dato. Utviklere gj\xF8r dette for \xE5 h\xE5\
   ndtere frister,\u2026"
-lastmod: 2024-02-18 23:08:53.783328
+lastmod: 2024-02-19 22:04:59.925330
 model: gpt-4-1106-preview
 summary: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 legge til\
   \ eller trekke fra tid fra en gitt dato. Utviklere gj\xF8r dette for \xE5 h\xE5\

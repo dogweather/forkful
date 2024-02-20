@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:17.796189-07:00
 description: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xED\
   ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.483313
+lastmod: 2024-02-19 22:05:18.034948
 model: gpt-4-0125-preview
 summary: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xED\
   ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas.\

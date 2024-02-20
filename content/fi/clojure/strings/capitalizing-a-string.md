@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/clojure/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:02.466354-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin,\
   \ ett\xE4 sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.210818
+lastmod: 2024-02-19 22:05:15.109658
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin, ett\xE4\
   \ sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/starting-a-new-project/
 date: 2024-01-20 18:03:18.567037-07:00
 description: "Starting a new project means setting up a fresh programming environment\
   \ for your code. Programmers do it to kick off development with a clean slate and\u2026"
-lastmod: 2024-02-18 23:09:10.724442
+lastmod: 2024-02-19 22:05:18.253876
 model: gpt-4-1106-preview
 summary: "Starting a new project means setting up a fresh programming environment\
   \ for your code. Programmers do it to kick off development with a clean slate and\u2026"

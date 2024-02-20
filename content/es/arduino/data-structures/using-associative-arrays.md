@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/arduino/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:46.506280-07:00
 description: "En el mundo de Arduino, los arrays asociativos te permiten emparejar\
   \ claves con valores, algo as\xED como emparejar\xEDas calcetines con sus pares.\
   \ Son una\u2026"
-lastmod: 2024-02-18 23:09:10.253998
+lastmod: 2024-02-19 22:05:17.832695
 model: gpt-4-0125-preview
 summary: "En el mundo de Arduino, los arrays asociativos te permiten emparejar claves\
   \ con valores, algo as\xED como emparejar\xEDas calcetines con sus pares. Son una\u2026"

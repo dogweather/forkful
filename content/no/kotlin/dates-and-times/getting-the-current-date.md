@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/kotlin/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:18.788450-07:00
 description: "I programmering er det \xE5 f\xE5 tak i dagens dato en grunnleggende\
   \ oppgave som gj\xF8r det mulig for utviklere \xE5 f\xE5 tilgang til, vise eller\
   \ manipulere dagens\u2026"
-lastmod: 2024-02-18 23:08:53.862531
+lastmod: 2024-02-19 22:05:00.028382
 model: gpt-4-0125-preview
 summary: "I programmering er det \xE5 f\xE5 tak i dagens dato en grunnleggende oppgave\
   \ som gj\xF8r det mulig for utviklere \xE5 f\xE5 tilgang til, vise eller manipulere\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/elm/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:17.166599-07:00
 description: "Elm st\xF6der inte YAML inbyggt, ett data serialiseringsformat som ofta\
   \ anv\xE4nds f\xF6r konfigurationsfiler eller datadelning, p\xE5 grund av dess starka\
   \ betoning\u2026"
-lastmod: 2024-02-18 23:08:51.728917
+lastmod: 2024-02-19 22:04:57.061981
 model: gpt-4-0125-preview
 summary: "Elm st\xF6der inte YAML inbyggt, ett data serialiseringsformat som ofta\
   \ anv\xE4nds f\xF6r konfigurationsfiler eller datadelning, p\xE5 grund av dess starka\

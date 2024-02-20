@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/sending-an-http-request/
 date: 2024-01-20 17:59:23.247905-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tiedon pyyt\xE4mist\xE4 palvelimelta.\
   \ Ohjelmoijat tekev\xE4t sen, koska heid\xE4n sovelluksensa tarvitsevat tietoa p\xE4\
   ivitty\xE4kseen tai\u2026"
-lastmod: 2024-02-18 23:09:07.500182
+lastmod: 2024-02-19 22:05:15.379516
 model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tiedon pyyt\xE4mist\xE4 palvelimelta.\
   \ Ohjelmoijat tekev\xE4t sen, koska heid\xE4n sovelluksensa tarvitsevat tietoa p\xE4\

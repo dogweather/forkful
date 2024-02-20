@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/haskell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:22.629361-07:00
 description: "I Haskell handler sletting av tegn som matcher et m\xF8nster om \xE5\
   \ fjerne spesifikke tegn fra en tekststreng basert p\xE5 gitte kriterier. Programmerere\
   \ gj\xF8r\u2026"
-lastmod: 2024-02-18 23:08:53.919779
+lastmod: 2024-02-19 22:05:00.089717
 model: gpt-4-1106-preview
 summary: "I Haskell handler sletting av tegn som matcher et m\xF8nster om \xE5 fjerne\
   \ spesifikke tegn fra en tekststreng basert p\xE5 gitte kriterier. Programmerere\

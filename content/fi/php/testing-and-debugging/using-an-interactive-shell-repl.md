@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/php/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:26.575999-07:00
 description: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop), mahdollistaa\
   \ PHP-koodin kirjoittamisen ja suorittamisen lennosta. Se on ihanteellinen kokeiluihin,\u2026"
-lastmod: 2024-02-18 23:09:07.713216
+lastmod: 2024-02-19 22:05:15.551966
 model: gpt-4-0125-preview
 summary: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop), mahdollistaa PHP-koodin\
   \ kirjoittamisen ja suorittamisen lennosta. Se on ihanteellinen kokeiluihin,\u2026"

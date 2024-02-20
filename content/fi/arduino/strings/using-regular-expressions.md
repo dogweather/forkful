@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/arduino/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:22.633854-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat merkkijonoja, jotka m\xE4\
   \xE4rittelev\xE4t hakukuviot ja joita k\xE4ytet\xE4\xE4n ensisijaisesti merkkijonojen\
   \ haussa ja\u2026"
-lastmod: 2024-02-18 23:09:07.889372
+lastmod: 2024-02-19 22:05:15.710398
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat merkkijonoja, jotka m\xE4\xE4\
   rittelev\xE4t hakukuviot ja joita k\xE4ytet\xE4\xE4n ensisijaisesti merkkijonojen\

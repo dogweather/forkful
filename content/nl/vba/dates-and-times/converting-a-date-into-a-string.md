@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:05.095262-07:00
 description: "Het omzetten van een datum naar een string in Visual Basic for Applications\
   \ (VBA) is een proces dat wordt gebruikt om het datatypen van een datum naar een\u2026"
-lastmod: 2024-02-18 23:09:01.678464
+lastmod: 2024-02-19 22:05:09.699764
 model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een string in Visual Basic for Applications\
   \ (VBA) is een proces dat wordt gebruikt om het datatypen van een datum naar een\u2026"

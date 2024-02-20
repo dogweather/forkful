@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/powershell/downloading-a-web-page/
 date: 2024-01-20 17:44:50.030093-07:00
 description: "Herunterladen einer Webseite bedeutet, ihren Inhalt zu sichern, um ihn\
   \ offline zu analysieren oder zu verarbeiten. Programmierer machen das, um Daten\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.099903
+lastmod: 2024-02-19 22:05:13.034237
 model: gpt-4-1106-preview
 summary: "Herunterladen einer Webseite bedeutet, ihren Inhalt zu sichern, um ihn offline\
   \ zu analysieren oder zu verarbeiten. Programmierer machen das, um Daten zu\u2026"

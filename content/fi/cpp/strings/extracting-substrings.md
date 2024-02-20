@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/extracting-substrings/
 date: 2024-01-20 17:45:06.144602-07:00
 description: "Haemme tekstin osia, eli substringej\xE4, kun tarvitsemme erityist\xE4\
   \ tietoa merkkijonosta. Ohjelmoijat tekev\xE4t niin, jotta voivat k\xE4sitell\xE4\
   , verrata tai\u2026"
-lastmod: 2024-02-18 23:09:07.931946
+lastmod: 2024-02-19 22:05:15.749537
 model: gpt-4-1106-preview
 summary: "Haemme tekstin osia, eli substringej\xE4, kun tarvitsemme erityist\xE4 tietoa\
   \ merkkijonosta. Ohjelmoijat tekev\xE4t niin, jotta voivat k\xE4sitell\xE4, verrata\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:59.542366-07:00
 description: "Werken met CSV (Comma-Separated Values) in Arduino stelt je in staat\
   \ om gegevens als tekst op te slaan en te beheren. Het is goedkoop, eenvoudig en\u2026"
-lastmod: 2024-02-18 23:09:02.162306
+lastmod: 2024-02-19 22:05:10.179864
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) in Arduino stelt je in staat om\
   \ gegevens als tekst op te slaan en te beheren. Het is goedkoop, eenvoudig en\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/arduino/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:59.016483-07:00
 description: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Arduino inneb\xE4\
   r att l\xE4sa fr\xE5n och skriva till CSV-filer som vanligtvis lagras p\xE5 ett\
   \ SD-kort, vilket\u2026"
-lastmod: 2024-02-18 23:08:52.065471
+lastmod: 2024-02-19 22:04:57.425867
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Arduino inneb\xE4\
   r att l\xE4sa fr\xE5n och skriva till CSV-filer som vanligtvis lagras p\xE5 ett\

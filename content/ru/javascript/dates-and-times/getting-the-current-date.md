@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/javascript/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:58:38.511565-07:00
@@ -13,7 +11,7 @@ description: "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0442\u043
   \u044E\u0442 \u044D\u0442\u043E \u0434\u043B\u044F \u0442\u0430\u043A\u0438\u0445\
   \ \u0432\u0435\u0449\u0435\u0439, \u043A\u0430\u043A \u0432\u0440\u0435\u043C\u0435\
   \u043D\u043D\u044B\u0435 \u043C\u0435\u0442\u043A\u0438,\u2026"
-lastmod: 2024-02-18 23:08:57.472663
+lastmod: 2024-02-19 22:05:04.764689
 model: gpt-4-0125-preview
 summary: "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0442\u0435\u043A\
   \u0443\u0449\u0435\u0439 \u0434\u0430\u0442\u044B \u0432 JavaScript \u043E\u0437\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/interpolating-a-string/
 date: 2024-01-20 17:51:04.776000-07:00
 description: "W interpolacji string\xF3w chodzi o wstawianie warto\u015Bci zmiennych\
   \ w \u015Brodek \u0142a\u0144cucha tekstowego. Robimy to, by \u0142atwiej budowa\u0107\
   \ dynamiczne wiadomo\u015Bci i\u2026"
-lastmod: 2024-02-18 23:08:49.980242
+lastmod: 2024-02-19 22:04:54.932073
 model: gpt-4-1106-preview
 summary: "W interpolacji string\xF3w chodzi o wstawianie warto\u015Bci zmiennych w\
   \ \u015Brodek \u0142a\u0144cucha tekstowego. Robimy to, by \u0142atwiej budowa\u0107\

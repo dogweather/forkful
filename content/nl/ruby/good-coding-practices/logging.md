@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:02.684434-07:00
 description: "Loggen in programmeren is als het bijhouden van een dagboek voor je\
   \ applicatie. Het is het systematisch vastleggen van gebeurtenissen, berichten en\u2026"
-lastmod: 2024-02-18 23:09:02.429545
+lastmod: 2024-02-19 22:05:10.433861
 model: gpt-4-0125-preview
 summary: "Loggen in programmeren is als het bijhouden van een dagboek voor je applicatie.\
   \ Het is het systematisch vastleggen van gebeurtenissen, berichten en\u2026"

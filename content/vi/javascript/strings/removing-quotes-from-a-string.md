@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/removing-quotes-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:58.291421-07:00
@@ -8,7 +6,7 @@ description: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9t ch
   i c\xF3 ngh\u0129a l\xE0 b\u1ECF \u0111i nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9p phi\u1EC1\
   n ph\u1EE9c c\xF3 th\u1EC3 l\xE0m r\u1ED1i tung code c\u1EE7a b\u1EA1n, \u0111\u1EB7\
   c bi\u1EC7t khi b\u1EA1n \u0111ang ph\xE2n t\xEDch d\u1EEF\u2026"
-lastmod: 2024-02-18 23:08:51.122863
+lastmod: 2024-02-19 22:04:56.345597
 model: gpt-4-0125-preview
 summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9t chu\u1ED7\
   i c\xF3 ngh\u0129a l\xE0 b\u1ECF \u0111i nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9p phi\u1EC1\

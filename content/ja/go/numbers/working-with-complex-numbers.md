@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/go/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:20.877567-07:00
@@ -14,7 +12,7 @@ description: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3051\u308B
   \u3001\u5DE5\u5B66\u3001\u7269\u7406\u5B66\u3001\u30C7\u30FC\u30BF\u5206\u6790\u306A\
   \u3069\u306E\u3055\u307E\u3056\u307E\u306A\u5206\u91CE\u3067\u8907\u7D20\u6570\u306B\
   \u53D6\u308A\u7D44\u307F\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.473510
+lastmod: 2024-02-19 22:05:00.644121
 model: gpt-4-0125-preview
 summary: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3051\u308B\u8907\
   \u7D20\u6570\u306E\u6271\u3044\u3068\u306F\u3001\u5B9F\u90E8\u3068\u865A\u90E8\u306E\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/organizing-code-into-functions/
 date: 2024-01-26 01:10:14.589334-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioiksi on lohkojen paketoimista teht\xE4\
   vi\xE4 suorittaviksi osiksi. T\xE4m\xE4n tekeminen pit\xE4\xE4 koodisi puhtaana,\
   \ helpommin yll\xE4pidett\xE4v\xE4n\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.234316
+lastmod: 2024-02-19 22:05:15.131294
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioiksi on lohkojen paketoimista teht\xE4\
   vi\xE4 suorittaviksi osiksi. T\xE4m\xE4n tekeminen pit\xE4\xE4 koodisi puhtaana,\

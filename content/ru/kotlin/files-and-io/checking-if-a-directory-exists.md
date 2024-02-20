@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/kotlin/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:55:51.449922-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043D\u0430\u043
   \u0438 \u0437\u0430\u043F\u0438\u0441\u044B\u0432\u0430\u0442\u044C \u0442\u0443\
   \u0434\u0430 \u0444\u0430\u0439\u043B\u044B. \u042D\u0442\u043E \u043F\u043E\u043C\
   \u043E\u0433\u0430\u0435\u0442\u2026"
-lastmod: 2024-02-18 23:08:56.961890
+lastmod: 2024-02-19 22:05:03.957575
 model: gpt-4-0125-preview
 summary: "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043D\u0430\u043B\u0438\
   \u0447\u0438\u044F \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\u0438\u0438\

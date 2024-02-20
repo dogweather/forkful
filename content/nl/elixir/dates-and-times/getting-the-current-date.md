@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:03.421014-07:00
 description: "De huidige datum opvragen in een programma is alsof je vraagt: \"H\xE9\
   , wat is de datum van vandaag?\" We doen dit om gebeurtenissen te tijdstempelen,\u2026"
-lastmod: 2024-02-18 23:09:01.538091
+lastmod: 2024-02-19 22:05:09.564197
 model: gpt-4-0125-preview
 summary: "De huidige datum opvragen in een programma is alsof je vraagt: \"H\xE9,\
   \ wat is de datum van vandaag?\" We doen dit om gebeurtenissen te tijdstempelen,\u2026"

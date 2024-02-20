@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:00.251481-07:00
@@ -12,7 +10,7 @@ description: "CSV (Comma-Separated Values) \u092B\u093C\u093E\u0907\u0932\u094B\
   \u092C\u0902\u0927\u093F\u0924 \u0914\u0930 \u0938\u0902\u0936\u094B\u0927\u093F\
   \u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0915\u093F\u092F\
   \u093E \u091C\u093E\u0924\u093E \u0939\u0948\u0964\u2026"
-lastmod: 2024-02-18 23:09:03.779036
+lastmod: 2024-02-19 22:05:11.763999
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) \u092B\u093C\u093E\u0907\u0932\u094B\u0902\
   \ \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E \u090F\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/kotlin/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:42.936897-07:00
 description: "Les tableaux associatifs, ou maps, dans Kotlin sont des collections\
   \ qui stockent des paires cl\xE9-valeur. Les programmeurs les utilisent pour organiser\
   \ et\u2026"
-lastmod: 2024-02-18 23:09:08.773088
+lastmod: 2024-02-19 22:05:16.478165
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou maps, dans Kotlin sont des collections qui\
   \ stockent des paires cl\xE9-valeur. Les programmeurs les utilisent pour organiser\

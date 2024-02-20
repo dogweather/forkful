@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/rust/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:57.416671-07:00
 description: "\xC5 parse HTML i Rust handler om \xE5 trekke ut data fra HTML-dokumenter,\
   \ som er essensielt for web scraping, datautvinning eller bygging av nett-crawlere.\u2026"
-lastmod: 2024-02-18 23:08:53.682775
+lastmod: 2024-02-19 22:04:59.816091
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML i Rust handler om \xE5 trekke ut data fra HTML-dokumenter,\
   \ som er essensielt for web scraping, datautvinning eller bygging av nett-crawlere.\u2026"

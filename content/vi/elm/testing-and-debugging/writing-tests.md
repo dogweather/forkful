@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elm/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:53.129827-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 ng
   n ki\u1EC3m tra xem m\xE3 ch\xEDnh c\u1EE7a b\u1EA1n ho\u1EA1t \u0111\u1ED9ng nh\u01B0\
   \ mong \u0111\u1EE3i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn ki\u1EC3m th\u1EED\
   \ \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, \u0111\u1EA3m b\u1EA3o\u2026"
-lastmod: 2024-02-18 23:08:50.607590
+lastmod: 2024-02-19 22:04:55.716953
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 ngu\u1ED3\
   n ki\u1EC3m tra xem m\xE3 ch\xEDnh c\u1EE7a b\u1EA1n ho\u1EA1t \u0111\u1ED9ng nh\u01B0\

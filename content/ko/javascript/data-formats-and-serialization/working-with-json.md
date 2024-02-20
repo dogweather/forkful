@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:33.434011-07:00
@@ -12,7 +10,7 @@ description: "JSON(JavaScript Object Notation)\uC740 \uAC00\uBCBC\uC6B4 \uB370\u
   \uC7A5\uD558\uACE0 \uC804\uC1A1\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
   \uD558\uBA70, \uC774\uB294 \uD604\uB300 API \uBC0F \uC6F9 \uC11C\uBE44\uC2A4 \uD1B5\
   \uC2E0\uC758\u2026"
-lastmod: 2024-02-18 23:09:06.846042
+lastmod: 2024-02-19 22:05:14.736727
 model: gpt-4-0125-preview
 summary: "JSON(JavaScript Object Notation)\uC740 \uAC00\uBCBC\uC6B4 \uB370\uC774\uD130\
   -\uAD50\uD658 \uD615\uC2DD\uC73C\uB85C, \uC0AC\uB78C\uC774 \uC77D\uACE0 \uC4F0\uAE30\

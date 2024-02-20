@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/swift/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:43.449643-07:00
 description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ implique l'analyse et la g\xE9n\xE9ration de donn\xE9es structur\xE9es \xE0 partir\
   \ de fichiers texte\u2026"
-lastmod: 2024-02-18 23:09:09.233923
+lastmod: 2024-02-19 22:05:16.900266
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ implique l'analyse et la g\xE9n\xE9ration de donn\xE9es structur\xE9es \xE0 partir\

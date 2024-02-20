@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/arduino/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:11.560584-07:00
@@ -14,7 +12,7 @@ description: "\u05D1\u05D9\u05D8\u05D5\u05D9\u05D9\u05DD \u05E8\u05D2\u05D5\u05D
   \ \u05DE\u05E0\u05E6\u05DC\u05D9\u05DD \u05D1\u05D9\u05D8\u05D5\u05D9\u05D9\u05DD\
   \ \u05E8\u05D2\u05D5\u05DC\u05E8\u05D9\u05D9\u05DD \u05D1\u05E4\u05E8\u05D5\u05D9\
   \u05E7\u05D8\u05D9\u05DD \u05E9\u05DC\u2026"
-lastmod: 2024-02-18 23:08:53.104947
+lastmod: 2024-02-19 22:04:59.010111
 model: gpt-4-0125-preview
 summary: "\u05D1\u05D9\u05D8\u05D5\u05D9\u05D9\u05DD \u05E8\u05D2\u05D5\u05DC\u05E8\
   \u05D9\u05D9\u05DD (regex) \u05D4\u05DD \u05E1\u05D3\u05E8\u05D5\u05EA \u05E9\u05DC\

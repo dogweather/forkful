@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/bash/using-a-debugger/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:28.765724-07:00
@@ -14,7 +12,7 @@ description: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D
   \u0438\u043F\u0442\u0430\u0445, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440\
   , \u0434\u043B\u044F \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D\u0438\
   \u044F \u043E\u0448\u0438\u0431\u043E\u043A,\u2026"
-lastmod: 2024-02-18 23:08:57.210160
+lastmod: 2024-02-19 22:05:04.346675
 model: gpt-4-0125-preview
 summary: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\
   \u0435 \u043E\u0442\u043B\u0430\u0434\u0447\u0438\u043A\u0430 \u0432 Bash \u043E\

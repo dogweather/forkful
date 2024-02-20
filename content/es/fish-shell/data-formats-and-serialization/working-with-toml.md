@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/fish-shell/working-with-toml/
 date: 2024-01-26 04:21:19.944616-07:00
 description: "TOML es un formato de archivo de configuraci\xF3n, f\xE1cil de leer\
   \ y escribir para los humanos, y f\xE1cil de analizar y generar para las m\xE1quinas.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.478715
+lastmod: 2024-02-19 22:05:18.030296
 model: gpt-4-0125-preview
 summary: "TOML es un formato de archivo de configuraci\xF3n, f\xE1cil de leer y escribir\
   \ para los humanos, y f\xE1cil de analizar y generar para las m\xE1quinas. Los\u2026"

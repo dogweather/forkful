@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:24.685030-07:00
 description: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
   \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\
   \ oppgave\u2026"
-lastmod: 2024-02-18 23:08:53.747559
+lastmod: 2024-02-19 22:04:59.886108
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
   \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\

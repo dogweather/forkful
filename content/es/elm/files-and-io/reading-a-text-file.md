@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elm/reading-a-text-file/
 date: 2024-01-20 17:54:34.325892-07:00
 description: "Leer un archivo de texto en programaci\xF3n es el proceso de cargar\
   \ y procesar el contenido de un archivo en forma de texto. Los programadores lo\
   \ hacen para\u2026"
-lastmod: 2024-02-18 23:09:09.909335
+lastmod: 2024-02-19 22:05:17.518703
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en programaci\xF3n es el proceso de cargar y procesar\
   \ el contenido de un archivo en forma de texto. Los programadores lo hacen para\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/bash/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:48.391143-07:00
 description: "YAML, joka tarkoittaa YAML Ain't Markup Languagea, on ihmisluettava\
   \ tiedon serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 asetustiedostoissa\
   \ sek\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.826630
+lastmod: 2024-02-19 22:05:15.655184
 model: gpt-4-0125-preview
 summary: "YAML, joka tarkoittaa YAML Ain't Markup Languagea, on ihmisluettava tiedon\
   \ serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 asetustiedostoissa sek\xE4\

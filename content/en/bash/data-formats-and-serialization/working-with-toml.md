@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/working-with-toml/
 date: 2024-01-25 03:39:28.278121-07:00
 description: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ format. Programmers dig it for its simplicity and readability; it's primo for\u2026"
-lastmod: 2024-02-18 23:09:11.253156
+lastmod: 2024-02-19 22:05:18.728019
 model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ format. Programmers dig it for its simplicity and readability; it's primo for\u2026"

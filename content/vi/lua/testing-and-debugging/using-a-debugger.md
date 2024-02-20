@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:23.519645-07:00
@@ -8,7 +6,7 @@ description: "Debugger l\xE0 m\u1ED9t c\xF4ng c\u1EE5 cho ph\xE9p b\u1EA1n ki\u1
   m tra v\xE0 ki\u1EC3m so\xE1t vi\u1EC7c th\u1EF1c thi c\u1EE7a m\u1ED9t ch\u01B0\
   \u01A1ng tr\xECnh, gi\xFAp d\u1EC5 d\xE0ng x\xE1c \u0111\u1ECBnh v\u1EA5n \u0111\
   \u1EC1 x\u1EA3y ra \u1EDF \u0111\xE2u. L\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:50.841815
+lastmod: 2024-02-19 22:04:56.013590
 model: gpt-4-0125-preview
 summary: "Debugger l\xE0 m\u1ED9t c\xF4ng c\u1EE5 cho ph\xE9p b\u1EA1n ki\u1EC3m tra\
   \ v\xE0 ki\u1EC3m so\xE1t vi\u1EC7c th\u1EF1c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1\

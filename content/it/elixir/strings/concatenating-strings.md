@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elixir/concatenating-strings/
 date: 2024-01-27 10:42:41.349557-07:00
 description: "Concatenare le stringhe significa unire due o pi\xF9 stringhe insieme\
   \ per formare un unico pezzo di testo. Potresti aver bisogno di unire testo per\
   \ generare\u2026"
-lastmod: 2024-02-18 23:08:55.593181
+lastmod: 2024-02-19 22:05:02.185472
 model: gpt-4-0125-preview
 summary: "Concatenare le stringhe significa unire due o pi\xF9 stringhe insieme per\
   \ formare un unico pezzo di testo. Potresti aver bisogno di unire testo per generare\u2026"

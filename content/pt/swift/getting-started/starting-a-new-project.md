@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/swift/starting-a-new-project/
 date: 2024-01-20 18:04:29.244658-07:00
 description: "Iniciar um novo projeto em Swift \xE9 como abrir um livro em branco:\
   \ voc\xEA come\xE7a a construir algo do zero. Programadores fazem isso para transformar\
   \ ideias\u2026"
-lastmod: 2024-02-18 23:08:58.491659
+lastmod: 2024-02-19 22:05:05.984223
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em Swift \xE9 como abrir um livro em branco: voc\xEA\
   \ come\xE7a a construir algo do zero. Programadores fazem isso para transformar\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/c/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:53.888699-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res en C implique de traduire\
   \ une structure de date ou un horodatage en un format lisible par l'homme. Les\u2026"
-lastmod: 2024-02-18 23:09:09.369553
+lastmod: 2024-02-19 22:05:17.035154
 model: gpt-4-0125-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res en C implique de traduire\
   \ une structure de date ou un horodatage en un format lisible par l'homme. Les\u2026"

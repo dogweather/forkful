@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/kotlin/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:41.113175-07:00
 description: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer\
   \ une cha\xEEne de texte en enlevant des \xE9l\xE9ments pr\xE9cis. Les d\xE9veloppeurs\
   \ font \xE7a pour\u2026"
-lastmod: 2024-02-18 23:09:08.763522
+lastmod: 2024-02-19 22:05:16.469401
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer une\
   \ cha\xEEne de texte en enlevant des \xE9l\xE9ments pr\xE9cis. Les d\xE9veloppeurs\

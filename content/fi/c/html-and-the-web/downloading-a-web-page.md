@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:00.601234-07:00
 description: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti\
   \ internetsivun sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen\
   \ k\xE4sittely\xE4 tai offline-\u2026"
-lastmod: 2024-02-18 23:09:08.130960
+lastmod: 2024-02-19 22:05:15.932037
 model: gpt-4-0125-preview
 summary: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti internetsivun\
   \ sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen k\xE4sittely\xE4\

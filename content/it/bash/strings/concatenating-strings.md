@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/concatenating-strings/
 date: 2024-01-20 17:34:11.132443-07:00
 description: "Concatenare stringhe significa unirle in una sola. \xC8 utile per costruire\
   \ messaggi, comandi, o lavorare con percorsi di file."
-lastmod: 2024-02-18 23:08:56.042872
+lastmod: 2024-02-19 22:05:02.660307
 model: gpt-4-1106-preview
 summary: "Concatenare stringhe significa unirle in una sola. \xC8 utile per costruire\
   \ messaggi, comandi, o lavorare con percorsi di file."

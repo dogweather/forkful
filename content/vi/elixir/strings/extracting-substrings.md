@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:30.181918-07:00
@@ -8,7 +6,7 @@ description: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y 
   \ c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i. L\u1EADp tr\xEC\
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 thao t\xE1c v\xE0 ph\xE2n t\xED\
   ch d\u1EEF li\u1EC7u v\u0103n b\u1EA3n, ho\u1EB7c \u0111\u01A1n gi\u1EA3n\u2026"
-lastmod: 2024-02-18 23:08:50.350739
+lastmod: 2024-02-19 22:04:55.394355
 model: gpt-4-0125-preview
 summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
   c ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i. L\u1EADp tr\xECnh vi\xEA\

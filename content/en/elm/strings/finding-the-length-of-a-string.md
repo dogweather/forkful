@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:17.443264-07:00
 description: Finding the length of a string means counting its characters. Programmers
   do it to validate inputs, manipulate text, or simply to size up data.
-lastmod: 2024-02-18 23:09:10.963047
+lastmod: 2024-02-19 22:05:18.469716
 model: gpt-4-1106-preview
 summary: Finding the length of a string means counting its characters. Programmers
   do it to validate inputs, manipulate text, or simply to size up data.

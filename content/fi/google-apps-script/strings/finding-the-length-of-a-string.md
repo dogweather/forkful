@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:41.974190-07:00
 description: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka\
   \ on JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\
   vi\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.124367
+lastmod: 2024-02-19 22:05:15.002224
 model: gpt-4-0125-preview
 summary: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka on\
   \ JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\

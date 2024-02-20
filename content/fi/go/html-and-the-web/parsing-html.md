@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:31.506873-07:00
 description: "HTML:n j\xE4sent\xE4minen Go-kieless\xE4 tarkoittaa HTML-tiedostojen\
   \ sis\xE4ll\xF6n analysointia datan poimimiseksi, rakenteen muokkaamiseksi tai HTML:n\
   \ muuntamiseksi\u2026"
-lastmod: 2024-02-18 23:09:07.082125
+lastmod: 2024-02-19 22:05:14.962801
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Go-kieless\xE4 tarkoittaa HTML-tiedostojen sis\xE4\
   ll\xF6n analysointia datan poimimiseksi, rakenteen muokkaamiseksi tai HTML:n muuntamiseksi\u2026"

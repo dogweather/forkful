@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:27.368601-07:00
 description: "Converter uma data em uma string \xE9 o processo de transforma\xE7\xE3\
   o de uma estrutura de data/hora em texto leg\xEDvel. Programadores fazem isso para\
   \ exibir datas\u2026"
-lastmod: 2024-02-18 23:08:58.380051
+lastmod: 2024-02-19 22:05:05.865589
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string \xE9 o processo de transforma\xE7\xE3o\
   \ de uma estrutura de data/hora em texto leg\xEDvel. Programadores fazem isso para\

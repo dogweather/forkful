@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:59.254895-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n es quitar ciertos\
   \ caracteres de una cadena de texto que cumplen con una condici\xF3n especificada.\
   \ Lo hacemos\u2026"
-lastmod: 2024-02-18 23:09:09.732115
+lastmod: 2024-02-19 22:05:17.357097
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es quitar ciertos caracteres\
   \ de una cadena de texto que cumplen con una condici\xF3n especificada. Lo hacemos\u2026"

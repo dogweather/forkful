@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/swift/searching-and-replacing-text/
 date: 2024-01-20 17:58:51.489223-07:00
 description: "S\xF6k och ers\xE4tt av text \xE4r en grundl\xE4ggande process d\xE4\
   r vi hittar specifika teckenkombinationer och byter ut dem mot nya. Programmerare\
   \ anv\xE4nder det f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.110248
+lastmod: 2024-02-19 22:04:57.475519
 model: gpt-4-1106-preview
 summary: "S\xF6k och ers\xE4tt av text \xE4r en grundl\xE4ggande process d\xE4r vi\
   \ hittar specifika teckenkombinationer och byter ut dem mot nya. Programmerare anv\xE4\

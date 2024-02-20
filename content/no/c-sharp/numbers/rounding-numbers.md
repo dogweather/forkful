@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/rounding-numbers/
 date: 2024-01-26 03:43:24.859800-07:00
 description: "\xC5 avrunde tall betyr \xE5 justere dem til den n\xE6rmeste spesifiserte\
   \ plassverdien\u2014tenk \xE5 spenne dem ned til en enklere form. Programmerere\
   \ runder av for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.888785
+lastmod: 2024-02-19 22:05:00.056658
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall betyr \xE5 justere dem til den n\xE6rmeste spesifiserte\
   \ plassverdien\u2014tenk \xE5 spenne dem ned til en enklere form. Programmerere\

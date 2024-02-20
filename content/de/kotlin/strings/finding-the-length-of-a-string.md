@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:35.832577-07:00
 description: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viele\
   \ Zeichen er enth\xE4lt. Wir brauchen das, um Textdaten zu validieren, zu schneiden\
   \ oder\u2026"
-lastmod: 2024-02-18 23:09:04.816682
+lastmod: 2024-02-19 22:05:12.763497
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viele\
   \ Zeichen er enth\xE4lt. Wir brauchen das, um Textdaten zu validieren, zu schneiden\

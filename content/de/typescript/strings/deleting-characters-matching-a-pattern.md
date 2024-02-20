@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/typescript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:06.165751-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist oft notwendig,\
   \ um Eingabedaten zu bereinigen oder bestimmte Zeichen aus Text zu entfernen.\u2026"
-lastmod: 2024-02-18 23:09:04.579915
+lastmod: 2024-02-19 22:05:12.538650
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist oft notwendig,\
   \ um Eingabedaten zu bereinigen oder bestimmte Zeichen aus Text zu entfernen.\u2026"

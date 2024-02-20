@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/rounding-numbers/
 date: 2024-01-25 02:59:36.408769-07:00
 description: "Rounding numbers means adjusting them to a nearby value for simplicity\
   \ or to match a certain precision. It's useful for improving readability, reducing\u2026"
-lastmod: 2024-02-18 23:09:10.760540
+lastmod: 2024-02-19 22:05:18.286298
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to a nearby value for simplicity or\
   \ to match a certain precision. It's useful for improving readability, reducing\u2026"

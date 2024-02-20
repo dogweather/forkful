@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/working-with-complex-numbers/
 date: 2024-01-26 04:43:29.667567-07:00
 description: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \xFC\
   blicherweise geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener\u2026"
-lastmod: 2024-02-18 23:09:04.955736
+lastmod: 2024-02-19 22:05:12.895899
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \xFCblicherweise\
   \ geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener\u2026"

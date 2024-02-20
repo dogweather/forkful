@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:05.667985-07:00
 description: "\xC5 sjekke om en katalog eksisterer i Go er kritisk for applikasjoner\
   \ som samhandler med filsystemet for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5\
   \ f\xE5 tilgang til\u2026"
-lastmod: 2024-02-18 23:08:53.451116
+lastmod: 2024-02-19 22:04:59.563058
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer i Go er kritisk for applikasjoner som\
   \ samhandler med filsystemet for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5\

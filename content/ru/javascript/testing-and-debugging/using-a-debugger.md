@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/javascript/using-a-debugger/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:34.690376-07:00
@@ -15,7 +13,7 @@ description: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D
   \u0433\u043E \u043A\u043E\u0434\u0430 \u0438 \u043D\u0430\u0431\u043B\u044E\u0434\
   \u0430\u0442\u044C \u0435\u0433\u043E \u0432\u044B\u043F\u043E\u043B\u043D\u0435\
   \u043D\u0438\u0435\u2026"
-lastmod: 2024-02-18 23:08:57.465555
+lastmod: 2024-02-19 22:05:04.753362
 model: gpt-4-0125-preview
 summary: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\
   \u0435 \u043E\u0442\u043B\u0430\u0434\u0447\u0438\u043A\u0430 \u043E\u0437\u043D\

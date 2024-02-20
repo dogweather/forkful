@@ -1,11 +1,9 @@
 ---
-aliases:
-- /vi/c/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:43.995380-07:00
 description: '#'
-lastmod: 2024-02-18 23:08:51.259117
+lastmod: 2024-02-19 22:04:56.536411
 model: gpt-4-0125-preview
 summary: '#'
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"

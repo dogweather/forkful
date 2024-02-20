@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:00:49.342662-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
   \ um m\xE9todo para acessar recursos protegidos na web usando nome de usu\xE1rio\
   \ e senha. Programadores usam\u2026"
-lastmod: 2024-02-18 23:08:58.325383
+lastmod: 2024-02-19 22:05:05.807520
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 um\
   \ m\xE9todo para acessar recursos protegidos na web usando nome de usu\xE1rio e\

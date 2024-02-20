@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/reading-a-text-file/
 date: 2024-01-20 17:54:08.831524-07:00
 description: "Leggere un file di testo significa accedere e lavorare con il contenuto\
   \ salvato in un file di testo semplice. I programmatori lo fanno per manipolare\u2026"
-lastmod: 2024-02-18 23:08:55.905539
+lastmod: 2024-02-19 22:05:02.515348
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa accedere e lavorare con il contenuto\
   \ salvato in un file di testo semplice. I programmatori lo fanno per manipolare\u2026"

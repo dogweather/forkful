@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/arduino/extracting-substrings/
 date: 2024-01-20 17:44:55.544409-07:00
 description: "Extracting substrings means pulling out specific parts of a string -\
   \ like grabbing a slice of pie. Programmers do this to isolate data, clean inputs,\
   \ or\u2026"
-lastmod: 2024-02-18 23:09:11.304799
+lastmod: 2024-02-19 22:05:18.774794
 model: gpt-4-1106-preview
 summary: "Extracting substrings means pulling out specific parts of a string - like\
   \ grabbing a slice of pie. Programmers do this to isolate data, clean inputs, or\u2026"

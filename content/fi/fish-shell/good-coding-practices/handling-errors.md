@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/handling-errors/
 date: 2024-01-26 00:52:39.955148-07:00
 description: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4\
   \ odottamattomia tilanteita sulavasti. Teemme sen hallitaksemme ep\xE4onnistumisia\
   \ aiheuttamatta\u2026"
-lastmod: 2024-02-18 23:09:08.092441
+lastmod: 2024-02-19 22:05:15.896242
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4 odottamattomia\
   \ tilanteita sulavasti. Teemme sen hallitaksemme ep\xE4onnistumisia aiheuttamatta\u2026"

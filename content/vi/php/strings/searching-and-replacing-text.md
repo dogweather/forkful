@@ -1,11 +1,9 @@
 ---
-aliases:
-- /vi/php/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:52.171316-07:00
 description: '#'
-lastmod: 2024-02-18 23:08:50.774397
+lastmod: 2024-02-19 22:04:55.928127
 model: gpt-4-0125-preview
 summary: '#'
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"

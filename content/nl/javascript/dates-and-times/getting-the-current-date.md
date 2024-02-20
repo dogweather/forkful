@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:06.052192-07:00
 description: "De huidige datum in JavaScript verkrijgen, is het vastleggen van de\
   \ datum en tijd van de huidige dag. Programmeurs doen dit voor zaken zoals tijdstempels,\u2026"
-lastmod: 2024-02-18 23:09:02.287894
+lastmod: 2024-02-19 22:05:10.299177
 model: gpt-4-0125-preview
 summary: "De huidige datum in JavaScript verkrijgen, is het vastleggen van de datum\
   \ en tijd van de huidige dag. Programmeurs doen dit voor zaken zoals tijdstempels,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/logging/
 date: 2024-01-26 01:06:54.382755-07:00
 description: "A log\xEDstica \xE9 essencialmente o processo de grava\xE7\xE3o de eventos\
   \ que ocorrem dentro de uma aplica\xE7\xE3o de software. Os programadores registram\
   \ esses eventos\u2026"
-lastmod: 2024-02-18 23:08:58.025254
+lastmod: 2024-02-19 22:05:05.501834
 model: gpt-4-1106-preview
 summary: "A log\xEDstica \xE9 essencialmente o processo de grava\xE7\xE3o de eventos\
   \ que ocorrem dentro de uma aplica\xE7\xE3o de software. Os programadores registram\

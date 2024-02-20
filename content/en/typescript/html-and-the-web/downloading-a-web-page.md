@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/downloading-a-web-page/
 date: 2024-01-20 17:44:50.026184-07:00
 description: "Downloading a web page means grabbing the HTML, CSS, and potentially\
   \ other resources from the URL you hit. Programmers do it to process content, scrape\u2026"
-lastmod: 2024-02-18 23:09:10.805986
+lastmod: 2024-02-19 22:05:18.327067
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the HTML, CSS, and potentially other\
   \ resources from the URL you hit. Programmers do it to process content, scrape\u2026"

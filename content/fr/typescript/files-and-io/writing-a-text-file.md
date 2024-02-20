@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/typescript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:32.618469-07:00
 description: "\xC9crire un fichier texte en TypeScript est une comp\xE9tence essentielle\
   \ pour la persistance des donn\xE9es, la configuration ou la g\xE9n\xE9ration de\
   \ journaux. Les\u2026"
-lastmod: 2024-02-18 23:09:08.502131
+lastmod: 2024-02-19 22:05:16.285728
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en TypeScript est une comp\xE9tence essentielle\
   \ pour la persistance des donn\xE9es, la configuration ou la g\xE9n\xE9ration de\

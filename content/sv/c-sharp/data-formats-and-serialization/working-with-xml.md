@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/c-sharp/working-with-xml/
 date: 2024-01-26 04:29:10.377899-07:00
 description: "XML (eXtensible Markup Language) handlar om att strukturera data i ett\
   \ l\xE4sbart format. Programmerare jonglerar med XML f\xF6r konfiguration, datautbyte\u2026"
-lastmod: 2024-02-18 23:08:51.820090
+lastmod: 2024-02-19 22:04:57.156388
 model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) handlar om att strukturera data i ett l\xE4\
   sbart format. Programmerare jonglerar med XML f\xF6r konfiguration, datautbyte\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/javascript/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.503262-07:00
 description: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the-fly\
   \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn. Ze zijn\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:02.277748
+lastmod: 2024-02-19 22:05:10.289645
 model: gpt-4-0125-preview
 summary: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the-fly\
   \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn. Ze zijn\

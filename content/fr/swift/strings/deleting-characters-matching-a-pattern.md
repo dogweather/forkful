@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/swift/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:19.399530-07:00
 description: "(Suppression de caract\xE8res correspondant \xE0 un motif) Dans la programmation,\
   \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait\u2026"
-lastmod: 2024-02-18 23:09:09.190931
+lastmod: 2024-02-19 22:05:16.861343
 model: gpt-4-1106-preview
 summary: "(Suppression de caract\xE8res correspondant \xE0 un motif) Dans la programmation,\
   \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait\u2026"

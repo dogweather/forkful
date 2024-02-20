@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/arduino/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:38.436762-07:00
 description: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\uFF0C\u5C31\u662F\
   \u53BB\u6389\u5B57\u7B26\u4E32\u4E2D\u7B26\u5408\u7279\u5B9A\u89C4\u5219\u7684\u5B57\
@@ -8,7 +6,7 @@ description: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\uFF0C\u5C31
   \u3001\u683C\u5F0F\u7EDF\u4E00\uFF0C\u6216\u51CF\u5C11\u4E0D\u5FC5\u8981\u7684\u4FE1\
   \u606F\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.355814
+lastmod: 2024-02-19 22:05:07.098307
 model: gpt-4-1106-preview
 summary: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\uFF0C\u5C31\u662F\
   \u53BB\u6389\u5B57\u7B26\u4E32\u4E2D\u7B26\u5408\u7279\u5B9A\u89C4\u5219\u7684\u5B57\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/c/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:11.823074-07:00
 description: "Att starta ett nytt projekt i C inneb\xE4r att man s\xE4tter upp en\
   \ grundl\xE4ggande kodstruktur och milj\xF6 f\xF6r att effektivt hantera utvecklingsuppgifter.\u2026"
-lastmod: 2024-02-18 23:08:52.251143
+lastmod: 2024-02-19 22:04:57.635780
 model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i C inneb\xE4r att man s\xE4tter upp en grundl\xE4\
   ggande kodstruktur och milj\xF6 f\xF6r att effektivt hantera utvecklingsuppgifter.\u2026"

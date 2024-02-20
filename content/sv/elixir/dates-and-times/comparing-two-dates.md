@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/comparing-two-dates/
 date: 2024-01-20 17:32:47.520208-07:00
 description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras relativa\
   \ position p\xE5 tidslinjen. Programmerare g\xF6r detta f\xF6r att avg\xF6ra tidsintervaller,\
   \ h\xE4ndelseordning,\u2026"
-lastmod: 2024-02-18 23:08:51.514763
+lastmod: 2024-02-19 22:04:56.826345
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras relativa position\
   \ p\xE5 tidslinjen. Programmerare g\xF6r detta f\xF6r att avg\xF6ra tidsintervaller,\

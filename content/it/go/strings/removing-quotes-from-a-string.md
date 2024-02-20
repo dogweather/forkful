@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:12.667822-07:00
 description: "Rimuovere le virgolette da una stringa in Go significa eliminare le\
   \ virgolette iniziali e finali (`\"` o `'`) da una stringa data. I programmatori\
   \ spesso\u2026"
-lastmod: 2024-02-18 23:08:55.419809
+lastmod: 2024-02-19 22:05:01.999283
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa in Go significa eliminare le virgolette\
   \ iniziali e finali (`\"` o `'`) da una stringa data. I programmatori spesso\u2026"

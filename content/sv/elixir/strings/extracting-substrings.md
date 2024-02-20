@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/extracting-substrings/
 date: 2024-01-20 17:45:34.738211-07:00
 description: "Att extrahera delstr\xE4ngar inneb\xE4r att man plockar ut specifika\
   \ delar av en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera\
   \ specifika\u2026"
-lastmod: 2024-02-18 23:08:51.492039
+lastmod: 2024-02-19 22:04:56.801299
 model: gpt-4-1106-preview
 summary: "Att extrahera delstr\xE4ngar inneb\xE4r att man plockar ut specifika delar\
   \ av en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/haskell/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:18.941020-07:00
@@ -13,7 +11,7 @@ description: "\u0418\u043D\u0442\u0435\u0440\u0430\u043A\u0442\u0438\u0432\u043D
   \ \u0432 \u0436\u0438\u0432\u043E\u043C \u0440\u0435\u0436\u0438\u043C\u0435. \u042D\
   \u0442\u043E \u043F\u043B\u043E\u0449\u0430\u0434\u043A\u0430 \u0434\u043B\u044F\
   \u2026"
-lastmod: 2024-02-18 23:08:57.050999
+lastmod: 2024-02-19 22:05:04.094074
 model: gpt-4-0125-preview
 summary: "\u0418\u043D\u0442\u0435\u0440\u0430\u043A\u0442\u0438\u0432\u043D\u0430\
   \u044F \u043E\u0431\u043E\u043B\u043E\u0447\u043A\u0430 \u0438\u043B\u0438 REPL\

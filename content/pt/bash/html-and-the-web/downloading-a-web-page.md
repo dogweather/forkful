@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/bash/downloading-a-web-page/
 date: 2024-01-20 17:43:37.213336-07:00
 description: "Baixar uma p\xE1gina da web significa copiar o seu conte\xFAdo da internet\
   \ para o seu computador. Programadores fazem isso para analisar dados, testar\u2026"
-lastmod: 2024-02-18 23:08:58.324472
+lastmod: 2024-02-19 22:05:05.806542
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web significa copiar o seu conte\xFAdo da internet\
   \ para o seu computador. Programadores fazem isso para analisar dados, testar\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/reading-command-line-arguments/
 date: 2024-01-20 17:55:32.343899-07:00
 description: "Komennon rivin argumentit ovat sy\xF6tteit\xE4, joita ohjelmat saavat\
   \ k\xE4ynnistyess\xE4\xE4n komentorivilt\xE4. Ne mahdollistavat ohjelmalle eri tilanteisiin\
   \ mukautumisen\u2026"
-lastmod: 2024-02-18 23:09:07.821390
+lastmod: 2024-02-19 22:05:15.650412
 model: gpt-4-1106-preview
 summary: "Komennon rivin argumentit ovat sy\xF6tteit\xE4, joita ohjelmat saavat k\xE4\
   ynnistyess\xE4\xE4n komentorivilt\xE4. Ne mahdollistavat ohjelmalle eri tilanteisiin\

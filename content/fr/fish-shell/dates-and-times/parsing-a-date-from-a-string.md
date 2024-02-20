@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/fish-shell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:00.125677-07:00
 description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
   \ d'extraire les informations de date encod\xE9es au sein de cha\xEEnes et de les\
   \ convertir en\u2026"
-lastmod: 2024-02-18 23:09:09.316395
+lastmod: 2024-02-19 22:05:16.984611
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
   \ d'extraire les informations de date encod\xE9es au sein de cha\xEEnes et de les\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:06.288332-07:00
@@ -12,7 +10,7 @@ description: "\uC5F0\uAD00 \uBC30\uC5F4 \uB610\uB294 \uB7EC\uC2A4\uD2B8 \uC0AC\u
   \ \uB370\uC774\uD130 \uC870\uC791\uC744 \uAC00\uB2A5\uD558\uAC8C \uD558\uB294 \uBE60\
   \uB978 \uB370\uC774\uD130 \uC870\uD68C\uB97C \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.873340
+lastmod: 2024-02-19 22:05:13.809124
 model: gpt-4-0125-preview
 summary: "\uC5F0\uAD00 \uBC30\uC5F4 \uB610\uB294 \uB7EC\uC2A4\uD2B8 \uC0AC\uC6A9\uC790\
   \uB4E4\uC774 \"\uD574\uC2DC \uB9F5\"\uC774\uB77C \uBD80\uB974\uB294 \uAC83\uC740\

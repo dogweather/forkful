@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/handling-errors/
 date: 2024-01-26 00:51:11.247497-07:00
 description: "Felhantering handlar om att hantera det ov\xE4ntade i program - som\
   \ en ordningsvakt som hanterar br\xE5kstakar. Programmerare f\xF6redrar n\xE4r allt\
   \ flyter p\xE5;\u2026"
-lastmod: 2024-02-18 23:08:51.469144
+lastmod: 2024-02-19 22:04:56.776438
 model: gpt-4-1106-preview
 summary: "Felhantering handlar om att hantera det ov\xE4ntade i program - som en ordningsvakt\
   \ som hanterar br\xE5kstakar. Programmerare f\xF6redrar n\xE4r allt flyter p\xE5\

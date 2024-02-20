@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/python/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:21.834026-07:00
 description: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer parsing\
   \ av JSON-formatterte strenger til Python-objekter og omvendt. Dette er avgj\xF8\
   rende for web-\u2026"
-lastmod: 2024-02-18 23:08:53.544537
+lastmod: 2024-02-19 22:04:59.665098
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer parsing av\
   \ JSON-formatterte strenger til Python-objekter og omvendt. Dette er avgj\xF8rende\

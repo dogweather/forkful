@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:44.938671-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Java
   \ th\u01B0\u1EDDng ngh\u0129a l\xE0 t\u1EA1o v\xE0 l\u01B0u d\u1EEF li\u1EC7u v\xE0\
   o m\u1ED9t t\u1EC7p \u1EDF \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc cho con\
   \ ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
-lastmod: 2024-02-18 23:08:51.156526
+lastmod: 2024-02-19 22:04:56.408310
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong JavaScript\
   \ th\u01B0\u1EDDng ngh\u0129a l\xE0 t\u1EA1o v\xE0 l\u01B0u d\u1EEF li\u1EC7u v\xE0\

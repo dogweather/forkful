@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:44.258158-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u04
   \u0440\u0435\u0434\u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044B\u0445\
   \ \u0434\u043B\u044F \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0433\u043E \u043F\
   \u043E\u0442\u043E\u043A\u0430\u2026"
-lastmod: 2024-02-18 23:08:56.448711
+lastmod: 2024-02-19 22:05:03.120071
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u043D\u0434\
   \u0430\u0440\u0442\u043D\u044B\u0439 \u043F\u043E\u0442\u043E\u043A \u043E\u0448\

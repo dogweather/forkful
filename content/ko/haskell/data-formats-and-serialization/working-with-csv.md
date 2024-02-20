@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:52.152125-07:00
@@ -12,7 +10,7 @@ description: "CSV(Comma-Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C 
   \uB4DC\uC2DC\uD2B8, \uB370\uC774\uD130\uBCA0\uC774\uC2A4\uC5D0\uC11C \uB370\uC774\
   \uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uAC00\uC838\uC624\uAC70\uB098 \uB0B4\
   \uBCF4\uB0B4\uAC70\uB098 \uB2E4\uB978 \uD504\uB85C\uADF8\uB7A8 \uAC04\uC758\u2026"
-lastmod: 2024-02-18 23:09:06.322376
+lastmod: 2024-02-19 22:05:14.240540
 model: gpt-4-0125-preview
 summary: "CSV(Comma-Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12\
   ) \uC791\uC5C5\uC740 \uAC04\uB2E8\uD55C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD615\uC2DD\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c-sharp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:22.022515-07:00
 description: "REPL\uFF08Read-Eval-Print Loop\uFF09\u3092\u4F7F\u7528\u3059\u308B\u3068\
   \u3001C#\u30B3\u30FC\u30C9\u3092\u5165\u529B\u3057\u3001\u5BFE\u8A71\u7684\u306B\
@@ -10,7 +8,7 @@ description: "REPL\uFF08Read-Eval-Print Loop\uFF09\u3092\u4F7F\u7528\u3059\u308B
   \u3001C#\u306E\u30AF\u30A4\u30C3\u30AF\u306A\u5B9F\u9A13\u3001\u30C7\u30D0\u30C3\
   \u30B0\u3001\u307E\u305F\u306F\u5B66\u7FD2\u3092\u884C\u3046\u305F\u3081\u306B\u3053\
   \u308C\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.919311
+lastmod: 2024-02-19 22:05:01.274307
 model: gpt-4-0125-preview
 summary: "REPL\uFF08Read-Eval-Print Loop\uFF09\u3092\u4F7F\u7528\u3059\u308B\u3068\
   \u3001C#\u30B3\u30FC\u30C9\u3092\u5165\u529B\u3057\u3001\u5BFE\u8A71\u7684\u306B\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/reading-a-text-file/
 date: 2024-01-20 17:54:29.807549-07:00
 description: "Czytanie pliku tekstowego to proces pozyskiwania danych z zapisanego\
   \ tekstu. Programi\u015Bci robi\u0105 to, by obs\u0142u\u017Cy\u0107 informacje\
   \ \u2013 konfigurowa\u0107 aplikacje,\u2026"
-lastmod: 2024-02-18 23:08:49.495158
+lastmod: 2024-02-19 22:04:54.425132
 model: gpt-4-1106-preview
 summary: "Czytanie pliku tekstowego to proces pozyskiwania danych z zapisanego tekstu.\
   \ Programi\u015Bci robi\u0105 to, by obs\u0142u\u017Cy\u0107 informacje \u2013 konfigurowa\u0107\

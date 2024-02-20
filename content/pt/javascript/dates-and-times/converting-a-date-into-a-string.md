@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:04.274405-07:00
 description: "Converter uma data em uma string significa transformar um objeto de\
   \ data em uma sequ\xEAncia de caracteres leg\xEDveis. Programadores fazem isso para\
   \ formatar\u2026"
-lastmod: 2024-02-18 23:08:58.543575
+lastmod: 2024-02-19 22:05:06.039413
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string significa transformar um objeto de data\
   \ em uma sequ\xEAncia de caracteres leg\xEDveis. Programadores fazem isso para formatar\u2026"

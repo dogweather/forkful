@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:21.770445-07:00
 description: "Het omzetten van een tekenreeks naar kleine letters omvat het transformeren\
   \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"
-lastmod: 2024-02-18 23:09:01.651145
+lastmod: 2024-02-19 22:05:09.672749
 model: gpt-4-0125-preview
 summary: "Het omzetten van een tekenreeks naar kleine letters omvat het transformeren\
   \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"

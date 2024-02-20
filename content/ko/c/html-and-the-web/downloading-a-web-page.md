@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:03.129355-07:00
@@ -14,7 +12,7 @@ description: "C\uB85C \uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\u
   \ \uC2A4\uD06C\uB808\uC774\uD551\uD558\uAC70\uB098, \uC751\uC6A9 \uD504\uB85C\uADF8\
   \uB7A8\uC5D0\uC11C \uC9C1\uC811 \uC628\uB77C\uC778 \uC790\uC6D0\uACFC \uC0C1\uD638\
   \u2026"
-lastmod: 2024-02-18 23:09:06.949773
+lastmod: 2024-02-19 22:05:14.835478
 model: gpt-4-0125-preview
 summary: "C\uB85C \uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294\
   \ \uAC83\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC801\uC73C\uB85C \uC778\uD130\uB137\

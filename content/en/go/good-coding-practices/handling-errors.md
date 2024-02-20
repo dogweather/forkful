@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/handling-errors/
 date: 2024-02-03 17:50:09.115308-07:00
 description: "Handling errors in Go involves recognizing and responding to error conditions\
   \ in your program. Programmers engage in error handling to ensure their\u2026"
-lastmod: 2024-02-18 23:09:10.604206
+lastmod: 2024-02-19 22:05:18.146015
 model: gpt-4-0125-preview
 summary: "Handling errors in Go involves recognizing and responding to error conditions\
   \ in your program. Programmers engage in error handling to ensure their\u2026"

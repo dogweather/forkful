@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/swift/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:29.518801-07:00
 description: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
   \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\
   \ er med sm\xE5\u2026"
-lastmod: 2024-02-18 23:08:54.252945
+lastmod: 2024-02-19 22:05:00.399147
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
   \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\

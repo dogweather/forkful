@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pt/elixir/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 02:05:29.095545-07:00
 description: "Analisar uma data de uma string trata-se de pegar um texto, como \"\
   2023-04-05\", e convert\xEA-lo em um formato de data que seu programa possa entender\
   \ e\u2026"
-lastmod: 2024-02-18 23:08:57.853025
+lastmod: 2024-02-19 22:05:05.323611
 model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string trata-se de pegar um texto, como \"2023-04-05\"\
   , e convert\xEA-lo em um formato de data que seu programa possa entender e\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/rust/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:32.339290-07:00
@@ -11,7 +9,7 @@ description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON (JavaScript Objec
   \ Rust \u0442\u0430 \u0441\u0435\u0440\u0456\u0430\u043B\u0456\u0437\u0430\u0446\
   \u0456\u0457 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440 \u0434\u0430\u043D\
   \u0438\u0445 Rust \u043D\u0430\u0437\u0430\u0434 \u0443 JSON.\u2026"
-lastmod: 2024-02-18 23:09:00.003699
+lastmod: 2024-02-19 22:05:07.985856
 model: gpt-4-0125-preview
 summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON (JavaScript Object Notation)\
   \ \u0443 Rust \u043F\u043E\u043B\u044F\u0433\u0430\u0454 \u0443 \u0440\u043E\u0437\

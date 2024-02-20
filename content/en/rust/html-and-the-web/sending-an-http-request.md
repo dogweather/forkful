@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/rust/sending-an-http-request/
 date: 2024-01-20 18:00:43.269461-07:00
 description: "Sending an HTTP request fetches data from or sends data to a web server.\
   \ Programmers do it to interact with web services or APIs \u2013 grabbing info,\
   \ posting\u2026"
-lastmod: 2024-02-18 23:09:10.845415
+lastmod: 2024-02-19 22:05:18.362567
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request fetches data from or sends data to a web server.\
   \ Programmers do it to interact with web services or APIs \u2013 grabbing info,\

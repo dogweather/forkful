@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/swift/parsing-html/
 date: 2024-01-20 15:34:00.673385-07:00
 description: "Le parsing HTML, c'est lire et convertir du code HTML en quelque chose\
   \ qu'une application peut comprendre et manipuler. Les programmeurs le font pour\u2026"
-lastmod: 2024-02-18 23:09:09.206287
+lastmod: 2024-02-19 22:05:16.875249
 summary: "Le parsing HTML, c'est lire et convertir du code HTML en quelque chose qu'une\
   \ application peut comprendre et manipuler. Les programmeurs le font pour\u2026"
 title: Analyse syntaxique de HTML

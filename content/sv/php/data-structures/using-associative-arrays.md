@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/php/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:32.693538-07:00
 description: "Associativa arrayer i PHP \xE4r som superladdade listor d\xE4r varje\
   \ element kan n\xE5s genom att anv\xE4nda ett l\xE4sbart nyckelv\xE4rde ist\xE4\
   llet f\xF6r bara siffror.\u2026"
-lastmod: 2024-02-18 23:08:51.871471
+lastmod: 2024-02-19 22:04:57.212853
 model: gpt-4-0125-preview
 summary: "Associativa arrayer i PHP \xE4r som superladdade listor d\xE4r varje element\
   \ kan n\xE5s genom att anv\xE4nda ett l\xE4sbart nyckelv\xE4rde ist\xE4llet f\xF6\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:51.382058-07:00
 description: "YAML, dat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare gegevensserialisatiestandaard die vaak wordt gebruikt voor\u2026"
-lastmod: 2024-02-18 23:09:01.408940
+lastmod: 2024-02-19 22:05:09.440634
 model: gpt-4-0125-preview
 summary: "YAML, dat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare gegevensserialisatiestandaard die vaak wordt gebruikt voor\u2026"

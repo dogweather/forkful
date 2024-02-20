@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/logging/
 date: 2024-01-26 01:02:56.841680-07:00
 description: "Logging er i bunn og grunn prosessen med \xE5 registrere hendelser og\
   \ datautskrifter fra et stykke programvare mens det kj\xF8rer, tenk p\xE5 det som\
   \ programvarens\u2026"
-lastmod: 2024-02-18 23:08:53.817683
+lastmod: 2024-02-19 22:04:59.961366
 model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn prosessen med \xE5 registrere hendelser og datautskrifter\
   \ fra et stykke programvare mens det kj\xF8rer, tenk p\xE5 det som programvarens\u2026"

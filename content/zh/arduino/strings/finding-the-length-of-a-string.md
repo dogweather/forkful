@@ -1,13 +1,11 @@
 ---
-aliases:
-- /zh/arduino/finding-the-length-of-a-string/
 date: 2024-01-20 17:46:47.494508-07:00
 description: "\u5728Arduino\u7F16\u7A0B\u4E2D\uFF0C\u786E\u5B9A\u5B57\u7B26\u4E32\u957F\
   \u5EA6\u5C31\u662F\u627E\u51FA\u5B57\u7B26\u4E32\u4E2D\u6709\u591A\u5C11\u5B57\u7B26\
   \u3002\u8FD9\u5BF9\u4E8E\u5185\u5B58\u7BA1\u7406\u548C\u6027\u80FD\u4F18\u5316\u6765\
   \u8BF4\u975E\u5E38\u91CD\u8981\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.361644
+lastmod: 2024-02-19 22:05:07.105948
 model: gpt-4-1106-preview
 summary: "\u5728Arduino\u7F16\u7A0B\u4E2D\uFF0C\u786E\u5B9A\u5B57\u7B26\u4E32\u957F\
   \u5EA6\u5C31\u662F\u627E\u51FA\u5B57\u7B26\u4E32\u4E2D\u6709\u591A\u5C11\u5B57\u7B26\

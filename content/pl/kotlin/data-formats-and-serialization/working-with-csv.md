@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/kotlin/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:42.145690-07:00
 description: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
   \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"
-lastmod: 2024-02-18 23:08:49.591560
+lastmod: 2024-02-19 22:04:54.520202
 model: gpt-4-0125-preview
 summary: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
   \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"

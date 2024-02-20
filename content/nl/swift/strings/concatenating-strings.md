@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:16.275230-07:00
 description: "Het samenvoegen van strings is het aan elkaar plakken van afzonderlijke\
   \ strings om een nieuwe te maken. Programmeurs doen dit om tekst dynamisch te\u2026"
-lastmod: 2024-02-18 23:09:02.220330
+lastmod: 2024-02-19 22:05:10.234843
 model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings is het aan elkaar plakken van afzonderlijke\
   \ strings om een nieuwe te maken. Programmeurs doen dit om tekst dynamisch te\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:40.161345-07:00
 description: "Att avrunda tal, ett grundl\xE4ggande koncept inom dataprogrammering,\
   \ inneb\xE4r att justera ett tal till dess n\xE4rmaste heltal eller till ett angivet\
   \ antal\u2026"
-lastmod: 2024-02-18 23:08:51.372883
+lastmod: 2024-02-19 22:04:56.668703
 model: gpt-4-0125-preview
 summary: "Att avrunda tal, ett grundl\xE4ggande koncept inom dataprogrammering, inneb\xE4\
   r att justera ett tal till dess n\xE4rmaste heltal eller till ett angivet antal\u2026"

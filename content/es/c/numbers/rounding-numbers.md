@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:13.817400-07:00
 description: "Redondear n\xFAmeros es el proceso de ajustar los d\xEDgitos de un n\xFA\
   mero para reducir su precisi\xF3n de acuerdo con ciertas reglas, ya sea hacia el\
   \ n\xFAmero entero\u2026"
-lastmod: 2024-02-18 23:09:10.495136
+lastmod: 2024-02-19 22:05:18.046827
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros es el proceso de ajustar los d\xEDgitos de un n\xFA\
   mero para reducir su precisi\xF3n de acuerdo con ciertas reglas, ya sea hacia el\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/searching-and-replacing-text/
 date: 2024-01-20 17:58:57.089494-07:00
 description: "Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimist\xE4\
   \ ja niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t\
   \ sit\xE4 datan\u2026"
-lastmod: 2024-02-18 23:09:07.303088
+lastmod: 2024-02-19 22:05:15.195148
 model: gpt-4-1106-preview
 summary: "Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimist\xE4 ja\
   \ niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\

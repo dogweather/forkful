@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/writing-a-text-file/
 date: 2024-02-03 19:03:25.408183-07:00
 description: "Writing a text file in Swift allows you to persistently store string\
   \ data on the filesystem, which is essential for tasks such as saving configuration\u2026"
-lastmod: 2024-02-18 23:09:11.414549
+lastmod: 2024-02-19 22:05:18.874145
 model: gpt-4-0125-preview
 summary: "Writing a text file in Swift allows you to persistently store string data\
   \ on the filesystem, which is essential for tasks such as saving configuration\u2026"

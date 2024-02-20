@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:16.709512-07:00
 description: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut\
   \ den mot n\xE5got annat. Programmerare anv\xE4nder det f\xF6r att snabbt \xE4ndra\
   \ kod, data eller dokument,\u2026"
-lastmod: 2024-02-18 23:08:52.069662
+lastmod: 2024-02-19 22:04:57.430373
 model: gpt-4-1106-preview
 summary: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut den\
   \ mot n\xE5got annat. Programmerare anv\xE4nder det f\xF6r att snabbt \xE4ndra kod,\

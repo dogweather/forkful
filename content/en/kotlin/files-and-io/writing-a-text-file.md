@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/writing-a-text-file/
 date: 2024-02-03 19:03:08.673982-07:00
 description: "Writing a text file in Kotlin involves creating a file and inputting\
   \ text content into it, a common task for storing data, logging, or configuration\u2026"
-lastmod: 2024-02-18 23:09:11.031153
+lastmod: 2024-02-19 22:05:18.532674
 model: gpt-4-0125-preview
 summary: "Writing a text file in Kotlin involves creating a file and inputting text\
   \ content into it, a common task for storing data, logging, or configuration\u2026"

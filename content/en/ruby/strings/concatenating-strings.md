@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/concatenating-strings/
 date: 2024-01-20 17:35:38.349648-07:00
 description: "Concatenating strings is just a fancy way of saying 'sticking them together\
   \ end-to-end'. Programmers do it to combine words and sentences, to build\u2026"
-lastmod: 2024-02-18 23:09:11.555875
+lastmod: 2024-02-19 22:05:19.003541
 model: gpt-4-1106-preview
 summary: "Concatenating strings is just a fancy way of saying 'sticking them together\
   \ end-to-end'. Programmers do it to combine words and sentences, to build\u2026"

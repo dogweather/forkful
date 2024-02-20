@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/java/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:00.434714-07:00
 description: "Pisanie test\xF3w w Java ma na celu weryfikacj\u0119, czy Tw\xF3j kod\
   \ zachowuje si\u0119 zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015B\
   ci pisz\u0105 testy, aby\u2026"
-lastmod: 2024-02-18 23:08:49.481405
+lastmod: 2024-02-19 22:04:54.410347
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Java ma na celu weryfikacj\u0119, czy Tw\xF3j kod zachowuje\
   \ si\u0119 zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015Bci\

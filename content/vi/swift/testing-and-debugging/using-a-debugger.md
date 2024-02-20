@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:05.940464-07:00
@@ -8,7 +6,7 @@ description: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5n
   \ c\xE1c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t \u0111\u1EC3 ki\u1EC3m tra v\xE0 ki\u1EC3\
   m so\xE1t m\xE3 c\u1EE7a b\u1EA1n khi n\xF3 ch\u1EA1y. \u0110i\u1EC1u n\xE0y th\u1EF1\
   c s\u1EF1 quan tr\u1ECDng b\u1EDFi v\xEC n\xF3 cho\u2026"
-lastmod: 2024-02-18 23:08:51.095195
+lastmod: 2024-02-19 22:04:56.310300
 model: gpt-4-0125-preview
 summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng c\xE1\
   c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t \u0111\u1EC3 ki\u1EC3m tra v\xE0 ki\u1EC3\

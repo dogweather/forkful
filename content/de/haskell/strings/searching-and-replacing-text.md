@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/haskell/searching-and-replacing-text/
 date: 2024-01-20 17:57:47.652017-07:00
 description: "Text suchen und ersetzen erm\xF6glicht es, bestimmte Zeichenketten in\
   \ einem Text zu finden und durch andere zu ersetzen. Programmierer tun das oft,\
   \ um Fehler\u2026"
-lastmod: 2024-02-18 23:09:04.901046
+lastmod: 2024-02-19 22:05:12.843855
 model: gpt-4-1106-preview
 summary: "Text suchen und ersetzen erm\xF6glicht es, bestimmte Zeichenketten in einem\
   \ Text zu finden und durch andere zu ersetzen. Programmierer tun das oft, um Fehler\u2026"

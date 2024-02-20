@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/clojure/working-with-complex-numbers/
 date: 2024-01-26 04:39:10.955177-07:00
 description: "I numeri complessi estendono i numeri reali con una parte aggiuntiva,\
   \ l'unit\xE0 immaginaria 'i'. I programmatori li utilizzano in vari ambiti, tra\
   \ cui\u2026"
-lastmod: 2024-02-18 23:08:55.555306
+lastmod: 2024-02-19 22:05:02.145126
 model: gpt-4-0125-preview
 summary: "I numeri complessi estendono i numeri reali con una parte aggiuntiva, l'unit\xE0\
   \ immaginaria 'i'. I programmatori li utilizzano in vari ambiti, tra cui\u2026"

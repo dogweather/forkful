@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/javascript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:23.104778-07:00
 description: "I JavaScript kan vi beregne en dato i fremtiden eller fortiden; det\
   \ er nyttig for funksjoner som p\xE5minnelser eller historiske dataanalyser. Programmerere\u2026"
-lastmod: 2024-02-18 23:08:54.321583
+lastmod: 2024-02-19 22:05:00.474161
 model: gpt-4-1106-preview
 summary: "I JavaScript kan vi beregne en dato i fremtiden eller fortiden; det er nyttig\
   \ for funksjoner som p\xE5minnelser eller historiske dataanalyser. Programmerere\u2026"

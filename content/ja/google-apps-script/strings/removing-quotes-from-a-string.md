@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/google-apps-script/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:11.567756-07:00
 description: "Google Apps\u2026"
-lastmod: 2024-02-18 23:08:54.510476
+lastmod: 2024-02-19 22:05:00.697629
 model: gpt-4-0125-preview
 summary: "Google Apps\u2026"
 title: "\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u524A\u9664\u3059\u308B"

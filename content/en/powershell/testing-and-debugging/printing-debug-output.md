@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/powershell/printing-debug-output/
 date: 2024-01-20 17:53:22.782145-07:00
 description: "Printing debug output is like having a conversation with your code.\
   \ It's about inserting print statements to show what's going on under the hood of\
   \ your\u2026"
-lastmod: 2024-02-18 23:09:11.276613
+lastmod: 2024-02-19 22:05:18.749343
 model: gpt-4-1106-preview
 summary: "Printing debug output is like having a conversation with your code. It's\
   \ about inserting print statements to show what's going on under the hood of your\u2026"

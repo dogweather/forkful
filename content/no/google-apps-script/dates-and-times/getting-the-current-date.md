@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:28.008327-07:00
 description: "\xC5 f\xE5 tak i dagens dato i Google Apps Script handler om \xE5 hente\
   \ den levende datoen og tiden, en vanlig oppgave for automatisering, logging og\
   \ tidsstempling\u2026"
-lastmod: 2024-02-18 23:08:53.492484
+lastmod: 2024-02-19 22:04:59.607575
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 tak i dagens dato i Google Apps Script handler om \xE5 hente\
   \ den levende datoen og tiden, en vanlig oppgave for automatisering, logging og\

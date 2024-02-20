@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:40.714886-07:00
 description: "I Bash kan du slette tegn som matcher et m\xF8nster for \xE5 forenkle\
   \ strenger eller rense data. Dette er nyttig n\xE5r du jobber med tekstbehandling\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:54.041107
+lastmod: 2024-02-19 22:05:00.222337
 model: gpt-4-1106-preview
 summary: "I Bash kan du slette tegn som matcher et m\xF8nster for \xE5 forenkle strenger\
   \ eller rense data. Dette er nyttig n\xE5r du jobber med tekstbehandling eller\u2026"

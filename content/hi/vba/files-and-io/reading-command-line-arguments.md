@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/vba/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:56.030102-07:00
@@ -14,7 +12,7 @@ description: "\u0935\u093F\u091C\u093C\u0941\u0905\u0932 \u092C\u0947\u0938\u093
   \u0948\u0930\u093E\u092E\u0940\u091F\u0930\u094B\u0902 \u0924\u0915 \u092A\u0939\
   \u0941\u0902\u091A\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0915\u0930\u0924\
   \u093E \u0939\u0948\u0964 \u092F\u0939\u2026"
-lastmod: 2024-02-18 23:09:03.064951
+lastmod: 2024-02-19 22:05:11.061727
 model: gpt-4-0125-preview
 summary: "\u0935\u093F\u091C\u093C\u0941\u0905\u0932 \u092C\u0947\u0938\u093F\u0915\
   \ \u092B\u0949\u0930 \u090F\u092A\u094D\u0932\u0940\u0915\u0947\u0936\u0902\u0938\

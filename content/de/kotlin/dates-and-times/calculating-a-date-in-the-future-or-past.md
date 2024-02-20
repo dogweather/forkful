@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:27.092630-07:00
 description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums hei\xDFt\
   \ einfach, ein Datum basierend auf einem anderen Datum zu ermitteln. Programmierer\
   \ nutzen das\u2026"
-lastmod: 2024-02-18 23:09:04.840721
+lastmod: 2024-02-19 22:05:12.786031
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums hei\xDFt einfach,\
   \ ein Datum basierend auf einem anderen Datum zu ermitteln. Programmierer nutzen\

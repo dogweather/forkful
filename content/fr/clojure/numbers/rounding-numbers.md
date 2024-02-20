@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/rounding-numbers/
 date: 2024-01-26 03:44:38.241383-07:00
 description: "Arrondir les nombres consiste \xE0 ajuster un nombre au plus proche\
   \ entier ou \xE0 une certaine pr\xE9cision d\xE9cimale. Nous arrondissons les nombres\
   \ pour les\u2026"
-lastmod: 2024-02-18 23:09:08.381129
+lastmod: 2024-02-19 22:05:16.175807
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres consiste \xE0 ajuster un nombre au plus proche entier\
   \ ou \xE0 une certaine pr\xE9cision d\xE9cimale. Nous arrondissons les nombres pour\

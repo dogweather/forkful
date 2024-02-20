@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/fish-shell/printing-debug-output/
 date: 2024-01-20 17:52:36.874403-07:00
 description: "Debug-Ausgaben zu drucken ist, als w\xFCrde man unter die Motorhaube\
   \ des Codes schauen. Entwickler tun dies, um zu verstehen, was w\xE4hrend der Ausf\xFC\
   hrung\u2026"
-lastmod: 2024-02-18 23:09:05.328910
+lastmod: 2024-02-19 22:05:13.250720
 model: gpt-4-1106-preview
 summary: "Debug-Ausgaben zu drucken ist, als w\xFCrde man unter die Motorhaube des\
   \ Codes schauen. Entwickler tun dies, um zu verstehen, was w\xE4hrend der Ausf\xFC\

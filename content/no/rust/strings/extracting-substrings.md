@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/rust/extracting-substrings/
 date: 2024-01-20 17:46:54.432830-07:00
 description: "\xC5 trekke ut substrings i Rust betyr \xE5 lage nye strenger fra et\
   \ utvalg av en st\xF8rre streng. Vi gj\xF8r dette for \xE5 analysere, transformere\
   \ eller validere data\u2026"
-lastmod: 2024-02-18 23:08:53.674582
+lastmod: 2024-02-19 22:04:59.806926
 model: gpt-4-1106-preview
 summary: "\xC5 trekke ut substrings i Rust betyr \xE5 lage nye strenger fra et utvalg\
   \ av en st\xF8rre streng. Vi gj\xF8r dette for \xE5 analysere, transformere eller\

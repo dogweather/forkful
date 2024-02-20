@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:10.673998-07:00
 description: "Een string interpoleren betekent variabelen of expressies in een string\
   \ invoegen. Het bespaart tijd en verbetert de leesbaarheid door dynamische inhoud\u2026"
-lastmod: 2024-02-18 23:09:02.307620
+lastmod: 2024-02-19 22:05:10.317756
 model: gpt-4-0125-preview
 summary: "Een string interpoleren betekent variabelen of expressies in een string\
   \ invoegen. Het bespaart tijd en verbetert de leesbaarheid door dynamische inhoud\u2026"

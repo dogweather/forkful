@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elixir/extracting-substrings/
 date: 2024-01-20 17:45:17.466899-07:00
 description: "Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte eines\
   \ Strings zu isolieren. Programmierer machen das, um Daten zu manipulieren, zu\u2026"
-lastmod: 2024-02-18 23:09:04.540152
+lastmod: 2024-02-19 22:05:12.500458
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte eines Strings\
   \ zu isolieren. Programmierer machen das, um Daten zu manipulieren, zu\u2026"

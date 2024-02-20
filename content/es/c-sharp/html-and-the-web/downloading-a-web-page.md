@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/c-sharp/downloading-a-web-page/
 date: 2024-01-20 17:43:30.434831-07:00
 description: "Descargar una p\xE1gina web significa traer su contenido a nuestra m\xE1\
   quina local. Los programadores lo hacen para extraer informaci\xF3n, interactuar\
   \ con APIs\u2026"
-lastmod: 2024-02-18 23:09:09.980599
+lastmod: 2024-02-19 22:05:17.583312
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa traer su contenido a nuestra m\xE1\
   quina local. Los programadores lo hacen para extraer informaci\xF3n, interactuar\

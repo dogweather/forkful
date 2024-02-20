@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/rust/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:35:00.762499-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u043F\u0438\u0441 \u0432 \u0441\u0442\u0430\u043D\u04
   \u043D\u0441\u043E\u043B\u044C \u043E\u043A\u0440\u0435\u043C\u043E \u0432\u0456\
   \u0434 \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u043E\u0433\u043E\
   \ \u0432\u0438\u0432\u043E\u0434\u0443\u2026"
-lastmod: 2024-02-18 23:08:59.997095
+lastmod: 2024-02-19 22:05:07.977863
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441 \u0432 \u0441\u0442\u0430\u043D\u0434\u0430\
   \u0440\u0442\u043D\u0438\u0439 \u043F\u043E\u0442\u0456\u043A \u043F\u043E\u043C\

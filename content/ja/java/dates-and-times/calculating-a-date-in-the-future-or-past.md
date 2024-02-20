@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/java/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:47.505554-07:00
 description: "\u8A08\u7B97\u3059\u308B\u904E\u53BB\u3084\u672A\u6765\u306E\u65E5\u4ED8\
   \u3063\u3066\u4F55\uFF1F\u8981\u306F\u7279\u5B9A\u306E\u65E5\u304B\u3089\u6570\u3048\
@@ -12,7 +10,7 @@ description: "\u8A08\u7B97\u3059\u308B\u904E\u53BB\u3084\u672A\u6765\u306E\u65E5
   \u30FC\u6A5F\u80FD\u306A\u3069\u3067\u65E5\u4ED8\u8A08\u7B97\u306F\u4E0D\u53EF\u6B20\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.813875
+lastmod: 2024-02-19 22:05:01.126601
 model: gpt-4-1106-preview
 summary: "\u8A08\u7B97\u3059\u308B\u904E\u53BB\u3084\u672A\u6765\u306E\u65E5\u4ED8\
   \u3063\u3066\u4F55\uFF1F\u8981\u306F\u7279\u5B9A\u306E\u65E5\u304B\u3089\u6570\u3048\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/go/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:18.316817-07:00
 description: "Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt je\
   \ in staat om in real-time met Go-code te experimenteren, commando's uit te voeren\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:01.340213
+lastmod: 2024-02-19 22:05:09.373767
 model: gpt-4-0125-preview
 summary: "Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt je in staat\
   \ om in real-time met Go-code te experimenteren, commando's uit te voeren en\u2026"

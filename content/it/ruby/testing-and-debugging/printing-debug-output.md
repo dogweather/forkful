@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/printing-debug-output/
 date: 2024-01-20 17:53:29.333388-07:00
 description: "Stampare output per debug \xE8 mostrare informazioni interne di un programma\
   \ durante la sua esecuzione. Programmatori lo fanno per capire meglio come il\u2026"
-lastmod: 2024-02-18 23:08:56.385527
+lastmod: 2024-02-19 22:05:03.025862
 model: gpt-4-1106-preview
 summary: "Stampare output per debug \xE8 mostrare informazioni interne di un programma\
   \ durante la sua esecuzione. Programmatori lo fanno per capire meglio come il\u2026"

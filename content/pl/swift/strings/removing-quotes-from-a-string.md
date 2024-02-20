@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:33.974419-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyci\u0119\
   cie wszystkich znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 tre\u015B\u0107\
   . Robimy to, aby oczy\u015Bci\u0107 dane wej\u015Bciowe,\u2026"
-lastmod: 2024-02-18 23:08:49.941276
+lastmod: 2024-02-19 22:04:54.890464
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyci\u0119cie\
   \ wszystkich znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 tre\u015B\u0107.\

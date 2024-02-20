@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/searching-and-replacing-text/
 date: 2024-01-20 17:57:10.440034-07:00
 description: "Tekstin etsiminen ja korvaaminen tarkoittaa sopivan merkkijonon l\xF6\
   yt\xE4mist\xE4 tekstist\xE4 ja sen muuttamista toiseksi. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 toimintoa\u2026"
-lastmod: 2024-02-18 23:09:07.884217
+lastmod: 2024-02-19 22:05:15.705755
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen tarkoittaa sopivan merkkijonon l\xF6yt\xE4\
   mist\xE4 tekstist\xE4 ja sen muuttamista toiseksi. Ohjelmoijat k\xE4ytt\xE4v\xE4\

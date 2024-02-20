@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:47.781614-07:00
 description: "HTTP \uAE30\uBCF8 \uC778\uC99D\uACFC \uD568\uAED8 HTTP \uC694\uCCAD\uC744\
   \ \uBCF4\uB0B4\uB294 \uAC74 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\uBC88\
@@ -9,7 +7,7 @@ description: "HTTP \uAE30\uBCF8 \uC778\uC99D\uACFC \uD568\uAED8 HTTP \uC694\uCCA
   \uB97C \uD655\uC778\uD558\uACE0 \uC694\uCCAD\uB41C \uC791\uC5C5\uC744 \uC218\uD589\
   \uD558\uAC8C \uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.883513
+lastmod: 2024-02-19 22:05:13.819177
 model: gpt-4-1106-preview
 summary: "HTTP \uAE30\uBCF8 \uC778\uC99D\uACFC \uD568\uAED8 HTTP \uC694\uCCAD\uC744\
   \ \uBCF4\uB0B4\uB294 \uAC74 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\uBC88\

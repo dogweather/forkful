@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/typescript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:49.371745-07:00
 description: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att modifiera\
   \ den f\xF6rsta karakt\xE4ren av en given str\xE4ng till versal om den \xE4r i gemen,\
   \ ofta medan resten\u2026"
-lastmod: 2024-02-18 23:08:51.527475
+lastmod: 2024-02-19 22:04:56.840077
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att modifiera\
   \ den f\xF6rsta karakt\xE4ren av en given str\xE4ng till versal om den \xE4r i gemen,\

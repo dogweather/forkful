@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:20.562018-07:00
 description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in\
   \ staat om in real-time code te testen. Programmeurs gebruiken het om te experimenteren,\u2026"
-lastmod: 2024-02-18 23:09:02.424303
+lastmod: 2024-02-19 22:05:10.428857
 model: gpt-4-0125-preview
 summary: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat\
   \ om in real-time code te testen. Programmeurs gebruiken het om te experimenteren,\u2026"

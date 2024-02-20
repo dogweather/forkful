@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:16.606865-07:00
 description: "Convertir una fecha a texto significa cambiar el formato de fecha a\
   \ una cadena de caracteres. Los programadores lo hacen para mostrar fechas de manera\u2026"
-lastmod: 2024-02-18 23:09:10.179687
+lastmod: 2024-02-19 22:05:17.765229
 model: gpt-4-1106-preview
 summary: "Convertir una fecha a texto significa cambiar el formato de fecha a una\
   \ cadena de caracteres. Los programadores lo hacen para mostrar fechas de manera\u2026"

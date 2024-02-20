@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/reading-command-line-arguments/
 date: 2024-01-20 17:55:42.021560-07:00
 description: "Kommandolinjeargumenter lar oss sende informasjon til et program n\xE5\
   r vi starter det. Vi gj\xF8r dette for \xE5 gi fleksibel kontroll over programmets\
   \ oppf\xF8rsel\u2026"
-lastmod: 2024-02-18 23:08:53.908723
+lastmod: 2024-02-19 22:05:00.078322
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar oss sende informasjon til et program n\xE5r\
   \ vi starter det. Vi gj\xF8r dette for \xE5 gi fleksibel kontroll over programmets\

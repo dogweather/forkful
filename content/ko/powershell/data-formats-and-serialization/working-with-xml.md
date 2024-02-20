@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/working-with-xml/
 date: 2024-01-26 04:34:17.250134-07:00
 description: "XML\uC744 \uC0AC\uC6A9\uD558\uB294 \uC791\uC5C5\uC740 eXtensible Markup\
   \ Language\uB85C \uAD6C\uC131\uB41C \uB370\uC774\uD130\uB97C \uC870\uC791\uD558\uACE0\
@@ -10,7 +8,7 @@ description: "XML\uC744 \uC0AC\uC6A9\uD558\uB294 \uC791\uC5C5\uC740 eXtensible M
   \uC131 \uD30C\uC77C, \uB370\uC774\uD130 \uD53C\uB4DC \uBC0F \uC6F9 \uC11C\uBE44\uC2A4\
   \uC5D0\uC11C \uC77C\uBC18\uC801\uC778 \uB2E4\uB978 \uAD6C\uC870\uD654\uB41C \uBB38\
   \uC11C\uB97C \uC77D\uACE0 \uC4F0\uAE30 \uC704\uD574\u2026"
-lastmod: 2024-02-18 23:09:06.592629
+lastmod: 2024-02-19 22:05:14.496410
 model: gpt-4-0125-preview
 summary: "XML\uC744 \uC0AC\uC6A9\uD558\uB294 \uC791\uC5C5\uC740 eXtensible Markup\
   \ Language\uB85C \uAD6C\uC131\uB41C \uB370\uC774\uD130\uB97C \uC870\uC791\uD558\uACE0\

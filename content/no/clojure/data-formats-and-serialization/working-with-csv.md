@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/clojure/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:04.650386-07:00
 description: "\xC5 jobbe med CSV-filer (Comma-Separated Values) inneb\xE6rer parsing\
   \ og generering av tekstdata strukturert som rader og kolonner, likt som regnearkdata.\u2026"
-lastmod: 2024-02-18 23:08:53.585947
+lastmod: 2024-02-19 22:04:59.710386
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma-Separated Values) inneb\xE6rer parsing og\
   \ generering av tekstdata strukturert som rader og kolonner, likt som regnearkdata.\u2026"

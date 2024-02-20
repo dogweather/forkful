@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/lua/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:31.789988-07:00
@@ -12,7 +10,7 @@ description: "\u5728Lua\u4E2D\u5904\u7406JSON\u6D89\u53CA\u5230\u5C06JSON\u683C\
   JSON\u8F7B\u91CF\u7EA7\u548C\u6613\u4E8E\u89E3\u6790\u7684\u683C\u5F0F\uFF0C\u4EE5\
   \u5B9E\u73B0\u6570\u636E\u5B58\u50A8\u3001\u914D\u7F6E\u6216API\u901A\u4FE1\u7684\
   \u6548\u7387\u3002"
-lastmod: 2024-02-18 23:08:59.272425
+lastmod: 2024-02-19 22:05:06.983492
 model: gpt-4-0125-preview
 summary: "\u5728Lua\u4E2D\u5904\u7406JSON\u6D89\u53CA\u5230\u5C06JSON\u683C\u5F0F\u5316\
   \u7684\u5B57\u7B26\u4E32\u89E3\u6790\u6210Lua\u8868\u683C\uFF0C\u53CD\u4E4B\u4EA6\

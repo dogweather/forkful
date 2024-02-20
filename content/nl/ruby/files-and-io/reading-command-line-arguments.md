@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:40.088336-07:00
 description: "Het lezen van command-line argumenten in Ruby stelt scripts in staat\
   \ om direct bij het uitvoeren input te krijgen, zoals het configureren van opties\
   \ of\u2026"
-lastmod: 2024-02-18 23:09:02.439303
+lastmod: 2024-02-19 22:05:10.443541
 model: gpt-4-0125-preview
 summary: "Het lezen van command-line argumenten in Ruby stelt scripts in staat om\
   \ direct bij het uitvoeren input te krijgen, zoals het configureren van opties of\u2026"

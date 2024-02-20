@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:19.942698-07:00
 description: "Converter uma string para min\xFAsculas significa transformar todos\
   \ os caracteres de texto que s\xE3o letras mai\xFAsculas em suas equivalentes min\xFA\
   sculas. Fazemos\u2026"
-lastmod: 2024-02-18 23:08:57.748613
+lastmod: 2024-02-19 22:05:05.210559
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas significa transformar todos os caracteres\
   \ de texto que s\xE3o letras mai\xFAsculas em suas equivalentes min\xFAsculas. Fazemos\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:31.632145-07:00
@@ -8,7 +6,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Visual Basic for Applicat
   \ (VBA) bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t th\xF4ng tin c\u1EE5 th\u1EC3\
   \ t\u1EEB m\u1ED9t t\xE0i li\u1EC7u HTML. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
   m\u2026"
-lastmod: 2024-02-18 23:08:50.506684
+lastmod: 2024-02-19 22:04:55.587782
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Visual Basic for Applications (VBA)\
   \ bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t th\xF4ng tin c\u1EE5 th\u1EC3 t\u1EEB\

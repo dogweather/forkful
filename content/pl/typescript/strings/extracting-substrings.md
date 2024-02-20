@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/extracting-substrings/
 date: 2024-01-20 17:46:52.862533-07:00
 description: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to proces pozyskiwania kr\xF3\
   tszych ci\u0105g\xF3w znak\xF3w z wi\u0119kszego tekstu. Programi\u015Bci u\u017C\
   ywaj\u0105 tej techniki, by manipulowa\u0107 danymi\u2026"
-lastmod: 2024-02-18 23:08:49.337337
+lastmod: 2024-02-19 22:04:54.254342
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to proces pozyskiwania kr\xF3\
   tszych ci\u0105g\xF3w znak\xF3w z wi\u0119kszego tekstu. Programi\u015Bci u\u017C\

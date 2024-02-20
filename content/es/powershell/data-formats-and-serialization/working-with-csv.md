@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/powershell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:30.499178-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) es una tarea\
   \ com\xFAn para administrar y manipular datos de una forma estructurada y tabulada.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.240115
+lastmod: 2024-02-19 22:05:17.820275
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) es una tarea com\xFA\
   n para administrar y manipular datos de una forma estructurada y tabulada. Los\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/fish-shell/starting-a-new-project/
 date: 2024-01-20 18:03:16.470353-07:00
 description: "\xC5 starte et nytt prosjekt er \xE5 sette opp alt du trenger for \xE5\
   \ bygge noe nytt fra bunnen av. Programmerere gj\xF8r det for \xE5 bringe ideer\
   \ til liv, l\xF8se\u2026"
-lastmod: 2024-02-18 23:08:54.352338
+lastmod: 2024-02-19 22:05:00.506988
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt er \xE5 sette opp alt du trenger for \xE5 bygge\
   \ noe nytt fra bunnen av. Programmerere gj\xF8r det for \xE5 bringe ideer til liv,\

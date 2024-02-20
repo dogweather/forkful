@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/working-with-xml/
 date: 2024-01-25 03:39:48.963450-07:00
 description: "XML, short for eXtensible Markup Language, is like JSON's verbose cousin.\
   \ You'll wrestle with XML when dealing with legacy systems, enterprise software,\u2026"
-lastmod: 2024-02-18 23:09:10.872345
+lastmod: 2024-02-19 22:05:18.387000
 model: gpt-4-1106-preview
 summary: "XML, short for eXtensible Markup Language, is like JSON's verbose cousin.\
   \ You'll wrestle with XML when dealing with legacy systems, enterprise software,\u2026"

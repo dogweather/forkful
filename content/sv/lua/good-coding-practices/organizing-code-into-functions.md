@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/lua/organizing-code-into-functions/
 date: 2024-01-26 01:11:46.286566-07:00
 description: "Att organisera kod i funktioner handlar om att dela upp ditt skriptande\
   \ i mindre bitar\u2014t\xE4nk funktionella LEGO-block. Vi g\xF6r det f\xF6r tydlighet,\u2026"
-lastmod: 2024-02-18 23:08:51.923808
+lastmod: 2024-02-19 22:04:57.271197
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att dela upp ditt skriptande\
   \ i mindre bitar\u2014t\xE4nk funktionella LEGO-block. Vi g\xF6r det f\xF6r tydlighet,\u2026"

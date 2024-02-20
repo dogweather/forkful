@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/haskell/refactoring/
 date: 2024-01-26 01:18:30.339242-07:00
 description: "Il refactoring \xE8 il processo di ritocco del codice senza cambiarne\
   \ il comportamento esterno. Si tratta tutto di pulire e organizzare il proprio lavoro\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:55.938106
+lastmod: 2024-02-19 22:05:02.549064
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ritocco del codice senza cambiarne il\
   \ comportamento esterno. Si tratta tutto di pulire e organizzare il proprio lavoro\

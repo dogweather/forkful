@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/working-with-complex-numbers/
 date: 2024-01-26 04:42:38.272858-07:00
 description: "I numeri complessi sono numeri con una parte reale e una immaginaria\
   \ (come 3 + 4i). Emergono in vari problemi di programmazione, specialmente nel\u2026"
-lastmod: 2024-02-18 23:08:56.246945
+lastmod: 2024-02-19 22:05:02.880199
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono numeri con una parte reale e una immaginaria (come\
   \ 3 + 4i). Emergono in vari problemi di programmazione, specialmente nel\u2026"

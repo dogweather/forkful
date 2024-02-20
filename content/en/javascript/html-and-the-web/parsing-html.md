@@ -1,13 +1,11 @@
 ---
-aliases:
-- /en/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 date: 2024-01-20 15:32:10.298214-07:00
 description: "Parsing HTML means extracting data from HTML documents. Programmers\
   \ do it to interact with or manipulate web content, automate data extraction, or\
   \ for web\u2026"
-lastmod: 2024-02-18 23:09:11.435765
+lastmod: 2024-02-19 22:05:18.893128
 summary: "Parsing HTML means extracting data from HTML documents. Programmers do it\
   \ to interact with or manipulate web content, automate data extraction, or for web\u2026"
 title: Parsing HTML

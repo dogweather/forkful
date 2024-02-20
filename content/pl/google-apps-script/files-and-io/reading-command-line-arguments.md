@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:32.993768-07:00
 description: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
   \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\
   w linii polece\u0144 w\u2026"
-lastmod: 2024-02-18 23:08:49.169246
+lastmod: 2024-02-19 22:04:54.104247
 model: gpt-4-0125-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
   \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\

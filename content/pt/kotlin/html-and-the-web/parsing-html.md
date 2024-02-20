@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/parsing-html/
 date: 2024-01-20 15:32:56.837266-07:00
 description: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML\
   \ em uma estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
   \ fazem isso para\u2026"
-lastmod: 2024-02-18 23:08:58.098890
+lastmod: 2024-02-19 22:05:05.579504
 summary: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML em uma\
   \ estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
   \ fazem isso para\u2026"

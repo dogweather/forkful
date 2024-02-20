@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/php/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:58:32.043681-07:00
@@ -14,7 +12,7 @@ description: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043
   \u0445\u043E\u0434\u0438\u043C\u043E \u0434\u043B\u044F \u0437\u0430\u0434\u0430\
   \u0447, \u0442\u0430\u043A\u0438\u0445 \u043A\u0430\u043A \u0441\u043E\u0437\u0434\
   \u0430\u043D\u0438\u0435\u2026"
-lastmod: 2024-02-18 23:08:57.094893
+lastmod: 2024-02-19 22:05:04.163252
 model: gpt-4-0125-preview
 summary: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043B\u0443\
   \u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 PHP \u0437\

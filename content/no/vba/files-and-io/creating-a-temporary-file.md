@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/vba/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:09.459898-07:00
 description: "\xC5 opprette en midlertidig fil i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer \xE5 programmert generere en fil for korttidsbruk, typisk for databehandling\u2026"
-lastmod: 2024-02-18 23:08:53.748614
+lastmod: 2024-02-19 22:04:59.887237
 model: gpt-4-0125-preview
 summary: "\xC5 opprette en midlertidig fil i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 programmert generere en fil for korttidsbruk, typisk for databehandling\u2026"

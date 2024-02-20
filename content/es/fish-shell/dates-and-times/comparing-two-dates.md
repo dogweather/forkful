@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/fish-shell/comparing-two-dates/
 date: 2024-01-20 17:33:01.806456-07:00
 description: "Comparar dos fechas es b\xE1sicamente medir el tiempo entre ellas o\
   \ determinar cu\xE1l es anterior o posterior. Los programadores hacen esto para\
   \ manejar\u2026"
-lastmod: 2024-02-18 23:09:10.466715
+lastmod: 2024-02-19 22:05:18.018688
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas es b\xE1sicamente medir el tiempo entre ellas o determinar\
   \ cu\xE1l es anterior o posterior. Los programadores hacen esto para manejar\u2026"

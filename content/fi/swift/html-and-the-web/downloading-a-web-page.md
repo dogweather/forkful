@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/swift/downloading-a-web-page/
 date: 2024-01-20 17:44:57.283863-07:00
 description: "Ladataan nettisivua ohjelmassa, eli haetaan sen sis\xE4lt\xF6\xE4 koodilla.\
   \ Se on hy\xF6dyllist\xE4, kun tarvitaan automaattista tiedonkeruuta tai halutaan\u2026"
-lastmod: 2024-02-18 23:09:07.988426
+lastmod: 2024-02-19 22:05:15.801344
 model: gpt-4-1106-preview
 summary: "Ladataan nettisivua ohjelmassa, eli haetaan sen sis\xE4lt\xF6\xE4 koodilla.\
   \ Se on hy\xF6dyllist\xE4, kun tarvitaan automaattista tiedonkeruuta tai halutaan\u2026"

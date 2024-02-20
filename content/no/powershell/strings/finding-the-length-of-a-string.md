@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/powershell/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:51.987661-07:00
 description: "\xC5 finne lengden av en streng betyr \xE5 telle antall tegn i den.\
   \ Programmerere gj\xF8r dette for validering, l\xF8kkekontroll og tekstmanipulering."
-lastmod: 2024-02-18 23:08:54.090189
+lastmod: 2024-02-19 22:05:00.275440
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden av en streng betyr \xE5 telle antall tegn i den. Programmerere\
   \ gj\xF8r dette for validering, l\xF8kkekontroll og tekstmanipulering."

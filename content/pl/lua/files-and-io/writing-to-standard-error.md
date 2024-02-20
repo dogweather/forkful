@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/lua/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:48.261756-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach oraz wyj\u015B\u0107 diagnostycznych do osobnego\
   \ kana\u0142u, r\xF3\u017Cnego od standardowego\u2026"
-lastmod: 2024-02-18 23:08:49.756338
+lastmod: 2024-02-19 22:04:54.694306
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu komunikat\xF3\
   w o b\u0142\u0119dach oraz wyj\u015B\u0107 diagnostycznych do osobnego kana\u0142\

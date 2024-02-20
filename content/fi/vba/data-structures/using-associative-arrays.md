@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:36.615463-07:00
 description: "Assosiatiiviset taulukot, jotka Visual Basic for Applications (VBA)\
   \ -ymp\xE4rist\xF6ss\xE4 tunnetaan usein sanakirjoina, mahdollistavat ohjelmoijien\
   \ luoda avain-\u2026"
-lastmod: 2024-02-18 23:09:07.402357
+lastmod: 2024-02-19 22:05:15.288228
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, jotka Visual Basic for Applications (VBA) -ymp\xE4\
   rist\xF6ss\xE4 tunnetaan usein sanakirjoina, mahdollistavat ohjelmoijien luoda avain-\u2026"

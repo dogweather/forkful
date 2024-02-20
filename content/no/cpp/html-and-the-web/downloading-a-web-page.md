@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/downloading-a-web-page/
 date: 2024-01-20 17:44:02.326346-07:00
 description: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente ned all HTML-koden\
   \ som danner selve siden du ser i nettleseren. Programmere gj\xF8r dette for \xE5\
   \ hente data, sjekke\u2026"
-lastmod: 2024-02-18 23:08:54.183547
+lastmod: 2024-02-19 22:05:00.371209
 model: gpt-4-1106-preview
 summary: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente ned all HTML-koden som\
   \ danner selve siden du ser i nettleseren. Programmere gj\xF8r dette for \xE5 hente\

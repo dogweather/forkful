@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:29.273214-07:00
 description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel en\
   \ zijn cruciaal in diverse velden zoals engineering, fysica en computergrafiek.\u2026"
-lastmod: 2024-02-18 23:09:01.612447
+lastmod: 2024-02-19 22:05:09.635772
 model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel en zijn\
   \ cruciaal in diverse velden zoals engineering, fysica en computergrafiek.\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:23.580348-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i 
   a l\xE0 x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9a bao nhi\xEAu k\xFD t\u1EF1. L\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE1\
   c minh \u0111\u1EA7u v\xE0o, l\u1EB7p qua c\xE1c k\xFD t\u1EF1, c\u0103n\u2026"
-lastmod: 2024-02-18 23:08:50.990105
+lastmod: 2024-02-19 22:04:56.176494
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129\
   a l\xE0 x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9a bao nhi\xEAu k\xFD t\u1EF1. L\u1EAD\

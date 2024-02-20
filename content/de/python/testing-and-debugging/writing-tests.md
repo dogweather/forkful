@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/python/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:27.935182-07:00
 description: "Das Schreiben von Tests in Python beinhaltet das Erstellen automatisierter\
   \ Skripte, um die Korrektheit Ihres Codes zu validieren. Programmierer tun dies,\u2026"
-lastmod: 2024-02-18 23:09:04.465777
+lastmod: 2024-02-19 22:05:12.430002
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Python beinhaltet das Erstellen automatisierter\
   \ Skripte, um die Korrektheit Ihres Codes zu validieren. Programmierer tun dies,\u2026"

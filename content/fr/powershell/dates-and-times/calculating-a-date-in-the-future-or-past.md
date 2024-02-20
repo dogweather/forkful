@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:45.818745-07:00
 description: "Calculer une date dans le futur ou le pass\xE9 permet de d\xE9terminer\
   \ un moment pr\xE9cis relatif \xE0 aujourd'hui. Les programmeurs l'utilisent pour\
   \ g\xE9rer les\u2026"
-lastmod: 2024-02-18 23:09:09.083044
+lastmod: 2024-02-19 22:05:16.763485
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 permet de d\xE9terminer un\
   \ moment pr\xE9cis relatif \xE0 aujourd'hui. Les programmeurs l'utilisent pour g\xE9\

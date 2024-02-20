@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/downloading-a-web-page/
 date: 2024-01-20 17:44:42.829048-07:00
 description: "Baixar uma p\xE1gina web significa trazer o conte\xFAdo de uma p\xE1\
   gina da internet para o seu computador local. Programadores fazem isso para analisar\
   \ dados,\u2026"
-lastmod: 2024-02-18 23:08:58.367571
+lastmod: 2024-02-19 22:05:05.852209
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina web significa trazer o conte\xFAdo de uma p\xE1gina\
   \ da internet para o seu computador local. Programadores fazem isso para analisar\

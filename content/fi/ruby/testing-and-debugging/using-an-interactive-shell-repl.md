@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/ruby/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:18.189518-07:00
 description: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta\
   \ -silmukka), mahdollistaa koodin testaamisen reaaliajassa. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:08.184419
+lastmod: 2024-02-19 22:05:15.997468
 model: gpt-4-0125-preview
 summary: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta\
   \ -silmukka), mahdollistaa koodin testaamisen reaaliajassa. Ohjelmoijat k\xE4ytt\xE4\

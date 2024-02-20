@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/typescript/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:38.169299-07:00
 description: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konvertere\
   \ tekstlige representasjoner av datoer og tider til et format som kan manipuleres\
   \ og\u2026"
-lastmod: 2024-02-18 23:08:53.654039
+lastmod: 2024-02-19 22:04:59.784617
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konvertere tekstlige\
   \ representasjoner av datoer og tider til et format som kan manipuleres og\u2026"

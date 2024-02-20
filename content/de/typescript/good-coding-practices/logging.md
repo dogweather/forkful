@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/typescript/logging/
 date: 2024-01-26 01:08:40.173329-07:00
 description: "Logging ist der Prozess des Aufzeichnens von Ereignissen, Fehlern und\
   \ anderen wichtigen Informationen w\xE4hrend der Ausf\xFChrung eines Programms auf\
   \ ein\u2026"
-lastmod: 2024-02-18 23:09:04.603582
+lastmod: 2024-02-19 22:05:12.561077
 model: gpt-4-1106-preview
 summary: "Logging ist der Prozess des Aufzeichnens von Ereignissen, Fehlern und anderen\
   \ wichtigen Informationen w\xE4hrend der Ausf\xFChrung eines Programms auf ein\u2026"

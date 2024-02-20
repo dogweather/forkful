@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/java/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:15.687933-07:00
 description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erlaubt es\
   \ uns, Zeitabst\xE4nde zu handhaben. Programmierer nutzen diese Funktion f\xFCr\
   \ Erinnerungen,\u2026"
-lastmod: 2024-02-18 23:09:04.751336
+lastmod: 2024-02-19 22:05:12.701309
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erlaubt es uns,\
   \ Zeitabst\xE4nde zu handhaben. Programmierer nutzen diese Funktion f\xFCr Erinnerungen,\u2026"

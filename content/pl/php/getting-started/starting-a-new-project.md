@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/starting-a-new-project/
 date: 2024-01-20 18:04:10.110164-07:00
 description: "Zaczynaj\u0105c nowy projekt, programi\u015Bci tworz\u0105 grunt pod\
   \ sw\xF3j kod - to jak u\u0142ozenie fundament\xF3w pod dom. Robi\u0105 to, bo dobrze\
   \ przygotowany start to klucz do\u2026"
-lastmod: 2024-02-18 23:08:49.695808
+lastmod: 2024-02-19 22:04:54.632091
 model: gpt-4-1106-preview
 summary: "Zaczynaj\u0105c nowy projekt, programi\u015Bci tworz\u0105 grunt pod sw\xF3\
   j kod - to jak u\u0142ozenie fundament\xF3w pod dom. Robi\u0105 to, bo dobrze przygotowany\

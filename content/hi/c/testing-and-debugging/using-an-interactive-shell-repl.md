@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:41.937673-07:00
@@ -13,7 +11,7 @@ description: "\u090F\u0915 \u0907\u0902\u091F\u0930\u0947\u0915\u094D\u091F\u093
   \u0930\u0902\u0924 \u092A\u0930\u093F\u0923\u093E\u092E \u0926\u0947\u0916\u0928\
   \u0947 \u0915\u0940 \u0905\u0928\u0941\u092E\u0924\u093F \u0926\u0947\u0924\u093E\
   \ \u0939\u0948,\u2026"
-lastmod: 2024-02-18 23:09:04.214035
+lastmod: 2024-02-19 22:05:12.187561
 model: gpt-4-0125-preview
 summary: "\u090F\u0915 \u0907\u0902\u091F\u0930\u0947\u0915\u094D\u091F\u093F\u0935\
   \ \u0936\u0947\u0932, \u091C\u093F\u0938\u0947 Read-Eval-Print Loop (REPL) \u092D\

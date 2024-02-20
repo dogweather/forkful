@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/c-sharp/working-with-complex-numbers/
 date: 2024-01-26 04:38:32.388615-07:00
 description: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para\
   \ incluir n\xFAmeros imaginarios, permiti\xE9ndonos resolver ecuaciones que no tienen\
   \ soluciones\u2026"
-lastmod: 2024-02-18 23:09:09.975526
+lastmod: 2024-02-19 22:05:17.578685
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para incluir\
   \ n\xFAmeros imaginarios, permiti\xE9ndonos resolver ecuaciones que no tienen soluciones\u2026"

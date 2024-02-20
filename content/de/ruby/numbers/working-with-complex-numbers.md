@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/working-with-complex-numbers/
 date: 2024-01-26 04:45:10.098871-07:00
 description: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4ren\
   \ Teil (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik.\u2026"
-lastmod: 2024-02-18 23:09:05.414555
+lastmod: 2024-02-19 22:05:13.332948
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4ren Teil\
   \ (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik.\u2026"

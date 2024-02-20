@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:12.473760-07:00
 description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Go\
   \ implique de convertir la date repr\xE9sent\xE9e sous forme de texte en un format\
   \ plus utilisable\u2026"
-lastmod: 2024-02-18 23:09:08.246337
+lastmod: 2024-02-19 22:05:16.051664
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Go implique\
   \ de convertir la date repr\xE9sent\xE9e sous forme de texte en un format plus utilisable\u2026"

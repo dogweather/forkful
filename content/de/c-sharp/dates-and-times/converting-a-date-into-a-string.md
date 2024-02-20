@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/c-sharp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:14.305520-07:00
 description: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum von einem\
   \ Format, das f\xFCr die Datumsverarbeitung optimiert ist, in einen Text umzuwandeln.\u2026"
-lastmod: 2024-02-18 23:09:04.883652
+lastmod: 2024-02-19 22:05:12.827604
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum von einem\
   \ Format, das f\xFCr die Datumsverarbeitung optimiert ist, in einen Text umzuwandeln.\u2026"

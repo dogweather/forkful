@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/go/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:02.869709-07:00
 description: "Assosiatiiviset taulukot, tunnetaan Go:ssa nimell\xE4 mapit, mahdollistavat\
   \ avain-arvo parien tallentamisen, miss\xE4 jokainen uniikki avain mappautuu arvoon.\u2026"
-lastmod: 2024-02-18 23:09:07.076447
+lastmod: 2024-02-19 22:05:14.957396
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tunnetaan Go:ssa nimell\xE4 mapit, mahdollistavat\
   \ avain-arvo parien tallentamisen, miss\xE4 jokainen uniikki avain mappautuu arvoon.\u2026"

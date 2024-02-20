@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/working-with-xml/
 date: 2024-01-25 03:39:47.117770-07:00
 description: "Working with XML in Elixir means parsing, creating, and manipulating\
   \ XML data. Programmers tackle XML because it's widespread in web services, config\u2026"
-lastmod: 2024-02-18 23:09:10.789819
+lastmod: 2024-02-19 22:05:18.312543
 model: gpt-4-1106-preview
 summary: "Working with XML in Elixir means parsing, creating, and manipulating XML\
   \ data. Programmers tackle XML because it's widespread in web services, config\u2026"

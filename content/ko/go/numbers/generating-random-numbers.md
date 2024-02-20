@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:26.830281-07:00
@@ -13,7 +11,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uB09C\uC218\uB97C \uC0
   \uC5D0 \uD575\uC2EC\uC778 \uBCF4\uC548 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744\
   \ \uD3EC\uD568\uD558\uC5EC \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uC774\uB97C \uC218\
   \uD589\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.473590
+lastmod: 2024-02-19 22:05:13.391681
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uB09C\uC218\uB97C \uC0DD\uC131\
   \uD558\uB294 \uAC83\uC740 \uC6B0\uC5F0\uBCF4\uB2E4 \uB354 \uC798 \uC608\uCE21\uD560\

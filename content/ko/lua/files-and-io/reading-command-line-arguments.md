@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/reading-command-line-arguments/
 date: 2024-01-20 17:56:21.290587-07:00
 description: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uD504\
   \uB85C\uADF8\uB7A8\uC5D0\uAC8C \uD130\uBBF8\uB110\uC774\uB098 \uCEE4\uB9E8\uB4DC\
@@ -10,7 +8,7 @@ description: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\uC740 \u
   \uD558\uB294 \uC720\uC5F0\uD55C \uD504\uB85C\uADF8\uB7A8\uC744 \uB9CC\uB4E4\uAE30\
   \ \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.440546
+lastmod: 2024-02-19 22:05:14.352323
 model: gpt-4-1106-preview
 summary: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uD504\uB85C\
   \uADF8\uB7A8\uC5D0\uAC8C \uD130\uBBF8\uB110\uC774\uB098 \uCEE4\uB9E8\uB4DC \uD504\

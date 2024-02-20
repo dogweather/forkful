@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:40.607086-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n luomista ja\
   \ l\xE4hett\xE4mist\xE4 verkkopalvelimelle tietojen noutamiseksi tai l\xE4hett\xE4\
   miseksi. Ohjelmoijat tekev\xE4t\u2026"
-lastmod: 2024-02-18 23:09:08.128633
+lastmod: 2024-02-19 22:05:15.929903
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n luomista ja l\xE4\
   hett\xE4mist\xE4 verkkopalvelimelle tietojen noutamiseksi tai l\xE4hett\xE4miseksi.\

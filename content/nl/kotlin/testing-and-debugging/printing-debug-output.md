@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/kotlin/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:31.991461-07:00
 description: "Debugoutput afdrukken is in wezen de manier waarop een programmeur een\
   \ kijkje neemt naar wat er in real-time in hun code gebeurt. Het is cruciaal voor\
   \ het\u2026"
-lastmod: 2024-02-18 23:09:01.808555
+lastmod: 2024-02-19 22:05:09.825005
 model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken is in wezen de manier waarop een programmeur een kijkje\
   \ neemt naar wat er in real-time in hun code gebeurt. Het is cruciaal voor het\u2026"

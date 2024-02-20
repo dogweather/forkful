@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elm/working-with-toml/
 date: 2024-01-26 04:21:13.527795-07:00
 description: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un linguaggio\
   \ di serializzazione dei dati. I programmatori Elm lo utilizzano per gestire i dati\
   \ di\u2026"
-lastmod: 2024-02-18 23:08:55.828499
+lastmod: 2024-02-19 22:05:02.435712
 model: gpt-4-0125-preview
 summary: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un linguaggio di\
   \ serializzazione dei dati. I programmatori Elm lo utilizzano per gestire i dati\

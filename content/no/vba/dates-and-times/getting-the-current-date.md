@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:39.984767-07:00
 description: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende\
   \ datoen en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer\
   \ i sine\u2026"
-lastmod: 2024-02-18 23:08:53.739228
+lastmod: 2024-02-19 22:04:59.876982
 model: gpt-4-0125-preview
 summary: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende datoen\
   \ en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer i\

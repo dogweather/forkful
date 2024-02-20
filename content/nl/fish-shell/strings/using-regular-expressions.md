@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/fish-shell/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:44.202521-07:00
 description: "Reguliere expressies, of regex, zijn patronen die reeksen van strings\
   \ beschrijven. Programmeurs gebruiken ze om tekst te zoeken, overeen te komen en\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:02.311861
+lastmod: 2024-02-19 22:05:10.321785
 model: gpt-4-0125-preview
 summary: "Reguliere expressies, of regex, zijn patronen die reeksen van strings beschrijven.\
   \ Programmeurs gebruiken ze om tekst te zoeken, overeen te komen en te\u2026"

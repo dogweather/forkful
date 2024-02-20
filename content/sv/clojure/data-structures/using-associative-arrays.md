@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/clojure/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.449509-07:00
 description: "Associativa arrayer, eller hashkartor, i Clojure l\xE5ter dig lagra\
   \ och h\xE4mta data med nyckel-v\xE4rde-par. De \xE4r en g\xE5-till-l\xF6sning f\xF6\
   r att hantera\u2026"
-lastmod: 2024-02-18 23:08:51.455538
+lastmod: 2024-02-19 22:04:56.761170
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller hashkartor, i Clojure l\xE5ter dig lagra och\
   \ h\xE4mta data med nyckel-v\xE4rde-par. De \xE4r en g\xE5-till-l\xF6sning f\xF6\

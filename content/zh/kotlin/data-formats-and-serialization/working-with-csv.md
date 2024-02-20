@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/kotlin/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:49.286010-07:00
@@ -11,7 +9,7 @@ description: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u
   \u4EF6\u662F\u4E3A\u4E86\u65B9\u4FBF\u5730\u5728\u4E0D\u540C\u5E94\u7528\u7A0B\u5E8F\
   \u3001\u6570\u636E\u5E93\u4E4B\u95F4\u4EA4\u6362\u6570\u636E\uFF0C\u6216\u8005\u4FBF\
   \u4E8E\u8FDB\u884C\u6570\u636E\u5904\u7406\u548C\u5206\u6790\u4EFB\u52A1\u3002"
-lastmod: 2024-02-18 23:08:59.115112
+lastmod: 2024-02-19 22:05:06.778438
 model: gpt-4-0125-preview
 summary: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u53CA\u4ECE\
   \ CSV \u6587\u4EF6\u8BFB\u53D6\u548C\u5199\u5165\u6570\u636E\uFF0C\u8FD9\u662F\u4E00\

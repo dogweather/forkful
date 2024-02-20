@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:05.435471-07:00
 description: "HTTP \uC694\uCCAD \uC2DC \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\
   \uD558\uBA74 \uC11C\uBC84\uC5D0 \uC0AC\uC6A9\uC790 \uC790\uACA9 \uC99D\uBA85\uC744\
@@ -8,7 +6,7 @@ description: "HTTP \uC694\uCCAD \uC2DC \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC
   \ \uAC04\uB2E8\uD55C \uC778\uC99D\uC744 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\
   \uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.352149
+lastmod: 2024-02-19 22:05:14.268572
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD \uC2DC \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\
   \uBA74 \uC11C\uBC84\uC5D0 \uC0AC\uC6A9\uC790 \uC790\uACA9 \uC99D\uBA85\uC744 \uC804\

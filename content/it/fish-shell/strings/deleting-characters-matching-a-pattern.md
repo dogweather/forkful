@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/fish-shell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:16.753444-07:00
 description: "Rimuovere caratteri che corrispondono a un modello significa filtrare\
   \ il testo per eliminare specifici caratteri o sequenze di caratteri. Lo facciamo\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:56.278579
+lastmod: 2024-02-19 22:05:02.913492
 model: gpt-4-1106-preview
 summary: "Rimuovere caratteri che corrispondono a un modello significa filtrare il\
   \ testo per eliminare specifici caratteri o sequenze di caratteri. Lo facciamo per\u2026"

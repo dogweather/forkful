@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:31.205422-07:00
 description: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien\
   \ merkkien lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4t\xE4, jotta\
   \ saavat tiet\xE4\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.493950
+lastmod: 2024-02-19 22:05:15.373689
 model: gpt-4-1106-preview
 summary: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien merkkien\
   \ lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4t\xE4, jotta saavat\

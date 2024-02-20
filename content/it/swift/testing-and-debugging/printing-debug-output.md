@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/printing-debug-output/
 date: 2024-01-20 17:53:30.308462-07:00
 description: "Stampare l'output di debug aiuta a vedere cosa succede nel tuo codice.\
   \ Usiamo questa tecnica per controllare i valori delle variabili e capire il flusso\u2026"
-lastmod: 2024-02-18 23:08:56.214851
+lastmod: 2024-02-19 22:05:02.846035
 model: gpt-4-1106-preview
 summary: "Stampare l'output di debug aiuta a vedere cosa succede nel tuo codice. Usiamo\
   \ questa tecnica per controllare i valori delle variabili e capire il flusso\u2026"

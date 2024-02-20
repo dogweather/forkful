@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:40.527533-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man skalar\
   \ bort de dubbla eller enkla citattecken som omsluter textv\xE4rden. Programmerare\
   \ g\xF6r ofta detta\u2026"
-lastmod: 2024-02-18 23:08:52.281871
+lastmod: 2024-02-19 22:04:57.669906
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man skalar bort\
   \ de dubbla eller enkla citattecken som omsluter textv\xE4rden. Programmerare g\xF6\

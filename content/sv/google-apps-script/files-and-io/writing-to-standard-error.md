@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:44.695732-07:00
 description: "Att skriva till standardfel (stderr) i programmeringsspr\xE5k handlar\
   \ om att dirigera felmeddelanden och diagnostik till en separat str\xF6m, skild\
   \ fr\xE5n den\u2026"
-lastmod: 2024-02-18 23:08:51.396404
+lastmod: 2024-02-19 22:04:56.695607
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i programmeringsspr\xE5k handlar om\
   \ att dirigera felmeddelanden och diagnostik till en separat str\xF6m, skild fr\xE5\

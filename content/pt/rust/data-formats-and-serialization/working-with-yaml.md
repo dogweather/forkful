@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/rust/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:37.761230-07:00
 description: "Na programa\xE7\xE3o com Rust, trabalhar com YAML (YAML Ain't Markup\
   \ Language) refere-se a analisar e gerar dados no formato YAML, um padr\xE3o de\
   \ serializa\xE7\xE3o de\u2026"
-lastmod: 2024-02-18 23:08:57.949018
+lastmod: 2024-02-19 22:05:05.423288
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o com Rust, trabalhar com YAML (YAML Ain't Markup Language)\
   \ refere-se a analisar e gerar dados no formato YAML, um padr\xE3o de serializa\xE7\

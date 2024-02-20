@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/arduino/using-a-debugger/
 date: 2024-01-26 03:47:18.044249-07:00
 description: "Ein Debugger ist ein Werkzeug, das dabei hilft, Fehler in Ihrem Code\
   \ zu finden und zu beheben, indem es Ihnen erlaubt, anzuhalten, herumzust\xF6bern\
   \ und\u2026"
-lastmod: 2024-02-18 23:09:05.150017
+lastmod: 2024-02-19 22:05:13.081956
 model: gpt-4-0125-preview
 summary: "Ein Debugger ist ein Werkzeug, das dabei hilft, Fehler in Ihrem Code zu\
   \ finden und zu beheben, indem es Ihnen erlaubt, anzuhalten, herumzust\xF6bern und\u2026"

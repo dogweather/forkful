@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:10.842688-07:00
 description: "Il parsing di HTML in Visual Basic for Applications (VBA) implica l'estrazione\
   \ di informazioni specifiche da un documento HTML. I programmatori lo fanno\u2026"
-lastmod: 2024-02-18 23:08:55.720608
+lastmod: 2024-02-19 22:05:02.321423
 model: gpt-4-0125-preview
 summary: "Il parsing di HTML in Visual Basic for Applications (VBA) implica l'estrazione\
   \ di informazioni specifiche da un documento HTML. I programmatori lo fanno\u2026"

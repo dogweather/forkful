@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/getting-the-current-date/
 date: 2024-02-03 19:02:33.752386-07:00
 description: "Getting the current date in JavaScript is a fundamental task, involving\
   \ retrieving and possibly manipulating today's date and time. Programmers perform\u2026"
-lastmod: 2024-02-18 23:09:11.448122
+lastmod: 2024-02-19 22:05:18.904767
 model: gpt-4-0125-preview
 summary: "Getting the current date in JavaScript is a fundamental task, involving\
   \ retrieving and possibly manipulating today's date and time. Programmers perform\u2026"

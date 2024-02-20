@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:29.907974-07:00
 description: "De huidige datum ophalen in PowerShell is simpelweg het systeemidee\
   \ van de datum van vandaag verkrijgen. Programmeurs gebruiken dit om logboeken te\u2026"
-lastmod: 2024-02-18 23:09:02.103373
+lastmod: 2024-02-19 22:05:10.124330
 model: gpt-4-0125-preview
 summary: "De huidige datum ophalen in PowerShell is simpelweg het systeemidee van\
   \ de datum van vandaag verkrijgen. Programmeurs gebruiken dit om logboeken te\u2026"

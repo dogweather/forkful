@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elm/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:58.610783-07:00
@@ -14,7 +12,7 @@ description: "\u0938\u0939\u092F\u094B\u091C\u0940 \u0905\u0930\u094D\u0930\u094
   \ \u092E\u0942\u0932\u094D\u092F\u094B\u0902 \u0915\u0940 \u0916\u094B\u091C, \u0938\
   \u092E\u094D\u092E\u093F\u0932\u0928, \u0914\u0930 \u0939\u091F\u093E\u0928\u0947\
   \ \u0915\u094B\u2026"
-lastmod: 2024-02-18 23:09:03.178876
+lastmod: 2024-02-19 22:05:11.174693
 model: gpt-4-0125-preview
 summary: "\u0938\u0939\u092F\u094B\u091C\u0940 \u0905\u0930\u094D\u0930\u0947\u091C\
   \u093C, \u092F\u093E \u091C\u0948\u0938\u093E \u0915\u093F \u090F\u0932\u094D\u092E\

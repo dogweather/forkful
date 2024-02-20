@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/printing-debug-output/
 date: 2024-01-20 17:53:02.470591-07:00
 description: "Mik\xE4 ja miksi? Debug-tulosteiden tulostaminen tarkoittaa koodin toiminnan\
   \ tarkkailua reaaliajassa. Kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t sit\xE4 sovellusten\
   \ virheiden\u2026"
-lastmod: 2024-02-18 23:09:07.577578
+lastmod: 2024-02-19 22:05:15.426601
 model: gpt-4-1106-preview
 summary: "Mik\xE4 ja miksi? Debug-tulosteiden tulostaminen tarkoittaa koodin toiminnan\
   \ tarkkailua reaaliajassa. Kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t sit\xE4 sovellusten\

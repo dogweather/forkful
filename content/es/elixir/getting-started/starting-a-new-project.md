@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elixir/starting-a-new-project/
 date: 2024-01-20 18:03:11.466768-07:00
 description: "Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en blanco\
   \ para pintar tu obra maestra con c\xF3digo. Los programadores lo hacen para resolver\u2026"
-lastmod: 2024-02-18 23:09:09.649311
+lastmod: 2024-02-19 22:05:17.290112
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en blanco para\
   \ pintar tu obra maestra con c\xF3digo. Los programadores lo hacen para resolver\u2026"

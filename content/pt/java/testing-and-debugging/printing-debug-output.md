@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/printing-debug-output/
 date: 2024-01-20 17:52:48.943296-07:00
 description: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE3\
   o \xE9 o equivalente a uma l\xE2mpada que piscar quando algo errado acontece. \xC9\
   \ extremamente \xFAtil: ajuda a\u2026"
-lastmod: 2024-02-18 23:08:58.021270
+lastmod: 2024-02-19 22:05:05.497870
 model: gpt-4-1106-preview
 summary: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE3o \xE9\
   \ o equivalente a uma l\xE2mpada que piscar quando algo errado acontece. \xC9 extremamente\

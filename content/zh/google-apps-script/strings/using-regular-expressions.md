@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:55.098467-07:00
@@ -10,7 +8,7 @@ description: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u7528\u4E8E\
   \u64CD\u4F5C\u6587\u672C\u548C\u6570\u636E\uFF0C\u4F7F\u5176\u6210\u4E3A\u6A21\u5F0F\
   \u5339\u914D\u548C\u6570\u636E\u89E3\u6790\u4EFB\u52A1\u4E0D\u53EF\u6216\u7F3A\u7684\
   \u5DE5\u5177\u3002"
-lastmod: 2024-02-18 23:08:58.740046
+lastmod: 2024-02-19 22:05:06.263631
 model: gpt-4-0125-preview
 summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u7528\u4E8E\u5339\u914D\
   \u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\u7EC4\u5408\u7684\u6A21\u5F0F\u3002\u7A0B\u5E8F\

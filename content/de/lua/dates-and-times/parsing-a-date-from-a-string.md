@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/lua/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:43.838234-07:00
 description: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von\
   \ textuellen Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines\u2026"
-lastmod: 2024-02-18 23:09:05.017099
+lastmod: 2024-02-19 22:05:12.955277
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von textuellen\
   \ Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines\u2026"

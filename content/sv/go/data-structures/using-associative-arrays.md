@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:53.455404-07:00
 description: "Associerade arrayer, k\xE4nda som maps i Go, g\xF6r det m\xF6jligt f\xF6\
   r dig att lagra nyckel-v\xE4rdepar d\xE4r varje unik nyckel mappas till ett v\xE4\
   rde. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.325830
+lastmod: 2024-02-19 22:04:56.616970
 model: gpt-4-0125-preview
 summary: "Associerade arrayer, k\xE4nda som maps i Go, g\xF6r det m\xF6jligt f\xF6\
   r dig att lagra nyckel-v\xE4rdepar d\xE4r varje unik nyckel mappas till ett v\xE4\

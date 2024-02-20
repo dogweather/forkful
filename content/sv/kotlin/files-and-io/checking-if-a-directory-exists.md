@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/kotlin/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:41.866159-07:00
 description: "Att kontrollera om en katalog finns i Kotlin inneb\xE4r att verifiera\
   \ n\xE4rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g. Programmerare utf\xF6\
   r denna uppgift f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.766030
+lastmod: 2024-02-19 22:04:57.100519
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Kotlin inneb\xE4r att verifiera n\xE4\
   rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g. Programmerare utf\xF6r denna\

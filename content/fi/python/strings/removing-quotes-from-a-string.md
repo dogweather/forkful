@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:57.440509-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleens\xE4 ylim\xE4\
   \xE4r\xE4isten kaksois- (\") tai yksitt\xE4isten (') lainausmerkkien karsimista.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.170978
+lastmod: 2024-02-19 22:05:15.045624
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleens\xE4 ylim\xE4\
   \xE4r\xE4isten kaksois- (\") tai yksitt\xE4isten (') lainausmerkkien karsimista.\

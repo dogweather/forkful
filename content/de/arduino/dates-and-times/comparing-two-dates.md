@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/arduino/comparing-two-dates/
 date: 2024-01-20 17:32:16.945534-07:00
 description: "Daten zu vergleichen bedeutet, zwei Zeitpunkte miteinander in Relation\
   \ zu setzen, um herauszufinden, welches Datum fr\xFCher oder sp\xE4ter ist. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:05.158610
+lastmod: 2024-02-19 22:05:13.090322
 model: gpt-4-1106-preview
 summary: "Daten zu vergleichen bedeutet, zwei Zeitpunkte miteinander in Relation zu\
   \ setzen, um herauszufinden, welches Datum fr\xFCher oder sp\xE4ter ist. Programmierer\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/google-apps-script/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:56.257025-07:00
 description: "Stampare l'output di debug comporta il posizionamento strategico di\
   \ istruzioni di log nel codice per visualizzare i valori delle variabili, il flusso\
   \ di\u2026"
-lastmod: 2024-02-18 23:08:55.480673
+lastmod: 2024-02-19 22:05:02.064582
 model: gpt-4-0125-preview
 summary: "Stampare l'output di debug comporta il posizionamento strategico di istruzioni\
   \ di log nel codice per visualizzare i valori delle variabili, il flusso di\u2026"

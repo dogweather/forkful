@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/python/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:19.351279-07:00
 description: "Pisanie do standardowego b\u0142\u0119du w Pythonie dotyczy przekierowania\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki programu do strumienia b\u0142\
   \u0119d\xF3w (`stderr`),\u2026"
-lastmod: 2024-02-18 23:08:49.239183
+lastmod: 2024-02-19 22:04:54.150456
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du w Pythonie dotyczy przekierowania\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki programu do strumienia b\u0142\

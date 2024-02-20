@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/elixir/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:05.397377-07:00
 description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ consiste \xE0 lire et \xE0 \xE9crire des donn\xE9es dans ces fichiers, un besoin\
   \ commun pour les\u2026"
-lastmod: 2024-02-18 23:09:08.459819
+lastmod: 2024-02-19 22:05:16.247137
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ consiste \xE0 lire et \xE0 \xE9crire des donn\xE9es dans ces fichiers, un besoin\

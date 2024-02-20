@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/kotlin/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:08.701295-07:00
 description: "YAML\uFF08YAML Ain't Markup\u2026"
-lastmod: 2024-02-18 23:08:54.898252
+lastmod: 2024-02-19 22:05:01.245225
 model: gpt-4-0125-preview
 summary: "YAML\uFF08YAML Ain't Markup\u2026"
 title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"

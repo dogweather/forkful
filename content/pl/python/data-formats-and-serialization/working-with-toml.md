@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/python/working-with-toml/
 date: 2024-01-26 04:25:38.744987-07:00
 description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializacji\
   \ danych podobny do JSON lub YAML, ale maj\u0105cy na celu prostot\u0119 i czytelno\u015B\
   \u0107.\u2026"
-lastmod: 2024-02-18 23:08:49.246159
+lastmod: 2024-02-19 22:04:54.157724
 model: gpt-4-0125-preview
 summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializacji\
   \ danych podobny do JSON lub YAML, ale maj\u0105cy na celu prostot\u0119 i czytelno\u015B\

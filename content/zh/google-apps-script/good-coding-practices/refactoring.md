@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/refactoring/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:59.558214-07:00
@@ -13,7 +11,7 @@ description: "\u5728\u7F16\u7A0B\u8BCD\u6C47\u4E2D\uFF0C\u91CD\u6784\u6307\u7684
   \u793A\u6F5C\u5728\u9519\u8BEF\u7684\u91CD\u8981\u6B65\u9AA4\uFF0C\u4ECE\u800C\u4FC3\
   \u8FDB\u66F4\u5BB9\u6613\u7684\u7EF4\u62A4\u548C\u672A\u6765\u4EE3\u7801\u7684\u53EF\
   \u6269\u5C55\u6027\u3002"
-lastmod: 2024-02-18 23:08:58.758927
+lastmod: 2024-02-19 22:05:06.290411
 model: gpt-4-0125-preview
 summary: "\u5728\u7F16\u7A0B\u8BCD\u6C47\u4E2D\uFF0C\u91CD\u6784\u6307\u7684\u662F\
   \u91CD\u65B0\u7EC4\u7EC7\u73B0\u6709\u8BA1\u7B97\u673A\u4EE3\u7801\u7684\u8FC7\u7A0B\

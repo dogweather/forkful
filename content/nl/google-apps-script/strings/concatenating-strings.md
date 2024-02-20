@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/concatenating-strings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:09.482019-07:00
 description: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
   \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"
-lastmod: 2024-02-18 23:09:01.376493
+lastmod: 2024-02-19 22:05:09.409358
 model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
   \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"

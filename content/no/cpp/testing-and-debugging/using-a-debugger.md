@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/using-a-debugger/
 date: 2024-01-26 03:48:08.619722-07:00
 description: "\xC5 bruke en debugger betyr \xE5 starte et verkt\xF8y som lar deg kikke\
   \ inn i ditt kj\xF8rende program for \xE5 forst\xE5 hva som egentlig skjer. Programmere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:54.196729
+lastmod: 2024-02-19 22:05:00.377229
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en debugger betyr \xE5 starte et verkt\xF8y som lar deg kikke\
   \ inn i ditt kj\xF8rende program for \xE5 forst\xE5 hva som egentlig skjer. Programmere\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/google-apps-script/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:43.646904-07:00
 description: "Das Vergleichen von zwei Daten in Google Apps Script, einer Abwandlung\
   \ von JavaScript, die speziell f\xFCr Googles Anwendungs-Suite entwickelt wurde,\
   \ ist\u2026"
-lastmod: 2024-02-18 23:09:04.428742
+lastmod: 2024-02-19 22:05:12.394508
 model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in Google Apps Script, einer Abwandlung von\
   \ JavaScript, die speziell f\xFCr Googles Anwendungs-Suite entwickelt wurde, ist\u2026"

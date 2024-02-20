@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/fish-shell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:34.866104-07:00
 description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sen muokkaamista\
   \ siten, ett\xE4 ensimm\xE4inen kirjain on isolla ja loput merkkijonosta ovat pienell\xE4\
   . T\xE4m\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.063645
+lastmod: 2024-02-19 22:05:15.870108
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sen muokkaamista siten,\
   \ ett\xE4 ensimm\xE4inen kirjain on isolla ja loput merkkijonosta ovat pienell\xE4\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/elixir/starting-a-new-project/
 date: 2024-01-20 18:03:30.088287-07:00
 description: "Iniciar um novo projeto \xE9 como arrumar um terreno vazio para construir\
   \ algo do zero. Programadores fazem isso para transformar ideias em realidade, testar\u2026"
-lastmod: 2024-02-18 23:08:57.844522
+lastmod: 2024-02-19 22:05:05.314551
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto \xE9 como arrumar um terreno vazio para construir\
   \ algo do zero. Programadores fazem isso para transformar ideias em realidade, testar\u2026"

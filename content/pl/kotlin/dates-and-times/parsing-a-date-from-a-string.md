@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/kotlin/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:37.263898-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu\
   \ tekstu na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, kt\xF3re wchodz\u0105\
   \ w interakcje z\u2026"
-lastmod: 2024-02-18 23:08:49.578419
+lastmod: 2024-02-19 22:04:54.505846
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu tekstu\
   \ na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, kt\xF3re wchodz\u0105\

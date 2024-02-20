@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/rounding-numbers/
 date: 2024-01-26 03:45:05.079263-07:00
 description: "Py\xF6rist\xE4minen on desimaalin s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\
   \xE4n kokonaisarvoon tai tiettyyn m\xE4\xE4r\xE4\xE4n desimaalilukuja. Ohjelmoijat\
   \ py\xF6rist\xE4v\xE4t v\xE4hent\xE4\xE4kseen\u2026"
-lastmod: 2024-02-18 23:09:07.498142
+lastmod: 2024-02-19 22:05:15.377649
 model: gpt-4-0125-preview
 summary: "Py\xF6rist\xE4minen on desimaalin s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\xE4\
   n kokonaisarvoon tai tiettyyn m\xE4\xE4r\xE4\xE4n desimaalilukuja. Ohjelmoijat py\xF6\

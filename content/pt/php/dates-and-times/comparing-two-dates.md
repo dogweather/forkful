@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/comparing-two-dates/
 date: 2024-01-20 17:33:26.692030-07:00
 description: "Comparar duas datas \xE9 o processo de avaliar a diferen\xE7a entre\
   \ elas ou determinar qual precede a outra. Programadores fazem isso para manipular\
   \ eventos\u2026"
-lastmod: 2024-02-18 23:08:58.253269
+lastmod: 2024-02-19 22:05:05.728590
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 o processo de avaliar a diferen\xE7a entre elas\
   \ ou determinar qual precede a outra. Programadores fazem isso para manipular eventos\u2026"

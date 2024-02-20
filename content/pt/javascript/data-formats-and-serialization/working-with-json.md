@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/working-with-json/
 date: 2024-01-19
 description: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de\
   \ dados. Programadores utilizam JSON para transferir e armazenar dados de maneira\
   \ simples\u2026"
-lastmod: 2024-02-18 23:08:58.553413
+lastmod: 2024-02-19 22:05:06.049574
 summary: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de dados.\
   \ Programadores utilizam JSON para transferir e armazenar dados de maneira simples\u2026"
 title: Trabalhando com JSON

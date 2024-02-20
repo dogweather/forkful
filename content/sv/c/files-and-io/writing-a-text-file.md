@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:33.485085-07:00
 description: "Att skriva en textfil i C inneb\xE4r att skapa eller \xF6ppna en fil\
   \ i skrivl\xE4ge och sedan anv\xE4nda Cs fil-I/O-funktioner f\xF6r att spara textdata\
   \ till den.\u2026"
-lastmod: 2024-02-18 23:08:52.270028
+lastmod: 2024-02-19 22:04:57.656556
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i C inneb\xE4r att skapa eller \xF6ppna en fil i skrivl\xE4\
   ge och sedan anv\xE4nda Cs fil-I/O-funktioner f\xF6r att spara textdata till den.\u2026"

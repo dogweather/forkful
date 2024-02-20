@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/sending-an-http-request/
 date: 2024-01-20 17:59:33.247990-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir \xE0 um servidor\
   \ na web informa\xE7\xF5es ou para executar uma a\xE7\xE3o. Programadores fazem\
   \ isso para interagir com\u2026"
-lastmod: 2024-02-18 23:08:58.572445
+lastmod: 2024-02-19 22:05:06.069948
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir \xE0 um servidor\
   \ na web informa\xE7\xF5es ou para executar uma a\xE7\xE3o. Programadores fazem\

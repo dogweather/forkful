@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/starting-a-new-project/
 date: 2024-01-20 18:03:24.361365-07:00
 description: "Zaczynanie nowego projektu oznacza stworzenie bazowej struktury katalog\xF3\
   w i plik\xF3w potrzebnych do pracy. Programi\u015Bci robi\u0105 to, by szybko i\
   \ efektywnie\u2026"
-lastmod: 2024-02-18 23:08:50.037378
+lastmod: 2024-02-19 22:04:55.016615
 model: gpt-4-1106-preview
 summary: "Zaczynanie nowego projektu oznacza stworzenie bazowej struktury katalog\xF3\
   w i plik\xF3w potrzebnych do pracy. Programi\u015Bci robi\u0105 to, by szybko i\

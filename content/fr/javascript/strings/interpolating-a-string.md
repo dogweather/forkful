@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/javascript/interpolating-a-string/
 date: 2024-01-20 17:51:37.133763-07:00
 description: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de variables\
   \ dans du texte. Les d\xE9veloppeurs l'utilisent pour rendre le code plus lisible\
   \ et\u2026"
-lastmod: 2024-02-18 23:09:09.240462
+lastmod: 2024-02-19 22:05:16.906442
 model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de variables\
   \ dans du texte. Les d\xE9veloppeurs l'utilisent pour rendre le code plus lisible\

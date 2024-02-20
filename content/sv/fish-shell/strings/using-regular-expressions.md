@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/fish-shell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:57.465657-07:00
 description: "Regulj\xE4ra uttryck (regex) i Fish Shell g\xF6r det m\xF6jligt f\xF6\
   r dig att s\xF6ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6\
   nster. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:52.195909
+lastmod: 2024-02-19 22:04:57.571546
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i Fish Shell g\xF6r det m\xF6jligt f\xF6r dig\
   \ att s\xF6ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster.\

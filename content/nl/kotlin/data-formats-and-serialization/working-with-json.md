@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:33.279339-07:00
 description: "JSON (JavaScript Object Notation) is een formaat voor het structureren\
   \ van gegevens, gebruikt voor opslag en overdracht. Programmeurs gebruiken het omdat\u2026"
-lastmod: 2024-02-18 23:09:01.829352
+lastmod: 2024-02-19 22:05:09.845543
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een formaat voor het structureren van\
   \ gegevens, gebruikt voor opslag en overdracht. Programmeurs gebruiken het omdat\u2026"

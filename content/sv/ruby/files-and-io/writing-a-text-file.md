@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/ruby/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:01.405081-07:00
 description: "Att skriva till en textfil i Ruby \xE4r en grundl\xE4ggande operation\
   \ som m\xF6jligg\xF6r att spara utdata och data p\xE5 ett best\xE4ndigt s\xE4tt,\
   \ vilket g\xF6r det m\xF6jligt att\u2026"
-lastmod: 2024-02-18 23:08:52.312690
+lastmod: 2024-02-19 22:04:57.704802
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Ruby \xE4r en grundl\xE4ggande operation som\
   \ m\xF6jligg\xF6r att spara utdata och data p\xE5 ett best\xE4ndigt s\xE4tt, vilket\

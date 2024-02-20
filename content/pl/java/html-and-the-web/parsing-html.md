@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/java/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:32.759360-07:00
 description: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w celu\
   \ wydobycia danych takich jak tekst, linki czy inne elementy. Robimy to, aby interaktywnie\u2026"
-lastmod: 2024-02-18 23:08:49.475777
+lastmod: 2024-02-19 22:04:54.403891
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w celu wydobycia\
   \ danych takich jak tekst, linki czy inne elementy. Robimy to, aby interaktywnie\u2026"

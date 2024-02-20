@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:00.358262-07:00
 description: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle\
   \ Gro\xDFbuchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.358118
+lastmod: 2024-02-19 22:05:13.278941
 model: gpt-4-0125-preview
 summary: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle Gro\xDF\
   buchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben zu\u2026"

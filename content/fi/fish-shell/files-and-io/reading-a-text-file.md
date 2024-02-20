@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/fish-shell/reading-a-text-file/
 date: 2024-01-20 17:54:22.624348-07:00
 description: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n hakemista\
   \ ohjelmallisesti. Ohjelmoijat tekev\xE4t sit\xE4 datan prosessoimiseen, konfiguraatioiden\u2026"
-lastmod: 2024-02-18 23:09:08.103278
+lastmod: 2024-02-19 22:05:15.906246
 model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n hakemista\
   \ ohjelmallisesti. Ohjelmoijat tekev\xE4t sit\xE4 datan prosessoimiseen, konfiguraatioiden\u2026"

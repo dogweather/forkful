@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/php/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:48.171162-07:00
 description: "Deleting characters matching a pattern means we\u2019re getting rid\
   \ of specific letters or symbols based on rules\u2014like tossing out all vowels\
   \ from a sentence.\u2026"
-lastmod: 2024-02-18 23:09:00.465231
+lastmod: 2024-02-19 22:05:08.435683
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern means we\u2019re getting rid of specific\
   \ letters or symbols based on rules\u2014like tossing out all vowels from a sentence.\u2026"

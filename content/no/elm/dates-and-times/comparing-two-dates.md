@@ -1,9 +1,7 @@
 ---
-aliases:
-- /no/elm/comparing-two-dates/
 date: 2024-01-20 17:32:43.687186-07:00
 description: '"'
-lastmod: 2024-02-18 23:08:53.823291
+lastmod: 2024-02-19 22:04:59.967530
 model: gpt-4-1106-preview
 summary: '"'
 title: Sammenlikning av to datoer

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/working-with-toml/
 date: 2024-01-25 03:39:32.458446-07:00
 description: "TOML is a config file format that's easy to read due to its clear semantics.\
   \ Programmers use TOML to manage app configs and data serialization without the\u2026"
-lastmod: 2024-02-18 23:09:11.588883
+lastmod: 2024-02-19 22:05:19.033335
 model: gpt-4-1106-preview
 summary: "TOML is a config file format that's easy to read due to its clear semantics.\
   \ Programmers use TOML to manage app configs and data serialization without the\u2026"

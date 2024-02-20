@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:28.085096-07:00
@@ -13,7 +11,7 @@ description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 \uC77D\uAE30-\
   , \uC804\uD1B5\uC801\uC778 \uD3B8\uC9D1-\uCEF4\uD30C\uC77C-\uC2E4\uD589 \uC8FC\uAE30\
   \uB97C \uC6B0\uD68C\uD568\uC73C\uB85C\uC368 \uAC1C\uBC1C \uD504\uB85C\uC138\uC2A4\
   \uB97C \uB354 \uBE60\uB974\uACE0\u2026"
-lastmod: 2024-02-18 23:09:05.484146
+lastmod: 2024-02-19 22:05:13.401907
 model: gpt-4-0125-preview
 summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 \uC77D\uAE30-\uD3C9\uAC00\
   -\uCD9C\uB825 \uB8E8\uD504(REPL)\uB294 Go \uCF54\uB4DC\uB97C \uC2E4\uC2DC\uAC04\uC73C\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/vba/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:21.716832-07:00
 description: "Att skriva till standardfel i Visual Basic for Applications (VBA) inneb\xE4\
   r att dirigera felmeddelanden eller diagnostik bort fr\xE5n standardutmatningen,\u2026"
-lastmod: 2024-02-18 23:08:51.644030
+lastmod: 2024-02-19 22:04:56.968031
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel i Visual Basic for Applications (VBA) inneb\xE4\
   r att dirigera felmeddelanden eller diagnostik bort fr\xE5n standardutmatningen,\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/cpp/reading-command-line-arguments/
 date: 2024-01-20 17:55:29.369164-07:00
 description: "Lire les arguments de ligne de commande permet \xE0 vos programmes C++\
   \ d\u2019agir sur des infos fournies au lancement. On le fait pour rendre les applis\u2026"
-lastmod: 2024-02-18 23:09:09.177855
+lastmod: 2024-02-19 22:05:16.849888
 model: gpt-4-1106-preview
 summary: "Lire les arguments de ligne de commande permet \xE0 vos programmes C++ d\u2019\
   agir sur des infos fournies au lancement. On le fait pour rendre les applis\u2026"

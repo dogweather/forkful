@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:59.373394-07:00
@@ -10,7 +8,7 @@ description: "C\u8BED\u8A00\u4E2D\u7684\u8C03\u8BD5\u5668\u662F\u4E13\u95E8\u768
   \u6D41\u7A0B\u3002\u8FD9\u4E2A\u8FC7\u7A0B\u5BF9\u4E8E\u8BC6\u522B\u548C\u4FEE\u590D\
   \u6F0F\u6D1E\u3001\u786E\u4FDD\u4EE3\u7801\u6309\u9884\u671F\u884C\u4E3A\u81F3\u5173\
   \u91CD\u8981\u3002"
-lastmod: 2024-02-18 23:08:59.563856
+lastmod: 2024-02-19 22:05:07.383963
 model: gpt-4-0125-preview
 summary: "C\u8BED\u8A00\u4E2D\u7684\u8C03\u8BD5\u5668\u662F\u4E13\u95E8\u7684\u5DE5\
   \u5177\uFF0C\u5141\u8BB8\u5F00\u53D1\u4EBA\u5458\u9010\u6B65\u68C0\u67E5\u4ED6\u4EEC\

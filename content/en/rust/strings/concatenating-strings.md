@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/concatenating-strings/
 date: 2024-01-20 17:35:28.360233-07:00
 description: String concatenation is sticking strings end-to-end to make a new one.
   We do it to construct messages, generate output, or work with text dynamically.
-lastmod: 2024-02-18 23:09:10.840728
+lastmod: 2024-02-19 22:05:18.358321
 model: gpt-4-1106-preview
 summary: String concatenation is sticking strings end-to-end to make a new one. We
   do it to construct messages, generate output, or work with text dynamically.

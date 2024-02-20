@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:38.531219-07:00
 description: "Een tekstbestand schrijven in Java betekent tekstgegevens opslaan op\
   \ een bestand op schijf. Ontwikkelaars doen dit voor taken zoals loggen, configureren,\u2026"
-lastmod: 2024-02-18 23:09:01.733345
+lastmod: 2024-02-19 22:05:09.752884
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Java betekent tekstgegevens opslaan op een\
   \ bestand op schijf. Ontwikkelaars doen dit voor taken zoals loggen, configureren,\u2026"

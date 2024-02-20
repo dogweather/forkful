@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/google-apps-script/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:20.718901-07:00
 description: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht das\
   \ dynamische Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung\u2026"
-lastmod: 2024-02-18 23:09:04.396761
+lastmod: 2024-02-19 22:05:12.364800
 model: gpt-4-0125-preview
 summary: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht das dynamische\
   \ Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/clojure/logging/
 date: 2024-01-26 01:01:11.287933-07:00
 description: "Il logging \xE8 essenzialmente l'equivalente software di un registro\
   \ di bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano\
   \ mentre\u2026"
-lastmod: 2024-02-18 23:08:55.566923
+lastmod: 2024-02-19 22:05:02.157576
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 essenzialmente l'equivalente software di un registro di\
   \ bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano mentre\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/javascript/creating-a-temporary-file/
 date: 2024-01-20 17:40:34.630977-07:00
 description: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5141\u8BB8\u7A0B\u5E8F\u4E34\u65F6\
   \u5B58\u50A8\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
@@ -8,7 +6,7 @@ description: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5141\u8BB8\u7A0B\u5E8F\u4E34
   \u4E45\u5316\u5B58\u50A8\u4E0D\u65B9\u4FBF\u6216\u4E0D\u5FC5\u8981\u65F6\u4F7F\u7528\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.496972
+lastmod: 2024-02-19 22:05:07.291212
 model: gpt-4-1106-preview
 summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5141\u8BB8\u7A0B\u5E8F\u4E34\u65F6\
   \u5B58\u50A8\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\

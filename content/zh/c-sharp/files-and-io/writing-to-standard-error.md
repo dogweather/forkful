@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c-sharp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:44.854334-07:00
@@ -12,7 +10,7 @@ description: "\u5728 C# \u4E2D\u5411\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u
   \u505A\u662F\u4E3A\u4E86\u4F7F\u8C03\u8BD5\u548C\u8BB0\u5F55\u66F4\u52A0\u9AD8\u6548\
   \uFF0C\u8BA9\u5E94\u7528\u7684\u64CD\u4F5C\u548C\u7EF4\u62A4\u66F4\u52A0\u987A\u7545\
   \u3002"
-lastmod: 2024-02-18 23:08:59.147008
+lastmod: 2024-02-19 22:05:06.823263
 model: gpt-4-0125-preview
 summary: "\u5728 C# \u4E2D\u5411\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u5199\u5165\
   \u5185\u5BB9\uFF0C\u6D89\u53CA\u5C06\u9519\u8BEF\u6D88\u606F\u548C\u8BCA\u65AD\u4FE1\

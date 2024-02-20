@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/powershell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:26.600595-07:00
 description: "A integra\xE7\xE3o do PowerShell com JSON (JavaScript Object Notation)\
   \ trata da an\xE1lise (leitura) e gera\xE7\xE3o (escrita) de dados JSON, um formato\
   \ comum para troca\u2026"
-lastmod: 2024-02-18 23:08:58.390023
+lastmod: 2024-02-19 22:05:05.876163
 model: gpt-4-0125-preview
 summary: "A integra\xE7\xE3o do PowerShell com JSON (JavaScript Object Notation) trata\
   \ da an\xE1lise (leitura) e gera\xE7\xE3o (escrita) de dados JSON, um formato comum\

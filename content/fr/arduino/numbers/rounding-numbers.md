@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/rounding-numbers/
 date: 2024-01-26 03:43:01.150933-07:00
 description: "Arrondir des nombres consiste \xE0 r\xE9duire un d\xE9cimal \xE0 sa\
   \ valeur enti\xE8re la plus proche ou \xE0 un nombre d\xE9fini de d\xE9cimales.\
   \ Les programmeurs arrondissent\u2026"
-lastmod: 2024-02-18 23:09:09.109546
+lastmod: 2024-02-19 22:05:16.787738
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres consiste \xE0 r\xE9duire un d\xE9cimal \xE0 sa valeur\
   \ enti\xE8re la plus proche ou \xE0 un nombre d\xE9fini de d\xE9cimales. Les programmeurs\

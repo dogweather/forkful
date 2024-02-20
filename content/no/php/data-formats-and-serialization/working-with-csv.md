@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/php/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:58.195730-07:00
 description: "\xC5 jobbe med CSV (Comma-Separated Values), eller kommaseparerte verdier\
   \ p\xE5 norsk, inneb\xE6rer \xE5 lese fra og skrive data til CSV-filer, et popul\xE6\
   rt format for\u2026"
-lastmod: 2024-02-18 23:08:53.996743
+lastmod: 2024-02-19 22:05:00.173808
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV (Comma-Separated Values), eller kommaseparerte verdier\
   \ p\xE5 norsk, inneb\xE6rer \xE5 lese fra og skrive data til CSV-filer, et popul\xE6\

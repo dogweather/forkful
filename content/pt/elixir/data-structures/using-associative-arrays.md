@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.538142-07:00
 description: "Em Elixir, os arrays associativos, chamados de Mapas, s\xE3o cole\xE7\
   \xF5es de pares chave-valor onde uma chave \xFAnica aponta para um valor. Eles s\xE3\
   o extremamente\u2026"
-lastmod: 2024-02-18 23:08:57.837186
+lastmod: 2024-02-19 22:05:05.306513
 model: gpt-4-0125-preview
 summary: "Em Elixir, os arrays associativos, chamados de Mapas, s\xE3o cole\xE7\xF5\
   es de pares chave-valor onde uma chave \xFAnica aponta para um valor. Eles s\xE3\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/getting-the-current-date/
 date: 2024-01-20 15:14:18.979784-07:00
 description: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
   \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
   \ nyttig for alt\u2026"
-lastmod: 2024-02-18 23:08:53.821505
+lastmod: 2024-02-19 22:04:59.965703
 summary: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
   \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
   \ nyttig for alt\u2026"

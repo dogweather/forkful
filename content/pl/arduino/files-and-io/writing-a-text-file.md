@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/arduino/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:04.902029-07:00
 description: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych\
   \ na karcie SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji\
   \ danych.\u2026"
-lastmod: 2024-02-18 23:08:49.887239
+lastmod: 2024-02-19 22:04:54.834640
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych na karcie\
   \ SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji danych.\u2026"

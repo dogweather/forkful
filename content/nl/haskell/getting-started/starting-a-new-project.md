@@ -1,6 +1,4 @@
 ---
-aliases:
-- /nl/haskell/starting-a-new-project/
 changelog:
 - 2024-01-21, dogweather, Reviewed for accuracy
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 22:08:15.634438-07:00
 description: "Elk project begint met een eerste stap. Voor programmeurs betekent dat\
   \ het opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\
   \ dit\u2026"
-lastmod: 2024-02-18 23:09:01.899596
+lastmod: 2024-02-19 22:05:09.923462
 model: gpt-4-0125-preview
 summary: "Elk project begint met een eerste stap. Voor programmeurs betekent dat het\
   \ opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\

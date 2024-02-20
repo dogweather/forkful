@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:26.935957-07:00
 description: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
   \ essencialmente fornecer nome de usu\xE1rio e senha para acessar recursos protegidos\
   \ em um servidor.\u2026"
-lastmod: 2024-02-18 23:08:58.368522
+lastmod: 2024-02-19 22:05:05.853289
 model: gpt-4-1106-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
   \ essencialmente fornecer nome de usu\xE1rio e senha para acessar recursos protegidos\

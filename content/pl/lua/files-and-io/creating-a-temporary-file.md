@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/creating-a-temporary-file/
 date: 2024-01-20 17:40:43.619873-07:00
 description: "Tworzenie tymczasowego pliku pozwala na przechowanie danych, kt\xF3\
   re s\u0105 potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci wykorzystuj\u0105\
   \ je dla zada\u0144 takich jak\u2026"
-lastmod: 2024-02-18 23:08:49.759280
+lastmod: 2024-02-19 22:04:54.697442
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowego pliku pozwala na przechowanie danych, kt\xF3re s\u0105\
   \ potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci wykorzystuj\u0105 je dla\

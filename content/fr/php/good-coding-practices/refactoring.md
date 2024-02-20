@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/php/refactoring/
 date: 2024-01-26 01:47:50.361082-07:00
 description: "La refactorisation est le processus de restructuration du code informatique\
   \ existant sans en modifier le comportement externe. Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:08.931888
+lastmod: 2024-02-19 22:05:16.623075
 model: gpt-4-0125-preview
 summary: "La refactorisation est le processus de restructuration du code informatique\
   \ existant sans en modifier le comportement externe. Les programmeurs\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/haskell/working-with-complex-numbers/
 date: 2024-01-26 04:41:34.836612-07:00
 description: "N\xFAmeros complexos, consistindo em uma parte real e uma parte imagin\xE1\
   ria, s\xE3o essenciais em diversos campos computacionais como engenharia, f\xED\
   sica e\u2026"
-lastmod: 2024-02-18 23:08:58.193167
+lastmod: 2024-02-19 22:05:05.664441
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, consistindo em uma parte real e uma parte imagin\xE1\
   ria, s\xE3o essenciais em diversos campos computacionais como engenharia, f\xED\

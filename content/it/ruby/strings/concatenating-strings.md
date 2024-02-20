@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/concatenating-strings/
 date: 2024-01-20 17:35:23.593240-07:00
 description: "Concatenare le stringhe significa unirle insieme, fine a fine, per formarne\
   \ una nuova. I programmatori lo fanno per manipolare il testo, costruire output\u2026"
-lastmod: 2024-02-18 23:08:56.373477
+lastmod: 2024-02-19 22:05:03.013420
 model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unirle insieme, fine a fine, per formarne\
   \ una nuova. I programmatori lo fanno per manipolare il testo, costruire output\u2026"

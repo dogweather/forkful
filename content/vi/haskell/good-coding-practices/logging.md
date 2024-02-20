@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/haskell/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:13.468369-07:00
@@ -9,7 +7,7 @@ description: "Logging trong l\u1EADp tr\xECnh ch\xEDnh l\xE0 \u0111\u1EC3 l\u1EA
   ng \u0111i\u1EC7p \u0111\u01B0\u1EE3c ghi l\u1EA1i, c\xF3 th\u1EC3 \u0111\u01B0\u1EE3\
   c s\u1EED d\u1EE5ng \u0111\u1EC3 theo d\xF5i \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1\
   n \u0111ang\u2026"
-lastmod: 2024-02-18 23:08:50.752010
+lastmod: 2024-02-19 22:04:55.900156
 model: gpt-4-0125-preview
 summary: "Logging trong l\u1EADp tr\xECnh ch\xEDnh l\xE0 \u0111\u1EC3 l\u1EA1i m\u1ED9\
   t d\u1EA5u v\u1EBFt g\u1ED3m nh\u1EEFng s\u1EF1 ki\u1EC7n ho\u1EB7c th\xF4ng \u0111\

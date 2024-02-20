@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/java/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:27.678766-07:00
 description: "Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista\
   \ odotetulla tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4 vikojen\u2026"
-lastmod: 2024-02-18 23:09:07.461915
+lastmod: 2024-02-19 22:05:15.344275
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista odotetulla\
   \ tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4 vikojen\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/ruby/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:12.080967-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att konvertera text\
   \ som representerar ett datum till ett `Date` eller `DateTime` objekt som Ruby f\xF6\
   rst\xE5r.\u2026"
-lastmod: 2024-02-18 23:08:52.304129
+lastmod: 2024-02-19 22:04:57.694985
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att konvertera text\
   \ som representerar ett datum till ett `Date` eller `DateTime` objekt som Ruby f\xF6\

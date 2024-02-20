@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/organizing-code-into-functions/
 date: 2024-01-26 01:10:03.726106-07:00
 description: "Att organisera kod i funktioner inneb\xE4r att gruppera relaterade operationer\
   \ i \xE5teranv\xE4ndbara block. Vi g\xF6r det f\xF6r att f\xF6rb\xE4ttra l\xE4sbarheten\
   \ och\u2026"
-lastmod: 2024-02-18 23:08:51.507729
+lastmod: 2024-02-19 22:04:56.818910
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner inneb\xE4r att gruppera relaterade operationer\
   \ i \xE5teranv\xE4ndbara block. Vi g\xF6r det f\xF6r att f\xF6rb\xE4ttra l\xE4sbarheten\

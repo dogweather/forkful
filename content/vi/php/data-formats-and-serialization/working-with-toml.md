@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:17.385278-07:00
@@ -8,7 +6,7 @@ description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language,
   \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EEF li\u1EC7u t\u01B0\u01A1ng t\u1EF1 nh\u01B0\
   \ JSON ho\u1EB7c YAML, nh\u01B0ng d\u1EC5 \u0111\u1ECDc h\u01A1n \u0111\u1ED1i v\u1EDB\
   i con ng\u01B0\u1EDDi. C\xE1c l\u1EADp\u2026"
-lastmod: 2024-02-18 23:08:50.816318
+lastmod: 2024-02-19 22:04:55.981779
 model: gpt-4-0125-preview
 summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
   \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EEF li\u1EC7u t\u01B0\u01A1ng t\u1EF1 nh\u01B0\

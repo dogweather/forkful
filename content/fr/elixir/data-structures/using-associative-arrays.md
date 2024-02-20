@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:55.955119-07:00
 description: "Dans Elixir, les tableaux associatifs, appel\xE9s Maps, sont des collections\
   \ de paires cl\xE9-valeur o\xF9 une cl\xE9 unique pointe vers une valeur. Ils sont\u2026"
-lastmod: 2024-02-18 23:09:08.426134
+lastmod: 2024-02-19 22:05:16.216605
 model: gpt-4-0125-preview
 summary: "Dans Elixir, les tableaux associatifs, appel\xE9s Maps, sont des collections\
   \ de paires cl\xE9-valeur o\xF9 une cl\xE9 unique pointe vers une valeur. Ils sont\u2026"

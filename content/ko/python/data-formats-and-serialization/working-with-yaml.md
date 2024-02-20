@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:41.541287-07:00
@@ -11,7 +9,7 @@ description: "YAML\uC740 \"YAML Ain't Markup Language\"\uB97C \uC758\uBBF8\uD558
   \uC9D5, \uB370\uC774\uD130 \uC800\uC7A5\uC5D0 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774\
   \uB294 XML\uC774\uB098 JSON\uAC19\uC740 \uB2E4\uB978 \uD3EC\uB9F7\uB4E4\uC5D0 \uBE44\
   \uD574 \uBB38\uBC95\uC774 \uB2E8\uC21C\uD558\uACE0\u2026"
-lastmod: 2024-02-18 23:09:05.656538
+lastmod: 2024-02-19 22:05:13.570229
 model: gpt-4-0125-preview
 summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uB97C \uC758\uBBF8\uD558\uBA70\
   , \uC778\uAC04\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uB370\uC774\uD130 \uC9C1\uB82C\

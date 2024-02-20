@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:45.905587-07:00
 description: "Loggen is in feite een broodkruimelspoor achterlaten door je code -\
   \ het is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait.\u2026"
-lastmod: 2024-02-18 23:09:02.099092
+lastmod: 2024-02-19 22:05:10.120245
 model: gpt-4-0125-preview
 summary: "Loggen is in feite een broodkruimelspoor achterlaten door je code - het\
   \ is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait.\u2026"

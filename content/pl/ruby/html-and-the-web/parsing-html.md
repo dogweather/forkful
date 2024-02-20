@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/ruby/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:30.336201-07:00
 description: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kawa\u0142\
   ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107. Programi\u015B\
   ci robi\u0105 to w celu wydobycia\u2026"
-lastmod: 2024-02-18 23:08:50.123775
+lastmod: 2024-02-19 22:04:55.112626
 model: gpt-4-0125-preview
 summary: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kawa\u0142\
   ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107. Programi\u015B\

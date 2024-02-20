@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:31.448356-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng l
   \ ho\u1EB7c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECB\
   nh m\u1ED9t ng\xE0y c\xE1ch m\u1ED9t ng\xE0y cho tr\u01B0\u1EDBc m\u1ED9t s\u1ED1\
   \ ng\xE0y, th\xE1ng, ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECBnh.\u2026"
-lastmod: 2024-02-18 23:08:50.524678
+lastmod: 2024-02-19 22:04:55.610378
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
   c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9\

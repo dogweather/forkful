@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/kotlin/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:40.751858-07:00
 description: "Rimuovere le virgolette da una stringa significa eliminare qualsiasi\
   \ istanza di caratteri di virgoletta, sia singole (' ') che doppie (\" \"), dai\
   \ dati di\u2026"
-lastmod: 2024-02-18 23:08:55.834822
+lastmod: 2024-02-19 22:05:02.442710
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa eliminare qualsiasi istanza\
   \ di caratteri di virgoletta, sia singole (' ') che doppie (\" \"), dai dati di\u2026"

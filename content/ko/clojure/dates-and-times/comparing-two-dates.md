@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/comparing-two-dates/
 date: 2024-01-20 17:33:00.488558-07:00
 description: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uB0A0\
   \uC9DC\uAC00 \uC11C\uB85C \uC5B4\uB5A4 \uAD00\uACC4\uC5D0 \uC788\uB294\uC9C0, \uC989\
@@ -11,7 +9,7 @@ description: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \u
   \uB2A5\uC744 \uC2E4\uD589\uD558\uAE30 \uC704\uD574 \uB0A0\uC9DC\uB97C \uBE44\uAD50\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.709547
+lastmod: 2024-02-19 22:05:13.621837
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uB0A0\uC9DC\
   \uAC00 \uC11C\uB85C \uC5B4\uB5A4 \uAD00\uACC4\uC5D0 \uC788\uB294\uC9C0, \uC989 \uB3D9\

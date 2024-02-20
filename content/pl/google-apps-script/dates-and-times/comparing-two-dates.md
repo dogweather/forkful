@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:01.452770-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat w Google Apps Script, pochodnej JavaScriptu\
   \ dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programist\xF3\
   w\u2026"
-lastmod: 2024-02-18 23:08:49.162322
+lastmod: 2024-02-19 22:04:54.100627
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w Google Apps Script, pochodnej JavaScriptu\
   \ dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programist\xF3\

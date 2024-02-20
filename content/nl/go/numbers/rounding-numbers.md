@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:48.746842-07:00
 description: "Rond getallen af is het aanpassen van de waarde van een getal naar het\
   \ dichtstbijzijnde gehele getal of naar een specifiek aantal decimalen. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.332497
+lastmod: 2024-02-19 22:05:09.366214
 model: gpt-4-0125-preview
 summary: "Rond getallen af is het aanpassen van de waarde van een getal naar het dichtstbijzijnde\
   \ gehele getal of naar een specifiek aantal decimalen. Programmeurs\u2026"

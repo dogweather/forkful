@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/lua/concatenating-strings/
 date: 2024-01-20 17:36:01.110154-07:00
 description: "String concatenation \u0938\u0947 \u092E\u0924\u0932\u092C \u0939\u0948\
   \ \u0915\u093F \u0926\u094B \u092F\u093E \u091C\u094D\u092F\u093E\u0926\u093E strings\
@@ -9,7 +7,7 @@ description: "String concatenation \u0938\u0947 \u092E\u0924\u0932\u092C \u0939\
   \ \u0907\u0938\u0932\u093F\u090F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0915\
   \u094D\u092F\u094B\u0902\u0915\u093F \u0910\u0938\u0947 \u0935\u0947 \u0935\u0947\
   \u0930\u093F\u090F\u092C\u0932\u094D\u0938, \u092F\u0942\u091C\u093C\u0930\u2026"
-lastmod: 2024-02-18 23:09:03.560547
+lastmod: 2024-02-19 22:05:11.549713
 model: gpt-4-1106-preview
 summary: "String concatenation \u0938\u0947 \u092E\u0924\u0932\u092C \u0939\u0948\
   \ \u0915\u093F \u0926\u094B \u092F\u093E \u091C\u094D\u092F\u093E\u0926\u093E strings\

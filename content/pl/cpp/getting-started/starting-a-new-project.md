@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/starting-a-new-project/
 date: 2024-01-20 18:03:10.356180-07:00
 description: "Rozpoczynanie nowego projektu to jak otwieranie pustej ksi\u0105\u017C\
   ki \u2014 miejsce, gdzie zaczyna si\u0119 snu\u0107 now\u0105 opowie\u015B\u0107\
   \ kodowania, wprowadzaj\u0105c pomys\u0142y w \u017Cycie.\u2026"
-lastmod: 2024-02-18 23:08:49.912159
+lastmod: 2024-02-19 22:04:54.859539
 model: gpt-4-1106-preview
 summary: "Rozpoczynanie nowego projektu to jak otwieranie pustej ksi\u0105\u017Cki\
   \ \u2014 miejsce, gdzie zaczyna si\u0119 snu\u0107 now\u0105 opowie\u015B\u0107\

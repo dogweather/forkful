@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:57.759704-07:00
 description: "Het CSV-formaat (Comma-Separated Values) is alomtegenwoordig voor gegevensuitwisseling\
   \ vanwege zijn eenvoud en gemak van integratie met de meeste\u2026"
-lastmod: 2024-02-18 23:09:01.363276
+lastmod: 2024-02-19 22:05:09.395993
 model: gpt-4-0125-preview
 summary: "Het CSV-formaat (Comma-Separated Values) is alomtegenwoordig voor gegevensuitwisseling\
   \ vanwege zijn eenvoud en gemak van integratie met de meeste\u2026"

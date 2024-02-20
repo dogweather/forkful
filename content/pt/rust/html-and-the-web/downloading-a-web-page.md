@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/downloading-a-web-page/
 date: 2024-01-20 17:44:41.657074-07:00
 description: "Baixar uma p\xE1gina da web significa pegar seu conte\xFAdo atrav\xE9\
   s da internet. Programadores fazem isso para processar dados, verificar status,\
   \ ou integrar\u2026"
-lastmod: 2024-02-18 23:08:57.927163
+lastmod: 2024-02-19 22:05:05.400522
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web significa pegar seu conte\xFAdo atrav\xE9s da\
   \ internet. Programadores fazem isso para processar dados, verificar status, ou\

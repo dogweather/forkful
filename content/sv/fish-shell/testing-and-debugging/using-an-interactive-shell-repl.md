@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/fish-shell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:14:06.185524-07:00
 description: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmeringsmilj\xF6\
   \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet.\u2026"
-lastmod: 2024-02-18 23:08:52.209110
+lastmod: 2024-02-19 22:04:57.586269
 model: gpt-4-0125-preview
 summary: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmeringsmilj\xF6\
   \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet.\u2026"

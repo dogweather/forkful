@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/rust/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:07.682803-07:00
 description: "Remover aspas de uma string no Rust \xE9 sobre eliminar caracteres de\
   \ aspas extras desnecess\xE1rios que podem estar envolvendo seus dados de texto.\u2026"
-lastmod: 2024-02-18 23:08:57.915700
+lastmod: 2024-02-19 22:05:05.389323
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string no Rust \xE9 sobre eliminar caracteres de aspas\
   \ extras desnecess\xE1rios que podem estar envolvendo seus dados de texto.\u2026"

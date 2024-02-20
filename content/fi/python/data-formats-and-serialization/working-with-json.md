@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/python/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:11.790279-07:00
 description: "Ty\xF6skentely JSON-muotoisten merkkijonojen (JavaScript Object Notation)\
   \ kanssa sis\xE4lt\xE4\xE4 JSON-muotoisten merkkijonojen j\xE4sent\xE4misen Python-objekteiksi\
   \ ja\u2026"
-lastmod: 2024-02-18 23:09:07.206641
+lastmod: 2024-02-19 22:05:15.105570
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSON-muotoisten merkkijonojen (JavaScript Object Notation)\
   \ kanssa sis\xE4lt\xE4\xE4 JSON-muotoisten merkkijonojen j\xE4sent\xE4misen Python-objekteiksi\

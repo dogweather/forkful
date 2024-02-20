@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:22.457384-07:00
 description: "Refactoren is het proces van het herstructureren van bestaande computercode\
   \ - het veranderen van de factoring - zonder de externe gedrag ervan te\u2026"
-lastmod: 2024-02-18 23:09:01.628613
+lastmod: 2024-02-19 22:05:09.651221
 model: gpt-4-0125-preview
 summary: "Refactoren is het proces van het herstructureren van bestaande computercode\
   \ - het veranderen van de factoring - zonder de externe gedrag ervan te\u2026"

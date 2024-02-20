@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/google-apps-script/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:40.212838-07:00
 description: "YAML, joka tulee sanoista \"YAML Ain't Markup Language\", on ihmisen\
   \ luettavissa oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n yleisesti\u2026"
-lastmod: 2024-02-18 23:09:07.159969
+lastmod: 2024-02-19 22:05:15.035276
 model: gpt-4-0125-preview
 summary: "YAML, joka tulee sanoista \"YAML Ain't Markup Language\", on ihmisen luettavissa\
   \ oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n yleisesti\u2026"

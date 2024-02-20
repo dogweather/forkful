@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/c/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:20.169530-07:00
 description: "\xC5 organisere kode i funksjoner i C inneb\xE6rer \xE5 bryte ned komplekse\
   \ oppgaver i mindre, gjenbrukbare blokker med kode. Denne praksisen forbedrer\u2026"
-lastmod: 2024-02-18 23:08:54.400004
+lastmod: 2024-02-19 22:05:00.558983
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner i C inneb\xE6rer \xE5 bryte ned komplekse\
   \ oppgaver i mindre, gjenbrukbare blokker med kode. Denne praksisen forbedrer\u2026"

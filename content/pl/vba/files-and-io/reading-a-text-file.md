@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:56.190939-07:00
 description: "Czytanie pliku tekstowego w Visual Basic for Applications (VBA) polega\
   \ na programowym dost\u0119pie i ekstrakcji zawarto\u015Bci pliku tekstowego z poziomu\u2026"
-lastmod: 2024-02-18 23:08:49.453034
+lastmod: 2024-02-19 22:04:54.378997
 model: gpt-4-0125-preview
 summary: "Czytanie pliku tekstowego w Visual Basic for Applications (VBA) polega na\
   \ programowym dost\u0119pie i ekstrakcji zawarto\u015Bci pliku tekstowego z poziomu\u2026"

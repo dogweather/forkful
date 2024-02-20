@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:09.803682-07:00
@@ -12,7 +10,7 @@ description: "\u5728Visual Basic for Applications (VBA) \u4E2D\u5C06\u65E5\u671F
   \u65E5\u671F\u3001\u4E0E\u672C\u5730\u5316\u65E5\u671F\u683C\u5F0F\u5BF9\u9F50\uFF0C\
   \u6216\u51C6\u5907\u6570\u636E\u4EE5\u5B58\u50A8\u5728\u9700\u8981\u6587\u672C\u8868\
   \u793A\u7684\u6570\u636E\u5E93\u6216\u6587\u4EF6\u4E2D\u3002"
-lastmod: 2024-02-18 23:08:58.992212
+lastmod: 2024-02-19 22:05:06.609773
 model: gpt-4-0125-preview
 summary: "\u5728Visual Basic for Applications (VBA) \u4E2D\u5C06\u65E5\u671F\u8F6C\
   \u6362\u4E3A\u5B57\u7B26\u4E32\u662F\u4E00\u79CD\u7528\u4E8E\u5C06\u65E5\u671F\u7684\

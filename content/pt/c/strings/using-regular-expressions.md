@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:46.961052-07:00
 description: "Express\xF5es regulares (regex) fornecem uma maneira de buscar, combinar\
   \ e manipular strings usando padr\xF5es definidos. Programadores as utilizam\u2026"
-lastmod: 2024-02-18 23:08:58.608242
+lastmod: 2024-02-19 22:05:06.107991
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) fornecem uma maneira de buscar, combinar\
   \ e manipular strings usando padr\xF5es definidos. Programadores as utilizam\u2026"

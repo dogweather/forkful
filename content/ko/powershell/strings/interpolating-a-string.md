@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/interpolating-a-string/
 date: 2024-01-20 17:51:40.598542-07:00
 description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBB38\uC790\
   \uC5F4 \uB0B4\uC5D0 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC9C1\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBB38
   \uAE30 \uD3B8\uD558\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\
   \uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.529544
+lastmod: 2024-02-19 22:05:14.436371
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBB38\uC790\
   \uC5F4 \uB0B4\uC5D0 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC9C1\

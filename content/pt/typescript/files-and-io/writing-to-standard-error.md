@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:40.545678-07:00
 description: "Em TypeScript, escrever para o erro padr\xE3o (stderr) \xE9 um processo\
   \ de enviar mensagens de erro ou logs diretamente para o fluxo de sa\xEDda de erro\
   \ do\u2026"
-lastmod: 2024-02-18 23:08:57.901258
+lastmod: 2024-02-19 22:05:05.374525
 model: gpt-4-0125-preview
 summary: "Em TypeScript, escrever para o erro padr\xE3o (stderr) \xE9 um processo\
   \ de enviar mensagens de erro ou logs diretamente para o fluxo de sa\xEDda de erro\

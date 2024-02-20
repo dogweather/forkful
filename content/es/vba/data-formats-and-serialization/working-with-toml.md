@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/vba/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:17.620810-07:00
 description: "TOML, que significa Tom's Obvious, Minimal Language (Lenguaje M\xED\
   nimo y Obvio de Tom), es un formato de serializaci\xF3n de datos utilizado predominantemente\u2026"
-lastmod: 2024-02-18 23:09:09.824783
+lastmod: 2024-02-19 22:05:17.441682
 model: gpt-4-0125-preview
 summary: "TOML, que significa Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo\
   \ y Obvio de Tom), es un formato de serializaci\xF3n de datos utilizado predominantemente\u2026"

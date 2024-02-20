@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/bash/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:30.503200-07:00
@@ -9,7 +7,7 @@ description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 qu\xE
   i d\u1EA1ng v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
   c n\xE0y \u0111\u1EC3 l\u01B0u tr\u1EEF c\u1EA5u h\xECnh, nh\u1EADt k\xFD, m\xE3\
   \u2026"
-lastmod: 2024-02-18 23:08:50.905738
+lastmod: 2024-02-19 22:04:56.094422
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 qu\xE1 tr\xEC\
   nh l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p d\u01B0\u1EDBi d\u1EA1\

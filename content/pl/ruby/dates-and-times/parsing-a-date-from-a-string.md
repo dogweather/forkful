@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/ruby/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:14.329153-07:00
 description: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstu,\
   \ kt\xF3ry reprezentuje dat\u0119, na obiekt `Date` lub `DateTime`, kt\xF3ry jest\
   \ zrozumia\u0142y dla Ruby.\u2026"
-lastmod: 2024-02-18 23:08:50.134688
+lastmod: 2024-02-19 22:04:55.124603
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstu, kt\xF3\
   ry reprezentuje dat\u0119, na obiekt `Date` lub `DateTime`, kt\xF3ry jest zrozumia\u0142\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/go/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:49.646819-07:00
 description: "Arrays associativos, conhecidos como maps em Go, permitem que voc\xEA\
   \ armazene pares chave-valor onde cada chave \xFAnica mapeia para um valor. Programadores\u2026"
-lastmod: 2024-02-18 23:08:57.660759
+lastmod: 2024-02-19 22:05:05.115832
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como maps em Go, permitem que voc\xEA armazene\
   \ pares chave-valor onde cada chave \xFAnica mapeia para um valor. Programadores\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/fish-shell/concatenating-strings/
 date: 2024-01-20 17:34:47.179639-07:00
 description: "P\xE5 norsk: Hva og hvorfor? Konkatenering av strenger er \xE5 sl\xE5\
   \ sammen to eller flere tekster til \xE9n. Vi gj\xF8r dette for \xE5 bygge dynamiske\
   \ beskjeder, filbaner\u2026"
-lastmod: 2024-02-18 23:08:54.341778
+lastmod: 2024-02-19 22:05:00.495622
 model: gpt-4-1106-preview
 summary: "P\xE5 norsk: Hva og hvorfor? Konkatenering av strenger er \xE5 sl\xE5 sammen\
   \ to eller flere tekster til \xE9n. Vi gj\xF8r dette for \xE5 bygge dynamiske beskjeder,\

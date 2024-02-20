@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:02.378480-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9\
   \ uma t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No\
   \ contexto do Google Apps\u2026"
-lastmod: 2024-02-18 23:08:57.697626
+lastmod: 2024-02-19 22:05:05.157016
 model: gpt-4-0125-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 uma\
   \ t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No contexto\

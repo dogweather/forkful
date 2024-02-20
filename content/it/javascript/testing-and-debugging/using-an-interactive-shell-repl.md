@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:38.798530-07:00
 description: "Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa),\
   \ ti permettono di eseguire codice al volo, testare funzioni,\u2026"
-lastmod: 2024-02-18 23:08:56.254251
+lastmod: 2024-02-19 22:05:02.887754
 model: gpt-4-0125-preview
 summary: "Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa),\
   \ ti permettono di eseguire codice al volo, testare funzioni,\u2026"

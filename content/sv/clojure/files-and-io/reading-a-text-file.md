@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/reading-a-text-file/
 date: 2024-01-20 17:54:21.637050-07:00
 description: "Att l\xE4sa en textfil inneb\xE4r att f\xE5 inneh\xE5llet fr\xE5n filen\
   \ in i v\xE5rt program. Programmerare g\xF6r detta f\xF6r att hantera data, konfigurera\
   \ system eller f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.478704
+lastmod: 2024-02-19 22:04:56.786965
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att f\xE5 inneh\xE5llet fr\xE5n filen\
   \ in i v\xE5rt program. Programmerare g\xF6r detta f\xF6r att hantera data, konfigurera\

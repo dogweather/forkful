@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/go/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:17.566695-07:00
 description: "In der Computerprogrammierung bezeichnet \"Drucken von Debug-Ausgaben\"\
   \ das Erzeugen von detaillierten Informationsnachrichten, die Entwicklern helfen,\
   \ den\u2026"
-lastmod: 2024-02-18 23:09:04.366689
+lastmod: 2024-02-19 22:05:12.335835
 model: gpt-4-0125-preview
 summary: "In der Computerprogrammierung bezeichnet \"Drucken von Debug-Ausgaben\"\
   \ das Erzeugen von detaillierten Informationsnachrichten, die Entwicklern helfen,\

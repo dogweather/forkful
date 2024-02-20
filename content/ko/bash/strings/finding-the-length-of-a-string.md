@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:10.729335-07:00
 description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB780 \uBB38\uC790\uC5F4\
   \uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790 \uC218\uB97C \uC138\uB294 \uC791\uC5C5\uC785\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB780 \uBB38\uC790\uC
   \uC744 \uCDA9\uC871\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.467598
+lastmod: 2024-02-19 22:05:14.377876
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB780 \uBB38\uC790\uC5F4\uC5D0\
   \ \uD3EC\uD568\uB41C \uBB38\uC790 \uC218\uB97C \uC138\uB294 \uC791\uC5C5\uC785\uB2C8\

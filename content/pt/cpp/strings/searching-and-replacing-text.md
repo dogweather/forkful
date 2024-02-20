@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:32.096500-07:00
 description: "Procurar e substituir texto \xE9 a arte de achar certas palavras ou\
   \ frases e troc\xE1-las por outras. Programadores fazem isso para corrigir erros,\
   \ atualizar\u2026"
-lastmod: 2024-02-18 23:08:58.435469
+lastmod: 2024-02-19 22:05:05.924847
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 a arte de achar certas palavras ou frases\
   \ e troc\xE1-las por outras. Programadores fazem isso para corrigir erros, atualizar\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/printing-debug-output/
 date: 2024-01-20 17:52:15.287957-07:00
 description: "Printing debug output in Elixir involves displaying interim results\
   \ or variable values in the console. Programmers do this to track down bugs or to\u2026"
-lastmod: 2024-02-18 23:09:10.768261
+lastmod: 2024-02-19 22:05:18.293258
 model: gpt-4-1106-preview
 summary: "Printing debug output in Elixir involves displaying interim results or variable\
   \ values in the console. Programmers do this to track down bugs or to\u2026"

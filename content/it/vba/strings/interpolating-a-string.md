@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/vba/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:40.606740-07:00
 description: "L'interpolazione di stringhe in Visual Basic for Applications (VBA)\
   \ si riferisce al processo di incorporazione di variabili o espressioni all'interno\
   \ di\u2026"
-lastmod: 2024-02-18 23:08:55.707951
+lastmod: 2024-02-19 22:05:02.308226
 model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe in Visual Basic for Applications (VBA) si riferisce\
   \ al processo di incorporazione di variabili o espressioni all'interno di\u2026"

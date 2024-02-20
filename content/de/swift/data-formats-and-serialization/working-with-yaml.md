@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/swift/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:51.370456-07:00
 description: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein menschenlesbarer\
   \ Daten-Serialisierungsstandard f\xFCr alle Programmiersprachen. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:05.255907
+lastmod: 2024-02-19 22:05:13.181547
 model: gpt-4-0125-preview
 summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein menschenlesbarer\
   \ Daten-Serialisierungsstandard f\xFCr alle Programmiersprachen. Programmierer\u2026"

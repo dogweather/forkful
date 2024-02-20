@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/rounding-numbers/
 date: 2024-01-26 03:45:36.345651-07:00
 description: "Arrotondare i numeri significa adeguarli a un determinato grado di precisione.\
   \ I programmatori lo fanno per semplificare i numeri per leggibilit\xE0, per\u2026"
-lastmod: 2024-02-18 23:08:55.761228
+lastmod: 2024-02-19 22:05:02.364755
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa adeguarli a un determinato grado di precisione.\
   \ I programmatori lo fanno per semplificare i numeri per leggibilit\xE0, per\u2026"

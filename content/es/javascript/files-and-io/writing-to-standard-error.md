@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/javascript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:25.499262-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en JavaScript se trata de\
   \ dirigir mensajes de error o cualquier informaci\xF3n cr\xEDtica a un flujo espec\xED\
   fico y\u2026"
-lastmod: 2024-02-18 23:09:10.422859
+lastmod: 2024-02-19 22:05:17.978777
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en JavaScript se trata de dirigir\
   \ mensajes de error o cualquier informaci\xF3n cr\xEDtica a un flujo espec\xEDfico\

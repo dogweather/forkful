@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/downloading-a-web-page/
 date: 2024-01-20 17:44:57.086864-07:00
 description: "Das Herunterladen einer Webseite bedeutet, ihre Inhalte zu holen, um\
   \ sie zu analysieren oder zu verarbeiten. Programmierer tun das, um Daten zu sammeln,\u2026"
-lastmod: 2024-02-18 23:09:04.960785
+lastmod: 2024-02-19 22:05:12.900606
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet, ihre Inhalte zu holen, um sie\
   \ zu analysieren oder zu verarbeiten. Programmierer tun das, um Daten zu sammeln,\u2026"

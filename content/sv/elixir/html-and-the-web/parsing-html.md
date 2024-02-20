@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/elixir/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:54.514226-07:00
 description: "Att tolka HTML i Elixir inneb\xE4r att extrahera information fr\xE5\
   n HTML-dokument. Programmerare g\xF6r detta f\xF6r att programmatiskt interagera\
   \ med webbsidor,\u2026"
-lastmod: 2024-02-18 23:08:51.500445
+lastmod: 2024-02-19 22:04:56.810918
 model: gpt-4-0125-preview
 summary: "Att tolka HTML i Elixir inneb\xE4r att extrahera information fr\xE5n HTML-dokument.\
   \ Programmerare g\xF6r detta f\xF6r att programmatiskt interagera med webbsidor,\u2026"

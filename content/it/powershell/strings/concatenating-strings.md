@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/powershell/concatenating-strings/
 date: 2024-01-20 17:35:41.130191-07:00
 description: "Unire le stringhe, o concatenazione, significa attaccare una stringa\
   \ alla fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file,\
   \ o\u2026"
-lastmod: 2024-02-18 23:08:56.084931
+lastmod: 2024-02-19 22:05:02.706930
 model: gpt-4-1106-preview
 summary: "Unire le stringhe, o concatenazione, significa attaccare una stringa alla\
   \ fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file,\

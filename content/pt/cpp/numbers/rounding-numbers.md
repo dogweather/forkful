@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/cpp/rounding-numbers/
 date: 2024-01-26 03:43:13.205364-07:00
 description: "Arredondar n\xFAmeros significa ajustar um valor para o inteiro mais\
   \ pr\xF3ximo ou uma precis\xE3o especificada. Desenvolvedores fazem isso para simplificar,\u2026"
-lastmod: 2024-02-18 23:08:58.444724
+lastmod: 2024-02-19 22:05:05.934612
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajustar um valor para o inteiro mais pr\xF3\
   ximo ou uma precis\xE3o especificada. Desenvolvedores fazem isso para simplificar,\u2026"

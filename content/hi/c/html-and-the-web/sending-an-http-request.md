@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:52.693935-07:00
@@ -14,7 +12,7 @@ description: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u092D\u0947\u091C\u0928
   \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930 \u0935\u0947\u092C \u090F\
   \u092A\u0940\u0906\u0908 \u0915\u0947 \u0938\u093E\u0925 \u092C\u093E\u0924\u091A\
   \u0940\u0924\u2026"
-lastmod: 2024-02-18 23:09:04.204321
+lastmod: 2024-02-19 22:05:12.177918
 model: gpt-4-0125-preview
 summary: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u092D\u0947\u091C\u0928\u093E\
   \ \u092F\u0939 \u0938\u0902\u092C\u0902\u0927\u093F\u0924 \u0939\u0948 \u0915\u093F\

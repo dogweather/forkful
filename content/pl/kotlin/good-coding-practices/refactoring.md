@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/refactoring/
 date: 2024-01-26 01:44:13.455403-07:00
 description: "Refaktoryzacja to proces modyfikacji istniej\u0105cego kodu w celu polepszenia\
   \ jego struktury, czytelno\u015Bci i wydajno\u015Bci, bez zmiany jego zewn\u0119\
   trznego\u2026"
-lastmod: 2024-02-18 23:08:49.577408
+lastmod: 2024-02-19 22:04:54.504769
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces modyfikacji istniej\u0105cego kodu w celu polepszenia\
   \ jego struktury, czytelno\u015Bci i wydajno\u015Bci, bez zmiany jego zewn\u0119\

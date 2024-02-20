@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/python/sending-an-http-request/
 date: 2024-01-20 18:00:13.880328-07:00
 description: Sending an HTTP request means asking a server for data or sending data
   to it. Programmers do it to interact with web services, fetch content, or push data.
-lastmod: 2024-02-18 23:08:59.788988
+lastmod: 2024-02-19 22:05:07.650666
 model: gpt-4-1106-preview
 summary: Sending an HTTP request means asking a server for data or sending data to
   it. Programmers do it to interact with web services, fetch content, or push data.

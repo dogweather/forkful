@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/fish-shell/starting-a-new-project/
 date: 2024-01-20 18:03:25.691789-07:00
 description: "Starta ett nytt projekt inneb\xE4r att skapa en ren arbetsyta f\xF6\
   r att utveckla dina id\xE9er. Programmerare g\xF6r detta f\xF6r att organisera,\
   \ f\xF6renkla och\u2026"
-lastmod: 2024-02-18 23:08:52.208232
+lastmod: 2024-02-19 22:04:57.585317
 model: gpt-4-1106-preview
 summary: "Starta ett nytt projekt inneb\xE4r att skapa en ren arbetsyta f\xF6r att\
   \ utveckla dina id\xE9er. Programmerare g\xF6r detta f\xF6r att organisera, f\xF6\

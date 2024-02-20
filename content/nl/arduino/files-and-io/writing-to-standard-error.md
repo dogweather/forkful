@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:19.755766-07:00
 description: "Schrijven naar standaardfout (stderr) rapporteert fouten en diagnostiek\
   \ gescheiden van standaarduitvoer (stdout). Het is cruciaal voor het debuggen en\u2026"
-lastmod: 2024-02-18 23:09:02.155861
+lastmod: 2024-02-19 22:05:10.173621
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) rapporteert fouten en diagnostiek\
   \ gescheiden van standaarduitvoer (stdout). Het is cruciaal voor het debuggen en\u2026"

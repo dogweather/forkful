@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/powershell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:30.836267-07:00
@@ -12,7 +10,7 @@ description: "PowerShell\u4E0EJSON\uFF08JavaScript\u5BF9\u8C61\u8868\u793A\u6CD5
   \uFF0C\u6216\u4FC3\u8FDB\u4E0D\u540C\u8BED\u8A00\u548C\u5E73\u53F0\u4E4B\u95F4\u7684\
   \u6570\u636E\u4EA4\u4E92\uFF0C\u56E0\u4E3A\u5B83\u5177\u6709\u8F7B\u91CF\u7EA7\u548C\
   \u8BED\u8A00\u65E0\u5173\u7684\u7279\u70B9\u3002"
-lastmod: 2024-02-18 23:08:59.351255
+lastmod: 2024-02-19 22:05:07.091899
 model: gpt-4-0125-preview
 summary: "PowerShell\u4E0EJSON\uFF08JavaScript\u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\
   \u7684\u6574\u5408\uFF0C\u5173\u4E8E\u89E3\u6790\uFF08\u8BFB\u53D6\uFF09\u548C\u751F\

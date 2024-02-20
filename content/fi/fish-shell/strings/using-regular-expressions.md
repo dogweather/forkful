@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/fish-shell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:34.842112-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Fish Shelliss\xE4 mahdollistavat\
   \ merkkijonojen etsimisen, vastaavuuksien l\xF6yt\xE4misen ja manipuloinnin tiettyjen\
   \ mallien\u2026"
-lastmod: 2024-02-18 23:09:08.070887
+lastmod: 2024-02-19 22:05:15.876945
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Fish Shelliss\xE4 mahdollistavat\
   \ merkkijonojen etsimisen, vastaavuuksien l\xF6yt\xE4misen ja manipuloinnin tiettyjen\

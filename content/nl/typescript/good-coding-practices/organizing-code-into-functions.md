@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:17.948438-07:00
 description: "Code organiseren in functies betekent dat je je code opdeelt in herbruikbare,\
   \ modulaire blokken. We doen dit om dingen DRY (Don't Repeat Yourself) te\u2026"
-lastmod: 2024-02-18 23:09:01.579188
+lastmod: 2024-02-19 22:05:09.603776
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies betekent dat je je code opdeelt in herbruikbare,\
   \ modulaire blokken. We doen dit om dingen DRY (Don't Repeat Yourself) te\u2026"

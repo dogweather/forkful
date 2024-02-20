@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/downloading-a-web-page/
 date: 2024-01-20 17:44:40.119153-07:00
 description: "Scaricare una pagina web significa prelevare il contenuto che normalmente\
   \ vediamo nel browser e salvarlo localmente. I programmatori fanno questo per\u2026"
-lastmod: 2024-02-18 23:08:55.679118
+lastmod: 2024-02-19 22:05:02.277663
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa prelevare il contenuto che normalmente\
   \ vediamo nel browser e salvarlo localmente. I programmatori fanno questo per\u2026"

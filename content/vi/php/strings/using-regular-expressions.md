@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:07.953523-07:00
@@ -8,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xE1c m\u1EABu t\x
   m ki\u1EBFm \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c\
   \ k\u1EBFt h\u1EE3p k\xFD t\u1EF1 trong chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
   \ d\u1EE5ng ch\xFAng cho c\xE1c nhi\u1EC7m v\u1EE5 nh\u01B0 x\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.779470
+lastmod: 2024-02-19 22:04:55.934936
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xE1c m\u1EABu t\xECm ki\u1EBF\
   m \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3\

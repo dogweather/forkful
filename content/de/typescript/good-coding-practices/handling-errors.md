@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/typescript/handling-errors/
 date: 2024-01-26 00:58:10.059014-07:00
 description: "Fehlerbehandlung bedeutet, mit dem Unerwarteten zu rechnen; es geht\
   \ darum, wie wir damit umgehen, wenn in unserem Code etwas schiefgeht. Wir tun dies,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:04.604593
+lastmod: 2024-02-19 22:05:12.562035
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung bedeutet, mit dem Unerwarteten zu rechnen; es geht darum,\
   \ wie wir damit umgehen, wenn in unserem Code etwas schiefgeht. Wir tun dies, um\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:17.894171-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Visual Basic for\
   \ Applications (VBA) -ohjelmointikieless\xE4 on prosessi, jossa p\xE4iv\xE4m\xE4\
   \xE4r\xE4n datatyyppi muutetaan\u2026"
-lastmod: 2024-02-18 23:09:07.424176
+lastmod: 2024-02-19 22:05:15.308894
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Visual Basic for Applications\
   \ (VBA) -ohjelmointikieless\xE4 on prosessi, jossa p\xE4iv\xE4m\xE4\xE4r\xE4n datatyyppi\

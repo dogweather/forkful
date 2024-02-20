@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/creating-a-temporary-file/
 date: 2024-02-01 21:11:59.832909-07:00
 description: "Creating a temporary file in Google Apps Script involves generating\
   \ a file intended for short-term use, typically for intermediary data processing,\u2026"
-lastmod: 2024-02-18 23:09:10.658864
+lastmod: 2024-02-19 22:05:18.194526
 model: gpt-4-0125-preview
 summary: "Creating a temporary file in Google Apps Script involves generating a file\
   \ intended for short-term use, typically for intermediary data processing,\u2026"

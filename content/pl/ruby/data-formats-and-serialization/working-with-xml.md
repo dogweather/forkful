@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/working-with-xml/
 date: 2024-01-26 04:35:22.920382-07:00
 description: "Praca z XML oznacza parsowanie, generowanie i manipulowanie dokumentami\
   \ XML (eXtensible Markup Language) za pomoc\u0105 kodu. Programi\u015Bci robi\u0105\
   \ to, aby\u2026"
-lastmod: 2024-02-18 23:08:50.149677
+lastmod: 2024-02-19 22:04:55.140454
 model: gpt-4-0125-preview
 summary: "Praca z XML oznacza parsowanie, generowanie i manipulowanie dokumentami\
   \ XML (eXtensible Markup Language) za pomoc\u0105 kodu. Programi\u015Bci robi\u0105\

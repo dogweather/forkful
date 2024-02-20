@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:02.994639-07:00
 description: "JSON:n (JavaScript Object Notation) k\xE4sittely Go:ssa sis\xE4lt\xE4\
   \xE4 datan koodaamisen ja purkamisen Go:n tietorakenteiden ja JSON-muodon v\xE4\
   lill\xE4. T\xE4m\xE4 teht\xE4v\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.110221
+lastmod: 2024-02-19 22:05:14.989262
 model: gpt-4-0125-preview
 summary: "JSON:n (JavaScript Object Notation) k\xE4sittely Go:ssa sis\xE4lt\xE4\xE4\
   \ datan koodaamisen ja purkamisen Go:n tietorakenteiden ja JSON-muodon v\xE4lill\xE4\

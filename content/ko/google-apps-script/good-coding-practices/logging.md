@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/logging/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:49.900099-07:00
@@ -11,7 +9,7 @@ description: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C\uB294 `Logger` \u
   \uC778 \uBC29\uBC95\uC73C\uB85C \uAC04\uB2E8\uD55C \uB514\uBC84\uAE45 \uBC0F \uAC1C\
   \uBC1C \uBAA9\uC801\uC5D0 \uC801\uD569\uD569\uB2C8\uB2E4. \uCD5C\uADFC \uC5C5\uB370\
   \uC774\uD2B8\uC5D0\uC11C\uB294\u2026"
-lastmod: 2024-02-18 23:09:05.566878
+lastmod: 2024-02-19 22:05:13.482530
 model: gpt-4-0125-preview
 summary: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C\uB294 `Logger` \uD074\uB798\
   \uC2A4\uC640 `console.log()`\uC640 \uAC19\uC740 \uC5EC\uB7EC \uAC00\uC9C0 \uBC29\

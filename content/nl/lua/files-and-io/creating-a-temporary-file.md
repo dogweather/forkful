@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/lua/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:06.481668-07:00
 description: "Het cre\xEBren van een tijdelijk bestand is het proces van het maken\
   \ van een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:02.012384
+lastmod: 2024-02-19 22:05:10.032964
 model: gpt-4-0125-preview
 summary: "Het cre\xEBren van een tijdelijk bestand is het proces van het maken van\
   \ een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens\

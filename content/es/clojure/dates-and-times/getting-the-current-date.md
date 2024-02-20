@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/clojure/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:09.916572-07:00
 description: "Obtener la fecha actual en programaci\xF3n es crucial por una mir\xED\
   ada de razones, incluyendo el registro (logging), marcar eventos con una fecha y\
   \ hora\u2026"
-lastmod: 2024-02-18 23:09:09.614390
+lastmod: 2024-02-19 22:05:17.258353
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en programaci\xF3n es crucial por una mir\xEDada\
   \ de razones, incluyendo el registro (logging), marcar eventos con una fecha y hora\u2026"

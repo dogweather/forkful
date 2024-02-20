@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/powershell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:13.144344-07:00
@@ -15,7 +13,7 @@ description: "PowerShell\u3067\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u5316\u
   \u6CD5\u898F\u5247\u306B\u5F93\u3046\u305F\u3081\u306A\u3069\u3001\u30D5\u30A9\u30FC\
   \u30DE\u30C3\u30C8\u76EE\u7684\u3067\u3053\u306E\u30BF\u30B9\u30AF\u3092\u3088\u304F\
   \u5B9F\u884C\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.097555
+lastmod: 2024-02-19 22:05:01.532992
 model: gpt-4-0125-preview
 summary: "PowerShell\u3067\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u5316\u3059\u308B\
   \u3068\u306F\u3001\u4E0E\u3048\u3089\u308C\u305F\u6587\u5B57\u5217\u306E\u6700\u521D\

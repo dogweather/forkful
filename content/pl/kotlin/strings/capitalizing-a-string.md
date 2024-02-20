@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/kotlin/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:49.515398-07:00
 description: "Zamiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 (kapitalizacja)\
   \ w programowaniu polega na konwersji pierwszego znaku ci\u0105gu na wielk\u0105\
   \ liter\u0119, je\u015Bli ju\u017C\u2026"
-lastmod: 2024-02-18 23:08:49.543164
+lastmod: 2024-02-19 22:04:54.478218
 model: gpt-4-0125-preview
 summary: "Zamiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 (kapitalizacja)\
   \ w programowaniu polega na konwersji pierwszego znaku ci\u0105gu na wielk\u0105\

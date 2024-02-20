@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:49.504421-07:00
 description: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para combinar\
   \ sequ\xEAncias de caracteres em strings. Os programadores as utilizam para buscar,\
   \ editar ou\u2026"
-lastmod: 2024-02-18 23:08:57.704469
+lastmod: 2024-02-19 22:05:05.164073
 model: gpt-4-0125-preview
 summary: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para combinar\
   \ sequ\xEAncias de caracteres em strings. Os programadores as utilizam para buscar,\

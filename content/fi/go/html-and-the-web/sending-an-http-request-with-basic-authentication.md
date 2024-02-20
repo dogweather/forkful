@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:11.928836-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Go-kielell\xE4\
   \ sis\xE4lt\xE4\xE4 valtuutusotsikon lis\xE4\xE4misen pyynt\xF6\xF6si, joka sis\xE4\
   lt\xE4\xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan\u2026"
-lastmod: 2024-02-18 23:09:07.084540
+lastmod: 2024-02-19 22:05:14.964949
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Go-kielell\xE4\
   \ sis\xE4lt\xE4\xE4 valtuutusotsikon lis\xE4\xE4misen pyynt\xF6\xF6si, joka sis\xE4\

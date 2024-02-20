@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:14.572989-07:00
 description: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications\
   \ (VBA) inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng\
   \ til stor\u2026"
-lastmod: 2024-02-18 23:08:53.709935
+lastmod: 2024-02-19 22:04:59.845014
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng til\

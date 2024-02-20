@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/powershell/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:37.946398-07:00
 description: "Remover aspas de uma string no PowerShell elimina as marcas de aspas\
   \ simples (`'`) ou duplas (`\"`) envolvendo seu texto. Programadores frequentemente\u2026"
-lastmod: 2024-02-18 23:08:58.355167
+lastmod: 2024-02-19 22:05:05.839304
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string no PowerShell elimina as marcas de aspas simples\
   \ (`'`) ou duplas (`\"`) envolvendo seu texto. Programadores frequentemente\u2026"

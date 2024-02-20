@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/reading-a-text-file/
 date: 2024-01-20 17:55:03.707697-07:00
 description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uD30C\uC77C \uB0B4\
   \uC6A9\uC744 \uBB38\uC790 \uB370\uC774\uD130\uB85C \uC77D\uC5B4\uC624\uB294 \uAC83\
@@ -8,7 +6,7 @@ description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uD30C\uC77C \u
   \ \uC124\uC815, \uB370\uC774\uD130 \uB610\uB294 \uC790\uC6D0\uC744 \uC77D\uACE0\
   \ \uCC98\uB9AC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.379296
+lastmod: 2024-02-19 22:05:14.294327
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uD30C\uC77C \uB0B4\uC6A9\
   \uC744 \uBB38\uC790 \uB370\uC774\uD130\uB85C \uC77D\uC5B4\uC624\uB294 \uAC83\uC785\

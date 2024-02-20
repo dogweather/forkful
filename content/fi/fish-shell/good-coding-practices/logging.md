@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/logging/
 date: 2024-01-26 01:02:56.950758-07:00
 description: "Lokitus on olennaisesti sit\xE4, ett\xE4 kirjaat yl\xF6s, mit\xE4 sovelluksesi\
   \ tekee \u2013 voisi sanoa, ett\xE4 se on p\xE4iv\xE4kirja, mutta koodille. Ohjelmoijat\
   \ tekev\xE4t niin\u2026"
-lastmod: 2024-02-18 23:09:08.091417
+lastmod: 2024-02-19 22:05:15.895317
 model: gpt-4-1106-preview
 summary: "Lokitus on olennaisesti sit\xE4, ett\xE4 kirjaat yl\xF6s, mit\xE4 sovelluksesi\
   \ tekee \u2013 voisi sanoa, ett\xE4 se on p\xE4iv\xE4kirja, mutta koodille. Ohjelmoijat\

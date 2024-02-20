@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:02.763024-07:00
 description: "\xC5 jobbe med CSV-filer (Comma-Separated Values) i Google Apps Script\
   \ inneb\xE6rer \xE5 lese, endre og skrive rene tekstfiler der hver linje representerer\
   \ en\u2026"
-lastmod: 2024-02-18 23:08:53.505196
+lastmod: 2024-02-19 22:04:59.620991
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma-Separated Values) i Google Apps Script inneb\xE6\
   rer \xE5 lese, endre og skrive rene tekstfiler der hver linje representerer en\u2026"

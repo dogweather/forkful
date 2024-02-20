@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/lua/starting-a-new-project/
 date: 2024-01-20 18:03:50.160767-07:00
 description: "Un nuovo progetto \xE8 una tela bianca per codificare idee. I programmatori\
   \ iniziano nuovi progetti per risolvere problemi, esplorare tecnologie o per puro\u2026"
-lastmod: 2024-02-18 23:08:56.011386
+lastmod: 2024-02-19 22:05:02.626683
 model: gpt-4-1106-preview
 summary: "Un nuovo progetto \xE8 una tela bianca per codificare idee. I programmatori\
   \ iniziano nuovi progetti per risolvere problemi, esplorare tecnologie o per puro\u2026"

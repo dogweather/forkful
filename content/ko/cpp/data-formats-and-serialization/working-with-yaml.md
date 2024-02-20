@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:40.745219-07:00
@@ -11,7 +9,7 @@ description: "YAML, \uC989 YAML Ain't Markup Language\uB294 \uC778\uAC04\uC774 \
   \uBC95\uC73C\uB85C \uC778\uD574 \uAD6C\uC131 \uD30C\uC77C, \uB370\uC774\uD130 \uB364\
   \uD504, \uACC4\uCE35\uC801 \uB370\uC774\uD130 \uC800\uC7A5\uC5D0 \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.715209
+lastmod: 2024-02-19 22:05:14.610838
 model: gpt-4-0125-preview
 summary: "YAML, \uC989 YAML Ain't Markup Language\uB294 \uC778\uAC04\uC774 \uC77D\uC744\
   \ \uC218 \uC788\uB294 \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uD3EC\uB9F7\uC785\uB2C8\

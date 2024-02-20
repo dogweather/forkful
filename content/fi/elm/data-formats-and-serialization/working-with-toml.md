@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/working-with-toml/
 date: 2024-01-26 04:21:14.001050-07:00
 description: "TOML, lyhennettyn\xE4 Tom's Obvious, Minimal Language, on data-serialisointikieli.\
   \ Elm-ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 konfiguraatiotiedon hallintaan, koska\
   \ se on\u2026"
-lastmod: 2024-02-18 23:09:07.554770
+lastmod: 2024-02-19 22:05:15.405908
 model: gpt-4-0125-preview
 summary: "TOML, lyhennettyn\xE4 Tom's Obvious, Minimal Language, on data-serialisointikieli.\
   \ Elm-ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 konfiguraatiotiedon hallintaan, koska\

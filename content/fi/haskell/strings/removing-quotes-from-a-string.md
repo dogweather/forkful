@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/haskell/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:02.380159-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten\
   \ (' ') tai kaksinkertaisten (\" \") lainausmerkkien karsimista osana merkkijonotietoa.\u2026"
-lastmod: 2024-02-18 23:09:07.653629
+lastmod: 2024-02-19 22:05:15.496877
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten ('\
   \ ') tai kaksinkertaisten (\" \") lainausmerkkien karsimista osana merkkijonotietoa.\u2026"

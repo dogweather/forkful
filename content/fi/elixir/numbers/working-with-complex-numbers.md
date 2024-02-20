@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/working-with-complex-numbers/
 date: 2024-01-26 04:39:18.685492-07:00
 description: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa (kuten `3 + 4i`).\
   \ Niit\xE4 k\xE4ytet\xE4\xE4n tekniikassa, fysiikassa sek\xE4 tietyiss\xE4 tietojenk\xE4\
   sittelyn ongelmissa.\u2026"
-lastmod: 2024-02-18 23:09:07.267094
+lastmod: 2024-02-19 22:05:15.161829
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa (kuten `3 + 4i`).\
   \ Niit\xE4 k\xE4ytet\xE4\xE4n tekniikassa, fysiikassa sek\xE4 tietyiss\xE4 tietojenk\xE4\

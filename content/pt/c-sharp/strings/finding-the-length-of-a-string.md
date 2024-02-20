@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:19.241124-07:00
 description: "Saber o comprimento de uma string \xE9 descobrir o n\xFAmero de caracteres\
   \ que ela cont\xE9m. Programadores fazem isso para validar entradas, limitar conte\xFA\
   do, ou\u2026"
-lastmod: 2024-02-18 23:08:58.148693
+lastmod: 2024-02-19 22:05:05.616596
 model: gpt-4-1106-preview
 summary: "Saber o comprimento de uma string \xE9 descobrir o n\xFAmero de caracteres\
   \ que ela cont\xE9m. Programadores fazem isso para validar entradas, limitar conte\xFA\

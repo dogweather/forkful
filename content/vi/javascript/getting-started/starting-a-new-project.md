@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:56.032454-07:00
@@ -9,7 +7,7 @@ description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u
   \ nh\u1EEFng \xFD t\u01B0\u1EDFng tuy\u1EC7t v\u1EDDi c\u1EE7a b\u1EA1n. C\xE1c\
   \ l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 bi\u1EBFn\
   \ c\xE1c kh\xE1i\u2026"
-lastmod: 2024-02-18 23:08:51.136872
+lastmod: 2024-02-19 22:04:56.363746
 model: gpt-4-0125-preview
 summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129a\
   \ l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t c\u01A1 s\u1EDF m\xE3 ngu\u1ED3n m\u1EDBi cho\

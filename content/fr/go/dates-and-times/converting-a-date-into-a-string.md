@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/go/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:19.228175-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
   \ un objet `time.Time` en un format de cha\xEEne lisible. Les programmeurs effectuent\u2026"
-lastmod: 2024-02-18 23:09:08.248770
+lastmod: 2024-02-19 22:05:16.053853
 model: gpt-4-0125-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
   \ un objet `time.Time` en un format de cha\xEEne lisible. Les programmeurs effectuent\u2026"

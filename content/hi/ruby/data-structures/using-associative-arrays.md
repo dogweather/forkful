@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/ruby/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:14:07.016841-07:00
@@ -14,7 +12,7 @@ description: "\u090F\u0938\u094B\u0938\u093F\u090F\u091F\u093F\u0935 \u090F\u093
   \u092E\u0924\u093F \u0926\u0947\u0924\u093E \u0939\u0948\u0964 \u091C\u092C \u0906\
   \u092A\u0915\u094B \u0915\u093F\u0938\u0940 \u0935\u093F\u0936\u0947\u0937 \u0938\
   \u0902\u0926\u0930\u094D\u092D \u0915\u0947\u2026"
-lastmod: 2024-02-18 23:09:04.279559
+lastmod: 2024-02-19 22:05:12.251520
 model: gpt-4-0125-preview
 summary: "\u090F\u0938\u094B\u0938\u093F\u090F\u091F\u093F\u0935 \u090F\u0930\u0947\
   \u091C\u093C, \u091C\u093F\u0928\u094D\u0939\u0947\u0902 \u0930\u0942\u092C\u0940\

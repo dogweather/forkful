@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/sending-an-http-request/
 date: 2024-01-20 17:59:42.892380-07:00
 description: "Sending an HTTP request means asking a server for data or action, like\
   \ pulling up a webpage or sending a form. Programmers do it to interact with web\u2026"
-lastmod: 2024-02-18 23:09:10.927944
+lastmod: 2024-02-19 22:05:18.437845
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request means asking a server for data or action, like pulling\
   \ up a webpage or sending a form. Programmers do it to interact with web\u2026"

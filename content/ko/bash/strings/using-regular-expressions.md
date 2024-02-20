@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:27.142967-07:00
@@ -13,7 +11,7 @@ description: "Bash\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC744 \uC0
   \uD569\uB2C8\uB2E4. \uC774\uB294 \uBCF5\uC7A1\uD55C \uD14D\uC2A4\uD2B8 \uCC98\uB9AC\
   \ \uC694\uAD6C\uC0AC\uD56D\uC5D0 \uB300\uD55C \uD328\uD134\uC744 \uC9C0\uC815\uD558\
   \uB294\u2026"
-lastmod: 2024-02-18 23:09:06.466148
+lastmod: 2024-02-19 22:05:14.376521
 model: gpt-4-0125-preview
 summary: "Bash\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC744 \uC0AC\uC6A9\
   \uD558\uBA74 \uD2B9\uC815 \uD328\uD134\uC5D0 \uAE30\uBC18\uD558\uC5EC \uBB38\uC790\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/searching-and-replacing-text/
 date: 2024-01-20 17:58:45.246700-07:00
 description: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytte\
   \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\
   \ endre\u2026"
-lastmod: 2024-02-18 23:08:54.422656
+lastmod: 2024-02-19 22:05:00.583688
 model: gpt-4-1106-preview
 summary: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytte\
   \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\

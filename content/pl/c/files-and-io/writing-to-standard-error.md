@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:17.445683-07:00
 description: "Pisanie do standardowego b\u0142\u0119du w j\u0119zyku C polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i informacji diagnostycznych do oddzielnego\
   \ strumienia, r\xF3\u017Cnego od\u2026"
-lastmod: 2024-02-18 23:08:50.097758
+lastmod: 2024-02-19 22:04:55.083940
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du w j\u0119zyku C polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i informacji diagnostycznych do oddzielnego\

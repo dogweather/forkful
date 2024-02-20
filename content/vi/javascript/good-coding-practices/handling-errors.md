@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:40.063854-07:00
@@ -8,7 +6,7 @@ description: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch b\u1EA1n qu\u1EA3n l\xFD khi 
   i th\u1EE9 di\u1EC5n ra kh\xF4ng nh\u01B0 k\u1EBF ho\u1EA1ch trong m\xE3 c\u1EE7\
   a b\u1EA1n. \u0110i\u1EC1u n\xE0y quan tr\u1ECDng b\u1EDFi v\xEC n\xF3 gi\xFAp ch\u01B0\
   \u01A1ng tr\xECnh c\u1EE7a b\u1EA1n th\u1EA5t b\u1EA1i\u2026"
-lastmod: 2024-02-18 23:08:51.144389
+lastmod: 2024-02-19 22:04:56.380776
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch b\u1EA1n qu\u1EA3n l\xFD khi m\u1ECD\
   i th\u1EE9 di\u1EC5n ra kh\xF4ng nh\u01B0 k\u1EBF ho\u1EA1ch trong m\xE3 c\u1EE7\

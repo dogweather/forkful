@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/php/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:32.896705-07:00
 description: "Pisanie test\xF3w w programowaniu polega na tworzeniu i uruchamianiu\
   \ skrypt\xF3w, kt\xF3re weryfikuj\u0105, czy kod zachowuje si\u0119 zgodnie z oczekiwaniami\
   \ w r\xF3\u017Cnych\u2026"
-lastmod: 2024-02-18 23:08:49.698639
+lastmod: 2024-02-19 22:04:54.635123
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu i uruchamianiu skrypt\xF3\
   w, kt\xF3re weryfikuj\u0105, czy kod zachowuje si\u0119 zgodnie z oczekiwaniami\

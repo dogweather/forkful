@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:18.791794-07:00
@@ -11,7 +9,7 @@ description: "\u5728C\u8BED\u8A00\u4E2D\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u662
   \u7BA1\u7406\u4E34\u65F6\u6570\u636E\uFF0C\u800C\u4E0D\u5F71\u54CD\u7A0B\u5E8F\u7684\
   \u6C38\u4E45\u5B58\u50A8\uFF0C\u6216\u786E\u4FDD\u654F\u611F\u6570\u636E\u5728\u4F7F\
   \u7528\u540E\u88AB\u5220\u9664\u3002"
-lastmod: 2024-02-18 23:08:59.578242
+lastmod: 2024-02-19 22:05:07.404578
 model: gpt-4-0125-preview
 summary: "\u5728C\u8BED\u8A00\u4E2D\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u662F\u6307\
   \u751F\u6210\u4E00\u4E2A\u8BBE\u8BA1\u7528\u4E8E\u77ED\u671F\u4F7F\u7528\u7684\u6587\

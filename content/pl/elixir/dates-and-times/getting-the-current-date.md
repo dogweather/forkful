@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pl/elixir/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
@@ -8,7 +6,7 @@ date: 2024-02-03 19:09:30.203696-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w Elixirze wi\u0105\u017Ce si\u0119\
   \ z dost\u0119pem do informacji o dacie i czasie systemu, co jest cz\u0119stym zadaniem\
   \ przy logowaniu, znakowaniu\u2026"
-lastmod: 2024-02-18 23:08:49.316341
+lastmod: 2024-02-19 22:04:54.232545
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w Elixirze wi\u0105\u017Ce si\u0119 z\
   \ dost\u0119pem do informacji o dacie i czasie systemu, co jest cz\u0119stym zadaniem\

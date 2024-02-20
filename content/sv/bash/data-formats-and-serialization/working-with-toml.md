@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/working-with-toml/
 date: 2024-01-26 04:19:00.947654-07:00
 description: "TOML, en kortform f\xF6r Toms Obvious, Minimal Language, \xE4r ett format\
   \ f\xF6r data-serialisering. Programmerare gillar det f\xF6r dess enkelhet och l\xE4\
   sbarhet; det\u2026"
-lastmod: 2024-02-18 23:08:51.983927
+lastmod: 2024-02-19 22:04:57.337300
 model: gpt-4-0125-preview
 summary: "TOML, en kortform f\xF6r Toms Obvious, Minimal Language, \xE4r ett format\
   \ f\xF6r data-serialisering. Programmerare gillar det f\xF6r dess enkelhet och l\xE4\

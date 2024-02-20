@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/organizing-code-into-functions/
 date: 2024-01-26 01:12:03.035885-07:00
 description: "Organiser le code en fonctions signifie d\xE9couper votre code en blocs\
   \ r\xE9utilisables et modulaires. Nous faisons cela pour respecter le principe DRY\
   \ (Don't\u2026"
-lastmod: 2024-02-18 23:09:08.487946
+lastmod: 2024-02-19 22:05:16.272745
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions signifie d\xE9couper votre code en blocs\
   \ r\xE9utilisables et modulaires. Nous faisons cela pour respecter le principe DRY\

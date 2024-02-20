@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/python/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:29.568517-07:00
 description: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekstinformasjon\
   \ om dato og tid til et datetime-objekt eller et tilsvarende strukturert format.\u2026"
-lastmod: 2024-02-18 23:08:53.533317
+lastmod: 2024-02-19 22:04:59.652107
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekstinformasjon\
   \ om dato og tid til et datetime-objekt eller et tilsvarende strukturert format.\u2026"

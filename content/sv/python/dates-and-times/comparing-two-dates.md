@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/comparing-two-dates/
 date: 2024-01-20 17:33:35.668734-07:00
 description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att avg\xF6ra vilket av dem\
   \ som \xE4r tidigast eller senast. Programmerare g\xF6r detta f\xF6r att hantera\
   \ tidsberoende h\xE4ndelser, t.ex.\u2026"
-lastmod: 2024-02-18 23:08:51.433641
+lastmod: 2024-02-19 22:04:56.737197
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att avg\xF6ra vilket av dem som\
   \ \xE4r tidigast eller senast. Programmerare g\xF6r detta f\xF6r att hantera tidsberoende\

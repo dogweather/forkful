@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/comparing-two-dates/
 date: 2024-01-20 17:34:29.738727-07:00
 description: "Comparar duas datas \xE9 essencialmente medir a diferen\xE7a entre elas\
   \ ou determinar qual vem antes ou depois. Programadores fazem isso para manipular\
   \ per\xEDodos\u2026"
-lastmod: 2024-02-18 23:08:58.380984
+lastmod: 2024-02-19 22:05:05.866569
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 essencialmente medir a diferen\xE7a entre elas\
   \ ou determinar qual vem antes ou depois. Programadores fazem isso para manipular\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:53.805278-07:00
@@ -12,7 +10,7 @@ description: "Google Apps Script \u092E\u0947\u0902 CSV (Comma-Separated Values)
   \ \u0915\u0930\u0928\u0947, \u0914\u0930 \u0932\u093F\u0916\u0928\u0947 \u0915\u093E\
   \ \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E \u0939\u0948 \u091C\u0939\
   \u093E\u0901\u2026"
-lastmod: 2024-02-18 23:09:02.611159
+lastmod: 2024-02-19 22:05:10.613034
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 CSV (Comma-Separated Values) \u092B\
   \u093E\u0907\u0932\u094B\u0902 \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:54.660899-07:00
 description: "Zoeken en vervangen van tekst in programmeren is precies wat het lijkt:\
   \ het scannen van strings op bepaalde patronen en deze vervangen door iets anders.\u2026"
-lastmod: 2024-02-18 23:09:02.212550
+lastmod: 2024-02-19 22:05:10.227702
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst in programmeren is precies wat het lijkt:\
   \ het scannen van strings op bepaalde patronen en deze vervangen door iets anders.\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/php/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:56.366719-07:00
 description: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifikation des ersten\
   \ Zeichens eines gegebenen Textes in Gro\xDFbuchstaben, um sicherzustellen, dass\
   \ S\xE4tze,\u2026"
-lastmod: 2024-02-18 23:09:04.944259
+lastmod: 2024-02-19 22:05:12.884192
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifikation des ersten\
   \ Zeichens eines gegebenen Textes in Gro\xDFbuchstaben, um sicherzustellen, dass\

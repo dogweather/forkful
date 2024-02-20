@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/sending-an-http-request-with-basic-authentication/
 date: 2024-02-01 21:31:06.379954-07:00
 description: "Sending an HTTP request with basic authentication in Visual Basic for\
   \ Applications (VBA) is about accessing web resources that are protected by username\u2026"
-lastmod: 2024-02-18 23:09:10.889625
+lastmod: 2024-02-19 22:05:18.402536
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request with basic authentication in Visual Basic for Applications\
   \ (VBA) is about accessing web resources that are protected by username\u2026"

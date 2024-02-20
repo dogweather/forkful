@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/kotlin/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:21.953470-07:00
 description: "Eliminar comillas de una cadena significa quitar cualquier instancia\
   \ de caracteres de comillas, ya sean simples (' ') o dobles (\" \"), de los datos\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:09.923061
+lastmod: 2024-02-19 22:05:17.531285
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena significa quitar cualquier instancia de\
   \ caracteres de comillas, ya sean simples (' ') o dobles (\" \"), de los datos de\u2026"

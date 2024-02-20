@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/interpolating-a-string/
 date: 2024-01-20 17:50:43.096950-07:00
 description: "String interpolation lets you embed variables directly in a string,\
   \ so it reads more like normal text. Programmers use it to construct strings\u2026"
-lastmod: 2024-02-18 23:09:10.958381
+lastmod: 2024-02-19 22:05:18.465373
 model: gpt-4-1106-preview
 summary: "String interpolation lets you embed variables directly in a string, so it\
   \ reads more like normal text. Programmers use it to construct strings\u2026"

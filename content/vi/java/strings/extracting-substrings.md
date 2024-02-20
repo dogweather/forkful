@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/java/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:44.952495-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129
   \ l\xE0 l\u1EA5y ra m\u1ED9t ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7\
   i - m\u1ED9t chu\u1ED7i c\xE1c k\xFD t\u1EF1 n\u1EB1m trong m\u1ED9t chu\u1ED7i\
   \ l\u1EDBn h\u01A1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn c\u1EAFt v\xE0\u2026"
-lastmod: 2024-02-18 23:08:50.544798
+lastmod: 2024-02-19 22:04:55.636227
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0\
   \ l\u1EA5y ra m\u1ED9t ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i -\

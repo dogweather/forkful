@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:08.966988-07:00
 description: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att\
   \ omvandla alla tecken i str\xE4ngen till deras motsvarighet i gemener. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.906314
+lastmod: 2024-02-19 22:04:57.251784
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att omvandla\
   \ alla tecken i str\xE4ngen till deras motsvarighet i gemener. Programmerare g\xF6\

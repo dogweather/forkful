@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/lua/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:24.323299-07:00
 description: "Das Parsen von HTML beinhaltet das Extrahieren von Daten und Informationen\
   \ aus HTML-Dokumenten, was f\xFCr das Web-Scraping, die Datenanalyse und\u2026"
-lastmod: 2024-02-18 23:09:05.004939
+lastmod: 2024-02-19 22:05:12.943368
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML beinhaltet das Extrahieren von Daten und Informationen\
   \ aus HTML-Dokumenten, was f\xFCr das Web-Scraping, die Datenanalyse und\u2026"

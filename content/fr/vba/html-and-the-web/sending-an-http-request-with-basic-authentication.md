@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:23.656253-07:00
 description: "Envoyer une requ\xEAte HTTP avec authentification de base dans Visual\
   \ Basic pour Applications (VBA) consiste \xE0 acc\xE9der aux ressources web prot\xE9\
   g\xE9es par des\u2026"
-lastmod: 2024-02-18 23:09:08.578199
+lastmod: 2024-02-19 22:05:16.354951
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec authentification de base dans Visual Basic\
   \ pour Applications (VBA) consiste \xE0 acc\xE9der aux ressources web prot\xE9g\xE9\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:07.958032-07:00
@@ -11,7 +9,7 @@ description: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C
   \ \uC0AC\uC6A9\uB429\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 YAML\uC758\
   \ \uB2E8\uC21C\uC131\uACFC \uAC00\uB3C5\uC131 \uB54C\uBB38\uC5D0 \uC774\uB97C \uC120\
   \uD638\uD558\uBA70, \uC774\uB294 \uC124\uC815, \uB2E4\uC591\uD55C\u2026"
-lastmod: 2024-02-18 23:09:06.447994
+lastmod: 2024-02-19 22:05:14.359426
 model: gpt-4-0125-preview
 summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C, \uC778\
   \uAC04\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uB370\uC774\uD130 \uC9C1\uB82C\uD654\

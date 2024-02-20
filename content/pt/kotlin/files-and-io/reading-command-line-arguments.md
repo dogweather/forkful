@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/reading-command-line-arguments/
 date: 2024-01-20 17:56:27.077350-07:00
 description: "Ler argumentos da linha de comando significa acessar os dados que os\
   \ usu\xE1rios inserem ao executar seu programa. Programadores fazem isso para tornar\
   \ os\u2026"
-lastmod: 2024-02-18 23:08:58.131212
+lastmod: 2024-02-19 22:05:05.597768
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando significa acessar os dados que os usu\xE1\
   rios inserem ao executar seu programa. Programadores fazem isso para tornar os\u2026"

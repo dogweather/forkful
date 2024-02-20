@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/sending-an-http-request/
 date: 2024-01-20 18:00:17.160766-07:00
 description: "Wysy\u0142anie zapytania HTTP to spos\xF3b, w jaki nasz kod komunikuje\
   \ si\u0119 z serwerami internetowymi - pobiera dane, wysy\u0142a informacje, aktualizuje\
   \ zawarto\u015B\u0107.\u2026"
-lastmod: 2024-02-18 23:08:49.990674
+lastmod: 2024-02-19 22:04:54.943688
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie zapytania HTTP to spos\xF3b, w jaki nasz kod komunikuje si\u0119\
   \ z serwerami internetowymi - pobiera dane, wysy\u0142a informacje, aktualizuje\

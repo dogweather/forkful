@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/php/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:08.655958-07:00
 description: "Ottenere la data corrente in PHP \xE8 un'attivit\xE0 fondamentale che\
   \ permette di recuperare e manipolare la data e l'ora del sistema. Questo \xE8 cruciale\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:55.980694
+lastmod: 2024-02-19 22:05:02.593859
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in PHP \xE8 un'attivit\xE0 fondamentale che permette\
   \ di recuperare e manipolare la data e l'ora del sistema. Questo \xE8 cruciale per\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/fish-shell/searching-and-replacing-text/
 date: 2024-01-20 17:57:35.968213-07:00
 description: "Searching and replacing text is finding specific strings and swapping\
   \ them with something else. Programmers do it to update code, correct errors, or\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.464551
+lastmod: 2024-02-19 22:05:18.919614
 model: gpt-4-1106-preview
 summary: "Searching and replacing text is finding specific strings and swapping them\
   \ with something else. Programmers do it to update code, correct errors, or to\u2026"

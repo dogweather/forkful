@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/haskell/searching-and-replacing-text/
 date: 2024-01-20 17:57:52.464949-07:00
 description: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt innhold\
   \ i strenger. Programmerere bruker dette for \xE5 manipulere data, rette feil eller\u2026"
-lastmod: 2024-02-18 23:08:53.920680
+lastmod: 2024-02-19 22:05:00.090670
 model: gpt-4-1106-preview
 summary: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt innhold\
   \ i strenger. Programmerere bruker dette for \xE5 manipulere data, rette feil eller\u2026"

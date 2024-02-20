@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:45.467398-07:00
 description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely Google Apps\
   \ Scriptill\xE4 sis\xE4lt\xE4\xE4 tekstimuotoisten tiedostojen lukemisen, muokkaamisen\
   \ ja\u2026"
-lastmod: 2024-02-18 23:09:07.162346
+lastmod: 2024-02-19 22:05:15.037484
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely Google Apps Scriptill\xE4\
   \ sis\xE4lt\xE4\xE4 tekstimuotoisten tiedostojen lukemisen, muokkaamisen ja\u2026"

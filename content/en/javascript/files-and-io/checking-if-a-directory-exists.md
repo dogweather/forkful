@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/checking-if-a-directory-exists/
 date: 2024-02-03 19:02:38.194848-07:00
 description: "Checking if a directory exists in JavaScript is essential for file manipulation\
   \ tasks, enabling scripts to verify directory presence before reading from\u2026"
-lastmod: 2024-02-18 23:09:11.452045
+lastmod: 2024-02-19 22:05:18.908361
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in JavaScript is essential for file manipulation\
   \ tasks, enabling scripts to verify directory presence before reading from\u2026"

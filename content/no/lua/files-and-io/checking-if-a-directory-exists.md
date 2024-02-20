@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/lua/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:51.870876-07:00
 description: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon n\xE5\
   r man skriver skript som samhandler med filsystemet, og s\xF8rger for at programmet\
   \ ditt\u2026"
-lastmod: 2024-02-18 23:08:54.029640
+lastmod: 2024-02-19 22:05:00.209651
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon n\xE5r\
   \ man skriver skript som samhandler med filsystemet, og s\xF8rger for at programmet\

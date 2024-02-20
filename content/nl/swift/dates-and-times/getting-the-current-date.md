@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/swift/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:12.317199-07:00
 description: "In Swift houdt het verkrijgen van de huidige datum in dat je toegang\
   \ krijgt tot de huidige tijd- en datuminstellingen van het systeem. Programmeurs\
   \ doen\u2026"
-lastmod: 2024-02-18 23:09:02.240732
+lastmod: 2024-02-19 22:05:10.254469
 model: gpt-4-0125-preview
 summary: "In Swift houdt het verkrijgen van de huidige datum in dat je toegang krijgt\
   \ tot de huidige tijd- en datuminstellingen van het systeem. Programmeurs doen\u2026"

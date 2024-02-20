@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/rounding-numbers/
 date: 2024-01-26 03:45:46.443122-07:00
 description: "Avrunding av tall betyr \xE5 kutte av desimalene til en bestemt n\xF8\
   yaktighet, ofte til hele tall. Programmerere runder av for \xE5 forenkle beregninger,\
   \ forbedre\u2026"
-lastmod: 2024-02-18 23:08:53.970429
+lastmod: 2024-02-19 22:05:00.144643
 model: gpt-4-0125-preview
 summary: "Avrunding av tall betyr \xE5 kutte av desimalene til en bestemt n\xF8yaktighet,\
   \ ofte til hele tall. Programmerere runder av for \xE5 forenkle beregninger, forbedre\u2026"

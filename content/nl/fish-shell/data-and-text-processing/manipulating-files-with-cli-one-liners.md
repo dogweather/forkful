@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/fish-shell/manipulating-files-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:30.171622-07:00
 description: "In de wereld van het programmeren, vooral wanneer je te maken hebt met\
   \ Linux- of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:02.319518
+lastmod: 2024-02-19 22:05:10.328838
 model: gpt-4-0125-preview
 summary: "In de wereld van het programmeren, vooral wanneer je te maken hebt met Linux-\
   \ of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit de\u2026"

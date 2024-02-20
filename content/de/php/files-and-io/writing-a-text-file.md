@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/php/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:37.051940-07:00
 description: "Das Schreiben einer Textdatei in PHP umfasst das Erstellen oder \xD6\
   ffnen einer Datei und das Einf\xFCgen von Inhalten. Programmierer tun dies, um Daten\
   \ wie von\u2026"
-lastmod: 2024-02-18 23:09:04.981756
+lastmod: 2024-02-19 22:05:12.921506
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in PHP umfasst das Erstellen oder \xD6ffnen\
   \ einer Datei und das Einf\xFCgen von Inhalten. Programmierer tun dies, um Daten\

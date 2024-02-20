@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/sending-an-http-request/
 date: 2024-01-20 17:59:08.646234-07:00
 description: "Mandare una richiesta HTTP significa chiedere dati o servizi a un server\
   \ web. Programmatori lo fanno per interagire con API, scaricare contenuti o inviare\u2026"
-lastmod: 2024-02-18 23:08:55.884581
+lastmod: 2024-02-19 22:05:02.494354
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP significa chiedere dati o servizi a un server\
   \ web. Programmatori lo fanno per interagire con API, scaricare contenuti o inviare\u2026"

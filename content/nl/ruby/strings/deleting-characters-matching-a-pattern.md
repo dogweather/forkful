@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:13.077490-07:00
 description: "Het verwijderen van tekens die overeenkomen met een patroon in strings\
   \ gaat over het nauwkeurig verwijderen van delen die je niet nodig hebt, zoals het\u2026"
-lastmod: 2024-02-18 23:09:02.402535
+lastmod: 2024-02-19 22:05:10.408151
 model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een patroon in strings gaat\
   \ over het nauwkeurig verwijderen van delen die je niet nodig hebt, zoals het\u2026"

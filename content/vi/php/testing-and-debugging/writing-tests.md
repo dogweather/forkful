@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:18.220904-07:00
@@ -9,7 +7,7 @@ description: "Ki\u1EC3m th\u1EED \u0111\u1EA3m b\u1EA3o m\xE3 c\u1EE7a b\u1EA1n 
   \ th\u1EDDi gian b\u1EB1ng c\xE1ch ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm v\xE0 \u0111\
   \u1EA3m b\u1EA3o c\xE1c thay \u0111\u1ED5i m\xE3 kh\xF4ng l\xE0m h\u1ECFng m\u1ECD\
   i\u2026"
-lastmod: 2024-02-18 23:08:50.795059
+lastmod: 2024-02-19 22:04:55.954526
 model: gpt-4-0125-preview
 summary: "Ki\u1EC3m th\u1EED \u0111\u1EA3m b\u1EA3o m\xE3 c\u1EE7a b\u1EA1n ho\u1EA1\
   t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i. N\xF3 gi\xFAp ti\u1EBFt ki\u1EC7m\

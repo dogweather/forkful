@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/sending-an-http-request/
 date: 2024-01-20 17:59:43.281965-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de nous\
   \ envoyer des donn\xE9es ou d'effectuer une action. Les programmeurs le font pour\
   \ interagir\u2026"
-lastmod: 2024-02-18 23:09:09.302279
+lastmod: 2024-02-19 22:05:16.971466
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de nous\
   \ envoyer des donn\xE9es ou d'effectuer une action. Les programmeurs le font pour\

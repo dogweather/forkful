@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:55.244930-07:00
 description: "El registro (logging) en el desarrollo de software es el proceso de\
   \ grabar informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\
   \ su\u2026"
-lastmod: 2024-02-18 23:09:09.463262
+lastmod: 2024-02-19 22:05:17.121979
 model: gpt-4-0125-preview
 summary: "El registro (logging) en el desarrollo de software es el proceso de grabar\
   \ informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\

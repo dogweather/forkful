@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/cpp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:34.895498-07:00
 description: "Konvertering av datum till str\xE4ng inneb\xE4r att omforma ett datumobjekt\
   \ till en textrepresentation. Programmerare g\xF6r detta f\xF6r att datumen ska\
   \ vara\u2026"
-lastmod: 2024-02-18 23:08:52.094823
+lastmod: 2024-02-19 22:04:57.458420
 model: gpt-4-1106-preview
 summary: "Konvertering av datum till str\xE4ng inneb\xE4r att omforma ett datumobjekt\
   \ till en textrepresentation. Programmerare g\xF6r detta f\xF6r att datumen ska\

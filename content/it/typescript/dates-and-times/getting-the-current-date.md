@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/typescript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:10.527411-07:00
 description: "Ottenere la data corrente in TypeScript, un linguaggio basato su JavaScript,\
   \ consente di accedere e manipolare le informazioni sulla data e l'ora\u2026"
-lastmod: 2024-02-18 23:08:55.650231
+lastmod: 2024-02-19 22:05:02.247207
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in TypeScript, un linguaggio basato su JavaScript,\
   \ consente di accedere e manipolare le informazioni sulla data e l'ora\u2026"

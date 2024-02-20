@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:57.122993-07:00
 description: "Convertire una data in una stringa significa trasformare l'oggetto Data\
   \ in una sequenza di caratteri leggibile. I programmatori lo fanno per rendere le\u2026"
-lastmod: 2024-02-18 23:08:55.857177
+lastmod: 2024-02-19 22:05:02.465965
 model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformare l'oggetto Data\
   \ in una sequenza di caratteri leggibile. I programmatori lo fanno per rendere le\u2026"

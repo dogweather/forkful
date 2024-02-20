@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:29.851051-07:00
 description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle\
   \ store bokstaver i teksten til sine tilsvarende sm\xE5 bokstav-versjoner. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:53.798714
+lastmod: 2024-02-19 22:04:59.941689
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle store\
   \ bokstaver i teksten til sine tilsvarende sm\xE5 bokstav-versjoner. Programmerere\

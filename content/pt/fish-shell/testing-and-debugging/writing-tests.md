@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/fish-shell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:32.516530-07:00
 description: "Escrever testes em Fish Shell envolve criar scripts que executam automaticamente\
   \ o seu c\xF3digo para validar seu comportamento em rela\xE7\xE3o aos resultados\u2026"
-lastmod: 2024-02-18 23:08:58.579071
+lastmod: 2024-02-19 22:05:06.077013
 model: gpt-4-0125-preview
 summary: "Escrever testes em Fish Shell envolve criar scripts que executam automaticamente\
   \ o seu c\xF3digo para validar seu comportamento em rela\xE7\xE3o aos resultados\u2026"

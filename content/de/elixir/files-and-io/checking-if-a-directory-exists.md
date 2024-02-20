@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/elixir/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:05.816405-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Elixir existiert, bezieht\
   \ sich darauf, die Anwesenheit eines Verzeichnisses an einem bestimmten Pfad im\
   \ Dateisystem\u2026"
-lastmod: 2024-02-18 23:09:04.567097
+lastmod: 2024-02-19 22:05:12.526161
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Elixir existiert, bezieht sich\
   \ darauf, die Anwesenheit eines Verzeichnisses an einem bestimmten Pfad im Dateisystem\u2026"

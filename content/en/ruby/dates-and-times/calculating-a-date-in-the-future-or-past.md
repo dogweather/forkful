@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:04.402602-07:00
 description: "Calculating a future or past date means finding out what the date will\
   \ be, or was, after or before a specified time interval. Programmers do this for\u2026"
-lastmod: 2024-02-18 23:09:11.579230
+lastmod: 2024-02-19 22:05:19.024723
 model: gpt-4-1106-preview
 summary: "Calculating a future or past date means finding out what the date will be,\
   \ or was, after or before a specified time interval. Programmers do this for\u2026"

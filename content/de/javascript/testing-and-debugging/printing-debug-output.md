@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/javascript/printing-debug-output/
 date: 2024-01-20 17:52:52.113471-07:00
 description: "Das Drucken von Debug-Informationen hilft beim Aufsp\xFCren von Fehlern\
   \ im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu\u2026"
-lastmod: 2024-02-18 23:09:05.281409
+lastmod: 2024-02-19 22:05:13.206109
 model: gpt-4-1106-preview
 summary: "Das Drucken von Debug-Informationen hilft beim Aufsp\xFCren von Fehlern\
   \ im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu\u2026"

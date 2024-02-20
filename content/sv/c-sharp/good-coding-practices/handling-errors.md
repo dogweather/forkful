@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/handling-errors/
 date: 2024-01-26 00:50:43.965968-07:00
 description: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014som\
   \ att snubbla p\xE5 sina egna skosn\xF6ren. Program kan snubbla p\xE5 d\xE5liga\
   \ data eller ostadiga\u2026"
-lastmod: 2024-02-18 23:08:51.803063
+lastmod: 2024-02-19 22:04:57.138017
 model: gpt-4-1106-preview
 summary: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014som att\
   \ snubbla p\xE5 sina egna skosn\xF6ren. Program kan snubbla p\xE5 d\xE5liga data\

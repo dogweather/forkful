@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/elixir/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:09.389595-07:00
 description: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar\
   \ trechos de c\xF3digo em tempo real. Programadores Elixir utilizam o REPL,\u2026"
-lastmod: 2024-02-18 23:08:57.845425
+lastmod: 2024-02-19 22:05:05.315467
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar\
   \ trechos de c\xF3digo em tempo real. Programadores Elixir utilizam o REPL,\u2026"

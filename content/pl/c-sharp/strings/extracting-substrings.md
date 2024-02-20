@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/extracting-substrings/
 date: 2024-01-20 17:45:39.433286-07:00
 description: "Wycinanie podci\u0105g\xF3w to odizolowanie wybranych cz\u0119\u015B\
   ci z wi\u0119kszego ci\u0105gu znak\xF3w. Robimy to, by manipulowa\u0107 danymi,\
   \ wyci\u0105ga\u0107 istotne informacje, czy\u2026"
-lastmod: 2024-02-18 23:08:49.600098
+lastmod: 2024-02-19 22:04:54.529780
 model: gpt-4-1106-preview
 summary: "Wycinanie podci\u0105g\xF3w to odizolowanie wybranych cz\u0119\u015Bci z\
   \ wi\u0119kszego ci\u0105gu znak\xF3w. Robimy to, by manipulowa\u0107 danymi, wyci\u0105\

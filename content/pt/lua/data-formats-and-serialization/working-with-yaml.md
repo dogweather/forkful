@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/lua/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:11.030275-07:00
 description: "YAML, abrevia\xE7\xE3o de \"YAML Ain't Markup Language\" (YAML N\xE3\
   o \xE9 Uma Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3\
   o de dados leg\xEDvel por humanos\u2026"
-lastmod: 2024-02-18 23:08:58.302133
+lastmod: 2024-02-19 22:05:05.782784
 model: gpt-4-0125-preview
 summary: "YAML, abrevia\xE7\xE3o de \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9\
   \ Uma Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados\

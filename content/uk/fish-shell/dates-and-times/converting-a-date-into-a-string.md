@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/fish-shell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:58.373374-07:00
 description: ''
-lastmod: 2024-02-18 23:09:01.133589
+lastmod: 2024-02-19 22:05:09.170688
 model: gpt-4-1106-preview
 summary: ''
 title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0434\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:09.341152-07:00
@@ -14,7 +12,7 @@ description: "\u092A\u093E\u0935\u0930\u0936\u0947\u0932 \u092E\u0947\u0902, \u0
   \u091A\u0928\u093E \u0915\u0947 \u0906\u0927\u093E\u0930 \u092A\u0930 \u0928\u093F\
   \u0930\u094D\u0923\u092F \u0932\u0947\u0928\u0947 \u092E\u0947\u0902 \u092E\u0926\
   \u0926 \u0915\u0930\u0924\u093E\u2026"
-lastmod: 2024-02-18 23:09:03.764872
+lastmod: 2024-02-19 22:05:11.750093
 model: gpt-4-0125-preview
 summary: "\u092A\u093E\u0935\u0930\u0936\u0947\u0932 \u092E\u0947\u0902, \u092F\u0939\
   \ \u091C\u093E\u0901\u091A\u0928\u093E \u0915\u093F \u090F\u0915 \u0928\u093F\u0930\

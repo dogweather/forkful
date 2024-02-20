@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/searching-and-replacing-text/
 date: 2024-01-20 17:57:53.712183-07:00
 description: "Buscar y reemplazar texto es una tarea com\xFAn en programaci\xF3n:\
   \ consiste en localizar cadenas espec\xEDficas y sustituirlas por otras. Los programadores\
   \ lo\u2026"
-lastmod: 2024-02-18 23:09:09.587373
+lastmod: 2024-02-19 22:05:17.233360
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es una tarea com\xFAn en programaci\xF3n: consiste\
   \ en localizar cadenas espec\xEDficas y sustituirlas por otras. Los programadores\

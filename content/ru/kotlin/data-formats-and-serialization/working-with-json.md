@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/kotlin/working-with-json/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:13.700155-07:00
@@ -13,7 +11,7 @@ description: "JSON (JavaScript Object Notation) \u2014 \u044D\u0442\u043E \u0444
   \u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442\
   \ \u0435\u0433\u043E, \u043F\u043E\u0442\u043E\u043C\u0443 \u0447\u0442\u043E \u043E\
   \u043D\u2026"
-lastmod: 2024-02-18 23:08:56.970137
+lastmod: 2024-02-19 22:05:03.970423
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \u2014 \u044D\u0442\u043E \u0444\u043E\
   \u0440\u043C\u0430\u0442 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0438\u0440\

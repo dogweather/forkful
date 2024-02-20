@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/organizing-code-into-functions/
 date: 2024-01-26 01:09:24.306143-07:00
 description: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l\xE5\
   dor \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem. Vi g\xF6r detta\
   \ f\xF6r att undvika\u2026"
-lastmod: 2024-02-18 23:08:51.801251
+lastmod: 2024-02-19 22:04:57.135983
 model: gpt-4-1106-preview
 summary: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l\xE5dor\
   \ \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem. Vi g\xF6r detta\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:49.880931-07:00
 description: "Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten\
   \ te vinden en strings te manipuleren met behulp van gedefinieerde patronen.\u2026"
-lastmod: 2024-02-18 23:09:02.361393
+lastmod: 2024-02-19 22:05:10.368425
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten\
   \ te vinden en strings te manipuleren met behulp van gedefinieerde patronen.\u2026"

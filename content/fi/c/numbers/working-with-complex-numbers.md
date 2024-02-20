@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:52.632009-07:00
 description: "Kompleksiluvut koostuvat reaaliosasta ja imagin\xE4\xE4riosasta, jotka\
   \ esitet\xE4\xE4n muodossa `a + bi`, miss\xE4 `i` on luvun `-1` neli\xF6juuri. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:08.125067
+lastmod: 2024-02-19 22:05:15.926352
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut koostuvat reaaliosasta ja imagin\xE4\xE4riosasta, jotka esitet\xE4\
   \xE4n muodossa `a + bi`, miss\xE4 `i` on luvun `-1` neli\xF6juuri. Ohjelmoijat\u2026"

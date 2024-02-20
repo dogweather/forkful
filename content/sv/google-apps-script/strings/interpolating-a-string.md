@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:22.951935-07:00
 description: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk\
   \ inb\xE4ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av\
   \ mer l\xE4sbar och\u2026"
-lastmod: 2024-02-18 23:08:51.363227
+lastmod: 2024-02-19 22:04:56.658257
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk inb\xE4\
   ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av mer l\xE4\

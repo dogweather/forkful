@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/google-apps-script/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:52.410732-07:00
@@ -14,7 +12,7 @@ description: "\u0410\u043D\u0430\u043B\u0456\u0437 \u0434\u0430\u0442\u0438 \u04
   \u0430\u043C \u0432\u0438\u043A\u043E\u043D\u0443\u0432\u0430\u0442\u0438 \u043E\
   \u043F\u0435\u0440\u0430\u0446\u0456\u0457, \u043F\u043E\u0432'\u044F\u0437\u0430\
   \u043D\u0456 \u0437 \u0434\u0430\u0442\u043E\u044E,\u2026"
-lastmod: 2024-02-18 23:08:59.754385
+lastmod: 2024-02-19 22:05:07.598360
 model: gpt-4-0125-preview
 summary: "\u0410\u043D\u0430\u043B\u0456\u0437 \u0434\u0430\u0442\u0438 \u0437 \u0440\
   \u044F\u0434\u043A\u0430 \u043F\u043E\u043B\u044F\u0433\u0430\u0454 \u0443 \u043F\

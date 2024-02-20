@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/fish-shell/reading-a-text-file/
 date: 2024-01-20 17:54:46.941901-07:00
 description: "\u092A\u093E\u0920 \u092B\u093C\u093E\u0907\u0932 (text file) \u092A\
   \u0922\u093C\u0928\u093E \u0907\u0938\u0915\u0940 \u0938\u093E\u092E\u0917\u094D\
@@ -12,7 +10,7 @@ description: "\u092A\u093E\u0920 \u092B\u093C\u093E\u0907\u0932 (text file) \u09
   \u0940\u0915\u094D\u0937\u0923, \u0914\u0930 \u0938\u094D\u0915\u094D\u0930\u093F\
   \u092A\u094D\u091F \u0915\u0949\u0928\u094D\u092B\u093C\u093F\u0917\u094D\u092F\u0942\
   \u0930\u0947\u0936\u0928\u2026"
-lastmod: 2024-02-18 23:09:04.161548
+lastmod: 2024-02-19 22:05:12.136627
 model: gpt-4-1106-preview
 summary: "\u092A\u093E\u0920 \u092B\u093C\u093E\u0907\u0932 (text file) \u092A\u0922\
   \u093C\u0928\u093E \u0907\u0938\u0915\u0940 \u0938\u093E\u092E\u0917\u094D\u0930\

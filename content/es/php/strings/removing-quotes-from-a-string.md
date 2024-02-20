@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:00.538400-07:00
 description: "Eliminar comillas de una cadena en PHP significa quitar esos molestos\
   \ caracteres de comillas dobles (`\"`) o simples (`'`) que pueden interferir con\
   \ la\u2026"
-lastmod: 2024-02-18 23:09:10.060959
+lastmod: 2024-02-19 22:05:17.656287
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena en PHP significa quitar esos molestos caracteres\
   \ de comillas dobles (`\"`) o simples (`'`) que pueden interferir con la\u2026"

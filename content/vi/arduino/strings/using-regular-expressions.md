@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:20.243579-07:00
@@ -8,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cho ph\xE9p b\u1EA1n t\xE
   m ki\u1EBFm v\u0103n b\u1EA3n theo m\xF4 h\xECnh\u2014ngh\u0129 \u0111\u1EBFn l\xE0\
   \ phi\xEAn b\u1EA3n n\xE2ng cao c\u1EE7a wild card. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
   \ d\u1EE5ng ch\xFAng \u0111\u1EC3 x\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.988997
+lastmod: 2024-02-19 22:04:56.175082
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cho ph\xE9p b\u1EA1n t\xECm ki\u1EBF\
   m v\u0103n b\u1EA3n theo m\xF4 h\xECnh\u2014ngh\u0129 \u0111\u1EBFn l\xE0 phi\xEA\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/working-with-xml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:02.919077-07:00
 description: "Praca z XML w j\u0119zyku C wi\u0105\u017Ce si\u0119 z parsowaniem,\
   \ wyszukiwaniem i manipulowaniem dokumentami XML za pomoc\u0105 r\xF3\u017Cnych\
   \ bibliotek. Programi\u015Bci anga\u017Cuj\u0105 si\u0119 w\u2026"
-lastmod: 2024-02-18 23:08:50.106283
+lastmod: 2024-02-19 22:04:55.093382
 model: gpt-4-0125-preview
 summary: "Praca z XML w j\u0119zyku C wi\u0105\u017Ce si\u0119 z parsowaniem, wyszukiwaniem\
   \ i manipulowaniem dokumentami XML za pomoc\u0105 r\xF3\u017Cnych bibliotek. Programi\u015B\

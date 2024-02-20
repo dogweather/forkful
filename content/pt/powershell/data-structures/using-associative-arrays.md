@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/powershell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:31.355006-07:00
 description: "Arrays associativos, tamb\xE9m conhecidos como tabelas hash ou dicion\xE1\
   rios no PowerShell, permitem armazenar dados em pares chave-valor, tornando a\u2026"
-lastmod: 2024-02-18 23:08:58.359882
+lastmod: 2024-02-19 22:05:05.844172
 model: gpt-4-0125-preview
 summary: "Arrays associativos, tamb\xE9m conhecidos como tabelas hash ou dicion\xE1\
   rios no PowerShell, permitem armazenar dados em pares chave-valor, tornando a\u2026"

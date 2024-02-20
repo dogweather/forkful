@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/arduino/searching-and-replacing-text/
 date: 2024-01-20 17:57:18.227559-07:00
 description: "In programmazione, cercare e sostituire del testo significa scovare\
   \ una stringa specifica e rimpiazzarla con un'altra. Programmatori fanno questo\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:56.120902
+lastmod: 2024-02-19 22:05:02.744922
 model: gpt-4-1106-preview
 summary: "In programmazione, cercare e sostituire del testo significa scovare una\
   \ stringa specifica e rimpiazzarla con un'altra. Programmatori fanno questo per\u2026"

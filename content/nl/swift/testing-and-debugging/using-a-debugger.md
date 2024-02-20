@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.174448-07:00
 description: "Een debugger gebruiken betekent het inzetten van gespecialiseerde tools\
   \ om je code te testen en te inspecteren terwijl deze draait. Het is een belangrijke\u2026"
-lastmod: 2024-02-18 23:09:02.234402
+lastmod: 2024-02-19 22:05:10.248416
 model: gpt-4-0125-preview
 summary: "Een debugger gebruiken betekent het inzetten van gespecialiseerde tools\
   \ om je code te testen en te inspecteren terwijl deze draait. Het is een belangrijke\u2026"

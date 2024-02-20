@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/java/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:59.083509-07:00
@@ -8,7 +6,7 @@ description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF text trong Java s\u1EBD vi\u1
   t \u0111\xE8 l\xEAn chu\u1ED7i g\u1ED1c b\u1EB1ng c\xE1c k\xFD t\u1EF1 m\u1EDBi\
   \ - h\xE3y ngh\u0129 v\u1EC1 n\xF3 nh\u01B0 l\xE0 vi\u1EC7c s\u1EED d\u1EE5ng l\u1EDB\
   p tr\u1EAFng \u0111i\u1EC7n t\u1EED. C\xE1c l\u1EADp tr\xECnh\u2026"
-lastmod: 2024-02-18 23:08:50.540473
+lastmod: 2024-02-19 22:04:55.630531
 model: gpt-4-0125-preview
 summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF text trong Java s\u1EBD vi\u1EBFt \u0111\
   \xE8 l\xEAn chu\u1ED7i g\u1ED1c b\u1EB1ng c\xE1c k\xFD t\u1EF1 m\u1EDBi - h\xE3\

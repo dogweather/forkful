@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:02.832114-07:00
 description: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
   \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"
-lastmod: 2024-02-18 23:09:01.336880
+lastmod: 2024-02-19 22:05:09.370457
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
   \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"

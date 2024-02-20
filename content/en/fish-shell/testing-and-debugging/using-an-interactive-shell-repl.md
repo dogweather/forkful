@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:45.710623-07:00
 description: "REPL, or Read-Eval-Print Loop, is an interactive programming environment\
   \ that takes single user inputs, executes them, and returns the result. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.482761
+lastmod: 2024-02-19 22:05:18.936063
 model: gpt-4-1106-preview
 summary: "REPL, or Read-Eval-Print Loop, is an interactive programming environment\
   \ that takes single user inputs, executes them, and returns the result. Programmers\u2026"

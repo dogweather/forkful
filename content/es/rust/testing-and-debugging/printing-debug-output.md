@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/printing-debug-output/
 date: 2024-01-20 17:53:38.103179-07:00
 description: "Imprimir mensajes de depuraci\xF3n nos permite echar un vistazo a lo\
   \ que est\xE1 pasando en nuestro c\xF3digo en tiempo real. Es esencial para entender\
   \ bugs y\u2026"
-lastmod: 2024-02-18 23:09:09.751899
+lastmod: 2024-02-19 22:05:17.375184
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n nos permite echar un vistazo a lo que\
   \ est\xE1 pasando en nuestro c\xF3digo en tiempo real. Es esencial para entender\

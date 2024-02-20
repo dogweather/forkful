@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:08.698753-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en Ruby permet aux programmeurs\
   \ de confirmer la pr\xE9sence d'un r\xE9pertoire avant d'effectuer des op\xE9rations\
   \ comme la\u2026"
-lastmod: 2024-02-18 23:09:09.423016
+lastmod: 2024-02-19 22:05:17.084426
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Ruby permet aux programmeurs de\
   \ confirmer la pr\xE9sence d'un r\xE9pertoire avant d'effectuer des op\xE9rations\

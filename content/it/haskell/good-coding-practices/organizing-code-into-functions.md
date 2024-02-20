@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/haskell/organizing-code-into-functions/
 date: 2024-01-26 01:10:41.201257-07:00
 description: "Organizzare il codice in funzioni in Haskell significa suddividere il\
   \ tuo codice in blocchi riutilizzabili e nominati. Perch\xE9? Mantenere il codice\
   \ DRY\u2026"
-lastmod: 2024-02-18 23:08:55.935380
+lastmod: 2024-02-19 22:05:02.546198
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni in Haskell significa suddividere il tuo\
   \ codice in blocchi riutilizzabili e nominati. Perch\xE9? Mantenere il codice DRY\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:29.110491-07:00
 description: "HTML parsen is het proces van het decoderen van de lingua franca van\
   \ het web om data te zeven of inhoud te manipuleren. Programmeurs parsen HTML om\u2026"
-lastmod: 2024-02-18 23:09:02.323329
+lastmod: 2024-02-19 22:05:10.332115
 model: gpt-4-0125-preview
 summary: "HTML parsen is het proces van het decoderen van de lingua franca van het\
   \ web om data te zeven of inhoud te manipuleren. Programmeurs parsen HTML om\u2026"

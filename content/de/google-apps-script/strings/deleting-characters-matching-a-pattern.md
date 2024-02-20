@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/google-apps-script/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:00.794947-07:00
 description: "Das L\xF6schen von Zeichen, die einem bestimmten Muster entsprechen,\
   \ ist eine Technik, die verwendet wird, um Zeichenketten in der Programmierung zu\u2026"
-lastmod: 2024-02-18 23:09:04.394386
+lastmod: 2024-02-19 22:05:12.362564
 model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster entsprechen, ist\
   \ eine Technik, die verwendet wird, um Zeichenketten in der Programmierung zu\u2026"

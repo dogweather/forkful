@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/javascript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:12.320242-07:00
 description: "Le espressioni regolari (regex) in JavaScript sono pattern utilizzati\
   \ per abbinare combinazioni di caratteri nelle stringhe. I programmatori le usano\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:56.243236
+lastmod: 2024-02-19 22:05:02.876198
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in JavaScript sono pattern utilizzati per\
   \ abbinare combinazioni di caratteri nelle stringhe. I programmatori le usano per\u2026"

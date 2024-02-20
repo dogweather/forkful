@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/rust/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:40.399193-07:00
 description: "\xC5 konvertere en dato til en streng betyr \xE5 endre datotypen fra\
   \ et datorepresentasjonsformat til en tekststreng. Dette er nyttig for \xE5 vise\
   \ datoer til\u2026"
-lastmod: 2024-02-18 23:08:53.696366
+lastmod: 2024-02-19 22:04:59.830317
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre datotypen fra et\
   \ datorepresentasjonsformat til en tekststreng. Dette er nyttig for \xE5 vise datoer\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:54.182376-07:00
 description: "Konwersja daty na \u0142a\u0144cuch znak\xF3w to zamiana formatu daty\
   \ na tekst. Programi\u015Bci robi\u0105 to dla czytelno\u015Bci, do zapisu w plikach\
   \ czy bazy danych."
-lastmod: 2024-02-18 23:08:49.796604
+lastmod: 2024-02-19 22:04:54.736705
 model: gpt-4-1106-preview
 summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w to zamiana formatu daty na\
   \ tekst. Programi\u015Bci robi\u0105 to dla czytelno\u015Bci, do zapisu w plikach\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:11.520973-07:00
 description: "Remover aspas de uma string em VBA envolve eliminar inst\xE2ncias de\
   \ aspas simples (`'`) ou duplas (`\"`) que possam encapsular ou estar embutidas\
   \ na string.\u2026"
-lastmod: 2024-02-18 23:08:57.960200
+lastmod: 2024-02-19 22:05:05.434303
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em VBA envolve eliminar inst\xE2ncias de aspas\
   \ simples (`'`) ou duplas (`\"`) que possam encapsular ou estar embutidas na string.\u2026"

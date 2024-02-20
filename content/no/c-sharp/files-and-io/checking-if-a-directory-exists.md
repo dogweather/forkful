@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c-sharp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:18.966699-07:00
 description: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe p\xE5 en spesifisert bane i filsystemet. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:53.907714
+lastmod: 2024-02-19 22:05:00.077287
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifisere tilstedev\xE6\
   relsen av en mappe p\xE5 en spesifisert bane i filsystemet. Programmerere gj\xF8\

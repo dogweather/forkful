@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/typescript/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:05.004278-07:00
@@ -14,7 +12,7 @@ description: "\u0412 TypeScript \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0430
   \ \u043A\u043E\u043C\u0431\u0438\u043D\u0430\u0446\u0438\u0438 \u0438\u043C\u044F\
   \ \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F:\u043F\
   \u0430\u0440\u043E\u043B\u044C\u2026"
-lastmod: 2024-02-18 23:08:56.684480
+lastmod: 2024-02-19 22:05:03.497477
 model: gpt-4-0125-preview
 summary: "\u0412 TypeScript \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\
   \u0430\u043F\u0440\u043E\u0441\u0430 \u0441 \u0431\u0430\u0437\u043E\u0432\u043E\

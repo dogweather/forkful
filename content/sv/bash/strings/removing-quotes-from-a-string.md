@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:48.360979-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
   gsnar de citationstecken som omsluter str\xE4ngen. Programmerare vill ofta g\xF6\
   ra detta f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.947671
+lastmod: 2024-02-19 22:04:57.297438
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
   gsnar de citationstecken som omsluter str\xE4ngen. Programmerare vill ofta g\xF6\

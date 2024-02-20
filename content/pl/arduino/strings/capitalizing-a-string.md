@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/arduino/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:11.081898-07:00
 description: "Kapitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszego znaku\
   \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105\
   c jednocze\u015Bnie, \u017Ce pozosta\u0142e litery\u2026"
-lastmod: 2024-02-18 23:08:49.853872
+lastmod: 2024-02-19 22:04:54.798038
 model: gpt-4-0125-preview
 summary: "Kapitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszego znaku\
   \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/typescript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:39.020300-07:00
 description: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
   \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule s'il est en minuscule,\
   \ laissant\u2026"
-lastmod: 2024-02-18 23:09:08.463095
+lastmod: 2024-02-19 22:05:16.250154
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
   \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule s'il est en minuscule,\

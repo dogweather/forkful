@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:22.984759-07:00
 description: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
   nes sp\xE9cifiques dans un texte et de les remplacer par d'autres. Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:09.143999
+lastmod: 2024-02-19 22:05:16.819232
 model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
   nes sp\xE9cifiques dans un texte et de les remplacer par d'autres. Les programmeurs\u2026"

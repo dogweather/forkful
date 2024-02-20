@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/starting-a-new-project/
 date: 2024-01-20 18:03:05.413806-07:00
 description: "Zaczynamy nowy projekt, gdy mamy \u015Bwie\u017Cy pomys\u0142 lub potrzeb\u0119\
   \ rozwi\u0105zania. Programi\u015Bci robi\u0105 to, aby przekszta\u0142ci\u0107\
   \ koncepcje w dzia\u0142aj\u0105ce aplikacje, ucz\u0105c\u2026"
-lastmod: 2024-02-18 23:08:49.611301
+lastmod: 2024-02-19 22:04:54.542524
 model: gpt-4-1106-preview
 summary: "Zaczynamy nowy projekt, gdy mamy \u015Bwie\u017Cy pomys\u0142 lub potrzeb\u0119\
   \ rozwi\u0105zania. Programi\u015Bci robi\u0105 to, aby przekszta\u0142ci\u0107\

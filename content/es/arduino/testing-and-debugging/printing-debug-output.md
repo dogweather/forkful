@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/arduino/printing-debug-output/
 date: 2024-01-20 17:52:07.101421-07:00
 description: "La impresi\xF3n de mensajes de depuraci\xF3n ayuda a entender qu\xE9\
   \ est\xE1 pasando dentro del c\xF3digo al ejecutarlo. Los programadores usan esta\
   \ t\xE9cnica para\u2026"
-lastmod: 2024-02-18 23:09:10.263533
+lastmod: 2024-02-19 22:05:17.841345
 model: gpt-4-1106-preview
 summary: "La impresi\xF3n de mensajes de depuraci\xF3n ayuda a entender qu\xE9 est\xE1\
   \ pasando dentro del c\xF3digo al ejecutarlo. Los programadores usan esta t\xE9\

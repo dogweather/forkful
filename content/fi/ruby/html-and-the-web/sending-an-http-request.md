@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/ruby/sending-an-http-request/
 date: 2024-01-20 18:00:48.287281-07:00
 description: "HTTP-pyynt\xF6 on tapa puhua verkon yli palvelimille. Ohjelmoijat l\xE4\
   hett\xE4v\xE4t niit\xE4 datan noutamiseen, l\xE4hett\xE4miseen ja web-sovellusten\
   \ kanssa\u2026"
-lastmod: 2024-02-18 23:09:08.179150
+lastmod: 2024-02-19 22:05:15.992591
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 on tapa puhua verkon yli palvelimille. Ohjelmoijat l\xE4\
   hett\xE4v\xE4t niit\xE4 datan noutamiseen, l\xE4hett\xE4miseen ja web-sovellusten\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:58.983787-07:00
@@ -13,7 +11,7 @@ description: "PowerShell\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 \uD2B9\uC815 \uB370
   \uD558\uAC70\uB098 \uC6F9 \uBE0C\uB77C\uC6B0\uC800 \uC5C6\uC774 \uD3FC \uC81C\uCD9C\
   \uC774\uB098 \uB2E4\uB978 \uC6F9 \uC0C1\uD638\uC791\uC6A9\uC744 \uC790\uB3D9\uD654\
   \uD558\uAE30 \uC704\uD574\u2026"
-lastmod: 2024-02-18 23:09:06.551069
+lastmod: 2024-02-19 22:05:14.457178
 model: gpt-4-0125-preview
 summary: "PowerShell\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 \uD2B9\uC815 \uB370\uC774\
   \uD130\uB97C \uCD94\uCD9C\uD558\uAC70\uB098 \uC6F9 \uAD00\uB828 \uC791\uC5C5\uC744\

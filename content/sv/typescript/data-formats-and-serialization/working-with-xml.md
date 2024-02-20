@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/typescript/working-with-xml/
 date: 2024-01-26 04:36:30.238170-07:00
 description: "Att arbeta med XML inneb\xE4r att tolka, manipulera och skriva XML-data\
   \ med programmering. Programmerare hanterar XML f\xF6r att utbyta data mellan olika\u2026"
-lastmod: 2024-02-18 23:08:51.567071
+lastmod: 2024-02-19 22:04:56.883344
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att tolka, manipulera och skriva XML-data\
   \ med programmering. Programmerare hanterar XML f\xF6r att utbyta data mellan olika\u2026"

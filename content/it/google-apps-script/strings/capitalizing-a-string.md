@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:53.844534-07:00
 description: "Capitalizzare una stringa comporta la modifica dell'input in modo che\
   \ il primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"
-lastmod: 2024-02-18 23:08:55.459333
+lastmod: 2024-02-19 22:05:02.041841
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa comporta la modifica dell'input in modo che il\
   \ primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"

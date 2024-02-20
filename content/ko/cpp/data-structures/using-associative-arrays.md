@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:43.933255-07:00
@@ -11,7 +9,7 @@ description: "C++\uC5D0\uC11C `std::map` \uB610\uB294 `std::unordered_map`\uC73C
   \uAC8C \uD574\uC90D\uB2C8\uB2E4. \uC778\uB371\uC2A4 \uC704\uCE58 \uB300\uC2E0 \uD0A4\
   \uB97C \uC0AC\uC6A9\uD558\uC5EC \uBE60\uB978 \uC870\uD68C, \uC0BD\uC785, \uC0AD\uC81C\
   \uAC00 \uD544\uC694\uD560 \uB54C \uC8FC\uB85C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.671789
+lastmod: 2024-02-19 22:05:14.571175
 model: gpt-4-0125-preview
 summary: "C++\uC5D0\uC11C `std::map` \uB610\uB294 `std::unordered_map`\uC73C\uB85C\
   \ \uC54C\uB824\uC9C4 \uC5F0\uAD00 \uBC30\uC5F4\uC740 \uBC30\uC5F4 \uC778\uB371\uC2A4\

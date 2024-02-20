@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/extracting-substrings/
 date: 2024-01-20 17:46:50.440239-07:00
 description: "Estrarre delle sottostringhe significa prelevare una porzione specifica\
   \ di una stringa di testo. I programmatori lo fanno per manipolare, cercare, o\u2026"
-lastmod: 2024-02-18 23:08:56.202211
+lastmod: 2024-02-19 22:05:02.832769
 model: gpt-4-1106-preview
 summary: "Estrarre delle sottostringhe significa prelevare una porzione specifica\
   \ di una stringa di testo. I programmatori lo fanno per manipolare, cercare, o\u2026"

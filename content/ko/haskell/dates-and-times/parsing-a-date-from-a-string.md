@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:29.584560-07:00
@@ -13,7 +11,7 @@ description: "Haskell\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC
   \uC740 \uAE30\uB2A5\uC744 \uAC00\uB2A5\uD558\uAC8C \uD574\uC8FC\uBA70, \uB2EC\uB825\
   \ \uB370\uC774\uD130\uB97C \uB2E4\uB8E8\uB294 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
   \uC5D0 \uC788\uC5B4 \uAE30\uBCF8\uC801\uC785\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.301716
+lastmod: 2024-02-19 22:05:14.221141
 model: gpt-4-0125-preview
 summary: "Haskell\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC9DC\uB97C\
   \ \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC758 \uD14D\uC2A4\uD2B8 \uD45C\

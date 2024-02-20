@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:45.944901-07:00
 description: "Calcular datas no futuro ou no passado \xE9 simplesmente modificar uma\
   \ data existente para descobrir qual data ser\xE1 ou foi. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.338541
+lastmod: 2024-02-19 22:05:05.821819
 model: gpt-4-1106-preview
 summary: "Calcular datas no futuro ou no passado \xE9 simplesmente modificar uma data\
   \ existente para descobrir qual data ser\xE1 ou foi. Programadores fazem isso para\u2026"

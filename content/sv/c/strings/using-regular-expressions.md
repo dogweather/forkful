@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:57.705225-07:00
 description: "Regulj\xE4ra uttryck (regex) erbjuder ett s\xE4tt att s\xF6ka, matcha\
   \ och manipulera str\xE4ngar med definierade m\xF6nster. Programmerare anv\xE4nder\
   \ dem i stor\u2026"
-lastmod: 2024-02-18 23:08:52.239565
+lastmod: 2024-02-19 22:04:57.622931
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) erbjuder ett s\xE4tt att s\xF6ka, matcha och\
   \ manipulera str\xE4ngar med definierade m\xF6nster. Programmerare anv\xE4nder dem\

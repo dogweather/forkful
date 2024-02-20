@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/starting-a-new-project/
 date: 2024-01-20 18:04:19.165200-07:00
 description: "\xC5 starte et nytt Python-prosjekt er som \xE5 legge ut p\xE5 en reise;\
   \ du begynner med en tom mappe og ender opp med et kj\xF8rbar system som l\xF8ser\
   \ et problem.\u2026"
-lastmod: 2024-02-18 23:08:53.525082
+lastmod: 2024-02-19 22:04:59.642819
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt Python-prosjekt er som \xE5 legge ut p\xE5 en reise;\
   \ du begynner med en tom mappe og ender opp med et kj\xF8rbar system som l\xF8ser\

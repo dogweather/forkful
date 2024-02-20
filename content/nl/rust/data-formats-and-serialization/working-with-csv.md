@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:52.501639-07:00
 description: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),\
   \ is een bestandsformaat dat wordt gebruikt om tabelgegevens op te slaan.\u2026"
-lastmod: 2024-02-18 23:09:01.643528
+lastmod: 2024-02-19 22:05:09.665476
 model: gpt-4-0125-preview
 summary: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),\
   \ is een bestandsformaat dat wordt gebruikt om tabelgegevens op te slaan.\u2026"

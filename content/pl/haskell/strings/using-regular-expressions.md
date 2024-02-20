@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/haskell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:04.476648-07:00
 description: "Wyra\u017Cenia regularne w programowaniu to sekwencje znak\xF3w definiuj\u0105\
   ce wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ci\u0105\
   gami\u2026"
-lastmod: 2024-02-18 23:08:49.643538
+lastmod: 2024-02-19 22:04:54.575803
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne w programowaniu to sekwencje znak\xF3w definiuj\u0105\
   ce wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ci\u0105\

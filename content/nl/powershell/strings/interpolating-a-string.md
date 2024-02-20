@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:17.456291-07:00
 description: "String interpolatie schuift waarden in een stringtemplate zoals stukken\
   \ van een puzzel, waardoor strings dynamisch worden en de code schoner. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.073835
+lastmod: 2024-02-19 22:05:10.096267
 model: gpt-4-0125-preview
 summary: "String interpolatie schuift waarden in een stringtemplate zoals stukken\
   \ van een puzzel, waardoor strings dynamisch worden en de code schoner. Programmeurs\u2026"

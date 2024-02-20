@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:59.747594-07:00
 description: "Een tekstbestand lezen betekent gegevens uit een bestand in je programma\
   \ trekken. Programmeurs doen dit om de inhoud te verwerken of te analyseren, zoals\u2026"
-lastmod: 2024-02-18 23:09:01.545625
+lastmod: 2024-02-19 22:05:09.571457
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent gegevens uit een bestand in je programma\
   \ trekken. Programmeurs doen dit om de inhoud te verwerken of te analyseren, zoals\u2026"

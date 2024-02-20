@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/starting-a-new-project/
 date: 2024-01-20 18:02:48.258209-07:00
 description: "\xC5 starte et nytt prosjekt betyr \xE5 lage et nytt skript eller program\
   \ fra bunnen av. Programmerere gj\xF8r dette for \xE5 skape tilpassede l\xF8sninger,\
   \ l\xE6re nye\u2026"
-lastmod: 2024-02-18 23:08:54.143404
+lastmod: 2024-02-19 22:05:00.330797
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt betyr \xE5 lage et nytt skript eller program\
   \ fra bunnen av. Programmerere gj\xF8r dette for \xE5 skape tilpassede l\xF8sninger,\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:13.865041-07:00
@@ -13,7 +11,7 @@ description: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Ruby\uC5D0\uC11C\uB294 \uC77C\uBC1
   \ \uBE60\uB974\uAC8C \uC811\uADFC\uD560 \uD544\uC694\uAC00 \uC788\uC744 \uB54C \uC5C6\
   \uC5B4\uC11C\uB294 \uC548\uB420 \uC911\uC694\uD55C \uAE30\uB2A5\uC785\uB2C8\uB2E4\
   ."
-lastmod: 2024-02-18 23:09:07.011232
+lastmod: 2024-02-19 22:05:14.894376
 model: gpt-4-0125-preview
 summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Ruby\uC5D0\uC11C\uB294 \uC77C\uBC18\uC801\
   \uC73C\uB85C \uD574\uC2DC\uB77C\uACE0 \uC54C\uB824\uC838 \uC788\uC73C\uBA70, \uACE0\

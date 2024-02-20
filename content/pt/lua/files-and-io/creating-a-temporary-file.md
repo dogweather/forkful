@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/creating-a-temporary-file/
 date: 2024-01-20 17:40:37.475573-07:00
 description: "Criar um arquivo tempor\xE1rio permite armazenar dados de maneira transit\xF3\
   ria durante a execu\xE7\xE3o de um programa. Programadores usam arquivos tempor\xE1\
   rios para\u2026"
-lastmod: 2024-02-18 23:08:58.301151
+lastmod: 2024-02-19 22:05:05.781637
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio permite armazenar dados de maneira transit\xF3\
   ria durante a execu\xE7\xE3o de um programa. Programadores usam arquivos tempor\xE1\

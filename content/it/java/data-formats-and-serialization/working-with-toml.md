@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/working-with-toml/
 date: 2024-01-26 04:22:56.627481-07:00
 description: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
   \ di Tom). \xC8 un formato di serializzazione dei dati utilizzato per i file di\u2026"
-lastmod: 2024-02-18 23:08:55.788466
+lastmod: 2024-02-19 22:05:02.393482
 model: gpt-4-0125-preview
 summary: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
   \ di Tom). \xC8 un formato di serializzazione dei dati utilizzato per i file di\u2026"

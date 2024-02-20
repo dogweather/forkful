@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/using-a-debugger/
 date: 2024-01-26 03:48:25.686817-07:00
 description: "Debuggerin k\xE4ytt\xE4minen Elixiriss\xE4 sis\xE4lt\xE4\xE4 koodisi\
   \ l\xE4pik\xE4ymist\xE4 askel askeleelta, muuttujien tarkastelua ja virtojen seurantaa\
   \ virheiden korjaamiseksi.\u2026"
-lastmod: 2024-02-18 23:09:07.278408
+lastmod: 2024-02-19 22:05:15.172306
 model: gpt-4-0125-preview
 summary: "Debuggerin k\xE4ytt\xE4minen Elixiriss\xE4 sis\xE4lt\xE4\xE4 koodisi l\xE4\
   pik\xE4ymist\xE4 askel askeleelta, muuttujien tarkastelua ja virtojen seurantaa\

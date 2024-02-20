@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/fish-shell/creating-a-temporary-file/
 date: 2024-01-20 17:40:11.014365-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es, kurzlebige\
   \ Daten zu speichern, ohne sich um manuelles Aufr\xE4umen k\xFCmmern zu m\xFCssen.\
   \ Programmierer\u2026"
-lastmod: 2024-02-18 23:09:05.346781
+lastmod: 2024-02-19 22:05:13.267915
 model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es, kurzlebige Daten\
   \ zu speichern, ohne sich um manuelles Aufr\xE4umen k\xFCmmern zu m\xFCssen. Programmierer\u2026"

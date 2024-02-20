@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/rust/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:08.419765-07:00
 description: "Les expressions r\xE9guli\xE8res, ou regex, permettent aux d\xE9veloppeurs\
   \ de rechercher, faire correspondre et manipuler des cha\xEEnes de caract\xE8res\
   \ avec des\u2026"
-lastmod: 2024-02-18 23:09:08.517787
+lastmod: 2024-02-19 22:05:16.300090
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, ou regex, permettent aux d\xE9veloppeurs\
   \ de rechercher, faire correspondre et manipuler des cha\xEEnes de caract\xE8res\

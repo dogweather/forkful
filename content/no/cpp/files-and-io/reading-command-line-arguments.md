@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/reading-command-line-arguments/
 date: 2024-01-20 17:55:29.219355-07:00
 description: "\xC5 lese kommandolinjeargumenter betyr \xE5 fange opp data gitt direkte\
   \ n\xE5r du kj\xF8rer programmet ditt. Programmere gj\xF8r dette for \xE5 tillate\
   \ dynamiske\u2026"
-lastmod: 2024-02-18 23:08:54.242432
+lastmod: 2024-02-19 22:05:00.388622
 model: gpt-4-1106-preview
 summary: "\xC5 lese kommandolinjeargumenter betyr \xE5 fange opp data gitt direkte\
   \ n\xE5r du kj\xF8rer programmet ditt. Programmere gj\xF8r dette for \xE5 tillate\

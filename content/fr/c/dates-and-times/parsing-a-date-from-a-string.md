@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/c/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:56.696295-07:00
 description: "Analyser une date \xE0 partir d'une cha\xEEne en C implique de convertir\
   \ des repr\xE9sentations textuelles de dates en un format que les programmes peuvent\u2026"
-lastmod: 2024-02-18 23:09:09.367177
+lastmod: 2024-02-19 22:05:17.032922
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne en C implique de convertir\
   \ des repr\xE9sentations textuelles de dates en un format que les programmes peuvent\u2026"

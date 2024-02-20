@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/refactoring/
 date: 2024-01-26 03:36:43.443808-07:00
 description: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
   tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\
   \ para hacer\u2026"
-lastmod: 2024-02-18 23:09:09.711867
+lastmod: 2024-02-19 22:05:17.338814
 model: gpt-4-0125-preview
 summary: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1tico\
   \ existente sin cambiar su comportamiento externo. Los programadores lo hacen para\

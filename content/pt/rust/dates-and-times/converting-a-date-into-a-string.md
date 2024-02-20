@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:30.711334-07:00
 description: "Converter uma data em uma string em Rust \xE9 transformar um valor de\
   \ data/hora em um formato de texto leg\xEDvel. Fazemos isso principalmente para\
   \ mostrar\u2026"
-lastmod: 2024-02-18 23:08:57.940371
+lastmod: 2024-02-19 22:05:05.413881
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string em Rust \xE9 transformar um valor de data/hora\
   \ em um formato de texto leg\xEDvel. Fazemos isso principalmente para mostrar\u2026"

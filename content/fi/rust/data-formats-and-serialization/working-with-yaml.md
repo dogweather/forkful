@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/rust/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:47.895478-07:00
 description: "Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa ty\xF6\
   skentely on YAML-muodossa olevan datan j\xE4sent\xE4misen ja tuottamisen k\xE4sittelemist\xE4\
   . YAML\u2026"
-lastmod: 2024-02-18 23:09:07.385685
+lastmod: 2024-02-19 22:05:15.272498
 model: gpt-4-0125-preview
 summary: "Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa ty\xF6skentely\
   \ on YAML-muodossa olevan datan j\xE4sent\xE4misen ja tuottamisen k\xE4sittelemist\xE4\

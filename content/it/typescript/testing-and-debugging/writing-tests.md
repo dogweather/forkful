@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/typescript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:18.405889-07:00
 description: "Scrivere test in TypeScript comporta la creazione di script automatizzati\
   \ per verificare la funzionalit\xE0 e la correttezza del proprio codice. I\u2026"
-lastmod: 2024-02-18 23:08:55.643622
+lastmod: 2024-02-19 22:05:02.240141
 model: gpt-4-0125-preview
 summary: "Scrivere test in TypeScript comporta la creazione di script automatizzati\
   \ per verificare la funzionalit\xE0 e la correttezza del proprio codice. I\u2026"

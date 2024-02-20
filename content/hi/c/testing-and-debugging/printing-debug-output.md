@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:47.586487-07:00
@@ -14,7 +12,7 @@ description: "\u0921\u093F\u092C\u0917 \u0906\u0909\u091F\u092A\u0941\u091F \u09
   \ \u0928\u093F\u0937\u094D\u092A\u093E\u0926\u0928 \u0915\u0947 \u0926\u094C\u0930\
   \u093E\u0928 \u0907\u0938\u0915\u0947 \u092A\u094D\u0930\u0935\u093E\u0939 \u0914\
   \u0930 \u0938\u094D\u0925\u093F\u0924\u093F \u0915\u094B\u2026"
-lastmod: 2024-02-18 23:09:04.216187
+lastmod: 2024-02-19 22:05:12.189531
 model: gpt-4-0125-preview
 summary: "\u0921\u093F\u092C\u0917 \u0906\u0909\u091F\u092A\u0941\u091F \u092A\u094D\
   \u0930\u093F\u0902\u091F\u093F\u0902\u0917 \u0915\u093E \u0905\u0930\u094D\u0925\

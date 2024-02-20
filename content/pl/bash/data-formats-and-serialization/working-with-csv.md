@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/bash/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:45.511560-07:00
 description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci rozdzielone\
   \ przecinkami) w Bashu polega na przetwarzaniu i manipulowaniu danymi tabelarycznymi\u2026"
-lastmod: 2024-02-18 23:08:49.807429
+lastmod: 2024-02-19 22:04:54.748212
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci rozdzielone\
   \ przecinkami) w Bashu polega na przetwarzaniu i manipulowaniu danymi tabelarycznymi\u2026"

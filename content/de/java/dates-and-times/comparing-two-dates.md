@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/java/comparing-two-dates/
 date: 2024-01-20 17:33:15.967202-07:00
 description: "Beim Vergleichen von zwei Daten wird gepr\xFCft, ob sie gleich sind,\
   \ oder welches fr\xFCher bzw. sp\xE4ter liegt. Entwickler nutzen das, um Zeitabl\xE4\
   ufe zu steuern,\u2026"
-lastmod: 2024-02-18 23:09:04.750280
+lastmod: 2024-02-19 22:05:12.700251
 model: gpt-4-1106-preview
 summary: "Beim Vergleichen von zwei Daten wird gepr\xFCft, ob sie gleich sind, oder\
   \ welches fr\xFCher bzw. sp\xE4ter liegt. Entwickler nutzen das, um Zeitabl\xE4\

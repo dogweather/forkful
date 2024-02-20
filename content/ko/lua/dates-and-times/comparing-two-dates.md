@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/comparing-two-dates/
 date: 2024-01-20 17:33:52.840619-07:00
 description: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC83\uC740\
   \ \uAC04\uB2E8\uD558\uAC8C \uC5B4\uB290 \uB0A0\uC9DC\uAC00 \uC774\uC804\uC774\uAC70\
@@ -10,7 +8,7 @@ description: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC83\uC
   \uC11C\uB97C \uC815\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC704\uD574 \uC774\
   \uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.435867
+lastmod: 2024-02-19 22:05:14.347872
 model: gpt-4-1106-preview
 summary: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC83\uC740 \uAC04\
   \uB2E8\uD558\uAC8C \uC5B4\uB290 \uB0A0\uC9DC\uAC00 \uC774\uC804\uC774\uAC70\uB098\

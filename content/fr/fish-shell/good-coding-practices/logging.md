@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/fish-shell/logging/
 date: 2024-01-26 01:02:48.266092-07:00
 description: "Le journalisation, c'est essentiellement consigner ce que fait votre\
   \ application - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:09.313097
+lastmod: 2024-02-19 22:05:16.981534
 model: gpt-4-1106-preview
 summary: "Le journalisation, c'est essentiellement consigner ce que fait votre application\
   \ - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"

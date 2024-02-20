@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/handling-errors/
 date: 2024-01-26 00:54:11.869434-07:00
 description: "Fehlerbehandlung ist die Art und Weise, wie Ihr Code Probleme bew\xE4\
   ltigt, die w\xE4hrend der Ausf\xFChrung auftreten - wie das Fangen eines unerwarteten\
   \ Balls,\u2026"
-lastmod: 2024-02-18 23:09:04.834424
+lastmod: 2024-02-19 22:05:12.780085
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung ist die Art und Weise, wie Ihr Code Probleme bew\xE4ltigt,\
   \ die w\xE4hrend der Ausf\xFChrung auftreten - wie das Fangen eines unerwarteten\

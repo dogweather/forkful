@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:55.368291-07:00
 description: "Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen\
   \ kirjainten muuntamista niiden pieniksi vastineiksi. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.929906
+lastmod: 2024-02-19 22:05:15.747702
 model: gpt-4-1106-preview
 summary: "Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen kirjainten\
   \ muuntamista niiden pieniksi vastineiksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"

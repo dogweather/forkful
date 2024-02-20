@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/kotlin/logging/
 date: 2024-01-26 01:07:52.139055-07:00
 description: "Logging, eller loggf\xF8ring, er i sin kjerne praksisen med \xE5 registrere\
   \ hendelser og data fra en programvareapplikasjon til en ekstern utgang, som en\
   \ fil\u2026"
-lastmod: 2024-02-18 23:08:53.858836
+lastmod: 2024-02-19 22:05:00.024152
 model: gpt-4-1106-preview
 summary: "Logging, eller loggf\xF8ring, er i sin kjerne praksisen med \xE5 registrere\
   \ hendelser og data fra en programvareapplikasjon til en ekstern utgang, som en\

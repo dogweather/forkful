@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/swift/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:05.648349-07:00
 description: "CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) ty\xF6\
   skentely sis\xE4lt\xE4\xE4 rakenteellisen datan j\xE4sennyksen ja tuottamisen teksti-\u2026"
-lastmod: 2024-02-18 23:09:08.014352
+lastmod: 2024-02-19 22:05:15.825026
 model: gpt-4-0125-preview
 summary: "CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) ty\xF6\
   skentely sis\xE4lt\xE4\xE4 rakenteellisen datan j\xE4sennyksen ja tuottamisen teksti-\u2026"

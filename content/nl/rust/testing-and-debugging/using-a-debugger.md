@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/rust/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:04.565659-07:00
 description: "Een debugger gebruiken is alsof je jezelf r\xF6ntgenvisie geeft om in\
   \ de uitvoering van je code te gluren. Programmeurs doen dit om bugs op te sporen,\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:01.624277
+lastmod: 2024-02-19 22:05:09.647079
 model: gpt-4-0125-preview
 summary: "Een debugger gebruiken is alsof je jezelf r\xF6ntgenvisie geeft om in de\
   \ uitvoering van je code te gluren. Programmeurs doen dit om bugs op te sporen,\

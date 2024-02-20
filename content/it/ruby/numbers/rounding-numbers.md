@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/rounding-numbers/
 date: 2024-01-26 03:47:38.120938-07:00
 description: "Arrotondare i numeri significa aggiustarli al numero intero pi\xF9 vicino\
   \ o a un grado di precisione specificato. I programmatori arrotondano i numeri per\u2026"
-lastmod: 2024-02-18 23:08:56.376202
+lastmod: 2024-02-19 22:05:03.016280
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa aggiustarli al numero intero pi\xF9 vicino\
   \ o a un grado di precisione specificato. I programmatori arrotondano i numeri per\u2026"

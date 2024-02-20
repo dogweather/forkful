@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:42.186291-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien,\
   \ joko yksitt\xE4isten (' ') tai kaksois (\" \"), poistamista k\xE4sitelt\xE4v\xE4\
   st\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.562141
+lastmod: 2024-02-19 22:05:15.412569
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien,\
   \ joko yksitt\xE4isten (' ') tai kaksois (\" \"), poistamista k\xE4sitelt\xE4v\xE4\

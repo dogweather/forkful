@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:32.546651-07:00
 description: "\xC5 laste ned en nettside i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 hente HTML-innholdet p\xE5 en nettside fra Internett. Programmerere utf\xF8\
   rer ofte\u2026"
-lastmod: 2024-02-18 23:08:53.726724
+lastmod: 2024-02-19 22:04:59.863388
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 hente HTML-innholdet p\xE5 en nettside fra Internett. Programmerere utf\xF8\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:12.555375-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat\
   \ inloggegevens (gebruikersnaam en wachtwoord) aan de verzoekheaders worden\u2026"
-lastmod: 2024-02-18 23:09:01.759083
+lastmod: 2024-02-19 22:05:09.777943
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat inloggegevens\
   \ (gebruikersnaam en wachtwoord) aan de verzoekheaders worden\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/swift/interpolating-a-string/
 date: 2024-01-20 17:51:37.669105-07:00
 description: "Interpola\xE7\xE3o de strings \xE9 o jeito de injetar valores dentro\
   \ de uma cadeia de caracteres. Programadores fazem isso para construir strings din\xE2\
   micas de\u2026"
-lastmod: 2024-02-18 23:08:58.477744
+lastmod: 2024-02-19 22:05:05.969797
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de strings \xE9 o jeito de injetar valores dentro de\
   \ uma cadeia de caracteres. Programadores fazem isso para construir strings din\xE2\

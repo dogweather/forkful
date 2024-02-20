@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/handling-errors/
 date: 2024-01-26 00:50:21.970698-07:00
 description: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem dar\
   \ errado e lidar com isso de maneira elegante. Por qu\xEA? Bom, isso mant\xE9m seu\
   \ script\u2026"
-lastmod: 2024-02-18 23:08:58.332812
+lastmod: 2024-02-19 22:05:05.815422
 model: gpt-4-1106-preview
 summary: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem dar errado\
   \ e lidar com isso de maneira elegante. Por qu\xEA? Bom, isso mant\xE9m seu script\u2026"

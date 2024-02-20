@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elm/generating-random-numbers/
 date: 2024-01-27 20:33:38.719502-07:00
 description: "Generowanie losowych liczb w Elm polega na tworzeniu nieprzewidywalnych\
   \ warto\u015Bci liczbowych, kt\xF3re s\u0105 niezb\u0119dne dla aplikacji takich\
   \ jak gry, symulacje i\u2026"
-lastmod: 2024-02-18 23:08:49.514970
+lastmod: 2024-02-19 22:04:54.447431
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w Elm polega na tworzeniu nieprzewidywalnych\
   \ warto\u015Bci liczbowych, kt\xF3re s\u0105 niezb\u0119dne dla aplikacji takich\

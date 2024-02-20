@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/ruby/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:21.983477-07:00
 description: "Merkkijonon alkukirjaimen suurentaminen ohjelmoinnissa viittaa yleens\xE4\
   \ ensimm\xE4isen merkin muuntamiseen suuraakkoseksi ja lopun pienaakkosiksi. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:08.162315
+lastmod: 2024-02-19 22:05:15.976330
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen ohjelmoinnissa viittaa yleens\xE4\
   \ ensimm\xE4isen merkin muuntamiseen suuraakkoseksi ja lopun pienaakkosiksi. Ohjelmoijat\u2026"

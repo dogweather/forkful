@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:44.363202-07:00
 description: "Modifier des fichiers sur place avec des lignes de commande est une\
   \ pratique qui consiste \xE0 apporter des modifications directement aux fichiers\
   \ depuis la\u2026"
-lastmod: 2024-02-18 23:09:09.301147
+lastmod: 2024-02-19 22:05:16.970435
 model: gpt-4-0125-preview
 summary: "Modifier des fichiers sur place avec des lignes de commande est une pratique\
   \ qui consiste \xE0 apporter des modifications directement aux fichiers depuis la\u2026"

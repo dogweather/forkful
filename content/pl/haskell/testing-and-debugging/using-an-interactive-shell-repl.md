@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:06.923329-07:00
 description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Haskellu\
   \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo. Jest to plac zabaw dla\
   \ szybkiego\u2026"
-lastmod: 2024-02-18 23:08:49.654992
+lastmod: 2024-02-19 22:04:54.588120
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Haskellu\
   \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo. Jest to plac zabaw dla\

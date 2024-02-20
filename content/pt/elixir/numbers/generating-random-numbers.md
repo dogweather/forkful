@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/generating-random-numbers/
 date: 2024-01-27 20:33:19.251096-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios em Elixir \xE9 uma tarefa de programa\xE7\
   \xE3o fundamental, vital para aplica\xE7\xF5es que necessitam de resultados imprevis\xED\
   veis, como na\u2026"
-lastmod: 2024-02-18 23:08:57.840000
+lastmod: 2024-02-19 22:05:05.309677
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em Elixir \xE9 uma tarefa de programa\xE7\
   \xE3o fundamental, vital para aplica\xE7\xF5es que necessitam de resultados imprevis\xED\

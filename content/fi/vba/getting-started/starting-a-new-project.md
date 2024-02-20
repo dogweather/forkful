@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/starting-a-new-project/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:19.327658-07:00
 description: "Uuden projektin aloittaminen Visual Basic for Applications (VBA) -ohjelmassa\
   \ sis\xE4lt\xE4\xE4 ymp\xE4rist\xF6n pystytt\xE4misen is\xE4nt\xE4sovelluksen, kuten\
   \ Excelin, sis\xE4ll\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.411553
+lastmod: 2024-02-19 22:05:15.296817
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Visual Basic for Applications (VBA) -ohjelmassa\
   \ sis\xE4lt\xE4\xE4 ymp\xE4rist\xF6n pystytt\xE4misen is\xE4nt\xE4sovelluksen, kuten\

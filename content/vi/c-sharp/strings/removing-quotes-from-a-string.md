@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c-sharp/removing-quotes-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:10.763693-07:00
@@ -8,7 +6,7 @@ description: "X\xF3a b\u1ECF c\xE1c d\u1EA5u ngo\u1EB7c k\xE9p (`\"`) ho\u1EB7c 
   u ngo\u1EB7c \u0111\u01A1n (`'`) kh\u1ECFi m\u1ED9t chu\u1ED7i trong C# ngh\u0129\
   a l\xE0 b\u1EA1n \u0111ang lo\u1EA1i b\u1ECF nh\u1EEFng k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7\
   c bao quanh v\u0103n b\u1EA3n c\u1EE7a b\u1EA1n.\u2026"
-lastmod: 2024-02-18 23:08:50.684521
+lastmod: 2024-02-19 22:04:55.814154
 model: gpt-4-0125-preview
 summary: "X\xF3a b\u1ECF c\xE1c d\u1EA5u ngo\u1EB7c k\xE9p (`\"`) ho\u1EB7c d\u1EA5\
   u ngo\u1EB7c \u0111\u01A1n (`'`) kh\u1ECFi m\u1ED9t chu\u1ED7i trong C# ngh\u0129\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/haskell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:20.178233-07:00
 description: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, manipulowanie\
   \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi.\
   \ Operacja\u2026"
-lastmod: 2024-02-18 23:08:49.651177
+lastmod: 2024-02-19 22:04:54.584174
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, manipulowanie\
   \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi.\

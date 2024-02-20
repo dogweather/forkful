@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/swift/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:37.556153-07:00
@@ -15,7 +13,7 @@ description: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D
   \u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442\
   \ \u0435\u0433\u043E \u0434\u043B\u044F \u0431\u044B\u0441\u0442\u0440\u043E\u0439\
   \u2026"
-lastmod: 2024-02-18 23:08:57.411147
+lastmod: 2024-02-19 22:05:04.665213
 model: gpt-4-0125-preview
 summary: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\
   \u0435 \u0438\u043D\u0442\u0435\u0440\u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439\

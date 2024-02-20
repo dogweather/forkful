@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:54.453417-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) offrent un moyen de rechercher,\
   \ de correspondre et de manipuler des cha\xEEnes de caract\xE8res \xE0 l'aide de\
   \ motifs d\xE9finis.\u2026"
-lastmod: 2024-02-18 23:09:09.343166
+lastmod: 2024-02-19 22:05:17.010869
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) offrent un moyen de rechercher,\
   \ de correspondre et de manipuler des cha\xEEnes de caract\xE8res \xE0 l'aide de\

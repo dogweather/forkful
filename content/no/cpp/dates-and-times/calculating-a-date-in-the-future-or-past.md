@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:34.860545-07:00
 description: "\xC5 beregne en dato i fremtiden eller fortiden betyr \xE5 finne ut\
   \ n\xF8yaktig hvilken dato det vil v\xE6re etter eller f\xF8r et visst tidsintervall.\
   \ Programmerere\u2026"
-lastmod: 2024-02-18 23:08:54.240203
+lastmod: 2024-02-19 22:05:00.386488
 model: gpt-4-1106-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden betyr \xE5 finne ut n\xF8\
   yaktig hvilken dato det vil v\xE6re etter eller f\xF8r et visst tidsintervall. Programmerere\u2026"

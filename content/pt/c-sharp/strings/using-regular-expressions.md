@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c-sharp/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:25.293542-07:00
 description: "Express\xF5es regulares (regex) em C# s\xE3o uma ferramenta poderosa\
   \ para correspond\xEAncia de padr\xF5es dentro de strings, permitindo que programadores\
   \ procurem,\u2026"
-lastmod: 2024-02-18 23:08:58.147608
+lastmod: 2024-02-19 22:05:05.615483
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em C# s\xE3o uma ferramenta poderosa para\
   \ correspond\xEAncia de padr\xF5es dentro de strings, permitindo que programadores\

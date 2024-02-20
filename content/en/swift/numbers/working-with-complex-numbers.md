@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/working-with-complex-numbers/
 date: 2024-01-25 02:59:36.400318-07:00
 description: "Complex numbers have a real part and an imaginary part (like 3 + 4i).\
   \ Programmers use them in Swift for tasks like signal processing, solving certain\
   \ math\u2026"
-lastmod: 2024-02-18 23:09:11.390759
+lastmod: 2024-02-19 22:05:18.852365
 model: gpt-4-1106-preview
 summary: "Complex numbers have a real part and an imaginary part (like 3 + 4i). Programmers\
   \ use them in Swift for tasks like signal processing, solving certain math\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/vba/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:40.783238-07:00
 description: "Wypisywanie informacji debugowych w Visual Basic for Applications (VBA)\
   \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby\u2026"
-lastmod: 2024-02-18 23:08:49.436899
+lastmod: 2024-02-19 22:04:54.361619
 model: gpt-4-0125-preview
 summary: "Wypisywanie informacji debugowych w Visual Basic for Applications (VBA)\
   \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby\u2026"

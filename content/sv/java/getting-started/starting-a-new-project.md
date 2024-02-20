@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/starting-a-new-project/
 date: 2024-01-20 18:03:45.831156-07:00
 description: "Att starta ett nytt projekt i Java \xE4r som att \xF6ppna en ny, blank\
   \ dagbok; potentialen \xE4r o\xE4ndlig. Programmerare startar nya projekt f\xF6\
   r att omvandla id\xE9er\u2026"
-lastmod: 2024-02-18 23:08:51.670078
+lastmod: 2024-02-19 22:04:56.996951
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt i Java \xE4r som att \xF6ppna en ny, blank dagbok;\
   \ potentialen \xE4r o\xE4ndlig. Programmerare startar nya projekt f\xF6r att omvandla\

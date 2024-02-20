@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/working-with-xml/
 date: 2024-01-26 04:32:43.292912-07:00
 description: "Lavorare con XML comporta il parsing, l'interrogazione e la manipolazione\
   \ di documenti XML con Java. I programmatori lo fanno per lo scambio di dati, la\u2026"
-lastmod: 2024-02-18 23:08:55.789351
+lastmod: 2024-02-19 22:05:02.394439
 model: gpt-4-0125-preview
 summary: "Lavorare con XML comporta il parsing, l'interrogazione e la manipolazione\
   \ di documenti XML con Java. I programmatori lo fanno per lo scambio di dati, la\u2026"

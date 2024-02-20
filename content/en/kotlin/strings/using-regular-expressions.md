@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/using-regular-expressions/
 date: 2024-02-03 19:03:08.406169-07:00
 description: "Regular expressions (regex) are a powerful tool for text processing,\
   \ allowing programmers to search, match, and manipulate strings with advanced pattern-\u2026"
-lastmod: 2024-02-18 23:09:11.003083
+lastmod: 2024-02-19 22:05:18.507292
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) are a powerful tool for text processing, allowing\
   \ programmers to search, match, and manipulate strings with advanced pattern-\u2026"

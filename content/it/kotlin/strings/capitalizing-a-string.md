@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/kotlin/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:37.640864-07:00
 description: "Capitalizzare una stringa nella programmazione comporta la conversione\
   \ del primo carattere della stringa in maiuscolo, se non lo \xE8 gi\xE0, il che\
   \ \xE8 utile per\u2026"
-lastmod: 2024-02-18 23:08:55.830281
+lastmod: 2024-02-19 22:05:02.437845
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa nella programmazione comporta la conversione del\
   \ primo carattere della stringa in maiuscolo, se non lo \xE8 gi\xE0, il che \xE8\

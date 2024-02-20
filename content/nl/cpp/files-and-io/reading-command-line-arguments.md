@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:31.377450-07:00
 description: "Commandoregelargumenten stellen gebruikers in staat het gedrag van een\
   \ programma te be\xEFnvloeden zonder de code te wijzigen. Programma's gebruiken\
   \ ze om\u2026"
-lastmod: 2024-02-18 23:09:02.199690
+lastmod: 2024-02-19 22:05:10.215592
 model: gpt-4-0125-preview
 summary: "Commandoregelargumenten stellen gebruikers in staat het gedrag van een programma\
   \ te be\xEFnvloeden zonder de code te wijzigen. Programma's gebruiken ze om\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:19.378194-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja string\xF3\
   w, \u017Ceby pasowa\u0142y do naszych danych lub by\u0142y praktyczne. Robimy to,\
   \ by oczy\u015Bci\u0107 tekst z\u2026"
-lastmod: 2024-02-18 23:08:49.462538
+lastmod: 2024-02-19 22:04:54.389433
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja string\xF3w, \u017C\
   eby pasowa\u0142y do naszych danych lub by\u0142y praktyczne. Robimy to, by oczy\u015B\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/arduino/extracting-substrings/
 date: 2024-01-20 17:45:08.864089-07:00
 description: "Estrarre sottosequenze significa prendere pezzi di una stringa. Lo facciamo\
   \ per manipolare dati in ingresso o semplicemente per isolare informazioni utili\u2026"
-lastmod: 2024-02-18 23:08:56.124367
+lastmod: 2024-02-19 22:05:02.748576
 model: gpt-4-1106-preview
 summary: "Estrarre sottosequenze significa prendere pezzi di una stringa. Lo facciamo\
   \ per manipolare dati in ingresso o semplicemente per isolare informazioni utili\u2026"

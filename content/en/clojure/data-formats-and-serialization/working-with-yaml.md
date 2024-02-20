@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/working-with-yaml/
 date: 2024-02-03 19:03:13.563232-07:00
 description: "YAML, a recursive acronym for \"YAML Ain't Markup Language,\" is a human-readable\
   \ data serialization format used for configuration files and data exchange\u2026"
-lastmod: 2024-02-18 23:09:10.743990
+lastmod: 2024-02-19 22:05:18.271257
 model: gpt-4-0125-preview
 summary: "YAML, a recursive acronym for \"YAML Ain't Markup Language,\" is a human-readable\
   \ data serialization format used for configuration files and data exchange\u2026"

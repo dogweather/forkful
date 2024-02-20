@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/ruby/refactoring/
 date: 2024-01-26 03:36:57.429410-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess yttre beteende. Programmerare refaktoriserar f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:52.303163
+lastmod: 2024-02-19 22:04:57.693903
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess yttre beteende. Programmerare refaktoriserar f\xF6r att\u2026"

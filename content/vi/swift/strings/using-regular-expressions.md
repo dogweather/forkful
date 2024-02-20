@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:04.076707-07:00
@@ -8,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, ho\u1EB7c regex, l\xE0 nh\u1EEFn
   \ m\u1EABu \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm k\u1EBFt h\u1EE3\
   p c\xE1c k\xFD t\u1EF1 trong chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\
   \ d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9nh s\u1EEDa,\u2026"
-lastmod: 2024-02-18 23:08:51.079046
+lastmod: 2024-02-19 22:04:56.289211
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, ho\u1EB7c regex, l\xE0 nh\u1EEFng m\u1EAB\
   u \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm k\u1EBFt h\u1EE3p c\xE1\

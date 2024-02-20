@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:07.190629-07:00
 description: "Un REPL, o Ciclo Leggi-Valuta-Stampa, ti permette di digitare codice\
   \ C# ed eseguirlo interattivamente. I programmatori lo utilizzano per esperimenti\u2026"
-lastmod: 2024-02-18 23:08:55.889409
+lastmod: 2024-02-19 22:05:02.499180
 model: gpt-4-0125-preview
 summary: "Un REPL, o Ciclo Leggi-Valuta-Stampa, ti permette di digitare codice C#\
   \ ed eseguirlo interattivamente. I programmatori lo utilizzano per esperimenti\u2026"

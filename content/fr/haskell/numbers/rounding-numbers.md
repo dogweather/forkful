@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/haskell/rounding-numbers/
 date: 2024-01-26 03:44:46.720954-07:00
 description: "Arrondir des nombres signifie les ajuster au plus proche entier ou \xE0\
   \ la d\xE9cimale sp\xE9cifi\xE9e. Les programmeurs arrondissent les nombres pour\
   \ contr\xF4ler la\u2026"
-lastmod: 2024-02-18 23:09:08.869469
+lastmod: 2024-02-19 22:05:16.566148
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie les ajuster au plus proche entier ou \xE0\
   \ la d\xE9cimale sp\xE9cifi\xE9e. Les programmeurs arrondissent les nombres pour\

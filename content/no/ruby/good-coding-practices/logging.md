@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/logging/
 date: 2024-01-26 01:08:31.288961-07:00
 description: "Logging i programmering er som \xE5 holde en dagbok for applikasjonen\
   \ din. Det er den systematiske opptegnelsen av hendelser, meldinger og datapunkter\
   \ som\u2026"
-lastmod: 2024-02-18 23:08:54.444541
+lastmod: 2024-02-19 22:05:00.607526
 model: gpt-4-1106-preview
 summary: "Logging i programmering er som \xE5 holde en dagbok for applikasjonen din.\
   \ Det er den systematiske opptegnelsen av hendelser, meldinger og datapunkter som\u2026"

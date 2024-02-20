@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/comparing-two-dates/
 date: 2024-01-20 17:34:12.191862-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat polega na ustaleniu, kt\xF3ra z nich jest\
   \ wcze\u015Bniejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015B\
   ci robi\u0105 to, aby zarz\u0105dza\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.402213
+lastmod: 2024-02-19 22:04:54.324177
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat polega na ustaleniu, kt\xF3ra z nich jest wcze\u015B\
   niejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015Bci robi\u0105\

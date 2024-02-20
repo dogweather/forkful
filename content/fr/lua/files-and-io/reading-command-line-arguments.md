@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/reading-command-line-arguments/
 date: 2024-01-20 17:56:23.737941-07:00
 description: "Lire les arguments de ligne de commande en Lua, c'est r\xE9cup\xE9rer\
   \ les infos tap\xE9es par l'utilisateur quand il lance votre script. Les programmeurs\
   \ font \xE7a\u2026"
-lastmod: 2024-02-18 23:09:08.986893
+lastmod: 2024-02-19 22:05:16.674152
 model: gpt-4-1106-preview
 summary: "Lire les arguments de ligne de commande en Lua, c'est r\xE9cup\xE9rer les\
   \ infos tap\xE9es par l'utilisateur quand il lance votre script. Les programmeurs\

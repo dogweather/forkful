@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:55.519514-07:00
 description: "Extrair substrings em Visual Basic for Applications (VBA) envolve isolar\
   \ partes espec\xEDficas de uma string com base em crit\xE9rios dados. Programadores\
   \ fazem\u2026"
-lastmod: 2024-02-18 23:08:57.961283
+lastmod: 2024-02-19 22:05:05.435430
 model: gpt-4-0125-preview
 summary: "Extrair substrings em Visual Basic for Applications (VBA) envolve isolar\
   \ partes espec\xEDficas de uma string com base em crit\xE9rios dados. Programadores\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/google-apps-script/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:43.615107-07:00
 description: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der\
   \ Eingabe, so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest\
   \ klein bleibt.\u2026"
-lastmod: 2024-02-18 23:09:04.393201
+lastmod: 2024-02-19 22:05:12.361451
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der Eingabe,\
   \ so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest klein\

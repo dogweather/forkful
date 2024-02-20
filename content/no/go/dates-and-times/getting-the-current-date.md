@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:49.178997-07:00
 description: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave\
   \ for programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse.\
   \ Det er vesentlig for\u2026"
-lastmod: 2024-02-18 23:08:53.446896
+lastmod: 2024-02-19 22:04:59.558625
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave for\
   \ programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse. Det\

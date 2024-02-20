@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:48.670653-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script (GAS) \u092E\u0947\u0902 \u0921\u0940\u092C\u09
   \u0930\u093F\u092A\u094D\u091F\u094D\u0938 \u0938\u0947 \u0924\u094D\u0930\u0941\
   \u091F\u093F\u092F\u094B\u0902 \u0915\u0940 \u092A\u0939\u091A\u093E\u0928 \u0915\
   \u0930\u0928\u0947 \u0914\u0930\u2026"
-lastmod: 2024-02-18 23:09:02.576714
+lastmod: 2024-02-19 22:05:10.578911
 model: gpt-4-0125-preview
 summary: "Google Apps Script (GAS) \u092E\u0947\u0902 \u0921\u0940\u092C\u0917\u093F\
   \u0902\u0917 \u0917\u0942\u0917\u0932 \u090F\u092A\u094D\u0938 \u0915\u094B \u0911\

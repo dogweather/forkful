@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:22.086549-07:00
@@ -14,7 +12,7 @@ description: "Google Apps Script \u092E\u0947\u0902 \u0924\u094D\u0930\u0941\u09
   \u0941\u092E\u093E\u0928 \u0932\u0917\u093E\u0928\u093E, \u092A\u0915\u0921\u093C\
   \u0928\u093E \u0914\u0930 \u0909\u0928\u0915\u093E \u0909\u0924\u094D\u0924\u0930\
   \u2026"
-lastmod: 2024-02-18 23:09:02.582552
+lastmod: 2024-02-19 22:05:10.584679
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 \u0924\u094D\u0930\u0941\u091F\u093F\
   \ \u0938\u0902\u092D\u093E\u0932\u0928\u093E \u092F\u0939 \u0939\u0948 \u0915\u093F\

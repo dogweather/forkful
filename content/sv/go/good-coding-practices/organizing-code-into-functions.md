@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/go/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:42.595825-07:00
 description: "Att organisera kod i funktioner i Go inneb\xE4r att man delar upp koden\
   \ i \xE5teranv\xE4ndbara, modul\xE4ra block som utf\xF6r specifika uppgifter. Detta\u2026"
-lastmod: 2024-02-18 23:08:51.339225
+lastmod: 2024-02-19 22:04:56.631770
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i Go inneb\xE4r att man delar upp koden\
   \ i \xE5teranv\xE4ndbara, modul\xE4ra block som utf\xF6r specifika uppgifter. Detta\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/swift/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:45.292662-07:00
 description: "Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als\
   \ leesbare tekst, met behulp van een karaktercodering zoals UTF-8. Programmeurs\
   \ doen\u2026"
-lastmod: 2024-02-18 23:09:02.249245
+lastmod: 2024-02-19 22:05:10.262757
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als leesbare\
   \ tekst, met behulp van een karaktercodering zoals UTF-8. Programmeurs doen\u2026"

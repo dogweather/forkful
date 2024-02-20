@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/clojure/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:54.195018-07:00
 description: "Een tekstbestand lezen betekent gegevens uit een bestand op uw schijf\
   \ in uw programma krijgen. Programmeurs doen dit om inhoud te verwerken of analyseren\u2026"
-lastmod: 2024-02-18 23:09:01.498946
+lastmod: 2024-02-19 22:05:09.526431
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent gegevens uit een bestand op uw schijf in\
   \ uw programma krijgen. Programmeurs doen dit om inhoud te verwerken of analyseren\u2026"

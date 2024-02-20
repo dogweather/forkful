@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:03:01.114697-07:00
 description: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u0915\u0947 \u0938\u093E\u0925\
   \ \u092C\u0947\u0938\u093F\u0915 \u092A\u094D\u0930\u092E\u093E\u0923\u0940\u0915\
@@ -11,7 +9,7 @@ description: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u0915\u0947 \u0938\u093
   \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0915\u093F\u092F\u093E \u091C\u093E\
   \u0924\u093E \u0939\u0948, \u0924\u093E\u0915\u093F \u0938\u0941\u0928\u093F\u0936\
   \u094D\u091A\u093F\u0924\u2026"
-lastmod: 2024-02-18 23:09:03.737460
+lastmod: 2024-02-19 22:05:11.723385
 model: gpt-4-1106-preview
 summary: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u0915\u0947 \u0938\u093E\u0925\
   \ \u092C\u0947\u0938\u093F\u0915 \u092A\u094D\u0930\u092E\u093E\u0923\u0940\u0915\

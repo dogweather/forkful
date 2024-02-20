@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:31.504079-07:00
 description: "Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe\
   \ te maken. We doen dit om berichten te construeren, output te genereren of dynamisch\u2026"
-lastmod: 2024-02-18 23:09:01.610328
+lastmod: 2024-02-19 22:05:09.633751
 model: gpt-4-0125-preview
 summary: "Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe te\
   \ maken. We doen dit om berichten te construeren, output te genereren of dynamisch\u2026"

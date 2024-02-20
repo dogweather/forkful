@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:30.305703-07:00
 description: "JSON (JavaScript Object Notation) is een lichtgewicht gegevensformaat\
   \ dat gemakkelijk door mensen te lezen en te schrijven is, en eenvoudig door machines\u2026"
-lastmod: 2024-02-18 23:09:02.115213
+lastmod: 2024-02-19 22:05:10.135503
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een lichtgewicht gegevensformaat dat\
   \ gemakkelijk door mensen te lezen en te schrijven is, en eenvoudig door machines\u2026"

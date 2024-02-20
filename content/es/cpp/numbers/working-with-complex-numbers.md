@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/cpp/working-with-complex-numbers/
 date: 2024-01-26 04:37:35.309560-07:00
 description: "Los n\xFAmeros complejos extienden los n\xFAmeros reales al a\xF1adir\
   \ una unidad imaginaria, representada como 'i', donde i\xB2 = -1. Los programadores\
   \ los utilizan\u2026"
-lastmod: 2024-02-18 23:09:10.302882
+lastmod: 2024-02-19 22:05:17.873868
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos extienden los n\xFAmeros reales al a\xF1adir una\
   \ unidad imaginaria, representada como 'i', donde i\xB2 = -1. Los programadores\

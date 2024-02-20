@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/javascript/organizing-code-into-functions/
 date: 2024-01-26 01:10:55.622364-07:00
 description: "Code in Funktionen zu organisieren unterteilt Aufgaben in wiederverwendbare\
   \ Teile, macht den Code sauberer und leichter wartbar. Wir tun dies, um\u2026"
-lastmod: 2024-02-18 23:09:05.284668
+lastmod: 2024-02-19 22:05:13.208992
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren unterteilt Aufgaben in wiederverwendbare\
   \ Teile, macht den Code sauberer und leichter wartbar. Wir tun dies, um\u2026"

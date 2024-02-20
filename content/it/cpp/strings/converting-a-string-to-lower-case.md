@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:00.222280-07:00
 description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabetici maiuscoli in minuscoli. Questo \xE8 utile per uniformare i dati,\u2026"
-lastmod: 2024-02-18 23:08:56.160721
+lastmod: 2024-02-19 22:05:02.788521
 model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabetici maiuscoli in minuscoli. Questo \xE8 utile per uniformare i dati,\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/cpp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:10.353005-07:00
 description: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere det\
   \ f\xF8rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5\
   \ bokstaver,\u2026"
-lastmod: 2024-02-18 23:08:54.167609
+lastmod: 2024-02-19 22:05:00.355174
 model: gpt-4-0125-preview
 summary: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere det f\xF8\
   rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5 bokstaver,\u2026"

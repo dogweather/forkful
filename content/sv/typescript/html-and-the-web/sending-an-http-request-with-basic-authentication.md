@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:03:00.738582-07:00
 description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
   \ inneb\xE4r att en klient skickar anv\xE4ndarnamn och l\xF6senord kodat i bas64-format\
   \ i en HTTP-header\u2026"
-lastmod: 2024-02-18 23:08:51.543180
+lastmod: 2024-02-19 22:04:56.857255
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
   r att en klient skickar anv\xE4ndarnamn och l\xF6senord kodat i bas64-format i en\

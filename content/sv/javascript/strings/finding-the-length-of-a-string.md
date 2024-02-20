@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:39.764549-07:00
 description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
   \ tecken i den. Programmerare beh\xF6ver detta f\xF6r att validera indata, manipulera\
   \ text eller bara f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.156151
+lastmod: 2024-02-19 22:04:57.526453
 model: gpt-4-1106-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
   \ tecken i den. Programmerare beh\xF6ver detta f\xF6r att validera indata, manipulera\

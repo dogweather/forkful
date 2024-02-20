@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/javascript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:46.602487-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pour\
   \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\
   \ la pr\xE9sence\u2026"
-lastmod: 2024-02-18 23:09:09.272029
+lastmod: 2024-02-19 22:05:16.935052
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pour\
   \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\

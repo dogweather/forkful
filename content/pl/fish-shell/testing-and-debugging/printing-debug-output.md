@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/printing-debug-output/
 date: 2024-01-20 17:52:38.833780-07:00
 description: "Drukowanie danych diagnostycznych to wy\u015Bwietlanie informacji, kt\xF3\
   re pomagaj\u0105 zrozumie\u0107, co si\u0119 dzieje w skrypcie. Programi\u015Bci\
   \ robi\u0105 to, \u017Ceby szybko\u2026"
-lastmod: 2024-02-18 23:08:50.039246
+lastmod: 2024-02-19 22:04:55.018593
 model: gpt-4-1106-preview
 summary: "Drukowanie danych diagnostycznych to wy\u015Bwietlanie informacji, kt\xF3\
   re pomagaj\u0105 zrozumie\u0107, co si\u0119 dzieje w skrypcie. Programi\u015Bci\

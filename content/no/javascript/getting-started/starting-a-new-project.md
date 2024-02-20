@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/starting-a-new-project/
 date: 2024-01-20 18:03:52.139592-07:00
 description: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kodebase.\
   \ Programmerere gj\xF8r det for \xE5 skape nye applikasjoner, l\xF8se problemer\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:54.309582
+lastmod: 2024-02-19 22:05:00.460634
 model: gpt-4-1106-preview
 summary: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kodebase.\
   \ Programmerere gj\xF8r det for \xE5 skape nye applikasjoner, l\xF8se problemer\

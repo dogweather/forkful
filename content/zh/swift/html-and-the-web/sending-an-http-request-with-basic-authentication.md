@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/swift/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:53.456488-07:00
 description: "\u6211\u4EEC\u7ECF\u5E38\u9700\u8981\u8BA9\u5E94\u7528\u7A0B\u5E8F\u901A\
   \u8FC7\u7F51\u7EDC\u4E0E\u670D\u52A1\u5668\u4EA4\u4E92\uFF0C\u53D1\u9001HTTP\u8BF7\
@@ -9,7 +7,7 @@ description: "\u6211\u4EEC\u7ECF\u5E38\u9700\u8981\u8BA9\u5E94\u7528\u7A0B\u5E8F
   \u5730\u9A8C\u8BC1\u7528\u6237\u8EAB\u4EFD\uFF0C\u786E\u4FDD\u6570\u636E\u7684\u5B89\
   \u5168\u4EA4\u6362\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.441965
+lastmod: 2024-02-19 22:05:07.216789
 model: gpt-4-1106-preview
 summary: "\u6211\u4EEC\u7ECF\u5E38\u9700\u8981\u8BA9\u5E94\u7528\u7A0B\u5E8F\u901A\
   \u8FC7\u7F51\u7EDC\u4E0E\u670D\u52A1\u5668\u4EA4\u4E92\uFF0C\u53D1\u9001HTTP\u8BF7\

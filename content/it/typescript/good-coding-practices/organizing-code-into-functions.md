@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/organizing-code-into-functions/
 date: 2024-01-26 01:16:20.914380-07:00
 description: "Organizzare il codice in funzioni significa suddividere il proprio codice\
   \ in blocchi riutilizzabili e modulari. Lo facciamo per mantenere le cose DRY\u2026"
-lastmod: 2024-02-18 23:08:55.645481
+lastmod: 2024-02-19 22:05:02.242142
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni significa suddividere il proprio codice\
   \ in blocchi riutilizzabili e modulari. Lo facciamo per mantenere le cose DRY\u2026"

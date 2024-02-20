@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:55.639047-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyeliminowanie\
   \ wszelkich znak\xF3w cudzys\u0142owu \u2014 pojedynczych (' '), podw\xF3jnych (\"\
   \ \") lub obu \u2014 z danych\u2026"
-lastmod: 2024-02-18 23:08:49.466156
+lastmod: 2024-02-19 22:04:54.393345
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyeliminowanie\
   \ wszelkich znak\xF3w cudzys\u0142owu \u2014 pojedynczych (' '), podw\xF3jnych (\"\

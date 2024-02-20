@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/bash/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:07.062652-07:00
 description: "\xC5 skrive en tekstfil i Bash lar deg automatisere lagring av data,\
   \ logging, konfigurasjonsinnstillinger og mer. Det er en grunnleggende ferdighet\
   \ for\u2026"
-lastmod: 2024-02-18 23:08:54.075868
+lastmod: 2024-02-19 22:05:00.259682
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Bash lar deg automatisere lagring av data, logging,\
   \ konfigurasjonsinnstillinger og mer. Det er en grunnleggende ferdighet for\u2026"

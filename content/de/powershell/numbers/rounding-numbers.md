@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/powershell/rounding-numbers/
 date: 2024-01-26 03:46:07.469761-07:00
 description: "Das Runden von Zahlen bedeutet, einen Wert auf die n\xE4chste ganze\
   \ Zahl oder die angegebene Dezimalstelle zu justieren. Programmierer runden Zahlen,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:05.093700
+lastmod: 2024-02-19 22:05:13.028354
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, einen Wert auf die n\xE4chste ganze Zahl\
   \ oder die angegebene Dezimalstelle zu justieren. Programmierer runden Zahlen, um\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elm/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:38.717000-07:00
@@ -14,7 +12,7 @@ description: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902
   \u0928 \u0915\u0947 \u0932\u093F\u090F \u0915\u093F\u092F\u093E \u091C\u093E\u0924\
   \u093E \u0939\u0948\u0964 Elm \u092E\u0947\u0902, \u0905\u0928\u094D\u092F \u092D\
   \u093E\u0937\u093E\u0913\u0902\u2026"
-lastmod: 2024-02-18 23:09:03.173590
+lastmod: 2024-02-19 22:05:11.169321
 model: gpt-4-0125-preview
 summary: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
   \ \u092E\u0947\u0902 \u0928\u093F\u092F\u092E\u093F\u0924 \u0905\u092D\u093F\u0935\

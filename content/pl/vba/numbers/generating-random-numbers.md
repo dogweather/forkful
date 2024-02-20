@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/generating-random-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:43.855562-07:00
 description: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
   liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\
   \ takimi jak\u2026"
-lastmod: 2024-02-18 23:08:49.429347
+lastmod: 2024-02-19 22:04:54.353578
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
   liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\

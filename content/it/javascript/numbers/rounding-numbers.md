@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/javascript/rounding-numbers/
 date: 2024-01-26 03:45:48.591831-07:00
 description: "L'arrotondamento consiste nel tagliare il rumore dopo un certo punto\
   \ in un numero. I programmatori arrotondano per controllare la precisione, gestire\
   \ la\u2026"
-lastmod: 2024-02-18 23:08:56.247814
+lastmod: 2024-02-19 22:05:02.881140
 model: gpt-4-0125-preview
 summary: "L'arrotondamento consiste nel tagliare il rumore dopo un certo punto in\
   \ un numero. I programmatori arrotondano per controllare la precisione, gestire\

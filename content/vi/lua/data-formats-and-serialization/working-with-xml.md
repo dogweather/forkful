@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:18.913976-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED
   \ c\xFA ph\xE1p v\xE0 thao t\xE1c v\u1EDBi t\xE0i li\u1EC7u XML s\u1EED d\u1EE5\
   ng m\xE3 l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0\
   y \u0111\u1EC3 \u0111\u1ECDc, vi\u1EBFt v\xE0 s\u1EEDa \u0111\u1ED5i\u2026"
-lastmod: 2024-02-18 23:08:50.863495
+lastmod: 2024-02-19 22:04:56.041014
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p v\xE0 thao t\xE1c v\u1EDBi t\xE0i li\u1EC7u XML s\u1EED d\u1EE5ng m\xE3\

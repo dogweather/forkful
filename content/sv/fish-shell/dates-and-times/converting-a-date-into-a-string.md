@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/fish-shell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:25.780034-07:00
 description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datumdata\
   \ till textformat. Programmerare g\xF6r detta f\xF6r utskrift, lagring eller\u2026"
-lastmod: 2024-02-18 23:08:52.218796
+lastmod: 2024-02-19 22:04:57.598236
 model: gpt-4-1106-preview
 summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datumdata\
   \ till textformat. Programmerare g\xF6r detta f\xF6r utskrift, lagring eller\u2026"

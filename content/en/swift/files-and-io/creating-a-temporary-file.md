@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/creating-a-temporary-file/
 date: 2024-01-20 17:41:10.668868-07:00
 description: "Creating a temporary file is making a short-lived file for storing data\
   \ that\u2019s not needed long-term. Programmers do this to handle data that\u2019\
   s only\u2026"
-lastmod: 2024-02-18 23:09:11.415534
+lastmod: 2024-02-19 22:05:18.875081
 model: gpt-4-1106-preview
 summary: "Creating a temporary file is making a short-lived file for storing data\
   \ that\u2019s not needed long-term. Programmers do this to handle data that\u2019\

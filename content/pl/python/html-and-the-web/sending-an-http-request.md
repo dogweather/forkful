@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/python/sending-an-http-request/
 date: 2024-01-20 18:00:17.565958-07:00
 description: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol) to\
   \ spos\xF3b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami\
   \ w Internecie. Robimy to, \u017Ceby pobra\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.219462
+lastmod: 2024-02-19 22:04:54.130520
 model: gpt-4-1106-preview
 summary: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol) to spos\xF3\
   b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami w Internecie.\

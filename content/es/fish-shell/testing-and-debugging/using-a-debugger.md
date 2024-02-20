@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/using-a-debugger/
 date: 2024-01-26 03:48:34.192288-07:00
 description: "Usar un depurador se trata de aplastar bugs, esos desagradables y consumidores\
   \ de tiempo errores en tu c\xF3digo. Los programadores depuran porque quieren\u2026"
-lastmod: 2024-02-18 23:09:10.458155
+lastmod: 2024-02-19 22:05:18.010860
 model: gpt-4-0125-preview
 summary: "Usar un depurador se trata de aplastar bugs, esos desagradables y consumidores\
   \ de tiempo errores en tu c\xF3digo. Los programadores depuran porque quieren\u2026"

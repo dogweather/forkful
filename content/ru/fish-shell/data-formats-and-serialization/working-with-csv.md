@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/fish-shell/working-with-csv/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:23.744006-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 CSV (\u0437\u043D\u043
   \u0438 \u0432 \u0432\u0438\u0434\u0435 \u0441\u0442\u0440\u043E\u043A \u0438 \u0441\
   \u0442\u043E\u043B\u0431\u0446\u043E\u0432 \u0432 \u0442\u0435\u043A\u0441\u0442\
   \u043E\u0432\u043E\u043C\u2026"
-lastmod: 2024-02-18 23:08:57.540310
+lastmod: 2024-02-19 22:05:04.872321
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 CSV (\u0437\u043D\u0430\u0447\
   \u0435\u043D\u0438\u044F, \u0440\u0430\u0437\u0434\u0435\u043B\u0451\u043D\u043D\

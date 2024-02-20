@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:24.413032-07:00
 description: "En interaktiv skal, \xE4ven k\xE4nd som en Read-Eval-Print Loop (REPL),\
   \ m\xF6jligg\xF6r f\xF6r programmerare att skriva in uttryck eller kod och omedelbart\
   \ se resultat,\u2026"
-lastmod: 2024-02-18 23:08:52.252202
+lastmod: 2024-02-19 22:04:57.636856
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, \xE4ven k\xE4nd som en Read-Eval-Print Loop (REPL),\
   \ m\xF6jligg\xF6r f\xF6r programmerare att skriva in uttryck eller kod och omedelbart\

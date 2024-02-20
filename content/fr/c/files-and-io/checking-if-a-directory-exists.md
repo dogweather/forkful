@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:36.273929-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le\
   \ syst\xE8me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0\
   \ un r\xE9pertoire. Les\u2026"
-lastmod: 2024-02-18 23:09:09.373197
+lastmod: 2024-02-19 22:05:17.038568
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le syst\xE8\
   me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0 un r\xE9\

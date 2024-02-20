@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/parsing-html/
 date: 2024-01-20 15:34:10.927158-07:00
 description: "Parsear HTML es el proceso de convertir texto HTML en una estructura\
   \ de datos comprensible y manipulable por programas. Los programadores lo hacen\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:09.700501
+lastmod: 2024-02-19 22:05:17.328487
 summary: "Parsear HTML es el proceso de convertir texto HTML en una estructura de\
   \ datos comprensible y manipulable por programas. Los programadores lo hacen para\u2026"
 title: "An\xE1lisis de HTML"

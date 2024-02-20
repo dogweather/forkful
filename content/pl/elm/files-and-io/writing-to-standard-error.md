@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elm/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:09.547436-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na przekierowywaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnozy odseparowane od g\u0142\xF3wnego\
   \ wyj\u015Bcia programu, kt\xF3re\u2026"
-lastmod: 2024-02-18 23:08:49.534626
+lastmod: 2024-02-19 22:04:54.468973
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na przekierowywaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnozy odseparowane od g\u0142\xF3wnego\

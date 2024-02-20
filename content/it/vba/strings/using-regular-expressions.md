@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:46.993584-07:00
 description: "Le espressioni regolari (regex) in Visual Basic for Applications (VBA)\
   \ offrono un modo potente per cercare, corrispondere e manipolare stringhe. I\u2026"
-lastmod: 2024-02-18 23:08:55.712096
+lastmod: 2024-02-19 22:05:02.312686
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in Visual Basic for Applications (VBA) offrono\
   \ un modo potente per cercare, corrispondere e manipolare stringhe. I\u2026"

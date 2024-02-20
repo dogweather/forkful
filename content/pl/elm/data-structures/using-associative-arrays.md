@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elm/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:06.584128-07:00
 description: "Tablice asocjacyjne, czy jak m\xF3wi na nie Elm, S\u0142owniki, mapuj\u0105\
   \ klucze do warto\u015Bci w spos\xF3b, kt\xF3ry czyni wyszukiwanie, dodawanie i\
   \ usuwanie warto\u015Bci bardzo\u2026"
-lastmod: 2024-02-18 23:08:49.512203
+lastmod: 2024-02-19 22:04:54.444352
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czy jak m\xF3wi na nie Elm, S\u0142owniki, mapuj\u0105\
   \ klucze do warto\u015Bci w spos\xF3b, kt\xF3ry czyni wyszukiwanie, dodawanie i\

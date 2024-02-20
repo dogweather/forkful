@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/lua/reading-a-text-file/
 date: 2024-01-20 17:54:48.580955-07:00
 description: "Lire un fichier texte, c'est extraire son contenu pour que votre programme\
   \ Lua puisse l'utiliser. On fait \xE7a pour des tas de raisons \u2013 charger des\u2026"
-lastmod: 2024-02-18 23:09:08.989083
+lastmod: 2024-02-19 22:05:16.676337
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour que votre programme\
   \ Lua puisse l'utiliser. On fait \xE7a pour des tas de raisons \u2013 charger des\u2026"

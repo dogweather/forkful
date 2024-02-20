@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/bash/refactoring/
 date: 2024-01-26 01:16:31.369124-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\
   \ utan att \xE4ndra dess externa beteende. Det \xE4r en vital metod f\xF6r att reducera\u2026"
-lastmod: 2024-02-18 23:08:51.969350
+lastmod: 2024-02-19 22:04:57.321283
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
   \ att \xE4ndra dess externa beteende. Det \xE4r en vital metod f\xF6r att reducera\u2026"

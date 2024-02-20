@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/cpp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:08.478122-07:00
 description: "Escribir pruebas en C++ implica crear programas peque\xF1os y aut\xF3\
   nomos que verifican autom\xE1ticamente el comportamiento de secciones de tu base\
   \ de c\xF3digo.\u2026"
-lastmod: 2024-02-18 23:09:10.314143
+lastmod: 2024-02-19 22:05:17.883298
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en C++ implica crear programas peque\xF1os y aut\xF3nomos\
   \ que verifican autom\xE1ticamente el comportamiento de secciones de tu base de\

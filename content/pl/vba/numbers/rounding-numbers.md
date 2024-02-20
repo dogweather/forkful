@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:24.396673-07:00
 description: "Zaokr\u0105glanie liczb w programowaniu polega na przybli\u017Ceniu\
   \ liczby do najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby\
   \ miejsc dziesi\u0119tnych.\u2026"
-lastmod: 2024-02-18 23:08:49.428312
+lastmod: 2024-02-19 22:04:54.352455
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb w programowaniu polega na przybli\u017Ceniu liczby\
   \ do najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc\

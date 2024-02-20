@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:59.996446-07:00
@@ -13,7 +11,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC
   \uB294 \uB370 \uC790\uC8FC \uC0AC\uC6A9\uB429\uB2C8\uB2E4. \uC608\uB97C \uB4E4\uC5B4\
   \ \uC81C\uBAA9\uC774\uB098 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uD45C\uC2DC \uC900\
   \uBE44\uC5D0 \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.391700
+lastmod: 2024-02-19 22:05:14.306082
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C\
   \ \uBCC0\uACBD\uD558\uACE0 \uB098\uBA38\uC9C0\uB294 \uC18C\uBB38\uC790\uB85C \uC720\

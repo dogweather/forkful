@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elixir/refactoring/
 date: 2024-01-26 01:17:36.174365-07:00
 description: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
   \ senza modificarne il comportamento esterno, mirato a migliorare attributi non\u2026"
-lastmod: 2024-02-18 23:08:55.608440
+lastmod: 2024-02-19 22:05:02.202293
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
   \ senza modificarne il comportamento esterno, mirato a migliorare attributi non\u2026"

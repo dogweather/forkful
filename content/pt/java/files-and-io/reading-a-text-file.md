@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/reading-a-text-file/
 date: 2024-01-20 17:54:33.548968-07:00
 description: "Ler um arquivo de texto em Java \xE9 pegar a informa\xE7\xE3o armazenada\
   \ num arquivo no seu computador e us\xE1-la dentro do seu programa. Fazemos isso\
   \ porque, \xE0s\u2026"
-lastmod: 2024-02-18 23:08:58.036109
+lastmod: 2024-02-19 22:05:05.513152
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em Java \xE9 pegar a informa\xE7\xE3o armazenada\
   \ num arquivo no seu computador e us\xE1-la dentro do seu programa. Fazemos isso\

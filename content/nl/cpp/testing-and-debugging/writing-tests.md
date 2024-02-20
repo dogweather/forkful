@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:39.406062-07:00
 description: "Het schrijven van tests controleert of je code doet wat het moet doen,\
   \ en vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en\
   \ om\u2026"
-lastmod: 2024-02-18 23:09:02.186894
+lastmod: 2024-02-19 22:05:10.203288
 model: gpt-4-0125-preview
 summary: "Het schrijven van tests controleert of je code doet wat het moet doen, en\
   \ vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en om\u2026"

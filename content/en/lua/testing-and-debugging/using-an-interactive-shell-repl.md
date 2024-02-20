@@ -1,12 +1,10 @@
 ---
-aliases:
-- /en/lua/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-30, dogweather, reviewed and added links
 date: 2024-01-25 03:39:46.253437-07:00
 description: "REPL stands for Read-Eval-Print Loop, an interactive environment where\
   \ you quickly test code. Programmers use it for experimenting, debugging, and\u2026"
-lastmod: 2024-02-18 23:09:11.180185
+lastmod: 2024-02-19 22:05:18.668733
 model: gpt-4-1106-preview
 summary: "REPL stands for Read-Eval-Print Loop, an interactive environment where you\
   \ quickly test code. Programmers use it for experimenting, debugging, and\u2026"

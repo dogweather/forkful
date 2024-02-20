@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:16.938325-07:00
@@ -10,7 +8,7 @@ description: "\u5728Ruby\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u
   \u5728\u3002\u8FD9\u5BF9\u4E8E\u907F\u514D\u6587\u4EF6\u5904\u7406\u9519\u8BEF\u548C\
   \u786E\u4FDD\u6587\u4EF6\u7CFB\u7EDF\u64CD\u4F5C\u7684\u53EF\u9760\u6027\u81F3\u5173\
   \u91CD\u8981\u3002"
-lastmod: 2024-02-18 23:08:59.626498
+lastmod: 2024-02-19 22:05:07.452448
 model: gpt-4-0125-preview
 summary: "\u5728Ruby\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u5141\u8BB8\
   \u7A0B\u5E8F\u5458\u5728\u6267\u884C\u8BFB\u53D6\u6587\u4EF6\u6216\u521B\u5EFA\u65B0\

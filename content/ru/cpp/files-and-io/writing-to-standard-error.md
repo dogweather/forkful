@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/cpp/writing-to-standard-error/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:58.196406-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u04
   \ \u0432 \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0439 \u043F\
   \u043E\u0442\u043E\u043A, \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0439\
   \ \u043E\u0442\u2026"
-lastmod: 2024-02-18 23:08:57.378211
+lastmod: 2024-02-19 22:05:04.612985
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u043D\u0434\
   \u0430\u0440\u0442\u043D\u044B\u0439 \u043F\u043E\u0442\u043E\u043A \u043E\u0448\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/typescript/logging/
 date: 2024-01-26 01:08:57.899332-07:00
 description: "Logging \xE9 o processo de registrar eventos, erros e outras informa\xE7\
   \xF5es significativas durante a execu\xE7\xE3o de um programa em um meio externo,\
   \ frequentemente\u2026"
-lastmod: 2024-02-18 23:08:57.891401
+lastmod: 2024-02-19 22:05:05.364115
 model: gpt-4-1106-preview
 summary: "Logging \xE9 o processo de registrar eventos, erros e outras informa\xE7\
   \xF5es significativas durante a execu\xE7\xE3o de um programa em um meio externo,\

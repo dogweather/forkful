@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/ruby/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:21.760885-07:00
 description: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea en\
   \ Ruby se trata de realizar operaciones comunes con archivos directamente desde\
   \ tu terminal\u2026"
-lastmod: 2024-02-18 23:09:10.546715
+lastmod: 2024-02-19 22:05:18.093886
 model: gpt-4-0125-preview
 summary: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea en Ruby\
   \ se trata de realizar operaciones comunes con archivos directamente desde tu terminal\u2026"

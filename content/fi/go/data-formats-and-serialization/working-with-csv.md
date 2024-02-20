@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/go/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:52.730906-07:00
 description: "Pilkuin erotetut arvot (CSV, Comma-Separated Values) ovat kaikkialla\
   \ k\xE4ytetty tietojen vaihdon muoto yksinkertaisuutensa ja helpon ohjelmointikielten,\u2026"
-lastmod: 2024-02-18 23:09:07.111341
+lastmod: 2024-02-19 22:05:14.990324
 model: gpt-4-0125-preview
 summary: "Pilkuin erotetut arvot (CSV, Comma-Separated Values) ovat kaikkialla k\xE4\
   ytetty tietojen vaihdon muoto yksinkertaisuutensa ja helpon ohjelmointikielten,\u2026"

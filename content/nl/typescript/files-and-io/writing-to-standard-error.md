@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:21.568948-07:00
 description: "Schrijven naar standaard fout (`stderr`) stuurt foutmeldingen en diagnostische\
   \ berichten apart van standaard uitvoer (`stdout`). Programmeurs doen dit om\u2026"
-lastmod: 2024-02-18 23:09:01.591050
+lastmod: 2024-02-19 22:05:09.615257
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaard fout (`stderr`) stuurt foutmeldingen en diagnostische\
   \ berichten apart van standaard uitvoer (`stdout`). Programmeurs doen dit om\u2026"

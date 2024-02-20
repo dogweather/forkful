@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:04.727161-07:00
@@ -14,7 +12,7 @@ description: "\u5728Google Apps Script\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5
   \uFF0C\u7531\u4E8ECSV\u4F5C\u4E3A\u4E00\u79CD\u7B80\u5355\u7684\u57FA\u4E8E\u6587\
   \u672C\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u5DF2\u88AB\u5E7F\u6CDB\u91C7\
   \u7528\u3002"
-lastmod: 2024-02-18 23:08:58.772933
+lastmod: 2024-02-19 22:05:06.310491
 model: gpt-4-0125-preview
 summary: "\u5728Google Apps Script\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\
   \u503C\uFF09\u6587\u4EF6\u6D89\u53CA\u8BFB\u53D6\u3001\u4FEE\u6539\u548C\u5199\u5165\

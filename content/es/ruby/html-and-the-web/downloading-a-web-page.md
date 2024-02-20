@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/ruby/downloading-a-web-page/
 date: 2024-01-20 17:44:57.074608-07:00
 description: "Descargar una p\xE1gina web significa traer su contenido a tu equipo\
   \ local. Programadores hacen esto para analizar la informaci\xF3n, probar la conectividad\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:10.551141
+lastmod: 2024-02-19 22:05:18.097796
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa traer su contenido a tu equipo local.\
   \ Programadores hacen esto para analizar la informaci\xF3n, probar la conectividad\

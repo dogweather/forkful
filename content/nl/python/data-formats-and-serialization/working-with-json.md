@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:41.234141-07:00
 description: "JSON (JavaScript Object Notation) is een alomtegenwoordig data-uitwisselingsformaat\
   \ op het web. Programmeurs gebruiken JSON om gemakkelijk gegevens tussen\u2026"
-lastmod: 2024-02-18 23:09:01.456886
+lastmod: 2024-02-19 22:05:09.486297
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een alomtegenwoordig data-uitwisselingsformaat\
   \ op het web. Programmeurs gebruiken JSON om gemakkelijk gegevens tussen\u2026"

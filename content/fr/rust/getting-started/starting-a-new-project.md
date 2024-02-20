@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/starting-a-new-project/
 date: 2024-01-20 18:04:14.131954-07:00
 description: "D\xE9marrer un nouveau projet, c'est comme ouvrir un livre vierge :\
   \ vous avez une toile in\xE9dite pour \xE9crire votre code. Les programmeurs lancent\
   \ de nouveaux\u2026"
-lastmod: 2024-02-18 23:09:08.529633
+lastmod: 2024-02-19 22:05:16.310809
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est comme ouvrir un livre vierge : vous\
   \ avez une toile in\xE9dite pour \xE9crire votre code. Les programmeurs lancent\

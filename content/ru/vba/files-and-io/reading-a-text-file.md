@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:39.812273-07:00
@@ -13,7 +11,7 @@ description: "\u0427\u0442\u0435\u043D\u0438\u0435 \u0442\u0435\u043A\u0441\u044
   \u043E \u0442\u0435\u043A\u0441\u0442\u043E\u0432\u043E\u0433\u043E \u0444\u0430\
   \u0439\u043B\u0430 \u0438\u0437 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\
   \u0438\u044F\u2026"
-lastmod: 2024-02-18 23:08:56.808303
+lastmod: 2024-02-19 22:05:03.692904
 model: gpt-4-0125-preview
 summary: "\u0427\u0442\u0435\u043D\u0438\u0435 \u0442\u0435\u043A\u0441\u0442\u043E\
   \u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430 \u0432 Visual Basic for\

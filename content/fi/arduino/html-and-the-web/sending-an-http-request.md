@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/sending-an-http-request/
 date: 2024-01-20 17:58:49.102790-07:00
 description: "HTTP-pyynt\xF6 on tapa hakea tai l\xE4hett\xE4\xE4 tietoja verkon yli\
   \ palvelimelle. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 tietojen synkronointiin,\
   \ API-kutsuihin ja\u2026"
-lastmod: 2024-02-18 23:09:07.896781
+lastmod: 2024-02-19 22:05:15.717352
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 on tapa hakea tai l\xE4hett\xE4\xE4 tietoja verkon yli palvelimelle.\
   \ Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 tietojen synkronointiin, API-kutsuihin\

@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/elm/concatenating-strings/
 date: 2024-01-20 17:34:34.976016-07:00
 description: (
-lastmod: 2024-02-18 23:09:00.178589
+lastmod: 2024-02-19 22:05:08.156460
 model: gpt-4-1106-preview
 summary: (
 title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\

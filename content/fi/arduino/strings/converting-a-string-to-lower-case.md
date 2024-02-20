@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/arduino/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:52.192906-07:00
 description: "Muuttaminen merkkijonosta pieniksi kirjaimiksi muuntaa kaikki kirjaimet\
   \ pieniksi. T\xE4m\xE4 auttaa vertailemaan ja k\xE4sittelem\xE4\xE4n merkkijonoja\u2026"
-lastmod: 2024-02-18 23:09:07.886272
+lastmod: 2024-02-19 22:05:15.707652
 model: gpt-4-1106-preview
 summary: "Muuttaminen merkkijonosta pieniksi kirjaimiksi muuntaa kaikki kirjaimet\
   \ pieniksi. T\xE4m\xE4 auttaa vertailemaan ja k\xE4sittelem\xE4\xE4n merkkijonoja\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/google-apps-script/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:08.183419-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u043A\u0440\u0443\u0433\u043B\u0435\u043D\u0438\u0435 \u044
   \ \u0434\u043E \u0435\u0433\u043E \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\
   \u0433\u043E \u0446\u0435\u043B\u043E\u0433\u043E \u0438\u043B\u0438 \u0434\u043E\
   \ \u0437\u0430\u0434\u0430\u043D\u043D\u043E\u0433\u043E\u2026"
-lastmod: 2024-02-18 23:08:56.474675
+lastmod: 2024-02-19 22:05:03.160106
 model: gpt-4-0125-preview
 summary: "\u041E\u043A\u0440\u0443\u0433\u043B\u0435\u043D\u0438\u0435 \u0447\u0438\
   \u0441\u0435\u043B \u2014 \u0444\u0443\u043D\u0434\u0430\u043C\u0435\u043D\u0442\

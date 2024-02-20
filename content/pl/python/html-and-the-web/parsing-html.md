@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/python/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:50.370614-07:00
 description: "Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej\
   \ w celu wyodr\u0119bnienia okre\u015Blonych informacji lub element\xF3w, co jest\
   \ powszechnym\u2026"
-lastmod: 2024-02-18 23:08:49.220547
+lastmod: 2024-02-19 22:04:54.131547
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej w\
   \ celu wyodr\u0119bnienia okre\u015Blonych informacji lub element\xF3w, co jest\

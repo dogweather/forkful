@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/downloading-a-web-page/
 date: 2024-01-20 17:44:19.688748-07:00
 description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\
   \uB137\uC5D0\uC11C \uD398\uC774\uC9C0\uC758 \uB370\uC774\uD130\uB97C \uB85C\uCEEC\
@@ -9,7 +7,7 @@ description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD
   \uB41C \uD14C\uC2A4\uD305 \uD639\uC740 \uCF58\uD150\uCE20 \uC2A4\uD06C\uB798\uD551\
   \uC744 \uC704\uD574 \uC774\uAC83\uC744 \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.879241
+lastmod: 2024-02-19 22:05:14.768310
 model: gpt-4-1106-preview
 summary: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\uB137\
   \uC5D0\uC11C \uD398\uC774\uC9C0\uC758 \uB370\uC774\uD130\uB97C \uB85C\uCEEC\uB85C\

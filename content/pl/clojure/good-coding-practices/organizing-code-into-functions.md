@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/organizing-code-into-functions/
 date: 2024-01-26 01:09:29.458108-07:00
 description: "Grupowanie kodu w funkcje polega na pakowaniu blok\xF3w kodu, kt\xF3\
   re realizuj\u0105 konkretne zadania. Dzi\u0119ki temu kod staje si\u0119 przejrzysty,\
   \ \u0142atwiejszy w\u2026"
-lastmod: 2024-02-18 23:08:49.270104
+lastmod: 2024-02-19 22:04:54.183277
 model: gpt-4-1106-preview
 summary: "Grupowanie kodu w funkcje polega na pakowaniu blok\xF3w kodu, kt\xF3re realizuj\u0105\
   \ konkretne zadania. Dzi\u0119ki temu kod staje si\u0119 przejrzysty, \u0142atwiejszy\

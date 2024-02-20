@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:45.003668-07:00
 description: "El registro de actividades en C implica grabar el flujo y los eventos\
   \ notables de un programa durante su tiempo de ejecuci\xF3n, proporcionando una\
   \ revisi\xF3n\u2026"
-lastmod: 2024-02-18 23:09:10.509142
+lastmod: 2024-02-19 22:05:18.059956
 model: gpt-4-0125-preview
 summary: "El registro de actividades en C implica grabar el flujo y los eventos notables\
   \ de un programa durante su tiempo de ejecuci\xF3n, proporcionando una revisi\xF3\

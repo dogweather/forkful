@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/ruby/logging/
 date: 2024-01-26 01:08:50.605300-07:00
 description: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi.\
   \ Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka\u2026"
-lastmod: 2024-02-18 23:09:08.189849
+lastmod: 2024-02-19 22:05:16.002226
 model: gpt-4-1106-preview
 summary: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi.\
   \ Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka\u2026"

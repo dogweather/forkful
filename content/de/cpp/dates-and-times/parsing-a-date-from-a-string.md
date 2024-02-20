@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/cpp/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:33.202127-07:00
 description: "Das Parsen eines Datums aus einem String beinhaltet die Interpretation\
   \ des Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.\u2026"
-lastmod: 2024-02-18 23:09:05.198902
+lastmod: 2024-02-19 22:05:13.128153
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Interpretation des\
   \ Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.\u2026"

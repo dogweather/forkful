@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/swift/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:53.375248-07:00
 description: "Kirjoittaminen standardivirheeseen (stderr) tarkoittaa ohjelmasi virheviestien\
   \ tai diagnostiikkatulosteiden ohjaamista erilliseen virtaan, joka eroaa\u2026"
-lastmod: 2024-02-18 23:09:08.007684
+lastmod: 2024-02-19 22:05:15.818903
 model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen (stderr) tarkoittaa ohjelmasi virheviestien\
   \ tai diagnostiikkatulosteiden ohjaamista erilliseen virtaan, joka eroaa\u2026"

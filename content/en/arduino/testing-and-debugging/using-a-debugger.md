@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/using-a-debugger/
 date: 2024-01-25 20:50:18.871808-07:00
 description: "A debugger is a tool that helps you squish bugs in your code by letting\
   \ you pause, poke around, and find out what's really going on under the hood.\u2026"
-lastmod: 2024-02-18 23:09:11.319362
+lastmod: 2024-02-19 22:05:18.787752
 model: gpt-4-1106-preview
 summary: "A debugger is a tool that helps you squish bugs in your code by letting\
   \ you pause, poke around, and find out what's really going on under the hood.\u2026"

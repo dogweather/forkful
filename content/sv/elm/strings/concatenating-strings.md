@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/concatenating-strings/
 date: 2024-01-20 17:34:40.566760-07:00
 description: "Konkatenering av str\xE4ngar inneb\xE4r att s\xE4tta ihop tv\xE5 eller\
   \ flera textstycken till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att\
   \ bygga textdata\u2026"
-lastmod: 2024-02-18 23:08:51.702187
+lastmod: 2024-02-19 22:04:57.032388
 model: gpt-4-1106-preview
 summary: "Konkatenering av str\xE4ngar inneb\xE4r att s\xE4tta ihop tv\xE5 eller flera\
   \ textstycken till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att bygga\

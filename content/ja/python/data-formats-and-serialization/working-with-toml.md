@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/python/working-with-toml/
 date: 2024-01-26 04:25:42.813247-07:00
 description: "TOML \u306F\u3001Tom's Obvious, Minimal Language \u306E\u7565\u3067\u3001\
   JSON \u3084 YAML \u306B\u4F3C\u305F\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u30D5\u30A9\
@@ -8,7 +6,7 @@ description: "TOML \u306F\u3001Tom's Obvious, Minimal Language \u306E\u7565\u306
   \u53EF\u8AAD\u6027\u3092\u76EE\u6307\u3057\u3066\u3044\u307E\u3059\u3002\u30D7\u30ED\
   \u30B0\u30E9\u30DE\u30FC\u306F\u3001\u66F8\u304D\u3084\u3059\u304F\u7406\u89E3\u3057\
   \u3084\u3059\u3044\u305F\u3081\u3001\u305D\u3057\u3066 Python\u2026"
-lastmod: 2024-02-18 23:08:54.585928
+lastmod: 2024-02-19 22:05:00.804595
 model: gpt-4-0125-preview
 summary: "TOML \u306F\u3001Tom's Obvious, Minimal Language \u306E\u7565\u3067\u3001\
   JSON \u3084 YAML \u306B\u4F3C\u305F\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u30D5\u30A9\

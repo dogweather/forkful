@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/reading-a-text-file/
 date: 2024-01-20 17:54:22.931555-07:00
 description: "Ler um arquivo de texto em programa\xE7\xE3o significa acessar e recuperar\
   \ informa\xE7\xF5es de um arquivo salvo em disco. Programadores fazem isso para\
   \ manipular\u2026"
-lastmod: 2024-02-18 23:08:57.861028
+lastmod: 2024-02-19 22:05:05.332132
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em programa\xE7\xE3o significa acessar e recuperar\
   \ informa\xE7\xF5es de um arquivo salvo em disco. Programadores fazem isso para\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/refactoring/
 date: 2024-01-26 01:18:18.802559-07:00
 description: "Refatora\xE7\xE3o \xE9 essencialmente uma limpeza de primavera no seu\
   \ c\xF3digo \u2014 trata-se de reestruturar o c\xF3digo existente sem alterar seu\
   \ comportamento externo.\u2026"
-lastmod: 2024-02-18 23:08:58.068737
+lastmod: 2024-02-19 22:05:05.547492
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 essencialmente uma limpeza de primavera no seu c\xF3\
   digo \u2014 trata-se de reestruturar o c\xF3digo existente sem alterar seu comportamento\

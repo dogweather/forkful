@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/java/interpolating-a-string/
 date: 2024-01-20 17:51:18.282491-07:00
 description: "Interpolating a string means splicing variables into text. We do it\
   \ to build dynamic strings \u2013 think personalized messages or live data displays\
   \ in your\u2026"
-lastmod: 2024-02-18 23:09:00.095971
+lastmod: 2024-02-19 22:05:08.075348
 model: gpt-4-1106-preview
 summary: "Interpolating a string means splicing variables into text. We do it to build\
   \ dynamic strings \u2013 think personalized messages or live data displays in your\u2026"

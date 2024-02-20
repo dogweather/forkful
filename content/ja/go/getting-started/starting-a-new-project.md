@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/go/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:52.640473-07:00
@@ -15,7 +13,7 @@ description: "Go\u3067\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u30
   \u3001Go\u3067\u30B9\u30B1\u30FC\u30E9\u30D6\u30EB\u3067\u4FDD\u5B88\u53EF\u80FD\
   \u306A\u30BD\u30D5\u30C8\u30A6\u30A7\u30A2\u3092\u4F5C\u6210\u3059\u308B\u305F\u3081\
   \u306E\u57FA\u76E4\u3067\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.480381
+lastmod: 2024-02-19 22:05:00.654883
 model: gpt-4-0125-preview
 summary: "Go\u3067\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u958B\
   \u59CB\u3059\u308B\u3068\u306F\u3001\u30EF\u30FC\u30AF\u30B9\u30DA\u30FC\u30B9\u3092\

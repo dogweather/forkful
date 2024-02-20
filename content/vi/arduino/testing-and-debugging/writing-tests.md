@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:53.850550-07:00
@@ -9,7 +7,7 @@ description: "Vi\u1EBFt ki\u1EC3m th\u1EED c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\
   \ m\xE3 c\u1EE7a b\u1EA1n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3\
   i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
   \u2026"
-lastmod: 2024-02-18 23:08:51.002984
+lastmod: 2024-02-19 22:04:56.192828
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt ki\u1EC3m th\u1EED c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9\
   t t\u1EADp h\u1EE3p c\xE1c \u0111i\u1EC1u ki\u1EC7n \u0111\u1EC3 ki\u1EC3m tra xem\

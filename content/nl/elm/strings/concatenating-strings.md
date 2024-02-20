@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:04.372091-07:00
 description: "Het concatenen van strings betekent het aan elkaar plakken van twee\
   \ of meer stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"
-lastmod: 2024-02-18 23:09:01.750444
+lastmod: 2024-02-19 22:05:09.769297
 model: gpt-4-0125-preview
 summary: "Het concatenen van strings betekent het aan elkaar plakken van twee of meer\
   \ stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"

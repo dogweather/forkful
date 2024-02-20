@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/haskell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:30.511433-07:00
 description: "YAML, abrevia\xE7\xE3o de \"YAML Ain't Markup Language\" (YAML N\xE3\
   o \xE9 uma Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3\
   o de dados amig\xE1vel para humanos que\u2026"
-lastmod: 2024-02-18 23:08:58.219429
+lastmod: 2024-02-19 22:05:05.692852
 model: gpt-4-0125-preview
 summary: "YAML, abrevia\xE7\xE3o de \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9\
   \ uma Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados\

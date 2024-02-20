@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/fish-shell/printing-debug-output/
 date: 2024-01-20 17:52:31.212975-07:00
 description: "Debugutskrifter \xE4r sm\xE5 meddelanden kodare infogar f\xF6r att sp\xE5\
   ra vad ett program g\xF6r. De \xE4r superhj\xE4lpsamma f\xF6r att f\xF6rst\xE5 kodens\
   \ fl\xF6de och fixa buggar."
-lastmod: 2024-02-18 23:08:52.210039
+lastmod: 2024-02-19 22:04:57.587347
 model: gpt-4-1106-preview
 summary: "Debugutskrifter \xE4r sm\xE5 meddelanden kodare infogar f\xF6r att sp\xE5\
   ra vad ett program g\xF6r. De \xE4r superhj\xE4lpsamma f\xF6r att f\xF6rst\xE5 kodens\

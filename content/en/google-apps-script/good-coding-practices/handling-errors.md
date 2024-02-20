@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/handling-errors/
 date: 2024-02-01 21:12:56.065519-07:00
 description: "Error handling in Google Apps Script is about predicting, catching,\
   \ and responding to exceptions or errors that occur during script execution. Programmers\u2026"
-lastmod: 2024-02-18 23:09:10.646841
+lastmod: 2024-02-19 22:05:18.183578
 model: gpt-4-0125-preview
 summary: "Error handling in Google Apps Script is about predicting, catching, and\
   \ responding to exceptions or errors that occur during script execution. Programmers\u2026"

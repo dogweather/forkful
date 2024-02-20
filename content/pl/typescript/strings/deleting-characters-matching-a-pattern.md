@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:26.048214-07:00
 description: "Usuwanie znak\xF3w zgodnych z wzorcem to filtracja ci\u0105gu tekstowego\
   \ przez usuni\u0119cie okre\u015Blonych znak\xF3w. Programi\u015Bci robi\u0105 to,\
   \ aby oczy\u015Bci\u0107 dane wej\u015Bciowe,\u2026"
-lastmod: 2024-02-18 23:08:49.332687
+lastmod: 2024-02-19 22:04:54.249327
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w zgodnych z wzorcem to filtracja ci\u0105gu tekstowego\
   \ przez usuni\u0119cie okre\u015Blonych znak\xF3w. Programi\u015Bci robi\u0105 to,\

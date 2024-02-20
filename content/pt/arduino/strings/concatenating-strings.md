@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/concatenating-strings/
 date: 2024-01-20 17:33:58.170392-07:00
 description: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma nova. Programadores fazem isso para montar mensagens, dados ou\
   \ comandos\u2026"
-lastmod: 2024-02-18 23:08:58.402292
+lastmod: 2024-02-19 22:05:05.889486
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma nova. Programadores fazem isso para montar mensagens, dados ou\

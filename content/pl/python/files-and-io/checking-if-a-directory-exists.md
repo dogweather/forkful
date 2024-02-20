@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/python/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:15.755911-07:00
 description: "Sprawdzanie, czy katalog istnieje w Pythonie, polega na weryfikacji\
   \ obecno\u015Bci folderu w systemie plik\xF3w przed wykonaniem operacji takich jak\
   \ czytanie czy\u2026"
-lastmod: 2024-02-18 23:08:49.237134
+lastmod: 2024-02-19 22:04:54.148360
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Pythonie, polega na weryfikacji obecno\u015B\
   ci folderu w systemie plik\xF3w przed wykonaniem operacji takich jak czytanie czy\u2026"

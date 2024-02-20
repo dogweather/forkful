@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/bash/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:37.711296-07:00
 description: "Trabalhar com JSON em programa\xE7\xE3o Bash envolve analisar, extrair\
   \ e manipular dados JSON diretamente da linha de comando. Programadores frequentemente\u2026"
-lastmod: 2024-02-18 23:08:58.346461
+lastmod: 2024-02-19 22:05:05.830239
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON em programa\xE7\xE3o Bash envolve analisar, extrair e\
   \ manipular dados JSON diretamente da linha de comando. Programadores frequentemente\u2026"

@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/python/reading-command-line-arguments/
 date: 2024-01-20 17:56:44.480306-07:00
 description: ''
-lastmod: 2024-02-18 23:08:59.809057
+lastmod: 2024-02-19 22:05:07.681326
 model: gpt-4-1106-preview
 summary: ''
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043C\u0435\

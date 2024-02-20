@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:50.429593-07:00
 description: "Foutafhandeling in Google Apps Script is het voorspellen, vangen en\
   \ reageren op uitzonderingen of fouten die optreden tijdens de uitvoering van een\u2026"
-lastmod: 2024-02-18 23:09:01.394195
+lastmod: 2024-02-19 22:05:09.426380
 model: gpt-4-0125-preview
 summary: "Foutafhandeling in Google Apps Script is het voorspellen, vangen en reageren\
   \ op uitzonderingen of fouten die optreden tijdens de uitvoering van een\u2026"

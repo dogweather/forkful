@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/comparing-two-dates/
 date: 2024-01-20 17:32:53.849194-07:00
 description: "Comparar duas datas \xE9 o processo de verificar as diferen\xE7as entre\
   \ elas, seja para encontrar qual \xE9 mais recente ou quantificar o intervalo de\
   \ tempo entre\u2026"
-lastmod: 2024-02-18 23:08:57.856155
+lastmod: 2024-02-19 22:05:05.326909
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 o processo de verificar as diferen\xE7as entre\
   \ elas, seja para encontrar qual \xE9 mais recente ou quantificar o intervalo de\

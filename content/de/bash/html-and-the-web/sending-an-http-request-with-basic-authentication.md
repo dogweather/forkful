@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:00:44.724934-07:00
 description: "Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername\
   \ und Passwort kodiert und als Teil der Anfrage \xFCbermittelt. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:05.054145
+lastmod: 2024-02-19 22:05:12.990270
 model: gpt-4-1106-preview
 summary: "Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername\
   \ und Passwort kodiert und als Teil der Anfrage \xFCbermittelt. Programmierer\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/starting-a-new-project/
 date: 2024-01-20 18:04:56.012937-07:00
 description: "Aloitamme uuden projektin luomalla puhtaan ty\xF6tilan, joka sis\xE4\
   lt\xE4\xE4 kaikki tarvittavat tiedostot ja hakemistorakenteet. Koodareina teemme\
   \ t\xE4m\xE4n, koska se\u2026"
-lastmod: 2024-02-18 23:09:07.364553
+lastmod: 2024-02-19 22:05:15.252658
 model: gpt-4-1106-preview
 summary: "Aloitamme uuden projektin luomalla puhtaan ty\xF6tilan, joka sis\xE4lt\xE4\
   \xE4 kaikki tarvittavat tiedostot ja hakemistorakenteet. Koodareina teemme t\xE4\

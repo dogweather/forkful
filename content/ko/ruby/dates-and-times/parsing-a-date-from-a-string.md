@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:24.575285-07:00
@@ -12,7 +10,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD5
   \ \uB610\uB294 \uB370\uC774\uD130 \uCC98\uB9AC\uC640 \uAC19\uC740 \uC791\uC5C5\uC5D0\
   \uC11C \uB0A0\uC9DC \uBE44\uAD50, \uACC4\uC0B0, \uD615\uC2DD \uC9C0\uC815 \uB4F1\
   \uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574 \uC774\u2026"
-lastmod: 2024-02-18 23:09:07.040710
+lastmod: 2024-02-19 22:05:14.921779
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\uB2E4\
   \uB294 \uAC83\uC740 \uB0A0\uC9DC\uB97C \uB098\uD0C0\uB0B4\uB294 \uD14D\uC2A4\uD2B8\

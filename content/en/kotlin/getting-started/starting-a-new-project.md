@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/kotlin/starting-a-new-project/
 date: 2024-01-20 18:03:50.401549-07:00
 description: "Starting a new project means setting up the initial structure and vital\
   \ files you\u2019ll need for your application. Programmers initiate new projects\
   \ to kick\u2026"
-lastmod: 2024-02-18 23:09:11.013442
+lastmod: 2024-02-19 22:05:18.516839
 model: gpt-4-1106-preview
 summary: "Starting a new project means setting up the initial structure and vital\
   \ files you\u2019ll need for your application. Programmers initiate new projects\

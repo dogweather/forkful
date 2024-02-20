@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:08.047393-07:00
 description: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan\
   \ para buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:09.443160
+lastmod: 2024-02-19 22:05:17.103329
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan para\
   \ buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos. Los\u2026"

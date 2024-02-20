@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/extracting-substrings/
 date: 2024-01-20 17:45:31.333103-07:00
 description: "Extraire des sous-cha\xEEnes, c'est comme d\xE9couper un morceau pr\xE9\
   cis de votre baguette pr\xE9f\xE9r\xE9e. Les programmeurs le font pour manipuler,\
   \ analyser ou\u2026"
-lastmod: 2024-02-18 23:09:09.291316
+lastmod: 2024-02-19 22:05:16.961497
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est comme d\xE9couper un morceau pr\xE9\
   cis de votre baguette pr\xE9f\xE9r\xE9e. Les programmeurs le font pour manipuler,\

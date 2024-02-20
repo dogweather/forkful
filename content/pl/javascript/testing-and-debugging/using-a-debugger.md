@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/using-a-debugger/
 date: 2024-01-26 03:50:22.616368-07:00
 description: "Korzystanie z debugera oznacza si\u0119gni\u0119cie po specjalistyczne\
   \ narz\u0119dzia, kt\xF3re pozwalaj\u0105 zajrze\u0107 pod mask\u0119 kodu, obserwuj\u0105\
   c jego dzia\u0142anie krok po kroku.\u2026"
-lastmod: 2024-02-18 23:08:49.998286
+lastmod: 2024-02-19 22:04:54.951989
 model: gpt-4-0125-preview
 summary: "Korzystanie z debugera oznacza si\u0119gni\u0119cie po specjalistyczne narz\u0119\
   dzia, kt\xF3re pozwalaj\u0105 zajrze\u0107 pod mask\u0119 kodu, obserwuj\u0105c\

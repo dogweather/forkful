@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/capitalizing-a-string/
 date: 2024-02-03 19:02:36.536161-07:00
 description: "Capitalizing a string means modifying it so the first letter is uppercase\
   \ and the remainder of the string is lowercase. This is a common task in text\u2026"
-lastmod: 2024-02-18 23:09:11.462595
+lastmod: 2024-02-19 22:05:18.917879
 model: gpt-4-0125-preview
 summary: "Capitalizing a string means modifying it so the first letter is uppercase\
   \ and the remainder of the string is lowercase. This is a common task in text\u2026"

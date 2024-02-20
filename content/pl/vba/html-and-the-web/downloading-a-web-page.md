@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:44.072532-07:00
 description: "Pobieranie strony internetowej w Visual Basic for Applications (VBA)\
   \ polega na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\
   ci\u2026"
-lastmod: 2024-02-18 23:08:49.432564
+lastmod: 2024-02-19 22:04:54.357061
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w Visual Basic for Applications (VBA) polega\
   \ na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:11.657481-07:00
@@ -8,7 +6,7 @@ description: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB
   c qu\xE1 kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y c\xE1ch m\u1ED9\
   t s\u1ED1 ng\xE0y, tu\u1EA7n, th\xE1ng, ho\u1EB7c n\u0103m t\u1EEB m\u1ED9t \u0111\
   i\u1EC3m nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:51.150965
+lastmod: 2024-02-19 22:04:56.401140
 model: gpt-4-0125-preview
 summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
   \ kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y c\xE1ch m\u1ED9t s\u1ED1\

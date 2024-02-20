@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/reading-command-line-arguments/
 date: 2024-01-20 17:56:09.361779-07:00
 description: "Lire des arguments de la ligne de commande, c'est r\xE9cup\xE9rer les\
   \ donn\xE9es qu'un utilisateur entre lorsqu'il ex\xE9cute votre programme. Les programmeurs\
   \ font\u2026"
-lastmod: 2024-02-18 23:09:08.451781
+lastmod: 2024-02-19 22:05:16.239443
 model: gpt-4-1106-preview
 summary: "Lire des arguments de la ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
   es qu'un utilisateur entre lorsqu'il ex\xE9cute votre programme. Les programmeurs\

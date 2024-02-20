@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/javascript/sending-an-http-request/
 date: 2024-01-20 18:00:09.933363-07:00
 description: "Sending an HTTP request is how your JavaScript code asks the internet\
   \ for data or sends data to a server. We do it to interact with web services, grab\u2026"
-lastmod: 2024-02-18 23:09:01.029420
+lastmod: 2024-02-19 22:05:09.069603
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is how your JavaScript code asks the internet for\
   \ data or sends data to a server. We do it to interact with web services, grab\u2026"

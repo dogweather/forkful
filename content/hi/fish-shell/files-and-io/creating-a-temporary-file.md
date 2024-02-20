@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/fish-shell/creating-a-temporary-file/
 date: 2024-01-20 17:41:05.341175-07:00
 description: "Temporary file \u0935\u094B \u092B\u093E\u0907\u0932 \u0939\u094B\u0924\
   \u0940 \u0939\u0948 \u091C\u093F\u0938\u0947 \u0939\u092E \u0905\u0938\u094D\u0925\
@@ -11,7 +9,7 @@ description: "Temporary file \u0935\u094B \u092B\u093E\u0907\u0932 \u0939\u094B\
   \u0947\u0938\u093F\u0902\u0917, \u0915\u0948\u0936\u093F\u0902\u0917 \u092F\u093E\
   \ \u0905\u0928\u094D\u092F \u0915\u093E\u092E\u094B\u0902 \u0915\u0947 \u0932\u093F\
   \u090F\u2026"
-lastmod: 2024-02-18 23:09:04.165117
+lastmod: 2024-02-19 22:05:12.140173
 model: gpt-4-1106-preview
 summary: "Temporary file \u0935\u094B \u092B\u093E\u0907\u0932 \u0939\u094B\u0924\u0940\
   \ \u0939\u0948 \u091C\u093F\u0938\u0947 \u0939\u092E \u0905\u0938\u094D\u0925\u093E\

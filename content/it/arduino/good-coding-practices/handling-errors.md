@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/arduino/handling-errors/
 date: 2024-01-26 00:36:47.059117-07:00
 description: "La gestione degli errori nei tuoi programmi cattura gli imprevisti che\
   \ cercheranno di farti inciampare. Si fa per evitare che il tuo Arduino vada in\
   \ tilt\u2026"
-lastmod: 2024-02-18 23:08:56.140423
+lastmod: 2024-02-19 22:05:02.766035
 model: gpt-4-1106-preview
 summary: "La gestione degli errori nei tuoi programmi cattura gli imprevisti che cercheranno\
   \ di farti inciampare. Si fa per evitare che il tuo Arduino vada in tilt\u2026"

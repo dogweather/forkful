@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/php/logging/
 date: 2024-01-25 02:03:11.630198-07:00
 description: "Logging is basically akin to keeping a diary for your code; it's the\
   \ act of recording events, errors, and other significant data points that happen\
   \ when\u2026"
-lastmod: 2024-02-18 23:09:11.143560
+lastmod: 2024-02-19 22:05:18.635617
 model: gpt-4-1106-preview
 summary: "Logging is basically akin to keeping a diary for your code; it's the act\
   \ of recording events, errors, and other significant data points that happen when\u2026"

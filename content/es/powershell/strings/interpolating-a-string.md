@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/interpolating-a-string/
 date: 2024-01-20 17:51:22.012873-07:00
 description: "Interpolar una cadena es insertar variables o expresiones dentro de\
   \ una cadena de texto. Los programadores lo hacen para construir mensajes din\xE1\
   micos sin\u2026"
-lastmod: 2024-02-18 23:09:10.198405
+lastmod: 2024-02-19 22:05:17.781957
 model: gpt-4-1106-preview
 summary: "Interpolar una cadena es insertar variables o expresiones dentro de una\
   \ cadena de texto. Los programadores lo hacen para construir mensajes din\xE1micos\

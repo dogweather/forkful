@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/interpolating-a-string/
 date: 2024-01-20 17:51:27.544391-07:00
 description: "String interpolation w Ruby pozwala wrzuca\u0107 zmienne lub wyra\u017C\
   enia do \u015Brodka tekstu. U\u017Cywamy tego, by \u0142atwo tworzy\u0107 dynamiczne\
   \ stringi."
-lastmod: 2024-02-18 23:08:50.110185
+lastmod: 2024-02-19 22:04:55.097655
 model: gpt-4-1106-preview
 summary: "String interpolation w Ruby pozwala wrzuca\u0107 zmienne lub wyra\u017C\
   enia do \u015Brodka tekstu. U\u017Cywamy tego, by \u0142atwo tworzy\u0107 dynamiczne\

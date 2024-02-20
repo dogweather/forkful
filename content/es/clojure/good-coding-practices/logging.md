@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/logging/
 date: 2024-01-26 01:00:56.433147-07:00
 description: "El registro de eventos (logging) es esencialmente el equivalente en\
   \ software de un diario de navegaci\xF3n; es una forma de registrar eventos que\
   \ ocurren\u2026"
-lastmod: 2024-02-18 23:09:09.609979
+lastmod: 2024-02-19 22:05:17.254259
 model: gpt-4-1106-preview
 summary: "El registro de eventos (logging) es esencialmente el equivalente en software\
   \ de un diario de navegaci\xF3n; es una forma de registrar eventos que ocurren\u2026"

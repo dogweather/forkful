@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/lua/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:21.943436-07:00
 description: "Att h\xE4mta det aktuella datumet i programmering \xE4r en avg\xF6rande\
   \ uppgift f\xF6r en m\xE4ngd applikationer, inklusive loggning, tidsst\xE4mpling\
   \ av h\xE4ndelser eller\u2026"
-lastmod: 2024-02-18 23:08:51.928688
+lastmod: 2024-02-19 22:04:57.276436
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i programmering \xE4r en avg\xF6rande\
   \ uppgift f\xF6r en m\xE4ngd applikationer, inklusive loggning, tidsst\xE4mpling\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/ruby/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:54.009976-07:00
 description: "\u5728Ruby\u4E2D\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\
   \u80FD\u5E2E\u6211\u4EEC\u6E05\u6D17\u6570\u636E\uFF0C\u6BD4\u5982\u53BB\u9664\u65E0\
@@ -9,7 +7,7 @@ description: "\u5728Ruby\u4E2D\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u
   \u8005\u4E3A\u4E86\u6EE1\u8DB3\u6570\u636E\u5B58\u50A8\u548C\u5904\u7406\u7684\u8981\
   \u6C42\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.585387
+lastmod: 2024-02-19 22:05:07.414272
 model: gpt-4-1106-preview
 summary: "\u5728Ruby\u4E2D\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\u80FD\
   \u5E2E\u6211\u4EEC\u6E05\u6D17\u6570\u636E\uFF0C\u6BD4\u5982\u53BB\u9664\u65E0\u7528\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/vba/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:47.034464-07:00
 description: "Visual Basic for\u2026"
-lastmod: 2024-02-18 23:08:54.776064
+lastmod: 2024-02-19 22:05:01.071533
 model: gpt-4-0125-preview
 summary: "Visual Basic for\u2026"
 title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\u8FBC\

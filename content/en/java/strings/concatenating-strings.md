@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/concatenating-strings/
 date: 2024-01-20 17:34:55.675076-07:00
 description: "Concatenating strings means sticking them together end-to-end to make\
   \ a new string. It's handy for creating custom messages, building up text for output,\u2026"
-lastmod: 2024-02-18 23:09:10.923192
+lastmod: 2024-02-19 22:05:18.433527
 model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking them together end-to-end to make a\
   \ new string. It's handy for creating custom messages, building up text for output,\u2026"

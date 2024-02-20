@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/swift/downloading-a-web-page/
 date: 2024-01-20 17:45:04.756297-07:00
 description: ''
-lastmod: 2024-02-18 23:09:00.959081
+lastmod: 2024-02-19 22:05:09.000402
 model: gpt-4-1106-preview
 summary: ''
 title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0432\

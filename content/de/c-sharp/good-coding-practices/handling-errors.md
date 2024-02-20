@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/handling-errors/
 date: 2024-01-26 00:50:05.347551-07:00
 description: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4ltigen\
   \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern. Programme k\xF6nnen\
   \ \xFCber schlechte Daten\u2026"
-lastmod: 2024-02-18 23:09:04.879265
+lastmod: 2024-02-19 22:05:12.823492
 model: gpt-4-1106-preview
 summary: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4ltigen\
   \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern. Programme k\xF6nnen\

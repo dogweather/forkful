@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:46.496413-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1
   p tr\xECnh l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng c\xF3\
   \ b\u1EA5t k\u1EF3 m\u1ED9t m\u1EABu \u0111o\xE1n tr\u01B0\u1EDBc n\xE0o. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
-lastmod: 2024-02-18 23:08:50.646379
+lastmod: 2024-02-19 22:04:55.765854
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xEC\
   nh l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng c\xF3 b\u1EA5\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:53.576629-07:00
@@ -8,7 +6,7 @@ description: "Trong Swift, vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i \u0111\
   i h\u1ECFi truy c\u1EADp v\xE0o c\xE0i \u0111\u1EB7t th\u1EDDi gian v\xE0 ng\xE0\
   y c\u1EE7a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 ghi th\u1EDDi gian c\u1EE7a s\u1EF1\u2026"
-lastmod: 2024-02-18 23:08:51.101579
+lastmod: 2024-02-19 22:04:56.318490
 model: gpt-4-0125-preview
 summary: "Trong Swift, vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i \u0111\xF2i h\u1ECF\
   i truy c\u1EADp v\xE0o c\xE0i \u0111\u1EB7t th\u1EDDi gian v\xE0 ng\xE0y c\u1EE7\

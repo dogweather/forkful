@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/javascript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:36.988553-07:00
 description: "Das Kapitalisieren eines Strings bedeutet, das erste Zeichen des Strings\
   \ in einen Gro\xDFbuchstaben umzuwandeln, w\xE4hrend die restlichen Zeichen unver\xE4\
   ndert\u2026"
-lastmod: 2024-02-18 23:09:05.261006
+lastmod: 2024-02-19 22:05:13.186597
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, das erste Zeichen des Strings\
   \ in einen Gro\xDFbuchstaben umzuwandeln, w\xE4hrend die restlichen Zeichen unver\xE4\

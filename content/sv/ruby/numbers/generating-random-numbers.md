@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/generating-random-numbers/
 date: 2024-01-27 20:35:00.980018-07:00
 description: "Att generera slumpm\xE4ssiga nummer i Ruby inneb\xE4r att skapa nummer\
   \ som inte kan f\xF6ruts\xE4gas logiskt, vilket \xE4r avg\xF6rande f\xF6r scenarier\
   \ som simuleringar,\u2026"
-lastmod: 2024-02-18 23:08:52.289392
+lastmod: 2024-02-19 22:04:57.678108
 model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga nummer i Ruby inneb\xE4r att skapa nummer som\
   \ inte kan f\xF6ruts\xE4gas logiskt, vilket \xE4r avg\xF6rande f\xF6r scenarier\

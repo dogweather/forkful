@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/concatenating-strings/
 date: 2024-01-20 17:35:11.043801-07:00
 description: "I programmering \xE4r att sammanfoga str\xE4ngar processen att kombinera\
   \ flera str\xE4ngar till en enda. Programmerare g\xF6r detta f\xF6r att dynamiskt\
   \ bygga text, som\u2026"
-lastmod: 2024-02-18 23:08:51.910857
+lastmod: 2024-02-19 22:04:57.256872
 model: gpt-4-1106-preview
 summary: "I programmering \xE4r att sammanfoga str\xE4ngar processen att kombinera\
   \ flera str\xE4ngar till en enda. Programmerare g\xF6r detta f\xF6r att dynamiskt\

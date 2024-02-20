@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/c/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:15.329838-07:00
 description: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
   \ textuel sans les guillemets simples (' ') ou doubles (\" \"). Ce processus est\u2026"
-lastmod: 2024-02-18 23:09:09.340683
+lastmod: 2024-02-19 22:05:17.008394
 model: gpt-4-0125-preview
 summary: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
   \ textuel sans les guillemets simples (' ') ou doubles (\" \"). Ce processus est\u2026"

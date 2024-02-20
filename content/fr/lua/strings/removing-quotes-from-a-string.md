@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:29.117268-07:00
 description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie enlever\
   \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte. Les\u2026"
-lastmod: 2024-02-18 23:09:08.956457
+lastmod: 2024-02-19 22:05:16.645755
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie enlever\
   \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte. Les\u2026"

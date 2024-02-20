@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:53.557304-07:00
 description: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoittaa\
   \ kansion olemassaolon varmistamista Google Drivess\xE4. Ohjelmoijat suorittavat\
   \ usein\u2026"
-lastmod: 2024-02-18 23:09:07.152963
+lastmod: 2024-02-19 22:05:15.028841
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoittaa\
   \ kansion olemassaolon varmistamista Google Drivess\xE4. Ohjelmoijat suorittavat\

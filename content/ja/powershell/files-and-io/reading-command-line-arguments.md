@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/powershell/reading-command-line-arguments/
 date: 2024-01-20 17:56:30.904808-07:00
 description: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\
   \u53D6\u308A\u3068\u306F\u3001\u30B9\u30AF\u30EA\u30D7\u30C8\u306B\u60C5\u5831\u3092\
@@ -10,7 +8,7 @@ description: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD
   \u30FC\u30B6\u30FC\u306E\u5165\u529B\u3092\u53D7\u3051\u53D6\u3063\u305F\u308A\u3057\
   \u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:55.128755
+lastmod: 2024-02-19 22:05:01.577885
 model: gpt-4-1106-preview
 summary: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\
   \u53D6\u308A\u3068\u306F\u3001\u30B9\u30AF\u30EA\u30D7\u30C8\u306B\u60C5\u5831\u3092\

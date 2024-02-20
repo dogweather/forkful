@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/bash/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:09.597875-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir\
   \ mensajes de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola\
   \ de la\u2026"
-lastmod: 2024-02-18 23:09:10.185244
+lastmod: 2024-02-19 22:05:17.770064
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir mensajes\
   \ de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola de la\u2026"

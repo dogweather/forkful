@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/typescript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:43.908869-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, ist\
   \ f\xFCr Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder\
   \ das Schreiben\u2026"
-lastmod: 2024-02-18 23:09:04.611849
+lastmod: 2024-02-19 22:05:12.568844
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, ist f\xFC\
   r Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben\u2026"

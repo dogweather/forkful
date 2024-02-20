@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/refactoring/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:36.442687-07:00
@@ -13,7 +11,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uB9AC\uD329\uD130\uB9C
   \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uCF54\uB4DC\uB97C \uB354\
   \ \uD6A8\uC728\uC801\uC73C\uB85C \uB9CC\uB4E4\uACE0, \uC774\uD574\uD558\uAE30 \uC27D\
   \uAC8C \uD558\uBA70, \uBBF8\uB798\uC5D0 \uC218\uC815\uD558\uAE30\u2026"
-lastmod: 2024-02-18 23:09:05.966780
+lastmod: 2024-02-19 22:05:13.901427
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uB9AC\uD329\uD130\uB9C1\uC740\
   \ \uCF54\uB4DC\uC758 \uAD6C\uC870\uB97C \uBCC0\uACBD\uD558\uC9C0 \uC54A\uACE0 \uADF8\

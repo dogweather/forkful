@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/javascript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:40.262426-07:00
 description: "\xC5 skrive til standardfeil (stderr) i JavaScript handler om \xE5 dirigere\
   \ feilmeldinger eller kritisk informasjon til en spesifikk, separat str\xF8m, noe\
   \ som er\u2026"
-lastmod: 2024-02-18 23:08:54.324458
+lastmod: 2024-02-19 22:05:00.477287
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i JavaScript handler om \xE5 dirigere\
   \ feilmeldinger eller kritisk informasjon til en spesifikk, separat str\xF8m, noe\

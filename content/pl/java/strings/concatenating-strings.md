@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/concatenating-strings/
 date: 2024-01-20 17:35:07.509148-07:00
 description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli string\xF3\
   w, to po prostu proces ich zestawiania w jeden ci\u0105g\u0142y tekst. Dzi\u0119\
   ki temu mo\u017Cemy tworzy\u0107 wiadomo\u015Bci, kt\xF3re maj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.469944
+lastmod: 2024-02-19 22:04:54.397489
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli string\xF3w,\
   \ to po prostu proces ich zestawiania w jeden ci\u0105g\u0142y tekst. Dzi\u0119\

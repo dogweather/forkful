@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:14.248154-07:00
@@ -12,7 +10,7 @@ description: "\"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uC778 YAML\uC740
   \ \uD504\uB85C\uC81D\uD2B8\uB098 \uB2E4\uB978 \uC2DC\uC2A4\uD15C \uAC04\uC5D0 \uAD6C\
   \uC870\uD654\uB41C \uB370\uC774\uD130\uB97C \uC804\uC1A1\uD560 \uB54C \uD504\uB85C\
   \uADF8\uB798\uBA38\uB4E4\uC774\u2026"
-lastmod: 2024-02-18 23:09:05.591456
+lastmod: 2024-02-19 22:05:13.506801
 model: gpt-4-0125-preview
 summary: "\"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uC778 YAML\uC740 \uCEF4\
   \uD4E8\uD130 \uC5B8\uC5B4\uAC04 \uB370\uC774\uD130 \uAD50\uD658 \uBC0F \uC124\uC815\

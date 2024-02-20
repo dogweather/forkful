@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/php/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:10.088924-07:00
@@ -10,7 +8,7 @@ description: "\u5728PHP\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\u4
   \u3001\u65F6\u95F4\u6233\u8BB0\u5E16\u5B50\u3001\u5B89\u6392\u4E8B\u4EF6\u6216\u5728\
   \u5E94\u7528\u7A0B\u5E8F\u4E2D\u6267\u884C\u65F6\u95F4\u654F\u611F\u64CD\u4F5C\u7B49\
   \u529F\u80FD\u81F3\u5173\u91CD\u8981\u3002"
-lastmod: 2024-02-18 23:08:59.225182
+lastmod: 2024-02-19 22:05:06.918419
 model: gpt-4-0125-preview
 summary: "\u5728PHP\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\u4E2A\u57FA\
   \u672C\u4EFB\u52A1\uFF0C\u5B83\u5141\u8BB8\u60A8\u68C0\u7D22\u548C\u64CD\u4F5C\u7CFB\

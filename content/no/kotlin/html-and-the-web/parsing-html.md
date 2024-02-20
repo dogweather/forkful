@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/kotlin/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:26.740663-07:00
 description: "\xC5 parse HTML betyr \xE5 dissekere en nettsides oppmerking til noe\
   \ et program kan forst\xE5 og manipulere. Programutviklere parser HTML for \xE5\
   \ ekstrahere data,\u2026"
-lastmod: 2024-02-18 23:08:53.849922
+lastmod: 2024-02-19 22:04:59.995798
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML betyr \xE5 dissekere en nettsides oppmerking til noe et\
   \ program kan forst\xE5 og manipulere. Programutviklere parser HTML for \xE5 ekstrahere\

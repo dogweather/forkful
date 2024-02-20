@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/lua/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:46.817853-07:00
 description: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
   \ le premier caract\xE8re de chaque mot d'une phrase pour le mettre en majuscule,\
   \ tout en\u2026"
-lastmod: 2024-02-18 23:09:08.951068
+lastmod: 2024-02-19 22:05:16.640906
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
   \ le premier caract\xE8re de chaque mot d'une phrase pour le mettre en majuscule,\

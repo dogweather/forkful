@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/google-apps-script/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:45.024696-07:00
 description: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das\
   \ Abrufen des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie\
   \ zum\u2026"
-lastmod: 2024-02-18 23:09:04.411912
+lastmod: 2024-02-19 22:05:12.379124
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das Abrufen\
   \ des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie zum\u2026"

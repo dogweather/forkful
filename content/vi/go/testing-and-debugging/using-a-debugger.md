@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:47.833278-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c s\u1EED d\u1EE5ng debugger trong l\u1EADp tr\xECnh Go ba
   \ g\u1ED3m vi\u1EC7c \u1EE9ng d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 ho\u1EB7c t\xEDnh\
   \ n\u0103ng \u0111\u1EC3 ki\u1EC3m tra v\xE0 ch\u1EC9nh s\u1EEDa tr\u1EA1ng th\xE1\
   i c\u1EE7a ch\u01B0\u01A1ng tr\xECnh \u0111ang ch\u1EA1y\u2026"
-lastmod: 2024-02-18 23:08:50.175837
+lastmod: 2024-02-19 22:04:55.173757
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c s\u1EED d\u1EE5ng debugger trong l\u1EADp tr\xECnh Go bao g\u1ED3\
   m vi\u1EC7c \u1EE9ng d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 ho\u1EB7c t\xEDnh n\u0103\

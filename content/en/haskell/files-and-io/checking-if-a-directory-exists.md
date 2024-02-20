@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/checking-if-a-directory-exists/
 date: 2024-02-03 19:02:29.514784-07:00
 description: "Checking if a directory exists is a fundamental operation in many programming\
   \ tasks, allowing for conditional actions based on the presence or absence of\u2026"
-lastmod: 2024-02-18 23:09:11.110114
+lastmod: 2024-02-19 22:05:18.604920
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists is a fundamental operation in many programming\
   \ tasks, allowing for conditional actions based on the presence or absence of\u2026"

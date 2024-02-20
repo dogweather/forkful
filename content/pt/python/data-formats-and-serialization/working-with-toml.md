@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/working-with-toml/
 date: 2024-01-26 04:25:36.070986-07:00
 description: "TOML, abreviatura para Tom's Obvious, Minimal Language (Linguagem M\xED\
   nima e \xD3bvia do Tom), \xE9 um formato de serializa\xE7\xE3o de dados semelhante\
   \ ao JSON ou\u2026"
-lastmod: 2024-02-18 23:08:57.784298
+lastmod: 2024-02-19 22:05:05.248749
 model: gpt-4-0125-preview
 summary: "TOML, abreviatura para Tom's Obvious, Minimal Language (Linguagem M\xED\
   nima e \xD3bvia do Tom), \xE9 um formato de serializa\xE7\xE3o de dados semelhante\

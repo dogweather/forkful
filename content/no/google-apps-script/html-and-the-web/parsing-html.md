@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:44.287959-07:00
 description: "Parsing av HTML i Google Apps Script inneb\xE6rer \xE5 ekstrahere data\
   \ fra HTML-innhold, som er spesielt nyttig n\xE5r man interagerer med nettsider\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:53.478261
+lastmod: 2024-02-19 22:04:59.592471
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i Google Apps Script inneb\xE6rer \xE5 ekstrahere data fra\
   \ HTML-innhold, som er spesielt nyttig n\xE5r man interagerer med nettsider eller\u2026"

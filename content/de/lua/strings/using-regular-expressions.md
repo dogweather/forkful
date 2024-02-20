@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/lua/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:24.883529-07:00
 description: "Regul\xE4re Ausdr\xFCcke in der Programmierung erm\xF6glichen das Mustervergleichen\
   \ und die Manipulation von Zeichenketten basierend auf spezifischen Mustern.\u2026"
-lastmod: 2024-02-18 23:09:04.996490
+lastmod: 2024-02-19 22:05:12.935293
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke in der Programmierung erm\xF6glichen das Mustervergleichen\
   \ und die Manipulation von Zeichenketten basierend auf spezifischen Mustern.\u2026"

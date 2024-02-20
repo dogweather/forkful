@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/php/reading-a-text-file/
 date: 2024-01-20 17:55:07.792215-07:00
 description: "Lukemalla tekstitiedostoja, PHP:ss\xE4 voimme k\xE4sitell\xE4 dataa\
   \ suoraan l\xE4hdemuodossaan. T\xE4m\xE4 on t\xE4rke\xE4\xE4, koska se mahdollistaa\
   \ tiedon dynaamisen hankkimisen\u2026"
-lastmod: 2024-02-18 23:09:07.730660
+lastmod: 2024-02-19 22:05:15.567562
 model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedostoja, PHP:ss\xE4 voimme k\xE4sitell\xE4 dataa suoraan\
   \ l\xE4hdemuodossaan. T\xE4m\xE4 on t\xE4rke\xE4\xE4, koska se mahdollistaa tiedon\

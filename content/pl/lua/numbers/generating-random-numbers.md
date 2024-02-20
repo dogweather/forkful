@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/generating-random-numbers/
 date: 2024-01-27 20:34:58.903709-07:00
 description: "Generowanie losowych liczb w programowaniu dotyczy wytwarzania nieprzewidywalnych\
   \ warto\u015Bci liczbowych, kt\xF3re mog\u0105 by\u0107 wykorzystywane do r\xF3\u017C\
   nych cel\xF3w,\u2026"
-lastmod: 2024-02-18 23:08:49.735574
+lastmod: 2024-02-19 22:04:54.672313
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w programowaniu dotyczy wytwarzania nieprzewidywalnych\
   \ warto\u015Bci liczbowych, kt\xF3re mog\u0105 by\u0107 wykorzystywane do r\xF3\u017C\

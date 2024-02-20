@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/writing-a-text-file/
 date: 2024-02-01 21:30:36.580625-07:00
 description: "Writing a text file in Visual Basic for Applications (VBA) involves\
   \ creating, modifying, or appending text data to files, a fundamental task for storing\u2026"
-lastmod: 2024-02-18 23:09:10.907858
+lastmod: 2024-02-19 22:05:18.419485
 model: gpt-4-0125-preview
 summary: "Writing a text file in Visual Basic for Applications (VBA) involves creating,\
   \ modifying, or appending text data to files, a fundamental task for storing\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/clojure/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:02.466773-07:00
@@ -14,7 +12,7 @@ description: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902
   , \u0914\u0930 \u0915\u093E\u0930\u094D\u092F\u094B\u0902 \u0915\u094B \u0905\u0928\
   \u0941\u0938\u0942\u091A\u093F\u0924 \u0915\u0930\u0928\u093E \u0936\u093E\u092E\
   \u093F\u0932 \u0939\u0948\u0902\u0964\u2026"
-lastmod: 2024-02-18 23:09:02.744474
+lastmod: 2024-02-19 22:05:10.743054
 model: gpt-4-0125-preview
 summary: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
   \ \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928 \u0924\u093E\u0930\

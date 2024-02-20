@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:34.645246-07:00
 description: "Escribir pruebas en Google Apps Script (GAS) se trata de crear scripts\
   \ automatizados para verificar el comportamiento de tus c\xF3digos, asegurando que\
   \ se\u2026"
-lastmod: 2024-02-18 23:09:09.511454
+lastmod: 2024-02-19 22:05:17.165460
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Google Apps Script (GAS) se trata de crear scripts automatizados\
   \ para verificar el comportamiento de tus c\xF3digos, asegurando que se\u2026"

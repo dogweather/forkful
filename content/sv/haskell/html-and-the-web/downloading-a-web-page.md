@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/haskell/downloading-a-web-page/
 date: 2024-01-20 17:44:09.685386-07:00
 description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess HTML-kod fr\xE5\
   n servern till din dator. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5\
   llet, testa servrar\u2026"
-lastmod: 2024-02-18 23:08:51.835958
+lastmod: 2024-02-19 22:04:57.173927
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess HTML-kod fr\xE5n\
   \ servern till din dator. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5\

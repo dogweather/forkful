@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/elixir/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:46.891725-07:00
 description: "La capitalisation d'une cha\xEEne de caract\xE8res implique de convertir\
   \ la premi\xE8re lettre de la cha\xEEne en majuscule tout en s'assurant que le reste\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:08.414742
+lastmod: 2024-02-19 22:05:16.206565
 model: gpt-4-0125-preview
 summary: "La capitalisation d'une cha\xEEne de caract\xE8res implique de convertir\
   \ la premi\xE8re lettre de la cha\xEEne en majuscule tout en s'assurant que le reste\

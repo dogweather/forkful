@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:14.523765-07:00
 description: "Het aaneenschakelen van strings betekent dat je ze achter elkaar plakt.\
   \ Programmeurs doen dit wanneer ze stukjes tekst aan elkaar moeten naaien om een\u2026"
-lastmod: 2024-02-18 23:09:01.889749
+lastmod: 2024-02-19 22:05:09.909817
 model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings betekent dat je ze achter elkaar plakt.\
   \ Programmeurs doen dit wanneer ze stukjes tekst aan elkaar moeten naaien om een\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:53.629879-07:00
 description: "Supprimer les guillemets d'une cha\xEEne consiste \xE0 retirer les marques\
   \ de citation qui encadrent la cha\xEEne. Les programmeurs souhaitent souvent le\
   \ faire\u2026"
-lastmod: 2024-02-18 23:09:09.003505
+lastmod: 2024-02-19 22:05:16.689571
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne consiste \xE0 retirer les marques\
   \ de citation qui encadrent la cha\xEEne. Les programmeurs souhaitent souvent le\

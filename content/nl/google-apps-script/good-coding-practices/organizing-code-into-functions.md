@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/google-apps-script/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:40.521591-07:00
 description: "Code organiseren in functies gaat over het structureren van je Google\
   \ Apps Script code door logische segmenten te scheiden in duidelijke blokken, elk\
   \ met\u2026"
-lastmod: 2024-02-18 23:09:01.392109
+lastmod: 2024-02-19 22:05:09.424362
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies gaat over het structureren van je Google Apps\
   \ Script code door logische segmenten te scheiden in duidelijke blokken, elk met\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/bash/handling-errors/
 date: 2024-01-26 00:37:18.314422-07:00
 description: "Manejar errores en scripts de Bash consiste en anticipar d\xF3nde pueden\
   \ surgir problemas y abordarlos de manera elegante. \xBFPor qu\xE9? Bueno, mantiene\
   \ tu\u2026"
-lastmod: 2024-02-18 23:09:10.175291
+lastmod: 2024-02-19 22:05:17.761171
 model: gpt-4-1106-preview
 summary: "Manejar errores en scripts de Bash consiste en anticipar d\xF3nde pueden\
   \ surgir problemas y abordarlos de manera elegante. \xBFPor qu\xE9? Bueno, mantiene\

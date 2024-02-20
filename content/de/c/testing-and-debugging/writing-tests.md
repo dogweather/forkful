@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:31.931127-07:00
 description: "Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen\
   \ zu erstellen, die automatisch die Funktionalit\xE4t Ihres Codes \xFCberpr\xFC\
   fen.\u2026"
-lastmod: 2024-02-18 23:09:05.377676
+lastmod: 2024-02-19 22:05:13.297827
 model: gpt-4-0125-preview
 summary: "Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen\
   \ zu erstellen, die automatisch die Funktionalit\xE4t Ihres Codes \xFCberpr\xFC\

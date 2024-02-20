@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/go/concatenating-strings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:01.340309-07:00
 description: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
   \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"
-lastmod: 2024-02-18 23:09:09.445422
+lastmod: 2024-02-19 22:05:17.105669
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
   \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"

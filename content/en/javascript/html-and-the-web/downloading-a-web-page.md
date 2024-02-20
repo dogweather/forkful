@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/downloading-a-web-page/
 date: 2024-01-20 17:44:18.382025-07:00
 description: "Downloading a web page means grabbing the HTML, CSS, JavaScript, and\
   \ any other data that makes up the page from the server. Programmers do it to parse\u2026"
-lastmod: 2024-02-18 23:09:11.436710
+lastmod: 2024-02-19 22:05:18.894003
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the HTML, CSS, JavaScript, and any\
   \ other data that makes up the page from the server. Programmers do it to parse\u2026"

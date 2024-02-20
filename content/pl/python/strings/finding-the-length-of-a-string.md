@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/python/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:11.871397-07:00
 description: "Zliczanie znak\xF3w w ci\u0105gu znak\xF3w to podstawa. Programi\u015B\
   ci robi\u0105 to, by wiedzie\u0107, ile danych maj\u0105 przed sob\u0105 \u2013\
   \ czy to waliduj\u0105c input, formatuj\u0105c tekst, czy\u2026"
-lastmod: 2024-02-18 23:08:49.213286
+lastmod: 2024-02-19 22:04:54.124197
 model: gpt-4-1106-preview
 summary: "Zliczanie znak\xF3w w ci\u0105gu znak\xF3w to podstawa. Programi\u015Bci\
   \ robi\u0105 to, by wiedzie\u0107, ile danych maj\u0105 przed sob\u0105 \u2013 czy\

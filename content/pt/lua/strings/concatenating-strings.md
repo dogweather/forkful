@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/concatenating-strings/
 date: 2024-01-20 17:35:22.020836-07:00
 description: "Concatenar strings \xE9 basicamente juntar textos diferentes em um s\xF3\
   . Programadores fazem isso para construir mensagens, caminhos de arquivos, e sempre\
   \ que\u2026"
-lastmod: 2024-02-18 23:08:58.274457
+lastmod: 2024-02-19 22:05:05.751152
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 basicamente juntar textos diferentes em um s\xF3\
   . Programadores fazem isso para construir mensagens, caminhos de arquivos, e sempre\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/google-apps-script/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:08.282100-07:00
 description: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av JavaScript\
   \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som\u2026"
-lastmod: 2024-02-18 23:08:53.494607
+lastmod: 2024-02-19 22:04:59.609763
 model: gpt-4-0125-preview
 summary: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av JavaScript\
   \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som\u2026"

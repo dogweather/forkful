@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:20.703807-07:00
@@ -8,7 +6,7 @@ description: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 t\u1EADn d\u1EE5
   \ c\xE1c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t gi\xFAp b\u1EA1n c\xF3 c\xE1i nh\xEC\
   n s\xE2u v\xE0o b\xEAn trong m\xE3 c\u1EE7a m\xECnh, theo d\xF5i n\xF3 ch\u1EA1\
   y t\u1EEBng b\u01B0\u1EDBc m\u1ED9t. L\u1EADp\u2026"
-lastmod: 2024-02-18 23:08:51.141119
+lastmod: 2024-02-19 22:04:56.369101
 model: gpt-4-0125-preview
 summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 t\u1EADn d\u1EE5ng c\xE1\
   c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t gi\xFAp b\u1EA1n c\xF3 c\xE1i nh\xECn s\xE2\

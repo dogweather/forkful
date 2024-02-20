@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/working-with-complex-numbers/
 date: 2024-01-25 02:59:56.973374-07:00
 description: "Complex numbers, consisting of a real part and an imaginary part (usually\
   \ written as a + bi), unlock calculations impractical or impossible with just\u2026"
-lastmod: 2024-02-18 23:09:10.801299
+lastmod: 2024-02-19 22:05:18.322833
 model: gpt-4-1106-preview
 summary: "Complex numbers, consisting of a real part and an imaginary part (usually\
   \ written as a + bi), unlock calculations impractical or impossible with just\u2026"

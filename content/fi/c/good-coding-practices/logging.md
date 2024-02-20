@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:02.768262-07:00
 description: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapahtumien\
   \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen\u2026"
-lastmod: 2024-02-18 23:09:08.139979
+lastmod: 2024-02-19 22:05:15.940657
 model: gpt-4-0125-preview
 summary: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapahtumien\
   \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/arduino/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:33.902891-07:00
@@ -13,7 +11,7 @@ description: "\u5728Arduino\u4E2D\u89E3\u6790\u5B57\u7B26\u4E32\u4E2D\u7684\u65E
   \u8BB0\u5F55\u5668\u63A5\u53E3\uFF0C\u6216\u5904\u7406\u6765\u81EA\u7F51\u7EDCAPI\u548C\
   \u7528\u6237\u754C\u9762\u7684\u8F93\u5165\uFF0C\u5176\u4E2D\u65E5\u671F\u53EF\u80FD\
   \u4EE5\u53EF\u8BFB\u683C\u5F0F\u5448\u73B0\u3002"
-lastmod: 2024-02-18 23:08:59.376928
+lastmod: 2024-02-19 22:05:07.127584
 model: gpt-4-0125-preview
 summary: "\u5728Arduino\u4E2D\u89E3\u6790\u5B57\u7B26\u4E32\u4E2D\u7684\u65E5\u671F\
   \u6D89\u53CA\u4ECE\u6587\u672C\u8868\u793A\u4E2D\u63D0\u53D6\u548C\u8F6C\u6362\u65E5\

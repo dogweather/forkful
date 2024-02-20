@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:29.276177-07:00
@@ -15,7 +13,7 @@ description: "Go\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u30C7\u30D0\u30
   \u30D1\u30D5\u30A9\u30FC\u30DE\u30F3\u30B9\u3092\u6700\u9069\u5316\u3057\u3001\u30B3\
   \u30FC\u30C9\u306E\u6B63\u78BA\u6027\u3092\u78BA\u4FDD\u3059\u308B\u305F\u3081\u306B\
   \u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.484727
+lastmod: 2024-02-19 22:05:00.662272
 model: gpt-4-0125-preview
 summary: "Go\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u30C7\u30D0\u30C3\u30AC\
   \u3092\u4F7F\u7528\u3059\u308B\u3053\u3068\u3068\u306F\u3001\u30D7\u30ED\u30B0\u30E9\

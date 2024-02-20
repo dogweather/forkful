@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/ruby/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:21:14.423327-07:00
 description: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Line\
   \ Interface) yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen\u2026"
-lastmod: 2024-02-18 23:09:08.178070
+lastmod: 2024-02-19 22:05:15.991550
 model: gpt-4-0125-preview
 summary: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Line Interface)\
   \ yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen\u2026"

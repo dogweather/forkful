@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:07.408735-07:00
 description: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en teknikk\
   \ brukt for \xE5 rense eller formatere strenger i programmering. I konteksten til\
   \ Google\u2026"
-lastmod: 2024-02-18 23:08:53.463600
+lastmod: 2024-02-19 22:04:59.576612
 model: gpt-4-0125-preview
 summary: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en teknikk\
   \ brukt for \xE5 rense eller formatere strenger i programmering. I konteksten til\

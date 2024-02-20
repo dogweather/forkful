@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:45.374978-07:00
 description: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on ihmisen luettavissa\
   \ oleva datan serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 monenlaisiin\u2026"
-lastmod: 2024-02-18 23:09:08.156455
+lastmod: 2024-02-19 22:05:15.962214
 model: gpt-4-0125-preview
 summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on ihmisen luettavissa\
   \ oleva datan serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 monenlaisiin\u2026"

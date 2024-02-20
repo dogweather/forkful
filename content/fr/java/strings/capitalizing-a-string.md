@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/java/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:43.567344-07:00
 description: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi\xE8\
   re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:08.609721
+lastmod: 2024-02-19 22:05:16.383624
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi\xE8\
   re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\

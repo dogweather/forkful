@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elixir/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:46.385017-07:00
@@ -14,7 +12,7 @@ description: "Elixir \u092E\u0947\u0902 \u0915\u093F\u0938\u0940 \u0921\u093E\u0
   \ \u092A\u0941\u0937\u094D\u091F\u093F \u0915\u0930\u0928\u0947 \u0915\u0947 \u092C\
   \u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\
   \u0917\u094D\u0930\u093E\u092E\u0930\u2026"
-lastmod: 2024-02-18 23:09:02.829772
+lastmod: 2024-02-19 22:05:10.826901
 model: gpt-4-0125-preview
 summary: "Elixir \u092E\u0947\u0902 \u0915\u093F\u0938\u0940 \u0921\u093E\u092F\u0930\
   \u0947\u0915\u094D\u091F\u0930\u0940 \u0915\u0947 \u0905\u0938\u094D\u0924\u093F\

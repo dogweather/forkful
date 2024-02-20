@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/ruby/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:55.175508-07:00
 description: "Tablice asocjacyjne, znane bardziej jako hashe w Ruby, umo\u017Cliwiaj\u0105\
   \ parowanie unikalnych kluczy z warto\u015Bciami. S\u0105 niezast\u0105pione, kiedy\
   \ potrzebujesz \u015Bledzi\u0107\u2026"
-lastmod: 2024-02-18 23:08:50.116781
+lastmod: 2024-02-19 22:04:55.105088
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane bardziej jako hashe w Ruby, umo\u017Cliwiaj\u0105\
   \ parowanie unikalnych kluczy z warto\u015Bciami. S\u0105 niezast\u0105pione, kiedy\

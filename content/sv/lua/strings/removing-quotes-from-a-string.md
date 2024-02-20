@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:56.982492-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man skalar\
   \ bort de d\xE4r dubbla eller enkla citattecken som kramar om din text. Koda g\xF6\
   r detta f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.907219
+lastmod: 2024-02-19 22:04:57.252804
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man skalar bort\
   \ de d\xE4r dubbla eller enkla citattecken som kramar om din text. Koda g\xF6r detta\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:37.581063-07:00
 description: "Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer\
   \ Anfrage an einen Webserver, um Daten abzurufen oder zu \xFCbermitteln. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:05.369666
+lastmod: 2024-02-19 22:05:13.290100
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer\
   \ Anfrage an einen Webserver, um Daten abzurufen oder zu \xFCbermitteln. Programmierer\u2026"

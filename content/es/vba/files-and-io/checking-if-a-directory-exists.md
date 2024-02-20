@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:55.267746-07:00
 description: "Verificar si un directorio existe en Visual Basic para Aplicaciones\
   \ (VBA) se trata de confirmar la presencia de una carpeta dentro del sistema de\
   \ archivos\u2026"
-lastmod: 2024-02-18 23:09:09.813843
+lastmod: 2024-02-19 22:05:17.431821
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Visual Basic para Aplicaciones (VBA)\
   \ se trata de confirmar la presencia de una carpeta dentro del sistema de archivos\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/logging/
 date: 2024-01-26 01:07:09.884379-07:00
 description: "La journalisation est en gros l'\xE9quivalent de tenir un journal pour\
   \ votre code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et\
   \ d'autres\u2026"
-lastmod: 2024-02-18 23:09:08.929737
+lastmod: 2024-02-19 22:05:16.621102
 model: gpt-4-1106-preview
 summary: "La journalisation est en gros l'\xE9quivalent de tenir un journal pour votre\
   \ code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres\u2026"

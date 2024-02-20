@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:51.672709-07:00
@@ -13,7 +11,7 @@ description: "\u0410\u0441\u043E\u0446\u0456\u0430\u0442\u0438\u0432\u043D\u0456
   \ \u043D\u0430 \u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F. \u0426\u0435 \u043D\
   \u0430\u0434\u0437\u0432\u0438\u0447\u0430\u0439\u043D\u043E \u0437\u0440\u0443\u0447\
   \u043D\u043E, \u043A\u043E\u043B\u0438 \u0432\u0430\u043C\u2026"
-lastmod: 2024-02-18 23:09:01.022760
+lastmod: 2024-02-19 22:05:09.063172
 model: gpt-4-0125-preview
 summary: "\u0410\u0441\u043E\u0446\u0456\u0430\u0442\u0438\u0432\u043D\u0456 \u043C\
   \u0430\u0441\u0438\u0432\u0438 \u0430\u0431\u043E, \u044F\u043A \u0457\u0445 \u0442\

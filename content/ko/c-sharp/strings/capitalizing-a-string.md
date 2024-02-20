@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:35.614286-07:00
@@ -13,7 +11,7 @@ description: "C#\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C 
   \ \uB610\uB294 \uC0AC\uC6A9\uC790 \uC778\uD130\uD398\uC774\uC2A4 \uD14D\uC2A4\uD2B8\
   \uC758 \uAC00\uB3C5\uC131 \uD5A5\uC0C1\uC5D0 \uC911\uC694\uD560 \uC218 \uC788\uC2B5\
   \uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.193659
+lastmod: 2024-02-19 22:05:14.121207
 model: gpt-4-0125-preview
 summary: "C#\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\
   \uBB38\uC790\uB85C \uBCC0\uACBD\uD558\uB294 \uAC83\uC740, \uADF8 \uBB38\uC790\uAC00\

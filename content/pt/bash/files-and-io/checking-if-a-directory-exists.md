@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:42.507057-07:00
 description: "Na programa\xE7\xE3o Bash, verificar se um diret\xF3rio existe \xE9\
   \ um mecanismo de controle essencial usado para verificar a presen\xE7a de um diret\xF3\
   rio antes de\u2026"
-lastmod: 2024-02-18 23:08:58.339510
+lastmod: 2024-02-19 22:05:05.822859
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o Bash, verificar se um diret\xF3rio existe \xE9 um mecanismo\
   \ de controle essencial usado para verificar a presen\xE7a de um diret\xF3rio antes\

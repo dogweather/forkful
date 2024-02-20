@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/rounding-numbers/
 date: 2024-01-26 03:43:37.386810-07:00
 description: "Redondear n\xFAmeros trata de ajustar un n\xFAmero al entero m\xE1s\
   \ cercano, o a una cierta precisi\xF3n decimal. Redondeamos los n\xFAmeros para\
   \ simplificarlos para la\u2026"
-lastmod: 2024-02-18 23:09:09.597611
+lastmod: 2024-02-19 22:05:17.242935
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros trata de ajustar un n\xFAmero al entero m\xE1s cercano,\
   \ o a una cierta precisi\xF3n decimal. Redondeamos los n\xFAmeros para simplificarlos\

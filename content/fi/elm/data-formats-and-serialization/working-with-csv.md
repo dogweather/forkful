@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/elm/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:26.957715-07:00
 description: "CSV:n (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tiedostojen j\xE4\
   sent\xE4minen ja tuottaminen, jotka tallentavat taulukollisia tietoja yksinkertaisessa,\u2026"
-lastmod: 2024-02-18 23:09:07.553632
+lastmod: 2024-02-19 22:05:15.404869
 model: gpt-4-0125-preview
 summary: "CSV:n (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tiedostojen j\xE4\
   sent\xE4minen ja tuottaminen, jotka tallentavat taulukollisia tietoja yksinkertaisessa,\u2026"

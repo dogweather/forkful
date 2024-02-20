@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/clojure/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:10.439480-07:00
 description: "XML is een opmaaktaal voor het coderen van documenten op een wijze die\
   \ zowel door mensen als machines gelezen kan worden. Het is cruciaal in webservices,\u2026"
-lastmod: 2024-02-18 23:09:01.506402
+lastmod: 2024-02-19 22:05:09.533530
 model: gpt-4-0125-preview
 summary: "XML is een opmaaktaal voor het coderen van documenten op een wijze die zowel\
   \ door mensen als machines gelezen kan worden. Het is cruciaal in webservices,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/cpp/rounding-numbers/
 date: 2024-01-26 03:43:12.419869-07:00
 description: "Zahlen runden bedeutet, einen Wert auf die n\xE4chste ganze Zahl oder\
   \ eine angegebene Genauigkeit anzupassen. Entwickler tun dies, um zu vereinfachen,\
   \ sich\u2026"
-lastmod: 2024-02-18 23:09:05.183666
+lastmod: 2024-02-19 22:05:13.113960
 model: gpt-4-0125-preview
 summary: "Zahlen runden bedeutet, einen Wert auf die n\xE4chste ganze Zahl oder eine\
   \ angegebene Genauigkeit anzupassen. Entwickler tun dies, um zu vereinfachen, sich\u2026"

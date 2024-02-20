@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:43.000486-07:00
 description: "L'envoi d'une requ\xEAte HTTP avec authentification de base consiste\
   \ \xE0 fournir un nom d'utilisateur et un mot de passe pour acc\xE9der \xE0 une\
   \ ressource prot\xE9g\xE9e\u2026"
-lastmod: 2024-02-18 23:09:09.305528
+lastmod: 2024-02-19 22:05:16.974553
 model: gpt-4-1106-preview
 summary: "L'envoi d'une requ\xEAte HTTP avec authentification de base consiste \xE0\
   \ fournir un nom d'utilisateur et un mot de passe pour acc\xE9der \xE0 une ressource\

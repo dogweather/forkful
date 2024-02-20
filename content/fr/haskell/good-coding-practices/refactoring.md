@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/haskell/refactoring/
 date: 2024-01-26 01:18:24.330581-07:00
 description: "Le refactoring est le processus de peaufinement de votre code sans changer\
   \ son comportement externe. Il s'agit de nettoyer et d'organiser votre travail\u2026"
-lastmod: 2024-02-18 23:09:08.884421
+lastmod: 2024-02-19 22:05:16.580030
 model: gpt-4-0125-preview
 summary: "Le refactoring est le processus de peaufinement de votre code sans changer\
   \ son comportement externe. Il s'agit de nettoyer et d'organiser votre travail\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/java/concatenating-strings/
 date: 2024-01-20 17:35:21.399140-07:00
 description: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren\
   \ Zeichenketten (Strings) zu einer neuen Zeichenkette. Wir brauchen das, um dynamische\u2026"
-lastmod: 2024-02-18 23:09:04.728486
+lastmod: 2024-02-19 22:05:12.680121
 model: gpt-4-1106-preview
 summary: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren Zeichenketten\
   \ (Strings) zu einer neuen Zeichenkette. Wir brauchen das, um dynamische\u2026"

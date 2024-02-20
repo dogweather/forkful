@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:02.549931-07:00
 description: "Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk\
   \ aanwezig is voordat je eruit leest of ernaar schrijft. Programmeurs doen\u2026"
-lastmod: 2024-02-18 23:09:01.588918
+lastmod: 2024-02-19 22:05:09.613219
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk\
   \ aanwezig is voordat je eruit leest of ernaar schrijft. Programmeurs doen\u2026"

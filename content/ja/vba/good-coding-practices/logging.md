@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/vba/logging/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:16.557912-07:00
@@ -14,7 +12,7 @@ description: "Visual Basic for Applications\uFF08VBA\uFF09\u306B\u304A\u3051\u30
   \u30F3\u306E\u76E3\u8996\u3001\u554F\u984C\u306E\u8A3A\u65AD\u3001\u30D1\u30D5\u30A9\
   \u30FC\u30DE\u30F3\u30B9\u7279\u6027\u306E\u7406\u89E3\u3092\u884C\u3044\u307E\u3059\
   \u3002"
-lastmod: 2024-02-18 23:08:54.767334
+lastmod: 2024-02-19 22:05:01.060113
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications\uFF08VBA\uFF09\u306B\u304A\u3051\u308B\u30ED\
   \u30B0\u8A18\u9332\u3068\u306F\u3001\u30D7\u30ED\u30B0\u30E9\u30E0\u306E\u5B9F\u884C\

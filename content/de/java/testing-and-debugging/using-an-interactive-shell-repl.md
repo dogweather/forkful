@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/java/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:13.145614-07:00
 description: "Ein REPL (Read-Eval-Print Loop) ist eine interaktive Shell, die einzelne\
   \ Benutzereingaben verarbeitet, Code ausf\xFChrt und das Ergebnis zur\xFCckgibt.\u2026"
-lastmod: 2024-02-18 23:09:04.738562
+lastmod: 2024-02-19 22:05:12.689609
 model: gpt-4-0125-preview
 summary: "Ein REPL (Read-Eval-Print Loop) ist eine interaktive Shell, die einzelne\
   \ Benutzereingaben verarbeitet, Code ausf\xFChrt und das Ergebnis zur\xFCckgibt.\u2026"

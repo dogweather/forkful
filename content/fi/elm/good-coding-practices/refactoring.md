@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/refactoring/
 date: 2024-01-26 01:18:42.817301-07:00
 description: "Refaktorointi on k\xE4yt\xE4nn\xF6ss\xE4 koodikannan kev\xE4tsiivous\
   \ \u2013 siin\xE4 uudelleenj\xE4rjestet\xE4\xE4n olemassa olevaa koodia muuttamatta\
   \ sen ulkoista toimintaa. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.538003
+lastmod: 2024-02-19 22:05:15.391020
 model: gpt-4-0125-preview
 summary: "Refaktorointi on k\xE4yt\xE4nn\xF6ss\xE4 koodikannan kev\xE4tsiivous \u2013\
   \ siin\xE4 uudelleenj\xE4rjestet\xE4\xE4n olemassa olevaa koodia muuttamatta sen\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:23.500599-07:00
 description: "Les tableaux associatifs, souvent connus sous le nom de dictionnaires\
   \ dans Visual Basic pour Applications (VBA), permettent aux programmeurs de cr\xE9\
   er des\u2026"
-lastmod: 2024-02-18 23:09:08.569808
+lastmod: 2024-02-19 22:05:16.347249
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, souvent connus sous le nom de dictionnaires dans\
   \ Visual Basic pour Applications (VBA), permettent aux programmeurs de cr\xE9er\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/c/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:15.387706-07:00
 description: "La stampa di output per il debug riguarda la generazione di messaggi\
   \ di log temporanei e informativi che possono aiutare i programmatori a comprendere\
   \ il\u2026"
-lastmod: 2024-02-18 23:08:56.341296
+lastmod: 2024-02-19 22:05:02.979645
 model: gpt-4-0125-preview
 summary: "La stampa di output per il debug riguarda la generazione di messaggi di\
   \ log temporanei e informativi che possono aiutare i programmatori a comprendere\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:57.704372-07:00
 description: "Fouten afhandelen in PowerShell betekent het voorspellen van ongelukken\
   \ en deze soepel beheren. Programmeurs doen dit om crashes te voorkomen en\u2026"
-lastmod: 2024-02-18 23:09:02.100156
+lastmod: 2024-02-19 22:05:10.121237
 model: gpt-4-0125-preview
 summary: "Fouten afhandelen in PowerShell betekent het voorspellen van ongelukken\
   \ en deze soepel beheren. Programmeurs doen dit om crashes te voorkomen en\u2026"

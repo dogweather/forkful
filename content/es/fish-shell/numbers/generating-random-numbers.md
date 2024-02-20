@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/generating-random-numbers/
 date: 2024-01-27 20:33:29.831021-07:00
 description: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programaci\xF3\
   n, utilizada para todo, desde muestreo de datos hasta desarrollo de juegos. En Fish\u2026"
-lastmod: 2024-02-18 23:09:10.446210
+lastmod: 2024-02-19 22:05:17.999889
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programaci\xF3\
   n, utilizada para todo, desde muestreo de datos hasta desarrollo de juegos. En Fish\u2026"

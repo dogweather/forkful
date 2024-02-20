@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/using-associative-arrays/
 date: 2024-02-03 17:50:13.746655-07:00
 description: "Associative arrays, known in other languages as maps or dictionaries,\
   \ are key-value pairs used for efficient data lookup and manipulation. Unlike\u2026"
-lastmod: 2024-02-18 23:09:11.515498
+lastmod: 2024-02-19 22:05:18.966613
 model: gpt-4-0125-preview
 summary: "Associative arrays, known in other languages as maps or dictionaries, are\
   \ key-value pairs used for efficient data lookup and manipulation. Unlike\u2026"

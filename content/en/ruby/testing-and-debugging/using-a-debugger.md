@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/ruby/using-a-debugger/
 date: 2024-01-25 20:50:23.941247-07:00
 description: "Using a debugger in Ruby gives programmers a superpower to pause their\
   \ code, inspect variables, and step through their code line by line. Folks do it\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.570431
+lastmod: 2024-02-19 22:05:19.016728
 model: gpt-4-1106-preview
 summary: "Using a debugger in Ruby gives programmers a superpower to pause their code,\
   \ inspect variables, and step through their code line by line. Folks do it to\u2026"

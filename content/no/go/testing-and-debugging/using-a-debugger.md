@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:28.864624-07:00
 description: "\xC5 bruke en debugger i Go-programmering involverer \xE5 benytte verkt\xF8\
   y eller funksjoner for \xE5 inspisere og endre tilstanden til et kj\xF8rende program\
   \ for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.440720
+lastmod: 2024-02-19 22:04:59.551708
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en debugger i Go-programmering involverer \xE5 benytte verkt\xF8\
   y eller funksjoner for \xE5 inspisere og endre tilstanden til et kj\xF8rende program\

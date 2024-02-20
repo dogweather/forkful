@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/reading-command-line-arguments/
 date: 2024-01-20 17:55:35.535415-07:00
 description: "Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottamista\
   \ suoraan ohjelmalle, kun sen k\xE4ynnist\xE4\xE4 terminaalista. Ohjelmoijat tekev\xE4\
   t sen,\u2026"
-lastmod: 2024-02-18 23:09:07.245006
+lastmod: 2024-02-19 22:05:15.141431
 model: gpt-4-1106-preview
 summary: "Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottamista\
   \ suoraan ohjelmalle, kun sen k\xE4ynnist\xE4\xE4 terminaalista. Ohjelmoijat tekev\xE4\

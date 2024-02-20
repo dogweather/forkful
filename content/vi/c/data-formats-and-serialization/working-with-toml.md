@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/working-with-toml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:45.320918-07:00
@@ -8,7 +6,7 @@ description: "TOML (Tom's Obvious, Minimal Language) l\xE0 m\u1ED9t \u0111\u1ECB
   \ d\u1EA1ng file c\u1EA5u h\xECnh d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5\
   \ r\xE0ng c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\
   \ cho c\xE1c file c\u1EA5u\u2026"
-lastmod: 2024-02-18 23:08:51.261120
+lastmod: 2024-02-19 22:04:56.539089
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
   ng file c\u1EA5u h\xECnh d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0\

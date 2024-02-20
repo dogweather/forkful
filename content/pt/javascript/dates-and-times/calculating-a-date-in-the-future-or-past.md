@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:29.301278-07:00
 description: "Calcular datas no futuro ou no passado significa ajustar um ponto de\
   \ partida temporal para obter uma nova data. Programadores realizam este processo\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.545368
+lastmod: 2024-02-19 22:05:06.041278
 model: gpt-4-1106-preview
 summary: "Calcular datas no futuro ou no passado significa ajustar um ponto de partida\
   \ temporal para obter uma nova data. Programadores realizam este processo para\u2026"

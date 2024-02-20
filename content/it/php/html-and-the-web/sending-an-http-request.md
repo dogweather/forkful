@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/php/sending-an-http-request/
 date: 2024-01-20 18:00:10.630040-07:00
 description: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web per\
   \ prendere o mandare informazioni. I programmatori lo fanno per interagire con API,\
   \ servizi\u2026"
-lastmod: 2024-02-18 23:08:55.967824
+lastmod: 2024-02-19 22:05:02.580119
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web per prendere\
   \ o mandare informazioni. I programmatori lo fanno per interagire con API, servizi\u2026"

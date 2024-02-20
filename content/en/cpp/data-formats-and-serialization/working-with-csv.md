@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/working-with-csv/
 date: 2024-02-03 19:03:14.488221-07:00
 description: "Working with CSV (Comma Separated Values) files is about processing\
   \ and manipulating data stored in a simple text format, where each line of the text\u2026"
-lastmod: 2024-02-18 23:09:11.377145
+lastmod: 2024-02-19 22:05:18.840089
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma Separated Values) files is about processing and\
   \ manipulating data stored in a simple text format, where each line of the text\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c-sharp/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:39.680527-07:00
 description: "Effettuare il parsing di una data da una stringa in C# implica la conversione\
   \ delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.\u2026"
-lastmod: 2024-02-18 23:08:55.897567
+lastmod: 2024-02-19 22:05:02.507061
 model: gpt-4-0125-preview
 summary: "Effettuare il parsing di una data da una stringa in C# implica la conversione\
   \ delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.\u2026"

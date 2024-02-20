@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/bash/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:57:43.361203-07:00
@@ -15,7 +13,7 @@ description: "\u0421\u043A\u0430\u0447\u0438\u0432\u0430\u043D\u0438\u0435 \u043
   \u043A\u0440\u0430\u043F\u0438\u043D\u0433\u0430, \u0430\u043D\u0430\u043B\u0438\
   \u0437\u0430 \u0432 \u0430\u0432\u0442\u043E\u043D\u043E\u043C\u043D\u043E\u043C\
   \u2026"
-lastmod: 2024-02-18 23:08:57.202769
+lastmod: 2024-02-19 22:05:04.335132
 model: gpt-4-0125-preview
 summary: "\u0421\u043A\u0430\u0447\u0438\u0432\u0430\u043D\u0438\u0435 \u0432\u0435\
   \u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B \u043E\u0437\u043D\u0430\

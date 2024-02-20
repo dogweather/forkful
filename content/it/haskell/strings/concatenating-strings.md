@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/haskell/concatenating-strings/
 date: 2024-01-20 17:34:59.763620-07:00
 description: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno. Lo\
   \ facciamo per costruire messaggi, visualizzare dati o generare codice in modo dinamico."
-lastmod: 2024-02-18 23:08:55.922420
+lastmod: 2024-02-19 22:05:02.532536
 model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno. Lo facciamo\
   \ per costruire messaggi, visualizzare dati o generare codice in modo dinamico."

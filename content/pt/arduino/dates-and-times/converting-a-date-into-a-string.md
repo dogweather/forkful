@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/arduino/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:53.747386-07:00
 description: "Converter datas em strings permite que voc\xEA exiba ou armazene datas\
   \ de forma leg\xEDvel. Programadores fazem isso para facilitar a leitura e o processamento\u2026"
-lastmod: 2024-02-18 23:08:58.420602
+lastmod: 2024-02-19 22:05:05.908993
 model: gpt-4-1106-preview
 summary: "Converter datas em strings permite que voc\xEA exiba ou armazene datas de\
   \ forma leg\xEDvel. Programadores fazem isso para facilitar a leitura e o processamento\u2026"

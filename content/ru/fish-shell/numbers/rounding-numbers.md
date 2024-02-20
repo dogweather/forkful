@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/fish-shell/rounding-numbers/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:01:57.436595-07:00
@@ -15,7 +13,7 @@ description: "\u041E\u043A\u0440\u0443\u0433\u043B\u0435\u043D\u0438\u0435 \u044
   \ \u0444\u043E\u0440\u043C\u0430\u0442\u044B. \u041F\u0440\u043E\u0433\u0440\u0430\
   \u043C\u043C\u0438\u0441\u0442\u044B \u0434\u0435\u043B\u0430\u044E\u0442 \u044D\
   \u0442\u043E\u2026"
-lastmod: 2024-02-18 23:08:57.504275
+lastmod: 2024-02-19 22:05:04.815183
 model: gpt-4-0125-preview
 summary: "\u041E\u043A\u0440\u0443\u0433\u043B\u0435\u043D\u0438\u0435 \u0447\u0438\
   \u0441\u0435\u043B \u0437\u0430\u043A\u043B\u044E\u0447\u0430\u0435\u0442\u0441\u044F\

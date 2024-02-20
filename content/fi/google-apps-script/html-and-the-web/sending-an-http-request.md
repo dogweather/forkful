@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:19.033902-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
   \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.131282
+lastmod: 2024-02-19 22:05:15.009031
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
   \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/cpp/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:12.600055-07:00
@@ -15,7 +13,7 @@ description: "C++\u3067\u306E\u6B63\u898F\u8868\u73FE\u306F\u3001\u6587\u5B57\u5
   \u3064\u52B9\u679C\u7684\u306A\u30C6\u30AD\u30B9\u30C8\u51E6\u7406\u306E\u305F\u3081\
   \u306E\u4E0D\u53EF\u6B20\u306A\u30C4\u30FC\u30EB\u3068\u3057\u3066\u3044\u307E\u3059\
   \u3002"
-lastmod: 2024-02-18 23:08:55.180742
+lastmod: 2024-02-19 22:05:01.650836
 model: gpt-4-0125-preview
 summary: "C++\u3067\u306E\u6B63\u898F\u8868\u73FE\u306F\u3001\u6587\u5B57\u5217\u306E\
   \u691C\u7D22\u30D1\u30BF\u30FC\u30F3\u3092\u5B9A\u7FA9\u3059\u308B\u6587\u5B57\u306E\

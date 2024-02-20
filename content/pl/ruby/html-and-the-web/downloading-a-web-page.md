@@ -1,9 +1,7 @@
 ---
-aliases:
-- /pl/ruby/downloading-a-web-page/
 date: 2024-01-20 17:44:36.361540-07:00
 description: ''
-lastmod: 2024-02-18 23:08:50.124719
+lastmod: 2024-02-19 22:04:55.113502
 model: gpt-4-1106-preview
 summary: ''
 title: Pobieranie strony internetowej

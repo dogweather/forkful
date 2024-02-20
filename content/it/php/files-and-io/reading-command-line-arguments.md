@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/php/reading-command-line-arguments/
 date: 2024-01-20 17:56:23.713537-07:00
 description: "Leggere gli argomenti della linea di comando significa pescare dati\
   \ direttamente dall'input dell'utente in un ambiente CLI (Command Line Interface).\
   \ Lo\u2026"
-lastmod: 2024-02-18 23:08:55.985475
+lastmod: 2024-02-19 22:05:02.598979
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della linea di comando significa pescare dati direttamente\
   \ dall'input dell'utente in un ambiente CLI (Command Line Interface). Lo\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:49.032649-07:00
 description: "Att j\xE4mf\xF6ra tv\xE5 datum i programmering \xE4r en grundl\xE4ggande\
   \ uppgift som l\xE5ter utvecklare utv\xE4rdera den kronologiska relationen mellan\
   \ datum. S\xE5dana\u2026"
-lastmod: 2024-02-18 23:08:51.346344
+lastmod: 2024-02-19 22:04:56.639755
 model: gpt-4-0125-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum i programmering \xE4r en grundl\xE4ggande\
   \ uppgift som l\xE5ter utvecklare utv\xE4rdera den kronologiska relationen mellan\

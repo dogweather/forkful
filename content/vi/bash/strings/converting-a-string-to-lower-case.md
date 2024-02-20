@@ -1,11 +1,9 @@
 ---
-aliases:
-- /vi/bash/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:17.682458-07:00
 description: '#'
-lastmod: 2024-02-18 23:08:50.868801
+lastmod: 2024-02-19 22:04:56.047349
 model: gpt-4-0125-preview
 summary: '#'
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"

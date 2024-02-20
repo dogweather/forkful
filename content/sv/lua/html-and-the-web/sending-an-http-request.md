@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/sending-an-http-request/
 date: 2024-01-20 18:00:25.961742-07:00
 description: "Att skicka en HTTP-beg\xE4ran \xE4r hur din kod pratar med andra servrar\
   \ \xF6ver internet. Programmerare g\xF6r detta f\xF6r att h\xE4mta data, skicka\
   \ information eller\u2026"
-lastmod: 2024-02-18 23:08:51.915479
+lastmod: 2024-02-19 22:04:57.261988
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran \xE4r hur din kod pratar med andra servrar\
   \ \xF6ver internet. Programmerare g\xF6r detta f\xF6r att h\xE4mta data, skicka\

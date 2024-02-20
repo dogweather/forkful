@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/c-sharp/working-with-toml/
 date: 2024-01-26 04:20:25.375944-07:00
 description: "TOML er et akronym for Toms Opplagte, Minimale Spr\xE5k, et konfigurasjonsfilformat\
   \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\u2026"
-lastmod: 2024-02-18 23:08:53.916693
+lastmod: 2024-02-19 22:05:00.086665
 model: gpt-4-0125-preview
 summary: "TOML er et akronym for Toms Opplagte, Minimale Spr\xE5k, et konfigurasjonsfilformat\
   \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\u2026"

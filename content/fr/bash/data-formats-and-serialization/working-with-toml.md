@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/working-with-toml/
 date: 2024-01-26 04:18:42.566770-07:00
 description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format\
   \ de s\xE9rialisation de donn\xE9es. Les programmeurs l'appr\xE9cient pour sa simplicit\xE9\
   \ et sa\u2026"
-lastmod: 2024-02-18 23:09:09.044831
+lastmod: 2024-02-19 22:05:16.728431
 model: gpt-4-0125-preview
 summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format de\
   \ s\xE9rialisation de donn\xE9es. Les programmeurs l'appr\xE9cient pour sa simplicit\xE9\

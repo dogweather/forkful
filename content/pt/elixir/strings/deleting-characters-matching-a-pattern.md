@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/elixir/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:04.027764-07:00
 description: "Eliminar caracteres de uma string que correspondem a um padr\xE3o \xE9\
   \ fundamental para limpar dados ou modificar texto. Programadores o fazem para simplificar\u2026"
-lastmod: 2024-02-18 23:08:57.828805
+lastmod: 2024-02-19 22:05:05.297351
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres de uma string que correspondem a um padr\xE3o \xE9 fundamental\
   \ para limpar dados ou modificar texto. Programadores o fazem para simplificar\u2026"

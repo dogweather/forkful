@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:24.308098-07:00
 description: "Het ontleden van een datum betekent het omzetten van een datum in tekstformaat\
   \ naar een datumobject dat een programma kan begrijpen en manipuleren. Het is\u2026"
-lastmod: 2024-02-18 23:09:01.816063
+lastmod: 2024-02-19 22:05:09.832344
 model: gpt-4-0125-preview
 summary: "Het ontleden van een datum betekent het omzetten van een datum in tekstformaat\
   \ naar een datumobject dat een programma kan begrijpen en manipuleren. Het is\u2026"

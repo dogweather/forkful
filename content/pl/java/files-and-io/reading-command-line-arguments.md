@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/reading-command-line-arguments/
 date: 2024-01-20 17:56:15.469529-07:00
 description: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na przekazywanie\
   \ danych do programu przy jego starcie. Robimy to, by elastycznie manipulowa\u0107\
   \ dzia\u0142aniem\u2026"
-lastmod: 2024-02-18 23:08:49.493258
+lastmod: 2024-02-19 22:04:54.423101
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na przekazywanie\
   \ danych do programu przy jego starcie. Robimy to, by elastycznie manipulowa\u0107\

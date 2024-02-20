@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:18.781310-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei in C bedeutet, eine Datei zu\
   \ generieren, die f\xFCr eine kurze Dauer gedacht ist, \xFCblicherweise als Zwischenspeicher\
   \ f\xFCr\u2026"
-lastmod: 2024-02-18 23:09:05.396344
+lastmod: 2024-02-19 22:05:13.315607
 model: gpt-4-0125-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei in C bedeutet, eine Datei zu generieren,\
   \ die f\xFCr eine kurze Dauer gedacht ist, \xFCblicherweise als Zwischenspeicher\

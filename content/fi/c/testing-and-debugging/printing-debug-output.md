@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:24.992621-07:00
 description: "Debug-tulosteen tulostaminen tarkoittaa v\xE4liaikaisten, informatiivisten\
   \ lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
   n ohjelman\u2026"
-lastmod: 2024-02-18 23:09:08.135600
+lastmod: 2024-02-19 22:05:15.936347
 model: gpt-4-0125-preview
 summary: "Debug-tulosteen tulostaminen tarkoittaa v\xE4liaikaisten, informatiivisten\
   \ lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\

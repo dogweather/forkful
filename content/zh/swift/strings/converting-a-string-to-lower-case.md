@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/swift/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:27.227522-07:00
 description: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199\u662F\u628A\u6240\
   \u6709\u6587\u672C\u5B57\u7B26\u8F6C\u6362\u6210\u5C0F\u5199\u5F62\u5F0F\u7684\u8FC7\
@@ -9,7 +7,7 @@ description: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199\u662F\u628A
   \u7279\u522B\u662F\u5728\u4E0D\u533A\u5206\u5927\u5C0F\u5199\u7684\u60C5\u51B5\u4E0B\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.430976
+lastmod: 2024-02-19 22:05:07.201913
 model: gpt-4-1106-preview
 summary: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199\u662F\u628A\u6240\
   \u6709\u6587\u672C\u5B57\u7B26\u8F6C\u6362\u6210\u5C0F\u5199\u5F62\u5F0F\u7684\u8FC7\

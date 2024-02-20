@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:46.892857-07:00
 description: "De huidige datum in Elm krijgen betekent het ophalen van de huidige\
   \ kalenderdatum van het systeem. We doen dit om gebeurtenissen te timestampen, taken\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.771003
+lastmod: 2024-02-19 22:05:09.789471
 model: gpt-4-0125-preview
 summary: "De huidige datum in Elm krijgen betekent het ophalen van de huidige kalenderdatum\
   \ van het systeem. We doen dit om gebeurtenissen te timestampen, taken te\u2026"

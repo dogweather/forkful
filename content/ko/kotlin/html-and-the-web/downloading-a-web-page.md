@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/downloading-a-web-page/
 date: 2024-01-20 17:44:24.989998-07:00
 description: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294\
   \ \uAC83\uC740 \uC6F9 \uCF58\uD150\uCE20\uB97C \uB85C\uCEEC \uCEF4\uD4E8\uD130\uB85C\
@@ -9,7 +7,7 @@ description: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB2
   \uB864\uB9C1, \uC624\uD504\uB77C\uC778 \uC0AC\uC6A9 \uB4F1 \uC5EC\uB7EC \uBAA9\uC801\
   \uC73C\uB85C \uC815\uBCF4\uC5D0 \uC811\uADFC\uD560 \uC218 \uC788\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.147627
+lastmod: 2024-02-19 22:05:14.081657
 model: gpt-4-1106-preview
 summary: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294 \uAC83\
   \uC740 \uC6F9 \uCF58\uD150\uCE20\uB97C \uB85C\uCEEC \uCEF4\uD4E8\uD130\uB85C \uAC00\

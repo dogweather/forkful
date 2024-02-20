@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/python/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:02.058396-07:00
 description: "Travailler avec JSON (JavaScript Object Notation) implique d'analyser\
   \ des cha\xEEnes format\xE9es JSON en objets Python et vice versa. Cela est crucial\
   \ pour le\u2026"
-lastmod: 2024-02-18 23:09:08.363896
+lastmod: 2024-02-19 22:05:16.159903
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON (JavaScript Object Notation) implique d'analyser des\
   \ cha\xEEnes format\xE9es JSON en objets Python et vice versa. Cela est crucial\

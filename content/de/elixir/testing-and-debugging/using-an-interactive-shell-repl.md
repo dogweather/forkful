@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/elixir/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:55.634469-07:00
 description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht\
   \ es Ihnen, Code-Schnipsel in Echtzeit auszuprobieren. Elixir-Programmierer nutzen\
   \ die\u2026"
-lastmod: 2024-02-18 23:09:04.553590
+lastmod: 2024-02-19 22:05:12.513038
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht es\
   \ Ihnen, Code-Schnipsel in Echtzeit auszuprobieren. Elixir-Programmierer nutzen\

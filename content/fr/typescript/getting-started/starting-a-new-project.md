@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/starting-a-new-project/
 date: 2024-01-20 18:04:45.740781-07:00
 description: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en place\
   \ les bases du code. Les programmeurs font \xE7a pour structurer et organiser leurs\
   \ id\xE9es\u2026"
-lastmod: 2024-02-18 23:09:08.482584
+lastmod: 2024-02-19 22:05:16.267822
 model: gpt-4-1106-preview
 summary: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en place les\
   \ bases du code. Les programmeurs font \xE7a pour structurer et organiser leurs\

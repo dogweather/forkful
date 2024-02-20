@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:52.784475-07:00
 description: "La gestion des erreurs dans Google Apps Script consiste \xE0 pr\xE9\
   voir, attraper et r\xE9pondre aux exceptions ou erreurs qui surviennent pendant\
   \ l'ex\xE9cution du\u2026"
-lastmod: 2024-02-18 23:09:08.298016
+lastmod: 2024-02-19 22:05:16.100720
 model: gpt-4-0125-preview
 summary: "La gestion des erreurs dans Google Apps Script consiste \xE0 pr\xE9voir,\
   \ attraper et r\xE9pondre aux exceptions ou erreurs qui surviennent pendant l'ex\xE9\

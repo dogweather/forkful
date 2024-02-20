@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/sending-an-http-request/
 date: 2024-01-20 18:00:32.571971-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xF5es a\
   \ um servidor web. Programadores fazem isso para interagir com APIs, buscar dados\
   \ e comunicar-se\u2026"
-lastmod: 2024-02-18 23:08:58.365633
+lastmod: 2024-02-19 22:05:05.850178
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xF5es a um\
   \ servidor web. Programadores fazem isso para interagir com APIs, buscar dados e\

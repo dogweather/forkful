@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/python/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:35.460269-07:00
 description: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar\
   \ `a` en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`).\
   \ In\u2026"
-lastmod: 2024-02-18 23:09:01.426709
+lastmod: 2024-02-19 22:05:09.457509
 model: gpt-4-0125-preview
 summary: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar `a`\
   \ en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`). In\u2026"

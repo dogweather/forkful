@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/elixir/concatenating-strings/
 date: 2024-01-27 10:42:51.247593-07:00
 description: "Das Verketten von Zeichenketten bedeutet, zwei oder mehr Strings zu\
   \ einem einzigen Textst\xFCck zusammenzuf\xFChren. Du m\xF6chtest eventuell Texte\
   \ zusammenf\xFChren,\u2026"
-lastmod: 2024-02-18 23:09:04.543250
+lastmod: 2024-02-19 22:05:12.503331
 model: gpt-4-0125-preview
 summary: "Das Verketten von Zeichenketten bedeutet, zwei oder mehr Strings zu einem\
   \ einzigen Textst\xFCck zusammenzuf\xFChren. Du m\xF6chtest eventuell Texte zusammenf\xFC\

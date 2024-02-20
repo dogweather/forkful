@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/php/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:24.787610-07:00
 description: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
   \ data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler.\u2026"
-lastmod: 2024-02-18 23:08:53.994690
+lastmod: 2024-02-19 22:05:00.171553
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
   \ data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler.\u2026"

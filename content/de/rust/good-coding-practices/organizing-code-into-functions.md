@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/rust/organizing-code-into-functions/
 date: 2024-01-26 01:16:07.214805-07:00
 description: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare,\
   \ modulare Bl\xF6cke zu gliedern, die durch einen Namen identifiziert werden.\u2026"
-lastmod: 2024-02-18 23:09:04.647255
+lastmod: 2024-02-19 22:05:12.602231
 model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare,\
   \ modulare Bl\xF6cke zu gliedern, die durch einen Namen identifiziert werden.\u2026"

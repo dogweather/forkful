@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/go/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:02.880278-07:00
 description: "Das Protokollieren in der Softwareentwicklung ist der Prozess der Aufzeichnung\
   \ von Informationen \xFCber die Ausf\xFChrung eines Programms, um sein Verhalten\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.371314
+lastmod: 2024-02-19 22:05:12.340516
 model: gpt-4-0125-preview
 summary: "Das Protokollieren in der Softwareentwicklung ist der Prozess der Aufzeichnung\
   \ von Informationen \xFCber die Ausf\xFChrung eines Programms, um sein Verhalten\

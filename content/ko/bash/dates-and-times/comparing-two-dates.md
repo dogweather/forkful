@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/comparing-two-dates/
 date: 2024-01-20 17:32:40.688890-07:00
 description: "\uB0A0\uC9DC \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uAC1C\uC758\
   \ \uB0A0\uC9DC\uB97C \uC11C\uB85C \uBE44\uAD50\uD558\uC5EC \uADF8 \uCC28\uC774\uB098\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uAC1C\u
   \uD2B8 \uAD6C\uB3D9, \uB370\uC774\uD130 \uBD84\uC11D \uB4F1\uC744 \uC704\uD574 \uB0A0\
   \uC9DC\uB97C \uBE44\uAD50\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.504949
+lastmod: 2024-02-19 22:05:14.412942
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uAC1C\uC758 \uB0A0\
   \uC9DC\uB97C \uC11C\uB85C \uBE44\uAD50\uD558\uC5EC \uADF8 \uCC28\uC774\uB098 \uC21C\

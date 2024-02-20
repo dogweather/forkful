@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/c/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:39.876707-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.368313
+lastmod: 2024-02-19 22:05:01.928129
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"

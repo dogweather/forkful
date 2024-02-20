@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/lua/concatenating-strings/
 date: 2024-01-20 17:35:09.347259-07:00
 description: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de texto\
   \ al final de otra. Los programadores lo hacen para construir mensajes, combinar\
   \ datos\u2026"
-lastmod: 2024-02-18 23:09:10.110779
+lastmod: 2024-02-19 22:05:17.701578
 model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de texto\
   \ al final de otra. Los programadores lo hacen para construir mensajes, combinar\

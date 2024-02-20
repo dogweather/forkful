@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/kotlin/handling-errors/
 date: 2024-01-26 00:54:30.500222-07:00
 description: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los problemas\
   \ que surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla\
   \ caer. Los\u2026"
-lastmod: 2024-02-18 23:09:09.943989
+lastmod: 2024-02-19 22:05:17.550451
 model: gpt-4-1106-preview
 summary: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los problemas que\
   \ surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla caer.\

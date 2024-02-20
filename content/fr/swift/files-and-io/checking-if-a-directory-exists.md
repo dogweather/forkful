@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/swift/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:49.185618-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe dans le syst\xE8me de fichiers\
   \ est essentiel pour g\xE9rer les structures de fichiers depuis vos applications\
   \ Swift. Cette\u2026"
-lastmod: 2024-02-18 23:09:09.224719
+lastmod: 2024-02-19 22:05:16.891740
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans le syst\xE8me de fichiers est\
   \ essentiel pour g\xE9rer les structures de fichiers depuis vos applications Swift.\

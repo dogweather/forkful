@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:05.556687-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten\
   \ (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4\
   rilt\xE4.\u2026"
-lastmod: 2024-02-18 23:09:07.887248
+lastmod: 2024-02-19 22:05:15.708509
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten (`'`)\
   \ tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4rilt\xE4\

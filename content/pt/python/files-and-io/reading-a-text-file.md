@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/reading-a-text-file/
 date: 2024-01-20 17:54:52.754568-07:00
 description: "Ler um arquivo de texto \xE9 o processo de carregar o conte\xFAdo de\
   \ um arquivo em texto puro na mem\xF3ria do seu programa. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:57.778123
+lastmod: 2024-02-19 22:05:05.242376
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 o processo de carregar o conte\xFAdo de um\
   \ arquivo em texto puro na mem\xF3ria do seu programa. Programadores fazem isso\

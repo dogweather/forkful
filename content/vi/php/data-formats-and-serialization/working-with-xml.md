@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:43.777140-07:00
@@ -9,7 +7,7 @@ description: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u
   n d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi XML \u0111\
   \u1EC3 cho ph\xE9p t\xEDnh t\u01B0\u01A1ng th\xEDch gi\u1EEFa c\xE1c \u1EE9ng d\u1EE5\
   ng\u2026"
-lastmod: 2024-02-18 23:08:50.817396
+lastmod: 2024-02-19 22:04:55.983143
 model: gpt-4-0125-preview
 summary: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0\u1EE3\
   c s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0u tr\u1EEF v\xE0 v\u1EADn chuy\u1EC3n d\u1EEF\

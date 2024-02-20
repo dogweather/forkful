@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/arduino/generating-random-numbers/
 date: 2024-01-27 20:32:36.439018-07:00
 description: "Generowanie losowych liczb w projektach Arduino polega na tworzeniu\
   \ warto\u015Bci, kt\xF3re z za\u0142o\u017Cenia s\u0105 nieprzewidywalne, co jest\
   \ kluczowe dla aplikacji takich\u2026"
-lastmod: 2024-02-18 23:08:49.866120
+lastmod: 2024-02-19 22:04:54.811817
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w projektach Arduino polega na tworzeniu warto\u015B\
   ci, kt\xF3re z za\u0142o\u017Cenia s\u0105 nieprzewidywalne, co jest kluczowe dla\

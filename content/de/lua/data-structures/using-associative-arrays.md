@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/lua/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:57.006405-07:00
 description: "Assoziative Arrays sind wie geheime Handschl\xE4ge f\xFCr Daten in Lua\u2014\
   anstatt dass sich nur Zahlen brav nach Index aufreihen, k\xF6nnen deine Schl\xFC\
   ssel alles\u2026"
-lastmod: 2024-02-18 23:09:04.999715
+lastmod: 2024-02-19 22:05:12.938382
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays sind wie geheime Handschl\xE4ge f\xFCr Daten in Lua\u2014\
   anstatt dass sich nur Zahlen brav nach Index aufreihen, k\xF6nnen deine Schl\xFC\

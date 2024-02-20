@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/typescript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:36.962345-07:00
 description: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenger\
   \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par. Programmerere bruker dem\
   \ for mer\u2026"
-lastmod: 2024-02-18 23:08:53.638347
+lastmod: 2024-02-19 22:04:59.767123
 model: gpt-4-0125-preview
 summary: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenger\
   \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par. Programmerere bruker dem\

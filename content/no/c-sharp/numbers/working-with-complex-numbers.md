@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/working-with-complex-numbers/
 date: 2024-01-26 04:38:19.282988-07:00
 description: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere imagin\xE6\
   re tall, noe som gj\xF8r det mulig \xE5 l\xF8se ligninger som ikke har reelle l\xF8\
   sninger.\u2026"
-lastmod: 2024-02-18 23:08:53.887869
+lastmod: 2024-02-19 22:05:00.055646
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere imagin\xE6\
   re tall, noe som gj\xF8r det mulig \xE5 l\xF8se ligninger som ikke har reelle l\xF8\

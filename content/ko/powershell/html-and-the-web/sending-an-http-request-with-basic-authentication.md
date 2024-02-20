@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:49.112566-07:00
 description: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC640 \uD1B5\uC2E0\uC758\
   \ \uAE30\uBCF8\uC785\uB2C8\uB2E4. \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\
@@ -10,7 +8,7 @@ description: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC640 \uD1B5\uC2E0\uC7
   \uC804\uD558\uAC8C \uC804\uC1A1\uD558\uACE0 API \uC11C\uBE44\uC2A4\uC5D0 \uC811\uADFC\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.554016
+lastmod: 2024-02-19 22:05:14.459912
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC640 \uD1B5\uC2E0\uC758 \uAE30\
   \uBCF8\uC785\uB2C8\uB2E4. \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/google-apps-script/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:47.522797-07:00
 description: "Eine interaktive Shell oder Read-Eval-Print Loop (REPL) ist eine einfache,\
   \ interaktive Programmierumgebung, die einzelne Benutzereingaben (Ausdr\xFCcke)\u2026"
-lastmod: 2024-02-18 23:09:04.415576
+lastmod: 2024-02-19 22:05:12.382486
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder Read-Eval-Print Loop (REPL) ist eine einfache,\
   \ interaktive Programmierumgebung, die einzelne Benutzereingaben (Ausdr\xFCcke)\u2026"

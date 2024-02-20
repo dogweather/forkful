@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/fish-shell/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:47.927202-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
   \ l\xE4stigen einfachen (' ') oder doppelten (\" \") Anf\xFChrungszeichen von Ihren\
   \ Textdaten\u2026"
-lastmod: 2024-02-18 23:09:05.310845
+lastmod: 2024-02-19 22:05:13.234240
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
   \ l\xE4stigen einfachen (' ') oder doppelten (\" \") Anf\xFChrungszeichen von Ihren\

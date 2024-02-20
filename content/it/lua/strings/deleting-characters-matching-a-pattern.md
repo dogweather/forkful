@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/lua/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:16.686809-07:00
 description: "Cancellare caratteri corrispondenti a un pattern significa rimuovere\
   \ sequenze specifiche di testo da una stringa. Lo facciamo per pulire i dati, validare\u2026"
-lastmod: 2024-02-18 23:08:55.996413
+lastmod: 2024-02-19 22:05:02.610761
 model: gpt-4-1106-preview
 summary: "Cancellare caratteri corrispondenti a un pattern significa rimuovere sequenze\
   \ specifiche di testo da una stringa. Lo facciamo per pulire i dati, validare\u2026"

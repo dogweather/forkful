@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/go/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:33.526259-07:00
 description: "Att l\xE4sa kommandoradsargument i Go inneb\xE4r att extrahera argumenten\
   \ som tillhandah\xE5lls till ett program vid dess anrop fr\xE5n terminalen eller\u2026"
-lastmod: 2024-02-18 23:08:51.349564
+lastmod: 2024-02-19 22:04:56.643091
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa kommandoradsargument i Go inneb\xE4r att extrahera argumenten\
   \ som tillhandah\xE5lls till ett program vid dess anrop fr\xE5n terminalen eller\u2026"

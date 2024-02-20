@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/interpolating-a-string/
 date: 2024-02-01 21:30:14.729179-07:00
 description: "String interpolation in Visual Basic for Applications (VBA) refers to\
   \ the process of embedding variables or expressions within a string literal, allowing\u2026"
-lastmod: 2024-02-18 23:09:10.876147
+lastmod: 2024-02-19 22:05:18.390461
 model: gpt-4-0125-preview
 summary: "String interpolation in Visual Basic for Applications (VBA) refers to the\
   \ process of embedding variables or expressions within a string literal, allowing\u2026"

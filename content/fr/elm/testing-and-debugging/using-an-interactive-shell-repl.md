@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/elm/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:13.861339-07:00
 description: "La boucle Lire-\xC9valuer-Imprimer (REPL) est un environnement de programmation\
   \ simple et interactif qui prend en charge les entr\xE9es utilisateur\u2026"
-lastmod: 2024-02-18 23:09:08.736000
+lastmod: 2024-02-19 22:05:16.444710
 model: gpt-4-0125-preview
 summary: "La boucle Lire-\xC9valuer-Imprimer (REPL) est un environnement de programmation\
   \ simple et interactif qui prend en charge les entr\xE9es utilisateur\u2026"

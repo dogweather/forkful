@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/vba/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:30.265892-07:00
@@ -14,7 +12,7 @@ description: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD \u05DE\u05E1\u05E4\u05
   \u05DD \u05E7\u05E8\u05D5\u05D1\u05D5\u05EA \u05E2\u05D5\u05D1\u05D3\u05D9\u05DD\
   \ \u05E2\u05DD \u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05DE\u05E8\u05D5\u05DB\u05D1\
   \u05D9\u05DD \u05D1\u05EA\u05D7\u05D5\u05DE\u05D9\u05DD \u05DB\u05DE\u05D5\u2026"
-lastmod: 2024-02-18 23:08:52.654236
+lastmod: 2024-02-19 22:04:58.263203
 model: gpt-4-0125-preview
 summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD \u05DE\u05E1\u05E4\u05E8\u05D9\
   \u05DD \u05DE\u05E8\u05D5\u05DB\u05D1\u05D9\u05DD \u05DB\u05D5\u05DC\u05DC\u05EA\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/searching-and-replacing-text/
 date: 2024-01-20 17:58:35.578455-07:00
 description: "Cercare e sostituire testo significa scansionare delle stringhe e cambiarne\
   \ parti specifiche con altre. I programmatori lo fanno per correggere errori,\u2026"
-lastmod: 2024-02-18 23:08:55.507231
+lastmod: 2024-02-19 22:05:02.093204
 model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo significa scansionare delle stringhe e cambiarne\
   \ parti specifiche con altre. I programmatori lo fanno per correggere errori,\u2026"

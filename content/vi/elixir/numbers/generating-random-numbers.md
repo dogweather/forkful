@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:15.549819-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Elixir l\xE0 m\u1E
   t nhi\u1EC7m v\u1EE5 l\u1EADp tr\xECnh c\u01A1 b\u1EA3n, quan tr\u1ECDng cho c\xE1\
   c \u1EE9ng d\u1EE5ng c\u1EA7n k\u1EBFt qu\u1EA3 kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\
   \u1EDBc nh\u01B0 trong vi\u1EC7c t\u1EA1o\u2026"
-lastmod: 2024-02-18 23:08:50.363768
+lastmod: 2024-02-19 22:04:55.404237
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Elixir l\xE0 m\u1ED9t nhi\u1EC7\
   m v\u1EE5 l\u1EADp tr\xECnh c\u01A1 b\u1EA3n, quan tr\u1ECDng cho c\xE1c \u1EE9\

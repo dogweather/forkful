@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/rust/creating-a-temporary-file/
 date: 2024-01-20 17:41:07.153656-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht die vor\xFCbergehende\
   \ Speicherung von Daten w\xE4hrend der Ausf\xFChrung eines Programms. Programmierer\
   \ nutzen sie\u2026"
-lastmod: 2024-02-18 23:09:04.662208
+lastmod: 2024-02-19 22:05:12.616715
 model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht die vor\xFCbergehende\
   \ Speicherung von Daten w\xE4hrend der Ausf\xFChrung eines Programms. Programmierer\

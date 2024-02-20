@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/reading-command-line-arguments/
 date: 2024-01-20 17:55:31.779657-07:00
 description: "Command line arguments let users influence a program's behavior without\
   \ changing the code. Programs use them to get input params, filepath, or operation\u2026"
-lastmod: 2024-02-18 23:09:11.370482
+lastmod: 2024-02-19 22:05:18.833879
 model: gpt-4-1106-preview
 summary: "Command line arguments let users influence a program's behavior without\
   \ changing the code. Programs use them to get input params, filepath, or operation\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:46.872129-07:00
 description: "Code organiseren in functies betekent dat je je code opbreekt in herbruikbare\
   \ stukken, waarbij elk stuk een specifieke taak uitvoert. Programmeurs doen\u2026"
-lastmod: 2024-02-18 23:09:02.143812
+lastmod: 2024-02-19 22:05:10.161973
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies betekent dat je je code opbreekt in herbruikbare\
   \ stukken, waarbij elk stuk een specifieke taak uitvoert. Programmeurs doen\u2026"

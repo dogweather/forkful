@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:28.381955-07:00
 description: "Att ta bort tecken som matchar ett specifikt m\xF6nster i Visual Basic\
   \ for Applications (VBA) inneb\xE4r att identifiera och d\xE4refter ta bort tecken\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:51.609559
+lastmod: 2024-02-19 22:04:56.930657
 model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster i Visual Basic for\
   \ Applications (VBA) inneb\xE4r att identifiera och d\xE4refter ta bort tecken eller\u2026"

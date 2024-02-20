@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/ruby/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:38.799797-07:00
 description: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
   \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\
   \ um m\xE9todo\u2026"
-lastmod: 2024-02-18 23:08:58.660561
+lastmod: 2024-02-19 22:05:06.162444
 model: gpt-4-0125-preview
 summary: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
   \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\

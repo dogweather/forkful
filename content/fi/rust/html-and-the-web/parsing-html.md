@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/rust/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:00.379539-07:00
 description: "HTML:n j\xE4sent\xE4minen Rustilla koskee tietojen poimimista HTML-dokumenteista,\
   \ mik\xE4 on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipij\xF6\
   iden\u2026"
-lastmod: 2024-02-18 23:09:07.361474
+lastmod: 2024-02-19 22:05:15.249813
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Rustilla koskee tietojen poimimista HTML-dokumenteista,\
   \ mik\xE4 on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipij\xF6\

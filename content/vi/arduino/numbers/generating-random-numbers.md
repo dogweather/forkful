@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:12.597832-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn trong c\xE1c d\u1
   \ \xE1n Arduino li\xEAn quan \u0111\u1EBFn vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1\
   \ tr\u1ECB kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3\
   c theo thi\u1EBFt k\u1EBF, r\u1EA5t quan tr\u1ECDng cho\u2026"
-lastmod: 2024-02-18 23:08:50.995601
+lastmod: 2024-02-19 22:04:56.183641
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn trong c\xE1c d\u1EF1 \xE1\
   n Arduino li\xEAn quan \u0111\u1EBFn vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1\

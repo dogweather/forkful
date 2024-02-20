@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/organizing-code-into-functions/
 date: 2024-01-26 01:10:59.078094-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 bryte ned scripting\
   \ til h\xE5ndterbare deler\u2014tenk funksjonelle LEGO-blokker. Vi gj\xF8r det for\
   \ klarhet,\u2026"
-lastmod: 2024-02-18 23:08:54.021104
+lastmod: 2024-02-19 22:05:00.200294
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 bryte ned scripting til\
   \ h\xE5ndterbare deler\u2014tenk funksjonelle LEGO-blokker. Vi gj\xF8r det for klarhet,\u2026"

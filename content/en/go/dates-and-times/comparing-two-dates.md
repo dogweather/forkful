@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/comparing-two-dates/
 date: 2024-02-03 17:50:15.338186-07:00
 description: "Comparing two dates in programming is a fundamental task allowing developers\
   \ to evaluate the chronological relationship between dates. Such comparisons\u2026"
-lastmod: 2024-02-18 23:09:10.609157
+lastmod: 2024-02-19 22:05:18.150385
 model: gpt-4-0125-preview
 summary: "Comparing two dates in programming is a fundamental task allowing developers\
   \ to evaluate the chronological relationship between dates. Such comparisons\u2026"

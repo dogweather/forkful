@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/vba/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:15.352199-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en\
   \ Visual Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar\u2026"
-lastmod: 2024-02-18 23:09:09.777670
+lastmod: 2024-02-19 22:05:17.398632
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en Visual\
   \ Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar\u2026"

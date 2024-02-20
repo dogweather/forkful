@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/powershell/refactoring/
 date: 2024-01-26 03:36:52.355665-07:00
 description: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
   \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar los\u2026"
-lastmod: 2024-02-18 23:09:10.224620
+lastmod: 2024-02-19 22:05:17.805980
 model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
   \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar los\u2026"

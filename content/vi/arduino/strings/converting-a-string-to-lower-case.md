@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:10.643330-07:00
@@ -8,7 +6,7 @@ description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01
   \u1EDDng thay \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i in hoa trong\
   \ v\u0103n b\u1EA3n th\xE0nh c\xE1c ch\u1EEF c\xE1i in th\u01B0\u1EDDng t\u01B0\u01A1\
   ng \u1EE9ng c\u1EE7a ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:50.985214
+lastmod: 2024-02-19 22:04:56.170741
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDD\
   ng thay \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i in hoa trong v\u0103\

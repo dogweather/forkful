@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/java/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:28.659989-07:00
@@ -8,7 +6,7 @@ description: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng d\xE3y s\u1ED1 th\u1EF1c th\xF
   ng qua vi\u1EC7c th\xEAm m\u1ED9t \u0111\u01A1n v\u1ECB \u1EA3o, `i`, n\u01A1i m\xE0\
   \ `i^2 = -1`. Ch\xFAng r\u1EA5t quan tr\u1ECDng trong c\xE1c l\u0129nh v\u1EF1c\
   \ nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD v\xE0\u2026"
-lastmod: 2024-02-18 23:08:50.550226
+lastmod: 2024-02-19 22:04:55.643237
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng d\xE3y s\u1ED1 th\u1EF1c th\xF4ng qua\
   \ vi\u1EC7c th\xEAm m\u1ED9t \u0111\u01A1n v\u1ECB \u1EA3o, `i`, n\u01A1i m\xE0\

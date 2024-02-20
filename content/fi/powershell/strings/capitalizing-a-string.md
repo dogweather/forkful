@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/powershell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:11.211977-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShelliss\xE4\
   \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\u2026"
-lastmod: 2024-02-18 23:09:07.832000
+lastmod: 2024-02-19 22:05:15.660127
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShelliss\xE4\
   \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\u2026"

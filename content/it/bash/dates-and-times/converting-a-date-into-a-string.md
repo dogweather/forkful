@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/bash/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:53.218818-07:00
 description: "Convertire una data in una stringa significa trasformare il formato\
   \ della data in testo leggibile. Programmatori lo fanno per personalizzare l'output,\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:56.063487
+lastmod: 2024-02-19 22:05:02.683317
 model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformare il formato della\
   \ data in testo leggibile. Programmatori lo fanno per personalizzare l'output, per\u2026"

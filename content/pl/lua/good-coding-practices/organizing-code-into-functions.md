@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/organizing-code-into-functions/
 date: 2024-01-26 01:11:36.313626-07:00
 description: "Organizowanie kodu w funkcje polega na podziale skryptowania na mniejsze\
   \ kawa\u0142ki\u2014my\u015Bl o nich jak o funkcjonalnych klockach LEGO. Robimy\
   \ to dla\u2026"
-lastmod: 2024-02-18 23:08:49.745376
+lastmod: 2024-02-19 22:04:54.682714
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje polega na podziale skryptowania na mniejsze\
   \ kawa\u0142ki\u2014my\u015Bl o nich jak o funkcjonalnych klockach LEGO. Robimy\

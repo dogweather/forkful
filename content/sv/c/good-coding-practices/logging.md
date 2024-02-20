@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:02.503679-07:00
 description: "Att logga i C inneb\xE4r att man registrerar fl\xF6det och betydande\
   \ h\xE4ndelser i ett program under dess k\xF6rtid, vilket ger en konkret \xF6versikt\
   \ av dess beteende\u2026"
-lastmod: 2024-02-18 23:08:52.257305
+lastmod: 2024-02-19 22:04:57.642324
 model: gpt-4-0125-preview
 summary: "Att logga i C inneb\xE4r att man registrerar fl\xF6det och betydande h\xE4\
   ndelser i ett program under dess k\xF6rtid, vilket ger en konkret \xF6versikt av\

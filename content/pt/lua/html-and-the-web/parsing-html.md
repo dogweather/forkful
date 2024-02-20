@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/parsing-html/
 date: 2024-01-20 15:32:53.283993-07:00
 description: "Parsing HTML \xE9 o processo de analisar o c\xF3digo de uma p\xE1gina\
   \ da web para extrair informa\xE7\xF5es espec\xEDficas. Programadores fazem isso\
   \ para automatizar a\u2026"
-lastmod: 2024-02-18 23:08:58.280108
+lastmod: 2024-02-19 22:05:05.757697
 summary: "Parsing HTML \xE9 o processo de analisar o c\xF3digo de uma p\xE1gina da\
   \ web para extrair informa\xE7\xF5es espec\xEDficas. Programadores fazem isso para\
   \ automatizar a\u2026"

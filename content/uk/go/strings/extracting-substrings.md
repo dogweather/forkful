@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:15.668340-07:00
@@ -15,7 +13,7 @@ description: "\u0412\u0438\u0434\u043E\u0431\u0443\u0432\u0430\u043D\u043D\u044F
   \u044E\u0442\u044C \u0446\u044E \u043E\u043F\u0435\u0440\u0430\u0446\u0456\u044E\
   \ \u0434\u043B\u044F \u0435\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u043E\u0457\
   \u2026"
-lastmod: 2024-02-18 23:08:59.674922
+lastmod: 2024-02-19 22:05:07.478143
 model: gpt-4-0125-preview
 summary: "\u0412\u0438\u0434\u043E\u0431\u0443\u0432\u0430\u043D\u043D\u044F \u043F\
   \u0456\u0434\u0440\u044F\u0434\u043A\u0456\u0432 \u0432\u043A\u043B\u044E\u0447\u0430\

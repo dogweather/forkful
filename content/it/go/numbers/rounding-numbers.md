@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:08.678966-07:00
 description: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di un\
   \ numero al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.426834
+lastmod: 2024-02-19 22:05:02.006658
 model: gpt-4-0125-preview
 summary: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di un numero\
   \ al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali. I\u2026"

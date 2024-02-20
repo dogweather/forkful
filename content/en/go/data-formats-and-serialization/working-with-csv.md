@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/working-with-csv/
 date: 2024-02-03 17:50:14.450709-07:00
 description: "Comma-Separated Values (CSV) format is ubiquitous for data exchange\
   \ due to its simplicity and ease of integration with most programming languages,\u2026"
-lastmod: 2024-02-18 23:09:10.619305
+lastmod: 2024-02-19 22:05:18.159070
 model: gpt-4-0125-preview
 summary: "Comma-Separated Values (CSV) format is ubiquitous for data exchange due\
   \ to its simplicity and ease of integration with most programming languages,\u2026"

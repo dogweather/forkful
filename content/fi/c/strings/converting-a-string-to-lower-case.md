@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:37.060230-07:00
 description: "Merkkijonon muuntaminen pieniksi kirjaimiksi C-kieless\xE4 sis\xE4lt\xE4\
   \xE4 sen, ett\xE4 kaikki annetun merkkijonon isot kirjaimet muunnetaan vastaaviksi\
   \ pieniksi\u2026"
-lastmod: 2024-02-18 23:09:08.116727
+lastmod: 2024-02-19 22:05:15.918746
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi C-kieless\xE4 sis\xE4lt\xE4\
   \xE4 sen, ett\xE4 kaikki annetun merkkijonon isot kirjaimet muunnetaan vastaaviksi\

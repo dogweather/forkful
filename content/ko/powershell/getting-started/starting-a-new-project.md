@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/starting-a-new-project/
 date: 2024-01-20 18:04:21.456880-07:00
 description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
   \ \uAC74 \uB9D0 \uADF8\uB300\uB85C \uBE48 \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744\
@@ -9,7 +7,7 @@ description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB2
   \uAC70\uB098 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574 \uC0C8 \uD504\
   \uB85C\uADF8\uB7A8\uC744 \uAC1C\uBC1C\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.555424
+lastmod: 2024-02-19 22:05:14.461220
 model: gpt-4-1106-preview
 summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74\
   \ \uB9D0 \uADF8\uB300\uB85C \uBE48 \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\

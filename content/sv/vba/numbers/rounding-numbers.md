@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/vba/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:44.202805-07:00
 description: "Att avrunda tal i programmering handlar om att approximera ett tal till\
   \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.621081
+lastmod: 2024-02-19 22:04:56.943152
 model: gpt-4-0125-preview
 summary: "Att avrunda tal i programmering handlar om att approximera ett tal till\
   \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser. Programmerare\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:12.657813-07:00
 description: "Et interaktivt skall, ogs\xE5 kjent som en Les-Evaluer-Skriv L\xF8kke\
   \ (REPL), lar programmerere taste inn uttrykk eller kode og umiddelbart se resultater,\
   \ noe\u2026"
-lastmod: 2024-02-18 23:08:54.395989
+lastmod: 2024-02-19 22:05:00.554639
 model: gpt-4-0125-preview
 summary: "Et interaktivt skall, ogs\xE5 kjent som en Les-Evaluer-Skriv L\xF8kke (REPL),\
   \ lar programmerere taste inn uttrykk eller kode og umiddelbart se resultater, noe\u2026"

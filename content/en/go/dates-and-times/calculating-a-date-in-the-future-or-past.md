@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/calculating-a-date-in-the-future-or-past/
 date: 2024-02-03 17:50:14.920822-07:00
 description: "Calculating a date in the future or past in Go involves manipulating\
   \ date and time values to determine a specific point relative to a given date.\u2026"
-lastmod: 2024-02-18 23:09:10.610147
+lastmod: 2024-02-19 22:05:18.151261
 model: gpt-4-0125-preview
 summary: "Calculating a date in the future or past in Go involves manipulating date\
   \ and time values to determine a specific point relative to a given date.\u2026"

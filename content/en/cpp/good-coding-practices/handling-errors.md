@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/handling-errors/
 date: 2024-01-21 21:19:24.347489-07:00
 description: Handling errors means planning for when things go wrong. It's vital because
   it helps avoid crashes and makes your software robust and user-friendly.
-lastmod: 2024-02-18 23:09:11.362818
+lastmod: 2024-02-19 22:05:18.826849
 model: gpt-4-1106-preview
 summary: Handling errors means planning for when things go wrong. It's vital because
   it helps avoid crashes and makes your software robust and user-friendly.

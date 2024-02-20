@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/clojure/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:57.403889-07:00
 description: "YAML, ett rekursivt akronym f\xF6r \"YAML Ain't Markup Language\", \xE4\
   r ett m\xE4nniskol\xE4sbart data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler\
   \ och\u2026"
-lastmod: 2024-02-18 23:08:51.481561
+lastmod: 2024-02-19 22:04:56.790022
 model: gpt-4-0125-preview
 summary: "YAML, ett rekursivt akronym f\xF6r \"YAML Ain't Markup Language\", \xE4\
   r ett m\xE4nniskol\xE4sbart data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler\

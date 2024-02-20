@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/working-with-csv/
 date: 2024-02-03 19:02:53.400445-07:00
 description: "Working with CSV (Comma Separated Values) involves parsing and generating\
   \ files that store tabular data in a simple, plaintext format. This is commonly\u2026"
-lastmod: 2024-02-18 23:09:10.993622
+lastmod: 2024-02-19 22:05:18.498373
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma Separated Values) involves parsing and generating\
   \ files that store tabular data in a simple, plaintext format. This is commonly\u2026"

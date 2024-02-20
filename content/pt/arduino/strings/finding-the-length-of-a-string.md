@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/finding-the-length-of-a-string/
 date: 2024-01-20 17:46:48.145401-07:00
 description: "Descobrir o tamanho de uma string significa saber quantos caracteres\
   \ ela possui. Programadores fazem isso para manipular texto de forma eficiente,\
   \ validar\u2026"
-lastmod: 2024-02-18 23:08:58.401435
+lastmod: 2024-02-19 22:05:05.888546
 model: gpt-4-1106-preview
 summary: "Descobrir o tamanho de uma string significa saber quantos caracteres ela\
   \ possui. Programadores fazem isso para manipular texto de forma eficiente, validar\u2026"

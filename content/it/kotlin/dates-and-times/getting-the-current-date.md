@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/kotlin/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:17.564914-07:00
 description: "Nella programmazione, ottenere la data corrente \xE8 un compito fondamentale\
   \ che permette agli sviluppatori di accedere, visualizzare o manipolare la data\u2026"
-lastmod: 2024-02-18 23:08:55.856189
+lastmod: 2024-02-19 22:05:02.464954
 model: gpt-4-0125-preview
 summary: "Nella programmazione, ottenere la data corrente \xE8 un compito fondamentale\
   \ che permette agli sviluppatori di accedere, visualizzare o manipolare la data\u2026"

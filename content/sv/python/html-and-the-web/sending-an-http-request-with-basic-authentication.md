@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:36.364267-07:00
 description: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF6\
   r att s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.421552
+lastmod: 2024-02-19 22:04:56.723754
 model: gpt-4-1106-preview
 summary: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF6r att\
   \ s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet. Programmerare\

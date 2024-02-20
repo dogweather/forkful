@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/elixir/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:52.687396-07:00
@@ -13,7 +11,7 @@ description: "Elixir\u3067\u306E\u6B63\u898F\u8868\u73FE\uFF08regex\uFF09\u306F\
   \u306E\u691C\u8A3C\uFF08\u30E1\u30FC\u30EB\u3001URL\uFF09\u3001\u30ED\u30B0\u306E\
   \u89E3\u6790\u3001\u30C7\u30FC\u30BF\u62BD\u51FA\u306A\u3069\u306E\u30BF\u30B9\u30AF\
   \u306Bregex\u3092\u6D3B\u7528\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.633768
+lastmod: 2024-02-19 22:05:00.874734
 model: gpt-4-0125-preview
 summary: "Elixir\u3067\u306E\u6B63\u898F\u8868\u73FE\uFF08regex\uFF09\u306F\u3001\u7279\
   \u5B9A\u306E\u30D1\u30BF\u30FC\u30F3\u306B\u57FA\u3065\u3044\u3066\u6587\u5B57\u5217\

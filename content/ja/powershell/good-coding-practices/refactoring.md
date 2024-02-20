@@ -1,9 +1,7 @@
 ---
-aliases:
-- /ja/powershell/refactoring/
 date: 2024-01-26 03:37:30.491811-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.122753
+lastmod: 2024-02-19 22:05:01.570256
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30EA\u30D5\u30A1\u30AF\u30BF\u30EA\u30F3\u30B0"

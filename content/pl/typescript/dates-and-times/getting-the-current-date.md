@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/typescript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:07.745246-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w TypeScript, j\u0119zyku opartym\
   \ na JavaScript, pozwala na dost\u0119p i manipulacj\u0119 bie\u017C\u0105cymi informacjami\
   \ o dacie i czasie. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:49.358263
+lastmod: 2024-02-19 22:04:54.277141
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w TypeScript, j\u0119zyku opartym na\
   \ JavaScript, pozwala na dost\u0119p i manipulacj\u0119 bie\u017C\u0105cymi informacjami\

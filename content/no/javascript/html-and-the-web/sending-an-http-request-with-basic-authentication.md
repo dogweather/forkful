@@ -1,9 +1,7 @@
 ---
-aliases:
-- /no/javascript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:07.876945-07:00
 description: null
-lastmod: 2024-02-18 23:08:54.308890
+lastmod: 2024-02-19 22:05:00.459868
 model: gpt-4-1106-preview
 summary: null
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"

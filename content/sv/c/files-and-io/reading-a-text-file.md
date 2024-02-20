@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:13.567896-07:00
 description: "Att l\xE4sa en textfil i C inneb\xE4r att \xF6ppna en fil p\xE5 ditt\
   \ system f\xF6r att extrahera information och manipulera eller visa den som det\
   \ beh\xF6vs. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:52.268998
+lastmod: 2024-02-19 22:04:57.655411
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i C inneb\xE4r att \xF6ppna en fil p\xE5 ditt system\
   \ f\xF6r att extrahera information och manipulera eller visa den som det beh\xF6\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elixir/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:59.130046-07:00
 description: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokument\xF3\
   w HTML. Programi\u015Bci robi\u0105 to, aby programowo wsp\xF3\u0142dzia\u0142a\u0107\
   \ ze stronami internetowymi,\u2026"
-lastmod: 2024-02-18 23:08:49.303789
+lastmod: 2024-02-19 22:04:54.219249
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokument\xF3\
   w HTML. Programi\u015Bci robi\u0105 to, aby programowo wsp\xF3\u0142dzia\u0142a\u0107\

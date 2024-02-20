@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c-sharp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:06.106282-07:00
 description: "Capitalizar una cadena en C# implica convertir el primer car\xE1cter\
   \ de una cadena a may\xFAsculas si ya no lo est\xE1. Esta alteraci\xF3n puede ser\
   \ crucial para\u2026"
-lastmod: 2024-02-18 23:09:09.964019
+lastmod: 2024-02-19 22:05:17.568166
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en C# implica convertir el primer car\xE1cter de\
   \ una cadena a may\xFAsculas si ya no lo est\xE1. Esta alteraci\xF3n puede ser crucial\

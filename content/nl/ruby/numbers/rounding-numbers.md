@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:09.626968-07:00
 description: "Het afronden van getallen betekent het aanpassen ervan naar het dichtstbijzijnde\
   \ gehele getal of naar een gespecificeerde mate van precisie. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.414348
+lastmod: 2024-02-19 22:05:10.419490
 model: gpt-4-0125-preview
 summary: "Het afronden van getallen betekent het aanpassen ervan naar het dichtstbijzijnde\
   \ gehele getal of naar een gespecificeerde mate van precisie. Programmeurs\u2026"

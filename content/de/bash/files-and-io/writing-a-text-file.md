@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/bash/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:05.788788-07:00
 description: "Das Schreiben einer Textdatei in Bash erlaubt es, die Datenspeicherung,\
   \ das Logging, Konfigurationseinstellungen und mehr zu automatisieren. Es ist eine\u2026"
-lastmod: 2024-02-18 23:09:05.073841
+lastmod: 2024-02-19 22:05:13.009043
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Bash erlaubt es, die Datenspeicherung,\
   \ das Logging, Konfigurationseinstellungen und mehr zu automatisieren. Es ist eine\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/reading-a-text-file/
 date: 2024-01-20 17:53:50.132238-07:00
 description: "Leer un archivo de texto significa acceder a su contenido usando un\
   \ programa. Los programadores lo hacen para procesar o analizar los datos,\u2026"
-lastmod: 2024-02-18 23:09:10.186437
+lastmod: 2024-02-19 22:05:17.771069
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto significa acceder a su contenido usando un programa.\
   \ Los programadores lo hacen para procesar o analizar los datos,\u2026"

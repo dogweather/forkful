@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/lua/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:02.953625-07:00
 description: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
   \ contiene. Los programadores lo hacen para validar entradas, manipular texto o\u2026"
-lastmod: 2024-02-18 23:09:10.109783
+lastmod: 2024-02-19 22:05:17.700676
 model: gpt-4-1106-preview
 summary: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
   \ contiene. Los programadores lo hacen para validar entradas, manipular texto o\u2026"

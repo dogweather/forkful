@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/reading-a-text-file/
 date: 2024-01-20 17:54:56.321993-07:00
 description: "Leggere un file di testo in Ruby significa accedere al contenuto di\
   \ un file salvato sul disco. I programmatori lo fanno per manipolare dati, configurare\u2026"
-lastmod: 2024-02-18 23:08:56.399691
+lastmod: 2024-02-19 22:05:03.041323
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo in Ruby significa accedere al contenuto di un file\
   \ salvato sul disco. I programmatori lo fanno per manipolare dati, configurare\u2026"

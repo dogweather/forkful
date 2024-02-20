@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/php/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:52.067135-07:00
 description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabeticianche quelli accentati, nella loro forma minuscola. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:55.958617
+lastmod: 2024-02-19 22:05:02.570302
 model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabeticianche quelli accentati, nella loro forma minuscola. I programmatori\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /hi/bash/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:06.996832-07:00
 description: "String ki length jaanna matlab ye hai ki us string me kitne characters\
   \ hain. Programmers isliye string ki length jaan'na chahte hain taki wo data ko\u2026"
-lastmod: 2024-02-18 23:09:03.636048
+lastmod: 2024-02-19 22:05:11.624175
 model: gpt-4-1106-preview
 summary: "String ki length jaanna matlab ye hai ki us string me kitne characters hain.\
   \ Programmers isliye string ki length jaan'na chahte hain taki wo data ko\u2026"

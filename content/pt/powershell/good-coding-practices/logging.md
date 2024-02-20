@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/logging/
 date: 2024-01-26 01:07:17.980953-07:00
 description: "Registrar \xE9 basicamente deixar um rastro de migalhas atrav\xE9s do\
   \ seu c\xF3digo - \xE9 como voc\xEA acompanha o que est\xE1 acontecendo quando o\
   \ seu script est\xE1 rodando\u2026"
-lastmod: 2024-02-18 23:08:58.375138
+lastmod: 2024-02-19 22:05:05.860414
 model: gpt-4-1106-preview
 summary: "Registrar \xE9 basicamente deixar um rastro de migalhas atrav\xE9s do seu\
   \ c\xF3digo - \xE9 como voc\xEA acompanha o que est\xE1 acontecendo quando o seu\

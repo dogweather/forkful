@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:19.081076-07:00
 description: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeichen,\
   \ aus denen er besteht, zu z\xE4hlen. Programmierer machen das oft, um Benutzereingaben\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.411493
+lastmod: 2024-02-19 22:05:13.329976
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeichen, aus\
   \ denen er besteht, zu z\xE4hlen. Programmierer machen das oft, um Benutzereingaben\

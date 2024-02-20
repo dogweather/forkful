@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/haskell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:31.312136-07:00
 description: "R\xE9cup\xE9rer la date actuelle en Haskell implique d'obtenir le temps\
   \ syst\xE8me actuel et de le transformer en un format de date lisible. Les programmeurs\
   \ font\u2026"
-lastmod: 2024-02-18 23:09:08.886834
+lastmod: 2024-02-19 22:05:16.582175
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle en Haskell implique d'obtenir le temps\
   \ syst\xE8me actuel et de le transformer en un format de date lisible. Les programmeurs\

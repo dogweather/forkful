@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:23.034601-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043F\u043
   \u044E \u0432\u0441\u044E\u0434\u0438\u0441\u0443\u0449\u0456\u0441\u0442\u044E\
   . \u0426\u0435 \u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u043E \u0434\u043B\
   \u044F \u0437\u0430\u0432\u0434\u0430\u043D\u044C,\u2026"
-lastmod: 2024-02-18 23:08:59.702799
+lastmod: 2024-02-19 22:05:07.520041
 model: gpt-4-0125-preview
 summary: "\u041E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043F\u043E\u0442\
   \u043E\u0447\u043D\u043E\u0457 \u0434\u0430\u0442\u0438 \u0432 Go \u0454 \u0444\u0443\

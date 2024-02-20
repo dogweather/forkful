@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:26.486727-07:00
 description: "Het verkrijgen van de huidige datum in Python betekent het ophalen van\
   \ de live datum van het systeem waarop het draait. Programmeurs doen dit voor het\u2026"
-lastmod: 2024-02-18 23:09:01.445166
+lastmod: 2024-02-19 22:05:09.475264
 model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in Python betekent het ophalen van de\
   \ live datum van het systeem waarop het draait. Programmeurs doen dit voor het\u2026"

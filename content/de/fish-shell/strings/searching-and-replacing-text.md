@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/fish-shell/searching-and-replacing-text/
 date: 2024-01-20 17:57:49.820978-07:00
 description: "Textsuche und -ersetzung ist das schnelle Auffinden und Austauschen\
   \ von spezifischen Zeichenketten im Code. Programmierer nutzen das, um Fehler zu\u2026"
-lastmod: 2024-02-18 23:09:05.307864
+lastmod: 2024-02-19 22:05:13.231444
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersetzung ist das schnelle Auffinden und Austauschen von\
   \ spezifischen Zeichenketten im Code. Programmierer nutzen das, um Fehler zu\u2026"

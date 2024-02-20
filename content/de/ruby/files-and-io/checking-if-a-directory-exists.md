@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:13.542914-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Ruby existiert, erm\xF6\
   glicht es Programmierern, die Pr\xE4senz eines Verzeichnisses zu verifizieren, bevor\
   \ sie\u2026"
-lastmod: 2024-02-18 23:09:05.438545
+lastmod: 2024-02-19 22:05:13.357610
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Ruby existiert, erm\xF6glicht\
   \ es Programmierern, die Pr\xE4senz eines Verzeichnisses zu verifizieren, bevor\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:58.465212-07:00
 description: "Wyra\u017Cenia regularne (regex) w Visual Basic for Applications (VBA)\
   \ stanowi\u0105 pot\u0119\u017Cne narz\u0119dzie do wyszukiwania, dopasowywania\
   \ i manipulowania ci\u0105gami\u2026"
-lastmod: 2024-02-18 23:08:49.422986
+lastmod: 2024-02-19 22:04:54.346724
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Visual Basic for Applications (VBA) stanowi\u0105\
   \ pot\u0119\u017Cne narz\u0119dzie do wyszukiwania, dopasowywania i manipulowania\

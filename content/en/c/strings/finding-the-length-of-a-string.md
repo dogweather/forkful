@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/finding-the-length-of-a-string/
 date: 2024-02-03 17:49:55.005016-07:00
 description: "Finding the length of a string in C involves determining the number\
   \ of characters before the null terminator `\\0`. Programmers do this to manipulate\u2026"
-lastmod: 2024-02-18 23:09:11.513614
+lastmod: 2024-02-19 22:05:18.964919
 model: gpt-4-0125-preview
 summary: "Finding the length of a string in C involves determining the number of characters\
   \ before the null terminator `\\0`. Programmers do this to manipulate\u2026"

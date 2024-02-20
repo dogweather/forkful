@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/sending-an-http-request/
 date: 2024-01-20 18:00:39.376305-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b na komunikacj\u0119\
   \ Twojego programu z serwerem webowym; wy\u015Blij zapytanie i odbierz odpowied\u017A\
   . Programi\u015Bci to robi\u0105, aby\u2026"
-lastmod: 2024-02-18 23:08:50.122817
+lastmod: 2024-02-19 22:04:55.111455
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b na komunikacj\u0119 Twojego\
   \ programu z serwerem webowym; wy\u015Blij zapytanie i odbierz odpowied\u017A. Programi\u015B\

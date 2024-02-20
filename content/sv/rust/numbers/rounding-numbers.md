@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/rounding-numbers/
 date: 2024-01-26 03:46:49.338473-07:00
 description: "Att avrunda tal inneb\xE4r att justera dem till det n\xE4rmaste hela\
   \ talet eller en br\xE5kdel med viss precision. Programmerare avrundar tal f\xF6\
   r att f\xF6renkla\u2026"
-lastmod: 2024-02-18 23:08:51.578970
+lastmod: 2024-02-19 22:04:56.896924
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att justera dem till det n\xE4rmaste hela talet\
   \ eller en br\xE5kdel med viss precision. Programmerare avrundar tal f\xF6r att\

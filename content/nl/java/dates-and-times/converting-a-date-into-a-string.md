@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:27.600328-07:00
 description: "Een datum naar een tekenreeks converteren betekent het vertegenwoordigen\
   \ van een datumobject als leesbare tekst die een specifiek patroon volgt.\u2026"
-lastmod: 2024-02-18 23:09:01.725785
+lastmod: 2024-02-19 22:05:09.745696
 model: gpt-4-0125-preview
 summary: "Een datum naar een tekenreeks converteren betekent het vertegenwoordigen\
   \ van een datumobject als leesbare tekst die een specifiek patroon volgt.\u2026"

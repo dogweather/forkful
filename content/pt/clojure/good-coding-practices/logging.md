@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/clojure/logging/
 date: 2024-01-26 01:02:30.966188-07:00
 description: "O log \xE9 essencialmente o equivalente de software ao di\xE1rio de\
   \ bordo de um navio; \xE9 uma maneira de registrar eventos que acontecem enquanto\
   \ uma aplica\xE7\xE3o\u2026"
-lastmod: 2024-02-18 23:08:57.808992
+lastmod: 2024-02-19 22:05:05.275632
 model: gpt-4-1106-preview
 summary: "O log \xE9 essencialmente o equivalente de software ao di\xE1rio de bordo\
   \ de um navio; \xE9 uma maneira de registrar eventos que acontecem enquanto uma\

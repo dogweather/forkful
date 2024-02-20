@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/extracting-substrings/
 date: 2024-01-20 17:46:13.912591-07:00
 description: "Estrarre sottostringhe significa prendere parti specifiche di una stringa.\
   \ I programmatori lo fanno per analizzare, manipolare o trasformare i dati\u2026"
-lastmod: 2024-02-18 23:08:56.242316
+lastmod: 2024-02-19 22:05:02.875222
 model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa prendere parti specifiche di una stringa.\
   \ I programmatori lo fanno per analizzare, manipolare o trasformare i dati\u2026"

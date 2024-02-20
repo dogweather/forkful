@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/concatenating-strings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:46.405581-07:00
 description: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de duas\
   \ ou mais strings de ponta a ponta para formar uma nova string. Os programadores\
   \ realizam essa\u2026"
-lastmod: 2024-02-18 23:08:58.610287
+lastmod: 2024-02-19 22:05:06.110180
 model: gpt-4-0125-preview
 summary: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de duas ou mais\
   \ strings de ponta a ponta para formar uma nova string. Os programadores realizam\

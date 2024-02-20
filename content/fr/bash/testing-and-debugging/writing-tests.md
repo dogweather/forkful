@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/bash/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:47.061995-07:00
 description: "\xC9crire des tests en Bash implique de scripter des cas de test pour\
   \ valider la fonctionnalit\xE9 de vos scripts Bash. Les programmeurs effectuent\
   \ des tests\u2026"
-lastmod: 2024-02-18 23:09:09.023233
+lastmod: 2024-02-19 22:05:16.707903
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Bash implique de scripter des cas de test pour valider\
   \ la fonctionnalit\xE9 de vos scripts Bash. Les programmeurs effectuent des tests\u2026"

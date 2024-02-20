@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/working-with-xml/
 date: 2024-01-25 03:40:06.585419-07:00
 description: "Working with XML means parsing, transforming, and generating XML documents\
   \ in Elm. It's done to interact with many web services and legacy systems that\u2026"
-lastmod: 2024-02-18 23:09:10.995507
+lastmod: 2024-02-19 22:05:18.500102
 model: gpt-4-1106-preview
 summary: "Working with XML means parsing, transforming, and generating XML documents\
   \ in Elm. It's done to interact with many web services and legacy systems that\u2026"

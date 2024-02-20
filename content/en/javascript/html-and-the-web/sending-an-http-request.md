@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/sending-an-http-request/
 date: 2024-01-20 17:59:48.745761-07:00
 description: "Sending an HTTP request is how your JavaScript code talks to a server.\
   \ It's done to exchange data, fetch resources, or send data to the server for\u2026"
-lastmod: 2024-02-18 23:09:11.434821
+lastmod: 2024-02-19 22:05:18.892263
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is how your JavaScript code talks to a server. It's\
   \ done to exchange data, fetch resources, or send data to the server for\u2026"

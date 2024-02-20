@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:44.087795-07:00
 description: "Selvitet\xE4\xE4n merkkijonon pituutta (`length`-ominaisuus) tiet\xE4\
   \xE4ksemme, montako merkki\xE4 jono sis\xE4lt\xE4\xE4. Sit\xE4 tarvitaan esimerkiksi\
   \ silloin, kun validoidaan\u2026"
-lastmod: 2024-02-18 23:09:08.026079
+lastmod: 2024-02-19 22:05:15.835549
 model: gpt-4-1106-preview
 summary: "Selvitet\xE4\xE4n merkkijonon pituutta (`length`-ominaisuus) tiet\xE4\xE4\
   ksemme, montako merkki\xE4 jono sis\xE4lt\xE4\xE4. Sit\xE4 tarvitaan esimerkiksi\

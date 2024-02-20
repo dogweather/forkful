@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/rust/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:02.878533-07:00
 description: "Karakters die een patroon matchen verwijderen in een string betekent\
   \ het vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om\
   \ tekst\u2026"
-lastmod: 2024-02-18 23:09:01.601796
+lastmod: 2024-02-19 22:05:09.625577
 model: gpt-4-0125-preview
 summary: "Karakters die een patroon matchen verwijderen in een string betekent het\
   \ vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om tekst\u2026"

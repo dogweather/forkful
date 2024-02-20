@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:27.099416-07:00
 description: "Analizar una fecha de una cadena implica convertir texto que representa\
   \ una fecha en un objeto de fecha, lo que permite a los programadores realizar\u2026"
-lastmod: 2024-02-18 23:09:09.518770
+lastmod: 2024-02-19 22:05:17.172022
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena implica convertir texto que representa\
   \ una fecha en un objeto de fecha, lo que permite a los programadores realizar\u2026"

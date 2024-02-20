@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:42.186121-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat\
   \ een gebruikersnaam en wachtwoord worden verzonden om de identiteit van een\u2026"
-lastmod: 2024-02-18 23:09:02.039501
+lastmod: 2024-02-19 22:05:10.066045
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat een\
   \ gebruikersnaam en wachtwoord worden verzonden om de identiteit van een\u2026"

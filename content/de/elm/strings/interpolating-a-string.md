@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elm/interpolating-a-string/
 date: 2024-01-20 17:50:33.702713-07:00
 description: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten\
   \ einzuf\xFCgen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder\u2026"
-lastmod: 2024-02-18 23:09:04.767274
+lastmod: 2024-02-19 22:05:12.716687
 model: gpt-4-1106-preview
 summary: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten einzuf\xFC\
   gen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder\u2026"

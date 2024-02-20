@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/ruby/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:11.636584-07:00
 description: "\xC5 kapitalisere en streng i programmering refererer ofte til \xE5\
   \ konvertere det f\xF8rste tegnet i en streng til stor bokstav og resten til sm\xE5\
   \ bokstaver.\u2026"
-lastmod: 2024-02-18 23:08:54.420744
+lastmod: 2024-02-19 22:05:00.581672
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng i programmering refererer ofte til \xE5 konvertere\
   \ det f\xF8rste tegnet i en streng til stor bokstav og resten til sm\xE5 bokstaver.\u2026"

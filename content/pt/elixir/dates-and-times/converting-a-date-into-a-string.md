@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:34.698187-07:00
 description: "Converter uma data em uma string \xE9 basicamente transformar o formato\
   \ de data, normalmente estruturado e reconhecido pelo computador, em texto leg\xED\
   vel por\u2026"
-lastmod: 2024-02-18 23:08:57.855233
+lastmod: 2024-02-19 22:05:05.325863
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string \xE9 basicamente transformar o formato\
   \ de data, normalmente estruturado e reconhecido pelo computador, em texto leg\xED\

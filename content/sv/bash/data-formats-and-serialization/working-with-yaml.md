@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/bash/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:06.850180-07:00
 description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en l\xE4\
   sbar dataseringsstandard som kan anv\xE4ndas f\xF6r konfigurationsfiler, s\xE5v\xE4\
   l som i applikationer d\xE4r\u2026"
-lastmod: 2024-02-18 23:08:51.980830
+lastmod: 2024-02-19 22:04:57.333821
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en l\xE4sbar\
   \ dataseringsstandard som kan anv\xE4ndas f\xF6r konfigurationsfiler, s\xE5v\xE4\

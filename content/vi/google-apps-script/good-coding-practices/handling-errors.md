@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/google-apps-script/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:35.183254-07:00
@@ -8,7 +6,7 @@ description: "X\u1EED l\xFD l\u1ED7i trong Google Apps Script l\xE0 vi\u1EC7c d\
   \ \u0111o\xE1n, b\u1EAFt v\xE0 ph\u1EA3n h\u1ED3i tr\u01B0\u1EDBc c\xE1c ngo\u1EA1\
   i l\u1EC7 ho\u1EB7c l\u1ED7i x\u1EA3y ra trong qu\xE1 tr\xECnh th\u1EF1c thi script.\
   \ C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:50.228478
+lastmod: 2024-02-19 22:04:55.240353
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i trong Google Apps Script l\xE0 vi\u1EC7c d\u1EF1\
   \ \u0111o\xE1n, b\u1EAFt v\xE0 ph\u1EA3n h\u1ED3i tr\u01B0\u1EDBc c\xE1c ngo\u1EA1\

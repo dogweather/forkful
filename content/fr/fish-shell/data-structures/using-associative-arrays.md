@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/fish-shell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:52.716977-07:00
 description: "Les tableaux associatifs, ou maps, vous permettent de stocker des donn\xE9\
   es sous forme de paires cl\xE9-valeur, facilitant ainsi l'organisation et la\u2026"
-lastmod: 2024-02-18 23:09:09.295617
+lastmod: 2024-02-19 22:05:16.965414
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou maps, vous permettent de stocker des donn\xE9\
   es sous forme de paires cl\xE9-valeur, facilitant ainsi l'organisation et la\u2026"

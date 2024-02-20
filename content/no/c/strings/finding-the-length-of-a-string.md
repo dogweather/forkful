@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:31.286728-07:00
 description: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme antall\
   \ tegn f\xF8r nullterminatoren `\\0`. Programmerere gj\xF8r dette for \xE5 kunne\
   \ manipulere strenger\u2026"
-lastmod: 2024-02-18 23:08:54.384592
+lastmod: 2024-02-19 22:05:00.542061
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme antall\
   \ tegn f\xF8r nullterminatoren `\\0`. Programmerere gj\xF8r dette for \xE5 kunne\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:19.223982-07:00
 description: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on prosessi,\
   \ jossa `Date`-objekti muutetaan luettavaan tekstiformaattiin. T\xE4m\xE4 on hy\xF6\
   dyllist\xE4, koska n\xE4in\u2026"
-lastmod: 2024-02-18 23:09:08.048154
+lastmod: 2024-02-19 22:05:15.856237
 model: gpt-4-1106-preview
 summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on prosessi, jossa\
   \ `Date`-objekti muutetaan luettavaan tekstiformaattiin. T\xE4m\xE4 on hy\xF6dyllist\xE4\

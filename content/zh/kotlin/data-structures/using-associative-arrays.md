@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/kotlin/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:04.866983-07:00
@@ -9,7 +7,7 @@ description: "\u5728Kotlin\u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u6216\u6620\u5C04
   \u5B83\u4EEC\u53EF\u4EE5\u6839\u636E\u552F\u4E00\u7684\u952E\u6709\u6548\u5730\u7EC4\
   \u7EC7\u548C\u68C0\u7D22\u6570\u636E\uFF0C\u4F7F\u4FE1\u606F\u7BA1\u7406\u53D8\u5F97\
   \u66F4\u52A0\u7B80\u5355\u3002"
-lastmod: 2024-02-18 23:08:59.089263
+lastmod: 2024-02-19 22:05:06.741773
 model: gpt-4-0125-preview
 summary: "\u5728Kotlin\u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u6216\u6620\u5C04\u662F\
   \u5B58\u50A8\u952E\u503C\u5BF9\u7684\u96C6\u5408\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\

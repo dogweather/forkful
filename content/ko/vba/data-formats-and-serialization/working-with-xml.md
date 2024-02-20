@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/working-with-xml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:10.155266-07:00
@@ -10,7 +8,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C XML\uC744 \uB2E4\uB
   \uC131\uD558\uACE0, \uC218\uC815\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\
   \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 Office \uC751\uC6A9 \uD504\uB85C\
   \uADF8\uB7A8\uC744 XML\uC744 \uC0DD\uC131\uD558\uB294 \uC6F9\u2026"
-lastmod: 2024-02-18 23:09:05.993312
+lastmod: 2024-02-19 22:05:13.928147
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294\
   \ \uAC83\uC740 Microsoft Office \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC758 \uB9E5\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:30.598852-07:00
 description: "HTTP \uAE30\uBCF8 \uC778\uC99D\uC73C\uB85C \uC694\uCCAD\uC744 \uBCF4\
   \uB0B4\uB294 \uAC83\uC740, \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\uBC88\
@@ -10,7 +8,7 @@ description: "HTTP \uAE30\uBCF8 \uC778\uC99D\uC73C\uB85C \uC694\uCCAD\uC744 \uBC
   \uAD6C\uD558\uB294 \uC778\uC99D\uC744 \uC81C\uACF5, \uB370\uC774\uD130\uC5D0 \uC548\
   \uC804\uD558\uAC8C \uC811\uADFC\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.025293
+lastmod: 2024-02-19 22:05:14.907434
 model: gpt-4-1106-preview
 summary: "HTTP \uAE30\uBCF8 \uC778\uC99D\uC73C\uB85C \uC694\uCCAD\uC744 \uBCF4\uB0B4\
   \uB294 \uAC83\uC740, \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\uBC88\uD638\

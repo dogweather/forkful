@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:39.540859-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.479517
+lastmod: 2024-02-19 22:05:00.653171
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u7528\u3044\u305FHTTP\u30EA\u30AF\u30A8\u30B9\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:19.091714-07:00
 description: "Removing characters based on a pattern makes strings clean and uniform.\
   \ Programmers do this for formatting, removing unwanted characters, or for\u2026"
-lastmod: 2024-02-18 23:09:11.422499
+lastmod: 2024-02-19 22:05:18.881162
 model: gpt-4-1106-preview
 summary: "Removing characters based on a pattern makes strings clean and uniform.\
   \ Programmers do this for formatting, removing unwanted characters, or for\u2026"

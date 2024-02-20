@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:55.375759-07:00
 description: "Werken met XML betekent het parseren, transformeren en genereren van\
   \ XML-documenten in Elm. Dit wordt gedaan om te interageren met veel webdiensten\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:01.785815
+lastmod: 2024-02-19 22:05:09.803265
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren, transformeren en genereren van XML-documenten\
   \ in Elm. Dit wordt gedaan om te interageren met veel webdiensten en\u2026"

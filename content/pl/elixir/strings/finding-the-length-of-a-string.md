@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elixir/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:13.534224-07:00
 description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w oznacza\
   \ ustalenie, ile znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105 to do\
   \ walidacji, formatowania, oraz by\u2026"
-lastmod: 2024-02-18 23:08:49.297087
+lastmod: 2024-02-19 22:04:54.212043
 model: gpt-4-1106-preview
 summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w oznacza ustalenie,\
   \ ile znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105 to do walidacji,\

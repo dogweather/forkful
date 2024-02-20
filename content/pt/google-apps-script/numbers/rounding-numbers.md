@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:21.113822-07:00
 description: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3o\
   \ de computadores, envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou\
   \ para um n\xFAmero\u2026"
-lastmod: 2024-02-18 23:08:57.709907
+lastmod: 2024-02-19 22:05:05.169821
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3o de computadores,\
   \ envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou para um n\xFAmero\u2026"

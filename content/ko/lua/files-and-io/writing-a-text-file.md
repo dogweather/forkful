@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:53.845456-07:00
@@ -13,7 +11,7 @@ description: "Lua\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131
   \ \uC704\uD55C \uAE30\uBCF8\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\
   \uADF8\uB7A8\uC774 \uC138\uC158 \uAC04\uC5D0 \uB370\uC774\uD130\uB97C \uC9C0\uC18D\
   \uC801\uC73C\uB85C \uC800\uC7A5\uD560 \uC218 \uC788\uAC8C\u2026"
-lastmod: 2024-02-18 23:09:06.445091
+lastmod: 2024-02-19 22:05:14.356688
 model: gpt-4-0125-preview
 summary: "Lua\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD558\
   \uB294 \uAC83\uC740 \uC4F0\uAE30 \uBAA8\uB4DC\uC5D0\uC11C \uD30C\uC77C\uC744 \uC0DD\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:20.649805-07:00
 description: "Los arreglos asociativos, a menudo conocidos como diccionarios en Visual\
   \ Basic para Aplicaciones (VBA), permiten a los programadores crear colecciones\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:09.788177
+lastmod: 2024-02-19 22:05:17.408313
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, a menudo conocidos como diccionarios en Visual\
   \ Basic para Aplicaciones (VBA), permiten a los programadores crear colecciones\

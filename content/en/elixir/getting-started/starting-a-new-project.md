@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/starting-a-new-project/
 date: 2024-01-20 18:03:06.150515-07:00
 description: "Starting a new Elixir project means setting up a fresh Mix project structure.\
   \ Programmers do this to kick things off with organized code and automated\u2026"
-lastmod: 2024-02-18 23:09:10.766383
+lastmod: 2024-02-19 22:05:18.291554
 model: gpt-4-1106-preview
 summary: "Starting a new Elixir project means setting up a fresh Mix project structure.\
   \ Programmers do this to kick things off with organized code and automated\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/php/writing-tests/
 date: 2024-02-03 19:03:31.505464-07:00
 description: "Writing tests in programming involves creating and running scripts that\
   \ verify the code behaves as expected under various conditions. Programmers do it\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.140654
+lastmod: 2024-02-19 22:05:18.632961
 model: gpt-4-0125-preview
 summary: "Writing tests in programming involves creating and running scripts that\
   \ verify the code behaves as expected under various conditions. Programmers do it\

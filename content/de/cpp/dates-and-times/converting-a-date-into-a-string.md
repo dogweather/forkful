@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:13.718754-07:00
 description: "Datum zu String-Konversion ist der Prozess der Umwandlung eines Datumsobjekts\
   \ in eine lesbare Zeichenkette. Programmierer machen das, um Daten\u2026"
-lastmod: 2024-02-18 23:09:05.201105
+lastmod: 2024-02-19 22:05:13.130226
 model: gpt-4-1106-preview
 summary: "Datum zu String-Konversion ist der Prozess der Umwandlung eines Datumsobjekts\
   \ in eine lesbare Zeichenkette. Programmierer machen das, um Daten\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/java/working-with-xml/
 date: 2024-01-26 04:32:19.814733-07:00
 description: "Travailler avec XML implique d'analyser, d'interroger et de manipuler\
   \ des documents XML avec Java. Les programmeurs le font pour l'\xE9change de donn\xE9\
   es, la\u2026"
-lastmod: 2024-02-18 23:09:08.711643
+lastmod: 2024-02-19 22:05:16.425068
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique d'analyser, d'interroger et de manipuler des\
   \ documents XML avec Java. Les programmeurs le font pour l'\xE9change de donn\xE9\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/kotlin/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:06.885023-07:00
 description: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie\
   \ op een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier\
   \ om te\u2026"
-lastmod: 2024-02-18 23:09:01.805261
+lastmod: 2024-02-19 22:05:09.821855
 model: gpt-4-0125-preview
 summary: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie op\
   \ een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier om\

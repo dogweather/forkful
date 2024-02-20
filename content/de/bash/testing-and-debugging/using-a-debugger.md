@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/using-a-debugger/
 date: 2024-01-26 03:47:35.372668-07:00
 description: "Die Verwendung eines Debuggers in Bash bedeutet, Tools zu nutzen, um\
   \ Probleme in Ihren Skripten zu testen und zu finden, wie das Einfangen von Fehlern,\u2026"
-lastmod: 2024-02-18 23:09:05.059239
+lastmod: 2024-02-19 22:05:12.995002
 model: gpt-4-0125-preview
 summary: "Die Verwendung eines Debuggers in Bash bedeutet, Tools zu nutzen, um Probleme\
   \ in Ihren Skripten zu testen und zu finden, wie das Einfangen von Fehlern,\u2026"

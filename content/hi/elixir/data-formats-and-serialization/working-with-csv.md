@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elixir/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:35.426243-07:00
@@ -13,7 +11,7 @@ description: "CSV (Comma-Separated Values) \u092B\u093E\u0907\u0932\u094B\u0902 
   \u0948, \u091C\u094B \u0921\u0947\u091F\u093E \u0906\u092F\u093E\u0924/\u0928\u093F\
   \u0930\u094D\u092F\u093E\u0924 \u092F\u093E \u0938\u093E\u0927\u093E\u0930\u0923\
   \u2026"
-lastmod: 2024-02-18 23:09:02.843955
+lastmod: 2024-02-19 22:05:10.841869
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) \u092B\u093E\u0907\u0932\u094B\u0902 \u0915\
   \u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E \u0907\u0928\

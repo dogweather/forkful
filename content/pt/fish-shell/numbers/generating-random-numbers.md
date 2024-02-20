@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/generating-random-numbers/
 date: 2024-01-27 20:33:37.400261-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental em programa\xE7\
   \xE3o, usada para tudo desde amostragem de dados at\xE9 o desenvolvimento de jogos.\
   \ No Fish Shell,\u2026"
-lastmod: 2024-02-18 23:08:58.569350
+lastmod: 2024-02-19 22:05:06.066745
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental em programa\xE7\
   \xE3o, usada para tudo desde amostragem de dados at\xE9 o desenvolvimento de jogos.\

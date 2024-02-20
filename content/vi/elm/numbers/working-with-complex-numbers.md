@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elm/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:31.009790-07:00
@@ -8,7 +6,7 @@ description: "S\u1ED1 ph\u1EE9c l\xE0 s\u1EF1 k\u1EBFt h\u1EE3p c\u1EE7a s\u1ED1
   c v\xE0 s\u1ED1 \u1EA3o, v\xED d\u1EE5 nh\u01B0 `a + bi` n\u01A1i `i` l\xE0 c\u0103\
   n b\u1EADc hai c\u1EE7a -1. Ch\xFAng l\xE0 ch\xECa kh\xF3a trong c\xE1c l\u0129\
   nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt v\xE0 v\u1EADt l\xFD\u2026"
-lastmod: 2024-02-18 23:08:50.596756
+lastmod: 2024-02-19 22:04:55.702780
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c l\xE0 s\u1EF1 k\u1EBFt h\u1EE3p c\u1EE7a s\u1ED1 th\u1EF1\
   c v\xE0 s\u1ED1 \u1EA3o, v\xED d\u1EE5 nh\u01B0 `a + bi` n\u01A1i `i` l\xE0 c\u0103\

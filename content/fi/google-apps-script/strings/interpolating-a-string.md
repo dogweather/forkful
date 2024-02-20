@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:40.837966-07:00
 description: "Merkkijonojen v\xE4liint\xE4ytt\xF6 Google Apps Scriptiss\xE4 mahdollistaa\
   \ lausekkeiden dynaamisen upottamisen merkkijonoihin, mik\xE4 helpottaa luettavamman\
   \ ja\u2026"
-lastmod: 2024-02-18 23:09:07.118478
+lastmod: 2024-02-19 22:05:14.996831
 model: gpt-4-0125-preview
 summary: "Merkkijonojen v\xE4liint\xE4ytt\xF6 Google Apps Scriptiss\xE4 mahdollistaa\
   \ lausekkeiden dynaamisen upottamisen merkkijonoihin, mik\xE4 helpottaa luettavamman\

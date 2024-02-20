@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/php/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:40.713273-07:00
@@ -14,7 +12,7 @@ description: "\u0410\u0441\u0441\u043E\u0446\u0438\u0430\u0442\u0438\u0432\u043D
   \u0443\u044F \u0447\u0438\u0442\u0430\u0435\u043C\u044B\u0439 \u0447\u0435\u043B\
   \u043E\u0432\u0435\u043A\u043E\u043C \u043A\u043B\u044E\u0447, \u0430 \u043D\u0435\
   \ \u043F\u0440\u043E\u0441\u0442\u043E\u2026"
-lastmod: 2024-02-18 23:08:57.091324
+lastmod: 2024-02-19 22:05:04.157564
 model: gpt-4-0125-preview
 summary: "\u0410\u0441\u0441\u043E\u0446\u0438\u0430\u0442\u0438\u0432\u043D\u044B\
   \u0435 \u043C\u0430\u0441\u0441\u0438\u0432\u044B \u0432 PHP - \u044D\u0442\u043E\

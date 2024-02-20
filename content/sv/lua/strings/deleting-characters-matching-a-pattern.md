@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/lua/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:00.193610-07:00
 description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man letar\
   \ igenom en textstr\xE4ng och tar bort specifika tecken eller sekvenser av tecken.\u2026"
-lastmod: 2024-02-18 23:08:51.903669
+lastmod: 2024-02-19 22:04:57.248865
 model: gpt-4-1106-preview
 summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man letar igenom\
   \ en textstr\xE4ng och tar bort specifika tecken eller sekvenser av tecken.\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:16.033920-07:00
 description: "Scaricare una pagina web consiste nel recuperare il contenuto HTML di\
   \ una pagina web tramite il protocollo HTTP/HTTPS. I programmatori spesso fanno\
   \ ci\xF2\u2026"
-lastmod: 2024-02-18 23:08:55.430867
+lastmod: 2024-02-19 22:05:02.011099
 model: gpt-4-0125-preview
 summary: "Scaricare una pagina web consiste nel recuperare il contenuto HTML di una\
   \ pagina web tramite il protocollo HTTP/HTTPS. I programmatori spesso fanno ci\xF2\

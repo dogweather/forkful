@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/haskell/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:36.766010-07:00
 description: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toutes les\
   \ marques de citation\u2014simples (' ') ou doubles (\" \")\u2014qui font partie\
   \ des donn\xE9es de la\u2026"
-lastmod: 2024-02-18 23:09:08.861784
+lastmod: 2024-02-19 22:05:16.559193
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toutes les marques\
   \ de citation\u2014simples (' ') ou doubles (\" \")\u2014qui font partie des donn\xE9\

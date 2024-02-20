@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:54.150774-07:00
 description: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
   \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\
   r uppgifter som\u2026"
-lastmod: 2024-02-18 23:08:51.319607
+lastmod: 2024-02-19 22:04:56.609956
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
   \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\

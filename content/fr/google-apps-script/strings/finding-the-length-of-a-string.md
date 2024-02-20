@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:25.748322-07:00
 description: "Trouver la longueur d'une cha\xEEne de caract\xE8res dans Google Apps\
   \ Script, un langage de script cloud JavaScript qui vous permet d'automatiser des\
   \ t\xE2ches \xE0\u2026"
-lastmod: 2024-02-18 23:09:08.276939
+lastmod: 2024-02-19 22:05:16.081853
 model: gpt-4-0125-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res dans Google Apps Script,\
   \ un langage de script cloud JavaScript qui vous permet d'automatiser des t\xE2\

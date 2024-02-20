@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/logging/
 date: 2024-01-25 02:03:40.217197-07:00
 description: "Logging in programming is essentially leaving a trail of breadcrumbs\
   \ in the form of recorded events or messages, which can be used to track what your\u2026"
-lastmod: 2024-02-18 23:09:11.102510
+lastmod: 2024-02-19 22:05:18.597932
 model: gpt-4-1106-preview
 summary: "Logging in programming is essentially leaving a trail of breadcrumbs in\
   \ the form of recorded events or messages, which can be used to track what your\u2026"

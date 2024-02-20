@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/haskell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:37.950076-07:00
 description: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointiteht\xE4\
   viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden\u2026"
-lastmod: 2024-02-18 23:09:07.681670
+lastmod: 2024-02-19 22:05:15.522724
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointiteht\xE4\
   viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden\u2026"

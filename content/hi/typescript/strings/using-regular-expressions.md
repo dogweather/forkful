@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/typescript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:27.671469-07:00
@@ -14,7 +12,7 @@ description: "\u0930\u0947\u0917\u0941\u0932\u0930 \u090F\u0915\u094D\u0938\u092
   \u0942\u091C\u093C\u0930 \u0907\u0928\u092A\u0941\u091F \u0915\u0940 \u091C\u093E\
   \u0902\u091A, \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u0916\u094B\u091C\u0928\
   \u093E, \u092F\u093E\u2026"
-lastmod: 2024-02-18 23:09:02.862102
+lastmod: 2024-02-19 22:05:10.860487
 model: gpt-4-0125-preview
 summary: "\u0930\u0947\u0917\u0941\u0932\u0930 \u090F\u0915\u094D\u0938\u092A\u094D\
   \u0930\u0947\u0936\u0928, \u092F\u093E \u0930\u0947\u0917\u0947\u0915\u094D\u0938\

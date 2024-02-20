@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:29.357441-07:00
 description: "Het downloaden van een webpagina betekent het verkrijgen van gegevens\
   \ van het web en deze in je app brengen. Programmeurs doen dit om inhoud op te halen,\u2026"
-lastmod: 2024-02-18 23:09:02.227924
+lastmod: 2024-02-19 22:05:10.242327
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina betekent het verkrijgen van gegevens van\
   \ het web en deze in je app brengen. Programmeurs doen dit om inhoud op te halen,\u2026"

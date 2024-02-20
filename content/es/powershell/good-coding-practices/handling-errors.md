@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/powershell/handling-errors/
 date: 2024-01-26 00:56:00.667284-07:00
 description: "Manejar errores en PowerShell significa prever los contratiempos y gestionarlos\
   \ de manera fluida. Los programadores hacen esto para evitar fallos y\u2026"
-lastmod: 2024-02-18 23:09:10.223619
+lastmod: 2024-02-19 22:05:17.805106
 model: gpt-4-1106-preview
 summary: "Manejar errores en PowerShell significa prever los contratiempos y gestionarlos\
   \ de manera fluida. Los programadores hacen esto para evitar fallos y\u2026"

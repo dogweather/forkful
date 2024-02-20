@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/lua/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:08.177258-07:00
 description: "Werken met CSV (Comma-Separated Values, ofwel door komma's gescheiden\
   \ waarden) betekent het parseren en genereren van tekstgegevens die door komma's\
   \ zijn\u2026"
-lastmod: 2024-02-18 23:09:02.015587
+lastmod: 2024-02-19 22:05:10.036024
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values, ofwel door komma's gescheiden waarden)\
   \ betekent het parseren en genereren van tekstgegevens die door komma's zijn\u2026"

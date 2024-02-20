@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/concatenating-strings/
 date: 2024-01-20 17:35:25.179967-07:00
 description: "Concatenating strings means sticking them end-to-end to make a new string.\
   \ It's like string Lego. We do this to build up text; think usernames, error\u2026"
-lastmod: 2024-02-18 23:09:10.673437
+lastmod: 2024-02-19 22:05:18.207978
 model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking them end-to-end to make a new string.\
   \ It's like string Lego. We do this to build up text; think usernames, error\u2026"

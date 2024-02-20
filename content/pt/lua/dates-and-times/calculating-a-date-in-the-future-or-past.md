@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:26.708688-07:00
 description: "Calcular uma data no futuro ou no passado \xE9 basicamente ajustar o\
   \ calend\xE1rio para ver quando ser\xE1 ou foi um certo dia, m\xEAs e ano. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.295259
+lastmod: 2024-02-19 22:05:05.774950
 model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou no passado \xE9 basicamente ajustar o calend\xE1\
   rio para ver quando ser\xE1 ou foi um certo dia, m\xEAs e ano. Programadores fazem\

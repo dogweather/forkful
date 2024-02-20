@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/downloading-a-web-page/
 date: 2024-01-20 17:43:37.240018-07:00
 description: "Downloading a web page means grabbing the HTML from a URL so your program\
   \ can work with it. Programmers do it to scrape data, automate web interactions\
   \ or\u2026"
-lastmod: 2024-02-18 23:09:10.722430
+lastmod: 2024-02-19 22:05:18.252121
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the HTML from a URL so your program\
   \ can work with it. Programmers do it to scrape data, automate web interactions\

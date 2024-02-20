@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/typescript/reading-a-text-file/
 date: 2024-01-20 17:55:22.814581-07:00
 description: "Ler um arquivo de texto significa acessar e interpretar o conte\xFA\
   do de um arquivo salvado como texto no seu computador. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:57.902641
+lastmod: 2024-02-19 22:05:05.375603
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto significa acessar e interpretar o conte\xFAdo de\
   \ um arquivo salvado como texto no seu computador. Programadores fazem isso para\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/java/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:19.525507-07:00
 description: "Die Arbeit mit CSV-Dateien umfasst das Lesen von und das Schreiben in\
   \ Dateien mit kommaseparierten Werten (CSV), einem beliebten Format f\xFCr den\u2026"
-lastmod: 2024-02-18 23:09:04.761094
+lastmod: 2024-02-19 22:05:12.710853
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien umfasst das Lesen von und das Schreiben in Dateien\
   \ mit kommaseparierten Werten (CSV), einem beliebten Format f\xFCr den\u2026"

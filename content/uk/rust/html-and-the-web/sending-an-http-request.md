@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/rust/sending-an-http-request/
 date: 2024-01-20 18:00:37.393100-07:00
 description: "\u0429\u043E \u0442\u0430\u043A\u0435 \u0442\u0430 \u043D\u0430\u0432\
   \u0456\u0449\u043E? Sending an HTTP request is how we ask the internet for data\
   \ or actions. Programmers do it to interact with web services, fetch\u2026"
-lastmod: 2024-02-18 23:08:59.972893
+lastmod: 2024-02-19 22:05:07.941912
 model: gpt-4-1106-preview
 summary: "\u0429\u043E \u0442\u0430\u043A\u0435 \u0442\u0430 \u043D\u0430\u0432\u0456\
   \u0449\u043E? Sending an HTTP request is how we ask the internet for data or actions.\

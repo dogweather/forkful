@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/fish-shell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:48.974513-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) dans Fish Shell permettent\
   \ de rechercher, d'apparier et de manipuler des cha\xEEnes de caract\xE8res bas\xE9\
   es sur des motifs\u2026"
-lastmod: 2024-02-18 23:09:09.292417
+lastmod: 2024-02-19 22:05:16.962497
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) dans Fish Shell permettent de rechercher,\
   \ d'apparier et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/interpolating-a-string/
 date: 2024-01-20 17:50:41.544567-07:00
 description: "String-Interpolation in C# erm\xF6glicht es, Variablenwerte nahtlos\
   \ in Strings einzubetten. Programmierer nutzen das, um lesbare und wartbare Codes\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.856748
+lastmod: 2024-02-19 22:05:12.801405
 model: gpt-4-1106-preview
 summary: "String-Interpolation in C# erm\xF6glicht es, Variablenwerte nahtlos in Strings\
   \ einzubetten. Programmierer nutzen das, um lesbare und wartbare Codes zu\u2026"

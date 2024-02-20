@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/bash/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:35.159770-07:00
@@ -11,7 +9,7 @@ description: "\u5728Bash\u7F16\u7A0B\u4E2D\u5904\u7406JSON\u6D89\u53CA\u5230\u4E
   \u636E\u4EA4\u6362\u683C\u5F0F\u6574\u5408\u5728\u4E00\u8D77\uFF0C\u4F7F\u5F97Bash\u811A\
   \u672C\u5728\u4E00\u4E2A\u91CD\u5EA6\u4F9D\u8D56JSON\u7684\u751F\u6001\u7CFB\u7EDF\
   \u4E2D\u66F4\u52A0\u5F3A\u5927\u548C\u76F8\u5173\u3002"
-lastmod: 2024-02-18 23:08:59.311316
+lastmod: 2024-02-19 22:05:07.037625
 model: gpt-4-0125-preview
 summary: "\u5728Bash\u7F16\u7A0B\u4E2D\u5904\u7406JSON\u6D89\u53CA\u5230\u4ECE\u547D\
   \u4EE4\u884C\u76F4\u63A5\u89E3\u6790\u3001\u63D0\u53D6\u548C\u64CD\u4F5CJSON\u6570\

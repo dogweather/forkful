@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/typescript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:55.001975-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir as credenciais do usu\xE1rio (usu\xE1rio e senha) na requisi\xE7\xE3o\
   \ para acessar recursos\u2026"
-lastmod: 2024-02-18 23:08:57.884687
+lastmod: 2024-02-19 22:05:05.357159
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir as credenciais do usu\xE1rio (usu\xE1rio e senha) na requisi\xE7\xE3o\

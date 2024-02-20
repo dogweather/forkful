@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/elixir/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:58.225684-07:00
 description: "\xC5 skrive til standardfeil (stderr) i Elixir er en metode for \xE5\
   \ dirigere feilmeldinger og diagnostikk separat fra hovedutdataen (stdout). Programmerere\u2026"
-lastmod: 2024-02-18 23:08:53.620663
+lastmod: 2024-02-19 22:04:59.747988
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i Elixir er en metode for \xE5 dirigere\
   \ feilmeldinger og diagnostikk separat fra hovedutdataen (stdout). Programmerere\u2026"

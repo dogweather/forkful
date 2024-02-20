@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/extracting-substrings/
 date: 2024-01-20 17:45:50.566280-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744\
   \ \uCD94\uCD9C\uD558\uB294 \uAC83\uC740 \uBB38\uC790\uC5F4\uC758 \uD2B9\uC815 \uBD80\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC7
   \ \uB9DE\uB294 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uAE30 \uC704\uD574 \uC774 \uC791\
   \uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.673230
+lastmod: 2024-02-19 22:05:13.586745
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\
   \uCD9C\uD558\uB294 \uAC83\uC740 \uBB38\uC790\uC5F4\uC758 \uD2B9\uC815 \uBD80\uBD84\

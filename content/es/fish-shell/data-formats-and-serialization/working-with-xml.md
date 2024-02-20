@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/working-with-xml/
 date: 2024-01-26 04:30:02.801762-07:00
 description: "Trabajar con XML significa manipular datos en un formato estructurado\
   \ y omnipresente utilizado en configuraciones, mensajer\xEDa y m\xE1s. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.479702
+lastmod: 2024-02-19 22:05:18.031222
 model: gpt-4-0125-preview
 summary: "Trabajar con XML significa manipular datos en un formato estructurado y\
   \ omnipresente utilizado en configuraciones, mensajer\xEDa y m\xE1s. Los programadores\u2026"

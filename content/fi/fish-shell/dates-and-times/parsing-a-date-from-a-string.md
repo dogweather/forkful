@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/fish-shell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:16.479293-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon erottelua merkkijonoista ja sen muuntamista rakenteelliseen\
   \ muotoon, jonka\u2026"
-lastmod: 2024-02-18 23:09:08.094523
+lastmod: 2024-02-19 22:05:15.898137
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa p\xE4\
   iv\xE4m\xE4\xE4r\xE4tiedon erottelua merkkijonoista ja sen muuntamista rakenteelliseen\

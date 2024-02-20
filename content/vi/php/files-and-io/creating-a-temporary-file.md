@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:49.112476-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong PHP 
   \ ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9t t\u1EC7p s\u1EBD t\u1ED3n t\u1EA1i trong\
   \ th\u1EDDi gian ng\u1EAFn \u0111\u1EC3 b\u1EA1n s\u1EED d\u1EE5ng, sau \u0111\xF3\
   , c\xE1i t\u1EC7p \u0111\xF3 s\u1EBD bi\u1EBFn m\u1EA5t. T\u1EA1i sao l\u1EA1i\u2026"
-lastmod: 2024-02-18 23:08:50.812243
+lastmod: 2024-02-19 22:04:55.977025
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong PHP c\xF3\
   \ ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9t t\u1EC7p s\u1EBD t\u1ED3n t\u1EA1i trong\

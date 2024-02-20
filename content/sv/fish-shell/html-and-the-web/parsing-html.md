@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/fish-shell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:19.925987-07:00
 description: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
   \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:52.205444
+lastmod: 2024-02-19 22:04:57.582221
 model: gpt-4-0125-preview
 summary: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
   \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata. Programmerare\u2026"

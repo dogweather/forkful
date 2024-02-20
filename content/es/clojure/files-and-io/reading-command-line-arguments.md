@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/reading-command-line-arguments/
 date: 2024-01-20 17:55:35.356802-07:00
 description: "Leer argumentos de la l\xEDnea de comandos permite que los programas\
   \ reciban datos del usuario al iniciarse. Los programadores utilizan esta t\xE9\
   cnica para\u2026"
-lastmod: 2024-02-18 23:09:09.619776
+lastmod: 2024-02-19 22:05:17.263133
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que los programas reciban\
   \ datos del usuario al iniciarse. Los programadores utilizan esta t\xE9cnica para\u2026"

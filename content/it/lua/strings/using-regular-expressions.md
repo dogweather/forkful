@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/lua/using-regular-expressions/
 date: 2024-01-19
 description: "Le espressioni regolari sono modelli per cercare corrispondenze in stringhe\
   \ di testo. I programmatori le usano per validare, estrarre e manipolare dati\u2026"
-lastmod: 2024-02-18 23:08:56.001447
+lastmod: 2024-02-19 22:05:02.616080
 summary: "Le espressioni regolari sono modelli per cercare corrispondenze in stringhe\
   \ di testo. I programmatori le usano per validare, estrarre e manipolare dati\u2026"
 title: Utilizzo delle espressioni regolari

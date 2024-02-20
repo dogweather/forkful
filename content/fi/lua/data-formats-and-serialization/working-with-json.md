@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/lua/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:26.897980-07:00
 description: "JSONin k\xE4sittely Luassa k\xE4sitt\xE4\xE4 JSON-muotoiltujen merkkijonojen\
   \ j\xE4sent\xE4misen Lua-taulukoihin ja p\xE4invastoin, mik\xE4 mahdollistaa helpon\
   \ datan vaihdon\u2026"
-lastmod: 2024-02-18 23:09:07.779998
+lastmod: 2024-02-19 22:05:15.612850
 model: gpt-4-0125-preview
 summary: "JSONin k\xE4sittely Luassa k\xE4sitt\xE4\xE4 JSON-muotoiltujen merkkijonojen\
   \ j\xE4sent\xE4misen Lua-taulukoihin ja p\xE4invastoin, mik\xE4 mahdollistaa helpon\

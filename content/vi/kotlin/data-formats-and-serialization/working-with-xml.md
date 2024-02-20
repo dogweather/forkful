@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:44.756213-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED
   \ c\xFA ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i li\u1EC7u XML\
   \ - m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u d\xF9ng cho vi\u1EC7c l\u01B0\
   u tr\u1EEF v\xE0 truy\u1EC1n d\u1EEF li\u1EC7u. C\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.677931
+lastmod: 2024-02-19 22:04:55.805715
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i li\u1EC7u XML - m\u1ED9\

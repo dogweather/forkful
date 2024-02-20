@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/cpp/organizing-code-into-functions/
 date: 2024-01-26 01:09:01.153070-07:00
 description: "D\xE9couper le code en fonctions signifie diviser votre code en morceaux\
   \ plus petits et r\xE9utilisables. Nous le faisons pour \xE9viter la r\xE9p\xE9\
   tition, pour rendre\u2026"
-lastmod: 2024-02-18 23:09:09.166960
+lastmod: 2024-02-19 22:05:16.839928
 model: gpt-4-1106-preview
 summary: "D\xE9couper le code en fonctions signifie diviser votre code en morceaux\
   \ plus petits et r\xE9utilisables. Nous le faisons pour \xE9viter la r\xE9p\xE9\

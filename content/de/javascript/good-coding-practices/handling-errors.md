@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/handling-errors/
 date: 2024-01-26 00:55:15.901709-07:00
 description: "Fehlerbehandlung ist der Umgang mit Situationen, wenn im Code etwas\
   \ schiefgeht. Sie ist entscheidend, weil sie hilft, dass Programme anmutig scheitern\
   \ und\u2026"
-lastmod: 2024-02-18 23:09:05.286859
+lastmod: 2024-02-19 22:05:13.210993
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung ist der Umgang mit Situationen, wenn im Code etwas schiefgeht.\
   \ Sie ist entscheidend, weil sie hilft, dass Programme anmutig scheitern und\u2026"

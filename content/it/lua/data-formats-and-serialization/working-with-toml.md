@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/lua/working-with-toml/
 date: 2024-01-26 04:24:17.987161-07:00
 description: "Lavorare con TOML comporta l'analisi e la generazione di dati TOML (Tom's\
   \ Obvious, Minimal Language) con Lua. I programmatori utilizzano TOML per i file\u2026"
-lastmod: 2024-02-18 23:08:56.033430
+lastmod: 2024-02-19 22:05:02.650343
 model: gpt-4-0125-preview
 summary: "Lavorare con TOML comporta l'analisi e la generazione di dati TOML (Tom's\
   \ Obvious, Minimal Language) con Lua. I programmatori utilizzano TOML per i file\u2026"

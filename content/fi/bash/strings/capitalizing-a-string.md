@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/bash/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:59.073670-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon\
   \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput\u2026"
-lastmod: 2024-02-18 23:09:07.784439
+lastmod: 2024-02-19 22:05:15.616888
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon\
   \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput\u2026"

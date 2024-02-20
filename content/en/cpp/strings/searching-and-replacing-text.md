@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:17.022353-07:00
 description: "Searching and replacing text is finding specific strings within a larger\
   \ string and swapping them out for something else. Programmers use it for tasks\u2026"
-lastmod: 2024-02-18 23:09:11.340896
+lastmod: 2024-02-19 22:05:18.807086
 model: gpt-4-1106-preview
 summary: "Searching and replacing text is finding specific strings within a larger\
   \ string and swapping them out for something else. Programmers use it for tasks\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/python/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:27.091886-07:00
 description: "Buscar a data atual em Python \xE9 uma opera\xE7\xE3o fundamental para\
   \ muitas aplica\xE7\xF5es, como registros (logging), an\xE1lise de dados e tomada\
   \ de decis\xF5es baseadas\u2026"
-lastmod: 2024-02-18 23:08:57.771422
+lastmod: 2024-02-19 22:05:05.235293
 model: gpt-4-0125-preview
 summary: "Buscar a data atual em Python \xE9 uma opera\xE7\xE3o fundamental para muitas\
   \ aplica\xE7\xF5es, como registros (logging), an\xE1lise de dados e tomada de decis\xF5\

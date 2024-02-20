@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:46.765569-07:00
@@ -12,7 +10,7 @@ description: "YAML(YAML Ain't Markup Language)\uC740 \uAD6C\uC131 \uD30C\uC77C, 
   \uC158\uC758 \uAD6C\uC131 \uACFC\uC815\uC744 \uAC04\uC18C\uD654\uD558\uACE0, \uCF54\
   \uB4DC\uB97C \uAE4A\uC774 \uD30C\uACE0\uB4E4\uC9C0 \uC54A\uACE0\uB3C4 \uB9E4\uAC1C\
   \uBCC0\uC218\uB97C\u2026"
-lastmod: 2024-02-18 23:09:06.650927
+lastmod: 2024-02-19 22:05:14.551525
 model: gpt-4-0125-preview
 summary: "YAML(YAML Ain't Markup Language)\uC740 \uAD6C\uC131 \uD30C\uC77C, \uD504\
   \uB85C\uADF8\uB7A8 \uAC04 \uD1B5\uC2E0 \uBC0F \uB370\uC774\uD130 \uC800\uC7A5\uC744\

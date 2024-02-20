@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/c-sharp/creating-a-temporary-file/
 date: 2024-01-20 17:40:18.869683-07:00
 description: "Ein tempor\xE4res File ist eine Datei, die zur kurzzeitigen Datenspeicherung\
   \ w\xE4hrend der Laufzeit eines Programms erstellt wird. Programmierer nutzen solche\u2026"
-lastmod: 2024-02-18 23:09:04.892297
+lastmod: 2024-02-19 22:05:12.835503
 model: gpt-4-1106-preview
 summary: "Ein tempor\xE4res File ist eine Datei, die zur kurzzeitigen Datenspeicherung\
   \ w\xE4hrend der Laufzeit eines Programms erstellt wird. Programmierer nutzen solche\u2026"

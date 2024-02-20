@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:18.309513-07:00
 description: "REPL, \uB610\uB294 \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\uD504\
   \uB294 \uB3D9\uC801\uC73C\uB85C Clojure \uCF54\uB4DC\uB97C \uC870\uAC01\uC870\uAC01\
@@ -10,7 +8,7 @@ description: "REPL, \uB610\uB294 \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\u
   \uB85C\uC81D\uD2B8 \uD658\uACBD\uC744 \uAD6C\uCD95\uD558\uAC70\uB098 \uCEF4\uD30C\
   \uC77C\uD558\uB294 \uAC83 \uC5C6\uC774 \uBE60\uB974\uAC8C \uC2E4\uD5D8\uD558\uAE30\
   \ \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.692359
+lastmod: 2024-02-19 22:05:13.605019
 model: gpt-4-0125-preview
 summary: "REPL, \uB610\uB294 \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\uD504\uB294\
   \ \uB3D9\uC801\uC73C\uB85C Clojure \uCF54\uB4DC\uB97C \uC870\uAC01\uC870\uAC01 \uD14C\

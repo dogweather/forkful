@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/ruby/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:24.374248-07:00
@@ -8,7 +6,7 @@ description: "TOML l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng t\u1EC7p c\u1EA5u h\x
   nh d\u1EC5 \u0111\u1ECDc nh\u1EDD v\xE0o ng\u1EEF ngh\u0129a r\xF5 r\xE0ng c\u1EE7\
   a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML \u0111\u1EC3 qu\u1EA3\
   n l\xFD c\u1EA5u h\xECnh \u1EE9ng d\u1EE5ng v\xE0 chu\u1ED7i h\xF3a d\u1EEF\u2026"
-lastmod: 2024-02-18 23:08:51.313258
+lastmod: 2024-02-19 22:04:56.603330
 model: gpt-4-0125-preview
 summary: "TOML l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng t\u1EC7p c\u1EA5u h\xECnh d\u1EC5\
   \ \u0111\u1ECDc nh\u1EDD v\xE0o ng\u1EEF ngh\u0129a r\xF5 r\xE0ng c\u1EE7a n\xF3\

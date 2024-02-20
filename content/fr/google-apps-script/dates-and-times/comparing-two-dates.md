@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:58.310295-07:00
 description: "Comparer deux dates dans Google Apps Script, un d\xE9riv\xE9 de JavaScript\
   \ adapt\xE9 pour la suite d'applications de Google, est une t\xE2che essentielle\
   \ pour les\u2026"
-lastmod: 2024-02-18 23:09:08.304586
+lastmod: 2024-02-19 22:05:16.106532
 model: gpt-4-0125-preview
 summary: "Comparer deux dates dans Google Apps Script, un d\xE9riv\xE9 de JavaScript\
   \ adapt\xE9 pour la suite d'applications de Google, est une t\xE2che essentielle\

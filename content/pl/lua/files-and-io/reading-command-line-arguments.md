@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/reading-command-line-arguments/
 date: 2024-01-20 17:56:23.750393-07:00
 description: "Czytanie argument\xF3w z linii polece\u0144 pozwala naszym skryptom\
   \ Lua na interakcj\u0119 z u\u017Cytkownikiem lub innymi programami poprzez parametry\
   \ uruchomieniowe.\u2026"
-lastmod: 2024-02-18 23:08:49.755338
+lastmod: 2024-02-19 22:04:54.693230
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w z linii polece\u0144 pozwala naszym skryptom Lua\
   \ na interakcj\u0119 z u\u017Cytkownikiem lub innymi programami poprzez parametry\

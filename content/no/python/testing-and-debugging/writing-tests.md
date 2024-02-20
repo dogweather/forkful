@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/python/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:41.847028-07:00
 description: "\xC5 skrive tester i Python inneb\xE6rer \xE5 lage automatiserte skript\
   \ for \xE5 validere korrektheten av koden din. Programmerere gj\xF8r dette for \xE5\
   \ sikre at deres\u2026"
-lastmod: 2024-02-18 23:08:53.527807
+lastmod: 2024-02-19 22:04:59.646173
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Python inneb\xE6rer \xE5 lage automatiserte skript\
   \ for \xE5 validere korrektheten av koden din. Programmerere gj\xF8r dette for \xE5\

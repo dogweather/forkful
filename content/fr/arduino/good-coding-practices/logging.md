@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/logging/
 date: 2024-01-26 00:59:04.557566-07:00
 description: "Le \"logging\", ou journalisation, consiste \xE0 conserver un enregistrement\
   \ d\u2019\xE9v\xE9nements, de transactions ou d\u2019activit\xE9s qui se produisent\
   \ dans un syst\xE8me au\u2026"
-lastmod: 2024-02-18 23:09:09.121501
+lastmod: 2024-02-19 22:05:16.798505
 model: gpt-4-1106-preview
 summary: "Le \"logging\", ou journalisation, consiste \xE0 conserver un enregistrement\
   \ d\u2019\xE9v\xE9nements, de transactions ou d\u2019activit\xE9s qui se produisent\

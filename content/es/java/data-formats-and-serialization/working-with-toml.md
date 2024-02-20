@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/java/working-with-toml/
 date: 2024-01-26 04:22:52.918349-07:00
 description: "TOML significa Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo y\
   \ Obvio de Tom). Es un formato de serializaci\xF3n de datos utilizado para archivos\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:09.870426
+lastmod: 2024-02-19 22:05:17.483102
 model: gpt-4-0125-preview
 summary: "TOML significa Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo y Obvio\
   \ de Tom). Es un formato de serializaci\xF3n de datos utilizado para archivos de\u2026"

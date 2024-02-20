@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/swift/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:32.325879-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uB0A0\uC9DC \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uC77D\uC744 \uC218\
@@ -10,7 +8,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB2
   \uD130\uB97C \uB85C\uAE45 \uBC0F \uC11C\uBC84 \uC804\uC1A1\uC744 \uC704\uD574 \uC774\
   \uB7F0 \uBCC0\uD658\uC744 \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.766218
+lastmod: 2024-02-19 22:05:14.658491
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
   \uC740 \uB0A0\uC9DC \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uC77D\uC744 \uC218 \uC788\

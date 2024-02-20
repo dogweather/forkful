@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/printing-debug-output/
 date: 2024-01-20 17:53:25.946819-07:00
 description: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et\
   \ les \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\
   \ ce qui se\u2026"
-lastmod: 2024-02-18 23:09:09.071054
+lastmod: 2024-02-19 22:05:16.752485
 model: gpt-4-1106-preview
 summary: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et les\
   \ \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\

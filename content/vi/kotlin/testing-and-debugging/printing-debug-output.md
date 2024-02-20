@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:19.009509-07:00
@@ -8,7 +6,7 @@ description: "In th\xF4ng tin g\u1EE1 l\u1ED7i ra m\xE0n h\xECnh c\u01A1 b\u1EA3
   \ l\xE0 c\xE1ch m\xE0 l\u1EADp tr\xECnh vi\xEAn \"l\xE9n l\xFAt\" nh\xECn v\xE0\
   o nh\u1EEFng g\xEC \u0111ang di\u1EC5n ra b\xEAn trong m\xE3 c\u1EE7a h\u1ECD theo\
   \ th\u1EDDi gian th\u1EF1c. \u0110i\u1EC1u\u2026"
-lastmod: 2024-02-18 23:08:50.654204
+lastmod: 2024-02-19 22:04:55.775556
 model: gpt-4-0125-preview
 summary: "In th\xF4ng tin g\u1EE1 l\u1ED7i ra m\xE0n h\xECnh c\u01A1 b\u1EA3n l\xE0\
   \ c\xE1ch m\xE0 l\u1EADp tr\xECnh vi\xEAn \"l\xE9n l\xFAt\" nh\xECn v\xE0o nh\u1EEF\

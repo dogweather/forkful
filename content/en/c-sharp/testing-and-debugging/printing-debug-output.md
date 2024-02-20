@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/printing-debug-output/
 date: 2024-01-20 17:52:12.088875-07:00
 description: "Printing debug output is about spitting out information key to understanding\
   \ what's going on under the hood of your code. Programmers do this to track\u2026"
-lastmod: 2024-02-18 23:09:11.057026
+lastmod: 2024-02-19 22:05:18.556528
 model: gpt-4-1106-preview
 summary: "Printing debug output is about spitting out information key to understanding\
   \ what's going on under the hood of your code. Programmers do this to track\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/reading-a-text-file/
 date: 2024-01-20 17:54:03.099492-07:00
 description: "Reading a text file is about pulling data from a file on disk into your\
   \ program to work with it. Programmers do this to handle input, configuration, or\u2026"
-lastmod: 2024-02-18 23:09:11.372359
+lastmod: 2024-02-19 22:05:18.835585
 model: gpt-4-1106-preview
 summary: "Reading a text file is about pulling data from a file on disk into your\
   \ program to work with it. Programmers do this to handle input, configuration, or\u2026"

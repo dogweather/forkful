@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/logging/
 date: 2024-01-26 01:07:17.772198-07:00
 description: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144, kt\xF3re\
   \ maj\u0105 miejsce w aplikacji programowej. Programi\u015Bci loguj\u0105 te zdarzenia,\
   \ aby zbiera\u0107 informacje\u2026"
-lastmod: 2024-02-18 23:08:49.484336
+lastmod: 2024-02-19 22:04:54.413609
 model: gpt-4-1106-preview
 summary: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144, kt\xF3re maj\u0105\
   \ miejsce w aplikacji programowej. Programi\u015Bci loguj\u0105 te zdarzenia, aby\

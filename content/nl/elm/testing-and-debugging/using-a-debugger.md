@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:08.461977-07:00
 description: "Debuggen in Elm betreft het identificeren en verwijderen van fouten\
   \ uit je code. Programmeurs doen dit om te zorgen dat hun applicaties correct werken\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:01.764476
+lastmod: 2024-02-19 22:05:09.783144
 model: gpt-4-0125-preview
 summary: "Debuggen in Elm betreft het identificeren en verwijderen van fouten uit\
   \ je code. Programmeurs doen dit om te zorgen dat hun applicaties correct werken\

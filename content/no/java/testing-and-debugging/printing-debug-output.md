@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/java/printing-debug-output/
 date: 2024-01-20 17:52:55.407095-07:00
 description: "\xC5 skrive ut debug informasjon betyr \xE5 printe ut data for \xE5\
   \ forst\xE5 hva koden din gj\xF8r eller finne feil. Programmerere gj\xF8r dette\
   \ for \xE5 se programflyten\u2026"
-lastmod: 2024-02-18 23:08:53.773212
+lastmod: 2024-02-19 22:04:59.914044
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut debug informasjon betyr \xE5 printe ut data for \xE5 forst\xE5\
   \ hva koden din gj\xF8r eller finne feil. Programmerere gj\xF8r dette for \xE5 se\

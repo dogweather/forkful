@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/ruby/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:20.605437-07:00
@@ -14,7 +12,7 @@ description: "Ruby \u092E\u0947\u0902 \u0928\u093F\u092F\u092E\u093F\u0924 \u090
   \u093F\u092F\u093E \u091C\u093E\u0924\u093E \u0939\u0948, \u091C\u093F\u0938\u0938\
   \u0947 \u0921\u0947\u0935\u0932\u092A\u0930\u094D\u0938 \u0915\u094B \u092A\u093E\
   \u0920\u2026"
-lastmod: 2024-02-18 23:09:04.274010
+lastmod: 2024-02-19 22:05:12.246082
 model: gpt-4-0125-preview
 summary: "Ruby \u092E\u0947\u0902 \u0928\u093F\u092F\u092E\u093F\u0924 \u0905\u092D\
   \u093F\u0935\u094D\u092F\u0915\u094D\u0924\u093F\u092F\u093E\u0901 (regex) \u092A\

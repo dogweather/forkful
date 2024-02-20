@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/rust/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:53.310736-07:00
 description: "Arrays associativos, ou o que Rustaceans chamam de \"hash maps\", s\xE3\
   o cole\xE7\xF5es que armazenam dados em pares de chave-valor. Programadores os utilizam\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:57.920839
+lastmod: 2024-02-19 22:05:05.394372
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou o que Rustaceans chamam de \"hash maps\", s\xE3\
   o cole\xE7\xF5es que armazenam dados em pares de chave-valor. Programadores os utilizam\

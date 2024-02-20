@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:12.679439-07:00
 description: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6glicht\
   \ es, mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder\u2026"
-lastmod: 2024-02-18 23:09:05.437466
+lastmod: 2024-02-19 22:05:13.356564
 model: gpt-4-1106-preview
 summary: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6glicht es,\
   \ mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder\u2026"

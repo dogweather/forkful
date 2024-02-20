@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/rust/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:35:36.517582-07:00
@@ -13,7 +11,7 @@ description: "\u0930\u0938\u094D\u091F \u092E\u0947\u0902 \u0938\u094D\u091F\u09
   \u094D\u092F \u0906\u0909\u091F\u092A\u0941\u091F (stdout) \u0938\u0947 \u0905\u0932\
   \u0917 \u0915\u0902\u0938\u094B\u0932 \u092A\u0930 \u0928\u093F\u0930\u094D\u0926\
   \u0947\u0936\u093F\u0924 \u0915\u0930\u0928\u093E\u0964\u2026"
-lastmod: 2024-02-18 23:09:02.986881
+lastmod: 2024-02-19 22:05:10.984700
 model: gpt-4-0125-preview
 summary: "\u0930\u0938\u094D\u091F \u092E\u0947\u0902 \u0938\u094D\u091F\u0948\u0902\
   \u0921\u0930\u094D\u0921 \u090F\u0930\u0930 (stderr) \u0915\u0947 \u0932\u093F\u090F\

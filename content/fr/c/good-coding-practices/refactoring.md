@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/c/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:56.957891-07:00
 description: "Le refactoring en programmation implique de restructurer le code existant\
   \ sans en changer le comportement externe, dans le but d'am\xE9liorer des attributs\u2026"
-lastmod: 2024-02-18 23:09:09.365970
+lastmod: 2024-02-19 22:05:17.031822
 model: gpt-4-0125-preview
 summary: "Le refactoring en programmation implique de restructurer le code existant\
   \ sans en changer le comportement externe, dans le but d'am\xE9liorer des attributs\u2026"

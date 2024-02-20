@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/logging/
 date: 2024-02-03 17:50:09.837736-07:00
 description: "Logging in C involves recording the flow and notable events of a program\
   \ during its runtime, providing a tangible review of its behavior and performance.\u2026"
-lastmod: 2024-02-18 23:09:11.529019
+lastmod: 2024-02-19 22:05:18.979007
 model: gpt-4-0125-preview
 summary: "Logging in C involves recording the flow and notable events of a program\
   \ during its runtime, providing a tangible review of its behavior and performance.\u2026"

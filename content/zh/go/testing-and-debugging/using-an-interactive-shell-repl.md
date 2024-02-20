@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:31.665459-07:00
@@ -11,7 +9,7 @@ description: "\u4EA4\u4E92\u5F0FShell\uFF0C\u6216\u8005\u8BFB\u53D6-\u6C42\u503C
   \u3001\u8C03\u8BD5\u548C\u539F\u578B\u8BBE\u8BA1\uFF0C\u56E0\u4E3A\u5B83\u7ED5\u8FC7\
   \u4E86\u4F20\u7EDF\u7684\u7F16\u8F91-\u7F16\u8BD1-\u8FD0\u884C\u5468\u671F\uFF0C\
   \u4F7F\u5F97\u5F00\u53D1\u8FC7\u7A0B\u66F4\u5FEB\u901F\u548C\u76F4\u89C2\u3002"
-lastmod: 2024-02-18 23:08:58.709704
+lastmod: 2024-02-19 22:05:06.220559
 model: gpt-4-0125-preview
 summary: "\u4EA4\u4E92\u5F0FShell\uFF0C\u6216\u8005\u8BFB\u53D6-\u6C42\u503C-\u6253\
   \u5370\u5FAA\u73AF\uFF08REPL\uFF09\uFF0C\u8BA9\u4F60\u53EF\u4EE5\u5B9E\u65F6\u5730\

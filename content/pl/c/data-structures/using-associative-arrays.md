@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:55.008600-07:00
 description: "Tablice asocjacyjne, znane w innych j\u0119zykach jako mapy lub s\u0142\
   owniki, s\u0105 parami klucz-warto\u015B\u0107 u\u017Cywanymi do efektywnego wyszukiwania\
   \ i manipulowania danymi.\u2026"
-lastmod: 2024-02-18 23:08:50.072265
+lastmod: 2024-02-19 22:04:55.055764
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane w innych j\u0119zykach jako mapy lub s\u0142\
   owniki, s\u0105 parami klucz-warto\u015B\u0107 u\u017Cywanymi do efektywnego wyszukiwania\

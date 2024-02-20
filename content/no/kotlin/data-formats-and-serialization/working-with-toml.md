@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/kotlin/working-with-toml/
 date: 2024-01-26 04:24:28.389968-07:00
 description: "TOML betyr Tom's Obvious, Minimal Language. Det brukes for konfigurasjonsfiler\
   \ fordi det er lett \xE5 lese og skrive for mennesker, samtidig som det er lett\u2026"
-lastmod: 2024-02-18 23:08:53.875243
+lastmod: 2024-02-19 22:05:00.042339
 model: gpt-4-0125-preview
 summary: "TOML betyr Tom's Obvious, Minimal Language. Det brukes for konfigurasjonsfiler\
   \ fordi det er lett \xE5 lese og skrive for mennesker, samtidig som det er lett\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/python/interpolating-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -15,7 +13,7 @@ description: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438
   \u043C\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u0432\u0441\u0442\u0430\u0432\
   \u043B\u0435\u043D\u0438\u044F \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0439\
   \ \u0432 \u0441\u0442\u0440\u043E\u043A\u0438, \u0447\u0442\u043E\u2026"
-lastmod: 2024-02-18 23:08:56.516374
+lastmod: 2024-02-19 22:05:03.224986
 model: gpt-4-0125-preview
 summary: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438\u044F\
   \ \u0441\u0442\u0440\u043E\u043A - \u044D\u0442\u043E \u043C\u0435\u0442\u043E\u0434\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/powershell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:42.797877-07:00
 description: "Testien kirjoittaminen PowerShellill\xE4 tarkoittaa skriptien luomista,\
   \ jotka automaattisesti varmistavat PowerShell-koodisi toiminnallisuuden, taaten\
   \ sen\u2026"
-lastmod: 2024-02-18 23:09:07.857139
+lastmod: 2024-02-19 22:05:15.681899
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen PowerShellill\xE4 tarkoittaa skriptien luomista,\
   \ jotka automaattisesti varmistavat PowerShell-koodisi toiminnallisuuden, taaten\

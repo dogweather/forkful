@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/javascript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:45.352804-07:00
 description: "YAML, lyhenteen\xE4 ilmaisulle YAML Ain't Markup Language, on ihmisen\
   \ luettavaa tietojen sarjallistamismuotoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ usein\u2026"
-lastmod: 2024-02-18 23:09:08.058098
+lastmod: 2024-02-19 22:05:15.865009
 model: gpt-4-0125-preview
 summary: "YAML, lyhenteen\xE4 ilmaisulle YAML Ain't Markup Language, on ihmisen luettavaa\
   \ tietojen sarjallistamismuotoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein\u2026"

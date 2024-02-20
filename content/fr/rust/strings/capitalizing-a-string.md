@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/rust/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:23.170611-07:00
 description: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
   res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\
   re soit une\u2026"
-lastmod: 2024-02-18 23:09:08.510022
+lastmod: 2024-02-19 22:05:16.292949
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
   res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\

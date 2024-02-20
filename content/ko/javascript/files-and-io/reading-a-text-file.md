@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:36.359537-07:00
 description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294 \uAC83\uC740 \uD30C\
   \uC77C\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uAC00\uC838\uC640 \uD504\uB85C\uADF8\
@@ -9,7 +7,7 @@ description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294 \uAC83\uC740 \u
   \uC774\uD130 \uBD84\uC11D, \uB85C\uADF8 \uCC98\uB9AC \uB4F1\uC744 \uC704\uD574 \uC774\
   \ \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.839846
+lastmod: 2024-02-19 22:05:14.730752
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294 \uAC83\uC740 \uD30C\uC77C\
   \uC5D0\uC11C \uB370\uC774\uD130\uB97C \uAC00\uC838\uC640 \uD504\uB85C\uADF8\uB7A8\

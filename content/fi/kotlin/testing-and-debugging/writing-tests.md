@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/kotlin/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:08.992962-07:00
 description: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rakentamista,\
   \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen\u2026"
-lastmod: 2024-02-18 23:09:07.578566
+lastmod: 2024-02-19 22:05:15.427512
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rakentamista,\
   \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen\u2026"

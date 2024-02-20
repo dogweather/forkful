@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/c/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:16.472178-07:00
 description: "Lire un fichier texte en C implique d'ouvrir un fichier sur votre syst\xE8\
   me pour extraire des informations et les manipuler ou les afficher selon le besoin.\u2026"
-lastmod: 2024-02-18 23:09:09.376692
+lastmod: 2024-02-19 22:05:17.041918
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en C implique d'ouvrir un fichier sur votre syst\xE8\
   me pour extraire des informations et les manipuler ou les afficher selon le besoin.\u2026"

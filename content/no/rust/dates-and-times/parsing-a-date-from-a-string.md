@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/rust/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:54.902858-07:00
 description: "\xC5 analysere en dato fra en streng er en vanlig oppgave n\xE5r man\
   \ h\xE5ndterer brukerinndata eller leser data fra filer, som inneb\xE6rer \xE5 konvertere\
   \ strengdata\u2026"
-lastmod: 2024-02-18 23:08:53.694215
+lastmod: 2024-02-19 22:04:59.828078
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng er en vanlig oppgave n\xE5r man h\xE5\
   ndterer brukerinndata eller leser data fra filer, som inneb\xE6rer \xE5 konvertere\

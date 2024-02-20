@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:45.171100-07:00
 description: "Het converteren van een datum naar een string in Rust stelt ons in staat\
   \ om data weer te geven in een voor mensen leesbaar formaat. We doen dit voor UI's,\u2026"
-lastmod: 2024-02-18 23:09:01.631927
+lastmod: 2024-02-19 22:05:09.654372
 model: gpt-4-0125-preview
 summary: "Het converteren van een datum naar een string in Rust stelt ons in staat\
   \ om data weer te geven in een voor mensen leesbaar formaat. We doen dit voor UI's,\u2026"

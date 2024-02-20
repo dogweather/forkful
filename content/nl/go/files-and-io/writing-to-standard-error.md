@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:20.565363-07:00
 description: "Schrijven naar standaardfout (stderr) in Go houdt in dat foutmeldingen\
   \ of diagnostische berichten niet bestemd voor de hoofduitvoerstroom worden omgeleid.\u2026"
-lastmod: 2024-02-18 23:09:01.356799
+lastmod: 2024-02-19 22:05:09.389714
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) in Go houdt in dat foutmeldingen of\
   \ diagnostische berichten niet bestemd voor de hoofduitvoerstroom worden omgeleid.\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/go/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:11.086599-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei in Go erm\xF6glicht die Generierung\
   \ einer nicht-persistenten Datei, die f\xFCr den kurzfristigen Gebrauch bestimmt\
   \ ist,\u2026"
-lastmod: 2024-02-18 23:09:04.386262
+lastmod: 2024-02-19 22:05:12.354878
 model: gpt-4-0125-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei in Go erm\xF6glicht die Generierung\
   \ einer nicht-persistenten Datei, die f\xFCr den kurzfristigen Gebrauch bestimmt\

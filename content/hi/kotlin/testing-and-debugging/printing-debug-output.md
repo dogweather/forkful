@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/kotlin/printing-debug-output/
 date: 2024-01-20 17:53:22.125175-07:00
 description: "Debug output print \u0915\u0930\u0928\u093E \u090F\u0915 \u0910\u0938\
   \u093E \u0924\u0930\u0940\u0915\u093E \u0939\u0948 \u091C\u093F\u0938\u0938\u0947\
@@ -10,7 +8,7 @@ description: "Debug output print \u0915\u0930\u0928\u093E \u090F\u0915 \u0910\u0
   \u0938\u0932\u093F\u090F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0924\u093E\
   \u0915\u093F \u0935\u0947 bugs \u0915\u094B \u092A\u0939\u091A\u093E\u0928 \u0938\
   \u0915\u0947\u0902 \u0914\u0930 \u0915\u094B\u0921\u2026"
-lastmod: 2024-02-18 23:09:03.273484
+lastmod: 2024-02-19 22:05:11.267423
 model: gpt-4-1106-preview
 summary: "Debug output print \u0915\u0930\u0928\u093E \u090F\u0915 \u0910\u0938\u093E\
   \ \u0924\u0930\u0940\u0915\u093E \u0939\u0948 \u091C\u093F\u0938\u0938\u0947 \u0915\

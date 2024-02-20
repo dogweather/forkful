@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:30.101720-07:00
 description: "Reading text files means grabbing text data from a .txt (or similar)\
   \ file. Programmers read files to use data like configuration settings, import user\u2026"
-lastmod: 2024-02-18 23:09:01.065669
+lastmod: 2024-02-19 22:05:09.104665
 model: gpt-4-1106-preview
 summary: "Reading text files means grabbing text data from a .txt (or similar) file.\
   \ Programmers read files to use data like configuration settings, import user\u2026"

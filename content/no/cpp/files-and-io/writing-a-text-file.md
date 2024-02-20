@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/cpp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:22.527284-07:00
 description: "\xC5 skrive til en tekstfil i C++ inneb\xE6rer \xE5 opprette eller \xE5\
   pne en fil og deretter skrive data til den, noe som er en grunnleggende oppgave\
   \ for\u2026"
-lastmod: 2024-02-18 23:08:54.245465
+lastmod: 2024-02-19 22:05:00.391656
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i C++ inneb\xE6rer \xE5 opprette eller \xE5\
   pne en fil og deretter skrive data til den, noe som er en grunnleggende oppgave\

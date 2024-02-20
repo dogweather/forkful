@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/reading-a-text-file/
 date: 2024-01-20 17:53:43.703029-07:00
 description: "\uD30C\uC77C \uC77D\uAE30\uB294 \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC758\
   \ \uB0B4\uC6A9\uC744 \uAC00\uC838\uC640\uC11C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\
@@ -8,7 +6,7 @@ description: "\uD30C\uC77C \uC77D\uAE30\uB294 \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC
   \ \uCC98\uB9AC\uD558\uAC70\uB098 \uC124\uC815 \uC815\uBCF4\uB97C \uBD88\uB7EC\uC62C\
   \ \uB54C \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.512465
+lastmod: 2024-02-19 22:05:14.420052
 model: gpt-4-1106-preview
 summary: "\uD30C\uC77C \uC77D\uAE30\uB294 \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC758 \uB0B4\
   \uC6A9\uC744 \uAC00\uC838\uC640\uC11C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:18.156107-07:00
@@ -8,7 +6,7 @@ description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n g\u1ECDi l\xE0 b\u1EA3n \u
   \u1ED3, trong Kotlin l\xE0 c\xE1c b\u1ED9 s\u01B0u t\u1EADp l\u01B0u tr\u1EEF c\xE1\
   c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\
   \ ch\xFAng \u0111\u1EC3 t\u1ED5 ch\u1EE9c v\xE0 truy xu\u1EA5t d\u1EEF\u2026"
-lastmod: 2024-02-18 23:08:50.643011
+lastmod: 2024-02-19 22:04:55.761635
 model: gpt-4-0125-preview
 summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n g\u1ECDi l\xE0 b\u1EA3n \u0111\u1ED3\
   , trong Kotlin l\xE0 c\xE1c b\u1ED9 s\u01B0u t\u1EADp l\u01B0u tr\u1EEF c\xE1c c\u1EB7\

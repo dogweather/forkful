@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/arduino/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:05.922025-07:00
 description: "W \u015Bwiecie Arduino, tablice asocjacyjne pozwalaj\u0105 na parowanie\
   \ kluczy z warto\u015Bciami, mniej wi\u0119cej jak dobieranie skarpetek w pary.\
   \ S\u0105 wyborem numer jeden,\u2026"
-lastmod: 2024-02-18 23:08:49.863250
+lastmod: 2024-02-19 22:04:54.808491
 model: gpt-4-0125-preview
 summary: "W \u015Bwiecie Arduino, tablice asocjacyjne pozwalaj\u0105 na parowanie\
   \ kluczy z warto\u015Bciami, mniej wi\u0119cej jak dobieranie skarpetek w pary.\

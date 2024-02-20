@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:27.873137-07:00
 description: "Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale\
   \ machine. Programmeurs doen dit voor automatisering, data scraping, offline\u2026"
-lastmod: 2024-02-18 23:09:02.324428
+lastmod: 2024-02-19 22:05:10.333087
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale\
   \ machine. Programmeurs doen dit voor automatisering, data scraping, offline\u2026"

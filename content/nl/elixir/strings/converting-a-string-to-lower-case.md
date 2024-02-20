@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:40.509119-07:00
 description: "Een string omzetten naar kleine letters betekent dat alle letters binnen\
   \ een string worden veranderd in hun kleine lettervorm. Programmeurs doen dit voor\u2026"
-lastmod: 2024-02-18 23:09:01.511794
+lastmod: 2024-02-19 22:05:09.538928
 model: gpt-4-0125-preview
 summary: "Een string omzetten naar kleine letters betekent dat alle letters binnen\
   \ een string worden veranderd in hun kleine lettervorm. Programmeurs doen dit voor\u2026"

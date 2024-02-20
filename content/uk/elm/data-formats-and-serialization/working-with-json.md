@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/elm/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:08.004986-07:00
@@ -12,7 +10,7 @@ description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON \u0443 Elm \u043F
   \ \u0443 JSON. \u0426\u0435\u0439 \u043F\u0440\u043E\u0446\u0435\u0441 \u0454 \u0432\
   \u0430\u0436\u043B\u0438\u0432\u0438\u043C \u0434\u043B\u044F \u0432\u0435\u0431\
   -\u0434\u043E\u0434\u0430\u0442\u043A\u0456\u0432 \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:09:00.229847
+lastmod: 2024-02-19 22:05:08.206008
 model: gpt-4-0125-preview
 summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON \u0443 Elm \u043F\u043E\
   \u043B\u044F\u0433\u0430\u0454 \u0432 \u0434\u0435\u043A\u043E\u0434\u0443\u0432\

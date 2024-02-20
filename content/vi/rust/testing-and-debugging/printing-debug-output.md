@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/rust/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:10.570232-07:00
@@ -8,7 +6,7 @@ description: "In th\xF4ng tin \u0111\u1EC3 g\u1EE1 l\u1ED7i (debug output) cho p
   p b\u1EA1n xem qua tr\u1EA1ng th\xE1i c\u1EE7a ch\u01B0\u01A1ng tr\xECnh m\xE0 kh\xF4\
   ng c\u1EA7n ph\u1EA3i s\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i \u0111\
   \u1EA7y \u0111\u1EE7. N\xF3 nhanh ch\xF3ng,\u2026"
-lastmod: 2024-02-18 23:08:50.464929
+lastmod: 2024-02-19 22:04:55.531915
 model: gpt-4-0125-preview
 summary: "In th\xF4ng tin \u0111\u1EC3 g\u1EE1 l\u1ED7i (debug output) cho ph\xE9\
   p b\u1EA1n xem qua tr\u1EA1ng th\xE1i c\u1EE7a ch\u01B0\u01A1ng tr\xECnh m\xE0 kh\xF4\

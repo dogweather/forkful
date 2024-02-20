@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:21.163475-07:00
 description: "Il refactoring nella programmazione comporta la ristrutturazione di\
   \ codice informatico esistente\u2014cambiando la sua strutturazione\u2014senza alterarne\
   \ il\u2026"
-lastmod: 2024-02-18 23:08:55.441261
+lastmod: 2024-02-19 22:05:02.022514
 model: gpt-4-0125-preview
 summary: "Il refactoring nella programmazione comporta la ristrutturazione di codice\
   \ informatico esistente\u2014cambiando la sua strutturazione\u2014senza alterarne\

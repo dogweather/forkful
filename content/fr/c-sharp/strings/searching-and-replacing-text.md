@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/searching-and-replacing-text/
 date: 2024-01-20 17:57:28.251859-07:00
 description: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEE\
   nes par d'autres. Les d\xE9veloppeurs l'utilisent pour corriger des donn\xE9es,\
   \ formatter ou\u2026"
-lastmod: 2024-02-18 23:09:08.811207
+lastmod: 2024-02-19 22:05:16.513301
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEEnes par\
   \ d'autres. Les d\xE9veloppeurs l'utilisent pour corriger des donn\xE9es, formatter\

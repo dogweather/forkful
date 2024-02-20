@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:36.712082-07:00
 description: "Een nieuw project starten betekent dat je de basis legt voor jouw briljante\
   \ idee. Programmeurs trappen af om concepten om te zetten in code die praktisch\u2026"
-lastmod: 2024-02-18 23:09:01.992074
+lastmod: 2024-02-19 22:05:10.013175
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent dat je de basis legt voor jouw briljante\
   \ idee. Programmeurs trappen af om concepten om te zetten in code die praktisch\u2026"

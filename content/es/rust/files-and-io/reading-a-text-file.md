@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/rust/reading-a-text-file/
 date: 2024-01-20 17:54:59.320751-07:00
 description: "Leer un archivo de texto es b\xE1sicamente obtener el contenido de un\
   \ archivo almacenado en tu disco para trabajar con \xE9l en tu programa. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:09.767907
+lastmod: 2024-02-19 22:05:17.389687
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es b\xE1sicamente obtener el contenido de un archivo\
   \ almacenado en tu disco para trabajar con \xE9l en tu programa. Los programadores\u2026"

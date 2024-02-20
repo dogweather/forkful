@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/kotlin/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:55.613251-07:00
 description: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB\u3059\u308B\
   \u3068\u306F\u3001\u5168\u3066\u306E\u5927\u6587\u5B57\u3092\u5C0F\u6587\u5B57\u306B\
@@ -10,7 +8,7 @@ description: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB\u3059
   \u305F\u30C7\u30FC\u30BF\u3092\u6271\u3046\u305F\u3081\u306B\u884C\u308F\u308C\u307E\
   \u3059\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.867430
+lastmod: 2024-02-19 22:05:01.201436
 model: gpt-4-1106-preview
 summary: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB\u3059\u308B\
   \u3068\u306F\u3001\u5168\u3066\u306E\u5927\u6587\u5B57\u3092\u5C0F\u6587\u5B57\u306B\

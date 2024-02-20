@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/cpp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:13.593397-07:00
 description: "Escrever em um arquivo de texto em C++ envolve criar ou abrir um arquivo\
   \ e, em seguida, escrever dados nele, o que \xE9 uma tarefa fundamental para\u2026"
-lastmod: 2024-02-18 23:08:58.467872
+lastmod: 2024-02-19 22:05:05.959106
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em C++ envolve criar ou abrir um arquivo\
   \ e, em seguida, escrever dados nele, o que \xE9 uma tarefa fundamental para\u2026"

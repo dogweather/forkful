@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:09.192811-07:00
 description: "Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,\
   \ die meestal afkomstig zijn van web-API's of configuratiebestanden.\u2026"
-lastmod: 2024-02-18 23:09:02.163338
+lastmod: 2024-02-19 22:05:10.180864
 model: gpt-4-0125-preview
 summary: "Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,\
   \ die meestal afkomstig zijn van web-API's of configuratiebestanden.\u2026"

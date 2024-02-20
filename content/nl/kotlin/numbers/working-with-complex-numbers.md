@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:10.722410-07:00
 description: "Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels\
   \ van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de\u2026"
-lastmod: 2024-02-18 23:09:01.798836
+lastmod: 2024-02-19 22:05:09.815599
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels\
   \ van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de\u2026"

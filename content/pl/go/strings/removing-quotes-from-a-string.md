@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:30.100266-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Go polega na eliminacji\
   \ pocz\u0105tkowych i ko\u0144cowych znak\xF3w cudzys\u0142owu (`\"` lub `'`) z\
   \ danego ci\u0105gu znak\xF3w. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:49.083328
+lastmod: 2024-02-19 22:04:54.021345
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Go polega na eliminacji\
   \ pocz\u0105tkowych i ko\u0144cowych znak\xF3w cudzys\u0142owu (`\"` lub `'`) z\

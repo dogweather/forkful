@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:43.902298-07:00
 description: "Parsing a date from a string in C# involves converting textual representations\
   \ of dates and times into a `DateTime` object. This is essential for\u2026"
-lastmod: 2024-02-18 23:09:11.063744
+lastmod: 2024-02-19 22:05:18.562683
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in C# involves converting textual representations\
   \ of dates and times into a `DateTime` object. This is essential for\u2026"

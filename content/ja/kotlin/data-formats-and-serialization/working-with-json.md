@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/kotlin/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:43.379800-07:00
 description: "Kotlin\u3067\u306EJSON\uFF08JavaScript Object\u2026"
-lastmod: 2024-02-18 23:08:54.899110
+lastmod: 2024-02-19 22:05:01.246061
 model: gpt-4-0125-preview
 summary: "Kotlin\u3067\u306EJSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"

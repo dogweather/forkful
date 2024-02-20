@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/elixir/working-with-xml/
 date: 2024-01-26 04:29:38.453443-07:00
 description: "\xC5 jobbe med XML i Elixir inneb\xE6rer \xE5 analysere, opprette og\
   \ manipulere XML-data. Programmerere tar for seg XML fordi det er utbredt i webtjenester,\u2026"
-lastmod: 2024-02-18 23:08:53.628315
+lastmod: 2024-02-19 22:04:59.756188
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Elixir inneb\xE6rer \xE5 analysere, opprette og manipulere\
   \ XML-data. Programmerere tar for seg XML fordi det er utbredt i webtjenester,\u2026"

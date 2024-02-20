@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:56.006998-07:00
@@ -13,7 +11,7 @@ description: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u0443 Go \u043F\u
   \ \u0430\u0431\u043E \u043A\u043E\u043D\u0432\u0435\u0440\u0442\u0430\u0446\u0456\
   \u0457 HTML \u0443 \u0456\u043D\u0448\u0456 \u0444\u043E\u0440\u043C\u0430\u0442\
   \u0438. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438\u2026"
-lastmod: 2024-02-18 23:08:59.686485
+lastmod: 2024-02-19 22:05:07.495265
 model: gpt-4-0125-preview
 summary: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u0443 Go \u043F\u043E\u043B\
   \u044F\u0433\u0430\u0454 \u0432 \u0430\u043D\u0430\u043B\u0456\u0437\u0456 \u0432\

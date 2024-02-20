@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c-sharp/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:52.525213-07:00
@@ -13,7 +11,7 @@ description: "\u5728\u7F16\u7A0B\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u5230\u5206\u
   \u5E8F\uFF0C\u8FD9\u4F7F\u5F97\u5B83\u6210\u4E3A\u7F51\u7AD9\u5F00\u53D1\u3001\u6570\
   \u636E\u5206\u6790\u548C\u81EA\u52A8\u5316\u6D4B\u8BD5\u573A\u666F\u4E2D\u7684\u4E00\
   \u4E2A\u57FA\u672C\u6280\u80FD\u3002"
-lastmod: 2024-02-18 23:08:59.130665
+lastmod: 2024-02-19 22:05:06.800876
 model: gpt-4-0125-preview
 summary: "\u5728\u7F16\u7A0B\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u5230\u5206\u6790HTML\u6587\
   \u6863\u7684\u7ED3\u6784\uFF0C\u5141\u8BB8\u60A8\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u63D0\

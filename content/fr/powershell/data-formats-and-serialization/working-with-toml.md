@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/working-with-toml/
 date: 2024-01-26 04:24:44.909709-07:00
 description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format\
   \ de s\xE9rialisation de donn\xE9es facile \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique\
   \ claire. Les\u2026"
-lastmod: 2024-02-18 23:09:09.094594
+lastmod: 2024-02-19 22:05:16.774027
 model: gpt-4-0125-preview
 summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format de\
   \ s\xE9rialisation de donn\xE9es facile \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique\

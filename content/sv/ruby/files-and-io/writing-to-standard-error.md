@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/ruby/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:21.485494-07:00
 description: "Att skriva till standardfel (stderr) i Ruby handlar om att dirigera\
   \ felmeddelanden eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5\
   n\u2026"
-lastmod: 2024-02-18 23:08:52.310829
+lastmod: 2024-02-19 22:04:57.702655
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Ruby handlar om att dirigera felmeddelanden\
   \ eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5n\u2026"

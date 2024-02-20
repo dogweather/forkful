@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:29.462365-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBC14\uAFB8\uB294\
   \ \uAC83\uC740 \uB300\uBB38\uC790\uAC00 \uD3EC\uD568\uB41C \uBB38\uC790\uC5F4\uC758\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBC14\uAFB8\uB2
   \uC774 \uBB38\uC790\uC5F4\uC744 \uBE44\uAD50\uD558\uAC70\uB098 \uBD84\uB958\uD560\
   \ \uB54C \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.735000
+lastmod: 2024-02-19 22:05:13.646370
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBC14\uAFB8\uB294 \uAC83\
   \uC740 \uB300\uBB38\uC790\uAC00 \uD3EC\uD568\uB41C \uBB38\uC790\uC5F4\uC758 \uBAA8\

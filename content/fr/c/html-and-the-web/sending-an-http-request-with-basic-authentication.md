@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:00.344765-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base en C n\xE9\
   cessite de cr\xE9er une requ\xEAte HTTP qui inclut un en-t\xEAte d'autorisation\
   \ avec les\u2026"
-lastmod: 2024-02-18 23:09:09.355364
+lastmod: 2024-02-19 22:05:17.022042
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base en C n\xE9\
   cessite de cr\xE9er une requ\xEAte HTTP qui inclut un en-t\xEAte d'autorisation\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elixir/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:01.152430-07:00
 description: "Eliminar las comillas de una cadena significa deshacerse de esos envoltorios\
   \ extra para obtener el texto limpio dentro. Los programadores hacen esto para\u2026"
-lastmod: 2024-02-18 23:09:09.635686
+lastmod: 2024-02-19 22:05:17.277809
 model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena significa deshacerse de esos envoltorios\
   \ extra para obtener el texto limpio dentro. Los programadores hacen esto para\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:42.154829-07:00
 description: "Het aaneenschakelen van strings betekent dat ze achter elkaar worden\
   \ geplakt. Programmeurs doen dit om tekst te combineren, zoals het bouwen van een\u2026"
-lastmod: 2024-02-18 23:09:02.313971
+lastmod: 2024-02-19 22:05:10.323762
 model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings betekent dat ze achter elkaar worden geplakt.\
   \ Programmeurs doen dit om tekst te combineren, zoals het bouwen van een\u2026"

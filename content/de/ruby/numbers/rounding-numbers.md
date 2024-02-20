@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/rounding-numbers/
 date: 2024-01-26 03:46:56.837698-07:00
 description: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chste ganze Zahl oder\
   \ auf einen bestimmten Genauigkeitsgrad anzupassen. Programmierer runden Zahlen,\
   \ um zu\u2026"
-lastmod: 2024-02-18 23:09:05.415619
+lastmod: 2024-02-19 22:05:13.333945
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chste ganze Zahl oder auf\
   \ einen bestimmten Genauigkeitsgrad anzupassen. Programmierer runden Zahlen, um\

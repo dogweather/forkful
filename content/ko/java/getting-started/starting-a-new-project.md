@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/java/starting-a-new-project/
 date: 2024-01-20 18:03:43.102396-07:00
 description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
   \ \uAC83\uC740 \uBE48 \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uAE30\
@@ -10,7 +8,7 @@ description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB2
   \uD2B8\uD558\uAE30 \uC704\uD574 \uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uB9CC\uB4ED\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.021980
+lastmod: 2024-02-19 22:05:13.958616
 model: gpt-4-1106-preview
 summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC83\
   \uC740 \uBE48 \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uAE30 \uC2DC\

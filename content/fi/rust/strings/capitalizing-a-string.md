@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/rust/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:33.208382-07:00
 description: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
   \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"
-lastmod: 2024-02-18 23:09:07.346151
+lastmod: 2024-02-19 22:05:15.235611
 model: gpt-4-0125-preview
 summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
   \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"

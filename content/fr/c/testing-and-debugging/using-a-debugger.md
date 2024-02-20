@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:44.935969-07:00
 description: "Les d\xE9bogueurs en C sont des outils sp\xE9cialis\xE9s qui permettent\
   \ aux d\xE9veloppeurs de parcourir leur code pas \xE0 pas, d'inspecter les variables\
   \ et de\u2026"
-lastmod: 2024-02-18 23:09:09.361331
+lastmod: 2024-02-19 22:05:17.027562
 model: gpt-4-0125-preview
 summary: "Les d\xE9bogueurs en C sont des outils sp\xE9cialis\xE9s qui permettent\
   \ aux d\xE9veloppeurs de parcourir leur code pas \xE0 pas, d'inspecter les variables\

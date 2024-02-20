@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/powershell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:52.170284-07:00
 description: "Das Schreiben einer Textdatei in PowerShell beinhaltet das Erstellen\
   \ und Manipulieren von textbasierten Dateien, was eine grundlegende Operation f\xFC\
   r\u2026"
-lastmod: 2024-02-18 23:09:05.120881
+lastmod: 2024-02-19 22:05:13.053850
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in PowerShell beinhaltet das Erstellen und\
   \ Manipulieren von textbasierten Dateien, was eine grundlegende Operation f\xFC\

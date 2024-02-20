@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/bash/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:20:39.704908-07:00
 description: "Manipular arquivos com CLI (Interface de Linha de Comando) com one-liners\
   \ envolve usar scripts ou comandos Bash para realizar a\xE7\xF5es em arquivos, como\u2026"
-lastmod: 2024-02-18 23:08:58.320478
+lastmod: 2024-02-19 22:05:05.802400
 model: gpt-4-0125-preview
 summary: "Manipular arquivos com CLI (Interface de Linha de Comando) com one-liners\
   \ envolve usar scripts ou comandos Bash para realizar a\xE7\xF5es em arquivos, como\u2026"

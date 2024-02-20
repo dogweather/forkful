@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/checking-if-a-directory-exists/
 date: 2024-02-03 19:02:35.601558-07:00
 description: "Checking if a directory exists in TypeScript is essential for file management\
   \ tasks, such as reading from or writing data to files, ensuring that\u2026"
-lastmod: 2024-02-18 23:09:10.821630
+lastmod: 2024-02-19 22:05:18.341116
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in TypeScript is essential for file management\
   \ tasks, such as reading from or writing data to files, ensuring that\u2026"

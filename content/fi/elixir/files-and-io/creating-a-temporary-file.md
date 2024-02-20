@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/creating-a-temporary-file/
 date: 2024-01-20 17:40:25.530357-07:00
 description: "V\xE4liaikaistiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka poistuvat\
   \ usein itsest\xE4\xE4n. Niit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi v\xE4liaikaiseen\
   \ datan k\xE4sittelyyn, testaukseen\u2026"
-lastmod: 2024-02-18 23:09:07.294532
+lastmod: 2024-02-19 22:05:15.187213
 model: gpt-4-1106-preview
 summary: "V\xE4liaikaistiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka poistuvat\
   \ usein itsest\xE4\xE4n. Niit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi v\xE4liaikaiseen\

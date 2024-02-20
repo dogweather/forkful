@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:36.337672-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\
   \uB2E4\uB294 \uAC74, \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C \uD574\uB2F9\uD558\uB294\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \ \uBE44\uAD50\uB97C \uC218\uD589\uD558\uAE30 \uC704\uD574\uC11C \uC774 \uC791\uC5C5\
   \uC744 \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.670082
+lastmod: 2024-02-19 22:05:13.583691
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC74, \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C \uD574\uB2F9\uD558\uB294 \uC18C\

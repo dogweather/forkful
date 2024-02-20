@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:39.405400-07:00
 description: "Rozpocz\u0119cie nowego projektu w Go wi\u0105\u017Ce si\u0119 z przygotowaniem\
   \ obszaru roboczego i zainicjowaniem go przy pomocy niezb\u0119dnych modu\u0142\xF3\
   w Go. Programi\u015Bci robi\u0105 to\u2026"
-lastmod: 2024-02-18 23:08:49.098628
+lastmod: 2024-02-19 22:04:54.037111
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w Go wi\u0105\u017Ce si\u0119 z przygotowaniem\
   \ obszaru roboczego i zainicjowaniem go przy pomocy niezb\u0119dnych modu\u0142\xF3\

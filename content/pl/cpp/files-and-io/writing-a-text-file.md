@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/cpp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:23.974570-07:00
 description: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
   \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"
-lastmod: 2024-02-18 23:08:49.929800
+lastmod: 2024-02-19 22:04:54.878249
 model: gpt-4-0125-preview
 summary: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
   \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"

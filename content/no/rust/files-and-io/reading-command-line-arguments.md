@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/rust/reading-command-line-arguments/
 date: 2024-01-20 17:56:39.992768-07:00
 description: "Kommandolinjeargumenter lar deg ta input direkte ved programstart. Vi\
   \ bruker dem for \xE5 tilpasse programkj\xF8ring uten \xE5 endre koden."
-lastmod: 2024-02-18 23:08:53.700283
+lastmod: 2024-02-19 22:04:59.834430
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar deg ta input direkte ved programstart. Vi bruker\
   \ dem for \xE5 tilpasse programkj\xF8ring uten \xE5 endre koden."

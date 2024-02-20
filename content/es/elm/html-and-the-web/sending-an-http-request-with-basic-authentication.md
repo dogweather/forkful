@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elm/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:40.211579-07:00
 description: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica significa\
   \ incluir credenciales de usuario para acceder a recursos protegidos. Los programadores\
   \ lo hacen\u2026"
-lastmod: 2024-02-18 23:09:09.890425
+lastmod: 2024-02-19 22:05:17.500964
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica significa incluir\
   \ credenciales de usuario para acceder a recursos protegidos. Los programadores\

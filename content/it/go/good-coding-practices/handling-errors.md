@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:02.140640-07:00
 description: "La gestione degli errori in Go implica il riconoscimento e la risposta\
   \ alle condizioni di errore nel tuo programma. I programmatori si impegnano nella\u2026"
-lastmod: 2024-02-18 23:08:55.440280
+lastmod: 2024-02-19 22:05:02.021448
 model: gpt-4-0125-preview
 summary: "La gestione degli errori in Go implica il riconoscimento e la risposta alle\
   \ condizioni di errore nel tuo programma. I programmatori si impegnano nella\u2026"

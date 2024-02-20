@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/fish-shell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:19.170453-07:00
 description: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik at\
   \ den f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver.\
   \ Dette er en vanlig\u2026"
-lastmod: 2024-02-18 23:08:54.333671
+lastmod: 2024-02-19 22:05:00.486746
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik at den\
   \ f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver. Dette\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/refactoring/
 date: 2024-02-01 21:12:12.931066-07:00
 description: "Refactoring in the programming lexicon refers to the process of restructuring\
   \ existing computer code\u2014changing the factoring without changing its external\u2026"
-lastmod: 2024-02-18 23:09:10.647792
+lastmod: 2024-02-19 22:05:18.184434
 model: gpt-4-0125-preview
 summary: "Refactoring in the programming lexicon refers to the process of restructuring\
   \ existing computer code\u2014changing the factoring without changing its external\u2026"

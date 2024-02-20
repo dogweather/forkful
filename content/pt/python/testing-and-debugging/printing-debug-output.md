@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/printing-debug-output/
 date: 2024-01-20 17:53:25.222977-07:00
 description: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o permite que programadores\
   \ rastreiem e entendam o que est\xE1 acontecendo dentro de seu c\xF3digo ao execut\xE1\
   -lo. Fazemos isso\u2026"
-lastmod: 2024-02-18 23:08:57.763694
+lastmod: 2024-02-19 22:05:05.226934
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o permite que programadores\
   \ rastreiem e entendam o que est\xE1 acontecendo dentro de seu c\xF3digo ao execut\xE1\

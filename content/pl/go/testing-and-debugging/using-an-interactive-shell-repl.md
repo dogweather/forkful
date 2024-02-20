@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:42.246940-07:00
 description: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REPL),\
   \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\
   \ komendy i otrzymuj\u0105c\u2026"
-lastmod: 2024-02-18 23:08:49.099794
+lastmod: 2024-02-19 22:04:54.038293
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REPL),\
   \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\

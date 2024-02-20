@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/c-sharp/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:58:58.072869-07:00
@@ -13,7 +11,7 @@ description: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438
   \ \u043A\u043E\u0434 \u0447\u0438\u0442\u0430\u0435\u043C\u044B\u043C \u0438 \u0444\
   \u043E\u0440\u043C\u0430\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u043F\
   \u0440\u043E\u0441\u0442\u044B\u043C."
-lastmod: 2024-02-18 23:08:56.978435
+lastmod: 2024-02-19 22:05:03.983155
 model: gpt-4-0125-preview
 summary: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438\u044F\
   \ \u0441\u0442\u0440\u043E\u043A \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\

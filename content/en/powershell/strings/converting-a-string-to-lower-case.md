@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/powershell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:50.587159-07:00
 description: "Changing a string to lower case means making every letter in the string\
   \ a small letter. Programmers do this to standardize text, to make comparisons,\
   \ and\u2026"
-lastmod: 2024-02-18 23:09:11.259023
+lastmod: 2024-02-19 22:05:18.733284
 model: gpt-4-1106-preview
 summary: "Changing a string to lower case means making every letter in the string\
   \ a small letter. Programmers do this to standardize text, to make comparisons,\

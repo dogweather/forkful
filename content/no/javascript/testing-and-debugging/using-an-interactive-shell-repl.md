@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:31.491201-07:00
 description: "Interaktive skall, eller REPLer (Read-Eval-Print Looper), lar deg kj\xF8\
   re kode p\xE5 sparket, teste funksjoner, algoritmer, eller tukle med ideer. De er\
   \ kodens\u2026"
-lastmod: 2024-02-18 23:08:54.310452
+lastmod: 2024-02-19 22:05:00.461575
 model: gpt-4-0125-preview
 summary: "Interaktive skall, eller REPLer (Read-Eval-Print Looper), lar deg kj\xF8\
   re kode p\xE5 sparket, teste funksjoner, algoritmer, eller tukle med ideer. De er\

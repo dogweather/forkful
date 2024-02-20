@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/printing-debug-output/
 date: 2024-01-20 17:52:09.417331-07:00
 description: "Utskrift av fels\xF6kningsdata \xE4r att f\xE5 programmet att skriva\
   \ ut vad det t\xE4nker p\xE5. Programmerare anv\xE4nder detta f\xF6r att f\xF6rst\xE5\
   \ vad som h\xE4nder under huven\u2026"
-lastmod: 2024-02-18 23:08:51.464650
+lastmod: 2024-02-19 22:04:56.771464
 model: gpt-4-1106-preview
 summary: "Utskrift av fels\xF6kningsdata \xE4r att f\xE5 programmet att skriva ut\
   \ vad det t\xE4nker p\xE5. Programmerare anv\xE4nder detta f\xF6r att f\xF6rst\xE5\

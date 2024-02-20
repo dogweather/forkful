@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:06.147087-07:00
 description: "Un shell interactivo, tambi\xE9n conocido como un bucle Leer-Evaluar-Imprimir\
   \ (REPL, por sus siglas en ingl\xE9s), permite a los programadores escribir\u2026"
-lastmod: 2024-02-18 23:09:10.503358
+lastmod: 2024-02-19 22:05:18.054568
 model: gpt-4-0125-preview
 summary: "Un shell interactivo, tambi\xE9n conocido como un bucle Leer-Evaluar-Imprimir\
   \ (REPL, por sus siglas en ingl\xE9s), permite a los programadores escribir\u2026"

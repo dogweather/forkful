@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:39.786275-07:00
 description: "Foutafhandeling is hoe je beheert wat er gebeurt wanneer er iets misgaat\
   \ in je code. Het is essentieel omdat het ervoor zorgt dat je programma's op een\u2026"
-lastmod: 2024-02-18 23:09:02.284577
+lastmod: 2024-02-19 22:05:10.295783
 model: gpt-4-0125-preview
 summary: "Foutafhandeling is hoe je beheert wat er gebeurt wanneer er iets misgaat\
   \ in je code. Het is essentieel omdat het ervoor zorgt dat je programma's op een\u2026"

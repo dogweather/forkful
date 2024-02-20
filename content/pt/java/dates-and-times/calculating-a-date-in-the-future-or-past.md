@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:22.608370-07:00
 description: "Calcular uma data no futuro ou passado \xE9 simplesmente adicionar ou\
   \ subtrair dias, meses ou anos \xE0 uma data conhecida. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.031965
+lastmod: 2024-02-19 22:05:05.508956
 model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou passado \xE9 simplesmente adicionar ou subtrair\
   \ dias, meses ou anos \xE0 uma data conhecida. Programadores fazem isso para\u2026"

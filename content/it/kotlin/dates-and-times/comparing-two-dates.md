@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/comparing-two-dates/
 date: 2024-01-20 17:33:19.388322-07:00
 description: "Confrontare due date significa semplicemente verificare se sono uguali,\
   \ o stabilire quale viene prima o dopo. I programmatori lo fanno per gestire eventi,\u2026"
-lastmod: 2024-02-18 23:08:55.858033
+lastmod: 2024-02-19 22:05:02.466870
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa semplicemente verificare se sono uguali,\
   \ o stabilire quale viene prima o dopo. I programmatori lo fanno per gestire eventi,\u2026"

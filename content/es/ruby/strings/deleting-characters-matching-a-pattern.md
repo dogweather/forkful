@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/ruby/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:06.018261-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente decirle\
   \ a tu programa que busque y quite ciertas secuencias o tipos de caracteres de una\u2026"
-lastmod: 2024-02-18 23:09:10.533122
+lastmod: 2024-02-19 22:05:18.081593
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente decirle\
   \ a tu programa que busque y quite ciertas secuencias o tipos de caracteres de una\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/bash/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:43.082611-07:00
@@ -9,7 +7,7 @@ description: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y 
   ng nh\u01B0 vi\u1EC7c c\u1EAFt m\u1ED9t \xEDt s\u1EE3i ch\u1EC9 t\u1EEB m\u1ED9\
   t chi\u1EBFc \xE1o len. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u \u0111\xF3\
   \u2026"
-lastmod: 2024-02-18 23:08:50.870744
+lastmod: 2024-02-19 22:04:56.049827
 model: gpt-4-0125-preview
 summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
   c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a chu\u1ED7i \u2014 ngh\u0129 gi\u1ED1ng nh\u01B0\

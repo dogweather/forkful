@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/typescript/creating-a-temporary-file/
 date: 2024-01-20 17:41:38.185818-07:00
 description: "Crear un archivo temporal significa generar un fichero que pretendemos\
   \ usar solo durante un breve periodo de tiempo o mientras dura una operaci\xF3n\u2026"
-lastmod: 2024-02-18 23:09:09.724206
+lastmod: 2024-02-19 22:05:17.349908
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal significa generar un fichero que pretendemos usar\
   \ solo durante un breve periodo de tiempo o mientras dura una operaci\xF3n\u2026"

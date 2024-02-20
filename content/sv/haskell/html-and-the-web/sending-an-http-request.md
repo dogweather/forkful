@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/haskell/sending-an-http-request/
 date: 2024-01-20 18:00:06.572478-07:00
 description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data\
   \ eller att utf\xF6ra en handling via internet. Programmerare g\xF6r detta f\xF6\
   r att kommunicera med\u2026"
-lastmod: 2024-02-18 23:08:51.834233
+lastmod: 2024-02-19 22:04:57.172023
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data eller\
   \ att utf\xF6ra en handling via internet. Programmerare g\xF6r detta f\xF6r att\

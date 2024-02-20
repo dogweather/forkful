@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:42.191919-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
   \ ler ou escrever em arquivos de texto simples nos quais os campos de dados s\xE3\
   o separados\u2026"
-lastmod: 2024-02-18 23:08:57.999024
+lastmod: 2024-02-19 22:05:05.474171
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve ler\
   \ ou escrever em arquivos de texto simples nos quais os campos de dados s\xE3o separados\u2026"

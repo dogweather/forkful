@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:06.334761-07:00
 description: "\xC5 utvinne substringer inneb\xE6rer \xE5 ta en del av en streng -\
   \ i hovedsak \xE5 skape en ny streng fra en del av en eksisterende streng. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:53.468986
+lastmod: 2024-02-19 22:04:59.582399
 model: gpt-4-0125-preview
 summary: "\xC5 utvinne substringer inneb\xE6rer \xE5 ta en del av en streng - i hovedsak\
   \ \xE5 skape en ny streng fra en del av en eksisterende streng. Programmerere gj\xF8\

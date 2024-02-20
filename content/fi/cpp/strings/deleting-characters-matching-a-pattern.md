@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:58.138876-07:00
 description: "Poistamme merkkej\xE4, jotka vastaavat tietty\xE4 kuviota, puhdistaaksemme\
   \ sy\xF6tteen tai valmistellaksemme jatkok\xE4sittely\xE4 varten. Liikakirjaimet\
   \ voivat sotkea\u2026"
-lastmod: 2024-02-18 23:09:07.926964
+lastmod: 2024-02-19 22:05:15.745002
 model: gpt-4-1106-preview
 summary: "Poistamme merkkej\xE4, jotka vastaavat tietty\xE4 kuviota, puhdistaaksemme\
   \ sy\xF6tteen tai valmistellaksemme jatkok\xE4sittely\xE4 varten. Liikakirjaimet\

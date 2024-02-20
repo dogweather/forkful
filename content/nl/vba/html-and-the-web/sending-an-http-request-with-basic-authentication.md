@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/vba/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:26.826001-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie in Visual\
   \ Basic for Applications (VBA) gaat over het toegang krijgen tot webbronnen die\
   \ zijn\u2026"
-lastmod: 2024-02-18 23:09:01.665495
+lastmod: 2024-02-19 22:05:09.686713
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie in Visual Basic\
   \ for Applications (VBA) gaat over het toegang krijgen tot webbronnen die zijn\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/ruby/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:30.317956-07:00
 description: "Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten\
   \ tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erill\xE4\xE4\
   n\u2026"
-lastmod: 2024-02-18 23:09:08.200695
+lastmod: 2024-02-19 22:05:16.012460
 model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten\
   \ tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erill\xE4\xE4\

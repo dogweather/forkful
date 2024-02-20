@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:41.012108-07:00
@@ -8,7 +6,7 @@ description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3
   a l\xE0 l\u1EA5y c\xE1c b\u1ED5 sung m\xE0 ng\u01B0\u1EDDi d\xF9ng th\xEAm v\xE0\
   o c\xE1c l\u1EC7nh khi h\u1ECD ch\u1EA1y script c\u1EE7a b\u1EA1n. L\u1EADp tr\xEC\
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 cho ph\xE9p\u2026"
-lastmod: 2024-02-18 23:08:51.153276
+lastmod: 2024-02-19 22:04:56.404188
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh\u0129\
   a l\xE0 l\u1EA5y c\xE1c b\u1ED5 sung m\xE0 ng\u01B0\u1EDDi d\xF9ng th\xEAm v\xE0\

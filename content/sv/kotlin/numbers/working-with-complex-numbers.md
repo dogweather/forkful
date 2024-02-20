@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/working-with-complex-numbers/
 date: 2024-01-26 04:43:02.987590-07:00
 description: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr\xF6\
   tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\
   \ av -1.\u2026"
-lastmod: 2024-02-18 23:08:51.743984
+lastmod: 2024-02-19 22:04:57.078866
 model: gpt-4-0125-preview
 summary: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr\xF6\
   tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/ruby/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:38.139058-07:00
@@ -14,7 +12,7 @@ description: "Ruby\u3067\u306E\u6A19\u6E96\u30A8\u30E9\u30FC\uFF08stderr\uFF09\u
   \u3092\u533A\u5225\u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\
   \u3059\u3002\u3053\u308C\u306B\u3088\u308A\u3001\u554F\u984C\u306E\u8A3A\u65AD\u3084\
   \u30ED\u30B0\u306E\u89E3\u6790\u304C\u5BB9\u6613\u306B\u306A\u308A\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.406148
+lastmod: 2024-02-19 22:05:01.982168
 model: gpt-4-0125-preview
 summary: "Ruby\u3067\u306E\u6A19\u6E96\u30A8\u30E9\u30FC\uFF08stderr\uFF09\u3078\u306E\
   \u66F8\u304D\u8FBC\u307F\u306F\u3001\u30A8\u30E9\u30FC\u30E1\u30C3\u30BB\u30FC\u30B8\

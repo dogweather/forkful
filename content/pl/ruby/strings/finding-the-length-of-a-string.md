@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:07.614786-07:00
 description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w to po prostu\
   \ okre\u015Blenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to, aby weryfikowa\u0107\
   \ dane wej\u015Bciowe, ogranicza\u0107 tekst,\u2026"
-lastmod: 2024-02-18 23:08:50.114859
+lastmod: 2024-02-19 22:04:55.102984
 model: gpt-4-1106-preview
 summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w to po prostu\
   \ okre\u015Blenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to, aby weryfikowa\u0107\

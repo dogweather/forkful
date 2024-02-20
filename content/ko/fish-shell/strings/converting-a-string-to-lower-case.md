@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:39.307143-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\
   \uB294 \uAC83\uC740 \uB300\uC18C\uBB38\uC790\uB97C \uAD6C\uBD84\uD558\uC9C0 \uC54A\
@@ -11,7 +9,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uD574 \uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.858321
+lastmod: 2024-02-19 22:05:14.748430
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uB300\uC18C\uBB38\uC790\uB97C \uAD6C\uBD84\uD558\uC9C0 \uC54A\uACE0\

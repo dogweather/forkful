@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:38.838300-07:00
 description: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo\
   \ che invia messaggi di errore o log direttamente al flusso di uscita di errore\u2026"
-lastmod: 2024-02-18 23:08:55.655983
+lastmod: 2024-02-19 22:05:02.253082
 model: gpt-4-0125-preview
 summary: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo che\
   \ invia messaggi di errore o log direttamente al flusso di uscita di errore\u2026"

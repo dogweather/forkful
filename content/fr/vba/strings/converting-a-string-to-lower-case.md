@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:06.951748-07:00
 description: "Convertir une cha\xEEne en minuscules implique de transformer tous les\
   \ caract\xE8res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce\
   \ processus est\u2026"
-lastmod: 2024-02-18 23:09:08.562578
+lastmod: 2024-02-19 22:05:16.340459
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne en minuscules implique de transformer tous les caract\xE8\
   res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce processus\

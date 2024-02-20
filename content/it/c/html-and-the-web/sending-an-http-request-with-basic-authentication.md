@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/c/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:05.821170-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base in C comporta\
   \ la creazione di una richiesta HTTP che include un'intestazione di Autorizzazione\
   \ con\u2026"
-lastmod: 2024-02-18 23:08:56.338164
+lastmod: 2024-02-19 22:05:02.976315
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base in C comporta la creazione\
   \ di una richiesta HTTP che include un'intestazione di Autorizzazione con\u2026"

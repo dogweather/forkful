@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:42.931217-07:00
 description: "I Bash-programmering \xE4r det att kontrollera om en katalog finns en\
   \ v\xE4sentlig kontrollmekanism som anv\xE4nds f\xF6r att verifiera n\xE4rvaron\
   \ av en katalog innan\u2026"
-lastmod: 2024-02-18 23:08:51.975132
+lastmod: 2024-02-19 22:04:57.327629
 model: gpt-4-0125-preview
 summary: "I Bash-programmering \xE4r det att kontrollera om en katalog finns en v\xE4\
   sentlig kontrollmekanism som anv\xE4nds f\xF6r att verifiera n\xE4rvaron av en katalog\

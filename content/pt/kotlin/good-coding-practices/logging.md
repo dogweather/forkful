@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/logging/
 date: 2024-01-26 01:06:47.356703-07:00
 description: "O ato de registrar eventos e dados de uma aplica\xE7\xE3o de software\
   \ em uma sa\xEDda externa, como um arquivo ou console, \xE9 conhecido como logging.\
   \ Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.115379
+lastmod: 2024-02-19 22:05:05.588646
 model: gpt-4-1106-preview
 summary: "O ato de registrar eventos e dados de uma aplica\xE7\xE3o de software em\
   \ uma sa\xEDda externa, como um arquivo ou console, \xE9 conhecido como logging.\

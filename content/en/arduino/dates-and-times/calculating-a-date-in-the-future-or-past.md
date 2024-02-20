@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:32.675996-07:00
 description: "Calculating a date in the future or past involves determining a specific\
   \ day before or after a given date. Programmers do this for functions like\u2026"
-lastmod: 2024-02-18 23:09:11.328274
+lastmod: 2024-02-19 22:05:18.795637
 model: gpt-4-1106-preview
 summary: "Calculating a date in the future or past involves determining a specific\
   \ day before or after a given date. Programmers do this for functions like\u2026"

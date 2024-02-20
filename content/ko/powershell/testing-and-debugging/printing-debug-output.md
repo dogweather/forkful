@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/printing-debug-output/
 date: 2024-01-20 17:53:22.709705-07:00
 description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\
   \uAC8C \uC2E4\uD589\uB418\uB294\uC9C0 \uBCFC \uC218 \uC788\uB3C4\uB85D \uB3C4\uC640\
@@ -8,7 +6,7 @@ description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB
   \uB4DC \uC774\uD574\uB97C \uB3D5\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\
   \uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.558228
+lastmod: 2024-02-19 22:05:14.463844
 model: gpt-4-1106-preview
 summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\uAC8C\
   \ \uC2E4\uD589\uB418\uB294\uC9C0 \uBCFC \uC218 \uC788\uB3C4\uB85D \uB3C4\uC640\uC90D\

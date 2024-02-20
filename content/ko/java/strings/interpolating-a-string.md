@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/java/interpolating-a-string/
 date: 2024-01-20 17:50:54.906274-07:00
 description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780 \uBB34\uC5C7\uC774\uACE0\
   \ \uC65C \uC0AC\uC6A9\uD558\uB294\uAC00? \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780 \uBB34\uC5C7\uC774\uAC
   \uB97C \uB354 \uBA85\uD655\uD558\uACE0 \uAC04\uACB0\uD558\uAC8C \uB9CC\uB4E4\uAE30\
   \ \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.999285
+lastmod: 2024-02-19 22:05:13.934434
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780 \uBB34\uC5C7\uC774\uACE0 \uC65C\
   \ \uC0AC\uC6A9\uD558\uB294\uAC00? \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\uC218\

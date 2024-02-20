@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:52.951576-07:00
 description: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8nster\
   \ for \xE5 rense strenger - for \xE5 fjerne u\xF8nskede karakterer eller formatere\
   \ data.\u2026"
-lastmod: 2024-02-18 23:08:54.421746
+lastmod: 2024-02-19 22:05:00.582705
 model: gpt-4-1106-preview
 summary: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8nster for\
   \ \xE5 rense strenger - for \xE5 fjerne u\xF8nskede karakterer eller formatere data.\u2026"

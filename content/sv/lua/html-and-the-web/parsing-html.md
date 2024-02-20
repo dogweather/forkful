@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/lua/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:39.391548-07:00
 description: "Att tolka HTML inneb\xE4r att extrahera data och information fr\xE5\
   n HTML-dokument, vilket \xE4r avg\xF6rande f\xF6r webskrapning, dataanalys och\u2026"
-lastmod: 2024-02-18 23:08:51.916438
+lastmod: 2024-02-19 22:04:57.262965
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r att extrahera data och information fr\xE5n HTML-dokument,\
   \ vilket \xE4r avg\xF6rande f\xF6r webskrapning, dataanalys och\u2026"

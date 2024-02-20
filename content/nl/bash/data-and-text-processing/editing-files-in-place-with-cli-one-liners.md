@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/editing-files-in-place-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:19.709788-07:00
 description: "Stel je voor dat je er net achter komt dat je een batch-update moet\
   \ uitvoeren op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"
-lastmod: 2024-02-18 23:09:02.035186
+lastmod: 2024-02-19 22:05:10.062028
 model: gpt-4-0125-preview
 summary: "Stel je voor dat je er net achter komt dat je een batch-update moet uitvoeren\
   \ op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"

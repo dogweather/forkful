@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/rust/concatenating-strings/
 date: 2024-01-20 17:35:32.634778-07:00
 description: "I programmering betyr strengkonkatenering \xE5 sette sammen to eller\
   \ flere tekststykker til ett. Vi gj\xF8r det for \xE5 bygge setninger, lage dynamiske\
   \ meldinger,\u2026"
-lastmod: 2024-02-18 23:08:53.677317
+lastmod: 2024-02-19 22:04:59.810005
 model: gpt-4-1106-preview
 summary: "I programmering betyr strengkonkatenering \xE5 sette sammen to eller flere\
   \ tekststykker til ett. Vi gj\xF8r det for \xE5 bygge setninger, lage dynamiske\

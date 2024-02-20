@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/powershell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:54.814583-07:00
 description: "Tekstitiedoston kirjoittaminen PowerShelliss\xE4 k\xE4sitt\xE4\xE4 tekstipohjaisten\
   \ tiedostojen luomisen ja k\xE4sittelyn, mik\xE4 on perustoiminto lokitiedostojen,\
   \ datan\u2026"
-lastmod: 2024-02-18 23:09:07.873806
+lastmod: 2024-02-19 22:05:15.696652
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen PowerShelliss\xE4 k\xE4sitt\xE4\xE4 tekstipohjaisten\
   \ tiedostojen luomisen ja k\xE4sittelyn, mik\xE4 on perustoiminto lokitiedostojen,\

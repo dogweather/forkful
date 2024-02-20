@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/arduino/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:21.728359-07:00
 description: "Scrivere sullo standard error (stderr) nella programmazione Arduino\
   \ comporta indirizzare messaggi di errore e diagnostica su un canale separato,\u2026"
-lastmod: 2024-02-18 23:08:56.149026
+lastmod: 2024-02-19 22:05:02.776053
 model: gpt-4-0125-preview
 summary: "Scrivere sullo standard error (stderr) nella programmazione Arduino comporta\
   \ indirizzare messaggi di errore e diagnostica su un canale separato,\u2026"

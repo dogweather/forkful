@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/powershell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:07.028747-07:00
 description: "Das Schreiben auf den Standardfehler (stderr) in PowerShell bedeutet,\
   \ Fehlermeldungen oder Diagnosen direkt an den stderr-Datenstrom zu senden, welcher\u2026"
-lastmod: 2024-02-18 23:09:05.118757
+lastmod: 2024-02-19 22:05:13.051851
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) in PowerShell bedeutet, Fehlermeldungen\
   \ oder Diagnosen direkt an den stderr-Datenstrom zu senden, welcher\u2026"

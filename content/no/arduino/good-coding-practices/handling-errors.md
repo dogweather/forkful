@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/handling-errors/
 date: 2024-01-26 00:37:14.975259-07:00
 description: "Feilh\xE5ndtering i programmene dine fanger opp de uforutsette tingene\
   \ som vil pr\xF8ve \xE5 snuble deg opp. Du gj\xF8r det for \xE5 hindre at Arduinoen\
   \ din f\xE5r et\u2026"
-lastmod: 2024-02-18 23:08:54.149618
+lastmod: 2024-02-19 22:05:00.336965
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering i programmene dine fanger opp de uforutsette tingene som\
   \ vil pr\xF8ve \xE5 snuble deg opp. Du gj\xF8r det for \xE5 hindre at Arduinoen\

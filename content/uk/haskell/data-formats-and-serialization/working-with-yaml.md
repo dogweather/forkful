@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/haskell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:47.304027-07:00
@@ -12,7 +10,7 @@ description: "YAML, \u0441\u043A\u043E\u0440\u043E\u0447\u0435\u043D\u043D\u044F
   \u0439 \u043C\u043E\u0436\u0435 \u0431\u0443\u0442\u0438 \u0432\u0438\u043A\u043E\
   \u0440\u0438\u0441\u0442\u0430\u043D\u0438\u0439 \u0443 \u0432\u0441\u0456\u0445\
   \ \u043C\u043E\u0432\u0430\u0445\u2026"
-lastmod: 2024-02-18 23:09:00.455235
+lastmod: 2024-02-19 22:05:08.425992
 model: gpt-4-0125-preview
 summary: "YAML, \u0441\u043A\u043E\u0440\u043E\u0447\u0435\u043D\u043D\u044F \u0432\
   \u0456\u0434 \"YAML Ain't Markup Language\", \u0454 \u0437\u0440\u0443\u0447\u043D\

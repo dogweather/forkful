@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/reading-a-text-file/
 date: 2024-01-20 17:53:58.943107-07:00
 description: "\xC5 lese en tekstfil i C# betyr at du henter og behandler tekstdata\
   \ fra en fil. Det er en grunnleggende kompetanse fordi filer ofte inneholder viktige\
   \ data\u2026"
-lastmod: 2024-02-18 23:08:53.910648
+lastmod: 2024-02-19 22:05:00.080372
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil i C# betyr at du henter og behandler tekstdata fra\
   \ en fil. Det er en grunnleggende kompetanse fordi filer ofte inneholder viktige\

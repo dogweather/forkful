@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/interpolating-a-string/
 date: 2024-01-20 17:51:07.727684-07:00
 description: "String interpolation is a way to embed variables directly within a string.\
   \ Programmers use it to concatenate variables and strings efficiently, making\u2026"
-lastmod: 2024-02-18 23:09:11.424369
+lastmod: 2024-02-19 22:05:18.882832
 model: gpt-4-1106-preview
 summary: "String interpolation is a way to embed variables directly within a string.\
   \ Programmers use it to concatenate variables and strings efficiently, making\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/lua/starting-a-new-project/
 date: 2024-01-20 18:03:56.067560-07:00
 description: "Ein neues Projekt zu beginnen bedeutet, etwas von Grund auf neu zu erstellen.\
   \ Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme zu l\xF6sen\u2026"
-lastmod: 2024-02-18 23:09:05.007985
+lastmod: 2024-02-19 22:05:12.946172
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu beginnen bedeutet, etwas von Grund auf neu zu erstellen.\
   \ Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme zu l\xF6sen\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/lua/refactoring/
 date: 2024-01-26 01:46:03.973591-07:00
 description: "Koodin uudelleenj\xE4rjestely on taidetta, jossa olemassa olevaa koodia\
   \ muokataan parantamaan sen rakennetta, luettavuutta ja tehokkuutta muuttamatta\
   \ sen\u2026"
-lastmod: 2024-02-18 23:09:07.765898
+lastmod: 2024-02-19 22:05:15.599754
 model: gpt-4-0125-preview
 summary: "Koodin uudelleenj\xE4rjestely on taidetta, jossa olemassa olevaa koodia\
   \ muokataan parantamaan sen rakennetta, luettavuutta ja tehokkuutta muuttamatta\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/kotlin/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:09.416163-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista,\
   \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista\u2026"
-lastmod: 2024-02-18 23:09:07.587399
+lastmod: 2024-02-19 22:05:15.435425
 model: gpt-4-1106-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista,\
   \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista\u2026"

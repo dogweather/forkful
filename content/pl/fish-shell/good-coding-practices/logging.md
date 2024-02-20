@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/logging/
 date: 2024-01-26 01:03:40.767781-07:00
 description: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013\
   \ rodzaj dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015B\
   ledzi\u0107 detale, takie jak\u2026"
-lastmod: 2024-02-18 23:08:50.043140
+lastmod: 2024-02-19 22:04:55.022745
 model: gpt-4-1106-preview
 summary: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013 rodzaj\
   \ dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015Bledzi\u0107\

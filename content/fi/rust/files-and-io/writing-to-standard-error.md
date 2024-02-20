@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/rust/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:36.675655-07:00
 description: "Virheilmoitusten kirjoittaminen standardivirheeseen (stderr) Rustissa\
   \ tarkoittaa virheilmoitusten ja diagnostiikkatietojen ohjaamista konsoliin erill\xE4\
   \xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.381387
+lastmod: 2024-02-19 22:05:15.268269
 model: gpt-4-0125-preview
 summary: "Virheilmoitusten kirjoittaminen standardivirheeseen (stderr) Rustissa tarkoittaa\
   \ virheilmoitusten ja diagnostiikkatietojen ohjaamista konsoliin erill\xE4\xE4n\u2026"

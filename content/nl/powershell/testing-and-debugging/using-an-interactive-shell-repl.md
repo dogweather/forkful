@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:05.383777-07:00
 description: "De interactieve shell, of Lees-Evalueer-Print Lus (REPL), stelt je in\
   \ staat om PowerShell-commando's te typen en onmiddellijke feedback te krijgen.\u2026"
-lastmod: 2024-02-18 23:09:02.093728
+lastmod: 2024-02-19 22:05:10.114988
 model: gpt-4-0125-preview
 summary: "De interactieve shell, of Lees-Evalueer-Print Lus (REPL), stelt je in staat\
   \ om PowerShell-commando's te typen en onmiddellijke feedback te krijgen.\u2026"

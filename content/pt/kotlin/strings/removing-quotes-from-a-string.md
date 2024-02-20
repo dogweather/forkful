@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:00.230681-07:00
 description: "Remover aspas de uma string significa retirar quaisquer inst\xE2ncias\
   \ de caracteres de aspas, seja simples (' ') ou duplas (\" \"), dos dados de texto\
   \ com os\u2026"
-lastmod: 2024-02-18 23:08:58.089537
+lastmod: 2024-02-19 22:05:05.569568
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa retirar quaisquer inst\xE2ncias de\
   \ caracteres de aspas, seja simples (' ') ou duplas (\" \"), dos dados de texto\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/php/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:53.781569-07:00
 description: "Capitalizar una cadena implica modificar el primer car\xE1cter de un\
   \ texto dado a may\xFAsculas, asegurando que frases, t\xEDtulos o nombres propios\
   \ comiencen\u2026"
-lastmod: 2024-02-18 23:09:10.055456
+lastmod: 2024-02-19 22:05:17.651447
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica modificar el primer car\xE1cter de un texto\
   \ dado a may\xFAsculas, asegurando que frases, t\xEDtulos o nombres propios comiencen\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/clojure/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:14.997285-07:00
 description: "\xC5 sjekke om en katalog eksisterer i Clojure inneb\xE6rer \xE5 verifisere\
   \ tilstedev\xE6relsen av en filsystemkatalog fra inne i din Clojure-applikasjon.\
   \ Denne\u2026"
-lastmod: 2024-02-18 23:08:53.578007
+lastmod: 2024-02-19 22:04:59.701578
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer i Clojure inneb\xE6rer \xE5 verifisere\
   \ tilstedev\xE6relsen av en filsystemkatalog fra inne i din Clojure-applikasjon.\

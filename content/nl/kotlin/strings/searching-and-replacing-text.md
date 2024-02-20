@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:16.730318-07:00
 description: "Tekst zoeken en vervangen is als verstoppertje spelen met strings, om\
   \ vervolgens de verstopper te ruilen met iemand anders. Het is een veelvoorkomende\u2026"
-lastmod: 2024-02-18 23:09:01.789087
+lastmod: 2024-02-19 22:05:09.806415
 model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen is als verstoppertje spelen met strings, om vervolgens\
   \ de verstopper te ruilen met iemand anders. Het is een veelvoorkomende\u2026"

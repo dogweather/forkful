@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/powershell/interpolating-a-string/
 date: 2024-01-20 17:51:21.953687-07:00
 description: Interpolating a string is inserting values into a string template. Programmers
   do it to dynamically build strings and make code more readable.
-lastmod: 2024-02-18 23:09:00.701590
+lastmod: 2024-02-19 22:05:08.756773
 model: gpt-4-1106-preview
 summary: Interpolating a string is inserting values into a string template. Programmers
   do it to dynamically build strings and make code more readable.

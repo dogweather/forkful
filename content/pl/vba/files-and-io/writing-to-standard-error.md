@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:28.111324-07:00
 description: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
   \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\
   nie od standardowego\u2026"
-lastmod: 2024-02-18 23:08:49.451918
+lastmod: 2024-02-19 22:04:54.377879
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
   \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:04.934666-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z autoryzacj\u0105 podstawow\u0105\
   \ to proces, w kt\xF3rym przesy\u0142amy nasze dane uwierzytelniaj\u0105ce (login\
   \ i has\u0142o) w nag\u0142\xF3wku \u017C\u0105dania HTTP, aby\u2026"
-lastmod: 2024-02-18 23:08:49.993568
+lastmod: 2024-02-19 22:04:54.946910
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z autoryzacj\u0105 podstawow\u0105\
   \ to proces, w kt\xF3rym przesy\u0142amy nasze dane uwierzytelniaj\u0105ce (login\

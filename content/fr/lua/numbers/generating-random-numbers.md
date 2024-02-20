@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/generating-random-numbers/
 date: 2024-01-27 20:34:23.543917-07:00
 description: "G\xE9n\xE9rer des nombres al\xE9atoires en programmation consiste \xE0\
   \ produire des valeurs num\xE9riques impr\xE9visibles pouvant \xEAtre utilis\xE9\
   es \xE0 diverses fins telles que\u2026"
-lastmod: 2024-02-18 23:09:08.965096
+lastmod: 2024-02-19 22:05:16.654075
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en programmation consiste \xE0 produire\
   \ des valeurs num\xE9riques impr\xE9visibles pouvant \xEAtre utilis\xE9es \xE0 diverses\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:03.760161-07:00
 description: "Een tekstbestand schrijven in JavaScript betekent meestal het cre\xEB\
   ren en opslaan van gegevens in een bestand in een voor mensen leesbaar formaat.\u2026"
-lastmod: 2024-02-18 23:09:02.296844
+lastmod: 2024-02-19 22:05:10.307310
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in JavaScript betekent meestal het cre\xEBren\
   \ en opslaan van gegevens in een bestand in een voor mensen leesbaar formaat.\u2026"

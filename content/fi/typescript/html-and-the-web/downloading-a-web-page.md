@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/downloading-a-web-page/
 date: 2024-01-20 17:45:04.567289-07:00
 description: "Web-sivun lataaminen tarkoittaa sivun datan siirt\xE4mist\xE4 palvelimelta\
   \ omalle koneelle. Ohjelmoijat tekev\xE4t t\xE4t\xE4 data-analyysin, testauksen\
   \ tai sis\xE4ll\xF6n\u2026"
-lastmod: 2024-02-18 23:09:07.317435
+lastmod: 2024-02-19 22:05:15.208450
 model: gpt-4-1106-preview
 summary: "Web-sivun lataaminen tarkoittaa sivun datan siirt\xE4mist\xE4 palvelimelta\
   \ omalle koneelle. Ohjelmoijat tekev\xE4t t\xE4t\xE4 data-analyysin, testauksen\

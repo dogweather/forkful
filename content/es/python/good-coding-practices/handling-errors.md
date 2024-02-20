@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/python/handling-errors/
 date: 2024-01-26 00:56:32.380225-07:00
 description: "Manejar errores en Python (o cualquier lenguaje de programaci\xF3n)\
   \ es esperar lo inesperado: es el arte de manejar con gracia cuando las cosas no\
   \ van bien\u2026"
-lastmod: 2024-02-18 23:09:09.564552
+lastmod: 2024-02-19 22:05:17.213695
 model: gpt-4-1106-preview
 summary: "Manejar errores en Python (o cualquier lenguaje de programaci\xF3n) es esperar\
   \ lo inesperado: es el arte de manejar con gracia cuando las cosas no van bien\u2026"

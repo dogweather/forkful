@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/python/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:56.648204-07:00
 description: "Pourquoi convertir des cha\xEEnes en minuscules ? Simple : pour uniformiser\
   \ les donn\xE9es. \xC7a aide \xE0 comparer, trier ou rechercher sans souci de casse."
-lastmod: 2024-02-18 23:09:08.325703
+lastmod: 2024-02-19 22:05:16.125155
 model: gpt-4-1106-preview
 summary: "Pourquoi convertir des cha\xEEnes en minuscules ? Simple : pour uniformiser\
   \ les donn\xE9es. \xC7a aide \xE0 comparer, trier ou rechercher sans souci de casse."

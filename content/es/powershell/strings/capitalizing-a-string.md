@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/powershell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:56.421753-07:00
 description: "Capitalizar una cadena en PowerShell implica transformar el primer car\xE1\
   cter de una cadena dada a may\xFAscula, mientras que el resto de la cadena permanece\u2026"
-lastmod: 2024-02-18 23:09:10.195286
+lastmod: 2024-02-19 22:05:17.779155
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en PowerShell implica transformar el primer car\xE1\
   cter de una cadena dada a may\xFAscula, mientras que el resto de la cadena permanece\u2026"

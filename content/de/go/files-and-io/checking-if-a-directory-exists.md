@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:35.244611-07:00
 description: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
   \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:04.380432
+lastmod: 2024-02-19 22:05:12.349360
 model: gpt-4-0125-preview
 summary: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
   \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\

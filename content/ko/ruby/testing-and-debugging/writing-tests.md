@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:03.731849-07:00
@@ -13,7 +11,7 @@ description: "Ruby\uC5D0\uC11C \uD14C\uC2A4\uD305\uC740 \uB2E4\uC591\uD55C \uC87
   \uB2E4. \uC774\uB294 \uACAC\uACE0\uD558\uACE0 \uC720\uC9C0\uBCF4\uC218\uAC00 \uAC00\
   \uB2A5\uD55C \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uBAA9\uD45C\uB85C \uD569\
   \uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:07.031092
+lastmod: 2024-02-19 22:05:14.912796
 model: gpt-4-0125-preview
 summary: "Ruby\uC5D0\uC11C \uD14C\uC2A4\uD305\uC740 \uB2E4\uC591\uD55C \uC870\uAC74\
   \uD558\uC5D0 \uCF54\uB4DC\uAC00 \uC608\uC0C1\uB300\uB85C \uC791\uB3D9\uD558\uB294\

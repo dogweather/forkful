@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/typescript/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:12.878062-07:00
 description: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle hvor mange tegn\
   \ den inneholder. Programmerere gj\xF8r dette for validering, begrensning av input,\
   \ eller for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.636565
+lastmod: 2024-02-19 22:04:59.765066
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle hvor mange tegn den\
   \ inneholder. Programmerere gj\xF8r dette for validering, begrensning av input,\

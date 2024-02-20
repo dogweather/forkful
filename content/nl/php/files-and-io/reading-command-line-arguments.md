@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:28.327560-07:00
 description: "Het lezen van opdrachtregelargumenten in PHP betekent het binnenhalen\
   \ van invoer die aan je script wordt doorgegeven wanneer het in de console wordt\u2026"
-lastmod: 2024-02-18 23:09:01.962420
+lastmod: 2024-02-19 22:05:09.983950
 model: gpt-4-0125-preview
 summary: "Het lezen van opdrachtregelargumenten in PHP betekent het binnenhalen van\
   \ invoer die aan je script wordt doorgegeven wanneer het in de console wordt\u2026"

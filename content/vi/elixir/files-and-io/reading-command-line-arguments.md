@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:25.956750-07:00
@@ -8,7 +6,7 @@ description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho p
   p m\u1ED9t ch\u01B0\u01A1ng tr\xECnh l\u1EA5y d\u1EEF li\u1EC7u ngay t\u1EEB terminal\u2014\
   nh\u01B0 c\xE0i \u0111\u1EB7t hay t\xEAn t\u1EC7p. L\u1EADp tr\xECnh vi\xEAn l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\xF9y ch\u1EC9nh h\u2026"
-lastmod: 2024-02-18 23:08:50.386056
+lastmod: 2024-02-19 22:04:55.431636
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
   p m\u1ED9t ch\u01B0\u01A1ng tr\xECnh l\u1EA5y d\u1EEF li\u1EC7u ngay t\u1EEB terminal\u2014\

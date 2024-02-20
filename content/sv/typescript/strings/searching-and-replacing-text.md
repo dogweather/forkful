@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/searching-and-replacing-text/
 date: 2024-01-20 17:58:45.612636-07:00
 description: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: vi letar efter\
   \ en textstr\xE4ng och byter ut den mot en annan. Programmerare g\xF6r detta f\xF6\
   r att uppdatera data,\u2026"
-lastmod: 2024-02-18 23:08:51.529418
+lastmod: 2024-02-19 22:04:56.842212
 model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: vi letar efter en\
   \ textstr\xE4ng och byter ut den mot en annan. Programmerare g\xF6r detta f\xF6\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/arduino/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:40.950037-07:00
 description: "YAML (YAML Ain't Markup Language) \xE8 uno standard di serializzazione\
   \ di dati leggibile dall'uomo che pu\xF2 essere utilizzato per file di configurazione,\u2026"
-lastmod: 2024-02-18 23:08:56.153004
+lastmod: 2024-02-19 22:05:02.780212
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) \xE8 uno standard di serializzazione di\
   \ dati leggibile dall'uomo che pu\xF2 essere utilizzato per file di configurazione,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/creating-a-temporary-file/
 date: 2024-01-20 17:40:53.145710-07:00
 description: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedosto,\
   \ johon ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niit\xE4\
   \ datan v\xE4liaikaiseen\u2026"
-lastmod: 2024-02-18 23:09:07.595867
+lastmod: 2024-02-19 22:05:15.443501
 model: gpt-4-1106-preview
 summary: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedosto, johon\
   \ ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niit\xE4 datan\

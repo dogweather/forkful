@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/logging/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:50.041102-07:00
 description: "El registro (logging) en programaci\xF3n implica grabar eventos, errores\
   \ u ocurrencias notables durante el tiempo de ejecuci\xF3n. Los programadores lo\
   \ hacen\u2026"
-lastmod: 2024-02-18 23:09:09.515029
+lastmod: 2024-02-19 22:05:17.168673
 model: gpt-4-0125-preview
 summary: "El registro (logging) en programaci\xF3n implica grabar eventos, errores\
   \ u ocurrencias notables durante el tiempo de ejecuci\xF3n. Los programadores lo\

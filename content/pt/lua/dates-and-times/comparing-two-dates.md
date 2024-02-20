@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/comparing-two-dates/
 date: 2024-01-20 17:33:24.065231-07:00
 description: "Comparar duas datas \xE9 verificar a diferen\xE7a entre elas - quem\
   \ vem antes, quem vem depois ou se s\xE3o iguais. Programadores fazem isso para\
   \ organizar\u2026"
-lastmod: 2024-02-18 23:08:58.294354
+lastmod: 2024-02-19 22:05:05.773962
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 verificar a diferen\xE7a entre elas - quem vem\
   \ antes, quem vem depois ou se s\xE3o iguais. Programadores fazem isso para organizar\u2026"

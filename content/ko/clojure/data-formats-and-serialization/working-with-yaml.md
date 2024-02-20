@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:05.577178-07:00
@@ -11,7 +9,7 @@ description: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC7AC\uADC0\uC801
   \uC5B4 \uAC04\uC758 \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD574 \uC0AC\uC6A9\
   \uB429\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 YAML\uC758 \uB2E8\
   \uC21C\uD568\uACFC \uAC00\uB3C5\uC131 \uB54C\uBB38\uC5D0 YAML\uC744\u2026"
-lastmod: 2024-02-18 23:09:05.721710
+lastmod: 2024-02-19 22:05:13.633295
 model: gpt-4-0125-preview
 summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC7AC\uADC0\uC801\uC778\
   \ \uC57D\uC790\uB85C, \uC0AC\uB78C\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uB370\

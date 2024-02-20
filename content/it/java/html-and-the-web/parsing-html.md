@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/parsing-html/
 date: 2024-01-20 15:32:05.303264-07:00
 description: "Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne\
   \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"
-lastmod: 2024-02-18 23:08:55.763825
+lastmod: 2024-02-19 22:05:02.367502
 summary: "Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne\
   \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"
 title: Analisi dell'HTML

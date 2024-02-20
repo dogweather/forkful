@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:33.483973-07:00
 description: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen\
   \ es, Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4\
   en. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.885712
+lastmod: 2024-02-19 22:05:12.829494
 model: gpt-4-1106-preview
 summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
   \ Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4en.\

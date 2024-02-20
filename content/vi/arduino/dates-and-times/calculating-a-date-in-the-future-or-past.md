@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:53.525191-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1E
   c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9\
   t ng\xE0y c\u1EE5 th\u1EC3 tr\u01B0\u1EDBc ho\u1EB7c sau m\u1ED9t ng\xE0y \u0111\
   \xE3 cho. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
-lastmod: 2024-02-18 23:08:51.013902
+lastmod: 2024-02-19 22:04:56.206944
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
   \ kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9t ng\xE0\

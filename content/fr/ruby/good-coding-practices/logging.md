@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/ruby/logging/
 date: 2024-01-26 01:08:25.572424-07:00
 description: "La journalisation dans la programmation, c'est comme tenir un journal\
   \ intime pour votre application. Il s'agit de l'enregistrement syst\xE9matique\u2026"
-lastmod: 2024-02-18 23:09:09.414238
+lastmod: 2024-02-19 22:05:17.076420
 model: gpt-4-1106-preview
 summary: "La journalisation dans la programmation, c'est comme tenir un journal intime\
   \ pour votre application. Il s'agit de l'enregistrement syst\xE9matique\u2026"

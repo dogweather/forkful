@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/cpp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:52.803757-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe consiste \xE0 d\xE9terminer la\
   \ pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 avant de r\xE9aliser\
   \ des op\xE9rations telles que lire\u2026"
-lastmod: 2024-02-18 23:09:09.176655
+lastmod: 2024-02-19 22:05:16.848830
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe consiste \xE0 d\xE9terminer la pr\xE9\
   sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 avant de r\xE9aliser des\

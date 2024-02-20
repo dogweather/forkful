@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:15.574406-07:00
 description: "De huidige datum op een Arduino krijgen betekent het bevragen van een\
   \ realtimeklok (RTC) of een internetgebaseerde tijdsdienst om de datum van dit moment\u2026"
-lastmod: 2024-02-18 23:09:02.149192
+lastmod: 2024-02-19 22:05:10.167092
 model: gpt-4-0125-preview
 summary: "De huidige datum op een Arduino krijgen betekent het bevragen van een realtimeklok\
   \ (RTC) of een internetgebaseerde tijdsdienst om de datum van dit moment\u2026"

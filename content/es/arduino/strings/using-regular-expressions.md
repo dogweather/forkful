@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/arduino/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:48.947086-07:00
 description: "Las expresiones regulares (regex) son secuencias de caracteres que definen\
   \ patrones de b\xFAsqueda, principalmente utilizados para la coincidencia y\u2026"
-lastmod: 2024-02-18 23:09:10.250807
+lastmod: 2024-02-19 22:05:17.829867
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son secuencias de caracteres que definen\
   \ patrones de b\xFAsqueda, principalmente utilizados para la coincidencia y\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/java/handling-errors/
 date: 2024-01-26 00:53:19.778134-07:00
 description: "Fehlerbehandlung bedeutet, Code zu schreiben, der Fehler erwartet und\
   \ damit umgeht. Programmierer tun dies, um Software robust zu machen und Abst\xFC\
   rze\u2026"
-lastmod: 2024-02-18 23:09:04.744564
+lastmod: 2024-02-19 22:05:12.695252
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung bedeutet, Code zu schreiben, der Fehler erwartet und damit\
   \ umgeht. Programmierer tun dies, um Software robust zu machen und Abst\xFCrze\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:22.197976-07:00
 description: "Zoeken en vervangen van tekst is het verwisselen van specifieke woorden\
   \ of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij\u2026"
-lastmod: 2024-02-18 23:09:02.403630
+lastmod: 2024-02-19 22:05:10.409220
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst is het verwisselen van specifieke woorden\
   \ of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij\u2026"

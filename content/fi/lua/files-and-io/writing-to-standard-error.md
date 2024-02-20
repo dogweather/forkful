@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/lua/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:59.300059-07:00
 description: "Kirjoittaminen standardivirheeseen (stderr) tarkoittaa virheviestien\
   \ ja diagnostiikkatulosteiden ohjaamista erilliseen kanavaan, eroon\u2026"
-lastmod: 2024-02-18 23:09:07.774628
+lastmod: 2024-02-19 22:05:15.607892
 model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen (stderr) tarkoittaa virheviestien ja\
   \ diagnostiikkatulosteiden ohjaamista erilliseen kanavaan, eroon\u2026"

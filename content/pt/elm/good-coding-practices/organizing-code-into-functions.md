@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/organizing-code-into-functions/
 date: 2024-01-26 01:10:34.654351-07:00
 description: "Jogar todo o seu c\xF3digo em uma grande pilha? M\xE1 ideia. Dividi-lo\
   \ em fun\xE7\xF5es? Boa ideia. Isso mant\xE9m o seu c\xF3digo em Elm limpo, reutiliz\xE1\
   vel e mais f\xE1cil\u2026"
-lastmod: 2024-02-18 23:08:58.065943
+lastmod: 2024-02-19 22:05:05.544287
 model: gpt-4-1106-preview
 summary: "Jogar todo o seu c\xF3digo em uma grande pilha? M\xE1 ideia. Dividi-lo em\
   \ fun\xE7\xF5es? Boa ideia. Isso mant\xE9m o seu c\xF3digo em Elm limpo, reutiliz\xE1\

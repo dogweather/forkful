@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:43.201249-07:00
 description: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps\
   \ Script, chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach\
   \ Google, jest podstawowym\u2026"
-lastmod: 2024-02-18 23:08:49.131728
+lastmod: 2024-02-19 22:04:54.070686
 model: gpt-4-0125-preview
 summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps Script,\
   \ chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach Google,\

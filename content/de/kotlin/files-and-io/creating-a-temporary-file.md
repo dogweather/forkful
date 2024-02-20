@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/creating-a-temporary-file/
 date: 2024-01-20 17:41:00.642193-07:00
 description: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Daten\
   \ w\xE4hrend der Ausf\xFChrung eines Programms aufnehmen. Sie werden oft genutzt,\
   \ um Zwischenergebnisse\u2026"
-lastmod: 2024-02-18 23:09:04.847188
+lastmod: 2024-02-19 22:05:12.792197
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Daten w\xE4\
   hrend der Ausf\xFChrung eines Programms aufnehmen. Sie werden oft genutzt, um Zwischenergebnisse\u2026"

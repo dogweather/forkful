@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/refactoring/
 date: 2024-01-26 01:40:55.619046-07:00
 description: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen\
   \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4\
   t sit\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.044633
+lastmod: 2024-02-19 22:05:15.852985
 model: gpt-4-0125-preview
 summary: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen prosessi\
   \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4t sit\xE4\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/haskell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:02.138748-07:00
 description: "Escrever em um arquivo de texto em Haskell trata-se de criar ou atualizar\
   \ arquivos com conte\xFAdo textual de forma program\xE1tica. Os programadores fazem\
   \ isso\u2026"
-lastmod: 2024-02-18 23:08:58.217409
+lastmod: 2024-02-19 22:05:05.690649
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Haskell trata-se de criar ou atualizar\
   \ arquivos com conte\xFAdo textual de forma program\xE1tica. Os programadores fazem\

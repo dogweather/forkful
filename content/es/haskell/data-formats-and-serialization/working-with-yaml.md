@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/haskell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:23.049022-07:00
 description: "YAML, siglas de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
   \ de marcado), es un est\xE1ndar de serializaci\xF3n de datos amigable para los\
   \ humanos que\u2026"
-lastmod: 2024-02-18 23:09:10.050107
+lastmod: 2024-02-19 22:05:17.646422
 model: gpt-4-0125-preview
 summary: "YAML, siglas de \"YAML Ain't Markup Language\" (YAML no es un lenguaje de\
   \ marcado), es un est\xE1ndar de serializaci\xF3n de datos amigable para los humanos\

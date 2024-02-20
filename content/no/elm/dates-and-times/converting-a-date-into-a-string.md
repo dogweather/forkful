@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:29.612545-07:00
 description: "Konvertering av en dato til en streng betyr \xE5 endre datotypen `Date`\
   \ til lesbar tekst. Programmerere gj\xF8r dette for \xE5 vise datoer p\xE5 brukervennlige\
   \ m\xE5ter\u2026"
-lastmod: 2024-02-18 23:08:53.822399
+lastmod: 2024-02-19 22:04:59.966697
 model: gpt-4-1106-preview
 summary: "Konvertering av en dato til en streng betyr \xE5 endre datotypen `Date`\
   \ til lesbar tekst. Programmerere gj\xF8r dette for \xE5 vise datoer p\xE5 brukervennlige\

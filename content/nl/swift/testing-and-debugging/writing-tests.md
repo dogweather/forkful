@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:07.719599-07:00
 description: "Tests schrijven is het cre\xEBren van code die controleert of je software\
   \ werkt zoals gepland. Programmeurs testen om bugs vroeg te vangen, kwaliteit te\u2026"
-lastmod: 2024-02-18 23:09:02.233343
+lastmod: 2024-02-19 22:05:10.247410
 model: gpt-4-0125-preview
 summary: "Tests schrijven is het cre\xEBren van code die controleert of je software\
   \ werkt zoals gepland. Programmeurs testen om bugs vroeg te vangen, kwaliteit te\u2026"

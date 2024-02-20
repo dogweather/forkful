@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:13.861824-07:00
 description: "Convertissez une cha\xEEne de caract\xE8res en minuscules pour unifier\
   \ le format des donn\xE9es textuelles. Les programmeurs le font souvent pour comparer\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:08.419393
+lastmod: 2024-02-19 22:05:16.210558
 model: gpt-4-1106-preview
 summary: "Convertissez une cha\xEEne de caract\xE8res en minuscules pour unifier le\
   \ format des donn\xE9es textuelles. Les programmeurs le font souvent pour comparer\

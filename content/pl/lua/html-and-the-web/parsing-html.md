@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/lua/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:46.917383-07:00
 description: "Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokument\xF3\
   w HTML, co jest kluczowe dla takich zada\u0144 jak scraping internetowy, analiza\
   \ danych\u2026"
-lastmod: 2024-02-18 23:08:49.737523
+lastmod: 2024-02-19 22:04:54.674331
 model: gpt-4-0125-preview
 summary: "Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokument\xF3\
   w HTML, co jest kluczowe dla takich zada\u0144 jak scraping internetowy, analiza\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:32.072862-07:00
 description: "Een datum in de toekomst of het verleden berekenen houdt in dat je een\
   \ bekende datum aanpast met een bepaald aantal dagen, maanden of jaren. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.727970
+lastmod: 2024-02-19 22:05:09.747769
 model: gpt-4-0125-preview
 summary: "Een datum in de toekomst of het verleden berekenen houdt in dat je een bekende\
   \ datum aanpast met een bepaald aantal dagen, maanden of jaren. Programmeurs\u2026"

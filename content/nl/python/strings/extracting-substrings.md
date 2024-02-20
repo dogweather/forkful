@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/python/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:49.328173-07:00
 description: "Substrings extraheren betekent specifieke delen van een string eruit\
   \ trekken, zoals een stukje van een lint knippen. Programmeurs doen dit om gegevens\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.421246
+lastmod: 2024-02-19 22:05:09.452284
 model: gpt-4-0125-preview
 summary: "Substrings extraheren betekent specifieke delen van een string eruit trekken,\
   \ zoals een stukje van een lint knippen. Programmeurs doen dit om gegevens te\u2026"

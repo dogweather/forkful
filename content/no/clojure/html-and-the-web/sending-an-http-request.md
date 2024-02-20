@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/sending-an-http-request/
 date: 2024-01-20 17:59:42.427244-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 kommunisere med\
   \ en webserver for \xE5 hente eller sende data. Programmerere gj\xF8r dette for\
   \ \xE5 integrere tjenester,\u2026"
-lastmod: 2024-02-18 23:08:53.561463
+lastmod: 2024-02-19 22:04:59.683377
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 kommunisere med en webserver\
   \ for \xE5 hente eller sende data. Programmerere gj\xF8r dette for \xE5 integrere\

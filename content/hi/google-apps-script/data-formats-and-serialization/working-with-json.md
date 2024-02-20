@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/working-with-json/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:10.738263-07:00
@@ -12,7 +10,7 @@ description: "JSON, \u092F\u093E JavaScript Object Notation, \u090F\u0915 \u0939
   -\u0915\u094D\u0932\u093E\u0907\u0902\u091F \u0938\u0902\u091A\u093E\u0930 \u0914\
   \u0930 \u0915\u0949\u0928\u094D\u092B\u093C\u093F\u0917\u0930\u0947\u0936\u0928\
   \ \u092B\u093C\u093E\u0907\u0932\u094B\u0902 \u0915\u0947 \u0932\u093F\u090F\u2026"
-lastmod: 2024-02-18 23:09:02.609448
+lastmod: 2024-02-19 22:05:10.611333
 model: gpt-4-0125-preview
 summary: "JSON, \u092F\u093E JavaScript Object Notation, \u090F\u0915 \u0939\u0932\
   \u094D\u0915\u093E \u092A\u094D\u0930\u093E\u0930\u0942\u092A \u0939\u0948 \u0921\

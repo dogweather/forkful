@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/typescript/downloading-a-web-page/
 date: 2024-01-20 17:44:54.750892-07:00
 description: "Baixar uma p\xE1gina web significa solicitar e receber o conte\xFAdo\
   \ de uma p\xE1gina da Internet. Programadores fazem isso para analisar dados, testar\
   \ desempenho\u2026"
-lastmod: 2024-02-18 23:08:57.883707
+lastmod: 2024-02-19 22:05:05.356138
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina web significa solicitar e receber o conte\xFAdo de\
   \ uma p\xE1gina da Internet. Programadores fazem isso para analisar dados, testar\

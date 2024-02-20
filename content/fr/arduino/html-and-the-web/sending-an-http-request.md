@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/sending-an-http-request/
 date: 2024-01-20 17:59:10.916264-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. On le fait pour interagir avec le web : r\xE9cup\xE9rer de l'info, envoyer\
   \ des commandes,\u2026"
-lastmod: 2024-02-18 23:09:09.111711
+lastmod: 2024-02-19 22:05:16.789720
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. On le fait pour interagir avec le web : r\xE9cup\xE9rer de l'info, envoyer\

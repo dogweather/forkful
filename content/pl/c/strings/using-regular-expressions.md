@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:17.717139-07:00
 description: "Wyra\u017Cenia regularne (regex) dostarczaj\u0105 sposobu na wyszukiwanie,\
   \ dopasowywanie i manipulowanie ci\u0105gami znak\xF3w przy u\u017Cyciu zdefiniowanych\
   \ wzorc\xF3w.\u2026"
-lastmod: 2024-02-18 23:08:50.069115
+lastmod: 2024-02-19 22:04:55.052100
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) dostarczaj\u0105 sposobu na wyszukiwanie,\
   \ dopasowywanie i manipulowanie ci\u0105gami znak\xF3w przy u\u017Cyciu zdefiniowanych\

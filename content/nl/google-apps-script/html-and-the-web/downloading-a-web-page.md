@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:58.917491-07:00
 description: "Het downloaden van een webpagina in Google Apps Script houdt in dat\
   \ de inhoud van een webpagina via HTML wordt opgehaald voor verschillende doeleinden,\u2026"
-lastmod: 2024-02-18 23:09:01.384276
+lastmod: 2024-02-19 22:05:09.416828
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina in Google Apps Script houdt in dat de inhoud\
   \ van een webpagina via HTML wordt opgehaald voor verschillende doeleinden,\u2026"

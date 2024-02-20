@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/kotlin/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:11.061457-07:00
 description: "\xC5 skrive til standard feil (stderr) handler om \xE5 sende ut feilmeldinger\
   \ og diagnostikk til en separat str\xF8m, forskjellig fra standard utdata (stdout),\
   \ som\u2026"
-lastmod: 2024-02-18 23:08:53.868284
+lastmod: 2024-02-19 22:05:00.034842
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) handler om \xE5 sende ut feilmeldinger\
   \ og diagnostikk til en separat str\xF8m, forskjellig fra standard utdata (stdout),\

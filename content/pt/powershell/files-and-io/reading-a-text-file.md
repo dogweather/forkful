@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/powershell/reading-a-text-file/
 date: 2024-01-20 17:55:06.290609-07:00
 description: "Ler um arquivo de texto significa acessar e interpretar o conte\xFA\
   do de um arquivo armazenado em disco. Programadores fazem isso para extrair dados,\u2026"
-lastmod: 2024-02-18 23:08:58.386040
+lastmod: 2024-02-19 22:05:05.871848
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto significa acessar e interpretar o conte\xFAdo de\
   \ um arquivo armazenado em disco. Programadores fazem isso para extrair dados,\u2026"

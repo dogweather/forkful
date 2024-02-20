@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/fish-shell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:33.226122-07:00
 description: "Att h\xE4mta det aktuella datumet i programmering \xE4r en grundl\xE4\
   ggande uppgift som m\xF6jligg\xF6r att h\xE4mta och manipulera systemets datum-\
   \ och tidsdata. I\u2026"
-lastmod: 2024-02-18 23:08:52.217789
+lastmod: 2024-02-19 22:04:57.597036
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i programmering \xE4r en grundl\xE4ggande\
   \ uppgift som m\xF6jligg\xF6r att h\xE4mta och manipulera systemets datum- och tidsdata.\

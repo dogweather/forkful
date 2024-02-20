@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:00.096380-07:00
 description: "Hitta str\xE4ngl\xE4ngd inneb\xE4r att r\xE4kna antalet tecken i en\
   \ str\xE4ng. Programmerare g\xF6r detta f\xF6r att validera indata, hantera textdata\
   \ och optimera prestanda."
-lastmod: 2024-02-18 23:08:51.993200
+lastmod: 2024-02-19 22:04:57.347404
 model: gpt-4-1106-preview
 summary: "Hitta str\xE4ngl\xE4ngd inneb\xE4r att r\xE4kna antalet tecken i en str\xE4\
   ng. Programmerare g\xF6r detta f\xF6r att validera indata, hantera textdata och\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /he/elm/printing-debug-output/
 date: 2024-01-20 17:52:21.499427-07:00
 description: Printing debug output means showing values in your program for checking
   what's going on. We do it to find bugs and understand behavior without guessing.
-lastmod: 2024-02-18 23:08:52.756163
+lastmod: 2024-02-19 22:04:58.430361
 model: gpt-4-1106-preview
 summary: Printing debug output means showing values in your program for checking what's
   going on. We do it to find bugs and understand behavior without guessing.

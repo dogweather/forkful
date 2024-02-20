@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/logging/
 date: 2024-01-26 01:08:09.374496-07:00
 description: "Hacer logging es como mantener un diario para tu aplicaci\xF3n; es la\
   \ pr\xE1ctica de registrar eventos, errores y otros datos pertinentes durante la\
   \ ejecuci\xF3n.\u2026"
-lastmod: 2024-02-18 23:09:09.756077
+lastmod: 2024-02-19 22:05:17.378990
 model: gpt-4-1106-preview
 summary: "Hacer logging es como mantener un diario para tu aplicaci\xF3n; es la pr\xE1\
   ctica de registrar eventos, errores y otros datos pertinentes durante la ejecuci\xF3\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/bash/creating-a-temporary-file/
 date: 2024-01-20 17:39:25.826513-07:00
 description: "Crear un fichero temporal es como hacer una nota adhesiva digital, algo\
   \ temporal para guardar datos que no necesitas a largo plazo. Los programadores\
   \ lo\u2026"
-lastmod: 2024-02-18 23:09:10.188698
+lastmod: 2024-02-19 22:05:17.773096
 model: gpt-4-1106-preview
 summary: "Crear un fichero temporal es como hacer una nota adhesiva digital, algo\
   \ temporal para guardar datos que no necesitas a largo plazo. Los programadores\

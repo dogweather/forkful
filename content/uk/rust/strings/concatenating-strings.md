@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/rust/concatenating-strings/
 date: 2024-01-20 17:35:49.684161-07:00
 description: "String concatenation is sticking one string to another. We do this to\
   \ build up messages, create paths, combine user-generated content, or to simply\
   \ put\u2026"
-lastmod: 2024-02-18 23:08:59.967716
+lastmod: 2024-02-19 22:05:07.933751
 model: gpt-4-1106-preview
 summary: "String concatenation is sticking one string to another. We do this to build\
   \ up messages, create paths, combine user-generated content, or to simply put\u2026"

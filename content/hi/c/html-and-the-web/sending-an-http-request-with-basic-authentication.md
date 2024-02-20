@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:48.115981-07:00
@@ -14,7 +12,7 @@ description: "C \u092E\u0947\u0902 \u092C\u0947\u0938\u093F\u0915 \u0911\u0925\u
   \ \u0936\u093E\u092E\u093F\u0932 \u0915\u0930\u0915\u0947 \u090F\u0915 HTTP \u0905\
   \u0928\u0941\u0930\u094B\u0927 \u092C\u0928\u093E\u0928\u0947 \u092E\u0947\u0902\
   \u2026"
-lastmod: 2024-02-18 23:09:04.210127
+lastmod: 2024-02-19 22:05:12.183781
 model: gpt-4-0125-preview
 summary: "C \u092E\u0947\u0902 \u092C\u0947\u0938\u093F\u0915 \u0911\u0925\u0947\u0902\
   \u091F\u093F\u0915\u0947\u0936\u0928 \u0915\u0947 \u0938\u093E\u0925 \u090F\u0915\

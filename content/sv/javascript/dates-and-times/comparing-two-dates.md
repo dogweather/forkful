@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/comparing-two-dates/
 date: 2024-01-20 17:33:16.094292-07:00
 description: "Att j\xE4mf\xF6ra tv\xE5 datum i JavaScript handlar om att se vilket\
   \ som \xE4r tidigast eller senast, eller om de \xE4r samma. Det \xE4r anv\xE4ndbart\
   \ f\xF6r att hantera\u2026"
-lastmod: 2024-02-18 23:08:52.176671
+lastmod: 2024-02-19 22:04:57.549610
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum i JavaScript handlar om att se vilket som\
   \ \xE4r tidigast eller senast, eller om de \xE4r samma. Det \xE4r anv\xE4ndbart\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:20.131109-07:00
 description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\
   \ ensuite\u2026"
-lastmod: 2024-02-18 23:09:08.558885
+lastmod: 2024-02-19 22:05:16.337025
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\

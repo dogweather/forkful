@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/arduino/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:46.106528-07:00
@@ -11,7 +9,7 @@ description: "\u5728Arduino\u9879\u76EE\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671
   \u5F3A\u529F\u80FD\u6027\uFF0C\u786E\u4FDD\u6570\u636E\u7684\u76F8\u5173\u6027\uFF0C\
   \u5E76\u5728\u4ED6\u4EEC\u7684IoT\u548C\u5D4C\u5165\u5F0F\u9879\u76EE\u4E2D\u4FC3\
   \u8FDB\u4E0E\u65F6\u95F4\u654F\u611F\u7684\u64CD\u4F5C\u3002"
-lastmod: 2024-02-18 23:08:59.377930
+lastmod: 2024-02-19 22:05:07.129023
 model: gpt-4-0125-preview
 summary: "\u5728Arduino\u9879\u76EE\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\
   \u53CA\u83B7\u53D6\u5B9E\u65F6\u4FE1\u606F\uFF0C\u8FD9\u5BF9\u4E8E\u65E5\u5FD7\u8BB0\

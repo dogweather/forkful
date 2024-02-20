@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elm/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:01.338009-07:00
@@ -9,7 +7,7 @@ description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang k\xFD t\u1EF1 t
   \ k\xFD t\u1EF1 ch\u1EEF c\xE1i sang d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng c\u1EE7\
   a ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1\
   u\u2026"
-lastmod: 2024-02-18 23:08:50.589256
+lastmod: 2024-02-19 22:04:55.692924
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang k\xFD t\u1EF1 th\u01B0\
   \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\

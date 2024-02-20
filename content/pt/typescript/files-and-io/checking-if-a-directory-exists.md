@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/typescript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:43.948977-07:00
 description: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para\
   \ tarefas de gerenciamento de arquivos, como ler ou escrever dados em arquivos,\
   \ garantindo\u2026"
-lastmod: 2024-02-18 23:08:57.899113
+lastmod: 2024-02-19 22:05:05.372428
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para tarefas\
   \ de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo\u2026"

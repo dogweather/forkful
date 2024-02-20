@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/working-with-complex-numbers/
 date: 2024-01-26 04:45:22.661164-07:00
 description: "N\xFAmeros complexos possuem uma parte real e uma parte imagin\xE1ria\
   \ e s\xE3o cruciais em diversas \xE1reas, como engenharia, f\xEDsica e gr\xE1ficos\
   \ de computador.\u2026"
-lastmod: 2024-02-18 23:08:57.921932
+lastmod: 2024-02-19 22:05:05.395416
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos possuem uma parte real e uma parte imagin\xE1ria e\
   \ s\xE3o cruciais em diversas \xE1reas, como engenharia, f\xEDsica e gr\xE1ficos\

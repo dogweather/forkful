@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/elm/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:49.311491-07:00
 description: "JSON:n k\xE4sittely Elm:ss\xE4 tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi\
   \ ja Elm-arvojen enkoodaamista takaisin JSON:ksi. T\xE4m\xE4 prosessi on ratkaisevan\u2026"
-lastmod: 2024-02-18 23:09:07.552377
+lastmod: 2024-02-19 22:05:15.403806
 model: gpt-4-0125-preview
 summary: "JSON:n k\xE4sittely Elm:ss\xE4 tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi\
   \ ja Elm-arvojen enkoodaamista takaisin JSON:ksi. T\xE4m\xE4 prosessi on ratkaisevan\u2026"

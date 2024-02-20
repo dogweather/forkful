@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/swift/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:31.994630-07:00
 description: "Comprobar si un directorio existe en el sistema de archivos es esencial\
   \ para gestionar estructuras de archivos desde tus aplicaciones Swift. Esta tarea\u2026"
-lastmod: 2024-02-18 23:09:10.373730
+lastmod: 2024-02-19 22:05:17.935347
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en el sistema de archivos es esencial\
   \ para gestionar estructuras de archivos desde tus aplicaciones Swift. Esta tarea\u2026"

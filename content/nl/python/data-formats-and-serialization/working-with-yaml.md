@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/working-with-yaml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:46.945981-07:00
 description: "Werken met YAML betekent het parseren en genereren van YAML (Yet Another\
   \ Markup Language) documenten in Python. Programmeurs doen dit om\u2026"
-lastmod: 2024-02-18 23:09:01.455865
+lastmod: 2024-02-19 22:05:09.485324
 model: gpt-4-0125-preview
 summary: "Werken met YAML betekent het parseren en genereren van YAML (Yet Another\
   \ Markup Language) documenten in Python. Programmeurs doen dit om\u2026"

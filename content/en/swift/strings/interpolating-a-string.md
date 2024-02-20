@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/interpolating-a-string/
 date: 2024-01-20 17:51:53.163763-07:00
 description: "Interpolating a string involves inserting variables into a string literal.\
   \ Programmers do it to construct strings dynamically, making it easier to include\u2026"
-lastmod: 2024-02-18 23:09:11.382800
+lastmod: 2024-02-19 22:05:18.845383
 model: gpt-4-1106-preview
 summary: "Interpolating a string involves inserting variables into a string literal.\
   \ Programmers do it to construct strings dynamically, making it easier to include\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:33.006741-07:00
 description: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung\
   \ zu importieren. Programmierer machen das, um Daten zu verarbeiten, Einstellungen\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.297275
+lastmod: 2024-02-19 22:05:13.221324
 model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung zu\
   \ importieren. Programmierer machen das, um Daten zu verarbeiten, Einstellungen\

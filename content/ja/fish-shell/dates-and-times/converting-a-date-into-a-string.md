@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/fish-shell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:26.486971-07:00
 description: "\u65E5\u4ED8\u304B\u3089\u6587\u5B57\u5217\u3078\u306E\u5909\u63DB\u306F\
   \u3001\u7279\u5B9A\u306E\u5F62\u5F0F\u306E\u65E5\u4ED8\u30C7\u30FC\u30BF\u3092\u308F\
@@ -11,7 +9,7 @@ description: "\u65E5\u4ED8\u304B\u3089\u6587\u5B57\u5217\u3078\u306E\u5909\u63DB
   \u30B9\u3067\u306E\u65E5\u4ED8\u8868\u793A\u306E\u305F\u3081\u306B\u884C\u3044\u307E\
   \u3059\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:55.320214
+lastmod: 2024-02-19 22:05:01.861337
 model: gpt-4-1106-preview
 summary: "\u65E5\u4ED8\u304B\u3089\u6587\u5B57\u5217\u3078\u306E\u5909\u63DB\u306F\
   \u3001\u7279\u5B9A\u306E\u5F62\u5F0F\u306E\u65E5\u4ED8\u30C7\u30FC\u30BF\u3092\u308F\

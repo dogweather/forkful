@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:25.919598-07:00
 description: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
   \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\
   \ aplikacji. Programi\u015Bci pisz\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.102124
+lastmod: 2024-02-19 22:04:54.040723
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
   \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\

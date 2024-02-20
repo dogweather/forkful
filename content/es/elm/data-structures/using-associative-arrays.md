@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/elm/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:05.451099-07:00
 description: "Los arreglos asociativos, o como los llama Elm, Diccionarios, mapean\
   \ claves a valores de una manera que hace que la b\xFAsqueda, inserci\xF3n y eliminaci\xF3\
   n de\u2026"
-lastmod: 2024-02-18 23:09:09.882844
+lastmod: 2024-02-19 22:05:17.494316
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o como los llama Elm, Diccionarios, mapean claves\
   \ a valores de una manera que hace que la b\xFAsqueda, inserci\xF3n y eliminaci\xF3\

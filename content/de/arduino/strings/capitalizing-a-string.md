@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/arduino/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:06.961671-07:00
 description: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes\
   \ Wortes in einem String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt\
   \ wird,\u2026"
-lastmod: 2024-02-18 23:09:05.128462
+lastmod: 2024-02-19 22:05:13.061000
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes Wortes\
   \ in einem String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird,\u2026"

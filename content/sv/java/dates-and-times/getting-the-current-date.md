@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:49.328780-07:00
 description: "Att erh\xE5lla dagens datum i Java \xE4r en grundl\xE4ggande operation\
   \ som till\xE5ter programmerare att manipulera datumobjekt f\xF6r operationer s\xE5\
   som loggning,\u2026"
-lastmod: 2024-02-18 23:08:51.679231
+lastmod: 2024-02-19 22:04:57.007125
 model: gpt-4-0125-preview
 summary: "Att erh\xE5lla dagens datum i Java \xE4r en grundl\xE4ggande operation som\
   \ till\xE5ter programmerare att manipulera datumobjekt f\xF6r operationer s\xE5\

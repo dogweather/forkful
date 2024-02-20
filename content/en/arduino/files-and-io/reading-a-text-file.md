@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/reading-a-text-file/
 date: 2024-01-20 17:53:43.918216-07:00
 description: "Reading a text file in Arduino lets you fetch data stored on an SD card\
   \ or in the device's memory\u2014handy for settings, calibration data, or logs.\u2026"
-lastmod: 2024-02-18 23:09:11.332171
+lastmod: 2024-02-19 22:05:18.799110
 model: gpt-4-1106-preview
 summary: "Reading a text file in Arduino lets you fetch data stored on an SD card\
   \ or in the device's memory\u2014handy for settings, calibration data, or logs.\u2026"

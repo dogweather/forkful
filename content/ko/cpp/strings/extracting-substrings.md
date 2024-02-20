@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/extracting-substrings/
 date: 2024-01-20 17:45:11.315845-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744\
   \ \uCD94\uCD9C\uD558\uB294 \uAC83\uC740 \uD2B9\uC815 \uC870\uAC01\uC744 \uC120\uD0DD\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC7
   \uD560 \uB54C \uC774 \uBC29\uBC95\uC744 \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.666356
+lastmod: 2024-02-19 22:05:14.566046
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\
   \uCD9C\uD558\uB294 \uAC83\uC740 \uD2B9\uC815 \uC870\uAC01\uC744 \uC120\uD0DD\uD574\

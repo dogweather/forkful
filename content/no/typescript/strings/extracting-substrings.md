@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/typescript/extracting-substrings/
 date: 2024-01-20 17:46:40.079223-07:00
 description: "\xC5 hente ut understrenger betyr \xE5 ta ut en spesifisert del av en\
   \ streng. Programmerere gj\xF8r dette for \xE5 bearbeide data, validere input eller\
   \ simpelthen\u2026"
-lastmod: 2024-02-18 23:08:53.634699
+lastmod: 2024-02-19 22:04:59.763082
 model: gpt-4-1106-preview
 summary: "\xC5 hente ut understrenger betyr \xE5 ta ut en spesifisert del av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 bearbeide data, validere input eller simpelthen\u2026"

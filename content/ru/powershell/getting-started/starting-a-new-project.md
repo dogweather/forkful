@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/powershell/starting-a-new-project/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:44.832703-07:00
@@ -14,7 +12,7 @@ description: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u043
   \u0430\u0435\u043C \u044D\u0442\u043E, \u0447\u0442\u043E\u0431\u044B \u0432\u0437\
   \u044F\u0442\u044C\u0441\u044F \u0437\u0430 \u043D\u043E\u0432\u0443\u044E \u0438\
   \u0434\u0435\u044E \u0438\u043B\u0438\u2026"
-lastmod: 2024-02-18 23:08:57.258842
+lastmod: 2024-02-19 22:05:04.424664
 model: gpt-4-0125-preview
 summary: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u0433\u043E\
   \ \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u0437\u0430\u043A\u043B\u044E\u0447\

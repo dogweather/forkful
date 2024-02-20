@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/powershell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:20:40.431759-07:00
 description: "\xC5 manipulere filer med CLI \xE9n-linjers kommandoer i PowerShell\
   \ handler om \xE5 raskt endre, flytte eller hente fildata direkte fra kommandolinjen.\u2026"
-lastmod: 2024-02-18 23:08:54.095600
+lastmod: 2024-02-19 22:05:00.281238
 model: gpt-4-0125-preview
 summary: "\xC5 manipulere filer med CLI \xE9n-linjers kommandoer i PowerShell handler\
   \ om \xE5 raskt endre, flytte eller hente fildata direkte fra kommandolinjen.\u2026"

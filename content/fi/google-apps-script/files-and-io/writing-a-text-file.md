@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:09.088845-07:00
 description: "Tekstitiedoston kirjoittaminen Google Apps Scriptill\xE4 mahdollistaa\
   \ kehitt\xE4jille datan tallentamisen pysyv\xE4sti, tehden siit\xE4 saatavilla tulevaa\
   \ k\xE4ytt\xF6\xE4 tai\u2026"
-lastmod: 2024-02-18 23:09:07.157646
+lastmod: 2024-02-19 22:05:15.033152
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Google Apps Scriptill\xE4 mahdollistaa kehitt\xE4\
   jille datan tallentamisen pysyv\xE4sti, tehden siit\xE4 saatavilla tulevaa k\xE4\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /ko/typescript/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:20.987307-07:00
 description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC758\
   \ \uAC1C\uC218\uB97C \uC13C\uB2E4. \uC800\uC7A5\uB41C \uB370\uC774\uD130 \uAD00\uB9AC\
   , \uC785\uB825 \uC720\uD6A8\uC131 \uAC80\uC0AC, UI \uB514\uC790\uC778 \uC870\uC815\
   \uC5D0 \uD544\uC694\uD558\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.805999
+lastmod: 2024-02-19 22:05:13.718651
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC758 \uAC1C\
   \uC218\uB97C \uC13C\uB2E4. \uC800\uC7A5\uB41C \uB370\uC774\uD130 \uAD00\uB9AC, \uC785\

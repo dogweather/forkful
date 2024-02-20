@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:16.981770-07:00
 description: "Een tekstbestand schrijven in C++ betekent het cre\xEBren of wijzigen\
   \ van een bestand om tekstuele gegevens op te slaan. Programmeurs doen dit om gegevens\u2026"
-lastmod: 2024-02-18 23:09:02.202887
+lastmod: 2024-02-19 22:05:10.218600
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in C++ betekent het cre\xEBren of wijzigen van\
   \ een bestand om tekstuele gegevens op te slaan. Programmeurs doen dit om gegevens\u2026"

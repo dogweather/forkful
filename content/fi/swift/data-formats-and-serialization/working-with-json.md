@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/swift/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:14.636963-07:00
 description: "JSON:n k\xE4ytt\xE4minen Swiftiss\xE4 tarkoittaa kevyen datanvaihtoformaatin\
   \ k\xE4sittely\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t JSONia datan siirt\xE4miseen\
   \ palvelimen ja web-\u2026"
-lastmod: 2024-02-18 23:09:08.013265
+lastmod: 2024-02-19 22:05:15.824023
 model: gpt-4-0125-preview
 summary: "JSON:n k\xE4ytt\xE4minen Swiftiss\xE4 tarkoittaa kevyen datanvaihtoformaatin\
   \ k\xE4sittely\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t JSONia datan siirt\xE4miseen\

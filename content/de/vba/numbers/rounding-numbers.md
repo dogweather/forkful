@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/vba/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:19.199866-07:00
 description: "Das Runden von Zahlen in der Programmierung geht darum, eine Zahl auf\
   \ ihre n\xE4chstgelegene ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.682859
+lastmod: 2024-02-19 22:05:12.636257
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen in der Programmierung geht darum, eine Zahl auf ihre\
   \ n\xE4chstgelegene ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen\

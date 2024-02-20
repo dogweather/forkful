@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/typescript/organizing-code-into-functions/
 date: 2024-01-25 03:00:11.560491-07:00
 description: "Organizing code into functions means chunking your code into reusable,\
   \ modular blocks. We do this to keep things DRY (Don't Repeat Yourself), making\
   \ code\u2026"
-lastmod: 2024-02-18 23:09:10.812786
+lastmod: 2024-02-19 22:05:18.333221
 model: gpt-4-1106-preview
 summary: "Organizing code into functions means chunking your code into reusable, modular\
   \ blocks. We do this to keep things DRY (Don't Repeat Yourself), making code\u2026"

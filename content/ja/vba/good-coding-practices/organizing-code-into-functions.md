@@ -1,13 +1,11 @@
 ---
-aliases:
-- /ja/vba/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:49.316919-07:00
 description: "Microsoft Office\u7528\u306E\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\
   \u30F3\u5411\u3051\u306E\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u8A00\u8A9E\u3067\
   \u3042\u308BVisual Basic for\u2026"
-lastmod: 2024-02-18 23:08:54.766409
+lastmod: 2024-02-19 22:05:01.058476
 model: gpt-4-0125-preview
 summary: "Microsoft Office\u7528\u306E\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\
   \u5411\u3051\u306E\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u8A00\u8A9E\u3067\u3042\

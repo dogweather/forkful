@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/google-apps-script/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:40.113077-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script\u3067HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u
   \u306F\u3001\u30C7\u30FC\u30BF\u53CE\u96C6\u3092\u81EA\u52D5\u5316\u3057\u305F\u308A\
   \u3001Web\u30B3\u30F3\u30C6\u30F3\u30C4\u3092\u64CD\u4F5C\u3057\u305F\u308A\u3001\
   Google\u2026"
-lastmod: 2024-02-18 23:08:54.520468
+lastmod: 2024-02-19 22:05:00.711767
 model: gpt-4-0125-preview
 summary: "Google Apps Script\u3067HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F\u3001\
   HTML\u30B3\u30F3\u30C6\u30F3\u30C4\u304B\u3089\u30C7\u30FC\u30BF\u3092\u62BD\u51FA\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/elm/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:39.063149-07:00
@@ -14,7 +12,7 @@ description: "Elm \u043D\u0435 \u043C\u0430\u0454 \u0432\u0431\u0443\u0434\u043E
   \u0433\u0443\u0440\u0430\u0446\u0456\u0457 \u0430\u0431\u043E \u043E\u0431\u043C\
   \u0456\u043D\u0443 \u0434\u0430\u043D\u0438\u043C\u0438, \u0447\u0435\u0440\u0435\
   \u0437 \u0439\u043E\u0433\u043E\u2026"
-lastmod: 2024-02-18 23:09:00.228048
+lastmod: 2024-02-19 22:05:08.204171
 model: gpt-4-0125-preview
 summary: "Elm \u043D\u0435 \u043C\u0430\u0454 \u0432\u0431\u0443\u0434\u043E\u0432\
   \u0430\u043D\u043E\u0457 \u043F\u0456\u0434\u0442\u0440\u0438\u043C\u043A\u0438\

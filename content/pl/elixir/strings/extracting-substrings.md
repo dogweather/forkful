@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elixir/extracting-substrings/
 date: 2024-01-20 17:45:41.867122-07:00
 description: "Wyci\u0105ganie podci\u0105g\xF3w (ang. \"substring extraction\") to\
   \ spos\xF3b na wyj\u0119cie specyficznej cz\u0119\u015Bci z ci\u0105gu znak\xF3\
   w. Programi\u015Bci to robi\u0105, \u017Ceby pracowa\u0107 tylko z\u2026"
-lastmod: 2024-02-18 23:08:49.295108
+lastmod: 2024-02-19 22:04:54.209881
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie podci\u0105g\xF3w (ang. \"substring extraction\") to spos\xF3\
   b na wyj\u0119cie specyficznej cz\u0119\u015Bci z ci\u0105gu znak\xF3w. Programi\u015B\

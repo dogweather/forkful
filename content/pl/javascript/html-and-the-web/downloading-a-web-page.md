@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/downloading-a-web-page/
 date: 2024-01-20 17:44:27.587174-07:00
 description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u015B\
   ci, by m\xF3c z ni\u0105 interaktywnie pracowa\u0107 poza przegl\u0105dark\u0105\
   . Programi\u015Bci robi\u0105 to, aby analizowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.992634
+lastmod: 2024-02-19 22:04:54.945885
 model: gpt-4-1106-preview
 summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u015B\
   ci, by m\xF3c z ni\u0105 interaktywnie pracowa\u0107 poza przegl\u0105dark\u0105\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/swift/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:19.948999-07:00
 description: "El an\xE1lisis de HTML se refiere al proceso de descomponer e interpretar\
   \ la estructura del contenido HTML, t\xEDpicamente para extraer datos espec\xED\
   ficos o\u2026"
-lastmod: 2024-02-18 23:09:10.355526
+lastmod: 2024-02-19 22:05:17.919167
 model: gpt-4-0125-preview
 summary: "El an\xE1lisis de HTML se refiere al proceso de descomponer e interpretar\
   \ la estructura del contenido HTML, t\xEDpicamente para extraer datos espec\xED\

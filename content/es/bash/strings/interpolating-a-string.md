@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/interpolating-a-string/
 date: 2024-01-20 17:50:13.981080-07:00
 description: "La interpolaci\xF3n de cadenas es insertar valores de variables en medio\
   \ de una cadena de texto. En Bash, los programamos para ahorrar tiempo y evitar\u2026"
-lastmod: 2024-02-18 23:09:10.150220
+lastmod: 2024-02-19 22:05:17.737832
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas es insertar valores de variables en medio\
   \ de una cadena de texto. En Bash, los programamos para ahorrar tiempo y evitar\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/cpp/starting-a-new-project/
 date: 2024-01-20 18:02:57.317472-07:00
 description: "Ein neues C++ Projekt beginnen hei\xDFt, die Struktur f\xFCr frischen\
   \ Code aufzubauen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.189750
+lastmod: 2024-02-19 22:05:13.119562
 model: gpt-4-1106-preview
 summary: "Ein neues C++ Projekt beginnen hei\xDFt, die Struktur f\xFCr frischen Code\
   \ aufzubauen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme\

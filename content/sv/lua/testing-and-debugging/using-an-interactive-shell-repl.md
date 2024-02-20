@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:25.460610-07:00
 description: "REPL st\xE5r f\xF6r Read-Eval-Print Loop, en interaktiv milj\xF6 d\xE4\
   r du snabbt kan testa kod. Programmerare anv\xE4nder den f\xF6r att experimentera,\
   \ fels\xF6ka och l\xE4ra\u2026"
-lastmod: 2024-02-18 23:08:51.920169
+lastmod: 2024-02-19 22:04:57.267043
 model: gpt-4-0125-preview
 summary: "REPL st\xE5r f\xF6r Read-Eval-Print Loop, en interaktiv milj\xF6 d\xE4r\
   \ du snabbt kan testa kod. Programmerare anv\xE4nder den f\xF6r att experimentera,\

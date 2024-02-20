@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:24.749032-07:00
 description: "Een REPL (Read-Eval-Print-Loop) is een eenvoudige, interactieve programmeeromgeving.\
   \ Programmeurs gebruiken het voor realtime taalexperimenten, snelle\u2026"
-lastmod: 2024-02-18 23:09:02.184674
+lastmod: 2024-02-19 22:05:10.201190
 model: gpt-4-0125-preview
 summary: "Een REPL (Read-Eval-Print-Loop) is een eenvoudige, interactieve programmeeromgeving.\
   \ Programmeurs gebruiken het voor realtime taalexperimenten, snelle\u2026"

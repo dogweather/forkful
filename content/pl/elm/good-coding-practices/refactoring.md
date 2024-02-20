@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elm/refactoring/
 date: 2024-01-26 01:17:55.596907-07:00
 description: "Refaktoryzacja to w zasadzie wiosenne sprz\u0105tanie w Twojej bazie\
   \ kodu - chodzi o restrukturyzacj\u0119 istniej\u0105cego kodu bez zmiany jego zewn\u0119\
   trznego\u2026"
-lastmod: 2024-02-18 23:08:49.527046
+lastmod: 2024-02-19 22:04:54.460574
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to w zasadzie wiosenne sprz\u0105tanie w Twojej bazie kodu\
   \ - chodzi o restrukturyzacj\u0119 istniej\u0105cego kodu bez zmiany jego zewn\u0119\

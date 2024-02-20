@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/swift/searching-and-replacing-text/
 date: 2024-01-20 17:58:51.030206-07:00
 description: "Textsuche und -ersetzung erm\xF6glicht es uns, spezifische Zeichenketten\
   \ in einem Text zu finden und sie durch andere zu ersetzen. Das ist n\xFCtzlich,\
   \ um Daten\u2026"
-lastmod: 2024-02-18 23:09:05.218125
+lastmod: 2024-02-19 22:05:13.146392
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersetzung erm\xF6glicht es uns, spezifische Zeichenketten\
   \ in einem Text zu finden und sie durch andere zu ersetzen. Das ist n\xFCtzlich,\

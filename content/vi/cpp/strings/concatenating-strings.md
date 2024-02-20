@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/cpp/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:38.128603-07:00
@@ -9,7 +7,7 @@ description: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c gh\xE9p c\xE1c chu\u1ED7i l\u1
   nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1\
   ng c\xE1c c\xE2u, t\u1EA1o th\xF4ng \u0111i\u1EC7p, ho\u1EB7c k\u1EBFt h\u1EE3p\
   \ d\u1EEF\u2026"
-lastmod: 2024-02-18 23:08:51.035398
+lastmod: 2024-02-19 22:04:56.234131
 model: gpt-4-0125-preview
 summary: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c gh\xE9p c\xE1c chu\u1ED7i l\u1EA1i v\u1EDB\
   i nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i. C\xE1c l\u1EADp tr\xECnh vi\xEA\

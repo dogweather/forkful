@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/searching-and-replacing-text/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:34.039827-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script \u092E\u0947\u0902 \u092A\u093E\u0920 \u0915\u0
   \u0947\u0902 \u0935\u093F\u0936\u093F\u0937\u094D\u091F \u0938\u094D\u091F\u094D\
   \u0930\u093F\u0902\u0917\u094D\u0938 \u0915\u0940 \u092A\u0939\u091A\u093E\u0928\
   \u2026"
-lastmod: 2024-02-18 23:09:02.538162
+lastmod: 2024-02-19 22:05:10.540423
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 \u092A\u093E\u0920 \u0915\u094B \u0916\
   \u094B\u091C\u0928\u093E \u0914\u0930 \u092C\u0926\u0932\u0928\u093E \u090F\u0915\

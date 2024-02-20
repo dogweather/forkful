@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/c/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:15.745888-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u043D\u0430\u0445\u043E\u0434\u0436\u0435\u043D\u043D\u044F
   \u0442\u0438 \u0440\u043E\u0431\u043B\u044F\u0442\u044C \u0446\u0435, \u0449\u043E\
   \u0431 \u043A\u043E\u0440\u0435\u043A\u0442\u043D\u043E \u043C\u0430\u043D\u0456\
   \u043F\u0443\u043B\u044E\u0432\u0430\u0442\u0438\u2026"
-lastmod: 2024-02-18 23:09:01.174254
+lastmod: 2024-02-19 22:05:09.211155
 model: gpt-4-0125-preview
 summary: "\u0417\u043D\u0430\u0445\u043E\u0434\u0436\u0435\u043D\u043D\u044F \u0434\
   \u043E\u0432\u0436\u0438\u043D\u0438 \u0440\u044F\u0434\u043A\u0430 \u0432 C \u043F\

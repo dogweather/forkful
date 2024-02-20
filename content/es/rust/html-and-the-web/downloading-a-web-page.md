@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/downloading-a-web-page/
 date: 2024-01-20 17:44:51.299002-07:00
 description: "Descargar una p\xE1gina web es obtener el contenido HTML de una URL\
   \ espec\xEDfica. Los programadores hacen esto para analizar datos, probar aplicaciones\
   \ y\u2026"
-lastmod: 2024-02-18 23:09:09.747615
+lastmod: 2024-02-19 22:05:17.371355
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es obtener el contenido HTML de una URL espec\xED\
   fica. Los programadores hacen esto para analizar datos, probar aplicaciones y\u2026"

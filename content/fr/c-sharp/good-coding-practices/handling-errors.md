@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/handling-errors/
 date: 2024-01-26 00:49:54.306888-07:00
 description: "G\xE9rer les erreurs en C# consiste \xE0 prendre en charge l'inattendu,\
   \ comme tr\xE9bucher sur ses lacets. Les programmes peuvent buter sur des donn\xE9\
   es incorrectes\u2026"
-lastmod: 2024-02-18 23:09:08.836082
+lastmod: 2024-02-19 22:05:16.535919
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs en C# consiste \xE0 prendre en charge l'inattendu,\
   \ comme tr\xE9bucher sur ses lacets. Les programmes peuvent buter sur des donn\xE9\

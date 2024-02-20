@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/python/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:00:13.189010-07:00
@@ -15,7 +13,7 @@ description: "\u0420\u0430\u0437\u0431\u043E\u0440 \u0434\u0430\u0442\u044B \u04
   \u044F\u0442\u044C \u0440\u0430\u0437\u043D\u0438\u0446\u044B \u0438\u043B\u0438\
   \ \u0444\u043E\u0440\u043C\u0430\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C\
   \u2026"
-lastmod: 2024-02-18 23:08:56.544418
+lastmod: 2024-02-19 22:05:03.270782
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0437\u0431\u043E\u0440 \u0434\u0430\u0442\u044B \u0438\u0437\
   \ \u0441\u0442\u0440\u043E\u043A\u0438 \u043E\u0437\u043D\u0430\u0447\u0430\u0435\

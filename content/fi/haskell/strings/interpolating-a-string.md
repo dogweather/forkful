@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/interpolating-a-string/
 date: 2024-01-20 17:51:09.685955-07:00
 description: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sis\xE4\
   llytt\xE4mist\xE4 osaksi merkkijonoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen\
   \ sis\xE4ll\xF6n\u2026"
-lastmod: 2024-02-18 23:09:07.651646
+lastmod: 2024-02-19 22:05:15.495090
 model: gpt-4-1106-preview
 summary: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sis\xE4\
   llytt\xE4mist\xE4 osaksi merkkijonoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen\

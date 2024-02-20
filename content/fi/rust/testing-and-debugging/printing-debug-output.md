@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/rust/printing-debug-output/
 date: 2024-01-20 17:53:31.027454-07:00
 description: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 koodissasi tapahtuu.\
   \ K\xE4yt\xE4mme sit\xE4 virheiden j\xE4ljitt\xE4miseen ja koodin toiminnan varmistamiseen."
-lastmod: 2024-02-18 23:09:07.366570
+lastmod: 2024-02-19 22:05:15.254512
 model: gpt-4-1106-preview
 summary: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 koodissasi tapahtuu. K\xE4\
   yt\xE4mme sit\xE4 virheiden j\xE4ljitt\xE4miseen ja koodin toiminnan varmistamiseen."

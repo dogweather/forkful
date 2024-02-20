@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:41.219107-07:00
 description: "Parsing a date from a string involves converting textual representations\
   \ of dates and times into a format that can be manipulated and analyzed by the\u2026"
-lastmod: 2024-02-18 23:09:10.816646
+lastmod: 2024-02-19 22:05:18.336625
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string involves converting textual representations\
   \ of dates and times into a format that can be manipulated and analyzed by the\u2026"

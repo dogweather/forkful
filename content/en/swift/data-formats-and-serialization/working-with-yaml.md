@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/working-with-yaml/
 date: 2024-02-03 19:03:30.916088-07:00
 description: "YAML, which stands for YAML Ain't Markup Language, is a human-friendly\
   \ data serialization standard for all programming languages. Programmers use it\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:11.416569
+lastmod: 2024-02-19 22:05:18.875978
 model: gpt-4-0125-preview
 summary: "YAML, which stands for YAML Ain't Markup Language, is a human-friendly data\
   \ serialization standard for all programming languages. Programmers use it for\u2026"

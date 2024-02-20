@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/java/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:34.598880-07:00
 description: "Finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder.\
   \ Programmerere trenger dette for validering, looping og manipulering av tekstdata."
-lastmod: 2024-02-18 23:08:53.762282
+lastmod: 2024-02-19 22:04:59.902077
 model: gpt-4-1106-preview
 summary: "Finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder.\
   \ Programmerere trenger dette for validering, looping og manipulering av tekstdata."

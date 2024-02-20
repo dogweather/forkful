@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elixir/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:19.435496-07:00
 description: "Calcolare la lunghezza di una stringa significa contare il numero di\
   \ caratteri che la compongono. \xC8 una operazione fondamentale per la manipolazione\
   \ di\u2026"
-lastmod: 2024-02-18 23:08:55.592211
+lastmod: 2024-02-19 22:05:02.184552
 model: gpt-4-1106-preview
 summary: "Calcolare la lunghezza di una stringa significa contare il numero di caratteri\
   \ che la compongono. \xC8 una operazione fondamentale per la manipolazione di\u2026"

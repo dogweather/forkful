@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:02.481398-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Google Apps Script inneb\xE6rer\
   \ \xE5 bekrefte tilstedev\xE6relsen av en mappe inne i Google Drive. Programmerere\
   \ utf\xF8rer ofte\u2026"
-lastmod: 2024-02-18 23:08:53.496745
+lastmod: 2024-02-19 22:04:59.612043
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Google Apps Script inneb\xE6rer \xE5\
   \ bekrefte tilstedev\xE6relsen av en mappe inne i Google Drive. Programmerere utf\xF8\

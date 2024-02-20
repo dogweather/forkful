@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/fish-shell/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:12.564927-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa n\xE4iden kiusallisten\
   \ yksitt\xE4isten (' ') tai kaksinkertaisten (\" \") lainausmerkkien poistamista\u2026"
-lastmod: 2024-02-18 23:09:08.068760
+lastmod: 2024-02-19 22:05:15.874885
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa n\xE4iden kiusallisten\
   \ yksitt\xE4isten (' ') tai kaksinkertaisten (\" \") lainausmerkkien poistamista\u2026"

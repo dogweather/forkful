@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:20:58.500349-07:00
 description: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
   \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"
-lastmod: 2024-02-18 23:09:05.048592
+lastmod: 2024-02-19 22:05:12.985373
 model: gpt-4-0125-preview
 summary: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
   \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"

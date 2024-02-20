@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/arduino/handling-errors/
 date: 2024-01-26 00:37:19.924186-07:00
 description: "Felhantering i dina program f\xE5ngar de ov\xE4ntade ting som f\xF6\
   rs\xF6ker s\xE4tta k\xE4ppar i hjulet. Du g\xF6r det f\xF6r att h\xE5lla din Arduino\
   \ fr\xE5n att sm\xE4lta ned n\xE4r det\u2026"
-lastmod: 2024-02-18 23:08:52.050756
+lastmod: 2024-02-19 22:04:57.409907
 model: gpt-4-1106-preview
 summary: "Felhantering i dina program f\xE5ngar de ov\xE4ntade ting som f\xF6rs\xF6\
   ker s\xE4tta k\xE4ppar i hjulet. Du g\xF6r det f\xF6r att h\xE5lla din Arduino fr\xE5\

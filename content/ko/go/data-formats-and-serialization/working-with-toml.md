@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/working-with-toml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:56.522896-07:00
@@ -12,7 +10,7 @@ description: "TOML(Tom's Obvious, Minimal Language)\uC740 \uB2E8\uC21C\uD55C \uA
   \uC774\uC158 \uC124\uC815\uACFC \uC758\uC874\uC131\uC744 \uAD6C\uC131\uD558\uAE30\
   \ \uC704\uD574 TOML\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774\uAC83\uC740 \uB9CE\
   \uC740 Go\u2026"
-lastmod: 2024-02-18 23:09:05.522556
+lastmod: 2024-02-19 22:05:13.439286
 model: gpt-4-0125-preview
 summary: "TOML(Tom's Obvious, Minimal Language)\uC740 \uB2E8\uC21C\uD55C \uAD6C\uBB38\
   \uC73C\uB85C \uC778\uD574 \uC77D\uAE30 \uC26C\uC6B4 \uC124\uC815 \uD30C\uC77C \uD615\

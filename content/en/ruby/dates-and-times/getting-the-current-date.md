@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/getting-the-current-date/
 date: 2024-02-03 19:02:28.432475-07:00
 description: "Fetching the current date is an essential task in almost any programming\
   \ endeavor, from logging activities in an application to generating reports with\u2026"
-lastmod: 2024-02-18 23:09:11.576340
+lastmod: 2024-02-19 22:05:19.022107
 model: gpt-4-0125-preview
 summary: "Fetching the current date is an essential task in almost any programming\
   \ endeavor, from logging activities in an application to generating reports with\u2026"

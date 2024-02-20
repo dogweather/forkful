@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:50.865662-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uBC84\uADF8 
   \uD569\uB2C8\uB2E4. \uC774 \uAE30\uC220\uC740 \uB514\uBC84\uAE45\uC5D0 \uD544\uC218\
   \uC801\uC774\uBA70, \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uB7F0\uD0C0\uC784\uC5D0\
   \uC11C \uC790\uC2E0\uC758\u2026"
-lastmod: 2024-02-18 23:09:05.956722
+lastmod: 2024-02-19 22:05:13.891556
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uBC84\uADF8 \uCD9C\
   \uB825\uC744 \uD558\uB294 \uAC83\uC740 \uCF54\uB4DC \uB0B4\uC5D0 \uCD9C\uB825 \uBB38\

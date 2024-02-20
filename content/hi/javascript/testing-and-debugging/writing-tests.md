@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:26.951046-07:00
@@ -14,7 +12,7 @@ description: "\u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F\u092A
   \u093E\u0924\u0940 \u0939\u0948\u0902 \u0924\u093E\u0915\u093F \u092F\u0939 \u0938\
   \u0941\u0928\u093F\u0936\u094D\u091A\u093F\u0924 \u0939\u094B \u0938\u0915\u0947\
   \ \u0915\u093F \u092F\u0939\u2026"
-lastmod: 2024-02-18 23:09:04.049857
+lastmod: 2024-02-19 22:05:12.031473
 model: gpt-4-0125-preview
 summary: "\u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\
   \u091F \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u0923 \u0932\u093F\

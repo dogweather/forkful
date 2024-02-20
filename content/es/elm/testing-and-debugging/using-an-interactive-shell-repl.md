@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elm/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:30.532208-07:00
 description: "El Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9s) es\
   \ un entorno de programaci\xF3n interactivo y sencillo que toma entradas individuales\
   \ del\u2026"
-lastmod: 2024-02-18 23:09:09.892453
+lastmod: 2024-02-19 22:05:17.502790
 model: gpt-4-0125-preview
 summary: "El Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9s) es un\
   \ entorno de programaci\xF3n interactivo y sencillo que toma entradas individuales\

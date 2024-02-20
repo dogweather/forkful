@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/writing-a-text-file/
 date: 2024-02-03 19:03:16.908334-07:00
 description: "Writing a text file in C# involves programmatically creating or modifying\
   \ text files on the file system - a fundamental task for many applications, such\u2026"
-lastmod: 2024-02-18 23:09:11.072581
+lastmod: 2024-02-19 22:05:18.570706
 model: gpt-4-0125-preview
 summary: "Writing a text file in C# involves programmatically creating or modifying\
   \ text files on the file system - a fundamental task for many applications, such\u2026"

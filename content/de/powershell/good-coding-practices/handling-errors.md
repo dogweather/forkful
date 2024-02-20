@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/powershell/handling-errors/
 date: 2024-01-26 00:55:37.846233-07:00
 description: "Fehler in PowerShell zu behandeln bedeutet, Missgeschicke zu antizipieren\
   \ und sie reibungslos zu verwalten. Programmierer machen dies, um Abst\xFCrze zu\u2026"
-lastmod: 2024-02-18 23:09:05.109031
+lastmod: 2024-02-19 22:05:13.042877
 model: gpt-4-1106-preview
 summary: "Fehler in PowerShell zu behandeln bedeutet, Missgeschicke zu antizipieren\
   \ und sie reibungslos zu verwalten. Programmierer machen dies, um Abst\xFCrze zu\u2026"

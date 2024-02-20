@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/arduino/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:03.527608-07:00
 description: "Konwersja daty na ci\u0105g znak\xF3w (string) pozwala na \u0142atwe\
   \ wy\u015Bwietlanie i zapisywanie dat w czytelnej formie. Programi\u015Bci wykonuj\u0105\
   \ t\u0119 operacj\u0119, by poprawi\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.880424
+lastmod: 2024-02-19 22:04:54.827281
 model: gpt-4-1106-preview
 summary: "Konwersja daty na ci\u0105g znak\xF3w (string) pozwala na \u0142atwe wy\u015B\
   wietlanie i zapisywanie dat w czytelnej formie. Programi\u015Bci wykonuj\u0105 t\u0119\

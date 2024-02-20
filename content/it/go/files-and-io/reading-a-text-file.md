@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:50.332933-07:00
 description: "Leggere un file di testo in Go comporta l'accesso e il recupero del\
   \ contenuto da un file memorizzato su disco per l'elaborazione o l'analisi. I\u2026"
-lastmod: 2024-02-18 23:08:55.450708
+lastmod: 2024-02-19 22:05:02.032704
 model: gpt-4-0125-preview
 summary: "Leggere un file di testo in Go comporta l'accesso e il recupero del contenuto\
   \ da un file memorizzato su disco per l'elaborazione o l'analisi. I\u2026"

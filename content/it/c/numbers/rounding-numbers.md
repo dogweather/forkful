@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:32.632300-07:00
 description: "Arrotondare i numeri \xE8 il processo di aggiustamento delle cifre di\
   \ un numero per ridurne la precisione secondo determinate regole, sia verso il numero\u2026"
-lastmod: 2024-02-18 23:08:56.333060
+lastmod: 2024-02-19 22:05:02.970920
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri \xE8 il processo di aggiustamento delle cifre di un\
   \ numero per ridurne la precisione secondo determinate regole, sia verso il numero\u2026"

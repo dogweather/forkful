@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/powershell/reading-a-text-file/
 date: 2024-01-20 17:54:58.724123-07:00
 description: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch zug\xE4\
   nglich zu machen. Programmierer tun dies, um Daten zu verarbeiten, Skripte zu\u2026"
-lastmod: 2024-02-18 23:09:05.119857
+lastmod: 2024-02-19 22:05:13.052879
 model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch zug\xE4\
   nglich zu machen. Programmierer tun dies, um Daten zu verarbeiten, Skripte zu\u2026"

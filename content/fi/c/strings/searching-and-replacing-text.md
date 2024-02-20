@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:00.512782-07:00
 description: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyjen\
   \ alimerkkijonojen tunnistamista suuremmasta merkkijonosta ja niiden korvaamista\
   \ eri\u2026"
-lastmod: 2024-02-18 23:09:08.114342
+lastmod: 2024-02-19 22:05:15.916646
 model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyjen alimerkkijonojen\
   \ tunnistamista suuremmasta merkkijonosta ja niiden korvaamista eri\u2026"

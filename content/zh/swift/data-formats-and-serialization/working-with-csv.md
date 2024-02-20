@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/swift/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:40.458526-07:00
@@ -13,7 +11,7 @@ description: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u
   \u7F16\u7A0B\u8BED\u8A00\u7684\u683C\u5F0F\uFF0C\u8F7B\u677E\u5730\u5BFC\u5165\u3001\
   \u5BFC\u51FA\u548C\u64CD\u63A7\u8868\u683C\u6570\u636E\uFF0C\u56E0\u4E3A\u5B83\u7684\
   \u7B80\u5355\u6027\u548C\u6613\u8BFB\u6027\u3002"
-lastmod: 2024-02-18 23:08:59.462066
+lastmod: 2024-02-19 22:05:07.244613
 model: gpt-4-0125-preview
 summary: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u4EF6\u6D89\
   \u53CA\u5230\u4ECE\u6BCF\u884C\u4EE3\u8868\u4E00\u4E2A\u8BB0\u5F55\u3001\u6BCF\u4E2A\

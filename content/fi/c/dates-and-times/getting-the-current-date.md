@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:38.810480-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen C-kieless\xE4 tarkoittaa\
   \ standardin C-kirjaston hy\xF6dynt\xE4mist\xE4 j\xE4rjestelm\xE4n nykyisen ajan\
   \ ja p\xE4iv\xE4m\xE4\xE4r\xE4n noutamiseen ja\u2026"
-lastmod: 2024-02-18 23:09:08.144627
+lastmod: 2024-02-19 22:05:15.944888
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen C-kieless\xE4 tarkoittaa standardin\
   \ C-kirjaston hy\xF6dynt\xE4mist\xE4 j\xE4rjestelm\xE4n nykyisen ajan ja p\xE4iv\xE4\

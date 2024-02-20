@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/creating-a-temporary-file/
 date: 2024-01-20 17:40:36.243869-07:00
 description: "Creare un file temporaneo serve a manipolare dati che non devono sopravvivere\
   \ oltre la durata del programma. I programmatori li usano per test,\u2026"
-lastmod: 2024-02-18 23:08:55.784271
+lastmod: 2024-02-19 22:05:02.389190
 model: gpt-4-1106-preview
 summary: "Creare un file temporaneo serve a manipolare dati che non devono sopravvivere\
   \ oltre la durata del programma. I programmatori li usano per test,\u2026"

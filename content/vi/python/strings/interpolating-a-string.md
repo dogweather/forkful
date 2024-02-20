@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/python/interpolating-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -9,7 +7,7 @@ description: "N\u1ED9i suy chu\u1ED7i l\xE0 ph\u01B0\u01A1ng ph\xE1p nh\xFAng c\
   c bi\u1EC3u th\u1EE9c v\xE0o b\xEAn trong c\xE1c chu\u1ED7i literan. L\u1EADp tr\xEC\
   nh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 ch\xE8n \u0111\u1ED9ng c\xE1c gi\xE1\
   \ tr\u1ECB v\xE0o chu\u1ED7i, l\xE0m cho m\xE3\u2026"
-lastmod: 2024-02-18 23:08:50.252527
+lastmod: 2024-02-19 22:04:55.270669
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i l\xE0 ph\u01B0\u01A1ng ph\xE1p nh\xFAng c\xE1c bi\u1EC3\
   u th\u1EE9c v\xE0o b\xEAn trong c\xE1c chu\u1ED7i literan. L\u1EADp tr\xECnh vi\xEA\

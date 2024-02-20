@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/php/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:00:44.114300-07:00
@@ -14,7 +12,7 @@ description: "\u0412\u044B\u0432\u043E\u0434 \u043E\u0442\u043B\u0430\u0434\u043
   \u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442. \u041F\u0440\u043E\u0433\
   \u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0434\u0435\u043B\u0430\u044E\u0442\
   \ \u044D\u0442\u043E \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:08:57.103202
+lastmod: 2024-02-19 22:05:04.176407
 model: gpt-4-0125-preview
 summary: "\u0412\u044B\u0432\u043E\u0434 \u043E\u0442\u043B\u0430\u0434\u043E\u0447\
   \u043D\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438\

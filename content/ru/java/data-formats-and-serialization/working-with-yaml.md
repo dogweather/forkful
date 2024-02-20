@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/java/working-with-yaml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:31.735896-07:00
@@ -13,7 +11,7 @@ description: "YAML, \"YAML \u043D\u0435 \u044F\u0437\u044B\u043A \u0440\u0430\u0
   \u0435\u043C\u043E\u0441\u0442\u0438 \u0438 \u043F\u0440\u043E\u0441\u0442\u043E\
   \u0442\u044B, \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E \u0434\u043B\u044F\
   \ \u0444\u0430\u0439\u043B\u043E\u0432\u2026"
-lastmod: 2024-02-18 23:08:56.867121
+lastmod: 2024-02-19 22:05:03.797113
 model: gpt-4-0125-preview
 summary: "YAML, \"YAML \u043D\u0435 \u044F\u0437\u044B\u043A \u0440\u0430\u0437\u043C\
   \u0435\u0442\u043A\u0438\", \u044D\u0442\u043E \u044F\u0437\u044B\u043A \u0441\u0435\

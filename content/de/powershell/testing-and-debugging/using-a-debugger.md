@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/powershell/using-a-debugger/
 date: 2024-01-26 03:50:46.336525-07:00
 description: "Ein Debugger wird verwendet, um Haltepunkte zu setzen, schrittweise\
   \ durch den Code zu gehen, Variablen zu beobachten und den Zustand Ihres Programms\u2026"
-lastmod: 2024-02-18 23:09:05.105981
+lastmod: 2024-02-19 22:05:13.039994
 model: gpt-4-0125-preview
 summary: "Ein Debugger wird verwendet, um Haltepunkte zu setzen, schrittweise durch\
   \ den Code zu gehen, Variablen zu beobachten und den Zustand Ihres Programms\u2026"

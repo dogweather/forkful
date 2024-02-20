@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/c-sharp/organizing-code-into-functions/
 date: 2024-01-26 01:09:10.621730-07:00
 description: "Organizar el c\xF3digo en funciones es como ordenar ladrillos de LEGO\
   \ en cajas: facilita su b\xFAsqueda y utilizaci\xF3n. Hacemos esto para evitar la\
   \ repetici\xF3n,\u2026"
-lastmod: 2024-02-18 23:09:09.988040
+lastmod: 2024-02-19 22:05:17.589834
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones es como ordenar ladrillos de LEGO en\
   \ cajas: facilita su b\xFAsqueda y utilizaci\xF3n. Hacemos esto para evitar la repetici\xF3\

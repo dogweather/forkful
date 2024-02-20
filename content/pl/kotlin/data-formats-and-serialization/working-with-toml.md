@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/working-with-toml/
 date: 2024-01-26 04:23:52.289727-07:00
 description: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalistyczny\
   \ J\u0119zyk Toma). Jest u\u017Cywany dla plik\xF3w konfiguracyjnych, poniewa\u017C\
   \ jest \u0142atwy do\u2026"
-lastmod: 2024-02-18 23:08:49.592540
+lastmod: 2024-02-19 22:04:54.521272
 model: gpt-4-0125-preview
 summary: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalistyczny\
   \ J\u0119zyk Toma). Jest u\u017Cywany dla plik\xF3w konfiguracyjnych, poniewa\u017C\

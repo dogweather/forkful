@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/concatenating-strings/
 date: 2024-01-20 17:34:15.048974-07:00
 description: "Sammenkjeding av strenger i C# er det \xE5 sl\xE5 sammen tekst. Det\
   \ lar deg raskt sette sammen variabler, input og statisk tekst for utskrift, lagring\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:53.885964
+lastmod: 2024-02-19 22:05:00.053543
 model: gpt-4-1106-preview
 summary: "Sammenkjeding av strenger i C# er det \xE5 sl\xE5 sammen tekst. Det lar\
   \ deg raskt sette sammen variabler, input og statisk tekst for utskrift, lagring\

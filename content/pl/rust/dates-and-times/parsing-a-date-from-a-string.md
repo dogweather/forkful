@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/rust/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:02.639723-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w to cz\u0119ste zadanie podczas\
   \ pracy z danymi wprowadzanymi przez u\u017Cytkownika lub odczytywaniem danych z\
   \ plik\xF3w. Polega to na\u2026"
-lastmod: 2024-02-18 23:08:49.399207
+lastmod: 2024-02-19 22:04:54.320964
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w to cz\u0119ste zadanie podczas pracy\
   \ z danymi wprowadzanymi przez u\u017Cytkownika lub odczytywaniem danych z plik\xF3\

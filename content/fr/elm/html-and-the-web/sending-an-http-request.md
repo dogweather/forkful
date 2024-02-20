@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elm/sending-an-http-request/
 date: 2024-01-20 17:59:20.915027-07:00
 description: "Envoyer une requ\xEAte HTTP, c\u2019est demander des donn\xE9es \xE0\
   \ un serveur web. Les programmeurs le font pour r\xE9cup\xE9rer des donn\xE9es ext\xE9\
   rieures, comme des infos\u2026"
-lastmod: 2024-02-18 23:09:08.730558
+lastmod: 2024-02-19 22:05:16.439814
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c\u2019est demander des donn\xE9es \xE0 un\
   \ serveur web. Les programmeurs le font pour r\xE9cup\xE9rer des donn\xE9es ext\xE9\

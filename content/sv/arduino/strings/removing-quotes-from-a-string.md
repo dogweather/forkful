@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/arduino/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:41.959131-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng betyder att ta bort alla\
   \ f\xF6rekomster av enkla (`'`) eller dubbla (`\"`) citattecken som omsluter texten.\u2026"
-lastmod: 2024-02-18 23:08:52.033212
+lastmod: 2024-02-19 22:04:57.390167
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng betyder att ta bort alla f\xF6\
   rekomster av enkla (`'`) eller dubbla (`\"`) citattecken som omsluter texten.\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/ruby/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:33.782761-07:00
 description: "HTTP-pyynt\xF6j\xE4 perusautentikaatiolla k\xE4ytet\xE4\xE4n, kun halutaan\
   \ p\xE4\xE4st\xE4 k\xE4siksi suojattuun resurssiin verkossa. Koodaajat k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 menetelm\xE4\xE4, jotta\u2026"
-lastmod: 2024-02-18 23:09:08.182332
+lastmod: 2024-02-19 22:05:15.995644
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6j\xE4 perusautentikaatiolla k\xE4ytet\xE4\xE4n, kun halutaan\
   \ p\xE4\xE4st\xE4 k\xE4siksi suojattuun resurssiin verkossa. Koodaajat k\xE4ytt\xE4\

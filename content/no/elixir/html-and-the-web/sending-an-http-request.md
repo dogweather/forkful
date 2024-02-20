@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/sending-an-http-request/
 date: 2024-01-20 17:59:33.227832-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel handler om \xE5 be internett-tjenester\
   \ om informasjon eller utf\xF8re en handling. Programmerere gj\xF8r dette for \xE5\
   \ samhandle med web-\u2026"
-lastmod: 2024-02-18 23:08:53.601873
+lastmod: 2024-02-19 22:04:59.727402
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel handler om \xE5 be internett-tjenester\
   \ om informasjon eller utf\xF8re en handling. Programmerere gj\xF8r dette for \xE5\

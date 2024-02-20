@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:27.630247-07:00
 description: "Finding the length of a string means measuring how many characters it\
   \ contains. Programmers do it to validate inputs, loop through characters, or limit\u2026"
-lastmod: 2024-02-18 23:09:10.798472
+lastmod: 2024-02-19 22:05:18.320285
 model: gpt-4-1106-preview
 summary: "Finding the length of a string means measuring how many characters it contains.\
   \ Programmers do it to validate inputs, loop through characters, or limit\u2026"

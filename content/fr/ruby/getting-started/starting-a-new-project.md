@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/ruby/starting-a-new-project/
 date: 2024-01-20 18:04:17.199205-07:00
 description: "D\xE9marrer un nouveau projet, c'est comme planter une graine num\xE9\
   rique : on l'arrose de code et elle pousse pour devenir une application. Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:09.408087
+lastmod: 2024-02-19 22:05:17.070433
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est comme planter une graine num\xE9rique\
   \ : on l'arrose de code et elle pousse pour devenir une application. Les programmeurs\u2026"

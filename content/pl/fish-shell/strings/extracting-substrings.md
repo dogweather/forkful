@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/extracting-substrings/
 date: 2024-01-20 17:45:39.277809-07:00
 description: "Wyci\u0105ganie podci\u0105g\xF3w to proces wydobywania okre\u015Blonych\
   \ fragment\xF3w tekstu ze zmiennej czy \u0142a\u0144cucha znak\xF3w. Programi\u015B\
   ci robi\u0105 to, aby manipulowa\u0107 i\u2026"
-lastmod: 2024-02-18 23:08:50.024227
+lastmod: 2024-02-19 22:04:55.001495
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie podci\u0105g\xF3w to proces wydobywania okre\u015Blonych\
   \ fragment\xF3w tekstu ze zmiennej czy \u0142a\u0144cucha znak\xF3w. Programi\u015B\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/kotlin/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:00.065528-07:00
 description: "Medir o tamanho de uma string \xE9 descobrir quantos caracteres ela\
   \ tem. Programadores fazem isso para validar entradas, manipular textos ou simplesmente\u2026"
-lastmod: 2024-02-18 23:08:58.092473
+lastmod: 2024-02-19 22:05:05.572611
 model: gpt-4-1106-preview
 summary: "Medir o tamanho de uma string \xE9 descobrir quantos caracteres ela tem.\
   \ Programadores fazem isso para validar entradas, manipular textos ou simplesmente\u2026"

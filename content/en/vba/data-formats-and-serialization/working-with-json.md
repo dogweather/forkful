@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/working-with-json/
 date: 2024-02-01 21:31:06.991879-07:00
 description: "JSON (JavaScript Object Notation) is a lightweight data-interchange\
   \ format that's easy for humans to read and write, and for machines to parse and\u2026"
-lastmod: 2024-02-18 23:09:10.910702
+lastmod: 2024-02-19 22:05:18.422120
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is a lightweight data-interchange format\
   \ that's easy for humans to read and write, and for machines to parse and\u2026"

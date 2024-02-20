@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/haskell/parsing-html/
 date: 2024-01-20 15:32:11.698577-07:00
 description: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido\
   \ de una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\
   \ lo\u2026"
-lastmod: 2024-02-18 23:09:10.025590
+lastmod: 2024-02-19 22:05:17.623836
 summary: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido de\
   \ una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\
   \ lo\u2026"

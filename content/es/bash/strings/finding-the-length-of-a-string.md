@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/finding-the-length-of-a-string/
 date: 2024-01-20 17:46:57.635361-07:00
 description: "Encontrar la longitud de una cadena significa contar cu\xE1ntos caracteres\
   \ tiene. Los programadores lo hacen para validar entradas, limitar texto, o\u2026"
-lastmod: 2024-02-18 23:09:10.155516
+lastmod: 2024-02-19 22:05:17.742871
 model: gpt-4-1106-preview
 summary: "Encontrar la longitud de una cadena significa contar cu\xE1ntos caracteres\
   \ tiene. Los programadores lo hacen para validar entradas, limitar texto, o\u2026"

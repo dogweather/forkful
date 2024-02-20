@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/concatenating-strings/
 date: 2024-01-20 17:35:40.163379-07:00
 description: "I Python er string-sammenf\xF8yning prosessen \xE5 sette sammen to eller\
   \ flere tekststrenger. Det gj\xF8res for \xE5 bygge setninger, kombinere brukerinput,\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:53.516703
+lastmod: 2024-02-19 22:04:59.633870
 model: gpt-4-1106-preview
 summary: "I Python er string-sammenf\xF8yning prosessen \xE5 sette sammen to eller\
   \ flere tekststrenger. Det gj\xF8res for \xE5 bygge setninger, kombinere brukerinput,\

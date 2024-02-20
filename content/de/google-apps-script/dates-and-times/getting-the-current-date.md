@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/google-apps-script/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:30.517120-07:00
 description: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
   \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur\u2026"
-lastmod: 2024-02-18 23:09:04.426219
+lastmod: 2024-02-19 22:05:12.392311
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
   \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur\u2026"

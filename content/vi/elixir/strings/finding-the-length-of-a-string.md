@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:14.870016-07:00
@@ -9,7 +7,7 @@ description: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i c\xF3 ngh\u0
   \ ch\u1EE9a. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3 x\xE1c minh \u0111\u1EA7u v\xE0o, th\u1EF1c thi c\xE1c gi\u1EDBi\
   \ h\u1EA1n,\u2026"
-lastmod: 2024-02-18 23:08:50.355832
+lastmod: 2024-02-19 22:04:55.397192
 model: gpt-4-0125-preview
 summary: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129a l\xE0\
   \ x\xE1c \u0111\u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9\

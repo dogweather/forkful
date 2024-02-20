@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:00.408647-07:00
 description: "Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma\
   \ aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en\u2026"
-lastmod: 2024-02-18 23:09:01.898463
+lastmod: 2024-02-19 22:05:09.922367
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma\
   \ aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en\u2026"

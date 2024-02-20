@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/handling-errors/
 date: 2024-01-26 00:55:38.897077-07:00
 description: "\uC5D0\uB7EC \uCC98\uB9AC(Error handling)\uB780 \uCF54\uB4DC\uAC00 \uC608\
   \uC0C1\uCE58 \uBABB\uD55C \uBC29\uD5A5\uC73C\uB85C \uD758\uB7EC\uAC14\uC744 \uB54C\
@@ -10,7 +8,7 @@ description: "\uC5D0\uB7EC \uCC98\uB9AC(Error handling)\uB780 \uCF54\uB4DC\uAC00
   \uC0AC\uD56D\uC744 \uC81C\uACF5\uD558\uAE30 \uB54C\uBB38\uC5D0 \uC911\uC694\uD569\
   \uB2C8\uB2E4. \uADF8\uB0E5 \uCDA9\uB3CC\uD558\uACE0 \uBD88\uD0C0\uB294 \uB300\uC2E0\
   \ \uB9D0\uC774\uC8E0."
-lastmod: 2024-02-18 23:09:06.824337
+lastmod: 2024-02-19 22:05:14.715292
 model: gpt-4-1106-preview
 summary: "\uC5D0\uB7EC \uCC98\uB9AC(Error handling)\uB780 \uCF54\uB4DC\uAC00 \uC608\
   \uC0C1\uCE58 \uBABB\uD55C \uBC29\uD5A5\uC73C\uB85C \uD758\uB7EC\uAC14\uC744 \uB54C\

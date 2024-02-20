@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elm/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:44.072939-07:00
 description: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017Cywane\
   \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w. W Elm, podobnie\
   \ jak w innych j\u0119zykach,\u2026"
-lastmod: 2024-02-18 23:08:49.509353
+lastmod: 2024-02-19 22:04:54.441149
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017Cywane\
   \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w. W Elm, podobnie\

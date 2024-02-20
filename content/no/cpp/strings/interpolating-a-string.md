@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/cpp/interpolating-a-string/
 date: 2024-01-20 17:50:49.396969-07:00
 description: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i\
   \ en streng. Det gj\xF8r koden mer lesbar og lar oss lett bygge dynamiske meldinger."
-lastmod: 2024-02-18 23:08:54.170657
+lastmod: 2024-02-19 22:05:00.358149
 model: gpt-4-1106-preview
 summary: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i en streng.\
   \ Det gj\xF8r koden mer lesbar og lar oss lett bygge dynamiske meldinger."

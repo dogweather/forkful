@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/downloading-a-web-page/
 date: 2024-01-20 17:44:42.541235-07:00
 description: "Quando scarichi una pagina web, copi i suoi contenuti dalla rete al\
   \ tuo computer. I programmatori lo fanno per estrarre dati, testare siti, o per\u2026"
-lastmod: 2024-02-18 23:08:55.520186
+lastmod: 2024-02-19 22:05:02.107080
 model: gpt-4-1106-preview
 summary: "Quando scarichi una pagina web, copi i suoi contenuti dalla rete al tuo\
   \ computer. I programmatori lo fanno per estrarre dati, testare siti, o per\u2026"

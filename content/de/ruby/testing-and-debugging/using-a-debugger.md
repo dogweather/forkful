@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/using-a-debugger/
 date: 2024-01-26 04:09:35.915177-07:00
 description: "Die Verwendung eines Debuggers in Ruby verleiht Programmierern eine\
   \ Superkraft, um ihren Code anzuhalten, Variablen zu inspizieren und ihren Code\
   \ Zeile\u2026"
-lastmod: 2024-02-18 23:09:05.428111
+lastmod: 2024-02-19 22:05:13.347333
 model: gpt-4-0125-preview
 summary: "Die Verwendung eines Debuggers in Ruby verleiht Programmierern eine Superkraft,\
   \ um ihren Code anzuhalten, Variablen zu inspizieren und ihren Code Zeile\u2026"

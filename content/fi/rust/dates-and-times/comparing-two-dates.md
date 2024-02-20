@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/comparing-two-dates/
 date: 2024-01-20 17:33:42.845353-07:00
 description: "\"Miten & Miksi?\" Tietojen vertailu on ydintoiminto ohjelmoinnissa.\
   \ Kaksi p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 vertaamalla selvitet\xE4\xE4n niiden v\xE4\
   linen suhde, esimerkiksi tapahtumien\u2026"
-lastmod: 2024-02-18 23:09:07.377197
+lastmod: 2024-02-19 22:05:15.264409
 model: gpt-4-1106-preview
 summary: "\"Miten & Miksi?\" Tietojen vertailu on ydintoiminto ohjelmoinnissa. Kaksi\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 vertaamalla selvitet\xE4\xE4n niiden v\xE4linen\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/fish-shell/handling-errors/
 date: 2024-01-26 00:52:24.550950-07:00
 description: "O tratamento de erros permite que seu script lide com o inesperado de\
   \ forma elegante. Fazemos isso para gerenciar falhas sem deixar os cabelos dos nossos\u2026"
-lastmod: 2024-02-18 23:08:58.583114
+lastmod: 2024-02-19 22:05:06.081156
 model: gpt-4-1106-preview
 summary: "O tratamento de erros permite que seu script lide com o inesperado de forma\
   \ elegante. Fazemos isso para gerenciar falhas sem deixar os cabelos dos nossos\u2026"

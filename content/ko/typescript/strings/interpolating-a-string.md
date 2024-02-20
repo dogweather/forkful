@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/typescript/interpolating-a-string/
 date: 2024-01-20 17:51:50.811969-07:00
 description: "(\uBB34\uC5C7\uC774\uBA70 \uC65C \uC0AC\uC6A9\uD558\uB294\uAC00?) \uBB38\
   \uC790\uC5F4 \uBCF4\uAC04\uC774\uB780 \uBCC0\uC218\uB098 \uC0C1\uC218\uB97C \uBB38\
@@ -9,7 +7,7 @@ description: "(\uBB34\uC5C7\uC774\uBA70 \uC65C \uC0AC\uC6A9\uD558\uB294\uAC00?) 
   \uAE30 \uD3B8\uB9AC\uD574\uC9C0\uBA70, \uB3D9\uC801\uC73C\uB85C \uBB38\uC790\uC5F4\
   \uC744 \uC0DD\uC131\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.799043
+lastmod: 2024-02-19 22:05:13.711427
 model: gpt-4-1106-preview
 summary: "(\uBB34\uC5C7\uC774\uBA70 \uC65C \uC0AC\uC6A9\uD558\uB294\uAC00?) \uBB38\
   \uC790\uC5F4 \uBCF4\uAC04\uC774\uB780 \uBCC0\uC218\uB098 \uC0C1\uC218\uB97C \uBB38\

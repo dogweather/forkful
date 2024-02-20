@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:21.261852-07:00
@@ -13,7 +11,7 @@ description: "C \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uCEE4\uB9E8\uB4DC \u
   \uD06C\uB9BD\uD2B8 \uB3D9\uC791\uC744 \uAD6C\uC131\uD560 \uC218 \uC788\uAC8C \uD558\
   \uC5EC, \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC744 \uC801\uC751\uC131 \uC788\uACE0\
   \ \uD6A8\uC728\uC801\uC73C\uB85C \uB9CC\uB4ED\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.979582
+lastmod: 2024-02-19 22:05:14.864054
 model: gpt-4-0125-preview
 summary: "C \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uCEE4\uB9E8\uB4DC \uB77C\uC778\
   \ \uC778\uC790\uB97C \uC77D\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB7A8\uC774 \uD130\

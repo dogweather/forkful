@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/php/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:05.160031-07:00
 description: "Die L\xE4nge eines Strings zu finden bedeutet, herauszufinden, wie viele\
   \ Zeichen er beinhaltet. Programmierer brauchen diese Information, um Textdaten\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.952688
+lastmod: 2024-02-19 22:05:12.892787
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu finden bedeutet, herauszufinden, wie viele\
   \ Zeichen er beinhaltet. Programmierer brauchen diese Information, um Textdaten\

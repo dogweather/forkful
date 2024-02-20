@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/swift/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:34.244820-07:00
 description: "Das Kapitalisieren eines Strings in Swift ver\xE4ndert den gegebenen\
   \ String so, dass sein erstes Zeichen gro\xDFgeschrieben wird und die verbleibenden\
   \ Zeichen\u2026"
-lastmod: 2024-02-18 23:09:05.215873
+lastmod: 2024-02-19 22:05:13.144426
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in Swift ver\xE4ndert den gegebenen String\
   \ so, dass sein erstes Zeichen gro\xDFgeschrieben wird und die verbleibenden Zeichen\u2026"

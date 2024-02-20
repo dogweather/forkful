@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/elm/comparing-two-dates/
 date: 2024-01-20 17:32:54.544929-07:00
 description: "Das Vergleichen von zwei Daten entscheidet, welches Datum fr\xFCher\
   \ oder sp\xE4ter ist oder ob sie gleich sind. Programmierer nutzen das, um Zeitabl\xE4\
   ufe zu\u2026"
-lastmod: 2024-02-18 23:09:04.794649
+lastmod: 2024-02-19 22:05:12.742603
 model: gpt-4-1106-preview
 summary: "Das Vergleichen von zwei Daten entscheidet, welches Datum fr\xFCher oder\
   \ sp\xE4ter ist oder ob sie gleich sind. Programmierer nutzen das, um Zeitabl\xE4\

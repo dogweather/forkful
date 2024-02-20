@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/interpolating-a-string/
 date: 2024-01-20 17:50:58.052055-07:00
 description: "Interpolar uma string \xE9 o ato de inserir dinamicamente vari\xE1veis\
   \ ou express\xF5es dentro dela. Programadores fazem isso para construir mensagens\
   \ ou comandos\u2026"
-lastmod: 2024-02-18 23:08:58.560070
+lastmod: 2024-02-19 22:05:06.056736
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 o ato de inserir dinamicamente vari\xE1veis ou\
   \ express\xF5es dentro dela. Programadores fazem isso para construir mensagens ou\

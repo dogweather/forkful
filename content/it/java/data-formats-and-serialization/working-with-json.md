@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/java/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:13.715898-07:00
 description: "Lavorare con JSON (JavaScript Object Notation) significa gestire questo\
   \ formato di scambio dati leggero all'interno delle vostre applicazioni Java. I\u2026"
-lastmod: 2024-02-18 23:08:55.786327
+lastmod: 2024-02-19 22:05:02.391272
 model: gpt-4-0125-preview
 summary: "Lavorare con JSON (JavaScript Object Notation) significa gestire questo\
   \ formato di scambio dati leggero all'interno delle vostre applicazioni Java. I\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/java/refactoring/
 date: 2024-01-26 01:39:01.842026-07:00
 description: "La refactorisation est le processus de restructuration du code informatique\
   \ existant\u2014changer la facturation\u2014sans modifier son comportement externe.\
   \ Les\u2026"
-lastmod: 2024-02-18 23:09:08.637470
+lastmod: 2024-02-19 22:05:16.408716
 model: gpt-4-0125-preview
 summary: "La refactorisation est le processus de restructuration du code informatique\
   \ existant\u2014changer la facturation\u2014sans modifier son comportement externe.\

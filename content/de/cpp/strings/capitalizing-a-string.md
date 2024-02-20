@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/cpp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:03.516256-07:00
 description: "Das Kapitalisieren eines Strings beinhaltet das Umwandeln des Anfangsbuchstabens\
   \ jedes Wortes im String in Gro\xDFbuchstaben, falls dieser in Kleinbuchstaben\u2026"
-lastmod: 2024-02-18 23:09:05.171456
+lastmod: 2024-02-19 22:05:13.102519
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings beinhaltet das Umwandeln des Anfangsbuchstabens\
   \ jedes Wortes im String in Gro\xDFbuchstaben, falls dieser in Kleinbuchstaben\u2026"

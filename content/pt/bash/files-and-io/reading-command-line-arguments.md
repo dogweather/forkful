@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/reading-command-line-arguments/
 date: 2024-01-20 17:55:34.356535-07:00
 description: "Ler argumentos da linha de comando permite aos scripts em Bash pegar\
   \ dados externos sem serem est\xE1ticos. Os programadores utilizam essas informa\xE7\
   \xF5es para\u2026"
-lastmod: 2024-02-18 23:08:58.340505
+lastmod: 2024-02-19 22:05:05.823912
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando permite aos scripts em Bash pegar dados\
   \ externos sem serem est\xE1ticos. Os programadores utilizam essas informa\xE7\xF5\

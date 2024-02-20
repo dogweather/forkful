@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:41.898752-07:00
 description: "Converter uma string para min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
   \ que possibilita uniformidade e consist\xEAncia no processamento de texto, essencial\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:57.654611
+lastmod: 2024-02-19 22:05:05.106532
 model: gpt-4-0125-preview
 summary: "Converter uma string para min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
   \ que possibilita uniformidade e consist\xEAncia no processamento de texto, essencial\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/java/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:26.190328-07:00
 description: "Finding a string's length means figuring out how many characters it\
   \ contains. Programmers often do this to validate input, loop through characters,\
   \ or\u2026"
-lastmod: 2024-02-18 23:09:10.922270
+lastmod: 2024-02-19 22:05:18.432677
 model: gpt-4-1106-preview
 summary: "Finding a string's length means figuring out how many characters it contains.\
   \ Programmers often do this to validate input, loop through characters, or\u2026"

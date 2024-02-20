@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/bash/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:00.310952-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Bashissa k\xE4sitt\xE4\
   \xE4 sis\xE4\xE4nrakennettujen komentojen k\xE4ytt\xE4misen p\xE4iv\xE4m\xE4\xE4\
   r\xE4n ja ajan n\xE4ytt\xE4miseen eri muodoissa. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.815823
+lastmod: 2024-02-19 22:05:15.645451
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Bashissa k\xE4sitt\xE4\xE4\
   \ sis\xE4\xE4nrakennettujen komentojen k\xE4ytt\xE4misen p\xE4iv\xE4m\xE4\xE4r\xE4\

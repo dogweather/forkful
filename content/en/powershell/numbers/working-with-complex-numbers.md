@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/working-with-complex-numbers/
 date: 2024-01-25 03:00:03.460077-07:00
 description: "Complex numbers, the ones with a real part and an imaginary part (like\
   \ 3 + 4i), are vital in fields like engineering, physics, and data science.\u2026"
-lastmod: 2024-02-18 23:09:11.265954
+lastmod: 2024-02-19 22:05:18.739599
 model: gpt-4-1106-preview
 summary: "Complex numbers, the ones with a real part and an imaginary part (like 3\
   \ + 4i), are vital in fields like engineering, physics, and data science.\u2026"

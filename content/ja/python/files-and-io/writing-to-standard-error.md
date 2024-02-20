@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/python/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:30.725989-07:00
@@ -13,7 +11,7 @@ description: "Python\u3067\u306E\u6A19\u6E96\u30A8\u30E9\u30FC\u51FA\u529B\u306F
   \u3001\u6B63\u5E38\u306A\u30D7\u30ED\u30B0\u30E9\u30E0\u51FA\u529B\u3068\u30A8\u30E9\
   \u30FC\u30E1\u30C3\u30BB\u30FC\u30B8\u3092\u533A\u5225\u3057\u3001\u30C7\u30D0\u30C3\
   \u30B0\u3084\u30ED\u30B0\u5206\u6790\u3092\u5BB9\u6613\u306B\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.578839
+lastmod: 2024-02-19 22:05:00.793931
 model: gpt-4-0125-preview
 summary: "Python\u3067\u306E\u6A19\u6E96\u30A8\u30E9\u30FC\u51FA\u529B\u306F\u3001\
   \u30D7\u30ED\u30B0\u30E9\u30E0\u306E\u30A8\u30E9\u30FC\u30E1\u30C3\u30BB\u30FC\u30B8\

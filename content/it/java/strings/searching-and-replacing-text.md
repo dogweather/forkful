@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/searching-and-replacing-text/
 date: 2024-01-20 17:58:07.932921-07:00
 description: "Cercare e sostituire testo nel mondo della programmazione \xE8 fondamentale\
   \ per modificare dati o correggere errori in modo efficiente. I programmatori lo\u2026"
-lastmod: 2024-02-18 23:08:55.752050
+lastmod: 2024-02-19 22:05:02.354929
 model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo nel mondo della programmazione \xE8 fondamentale\
   \ per modificare dati o correggere errori in modo efficiente. I programmatori lo\u2026"

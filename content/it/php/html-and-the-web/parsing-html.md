@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/php/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:41.952221-07:00
 description: "L'analisi dell'HTML in PHP coinvolge l'estrazione di informazioni specifiche\
   \ dai documenti HTML. I programmatori svolgono questo compito per automatizzare\u2026"
-lastmod: 2024-02-18 23:08:55.968750
+lastmod: 2024-02-19 22:05:02.581107
 model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML in PHP coinvolge l'estrazione di informazioni specifiche\
   \ dai documenti HTML. I programmatori svolgono questo compito per automatizzare\u2026"

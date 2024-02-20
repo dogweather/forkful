@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/bash/working-with-complex-numbers/
 date: 2024-01-26 04:36:38.624690-07:00
 description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil.\
   \ Programmierer nutzen sie in Bereichen wie Signalverarbeitung, Quantenmechanik\
   \ und\u2026"
-lastmod: 2024-02-18 23:09:05.045501
+lastmod: 2024-02-19 22:05:12.982490
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil. Programmierer\
   \ nutzen sie in Bereichen wie Signalverarbeitung, Quantenmechanik und\u2026"

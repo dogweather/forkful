@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/javascript/refactoring/
 date: 2024-01-26 01:18:58.325686-07:00
 description: "Refactorizar es el proceso de reestructurar el c\xF3digo inform\xE1\
   tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\
   \ para mejorar\u2026"
-lastmod: 2024-02-18 23:09:10.413808
+lastmod: 2024-02-19 22:05:17.970954
 model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de reestructurar el c\xF3digo inform\xE1tico\
   \ existente sin cambiar su comportamiento externo. Los programadores lo hacen para\

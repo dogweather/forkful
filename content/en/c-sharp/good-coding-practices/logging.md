@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/logging/
 date: 2024-01-25 02:03:04.575535-07:00
 description: "Logging is the process of recording application events and data output\
   \ during runtime. Programmers log to diagnose bugs, monitor software performance,\u2026"
-lastmod: 2024-02-18 23:09:11.060936
+lastmod: 2024-02-19 22:05:18.560093
 model: gpt-4-1106-preview
 summary: "Logging is the process of recording application events and data output during\
   \ runtime. Programmers log to diagnose bugs, monitor software performance,\u2026"

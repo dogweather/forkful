@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/bash/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:22.413835-07:00
@@ -11,7 +9,7 @@ description: "\u5728 Bash \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF (stderr) \u
   \u6D88\u606F\u53EF\u4EE5\u88AB\u8F7B\u677E\u8BC6\u522B\u3001\u8BB0\u5F55\u6216\u751A\
   \u81F3\u5FFD\u7565\uFF0C\u6709\u52A9\u4E8E\u8C03\u8BD5\u548C\u8BB0\u5F55\u8FC7\u7A0B\
   \u3002"
-lastmod: 2024-02-18 23:08:59.306756
+lastmod: 2024-02-19 22:05:07.031150
 model: gpt-4-0125-preview
 summary: "\u5728 Bash \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF (stderr) \u662F\u5173\
   \u4E8E\u5C06\u9519\u8BEF\u6D88\u606F\u6216\u4EFB\u4F55\u91CD\u8981\u7684\u8BCA\u65AD\

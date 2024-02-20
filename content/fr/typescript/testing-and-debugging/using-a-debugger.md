@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/typescript/using-a-debugger/
 date: 2024-01-26 04:11:08.533785-07:00
 description: "Un d\xE9bogueur est un outil qui vous permet d'examiner et de modifier\
   \ le fonctionnement interne de votre code pendant son ex\xE9cution. Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:08.486909
+lastmod: 2024-02-19 22:05:16.271780
 model: gpt-4-0125-preview
 summary: "Un d\xE9bogueur est un outil qui vous permet d'examiner et de modifier le\
   \ fonctionnement interne de votre code pendant son ex\xE9cution. Les programmeurs\u2026"

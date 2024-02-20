@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/powershell/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:59.041802-07:00
 description: "Retirer les guillemets d'une cha\xEEne dans PowerShell \xE9limine les\
   \ marques de citation simple (`'`) ou double (`\"`) entourant votre texte. Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:09.052463
+lastmod: 2024-02-19 22:05:16.735215
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne dans PowerShell \xE9limine les marques\
   \ de citation simple (`'`) ou double (`\"`) entourant votre texte. Les programmeurs\u2026"

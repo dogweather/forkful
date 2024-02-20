@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/starting-a-new-project/
 date: 2024-01-20 18:04:14.798037-07:00
 description: "Iniciar un nuevo proyecto es crear un espacio limpio y estructurado\
   \ para tu c\xF3digo desde cero. Los programadores lo hacen para organizar ideas,\
   \ facilitar\u2026"
-lastmod: 2024-02-18 23:09:10.216214
+lastmod: 2024-02-19 22:05:17.798413
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es crear un espacio limpio y estructurado para\
   \ tu c\xF3digo desde cero. Los programadores lo hacen para organizar ideas, facilitar\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/cpp/organizing-code-into-functions/
 date: 2024-01-26 01:09:04.980036-07:00
 description: "Suddividere il codice in funzioni significa suddividere il codice in\
   \ parti pi\xF9 piccole e riutilizzabili. Lo facciamo per evitare ripetizioni, rendere\
   \ il\u2026"
-lastmod: 2024-02-18 23:08:56.177541
+lastmod: 2024-02-19 22:05:02.806867
 model: gpt-4-1106-preview
 summary: "Suddividere il codice in funzioni significa suddividere il codice in parti\
   \ pi\xF9 piccole e riutilizzabili. Lo facciamo per evitare ripetizioni, rendere\

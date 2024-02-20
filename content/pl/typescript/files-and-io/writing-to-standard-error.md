@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:47.558706-07:00
 description: "W TypeScript piszemy do standardowego b\u0142\u0119du (stderr) w celu\
   \ wysy\u0142ania komunikat\xF3w b\u0142\u0119d\xF3w lub rejestracji bezpo\u015B\
   rednio do strumienia wyj\u015Bciowego b\u0142\u0119d\xF3w\u2026"
-lastmod: 2024-02-18 23:08:49.364046
+lastmod: 2024-02-19 22:04:54.283339
 model: gpt-4-0125-preview
 summary: "W TypeScript piszemy do standardowego b\u0142\u0119du (stderr) w celu wysy\u0142\
   ania komunikat\xF3w b\u0142\u0119d\xF3w lub rejestracji bezpo\u015Brednio do strumienia\

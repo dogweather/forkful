@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/working-with-xml/
 date: 2024-01-26 04:35:23.150927-07:00
 description: "Att arbeta med XML inneb\xE4r att tolka, generera och manipulera XML\
   \ (eXtensible Markup Language)-dokument med kod. Programmerare g\xF6r det f\xF6\
   r att interagera\u2026"
-lastmod: 2024-02-18 23:08:52.318912
+lastmod: 2024-02-19 22:04:57.711376
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att tolka, generera och manipulera XML (eXtensible\
   \ Markup Language)-dokument med kod. Programmerare g\xF6r det f\xF6r att interagera\u2026"

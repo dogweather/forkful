@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/haskell/working-with-complex-numbers/
 date: 2024-01-26 04:41:47.812184-07:00
 description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, er\
   \ essensielle i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling.\u2026"
-lastmod: 2024-02-18 23:08:53.929100
+lastmod: 2024-02-19 22:05:00.099492
 model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, er essensielle\
   \ i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling.\u2026"

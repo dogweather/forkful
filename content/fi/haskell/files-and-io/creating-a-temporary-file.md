@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/creating-a-temporary-file/
 date: 2024-01-20 17:40:30.297396-07:00
 description: "Mit\xE4 & Miksi? Luodaan v\xE4liaikainen tiedosto vastaanottamaan dataa,\
   \ joka ei tarvitse pysyv\xE4ist\xE4 tallennusta. K\xE4ytet\xE4\xE4n testauksessa,\
   \ v\xE4liaikaisessa datan\u2026"
-lastmod: 2024-02-18 23:09:07.687146
+lastmod: 2024-02-19 22:05:15.527692
 model: gpt-4-1106-preview
 summary: "Mit\xE4 & Miksi? Luodaan v\xE4liaikainen tiedosto vastaanottamaan dataa,\
   \ joka ei tarvitse pysyv\xE4ist\xE4 tallennusta. K\xE4ytet\xE4\xE4n testauksessa,\

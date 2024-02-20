@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c/printing-debug-output/
 date: 2024-02-03 17:50:04.807127-07:00
 description: "Printing debug output is about generating temporary, informative log\
   \ messages that can help programmers understand the flow and state of a program\
   \ during\u2026"
-lastmod: 2024-02-18 23:09:11.525283
+lastmod: 2024-02-19 22:05:18.975577
 model: gpt-4-0125-preview
 summary: "Printing debug output is about generating temporary, informative log messages\
   \ that can help programmers understand the flow and state of a program during\u2026"

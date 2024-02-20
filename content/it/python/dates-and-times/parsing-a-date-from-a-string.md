@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/python/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:01.716180-07:00
 description: "L'analisi di una data da una stringa implica la conversione di informazioni\
   \ testuali su data e ora in un oggetto datetime o in un formato strutturato\u2026"
-lastmod: 2024-02-18 23:08:55.530305
+lastmod: 2024-02-19 22:05:02.118020
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa implica la conversione di informazioni\
   \ testuali su data e ora in un oggetto datetime o in un formato strutturato\u2026"

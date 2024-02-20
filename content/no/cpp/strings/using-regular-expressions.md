@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/cpp/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:15.392420-07:00
 description: "Regul\xE6re uttrykk i C++ er sekvenser av tegn som definerer et s\xF8\
   kem\xF8nster, brukt for strengs\xF8king eller manipulasjon. Programmerere bruker\
   \ dem til oppgaver\u2026"
-lastmod: 2024-02-18 23:08:54.174527
+lastmod: 2024-02-19 22:05:00.362046
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk i C++ er sekvenser av tegn som definerer et s\xF8kem\xF8\
   nster, brukt for strengs\xF8king eller manipulasjon. Programmerere bruker dem til\

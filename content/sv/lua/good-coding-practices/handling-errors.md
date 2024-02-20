@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/handling-errors/
 date: 2024-01-26 00:56:50.823597-07:00
 description: "Att hantera fel i kodning \xE4r att v\xE4nta sig det ov\xE4ntade. Det\
   \ \xE4r konsten att planera f\xF6r n\xE4r saker och ting g\xE5r snett s\xE5 att\
   \ du kan h\xE5lla ditt program\u2026"
-lastmod: 2024-02-18 23:08:51.925622
+lastmod: 2024-02-19 22:04:57.273200
 model: gpt-4-1106-preview
 summary: "Att hantera fel i kodning \xE4r att v\xE4nta sig det ov\xE4ntade. Det \xE4\
   r konsten att planera f\xF6r n\xE4r saker och ting g\xE5r snett s\xE5 att du kan\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/bash/refactoring/
 date: 2024-01-26 01:16:25.729033-07:00
 description: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
   tico existente sin cambiar su comportamiento externo. Es una pr\xE1ctica vital para\
   \ reducir\u2026"
-lastmod: 2024-02-18 23:09:10.176299
+lastmod: 2024-02-19 22:05:17.762084
 model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
   tico existente sin cambiar su comportamiento externo. Es una pr\xE1ctica vital para\

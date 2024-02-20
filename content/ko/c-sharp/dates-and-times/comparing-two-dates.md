@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/comparing-two-dates/
 date: 2024-01-20 17:32:26.116571-07:00
 description: "\uB0A0\uC9DC \uB450 \uAC1C\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC83\
   \uC740 \uB0A0\uC9DC \uC2DC\uAC04 \uAC12\uB4E4\uC744 \uC11C\uB85C \uBE44\uAD50\uD574\
@@ -10,7 +8,7 @@ description: "\uB0A0\uC9DC \uB450 \uAC1C\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \u
   \ \uCC28\uC774 \uACC4\uC0B0, \uC720\uD6A8\uC131 \uAC80\uC0AC \uB54C\uBB38\uC785\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.239887
+lastmod: 2024-02-19 22:05:14.163478
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC \uB450 \uAC1C\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC83\uC740\
   \ \uB0A0\uC9DC \uC2DC\uAC04 \uAC12\uB4E4\uC744 \uC11C\uB85C \uBE44\uAD50\uD574 \uACFC\

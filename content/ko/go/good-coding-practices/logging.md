@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:37.289978-07:00
@@ -14,7 +12,7 @@ description: "\uC18C\uD504\uD2B8\uC6E8\uC5B4 \uAC1C\uBC1C\uC5D0\uC11C \uB85C\uAE
   \uC548 \uBC0F \uC900\uC218\uB97C \uBCF4\uC7A5\uD558\uAE30 \uC704\uD574 \uB85C\uAE45\
   \uC744 \uAD6C\uD604\uD558\uC5EC, \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uC720\uC9C0\
   \ \uBCF4\uC218\u2026"
-lastmod: 2024-02-18 23:09:05.493327
+lastmod: 2024-02-19 22:05:13.410785
 model: gpt-4-0125-preview
 summary: "\uC18C\uD504\uD2B8\uC6E8\uC5B4 \uAC1C\uBC1C\uC5D0\uC11C \uB85C\uAE45\uC740\
   \ \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589\uC5D0 \uB300\uD55C \uC815\uBCF4\uB97C \uAE30\

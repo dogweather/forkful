@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/php/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:34.273976-07:00
 description: "HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten\
   \ zu extrahieren. Programmierer f\xFChren diese Aufgabe aus, um die\u2026"
-lastmod: 2024-02-18 23:09:04.959748
+lastmod: 2024-02-19 22:05:12.899624
 model: gpt-4-0125-preview
 summary: "HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten\
   \ zu extrahieren. Programmierer f\xFChren diese Aufgabe aus, um die\u2026"

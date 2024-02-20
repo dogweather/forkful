@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elixir/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:07.791953-07:00
 description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in\
   \ staat om codefragmenten in real-time uit te proberen. Elixir-programmeurs gebruiken\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:01.528383
+lastmod: 2024-02-19 22:05:09.554883
 model: gpt-4-0125-preview
 summary: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat\
   \ om codefragmenten in real-time uit te proberen. Elixir-programmeurs gebruiken\

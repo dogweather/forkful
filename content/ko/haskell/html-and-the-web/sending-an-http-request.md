@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/sending-an-http-request/
 date: 2024-01-20 17:59:44.951806-07:00
 description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC11C\uBC84\
   \uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\uD130\uB97C\
@@ -10,7 +8,7 @@ description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC11C\uBC
   \ \uC11C\uBE44\uC2A4\uC5D0 \uC815\uBCF4\uB97C \uC81C\uACF5\uD558\uAE30 \uC704\uD574\
   \ \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.281741
+lastmod: 2024-02-19 22:05:14.201958
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC11C\uBC84\uC5D0\
   \ \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\uD130\uB97C \uC804\

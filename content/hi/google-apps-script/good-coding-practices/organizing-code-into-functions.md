@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:26.260852-07:00
@@ -14,7 +12,7 @@ description: "\u0917\u0942\u0917\u0932 \u090F\u092A\u094D\u0938 \u0938\u094D\u09
   \u0915\u094B\u0902 \u092E\u0947\u0902 \u0938\u0902\u0917\u0920\u093F\u0924 \u0915\
   \u0930\u0928\u093E, \u091C\u094B \u092A\u094D\u0930\u0924\u094D\u092F\u0947\u0915\
   \ \u090F\u0915 \u0935\u093F\u0936\u093F\u0937\u094D\u091F\u2026"
-lastmod: 2024-02-18 23:09:02.578721
+lastmod: 2024-02-19 22:05:10.580897
 model: gpt-4-0125-preview
 summary: "\u0917\u0942\u0917\u0932 \u090F\u092A\u094D\u0938 \u0938\u094D\u0915\u094D\
   \u0930\u093F\u092A\u094D\u091F \u0915\u094B\u0921 \u0915\u094B \u092B\u0902\u0915\

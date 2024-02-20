@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/interpolating-a-string/
 date: 2024-01-20 17:50:25.560402-07:00
 description: String interpolation is about inserting variables into strings. We do
   it to construct messages on the fly, personalize output, or build dynamic queries.
-lastmod: 2024-02-18 23:09:11.341878
+lastmod: 2024-02-19 22:05:18.807971
 model: gpt-4-1106-preview
 summary: String interpolation is about inserting variables into strings. We do it
   to construct messages on the fly, personalize output, or build dynamic queries.

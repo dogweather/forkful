@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/writing-tests/
 date: 2024-02-03 19:03:27.970246-07:00
 description: "Writing tests in Python involves creating automated scripts to validate\
   \ the correctness of your code. Programmers do this to ensure that their functions\u2026"
-lastmod: 2024-02-18 23:09:10.684908
+lastmod: 2024-02-19 22:05:18.218442
 model: gpt-4-0125-preview
 summary: "Writing tests in Python involves creating automated scripts to validate\
   \ the correctness of your code. Programmers do this to ensure that their functions\u2026"

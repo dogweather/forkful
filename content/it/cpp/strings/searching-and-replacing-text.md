@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:28.830251-07:00
 description: "La ricerca e la sostituzione di testo in C++ permette di trovare stringhe\
   \ all'interno di una serie di dati e sostituirle con altre stringhe. I\u2026"
-lastmod: 2024-02-18 23:08:56.159005
+lastmod: 2024-02-19 22:05:02.786646
 model: gpt-4-1106-preview
 summary: "La ricerca e la sostituzione di testo in C++ permette di trovare stringhe\
   \ all'interno di una serie di dati e sostituirle con altre stringhe. I\u2026"

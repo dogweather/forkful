@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elm/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:02.477568-07:00
@@ -14,7 +12,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC
   \uAD00\uB418\uAC8C \uD45C\uC2DC\uB418\uB3C4\uB85D \uBCF4\uC7A5\uD558\uAE30 \uC704\
   \uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC774 \uC791\uC5C5\uC744 \uC790\uC8FC\
   \u2026"
-lastmod: 2024-02-18 23:09:06.060635
+lastmod: 2024-02-19 22:05:13.997952
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C\
   \ \uBCC0\uD658\uD558\uACE0 \uB098\uBA38\uC9C0\uB294 \uC18C\uBB38\uC790\uB85C \uC720\

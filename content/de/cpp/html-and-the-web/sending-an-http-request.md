@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/sending-an-http-request/
 date: 2024-01-20 17:59:18.678074-07:00
 description: "HTTP-Anfragen erm\xF6glichen die Kommunikation mit Web-Diensten. Programmierer\
   \ senden solche Anfragen, um Daten zu erhalten, zu senden oder Web-Operationen\u2026"
-lastmod: 2024-02-18 23:09:05.185782
+lastmod: 2024-02-19 22:05:13.115853
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen erm\xF6glichen die Kommunikation mit Web-Diensten. Programmierer\
   \ senden solche Anfragen, um Daten zu erhalten, zu senden oder Web-Operationen\u2026"

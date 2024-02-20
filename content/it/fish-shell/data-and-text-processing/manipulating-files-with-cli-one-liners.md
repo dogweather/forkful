@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/fish-shell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:20:54.290005-07:00
 description: "Nel mondo della programmazione, specialmente quando si ha a che fare\
   \ con ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando\
   \ (CLI)\u2026"
-lastmod: 2024-02-18 23:08:56.290511
+lastmod: 2024-02-19 22:05:02.925909
 model: gpt-4-0125-preview
 summary: "Nel mondo della programmazione, specialmente quando si ha a che fare con\
   \ ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando (CLI)\u2026"

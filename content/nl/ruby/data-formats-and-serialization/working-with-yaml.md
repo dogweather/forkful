@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/working-with-yaml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:54.482620-07:00
 description: "YAML staat voor \"YAML Ain't Markup Language.\" Het is een voor mensen\
   \ leesbare gegevensserialisatieformaat. Programmeurs gebruiken het voor\u2026"
-lastmod: 2024-02-18 23:09:02.444532
+lastmod: 2024-02-19 22:05:10.448608
 model: gpt-4-0125-preview
 summary: "YAML staat voor \"YAML Ain't Markup Language.\" Het is een voor mensen leesbare\
   \ gegevensserialisatieformaat. Programmeurs gebruiken het voor\u2026"

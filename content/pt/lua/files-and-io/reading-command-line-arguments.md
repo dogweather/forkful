@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/lua/reading-command-line-arguments/
 date: 2024-01-20 17:56:20.435559-07:00
 description: "Ler argumentos de linha de comando em Lua significa pegar dados inseridos\
   \ diretamente quando voc\xEA executa seu script. Programadores fazem isso para tornar\u2026"
-lastmod: 2024-02-18 23:08:58.297255
+lastmod: 2024-02-19 22:05:05.777024
 model: gpt-4-1106-preview
 summary: "Ler argumentos de linha de comando em Lua significa pegar dados inseridos\
   \ diretamente quando voc\xEA executa seu script. Programadores fazem isso para tornar\u2026"

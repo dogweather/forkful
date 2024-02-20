@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:55.267511-07:00
 description: "TOML staat voor Tom's Obvious, Minimal Language. Het is een gegevensserialisatieformaat\
   \ dat wordt gebruikt voor configuratiebestanden. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.738638
+lastmod: 2024-02-19 22:05:09.757995
 model: gpt-4-0125-preview
 summary: "TOML staat voor Tom's Obvious, Minimal Language. Het is een gegevensserialisatieformaat\
   \ dat wordt gebruikt voor configuratiebestanden. Programmeurs\u2026"

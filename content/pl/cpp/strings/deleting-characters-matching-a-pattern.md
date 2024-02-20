@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:48.198353-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to po prostu czyszczenie\
   \ tekst\xF3w z niepotrzebnych fragment\xF3w. Programi\u015Bci robi\u0105 to, by\
   \ u\u0142atwi\u0107 przetwarzanie danych,\u2026"
-lastmod: 2024-02-18 23:08:49.894480
+lastmod: 2024-02-19 22:04:54.842436
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to po prostu czyszczenie tekst\xF3\
   w z niepotrzebnych fragment\xF3w. Programi\u015Bci robi\u0105 to, by u\u0142atwi\u0107\

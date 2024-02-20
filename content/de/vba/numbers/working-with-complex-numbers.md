@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/vba/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:05.738369-07:00
 description: "Die Arbeit mit komplexen Zahlen umfasst das Ausf\xFChren mathematischer\
   \ Operationen mit Zahlen, die sowohl einen Realteil als auch einen Imagin\xE4rteil\
   \ haben.\u2026"
-lastmod: 2024-02-18 23:09:04.681679
+lastmod: 2024-02-19 22:05:12.635156
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit komplexen Zahlen umfasst das Ausf\xFChren mathematischer\
   \ Operationen mit Zahlen, die sowohl einen Realteil als auch einen Imagin\xE4rteil\

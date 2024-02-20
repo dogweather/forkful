@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/parsing-html/
 date: 2024-02-03 19:02:37.703546-07:00
 description: "Parsing HTML in Rust is about extracting data from HTML documents, which\
   \ is essential for web scraping, data extraction, or building web crawlers.\u2026"
-lastmod: 2024-02-18 23:09:10.846356
+lastmod: 2024-02-19 22:05:18.363423
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Rust is about extracting data from HTML documents, which\
   \ is essential for web scraping, data extraction, or building web crawlers.\u2026"

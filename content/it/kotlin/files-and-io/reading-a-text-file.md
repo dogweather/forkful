@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/reading-a-text-file/
 date: 2024-01-20 17:54:44.125266-07:00
 description: "Leggere un file di testo significa estrarre dati da un file sul tuo\
   \ dispositivo o server. I programmatori lo fanno per recuperare e manipolare dati\u2026"
-lastmod: 2024-02-18 23:08:55.862793
+lastmod: 2024-02-19 22:05:02.472181
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa estrarre dati da un file sul tuo dispositivo\
   \ o server. I programmatori lo fanno per recuperare e manipolare dati\u2026"

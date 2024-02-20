@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/reading-a-text-file/
 date: 2024-01-20 17:54:59.824232-07:00
 description: "Reading a text file in PHP means pulling content from a file into your\
   \ script. Programmers do this to handle data storage, configuration, or to process\u2026"
-lastmod: 2024-02-18 23:09:11.154435
+lastmod: 2024-02-19 22:05:18.645387
 model: gpt-4-1106-preview
 summary: "Reading a text file in PHP means pulling content from a file into your script.\
   \ Programmers do this to handle data storage, configuration, or to process\u2026"

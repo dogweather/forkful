@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:38.440396-07:00
 description: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de usu\xE1rio e senha em um cabe\xE7alho para acessar um recurso\
   \ protegido.\u2026"
-lastmod: 2024-02-18 23:08:57.928149
+lastmod: 2024-02-19 22:05:05.401511
 model: gpt-4-1106-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de usu\xE1rio e senha em um cabe\xE7alho para acessar um recurso\

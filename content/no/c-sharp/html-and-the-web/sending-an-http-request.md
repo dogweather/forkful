@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/sending-an-http-request/
 date: 2024-01-20 17:59:11.504816-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel er prosessen der du ber en server\
   \ om data eller utf\xF8rer en handling. Programmerere gj\xF8r dette for \xE5 integrere\
   \ med\u2026"
-lastmod: 2024-02-18 23:08:53.890634
+lastmod: 2024-02-19 22:05:00.058600
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel er prosessen der du ber en server om data\
   \ eller utf\xF8rer en handling. Programmerere gj\xF8r dette for \xE5 integrere med\u2026"

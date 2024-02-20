@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/powershell/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:57:52.874706-07:00
@@ -14,7 +12,7 @@ description: "\u0412 PowerShell \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435
   \u0442 \u044D\u0442\u043E \u0434\u043B\u044F \u043F\u0440\u043E\u0432\u0435\u0440\
   \u043A\u0438 \u0432\u0432\u043E\u0434\u0430, \u043C\u0430\u043D\u0438\u043F\u0443\
   \u043B\u044F\u0446\u0438\u0438\u2026"
-lastmod: 2024-02-18 23:08:57.244424
+lastmod: 2024-02-19 22:05:04.401476
 model: gpt-4-0125-preview
 summary: "\u0412 PowerShell \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\
   \u0438\u0435 \u0434\u043B\u0438\u043D\u044B \u0441\u0442\u0440\u043E\u043A\u0438\

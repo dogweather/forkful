@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/google-apps-script/sending-an-http-request/
 date: 2024-02-01 21:12:02.062998-07:00
 description: "Sending an HTTP request in Google Apps Script is about programmatically\
   \ making a call to an external web server or API. Programmers do this to retrieve\
   \ or\u2026"
-lastmod: 2024-02-18 23:09:10.636200
+lastmod: 2024-02-19 22:05:18.174080
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request in Google Apps Script is about programmatically\
   \ making a call to an external web server or API. Programmers do this to retrieve\

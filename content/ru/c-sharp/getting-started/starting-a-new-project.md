@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/c-sharp/starting-a-new-project/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:02:59.569299-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u043F\u0443\u0441\u043A \u043D\u043E\u0432\u043E\u043
   \u0434. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B\
   \ \u043D\u0430\u0447\u0438\u043D\u0430\u044E\u0442 \u043D\u043E\u0432\u044B\u0435\
   \ \u043F\u0440\u043E\u0435\u043A\u0442\u044B \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:08:56.996749
+lastmod: 2024-02-19 22:05:04.011380
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0443\u0441\u043A \u043D\u043E\u0432\u043E\u0433\u043E\
   \ \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u043D\u0430 C# \u043E\u0437\u043D\u0430\

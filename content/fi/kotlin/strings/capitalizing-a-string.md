@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/kotlin/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:48.804351-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen suureksi ohjelmoinnissa tarkoittaa\
   \ merkkijonon ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se ei jo ole,\
   \ mik\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.556908
+lastmod: 2024-02-19 22:05:15.407851
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen suureksi ohjelmoinnissa tarkoittaa\
   \ merkkijonon ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se ei jo ole,\

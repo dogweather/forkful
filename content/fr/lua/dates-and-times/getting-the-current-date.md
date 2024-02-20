@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/lua/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:12.303497-07:00
 description: "R\xE9cup\xE9rer la date actuelle en programmation est une t\xE2che cruciale\
   \ pour de nombreuses applications, y compris la journalisation, le marquage temporel\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:08.981190
+lastmod: 2024-02-19 22:05:16.668968
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle en programmation est une t\xE2che cruciale\
   \ pour de nombreuses applications, y compris la journalisation, le marquage temporel\

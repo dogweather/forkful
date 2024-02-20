@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/ruby/interpolating-a-string/
 date: 2024-01-20 17:51:24.388419-07:00
 description: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de variables\
   \ ou des expressions dans une cha\xEEne de texte. On l'utilise pour simplifier\u2026"
-lastmod: 2024-02-18 23:09:09.389747
+lastmod: 2024-02-19 22:05:17.053701
 model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de variables\
   \ ou des expressions dans une cha\xEEne de texte. On l'utilise pour simplifier\u2026"

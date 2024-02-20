@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/using-regular-expressions/
 date: 2024-02-03 19:02:43.421953-07:00
 description: "Regular expressions in programming are sequences of characters that\
   \ define a search pattern, typically employed for string searching and manipulation.\u2026"
-lastmod: 2024-02-18 23:09:11.086269
+lastmod: 2024-02-19 22:05:18.583105
 model: gpt-4-0125-preview
 summary: "Regular expressions in programming are sequences of characters that define\
   \ a search pattern, typically employed for string searching and manipulation.\u2026"

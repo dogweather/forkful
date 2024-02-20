@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/clojure/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:46.882216-07:00
 description: "Het parseren van een datum uit een string betekent het converteren van\
   \ tekst met een datum die door mensen gelezen kan worden, naar een formaat dat de\u2026"
-lastmod: 2024-02-18 23:09:01.490140
+lastmod: 2024-02-19 22:05:09.518086
 model: gpt-4-0125-preview
 summary: "Het parseren van een datum uit een string betekent het converteren van tekst\
   \ met een datum die door mensen gelezen kan worden, naar een formaat dat de\u2026"

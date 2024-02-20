@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/go/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:12.190603-07:00
@@ -14,7 +12,7 @@ description: "Go\u8A00\u8A9E\u3067\u306E\u30A8\u30E9\u30FC\u51E6\u7406\u306F\u30
   \u306B\u3088\u308A\u3001\u3088\u308A\u5805\u7262\u3067\u4FE1\u983C\u6027\u306E\u9AD8\
   \u3044\u30BD\u30D5\u30C8\u30A6\u30A7\u30A2\u304C\u5B9F\u73FE\u3055\u308C\u307E\u3059\
   \u3002"
-lastmod: 2024-02-18 23:08:54.487710
+lastmod: 2024-02-19 22:05:00.666803
 model: gpt-4-0125-preview
 summary: "Go\u8A00\u8A9E\u3067\u306E\u30A8\u30E9\u30FC\u51E6\u7406\u306F\u3001\u30D7\
   \u30ED\u30B0\u30E9\u30E0\u306E\u30A8\u30E9\u30FC\u72B6\u614B\u3092\u8A8D\u8B58\u3057\

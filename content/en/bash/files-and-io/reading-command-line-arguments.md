@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/reading-command-line-arguments/
 date: 2024-01-20 17:55:14.838810-07:00
 description: Reading command line arguments lets scripts behave differently based
   on user input. It's how scripts can be versatile and not just one-trick ponies.
-lastmod: 2024-02-18 23:09:11.245307
+lastmod: 2024-02-19 22:05:18.721074
 model: gpt-4-1106-preview
 summary: Reading command line arguments lets scripts behave differently based on user
   input. It's how scripts can be versatile and not just one-trick ponies.

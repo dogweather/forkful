@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/logging/
 date: 2024-01-26 01:08:34.282533-07:00
 description: "Logowanie to proces zapisywania zdarze\u0144, b\u0142\u0119d\xF3w i\
   \ innych istotnych informacji podczas wykonania programu do zewn\u0119trznego medium,\
   \ cz\u0119sto plik\xF3w lub baz\u2026"
-lastmod: 2024-02-18 23:08:49.354296
+lastmod: 2024-02-19 22:04:54.272874
 model: gpt-4-1106-preview
 summary: "Logowanie to proces zapisywania zdarze\u0144, b\u0142\u0119d\xF3w i innych\
   \ istotnych informacji podczas wykonania programu do zewn\u0119trznego medium, cz\u0119\

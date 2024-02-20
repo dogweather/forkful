@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/php/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:23.286826-07:00
 description: "Comprobar si un directorio existe es una tarea fundamental en la programaci\xF3\
   n PHP, ya que te permite verificar la presencia de un directorio antes de\u2026"
-lastmod: 2024-02-18 23:09:10.089464
+lastmod: 2024-02-19 22:05:17.682140
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe es una tarea fundamental en la programaci\xF3\
   n PHP, ya que te permite verificar la presencia de un directorio antes de\u2026"

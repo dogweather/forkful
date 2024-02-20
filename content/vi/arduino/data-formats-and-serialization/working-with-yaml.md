@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/working-with-yaml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:36.700769-07:00
@@ -8,7 +6,7 @@ description: "YAML kh\xF4ng ph\u1EA3i l\xE0 ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA
   u. N\xF3 l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7\
   u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi cho t\u1EA5t c\u1EA3 c\xE1c ng\xF4\
   n ng\u1EEF l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh\u2026"
-lastmod: 2024-02-18 23:08:51.021720
+lastmod: 2024-02-19 22:04:56.216979
 model: gpt-4-0125-preview
 summary: "YAML kh\xF4ng ph\u1EA3i l\xE0 ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u. N\xF3\
   \ l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u th\xE2\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:01.587235-07:00
 description: "HTML parseren betekent gegevens extraheren uit HTML-documenten. Programmeurs\
   \ doen dit om te interageren met of webinhoud te manipuleren, gegevensextractie\u2026"
-lastmod: 2024-02-18 23:09:02.273361
+lastmod: 2024-02-19 22:05:10.285477
 model: gpt-4-0125-preview
 summary: "HTML parseren betekent gegevens extraheren uit HTML-documenten. Programmeurs\
   \ doen dit om te interageren met of webinhoud te manipuleren, gegevensextractie\u2026"

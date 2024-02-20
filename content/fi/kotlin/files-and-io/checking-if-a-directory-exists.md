@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/kotlin/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:47.755635-07:00
 description: "Hakemiston olemassaolon tarkistaminen Kotlinissa tarkoittaa hakemiston\
   \ l\xE4sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa. Ohjelmoijat suorittavat\
   \ t\xE4m\xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.590538
+lastmod: 2024-02-19 22:05:15.438438
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Kotlinissa tarkoittaa hakemiston l\xE4\
   sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa. Ohjelmoijat suorittavat\

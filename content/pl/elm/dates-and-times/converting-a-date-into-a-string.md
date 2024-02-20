@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elm/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:34.829892-07:00
 description: "\"Co i dlaczego?\" Zamiana daty na ci\u0105g znak\xF3w w Elm to proces\
   \ przekszta\u0142cenia warto\u015Bci daty (kt\xF3r\u0105 komputer rozumie) na tekst,\
   \ kt\xF3ry jest czytelny dla\u2026"
-lastmod: 2024-02-18 23:08:49.530058
+lastmod: 2024-02-19 22:04:54.463811
 model: gpt-4-1106-preview
 summary: "\"Co i dlaczego?\" Zamiana daty na ci\u0105g znak\xF3w w Elm to proces przekszta\u0142\
   cenia warto\u015Bci daty (kt\xF3r\u0105 komputer rozumie) na tekst, kt\xF3ry jest\

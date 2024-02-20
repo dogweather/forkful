@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:04.570733-07:00
 description: "Konwersja daty do formatu tekstowego (string) to proces zamieniania\
   \ danych o czasie na zrozumia\u0142y i \u0142atwy do zaprezentowania ci\u0105g znak\xF3\
   w. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:49.580426
+lastmod: 2024-02-19 22:04:54.508270
 model: gpt-4-1106-preview
 summary: "Konwersja daty do formatu tekstowego (string) to proces zamieniania danych\
   \ o czasie na zrozumia\u0142y i \u0142atwy do zaprezentowania ci\u0105g znak\xF3\

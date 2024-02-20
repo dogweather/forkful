@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:38.728664-07:00
 description: "Loggen is het proces van het vastleggen van applicatiegebeurtenissen\
   \ en data-output tijdens uitvoeringstijd. Programmeurs loggen om bugs te\u2026"
-lastmod: 2024-02-18 23:09:01.859662
+lastmod: 2024-02-19 22:05:09.876315
 model: gpt-4-0125-preview
 summary: "Loggen is het proces van het vastleggen van applicatiegebeurtenissen en\
   \ data-output tijdens uitvoeringstijd. Programmeurs loggen om bugs te\u2026"

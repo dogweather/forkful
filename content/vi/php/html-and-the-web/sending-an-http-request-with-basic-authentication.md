@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:29.747843-07:00
@@ -8,7 +6,7 @@ description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c
   \ b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn \u0111\u0103ng nh\u1EADp v\xE0\
   \ m\u1EADt kh\u1EA9u \u0111\u1EC3 truy c\u1EADp v\xE0o m\u1ED9t t\xE0i nguy\xEA\
   n tr\xEAn m\xE1y ch\u1EE7. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
-lastmod: 2024-02-18 23:08:50.790689
+lastmod: 2024-02-19 22:04:55.949028
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
   \ b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn \u0111\u0103ng nh\u1EADp v\xE0\

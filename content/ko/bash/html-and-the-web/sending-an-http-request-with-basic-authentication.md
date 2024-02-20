@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:15.439391-07:00
 description: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uB294 HTTP \uC694\
   \uCCAD\uC740 \uC0AC\uC6A9\uC790 \uC544\uC774\uB514\uC640 \uBE44\uBC00\uBC88\uD638\
@@ -10,7 +8,7 @@ description: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uB294 HTTP \uC6
   \uB098 \uC6F9 \uC11C\uBC84 \uC0C1\uC758 \uC790\uB8CC\uC5D0 \uC811\uADFC \uAD8C\uD55C\
   \uC774 \uD544\uC694\uD560 \uB54C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.484538
+lastmod: 2024-02-19 22:05:14.394050
 model: gpt-4-1106-preview
 summary: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uB294 HTTP \uC694\uCCAD\
   \uC740 \uC0AC\uC6A9\uC790 \uC544\uC774\uB514\uC640 \uBE44\uBC00\uBC88\uD638\uB97C\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/checking-if-a-directory-exists/
 date: 2024-01-20 14:56:14.068274-07:00
 description: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um\
   \ caminho espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.074265
+lastmod: 2024-02-19 22:05:05.553378
 summary: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um caminho\
   \ espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\
   \ fazem isso\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/interpolating-a-string/
 date: 2024-01-20 17:50:26.725662-07:00
 description: "Interpolering av str\xE4ng \xE4r processen d\xE4r man s\xE4tter in uttryck\
   \ eller variabler in i str\xE4ngar. Programmerare g\xF6r det f\xF6r att dynamiskt\
   \ bygga str\xE4ngar \u2013\u2026"
-lastmod: 2024-02-18 23:08:51.448930
+lastmod: 2024-02-19 22:04:56.754131
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ng \xE4r processen d\xE4r man s\xE4tter in uttryck\
   \ eller variabler in i str\xE4ngar. Programmerare g\xF6r det f\xF6r att dynamiskt\

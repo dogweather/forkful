@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/elixir/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:05.563852-07:00
 description: "Virheiden kirjoittaminen standardivirheeseen (stderr) Elixiriss\xE4\
   \ on menetelm\xE4 virheilmoitusten ja diagnostiikkatietojen ohjaamiseksi erilleen\u2026"
-lastmod: 2024-02-18 23:09:07.291409
+lastmod: 2024-02-19 22:05:15.184324
 model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen standardivirheeseen (stderr) Elixiriss\xE4 on menetelm\xE4\
   \ virheilmoitusten ja diagnostiikkatietojen ohjaamiseksi erilleen\u2026"

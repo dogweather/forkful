@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/working-with-json/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:09.022887-07:00
@@ -8,7 +6,7 @@ description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\
   ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9, d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBF\
   t \u0111\u1ED1i v\u1EDBi con ng\u01B0\u1EDDi, d\u1EC5 ph\xE2n t\xEDch v\xE0 t\u1EA1\
   o ra b\u1EDFi m\xE1y. C\xE1c l\u1EADp tr\xECnh\u2026"
-lastmod: 2024-02-18 23:08:50.533745
+lastmod: 2024-02-19 22:04:55.621961
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
   ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9, d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBF\

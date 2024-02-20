@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/swift/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:37.378610-07:00
 description: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing\
   \ og generering av strukturerte data fra tekstfiler der hver linje representerer\
   \ en post og\u2026"
-lastmod: 2024-02-18 23:08:54.290547
+lastmod: 2024-02-19 22:05:00.439790
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing og\
   \ generering av strukturerte data fra tekstfiler der hver linje representerer en\

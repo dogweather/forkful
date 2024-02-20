@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/rust/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:41.790894-07:00
 description: "No desenvolvimento de software, \xE9 frequentemente necess\xE1rio verificar\
   \ se um diret\xF3rio existe para evitar erros ao tentar acessar, ler ou escrever\u2026"
-lastmod: 2024-02-18 23:08:57.943230
+lastmod: 2024-02-19 22:05:05.416808
 model: gpt-4-0125-preview
 summary: "No desenvolvimento de software, \xE9 frequentemente necess\xE1rio verificar\
   \ se um diret\xF3rio existe para evitar erros ao tentar acessar, ler ou escrever\u2026"

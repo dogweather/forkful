@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/typescript/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:00.926835-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
   \ reprezentacji dat i czas\xF3w na format, kt\xF3ry mo\u017Ce by\u0107 przetwarzany\
   \ i analizowany przez\u2026"
-lastmod: 2024-02-18 23:08:49.357157
+lastmod: 2024-02-19 22:04:54.275957
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
   \ reprezentacji dat i czas\xF3w na format, kt\xF3ry mo\u017Ce by\u0107 przetwarzany\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/haskell/organizing-code-into-functions/
 date: 2024-01-26 01:10:49.613449-07:00
 description: "Att organisera kod i funktioner i Haskell inneb\xE4r att bryta ner din\
   \ kod i \xE5teranv\xE4ndbara, namngivna block. Varf\xF6r? Det h\xE5ller din kod\
   \ DRY (Don't Repeat\u2026"
-lastmod: 2024-02-18 23:08:51.842338
+lastmod: 2024-02-19 22:04:57.180904
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner i Haskell inneb\xE4r att bryta ner din kod\
   \ i \xE5teranv\xE4ndbara, namngivna block. Varf\xF6r? Det h\xE5ller din kod DRY\

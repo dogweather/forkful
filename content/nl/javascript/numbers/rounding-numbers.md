@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:55.521829-07:00
 description: "Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer.\
   \ Programmeurs ronden af om precisie te beheersen, geheugen te beheren of de\u2026"
-lastmod: 2024-02-18 23:09:02.270043
+lastmod: 2024-02-19 22:05:10.282339
 model: gpt-4-0125-preview
 summary: "Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer.\
   \ Programmeurs ronden af om precisie te beheersen, geheugen te beheren of de\u2026"

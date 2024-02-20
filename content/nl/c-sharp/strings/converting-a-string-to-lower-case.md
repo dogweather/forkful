@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:46.445048-07:00
 description: "Een tekenreeks converteren naar kleine letters betekent dat alle hoofdletters\
   \ in de tekst worden getransformeerd naar hun kleine letter equivalenten.\u2026"
-lastmod: 2024-02-18 23:09:01.837871
+lastmod: 2024-02-19 22:05:09.854276
 model: gpt-4-0125-preview
 summary: "Een tekenreeks converteren naar kleine letters betekent dat alle hoofdletters\
   \ in de tekst worden getransformeerd naar hun kleine letter equivalenten.\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/sending-an-http-request/
 date: 2024-01-20 18:01:23.739316-07:00
 description: "Wysy\u0142amy zapytanie HTTP, by porozumie\u0107 si\u0119 z serwisami\
   \ internetowymi. Programi\u015Bci robi\u0105 to, aby pobiera\u0107 dane, wysy\u0142\
   a\u0107 informacje, autoryzowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.825821
+lastmod: 2024-02-19 22:04:54.767627
 model: gpt-4-1106-preview
 summary: "Wysy\u0142amy zapytanie HTTP, by porozumie\u0107 si\u0119 z serwisami internetowymi.\
   \ Programi\u015Bci robi\u0105 to, aby pobiera\u0107 dane, wysy\u0142a\u0107 informacje,\

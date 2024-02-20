@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/rounding-numbers/
 date: 2024-01-26 03:43:43.425978-07:00
 description: "Arrotondare i numeri significa adeguarli al valore posizionale specificato\
   \ pi\xF9 vicino\u2014pensateli come semplificati. I programmatori arrotondano per\u2026"
-lastmod: 2024-02-18 23:08:55.882535
+lastmod: 2024-02-19 22:05:02.492418
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa adeguarli al valore posizionale specificato\
   \ pi\xF9 vicino\u2014pensateli come semplificati. I programmatori arrotondano per\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/working-with-complex-numbers/
 date: 2024-01-26 04:45:30.749988-07:00
 description: "Komplexa tal har en realdel och en imagin\xE4rdel och \xE4r avg\xF6\
   rande inom olika omr\xE5den s\xE5som ingenj\xF6rsvetenskap, fysik och datorgrafik.\
   \ Programmerare anv\xE4nder\u2026"
-lastmod: 2024-02-18 23:08:51.578094
+lastmod: 2024-02-19 22:04:56.895955
 model: gpt-4-0125-preview
 summary: "Komplexa tal har en realdel och en imagin\xE4rdel och \xE4r avg\xF6rande\
   \ inom olika omr\xE5den s\xE5som ingenj\xF6rsvetenskap, fysik och datorgrafik. Programmerare\

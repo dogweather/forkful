@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/rust/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:07.896724-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4\
   jille merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\
   \u2026"
-lastmod: 2024-02-18 23:09:07.353250
+lastmod: 2024-02-19 22:05:15.242182
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4jille\
   \ merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/haskell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:57.947243-07:00
@@ -14,7 +12,7 @@ description: "Haskell \u092E\u0947\u0902 \u091F\u0947\u0915\u094D\u0938\u094D\u0
   \u092A\u0921\u0947\u091F \u0915\u0930\u0928\u093E\u0964 \u092A\u094D\u0930\u094B\
   \u0917\u094D\u0930\u093E\u092E\u0930 \u092F\u0939 \u0915\u093E\u0930\u094D\u092F\
   \ \u0932\u0949\u0917\u2026"
-lastmod: 2024-02-18 23:09:03.457121
+lastmod: 2024-02-19 22:05:11.446946
 model: gpt-4-0125-preview
 summary: "Haskell \u092E\u0947\u0902 \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u092B\
   \u093E\u0907\u0932 \u092E\u0947\u0902 \u0932\u093F\u0916\u0928\u0947 \u0915\u093E\

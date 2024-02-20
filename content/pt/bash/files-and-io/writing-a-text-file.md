@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/bash/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:08.193191-07:00
 description: "Escrever um arquivo de texto em Bash permite automatizar o armazenamento\
   \ de dados, registro, configura\xE7\xF5es e muito mais. \xC9 uma habilidade fundamental\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.343399
+lastmod: 2024-02-19 22:05:05.826979
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Bash permite automatizar o armazenamento\
   \ de dados, registro, configura\xE7\xF5es e muito mais. \xC9 uma habilidade fundamental\

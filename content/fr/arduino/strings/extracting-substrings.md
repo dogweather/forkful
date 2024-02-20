@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/extracting-substrings/
 date: 2024-01-20 17:44:54.760178-07:00
 description: "Extraire des sous-cha\xEEnes consiste \xE0 s\xE9lectionner des portions\
   \ sp\xE9cifiques d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour\
   \ analyser, manipuler\u2026"
-lastmod: 2024-02-18 23:09:09.103043
+lastmod: 2024-02-19 22:05:16.781853
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes consiste \xE0 s\xE9lectionner des portions\
   \ sp\xE9cifiques d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour\

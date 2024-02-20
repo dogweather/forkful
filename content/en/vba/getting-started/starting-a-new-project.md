@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/starting-a-new-project/
 date: 2024-02-01 21:30:18.659554-07:00
 description: "Starting a new project in Visual Basic for Applications (VBA) involves\
   \ setting up an environment within a host application, like Excel, to automate tasks\u2026"
-lastmod: 2024-02-18 23:09:10.890661
+lastmod: 2024-02-19 22:05:18.403433
 model: gpt-4-0125-preview
 summary: "Starting a new project in Visual Basic for Applications (VBA) involves setting\
   \ up an environment within a host application, like Excel, to automate tasks\u2026"

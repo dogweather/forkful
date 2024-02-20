@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/working-with-toml/
 date: 2024-01-25 03:39:59.423234-07:00
 description: "TOML, short for Tom's Obvious, Minimal Language, defines how to structure\
   \ config files. Programmers work with TOML because it's easy to read, write, and\u2026"
-lastmod: 2024-02-18 23:09:11.460715
+lastmod: 2024-02-19 22:05:18.916172
 model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, defines how to structure\
   \ config files. Programmers work with TOML because it's easy to read, write, and\u2026"

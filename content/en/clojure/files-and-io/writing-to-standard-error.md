@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/writing-to-standard-error/
 date: 2024-02-03 19:03:54.587811-07:00
 description: "Writing to standard error (stderr) is about directing error messages\
   \ and diagnostics to the stderr stream, separate from standard output (stdout).\u2026"
-lastmod: 2024-02-18 23:09:10.740092
+lastmod: 2024-02-19 22:05:18.267785
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) is about directing error messages and\
   \ diagnostics to the stderr stream, separate from standard output (stdout).\u2026"

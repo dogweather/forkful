@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:34.292090-07:00
 description: "Werken met CSV, wat staat voor \"Comma-Separated Values\" (komma-gescheiden\
   \ waarden), omvat het parsen en manipuleren van gegevens in een tabulair\u2026"
-lastmod: 2024-02-18 23:09:02.067181
+lastmod: 2024-02-19 22:05:10.090084
 model: gpt-4-0125-preview
 summary: "Werken met CSV, wat staat voor \"Comma-Separated Values\" (komma-gescheiden\
   \ waarden), omvat het parsen en manipuleren van gegevens in een tabulair\u2026"

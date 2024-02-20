@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/logging/
 date: 2024-01-26 01:01:04.480318-07:00
 description: "Il logging \xE8 il processo di registrazione degli eventi dell'applicazione\
   \ e dei dati in output durante l'esecuzione. I programmatori effettuano il logging\u2026"
-lastmod: 2024-02-18 23:08:55.894250
+lastmod: 2024-02-19 22:05:02.504160
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 il processo di registrazione degli eventi dell'applicazione\
   \ e dei dati in output durante l'esecuzione. I programmatori effettuano il logging\u2026"

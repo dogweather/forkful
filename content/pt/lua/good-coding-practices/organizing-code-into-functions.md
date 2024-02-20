@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/organizing-code-into-functions/
 date: 2024-01-26 01:11:29.392040-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a sua programa\xE7\
   \xE3o em partes diger\xEDveis\u2014pense em blocos de LEGO funcionais. Fazemos isso\
   \ por clareza,\u2026"
-lastmod: 2024-02-18 23:08:58.287599
+lastmod: 2024-02-19 22:05:05.766168
 model: gpt-4-1106-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a sua programa\xE7\
   \xE3o em partes diger\xEDveis\u2014pense em blocos de LEGO funcionais. Fazemos isso\

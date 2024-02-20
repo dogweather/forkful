@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/powershell/reading-a-text-file/
 date: 2024-01-20 17:54:57.815673-07:00
 description: "Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo\
   \ in modo programmabile. I programmatori lo fanno per manipolare, analizzare\u2026"
-lastmod: 2024-02-18 23:08:56.111116
+lastmod: 2024-02-19 22:05:02.734562
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo\
   \ in modo programmabile. I programmatori lo fanno per manipolare, analizzare\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/generating-random-numbers/
 date: 2024-01-27 20:32:56.925414-07:00
 description: "Generowanie liczb losowych w programowaniu polega na tworzeniu sekwencji\
   \ liczb, kt\xF3re nie wykazuj\u0105 \u017Cadnego przewidywalnego porz\u0105dku lub\
   \ wzoru. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:49.905687
+lastmod: 2024-02-19 22:04:54.854515
 model: gpt-4-0125-preview
 summary: "Generowanie liczb losowych w programowaniu polega na tworzeniu sekwencji\
   \ liczb, kt\xF3re nie wykazuj\u0105 \u017Cadnego przewidywalnego porz\u0105dku lub\

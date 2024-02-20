@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/javascript/printing-debug-output/
 date: 2024-01-20 17:52:47.622809-07:00
 description: "Stampare output di debug significa far apparire nel console messaggi\
   \ che aiutano il programmatore a capire cosa sta succedendo nel codice. Lo si fa\
   \ perch\xE9\u2026"
-lastmod: 2024-02-18 23:08:56.255171
+lastmod: 2024-02-19 22:05:02.888736
 model: gpt-4-1106-preview
 summary: "Stampare output di debug significa far apparire nel console messaggi che\
   \ aiutano il programmatore a capire cosa sta succedendo nel codice. Lo si fa perch\xE9\

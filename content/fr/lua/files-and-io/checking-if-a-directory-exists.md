@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/lua/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:45.810583-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ lors de l'\xE9criture de scripts qui interagissent avec le syst\xE8me de fichiers,\
   \ en s'assurant\u2026"
-lastmod: 2024-02-18 23:09:08.985714
+lastmod: 2024-02-19 22:05:16.673020
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ lors de l'\xE9criture de scripts qui interagissent avec le syst\xE8me de fichiers,\

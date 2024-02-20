@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/haskell/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:33.056059-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Haskell bao g\u1ED3m vi\u1EC7c
   n t\xEDch c\xFA ph\xE1p, thao t\xE1c v\xE0 t\u1EA1o c\u1EA5u tr\xFAc XML. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn x\u1EED l\xFD XML \u0111\u1EC3 t\u01B0\u01A1ng t\xE1\
   c v\u1EDBi nhi\u1EC1u \u1EE9ng d\u1EE5ng\u2026"
-lastmod: 2024-02-18 23:08:50.771156
+lastmod: 2024-02-19 22:04:55.924316
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Haskell bao g\u1ED3m vi\u1EC7c ph\xE2\
   n t\xEDch c\xFA ph\xE1p, thao t\xE1c v\xE0 t\u1EA1o c\u1EA5u tr\xFAc XML. C\xE1\

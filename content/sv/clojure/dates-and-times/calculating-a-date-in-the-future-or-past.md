@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:48.016606-07:00
 description: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutna \xE4r precis\
   \ det det l\xE5ter som - att hitta ett datum f\xF6re eller efter ett k\xE4nt datum.\
   \ Programmerare g\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.474852
+lastmod: 2024-02-19 22:04:56.782847
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutna \xE4r precis det\
   \ det l\xE5ter som - att hitta ett datum f\xF6re eller efter ett k\xE4nt datum.\

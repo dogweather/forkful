@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/fish-shell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:05.420669-07:00
 description: "Analizar una fecha de una cadena implica extraer informaci\xF3n de fecha\
   \ codificada dentro de cadenas y convertirla en un formato estructurado que los\u2026"
-lastmod: 2024-02-18 23:09:10.463500
+lastmod: 2024-02-19 22:05:18.015729
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena implica extraer informaci\xF3n de fecha\
   \ codificada dentro de cadenas y convertirla en un formato estructurado que los\u2026"

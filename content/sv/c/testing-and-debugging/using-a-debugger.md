@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:13.500535-07:00
 description: "Debuggers i C \xE4r specialiserade verktyg som g\xF6r det m\xF6jligt\
   \ f\xF6r utvecklare att stega igenom sin kod, inspektera variabler och \xF6vervaka\
   \ exekveringsfl\xF6det.\u2026"
-lastmod: 2024-02-18 23:08:52.255289
+lastmod: 2024-02-19 22:04:57.640078
 model: gpt-4-0125-preview
 summary: "Debuggers i C \xE4r specialiserade verktyg som g\xF6r det m\xF6jligt f\xF6\
   r utvecklare att stega igenom sin kod, inspektera variabler och \xF6vervaka exekveringsfl\xF6\

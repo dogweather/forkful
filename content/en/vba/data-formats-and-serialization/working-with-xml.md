@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/working-with-xml/
 date: 2024-02-01 21:30:06.903873-07:00
 description: "Working with XML in Visual Basic for Applications (VBA) involves parsing,\
   \ creating, and modifying XML documents within the context of Microsoft Office\u2026"
-lastmod: 2024-02-18 23:09:10.913528
+lastmod: 2024-02-19 22:05:18.424722
 model: gpt-4-0125-preview
 summary: "Working with XML in Visual Basic for Applications (VBA) involves parsing,\
   \ creating, and modifying XML documents within the context of Microsoft Office\u2026"

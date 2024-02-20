@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:07.442590-07:00
 description: "Extraire des sous-cha\xEEnes dans Visual Basic pour Applications (VBA)\
   \ consiste \xE0 isoler des parties sp\xE9cifiques d'une cha\xEEne en fonction de\
   \ crit\xE8res donn\xE9s.\u2026"
-lastmod: 2024-02-18 23:09:08.565012
+lastmod: 2024-02-19 22:05:16.342816
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes dans Visual Basic pour Applications (VBA) consiste\
   \ \xE0 isoler des parties sp\xE9cifiques d'une cha\xEEne en fonction de crit\xE8\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/logging/
 date: 2024-01-26 01:08:14.614754-07:00
 description: "Le logging est le processus d'enregistrement des \xE9v\xE9nements d'une\
   \ application pendant l'ex\xE9cution d'un programme, fournissant un fil d'Ariane\
   \ pour\u2026"
-lastmod: 2024-02-18 23:09:08.347121
+lastmod: 2024-02-19 22:05:16.144737
 model: gpt-4-1106-preview
 summary: "Le logging est le processus d'enregistrement des \xE9v\xE9nements d'une\
   \ application pendant l'ex\xE9cution d'un programme, fournissant un fil d'Ariane\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c-sharp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:11.740296-07:00
 description: "Att kontrollera om en katalog finns i C# inneb\xE4r att man verifierar\
   \ n\xE4rvaron av en mapp p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.809937
+lastmod: 2024-02-19 22:04:57.145432
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i C# inneb\xE4r att man verifierar n\xE4\
   rvaron av en mapp p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare g\xF6\

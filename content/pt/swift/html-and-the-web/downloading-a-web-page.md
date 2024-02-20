@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/swift/downloading-a-web-page/
 date: 2024-01-20 17:45:05.028676-07:00
 description: "Baixar uma p\xE1gina da web \xE9 basicamente pegar dados de um site\
   \ para us\xE1-los no seu app. Programadores fazem isso para obter conte\xFAdo atualizado,\
   \ interagir\u2026"
-lastmod: 2024-02-18 23:08:58.489816
+lastmod: 2024-02-19 22:05:05.982295
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 basicamente pegar dados de um site para\
   \ us\xE1-los no seu app. Programadores fazem isso para obter conte\xFAdo atualizado,\

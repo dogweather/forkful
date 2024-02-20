@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:18.111736-07:00
 description: "Att l\xE4sa kommandoradsargument i Visual Basic for Applications (VBA)\
   \ inneb\xE4r att man tillg\xE5r parametrar som passerats till ditt program vid k\xF6\
   rning. Denna\u2026"
-lastmod: 2024-02-18 23:08:51.642985
+lastmod: 2024-02-19 22:04:56.966857
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa kommandoradsargument i Visual Basic for Applications (VBA) inneb\xE4\
   r att man tillg\xE5r parametrar som passerats till ditt program vid k\xF6rning.\

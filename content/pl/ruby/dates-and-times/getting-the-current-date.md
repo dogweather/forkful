@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/ruby/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:39.412192-07:00
 description: "Pobieranie bie\u017C\u0105cej daty to kluczowe zadanie w niemal ka\u017C\
   dym projekcie programistycznym, od rejestrowania aktywno\u015Bci w aplikacji po\
   \ generowanie raport\xF3w\u2026"
-lastmod: 2024-02-18 23:08:50.136001
+lastmod: 2024-02-19 22:04:55.125742
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty to kluczowe zadanie w niemal ka\u017C\
   dym projekcie programistycznym, od rejestrowania aktywno\u015Bci w aplikacji po\

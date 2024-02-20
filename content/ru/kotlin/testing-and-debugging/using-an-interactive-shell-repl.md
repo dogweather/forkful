@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/kotlin/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:46.916091-07:00
@@ -13,7 +11,7 @@ description: "REPL (Read-Eval-Print Loop \u2014 \u0427\u0442\u0435\u043D\u0438\u
   \u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F. \u041F\u0440\
   \u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\
   \u043B\u044C\u0437\u0443\u044E\u0442 \u0435\u0451 \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:08:56.946092
+lastmod: 2024-02-19 22:05:03.932345
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop \u2014 \u0427\u0442\u0435\u043D\u0438\u0435-\u0412\
   \u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435-\u0412\u044B\u0432\u043E\u0434\

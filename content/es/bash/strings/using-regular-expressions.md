@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/bash/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:53.962916-07:00
 description: "Las expresiones regulares (regex) en Bash te permiten buscar, manipular\
   \ y manejar cadenas de caracteres y archivos bas\xE1ndote en patrones espec\xED\
   ficos. Los\u2026"
-lastmod: 2024-02-18 23:09:10.154407
+lastmod: 2024-02-19 22:05:17.741820
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Bash te permiten buscar, manipular\
   \ y manejar cadenas de caracteres y archivos bas\xE1ndote en patrones espec\xED\

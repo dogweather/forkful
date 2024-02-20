@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elixir/rounding-numbers/
 date: 2024-01-26 03:43:49.116126-07:00
 description: "Das Runden von Zahlen bedeutet, sie zu einem nahegelegenen Wert zu justieren,\
   \ um sie zu vereinfachen oder eine bestimmte Genauigkeit zu erreichen. Das ist\u2026"
-lastmod: 2024-02-18 23:09:04.546484
+lastmod: 2024-02-19 22:05:12.506439
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, sie zu einem nahegelegenen Wert zu justieren,\
   \ um sie zu vereinfachen oder eine bestimmte Genauigkeit zu erreichen. Das ist\u2026"

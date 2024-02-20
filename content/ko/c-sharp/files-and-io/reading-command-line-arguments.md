@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/reading-command-line-arguments/
 date: 2024-01-20 17:55:58.925527-07:00
 description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \uC0AC\
   \uC6A9\uC790\uAC00 \uD504\uB85C\uADF8\uB7A8\uC744 \uC2DC\uC791\uD560 \uB54C \uD30C\
@@ -9,7 +7,7 @@ description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \u
   \ \uD589\uB3D9\uC744 \uC870\uC815\uD560 \uC218 \uC788\uAE30 \uB54C\uBB38\uC5D0 \uAC1C\
   \uBC1C\uC790\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.244674
+lastmod: 2024-02-19 22:05:14.167704
 model: gpt-4-1106-preview
 summary: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \uC0AC\uC6A9\
   \uC790\uAC00 \uD504\uB85C\uADF8\uB7A8\uC744 \uC2DC\uC791\uD560 \uB54C \uD30C\uB77C\

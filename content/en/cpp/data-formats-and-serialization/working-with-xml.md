@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/working-with-xml/
 date: 2024-01-25 03:39:47.449718-07:00
 description: "Working with XML means parsing, creating, and manipulating XML (eXtensible\
   \ Markup Language) data. Programmers manage XML to handle structured data\u2026"
-lastmod: 2024-02-18 23:09:11.379016
+lastmod: 2024-02-19 22:05:18.841922
 model: gpt-4-1106-preview
 summary: "Working with XML means parsing, creating, and manipulating XML (eXtensible\
   \ Markup Language) data. Programmers manage XML to handle structured data\u2026"

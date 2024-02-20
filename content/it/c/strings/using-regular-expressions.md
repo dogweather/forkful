@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:49.423219-07:00
 description: "Le espressioni regolari (regex) offrono un modo per cercare, corrispondere\
   \ e manipolare stringhe utilizzando schemi definiti. I programmatori le usano\u2026"
-lastmod: 2024-02-18 23:08:56.327851
+lastmod: 2024-02-19 22:05:02.965309
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) offrono un modo per cercare, corrispondere\
   \ e manipolare stringhe utilizzando schemi definiti. I programmatori le usano\u2026"

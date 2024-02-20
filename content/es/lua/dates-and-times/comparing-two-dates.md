@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/lua/comparing-two-dates/
 date: 2024-01-20 17:33:39.486162-07:00
 description: "Comparar dos fechas es ver si son iguales, cu\xE1l viene antes o despu\xE9\
   s. Programadores lo hacen para eventos, estad\xEDsticas, funciones de recordatorio\
   \ y todo\u2026"
-lastmod: 2024-02-18 23:09:10.133028
+lastmod: 2024-02-19 22:05:17.722156
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas es ver si son iguales, cu\xE1l viene antes o despu\xE9\
   s. Programadores lo hacen para eventos, estad\xEDsticas, funciones de recordatorio\

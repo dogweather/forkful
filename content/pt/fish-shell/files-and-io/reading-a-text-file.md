@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/reading-a-text-file/
 date: 2024-01-20 17:54:14.153382-07:00
 description: "Ler um arquivo de texto \xE9 acessar o conte\xFAdo de um arquivo no\
   \ formato de texto simples. Programadores fazem isso para processamento, an\xE1\
   lise de dados e\u2026"
-lastmod: 2024-02-18 23:08:58.592891
+lastmod: 2024-02-19 22:05:06.091642
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 acessar o conte\xFAdo de um arquivo no formato\
   \ de texto simples. Programadores fazem isso para processamento, an\xE1lise de dados\

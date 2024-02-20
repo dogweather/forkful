@@ -1,9 +1,7 @@
 ---
-aliases:
-- /ja/powershell/organizing-code-into-functions/
 date: 2024-01-26 01:11:55.083867-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.120229
+lastmod: 2024-02-19 22:05:01.566626
 model: gpt-4-1106-preview
 summary: "\u2026"
 title: "\u30B3\u30FC\u30C9\u3092\u95A2\u6570\u306B\u6574\u7406\u3059\u308B"

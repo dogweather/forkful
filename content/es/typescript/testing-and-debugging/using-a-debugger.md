@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/using-a-debugger/
 date: 2024-01-26 04:10:58.945322-07:00
 description: "Un depurador es una herramienta que le permite examinar y cambiar los\
   \ entresijos de su c\xF3digo mientras se ejecuta. Los programadores lo utilizan\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:09.707785
+lastmod: 2024-02-19 22:05:17.335046
 model: gpt-4-0125-preview
 summary: "Un depurador es una herramienta que le permite examinar y cambiar los entresijos\
   \ de su c\xF3digo mientras se ejecuta. Los programadores lo utilizan para\u2026"

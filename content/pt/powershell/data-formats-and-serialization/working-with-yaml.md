@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/powershell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:22.901371-07:00
 description: "YAML, ou YAML Ain't Markup Language, \xE9 uma linguagem de serializa\xE7\
   \xE3o de dados leg\xEDvel por humanos. Programadores frequentemente a utilizam para\
   \ arquivos\u2026"
-lastmod: 2024-02-18 23:08:58.388952
+lastmod: 2024-02-19 22:05:05.875004
 model: gpt-4-0125-preview
 summary: "YAML, ou YAML Ain't Markup Language, \xE9 uma linguagem de serializa\xE7\
   \xE3o de dados leg\xEDvel por humanos. Programadores frequentemente a utilizam para\

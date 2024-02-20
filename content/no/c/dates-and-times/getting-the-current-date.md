@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:23.453916-07:00
 description: "\xC5 hente den n\xE5v\xE6rende datoen i C inneb\xE6rer \xE5 benytte\
   \ seg av det standard C-biblioteket for \xE5 hente og formatere systemets n\xE5\
   v\xE6rende dato og tid.\u2026"
-lastmod: 2024-02-18 23:08:54.405002
+lastmod: 2024-02-19 22:05:00.564533
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i C inneb\xE6rer \xE5 benytte seg\
   \ av det standard C-biblioteket for \xE5 hente og formatere systemets n\xE5v\xE6\

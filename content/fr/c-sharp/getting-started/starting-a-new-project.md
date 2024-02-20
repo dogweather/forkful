@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/starting-a-new-project/
 date: 2024-01-20 18:02:55.198465-07:00
 description: "D\xE9marrer un nouveau projet C#, c\u2019est cr\xE9er une base pour\
   \ transformer vos id\xE9es en code op\xE9rationnel. Les programmeurs se lancent\
   \ dans de nouveaux projets\u2026"
-lastmod: 2024-02-18 23:09:08.828522
+lastmod: 2024-02-19 22:05:16.528997
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet C#, c\u2019est cr\xE9er une base pour transformer\
   \ vos id\xE9es en code op\xE9rationnel. Les programmeurs se lancent dans de nouveaux\

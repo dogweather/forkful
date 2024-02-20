@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:14.192656-07:00
@@ -14,7 +12,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9
   \uAC04 \uC791\uC5C5\uC744 \uC6D0\uD65C\uD558\uAC8C \uCC98\uB9AC\uD560 \uC218 \uC788\
   \uB3C4\uB85D \uD558\uC5EC \uC18C\uD504\uD2B8\uC6E8\uC5B4\uAC00 \uC2E4\uC2DC\uAC04\
   \u2026"
-lastmod: 2024-02-18 23:09:06.432817
+lastmod: 2024-02-19 22:05:14.344994
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C\
   \ \uAC80\uC0C9\uD558\uB294 \uAC83\uC740 \uB85C\uAE45, \uC774\uBCA4\uD2B8 \uD0C0\uC784\

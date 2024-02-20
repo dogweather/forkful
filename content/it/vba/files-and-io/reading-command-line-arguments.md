@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:24.044188-07:00
 description: "Leggere gli argomenti della riga di comando in Visual Basic for Applications\
   \ (VBA) comporta l'accesso ai parametri passati al tuo programma\u2026"
-lastmod: 2024-02-18 23:08:55.739366
+lastmod: 2024-02-19 22:05:02.341625
 model: gpt-4-0125-preview
 summary: "Leggere gli argomenti della riga di comando in Visual Basic for Applications\
   \ (VBA) comporta l'accesso ai parametri passati al tuo programma\u2026"

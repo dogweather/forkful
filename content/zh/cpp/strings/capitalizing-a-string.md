@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/cpp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:08.506685-07:00
@@ -13,7 +11,7 @@ description: "\u5927\u5199\u5316\u5B57\u7B26\u4E32\u6D89\u53CA\u5C06\u5B57\u7B26
   \u7684\u5448\u73B0\u6216\u5904\u7406\u65B9\u5F0F\u4FDD\u6301\u4E00\u81F4\u6027\uFF0C\
   \u7279\u522B\u662F\u5728\u7528\u6237\u754C\u9762\u6216\u6570\u636E\u89C4\u8303\u5316\
   \u4EFB\u52A1\u4E2D\u3002"
-lastmod: 2024-02-18 23:08:59.390734
+lastmod: 2024-02-19 22:05:07.146874
 model: gpt-4-0125-preview
 summary: "\u5927\u5199\u5316\u5B57\u7B26\u4E32\u6D89\u53CA\u5C06\u5B57\u7B26\u4E32\
   \u4E2D\u6BCF\u4E2A\u5355\u8BCD\u7684\u521D\u59CB\u5B57\u7B26\uFF08\u5982\u679C\u5B83\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:36.867731-07:00
 description: "Assosiatiiviset taulukot, tunnetaan my\xF6s nimell\xE4 `std::map` tai\
   \ `std::unordered_map` C++:ssa, kuvaavat sillan taulukon indeksien ja todellisen\
   \ datan\u2026"
-lastmod: 2024-02-18 23:09:07.936173
+lastmod: 2024-02-19 22:05:15.753423
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tunnetaan my\xF6s nimell\xE4 `std::map` tai `std::unordered_map`\
   \ C++:ssa, kuvaavat sillan taulukon indeksien ja todellisen datan\u2026"

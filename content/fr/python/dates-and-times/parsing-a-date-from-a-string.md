@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/python/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:55.456151-07:00
 description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des informations textuelles sur la date et l'heure en un objet\
   \ datetime ou un\u2026"
-lastmod: 2024-02-18 23:09:08.350515
+lastmod: 2024-02-19 22:05:16.147718
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des informations textuelles sur la date et l'heure en un objet\

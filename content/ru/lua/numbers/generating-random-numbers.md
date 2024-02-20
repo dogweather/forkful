@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/lua/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:58:52.785699-07:00
@@ -14,7 +12,7 @@ description: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043
   \u043E\u0440\u044B\u0435 \u043C\u043E\u0433\u0443\u0442 \u0431\u044B\u0442\u044C\
   \ \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u044B \u0434\
   \u043B\u044F \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445\u2026"
-lastmod: 2024-02-18 23:08:57.145440
+lastmod: 2024-02-19 22:05:04.244718
 model: gpt-4-0125-preview
 summary: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043B\u0443\
   \u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 \u043F\

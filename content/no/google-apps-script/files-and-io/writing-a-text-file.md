@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:21.425028-07:00
 description: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data\
   \ p\xE5 en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk\
   \ eller analyse.\u2026"
-lastmod: 2024-02-18 23:08:53.500998
+lastmod: 2024-02-19 22:04:59.616573
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data p\xE5\
   \ en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk eller\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/concatenating-strings/
 date: 2024-01-20 17:35:52.736175-07:00
 description: "Concatenare stringhe significa unire due o pi\xF9 sequenze di caratteri\
   \ in una sola. I programmatori lo fanno per costruire messaggi dinamici, combinare\u2026"
-lastmod: 2024-02-18 23:08:55.632806
+lastmod: 2024-02-19 22:05:02.228215
 model: gpt-4-1106-preview
 summary: "Concatenare stringhe significa unire due o pi\xF9 sequenze di caratteri\
   \ in una sola. I programmatori lo fanno per costruire messaggi dinamici, combinare\u2026"

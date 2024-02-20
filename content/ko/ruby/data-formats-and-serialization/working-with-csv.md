@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:20.828798-07:00
@@ -12,7 +10,7 @@ description: "\uB8E8\uBE44(Ruby)\uC5D0\uC11C CSV \uD30C\uC77C\uC744 \uB2E4\uB8E8
   \ \uC704\uD574 \uC0AC\uC6A9\uD558\uBA70, \uC774\uB294 \uB370\uC774\uD130 \uC870\uC791\
   \uC774\uB098 \uBD84\uC11D\uC744 \uB2E4\uB8E8\uB294 \uC791\uC5C5\uC5D0\uC11C \uC911\
   \uC694\uD55C \uAE30\uC220\uC774 \uB429\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:07.060776
+lastmod: 2024-02-19 22:05:14.941818
 model: gpt-4-0125-preview
 summary: "\uB8E8\uBE44(Ruby)\uC5D0\uC11C CSV \uD30C\uC77C\uC744 \uB2E4\uB8E8\uB294\
   \ \uAC83\uC740 \uD45C \uD615\uC2DD \uB370\uC774\uD130\uB97C \uCC98\uB9AC\uD558\uB294\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/handling-errors/
 date: 2024-01-26 00:55:46.758824-07:00
 description: "\xC5 h\xE5ndtere feil i koding handler om \xE5 forvente det uventede.\
   \ Det er kunsten \xE5 planlegge for n\xE5r ting g\xE5r galt, slik at du kan holde\
   \ programmet ditt i jevn\u2026"
-lastmod: 2024-02-18 23:08:54.022872
+lastmod: 2024-02-19 22:05:00.202420
 model: gpt-4-1106-preview
 summary: "\xC5 h\xE5ndtere feil i koding handler om \xE5 forvente det uventede. Det\
   \ er kunsten \xE5 planlegge for n\xE5r ting g\xE5r galt, slik at du kan holde programmet\

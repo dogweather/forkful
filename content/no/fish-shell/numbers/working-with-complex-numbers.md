@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/fish-shell/working-with-complex-numbers/
 date: 2024-01-26 04:39:59.559297-07:00
 description: "Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt\
   \ komplekst plan. Programmerere bruker dem innen felt som ingeni\xF8rvitenskap,\u2026"
-lastmod: 2024-02-18 23:08:54.343707
+lastmod: 2024-02-19 22:05:00.497692
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt\
   \ komplekst plan. Programmerere bruker dem innen felt som ingeni\xF8rvitenskap,\u2026"

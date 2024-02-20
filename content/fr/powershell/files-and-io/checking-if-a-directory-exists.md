@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/powershell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:03.646255-07:00
 description: "Dans PowerShell, v\xE9rifier si un r\xE9pertoire existe est une t\xE2\
   che courante qui aide les scripts \xE0 prendre des d\xE9cisions bas\xE9es sur la\
   \ structure du syst\xE8me\u2026"
-lastmod: 2024-02-18 23:09:09.084176
+lastmod: 2024-02-19 22:05:16.764508
 model: gpt-4-0125-preview
 summary: "Dans PowerShell, v\xE9rifier si un r\xE9pertoire existe est une t\xE2che\
   \ courante qui aide les scripts \xE0 prendre des d\xE9cisions bas\xE9es sur la structure\

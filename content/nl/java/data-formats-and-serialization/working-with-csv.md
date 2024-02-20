@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:21.488753-07:00
 description: "Werken met CSV, wat staat voor Comma-Separated Values (komma-gescheiden\
   \ waarden), betekent het omgaan met gegevens in een eenvoudig tekstformaat waarbij\u2026"
-lastmod: 2024-02-18 23:09:01.737582
+lastmod: 2024-02-19 22:05:09.756984
 model: gpt-4-0125-preview
 summary: "Werken met CSV, wat staat voor Comma-Separated Values (komma-gescheiden\
   \ waarden), betekent het omgaan met gegevens in een eenvoudig tekstformaat waarbij\u2026"

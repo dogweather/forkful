@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/using-regular-expressions/
 date: 2024-02-03 17:50:00.114506-07:00
 description: "Regular expressions (regex) provide a way to search, match, and manipulate\
   \ strings using defined patterns. Programmers use them extensively for tasks such\u2026"
-lastmod: 2024-02-18 23:09:11.512645
+lastmod: 2024-02-19 22:05:18.964043
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) provide a way to search, match, and manipulate\
   \ strings using defined patterns. Programmers use them extensively for tasks such\u2026"

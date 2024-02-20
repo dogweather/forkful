@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/handling-errors/
 date: 2024-01-26 00:55:27.363154-07:00
 description: "G\xE9rer les erreurs en programmation, c'est anticiper l'impr\xE9vu.\
   \ C'est l'art de planifier pour quand les choses d\xE9rapent afin de pouvoir maintenir\
   \ votre\u2026"
-lastmod: 2024-02-18 23:09:08.977802
+lastmod: 2024-02-19 22:05:16.665802
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs en programmation, c'est anticiper l'impr\xE9vu. C'est\
   \ l'art de planifier pour quand les choses d\xE9rapent afin de pouvoir maintenir\

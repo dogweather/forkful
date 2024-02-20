@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/cpp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:06.106143-07:00
 description: "Obtener la fecha actual en C++ es una tarea fundamental para programas\
   \ que necesitan procesar o mostrar fechas basadas en el reloj del sistema. Es\u2026"
-lastmod: 2024-02-18 23:09:10.322057
+lastmod: 2024-02-19 22:05:17.890161
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en C++ es una tarea fundamental para programas que\
   \ necesitan procesar o mostrar fechas basadas en el reloj del sistema. Es\u2026"

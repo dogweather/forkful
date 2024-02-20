@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/arduino/logging/
 date: 2024-01-26 00:58:53.400892-07:00
 description: "\"Loggning\" inneb\xE4r att man f\xF6r en journal \xF6ver h\xE4ndelser,\
   \ transaktioner eller aktiviteter som sker \xF6ver tid i ett system. Programmerare\
   \ anv\xE4nder det f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.049822
+lastmod: 2024-02-19 22:04:57.408809
 model: gpt-4-1106-preview
 summary: "\"Loggning\" inneb\xE4r att man f\xF6r en journal \xF6ver h\xE4ndelser,\
   \ transaktioner eller aktiviteter som sker \xF6ver tid i ett system. Programmerare\

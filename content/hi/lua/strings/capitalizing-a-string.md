@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/lua/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:41.911621-07:00
@@ -14,7 +12,7 @@ description: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u09
   \ \u092C\u093E\u0915\u0940 \u0938\u092D\u0940 \u0915\u094B \u091B\u094B\u091F\u0947\
   \ \u0905\u0915\u094D\u0937\u0930 (\u0932\u094B\u0905\u0930\u0915\u0947\u0938) \u092E\
   \u0947\u0902\u2026"
-lastmod: 2024-02-18 23:09:03.545946
+lastmod: 2024-02-19 22:05:11.535314
 model: gpt-4-0125-preview
 summary: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940\
   \ \u092A\u0942\u0902\u091C\u0940\u0915\u0930\u0923 \u0915\u093E \u092E\u0924\u0932\

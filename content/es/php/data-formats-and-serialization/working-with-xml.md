@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/php/working-with-xml/
 date: 2024-01-26 04:33:38.274788-07:00
 description: "XML es un lenguaje de marcado utilizado para almacenar y transportar\
   \ datos. Los programadores trabajan con XML para permitir la interoperabilidad entre\u2026"
-lastmod: 2024-02-18 23:09:10.100548
+lastmod: 2024-02-19 22:05:17.692282
 model: gpt-4-0125-preview
 summary: "XML es un lenguaje de marcado utilizado para almacenar y transportar datos.\
   \ Los programadores trabajan con XML para permitir la interoperabilidad entre\u2026"

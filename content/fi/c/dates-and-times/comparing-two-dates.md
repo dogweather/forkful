@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:38.482040-07:00
 description: "P\xE4iv\xE4m\xE4\xE4rien vertailu C-kieless\xE4 tarkoittaa niiden kronologisen\
   \ suhteen m\xE4\xE4ritt\xE4mist\xE4 - onko toinen p\xE4iv\xE4m\xE4\xE4r\xE4 ennen\
   \ toista tai ovatko ne samat. T\xE4m\xE4 kyky\u2026"
-lastmod: 2024-02-18 23:09:08.147015
+lastmod: 2024-02-19 22:05:15.947437
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu C-kieless\xE4 tarkoittaa niiden kronologisen\
   \ suhteen m\xE4\xE4ritt\xE4mist\xE4 - onko toinen p\xE4iv\xE4m\xE4\xE4r\xE4 ennen\

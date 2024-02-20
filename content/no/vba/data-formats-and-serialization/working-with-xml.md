@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/vba/working-with-xml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:55.728872-07:00
 description: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involverer\
   \ parsing, oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\u2026"
-lastmod: 2024-02-18 23:08:53.753922
+lastmod: 2024-02-19 22:04:59.892762
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involverer parsing,\
   \ oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:06.065997-07:00
 description: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un\
   \ langage de balisage), est une norme de s\xE9rialisation de donn\xE9es lisible\
   \ par l'homme,\u2026"
-lastmod: 2024-02-18 23:09:08.314536
+lastmod: 2024-02-19 22:05:16.115560
 model: gpt-4-0125-preview
 summary: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
   \ de balisage), est une norme de s\xE9rialisation de donn\xE9es lisible par l'homme,\u2026"

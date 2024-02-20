@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/javascript/refactoring/
 date: 2024-01-26 01:41:34.491469-07:00
 description: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza modificarne il comportamento esterno. I programmatori lo fanno\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:56.260939
+lastmod: 2024-02-19 22:05:02.894727
 model: gpt-4-0125-preview
 summary: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza modificarne il comportamento esterno. I programmatori lo fanno\

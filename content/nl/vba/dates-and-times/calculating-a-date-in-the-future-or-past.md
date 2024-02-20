@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:28.213938-07:00
 description: "Een datum in de toekomst of het verleden berekenen houdt in dat je een\
   \ datum bepaalt die een gespecificeerd aantal dagen, maanden of jaren vanaf een\u2026"
-lastmod: 2024-02-18 23:09:01.680659
+lastmod: 2024-02-19 22:05:09.702056
 model: gpt-4-0125-preview
 summary: "Een datum in de toekomst of het verleden berekenen houdt in dat je een datum\
   \ bepaalt die een gespecificeerd aantal dagen, maanden of jaren vanaf een\u2026"

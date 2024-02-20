@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/java/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:46.153866-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa pedir\
   \ datos de un servidor protegido con un usuario y contrase\xF1a. Los programadores\
   \ lo hacen\u2026"
-lastmod: 2024-02-18 23:09:09.844693
+lastmod: 2024-02-19 22:05:17.459696
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa pedir\
   \ datos de un servidor protegido con un usuario y contrase\xF1a. Los programadores\

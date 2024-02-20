@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/swift/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:39.157233-07:00
 description: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 essencial\
   \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift. Esta\
   \ tarefa\u2026"
-lastmod: 2024-02-18 23:08:58.504996
+lastmod: 2024-02-19 22:05:05.998250
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 essencial\
   \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift. Esta\

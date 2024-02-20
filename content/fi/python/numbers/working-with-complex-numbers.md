@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/working-with-complex-numbers/
 date: 2024-01-26 04:45:25.507465-07:00
 description: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b`\
   \ ovat reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`). Ohjelmoinnissa\
   \ niit\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.177176
+lastmod: 2024-02-19 22:05:15.051341
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b` ovat\
   \ reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`). Ohjelmoinnissa niit\xE4\

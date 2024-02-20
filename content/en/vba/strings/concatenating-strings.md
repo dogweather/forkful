@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/concatenating-strings/
 date: 2024-02-01 21:30:36.235039-07:00
 description: "Concatenation in Visual Basic for Applications (VBA) involves joining\
   \ two or more strings into a single entity. This is a fundamental task in programming,\u2026"
-lastmod: 2024-02-18 23:09:10.881886
+lastmod: 2024-02-19 22:05:18.395659
 model: gpt-4-0125-preview
 summary: "Concatenation in Visual Basic for Applications (VBA) involves joining two\
   \ or more strings into a single entity. This is a fundamental task in programming,\u2026"

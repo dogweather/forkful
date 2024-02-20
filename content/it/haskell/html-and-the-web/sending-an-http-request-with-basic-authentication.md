@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/haskell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:55.842721-07:00
 description: "L'autenticazione di base HTTP \xE8 un metodo per inviare le credenziali\
   \ (username e password) in un'intestazione HTTP. I programmatori la utilizzano per\u2026"
-lastmod: 2024-02-18 23:08:55.929918
+lastmod: 2024-02-19 22:05:02.540535
 model: gpt-4-1106-preview
 summary: "L'autenticazione di base HTTP \xE8 un metodo per inviare le credenziali\
   \ (username e password) in un'intestazione HTTP. I programmatori la utilizzano per\u2026"

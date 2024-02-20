@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elm/starting-a-new-project/
 date: 2024-01-20 18:03:26.952097-07:00
 description: "Zaczynanie nowego projektu to jak otwieranie nowej, pustej ksi\u0105\
   \u017Cki, w kt\xF3r\u0105 mo\u017Cemy wpisa\u0107 dowolny kod. Programi\u015Bci\
   \ rozpoczynaj\u0105 nowe projekty, by tworzy\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.519586
+lastmod: 2024-02-19 22:04:54.452457
 model: gpt-4-1106-preview
 summary: "Zaczynanie nowego projektu to jak otwieranie nowej, pustej ksi\u0105\u017C\
   ki, w kt\xF3r\u0105 mo\u017Cemy wpisa\u0107 dowolny kod. Programi\u015Bci rozpoczynaj\u0105\

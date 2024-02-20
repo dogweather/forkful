@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/haskell/working-with-xml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:01.933435-07:00
@@ -13,7 +11,7 @@ description: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML \u0432 Haskell \u0
   \u0430\u0432\u043B\u044F\u044E\u0442 XML \u0434\u043B\u044F \u0432\u0437\u0430\u0438\
   \u043C\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0441 \u043C\u043D\
   \u043E\u0436\u0435\u0441\u0442\u0432\u043E\u043C\u2026"
-lastmod: 2024-02-18 23:08:57.078082
+lastmod: 2024-02-19 22:05:04.136487
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML \u0432 Haskell \u0432\u043A\
   \u043B\u044E\u0447\u0430\u0435\u0442 \u0432 \u0441\u0435\u0431\u044F \u0430\u043D\

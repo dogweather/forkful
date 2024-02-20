@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elm/handling-errors/
 date: 2024-01-26 00:51:16.957302-07:00
 description: "Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit\
   \ Problemen umgehen kann, wenn etwas schief geht. Programmierer machen das, um\u2026"
-lastmod: 2024-02-18 23:09:04.789510
+lastmod: 2024-02-19 22:05:12.737407
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit Problemen\
   \ umgehen kann, wenn etwas schief geht. Programmierer machen das, um\u2026"

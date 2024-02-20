@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/elixir/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:24.563844-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) implica leer\
   \ y escribir datos en estos archivos, una necesidad com\xFAn para tareas que requieren\
   \ la\u2026"
-lastmod: 2024-02-18 23:09:09.681377
+lastmod: 2024-02-19 22:05:17.311506
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica leer y escribir\
   \ datos en estos archivos, una necesidad com\xFAn para tareas que requieren la\u2026"

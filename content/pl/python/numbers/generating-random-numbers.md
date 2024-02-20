@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/python/generating-random-numbers/
 date: 2024-01-27 20:35:29.409198-07:00
 description: "Generowanie losowych liczb polega na tworzeniu liczb, kt\xF3rych nie\
   \ mo\u017Cna rozs\u0105dnie przewidzie\u0107 lepiej ni\u017C przez przypadek, co\
   \ jest kluczowe dla rozwoju\u2026"
-lastmod: 2024-02-18 23:08:49.218430
+lastmod: 2024-02-19 22:04:54.129495
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb polega na tworzeniu liczb, kt\xF3rych nie mo\u017C\
   na rozs\u0105dnie przewidzie\u0107 lepiej ni\u017C przez przypadek, co jest kluczowe\

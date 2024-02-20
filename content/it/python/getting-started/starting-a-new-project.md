@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/python/starting-a-new-project/
 date: 2024-01-20 18:04:26.791036-07:00
 description: "Iniziare un nuovo progetto in Python significa creare un ambiente dal\
   \ nulla dove il tuo codice vivr\xE0 e respirer\xE0. Programmatore lo fa per organizzare\
   \ il\u2026"
-lastmod: 2024-02-18 23:08:55.521925
+lastmod: 2024-02-19 22:05:02.108926
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto in Python significa creare un ambiente dal nulla\
   \ dove il tuo codice vivr\xE0 e respirer\xE0. Programmatore lo fa per organizzare\

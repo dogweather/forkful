@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/c/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:17.883044-07:00
 description: "I C-programmering gj\xF8r det mulig \xE5 lese kommandolinjeargumenter\
   \ at programmer kan akseptere inndata direkte fra terminalen, noe som \xF8ker fleksibiliteten\u2026"
-lastmod: 2024-02-18 23:08:54.410209
+lastmod: 2024-02-19 22:05:00.570309
 model: gpt-4-0125-preview
 summary: "I C-programmering gj\xF8r det mulig \xE5 lese kommandolinjeargumenter at\
   \ programmer kan akseptere inndata direkte fra terminalen, noe som \xF8ker fleksibiliteten\u2026"

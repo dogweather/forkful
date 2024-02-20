@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/c-sharp/extracting-substrings/
 date: 2024-01-20 17:45:32.722945-07:00
 description: "Substringit ovat jonoista poimittuja osia. K\xE4ytt\xE4m\xE4ll\xE4 niit\xE4\
   , voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan."
-lastmod: 2024-02-18 23:09:07.608613
+lastmod: 2024-02-19 22:05:15.455467
 model: gpt-4-1106-preview
 summary: "Substringit ovat jonoista poimittuja osia. K\xE4ytt\xE4m\xE4ll\xE4 niit\xE4\
   , voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan."

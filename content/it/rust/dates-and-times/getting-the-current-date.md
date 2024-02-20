@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/rust/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:48.111940-07:00
 description: "Il recupero della data corrente in Rust \xE8 un compito comune per attivit\xE0\
   \ come la registrazione, operazioni basate sul tempo o semplicemente per\u2026"
-lastmod: 2024-02-18 23:08:55.690424
+lastmod: 2024-02-19 22:05:02.289563
 model: gpt-4-0125-preview
 summary: "Il recupero della data corrente in Rust \xE8 un compito comune per attivit\xE0\
   \ come la registrazione, operazioni basate sul tempo o semplicemente per\u2026"

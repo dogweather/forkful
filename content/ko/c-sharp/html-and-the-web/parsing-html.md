@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:47.309785-07:00
@@ -13,7 +11,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C HTML \uD30C\uC2F1\uC740
   \uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uC704\uD574 \uC6F9 \uD398\uC774\uC9C0\uB098\
   \ HTML \uBB38\uC11C\uB97C \uB3D9\uC801\uC73C\uB85C \uC218\uC815\uD558\uB294 \uB4F1\
   \uC758\u2026"
-lastmod: 2024-02-18 23:09:06.215903
+lastmod: 2024-02-19 22:05:14.141865
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML\
   \ \uBB38\uC11C\uC758 \uAD6C\uC870\uB97C \uBD84\uC11D\uD558\uACE0, \uADF8 \uB0B4\uC6A9\

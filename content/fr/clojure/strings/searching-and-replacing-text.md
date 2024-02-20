@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/searching-and-replacing-text/
 date: 2024-01-20 17:57:46.519593-07:00
 description: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache\
   \ avec des mots pour les troquer contre d'autres. Les programmeurs le font pour\
   \ corriger\u2026"
-lastmod: 2024-02-18 23:09:08.370519
+lastmod: 2024-02-19 22:05:16.165971
 model: gpt-4-1106-preview
 summary: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache avec\
   \ des mots pour les troquer contre d'autres. Les programmeurs le font pour corriger\u2026"

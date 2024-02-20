@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/c-sharp/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:57:37.010854-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0432\u0435\u043
   \u0442\u044B \u0434\u0435\u043B\u0430\u044E\u0442 \u044D\u0442\u043E \u0434\u043B\
   \u044F \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u0434\u0430\u043D\
   \u043D\u044B\u0445,\u2026"
-lastmod: 2024-02-18 23:08:56.994329
+lastmod: 2024-02-19 22:05:04.007611
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0432\u0435\u0431-\u0441\
   \u0442\u0440\u0430\u043D\u0438\u0446\u044B \u043E\u0437\u043D\u0430\u0447\u0430\u0435\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/vba/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:18.172077-07:00
 description: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), till\xE5ter anv\xE4\
   ndare att mata in kommandon, exekvera dem och se resultaten i realtid. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.628479
+lastmod: 2024-02-19 22:04:56.951120
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), till\xE5ter anv\xE4\
   ndare att mata in kommandon, exekvera dem och se resultaten i realtid. Programmerare\u2026"

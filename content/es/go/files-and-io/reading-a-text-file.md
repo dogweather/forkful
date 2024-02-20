@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/go/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:05.794803-07:00
 description: "Leer un archivo de texto en Go implica acceder y recuperar contenido\
   \ de un archivo almacenado en disco para su procesamiento o an\xE1lisis. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:09.476026
+lastmod: 2024-02-19 22:05:17.133743
 model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en Go implica acceder y recuperar contenido de\
   \ un archivo almacenado en disco para su procesamiento o an\xE1lisis. Los programadores\u2026"

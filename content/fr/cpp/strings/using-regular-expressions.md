@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/cpp/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:18.232717-07:00
 description: "Les expressions r\xE9guli\xE8res en C++ sont des s\xE9quences de caract\xE8\
   res qui d\xE9finissent un motif de recherche, utilis\xE9 pour la correspondance\
   \ ou la\u2026"
-lastmod: 2024-02-18 23:09:09.149238
+lastmod: 2024-02-19 22:05:16.824152
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res en C++ sont des s\xE9quences de caract\xE8\
   res qui d\xE9finissent un motif de recherche, utilis\xE9 pour la correspondance\

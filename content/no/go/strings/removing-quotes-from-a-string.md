@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:12.180245-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 eliminere\
   \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng.\u2026"
-lastmod: 2024-02-18 23:08:53.423334
+lastmod: 2024-02-19 22:04:59.532477
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 eliminere\
   \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng.\u2026"

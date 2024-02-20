@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:48.383720-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) sont des motifs utilis\xE9\
   s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de caract\xE8\
   res. Les\u2026"
-lastmod: 2024-02-18 23:09:08.275743
+lastmod: 2024-02-19 22:05:16.080766
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) sont des motifs utilis\xE9s pour\
   \ rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de caract\xE8\

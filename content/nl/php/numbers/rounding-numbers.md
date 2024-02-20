@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:54.251152-07:00
 description: "Getallen afronden betekent het afhakken van decimale getallen tot een\
   \ vastgelegde nauwkeurigheid, vaak tot hele getallen. Programmeurs ronden af om\u2026"
-lastmod: 2024-02-18 23:09:01.939388
+lastmod: 2024-02-19 22:05:09.961605
 model: gpt-4-0125-preview
 summary: "Getallen afronden betekent het afhakken van decimale getallen tot een vastgelegde\
   \ nauwkeurigheid, vaak tot hele getallen. Programmeurs ronden af om\u2026"

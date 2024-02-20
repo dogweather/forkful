@@ -1,9 +1,7 @@
 ---
-aliases:
-- /ja/haskell/logging/
 date: 2024-01-26 01:07:37.660826-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.962957
+lastmod: 2024-02-19 22:05:01.337713
 model: gpt-4-1106-preview
 summary: "\u2026"
 title: "\u30ED\u30AE\u30F3\u30B0"

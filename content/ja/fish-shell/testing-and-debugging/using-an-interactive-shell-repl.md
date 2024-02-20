@@ -1,9 +1,7 @@
 ---
-aliases:
-- /ja/fish-shell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:14:17.046743-07:00
 description: "REPL\u3001\u3059\u306A\u308F\u3061Read-Eval-Print\u2026"
-lastmod: 2024-02-18 23:08:55.311027
+lastmod: 2024-02-19 22:05:01.847245
 model: gpt-4-0125-preview
 summary: "REPL\u3001\u3059\u306A\u308F\u3061Read-Eval-Print\u2026"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\

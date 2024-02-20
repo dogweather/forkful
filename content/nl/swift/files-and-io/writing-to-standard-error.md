@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:42.540861-07:00
 description: "Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten\
   \ naar een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd\u2026"
-lastmod: 2024-02-18 23:09:02.247108
+lastmod: 2024-02-19 22:05:10.260731
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten naar\
   \ een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd\u2026"

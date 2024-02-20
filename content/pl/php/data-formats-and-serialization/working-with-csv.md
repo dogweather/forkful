@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/php/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:45.548710-07:00
 description: "Praca z CSV (Comma-Separated Values - warto\u015Bciami rozdzielonymi\
   \ przecinkami) polega na odczycie z i zapisie danych do plik\xF3w CSV, popularnego\
   \ formatu\u2026"
-lastmod: 2024-02-18 23:08:49.719305
+lastmod: 2024-02-19 22:04:54.655496
 model: gpt-4-0125-preview
 summary: "Praca z CSV (Comma-Separated Values - warto\u015Bciami rozdzielonymi przecinkami)\
   \ polega na odczycie z i zapisie danych do plik\xF3w CSV, popularnego formatu\u2026"

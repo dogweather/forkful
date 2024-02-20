@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:00.935512-07:00
 description: "Stringconcatenatie is het aan elkaar rijgen van twee of meer strings\
   \ achter elkaar. Programmeurs doen dit om zinnen te bouwen, berichten te cre\xEB\
   ren of\u2026"
-lastmod: 2024-02-18 23:09:02.173927
+lastmod: 2024-02-19 22:05:10.190929
 model: gpt-4-0125-preview
 summary: "Stringconcatenatie is het aan elkaar rijgen van twee of meer strings achter\
   \ elkaar. Programmeurs doen dit om zinnen te bouwen, berichten te cre\xEBren of\u2026"

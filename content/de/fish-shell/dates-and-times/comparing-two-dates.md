@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/fish-shell/comparing-two-dates/
 date: 2024-01-20 17:32:45.268915-07:00
 description: "Das Vergleichen von zwei Daten bedeutet, sie hinsichtlich ihrer zeitlichen\
   \ Reihenfolge zu pr\xFCfen. Programmierer machen das, um Zeitabschnitte zu\u2026"
-lastmod: 2024-02-18 23:09:05.339523
+lastmod: 2024-02-19 22:05:13.260889
 model: gpt-4-1106-preview
 summary: "Das Vergleichen von zwei Daten bedeutet, sie hinsichtlich ihrer zeitlichen\
   \ Reihenfolge zu pr\xFCfen. Programmierer machen das, um Zeitabschnitte zu\u2026"

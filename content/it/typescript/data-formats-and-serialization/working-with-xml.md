@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/typescript/working-with-xml/
 date: 2024-01-26 04:36:09.367418-07:00
 description: "Lavorare con XML significa analizzare, manipolare e scrivere dati XML\
   \ utilizzando la programmazione. I programmatori gestiscono XML per lo scambio di\
   \ dati\u2026"
-lastmod: 2024-02-18 23:08:55.663974
+lastmod: 2024-02-19 22:05:02.261347
 model: gpt-4-0125-preview
 summary: "Lavorare con XML significa analizzare, manipolare e scrivere dati XML utilizzando\
   \ la programmazione. I programmatori gestiscono XML per lo scambio di dati\u2026"

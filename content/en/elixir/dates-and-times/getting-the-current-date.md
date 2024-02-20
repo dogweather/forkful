@@ -1,12 +1,10 @@
 ---
-aliases:
-- /en/elixir/getting-the-current-date/
 changelog:
 - 2024-02-05, dogweather, reviewed and corrected
 date: 2024-02-03 19:02:40.198503-07:00
 description: "Getting the current date in Elixir involves accessing the system's date\
   \ and time information, a common task for logging, data stamping, or any\u2026"
-lastmod: 2024-02-18 23:09:10.775852
+lastmod: 2024-02-19 22:05:18.300260
 model: gpt-4-0125-preview
 summary: "Getting the current date in Elixir involves accessing the system's date\
   \ and time information, a common task for logging, data stamping, or any\u2026"

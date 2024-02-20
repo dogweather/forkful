@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:50.247459-07:00
 description: "TOML is een acroniem voor Tom's Obvious, Minimal Language, een configuratiebestandsformaat\
   \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"
-lastmod: 2024-02-18 23:09:01.877749
+lastmod: 2024-02-19 22:05:09.894188
 model: gpt-4-0125-preview
 summary: "TOML is een acroniem voor Tom's Obvious, Minimal Language, een configuratiebestandsformaat\
   \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"

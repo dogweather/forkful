@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/typescript/using-a-debugger/
 date: 2024-01-26 04:11:26.627248-07:00
 description: "En debugger er et verkt\xF8y som lar deg unders\xF8ke og endre det indre\
   \ arbeidet i koden din mens den kj\xF8rer. Programmerere bruker den til \xE5 knuse\
   \ feil ved \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.649425
+lastmod: 2024-02-19 22:04:59.779643
 model: gpt-4-0125-preview
 summary: "En debugger er et verkt\xF8y som lar deg unders\xF8ke og endre det indre\
   \ arbeidet i koden din mens den kj\xF8rer. Programmerere bruker den til \xE5 knuse\

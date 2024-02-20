@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/working-with-toml/
 date: 2024-01-26 04:20:41.144861-07:00
 description: "TOML\uC744 \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \"Tom's Obvious,\
   \ Minimal Language\"\uC758 \uCD5C\uC18C\uD55C \uD615\uD0DC\uB85C \uB370\uC774\uD130\
@@ -10,7 +8,7 @@ description: "TOML\uC744 \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \"Tom's Obv
   \uB78C\uC774 \uC77D\uAE30 \uCE5C\uD654\uC801\uC778 \uBB38\uBC95\uC73C\uB85C \uBC15\
   \uC2A4 \uBC14\uAE65\uC5D0\uC11C \uBC14\uB85C \uC791\uB3D9\uD558\uB294 \uAC04\uB2E8\
   \uD55C \uAD6C\uC131\u2026"
-lastmod: 2024-02-18 23:09:05.726546
+lastmod: 2024-02-19 22:05:13.638053
 model: gpt-4-0125-preview
 summary: "TOML\uC744 \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \"Tom's Obvious,\
   \ Minimal Language\"\uC758 \uCD5C\uC18C\uD55C \uD615\uD0DC\uB85C \uB370\uC774\uD130\

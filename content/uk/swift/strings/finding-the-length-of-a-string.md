@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/swift/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:30.828742-07:00
 description: "Finding the length of a string in Swift is about getting the count of\
   \ characters it contains. Programmers do this to validate inputs, size elements,\u2026"
-lastmod: 2024-02-18 23:09:00.946139
+lastmod: 2024-02-19 22:05:08.987905
 model: gpt-4-1106-preview
 summary: "Finding the length of a string in Swift is about getting the count of characters\
   \ it contains. Programmers do this to validate inputs, size elements,\u2026"

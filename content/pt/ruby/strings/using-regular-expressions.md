@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/ruby/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:07.664577-07:00
 description: "Express\xF5es regulares (regex) em Ruby s\xE3o padr\xF5es usados para\
   \ combinar sequ\xEAncias de caracteres em strings, permitindo que desenvolvedores\
   \ pesquisem,\u2026"
-lastmod: 2024-02-18 23:08:58.653896
+lastmod: 2024-02-19 22:05:06.155277
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Ruby s\xE3o padr\xF5es usados para combinar\
   \ sequ\xEAncias de caracteres em strings, permitindo que desenvolvedores pesquisem,\u2026"

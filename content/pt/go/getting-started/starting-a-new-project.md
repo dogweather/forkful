@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:23.204047-07:00
 description: "Iniciar um novo projeto em Go envolve configurar um espa\xE7o de trabalho\
   \ e inicializ\xE1-lo com os m\xF3dulos Go necess\xE1rios. Os programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:57.669251
+lastmod: 2024-02-19 22:05:05.126189
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Go envolve configurar um espa\xE7o de trabalho\
   \ e inicializ\xE1-lo com os m\xF3dulos Go necess\xE1rios. Os programadores fazem\

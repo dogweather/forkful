@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/haskell/working-with-xml/
 date: 2024-01-26 04:31:53.537139-07:00
 description: "Att arbeta med XML i Haskell inneb\xE4r att tolka, manipulera och generera\
   \ XML-strukturer. Programmerare hanterar XML f\xF6r att interagera med m\xE5nga\u2026"
-lastmod: 2024-02-18 23:08:51.860918
+lastmod: 2024-02-19 22:04:57.201246
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Haskell inneb\xE4r att tolka, manipulera och generera\
   \ XML-strukturer. Programmerare hanterar XML f\xF6r att interagera med m\xE5nga\u2026"

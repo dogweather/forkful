@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/cpp/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:06.431703-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet,\
   \ bestimmte Zeichen aus einem String zu entfernen, die einer spezifischen Regel\
   \ folgen.\u2026"
-lastmod: 2024-02-18 23:09:05.172588
+lastmod: 2024-02-19 22:05:13.103598
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
   \ Zeichen aus einem String zu entfernen, die einer spezifischen Regel folgen.\u2026"

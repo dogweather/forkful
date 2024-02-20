@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/kotlin/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:06.766898-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en Kotlin implique de confirmer\
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9. Les programmeurs\
   \ r\xE9alisent cette t\xE2che\u2026"
-lastmod: 2024-02-18 23:09:08.796752
+lastmod: 2024-02-19 22:05:16.499574
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Kotlin implique de confirmer la\
   \ pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9. Les programmeurs\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:10.612838-07:00
 description: "We send an HTTP request with basic authentication to access protected\
   \ resources by including user credentials in the request header. Programmers use\
   \ it\u2026"
-lastmod: 2024-02-18 23:09:11.054176
+lastmod: 2024-02-19 22:05:18.553925
 model: gpt-4-1106-preview
 summary: "We send an HTTP request with basic authentication to access protected resources\
   \ by including user credentials in the request header. Programmers use it\u2026"

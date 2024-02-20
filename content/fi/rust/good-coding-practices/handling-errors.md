@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/handling-errors/
 date: 2024-01-26 00:59:38.034803-07:00
 description: "Virheenk\xE4sittely on toimien hallintaa, kun asiat eiv\xE4t mene odotetusti.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 k\xE4sitell\xE4kseen odottamattomia tilanteita,\
   \ varmistaakseen,\u2026"
-lastmod: 2024-02-18 23:09:07.371660
+lastmod: 2024-02-19 22:05:15.259233
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely on toimien hallintaa, kun asiat eiv\xE4t mene odotetusti.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 k\xE4sitell\xE4kseen odottamattomia tilanteita,\

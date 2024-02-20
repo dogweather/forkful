@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/clojure/reading-a-text-file/
 date: 2024-01-20 17:53:47.761549-07:00
 description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser. Les\
   \ programmeurs le font pour traiter des donn\xE9es, configurer des programmes ou\u2026"
-lastmod: 2024-02-18 23:09:08.405794
+lastmod: 2024-02-19 22:05:16.198136
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser. Les programmeurs\
   \ le font pour traiter des donn\xE9es, configurer des programmes ou\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:47.213583-07:00
 description: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
   \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"
-lastmod: 2024-02-18 23:09:01.852045
+lastmod: 2024-02-19 22:05:09.868927
 model: gpt-4-0125-preview
 summary: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
   \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"

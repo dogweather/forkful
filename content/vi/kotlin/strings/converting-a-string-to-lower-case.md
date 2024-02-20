@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:50.434107-07:00
@@ -8,7 +6,7 @@ description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th
   \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn m\u1ECDi k\xFD t\u1EF1 trong chu\u1ED7\
   i th\xE0nh ch\u1EEF th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o t\xEDnh nh\u1EA5t qu\xE1n\u2026"
-lastmod: 2024-02-18 23:08:50.636600
+lastmod: 2024-02-19 22:04:55.753407
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
   \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn m\u1ECDi k\xFD t\u1EF1 trong chu\u1ED7\

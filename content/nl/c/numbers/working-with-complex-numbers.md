@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:58.428380-07:00
 description: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel,\
   \ voorgesteld als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.365811
+lastmod: 2024-02-19 22:05:10.372724
 model: gpt-4-0125-preview
 summary: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel, voorgesteld\
   \ als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs\u2026"

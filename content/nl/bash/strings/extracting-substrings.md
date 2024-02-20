@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/bash/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:28.114197-07:00
 description: "Substringen extraheren betekent specifieke delen uit strings halen \u2014\
   \ denk aan het knippen van een stukje draad uit een trui. Programmeurs doen dit\
   \ om data\u2026"
-lastmod: 2024-02-18 23:09:02.025344
+lastmod: 2024-02-19 22:05:10.052665
 model: gpt-4-0125-preview
 summary: "Substringen extraheren betekent specifieke delen uit strings halen \u2014\
   \ denk aan het knippen van een stukje draad uit een trui. Programmeurs doen dit\

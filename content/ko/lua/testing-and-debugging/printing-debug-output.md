@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/printing-debug-output/
 date: 2024-01-20 17:53:05.269028-07:00
 description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC \uC2E4\uD589 \uC911\
   \ \uC815\uBCF4\uB97C \uCF58\uC194\uC5D0 \uD45C\uC2DC\uD569\uB2C8\uB2E4. \uC774\uB97C\
@@ -8,7 +6,7 @@ description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC \uC2E4\uD589 \u
   \uAC8C \uB3D9\uC791\uD558\uB294\uC9C0 \uD655\uC778\uD558\uACE0 \uBB38\uC81C\uB97C\
   \ \uC870\uAE30\uC5D0 \uBC1C\uACAC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.420138
+lastmod: 2024-02-19 22:05:14.332856
 model: gpt-4-1106-preview
 summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC \uC2E4\uD589 \uC911 \uC815\
   \uBCF4\uB97C \uCF58\uC194\uC5D0 \uD45C\uC2DC\uD569\uB2C8\uB2E4. \uC774\uB97C \uD1B5\

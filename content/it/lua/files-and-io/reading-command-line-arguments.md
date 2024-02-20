@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/lua/reading-command-line-arguments/
 date: 2024-01-20 17:56:31.334649-07:00
 description: "Leggere gli argomenti della riga di comando in Lua significa estrarre\
   \ i dati inseriti dall'utente quando avvia il tuo script. I programmatori fanno\
   \ questo\u2026"
-lastmod: 2024-02-18 23:08:56.025688
+lastmod: 2024-02-19 22:05:02.641943
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando in Lua significa estrarre i\
   \ dati inseriti dall'utente quando avvia il tuo script. I programmatori fanno questo\u2026"

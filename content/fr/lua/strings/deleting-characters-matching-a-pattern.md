@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:40.188453-07:00
 description: "Supprimer des caract\xE8res qui correspondent \xE0 un motif, c'est un\
   \ peu comme trier le bon grain de l'ivraie dans un texte. Les programmeurs font\
   \ \xE7a pour\u2026"
-lastmod: 2024-02-18 23:09:08.952288
+lastmod: 2024-02-19 22:05:16.641959
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res qui correspondent \xE0 un motif, c'est un peu\
   \ comme trier le bon grain de l'ivraie dans un texte. Les programmeurs font \xE7\

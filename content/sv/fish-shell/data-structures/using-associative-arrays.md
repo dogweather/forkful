@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/fish-shell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:59.211907-07:00
 description: "Associativa arrayer, eller hashmappar, l\xE5ter dig lagra data som nyckel-v\xE4\
   rdepar, vilket g\xF6r det enklare att organisera och h\xE4mta information med nyckeln.\u2026"
-lastmod: 2024-02-18 23:08:52.198819
+lastmod: 2024-02-19 22:04:57.574589
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller hashmappar, l\xE5ter dig lagra data som nyckel-v\xE4\
   rdepar, vilket g\xF6r det enklare att organisera och h\xE4mta information med nyckeln.\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/java/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:51.519459-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Javassa on perustoiminto,\
   \ jonka avulla ohjelmoijat voivat k\xE4sitell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4objekteja\
   \ toiminnoissa, kuten lokitukset,\u2026"
-lastmod: 2024-02-18 23:09:07.469443
+lastmod: 2024-02-19 22:05:15.351096
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Javassa on perustoiminto,\
   \ jonka avulla ohjelmoijat voivat k\xE4sitell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4objekteja\

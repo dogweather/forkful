@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/lua/reading-a-text-file/
 date: 2024-01-20 17:54:46.014268-07:00
 description: "I Lua l\xE4ser du en textfil f\xF6r att h\xE4mta information. Programmerare\
   \ g\xF6r det f\xF6r att spara, \xE4ndra eller anv\xE4nda data."
-lastmod: 2024-02-18 23:08:51.935411
+lastmod: 2024-02-19 22:04:57.283689
 model: gpt-4-1106-preview
 summary: "I Lua l\xE4ser du en textfil f\xF6r att h\xE4mta information. Programmerare\
   \ g\xF6r det f\xF6r att spara, \xE4ndra eller anv\xE4nda data."

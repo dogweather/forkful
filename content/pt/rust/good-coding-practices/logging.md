@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/logging/
 date: 2024-01-26 01:08:45.825534-07:00
 description: "Registrar logs \xE9 como manter um di\xE1rio para a sua aplica\xE7\xE3\
   o; \xE9 a pr\xE1tica de gravar eventos, erros e outros dados pertinentes durante\
   \ a execu\xE7\xE3o.\u2026"
-lastmod: 2024-02-18 23:08:57.935225
+lastmod: 2024-02-19 22:05:05.408597
 model: gpt-4-1106-preview
 summary: "Registrar logs \xE9 como manter um di\xE1rio para a sua aplica\xE7\xE3o;\
   \ \xE9 a pr\xE1tica de gravar eventos, erros e outros dados pertinentes durante\

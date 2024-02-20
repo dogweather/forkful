@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/java/generating-random-numbers/
 date: 2024-01-27 20:26:26.170970-07:00
 description: "Generating random numbers is about producing unpredictable sequences\
   \ or single values within a defined range. Programmers use this technique for a\
   \ variety\u2026"
-lastmod: 2024-02-18 23:09:10.926980
+lastmod: 2024-02-19 22:05:18.436954
 model: gpt-4-0125-preview
 summary: "Generating random numbers is about producing unpredictable sequences or\
   \ single values within a defined range. Programmers use this technique for a variety\u2026"

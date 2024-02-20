@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:03.595670-07:00
 description: "Calculer une date dans le futur ou le pass\xE9, c'est juste ajouter\
   \ ou soustraire du temps \xE0 une date donn\xE9e. Les programmeurs font \xE7a pour\
   \ g\xE9rer des\u2026"
-lastmod: 2024-02-18 23:09:09.223573
+lastmod: 2024-02-19 22:05:16.890744
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est juste ajouter ou soustraire\
   \ du temps \xE0 une date donn\xE9e. Les programmeurs font \xE7a pour g\xE9rer des\u2026"

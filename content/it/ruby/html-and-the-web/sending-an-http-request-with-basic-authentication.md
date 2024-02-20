@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:20.178057-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base significa fornire\
   \ username e password per accedere a risorse protette. Si fa questo per interagire\u2026"
-lastmod: 2024-02-18 23:08:56.382838
+lastmod: 2024-02-19 22:05:03.023102
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base significa fornire\
   \ username e password per accedere a risorse protette. Si fa questo per interagire\u2026"

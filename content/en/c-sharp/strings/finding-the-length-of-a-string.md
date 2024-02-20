@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:08.737490-07:00
 description: "Finding a string's length means counting its characters. We do it to\
   \ validate input, loop through characters, allocate resources, or simple curiosity\
   \ \u2013\u2026"
-lastmod: 2024-02-18 23:09:11.045464
+lastmod: 2024-02-19 22:05:18.546086
 model: gpt-4-1106-preview
 summary: "Finding a string's length means counting its characters. We do it to validate\
   \ input, loop through characters, allocate resources, or simple curiosity \u2013\

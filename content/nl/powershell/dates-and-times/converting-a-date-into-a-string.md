@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:44.093789-07:00
 description: "Een datum naar een string converteren in PowerShell betekent het veranderen\
   \ van een `DateTime` object naar een tekstformaat. Programmeurs doen dit om\u2026"
-lastmod: 2024-02-18 23:09:02.104431
+lastmod: 2024-02-19 22:05:10.125335
 model: gpt-4-0125-preview
 summary: "Een datum naar een string converteren in PowerShell betekent het veranderen\
   \ van een `DateTime` object naar een tekstformaat. Programmeurs doen dit om\u2026"

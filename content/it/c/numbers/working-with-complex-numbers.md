@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:51.855289-07:00
 description: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
   \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`. I\u2026"
-lastmod: 2024-02-18 23:08:56.332015
+lastmod: 2024-02-19 22:05:02.969776
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
   \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`. I\u2026"

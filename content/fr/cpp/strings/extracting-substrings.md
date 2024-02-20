@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/cpp/extracting-substrings/
 date: 2024-01-20 17:45:20.998984-07:00
 description: "Extraire des sous-cha\xEEnes, c'est prendre une partie sp\xE9cifique\
   \ d'une cha\xEEne de caract\xE8res. On fait \xE7a pour analyser, manipuler, ou valider\
   \ des donn\xE9es\u2026"
-lastmod: 2024-02-18 23:09:09.148127
+lastmod: 2024-02-19 22:05:16.823133
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est prendre une partie sp\xE9cifique d'une\
   \ cha\xEEne de caract\xE8res. On fait \xE7a pour analyser, manipuler, ou valider\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/parsing-html/
 date: 2024-01-20 15:30:39.019288-07:00
 description: "L'analyse (parsing) du HTML permet de lire et de manipuler le contenu\
   \ d'une page web. Les programmeurs le font pour extraire des donn\xE9es, automatiser\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:08.384417
+lastmod: 2024-02-19 22:05:16.178667
 summary: "L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une\
   \ page web. Les programmeurs le font pour extraire des donn\xE9es, automatiser des\u2026"
 title: Analyse syntaxique de HTML

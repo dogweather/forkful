@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/ruby/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:30.876893-07:00
 description: "R\xE9cup\xE9rer la date actuelle est une t\xE2che essentielle dans presque\
   \ tous les projets de programmation, que ce soit pour consigner des activit\xE9\
   s dans une\u2026"
-lastmod: 2024-02-18 23:09:09.418793
+lastmod: 2024-02-19 22:05:17.080543
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle est une t\xE2che essentielle dans presque\
   \ tous les projets de programmation, que ce soit pour consigner des activit\xE9\

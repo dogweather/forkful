@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:39.332731-07:00
@@ -9,7 +7,7 @@ description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xE
   \ kh\xF4ng \u0111\u1ECBnh tr\u01B0\u1EDBc ho\u1EB7c kh\xF4ng d\u1EF1 \u0111o\xE1\
   n \u0111\u01B0\u1EE3c. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng s\u1ED1 ng\u1EAB\
   u\u2026"
-lastmod: 2024-02-18 23:08:51.085537
+lastmod: 2024-02-19 22:04:56.297696
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xECnh li\xEA\
   n quan \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra nh\u1EEFng gi\xE1 tr\u1ECB s\u1ED1 kh\xF4\

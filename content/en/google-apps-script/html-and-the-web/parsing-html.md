@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/parsing-html/
 date: 2024-02-01 21:12:18.959791-07:00
 description: "Parsing HTML in Google Apps Script involves extracting data from HTML\
   \ content, which is particularly useful when interacting with web pages or web-based\u2026"
-lastmod: 2024-02-18 23:09:10.637177
+lastmod: 2024-02-19 22:05:18.174964
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Google Apps Script involves extracting data from HTML content,\
   \ which is particularly useful when interacting with web pages or web-based\u2026"

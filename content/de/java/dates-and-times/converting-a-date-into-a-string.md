@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/java/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:51.848668-07:00
 description: "Datum in String umzuwandeln bedeutet, ein Datumsobjekt in einen Text\
   \ umzuformen, der menschenlesbar ist. Programmierer machen das, weil Daten oft in\
   \ einer\u2026"
-lastmod: 2024-02-18 23:09:04.749168
+lastmod: 2024-02-19 22:05:12.699313
 model: gpt-4-1106-preview
 summary: "Datum in String umzuwandeln bedeutet, ein Datumsobjekt in einen Text umzuformen,\
   \ der menschenlesbar ist. Programmierer machen das, weil Daten oft in einer\u2026"

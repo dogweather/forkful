@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/kotlin/handling-errors/
 date: 2024-01-26 00:54:58.086191-07:00
 description: "La gestione degli errori \xE8 il modo in cui il tuo codice si occupa\
   \ dei problemi che emergono durante l'esecuzione, come se gestisse una palla curva\
   \ senza\u2026"
-lastmod: 2024-02-18 23:08:55.853184
+lastmod: 2024-02-19 22:05:02.461891
 model: gpt-4-1106-preview
 summary: "La gestione degli errori \xE8 il modo in cui il tuo codice si occupa dei\
   \ problemi che emergono durante l'esecuzione, come se gestisse una palla curva senza\u2026"

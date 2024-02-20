@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/ruby/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:07.879532-07:00
 description: "Att tolka HTML inneb\xE4r att bryta ned en bit HTML-kod f\xF6r att f\xF6\
   rst\xE5 dess struktur och inneh\xE5ll. Programmerare g\xF6r detta f\xF6r att extrahera\
   \ data, manipulera\u2026"
-lastmod: 2024-02-18 23:08:52.293255
+lastmod: 2024-02-19 22:04:57.682372
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r att bryta ned en bit HTML-kod f\xF6r att f\xF6\
   rst\xE5 dess struktur och inneh\xE5ll. Programmerare g\xF6r detta f\xF6r att extrahera\

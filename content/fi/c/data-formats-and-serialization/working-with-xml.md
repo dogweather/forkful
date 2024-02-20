@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/working-with-xml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:06.868349-07:00
 description: "XML:n k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\xE4 XML-dokumenttien\
   \ j\xE4sent\xE4misen, kyselyiden teon ja manipuloinnin k\xE4ytt\xE4en erilaisia\
   \ kirjastoja. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:08.161151
+lastmod: 2024-02-19 22:05:15.975054
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\xE4 XML-dokumenttien j\xE4\
   sent\xE4misen, kyselyiden teon ja manipuloinnin k\xE4ytt\xE4en erilaisia kirjastoja.\

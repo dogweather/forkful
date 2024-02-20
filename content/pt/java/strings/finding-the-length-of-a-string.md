@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/java/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:37.851640-07:00
 description: "Descobrir o comprimento de uma string significa contar quantos caracteres\
   \ ela tem. Programadores fazem isso para validar entradas, gerenciar formatos de\u2026"
-lastmod: 2024-02-18 23:08:58.009752
+lastmod: 2024-02-19 22:05:05.485509
 model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string significa contar quantos caracteres\
   \ ela tem. Programadores fazem isso para validar entradas, gerenciar formatos de\u2026"

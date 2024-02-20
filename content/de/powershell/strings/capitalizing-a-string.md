@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/powershell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:57.057018-07:00
 description: "Das Gro\xDFschreiben eines Strings in PowerShell beinhaltet die Umwandlung\
   \ des ersten Zeichens eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der\
   \ Rest\u2026"
-lastmod: 2024-02-18 23:09:05.081294
+lastmod: 2024-02-19 22:05:13.016612
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in PowerShell beinhaltet die Umwandlung\
   \ des ersten Zeichens eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:25.860601-07:00
@@ -8,7 +6,7 @@ description: "So s\xE1nh hai ng\xE0y trong PowerShell c\xF3 ngh\u0129a l\xE0 x\x
   c \u0111\u1ECBnh xem m\u1ED9t ng\xE0y c\xF3 s\u1EDBm h\u01A1n, gi\u1ED1ng nhau,\
   \ ho\u1EB7c mu\u1ED9n h\u01A1n ng\xE0y kia hay kh\xF4ng. C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn th\u01B0\u1EDDng\u2026"
-lastmod: 2024-02-18 23:08:50.947858
+lastmod: 2024-02-19 22:04:56.147834
 model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y trong PowerShell c\xF3 ngh\u0129a l\xE0 x\xE1c \u0111\
   \u1ECBnh xem m\u1ED9t ng\xE0y c\xF3 s\u1EDBm h\u01A1n, gi\u1ED1ng nhau, ho\u1EB7\

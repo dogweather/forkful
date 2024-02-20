@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/interpolating-a-string/
 date: 2024-01-20 17:50:32.841408-07:00
 description: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD\uC740 \uBCC0\uC218\uB098 \uD45C\uD604\
   \uC2DD\uC758 \uAC12\uC744 \uBB38\uC790\uC5F4\uC5D0 \uC9D1\uC5B4\uB123\uB294 \uAC83\
@@ -8,7 +6,7 @@ description: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD\uC740 \uBCC0\uC218\uB098 \uD45C\uD
   \uB85C \uBB38\uC790\uC5F4\uC744 \uAC31\uC2E0\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.733637
+lastmod: 2024-02-19 22:05:13.645038
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD\uC740 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\
   \uC758 \uAC12\uC744 \uBB38\uC790\uC5F4\uC5D0 \uC9D1\uC5B4\uB123\uB294 \uAC83\uC785\

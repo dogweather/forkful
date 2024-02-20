@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/extracting-substrings/
 date: 2024-01-20 17:44:56.986546-07:00
 description: "Utdrag av strenger er \xE5 hente deler fra en tekststreng. Programmerere\
   \ gj\xF8r det for \xE5 jobbe med spesifikke datasegmenter, validere input, eller\
   \ manipulere\u2026"
-lastmod: 2024-02-18 23:08:54.045491
+lastmod: 2024-02-19 22:05:00.227103
 model: gpt-4-1106-preview
 summary: "Utdrag av strenger er \xE5 hente deler fra en tekststreng. Programmerere\
   \ gj\xF8r det for \xE5 jobbe med spesifikke datasegmenter, validere input, eller\

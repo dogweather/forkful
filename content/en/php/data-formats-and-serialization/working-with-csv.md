@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/working-with-csv/
 date: 2024-02-03 19:03:26.357603-07:00
 description: "Working with CSV (Comma-Separated Values) involves reading from and\
   \ writing data to CSV files, a popular format for representing tabular data in plain\u2026"
-lastmod: 2024-02-18 23:09:11.159371
+lastmod: 2024-02-19 22:05:18.649820
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) involves reading from and writing\
   \ data to CSV files, a popular format for representing tabular data in plain\u2026"

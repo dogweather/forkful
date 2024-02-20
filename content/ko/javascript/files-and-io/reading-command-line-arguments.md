@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/reading-command-line-arguments/
 date: 2024-01-20 17:56:16.389163-07:00
 description: "Node.js\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC790\uB97C \uC77D\uB294\
   \ \uAC74 \uD504\uB85C\uADF8\uB7A8\uC5D0 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uC804\
@@ -8,7 +6,7 @@ description: "Node.js\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC790\uB97C \uC77D\u
   \uB85C \uBC0F \uC791\uC5C5 \uC635\uC158 \uB4F1\uC744 \uB3D9\uC801\uC73C\uB85C \uC9C0\
   \uC815\uD560 \uB54C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.836812
+lastmod: 2024-02-19 22:05:14.727742
 model: gpt-4-1106-preview
 summary: "Node.js\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC790\uB97C \uC77D\uB294 \uAC74\
   \ \uD504\uB85C\uADF8\uB7A8\uC5D0 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uC804\uB2EC\

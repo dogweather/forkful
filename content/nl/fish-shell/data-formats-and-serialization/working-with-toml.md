@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:44.692781-07:00
 description: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te\
   \ lezen en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.351320
+lastmod: 2024-02-19 22:05:10.358947
 model: gpt-4-0125-preview
 summary: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen\
   \ en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"

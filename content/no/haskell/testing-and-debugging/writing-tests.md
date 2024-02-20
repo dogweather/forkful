@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/haskell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:29.537183-07:00
 description: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine\
   \ fungerer som forventet gjennom automatiserte sjekker. Programmerere gj\xF8r det\
   \ for \xE5 fange\u2026"
-lastmod: 2024-02-18 23:08:53.938284
+lastmod: 2024-02-19 22:05:00.109444
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine fungerer\
   \ som forventet gjennom automatiserte sjekker. Programmerere gj\xF8r det for \xE5\

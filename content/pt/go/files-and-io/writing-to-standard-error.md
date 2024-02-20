@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:15.929272-07:00
 description: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens\
   \ de erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\
   \ Os\u2026"
-lastmod: 2024-02-18 23:08:57.686272
+lastmod: 2024-02-19 22:05:05.145095
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens de\
   \ erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\

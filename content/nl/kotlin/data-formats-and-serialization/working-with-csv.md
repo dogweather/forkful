@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:08.224727-07:00
 description: "Werken met CSV (Comma-Separated Values oftewel door komma's gescheiden\
   \ waarden) betreft het lezen en schrijven van gegevens in een tekstformaat waarbij\u2026"
-lastmod: 2024-02-18 23:09:01.830386
+lastmod: 2024-02-19 22:05:09.846592
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values oftewel door komma's gescheiden waarden)\
   \ betreft het lezen en schrijven van gegevens in een tekstformaat waarbij\u2026"

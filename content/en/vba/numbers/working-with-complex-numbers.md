@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/working-with-complex-numbers/
 date: 2024-02-01 21:30:18.778843-07:00
 description: "Working with complex numbers involves performing mathematical operations\
   \ on numbers that have both a real part and an imaginary part. Programmers often\u2026"
-lastmod: 2024-02-18 23:09:10.883864
+lastmod: 2024-02-19 22:05:18.397366
 model: gpt-4-0125-preview
 summary: "Working with complex numbers involves performing mathematical operations\
   \ on numbers that have both a real part and an imaginary part. Programmers often\u2026"

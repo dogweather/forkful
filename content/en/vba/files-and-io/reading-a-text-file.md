@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/vba/reading-a-text-file/
 date: 2024-02-01 21:30:17.266913-07:00
 description: "Reading a text file in Visual Basic for Applications (VBA) involves\
   \ programmatically accessing and extracting the contents of a text file from within\
   \ an\u2026"
-lastmod: 2024-02-18 23:09:10.906908
+lastmod: 2024-02-19 22:05:18.418607
 model: gpt-4-0125-preview
 summary: "Reading a text file in Visual Basic for Applications (VBA) involves programmatically\
   \ accessing and extracting the contents of a text file from within an\u2026"

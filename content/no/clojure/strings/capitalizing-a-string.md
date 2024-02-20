@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/clojure/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:53.738362-07:00
 description: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre strengen\
   \ slik at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir\
   \ uendret.\u2026"
-lastmod: 2024-02-18 23:08:53.548340
+lastmod: 2024-02-19 22:04:59.669288
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre strengen slik\
   \ at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir uendret.\u2026"

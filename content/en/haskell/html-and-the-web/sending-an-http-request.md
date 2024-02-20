@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/sending-an-http-request/
 date: 2024-01-20 17:59:43.969878-07:00
 description: "Sending an HTTP request is the act of asking a web server for data or\
   \ action. Programmers do it to interact with APIs, grab web content, or communicate\u2026"
-lastmod: 2024-02-18 23:09:11.092966
+lastmod: 2024-02-19 22:05:18.589221
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is the act of asking a web server for data or action.\
   \ Programmers do it to interact with APIs, grab web content, or communicate\u2026"

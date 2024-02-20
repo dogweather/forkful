@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/kotlin/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:28.991910-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.870130
+lastmod: 2024-02-19 22:05:01.204450
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u6B63\u898F\u8868\u73FE\u306E\u4F7F\u7528"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:12.372901-07:00
 description: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat\
   \ je tools of functies gebruikt om de staat van een draaiend programma te inspecteren\u2026"
-lastmod: 2024-02-18 23:09:01.343573
+lastmod: 2024-02-19 22:05:09.377049
 model: gpt-4-0125-preview
 summary: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat je\
   \ tools of functies gebruikt om de staat van een draaiend programma te inspecteren\u2026"

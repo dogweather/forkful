@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/getting-the-current-date/
 date: 2024-02-03 19:02:32.159644-07:00
 description: "Getting the current date in TypeScript, a language built on JavaScript,\
   \ allows you to access and manipulate the current date and time information.\u2026"
-lastmod: 2024-02-18 23:09:10.817657
+lastmod: 2024-02-19 22:05:18.337518
 model: gpt-4-0125-preview
 summary: "Getting the current date in TypeScript, a language built on JavaScript,\
   \ allows you to access and manipulate the current date and time information.\u2026"

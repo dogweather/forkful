@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:48.712798-07:00
 description: "Een tekstbestand lezen betekent het laden van de inhoud in je programma.\
   \ We doen dit om opgeslagen gegevens te verwerken, analyseren of weergeven, zoals\u2026"
-lastmod: 2024-02-18 23:09:02.010276
+lastmod: 2024-02-19 22:05:10.030918
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent het laden van de inhoud in je programma.\
   \ We doen dit om opgeslagen gegevens te verwerken, analyseren of weergeven, zoals\u2026"

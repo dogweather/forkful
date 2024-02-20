@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/handling-errors/
 date: 2024-01-21 21:19:52.546193-07:00
 description: "Handling errors in Swift means anticipating and responding to problems\
   \ that pop up when your code runs. We do it to control the chaos\u2014keeping apps\
   \ from\u2026"
-lastmod: 2024-02-18 23:09:11.404056
+lastmod: 2024-02-19 22:05:18.864486
 model: gpt-4-1106-preview
 summary: "Handling errors in Swift means anticipating and responding to problems that\
   \ pop up when your code runs. We do it to control the chaos\u2014keeping apps from\u2026"

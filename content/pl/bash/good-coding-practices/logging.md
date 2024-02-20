@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/logging/
 date: 2024-01-26 01:00:15.712620-07:00
 description: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3\
   w i innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do\
   \ pliku lub strumienia wyj\u015Bciowego.\u2026"
-lastmod: 2024-02-18 23:08:49.791394
+lastmod: 2024-02-19 22:04:54.731161
 model: gpt-4-1106-preview
 summary: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3w i\
   \ innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do pliku\

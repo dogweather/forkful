@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/haskell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:30.196058-07:00
 description: "Przetwarzanie daty z ci\u0105gu znak\xF3w w Haskellu polega na przekszta\u0142\
   ceniu tekstowych reprezentacji dat na strukturalny format, kt\xF3ry program mo\u017C\
   e\u2026"
-lastmod: 2024-02-18 23:08:49.662403
+lastmod: 2024-02-19 22:04:54.596093
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w w Haskellu polega na przekszta\u0142\
   ceniu tekstowych reprezentacji dat na strukturalny format, kt\xF3ry program mo\u017C\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/arduino/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:31.045771-07:00
 description: "Att tolka HTML i Arduino-projekt handlar om att extrahera information\
   \ fr\xE5n webbsidor. Programmerare g\xF6r detta f\xF6r att m\xF6jligg\xF6ra f\xF6\
   r deras Arduino-enheter\u2026"
-lastmod: 2024-02-18 23:08:52.042397
+lastmod: 2024-02-19 22:04:57.400192
 model: gpt-4-0125-preview
 summary: "Att tolka HTML i Arduino-projekt handlar om att extrahera information fr\xE5\
   n webbsidor. Programmerare g\xF6r detta f\xF6r att m\xF6jligg\xF6ra f\xF6r deras\

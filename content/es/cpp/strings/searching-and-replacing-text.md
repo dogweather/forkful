@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:20.186193-07:00
 description: "Buscar y reemplazar texto es b\xE1sicamente encontrar una cadena de\
   \ caracteres y sustituirla por otra diferente. Programadores lo hacen para modificar\
   \ c\xF3digo\u2026"
-lastmod: 2024-02-18 23:09:10.292263
+lastmod: 2024-02-19 22:05:17.865322
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es b\xE1sicamente encontrar una cadena de caracteres\
   \ y sustituirla por otra diferente. Programadores lo hacen para modificar c\xF3\

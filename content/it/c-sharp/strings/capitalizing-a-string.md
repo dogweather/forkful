@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c-sharp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:24.306445-07:00
 description: "Capitalizzare una stringa in C# comporta la conversione del primo carattere\
   \ di una stringa in maiuscolo, se gi\xE0 non lo \xE8. Questa modifica pu\xF2 essere\u2026"
-lastmod: 2024-02-18 23:08:55.870998
+lastmod: 2024-02-19 22:05:02.480597
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in C# comporta la conversione del primo carattere\
   \ di una stringa in maiuscolo, se gi\xE0 non lo \xE8. Questa modifica pu\xF2 essere\u2026"

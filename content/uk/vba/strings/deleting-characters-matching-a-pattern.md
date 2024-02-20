@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/vba/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:01.279858-07:00
@@ -13,7 +11,7 @@ description: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u043
   \ \u0442\u0430 \u043F\u043E\u0434\u0430\u043B\u044C\u0448\u0435 \u0432\u0438\u0434\
   \u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432\
   \u2026"
-lastmod: 2024-02-18 23:09:00.013148
+lastmod: 2024-02-19 22:05:07.994718
 model: gpt-4-0125-preview
 summary: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\
   \u0432\u043E\u043B\u0456\u0432, \u044F\u043A\u0456 \u0432\u0456\u0434\u043F\u043E\

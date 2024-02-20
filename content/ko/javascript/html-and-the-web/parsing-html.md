@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -11,7 +9,7 @@ description: "HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uC5D0\uC11C \uB370\uC774
   \ \uC791\uC6A9\uD558\uAC70\uB098 \uC870\uC791, \uC790\uB3D9 \uB370\uC774\uD130 \uCD94\
   \uCD9C \uB610\uB294 \uC6F9 \uC2A4\uD06C\uB798\uD551 \uBAA9\uC801\uC73C\uB85C \uC774\
   \uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.809378
+lastmod: 2024-02-19 22:05:14.700650
 model: gpt-4-0125-preview
 summary: "HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uC5D0\uC11C \uB370\uC774\uD130\
   \uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\

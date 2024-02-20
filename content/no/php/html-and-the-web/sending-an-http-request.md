@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/sending-an-http-request/
 date: 2024-01-20 18:00:29.362113-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 sp\xF8rre informasjon fra,\
   \ eller sende data til en server over nettet. Programmere gj\xF8r dette for \xE5\
   \ integrere med\u2026"
-lastmod: 2024-02-18 23:08:53.972266
+lastmod: 2024-02-19 22:05:00.146713
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 sp\xF8rre informasjon fra,\
   \ eller sende data til en server over nettet. Programmere gj\xF8r dette for \xE5\

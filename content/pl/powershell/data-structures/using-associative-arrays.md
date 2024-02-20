@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/powershell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:38.636232-07:00
 description: "Tablice asocjacyjne, znane r\xF3wnie\u017C jako tablice mieszaj\u0105\
   ce lub s\u0142owniki w PowerShellu, pozwalaj\u0105 na przechowywanie danych w parach\
   \ klucz-warto\u015B\u0107, co\u2026"
-lastmod: 2024-02-18 23:08:49.819967
+lastmod: 2024-02-19 22:04:54.761544
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane r\xF3wnie\u017C jako tablice mieszaj\u0105ce\
   \ lub s\u0142owniki w PowerShellu, pozwalaj\u0105 na przechowywanie danych w parach\

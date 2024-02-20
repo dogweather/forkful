@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/typescript/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:30.577599-07:00
 description: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar dados\
   \ JSON para e de um formato utiliz\xE1vel em TypeScript. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:57.906965
+lastmod: 2024-02-19 22:05:05.379893
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar dados JSON\
   \ para e de um formato utiliz\xE1vel em TypeScript. Programadores fazem isso para\u2026"

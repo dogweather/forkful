@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/java/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:02.850869-07:00
 description: "Verificar se um diret\xF3rio existe em Java \xE9 uma tarefa fundamental\
   \ que envolve a verifica\xE7\xE3o da presen\xE7a de um diret\xF3rio no sistema de\
   \ arquivos antes de\u2026"
-lastmod: 2024-02-18 23:08:58.032955
+lastmod: 2024-02-19 22:05:05.510042
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Java \xE9 uma tarefa fundamental\
   \ que envolve a verifica\xE7\xE3o da presen\xE7a de um diret\xF3rio no sistema de\

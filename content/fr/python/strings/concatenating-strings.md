@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/concatenating-strings/
 date: 2024-01-20 17:35:27.524482-07:00
 description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est les coller bout\
   \ \xE0 bout pour en faire une seule. Les programmeurs font \xE7a pour afficher des\
   \ messages\u2026"
-lastmod: 2024-02-18 23:09:08.331093
+lastmod: 2024-02-19 22:05:16.129997
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est les coller bout \xE0\
   \ bout pour en faire une seule. Les programmeurs font \xE7a pour afficher des messages\u2026"

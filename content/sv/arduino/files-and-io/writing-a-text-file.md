@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/arduino/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:09.197379-07:00
 description: "Att skriva en textfil i Arduino inneb\xE4r att spara data till en fil\
   \ p\xE5 ett SD-kort eller liknande lagringsmodul, ofta f\xF6r datainsamlings\xE4\
   ndam\xE5l.\u2026"
-lastmod: 2024-02-18 23:08:52.061382
+lastmod: 2024-02-19 22:04:57.421482
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Arduino inneb\xE4r att spara data till en fil p\xE5\
   \ ett SD-kort eller liknande lagringsmodul, ofta f\xF6r datainsamlings\xE4ndam\xE5\

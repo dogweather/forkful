@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/working-with-xml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:44.760065-07:00
@@ -11,7 +9,7 @@ description: "\u5728Google Apps\u811A\u672C\u4E2D\u4F7F\u7528XML\uFF0C\u5141\u8B
   \u7CFB\u7EDF\u96C6\u6210\u3001\u6267\u884CWeb\u6293\u53D6\uFF0C\u6216\u4E0E\u8BB8\
   \u591A\u4ECD\u7136\u4F9D\u8D56\u4E8EXML\u800C\u975EJSON\u8FDB\u884C\u6570\u636E\u4EA4\
   \u6362\u7684API\u901A\u4FE1\u3002"
-lastmod: 2024-02-18 23:08:58.775030
+lastmod: 2024-02-19 22:05:06.313506
 model: gpt-4-0125-preview
 summary: "\u5728Google Apps\u811A\u672C\u4E2D\u4F7F\u7528XML\uFF0C\u5141\u8BB8\u7A0B\
   \u5E8F\u5458\u89E3\u6790\u3001\u64CD\u4F5C\u548C\u751F\u6210XML\u6570\u636E\uFF0C\

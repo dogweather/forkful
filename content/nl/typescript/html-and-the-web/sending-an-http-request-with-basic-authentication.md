@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:15.627684-07:00
 description: "In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie\
   \ het over het web schieten van data met een eenvoudige\u2026"
-lastmod: 2024-02-18 23:09:01.572709
+lastmod: 2024-02-19 22:05:09.597572
 model: gpt-4-0125-preview
 summary: "In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie\
   \ het over het web schieten van data met een eenvoudige\u2026"

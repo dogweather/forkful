@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:43.154783-07:00
@@ -12,7 +10,7 @@ description: "\uC5D8\uB9AD\uC11C(Elixir)\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\u
   \ \uB2E4\uC591\uC131 \uB355\uBD84\uC5D0, \uC815\uADDC \uD45C\uD604\uC2DD\uC744 \uC774\
   \uBA54\uC77C, URL\uACFC \uAC19\uC740 \uD615\uC2DD\uC758 \uC720\uD6A8\uC131 \uAC80\
   \uC0AC, \uB85C\uADF8 \uD30C\uC2F1, \uB370\uC774\uD130 \uCD94\uCD9C\uACFC\u2026"
-lastmod: 2024-02-18 23:09:05.739539
+lastmod: 2024-02-19 22:05:13.650747
 model: gpt-4-0125-preview
 summary: "\uC5D8\uB9AD\uC11C(Elixir)\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740\
   \ \uD2B9\uC815 \uD328\uD134\uC744 \uAE30\uBC18\uC73C\uB85C \uBB38\uC790\uC5F4\uC744\

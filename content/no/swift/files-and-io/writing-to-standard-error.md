@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/swift/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:49.154571-07:00
 description: "Skriving til standardfeil (stderr) handler om \xE5 lede programmets\
   \ feilmeldinger eller diagnostiske utdata til en separat str\xF8m, forskjellig fra\u2026"
-lastmod: 2024-02-18 23:08:54.284657
+lastmod: 2024-02-19 22:05:00.433340
 model: gpt-4-0125-preview
 summary: "Skriving til standardfeil (stderr) handler om \xE5 lede programmets feilmeldinger\
   \ eller diagnostiske utdata til en separat str\xF8m, forskjellig fra\u2026"

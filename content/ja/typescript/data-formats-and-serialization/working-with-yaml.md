@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/typescript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:59.159775-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.701284
+lastmod: 2024-02-19 22:05:00.969089
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"

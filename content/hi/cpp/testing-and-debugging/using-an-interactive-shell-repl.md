@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/cpp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:02.114385-07:00
 description: "REPL (Read-Eval-Print-Loop) \u090F\u0915 \u0938\u0930\u0932, \u0907\u0902\
   \u091F\u0930\u0948\u0915\u094D\u091F\u093F\u0935 \u092A\u094D\u0930\u094B\u0917\u094D\
@@ -11,7 +9,7 @@ description: "REPL (Read-Eval-Print-Loop) \u090F\u0915 \u0938\u0930\u0932, \u090
   \u0917, \u091C\u0932\u094D\u0926\u0940 \u0915\u093E\u0930\u094D\u092F\u094B\u0902\
   , \u092F\u093E \u092A\u0942\u0930\u094D\u0923-\u0935\u093F\u0915\u0938\u093F\u0924\
   \u2026"
-lastmod: 2024-02-18 23:09:03.892199
+lastmod: 2024-02-19 22:05:11.874811
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print-Loop) \u090F\u0915 \u0938\u0930\u0932, \u0907\u0902\
   \u091F\u0930\u0948\u0915\u094D\u091F\u093F\u0935 \u092A\u094D\u0930\u094B\u0917\u094D\

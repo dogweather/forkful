@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/elm/starting-a-new-project/
 date: 2024-01-20 18:03:19.508926-07:00
 description: "Starting a new project in Elm is about setting up a clean slate for\
   \ building reliable web apps. Programmers do it to capitalize on Elm's simplicity\
   \ and\u2026"
-lastmod: 2024-02-18 23:09:10.972488
+lastmod: 2024-02-19 22:05:18.478953
 model: gpt-4-1106-preview
 summary: "Starting a new project in Elm is about setting up a clean slate for building\
   \ reliable web apps. Programmers do it to capitalize on Elm's simplicity and\u2026"

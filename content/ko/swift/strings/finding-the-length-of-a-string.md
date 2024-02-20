@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/swift/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:16.224857-07:00
 description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uAD6C\uD55C\uB2E4\uB294\
   \ \uAC83\uC740, \uBB38\uC790\uC5F4\uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790\uC758 \uC218\
@@ -11,7 +9,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uAD6C\uD55C\uB2E4\uB2
   \uD558\uB3C4\uB85D \uD558\uAE30 \uC704\uD574\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\
   \uC774\uB97C \uD30C\uC545\uD574\uC57C \uD560 \uB54C\uAC00 \uC788\uC8E0."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.735231
+lastmod: 2024-02-19 22:05:14.629140
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uAD6C\uD55C\uB2E4\uB294 \uAC83\
   \uC740, \uBB38\uC790\uC5F4\uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790\uC758 \uC218\uB97C\

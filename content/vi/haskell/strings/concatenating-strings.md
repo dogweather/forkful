@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/haskell/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:08.968198-07:00
@@ -9,7 +7,7 @@ description: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA
   \ vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y khi h\u1ECD c\u1EA7n gh\xE9\
   p c\xE1c \u0111o\u1EA1n v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1\
   o\u2026"
-lastmod: 2024-02-18 23:08:50.735994
+lastmod: 2024-02-19 22:04:55.879940
 model: gpt-4-0125-preview
 summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v\u1EDB\
   i nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i. L\u1EADp tr\xECnh vi\xEAn\

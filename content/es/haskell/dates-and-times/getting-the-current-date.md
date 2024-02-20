@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/haskell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:30.973636-07:00
 description: "Recuperar la fecha actual en Haskell implica obtener el tiempo actual\
   \ del sistema y transformarlo en un formato de fecha legible. Los programadores\
   \ hacen\u2026"
-lastmod: 2024-02-18 23:09:10.039160
+lastmod: 2024-02-19 22:05:17.636177
 model: gpt-4-0125-preview
 summary: "Recuperar la fecha actual en Haskell implica obtener el tiempo actual del\
   \ sistema y transformarlo en un formato de fecha legible. Los programadores hacen\u2026"

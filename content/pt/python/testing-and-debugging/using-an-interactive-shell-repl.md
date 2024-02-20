@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:19.761019-07:00
 description: "Um REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambiente\
   \ de programa\xE7\xE3o que recebe entradas \xFAnicas do usu\xE1rio, executa-as e\
   \ retorna o resultado ao\u2026"
-lastmod: 2024-02-18 23:08:57.762758
+lastmod: 2024-02-19 22:05:05.225933
 model: gpt-4-0125-preview
 summary: "Um REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambiente\
   \ de programa\xE7\xE3o que recebe entradas \xFAnicas do usu\xE1rio, executa-as e\

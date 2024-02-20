@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:41.981893-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Visual Basic\
   \ for Applications (VBA) -ohjelmassa liittyy verkkoresurssien k\xE4ytt\xE4miseen,\
   \ jotka on suojattu\u2026"
-lastmod: 2024-02-18 23:09:07.410331
+lastmod: 2024-02-19 22:05:15.295674
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Visual Basic for\
   \ Applications (VBA) -ohjelmassa liittyy verkkoresurssien k\xE4ytt\xE4miseen, jotka\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:25.183006-07:00
 description: "La gestion des erreurs dans Visual Basic pour Applications (VBA) fait\
   \ r\xE9f\xE9rence au processus d'anticipation, de d\xE9tection et de r\xE9solution\
   \ des erreurs de\u2026"
-lastmod: 2024-02-18 23:09:08.587887
+lastmod: 2024-02-19 22:05:16.363621
 model: gpt-4-0125-preview
 summary: "La gestion des erreurs dans Visual Basic pour Applications (VBA) fait r\xE9\
   f\xE9rence au processus d'anticipation, de d\xE9tection et de r\xE9solution des\

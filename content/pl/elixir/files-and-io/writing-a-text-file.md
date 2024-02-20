@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elixir/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:44.245813-07:00
 description: "Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiej\u0119\
   tno\u015B\u0107 dla programist\xF3w, pozwalaj\u0105ca na trwa\u0142o\u015B\u0107\
   \ danych, logowanie lub eksportowanie tre\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:49.324514
+lastmod: 2024-02-19 22:04:54.240835
 model: gpt-4-0125-preview
 summary: "Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiej\u0119tno\u015B\
   \u0107 dla programist\xF3w, pozwalaj\u0105ca na trwa\u0142o\u015B\u0107 danych,\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/parsing-html/
 date: 2024-01-20 15:34:39.122013-07:00
 description: "Parsing HTML to proces analizy kodu HTML, by zrozumie\u0107 jego struktur\u0119\
   \ i wyodr\u0119bni\u0107 z niego dane. Programi\u015Bci robi\u0105 to, \u017Ceby\
   \ manipulowa\u0107 tym kodem lub\u2026"
-lastmod: 2024-02-18 23:08:49.345853
+lastmod: 2024-02-19 22:04:54.263622
 summary: "Parsing HTML to proces analizy kodu HTML, by zrozumie\u0107 jego struktur\u0119\
   \ i wyodr\u0119bni\u0107 z niego dane. Programi\u015Bci robi\u0105 to, \u017Ceby\
   \ manipulowa\u0107 tym kodem lub\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/creating-a-temporary-file/
 date: 2024-01-20 17:39:31.781304-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um ficheiro\
   \ que s\xF3 \xE9 necess\xE1rio durante a execu\xE7\xE3o de um programa ou tarefa.\
   \ Programadores fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.428324
+lastmod: 2024-02-19 22:05:05.917198
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um ficheiro que\
   \ s\xF3 \xE9 necess\xE1rio durante a execu\xE7\xE3o de um programa ou tarefa. Programadores\

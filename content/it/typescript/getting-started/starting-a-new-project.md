@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/starting-a-new-project/
 date: 2024-01-20 18:04:27.652437-07:00
 description: "Iniziare un nuovo progetto significa creare un ambiente di lavoro da\
   \ zero, dove il codice prende vita. Si fa per trasformare le idee in software\u2026"
-lastmod: 2024-02-18 23:08:55.640919
+lastmod: 2024-02-19 22:05:02.237200
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto significa creare un ambiente di lavoro da zero,\
   \ dove il codice prende vita. Si fa per trasformare le idee in software\u2026"

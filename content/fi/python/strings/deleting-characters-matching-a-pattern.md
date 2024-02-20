@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:08.648776-07:00
 description: "Kun puhumme merkkien poistamisesta kuvion mukaan, tarkoitamme tiettyj\xE4\
   \ merkkej\xE4 sis\xE4lt\xE4vien osien paikantamista ja poistamista merkkijonosta.\
   \ T\xE4m\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.166854
+lastmod: 2024-02-19 22:05:15.041797
 model: gpt-4-1106-preview
 summary: "Kun puhumme merkkien poistamisesta kuvion mukaan, tarkoitamme tiettyj\xE4\
   \ merkkej\xE4 sis\xE4lt\xE4vien osien paikantamista ja poistamista merkkijonosta.\

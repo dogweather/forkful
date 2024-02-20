@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/arduino/writing-to-standard-error/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:06:29.591462-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u04
   \u043E \u0432\u044B\u0432\u043E\u0434\u0430 (stdout). \u042D\u0442\u043E \u043A\u0440\
   \u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u0432\u0430\u0436\u043D\u043E\
   \ \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:08:57.327951
+lastmod: 2024-02-19 22:05:04.533686
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u043D\u0434\
   \u0430\u0440\u0442\u043D\u044B\u0439 \u043F\u043E\u0442\u043E\u043A \u043E\u0448\

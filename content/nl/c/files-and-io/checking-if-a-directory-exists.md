@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:36.385050-07:00
 description: "Controleren of een directory bestaat in C betekent het opvragen van\
   \ het bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory\
   \ leidt.\u2026"
-lastmod: 2024-02-18 23:09:02.389304
+lastmod: 2024-02-19 22:05:10.395270
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat in C betekent het opvragen van het\
   \ bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory leidt.\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:49.042378-07:00
 description: "Trovare la lunghezza di una stringa in Go riguarda il determinare il\
   \ numero di caratteri che contiene. I programmatori eseguono regolarmente questa\u2026"
-lastmod: 2024-02-18 23:08:55.422789
+lastmod: 2024-02-19 22:05:02.002472
 model: gpt-4-0125-preview
 summary: "Trovare la lunghezza di una stringa in Go riguarda il determinare il numero\
   \ di caratteri che contiene. I programmatori eseguono regolarmente questa\u2026"

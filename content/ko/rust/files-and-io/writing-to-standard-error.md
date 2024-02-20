@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:41.651805-07:00
@@ -13,7 +11,7 @@ description: "Rust\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uA
   \ \uC801\uC808\uD788 \uCC98\uB9AC\uD558\uAC70\uB098 \uC2E4\uD589 \uC911\uC5D0 \uB85C\
   \uADF8\uB098 \uD30C\uC77C\uB85C \uB9AC\uB2E4\uC774\uB809\uD2B8\uD558\uAE30 \uC27D\
   \uAC8C\u2026"
-lastmod: 2024-02-18 23:09:05.909925
+lastmod: 2024-02-19 22:05:13.845101
 model: gpt-4-0125-preview
 summary: "Rust\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\uB294\
   \ \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uBCC4\uAC1C\uB85C \uC624\uB958 \uBA54\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/lua/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:50.968236-07:00
 description: "Controllare se una directory esiste \xE8 un'operazione fondamentale\
   \ quando si scrivono script che interagiscono con il filesystem, garantendo che\
   \ il proprio\u2026"
-lastmod: 2024-02-18 23:08:56.024692
+lastmod: 2024-02-19 22:05:02.640856
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale quando\
   \ si scrivono script che interagiscono con il filesystem, garantendo che il proprio\u2026"

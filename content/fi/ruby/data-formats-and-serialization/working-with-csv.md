@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/ruby/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:24.006792-07:00
 description: "CSV-tiedostojen k\xE4sittely Rubyssa tarjoaa yksinkertaisen tavan k\xE4\
   sitell\xE4 taulukkomuotoista tietoa. Ohjelmoijat harjoittavat t\xE4t\xE4 k\xE4yt\xE4\
   nt\xF6\xE4 usein datan\u2026"
-lastmod: 2024-02-18 23:09:08.207307
+lastmod: 2024-02-19 22:05:16.018636
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen k\xE4sittely Rubyssa tarjoaa yksinkertaisen tavan k\xE4\
   sitell\xE4 taulukkomuotoista tietoa. Ohjelmoijat harjoittavat t\xE4t\xE4 k\xE4yt\xE4\

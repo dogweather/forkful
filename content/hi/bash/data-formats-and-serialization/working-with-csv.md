@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/bash/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:14.744980-07:00
@@ -12,7 +10,7 @@ description: "CSV (Comma-Separated Values) \u092B\u093E\u0907\u0932\u094B\u0902 
   \u0947\u091F\u093E \u0915\u094B \u0938\u0902\u0938\u093E\u0927\u093F\u0924 \u0914\
   \u0930 \u0939\u0947\u0930\u092B\u0947\u0930 \u0915\u0930\u0928\u0947 \u0915\u0947\
   \ \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948\u0964 \u092F\u0939\u2026"
-lastmod: 2024-02-18 23:09:03.698000
+lastmod: 2024-02-19 22:05:11.685204
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) \u092B\u093E\u0907\u0932\u094B\u0902 \u0915\
   \u0947 \u0938\u093E\u0925 Bash \u092E\u0947\u0902 \u0915\u093E\u092E \u0915\u0930\

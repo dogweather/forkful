@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/lua/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:13.026372-07:00
 description: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4rist\xF6\
   \xE4, jossa voit nopeasti testata koodia. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ kokeiluun,\u2026"
-lastmod: 2024-02-18 23:09:07.758743
+lastmod: 2024-02-19 22:05:15.593256
 model: gpt-4-0125-preview
 summary: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4rist\xF6\xE4\
   , jossa voit nopeasti testata koodia. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 kokeiluun,\u2026"

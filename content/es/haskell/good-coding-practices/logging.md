@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/haskell/logging/
 date: 2024-01-26 01:04:16.348341-07:00
 description: "El registro (logging) en programaci\xF3n es esencialmente dejar un rastro\
   \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\u2026"
-lastmod: 2024-02-18 23:09:10.034873
+lastmod: 2024-02-19 22:05:17.632261
 model: gpt-4-1106-preview
 summary: "El registro (logging) en programaci\xF3n es esencialmente dejar un rastro\
   \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\u2026"

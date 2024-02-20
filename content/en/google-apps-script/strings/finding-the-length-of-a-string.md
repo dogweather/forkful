@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/finding-the-length-of-a-string/
 date: 2024-02-01 21:12:03.230953-07:00
 description: "Finding the length of a string in Google Apps Script, a JavaScript cloud\
   \ scripting language that lets you automate tasks across Google products, is about\u2026"
-lastmod: 2024-02-18 23:09:10.630253
+lastmod: 2024-02-19 22:05:18.168693
 model: gpt-4-0125-preview
 summary: "Finding the length of a string in Google Apps Script, a JavaScript cloud\
   \ scripting language that lets you automate tasks across Google products, is about\u2026"

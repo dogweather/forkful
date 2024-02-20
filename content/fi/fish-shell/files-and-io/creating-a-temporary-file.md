@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/creating-a-temporary-file/
 date: 2024-01-20 17:40:08.928034-07:00
 description: "Temp-tiedoston luonti on v\xE4liaikaisten, usein kertak\xE4ytt\xF6isten\
   \ tiedostojen tekemist\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 esimerkiksi\
   \ datan v\xE4liaikaiss\xE4ilytykseen\u2026"
-lastmod: 2024-02-18 23:09:08.105385
+lastmod: 2024-02-19 22:05:15.908279
 model: gpt-4-1106-preview
 summary: "Temp-tiedoston luonti on v\xE4liaikaisten, usein kertak\xE4ytt\xF6isten\
   \ tiedostojen tekemist\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 esimerkiksi\

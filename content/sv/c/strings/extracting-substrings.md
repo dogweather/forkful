@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:28.662984-07:00
 description: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
   ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\
   \ s\xE5som position och\u2026"
-lastmod: 2024-02-18 23:08:52.238518
+lastmod: 2024-02-19 22:04:57.621735
 model: gpt-4-0125-preview
 summary: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
   ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\

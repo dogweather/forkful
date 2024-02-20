@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/haskell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:01.040249-07:00
 description: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou\
   \ mettre \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique.\
   \ Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:08.895671
+lastmod: 2024-02-19 22:05:16.590094
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou mettre\
   \ \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique. Les\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/rust/converting-a-string-to-lower-case/
 date: 2024-01-20 17:40:16.008692-07:00
 description: "String \u0915\u094B lower case \u092E\u0947\u0902 \u092C\u0926\u0932\
   \u0928\u093E \u092F\u093E\u0928\u0940 \u092A\u0942\u0930\u0947 \u091F\u0947\u0915\
@@ -10,7 +8,7 @@ description: "String \u0915\u094B lower case \u092E\u0947\u0902 \u092C\u0926\u09
   \u0902 \u091C\u092C case sensitivity \u092E\u0939\u0924\u094D\u0935\u092A\u0942\u0930\
   \u094D\u0923 \u0928 \u0939\u094B \u0914\u0930 \u0921\u0947\u091F\u093E \u0915\u094B\
   \u2026"
-lastmod: 2024-02-18 23:09:02.932503
+lastmod: 2024-02-19 22:05:10.930798
 model: gpt-4-1106-preview
 summary: "String \u0915\u094B lower case \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\
   \u093E \u092F\u093E\u0928\u0940 \u092A\u0942\u0930\u0947 \u091F\u0947\u0915\u094D\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/organizing-code-into-functions/
 date: 2024-01-26 01:09:12.560901-07:00
 description: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
   \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\
   vi\xE4. Se tekee\u2026"
-lastmod: 2024-02-18 23:09:07.810406
+lastmod: 2024-02-19 22:05:15.640435
 model: gpt-4-1106-preview
 summary: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
   \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\

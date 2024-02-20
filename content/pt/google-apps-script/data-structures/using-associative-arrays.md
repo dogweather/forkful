@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:03.790061-07:00
 description: "Arrays associativos, conhecidos como objetos no Google Apps Script (uma\
   \ variante do JavaScript), permitem que programadores criem cole\xE7\xF5es de pares\
   \ chave-\u2026"
-lastmod: 2024-02-18 23:08:57.707717
+lastmod: 2024-02-19 22:05:05.167472
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como objetos no Google Apps Script (uma\
   \ variante do JavaScript), permitem que programadores criem cole\xE7\xF5es de pares\

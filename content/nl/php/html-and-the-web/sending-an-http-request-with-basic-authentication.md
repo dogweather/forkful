@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/php/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:10.826723-07:00
 description: "Een HTTP-verzoek verzenden met basisauthenticatie houdt in dat je een\
   \ gebruikersnaam en wachtwoord toevoegt om toegang te krijgen tot een resource op\
   \ een\u2026"
-lastmod: 2024-02-18 23:09:01.944722
+lastmod: 2024-02-19 22:05:09.966938
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden met basisauthenticatie houdt in dat je een gebruikersnaam\
   \ en wachtwoord toevoegt om toegang te krijgen tot een resource op een\u2026"

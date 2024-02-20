@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/using-a-debugger/
 date: 2024-01-26 03:48:51.660544-07:00
 description: "Depurar no Elm envolve identificar e remover erros do seu c\xF3digo.\
   \ Programadores fazem isso para garantir que suas aplica\xE7\xF5es funcionem corretamente\
   \ e para\u2026"
-lastmod: 2024-02-18 23:08:58.064905
+lastmod: 2024-02-19 22:05:05.543219
 model: gpt-4-0125-preview
 summary: "Depurar no Elm envolve identificar e remover erros do seu c\xF3digo. Programadores\
   \ fazem isso para garantir que suas aplica\xE7\xF5es funcionem corretamente e para\u2026"

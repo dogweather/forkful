@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elixir/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:57.078878-07:00
 description: "Calcolare una data futura o passata significa semplicemente trovare\
   \ una data che \xE8 un certo numero di giorni, mesi o anni distante dalla data odierna.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.613316
+lastmod: 2024-02-19 22:05:02.207519
 model: gpt-4-1106-preview
 summary: "Calcolare una data futura o passata significa semplicemente trovare una\
   \ data che \xE8 un certo numero di giorni, mesi o anni distante dalla data odierna.\

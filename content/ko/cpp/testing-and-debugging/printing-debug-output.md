@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/printing-debug-output/
 date: 2024-01-20 17:52:11.190625-07:00
 description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uD504\uB85C\uADF8\uB7A8 \uC2E4\
   \uD589 \uC911 \uC815\uBCF4\uB97C \uCF58\uC194\uC5D0 \uD45C\uC2DC\uD558\uB294 \uAC83\
@@ -8,7 +6,7 @@ description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uD504\uB85C\uADF8\uB7A8 \uC
   \uACE0 \uD504\uB85C\uADF8\uB7A8 \uC774\uD574\uB97C \uC99D\uC9C4\uD558\uAE30 \uC704\
   \uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.687040
+lastmod: 2024-02-19 22:05:14.584511
 model: gpt-4-1106-preview
 summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589\
   \ \uC911 \uC815\uBCF4\uB97C \uCF58\uC194\uC5D0 \uD45C\uC2DC\uD558\uB294 \uAC83\uC785\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/rust/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:45.037749-07:00
 description: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang zu\
   \ gesicherten Ressourcen, indem sie Benutzername und Passwort in Base64-kodierter\
   \ Form mit\u2026"
-lastmod: 2024-02-18 23:09:04.641176
+lastmod: 2024-02-19 22:05:12.596501
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang zu gesicherten\
   \ Ressourcen, indem sie Benutzername und Passwort in Base64-kodierter Form mit\u2026"

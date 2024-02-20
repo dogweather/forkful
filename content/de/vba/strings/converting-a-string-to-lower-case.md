@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/vba/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:13.418154-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Transformation\
   \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente.\u2026"
-lastmod: 2024-02-18 23:09:04.673530
+lastmod: 2024-02-19 22:05:12.627452
 model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Transformation\
   \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente.\u2026"

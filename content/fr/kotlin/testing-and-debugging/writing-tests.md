@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/kotlin/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:57.393761-07:00
 description: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de\
   \ code qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:08.784763
+lastmod: 2024-02-19 22:05:16.488726
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de code\
   \ qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\

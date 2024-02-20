@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:50.703974-07:00
@@ -8,7 +6,7 @@ description: "Trong Swift, vi\u1EC7c in \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\
   i ngh\u0129a l\xE0 hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u trong khu v\u1EF1c g\u1EE1\
   \ l\u1ED7i, th\u01B0\u1EDDng l\xE0 trong m\u1ED9t IDE ho\u1EB7c b\u1EA3ng \u0111\
   i\u1EC1u khi\u1EC3n, \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC\u2026"
-lastmod: 2024-02-18 23:08:51.093075
+lastmod: 2024-02-19 22:04:56.307532
 model: gpt-4-0125-preview
 summary: "Trong Swift, vi\u1EC7c in \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7\
   i ngh\u0129a l\xE0 hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u trong khu v\u1EF1c g\u1EE1\

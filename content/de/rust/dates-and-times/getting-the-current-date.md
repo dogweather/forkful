@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/rust/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:47.604989-07:00
 description: "Das Abrufen des aktuellen Datums in Rust ist eine g\xE4ngige Aufgabe\
   \ f\xFCr Dinge wie das Logging, zeitbasierte Operationen oder einfach nur, um das\
   \ Datum\u2026"
-lastmod: 2024-02-18 23:09:04.652735
+lastmod: 2024-02-19 22:05:12.607553
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Rust ist eine g\xE4ngige Aufgabe f\xFC\
   r Dinge wie das Logging, zeitbasierte Operationen oder einfach nur, um das Datum\u2026"

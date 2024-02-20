@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/typescript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:48.226262-07:00
@@ -14,7 +12,7 @@ description: "TypeScript \u092E\u0947\u0902 \u090F\u0915 \u091F\u0947\u0915\u094
   \u092E\u0930 \u0905\u0915\u094D\u0938\u0930 \u0907\u0938 \u0915\u093E\u0930\u094D\
   \u092F \u0915\u094B \u0921\u0947\u091F\u093E \u0935\u093F\u0936\u094D\u0932\u0947\
   \u0937\u0923,\u2026"
-lastmod: 2024-02-18 23:09:02.912982
+lastmod: 2024-02-19 22:05:10.911713
 model: gpt-4-0125-preview
 summary: "TypeScript \u092E\u0947\u0902 \u090F\u0915 \u091F\u0947\u0915\u094D\u0938\
   \u094D\u091F \u092B\u093E\u0907\u0932 \u0932\u093F\u0916\u0928\u093E \u0921\u0947\

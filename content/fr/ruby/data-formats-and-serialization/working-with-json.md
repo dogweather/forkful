@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/ruby/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:02.506277-07:00
 description: "JSON (JavaScript Object Notation) est un format d'\xE9change de donn\xE9\
   es l\xE9ger, pr\xE9dominant dans les applications Web pour l'\xE9change de donn\xE9\
   es entre clients\u2026"
-lastmod: 2024-02-18 23:09:09.430764
+lastmod: 2024-02-19 22:05:17.091609
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) est un format d'\xE9change de donn\xE9\
   es l\xE9ger, pr\xE9dominant dans les applications Web pour l'\xE9change de donn\xE9\

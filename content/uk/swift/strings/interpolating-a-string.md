@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/swift/interpolating-a-string/
 date: 2024-01-20 17:51:37.457758-07:00
 description: String interpolation allows us to insert variables into strings. It's
   a swift, clean way to construct strings - essentials in coding.
-lastmod: 2024-02-18 23:09:00.937884
+lastmod: 2024-02-19 22:05:08.979770
 model: gpt-4-1106-preview
 summary: String interpolation allows us to insert variables into strings. It's a swift,
   clean way to construct strings - essentials in coding.

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/reading-a-text-file/
 date: 2024-01-20 17:53:54.519310-07:00
 description: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos bytes\
   \ pra tirar informa\xE7\xF5es \xFAteis de um arquivo `.txt`. Programadores fazem\
   \ isso porque,\u2026"
-lastmod: 2024-02-18 23:08:58.174393
+lastmod: 2024-02-19 22:05:05.644375
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos bytes pra\
   \ tirar informa\xE7\xF5es \xFAteis de um arquivo `.txt`. Programadores fazem isso\

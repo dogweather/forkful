@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/arduino/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:42.613962-07:00
@@ -14,7 +12,7 @@ description: "\u0905\u0930\u0921\u0941\u0907\u0928\u094B \u092A\u094D\u0930\u094
   \u0942\u0926 \u0939\u0948 \u092F\u093E \u0928\u0939\u0940\u0902, \u0906\u092A\u0915\
   \u094B \u092C\u093F\u0928\u093E \u0915\u093F\u0938\u0940 \u0924\u094D\u0930\u0941\
   \u091F\u093F \u0915\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.840600
+lastmod: 2024-02-19 22:05:11.823703
 model: gpt-4-0125-preview
 summary: "\u0905\u0930\u0921\u0941\u0907\u0928\u094B \u092A\u094D\u0930\u094B\u0917\
   \u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0915\u0947 \u0938\u0902\u0926\u0930\

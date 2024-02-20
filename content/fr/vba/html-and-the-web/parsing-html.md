@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/vba/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:12.879172-07:00
 description: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA)\
   \ consiste \xE0 extraire des informations sp\xE9cifiques d'un document HTML. Les\u2026"
-lastmod: 2024-02-18 23:09:08.575816
+lastmod: 2024-02-19 22:05:16.352747
 model: gpt-4-0125-preview
 summary: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA) consiste\
   \ \xE0 extraire des informations sp\xE9cifiques d'un document HTML. Les\u2026"

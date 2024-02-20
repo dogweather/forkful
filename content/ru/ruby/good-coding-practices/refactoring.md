@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/ruby/refactoring/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:01:55.900127-07:00
@@ -15,7 +13,7 @@ description: "\u0420\u0435\u0444\u0430\u043A\u0442\u043E\u0440\u0438\u043D\u0433
   \u043C\u043C\u0438\u0441\u0442\u044B \u043F\u0440\u043E\u0432\u043E\u0434\u044F\u0442\
   \ \u0440\u0435\u0444\u0430\u043A\u0442\u043E\u0440\u0438\u043D\u0433 \u0434\u043B\
   \u044F\u2026"
-lastmod: 2024-02-18 23:08:57.630335
+lastmod: 2024-02-19 22:05:05.014192
 model: gpt-4-0125-preview
 summary: "\u0420\u0435\u0444\u0430\u043A\u0442\u043E\u0440\u0438\u043D\u0433 - \u044D\
   \u0442\u043E \u043F\u0440\u043E\u0446\u0435\u0441\u0441 \u0440\u0435\u0441\u0442\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/swift/sending-an-http-request/
 date: 2024-01-20 18:00:50.846860-07:00
 description: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con un\
   \ servidor web para obtener, enviar o modificar datos. Lo hacemos todo el tiempo\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:10.354318
+lastmod: 2024-02-19 22:05:17.918198
 model: gpt-4-1106-preview
 summary: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con un servidor\
   \ web para obtener, enviar o modificar datos. Lo hacemos todo el tiempo para\u2026"

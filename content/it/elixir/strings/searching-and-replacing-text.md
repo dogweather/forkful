@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elixir/searching-and-replacing-text/
 date: 2024-01-20 17:57:40.968656-07:00
 description: "Cercare e sostituire testo \xE8 fondamentale per manipolare stringhe\
   \ e automatizzare l'editing. I programmatori lo fanno per correggere errori, aggiornare\u2026"
-lastmod: 2024-02-18 23:08:55.586833
+lastmod: 2024-02-19 22:05:02.178921
 model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo \xE8 fondamentale per manipolare stringhe e automatizzare\
   \ l'editing. I programmatori lo fanno per correggere errori, aggiornare\u2026"

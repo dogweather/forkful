@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elm/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:18.973205-07:00
@@ -13,7 +11,7 @@ description: "\uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uC4F0\uAE30\uB294 \uBA54\
   \ \uD2B9\uD788 \uB514\uBC84\uAE45\uACFC \uBAA8\uB2C8\uD130\uB9C1\uC744 \uC704\uD574\
   \ \uCD9C\uB825 \uAD6C\uBD84\uC774 \uC911\uC694\uD55C \uD658\uACBD\uC5D0\uC11C \uC774\
   \uB807\uAC8C\u2026"
-lastmod: 2024-02-18 23:09:06.110613
+lastmod: 2024-02-19 22:05:14.046466
 model: gpt-4-0125-preview
 summary: "\uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uC4F0\uAE30\uB294 \uBA54\uC778\
   \ \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825(\uD45C\uC900 \uCD9C\uB825, stdout)\uACFC\

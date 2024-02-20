@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/rounding-numbers/
 date: 2024-01-26 03:43:25.695037-07:00
 description: "Zaokr\u0105glanie liczb oznacza odci\u0119cie cz\u0119\u015Bci dziesi\u0119\
   tnych do prostszej warto\u015Bci, kt\xF3ra jest wystarczaj\u0105co dobra w danym\
   \ kontek\u015Bcie. Programi\u015Bci zaokr\u0105glaj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.776859
+lastmod: 2024-02-19 22:04:54.716772
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza odci\u0119cie cz\u0119\u015Bci dziesi\u0119\
   tnych do prostszej warto\u015Bci, kt\xF3ra jest wystarczaj\u0105co dobra w danym\

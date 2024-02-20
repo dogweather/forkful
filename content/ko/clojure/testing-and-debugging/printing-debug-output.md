@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/printing-debug-output/
 date: 2024-01-20 17:52:34.359248-07:00
 description: "\uCD9C\uB825 \uB514\uBC84\uAE45\uC774\uB780 \uBB34\uC5C7\uC778\uAC00\
   , \uADF8\uB9AC\uACE0 \uC65C \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC0AC\uC6A9\uD558\
@@ -11,7 +9,7 @@ description: "\uCD9C\uB825 \uB514\uBC84\uAE45\uC774\uB780 \uBB34\uC5C7\uC778\uAC
   \ \uCC3E\uACE0 \uBB38\uC81C\uB97C \uBD84\uC11D\uD560 \uB54C \uD574\uB2F9 \uC815\uBCF4\
   \uB97C \uD65C\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.693940
+lastmod: 2024-02-19 22:05:13.606572
 model: gpt-4-1106-preview
 summary: "\uCD9C\uB825 \uB514\uBC84\uAE45\uC774\uB780 \uBB34\uC5C7\uC778\uAC00, \uADF8\
   \uB9AC\uACE0 \uC65C \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC0AC\uC6A9\uD558\uB294\

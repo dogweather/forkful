@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/go/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:05.518595-07:00
 description: "Refactoring in programmeren houdt in dat bestaande computercodes worden\
   \ geherstructureerd\u2014de factoring wordt veranderd\u2014zonder dat hun externe\
   \ gedrag\u2026"
-lastmod: 2024-02-18 23:09:01.347860
+lastmod: 2024-02-19 22:05:09.381247
 model: gpt-4-0125-preview
 summary: "Refactoring in programmeren houdt in dat bestaande computercodes worden\
   \ geherstructureerd\u2014de factoring wordt veranderd\u2014zonder dat hun externe\

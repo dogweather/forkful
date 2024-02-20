@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/kotlin/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:26.810313-07:00
 description: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 envoyer des messages\
   \ d'erreur et des diagnostics sur un flux s\xE9par\xE9, distinct de la sortie standard\u2026"
-lastmod: 2024-02-18 23:09:08.798952
+lastmod: 2024-02-19 22:05:16.501585
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 envoyer des messages\
   \ d'erreur et des diagnostics sur un flux s\xE9par\xE9, distinct de la sortie standard\u2026"

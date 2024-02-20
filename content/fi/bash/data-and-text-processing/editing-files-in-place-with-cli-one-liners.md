@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:21:24.978556-07:00
 description: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvitsee\
   \ tehd\xE4 er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi.\
   \ Voisit avata\u2026"
-lastmod: 2024-02-18 23:09:07.799981
+lastmod: 2024-02-19 22:05:15.630885
 model: gpt-4-0125-preview
 summary: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvitsee tehd\xE4\
   \ er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi. Voisit\

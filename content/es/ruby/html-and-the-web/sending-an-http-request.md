@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/ruby/sending-an-http-request/
 date: 2024-01-20 18:00:41.773374-07:00
 description: "Enviar una solicitud HTTP es el proceso de solicitar datos o enviar\
   \ datos a un servidor utilizando el protocolo HTTP. Los programadores lo hacen para\u2026"
-lastmod: 2024-02-18 23:09:10.549008
+lastmod: 2024-02-19 22:05:18.095923
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP es el proceso de solicitar datos o enviar datos\
   \ a un servidor utilizando el protocolo HTTP. Los programadores lo hacen para\u2026"

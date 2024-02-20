@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/concatenating-strings/
 date: 2024-01-20 17:34:59.845226-07:00
 description: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
   \ liitt\xE4mist\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska se helpottaa\
   \ tekstipohjaisten\u2026"
-lastmod: 2024-02-18 23:09:07.566384
+lastmod: 2024-02-19 22:05:15.416407
 model: gpt-4-1106-preview
 summary: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon liitt\xE4\
   mist\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska se helpottaa tekstipohjaisten\u2026"

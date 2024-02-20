@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/kotlin/using-a-debugger/
 date: 2024-01-26 03:50:03.184815-07:00
 description: "Immergersi in un debugger consiste nel passare attraverso il proprio\
   \ codice, osservare gli ingranaggi in azione e catturare quei fastidiosi bug con\
   \ le\u2026"
-lastmod: 2024-02-18 23:08:55.850084
+lastmod: 2024-02-19 22:05:02.458796
 model: gpt-4-0125-preview
 summary: "Immergersi in un debugger consiste nel passare attraverso il proprio codice,\
   \ osservare gli ingranaggi in azione e catturare quei fastidiosi bug con le\u2026"

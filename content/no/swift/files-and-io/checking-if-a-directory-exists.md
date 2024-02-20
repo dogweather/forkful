@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/swift/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:41.318032-07:00
 description: "\xC5 sjekke om en katalog eksisterer i filsystemet er essensielt for\
   \ \xE5 h\xE5ndtere filstrukturer fra dine Swift-applikasjoner. Denne oppgaven gj\xF8\
   r det mulig for\u2026"
-lastmod: 2024-02-18 23:08:54.282570
+lastmod: 2024-02-19 22:05:00.431265
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer i filsystemet er essensielt for \xE5\
   \ h\xE5ndtere filstrukturer fra dine Swift-applikasjoner. Denne oppgaven gj\xF8\

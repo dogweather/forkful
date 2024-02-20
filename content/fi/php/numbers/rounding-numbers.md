@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/php/rounding-numbers/
 date: 2024-01-26 03:45:52.393156-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien poistamista tiettyyn\
   \ tarkkuuteen, usein kokonaislukuihin. Ohjelmoijat py\xF6rist\xE4v\xE4t yksinkertaistaakseen\u2026"
-lastmod: 2024-02-18 23:09:07.706031
+lastmod: 2024-02-19 22:05:15.545337
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien poistamista tiettyyn\
   \ tarkkuuteen, usein kokonaislukuihin. Ohjelmoijat py\xF6rist\xE4v\xE4t yksinkertaistaakseen\u2026"

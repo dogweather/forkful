@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:13.737190-07:00
 description: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
   \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\
   \ web-scrapingin, datan\u2026"
-lastmod: 2024-02-18 23:09:07.083348
+lastmod: 2024-02-19 22:05:14.963868
 model: gpt-4-0125-preview
 summary: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
   \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\

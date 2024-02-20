@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/comparing-two-dates/
 date: 2024-01-20 17:33:48.336528-07:00
 description: "Comparare due date significa verificare se sono uguali, quale precede\
   \ l'altra o quanto tempo passa tra loro. Questo \xE8 fondamentale per gestire\u2026"
-lastmod: 2024-02-18 23:08:56.394944
+lastmod: 2024-02-19 22:05:03.036156
 model: gpt-4-1106-preview
 summary: "Comparare due date significa verificare se sono uguali, quale precede l'altra\
   \ o quanto tempo passa tra loro. Questo \xE8 fondamentale per gestire\u2026"

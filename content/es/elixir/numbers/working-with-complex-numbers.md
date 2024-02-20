@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elixir/working-with-complex-numbers/
 date: 2024-01-26 04:38:41.595924-07:00
 description: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria\
   \ (como `3 + 4i`). Se utilizan en ingenier\xEDa, f\xEDsica y ciertos problemas de\
   \ computaci\xF3n.\u2026"
-lastmod: 2024-02-18 23:09:09.641987
+lastmod: 2024-02-19 22:05:17.283539
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria (como\
   \ `3 + 4i`). Se utilizan en ingenier\xEDa, f\xEDsica y ciertos problemas de computaci\xF3\

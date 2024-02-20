@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:54.795009-07:00
 description: "Rimuovere le virgolette da una stringa significa liberarsi di quei fastidiosi\
   \ caratteri doppi o singoli che racchiudono il nostro testo (' o \"). I\u2026"
-lastmod: 2024-02-18 23:08:56.161620
+lastmod: 2024-02-19 22:05:02.789459
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa liberarsi di quei fastidiosi\
   \ caratteri doppi o singoli che racchiudono il nostro testo (' o \"). I\u2026"

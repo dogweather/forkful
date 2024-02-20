@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:44.094051-07:00
 description: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8\
   rre filsystemet for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere\
   \ utf\xF8rer\u2026"
-lastmod: 2024-02-18 23:08:54.409180
+lastmod: 2024-02-19 22:05:00.569146
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8rre filsystemet\
   \ for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere utf\xF8\

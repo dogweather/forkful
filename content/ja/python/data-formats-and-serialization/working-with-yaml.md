@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/python/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:33.277206-07:00
@@ -12,7 +10,7 @@ description: "YAML\u306F \"YAML Ain't Markup Language\" \u306E\u7565\u3067\u3001
   \u306B\u3001\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u3001\u30D7\u30ED\u30BB\u30B9\u9593\
   \u30E1\u30C3\u30BB\u30FC\u30B8\u30F3\u30B0\u3001\u304A\u3088\u3073\u30C7\u30FC\u30BF\
   \u30B9\u30C8\u30EC\u30FC\u30B8\u306BYAML\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.582721
+lastmod: 2024-02-19 22:05:00.799922
 model: gpt-4-0125-preview
 summary: "YAML\u306F \"YAML Ain't Markup Language\" \u306E\u7565\u3067\u3001\u4EBA\
   \u9593\u304C\u8AAD\u3081\u308B\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u5F62\u5F0F\u3067\

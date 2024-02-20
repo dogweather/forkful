@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/javascript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:48.880318-07:00
 description: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zada\u0144\
   \ manipulacji plikami. Pozwala skryptom zweryfikowa\u0107 obecno\u015B\u0107 katalogu\
   \ przed\u2026"
-lastmod: 2024-02-18 23:08:50.007803
+lastmod: 2024-02-19 22:04:54.962156
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zada\u0144\
   \ manipulacji plikami. Pozwala skryptom zweryfikowa\u0107 obecno\u015B\u0107 katalogu\

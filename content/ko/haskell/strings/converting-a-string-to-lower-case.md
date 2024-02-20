@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:47.321069-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\
   \uB294 \uAC83\uC740 \uBB38\uC790\uB4E4\uC744 \uBAA8\uB450 \uC18C\uBB38\uC790\uB85C\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   , \uC0AC\uC6A9\uC790 \uC785\uB825 \uC815\uADDC\uD654, \uB370\uC774\uD130 \uC77C\uAD00\
   \uC131 \uB4F1\uC744 \uB2EC\uC131\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.266335
+lastmod: 2024-02-19 22:05:14.187834
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uBB38\uC790\uB4E4\uC744 \uBAA8\uB450 \uC18C\uBB38\uC790\uB85C \uBC14\

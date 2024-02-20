@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/java/reading-command-line-arguments/
 date: 2024-01-20 17:56:33.062473-07:00
 description: "Java\uC5D0\uC11C \uBA85\uB839\uD589 \uC778\uC790\uB97C \uC77D\uB294\
   \ \uAC83\uC740 \uC0AC\uC6A9\uC790\uAC00 \uD504\uB85C\uADF8\uB7A8\uC744 \uC2DC\uC791\
@@ -10,7 +8,7 @@ description: "Java\uC5D0\uC11C \uBA85\uB839\uD589 \uC778\uC790\uB97C \uC77D\uB29
   \uB7A8 \uB3D9\uC791\uC744 \uC870\uC815\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.044846
+lastmod: 2024-02-19 22:05:13.981964
 model: gpt-4-1106-preview
 summary: "Java\uC5D0\uC11C \uBA85\uB839\uD589 \uC778\uC790\uB97C \uC77D\uB294 \uAC83\
   \uC740 \uC0AC\uC6A9\uC790\uAC00 \uD504\uB85C\uADF8\uB7A8\uC744 \uC2DC\uC791\uD560\

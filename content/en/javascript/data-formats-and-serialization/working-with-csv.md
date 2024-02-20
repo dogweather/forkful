@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/working-with-csv/
 date: 2024-02-03 19:03:29.199464-07:00
 description: "Working with CSV (Comma-Separated Values) in JavaScript entails parsing\
   \ or generating CSV files to either ingest tabular data from external sources or\u2026"
-lastmod: 2024-02-18 23:09:11.459750
+lastmod: 2024-02-19 22:05:18.915287
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) in JavaScript entails parsing\
   \ or generating CSV files to either ingest tabular data from external sources or\u2026"

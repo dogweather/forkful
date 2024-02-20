@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/concatenating-strings/
 date: 2024-01-20 17:34:29.220521-07:00
 description: "Concatenating strings means sticking them end to end - \"hello\" + \"\
   world\" becomes \"helloworld\". Programmers do this to build up text, like URLs,\
   \ messages,\u2026"
-lastmod: 2024-02-18 23:09:10.715479
+lastmod: 2024-02-19 22:05:18.246082
 model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking them end to end - \"hello\" + \"world\"\
   \ becomes \"helloworld\". Programmers do this to build up text, like URLs, messages,\u2026"

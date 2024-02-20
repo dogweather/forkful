@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:41.332875-07:00
 description: "Het afronden van getallen betekent het afhakken van de decimalen tot\
   \ een eenvoudigere waarde die goed genoeg is voor een bepaalde context. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.031762
+lastmod: 2024-02-19 22:05:10.058776
 model: gpt-4-0125-preview
 summary: "Het afronden van getallen betekent het afhakken van de decimalen tot een\
   \ eenvoudigere waarde die goed genoeg is voor een bepaalde context. Programmeurs\u2026"

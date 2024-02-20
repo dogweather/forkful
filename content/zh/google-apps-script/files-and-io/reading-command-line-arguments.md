@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:16.569626-07:00
@@ -8,7 +6,7 @@ description: "\u5728Google Apps Script\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2
   \u6709\u70B9\u7528\u8BCD\u4E0D\u5F53\uFF0C\u56E0\u4E3A\u4E0EPython\u6216Node.js\u7B49\
   \u7F16\u7A0B\u8BED\u8A00\u4E2D\u7684\u4F20\u7EDF\u547D\u4EE4\u884C\u754C\u9762\u4E0D\
   \u540C\uFF0CGoogle Apps\u2026"
-lastmod: 2024-02-18 23:08:58.765975
+lastmod: 2024-02-19 22:05:06.300292
 model: gpt-4-0125-preview
 summary: "\u5728Google Apps Script\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\
   \u6709\u70B9\u7528\u8BCD\u4E0D\u5F53\uFF0C\u56E0\u4E3A\u4E0EPython\u6216Node.js\u7B49\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/rust/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:32.570042-07:00
 description: "Convertire una data in una stringa significa rappresentare la data come\
   \ testo. Lo facciamo perch\xE9 \xE8 pi\xF9 facile da leggere per gli umani e perch\xE9\
   \ \xE8 un\u2026"
-lastmod: 2024-02-18 23:08:55.691430
+lastmod: 2024-02-19 22:05:02.290644
 model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa rappresentare la data come\
   \ testo. Lo facciamo perch\xE9 \xE8 pi\xF9 facile da leggere per gli umani e perch\xE9\

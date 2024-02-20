@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/rust/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:12.602554-07:00
 description: "Regul\xE4re Ausdr\xFCcke, oder Regex, erm\xF6glichen es Entwicklern,\
   \ mit fortgeschrittenen Mustervergleichstechniken in Zeichenketten zu suchen, \xDC\
   bereinstimmungen\u2026"
-lastmod: 2024-02-18 23:09:04.631002
+lastmod: 2024-02-19 22:05:12.586893
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, erm\xF6glichen es Entwicklern, mit\
   \ fortgeschrittenen Mustervergleichstechniken in Zeichenketten zu suchen, \xDCbereinstimmungen\u2026"

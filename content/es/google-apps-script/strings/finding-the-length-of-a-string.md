@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:20.318580-07:00
 description: "Encontrar la longitud de una cadena en Google Apps Script, un lenguaje\
   \ de scripting en la nube de JavaScript que permite automatizar tareas a trav\xE9\
   s de\u2026"
-lastmod: 2024-02-18 23:09:09.495442
+lastmod: 2024-02-19 22:05:17.151365
 model: gpt-4-0125-preview
 summary: "Encontrar la longitud de una cadena en Google Apps Script, un lenguaje de\
   \ scripting en la nube de JavaScript que permite automatizar tareas a trav\xE9s\

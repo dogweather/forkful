@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/reading-command-line-arguments/
 date: 2024-01-20 17:56:07.895007-07:00
 description: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente data som brukeren\
   \ gir n\xE5r de kj\xF8rer programmet ditt. Vi gj\xF8r det for \xE5 gj\xF8re programmer\
   \ fleksible \u2013 slik\u2026"
-lastmod: 2024-02-18 23:08:53.619693
+lastmod: 2024-02-19 22:04:59.746967
 model: gpt-4-1106-preview
 summary: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente data som brukeren\
   \ gir n\xE5r de kj\xF8rer programmet ditt. Vi gj\xF8r det for \xE5 gj\xF8re programmer\

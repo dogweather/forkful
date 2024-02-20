@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/clojure/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:39.098128-07:00
 description: "Tekstitiedoston kirjoittaminen Clojuren avulla tarkoittaa tiedostojen\
   \ luomista tai muokkaamista tietojen tallentamiseksi sovelluksen ulkopuolelle,\u2026"
-lastmod: 2024-02-18 23:09:07.248028
+lastmod: 2024-02-19 22:05:15.144289
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Clojuren avulla tarkoittaa tiedostojen luomista\
   \ tai muokkaamista tietojen tallentamiseksi sovelluksen ulkopuolelle,\u2026"

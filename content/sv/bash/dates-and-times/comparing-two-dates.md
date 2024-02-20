@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/comparing-two-dates/
 date: 2024-01-20 17:32:20.277521-07:00
 description: "J\xE4mf\xF6ra tv\xE5 datum handlar om att se vilket som \xE4r tidigast\
   \ eller om de \xE4r lika. Programmerare g\xF6r detta f\xF6r att hantera tidsstyrda\
   \ h\xE4ndelser, tidsfrister\u2026"
-lastmod: 2024-02-18 23:08:51.973242
+lastmod: 2024-02-19 22:04:57.325573
 model: gpt-4-1106-preview
 summary: "J\xE4mf\xF6ra tv\xE5 datum handlar om att se vilket som \xE4r tidigast eller\
   \ om de \xE4r lika. Programmerare g\xF6r detta f\xF6r att hantera tidsstyrda h\xE4\

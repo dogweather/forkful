@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:30.755852-07:00
 description: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je\
   \ Rust-code direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"
-lastmod: 2024-02-18 23:09:01.621104
+lastmod: 2024-02-19 22:05:09.644061
 model: gpt-4-0125-preview
 summary: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je Rust-code\
   \ direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"

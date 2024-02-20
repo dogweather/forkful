@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/java/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:42.079104-07:00
 description: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Gro\xDFbuchstaben\
   \ in einem Text durch ihre kleingeschriebenen Gegenst\xFCcke zu ersetzen. Wir tun\
   \ dies,\u2026"
-lastmod: 2024-02-18 23:09:04.723233
+lastmod: 2024-02-19 22:05:12.675113
 model: gpt-4-1106-preview
 summary: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Gro\xDFbuchstaben\
   \ in einem Text durch ihre kleingeschriebenen Gegenst\xFCcke zu ersetzen. Wir tun\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:55.176448-07:00
@@ -8,7 +6,7 @@ description: "Refactoring l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\xFAc m\xE3 l\
   nh hi\u1EC7n t\u1EA1i m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
   i c\u1EE7a n\xF3 nh\u1EB1m c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9c t\xEDnh phi ch\u1EE9\
   c n\u0103ng. L\u1EADp tr\xECnh\u2026"
-lastmod: 2024-02-18 23:08:51.195029
+lastmod: 2024-02-19 22:04:56.456797
 model: gpt-4-0125-preview
 summary: "Refactoring l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\xFAc m\xE3 l\u1EC7\
   nh hi\u1EC7n t\u1EA1i m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\

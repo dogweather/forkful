@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/refactoring/
 date: 2024-01-26 03:37:02.442589-07:00
 description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
   \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci przeprowadzaj\u0105\
   \u2026"
-lastmod: 2024-02-18 23:08:50.133705
+lastmod: 2024-02-19 22:04:55.123515
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
   \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci przeprowadzaj\u0105\

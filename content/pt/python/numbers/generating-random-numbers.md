@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/generating-random-numbers/
 date: 2024-01-27 20:34:53.990766-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o podem\
   \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\
   \ para o\u2026"
-lastmod: 2024-02-18 23:08:57.757097
+lastmod: 2024-02-19 22:05:05.219748
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o podem\
   \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\

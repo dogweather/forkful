@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/java/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:52.141548-07:00
 description: "Scrivere test in Java consiste nel verificare che il proprio codice\
   \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
-lastmod: 2024-02-18 23:08:55.769186
+lastmod: 2024-02-19 22:05:02.373493
 model: gpt-4-0125-preview
 summary: "Scrivere test in Java consiste nel verificare che il proprio codice si comporti\
   \ come previsto in varie condizioni. I programmatori scrivono test per\u2026"

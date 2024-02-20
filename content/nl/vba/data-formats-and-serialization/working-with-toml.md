@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:34.680083-07:00
 description: "TOML, wat staat voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat\
   \ dat voornamelijk wordt gebruikt voor configuratiebestanden.\u2026"
-lastmod: 2024-02-18 23:09:01.692050
+lastmod: 2024-02-19 22:05:09.712962
 model: gpt-4-0125-preview
 summary: "TOML, wat staat voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat\
   \ dat voornamelijk wordt gebruikt voor configuratiebestanden.\u2026"

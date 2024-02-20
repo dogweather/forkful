@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/ruby/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:34.677950-07:00
@@ -8,7 +6,7 @@ description: "JSON, hay JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECBn
   \ d\u1EA1ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9. L\u1EADp tr\xECnh vi\xEA\
   n s\u1EED d\u1EE5ng JSON \u0111\u1EC3 l\u01B0u tr\u1EEF v\xE0 trao \u0111\u1ED5\
   i d\u1EEF li\u1EC7u b\u1EDFi v\xEC n\xF3 d\u1EC5 \u0111\u1ECDc\u2026"
-lastmod: 2024-02-18 23:08:51.309548
+lastmod: 2024-02-19 22:04:56.600607
 model: gpt-4-0125-preview
 summary: "JSON, hay JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
   ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9. L\u1EADp tr\xECnh vi\xEAn s\u1EED\

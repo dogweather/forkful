@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/rust/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:49.678860-07:00
 description: "Mandare una richiesta HTTP con autenticazione di base significa inserire\
   \ username e password per accedere a risorse protette. I programmatori lo fanno\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:55.679994
+lastmod: 2024-02-19 22:05:02.278572
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP con autenticazione di base significa inserire\
   \ username e password per accedere a risorse protette. I programmatori lo fanno\

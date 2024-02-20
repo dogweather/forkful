@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/java/using-a-debugger/
 date: 2024-01-26 03:49:42.207726-07:00
 description: "Usar um depurador significa empregar uma ferramenta para testar e corrigir\
   \ bugs em seu c\xF3digo. Os programadores fazem isso para entender o fluxo de suas\u2026"
-lastmod: 2024-02-18 23:08:58.023215
+lastmod: 2024-02-19 22:05:05.499911
 model: gpt-4-0125-preview
 summary: "Usar um depurador significa empregar uma ferramenta para testar e corrigir\
   \ bugs em seu c\xF3digo. Os programadores fazem isso para entender o fluxo de suas\u2026"

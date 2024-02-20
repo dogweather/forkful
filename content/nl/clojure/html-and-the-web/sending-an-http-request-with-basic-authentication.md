@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/clojure/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:54.684564-07:00
 description: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het\
   \ toevoegen van een gebruikersnaam en wachtwoord aan een verzoek voor beperkte bronnen.\u2026"
-lastmod: 2024-02-18 23:09:01.479309
+lastmod: 2024-02-19 22:05:09.507876
 model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het toevoegen\
   \ van een gebruikersnaam en wachtwoord aan een verzoek voor beperkte bronnen.\u2026"

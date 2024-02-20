@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/vba/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:56.479752-07:00
 description: "Merkkijonointerpolointi Visual Basic for Applications (VBA) -ohjelmoinnissa\
   \ viittaa prosessiin, jossa muuttujia tai lausekkeita sijoitetaan\u2026"
-lastmod: 2024-02-18 23:09:07.394434
+lastmod: 2024-02-19 22:05:15.280798
 model: gpt-4-0125-preview
 summary: "Merkkijonointerpolointi Visual Basic for Applications (VBA) -ohjelmoinnissa\
   \ viittaa prosessiin, jossa muuttujia tai lausekkeita sijoitetaan\u2026"

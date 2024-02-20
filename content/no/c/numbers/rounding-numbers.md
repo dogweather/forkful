@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:34.093210-07:00
 description: "Avrunding av tall er prosessen med \xE5 justere sifrene i et tall for\
   \ \xE5 redusere presisjonen i henhold til visse regler, enten mot n\xE6rmeste hele\
   \ tall eller\u2026"
-lastmod: 2024-02-18 23:08:54.388700
+lastmod: 2024-02-19 22:05:00.546468
 model: gpt-4-0125-preview
 summary: "Avrunding av tall er prosessen med \xE5 justere sifrene i et tall for \xE5\
   \ redusere presisjonen i henhold til visse regler, enten mot n\xE6rmeste hele tall\

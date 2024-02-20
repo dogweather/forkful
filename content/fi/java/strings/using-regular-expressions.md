@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/java/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:22.880405-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Javassa mahdollistavat tiettyjen\
   \ mallien m\xE4\xE4ritt\xE4misen haettavaksi, manipuloitavaksi tai merkkijonojen\
   \ validointiin\u2026"
-lastmod: 2024-02-18 23:09:07.447432
+lastmod: 2024-02-19 22:05:15.330636
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Javassa mahdollistavat tiettyjen\
   \ mallien m\xE4\xE4ritt\xE4misen haettavaksi, manipuloitavaksi tai merkkijonojen\

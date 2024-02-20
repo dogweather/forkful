@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/powershell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:51.192520-07:00
 description: "Strings in Kleinbuchstaben zu konvertieren bedeutet, alle Buchstaben\
   \ eines Texts in untere Zeichen umzuwandeln. Programmierer nutzen diese Technik,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:05.085420
+lastmod: 2024-02-19 22:05:13.020507
 model: gpt-4-1106-preview
 summary: "Strings in Kleinbuchstaben zu konvertieren bedeutet, alle Buchstaben eines\
   \ Texts in untere Zeichen umzuwandeln. Programmierer nutzen diese Technik, um\u2026"

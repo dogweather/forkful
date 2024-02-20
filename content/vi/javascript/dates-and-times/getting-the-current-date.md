@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:14.804051-07:00
@@ -8,7 +6,7 @@ description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong JavaScript l\xE0 vi\u1EC
   c thu th\u1EADp ng\xE0y v\xE0 th\u1EDDi gian c\u1EE7a ng\xE0y hi\u1EC7n t\u1EA1\
   i. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho c\xE1\
   c m\u1EE5c \u0111\xEDch nh\u01B0 d\u1EA5u th\u1EDDi\u2026"
-lastmod: 2024-02-18 23:08:51.147655
+lastmod: 2024-02-19 22:04:56.394029
 model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong JavaScript l\xE0 vi\u1EC7c thu\
   \ th\u1EADp ng\xE0y v\xE0 th\u1EDDi gian c\u1EE7a ng\xE0y hi\u1EC7n t\u1EA1i. L\u1EAD\

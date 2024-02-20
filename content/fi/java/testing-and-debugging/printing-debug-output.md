@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/printing-debug-output/
 date: 2024-01-20 17:53:00.540390-07:00
 description: "Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia.\
   \ Koodarit tekev\xE4t t\xE4t\xE4 koska se on simppeli tapa n\xE4hd\xE4, mit\xE4\
   \ sovelluksessa\u2026"
-lastmod: 2024-02-18 23:09:07.460919
+lastmod: 2024-02-19 22:05:15.343324
 model: gpt-4-1106-preview
 summary: "Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia.\
   \ Koodarit tekev\xE4t t\xE4t\xE4 koska se on simppeli tapa n\xE4hd\xE4, mit\xE4\

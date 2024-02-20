@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/java/writing-a-text-file/
 date: 2024-02-03 19:03:21.820214-07:00
 description: "Writing a text file in Java is about using the language's capabilities\
   \ to create and write content into files on the filesystem. Programmers do this\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:10.948694
+lastmod: 2024-02-19 22:05:18.456819
 model: gpt-4-0125-preview
 summary: "Writing a text file in Java is about using the language's capabilities to\
   \ create and write content into files on the filesystem. Programmers do this for\u2026"

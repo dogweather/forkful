@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/swift/working-with-toml/
 date: 2024-01-26 04:26:43.643891-07:00
 description: "TOML (Toms Opplagte, Minimalistiske Spr\xE5k) er et data serialiseringsformat\
   \ som er lett \xE5 lese p\xE5 grunn av dets klare semantikk. Programmerere bruker\
   \ TOML\u2026"
-lastmod: 2024-02-18 23:08:54.291546
+lastmod: 2024-02-19 22:05:00.440987
 model: gpt-4-0125-preview
 summary: "TOML (Toms Opplagte, Minimalistiske Spr\xE5k) er et data serialiseringsformat\
   \ som er lett \xE5 lese p\xE5 grunn av dets klare semantikk. Programmerere bruker\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/concatenating-strings/
 date: 2024-01-20 17:35:25.023138-07:00
 description: "La concat\xE9nation de cha\xEEnes c'est, simplement, la fusion de deux\
   \ textes en un seul. On le fait souvent pour construire des messages ou combiner\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:08.520042
+lastmod: 2024-02-19 22:05:16.302076
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes c'est, simplement, la fusion de deux textes\
   \ en un seul. On le fait souvent pour construire des messages ou combiner des\u2026"

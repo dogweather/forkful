@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/fish-shell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:24.324500-07:00
@@ -12,7 +10,7 @@ description: "\u901A\u8FC7Fish Shell\u64CD\u4F5CYAML\u6D89\u53CA\u5230\u89E3\u67
   \u6548\u5730\u81EA\u52A8\u5316\u548C\u914D\u7F6E\u5E94\u7528\u7A0B\u5E8F\u6216\u670D\
   \u52A1\uFF0C\u4FBF\u4E8E\u6267\u884C\u914D\u7F6E\u7BA1\u7406\u548C\u8D44\u6E90\u914D\
   \u7F6E\u7B49\u4EFB\u52A1\u3002"
-lastmod: 2024-02-18 23:08:59.537839
+lastmod: 2024-02-19 22:05:07.346622
 model: gpt-4-0125-preview
 summary: "\u901A\u8FC7Fish Shell\u64CD\u4F5CYAML\u6D89\u53CA\u5230\u89E3\u6790\u548C\
   \u64CD\u7EB5YAML\uFF08YAML Ain't Markup Language\uFF0CYAML\u4E0D\u662F\u6807\u8BB0\

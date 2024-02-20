@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/refactoring/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:40.631262-07:00
 description: "Il refactoring nella programmazione implica la modifica della struttura\
   \ del codice senza cambiarne il comportamento, per migliorare aspetti come la\u2026"
-lastmod: 2024-02-18 23:08:55.732080
+lastmod: 2024-02-19 22:05:02.333505
 model: gpt-4-0125-preview
 summary: "Il refactoring nella programmazione implica la modifica della struttura\
   \ del codice senza cambiarne il comportamento, per migliorare aspetti come la\u2026"

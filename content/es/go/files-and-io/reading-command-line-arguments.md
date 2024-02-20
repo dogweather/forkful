@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:00.779959-07:00
 description: "Leer argumentos de l\xEDnea de comando en Go implica extraer los argumentos\
   \ proporcionados a un programa durante su invocaci\xF3n desde el terminal o la l\xED\
   nea\u2026"
-lastmod: 2024-02-18 23:09:09.473732
+lastmod: 2024-02-19 22:05:17.131610
 model: gpt-4-0125-preview
 summary: "Leer argumentos de l\xEDnea de comando en Go implica extraer los argumentos\
   \ proporcionados a un programa durante su invocaci\xF3n desde el terminal o la l\xED\

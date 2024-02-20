@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:15.914307-07:00
 description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
   \ inneb\xE4r att man inkluderar anv\xE4ndarnamn och l\xF6senord kodat i bas64-format\
   \ i requestens\u2026"
-lastmod: 2024-02-18 23:08:51.669144
+lastmod: 2024-02-19 22:04:56.995922
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
   r att man inkluderar anv\xE4ndarnamn och l\xF6senord kodat i bas64-format i requestens\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/c-sharp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:39.193786-07:00
@@ -14,7 +12,7 @@ description: "\u05DC\u05E7\u05D1\u05DC \u05D0\u05EA \u05D4\u05EA\u05D0\u05E8\u05
   \u05D9\u05D3\u05E2 \u05D6\u05D4 \u05D1\u05E9\u05D1\u05D9\u05DC \u05DC\u05EA\u05E2\
   \u05D3, \u05DC\u05D1\u05E6\u05E2 \u05EA\u05D9\u05D5\u05D2 \u05D6\u05DE\u05DF \u05DC\
   \u05E4\u05E2\u05D5\u05DC\u05D5\u05EA,\u2026"
-lastmod: 2024-02-18 23:08:52.853022
+lastmod: 2024-02-19 22:04:58.592078
 model: gpt-4-0125-preview
 summary: "\u05DC\u05E7\u05D1\u05DC \u05D0\u05EA \u05D4\u05EA\u05D0\u05E8\u05D9\u05DA\
   \ \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9 \u05D1-C# \u05DB\u05D5\u05DC\u05DC \u05D0\

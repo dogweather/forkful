@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/python/generating-random-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:43.362342-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn bao g\u1ED3m vi\u
   c t\u1EA1o ra c\xE1c s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1\
   ch h\u1EE3p l\xFD h\u01A1n so v\u1EDBi ng\u1EABu nhi\xEAn, \u0111i\u1EC1u n\xE0\
   y r\u1EA5t c\u1EA7n thi\u1EBFt cho vi\u1EC7c ph\xE1t tri\u1EC3n\u2026"
-lastmod: 2024-02-18 23:08:50.263274
+lastmod: 2024-02-19 22:04:55.284499
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn bao g\u1ED3m vi\u1EC7c\
   \ t\u1EA1o ra c\xE1c s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1\

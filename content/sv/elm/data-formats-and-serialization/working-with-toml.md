@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/working-with-toml/
 date: 2024-01-26 04:21:21.388068-07:00
 description: "TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett\
   \ data-serialiseringsspr\xE5k. Elm-programmerare anv\xE4nder det f\xF6r att hantera\
   \ konfigurationsdata\u2026"
-lastmod: 2024-02-18 23:08:51.731935
+lastmod: 2024-02-19 22:04:57.065269
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett data-serialiseringsspr\xE5\
   k. Elm-programmerare anv\xE4nder det f\xF6r att hantera konfigurationsdata\u2026"

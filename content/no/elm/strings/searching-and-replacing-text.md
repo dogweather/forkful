@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/searching-and-replacing-text/
 date: 2024-01-20 17:57:29.802344-07:00
 description: "S\xF8k og erstatt er metoden for \xE5 finne tekststrenger og bytte dem\
   \ ut med ny tekst. Programmerere bruker dette for \xE5 oppdatere kode, rette feil\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:53.797011
+lastmod: 2024-02-19 22:04:59.939847
 model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt er metoden for \xE5 finne tekststrenger og bytte dem ut\
   \ med ny tekst. Programmerere bruker dette for \xE5 oppdatere kode, rette feil eller\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:55.648435-07:00
@@ -14,7 +12,7 @@ description: "\u0930\u0947\u0917\u0941\u0932\u0930 \u090F\u0915\u094D\u0938\u092
   \u0930\u0940\u0915\u093E \u092A\u094D\u0930\u0926\u093E\u0928 \u0915\u0930\u0924\
   \u0947 \u0939\u0948\u0902\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\
   \u092E\u0930 \u0907\u0928\u0915\u093E\u2026"
-lastmod: 2024-02-18 23:09:04.190549
+lastmod: 2024-02-19 22:05:12.164589
 model: gpt-4-0125-preview
 summary: "\u0930\u0947\u0917\u0941\u0932\u0930 \u090F\u0915\u094D\u0938\u092A\u094D\
   \u0930\u0947\u0936\u0928\u094D\u0938 (regex) \u092A\u0930\u093F\u092D\u093E\u0937\

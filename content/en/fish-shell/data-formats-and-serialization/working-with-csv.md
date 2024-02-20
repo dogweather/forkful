@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/working-with-csv/
 date: 2024-02-03 19:03:13.532792-07:00
 description: "Working with CSV (Comma Separated Values) files involves parsing, manipulating,\
   \ and generating data in a tabular format that is widely used for data\u2026"
-lastmod: 2024-02-18 23:09:11.503023
+lastmod: 2024-02-19 22:05:18.955189
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma Separated Values) files involves parsing, manipulating,\
   \ and generating data in a tabular format that is widely used for data\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/clojure/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:51.982600-07:00
 description: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
   \ nel testo, togliendo ci\xF2 che non serve. I programmatori lo fanno per semplificare\u2026"
-lastmod: 2024-02-18 23:08:55.546429
+lastmod: 2024-02-19 22:05:02.135451
 model: gpt-4-1106-preview
 summary: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
   \ nel testo, togliendo ci\xF2 che non serve. I programmatori lo fanno per semplificare\u2026"

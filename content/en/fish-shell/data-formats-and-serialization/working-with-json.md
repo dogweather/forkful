@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/working-with-json/
 date: 2024-02-03 19:03:11.371835-07:00
 description: "Working with JSON in the Fish Shell involves parsing and generating\
   \ JSON data, a common task for configuring applications, API interaction, and\u2026"
-lastmod: 2024-02-18 23:09:11.502067
+lastmod: 2024-02-19 22:05:18.954299
 model: gpt-4-0125-preview
 summary: "Working with JSON in the Fish Shell involves parsing and generating JSON\
   \ data, a common task for configuring applications, API interaction, and\u2026"

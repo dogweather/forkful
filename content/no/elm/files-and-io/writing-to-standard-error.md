@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/writing-to-standard-error/
 date: 2024-01-19
 description: "Skriving til standard feil (stderr) lar deg rapportere feil uten \xE5\
   \ blande det med hovedutdata. Programmerere bruker det til \xE5 skille normal output\
   \ fra\u2026"
-lastmod: 2024-02-18 23:08:53.826880
+lastmod: 2024-02-19 22:04:59.971805
 summary: "Skriving til standard feil (stderr) lar deg rapportere feil uten \xE5 blande\
   \ det med hovedutdata. Programmerere bruker det til \xE5 skille normal output fra\u2026"
 title: Skrive til standardfeil

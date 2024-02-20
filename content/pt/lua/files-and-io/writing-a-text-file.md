@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/lua/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:49.532865-07:00
 description: "Escrever em um arquivo de texto em Lua envolve criar ou abrir um arquivo\
   \ no modo de escrita, e ent\xE3o usar opera\xE7\xF5es de arquivo para inserir texto.\
   \ Esta \xE9\u2026"
-lastmod: 2024-02-18 23:08:58.300167
+lastmod: 2024-02-19 22:05:05.780527
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Lua envolve criar ou abrir um arquivo\
   \ no modo de escrita, e ent\xE3o usar opera\xE7\xF5es de arquivo para inserir texto.\

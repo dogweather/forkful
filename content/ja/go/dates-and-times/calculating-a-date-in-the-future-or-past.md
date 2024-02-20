@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/go/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:00.173651-07:00
@@ -15,7 +13,7 @@ description: "Go\u3067\u672A\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4E
   \u53EF\u6B20\u306A\u3069\u306E\u6A5F\u80FD\u3092\u8981\u6C42\u3059\u308B\u30A2\u30D7\
   \u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u3067\u3053\u306E\u30BF\u30B9\u30AF\u3092\u4E00\
   \u822C\u7684\u306B\u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.493783
+lastmod: 2024-02-19 22:05:00.675380
 model: gpt-4-0125-preview
 summary: "Go\u3067\u672A\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\
   \u8A08\u7B97\u3059\u308B\u3053\u3068\u306F\u3001\u7279\u5B9A\u306E\u65E5\u4ED8\u306B\

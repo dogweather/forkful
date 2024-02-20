@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:27.245107-07:00
 description: "S\xF8k og erstatt lar deg finne tekststrenger og skifte dem ut med nye.\
   \ Programmerere bruker dette for \xE5 oppdatere kode, rette feil eller masse-endre\
   \ data."
-lastmod: 2024-02-18 23:08:54.169734
+lastmod: 2024-02-19 22:05:00.357237
 model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt lar deg finne tekststrenger og skifte dem ut med nye.\
   \ Programmerere bruker dette for \xE5 oppdatere kode, rette feil eller masse-endre\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/swift/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:55:34.887630-07:00
@@ -14,7 +12,7 @@ description: "\u041A\u043E\u0433\u0434\u0430-\u043D\u0438\u0431\u0443\u0434\u044
   , \u043D\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0439 \u0438\u043B\
   \u0438 \u0441\u043E\u0431\u044B\u0442\u0438\u0439. \u0417\u043D\u0430\u043D\u0438\
   \u0435 \u0442\u043E\u0433\u043E, \u043A\u0430\u043A \u044D\u0442\u043E\u2026"
-lastmod: 2024-02-18 23:08:57.425238
+lastmod: 2024-02-19 22:05:04.687475
 model: gpt-4-0125-preview
 summary: "\u041A\u043E\u0433\u0434\u0430-\u043D\u0438\u0431\u0443\u0434\u044C \u043D\
   \u0443\u0436\u043D\u043E \u0431\u044B\u043B\u043E \u043D\u0430\u0439\u0442\u0438\

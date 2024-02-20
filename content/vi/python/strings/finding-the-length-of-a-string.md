@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/python/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:45.484097-07:00
@@ -9,7 +7,7 @@ description: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ba
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1\
   c \u0111\u1EA7u v\xE0o, l\u1EB7p qua c\xE1c chu\u1ED7i, ph\xE2n b\u1ED5 ngu\u1ED3\
   n\u2026"
-lastmod: 2024-02-18 23:08:50.257927
+lastmod: 2024-02-19 22:04:55.277579
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i bao g\u1ED3\
   m vi\u1EC7c \u0111\u1EBFm s\u1ED1 k\xFD t\u1EF1 c\u1EE7a n\xF3. L\u1EADp tr\xEC\

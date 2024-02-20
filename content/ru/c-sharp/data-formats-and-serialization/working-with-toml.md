@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/c-sharp/working-with-toml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:10.773708-07:00
@@ -12,7 +10,7 @@ description: "TOML - \u044D\u0442\u043E \u0430\u0431\u0431\u0440\u0435\u0432\u04
   \ \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0438, \u043A\
   \u043E\u0442\u043E\u0440\u044B\u0439 \u043B\u0435\u0433\u043A\u043E \u0447\u0438\
   \u0442\u0430\u0435\u0442\u0441\u044F\u2026"
-lastmod: 2024-02-18 23:08:57.024654
+lastmod: 2024-02-19 22:05:04.054552
 model: gpt-4-0125-preview
 summary: "TOML - \u044D\u0442\u043E \u0430\u0431\u0431\u0440\u0435\u0432\u0438\u0430\
   \u0442\u0443\u0440\u0430 \u0434\u043B\u044F Tom's Obvious, Minimal Language (\u042F\

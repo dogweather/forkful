@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/comparing-two-dates/
 date: 2024-01-20 17:33:38.307515-07:00
 description: "Sammenligning av to datoer handler om \xE5 finne ut om en dato kommer\
   \ f\xF8r, etter, eller er den samme som en annen dato. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
-lastmod: 2024-02-18 23:08:54.450345
+lastmod: 2024-02-19 22:05:00.613857
 model: gpt-4-1106-preview
 summary: "Sammenligning av to datoer handler om \xE5 finne ut om en dato kommer f\xF8\
   r, etter, eller er den samme som en annen dato. Programmerere gj\xF8r dette for\

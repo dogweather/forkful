@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/elm/downloading-a-web-page/
 date: 2024-01-20 17:43:52.578068-07:00
 description: "\xC5 laste ned en nettside er prosessen med \xE5 hente innholdet til\
   \ en nettside via internett, slik at du kan se eller bearbeide det i et program.\u2026"
-lastmod: 2024-02-18 23:08:53.809644
+lastmod: 2024-02-19 22:04:59.953423
 model: gpt-4-1106-preview
 summary: "\xC5 laste ned en nettside er prosessen med \xE5 hente innholdet til en\
   \ nettside via internett, slik at du kan se eller bearbeide det i et program.\u2026"

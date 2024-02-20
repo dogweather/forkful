@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:29.361034-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB9DE\
   \uB294 \uBB38\uC790 \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uBCC0\uACBD\uB418\uC5B4\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB
   \ \uAE68\uB057\uD558\uAC8C \uCC98\uB9AC\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\
   \uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.860433
+lastmod: 2024-02-19 22:05:13.796171
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB9DE\uB294\
   \ \uBB38\uC790 \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uBCC0\uACBD\uB418\uC5B4\uC57C\

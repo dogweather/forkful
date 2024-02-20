@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:58.747167-07:00
 description: "\xC5 arbeide med komplekse tall i programmering inneb\xE6rer \xE5 manipulere\
   \ tall som har b\xE5de en reell og en imagin\xE6r del, som typisk uttrykkes som\
   \ `a + bi`.\u2026"
-lastmod: 2024-02-18 23:08:53.429454
+lastmod: 2024-02-19 22:04:59.539279
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med komplekse tall i programmering inneb\xE6rer \xE5 manipulere\
   \ tall som har b\xE5de en reell og en imagin\xE6r del, som typisk uttrykkes som\

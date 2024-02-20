@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:09.490295-07:00
 description: "Een REPL, of Read-Eval-Print Loop, stelt je in staat om C# code te typen\
   \ en deze interactief uit te voeren. Programmeurs gebruiken het voor snelle\u2026"
-lastmod: 2024-02-18 23:09:01.854254
+lastmod: 2024-02-19 22:05:09.871052
 model: gpt-4-0125-preview
 summary: "Een REPL, of Read-Eval-Print Loop, stelt je in staat om C# code te typen\
   \ en deze interactief uit te voeren. Programmeurs gebruiken het voor snelle\u2026"

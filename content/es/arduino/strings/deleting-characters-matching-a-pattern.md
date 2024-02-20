@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/arduino/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:35.167885-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n sirve para limpiar\
   \ o procesar texto, como quitar espacios o caracteres especiales. Los programadores\
   \ lo\u2026"
-lastmod: 2024-02-18 23:09:10.244425
+lastmod: 2024-02-19 22:05:17.824251
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n sirve para limpiar o\
   \ procesar texto, como quitar espacios o caracteres especiales. Los programadores\

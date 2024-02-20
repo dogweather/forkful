@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/typescript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:07.839559-07:00
 description: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript\
   \ aufbauenden Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen\u2026"
-lastmod: 2024-02-18 23:09:04.607781
+lastmod: 2024-02-19 22:05:12.565050
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript aufbauenden\
   \ Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen\u2026"

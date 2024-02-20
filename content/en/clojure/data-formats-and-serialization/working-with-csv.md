@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/working-with-csv/
 date: 2024-02-03 19:03:00.222394-07:00
 description: "Working with CSV (Comma-Separated Values) files involves parsing and\
   \ generating text data structured as rows and columns, akin to spreadsheet data.\
   \ This\u2026"
-lastmod: 2024-02-18 23:09:10.745927
+lastmod: 2024-02-19 22:05:18.273082
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) files involves parsing and generating\
   \ text data structured as rows and columns, akin to spreadsheet data. This\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:24.785388-07:00
@@ -9,7 +7,7 @@ description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i c\xF3 ngh\u0129a l\xE0 gi\xE0n
   ng c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3 \u0111\xE1nh d\u1EA5u th\u1EDDi gian c\xE1c s\u1EF1 ki\u1EC7n, l\xEA\
   n\u2026"
-lastmod: 2024-02-18 23:08:51.197733
+lastmod: 2024-02-19 22:04:56.459766
 model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i c\xF3 ngh\u0129a l\xE0 gi\xE0nh l\u1EA5\
   y ng\xE0y l\u1ECBch s\u1EF1 hi\u1EC7n t\u1EA1i t\u1EEB h\u1EC7 th\u1ED1ng c\u1EE7\

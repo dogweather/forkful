@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c/writing-tests/
 date: 2024-02-03 17:49:58.148338-07:00
 description: "Writing tests in C involves creating smaller, auxiliary programs or\
   \ functions that automatically verify the functionality of your code. Programmers\
   \ do it\u2026"
-lastmod: 2024-02-18 23:09:11.526214
+lastmod: 2024-02-19 22:05:18.976432
 model: gpt-4-0125-preview
 summary: "Writing tests in C involves creating smaller, auxiliary programs or functions\
   \ that automatically verify the functionality of your code. Programmers do it\u2026"

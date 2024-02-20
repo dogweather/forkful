@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/creating-a-temporary-file/
 date: 2024-01-20 17:41:11.075675-07:00
 description: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter. Entwickler nutzen\
   \ sie, um Daten zwischenzuspeichern, ohne auf die dauerhafte Speicherstruktur zuzugreifen."
-lastmod: 2024-02-18 23:09:05.254897
+lastmod: 2024-02-19 22:05:13.180358
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter. Entwickler nutzen\
   \ sie, um Daten zwischenzuspeichern, ohne auf die dauerhafte Speicherstruktur zuzugreifen."

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:29.056773-07:00
 description: "Supprimer les caract\xE8res correspondant \xE0 un mod\xE8le sp\xE9cifique\
   \ consiste \xE0 enlever certains caract\xE8res ou s\xE9quences de caract\xE8res\
   \ des cha\xEEnes de caract\xE8res,\u2026"
-lastmod: 2024-02-18 23:09:08.211670
+lastmod: 2024-02-19 22:05:16.022735
 model: gpt-4-0125-preview
 summary: "Supprimer les caract\xE8res correspondant \xE0 un mod\xE8le sp\xE9cifique\
   \ consiste \xE0 enlever certains caract\xE8res ou s\xE9quences de caract\xE8res\

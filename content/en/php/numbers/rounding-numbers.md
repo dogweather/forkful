@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/rounding-numbers/
 date: 2024-01-25 02:59:57.892439-07:00
 description: "Rounding numbers means chopping off the decimals to a set precision,\
   \ often to whole numbers. Programmers round to simplify calculations, improve\u2026"
-lastmod: 2024-02-18 23:09:11.132017
+lastmod: 2024-02-19 22:05:18.625105
 model: gpt-4-1106-preview
 summary: "Rounding numbers means chopping off the decimals to a set precision, often\
   \ to whole numbers. Programmers round to simplify calculations, improve\u2026"

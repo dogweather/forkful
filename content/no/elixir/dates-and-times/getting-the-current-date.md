@@ -1,6 +1,4 @@
 ---
-aliases:
-- /no/elixir/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
@@ -8,7 +6,7 @@ date: 2024-02-03 19:09:27.907362-07:00
 description: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang\
   \ til systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:53.614894
+lastmod: 2024-02-19 22:04:59.741848
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang til\
   \ systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\

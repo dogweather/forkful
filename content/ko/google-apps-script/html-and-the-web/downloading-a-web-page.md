@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:43.738351-07:00
@@ -12,7 +10,7 @@ description: "Google Apps Script\uC5D0\uC11C \uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC
   \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774 \uC791\uC5C5\uC744 \uC790\
   \uB3D9\uD654\uD558\uC5EC \uB370\uC774\uD130 \uC218\uC9D1\uC774\uB098 \uD1B5\uD569\
   \ \uC791\uC5C5\uC744 \uCD5C\uC18C\uD654\uD558\uACE0 \uC2E4\uC2DC\uAC04\u2026"
-lastmod: 2024-02-18 23:09:05.553227
+lastmod: 2024-02-19 22:05:13.469094
 model: gpt-4-0125-preview
 summary: "Google Apps Script\uC5D0\uC11C \uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\
   \uB4DC\uB294 HTML\uC744 \uD1B5\uD574 \uC6F9 \uD398\uC774\uC9C0\uC758 \uB0B4\uC6A9\

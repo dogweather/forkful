@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:07.454080-07:00
 description: "Web-sivun lataaminen Google Apps Scriptill\xE4 sis\xE4lt\xE4\xE4 sivun\
   \ sis\xE4ll\xF6n noutamisen HTML:n kautta eri tarkoituksiin, kuten verkon kaavintaan\
   \ (web scraping),\u2026"
-lastmod: 2024-02-18 23:09:07.133636
+lastmod: 2024-02-19 22:05:15.011241
 model: gpt-4-0125-preview
 summary: "Web-sivun lataaminen Google Apps Scriptill\xE4 sis\xE4lt\xE4\xE4 sivun sis\xE4\
   ll\xF6n noutamisen HTML:n kautta eri tarkoituksiin, kuten verkon kaavintaan (web\

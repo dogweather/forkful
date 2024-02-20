@@ -1,6 +1,4 @@
 ---
-aliases:
-- /fi/fish-shell/organizing-code-into-functions/
 changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 23:02:32.082544-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skriptist\xE4\
   \ tiettyj\xE4 teht\xE4vi\xE4 varten. Teemme sen, koska se tekee koodista helpommin\
   \ luettavaa,\u2026"
-lastmod: 2024-02-18 23:09:08.090304
+lastmod: 2024-02-19 22:05:15.894308
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skriptist\xE4\
   \ tiettyj\xE4 teht\xE4vi\xE4 varten. Teemme sen, koska se tekee koodista helpommin\

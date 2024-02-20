@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/java/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:34.897001-07:00
 description: "Das Gro\xDFschreiben eines Strings bedeutet, den ersten Buchstaben jedes\
   \ Wortes im String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend die restlichen Buchstaben\u2026"
-lastmod: 2024-02-18 23:09:04.719112
+lastmod: 2024-02-19 22:05:12.670922
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings bedeutet, den ersten Buchstaben jedes\
   \ Wortes im String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend die restlichen Buchstaben\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/organizing-code-into-functions/
 date: 2024-01-25 03:00:08.015698-07:00
 description: "Organizing code into functions is about breaking down your scripting\
   \ into bite-size chunks\u2014think functional LEGO blocks. We do it for clarity,\u2026"
-lastmod: 2024-02-18 23:09:11.184084
+lastmod: 2024-02-19 22:05:18.672450
 model: gpt-4-1106-preview
 summary: "Organizing code into functions is about breaking down your scripting into\
   \ bite-size chunks\u2014think functional LEGO blocks. We do it for clarity,\u2026"

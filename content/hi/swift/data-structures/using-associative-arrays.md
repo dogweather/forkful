@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/swift/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:14:35.785901-07:00
@@ -14,7 +12,7 @@ description: "\u0938\u094D\u0935\u093F\u092B\u094D\u091F \u092E\u0947\u0902 \u09
   \u0930\u092C\u0902\u0927\u093F\u0924 \u0915\u0930\u0928\u0947 \u0926\u0947\u0924\
   \u0947 \u0939\u0948\u0902\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\
   \u092E\u0930 \u0907\u0938\u0915\u093E \u0909\u092A\u092F\u094B\u0917\u2026"
-lastmod: 2024-02-18 23:09:03.954409
+lastmod: 2024-02-19 22:05:11.937032
 model: gpt-4-0125-preview
 summary: "\u0938\u094D\u0935\u093F\u092B\u094D\u091F \u092E\u0947\u0902 \u0936\u092C\
   \u094D\u0926\u0915\u094B\u0936 \u0915\u0947 \u0930\u0942\u092A \u092E\u0947\u0902\

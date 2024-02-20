@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c/parsing-html/
 date: 2024-02-03 17:50:12.004223-07:00
 description: "Parsing HTML in C involves analyzing HTML documents to extract data,\
   \ structure, or specific parts efficiently, often as a precursor to data mining\
   \ or web\u2026"
-lastmod: 2024-02-18 23:09:11.520432
+lastmod: 2024-02-19 22:05:18.971058
 model: gpt-4-0125-preview
 summary: "Parsing HTML in C involves analyzing HTML documents to extract data, structure,\
   \ or specific parts efficiently, often as a precursor to data mining or web\u2026"

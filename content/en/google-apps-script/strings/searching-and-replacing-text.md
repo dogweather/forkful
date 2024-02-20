@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/searching-and-replacing-text/
 date: 2024-02-01 21:12:07.593467-07:00
 description: "Searching and replacing text in Google Apps Script involves programmatically\
   \ identifying specific strings in a document, spreadsheet, or any other type of\u2026"
-lastmod: 2024-02-18 23:09:10.624284
+lastmod: 2024-02-19 22:05:18.163468
 model: gpt-4-0125-preview
 summary: "Searching and replacing text in Google Apps Script involves programmatically\
   \ identifying specific strings in a document, spreadsheet, or any other type of\u2026"

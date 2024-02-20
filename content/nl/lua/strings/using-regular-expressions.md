@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/lua/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:49.994622-07:00
 description: "Reguliere expressies, of regex, zijn patronen die worden gebruikt om\
   \ combinaties van karakters in tekst te matchen. Programmeurs gebruiken ze voor\
   \ zoeken,\u2026"
-lastmod: 2024-02-18 23:09:01.980240
+lastmod: 2024-02-19 22:05:10.001326
 model: gpt-4-0125-preview
 summary: "Reguliere expressies, of regex, zijn patronen die worden gebruikt om combinaties\
   \ van karakters in tekst te matchen. Programmeurs gebruiken ze voor zoeken,\u2026"

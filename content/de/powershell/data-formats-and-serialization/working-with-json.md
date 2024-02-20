@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/powershell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:24.090170-07:00
 description: "Die Integration von PowerShell mit JSON (JavaScript Object Notation)\
   \ bezieht sich auf das Parsen (Lesen) und Generieren (Schreiben) von JSON-Daten,\
   \ einem\u2026"
-lastmod: 2024-02-18 23:09:05.124145
+lastmod: 2024-02-19 22:05:13.056917
 model: gpt-4-0125-preview
 summary: "Die Integration von PowerShell mit JSON (JavaScript Object Notation) bezieht\
   \ sich auf das Parsen (Lesen) und Generieren (Schreiben) von JSON-Daten, einem\u2026"

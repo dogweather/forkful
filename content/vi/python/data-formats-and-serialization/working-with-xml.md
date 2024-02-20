@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/python/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:40.942793-07:00
@@ -8,7 +6,7 @@ description: "\"L\xE0m vi\u1EC7c v\u1EDBi XML\" ch\u1EC9 qu\xE1 tr\xECnh \u0111\
   c, t\u1EA1o v\xE0 s\u1EEDa \u0111\u1ED5i c\xE1c t\u1EC7p XML (eXtensible Markup\
   \ Language) b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng l\u1EADp tr\xECnh. C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
-lastmod: 2024-02-18 23:08:50.294946
+lastmod: 2024-02-19 22:04:55.325139
 model: gpt-4-0125-preview
 summary: "\"L\xE0m vi\u1EC7c v\u1EDBi XML\" ch\u1EC9 qu\xE1 tr\xECnh \u0111\u1ECD\
   c, t\u1EA1o v\xE0 s\u1EEDa \u0111\u1ED5i c\xE1c t\u1EC7p XML (eXtensible Markup\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/swift/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:36.254656-07:00
 description: "Att tolka HTML inneb\xE4r processen att bryta ner och tolka strukturen\
   \ av HTML-inneh\xE5ll, typiskt f\xF6r att extrahera specifik data eller hantera\
   \ detta inneh\xE5ll\u2026"
-lastmod: 2024-02-18 23:08:52.122373
+lastmod: 2024-02-19 22:04:57.488786
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r processen att bryta ner och tolka strukturen av\
   \ HTML-inneh\xE5ll, typiskt f\xF6r att extrahera specifik data eller hantera detta\

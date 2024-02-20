@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/organizing-code-into-functions/
 date: 2024-01-26 01:10:42.118485-07:00
 description: "Koko koodisi heitt\xE4minen yhteen suureen kasaa? Huono idea. Jakaminen\
   \ funktioihin? Hyv\xE4 idea. Se pit\xE4\xE4 Elm-koodisi siistin\xE4, uudelleenk\xE4\
   ytett\xE4v\xE4n\xE4 ja\u2026"
-lastmod: 2024-02-18 23:09:07.534662
+lastmod: 2024-02-19 22:05:15.388154
 model: gpt-4-1106-preview
 summary: "Koko koodisi heitt\xE4minen yhteen suureen kasaa? Huono idea. Jakaminen\
   \ funktioihin? Hyv\xE4 idea. Se pit\xE4\xE4 Elm-koodisi siistin\xE4, uudelleenk\xE4\

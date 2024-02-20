@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:36.905840-07:00
 description: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
   ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\
   \ s\xE4rskilt inom\u2026"
-lastmod: 2024-02-18 23:08:51.371838
+lastmod: 2024-02-19 22:04:56.667493
 model: gpt-4-0125-preview
 summary: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
   ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\

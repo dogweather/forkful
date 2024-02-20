@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/ruby/manipulating-files-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:44.259186-07:00
@@ -8,7 +6,7 @@ description: "Thao t\xE1c v\u1EDBi t\u1EC7p b\u1EB1ng d\xF2ng l\u1EC7nh CLI tron
   \ Ruby l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c t\u1EC7p th\xF4ng\
   \ th\u01B0\u1EDDng tr\u1EF1c ti\u1EBFp t\u1EEB terminal c\u1EE7a b\u1EA1n s\u1EED\
   \ d\u1EE5ng c\xE1c script Ruby. \u0110\xE2y\u2026"
-lastmod: 2024-02-18 23:08:51.278904
+lastmod: 2024-02-19 22:04:56.562216
 model: gpt-4-0125-preview
 summary: "Thao t\xE1c v\u1EDBi t\u1EC7p b\u1EB1ng d\xF2ng l\u1EC7nh CLI trong Ruby\
   \ l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c t\u1EC7p th\xF4ng th\u01B0\

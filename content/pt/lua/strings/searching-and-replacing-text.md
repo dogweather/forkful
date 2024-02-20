@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/searching-and-replacing-text/
 date: 2024-01-20 17:58:29.489867-07:00
 description: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias\
   \ de caracteres dentro de uma string e alter\xE1-las por outras. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:58.268099
+lastmod: 2024-02-19 22:05:05.744140
 model: gpt-4-1106-preview
 summary: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias de\
   \ caracteres dentro de uma string e alter\xE1-las por outras. Programadores fazem\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:06.547700-07:00
 description: "Associatieve arrays zijn als geheime handdrukken voor data in Lua\u2014\
   \ in plaats van alleen nummers die keurig op index in de rij staan, kunnen je sleutels\u2026"
-lastmod: 2024-02-18 23:09:01.983529
+lastmod: 2024-02-19 22:05:10.004691
 model: gpt-4-0125-preview
 summary: "Associatieve arrays zijn als geheime handdrukken voor data in Lua\u2014\
   \ in plaats van alleen nummers die keurig op index in de rij staan, kunnen je sleutels\u2026"

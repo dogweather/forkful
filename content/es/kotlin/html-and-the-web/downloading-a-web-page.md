@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/kotlin/downloading-a-web-page/
 date: 2024-01-20 17:44:37.324473-07:00
 description: "Descargar una p\xE1gina web significa traer su contenido a tu programa.\
   \ Esto lo hacen los programadores para analizar datos, interactuar con APIs, o\u2026"
-lastmod: 2024-02-18 23:09:09.934501
+lastmod: 2024-02-19 22:05:17.541806
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa traer su contenido a tu programa.\
   \ Esto lo hacen los programadores para analizar datos, interactuar con APIs, o\u2026"

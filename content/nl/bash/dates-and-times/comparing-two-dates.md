@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:18.686248-07:00
 description: "Het vergelijken van twee datums stelt je in staat om uit te zoeken welke\
   \ earlier, later is, of als ze op hetzelfde moment plaatsvinden. Programmeurs doen\u2026"
-lastmod: 2024-02-18 23:09:02.055037
+lastmod: 2024-02-19 22:05:10.079475
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums stelt je in staat om uit te zoeken welke\
   \ earlier, later is, of als ze op hetzelfde moment plaatsvinden. Programmeurs doen\u2026"

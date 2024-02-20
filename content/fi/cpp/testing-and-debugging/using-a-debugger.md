@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/using-a-debugger/
 date: 2024-01-26 03:48:00.348649-07:00
 description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ynnist\xE4\
   mist\xE4, joka antaa sinun kurkistaa k\xE4ynniss\xE4 olevan ohjelmasi sis\xE4\xE4\
   n ymm\xE4rt\xE4\xE4ksesi, mit\xE4 todella\u2026"
-lastmod: 2024-02-18 23:09:07.948745
+lastmod: 2024-02-19 22:05:15.764763
 model: gpt-4-0125-preview
 summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ynnist\xE4mist\xE4\
   , joka antaa sinun kurkistaa k\xE4ynniss\xE4 olevan ohjelmasi sis\xE4\xE4n ymm\xE4\

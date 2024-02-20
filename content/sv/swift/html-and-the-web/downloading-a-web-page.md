@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/swift/downloading-a-web-page/
 date: 2024-01-20 17:45:19.404103-07:00
 description: "H\xE4mtning av en webbsida inneb\xE4r att ladda ner dess HTML-inneh\xE5\
   ll. Programm\xF6rer g\xF6r detta f\xF6r att l\xE4sa eller bearbeta information fr\xE5\
   n webben."
-lastmod: 2024-02-18 23:08:52.123365
+lastmod: 2024-02-19 22:04:57.489863
 model: gpt-4-1106-preview
 summary: "H\xE4mtning av en webbsida inneb\xE4r att ladda ner dess HTML-inneh\xE5\
   ll. Programm\xF6rer g\xF6r detta f\xF6r att l\xE4sa eller bearbeta information fr\xE5\

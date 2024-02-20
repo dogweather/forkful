@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/concatenating-strings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:49.453870-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C\uC758 \uC5F0\uACB0 
   \uADF8\uB798\uBC0D\uC758 \uAE30\uBCF8 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uC65C\uB0D0\
   \uD558\uBA74, \uC774\uB97C \uD1B5\uD574 \uBB38\uC790\uC5F4 \uB370\uC774\uD130\uC758\
   \u2026"
-lastmod: 2024-02-18 23:09:05.938495
+lastmod: 2024-02-19 22:05:13.873499
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C\uC758 \uC5F0\uACB0 \uC791\
   \uC5C5\uC740 \uB450 \uAC1C \uC774\uC0C1\uC758 \uBB38\uC790\uC5F4\uC744 \uB2E8\uC77C\

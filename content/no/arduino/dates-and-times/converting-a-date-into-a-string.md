@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:49.791070-07:00
 description: "Konvertering av en dato til en streng betyr \xE5 omforme datoen fra\
   \ et format som datamaskinen forst\xE5r til tekst som mennesker kan lese. Vi gj\xF8\
   r dette fordi\u2026"
-lastmod: 2024-02-18 23:08:54.153714
+lastmod: 2024-02-19 22:05:00.341375
 model: gpt-4-1106-preview
 summary: "Konvertering av en dato til en streng betyr \xE5 omforme datoen fra et format\
   \ som datamaskinen forst\xE5r til tekst som mennesker kan lese. Vi gj\xF8r dette\

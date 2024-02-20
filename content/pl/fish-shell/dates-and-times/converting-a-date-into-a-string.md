@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:37.551587-07:00
 description: "Przekszta\u0142canie daty w ci\u0105g znak\xF3w to proces zamiany reprezentacji\
   \ daty na tekst. Programi\u015Bci to robi\u0105, by \u0142atwo zapisa\u0107 lub\
   \ wy\u015Bwietli\u0107 dat\u0119 w czytelnej\u2026"
-lastmod: 2024-02-18 23:08:50.047918
+lastmod: 2024-02-19 22:04:55.028163
 model: gpt-4-1106-preview
 summary: "Przekszta\u0142canie daty w ci\u0105g znak\xF3w to proces zamiany reprezentacji\
   \ daty na tekst. Programi\u015Bci to robi\u0105, by \u0142atwo zapisa\u0107 lub\

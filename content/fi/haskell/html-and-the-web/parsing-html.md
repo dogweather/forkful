@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/haskell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:24.243055-07:00
 description: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan,\
   \ HTML-sis\xE4ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen.\u2026"
-lastmod: 2024-02-18 23:09:07.664164
+lastmod: 2024-02-19 22:05:15.506631
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan, HTML-sis\xE4\
   ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen.\u2026"

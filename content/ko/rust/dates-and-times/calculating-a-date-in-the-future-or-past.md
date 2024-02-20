@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:04.999034-07:00
 description: "\uB0A0\uC9DC \uACC4\uC0B0\uC774\uB780, \uD2B9\uC815 \uB0A0\uC9DC\uC5D0\
   \uC11C \uACFC\uAC70\uB098 \uBBF8\uB798\uB85C \uC77C\uC815 \uAE30\uAC04\uC744 \uB354\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC \uACC4\uC0B0\uC774\uB780, \uD2B9\uC815 \uB0A0\uC9DC\u
   , \uC720\uD6A8\uAE30\uAC04, \uC2A4\uCF00\uC904 \uAD00\uB9AC \uB4F1\uC744 \uB2E4\uB8E8\
   \uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.905142
+lastmod: 2024-02-19 22:05:13.840362
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC \uACC4\uC0B0\uC774\uB780, \uD2B9\uC815 \uB0A0\uC9DC\uC5D0\uC11C\
   \ \uACFC\uAC70\uB098 \uBBF8\uB798\uB85C \uC77C\uC815 \uAE30\uAC04\uC744 \uB354\uD558\

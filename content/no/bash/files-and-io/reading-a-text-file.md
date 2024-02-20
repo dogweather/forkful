@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/reading-a-text-file/
 date: 2024-01-20 17:54:23.424815-07:00
 description: "\xC5 lese en tekstfil betyr \xE5 hente og se innholdet som er lagret\
   \ i filen. Programmerere gj\xF8r dette for \xE5 behandle data, konfigurere systemer\
   \ eller skript,\u2026"
-lastmod: 2024-02-18 23:08:54.074935
+lastmod: 2024-02-19 22:05:00.258702
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 hente og se innholdet som er lagret i filen.\
   \ Programmerere gj\xF8r dette for \xE5 behandle data, konfigurere systemer eller\

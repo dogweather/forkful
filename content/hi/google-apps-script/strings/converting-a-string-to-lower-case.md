@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:43.132849-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script \u092E\u0947\u0902 \u0938\u094D\u091F\u094D\u09
   \u0947 \u0932\u093F\u090F \u090F\u0915 \u0915\u094D\u0932\u093E\u0909\u0921-\u0906\
   \u0927\u093E\u0930\u093F\u0924 \u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\u091F\
   \u093F\u0902\u0917\u2026"
-lastmod: 2024-02-18 23:09:02.542028
+lastmod: 2024-02-19 22:05:10.544108
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 \u0938\u094D\u091F\u094D\u0930\u093F\
   \u0902\u0917 \u0915\u094B \u0932\u094B\u0905\u0930 \u0915\u0947\u0938 \u092E\u0947\

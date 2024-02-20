@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/elixir/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:43.830932-07:00
 description: "Capitalizar uma string envolve converter a primeira letra da string\
   \ para mai\xFAscula enquanto garante que as restantes letras estejam em min\xFA\
   scula. Essa\u2026"
-lastmod: 2024-02-18 23:08:57.827778
+lastmod: 2024-02-19 22:05:05.296266
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve converter a primeira letra da string para\
   \ mai\xFAscula enquanto garante que as restantes letras estejam em min\xFAscula.\

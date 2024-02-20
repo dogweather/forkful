@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:05.724680-07:00
 description: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3digo\
   \ inform\xE1tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento\
   \ externo. Los\u2026"
-lastmod: 2024-02-18 23:09:09.465577
+lastmod: 2024-02-19 22:05:17.124117
 model: gpt-4-0125-preview
 summary: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3digo inform\xE1\
   tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento externo.\

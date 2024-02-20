@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/elm/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:02.971730-07:00
@@ -13,7 +11,7 @@ description: "\u5728Elm\u4E2D\u89E3\u6790\u5B57\u7B26\u4E32\u4E2D\u7684\u65E5\u6
   \u671F\u76F8\u5173\u7684\u8BA1\u7B97\u81F3\u5173\u91CD\u8981\uFF0C\u786E\u4FDD\u4F60\
   \u7684Elm\u5E94\u7528\u80FD\u591F\u667A\u80FD\u5730\u5904\u7406\u65F6\u95F4\u6570\
   \u636E\u3002"
-lastmod: 2024-02-18 23:08:59.066871
+lastmod: 2024-02-19 22:05:06.712003
 model: gpt-4-0125-preview
 summary: "\u5728Elm\u4E2D\u89E3\u6790\u5B57\u7B26\u4E32\u4E2D\u7684\u65E5\u671F\u6D89\
   \u53CA\u5C06\u8868\u793A\u65E5\u671F\u548C\u65F6\u95F4\u7684\u6587\u672C\u4FE1\u606F\

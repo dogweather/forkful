@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:47.519592-07:00
 description: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 finne\
   \ datoen f\xF8r eller etter et gitt tidsintervall. Programmerere gj\xF8r dette for\
   \ \xE5 h\xE5ndtere\u2026"
-lastmod: 2024-02-18 23:08:54.113316
+lastmod: 2024-02-19 22:05:00.299808
 model: gpt-4-1106-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 finne datoen\
   \ f\xF8r eller etter et gitt tidsintervall. Programmerere gj\xF8r dette for \xE5\

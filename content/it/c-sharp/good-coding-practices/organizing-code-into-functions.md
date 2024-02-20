@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/c-sharp/organizing-code-into-functions/
 date: 2024-01-26 01:09:33.578591-07:00
 description: "Raggruppare il codice in funzioni \xE8 come ordinare i mattoncini LEGO\
   \ in contenitori\u2014rende pi\xF9 facile trovarli e utilizzarli. Lo facciamo per\
   \ evitare\u2026"
-lastmod: 2024-02-18 23:08:55.893227
+lastmod: 2024-02-19 22:05:02.503195
 model: gpt-4-1106-preview
 summary: "Raggruppare il codice in funzioni \xE8 come ordinare i mattoncini LEGO in\
   \ contenitori\u2014rende pi\xF9 facile trovarli e utilizzarli. Lo facciamo per evitare\u2026"

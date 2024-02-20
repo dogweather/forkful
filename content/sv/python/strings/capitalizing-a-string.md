@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/python/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:16.105064-07:00
 description: "Att g\xF6ra en str\xE4ng med stor begynnelsebokstav inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener. Denna\
   \ operation\u2026"
-lastmod: 2024-02-18 23:08:51.405878
+lastmod: 2024-02-19 22:04:56.706395
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra en str\xE4ng med stor begynnelsebokstav inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener. Denna\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/c/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:40.908038-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.338657
+lastmod: 2024-02-19 22:05:01.887061
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA"

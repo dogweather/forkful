@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/lua/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:57.135003-07:00
 description: "L\xE4hett\xE4\xE4 HTTP-pyynt\xF6 perusautentikoinnilla tarkoittaa k\xE4\
   ytt\xE4j\xE4tunnuksen ja salasanan l\xE4hett\xE4mist\xE4 palvelimelle. T\xE4m\xE4\
   \ tehd\xE4\xE4n yleens\xE4 turvallisen resurssin\u2026"
-lastmod: 2024-02-18 23:09:07.756778
+lastmod: 2024-02-19 22:05:15.591484
 model: gpt-4-1106-preview
 summary: "L\xE4hett\xE4\xE4 HTTP-pyynt\xF6 perusautentikoinnilla tarkoittaa k\xE4\
   ytt\xE4j\xE4tunnuksen ja salasanan l\xE4hett\xE4mist\xE4 palvelimelle. T\xE4m\xE4\

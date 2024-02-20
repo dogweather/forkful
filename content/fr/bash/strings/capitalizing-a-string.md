@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/bash/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:51.050863-07:00
 description: "Capitaliser une cha\xEEne dans Bash consiste \xE0 transformer le premier\
   \ caract\xE8re de la cha\xEEne en majuscule tout en laissant le reste de la cha\xEE\
   ne inchang\xE9.\u2026"
-lastmod: 2024-02-18 23:09:08.998171
+lastmod: 2024-02-19 22:05:16.684754
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne dans Bash consiste \xE0 transformer le premier\
   \ caract\xE8re de la cha\xEEne en majuscule tout en laissant le reste de la cha\xEE\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:48.888531-07:00
 description: "Trovare la lunghezza di una stringa in Visual Basic for Applications\
   \ (VBA) implica determinare il numero di caratteri che contiene. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:55.713119
+lastmod: 2024-02-19 22:05:02.313761
 model: gpt-4-0125-preview
 summary: "Trovare la lunghezza di una stringa in Visual Basic for Applications (VBA)\
   \ implica determinare il numero di caratteri che contiene. I programmatori\u2026"

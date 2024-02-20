@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/bash/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:54.363733-07:00
 description: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\xE4\
   lt\xF6\xE4 huomiottaen kirjainkoon."
-lastmod: 2024-02-18 23:09:07.788557
+lastmod: 2024-02-19 22:05:15.620553
 model: gpt-4-1106-preview
 summary: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\xE4lt\xF6\
   \xE4 huomiottaen kirjainkoon."

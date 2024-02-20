@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/removing-quotes-from-a-string/
 date: 2024-01-25 20:50:23.943509-07:00
 description: "Removing quotes from a string means stripping out the surrounding single\
   \ (`'`) or double (`\"`) quote characters that define string literals in code.\u2026"
-lastmod: 2024-02-18 23:09:10.795659
+lastmod: 2024-02-19 22:05:18.317756
 model: gpt-4-1106-preview
 summary: "Removing quotes from a string means stripping out the surrounding single\
   \ (`'`) or double (`\"`) quote characters that define string literals in code.\u2026"

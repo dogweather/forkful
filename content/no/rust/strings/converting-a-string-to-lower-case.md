@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/rust/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:08.912979-07:00
 description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle\
   \ bokstavene til sine minuskul\xE6re motstykker. Programmere gj\xF8r dette for \xE5\
   \ f\xE5 konsistente data,\u2026"
-lastmod: 2024-02-18 23:08:53.672784
+lastmod: 2024-02-19 22:04:59.804918
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle bokstavene\
   \ til sine minuskul\xE6re motstykker. Programmere gj\xF8r dette for \xE5 f\xE5 konsistente\

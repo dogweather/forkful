@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/typescript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:34.985667-07:00
 description: "Tekstitiedoston kirjoittaminen TypeScriptill\xE4 on kriittinen taito\
   \ datan pysyvyyden, konfiguraatioiden tai lokiin kirjoittamisen kannalta. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.338583
+lastmod: 2024-02-19 22:05:15.228527
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen TypeScriptill\xE4 on kriittinen taito datan\
   \ pysyvyyden, konfiguraatioiden tai lokiin kirjoittamisen kannalta. Ohjelmoijat\u2026"

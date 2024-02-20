@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:03.581800-07:00
 description: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci\xF3\
   n y eliminaci\xF3n de errores de los scripts destinados a automatizar Google Apps\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:09.512637
+lastmod: 2024-02-19 22:05:17.166513
 model: gpt-4-0125-preview
 summary: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci\xF3\
   n y eliminaci\xF3n de errores de los scripts destinados a automatizar Google Apps\

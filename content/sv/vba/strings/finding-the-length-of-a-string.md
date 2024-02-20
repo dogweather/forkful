@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:50.637153-07:00
 description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Applications\
   \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller. Programmerare\
   \ utf\xF6r ofta denna\u2026"
-lastmod: 2024-02-18 23:08:51.616909
+lastmod: 2024-02-19 22:04:56.938645
 model: gpt-4-0125-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Applications\
   \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller. Programmerare\

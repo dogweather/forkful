@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/php/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:01.646920-07:00
 description: "\xC5 gj\xF8re om en streng til stor forbokstav inneb\xE6rer \xE5 endre\
   \ det f\xF8rste tegnet i gitt tekst til stor bokstav, for \xE5 sikre at setninger,\
   \ titler eller\u2026"
-lastmod: 2024-02-18 23:08:53.959220
+lastmod: 2024-02-19 22:05:00.132419
 model: gpt-4-0125-preview
 summary: "\xC5 gj\xF8re om en streng til stor forbokstav inneb\xE6rer \xE5 endre det\
   \ f\xF8rste tegnet i gitt tekst til stor bokstav, for \xE5 sikre at setninger, titler\

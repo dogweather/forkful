@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/concatenating-strings/
 date: 2024-01-20 17:35:46.704887-07:00
 description: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem sammen\
   \ til \xE9n. Programutviklere konkatenere strenger for \xE5 bygge setninger, lage\
   \ meldinger,\u2026"
-lastmod: 2024-02-18 23:08:54.428978
+lastmod: 2024-02-19 22:05:00.590500
 model: gpt-4-1106-preview
 summary: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem sammen\
   \ til \xE9n. Programutviklere konkatenere strenger for \xE5 bygge setninger, lage\

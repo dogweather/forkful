@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/swift/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:36.460168-07:00
 description: "Tekstitiedoston kirjoittaminen Swift-ohjelmointikielell\xE4 mahdollistaa\
   \ merkkijonotietojen pysyv\xE4n tallentamisen tiedostoj\xE4rjestelm\xE4\xE4n, mik\xE4\
   \ on olennaista\u2026"
-lastmod: 2024-02-18 23:09:08.009820
+lastmod: 2024-02-19 22:05:15.820863
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Swift-ohjelmointikielell\xE4 mahdollistaa\
   \ merkkijonotietojen pysyv\xE4n tallentamisen tiedostoj\xE4rjestelm\xE4\xE4n, mik\xE4\

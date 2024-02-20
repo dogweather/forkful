@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/removing-quotes-from-a-string/
 date: 2024-02-01 21:12:09.845444-07:00
 description: "Removing quotes from a string in Google Apps Script is about eliminating\
   \ unnecessary quotation marks that may surround your string data, usually stemming\u2026"
-lastmod: 2024-02-18 23:09:10.627263
+lastmod: 2024-02-19 22:05:18.166087
 model: gpt-4-0125-preview
 summary: "Removing quotes from a string in Google Apps Script is about eliminating\
   \ unnecessary quotation marks that may surround your string data, usually stemming\u2026"

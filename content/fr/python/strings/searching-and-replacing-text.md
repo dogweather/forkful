@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/searching-and-replacing-text/
 date: 2024-01-20 17:58:31.337986-07:00
 description: "La recherche et le remplacement de texte permettent de localiser des\
   \ s\xE9quences sp\xE9cifiques dans une cha\xEEne et de les remplacer par d'autres.\
   \ Les\u2026"
-lastmod: 2024-02-18 23:09:08.323369
+lastmod: 2024-02-19 22:05:16.123088
 model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de localiser des s\xE9\
   quences sp\xE9cifiques dans une cha\xEEne et de les remplacer par d'autres. Les\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/typescript/rounding-numbers/
 date: 2024-01-26 03:47:26.170190-07:00
 description: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon.\
   \ Programmerere gj\xF8r dette for \xE5 kontrollere numerisk utdata for lesbarhet,\u2026"
-lastmod: 2024-02-18 23:08:53.640221
+lastmod: 2024-02-19 22:04:59.769299
 model: gpt-4-0125-preview
 summary: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon.\
   \ Programmerere gj\xF8r dette for \xE5 kontrollere numerisk utdata for lesbarhet,\u2026"

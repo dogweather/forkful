@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/arduino/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:27.816931-07:00
 description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att vi aktivt\
   \ letar efter specifika sekvenser av tecken i en str\xE4ng och tar bort dessa. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:52.029682
+lastmod: 2024-02-19 22:04:57.386410
 model: gpt-4-1106-preview
 summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att vi aktivt letar\
   \ efter specifika sekvenser av tecken i en str\xE4ng och tar bort dessa. Programmerare\u2026"

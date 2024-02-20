@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:09.065420-07:00
 description: "Tests schrijven is code ontwikkelen die controleert of andere code correct\
   \ functioneert. Programmeurs doen dit om bugs vroegtijdig op te sporen, te zorgen\u2026"
-lastmod: 2024-02-18 23:09:01.717138
+lastmod: 2024-02-19 22:05:09.737369
 model: gpt-4-0125-preview
 summary: "Tests schrijven is code ontwikkelen die controleert of andere code correct\
   \ functioneert. Programmeurs doen dit om bugs vroegtijdig op te sporen, te zorgen\u2026"

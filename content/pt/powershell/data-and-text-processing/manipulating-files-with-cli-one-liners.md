@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:01.503705-07:00
 description: "Manipular arquivos com comandos de uma linha no PowerShell \xE9 sobre\
   \ alterar, mover, ou obter dados de arquivos diretamente da linha de comando de\
   \ forma\u2026"
-lastmod: 2024-02-18 23:08:58.363626
+lastmod: 2024-02-19 22:05:05.848130
 model: gpt-4-0125-preview
 summary: "Manipular arquivos com comandos de uma linha no PowerShell \xE9 sobre alterar,\
   \ mover, ou obter dados de arquivos diretamente da linha de comando de forma\u2026"

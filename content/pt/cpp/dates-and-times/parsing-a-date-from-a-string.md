@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/cpp/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:33.674532-07:00
 description: "Analisar uma data a partir de uma string envolve interpretar o formato\
   \ da string para extrair componentes da data como dia, m\xEAs e ano. Programadores\
   \ fazem\u2026"
-lastmod: 2024-02-18 23:08:58.458827
+lastmod: 2024-02-19 22:05:05.949459
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve interpretar o formato da\
   \ string para extrair componentes da data como dia, m\xEAs e ano. Programadores\

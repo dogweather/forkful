@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/arduino/refactoring/
 date: 2024-01-26 01:16:44.467176-07:00
 description: "Refaktoryzacja to proces przerabiania kodu w celu poprawy jego struktury\
   \ i czytelno\u015Bci, bez zmiany zewn\u0119trznego zachowania lub funkcjonalno\u015B\
   ci.\u2026"
-lastmod: 2024-02-18 23:08:49.877322
+lastmod: 2024-02-19 22:04:54.823945
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces przerabiania kodu w celu poprawy jego struktury\
   \ i czytelno\u015Bci, bez zmiany zewn\u0119trznego zachowania lub funkcjonalno\u015B\

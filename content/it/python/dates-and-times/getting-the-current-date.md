@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/python/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:29.137653-07:00
 description: "Ottenere la data corrente in Python \xE8 un'operazione fondamentale\
   \ per molte applicazioni, come la registrazione degli eventi (logging), l'analisi\
   \ dei dati\u2026"
-lastmod: 2024-02-18 23:08:55.531312
+lastmod: 2024-02-19 22:05:02.119128
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Python \xE8 un'operazione fondamentale per\
   \ molte applicazioni, come la registrazione degli eventi (logging), l'analisi dei\

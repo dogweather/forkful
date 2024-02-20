@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/creating-a-temporary-file/
 date: 2024-01-20 17:40:48.828349-07:00
 description: "\xC5 lage en midlertidig fil betyr \xE5 skape en fil som er ment for\
   \ kortvarig bruk. Programmerere gj\xF8r dette for \xE5 lagre data midlertidig uten\
   \ \xE5 p\xE5virke den\u2026"
-lastmod: 2024-02-18 23:08:54.034325
+lastmod: 2024-02-19 22:05:00.215016
 model: gpt-4-1106-preview
 summary: "\xC5 lage en midlertidig fil betyr \xE5 skape en fil som er ment for kortvarig\
   \ bruk. Programmerere gj\xF8r dette for \xE5 lagre data midlertidig uten \xE5 p\xE5\

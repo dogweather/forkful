@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/interpolating-a-string/
 date: 2024-01-20 17:51:14.356597-07:00
 description: String interpolation lets you insert variables directly into strings.
   It's done to dynamically build strings and keep code clean.
-lastmod: 2024-02-18 23:09:11.165028
+lastmod: 2024-02-19 22:05:18.654947
 model: gpt-4-1106-preview
 summary: String interpolation lets you insert variables directly into strings. It's
   done to dynamically build strings and keep code clean.

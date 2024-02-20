@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/python/generating-random-numbers/
 date: 2024-01-27 20:35:17.062028-07:00
 description: "La generazione di numeri casuali comporta la creazione di numeri che\
   \ non possono essere previsti in modo ragionevole meglio che per caso, il che \xE8\
   \u2026"
-lastmod: 2024-02-18 23:08:55.517375
+lastmod: 2024-02-19 22:05:02.104060
 model: gpt-4-0125-preview
 summary: "La generazione di numeri casuali comporta la creazione di numeri che non\
   \ possono essere previsti in modo ragionevole meglio che per caso, il che \xE8\u2026"

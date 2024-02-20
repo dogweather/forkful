@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:17.710850-07:00
 description: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z\u0142\
   o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu. Praktyka\
   \ ta poprawia\u2026"
-lastmod: 2024-02-18 23:08:50.086051
+lastmod: 2024-02-19 22:04:55.071096
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z\u0142\
   o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu. Praktyka\

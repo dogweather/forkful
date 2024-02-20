@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/powershell/concatenating-strings/
 date: 2024-01-20 17:35:19.330805-07:00
 description: "Concatenar strings \xE9 o processo de juntar duas ou mais strings, formando\
   \ uma \xFAnica. Programadores fazem isso para construir mensagens, caminhos de\u2026"
-lastmod: 2024-02-18 23:08:58.358928
+lastmod: 2024-02-19 22:05:05.843202
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 o processo de juntar duas ou mais strings, formando\
   \ uma \xFAnica. Programadores fazem isso para construir mensagens, caminhos de\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/haskell/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:47.821006-07:00
 description: "Een datum naar een string converteren betekent het omzetten van een\
   \ datumobject naar leesbare tekst. Programmeurs doen dit om datums aan gebruikers\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.911414
+lastmod: 2024-02-19 22:05:09.934683
 model: gpt-4-0125-preview
 summary: "Een datum naar een string converteren betekent het omzetten van een datumobject\
   \ naar leesbare tekst. Programmeurs doen dit om datums aan gebruikers te\u2026"

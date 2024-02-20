@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pt/python/interpolating-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 21:24:01.169975-07:00
 description: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
   es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\
   \ em\u2026"
-lastmod: 2024-02-18 23:08:57.747641
+lastmod: 2024-02-19 22:05:05.209520
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
   es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\

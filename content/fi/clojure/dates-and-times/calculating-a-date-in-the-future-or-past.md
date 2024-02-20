@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:15.736891-07:00
 description: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
   \ tarkoittaa tietyn ajanjakson lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4\
   \ p\xE4iv\xE4st\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.242819
+lastmod: 2024-02-19 22:05:15.139311
 model: gpt-4-1106-preview
 summary: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
   \ tietyn ajanjakson lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4\

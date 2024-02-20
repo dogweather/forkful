@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/java/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:27.187748-07:00
 description: "Calcular una fecha en el futuro o en el pasado significa encontrar una\
   \ fecha determinada antes o despu\xE9s de una fecha de referencia. Los programadores\
   \ lo\u2026"
-lastmod: 2024-02-18 23:09:09.859404
+lastmod: 2024-02-19 22:05:17.473036
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o en el pasado significa encontrar una fecha\
   \ determinada antes o despu\xE9s de una fecha de referencia. Los programadores lo\u2026"

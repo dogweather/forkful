@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/using-a-debugger/
 date: 2024-01-25 20:50:44.852715-07:00
 description: "A debugger is a tool that lets you examine and change the inner workings\
   \ of your code while it runs. Programmers use it to squash bugs by stepping through\u2026"
-lastmod: 2024-02-18 23:09:10.811826
+lastmod: 2024-02-19 22:05:18.332336
 model: gpt-4-1106-preview
 summary: "A debugger is a tool that lets you examine and change the inner workings\
   \ of your code while it runs. Programmers use it to squash bugs by stepping through\u2026"

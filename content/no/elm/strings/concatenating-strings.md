@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/concatenating-strings/
 date: 2024-01-20 17:34:36.708009-07:00
 description: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
   \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\
   \ innhold,\u2026"
-lastmod: 2024-02-18 23:08:53.803252
+lastmod: 2024-02-19 22:04:59.946679
 model: gpt-4-1106-preview
 summary: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
   \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\

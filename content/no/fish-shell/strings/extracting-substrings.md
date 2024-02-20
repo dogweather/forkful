@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/fish-shell/extracting-substrings/
 date: 2024-01-20 17:45:50.299406-07:00
 description: "\xC5 trekke ut delstrenger betyr \xE5 hente en spesifikk del av en tekststreng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere eller analysere data mer effektivt."
-lastmod: 2024-02-18 23:08:54.339051
+lastmod: 2024-02-19 22:05:00.492599
 model: gpt-4-1106-preview
 summary: "\xC5 trekke ut delstrenger betyr \xE5 hente en spesifikk del av en tekststreng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere eller analysere data mer effektivt."

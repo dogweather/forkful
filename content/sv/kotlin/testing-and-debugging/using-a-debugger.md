@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/using-a-debugger/
 date: 2024-01-26 03:50:00.676829-07:00
 description: "Att dyka in i en debugger handlar allt om att stega igenom din kod,\
   \ se kugghjulen snurra och f\xE5nga de d\xE4r el\xE4ndiga buggarna p\xE5 bar g\xE4\
   rning. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.754831
+lastmod: 2024-02-19 22:04:57.089941
 model: gpt-4-0125-preview
 summary: "Att dyka in i en debugger handlar allt om att stega igenom din kod, se kugghjulen\
   \ snurra och f\xE5nga de d\xE4r el\xE4ndiga buggarna p\xE5 bar g\xE4rning. Programmerare\u2026"

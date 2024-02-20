@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/php/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:09.350947-07:00
 description: "Les tableaux associatifs en PHP sont comme des listes surpuissantes\
   \ o\xF9 chaque \xE9l\xE9ment peut \xEAtre acc\xE9d\xE9 en utilisant une cl\xE9 lisible\
   \ par l'humain au lieu\u2026"
-lastmod: 2024-02-18 23:09:08.914547
+lastmod: 2024-02-19 22:05:16.607264
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs en PHP sont comme des listes surpuissantes o\xF9\
   \ chaque \xE9l\xE9ment peut \xEAtre acc\xE9d\xE9 en utilisant une cl\xE9 lisible\

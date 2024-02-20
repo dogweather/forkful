@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:03.680908-07:00
 description: "Eliminar comillas de una cadena en Google Apps Script se trata de eliminar\
   \ las comillas innecesarias que pueden rodear tus datos de cadena, generalmente\u2026"
-lastmod: 2024-02-18 23:09:09.491864
+lastmod: 2024-02-19 22:05:17.148143
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena en Google Apps Script se trata de eliminar\
   \ las comillas innecesarias que pueden rodear tus datos de cadena, generalmente\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elixir/reading-a-text-file/
 date: 2024-01-20 17:54:11.094975-07:00
 description: "Leer un archivo de texto significa acceder y obtener el contenido almacenado\
   \ en \xE9l. Programadores realizamos esto para procesar datos, configuraciones,\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:09.675803
+lastmod: 2024-02-19 22:05:17.306292
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto significa acceder y obtener el contenido almacenado\
   \ en \xE9l. Programadores realizamos esto para procesar datos, configuraciones,\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:08.458161-07:00
@@ -13,7 +11,7 @@ description: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC815\uC758\uB41C \u
   \uC740 \uC791\uC5C5\uC744 \uC704\uD574 \uC815\uADDC \uD45C\uD604\uC2DD\uC744 \uAD11\
   \uBC94\uC704\uD558\uAC8C \uC0AC\uC6A9\uD558\uBA70, \uC774\uB85C \uC778\uD574 C \uC5B8\
   \uC5B4\uB97C \uD3EC\uD568\uD55C\u2026"
-lastmod: 2024-02-18 23:09:06.933759
+lastmod: 2024-02-19 22:05:14.820222
 model: gpt-4-0125-preview
 summary: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC815\uC758\uB41C \uD328\uD134\
   \uC744 \uC0AC\uC6A9\uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAC80\uC0C9, \uB9E4\uCE6D\

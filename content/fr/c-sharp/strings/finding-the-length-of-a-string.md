@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:46:56.809897-07:00
 description: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
   \ On mesure \xE7a pour tout, des mots de passe aux tweets : c'est essentiel pour\
   \ valider,\u2026"
-lastmod: 2024-02-18 23:09:08.817700
+lastmod: 2024-02-19 22:05:16.519181
 model: gpt-4-1106-preview
 summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
   \ On mesure \xE7a pour tout, des mots de passe aux tweets : c'est essentiel pour\

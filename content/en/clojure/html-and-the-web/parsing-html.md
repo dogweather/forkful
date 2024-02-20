@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/parsing-html/
 date: 2024-02-03 19:02:49.120272-07:00
 description: "Parsing HTML in Clojure involves programmatically extracting information\
   \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"
-lastmod: 2024-02-18 23:09:10.721462
+lastmod: 2024-02-19 22:05:18.251258
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Clojure involves programmatically extracting information\
   \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"

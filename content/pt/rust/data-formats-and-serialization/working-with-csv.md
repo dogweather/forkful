@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/rust/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:24.536383-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sobre\
   \ a leitura e escrita de arquivos de texto simples que armazenam dados tabulares.\u2026"
-lastmod: 2024-02-18 23:08:57.951673
+lastmod: 2024-02-19 22:05:05.425600
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sobre\
   \ a leitura e escrita de arquivos de texto simples que armazenam dados tabulares.\u2026"

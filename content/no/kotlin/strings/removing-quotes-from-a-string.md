@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/kotlin/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:37.499855-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe bort eventuelle\
   \ forekomster av anf\xF8rselstegn, enten enkle (' ') eller doble (\" \"), fra tekstdataene\u2026"
-lastmod: 2024-02-18 23:08:53.839851
+lastmod: 2024-02-19 22:04:59.985619
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe bort eventuelle\
   \ forekomster av anf\xF8rselstegn, enten enkle (' ') eller doble (\" \"), fra tekstdataene\u2026"

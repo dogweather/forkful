@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/bash/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:18.919169-07:00
 description: "Escrever para o erro padr\xE3o (stderr) no Bash \xE9 sobre direcionar\
   \ mensagens de erro ou qualquer sa\xEDda de diagn\xF3stico importante separadamente\
   \ da sa\xEDda\u2026"
-lastmod: 2024-02-18 23:08:58.341472
+lastmod: 2024-02-19 22:05:05.824944
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) no Bash \xE9 sobre direcionar mensagens\
   \ de erro ou qualquer sa\xEDda de diagn\xF3stico importante separadamente da sa\xED\

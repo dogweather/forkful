@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/java/parsing-html/
 date: 2024-01-20 15:32:30.888958-07:00
 description: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo que\
   \ tu programa pueda entender y manipular. Los programadores lo hacen para interactuar\
   \ con\u2026"
-lastmod: 2024-02-18 23:09:09.842655
+lastmod: 2024-02-19 22:05:17.457885
 summary: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo que tu\
   \ programa pueda entender y manipular. Los programadores lo hacen para interactuar\
   \ con\u2026"

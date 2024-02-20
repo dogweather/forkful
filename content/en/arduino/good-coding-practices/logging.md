@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/logging/
 date: 2024-01-25 02:03:10.870958-07:00
 description: "\"Logging\" is keeping a record of events, transactions, or activities\
   \ that happen over time in a system. Programmers use it to debug, monitor system\u2026"
-lastmod: 2024-02-18 23:09:11.321477
+lastmod: 2024-02-19 22:05:18.789521
 model: gpt-4-1106-preview
 summary: "\"Logging\" is keeping a record of events, transactions, or activities that\
   \ happen over time in a system. Programmers use it to debug, monitor system\u2026"

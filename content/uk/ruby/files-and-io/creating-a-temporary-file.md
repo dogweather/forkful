@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/ruby/creating-a-temporary-file/
 date: 2024-01-20 17:41:11.103703-07:00
 description: "Temporary files are files created to hold data temporarily while a program\
   \ is running. Programmers use them for tasks like managing large data that won't\u2026"
-lastmod: 2024-02-18 23:09:01.309287
+lastmod: 2024-02-19 22:05:09.344099
 model: gpt-4-1106-preview
 summary: "Temporary files are files created to hold data temporarily while a program\
   \ is running. Programmers use them for tasks like managing large data that won't\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/swift/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:46.793221-07:00
 description: "Analizzare una data da una stringa comporta la conversione di rappresentazioni\
   \ testuali di data e ora in un oggetto `Date`. Questo processo \xE8 essenziale\u2026"
-lastmod: 2024-02-18 23:08:56.221409
+lastmod: 2024-02-19 22:05:02.853089
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa comporta la conversione di rappresentazioni\
   \ testuali di data e ora in un oggetto `Date`. Questo processo \xE8 essenziale\u2026"

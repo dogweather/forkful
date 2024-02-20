@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/organizing-code-into-functions/
 date: 2024-01-26 01:16:04.627935-07:00
 description: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre programme\
   \ en morceaux modulaires r\xE9utilisables identifi\xE9s par un nom. Nous le faisons\
   \ pour\u2026"
-lastmod: 2024-02-18 23:09:08.535030
+lastmod: 2024-02-19 22:05:16.315690
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre programme\
   \ en morceaux modulaires r\xE9utilisables identifi\xE9s par un nom. Nous le faisons\

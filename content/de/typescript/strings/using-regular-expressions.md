@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/typescript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:30.997038-07:00
 description: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkzeug\
   \ f\xFCr Mustererkennung und -suche in der Programmierung. Programmierer nutzen\
   \ Regex f\xFCr Aufgaben\u2026"
-lastmod: 2024-02-18 23:09:04.586037
+lastmod: 2024-02-19 22:05:12.544506
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkzeug f\xFC\
   r Mustererkennung und -suche in der Programmierung. Programmierer nutzen Regex f\xFC\

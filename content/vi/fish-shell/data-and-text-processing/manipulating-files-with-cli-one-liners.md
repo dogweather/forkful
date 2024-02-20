@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/manipulating-files-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:07.022044-07:00
@@ -8,7 +6,7 @@ description: "Trong l\u0129nh v\u1EF1c l\u1EADp tr\xECnh, \u0111\u1EB7c bi\u1EC7
   \ l\xE0 khi l\xE0m vi\u1EC7c v\u1EDBi m\xF4i tr\u01B0\u1EDDng Linux ho\u1EB7c Unix,\
   \ vi\u1EC7c thao t\xE1c t\u1EC7p tin tr\u1EF1c ti\u1EBFp t\u1EEB giao di\u1EC7n\
   \ d\xF2ng l\u1EC7nh (CLI) kh\xF4ng ch\u1EC9\u2026"
-lastmod: 2024-02-18 23:08:51.179052
+lastmod: 2024-02-19 22:04:56.437140
 model: gpt-4-0125-preview
 summary: "Trong l\u0129nh v\u1EF1c l\u1EADp tr\xECnh, \u0111\u1EB7c bi\u1EC7t l\xE0\
   \ khi l\xE0m vi\u1EC7c v\u1EDBi m\xF4i tr\u01B0\u1EDDng Linux ho\u1EB7c Unix, vi\u1EC7\

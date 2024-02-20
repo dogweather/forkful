@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/java/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:46.940187-07:00
 description: "Det \xE5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre den\
   \ f\xF8rste bokstaven i hvert ord i strengen til stor bokstav, mens man s\xF8rger\
   \ for at resten forblir\u2026"
-lastmod: 2024-02-18 23:08:53.754948
+lastmod: 2024-02-19 22:04:59.893912
 model: gpt-4-0125-preview
 summary: "Det \xE5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre den f\xF8\
   rste bokstaven i hvert ord i strengen til stor bokstav, mens man s\xF8rger for at\

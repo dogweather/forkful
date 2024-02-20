@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/generating-random-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:04.144975-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
   \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\
   es, jogos e sistemas de\u2026"
-lastmod: 2024-02-18 23:08:57.710981
+lastmod: 2024-02-19 22:05:05.171021
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
   \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\

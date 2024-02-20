@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:11.716170-07:00
 description: "Ein String zu Kleinbuchstaben umwandeln bedeutet, alle Gro\xDFbuchstaben\
   \ in einem Text in ihre entsprechenden kleineren Gegenst\xFCcke zu ver\xE4ndern.\u2026"
-lastmod: 2024-02-18 23:09:04.948419
+lastmod: 2024-02-19 22:05:12.888276
 model: gpt-4-1106-preview
 summary: "Ein String zu Kleinbuchstaben umwandeln bedeutet, alle Gro\xDFbuchstaben\
   \ in einem Text in ihre entsprechenden kleineren Gegenst\xFCcke zu ver\xE4ndern.\u2026"

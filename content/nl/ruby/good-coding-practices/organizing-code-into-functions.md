@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:14.619305-07:00
 description: "Je code organiseren in functies splitst je script in herbruikbare delen.\
   \ Het gaat allemaal om het schoon, beheersbaar en minder foutgevoelig maken van\
   \ je\u2026"
-lastmod: 2024-02-18 23:09:02.428496
+lastmod: 2024-02-19 22:05:10.432859
 model: gpt-4-0125-preview
 summary: "Je code organiseren in functies splitst je script in herbruikbare delen.\
   \ Het gaat allemaal om het schoon, beheersbaar en minder foutgevoelig maken van\

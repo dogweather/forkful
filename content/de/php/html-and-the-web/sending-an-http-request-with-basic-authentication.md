@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/php/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:26.257898-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, dass\
   \ wir unseren Nutzernamen und unser Passwort im Klartext (base64-kodiert) \xFCber\
   \ das\u2026"
-lastmod: 2024-02-18 23:09:04.961777
+lastmod: 2024-02-19 22:05:12.901723
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, dass\
   \ wir unseren Nutzernamen und unser Passwort im Klartext (base64-kodiert) \xFCber\

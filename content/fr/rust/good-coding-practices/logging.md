@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/logging/
 date: 2024-01-26 01:08:40.580902-07:00
 description: "La journalisation est comme tenir un journal pour votre application\
   \ ; c'est la pratique d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres\
   \ donn\xE9es\u2026"
-lastmod: 2024-02-18 23:09:08.536064
+lastmod: 2024-02-19 22:05:16.316625
 model: gpt-4-1106-preview
 summary: "La journalisation est comme tenir un journal pour votre application ; c'est\
   \ la pratique d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres donn\xE9\

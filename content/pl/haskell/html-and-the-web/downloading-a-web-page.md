@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/downloading-a-web-page/
 date: 2024-01-20 17:44:26.387677-07:00
 description: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to\
   \ proces, w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML)\
   \ bezpo\u015Brednio na\u2026"
-lastmod: 2024-02-18 23:08:49.652215
+lastmod: 2024-02-19 22:04:54.585227
 model: gpt-4-1106-preview
 summary: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to proces,\
   \ w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML) bezpo\u015B\

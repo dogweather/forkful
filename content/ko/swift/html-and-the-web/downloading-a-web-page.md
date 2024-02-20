@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/swift/downloading-a-web-page/
 date: 2024-01-20 17:45:07.664781-07:00
 description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\
   \uB137\uC5D0\uC11C \uD2B9\uC815 URL\uC758 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC640\
@@ -9,7 +7,7 @@ description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD
   \uC2DC\uD558\uAC70\uB098 \uB370\uC774\uD130 \uBD84\uC11D\uC744 \uD560 \uC218 \uC788\
   \uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.746693
+lastmod: 2024-02-19 22:05:14.640001
 model: gpt-4-1106-preview
 summary: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\uB137\
   \uC5D0\uC11C \uD2B9\uC815 URL\uC758 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC640\

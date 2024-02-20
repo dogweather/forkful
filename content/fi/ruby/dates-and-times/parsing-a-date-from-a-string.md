@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/ruby/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:24.572929-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
   \ tekstin, joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista `Date`-\
   \ tai `DateTime`-objektiksi, jonka Ruby ymm\xE4rt\xE4\xE4.\u2026"
-lastmod: 2024-02-18 23:09:08.193002
+lastmod: 2024-02-19 22:05:16.005171
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstin,\
   \ joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista `Date`- tai `DateTime`-objektiksi,\

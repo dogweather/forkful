@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/vba/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:35.724499-07:00
 description: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
   \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\u2026"
-lastmod: 2024-02-18 23:09:07.392190
+lastmod: 2024-02-19 22:05:15.278699
 model: gpt-4-0125-preview
 summary: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
   \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\u2026"

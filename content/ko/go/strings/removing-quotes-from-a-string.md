@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:29.459889-07:00
@@ -13,7 +11,7 @@ description: "Go\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\u
   \uC801\uC73C\uB85C \uBD84\uC11D\uD558\uAC70\uB098, \uB530\uC634\uD45C\uAC00 \uC5C6\
   \uB294 \uCF58\uD150\uCE20\uB97C \uC694\uAD6C\uD558\uB294 \uCD94\uAC00 \uCC98\uB9AC\
   \uB97C \uC704\uD574 \uBB38\uC790\uC5F4\uC744\u2026"
-lastmod: 2024-02-18 23:09:05.459819
+lastmod: 2024-02-19 22:05:13.378149
 model: gpt-4-0125-preview
 summary: "Go\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\
   \uAC70\uD558\uB294 \uAC83\uC740 \uC8FC\uC5B4\uC9C4 \uBB38\uC790\uC5F4\uC758 \uC120\

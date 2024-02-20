@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/php/reading-command-line-arguments/
 date: 2024-01-20 17:56:38.322726-07:00
 description: "Att l\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga text som skickas\
   \ till ett PHP-script fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att\
   \ till\xE5ta interaktion\u2026"
-lastmod: 2024-02-18 23:08:51.893098
+lastmod: 2024-02-19 22:04:57.236974
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga text som skickas\
   \ till ett PHP-script fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att\

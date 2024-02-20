@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/google-apps-script/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:17.356608-07:00
@@ -12,7 +10,7 @@ description: "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0441\u0443\u044
   \ \u043F\u0430\u043F\u043A\u0438 \u0432 Google Drive. \u041F\u0440\u043E\u0433\u0440\
   \u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0447\u0430\u0441\u0442\u043E \u0432\
   \u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0442 \u044D\u0442\u0443\u2026"
-lastmod: 2024-02-18 23:08:56.499283
+lastmod: 2024-02-19 22:05:03.198444
 model: gpt-4-0125-preview
 summary: "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0441\u0443\u0449\u0435\
   \u0441\u0442\u0432\u043E\u0432\u0430\u043D\u0438\u044F \u043A\u0430\u0442\u0430\u043B\

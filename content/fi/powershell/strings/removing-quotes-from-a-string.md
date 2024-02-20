@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/powershell/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:08.265991-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta PowerShelliss\xE4 poistaa\
   \ yksitt\xE4iset (`'`) tai kaksinkertaiset (`\"`) lainausmerkit tekstin ymp\xE4\
   rilt\xE4. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.837152
+lastmod: 2024-02-19 22:05:15.664801
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta PowerShelliss\xE4 poistaa yksitt\xE4\
   iset (`'`) tai kaksinkertaiset (`\"`) lainausmerkit tekstin ymp\xE4rilt\xE4. Ohjelmoijat\u2026"

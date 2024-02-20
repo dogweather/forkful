@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:28.838163-07:00
 description: "Interaktive Shells oder REPLs (Read-Eval-Print Schleifen) erm\xF6glichen\
   \ es Ihnen, Code spontan auszuf\xFChren, Funktionen, Algorithmen zu testen oder\
   \ mit Ideen\u2026"
-lastmod: 2024-02-18 23:09:05.280392
+lastmod: 2024-02-19 22:05:13.205174
 model: gpt-4-0125-preview
 summary: "Interaktive Shells oder REPLs (Read-Eval-Print Schleifen) erm\xF6glichen\
   \ es Ihnen, Code spontan auszuf\xFChren, Funktionen, Algorithmen zu testen oder\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /he/php/downloading-a-web-page/
 date: 2024-01-20 17:44:26.280428-07:00
 description: Downloading a web page means grabbing the HTML content from a URL. Programmers
   do this to process, analyze or display the content in a different context.
-lastmod: 2024-02-18 23:08:52.930577
+lastmod: 2024-02-19 22:04:58.721040
 model: gpt-4-1106-preview
 summary: Downloading a web page means grabbing the HTML content from a URL. Programmers
   do this to process, analyze or display the content in a different context.

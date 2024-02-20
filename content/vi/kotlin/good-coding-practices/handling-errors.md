@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:39.447034-07:00
@@ -8,7 +6,7 @@ description: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch m\xE3 c\u1EE7a b\u1EA1n \u011
   i di\u1EC7n v\u1EDBi nh\u1EEFng v\u1EA5n \u0111\u1EC1 ph\xE1t sinh trong qu\xE1\
   \ tr\xECnh th\u1EF1c thi - gi\u1ED1ng nh\u01B0 vi\u1EC7c x\u1EED l\xFD m\u1ED9t\
   \ t\xECnh hu\u1ED1ng b\u1EA5t ng\u1EDD m\xE0 kh\xF4ng l\xE0m r\u01A1i\u2026"
-lastmod: 2024-02-18 23:08:50.659645
+lastmod: 2024-02-19 22:04:55.782444
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch m\xE3 c\u1EE7a b\u1EA1n \u0111\u1ED1\
   i di\u1EC7n v\u1EDBi nh\u1EEFng v\u1EA5n \u0111\u1EC1 ph\xE1t sinh trong qu\xE1\

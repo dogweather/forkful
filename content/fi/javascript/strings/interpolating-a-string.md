@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/interpolating-a-string/
 date: 2024-01-20 17:51:00.387197-07:00
 description: "String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdist\xE4\
   mist\xE4 merkkijonoihin. Koodareiden arjessa t\xE4m\xE4 on k\xE4yt\xE4nn\xF6llist\xE4\
   , sill\xE4 se helpottaa\u2026"
-lastmod: 2024-02-18 23:09:08.020880
+lastmod: 2024-02-19 22:05:15.830863
 model: gpt-4-1106-preview
 summary: "String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdist\xE4mist\xE4\
   \ merkkijonoihin. Koodareiden arjessa t\xE4m\xE4 on k\xE4yt\xE4nn\xF6llist\xE4,\

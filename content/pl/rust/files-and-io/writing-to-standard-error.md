@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/rust/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:53.367298-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Rust oznacza kierowanie\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 oddzielnie od\
   \ standardowego wyj\u015Bcia\u2026"
-lastmod: 2024-02-18 23:08:49.406086
+lastmod: 2024-02-19 22:04:54.328309
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Rust oznacza kierowanie\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 oddzielnie od\

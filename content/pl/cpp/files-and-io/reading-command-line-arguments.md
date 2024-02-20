@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/reading-command-line-arguments/
 date: 2024-01-20 17:55:30.025837-07:00
 description: "Odczytywanie argument\xF3w linii komend to spos\xF3b na przekazywanie\
   \ danych zewn\u0119trznych do programu przy jego starcie. Programi\u015Bci wykorzystuj\u0105\
   \ to, aby\u2026"
-lastmod: 2024-02-18 23:08:49.926876
+lastmod: 2024-02-19 22:04:54.875175
 model: gpt-4-1106-preview
 summary: "Odczytywanie argument\xF3w linii komend to spos\xF3b na przekazywanie danych\
   \ zewn\u0119trznych do programu przy jego starcie. Programi\u015Bci wykorzystuj\u0105\

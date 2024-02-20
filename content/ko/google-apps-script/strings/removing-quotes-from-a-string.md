@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:10.548387-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB5
   \uB294 \uC774\uB97C \uCC98\uB9AC\uD558\uC5EC \uB370\uC774\uD130\uB97C \uC815\uC81C\
   \uD558\uAC70\uB098 \uD45C\uC900\uD654\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\
   \uC744\u2026"
-lastmod: 2024-02-18 23:09:05.534743
+lastmod: 2024-02-19 22:05:13.451162
 model: gpt-4-0125-preview
 summary: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\
   \uD45C\uB97C \uC81C\uAC70\uD558\uB294 \uAC83\uC740 \uC8FC\uB85C \uD30C\uC2F1\uB41C\

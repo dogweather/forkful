@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/haskell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:29.490499-07:00
 description: "YAML, die Abk\xFCrzung f\xFCr \"YAML Ain't Markup Language\", ist ein\
   \ benutzerfreundlicher Datenserialisierungsstandard, der f\xFCr alle Programmiersprachen\u2026"
-lastmod: 2024-02-18 23:09:04.939154
+lastmod: 2024-02-19 22:05:12.878855
 model: gpt-4-0125-preview
 summary: "YAML, die Abk\xFCrzung f\xFCr \"YAML Ain't Markup Language\", ist ein benutzerfreundlicher\
   \ Datenserialisierungsstandard, der f\xFCr alle Programmiersprachen\u2026"

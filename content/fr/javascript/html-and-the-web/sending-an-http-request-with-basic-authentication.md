@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/javascript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:57.632330-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
   \ transmettre des identifiants (login/mot de passe) encod\xE9s en Base64 dans l'en-t\xEA\
   te d'une\u2026"
-lastmod: 2024-02-18 23:09:09.255629
+lastmod: 2024-02-19 22:05:16.920319
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est transmettre\
   \ des identifiants (login/mot de passe) encod\xE9s en Base64 dans l'en-t\xEAte d'une\u2026"

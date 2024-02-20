@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/php/reading-a-text-file/
 date: 2024-01-20 17:54:42.931208-07:00
 description: "Leer un archivo de texto en PHP implica obtener su contenido para manipulaci\xF3\
   n o an\xE1lisis. Los programadores hacen esto para importar datos,\u2026"
-lastmod: 2024-02-18 23:09:10.092896
+lastmod: 2024-02-19 22:05:17.685223
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en PHP implica obtener su contenido para manipulaci\xF3\
   n o an\xE1lisis. Los programadores hacen esto para importar datos,\u2026"

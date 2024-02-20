@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/cpp/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:59.698556-07:00
 description: "JSON (JavaScript Object Notation) \xE9 um formato leve para armazenamento\
   \ e transporte de dados, tornando-se um excelente meio para troca de dados entre\u2026"
-lastmod: 2024-02-18 23:08:58.470957
+lastmod: 2024-02-19 22:05:05.962579
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE9 um formato leve para armazenamento\
   \ e transporte de dados, tornando-se um excelente meio para troca de dados entre\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:05.918600-07:00
 description: "Att ta bort tecken utifr\xE5n ett m\xF6nster handlar om att rensa str\xE4\
   ngar fr\xE5n o\xF6nskade sekvenser. Programmerare g\xF6r detta f\xF6r att sanera\
   \ data, extrahera\u2026"
-lastmod: 2024-02-18 23:08:51.569032
+lastmod: 2024-02-19 22:04:56.885636
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken utifr\xE5n ett m\xF6nster handlar om att rensa str\xE4\
   ngar fr\xE5n o\xF6nskade sekvenser. Programmerare g\xF6r detta f\xF6r att sanera\

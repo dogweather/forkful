@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/rounding-numbers/
 date: 2024-01-26 03:46:37.321292-07:00
 description: "\xC5 runde av tall betyr \xE5 justere dem til det n\xE6rmeste hele tallet\
   \ eller til en spesifisert grad av presisjon. Programmerere runder av tall for \xE5\
   \ forenkle,\u2026"
-lastmod: 2024-02-18 23:08:54.431740
+lastmod: 2024-02-19 22:05:00.593533
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 justere dem til det n\xE6rmeste hele tallet\
   \ eller til en spesifisert grad av presisjon. Programmerere runder av tall for \xE5\

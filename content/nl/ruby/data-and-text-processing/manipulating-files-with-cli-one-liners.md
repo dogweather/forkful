@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/manipulating-files-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:28.313919-07:00
 description: "Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren\
   \ van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van\u2026"
-lastmod: 2024-02-18 23:09:02.416713
+lastmod: 2024-02-19 22:05:10.421639
 model: gpt-4-0125-preview
 summary: "Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren\
   \ van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/printing-debug-output/
 date: 2024-01-20 17:52:29.187512-07:00
 description: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites\
   \ notes dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font\
   \ \xE7a pour\u2026"
-lastmod: 2024-02-18 23:09:08.830586
+lastmod: 2024-02-19 22:05:16.530865
 model: gpt-4-1106-preview
 summary: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites notes\
   \ dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font \xE7\

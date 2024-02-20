@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/ruby/reading-a-text-file/
 date: 2024-01-20 17:54:51.421325-07:00
 description: "Reading a text file means accessing the content of a file stored on\
   \ disk through code. Programmers do it to process, analyze, or display data within\
   \ their\u2026"
-lastmod: 2024-02-18 23:09:11.583096
+lastmod: 2024-02-19 22:05:19.028152
 model: gpt-4-1106-preview
 summary: "Reading a text file means accessing the content of a file stored on disk\
   \ through code. Programmers do it to process, analyze, or display data within their\u2026"

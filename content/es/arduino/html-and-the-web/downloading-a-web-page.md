@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/arduino/downloading-a-web-page/
 date: 2024-01-20 17:43:16.533112-07:00
 description: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servidor\
   \ de internet que nos mande los datos de una p\xE1gina. Los programadores hacen\
   \ esto para obtener\u2026"
-lastmod: 2024-02-18 23:09:10.260329
+lastmod: 2024-02-19 22:05:17.838473
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servidor de internet\
   \ que nos mande los datos de una p\xE1gina. Los programadores hacen esto para obtener\u2026"

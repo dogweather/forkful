@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/javascript/extracting-substrings/
 date: 2024-01-20 17:45:56.336635-07:00
 description: "Substringit ovat merkkijonoista poimittuja osajonoja. Ne auttavat meit\xE4\
   \ ty\xF6st\xE4m\xE4\xE4n ja analysoimaan teksti\xE4 tarpeen mukaan."
-lastmod: 2024-02-18 23:09:08.023947
+lastmod: 2024-02-19 22:05:15.833635
 model: gpt-4-1106-preview
 summary: "Substringit ovat merkkijonoista poimittuja osajonoja. Ne auttavat meit\xE4\
   \ ty\xF6st\xE4m\xE4\xE4n ja analysoimaan teksti\xE4 tarpeen mukaan."

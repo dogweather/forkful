@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:40.808448-07:00
 description: "Een debugger gebruiken betekent dat je gespecialiseerde tools gebruikt\
   \ om code te testen en te diagnosticeren. Programmeurs doen dit om bugs te pletten,\u2026"
-lastmod: 2024-02-18 23:09:01.857534
+lastmod: 2024-02-19 22:05:09.874280
 model: gpt-4-0125-preview
 summary: "Een debugger gebruiken betekent dat je gespecialiseerde tools gebruikt om\
   \ code te testen en te diagnosticeren. Programmeurs doen dit om bugs te pletten,\u2026"

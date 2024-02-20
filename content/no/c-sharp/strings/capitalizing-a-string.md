@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c-sharp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:20.849523-07:00
 description: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
   \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\
   \ allerede er det. Denne\u2026"
-lastmod: 2024-02-18 23:08:53.877311
+lastmod: 2024-02-19 22:05:00.044446
 model: gpt-4-0125-preview
 summary: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
   \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\

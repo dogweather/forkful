@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/working-with-xml/
 date: 2024-01-26 04:28:58.505910-07:00
 description: "XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 XML(eXtensible Markup Language)\
   \ \uB370\uC774\uD130\uB97C \uD30C\uC2F1, \uC0DD\uC131, \uC870\uC791\uD558\uB294\
@@ -8,7 +6,7 @@ description: "XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 XML(eXtensible Markup La
   \uC740 \uD50C\uB7AB\uD3FC \uC911\uB9BD\uC801\uC778 \uD2B9\uC131 \uB54C\uBB38\uC5D0\
   \ \uAD6C\uC870\uD654\uB41C \uB370\uC774\uD130 \uAD50\uD658, \uAD6C\uC131 \uB4F1\uC744\
   \ \uAD00\uB9AC\uD558\uAE30 \uC704\uD574 XML\uC744 \uB2E4\uB8F9\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.721909
+lastmod: 2024-02-19 22:05:14.616689
 model: gpt-4-0125-preview
 summary: "XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 XML(eXtensible Markup Language)\
   \ \uB370\uC774\uD130\uB97C \uD30C\uC2F1, \uC0DD\uC131, \uC870\uC791\uD558\uB294\

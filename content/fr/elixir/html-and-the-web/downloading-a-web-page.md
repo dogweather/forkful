@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/downloading-a-web-page/
 date: 2024-01-20 17:43:39.282812-07:00
 description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
   \ le web. Les programmeurs le font pour analyser des donn\xE9es, tester des sites,\
   \ ou agr\xE9ger du\u2026"
-lastmod: 2024-02-18 23:09:08.432962
+lastmod: 2024-02-19 22:05:16.222552
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via le\
   \ web. Les programmeurs le font pour analyser des donn\xE9es, tester des sites,\

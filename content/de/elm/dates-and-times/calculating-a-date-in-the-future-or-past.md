@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elm/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:45.380514-07:00
 description: "Das Berechnen von zuk\xFCnftigen oder vergangenen Daten bedeutet, einem\
   \ bestimmten Datum Tage, Monate oder Jahre hinzuzuf\xFCgen oder abzuziehen. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.795631
+lastmod: 2024-02-19 22:05:12.743562
 model: gpt-4-1106-preview
 summary: "Das Berechnen von zuk\xFCnftigen oder vergangenen Daten bedeutet, einem\
   \ bestimmten Datum Tage, Monate oder Jahre hinzuzuf\xFCgen oder abzuziehen. Programmierer\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:39.492667-07:00
 description: "Using an interactive shell, or a Read-Eval-Print Loop (REPL), lets you\
   \ code interactively. Programmers use it to test Swift snippets quickly, debug,\
   \ or\u2026"
-lastmod: 2024-02-18 23:09:11.398344
+lastmod: 2024-02-19 22:05:18.859268
 model: gpt-4-1106-preview
 summary: "Using an interactive shell, or a Read-Eval-Print Loop (REPL), lets you code\
   \ interactively. Programmers use it to test Swift snippets quickly, debug, or\u2026"

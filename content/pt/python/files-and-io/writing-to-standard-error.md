@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/python/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:16.637262-07:00
 description: "Escrever para o erro padr\xE3o em Python trata-se de direcionar as mensagens\
   \ de erro ou diagn\xF3sticos do seu programa para o fluxo de erro (`stderr`),\u2026"
-lastmod: 2024-02-18 23:08:57.777146
+lastmod: 2024-02-19 22:05:05.241342
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o em Python trata-se de direcionar as mensagens\
   \ de erro ou diagn\xF3sticos do seu programa para o fluxo de erro (`stderr`),\u2026"

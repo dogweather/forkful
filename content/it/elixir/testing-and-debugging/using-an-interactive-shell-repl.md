@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elixir/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:00.553263-07:00
 description: "Un shell interattivo, o REPL (Read-Eval-Print Loop, Ciclo di Lettura-Valutazione-Stampa),\
   \ permette di provare frammenti di codice in tempo reale. I\u2026"
-lastmod: 2024-02-18 23:08:55.602199
+lastmod: 2024-02-19 22:05:02.195137
 model: gpt-4-0125-preview
 summary: "Un shell interattivo, o REPL (Read-Eval-Print Loop, Ciclo di Lettura-Valutazione-Stampa),\
   \ permette di provare frammenti di codice in tempo reale. I\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/typescript/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:59:16.445777-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043E\u044
   \u0442 \u043D\u0435 \u0442\u0430\u043A. \u041C\u044B \u0434\u0435\u043B\u0430\u0435\
   \u043C \u044D\u0442\u043E, \u0447\u0442\u043E\u0431\u044B \u0438\u0437\u0431\u0435\
   \u0436\u0430\u0442\u044C\u2026"
-lastmod: 2024-02-18 23:08:56.694132
+lastmod: 2024-02-19 22:05:03.512700
 model: gpt-4-0125-preview
 summary: "\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043E\u0448\u0438\
   \u0431\u043E\u043A \u0437\u0430\u043A\u043B\u044E\u0447\u0430\u0435\u0442\u0441\u044F\

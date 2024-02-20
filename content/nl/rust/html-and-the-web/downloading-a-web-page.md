@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:12.308327-07:00
 description: "Een webpagina downloaden betekent het verzamelen van de gegevens die\
   \ het bevat. Programmeurs doen dit om informatie te verkrijgen, tests te automatiseren,\u2026"
-lastmod: 2024-02-18 23:09:01.617900
+lastmod: 2024-02-19 22:05:09.640987
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het verzamelen van de gegevens die het\
   \ bevat. Programmeurs doen dit om informatie te verkrijgen, tests te automatiseren,\u2026"

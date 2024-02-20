@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/fish-shell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:47.131325-07:00
 description: "\xC5 skrive til en tekstfil i Fish Shell lar deg lagre data vedvarende,\
   \ noe som gj\xF8r det enkelt \xE5 hente eller manipulere data enten av samme Fish-script\u2026"
-lastmod: 2024-02-18 23:08:54.369376
+lastmod: 2024-02-19 22:05:00.525653
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Fish Shell lar deg lagre data vedvarende,\
   \ noe som gj\xF8r det enkelt \xE5 hente eller manipulere data enten av samme Fish-script\u2026"

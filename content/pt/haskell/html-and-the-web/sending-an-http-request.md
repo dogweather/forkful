@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/haskell/sending-an-http-request/
 date: 2024-01-20 18:00:01.697981-07:00
 description: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web fazer\
   \ algo ou dar algo. Programadores fazem isso para interagir com APIs, pegar dados,\u2026"
-lastmod: 2024-02-18 23:08:58.195998
+lastmod: 2024-02-19 22:05:05.667500
 model: gpt-4-1106-preview
 summary: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web fazer\
   \ algo ou dar algo. Programadores fazem isso para interagir com APIs, pegar dados,\u2026"

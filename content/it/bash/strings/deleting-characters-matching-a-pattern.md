@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:39.280715-07:00
 description: "Cancellare caratteri seguendo un pattern significa rimuovere selettivamente\
   \ parti di una stringa che corrispondono a un criterio specifico. I\u2026"
-lastmod: 2024-02-18 23:08:56.036232
+lastmod: 2024-02-19 22:05:02.653266
 model: gpt-4-1106-preview
 summary: "Cancellare caratteri seguendo un pattern significa rimuovere selettivamente\
   \ parti di una stringa che corrispondono a un criterio specifico. I\u2026"

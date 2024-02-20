@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/fish-shell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:54.267812-07:00
 description: "Arrays associativos, ou tabelas hash, permitem armazenar dados como\
   \ pares de chave-valor, facilitando a organiza\xE7\xE3o e recupera\xE7\xE3o de informa\xE7\
   \xF5es por\u2026"
-lastmod: 2024-02-18 23:08:58.566535
+lastmod: 2024-02-19 22:05:06.063709
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou tabelas hash, permitem armazenar dados como pares\
   \ de chave-valor, facilitando a organiza\xE7\xE3o e recupera\xE7\xE3o de informa\xE7\

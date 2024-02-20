@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/java/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:11.212983-07:00
 description: "Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegaj\u0105\
   ce na weryfikacji obecno\u015Bci katalogu w systemie plik\xF3w przed odczytem z\
   \ niego,\u2026"
-lastmod: 2024-02-18 23:08:49.492215
+lastmod: 2024-02-19 22:04:54.422003
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegaj\u0105\
   ce na weryfikacji obecno\u015Bci katalogu w systemie plik\xF3w przed odczytem z\

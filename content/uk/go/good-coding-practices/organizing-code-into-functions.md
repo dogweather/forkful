@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:21.770077-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u0440\u0433\u0430\u043D\u0456\u0437\u0430\u0446\u0456\u044F
   \u044E\u0442\u044C \u043F\u0435\u0432\u043D\u0456 \u0437\u0430\u0432\u0434\u0430\
   \u043D\u043D\u044F. \u0422\u0430\u043A\u0438\u0439 \u043F\u0456\u0434\u0445\u0456\
   \u0434 \u043F\u0456\u0434\u0432\u0438\u0449\u0443\u0454\u2026"
-lastmod: 2024-02-18 23:08:59.696792
+lastmod: 2024-02-19 22:05:07.510768
 model: gpt-4-0125-preview
 summary: "\u041E\u0440\u0433\u0430\u043D\u0456\u0437\u0430\u0446\u0456\u044F \u043A\
   \u043E\u0434\u0443 \u0443 \u0444\u0443\u043D\u043A\u0446\u0456\u0457 \u0432 Go \u043F\

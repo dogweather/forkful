@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/searching-and-replacing-text/
 date: 2024-01-20 17:58:06.107996-07:00
 description: "\uD14D\uC2A4\uD2B8\uB97C \uAC80\uC0C9\uD558\uACE0 \uAD50\uCCB4\uD558\
   \uB294 \uAC83\uC740 \uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBB38\uC790\uB098\
@@ -10,7 +8,7 @@ description: "\uD14D\uC2A4\uD2B8\uB97C \uAC80\uC0C9\uD558\uACE0 \uAD50\uCCB4\uD5
   \uC5C5\uC744 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.790992
+lastmod: 2024-02-19 22:05:14.682059
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8\uB97C \uAC80\uC0C9\uD558\uACE0 \uAD50\uCCB4\uD558\uB294\
   \ \uAC83\uC740 \uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBB38\uC790\uB098 \uB2E8\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/elixir/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:04.629717-07:00
 description: "Att skriva till standardfel (stderr) i Elixir \xE4r en metod f\xF6r\
   \ att dirigera felmeddelanden och diagnostik separat fr\xE5n huvudutdata (stdout).\
   \ Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.518719
+lastmod: 2024-02-19 22:04:56.830439
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Elixir \xE4r en metod f\xF6r att\
   \ dirigera felmeddelanden och diagnostik separat fr\xE5n huvudutdata (stdout). Programmerare\u2026"

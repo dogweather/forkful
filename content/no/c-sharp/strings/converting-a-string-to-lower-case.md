@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/c-sharp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:08.021323-07:00
 description: "Konvertering av en streng til sm\xE5 bokstaver endrer alle bokstavene\
   \ i strengen til deres sm\xE5bokstav motstykke. Dette gj\xF8res for konsistens i\u2026"
-lastmod: 2024-02-18 23:08:53.881096
+lastmod: 2024-02-19 22:05:00.048402
 model: gpt-4-1106-preview
 summary: "Konvertering av en streng til sm\xE5 bokstaver endrer alle bokstavene i\
   \ strengen til deres sm\xE5bokstav motstykke. Dette gj\xF8res for konsistens i\u2026"

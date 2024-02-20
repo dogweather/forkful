@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/powershell/refactoring/
 date: 2024-01-26 03:37:37.045031-07:00
 description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza modificarne il comportamento esterno, con l'obiettivo di\u2026"
-lastmod: 2024-02-18 23:08:56.102396
+lastmod: 2024-02-19 22:05:02.725378
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza modificarne il comportamento esterno, con l'obiettivo di\u2026"

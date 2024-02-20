@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:39.750809-07:00
 description: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie\
   \ u\u017Cywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania.\
   \ Podej\u015Bcie to poprawia\u2026"
-lastmod: 2024-02-18 23:08:49.104360
+lastmod: 2024-02-19 22:04:54.043077
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie u\u017C\
   ywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania. Podej\u015B\

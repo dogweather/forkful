@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/handling-errors/
 date: 2024-01-26 00:57:55.278309-07:00
 description: "La gestione degli errori riguarda il come affrontare le situazioni quando\
   \ le cose non vanno come previsto. I programmatori lo fanno per gestire\u2026"
-lastmod: 2024-02-18 23:08:55.687438
+lastmod: 2024-02-19 22:05:02.286418
 model: gpt-4-1106-preview
 summary: "La gestione degli errori riguarda il come affrontare le situazioni quando\
   \ le cose non vanno come previsto. I programmatori lo fanno per gestire\u2026"

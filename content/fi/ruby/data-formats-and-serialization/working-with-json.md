@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/ruby/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:16.343170-07:00
 description: "JSON (JavaScript Object Notation) on kevyt tiedonvaihtomuoto, joka on\
   \ yleinen verkkosovelluksissa datan vaihtamiseen asiakkaiden ja palvelinten v\xE4\
   lill\xE4.\u2026"
-lastmod: 2024-02-18 23:09:08.206128
+lastmod: 2024-02-19 22:05:16.017534
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) on kevyt tiedonvaihtomuoto, joka on yleinen\
   \ verkkosovelluksissa datan vaihtamiseen asiakkaiden ja palvelinten v\xE4lill\xE4\

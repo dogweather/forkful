@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/python/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:01.638253-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuell\
   \ datum- och tidsinformation till ett datetime-objekt eller motsvarande strukturerat\u2026"
-lastmod: 2024-02-18 23:08:51.430731
+lastmod: 2024-02-19 22:04:56.733922
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuell\
   \ datum- och tidsinformation till ett datetime-objekt eller motsvarande strukturerat\u2026"

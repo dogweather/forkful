@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/php/searching-and-replacing-text/
 date: 2024-01-20 17:58:16.123144-07:00
 description: "Nella programmazione, cercare e sostituire testo significa scansionare\
   \ delle stringhe per trovarne frammenti e cambiare questi con nuovi contenuti. I\u2026"
-lastmod: 2024-02-18 23:08:55.956785
+lastmod: 2024-02-19 22:05:02.568445
 model: gpt-4-1106-preview
 summary: "Nella programmazione, cercare e sostituire testo significa scansionare delle\
   \ stringhe per trovarne frammenti e cambiare questi con nuovi contenuti. I\u2026"

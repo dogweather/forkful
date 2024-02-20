@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/arduino/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:08.503347-07:00
 description: "Een nieuw project starten op Arduino betekent het initialiseren van\
   \ een nieuwe schets, het canvas voor je code. Programmeurs doen dit om leven te\
   \ blazen\u2026"
-lastmod: 2024-02-18 23:09:02.139398
+lastmod: 2024-02-19 22:05:10.157857
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten op Arduino betekent het initialiseren van een\
   \ nieuwe schets, het canvas voor je code. Programmeurs doen dit om leven te blazen\u2026"

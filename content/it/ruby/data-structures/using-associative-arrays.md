@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/ruby/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:29.931349-07:00
 description: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, consentono\
   \ di accoppiare chiavi uniche a valori. Sono indispensabili quando \xE8 necessario\u2026"
-lastmod: 2024-02-18 23:08:56.374386
+lastmod: 2024-02-19 22:05:03.014369
 model: gpt-4-0125-preview
 summary: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, consentono\
   \ di accoppiare chiavi uniche a valori. Sono indispensabili quando \xE8 necessario\u2026"

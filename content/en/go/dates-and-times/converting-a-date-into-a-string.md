@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/converting-a-date-into-a-string/
 date: 2024-02-03 17:50:07.144392-07:00
 description: "Converting a date into a string in Go involves transforming a `time.Time`\
   \ object into a readable string format. Programmers often perform this operation\u2026"
-lastmod: 2024-02-18 23:09:10.608189
+lastmod: 2024-02-19 22:05:18.149537
 model: gpt-4-0125-preview
 summary: "Converting a date into a string in Go involves transforming a `time.Time`\
   \ object into a readable string format. Programmers often perform this operation\u2026"

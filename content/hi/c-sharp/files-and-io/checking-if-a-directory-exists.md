@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c-sharp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:12.024645-07:00
@@ -14,7 +12,7 @@ description: "C# \u092E\u0947\u0902 \u090F\u0915 \u0928\u093F\u0930\u094D\u0926\
   \u092F\u093E\u092A\u093F\u0924 \u0915\u0930\u0928\u0947 \u0915\u0940 \u092A\u094D\
   \u0930\u0915\u094D\u0930\u093F\u092F\u093E \u0939\u0948\u0964 \u092A\u094D\u0930\
   \u094B\u0917\u094D\u0930\u093E\u092E\u0930 \u092F\u0939\u2026"
-lastmod: 2024-02-18 23:09:03.372536
+lastmod: 2024-02-19 22:05:11.364501
 model: gpt-4-0125-preview
 summary: "C# \u092E\u0947\u0902 \u090F\u0915 \u0928\u093F\u0930\u094D\u0926\u0947\u0936\
   \u093F\u0915\u093E \u0915\u0947 \u0905\u0938\u094D\u0924\u093F\u0924\u094D\u0935\

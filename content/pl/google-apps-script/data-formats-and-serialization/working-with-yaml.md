@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:42.074796-07:00
 description: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML to nie j\u0119\
   zyk znacznik\xF3w), to standard serializacji danych przeznaczony dla ludzi, kt\xF3\
   ry jest\u2026"
-lastmod: 2024-02-18 23:08:49.175029
+lastmod: 2024-02-19 22:04:54.110069
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML to nie j\u0119zyk\
   \ znacznik\xF3w), to standard serializacji danych przeznaczony dla ludzi, kt\xF3\

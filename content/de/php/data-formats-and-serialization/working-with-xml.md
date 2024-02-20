@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/php/working-with-xml/
 date: 2024-01-26 04:33:36.498239-07:00
 description: "XML ist eine Auszeichnungssprache, die zum Speichern und Transportieren\
   \ von Daten verwendet wird. Programmierer arbeiten mit XML, um die Interoperabilit\xE4\
   t\u2026"
-lastmod: 2024-02-18 23:09:04.988394
+lastmod: 2024-02-19 22:05:12.927709
 model: gpt-4-0125-preview
 summary: "XML ist eine Auszeichnungssprache, die zum Speichern und Transportieren\
   \ von Daten verwendet wird. Programmierer arbeiten mit XML, um die Interoperabilit\xE4\

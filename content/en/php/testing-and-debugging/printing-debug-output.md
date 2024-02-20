@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/php/printing-debug-output/
 date: 2024-01-20 17:53:03.682497-07:00
 description: "Printing debug output is about slapping your code's internal data onto\
   \ the screen to figure out what's going on. Programmers do it for a sanity check,\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.139717
+lastmod: 2024-02-19 22:05:18.632101
 model: gpt-4-1106-preview
 summary: "Printing debug output is about slapping your code's internal data onto the\
   \ screen to figure out what's going on. Programmers do it for a sanity check, to\u2026"

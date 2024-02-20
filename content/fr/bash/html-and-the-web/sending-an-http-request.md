@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/sending-an-http-request/
 date: 2024-01-20 17:58:57.903787-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. Les programmeurs font \xE7a pour interagir avec des services web, r\xE9cup\xE9\
   rer des infos,\u2026"
-lastmod: 2024-02-18 23:09:09.015800
+lastmod: 2024-02-19 22:05:16.700755
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. Les programmeurs font \xE7a pour interagir avec des services web, r\xE9cup\xE9\

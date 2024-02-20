@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/clojure/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:18.254753-07:00
 description: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha to liczba znak\xF3w w tek\u015B\
   cie. Programi\u015Bci licz\u0105 j\u0105, by zarz\u0105dza\u0107 danymi tekstowymi\
   \ \u2013 np. sprawdzi\u0107, czy has\u0142o ma odpowiedni\u0105 d\u0142ugo\u015B\
   \u0107 lub\u2026"
-lastmod: 2024-02-18 23:08:49.256054
+lastmod: 2024-02-19 22:04:54.168014
 model: gpt-4-1106-preview
 summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha to liczba znak\xF3w w tek\u015B\
   cie. Programi\u015Bci licz\u0105 j\u0105, by zarz\u0105dza\u0107 danymi tekstowymi\

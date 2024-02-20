@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:56.105209-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1E
   nh trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EAD\
   p c\xE1c tham s\u1ED1 \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBFn ch\u01B0\u01A1\
   ng tr\xECnh c\u1EE7a b\u1EA1n khi th\u1EF1c\u2026"
-lastmod: 2024-02-18 23:08:50.526964
+lastmod: 2024-02-19 22:04:55.613238
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong\
   \ Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp c\xE1\

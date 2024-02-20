@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/organizing-code-into-functions/
 date: 2024-01-26 01:09:02.745339-07:00
 description: "\xC5 organisere koden i funksjoner betyr \xE5 dele opp koden din i gjenbrukbare\
   \ biter, hvor hver bit utf\xF8rer en spesifikk jobb. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
-lastmod: 2024-02-18 23:08:54.147462
+lastmod: 2024-02-19 22:05:00.334916
 model: gpt-4-1106-preview
 summary: "\xC5 organisere koden i funksjoner betyr \xE5 dele opp koden din i gjenbrukbare\
   \ biter, hvor hver bit utf\xF8rer en spesifikk jobb. Programmerere gj\xF8r dette\

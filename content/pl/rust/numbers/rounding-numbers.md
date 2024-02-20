@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/rounding-numbers/
 date: 2024-01-26 03:47:05.989001-07:00
 description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej\
   \ liczby ca\u0142kowitej lub u\u0142amka o okre\u015Blonej precyzji. Programi\u015B\
   ci zaokr\u0105glaj\u0105 liczby, aby\u2026"
-lastmod: 2024-02-18 23:08:49.385135
+lastmod: 2024-02-19 22:04:54.305878
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej liczby\
   \ ca\u0142kowitej lub u\u0142amka o okre\u015Blonej precyzji. Programi\u015Bci zaokr\u0105\

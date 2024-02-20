@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/clojure/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:13.647547-07:00
 description: "Das Umwandeln eines Datums in einen String erm\xF6glicht es uns, Datumsangaben\
   \ in einem lesbaren Format zu repr\xE4sentieren. Wir machen das f\xFCr die\u2026"
-lastmod: 2024-02-18 23:09:04.519360
+lastmod: 2024-02-19 22:05:12.480823
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String erm\xF6glicht es uns, Datumsangaben\
   \ in einem lesbaren Format zu repr\xE4sentieren. Wir machen das f\xFCr die\u2026"

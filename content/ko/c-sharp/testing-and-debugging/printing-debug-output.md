@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/printing-debug-output/
 date: 2024-01-20 17:52:31.906330-07:00
 description: "\uD504\uB85C\uADF8\uB798\uBC0D\uD560 \uB54C \uBC84\uADF8\uB97C \uCC3E\
   \uAC70\uB098 \uB85C\uC9C1\uC744 \uC774\uD574\uD558\uAE30 \uC704\uD574 \uB514\uBC84\
@@ -9,7 +7,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uD560 \uB54C \uBC84\uADF8\uB97C \uC
   \uB294\uC9C0 \uBCFC \uC218 \uC788\uAC8C \uD574\uC8FC\uBA70, \uBB38\uC81C \uD574\uACB0\
   \uC744 \uB354 \uC27D\uAC8C \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.223734
+lastmod: 2024-02-19 22:05:14.148538
 model: gpt-4-1106-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uD560 \uB54C \uBC84\uADF8\uB97C \uCC3E\uAC70\
   \uB098 \uB85C\uC9C1\uC744 \uC774\uD574\uD558\uAE30 \uC704\uD574 \uB514\uBC84\uADF8\

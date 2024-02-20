@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/logging/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:15.760202-07:00
 description: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze\u0144\
   , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu.\
   \ Programi\u015Bci robi\u0105 to w\u2026"
-lastmod: 2024-02-18 23:08:49.155145
+lastmod: 2024-02-19 22:04:54.093589
 model: gpt-4-0125-preview
 summary: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze\u0144\
   , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu.\

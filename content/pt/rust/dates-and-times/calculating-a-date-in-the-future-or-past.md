@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/rust/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:01.238223-07:00
 description: "Calcular uma data no futuro ou passado significa determinar um dia espec\xED\
   fico antes ou depois de uma data conhecida. Programadores fazem isso para\u2026"
-lastmod: 2024-02-18 23:08:57.942258
+lastmod: 2024-02-19 22:05:05.415803
 model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou passado significa determinar um dia espec\xED\
   fico antes ou depois de uma data conhecida. Programadores fazem isso para\u2026"

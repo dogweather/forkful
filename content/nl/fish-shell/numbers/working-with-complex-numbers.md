@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:28.751199-07:00
 description: "Complexe getallen breiden het idee van eendimensionale getallenlijnen\
   \ uit naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden\u2026"
-lastmod: 2024-02-18 23:09:02.316236
+lastmod: 2024-02-19 22:05:10.325801
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden het idee van eendimensionale getallenlijnen uit\
   \ naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden\u2026"

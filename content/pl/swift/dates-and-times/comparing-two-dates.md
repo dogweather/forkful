@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/comparing-two-dates/
 date: 2024-01-20 17:33:53.911764-07:00
 description: "(Po co i dlaczego?) Por\xF3wnywanie dat pozwala okre\u015Bli\u0107,\
   \ kt\xF3ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza. Programi\u015B\
   ci robi\u0105 to, by zarz\u0105dza\u0107 czasem i\u2026"
-lastmod: 2024-02-18 23:08:49.964923
+lastmod: 2024-02-19 22:04:54.915771
 model: gpt-4-1106-preview
 summary: "(Po co i dlaczego?) Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt\xF3\
   ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza. Programi\u015B\

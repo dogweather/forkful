@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:03.504025-07:00
 description: "Trabalhar com n\xFAmeros complexos na programa\xE7\xE3o envolve manipular\
   \ n\xFAmeros que possuem tanto uma parte real quanto uma imagin\xE1ria, tipicamente\
   \ expressos\u2026"
-lastmod: 2024-02-18 23:08:57.661846
+lastmod: 2024-02-19 22:05:05.117105
 model: gpt-4-0125-preview
 summary: "Trabalhar com n\xFAmeros complexos na programa\xE7\xE3o envolve manipular\
   \ n\xFAmeros que possuem tanto uma parte real quanto uma imagin\xE1ria, tipicamente\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/cpp/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:55.521084-07:00
@@ -9,7 +7,7 @@ description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th
   \ ch\u1EEF c\xE1i in hoa th\xE0nh c\xE1c t\u01B0\u01A1ng \u0111\u01B0\u01A1ng in\
   \ th\u01B0\u1EDDng c\u1EE7a ch\xFAng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
   n\u2026"
-lastmod: 2024-02-18 23:08:51.030045
+lastmod: 2024-02-19 22:04:56.227244
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
   \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\

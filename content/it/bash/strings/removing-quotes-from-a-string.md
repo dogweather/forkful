@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:46.189108-07:00
 description: "Rimuovere le virgolette da una stringa comporta l'eliminazione dei segni\
   \ di citazione che racchiudono la stringa. I programmatori spesso desiderano farlo\u2026"
-lastmod: 2024-02-18 23:08:56.039613
+lastmod: 2024-02-19 22:05:02.656845
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa comporta l'eliminazione dei segni\
   \ di citazione che racchiudono la stringa. I programmatori spesso desiderano farlo\u2026"

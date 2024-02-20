@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/swift/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:33.684292-07:00
 description: "Das Parsen eines Datums aus einem String umfasst die Umwandlung von\
   \ textuellen Datums- und Zeitangaben in ein `Date`-Objekt. Dieser Prozess ist essenziell\u2026"
-lastmod: 2024-02-18 23:09:05.244214
+lastmod: 2024-02-19 22:05:13.170356
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String umfasst die Umwandlung von textuellen\
   \ Datums- und Zeitangaben in ein `Date`-Objekt. Dieser Prozess ist essenziell\u2026"

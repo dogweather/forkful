@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:41.300108-07:00
 description: "String \u0915\u0940 length \u092A\u0924\u093E \u0915\u0930\u0928\u093E\
   \ \u092E\u0924\u0932\u092C \u0939\u094B\u0924\u093E \u0939\u0948 \u0915\u093F \u092A\
@@ -9,7 +7,7 @@ description: "String \u0915\u0940 length \u092A\u0924\u093E \u0915\u0930\u0928\u
   \u093E\u0928\u0928\u093E \u091C\u093C\u0930\u0942\u0930\u0940 \u0939\u0948 \u0915\
   \u094D\u092F\u094B\u0902\u0915\u093F \u0907\u0938\u0938\u0947 \u0939\u092E text\
   \ processing, validation \u0914\u0930\u2026"
-lastmod: 2024-02-18 23:09:04.027466
+lastmod: 2024-02-19 22:05:12.009622
 model: gpt-4-1106-preview
 summary: "String \u0915\u0940 length \u092A\u0924\u093E \u0915\u0930\u0928\u093E \u092E\
   \u0924\u0932\u092C \u0939\u094B\u0924\u093E \u0939\u0948 \u0915\u093F \u092A\u0924\

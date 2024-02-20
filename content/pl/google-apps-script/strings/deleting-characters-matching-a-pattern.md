@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:55.431163-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to technika\
   \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu.\
   \ W kontek\u015Bcie Google\u2026"
-lastmod: 2024-02-18 23:08:49.128252
+lastmod: 2024-02-19 22:04:54.067154
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to technika\
   \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu.\

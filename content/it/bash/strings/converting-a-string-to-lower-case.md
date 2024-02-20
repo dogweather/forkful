@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:43.971699-07:00
 description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ da maiuscolo a minuscolo. I programmatori lo fanno per uniformare i dati, per\u2026"
-lastmod: 2024-02-18 23:08:56.038760
+lastmod: 2024-02-19 22:05:02.655946
 model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ da maiuscolo a minuscolo. I programmatori lo fanno per uniformare i dati, per\u2026"

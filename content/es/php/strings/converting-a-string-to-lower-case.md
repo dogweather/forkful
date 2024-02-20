@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:13.084824-07:00
 description: "Convertir una cadena a min\xFAsculas es el proceso de transformar todos\
   \ los caracteres alfab\xE9ticos de una cadena de texto en su versi\xF3n de min\xFA\
   sculas. Los\u2026"
-lastmod: 2024-02-18 23:09:10.059886
+lastmod: 2024-02-19 22:05:17.655318
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas es el proceso de transformar todos\
   \ los caracteres alfab\xE9ticos de una cadena de texto en su versi\xF3n de min\xFA\

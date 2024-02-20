@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/fish-shell/rounding-numbers/
 date: 2024-01-26 03:44:12.702706-07:00
 description: "Att avrunda tal handlar om att kapa decimalplatser f\xF6r att f\xF6\
   renkla dina data eller passa specifika format. Programmerare g\xF6r detta f\xF6\
   r anv\xE4ndarv\xE4nlig\u2026"
-lastmod: 2024-02-18 23:08:52.200653
+lastmod: 2024-02-19 22:04:57.576583
 model: gpt-4-0125-preview
 summary: "Att avrunda tal handlar om att kapa decimalplatser f\xF6r att f\xF6renkla\
   \ dina data eller passa specifika format. Programmerare g\xF6r detta f\xF6r anv\xE4\

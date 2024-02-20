@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/editing-files-in-place-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:49.211927-07:00
 description: "Bestanden in-place bewerken met CLI one-liners gaat over het direct\
   \ aanbrengen van wijzigingen in bestanden vanaf de opdrachtregel, zonder ze in een\u2026"
-lastmod: 2024-02-18 23:09:02.320826
+lastmod: 2024-02-19 22:05:10.330027
 model: gpt-4-0125-preview
 summary: "Bestanden in-place bewerken met CLI one-liners gaat over het direct aanbrengen\
   \ van wijzigingen in bestanden vanaf de opdrachtregel, zonder ze in een\u2026"

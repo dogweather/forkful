@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/parsing-html/
 date: 2024-02-03 19:02:45.429822-07:00
 description: "Parsing HTML refers to the process of breaking down and interpreting\
   \ the structure of HTML content, typically to extract specific data or manipulate\
   \ this\u2026"
-lastmod: 2024-02-18 23:09:11.394516
+lastmod: 2024-02-19 22:05:18.855801
 model: gpt-4-0125-preview
 summary: "Parsing HTML refers to the process of breaking down and interpreting the\
   \ structure of HTML content, typically to extract specific data or manipulate this\u2026"

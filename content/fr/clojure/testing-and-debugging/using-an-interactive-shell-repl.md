@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/clojure/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:10.485438-07:00
 description: "REPL, ou Boucle Lire-\xC9valuer-Afficher, est un environnement de programmation\
   \ permettant de tester dynamiquement le code Clojure pi\xE8ce par pi\xE8ce. Les\u2026"
-lastmod: 2024-02-18 23:09:08.388504
+lastmod: 2024-02-19 22:05:16.182336
 model: gpt-4-0125-preview
 summary: "REPL, ou Boucle Lire-\xC9valuer-Afficher, est un environnement de programmation\
   \ permettant de tester dynamiquement le code Clojure pi\xE8ce par pi\xE8ce. Les\u2026"

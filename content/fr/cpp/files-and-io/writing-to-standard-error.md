@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/cpp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:32.326669-07:00
 description: "\xC9crire sur l'erreur standard (`stderr`) en C++ implique de sortir\
   \ les messages d'erreur ou les diagnostics qui sont s\xE9par\xE9s de la sortie principale\
   \ du\u2026"
-lastmod: 2024-02-18 23:09:09.179014
+lastmod: 2024-02-19 22:05:16.850876
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (`stderr`) en C++ implique de sortir les\
   \ messages d'erreur ou les diagnostics qui sont s\xE9par\xE9s de la sortie principale\

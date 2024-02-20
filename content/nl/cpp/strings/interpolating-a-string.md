@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:03.501681-07:00
 description: "Stringinterpolatie gaat over het invoegen van variabelen in strings.\
   \ We doen dit om ter plekke berichten samen te stellen, output te personaliseren\
   \ of\u2026"
-lastmod: 2024-02-18 23:09:02.167584
+lastmod: 2024-02-19 22:05:10.184914
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie gaat over het invoegen van variabelen in strings. We\
   \ doen dit om ter plekke berichten samen te stellen, output te personaliseren of\u2026"

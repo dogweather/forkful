@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:17.560205-07:00
@@ -11,7 +9,7 @@ description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u521B\u5EFA\u4E0
   \u51B2\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7BA1\u7406\u4E0D\
   \u9700\u8981\u957F\u671F\u5B58\u50A8\u7684\u6570\u636E\uFF0C\u51CF\u5C11\u6742\u4E71\
   \u5E76\u786E\u4FDD\u5185\u5B58\u4F7F\u7528\u7684\u6548\u7387\u3002"
-lastmod: 2024-02-18 23:08:59.000087
+lastmod: 2024-02-19 22:05:06.621135
 model: gpt-4-0125-preview
 summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u521B\u5EFA\u4E00\u4E2A\
   \u4E34\u65F6\u6587\u4EF6\u6D89\u53CA\u5230\u7F16\u7A0B\u65B9\u5F0F\u751F\u6210\u4E00\

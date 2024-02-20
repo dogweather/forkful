@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/downloading-a-web-page/
 date: 2024-01-20 17:44:35.029977-07:00
 description: "Baixar uma p\xE1gina web significa puxar o seu conte\xFAdo diretamente\
   \ via Internet para processamento local. Programadores fazem isso para an\xE1lise\
   \ de dados,\u2026"
-lastmod: 2024-02-18 23:08:58.239667
+lastmod: 2024-02-19 22:05:05.714260
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina web significa puxar o seu conte\xFAdo diretamente via\
   \ Internet para processamento local. Programadores fazem isso para an\xE1lise de\

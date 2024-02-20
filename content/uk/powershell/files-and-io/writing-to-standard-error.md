@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/powershell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:35.542864-07:00
@@ -13,7 +11,7 @@ description: "\u0417\u0430\u043F\u0438\u0441 \u0432 \u0441\u0442\u0430\u043D\u04
   \u0441\u0442\u0438\u0447\u043D\u0438\u0445 \u043F\u043E\u0432\u0456\u0434\u043E\u043C\
   \u043B\u0435\u043D\u044C \u0431\u0435\u0437\u043F\u043E\u0441\u0435\u0440\u0435\u0434\
   \u043D\u044C\u043E \u0434\u043E \u043F\u043E\u0442\u043E\u043A\u0443\u2026"
-lastmod: 2024-02-18 23:09:00.758393
+lastmod: 2024-02-19 22:05:08.816375
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441 \u0432 \u0441\u0442\u0430\u043D\u0434\u0430\
   \u0440\u0442\u043D\u0443 \u043F\u043E\u043C\u0438\u043B\u043A\u0443 (stderr) \u0432\

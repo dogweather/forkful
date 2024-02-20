@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/python/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:39.462667-07:00
 description: "Les tableaux associatifs, connus sous le nom de dictionnaires en Python,\
   \ associent des cl\xE9s \xE0 des valeurs, ce qui facilite la r\xE9cup\xE9ration,\
   \ la\u2026"
-lastmod: 2024-02-18 23:09:08.332193
+lastmod: 2024-02-19 22:05:16.130968
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus sous le nom de dictionnaires en Python,\
   \ associent des cl\xE9s \xE0 des valeurs, ce qui facilite la r\xE9cup\xE9ration,\

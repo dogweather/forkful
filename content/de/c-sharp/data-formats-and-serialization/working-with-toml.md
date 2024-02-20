@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/working-with-toml/
 date: 2024-01-26 04:20:04.751331-07:00
 description: "TOML ist ein Akronym f\xFCr Toms Offensichtliche, Minimale Sprache,\
   \ ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen\
   \ ist.\u2026"
-lastmod: 2024-02-18 23:09:04.896854
+lastmod: 2024-02-19 22:05:12.839899
 model: gpt-4-0125-preview
 summary: "TOML ist ein Akronym f\xFCr Toms Offensichtliche, Minimale Sprache, ein\
   \ Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen\

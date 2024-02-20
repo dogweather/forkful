@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/rust/starting-a-new-project/
 date: 2024-01-20 18:04:21.356131-07:00
 description: "\xC5 starte et nytt prosjekt betyr \xE5 initialisere strukturen du trenger\
   \ for \xE5 bygge noe fra scratch i Rust. Programmerere gj\xF8r dette for \xE5 skape\
   \ et rent\u2026"
-lastmod: 2024-02-18 23:08:53.685746
+lastmod: 2024-02-19 22:04:59.819038
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt betyr \xE5 initialisere strukturen du trenger\
   \ for \xE5 bygge noe fra scratch i Rust. Programmerere gj\xF8r dette for \xE5 skape\

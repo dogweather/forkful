@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/java/extracting-substrings/
 date: 2024-01-20 17:45:46.795797-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\
   \uCD9C\uD558\uB294 \uAC83\uC744 \uC6B0\uB9AC\uB294 \uC11C\uBE0C\uC2A4\uD2B8\uB9C1\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uC
   \ \uD328\uD134\uC744 \uCC3E\uC544\uB0BC \uB54C \uC774 \uAE30\uB2A5\uC744 \uC790\uC8FC\
   \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.003735
+lastmod: 2024-02-19 22:05:13.939438
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\uCD9C\
   \uD558\uB294 \uAC83\uC744 \uC6B0\uB9AC\uB294 \uC11C\uBE0C\uC2A4\uD2B8\uB9C1(substring)\uC774\

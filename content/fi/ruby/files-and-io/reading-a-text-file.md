@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/ruby/reading-a-text-file/
 date: 2024-01-20 17:55:16.685821-07:00
 description: "Tiedostojen lukeminen Rubyssa tarkoittaa tekstitiedostojen sis\xE4ll\xF6\
   n prosessoimista ohjelmallisesti. Ohjelmoijat lukevat tiedostoja, koska se on oleellista\u2026"
-lastmod: 2024-02-18 23:09:08.201740
+lastmod: 2024-02-19 22:05:16.013443
 model: gpt-4-1106-preview
 summary: "Tiedostojen lukeminen Rubyssa tarkoittaa tekstitiedostojen sis\xE4ll\xF6\
   n prosessoimista ohjelmallisesti. Ohjelmoijat lukevat tiedostoja, koska se on oleellista\u2026"

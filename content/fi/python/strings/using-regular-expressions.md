@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/python/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:21.268634-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
   \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t niit\xE4 tekstin\u2026"
-lastmod: 2024-02-18 23:09:07.173064
+lastmod: 2024-02-19 22:05:15.047520
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
   \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat k\xE4ytt\xE4v\xE4\

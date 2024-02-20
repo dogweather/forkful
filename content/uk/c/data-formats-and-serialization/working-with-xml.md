@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/c/working-with-xml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:45.682980-07:00
@@ -13,7 +11,7 @@ description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 XML \u0443 \u043C\u043
   \ \u0434\u043E\u043F\u043E\u043C\u043E\u0433\u043E\u044E \u0440\u0456\u0437\u043D\
   \u0438\u0445 \u0431\u0456\u0431\u043B\u0456\u043E\u0442\u0435\u043A. \u041F\u0440\
   \u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438\u2026"
-lastmod: 2024-02-18 23:09:01.240327
+lastmod: 2024-02-19 22:05:09.275682
 model: gpt-4-0125-preview
 summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 XML \u0443 \u043C\u043E\u0432\
   \u0456 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:47.372929-07:00
 description: "Calculer une date dans le futur ou le pass\xE9, c'est manipuler des\
   \ dates pour en obtenir de nouvelles. Les programmeurs le font pour des raisons\
   \ vari\xE9es :\u2026"
-lastmod: 2024-02-18 23:09:08.354939
+lastmod: 2024-02-19 22:05:16.151704
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est manipuler des dates\
   \ pour en obtenir de nouvelles. Les programmeurs le font pour des raisons vari\xE9\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:58.765550-07:00
@@ -12,7 +10,7 @@ description: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u63D0\u4F9B\u4E86\
   \u4E2D\u7684\u6A21\u5F0F\u7B49\u4EFB\u52A1\uFF0C\u4F7F\u5176\u6210\u4E3A\u4EFB\u4F55\
   \u8BED\u8A00\uFF08\u5305\u62ECC\u8BED\u8A00\uFF09\u4E2D\u7684\u5F3A\u5927\u5DE5\u5177\
   \u3002"
-lastmod: 2024-02-18 23:08:59.549392
+lastmod: 2024-02-19 22:05:07.363622
 model: gpt-4-0125-preview
 summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u63D0\u4F9B\u4E86\u4E00\u79CD\
   \u4F7F\u7528\u5B9A\u4E49\u7684\u6A21\u5F0F\u641C\u7D22\u3001\u5339\u914D\u548C\u64CD\

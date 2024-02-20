@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:00.046372-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strippe\
   \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\
   \ eller v\xE6re\u2026"
-lastmod: 2024-02-18 23:08:53.715221
+lastmod: 2024-02-19 22:04:59.850708
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strippe\
   \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\

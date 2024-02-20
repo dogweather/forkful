@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:38.209897-07:00
 description: "A REPL (Read-Eval-Print Loop) is a simple, interactive computer programming\
   \ environment. Programmers use it for quick coding trials, testing snippets, or\u2026"
-lastmod: 2024-02-18 23:09:11.014438
+lastmod: 2024-02-19 22:05:18.517746
 model: gpt-4-1106-preview
 summary: "A REPL (Read-Eval-Print Loop) is a simple, interactive computer programming\
   \ environment. Programmers use it for quick coding trials, testing snippets, or\u2026"

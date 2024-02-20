@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/haskell/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:47.934905-07:00
 description: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, jegliche\
   \ Anf\xFChrungszeichen\u2014einfache (' ') oder doppelte (\" \")\u2014, die Teil\
   \ der Stringdaten sind,\u2026"
-lastmod: 2024-02-18 23:09:04.904011
+lastmod: 2024-02-19 22:05:12.846637
 model: gpt-4-0125-preview
 summary: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, jegliche Anf\xFC\
   hrungszeichen\u2014einfache (' ') oder doppelte (\" \")\u2014, die Teil der Stringdaten\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/ruby/extracting-substrings/
 date: 2024-01-20 17:46:47.340647-07:00
 description: "Extrair substrings \xE9 pegar peda\xE7os espec\xEDficos de uma string.\
   \ Fazemos isso para manipular, analisar ou alterar dados de forma eficiente e direcionada."
-lastmod: 2024-02-18 23:08:58.652955
+lastmod: 2024-02-19 22:05:06.154170
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 pegar peda\xE7os espec\xEDficos de uma string. Fazemos\
   \ isso para manipular, analisar ou alterar dados de forma eficiente e direcionada."

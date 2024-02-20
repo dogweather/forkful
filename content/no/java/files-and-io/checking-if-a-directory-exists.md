@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/java/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:14.767147-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Java er en grunnleggende oppgave\
   \ som involverer \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
   r man leser\u2026"
-lastmod: 2024-02-18 23:08:53.784334
+lastmod: 2024-02-19 22:04:59.926368
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Java er en grunnleggende oppgave som\
   \ involverer \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\

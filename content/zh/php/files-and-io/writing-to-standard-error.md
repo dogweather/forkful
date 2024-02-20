@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/php/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:58.488797-07:00
@@ -12,7 +10,7 @@ description: "\u5728 PHP \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\
   \u7528\u8FD9\u4E00\u6280\u672F\u786E\u4FDD\u9519\u8BEF\u4FE1\u606F\u4E0D\u4F1A\u5E72\
   \u6270\u7A0B\u5E8F\u7684\u8F93\u51FA\uFF0C\u4F7F\u76D1\u63A7\u548C\u6545\u969C\u6392\
   \u67E5\u5E94\u7528\u7A0B\u5E8F\u53D8\u5F97\u66F4\u52A0\u5BB9\u6613\u3002"
-lastmod: 2024-02-18 23:08:59.230725
+lastmod: 2024-02-19 22:05:06.926135
 model: gpt-4-0125-preview
 summary: "\u5728 PHP \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u6D89\
   \u53CA\u5230\u5C06\u9519\u8BEF\u4FE1\u606F\u6216\u8BCA\u65AD\u4FE1\u606F\u4E0E\u6807\

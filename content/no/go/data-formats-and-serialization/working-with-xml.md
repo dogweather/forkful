@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/go/working-with-xml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:08.923417-07:00
 description: "\xC5 jobbe med XML i Go inneb\xE6rer parsing (lesing) og generering\
   \ (skriving) av XML-dokumenter \u2013 et standardformat for strukturert datautveksling.\u2026"
-lastmod: 2024-02-18 23:08:53.461465
+lastmod: 2024-02-19 22:04:59.574349
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Go inneb\xE6rer parsing (lesing) og generering (skriving)\
   \ av XML-dokumenter \u2013 et standardformat for strukturert datautveksling.\u2026"

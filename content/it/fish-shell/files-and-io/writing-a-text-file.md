@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/fish-shell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:45.462488-07:00
 description: "Scrivere su un file di testo in Fish Shell consente di memorizzare dati\
   \ in modo persistente, facilitando il recupero o la manipolazione dei dati sia dallo\u2026"
-lastmod: 2024-02-18 23:08:56.313278
+lastmod: 2024-02-19 22:05:02.950398
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Fish Shell consente di memorizzare dati\
   \ in modo persistente, facilitando il recupero o la manipolazione dei dati sia dallo\u2026"

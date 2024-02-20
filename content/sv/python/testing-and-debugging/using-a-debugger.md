@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/using-a-debugger/
 date: 2024-01-26 04:08:55.145628-07:00
 description: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-kod\
   \ f\xF6r att hitta buggar och f\xF6rst\xE5 beteenden. Vi g\xF6r det eftersom det\
   \ \xE4r mycket enklare \xE4n\u2026"
-lastmod: 2024-02-18 23:08:51.426160
+lastmod: 2024-02-19 22:04:56.728830
 model: gpt-4-0125-preview
 summary: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-kod\
   \ f\xF6r att hitta buggar och f\xF6rst\xE5 beteenden. Vi g\xF6r det eftersom det\

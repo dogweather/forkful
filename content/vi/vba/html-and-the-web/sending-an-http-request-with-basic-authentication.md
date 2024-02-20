@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:28.600677-07:00
@@ -8,7 +6,7 @@ description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c
   \ b\u1EA3n trong Visual Basic for Applications (VBA) l\xE0 truy c\u1EADp v\xE0o\
   \ c\xE1c ngu\u1ED3n web \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EDFi t\xEAn ng\u01B0\
   \u1EDDi d\xF9ng v\xE0 m\u1EADt\u2026"
-lastmod: 2024-02-18 23:08:50.508903
+lastmod: 2024-02-19 22:04:55.590475
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
   \ b\u1EA3n trong Visual Basic for Applications (VBA) l\xE0 truy c\u1EADp v\xE0o\

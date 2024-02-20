@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/extracting-substrings/
 date: 2024-01-20 17:46:06.879237-07:00
 description: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string, tipo\
   \ cortar s\xF3 um peda\xE7o do texto. Programadores fazem isso para manipular e\
   \ usar informa\xE7\xF5es\u2026"
-lastmod: 2024-02-18 23:08:58.521506
+lastmod: 2024-02-19 22:05:06.015711
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string, tipo\
   \ cortar s\xF3 um peda\xE7o do texto. Programadores fazem isso para manipular e\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/google-apps-script/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:53.303250-07:00
 description: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe,\
   \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\u2026"
-lastmod: 2024-02-18 23:09:04.427460
+lastmod: 2024-02-19 22:05:12.393415
 model: gpt-4-0125-preview
 summary: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe,\
   \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\u2026"

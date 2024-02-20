@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/kotlin/rounding-numbers/
 date: 2024-01-25 02:59:59.859865-07:00
 description: "Rounding numbers means adjusting them to the nearest whole number or\
   \ to a specified degree of precision. Programmers do it to improve readability,\
   \ reduce\u2026"
-lastmod: 2024-02-18 23:09:11.007804
+lastmod: 2024-02-19 22:05:18.511692
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to the nearest whole number or to\
   \ a specified degree of precision. Programmers do it to improve readability, reduce\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/arduino/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:55.868709-07:00
 description: "Capitalizar uma string envolve converter o primeiro caractere de cada\
   \ palavra em uma string para mai\xFAscula enquanto garante que o restante permane\xE7\
   a em\u2026"
-lastmod: 2024-02-18 23:08:58.394001
+lastmod: 2024-02-19 22:05:05.880434
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve converter o primeiro caractere de cada palavra\
   \ em uma string para mai\xFAscula enquanto garante que o restante permane\xE7a em\u2026"

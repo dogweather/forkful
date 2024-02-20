@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/clojure/organizing-code-into-functions/
 date: 2024-01-26 01:09:26.778631-07:00
 description: "Organizzare il codice in funzioni significa impacchettare blocchi di\
   \ codice che compiono compiti specifici. Fare ci\xF2 rende il tuo codice pulito,\
   \ pi\xF9\u2026"
-lastmod: 2024-02-18 23:08:55.566052
+lastmod: 2024-02-19 22:05:02.156623
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni significa impacchettare blocchi di codice\
   \ che compiono compiti specifici. Fare ci\xF2 rende il tuo codice pulito, pi\xF9\

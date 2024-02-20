@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/clojure/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:07.538509-07:00
 description: "Calcolare una data futura o passata significa semplicemente determinare\
   \ quale giorno sar\xE0 o \xE8 stato dopo o prima di un certo lasso di tempo. I\u2026"
-lastmod: 2024-02-18 23:08:55.573490
+lastmod: 2024-02-19 22:05:02.164578
 model: gpt-4-1106-preview
 summary: "Calcolare una data futura o passata significa semplicemente determinare\
   \ quale giorno sar\xE0 o \xE8 stato dopo o prima di un certo lasso di tempo. I\u2026"

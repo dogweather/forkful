@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/vba/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:24.850040-07:00
 description: "Analisar uma data a partir de uma string em Visual Basic for Applications\
   \ (VBA) \xE9 sobre converter texto que representa uma data em um tipo de dados de\u2026"
-lastmod: 2024-02-18 23:08:57.984736
+lastmod: 2024-02-19 22:05:05.459382
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Visual Basic for Applications\
   \ (VBA) \xE9 sobre converter texto que representa uma data em um tipo de dados de\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/reading-a-text-file/
 date: 2024-01-20 17:53:54.165278-07:00
 description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uD30C\uC77C\uC5D0\
   \ \uC800\uC7A5\uB41C \uC815\uBCF4\uB97C \uBD88\uB7EC\uC624\uB294 \uAC83\uC785\uB2C8\
@@ -8,7 +6,7 @@ description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uD30C\uC77C\u
   \uC815 \uBD88\uB7EC\uC624\uAE30 \uB4F1 \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uD30C\
   \uC77C\uC744 \uC77D\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.716896
+lastmod: 2024-02-19 22:05:13.628900
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uD30C\uC77C\uC5D0 \uC800\
   \uC7A5\uB41C \uC815\uBCF4\uB97C \uBD88\uB7EC\uC624\uB294 \uAC83\uC785\uB2C8\uB2E4\

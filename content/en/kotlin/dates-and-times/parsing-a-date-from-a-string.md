@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:39.265922-07:00
 description: "Parsing a date from a string involves converting text into a Date object.\
   \ This operation is fundamental for applications that interact with dates entered\u2026"
-lastmod: 2024-02-18 23:09:11.022487
+lastmod: 2024-02-19 22:05:18.524818
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string involves converting text into a Date object.\
   \ This operation is fundamental for applications that interact with dates entered\u2026"

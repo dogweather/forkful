@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/logging/
 date: 2024-01-26 01:02:09.603902-07:00
 description: "Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata\
   \ tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekev\xE4\
   t\u2026"
-lastmod: 2024-02-18 23:09:07.235284
+lastmod: 2024-02-19 22:05:15.132169
 model: gpt-4-1106-preview
 summary: "Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata\
   \ tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekev\xE4\

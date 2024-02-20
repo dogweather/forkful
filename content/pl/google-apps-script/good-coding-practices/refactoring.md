@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/refactoring/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:00.160115-07:00
 description: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do procesu\
   \ restrukturyzacji istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji\
   \ bez zmiany jego\u2026"
-lastmod: 2024-02-18 23:08:49.157454
+lastmod: 2024-02-19 22:04:54.095868
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do procesu restrukturyzacji\
   \ istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji bez zmiany jego\u2026"

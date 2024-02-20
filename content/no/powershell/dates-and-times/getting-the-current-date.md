@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/powershell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:25.480314-07:00
 description: "\xC5 hente dagens dato i PowerShell handler om \xE5 hente systemets\
   \ n\xE5v\xE6rende dato og tid. Denne operasjonen er fundamental for oppgaver som\
   \ logging,\u2026"
-lastmod: 2024-02-18 23:08:54.110495
+lastmod: 2024-02-19 22:05:00.296798
 model: gpt-4-0125-preview
 summary: "\xC5 hente dagens dato i PowerShell handler om \xE5 hente systemets n\xE5\
   v\xE6rende dato og tid. Denne operasjonen er fundamental for oppgaver som logging,\u2026"

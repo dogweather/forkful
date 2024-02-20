@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/ruby/printing-debug-output/
 date: 2024-01-20 17:54:07.077621-07:00
 description: "Debug output \u092E\u0924\u0932\u092C \u0905\u092A\u0928\u0947 \u092A\
   \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E \u0915\u0947 \u091A\u0932\u0924\
@@ -12,7 +10,7 @@ description: "Debug output \u092E\u0924\u0932\u092C \u0905\u092A\u0928\u0947 \u0
   \u094B \u0905\u092A\u0928\u0947 \u0915\u094B\u0921 \u0915\u0947 \u092C\u093F\u0939\
   \u0947\u0935\u093F\u092F\u0930 \u0915\u094B \u0938\u092E\u091D \u0938\u0915\u0947\
   \u0902 \u0914\u0930\u2026"
-lastmod: 2024-02-18 23:09:04.301374
+lastmod: 2024-02-19 22:05:12.272690
 model: gpt-4-1106-preview
 summary: "Debug output \u092E\u0924\u0932\u092C \u0905\u092A\u0928\u0947 \u092A\u094D\
   \u0930\u094B\u0917\u094D\u0930\u093E\u092E \u0915\u0947 \u091A\u0932\u0924\u0947\

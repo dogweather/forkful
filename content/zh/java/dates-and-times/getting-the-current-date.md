@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/java/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:52.062134-07:00
@@ -10,7 +8,7 @@ description: "\u5728Java\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\u
   \u7B97\u548C\u57FA\u4E8E\u65F6\u95F4\u7684\u6761\u4EF6\u7B49\u64CD\u4F5C\u3002\u5728\
   \u9700\u8981\u8FFD\u8E2A\u3001\u8C03\u5EA6\u548C\u65F6\u95F4\u6570\u636E\u5206\u6790\
   \u7684\u5E94\u7528\u7A0B\u5E8F\u4E2D\u8FD9\u4E00\u70B9\u81F3\u5173\u91CD\u8981\u3002"
-lastmod: 2024-02-18 23:08:59.030207
+lastmod: 2024-02-19 22:05:06.661593
 model: gpt-4-0125-preview
 summary: "\u5728Java\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\u4E2A\u57FA\
   \u7840\u64CD\u4F5C\uFF0C\u5B83\u5141\u8BB8\u7A0B\u5E8F\u5458\u64CD\u4F5C\u65E5\u671F\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/working-with-csv/
 date: 2024-02-03 19:03:10.829234-07:00
 description: "Working with CSV (Comma-Separated Values) files involves reading from\
   \ and writing data to these files, a common necessity for tasks requiring data\u2026"
-lastmod: 2024-02-18 23:09:10.787900
+lastmod: 2024-02-19 22:05:18.310804
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) files involves reading from and\
   \ writing data to these files, a common necessity for tasks requiring data\u2026"

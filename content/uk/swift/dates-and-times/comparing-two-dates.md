@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/swift/comparing-two-dates/
 date: 2024-01-20 17:33:55.410107-07:00
 description: "\"\u0429\u043E \u0456 \u0427\u043E\u043C\u0443?\" Comparing two dates\
   \ helps us figure out their order and how far apart they are. Programmers do it\
   \ to manage events, reminders, or anything\u2026"
-lastmod: 2024-02-18 23:09:00.982925
+lastmod: 2024-02-19 22:05:09.024162
 model: gpt-4-1106-preview
 summary: "\"\u0429\u043E \u0456 \u0427\u043E\u043C\u0443?\" Comparing two dates helps\
   \ us figure out their order and how far apart they are. Programmers do it to manage\

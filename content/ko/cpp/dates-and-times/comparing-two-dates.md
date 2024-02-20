@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/comparing-two-dates/
 date: 2024-01-20 17:32:41.599744-07:00
 description: "(\uBB34\uC5C7\uACFC \uC65C?) \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\
   \uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC A\uAC00 B\uBCF4\uB2E4 \uC774\uC804, \uB3D9\
@@ -10,7 +8,7 @@ description: "(\uBB34\uC5C7\uACFC \uC65C?) \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD5
   \uAC04\uCC28 \uACC4\uC0B0, \uC77C\uC815 \uAD00\uB9AC \uB4F1\uC744 \uC704\uD574\uC11C\
   \uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.702940
+lastmod: 2024-02-19 22:05:14.599126
 model: gpt-4-1106-preview
 summary: "(\uBB34\uC5C7\uACFC \uC65C?) \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\
   \uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC A\uAC00 B\uBCF4\uB2E4 \uC774\uC804, \uB3D9\

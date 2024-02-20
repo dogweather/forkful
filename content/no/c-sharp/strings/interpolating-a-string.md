@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/c-sharp/interpolating-a-string/
 date: 2024-01-20 17:50:23.349565-07:00
 description: "Stringinterpolasjon lar deg plugge variabler og uttrykk rett inn i tekststrenger.\
   \ Det forenkler b\xE5de koden og gj\xF8r det mer leselig, ved \xE5 slippe \xE5 bruke\u2026"
-lastmod: 2024-02-18 23:08:53.880187
+lastmod: 2024-02-19 22:05:00.047473
 model: gpt-4-1106-preview
 summary: "Stringinterpolasjon lar deg plugge variabler og uttrykk rett inn i tekststrenger.\
   \ Det forenkler b\xE5de koden og gj\xF8r det mer leselig, ved \xE5 slippe \xE5 bruke\u2026"

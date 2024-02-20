@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:32.647298-07:00
 description: "HTTP-Anfragen mit Basic-Authentifizierung senden Daten \xFCber Benutzername\
   \ und Passwort im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"
-lastmod: 2024-02-18 23:09:05.423103
+lastmod: 2024-02-19 22:05:13.342703
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basic-Authentifizierung senden Daten \xFCber Benutzername\
   \ und Passwort im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"

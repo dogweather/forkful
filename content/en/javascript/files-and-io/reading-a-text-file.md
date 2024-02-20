@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:33.767948-07:00
 description: "Reading a text file is pulling info from a .txt document into your program.\
   \ Programmers do it to access and manipulate data: config settings, logs,\u2026"
-lastmod: 2024-02-18 23:09:11.455041
+lastmod: 2024-02-19 22:05:18.910993
 model: gpt-4-1106-preview
 summary: "Reading a text file is pulling info from a .txt document into your program.\
   \ Programmers do it to access and manipulate data: config settings, logs,\u2026"

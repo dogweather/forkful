@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/haskell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:24.209008-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ dans de nombreuses t\xE2ches de programmation, permettant des actions conditionnelles\
   \ bas\xE9es\u2026"
-lastmod: 2024-02-18 23:09:08.891218
+lastmod: 2024-02-19 22:05:16.586047
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ dans de nombreuses t\xE2ches de programmation, permettant des actions conditionnelles\

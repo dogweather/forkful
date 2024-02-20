@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:22.759639-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente\
   \ filtrar strings para remover pe\xE7as desnecess\xE1rias ou espec\xEDficas. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.558239
+lastmod: 2024-02-19 22:05:06.054808
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente filtrar\
   \ strings para remover pe\xE7as desnecess\xE1rias ou espec\xEDficas. Programadores\

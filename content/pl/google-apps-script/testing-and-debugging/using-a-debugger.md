@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:16.732987-07:00
 description: "Debugowanie w Google Apps Script (GAS) polega na identyfikacji i usuwaniu\
   \ b\u0142\u0119d\xF3w ze skrypt\xF3w maj\u0105cych na celu automatyzacj\u0119 Google\
   \ Apps lub budow\u0119\u2026"
-lastmod: 2024-02-18 23:08:49.152824
+lastmod: 2024-02-19 22:04:54.091340
 model: gpt-4-0125-preview
 summary: "Debugowanie w Google Apps Script (GAS) polega na identyfikacji i usuwaniu\
   \ b\u0142\u0119d\xF3w ze skrypt\xF3w maj\u0105cych na celu automatyzacj\u0119 Google\

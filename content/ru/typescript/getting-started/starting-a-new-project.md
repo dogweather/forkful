@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/typescript/starting-a-new-project/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:40.198298-07:00
@@ -14,7 +12,7 @@ description: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u043
   \u0430\u043F\u0443\u0441\u043A\u0430\u044E\u0442 \u043D\u043E\u0432\u044B\u0435\
   \ \u043F\u0440\u043E\u0435\u043A\u0442\u044B, \u0447\u0442\u043E\u0431\u044B \u043F\
   \u0440\u0435\u0432\u0440\u0430\u0442\u0438\u0442\u044C\u2026"
-lastmod: 2024-02-18 23:08:56.685747
+lastmod: 2024-02-19 22:05:03.499392
 model: gpt-4-0125-preview
 summary: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u0433\u043E\
   \ \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u043D\u0430 TypeScript \u0437\u0430\

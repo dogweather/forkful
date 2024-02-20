@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/vba/logging/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:07.545406-07:00
 description: "Loggning i Visual Basic for Applications (VBA) inneb\xE4r att man spelar\
   \ in information om ett programs k\xF6rtidsbeteende till en fil, konsol eller databas.\u2026"
-lastmod: 2024-02-18 23:08:51.633597
+lastmod: 2024-02-19 22:04:56.956699
 model: gpt-4-0125-preview
 summary: "Loggning i Visual Basic for Applications (VBA) inneb\xE4r att man spelar\
   \ in information om ett programs k\xF6rtidsbeteende till en fil, konsol eller databas.\u2026"

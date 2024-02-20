@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:44.142314-07:00
 description: "Converting a string to lower case means swapping all uppercase letters\
   \ in the string for their lowercase counterparts. Programmers do this for\u2026"
-lastmod: 2024-02-18 23:09:11.165913
+lastmod: 2024-02-19 22:05:18.655748
 model: gpt-4-1106-preview
 summary: "Converting a string to lower case means swapping all uppercase letters in\
   \ the string for their lowercase counterparts. Programmers do this for\u2026"

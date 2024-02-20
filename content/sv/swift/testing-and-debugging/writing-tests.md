@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/swift/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:04.622849-07:00
 description: "Att skriva tester i Swift inneb\xE4r att skapa och k\xF6ra kod som verifierar\
   \ riktigheten hos andra kodenheter i din applikation. Programmerare g\xF6r detta\
   \ f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.127910
+lastmod: 2024-02-19 22:04:57.494901
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Swift inneb\xE4r att skapa och k\xF6ra kod som verifierar\
   \ riktigheten hos andra kodenheter i din applikation. Programmerare g\xF6r detta\

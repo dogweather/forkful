@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/python/working-with-xml/
 date: 2024-01-26 04:34:59.617139-07:00
 description: "\"Praca z XML\" odnosi si\u0119 do procesu odczytu, tworzenia i modyfikacji\
   \ plik\xF3w XML (eXtensible Markup Language) za pomoc\u0105 programowania. Programi\u015B\
   ci robi\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.247080
+lastmod: 2024-02-19 22:04:54.158725
 model: gpt-4-0125-preview
 summary: "\"Praca z XML\" odnosi si\u0119 do procesu odczytu, tworzenia i modyfikacji\
   \ plik\xF3w XML (eXtensible Markup Language) za pomoc\u0105 programowania. Programi\u015B\

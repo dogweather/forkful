@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/javascript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:46.098714-07:00
 description: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste bokstaven\
   \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er.\
   \ Denne\u2026"
-lastmod: 2024-02-18 23:08:54.293369
+lastmod: 2024-02-19 22:05:00.443044
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste bokstaven\
   \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er.\

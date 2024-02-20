@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:43.072217-07:00
@@ -11,7 +9,7 @@ description: "HTML \uD30C\uC2F1\uC740 HTML \uD30C\uC77C\uC758 \uAD6C\uC870\uC640
   \uC791\uD558\uAC70\uB098, \uC6F9\uC0AC\uC774\uD2B8\uB97C \uC2A4\uD06C\uB798\uD551\
   \uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4\
   ."
-lastmod: 2024-02-18 23:09:06.481212
+lastmod: 2024-02-19 22:05:14.391227
 model: gpt-4-0125-preview
 summary: "HTML \uD30C\uC2F1\uC740 HTML \uD30C\uC77C\uC758 \uAD6C\uC870\uC640 \uB0B4\
   \uC6A9\uC744 \uB4A4\uC838\uC11C \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\

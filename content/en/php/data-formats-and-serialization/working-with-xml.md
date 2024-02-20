@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/working-with-xml/
 date: 2024-01-25 03:39:37.908801-07:00
 description: "XML is a markup language used for storing and transporting data. Programmers\
   \ work with XML to enable interoperability between applications and systems -\u2026"
-lastmod: 2024-02-18 23:09:11.161276
+lastmod: 2024-02-19 22:05:18.651546
 model: gpt-4-1106-preview
 summary: "XML is a markup language used for storing and transporting data. Programmers\
   \ work with XML to enable interoperability between applications and systems -\u2026"

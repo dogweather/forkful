@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/interpolating-a-string/
 date: 2024-01-20 17:51:37.573979-07:00
 description: "String-Interpolation in Ruby erm\xF6glicht es, Variablenwerte innerhalb\
   \ eines Strings einzusetzen. Es macht den Code lesbarer und schafft dynamische\u2026"
-lastmod: 2024-02-18 23:09:05.406307
+lastmod: 2024-02-19 22:05:13.325087
 model: gpt-4-1106-preview
 summary: "String-Interpolation in Ruby erm\xF6glicht es, Variablenwerte innerhalb\
   \ eines Strings einzusetzen. Es macht den Code lesbarer und schafft dynamische\u2026"

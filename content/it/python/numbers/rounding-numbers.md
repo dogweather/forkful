@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/rounding-numbers/
 date: 2024-01-26 03:46:25.733001-07:00
 description: "Arrotondare i numeri significa regolarli per avvicinarli a un valore\
   \ pi\xF9 semplice o pi\xF9 significativo. I programmatori arrotondano i numeri per\u2026"
-lastmod: 2024-02-18 23:08:55.516409
+lastmod: 2024-02-19 22:05:02.103056
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa regolarli per avvicinarli a un valore pi\xF9\
   \ semplice o pi\xF9 significativo. I programmatori arrotondano i numeri per\u2026"

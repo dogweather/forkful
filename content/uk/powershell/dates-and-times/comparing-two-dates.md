@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/powershell/comparing-two-dates/
 date: 2024-01-20 17:33:37.125073-07:00
 description: Comparing two dates means checking which one comes first or if they're
   the same. Programmers do this to manage events, sort records, or check durations.
-lastmod: 2024-02-18 23:09:00.751171
+lastmod: 2024-02-19 22:05:08.808640
 model: gpt-4-1106-preview
 summary: Comparing two dates means checking which one comes first or if they're the
   same. Programmers do this to manage events, sort records, or check durations.

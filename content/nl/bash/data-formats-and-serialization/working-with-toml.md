@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:35.502313-07:00
 description: "TOML, afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat.\
   \ Programmeurs zijn er dol op vanwege de eenvoud en leesbaarheid; het\u2026"
-lastmod: 2024-02-18 23:09:02.068377
+lastmod: 2024-02-19 22:05:10.091106
 model: gpt-4-0125-preview
 summary: "TOML, afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat.\
   \ Programmeurs zijn er dol op vanwege de eenvoud en leesbaarheid; het\u2026"

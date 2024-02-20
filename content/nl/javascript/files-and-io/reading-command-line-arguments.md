@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:24.412933-07:00
 description: "Commandoregelargumenten lezen betekent het grijpen van de extra's die\
   \ gebruikers toevoegen aan commando's wanneer ze je script uitvoeren. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.293453
+lastmod: 2024-02-19 22:05:10.304363
 model: gpt-4-0125-preview
 summary: "Commandoregelargumenten lezen betekent het grijpen van de extra's die gebruikers\
   \ toevoegen aan commando's wanneer ze je script uitvoeren. Programmeurs\u2026"

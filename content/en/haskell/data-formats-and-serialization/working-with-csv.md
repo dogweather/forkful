@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/working-with-csv/
 date: 2024-02-03 19:03:03.666619-07:00
 description: "Working with CSVs (Comma-Separated Values) involves parsing and generating\
   \ files that store tabular data in a simple, text-based format. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.117791
+lastmod: 2024-02-19 22:05:18.611986
 model: gpt-4-0125-preview
 summary: "Working with CSVs (Comma-Separated Values) involves parsing and generating\
   \ files that store tabular data in a simple, text-based format. Programmers\u2026"

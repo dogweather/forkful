@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/vba/searching-and-replacing-text/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:09.212114-07:00
 description: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA)\
   \ -ymp\xE4rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"
-lastmod: 2024-02-18 23:09:07.393364
+lastmod: 2024-02-19 22:05:15.279794
 model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA) -ymp\xE4\
   rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"

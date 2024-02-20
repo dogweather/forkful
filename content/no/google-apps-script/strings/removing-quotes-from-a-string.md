@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:00.630190-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng i Google Apps Script handler\
   \ om \xE5 eliminere un\xF8dvendige anf\xF8rselstegn som kan omgi string-dataen din,\
   \ vanligvis\u2026"
-lastmod: 2024-02-18 23:08:53.467890
+lastmod: 2024-02-19 22:04:59.581200
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Google Apps Script handler\
   \ om \xE5 eliminere un\xF8dvendige anf\xF8rselstegn som kan omgi string-dataen din,\

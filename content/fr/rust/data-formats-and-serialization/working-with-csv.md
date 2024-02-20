@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/rust/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:17.838296-07:00
 description: "Travailler avec des fichiers CSV (Comma-Separated Values, soit valeurs\
   \ s\xE9par\xE9es par des virgules) consiste \xE0 lire et \xE0 \xE9crire dans des\
   \ fichiers texte\u2026"
-lastmod: 2024-02-18 23:09:08.554386
+lastmod: 2024-02-19 22:05:16.333001
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Comma-Separated Values, soit valeurs s\xE9\
   par\xE9es par des virgules) consiste \xE0 lire et \xE0 \xE9crire dans des fichiers\

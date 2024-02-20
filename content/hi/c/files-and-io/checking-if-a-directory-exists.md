@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:55.227476-07:00
@@ -14,7 +12,7 @@ description: "C \u092E\u0947\u0902 \u092F\u0939 \u091C\u093E\u0902\u091A\u0928\u
   \u093F \u0915\u094D\u092F\u093E \u0915\u094B\u0908 \u0935\u093F\u0936\u0947\u0937\
   \ \u092A\u0925 \u090F\u0915 \u0928\u093F\u0930\u094D\u0926\u0947\u0936\u093F\u0915\
   \u093E \u0915\u0940 \u0913\u0930\u2026"
-lastmod: 2024-02-18 23:09:04.239914
+lastmod: 2024-02-19 22:05:12.212812
 model: gpt-4-0125-preview
 summary: "C \u092E\u0947\u0902 \u092F\u0939 \u091C\u093E\u0902\u091A\u0928\u093E \u0915\
   \u093F \u0915\u094B\u0908 \u0928\u093F\u0930\u094D\u0926\u0947\u0936\u093F\u0915\

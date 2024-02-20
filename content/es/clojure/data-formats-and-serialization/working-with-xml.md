@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/working-with-xml/
 date: 2024-01-26 04:29:24.026085-07:00
 description: "XML es un lenguaje de marcado para codificar documentos de una manera\
   \ que es legible tanto para humanos como para m\xE1quinas. Es clave en servicios\
   \ web,\u2026"
-lastmod: 2024-02-18 23:09:09.629518
+lastmod: 2024-02-19 22:05:17.272173
 model: gpt-4-0125-preview
 summary: "XML es un lenguaje de marcado para codificar documentos de una manera que\
   \ es legible tanto para humanos como para m\xE1quinas. Es clave en servicios web,\u2026"

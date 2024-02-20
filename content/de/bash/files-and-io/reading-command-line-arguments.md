@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/reading-command-line-arguments/
 date: 2024-01-20 17:55:17.336418-07:00
 description: "Kommandozeilenargumente sind Parameter, die einem Bash-Skript \xFCbergeben\
   \ werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um\u2026"
-lastmod: 2024-02-18 23:09:05.070755
+lastmod: 2024-02-19 22:05:13.005927
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind Parameter, die einem Bash-Skript \xFCbergeben\
   \ werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um\u2026"

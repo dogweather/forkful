@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elixir/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:07.697168-07:00
 description: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie\
   \ viele Zeichen er enth\xE4lt. Diese Information ist wichtig f\xFCr Input-Validierung,\u2026"
-lastmod: 2024-02-18 23:09:04.542262
+lastmod: 2024-02-19 22:05:12.502407
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie viele\
   \ Zeichen er enth\xE4lt. Diese Information ist wichtig f\xFCr Input-Validierung,\u2026"

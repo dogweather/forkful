@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:33.257101-07:00
 description: "Twee datums vergelijken betekent uitvogelen of een datum eerder, later\
   \ of hetzelfde is als een andere. Programmeurs doen dit om gebeurtenissen te volgen,\u2026"
-lastmod: 2024-02-18 23:09:02.004901
+lastmod: 2024-02-19 22:05:10.025644
 model: gpt-4-0125-preview
 summary: "Twee datums vergelijken betekent uitvogelen of een datum eerder, later of\
   \ hetzelfde is als een andere. Programmeurs doen dit om gebeurtenissen te volgen,\u2026"

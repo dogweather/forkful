@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/powershell/parsing-html/
 date: 2024-02-03 19:03:00.218296-07:00
 description: "Parsing HTML in PowerShell is about dissecting HTML content to extract\
   \ specific data or to automate web-related tasks. Programmers do it to interact\
   \ with\u2026"
-lastmod: 2024-02-18 23:09:11.271744
+lastmod: 2024-02-19 22:05:18.744907
 model: gpt-4-0125-preview
 summary: "Parsing HTML in PowerShell is about dissecting HTML content to extract specific\
   \ data or to automate web-related tasks. Programmers do it to interact with\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/comparing-two-dates/
 date: 2024-01-20 17:33:38.708295-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra z nich jest wcze\u015B\
   niejsza, p\xF3\u017Aniejsza czy mo\u017Ce identyczna. Programi\u015Bci robi\u0105\
   \ to, by obs\u0142ugiwa\u0107 logik\u0119 zwi\u0105zan\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.708336
+lastmod: 2024-02-19 22:04:54.644709
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra z nich jest wcze\u015B\
   niejsza, p\xF3\u017Aniejsza czy mo\u017Ce identyczna. Programi\u015Bci robi\u0105\

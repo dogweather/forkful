@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:53.473297-07:00
 description: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del, representert\
   \ som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse\u2026"
-lastmod: 2024-02-18 23:08:54.387657
+lastmod: 2024-02-19 22:05:00.545350
 model: gpt-4-0125-preview
 summary: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del, representert\
   \ som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse\u2026"

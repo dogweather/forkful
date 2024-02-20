@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:35.827365-07:00
 description: "Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdollistaa\
   \ Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja v\xE4litt\xF6m\xE4\
   n\u2026"
-lastmod: 2024-02-18 23:09:07.086874
+lastmod: 2024-02-19 22:05:14.967114
 model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdollistaa\
   \ Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja v\xE4litt\xF6m\xE4\

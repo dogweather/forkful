@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:23.960228-07:00
@@ -8,7 +6,7 @@ description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\x
   c l\u1EA1i code hi\u1EC7n t\u1EA1i m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi\
   \ b\xEAn ngo\xE0i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7\
   n c\xE1c thu\u1ED9c t\xEDnh phi ch\u1EE9c n\u0103ng\u2026"
-lastmod: 2024-02-18 23:08:50.378144
+lastmod: 2024-02-19 22:04:55.421977
 model: gpt-4-0125-preview
 summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\xFAc l\u1EA1\
   i code hi\u1EC7n t\u1EA1i m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\

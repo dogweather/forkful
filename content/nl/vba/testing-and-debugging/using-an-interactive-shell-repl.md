@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:48.538506-07:00
 description: "Een interactieve shell, of Read-Eval-Print Loop (REPL), stelt gebruikers\
   \ in staat om commando's in te voeren, uit te voeren en de resultaten in real-time\u2026"
-lastmod: 2024-02-18 23:09:01.667682
+lastmod: 2024-02-19 22:05:09.688876
 model: gpt-4-0125-preview
 summary: "Een interactieve shell, of Read-Eval-Print Loop (REPL), stelt gebruikers\
   \ in staat om commando's in te voeren, uit te voeren en de resultaten in real-time\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/concatenating-strings/
 date: 2024-01-20 17:34:24.812334-07:00
 description: "Concatenating strings means sticking two or more pieces of text together.\
   \ It's as basic and essential as using duct tape, allowing you to create new\u2026"
-lastmod: 2024-02-18 23:09:10.963977
+lastmod: 2024-02-19 22:05:18.470570
 model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking two or more pieces of text together.\
   \ It's as basic and essential as using duct tape, allowing you to create new\u2026"

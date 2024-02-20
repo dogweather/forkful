@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/writing-a-text-file/
 date: 2024-02-03 19:03:28.639146-07:00
 description: "Writing to a text file in Python is a fundamental task that involves\
   \ creating or opening a file and then appending or overwriting text. This functionality\u2026"
-lastmod: 2024-02-18 23:09:10.699909
+lastmod: 2024-02-19 22:05:18.231835
 model: gpt-4-0125-preview
 summary: "Writing to a text file in Python is a fundamental task that involves creating\
   \ or opening a file and then appending or overwriting text. This functionality\u2026"

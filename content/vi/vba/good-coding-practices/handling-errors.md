@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:34.155679-07:00
@@ -8,7 +6,7 @@ description: "X\u1EED l\xFD l\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (
   \ l\xE0 qu\xE1 tr\xECnh nh\u1EADn bi\u1EBFt, ph\xE1t hi\u1EC7n v\xE0 gi\u1EA3i quy\u1EBF\
   t l\u1ED7i l\u1EADp tr\xECnh, \u1EE9ng d\u1EE5ng ho\u1EB7c giao ti\u1EBFp. Vi\u1EC7\
   c tri\u1EC3n khai x\u1EED\u2026"
-lastmod: 2024-02-18 23:08:50.517881
+lastmod: 2024-02-19 22:04:55.601568
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0\
   \ qu\xE1 tr\xECnh nh\u1EADn bi\u1EBFt, ph\xE1t hi\u1EC7n v\xE0 gi\u1EA3i quy\u1EBF\

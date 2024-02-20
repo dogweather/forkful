@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/typescript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:19.796317-07:00
@@ -14,7 +12,7 @@ description: "YAML \u2013 \u0446\u0435 \u043C\u043E\u0432\u0430 \u0441\u0435\u04
   \u0454\u0442\u044C\u0441\u044F \u0434\u043B\u044F \u0444\u0430\u0439\u043B\u0456\
   \u0432 \u043A\u043E\u043D\u0444\u0456\u0433\u0443\u0440\u0430\u0446\u0456\u0457\
   ,\u2026"
-lastmod: 2024-02-18 23:08:59.952511
+lastmod: 2024-02-19 22:05:07.909548
 model: gpt-4-0125-preview
 summary: "YAML \u2013 \u0446\u0435 \u043C\u043E\u0432\u0430 \u0441\u0435\u0440\u0456\
   \u0430\u043B\u0456\u0437\u0430\u0446\u0456\u0457 \u0434\u0430\u043D\u0438\u0445\

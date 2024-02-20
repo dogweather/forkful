@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/swift/sending-an-http-request/
 date: 2024-01-20 18:00:31.510584-07:00
 description: "Inviare una richiesta HTTP significa chiedere dati a un server web.\
   \ I programmatori lo fanno per interagire con servizi web, come recuperare dati\
   \ o\u2026"
-lastmod: 2024-02-18 23:08:56.209700
+lastmod: 2024-02-19 22:05:02.840570
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP significa chiedere dati a un server web. I programmatori\
   \ lo fanno per interagire con servizi web, come recuperare dati o\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:33.834595-07:00
 description: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
   res de texte d'une cha\xEEne en leur \xE9quivalent en minuscules. Les programmeurs\
   \ le font\u2026"
-lastmod: 2024-02-18 23:09:09.289100
+lastmod: 2024-02-19 22:05:16.959552
 model: gpt-4-1106-preview
 summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
   res de texte d'une cha\xEEne en leur \xE9quivalent en minuscules. Les programmeurs\

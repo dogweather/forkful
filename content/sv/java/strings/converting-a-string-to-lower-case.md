@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:52.220637-07:00
 description: "Att konvertera en str\xE4ng till gemener betyder att omvandla alla stora\
   \ bokst\xE4ver i texten till sm\xE5 bokst\xE4ver. Programmerare g\xF6r detta f\xF6\
   r att standardisera\u2026"
-lastmod: 2024-02-18 23:08:51.657194
+lastmod: 2024-02-19 22:04:56.982563
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till gemener betyder att omvandla alla stora\
   \ bokst\xE4ver i texten till sm\xE5 bokst\xE4ver. Programmerare g\xF6r detta f\xF6\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:43.388177-07:00
 description: "Loggen in programmeren is in wezen een spoor van broodkruimels achterlaten\
   \ in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen\u2026"
-lastmod: 2024-02-18 23:09:01.906055
+lastmod: 2024-02-19 22:05:09.929566
 model: gpt-4-0125-preview
 summary: "Loggen in programmeren is in wezen een spoor van broodkruimels achterlaten\
   \ in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen\u2026"

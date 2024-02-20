@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:18.041675-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa niiden kaksinkertaisten\
   \ tai yksinkertaisten lainausmerkkien kuorimista tekstisi ymp\xE4rilt\xE4. Koodaajat\u2026"
-lastmod: 2024-02-18 23:09:07.744476
+lastmod: 2024-02-19 22:05:15.580444
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa niiden kaksinkertaisten\
   \ tai yksinkertaisten lainausmerkkien kuorimista tekstisi ymp\xE4rilt\xE4. Koodaajat\u2026"

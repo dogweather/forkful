@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/bash/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:42.615807-07:00
 description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ dans Bash consiste \xE0 traiter et manipuler des donn\xE9es tabulaires stock\xE9\
   es au format\u2026"
-lastmod: 2024-02-18 23:09:09.043700
+lastmod: 2024-02-19 22:05:16.727392
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ dans Bash consiste \xE0 traiter et manipuler des donn\xE9es tabulaires stock\xE9\

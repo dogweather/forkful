@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:37.093910-07:00
 description: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppgift\
   \ f\xF6r programmerare, lika vanlig som \"Hello, World!\" i sin allm\xE4nhet. Det\
   \ \xE4r avg\xF6rande f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.344314
+lastmod: 2024-02-19 22:04:56.637616
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppgift f\xF6\
   r programmerare, lika vanlig som \"Hello, World!\" i sin allm\xE4nhet. Det \xE4\

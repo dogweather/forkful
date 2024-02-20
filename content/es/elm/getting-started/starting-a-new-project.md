@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elm/starting-a-new-project/
 date: 2024-01-20 18:03:18.155298-07:00
 description: "Iniciar un proyecto nuevo significa configurar el entorno base para\
   \ escribir y ejecutar c\xF3digo. Lo hacemos para proveer una estructura s\xF3lida\
   \ y un punto\u2026"
-lastmod: 2024-02-18 23:09:09.891452
+lastmod: 2024-02-19 22:05:17.501887
 model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo significa configurar el entorno base para escribir\
   \ y ejecutar c\xF3digo. Lo hacemos para proveer una estructura s\xF3lida y un punto\u2026"

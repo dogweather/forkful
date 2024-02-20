@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/vba/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:17.211219-07:00
 description: "Het kapitaliseren van een tekenreeks in Visual Basic for Applications\
   \ (VBA) houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in\
   \ een\u2026"
-lastmod: 2024-02-18 23:09:01.646662
+lastmod: 2024-02-19 22:05:09.668518
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een tekenreeks in Visual Basic for Applications (VBA)\
   \ houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in een\u2026"

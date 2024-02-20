@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/organizing-code-into-functions/
 date: 2024-01-26 01:10:53.451207-07:00
 description: "Organizowanie kodu w funkcje w Haskellu oznacza rozk\u0142adanie kodu\
   \ na wielokrotnie u\u017Cywalne, nazwane bloki. Dlaczego? Pozwala to zachowa\u0107\
   \ zasad\u0119 DRY (Nie\u2026"
-lastmod: 2024-02-18 23:08:49.658703
+lastmod: 2024-02-19 22:04:54.592101
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje w Haskellu oznacza rozk\u0142adanie kodu na\
   \ wielokrotnie u\u017Cywalne, nazwane bloki. Dlaczego? Pozwala to zachowa\u0107\

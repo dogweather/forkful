@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:27.603868-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dun
   \ HTML t\u1EEB internet th\xF4ng qua URL c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ph\xE2n t\xEDch n\u1ED9i dung\
   \ web, t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.835544
+lastmod: 2024-02-19 22:04:56.005867
 model: gpt-4-0125-preview
 summary: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung HTML\
   \ t\u1EEB internet th\xF4ng qua URL c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEA\

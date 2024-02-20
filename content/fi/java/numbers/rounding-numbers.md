@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/rounding-numbers/
 date: 2024-01-26 03:45:11.399172-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ tiettyyn tarkkuusasteeseen. Ohjelmoijat tekev\xE4t sen yksinkertaistaakseen numeroita\
   \ luettavuuden\u2026"
-lastmod: 2024-02-18 23:09:07.452675
+lastmod: 2024-02-19 22:05:15.335446
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ tiettyyn tarkkuusasteeseen. Ohjelmoijat tekev\xE4t sen yksinkertaistaakseen numeroita\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/sending-an-http-request/
 date: 2024-01-20 17:59:17.887275-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP significa solicitar dados ou servi\xE7\
   os atrav\xE9s da internet. Programadores fazem isso para interagir com APIs, servi\xE7\
   os web, ou\u2026"
-lastmod: 2024-02-18 23:08:58.322603
+lastmod: 2024-02-19 22:05:05.804582
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP significa solicitar dados ou servi\xE7\
   os atrav\xE9s da internet. Programadores fazem isso para interagir com APIs, servi\xE7\

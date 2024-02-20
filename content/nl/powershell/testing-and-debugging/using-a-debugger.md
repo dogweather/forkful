@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:43.713165-07:00
 description: "Het gebruiken van een debugger betekent het instellen van breakpoints,\
   \ stap voor stap door je code heen lopen, variabelen bekijken, en de staat van je\u2026"
-lastmod: 2024-02-18 23:09:02.096941
+lastmod: 2024-02-19 22:05:10.118161
 model: gpt-4-0125-preview
 summary: "Het gebruiken van een debugger betekent het instellen van breakpoints, stap\
   \ voor stap door je code heen lopen, variabelen bekijken, en de staat van je\u2026"

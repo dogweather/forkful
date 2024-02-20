@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/python/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:24.024513-07:00
 description: "Obtener la fecha actual en Python es una operaci\xF3n b\xE1sica para\
   \ muchas aplicaciones, tales como el registro de actividades, an\xE1lisis de datos\
   \ y la toma de\u2026"
-lastmod: 2024-02-18 23:09:09.567913
+lastmod: 2024-02-19 22:05:17.216752
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en Python es una operaci\xF3n b\xE1sica para muchas\
   \ aplicaciones, tales como el registro de actividades, an\xE1lisis de datos y la\

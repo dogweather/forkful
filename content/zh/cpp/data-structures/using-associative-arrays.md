@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:21.466650-07:00
@@ -11,7 +9,7 @@ description: "\u5728 C++ \u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u88AB\u79F0\u4E3A 
   \u9700\u8981\u4F7F\u7528\u952E\u800C\u4E0D\u662F\u7D22\u5F15\u4F4D\u7F6E\u6765\u5FEB\
   \u901F\u67E5\u627E\u3001\u63D2\u5165\u548C\u5220\u9664\u65F6\uFF0C\u5B83\u4EEC\u662F\
   \u9996\u9009\u3002"
-lastmod: 2024-02-18 23:08:59.399276
+lastmod: 2024-02-19 22:05:07.158659
 model: gpt-4-0125-preview
 summary: "\u5728 C++ \u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u88AB\u79F0\u4E3A `std::map`\
   \ \u6216 `std::unordered_map`\uFF0C\u5B83\u4EEC\u5F25\u8865\u4E86\u6570\u7EC4\u7D22\

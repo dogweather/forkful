@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:57.934346-07:00
@@ -8,7 +6,7 @@ description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p ch\xFAng ta n\xE9m bi\u1EBFn v
   o trong chu\u1ED7i m\xE0 kh\xF4ng m\u1EA5t c\xF4ng s\u1EE9c. T\u1EA1i sao? \u0110\
   \u1EC3 x\xE2y d\u1EF1ng v\u0103n b\u1EA3n m\u1ED9t c\xE1ch linh ho\u1EA1t\u2014\
   ti\u1EC7n l\u1EE3i h\u01A1n nhi\u1EC1u so v\u1EDBi\u2026"
-lastmod: 2024-02-18 23:08:50.299288
+lastmod: 2024-02-19 22:04:55.330667
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p ch\xFAng ta n\xE9m bi\u1EBFn v\xE0o\
   \ trong chu\u1ED7i m\xE0 kh\xF4ng m\u1EA5t c\xF4ng s\u1EE9c. T\u1EA1i sao? \u0110\

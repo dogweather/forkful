@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/kotlin/using-a-debugger/
 date: 2024-01-26 03:49:55.315463-07:00
 description: "Sumergirse en un depurador trata sobre avanzar paso a paso por tu c\xF3\
   digo, observando c\xF3mo funcionan los engranajes y atrapando esos molestos errores\
   \ con\u2026"
-lastmod: 2024-02-18 23:09:09.940779
+lastmod: 2024-02-19 22:05:17.547542
 model: gpt-4-0125-preview
 summary: "Sumergirse en un depurador trata sobre avanzar paso a paso por tu c\xF3\
   digo, observando c\xF3mo funcionan los engranajes y atrapando esos molestos errores\

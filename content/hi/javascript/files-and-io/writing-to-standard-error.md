@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:36.069168-07:00
@@ -14,7 +12,7 @@ description: "\u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F\u092A
   \u0917 \u0938\u094D\u091F\u094D\u0930\u0940\u092E \u092E\u0947\u0902 \u0928\u093F\
   \u0930\u094D\u0926\u0947\u0936\u093F\u0924 \u0915\u0930\u0928\u093E, \u091C\u094B\
   \ \u0935\u093F\u0936\u0947\u0937\u2026"
-lastmod: 2024-02-18 23:09:04.073414
+lastmod: 2024-02-19 22:05:12.054851
 model: gpt-4-0125-preview
 summary: "\u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\
   \u091F \u092E\u0947\u0902 \u0938\u094D\u091F\u0948\u0902\u0921\u0930\u094D\u0921\

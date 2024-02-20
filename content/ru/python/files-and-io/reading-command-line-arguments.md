@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/python/reading-command-line-arguments/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:01:11.026775-07:00
@@ -14,7 +12,7 @@ description: "\u0427\u0442\u0435\u043D\u0438\u0435 \u0430\u0440\u0433\u0443\u043
   \u0430\u0442\u0435\u043B\u044C\u0441\u043A\u0438\u043C \u0432\u0432\u043E\u0434\u043E\
   \u043C \u0438\u0437 \u0442\u0435\u0440\u043C\u0438\u043D\u0430\u043B\u0430. \u041F\
   \u043E\u0447\u0435\u043C\u0443? \u0427\u0442\u043E \u0436,\u2026"
-lastmod: 2024-02-18 23:08:56.551506
+lastmod: 2024-02-19 22:05:03.282138
 model: gpt-4-0125-preview
 summary: "\u0427\u0442\u0435\u043D\u0438\u0435 \u0430\u0440\u0433\u0443\u043C\u0435\
   \u043D\u0442\u043E\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\u043D\u043E\u0439\

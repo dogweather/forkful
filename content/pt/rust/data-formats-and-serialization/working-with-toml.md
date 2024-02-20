@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/working-with-toml/
 date: 2024-01-26 04:26:21.103201-07:00
 description: "TOML \xE9 uma linguagem de serializa\xE7\xE3o de dados leg\xEDvel por\
   \ humanos, frequentemente utilizada para configura\xE7\xF5es. Programadores usam\
   \ TOML pela sua\u2026"
-lastmod: 2024-02-18 23:08:57.952727
+lastmod: 2024-02-19 22:05:05.426654
 model: gpt-4-0125-preview
 summary: "TOML \xE9 uma linguagem de serializa\xE7\xE3o de dados leg\xEDvel por humanos,\
   \ frequentemente utilizada para configura\xE7\xF5es. Programadores usam TOML pela\

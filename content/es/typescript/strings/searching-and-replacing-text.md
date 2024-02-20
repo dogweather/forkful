@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/searching-and-replacing-text/
 date: 2024-01-20 17:58:47.472191-07:00
 description: "Buscar y reemplazar texto es una operaci\xF3n com\xFAn que modifica\
   \ una cadena para sustituir partes espec\xEDficas por otras. Los programadores lo\
   \ usan para\u2026"
-lastmod: 2024-02-18 23:09:09.686779
+lastmod: 2024-02-19 22:05:17.316350
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es una operaci\xF3n com\xFAn que modifica una\
   \ cadena para sustituir partes espec\xEDficas por otras. Los programadores lo usan\

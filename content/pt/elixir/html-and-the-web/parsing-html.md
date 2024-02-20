@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/parsing-html/
 date: 2024-01-20 15:31:00.134803-07:00
 description: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, tipicamente\
   \ para extrair informa\xE7\xF5es dele. Programadores fazem isso para interagir com\
   \ dados de\u2026"
-lastmod: 2024-02-18 23:08:57.841817
+lastmod: 2024-02-19 22:05:05.311658
 summary: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, tipicamente\
   \ para extrair informa\xE7\xF5es dele. Programadores fazem isso para interagir com\
   \ dados de\u2026"

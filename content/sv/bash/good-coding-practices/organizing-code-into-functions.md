@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/organizing-code-into-functions/
 date: 2024-01-26 01:09:13.252003-07:00
 description: "Att dela upp kod i funktioner inneb\xE4r att man bryter ned skript i\
   \ mindre, \xE5teranv\xE4ndbara block som utf\xF6r specifika uppgifter. Det g\xF6\
   r koden renare, mer\u2026"
-lastmod: 2024-02-18 23:08:51.966711
+lastmod: 2024-02-19 22:04:57.318369
 model: gpt-4-1106-preview
 summary: "Att dela upp kod i funktioner inneb\xE4r att man bryter ned skript i mindre,\
   \ \xE5teranv\xE4ndbara block som utf\xF6r specifika uppgifter. Det g\xF6r koden\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/organizing-code-into-functions/
 date: 2024-01-26 01:11:17.874879-07:00
 description: "Organizowanie kodu w funkcje dzieli zadania na wielokrotnie u\u017C\
   yteczne cz\u0119\u015Bci, co sprawia, \u017Ce kod jest czystszy i \u0142atwiejszy\
   \ w utrzymaniu. Robimy to, aby\u2026"
-lastmod: 2024-02-18 23:08:49.999222
+lastmod: 2024-02-19 22:04:54.952956
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje dzieli zadania na wielokrotnie u\u017Cyteczne\
   \ cz\u0119\u015Bci, co sprawia, \u017Ce kod jest czystszy i \u0142atwiejszy w utrzymaniu.\

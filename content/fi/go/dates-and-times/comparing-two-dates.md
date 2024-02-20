@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:50.147260-07:00
 description: "P\xE4iv\xE4m\xE4\xE4rien vertailu ohjelmoinnissa on perustavaa laatua\
   \ oleva teht\xE4v\xE4, joka mahdollistaa kehitt\xE4jien aikasuhteiden arvioinnin\
   \ p\xE4iv\xE4m\xE4\xE4rien v\xE4lill\xE4.\u2026"
-lastmod: 2024-02-18 23:09:07.099791
+lastmod: 2024-02-19 22:05:14.979460
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu ohjelmoinnissa on perustavaa laatua oleva\
   \ teht\xE4v\xE4, joka mahdollistaa kehitt\xE4jien aikasuhteiden arvioinnin p\xE4\

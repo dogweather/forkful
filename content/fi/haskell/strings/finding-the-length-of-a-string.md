@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:41.411420-07:00
 description: "Mittaaminen tarkoittaa merkkijonon pituuden selvitt\xE4mist\xE4. Ohjelmoijat\
   \ tekev\xE4t sen, koska pituuden tiet\xE4minen on kriittist\xE4 kun k\xE4sitell\xE4\
   \xE4n tekstidataa \u2013\u2026"
-lastmod: 2024-02-18 23:09:07.656887
+lastmod: 2024-02-19 22:05:15.499851
 model: gpt-4-1106-preview
 summary: "Mittaaminen tarkoittaa merkkijonon pituuden selvitt\xE4mist\xE4. Ohjelmoijat\
   \ tekev\xE4t sen, koska pituuden tiet\xE4minen on kriittist\xE4 kun k\xE4sitell\xE4\

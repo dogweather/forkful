@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:16.930717-07:00
 description: "Debug output afdrukken gaat allemaal om het naar de console echo\xEB\
   n van data om te checken wat er gaande is in je script. Programmeurs doen dit om\u2026"
-lastmod: 2024-02-18 23:09:02.043217
+lastmod: 2024-02-19 22:05:10.069227
 model: gpt-4-0125-preview
 summary: "Debug output afdrukken gaat allemaal om het naar de console echo\xEBn van\
   \ data om te checken wat er gaande is in je script. Programmeurs doen dit om\u2026"

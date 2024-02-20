@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/ruby/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:55.105294-07:00
 description: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
   \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
-lastmod: 2024-02-18 23:08:56.386453
+lastmod: 2024-02-19 22:05:03.026941
 model: gpt-4-0125-preview
 summary: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
   \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:28.728130-07:00
 description: "Strenginterpolering i Visual Basic for Applications (VBA) refererer\
   \ til prosessen med \xE5 inneby variabler eller uttrykk innenfor en strengliteral,\
   \ noe som\u2026"
-lastmod: 2024-02-18 23:08:53.713115
+lastmod: 2024-02-19 22:04:59.848447
 model: gpt-4-0125-preview
 summary: "Strenginterpolering i Visual Basic for Applications (VBA) refererer til\
   \ prosessen med \xE5 inneby variabler eller uttrykk innenfor en strengliteral, noe\

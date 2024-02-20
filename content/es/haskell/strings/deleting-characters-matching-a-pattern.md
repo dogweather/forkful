@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/haskell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:17.063324-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n es, simplemente,\
   \ filtrar nuestro texto para quitar ciertas secuencias de caracteres. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.010774
+lastmod: 2024-02-19 22:05:17.610690
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es, simplemente, filtrar\
   \ nuestro texto para quitar ciertas secuencias de caracteres. Los programadores\u2026"

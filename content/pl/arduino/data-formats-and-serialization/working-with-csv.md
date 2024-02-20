@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/arduino/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:59.003271-07:00
 description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone\
   \ przecinkami) w Arduino wi\u0105\u017Ce si\u0119 z odczytem z plik\xF3w CSV i zapisywaniem\
   \ do nich,\u2026"
-lastmod: 2024-02-18 23:08:49.891339
+lastmod: 2024-02-19 22:04:54.839067
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone przecinkami)\
   \ w Arduino wi\u0105\u017Ce si\u0119 z odczytem z plik\xF3w CSV i zapisywaniem do\

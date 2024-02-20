@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/vba/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:27.900606-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u091
   \u093E\u0930\u0923 \u0915\u0930\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0939\
   \u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938\
   \ \u0905\u0915\u094D\u0938\u0930 \u0907\u0928\u092A\u0941\u091F \u0915\u094B\u2026"
-lastmod: 2024-02-18 23:09:03.017459
+lastmod: 2024-02-19 22:05:11.015036
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u0915 \u0938\
   \u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u0902\u092C\u093E\

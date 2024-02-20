@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/capitalizing-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:12.232368-07:00
 description: "Een string kapitaliseren betekent het veranderen van de eerste letter\
   \ van een woord naar een hoofdletter. Programmeurs doen dit om taalconventies te\u2026"
-lastmod: 2024-02-18 23:09:02.257008
+lastmod: 2024-02-19 22:05:10.269738
 model: gpt-4-0125-preview
 summary: "Een string kapitaliseren betekent het veranderen van de eerste letter van\
   \ een woord naar een hoofdletter. Programmeurs doen dit om taalconventies te\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/arduino/creating-a-temporary-file/
 date: 2024-01-20 17:39:35.530689-07:00
 description: "Crear un archivo temporal en Arduino es cuesti\xF3n de trabajar con\
   \ almacenamiento temporal de datos durante la ejecuci\xF3n del programa. Programadores\
   \ usan\u2026"
-lastmod: 2024-02-18 23:09:10.283012
+lastmod: 2024-02-19 22:05:17.858127
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal en Arduino es cuesti\xF3n de trabajar con almacenamiento\
   \ temporal de datos durante la ejecuci\xF3n del programa. Programadores usan\u2026"

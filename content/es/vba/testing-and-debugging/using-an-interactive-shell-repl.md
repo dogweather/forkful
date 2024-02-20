@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:16.176985-07:00
 description: "Una consola interactiva, o Bucle Leer-Evaluar-Imprimir (REPL por sus\
   \ siglas en ingl\xE9s), permite a los usuarios introducir comandos, ejecutarlos\
   \ y ver los\u2026"
-lastmod: 2024-02-18 23:09:09.798718
+lastmod: 2024-02-19 22:05:17.417895
 model: gpt-4-0125-preview
 summary: "Una consola interactiva, o Bucle Leer-Evaluar-Imprimir (REPL por sus siglas\
   \ en ingl\xE9s), permite a los usuarios introducir comandos, ejecutarlos y ver los\u2026"

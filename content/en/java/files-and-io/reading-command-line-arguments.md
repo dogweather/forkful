@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/java/reading-command-line-arguments/
 date: 2024-01-20 17:55:59.874250-07:00
 description: "Reading command line arguments in Java is snagging input provided by\
   \ users when they launch your program from a console. Programmers do it to make\
   \ their\u2026"
-lastmod: 2024-02-18 23:09:10.945837
+lastmod: 2024-02-19 22:05:18.454229
 model: gpt-4-1106-preview
 summary: "Reading command line arguments in Java is snagging input provided by users\
   \ when they launch your program from a console. Programmers do it to make their\u2026"

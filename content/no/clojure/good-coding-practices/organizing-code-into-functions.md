@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/organizing-code-into-functions/
 date: 2024-01-26 01:09:50.937235-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 pakke inn kodeblokker\
   \ som utf\xF8rer spesifikke oppgaver. Dette gj\xF8r at koden din blir ryddigere,\
   \ lettere \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.569664
+lastmod: 2024-02-19 22:04:59.692268
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 pakke inn kodeblokker\
   \ som utf\xF8rer spesifikke oppgaver. Dette gj\xF8r at koden din blir ryddigere,\

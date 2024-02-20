@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/working-with-json/
 date: 2024-01-19
 description: "Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany danych\
   \ w aplikacjach. Programi\u015Bci u\u017Cywaj\u0105 go, \u017Ceby \u0142atwo serwisy\
   \ mog\u0142y si\u0119 \"dogadywa\u0107\" z\u2026"
-lastmod: 2024-02-18 23:08:49.973669
+lastmod: 2024-02-19 22:04:54.924975
 summary: "Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany danych\
   \ w aplikacjach. Programi\u015Bci u\u017Cywaj\u0105 go, \u017Ceby \u0142atwo serwisy\
   \ mog\u0142y si\u0119 \"dogadywa\u0107\" z\u2026"

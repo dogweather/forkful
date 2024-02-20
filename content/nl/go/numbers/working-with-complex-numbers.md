@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:04.966750-07:00
 description: "Werken met complexe getallen in programmeren betreft het manipuleren\
   \ van getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\u2026"
-lastmod: 2024-02-18 23:09:01.331355
+lastmod: 2024-02-19 22:05:09.365103
 model: gpt-4-0125-preview
 summary: "Werken met complexe getallen in programmeren betreft het manipuleren van\
   \ getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\u2026"

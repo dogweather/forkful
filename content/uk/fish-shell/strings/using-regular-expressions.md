@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/fish-shell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:11.754873-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0456 \u0432\u043
   \u0445 \u0448\u0430\u0431\u043B\u043E\u043D\u0456\u0432. \u041F\u0440\u043E\u0433\
   \u0440\u0430\u043C\u0456\u0441\u0442\u0438 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\
   \u0442\u043E\u0432\u0443\u044E\u0442\u044C\u2026"
-lastmod: 2024-02-18 23:09:01.090049
+lastmod: 2024-02-19 22:05:09.128579
 model: gpt-4-0125-preview
 summary: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0456 \u0432\u0438\u0440\
   \u0430\u0437\u0438 (regex) \u0443 \u043E\u0431\u043E\u043B\u043E\u043D\u0446\u0456\

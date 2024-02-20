@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/rounding-numbers/
 date: 2024-01-26 03:47:03.578337-07:00
 description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej\
   \ liczby ca\u0142kowitej lub do okre\u015Blonego stopnia dok\u0142adno\u015Bci.\
   \ Programi\u015Bci zaokr\u0105glaj\u0105 liczby, aby\u2026"
-lastmod: 2024-02-18 23:08:50.118917
+lastmod: 2024-02-19 22:04:55.107175
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej liczby\
   \ ca\u0142kowitej lub do okre\u015Blonego stopnia dok\u0142adno\u015Bci. Programi\u015B\

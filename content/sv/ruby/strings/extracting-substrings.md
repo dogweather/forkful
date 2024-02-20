@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/extracting-substrings/
 date: 2024-01-20 17:46:35.844550-07:00
 description: "I Ruby \xE4r att extrahera substr\xE4ngar en stil med att plocka specifika\
   \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r det f\xF6r att bearbeta text,\
   \ validera indata\u2026"
-lastmod: 2024-02-18 23:08:52.282825
+lastmod: 2024-02-19 22:04:57.670884
 model: gpt-4-1106-preview
 summary: "I Ruby \xE4r att extrahera substr\xE4ngar en stil med att plocka specifika\
   \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r det f\xF6r att bearbeta text,\

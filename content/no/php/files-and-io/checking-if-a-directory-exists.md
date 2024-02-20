@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/php/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:10.962410-07:00
 description: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering,\
   \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\u2026"
-lastmod: 2024-02-18 23:08:53.989042
+lastmod: 2024-02-19 22:05:00.165117
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering,\
   \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\u2026"

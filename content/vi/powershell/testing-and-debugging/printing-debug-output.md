@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:45.199938-07:00
@@ -8,7 +6,7 @@ description: "In th\xF4ng tin debug gi\u1ED1ng nh\u01B0 \u0111ang tr\xF2 chuy\u1
   n v\u1EDBi m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n. \u0110\xF3 l\xE0 vi\u1EC7c ch\xE8\
   n c\xE1c l\u1EC7nh in \u0111\u1EC3 hi\u1EC3n th\u1ECB nh\u1EEFng g\xEC \u0111ang\
   \ di\u1EC5n ra b\xEAn d\u01B0\u1EDBi c\xF9ng c\u1EE7a ch\u01B0\u01A1ng\u2026"
-lastmod: 2024-02-18 23:08:50.937111
+lastmod: 2024-02-19 22:04:56.133482
 model: gpt-4-0125-preview
 summary: "In th\xF4ng tin debug gi\u1ED1ng nh\u01B0 \u0111ang tr\xF2 chuy\u1EC7n v\u1EDB\
   i m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n. \u0110\xF3 l\xE0 vi\u1EC7c ch\xE8n c\xE1c l\u1EC7\

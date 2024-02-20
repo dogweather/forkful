@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/google-apps-script/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:13.772887-07:00
 description: "Virheenk\xE4sittely Google Apps Scriptiss\xE4 tarkoittaa poikkeustilanteiden\
   \ tai virheiden ennakointia, kiinniottamista ja niihin vastaamista koodin suorituksen\u2026"
-lastmod: 2024-02-18 23:09:07.144219
+lastmod: 2024-02-19 22:05:15.020908
 model: gpt-4-0125-preview
 summary: "Virheenk\xE4sittely Google Apps Scriptiss\xE4 tarkoittaa poikkeustilanteiden\
   \ tai virheiden ennakointia, kiinniottamista ja niihin vastaamista koodin suorituksen\u2026"

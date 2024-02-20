@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/lua/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:41.656539-07:00
 description: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir mensajes\
   \ de error y salidas de diagn\xF3stico a un canal separado, distinto de la salida\
   \ est\xE1ndar\u2026"
-lastmod: 2024-02-18 23:09:10.137326
+lastmod: 2024-02-19 22:05:17.726077
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir mensajes de\
   \ error y salidas de diagn\xF3stico a un canal separado, distinto de la salida est\xE1\

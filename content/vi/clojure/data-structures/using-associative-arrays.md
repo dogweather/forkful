@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:04.589535-07:00
@@ -8,7 +6,7 @@ description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3 b\u0103m, t
   \ Clojure cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 truy xu\u1EA5t d\u1EEF li\u1EC7\
   u b\u1EB1ng c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB. Ch\xFAng l\xE0 gi\u1EA3i ph\xE1p l\xFD\
   \ t\u01B0\u1EDFng \u0111\u1EC3 qu\u1EA3n l\xFD d\u1EEF\u2026"
-lastmod: 2024-02-18 23:08:50.306762
+lastmod: 2024-02-19 22:04:55.340443
 model: gpt-4-0125-preview
 summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3 b\u0103m, trong Clojure\
   \ cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 truy xu\u1EA5t d\u1EEF li\u1EC7u\

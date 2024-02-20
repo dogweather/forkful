@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/haskell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:00.518598-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica incluir\
   \ credenciales de usuario (usuario y contrase\xF1a) en una solicitud para acceder\
   \ a recursos\u2026"
-lastmod: 2024-02-18 23:09:10.027623
+lastmod: 2024-02-19 22:05:17.625676
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica incluir\
   \ credenciales de usuario (usuario y contrase\xF1a) en una solicitud para acceder\

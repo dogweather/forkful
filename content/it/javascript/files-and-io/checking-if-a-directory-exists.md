@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/javascript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:01.138034-07:00
 description: "Verificare se una directory esiste in JavaScript \xE8 fondamentale per\
   \ le operazioni di manipolazione dei file, permettendo agli script di verificare\
   \ la\u2026"
-lastmod: 2024-02-18 23:08:56.266779
+lastmod: 2024-02-19 22:05:02.900999
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in JavaScript \xE8 fondamentale per le\
   \ operazioni di manipolazione dei file, permettendo agli script di verificare la\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/powershell/searching-and-replacing-text/
 date: 2024-01-20 17:58:39.769067-07:00
 description: "Att s\xF6ka och ers\xE4tta text \xE4r en grundsten i programmering;\
   \ det handlar om att finna specifika str\xE4ngar och byta ut dem mot andra. Anledningen?\u2026"
-lastmod: 2024-02-18 23:08:51.987713
+lastmod: 2024-02-19 22:04:57.341410
 model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text \xE4r en grundsten i programmering; det\
   \ handlar om att finna specifika str\xE4ngar och byta ut dem mot andra. Anledningen?\u2026"

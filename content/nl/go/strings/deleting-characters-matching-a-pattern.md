@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:44.085157-07:00
 description: "Het verwijderen van tekens die overeenkomen met een specifiek patroon\
   \ gaat over het verwijderen van bepaalde tekens of reeksen tekens uit strings,\u2026"
-lastmod: 2024-02-18 23:09:01.320182
+lastmod: 2024-02-19 22:05:09.354614
 model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een specifiek patroon gaat\
   \ over het verwijderen van bepaalde tekens of reeksen tekens uit strings,\u2026"

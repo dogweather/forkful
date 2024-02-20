@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c-sharp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:10.148902-07:00
@@ -10,7 +8,7 @@ description: "\u5728 C# \u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u6216\u8BCD\u5178\u
   \uFF0C\u5B83\u4EEC\u662F\u60A8\u7684\u9996\u9009\uFF0C\u4F7F\u5F97\u5728\u590D\u6742\
   \u5E94\u7528\u7A0B\u5E8F\u4E2D\u7684\u6570\u636E\u7BA1\u7406\u53D8\u5F97\u8F7B\u800C\
   \u6613\u4E3E\u3002"
-lastmod: 2024-02-18 23:08:59.126501
+lastmod: 2024-02-19 22:05:06.794411
 model: gpt-4-0125-preview
 summary: "\u5728 C# \u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u6216\u8BCD\u5178\u5141\u8BB8\
   \u60A8\u5B58\u50A8\u548C\u7BA1\u7406\u952E\u503C\u5BF9\u3002\u5F53\u60A8\u9700\u8981\

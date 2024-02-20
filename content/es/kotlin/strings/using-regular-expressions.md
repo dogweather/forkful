@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/kotlin/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:18.006849-07:00
 description: "Las expresiones regulares (regex) son una herramienta poderosa para\
   \ el procesamiento de texto, permitiendo a los programadores buscar, coincidir y\u2026"
-lastmod: 2024-02-18 23:09:09.925100
+lastmod: 2024-02-19 22:05:17.533127
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son una herramienta poderosa para el procesamiento\
   \ de texto, permitiendo a los programadores buscar, coincidir y\u2026"

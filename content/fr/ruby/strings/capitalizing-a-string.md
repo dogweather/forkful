@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/ruby/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:08.630539-07:00
 description: "Capitaliser une cha\xEEne de caract\xE8res en programmation fait souvent\
   \ r\xE9f\xE9rence \xE0 la conversion du premier caract\xE8re d'une cha\xEEne en\
   \ majuscule et le reste en\u2026"
-lastmod: 2024-02-18 23:09:09.386564
+lastmod: 2024-02-19 22:05:17.050800
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res en programmation fait souvent\
   \ r\xE9f\xE9rence \xE0 la conversion du premier caract\xE8re d'une cha\xEEne en\

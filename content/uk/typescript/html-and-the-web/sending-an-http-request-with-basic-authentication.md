@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/typescript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:53.946575-07:00
 description: ''
-lastmod: 2024-02-18 23:08:59.930176
+lastmod: 2024-02-19 22:05:07.874289
 model: gpt-4-1106-preview
 summary: ''
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\

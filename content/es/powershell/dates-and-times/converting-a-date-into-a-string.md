@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/powershell/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:37.544050-07:00
 description: "Convertir una fecha en cadena permite presentarla en un formato legible\
   \ o espec\xEDfico. Los programadores lo hacen para mejorar la interfaz de usuario,\u2026"
-lastmod: 2024-02-18 23:09:10.228133
+lastmod: 2024-02-19 22:05:17.809223
 model: gpt-4-1106-preview
 summary: "Convertir una fecha en cadena permite presentarla en un formato legible\
   \ o espec\xEDfico. Los programadores lo hacen para mejorar la interfaz de usuario,\u2026"

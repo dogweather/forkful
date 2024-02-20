@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elm/reading-command-line-arguments/
 date: 2024-01-20 17:56:21.227350-07:00
 description: "Leer argumentos de l\xEDnea de comandos significa obtener datos directamente\
   \ cuando ejecutas un programa. Los programadores hacen esto para personalizar la\u2026"
-lastmod: 2024-02-18 23:09:09.907181
+lastmod: 2024-02-19 22:05:17.516713
 model: gpt-4-1106-preview
 summary: "Leer argumentos de l\xEDnea de comandos significa obtener datos directamente\
   \ cuando ejecutas un programa. Los programadores hacen esto para personalizar la\u2026"

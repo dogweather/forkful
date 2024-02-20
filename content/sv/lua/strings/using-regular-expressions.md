@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/lua/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:43.561826-07:00
 description: "Regulj\xE4ra uttryck i programmering m\xF6jligg\xF6r m\xF6nstermatchning\
   \ och manipulation av str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
   \ anv\xE4nder dem f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.909043
+lastmod: 2024-02-19 22:04:57.254853
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck i programmering m\xF6jligg\xF6r m\xF6nstermatchning\
   \ och manipulation av str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\

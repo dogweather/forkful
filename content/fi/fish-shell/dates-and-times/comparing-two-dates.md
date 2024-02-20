@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/comparing-two-dates/
 date: 2024-01-20 17:32:56.677975-07:00
 description: "(Mit\xE4 & Miksi?) Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tunnistaaksemme\
   \ niiden eron. Ohjelmoijat tekev\xE4t t\xE4m\xE4n aikataulujen hallintaan, aikaleimojen\
   \ tarkkailuun tai\u2026"
-lastmod: 2024-02-18 23:09:08.097953
+lastmod: 2024-02-19 22:05:15.901302
 model: gpt-4-1106-preview
 summary: "(Mit\xE4 & Miksi?) Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tunnistaaksemme\
   \ niiden eron. Ohjelmoijat tekev\xE4t t\xE4m\xE4n aikataulujen hallintaan, aikaleimojen\

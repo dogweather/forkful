@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:26.386642-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla tarkoittaa\
   \ verkkoresurssin pyyt\xE4mist\xE4 k\xE4ytt\xE4en k\xE4ytt\xE4j\xE4nime\xE4 ja salasanaa.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.228221
+lastmod: 2024-02-19 22:05:15.125681
 model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla tarkoittaa verkkoresurssin\
   \ pyyt\xE4mist\xE4 k\xE4ytt\xE4en k\xE4ytt\xE4j\xE4nime\xE4 ja salasanaa. Ohjelmoijat\

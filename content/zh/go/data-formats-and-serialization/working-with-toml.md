@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/working-with-toml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:43.538351-07:00
@@ -12,7 +10,7 @@ description: "TOML\uFF08Tom's Obvious, Minimal Language\uFF0C\u6C64\u59C6\u7684\
   \u548C\u76F4\u63A5\u6620\u5C04\u5230\u6570\u636E\u7ED3\u6784\u7684\u7279\u6027\uFF0C\
   \u4F7F\u5176\u5728\u8BB8\u591AGo\u9879\u76EE\u4E2D\u6210\u4E3A\u8BBE\u7F6E\u548C\
   \u7BA1\u7406\u914D\u7F6E\u7684\u70ED\u95E8\u9009\u62E9\u3002"
-lastmod: 2024-02-18 23:08:58.730985
+lastmod: 2024-02-19 22:05:06.250523
 model: gpt-4-0125-preview
 summary: "TOML\uFF08Tom's Obvious, Minimal Language\uFF0C\u6C64\u59C6\u7684\u660E\u4E86\
   \u3001\u7B80\u6D01\u8BED\u8A00\uFF09\u662F\u4E00\u79CD\u914D\u7F6E\u6587\u4EF6\u683C\

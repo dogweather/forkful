@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:55.069668-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC74, '2023\uB144 3\uC6D4 15\uC77C' \uAC19\uC740 \uB0A0\uC9DC\uB97C \uD14D\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2
   \uC5D0 \uD45C\uC2DC\uD558\uAC70\uB098 \uBB38\uC790 \uD615\uC2DD\uC73C\uB85C \uC800\
   \uC7A5\uD558\uACE0 \uACF5\uC720\uD558\uAE30 \uC27D\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.637150
+lastmod: 2024-02-19 22:05:14.538435
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\uB294\
   \ \uAC74, '2023\uB144 3\uC6D4 15\uC77C' \uAC19\uC740 \uB0A0\uC9DC\uB97C \uD14D\uC2A4\

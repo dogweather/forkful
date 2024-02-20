@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:38.441605-07:00
@@ -14,7 +12,7 @@ description: "JavaScript \u092E\u0947\u0902 \u090F\u0915 \u0921\u093E\u092F\u093
   \u0947 \u092F\u093E \u0909\u0938\u092E\u0947\u0902 \u0932\u093F\u0916\u0928\u0947\
   \ \u0938\u0947 \u092A\u0939\u0932\u0947 \u0921\u093E\u092F\u0930\u0947\u0915\u094D\
   \u091F\u0930\u0940\u2026"
-lastmod: 2024-02-18 23:09:04.069820
+lastmod: 2024-02-19 22:05:12.051366
 model: gpt-4-0125-preview
 summary: "JavaScript \u092E\u0947\u0902 \u090F\u0915 \u0921\u093E\u092F\u0930\u0947\
   \u0915\u094D\u091F\u0930\u0940 \u0915\u0947 \u0905\u0938\u094D\u0924\u093F\u0924\

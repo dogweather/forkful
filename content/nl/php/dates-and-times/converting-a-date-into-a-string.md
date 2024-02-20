@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:16.089729-07:00
 description: "Het omzetten van een datum naar een tekenreeks betekent het veranderen\
   \ van een datumobject in een platte-tekstformaat. Programmeurs doen dit voor\u2026"
-lastmod: 2024-02-18 23:09:01.958183
+lastmod: 2024-02-19 22:05:09.979912
 model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een tekenreeks betekent het veranderen van\
   \ een datumobject in een platte-tekstformaat. Programmeurs doen dit voor\u2026"

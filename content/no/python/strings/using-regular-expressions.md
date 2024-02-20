@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/python/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:00.323314-07:00
 description: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finne\
   \ kombinasjoner av tegn i strenger. Programmerere benytter dem for s\xF8k, redigering\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:53.514860
+lastmod: 2024-02-19 22:04:59.631685
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finne kombinasjoner\
   \ av tegn i strenger. Programmerere benytter dem for s\xF8k, redigering eller\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/arduino/starting-a-new-project/
 date: 2024-01-20 18:02:52.692733-07:00
 description: "Iniciar un nuevo proyecto es simplemente comenzar desde cero con una\
   \ idea nueva o una soluci\xF3n. Los programadores lo hacen para convertir ideas\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:10.262522
+lastmod: 2024-02-19 22:05:17.840415
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es simplemente comenzar desde cero con una idea\
   \ nueva o una soluci\xF3n. Los programadores lo hacen para convertir ideas en\u2026"

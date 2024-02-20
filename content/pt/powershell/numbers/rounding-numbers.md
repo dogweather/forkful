@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/rounding-numbers/
 date: 2024-01-26 03:46:17.864731-07:00
 description: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais\
   \ pr\xF3ximo ou para um ponto decimal especificado. Programadores arredondam n\xFA\
   meros para\u2026"
-lastmod: 2024-02-18 23:08:58.361759
+lastmod: 2024-02-19 22:05:05.846182
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais pr\xF3\
   ximo ou para um ponto decimal especificado. Programadores arredondam n\xFAmeros\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/rounding-numbers/
 date: 2024-01-26 03:46:12.942714-07:00
 description: "\xC5 runde av tall betyr \xE5 justere dem til \xE5 v\xE6re n\xE6rmere\
   \ en enklere eller mer signifikant verdi. Programmerere runder av tall for \xE5\
   \ forenkle resultater,\u2026"
-lastmod: 2024-02-18 23:08:53.519562
+lastmod: 2024-02-19 22:04:59.637035
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 justere dem til \xE5 v\xE6re n\xE6rmere en\
   \ enklere eller mer signifikant verdi. Programmerere runder av tall for \xE5 forenkle\

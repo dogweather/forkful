@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:22.768789-07:00
@@ -14,7 +12,7 @@ description: "\u0921\u0940\u092C\u0917 \u0906\u0909\u091F\u092A\u0941\u091F \u09
   \u093F\u090F\u092C\u0932 \u0915\u0947 \u092E\u0942\u0932\u094D\u092F\u094B\u0902\
   , \u0928\u093F\u0937\u094D\u092A\u093E\u0926\u0928 \u092A\u094D\u0930\u0935\u093E\
   \u0939 \u092F\u093E \u0938\u0902\u0926\u0947\u0936\u2026"
-lastmod: 2024-02-18 23:09:02.572998
+lastmod: 2024-02-19 22:05:10.575273
 model: gpt-4-0125-preview
 summary: "\u0921\u0940\u092C\u0917 \u0906\u0909\u091F\u092A\u0941\u091F \u092A\u094D\
   \u0930\u093F\u0902\u091F \u0915\u0930\u0928\u093E \u0905\u092A\u0928\u0947 \u0915\

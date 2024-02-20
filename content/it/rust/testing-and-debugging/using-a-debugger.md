@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/using-a-debugger/
 date: 2024-01-26 04:10:00.652408-07:00
 description: "Utilizzare un debugger \xE8 come dotarsi di una visione a raggi X per\
   \ sbirciare nell'esecuzione del proprio codice. I programmatori lo fanno per individuare\u2026"
-lastmod: 2024-02-18 23:08:55.684584
+lastmod: 2024-02-19 22:05:02.283450
 model: gpt-4-0125-preview
 summary: "Utilizzare un debugger \xE8 come dotarsi di una visione a raggi X per sbirciare\
   \ nell'esecuzione del proprio codice. I programmatori lo fanno per individuare\u2026"

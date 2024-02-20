@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/interpolating-a-string/
 date: 2024-01-20 17:51:31.234441-07:00
 description: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD(string interpolation)\uC740 \uBB38\uC790\
   \uC5F4\uC5D0 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC9D1\uC5B4\
@@ -8,7 +6,7 @@ description: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD(string interpolation)\uC740 \uBB38
   \ \uD558\uACE0, \uB3D9\uC801\uC73C\uB85C \uBB38\uC790\uC5F4\uC744 \uC0DD\uC131\uD560\
   \ \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.395745
+lastmod: 2024-02-19 22:05:14.309965
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD(string interpolation)\uC740 \uBB38\uC790\
   \uC5F4\uC5D0 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC9D1\uC5B4\

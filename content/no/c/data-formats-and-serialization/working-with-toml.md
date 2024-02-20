@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/working-with-toml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:28.515710-07:00
 description: "TOML (Toms Opplagte, Minimale Spr\xE5k) er et konfigurasjonsfilformat\
   \ som er lett \xE5 lese p\xE5 grunn av sine klare semantikk. Programmerere bruker\
   \ det for\u2026"
-lastmod: 2024-02-18 23:08:54.418634
+lastmod: 2024-02-19 22:05:00.579431
 model: gpt-4-0125-preview
 summary: "TOML (Toms Opplagte, Minimale Spr\xE5k) er et konfigurasjonsfilformat som\
   \ er lett \xE5 lese p\xE5 grunn av sine klare semantikk. Programmerere bruker det\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/python/using-an-interactive-shell-repl/
 date: 2024-01-26 04:18:29.769842-07:00
 description: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u092A\u094D\u0930\
   \u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0935\u093E\u0924\u093E\u0935\
@@ -11,7 +9,7 @@ description: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u092A\u094D
   \u093E \u0939\u0948, \u0914\u0930 \u0909\u092A\u092F\u094B\u0917\u0915\u0930\u094D\
   \u0924\u093E \u0915\u094B \u092A\u0930\u093F\u0923\u093E\u092E \u0932\u094C\u091F\
   \u093E\u0924\u093E\u2026"
-lastmod: 2024-02-18 23:09:02.650532
+lastmod: 2024-02-19 22:05:10.652190
 model: gpt-4-0125-preview
 summary: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u092A\u094D\u0930\
   \u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0935\u093E\u0924\u093E\u0935\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:11.226042-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification basique transmet\
   \ des identifiants d\u2019acc\xE8s \xE0 un serveur web s\xE9curis\xE9. Les d\xE9\
   veloppeurs utilisent cela\u2026"
-lastmod: 2024-02-18 23:09:08.386453
+lastmod: 2024-02-19 22:05:16.180489
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification basique transmet des\
   \ identifiants d\u2019acc\xE8s \xE0 un serveur web s\xE9curis\xE9. Les d\xE9veloppeurs\

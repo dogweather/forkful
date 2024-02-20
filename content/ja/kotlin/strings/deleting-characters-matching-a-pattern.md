@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/kotlin/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:44.919696-07:00
 description: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u306E\
   \u524A\u9664\u3068\u306F\u3001\u7279\u5B9A\u306E\u898F\u5247\u306B\u57FA\u3065\u304F\
@@ -10,7 +8,7 @@ description: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57
   \u308A\u3001\u30C6\u30AD\u30B9\u30C8\u3092\u6574\u5F62\u3057\u305F\u308A\u3059\u308B\
   \u305F\u3081\u3067\u3059\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.864866
+lastmod: 2024-02-19 22:05:01.197687
 model: gpt-4-1106-preview
 summary: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u306E\
   \u524A\u9664\u3068\u306F\u3001\u7279\u5B9A\u306E\u898F\u5247\u306B\u57FA\u3065\u304F\

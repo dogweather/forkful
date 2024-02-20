@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/java/extracting-substrings/
 date: 2024-01-20 17:46:02.631360-07:00
 description: "\xC5 trekke ut substrings betyr simpelthen \xE5 hente deler av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere og behandle spesifikke data fra\
   \ st\xF8rre\u2026"
-lastmod: 2024-02-18 23:08:53.760395
+lastmod: 2024-02-19 22:04:59.899967
 model: gpt-4-1106-preview
 summary: "\xC5 trekke ut substrings betyr simpelthen \xE5 hente deler av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere og behandle spesifikke data fra\

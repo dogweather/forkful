@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/python/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:08.401637-07:00
 description: "Descobrir o comprimento de uma string significa contar o n\xFAmero de\
   \ caracteres que ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
-lastmod: 2024-02-18 23:08:57.752439
+lastmod: 2024-02-19 22:05:05.214625
 model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string significa contar o n\xFAmero de caracteres\
   \ que ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"

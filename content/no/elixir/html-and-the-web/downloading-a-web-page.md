@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/downloading-a-web-page/
 date: 2024-01-20 17:44:03.914534-07:00
 description: "\xC5 laste ned en nettside betyr \xE5 hente HTML-koden fra en webserver\
   \ for \xE5 lagre eller behandle den lokalt. Programmerere gj\xF8r dette for \xE5\
   \ skrape data, teste\u2026"
-lastmod: 2024-02-18 23:08:53.603745
+lastmod: 2024-02-19 22:04:59.729426
 model: gpt-4-1106-preview
 summary: "\xC5 laste ned en nettside betyr \xE5 hente HTML-koden fra en webserver\
   \ for \xE5 lagre eller behandle den lokalt. Programmerere gj\xF8r dette for \xE5\

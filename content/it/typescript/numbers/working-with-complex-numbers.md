@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/working-with-complex-numbers/
 date: 2024-01-26 04:46:21.085325-07:00
 description: "I numeri complessi, composti da una parte reale e una immaginaria (solitamente\
   \ scritti come a + bi), rendono possibili calcoli impraticabili o impossibili\u2026"
-lastmod: 2024-02-18 23:08:55.634709
+lastmod: 2024-02-19 22:05:02.230244
 model: gpt-4-0125-preview
 summary: "I numeri complessi, composti da una parte reale e una immaginaria (solitamente\
   \ scritti come a + bi), rendono possibili calcoli impraticabili o impossibili\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c-sharp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:08.297284-07:00
 description: "Gli array associativi, o dizionari in C#, ti permettono di memorizzare\
   \ e gestire coppie di chiavi e valori. Sono la tua scelta principale quando hai\u2026"
-lastmod: 2024-02-18 23:08:55.880700
+lastmod: 2024-02-19 22:05:02.490512
 model: gpt-4-0125-preview
 summary: "Gli array associativi, o dizionari in C#, ti permettono di memorizzare e\
   \ gestire coppie di chiavi e valori. Sono la tua scelta principale quando hai\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:23.486510-07:00
 description: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones\
   \ (VBA) implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro\
   \ de su c\xF3digo\u2026"
-lastmod: 2024-02-18 23:09:09.799884
+lastmod: 2024-02-19 22:05:17.418985
 model: gpt-4-0125-preview
 summary: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones (VBA)\
   \ implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro de su\

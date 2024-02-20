@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/bash/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:34.205684-07:00
 description: "Att arbeta med JSON i Bash-programmering inneb\xE4r att tolka, extrahera\
   \ och manipulera JSON-data direkt fr\xE5n kommandoraden. Programmerare g\xF6r ofta\
   \ detta f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.981873
+lastmod: 2024-02-19 22:04:57.335034
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Bash-programmering inneb\xE4r att tolka, extrahera\
   \ och manipulera JSON-data direkt fr\xE5n kommandoraden. Programmerare g\xF6r ofta\

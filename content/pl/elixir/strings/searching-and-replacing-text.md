@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elixir/searching-and-replacing-text/
 date: 2024-01-20 17:57:59.636146-07:00
 description: "\"Co i Dlaczego?\" Wyszukiwanie i zamiana tekstu to szybka edycja, zmieniaj\u0105\
   ca fragmenty kodu czy tekstu. Programi\u015Bci robi\u0105 to, by poprawia\u0107\
   \ b\u0142\u0119dy,\u2026"
-lastmod: 2024-02-18 23:08:49.291527
+lastmod: 2024-02-19 22:04:54.206007
 model: gpt-4-1106-preview
 summary: "\"Co i Dlaczego?\" Wyszukiwanie i zamiana tekstu to szybka edycja, zmieniaj\u0105\
   ca fragmenty kodu czy tekstu. Programi\u015Bci robi\u0105 to, by poprawia\u0107\

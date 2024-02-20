@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:47.005461-07:00
@@ -13,7 +11,7 @@ description: "\uC5B4\uB5A4 \uD504\uB85C\uADF8\uB798\uBC0D \uC791\uC5C5\uC5D0\uC1
   \uB2E4. Ruby\uC5D0\uC11C\uB294 \uD45C\uC900 \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C\
   \ \uC0AC\uC6A9\uD558\uC5EC \uB0A0\uC9DC\uC640 \uAD00\uB828\uB41C \uC791\uC5C5\uC744\
   \ \uC27D\uAC8C \uC218\uD589\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:07.042449
+lastmod: 2024-02-19 22:05:14.923456
 model: gpt-4-0125-preview
 summary: "\uC5B4\uB5A4 \uD504\uB85C\uADF8\uB798\uBC0D \uC791\uC5C5\uC5D0\uC11C\uB4E0\
   \ \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB294 \uAC83\uC740 \uAC70\uC758\

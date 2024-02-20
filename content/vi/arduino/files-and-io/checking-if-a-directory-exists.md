@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:32.708602-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1E
   n t\u1EA1i hay kh\xF4ng l\xE0 vi\u1EC7c x\xE1c minh s\u1EF1 hi\u1EC7n di\u1EC7n\
   \ c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c tr\xEAn b\u1ED9 nh\u1EDB c\u1EE7a b\u1EA1\
   n tr\u01B0\u1EDBc khi b\u1EA1n th\u1EF1c hi\u1EC7n m\u1ED9t s\u1ED1 thao\u2026"
-lastmod: 2024-02-18 23:08:51.015019
+lastmod: 2024-02-19 22:04:56.208324
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
   i hay kh\xF4ng l\xE0 vi\u1EC7c x\xE1c minh s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7a\

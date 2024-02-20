@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/haskell/organizing-code-into-functions/
 date: 2024-01-26 01:10:30.687313-07:00
 description: "\u5728 Haskell \u4E2D\u7EC4\u7EC7\u4EE3\u7801\u8FDB\u5165\u51FD\u6570\
   \u610F\u5473\u7740\u5C06\u4F60\u7684\u4EE3\u7801\u5206\u89E3\u6210\u53EF\u590D\u7528\
@@ -9,7 +7,7 @@ description: "\u5728 Haskell \u4E2D\u7EC4\u7EC7\u4EE3\u7801\u8FDB\u5165\u51FD\u6
   \u8981\u91CD\u590D\u81EA\u5DF1\"(Don't Repeat Yourself\uFF0C\u5373 DRY)\u539F\u5219\
   \uFF0C\u4F7F\u4EE3\u7801\u53EF\u8BFB\u6027\u66F4\u5F3A\uFF0C\u4E14\u66F4\u6613\u4E8E\
   \u8C03\u8BD5\u3002"
-lastmod: 2024-02-18 23:08:59.174927
+lastmod: 2024-02-19 22:05:06.860859
 model: gpt-4-1106-preview
 summary: "\u5728 Haskell \u4E2D\u7EC4\u7EC7\u4EE3\u7801\u8FDB\u5165\u51FD\u6570\u610F\
   \u5473\u7740\u5C06\u4F60\u7684\u4EE3\u7801\u5206\u89E3\u6210\u53EF\u590D\u7528\u7684\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/lua/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:21.480911-07:00
 description: "Los arreglos asociativos son como apretones de manos secretos para datos\
   \ en Lua\u2014en vez de solo n\xFAmeros aline\xE1ndose obedientemente por \xEDndice,\
   \ tus llaves\u2026"
-lastmod: 2024-02-18 23:09:10.111832
+lastmod: 2024-02-19 22:05:17.702548
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos son como apretones de manos secretos para datos\
   \ en Lua\u2014en vez de solo n\xFAmeros aline\xE1ndose obedientemente por \xEDndice,\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/elixir/using-an-interactive-shell-repl/
 date: 2024-01-26 04:13:31.994173-07:00
 description: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta\
   \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa.\u2026"
-lastmod: 2024-02-18 23:09:07.275298
+lastmod: 2024-02-19 22:05:15.169341
 model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta\
   \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa.\u2026"

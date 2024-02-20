@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:07.022888-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4\
   \uB825\uC774\uB098 \uD45C\uC2DC \uC804\uBC18\uC5D0 \uAC78\uCCD0 \uC77C\uAD00\uC131\
   \uC744 \uBCF4\uC7A5\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\
   \uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.923654
+lastmod: 2024-02-19 22:05:13.858731
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758\
   \ \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C, \uB098\uBA38\uC9C0\uB97C \uC18C\

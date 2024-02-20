@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:47.494662-07:00
 description: "Konvertering av datum till str\xE4ng inneb\xE4r att \xE4ndra ett datumobjekts\
   \ format till en l\xE4sbar textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att\
   \ enkelt visa datum\u2026"
-lastmod: 2024-02-18 23:08:52.306132
+lastmod: 2024-02-19 22:04:57.697211
 model: gpt-4-1106-preview
 summary: "Konvertering av datum till str\xE4ng inneb\xE4r att \xE4ndra ett datumobjekts\
   \ format till en l\xE4sbar textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/comparing-two-dates/
 date: 2024-01-20 17:32:35.110405-07:00
 description: "J\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att bed\xF6ma vilket datum som\
   \ kommer f\xF6re eller efter ett annat, eller om de \xE4r samma. Programmerare beh\xF6\
   ver det f\xF6r att hantera\u2026"
-lastmod: 2024-02-18 23:08:51.473936
+lastmod: 2024-02-19 22:04:56.781796
 model: gpt-4-1106-preview
 summary: "J\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att bed\xF6ma vilket datum som kommer\
   \ f\xF6re eller efter ett annat, eller om de \xE4r samma. Programmerare beh\xF6\

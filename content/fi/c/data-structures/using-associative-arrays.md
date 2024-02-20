@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:46.620358-07:00
 description: "Assosiatiiviset taulukot, tunnetaan muissa kieli\xE4 karttoina tai sanakirjoina,\
   \ ovat avain-arvo-pareja, joita k\xE4ytet\xE4\xE4n tehokkaaseen datan etsint\xE4\
   \xE4n ja\u2026"
-lastmod: 2024-02-18 23:09:08.123881
+lastmod: 2024-02-19 22:05:15.925291
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tunnetaan muissa kieli\xE4 karttoina tai sanakirjoina,\
   \ ovat avain-arvo-pareja, joita k\xE4ytet\xE4\xE4n tehokkaaseen datan etsint\xE4\

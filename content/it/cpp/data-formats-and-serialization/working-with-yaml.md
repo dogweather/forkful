@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/cpp/working-with-yaml/
 date: 2024-01-19
 description: "Lavorare con YAML significa manipolare un linguaggio di serializzazione\
   \ dati che punta sulla leggibilit\xE0 umana. I programmatori lo usano perch\xE9\
   \ \xE8 comodo\u2026"
-lastmod: 2024-02-18 23:08:56.191880
+lastmod: 2024-02-19 22:05:02.821904
 summary: "Lavorare con YAML significa manipolare un linguaggio di serializzazione\
   \ dati che punta sulla leggibilit\xE0 umana. I programmatori lo usano perch\xE9\
   \ \xE8 comodo\u2026"

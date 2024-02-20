@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/arduino/writing-a-text-file/
 date: 2024-02-03 19:03:07.502456-07:00
 description: "Writing a text file in Arduino involves saving data to a file on an\
   \ SD card or similar storage module, often for data logging purposes. Programmers\
   \ do\u2026"
-lastmod: 2024-02-18 23:09:11.333149
+lastmod: 2024-02-19 22:05:18.800003
 model: gpt-4-0125-preview
 summary: "Writing a text file in Arduino involves saving data to a file on an SD card\
   \ or similar storage module, often for data logging purposes. Programmers do\u2026"

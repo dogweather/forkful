@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:41.315361-07:00
 description: "Convertire una stringa in minuscolo significa semplicemente trasformare\
   \ tutti i caratteri di una stringa in lettere minuscole. I programmatori lo fanno\u2026"
-lastmod: 2024-02-18 23:08:56.200338
+lastmod: 2024-02-19 22:05:02.830915
 model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa semplicemente trasformare\
   \ tutti i caratteri di una stringa in lettere minuscole. I programmatori lo fanno\u2026"

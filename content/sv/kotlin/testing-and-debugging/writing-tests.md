@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/kotlin/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:16.734948-07:00
 description: "Att skriva tester i Kotlin inneb\xE4r att man skapar kodsnuttar som\
   \ automatiskt validerar den funktionella korrektheten i dina mjukvarumoduler, f\xF6\
   r att\u2026"
-lastmod: 2024-02-18 23:08:51.753714
+lastmod: 2024-02-19 22:04:57.088901
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Kotlin inneb\xE4r att man skapar kodsnuttar som automatiskt\
   \ validerar den funktionella korrektheten i dina mjukvarumoduler, f\xF6r att\u2026"

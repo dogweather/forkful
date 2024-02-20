@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/haskell/handling-errors/
 date: 2024-01-26 00:54:10.457494-07:00
 description: "La gestione degli errori nella programmazione riguarda la gestione dell'inaspettato\
   \ \u2014 cose che possono andare storte. I programmatori lo fanno per\u2026"
-lastmod: 2024-02-18 23:08:55.937228
+lastmod: 2024-02-19 22:05:02.548121
 model: gpt-4-1106-preview
 summary: "La gestione degli errori nella programmazione riguarda la gestione dell'inaspettato\
   \ \u2014 cose che possono andare storte. I programmatori lo fanno per\u2026"

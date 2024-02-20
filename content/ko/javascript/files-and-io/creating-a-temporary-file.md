@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/creating-a-temporary-file/
 date: 2024-01-20 17:41:07.241572-07:00
 description: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uB370\uC774\uD130\uB97C\
   \ \uC77C\uC2DC\uC801\uC73C\uB85C \uCC98\uB9AC\uD558\uAC70\uB098 \uBCF4\uAD00\uD560\
@@ -9,7 +7,7 @@ description: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uB370\uC774\uD130\uB
   \ \uB300\uC6A9\uB7C9 \uC791\uC5C5 \uC911 \uC911\uAC04 \uACB0\uACFC\uB97C \uC800\uC7A5\
   \uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.843006
+lastmod: 2024-02-19 22:05:14.733775
 model: gpt-4-1106-preview
 summary: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uB370\uC774\uD130\uB97C \uC77C\
   \uC2DC\uC801\uC73C\uB85C \uCC98\uB9AC\uD558\uAC70\uB098 \uBCF4\uAD00\uD560 \uD30C\

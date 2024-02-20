@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:05.586122-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications (VBA) \u4E2D\u7684\u9519\u8BEF\u5904
   \u610F\u5916\u95EE\u9898\u6539\u5584\u7528\u6237\u4F53\u9A8C\u81F3\u5173\u91CD\u8981\
   \uFF0C\u65E0\u9700\u5BFC\u81F4\u7A81\u7136\u5D29\u6E83\u6216\u6570\u636E\u4E22\u5931\
   \u3002"
-lastmod: 2024-02-18 23:08:58.988337
+lastmod: 2024-02-19 22:05:06.604318
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications (VBA) \u4E2D\u7684\u9519\u8BEF\u5904\u7406\
   \u6307\u7684\u662F\u9884\u671F\u3001\u68C0\u6D4B\u548C\u89E3\u51B3\u7F16\u7A0B\u3001\

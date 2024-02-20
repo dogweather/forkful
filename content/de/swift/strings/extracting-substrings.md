@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/extracting-substrings/
 date: 2024-01-20 17:46:39.785379-07:00
 description: "Das Extrahieren von Teilstrings ist der Vorgang, bei dem spezifische\
   \ Teile eines Strings abgetrennt und verwendet werden. Programmierer nutzen dies\u2026"
-lastmod: 2024-02-18 23:09:05.222192
+lastmod: 2024-02-19 22:05:13.150162
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings ist der Vorgang, bei dem spezifische Teile\
   \ eines Strings abgetrennt und verwendet werden. Programmierer nutzen dies\u2026"

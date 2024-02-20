@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/typescript/sending-an-http-request/
 date: 2024-01-20 18:01:11.598799-07:00
 description: "HTTP request \u0935\u0947\u092C \u0938\u0930\u094D\u0935\u0930 \u0938\
   \u0947 \u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u092E\u093E\u0902\u0917\u0928\
@@ -10,7 +8,7 @@ description: "HTTP request \u0935\u0947\u092C \u0938\u0930\u094D\u0935\u0930 \u0
   \u094D\u0935\u0930 \u092A\u0930 \u0915\u093E\u0930\u094D\u0930\u0935\u093E\u0908\
   \ \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u092D\u0947\u091C\u0924\
   \u0947 \u0939\u0948\u0902\u0964"
-lastmod: 2024-02-18 23:09:02.873707
+lastmod: 2024-02-19 22:05:10.872507
 model: gpt-4-1106-preview
 summary: "HTTP request \u0935\u0947\u092C \u0938\u0930\u094D\u0935\u0930 \u0938\u0947\
   \ \u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u092E\u093E\u0902\u0917\u0928\u0947\

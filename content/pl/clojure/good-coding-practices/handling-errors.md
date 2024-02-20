@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/handling-errors/
 date: 2024-01-26 00:51:33.578442-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w dotyczy zarz\u0105dzania nieoczekiwanymi\
   \ sytuacjami w programach \u2013 jak ochroniarz radz\u0105cy sobie z awanturnikami.\
   \ Programi\u015Bci lubi\u0105 gdy wszystko\u2026"
-lastmod: 2024-02-18 23:08:49.271916
+lastmod: 2024-02-19 22:04:54.185220
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w dotyczy zarz\u0105dzania nieoczekiwanymi\
   \ sytuacjami w programach \u2013 jak ochroniarz radz\u0105cy sobie z awanturnikami.\

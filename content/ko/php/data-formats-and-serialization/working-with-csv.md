@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:42.309578-07:00
@@ -13,7 +11,7 @@ description: "CSV(\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12) \uC791\uC5C5\uC7
   \uC774\uC2A4 \uAC04\uC5D0 \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uAD50\uD658\uD558\
   \uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294\uB370, \uC774\
   \uB294 \uADF8 \uB2E8\uC21C\uC131\uACFC\u2026"
-lastmod: 2024-02-18 23:09:06.387160
+lastmod: 2024-02-19 22:05:14.301696
 model: gpt-4-0125-preview
 summary: "CSV(\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12) \uC791\uC5C5\uC740 \uD3C9\
   \uBB38\uC73C\uB85C \uD45C \uD615\uC2DD \uB370\uC774\uD130\uB97C \uB098\uD0C0\uB0B4\

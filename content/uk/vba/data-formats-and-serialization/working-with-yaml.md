@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/vba/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:13.382316-07:00
@@ -12,7 +10,7 @@ description: "YAML, \u0449\u043E \u0440\u043E\u0437\u0448\u0438\u0444\u0440\u043
   , \u0437\u0440\u043E\u0437\u0443\u043C\u0456\u043B\u0430 \u0434\u043B\u044F \u043B\
   \u044E\u0434\u0438\u043D\u0438, \u044F\u043A\u0430 \u0447\u0430\u0441\u0442\u043E\
   \u2026"
-lastmod: 2024-02-18 23:09:00.082208
+lastmod: 2024-02-19 22:05:08.061586
 model: gpt-4-0125-preview
 summary: "YAML, \u0449\u043E \u0440\u043E\u0437\u0448\u0438\u0444\u0440\u043E\u0432\
   \u0443\u0454\u0442\u044C\u0441\u044F \u044F\u043A \"YAML \u0410 \u043D\u0435 \u041C\

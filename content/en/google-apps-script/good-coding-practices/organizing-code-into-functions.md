@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/google-apps-script/organizing-code-into-functions/
 date: 2024-02-01 21:12:07.643672-07:00
 description: "Organizing code into functions is about structuring your Google Apps\
   \ Script code by separating logical segments into distinct blocks, each performing\
   \ a\u2026"
-lastmod: 2024-02-18 23:09:10.644965
+lastmod: 2024-02-19 22:05:18.181888
 model: gpt-4-0125-preview
 summary: "Organizing code into functions is about structuring your Google Apps Script\
   \ code by separating logical segments into distinct blocks, each performing a\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:26.165722-07:00
@@ -14,7 +12,7 @@ description: "\u092D\u0935\u093F\u0937\u094D\u092F \u092F\u093E \u0905\u0924\u09
   \u0947 \u0932\u093F\u090F \u0924\u093E\u0930\u0940\u0916 \u0911\u092C\u094D\u091C\
   \u0947\u0915\u094D\u091F \u0915\u094B \u0915\u0948\u0938\u0947 \u0938\u0902\u092D\
   \u093E\u0932\u093E \u091C\u093E\u090F\u0964\u2026"
-lastmod: 2024-02-18 23:09:02.594415
+lastmod: 2024-02-19 22:05:10.596308
 model: gpt-4-0125-preview
 summary: "\u092D\u0935\u093F\u0937\u094D\u092F \u092F\u093E \u0905\u0924\u0940\u0924\
   \ \u092E\u0947\u0902 \u090F\u0915 \u0924\u093E\u0930\u0940\u0916 \u0915\u0940 \u0917\

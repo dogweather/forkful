@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/working-with-complex-numbers/
 date: 2024-01-26 04:44:02.681944-07:00
 description: "Les nombres complexes, ceux ayant une partie r\xE9elle et une partie\
   \ imaginaire (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9\
   nierie, la\u2026"
-lastmod: 2024-02-18 23:09:09.059109
+lastmod: 2024-02-19 22:05:16.741437
 model: gpt-4-0125-preview
 summary: "Les nombres complexes, ceux ayant une partie r\xE9elle et une partie imaginaire\
   \ (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9nierie, la\u2026"

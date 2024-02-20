@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:45.071975-07:00
 description: "Supprimer les guillemets d'une cha\xEEne signifie se d\xE9barrasser\
   \ de ces ennuyeux caract\xE8res de guillemets doubles ou simples qui encapsulent\
   \ votre texte. Les\u2026"
-lastmod: 2024-02-18 23:09:08.373592
+lastmod: 2024-02-19 22:05:16.168754
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie se d\xE9barrasser de ces\
   \ ennuyeux caract\xE8res de guillemets doubles ou simples qui encapsulent votre\

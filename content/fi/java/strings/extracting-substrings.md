@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/extracting-substrings/
 date: 2024-01-20 17:45:57.639063-07:00
 description: "Substringit ovat jonoista irrotettuja osia. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t niit\xE4 tiedon k\xE4sittelyyn ja analysointiin - leikaten tarpeelliset palat\
   \ isommasta\u2026"
-lastmod: 2024-02-18 23:09:07.446399
+lastmod: 2024-02-19 22:05:15.329690
 model: gpt-4-1106-preview
 summary: "Substringit ovat jonoista irrotettuja osia. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t niit\xE4 tiedon k\xE4sittelyyn ja analysointiin - leikaten tarpeelliset palat\

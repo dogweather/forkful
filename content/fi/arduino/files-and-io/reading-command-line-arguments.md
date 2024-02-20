@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/reading-command-line-arguments/
 date: 2024-01-20 17:55:53.843687-07:00
 description: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4\
   misen ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\
   \ joustavamman, sill\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.915927
+lastmod: 2024-02-19 22:05:15.734774
 model: gpt-4-1106-preview
 summary: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4misen\
   \ ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\

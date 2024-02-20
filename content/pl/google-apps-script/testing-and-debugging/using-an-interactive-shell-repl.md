@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:09.681795-07:00
 description: "Interaktywne \u015Brodowisko, czyli P\u0119tla Odczyt-Wykonanie-Wydruk\
   \ (REPL), to proste, interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje\
   \ pojedyncze\u2026"
-lastmod: 2024-02-18 23:08:49.149049
+lastmod: 2024-02-19 22:04:54.087958
 model: gpt-4-0125-preview
 summary: "Interaktywne \u015Brodowisko, czyli P\u0119tla Odczyt-Wykonanie-Wydruk (REPL),\
   \ to proste, interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze\u2026"

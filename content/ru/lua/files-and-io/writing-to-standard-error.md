@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/lua/writing-to-standard-error/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:06:13.716727-07:00
@@ -13,7 +11,7 @@ description: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u04
   \u0430\u043C\u043B\u044F\u044F \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\
   \u044B\u0439 \u0432\u044B\u0432\u043E\u0434 (stdout). \u042D\u0442\u043E \u044F\u0441\
   \u043D\u044B\u0439 \u0441\u0438\u0433\u043D\u0430\u043B\u2026"
-lastmod: 2024-02-18 23:08:57.170152
+lastmod: 2024-02-19 22:05:04.284201
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0441\u0442\u0430\u043D\u0434\
   \u0430\u0440\u0442\u043D\u044B\u0439 \u043F\u043E\u0442\u043E\u043A \u043E\u0448\

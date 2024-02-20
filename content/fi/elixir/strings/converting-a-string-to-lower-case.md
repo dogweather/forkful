@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:03.153578-07:00
 description: "Muuttaminen merkkijono pienaakkosiksi tarkoittaa kirjainten muuttamista\
   \ kirjainkoosta riippumattomiksi. Koodarit tekev\xE4t t\xE4m\xE4n yleens\xE4 tekstin\
   \ vertailua\u2026"
-lastmod: 2024-02-18 23:09:07.259772
+lastmod: 2024-02-19 22:05:15.155041
 model: gpt-4-1106-preview
 summary: "Muuttaminen merkkijono pienaakkosiksi tarkoittaa kirjainten muuttamista\
   \ kirjainkoosta riippumattomiksi. Koodarit tekev\xE4t t\xE4m\xE4n yleens\xE4 tekstin\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/working-with-xml/
 date: 2024-01-26 04:35:13.384955-07:00
 description: "Die Arbeit mit XML bedeutet das Parsen, Generieren und Manipulieren\
   \ von XML (eXtensible Markup Language)-Dokumenten unter Verwendung von Code.\u2026"
-lastmod: 2024-02-18 23:09:05.449224
+lastmod: 2024-02-19 22:05:13.367735
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML bedeutet das Parsen, Generieren und Manipulieren von\
   \ XML (eXtensible Markup Language)-Dokumenten unter Verwendung von Code.\u2026"

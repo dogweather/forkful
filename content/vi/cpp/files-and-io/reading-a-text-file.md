@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/cpp/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:34.837298-07:00
@@ -9,7 +7,7 @@ description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c 
   o ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDB\
   i n\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED\
   \ l\xFD nh\u1EADp li\u1EC7u,\u2026"
-lastmod: 2024-02-18 23:08:51.063107
+lastmod: 2024-02-19 22:04:56.268735
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c k\xE9\
   o d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p tr\xEAn \u1ED5 \u0111\u0129a v\xE0\

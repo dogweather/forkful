@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/javascript/searching-and-replacing-text/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:02:00.380736-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u043E\u0438\u0441\u043A \u0438 \u0437\u0430\u043C\u0435\u04
   ? \u042D\u0442\u043E \u043F\u043E\u0432\u0441\u044E\u0434\u0443: \u0438\u0441\u043F\
   \u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043E\u043F\u0435\u0447\u0430\u0442\
   \u043E\u043A \u0432\u2026"
-lastmod: 2024-02-18 23:08:57.441695
+lastmod: 2024-02-19 22:05:04.714642
 model: gpt-4-0125-preview
 summary: "\u041F\u043E\u0438\u0441\u043A \u0438 \u0437\u0430\u043C\u0435\u043D\u0430\
   \ \u0442\u0435\u043A\u0441\u0442\u0430 \u043E\u0437\u043D\u0430\u0447\u0430\u044E\

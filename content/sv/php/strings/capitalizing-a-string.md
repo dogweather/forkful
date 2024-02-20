@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/php/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:01.968609-07:00
 description: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
   \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\
   \ b\xF6rjar\u2026"
-lastmod: 2024-02-18 23:08:51.862025
+lastmod: 2024-02-19 22:04:57.202332
 model: gpt-4-0125-preview
 summary: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
   \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:38.338117-07:00
 description: "Nel mondo della programmazione, lavorare con file CSV (Valori Separati\
   \ da Virgola) implica la lettura e la scrittura di dati in file di testo organizzati\u2026"
-lastmod: 2024-02-18 23:08:56.362247
+lastmod: 2024-02-19 22:05:03.001592
 model: gpt-4-0125-preview
 summary: "Nel mondo della programmazione, lavorare con file CSV (Valori Separati da\
   \ Virgola) implica la lettura e la scrittura di dati in file di testo organizzati\u2026"

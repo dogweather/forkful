@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/python/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:38.280905-07:00
 description: "Een tekstbestand schrijven in Python betekent het opslaan van strings\
   \ in een bestand op je schijf. Programmeurs doen dit om gegevens tussen sessies\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.453710
+lastmod: 2024-02-19 22:05:09.483244
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Python betekent het opslaan van strings in\
   \ een bestand op je schijf. Programmeurs doen dit om gegevens tussen sessies te\u2026"

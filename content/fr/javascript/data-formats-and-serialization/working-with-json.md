@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/javascript/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:53.913724-07:00
 description: "JSON (JavaScript Object Notation) est un format l\xE9ger d'\xE9change\
   \ de donn\xE9es, facile \xE0 lire et \xE0 \xE9crire pour les humains et \xE0 analyser\
   \ et \xE0 g\xE9n\xE9rer pour les\u2026"
-lastmod: 2024-02-18 23:09:09.279908
+lastmod: 2024-02-19 22:05:16.951254
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) est un format l\xE9ger d'\xE9change de\
   \ donn\xE9es, facile \xE0 lire et \xE0 \xE9crire pour les humains et \xE0 analyser\

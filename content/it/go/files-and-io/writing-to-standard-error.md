@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:15.161927-07:00
 description: "Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi\
   \ di errore o diagnostica che non sono destinati al flusso di output principale.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.449622
+lastmod: 2024-02-19 22:05:02.031610
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi\
   \ di errore o diagnostica che non sono destinati al flusso di output principale.\

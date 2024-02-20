@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/logging/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:00.378516-07:00
 description: "Loggen in Visual Basic for Applications (VBA) houdt in dat er informatie\
   \ over het runtimegedrag van een programma wordt vastgelegd in een bestand, console\u2026"
-lastmod: 2024-02-18 23:09:01.673131
+lastmod: 2024-02-19 22:05:09.694333
 model: gpt-4-0125-preview
 summary: "Loggen in Visual Basic for Applications (VBA) houdt in dat er informatie\
   \ over het runtimegedrag van een programma wordt vastgelegd in een bestand, console\u2026"

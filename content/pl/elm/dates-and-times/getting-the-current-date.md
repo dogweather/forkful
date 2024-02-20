@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elm/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:19.415342-07:00
 description: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C\u0105\
   cej daty kalendarzowej z systemu. Robimy to, aby oznacza\u0107 czas wydarze\u0144\
   , planowa\u0107 zadania lub \u015Bledzi\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.529134
+lastmod: 2024-02-19 22:04:54.462811
 model: gpt-4-0125-preview
 summary: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C\u0105\
   cej daty kalendarzowej z systemu. Robimy to, aby oznacza\u0107 czas wydarze\u0144\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/working-with-json/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:18:50.124702-07:00
@@ -10,7 +8,7 @@ description: "JSON, \uC989 JavaScript Object Notation\uC740 \uC11C\uBC84\uC5D0\u
   \uD130 \uC800\uC7A5 \uBC0F \uC804\uC1A1 \uD3EC\uB9F7\uC785\uB2C8\uB2E4. \uD504\uB85C\
   \uADF8\uB798\uBA38\uB4E4\uC740 Google Apps Script\uC5D0\uC11C Google \uC11C\uBE44\
   \uC2A4(\uC608: Sheets, Docs,\u2026"
-lastmod: 2024-02-18 23:09:05.592957
+lastmod: 2024-02-19 22:05:13.508281
 model: gpt-4-0125-preview
 summary: "JSON, \uC989 JavaScript Object Notation\uC740 \uC11C\uBC84\uC5D0\uC11C \uD074\
   \uB77C\uC774\uC5B8\uD2B8\uB85C\uC758 \uD1B5\uC2E0\uACFC \uC124\uC815 \uD30C\uC77C\

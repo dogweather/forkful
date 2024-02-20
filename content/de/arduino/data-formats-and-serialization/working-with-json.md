@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/arduino/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:40.027050-07:00
 description: "JSON, oder JavaScript Object Notation, ist ein leichtgewichtiges Daten-Austauschformat,\
   \ was es perfekt f\xFCr die Datenspeicherung oder Konfigurationsdateien\u2026"
-lastmod: 2024-02-18 23:09:05.168153
+lastmod: 2024-02-19 22:05:13.099376
 model: gpt-4-0125-preview
 summary: "JSON, oder JavaScript Object Notation, ist ein leichtgewichtiges Daten-Austauschformat,\
   \ was es perfekt f\xFCr die Datenspeicherung oder Konfigurationsdateien\u2026"

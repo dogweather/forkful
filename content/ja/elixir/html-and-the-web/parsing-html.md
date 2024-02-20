@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/elixir/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:00.721455-07:00
@@ -14,7 +12,7 @@ description: "Elixir \u3067\u306E HTML \u306E\u89E3\u6790\u306F\u3001HTML \u30C9
   \u305F\u308A\u3067\u304D\u3001\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u304C\
   \u30A6\u30A7\u30D6\u30B3\u30F3\u30C6\u30F3\u30C4\u3092\u52D5\u7684\u306B\u7406\u89E3\
   \u3057\u3066\u5229\u7528\u3067\u304D\u308B\u3088\u3046\u306B\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.640867
+lastmod: 2024-02-19 22:05:00.884602
 model: gpt-4-0125-preview
 summary: "Elixir \u3067\u306E HTML \u306E\u89E3\u6790\u306F\u3001HTML \u30C9\u30AD\
   \u30E5\u30E1\u30F3\u30C8\u304B\u3089\u60C5\u5831\u3092\u62BD\u51FA\u3059\u308B\u3053\

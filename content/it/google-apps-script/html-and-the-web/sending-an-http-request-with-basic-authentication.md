@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:21.512292-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base comporta la codifica\
   \ di un nome utente e di una password in un'intestazione di richiesta per\u2026"
-lastmod: 2024-02-18 23:08:55.477366
+lastmod: 2024-02-19 22:05:02.061103
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base comporta la codifica\
   \ di un nome utente e di una password in un'intestazione di richiesta per\u2026"

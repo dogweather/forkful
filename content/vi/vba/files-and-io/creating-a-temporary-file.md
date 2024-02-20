@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:34.445603-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Visu
   \ Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c t\u1EA1o ra m\u1ED9t t\u1EC7\
   p th\xF4ng qua l\u1EADp tr\xECnh d\xF9ng cho m\u1EE5c \u0111\xEDch ng\u1EAFn h\u1EA1\
   n, th\u01B0\u1EDDng l\xE0\u2026"
-lastmod: 2024-02-18 23:08:50.531456
+lastmod: 2024-02-19 22:04:55.619038
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Visual Basic\
   \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c t\u1EA1o ra m\u1ED9t t\u1EC7p th\xF4\

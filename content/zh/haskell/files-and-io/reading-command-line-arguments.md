@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/haskell/reading-command-line-arguments/
 date: 2024-01-20 17:56:17.532286-07:00
 description: "\u8B80\u53D6\u547D\u4EE4\u5217\u53C3\u6578\u8B93\u7A0B\u5E8F\u7372\u5F97\
   \u5F9E\u5916\u90E8\u50B3\u5165\u7684\u4FE1\u606F\u3002\u7A0B\u5F0F\u8A2D\u8A08\u5E2B\
@@ -8,7 +6,7 @@ description: "\u8B80\u53D6\u547D\u4EE4\u5217\u53C3\u6578\u8B93\u7A0B\u5E8F\u7372
   \u500B\u7A0B\u5E8F\u80FD\u66F4\u9748\u6D3B\u5730\u61C9\u5C0D\u4E0D\u540C\u7684\u4EFB\
   \u52D9\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.191908
+lastmod: 2024-02-19 22:05:06.872896
 model: gpt-4-1106-preview
 summary: "\u8B80\u53D6\u547D\u4EE4\u5217\u53C3\u6578\u8B93\u7A0B\u5E8F\u7372\u5F97\
   \u5F9E\u5916\u90E8\u50B3\u5165\u7684\u4FE1\u606F\u3002\u7A0B\u5F0F\u8A2D\u8A08\u5E2B\

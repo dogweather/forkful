@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:26.395980-07:00
 description: "Das Vergleichen zweier Daten in C beinhaltet die Bestimmung der chronologischen\
   \ Beziehung zwischen ihnen \u2013 ob ein Datum dem anderen vorausgeht oder ob sie\u2026"
-lastmod: 2024-02-18 23:09:05.388102
+lastmod: 2024-02-19 22:05:13.307725
 model: gpt-4-0125-preview
 summary: "Das Vergleichen zweier Daten in C beinhaltet die Bestimmung der chronologischen\
   \ Beziehung zwischen ihnen \u2013 ob ein Datum dem anderen vorausgeht oder ob sie\u2026"

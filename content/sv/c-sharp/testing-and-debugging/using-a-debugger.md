@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/using-a-debugger/
 date: 2024-01-26 03:48:27.575605-07:00
 description: "Att anv\xE4nda en debugger inneb\xE4r att man utnyttjar specialverktyg\
   \ f\xF6r att testa och diagnostisera kod. Programmerare g\xF6r det f\xF6r att krossa\
   \ buggar, f\xF6rst\xE5\u2026"
-lastmod: 2024-02-18 23:08:51.800212
+lastmod: 2024-02-19 22:04:57.134833
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda en debugger inneb\xE4r att man utnyttjar specialverktyg f\xF6\
   r att testa och diagnostisera kod. Programmerare g\xF6r det f\xF6r att krossa buggar,\

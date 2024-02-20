@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/concatenating-strings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:50.789132-07:00
 description: "Das Verketten von Strings in C bezieht sich auf das Zusammenf\xFChren\
   \ von zwei oder mehr Strings hintereinander, um einen neuen String zu bilden.\u2026"
-lastmod: 2024-02-18 23:09:05.363876
+lastmod: 2024-02-19 22:05:13.284440
 model: gpt-4-0125-preview
 summary: "Das Verketten von Strings in C bezieht sich auf das Zusammenf\xFChren von\
   \ zwei oder mehr Strings hintereinander, um einen neuen String zu bilden.\u2026"

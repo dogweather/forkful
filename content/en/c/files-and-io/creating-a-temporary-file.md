@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c/creating-a-temporary-file/
 date: 2024-02-03 17:50:22.461341-07:00
 description: "Creating a temporary file in C involves generating a file that is meant\
   \ to be used for a short duration, usually as scratch space for data processing\
   \ or\u2026"
-lastmod: 2024-02-18 23:09:11.541476
+lastmod: 2024-02-19 22:05:18.990507
 model: gpt-4-0125-preview
 summary: "Creating a temporary file in C involves generating a file that is meant\
   \ to be used for a short duration, usually as scratch space for data processing\

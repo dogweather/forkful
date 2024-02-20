@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/python/working-with-toml/
 date: 2024-01-26 04:25:23.567870-07:00
 description: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un formato di\
   \ serializzazione dei dati simile a JSON o YAML, ma mira alla semplicit\xE0 e leggibilit\xE0\
   . I\u2026"
-lastmod: 2024-02-18 23:08:55.543624
+lastmod: 2024-02-19 22:05:02.132325
 model: gpt-4-0125-preview
 summary: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un formato di serializzazione\
   \ dei dati simile a JSON o YAML, ma mira alla semplicit\xE0 e leggibilit\xE0. I\u2026"

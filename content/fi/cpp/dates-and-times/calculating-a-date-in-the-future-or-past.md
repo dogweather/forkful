@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:36.793597-07:00
 description: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4.\
   \ Tarvitaan esimerkiksi m\xE4\xE4ritt\xE4m\xE4\xE4n er\xE4p\xE4ivi\xE4 tai ajastamaan\
   \ tapahtumia."
-lastmod: 2024-02-18 23:09:07.958732
+lastmod: 2024-02-19 22:05:15.773806
 model: gpt-4-1106-preview
 summary: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4. Tarvitaan\
   \ esimerkiksi m\xE4\xE4ritt\xE4m\xE4\xE4n er\xE4p\xE4ivi\xE4 tai ajastamaan tapahtumia."

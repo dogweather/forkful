@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/elixir/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:57.682674-07:00
 description: "\"Mik\xE4 ja miksi?\" Kun puhutaan merkkien poistamisesta kuvion mukaisesti\
   \ Elixiriss\xE4, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista\u2026"
-lastmod: 2024-02-18 23:09:07.256762
+lastmod: 2024-02-19 22:05:15.152293
 model: gpt-4-1106-preview
 summary: "\"Mik\xE4 ja miksi?\" Kun puhutaan merkkien poistamisesta kuvion mukaisesti\
   \ Elixiriss\xE4, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/concatenating-strings/
 date: 2024-01-27 10:42:44.053991-07:00
 description: "La concat\xE9nation de cha\xEEnes de caract\xE8res consiste \xE0 joindre\
   \ deux ou plusieurs cha\xEEnes pour former un seul texte. Vous pourriez avoir besoin\
   \ de fusionner\u2026"
-lastmod: 2024-02-18 23:09:08.424776
+lastmod: 2024-02-19 22:05:16.215504
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res consiste \xE0 joindre\
   \ deux ou plusieurs cha\xEEnes pour former un seul texte. Vous pourriez avoir besoin\

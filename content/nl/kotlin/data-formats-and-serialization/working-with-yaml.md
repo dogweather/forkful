@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/working-with-yaml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:10.054500-07:00
 description: "YAML, wat staat voor \"YAML Ain't Markup Language\", is een standaard\
   \ voor het serialiseren van gegevens die leesbaar is voor mensen. Programmeurs gebruiken\u2026"
-lastmod: 2024-02-18 23:09:01.828245
+lastmod: 2024-02-19 22:05:09.844342
 model: gpt-4-0125-preview
 summary: "YAML, wat staat voor \"YAML Ain't Markup Language\", is een standaard voor\
   \ het serialiseren van gegevens die leesbaar is voor mensen. Programmeurs gebruiken\u2026"

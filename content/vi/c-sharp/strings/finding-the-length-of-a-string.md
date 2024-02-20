@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c-sharp/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:46.937119-07:00
@@ -9,7 +7,7 @@ description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i \u0111\u1
   \ c\u1EE7a n\xF3. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
   \ x\xE1c nh\u1EADn \u0111\u1EA7u v\xE0o, l\u1EB7p qua c\xE1c k\xFD t\u1EF1, ph\xE2\
   n b\u1ED5 t\xE0i\u2026"
-lastmod: 2024-02-18 23:08:50.687940
+lastmod: 2024-02-19 22:04:55.818434
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i \u0111\u1EC1 c\u1EAD\
   p \u0111\u1EBFn vi\u1EC7c \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 c\u1EE7\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:00:45.154112-07:00
 description: "HTTP request with basic authentication\uC740 \uC11C\uBC84\uC5D0 \uC815\
   \uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uC81C\uCD9C\uD560 \uB54C \uC0AC\uC6A9\
@@ -9,7 +7,7 @@ description: "HTTP request with basic authentication\uC740 \uC11C\uBC84\uC5D0 \u
   \ \uC778\uC99D\uD558\uC5EC \uB370\uC774\uD130 \uBCF4\uC548\uC744 \uC720\uC9C0\uD560\
   \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.619684
+lastmod: 2024-02-19 22:05:14.522001
 model: gpt-4-1106-preview
 summary: "HTTP request with basic authentication\uC740 \uC11C\uBC84\uC5D0 \uC815\uBCF4\
   \uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uC81C\uCD9C\uD560 \uB54C \uC0AC\uC6A9\uC790\

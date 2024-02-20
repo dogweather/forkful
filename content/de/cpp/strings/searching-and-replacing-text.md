@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/searching-and-replacing-text/
 date: 2024-01-20 17:57:13.454196-07:00
 description: "Suchen und Ersetzen von Text ist ein Basiskonzept, bei dem Zeichenketten\
   \ innerhalb einer gr\xF6\xDFeren Textmenge gefunden und durch andere ersetzt werden.\u2026"
-lastmod: 2024-02-18 23:09:05.173604
+lastmod: 2024-02-19 22:05:13.104588
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text ist ein Basiskonzept, bei dem Zeichenketten\
   \ innerhalb einer gr\xF6\xDFeren Textmenge gefunden und durch andere ersetzt werden.\u2026"

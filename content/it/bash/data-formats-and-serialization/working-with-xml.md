@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/bash/working-with-xml/
 date: 2024-01-26 04:27:35.065879-07:00
 description: "Lavorare con XML comporta l'analisi, l'estrazione e la manipolazione\
   \ dei dati nel formato Extensible Markup Language. I programmatori si scontrano\
   \ con XML\u2026"
-lastmod: 2024-02-18 23:08:56.075747
+lastmod: 2024-02-19 22:05:02.696926
 model: gpt-4-0125-preview
 summary: "Lavorare con XML comporta l'analisi, l'estrazione e la manipolazione dei\
   \ dati nel formato Extensible Markup Language. I programmatori si scontrano con\

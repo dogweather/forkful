@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:47.675787-07:00
 description: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomista,\
   \ jotka ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\u2026"
-lastmod: 2024-02-18 23:09:08.127464
+lastmod: 2024-02-19 22:05:15.928784
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomista, jotka\
   \ ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\u2026"

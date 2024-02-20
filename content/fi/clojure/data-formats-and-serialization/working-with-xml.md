@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/clojure/working-with-xml/
 date: 2024-01-26 04:29:00.132074-07:00
 description: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on sek\xE4\
   \ ihmis- ett\xE4 koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa,\u2026"
-lastmod: 2024-02-18 23:09:07.254652
+lastmod: 2024-02-19 22:05:15.150341
 model: gpt-4-0125-preview
 summary: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on sek\xE4\
   \ ihmis- ett\xE4 koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa,\u2026"

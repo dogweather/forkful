@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/printing-debug-output/
 date: 2024-01-20 17:52:57.634293-07:00
 description: "Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und Programmstatus\
   \ auf einer Konsole oder Logdatei w\xE4hrend der Entwicklung. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.964802
+lastmod: 2024-02-19 22:05:12.905134
 model: gpt-4-1106-preview
 summary: "Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und Programmstatus\
   \ auf einer Konsole oder Logdatei w\xE4hrend der Entwicklung. Programmierer\u2026"

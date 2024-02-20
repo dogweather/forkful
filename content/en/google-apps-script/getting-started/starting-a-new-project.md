@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/starting-a-new-project/
 date: 2024-02-01 21:12:08.207343-07:00
 description: "Starting a new project in Google Apps Script (GAS) entails initializing\
   \ a script file within the Google ecosystem (Google Drive, Docs, Sheets, etc.) to\u2026"
-lastmod: 2024-02-18 23:09:10.640127
+lastmod: 2024-02-19 22:05:18.177566
 model: gpt-4-0125-preview
 summary: "Starting a new project in Google Apps Script (GAS) entails initializing\
   \ a script file within the Google ecosystem (Google Drive, Docs, Sheets, etc.) to\u2026"

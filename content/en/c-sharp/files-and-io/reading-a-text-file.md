@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/reading-a-text-file/
 date: 2024-01-20 17:53:50.228158-07:00
 description: "Reading a text file is grabbing data from a file that contains text.\
   \ Programmers do this to load configurations, read data, or fetch resources that\
   \ are\u2026"
-lastmod: 2024-02-18 23:09:11.071510
+lastmod: 2024-02-19 22:05:18.569828
 model: gpt-4-1106-preview
 summary: "Reading a text file is grabbing data from a file that contains text. Programmers\
   \ do this to load configurations, read data, or fetch resources that are\u2026"

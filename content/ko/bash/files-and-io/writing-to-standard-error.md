@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:29.502397-07:00
@@ -11,7 +9,7 @@ description: "Bash\uC5D0\uC11C \uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uC4F0\uA
   \uB97C \uD1B5\uD574 \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uB97C \uC27D\uAC8C \uC2DD\uBCC4\
   , \uB85C\uAE45\uD558\uAC70\uB098 \uC2EC\uC9C0\uC5B4 \uBB34\uC2DC\uD558\uC5EC \uB514\
   \uBC84\uAE45 \uBC0F \uB85C\uAE45 \uACFC\uC815\uC744 \uB3D5\uC2B5\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.511132
+lastmod: 2024-02-19 22:05:14.418802
 model: gpt-4-0125-preview
 summary: "Bash\uC5D0\uC11C \uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uC4F0\uAE30\uB294\
   \ \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uB098 \uC911\uC694\uD55C \uC9C4\uB2E8 \uCD9C\uB825\

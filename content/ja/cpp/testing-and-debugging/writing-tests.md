@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/cpp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:06.251652-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.193884
+lastmod: 2024-02-19 22:05:01.670869
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30C6\u30B9\u30C8\u306E\u4F5C\u6210"

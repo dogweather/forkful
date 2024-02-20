@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/searching-and-replacing-text/
 date: 2024-01-20 17:58:41.697270-07:00
 description: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika textstr\xE4\
   ngar och byta ut dem med n\xE5got annat. Programmerare g\xF6r detta f\xF6r att snabbt\
   \ uppdatera kod,\u2026"
-lastmod: 2024-02-18 23:08:52.279207
+lastmod: 2024-02-19 22:04:57.667028
 model: gpt-4-1106-preview
 summary: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika textstr\xE4\
   ngar och byta ut dem med n\xE5got annat. Programmerare g\xF6r detta f\xF6r att snabbt\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/lua/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:48.766397-07:00
 description: "Capitalizar uma string envolve modificar o primeiro caractere de cada\
   \ palavra em uma frase para mai\xFAscula, garantindo que o restante esteja em min\xFA\
   scula.\u2026"
-lastmod: 2024-02-18 23:08:58.266166
+lastmod: 2024-02-19 22:05:05.742168
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve modificar o primeiro caractere de cada palavra\
   \ em uma frase para mai\xFAscula, garantindo que o restante esteja em min\xFAscula.\u2026"

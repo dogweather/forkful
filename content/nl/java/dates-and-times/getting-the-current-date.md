@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/java/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:14.737043-07:00
 description: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013\
   \ het draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:01.724678
+lastmod: 2024-02-19 22:05:09.744621
 model: gpt-4-0125-preview
 summary: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013 het\
   \ draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit de\u2026"

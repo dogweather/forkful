@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/lua/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:29.529406-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
   \ analisar e gerar dados de texto organizados em linhas e colunas, usando v\xED\
   rgulas para\u2026"
-lastmod: 2024-02-18 23:08:58.304268
+lastmod: 2024-02-19 22:05:05.785137
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve analisar\
   \ e gerar dados de texto organizados em linhas e colunas, usando v\xEDrgulas para\u2026"

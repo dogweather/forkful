@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/sending-an-http-request/
 date: 2024-01-20 18:00:55.288046-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, aby tw\xF3j program\
   \ porozmawia\u0142 z serwerem: zapyta\u0142 o dane, przes\u0142a\u0142 formularz\
   \ albo pobi\u0142 witryn\u0119. Programi\u015Bci robi\u0105 to,\u2026"
-lastmod: 2024-02-18 23:08:49.949883
+lastmod: 2024-02-19 22:04:54.899596
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, aby tw\xF3j program\
   \ porozmawia\u0142 z serwerem: zapyta\u0142 o dane, przes\u0142a\u0142 formularz\

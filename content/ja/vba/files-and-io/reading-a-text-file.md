@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:55.795765-07:00
 description: "Visual Basic for\u2026"
-lastmod: 2024-02-18 23:08:54.777780
+lastmod: 2024-02-19 22:05:01.073110
 model: gpt-4-0125-preview
 summary: "Visual Basic for\u2026"
 title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC\u307F"

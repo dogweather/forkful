@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/powershell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:50.252319-07:00
 description: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w formuj\u0105\
   ce wzorzec wyszukiwania, g\u0142\xF3wnie u\u017Cywane do wyszukiwania ci\u0105g\xF3\
   w znak\xF3w i ich manipulacji.\u2026"
-lastmod: 2024-02-18 23:08:49.817096
+lastmod: 2024-02-19 22:04:54.758419
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w formuj\u0105ce wzorzec\
   \ wyszukiwania, g\u0142\xF3wnie u\u017Cywane do wyszukiwania ci\u0105g\xF3w znak\xF3\

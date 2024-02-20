@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pl/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:31.176356-07:00
 description: JavaScript (JS) often reads text files to process data. Programmers do
   it to pull in configurations, fetch content, or parse external data.
-lastmod: 2024-02-18 23:08:50.010780
+lastmod: 2024-02-19 22:04:54.965244
 model: gpt-4-1106-preview
 summary: JavaScript (JS) often reads text files to process data. Programmers do it
   to pull in configurations, fetch content, or parse external data.

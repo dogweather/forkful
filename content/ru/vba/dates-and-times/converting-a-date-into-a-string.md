@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:18.817691-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430
   \ \u043D\u0430 \u0444\u043E\u0440\u043C\u0430\u0442 \u0441\u0442\u0440\u043E\u043A\
   \u0438. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B\
   \u2026"
-lastmod: 2024-02-18 23:08:56.800988
+lastmod: 2024-02-19 22:05:03.681472
 model: gpt-4-0125-preview
 summary: "\u041F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\
   \u0438\u0435 \u0434\u0430\u0442\u044B \u0432 \u0441\u0442\u0440\u043E\u043A\u0443\

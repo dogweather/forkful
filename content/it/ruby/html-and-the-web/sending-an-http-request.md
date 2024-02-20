@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/ruby/sending-an-http-request/
 date: 2024-01-20 18:00:30.941065-07:00
 description: "Inviare una richiesta HTTP significa dialogare con un altro sistema\
   \ via web; \xE8 come chiedere a un sito di inviarti dei dati o di accettare i tuoi.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:56.380053
+lastmod: 2024-02-19 22:05:03.020239
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP significa dialogare con un altro sistema via\
   \ web; \xE8 come chiedere a un sito di inviarti dei dati o di accettare i tuoi.\

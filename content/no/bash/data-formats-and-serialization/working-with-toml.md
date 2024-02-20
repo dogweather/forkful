@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/working-with-toml/
 date: 2024-01-26 04:19:10.421191-07:00
 description: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et format\
   \ for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet;\
   \ det er\u2026"
-lastmod: 2024-02-18 23:08:54.080752
+lastmod: 2024-02-19 22:05:00.264998
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et format\
   \ for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet;\

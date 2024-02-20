@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/javascript/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:57.584565-07:00
 description: "Stringinterpolatie is een manier om variabelen rechtstreeks in een string\
   \ in te sluiten. Programmeurs gebruiken het om variabelen en strings effici\xEB\
   nt te\u2026"
-lastmod: 2024-02-18 23:09:02.260253
+lastmod: 2024-02-19 22:05:10.272988
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie is een manier om variabelen rechtstreeks in een string\
   \ in te sluiten. Programmeurs gebruiken het om variabelen en strings effici\xEB\

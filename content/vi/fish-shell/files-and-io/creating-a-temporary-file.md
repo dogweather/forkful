@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:24.959713-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\x
   \ l\xE0m m\u1ED9t t\u1EC7p cho vi\u1EC7c s\u1EED d\u1EE5ng ng\u1EAFn h\u1EA1n. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u01B0u tr\u1EEF\
   \ d\u1EEF li\u1EC7u ch\u1EC9 c\u1EA7n thi\u1EBFt trong qu\xE1 tr\xECnh\u2026"
-lastmod: 2024-02-18 23:08:51.207818
+lastmod: 2024-02-19 22:04:56.472129
 model: gpt-4-0125-preview
 summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 l\xE0\
   m m\u1ED9t t\u1EC7p cho vi\u1EC7c s\u1EED d\u1EE5ng ng\u1EAFn h\u1EA1n. C\xE1c l\u1EAD\

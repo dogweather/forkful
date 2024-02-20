@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/javascript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:36.211417-07:00
 description: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language (YAML N\xE3o \xE9\
   \ Uma Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados\
   \ leg\xEDvel por humanos.\u2026"
-lastmod: 2024-02-18 23:08:58.552490
+lastmod: 2024-02-19 22:05:06.048589
 model: gpt-4-0125-preview
 summary: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma\
   \ Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xED\

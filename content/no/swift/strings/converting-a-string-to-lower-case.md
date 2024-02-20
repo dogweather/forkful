@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/swift/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:19.733796-07:00
 description: "N\xE5r du konverterer en streng til sm\xE5 bokstaver, endrer du alle\
   \ bokstavene til deres miniatyr versjoner. Programmerere gj\xF8r dette for \xE5\
   \ forenkle\u2026"
-lastmod: 2024-02-18 23:08:54.256718
+lastmod: 2024-02-19 22:05:00.403179
 model: gpt-4-1106-preview
 summary: "N\xE5r du konverterer en streng til sm\xE5 bokstaver, endrer du alle bokstavene\
   \ til deres miniatyr versjoner. Programmerere gj\xF8r dette for \xE5 forenkle\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/lua/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:45.872471-07:00
 description: "Das Schreiben auf Standardfehler (stderr) bedeutet, Fehlermeldungen\
   \ und diagnostische Ausgaben auf einen separaten Kanal zu leiten, getrennt von der\u2026"
-lastmod: 2024-02-18 23:09:05.024593
+lastmod: 2024-02-19 22:05:12.962379
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler (stderr) bedeutet, Fehlermeldungen und\
   \ diagnostische Ausgaben auf einen separaten Kanal zu leiten, getrennt von der\u2026"

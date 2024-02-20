@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elixir/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:44.106161-07:00
 description: "Het berekenen van een datum in de toekomst of het verleden houdt in\
   \ dat je een datum bepaalt die zoveel dagen, maanden of jaren vanaf een specifiek\
   \ moment\u2026"
-lastmod: 2024-02-18 23:09:01.541336
+lastmod: 2024-02-19 22:05:09.567302
 model: gpt-4-0125-preview
 summary: "Het berekenen van een datum in de toekomst of het verleden houdt in dat\
   \ je een datum bepaalt die zoveel dagen, maanden of jaren vanaf een specifiek moment\u2026"

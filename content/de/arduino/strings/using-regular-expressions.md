@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/arduino/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:57.859873-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuster\
   \ definieren, die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation\
   \ verwendet\u2026"
-lastmod: 2024-02-18 23:09:05.135521
+lastmod: 2024-02-19 22:05:13.067828
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuster definieren,\
   \ die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation verwendet\u2026"

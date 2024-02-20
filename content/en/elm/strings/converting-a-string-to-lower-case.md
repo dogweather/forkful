@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:12.966900-07:00
 description: "Converting a string to lowercase means transforming all alphabetical\
   \ characters to their lower-case form. Programmers often do this for case-insensitive\u2026"
-lastmod: 2024-02-18 23:09:10.959308
+lastmod: 2024-02-19 22:05:18.466216
 model: gpt-4-1106-preview
 summary: "Converting a string to lowercase means transforming all alphabetical characters\
   \ to their lower-case form. Programmers often do this for case-insensitive\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:52.888017-07:00
 description: "Refactoring is het proces van het wijzigen van de interne structuur\
   \ van een computerprogramma zonder het externe gedrag aan te passen. Programmeurs\
   \ doen\u2026"
-lastmod: 2024-02-18 23:09:02.192171
+lastmod: 2024-02-19 22:05:10.208478
 model: gpt-4-0125-preview
 summary: "Refactoring is het proces van het wijzigen van de interne structuur van\
   \ een computerprogramma zonder het externe gedrag aan te passen. Programmeurs doen\u2026"

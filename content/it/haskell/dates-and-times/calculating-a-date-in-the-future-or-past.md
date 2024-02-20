@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/haskell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:21.252897-07:00
 description: "Calcolare una data nel futuro o nel passato \xE8 una pratica comune\
   \ in programmazione, utile per gestire eventi, scadenze e funzionalit\xE0 legate\
   \ al tempo. I\u2026"
-lastmod: 2024-02-18 23:08:55.942870
+lastmod: 2024-02-19 22:05:02.554025
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato \xE8 una pratica comune in programmazione,\
   \ utile per gestire eventi, scadenze e funzionalit\xE0 legate al tempo. I\u2026"

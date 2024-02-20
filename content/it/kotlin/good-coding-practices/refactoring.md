@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/refactoring/
 date: 2024-01-26 01:43:58.849283-07:00
 description: "Il refactoring \xE8 il processo di modificare il codice esistente per\
   \ migliorarne la struttura, la leggibilit\xE0 e le prestazioni senza cambiarne il\u2026"
-lastmod: 2024-02-18 23:08:55.854103
+lastmod: 2024-02-19 22:05:02.462820
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di modificare il codice esistente per migliorarne\
   \ la struttura, la leggibilit\xE0 e le prestazioni senza cambiarne il\u2026"

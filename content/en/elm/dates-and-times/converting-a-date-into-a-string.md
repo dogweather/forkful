@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:25.018272-07:00
 description: "Converting a date into a string means turning a date value, which computers\
   \ understand, into a human-readable format. We do this so users can see dates in\u2026"
-lastmod: 2024-02-18 23:09:10.983161
+lastmod: 2024-02-19 22:05:18.489021
 model: gpt-4-1106-preview
 summary: "Converting a date into a string means turning a date value, which computers\
   \ understand, into a human-readable format. We do this so users can see dates in\u2026"

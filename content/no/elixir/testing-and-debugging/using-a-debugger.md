@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/using-a-debugger/
 date: 2024-01-26 03:48:17.287774-07:00
 description: "\xC5 bruke en debugger i Elixir inneb\xE6rer \xE5 stegge gjennom koden\
   \ din, inspisere variabler og spore flyter for \xE5 knuse feil. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.609202
+lastmod: 2024-02-19 22:04:59.735677
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en debugger i Elixir inneb\xE6rer \xE5 stegge gjennom koden din,\
   \ inspisere variabler og spore flyter for \xE5 knuse feil. Programmerere gj\xF8\

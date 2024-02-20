@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:41.076417-07:00
 description: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
   \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\
   r detta\u2026"
-lastmod: 2024-02-18 23:08:52.254260
+lastmod: 2024-02-19 22:04:57.639003
 model: gpt-4-0125-preview
 summary: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
   \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\

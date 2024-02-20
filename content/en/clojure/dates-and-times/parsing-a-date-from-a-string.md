@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:42.042436-07:00
 description: "Parsing a date from a string in Clojure is about converting textual\
   \ representations of dates and times into a more usable form (e.g., Clojure's DateTime\u2026"
-lastmod: 2024-02-18 23:09:10.733267
+lastmod: 2024-02-19 22:05:18.261688
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Clojure is about converting textual representations\
   \ of dates and times into a more usable form (e.g., Clojure's DateTime\u2026"

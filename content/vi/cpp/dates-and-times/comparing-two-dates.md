@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/cpp/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:09.015855-07:00
@@ -8,7 +6,7 @@ description: "So s\xE1nh c\xE1c ng\xE0y l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh xe
   \ trong hai ng\xE0y n\xE0o l\xE0 s\u1EDBm h\u01A1n, mu\u1ED9n h\u01A1n, ho\u1EB7\
   c n\u1EBFu ch\xFAng gi\u1ED1ng nhau. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
   n vi\u1EC7c n\xE0y \u0111\u1EC3 t\u1ED5 ch\u1EE9c s\u1EF1\u2026"
-lastmod: 2024-02-18 23:08:51.057911
+lastmod: 2024-02-19 22:04:56.262256
 model: gpt-4-0125-preview
 summary: "So s\xE1nh c\xE1c ng\xE0y l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh xem trong\
   \ hai ng\xE0y n\xE0o l\xE0 s\u1EDBm h\u01A1n, mu\u1ED9n h\u01A1n, ho\u1EB7c n\u1EBF\

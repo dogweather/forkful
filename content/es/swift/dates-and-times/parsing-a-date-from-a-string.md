@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/swift/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:24.759831-07:00
 description: "Analizar una fecha a partir de una cadena implica convertir representaciones\
   \ textuales de fecha y hora en un objeto `Date`. Este proceso es esencial en\u2026"
-lastmod: 2024-02-18 23:09:10.368346
+lastmod: 2024-02-19 22:05:17.930475
 model: gpt-4-0125-preview
 summary: "Analizar una fecha a partir de una cadena implica convertir representaciones\
   \ textuales de fecha y hora en un objeto `Date`. Este proceso es esencial en\u2026"

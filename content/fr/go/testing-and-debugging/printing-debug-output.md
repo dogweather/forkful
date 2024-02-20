@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:09.294631-07:00
 description: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\"\
   \ consiste \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les\
   \ d\xE9veloppeurs \xE0\u2026"
-lastmod: 2024-02-18 23:09:08.237077
+lastmod: 2024-02-19 22:05:16.044079
 model: gpt-4-0125-preview
 summary: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\" consiste\
   \ \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les d\xE9\

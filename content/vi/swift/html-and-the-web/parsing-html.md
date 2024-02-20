@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:26.065031-07:00
@@ -8,7 +6,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc
   \ \"b\xE1t canh\" m\xE3 c\u1EE7a m\u1ED9t trang web \u0111\u1EC3 t\xECm nh\u1EEF\
   ng th\xF4ng tin h\u1EEFu \xEDch \u2014 v\u0103n b\u1EA3n, li\xEAn k\u1EBFt, h\xEC\
   nh \u1EA3nh, v.v. C\xE1c l\u1EADp\u2026"
-lastmod: 2024-02-18 23:08:51.087690
+lastmod: 2024-02-19 22:04:56.300601
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua \"\
   b\xE1t canh\" m\xE3 c\u1EE7a m\u1ED9t trang web \u0111\u1EC3 t\xECm nh\u1EEFng th\xF4\

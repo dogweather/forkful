@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/javascript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:14.242754-07:00
 description: "\xC5 skrive tester i JavaScript refererer til praksisen med \xE5 lage\
   \ automatiserte skript som kj\xF8rer koden din for \xE5 sikre at den oppf\xF8rer\
   \ seg som forventet,\u2026"
-lastmod: 2024-02-18 23:08:54.312256
+lastmod: 2024-02-19 22:05:00.463717
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i JavaScript refererer til praksisen med \xE5 lage automatiserte\
   \ skript som kj\xF8rer koden din for \xE5 sikre at den oppf\xF8rer seg som forventet,\u2026"

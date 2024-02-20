@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/refactoring/
 date: 2024-01-26 03:37:27.793593-07:00
 description: "Refaktoryzacja to proces restrukturyzowania istniej\u0105cego kodu komputerowego\
   \ - zmiana faktoringu - bez zmiany jego zewn\u0119trznego zachowania. Programi\u015B\
   ci\u2026"
-lastmod: 2024-02-18 23:08:49.398142
+lastmod: 2024-02-19 22:04:54.319826
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces restrukturyzowania istniej\u0105cego kodu komputerowego\
   \ - zmiana faktoringu - bez zmiany jego zewn\u0119trznego zachowania. Programi\u015B\

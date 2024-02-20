@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:08.837927-07:00
 description: "L'analisi di una data da una stringa in Go comporta la conversione della\
   \ data rappresentata come testo in un formato pi\xF9 utilizzabile (ad es.,\u2026"
-lastmod: 2024-02-18 23:08:55.442345
+lastmod: 2024-02-19 22:05:02.023679
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa in Go comporta la conversione della\
   \ data rappresentata come testo in un formato pi\xF9 utilizzabile (ad es.,\u2026"

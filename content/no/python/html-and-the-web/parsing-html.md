@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/python/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:45.226842-07:00
 description: "Parsing av HTML involverer analyse av en nettsides HTML-kode for \xE5\
   \ trekke ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping,\u2026"
-lastmod: 2024-02-18 23:08:53.522300
+lastmod: 2024-02-19 22:04:59.639885
 model: gpt-4-0125-preview
 summary: "Parsing av HTML involverer analyse av en nettsides HTML-kode for \xE5 trekke\
   \ ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping,\u2026"

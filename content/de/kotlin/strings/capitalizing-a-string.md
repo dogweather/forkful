@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/kotlin/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:36.179992-07:00
 description: "Das Gro\xDFschreiben eines Strings in der Programmierung beinhaltet\
   \ das Umwandeln des ersten Zeichens des Strings in Gro\xDFbuchstaben, sofern dies\
   \ noch nicht\u2026"
-lastmod: 2024-02-18 23:09:04.808215
+lastmod: 2024-02-19 22:05:12.755638
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in der Programmierung beinhaltet das\
   \ Umwandeln des ersten Zeichens des Strings in Gro\xDFbuchstaben, sofern dies noch\

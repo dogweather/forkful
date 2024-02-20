@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/working-with-complex-numbers/
 date: 2024-01-26 04:46:13.085499-07:00
 description: "Los n\xFAmeros complejos, que constan de una parte real y una parte\
   \ imaginaria (generalmente escritos como a + bi), abren la puerta a c\xE1lculos\
   \ que son\u2026"
-lastmod: 2024-02-18 23:09:09.696323
+lastmod: 2024-02-19 22:05:17.324819
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, que constan de una parte real y una parte imaginaria\
   \ (generalmente escritos como a + bi), abren la puerta a c\xE1lculos que son\u2026"

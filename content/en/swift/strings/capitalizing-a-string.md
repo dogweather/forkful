@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/capitalizing-a-string/
 date: 2024-02-03 19:02:38.526736-07:00
 description: "Capitalizing a string in Swift modifies the given string so that its\
   \ first character is uppercase, and the remaining characters are lowercase. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.379937
+lastmod: 2024-02-19 22:05:18.842769
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in Swift modifies the given string so that its first\
   \ character is uppercase, and the remaining characters are lowercase. Programmers\u2026"

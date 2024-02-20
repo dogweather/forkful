@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/typescript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:58.511053-07:00
@@ -14,7 +12,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uD654\uD558\uB294 \uAC
   \uB85D \uD558\uC5EC \uD14D\uC2A4\uD2B8 \uCC98\uB9AC \uC2DC \uACB0\uACFC\uBB3C\uC774\
   \ \uC804\uBB38\uC801\uC774\uACE0 \uC77D\uAE30 \uC27D\uAC8C \uB9CC\uB4DC\uB294 \uB370\
   \u2026"
-lastmod: 2024-02-18 23:09:05.794799
+lastmod: 2024-02-19 22:05:13.707458
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uD654\uD558\uB294 \uAC83\uC740\
   \ \uC8FC\uC5B4\uC9C4 \uBB38\uC790\uC5F4\uC758 \uCCAB \uBC88\uC9F8 \uBB38\uC790\uB97C\

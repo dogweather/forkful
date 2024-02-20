@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/clojure/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:56.244219-07:00
@@ -11,7 +9,7 @@ description: "\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199\u6D89\u53CA\u4FEE
   \u5927\u5199\u64CD\u4F5C\uFF0C\u4EE5\u786E\u4FDD\u6570\u636E\u7684\u4E00\u81F4\u6027\
   \uFF0C\u7279\u522B\u662F\u5BF9\u4E8E\u540D\u79F0\u548C\u5730\u70B9\uFF0C\u6216\u8005\
   \u7B26\u5408\u7528\u6237\u754C\u9762\u7684\u8BED\u6CD5\u89C4\u5219\u3002"
-lastmod: 2024-02-18 23:08:58.813351
+lastmod: 2024-02-19 22:05:06.366054
 model: gpt-4-0125-preview
 summary: "\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199\u6D89\u53CA\u4FEE\u6539\
   \u5B57\u7B26\u4E32\uFF0C\u4F7F\u5176\u7B2C\u4E00\u4E2A\u5B57\u7B26\u4E3A\u5927\u5199\

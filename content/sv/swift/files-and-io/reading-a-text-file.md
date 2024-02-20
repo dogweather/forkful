@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/swift/reading-a-text-file/
 date: 2024-01-20 17:55:06.767651-07:00
 description: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
   \ i en fil p\xE5 disken. Programmerare g\xF6r detta f\xF6r att anv\xE4nda data,\
   \ konfigurera\u2026"
-lastmod: 2024-02-18 23:08:52.140947
+lastmod: 2024-02-19 22:04:57.509647
 model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
   \ i en fil p\xE5 disken. Programmerare g\xF6r detta f\xF6r att anv\xE4nda data,\

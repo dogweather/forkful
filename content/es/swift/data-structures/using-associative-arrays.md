@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/swift/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:04.241150-07:00
 description: "Los arreglos asociativos, conocidos como diccionarios en Swift, te permiten\
   \ almacenar y gestionar datos en pares clave-valor. Los programadores los usan\u2026"
-lastmod: 2024-02-18 23:09:10.350139
+lastmod: 2024-02-19 22:05:17.914447
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos como diccionarios en Swift, te permiten\
   \ almacenar y gestionar datos en pares clave-valor. Los programadores los usan\u2026"

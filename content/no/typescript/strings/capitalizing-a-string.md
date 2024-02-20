@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/typescript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:43.846755-07:00
 description: "\xC5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre det f\xF8\
   rste tegnet av en gitt streng til stor bokstav hvis den er i sm\xE5 bokstaver, ofte\
   \ uten \xE5 endre\u2026"
-lastmod: 2024-02-18 23:08:53.629245
+lastmod: 2024-02-19 22:04:59.757227
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre det f\xF8\
   rste tegnet av en gitt streng til stor bokstav hvis den er i sm\xE5 bokstaver, ofte\

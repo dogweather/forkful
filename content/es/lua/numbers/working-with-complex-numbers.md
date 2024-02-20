@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/lua/working-with-complex-numbers/
 date: 2024-01-26 04:43:19.175257-07:00
 description: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9rica\
   \ unidimensional al plano bidimensional incluyendo un eje imaginario perpendicular.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.112920
+lastmod: 2024-02-19 22:05:17.703550
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9rica unidimensional\
   \ al plano bidimensional incluyendo un eje imaginario perpendicular. Los\u2026"

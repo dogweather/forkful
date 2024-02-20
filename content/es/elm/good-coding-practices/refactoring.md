@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elm/refactoring/
 date: 2024-01-26 01:17:40.552037-07:00
 description: "Refactorizar es b\xE1sicamente hacer limpieza de primavera en tu base\
   \ de c\xF3digo\u2014se trata de reestructurar el c\xF3digo existente sin cambiar\
   \ su comportamiento\u2026"
-lastmod: 2024-02-18 23:09:09.899906
+lastmod: 2024-02-19 22:05:17.510038
 model: gpt-4-0125-preview
 summary: "Refactorizar es b\xE1sicamente hacer limpieza de primavera en tu base de\
   \ c\xF3digo\u2014se trata de reestructurar el c\xF3digo existente sin cambiar su\

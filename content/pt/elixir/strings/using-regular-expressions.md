@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/elixir/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:33.965900-07:00
 description: "Express\xF5es regulares (regex) em Elixir s\xE3o usadas para buscar,\
   \ combinar e manipular strings baseadas em padr\xF5es espec\xEDficos. Programadores\
   \ utilizam regex\u2026"
-lastmod: 2024-02-18 23:08:57.834264
+lastmod: 2024-02-19 22:05:05.303169
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Elixir s\xE3o usadas para buscar, combinar\
   \ e manipular strings baseadas em padr\xF5es espec\xEDficos. Programadores utilizam\

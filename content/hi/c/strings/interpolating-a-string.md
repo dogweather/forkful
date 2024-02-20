@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:48.975190-07:00
@@ -15,7 +13,7 @@ description: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902
   \ \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E \u0939\u0948\u0964 \u092A\
   \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 \u0907\u0938\u0947\
   \u2026"
-lastmod: 2024-02-18 23:09:04.182068
+lastmod: 2024-02-19 22:05:12.156820
 model: gpt-4-0125-preview
 summary: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
   \ \u092E\u0947\u0902, \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\

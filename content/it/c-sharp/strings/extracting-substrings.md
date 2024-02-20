@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/extracting-substrings/
 date: 2024-01-20 17:45:37.947278-07:00
 description: "(Estrarre sottostringhe: Cosa e Perch\xE9?) Estrarre sottostringhe \xE8\
   \ prelevare pezzi specifici di una stringa. I programmatori fanno ci\xF2 per manipolare\u2026"
-lastmod: 2024-02-18 23:08:55.876934
+lastmod: 2024-02-19 22:05:02.486381
 model: gpt-4-1106-preview
 summary: "(Estrarre sottostringhe: Cosa e Perch\xE9?) Estrarre sottostringhe \xE8\
   \ prelevare pezzi specifici di una stringa. I programmatori fanno ci\xF2 per manipolare\u2026"

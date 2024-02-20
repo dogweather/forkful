@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/printing-debug-output/
 date: 2024-01-20 17:52:10.489820-07:00
 description: "Utskrift av feils\xF8kingsdata handler om \xE5 vise hva som foreg\xE5\
   r under panseret av koden din. Programmerere gj\xF8r dette for \xE5 forst\xE5 flyten\
   \ og oppdage bugs\u2026"
-lastmod: 2024-02-18 23:08:53.607357
+lastmod: 2024-02-19 22:04:59.733488
 model: gpt-4-1106-preview
 summary: "Utskrift av feils\xF8kingsdata handler om \xE5 vise hva som foreg\xE5r under\
   \ panseret av koden din. Programmerere gj\xF8r dette for \xE5 forst\xE5 flyten og\

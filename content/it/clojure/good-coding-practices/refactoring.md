@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/clojure/refactoring/
 date: 2024-01-26 01:17:35.293870-07:00
 description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza cambiare il suo comportamento esterno, mirato a migliorare\u2026"
-lastmod: 2024-02-18 23:08:55.568730
+lastmod: 2024-02-19 22:05:02.159502
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente senza cambiare il suo comportamento esterno, mirato a migliorare\u2026"

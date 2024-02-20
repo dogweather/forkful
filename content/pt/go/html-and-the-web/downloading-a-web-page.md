@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:05.665932-07:00
 description: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de\
   \ uma p\xE1gina da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:57.667077
+lastmod: 2024-02-19 22:05:05.123545
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de uma\
   \ p\xE1gina da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem\

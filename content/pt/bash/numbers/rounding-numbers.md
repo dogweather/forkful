@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/bash/rounding-numbers/
 date: 2024-01-26 03:42:45.205559-07:00
 description: "Arredondar n\xFAmeros significa cortar os decimais para um valor mais\
   \ simples que seja suficiente para um determinado contexto. Programadores arredondam\u2026"
-lastmod: 2024-02-18 23:08:58.318493
+lastmod: 2024-02-19 22:05:05.800365
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa cortar os decimais para um valor mais simples\
   \ que seja suficiente para um determinado contexto. Programadores arredondam\u2026"

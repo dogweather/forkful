@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/typescript/interpolating-a-string/
 date: 2024-01-20 17:51:50.797922-07:00
 description: "Strenginterpolasjon er det \xE5 sette sammen en streng med variabler\
   \ eller uttrykk. Programmerere bruker det for \xE5 lage dynamisk tekst og forbedre\u2026"
-lastmod: 2024-02-18 23:08:53.631996
+lastmod: 2024-02-19 22:04:59.760147
 model: gpt-4-1106-preview
 summary: "Strenginterpolasjon er det \xE5 sette sammen en streng med variabler eller\
   \ uttrykk. Programmerere bruker det for \xE5 lage dynamisk tekst og forbedre\u2026"

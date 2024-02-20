@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/organizing-code-into-functions/
 date: 2024-01-26 01:10:56.889262-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelman jakamista\
   \ hallittaviin palasiin, joista kukin suorittaa oman, erillisen teht\xE4v\xE4ns\xE4\
   . Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.463953
+lastmod: 2024-02-19 22:05:15.346189
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelman jakamista hallittaviin\
   \ palasiin, joista kukin suorittaa oman, erillisen teht\xE4v\xE4ns\xE4. Ohjelmoijat\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/javascript/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:59.716826-07:00
 description: "Loggen is in een notendop als het bijhouden van een dagboek voor je\
   \ applicatie - het registreert gebeurtenissen, fouten en andere belangrijke acties\
   \ die\u2026"
-lastmod: 2024-02-18 23:09:02.283320
+lastmod: 2024-02-19 22:05:10.294735
 model: gpt-4-0125-preview
 summary: "Loggen is in een notendop als het bijhouden van een dagboek voor je applicatie\
   \ - het registreert gebeurtenissen, fouten en andere belangrijke acties die\u2026"

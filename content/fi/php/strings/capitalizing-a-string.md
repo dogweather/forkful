@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/php/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:59.961944-07:00
 description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun tekstin ensimm\xE4\
   isen merkin muuttamista suuraakkoseksi, varmistetaan, ett\xE4 lauseet, otsikot tai\u2026"
-lastmod: 2024-02-18 23:09:07.693642
+lastmod: 2024-02-19 22:05:15.533717
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun tekstin ensimm\xE4\
   isen merkin muuttamista suuraakkoseksi, varmistetaan, ett\xE4 lauseet, otsikot tai\u2026"

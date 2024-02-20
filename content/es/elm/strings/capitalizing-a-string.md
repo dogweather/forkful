@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/elm/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:48.395236-07:00
 description: "Capitalizar una cadena implica transformar el car\xE1cter inicial de\
   \ una cadena dada a may\xFAsculas mientras se mantienen el resto en min\xFAsculas,\
   \ a menudo por\u2026"
-lastmod: 2024-02-18 23:09:09.872528
+lastmod: 2024-02-19 22:05:17.484997
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica transformar el car\xE1cter inicial de una\
   \ cadena dada a may\xFAsculas mientras se mantienen el resto en min\xFAsculas, a\

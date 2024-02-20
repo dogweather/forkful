@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/printing-debug-output/
 date: 2024-01-20 17:52:28.158859-07:00
 description: Printing debug output means spitting out extra info to help you understand
   what your code's doing. Programmers do it to detect and fix bugs more easily.
-lastmod: 2024-02-18 23:09:11.483766
+lastmod: 2024-02-19 22:05:18.936968
 model: gpt-4-1106-preview
 summary: Printing debug output means spitting out extra info to help you understand
   what your code's doing. Programmers do it to detect and fix bugs more easily.

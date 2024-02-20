@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:10.007732-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi YAML trong Go bao g\u1ED3m vi\u1EC7c ph\
   n t\xEDch t\u1EC7p YAML (YAML Ain't Markup Language) - m\u1ED9t chu\u1EA9n h\xF3\
   a xu\u1EA5t nh\u1EADp li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi,\
   \ th\xE0nh c\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.194107
+lastmod: 2024-02-19 22:04:55.196770
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED\
   ch t\u1EC7p YAML (YAML Ain't Markup Language) - m\u1ED9t chu\u1EA9n h\xF3a xu\u1EA5\

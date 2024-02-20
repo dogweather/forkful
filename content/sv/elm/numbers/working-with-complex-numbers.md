@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/working-with-complex-numbers/
 date: 2024-01-26 04:39:35.364350-07:00
 description: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, som\
   \ `a + bi` d\xE4r `i` \xE4r kvadratroten av -1. De \xE4r avg\xF6rande inom omr\xE5\
   den som\u2026"
-lastmod: 2024-02-18 23:08:51.704118
+lastmod: 2024-02-19 22:04:57.034506
 model: gpt-4-0125-preview
 summary: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, som `a\
   \ + bi` d\xE4r `i` \xE4r kvadratroten av -1. De \xE4r avg\xF6rande inom omr\xE5\

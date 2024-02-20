@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:15.713091-07:00
 description: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uD2B9\uC815 \uB0A0\uC9DC\uB97C\
   \ \uACC4\uC0B0\uD55C\uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC5D0 \uC77C\uC815 \uAE30\
@@ -10,7 +8,7 @@ description: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uD2B9\uC815 \uB0A0\uC9DC\uB
   \uC740 \uAE30\uB2A5\uC744 \uAD6C\uD604\uD560 \uB54C \uC774\uB97C \uD65C\uC6A9\uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.046691
+lastmod: 2024-02-19 22:05:14.927629
 model: gpt-4-1106-preview
 summary: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uD2B9\uC815 \uB0A0\uC9DC\uB97C \uACC4\
   \uC0B0\uD55C\uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC5D0 \uC77C\uC815 \uAE30\uAC04\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/bash/rounding-numbers/
 date: 2024-01-26 03:42:59.130157-07:00
 description: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi\
   \ som er god nok for en gitt kontekst. Programmerere runder av tall for \xE5 forenkle\u2026"
-lastmod: 2024-02-18 23:08:54.051208
+lastmod: 2024-02-19 22:05:00.233067
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi som\
   \ er god nok for en gitt kontekst. Programmerere runder av tall for \xE5 forenkle\u2026"

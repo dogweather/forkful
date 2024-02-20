@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:23.277385-07:00
 description: "Het samenvoegen van strings gaat over het aan elkaar koppelen van twee\
   \ of meer strings om \xE9\xE9n enkel stuk tekst te vormen. Je zou tekst moeten samenvoegen\u2026"
-lastmod: 2024-02-18 23:09:01.517266
+lastmod: 2024-02-19 22:05:09.544005
 model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings gaat over het aan elkaar koppelen van twee of\
   \ meer strings om \xE9\xE9n enkel stuk tekst te vormen. Je zou tekst moeten samenvoegen\u2026"

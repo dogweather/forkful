@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:41.666380-07:00
 description: "Standaardfout (`stderr`) is een stroom die los staat van standaarduitvoer\
   \ (`stdout`) en wordt voornamelijk gebruikt voor het uitgeven van foutmeldingen\
   \ of\u2026"
-lastmod: 2024-02-18 23:09:02.440360
+lastmod: 2024-02-19 22:05:10.444607
 model: gpt-4-0125-preview
 summary: "Standaardfout (`stderr`) is een stroom die los staat van standaarduitvoer\
   \ (`stdout`) en wordt voornamelijk gebruikt voor het uitgeven van foutmeldingen\

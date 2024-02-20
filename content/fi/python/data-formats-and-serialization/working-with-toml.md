@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/python/working-with-toml/
 date: 2024-01-26 04:25:35.149524-07:00
 description: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti,\
   \ joka muistuttaa JSONia tai YAMLia, mutta pyrkii\u2026"
-lastmod: 2024-02-18 23:09:07.208774
+lastmod: 2024-02-19 22:05:15.107705
 model: gpt-4-0125-preview
 summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti,\
   \ joka muistuttaa JSONia tai YAMLia, mutta pyrkii\u2026"

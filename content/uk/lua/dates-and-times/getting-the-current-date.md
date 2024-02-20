@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/lua/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:54.403712-07:00
@@ -15,7 +13,7 @@ description: "\u041E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043F\u043
   \u0432\u0430\u043D\u043D\u044F \u043F\u043E\u0434\u0456\u0439 \u0447\u0430\u0441\
   \u043E\u0432\u0438\u043C\u0438 \u0432\u0456\u0434\u043C\u0456\u0442\u043A\u0430\u043C\
   \u0438\u2026"
-lastmod: 2024-02-18 23:09:00.587906
+lastmod: 2024-02-19 22:05:08.554301
 model: gpt-4-0125-preview
 summary: "\u041E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043F\u043E\u0442\
   \u043E\u0447\u043D\u043E\u0457 \u0434\u0430\u0442\u0438 \u0443 \u043F\u0440\u043E\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:06.313271-07:00
@@ -9,7 +7,7 @@ description: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n li\xEAn quan \u0111\
   n b\u1EA3n c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c, s\u1EED d\u1EE5ng m\u1ED9\
   t m\xE3 h\xF3a k\xFD t\u1EF1 nh\u01B0 UTF-8. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
   i\u1EC1u n\xE0y\u2026"
-lastmod: 2024-02-18 23:08:51.110185
+lastmod: 2024-02-19 22:04:56.329622
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n li\xEAn quan \u0111\u1EBF\
   n vi\u1EC7c l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/lua/checking-if-a-directory-exists/
 date: 2024-02-03 19:02:35.075577-07:00
 description: "Checking if a directory exists is a fundamental operation when writing\
   \ scripts that interact with the filesystem, ensuring that your program operates\
   \ on\u2026"
-lastmod: 2024-02-18 23:09:11.192687
+lastmod: 2024-02-19 22:05:18.680349
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists is a fundamental operation when writing scripts\
   \ that interact with the filesystem, ensuring that your program operates on\u2026"

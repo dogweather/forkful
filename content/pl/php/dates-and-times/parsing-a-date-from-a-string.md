@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/php/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:05.014970-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w w PHP polega na konwersji tekstu,\
   \ kt\xF3ry przedstawia dat\u0119 i/lub czas, na obiekt `DateTime` PHP lub inne formaty\
   \ daty/czasu.\u2026"
-lastmod: 2024-02-18 23:08:49.705128
+lastmod: 2024-02-19 22:04:54.641451
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w PHP polega na konwersji tekstu,\
   \ kt\xF3ry przedstawia dat\u0119 i/lub czas, na obiekt `DateTime` PHP lub inne formaty\

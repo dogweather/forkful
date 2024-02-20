@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/printing-debug-output/
 date: 2024-01-20 17:53:11.278437-07:00
 description: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\
   \xF5es de interesse durante a execu\xE7\xE3o de um programa, geralmente para rastrear\
   \ bugs ou verificar\u2026"
-lastmod: 2024-02-18 23:08:58.243418
+lastmod: 2024-02-19 22:05:05.718254
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\
   \xF5es de interesse durante a execu\xE7\xE3o de um programa, geralmente para rastrear\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/kotlin/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:35.098660-07:00
 description: "Capitalizar una cadena en programaci\xF3n implica convertir el primer\
   \ car\xE1cter de la cadena a may\xFAsculas si a\xFAn no lo est\xE1, lo cual es \xFA\
   til para formatear\u2026"
-lastmod: 2024-02-18 23:09:09.917837
+lastmod: 2024-02-19 22:05:17.526530
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en programaci\xF3n implica convertir el primer car\xE1\
   cter de la cadena a may\xFAsculas si a\xFAn no lo est\xE1, lo cual es \xFAtil para\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:27.262041-07:00
 description: "Het printen van debug-output gaat over het op het scherm knallen van\
   \ de interne data van je code om uit te vogelen wat er aan de hand is. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.948195
+lastmod: 2024-02-19 22:05:09.970325
 model: gpt-4-0125-preview
 summary: "Het printen van debug-output gaat over het op het scherm knallen van de\
   \ interne data van je code om uit te vogelen wat er aan de hand is. Programmeurs\u2026"

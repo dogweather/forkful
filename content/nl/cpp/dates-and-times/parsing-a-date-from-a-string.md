@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:04.024540-07:00
 description: "Het parsen van een datum uit een tekenreeks betekent het omzetten van\
   \ tekst naar een datumgegevenstype. Programmeurs doen dit om datumgerelateerde logica\u2026"
-lastmod: 2024-02-18 23:09:02.193219
+lastmod: 2024-02-19 22:05:10.209477
 model: gpt-4-0125-preview
 summary: "Het parsen van een datum uit een tekenreeks betekent het omzetten van tekst\
   \ naar een datumgegevenstype. Programmeurs doen dit om datumgerelateerde logica\u2026"

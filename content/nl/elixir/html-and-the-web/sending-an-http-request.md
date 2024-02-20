@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:27.086770-07:00
 description: "Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt,\
   \ een beetje zoals je een bibliothecaris om een boek zou vragen. Programmeurs doen\u2026"
-lastmod: 2024-02-18 23:09:01.522856
+lastmod: 2024-02-19 22:05:09.549583
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt,\
   \ een beetje zoals je een bibliothecaris om een boek zou vragen. Programmeurs doen\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/fish-shell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:28.195044-07:00
 description: "Das Schreiben von Tests in Fish Shell beinhaltet das Erstellen von Skripten,\
   \ die automatisch Ihren Code ausf\xFChren, um sein Verhalten gegen\xFCber erwarteten\u2026"
-lastmod: 2024-02-18 23:09:05.329949
+lastmod: 2024-02-19 22:05:13.251693
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Fish Shell beinhaltet das Erstellen von Skripten,\
   \ die automatisch Ihren Code ausf\xFChren, um sein Verhalten gegen\xFCber erwarteten\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/creating-a-temporary-file/
 date: 2024-01-20 17:40:00.293433-07:00
 description: "Creating a temporary file means you're generating a file for a short-term\
   \ purpose, like storing data that's only needed during the execution of a program.\u2026"
-lastmod: 2024-02-18 23:09:11.073620
+lastmod: 2024-02-19 22:05:18.571622
 model: gpt-4-1106-preview
 summary: "Creating a temporary file means you're generating a file for a short-term\
   \ purpose, like storing data that's only needed during the execution of a program.\u2026"

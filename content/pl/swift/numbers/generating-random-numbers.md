@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/generating-random-numbers/
 date: 2024-01-27 20:35:26.681079-07:00
 description: "Generowanie losowych liczb w programowaniu dotyczy tworzenia warto\u015B\
   ci numerycznych nieterministycznych lub nieprzewidywalnych. Programi\u015Bci u\u017C\
   ywaj\u0105 liczb\u2026"
-lastmod: 2024-02-18 23:08:49.948883
+lastmod: 2024-02-19 22:04:54.898578
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w programowaniu dotyczy tworzenia warto\u015B\
   ci numerycznych nieterministycznych lub nieprzewidywalnych. Programi\u015Bci u\u017C\

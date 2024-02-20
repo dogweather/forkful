@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/working-with-xml/
 date: 2024-01-26 04:35:52.209271-07:00
 description: "Travailler avec XML signifie analyser et g\xE9n\xE9rer des donn\xE9\
   es XML en Swift. Les programmeurs font cela pour l'\xE9change de donn\xE9es, surtout\
   \ lorsqu'ils\u2026"
-lastmod: 2024-02-18 23:09:09.236173
+lastmod: 2024-02-19 22:05:16.902322
 model: gpt-4-0125-preview
 summary: "Travailler avec XML signifie analyser et g\xE9n\xE9rer des donn\xE9es XML\
   \ en Swift. Les programmeurs font cela pour l'\xE9change de donn\xE9es, surtout\

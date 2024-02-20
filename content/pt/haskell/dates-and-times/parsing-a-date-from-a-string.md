@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/haskell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:15.759631-07:00
 description: "Analisar uma data a partir de uma string em Haskell envolve converter\
   \ representa\xE7\xF5es textuais de datas em um formato estruturado que o programa\
   \ pode\u2026"
-lastmod: 2024-02-18 23:08:58.208427
+lastmod: 2024-02-19 22:05:05.681110
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Haskell envolve converter representa\xE7\
   \xF5es textuais de datas em um formato estruturado que o programa pode\u2026"

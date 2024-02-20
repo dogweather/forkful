@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:32.597106-07:00
 description: "\uBB38\uC790 \uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790\uB97C \uC0AD\
   \uC81C\uD558\uB294 \uAC83\uC740 \uD2B9\uC815\uD55C \uD615\uC2DD\uC774\uB098 \uBD88\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790 \uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790\uB97C \u
   \uB9AC\uD558\uAC70\uB098 \uBD84\uC11D\uC744 \uC6A9\uC774\uD558\uAC8C \uD558\uAE30\
   \ \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.595839
+lastmod: 2024-02-19 22:05:14.499451
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790 \uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\
   \uD558\uB294 \uAC83\uC740 \uD2B9\uC815\uD55C \uD615\uC2DD\uC774\uB098 \uBD88\uD544\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/working-with-json/
 date: 2024-01-25 03:57:30.429534-07:00
 description: "Working with JSON (JavaScript Object Notation) means handling this lightweight\
   \ data-interchange format inside your Java applications. Programmers go for\u2026"
-lastmod: 2024-02-18 23:09:10.951691
+lastmod: 2024-02-19 22:05:18.459414
 model: gpt-4-1106-preview
 summary: "Working with JSON (JavaScript Object Notation) means handling this lightweight\
   \ data-interchange format inside your Java applications. Programmers go for\u2026"

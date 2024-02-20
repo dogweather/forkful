@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:03.714098-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 'YYYY-MM-DD'\uC640 \uAC19\uC740 \uD615\uC2DD\uC73C\uB85C \uB0A0\uC9DC\
@@ -10,7 +8,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB2
   \uD398\uC774\uC2A4 \uB4F1\uC5D0 \uD45C\uC2DC\uD560 \uB54C \uC720\uC6A9\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.701453
+lastmod: 2024-02-19 22:05:14.597785
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
   \uC740 'YYYY-MM-DD'\uC640 \uAC19\uC740 \uD615\uC2DD\uC73C\uB85C \uB0A0\uC9DC \uB370\

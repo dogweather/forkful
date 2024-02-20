@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/rounding-numbers/
 date: 2024-01-26 03:46:39.596407-07:00
 description: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
   \ ou \xE0 une fraction avec une certaine pr\xE9cision. Les programmeurs arrondissent\
   \ les\u2026"
-lastmod: 2024-02-18 23:09:08.523282
+lastmod: 2024-02-19 22:05:16.304942
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
   \ ou \xE0 une fraction avec une certaine pr\xE9cision. Les programmeurs arrondissent\

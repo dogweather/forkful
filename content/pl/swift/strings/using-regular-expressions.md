@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/swift/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:30.430938-07:00
 description: "Wyra\u017Cenia regularne, czyli regex, to sekwencje znak\xF3w, kt\xF3\
   re tworz\u0105 wzorzec wyszukiwania, cz\u0119sto u\u017Cywane do zada\u0144 dopasowywania\
   \ lub manipulacji ci\u0105gami\u2026"
-lastmod: 2024-02-18 23:08:49.943175
+lastmod: 2024-02-19 22:04:54.892501
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne, czyli regex, to sekwencje znak\xF3w, kt\xF3re\
   \ tworz\u0105 wzorzec wyszukiwania, cz\u0119sto u\u017Cywane do zada\u0144 dopasowywania\

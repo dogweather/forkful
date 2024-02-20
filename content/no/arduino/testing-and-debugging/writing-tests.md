@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/arduino/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:54.903424-07:00
 description: "\xC5 skrive tester i Arduino-milj\xF8et refererer til prosessen med\
   \ \xE5 lage automatiserte tester som validerer funksjonaliteten til koden din p\xE5\
   \ Arduino-enheter.\u2026"
-lastmod: 2024-02-18 23:08:54.145378
+lastmod: 2024-02-19 22:05:00.332777
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Arduino-milj\xF8et refererer til prosessen med \xE5\
   \ lage automatiserte tester som validerer funksjonaliteten til koden din p\xE5 Arduino-enheter.\u2026"

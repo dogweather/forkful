@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:45.330322-07:00
 description: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu\
   \ zmniejszenia jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017C\
   szej liczby\u2026"
-lastmod: 2024-02-18 23:08:50.074390
+lastmod: 2024-02-19 22:04:55.058120
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu zmniejszenia\
   \ jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017Cszej liczby\u2026"

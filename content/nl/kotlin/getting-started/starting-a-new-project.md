@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:55.904030-07:00
 description: "Een nieuw project starten betekent het opzetten van de initi\xEBle structuur\
   \ en essenti\xEBle bestanden die je nodig hebt voor je applicatie. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.806327
+lastmod: 2024-02-19 22:05:09.822871
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het opzetten van de initi\xEBle structuur\
   \ en essenti\xEBle bestanden die je nodig hebt voor je applicatie. Programmeurs\u2026"

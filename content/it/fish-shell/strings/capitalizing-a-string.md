@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/fish-shell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:21.818799-07:00
 description: "Capitalizzare una stringa significa modificarla in modo che la prima\
   \ lettera sia maiuscola e il resto della stringa sia minuscolo. Questo \xE8 un compito\u2026"
-lastmod: 2024-02-18 23:08:56.277566
+lastmod: 2024-02-19 22:05:02.912452
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa significa modificarla in modo che la prima lettera\
   \ sia maiuscola e il resto della stringa sia minuscolo. Questo \xE8 un compito\u2026"

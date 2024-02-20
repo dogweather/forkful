@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/downloading-a-web-page/
 date: 2024-01-20 17:44:48.997964-07:00
 description: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das\
   \ Internet abzurufen. Programmierer tun dies, um Daten zu sammeln, automatisiert\
   \ Inhalte zu\u2026"
-lastmod: 2024-02-18 23:09:05.422134
+lastmod: 2024-02-19 22:05:13.341765
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das Internet\
   \ abzurufen. Programmierer tun dies, um Daten zu sammeln, automatisiert Inhalte\

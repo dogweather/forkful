@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/working-with-complex-numbers/
 date: 2024-01-26 04:45:31.371734-07:00
 description: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er\
   \ reelle tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`). I programmering\
   \ bruker vi\u2026"
-lastmod: 2024-02-18 23:08:53.518675
+lastmod: 2024-02-19 22:04:59.636032
 model: gpt-4-0125-preview
 summary: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er reelle\
   \ tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`). I programmering bruker\

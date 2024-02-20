@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/rounding-numbers/
 date: 2024-01-26 03:47:11.275604-07:00
 description: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precyzji.\
   \ Programi\u015Bci robi\u0105 to, aby kontrolowa\u0107 numeryczne wyj\u015Bcie dla\
   \ czytelno\u015Bci, cel\xF3w\u2026"
-lastmod: 2024-02-18 23:08:49.343152
+lastmod: 2024-02-19 22:04:54.260680
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precyzji.\
   \ Programi\u015Bci robi\u0105 to, aby kontrolowa\u0107 numeryczne wyj\u015Bcie dla\

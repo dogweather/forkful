@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/kotlin/working-with-toml/
 date: 2024-01-26 04:23:59.714153-07:00
 description: "TOML \u4EE3\u8868 Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u7684\
   \u660E\u663E\u3001\u6700\u5C0F\u8BED\u8A00\uFF09\u3002\u5B83\u7528\u4E8E\u914D\u7F6E\
@@ -8,7 +6,7 @@ description: "TOML \u4EE3\u8868 Tom's Obvious, Minimal Language\uFF08\u6C64\u59C
   \u5199\uFF0C\u540C\u65F6\u4E5F\u6613\u4E8E\u673A\u5668\u89E3\u6790\u3002\u5F00\u53D1\
   \u8005\u9009\u62E9 TOML \u6765\u907F\u514D XML \u7684\u6742\u4E71\u548C JSON \u7684\
   \u68D8\u624B\uFF0C\u8FDB\u884C\u914D\u7F6E\u7BA1\u7406\u3002"
-lastmod: 2024-02-18 23:08:59.116096
+lastmod: 2024-02-19 22:05:06.779788
 model: gpt-4-0125-preview
 summary: "TOML \u4EE3\u8868 Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u7684\
   \u660E\u663E\u3001\u6700\u5C0F\u8BED\u8A00\uFF09\u3002\u5B83\u7528\u4E8E\u914D\u7F6E\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:24.664117-07:00
 description: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
   r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\
   \ anv\xE4nds f\xF6r att bevisa\u2026"
-lastmod: 2024-02-18 23:08:51.795468
+lastmod: 2024-02-19 22:04:57.129681
 model: gpt-4-1106-preview
 summary: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
   r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\

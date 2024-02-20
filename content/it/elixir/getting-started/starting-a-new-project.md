@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elixir/starting-a-new-project/
 date: 2024-01-20 18:03:11.058697-07:00
 description: "Iniziare un nuovo progetto in Elixir significa creare una base da cui\
   \ far evolvere il tuo codice. I programmatori aprono nuovi progetti per organizzare\u2026"
-lastmod: 2024-02-18 23:08:55.601329
+lastmod: 2024-02-19 22:05:02.194270
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto in Elixir significa creare una base da cui far\
   \ evolvere il tuo codice. I programmatori aprono nuovi progetti per organizzare\u2026"

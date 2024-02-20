@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/reading-a-text-file/
 date: 2024-01-20 17:54:39.104745-07:00
 description: "Att l\xE4sa en textfil inneb\xE4r att din Kotlin-kod h\xE4mtar data\
   \ fr\xE5n en fil som sparats p\xE5 disken. Programmerare g\xF6r detta f\xF6r att\
   \ hantera indata,\u2026"
-lastmod: 2024-02-18 23:08:51.769117
+lastmod: 2024-02-19 22:04:57.103790
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att din Kotlin-kod h\xE4mtar data fr\xE5\
   n en fil som sparats p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera\

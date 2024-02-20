@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/clojure/handling-errors/
 date: 2024-01-26 00:50:41.678251-07:00
 description: "La gestione degli errori riguarda il controllo dell'inaspettato nei\
   \ programmi, proprio come un buttafuori che si occupa dei guastafeste. Ai programmatori\u2026"
-lastmod: 2024-02-18 23:08:55.567883
+lastmod: 2024-02-19 22:05:02.158607
 model: gpt-4-1106-preview
 summary: "La gestione degli errori riguarda il controllo dell'inaspettato nei programmi,\
   \ proprio come un buttafuori che si occupa dei guastafeste. Ai programmatori\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:14.065613-07:00
 description: "Een nieuw project starten in Elm betekent het opzetten van een schone\
   \ lei voor het bouwen van betrouwbare webapps. Programmeurs doen dit om te profiteren\u2026"
-lastmod: 2024-02-18 23:09:01.760174
+lastmod: 2024-02-19 22:05:09.779001
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Elm betekent het opzetten van een schone lei\
   \ voor het bouwen van betrouwbare webapps. Programmeurs doen dit om te profiteren\u2026"

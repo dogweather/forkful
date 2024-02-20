@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/lua/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:44.433916-07:00
 description: "Gli array associativi in Lua sono come strette di mano segrete per i\
   \ dati \u2014 invece di avere solo numeri che si allineano diligentemente per indice,\
   \ le tue\u2026"
-lastmod: 2024-02-18 23:08:56.004068
+lastmod: 2024-02-19 22:05:02.618915
 model: gpt-4-0125-preview
 summary: "Gli array associativi in Lua sono come strette di mano segrete per i dati\
   \ \u2014 invece di avere solo numeri che si allineano diligentemente per indice,\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:07.465236-07:00
 description: "Een interactieve shell gebruiken, of een Read-Eval-Print Loop (REPL),\
   \ stelt je in staat om interactief te coderen. Programmeurs gebruiken het om snel\u2026"
-lastmod: 2024-02-18 23:09:02.231163
+lastmod: 2024-02-19 22:05:10.245349
 model: gpt-4-0125-preview
 summary: "Een interactieve shell gebruiken, of een Read-Eval-Print Loop (REPL), stelt\
   \ je in staat om interactief te coderen. Programmeurs gebruiken het om snel\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:23.563041-07:00
@@ -10,7 +8,7 @@ description: "\u5728 C \u8BED\u8A00\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6
   \u5458\u7ECF\u5E38\u9700\u8981\u8FD9\u4E2A\u529F\u80FD\u6765\u8FDB\u884C\u65E5\u5FD7\
   \u8BB0\u5F55\u3001\u65F6\u95F4\u6233\u8BB0\u6216\u8005\u5728\u5176\u5E94\u7528\u7A0B\
   \u5E8F\u4E2D\u8FDB\u884C\u8C03\u5EA6\u3002"
-lastmod: 2024-02-18 23:08:59.569515
+lastmod: 2024-02-19 22:05:07.392193
 model: gpt-4-0125-preview
 summary: "\u5728 C \u8BED\u8A00\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\
   \u5230\u8C03\u7528\u6807\u51C6 C \u5E93\u4EE5\u83B7\u53D6\u548C\u683C\u5F0F\u5316\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/typescript/extracting-substrings/
 date: 2024-01-20 17:46:43.160582-07:00
 description: "\u5728TypeScript\u91CC\uFF0C\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u5C31\
   \u662F\u4ECE\u4E00\u4E2A\u957F\u7684\u5B57\u7B26\u4E32\u4E2D\u622A\u53D6\u51FA\u4F60\
@@ -9,7 +7,7 @@ description: "\u5728TypeScript\u91CC\uFF0C\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u
   \u5206\uFF0C\u6BD4\u5982\u4ECE\u7528\u6237\u8F93\u5165\u4E2D\u53D6\u5F97\u7279\u5B9A\
   \u6570\u636E\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:58.894100
+lastmod: 2024-02-19 22:05:06.474558
 model: gpt-4-1106-preview
 summary: "\u5728TypeScript\u91CC\uFF0C\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u5C31\u662F\
   \u4ECE\u4E00\u4E2A\u957F\u7684\u5B57\u7B26\u4E32\u4E2D\u622A\u53D6\u51FA\u4F60\u60F3\

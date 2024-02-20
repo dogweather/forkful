@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/ruby/working-with-xml/
 date: 2024-01-26 04:35:11.070065-07:00
 description: "Travailler avec XML signifie analyser, g\xE9n\xE9rer et manipuler des\
   \ documents XML (eXtensible Markup Language) en utilisant du code. Les programmeurs\
   \ le font\u2026"
-lastmod: 2024-02-18 23:09:09.434027
+lastmod: 2024-02-19 22:05:17.094607
 model: gpt-4-0125-preview
 summary: "Travailler avec XML signifie analyser, g\xE9n\xE9rer et manipuler des documents\
   \ XML (eXtensible Markup Language) en utilisant du code. Les programmeurs le font\u2026"

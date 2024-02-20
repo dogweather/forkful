@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/concatenating-strings/
 date: 2024-01-20 17:35:19.945849-07:00
 description: "I koding er det \xE5 sette sammen strenger (concatenating) som \xE5\
   \ lime sammen ord eller setninger for \xE5 lage nye. Vi gj\xF8r dette for \xE5 kunne\
   \ lage dynamiske\u2026"
-lastmod: 2024-02-18 23:08:54.007838
+lastmod: 2024-02-19 22:05:00.185821
 model: gpt-4-1106-preview
 summary: "I koding er det \xE5 sette sammen strenger (concatenating) som \xE5 lime\
   \ sammen ord eller setninger for \xE5 lage nye. Vi gj\xF8r dette for \xE5 kunne\

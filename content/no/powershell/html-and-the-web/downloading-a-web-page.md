@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/powershell/downloading-a-web-page/
 date: 2024-01-20 17:44:30.405237-07:00
 description: "Nedlasting av en nettside betyr \xE5 hente kildekoden for siden til\
   \ din datamaskin. Programmerere gj\xF8r dette for \xE5 analysere innholdet, automatisere\u2026"
-lastmod: 2024-02-18 23:08:54.099208
+lastmod: 2024-02-19 22:05:00.285135
 model: gpt-4-1106-preview
 summary: "Nedlasting av en nettside betyr \xE5 hente kildekoden for siden til din\
   \ datamaskin. Programmerere gj\xF8r dette for \xE5 analysere innholdet, automatisere\u2026"

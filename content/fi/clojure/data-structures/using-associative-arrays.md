@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/clojure/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:27.080917-07:00
 description: "Assosiatiiviset taulukot eli hajautustaulut Clojuressa mahdollistavat\
   \ tietojen tallentamisen ja hakemisen avain-arvo -pareina. Ne ovat avainratkaisu\u2026"
-lastmod: 2024-02-18 23:09:07.221060
+lastmod: 2024-02-19 22:05:15.119212
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot eli hajautustaulut Clojuressa mahdollistavat tietojen\
   \ tallentamisen ja hakemisen avain-arvo -pareina. Ne ovat avainratkaisu\u2026"

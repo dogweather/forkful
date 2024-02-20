@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/arduino/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:26.217679-07:00
 description: "Arduinon maailmassa assosiatiiviset taulukot mahdollistavat avainten\
   \ yhdist\xE4misen arvoihin, melkein kuin yhdist\xE4isit sukkia pareiksi. Ne ovat\
   \ hy\xF6dyllisi\xE4,\u2026"
-lastmod: 2024-02-18 23:09:07.892581
+lastmod: 2024-02-19 22:05:15.713298
 model: gpt-4-0125-preview
 summary: "Arduinon maailmassa assosiatiiviset taulukot mahdollistavat avainten yhdist\xE4\
   misen arvoihin, melkein kuin yhdist\xE4isit sukkia pareiksi. Ne ovat hy\xF6dyllisi\xE4\

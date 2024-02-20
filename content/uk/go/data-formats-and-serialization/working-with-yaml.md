@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:25.010455-07:00
@@ -12,7 +10,7 @@ description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 YAML \u0443 Go \u043F\
   \u0447\u043D\u0438\u0439 \u0434\u043B\u044F \u043B\u044E\u0434\u0438\u043D\u0438\
   , - \u0443 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0438 \u0434\u0430\u043D\
   \u0438\u0445 Go \u0442\u0430\u2026"
-lastmod: 2024-02-18 23:08:59.715078
+lastmod: 2024-02-19 22:05:07.539070
 model: gpt-4-0125-preview
 summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 YAML \u0443 Go \u043F\u0435\u0440\
   \u0435\u0434\u0431\u0430\u0447\u0430\u0454 \u0430\u043D\u0430\u043B\u0456\u0437\

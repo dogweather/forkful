@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/working-with-xml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:00.467844-07:00
 description: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipulering\
   \ av XML-dokumenter ved bruk av ulike biblioteker. Programmerere arbeider med XML\
   \ p\xE5 grunn\u2026"
-lastmod: 2024-02-18 23:08:54.419663
+lastmod: 2024-02-19 22:05:00.580521
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipulering av\
   \ XML-dokumenter ved bruk av ulike biblioteker. Programmerere arbeider med XML p\xE5\

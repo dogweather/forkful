@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/php/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:52.245010-07:00
 description: "Mettre en majuscule une cha\xEEne implique de modifier le premier caract\xE8\
   re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\u2026"
-lastmod: 2024-02-18 23:09:08.903500
+lastmod: 2024-02-19 22:05:16.597312
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne implique de modifier le premier caract\xE8\
   re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\u2026"

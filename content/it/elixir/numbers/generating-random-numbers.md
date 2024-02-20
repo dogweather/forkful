@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elixir/generating-random-numbers/
 date: 2024-01-27 20:32:56.030379-07:00
 description: "La generazione di numeri casuali in Elixir \xE8 un compito di programmazione\
   \ fondamentale, vitale per applicazioni che necessitano di risultati imprevedibili\u2026"
-lastmod: 2024-02-18 23:08:55.596998
+lastmod: 2024-02-19 22:05:02.189590
 model: gpt-4-0125-preview
 summary: "La generazione di numeri casuali in Elixir \xE8 un compito di programmazione\
   \ fondamentale, vitale per applicazioni che necessitano di risultati imprevedibili\u2026"

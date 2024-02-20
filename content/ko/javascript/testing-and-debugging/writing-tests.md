@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:16.075158-07:00
@@ -14,7 +12,7 @@ description: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uD14C\uC2A4\uD2B
   \uD574 \uBC84\uADF8\uB97C \uC870\uAE30\uC5D0 \uBC1C\uACAC\uD558\uACE0, \uCF54\uB4DC\
   \ \uB9AC\uD329\uD1A0\uB9C1\uC744 \uC6A9\uC774\uD558\uAC8C \uD558\uBA70, \uC0C8\uB85C\
   \uC6B4\u2026"
-lastmod: 2024-02-18 23:09:06.817965
+lastmod: 2024-02-19 22:05:14.709145
 model: gpt-4-0125-preview
 summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uD14C\uC2A4\uD2B8 \uC791\
   \uC131\uC740 \uCF54\uB4DC\uAC00 \uC608\uC0C1\uB300\uB85C \uB3D9\uC791\uD558\uB294\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/comparing-two-dates/
 date: 2024-01-20 17:33:22.434234-07:00
 description: "Comparare due date in JavaScript significa verificare se sono uguali,\
   \ quale precede o segue l'altra. I programmatori lo fanno per gestire eventi,\u2026"
-lastmod: 2024-02-18 23:08:56.264914
+lastmod: 2024-02-19 22:05:02.899013
 model: gpt-4-1106-preview
 summary: "Comparare due date in JavaScript significa verificare se sono uguali, quale\
   \ precede o segue l'altra. I programmatori lo fanno per gestire eventi,\u2026"

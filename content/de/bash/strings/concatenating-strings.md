@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/bash/concatenating-strings/
 date: 2024-01-20 17:33:58.012649-07:00
 description: "String-Konkatenation ist das Aneinanderh\xE4ngen von Zeichenketten.\
   \ Programmierer nutzen das, um Inhalte dynamisch zu generieren, Daten zu formatieren\
   \ oder\u2026"
-lastmod: 2024-02-18 23:09:05.043456
+lastmod: 2024-02-19 22:05:12.980535
 model: gpt-4-1106-preview
 summary: "String-Konkatenation ist das Aneinanderh\xE4ngen von Zeichenketten. Programmierer\
   \ nutzen das, um Inhalte dynamisch zu generieren, Daten zu formatieren oder\u2026"

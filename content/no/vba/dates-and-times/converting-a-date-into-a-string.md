@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:02.916936-07:00
 description: "\xC5 konvertere en dato til en streng i Visual Basic for Applications\
   \ (VBA) er en prosess brukt for \xE5 endre datatypen til en dato til et strengformat.\u2026"
-lastmod: 2024-02-18 23:08:53.740276
+lastmod: 2024-02-19 22:04:59.878086
 model: gpt-4-0125-preview
 summary: "\xC5 konvertere en dato til en streng i Visual Basic for Applications (VBA)\
   \ er en prosess brukt for \xE5 endre datatypen til en dato til et strengformat.\u2026"

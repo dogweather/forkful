@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:44.909930-07:00
 description: "Een HTTP-verzoek versturen betekent een server vragen om gegevens of\
   \ acties, zoals het ophalen van een webpagina of het versturen van een formulier.\u2026"
-lastmod: 2024-02-18 23:09:01.709383
+lastmod: 2024-02-19 22:05:09.729750
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen betekent een server vragen om gegevens of acties,\
   \ zoals het ophalen van een webpagina of het versturen van een formulier.\u2026"

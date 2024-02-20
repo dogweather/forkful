@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:08.614804-07:00
 description: "De huidige datum in bash pakken gaat over het verkrijgen van de datum\
   \ en tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie,\u2026"
-lastmod: 2024-02-18 23:09:02.052384
+lastmod: 2024-02-19 22:05:10.077491
 model: gpt-4-0125-preview
 summary: "De huidige datum in bash pakken gaat over het verkrijgen van de datum en\
   \ tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie,\u2026"

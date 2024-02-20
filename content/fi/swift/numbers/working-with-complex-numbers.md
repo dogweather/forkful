@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/working-with-complex-numbers/
 date: 2024-01-26 04:45:48.712610-07:00
 description: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kuten\
   \ 3 + 4i). Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 Swiftiss\xE4 teht\xE4viin, kuten\
   \ signaalink\xE4sittely,\u2026"
-lastmod: 2024-02-18 23:09:07.983192
+lastmod: 2024-02-19 22:05:15.796474
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kuten 3 +\
   \ 4i). Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 Swiftiss\xE4 teht\xE4viin, kuten\

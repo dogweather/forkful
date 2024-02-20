@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/vba/searching-and-replacing-text/
 date: 2024-02-01 21:30:21.117478-07:00
 description: "Searching and replacing text in Visual Basic for Applications (VBA)\
   \ is essential for editing documents, spreadsheets, and databases programmatically.\
   \ This\u2026"
-lastmod: 2024-02-18 23:09:10.875205
+lastmod: 2024-02-19 22:05:18.389610
 model: gpt-4-0125-preview
 summary: "Searching and replacing text in Visual Basic for Applications (VBA) is essential\
   \ for editing documents, spreadsheets, and databases programmatically. This\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:15.701884-07:00
 description: "Att skriva en textfil i Google Apps Script m\xF6jligg\xF6r f\xF6r utvecklare\
   \ att lagra data best\xE4ndigt, vilket g\xF6r det \xE5tkomligt f\xF6r framtida anv\xE4\
   ndning eller\u2026"
-lastmod: 2024-02-18 23:08:51.398488
+lastmod: 2024-02-19 22:04:56.697907
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Google Apps Script m\xF6jligg\xF6r f\xF6r utvecklare\
   \ att lagra data best\xE4ndigt, vilket g\xF6r det \xE5tkomligt f\xF6r framtida anv\xE4\

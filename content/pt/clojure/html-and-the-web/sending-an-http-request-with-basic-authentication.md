@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/clojure/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:20.935594-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
   \ o processo de acessar uma URL que exige um nome de usu\xE1rio e senha para entrar.\
   \ Programadores fazem\u2026"
-lastmod: 2024-02-18 23:08:57.802433
+lastmod: 2024-02-19 22:05:05.268330
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 o\
   \ processo de acessar uma URL que exige um nome de usu\xE1rio e senha para entrar.\

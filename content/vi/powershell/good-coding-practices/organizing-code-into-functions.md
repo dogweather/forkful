@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:15.592065-07:00
@@ -9,7 +7,7 @@ description: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7c \u0
   \ c\u1EE5 th\u1EC3 v\xE0 \u0111\u1EB7t cho ch\xFAng m\u1ED9t t\xEAn. Vi\u1EC7c n\xE0\
   y \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\u1EC3 l\xE0m cho m\xE3 c\xF3 th\u1EC3\
   \u2026"
-lastmod: 2024-02-18 23:08:50.940344
+lastmod: 2024-02-19 22:04:56.137891
 model: gpt-4-0125-preview
 summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7c \u0111\xF3\
   ng g\xF3i c\xE1c kh\u1ED1i m\xE3 th\u1EF1c hi\u1EC7n c\xE1c nhi\u1EC7m v\u1EE5 c\u1EE5\

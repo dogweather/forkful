@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/refactoring/
 date: 2024-01-26 01:16:48.865245-07:00
 description: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen\
   \ muuttamisen prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4\
   rke\xE4 k\xE4yt\xE4nt\xF6\u2026"
-lastmod: 2024-02-18 23:09:07.813394
+lastmod: 2024-02-19 22:05:15.643207
 model: gpt-4-0125-preview
 summary: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen muuttamisen\
   \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4rke\xE4\

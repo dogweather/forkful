@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/java/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:44.518849-07:00
 description: "Escribir pruebas en Java se trata de verificar que tu c\xF3digo se comporta\
   \ como se espera bajo varias condiciones. Los programadores escriben pruebas para\u2026"
-lastmod: 2024-02-18 23:09:09.848784
+lastmod: 2024-02-19 22:05:17.463391
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Java se trata de verificar que tu c\xF3digo se comporta\
   \ como se espera bajo varias condiciones. Los programadores escriben pruebas para\u2026"

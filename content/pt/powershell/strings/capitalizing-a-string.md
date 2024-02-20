@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/powershell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:58.976186-07:00
 description: "Capitalizar uma string no PowerShell envolve transformar o primeiro\
   \ caractere de uma string dada em mai\xFAsculo, deixando o restante da string inalterado.\u2026"
-lastmod: 2024-02-18 23:08:58.350417
+lastmod: 2024-02-19 22:05:05.834416
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string no PowerShell envolve transformar o primeiro caractere\
   \ de uma string dada em mai\xFAsculo, deixando o restante da string inalterado.\u2026"

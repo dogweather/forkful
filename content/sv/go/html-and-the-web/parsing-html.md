@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:07.395061-07:00
 description: "Att parsa HTML i Go inneb\xE4r att analysera inneh\xE5llet i HTML-filer\
   \ f\xF6r att extrahera data, manipulera strukturen eller konvertera HTML till andra\
   \ format.\u2026"
-lastmod: 2024-02-18 23:08:51.330913
+lastmod: 2024-02-19 22:04:56.622657
 model: gpt-4-0125-preview
 summary: "Att parsa HTML i Go inneb\xE4r att analysera inneh\xE5llet i HTML-filer\
   \ f\xF6r att extrahera data, manipulera strukturen eller konvertera HTML till andra\

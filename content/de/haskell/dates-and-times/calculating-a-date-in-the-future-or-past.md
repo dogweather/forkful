@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/haskell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:01.920677-07:00
 description: "Das Berechnen eines Datums in der Zukunft oder der Vergangenheit ist\
   \ einfach, bestimmt wann Dinge passiert sind oder passieren werden. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.931477
+lastmod: 2024-02-19 22:05:12.871776
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder der Vergangenheit ist einfach,\
   \ bestimmt wann Dinge passiert sind oder passieren werden. Programmierer\u2026"

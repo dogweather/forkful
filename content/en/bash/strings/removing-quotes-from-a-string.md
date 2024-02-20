@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/removing-quotes-from-a-string/
 date: 2024-01-25 20:50:21.839687-07:00
 description: "Removing quotes from a string involves stripping away the quotation\
   \ marks that enclose the string. Programmers often want to do this to sanitize input\u2026"
-lastmod: 2024-02-18 23:09:11.215875
+lastmod: 2024-02-19 22:05:18.694388
 model: gpt-4-1106-preview
 summary: "Removing quotes from a string involves stripping away the quotation marks\
   \ that enclose the string. Programmers often want to do this to sanitize input\u2026"

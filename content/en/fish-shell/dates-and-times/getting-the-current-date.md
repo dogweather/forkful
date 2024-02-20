@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/getting-the-current-date/
 date: 2024-02-03 19:02:33.004483-07:00
 description: "Getting the current date in programming is a fundamental task that allows\
   \ you to retrieve and manipulate the system's date and time data. In scripting and\u2026"
-lastmod: 2024-02-18 23:09:11.491550
+lastmod: 2024-02-19 22:05:18.944433
 model: gpt-4-0125-preview
 summary: "Getting the current date in programming is a fundamental task that allows\
   \ you to retrieve and manipulate the system's date and time data. In scripting and\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/generating-random-numbers/
 date: 2024-01-27 20:26:03.679950-07:00
 description: "Generating random numbers in Arduino projects involves producing values\
   \ that are unpredictable by design, crucial for applications like games,\u2026"
-lastmod: 2024-02-18 23:09:11.311498
+lastmod: 2024-02-19 22:05:18.780817
 model: gpt-4-0125-preview
 summary: "Generating random numbers in Arduino projects involves producing values\
   \ that are unpredictable by design, crucial for applications like games,\u2026"

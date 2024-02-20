@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/kotlin/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:39.200224-07:00
@@ -14,7 +12,7 @@ description: "Kotlin\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u3092
   \u30FC\u30BF\u3092\u4FDD\u5B58\u304A\u3088\u3073\u64CD\u4F5C\u3057\u3001\u30BB\u30C3\
   \u30B7\u30E7\u30F3\u9593\u3067\u306E\u6C38\u7D9A\u6027\u3092\u78BA\u4FDD\u3059\u308B\
   \u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.896332
+lastmod: 2024-02-19 22:05:01.242960
 model: gpt-4-0125-preview
 summary: "Kotlin\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u3092\u66F8\
   \u304F\u3053\u3068\u306F\u3001\u30D5\u30A1\u30A4\u30EB\u3092\u4F5C\u6210\u3057\u3066\

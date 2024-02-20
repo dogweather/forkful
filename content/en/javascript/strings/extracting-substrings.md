@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/extracting-substrings/
 date: 2024-01-20 17:45:59.182526-07:00
 description: Extracting substrings means grabbing a piece of a string. Programmers
   slice and dice strings to isolate data, input some format, or tweak text for output.
-lastmod: 2024-02-18 23:09:11.427239
+lastmod: 2024-02-19 22:05:18.885422
 model: gpt-4-1106-preview
 summary: Extracting substrings means grabbing a piece of a string. Programmers slice
   and dice strings to isolate data, input some format, or tweak text for output.

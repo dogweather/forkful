@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:53.435491-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i bao g\u1ED3m bi\u1EBFn
   \u1ED5i k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED9t chu\u1ED7i cho tr\u01B0\
   \u1EDBc th\xE0nh ch\u1EEF c\xE1i in hoa n\u1EBFu n\xF3 \u1EDF d\u1EA1ng ch\u1EEF\
   \ c\xE1i th\u01B0\u1EDDng, \u0111\u1EA3m b\u1EA3o chu\u1ED7i n\u1ED5i b\u1EADt\u2026"
-lastmod: 2024-02-18 23:08:50.150675
+lastmod: 2024-02-19 22:04:55.141750
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i bao g\u1ED3m bi\u1EBFn \u0111\
   \u1ED5i k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED9t chu\u1ED7i cho tr\u01B0\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:43.313876-07:00
@@ -13,7 +11,7 @@ description: "Python\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB2
   \ \uC791\uB3D9\uD558\uB294\uC9C0 \uD655\uC778\uD568\uC73C\uB85C\uC368, \uC624\uB958\
   \uB97C \uC870\uAE30\uC5D0 \uBC1C\uACAC\uD558\uACE0 \uC720\uC9C0\uBCF4\uC218 \uBC0F\
   \ \uB9AC\uD329\uD130\uB9C1\uC744 \uC6A9\uC774\uD558\uAC8C \uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.630211
+lastmod: 2024-02-19 22:05:13.544638
 model: gpt-4-0125-preview
 summary: "Python\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB294 \uAC83\
   \uC740 \uCF54\uB4DC\uC758 \uC815\uD655\uC131\uC744 \uAC80\uC99D\uD558\uAE30 \uC704\

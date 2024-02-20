@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:40.251626-07:00
 description: "Perusautentikoinnilla varustetun HTTP-pyynn\xF6n l\xE4hett\xE4minen\
   \ on prosessi, jossa k\xE4ytt\xE4j\xE4tunnus ja salasana l\xE4hetet\xE4\xE4n HTTP-otsikoissa\
   \ palvelimelle. K\xE4yt\xE4mme\u2026"
-lastmod: 2024-02-18 23:09:07.503276
+lastmod: 2024-02-19 22:05:15.382412
 model: gpt-4-1106-preview
 summary: "Perusautentikoinnilla varustetun HTTP-pyynn\xF6n l\xE4hett\xE4minen on prosessi,\
   \ jossa k\xE4ytt\xE4j\xE4tunnus ja salasana l\xE4hetet\xE4\xE4n HTTP-otsikoissa\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/lua/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:51.325773-07:00
 description: "Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarciu\
   \ pliku w trybie do zapisu, a nast\u0119pnie u\u017Cywaniu operacji na plikach do\
   \ wstawiania\u2026"
-lastmod: 2024-02-18 23:08:49.758297
+lastmod: 2024-02-19 22:04:54.696410
 model: gpt-4-0125-preview
 summary: "Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarciu\
   \ pliku w trybie do zapisu, a nast\u0119pnie u\u017Cywaniu operacji na plikach do\

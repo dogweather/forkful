@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/vba/searching-and-replacing-text/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:39.521301-07:00
@@ -13,7 +11,7 @@ description: "Visual Basic for Applications\uFF08VBA\uFF09\u3067\u306E\u30C6\u30
   \u3067\u5927\u91CF\u306E\u7DE8\u96C6\u3001\u8AA4\u308A\u306E\u8A02\u6B63\u3001\u307E\
   \u305F\u306F\u5E83\u7BC4\u306A\u30C7\u30FC\u30BF\u30BB\u30C3\u30C8\u5168\u4F53\u306E\
   \u60C5\u5831\u66F4\u65B0\u3092\u81EA\u52D5\u5316\u3067\u304D\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.745865
+lastmod: 2024-02-19 22:05:01.031266
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications\uFF08VBA\uFF09\u3067\u306E\u30C6\u30AD\u30B9\
   \u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB\u306F\u3001\u30D7\u30ED\u30B0\u30E9\u30E0\

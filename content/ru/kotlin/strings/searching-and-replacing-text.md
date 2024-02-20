@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/kotlin/searching-and-replacing-text/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:01:57.545838-07:00
@@ -13,7 +11,7 @@ description: "\u041F\u043E\u0438\u0441\u043A \u0438 \u0437\u0430\u043C\u0435\u04
   \u0430 \u0447\u0442\u043E-\u0442\u043E \u0434\u0440\u0443\u0433\u043E\u0435. \u042D\
   \u0442\u043E \u0440\u0430\u0441\u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0451\
   \u043D\u043D\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430 \u0432\u2026"
-lastmod: 2024-02-18 23:08:56.926104
+lastmod: 2024-02-19 22:05:03.900320
 model: gpt-4-0125-preview
 summary: "\u041F\u043E\u0438\u0441\u043A \u0438 \u0437\u0430\u043C\u0435\u043D\u0430\
   \ \u0442\u0435\u043A\u0441\u0442\u0430 \u043D\u0430\u043F\u043E\u043C\u0438\u043D\

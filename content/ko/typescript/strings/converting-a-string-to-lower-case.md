@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/typescript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:32.064065-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\
   \uB2E4\uB294 \uAC83\uC740 \uB300\uBB38\uC790\uB97C \uD574\uB2F9\uD558\uB294 \uC18C\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uC9C0, \uB370\uC774\uD130 \uC815\uADDC\uD654 \uB4F1\uC744 \uC704\uD574 \uC0AC\uC6A9\
   \uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.800438
+lastmod: 2024-02-19 22:05:13.712917
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC83\uC740 \uB300\uBB38\uC790\uB97C \uD574\uB2F9\uD558\uB294 \uC18C\uBB38\

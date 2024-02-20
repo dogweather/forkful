@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:49.555678-07:00
 description: "Het parsen van een datum uit een string gaat over het begrijpelijk maken\
   \ van datuminformatie die binnen een tekst is opgenomen. Programmeurs doen dit om\u2026"
-lastmod: 2024-02-18 23:09:02.102311
+lastmod: 2024-02-19 22:05:10.123306
 model: gpt-4-0125-preview
 summary: "Het parsen van een datum uit een string gaat over het begrijpelijk maken\
   \ van datuminformatie die binnen een tekst is opgenomen. Programmeurs doen dit om\u2026"

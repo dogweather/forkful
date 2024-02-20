@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elixir/generating-random-numbers/
 date: 2024-01-27 20:33:18.574106-07:00
 description: "Generowanie liczb losowych w Elixirze jest podstawowym zadaniem programistycznym,\
   \ niezb\u0119dnym dla aplikacji potrzebuj\u0105cych nieprzewidywalnych wynik\xF3\
   w,\u2026"
-lastmod: 2024-02-18 23:08:49.301831
+lastmod: 2024-02-19 22:04:54.217167
 model: gpt-4-0125-preview
 summary: "Generowanie liczb losowych w Elixirze jest podstawowym zadaniem programistycznym,\
   \ niezb\u0119dnym dla aplikacji potrzebuj\u0105cych nieprzewidywalnych wynik\xF3\

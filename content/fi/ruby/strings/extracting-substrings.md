@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/ruby/extracting-substrings/
 date: 2024-01-20 17:46:41.547380-07:00
 description: "Substringien poiminta tarkoittaa isomman merkkijonon sis\xE4lt\xE4 tietyn\
   \ osan irrottamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain\
   \ jonkin tiedon\u2026"
-lastmod: 2024-02-18 23:09:08.168414
+lastmod: 2024-02-19 22:05:15.982300
 model: gpt-4-1106-preview
 summary: "Substringien poiminta tarkoittaa isomman merkkijonon sis\xE4lt\xE4 tietyn\
   \ osan irrottamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain\

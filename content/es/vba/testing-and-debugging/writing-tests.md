@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:58.924132-07:00
 description: "Escribir pruebas en la programaci\xF3n implica crear procedimientos\
   \ espec\xEDficos para validar la funcionalidad y rendimiento de tus segmentos de\
   \ c\xF3digo,\u2026"
-lastmod: 2024-02-18 23:09:09.801088
+lastmod: 2024-02-19 22:05:17.420090
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en la programaci\xF3n implica crear procedimientos espec\xED\
   ficos para validar la funcionalidad y rendimiento de tus segmentos de c\xF3digo,\u2026"

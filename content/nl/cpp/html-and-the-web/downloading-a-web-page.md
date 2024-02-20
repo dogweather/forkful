@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:19.028817-07:00
 description: "Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen,\
   \ gewoonlijk in HTML-formaat, om lokaal te bekijken of te verwerken. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.181416
+lastmod: 2024-02-19 22:05:10.198104
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen, gewoonlijk\
   \ in HTML-formaat, om lokaal te bekijken of te verwerken. Programmeurs\u2026"

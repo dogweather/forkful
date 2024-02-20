@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/php/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:33.579895-07:00
 description: "Analisar HTML com PHP envolve extrair informa\xE7\xF5es espec\xEDficas\
   \ de documentos HTML. Programadores realizam essa tarefa para automatizar a extra\xE7\
   \xE3o de dados,\u2026"
-lastmod: 2024-02-18 23:08:58.238691
+lastmod: 2024-02-19 22:05:05.713249
 model: gpt-4-0125-preview
 summary: "Analisar HTML com PHP envolve extrair informa\xE7\xF5es espec\xEDficas de\
   \ documentos HTML. Programadores realizam essa tarefa para automatizar a extra\xE7\

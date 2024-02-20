@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/working-with-xml/
 date: 2024-01-25 03:39:58.779376-07:00
 description: "Working with XML means parsing, generating, and manipulating XML (eXtensible\
   \ Markup Language) documents using code. Programmers do it to interact with\u2026"
-lastmod: 2024-02-18 23:09:11.589800
+lastmod: 2024-02-19 22:05:19.034167
 model: gpt-4-1106-preview
 summary: "Working with XML means parsing, generating, and manipulating XML (eXtensible\
   \ Markup Language) documents using code. Programmers do it to interact with\u2026"

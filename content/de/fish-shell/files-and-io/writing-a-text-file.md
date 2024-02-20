@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/fish-shell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:47.630930-07:00
 description: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es Ihnen,\
   \ Daten dauerhaft zu speichern. Dies erleichtert die Datenwiederherstellung oder\u2026"
-lastmod: 2024-02-18 23:09:05.345694
+lastmod: 2024-02-19 22:05:13.266776
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es Ihnen,\
   \ Daten dauerhaft zu speichern. Dies erleichtert die Datenwiederherstellung oder\u2026"

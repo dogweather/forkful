@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:44.012006-07:00
 description: "Het extraheren van substrings betekent het wegnemen van kleine stukjes\
   \ uit een grotere string. Programmeurs doen dit om specifieke data binnen een tekst\u2026"
-lastmod: 2024-02-18 23:09:02.170772
+lastmod: 2024-02-19 22:05:10.187935
 model: gpt-4-0125-preview
 summary: "Het extraheren van substrings betekent het wegnemen van kleine stukjes uit\
   \ een grotere string. Programmeurs doen dit om specifieke data binnen een tekst\u2026"

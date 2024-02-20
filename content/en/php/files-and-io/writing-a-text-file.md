@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/writing-a-text-file/
 date: 2024-02-03 19:03:15.492126-07:00
 description: "Writing a text file in PHP involves creating or opening a file and inserting\
   \ content into it. Programmers do this to persist data, like user-generated\u2026"
-lastmod: 2024-02-18 23:09:11.155394
+lastmod: 2024-02-19 22:05:18.646228
 model: gpt-4-0125-preview
 summary: "Writing a text file in PHP involves creating or opening a file and inserting\
   \ content into it. Programmers do this to persist data, like user-generated\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/javascript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:26.860407-07:00
 description: "Praca z CSV (Comma-Separated Values, warto\u015Bci oddzielone przecinkami)\
   \ w JavaScript obejmuje parsowanie lub generowanie plik\xF3w CSV w celu zaimportowania\u2026"
-lastmod: 2024-02-18 23:08:50.015691
+lastmod: 2024-02-19 22:04:54.970510
 model: gpt-4-0125-preview
 summary: "Praca z CSV (Comma-Separated Values, warto\u015Bci oddzielone przecinkami)\
   \ w JavaScript obejmuje parsowanie lub generowanie plik\xF3w CSV w celu zaimportowania\u2026"

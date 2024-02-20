@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:10.072343-07:00
@@ -14,7 +12,7 @@ description: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD6
   \uC758 \uC2E4\uD589\uC744 \uB354\uC6B1 \uC6D0\uD65C\uD558\uACE0 \uC2E0\uB8B0\uD560\
   \ \uC218 \uC788\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC774\uB7F0 \uC791\uC5C5\uC744\
   \u2026"
-lastmod: 2024-02-18 23:09:06.706077
+lastmod: 2024-02-19 22:05:14.602034
 model: gpt-4-0125-preview
 summary: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD55C\uB2E4\uB294 \uAC83\uC740, \uD30C\uC77C\uC744 \uC77D\uAC70\uB098 \uC4F0\uAE30\

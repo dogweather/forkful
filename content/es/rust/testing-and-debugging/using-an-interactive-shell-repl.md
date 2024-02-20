@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/rust/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:40.429083-07:00
 description: "Una shell interactiva de Rust, o REPL (Read-Eval-Print Loop, Bucle de\
   \ Leer-Evaluar-Imprimir), te permite ejecutar c\xF3digo Rust al instante, viendo\u2026"
-lastmod: 2024-02-18 23:09:09.750784
+lastmod: 2024-02-19 22:05:17.374196
 model: gpt-4-0125-preview
 summary: "Una shell interactiva de Rust, o REPL (Read-Eval-Print Loop, Bucle de Leer-Evaluar-Imprimir),\
   \ te permite ejecutar c\xF3digo Rust al instante, viendo\u2026"

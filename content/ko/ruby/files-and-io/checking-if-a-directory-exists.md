@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:23.528480-07:00
@@ -12,7 +10,7 @@ description: "\uB8E8\uBE44\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7
   . \uC774\uB294 \uD30C\uC77C \uCC98\uB9AC \uC2DC \uC624\uB958\uB97C \uD53C\uD558\uACE0\
   \ \uD30C\uC77C \uC2DC\uC2A4\uD15C \uC870\uC791\uC758 \uC2E0\uB8B0\uC131\uC744 \uBCF4\
   \uC7A5\uD558\uB294 \uB370 \uC911\uC694\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:07.048276
+lastmod: 2024-02-19 22:05:14.929273
 model: gpt-4-0125-preview
 summary: "\uB8E8\uBE44\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC \uC5EC\
   \uBD80\uB97C \uD655\uC778\uD558\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB798\uBA38\

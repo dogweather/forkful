@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/elixir/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:22.332085-07:00
 description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en standard\
   \ f\xF6r serialisering av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och som vanligtvis\
   \ anv\xE4nds f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.522559
+lastmod: 2024-02-19 22:04:56.834724
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en standard f\xF6\
   r serialisering av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och som vanligtvis\

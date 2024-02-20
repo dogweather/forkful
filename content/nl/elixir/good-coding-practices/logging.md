@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elixir/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:57.639297-07:00
 description: "Loggen in softwareontwikkeling is de techniek van het vastleggen van\
   \ gebeurtenissen die plaatsvinden terwijl een programma wordt uitgevoerd, meestal\
   \ naar\u2026"
-lastmod: 2024-02-18 23:09:01.533692
+lastmod: 2024-02-19 22:05:09.559963
 model: gpt-4-0125-preview
 summary: "Loggen in softwareontwikkeling is de techniek van het vastleggen van gebeurtenissen\
   \ die plaatsvinden terwijl een programma wordt uitgevoerd, meestal naar\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/powershell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:04.314656-07:00
 description: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tietty\xE4\
   \ kaavaa. Ohjelmoijat tekev\xE4t sen, koska se auttaa puhdistamaan ja muokkaamaan\u2026"
-lastmod: 2024-02-18 23:09:07.833102
+lastmod: 2024-02-19 22:05:15.661133
 model: gpt-4-1106-preview
 summary: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tietty\xE4\
   \ kaavaa. Ohjelmoijat tekev\xE4t sen, koska se auttaa puhdistamaan ja muokkaamaan\u2026"

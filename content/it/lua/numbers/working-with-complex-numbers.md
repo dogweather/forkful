@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/lua/working-with-complex-numbers/
 date: 2024-01-26 04:43:28.679638-07:00
 description: "I numeri complessi estendono l'idea della linea numerica unidimensionale\
   \ al piano bidimensionale includendo un asse immaginario perpendicolare. I\u2026"
-lastmod: 2024-02-18 23:08:56.005068
+lastmod: 2024-02-19 22:05:02.619970
 model: gpt-4-0125-preview
 summary: "I numeri complessi estendono l'idea della linea numerica unidimensionale\
   \ al piano bidimensionale includendo un asse immaginario perpendicolare. I\u2026"

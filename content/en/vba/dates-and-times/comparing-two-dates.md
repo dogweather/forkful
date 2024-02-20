@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/vba/comparing-two-dates/
 date: 2024-02-01 21:30:17.126306-07:00
 description: "Comparing two dates in Visual Basic for Applications (VBA) involves\
   \ determining their chronological relationship to each other. Programmers do this\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:10.902076
+lastmod: 2024-02-19 22:05:18.414178
 model: gpt-4-0125-preview
 summary: "Comparing two dates in Visual Basic for Applications (VBA) involves determining\
   \ their chronological relationship to each other. Programmers do this to\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:46.102568-07:00
 description: "JavaScriptissa merkkien poistaminen tietyll\xE4 kaavalla tarkoittaa\
   \ ei-toivottujen merkkien tai merkkijonojen karsimista tekstist\xE4 k\xE4ytt\xE4\
   m\xE4ll\xE4 s\xE4\xE4nn\xF6llisi\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.018803
+lastmod: 2024-02-19 22:05:15.828998
 model: gpt-4-1106-preview
 summary: "JavaScriptissa merkkien poistaminen tietyll\xE4 kaavalla tarkoittaa ei-toivottujen\
   \ merkkien tai merkkijonojen karsimista tekstist\xE4 k\xE4ytt\xE4m\xE4ll\xE4 s\xE4\

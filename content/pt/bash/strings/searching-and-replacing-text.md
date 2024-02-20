@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/searching-and-replacing-text/
 date: 2024-01-20 17:57:37.309591-07:00
 description: "Procurar e substituir texto \xE9 reescrever partes espec\xEDficas de\
   \ um documento sem alterar o resto. Programadores fazem isso para corrigir erros,\
   \ atualizar\u2026"
-lastmod: 2024-02-18 23:08:58.309075
+lastmod: 2024-02-19 22:05:05.790535
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 reescrever partes espec\xEDficas de um\
   \ documento sem alterar o resto. Programadores fazem isso para corrigir erros, atualizar\u2026"

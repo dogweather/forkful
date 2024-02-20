@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/bash/manipulating-files-with-cli-one-liners/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:42.572498-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin s\u1EED d\u1EE5
   \ CLI (Command Line Interface) b\u1EB1ng c\xE1ch nh\u1EADp l\u1EC7nh \u0111\u01A1\
   n v\u1EDBi Bash bao g\u1ED3m vi\u1EC7c d\xF9ng c\xE1c script Bash hay l\u1EC7nh\
   \ \u0111\u1EC3 th\u1EF1c\u2026"
-lastmod: 2024-02-18 23:08:50.879360
+lastmod: 2024-02-19 22:04:56.061025
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin s\u1EED d\u1EE5ng CLI\
   \ (Command Line Interface) b\u1EB1ng c\xE1ch nh\u1EADp l\u1EC7nh \u0111\u01A1n v\u1EDB\

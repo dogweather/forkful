@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/haskell/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:39.835016-07:00
 description: "Remover aspas de uma string significa eliminar quaisquer marcas de aspas\u2014\
   simples (' ') ou duplas (\" \")\u2014que fa\xE7am parte dos dados da string. Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.187405
+lastmod: 2024-02-19 22:05:05.658098
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa eliminar quaisquer marcas de aspas\u2014\
   simples (' ') ou duplas (\" \")\u2014que fa\xE7am parte dos dados da string. Programadores\u2026"

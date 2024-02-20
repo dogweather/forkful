@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:22.379827-07:00
@@ -13,7 +11,7 @@ description: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC8FC\uB85C \uBB38\u
   \ \uAC80\uC99D\uD558\uAC70\uB098, \uBB38\uC790\uC5F4\uC5D0\uC11C \uB370\uC774\uD130\
   \uB97C \uCD94\uCD9C\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC704\uD574 \uC815\
   \uADDC \uD45C\uD604\uC2DD\uC744 \uD65C\uC6A9\uD558\uC5EC\u2026"
-lastmod: 2024-02-18 23:09:06.604486
+lastmod: 2024-02-19 22:05:14.507742
 model: gpt-4-0125-preview
 summary: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC8FC\uB85C \uBB38\uC790\uC5F4\
   \uC758 \uC77C\uCE58 \uBC0F \uC870\uC791\uC744 \uC704\uD574 \uC0AC\uC6A9\uB418\uB294\

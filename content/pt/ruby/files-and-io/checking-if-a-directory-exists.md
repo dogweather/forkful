@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:14.014719-07:00
 description: "Verificar se um diret\xF3rio existe em Ruby permite que programadores\
   \ verifiquem a presen\xE7a de um diret\xF3rio antes de realizar opera\xE7\xF5es\
   \ como ler arquivos ou\u2026"
-lastmod: 2024-02-18 23:08:58.679941
+lastmod: 2024-02-19 22:05:06.182631
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Ruby permite que programadores verifiquem\
   \ a presen\xE7a de um diret\xF3rio antes de realizar opera\xE7\xF5es como ler arquivos\

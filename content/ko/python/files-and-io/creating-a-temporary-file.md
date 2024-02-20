@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/creating-a-temporary-file/
 date: 2024-01-20 17:41:06.174912-07:00
 description: "\uC784\uC2DC \uD30C\uC77C\uC740 \uB370\uC774\uD130\uB97C \uC77C\uC2DC\
   \uC801\uC73C\uB85C \uC800\uC7A5\uD560 \uB54C \uC4F0\uC785\uB2C8\uB2E4. \uBA54\uBAA8\
@@ -9,7 +7,7 @@ description: "\uC784\uC2DC \uD30C\uC77C\uC740 \uB370\uC774\uD130\uB97C \uC77C\uC
   \uC77C \uAD50\uCCB4 \uB4F1\uC744 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
   \uC774 \uC0DD\uC131\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.655084
+lastmod: 2024-02-19 22:05:13.568815
 model: gpt-4-1106-preview
 summary: "\uC784\uC2DC \uD30C\uC77C\uC740 \uB370\uC774\uD130\uB97C \uC77C\uC2DC\uC801\
   \uC73C\uB85C \uC800\uC7A5\uD560 \uB54C \uC4F0\uC785\uB2C8\uB2E4. \uBA54\uBAA8\uB9AC\

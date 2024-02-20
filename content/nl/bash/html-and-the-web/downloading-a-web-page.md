@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:01.096203-07:00
 description: "Het downloaden van een webpagina betekent het ophalen van de gegevens\
   \ van het internet en deze lokaal opslaan. Programmeurs doen dit voor webscraping,\u2026"
-lastmod: 2024-02-18 23:09:02.038410
+lastmod: 2024-02-19 22:05:10.065073
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina betekent het ophalen van de gegevens van\
   \ het internet en deze lokaal opslaan. Programmeurs doen dit voor webscraping,\u2026"

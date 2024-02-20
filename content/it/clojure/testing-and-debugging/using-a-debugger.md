@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/clojure/using-a-debugger/
 date: 2024-01-26 03:48:11.517778-07:00
 description: "Usare un debugger significa equipaggiarsi con una lente d'ingrandimento\
   \ per scrutare il proprio codice. I programmatori fanno ci\xF2 per schiacciare i\
   \ bug,\u2026"
-lastmod: 2024-02-18 23:08:55.565168
+lastmod: 2024-02-19 22:05:02.155671
 model: gpt-4-0125-preview
 summary: "Usare un debugger significa equipaggiarsi con una lente d'ingrandimento\
   \ per scrutare il proprio codice. I programmatori fanno ci\xF2 per schiacciare i\

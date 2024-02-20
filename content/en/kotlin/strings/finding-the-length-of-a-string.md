@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:44.518007-07:00
 description: Finding a string's length means counting its characters. Programmers
   do this to validate input, loop through characters, or allocate storage.
-lastmod: 2024-02-18 23:09:11.004062
+lastmod: 2024-02-19 22:05:18.508224
 model: gpt-4-1106-preview
 summary: Finding a string's length means counting its characters. Programmers do this
   to validate input, loop through characters, or allocate storage.

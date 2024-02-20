@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:03.789409-07:00
 description: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar\
   \ om att manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande\
   \ datum,\u2026"
-lastmod: 2024-02-18 23:08:51.393212
+lastmod: 2024-02-19 22:04:56.692150
 model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar om att\
   \ manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande datum,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /zh/lua/interpolating-a-string/
 date: 2024-01-20 17:51:11.914702-07:00
 description: "String interpolation is replacing placeholders within a string with\
   \ actual values, a common practice for crafting messages or assembling texts\u2026"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.241508
+lastmod: 2024-02-19 22:05:06.940821
 model: gpt-4-1106-preview
 summary: "String interpolation is replacing placeholders within a string with actual\
   \ values, a common practice for crafting messages or assembling texts\u2026"

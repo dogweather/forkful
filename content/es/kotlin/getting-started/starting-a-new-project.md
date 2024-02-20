@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/kotlin/starting-a-new-project/
 date: 2024-01-20 18:03:58.928830-07:00
 description: "Iniciar un nuevo proyecto es como poner la primera piedra de tu construcci\xF3\
   n digital; es el punto de partida para cualquier aplicaci\xF3n que planees\u2026"
-lastmod: 2024-02-18 23:09:09.936565
+lastmod: 2024-02-19 22:05:17.543691
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es como poner la primera piedra de tu construcci\xF3\
   n digital; es el punto de partida para cualquier aplicaci\xF3n que planees\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:11.879919-07:00
 description: "En REPL, eller L\xE4s-Utv\xE4rdera-Skriv Loop, \xE4r en programmeringsmilj\xF6\
   \ som tar emot enskilda anv\xE4ndarinput, exekverar dem och returnerar resultatet\
   \ till\u2026"
-lastmod: 2024-02-18 23:08:51.423374
+lastmod: 2024-02-19 22:04:56.725737
 model: gpt-4-0125-preview
 summary: "En REPL, eller L\xE4s-Utv\xE4rdera-Skriv Loop, \xE4r en programmeringsmilj\xF6\
   \ som tar emot enskilda anv\xE4ndarinput, exekverar dem och returnerar resultatet\

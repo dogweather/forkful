@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/bash/organizing-code-into-functions/
 date: 2024-01-26 01:09:08.408602-07:00
 description: "Dividir el c\xF3digo en funciones significa descomponer los scripts\
   \ en bloques m\xE1s peque\xF1os y reutilizables que realizan tareas espec\xEDficas.\
   \ Hace que el\u2026"
-lastmod: 2024-02-18 23:09:10.173229
+lastmod: 2024-02-19 22:05:17.759252
 model: gpt-4-1106-preview
 summary: "Dividir el c\xF3digo en funciones significa descomponer los scripts en bloques\
   \ m\xE1s peque\xF1os y reutilizables que realizan tareas espec\xEDficas. Hace que\

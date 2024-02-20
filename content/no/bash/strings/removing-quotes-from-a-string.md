@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:38.853047-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 strippe\
   \ bort anf\xF8rselstegnene som omslutter strengen. Programmerere \xF8nsker ofte\
   \ \xE5 gj\xF8re dette for \xE5 rense\u2026"
-lastmod: 2024-02-18 23:08:54.044589
+lastmod: 2024-02-19 22:05:00.226106
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 strippe bort\
   \ anf\xF8rselstegnene som omslutter strengen. Programmerere \xF8nsker ofte \xE5\

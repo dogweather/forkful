@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:09.453436-07:00
 description: "Att konvertera ett datum till en str\xE4ng i C inneb\xE4r att \xF6vers\xE4\
   tta en datumstruktur eller tidsst\xE4mpel till ett l\xE4sbart format f\xF6r m\xE4\
   nniskor. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:52.262675
+lastmod: 2024-02-19 22:04:57.648241
 model: gpt-4-0125-preview
 summary: "Att konvertera ett datum till en str\xE4ng i C inneb\xE4r att \xF6vers\xE4\
   tta en datumstruktur eller tidsst\xE4mpel till ett l\xE4sbart format f\xF6r m\xE4\

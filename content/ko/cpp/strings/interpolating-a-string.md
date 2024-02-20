@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/interpolating-a-string/
 date: 2024-01-20 17:50:32.799381-07:00
 description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\uC218\uC640 \uC0C1\uC218\
   \uB97C \uBB38\uC790\uC5F4 \uC548\uC5D0 \uD1B5\uD569\uD558\uB294 \uACFC\uC815\uC785\
@@ -8,7 +6,7 @@ description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\uC218\uC640 \uC0C1\uC
   \uC744 \uC27D\uACE0 \uAC04\uACB0\uD558\uAC8C \uC0DD\uC131\uD560 \uC218 \uC788\uC2B5\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.661940
+lastmod: 2024-02-19 22:05:14.561892
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\uC218\uC640 \uC0C1\uC218\uB97C\
   \ \uBB38\uC790\uC5F4 \uC548\uC5D0 \uD1B5\uD569\uD558\uB294 \uACFC\uC815\uC785\uB2C8\

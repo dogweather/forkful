@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/lua/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:22.955178-07:00
 description: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bedeutet,\
   \ ein spezifisches Datum basierend auf einem anderen Datum und einer Zeitspanne\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.021378
+lastmod: 2024-02-19 22:05:12.959324
 model: gpt-4-1106-preview
 summary: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bedeutet,\
   \ ein spezifisches Datum basierend auf einem anderen Datum und einer Zeitspanne\

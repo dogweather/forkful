@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/comparing-two-dates/
 date: 2024-01-20 17:33:19.994850-07:00
 description: "Comparar duas datas significa verificar a sua igualdade, anteced\xEA\
   ncia ou posterioridade em rela\xE7\xE3o uma \xE0 outra. Programadores fazem isso\
   \ para controle de\u2026"
-lastmod: 2024-02-18 23:08:58.128281
+lastmod: 2024-02-19 22:05:05.594635
 model: gpt-4-1106-preview
 summary: "Comparar duas datas significa verificar a sua igualdade, anteced\xEAncia\
   \ ou posterioridade em rela\xE7\xE3o uma \xE0 outra. Programadores fazem isso para\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/ruby/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:28.104204-07:00
@@ -8,7 +6,7 @@ description: "S\u1EED d\u1EE5ng debugger trong Ruby mang l\u1EA1i cho l\u1EADp t
   nh vi\xEAn m\u1ED9t si\xEAu n\u0103ng l\u1EF1c \u0111\u1EC3 t\u1EA1m d\u1EEBng m\xE3\
   \ c\u1EE7a h\u1ECD, ki\u1EC3m tra c\xE1c bi\u1EBFn v\xE0 b\u01B0\u1EDBc qua m\xE3\
   \ c\u1EE7a h\u1ECD t\u1EEBng d\xF2ng m\u1ED9t.\u2026"
-lastmod: 2024-02-18 23:08:51.290419
+lastmod: 2024-02-19 22:04:56.576565
 model: gpt-4-0125-preview
 summary: "S\u1EED d\u1EE5ng debugger trong Ruby mang l\u1EA1i cho l\u1EADp tr\xEC\
   nh vi\xEAn m\u1ED9t si\xEAu n\u0103ng l\u1EF1c \u0111\u1EC3 t\u1EA1m d\u1EEBng m\xE3\

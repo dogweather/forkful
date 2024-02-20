@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/kotlin/rounding-numbers/
 date: 2024-01-26 03:45:26.748679-07:00
 description: "Avrunding av tall inneb\xE6rer \xE5 justere dem til n\xE6rmeste hele\
   \ tall eller til en spesifisert grad av presisjon. Programmerere gj\xF8r dette for\
   \ \xE5 forbedre\u2026"
-lastmod: 2024-02-18 23:08:53.847052
+lastmod: 2024-02-19 22:04:59.992776
 model: gpt-4-0125-preview
 summary: "Avrunding av tall inneb\xE6rer \xE5 justere dem til n\xE6rmeste hele tall\
   \ eller til en spesifisert grad av presisjon. Programmerere gj\xF8r dette for \xE5\

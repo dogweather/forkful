@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/searching-and-replacing-text/
 date: 2024-01-20 17:58:03.253255-07:00
 description: "\xC5 s\xF8ke og erstatte tekst g\xE5r ut p\xE5 \xE5 finne spesifikke\
   \ strenger i data og bytte dem ut med noe annet. Programmerere bruker dette for\
   \ \xE5 masseendre kode,\u2026"
-lastmod: 2024-02-18 23:08:53.550444
+lastmod: 2024-02-19 22:04:59.671339
 model: gpt-4-1106-preview
 summary: "\xC5 s\xF8ke og erstatte tekst g\xE5r ut p\xE5 \xE5 finne spesifikke strenger\
   \ i data og bytte dem ut med noe annet. Programmerere bruker dette for \xE5 masseendre\

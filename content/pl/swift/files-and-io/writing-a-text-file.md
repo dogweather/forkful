@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/swift/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:57.814832-07:00
 description: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142\
   e przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\
   \ do zada\u0144 takich jak\u2026"
-lastmod: 2024-02-18 23:08:49.970759
+lastmod: 2024-02-19 22:04:54.921885
 model: gpt-4-0125-preview
 summary: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142e\
   \ przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\

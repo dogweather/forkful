@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/rounding-numbers/
 date: 2024-01-26 03:43:59.579896-07:00
 description: "Arredondar n\xFAmeros significa ajust\xE1-los a um valor pr\xF3ximo\
   \ para simplicidade ou para corresponder a uma certa precis\xE3o. Isso \xE9 \xFA\
   til para melhorar a\u2026"
-lastmod: 2024-02-18 23:08:57.839077
+lastmod: 2024-02-19 22:05:05.308641
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajust\xE1-los a um valor pr\xF3ximo para\
   \ simplicidade ou para corresponder a uma certa precis\xE3o. Isso \xE9 \xFAtil para\

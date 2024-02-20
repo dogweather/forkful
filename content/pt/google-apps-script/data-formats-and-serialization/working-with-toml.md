@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:13.673514-07:00
 description: "TOML, que significa Tom's Obvious, Minimal Language (Linguagem M\xED\
   nima e \xD3bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o f\xE1\
   cil de ler devido \xE0 sua\u2026"
-lastmod: 2024-02-18 23:08:57.742611
+lastmod: 2024-02-19 22:05:05.203757
 model: gpt-4-0125-preview
 summary: "TOML, que significa Tom's Obvious, Minimal Language (Linguagem M\xEDnima\
   \ e \xD3bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o f\xE1cil\

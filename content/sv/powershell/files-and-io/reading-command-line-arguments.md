@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/reading-command-line-arguments/
 date: 2024-01-20 17:57:04.121592-07:00
 description: "Kommandoradsargument l\xE5ter skripten anpassas vid k\xF6rning. Programmerare\
   \ anv\xE4nder det f\xF6r att g\xF6ra skript dynamiska och flexibla \u2013 anv\xE4\
   ndbara f\xF6r olika\u2026"
-lastmod: 2024-02-18 23:08:52.018927
+lastmod: 2024-02-19 22:04:57.374884
 model: gpt-4-1106-preview
 summary: "Kommandoradsargument l\xE5ter skripten anpassas vid k\xF6rning. Programmerare\
   \ anv\xE4nder det f\xF6r att g\xF6ra skript dynamiska och flexibla \u2013 anv\xE4\

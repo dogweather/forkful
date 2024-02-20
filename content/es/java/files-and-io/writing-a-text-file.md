@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/java/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:10.514260-07:00
 description: "Escribir un archivo de texto en Java se trata de utilizar las capacidades\
   \ del lenguaje para crear y escribir contenido en archivos en el sistema de\u2026"
-lastmod: 2024-02-18 23:09:09.864842
+lastmod: 2024-02-19 22:05:17.477991
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Java se trata de utilizar las capacidades\
   \ del lenguaje para crear y escribir contenido en archivos en el sistema de\u2026"

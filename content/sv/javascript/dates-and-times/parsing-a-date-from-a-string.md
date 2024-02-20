@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/javascript/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:29.993585-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng g\xF6r det m\xF6jligt f\xF6\
   r programmerare att konvertera textuella datumrepresentationer till JavaScript `Date`-objekt,\
   \ vilket\u2026"
-lastmod: 2024-02-18 23:08:52.173750
+lastmod: 2024-02-19 22:04:57.546353
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng g\xF6r det m\xF6jligt f\xF6r programmerare\
   \ att konvertera textuella datumrepresentationer till JavaScript `Date`-objekt,\

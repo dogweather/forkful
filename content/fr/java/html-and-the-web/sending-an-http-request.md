@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/java/sending-an-http-request/
 date: 2024-01-20 17:59:56.760946-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de faire\
   \ quelque chose pour vous, comme r\xE9cup\xE9rer une page web. Les d\xE9veloppeurs\
   \ le font pour\u2026"
-lastmod: 2024-02-18 23:09:08.625022
+lastmod: 2024-02-19 22:05:16.397303
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de faire\
   \ quelque chose pour vous, comme r\xE9cup\xE9rer une page web. Les d\xE9veloppeurs\

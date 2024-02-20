@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/sending-an-http-request/
 date: 2024-01-20 17:59:36.397411-07:00
 description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC83\uC740 \uC6F9\
   \ \uC11C\uBC84\uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\
@@ -10,7 +8,7 @@ description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC83\uC740 \uC6
   \ \uC11C\uBE44\uC2A4\uC640 \uB370\uC774\uD130\uB97C \uAD50\uD658\uD558\uAE30 \uC704\
   \uD574\uC11C\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.678183
+lastmod: 2024-02-19 22:05:14.576984
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC83\uC740 \uC6F9 \uC11C\
   \uBC84\uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\uD130\

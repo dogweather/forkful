@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:40.576630-07:00
 description: "Editar arquivos no local com comandos de linha de comando (CLI) em uma\
   \ linha no PowerShell \xE9 sobre fazer modifica\xE7\xF5es diretas nos arquivos a\
   \ partir da\u2026"
-lastmod: 2024-02-18 23:08:58.364644
+lastmod: 2024-02-19 22:05:05.849147
 model: gpt-4-0125-preview
 summary: "Editar arquivos no local com comandos de linha de comando (CLI) em uma linha\
   \ no PowerShell \xE9 sobre fazer modifica\xE7\xF5es diretas nos arquivos a partir\

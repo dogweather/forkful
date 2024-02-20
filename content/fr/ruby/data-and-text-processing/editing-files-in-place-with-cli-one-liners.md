@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/ruby/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:47.160074-07:00
 description: "Modifier des fichiers sur place avec des lignes de commande (CLI - Command\
   \ Line Interface) en Ruby vous permet de modifier des fichiers directement depuis\u2026"
-lastmod: 2024-02-18 23:09:09.402673
+lastmod: 2024-02-19 22:05:17.065540
 model: gpt-4-0125-preview
 summary: "Modifier des fichiers sur place avec des lignes de commande (CLI - Command\
   \ Line Interface) en Ruby vous permet de modifier des fichiers directement depuis\u2026"

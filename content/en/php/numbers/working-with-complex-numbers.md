@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/working-with-complex-numbers/
 date: 2024-01-25 03:00:04.836795-07:00
 description: "Complex numbers have a real part and an imaginary part, usually written\
   \ as `a + bi`. They're crucial in advanced math, physics, engineering, and certain\u2026"
-lastmod: 2024-02-18 23:09:11.130999
+lastmod: 2024-02-19 22:05:18.624238
 model: gpt-4-1106-preview
 summary: "Complex numbers have a real part and an imaginary part, usually written\
   \ as `a + bi`. They're crucial in advanced math, physics, engineering, and certain\u2026"

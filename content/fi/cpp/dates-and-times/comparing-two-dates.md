@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/comparing-two-dates/
 date: 2024-01-20 17:33:18.977052-07:00
 description: "Vertailemme p\xE4iv\xE4m\xE4\xE4ri\xE4 ymm\xE4rt\xE4\xE4ksemme aikaj\xE4\
   rjestyksen ja m\xE4\xE4ritt\xE4\xE4ksemme aikaeroja. Ohjelmoijat tarvitsevat t\xE4\
   t\xE4 logiikkaa aikaleimojen vertailuun,\u2026"
-lastmod: 2024-02-18 23:09:07.957704
+lastmod: 2024-02-19 22:05:15.772830
 model: gpt-4-1106-preview
 summary: "Vertailemme p\xE4iv\xE4m\xE4\xE4ri\xE4 ymm\xE4rt\xE4\xE4ksemme aikaj\xE4\
   rjestyksen ja m\xE4\xE4ritt\xE4\xE4ksemme aikaeroja. Ohjelmoijat tarvitsevat t\xE4\

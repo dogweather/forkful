@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/c/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:38.019170-07:00
 description: "YAML\u306F\u3001\u300CYAML Ain't Markup\u2026"
-lastmod: 2024-02-18 23:08:55.369172
+lastmod: 2024-02-19 22:05:01.928956
 model: gpt-4-0125-preview
 summary: "YAML\u306F\u3001\u300CYAML Ain't Markup\u2026"
 title: "YAML\u3068\u306E\u4F5C\u696D"

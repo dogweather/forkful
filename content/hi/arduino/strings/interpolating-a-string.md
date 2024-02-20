@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/arduino/interpolating-a-string/
 date: 2024-01-20 17:50:13.812227-07:00
 description: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\
   \u0948 \u091C\u093F\u0938\u092E\u0947\u0902 \u0939\u092E \u0935\u0947\u0930\u093F\
@@ -11,7 +9,7 @@ description: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \
   \u0902\u0964 \u0907\u0938\u0938\u0947 \u0915\u094B\u0921 \u0938\u093E\u092B \u0914\
   \u0930 \u092A\u0922\u093C\u0928\u0947 \u092E\u0947\u0902 \u0906\u0938\u093E\u0928\
   \ \u0939\u094B\u0924\u093E \u0939\u0948, \u0914\u0930\u2026"
-lastmod: 2024-02-18 23:09:03.789508
+lastmod: 2024-02-19 22:05:11.774372
 model: gpt-4-1106-preview
 summary: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\u0948\
   \ \u091C\u093F\u0938\u092E\u0947\u0902 \u0939\u092E \u0935\u0947\u0930\u093F\u090F\

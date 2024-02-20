@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/reading-a-text-file/
 date: 2024-01-20 17:54:09.689636-07:00
 description: "Leer un archivo de texto es el proceso de obtener y procesar informaci\xF3\
   n almacenada en un archivo de texto simple. Los programadores lo hacen para\u2026"
-lastmod: 2024-02-18 23:09:10.472069
+lastmod: 2024-02-19 22:05:18.023827
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es el proceso de obtener y procesar informaci\xF3\
   n almacenada en un archivo de texto simple. Los programadores lo hacen para\u2026"

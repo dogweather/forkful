@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/haskell/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.662195-07:00
@@ -8,7 +6,7 @@ description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print L
   \ trong Haskell cho ph\xE9p b\u1EA1n ch\u1EA1y c\xE1c \u0111o\u1EA1n m\xE3 tr\u1EF1\
   c ti\u1EBFp. \u0110\xF3 l\xE0 s\xE2n ch\u01A1i cho ph\u1EA3n h\u1ED3i nhanh ch\xF3\
   ng, ki\u1EC3m\u2026"
-lastmod: 2024-02-18 23:08:50.746594
+lastmod: 2024-02-19 22:04:55.893246
 model: gpt-4-0125-preview
 summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop),\
   \ trong Haskell cho ph\xE9p b\u1EA1n ch\u1EA1y c\xE1c \u0111o\u1EA1n m\xE3 tr\u1EF1\

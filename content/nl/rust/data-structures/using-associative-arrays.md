@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:53.579865-07:00
 description: "Associatieve arrays, of wat Rustaceans \"hash maps\" noemen, zijn collecties\
   \ die gegevens opslaan in sleutel-waardeparen. Programmeurs gebruiken ze voor\u2026"
-lastmod: 2024-02-18 23:09:01.611361
+lastmod: 2024-02-19 22:05:09.634726
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, of wat Rustaceans \"hash maps\" noemen, zijn collecties\
   \ die gegevens opslaan in sleutel-waardeparen. Programmeurs gebruiken ze voor\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/organizing-code-into-functions/
 date: 2024-01-26 01:10:35.204700-07:00
 description: "Dumpa all din kod i en stor h\xF6g? D\xE5lig id\xE9. Bryt upp den i\
   \ funktioner? Bra id\xE9. Det h\xE5ller din Elm-kod ren, \xE5teranv\xE4ndbar och\
   \ l\xE4ttare att testa. Genom att\u2026"
-lastmod: 2024-02-18 23:08:51.714820
+lastmod: 2024-02-19 22:04:57.046407
 model: gpt-4-1106-preview
 summary: "Dumpa all din kod i en stor h\xF6g? D\xE5lig id\xE9. Bryt upp den i funktioner?\
   \ Bra id\xE9. Det h\xE5ller din Elm-kod ren, \xE5teranv\xE4ndbar och l\xE4ttare\

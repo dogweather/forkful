@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/capitalizing-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:42.955500-07:00
 description: "Het kapitaliseren van een string betekent het converteren van het eerste\
   \ karakter naar een hoofdletter en de rest in kleine letters houden. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.740675
+lastmod: 2024-02-19 22:05:09.759996
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een string betekent het converteren van het eerste\
   \ karakter naar een hoofdletter en de rest in kleine letters houden. Programmeurs\u2026"

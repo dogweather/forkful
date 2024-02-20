@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/reading-command-line-arguments/
 date: 2024-01-20 17:55:47.932341-07:00
 description: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na podanie danych\
   \ programowi, kiedy go uruchamiasz. Programi\u015Bci korzystaj\u0105 z tego, aby\
   \ uczyni\u0107 swoje skrypty\u2026"
-lastmod: 2024-02-18 23:08:50.051811
+lastmod: 2024-02-19 22:04:55.032559
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na podanie danych\
   \ programowi, kiedy go uruchamiasz. Programi\u015Bci korzystaj\u0105 z tego, aby\

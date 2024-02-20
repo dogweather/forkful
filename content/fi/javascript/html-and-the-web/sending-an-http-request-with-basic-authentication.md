@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:59.400463-07:00
 description: "Perustiedot: HTTP-pyynt\xF6 basic-autentikaatiolla tarkoittaa k\xE4\
   ytt\xE4j\xE4nimen ja salasanan sis\xE4llytt\xE4mist\xE4 HTTP-pyynt\xF6\xF6n tunnistautumista\
   \ varten. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:08.035442
+lastmod: 2024-02-19 22:05:15.844535
 model: gpt-4-1106-preview
 summary: "Perustiedot: HTTP-pyynt\xF6 basic-autentikaatiolla tarkoittaa k\xE4ytt\xE4\
   j\xE4nimen ja salasanan sis\xE4llytt\xE4mist\xE4 HTTP-pyynt\xF6\xF6n tunnistautumista\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/refactoring/
 date: 2024-01-26 03:36:51.439399-07:00
 description: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere omstrukturerer for \xE5\
   \u2026"
-lastmod: 2024-02-18 23:08:54.446333
+lastmod: 2024-02-19 22:05:00.609588
 model: gpt-4-0125-preview
 summary: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere omstrukturerer for \xE5\

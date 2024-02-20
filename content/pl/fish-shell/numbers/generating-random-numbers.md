@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/generating-random-numbers/
 date: 2024-01-27 20:33:56.363464-07:00
 description: "Generowanie losowych liczb jest podstawowym zadaniem w programowaniu,\
   \ u\u017Cywanym do wszystkiego - od pr\xF3bkowania danych po rozw\xF3j gier. W Fish\
   \ Shell u\u017Cycie\u2026"
-lastmod: 2024-02-18 23:08:50.030596
+lastmod: 2024-02-19 22:04:55.009100
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb jest podstawowym zadaniem w programowaniu, u\u017C\
   ywanym do wszystkiego - od pr\xF3bkowania danych po rozw\xF3j gier. W Fish Shell\

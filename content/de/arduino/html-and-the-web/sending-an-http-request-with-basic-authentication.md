@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/arduino/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:05.490156-07:00
 description: "HTTP-Requests mit Basic Authentication senden Daten an einen Server,\
   \ gesch\xFCtzt durch Benutzername und Passwort. Programmierer nutzen das f\xFCr\
   \ sichere\u2026"
-lastmod: 2024-02-18 23:09:05.145759
+lastmod: 2024-02-19 22:05:13.078034
 model: gpt-4-1106-preview
 summary: "HTTP-Requests mit Basic Authentication senden Daten an einen Server, gesch\xFC\
   tzt durch Benutzername und Passwort. Programmierer nutzen das f\xFCr sichere\u2026"

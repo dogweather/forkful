@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:41.562649-07:00
 description: "Werken met XML in Haskell omvat het parsen, manipuleren en genereren\
   \ van XML-structuren. Programmeurs gaan om met XML om te interacteren met tal van\u2026"
-lastmod: 2024-02-18 23:09:01.925489
+lastmod: 2024-02-19 22:05:09.948089
 model: gpt-4-0125-preview
 summary: "Werken met XML in Haskell omvat het parsen, manipuleren en genereren van\
   \ XML-structuren. Programmeurs gaan om met XML om te interacteren met tal van\u2026"

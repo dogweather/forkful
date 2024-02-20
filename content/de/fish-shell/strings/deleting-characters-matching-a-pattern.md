@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/fish-shell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:58.604658-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Prozess,\
   \ bei dem bestimmte Zeichensequenzen aus einer Zeichenkette entfernt werden. Diese\u2026"
-lastmod: 2024-02-18 23:09:05.306866
+lastmod: 2024-02-19 22:05:13.230511
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Prozess,\
   \ bei dem bestimmte Zeichensequenzen aus einer Zeichenkette entfernt werden. Diese\u2026"

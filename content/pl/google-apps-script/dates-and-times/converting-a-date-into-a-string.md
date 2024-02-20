@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:32.599167-07:00
 description: "Konwersja dat na ci\u0105gi znak\xF3w to podstawowe zadanie, kt\xF3\
   re umo\u017Cliwia programistom manipulowanie informacjami o dacie i wy\u015Bwietlanie\
   \ ich w formacie\u2026"
-lastmod: 2024-02-18 23:08:49.161039
+lastmod: 2024-02-19 22:04:54.099393
 model: gpt-4-0125-preview
 summary: "Konwersja dat na ci\u0105gi znak\xF3w to podstawowe zadanie, kt\xF3re umo\u017C\
   liwia programistom manipulowanie informacjami o dacie i wy\u015Bwietlanie ich w\

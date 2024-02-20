@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elixir/comparing-two-dates/
 date: 2024-01-20 17:32:32.301829-07:00
 description: "Comparar dos fechas significa verificar si son iguales, cu\xE1l es anterior\
   \ o posterior. Los programadores lo hacen para manejar eventos, programar tareas,\
   \ y\u2026"
-lastmod: 2024-02-18 23:09:09.665754
+lastmod: 2024-02-19 22:05:17.301365
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas significa verificar si son iguales, cu\xE1l es anterior\
   \ o posterior. Los programadores lo hacen para manejar eventos, programar tareas,\

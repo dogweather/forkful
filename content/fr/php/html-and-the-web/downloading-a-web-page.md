@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/downloading-a-web-page/
 date: 2024-01-20 17:44:23.256679-07:00
 description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
   \ HTTP. Les programmeurs le font pour analyser des donn\xE9es, tester la disponibilit\xE9\
   \ ou int\xE9grer\u2026"
-lastmod: 2024-02-18 23:09:08.921256
+lastmod: 2024-02-19 22:05:16.613350
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via HTTP.\
   \ Les programmeurs le font pour analyser des donn\xE9es, tester la disponibilit\xE9\

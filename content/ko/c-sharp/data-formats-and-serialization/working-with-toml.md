@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/working-with-toml/
 date: 2024-01-26 04:20:53.488213-07:00
 description: "TOML\uC740 \uD1B0\uC758 \uBA85\uBC31\uD558\uACE0 \uCD5C\uC18C\uD55C\uC758\
   \ \uC5B8\uC5B4(Tom's Obvious, Minimal Language)\uB97C \uC704\uD55C \uBA38\uB9BF\uAE00\
@@ -10,7 +8,7 @@ description: "TOML\uC740 \uD1B0\uC758 \uBA85\uBC31\uD558\uACE0 \uCD5C\uC18C\uD55
   \uD130 \uAD50\uD658\uC744 \uB2E8\uC21C\uD654\uD558\uACE0 \uC778\uAC04\uC758 \uAC00\
   \uB3C5\uC131\uACFC \uAE30\uACC4\uC758 \uAD6C\uBB38 \uBD84\uC11D \uAC00\uB2A5\uC131\
   \ \uC0AC\uC774\uC758\u2026"
-lastmod: 2024-02-18 23:09:06.257670
+lastmod: 2024-02-19 22:05:14.179790
 model: gpt-4-0125-preview
 summary: "TOML\uC740 \uD1B0\uC758 \uBA85\uBC31\uD558\uACE0 \uCD5C\uC18C\uD55C\uC758\
   \ \uC5B8\uC5B4(Tom's Obvious, Minimal Language)\uB97C \uC704\uD55C \uBA38\uB9BF\uAE00\

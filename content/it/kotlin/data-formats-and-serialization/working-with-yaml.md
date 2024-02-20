@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/kotlin/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:51.400492-07:00
 description: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
   \ di dati altamente leggibile spesso utilizzato per file di configurazione,\u2026"
-lastmod: 2024-02-18 23:08:55.865640
+lastmod: 2024-02-19 22:05:02.475274
 model: gpt-4-0125-preview
 summary: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
   \ di dati altamente leggibile spesso utilizzato per file di configurazione,\u2026"

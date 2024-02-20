@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/php/starting-a-new-project/
 date: 2024-01-20 18:03:58.829742-07:00
 description: "Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi\
   \ del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere\u2026"
-lastmod: 2024-02-18 23:08:55.971434
+lastmod: 2024-02-19 22:05:02.583908
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi\
   \ del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere\u2026"

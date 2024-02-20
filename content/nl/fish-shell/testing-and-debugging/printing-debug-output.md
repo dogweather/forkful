@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/fish-shell/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:24.862576-07:00
 description: "Debug-output afdrukken betekent extra informatie uitspugen om je te\
   \ helpen begrijpen wat je code doet. Programmeurs doen dit om bugs gemakkelijker\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:02.328772
+lastmod: 2024-02-19 22:05:10.337089
 model: gpt-4-0125-preview
 summary: "Debug-output afdrukken betekent extra informatie uitspugen om je te helpen\
   \ begrijpen wat je code doet. Programmeurs doen dit om bugs gemakkelijker te\u2026"

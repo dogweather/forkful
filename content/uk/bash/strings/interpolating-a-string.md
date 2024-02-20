@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/bash/interpolating-a-string/
 date: 2024-01-20 17:50:31.565269-07:00
 description: "Interpolating a string means inserting variables or expressions right\
   \ into a string. Programmers do it to dynamically build or customize messages,\u2026"
-lastmod: 2024-02-18 23:09:00.620033
+lastmod: 2024-02-19 22:05:08.584976
 model: gpt-4-1106-preview
 summary: "Interpolating a string means inserting variables or expressions right into\
   \ a string. Programmers do it to dynamically build or customize messages,\u2026"

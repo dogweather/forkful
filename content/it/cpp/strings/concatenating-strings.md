@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/concatenating-strings/
 date: 2024-01-20 17:34:34.955581-07:00
 description: Concatenare le stringhe significa unirle in una sola. Lo facciamo per
   creare frasi o valori che necessitano di parti dinamiche e statiche insieme.
-lastmod: 2024-02-18 23:08:56.165005
+lastmod: 2024-02-19 22:05:02.793215
 model: gpt-4-1106-preview
 summary: Concatenare le stringhe significa unirle in una sola. Lo facciamo per creare
   frasi o valori che necessitano di parti dinamiche e statiche insieme.

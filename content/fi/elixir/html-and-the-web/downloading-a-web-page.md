@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/downloading-a-web-page/
 date: 2024-01-20 17:43:52.714286-07:00
 description: "Web-sivun lataaminen tarkoittaa webbisivun sis\xE4ll\xF6n hakemista\
   \ internetist\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan ker\xE4\xE4miseksi,\
   \ prosessointia varten ja\u2026"
-lastmod: 2024-02-18 23:09:07.272297
+lastmod: 2024-02-19 22:05:15.166609
 model: gpt-4-1106-preview
 summary: "Web-sivun lataaminen tarkoittaa webbisivun sis\xE4ll\xF6n hakemista internetist\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan ker\xE4\xE4miseksi, prosessointia varten\

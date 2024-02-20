@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:15.531251-07:00
 description: "Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostiek\
   \ los van de hoofdoutput. Programmeurs gebruiken dit om problemen te rapporteren\u2026"
-lastmod: 2024-02-18 23:09:02.343913
+lastmod: 2024-02-19 22:05:10.351955
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostiek\
   \ los van de hoofdoutput. Programmeurs gebruiken dit om problemen te rapporteren\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:19.027945-07:00
 description: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg teste\
   \ kode i sanntid. Programmerere bruker den til \xE5 eksperimentere, feils\xF8ke,\
   \ og l\xE6re\u2026"
-lastmod: 2024-02-18 23:08:54.440048
+lastmod: 2024-02-19 22:05:00.602584
 model: gpt-4-0125-preview
 summary: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg teste kode\
   \ i sanntid. Programmerere bruker den til \xE5 eksperimentere, feils\xF8ke, og l\xE6\

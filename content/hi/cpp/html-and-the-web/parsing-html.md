@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/cpp/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:16.222302-07:00
@@ -13,7 +11,7 @@ description: "HTML \u0915\u093E \u092A\u093E\u0930\u094D\u0938\u093F\u0902\u0917
   \ \u0938\u0915\u0947\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\
   \u0930 \u0907\u0938\u0947 \u0921\u0947\u091F\u093E \u0928\u093F\u0915\u093E\u0932\
   \u0928\u0947, \u0938\u093E\u092E\u0917\u094D\u0930\u0940 \u0915\u094B\u2026"
-lastmod: 2024-02-18 23:09:03.885346
+lastmod: 2024-02-19 22:05:11.867884
 model: gpt-4-0125-preview
 summary: "HTML \u0915\u093E \u092A\u093E\u0930\u094D\u0938\u093F\u0902\u0917 \u0915\
   \u093E \u0905\u0930\u094D\u0925 \u0939\u0948 HTML \u0938\u093E\u092E\u0917\u094D\

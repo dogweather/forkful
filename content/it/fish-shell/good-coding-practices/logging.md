@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/fish-shell/logging/
 date: 2024-01-26 01:04:06.386758-07:00
 description: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la tua\
   \ applicazione sta facendo \u2013 potremmo dire un diario, ma per il codice. I programmatori\
   \ lo\u2026"
-lastmod: 2024-02-18 23:08:56.301977
+lastmod: 2024-02-19 22:05:02.938230
 model: gpt-4-1106-preview
 summary: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la tua applicazione\
   \ sta facendo \u2013 potremmo dire un diario, ma per il codice. I programmatori\

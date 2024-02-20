@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:37.794706-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen Rustilla tarkoittaa tarpeettomien\
   \ ylim\xE4\xE4r\xE4isten lainausmerkkien poistamista tekstiaineistosi ymp\xE4rilt\xE4\
   .\u2026"
-lastmod: 2024-02-18 23:09:07.351133
+lastmod: 2024-02-19 22:05:15.240233
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen Rustilla tarkoittaa tarpeettomien\
   \ ylim\xE4\xE4r\xE4isten lainausmerkkien poistamista tekstiaineistosi ymp\xE4rilt\xE4\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:23.805540-07:00
 description: "Sending an HTTP request with basic authentication involves transmitting\
   \ a username and password over the web to access protected resources. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.480808
+lastmod: 2024-02-19 22:05:18.934358
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves transmitting\
   \ a username and password over the web to access protected resources. Programmers\u2026"

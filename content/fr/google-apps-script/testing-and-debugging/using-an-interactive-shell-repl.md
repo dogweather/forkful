@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/google-apps-script/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:38.754325-07:00
 description: "Une coquille interactive ou Read-Eval-Print Loop (REPL), est un environnement\
   \ de programmation simple et interactif qui prend des entr\xE9es d'utilisateur\u2026"
-lastmod: 2024-02-18 23:09:08.290673
+lastmod: 2024-02-19 22:05:16.094022
 model: gpt-4-0125-preview
 summary: "Une coquille interactive ou Read-Eval-Print Loop (REPL), est un environnement\
   \ de programmation simple et interactif qui prend des entr\xE9es d'utilisateur\u2026"

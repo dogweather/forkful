@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/kotlin/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:43.646671-07:00
 description: "Calculer une date dans le futur ou le pass\xE9, c'est intentionnellement\
   \ ajuster la date et l'heure actuelles pour obtenir un moment pr\xE9cis. Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:08.795638
+lastmod: 2024-02-19 22:05:16.498553
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est intentionnellement\
   \ ajuster la date et l'heure actuelles pour obtenir un moment pr\xE9cis. Les programmeurs\u2026"

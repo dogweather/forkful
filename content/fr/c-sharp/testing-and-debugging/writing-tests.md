@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c-sharp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:37.525125-07:00
 description: "\xC9crire des tests en C# implique de cr\xE9er des scripts automatis\xE9\
   s pour valider la fonctionnalit\xE9 de votre code, s'assurant qu'il se comporte\
   \ comme pr\xE9vu.\u2026"
-lastmod: 2024-02-18 23:09:08.831681
+lastmod: 2024-02-19 22:05:16.531864
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en C# implique de cr\xE9er des scripts automatis\xE9\
   s pour valider la fonctionnalit\xE9 de votre code, s'assurant qu'il se comporte\

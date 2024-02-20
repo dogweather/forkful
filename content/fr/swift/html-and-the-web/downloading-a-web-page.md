@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/downloading-a-web-page/
 date: 2024-01-20 17:44:53.920698-07:00
 description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
   \ le r\xE9seau. Les programmeurs le font pour traiter des donn\xE9es, afficher des\
   \ informations \xE0\u2026"
-lastmod: 2024-02-18 23:09:09.207298
+lastmod: 2024-02-19 22:05:16.876188
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via le\
   \ r\xE9seau. Les programmeurs le font pour traiter des donn\xE9es, afficher des\

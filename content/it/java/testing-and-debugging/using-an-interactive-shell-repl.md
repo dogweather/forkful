@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/java/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:24.644105-07:00
 description: "Un REPL (Read-Eval-Print Loop - Ciclo Leggi-Valuta-Stampa) \xE8 una\
   \ shell interattiva che elabora input singoli degli utenti, esegue codice e restituisce\
   \ il\u2026"
-lastmod: 2024-02-18 23:08:55.767315
+lastmod: 2024-02-19 22:05:02.371470
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print Loop - Ciclo Leggi-Valuta-Stampa) \xE8 una shell\
   \ interattiva che elabora input singoli degli utenti, esegue codice e restituisce\

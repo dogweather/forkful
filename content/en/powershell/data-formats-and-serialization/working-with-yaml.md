@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/working-with-yaml/
 date: 2024-02-03 19:03:26.004811-07:00
 description: "YAML, or YAML Ain't Markup Language, is a human-readable data serialization\
   \ language. Programmers often use it for configuration files and data\u2026"
-lastmod: 2024-02-18 23:09:11.294338
+lastmod: 2024-02-19 22:05:18.765169
 model: gpt-4-0125-preview
 summary: "YAML, or YAML Ain't Markup Language, is a human-readable data serialization\
   \ language. Programmers often use it for configuration files and data\u2026"

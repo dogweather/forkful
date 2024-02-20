@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/clojure/working-with-complex-numbers/
 date: 2024-01-26 04:38:32.135728-07:00
 description: "Komplexe Zahlen erweitern die reellen Zahlen um einen zus\xE4tzlichen\
   \ Teil, die imagin\xE4re Einheit 'i'. Programmierer verwenden sie in verschiedenen\u2026"
-lastmod: 2024-02-18 23:09:04.500696
+lastmod: 2024-02-19 22:05:12.463093
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die reellen Zahlen um einen zus\xE4tzlichen Teil,\
   \ die imagin\xE4re Einheit 'i'. Programmierer verwenden sie in verschiedenen\u2026"

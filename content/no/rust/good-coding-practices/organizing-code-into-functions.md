@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/rust/organizing-code-into-functions/
 date: 2024-01-26 01:16:12.090645-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
   \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn. Vi gj\xF8r dette\
   \ for \xE5 gj\xF8re\u2026"
-lastmod: 2024-02-18 23:08:53.690407
+lastmod: 2024-02-19 22:04:59.824016
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
   \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn. Vi gj\xF8r dette\

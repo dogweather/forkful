@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:12.450417-07:00
 description: "Calcular fechas futuras o pasadas significa determinar un d\xEDa y hora\
   \ espec\xEDficos antes o despu\xE9s de una fecha dada. Los programadores lo hacen\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:09.717458
+lastmod: 2024-02-19 22:05:17.343958
 model: gpt-4-1106-preview
 summary: "Calcular fechas futuras o pasadas significa determinar un d\xEDa y hora\
   \ espec\xEDficos antes o despu\xE9s de una fecha dada. Los programadores lo hacen\

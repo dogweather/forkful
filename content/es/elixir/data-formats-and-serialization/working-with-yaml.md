@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/elixir/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:05.543201-07:00
 description: "YAML, abreviatura de YAML Ain't Markup Language, es un est\xE1ndar de\
   \ serializaci\xF3n de datos legible por humanos com\xFAnmente utilizado para archivos\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:09.679058
+lastmod: 2024-02-19 22:05:17.309367
 model: gpt-4-0125-preview
 summary: "YAML, abreviatura de YAML Ain't Markup Language, es un est\xE1ndar de serializaci\xF3\
   n de datos legible por humanos com\xFAnmente utilizado para archivos de\u2026"

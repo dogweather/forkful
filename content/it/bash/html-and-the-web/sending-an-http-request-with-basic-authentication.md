@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/bash/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:00:42.618258-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base significa mandare\
   \ le credenziali (username e password) in base64 per accedere a risorse protette.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:56.052398
+lastmod: 2024-02-19 22:05:02.670855
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base significa mandare\
   \ le credenziali (username e password) in base64 per accedere a risorse protette.\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:42.361483-07:00
 description: "Deleting characters matching a pattern in Lua is about using patterns\
   \ to identify and remove specific sequences of characters from a string. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.163166
+lastmod: 2024-02-19 22:05:18.653239
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in Lua is about using patterns to\
   \ identify and remove specific sequences of characters from a string. Programmers\u2026"

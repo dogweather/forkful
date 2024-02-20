@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/handling-errors/
 date: 2024-01-26 00:50:08.644299-07:00
 description: "Gestire gli errori nella scrittura di script Bash significa anticipare\
   \ dove le cose potrebbero andare storte e affrontare la situazione con grazia.\u2026"
-lastmod: 2024-02-18 23:08:56.059531
+lastmod: 2024-02-19 22:05:02.678999
 model: gpt-4-1106-preview
 summary: "Gestire gli errori nella scrittura di script Bash significa anticipare dove\
   \ le cose potrebbero andare storte e affrontare la situazione con grazia.\u2026"

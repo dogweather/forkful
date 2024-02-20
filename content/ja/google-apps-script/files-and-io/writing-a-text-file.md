@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/google-apps-script/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:35.951053-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4
   \u4FDD\u5B58\u3001\u307E\u305F\u306F\u60C5\u5831\u3092\u30B7\u30F3\u30D7\u30EB\u3067\
   \u8AAD\u307F\u3084\u3059\u3044\u5F62\u5F0F\u3067\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\
   \u3059\u308B\u305F\u3081\u306B\u4E00\u822C\u7684\u306A\u7DF4\u7FD2\u3067\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.541419
+lastmod: 2024-02-19 22:05:00.740066
 model: gpt-4-0125-preview
 summary: "Google Apps Script\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\
   \u3092\u4F5C\u6210\u3059\u308B\u3053\u3068\u3067\u3001\u958B\u767A\u8005\u306F\u30C7\

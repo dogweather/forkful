@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/using-a-debugger/
 date: 2024-01-26 03:50:42.497718-07:00
 description: "Debugger to narz\u0119dzie, kt\xF3re pomaga programistom zrozumie\u0107\
   , co ich kod faktycznie robi podczas wykonywania. To jest ta lupa, kt\xF3ra pozwala\
   \ nam przybli\u017Ca\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.699613
+lastmod: 2024-02-19 22:04:54.636199
 model: gpt-4-0125-preview
 summary: "Debugger to narz\u0119dzie, kt\xF3re pomaga programistom zrozumie\u0107\
   , co ich kod faktycznie robi podczas wykonywania. To jest ta lupa, kt\xF3ra pozwala\

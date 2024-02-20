@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/kotlin/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:43.511443-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Kotlin existiert, beinhaltet\
   \ die Verifizierung der Pr\xE4senz eines Verzeichnisses an einem spezifizierten\
   \ Pfad.\u2026"
-lastmod: 2024-02-18 23:09:04.841791
+lastmod: 2024-02-19 22:05:12.787037
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Kotlin existiert, beinhaltet\
   \ die Verifizierung der Pr\xE4senz eines Verzeichnisses an einem spezifizierten\

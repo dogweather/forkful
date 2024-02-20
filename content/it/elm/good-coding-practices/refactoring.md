@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elm/refactoring/
 date: 2024-01-26 01:17:44.328992-07:00
 description: "Il refactoring \xE8 essenzialmente come fare le pulizie di primavera\
   \ nel tuo codice\u2014riguarda la ristrutturazione del codice esistente senza modificarne\
   \ il\u2026"
-lastmod: 2024-02-18 23:08:55.813927
+lastmod: 2024-02-19 22:05:02.420659
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 essenzialmente come fare le pulizie di primavera nel\
   \ tuo codice\u2014riguarda la ristrutturazione del codice esistente senza modificarne\

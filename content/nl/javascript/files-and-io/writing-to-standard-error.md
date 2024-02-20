@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/javascript/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:21.842935-07:00
 description: "Schrijven naar de standaardfout (stderr) betekent tekst uitsturen naar\
   \ de foutenstroom. Het scheidt normale uitvoer (stdout) van fouten, wat debugging\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:02.294666
+lastmod: 2024-02-19 22:05:10.305376
 model: gpt-4-0125-preview
 summary: "Schrijven naar de standaardfout (stderr) betekent tekst uitsturen naar de\
   \ foutenstroom. Het scheidt normale uitvoer (stdout) van fouten, wat debugging en\u2026"

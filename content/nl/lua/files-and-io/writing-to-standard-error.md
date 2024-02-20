@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/lua/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:32.557068-07:00
 description: "Schrijven naar standaardfout (stderr) laat je programma praten over\
   \ fouten zonder de standaarduitvoer (stdout) te verstoppen. Het is een duidelijk\
   \ signaal\u2026"
-lastmod: 2024-02-18 23:09:02.009233
+lastmod: 2024-02-19 22:05:10.029910
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) laat je programma praten over fouten\
   \ zonder de standaarduitvoer (stdout) te verstoppen. Het is een duidelijk signaal\u2026"

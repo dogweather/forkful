@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:58.077726-07:00
 description: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for\
   \ \xE5 rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper\
   \ \xE5 holde\u2026"
-lastmod: 2024-02-18 23:08:53.796125
+lastmod: 2024-02-19 22:04:59.938867
 model: gpt-4-1106-preview
 summary: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for \xE5\
   \ rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper\

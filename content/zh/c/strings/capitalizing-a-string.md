@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:43.357385-07:00
@@ -12,7 +10,7 @@ description: "\u5728C\u8BED\u8A00\u4E2D\u5C06\u5B57\u7B26\u4E32\u9996\u5B57\u6BC
   \u7528\u4E8E\u641C\u7D22\u3001\u6392\u5E8F\u64CD\u4F5C\u6216\u663E\u793A\u76EE\u7684\
   \uFF0C\u786E\u4FDD\u6587\u672C\u6570\u636E\u7684\u4E00\u81F4\u6027\u548C\u53EF\u8BFB\
   \u6027\u3002"
-lastmod: 2024-02-18 23:08:59.542474
+lastmod: 2024-02-19 22:05:07.353526
 model: gpt-4-0125-preview
 summary: "\u5728C\u8BED\u8A00\u4E2D\u5C06\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\
   \u5199\u6D89\u53CA\u5C06\u7ED9\u5B9A\u5B57\u7B26\u4E32\u4E2D\u6BCF\u4E2A\u5355\u8BCD\

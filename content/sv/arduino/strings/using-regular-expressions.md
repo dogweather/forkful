@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/arduino/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:04.313979-07:00
 description: "Regulj\xE4ra uttryck (regex) \xE4r sekvenser av tecken som definierar\
   \ s\xF6km\xF6nster, fr\xE4mst anv\xE4nda f\xF6r str\xE4ngmatchning och manipulation.\
   \ Programmerare anv\xE4nder\u2026"
-lastmod: 2024-02-18 23:08:52.035035
+lastmod: 2024-02-19 22:04:57.392160
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) \xE4r sekvenser av tecken som definierar s\xF6\
   km\xF6nster, fr\xE4mst anv\xE4nda f\xF6r str\xE4ngmatchning och manipulation. Programmerare\

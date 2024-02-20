@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/working-with-toml/
 date: 2024-01-26 04:26:15.269322-07:00
 description: "TOML \xE8 un linguaggio di serializzazione dati leggibile dall'uomo,\
   \ spesso utilizzato per le configurazioni. I programmatori usano TOML per la sua\u2026"
-lastmod: 2024-02-18 23:08:55.702872
+lastmod: 2024-02-19 22:05:02.302657
 model: gpt-4-0125-preview
 summary: "TOML \xE8 un linguaggio di serializzazione dati leggibile dall'uomo, spesso\
   \ utilizzato per le configurazioni. I programmatori usano TOML per la sua\u2026"

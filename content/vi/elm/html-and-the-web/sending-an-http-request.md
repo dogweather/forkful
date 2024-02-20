@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elm/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:00.169789-07:00
@@ -8,7 +6,7 @@ description: "Trong Elm, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 
   ch \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n giao ti\u1EBFp v\u1EDBi c\xE1c d\u1ECBch\
   \ v\u1EE5 web kh\xE1c \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7u. L\u1EAD\
   p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA3i\u2026"
-lastmod: 2024-02-18 23:08:50.599996
+lastmod: 2024-02-19 22:04:55.707039
 model: gpt-4-0125-preview
 summary: "Trong Elm, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1\
   ch \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n giao ti\u1EBFp v\u1EDBi c\xE1c d\u1ECBch\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/java/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:20.109303-07:00
 description: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um\
   \ Daten wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"
-lastmod: 2024-02-18 23:09:04.734688
+lastmod: 2024-02-19 22:05:12.685989
 model: gpt-4-0125-preview
 summary: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um Daten\
   \ wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"

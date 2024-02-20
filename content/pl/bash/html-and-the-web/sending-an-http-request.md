@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/sending-an-http-request/
 date: 2024-01-20 17:59:12.897844-07:00
 description: "(Co i dlaczego?) Wysy\u0142anie zapytania HTTP to komunikacja mi\u0119\
   dzy twoim komputerem a serwerem; m\xF3wi\u0105c pro\u015Bciej, to tak, jakby\u015B\
   \ wys\u0142a\u0142 list z pro\u015Bb\u0105 do\u2026"
-lastmod: 2024-02-18 23:08:49.780976
+lastmod: 2024-02-19 22:04:54.721188
 model: gpt-4-1106-preview
 summary: "(Co i dlaczego?) Wysy\u0142anie zapytania HTTP to komunikacja mi\u0119dzy\
   \ twoim komputerem a serwerem; m\xF3wi\u0105c pro\u015Bciej, to tak, jakby\u015B\

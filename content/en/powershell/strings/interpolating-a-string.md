@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/interpolating-a-string/
 date: 2024-01-20 17:51:18.322254-07:00
 description: "String interpolation slides values into a string template like pieces\
   \ of a puzzle, making strings dynamic and code cleaner. Programmers use it to insert\u2026"
-lastmod: 2024-02-18 23:09:11.258033
+lastmod: 2024-02-19 22:05:18.732405
 model: gpt-4-1106-preview
 summary: "String interpolation slides values into a string template like pieces of\
   \ a puzzle, making strings dynamic and code cleaner. Programmers use it to insert\u2026"

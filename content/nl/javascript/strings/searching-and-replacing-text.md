@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/javascript/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:07.201559-07:00
 description: "Tekst zoeken en vervangen betekent het vinden van specifieke substrings\
   \ en deze omwisselen voor iets nieuws. Waarom zou je je hiermee bezighouden? Het\
   \ is\u2026"
-lastmod: 2024-02-18 23:09:02.259175
+lastmod: 2024-02-19 22:05:10.271890
 model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen betekent het vinden van specifieke substrings\
   \ en deze omwisselen voor iets nieuws. Waarom zou je je hiermee bezighouden? Het\

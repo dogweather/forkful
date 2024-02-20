@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:35.206884-07:00
 description: "Debugoutput afdrukken in Elm gaat over het weergeven van waarden in\
   \ de console om te begrijpen wat er in je code gebeurt. We doen dit om bugs op te\
   \ sporen\u2026"
-lastmod: 2024-02-18 23:09:01.762330
+lastmod: 2024-02-19 22:05:09.781084
 model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken in Elm gaat over het weergeven van waarden in de console\
   \ om te begrijpen wat er in je code gebeurt. We doen dit om bugs op te sporen\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:11.217438-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD45C\uC900 \uC624
   \uB4E4\uC740 \uC774\uB7EC\uD55C \uBC29\uBC95\uC73C\uB85C \uC815\uADDC \uD504\uB85C\
   \uADF8\uB7A8 \uCD9C\uB825\uACFC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uBD84\uB9AC\
   \uD568\uC73C\uB85C\uC368\u2026"
-lastmod: 2024-02-18 23:09:05.980064
+lastmod: 2024-02-19 22:05:13.914782
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD45C\uC900 \uC624\uB958\
   \uB85C\uC758 \uAE30\uB85D\uC740 \uD45C\uC900 \uCD9C\uB825\uACFC \uBD84\uB9AC\uD558\

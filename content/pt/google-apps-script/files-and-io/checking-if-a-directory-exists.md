@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/google-apps-script/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:46.037737-07:00
 description: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
   \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"
-lastmod: 2024-02-18 23:08:57.732512
+lastmod: 2024-02-19 22:05:05.193540
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
   \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"

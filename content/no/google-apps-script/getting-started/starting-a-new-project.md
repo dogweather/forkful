@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/starting-a-new-project/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:54.722496-07:00
 description: "\xC5 starte et nytt prosjekt i Google Apps Script (GAS) inneb\xE6rer\
   \ \xE5 initialisere en scriptfil innenfor Google-\xF8kosystemet (Google Drive, Docs,\
   \ Ark, etc.) for\u2026"
-lastmod: 2024-02-18 23:08:53.481501
+lastmod: 2024-02-19 22:04:59.595985
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i Google Apps Script (GAS) inneb\xE6rer \xE5\
   \ initialisere en scriptfil innenfor Google-\xF8kosystemet (Google Drive, Docs,\

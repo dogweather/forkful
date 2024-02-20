@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:17.992710-07:00
 description: "Zoeken en vervangen van tekst zijn basisvaardigheden voor programmeren;\
   \ het gaat in essentie om het vinden van strings en deze omwisselen. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.509688
+lastmod: 2024-02-19 22:05:09.536659
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst zijn basisvaardigheden voor programmeren;\
   \ het gaat in essentie om het vinden van strings en deze omwisselen. Programmeurs\u2026"

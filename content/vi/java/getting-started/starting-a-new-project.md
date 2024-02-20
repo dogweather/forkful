@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/java/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.403282-07:00
@@ -8,7 +6,7 @@ description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n Java m\u1EDBi gi\u1E
   ng nh\u01B0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t b\u1EE9c tranh m\u1EDBi cho ki\u1EC7\
   t t\xE1c c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn kh\u1EDFi \u0111\u1EA7u c\xE1\
   c d\u1EF1 \xE1n m\u1EDBi \u0111\u1EC3 bi\u1EBFn \xFD t\u01B0\u1EDFng th\xE0nh\u2026"
-lastmod: 2024-02-18 23:08:50.557892
+lastmod: 2024-02-19 22:04:55.653177
 model: gpt-4-0125-preview
 summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n Java m\u1EDBi gi\u1ED1ng nh\u01B0\
   \ vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t b\u1EE9c tranh m\u1EDBi cho ki\u1EC7t t\xE1\

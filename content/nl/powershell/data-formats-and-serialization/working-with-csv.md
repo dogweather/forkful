@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:08.959895-07:00
 description: "Werken met CSV (Comma-Separated Values) omvat het omgaan met tekstgegevens\
   \ die door komma's zijn gesplitst in rijen en kolommen. Programmeurs werken met\u2026"
-lastmod: 2024-02-18 23:09:02.116375
+lastmod: 2024-02-19 22:05:10.136582
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) omvat het omgaan met tekstgegevens\
   \ die door komma's zijn gesplitst in rijen en kolommen. Programmeurs werken met\u2026"

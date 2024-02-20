@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/refactoring/
 date: 2024-01-26 03:36:37.835050-07:00
 description: "Refactoring ist der Prozess des Umstrukturierens vorhandenen Computer-Codes,\
   \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer machen dies, um den\u2026"
-lastmod: 2024-02-18 23:09:05.243136
+lastmod: 2024-02-19 22:05:13.169325
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess des Umstrukturierens vorhandenen Computer-Codes,\
   \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer machen dies, um den\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/kotlin/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:51.747907-07:00
 description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura\
   \ e escrita de dados em arquivos CSV, um formato comum para armazenar dados tabulares\
   \ em\u2026"
-lastmod: 2024-02-18 23:08:58.138277
+lastmod: 2024-02-19 22:05:05.605462
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura e\
   \ escrita de dados em arquivos CSV, um formato comum para armazenar dados tabulares\

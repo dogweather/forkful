@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:58.276564-07:00
 description: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu Google Apps Scriptiss\xE4\
   , joka on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen\
   \ teht\xE4v\xE4 kehitt\xE4jille,\u2026"
-lastmod: 2024-02-18 23:09:07.150461
+lastmod: 2024-02-19 22:05:15.026578
 model: gpt-4-0125-preview
 summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu Google Apps Scriptiss\xE4, joka\
   \ on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen teht\xE4\

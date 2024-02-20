@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/rust/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:15.354435-07:00
@@ -8,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi t\u1EAFt l\x
   \ regex, l\xE0 chu\u1ED7i c\xE1c k\xFD t\u1EF1 t\u1EA1o th\xE0nh m\u1EABu t\xEC\
   m ki\u1EBFm. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng regex \u0111\u1EC3 t\xEC\
   m ki\u1EBFm, ch\u1EC9nh s\u1EEDa ho\u1EB7c thao\u2026"
-lastmod: 2024-02-18 23:08:50.450779
+lastmod: 2024-02-19 22:04:55.513825
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi t\u1EAFt l\xE0 regex,\
   \ l\xE0 chu\u1ED7i c\xE1c k\xFD t\u1EF1 t\u1EA1o th\xE0nh m\u1EABu t\xECm ki\u1EBF\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/logging/
 date: 2024-01-26 01:09:02.639766-07:00
 description: "Il logging \xE8 il processo di registrazione dei comportamenti delle\
   \ applicazioni, degli errori e di altre informazioni importanti su un supporto\u2026"
-lastmod: 2024-02-18 23:08:56.218589
+lastmod: 2024-02-19 22:05:02.850084
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 il processo di registrazione dei comportamenti delle applicazioni,\
   \ degli errori e di altre informazioni importanti su un supporto\u2026"

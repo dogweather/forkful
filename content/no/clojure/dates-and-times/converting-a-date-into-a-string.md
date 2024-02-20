@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:17.479521-07:00
 description: "Konvertering av dato til streng betyr \xE5 transformere et datoobjekt\
   \ til en lesbar tekstform. Programmerere gj\xF8r dette fordi datoer ofte m\xE5 vises\
   \ til\u2026"
-lastmod: 2024-02-18 23:08:53.575281
+lastmod: 2024-02-19 22:04:59.698539
 model: gpt-4-1106-preview
 summary: "Konvertering av dato til streng betyr \xE5 transformere et datoobjekt til\
   \ en lesbar tekstform. Programmerere gj\xF8r dette fordi datoer ofte m\xE5 vises\

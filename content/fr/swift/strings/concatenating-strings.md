@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/concatenating-strings/
 date: 2024-01-20 17:35:45.672979-07:00
 description: "Concat\xE9ner des cha\xEEnes, c'est les joindre bout \xE0 bout. On fait\
   \ \xE7a pour cr\xE9er des phrases, des messages d'erreur, ou assembler des bouts\
   \ de texte de\u2026"
-lastmod: 2024-02-18 23:09:09.199909
+lastmod: 2024-02-19 22:05:16.869038
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes, c'est les joindre bout \xE0 bout. On fait\
   \ \xE7a pour cr\xE9er des phrases, des messages d'erreur, ou assembler des bouts\

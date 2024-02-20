@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/clojure/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:19.612974-07:00
 description: "Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa\
   \ `java.util.Date` objektin esitt\xE4mist\xE4 luettavassa muodossa. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n jakamiseen,\u2026"
-lastmod: 2024-02-18 23:09:07.240751
+lastmod: 2024-02-19 22:05:15.137235
 model: gpt-4-1106-preview
 summary: "Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa `java.util.Date`\
   \ objektin esitt\xE4mist\xE4 luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4\

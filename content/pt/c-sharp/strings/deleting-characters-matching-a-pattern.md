@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:50.924143-07:00
 description: "Deletar caracteres que combinam com um padr\xE3o significa filtrar e\
   \ remover partes indesejadas de uma string baseando-se em crit\xE9rios espec\xED\
   ficos.\u2026"
-lastmod: 2024-02-18 23:08:58.142152
+lastmod: 2024-02-19 22:05:05.609568
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que combinam com um padr\xE3o significa filtrar e remover\
   \ partes indesejadas de uma string baseando-se em crit\xE9rios espec\xEDficos.\u2026"

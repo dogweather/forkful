@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:48.268836-07:00
@@ -13,7 +11,7 @@ description: "JSON \uB610\uB294 JavaScript \uAC1D\uCCB4 \uD45C\uAE30\uBC95\uC740
   \ \uAC00\uB3C5\uC131 \uB54C\uBB38\uC5D0 \uC0AC\uC6A9\uD558\uBA70, \uC6F9 API\uB098\
   \ \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\uC758 \uC6D0\uD65C\uD55C \uB370\uC774\uD130\
   \ \uAD50\uD658\uC744\u2026"
-lastmod: 2024-02-18 23:09:06.652694
+lastmod: 2024-02-19 22:05:14.553170
 model: gpt-4-0125-preview
 summary: "JSON \uB610\uB294 JavaScript \uAC1D\uCCB4 \uD45C\uAE30\uBC95\uC740 \uAC00\
   \uBCBC\uC6B4 \uB370\uC774\uD130 \uAD50\uD658 \uD3EC\uB9F7\uC73C\uB85C, \uC544\uB450\

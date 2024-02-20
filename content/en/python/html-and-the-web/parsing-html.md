@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/parsing-html/
 date: 2024-02-03 19:02:33.698253-07:00
 description: "Parsing HTML involves analyzing a webpage's HTML code to extract specific\
   \ information or elements, a common task for web scraping, data mining, or\u2026"
-lastmod: 2024-02-18 23:09:10.679081
+lastmod: 2024-02-19 22:05:18.213232
 model: gpt-4-0125-preview
 summary: "Parsing HTML involves analyzing a webpage's HTML code to extract specific\
   \ information or elements, a common task for web scraping, data mining, or\u2026"

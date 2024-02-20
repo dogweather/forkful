@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:31.040700-07:00
@@ -10,7 +8,7 @@ description: "\u5B57\u7B26\u4E32\u63D2\u503C\u662F\u4E00\u79CD\u6784\u9020\u5B57
   \u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u81EA\u5B9A\u4E49\u6D88\u606F\uFF0C\u6784\
   \u5EFA URLs\uFF0C\u521B\u5EFA SQL \u67E5\u8BE2\u7B49\uFF0C\u4F7F\u5F97\u4EE3\u7801\
   \u66F4\u53EF\u8BFB\u4E14\u6613\u4E8E\u7EF4\u62A4\u3002"
-lastmod: 2024-02-18 23:08:58.694253
+lastmod: 2024-02-19 22:05:06.199331
 model: gpt-4-0125-preview
 summary: "\u5B57\u7B26\u4E32\u63D2\u503C\u662F\u4E00\u79CD\u6784\u9020\u5B57\u7B26\
   \u4E32\u7684\u65B9\u6CD5\uFF0C\u5B83\u53EF\u4EE5\u6574\u5408\u53D8\u91CF\uFF0C\u4F7F\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:42.188703-07:00
@@ -13,7 +11,7 @@ description: "\uC815\uADDC \uD45C\uD604\uC2DD\uC740 \uC785\uB825 \uAC80\uC99D, \
   \uC744 \uD6A8\uC728\uC801\uC774\uACE0 \uAC04\uACB0\uD558\uAC8C \uCC98\uB9AC\uD558\
   \uAE30 \uC704\uD574 \uC774\uB97C \uAD11\uBC94\uC704\uD558\uAC8C \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.674825
+lastmod: 2024-02-19 22:05:13.588331
 model: gpt-4-0125-preview
 summary: "\uC815\uADDC \uD45C\uD604\uC2DD\uC740 \uC785\uB825 \uAC80\uC99D, \uAC80\uC0C9\
   , \uD14D\uC2A4\uD2B8 \uAD50\uCCB4\uC640 \uAC19\uC740 \uD14D\uC2A4\uD2B8 \uCC98\uB9AC\

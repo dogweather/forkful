@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/generating-random-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:12.689194-07:00
@@ -12,7 +10,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB34\uC791\uC704 \uC2
   \uC740 Google Apps Script\uC5D0\uC11C \uAD6C\uAE00 \uC0DD\uD0DC\uACC4 \uB0B4\uC758\
   \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158, \uB3D9\uC801\uC778 \uC2DC\uD2B8, \uBB38\uC11C\
   , \uD3FC\uC5D0\uC11C \uBCC0\uB3D9\uC131\uC744 \uB3C4\uC785\uD558\uACE0,\u2026"
-lastmod: 2024-02-18 23:09:05.548092
+lastmod: 2024-02-19 22:05:13.464285
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB34\uC791\uC704 \uC22B\uC790\
   \uB97C \uC0DD\uC131\uD558\uB294 \uAC83\uC740 \uC2DC\uBBAC\uB808\uC774\uC158, \uAC8C\

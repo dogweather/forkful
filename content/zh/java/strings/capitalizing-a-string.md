@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/java/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:43.989328-07:00
@@ -11,7 +9,7 @@ description: "\u5B57\u7B26\u4E32\u7684\u9996\u5B57\u6BCD\u5927\u5199\u6D89\u53CA
   \u52A1\u5BF9\u4E8E\u683C\u5F0F\u5316\u5E94\u7528\u7A0B\u5E8F\u4E2D\u7684\u6587\u672C\
   \u975E\u5E38\u6709\u7528\uFF0C\u6BD4\u5982\u6309\u7167\u7EA6\u5B9A\u6216\u8BED\u6CD5\
   \u6B63\u786E\u6027\u51C6\u5907\u7528\u6237\u540D\u79F0\u6216\u6807\u9898\u3002"
-lastmod: 2024-02-18 23:08:59.006054
+lastmod: 2024-02-19 22:05:06.629789
 model: gpt-4-0125-preview
 summary: "\u5B57\u7B26\u4E32\u7684\u9996\u5B57\u6BCD\u5927\u5199\u6D89\u53CA\u4FEE\
   \u6539\u5B57\u7B26\u4E32\u4E2D\u6BCF\u4E2A\u5355\u8BCD\u7684\u9996\u5B57\u6BCD\u4E3A\

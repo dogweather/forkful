@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/sending-an-http-request/
 date: 2024-01-20 17:59:58.321267-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel lar en nettside hente data eller initiere\
   \ transaksjoner med servere over internett. Programmerere gj\xF8r dette for \xE5\
   \ bygge\u2026"
-lastmod: 2024-02-18 23:08:54.306119
+lastmod: 2024-02-19 22:05:00.457049
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel lar en nettside hente data eller initiere\
   \ transaksjoner med servere over internett. Programmerere gj\xF8r dette for \xE5\

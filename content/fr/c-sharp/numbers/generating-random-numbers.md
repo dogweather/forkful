@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/generating-random-numbers/
 date: 2024-01-27 20:32:55.756952-07:00
 description: "G\xE9n\xE9rer des nombres al\xE9atoires en C# implique la cr\xE9ation\
   \ de valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9e. Les\
   \ programmeurs utilisent ces\u2026"
-lastmod: 2024-02-18 23:09:08.823175
+lastmod: 2024-02-19 22:05:16.524068
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en C# implique la cr\xE9ation de\
   \ valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9e. Les programmeurs\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:33.754844-07:00
 description: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
   \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\
   \ problemas\u2026"
-lastmod: 2024-02-18 23:08:57.708832
+lastmod: 2024-02-19 22:05:05.168665
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
   \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\

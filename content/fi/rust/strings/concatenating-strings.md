@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/concatenating-strings/
 date: 2024-01-20 17:35:45.450160-07:00
 description: "Yhdist\xE4mme merkkijonoja luodaksemme uusia tekstej\xE4. T\xE4t\xE4\
   \ kutsutaan konkatenoinniksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta saadaan\
   \ kokoonpannut viestit tai\u2026"
-lastmod: 2024-02-18 23:09:07.355333
+lastmod: 2024-02-19 22:05:15.244116
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia tekstej\xE4. T\xE4t\xE4 kutsutaan\
   \ konkatenoinniksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta saadaan kokoonpannut\

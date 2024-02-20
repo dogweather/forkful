@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/powershell/organizing-code-into-functions/
 date: 2024-01-26 01:11:12.105091-07:00
 description: "Organizzare il codice in funzioni significa racchiudere blocchi di codice\
   \ che svolgono specifiche attivit\xE0 e assegnare loro un nome. Si fa per rendere\
   \ il\u2026"
-lastmod: 2024-02-18 23:08:56.099675
+lastmod: 2024-02-19 22:05:02.722452
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni significa racchiudere blocchi di codice\
   \ che svolgono specifiche attivit\xE0 e assegnare loro un nome. Si fa per rendere\

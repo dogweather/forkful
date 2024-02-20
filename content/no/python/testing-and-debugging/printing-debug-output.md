@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/printing-debug-output/
 date: 2024-01-20 17:53:21.492516-07:00
 description: "\xC5 skrive ut debug-informasjon betyr \xE5 vise data som hjelper deg\
   \ \xE5 forst\xE5 hva programmet ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5\
   \ feils\xF8ke kode og sikre\u2026"
-lastmod: 2024-02-18 23:08:53.526880
+lastmod: 2024-02-19 22:04:59.645122
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut debug-informasjon betyr \xE5 vise data som hjelper deg \xE5\
   \ forst\xE5 hva programmet ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 feils\xF8\

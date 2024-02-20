@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/checking-if-a-directory-exists/
 date: 2024-02-01 21:11:59.808475-07:00
 description: "Checking if a directory exists in Google Apps Script involves verifying\
   \ the presence of a folder within Google Drive. Programmers often perform this check\u2026"
-lastmod: 2024-02-18 23:09:10.653918
+lastmod: 2024-02-19 22:05:18.190078
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Google Apps Script involves verifying\
   \ the presence of a folder within Google Drive. Programmers often perform this check\u2026"

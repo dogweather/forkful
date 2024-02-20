@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/working-with-xml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:56.116242-07:00
 description: "Trabajar con XML en Go implica analizar (leer) y generar (escribir)\
   \ documentos XML, un formato est\xE1ndar para el intercambio de datos estructurados.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:09.484345
+lastmod: 2024-02-19 22:05:17.141494
 model: gpt-4-0125-preview
 summary: "Trabajar con XML en Go implica analizar (leer) y generar (escribir) documentos\
   \ XML, un formato est\xE1ndar para el intercambio de datos estructurados. Los\u2026"

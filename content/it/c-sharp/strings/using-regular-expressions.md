@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c-sharp/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:29.763947-07:00
 description: "Le espressioni regolari (regex) in C# sono uno strumento potente per\
   \ il riconoscimento di pattern all'interno delle stringhe, che permette ai\u2026"
-lastmod: 2024-02-18 23:08:55.877888
+lastmod: 2024-02-19 22:05:02.487395
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in C# sono uno strumento potente per il\
   \ riconoscimento di pattern all'interno delle stringhe, che permette ai\u2026"

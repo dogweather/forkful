@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:25.660577-07:00
 description: "Usar um depurador no Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
   \ executar o seu c\xF3digo passo a passo para inspecionar seu fluxo de execu\xE7\
   \xE3o e o estado das\u2026"
-lastmod: 2024-02-18 23:08:57.979103
+lastmod: 2024-02-19 22:05:05.453501
 model: gpt-4-0125-preview
 summary: "Usar um depurador no Visual Basic para Aplica\xE7\xF5es (VBA) envolve executar\
   \ o seu c\xF3digo passo a passo para inspecionar seu fluxo de execu\xE7\xE3o e o\

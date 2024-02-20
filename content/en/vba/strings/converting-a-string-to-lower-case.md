@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/vba/converting-a-string-to-lower-case/
 date: 2024-02-01 21:30:26.443695-07:00
 description: "Converting a string to lowercase involves transforming all uppercase\
   \ characters in a string to their lowercase equivalents. This process is essential\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:10.877115
+lastmod: 2024-02-19 22:05:18.391336
 model: gpt-4-0125-preview
 summary: "Converting a string to lowercase involves transforming all uppercase characters\
   \ in a string to their lowercase equivalents. This process is essential for\u2026"

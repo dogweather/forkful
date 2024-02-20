@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/extracting-substrings/
 date: 2024-01-20 17:46:16.710501-07:00
 description: "Extraire des sous-cha\xEEnes, c'est prendre des petits bouts de texte\
   \ d'une cha\xEEne plus grande. On fait \xE7a pour manipuler, chercher ou analyser\
   \ uniquement\u2026"
-lastmod: 2024-02-18 23:09:08.957480
+lastmod: 2024-02-19 22:05:16.646690
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est prendre des petits bouts de texte d'une\
   \ cha\xEEne plus grande. On fait \xE7a pour manipuler, chercher ou analyser uniquement\u2026"

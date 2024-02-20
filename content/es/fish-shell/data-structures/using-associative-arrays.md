@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/fish-shell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:53.655418-07:00
 description: "Los arreglos asociativos, o mapas hash, te permiten almacenar datos\
   \ como pares clave-valor, facilitando la organizaci\xF3n y recuperaci\xF3n de informaci\xF3\
   n por\u2026"
-lastmod: 2024-02-18 23:09:10.443081
+lastmod: 2024-02-19 22:05:17.997082
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o mapas hash, te permiten almacenar datos como\
   \ pares clave-valor, facilitando la organizaci\xF3n y recuperaci\xF3n de informaci\xF3\

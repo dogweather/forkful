@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/typescript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:38.793021-07:00
 description: "Comprobar si un directorio existe en TypeScript es esencial para tareas\
   \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\u2026"
-lastmod: 2024-02-18 23:09:09.718604
+lastmod: 2024-02-19 22:05:17.344944
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en TypeScript es esencial para tareas\
   \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\u2026"

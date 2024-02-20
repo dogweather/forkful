@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/downloading-a-web-page/
 date: 2024-01-20 17:45:02.267495-07:00
 description: "Scaricare una pagina web significa acquisire il suo contenuto HTML per\
   \ poterlo elaborare o analizzare. I programmatori lo fanno per raccogliere dati,\u2026"
-lastmod: 2024-02-18 23:08:55.639167
+lastmod: 2024-02-19 22:05:02.235131
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa acquisire il suo contenuto HTML per poterlo\
   \ elaborare o analizzare. I programmatori lo fanno per raccogliere dati,\u2026"

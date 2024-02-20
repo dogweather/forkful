@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:47.463217-07:00
 description: "Converter datas em strings \xE9 uma tarefa fundamental que possibilita\
   \ aos programadores manipular e apresentar informa\xE7\xF5es de data em um formato\
   \ leg\xEDvel por\u2026"
-lastmod: 2024-02-18 23:08:57.729152
+lastmod: 2024-02-19 22:05:05.189805
 model: gpt-4-0125-preview
 summary: "Converter datas em strings \xE9 uma tarefa fundamental que possibilita aos\
   \ programadores manipular e apresentar informa\xE7\xF5es de data em um formato leg\xED\

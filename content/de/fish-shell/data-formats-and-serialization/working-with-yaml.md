@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/fish-shell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:51.884164-07:00
 description: "Die Arbeit mit YAML umfasst das Parsen und Manipulieren von YAML-Dateien\
   \ (YAML Ain't Markup Language), einem Daten-Serialisierungsformat, das f\xFCr\u2026"
-lastmod: 2024-02-18 23:09:05.347835
+lastmod: 2024-02-19 22:05:13.269014
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit YAML umfasst das Parsen und Manipulieren von YAML-Dateien\
   \ (YAML Ain't Markup Language), einem Daten-Serialisierungsformat, das f\xFCr\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:52.295595-07:00
 description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att du f\xF6rvandlar\
   \ ett datumobjekt till en formaterad textrepresentation. Programmerare g\xF6r detta\
   \ f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.680189
+lastmod: 2024-02-19 22:04:57.008160
 model: gpt-4-1106-preview
 summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att du f\xF6rvandlar\
   \ ett datumobjekt till en formaterad textrepresentation. Programmerare g\xF6r detta\

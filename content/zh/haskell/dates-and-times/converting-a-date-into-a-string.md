@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/haskell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:38.721194-07:00
 description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u6211\u4EEC\u6709\u65F6\u9700\u8981\u5C06\
   \u65E5\u671F\u683C\u5F0F\u8F6C\u6362\u4E3A\u6587\u672C\u683C\u5F0F\u3002\u8FD9\u4F7F\
@@ -10,7 +8,7 @@ description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u6211\u4EEC\u6709\u65F6\u9700\u8981
   \u671F\uFF0C\u6216\u8005\u5728\u65E5\u5FD7\u6587\u4EF6\u4E2D\u8BB0\u5F55\u65F6\u95F4\
   \u6233\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.188381
+lastmod: 2024-02-19 22:05:06.868353
 model: gpt-4-1106-preview
 summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u6211\u4EEC\u6709\u65F6\u9700\u8981\u5C06\
   \u65E5\u671F\u683C\u5F0F\u8F6C\u6362\u4E3A\u6587\u672C\u683C\u5F0F\u3002\u8FD9\u4F7F\

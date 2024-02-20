@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/interpolating-a-string/
 date: 2024-01-20 17:51:53.852270-07:00
 description: L'interpolazione di stringhe permette di inserire valori dinamici in
   una stringa. Programmatori la usano per creare testo flessibile e leggibile.
-lastmod: 2024-02-18 23:08:55.627549
+lastmod: 2024-02-19 22:05:02.222573
 model: gpt-4-1106-preview
 summary: L'interpolazione di stringhe permette di inserire valori dinamici in una
   stringa. Programmatori la usano per creare testo flessibile e leggibile.

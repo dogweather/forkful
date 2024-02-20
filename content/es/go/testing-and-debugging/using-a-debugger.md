@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:55.899156-07:00
 description: "Usar un depurador en la programaci\xF3n Go implica emplear herramientas\
   \ o caracter\xEDsticas para inspeccionar y modificar el estado de un programa en\
   \ ejecuci\xF3n\u2026"
-lastmod: 2024-02-18 23:09:09.460900
+lastmod: 2024-02-19 22:05:17.119815
 model: gpt-4-0125-preview
 summary: "Usar un depurador en la programaci\xF3n Go implica emplear herramientas\
   \ o caracter\xEDsticas para inspeccionar y modificar el estado de un programa en\

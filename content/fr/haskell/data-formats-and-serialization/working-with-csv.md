@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/haskell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:41.609255-07:00
 description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ implique d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9\
   es tabulaires\u2026"
-lastmod: 2024-02-18 23:09:08.900270
+lastmod: 2024-02-19 22:05:16.594343
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ implique d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9\

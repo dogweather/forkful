@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/elixir/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:58.501537-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe dans Elixir consiste \xE0 confirmer\
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 dans le syst\xE8\
   me de fichiers. Les\u2026"
-lastmod: 2024-02-18 23:09:08.450627
+lastmod: 2024-02-19 22:05:16.238349
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans Elixir consiste \xE0 confirmer\
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 dans le syst\xE8\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/swift/working-with-xml/
 date: 2024-01-26 04:36:13.459688-07:00
 description: "\xC5 jobbe med XML betyr \xE5 analysere og generere XML-data i Swift.\
   \ Programmerere gj\xF8r dette for datamellomlagring, spesielt n\xE5r de integrerer\
   \ med systemer\u2026"
-lastmod: 2024-02-18 23:08:54.292426
+lastmod: 2024-02-19 22:05:00.441996
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr \xE5 analysere og generere XML-data i Swift. Programmerere\
   \ gj\xF8r dette for datamellomlagring, spesielt n\xE5r de integrerer med systemer\u2026"

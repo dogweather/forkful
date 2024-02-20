@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/kotlin/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:16.655169-07:00
 description: "In der Programmierung ist das Abrufen des aktuellen Datums eine grundlegende\
   \ Aufgabe, die es Entwicklern erm\xF6glicht, auf das aktuelle Datum zuzugreifen,\u2026"
-lastmod: 2024-02-18 23:09:04.837679
+lastmod: 2024-02-19 22:05:12.783158
 model: gpt-4-0125-preview
 summary: "In der Programmierung ist das Abrufen des aktuellen Datums eine grundlegende\
   \ Aufgabe, die es Entwicklern erm\xF6glicht, auf das aktuelle Datum zuzugreifen,\u2026"

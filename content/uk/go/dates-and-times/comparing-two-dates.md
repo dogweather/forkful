@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:25.461712-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u043
   \u0447\u043D\u0438\u0439 \u0437\u0432'\u044F\u0437\u043E\u043A \u043C\u0456\u0436\
   \ \u0434\u0430\u0442\u0430\u043C\u0438. \u0422\u0430\u043A\u0456 \u043F\u043E\u0440\
   \u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0454\u2026"
-lastmod: 2024-02-18 23:08:59.705161
+lastmod: 2024-02-19 22:05:07.523932
 model: gpt-4-0125-preview
 summary: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\
   \u043E\u0445 \u0434\u0430\u0442 \u0443 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\

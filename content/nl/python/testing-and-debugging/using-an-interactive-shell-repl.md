@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:30.353687-07:00
 description: "Een REPL, of Read-Eval-Print Loop, is een programmeeromgeving die individuele\
   \ gebruikersinvoer neemt, deze uitvoert, en het resultaat aan de gebruiker\u2026"
-lastmod: 2024-02-18 23:09:01.435613
+lastmod: 2024-02-19 22:05:09.465996
 model: gpt-4-0125-preview
 summary: "Een REPL, of Read-Eval-Print Loop, is een programmeeromgeving die individuele\
   \ gebruikersinvoer neemt, deze uitvoert, en het resultaat aan de gebruiker\u2026"

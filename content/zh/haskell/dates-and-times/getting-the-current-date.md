@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/haskell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:46.537403-07:00
@@ -10,7 +8,7 @@ description: "\u5728 Haskell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u5
   \u6837\u505A\u662F\u4E3A\u4E86\u57FA\u4E8E\u65E5\u671F\u6267\u884C\u64CD\u4F5C\uFF0C\
   \u4F8B\u5982\u65E5\u5FD7\u8BB0\u5F55\u3001\u8C03\u5EA6\u4EFB\u52A1\u6216\u5728\u5E94\
   \u7528\u7A0B\u5E8F\u4E2D\u7ED9\u4E8B\u4EF6\u52A0\u65F6\u95F4\u6233\u3002"
-lastmod: 2024-02-18 23:08:59.187415
+lastmod: 2024-02-19 22:05:06.867054
 model: gpt-4-0125-preview
 summary: "\u5728 Haskell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\u83B7\
   \u53D6\u7CFB\u7EDF\u7684\u5F53\u524D\u65F6\u95F4\uFF0C\u5E76\u5C06\u5176\u8F6C\u6362\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/c-sharp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:51.458605-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben\
   \ klein. Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"
-lastmod: 2024-02-18 23:09:04.857711
+lastmod: 2024-02-19 22:05:12.802395
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein.\
   \ Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"

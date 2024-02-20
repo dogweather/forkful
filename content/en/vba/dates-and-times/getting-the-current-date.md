@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/getting-the-current-date/
 date: 2024-02-01 21:30:34.128208-07:00
 description: "In Visual Basic for Applications (VBA), retrieving the current date\
   \ is a common task that enables programmers to dynamically work with dates in their\u2026"
-lastmod: 2024-02-18 23:09:10.900146
+lastmod: 2024-02-19 22:05:18.412401
 model: gpt-4-0125-preview
 summary: "In Visual Basic for Applications (VBA), retrieving the current date is a\
   \ common task that enables programmers to dynamically work with dates in their\u2026"

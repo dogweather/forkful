@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:34.108743-07:00
 description: "Converting a string to lower case changes all uppercase letters in the\
   \ text to their lowercase counterparts. Programmers do this for consistency,\u2026"
-lastmod: 2024-02-18 23:09:11.302885
+lastmod: 2024-02-19 22:05:18.773012
 model: gpt-4-1106-preview
 summary: "Converting a string to lower case changes all uppercase letters in the text\
   \ to their lowercase counterparts. Programmers do this for consistency,\u2026"

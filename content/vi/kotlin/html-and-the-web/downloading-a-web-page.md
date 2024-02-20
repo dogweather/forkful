@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/kotlin/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:05.192144-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\xE3 
   \ t\u1EEB m\u1ED9t URL c\u1EE5 th\u1EC3 \u0111\u1EC3 xem ho\u1EB7c s\u1EED d\u1EE5\
   ng m\u1ED9t c\xE1ch n\u1ED9i b\u1ED9. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
   u n\xE0y cho c\xE1c c\xF4ng vi\u1EC7c nh\u01B0 web\u2026"
-lastmod: 2024-02-18 23:08:50.649762
+lastmod: 2024-02-19 22:04:55.770112
 model: gpt-4-0125-preview
 summary: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\xE3 HTML t\u1EEB\
   \ m\u1ED9t URL c\u1EE5 th\u1EC3 \u0111\u1EC3 xem ho\u1EB7c s\u1EED d\u1EE5ng m\u1ED9\

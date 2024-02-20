@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/cpp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:25.408742-07:00
@@ -14,7 +12,7 @@ description: "C++ \u092E\u0947\u0902 \u091F\u0947\u0938\u094D\u091F \u0932\u093F
   \u092F\u0935\u0939\u093E\u0930 \u0915\u094B \u0938\u094D\u0935\u091A\u093E\u0932\
   \u093F\u0924 \u0930\u0942\u092A \u0938\u0947 \u0938\u0924\u094D\u092F\u093E\u092A\
   \u093F\u0924 \u0915\u0930\u0924\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.895699
+lastmod: 2024-02-19 22:05:11.878194
 model: gpt-4-0125-preview
 summary: "C++ \u092E\u0947\u0902 \u091F\u0947\u0938\u094D\u091F \u0932\u093F\u0916\
   \u0928\u0947 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 \u091B\u094B\u091F\

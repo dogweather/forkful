@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/cpp/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:24.028084-07:00
 description: "Analizar HTML significa descomponer el contenido HTML en algo que un\
   \ programa puede entender y manipular. Los programadores hacen esto para extraer\
   \ datos,\u2026"
-lastmod: 2024-02-18 23:09:10.307475
+lastmod: 2024-02-19 22:05:17.877632
 model: gpt-4-0125-preview
 summary: "Analizar HTML significa descomponer el contenido HTML en algo que un programa\
   \ puede entender y manipular. Los programadores hacen esto para extraer datos,\u2026"

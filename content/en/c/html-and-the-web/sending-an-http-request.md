@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c/sending-an-http-request/
 date: 2024-02-03 17:50:08.096430-07:00
 description: "Sending an HTTP request involves creating and dispatching a request\
   \ to a web server to retrieve or submit data. Programmers do this in C to interact\
   \ with\u2026"
-lastmod: 2024-02-18 23:09:11.519473
+lastmod: 2024-02-19 22:05:18.970174
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request involves creating and dispatching a request to a\
   \ web server to retrieve or submit data. Programmers do this in C to interact with\u2026"

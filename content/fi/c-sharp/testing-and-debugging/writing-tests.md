@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c-sharp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:40.310019-07:00
 description: "Testien kirjoittaminen C#:ssa tarkoittaa automatisoitujen skriptien\
   \ luomista koodisi toiminnallisuuden varmistamiseksi, jotta se k\xE4ytt\xE4ytyy\
   \ odotetulla\u2026"
-lastmod: 2024-02-18 23:09:07.624532
+lastmod: 2024-02-19 22:05:15.469974
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C#:ssa tarkoittaa automatisoitujen skriptien luomista\
   \ koodisi toiminnallisuuden varmistamiseksi, jotta se k\xE4ytt\xE4ytyy odotetulla\u2026"

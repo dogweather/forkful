@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:12.090187-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDF\
   buchstaben in seiner kleinen Form darzustellen. Programmierer nutzen das, um die\
   \ Gro\xDF-\u2026"
-lastmod: 2024-02-18 23:09:05.407278
+lastmod: 2024-02-19 22:05:13.325997
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDFbuchstaben\
   \ in seiner kleinen Form darzustellen. Programmierer nutzen das, um die Gro\xDF\

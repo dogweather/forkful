@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/rounding-numbers/
 date: 2024-01-25 02:59:55.559713-07:00
 description: "Rounding numbers means adjusting them to be closer to a simpler or more\
   \ significant value. Programmers round off numbers to simplify results, limit\u2026"
-lastmod: 2024-02-18 23:09:10.676279
+lastmod: 2024-02-19 22:05:18.210674
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to be closer to a simpler or more\
   \ significant value. Programmers round off numbers to simplify results, limit\u2026"

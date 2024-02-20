@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/haskell/handling-errors/
 date: 2024-01-26 00:52:54.127365-07:00
 description: "Manejar errores en la programaci\xF3n es gestionar lo inesperado\u2014\
   cosas que pueden salir mal. Los programadores lo hacen para asegurar que sus programas\u2026"
-lastmod: 2024-02-18 23:09:10.035932
+lastmod: 2024-02-19 22:05:17.633224
 model: gpt-4-1106-preview
 summary: "Manejar errores en la programaci\xF3n es gestionar lo inesperado\u2014cosas\
   \ que pueden salir mal. Los programadores lo hacen para asegurar que sus programas\u2026"

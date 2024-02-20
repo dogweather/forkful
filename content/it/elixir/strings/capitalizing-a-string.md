@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/elixir/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:52.850156-07:00
 description: "Capitalizzare una stringa significa convertire la prima lettera della\
   \ stringa in maiuscolo, assicurandosi che le restanti lettere siano in minuscolo.\u2026"
-lastmod: 2024-02-18 23:08:55.584996
+lastmod: 2024-02-19 22:05:02.177019
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa significa convertire la prima lettera della stringa\
   \ in maiuscolo, assicurandosi che le restanti lettere siano in minuscolo.\u2026"

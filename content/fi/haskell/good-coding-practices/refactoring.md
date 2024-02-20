@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/refactoring/
 date: 2024-01-26 01:37:46.349654-07:00
 description: "Koodin refaktorointi on prosessi, jossa koodia muokataan siten, ett\xE4\
   \ sen ulkoinen toiminta ei muutu. Kyse on koodin siistimisest\xE4 ja j\xE4rjest\xE4\
   misest\xE4,\u2026"
-lastmod: 2024-02-18 23:09:07.675065
+lastmod: 2024-02-19 22:05:15.516631
 model: gpt-4-0125-preview
 summary: "Koodin refaktorointi on prosessi, jossa koodia muokataan siten, ett\xE4\
   \ sen ulkoinen toiminta ei muutu. Kyse on koodin siistimisest\xE4 ja j\xE4rjest\xE4\

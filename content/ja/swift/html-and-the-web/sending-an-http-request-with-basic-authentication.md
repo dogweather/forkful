@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/swift/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:03:04.179274-07:00
 description: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306B\u30D9\u30FC\u30B7\u30C3\u30AF\
   \u8A8D\u8A3C\u3092\u4ED8\u3051\u308B\u306E\u306F\u3001\u30B5\u30FC\u30D0\u30FC\u3078\
@@ -9,7 +7,7 @@ description: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306B\u30D9\u30FC\u30B7\u30C3\u
   \u30AF\u30BB\u30B9\u3092\u8A31\u53EF\u3059\u308B\u305F\u3081\u306B\u4F7F\u3044\u307E\
   \u3059\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:55.229195
+lastmod: 2024-02-19 22:05:01.725045
 model: gpt-4-1106-preview
 summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306B\u30D9\u30FC\u30B7\u30C3\u30AF\u8A8D\
   \u8A3C\u3092\u4ED8\u3051\u308B\u306E\u306F\u3001\u30B5\u30FC\u30D0\u30FC\u3078\u5B89\

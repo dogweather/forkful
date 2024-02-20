@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:25.969798-07:00
 description: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\xF6\
   n yhdistelm\xE4n\xE4 (esim. 3 + 4i), ovat keskeisi\xE4 erilaisissa laskennallisissa\
   \ ongelmissa,\u2026"
-lastmod: 2024-02-18 23:09:07.127826
+lastmod: 2024-02-19 22:05:15.005651
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\xF6\
   n yhdistelm\xE4n\xE4 (esim. 3 + 4i), ovat keskeisi\xE4 erilaisissa laskennallisissa\

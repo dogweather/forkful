@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/fish-shell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:36.842264-07:00
 description: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som automatisk\
   \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater.\
   \ Denne\u2026"
-lastmod: 2024-02-18 23:08:54.355139
+lastmod: 2024-02-19 22:05:00.509958
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som automatisk\
   \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater.\

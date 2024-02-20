@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:28.715522-07:00
 description: "Okre\u015Blenie d\u0142ugo\u015Bci stringa to po prostu zliczenie ilo\u015B\
   ci znak\xF3w w nim zawartych. Programi\u015Bci robi\u0105 to, by walidowa\u0107\
   \ dane, manipulowa\u0107 tekstami czy po\u2026"
-lastmod: 2024-02-18 23:08:50.025955
+lastmod: 2024-02-19 22:04:55.003729
 model: gpt-4-1106-preview
 summary: "Okre\u015Blenie d\u0142ugo\u015Bci stringa to po prostu zliczenie ilo\u015B\
   ci znak\xF3w w nim zawartych. Programi\u015Bci robi\u0105 to, by walidowa\u0107\

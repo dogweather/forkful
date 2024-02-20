@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/bash/working-with-toml/
 date: 2024-01-26 04:19:22.710053-07:00
 description: "TOML, \u0441\u043A\u043E\u0440\u043E\u0447\u0435\u043D\u043D\u044F \u0432\
   \u0456\u0434 Tom's Obvious, Minimal Language, \u0446\u0435 \u0444\u043E\u0440\u043C\
@@ -10,7 +8,7 @@ description: "TOML, \u0441\u043A\u043E\u0440\u043E\u0447\u0435\u043D\u043D\u044F
   \ \u0439\u043E\u0433\u043E \u0437\u0430 \u043F\u0440\u043E\u0441\u0442\u043E\u0442\
   \u0443 \u0456 \u0447\u0438\u0442\u0430\u0431\u0435\u043B\u044C\u043D\u0456\u0441\
   \u0442\u044C; \u0456\u0434\u0435\u0430\u043B\u044C\u043D\u043E\u2026"
-lastmod: 2024-02-18 23:09:00.692929
+lastmod: 2024-02-19 22:05:08.689106
 model: gpt-4-0125-preview
 summary: "TOML, \u0441\u043A\u043E\u0440\u043E\u0447\u0435\u043D\u043D\u044F \u0432\
   \u0456\u0434 Tom's Obvious, Minimal Language, \u0446\u0435 \u0444\u043E\u0440\u043C\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:18.628987-07:00
 description: "Quitar las comillas de una cadena significa deshacerse de esos caracteres\
   \ de comillas dobles o simples que abrazan tu texto. Los programadores hacen esto\u2026"
-lastmod: 2024-02-18 23:09:10.106730
+lastmod: 2024-02-19 22:05:17.697877
 model: gpt-4-0125-preview
 summary: "Quitar las comillas de una cadena significa deshacerse de esos caracteres\
   \ de comillas dobles o simples que abrazan tu texto. Los programadores hacen esto\u2026"

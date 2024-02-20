@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:09.348411-07:00
 description: "W PHP konwersja daty do postaci \u0142a\u0144cucha znak\xF3w pozwala\
   \ na \u0142atwe wy\u015Bwietlanie i zapisywanie w r\xF3\u017Cnych formatach. Robimy\
   \ to cz\u0119sto, by dostosowa\u0107 dat\u0119 do\u2026"
-lastmod: 2024-02-18 23:08:49.707368
+lastmod: 2024-02-19 22:04:54.643688
 model: gpt-4-1106-preview
 summary: "W PHP konwersja daty do postaci \u0142a\u0144cucha znak\xF3w pozwala na\
   \ \u0142atwe wy\u015Bwietlanie i zapisywanie w r\xF3\u017Cnych formatach. Robimy\

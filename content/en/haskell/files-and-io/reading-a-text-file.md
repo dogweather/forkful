@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/reading-a-text-file/
 date: 2024-01-20 17:54:23.280188-07:00
 description: "Reading a text file in programming lets your code absorb data, like\
   \ pouring coffee into your brain in the morning. We do it to feed programs information\u2026"
-lastmod: 2024-02-18 23:09:11.112966
+lastmod: 2024-02-19 22:05:18.607625
 model: gpt-4-1106-preview
 summary: "Reading a text file in programming lets your code absorb data, like pouring\
   \ coffee into your brain in the morning. We do it to feed programs information\u2026"

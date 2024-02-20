@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/python/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:11.367840-07:00
@@ -9,7 +7,7 @@ description: "\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199\u662F\u6307\u5C06
   \u5176\u4F59\u5B57\u7B26\u8F6C\u6362\u4E3A\u5C0F\u5199\u3002\u8FD9\u79CD\u64CD\u4F5C\
   \u5728\u6570\u636E\u5904\u7406\u4E2D\u5E38\u7528\u4E8E\u89C4\u8303\u8F93\u5165\u6216\
   \u589E\u5F3A\u6807\u9898\u3001\u540D\u79F0\u7B49\u7684\u53EF\u8BFB\u6027\u3002"
-lastmod: 2024-02-18 23:08:58.776008
+lastmod: 2024-02-19 22:05:06.314779
 model: gpt-4-0125-preview
 summary: "\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199\u662F\u6307\u5C06\u5B57\
   \u7B26\u4E32\u7684\u7B2C\u4E00\u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\uFF0C\

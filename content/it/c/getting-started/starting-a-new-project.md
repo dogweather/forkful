@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/c/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:09.302892-07:00
 description: "Avviare un nuovo progetto in C comporta la configurazione di una struttura\
   \ di codice di base e un ambiente per gestire in modo efficiente le attivit\xE0\
   \ di\u2026"
-lastmod: 2024-02-18 23:08:56.339243
+lastmod: 2024-02-19 22:05:02.977474
 model: gpt-4-0125-preview
 summary: "Avviare un nuovo progetto in C comporta la configurazione di una struttura\
   \ di codice di base e un ambiente per gestire in modo efficiente le attivit\xE0\

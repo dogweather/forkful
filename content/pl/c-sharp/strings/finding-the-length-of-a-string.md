@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:09.034892-07:00
 description: "D\u0142ugo\u015B\u0107 ci\u0105gu to po prostu liczba znak\xF3w w tek\u015B\
   cie. Programi\u015Bci licz\u0105 znaki, by zarz\u0105dza\u0107 danymi - na przyk\u0142\
   ad sprawdzaj\u0105c has\u0142a czy ograniczaj\u0105c\u2026"
-lastmod: 2024-02-18 23:08:49.602097
+lastmod: 2024-02-19 22:04:54.532124
 model: gpt-4-1106-preview
 summary: "D\u0142ugo\u015B\u0107 ci\u0105gu to po prostu liczba znak\xF3w w tek\u015B\
   cie. Programi\u015Bci licz\u0105 znaki, by zarz\u0105dza\u0107 danymi - na przyk\u0142\

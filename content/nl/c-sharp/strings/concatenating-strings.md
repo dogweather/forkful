@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c-sharp/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:05.750794-07:00
 description: "Concatenatie is het proces van het aan elkaar plakken van strings. We\
   \ doen dit omdat we vaak woorden of symbolen moeten combineren om zinnen, berichten\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.843378
+lastmod: 2024-02-19 22:05:09.860185
 model: gpt-4-0125-preview
 summary: "Concatenatie is het proces van het aan elkaar plakken van strings. We doen\
   \ dit omdat we vaak woorden of symbolen moeten combineren om zinnen, berichten te\u2026"

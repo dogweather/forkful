@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/python/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:57.592698-07:00
@@ -14,7 +12,7 @@ description: "\u092A\u093E\u092F\u0925\u0928 \u092E\u0947\u0902 \u092F\u0939 \u0
   \ \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948 \u0907\u0938\
   \u0938\u0947 \u092A\u0939\u0932\u0947 \u0915\u093F \u092B\u093E\u0907\u0932\u0947\
   \u0902 \u092A\u0922\u093C\u0928\u0947 \u092F\u093E\u2026"
-lastmod: 2024-02-18 23:09:02.674662
+lastmod: 2024-02-19 22:05:10.675203
 model: gpt-4-0125-preview
 summary: "\u092A\u093E\u092F\u0925\u0928 \u092E\u0947\u0902 \u092F\u0939 \u091C\u093E\
   \u0902\u091A\u0928\u093E \u0915\u093F \u0915\u094B\u0908 \u0921\u093E\u092F\u0930\

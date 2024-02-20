@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/searching-and-replacing-text/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:26.126638-07:00
 description: "S\xF8king og erstatning av tekst i Visual Basic for Applications (VBA)\
   \ er vesentlig for \xE5 programmert redigere dokumenter, regneark og databaser.\
   \ Denne\u2026"
-lastmod: 2024-02-18 23:08:53.712084
+lastmod: 2024-02-19 22:04:59.847369
 model: gpt-4-0125-preview
 summary: "S\xF8king og erstatning av tekst i Visual Basic for Applications (VBA) er\
   \ vesentlig for \xE5 programmert redigere dokumenter, regneark og databaser. Denne\u2026"

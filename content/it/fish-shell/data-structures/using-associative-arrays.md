@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/fish-shell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:52.472331-07:00
 description: "Gli array associativi, o mappe hash, permettono di memorizzare dati\
   \ come coppie chiave-valore, rendendo pi\xF9 semplice organizzare e recuperare informazioni\u2026"
-lastmod: 2024-02-18 23:08:56.286791
+lastmod: 2024-02-19 22:05:02.922073
 model: gpt-4-0125-preview
 summary: "Gli array associativi, o mappe hash, permettono di memorizzare dati come\
   \ coppie chiave-valore, rendendo pi\xF9 semplice organizzare e recuperare informazioni\u2026"

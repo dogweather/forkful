@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:51.683853-07:00
 description: "Het extraheren van substrings betekent het trekken van specifieke delen\
   \ uit een string. Programmeurs doen dit om gegevens te verwerken of te manipuleren,\u2026"
-lastmod: 2024-02-18 23:09:01.932964
+lastmod: 2024-02-19 22:05:09.955045
 model: gpt-4-0125-preview
 summary: "Het extraheren van substrings betekent het trekken van specifieke delen\
   \ uit een string. Programmeurs doen dit om gegevens te verwerken of te manipuleren,\u2026"

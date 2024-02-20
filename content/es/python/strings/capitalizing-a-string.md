@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/python/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:11.188735-07:00
 description: "Capitalizar una cadena significa convertir el primer car\xE1cter de\
   \ una cadena a may\xFAscula y el resto a min\xFAsculas. Esta operaci\xF3n es com\xFA\
   nmente utilizada en\u2026"
-lastmod: 2024-02-18 23:09:09.538032
+lastmod: 2024-02-19 22:05:17.189618
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena significa convertir el primer car\xE1cter de una\
   \ cadena a may\xFAscula y el resto a min\xFAsculas. Esta operaci\xF3n es com\xFA\

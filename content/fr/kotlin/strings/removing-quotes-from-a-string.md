@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/kotlin/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:25.443234-07:00
 description: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toute occurrence\
   \ de caract\xE8res de guillemets, qu'ils soient simples (' ') ou doubles (\" \"\
   ), des\u2026"
-lastmod: 2024-02-18 23:09:08.767652
+lastmod: 2024-02-19 22:05:16.473186
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toute occurrence\
   \ de caract\xE8res de guillemets, qu'ils soient simples (' ') ou doubles (\" \"\

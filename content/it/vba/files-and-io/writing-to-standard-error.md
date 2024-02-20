@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:06.023141-07:00
 description: "Scrivere sull'errore standard in Visual Basic for Applications (VBA)\
   \ comporta l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard,\u2026"
-lastmod: 2024-02-18 23:08:55.740403
+lastmod: 2024-02-19 22:05:02.342742
 model: gpt-4-0125-preview
 summary: "Scrivere sull'errore standard in Visual Basic for Applications (VBA) comporta\
   \ l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard,\u2026"

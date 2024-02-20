@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/elm/starting-a-new-project/
 date: 2024-01-20 18:03:21.775298-07:00
 description: "Come\xE7ar um novo projeto em Elm \xE9 inicializar um ambiente de desenvolvimento\
   \ do zero, configurando tudo o que voc\xEA precisa para escrever seu c\xF3digo Elm.\u2026"
-lastmod: 2024-02-18 23:08:58.061140
+lastmod: 2024-02-19 22:05:05.539185
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto em Elm \xE9 inicializar um ambiente de desenvolvimento\
   \ do zero, configurando tudo o que voc\xEA precisa para escrever seu c\xF3digo Elm.\u2026"

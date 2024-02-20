@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/bash/working-with-toml/
 date: 2024-01-26 04:19:03.600767-07:00
 description: "TOML\uFF08Tom's Obvious, Minimal Language\u306E\u7565\uFF09\u306F\u3001\
   \u30C7\u30FC\u30BF\u76F4\u5217\u5316\u5F62\u5F0F\u3067\u3059\u3002\u305D\u306E\u30B7\
@@ -10,7 +8,7 @@ description: "TOML\uFF08Tom's Obvious, Minimal Language\u306E\u7565\uFF09\u306F\
   \u6C17\u3092\u6301\u3061\u306A\u304C\u3089\u3082\u3001\u4EBA\u9593\u306B\u3068\u3063\
   \u3066JSON\u3088\u308A\u3082\u5384\u4ECB\u3055\u304C\u5C11\u306A\u3044\u3067\u3059\
   \u3002"
-lastmod: 2024-02-18 23:08:55.095782
+lastmod: 2024-02-19 22:05:01.530073
 model: gpt-4-0125-preview
 summary: "TOML\uFF08Tom's Obvious, Minimal Language\u306E\u7565\uFF09\u306F\u3001\u30C7\
   \u30FC\u30BF\u76F4\u5217\u5316\u5F62\u5F0F\u3067\u3059\u3002\u305D\u306E\u30B7\u30F3\

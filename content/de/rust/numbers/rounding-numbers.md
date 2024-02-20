@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/rust/rounding-numbers/
 date: 2024-01-26 03:46:37.153078-07:00
 description: "Zahlen runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen\
   \ Bruchteil mit einer bestimmten Genauigkeit anzupassen. Programmierer runden Zahlen,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:04.636121
+lastmod: 2024-02-19 22:05:12.591722
 model: gpt-4-0125-preview
 summary: "Zahlen runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen Bruchteil\
   \ mit einer bestimmten Genauigkeit anzupassen. Programmierer runden Zahlen, um\u2026"

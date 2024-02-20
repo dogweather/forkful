@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:50.311133-07:00
@@ -14,7 +12,7 @@ description: "C \u3067\u306E\u30C6\u30AD\u30B9\u30C8\u691C\u7D22\u3068\u7F6E\u63
   \u751F\u6210\u306B\u81F3\u308B\u307E\u3067\u306E\u30BF\u30B9\u30AF\u306E\u305F\u3081\
   \u306B\u3001\u3053\u308C\u3089\u306E\u64CD\u4F5C\u3092\u5B9F\u884C\u3057\u307E\u3059\
   \u3002"
-lastmod: 2024-02-18 23:08:55.334851
+lastmod: 2024-02-19 22:05:01.882533
 model: gpt-4-0125-preview
 summary: "C \u3067\u306E\u30C6\u30AD\u30B9\u30C8\u691C\u7D22\u3068\u7F6E\u63DB\u306F\
   \u3001\u5927\u304D\u306A\u6587\u5B57\u5217\u306E\u4E2D\u304B\u3089\u7279\u5B9A\u306E\

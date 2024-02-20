@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:57.236021-07:00
 description: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA)\
   \ polega na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142\
   ug sieciowych poprzez\u2026"
-lastmod: 2024-02-18 23:08:49.430386
+lastmod: 2024-02-19 22:04:54.354692
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA) polega\
   \ na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142ug sieciowych\

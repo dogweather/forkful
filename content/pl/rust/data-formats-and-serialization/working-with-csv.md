@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/rust/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:36.392094-07:00
 description: "Praca z plikami CSV (Comma-Separated Values - Warto\u015Bci Rozdzielone\
   \ Przecinkami) polega na odczytywaniu z i zapisywaniu do prostych plik\xF3w tekstowych,\u2026"
-lastmod: 2024-02-18 23:08:49.412178
+lastmod: 2024-02-19 22:04:54.335061
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values - Warto\u015Bci Rozdzielone\
   \ Przecinkami) polega na odczytywaniu z i zapisywaniu do prostych plik\xF3w tekstowych,\u2026"

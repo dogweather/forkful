@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:06.425563-07:00
 description: "Buscar y reemplazar texto en programaci\xF3n facilita la modificaci\xF3\
   n y gesti\xF3n de cadenas, que es una tarea fundamental en la manipulaci\xF3n de\
   \ datos y el\u2026"
-lastmod: 2024-02-18 23:09:09.437515
+lastmod: 2024-02-19 22:05:17.098039
 model: gpt-4-0125-preview
 summary: "Buscar y reemplazar texto en programaci\xF3n facilita la modificaci\xF3\
   n y gesti\xF3n de cadenas, que es una tarea fundamental en la manipulaci\xF3n de\

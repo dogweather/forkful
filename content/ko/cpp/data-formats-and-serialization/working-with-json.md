@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:08.807630-07:00
@@ -12,7 +10,7 @@ description: "JSON(JavaScript Object Notation)\uC740 \uB370\uC774\uD130\uB97C \u
   \ \uC0AC\uC6A9\uD558\uB294\uB370, \uC774\uB294 \uC778\uAC04\uC5D0\uAC8C \uC27D\uAC8C\
   \ \uC77D\uD788\uACE0, \uAE30\uACC4\uAC00 \uBD84\uC11D\uD558\uAE30\uC5D0 \uC9C1\uAD00\
   \uC801\uC774\uAE30\u2026"
-lastmod: 2024-02-18 23:09:06.716922
+lastmod: 2024-02-19 22:05:14.612323
 model: gpt-4-0125-preview
 summary: "JSON(JavaScript Object Notation)\uC740 \uB370\uC774\uD130\uB97C \uC800\uC7A5\
   \uD558\uACE0 \uC804\uC1A1\uD558\uAE30 \uC704\uD55C \uACBD\uB7C9 \uD3EC\uB9F7\uC73C\

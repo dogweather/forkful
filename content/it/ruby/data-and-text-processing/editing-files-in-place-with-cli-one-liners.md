@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:52.144967-07:00
 description: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga di\
   \ Comando) in Ruby ti consente di modificare i file direttamente dal tuo terminale,\u2026"
-lastmod: 2024-02-18 23:08:56.379097
+lastmod: 2024-02-19 22:05:03.019232
 model: gpt-4-0125-preview
 summary: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga di Comando)\
   \ in Ruby ti consente di modificare i file direttamente dal tuo terminale,\u2026"

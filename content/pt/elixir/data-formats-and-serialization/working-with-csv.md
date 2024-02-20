@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/elixir/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:30.821288-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
   \ ler e escrever dados nesses arquivos, uma necessidade comum para tarefas que requerem\u2026"
-lastmod: 2024-02-18 23:08:57.866032
+lastmod: 2024-02-19 22:05:05.337489
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve ler\
   \ e escrever dados nesses arquivos, uma necessidade comum para tarefas que requerem\u2026"

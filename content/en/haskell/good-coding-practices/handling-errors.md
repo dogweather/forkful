@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/haskell/handling-errors/
 date: 2024-01-21 21:19:30.352445-07:00
 description: "Handling errors in programming is about managing the unexpected\u2014\
   things that can go wrong. Programmers do it to ensure that their programs can cope\
   \ with\u2026"
-lastmod: 2024-02-18 23:09:11.103455
+lastmod: 2024-02-19 22:05:18.598806
 model: gpt-4-1106-preview
 summary: "Handling errors in programming is about managing the unexpected\u2014things\
   \ that can go wrong. Programmers do it to ensure that their programs can cope with\u2026"

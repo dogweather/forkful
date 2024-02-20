@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:46.266950-07:00
 description: "\xC5 h\xE5ndtere en streng inneb\xE6rer \xE5 endre inndata slik at det\
   \ f\xF8rste tegnet er stor bokstav mens resten er sm\xE5 bokstaver, ofte brukt for\
   \ formatering av navn\u2026"
-lastmod: 2024-02-18 23:08:53.462534
+lastmod: 2024-02-19 22:04:59.575506
 model: gpt-4-0125-preview
 summary: "\xC5 h\xE5ndtere en streng inneb\xE6rer \xE5 endre inndata slik at det f\xF8\
   rste tegnet er stor bokstav mens resten er sm\xE5 bokstaver, ofte brukt for formatering\

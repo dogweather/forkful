@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/fish-shell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:19.502778-07:00
 description: "Das Abrufen des aktuellen Datums in der Programmierung ist eine grundlegende\
   \ Aufgabe, die es Ihnen erm\xF6glicht, das Datum und die Zeitdaten des Systems\u2026"
-lastmod: 2024-02-18 23:09:05.337472
+lastmod: 2024-02-19 22:05:13.258877
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in der Programmierung ist eine grundlegende\
   \ Aufgabe, die es Ihnen erm\xF6glicht, das Datum und die Zeitdaten des Systems\u2026"

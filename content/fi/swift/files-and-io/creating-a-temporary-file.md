@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/creating-a-temporary-file/
 date: 2024-01-20 17:41:14.664471-07:00
 description: "Tilap\xE4istiedosto on v\xE4liaikainen s\xE4il\xF6 tietoja varten, kuin\
   \ kertak\xE4ytt\xF6astia koodille. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 turvallisen\
   \ testiymp\xE4rist\xF6n luomiseen,\u2026"
-lastmod: 2024-02-18 23:09:08.011007
+lastmod: 2024-02-19 22:05:15.821921
 model: gpt-4-1106-preview
 summary: "Tilap\xE4istiedosto on v\xE4liaikainen s\xE4il\xF6 tietoja varten, kuin\
   \ kertak\xE4ytt\xF6astia koodille. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 turvallisen\

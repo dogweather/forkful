@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/working-with-toml/
 date: 2024-01-26 04:25:04.496779-07:00
 description: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4\
   r ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\
   \ semantik.\u2026"
-lastmod: 2024-02-18 23:08:52.026798
+lastmod: 2024-02-19 22:04:57.383298
 model: gpt-4-0125-preview
 summary: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r\
   \ ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/swift/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:16.840748-07:00
 description: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter dig\
   \ lagra och hantera data som nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6\
   r att organisera data\u2026"
-lastmod: 2024-02-18 23:08:52.117669
+lastmod: 2024-02-19 22:04:57.483630
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter dig lagra\
   \ och hantera data som nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6r\

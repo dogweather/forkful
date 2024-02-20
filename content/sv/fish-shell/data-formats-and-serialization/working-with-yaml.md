@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/fish-shell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:41.342767-07:00
 description: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML\
   \ Ain't Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6\
   r\u2026"
-lastmod: 2024-02-18 23:08:52.227321
+lastmod: 2024-02-19 22:04:57.608756
 model: gpt-4-0125-preview
 summary: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML Ain't\
   \ Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6r\u2026"

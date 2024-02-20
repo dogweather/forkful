@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/clojure/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:35.103797-07:00
 description: "\xC5 skrive en tekstfil i Clojure inneb\xE6rer \xE5 skape eller modifisere\
   \ filer for \xE5 lagre data utenfor applikasjonen din. Dette muliggj\xF8r lagring,\u2026"
-lastmod: 2024-02-18 23:08:53.581740
+lastmod: 2024-02-19 22:04:59.705940
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Clojure inneb\xE6rer \xE5 skape eller modifisere\
   \ filer for \xE5 lagre data utenfor applikasjonen din. Dette muliggj\xF8r lagring,\u2026"

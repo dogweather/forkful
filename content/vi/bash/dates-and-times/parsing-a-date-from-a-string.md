@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/bash/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:04.214419-07:00
@@ -8,7 +6,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i 
   a l\xE0 tr\xEDch xu\u1EA5t c\xE1c th\xE0nh ph\u1EA7n ng\xE0y\u2014nh\u01B0 ng\xE0\
   y, th\xE1ng v\xE0 n\u0103m\u2014t\u1EEB v\u0103n b\u1EA3n. C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\u2026"
-lastmod: 2024-02-18 23:08:50.895901
+lastmod: 2024-02-19 22:04:56.082258
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i ngh\u0129\
   a l\xE0 tr\xEDch xu\u1EA5t c\xE1c th\xE0nh ph\u1EA7n ng\xE0y\u2014nh\u01B0 ng\xE0\

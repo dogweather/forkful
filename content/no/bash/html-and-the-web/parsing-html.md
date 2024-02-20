@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/bash/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:30.519934-07:00
 description: "\xC5 parse HTML betyr \xE5 sile gjennom strukturen og innholdet i en\
   \ HTML-fil for \xE5 trekke ut informasjon. Programmerere gj\xF8r det for \xE5 f\xE5\
   \ tilgang til data,\u2026"
-lastmod: 2024-02-18 23:08:54.056198
+lastmod: 2024-02-19 22:05:00.238427
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML betyr \xE5 sile gjennom strukturen og innholdet i en HTML-fil\
   \ for \xE5 trekke ut informasjon. Programmerere gj\xF8r det for \xE5 f\xE5 tilgang\

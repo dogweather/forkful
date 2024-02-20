@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:02.575194-07:00
 description: "Att konvertera ett datum till en str\xE4ng i Visual Basic for Applications\
   \ (VBA) \xE4r en process som anv\xE4nds f\xF6r att \xE4ndra datatypen f\xF6r ett\
   \ datum till\u2026"
-lastmod: 2024-02-18 23:08:51.638687
+lastmod: 2024-02-19 22:04:56.962256
 model: gpt-4-0125-preview
 summary: "Att konvertera ett datum till en str\xE4ng i Visual Basic for Applications\
   \ (VBA) \xE4r en process som anv\xE4nds f\xF6r att \xE4ndra datatypen f\xF6r ett\

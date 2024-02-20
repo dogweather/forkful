@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pl/fish-shell/refactoring/
 date: 2024-01-26 01:18:23.912725-07:00
 description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez\
   \ zmieniania jego zewn\u0119trznego zachowania w celu poprawy atrybut\xF3w niefunkcjonalnych.\u2026"
-lastmod: 2024-02-18 23:08:50.044885
+lastmod: 2024-02-19 22:04:55.024624
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez zmieniania\
   \ jego zewn\u0119trznego zachowania w celu poprawy atrybut\xF3w niefunkcjonalnych.\u2026"

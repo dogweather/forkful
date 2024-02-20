@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/working-with-complex-numbers/
 date: 2024-01-26 04:45:35.004133-07:00
 description: "I numeri complessi sono un insieme di numeri della forma `a + bi`, dove\
   \ `a` e `b` sono numeri reali, e `i` \xE8 l'unit\xE0 immaginaria (`i^2 = -1`). In\u2026"
-lastmod: 2024-02-18 23:08:55.515438
+lastmod: 2024-02-19 22:05:02.102006
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono un insieme di numeri della forma `a + bi`, dove\
   \ `a` e `b` sono numeri reali, e `i` \xE8 l'unit\xE0 immaginaria (`i^2 = -1`). In\u2026"

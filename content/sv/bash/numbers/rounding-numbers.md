@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/rounding-numbers/
 date: 2024-01-26 03:42:48.912838-07:00
 description: "Avrundning av tal inneb\xE4r att man klipper av decimalerna till ett\
   \ enklare v\xE4rde som \xE4r tillr\xE4ckligt bra f\xF6r ett givet sammanhang. Programmerare\
   \ avrundar\u2026"
-lastmod: 2024-02-18 23:08:51.954465
+lastmod: 2024-02-19 22:04:57.304844
 model: gpt-4-0125-preview
 summary: "Avrundning av tal inneb\xE4r att man klipper av decimalerna till ett enklare\
   \ v\xE4rde som \xE4r tillr\xE4ckligt bra f\xF6r ett givet sammanhang. Programmerare\

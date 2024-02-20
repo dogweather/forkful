@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:11.451936-07:00
 description: "\"Quoi et pourquoi ?\" Transformer une date en cha\xEEne de caract\xE8\
   res, c'est convertir l'information temporelle en texte. On le fait pour l'afficher,\
   \ la\u2026"
-lastmod: 2024-02-18 23:09:09.318829
+lastmod: 2024-02-19 22:05:16.986910
 model: gpt-4-1106-preview
 summary: "\"Quoi et pourquoi ?\" Transformer une date en cha\xEEne de caract\xE8res,\
   \ c'est convertir l'information temporelle en texte. On le fait pour l'afficher,\

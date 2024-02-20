@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:06.159840-07:00
 description: "\xC5 jobbe med JSON (JavaScript Object Notation) i C inneb\xE6rer \xE5\
   \ parsing, generere og manipulere JSON datastrukturer. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
-lastmod: 2024-02-18 23:08:54.416447
+lastmod: 2024-02-19 22:05:00.577206
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i C inneb\xE6rer \xE5 parsing,\
   \ generere og manipulere JSON datastrukturer. Programmerere gj\xF8r dette for \xE5\

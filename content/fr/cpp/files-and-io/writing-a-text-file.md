@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/cpp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:15.272345-07:00
 description: "\xC9crire dans un fichier texte en C++ implique de cr\xE9er ou d'ouvrir\
   \ un fichier, puis d'y \xE9crire des donn\xE9es, ce qui est une t\xE2che fondamentale\
   \ pour les\u2026"
-lastmod: 2024-02-18 23:09:09.181302
+lastmod: 2024-02-19 22:05:16.852910
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en C++ implique de cr\xE9er ou d'ouvrir\
   \ un fichier, puis d'y \xE9crire des donn\xE9es, ce qui est une t\xE2che fondamentale\

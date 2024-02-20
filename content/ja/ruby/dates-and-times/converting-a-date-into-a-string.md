@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/ruby/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:22.328019-07:00
 description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u3068\
   \u306F\u3001`Date` \u3084 `Time` \u306E\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092\
@@ -10,7 +8,7 @@ description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B
   \u3001\u30C7\u30FC\u30BF\u306E\u4FDD\u5B58\u3084\u4EA4\u63DB\u306E\u305F\u3081\u306B\
   \u3053\u308C\u3092\u884C\u3046\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:55.401582
+lastmod: 2024-02-19 22:05:01.974944
 model: gpt-4-1106-preview
 summary: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u3068\
   \u306F\u3001`Date` \u3084 `Time` \u306E\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092\

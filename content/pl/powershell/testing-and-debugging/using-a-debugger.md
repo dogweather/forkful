@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/using-a-debugger/
 date: 2024-01-26 04:08:55.992040-07:00
 description: "U\u017Cywanie debugera oznacza ustawianie punkt\xF3w przerwania, przegl\u0105\
   danie kodu krok po kroku, obserwowanie zmiennych oraz inspekcj\u0119 stanu programu\
   \ podczas\u2026"
-lastmod: 2024-02-18 23:08:49.833541
+lastmod: 2024-02-19 22:04:54.775838
 model: gpt-4-0125-preview
 summary: "U\u017Cywanie debugera oznacza ustawianie punkt\xF3w przerwania, przegl\u0105\
   danie kodu krok po kroku, obserwowanie zmiennych oraz inspekcj\u0119 stanu programu\

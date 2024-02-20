@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:55.325983-07:00
 description: "YAML:n k\xE4sittely Go:ssa k\xE4sitt\xE4\xE4 YAML (YAML Ain't Markup\
   \ Language) -tiedostojen j\xE4sent\xE4misen Go:n tietorakenteisiin ja p\xE4invastoin.\
   \ Ohjelmoijat tekev\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.109065
+lastmod: 2024-02-19 22:05:14.988156
 model: gpt-4-0125-preview
 summary: "YAML:n k\xE4sittely Go:ssa k\xE4sitt\xE4\xE4 YAML (YAML Ain't Markup Language)\
   \ -tiedostojen j\xE4sent\xE4misen Go:n tietorakenteisiin ja p\xE4invastoin. Ohjelmoijat\

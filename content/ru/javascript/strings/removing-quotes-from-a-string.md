@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/javascript/removing-quotes-from-a-string/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:02:31.809599-07:00
@@ -14,7 +12,7 @@ description: "\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u043A\u0430\u043
   \u0434\u0443, \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E \u043A\u043E\u0433\
   \u0434\u0430 \u0432\u044B \u0430\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u0443\
   \u0435\u0442\u0435 \u0434\u0430\u043D\u043D\u044B\u0435 \u0438\u043B\u0438\u2026"
-lastmod: 2024-02-18 23:08:57.445218
+lastmod: 2024-02-19 22:05:04.720566
 model: gpt-4-0125-preview
 summary: "\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u043A\u0430\u0432\u044B\
   \u0447\u0435\u043A \u0438\u0437 \u0441\u0442\u0440\u043E\u043A\u0438 \u043E\u0437\

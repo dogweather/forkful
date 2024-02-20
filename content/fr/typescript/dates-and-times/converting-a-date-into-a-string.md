@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/converting-a-date-into-a-string/
 date: 2024-01-20 17:38:00.585021-07:00
 description: "En TypeScript, convertir une date en cha\xEEne de caract\xE8res permet\
   \ de la formater pour l'affichage. Les programmeurs font cela pour am\xE9liorer\
   \ la lisibilit\xE9\u2026"
-lastmod: 2024-02-18 23:09:08.494536
+lastmod: 2024-02-19 22:05:16.278791
 model: gpt-4-1106-preview
 summary: "En TypeScript, convertir une date en cha\xEEne de caract\xE8res permet de\
   \ la formater pour l'affichage. Les programmeurs font cela pour am\xE9liorer la\

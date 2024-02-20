@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:31.633648-07:00
 description: "Assoziative Arrays, bekannt als `std::map` oder `std::unordered_map`\
   \ in C++, schlie\xDFen die L\xFCcke zwischen Array-Indizes und realen Daten, indem\
   \ sie es\u2026"
-lastmod: 2024-02-18 23:09:05.181353
+lastmod: 2024-02-19 22:05:13.112002
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, bekannt als `std::map` oder `std::unordered_map` in\
   \ C++, schlie\xDFen die L\xFCcke zwischen Array-Indizes und realen Daten, indem\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/extracting-substrings/
 date: 2024-01-20 17:46:11.797273-07:00
 description: "I JavaScript er uttrekk av delstrenger som et mini-felttog for \xE5\
   \ hente spesifikke tekstbiter fra st\xF8rre strenger. Vi gj\xF8r dette for \xE5\
   \ manipulere,\u2026"
-lastmod: 2024-02-18 23:08:54.298816
+lastmod: 2024-02-19 22:05:00.449024
 model: gpt-4-1106-preview
 summary: "I JavaScript er uttrekk av delstrenger som et mini-felttog for \xE5 hente\
   \ spesifikke tekstbiter fra st\xF8rre strenger. Vi gj\xF8r dette for \xE5 manipulere,\u2026"

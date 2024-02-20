@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/swift/reading-command-line-arguments/
 date: 2024-01-20 17:56:55.154514-07:00
 description: "Ler argumentos da linha de comando permite que programas Swift recebam\
   \ inputs externos ao serem executados. Programadores fazem isso para personalizar\
   \ a\u2026"
-lastmod: 2024-02-18 23:08:58.505981
+lastmod: 2024-02-19 22:05:05.999259
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando permite que programas Swift recebam inputs\
   \ externos ao serem executados. Programadores fazem isso para personalizar a\u2026"

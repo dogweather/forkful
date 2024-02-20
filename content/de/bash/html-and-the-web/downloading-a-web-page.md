@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/downloading-a-web-page/
 date: 2024-01-20 17:43:15.922411-07:00
 description: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt auf deinen Rechner\
   \ zu ziehen. Programmierer machen das, um Daten zu analysieren, Backups zu\u2026"
-lastmod: 2024-02-18 23:09:05.053168
+lastmod: 2024-02-19 22:05:12.989380
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt auf deinen Rechner\
   \ zu ziehen. Programmierer machen das, um Daten zu analysieren, Backups zu\u2026"

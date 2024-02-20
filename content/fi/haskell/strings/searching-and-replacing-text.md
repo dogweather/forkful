@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/searching-and-replacing-text/
 date: 2024-01-20 17:58:13.914510-07:00
 description: "Tekstin etsint\xE4 ja korvaaminen auttaa l\xF6yt\xE4m\xE4\xE4n ja muokkaamaan\
   \ koodissa tai tekstitiedostoissa olevia merkkijonoja. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 toimintoa\u2026"
-lastmod: 2024-02-18 23:09:07.650610
+lastmod: 2024-02-19 22:05:15.494170
 model: gpt-4-1106-preview
 summary: "Tekstin etsint\xE4 ja korvaaminen auttaa l\xF6yt\xE4m\xE4\xE4n ja muokkaamaan\
   \ koodissa tai tekstitiedostoissa olevia merkkijonoja. Ohjelmoijat k\xE4ytt\xE4\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/arduino/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:49.620194-07:00
 description: "YAML (YAML Ain't Markup Language) on ihmisen luettavissa oleva datan\
   \ serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 m\xE4\xE4ritystiedostoissa,\
   \ ohjelmien\u2026"
-lastmod: 2024-02-18 23:09:07.921270
+lastmod: 2024-02-19 22:05:15.739684
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) on ihmisen luettavissa oleva datan serialisointistandardi,\
   \ jota voidaan k\xE4ytt\xE4\xE4 m\xE4\xE4ritystiedostoissa, ohjelmien\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elm/downloading-a-web-page/
 date: 2024-01-20 17:43:48.061787-07:00
 description: "Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden,\
   \ um eine HTML-Seite zu erhalten. Programmierer machen das, um Daten zu sammeln,\u2026"
-lastmod: 2024-02-18 23:09:04.780201
+lastmod: 2024-02-19 22:05:12.728811
 model: gpt-4-1106-preview
 summary: "Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden,\
   \ um eine HTML-Seite zu erhalten. Programmierer machen das, um Daten zu sammeln,\u2026"

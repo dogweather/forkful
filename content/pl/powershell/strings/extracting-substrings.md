@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/extracting-substrings/
 date: 2024-01-20 17:46:46.874122-07:00
 description: "Wyci\u0105ganie podci\u0105g\xF3w to wydobywanie okre\u015Blonych cz\u0119\
   \u015Bci z wi\u0119kszego ci\u0105gu tekstowego. Programi\u015Bci robi\u0105 to,\
   \ by manipulowa\u0107 danymi, weryfikowa\u0107 formaty, czy\u2026"
-lastmod: 2024-02-18 23:08:49.816098
+lastmod: 2024-02-19 22:04:54.757382
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie podci\u0105g\xF3w to wydobywanie okre\u015Blonych cz\u0119\
   \u015Bci z wi\u0119kszego ci\u0105gu tekstowego. Programi\u015Bci robi\u0105 to,\

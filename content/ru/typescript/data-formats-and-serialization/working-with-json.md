@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/typescript/working-with-json/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:24.816535-07:00
@@ -13,7 +11,7 @@ description: "JSON (JavaScript Object Notation) - \u044D\u0442\u043E \u043B\u043
   \u0442 \u0435\u0433\u043E, \u043F\u043E\u0442\u043E\u043C\u0443 \u0447\u0442\u043E\
   \ \u043E\u043D \u0443\u0434\u043E\u0431\u043E\u0447\u0438\u0442\u0430\u0435\u043C\
   ,\u2026"
-lastmod: 2024-02-18 23:08:56.710658
+lastmod: 2024-02-19 22:05:03.538882
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) - \u044D\u0442\u043E \u043B\u0435\u0433\
   \u043A\u043E\u0432\u0435\u0441\u043D\u044B\u0439 \u0444\u043E\u0440\u043C\u0430\u0442\

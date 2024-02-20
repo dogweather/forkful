@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/powershell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:40.454677-07:00
 description: "Modificare i file sul posto con i one-liner CLI in PowerShell riguarda\
   \ l'apportare modifiche dirette ai file dalla riga di comando, senza la necessit\xE0\
   \ di\u2026"
-lastmod: 2024-02-18 23:08:56.090603
+lastmod: 2024-02-19 22:05:02.712771
 model: gpt-4-0125-preview
 summary: "Modificare i file sul posto con i one-liner CLI in PowerShell riguarda l'apportare\
   \ modifiche dirette ai file dalla riga di comando, senza la necessit\xE0 di\u2026"

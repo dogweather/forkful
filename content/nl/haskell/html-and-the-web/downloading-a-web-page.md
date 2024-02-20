@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:01.024352-07:00
 description: "Een webpagina downloaden betekent het ophalen van de gegevens via het\
   \ internet; het is alsof je een kopie opslaat om lokaal te lezen of te verwerken.\u2026"
-lastmod: 2024-02-18 23:09:01.897406
+lastmod: 2024-02-19 22:05:09.921354
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het ophalen van de gegevens via het internet;\
   \ het is alsof je een kopie opslaat om lokaal te lezen of te verwerken.\u2026"

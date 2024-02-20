@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:09.381171-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
   \ to spos\xF3b na autoryzacj\u0119 u\u017Cytkownika poprzez przesy\u0142anie loginu\
   \ i has\u0142a w nag\u0142\xF3wku HTTP.\u2026"
-lastmod: 2024-02-18 23:08:49.610376
+lastmod: 2024-02-19 22:04:54.541514
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem to\
   \ spos\xF3b na autoryzacj\u0119 u\u017Cytkownika poprzez przesy\u0142anie loginu\

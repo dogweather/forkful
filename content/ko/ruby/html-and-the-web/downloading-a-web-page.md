@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/downloading-a-web-page/
 date: 2024-01-20 17:45:05.857552-07:00
 description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\
   \uB137 \uC0C1\uC758 \uC6F9 \uD398\uC774\uC9C0\uB97C \uB85C\uCEEC \uCEF4\uD4E8\uD130\
@@ -9,7 +7,7 @@ description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD
   \uC11D\uD558\uAC70\uB098, \uC6F9 \uC2A4\uD06C\uB798\uD551\uC744 \uC218\uD589\uD558\
   \uC5EC \uC815\uBCF4\uB97C \uC218\uC9D1\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.023856
+lastmod: 2024-02-19 22:05:14.906048
 model: gpt-4-1106-preview
 summary: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\uB137\
   \ \uC0C1\uC758 \uC6F9 \uD398\uC774\uC9C0\uB97C \uB85C\uCEEC \uCEF4\uD4E8\uD130\uC5D0\

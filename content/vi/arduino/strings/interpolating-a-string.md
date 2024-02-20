@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:20.293035-07:00
@@ -8,7 +6,7 @@ description: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p bi\u1EBF
   \ v\u1EDBi v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
   i\u1EC1u n\xE0y nh\u1EB1m t\u1EA1o c\xE1c chu\u1ED7i m\u1ED9t c\xE1ch linh ho\u1EA1\
   t, l\xE0m cho \u0111\u1EA7u ra \u0111\u1ED9ng v\xE0 d\u1EC5 \u0111\u1ECDc."
-lastmod: 2024-02-18 23:08:50.982364
+lastmod: 2024-02-19 22:04:56.169392
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p bi\u1EBFn v\u1EDB\
   i v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/fish-shell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:21:19.895288-07:00
 description: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
   \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista\u2026"
-lastmod: 2024-02-18 23:09:08.079358
+lastmod: 2024-02-19 22:05:15.884677
 model: gpt-4-0125-preview
 summary: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
   \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista\u2026"

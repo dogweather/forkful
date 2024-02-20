@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c-sharp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:43.802632-07:00
 description: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092Basic\u8A8D\u8A3C\u3067\u9001\
   \u308B\u306E\u306F\u3001\u30B5\u30FC\u30D0\u30FC\u3078\u30BB\u30AD\u30E5\u30A2\u306A\
@@ -10,7 +8,7 @@ description: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092Basic\u8A8D\u8A3C\u3067\u9
   \u306AAPI\u3084\u30EA\u30BD\u30FC\u30B9\u3078\u5B89\u5168\u306B\u30A2\u30AF\u30BB\
   \u30B9\u3057\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.917469
+lastmod: 2024-02-19 22:05:01.271518
 model: gpt-4-1106-preview
 summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092Basic\u8A8D\u8A3C\u3067\u9001\u308B\
   \u306E\u306F\u3001\u30B5\u30FC\u30D0\u30FC\u3078\u30BB\u30AD\u30E5\u30A2\u306A\u65B9\

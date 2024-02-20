@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/clojure/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:00.967776-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bezeichnet\
   \ man, wenn man bestimmte Zeichen aus Strings entfernt, die auf ein gegebenes Muster\u2026"
-lastmod: 2024-02-18 23:09:04.490234
+lastmod: 2024-02-19 22:05:12.453505
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bezeichnet man,\
   \ wenn man bestimmte Zeichen aus Strings entfernt, die auf ein gegebenes Muster\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/concatenating-strings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:30.513813-07:00
 description: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolve\
   \ a uni\xE3o de duas ou mais strings em uma \xFAnica entidade. Esta \xE9 uma tarefa\
   \ fundamental na\u2026"
-lastmod: 2024-02-18 23:08:57.964437
+lastmod: 2024-02-19 22:05:05.438715
 model: gpt-4-0125-preview
 summary: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolve a uni\xE3\
   o de duas ou mais strings em uma \xFAnica entidade. Esta \xE9 uma tarefa fundamental\

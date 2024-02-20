@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/vba/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:11.993379-07:00
 description: "Hakemiston olemassaolon tarkistaminen Visual Basic for Applications\
   \ -ohjelmointikieless\xE4 (VBA) liittyy kansion olemassaolon varmentamiseen\u2026"
-lastmod: 2024-02-18 23:09:07.427856
+lastmod: 2024-02-19 22:05:15.312356
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Visual Basic for Applications -ohjelmointikieless\xE4\
   \ (VBA) liittyy kansion olemassaolon varmentamiseen\u2026"

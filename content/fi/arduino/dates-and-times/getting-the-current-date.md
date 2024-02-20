@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/arduino/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:00.393780-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
   \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\
   \ lokitiedostojen\u2026"
-lastmod: 2024-02-18 23:09:07.910529
+lastmod: 2024-02-19 22:05:15.729921
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
   \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/rust/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:44.643420-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
   \ communiquer avec un serveur Web en fournissant des identifiants (username/password)\u2026"
-lastmod: 2024-02-18 23:09:08.528590
+lastmod: 2024-02-19 22:05:16.309868
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est communiquer\
   \ avec un serveur Web en fournissant des identifiants (username/password)\u2026"

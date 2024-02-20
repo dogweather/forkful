@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:07.129036-07:00
 description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht\
   \ es, Code in Echtzeit zu testen. Programmierer nutzen sie, um zu experimentieren,\
   \ Fehler\u2026"
-lastmod: 2024-02-18 23:09:05.425068
+lastmod: 2024-02-19 22:05:13.344518
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht es,\
   \ Code in Echtzeit zu testen. Programmierer nutzen sie, um zu experimentieren, Fehler\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/powershell/logging/
 date: 2024-01-26 01:07:45.000812-07:00
 description: "Il logging \xE8 sostanzialmente lasciare una traccia all'interno del\
   \ proprio codice - \xE8 il modo in cui si tiene traccia di ci\xF2 che sta accadendo\
   \ quando lo\u2026"
-lastmod: 2024-02-18 23:08:56.100634
+lastmod: 2024-02-19 22:05:02.723485
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 sostanzialmente lasciare una traccia all'interno del proprio\
   \ codice - \xE8 il modo in cui si tiene traccia di ci\xF2 che sta accadendo quando\

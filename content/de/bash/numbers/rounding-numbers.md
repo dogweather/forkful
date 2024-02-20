@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/rounding-numbers/
 date: 2024-01-26 03:42:24.752922-07:00
 description: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren\
   \ Wert zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:05.046471
+lastmod: 2024-02-19 22:05:12.983409
 model: gpt-4-0125-preview
 summary: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren Wert\
   \ zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist. Programmierer\u2026"

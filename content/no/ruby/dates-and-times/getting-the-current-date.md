@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/ruby/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:41.961492-07:00
 description: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enhver\
   \ programmeringsinnsats, fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere\
   \ rapporter\u2026"
-lastmod: 2024-02-18 23:08:54.448333
+lastmod: 2024-02-19 22:05:00.611848
 model: gpt-4-0125-preview
 summary: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enhver programmeringsinnsats,\
   \ fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere rapporter\u2026"

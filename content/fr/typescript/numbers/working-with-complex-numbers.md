@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/working-with-complex-numbers/
 date: 2024-01-26 04:46:20.814984-07:00
 description: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
   \ imaginaire (g\xE9n\xE9ralement \xE9crits sous la forme a + bi), rendent possibles\
   \ des calculs\u2026"
-lastmod: 2024-02-18 23:09:08.474944
+lastmod: 2024-02-19 22:05:16.260919
 model: gpt-4-0125-preview
 summary: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
   \ imaginaire (g\xE9n\xE9ralement \xE9crits sous la forme a + bi), rendent possibles\

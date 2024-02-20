@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:46.286154-07:00
 description: "Uuden projektin aloittaminen Go:ssa sis\xE4lt\xE4\xE4 ty\xF6tilan pystytt\xE4\
   misen ja sen alustamisen tarvittavilla Go-moduuleilla. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n koodin\u2026"
-lastmod: 2024-02-18 23:09:07.085751
+lastmod: 2024-02-19 22:05:14.966058
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Go:ssa sis\xE4lt\xE4\xE4 ty\xF6tilan pystytt\xE4\
   misen ja sen alustamisen tarvittavilla Go-moduuleilla. Ohjelmoijat tekev\xE4t t\xE4\

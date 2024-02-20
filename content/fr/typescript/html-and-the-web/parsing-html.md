@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/typescript/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:11.716447-07:00
 description: "Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire\
   \ ou manipuler des informations. Les programmeurs le font pour interagir avec le\u2026"
-lastmod: 2024-02-18 23:09:08.479333
+lastmod: 2024-02-19 22:05:16.264903
 model: gpt-4-0125-preview
 summary: "Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire\
   \ ou manipuler des informations. Les programmeurs le font pour interagir avec le\u2026"

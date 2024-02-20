@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/rounding-numbers/
 date: 2024-01-25 03:00:12.757467-07:00
 description: "Rounding numbers means adjusting them to a specified degree of precision.\
   \ Programmers do it to simplify numbers for readability, to meet certain\u2026"
-lastmod: 2024-02-18 23:09:10.926042
+lastmod: 2024-02-19 22:05:18.436095
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to a specified degree of precision.\
   \ Programmers do it to simplify numbers for readability, to meet certain\u2026"

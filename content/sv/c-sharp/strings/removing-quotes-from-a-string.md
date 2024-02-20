@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:19.685401-07:00
 description: "Att ta bort citationstecken fr\xE5n en str\xE4ng i C# inneb\xE4r att\
   \ du tar bort de irriterande dubbla (`\"`) eller enkla (`'`) citationstecken som\
   \ omsluter din\u2026"
-lastmod: 2024-02-18 23:08:51.783161
+lastmod: 2024-02-19 22:04:57.117287
 model: gpt-4-0125-preview
 summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng i C# inneb\xE4r att du\
   \ tar bort de irriterande dubbla (`\"`) eller enkla (`'`) citationstecken som omsluter\

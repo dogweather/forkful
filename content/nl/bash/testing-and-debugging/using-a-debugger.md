@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/bash/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:39.681061-07:00
 description: "Een debugger in Bash gebruiken betekent het inzetten van tools om te\
   \ testen en problemen in je scripts te vinden, zoals het vangen van bugs die je\
   \ code\u2026"
-lastmod: 2024-02-18 23:09:02.045653
+lastmod: 2024-02-19 22:05:10.071258
 model: gpt-4-0125-preview
 summary: "Een debugger in Bash gebruiken betekent het inzetten van tools om te testen\
   \ en problemen in je scripts te vinden, zoals het vangen van bugs die je code\u2026"

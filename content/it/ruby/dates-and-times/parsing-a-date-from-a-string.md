@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/ruby/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:12.867636-07:00
 description: "L'analisi di una data da una stringa riguarda la conversione di testo\
   \ che rappresenta una data in un oggetto `Date` o `DateTime` che Ruby pu\xF2 comprendere.\u2026"
-lastmod: 2024-02-18 23:08:56.392074
+lastmod: 2024-02-19 22:05:03.033020
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa riguarda la conversione di testo che\
   \ rappresenta una data in un oggetto `Date` o `DateTime` che Ruby pu\xF2 comprendere.\u2026"

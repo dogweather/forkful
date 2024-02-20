@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/java/organizing-code-into-functions/
 date: 2024-01-26 01:10:30.156239-07:00
 description: "Organiser le code en fonctions signifie d\xE9composer le monstre qu'est\
   \ un programme en morceaux g\xE9rables, chacun effectuant une t\xE2che distincte.\
   \ Les\u2026"
-lastmod: 2024-02-18 23:09:08.634463
+lastmod: 2024-02-19 22:05:16.405950
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions signifie d\xE9composer le monstre qu'est\
   \ un programme en morceaux g\xE9rables, chacun effectuant une t\xE2che distincte.\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c-sharp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:52.607697-07:00
 description: "Assosiatiiviset taulukot, tai sanakirjat C#:ssa, antavat sinun tallentaa\
   \ ja hallita avain-arvo -pareja. Ne ovat sinun valintasi, kun tarvitset nopeasti\u2026"
-lastmod: 2024-02-18 23:09:07.612863
+lastmod: 2024-02-19 22:05:15.459407
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tai sanakirjat C#:ssa, antavat sinun tallentaa\
   \ ja hallita avain-arvo -pareja. Ne ovat sinun valintasi, kun tarvitset nopeasti\u2026"

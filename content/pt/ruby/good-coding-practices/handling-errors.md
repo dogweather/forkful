@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/ruby/handling-errors/
 date: 2024-01-26 00:57:05.478681-07:00
 description: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo \u2014\
   \ gerenciar erros e problemas de forma graciosa sem falhar. Os programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:58.673021
+lastmod: 2024-02-19 22:05:06.175560
 model: gpt-4-1106-preview
 summary: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo \u2014\
   \ gerenciar erros e problemas de forma graciosa sem falhar. Os programadores fazem\

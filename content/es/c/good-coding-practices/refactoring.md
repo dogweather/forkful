@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:45.177129-07:00
 description: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
   \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\u2026"
-lastmod: 2024-02-18 23:09:10.511486
+lastmod: 2024-02-19 22:05:18.062050
 model: gpt-4-0125-preview
 summary: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
   \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\u2026"

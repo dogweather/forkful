@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:51.086129-07:00
 description: "Converting a date to a string means turning it into text that represents\
   \ the date. We do this to format dates for humans to read or to prepare them for\u2026"
-lastmod: 2024-02-18 23:09:11.241414
+lastmod: 2024-02-19 22:05:18.717591
 model: gpt-4-1106-preview
 summary: "Converting a date to a string means turning it into text that represents\
   \ the date. We do this to format dates for humans to read or to prepare them for\u2026"

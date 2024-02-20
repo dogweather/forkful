@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/working-with-complex-numbers/
 date: 2024-01-26 04:37:58.312217-07:00
 description: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie jednostki\
   \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programi\u015Bci u\u017Cywaj\u0105\
   \ ich do\u2026"
-lastmod: 2024-02-18 23:08:49.903838
+lastmod: 2024-02-19 22:04:54.852605
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie jednostki\
   \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programi\u015Bci u\u017Cywaj\u0105\

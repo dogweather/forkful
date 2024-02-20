@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/php/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:22.965836-07:00
 description: "PHP:n assosiatiiviset taulukot ovat kuin tehostettuja listoja, joissa\
   \ jokaista alkiota voidaan k\xE4ytt\xE4\xE4 ihmisen luettavalla avaimella numeroiden\
   \ sijaan.\u2026"
-lastmod: 2024-02-18 23:09:07.703959
+lastmod: 2024-02-19 22:05:15.543394
 model: gpt-4-0125-preview
 summary: "PHP:n assosiatiiviset taulukot ovat kuin tehostettuja listoja, joissa jokaista\
   \ alkiota voidaan k\xE4ytt\xE4\xE4 ihmisen luettavalla avaimella numeroiden sijaan.\u2026"

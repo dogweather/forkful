@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/kotlin/sending-an-http-request/
 date: 2024-01-20 18:00:12.137575-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. Les programmeurs en ont besoin pour les applications qui bouffent de l'info\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:08.777414
+lastmod: 2024-02-19 22:05:16.482090
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. Les programmeurs en ont besoin pour les applications qui bouffent de l'info\

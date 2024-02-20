@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/lua/comparing-two-dates/
 date: 2024-01-20 17:33:43.771227-07:00
 description: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme\
   \ niiden j\xE4rjestyksen tai aikaeron. T\xE4m\xE4 on t\xE4rke\xE4\xE4 aikataulutuksessa,\
   \ m\xE4\xE4r\xE4aikojen seurannassa ja\u2026"
-lastmod: 2024-02-18 23:09:07.770495
+lastmod: 2024-02-19 22:05:15.603987
 model: gpt-4-1106-preview
 summary: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme niiden\
   \ j\xE4rjestyksen tai aikaeron. T\xE4m\xE4 on t\xE4rke\xE4\xE4 aikataulutuksessa,\

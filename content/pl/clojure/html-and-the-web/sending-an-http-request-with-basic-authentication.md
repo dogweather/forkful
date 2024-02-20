@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:28.277583-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
   \ to spos\xF3b na dost\u0119p do zabezpieczonych zasob\xF3w sieciowych. Programi\u015B\
   ci u\u017Cywaj\u0105 tego, by komunikowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.264516
+lastmod: 2024-02-19 22:04:54.177239
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem to\
   \ spos\xF3b na dost\u0119p do zabezpieczonych zasob\xF3w sieciowych. Programi\u015B\

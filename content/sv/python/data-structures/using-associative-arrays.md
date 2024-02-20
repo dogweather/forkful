@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/python/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:27.711251-07:00
 description: "Associativa arrayer, k\xE4nda i Python som dictionaries, kopplar nycklar\
   \ till v\xE4rden, vilket g\xF6r det enkelt att h\xE4mta, modifiera eller sp\xE5\
   ra data med ett\u2026"
-lastmod: 2024-02-18 23:08:51.415225
+lastmod: 2024-02-19 22:04:56.716821
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, k\xE4nda i Python som dictionaries, kopplar nycklar\
   \ till v\xE4rden, vilket g\xF6r det enkelt att h\xE4mta, modifiera eller sp\xE5\

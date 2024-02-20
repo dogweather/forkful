@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:31.455171-07:00
 description: "Foutafhandeling in je programma's vangt de onvoorziene dingen op die\
   \ je proberen te laten struikelen. Je doet het om te voorkomen dat je Arduino een\u2026"
-lastmod: 2024-02-18 23:09:02.145964
+lastmod: 2024-02-19 22:05:10.164017
 model: gpt-4-0125-preview
 summary: "Foutafhandeling in je programma's vangt de onvoorziene dingen op die je\
   \ proberen te laten struikelen. Je doet het om te voorkomen dat je Arduino een\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/clojure/working-with-json/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:15.188531-07:00
@@ -12,7 +10,7 @@ description: "JSON (JavaScript Object Notation) - \u044D\u0442\u043E \u0444\u043
   \u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\
   \u0443\u044E\u0442 JSON \u0438\u0437-\u0437\u0430 \u0435\u0433\u043E \u0443\u0434\
   \u043E\u0431\u0441\u0442\u0432\u0430 \u043F\u0440\u0438\u2026"
-lastmod: 2024-02-18 23:08:56.608236
+lastmod: 2024-02-19 22:05:03.375272
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) - \u044D\u0442\u043E \u0444\u043E\u0440\
   \u043C\u0430\u0442 \u0434\u0430\u043D\u043D\u044B\u0445, \u0438\u0441\u043F\u043E\

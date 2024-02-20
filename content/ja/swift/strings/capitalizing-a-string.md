@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/swift/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:35.668817-07:00
@@ -13,7 +11,7 @@ description: "Swift\u3067\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u5316\u3059\
   \u30FC\u30B9\u57FA\u6E96\u306B\u5F93\u3063\u3066\u540D\u524D\u3084\u6587\u3092\u6574\
   \u5F62\u3059\u308B\u76EE\u7684\u306A\u3069\u306E\u305F\u3081\u306B\u3053\u308C\u3092\
   \u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.213892
+lastmod: 2024-02-19 22:05:01.701950
 model: gpt-4-0125-preview
 summary: "Swift\u3067\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u5316\u3059\u308B\u3068\
   \u306F\u3001\u4E0E\u3048\u3089\u308C\u305F\u6587\u5B57\u5217\u306E\u6700\u521D\u306E\

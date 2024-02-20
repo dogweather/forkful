@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/javascript/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:11.781361-07:00
 description: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ enkelt f\xF6r m\xE4nniskor att l\xE4sa och skriva samt f\xF6r maskiner att tolka\
   \ och generera.\u2026"
-lastmod: 2024-02-18 23:08:52.185470
+lastmod: 2024-02-19 22:04:57.559768
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ enkelt f\xF6r m\xE4nniskor att l\xE4sa och skriva samt f\xF6r maskiner att tolka\

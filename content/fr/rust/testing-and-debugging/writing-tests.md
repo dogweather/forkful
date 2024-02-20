@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/rust/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:00.402061-07:00
 description: "\xC9crire des tests en Rust consiste \xE0 cr\xE9er des v\xE9rifications\
   \ automatis\xE9es pour s'assurer que votre code fonctionne comme pr\xE9vu. Les programmeurs\
   \ font cela\u2026"
-lastmod: 2024-02-18 23:09:08.532864
+lastmod: 2024-02-19 22:05:16.313727
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Rust consiste \xE0 cr\xE9er des v\xE9rifications\
   \ automatis\xE9es pour s'assurer que votre code fonctionne comme pr\xE9vu. Les programmeurs\

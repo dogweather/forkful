@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/printing-debug-output/
 date: 2024-01-20 17:52:50.915365-07:00
 description: "Skriva ut fels\xF6kningsmeddelanden i Lua hj\xE4lper dig att f\xF6rst\xE5\
   \ vad som h\xE4nder i koden. Vi g\xF6r det f\xF6r att snabbt identifiera och \xE5\
   tg\xE4rda buggar."
-lastmod: 2024-02-18 23:08:51.921038
+lastmod: 2024-02-19 22:04:57.268092
 model: gpt-4-1106-preview
 summary: "Skriva ut fels\xF6kningsmeddelanden i Lua hj\xE4lper dig att f\xF6rst\xE5\
   \ vad som h\xE4nder i koden. Vi g\xF6r det f\xF6r att snabbt identifiera och \xE5\

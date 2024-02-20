@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/python/rounding-numbers/
 date: 2024-01-26 03:46:17.495175-07:00
 description: "Redondear n\xFAmeros significa ajustarlos para que est\xE9n m\xE1s cerca\
   \ de un valor m\xE1s simple o m\xE1s significativo. Los programadores redondean\
   \ los n\xFAmeros para\u2026"
-lastmod: 2024-02-18 23:09:09.550692
+lastmod: 2024-02-19 22:05:17.201068
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa ajustarlos para que est\xE9n m\xE1s cerca\
   \ de un valor m\xE1s simple o m\xE1s significativo. Los programadores redondean\

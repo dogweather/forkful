@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/reading-a-text-file/
 date: 2024-01-20 17:54:51.447948-07:00
 description: "Textdateien lesen hei\xDFt, Daten aus einer Datei mit Textinhalt in\
   \ dein Programm zu laden. Programmierer machen das h\xE4ufig, um Konfigurationen\
   \ auszulesen,\u2026"
-lastmod: 2024-02-18 23:09:04.845047
+lastmod: 2024-02-19 22:05:12.790149
 model: gpt-4-1106-preview
 summary: "Textdateien lesen hei\xDFt, Daten aus einer Datei mit Textinhalt in dein\
   \ Programm zu laden. Programmierer machen das h\xE4ufig, um Konfigurationen auszulesen,\u2026"

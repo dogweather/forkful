@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/elm/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:17.972536-07:00
 description: "Elm non supporta nativamente YAML, un formato di serializzazione dei\
   \ dati spesso utilizzato per file di configurazione o condivisione di dati, a causa\
   \ del\u2026"
-lastmod: 2024-02-18 23:08:55.825487
+lastmod: 2024-02-19 22:05:02.432469
 model: gpt-4-0125-preview
 summary: "Elm non supporta nativamente YAML, un formato di serializzazione dei dati\
   \ spesso utilizzato per file di configurazione o condivisione di dati, a causa del\u2026"

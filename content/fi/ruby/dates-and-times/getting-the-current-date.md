@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/ruby/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:41.777200-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen on olennainen teht\xE4\
   v\xE4 l\xE4hes miss\xE4 tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen\
   \ lokituksesta sovelluksessa\u2026"
-lastmod: 2024-02-18 23:09:08.194217
+lastmod: 2024-02-19 22:05:16.006328
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen on olennainen teht\xE4v\xE4\
   \ l\xE4hes miss\xE4 tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/bash/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:47.385974-07:00
 description: "Recuperar a data atual no Bash envolve o uso de comandos internos para\
   \ exibir a data e a hora em v\xE1rios formatos. Programadores utilizam essa\u2026"
-lastmod: 2024-02-18 23:08:58.335772
+lastmod: 2024-02-19 22:05:05.818569
 model: gpt-4-0125-preview
 summary: "Recuperar a data atual no Bash envolve o uso de comandos internos para exibir\
   \ a data e a hora em v\xE1rios formatos. Programadores utilizam essa\u2026"

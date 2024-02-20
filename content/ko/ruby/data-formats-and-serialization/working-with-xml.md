@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/working-with-xml/
 date: 2024-01-26 04:35:17.366603-07:00
 description: "XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 \uCF54\uB4DC\uB97C \uC0AC\uC6A9\
   \uD558\uC5EC XML(eXtensible Markup Language) \uBB38\uC11C\uB97C \uD30C\uC2F1, \uC0DD\
@@ -9,7 +7,7 @@ description: "XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 \uCF54\uB4DC\uB97C \uC0A
   \ \uB9CE\uC740 \uC6F9 \uC11C\uBE44\uC2A4, \uC124\uC815 \uD30C\uC77C \uBC0F \uB370\
   \uC774\uD130 \uAD50\uD658\uD615\uC2DD\uACFC \uC0C1\uD638\uC791\uC6A9\uD558\uAE30\
   \ \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:07.063772
+lastmod: 2024-02-19 22:05:14.944559
 model: gpt-4-0125-preview
 summary: "XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 \uCF54\uB4DC\uB97C \uC0AC\uC6A9\
   \uD558\uC5EC XML(eXtensible Markup Language) \uBB38\uC11C\uB97C \uD30C\uC2F1, \uC0DD\

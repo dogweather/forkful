@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/powershell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:26.213083-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
   \ tekstiss\xE4 kirjoitettujen p\xE4iv\xE4m\xE4\xE4rien tunnistamista ja muuntamista\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tyypiksi, jonka PowerShell\u2026"
-lastmod: 2024-02-18 23:09:07.863592
+lastmod: 2024-02-19 22:05:15.687732
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstiss\xE4\
   \ kirjoitettujen p\xE4iv\xE4m\xE4\xE4rien tunnistamista ja muuntamista p\xE4iv\xE4\

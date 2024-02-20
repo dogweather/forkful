@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/cpp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:33.468710-07:00
 description: "R\xE4kna ut ett framtida eller f\xF6rflutet datum handlar om att best\xE4\
   mma ett specifikt datum utifr\xE5n ett annat genom att addera eller subtrahera dagar,\
   \ m\xE5nader\u2026"
-lastmod: 2024-02-18 23:08:52.096616
+lastmod: 2024-02-19 22:04:57.460415
 model: gpt-4-1106-preview
 summary: "R\xE4kna ut ett framtida eller f\xF6rflutet datum handlar om att best\xE4\
   mma ett specifikt datum utifr\xE5n ett annat genom att addera eller subtrahera dagar,\

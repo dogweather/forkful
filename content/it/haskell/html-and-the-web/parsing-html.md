@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/haskell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:12.619816-07:00
 description: "Parsare HTML in Haskell ti permette di estrarre dati, manipolare il\
   \ contenuto HTML o interagire con le pagine web programmaticamente. Questa operazione\
   \ \xE8\u2026"
-lastmod: 2024-02-18 23:08:55.928026
+lastmod: 2024-02-19 22:05:02.538546
 model: gpt-4-0125-preview
 summary: "Parsare HTML in Haskell ti permette di estrarre dati, manipolare il contenuto\
   \ HTML o interagire con le pagine web programmaticamente. Questa operazione \xE8\

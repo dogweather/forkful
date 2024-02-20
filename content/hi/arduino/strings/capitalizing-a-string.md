@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/arduino/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:53.497945-07:00
@@ -14,7 +12,7 @@ description: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u09
   \u091F\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u092E\u0947\u0902 \u0930\
   \u0916\u0928\u093E\u0964 \u092F\u0939 \u0915\u094D\u0930\u093F\u092F\u093E \u0921\
   \u0947\u091F\u093E\u2026"
-lastmod: 2024-02-18 23:09:03.784368
+lastmod: 2024-02-19 22:05:11.769128
 model: gpt-4-0125-preview
 summary: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B\
   \ \u0915\u0948\u092A\u093F\u091F\u0932\u093E\u0907\u091C\u093C \u0915\u0930\u0928\

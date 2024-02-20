@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:18.011117-07:00
@@ -13,7 +11,7 @@ description: "\uCF64\uB9C8\uB85C \uAD6C\uBD84\uB41C \uAC12(CSV) \uD615\uC2DD\uC7
   \ \uB370\uC774\uD130 \uB9C8\uC774\uADF8\uB808\uC774\uC158, \uBCF4\uACE0\uC11C \uC0DD\
   \uC131 \uB610\uB294 \uB370\uC774\uD130 \uBD84\uC11D\uC744 \uC704\uD574 \uC885\uC885\
   \ CSV \uD30C\uC77C\uC744\u2026"
-lastmod: 2024-02-18 23:09:05.520910
+lastmod: 2024-02-19 22:05:13.437660
 model: gpt-4-0125-preview
 summary: "\uCF64\uB9C8\uB85C \uAD6C\uBD84\uB41C \uAC12(CSV) \uD615\uC2DD\uC740 \uADF8\
   \ \uB2E8\uC21C\uC131\uACFC \uB300\uBD80\uBD84\uC758 \uD504\uB85C\uADF8\uB798\uBC0D\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:30.764590-07:00
 description: "HTML parsen betekent het afbreken van HTML-inhoud tot iets dat een programma\
   \ kan begrijpen en manipuleren. Programmeurs doen dit om gegevens te\u2026"
-lastmod: 2024-02-18 23:09:02.180400
+lastmod: 2024-02-19 22:05:10.197143
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent het afbreken van HTML-inhoud tot iets dat een programma\
   \ kan begrijpen en manipuleren. Programmeurs doen dit om gegevens te\u2026"

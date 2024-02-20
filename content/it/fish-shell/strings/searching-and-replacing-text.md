@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/fish-shell/searching-and-replacing-text/
 date: 2024-01-20 17:57:37.809121-07:00
 description: "La ricerca e sostituzione di testo permette di trovare specifiche stringhe\
   \ e cambiarle con altre. Programmatore lo fa per correggere errori, aggiornare\u2026"
-lastmod: 2024-02-18 23:08:56.279449
+lastmod: 2024-02-19 22:05:02.914382
 model: gpt-4-1106-preview
 summary: "La ricerca e sostituzione di testo permette di trovare specifiche stringhe\
   \ e cambiarle con altre. Programmatore lo fa per correggere errori, aggiornare\u2026"

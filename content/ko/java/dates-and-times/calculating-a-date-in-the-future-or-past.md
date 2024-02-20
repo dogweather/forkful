@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/java/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:13.867629-07:00
 description: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\
   \uD558\uB294 \uAC83\uC740 \uD2B9\uC815 \uAE30\uAC04 \uD6C4\uC758 \uC2DC\uAC04\uC744\
@@ -10,7 +8,7 @@ description: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\uC
   \uB150\uC77C \uCD94\uC801 \uB4F1\uC758 \uAE30\uB2A5\uC744 \uAD6C\uD604\uD558\uAE30\
   \ \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.041547
+lastmod: 2024-02-19 22:05:13.978571
 model: gpt-4-1106-preview
 summary: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\uD558\
   \uB294 \uAC83\uC740 \uD2B9\uC815 \uAE30\uAC04 \uD6C4\uC758 \uC2DC\uAC04\uC744 \uC54C\

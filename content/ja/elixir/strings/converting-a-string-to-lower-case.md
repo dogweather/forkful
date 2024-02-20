@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/elixir/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:02.826242-07:00
 description: "\u4F55\u3068\u306A\u305C\uFF1F \u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\
   \u306B\u5909\u63DB\u3059\u308B\u3001\u3064\u307E\u308A\u300C\u30B1\u30FC\u30B9\u5909\
@@ -11,7 +9,7 @@ description: "\u4F55\u3068\u306A\u305C\uFF1F \u6587\u5B57\u5217\u3092\u5C0F\u658
   \u306B\u30D7\u30ED\u30B0\u30E9\u30DE\u306F\u3053\u308C\u3092\u884C\u3044\u307E\u3059\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.630966
+lastmod: 2024-02-19 22:05:00.870409
 model: gpt-4-1106-preview
 summary: "\u4F55\u3068\u306A\u305C\uFF1F \u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\
   \u306B\u5909\u63DB\u3059\u308B\u3001\u3064\u307E\u308A\u300C\u30B1\u30FC\u30B9\u5909\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/elixir/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:49.285021-07:00
 description: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben des\
   \ Strings in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird, dass\
   \ alle anderen\u2026"
-lastmod: 2024-02-18 23:09:04.534147
+lastmod: 2024-02-19 22:05:12.494781
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben des Strings\
   \ in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird, dass alle anderen\u2026"

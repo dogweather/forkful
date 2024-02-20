@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/elm/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:17.268131-07:00
 description: ''
-lastmod: 2024-02-18 23:09:00.177897
+lastmod: 2024-02-19 22:05:08.155815
 model: gpt-4-1106-preview
 summary: ''
 title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043E\u0432\

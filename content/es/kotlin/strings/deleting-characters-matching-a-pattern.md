@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/kotlin/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:43.450842-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n es b\xE1sicamente\
   \ filtrar una cadena de texto, manteniendo solo los caracteres que queremos. Los\u2026"
-lastmod: 2024-02-18 23:09:09.918998
+lastmod: 2024-02-19 22:05:17.527562
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es b\xE1sicamente filtrar\
   \ una cadena de texto, manteniendo solo los caracteres que queremos. Los\u2026"

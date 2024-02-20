@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/interpolating-a-string/
 date: 2024-01-20 17:50:24.300825-07:00
 description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0\
   \ \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC0BD\uC785\uD558\uB294\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC
   \uD3B8\uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.598497
+lastmod: 2024-02-19 22:05:14.501920
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0 \uBCC0\
   \uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC0BD\uC785\uD558\uB294 \uAC83\

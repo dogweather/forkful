@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:44.247893-07:00
 description: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language (Tomin ilmeinen,\
   \ minimalistinen kieli), on datan sarjoitustapa, jota k\xE4ytet\xE4\xE4n p\xE4\xE4\
   asiassa\u2026"
-lastmod: 2024-02-18 23:09:07.438115
+lastmod: 2024-02-19 22:05:15.321991
 model: gpt-4-0125-preview
 summary: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language (Tomin ilmeinen, minimalistinen\
   \ kieli), on datan sarjoitustapa, jota k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/reading-command-line-arguments/
 date: 2024-01-20 17:55:41.331480-07:00
 description: "Reading command line arguments lets a program grab info straight from\
   \ the user's terminal command. Programmers do it to customize a program's behavior\u2026"
-lastmod: 2024-02-18 23:09:10.739153
+lastmod: 2024-02-19 22:05:18.266950
 model: gpt-4-1106-preview
 summary: "Reading command line arguments lets a program grab info straight from the\
   \ user's terminal command. Programmers do it to customize a program's behavior\u2026"

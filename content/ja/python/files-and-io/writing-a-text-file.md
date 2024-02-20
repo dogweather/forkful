@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/python/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:16.615651-07:00
@@ -14,7 +12,7 @@ description: "Python\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306B
   \u4FDD\u5B58\u306B\u4E0D\u53EF\u6B20\u3067\u3042\u308A\u3001\u30D7\u30ED\u30B0\u30E9\
   \u30DE\u30FC\u306E\u30A2\u30FC\u30BB\u30CA\u30EB\u306B\u304A\u3044\u3066\u57FA\u672C\
   \u7684\u3060\u304C\u91CD\u8981\u306A\u30C4\u30FC\u30EB\u3067\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.580770
+lastmod: 2024-02-19 22:05:00.797034
 model: gpt-4-0125-preview
 summary: "Python\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306B\u66F8\
   \u304D\u8FBC\u3080\u3053\u3068\u306F\u3001\u30D5\u30A1\u30A4\u30EB\u3092\u4F5C\u6210\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:27.294574-07:00
 description: "Het aanmaken van een tijdelijk bestand in Go maakt de creatie van een\
   \ niet-persistent bestand mogelijk dat ontworpen is voor kortetermijngebruik,\u2026"
-lastmod: 2024-02-18 23:09:01.360030
+lastmod: 2024-02-19 22:05:09.392834
 model: gpt-4-0125-preview
 summary: "Het aanmaken van een tijdelijk bestand in Go maakt de creatie van een niet-persistent\
   \ bestand mogelijk dat ontworpen is voor kortetermijngebruik,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/kotlin/working-with-xml/
 date: 2024-01-26 04:33:12.096022-07:00
 description: "\xC5 jobbe med XML inneb\xE6rer parsing, oppretting og manipulering\
   \ av XML-dokumenter \u2013 et markup-spr\xE5k for datalagring og -overf\xF8ring.\
   \ Programmerere gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:53.876256
+lastmod: 2024-02-19 22:05:00.043320
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, oppretting og manipulering av XML-dokumenter\
   \ \u2013 et markup-spr\xE5k for datalagring og -overf\xF8ring. Programmerere gj\xF8\

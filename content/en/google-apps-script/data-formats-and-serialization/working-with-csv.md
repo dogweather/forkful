@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/working-with-csv/
 date: 2024-02-01 21:12:12.820946-07:00
 description: "Working with CSV (Comma-Separated Values) files in Google Apps Script\
   \ involves reading, modifying, and writing plain-text files where each line represents\u2026"
-lastmod: 2024-02-18 23:09:10.661780
+lastmod: 2024-02-19 22:05:18.197182
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) files in Google Apps Script involves\
   \ reading, modifying, and writing plain-text files where each line represents\u2026"

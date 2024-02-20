@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/logging/
 date: 2024-01-26 01:02:50.015063-07:00
 description: "Loggning inom mjukvaruutveckling \xE4r tekniken att registrera h\xE4\
   ndelser som intr\xE4ffar n\xE4r ett program k\xF6rs, vanligtvis till en fil eller\
   \ externt system.\u2026"
-lastmod: 2024-02-18 23:08:51.508577
+lastmod: 2024-02-19 22:04:56.819857
 model: gpt-4-1106-preview
 summary: "Loggning inom mjukvaruutveckling \xE4r tekniken att registrera h\xE4ndelser\
   \ som intr\xE4ffar n\xE4r ett program k\xF6rs, vanligtvis till en fil eller externt\

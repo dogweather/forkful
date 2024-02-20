@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:19.727688-07:00
@@ -8,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) t\xECm ki\u1EBFm, kh\u1ED
   p v\xE0 thao t\xE1c chu\u1ED7i. Ch\xFAng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng v\xEC\
   \ t\xEDnh linh ho\u1EA1t v\xE0 hi\u1EC7u qu\u1EA3 trong nhi\u1EC7m v\u1EE5 x\u1EED\
   \ l\xFD v\u0103n b\u1EA3n."
-lastmod: 2024-02-18 23:08:50.303635
+lastmod: 2024-02-19 22:04:55.336268
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) t\xECm ki\u1EBFm, kh\u1EDBp v\xE0\
   \ thao t\xE1c chu\u1ED7i. Ch\xFAng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng v\xEC t\xED\

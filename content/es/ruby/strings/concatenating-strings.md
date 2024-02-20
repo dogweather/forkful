@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/ruby/concatenating-strings/
 date: 2024-01-20 17:35:59.211754-07:00
 description: "La concatenaci\xF3n de cadenas es unir dos o m\xE1s cadenas de texto\
   \ en una sola. Los programadores la utilizan para combinar mensajes, construir datos\u2026"
-lastmod: 2024-02-18 23:09:10.541407
+lastmod: 2024-02-19 22:05:18.089018
 model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas es unir dos o m\xE1s cadenas de texto en\
   \ una sola. Los programadores la utilizan para combinar mensajes, construir datos\u2026"

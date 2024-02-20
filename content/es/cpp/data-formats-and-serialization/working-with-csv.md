@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/cpp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:00.274319-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de\
   \ procesar y manipular datos almacenados en un formato de texto simple, donde cada\
   \ l\xEDnea\u2026"
-lastmod: 2024-02-18 23:09:10.336397
+lastmod: 2024-02-19 22:05:17.901951
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de procesar\
   \ y manipular datos almacenados en un formato de texto simple, donde cada l\xED\

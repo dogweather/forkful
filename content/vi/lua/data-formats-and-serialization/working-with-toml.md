@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:27.473273-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xE
   ch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language)\
   \ b\u1EB1ng Lua. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7\
   p\u2026"
-lastmod: 2024-02-18 23:08:50.862461
+lastmod: 2024-02-19 22:04:56.039677
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language)\

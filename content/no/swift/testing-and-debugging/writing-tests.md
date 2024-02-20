@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/swift/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:01.333725-07:00
 description: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode\
   \ som verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:54.272374
+lastmod: 2024-02-19 22:05:00.419860
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode som\
   \ verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\

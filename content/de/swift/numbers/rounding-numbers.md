@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/rounding-numbers/
 date: 2024-01-26 03:46:34.288823-07:00
 description: "Das Runden von Zahlen bedeutet, einen numerischen Wert auf eine spezifische\
   \ Genauigkeit zu approximieren, typischerweise, um unerw\xFCnschte Dezimalstellen\u2026"
-lastmod: 2024-02-18 23:09:05.228835
+lastmod: 2024-02-19 22:05:13.156018
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, einen numerischen Wert auf eine spezifische\
   \ Genauigkeit zu approximieren, typischerweise, um unerw\xFCnschte Dezimalstellen\u2026"

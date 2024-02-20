@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/working-with-complex-numbers/
 date: 2024-01-25 02:59:36.547679-07:00
 description: "Complex numbers have a real part and an imaginary part, typically written\
   \ as `a + bi`. They're vital for some math-heavy Arduino projects involving signal\u2026"
-lastmod: 2024-02-18 23:09:11.309547
+lastmod: 2024-02-19 22:05:18.779110
 model: gpt-4-1106-preview
 summary: "Complex numbers have a real part and an imaginary part, typically written\
   \ as `a + bi`. They're vital for some math-heavy Arduino projects involving signal\u2026"

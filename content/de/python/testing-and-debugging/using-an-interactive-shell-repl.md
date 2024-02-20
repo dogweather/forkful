@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/python/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:24.177905-07:00
 description: "Ein REPL, oder Read-Eval-Print-Lopp, ist eine Programmierumgebung, die\
   \ einzelne Benutzereingaben nimmt, sie ausf\xFChrt und das Ergebnis an den Benutzer\u2026"
-lastmod: 2024-02-18 23:09:04.463748
+lastmod: 2024-02-19 22:05:12.427939
 model: gpt-4-0125-preview
 summary: "Ein REPL, oder Read-Eval-Print-Lopp, ist eine Programmierumgebung, die einzelne\
   \ Benutzereingaben nimmt, sie ausf\xFChrt und das Ergebnis an den Benutzer\u2026"

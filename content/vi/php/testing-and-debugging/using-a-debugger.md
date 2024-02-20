@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:37.488776-07:00
@@ -8,7 +6,7 @@ description: "Debugger l\xE0 m\u1ED9t c\xF4ng c\u1EE5 gi\xFAp l\u1EADp tr\xECnh 
   n hi\u1EC3u r\xF5 h\u01A1n v\u1EC1 vi\u1EC7c code c\u1EE7a h\u1ECD th\u1EF1c s\u1EF1\
   \ \u0111ang th\u1EF1c hi\u1EC7n nh\u1EEFng g\xEC khi n\xF3 ch\u1EA1y. \u0110\xF3\
   \ l\xE0 chi\u1EBFc k\xEDnh l\xFAp gi\xFAp ch\xFAng\u2026"
-lastmod: 2024-02-18 23:08:50.796092
+lastmod: 2024-02-19 22:04:55.955862
 model: gpt-4-0125-preview
 summary: "Debugger l\xE0 m\u1ED9t c\xF4ng c\u1EE5 gi\xFAp l\u1EADp tr\xECnh vi\xEA\
   n hi\u1EC3u r\xF5 h\u01A1n v\u1EC1 vi\u1EC7c code c\u1EE7a h\u1ECD th\u1EF1c s\u1EF1\

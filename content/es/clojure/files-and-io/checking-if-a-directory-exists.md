@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/clojure/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:02.306717-07:00
 description: "Verificar si un directorio existe en Clojure implica comprobar la presencia\
   \ de un directorio en el sistema de archivos desde dentro de tu aplicaci\xF3n\u2026"
-lastmod: 2024-02-18 23:09:09.618662
+lastmod: 2024-02-19 22:05:17.262119
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Clojure implica comprobar la presencia\
   \ de un directorio en el sistema de archivos desde dentro de tu aplicaci\xF3n\u2026"

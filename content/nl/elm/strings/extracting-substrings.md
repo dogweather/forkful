@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:38.216806-07:00
 description: "Substringen extraheren betekent specifieke delen uit een string halen.\
   \ Programmeurs doen dit om stukken tekstgegevens te isoleren, te manipuleren of\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.747107
+lastmod: 2024-02-19 22:05:09.766272
 model: gpt-4-0125-preview
 summary: "Substringen extraheren betekent specifieke delen uit een string halen. Programmeurs\
   \ doen dit om stukken tekstgegevens te isoleren, te manipuleren of te\u2026"

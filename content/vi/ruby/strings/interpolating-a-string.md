@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/ruby/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:52.137934-07:00
@@ -8,7 +6,7 @@ description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng bi\u1EBFn ho
   c bi\u1EC3u th\u1EE9c b\xEAn trong m\u1ED9t chu\u1ED7i. Ch\xFAng ta l\xE0m \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 c\xF3 \u0111\u01B0\u1EE3c m\xE3 ngu\u1ED3n s\u1EA1\
   ch h\u01A1n, d\u1EC5 \u0111\u1ECDc h\u01A1n, k\u1EBFt h\u1EE3p n\u1ED9i dung\u2026"
-lastmod: 2024-02-18 23:08:51.266591
+lastmod: 2024-02-19 22:04:56.546131
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng bi\u1EBFn ho\u1EB7\
   c bi\u1EC3u th\u1EE9c b\xEAn trong m\u1ED9t chu\u1ED7i. Ch\xFAng ta l\xE0m \u0111\

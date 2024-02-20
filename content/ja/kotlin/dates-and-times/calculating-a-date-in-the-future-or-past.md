@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/kotlin/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:45.307713-07:00
 description: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\
   \u7B97\u3059\u308B\u3068\u306F\u3001\u7279\u5B9A\u306E\u65E5\u4ED8\u304B\u3089\u6307\
@@ -11,7 +9,7 @@ description: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092
   \u7531\u304B\u3089\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u304C\u884C\u3044\u307E\u3059\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.891919
+lastmod: 2024-02-19 22:05:01.236941
 model: gpt-4-1106-preview
 summary: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\
   \u7B97\u3059\u308B\u3068\u306F\u3001\u7279\u5B9A\u306E\u65E5\u4ED8\u304B\u3089\u6307\

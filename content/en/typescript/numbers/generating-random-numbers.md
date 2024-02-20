@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/generating-random-numbers/
 date: 2024-01-27 20:26:54.398270-07:00
 description: "Generating random numbers in TypeScript is about creating unpredictable\
   \ numeric values within a specified range. Programmers leverage these random digits\u2026"
-lastmod: 2024-02-18 23:09:10.803181
+lastmod: 2024-02-19 22:05:18.324524
 model: gpt-4-0125-preview
 summary: "Generating random numbers in TypeScript is about creating unpredictable\
   \ numeric values within a specified range. Programmers leverage these random digits\u2026"

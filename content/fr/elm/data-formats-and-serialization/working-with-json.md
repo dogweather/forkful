@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/elm/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:33.104491-07:00
 description: "Travailler avec JSON en Elm consiste \xE0 d\xE9coder des donn\xE9es\
   \ JSON en types Elm et \xE0 encoder des valeurs Elm en retour en JSON. Ce processus\
   \ est crucial pour\u2026"
-lastmod: 2024-02-18 23:09:08.757915
+lastmod: 2024-02-19 22:05:16.464267
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON en Elm consiste \xE0 d\xE9coder des donn\xE9es JSON\
   \ en types Elm et \xE0 encoder des valeurs Elm en retour en JSON. Ce processus est\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:16.484128-07:00
 description: "Een HTTP-verzoek versturen in Google Apps Script gaat over het programmatisch\
   \ maken van een oproep naar een externe webserver of API. Programmeurs doen\u2026"
-lastmod: 2024-02-18 23:09:01.382068
+lastmod: 2024-02-19 22:05:09.414783
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen in Google Apps Script gaat over het programmatisch\
   \ maken van een oproep naar een externe webserver of API. Programmeurs doen\u2026"

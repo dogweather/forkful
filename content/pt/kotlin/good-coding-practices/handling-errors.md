@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/handling-errors/
 date: 2024-01-26 00:54:21.325281-07:00
 description: "Tratar erros \xE9 a forma como o seu c\xF3digo lida com problemas que\
   \ surgem durante a execu\xE7\xE3o\u2014como lidar com uma bola curva sem deix\xE1\
   -la cair. Os\u2026"
-lastmod: 2024-02-18 23:08:58.116630
+lastmod: 2024-02-19 22:05:05.589669
 model: gpt-4-1106-preview
 summary: "Tratar erros \xE9 a forma como o seu c\xF3digo lida com problemas que surgem\
   \ durante a execu\xE7\xE3o\u2014como lidar com uma bola curva sem deix\xE1-la cair.\

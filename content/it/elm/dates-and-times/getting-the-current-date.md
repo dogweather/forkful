@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elm/getting-the-current-date/
 date: 2024-01-20 15:14:19.510193-07:00
 description: "Ottenere la data attuale significa catturare il momento presente in\
   \ termini di giorno, mese e anno. I programmatori lo fanno per tracciare eventi,\
   \ gestire\u2026"
-lastmod: 2024-02-18 23:08:55.815888
+lastmod: 2024-02-19 22:05:02.422773
 summary: "Ottenere la data attuale significa catturare il momento presente in termini\
   \ di giorno, mese e anno. I programmatori lo fanno per tracciare eventi, gestire\u2026"
 title: Ottenere la data corrente

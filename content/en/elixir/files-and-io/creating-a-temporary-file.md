@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/creating-a-temporary-file/
 date: 2024-01-20 17:39:57.204587-07:00
 description: "Creating a temporary file means making a file that you'll toss out after\
   \ a short use. Programmers do this for temporary storage or when they want to avoid\u2026"
-lastmod: 2024-02-18 23:09:10.784973
+lastmod: 2024-02-19 22:05:18.308189
 model: gpt-4-1106-preview
 summary: "Creating a temporary file means making a file that you'll toss out after\
   \ a short use. Programmers do this for temporary storage or when they want to avoid\u2026"

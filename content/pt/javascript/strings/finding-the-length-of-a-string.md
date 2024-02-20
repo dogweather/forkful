@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/javascript/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:57.836199-07:00
 description: "Descobrir o tamanho de uma string \xE9 basicamente contar quantos caracteres\
   \ ela tem. Programadores fazem isso para validar entradas, manipular textos ou\u2026"
-lastmod: 2024-02-18 23:08:58.523429
+lastmod: 2024-02-19 22:05:06.017732
 model: gpt-4-1106-preview
 summary: "Descobrir o tamanho de uma string \xE9 basicamente contar quantos caracteres\
   \ ela tem. Programadores fazem isso para validar entradas, manipular textos ou\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/elm/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.049169-07:00
 description: "Les tableaux associatifs, ou comme les appelle Elm, les Dictionnaires,\
   \ associent des cl\xE9s \xE0 des valeurs de mani\xE8re \xE0 rendre la recherche,\
   \ l'insertion et\u2026"
-lastmod: 2024-02-18 23:09:08.725729
+lastmod: 2024-02-19 22:05:16.435773
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou comme les appelle Elm, les Dictionnaires, associent\
   \ des cl\xE9s \xE0 des valeurs de mani\xE8re \xE0 rendre la recherche, l'insertion\

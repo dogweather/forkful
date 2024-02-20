@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/working-with-yaml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:45.960501-07:00
 description: "YAML ain't Markup Language, of YAML, is een gebruiksvriendelijke standaard\
   \ voor gegevensserialisatie voor alle programmeertalen. Programmeurs werken met\u2026"
-lastmod: 2024-02-18 23:09:02.299052
+lastmod: 2024-02-19 22:05:10.309534
 model: gpt-4-0125-preview
 summary: "YAML ain't Markup Language, of YAML, is een gebruiksvriendelijke standaard\
   \ voor gegevensserialisatie voor alle programmeertalen. Programmeurs werken met\u2026"

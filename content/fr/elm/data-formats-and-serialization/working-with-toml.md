@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elm/working-with-toml/
 date: 2024-01-26 04:21:09.614536-07:00
 description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un langage\
   \ de s\xE9rialisation de donn\xE9es. Les programmeurs Elm l'utilisent pour g\xE9\
   rer les donn\xE9es\u2026"
-lastmod: 2024-02-18 23:09:08.760188
+lastmod: 2024-02-19 22:05:16.466363
 model: gpt-4-0125-preview
 summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un langage\
   \ de s\xE9rialisation de donn\xE9es. Les programmeurs Elm l'utilisent pour g\xE9\

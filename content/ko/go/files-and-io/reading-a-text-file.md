@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:07.028599-07:00
@@ -13,7 +11,7 @@ description: "Go\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uAE30\
   \uC744 \uC77D\uB294 \uB4F1 \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC790\uC8FC \uC218\
   \uD589\uD558\uB294 \uC791\uC5C5\uC73C\uB85C, \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uAC1C\
   \uBC1C\uC5D0\uC11C \uAE30\uCD08\uC801\uC778 \uAE30\uC220\uB85C\u2026"
-lastmod: 2024-02-18 23:09:05.512297
+lastmod: 2024-02-19 22:05:13.429324
 model: gpt-4-0125-preview
 summary: "Go\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uAE30\uB294\
   \ \uB514\uC2A4\uD06C\uC5D0 \uC800\uC7A5\uB41C \uD30C\uC77C\uC5D0\uC11C \uB0B4\uC6A9\

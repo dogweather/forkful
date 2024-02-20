@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/javascript/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:24.682317-07:00
 description: "Datum in String umwandeln bedeutet, ein `Date`-Objekt in eine lesbare\
   \ Zeichenkette zu verwandeln. Programmierer machen das, um Daten benutzerfreundlich\u2026"
-lastmod: 2024-02-18 23:09:05.291122
+lastmod: 2024-02-19 22:05:13.215447
 model: gpt-4-1106-preview
 summary: "Datum in String umwandeln bedeutet, ein `Date`-Objekt in eine lesbare Zeichenkette\
   \ zu verwandeln. Programmierer machen das, um Daten benutzerfreundlich\u2026"

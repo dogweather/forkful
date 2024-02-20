@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 03:00:42.922727-07:00
 description: "L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML.\
   \ I programmatori lo fanno per interagire o manipolare il contenuto web,\u2026"
-lastmod: 2024-02-18 23:08:56.250656
+lastmod: 2024-02-19 22:05:02.884052
 model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML.\
   \ I programmatori lo fanno per interagire o manipolare il contenuto web,\u2026"

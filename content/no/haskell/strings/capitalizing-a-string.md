@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/haskell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:25.995963-07:00
 description: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\xF8\
   rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\
   \ sm\xE5.\u2026"
-lastmod: 2024-02-18 23:08:53.918802
+lastmod: 2024-02-19 22:05:00.088690
 model: gpt-4-0125-preview
 summary: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\xF8\
   rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\

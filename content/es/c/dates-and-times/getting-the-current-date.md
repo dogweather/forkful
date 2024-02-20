@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:09.174957-07:00
 description: "Obtener la fecha actual en C implica acceder a la biblioteca est\xE1\
   ndar de C para buscar y formatear la fecha y hora actuales del sistema. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.513831
+lastmod: 2024-02-19 22:05:18.064203
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en C implica acceder a la biblioteca est\xE1ndar\
   \ de C para buscar y formatear la fecha y hora actuales del sistema. Los programadores\u2026"

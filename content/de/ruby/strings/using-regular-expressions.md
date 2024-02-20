@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/ruby/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:02.615556-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwendet\
   \ werden, um Zeichenkombinationen in Strings zu finden. Sie erm\xF6glichen es Entwicklern,\
   \ Text\u2026"
-lastmod: 2024-02-18 23:09:05.410391
+lastmod: 2024-02-19 22:05:13.328929
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwendet werden,\
   \ um Zeichenkombinationen in Strings zu finden. Sie erm\xF6glichen es Entwicklern,\

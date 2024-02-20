@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:31.753821-07:00
 description: "Verificar si un directorio existe en C implica consultar el sistema\
   \ de archivos para verificar si una ruta espec\xEDfica conduce a un directorio.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.518715
+lastmod: 2024-02-19 22:05:18.068444
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en C implica consultar el sistema de archivos\
   \ para verificar si una ruta espec\xEDfica conduce a un directorio. Los\u2026"

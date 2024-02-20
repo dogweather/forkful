@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:48.138647-07:00
 description: "Calcolare una data nel futuro o nel passato in Go comporta la manipolazione\
   \ dei valori di data e ora per determinare un punto specifico relativo a una\u2026"
-lastmod: 2024-02-18 23:08:55.446423
+lastmod: 2024-02-19 22:05:02.028217
 model: gpt-4-0125-preview
 summary: "Calcolare una data nel futuro o nel passato in Go comporta la manipolazione\
   \ dei valori di data e ora per determinare un punto specifico relativo a una\u2026"

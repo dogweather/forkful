@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c-sharp/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:31.690021-07:00
 description: "Regul\xE6re uttrykk (regex) i C# er et kraftig verkt\xF8y for m\xF8\
   nsters\xF8king i strenger, som lar programmerere s\xF8ke etter, erstatte, splitte\
   \ eller trekke ut data\u2026"
-lastmod: 2024-02-18 23:08:53.883954
+lastmod: 2024-02-19 22:05:00.051387
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i C# er et kraftig verkt\xF8y for m\xF8nsters\xF8\
   king i strenger, som lar programmerere s\xF8ke etter, erstatte, splitte eller trekke\

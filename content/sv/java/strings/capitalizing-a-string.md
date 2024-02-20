@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:45.795609-07:00
 description: "Att g\xF6ra f\xF6rsta bokstaven i varje ord i en str\xE4ng till versal\
   \ inneb\xE4r att man modifierar f\xF6rsta bokstaven till att vara stor bokstav medan\
   \ resten g\xF6r man\u2026"
-lastmod: 2024-02-18 23:08:51.653509
+lastmod: 2024-02-19 22:04:56.978515
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i varje ord i en str\xE4ng till versal inneb\xE4\
   r att man modifierar f\xF6rsta bokstaven till att vara stor bokstav medan resten\

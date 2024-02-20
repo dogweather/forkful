@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/using-a-debugger/
 date: 2024-01-26 03:48:31.961726-07:00
 description: "Usar um depurador significa acessar ferramentas especializadas para\
   \ testar e diagnosticar c\xF3digo. Programadores fazem isso para eliminar bugs,\
   \ entender o\u2026"
-lastmod: 2024-02-18 23:08:58.161940
+lastmod: 2024-02-19 22:05:05.631152
 model: gpt-4-0125-preview
 summary: "Usar um depurador significa acessar ferramentas especializadas para testar\
   \ e diagnosticar c\xF3digo. Programadores fazem isso para eliminar bugs, entender\

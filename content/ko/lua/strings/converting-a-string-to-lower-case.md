@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:49.461120-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\
   \uB2E4\uB294 \uAC83\uC740, \uC608\uB97C \uB4E4\uC5B4 'HELLO'\uB97C 'hello'\uB85C\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \ \uBE44\uAD50\uD558\uAC70\uB098 \uC815\uB82C\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\
   \ \uC2DC \uC77C\uAD00\uC131\uC744 \uC9C0\uD0AC \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.397084
+lastmod: 2024-02-19 22:05:14.311228
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC83\uC740, \uC608\uB97C \uB4E4\uC5B4 'HELLO'\uB97C 'hello'\uB85C \uBC14\

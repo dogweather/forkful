@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/powershell/extracting-substrings/
 date: 2024-01-20 17:46:10.458274-07:00
 description: "Extrair substrings significa selecionar partes espec\xEDficas de uma\
   \ string de texto. Programadores recorrem a esta t\xE9cnica para manipular e analisar\
   \ dados,\u2026"
-lastmod: 2024-02-18 23:08:58.356067
+lastmod: 2024-02-19 22:05:05.840251
 model: gpt-4-1106-preview
 summary: "Extrair substrings significa selecionar partes espec\xEDficas de uma string\
   \ de texto. Programadores recorrem a esta t\xE9cnica para manipular e analisar dados,\u2026"

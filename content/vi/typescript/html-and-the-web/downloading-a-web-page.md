@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/typescript/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:59.604263-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 truy xu\u1EA5t 
   \ CSS v\xE0 c\xF3 th\u1EC3 l\xE0 c\xE1c t\xE0i nguy\xEAn kh\xE1c t\u1EEB URL m\xE0\
   \ b\u1EA1n truy c\u1EADp. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
   c n\xE0y \u0111\u1EC3 x\u1EED l\xFD n\u1ED9i\u2026"
-lastmod: 2024-02-18 23:08:50.413684
+lastmod: 2024-02-19 22:04:55.466823
 model: gpt-4-0125-preview
 summary: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 truy xu\u1EA5t HTML,\
   \ CSS v\xE0 c\xF3 th\u1EC3 l\xE0 c\xE1c t\xE0i nguy\xEAn kh\xE1c t\u1EEB URL m\xE0\

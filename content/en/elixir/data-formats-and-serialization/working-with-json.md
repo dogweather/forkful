@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/elixir/working-with-json/
 date: 2024-02-03 19:03:07.967968-07:00
 description: "Working with JSON involves parsing JSON-formatted strings into data\
   \ structures that Elixir can manipulate, and serializing Elixir data structures\
   \ back\u2026"
-lastmod: 2024-02-18 23:09:10.786933
+lastmod: 2024-02-19 22:05:18.309932
 model: gpt-4-0125-preview
 summary: "Working with JSON involves parsing JSON-formatted strings into data structures\
   \ that Elixir can manipulate, and serializing Elixir data structures back\u2026"

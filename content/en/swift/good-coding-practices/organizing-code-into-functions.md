@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/organizing-code-into-functions/
 date: 2024-01-25 02:59:53.321407-07:00
 description: Grouping code into functions is breaking down tasks into reusable chunks.
   It makes the code clean, less error-prone, and easier to debug or refactor.
-lastmod: 2024-02-18 23:09:11.402192
+lastmod: 2024-02-19 22:05:18.862784
 model: gpt-4-1106-preview
 summary: Grouping code into functions is breaking down tasks into reusable chunks.
   It makes the code clean, less error-prone, and easier to debug or refactor.

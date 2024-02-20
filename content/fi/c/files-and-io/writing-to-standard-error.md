@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:04.524762-07:00
 description: "Virheiden kirjoittaminen standardivirheeseen C:ss\xE4 tarkoittaa virheilmoitusten\
   \ ja diagnostiikkatiedon ohjaamista erilliseen virtaan p\xE4\xE4ohjelman\u2026"
-lastmod: 2024-02-18 23:09:08.151841
+lastmod: 2024-02-19 22:05:15.951955
 model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen standardivirheeseen C:ss\xE4 tarkoittaa virheilmoitusten\
   \ ja diagnostiikkatiedon ohjaamista erilliseen virtaan p\xE4\xE4ohjelman\u2026"

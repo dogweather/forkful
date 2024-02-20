@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/starting-a-new-project/
 date: 2024-01-20 18:04:28.668383-07:00
 description: "Att starta ett nytt projekt \xE4r som att \xF6ppna ett blankt blad \u2013\
   \ det \xE4r h\xE4r all kod b\xF6rjar sitt liv. Programmerare g\xF6r detta f\xF6\
   r att omvandla id\xE9er till\u2026"
-lastmod: 2024-02-18 23:08:51.422457
+lastmod: 2024-02-19 22:04:56.724770
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt \xE4r som att \xF6ppna ett blankt blad \u2013\
   \ det \xE4r h\xE4r all kod b\xF6rjar sitt liv. Programmerare g\xF6r detta f\xF6\

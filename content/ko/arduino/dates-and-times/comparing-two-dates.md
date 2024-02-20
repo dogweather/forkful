@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/comparing-two-dates/
 date: 2024-01-20 17:32:11.992220-07:00
 description: "\uB0A0\uC9DC \uBE44\uAD50\uB294 \uB450 \uAC1C\uC758 \uB0A0\uC9DC\uB97C\
   \ \uC11C\uB85C \uBE44\uAD50\uD558\uB294 \uD504\uB85C\uC138\uC2A4\uC785\uB2C8\uB2E4\
@@ -8,7 +6,7 @@ description: "\uB0A0\uC9DC \uBE44\uAD50\uB294 \uB450 \uAC1C\uC758 \uB0A0\uC9DC\u
   \uD2B8 \uC21C\uC11C, \uAE30\uAC04 \uC0B0\uCD9C, \uB610\uB294 \uAE30\uD55C \uC9C0\
   \uD0A4\uAE30 \uB4F1\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.638442
+lastmod: 2024-02-19 22:05:14.539693
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC \uBE44\uAD50\uB294 \uB450 \uAC1C\uC758 \uB0A0\uC9DC\uB97C \uC11C\
   \uB85C \uBE44\uAD50\uD558\uB294 \uD504\uB85C\uC138\uC2A4\uC785\uB2C8\uB2E4. \uC774\

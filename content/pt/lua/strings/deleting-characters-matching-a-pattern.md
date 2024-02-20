@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:34.044073-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente\
   \ filtrar texto, removendo partes espec\xEDficas dele. Programadores fazem isso\
   \ para limpeza de\u2026"
-lastmod: 2024-02-18 23:08:58.267167
+lastmod: 2024-02-19 22:05:05.743188
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente filtrar\
   \ texto, removendo partes espec\xEDficas dele. Programadores fazem isso para limpeza\

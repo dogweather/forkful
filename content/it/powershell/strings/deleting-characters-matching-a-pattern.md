@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/powershell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:53.591916-07:00
 description: "Cancellare caratteri seguendo un pattern \xE8 semplicemente filtrare\
   \ il testo per rimuovere caratteri indesiderati. Questo serve a pulire i dati o\
   \ a\u2026"
-lastmod: 2024-02-18 23:08:56.077625
+lastmod: 2024-02-19 22:05:02.698959
 model: gpt-4-1106-preview
 summary: "Cancellare caratteri seguendo un pattern \xE8 semplicemente filtrare il\
   \ testo per rimuovere caratteri indesiderati. Questo serve a pulire i dati o a\u2026"

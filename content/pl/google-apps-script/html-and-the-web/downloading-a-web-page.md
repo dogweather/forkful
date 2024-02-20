@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:44.835765-07:00
 description: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
   \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\
   w, takich jak web\u2026"
-lastmod: 2024-02-18 23:08:49.145505
+lastmod: 2024-02-19 22:04:54.084429
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
   \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\

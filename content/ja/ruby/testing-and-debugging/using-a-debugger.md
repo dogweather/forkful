@@ -1,9 +1,7 @@
 ---
-aliases:
-- /ja/ruby/using-a-debugger/
 date: 2024-01-26 04:09:54.104643-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.395568
+lastmod: 2024-02-19 22:05:01.966157
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30C7\u30D0\u30C3\u30AC\u30FC\u306E\u4F7F\u3044\u65B9"

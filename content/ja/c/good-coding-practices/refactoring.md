@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/c/refactoring/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:12.080289-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.358194
+lastmod: 2024-02-19 22:05:01.915496
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30EA\u30D5\u30A1\u30AF\u30BF\u30EA\u30F3\u30B0"

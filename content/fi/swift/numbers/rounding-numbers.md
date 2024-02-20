@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/rounding-numbers/
 date: 2024-01-26 03:47:08.243908-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeerisen arvon likim\xE4\
   \xE4r\xE4ist\xE4mist\xE4 tiettyyn tarkkuuteen, tyypillisesti ei-toivottujen desimaalien\
   \ poistamiseksi.\u2026"
-lastmod: 2024-02-18 23:09:07.984203
+lastmod: 2024-02-19 22:05:15.797439
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeerisen arvon likim\xE4\xE4\
   r\xE4ist\xE4mist\xE4 tiettyyn tarkkuuteen, tyypillisesti ei-toivottujen desimaalien\

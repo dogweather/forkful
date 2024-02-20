@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:35.669996-07:00
 description: "Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens\
   \ manipuleert die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat\u2026"
-lastmod: 2024-02-18 23:09:02.161221
+lastmod: 2024-02-19 22:05:10.178832
 model: gpt-4-0125-preview
 summary: "Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens manipuleert\
   \ die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat\u2026"

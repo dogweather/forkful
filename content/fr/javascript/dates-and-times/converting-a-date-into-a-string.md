@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/javascript/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:44.206828-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res permet d'en afficher\
   \ la repr\xE9sentation lisible par un humain. Les programmeurs le font pour afficher\
   \ des dates\u2026"
-lastmod: 2024-02-18 23:09:09.268910
+lastmod: 2024-02-19 22:05:16.932240
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res permet d'en afficher la\
   \ repr\xE9sentation lisible par un humain. Les programmeurs le font pour afficher\

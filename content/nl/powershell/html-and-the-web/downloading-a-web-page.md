@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:25.969461-07:00
 description: "Een webpagina downloaden betekent het bemachtigen van de inhoud ervan\
   \ via het web. Programmeurs doen dit voor web scraping, offline bekijken, of het\u2026"
-lastmod: 2024-02-18 23:09:02.090377
+lastmod: 2024-02-19 22:05:10.111742
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het bemachtigen van de inhoud ervan via\
   \ het web. Programmeurs doen dit voor web scraping, offline bekijken, of het\u2026"

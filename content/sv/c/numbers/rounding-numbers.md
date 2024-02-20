@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:52.650120-07:00
 description: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
   r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\
   \ talet\u2026"
-lastmod: 2024-02-18 23:08:52.244706
+lastmod: 2024-02-19 22:04:57.628716
 model: gpt-4-0125-preview
 summary: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
   r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\

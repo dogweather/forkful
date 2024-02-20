@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/typescript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:27.028159-07:00
 description: "Converter uma string para min\xFAsculas \xE9 basicamente transformar\
   \ todos os caracteres de uma frase ou palavra para o formato de letra pequena. Programadores\u2026"
-lastmod: 2024-02-18 23:08:57.872579
+lastmod: 2024-02-19 22:05:05.344347
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas \xE9 basicamente transformar todos\
   \ os caracteres de uma frase ou palavra para o formato de letra pequena. Programadores\u2026"

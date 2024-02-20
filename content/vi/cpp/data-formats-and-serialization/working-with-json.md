@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/cpp/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:49.252015-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong 
   \ bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7\
   u v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c \u0111\u1ECBnh d\u1EA1ng nh\u01B0 l\xE0\
   \ JSON. L\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:51.067347
+lastmod: 2024-02-19 22:04:56.274130
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong C++ bao\
   \ g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7\

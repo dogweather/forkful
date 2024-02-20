@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/google-apps-script/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:55.178873-07:00
@@ -13,7 +11,7 @@ description: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u044
   \u0446\u0456\u0439\u043D\u0438\u0445 \u0456\u043D\u0442\u0435\u0440\u0444\u0435\u0439\
   \u0441\u0456\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\u043D\u043E\u0433\u043E\
   \ \u0440\u044F\u0434\u043A\u0430 \u0432 \u043C\u043E\u0432\u0430\u0445\u2026"
-lastmod: 2024-02-18 23:08:59.761861
+lastmod: 2024-02-19 22:05:07.609508
 model: gpt-4-0125-preview
 summary: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043C\
   \u0435\u043D\u0442\u0456\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\u043D\u043E\u0433\

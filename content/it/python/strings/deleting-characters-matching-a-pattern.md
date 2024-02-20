@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:11.016280-07:00
 description: "Nella programmazione, eliminare caratteri che corrispondono a un pattern\
   \ significa rimuovere specifiche sequenze di caratteri da una stringa. Lo facciamo\u2026"
-lastmod: 2024-02-18 23:08:55.506373
+lastmod: 2024-02-19 22:05:02.092298
 model: gpt-4-1106-preview
 summary: "Nella programmazione, eliminare caratteri che corrispondono a un pattern\
   \ significa rimuovere specifiche sequenze di caratteri da una stringa. Lo facciamo\u2026"

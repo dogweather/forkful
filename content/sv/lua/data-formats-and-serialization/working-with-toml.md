@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/lua/working-with-toml/
 date: 2024-01-26 04:24:19.405818-07:00
 description: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's\
   \ Obvious, Minimal Language) med Lua. Programmerare anv\xE4nder TOML f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.941272
+lastmod: 2024-02-19 22:04:57.290246
 model: gpt-4-0125-preview
 summary: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's Obvious,\
   \ Minimal Language) med Lua. Programmerare anv\xE4nder TOML f\xF6r\u2026"

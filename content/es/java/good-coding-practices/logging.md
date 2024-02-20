@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/java/logging/
 date: 2024-01-26 01:06:48.391297-07:00
 description: "El registro (logging) es esencialmente el proceso de grabar eventos\
   \ que ocurren dentro de una aplicaci\xF3n de software. Los programadores registran\
   \ estos\u2026"
-lastmod: 2024-02-18 23:09:09.851875
+lastmod: 2024-02-19 22:05:17.466138
 model: gpt-4-1106-preview
 summary: "El registro (logging) es esencialmente el proceso de grabar eventos que\
   \ ocurren dentro de una aplicaci\xF3n de software. Los programadores registran estos\u2026"

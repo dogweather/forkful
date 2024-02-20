@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/ruby/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:32.776345-07:00
@@ -9,7 +7,7 @@ description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1
   nh c\xE1c l\u1EF1a ch\u1ECDn kh\xE1c trong m\u1ED9t chu\u1ED7i. C\xE1c l\u1EADp\
   \ tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 c\u1EAD\
   p\u2026"
-lastmod: 2024-02-18 23:08:51.265520
+lastmod: 2024-02-19 22:04:56.544729
 model: gpt-4-0125-preview
 summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7c \u0111\
   \u1ED5i c\xE1c t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB c\u1EE5 th\u1EC3 th\xE0nh c\xE1\

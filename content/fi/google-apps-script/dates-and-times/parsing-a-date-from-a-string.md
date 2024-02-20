@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:34.932962-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
   \ joka edustaa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4\
   objektiksi. Se mahdollistaa ohjelmoijien suorittaa\u2026"
-lastmod: 2024-02-18 23:09:07.146594
+lastmod: 2024-02-19 22:05:15.023118
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
   \ joka edustaa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4\

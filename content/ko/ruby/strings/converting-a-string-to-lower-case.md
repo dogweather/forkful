@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:12.986139-07:00
 description: "\uC2A4\uD2B8\uB9C1\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\
   \uB294 \uAC83\uC740, \uBB38\uC790\uC5F4 \uB0B4\uC758 \uBAA8\uB4E0 \uB300\uBB38\uC790\
@@ -10,7 +8,7 @@ description: "\uC2A4\uD2B8\uB9C1\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uAC70\uB098 \uC815\uB9AC\uD560 \uB54C \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.002543
+lastmod: 2024-02-19 22:05:14.886125
 model: gpt-4-1106-preview
 summary: "\uC2A4\uD2B8\uB9C1\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740, \uBB38\uC790\uC5F4 \uB0B4\uC758 \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/lua/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:03.704254-07:00
 description: "Convertir una fecha en una cadena permite presentar la informaci\xF3\
   n de forma legible para humanos y facilita su almacenamiento o uso en formatos como\
   \ JSON.\u2026"
-lastmod: 2024-02-18 23:09:10.132002
+lastmod: 2024-02-19 22:05:17.721207
 model: gpt-4-1106-preview
 summary: "Convertir una fecha en una cadena permite presentar la informaci\xF3n de\
   \ forma legible para humanos y facilita su almacenamiento o uso en formatos como\

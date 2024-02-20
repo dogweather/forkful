@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/bash/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:41.965206-07:00
 description: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
   \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\u2026"
-lastmod: 2024-02-18 23:08:54.067337
+lastmod: 2024-02-19 22:05:00.250499
 model: gpt-4-0125-preview
 summary: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
   \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\u2026"

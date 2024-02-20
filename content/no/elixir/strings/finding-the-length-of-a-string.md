@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:09.172167-07:00
 description: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den\
   \ har. Programmerere gj\xF8r dette for \xE5 validere input, begrense st\xF8rrelsen,\
   \ eller optimalisere\u2026"
-lastmod: 2024-02-18 23:08:53.596114
+lastmod: 2024-02-19 22:04:59.721411
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den har.\
   \ Programmerere gj\xF8r dette for \xE5 validere input, begrense st\xF8rrelsen, eller\

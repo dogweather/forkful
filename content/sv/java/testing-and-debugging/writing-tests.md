@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:00.123405-07:00
 description: "Att skriva tester i Java handlar om att verifiera att din kod beter\
   \ sig som f\xF6rv\xE4ntat under olika f\xF6rh\xE5llanden. Programmerare skriver\
   \ tester f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.672792
+lastmod: 2024-02-19 22:04:56.999928
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Java handlar om att verifiera att din kod beter sig\
   \ som f\xF6rv\xE4ntat under olika f\xF6rh\xE5llanden. Programmerare skriver tester\

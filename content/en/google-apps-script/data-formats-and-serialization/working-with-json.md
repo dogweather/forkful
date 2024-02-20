@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/google-apps-script/working-with-json/
 date: 2024-02-01 21:12:21.317784-07:00
 description: "JSON, or JavaScript Object Notation, is a lightweight format for storing\
   \ and transporting data, ideal for server-to-client communication and configuration\u2026"
-lastmod: 2024-02-18 23:09:10.660815
+lastmod: 2024-02-19 22:05:18.196287
 model: gpt-4-0125-preview
 summary: "JSON, or JavaScript Object Notation, is a lightweight format for storing\
   \ and transporting data, ideal for server-to-client communication and configuration\u2026"

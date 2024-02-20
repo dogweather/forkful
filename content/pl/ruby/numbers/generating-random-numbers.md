@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/generating-random-numbers/
 date: 2024-01-27 20:35:17.262703-07:00
 description: "Generowanie losowych liczb w Ruby polega na tworzeniu liczb, kt\xF3\
   rych nie mo\u017Cna logicznie przewidzie\u0107, co jest kluczowe w scenariuszach\
   \ takich jak\u2026"
-lastmod: 2024-02-18 23:08:50.119858
+lastmod: 2024-02-19 22:04:55.108173
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w Ruby polega na tworzeniu liczb, kt\xF3rych\
   \ nie mo\u017Cna logicznie przewidzie\u0107, co jest kluczowe w scenariuszach takich\

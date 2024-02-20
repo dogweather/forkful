@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/bash/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:36.215661-07:00
 description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glicht\
   \ es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen\
   \ in\u2026"
-lastmod: 2024-02-18 23:09:05.068570
+lastmod: 2024-02-19 22:05:13.003783
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glicht\
   \ es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen\

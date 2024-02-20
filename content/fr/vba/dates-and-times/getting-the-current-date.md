@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:37.678241-07:00
 description: "Dans Visual Basic pour Applications (VBA), r\xE9cup\xE9rer la date actuelle\
   \ est une t\xE2che courante qui permet aux programmeurs de travailler dynamiquement\
   \ avec\u2026"
-lastmod: 2024-02-18 23:09:08.591482
+lastmod: 2024-02-19 22:05:16.366855
 model: gpt-4-0125-preview
 summary: "Dans Visual Basic pour Applications (VBA), r\xE9cup\xE9rer la date actuelle\
   \ est une t\xE2che courante qui permet aux programmeurs de travailler dynamiquement\

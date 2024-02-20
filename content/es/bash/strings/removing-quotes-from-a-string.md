@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:24.655752-07:00
 description: "Eliminar las comillas de una cadena implica quitar las marcas de comillas\
   \ que encierran la cadena. Los programadores a menudo quieren hacer esto para\u2026"
-lastmod: 2024-02-18 23:09:10.152315
+lastmod: 2024-02-19 22:05:17.739795
 model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena implica quitar las marcas de comillas\
   \ que encierran la cadena. Los programadores a menudo quieren hacer esto para\u2026"

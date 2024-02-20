@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:23.209982-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to proces, w kt\xF3rym klient internetowy przekazuje dane logowania do serwera\
   \ w zabezpieczonym formacie.\u2026"
-lastmod: 2024-02-18 23:08:49.911219
+lastmod: 2024-02-19 22:04:54.858538
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to proces, w kt\xF3rym klient internetowy przekazuje dane logowania do serwera\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/interpolating-a-string/
 date: 2024-01-20 17:51:32.663422-07:00
 description: "Interpolar una cadena es insertar variables directamente dentro de una\
   \ cadena de texto. Los programadores lo hacen para simplificar la concatenaci\xF3\
   n,\u2026"
-lastmod: 2024-02-18 23:09:10.058659
+lastmod: 2024-02-19 22:05:17.654340
 model: gpt-4-1106-preview
 summary: "Interpolar una cadena es insertar variables directamente dentro de una cadena\
   \ de texto. Los programadores lo hacen para simplificar la concatenaci\xF3n,\u2026"

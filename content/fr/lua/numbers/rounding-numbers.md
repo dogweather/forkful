@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/rounding-numbers/
 date: 2024-01-26 03:45:32.320720-07:00
 description: "Arrondir les nombres signifie les ajuster \xE0 l'entier le plus proche\
   \ ou \xE0 un nombre de d\xE9cimales sp\xE9cifi\xE9. C'est un \xE9l\xE9ment fondamental\
   \ en programmation\u2026"
-lastmod: 2024-02-18 23:09:08.964027
+lastmod: 2024-02-19 22:05:16.653067
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres signifie les ajuster \xE0 l'entier le plus proche ou\
   \ \xE0 un nombre de d\xE9cimales sp\xE9cifi\xE9. C'est un \xE9l\xE9ment fondamental\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/extracting-substrings/
 date: 2024-01-20 17:46:14.847777-07:00
 description: "Extrair substrings significa pegar peda\xE7os espec\xEDficos de uma\
   \ string. Programadores fazem isso para manipular, analisar ou comparar partes de\
   \ texto de\u2026"
-lastmod: 2024-02-18 23:08:58.007826
+lastmod: 2024-02-19 22:05:05.483490
 model: gpt-4-1106-preview
 summary: "Extrair substrings significa pegar peda\xE7os espec\xEDficos de uma string.\
   \ Programadores fazem isso para manipular, analisar ou comparar partes de texto\

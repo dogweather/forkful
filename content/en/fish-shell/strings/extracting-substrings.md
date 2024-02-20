@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/extracting-substrings/
 date: 2024-01-20 17:45:22.688050-07:00
 description: "Extracting substrings means pulling out specific parts of a string.\
   \ Programmers do it to isolate data, clean inputs, or dissect info for further\u2026"
-lastmod: 2024-02-18 23:09:11.468357
+lastmod: 2024-02-19 22:05:18.923117
 model: gpt-4-1106-preview
 summary: "Extracting substrings means pulling out specific parts of a string. Programmers\
   \ do it to isolate data, clean inputs, or dissect info for further\u2026"

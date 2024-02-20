@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/arduino/generating-random-numbers/
 date: 2024-01-27 20:32:38.558949-07:00
 description: "Satunnaislukujen tuottaminen Arduino-projekteissa tarkoittaa arvojen\
   \ tuottamista, jotka on suunniteltu ennakoimattomiksi, mik\xE4 on olennaista sovelluksissa\u2026"
-lastmod: 2024-02-18 23:09:07.895743
+lastmod: 2024-02-19 22:05:15.716402
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen Arduino-projekteissa tarkoittaa arvojen tuottamista,\
   \ jotka on suunniteltu ennakoimattomiksi, mik\xE4 on olennaista sovelluksissa\u2026"

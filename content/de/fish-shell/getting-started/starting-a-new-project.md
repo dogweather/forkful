@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/fish-shell/starting-a-new-project/
 date: 2024-01-20 18:03:45.968857-07:00
 description: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
   \ um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Probleml\xF6sungen\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.326859
+lastmod: 2024-02-19 22:05:13.248833
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
   \ um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Probleml\xF6sungen\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/swift/extracting-substrings/
 date: 2024-01-20 17:46:42.829111-07:00
 description: "Extraer subcadenas es como recortar una parte de una cadena para usarla\
   \ en tu c\xF3digo. Los programadores lo hacen para manipular y trabajar con datos\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:10.345790
+lastmod: 2024-02-19 22:05:17.910559
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas es como recortar una parte de una cadena para usarla\
   \ en tu c\xF3digo. Los programadores lo hacen para manipular y trabajar con datos\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:32.866535-07:00
 description: "Eliminare caratteri che corrispondono a un pattern specifico consiste\
   \ nel rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su\u2026"
-lastmod: 2024-02-18 23:08:55.415647
+lastmod: 2024-02-19 22:05:01.994881
 model: gpt-4-0125-preview
 summary: "Eliminare caratteri che corrispondono a un pattern specifico consiste nel\
   \ rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su\u2026"

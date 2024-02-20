@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:19.376206-07:00
 description: "Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt\
   \ in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een\u2026"
-lastmod: 2024-02-18 23:09:01.686474
+lastmod: 2024-02-19 22:05:09.707515
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt\
   \ in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een\u2026"

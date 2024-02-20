@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elixir/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:27.051091-07:00
 description: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
   \ de la cadena a su versi\xF3n en min\xFAscula. Los programadores hacen esto para\u2026"
-lastmod: 2024-02-18 23:09:09.634671
+lastmod: 2024-02-19 22:05:17.276889
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
   \ de la cadena a su versi\xF3n en min\xFAscula. Los programadores hacen esto para\u2026"

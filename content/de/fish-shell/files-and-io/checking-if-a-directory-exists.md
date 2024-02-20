@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/fish-shell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:10.074658-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Fish Shell existiert, erm\xF6\
   glicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von\u2026"
-lastmod: 2024-02-18 23:09:05.341550
+lastmod: 2024-02-19 22:05:13.262837
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Fish Shell existiert, erm\xF6\
   glicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von\u2026"

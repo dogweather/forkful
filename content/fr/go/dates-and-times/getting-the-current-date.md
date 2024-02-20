@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:36.146722-07:00
 description: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour les\
   \ programmeurs, au m\xEAme titre que \"Hello, World!\" en raison de son omnipr\xE9\
   sence. C'est\u2026"
-lastmod: 2024-02-18 23:09:08.247564
+lastmod: 2024-02-19 22:05:16.052794
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour les programmeurs,\
   \ au m\xEAme titre que \"Hello, World!\" en raison de son omnipr\xE9sence. C'est\u2026"

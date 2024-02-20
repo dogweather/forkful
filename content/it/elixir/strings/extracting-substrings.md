@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elixir/extracting-substrings/
 date: 2024-01-20 17:45:38.190012-07:00
 description: "Estrarre sottostringhe significa selezionare parti di una stringa di\
   \ testo. Lo si fa per analizzare, manipolare o trasformare solo certi pezzi di\u2026"
-lastmod: 2024-02-18 23:08:55.590296
+lastmod: 2024-02-19 22:05:02.182564
 model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa selezionare parti di una stringa di testo.\
   \ Lo si fa per analizzare, manipolare o trasformare solo certi pezzi di\u2026"

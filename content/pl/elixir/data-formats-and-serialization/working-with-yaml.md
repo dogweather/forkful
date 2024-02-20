@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elixir/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:22.421406-07:00
 description: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119\
   zykiem znacznik\xF3w), to standard serializacji danych czytelny dla cz\u0142owieka,\
   \ kt\xF3ry jest\u2026"
-lastmod: 2024-02-18 23:08:49.326553
+lastmod: 2024-02-19 22:04:54.242857
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119zykiem\
   \ znacznik\xF3w), to standard serializacji danych czytelny dla cz\u0142owieka, kt\xF3\

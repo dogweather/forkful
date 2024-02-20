@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/working-with-xml/
 date: 2024-01-26 04:34:20.739203-07:00
 description: "Att arbeta med XML inneb\xE4r att manipulera och komma \xE5t data strukturerad\
   \ i det utvidgbara m\xE4rkspr\xE5ket. Programmerare arbetar med XML f\xF6r att m\xF6\
   jligg\xF6ra\u2026"
-lastmod: 2024-02-18 23:08:52.027705
+lastmod: 2024-02-19 22:04:57.384281
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att manipulera och komma \xE5t data strukturerad\
   \ i det utvidgbara m\xE4rkspr\xE5ket. Programmerare arbetar med XML f\xF6r att m\xF6\

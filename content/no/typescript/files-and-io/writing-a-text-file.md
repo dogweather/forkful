@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/typescript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:47.329796-07:00
 description: "\xC5 skrive en tekstfil i TypeScript er en kritisk ferdighet for datalagring,\
   \ konfigurasjoner eller logggenerering. Programmerere utf\xF8rer ofte denne oppgaven\u2026"
-lastmod: 2024-02-18 23:08:53.662474
+lastmod: 2024-02-19 22:04:59.793553
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i TypeScript er en kritisk ferdighet for datalagring,\
   \ konfigurasjoner eller logggenerering. Programmerere utf\xF8rer ofte denne oppgaven\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/reading-command-line-arguments/
 date: 2024-01-20 17:56:06.744495-07:00
 description: "Leggere gli argomenti da linea di comando permette al tuo programma\
   \ JavaScript di accettare input esterno, rendendolo interattivo. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:56.267808
+lastmod: 2024-02-19 22:05:02.902094
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti da linea di comando permette al tuo programma JavaScript\
   \ di accettare input esterno, rendendolo interattivo. I programmatori\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/python/sending-an-http-request/
 date: 2024-01-20 18:00:10.605176-07:00
 description: "Sending an HTTP request is how your code asks another system for data\
   \ or services over the web. Programmers do this to interact with web APIs, fetch\
   \ web\u2026"
-lastmod: 2024-02-18 23:09:10.678160
+lastmod: 2024-02-19 22:05:18.212391
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is how your code asks another system for data or\
   \ services over the web. Programmers do this to interact with web APIs, fetch web\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:17.795327-07:00
 description: "Datum naar string conversie transformeert een Datum-object naar een\
   \ leesbaar tekstformaat, omdat mensen \"1 april 2023\" verkiezen boven cryptische\u2026"
-lastmod: 2024-02-18 23:09:02.288943
+lastmod: 2024-02-19 22:05:10.300203
 model: gpt-4-0125-preview
 summary: "Datum naar string conversie transformeert een Datum-object naar een leesbaar\
   \ tekstformaat, omdat mensen \"1 april 2023\" verkiezen boven cryptische\u2026"

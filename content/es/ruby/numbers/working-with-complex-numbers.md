@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/ruby/working-with-complex-numbers/
 date: 2024-01-26 04:44:57.310747-07:00
 description: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginaria\
   \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica. Los programadores\
   \ trabajan\u2026"
-lastmod: 2024-02-18 23:09:10.543546
+lastmod: 2024-02-19 22:05:18.090974
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginaria\
   \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica. Los programadores\

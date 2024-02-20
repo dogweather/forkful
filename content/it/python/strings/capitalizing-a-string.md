@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/python/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:12.116568-07:00
 description: "Capitalizzare una stringa significa convertire il primo carattere di\
   \ una stringa in maiuscolo e il resto in minuscolo. Questa operazione \xE8 comunemente\u2026"
-lastmod: 2024-02-18 23:08:55.505408
+lastmod: 2024-02-19 22:05:02.091297
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa significa convertire il primo carattere di una\
   \ stringa in maiuscolo e il resto in minuscolo. Questa operazione \xE8 comunemente\u2026"

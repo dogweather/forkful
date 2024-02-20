@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c-sharp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:32.185232-07:00
 description: "I file CSV (Comma-Separated Values, Valori Separati da Virgola) sono\
   \ un formato comune di scambio dati che rappresenta dati tabellari in testo semplice,\u2026"
-lastmod: 2024-02-18 23:08:55.910631
+lastmod: 2024-02-19 22:05:02.520487
 model: gpt-4-0125-preview
 summary: "I file CSV (Comma-Separated Values, Valori Separati da Virgola) sono un\
   \ formato comune di scambio dati che rappresenta dati tabellari in testo semplice,\u2026"

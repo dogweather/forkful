@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/bash/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:35.633354-07:00
 description: "L'analisi dell'HTML significa setacciare la struttura e il contenuto\
   \ di un file HTML per estrarre informazioni. I programmatori lo fanno per accedere\
   \ ai\u2026"
-lastmod: 2024-02-18 23:08:56.050562
+lastmod: 2024-02-19 22:05:02.668705
 model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML significa setacciare la struttura e il contenuto di\
   \ un file HTML per estrarre informazioni. I programmatori lo fanno per accedere\

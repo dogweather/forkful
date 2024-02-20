@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/interpolating-a-string/
 date: 2024-01-20 17:50:35.027186-07:00
 description: "L'interpolation de cha\xEEnes c'est ins\xE9rer des variables ou des\
   \ expressions dans une cha\xEEne de caract\xE8res. On le fait pour dynamiser les\
   \ textes et les\u2026"
-lastmod: 2024-02-18 23:09:09.287942
+lastmod: 2024-02-19 22:05:16.958623
 model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEnes c'est ins\xE9rer des variables ou des expressions\
   \ dans une cha\xEEne de caract\xE8res. On le fait pour dynamiser les textes et les\u2026"

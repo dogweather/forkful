@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/writing-a-text-file/
 date: 2024-02-03 17:50:11.072930-07:00
 description: "Writing a text file in Go involves creating and writing strings of data\
   \ into a new or existing text file. Programmers do this to persist data, such as\u2026"
-lastmod: 2024-02-18 23:09:10.614973
+lastmod: 2024-02-19 22:05:18.155635
 model: gpt-4-0125-preview
 summary: "Writing a text file in Go involves creating and writing strings of data\
   \ into a new or existing text file. Programmers do this to persist data, such as\u2026"

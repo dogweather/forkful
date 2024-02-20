@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/working-with-xml/
 date: 2024-01-26 04:30:09.727398-07:00
 description: "Travailler avec XML signifie manipuler des donn\xE9es dans un format\
   \ structur\xE9 et omnipr\xE9sent, utilis\xE9 dans les configurations, la messagerie\
   \ et plus encore.\u2026"
-lastmod: 2024-02-18 23:09:09.333389
+lastmod: 2024-02-19 22:05:17.000777
 model: gpt-4-0125-preview
 summary: "Travailler avec XML signifie manipuler des donn\xE9es dans un format structur\xE9\
   \ et omnipr\xE9sent, utilis\xE9 dans les configurations, la messagerie et plus encore.\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/refactoring/
 date: 2024-01-26 01:16:31.534745-07:00
 description: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
   \ ohne dessen externes Verhalten zu ver\xE4ndern. Es ist eine wesentliche Praxis,\u2026"
-lastmod: 2024-02-18 23:09:05.063210
+lastmod: 2024-02-19 22:05:12.998712
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
   \ ohne dessen externes Verhalten zu ver\xE4ndern. Es ist eine wesentliche Praxis,\u2026"

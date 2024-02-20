@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/reading-command-line-arguments/
 date: 2024-01-20 17:56:19.601839-07:00
 description: "Reading command line arguments means grabbing data passed to your program\
   \ when it starts. Programmers need this to let users customize a program's\u2026"
-lastmod: 2024-02-18 23:09:11.028307
+lastmod: 2024-02-19 22:05:18.530080
 model: gpt-4-1106-preview
 summary: "Reading command line arguments means grabbing data passed to your program\
   \ when it starts. Programmers need this to let users customize a program's\u2026"

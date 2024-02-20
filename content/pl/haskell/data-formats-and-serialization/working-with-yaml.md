@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/haskell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:37.542117-07:00
 description: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", jest przyjaznym dla\
   \ cz\u0142owieka standardem serializacji danych, kt\xF3ry mo\u017Ce by\u0107 u\u017C\
   ywany we wszystkich j\u0119zykach\u2026"
-lastmod: 2024-02-18 23:08:49.672799
+lastmod: 2024-02-19 22:04:54.607831
 model: gpt-4-0125-preview
 summary: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", jest przyjaznym dla cz\u0142\
   owieka standardem serializacji danych, kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany\

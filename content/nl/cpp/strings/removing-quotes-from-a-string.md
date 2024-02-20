@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/removing-quotes-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:20.377403-07:00
 description: "Het verwijderen van aanhalingstekens uit een string betekent het wegpeuteren\
   \ van die vervelende dubbele of enkele karakters die onze tekst omsluiten (' of\u2026"
-lastmod: 2024-02-18 23:09:02.169710
+lastmod: 2024-02-19 22:05:10.186921
 model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een string betekent het wegpeuteren\
   \ van die vervelende dubbele of enkele karakters die onze tekst omsluiten (' of\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/python/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:33.784791-07:00
@@ -13,7 +11,7 @@ description: "Python\u3067\u30C6\u30B9\u30C8\u3092\u8A18\u8FF0\u3059\u308B\u3068
   \u306B\u52D5\u4F5C\u3059\u308B\u3053\u3068\u3092\u4FDD\u8A3C\u3057\u3001\u30A8\u30E9\
   \u30FC\u3092\u65E9\u671F\u306B\u767A\u898B\u3057\u3001\u4FDD\u5B88\u3084\u30EA\u30D5\
   \u30A1\u30AF\u30BF\u30EA\u30F3\u30B0\u3092\u5BB9\u6613\u306B\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.567099
+lastmod: 2024-02-19 22:05:00.776280
 model: gpt-4-0125-preview
 summary: "Python\u3067\u30C6\u30B9\u30C8\u3092\u8A18\u8FF0\u3059\u308B\u3068\u306F\
   \u3001\u30B3\u30FC\u30C9\u306E\u6B63\u3057\u3055\u3092\u691C\u8A3C\u3059\u308B\u81EA\

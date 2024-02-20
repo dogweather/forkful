@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/clojure/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:09.454613-07:00
@@ -14,7 +12,7 @@ description: "CSV (\u0915\u0949\u092E\u093E-\u0938\u0947\u092A\u0930\u0947\u091F
   \u094B \u092A\u0902\u0915\u094D\u0924\u093F\u092F\u094B\u0902 \u0914\u0930 \u0938\
   \u094D\u0924\u092E\u094D\u092D\u094B\u0902 \u0915\u0947 \u0930\u0942\u092A \u092E\
   \u0947\u0902\u2026"
-lastmod: 2024-02-18 23:09:02.766421
+lastmod: 2024-02-19 22:05:10.764656
 model: gpt-4-0125-preview
 summary: "CSV (\u0915\u0949\u092E\u093E-\u0938\u0947\u092A\u0930\u0947\u091F\u0947\
   \u0921 \u0935\u0948\u0932\u094D\u092F\u0942\u091C\u093C) \u092B\u093E\u0907\u0932\

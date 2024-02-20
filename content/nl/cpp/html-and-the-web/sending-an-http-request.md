@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:23.046191-07:00
 description: "Het versturen van een HTTP-verzoek haalt gegevens op van een webserver.\
   \ Programmeurs doen dit om te interageren met webservices, informatie te verzamelen\u2026"
-lastmod: 2024-02-18 23:09:02.179383
+lastmod: 2024-02-19 22:05:10.196176
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek haalt gegevens op van een webserver.\
   \ Programmeurs doen dit om te interageren met webservices, informatie te verzamelen\u2026"

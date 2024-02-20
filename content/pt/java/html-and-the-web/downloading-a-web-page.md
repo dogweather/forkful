@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/java/downloading-a-web-page/
 date: 2024-01-20 17:44:23.159645-07:00
 description: "Baixar uma p\xE1gina da web significa trazer seu conte\xFAdo para processamento\
   \ local. Programadores fazem isso para an\xE1lises, testes ou para armazenar\u2026"
-lastmod: 2024-02-18 23:08:58.017443
+lastmod: 2024-02-19 22:05:05.493753
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web significa trazer seu conte\xFAdo para processamento\
   \ local. Programadores fazem isso para an\xE1lises, testes ou para armazenar\u2026"

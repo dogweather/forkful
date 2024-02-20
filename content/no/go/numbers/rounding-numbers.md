@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:56.438089-07:00
 description: "Avrunding av tall handler om \xE5 justere verdien av et tall til det\
   \ n\xE6rmeste hele tallet eller til et spesifikt antall desimaler. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:53.430483
+lastmod: 2024-02-19 22:04:59.540425
 model: gpt-4-0125-preview
 summary: "Avrunding av tall handler om \xE5 justere verdien av et tall til det n\xE6\
   rmeste hele tallet eller til et spesifikt antall desimaler. Programmerere gj\xF8\

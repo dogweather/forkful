@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elixir/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:36.128761-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to metoda zabezpieczenia, dzi\u0119ki kt\xF3rej serwer mo\u017Ce zweryfikowa\u0107\
   \ to\u017Csamo\u015B\u0107 u\u017Cytkownika za pomoc\u0105 loginu i\u2026"
-lastmod: 2024-02-18 23:08:49.305653
+lastmod: 2024-02-19 22:04:54.221276
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to metoda zabezpieczenia, dzi\u0119ki kt\xF3rej serwer mo\u017Ce zweryfikowa\u0107\

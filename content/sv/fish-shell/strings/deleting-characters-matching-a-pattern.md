@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/fish-shell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:11.740036-07:00
 description: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
   \ hittar specifika sekvenser av tecken i en textstr\xE4ng och tar bort dem.\u2026"
-lastmod: 2024-02-18 23:08:52.190363
+lastmod: 2024-02-19 22:04:57.565503
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
   \ hittar specifika sekvenser av tecken i en textstr\xE4ng och tar bort dem.\u2026"

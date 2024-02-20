@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:34.912098-07:00
 description: "Das Umwandeln eines Datums in einen String erleichtert die Anzeige und\
   \ Verarbeitung von Datumsangaben in einem f\xFCr Menschen lesbaren Format. Wir brauchen\u2026"
-lastmod: 2024-02-18 23:09:05.246410
+lastmod: 2024-02-19 22:05:13.172480
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String erleichtert die Anzeige und Verarbeitung\
   \ von Datumsangaben in einem f\xFCr Menschen lesbaren Format. Wir brauchen\u2026"

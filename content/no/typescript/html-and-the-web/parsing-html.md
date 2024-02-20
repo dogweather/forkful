@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/typescript/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:08.801948-07:00
 description: "\xC5 parse HTML betyr \xE5 sile gjennom HTML-kode for \xE5 finne, hente\
   \ ut, eller manipulere informasjon. Programmerere gj\xF8r dette for \xE5 samhandle\
   \ med webinnhold \u2013\u2026"
-lastmod: 2024-02-18 23:08:53.642975
+lastmod: 2024-02-19 22:04:59.772416
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML betyr \xE5 sile gjennom HTML-kode for \xE5 finne, hente\
   \ ut, eller manipulere informasjon. Programmerere gj\xF8r dette for \xE5 samhandle\

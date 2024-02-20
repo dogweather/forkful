@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:16.929377-07:00
 description: "Een tijdelijk bestand aanmaken betekent dat je een bestand genereert\
   \ voor een kortetermijndoel, zoals het opslaan van gegevens die alleen nodig zijn\u2026"
-lastmod: 2024-02-18 23:09:01.873509
+lastmod: 2024-02-19 22:05:09.889971
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand aanmaken betekent dat je een bestand genereert voor\
   \ een kortetermijndoel, zoals het opslaan van gegevens die alleen nodig zijn\u2026"

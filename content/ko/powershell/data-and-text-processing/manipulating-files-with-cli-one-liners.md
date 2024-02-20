@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:20:45.194990-07:00
 description: "\uD30C\uC6CC\uC258\uC5D0\uC11C CLI \uD55C \uC904 \uBA85\uB839\uC5B4\uB97C\
   \ \uC0AC\uC6A9\uD55C \uD30C\uC77C \uC870\uC791\uC740 \uBA85\uB839 \uC904\uC744 \uC9C1\
@@ -11,7 +9,7 @@ description: "\uD30C\uC6CC\uC258\uC5D0\uC11C CLI \uD55C \uC904 \uBA85\uB839\uC5B
   \uB2E4; \uAC04\uB2E8\uD55C \uC791\uC5C5\uC5D0 \uB300\uD574 \uAE34 \uC2A4\uD06C\uB9BD\
   \uD2B8\uB97C \uC791\uC131\uD558\uAC70\uB098 GUI\uB97C \uD0D0\uC0C9\uD558\uB294 \uAC83\
   \uBCF4\uB2E4 \uBE60\uB985\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.546097
+lastmod: 2024-02-19 22:05:14.452589
 model: gpt-4-0125-preview
 summary: "\uD30C\uC6CC\uC258\uC5D0\uC11C CLI \uD55C \uC904 \uBA85\uB839\uC5B4\uB97C\
   \ \uC0AC\uC6A9\uD55C \uD30C\uC77C \uC870\uC791\uC740 \uBA85\uB839 \uC904\uC744 \uC9C1\

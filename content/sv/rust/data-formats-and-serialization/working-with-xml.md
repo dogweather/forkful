@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/working-with-xml/
 date: 2024-01-26 04:35:50.743722-07:00
 description: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON:s\
   \ ordrika kusin. Du kommer att brottas med XML n\xE4r du hanterar legacysystem,\
   \ f\xF6retagsprogramvara\u2026"
-lastmod: 2024-02-18 23:08:51.607510
+lastmod: 2024-02-19 22:04:56.928399
 model: gpt-4-0125-preview
 summary: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON:s ordrika\
   \ kusin. Du kommer att brottas med XML n\xE4r du hanterar legacysystem, f\xF6retagsprogramvara\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/google-apps-script/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:04.414550-07:00
 description: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 tarkoittaa\
   \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois\u2026"
-lastmod: 2024-02-18 23:09:07.155313
+lastmod: 2024-02-19 22:05:15.031005
 model: gpt-4-0125-preview
 summary: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 tarkoittaa\
   \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois\u2026"

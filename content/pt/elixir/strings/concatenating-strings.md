@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/concatenating-strings/
 date: 2024-01-27 10:43:11.660520-07:00
 description: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
   \ para formar um \xFAnico texto. Voc\xEA pode precisar mesclar textos para gerar\
   \ mensagens de\u2026"
-lastmod: 2024-02-18 23:08:57.836104
+lastmod: 2024-02-19 22:05:05.305312
 model: gpt-4-0125-preview
 summary: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
   \ para formar um \xFAnico texto. Voc\xEA pode precisar mesclar textos para gerar\

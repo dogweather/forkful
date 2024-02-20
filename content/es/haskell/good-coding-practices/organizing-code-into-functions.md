@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/haskell/organizing-code-into-functions/
 date: 2024-01-26 01:10:34.869104-07:00
 description: "Organizar el c\xF3digo en funciones en Haskell significa descomponer\
   \ tu c\xF3digo en bloques reutilizables y nombrados. \xBFPor qu\xE9? Esto mantiene\
   \ tu c\xF3digo DRY\u2026"
-lastmod: 2024-02-18 23:09:10.033868
+lastmod: 2024-02-19 22:05:17.631351
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones en Haskell significa descomponer tu\
   \ c\xF3digo en bloques reutilizables y nombrados. \xBFPor qu\xE9? Esto mantiene\

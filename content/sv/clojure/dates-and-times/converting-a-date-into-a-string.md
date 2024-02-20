@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:12.878496-07:00
 description: "Att omvandla ett datum till en str\xE4ng inneb\xE4r att du representerar\
   \ datumet i ett textformat. Programmerare g\xF6r detta f\xF6r att enklare kunna\
   \ visa, spara\u2026"
-lastmod: 2024-02-18 23:08:51.473062
+lastmod: 2024-02-19 22:04:56.780743
 model: gpt-4-1106-preview
 summary: "Att omvandla ett datum till en str\xE4ng inneb\xE4r att du representerar\
   \ datumet i ett textformat. Programmerare g\xF6r detta f\xF6r att enklare kunna\

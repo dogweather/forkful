@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/typescript/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:52.878848-07:00
@@ -8,7 +6,7 @@ description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u
   i m\xE3 m\xE1y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh\
   \ vi b\xEAn ngo\xE0i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
   n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\xE0m cho m\xE3\u2026"
-lastmod: 2024-02-18 23:08:50.424767
+lastmod: 2024-02-19 22:04:55.480916
 model: gpt-4-0125-preview
 summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i\
   \ m\xE3 m\xE1y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh\

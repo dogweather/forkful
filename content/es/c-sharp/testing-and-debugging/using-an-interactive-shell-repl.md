@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/c-sharp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:10.764374-07:00
 description: "Un REPL, o Bucle Leer-Evaluar-Imprimir, te permite escribir c\xF3digo\
   \ C# y ejecutarlo de manera interactiva. Los programadores lo usan para experimentos\u2026"
-lastmod: 2024-02-18 23:09:09.983812
+lastmod: 2024-02-19 22:05:17.586041
 model: gpt-4-0125-preview
 summary: "Un REPL, o Bucle Leer-Evaluar-Imprimir, te permite escribir c\xF3digo C#\
   \ y ejecutarlo de manera interactiva. Los programadores lo usan para experimentos\u2026"

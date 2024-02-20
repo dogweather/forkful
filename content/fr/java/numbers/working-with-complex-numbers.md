@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/java/working-with-complex-numbers/
 date: 2024-01-26 04:41:49.084601-07:00
 description: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els par\
   \ l'ajout d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`. Ils sont cruciaux dans\
   \ des domaines\u2026"
-lastmod: 2024-02-18 23:09:08.621752
+lastmod: 2024-02-19 22:05:16.394393
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els par l'ajout\
   \ d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`. Ils sont cruciaux dans des domaines\u2026"

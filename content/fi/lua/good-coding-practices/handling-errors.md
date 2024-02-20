@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/lua/handling-errors/
 date: 2024-01-26 00:56:09.831006-07:00
 description: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista.\
   \ Se on suunnittelutaidetta silt\xE4 varalta, ett\xE4 asiat menev\xE4t pieleen,\
   \ jotta voit pit\xE4\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.764954
+lastmod: 2024-02-19 22:05:15.598878
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista. Se\
   \ on suunnittelutaidetta silt\xE4 varalta, ett\xE4 asiat menev\xE4t pieleen, jotta\

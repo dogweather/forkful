@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/arduino/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:43.499141-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\
   \uB2E4\uB294 \uAC83\uC740, \uBAA8\uB4E0 \uB300\uBB38\uC790 \uC54C\uD30C\uBCB3\uC744\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uC744 \uD45C\uC900\uD654\uD558\uAE30 \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.599772
+lastmod: 2024-02-19 22:05:14.503109
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC83\uC740, \uBAA8\uB4E0 \uB300\uBB38\uC790 \uC54C\uD30C\uBCB3\uC744 \uC18C\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/working-with-complex-numbers/
 date: 2024-01-26 04:45:16.769770-07:00
 description: "I numeri complessi, costituiti da una parte reale e una immaginaria\
   \ (come 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano\u2026"
-lastmod: 2024-02-18 23:08:56.375352
+lastmod: 2024-02-19 22:05:03.015377
 model: gpt-4-0125-preview
 summary: "I numeri complessi, costituiti da una parte reale e una immaginaria (come\
   \ 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano\u2026"

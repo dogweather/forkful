@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/rust/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:59.887448-07:00
@@ -14,7 +12,7 @@ description: "Rust \u092E\u0947\u0902 \u091F\u0947\u0938\u094D\u091F \u0932\u093
   \u093E\u092E\u0930\u094D\u0938 \u092F\u0939 \u091C\u0932\u094D\u0926\u0940 \u092C\
   \u0917\u094D\u0938 \u092A\u0915\u0921\u093C\u0928\u0947, \u0930\u093F\u092B\u0948\
   \u0915\u094D\u091F\u0930\u093F\u0902\u0917\u2026"
-lastmod: 2024-02-18 23:09:02.962836
+lastmod: 2024-02-19 22:05:10.960739
 model: gpt-4-0125-preview
 summary: "Rust \u092E\u0947\u0902 \u091F\u0947\u0938\u094D\u091F \u0932\u093F\u0916\
   \u0928\u093E \u0906\u092A\u0915\u0947 \u0915\u094B\u0921 \u0915\u0947 \u0905\u092A\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/kotlin/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:38.811702-07:00
 description: "Analizzare una data da una stringa comporta la conversione del testo\
   \ in un oggetto Date. Questa operazione \xE8 fondamentale per le applicazioni che\u2026"
-lastmod: 2024-02-18 23:08:55.855167
+lastmod: 2024-02-19 22:05:02.463901
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa comporta la conversione del testo in\
   \ un oggetto Date. Questa operazione \xE8 fondamentale per le applicazioni che\u2026"

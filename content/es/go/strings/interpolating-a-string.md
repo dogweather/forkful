@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:22.687173-07:00
 description: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas\
   \ que incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los\
   \ programadores\u2026"
-lastmod: 2024-02-18 23:09:09.438647
+lastmod: 2024-02-19 22:05:17.099110
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas que\
   \ incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los programadores\u2026"

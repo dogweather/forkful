@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/refactoring/
 date: 2024-01-26 03:37:10.132426-07:00
 description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente \u2014 cambiandone il fattorizzamento \u2014 senza alterarne il comportamento\u2026"
-lastmod: 2024-02-18 23:08:55.529274
+lastmod: 2024-02-19 22:05:02.116833
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente \u2014 cambiandone il fattorizzamento \u2014 senza alterarne il comportamento\u2026"

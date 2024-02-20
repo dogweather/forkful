@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elixir/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:05.926269-07:00
 description: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand\
   \ dat je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag\
   \ of wanneer\u2026"
-lastmod: 2024-02-18 23:09:01.547710
+lastmod: 2024-02-19 22:05:09.573531
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand dat\
   \ je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag of wanneer\u2026"

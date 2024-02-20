@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/python/working-with-xml/
 date: 2024-01-26 04:34:29.135038-07:00
 description: "\"Trabajar con XML\" se refiere al proceso de leer, crear y modificar\
   \ archivos XML (eXtensible Markup Language) utilizando programaci\xF3n. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:09.584123
+lastmod: 2024-02-19 22:05:17.230454
 model: gpt-4-0125-preview
 summary: "\"Trabajar con XML\" se refiere al proceso de leer, crear y modificar archivos\
   \ XML (eXtensible Markup Language) utilizando programaci\xF3n. Los programadores\u2026"

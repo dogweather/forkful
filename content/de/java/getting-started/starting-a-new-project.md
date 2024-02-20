@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/java/starting-a-new-project/
 date: 2024-01-20 18:03:43.810333-07:00
 description: "Ein neues Projekt zu starten bedeutet, eine frische Code-Basis anzulegen,\
   \ die als Grundlage f\xFCr eine Softwareanwendung dient. Programmierer starten\u2026"
-lastmod: 2024-02-18 23:09:04.737576
+lastmod: 2024-02-19 22:05:12.688683
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, eine frische Code-Basis anzulegen,\
   \ die als Grundlage f\xFCr eine Softwareanwendung dient. Programmierer starten\u2026"

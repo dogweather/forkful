@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/fish-shell/reading-a-text-file/
 date: 2024-01-20 17:54:08.197369-07:00
 description: "Leggere un file di testo significa semplicemente accedere al contenuto\
   \ al suo interno e visualizzarlo attraverso il terminale. I programmatori lo fanno\u2026"
-lastmod: 2024-02-18 23:08:56.312363
+lastmod: 2024-02-19 22:05:02.949421
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa semplicemente accedere al contenuto al\
   \ suo interno e visualizzarlo attraverso il terminale. I programmatori lo fanno\u2026"

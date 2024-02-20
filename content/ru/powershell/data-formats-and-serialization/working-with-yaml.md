@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/powershell/working-with-yaml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:29.379924-07:00
@@ -14,7 +12,7 @@ description: "YAML \u2014 \u044D\u0442\u043E \u0443\u0434\u043E\u0431\u043D\u044
   , \u043E\u0431\u043C\u0435\u043D\u0430 \u0434\u0430\u043D\u043D\u044B\u043C\u0438\
   \ \u043C\u0435\u0436\u0434\u0443 \u044F\u0437\u044B\u043A\u0430\u043C\u0438, \u0430\
   \ \u0442\u0430\u043A\u0436\u0435\u2026"
-lastmod: 2024-02-18 23:08:57.282414
+lastmod: 2024-02-19 22:05:04.462455
 model: gpt-4-0125-preview
 summary: "YAML \u2014 \u044D\u0442\u043E \u0443\u0434\u043E\u0431\u043D\u044B\u0439\
   \ \u0434\u043B\u044F \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0430 \u0444\u043E\

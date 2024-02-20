@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:25.807459-07:00
 description: "Tekst zoeken en vervangen in strings is een veelvoorkomende taak in\
   \ programmering, vaak gebruikt om gegevens te verwerken en te manipuleren. Het is\u2026"
-lastmod: 2024-02-18 23:09:01.556406
+lastmod: 2024-02-19 22:05:09.581632
 model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen in strings is een veelvoorkomende taak in programmering,\
   \ vaak gebruikt om gegevens te verwerken en te manipuleren. Het is\u2026"

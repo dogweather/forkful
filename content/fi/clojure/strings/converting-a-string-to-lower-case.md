@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/clojure/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:08.381675-07:00
 description: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen,
   vertailuihin ja haun yksinkertaistamiseen.
-lastmod: 2024-02-18 23:09:07.214730
+lastmod: 2024-02-19 22:05:15.113383
 model: gpt-4-1106-preview
 summary: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen,
   vertailuihin ja haun yksinkertaistamiseen.

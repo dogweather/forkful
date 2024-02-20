@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/go/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:46.610215-07:00
 description: "Das Vergleichen von zwei Daten in der Programmierung ist eine grundlegende\
   \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\u2026"
-lastmod: 2024-02-18 23:09:04.378095
+lastmod: 2024-02-19 22:05:12.347033
 model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in der Programmierung ist eine grundlegende\
   \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\u2026"

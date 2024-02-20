@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/using-a-debugger/
 date: 2024-01-26 03:48:23.152351-07:00
 description: "Usar um depurador em Elixir envolve percorrer seu c\xF3digo, inspecionar\
   \ vari\xE1veis e rastrear fluxos para eliminar bugs. Os programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:57.848241
+lastmod: 2024-02-19 22:05:05.318477
 model: gpt-4-0125-preview
 summary: "Usar um depurador em Elixir envolve percorrer seu c\xF3digo, inspecionar\
   \ vari\xE1veis e rastrear fluxos para eliminar bugs. Os programadores fazem isso\

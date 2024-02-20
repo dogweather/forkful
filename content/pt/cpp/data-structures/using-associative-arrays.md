@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:14.117278-07:00
 description: "Arrays associativos, conhecidos como `std::map` ou `std::unordered_map`\
   \ em C++, preenchem a lacuna entre \xEDndices de arrays e dados do mundo real,\u2026"
-lastmod: 2024-02-18 23:08:58.442823
+lastmod: 2024-02-19 22:05:05.932646
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como `std::map` ou `std::unordered_map`\
   \ em C++, preenchem a lacuna entre \xEDndices de arrays e dados do mundo real,\u2026"

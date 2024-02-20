@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/comparing-two-dates/
 date: 2024-01-20 17:33:45.281460-07:00
 description: "Comparer deux dates permet simplement de dire si une date est plus r\xE9\
   cente, plus ancienne ou identique \xE0 une autre. Les programmeurs en ont besoin\
   \ pour\u2026"
-lastmod: 2024-02-18 23:09:09.081980
+lastmod: 2024-02-19 22:05:16.762536
 model: gpt-4-1106-preview
 summary: "Comparer deux dates permet simplement de dire si une date est plus r\xE9\
   cente, plus ancienne ou identique \xE0 une autre. Les programmeurs en ont besoin\

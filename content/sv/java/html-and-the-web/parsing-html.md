@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/java/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:27.561168-07:00
 description: "Att tolka HTML inneb\xE4r att gr\xE4va igenom m\xE4rkspr\xE5ket f\xF6\
   r att extrahera data som text, l\xE4nkar eller andra element. Vi g\xF6r det f\xF6\
   r att interagera med eller\u2026"
-lastmod: 2024-02-18 23:08:51.667333
+lastmod: 2024-02-19 22:04:56.993917
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r att gr\xE4va igenom m\xE4rkspr\xE5ket f\xF6r att\
   \ extrahera data som text, l\xE4nkar eller andra element. Vi g\xF6r det f\xF6r att\

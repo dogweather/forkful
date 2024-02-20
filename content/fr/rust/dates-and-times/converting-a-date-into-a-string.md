@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:38.694089-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res, c'est transformer\
   \ une repr\xE9sentation de date en texte lisible. Les programmeurs le font g\xE9\
   n\xE9ralement pour\u2026"
-lastmod: 2024-02-18 23:09:08.541822
+lastmod: 2024-02-19 22:05:16.321879
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res, c'est transformer une\
   \ repr\xE9sentation de date en texte lisible. Les programmeurs le font g\xE9n\xE9\

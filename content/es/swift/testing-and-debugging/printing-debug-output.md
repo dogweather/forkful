@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/swift/printing-debug-output/
 date: 2024-01-20 17:53:42.738665-07:00
 description: "La impresi\xF3n de informaci\xF3n de depuraci\xF3n en Swift te permite\
   \ ver valores y mensajes directamente en la consola, lo cual es vital para entender\
   \ qu\xE9 est\xE1\u2026"
-lastmod: 2024-02-18 23:09:10.360868
+lastmod: 2024-02-19 22:05:17.923825
 model: gpt-4-1106-preview
 summary: "La impresi\xF3n de informaci\xF3n de depuraci\xF3n en Swift te permite ver\
   \ valores y mensajes directamente en la consola, lo cual es vital para entender\

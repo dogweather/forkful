@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:40.264920-07:00
 description: "\uB0A0\uC9DC\uB97C \uBBF8\uB798\uB098 \uACFC\uAC70\uB85C \uACC4\uC0B0\
   \uD55C\uB2E4\uB294 \uAC83\uC740 \uC9C0\uC815\uB41C \uC2DC\uAC04\uC744 \uAE30\uC900\
@@ -10,7 +8,7 @@ description: "\uB0A0\uC9DC\uB97C \uBBF8\uB798\uB098 \uACFC\uAC70\uB85C \uACC4\uC
   \uC2A4\uD15C, \uC774\uBCA4\uD2B8 \uC2A4\uCF00\uC904\uB9C1 \uB4F1\uC744 \uC704\uD574\
   \ \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.437300
+lastmod: 2024-02-19 22:05:14.349220
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBBF8\uB798\uB098 \uACFC\uAC70\uB85C \uACC4\uC0B0\uD55C\
   \uB2E4\uB294 \uAC83\uC740 \uC9C0\uC815\uB41C \uC2DC\uAC04\uC744 \uAE30\uC900\uC73C\

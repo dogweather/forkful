@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/working-with-yaml/
 date: 2024-02-03 19:03:05.743025-07:00
 description: "YAML, short for YAML Ain't Markup Language, is a human-readable data\
   \ serialization standard commonly used for configuration files and data exchange\u2026"
-lastmod: 2024-02-18 23:09:10.785960
+lastmod: 2024-02-19 22:05:18.309056
 model: gpt-4-0125-preview
 summary: "YAML, short for YAML Ain't Markup Language, is a human-readable data serialization\
   \ standard commonly used for configuration files and data exchange\u2026"

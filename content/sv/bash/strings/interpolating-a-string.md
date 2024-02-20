@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/interpolating-a-string/
 date: 2024-01-20 17:50:21.085085-07:00
 description: "Interpolering av str\xE4ngar till\xE5ter dig att infoga variabler eller\
   \ uttryck i en str\xE4ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamiska\
   \ meddelanden och\u2026"
-lastmod: 2024-02-18 23:08:51.945859
+lastmod: 2024-02-19 22:04:57.295372
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ngar till\xE5ter dig att infoga variabler eller\
   \ uttryck i en str\xE4ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamiska\

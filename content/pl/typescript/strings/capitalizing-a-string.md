@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/typescript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:56.043300-07:00
 description: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na zmodyfikowaniu\
   \ pierwszego znaku danego ci\u0105gu na du\u017C\u0105 liter\u0119, je\u015Bli jest\
   \ on w ma\u0142ej literze, cz\u0119sto pozostawiaj\u0105c\u2026"
-lastmod: 2024-02-18 23:08:49.331625
+lastmod: 2024-02-19 22:04:54.248225
 model: gpt-4-0125-preview
 summary: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na zmodyfikowaniu pierwszego\
   \ znaku danego ci\u0105gu na du\u017C\u0105 liter\u0119, je\u015Bli jest on w ma\u0142\

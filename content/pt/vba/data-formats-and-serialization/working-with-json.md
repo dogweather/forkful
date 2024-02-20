@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/working-with-json/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:55.806538-07:00
 description: "JSON (JavaScript Object Notation) \xE9 um formato leve de interc\xE2\
   mbio de dados que \xE9 f\xE1cil de ler e escrever por humanos, e de analisar e gerar\
   \ por m\xE1quinas.\u2026"
-lastmod: 2024-02-18 23:08:57.997912
+lastmod: 2024-02-19 22:05:05.473037
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE9 um formato leve de interc\xE2mbio\
   \ de dados que \xE9 f\xE1cil de ler e escrever por humanos, e de analisar e gerar\

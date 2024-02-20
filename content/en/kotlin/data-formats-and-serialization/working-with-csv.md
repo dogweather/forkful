@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/working-with-csv/
 date: 2024-02-03 19:03:21.344898-07:00
 description: "Working with CSV (Comma-Separated Values) involves reading from and\
   \ writing data to CSV files, a common format for storing tabular data in plain text.\u2026"
-lastmod: 2024-02-18 23:09:11.034960
+lastmod: 2024-02-19 22:05:18.536278
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) involves reading from and writing\
   \ data to CSV files, a common format for storing tabular data in plain text.\u2026"

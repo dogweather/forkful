@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:03.879370-07:00
 description: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu\
   \ dost\u0119pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu\
   \ jej lokalnie\u2026"
-lastmod: 2024-02-18 23:08:50.078609
+lastmod: 2024-02-19 22:04:55.062855
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu dost\u0119\
   pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu jej lokalnie\u2026"

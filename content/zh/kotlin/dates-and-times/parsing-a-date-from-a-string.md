@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/kotlin/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:36.451413-07:00
@@ -10,7 +8,7 @@ description: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F\u6D89\u53CA\u5C06
   \u636E\u96C6\u7684\u65E5\u671F\u4EA4\u4E92\u7684\u5E94\u7528\u7A0B\u5E8F\u800C\u8A00\
   \uFF0C\u662F\u57FA\u7840\u6027\u7684\uFF0C\u5141\u8BB8\u6839\u636E\u9700\u8981\u8F7B\
   \u677E\u5730\u8FDB\u884C\u64CD\u4F5C\u548C\u683C\u5F0F\u5316\u3002"
-lastmod: 2024-02-18 23:08:59.103490
+lastmod: 2024-02-19 22:05:06.761274
 model: gpt-4-0125-preview
 summary: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F\u6D89\u53CA\u5C06\u6587\
   \u672C\u8F6C\u6362\u6210\u65E5\u671F\u5BF9\u8C61\u3002\u8FD9\u4E2A\u64CD\u4F5C\u5BF9\

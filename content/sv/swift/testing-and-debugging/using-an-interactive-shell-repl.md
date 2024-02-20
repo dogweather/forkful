@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/swift/using-an-interactive-shell-repl/
 date: 2024-01-26 04:18:29.765702-07:00
 description: "Att anv\xE4nda ett interaktivt skal, eller en L\xE4s-Utv\xE4rdera-Skriv\
   \ Ut-Loop (REPL), l\xE5ter dig koda interaktivt. Programmerare anv\xE4nder det f\xF6\
   r att snabbt testa\u2026"
-lastmod: 2024-02-18 23:08:52.126076
+lastmod: 2024-02-19 22:04:57.492865
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda ett interaktivt skal, eller en L\xE4s-Utv\xE4rdera-Skriv\
   \ Ut-Loop (REPL), l\xE5ter dig koda interaktivt. Programmerare anv\xE4nder det f\xF6\

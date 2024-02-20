@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:32.512808-07:00
 description: "Het berekenen van een toekomstige of verleden datum betekent uitzoeken\
   \ wat de datum zal zijn, of was, na of voor een bepaalde tijdsperiode. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.437158
+lastmod: 2024-02-19 22:05:10.441455
 model: gpt-4-0125-preview
 summary: "Het berekenen van een toekomstige of verleden datum betekent uitzoeken wat\
   \ de datum zal zijn, of was, na of voor een bepaalde tijdsperiode. Programmeurs\u2026"

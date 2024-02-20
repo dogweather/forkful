@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/clojure/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:43.217252-07:00
 description: "Das Parsen von HTML in Clojure umfasst das programmgesteuerte Extrahieren\
   \ von Informationen aus HTML-Dokumenten. Programmierer tun dies, um auf Webinhalte\u2026"
-lastmod: 2024-02-18 23:09:04.504785
+lastmod: 2024-02-19 22:05:12.466910
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Clojure umfasst das programmgesteuerte Extrahieren\
   \ von Informationen aus HTML-Dokumenten. Programmierer tun dies, um auf Webinhalte\u2026"

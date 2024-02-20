@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/downloading-a-web-page/
 date: 2024-01-20 17:43:50.851285-07:00
 description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll \xF6\
   ver internet. Programmerare g\xF6r detta f\xF6r att extrahera data, automatisera\
   \ testning av\u2026"
-lastmod: 2024-02-18 23:08:51.794542
+lastmod: 2024-02-19 22:04:57.128701
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll \xF6\
   ver internet. Programmerare g\xF6r detta f\xF6r att extrahera data, automatisera\

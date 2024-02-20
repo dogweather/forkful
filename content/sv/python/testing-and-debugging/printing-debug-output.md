@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/python/printing-debug-output/
 date: 2024-01-20 17:53:08.069507-07:00
 description: "Att skriva ut debuginformation inneb\xE4r att visa vad som h\xE4nder\
   \ i din kod under k\xF6rningen. Programmerare g\xF6r detta f\xF6r att f\xF6rst\xE5\
   \ fl\xF6det, hitta buggar och\u2026"
-lastmod: 2024-02-18 23:08:51.424272
+lastmod: 2024-02-19 22:04:56.726743
 model: gpt-4-1106-preview
 summary: "Att skriva ut debuginformation inneb\xE4r att visa vad som h\xE4nder i din\
   \ kod under k\xF6rningen. Programmerare g\xF6r detta f\xF6r att f\xF6rst\xE5 fl\xF6\

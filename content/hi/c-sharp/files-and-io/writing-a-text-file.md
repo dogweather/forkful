@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c-sharp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:26.126538-07:00
@@ -14,7 +12,7 @@ description: "C# \u092E\u0947\u0902 \u091F\u0947\u0915\u094D\u0938\u094D\u091F \
   \ \u0939\u0948 - \u092F\u0939 \u0915\u0908 \u090F\u092A\u094D\u0932\u093F\u0915\u0947\
   \u0936\u0928\u094D\u0938 \u0915\u0947 \u0932\u093F\u090F \u090F\u0915 \u092E\u0942\
   \u0932\u092D\u0942\u0924\u2026"
-lastmod: 2024-02-18 23:09:03.379770
+lastmod: 2024-02-19 22:05:11.371762
 model: gpt-4-0125-preview
 summary: "C# \u092E\u0947\u0902 \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u092B\u093E\
   \u0907\u0932 \u0932\u093F\u0916\u0928\u093E \u092F\u093E\u0928\u0940 \u092A\u094D\

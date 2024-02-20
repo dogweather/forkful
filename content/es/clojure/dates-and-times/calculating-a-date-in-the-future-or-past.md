@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:40.944773-07:00
 description: "Calcular una fecha en el futuro o pasado es b\xE1sicamente sumar o restar\
   \ d\xEDas a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:09.617569
+lastmod: 2024-02-19 22:05:17.261157
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado es b\xE1sicamente sumar o restar\
   \ d\xEDas a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/searching-and-replacing-text/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:41.991815-07:00
 description: "Cercare e sostituire testo in Visual Basic for Applications (VBA) \xE8\
   \ essenziale per la modifica di documenti, fogli di calcolo e database in modo\u2026"
-lastmod: 2024-02-18 23:08:55.706935
+lastmod: 2024-02-19 22:05:02.307114
 model: gpt-4-0125-preview
 summary: "Cercare e sostituire testo in Visual Basic for Applications (VBA) \xE8 essenziale\
   \ per la modifica di documenti, fogli di calcolo e database in modo\u2026"

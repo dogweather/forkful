@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/c-sharp/working-with-complex-numbers/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:52.066989-07:00
@@ -14,7 +12,7 @@ description: "\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u043D\u044B\u0435
   \u043D\u0435\u043D\u0438\u044F, \u043D\u0435 \u0438\u043C\u0435\u044E\u0449\u0438\
   \u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u044B\
   \u0445 \u0440\u0435\u0448\u0435\u043D\u0438\u0439.\u2026"
-lastmod: 2024-02-18 23:08:56.988025
+lastmod: 2024-02-19 22:05:03.998095
 model: gpt-4-0125-preview
 summary: "\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u043D\u044B\u0435 \u0447\
   \u0438\u0441\u043B\u0430 \u0440\u0430\u0441\u0448\u0438\u0440\u044F\u044E\u0442\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/google-apps-script/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:24.553353-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EBFt test trong Google Apps Script (GAS) l\xE0 v\u1EC1 vi\u1E
   c t\u1EA1o ra c\xE1c script t\u1EF1 \u0111\u1ED9ng \u0111\u1EC3 x\xE1c minh h\xE0\
   nh vi c\u1EE7a m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o ch\xFA\
   ng ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong\u2026"
-lastmod: 2024-02-18 23:08:50.224023
+lastmod: 2024-02-19 22:04:55.234745
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test trong Google Apps Script (GAS) l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1\
   o ra c\xE1c script t\u1EF1 \u0111\u1ED9ng \u0111\u1EC3 x\xE1c minh h\xE0nh vi c\u1EE7\

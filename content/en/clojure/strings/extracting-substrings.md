@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/extracting-substrings/
 date: 2024-01-20 17:45:33.645264-07:00
 description: "Extracting substrings means snatching a specific part of a string\u2014\
   like getting the good bits out of a sandwich. Programmers do this to isolate data,\u2026"
-lastmod: 2024-02-18 23:09:10.712584
+lastmod: 2024-02-19 22:05:18.243419
 model: gpt-4-1106-preview
 summary: "Extracting substrings means snatching a specific part of a string\u2014\
   like getting the good bits out of a sandwich. Programmers do this to isolate data,\u2026"

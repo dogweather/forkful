@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/google-apps-script/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:25.678548-07:00
 description: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na dost\u0119\
   pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym\u2026"
-lastmod: 2024-02-18 23:08:49.171741
+lastmod: 2024-02-19 22:04:54.106657
 model: gpt-4-0125-preview
 summary: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na dost\u0119\
   pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym\u2026"

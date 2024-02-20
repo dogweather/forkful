@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/rust/searching-and-replacing-text/
 date: 2024-01-20 17:58:52.106224-07:00
 description: "\xC5 s\xF8ke og erstatte tekst lar oss finne strenger i data og bytte\
   \ dem ut med nye strenger. Programmererne trenger dette for \xE5 oppdatere data,\
   \ korrigere\u2026"
-lastmod: 2024-02-18 23:08:53.671070
+lastmod: 2024-02-19 22:04:59.803032
 model: gpt-4-1106-preview
 summary: "\xC5 s\xF8ke og erstatte tekst lar oss finne strenger i data og bytte dem\
   \ ut med nye strenger. Programmererne trenger dette for \xE5 oppdatere data, korrigere\u2026"

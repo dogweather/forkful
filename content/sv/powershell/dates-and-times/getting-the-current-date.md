@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/powershell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:24.492951-07:00
 description: "Att h\xE4mta det aktuella datumet i PowerShell handlar om att h\xE4\
   mta systemets aktuella datum och tid. Denna operation \xE4r grundl\xE4ggande f\xF6\
   r uppgifter som\u2026"
-lastmod: 2024-02-18 23:08:52.014061
+lastmod: 2024-02-19 22:04:57.369724
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i PowerShell handlar om att h\xE4mta systemets\
   \ aktuella datum och tid. Denna operation \xE4r grundl\xE4ggande f\xF6r uppgifter\

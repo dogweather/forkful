@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/ruby/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:36.051914-07:00
 description: "In Ruby, sending an HTTP request with basic authentication involves\
   \ adding a username and password to your request header. Programmers do this to\
   \ access\u2026"
-lastmod: 2024-02-18 23:09:11.565570
+lastmod: 2024-02-19 22:05:19.012344
 model: gpt-4-1106-preview
 summary: "In Ruby, sending an HTTP request with basic authentication involves adding\
   \ a username and password to your request header. Programmers do this to access\u2026"

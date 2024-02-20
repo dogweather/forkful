@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/fish-shell/sending-an-http-request/
 date: 2024-01-20 17:59:57.707271-07:00
 description: "HTTP-pyynn\xF6t ovat tapa kommunikoida web-palvelimien kanssa. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4 dataa liikuttaakseen, API-kutsuja tehden ja verkkososiaalisuutta\u2026"
-lastmod: 2024-02-18 23:09:08.080427
+lastmod: 2024-02-19 22:05:15.885618
 model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6t ovat tapa kommunikoida web-palvelimien kanssa. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4 dataa liikuttaakseen, API-kutsuja tehden ja verkkososiaalisuutta\u2026"

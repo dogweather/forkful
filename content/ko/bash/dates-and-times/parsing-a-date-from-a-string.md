@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:52.274845-07:00
@@ -13,7 +11,7 @@ description: "Bash\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC9DC
   \ \uD30C\uC77C \uBD84\uC11D, \uB0A0\uC9DC \uC2A4\uD0EC\uD504\uB97C \uAE30\uBC18\uC73C\
   \uB85C \uD55C \uD30C\uC77C \uC870\uC9C1\uD654, \uC790\uB3D9 \uBCF4\uACE0\uC11C \uC0DD\
   \uC131\uACFC \uAC19\uC740\u2026"
-lastmod: 2024-02-18 23:09:06.500316
+lastmod: 2024-02-19 22:05:14.408609
 model: gpt-4-0125-preview
 summary: "Bash\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC9DC\uB97C\
   \ \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uBB38\uC790 \uB370\uC774\uD130\uB85C\uBD80\

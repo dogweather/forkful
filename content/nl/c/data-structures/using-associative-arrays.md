@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:44.093572-07:00
 description: "Associatieve arrays, bekend in andere talen als mappen of woordenboeken,\
   \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\u2026"
-lastmod: 2024-02-18 23:09:02.364656
+lastmod: 2024-02-19 22:05:10.371602
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, bekend in andere talen als mappen of woordenboeken,\
   \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\u2026"

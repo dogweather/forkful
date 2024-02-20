@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/clojure/refactoring/
 date: 2024-01-26 01:17:16.495107-07:00
 description: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
   \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos\u2026"
-lastmod: 2024-02-18 23:09:09.612088
+lastmod: 2024-02-19 22:05:17.256216
 model: gpt-4-0125-preview
 summary: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
   \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos\u2026"

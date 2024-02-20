@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/java/rounding-numbers/
 date: 2024-01-26 03:45:08.849215-07:00
 description: "Arrondir les nombres signifie les ajuster \xE0 un degr\xE9 de pr\xE9\
   cision sp\xE9cifi\xE9. Les programmeurs le font pour simplifier les nombres pour\
   \ une meilleure\u2026"
-lastmod: 2024-02-18 23:09:08.622813
+lastmod: 2024-02-19 22:05:16.395352
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres signifie les ajuster \xE0 un degr\xE9 de pr\xE9cision\
   \ sp\xE9cifi\xE9. Les programmeurs le font pour simplifier les nombres pour une\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/php/searching-and-replacing-text/
 date: 2024-01-20 17:58:45.203683-07:00
 description: "Tekstin etsiminen ja korvaaminen on prosessi, jossa tekstist\xE4 l\xF6\
   ydettyj\xE4 osia vaihdetaan toisiin. Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintaa\
   \ datan\u2026"
-lastmod: 2024-02-18 23:09:07.695768
+lastmod: 2024-02-19 22:05:15.535647
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen on prosessi, jossa tekstist\xE4 l\xF6ydettyj\xE4\
   \ osia vaihdetaan toisiin. Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintaa datan\u2026"

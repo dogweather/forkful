@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/extracting-substrings/
 date: 2024-01-20 17:45:18.132916-07:00
 description: "Extrair substrings significa pegar peda\xE7os espec\xEDficos de uma\
   \ string. Programadores fazem isso para manipular, analisar ou validar partes de\
   \ texto dentro\u2026"
-lastmod: 2024-02-18 23:08:58.146696
+lastmod: 2024-02-19 22:05:05.614477
 model: gpt-4-1106-preview
 summary: "Extrair substrings significa pegar peda\xE7os espec\xEDficos de uma string.\
   \ Programadores fazem isso para manipular, analisar ou validar partes de texto dentro\u2026"

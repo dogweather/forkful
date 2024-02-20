@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:58.223770-07:00
@@ -8,7 +6,7 @@ description: "Trong Visual Basic for Applications (VBA), vi\u1EC7c l\u1EA5y ng\x
   y hi\u1EC7n t\u1EA1i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn gi\xFA\
   p c\xE1c l\u1EADp tr\xECnh vi\xEAn c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0\
   y m\u1ED9t c\xE1ch linh\u2026"
-lastmod: 2024-02-18 23:08:50.521224
+lastmod: 2024-02-19 22:04:55.606040
 model: gpt-4-0125-preview
 summary: "Trong Visual Basic for Applications (VBA), vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7\
   n t\u1EA1i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn gi\xFAp c\xE1c l\u1EAD\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/haskell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:18.558464-07:00
 description: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att filtrera\
   \ bort specifika tecken fr\xE5n en textstr\xE4ng. Programmerare g\xF6r detta f\xF6\
   r att rensa data,\u2026"
-lastmod: 2024-02-18 23:08:51.822168
+lastmod: 2024-02-19 22:04:57.158566
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att filtrera bort\
   \ specifika tecken fr\xE5n en textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att\

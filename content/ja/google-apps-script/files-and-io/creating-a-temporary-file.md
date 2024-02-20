@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/google-apps-script/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:03.626866-07:00
@@ -11,7 +9,7 @@ description: "Google Apps Script\u3067\u306E\u4E00\u6642\u30D5\u30A1\u30A4\u30EB
   \u305F\u30D5\u30A1\u30A4\u30EB\u3092\u751F\u6210\u3059\u308B\u3053\u3068\u3067\u3059\
   \u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u6C38\u7D9A\u7684\u306A\u30B9\
   \u30C8\u30EC\u30FC\u30B8\u30B9\u30DA\u30FC\u30B9\u3092\u2026"
-lastmod: 2024-02-18 23:08:54.542466
+lastmod: 2024-02-19 22:05:00.741667
 model: gpt-4-0125-preview
 summary: "Google Apps Script\u3067\u306E\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\
   \u4F5C\u6210\u306F\u3001\u4E2D\u9593\u30C7\u30FC\u30BF\u51E6\u7406\u3001\u30C7\u30D0\

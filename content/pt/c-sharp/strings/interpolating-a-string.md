@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/interpolating-a-string/
 date: 2024-01-20 17:50:28.260077-07:00
 description: "Interpola\xE7\xE3o de strings no C# permite injetar valores de vari\xE1\
   veis dentro de uma string literal, melhorando a legibilidade e a manuten\xE7\xE3\
   o do c\xF3digo.\u2026"
-lastmod: 2024-02-18 23:08:58.143937
+lastmod: 2024-02-19 22:05:05.611511
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de strings no C# permite injetar valores de vari\xE1\
   veis dentro de uma string literal, melhorando a legibilidade e a manuten\xE7\xE3\

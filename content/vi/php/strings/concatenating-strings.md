@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:19.680601-07:00
@@ -8,7 +6,7 @@ description: "N\u1ED1i chu\u1ED7i \u0111\u01A1n gi\u1EA3n ch\u1EC9 l\xE0 vi\u1EC
   c gh\xE9p c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau. H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3\
   ng n\xF3 gi\u1ED1ng nh\u01B0 vi\u1EC7c t\u1EA1o ra m\u1ED9t \u0111o\xE0n t\xE0u\
   \ t\u1EEB c\xE1c t\u1EEB ch\u1EE9 kh\xF4ng ph\u1EA3i c\xE1c toa t\xE0u. C\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.781575
+lastmod: 2024-02-19 22:04:55.937767
 model: gpt-4-0125-preview
 summary: "N\u1ED1i chu\u1ED7i \u0111\u01A1n gi\u1EA3n ch\u1EC9 l\xE0 vi\u1EC7c gh\xE9\
   p c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau. H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng\

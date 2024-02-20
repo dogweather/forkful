@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/powershell/working-with-toml/
 date: 2024-01-26 04:24:41.514638-07:00
 description: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Daten-Serialisierungsformat,\
   \ das leicht zu lesen ist aufgrund seiner klaren Semantik.\u2026"
-lastmod: 2024-02-18 23:09:05.126372
+lastmod: 2024-02-19 22:05:13.059024
 model: gpt-4-0125-preview
 summary: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Daten-Serialisierungsformat,\
   \ das leicht zu lesen ist aufgrund seiner klaren Semantik.\u2026"

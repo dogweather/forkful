@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/arduino/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:32.117058-07:00
 description: "Een datum naar een tekenreeks converteren betekent de weergave van een\
   \ datum veranderen van een formaat dat programmeren begrijpt, zoals dag-, maand-\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:02.150390
+lastmod: 2024-02-19 22:05:10.168166
 model: gpt-4-0125-preview
 summary: "Een datum naar een tekenreeks converteren betekent de weergave van een datum\
   \ veranderen van een formaat dat programmeren begrijpt, zoals dag-, maand- en\u2026"

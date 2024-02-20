@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/concatenating-strings/
 date: 2024-01-20 17:34:43.718312-07:00
 description: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
   \ lo hacen para manipular texto, crear comandos o generar salidas espec\xEDficas."
-lastmod: 2024-02-18 23:09:10.442038
+lastmod: 2024-02-19 22:05:17.996116
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
   \ lo hacen para manipular texto, crear comandos o generar salidas espec\xEDficas."

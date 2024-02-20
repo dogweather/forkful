@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:44.034481-07:00
 description: "Een HTTP-verzoek versturen is hoe je om gegevens of een reactie van\
   \ een webdienst vraagt. Programmeurs doen dit om te communiceren met API's, website-\u2026"
-lastmod: 2024-02-18 23:09:02.088320
+lastmod: 2024-02-19 22:05:10.109845
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen is hoe je om gegevens of een reactie van een\
   \ webdienst vraagt. Programmeurs doen dit om te communiceren met API's, website-\u2026"

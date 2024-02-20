@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/javascript/working-with-xml/
 date: 2024-01-26 04:32:26.591940-07:00
 description: "Trabajar con XML significa analizar, manipular y producir contenido\
   \ XML mediante c\xF3digo. Los programadores lo hacen porque XML se utiliza ampliamente\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:10.431761
+lastmod: 2024-02-19 22:05:17.986819
 model: gpt-4-0125-preview
 summary: "Trabajar con XML significa analizar, manipular y producir contenido XML\
   \ mediante c\xF3digo. Los programadores lo hacen porque XML se utiliza ampliamente\

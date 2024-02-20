@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:57.583063-07:00
 description: "Refactoren is de kunst van het aanpassen van bestaande code om de structuur,\
   \ leesbaarheid en effici\xEBntie ervan te verbeteren, zonder het externe gedrag\u2026"
-lastmod: 2024-02-18 23:09:02.000596
+lastmod: 2024-02-19 22:05:10.021394
 model: gpt-4-0125-preview
 summary: "Refactoren is de kunst van het aanpassen van bestaande code om de structuur,\
   \ leesbaarheid en effici\xEBntie ervan te verbeteren, zonder het externe gedrag\u2026"

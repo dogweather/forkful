@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/swift/refactoring/
 date: 2024-01-26 03:36:59.770117-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess externa beteende. Programmerare g\xF6r det f\xF6r att st\xE4\
   da upp i\u2026"
-lastmod: 2024-02-18 23:08:52.132397
+lastmod: 2024-02-19 22:04:57.499909
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess externa beteende. Programmerare g\xF6r det f\xF6r att st\xE4\

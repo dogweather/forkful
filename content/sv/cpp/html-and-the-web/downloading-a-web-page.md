@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/cpp/downloading-a-web-page/
 date: 2024-01-20 17:43:38.444844-07:00
 description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta sidans inneh\xE5ll\
   \ \xF6ver n\xE4tet. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5llet,\
   \ granska data eller integrera\u2026"
-lastmod: 2024-02-18 23:08:52.082645
+lastmod: 2024-02-19 22:04:57.444879
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta sidans inneh\xE5ll \xF6\
   ver n\xE4tet. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5llet, granska\

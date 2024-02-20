@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/bash/rounding-numbers/
 date: 2024-01-26 03:43:09.766930-07:00
 description: "Arrotondare i numeri significa tagliare le cifre decimali fino a un\
   \ valore pi\xF9 semplice che sia sufficientemente buono per un determinato contesto.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:56.045591
+lastmod: 2024-02-19 22:05:02.663251
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa tagliare le cifre decimali fino a un valore\
   \ pi\xF9 semplice che sia sufficientemente buono per un determinato contesto. I\u2026"

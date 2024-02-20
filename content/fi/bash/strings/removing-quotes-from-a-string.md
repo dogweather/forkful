@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:54.779338-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien\
   \ karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehd\xE4 t\xE4\
   m\xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.789463
+lastmod: 2024-02-19 22:05:15.621348
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien\
   \ karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehd\xE4 t\xE4\

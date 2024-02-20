@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/php/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:04.955400-07:00
@@ -15,7 +13,7 @@ description: "\u6587\u5B57\u5217\u306E\u5148\u982D\u3092\u5927\u6587\u5B57\u306B
   \u305F\u3081\u306B\u3001\u6587\u5B57\u5217\u306E\u5148\u982D\u6587\u5B57\u3092\u5927\
   \u6587\u5B57\u306B\u3059\u308B\u64CD\u4F5C\u3092\u983B\u7E41\u306B\u5B9F\u884C\u3057\
   \u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.980388
+lastmod: 2024-02-19 22:05:01.363874
 model: gpt-4-0125-preview
 summary: "\u6587\u5B57\u5217\u306E\u5148\u982D\u3092\u5927\u6587\u5B57\u306B\u3059\
   \u308B\u3053\u3068\u3067\u3001\u30C7\u30FC\u30BF\u30BB\u30C3\u30C8\u5185\u3067\u6587\

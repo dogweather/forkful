@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elm/reading-a-text-file/
 date: 2024-01-20 17:54:16.074143-07:00
 description: "Das Einlesen einer Textdatei erm\xF6glicht es Programmen, Textinformationen\
   \ zu verarbeiten \u2013 vom simplen Konfigurationsfile bis zur gro\xDFen Datenanalyse.\u2026"
-lastmod: 2024-02-18 23:09:04.799829
+lastmod: 2024-02-19 22:05:12.747590
 model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei erm\xF6glicht es Programmen, Textinformationen\
   \ zu verarbeiten \u2013 vom simplen Konfigurationsfile bis zur gro\xDFen Datenanalyse.\u2026"

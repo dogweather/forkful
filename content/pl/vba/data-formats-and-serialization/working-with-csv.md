@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:23.657463-07:00
 description: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone\
   \ przecinkami) polega na odczytywaniu z nich danych lub zapisywaniu do nich danych\
   \ w\u2026"
-lastmod: 2024-02-18 23:08:49.458354
+lastmod: 2024-02-19 22:04:54.384811
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone przecinkami)\
   \ polega na odczytywaniu z nich danych lub zapisywaniu do nich danych w\u2026"

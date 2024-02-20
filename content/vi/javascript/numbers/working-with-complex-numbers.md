@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:27.522819-07:00
@@ -8,7 +6,7 @@ description: "S\u1ED1 ph\u1EE9c l\xE0 nh\u1EEFng s\u1ED1 c\xF3 m\u1ED9t ph\u1EA7
   \ th\u1EF1c v\xE0 m\u1ED9t ph\u1EA7n \u1EA3o (nh\u01B0 3 + 4i). Ch\xFAng xu\u1EA5\
   t hi\u1EC7n trong nhi\u1EC1u v\u1EA5n \u0111\u1EC1 l\u1EADp tr\xECnh, \u0111\u1EB7\
   c bi\u1EC7t l\xE0 trong x\u1EED l\xFD t\xEDn hi\u1EC7u, t\xEDnh\u2026"
-lastmod: 2024-02-18 23:08:51.129328
+lastmod: 2024-02-19 22:04:56.353944
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c l\xE0 nh\u1EEFng s\u1ED1 c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1\
   c v\xE0 m\u1ED9t ph\u1EA7n \u1EA3o (nh\u01B0 3 + 4i). Ch\xFAng xu\u1EA5t hi\u1EC7\

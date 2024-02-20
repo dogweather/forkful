@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/haskell/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:45.267398-07:00
@@ -8,7 +6,7 @@ description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 h\xE0nh \u0111\u1ED9n
   \ y\xEAu c\u1EA7u m\u1ED9t m\xE1y ch\u1EE7 web v\u1EC1 d\u1EEF li\u1EC7u ho\u1EB7\
   c h\xE0nh \u0111\u1ED9ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
   u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi API, l\u1EA5y n\u1ED9i dung\u2026"
-lastmod: 2024-02-18 23:08:50.741434
+lastmod: 2024-02-19 22:04:55.887057
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 h\xE0nh \u0111\u1ED9ng y\xEA\
   u c\u1EA7u m\u1ED9t m\xE1y ch\u1EE7 web v\u1EC1 d\u1EEF li\u1EC7u ho\u1EB7c h\xE0\

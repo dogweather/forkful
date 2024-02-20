@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/clojure/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:03.050226-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
   \ y generar datos de texto estructurados como filas y columnas, similar a los datos\u2026"
-lastmod: 2024-02-18 23:09:09.627406
+lastmod: 2024-02-19 22:05:17.270140
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
   \ y generar datos de texto estructurados como filas y columnas, similar a los datos\u2026"

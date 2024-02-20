@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/creating-a-temporary-file/
 date: 2024-01-20 17:40:12.918048-07:00
 description: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie danych\
   \ bez za\u015Bmiecania systemu. Programi\u015Bci robi\u0105 to, kiedy potrzebuj\u0105\
   \ szybkiego,\u2026"
-lastmod: 2024-02-18 23:08:50.055685
+lastmod: 2024-02-19 22:04:55.036853
 model: gpt-4-1106-preview
 summary: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie danych\
   \ bez za\u015Bmiecania systemu. Programi\u015Bci robi\u0105 to, kiedy potrzebuj\u0105\

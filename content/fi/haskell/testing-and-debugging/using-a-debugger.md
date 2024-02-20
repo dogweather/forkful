@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/using-a-debugger/
 date: 2024-01-26 03:50:13.140023-07:00
 description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa koodisi syv\xE4llist\xE4 tutkimista\
   \ ty\xF6kaluilla, jotka on suunniteltu tarkastelemaan, keskeytt\xE4m\xE4\xE4n ja\
   \ manipuloimaan ohjelmaa\u2026"
-lastmod: 2024-02-18 23:09:07.670991
+lastmod: 2024-02-19 22:05:15.512886
 model: gpt-4-0125-preview
 summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa koodisi syv\xE4llist\xE4 tutkimista\
   \ ty\xF6kaluilla, jotka on suunniteltu tarkastelemaan, keskeytt\xE4m\xE4\xE4n ja\

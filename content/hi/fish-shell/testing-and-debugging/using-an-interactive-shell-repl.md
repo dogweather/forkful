@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/fish-shell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:17.339441-07:00
 description: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u0907\u0902\u091F\
   \u0930\u0948\u0915\u094D\u091F\u093F\u0935 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\
@@ -11,7 +9,7 @@ description: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u0907\u0902
   \u0937\u094D\u092A\u093E\u0926\u093F\u0924 \u0915\u0930\u0924\u093E \u0939\u0948\
   , \u0914\u0930 \u092A\u0930\u093F\u0923\u093E\u092E \u0932\u094C\u091F\u093E\u0924\
   \u093E \u0939\u0948\u0964\u2026"
-lastmod: 2024-02-18 23:09:04.131101
+lastmod: 2024-02-19 22:05:12.108179
 model: gpt-4-0125-preview
 summary: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u0907\u0902\u091F\
   \u0930\u0948\u0915\u094D\u091F\u093F\u0935 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\

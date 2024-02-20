@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/handling-errors/
 date: 2024-01-26 00:56:22.955289-07:00
 description: "Virheenk\xE4sittely Pythonissa (tai miss\xE4 tahansa ohjelmointikieless\xE4\
   ) on odottamatonta odottamista \u2013 se on taitoa hallita tilanteita sulavasti,\
   \ kun asiat\u2026"
-lastmod: 2024-02-18 23:09:07.191599
+lastmod: 2024-02-19 22:05:15.083573
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely Pythonissa (tai miss\xE4 tahansa ohjelmointikieless\xE4\
   ) on odottamatonta odottamista \u2013 se on taitoa hallita tilanteita sulavasti,\

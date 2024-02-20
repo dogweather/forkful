@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/writing-to-standard-error/
 date: 2024-02-03 19:03:29.604068-07:00
 description: "Writing to standard error (stderr) in Fish Shell is about directing\
   \ error messages or diagnostics separately from the standard output (stdout).\u2026"
-lastmod: 2024-02-18 23:09:11.497303
+lastmod: 2024-02-19 22:05:18.949687
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Fish Shell is about directing error\
   \ messages or diagnostics separately from the standard output (stdout).\u2026"

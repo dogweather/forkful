@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/using-an-interactive-shell-repl/
 date: 2024-01-25 03:40:13.920163-07:00
 description: "A Read-Eval-Print-Loop (REPL) is a programming environment that takes\
   \ single user inputs, executes them, and returns the result to the user. Programmers\u2026"
-lastmod: 2024-02-18 23:09:10.808893
+lastmod: 2024-02-19 22:05:18.329684
 model: gpt-4-1106-preview
 summary: "A Read-Eval-Print-Loop (REPL) is a programming environment that takes single\
   \ user inputs, executes them, and returns the result to the user. Programmers\u2026"

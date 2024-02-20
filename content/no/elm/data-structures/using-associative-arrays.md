@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/elm/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:52.532928-07:00
 description: "Assosiative tabeller, eller som Elm kaller dem, Ordb\xF8ker, kobler\
   \ n\xF8kler til verdier p\xE5 en m\xE5te som gj\xF8r oppslag, innsetting og sletting\
   \ av verdier super\u2026"
-lastmod: 2024-02-18 23:08:53.804179
+lastmod: 2024-02-19 22:04:59.947691
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller som Elm kaller dem, Ordb\xF8ker, kobler n\xF8\
   kler til verdier p\xE5 en m\xE5te som gj\xF8r oppslag, innsetting og sletting av\

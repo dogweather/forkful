@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/go/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:25.141144-07:00
 description: "Converter uma data em uma string em Go envolve transformar um objeto\
   \ `time.Time` em um formato de string leg\xEDvel. Programadores frequentemente realizam\u2026"
-lastmod: 2024-02-18 23:08:57.680936
+lastmod: 2024-02-19 22:05:05.139433
 model: gpt-4-0125-preview
 summary: "Converter uma data em uma string em Go envolve transformar um objeto `time.Time`\
   \ em um formato de string leg\xEDvel. Programadores frequentemente realizam\u2026"

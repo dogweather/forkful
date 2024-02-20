@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:44.711928-07:00
 description: "I TypeScript \xE4r skrivning till standardfel (stderr) en process f\xF6\
   r att skicka felmeddelanden eller loggar direkt till milj\xF6ns felutdatastr\xF6\
   m (t.ex.\u2026"
-lastmod: 2024-02-18 23:08:51.559310
+lastmod: 2024-02-19 22:04:56.874657
 model: gpt-4-0125-preview
 summary: "I TypeScript \xE4r skrivning till standardfel (stderr) en process f\xF6\
   r att skicka felmeddelanden eller loggar direkt till milj\xF6ns felutdatastr\xF6\

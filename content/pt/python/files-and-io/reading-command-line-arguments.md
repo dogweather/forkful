@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/python/reading-command-line-arguments/
 date: 2024-01-20 17:57:06.213806-07:00
 description: "Ler argumentos de linha de comando significa pegar dados que o usu\xE1\
   rio passa diretamente ao seu script Python quando o executa. Fazemos isso para tornar\u2026"
-lastmod: 2024-02-18 23:08:57.776164
+lastmod: 2024-02-19 22:05:05.240309
 model: gpt-4-1106-preview
 summary: "Ler argumentos de linha de comando significa pegar dados que o usu\xE1rio\
   \ passa diretamente ao seu script Python quando o executa. Fazemos isso para tornar\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/powershell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:04.136107-07:00
 description: "In PowerShell, verificare l'esistenza di una directory \xE8 un compito\
   \ comune che aiuta gli script a prendere decisioni basate sulla struttura dei file\u2026"
-lastmod: 2024-02-18 23:08:56.108194
+lastmod: 2024-02-19 22:05:02.731441
 model: gpt-4-0125-preview
 summary: "In PowerShell, verificare l'esistenza di una directory \xE8 un compito comune\
   \ che aiuta gli script a prendere decisioni basate sulla struttura dei file\u2026"

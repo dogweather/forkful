@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/arduino/reading-command-line-arguments/
 date: 2024-01-20 17:55:29.215497-07:00
 description: "Leggere gli argomenti da riga di comando significa raccogliere input\
   \ quando eseguiamo un programma, utili per modificarne il comportamento senza cambiare\u2026"
-lastmod: 2024-02-18 23:08:56.148095
+lastmod: 2024-02-19 22:05:02.775037
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti da riga di comando significa raccogliere input quando\
   \ eseguiamo un programma, utili per modificarne il comportamento senza cambiare\u2026"

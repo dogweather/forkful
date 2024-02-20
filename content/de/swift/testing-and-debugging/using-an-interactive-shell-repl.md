@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/swift/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:49.451611-07:00
 description: "Die Verwendung einer interaktiven Shell oder einer Read-Eval-Print-Schleife\
   \ (REPL) erm\xF6glicht es Ihnen, interaktiv zu programmieren. Programmierer nutzen\u2026"
-lastmod: 2024-02-18 23:09:05.236027
+lastmod: 2024-02-19 22:05:13.162653
 model: gpt-4-0125-preview
 summary: "Die Verwendung einer interaktiven Shell oder einer Read-Eval-Print-Schleife\
   \ (REPL) erm\xF6glicht es Ihnen, interaktiv zu programmieren. Programmierer nutzen\u2026"

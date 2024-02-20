@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elixir/handling-errors/
 date: 2024-01-26 00:50:41.256863-07:00
 description: "Manejar errores significa escribir c\xF3digo que pueda lidiar con las\
   \ cosas cuando salen mal. Los programadores lo hacen para prevenir fallos y para\u2026"
-lastmod: 2024-02-18 23:09:09.656127
+lastmod: 2024-02-19 22:05:17.296234
 model: gpt-4-1106-preview
 summary: "Manejar errores significa escribir c\xF3digo que pueda lidiar con las cosas\
   \ cuando salen mal. Los programadores lo hacen para prevenir fallos y para\u2026"

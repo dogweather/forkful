@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/rust/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:21.347753-07:00
@@ -14,7 +12,7 @@ description: "\u6B63\u898F\u8868\u73FE\uFF08regex\uFF09\u3092\u4F7F\u3046\u3068\
   \u3001\u691C\u7D22\u3001\u30C6\u30AD\u30B9\u30C8\u5909\u63DB\u306A\u3069\u306E\u30BF\
   \u30B9\u30AF\u3092\u3088\u308A\u7C21\u6F54\u304B\u3064\u4FDD\u5B88\u3057\u3084\u3059\
   \u304F\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.711897
+lastmod: 2024-02-19 22:05:00.984254
 model: gpt-4-0125-preview
 summary: "\u6B63\u898F\u8868\u73FE\uFF08regex\uFF09\u3092\u4F7F\u3046\u3068\u3001\u958B\
   \u767A\u8005\u306F\u6587\u5B57\u5217\u306E\u691C\u7D22\u3001\u4E00\u81F4\u3001\u305D\

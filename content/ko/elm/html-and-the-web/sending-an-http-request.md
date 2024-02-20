@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elm/sending-an-http-request/
 date: 2024-01-20 17:59:38.559949-07:00
 description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC83\uC740 \uC6F9\
   \ \uC11C\uBC84\uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\
@@ -9,7 +7,7 @@ description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC83\uC740 \uC6
   \ \uC11C\uBC84\uC640 \uD1B5\uC2E0\uD558\uACE0 \uB370\uC774\uD130\uB97C \uC8FC\uACE0\
   \uBC1B\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.080986
+lastmod: 2024-02-19 22:05:14.018473
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC83\uC740 \uC6F9 \uC11C\
   \uBC84\uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\uD130\

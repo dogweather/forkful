@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/lua/starting-a-new-project/
 date: 2024-01-20 18:04:07.457618-07:00
 description: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto para\
   \ ser preenchido com c\xF3digo. Programadores embarcam nessa jornada para resolver\u2026"
-lastmod: 2024-02-18 23:08:58.282889
+lastmod: 2024-02-19 22:05:05.760822
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto para\
   \ ser preenchido com c\xF3digo. Programadores embarcam nessa jornada para resolver\u2026"

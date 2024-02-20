@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:28.858512-07:00
 description: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
   \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"
-lastmod: 2024-02-18 23:09:01.739655
+lastmod: 2024-02-19 22:05:09.758994
 model: gpt-4-0125-preview
 summary: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
   \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"

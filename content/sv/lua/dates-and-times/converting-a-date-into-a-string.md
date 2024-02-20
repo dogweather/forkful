@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:05.492103-07:00
 description: "Datum till str\xE4ng-konvertering handlar om att omvandla den s\xE4\
   tt som datum lagras i kod (ofta som ett numeriskt v\xE4rde eller ett datumobjekt)\
   \ till en l\xE4sbar\u2026"
-lastmod: 2024-02-18 23:08:51.929695
+lastmod: 2024-02-19 22:04:57.277522
 model: gpt-4-1106-preview
 summary: "Datum till str\xE4ng-konvertering handlar om att omvandla den s\xE4tt som\
   \ datum lagras i kod (ofta som ett numeriskt v\xE4rde eller ett datumobjekt) till\

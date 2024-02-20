@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/logging/
 date: 2024-01-25 02:03:14.629198-07:00
 description: "Logging in the context of programming is the process of recording events,\
   \ states, and information to a file or another output medium. Programmers log to\u2026"
-lastmod: 2024-02-18 23:09:11.361881
+lastmod: 2024-02-19 22:05:18.825994
 model: gpt-4-1106-preview
 summary: "Logging in the context of programming is the process of recording events,\
   \ states, and information to a file or another output medium. Programmers log to\u2026"

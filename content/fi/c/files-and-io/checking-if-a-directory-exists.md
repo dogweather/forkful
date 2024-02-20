@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:47.546781-07:00
 description: "Hakemiston olemassaolon tarkistaminen C:ss\xE4 tarkoittaa tiedostoj\xE4\
   rjestelm\xE4n kysely\xE4 erityisen polun johtamisesta hakemistoon. Ohjelmoijat suorittavat\u2026"
-lastmod: 2024-02-18 23:09:08.149532
+lastmod: 2024-02-19 22:05:15.949907
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen C:ss\xE4 tarkoittaa tiedostoj\xE4\
   rjestelm\xE4n kysely\xE4 erityisen polun johtamisesta hakemistoon. Ohjelmoijat suorittavat\u2026"

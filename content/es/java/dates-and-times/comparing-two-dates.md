@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/java/comparing-two-dates/
 date: 2024-01-20 17:33:13.317598-07:00
 description: "Comparar dos fechas permite determinar cu\xE1l es anterior o posterior,\
   \ o si son iguales. Los programadores lo hacen para validaciones, c\xE1lculos de\
   \ per\xEDodos\u2026"
-lastmod: 2024-02-18 23:09:09.858381
+lastmod: 2024-02-19 22:05:17.472097
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas permite determinar cu\xE1l es anterior o posterior,\
   \ o si son iguales. Los programadores lo hacen para validaciones, c\xE1lculos de\

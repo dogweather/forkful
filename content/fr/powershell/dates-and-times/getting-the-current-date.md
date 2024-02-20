@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/powershell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:29.232157-07:00
 description: "R\xE9cup\xE9rer la date courante dans PowerShell consiste \xE0 obtenir\
   \ la date et l'heure actuelles du syst\xE8me. Cette op\xE9ration est fondamentale\
   \ pour des t\xE2ches\u2026"
-lastmod: 2024-02-18 23:09:09.079809
+lastmod: 2024-02-19 22:05:16.760586
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date courante dans PowerShell consiste \xE0 obtenir la\
   \ date et l'heure actuelles du syst\xE8me. Cette op\xE9ration est fondamentale pour\

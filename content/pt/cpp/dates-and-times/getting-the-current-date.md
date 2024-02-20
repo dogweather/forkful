@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/cpp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:10.543236-07:00
 description: "Recuperar a data atual em C++ \xE9 uma tarefa fundamental para programas\
   \ que precisam processar ou exibir datas baseadas no rel\xF3gio do sistema. \xC9\
   \ essencial\u2026"
-lastmod: 2024-02-18 23:08:58.459915
+lastmod: 2024-02-19 22:05:05.950578
 model: gpt-4-0125-preview
 summary: "Recuperar a data atual em C++ \xE9 uma tarefa fundamental para programas\
   \ que precisam processar ou exibir datas baseadas no rel\xF3gio do sistema. \xC9\

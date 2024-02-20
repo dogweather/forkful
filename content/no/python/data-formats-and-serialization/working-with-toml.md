@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/python/working-with-toml/
 date: 2024-01-26 04:25:30.285670-07:00
 description: "TOML, som er kort for Toms Opplagte, Minimale Spr\xE5k, er et data serialiseringsformat\
   \ i slekt med JSON eller YAML, men har som m\xE5l \xE5 v\xE6re enkelt og\u2026"
-lastmod: 2024-02-18 23:08:53.546456
+lastmod: 2024-02-19 22:04:59.667241
 model: gpt-4-0125-preview
 summary: "TOML, som er kort for Toms Opplagte, Minimale Spr\xE5k, er et data serialiseringsformat\
   \ i slekt med JSON eller YAML, men har som m\xE5l \xE5 v\xE6re enkelt og\u2026"

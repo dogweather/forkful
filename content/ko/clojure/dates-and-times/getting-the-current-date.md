@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:51.314135-07:00
@@ -12,7 +10,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9
   \ \uAE30\uB2A5\uC744 \uD65C\uC6A9\uD558\uC5EC \uD48D\uBD80\uD55C Java Date-Time\
   \ API\uC5D0 \uB300\uD55C \uAC04\uD3B8\uD55C \uC811\uADFC\uC744 \uAC00\uB2A5\uD558\
   \uAC8C\u2026"
-lastmod: 2024-02-18 23:09:05.706663
+lastmod: 2024-02-19 22:05:13.619033
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C\
   \ \uC5BB\uB294 \uAC83\uC740 \uB85C\uAE45, \uC774\uBCA4\uD2B8 \uD0C0\uC784\uC2A4\uD0EC\

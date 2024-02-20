@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/python/creating-a-temporary-file/
 date: 2024-01-20 17:41:07.135966-07:00
 description: "Creare un file temporaneo significa che il tuo programma pu\xF2 tenere\
   \ dei dati temporaneamente durante l'esecuzione. I programmatori fanno questo per\
   \ non\u2026"
-lastmod: 2024-02-18 23:08:55.539792
+lastmod: 2024-02-19 22:05:02.128027
 model: gpt-4-1106-preview
 summary: "Creare un file temporaneo significa che il tuo programma pu\xF2 tenere dei\
   \ dati temporaneamente durante l'esecuzione. I programmatori fanno questo per non\u2026"

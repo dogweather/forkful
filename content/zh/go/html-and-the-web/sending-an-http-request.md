@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:51.431521-07:00
@@ -11,7 +9,7 @@ description: "\u53D1\u9001 HTTP \u8BF7\u6C42\u6D89\u53CA\u4ECE\u4F60\u7684 Go \u
   \u884C\u4EA4\u4E92\u3001\u83B7\u53D6\u6570\u636E\u3001\u63D0\u4EA4\u8868\u5355\u6216\
   \u901A\u8FC7\u4E92\u8054\u7F51\u4E0E\u5176\u4ED6\u670D\u52A1\u8FDB\u884C\u901A\u4FE1\
   \u3002"
-lastmod: 2024-02-18 23:08:58.704587
+lastmod: 2024-02-19 22:05:06.213688
 model: gpt-4-0125-preview
 summary: "\u53D1\u9001 HTTP \u8BF7\u6C42\u6D89\u53CA\u4ECE\u4F60\u7684 Go \u5E94\u7528\
   \u7A0B\u5E8F\u5411\u7F51\u7AD9\u670D\u52A1\u5668\u3001API \u6216\u4EFB\u4F55\u5176\

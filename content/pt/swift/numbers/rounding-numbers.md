@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/swift/rounding-numbers/
 date: 2024-01-26 03:46:41.341480-07:00
 description: "Arredondar n\xFAmeros significa aproximar um valor num\xE9rico a uma\
   \ precis\xE3o espec\xEDfica, tipicamente para remover decimais indesejados. Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.486249
+lastmod: 2024-02-19 22:05:05.978469
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa aproximar um valor num\xE9rico a uma precis\xE3\
   o espec\xEDfica, tipicamente para remover decimais indesejados. Programadores\u2026"

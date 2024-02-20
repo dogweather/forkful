@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/powershell/reading-a-text-file/
 date: 2024-01-20 17:54:49.027823-07:00
 description: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen\
   \ tiedoston sis\xE4lt\xE4. Ohjelmoijat lukevat tekstitiedostoja, koska monet\u2026"
-lastmod: 2024-02-18 23:09:07.872748
+lastmod: 2024-02-19 22:05:15.695689
 model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen\
   \ tiedoston sis\xE4lt\xE4. Ohjelmoijat lukevat tekstitiedostoja, koska monet\u2026"

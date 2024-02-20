@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/capitalizing-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:30.319519-07:00
 description: "Het kapitaliseren van een string betekent het corrigeren van de hoofdletters\
   \ zodanig dat de eerste letter een hoofdletter is en de rest kleine letters\u2026"
-lastmod: 2024-02-18 23:09:01.879875
+lastmod: 2024-02-19 22:05:09.896243
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een string betekent het corrigeren van de hoofdletters\
   \ zodanig dat de eerste letter een hoofdletter is en de rest kleine letters\u2026"

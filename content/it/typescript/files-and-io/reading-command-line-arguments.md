@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/reading-command-line-arguments/
 date: 2024-01-20 17:57:09.101131-07:00
 description: "Leggere gli argomenti della riga di comando significa estrarre le informazioni\
   \ inserite dagli utenti quando lanciano un programma da terminale. I\u2026"
-lastmod: 2024-02-18 23:08:55.655024
+lastmod: 2024-02-19 22:05:02.252071
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando significa estrarre le informazioni\
   \ inserite dagli utenti quando lanciano un programma da terminale. I\u2026"

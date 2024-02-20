@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:38.884079-07:00
 description: "En programmation Bash, v\xE9rifier si un r\xE9pertoire existe est un\
   \ m\xE9canisme de contr\xF4le essentiel utilis\xE9 pour v\xE9rifier la pr\xE9sence\
   \ d'un r\xE9pertoire avant\u2026"
-lastmod: 2024-02-18 23:09:09.034776
+lastmod: 2024-02-19 22:05:16.719080
 model: gpt-4-0125-preview
 summary: "En programmation Bash, v\xE9rifier si un r\xE9pertoire existe est un m\xE9\
   canisme de contr\xF4le essentiel utilis\xE9 pour v\xE9rifier la pr\xE9sence d'un\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/java/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:38.923033-07:00
 description: "\xC9crire sur la sortie d'erreur standard (stderr) consiste \xE0 afficher\
   \ des messages d'erreur et des diagnostics sur la console ou le terminal. Les\u2026"
-lastmod: 2024-02-18 23:09:08.655477
+lastmod: 2024-02-19 22:05:16.416713
 model: gpt-4-0125-preview
 summary: "\xC9crire sur la sortie d'erreur standard (stderr) consiste \xE0 afficher\
   \ des messages d'erreur et des diagnostics sur la console ou le terminal. Les\u2026"

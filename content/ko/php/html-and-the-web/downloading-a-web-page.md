@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/downloading-a-web-page/
 date: 2024-01-20 17:44:28.217198-07:00
 description: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD55C\uB2E4\
   \uB294 \uAC83\uC740 \uC778\uD130\uB137 \uC0C1\uC758 \uD398\uC774\uC9C0\uB97C \uAC00\
@@ -10,7 +8,7 @@ description: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD55C\uB2
   \uC5C5\uC744 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.350848
+lastmod: 2024-02-19 22:05:14.267379
 model: gpt-4-1106-preview
 summary: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD55C\uB2E4\uB294\
   \ \uAC83\uC740 \uC778\uD130\uB137 \uC0C1\uC758 \uD398\uC774\uC9C0\uB97C \uAC00\uC838\

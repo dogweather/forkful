@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c-sharp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:30.644052-07:00
 description: "Les fichiers CSV (Comma-Separated Values, ou valeurs s\xE9par\xE9es\
   \ par des virgules) sont un format d'\xE9change de donn\xE9es courant qui repr\xE9\
   sente des donn\xE9es\u2026"
-lastmod: 2024-02-18 23:09:08.852975
+lastmod: 2024-02-19 22:05:16.551362
 model: gpt-4-0125-preview
 summary: "Les fichiers CSV (Comma-Separated Values, ou valeurs s\xE9par\xE9es par\
   \ des virgules) sont un format d'\xE9change de donn\xE9es courant qui repr\xE9sente\

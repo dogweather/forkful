@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/powershell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:26.607005-07:00
 description: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hora\
   \ atual do sistema. Esta opera\xE7\xE3o \xE9 fundamental para tarefas como registrar,\
   \ cronometrar\u2026"
-lastmod: 2024-02-18 23:08:58.379061
+lastmod: 2024-02-19 22:05:05.864551
 model: gpt-4-0125-preview
 summary: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hora atual\
   \ do sistema. Esta opera\xE7\xE3o \xE9 fundamental para tarefas como registrar,\

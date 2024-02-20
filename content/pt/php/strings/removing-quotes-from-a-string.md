@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:38.034299-07:00
 description: "Remover aspas de uma string em PHP significa eliminar aqueles caracteres\
   \ inc\xF4modos de aspas duplas (`\"`) ou simples (`'`) que podem atrapalhar a l\xF3\
   gica do\u2026"
-lastmod: 2024-02-18 23:08:58.229042
+lastmod: 2024-02-19 22:05:05.703126
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em PHP significa eliminar aqueles caracteres\
   \ inc\xF4modos de aspas duplas (`\"`) ou simples (`'`) que podem atrapalhar a l\xF3\

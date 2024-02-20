@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:29.496116-07:00
 description: "\"Werken met XML\" verwijst naar het proces van het lezen, cre\xEBren\
   \ en wijzigen van XML (eXtensible Markup Language)-bestanden met behulp van programmering.\u2026"
-lastmod: 2024-02-18 23:09:01.460037
+lastmod: 2024-02-19 22:05:09.489307
 model: gpt-4-0125-preview
 summary: "\"Werken met XML\" verwijst naar het proces van het lezen, cre\xEBren en\
   \ wijzigen van XML (eXtensible Markup Language)-bestanden met behulp van programmering.\u2026"

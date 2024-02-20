@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/typescript/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:30.944409-07:00
 description: "String interpolatie stelt je in staat om variabelen en expressies in\
   \ strings in te voegen. Dit houdt je code leesbaar en flexibel - geen plus tekens,\
   \ geen\u2026"
-lastmod: 2024-02-18 23:09:01.557489
+lastmod: 2024-02-19 22:05:09.582708
 model: gpt-4-0125-preview
 summary: "String interpolatie stelt je in staat om variabelen en expressies in strings\
   \ in te voegen. Dit houdt je code leesbaar en flexibel - geen plus tekens, geen\u2026"

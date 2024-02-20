@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/rust/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:49.709627-07:00
 description: "En HTTP-foresp\xF8rsel med basisgodkjenning lar et program be om data\
   \ fra en server ved \xE5 inkludere brukernavn og passord i foresp\xF8rselen. Programmerere\u2026"
-lastmod: 2024-02-18 23:08:53.684807
+lastmod: 2024-02-19 22:04:59.818055
 model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel med basisgodkjenning lar et program be om data fra\
   \ en server ved \xE5 inkludere brukernavn og passord i foresp\xF8rselen. Programmerere\u2026"

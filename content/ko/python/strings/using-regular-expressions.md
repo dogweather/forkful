@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:09.020492-07:00
@@ -12,7 +10,7 @@ description: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uBB38\uC790\uC5F4\uC
   \ \uC774\uB97C \uD65C\uC6A9\uD558\uC5EC \uB370\uC774\uD130 \uAC80\uC99D, \uD30C\uC2F1\
   , \uBCC0\uD658\uACFC \uAC19\uC740 \uC791\uC5C5\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\
   \uB2E4."
-lastmod: 2024-02-18 23:09:05.609916
+lastmod: 2024-02-19 22:05:13.524825
 model: gpt-4-0125-preview
 summary: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uBB38\uC790\uC5F4\uC5D0\uC11C\
   \ \uBB38\uC790 \uC870\uD569\uC744 \uC77C\uCE58\uC2DC\uD0A4\uB294 \uB370 \uC0AC\uC6A9\

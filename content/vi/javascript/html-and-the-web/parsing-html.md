@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -9,7 +7,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 tr\xEDch
   t d\u1EEF li\u1EC7u t\u1EEB t\xE0i li\u1EC7u HTML. C\xE1c l\u1EADp tr\xECnh vi\xEA\
   n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c\
   \ v\u1EDBi ho\u1EB7c thao t\xE1c n\u1ED9i dung web,\u2026"
-lastmod: 2024-02-18 23:08:51.133657
+lastmod: 2024-02-19 22:04:56.359519
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 tr\xEDch xu\u1EA5\
   t d\u1EEF li\u1EC7u t\u1EEB t\xE0i li\u1EC7u HTML. C\xE1c l\u1EADp tr\xECnh vi\xEA\

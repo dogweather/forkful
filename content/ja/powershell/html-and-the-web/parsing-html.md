@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/powershell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:52.314505-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.113036
+lastmod: 2024-02-19 22:05:01.556633
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "HTML\u306E\u89E3\u6790"

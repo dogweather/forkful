@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/kotlin/comparing-two-dates/
 date: 2024-01-20 17:33:11.947785-07:00
 description: "Comparing two dates means checking whether one comes before or after\
   \ the other, or if they're the same moment in time. Programmers do this for tasks\
   \ like\u2026"
-lastmod: 2024-02-18 23:09:11.025384
+lastmod: 2024-02-19 22:05:18.527432
 model: gpt-4-1106-preview
 summary: "Comparing two dates means checking whether one comes before or after the\
   \ other, or if they're the same moment in time. Programmers do this for tasks like\u2026"

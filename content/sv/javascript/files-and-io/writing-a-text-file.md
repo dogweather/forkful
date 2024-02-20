@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/javascript/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:15.708907-07:00
 description: "Att skriva en textfil i JavaScript handlar ofta om att skapa och spara\
   \ data i ett enkelt, l\xE4sbart format f\xF6r loggning, export av anv\xE4ndarinmatning\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:52.182494
+lastmod: 2024-02-19 22:04:57.556448
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i JavaScript handlar ofta om att skapa och spara data\
   \ i ett enkelt, l\xE4sbart format f\xF6r loggning, export av anv\xE4ndarinmatning\

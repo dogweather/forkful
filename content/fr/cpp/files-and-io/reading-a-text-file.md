@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/cpp/reading-a-text-file/
 date: 2024-01-20 17:53:58.105345-07:00
 description: "Lire un fichier texte en C++, c'est acc\xE9der au contenu d'un fichier\
   \ stock\xE9 sur votre disque dur, ligne par ligne ou en bloc. Les programmeurs le\
   \ font pour\u2026"
-lastmod: 2024-02-18 23:09:09.180168
+lastmod: 2024-02-19 22:05:16.851900
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte en C++, c'est acc\xE9der au contenu d'un fichier stock\xE9\
   \ sur votre disque dur, ligne par ligne ou en bloc. Les programmeurs le font pour\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/typescript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:22.383905-07:00
@@ -12,7 +10,7 @@ description: "CSV (Comma-Separated Values) \u0915\u0947 \u0938\u093E\u0925 \u091
   \u0930 \u0935\u093F\u092D\u093F\u0928\u094D\u0928 \u092A\u094D\u0932\u0947\u091F\
   \u092B\u0949\u0930\u094D\u092E\u094B\u0902 \u0914\u0930 \u092D\u093E\u0937\u093E\
   \u0913\u0902 \u092E\u0947\u0902 \u0935\u094D\u092F\u093E\u092A\u0915\u2026"
-lastmod: 2024-02-18 23:09:02.920229
+lastmod: 2024-02-19 22:05:10.918763
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\
   \u092E \u0915\u0930\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948 CSV\

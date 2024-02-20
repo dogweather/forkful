@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/arduino/working-with-complex-numbers/
 date: 2024-01-26 04:36:49.107608-07:00
 description: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skrivet\
   \ som `a + bi`. De \xE4r avg\xF6rande f\xF6r vissa matematikintensiva Arduino-projekt\
   \ som\u2026"
-lastmod: 2024-02-18 23:08:52.038809
+lastmod: 2024-02-19 22:04:57.396251
 model: gpt-4-0125-preview
 summary: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skrivet\
   \ som `a + bi`. De \xE4r avg\xF6rande f\xF6r vissa matematikintensiva Arduino-projekt\

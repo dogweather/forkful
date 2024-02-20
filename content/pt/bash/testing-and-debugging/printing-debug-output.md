@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/printing-debug-output/
 date: 2024-01-20 17:51:53.599532-07:00
 description: "Imprimir sa\xEDdas de debug \xE9 basicamente escrever informa\xE7\xF5\
   es sobre o que est\xE1 acontecendo dentro do c\xF3digo enquanto ele \xE9 executado.\
   \ Programadores fazem\u2026"
-lastmod: 2024-02-18 23:08:58.328180
+lastmod: 2024-02-19 22:05:05.810422
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDdas de debug \xE9 basicamente escrever informa\xE7\xF5es\
   \ sobre o que est\xE1 acontecendo dentro do c\xF3digo enquanto ele \xE9 executado.\

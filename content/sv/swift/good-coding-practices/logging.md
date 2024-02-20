@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/swift/logging/
 date: 2024-01-26 01:08:19.841487-07:00
 description: "Loggning \xE4r processen att registrera applikationsbeteenden, fel och\
   \ annan viktig information till ett best\xE4ndigt medium, som en fil eller databas.\u2026"
-lastmod: 2024-02-18 23:08:52.130590
+lastmod: 2024-02-19 22:04:57.497882
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r processen att registrera applikationsbeteenden, fel och annan\
   \ viktig information till ett best\xE4ndigt medium, som en fil eller databas.\u2026"

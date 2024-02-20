@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:16.922077-07:00
 description: "Sapere la lunghezza di una stringa significa contarne i caratteri. I\
   \ programmatori lo fanno per validazione, manipolazione o semplicemente per avere\u2026"
-lastmod: 2024-02-18 23:08:55.672033
+lastmod: 2024-02-19 22:05:02.269998
 model: gpt-4-1106-preview
 summary: "Sapere la lunghezza di una stringa significa contarne i caratteri. I programmatori\
   \ lo fanno per validazione, manipolazione o semplicemente per avere\u2026"

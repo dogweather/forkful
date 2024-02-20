@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:33.299970-07:00
@@ -13,7 +11,7 @@ description: "\uD30C\uC774\uC36C\uC5D0\uC11C \uD45C\uC900 \uC624\uB958\uB85C \uC
   \uC9C0\uB97C \uAD6C\uBD84\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\
   \uD589\uD558\uBA70, \uB514\uBC84\uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uC6A9\
   \uC774\uD558\uAC8C\u2026"
-lastmod: 2024-02-18 23:09:05.650462
+lastmod: 2024-02-19 22:05:13.564415
 model: gpt-4-0125-preview
 summary: "\uD30C\uC774\uC36C\uC5D0\uC11C \uD45C\uC900 \uC624\uB958\uB85C \uC4F0\uAE30\
   \uB294 \uD504\uB85C\uADF8\uB7A8\uC758 \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\

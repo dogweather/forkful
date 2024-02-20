@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:36.551472-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EBFt v\xE0o m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n c\xF3 ngh
   a l\xE0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u nh\u01B0 v\u0103n b\u1EA3n ho\u1EB7\
   c m\xE3 tr\xEAn m\xE1y t\xEDnh c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEA\
   n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u01B0u tr\u1EEF c\u1EA5u h\xECnh,\u2026"
-lastmod: 2024-02-18 23:08:51.206662
+lastmod: 2024-02-19 22:04:56.470780
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt v\xE0o m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n c\xF3 ngh\u0129\
   a l\xE0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u nh\u01B0 v\u0103n b\u1EA3n ho\u1EB7\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/typescript/using-a-debugger/
 date: 2024-01-26 04:11:08.537166-07:00
 description: "Un debugger \xE8 uno strumento che consente di esaminare e modificare\
   \ il funzionamento interno del proprio codice mentre viene eseguito. I programmatori\
   \ lo\u2026"
-lastmod: 2024-02-18 23:08:55.644570
+lastmod: 2024-02-19 22:05:02.241176
 model: gpt-4-0125-preview
 summary: "Un debugger \xE8 uno strumento che consente di esaminare e modificare il\
   \ funzionamento interno del proprio codice mentre viene eseguito. I programmatori\

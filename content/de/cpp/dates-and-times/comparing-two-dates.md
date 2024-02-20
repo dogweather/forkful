@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/cpp/comparing-two-dates/
 date: 2024-01-20 17:32:22.151859-07:00
 description: "Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge\
   \ zu bestimmen. Programmierer machen das, um Ereignisse zu organisieren, Deadlines\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.202070
+lastmod: 2024-02-19 22:05:13.131124
 model: gpt-4-1106-preview
 summary: "Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge zu\
   \ bestimmen. Programmierer machen das, um Ereignisse zu organisieren, Deadlines\

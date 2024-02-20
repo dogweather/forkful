@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/kotlin/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:59:53.197388-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0430\u0437\u0431\u043E\u0440 HTML \u043F\u043E\u0434\u0440
   \u0442\u0430\u0442\u044C. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\
   \u0441\u0442\u044B \u0430\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u0443\u044E\u0442\
   \ HTML, \u0447\u0442\u043E\u0431\u044B\u2026"
-lastmod: 2024-02-18 23:08:56.941332
+lastmod: 2024-02-19 22:05:03.924673
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0437\u0431\u043E\u0440 HTML \u043F\u043E\u0434\u0440\u0430\
   \u0437\u0443\u043C\u0435\u0432\u0430\u0435\u0442 \u0430\u043D\u0430\u043B\u0438\u0437\

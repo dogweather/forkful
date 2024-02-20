@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elm/interpolating-a-string/
 date: 2024-01-20 17:50:47.957806-07:00
 description: "Interpolare una stringa significa inserire variabili o espressioni all'interno\
   \ di una stringa di testo. I programmatori lo fanno per creare messaggi\u2026"
-lastmod: 2024-02-18 23:08:55.793036
+lastmod: 2024-02-19 22:05:02.398452
 model: gpt-4-1106-preview
 summary: "Interpolare una stringa significa inserire variabili o espressioni all'interno\
   \ di una stringa di testo. I programmatori lo fanno per creare messaggi\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/google-apps-script/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:20.546937-07:00
@@ -8,7 +6,7 @@ description: "So s\xE1nh hai ng\xE0y trong Google Apps Script, m\u1ED9t phi\xEAn
   n \u0111\u01B0\u1EE3c t\xF9y ch\u1EC9nh c\u1EE7a JavaScript d\xE0nh cho b\u1ED9\
   \ \u1EE9ng d\u1EE5ng c\u1EE7a Google, l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 quan tr\u1ECD\
   ng \u0111\u1ED1i v\u1EDBi\u2026"
-lastmod: 2024-02-18 23:08:50.234212
+lastmod: 2024-02-19 22:04:55.247714
 model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y trong Google Apps Script, m\u1ED9t phi\xEAn b\u1EA3\
   n \u0111\u01B0\u1EE3c t\xF9y ch\u1EC9nh c\u1EE7a JavaScript d\xE0nh cho b\u1ED9\

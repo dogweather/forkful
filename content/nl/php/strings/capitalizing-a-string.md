@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/php/capitalizing-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:59.642219-07:00
 description: "Het kapitaliseren van een string betekent het veranderen van de eerste\
   \ letter van elk woord naar een hoofdletter. Programmeurs kapitaliseren strings\
   \ voor\u2026"
-lastmod: 2024-02-18 23:09:01.926545
+lastmod: 2024-02-19 22:05:09.949072
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een string betekent het veranderen van de eerste letter\
   \ van elk woord naar een hoofdletter. Programmeurs kapitaliseren strings voor\u2026"

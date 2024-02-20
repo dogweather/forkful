@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:48.998979-07:00
@@ -13,7 +11,7 @@ description: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uD45C\uC900 \uC6
   \uB798\uBA38\uB4E4\uC740 \uC77C\uBC18 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\uACFC\
   \ \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD568\uC73C\uB85C\uC368, \uCD9C\
   \uB825 \uAD00\uB9AC\uB97C \uB354\u2026"
-lastmod: 2024-02-18 23:09:06.838381
+lastmod: 2024-02-19 22:05:14.729324
 model: gpt-4-0125-preview
 summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uD45C\uC900 \uC624\uB958\
   (stderr)\uB85C \uC791\uC131\uD558\uB294 \uAC83\uC740 \uC624\uB958 \uBA54\uC2DC\uC9C0\

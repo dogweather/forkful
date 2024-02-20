@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:34.854352-07:00
@@ -8,7 +6,7 @@ description: "Ghi nh\u1EADt k\xFD, n\xF3i m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn, g
   ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t cu\u1ED1n nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5\
   ng c\u1EE7a b\u1EA1n\u2014n\xF3 ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i,\
   \ v\xE0 c\xE1c h\xE0nh \u0111\u1ED9ng \u0111\xE1ng ch\xFA \xFD kh\xE1c\u2026"
-lastmod: 2024-02-18 23:08:51.143243
+lastmod: 2024-02-19 22:04:56.372340
 model: gpt-4-0125-preview
 summary: "Ghi nh\u1EADt k\xFD, n\xF3i m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn, gi\u1ED1\
   ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t cu\u1ED1n nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:20.478869-07:00
 description: "Calculating a date in the future or past means finding a specific date\
   \ before or after a known one. Programmers do this for features like reminders,\u2026"
-lastmod: 2024-02-18 23:09:11.026354
+lastmod: 2024-02-19 22:05:18.528302
 model: gpt-4-1106-preview
 summary: "Calculating a date in the future or past means finding a specific date before\
   \ or after a known one. Programmers do this for features like reminders,\u2026"

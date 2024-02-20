@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/handling-errors/
 date: 2024-01-21 21:19:09.226800-07:00
 description: "Handling errors in C# is about managing the unexpected\u2014like tripping\
   \ over your shoelaces. Programs can trip over bad data or wonky connections. We\
   \ handle\u2026"
-lastmod: 2024-02-18 23:09:11.061868
+lastmod: 2024-02-19 22:05:18.560947
 model: gpt-4-1106-preview
 summary: "Handling errors in C# is about managing the unexpected\u2014like tripping\
   \ over your shoelaces. Programs can trip over bad data or wonky connections. We\

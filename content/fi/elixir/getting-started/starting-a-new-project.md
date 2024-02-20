@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/starting-a-new-project/
 date: 2024-01-20 18:03:30.608583-07:00
 description: "Uuden projektin aloittaminen Elixiriss\xE4 tarkoittaa uuden sovelluksen\
   \ tai kirjaston kehityksen k\xE4ynnist\xE4mist\xE4. Koodarit tekev\xE4t t\xE4m\xE4\
   n tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4,\u2026"
-lastmod: 2024-02-18 23:09:07.274324
+lastmod: 2024-02-19 22:05:15.168453
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen Elixiriss\xE4 tarkoittaa uuden sovelluksen\
   \ tai kirjaston kehityksen k\xE4ynnist\xE4mist\xE4. Koodarit tekev\xE4t t\xE4m\xE4\

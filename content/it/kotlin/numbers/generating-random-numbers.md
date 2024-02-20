@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/generating-random-numbers/
 date: 2024-01-27 20:34:34.028222-07:00
 description: "Generare numeri casuali nella programmazione riguarda la creazione di\
   \ numeri che non presentano alcun schema prevedibile. I programmatori lo fanno per\u2026"
-lastmod: 2024-02-18 23:08:55.842042
+lastmod: 2024-02-19 22:05:02.450391
 model: gpt-4-0125-preview
 summary: "Generare numeri casuali nella programmazione riguarda la creazione di numeri\
   \ che non presentano alcun schema prevedibile. I programmatori lo fanno per\u2026"

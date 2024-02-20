@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/organizing-code-into-functions/
 date: 2024-01-26 01:11:08.478503-07:00
 description: "\xC5 organisere kode i funksjoner bryter opp oppgaver i gjenbrukbare\
   \ deler, noe som gj\xF8r koden ryddigere og lettere \xE5 vedlikeholde. Vi gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:54.314137
+lastmod: 2024-02-19 22:05:00.465848
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner bryter opp oppgaver i gjenbrukbare deler,\
   \ noe som gj\xF8r koden ryddigere og lettere \xE5 vedlikeholde. Vi gj\xF8r dette\

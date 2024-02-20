@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/using-a-debugger/
 date: 2024-01-26 03:50:07.117440-07:00
 description: "Debuggerin k\xE4ytt\xF6 on kaikki virheiden\u2014\xE4rsytt\xE4vien,\
   \ aikaa vievien koodivirheiden\u2014poistamista. Ohjelmoijat k\xE4ytt\xE4v\xE4t\
   \ vianetsint\xE4\xE4, koska he haluavat l\xF6yt\xE4\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.089137
+lastmod: 2024-02-19 22:05:15.893251
 model: gpt-4-0125-preview
 summary: "Debuggerin k\xE4ytt\xF6 on kaikki virheiden\u2014\xE4rsytt\xE4vien, aikaa\
   \ vievien koodivirheiden\u2014poistamista. Ohjelmoijat k\xE4ytt\xE4v\xE4t vianetsint\xE4\

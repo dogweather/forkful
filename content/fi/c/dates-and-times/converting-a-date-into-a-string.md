@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:07.537895-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi C:ss\xE4 tarkoittaa\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4rakenteen tai aikaleiman k\xE4\xE4nt\xE4mist\xE4 ihmisen\
   \ luettavaan muotoon. Ohjelmoijat suorittavat\u2026"
-lastmod: 2024-02-18 23:09:08.145809
+lastmod: 2024-02-19 22:05:15.946055
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi C:ss\xE4 tarkoittaa\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4rakenteen tai aikaleiman k\xE4\xE4nt\xE4mist\xE4 ihmisen\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/typescript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:10.596042-07:00
 description: "Los arreglos asociativos, o objetos en TypeScript, te permiten usar\
   \ cadenas (o claves) para acceder a pares de valores. Los programadores los utilizan\u2026"
-lastmod: 2024-02-18 23:09:09.695213
+lastmod: 2024-02-19 22:05:17.323815
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o objetos en TypeScript, te permiten usar cadenas\
   \ (o claves) para acceder a pares de valores. Los programadores los utilizan\u2026"

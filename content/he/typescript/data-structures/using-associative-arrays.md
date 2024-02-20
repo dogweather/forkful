@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/typescript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:56.773392-07:00
@@ -14,7 +12,7 @@ description: "\u05DE\u05E2\u05E8\u05DB\u05D9 \u05E9\u05D9\u05D5\u05DA, \u05D0\u0
   \u05EA\u05D1\u05E0\u05D9\u05D5\u05EA \u05D2\u05D9\u05E9\u05D4 \u05DC\u05E0\u05EA\
   \u05D5\u05E0\u05D9\u05DD \u05D9\u05D5\u05EA\u05E8 \u05D3\u05D9\u05E0\u05DE\u05D9\
   \u05D5\u05EA\u2026"
-lastmod: 2024-02-18 23:08:52.562757
+lastmod: 2024-02-19 22:04:58.110732
 model: gpt-4-0125-preview
 summary: "\u05DE\u05E2\u05E8\u05DB\u05D9 \u05E9\u05D9\u05D5\u05DA, \u05D0\u05D5 \u05D0\
   \u05D5\u05D1\u05D9\u05D9\u05E7\u05D8\u05D9\u05DD \u05D1-TypeScript, \u05DE\u05D0\

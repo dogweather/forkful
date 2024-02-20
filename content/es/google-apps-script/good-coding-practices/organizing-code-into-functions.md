@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:25.923473-07:00
 description: "Organizar el c\xF3digo en funciones se trata de estructurar su c\xF3\
   digo de Google Apps Script separando segmentos l\xF3gicos en bloques distintos,\
   \ cada uno\u2026"
-lastmod: 2024-02-18 23:09:09.513824
+lastmod: 2024-02-19 22:05:17.167591
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones se trata de estructurar su c\xF3digo\
   \ de Google Apps Script separando segmentos l\xF3gicos en bloques distintos, cada\

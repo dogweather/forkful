@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:53.067422-07:00
 description: "HTTP \uC694\uCCAD \uC2DC \uAE30\uBCF8 \uC778\uC99D\uC740 \uC0AC\uC6A9\
   \uC790 \uC774\uB984\uACFC \uD328\uC2A4\uC6CC\uB4DC\uB97C \uC11C\uBC84\uC5D0 \uBCF4\
@@ -9,7 +7,7 @@ description: "HTTP \uC694\uCCAD \uC2DC \uAE30\uBCF8 \uC778\uC99D\uC740 \uC0AC\uC
   \uC5B4 \uAC1C\uBC1C\uC790\uB4E4\uC774 \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.812100
+lastmod: 2024-02-19 22:05:14.703580
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD \uC2DC \uAE30\uBCF8 \uC778\uC99D\uC740 \uC0AC\uC6A9\uC790\
   \ \uC774\uB984\uACFC \uD328\uC2A4\uC6CC\uB4DC\uB97C \uC11C\uBC84\uC5D0 \uBCF4\uB0B4\

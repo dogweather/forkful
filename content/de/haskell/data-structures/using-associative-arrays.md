@@ -1,6 +1,4 @@
 ---
-aliases:
-- /de/haskell/using-associative-arrays/
 changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-30 19:11:29.496372-07:00
 description: "Assoziative Arrays oder W\xF6rterb\xFCcher in Haskell handeln davon,\
   \ Schl\xFCssel mit Werten f\xFCr schnelle Nachschlageoperationen und effizientes\
   \ Datenmanagement zu\u2026"
-lastmod: 2024-02-18 23:09:04.909181
+lastmod: 2024-02-19 22:05:12.851512
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays oder W\xF6rterb\xFCcher in Haskell handeln davon, Schl\xFC\
   ssel mit Werten f\xFCr schnelle Nachschlageoperationen und effizientes Datenmanagement\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/bash/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:06.636785-07:00
 description: "Werken met JSON in Bash houdt in dat er JSON-geformatteerde gegevens\
   \ direct vanaf de opdrachtregel worden geparseerd en gegenereerd. Programmeurs doen\
   \ dit\u2026"
-lastmod: 2024-02-18 23:09:02.065969
+lastmod: 2024-02-19 22:05:10.089062
 model: gpt-4-0125-preview
 summary: "Werken met JSON in Bash houdt in dat er JSON-geformatteerde gegevens direct\
   \ vanaf de opdrachtregel worden geparseerd en gegenereerd. Programmeurs doen dit\u2026"

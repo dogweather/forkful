@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/lua/logging/
 date: 2024-01-26 01:07:10.640785-07:00
 description: "El registro (logging) es la pr\xE1ctica de grabar eventos, errores y\
   \ otros puntos de datos significativos que ocurren dentro del ciclo de vida de una\u2026"
-lastmod: 2024-02-18 23:09:10.126517
+lastmod: 2024-02-19 22:05:17.716194
 model: gpt-4-1106-preview
 summary: "El registro (logging) es la pr\xE1ctica de grabar eventos, errores y otros\
   \ puntos de datos significativos que ocurren dentro del ciclo de vida de una\u2026"

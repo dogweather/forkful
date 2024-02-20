@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/typescript/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:15.930001-07:00
 description: "En TypeScript, hallar la longitud de una cadena implica contar la cantidad\
   \ de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para\u2026"
-lastmod: 2024-02-18 23:09:09.693126
+lastmod: 2024-02-19 22:05:17.321964
 model: gpt-4-1106-preview
 summary: "En TypeScript, hallar la longitud de una cadena implica contar la cantidad\
   \ de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para\u2026"

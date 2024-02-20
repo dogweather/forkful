@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/typescript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:31.509667-07:00
 description: "Praca z CSV (Comma-Separated Values, czyli warto\u015Bciami oddzielonymi\
   \ przecinkami) obejmuje odczytywanie z plik\xF3w CSV oraz zapisywanie do nich, co\
   \ jest\u2026"
-lastmod: 2024-02-18 23:08:49.370094
+lastmod: 2024-02-19 22:04:54.290004
 model: gpt-4-0125-preview
 summary: "Praca z CSV (Comma-Separated Values, czyli warto\u015Bciami oddzielonymi\
   \ przecinkami) obejmuje odczytywanie z plik\xF3w CSV oraz zapisywanie do nich, co\

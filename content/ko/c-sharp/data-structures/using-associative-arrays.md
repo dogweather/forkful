@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:25.192856-07:00
@@ -11,7 +9,7 @@ description: "C#\uC5D0\uC11C\uC758 \uC5F0\uAD00 \uBC30\uC5F4 \uB610\uB294 \uB515
   \uC57C \uD560 \uB54C \uC0AC\uC6A9\uD558\uBA70, \uBCF5\uC7A1\uD55C \uC560\uD50C\uB9AC\
   \uCF00\uC774\uC158\uC5D0\uC11C\uC758 \uB370\uC774\uD130 \uAD00\uB9AC\uB97C \uC190\
   \uC27D\uAC8C \uD574\uC90D\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.208106
+lastmod: 2024-02-19 22:05:14.134458
 model: gpt-4-0125-preview
 summary: "C#\uC5D0\uC11C\uC758 \uC5F0\uAD00 \uBC30\uC5F4 \uB610\uB294 \uB515\uC154\
   \uB108\uB9AC\uB294 \uD0A4\uC640 \uAC12\uC758 \uC30D\uC744 \uC800\uC7A5\uD558\uACE0\

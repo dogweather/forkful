@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:09.322480-07:00
 description: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt att\
   \ filtrera text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar. Programmerare\
   \ g\xF6r detta\u2026"
-lastmod: 2024-02-18 23:08:51.986790
+lastmod: 2024-02-19 22:04:57.340409
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt att filtrera\
   \ text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar. Programmerare\

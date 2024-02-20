@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/comparing-two-dates/
 date: 2024-01-20 17:33:55.434949-07:00
 description: "Comparing two dates involves figuring out their chronological relationship\u2014\
   are they the same, is one earlier, or maybe later? Programmers do this to\u2026"
-lastmod: 2024-02-18 23:09:10.819570
+lastmod: 2024-02-19 22:05:18.339302
 model: gpt-4-1106-preview
 summary: "Comparing two dates involves figuring out their chronological relationship\u2014\
   are they the same, is one earlier, or maybe later? Programmers do this to\u2026"

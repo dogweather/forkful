@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/bash/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:36.706359-07:00
 description: "Pisanie test\xF3w w Bashu obejmuje tworzenie skrypt\xF3w testowych w\
   \ celu weryfikacji funkcjonalno\u015Bci twoich skrypt\xF3w Bash. Programi\u015B\
   ci przeprowadzaj\u0105 testy,\u2026"
-lastmod: 2024-02-18 23:08:49.788231
+lastmod: 2024-02-19 22:04:54.728146
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Bashu obejmuje tworzenie skrypt\xF3w testowych w celu\
   \ weryfikacji funkcjonalno\u015Bci twoich skrypt\xF3w Bash. Programi\u015Bci przeprowadzaj\u0105\

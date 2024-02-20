@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/typescript/creating-a-temporary-file/
 date: 2024-01-20 17:41:27.602567-07:00
 description: "Tempor\xE4re Dateien sind kurzlebige Datenspeicher, die w\xE4hrend der\
   \ Laufzeit eines Programms erstellt werden. Programmierer nutzen sie f\xFCr Daten,\
   \ die nur\u2026"
-lastmod: 2024-02-18 23:09:04.617255
+lastmod: 2024-02-19 22:05:12.573966
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind kurzlebige Datenspeicher, die w\xE4hrend der Laufzeit\
   \ eines Programms erstellt werden. Programmierer nutzen sie f\xFCr Daten, die nur\u2026"

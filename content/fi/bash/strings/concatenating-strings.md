@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/concatenating-strings/
 date: 2024-01-20 17:34:01.597668-07:00
 description: "Yksinkertaistettuna, merkkijonojen yhdist\xE4minen on tapa liitt\xE4\
   \xE4 tekstej\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska tarvitsevat usein\
   \ luoda dynaamisia\u2026"
-lastmod: 2024-02-18 23:09:07.793634
+lastmod: 2024-02-19 22:05:15.625138
 model: gpt-4-1106-preview
 summary: "Yksinkertaistettuna, merkkijonojen yhdist\xE4minen on tapa liitt\xE4\xE4\
   \ tekstej\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska tarvitsevat usein\

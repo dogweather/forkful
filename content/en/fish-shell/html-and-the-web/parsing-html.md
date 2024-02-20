@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/parsing-html/
 date: 2024-02-03 19:02:45.946647-07:00
 description: "Parsing HTML is about extracting data or information from HTML content,\
   \ a common task when dealing with web data. Programmers do this to automate the\u2026"
-lastmod: 2024-02-18 23:09:11.478938
+lastmod: 2024-02-19 22:05:18.932655
 model: gpt-4-0125-preview
 summary: "Parsing HTML is about extracting data or information from HTML content,\
   \ a common task when dealing with web data. Programmers do this to automate the\u2026"

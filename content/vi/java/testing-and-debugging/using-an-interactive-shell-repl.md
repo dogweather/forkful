@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/java/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:44.621354-07:00
@@ -8,7 +6,7 @@ description: "REPL (Read-Eval-Print Loop - V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110
   nh gi\xE1-In) l\xE0 m\u1ED9t shell t\u01B0\u01A1ng t\xE1c x\u1EED l\xFD \u0111\u01A1\
   n l\u1EBB nh\u1EADp t\u1EEB ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi m\xE3 l\u1EC7\
   nh v\xE0 tr\u1EA3 v\u1EC1 k\u1EBFt qu\u1EA3. L\u1EADp\u2026"
-lastmod: 2024-02-18 23:08:50.559046
+lastmod: 2024-02-19 22:04:55.654572
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop - V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh\
   \ gi\xE1-In) l\xE0 m\u1ED9t shell t\u01B0\u01A1ng t\xE1c x\u1EED l\xFD \u0111\u01A1\

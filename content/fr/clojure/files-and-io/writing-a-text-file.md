@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/clojure/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:30.096080-07:00
 description: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de modifier\
   \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\u2026"
-lastmod: 2024-02-18 23:09:08.406858
+lastmod: 2024-02-19 22:05:16.199079
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de modifier\
   \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\u2026"

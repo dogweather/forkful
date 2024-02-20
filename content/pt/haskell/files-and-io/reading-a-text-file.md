@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/haskell/reading-a-text-file/
 date: 2024-01-20 17:54:23.433679-07:00
 description: "Ler um arquivo de texto significa acessar o conte\xFAdo armazenado.\
   \ Programadores fazem isso para manipular, analisar ou exibir dados."
-lastmod: 2024-02-18 23:08:58.216478
+lastmod: 2024-02-19 22:05:05.689614
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto significa acessar o conte\xFAdo armazenado. Programadores\
   \ fazem isso para manipular, analisar ou exibir dados."

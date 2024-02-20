@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/cpp/working-with-toml/
 date: 2024-01-26 04:19:32.635709-07:00
 description: "TOML (Tom's Obvious, Minimal Language, ou en fran\xE7ais, \"Langage\
   \ Minimal et \xC9vident de Tom\") est un format de s\xE9rialisation de donn\xE9\
   es facile \xE0 lire gr\xE2ce\u2026"
-lastmod: 2024-02-18 23:09:09.187547
+lastmod: 2024-02-19 22:05:16.858321
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language, ou en fran\xE7ais, \"Langage Minimal\
   \ et \xC9vident de Tom\") est un format de s\xE9rialisation de donn\xE9es facile\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/java/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:38.901649-07:00
 description: "\xC5 skrive til standard feil (stderr) inneb\xE6rer \xE5 sende ut feilmeldinger\
   \ og diagnostikk til konsollen eller terminalen. Programmerere gj\xF8r dette for\
   \ \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.786323
+lastmod: 2024-02-19 22:04:59.928438
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) inneb\xE6rer \xE5 sende ut feilmeldinger\
   \ og diagnostikk til konsollen eller terminalen. Programmerere gj\xF8r dette for\

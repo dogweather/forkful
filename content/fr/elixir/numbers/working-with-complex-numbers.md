@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/elixir/working-with-complex-numbers/
 date: 2024-01-26 04:39:06.475238-07:00
 description: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire\
   \ (comme `3 + 4i`). Ils sont utilis\xE9s en ing\xE9nierie, en physique et pour certains\u2026"
-lastmod: 2024-02-18 23:09:08.427392
+lastmod: 2024-02-19 22:05:16.217592
 model: gpt-4-0125-preview
 summary: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire\
   \ (comme `3 + 4i`). Ils sont utilis\xE9s en ing\xE9nierie, en physique et pour certains\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/lua/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:49.146099-07:00
 description: "Analisar uma data a partir de uma string envolve converter representa\xE7\
   \xF5es textuais de datas e hor\xE1rios em um formato que pode ser facilmente manipulado,\u2026"
-lastmod: 2024-02-18 23:08:58.291307
+lastmod: 2024-02-19 22:05:05.770441
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve converter representa\xE7\
   \xF5es textuais de datas e hor\xE1rios em um formato que pode ser facilmente manipulado,\u2026"

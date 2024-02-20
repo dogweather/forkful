@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:29.172102-07:00
 description: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n\
   \ de computadoras, involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a\
   \ un n\xFAmero\u2026"
-lastmod: 2024-02-18 23:09:09.500170
+lastmod: 2024-02-19 22:05:17.155682
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n de computadoras,\
   \ involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a un n\xFAmero\u2026"

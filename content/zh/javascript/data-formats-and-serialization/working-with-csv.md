@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/javascript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:41.197207-07:00
@@ -12,7 +10,7 @@ description: "\u5728JavaScript\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u969
   \u7CFB\u7EDF\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u65E2\u7B80\u5355\u53C8\u8F7B\
   \u91CF\uFF0C\u5BF9\u4E8E\u50CFJSON\u8FD9\u6837\u66F4\u590D\u6742\u7684\u683C\u5F0F\
   \u53EF\u80FD\u662F\u8FC7\u5EA6\u7684\u3002"
-lastmod: 2024-02-18 23:08:59.499789
+lastmod: 2024-02-19 22:05:07.295127
 model: gpt-4-0125-preview
 summary: "\u5728JavaScript\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\
   \uFF09\u6D89\u53CA\u89E3\u6790\u6216\u751F\u6210CSV\u6587\u4EF6\uFF0C\u4EE5\u4FBF\

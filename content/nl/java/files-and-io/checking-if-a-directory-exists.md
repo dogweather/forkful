@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/java/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:55.034884-07:00
 description: "Controleren of een directory bestaat betekent verifi\xEBren dat deze\
   \ er is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs\
   \ doen dit\u2026"
-lastmod: 2024-02-18 23:09:01.729080
+lastmod: 2024-02-19 22:05:09.748805
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat betekent verifi\xEBren dat deze er\
   \ is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs doen\

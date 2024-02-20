@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/ruby/refactoring/
 date: 2024-01-26 03:36:35.637450-07:00
 description: "Le refactorisage est le processus de restructuration du code informatique\
   \ existant sans en changer le comportement externe. Les programmeurs refactorisent\u2026"
-lastmod: 2024-02-18 23:09:09.416403
+lastmod: 2024-02-19 22:05:17.078377
 model: gpt-4-0125-preview
 summary: "Le refactorisage est le processus de restructuration du code informatique\
   \ existant sans en changer le comportement externe. Les programmeurs refactorisent\u2026"

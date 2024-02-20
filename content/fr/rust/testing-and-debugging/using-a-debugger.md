@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/using-a-debugger/
 date: 2024-01-26 04:10:01.993126-07:00
 description: "Utiliser un d\xE9bogueur, c'est comme se donner une vision aux rayons\
   \ X pour jeter un coup d'\u0153il \xE0 l'ex\xE9cution de votre code. Les programmeurs\
   \ le font pour\u2026"
-lastmod: 2024-02-18 23:09:08.533951
+lastmod: 2024-02-19 22:05:16.314720
 model: gpt-4-0125-preview
 summary: "Utiliser un d\xE9bogueur, c'est comme se donner une vision aux rayons X\
   \ pour jeter un coup d'\u0153il \xE0 l'ex\xE9cution de votre code. Les programmeurs\

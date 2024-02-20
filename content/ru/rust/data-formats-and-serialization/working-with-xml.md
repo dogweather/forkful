@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/rust/working-with-xml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:55.208736-07:00
@@ -12,7 +10,7 @@ description: "XML, \u0447\u0442\u043E \u0440\u0430\u0441\u0448\u0438\u0444\u0440
   \u043B\u043E\u0432\u043D\u043E\u0433\u043E \u043A\u0443\u0437\u0435\u043D\u0430\
   \ JSON. \u0421 XML \u0432\u0430\u043C \u043F\u0440\u0438\u0434\u0435\u0442\u0441\
   \u044F\u2026"
-lastmod: 2024-02-18 23:08:56.764919
+lastmod: 2024-02-19 22:05:03.625522
 model: gpt-4-0125-preview
 summary: "XML, \u0447\u0442\u043E \u0440\u0430\u0441\u0448\u0438\u0444\u0440\u043E\
   \u0432\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u043A\u0430\u043A eXtensible Markup\

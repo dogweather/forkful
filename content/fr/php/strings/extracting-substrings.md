@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/extracting-substrings/
 date: 2024-01-20 17:46:13.414518-07:00
 description: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout de\
   \ bois d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:08.910032
+lastmod: 2024-02-19 22:05:16.603077
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout de bois\
   \ d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne de\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:13.640998-07:00
 description: "HTTP \uC694\uCCAD\uC744 Basic \uC778\uC99D\uACFC \uD568\uAED8 \uBCF4\
   \uB0B4\uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\uBC88\
@@ -10,7 +8,7 @@ description: "HTTP \uC694\uCCAD\uC744 Basic \uC778\uC99D\uACFC \uD568\uAED8 \uBC
   \uC774\uD130\uC5D0 \uC811\uADFC\uD560 \uB54C \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.286471
+lastmod: 2024-02-19 22:05:14.206442
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC744 Basic \uC778\uC99D\uACFC \uD568\uAED8 \uBCF4\uB0B4\
   \uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\uBC88\uD638\

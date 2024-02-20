@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:16.315792-07:00
 description: "Att j\xE4mf\xF6ra tv\xE5 datum i Visual Basic for Applications (VBA)\
   \ inneb\xE4r att best\xE4mma deras kronologiska f\xF6rh\xE5llande till varandra.\
   \ Programmerare g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.639745
+lastmod: 2024-02-19 22:04:56.963424
 model: gpt-4-0125-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Visual Basic for Applications (VBA) inneb\xE4\
   r att best\xE4mma deras kronologiska f\xF6rh\xE5llande till varandra. Programmerare\

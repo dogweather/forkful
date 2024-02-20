@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/lua/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:49.390749-07:00
 description: "Capitalizar una cadena implica modificar el primer car\xE1cter de cada\
   \ palabra en una oraci\xF3n para que sea may\xFAscula, mientras se asegura de que\
   \ el resto\u2026"
-lastmod: 2024-02-18 23:09:10.101576
+lastmod: 2024-02-19 22:05:17.693220
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica modificar el primer car\xE1cter de cada palabra\
   \ en una oraci\xF3n para que sea may\xFAscula, mientras se asegura de que el resto\u2026"

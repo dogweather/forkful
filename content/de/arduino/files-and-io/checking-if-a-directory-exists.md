@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/arduino/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:42.523345-07:00
 description: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob ein\
   \ Verzeichnis auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert,\
   \ wichtig, um\u2026"
-lastmod: 2024-02-18 23:09:05.160663
+lastmod: 2024-02-19 22:05:13.092279
 model: gpt-4-0125-preview
 summary: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob ein Verzeichnis\
   \ auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert, wichtig, um\u2026"

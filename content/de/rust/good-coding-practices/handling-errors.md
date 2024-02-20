@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/rust/handling-errors/
 date: 2024-01-26 00:57:14.337443-07:00
 description: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge\
   \ schiefgehen. Entwickler machen das, um das Unerwartete zu handhaben, und um\u2026"
-lastmod: 2024-02-18 23:09:04.649366
+lastmod: 2024-02-19 22:05:12.604306
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge schiefgehen.\
   \ Entwickler machen das, um das Unerwartete zu handhaben, und um\u2026"

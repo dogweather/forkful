@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/using-a-debugger/
 date: 2024-01-26 04:09:53.031444-07:00
 description: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att\
   \ pausa sin kod, inspektera variabler och stega igenom sin kod rad f\xF6r rad. Folk\
   \ g\xF6r det\u2026"
-lastmod: 2024-02-18 23:08:52.299601
+lastmod: 2024-02-19 22:04:57.689895
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att pausa\
   \ sin kod, inspektera variabler och stega igenom sin kod rad f\xF6r rad. Folk g\xF6\

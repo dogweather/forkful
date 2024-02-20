@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/haskell/searching-and-replacing-text/
 date: 2024-01-20 17:57:50.562265-07:00
 description: "La ricerca e la sostituzione di testo \xE8 una manipolazione di stringhe\
   \ in cui troviamo certo contenuto e lo rimpiazziamo con altro. I programmatori lo\u2026"
-lastmod: 2024-02-18 23:08:55.915529
+lastmod: 2024-02-19 22:05:02.525585
 model: gpt-4-1106-preview
 summary: "La ricerca e la sostituzione di testo \xE8 una manipolazione di stringhe\
   \ in cui troviamo certo contenuto e lo rimpiazziamo con altro. I programmatori lo\u2026"

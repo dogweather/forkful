@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:12.131204-07:00
@@ -11,7 +9,7 @@ description: "\u5173\u8054\u6570\u7EC4\uFF0C\u5728JavaScript\u4E2D\u66F4\u51C6\u
   \u662F\u6570\u5B57\u7D22\u5F15\u6765\u8BBF\u95EE\u5B83\u4EEC\u65F6\uFF0C\u8FD9\u975E\
   \u5E38\u65B9\u4FBF\uFF0C\u4F7F\u4F60\u7684\u4EE3\u7801\u66F4\u6613\u8BFB\u548C\u7075\
   \u6D3B\u3002"
-lastmod: 2024-02-18 23:08:59.473103
+lastmod: 2024-02-19 22:05:07.259250
 model: gpt-4-0125-preview
 summary: "\u5173\u8054\u6570\u7EC4\uFF0C\u5728JavaScript\u4E2D\u66F4\u51C6\u786E\u5730\
   \u79F0\u4E3A\u5BF9\u8C61\uFF0C\u8BA9\u4F60\u80FD\u591F\u5C06\u952E\u6620\u5C04\u5230\

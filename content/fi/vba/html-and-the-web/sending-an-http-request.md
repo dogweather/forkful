@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:42.188267-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Visual Basic for Applications (VBA)\
   \ -ohjelmassa tarkoittaa web-resurssien tai -palveluiden ohjelmallista k\xE4ytt\xF6\
   \xE4 tekem\xE4ll\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.406935
+lastmod: 2024-02-19 22:05:15.292514
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Visual Basic for Applications (VBA) -ohjelmassa\
   \ tarkoittaa web-resurssien tai -palveluiden ohjelmallista k\xE4ytt\xF6\xE4 tekem\xE4\

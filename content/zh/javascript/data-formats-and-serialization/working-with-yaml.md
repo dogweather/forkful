@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/javascript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:39.591715-07:00
@@ -11,7 +9,7 @@ description: "YAML\uFF0C\u5373 \"YAML Ain't Markup Language\"\uFF08YAML \u4E0D\u
   \u8BED\u8A00\u7684\u6570\u636E\u4EA4\u6362\uFF0C\u56E0\u4E3A\u4E0E JSON \u6216 XML\
   \ \u76F8\u6BD4\uFF0C\u5B83\u7684\u7B80\u5355\u6027\u548C\u53EF\u8BFB\u6027\u66F4\
   \u5F3A\u3002"
-lastmod: 2024-02-18 23:08:59.497843
+lastmod: 2024-02-19 22:05:07.292438
 model: gpt-4-0125-preview
 summary: "YAML\uFF0C\u5373 \"YAML Ain't Markup Language\"\uFF08YAML \u4E0D\u662F\u6807\
   \u8BB0\u8BED\u8A00\uFF09\u7684\u7F29\u5199\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\

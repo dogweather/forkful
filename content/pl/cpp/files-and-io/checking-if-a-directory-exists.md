@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/cpp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:53.687805-07:00
 description: "Sprawdzanie, czy katalog istnieje, polega na okre\u015Bleniu obecno\u015B\
   ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 przed wykonaniem operacji\
   \ takich jak czytanie z plik\xF3w\u2026"
-lastmod: 2024-02-18 23:08:49.925873
+lastmod: 2024-02-19 22:04:54.874125
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje, polega na okre\u015Bleniu obecno\u015B\
   ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 przed wykonaniem operacji\

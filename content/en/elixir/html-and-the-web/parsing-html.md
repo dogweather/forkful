@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/parsing-html/
 date: 2024-02-03 19:02:42.400756-07:00
 description: "Parsing HTML in Elixir involves extracting information from HTML documents.\
   \ Programmers do this to programmatically interact with web pages, scrape data,\u2026"
-lastmod: 2024-02-18 23:09:10.763464
+lastmod: 2024-02-19 22:05:18.288925
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Elixir involves extracting information from HTML documents.\
   \ Programmers do this to programmatically interact with web pages, scrape data,\u2026"

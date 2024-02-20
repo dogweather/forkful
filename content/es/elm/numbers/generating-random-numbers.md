@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elm/generating-random-numbers/
 date: 2024-01-27 20:33:30.339195-07:00
 description: "Generar n\xFAmeros aleatorios en Elm implica crear valores num\xE9ricos\
   \ impredecibles que son esenciales para aplicaciones como juegos, simulaciones y\u2026"
-lastmod: 2024-02-18 23:09:09.886166
+lastmod: 2024-02-19 22:05:17.497173
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en Elm implica crear valores num\xE9ricos\
   \ impredecibles que son esenciales para aplicaciones como juegos, simulaciones y\u2026"

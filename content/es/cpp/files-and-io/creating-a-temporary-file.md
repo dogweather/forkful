@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/cpp/creating-a-temporary-file/
 date: 2024-01-20 17:39:42.685677-07:00
 description: "Crear un archivo temporal es hacer un fichero que s\xF3lo necesitas\
   \ durante el tiempo de ejecuci\xF3n de tu programa. Los programadores lo hacen para\
   \ almacenar\u2026"
-lastmod: 2024-02-18 23:09:10.332952
+lastmod: 2024-02-19 22:05:17.898862
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es hacer un fichero que s\xF3lo necesitas durante\
   \ el tiempo de ejecuci\xF3n de tu programa. Los programadores lo hacen para almacenar\u2026"

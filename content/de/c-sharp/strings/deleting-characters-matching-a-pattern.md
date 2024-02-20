@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/c-sharp/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:43.676244-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, dient dazu,\
   \ Strings von nicht ben\xF6tigten oder unerw\xFCnschten Zeichen zu bereinigen. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.854749
+lastmod: 2024-02-19 22:05:12.799466
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, dient dazu, Strings\
   \ von nicht ben\xF6tigten oder unerw\xFCnschten Zeichen zu bereinigen. Programmierer\u2026"

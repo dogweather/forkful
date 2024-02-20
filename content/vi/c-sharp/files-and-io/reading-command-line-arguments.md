@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c-sharp/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:00.818618-07:00
@@ -9,7 +7,7 @@ description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho p
   o c\u1EE7a ng\u01B0\u1EDDi d\xF9ng \u0111\u01B0\u1EE3c cung c\u1EA5p khi kh\u1EDF\
   i ch\u1EA1y. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3\u2026"
-lastmod: 2024-02-18 23:08:50.715493
+lastmod: 2024-02-19 22:04:55.853651
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
   p m\u1ED9t ch\u01B0\u01A1ng tr\xECnh C# x\u1EED l\xFD c\xE1c \u0111\u1EA7u v\xE0\

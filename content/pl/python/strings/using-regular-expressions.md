@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/python/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:13.433636-07:00
 description: "Wyra\u017Cenia regularne (regex) to wzorce s\u0142u\u017C\u0105ce do\
   \ wyszukiwania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci\
   \ wykorzystuj\u0105 je do wyszukiwania, edycji\u2026"
-lastmod: 2024-02-18 23:08:49.212265
+lastmod: 2024-02-19 22:04:54.123104
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) to wzorce s\u0142u\u017C\u0105ce do wyszukiwania\
   \ kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci wykorzystuj\u0105\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/powershell/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:58:48.403760-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043E\u044
   \u0435\u0434\u043E\u0442\u0432\u0440\u0430\u0442\u0438\u0442\u044C \u0441\u0431\u043E\
   \u0438 \u0438 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u0438\u0442\
   \u044C\u2026"
-lastmod: 2024-02-18 23:08:57.267184
+lastmod: 2024-02-19 22:05:04.438163
 model: gpt-4-0125-preview
 summary: "\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043E\u0448\u0438\
   \u0431\u043E\u043A \u0432 PowerShell \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442\

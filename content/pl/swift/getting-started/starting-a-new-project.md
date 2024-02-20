@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/starting-a-new-project/
 date: 2024-01-20 18:04:32.695449-07:00
 description: "Co to jest i dlaczego? Rozpoczynanie nowego projektu to stworzenie podstaw\
   \ dla Twojego kodu \u015Awift. Programi\u015Bci robi\u0105 to, aby zacz\u0105\u0107\
   \ czyst\u0105 kart\u0105, z\u2026"
-lastmod: 2024-02-18 23:08:49.953608
+lastmod: 2024-02-19 22:04:54.903678
 model: gpt-4-1106-preview
 summary: "Co to jest i dlaczego? Rozpoczynanie nowego projektu to stworzenie podstaw\
   \ dla Twojego kodu \u015Awift. Programi\u015Bci robi\u0105 to, aby zacz\u0105\u0107\

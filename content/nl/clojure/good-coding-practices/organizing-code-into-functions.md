@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/clojure/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:48.922649-07:00
 description: "Code in functies opdelen gaat over het inpakken van codeblokken die\
   \ specifieke taken uitvoeren. Dit maakt je code schoon, makkelijker te onderhouden,\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:01.485828
+lastmod: 2024-02-19 22:05:09.513969
 model: gpt-4-0125-preview
 summary: "Code in functies opdelen gaat over het inpakken van codeblokken die specifieke\
   \ taken uitvoeren. Dit maakt je code schoon, makkelijker te onderhouden, en\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/creating-a-temporary-file/
 date: 2024-02-01 21:30:30.239855-07:00
 description: "Creating a temporary file in Visual Basic for Applications (VBA) involves\
   \ programmatically generating a file for short-term use, typically for data\u2026"
-lastmod: 2024-02-18 23:09:10.908805
+lastmod: 2024-02-19 22:05:18.420370
 model: gpt-4-0125-preview
 summary: "Creating a temporary file in Visual Basic for Applications (VBA) involves\
   \ programmatically generating a file for short-term use, typically for data\u2026"

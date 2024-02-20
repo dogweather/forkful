@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/javascript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:10.606316-07:00
 description: "Enviar um pedido HTTP com autentica\xE7\xE3o b\xE1sica significa incluir\
   \ credenciais de usu\xE1rio e senha codificados em base-64 no cabe\xE7alho do pedido.\u2026"
-lastmod: 2024-02-18 23:08:58.531965
+lastmod: 2024-02-19 22:05:06.027230
 model: gpt-4-1106-preview
 summary: "Enviar um pedido HTTP com autentica\xE7\xE3o b\xE1sica significa incluir\
   \ credenciais de usu\xE1rio e senha codificados em base-64 no cabe\xE7alho do pedido.\u2026"

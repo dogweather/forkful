@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elixir/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:57.128838-07:00
@@ -9,7 +7,7 @@ description: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh 
   n gi\u1EA3n h\xF3a ho\u1EB7c ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t \u0111\u1ED9 ch\xED\
   nh x\xE1c nh\u1EA5t \u0111\u1ECBnh. Vi\u1EC7c l\xE0m n\xE0y h\u1EEFu \xEDch cho\
   \ vi\u1EC7c\u2026"
-lastmod: 2024-02-18 23:08:50.362573
+lastmod: 2024-02-19 22:04:55.402868
 model: gpt-4-0125-preview
 summary: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh ch\xFA\
   ng v\u1EC1 m\u1ED9t gi\xE1 tr\u1ECB g\u1EA7n nh\u1EA5t \u0111\u1EC3 \u0111\u01A1\

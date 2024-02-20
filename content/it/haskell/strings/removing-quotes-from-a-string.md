@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/haskell/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:05.828595-07:00
 description: "Rimuovere le virgolette da una stringa significa togliere tutti i segni\
   \ di virgolettatura\u2014sia singoli (' ') che doppi (\" \")\u2014che fanno parte\
   \ dei dati della\u2026"
-lastmod: 2024-02-18 23:08:55.918571
+lastmod: 2024-02-19 22:05:02.528395
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa togliere tutti i segni\
   \ di virgolettatura\u2014sia singoli (' ') che doppi (\" \")\u2014che fanno parte\

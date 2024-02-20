@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:51.383596-07:00
 description: "Un REPL (Read-Eval-Print Loop - Ciclo di Lettura-Valutazione-Stampa)\
   \ \xE8 un ambiente di programmazione informatica semplice e interattivo. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:55.847352
+lastmod: 2024-02-19 22:05:02.455978
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print Loop - Ciclo di Lettura-Valutazione-Stampa) \xE8\
   \ un ambiente di programmazione informatica semplice e interattivo. I programmatori\u2026"

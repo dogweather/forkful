@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/rust/rounding-numbers/
 date: 2024-01-25 03:00:16.895639-07:00
 description: "Rounding numbers means adjusting them to the nearest whole number or\
   \ a fraction with a certain precision. Programmers round numbers to simplify values\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:10.843525
+lastmod: 2024-02-19 22:05:18.360850
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to the nearest whole number or a fraction\
   \ with a certain precision. Programmers round numbers to simplify values for\u2026"

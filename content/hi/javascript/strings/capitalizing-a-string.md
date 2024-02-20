@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:35.217988-07:00
@@ -14,7 +12,7 @@ description: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u09
   \u0902 \u0915\u094B \u091C\u0948\u0938\u0947 \u0915\u093E \u0924\u0948\u0938\u093E\
   \ \u0930\u0916\u0928\u093E\u0964 \u091C\u093E\u0935\u093E\u0938\u094D\u0915\u094D\
   \u0930\u093F\u092A\u094D\u091F \u092E\u0947\u0902\u2026"
-lastmod: 2024-02-18 23:09:04.013845
+lastmod: 2024-02-19 22:05:11.996087
 model: gpt-4-0125-preview
 summary: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u0915\u0948\
   \u092A\u093F\u091F\u0932\u093E\u0907\u091C\u093C \u0915\u0930\u0928\u0947 \u0915\

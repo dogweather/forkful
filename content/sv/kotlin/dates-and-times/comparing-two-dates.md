@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/comparing-two-dates/
 date: 2024-01-20 17:33:30.575466-07:00
 description: "J\xE4mf\xF6ra tv\xE5 datum handlar om att se vilket som kommer f\xF6\
   rst eller hur l\xE5ng tid som har passerat mellan dem. Programmerare g\xF6r detta\
   \ f\xF6r att hantera\u2026"
-lastmod: 2024-02-18 23:08:51.763908
+lastmod: 2024-02-19 22:04:57.098284
 model: gpt-4-1106-preview
 summary: "J\xE4mf\xF6ra tv\xE5 datum handlar om att se vilket som kommer f\xF6rst\
   \ eller hur l\xE5ng tid som har passerat mellan dem. Programmerare g\xF6r detta\

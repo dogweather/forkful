@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/bash/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:50.831419-07:00
 description: "Il recupero della data corrente in Bash comporta l'utilizzo di comandi\
   \ integrati per visualizzare la data e l'ora in vari formati. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:56.062502
+lastmod: 2024-02-19 22:05:02.682248
 model: gpt-4-0125-preview
 summary: "Il recupero della data corrente in Bash comporta l'utilizzo di comandi integrati\
   \ per visualizzare la data e l'ora in vari formati. I programmatori\u2026"

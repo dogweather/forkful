@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/haskell/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:40.394195-07:00
 description: "HTML parsen betekent gegevens uit HTML-documenten extraheren - HTML\
   \ is tenslotte de steiger van het web. Programmeurs parsen HTML om gegevensschrapen\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.896361
+lastmod: 2024-02-19 22:05:09.920335
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent gegevens uit HTML-documenten extraheren - HTML is tenslotte\
   \ de steiger van het web. Programmeurs parsen HTML om gegevensschrapen te\u2026"

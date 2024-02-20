@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/lua/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:35.680356-07:00
@@ -14,7 +12,7 @@ description: "HTML \u0915\u094B \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u092
   \u0928 \u0915\u093E\u0930\u094D\u092F\u094B\u0902 \u0915\u0947 \u0932\u093F\u090F\
   \ \u092E\u0939\u0924\u094D\u0935\u092A\u0942\u0930\u094D\u0923 \u0939\u0948\u0964\
   \u2026"
-lastmod: 2024-02-18 23:09:03.571366
+lastmod: 2024-02-19 22:05:11.560556
 model: gpt-4-0125-preview
 summary: "HTML \u0915\u094B \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u0947\
   \ \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 HTML \u0926\u0938\u094D\u0924\

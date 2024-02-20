@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/bash/working-with-xml/
 date: 2024-01-26 04:27:25.199448-07:00
 description: "Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren\
   \ von Daten im Extensible Markup Language-Format. Programmierer ringen mit XML,\
   \ da es\u2026"
-lastmod: 2024-02-18 23:09:05.080242
+lastmod: 2024-02-19 22:05:13.015489
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren von\
   \ Daten im Extensible Markup Language-Format. Programmierer ringen mit XML, da es\u2026"

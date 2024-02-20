@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/rust/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:08.802729-07:00
 description: "Escribir un archivo de texto en Rust implica crear, escribir y, potencialmente,\
   \ a\xF1adir datos a un archivo en el sistema de archivos. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:09.768992
+lastmod: 2024-02-19 22:05:17.390676
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Rust implica crear, escribir y, potencialmente,\
   \ a\xF1adir datos a un archivo en el sistema de archivos. Los programadores\u2026"

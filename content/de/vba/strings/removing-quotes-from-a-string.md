@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/vba/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:17.397436-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in VBA bedeutet,\
   \ die Instanzen von einfachen (`'`) oder doppelten (`\"`) Anf\xFChrungszeichen zu\u2026"
-lastmod: 2024-02-18 23:09:04.674681
+lastmod: 2024-02-19 22:05:12.628567
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in VBA bedeutet,\
   \ die Instanzen von einfachen (`'`) oder doppelten (`\"`) Anf\xFChrungszeichen zu\u2026"

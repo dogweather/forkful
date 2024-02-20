@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:30.155216-07:00
 description: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Google Apps Script,\
   \ ett molnbaserat skriptspr\xE5k f\xF6r automatisering av uppgifter \xF6ver Googles\
   \ produkter, \xE4r\u2026"
-lastmod: 2024-02-18 23:08:51.364288
+lastmod: 2024-02-19 22:04:56.659373
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Google Apps Script,\
   \ ett molnbaserat skriptspr\xE5k f\xF6r automatisering av uppgifter \xF6ver Googles\

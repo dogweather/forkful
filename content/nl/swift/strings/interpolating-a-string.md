@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:44.359274-07:00
 description: "Het interpoleren van een string houdt in dat je variabelen in een letterlijke\
   \ string invoegt. Programmeurs doen dit om dynamisch strings te construeren,\u2026"
-lastmod: 2024-02-18 23:09:02.213672
+lastmod: 2024-02-19 22:05:10.228699
 model: gpt-4-0125-preview
 summary: "Het interpoleren van een string houdt in dat je variabelen in een letterlijke\
   \ string invoegt. Programmeurs doen dit om dynamisch strings te construeren,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/lua/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:39.861783-07:00
 description: "String-L\xE4ngen messen, bedeutet, zu z\xE4hlen, wie viele Zeichen in\
   \ einer Zeichenkette stecken. Programmierer brauchen das, um Daten zu validieren,\
   \ Slices zu\u2026"
-lastmod: 2024-02-18 23:09:04.997549
+lastmod: 2024-02-19 22:05:12.936281
 model: gpt-4-1106-preview
 summary: "String-L\xE4ngen messen, bedeutet, zu z\xE4hlen, wie viele Zeichen in einer\
   \ Zeichenkette stecken. Programmierer brauchen das, um Daten zu validieren, Slices\

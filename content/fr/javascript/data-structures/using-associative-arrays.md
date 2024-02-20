@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:53.479595-07:00
 description: "Les tableaux associatifs, ou comme ils sont plus pr\xE9cis\xE9ment connus\
   \ en JavaScript, les objets, vous permettent d\u2019associer des cl\xE9s \xE0 des\
   \ valeurs. Ceci est\u2026"
-lastmod: 2024-02-18 23:09:09.247925
+lastmod: 2024-02-19 22:05:16.913362
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou comme ils sont plus pr\xE9cis\xE9ment connus\
   \ en JavaScript, les objets, vous permettent d\u2019associer des cl\xE9s \xE0 des\

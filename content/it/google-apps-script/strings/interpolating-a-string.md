@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:31.470197-07:00
 description: "L'interpolazione di stringhe in Google Apps Script consente l'incorporamento\
   \ dinamico di espressioni all'interno delle stringhe, facilitando la creazione\u2026"
-lastmod: 2024-02-18 23:08:55.462602
+lastmod: 2024-02-19 22:05:02.045393
 model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe in Google Apps Script consente l'incorporamento\
   \ dinamico di espressioni all'interno delle stringhe, facilitando la creazione\u2026"

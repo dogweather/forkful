@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/python/comparing-two-dates/
 date: 2024-01-20 17:33:33.701596-07:00
 description: "Comparar duas datas \xE9 verificar as suas diferen\xE7as, seja em dias,\
   \ meses, anos ou segundos. Programadores fazem isso para realizar tarefas como validar\u2026"
-lastmod: 2024-02-18 23:08:57.773305
+lastmod: 2024-02-19 22:05:05.237261
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 verificar as suas diferen\xE7as, seja em dias,\
   \ meses, anos ou segundos. Programadores fazem isso para realizar tarefas como validar\u2026"

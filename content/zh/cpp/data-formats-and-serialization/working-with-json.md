@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/cpp/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:57.287880-07:00
@@ -12,7 +10,7 @@ description: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4
   \u4E8E\u4EBA\u7C7B\u9605\u8BFB\u548C\u673A\u5668\u89E3\u6790\uFF0C\u7279\u522B\u662F\
   \u5728\u9700\u8981\u901A\u8FC7\u4E92\u8054\u7F51\u8FDB\u884C\u6570\u636E\u4EA4\u6362\
   \u6216\u914D\u7F6E\u8BBE\u7F6E\u7684\u5E94\u7528\u7A0B\u5E8F\u4E2D\u3002"
-lastmod: 2024-02-18 23:08:59.424181
+lastmod: 2024-02-19 22:05:07.192738
 model: gpt-4-0125-preview
 summary: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\u79CD\
   \u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u5B58\u50A8\u4E0E\u4F20\u8F93\u683C\u5F0F\uFF0C\

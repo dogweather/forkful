@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:35.537677-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script \u092E\u0947\u0902 HTTP \u0905\u0928\u0941\u093
   \u092E\u0930\u094D\u0938 \u0907\u0938\u0947 \u0935\u0947\u092C \u0938\u0947\u0935\
   \u093E\u0913\u0902 \u0938\u0947 \u0921\u0947\u091F\u093E \u092A\u094D\u0930\u093E\
   \u092A\u094D\u0924\u2026"
-lastmod: 2024-02-18 23:09:02.561448
+lastmod: 2024-02-19 22:05:10.563870
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 HTTP \u0905\u0928\u0941\u0930\u094B\
   \u0927 \u092D\u0947\u091C\u0928\u0947 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\

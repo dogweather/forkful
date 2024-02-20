@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/bash/using-a-debugger/
 date: 2024-01-26 03:47:24.742508-07:00
 description: "Usare un debugger in Bash significa sfruttare strumenti per testare\
   \ e trovare problemi nei vostri script, come catturare bug che fanno crashare il\
   \ vostro\u2026"
-lastmod: 2024-02-18 23:08:56.056842
+lastmod: 2024-02-19 22:05:02.675990
 model: gpt-4-0125-preview
 summary: "Usare un debugger in Bash significa sfruttare strumenti per testare e trovare\
   \ problemi nei vostri script, come catturare bug che fanno crashare il vostro\u2026"

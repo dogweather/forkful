@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/cpp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:34.625519-07:00
 description: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar mensajes\
   \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa.\u2026"
-lastmod: 2024-02-18 23:09:10.329622
+lastmod: 2024-02-19 22:05:17.895871
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar mensajes\
   \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa.\u2026"

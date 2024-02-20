@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/handling-errors/
 date: 2024-01-21 21:19:31.756377-07:00
 description: "Error handling is about managing the unexpected in programs\u2014like\
   \ a bouncer dealing with troublemakers. Programmers like it smooth; error handling\
   \ helps\u2026"
-lastmod: 2024-02-18 23:09:10.731336
+lastmod: 2024-02-19 22:05:18.259917
 model: gpt-4-1106-preview
 summary: "Error handling is about managing the unexpected in programs\u2014like a\
   \ bouncer dealing with troublemakers. Programmers like it smooth; error handling\

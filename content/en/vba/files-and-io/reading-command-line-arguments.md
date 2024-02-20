@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/reading-command-line-arguments/
 date: 2024-02-01 21:30:06.679780-07:00
 description: "Reading command line arguments in Visual Basic for Applications (VBA)\
   \ involves accessing parameters passed to your program upon execution. This technique\u2026"
-lastmod: 2024-02-18 23:09:10.904975
+lastmod: 2024-02-19 22:05:18.416832
 model: gpt-4-0125-preview
 summary: "Reading command line arguments in Visual Basic for Applications (VBA) involves\
   \ accessing parameters passed to your program upon execution. This technique\u2026"

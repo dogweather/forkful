@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:51.536840-07:00
 description: "HTTP request \u0915\u0947 \u0938\u093E\u0925 basic authentication \u090F\
   \u0915 \u0938\u0930\u0932 \u0924\u0930\u0940\u0915\u093E \u0939\u0948 \u091C\u093F\
@@ -8,7 +6,7 @@ description: "HTTP request \u0915\u0947 \u0938\u093E\u0925 basic authentication 
   \u0930\u0915\u0947 request headers \u092E\u0947\u0902 \u092D\u0947\u091C\u093E \u091C\
   \u093E\u0924\u093E \u0939\u0948\u0964 \u092F\u0939 \u0924\u0915\u0928\u0940\u0915\
   \ \u0935\u0947\u092C\u2026"
-lastmod: 2024-02-18 23:09:04.043108
+lastmod: 2024-02-19 22:05:12.024941
 model: gpt-4-1106-preview
 summary: "HTTP request \u0915\u0947 \u0938\u093E\u0925 basic authentication \u090F\
   \u0915 \u0938\u0930\u0932 \u0924\u0930\u0940\u0915\u093E \u0939\u0948 \u091C\u093F\

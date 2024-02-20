@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/python/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:04.885979-07:00
 description: "\xC5 skrive til en tekstfil i Python er en grunnleggende oppgave som\
   \ inneb\xE6rer \xE5 opprette eller \xE5pne en fil og deretter legge til eller overskrive\
   \ tekst.\u2026"
-lastmod: 2024-02-18 23:08:53.541622
+lastmod: 2024-02-19 22:04:59.661878
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Python er en grunnleggende oppgave som inneb\xE6\
   rer \xE5 opprette eller \xE5pne en fil og deretter legge til eller overskrive tekst.\u2026"

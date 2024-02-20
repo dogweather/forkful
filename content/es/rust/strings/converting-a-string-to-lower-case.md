@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:12.929944-07:00
 description: "Convertir una cadena a min\xFAsculas es cambiar todos los caracteres\
   \ alfab\xE9ticos en la cadena a su equivalente en min\xFAsculas. Esto se hace para\
   \ garantizar la\u2026"
-lastmod: 2024-02-18 23:09:09.735150
+lastmod: 2024-02-19 22:05:17.359925
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas es cambiar todos los caracteres alfab\xE9\
   ticos en la cadena a su equivalente en min\xFAsculas. Esto se hace para garantizar\

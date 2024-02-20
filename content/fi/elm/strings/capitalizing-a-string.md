@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elm/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:59.527923-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa annetun merkkijonon\
   \ ensimm\xE4isen merkin isoksi kirjaimeksi samalla, kun loput merkit j\xE4tet\xE4\
   \xE4n pieniksi\u2026"
-lastmod: 2024-02-18 23:09:07.485706
+lastmod: 2024-02-19 22:05:15.365999
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa annetun merkkijonon\
   \ ensimm\xE4isen merkin isoksi kirjaimeksi samalla, kun loput merkit j\xE4tet\xE4\

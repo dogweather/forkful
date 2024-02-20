@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/fish-shell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:56.851676-07:00
@@ -14,7 +12,7 @@ description: "Fish Shell\u306B\u304A\u3051\u308B\u6B63\u898F\u8868\u73FE\uFF08re
   \u8907\u96D1\u306A\u30C6\u30AD\u30B9\u30C8\u30D1\u30BF\u30FC\u30F3\u3092\u6307\u5B9A\
   \u3059\u308B\u305F\u3081\u306E\u30B3\u30F3\u30D1\u30AF\u30C8\u3067\u5F37\u529B\u306A\
   \u65B9\u6CD5\u3092\u63D0\u4F9B\u3059\u308B\u304B\u3089\u3067\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.298077
+lastmod: 2024-02-19 22:05:01.827113
 model: gpt-4-0125-preview
 summary: "Fish Shell\u306B\u304A\u3051\u308B\u6B63\u898F\u8868\u73FE\uFF08regex\uFF09\
   \u306F\u3001\u7279\u5B9A\u306E\u30D1\u30BF\u30FC\u30F3\u306B\u57FA\u3065\u3044\u3066\

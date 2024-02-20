@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:58.915537-07:00
 description: "V\xE9rifier l'existence d'un r\xE9pertoire en Go est crucial pour les\
   \ applications qui interagissent avec le syst\xE8me de fichiers, afin d'\xE9viter\
   \ les erreurs lors\u2026"
-lastmod: 2024-02-18 23:09:08.252947
+lastmod: 2024-02-19 22:05:16.057242
 model: gpt-4-0125-preview
 summary: "V\xE9rifier l'existence d'un r\xE9pertoire en Go est crucial pour les applications\
   \ qui interagissent avec le syst\xE8me de fichiers, afin d'\xE9viter les erreurs\

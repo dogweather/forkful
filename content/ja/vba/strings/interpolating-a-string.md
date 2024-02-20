@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/vba/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:51.371803-07:00
 description: "Visual Basic for\u2026"
-lastmod: 2024-02-18 23:08:54.746911
+lastmod: 2024-02-19 22:05:01.032270
 model: gpt-4-0125-preview
 summary: "Visual Basic for\u2026"
 title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"

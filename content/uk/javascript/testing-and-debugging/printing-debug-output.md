@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/javascript/printing-debug-output/
 date: 2024-01-20 17:52:44.562989-07:00
 description: "\"\u0429\u043E \u0442\u0430 \u041D\u0430\u0432\u0456\u0449\u043E?\"\
   \ Debug printing means showing variable values, error messages, or trace steps in\
   \ your console. Programmers do it to understand what's\u2026"
-lastmod: 2024-02-18 23:09:01.039488
+lastmod: 2024-02-19 22:05:09.079511
 model: gpt-4-1106-preview
 summary: "\"\u0429\u043E \u0442\u0430 \u041D\u0430\u0432\u0456\u0449\u043E?\" Debug\
   \ printing means showing variable values, error messages, or trace steps in your\

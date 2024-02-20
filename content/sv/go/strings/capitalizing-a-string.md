@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:39.306616-07:00
 description: "Att skriva med stor begynnelsebokstav inneb\xE4r att omvandla det f\xF6\
   rsta tecknet i en given str\xE4ng till versal om det \xE4r i gemen, vilket s\xE4\
   kerst\xE4ller att\u2026"
-lastmod: 2024-02-18 23:08:51.315266
+lastmod: 2024-02-19 22:04:56.605154
 model: gpt-4-0125-preview
 summary: "Att skriva med stor begynnelsebokstav inneb\xE4r att omvandla det f\xF6\
   rsta tecknet i en given str\xE4ng till versal om det \xE4r i gemen, vilket s\xE4\

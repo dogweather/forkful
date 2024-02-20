@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/javascript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:26.308581-07:00
 description: "Trabajar con CSV (Valores Separados por Comas) en JavaScript implica\
   \ analizar o generar archivos CSV para ingerir datos tabulares de fuentes externas\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:10.429669
+lastmod: 2024-02-19 22:05:17.984923
 model: gpt-4-0125-preview
 summary: "Trabajar con CSV (Valores Separados por Comas) en JavaScript implica analizar\
   \ o generar archivos CSV para ingerir datos tabulares de fuentes externas o\u2026"

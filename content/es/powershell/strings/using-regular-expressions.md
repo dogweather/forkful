@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/powershell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:35.803196-07:00
 description: "Las expresiones regulares (regex) son secuencias de caracteres que forman\
   \ un patr\xF3n de b\xFAsqueda, utilizadas principalmente para la b\xFAsqueda y manipulaci\xF3\
   n\u2026"
-lastmod: 2024-02-18 23:09:10.202548
+lastmod: 2024-02-19 22:05:17.785707
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son secuencias de caracteres que forman\
   \ un patr\xF3n de b\xFAsqueda, utilizadas principalmente para la b\xFAsqueda y manipulaci\xF3\

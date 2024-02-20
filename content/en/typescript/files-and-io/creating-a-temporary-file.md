@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/typescript/creating-a-temporary-file/
 date: 2024-01-20 17:41:27.110215-07:00
 description: "Creating a temporary file means making a file that's only needed for\
   \ a short while, usually during a program's execution. Programmers do it for tasks\
   \ like\u2026"
-lastmod: 2024-02-18 23:09:10.826488
+lastmod: 2024-02-19 22:05:18.345473
 model: gpt-4-1106-preview
 summary: "Creating a temporary file means making a file that's only needed for a short\
   \ while, usually during a program's execution. Programmers do it for tasks like\u2026"

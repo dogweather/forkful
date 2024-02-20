@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/haskell/printing-debug-output/
 date: 2024-01-20 17:52:59.681210-07:00
 description: "Debug-utskrifter hj\xE4lper programmerare att f\xF6rst\xE5 vad deras\
   \ kod g\xF6r genom att visa mellanliggande v\xE4rden och processfl\xF6den. De anv\xE4\
   nds f\xF6r att snabbt\u2026"
-lastmod: 2024-02-18 23:08:51.839547
+lastmod: 2024-02-19 22:04:57.177851
 model: gpt-4-1106-preview
 summary: "Debug-utskrifter hj\xE4lper programmerare att f\xF6rst\xE5 vad deras kod\
   \ g\xF6r genom att visa mellanliggande v\xE4rden och processfl\xF6den. De anv\xE4\

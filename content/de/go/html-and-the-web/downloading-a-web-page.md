@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:56.781110-07:00
 description: "Das Herunterladen einer Webseite bezieht sich auf das Abrufen des HTML-Inhalts\
   \ einer Webseite \xFCber das HTTP/HTTPS-Protokoll. Programmierer tun dies oft\u2026"
-lastmod: 2024-02-18 23:09:04.362099
+lastmod: 2024-02-19 22:05:12.331472
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite bezieht sich auf das Abrufen des HTML-Inhalts\
   \ einer Webseite \xFCber das HTTP/HTTPS-Protokoll. Programmierer tun dies oft\u2026"

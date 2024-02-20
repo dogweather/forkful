@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:31.156112-07:00
 description: "L\xE4sning av en textfil inneb\xE4r att man tar information lagrad som\
   \ text och g\xF6r den tillg\xE4nglig i din applikation. Programmerare g\xF6r detta\
   \ f\xF6r att hantera\u2026"
-lastmod: 2024-02-18 23:08:52.181514
+lastmod: 2024-02-19 22:04:57.555355
 model: gpt-4-1106-preview
 summary: "L\xE4sning av en textfil inneb\xE4r att man tar information lagrad som text\
   \ och g\xF6r den tillg\xE4nglig i din applikation. Programmerare g\xF6r detta f\xF6\

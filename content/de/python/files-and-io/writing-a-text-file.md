@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/python/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:02.048691-07:00
 description: "Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe,\
   \ die das Erstellen oder \xD6ffnen einer Datei und dann das Anh\xE4ngen oder\u2026"
-lastmod: 2024-02-18 23:09:04.481498
+lastmod: 2024-02-19 22:05:12.445289
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe,\
   \ die das Erstellen oder \xD6ffnen einer Datei und dann das Anh\xE4ngen oder\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/reading-a-text-file/
 date: 2024-01-20 17:54:58.444695-07:00
 description: "Lesen einer Textdatei in Ruby ist, wie man die Inhalte einer Datei in\
   \ den Speicher l\xE4dt, um sie zu verarbeiten. Programmierer tun dies, um Daten\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.441775
+lastmod: 2024-02-19 22:05:13.360706
 model: gpt-4-1106-preview
 summary: "Lesen einer Textdatei in Ruby ist, wie man die Inhalte einer Datei in den\
   \ Speicher l\xE4dt, um sie zu verarbeiten. Programmierer tun dies, um Daten zu\u2026"

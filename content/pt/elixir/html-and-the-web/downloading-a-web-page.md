@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elixir/downloading-a-web-page/
 date: 2024-01-20 17:43:57.594816-07:00
 description: "Baixar uma p\xE1gina da web significa fazer o download do seu conte\xFA\
   do em HTML. Programadores fazem isso para processar informa\xE7\xF5es, extrair dados\
   \ ou\u2026"
-lastmod: 2024-02-18 23:08:57.842712
+lastmod: 2024-02-19 22:05:05.312611
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web significa fazer o download do seu conte\xFA\
   do em HTML. Programadores fazem isso para processar informa\xE7\xF5es, extrair dados\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/rust/refactoring/
 date: 2024-01-26 03:36:47.775602-07:00
 description: "Le remaniement de code (ou refactoring) est le processus de restructuration\
   \ du code informatique existant\u2014changer la facturation\u2014sans modifier son\u2026"
-lastmod: 2024-02-18 23:09:08.538190
+lastmod: 2024-02-19 22:05:16.318526
 model: gpt-4-0125-preview
 summary: "Le remaniement de code (ou refactoring) est le processus de restructuration\
   \ du code informatique existant\u2014changer la facturation\u2014sans modifier son\u2026"

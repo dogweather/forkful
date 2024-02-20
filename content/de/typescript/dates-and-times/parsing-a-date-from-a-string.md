@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/typescript/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:35.761771-07:00
 description: "Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von\
   \ textuellen Darstellungen von Daten und Zeiten in ein Format, das vom Programm\u2026"
-lastmod: 2024-02-18 23:09:04.606628
+lastmod: 2024-02-19 22:05:12.563948
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von textuellen\
   \ Darstellungen von Daten und Zeiten in ein Format, das vom Programm\u2026"

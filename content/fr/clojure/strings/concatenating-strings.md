@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/concatenating-strings/
 date: 2024-01-20 17:34:30.479902-07:00
 description: "Concat\xE9ner des cha\xEEnes, c'est coller ensemble des bouts de texte\
   \ pour en faire un seul morceau. En programmation, \xE7a sert souvent \xE0 assembler\
   \ des donn\xE9es\u2026"
-lastmod: 2024-02-18 23:09:08.377931
+lastmod: 2024-02-19 22:05:16.172793
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes, c'est coller ensemble des bouts de texte pour\
   \ en faire un seul morceau. En programmation, \xE7a sert souvent \xE0 assembler\

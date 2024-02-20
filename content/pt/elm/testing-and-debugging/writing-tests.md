@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/elm/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:40.983301-07:00
 description: "Escrever testes em Elm envolve a cria\xE7\xE3o de casos de teste para\
   \ verificar a corre\xE7\xE3o do seu c\xF3digo Elm, garantindo que ele se comporte\
   \ conforme esperado.\u2026"
-lastmod: 2024-02-18 23:08:58.063960
+lastmod: 2024-02-19 22:05:05.542202
 model: gpt-4-0125-preview
 summary: "Escrever testes em Elm envolve a cria\xE7\xE3o de casos de teste para verificar\
   \ a corre\xE7\xE3o do seu c\xF3digo Elm, garantindo que ele se comporte conforme\

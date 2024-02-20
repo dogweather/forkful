@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/clojure/handling-errors/
 date: 2024-01-26 00:51:46.156712-07:00
 description: "O tratamento de erros \xE9 sobre gerenciar o inesperado em programas\u2014\
   como um seguran\xE7a lidando com desordeiros. Programadores gostam de fluidez; o\
   \ tratamento\u2026"
-lastmod: 2024-02-18 23:08:57.809988
+lastmod: 2024-02-19 22:05:05.276639
 model: gpt-4-1106-preview
 summary: "O tratamento de erros \xE9 sobre gerenciar o inesperado em programas\u2014\
   como um seguran\xE7a lidando com desordeiros. Programadores gostam de fluidez; o\

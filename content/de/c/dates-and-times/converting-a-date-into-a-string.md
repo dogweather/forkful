@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:50.811772-07:00
 description: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDC\
   bersetzung einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"
-lastmod: 2024-02-18 23:09:05.386912
+lastmod: 2024-02-19 22:05:13.306631
 model: gpt-4-0125-preview
 summary: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDCbersetzung\
   \ einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"

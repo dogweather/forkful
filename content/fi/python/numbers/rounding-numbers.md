@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/rounding-numbers/
 date: 2024-01-26 03:46:43.145043-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4hemm\xE4ksi yksinkertaisempaa tai merkityksellisemp\xE4\xE4 arvoa. Ohjelmoijat\
   \ py\xF6rist\xE4v\xE4t numeroita\u2026"
-lastmod: 2024-02-18 23:09:07.178198
+lastmod: 2024-02-19 22:05:15.052282
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4hemm\xE4ksi yksinkertaisempaa tai merkityksellisemp\xE4\xE4 arvoa. Ohjelmoijat\

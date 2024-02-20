@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/working-with-toml/
 date: 2024-01-26 04:24:30.415893-07:00
 description: "TOML, die Abk\xFCrzung f\xFCr Tom's Obvious, Minimal Language, ist ein\
   \ Datenformat \xE4hnlich zu JSON oder YAML, jedoch leichter f\xFCr Menschen zu lesen.\u2026"
-lastmod: 2024-02-18 23:09:04.987404
+lastmod: 2024-02-19 22:05:12.926786
 model: gpt-4-0125-preview
 summary: "TOML, die Abk\xFCrzung f\xFCr Tom's Obvious, Minimal Language, ist ein Datenformat\
   \ \xE4hnlich zu JSON oder YAML, jedoch leichter f\xFCr Menschen zu lesen.\u2026"

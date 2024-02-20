@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:49.577855-07:00
 description: "Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische\
   \ relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze\u2026"
-lastmod: 2024-02-18 23:09:02.386958
+lastmod: 2024-02-19 22:05:10.393072
 model: gpt-4-0125-preview
 summary: "Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische\
   \ relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze\u2026"

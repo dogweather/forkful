@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:19.426333-07:00
@@ -13,7 +11,7 @@ description: "C#\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\
   \ \uC791\uC5C5 \uB610\uB294 \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uB0B4 \uC791\uC5C5\
   \uC744 \uC608\uC57D\uD558\uACE0, \uD589\uB3D9\uC774 \uC815\uD655\uD558\uAC8C \uC2DC\
   \uAC04\uC744 \uB9DE\uCD94\uACE0 \uB370\uC774\uD130\uAC00\u2026"
-lastmod: 2024-02-18 23:09:06.236814
+lastmod: 2024-02-19 22:05:14.160658
 model: gpt-4-0125-preview
 summary: "C#\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB294\
   \ \uAC83\uC740 \uC2DC\uC2A4\uD15C\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uC640 \uC2DC\

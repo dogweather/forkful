@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/downloading-a-web-page/
 date: 2024-01-20 17:44:09.952664-07:00
 description: "Baixar uma p\xE1gina web significa pegar o conte\xFAdo dela, geralmente\
   \ em HTML, atrav\xE9s da internet. Programadores fazem isso para processar essa\
   \ informa\xE7\xE3o,\u2026"
-lastmod: 2024-02-18 23:08:58.059283
+lastmod: 2024-02-19 22:05:05.537222
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina web significa pegar o conte\xFAdo dela, geralmente\
   \ em HTML, atrav\xE9s da internet. Programadores fazem isso para processar essa\

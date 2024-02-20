@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/creating-a-temporary-file/
 date: 2024-01-20 17:41:12.849434-07:00
 description: "Opprettelse av en midlertidig fil er \xE5 lage en fil som er ment for\
   \ kortvarig bruk. Programmere bruker dem for \xE5 lagre data under kj\xF8ring av\
   \ et program\u2026"
-lastmod: 2024-02-18 23:08:54.119207
+lastmod: 2024-02-19 22:05:00.306360
 model: gpt-4-1106-preview
 summary: "Opprettelse av en midlertidig fil er \xE5 lage en fil som er ment for kortvarig\
   \ bruk. Programmere bruker dem for \xE5 lagre data under kj\xF8ring av et program\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/starting-a-new-project/
 date: 2024-01-20 18:04:21.464213-07:00
 description: "Avviare un nuovo progetto in Ruby significa creare una base da cui partire\
   \ per sviluppare la tua applicazione. I programmatori lo fanno per ordinare il\u2026"
-lastmod: 2024-02-18 23:08:56.383725
+lastmod: 2024-02-19 22:05:03.023996
 model: gpt-4-1106-preview
 summary: "Avviare un nuovo progetto in Ruby significa creare una base da cui partire\
   \ per sviluppare la tua applicazione. I programmatori lo fanno per ordinare il\u2026"

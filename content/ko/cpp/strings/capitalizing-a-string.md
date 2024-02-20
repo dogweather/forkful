@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:15.275952-07:00
@@ -13,7 +11,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC
   \ \uCD9C\uB825 \uD615\uC2DD, \uC0AC\uC6A9\uC790 \uC785\uB825 \uB610\uB294 \uB370\
   \uC774\uD130 \uCC98\uB9AC\uB97C \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\
   \uD558\uC5EC \uD14D\uC2A4\uD2B8\uAC00 \uD45C\uC2DC\uB418\uAC70\uB098\u2026"
-lastmod: 2024-02-18 23:09:06.657727
+lastmod: 2024-02-19 22:05:14.557966
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C\
   \ \uBCC0\uD658\uD558\uB294 \uAC83\uC740 \uD574\uB2F9 \uBB38\uC790\uC5F4\uC758 \uAC01\

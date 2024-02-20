@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:30.474354-07:00
 description: "Merkkijonon v\xE4limuuttaminen (string interpolation) ohjelmoinnissa\
   \ tarkoittaa merkkijonojen rakentamista sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita\
   \ kirjaimellisiin\u2026"
-lastmod: 2024-02-18 23:09:08.115515
+lastmod: 2024-02-19 22:05:15.917676
 model: gpt-4-0125-preview
 summary: "Merkkijonon v\xE4limuuttaminen (string interpolation) ohjelmoinnissa tarkoittaa\
   \ merkkijonojen rakentamista sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita kirjaimellisiin\u2026"

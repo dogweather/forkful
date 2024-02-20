@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/google-apps-script/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:58.457886-07:00
@@ -13,7 +11,7 @@ description: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u043B\u043
   \ \u0432\u0430\u0448\u043E\u0433\u043E \u0440\u044F\u0434\u043A\u0430, \u0437\u0430\
   \u0437\u0432\u0438\u0447\u0430\u0439 \u0446\u0435 \u0441\u0442\u043E\u0441\u0443\
   \u0454\u0442\u044C\u0441\u044F \u043E\u0431\u2019\u0454\u043A\u0442\u0456\u0432\u2026"
-lastmod: 2024-02-18 23:08:59.727705
+lastmod: 2024-02-19 22:05:07.557291
 model: gpt-4-0125-preview
 summary: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u043B\u0430\u043F\
   \u043E\u043A \u0437 \u0440\u044F\u0434\u043A\u0430 \u0443 Google Apps Script \u043F\

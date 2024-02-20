@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/kotlin/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:21.157732-07:00
@@ -14,7 +12,7 @@ description: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902
   \u0926\u0932\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948, \u091C\u094B\
   \ \u0909\u092A\u092F\u094B\u0917\u0915\u0930\u094D\u0924\u093E \u0907\u0928\u092A\
   \u0941\u091F\u094D\u0938 \u0915\u094B\u2026"
-lastmod: 2024-02-18 23:09:03.238370
+lastmod: 2024-02-19 22:05:11.233119
 model: gpt-4-0125-preview
 summary: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
   \ \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\

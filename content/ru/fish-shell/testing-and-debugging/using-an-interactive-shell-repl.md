@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/fish-shell/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:06.504800-07:00
@@ -14,7 +12,7 @@ description: "REPL, \u0438\u043B\u0438 \u0426\u0438\u043A\u043B \xAB\u0427\u0438
   \u0442 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0435 \u043F\u043E\u043B\
   \u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u0438\u0435 \u0432\
   \u0445\u043E\u0434\u043D\u044B\u0435\u2026"
-lastmod: 2024-02-18 23:08:57.515197
+lastmod: 2024-02-19 22:05:04.832750
 model: gpt-4-0125-preview
 summary: "REPL, \u0438\u043B\u0438 \u0426\u0438\u043A\u043B \xAB\u0427\u0438\u0442\
   \u0430\u0442\u044C-\u0412\u044B\u043F\u043E\u043B\u043D\u0438\u0442\u044C-\u0412\

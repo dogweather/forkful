@@ -1,11 +1,9 @@
 ---
-aliases:
-- /hi/lua/interpolating-a-string/
 date: 2024-01-20 17:51:12.582555-07:00
 description: "Interpolating a string means inserting dynamic values into a static\
   \ string. Programmers do it to make code flexible and to dynamically create strings\
   \ that\u2026"
-lastmod: 2024-02-18 23:09:03.550760
+lastmod: 2024-02-19 22:05:11.539970
 model: gpt-4-1106-preview
 summary: "Interpolating a string means inserting dynamic values into a static string.\
   \ Programmers do it to make code flexible and to dynamically create strings that\u2026"

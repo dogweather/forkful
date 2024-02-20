@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/reading-command-line-arguments/
 date: 2024-01-20 17:56:40.695084-07:00
 description: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es einem Ruby-Skript,\
   \ Eingaben direkt aus der Befehlszeile beim Ausf\xFChren des Programms aufzunehmen.\
   \ Das\u2026"
-lastmod: 2024-02-18 23:09:05.439625
+lastmod: 2024-02-19 22:05:13.358644
 model: gpt-4-1106-preview
 summary: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es einem Ruby-Skript,\
   \ Eingaben direkt aus der Befehlszeile beim Ausf\xFChren des Programms aufzunehmen.\

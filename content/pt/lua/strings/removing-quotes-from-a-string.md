@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:31.902542-07:00
 description: "Remover aspas de uma string significa desfazer-se dos caracteres de\
   \ aspas duplas ou simples que envolvem seu texto. Os programadores fazem isso para\u2026"
-lastmod: 2024-02-18 23:08:58.270844
+lastmod: 2024-02-19 22:05:05.747211
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa desfazer-se dos caracteres de aspas\
   \ duplas ou simples que envolvem seu texto. Os programadores fazem isso para\u2026"

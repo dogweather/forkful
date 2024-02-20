@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/concatenating-strings/
 date: 2024-01-20 17:35:29.229748-07:00
 description: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno solo.\
   \ Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output."
-lastmod: 2024-02-18 23:08:55.838373
+lastmod: 2024-02-19 22:05:02.446455
 model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno solo.\
   \ Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output."

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/starting-a-new-project/
 date: 2024-01-20 18:03:38.595870-07:00
 description: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco, onde\
   \ voc\xEA pode escrever seus c\xF3digos do jeito que bem entender. Programadores\
   \ fazem isso para\u2026"
-lastmod: 2024-02-18 23:08:58.576202
+lastmod: 2024-02-19 22:05:06.074023
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco, onde voc\xEA\
   \ pode escrever seus c\xF3digos do jeito que bem entender. Programadores fazem isso\

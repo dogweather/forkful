@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/rust/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:56.237931-07:00
@@ -9,7 +7,7 @@ description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu t
   \ t\u1EF1 c\u1EE5 th\u1EC3. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
   n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 d\u1ECDn d\u1EB9p v\u0103n b\u1EA3n, ph\xE2\
   n\u2026"
-lastmod: 2024-02-18 23:08:50.444154
+lastmod: 2024-02-19 22:04:55.505516
 model: gpt-4-0125-preview
 summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu trong chu\u1ED7\
   i ngh\u0129a l\xE0 t\xECm v\xE0 lo\u1EA1i b\u1ECF c\xE1c chu\u1ED7i k\xFD t\u1EF1\

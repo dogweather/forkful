@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/cpp/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:39.157407-07:00
@@ -8,7 +6,7 @@ description: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c ch\xE8n c\xE1c bi\u1EBFn v
   o trong chu\u1ED7i. Ch\xFAng ta l\xE0m \u0111i\u1EC1u \u0111\xF3 \u0111\u1EC3 x\xE2\
   y d\u1EF1ng th\xF4ng \u0111i\u1EC7p m\u1ED9t c\xE1ch linh ho\u1EA1t, c\xE1 nh\xE2\
   n h\xF3a \u0111\u1EA7u ra, ho\u1EB7c t\u1EA1o l\u1EADp truy\u2026"
-lastmod: 2024-02-18 23:08:51.028999
+lastmod: 2024-02-19 22:04:56.225878
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c ch\xE8n c\xE1c bi\u1EBFn v\xE0o\
   \ trong chu\u1ED7i. Ch\xFAng ta l\xE0m \u0111i\u1EC1u \u0111\xF3 \u0111\u1EC3 x\xE2\

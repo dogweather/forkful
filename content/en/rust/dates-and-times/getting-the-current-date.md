@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/getting-the-current-date/
 date: 2024-02-03 19:02:38.356621-07:00
 description: "Retrieving the current date in Rust is a common task for tasks such\
   \ as logging, time-based operations, or simply displaying the date. Unlike some\u2026"
-lastmod: 2024-02-18 23:09:10.858995
+lastmod: 2024-02-19 22:05:18.374924
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in Rust is a common task for tasks such as logging,\
   \ time-based operations, or simply displaying the date. Unlike some\u2026"

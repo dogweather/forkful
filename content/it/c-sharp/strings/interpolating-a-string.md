@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/c-sharp/interpolating-a-string/
 date: 2024-01-20 17:50:39.061408-07:00
 description: "L'interpolazione di stringhe in C# serve a inserire valori di variabili\
   \ dentro a una stringa di testo. La usiamo perch\xE9 rende il codice pi\xF9 chiaro\
   \ e\u2026"
-lastmod: 2024-02-18 23:08:55.873984
+lastmod: 2024-02-19 22:05:02.483504
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe in C# serve a inserire valori di variabili\
   \ dentro a una stringa di testo. La usiamo perch\xE9 rende il codice pi\xF9 chiaro\

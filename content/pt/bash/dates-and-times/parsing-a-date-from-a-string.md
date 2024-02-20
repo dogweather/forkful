@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/bash/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:42.362962-07:00
 description: "Analisar uma data de uma string em Bash envolve extrair e converter\
   \ informa\xE7\xF5es de data de dados textuais para um formato que o Bash pode manipular\
   \ ou\u2026"
-lastmod: 2024-02-18 23:08:58.334684
+lastmod: 2024-02-19 22:05:05.817435
 model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string em Bash envolve extrair e converter informa\xE7\
   \xF5es de data de dados textuais para um formato que o Bash pode manipular ou\u2026"

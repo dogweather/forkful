@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/php/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:19.131684-07:00
@@ -11,7 +9,7 @@ description: "YAML\uFF0C\u5373\u201CYAML Ain't Markup Language\u201D\uFF08YAML\u
   \u5B83\u7B80\u5355\u6613\u8BFB\uFF0C\u975E\u5E38\u9002\u5408\u4EE5\u6613\u4E8E\u7BA1\
   \u7406\u7684\u5F62\u5F0F\u5B58\u50A8\u8BBE\u7F6E\u3001\u53C2\u6570\u4E43\u81F3\u590D\
   \u6742\u7684\u6570\u636E\u7ED3\u6784\u3002"
-lastmod: 2024-02-18 23:08:59.234285
+lastmod: 2024-02-19 22:05:06.931011
 model: gpt-4-0125-preview
 summary: "YAML\uFF0C\u5373\u201CYAML Ain't Markup Language\u201D\uFF08YAML\u4E0D\u662F\
   \u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\u7684\

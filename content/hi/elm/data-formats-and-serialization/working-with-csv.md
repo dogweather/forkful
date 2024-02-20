@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elm/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:37.151101-07:00
@@ -12,7 +10,7 @@ description: "CSV (Comma Separated Values) \u0915\u0947 \u0938\u093E\u0925 \u091
   \u0930\u0928\u0947 \u0935\u093E\u0932\u0940 \u092B\u093E\u0907\u0932\u094B\u0902\
   \ \u0915\u094B \u092A\u093E\u0930\u094D\u0938\u093F\u0902\u0917 \u0914\u0930 \u0909\
   \u0924\u094D\u092A\u0928\u094D\u0928 \u0915\u0930\u0928\u0947 \u0915\u0940\u2026"
-lastmod: 2024-02-18 23:09:03.233202
+lastmod: 2024-02-19 22:05:11.227828
 model: gpt-4-0125-preview
 summary: "CSV (Comma Separated Values) \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\
   \u092E \u0915\u0930\u0928\u093E \u091F\u0948\u092C\u094D\u092F\u0941\u0932\u0930\

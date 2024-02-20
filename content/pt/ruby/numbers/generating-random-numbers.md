@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/ruby/generating-random-numbers/
 date: 2024-01-27 20:34:54.698927-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios em Ruby envolve criar n\xFAmeros que\
   \ n\xE3o podem ser previstos logicamente, essencial para cen\xE1rios como simula\xE7\
   \xF5es, criptografia e\u2026"
-lastmod: 2024-02-18 23:08:58.659595
+lastmod: 2024-02-19 22:05:06.161440
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em Ruby envolve criar n\xFAmeros que n\xE3\
   o podem ser previstos logicamente, essencial para cen\xE1rios como simula\xE7\xF5\

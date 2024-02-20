@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/elixir/logging/
 date: 2024-01-26 01:02:50.779259-07:00
 description: "Logowanie w rozwoju oprogramowania to technika rejestrowania wydarze\u0144\
   , kt\xF3re zachodz\u0105 podczas dzia\u0142ania programu, zazwyczaj do pliku lub\
   \ zewn\u0119trznego\u2026"
-lastmod: 2024-02-18 23:08:49.312153
+lastmod: 2024-02-19 22:04:54.228200
 model: gpt-4-1106-preview
 summary: "Logowanie w rozwoju oprogramowania to technika rejestrowania wydarze\u0144\
   , kt\xF3re zachodz\u0105 podczas dzia\u0142ania programu, zazwyczaj do pliku lub\

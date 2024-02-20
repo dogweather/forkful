@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/python/printing-debug-output/
 date: 2024-01-20 17:53:19.376439-07:00
 description: "Imprimir mensajes de depuraci\xF3n es como dejar migas de pan en tu\
   \ c\xF3digo para saber qu\xE9 sucede durante la ejecuci\xF3n. Los programadores\
   \ lo hacen para\u2026"
-lastmod: 2024-02-18 23:09:09.559024
+lastmod: 2024-02-19 22:05:17.208843
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n es como dejar migas de pan en tu c\xF3\
   digo para saber qu\xE9 sucede durante la ejecuci\xF3n. Los programadores lo hacen\

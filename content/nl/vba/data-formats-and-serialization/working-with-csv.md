@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:19.495668-07:00
 description: "Werken met CSV (Comma Separated Values) bestanden houdt in dat er wordt\
   \ gelezen van of geschreven naar platte tekstbestanden waar de gegevensvelden worden\u2026"
-lastmod: 2024-02-18 23:09:01.690980
+lastmod: 2024-02-19 22:05:09.711882
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma Separated Values) bestanden houdt in dat er wordt\
   \ gelezen van of geschreven naar platte tekstbestanden waar de gegevensvelden worden\u2026"

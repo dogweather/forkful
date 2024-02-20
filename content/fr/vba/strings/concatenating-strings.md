@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/concatenating-strings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:18.947942-07:00
 description: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste\
   \ \xE0 joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9\
   . Ceci est une\u2026"
-lastmod: 2024-02-18 23:09:08.568605
+lastmod: 2024-02-19 22:05:16.346166
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste \xE0\
   \ joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9.\

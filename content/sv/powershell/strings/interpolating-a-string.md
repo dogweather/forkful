@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/interpolating-a-string/
 date: 2024-01-20 17:51:35.701221-07:00
 description: "Interpolering av str\xE4ngar handlar om att stoppa in variabler eller\
   \ uttryck direkt i en textstr\xE4ng. Det sparas tid och \xF6kar l\xE4sbarheten i\
   \ din kod genom att\u2026"
-lastmod: 2024-02-18 23:08:51.988599
+lastmod: 2024-02-19 22:04:57.342391
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ngar handlar om att stoppa in variabler eller uttryck\
   \ direkt i en textstr\xE4ng. Det sparas tid och \xF6kar l\xE4sbarheten i din kod\

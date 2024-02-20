@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:04.032710-07:00
@@ -14,7 +12,7 @@ description: "\u0412\u0435\u043B\u0438\u043A\u043E\u044E \u043B\u0456\u0442\u043
   \u043E \u0432\u0456\u043D \u0443 \u043D\u0438\u0436\u043D\u044C\u043E\u043C\u0443\
   , \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0443\u044E\u0447\u0438 \u0432\
   \u0438\u0434\u0456\u043B\u0435\u043D\u043D\u044F \u0440\u044F\u0434\u043A\u0430\u2026"
-lastmod: 2024-02-18 23:08:59.664356
+lastmod: 2024-02-19 22:05:07.466485
 model: gpt-4-0125-preview
 summary: "\u0412\u0435\u043B\u0438\u043A\u043E\u044E \u043B\u0456\u0442\u0435\u0440\
   \u043E\u044E \u043D\u0430 \u043F\u043E\u0447\u0430\u0442\u043A\u0443 \u0440\u044F\

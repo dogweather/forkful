@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:33.858376-07:00
 description: "Verificar se um diret\xF3rio existe em C envolve consultar o sistema\
   \ de arquivos para verificar se um caminho espec\xEDfico leva a um diret\xF3rio.\
   \ Os\u2026"
-lastmod: 2024-02-18 23:08:58.634705
+lastmod: 2024-02-19 22:05:06.135958
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em C envolve consultar o sistema de\
   \ arquivos para verificar se um caminho espec\xEDfico leva a um diret\xF3rio. Os\u2026"

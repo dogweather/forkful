@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/searching-and-replacing-text/
 date: 2024-01-20 17:57:10.180624-07:00
 description: "Procurar e substituir texto \xE9 um processo b\xE1sico para trocar uma\
   \ sequ\xEAncia de caracteres por outra num bloco de texto. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.395910
+lastmod: 2024-02-19 22:05:05.882576
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 um processo b\xE1sico para trocar uma sequ\xEA\
   ncia de caracteres por outra num bloco de texto. Programadores fazem isso para\u2026"

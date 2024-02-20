@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:44.647749-07:00
 description: "U\u017Cywanie debugera w programowaniu w Go polega na wykorzystaniu\
   \ narz\u0119dzi lub funkcji do inspekcji i modyfikacji stanu dzia\u0142aj\u0105\
   cego programu w celu\u2026"
-lastmod: 2024-02-18 23:08:49.103245
+lastmod: 2024-02-19 22:04:54.041916
 model: gpt-4-0125-preview
 summary: "U\u017Cywanie debugera w programowaniu w Go polega na wykorzystaniu narz\u0119\
   dzi lub funkcji do inspekcji i modyfikacji stanu dzia\u0142aj\u0105cego programu\

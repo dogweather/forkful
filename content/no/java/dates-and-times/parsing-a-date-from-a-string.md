@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/java/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:28.543908-07:00
 description: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere en\
   \ tekstrepresentasjon av en dato og tid til et `Date` objekt eller et mer moderne\u2026"
-lastmod: 2024-02-18 23:08:53.779537
+lastmod: 2024-02-19 22:04:59.921138
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere en tekstrepresentasjon\
   \ av en dato og tid til et `Date` objekt eller et mer moderne\u2026"

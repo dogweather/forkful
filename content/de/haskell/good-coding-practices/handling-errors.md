@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/haskell/handling-errors/
 date: 2024-01-26 00:53:20.320524-07:00
 description: "Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem\
   \ umzugehen\u2014Dinge, die schiefgehen k\xF6nnen. Programmierer machen dies, um\u2026"
-lastmod: 2024-02-18 23:09:04.924790
+lastmod: 2024-02-19 22:05:12.865753
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem umzugehen\u2014\
   Dinge, die schiefgehen k\xF6nnen. Programmierer machen dies, um\u2026"

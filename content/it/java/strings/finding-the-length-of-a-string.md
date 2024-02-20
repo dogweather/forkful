@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:44.852128-07:00
 description: "Determinare la lunghezza di una stringa significa scoprire quanti caratteri\
   \ contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o\u2026"
-lastmod: 2024-02-18 23:08:55.757577
+lastmod: 2024-02-19 22:05:02.360800
 model: gpt-4-1106-preview
 summary: "Determinare la lunghezza di una stringa significa scoprire quanti caratteri\
   \ contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o\u2026"

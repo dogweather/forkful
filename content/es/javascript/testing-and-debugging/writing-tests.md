@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/javascript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:03.015066-07:00
 description: "Escribir pruebas en JavaScript se refiere a la pr\xE1ctica de crear\
   \ scripts automatizados que ejecutan tu c\xF3digo para asegurarse de que se comporte\
   \ como se\u2026"
-lastmod: 2024-02-18 23:09:10.408573
+lastmod: 2024-02-19 22:05:17.966227
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en JavaScript se refiere a la pr\xE1ctica de crear scripts\
   \ automatizados que ejecutan tu c\xF3digo para asegurarse de que se comporte como\

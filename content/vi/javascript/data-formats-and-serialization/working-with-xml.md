@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:22.708864-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED
   \ thao t\xE1c v\xE0 s\u1EA3n xu\u1EA5t n\u1ED9i dung XML b\u1EB1ng c\xE1ch s\u1EED\
   \ d\u1EE5ng m\xE3. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y b\u1EDFi v\xEC XML \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng\u2026"
-lastmod: 2024-02-18 23:08:51.162909
+lastmod: 2024-02-19 22:04:56.416285
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch, thao\
   \ t\xE1c v\xE0 s\u1EA3n xu\u1EA5t n\u1ED9i dung XML b\u1EB1ng c\xE1ch s\u1EED d\u1EE5\

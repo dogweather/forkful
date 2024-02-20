@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/google-apps-script/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:08.798319-07:00
 description: "Assoziative Arrays, bekannt als Objekte in Google Apps Script (eine\
   \ Variante von JavaScript), erm\xF6glichen es Programmierern, Sammlungen von Schl\xFC\
   ssel-\u2026"
-lastmod: 2024-02-18 23:09:04.404945
+lastmod: 2024-02-19 22:05:12.372553
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, bekannt als Objekte in Google Apps Script (eine Variante\
   \ von JavaScript), erm\xF6glichen es Programmierern, Sammlungen von Schl\xFCssel-\u2026"

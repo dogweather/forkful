@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/downloading-a-web-page/
 date: 2024-01-20 17:43:48.588566-07:00
 description: "Downloading a web page means grabbing data from the internet directly\
   \ into your app to display or process it. Programmers do it to obtain real-time\u2026"
-lastmod: 2024-02-18 23:09:10.970558
+lastmod: 2024-02-19 22:05:18.477036
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing data from the internet directly into\
   \ your app to display or process it. Programmers do it to obtain real-time\u2026"

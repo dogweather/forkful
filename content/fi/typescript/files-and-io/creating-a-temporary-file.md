@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/creating-a-temporary-file/
 date: 2024-01-20 17:41:42.172042-07:00
 description: "Tilap\xE4istiedosto on v\xE4liaikainen tallennuspaikka dataa varten.\
   \ Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4, kun haluavat k\xE4sitell\xE4 tietoa,\
   \ joka ei vaadi pysyv\xE4\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.339669
+lastmod: 2024-02-19 22:05:15.229549
 model: gpt-4-1106-preview
 summary: "Tilap\xE4istiedosto on v\xE4liaikainen tallennuspaikka dataa varten. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4, kun haluavat k\xE4sitell\xE4 tietoa, joka ei vaadi\

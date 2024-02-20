@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:04.590510-07:00
@@ -13,7 +11,7 @@ description: "\u091C\u091F\u093F\u0932 \u0938\u0902\u0916\u094D\u092F\u093E\u090
   \u093E \u091C\u093E\u0924\u093E \u0939\u0948 \u091C\u0939\u093E\u0901 `i` \u0915\
   \u093E \u092E\u0924\u0932\u092C `-1` \u0915\u093E \u0935\u0930\u094D\u0917\u092E\
   \u0942\u0932 \u0939\u0948\u0964\u2026"
-lastmod: 2024-02-18 23:09:04.198449
+lastmod: 2024-02-19 22:05:12.172136
 model: gpt-4-0125-preview
 summary: "\u091C\u091F\u093F\u0932 \u0938\u0902\u0916\u094D\u092F\u093E\u090F\u0901\
   \ \u090F\u0915 \u0935\u093E\u0938\u094D\u0924\u0935\u093F\u0915 \u092D\u093E\u0917\

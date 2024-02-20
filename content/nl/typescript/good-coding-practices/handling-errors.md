@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:10.379686-07:00
 description: "Foutafhandeling is het verwachten van het onverwachte; het is hoe we\
   \ omgaan met problemen in onze code. We doen het om crashes te voorkomen en om\u2026"
-lastmod: 2024-02-18 23:09:01.581302
+lastmod: 2024-02-19 22:05:09.606018
 model: gpt-4-0125-preview
 summary: "Foutafhandeling is het verwachten van het onverwachte; het is hoe we omgaan\
   \ met problemen in onze code. We doen het om crashes te voorkomen en om\u2026"

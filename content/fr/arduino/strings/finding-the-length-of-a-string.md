@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:00.453200-07:00
 description: "Trouver la longueur d'une cha\xEEne, c'est compter combien de caract\xE8\
   res elle contient. Les programmeurs le font pour valider des donn\xE9es, optimiser\
   \ la\u2026"
-lastmod: 2024-02-18 23:09:09.105280
+lastmod: 2024-02-19 22:05:16.783874
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne, c'est compter combien de caract\xE8\
   res elle contient. Les programmeurs le font pour valider des donn\xE9es, optimiser\

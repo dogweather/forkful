@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:37.186600-07:00
 description: "Usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
   \ si\u0119 tych podw\xF3jnych lub pojedynczych znak\xF3w cudzys\u0142owu, kt\xF3\
   re otaczaj\u0105 tw\xF3j tekst. Programi\u015Bci robi\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.727765
+lastmod: 2024-02-19 22:04:54.663563
 model: gpt-4-0125-preview
 summary: "Usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
   \ si\u0119 tych podw\xF3jnych lub pojedynczych znak\xF3w cudzys\u0142owu, kt\xF3\

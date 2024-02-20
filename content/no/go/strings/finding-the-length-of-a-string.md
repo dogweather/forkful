@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:50.780530-07:00
 description: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme antall\
   \ tegn den inneholder. Programmerere utf\xF8rer rutinemessig denne operasjonen for\
   \ \xE5 manipulere\u2026"
-lastmod: 2024-02-18 23:08:53.426403
+lastmod: 2024-02-19 22:04:59.535932
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme antall\
   \ tegn den inneholder. Programmerere utf\xF8rer rutinemessig denne operasjonen for\

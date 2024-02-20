@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/starting-a-new-project/
 date: 2024-01-20 18:03:29.139390-07:00
 description: "\uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74\
   \ \uC0C8\uB85C\uC6B4 \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uC791\uC5C5\uC744 \uB9CC\uB4E4\
@@ -9,7 +7,7 @@ description: "\uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC
   \uD604\uD558\uAC70\uB098 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574\
   \ \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.690890
+lastmod: 2024-02-19 22:05:13.603569
 model: gpt-4-1106-preview
 summary: "\uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74 \uC0C8\
   \uB85C\uC6B4 \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uC791\uC5C5\uC744 \uB9CC\uB4E4\uC5B4\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:00.880823-07:00
 description: "P\xE4iv\xE4m\xE4\xE4rien muuntaminen merkkijonoiksi on perustavaa laatua\
   \ oleva teht\xE4v\xE4, joka mahdollistaa ohjelmoijille p\xE4iv\xE4m\xE4\xE4r\xE4\
   tiedon k\xE4sittelyn ja n\xE4ytt\xE4misen\u2026"
-lastmod: 2024-02-18 23:09:07.149193
+lastmod: 2024-02-19 22:05:15.025456
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4rien muuntaminen merkkijonoiksi on perustavaa laatua\
   \ oleva teht\xE4v\xE4, joka mahdollistaa ohjelmoijille p\xE4iv\xE4m\xE4\xE4r\xE4\

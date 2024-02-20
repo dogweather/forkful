@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/haskell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:20.182343-07:00
@@ -13,7 +11,7 @@ description: "Haskell \u092E\u0947\u0902 HTML \u092A\u093E\u0930\u094D\u0938 \u0
   \u0920\u094B\u0902 \u0915\u0947 \u0938\u093E\u0925 \u0907\u0902\u091F\u0930\u0948\
   \u0915\u094D\u091F \u0915\u0930\u0928\u0947 \u0915\u0940 \u0905\u0928\u0941\u092E\
   \u0924\u093F \u0926\u0947\u0924\u093E \u0939\u0948\u0964\u2026"
-lastmod: 2024-02-18 23:09:03.419215
+lastmod: 2024-02-19 22:05:11.410187
 model: gpt-4-0125-preview
 summary: "Haskell \u092E\u0947\u0902 HTML \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\
   \u0928\u093E \u0906\u092A\u0915\u094B \u0921\u0947\u091F\u093E \u0928\u093F\u0915\

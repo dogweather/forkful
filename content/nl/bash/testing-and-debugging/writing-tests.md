@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:45.097598-07:00
 description: "Het schrijven van tests verifieert dat code zich gedraagt zoals verwacht.\
   \ Programmeurs testen om bugs vroegtijdig te ontdekken, betrouwbaarheid te\u2026"
-lastmod: 2024-02-18 23:09:02.044535
+lastmod: 2024-02-19 22:05:10.070235
 model: gpt-4-0125-preview
 summary: "Het schrijven van tests verifieert dat code zich gedraagt zoals verwacht.\
   \ Programmeurs testen om bugs vroegtijdig te ontdekken, betrouwbaarheid te\u2026"

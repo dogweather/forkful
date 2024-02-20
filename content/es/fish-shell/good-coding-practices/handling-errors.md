@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/handling-errors/
 date: 2024-01-26 00:51:37.323383-07:00
 description: "El manejo de errores permite que tu script trate lo inesperado de manera\
   \ elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros\u2026"
-lastmod: 2024-02-18 23:09:10.461487
+lastmod: 2024-02-19 22:05:18.013890
 model: gpt-4-1106-preview
 summary: "El manejo de errores permite que tu script trate lo inesperado de manera\
   \ elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros\u2026"

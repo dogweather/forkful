@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/extracting-substrings/
 date: 2024-01-20 17:46:34.472563-07:00
 description: "Extracting substrings is about pulling out specific bits of text from\
   \ a string. Programmers do it to manipulate and use parts of data\u2014like grabbing\u2026"
-lastmod: 2024-02-18 23:09:11.553026
+lastmod: 2024-02-19 22:05:19.000904
 model: gpt-4-1106-preview
 summary: "Extracting substrings is about pulling out specific bits of text from a\
   \ string. Programmers do it to manipulate and use parts of data\u2014like grabbing\u2026"

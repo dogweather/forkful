@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/elm/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:01:18.824515-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u0435\u0447\u0430\u0442\u044C \u043E\u0442\u043B\u0430\u043
   \u0442 \u0432 \u0432\u0430\u0448\u0435\u043C \u043A\u043E\u0434\u0435. \u041C\u044B\
   \ \u0434\u0435\u043B\u0430\u0435\u043C \u044D\u0442\u043E, \u0447\u0442\u043E\u0431\
   \u044B\u2026"
-lastmod: 2024-02-18 23:08:56.896670
+lastmod: 2024-02-19 22:05:03.854512
 model: gpt-4-0125-preview
 summary: "\u041F\u0435\u0447\u0430\u0442\u044C \u043E\u0442\u043B\u0430\u0434\u043E\
   \u0447\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u0432 Elm \u0437\

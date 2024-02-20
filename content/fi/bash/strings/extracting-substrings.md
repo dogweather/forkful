@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/extracting-substrings/
 date: 2024-01-20 17:45:03.252593-07:00
 description: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista\
   \ ja k\xE4ytt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitsevat t\xF6\
   ihin vain osan datasta."
-lastmod: 2024-02-18 23:09:07.790507
+lastmod: 2024-02-19 22:05:15.622294
 model: gpt-4-1106-preview
 summary: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista ja\
   \ k\xE4ytt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitsevat t\xF6\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:55.346954-07:00
@@ -8,7 +6,7 @@ description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra ch\xFAng c\x
   \ m\u1ED1i quan h\u1EC7 nh\u01B0 th\u1EBF n\xE0o\u2014m\u1ED9t c\xE1i c\xF3 tr\u01B0\
   \u1EDBc, sau, hay ch\xEDnh x\xE1c nh\u01B0 nhau so v\u1EDBi c\xE1i kia? C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c\u2026"
-lastmod: 2024-02-18 23:08:50.328449
+lastmod: 2024-02-19 22:04:55.368185
 model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra ch\xFAng c\xF3 m\u1ED1\
   i quan h\u1EC7 nh\u01B0 th\u1EBF n\xE0o\u2014m\u1ED9t c\xE1i c\xF3 tr\u01B0\u1EDB\

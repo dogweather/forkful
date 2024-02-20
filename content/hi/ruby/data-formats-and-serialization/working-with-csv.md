@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/ruby/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:24.108588-07:00
@@ -14,7 +12,7 @@ description: "\u0930\u0942\u092C\u0940 \u092E\u0947\u0902 CSV \u092B\u093E\u0907
   \u0930\u093E\u092E\u0930\u094D\u0938 \u0905\u0915\u094D\u0938\u0930 \u0907\u0938\
   \ \u092A\u094D\u0930\u0925\u093E \u0915\u094B \u0921\u0947\u091F\u093E \u092A\u093E\
   \u0930\u094D\u0938\u093F\u0902\u0917,\u2026"
-lastmod: 2024-02-18 23:09:04.338688
+lastmod: 2024-02-19 22:05:12.309124
 model: gpt-4-0125-preview
 summary: "\u0930\u0942\u092C\u0940 \u092E\u0947\u0902 CSV \u092B\u093E\u0907\u0932\
   \u094D\u0938 \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\

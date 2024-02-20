@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:33.176511-07:00
@@ -8,7 +6,7 @@ description: "Trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m, vi\u1EC7c ghi nh\u1EA
   t k\xFD (logging) l\xE0 quy tr\xECnh ghi l\u1EA1i th\xF4ng tin v\u1EC1 qu\xE1 tr\xEC\
   nh th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh, \u0111\u01B0\u1EE3c thi\u1EBF\
   t k\u1EBF \u0111\u1EC3 theo d\xF5i\u2026"
-lastmod: 2024-02-18 23:08:50.178116
+lastmod: 2024-02-19 22:04:55.176563
 model: gpt-4-0125-preview
 summary: "Trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m, vi\u1EC7c ghi nh\u1EADt k\xFD\
   \ (logging) l\xE0 quy tr\xECnh ghi l\u1EA1i th\xF4ng tin v\u1EC1 qu\xE1 tr\xECnh\

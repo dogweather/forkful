@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/cpp/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:55.773018-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att skala bort\
   \ de d\xE4r irriterande dubbla eller enkla tecknen som omsluter v\xE5r text (' eller\
   \ \").\u2026"
-lastmod: 2024-02-18 23:08:52.072389
+lastmod: 2024-02-19 22:04:57.433381
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att skala bort de\
   \ d\xE4r irriterande dubbla eller enkla tecknen som omsluter v\xE5r text (' eller\

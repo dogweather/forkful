@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/javascript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:39.756639-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.284117
+lastmod: 2024-02-19 22:05:01.807087
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u6A19\u6E96\u30A8\u30E9\u30FC\u3078\u306E\u66F8\u304D\u8FBC\u307F"

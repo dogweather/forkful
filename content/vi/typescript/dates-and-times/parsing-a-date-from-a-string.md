@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/typescript/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:42.665806-07:00
@@ -8,7 +6,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t ch
   i ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n th\xE0nh m\u1ED9\
   t \u0111\u1ED1i t\u01B0\u1EE3ng Ng\xE0y (Date). L\u1EADp tr\xECnh vi\xEAn l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 thao t\xE1c v\xE0 s\u1EED d\u1EE5ng\u2026"
-lastmod: 2024-02-18 23:08:50.425862
+lastmod: 2024-02-19 22:04:55.482296
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7\
   i ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n th\xE0nh m\u1ED9\

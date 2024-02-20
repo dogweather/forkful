@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/php/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:32.575950-07:00
 description: "Het aanmaken van een tijdelijk bestand in PHP betekent dat je een bestand\
   \ maakt dat net lang genoeg blijft bestaan om te gebruiken, en dan poef\u2014het\
   \ is\u2026"
-lastmod: 2024-02-18 23:09:01.966602
+lastmod: 2024-02-19 22:05:09.988213
 model: gpt-4-0125-preview
 summary: "Het aanmaken van een tijdelijk bestand in PHP betekent dat je een bestand\
   \ maakt dat net lang genoeg blijft bestaan om te gebruiken, en dan poef\u2014het\

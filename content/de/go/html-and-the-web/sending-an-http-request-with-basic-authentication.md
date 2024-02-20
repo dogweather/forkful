@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:57.833563-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet\
   \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen\u2026"
-lastmod: 2024-02-18 23:09:04.363208
+lastmod: 2024-02-19 22:05:12.332534
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet\
   \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen\u2026"

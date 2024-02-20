@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:32.875013-07:00
 description: "Att redigera filer p\xE5 plats med CLI (Command Line Interface) enradskommandon\
   \ i Ruby m\xF6jligg\xF6r att du modifierar filer direkt fr\xE5n din terminal, utan\
   \ att\u2026"
-lastmod: 2024-02-18 23:08:52.291326
+lastmod: 2024-02-19 22:04:57.680216
 model: gpt-4-0125-preview
 summary: "Att redigera filer p\xE5 plats med CLI (Command Line Interface) enradskommandon\
   \ i Ruby m\xF6jligg\xF6r att du modifierar filer direkt fr\xE5n din terminal, utan\

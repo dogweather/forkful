@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/arduino/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:23.855789-07:00
 description: "Remover aspas de uma string significa eliminar todas as inst\xE2ncias\
   \ de caracteres de aspas simples (`'`) ou duplas (`\"`) que envolvem o texto.\u2026"
-lastmod: 2024-02-18 23:08:58.398607
+lastmod: 2024-02-19 22:05:05.885449
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa eliminar todas as inst\xE2ncias de\
   \ caracteres de aspas simples (`'`) ou duplas (`\"`) que envolvem o texto.\u2026"

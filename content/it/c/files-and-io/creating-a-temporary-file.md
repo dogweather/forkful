@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:08.867665-07:00
 description: "Creare un file temporaneo in C comporta la generazione di un file destinato\
   \ a essere utilizzato per una breve durata, solitamente come spazio temporaneo\u2026"
-lastmod: 2024-02-18 23:08:56.359067
+lastmod: 2024-02-19 22:05:02.998225
 model: gpt-4-0125-preview
 summary: "Creare un file temporaneo in C comporta la generazione di un file destinato\
   \ a essere utilizzato per una breve durata, solitamente come spazio temporaneo\u2026"

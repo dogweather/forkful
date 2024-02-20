@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:58.401563-07:00
 description: "\xC9crire sur l'erreur standard en Visual Basic pour Applications (VBA)\
   \ consiste \xE0 diriger les messages d'erreur ou les diagnostics \xE0 part de la\
   \ sortie\u2026"
-lastmod: 2024-02-18 23:09:08.598825
+lastmod: 2024-02-19 22:05:16.373612
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard en Visual Basic pour Applications (VBA)\
   \ consiste \xE0 diriger les messages d'erreur ou les diagnostics \xE0 part de la\

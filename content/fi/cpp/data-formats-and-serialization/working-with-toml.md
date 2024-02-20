@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/working-with-toml/
 date: 2024-01-26 04:19:48.386676-07:00
 description: "TOML (Tom's Obvious, Minimal Language) on datan serialisointiformaatti,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.969607
+lastmod: 2024-02-19 22:05:15.783860
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) on datan serialisointiformaatti,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\

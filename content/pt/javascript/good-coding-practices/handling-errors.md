@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/handling-errors/
 date: 2024-01-26 00:54:25.526434-07:00
 description: "O tratamento de erros \xE9 como voc\xEA gerencia quando as coisas n\xE3\
   o saem como esperado no seu c\xF3digo. \xC9 crucial porque ajuda seus programas\
   \ a falharem de\u2026"
-lastmod: 2024-02-18 23:08:58.539571
+lastmod: 2024-02-19 22:05:06.035229
 model: gpt-4-1106-preview
 summary: "O tratamento de erros \xE9 como voc\xEA gerencia quando as coisas n\xE3\
   o saem como esperado no seu c\xF3digo. \xC9 crucial porque ajuda seus programas\

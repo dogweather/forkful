@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/lua/handling-errors/
 date: 2024-01-26 00:54:59.577326-07:00
 description: "Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten\
   \ zu rechnen. Es ist die Kunst, f\xFCr den Fall zu planen, dass Dinge schiefgehen,\
   \ damit\u2026"
-lastmod: 2024-02-18 23:09:05.014991
+lastmod: 2024-02-19 22:05:12.953321
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten zu\
   \ rechnen. Es ist die Kunst, f\xFCr den Fall zu planen, dass Dinge schiefgehen,\

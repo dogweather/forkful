@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elm/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:50.584641-07:00
 description: "Rimuovere le virgolette da una stringa significa sbarazzarsi di quei\
   \ segni di virgolettatura doppia o singola extra di cui non hai effettivamente bisogno\u2026"
-lastmod: 2024-02-18 23:08:55.794780
+lastmod: 2024-02-19 22:05:02.400305
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa sbarazzarsi di quei segni\
   \ di virgolettatura doppia o singola extra di cui non hai effettivamente bisogno\u2026"

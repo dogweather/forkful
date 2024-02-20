@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/starting-a-new-project/
 date: 2024-01-20 18:03:48.988858-07:00
 description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
   \ \uAC83\uC740 \uACF5\uBC31 \uC0C1\uD0DC\uC5D0\uC11C \uC544\uC774\uB514\uC5B4\uB97C\
@@ -9,7 +7,7 @@ description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB2
   \uAC70\uB098, \uAE30\uB2A5\uC744 \uAC1C\uC120\uD558\uAE30 \uC704\uD558\uC5EC \uC0C8\
   \ \uD504\uB85C\uC81D\uD2B8\uB97C \uB9CC\uB4ED\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.287843
+lastmod: 2024-02-19 22:05:14.207716
 model: gpt-4-1106-preview
 summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC83\
   \uC740 \uACF5\uBC31 \uC0C1\uD0DC\uC5D0\uC11C \uC544\uC774\uB514\uC5B4\uB97C \uC2E4\

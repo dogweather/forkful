@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/powershell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:21.346738-07:00
 description: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5\
   \ sende feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig\
   \ fra\u2026"
-lastmod: 2024-02-18 23:08:54.116249
+lastmod: 2024-02-19 22:05:00.303031
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5 sende\
   \ feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig fra\u2026"

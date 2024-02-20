@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/parsing-html/
 date: 2024-02-03 19:02:45.807993-07:00
 description: "Parsing HTML in PHP involves extracting specific information from HTML\
   \ documents. Programmers perform this task to automate data extraction, web scraping,\u2026"
-lastmod: 2024-02-18 23:09:11.134910
+lastmod: 2024-02-19 22:05:18.627729
 model: gpt-4-0125-preview
 summary: "Parsing HTML in PHP involves extracting specific information from HTML documents.\
   \ Programmers perform this task to automate data extraction, web scraping,\u2026"

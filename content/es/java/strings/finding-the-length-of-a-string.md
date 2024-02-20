@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/java/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:51.574191-07:00
 description: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
   \ contiene. Programadores lo hacen para validar textos, limitar entradas, iterar\u2026"
-lastmod: 2024-02-18 23:09:09.835421
+lastmod: 2024-02-19 22:05:17.451319
 model: gpt-4-1106-preview
 summary: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
   \ contiene. Programadores lo hacen para validar textos, limitar entradas, iterar\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/haskell/using-associative-arrays/
 changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:28.680730-07:00
 description: "Gli array associativi, o dizionari, in Haskell riguardano principalmente\
   \ la mappatura di chiavi a valori per una ricerca veloce e una gestione efficiente\u2026"
-lastmod: 2024-02-18 23:08:55.923383
+lastmod: 2024-02-19 22:05:02.533565
 model: gpt-4-0125-preview
 summary: "Gli array associativi, o dizionari, in Haskell riguardano principalmente\
   \ la mappatura di chiavi a valori per una ricerca veloce e una gestione efficiente\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/ruby/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:57.870387-07:00
 description: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour en\
   \ saisir la structure et le contenu. Les programmeurs le font pour extraire des\
   \ donn\xE9es,\u2026"
-lastmod: 2024-02-18 23:09:09.404909
+lastmod: 2024-02-19 22:05:17.067540
 model: gpt-4-0125-preview
 summary: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour en saisir\
   \ la structure et le contenu. Les programmeurs le font pour extraire des donn\xE9\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:40.129537-07:00
 description: "Interpola\xE7\xE3o de string em Visual Basic for Applications (VBA)\
   \ refere-se ao processo de embutir vari\xE1veis ou express\xF5es dentro de uma literal\
   \ de string,\u2026"
-lastmod: 2024-02-18 23:08:57.958005
+lastmod: 2024-02-19 22:05:05.432063
 model: gpt-4-0125-preview
 summary: "Interpola\xE7\xE3o de string em Visual Basic for Applications (VBA) refere-se\
   \ ao processo de embutir vari\xE1veis ou express\xF5es dentro de uma literal de\

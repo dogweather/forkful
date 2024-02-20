@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/downloading-a-web-page/
 date: 2024-01-20 17:43:31.196047-07:00
 description: "Baixar uma p\xE1gina da web \xE9 o ato de obter o conte\xFAdo dispon\xED\
   vel em um endere\xE7o espec\xEDfico da internet. Programadores fazem isso para coletar\
   \ dados,\u2026"
-lastmod: 2024-02-18 23:08:58.408857
+lastmod: 2024-02-19 22:05:05.896567
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 o ato de obter o conte\xFAdo dispon\xED\
   vel em um endere\xE7o espec\xEDfico da internet. Programadores fazem isso para coletar\

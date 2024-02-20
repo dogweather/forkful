@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:22.869553-07:00
 description: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana\
   \ JavaScript), umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\
   \u0107.\u2026"
-lastmod: 2024-02-18 23:08:49.138669
+lastmod: 2024-02-19 22:04:54.077709
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana JavaScript),\
   \ umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\u0107\

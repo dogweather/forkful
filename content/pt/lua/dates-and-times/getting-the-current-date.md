@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/lua/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:19.695808-07:00
 description: "Recuperar a data atual na programa\xE7\xE3o \xE9 uma tarefa crucial\
   \ para uma infinidade de aplica\xE7\xF5es, incluindo registro de atividades (logging),\
   \ marca\xE7\xE3o de\u2026"
-lastmod: 2024-02-18 23:08:58.292412
+lastmod: 2024-02-19 22:05:05.771649
 model: gpt-4-0125-preview
 summary: "Recuperar a data atual na programa\xE7\xE3o \xE9 uma tarefa crucial para\
   \ uma infinidade de aplica\xE7\xF5es, incluindo registro de atividades (logging),\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/swift/reading-command-line-arguments/
 date: 2024-01-20 17:56:41.481245-07:00
 description: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 input\
   \ de f\xE5r n\xE5r de startes fra terminalen. Programmerere bruker dette til \xE5\
   \ tilpasse\u2026"
-lastmod: 2024-02-18 23:08:54.283631
+lastmod: 2024-02-19 22:05:00.432332
 model: gpt-4-1106-preview
 summary: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 input de\
   \ f\xE5r n\xE5r de startes fra terminalen. Programmerere bruker dette til \xE5 tilpasse\u2026"

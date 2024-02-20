@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/c/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:16.986069-07:00
 description: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
   \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"
-lastmod: 2024-02-18 23:08:50.080745
+lastmod: 2024-02-19 22:04:55.065271
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
   \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"

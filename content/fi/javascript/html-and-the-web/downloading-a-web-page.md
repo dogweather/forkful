@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/downloading-a-web-page/
 date: 2024-01-20 17:44:10.401386-07:00
 description: "Lataamme verkkosivun, kun haluamme hakea sen sis\xE4lt\xF6\xE4 koodillamme.\
   \ T\xE4m\xE4 mahdollistaa tiedon k\xE4sittelyn, tallentamisen tai hy\xF6dynt\xE4\
   misen automaattisissa\u2026"
-lastmod: 2024-02-18 23:09:08.034442
+lastmod: 2024-02-19 22:05:15.843636
 model: gpt-4-1106-preview
 summary: "Lataamme verkkosivun, kun haluamme hakea sen sis\xE4lt\xF6\xE4 koodillamme.\
   \ T\xE4m\xE4 mahdollistaa tiedon k\xE4sittelyn, tallentamisen tai hy\xF6dynt\xE4\

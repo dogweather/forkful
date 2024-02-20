@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/rust/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:04.357519-07:00
 description: "String in Kleinbuchstaben umwandeln bedeutet, alle Gro\xDFbuchstaben\
   \ in einem String in ihre entsprechenden Kleinbuchstaben zu konvertieren. Wir machen\
   \ das\u2026"
-lastmod: 2024-02-18 23:09:04.627892
+lastmod: 2024-02-19 22:05:12.583974
 model: gpt-4-1106-preview
 summary: "String in Kleinbuchstaben umwandeln bedeutet, alle Gro\xDFbuchstaben in\
   \ einem String in ihre entsprechenden Kleinbuchstaben zu konvertieren. Wir machen\

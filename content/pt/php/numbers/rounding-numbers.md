@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/rounding-numbers/
 date: 2024-01-26 03:46:07.410917-07:00
 description: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\xE3\
   o definida, frequentemente para n\xFAmeros inteiros. Programadores arredondam para\
   \ simplificar\u2026"
-lastmod: 2024-02-18 23:08:58.235661
+lastmod: 2024-02-19 22:05:05.710216
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\xE3\
   o definida, frequentemente para n\xFAmeros inteiros. Programadores arredondam para\

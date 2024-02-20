@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/searching-and-replacing-text/
 date: 2024-01-20 17:58:52.674229-07:00
 description: "La recherche et le remplacement de texte permettent de modifier des\
   \ cha\xEEnes en trouvant des motifs sp\xE9cifiques et en les substituant par d'autres.\
   \ C'est\u2026"
-lastmod: 2024-02-18 23:09:09.049162
+lastmod: 2024-02-19 22:05:16.732410
 model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de modifier des cha\xEE\
   nes en trouvant des motifs sp\xE9cifiques et en les substituant par d'autres. C'est\u2026"

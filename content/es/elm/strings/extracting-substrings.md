@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elm/extracting-substrings/
 date: 2024-01-20 17:45:37.460353-07:00
 description: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una\
   \ cadena de texto. Los programadores hacen esto para manipular y utilizar solo los\u2026"
-lastmod: 2024-02-18 23:09:09.878665
+lastmod: 2024-02-19 22:05:17.490578
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una cadena\
   \ de texto. Los programadores hacen esto para manipular y utilizar solo los\u2026"

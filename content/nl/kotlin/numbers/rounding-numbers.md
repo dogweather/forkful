@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:38.057890-07:00
 description: "Het afronden van getallen betekent dat je ze aanpast naar het dichtstbijzijnde\
   \ hele getal of naar een gespecificeerd niveau van precisie. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.799898
+lastmod: 2024-02-19 22:05:09.816649
 model: gpt-4-0125-preview
 summary: "Het afronden van getallen betekent dat je ze aanpast naar het dichtstbijzijnde\
   \ hele getal of naar een gespecificeerd niveau van precisie. Programmeurs\u2026"

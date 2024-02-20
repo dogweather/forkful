@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/vba/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:29.708290-07:00
@@ -13,7 +11,7 @@ description: "\u041F\u0440\u0438\u0432\u0435\u0434\u0435\u043D\u0438\u0435 \u044
   \u043B\u0430 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0441\u043B\u043E\u0432\
   \u0430 \u0432 \u0441\u0442\u0440\u043E\u043A\u0435 \u0432 \u0432\u0435\u0440\u0445\
   \u043D\u0438\u0439\u2026"
-lastmod: 2024-02-18 23:08:56.766093
+lastmod: 2024-02-19 22:05:03.627299
 model: gpt-4-0125-preview
 summary: "\u041F\u0440\u0438\u0432\u0435\u0434\u0435\u043D\u0438\u0435 \u0441\u0442\
   \u0440\u043E\u043A\u0438 \u043A \u0437\u0430\u0433\u043B\u0430\u0432\u043D\u044B\

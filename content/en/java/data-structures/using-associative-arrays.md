@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/using-associative-arrays/
 date: 2024-01-30 18:57:29.712638-07:00
 description: "In Java, associative arrays, or maps, let you store key-value pairs\
   \ for efficient data lookup and manipulation. Programmers use them for tasks like\u2026"
-lastmod: 2024-02-18 23:09:10.924126
+lastmod: 2024-02-19 22:05:18.434367
 model: gpt-4-0125-preview
 summary: "In Java, associative arrays, or maps, let you store key-value pairs for\
   \ efficient data lookup and manipulation. Programmers use them for tasks like\u2026"

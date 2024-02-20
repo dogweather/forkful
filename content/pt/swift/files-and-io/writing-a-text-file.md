@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/swift/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:35.938895-07:00
 description: "Escrever um arquivo de texto em Swift permite armazenar persistentemente\
   \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\u2026"
-lastmod: 2024-02-18 23:08:58.508884
+lastmod: 2024-02-19 22:05:06.002268
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Swift permite armazenar persistentemente\
   \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\u2026"

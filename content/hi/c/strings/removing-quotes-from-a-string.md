@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:14.961480-07:00
@@ -13,7 +11,7 @@ description: "C \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u
   \u094B \u0928\u093F\u0915\u093E\u0932\u0928\u093E \u0936\u093E\u092E\u093F\u0932\
   \ \u0939\u0948\u0964 \u092F\u0939 \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\
   \u093E \u0907\u0928\u092A\u0941\u091F \u0921\u0947\u091F\u093E\u2026"
-lastmod: 2024-02-18 23:09:04.186204
+lastmod: 2024-02-19 22:05:12.160691
 model: gpt-4-0125-preview
 summary: "C \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\
   \u0917 \u0938\u0947 \u0909\u0926\u094D\u0927\u0930\u0923 \u091A\u093F\u0939\u094D\

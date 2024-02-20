@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/interpolating-a-string/
 date: 2024-01-20 17:51:22.992786-07:00
 description: "String-Interpolation erm\xF6glicht es uns, Variablen nahtlos in Zeichenketten\
   \ einzuf\xFCgen. Programmierer nutzen das, um dynamisch Inhalte zu generieren, ohne\u2026"
-lastmod: 2024-02-18 23:09:04.947442
+lastmod: 2024-02-19 22:05:12.887335
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es uns, Variablen nahtlos in Zeichenketten\
   \ einzuf\xFCgen. Programmierer nutzen das, um dynamisch Inhalte zu generieren, ohne\u2026"

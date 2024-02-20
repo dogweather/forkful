@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/generating-random-numbers/
 date: 2024-01-27 20:26:13.875616-07:00
 description: "Generating random numbers in JavaScript is a technique used to create\
   \ unpredictability in applications, from games that need random enemy behavior to\u2026"
-lastmod: 2024-02-18 23:09:11.433860
+lastmod: 2024-02-19 22:05:18.891392
 model: gpt-4-0125-preview
 summary: "Generating random numbers in JavaScript is a technique used to create unpredictability\
   \ in applications, from games that need random enemy behavior to\u2026"

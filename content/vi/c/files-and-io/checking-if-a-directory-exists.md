@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:54.196459-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1E
   n t\u1EA1i trong C hay kh\xF4ng bao g\u1ED3m vi\u1EC7c truy v\u1EA5n v\xE0o h\u1EC7\
   \ th\u1ED1ng t\u1EADp tin \u0111\u1EC3 x\xE1c minh li\u1EC7u m\u1ED9t \u0111\u01B0\
   \u1EDDng d\u1EABn c\u1EE5 th\u1EC3 c\xF3 d\u1EABn \u0111\u1EBFn m\u1ED9t\u2026"
-lastmod: 2024-02-18 23:08:51.250960
+lastmod: 2024-02-19 22:04:56.526192
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
   i trong C hay kh\xF4ng bao g\u1ED3m vi\u1EC7c truy v\u1EA5n v\xE0o h\u1EC7 th\u1ED1\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/kotlin/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:01.754372-07:00
 description: "Une requ\xEAte HTTP avec authentification de base envoie des informations\
   \ d'identification cod\xE9es en base64. Les programmeurs l'utilisent pour acc\xE9\
   der \xE0 des\u2026"
-lastmod: 2024-02-18 23:09:08.780555
+lastmod: 2024-02-19 22:05:16.484922
 model: gpt-4-1106-preview
 summary: "Une requ\xEAte HTTP avec authentification de base envoie des informations\
   \ d'identification cod\xE9es en base64. Les programmeurs l'utilisent pour acc\xE9\

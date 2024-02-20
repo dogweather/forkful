@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/rounding-numbers/
 date: 2024-01-25 02:59:40.250262-07:00
 description: "Rounding numbers is about tuning a value to the nearest integer or specified\
   \ decimal place. Programmers round numbers to simplify data, enhance\u2026"
-lastmod: 2024-02-18 23:09:11.266918
+lastmod: 2024-02-19 22:05:18.740483
 model: gpt-4-1106-preview
 summary: "Rounding numbers is about tuning a value to the nearest integer or specified\
   \ decimal place. Programmers round numbers to simplify data, enhance\u2026"

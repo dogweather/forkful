@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:14.747207-07:00
@@ -13,7 +11,7 @@ description: "Go\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB294 \uD504\uB85C\
   \ \uCC38\uC5EC\uD568\uC73C\uB85C\uC368, \uB354\uC6B1 \uACAC\uACE0\uD558\uACE0 \uC2E0\
   \uB8B0\uC131 \uC788\uB294 \uC18C\uD504\uD2B8\uC6E8\uC5B4\uB85C \uC774\uB055\uB2C8\
   \uB2E4."
-lastmod: 2024-02-18 23:09:05.495055
+lastmod: 2024-02-19 22:05:13.412477
 model: gpt-4-0125-preview
 summary: "Go\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB294 \uD504\uB85C\uADF8\uB7A8\
   \uC758 \uC624\uB958 \uC0C1\uD0DC\uB97C \uC778\uC2DD\uD558\uACE0 \uB300\uC751\uD558\

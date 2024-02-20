@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/clojure/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:02:52.315750-07:00
@@ -15,7 +13,7 @@ description: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430
   \ \u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043C\u0438. \u041F\u0440\u043E\u0433\
   \u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0434\u0435\u043B\u0430\u044E\u0442\
   \u2026"
-lastmod: 2024-02-18 23:08:56.582619
+lastmod: 2024-02-19 22:05:03.332964
 model: gpt-4-0125-preview
 summary: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\
   \u0440\u043E\u0441\u0430 \u0441 \u0431\u0430\u0437\u043E\u0432\u043E\u0439 \u0430\

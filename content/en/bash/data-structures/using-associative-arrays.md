@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/using-associative-arrays/
 date: 2024-01-30 18:57:32.659467-07:00
 description: "Associative arrays are like super-charged arrays that let you use strings\
   \ as indexes instead of just integers. Programmers use them for more complex data\u2026"
-lastmod: 2024-02-18 23:09:11.220716
+lastmod: 2024-02-19 22:05:18.698659
 model: gpt-4-0125-preview
 summary: "Associative arrays are like super-charged arrays that let you use strings\
   \ as indexes instead of just integers. Programmers use them for more complex data\u2026"

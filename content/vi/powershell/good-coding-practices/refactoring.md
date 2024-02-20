@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:12.757633-07:00
@@ -8,7 +6,7 @@ description: "Refactoring l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i m\xE3 
   y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
   i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9\
   c t\xEDnh kh\xF4ng ch\u1EE9c\u2026"
-lastmod: 2024-02-18 23:08:50.943487
+lastmod: 2024-02-19 22:04:56.142090
 model: gpt-4-0125-preview
 summary: "Refactoring l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i m\xE3 m\xE1\
   y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\

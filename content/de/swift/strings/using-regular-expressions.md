@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/swift/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:35.370076-07:00
 description: "Regul\xE4re Ausdr\xFCcke oder Regex sind Zeichenfolgen, die ein Suchmuster\
   \ bilden und h\xE4ufig f\xFCr die \xDCbereinstimmung oder Manipulation von Zeichenketten\u2026"
-lastmod: 2024-02-18 23:09:05.223255
+lastmod: 2024-02-19 22:05:13.151159
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke oder Regex sind Zeichenfolgen, die ein Suchmuster\
   \ bilden und h\xE4ufig f\xFCr die \xDCbereinstimmung oder Manipulation von Zeichenketten\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:13.036628-07:00
 description: "Ler argumentos de linha de comando em Go envolve extrair os argumentos\
   \ fornecidos a um programa durante sua invoca\xE7\xE3o a partir do terminal ou prompt\
   \ de\u2026"
-lastmod: 2024-02-18 23:08:57.685219
+lastmod: 2024-02-19 22:05:05.143969
 model: gpt-4-0125-preview
 summary: "Ler argumentos de linha de comando em Go envolve extrair os argumentos fornecidos\
   \ a um programa durante sua invoca\xE7\xE3o a partir do terminal ou prompt de\u2026"

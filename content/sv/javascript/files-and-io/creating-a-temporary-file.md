@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/creating-a-temporary-file/
 date: 2024-01-20 17:40:41.434751-07:00
 description: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r hylla\
   \ f\xF6r data. Vi g\xF6r det f\xF6r att hantera information som beh\xF6ver existera\
   \ under en kort period,\u2026"
-lastmod: 2024-02-18 23:08:52.183511
+lastmod: 2024-02-19 22:04:57.557577
 model: gpt-4-1106-preview
 summary: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r hylla\
   \ f\xF6r data. Vi g\xF6r det f\xF6r att hantera information som beh\xF6ver existera\

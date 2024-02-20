@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/downloading-a-web-page/
 date: 2024-02-03 17:50:09.242181-07:00
 description: "Downloading a web page is about fetching the HTML content of a web page\
   \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"
-lastmod: 2024-02-18 23:09:10.595242
+lastmod: 2024-02-19 22:05:18.138046
 model: gpt-4-0125-preview
 summary: "Downloading a web page is about fetching the HTML content of a web page\
   \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"

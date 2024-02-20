@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/python/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:47.233156-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) sont des motifs utilis\xE9\
   s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte.\
   \ Les programmeurs les\u2026"
-lastmod: 2024-02-18 23:09:08.328929
+lastmod: 2024-02-19 22:05:16.128049
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) sont des motifs utilis\xE9s pour\
   \ rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte. Les\

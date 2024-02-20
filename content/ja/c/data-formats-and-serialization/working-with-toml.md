@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/c/working-with-toml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:45.945263-07:00
 description: "TOML\uFF08Tom's Obvious, Minimal\u2026"
-lastmod: 2024-02-18 23:08:55.371954
+lastmod: 2024-02-19 22:05:01.932246
 model: gpt-4-0125-preview
 summary: "TOML\uFF08Tom's Obvious, Minimal\u2026"
 title: "TOML\u3092\u64CD\u4F5C\u3059\u308B"

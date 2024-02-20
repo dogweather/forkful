@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/creating-a-temporary-file/
 date: 2024-01-20 17:41:13.845892-07:00
 description: "Tworzenie pliku tymczasowego to proces generowania tymczasowego miejsca\
   \ do przechowywania danych. Programi\u015Bci robi\u0105 to, aby przechowa\u0107\
   \ informacje, kt\xF3re\u2026"
-lastmod: 2024-02-18 23:08:49.847786
+lastmod: 2024-02-19 22:04:54.791478
 model: gpt-4-1106-preview
 summary: "Tworzenie pliku tymczasowego to proces generowania tymczasowego miejsca\
   \ do przechowywania danych. Programi\u015Bci robi\u0105 to, aby przechowa\u0107\

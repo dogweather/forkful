@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:42.552605-07:00
 description: "Een nieuw project starten in Rust betekent het opzetten van een basisstructuur\
   \ zodat je code een plek heeft om te leven. Programmeurs starten nieuwe\u2026"
-lastmod: 2024-02-18 23:09:01.620055
+lastmod: 2024-02-19 22:05:09.643072
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Rust betekent het opzetten van een basisstructuur\
   \ zodat je code een plek heeft om te leven. Programmeurs starten nieuwe\u2026"

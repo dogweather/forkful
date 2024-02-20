@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/handling-errors/
 date: 2024-01-26 00:59:08.160488-07:00
 description: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som\
   \ planerat. Programmerare g\xF6r det f\xF6r att hantera det ov\xE4ntade och s\xE4\
   kerst\xE4lla att deras Rust-\u2026"
-lastmod: 2024-02-18 23:08:51.590936
+lastmod: 2024-02-19 22:04:56.910410
 model: gpt-4-1106-preview
 summary: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som planerat.\
   \ Programmerare g\xF6r det f\xF6r att hantera det ov\xE4ntade och s\xE4kerst\xE4\

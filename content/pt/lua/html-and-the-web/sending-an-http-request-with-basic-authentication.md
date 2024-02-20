@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/lua/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:05.405162-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ que voc\xEA est\xE1 acessando um recurso protegido na web com usu\xE1rio e senha.\
   \ Programadores fazem\u2026"
-lastmod: 2024-02-18 23:08:58.281934
+lastmod: 2024-02-19 22:05:05.759784
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ que voc\xEA est\xE1 acessando um recurso protegido na web com usu\xE1rio e senha.\

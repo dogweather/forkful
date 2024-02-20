@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/writing-tests/
 date: 2024-02-03 19:03:26.395083-07:00
 description: "Writing tests in Elixir involves creating automated scripts to validate\
   \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"
-lastmod: 2024-02-18 23:09:10.769187
+lastmod: 2024-02-19 22:05:18.294101
 model: gpt-4-0125-preview
 summary: "Writing tests in Elixir involves creating automated scripts to validate\
   \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"

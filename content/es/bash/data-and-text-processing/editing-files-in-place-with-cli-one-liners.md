@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:58.296820-07:00
 description: "Imagina que acabas de descubrir que necesitas hacer una actualizaci\xF3\
   n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor.\u2026"
-lastmod: 2024-02-18 23:09:10.162887
+lastmod: 2024-02-19 22:05:17.749609
 model: gpt-4-0125-preview
 summary: "Imagina que acabas de descubrir que necesitas hacer una actualizaci\xF3\
   n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor.\u2026"

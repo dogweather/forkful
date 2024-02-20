@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:03.486770-07:00
 description: "Escrever para o erro padr\xE3o (stderr) em linguagens de programa\xE7\
   \xE3o trata-se de direcionar mensagens de erro e diagn\xF3sticos para um fluxo separado,\
   \ distinto\u2026"
-lastmod: 2024-02-18 23:08:57.734801
+lastmod: 2024-02-19 22:05:05.196021
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) em linguagens de programa\xE7\xE3\
   o trata-se de direcionar mensagens de erro e diagn\xF3sticos para um fluxo separado,\

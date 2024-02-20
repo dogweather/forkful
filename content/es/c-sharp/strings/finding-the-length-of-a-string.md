@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:07.086417-07:00
 description: "Encontrar la longitud de una cadena es medir cu\xE1ntos caracteres contiene.\
   \ Los programadores lo hacen para validar entradas, gestionar bucles, o\u2026"
-lastmod: 2024-02-18 23:09:09.972438
+lastmod: 2024-02-19 22:05:17.575879
 model: gpt-4-1106-preview
 summary: "Encontrar la longitud de una cadena es medir cu\xE1ntos caracteres contiene.\
   \ Los programadores lo hacen para validar entradas, gestionar bucles, o\u2026"

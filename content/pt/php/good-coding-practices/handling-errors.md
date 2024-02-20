@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/handling-errors/
 date: 2024-01-26 00:55:35.416869-07:00
 description: "O tratamento de erros em PHP \xE9 sobre gerenciar e responder a condi\xE7\
   \xF5es que interrompem o fluxo normal de um programa, como arquivos ausentes ou\
   \ entrada de\u2026"
-lastmod: 2024-02-18 23:08:58.248173
+lastmod: 2024-02-19 22:05:05.723504
 model: gpt-4-1106-preview
 summary: "O tratamento de erros em PHP \xE9 sobre gerenciar e responder a condi\xE7\
   \xF5es que interrompem o fluxo normal de um programa, como arquivos ausentes ou\

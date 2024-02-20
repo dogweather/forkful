@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:34.342973-07:00
 description: "Regul\xE6re uttrykk (regex) er m\xF8nstre brukt til \xE5 matche kombinasjoner\
   \ av tegn i strenger. Programmerere bruker dem til s\xF8king, redigering eller\u2026"
-lastmod: 2024-02-18 23:08:53.470033
+lastmod: 2024-02-19 22:04:59.583516
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre brukt til \xE5 matche kombinasjoner\
   \ av tegn i strenger. Programmerere bruker dem til s\xF8king, redigering eller\u2026"

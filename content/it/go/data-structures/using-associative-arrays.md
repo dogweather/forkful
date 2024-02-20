@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:56.616038-07:00
 description: "Gli array associativi, noti come mappe in Go, ti permettono di memorizzare\
   \ coppie chiave-valore dove ogni chiave unica \xE8 mappata a un valore. I\u2026"
-lastmod: 2024-02-18 23:08:55.424816
+lastmod: 2024-02-19 22:05:02.004584
 model: gpt-4-0125-preview
 summary: "Gli array associativi, noti come mappe in Go, ti permettono di memorizzare\
   \ coppie chiave-valore dove ogni chiave unica \xE8 mappata a un valore. I\u2026"

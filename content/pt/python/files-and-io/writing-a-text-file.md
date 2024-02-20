@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/python/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:03.951636-07:00
 description: "Escrever em um arquivo de texto em Python \xE9 uma tarefa fundamental\
   \ que envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto.\
   \ Essa\u2026"
-lastmod: 2024-02-18 23:08:57.779105
+lastmod: 2024-02-19 22:05:05.243396
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Python \xE9 uma tarefa fundamental que\
   \ envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto.\

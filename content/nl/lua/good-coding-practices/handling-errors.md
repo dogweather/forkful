@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:03.600637-07:00
 description: "Fouten afhandelen in programmeren gaat over het verwachten van het onverwachte.\
   \ Het is de kunst van het plannen voor wanneer dingen misgaan, zodat je\u2026"
-lastmod: 2024-02-18 23:09:01.999572
+lastmod: 2024-02-19 22:05:10.020360
 model: gpt-4-0125-preview
 summary: "Fouten afhandelen in programmeren gaat over het verwachten van het onverwachte.\
   \ Het is de kunst van het plannen voor wanneer dingen misgaan, zodat je\u2026"

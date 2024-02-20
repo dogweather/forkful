@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:40.210715-07:00
 description: "Arredondar n\xFAmeros \xE9 ajustar o valor de um n\xFAmero para o inteiro\
   \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Programadores\
   \ fazem isso por\u2026"
-lastmod: 2024-02-18 23:08:57.662888
+lastmod: 2024-02-19 22:05:05.118438
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 ajustar o valor de um n\xFAmero para o inteiro\
   \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Programadores\

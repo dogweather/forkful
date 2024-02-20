@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/creating-a-temporary-file/
 date: 2024-01-20 17:39:52.676581-07:00
 description: "Creare un file temporaneo serve a immagazzinare dati che non necessitano\
   \ di persistenza a lungo termine. I programmatori li utilizzano per memorizzare\u2026"
-lastmod: 2024-02-18 23:08:56.191065
+lastmod: 2024-02-19 22:05:02.821031
 model: gpt-4-1106-preview
 summary: "Creare un file temporaneo serve a immagazzinare dati che non necessitano\
   \ di persistenza a lungo termine. I programmatori li utilizzano per memorizzare\u2026"

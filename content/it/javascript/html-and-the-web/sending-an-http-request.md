@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/sending-an-http-request/
 date: 2024-01-20 17:59:54.425630-07:00
 description: "Mandare una richiesta HTTP consente al tuo codice JavaScript di comunicare\
   \ con un server web e scambiare dati. I programmatori lo fanno per ottenere nuovi\u2026"
-lastmod: 2024-02-18 23:08:56.249679
+lastmod: 2024-02-19 22:05:02.883066
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP consente al tuo codice JavaScript di comunicare\
   \ con un server web e scambiare dati. I programmatori lo fanno per ottenere nuovi\u2026"

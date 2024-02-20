@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/organizing-code-into-functions/
 date: 2024-01-25 02:59:30.238639-07:00
 description: "Chunking code into functions is about packaging up blocks of code that\
   \ accomplish specific tasks. Doing this makes your code clean, easier to maintain,\u2026"
-lastmod: 2024-02-18 23:09:10.729434
+lastmod: 2024-02-19 22:05:18.258189
 model: gpt-4-1106-preview
 summary: "Chunking code into functions is about packaging up blocks of code that accomplish\
   \ specific tasks. Doing this makes your code clean, easier to maintain,\u2026"

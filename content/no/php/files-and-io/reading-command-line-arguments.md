@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/reading-command-line-arguments/
 date: 2024-01-20 17:56:36.195217-07:00
 description: "Kommandolinjeargumenter lar deg kj\xF8re PHP-skript med spesifikke parametere\
   \ for ulike oppgaver. \xC5 bruke disse er n\xF8dvendig for \xE5 lage fleksible skript\
   \ som\u2026"
-lastmod: 2024-02-18 23:08:53.990031
+lastmod: 2024-02-19 22:05:00.166184
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar deg kj\xF8re PHP-skript med spesifikke parametere\
   \ for ulike oppgaver. \xC5 bruke disse er n\xF8dvendig for \xE5 lage fleksible skript\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:27.240046-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong 
   \ \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7c m\xE3 h\xF3a v\xE0 gi\u1EA3i m\xE3\
   \ d\u1EEF li\u1EC7u gi\u1EEFa c\xE1c c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u c\u1EE7\
   a Go v\xE0 \u0111\u1ECBnh d\u1EA1ng JSON. C\xF4ng\u2026"
-lastmod: 2024-02-18 23:08:50.195267
+lastmod: 2024-02-19 22:04:55.198168
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong Go \u0111\
   \u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7c m\xE3 h\xF3a v\xE0 gi\u1EA3i m\xE3 d\u1EEF\

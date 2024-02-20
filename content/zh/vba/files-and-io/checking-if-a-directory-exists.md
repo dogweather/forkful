@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:39.102222-07:00
@@ -11,7 +9,7 @@ description: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u68C0\u67
   \u4EF6\u5939\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u907F\u514D\
   \u8FD0\u884C\u65F6\u9519\u8BEF\uFF0C\u786E\u4FDD\u4EE3\u7801\u80FD\u591F\u6709\u6548\
   \u4E14\u6B63\u786E\u5730\u4E0E\u6587\u4EF6\u7CFB\u7EDF\u4EA4\u4E92\u3002"
-lastmod: 2024-02-18 23:08:58.995129
+lastmod: 2024-02-19 22:05:06.613882
 model: gpt-4-0125-preview
 summary: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u68C0\u67E5\u76EE\
   \u5F55\u662F\u5426\u5B58\u5728\uFF0C\u662F\u6307\u5728\u6267\u884C\u4FDD\u5B58\u6587\

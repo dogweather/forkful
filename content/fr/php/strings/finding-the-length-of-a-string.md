@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:50.837566-07:00
 description: "Trouver la longueur d'une cha\xEEne en PHP, c'est compter le nombre\
   \ de caract\xE8res qu'elle contient. Les programmeurs en ont besoin pour valider\
   \ des saisies,\u2026"
-lastmod: 2024-02-18 23:09:08.912339
+lastmod: 2024-02-19 22:05:16.605219
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne en PHP, c'est compter le nombre de caract\xE8\
   res qu'elle contient. Les programmeurs en ont besoin pour valider des saisies,\u2026"

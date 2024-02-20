@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/sending-an-http-request/
 date: 2024-01-20 18:00:25.229883-07:00
 description: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 (request) \u092D\u0947\u091C\
   \u0928\u093E \u0907\u0902\u091F\u0930\u0928\u0947\u091F \u092A\u0930 \u0938\u0930\
@@ -11,7 +9,7 @@ description: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 (request) \u092D\u0947\u
   \u093E \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0915\u0930\u0928\u0947, API\
   \ \u0938\u0947 \u092C\u093E\u0924 \u0915\u0930\u0928\u0947 \u092F\u093E \u092B\u0949\
   \u0930\u094D\u092E \u0921\u0947\u091F\u093E\u2026"
-lastmod: 2024-02-18 23:09:04.038095
+lastmod: 2024-02-19 22:05:12.020050
 model: gpt-4-1106-preview
 summary: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 (request) \u092D\u0947\u091C\u0928\
   \u093E \u0907\u0902\u091F\u0930\u0928\u0947\u091F \u092A\u0930 \u0938\u0930\u094D\

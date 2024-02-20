@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/typescript/reading-command-line-arguments/
 date: 2024-01-20 17:57:08.107590-07:00
 description: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u3092\u8AAD\u3080\
   \u3068\u306F\u3001\u30D7\u30ED\u30B0\u30E9\u30E0\u304C\u5B9F\u884C\u6642\u306B\u8FFD\
@@ -9,7 +7,7 @@ description: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u3092\u8AAD
   \u52D5\u3092\u5909\u66F4\u3067\u304D\u308B\u3088\u3046\u306B\u306A\u308A\u307E\u3059\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.696573
+lastmod: 2024-02-19 22:05:00.963204
 model: gpt-4-1106-preview
 summary: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u3092\u8AAD\u3080\
   \u3068\u306F\u3001\u30D7\u30ED\u30B0\u30E9\u30E0\u304C\u5B9F\u884C\u6642\u306B\u8FFD\

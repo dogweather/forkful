@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/go/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:23.023718-07:00
 description: "Testien kirjoittaminen Go-kielell\xE4 k\xE4sitt\xE4\xE4 pienien, hallittavien\
   \ koodip\xE4tkien luomisen, jotka varmistavat sovelluksesi toiminnallisuuden ja\u2026"
-lastmod: 2024-02-18 23:09:07.089308
+lastmod: 2024-02-19 22:05:14.969273
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Go-kielell\xE4 k\xE4sitt\xE4\xE4 pienien, hallittavien\
   \ koodip\xE4tkien luomisen, jotka varmistavat sovelluksesi toiminnallisuuden ja\u2026"

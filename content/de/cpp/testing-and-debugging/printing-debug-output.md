@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/printing-debug-output/
 date: 2024-01-20 17:52:08.685338-07:00
 description: "Debug-Ausgaben zu drucken, hei\xDFt, Informationen zur Laufzeit auszugeben,\
   \ um Fehler zu finden oder Programmabl\xE4ufe zu verstehen. Es ist wie das Schummeln\u2026"
-lastmod: 2024-02-18 23:09:05.191697
+lastmod: 2024-02-19 22:05:13.121379
 model: gpt-4-1106-preview
 summary: "Debug-Ausgaben zu drucken, hei\xDFt, Informationen zur Laufzeit auszugeben,\
   \ um Fehler zu finden oder Programmabl\xE4ufe zu verstehen. Es ist wie das Schummeln\u2026"

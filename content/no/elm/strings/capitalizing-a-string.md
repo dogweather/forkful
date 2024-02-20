@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/elm/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:55.309989-07:00
 description: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omforme det f\xF8rste\
   \ tegnet i en gitt streng til stor bokstav mens resten holdes i sm\xE5 bokstaver,\
   \ ofte for\u2026"
-lastmod: 2024-02-18 23:08:53.795141
+lastmod: 2024-02-19 22:04:59.937810
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omforme det f\xF8rste tegnet\
   \ i en gitt streng til stor bokstav mens resten holdes i sm\xE5 bokstaver, ofte\

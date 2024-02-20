@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:50.150860-07:00
 description: "Ber\xE4kning av ett datum i framtiden eller det f\xF6rflutna inneb\xE4\
   r att ta ett specifikt datum och addera eller subtrahera tid fr\xE5n det. Programmerare\
   \ g\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.808928
+lastmod: 2024-02-19 22:04:57.144296
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av ett datum i framtiden eller det f\xF6rflutna inneb\xE4r\
   \ att ta ett specifikt datum och addera eller subtrahera tid fr\xE5n det. Programmerare\

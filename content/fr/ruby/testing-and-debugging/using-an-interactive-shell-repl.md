@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/ruby/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:07.400294-07:00
 description: "Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle Lire-\xC9\
   valuer-Imprimer), vous permet de tester du code en temps r\xE9el. Les programmeurs\u2026"
-lastmod: 2024-02-18 23:09:09.409086
+lastmod: 2024-02-19 22:05:17.071378
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle Lire-\xC9valuer-Imprimer),\
   \ vous permet de tester du code en temps r\xE9el. Les programmeurs\u2026"

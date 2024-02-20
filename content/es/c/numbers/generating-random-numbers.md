@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:05.523122-07:00
 description: "Generar n\xFAmeros aleatorios en C implica crear valores que son impredecibles\
   \ y siguen una distribuci\xF3n espec\xEDfica, como uniforme o normal. Esta capacidad\u2026"
-lastmod: 2024-02-18 23:09:10.496340
+lastmod: 2024-02-19 22:05:18.048058
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en C implica crear valores que son impredecibles\
   \ y siguen una distribuci\xF3n espec\xEDfica, como uniforme o normal. Esta capacidad\u2026"

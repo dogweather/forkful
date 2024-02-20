@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/printing-debug-output/
 date: 2024-01-20 17:52:35.339403-07:00
 description: "Imprimir sa\xEDda de debug \xE9 expor o que est\xE1 acontecendo no programa\
   \ durante a execu\xE7\xE3o. Programadores fazem isso para entender e resolver problemas\
   \ \u2013\u2026"
-lastmod: 2024-02-18 23:08:58.160016
+lastmod: 2024-02-19 22:05:05.629096
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDda de debug \xE9 expor o que est\xE1 acontecendo no programa\
   \ durante a execu\xE7\xE3o. Programadores fazem isso para entender e resolver problemas\

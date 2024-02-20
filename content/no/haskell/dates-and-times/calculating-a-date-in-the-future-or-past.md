@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/haskell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:08.714034-07:00
 description: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 finne\
   \ en bestemt dag f\xF8r eller etter en kjent dato. Programmerere gj\xF8r dette for\
   \ \xE5 h\xE5ndtere\u2026"
-lastmod: 2024-02-18 23:08:53.947486
+lastmod: 2024-02-19 22:05:00.119797
 model: gpt-4-1106-preview
 summary: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 finne en\
   \ bestemt dag f\xF8r eller etter en kjent dato. Programmerere gj\xF8r dette for\

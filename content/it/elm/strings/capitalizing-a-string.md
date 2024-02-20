@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/elm/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:54.287494-07:00
 description: "La capitalizzazione di una stringa comporta la trasformazione del carattere\
   \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo,\u2026"
-lastmod: 2024-02-18 23:08:55.790337
+lastmod: 2024-02-19 22:05:02.395493
 model: gpt-4-0125-preview
 summary: "La capitalizzazione di una stringa comporta la trasformazione del carattere\
   \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo,\u2026"

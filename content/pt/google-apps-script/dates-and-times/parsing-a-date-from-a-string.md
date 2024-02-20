@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/google-apps-script/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:18.481011-07:00
 description: "Analisar uma data a partir de uma string envolve converter um texto\
   \ que representa uma data em um objeto de data, permitindo que programadores realizem\u2026"
-lastmod: 2024-02-18 23:08:57.726479
+lastmod: 2024-02-19 22:05:05.187299
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve converter um texto que\
   \ representa uma data em um objeto de data, permitindo que programadores realizem\u2026"

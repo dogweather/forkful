@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/fish-shell/rounding-numbers/
 date: 2024-01-26 03:45:20.356222-07:00
 description: "Numeroiden py\xF6rist\xE4minen on desimaalipaikkojen karsimista, jotta\
   \ tiedot olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:08.076128
+lastmod: 2024-02-19 22:05:15.881728
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen on desimaalipaikkojen karsimista, jotta tiedot\
   \ olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin. Ohjelmoijat\u2026"

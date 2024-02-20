@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:22.056214-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\
   \ t\xE1ch bi\u1EC7t b\u1EB1ng d\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 x\u1EED\
   \ l\xFD d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng \u0111\u01B0\u1EE3c l\u01B0u tr\u1EEF\
   \ d\u01B0\u1EDBi \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n\u2026"
-lastmod: 2024-02-18 23:08:50.339148
+lastmod: 2024-02-19 22:04:55.381828
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB\
   \ t\xE1ch bi\u1EC7t b\u1EB1ng d\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 x\u1EED\

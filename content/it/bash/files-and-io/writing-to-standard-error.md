@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/bash/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:14.302404-07:00
 description: "Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi\
   \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"
-lastmod: 2024-02-18 23:08:56.068073
+lastmod: 2024-02-19 22:05:02.688300
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi\
   \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"

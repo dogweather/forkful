@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/using-a-debugger/
 date: 2024-01-26 03:47:28.610341-07:00
 description: "Usar um depurador no Bash significa utilizar ferramentas para testar\
   \ e encontrar problemas nos seus scripts, como capturar bugs que fazem seu c\xF3\
   digo\u2026"
-lastmod: 2024-02-18 23:08:58.330071
+lastmod: 2024-02-19 22:05:05.812435
 model: gpt-4-0125-preview
 summary: "Usar um depurador no Bash significa utilizar ferramentas para testar e encontrar\
   \ problemas nos seus scripts, como capturar bugs que fazem seu c\xF3digo\u2026"

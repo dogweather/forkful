@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/ruby/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:54.615524-07:00
 description: "Les tableaux associatifs, plus commun\xE9ment appel\xE9s hash en Ruby,\
   \ permettent d'associer des cl\xE9s uniques \xE0 des valeurs. Ils sont indispensables\
   \ lorsque\u2026"
-lastmod: 2024-02-18 23:09:09.397215
+lastmod: 2024-02-19 22:05:17.060547
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, plus commun\xE9ment appel\xE9s hash en Ruby, permettent\
   \ d'associer des cl\xE9s uniques \xE0 des valeurs. Ils sont indispensables lorsque\u2026"

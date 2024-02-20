@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/elm/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:25.797574-07:00
@@ -13,7 +11,7 @@ description: "Elm \u092E\u0947\u0902 HTML \u092A\u093E\u0930\u094D\u0938\u093F\u
   \ APIs \u0915\u0947 \u0938\u093E\u0925 \u0907\u0902\u091F\u0930\u092B\u0947\u0938\
   \ \u092C\u0928\u093E\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0915\u0930\u0924\
   \u0947 \u0939\u0948\u0902 \u091C\u094B HTML\u2026"
-lastmod: 2024-02-18 23:09:03.187895
+lastmod: 2024-02-19 22:05:11.183457
 model: gpt-4-0125-preview
 summary: "Elm \u092E\u0947\u0902 HTML \u092A\u093E\u0930\u094D\u0938\u093F\u0902\u0917\
   \ \u0915\u093E \u092E\u0924\u0932\u092C HTML \u0926\u0938\u094D\u0924\u093E\u0935\

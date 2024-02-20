@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/starting-a-new-project/
 date: 2024-01-20 18:03:04.201791-07:00
 description: "Noen ganger trenger vi bare et blankt lerret. \xC5 starte et nytt prosjekt\
   \ i Clojure gir oss den freshe starten \u2013 for \xE5 utforske, eksperimentere,\
   \ eller bygge\u2026"
-lastmod: 2024-02-18 23:08:53.565146
+lastmod: 2024-02-19 22:04:59.687177
 model: gpt-4-1106-preview
 summary: "Noen ganger trenger vi bare et blankt lerret. \xC5 starte et nytt prosjekt\
   \ i Clojure gir oss den freshe starten \u2013 for \xE5 utforske, eksperimentere,\

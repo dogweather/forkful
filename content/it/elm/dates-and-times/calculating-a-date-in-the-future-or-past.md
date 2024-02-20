@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elm/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:45.560362-07:00
 description: "Calcolare una data nel futuro o nel passato significa trovare una data\
   \ specifica aggiungendo o sottraendo giorni, mesi o anni da una data di partenza.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.818648
+lastmod: 2024-02-19 22:05:02.425565
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato significa trovare una data specifica\
   \ aggiungendo o sottraendo giorni, mesi o anni da una data di partenza. I\u2026"

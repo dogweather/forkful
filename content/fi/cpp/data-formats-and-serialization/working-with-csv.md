@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/cpp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:11.292775-07:00
 description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely liittyy datan\
   \ k\xE4sittelyyn ja muokkaamiseen yksinkertaisessa tekstiformaatissa, jossa jokainen\u2026"
-lastmod: 2024-02-18 23:09:07.968519
+lastmod: 2024-02-19 22:05:15.782841
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely liittyy datan k\xE4\
   sittelyyn ja muokkaamiseen yksinkertaisessa tekstiformaatissa, jossa jokainen\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.456921-07:00
 description: "Een debugger is een hulpmiddel waarmee je de uitvoering van een programma\
   \ kunt inspecteren en controleren, wat het makkelijk maakt om te ontdekken waar\u2026"
-lastmod: 2024-02-18 23:09:01.996349
+lastmod: 2024-02-19 22:05:10.017252
 model: gpt-4-0125-preview
 summary: "Een debugger is een hulpmiddel waarmee je de uitvoering van een programma\
   \ kunt inspecteren en controleren, wat het makkelijk maakt om te ontdekken waar\u2026"

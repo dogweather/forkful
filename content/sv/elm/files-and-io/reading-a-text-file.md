@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/reading-a-text-file/
 date: 2024-01-20 17:54:11.794529-07:00
 description: "Att l\xE4sa en textfil inneb\xE4r att programmet h\xE4mtar data fr\xE5\
   n en fil som \xE4r lagrad p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera\
   \ konfigurationer, l\xE4sa\u2026"
-lastmod: 2024-02-18 23:08:51.725962
+lastmod: 2024-02-19 22:04:57.058619
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att programmet h\xE4mtar data fr\xE5n\
   \ en fil som \xE4r lagrad p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera\

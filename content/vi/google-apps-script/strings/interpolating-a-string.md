@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/google-apps-script/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:17.683306-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c n\u1ED9i suy chu\u1ED7i trong Google Apps Script cho ph\
   p nh\xFAng \u0111\u1ED9ng c\xE1c bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i, gi\xFA\
   p t\u1EA1o ra code d\u1EC5 \u0111\u1ECDc v\xE0 b\u1EA3o tr\xEC h\u01A1n. L\u1EAD\
   p tr\xECnh vi\xEAn s\u1EED\u2026"
-lastmod: 2024-02-18 23:08:50.203276
+lastmod: 2024-02-19 22:04:55.208556
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c n\u1ED9i suy chu\u1ED7i trong Google Apps Script cho ph\xE9p nh\xFA\
   ng \u0111\u1ED9ng c\xE1c bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i, gi\xFAp t\u1EA1\

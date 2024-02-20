@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/clojure/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:42.589811-07:00
 description: "Getallen afronden gaat over het aanpassen van een getal naar het dichtstbijzijnde\
   \ geheel of naar een bepaalde decimale precisie. We ronden getallen af om\u2026"
-lastmod: 2024-02-18 23:09:01.473993
+lastmod: 2024-02-19 22:05:09.502698
 model: gpt-4-0125-preview
 summary: "Getallen afronden gaat over het aanpassen van een getal naar het dichtstbijzijnde\
   \ geheel of naar een bepaalde decimale precisie. We ronden getallen af om\u2026"

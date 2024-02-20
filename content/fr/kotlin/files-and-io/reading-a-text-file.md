@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/kotlin/reading-a-text-file/
 date: 2024-01-20 17:54:38.362988-07:00
 description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans\
   \ notre code. C'est crucial pour g\xE9rer les donn\xE9es configurables, les sauvegardes\
   \ ou\u2026"
-lastmod: 2024-02-18 23:09:08.800092
+lastmod: 2024-02-19 22:05:16.502633
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans notre\
   \ code. C'est crucial pour g\xE9rer les donn\xE9es configurables, les sauvegardes\

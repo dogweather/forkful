@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/working-with-xml/
 date: 2024-01-26 04:27:40.198453-07:00
 description: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering\
   \ av data i Extensible Markup Language-formatet. Programmere sliter med XML siden\
   \ det er et\u2026"
-lastmod: 2024-02-18 23:08:54.081634
+lastmod: 2024-02-19 22:05:00.265948
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering av\
   \ data i Extensible Markup Language-formatet. Programmere sliter med XML siden det\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:04.813260-07:00
 description: "Een tekstbestand lezen in Swift betekent het ophalen van de inhoud van\
   \ een bestand dat is opgeslagen op schijf. Programmeurs doen dit om te werken met\u2026"
-lastmod: 2024-02-18 23:09:02.248179
+lastmod: 2024-02-19 22:05:10.261754
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in Swift betekent het ophalen van de inhoud van een\
   \ bestand dat is opgeslagen op schijf. Programmeurs doen dit om te werken met\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:01.365411-07:00
 description: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywaniu\
   \ ci\u0105g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
-lastmod: 2024-02-18 23:08:49.119117
+lastmod: 2024-02-19 22:04:54.057910
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywaniu ci\u0105\
   g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym. Programi\u015Bci robi\u0105\

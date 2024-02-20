@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:21.681785-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de usu\xE1rio e senha codificadas em base64 no cabe\xE7alho\
   \ da requisi\xE7\xE3o.\u2026"
-lastmod: 2024-02-18 23:08:58.100767
+lastmod: 2024-02-19 22:05:05.581444
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de usu\xE1rio e senha codificadas em base64 no cabe\xE7alho\

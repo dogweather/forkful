@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/powershell/logging/
 date: 2024-01-26 01:07:18.264099-07:00
 description: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler gjennom\
   \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\u2026"
-lastmod: 2024-02-18 23:08:54.106345
+lastmod: 2024-02-19 22:05:00.292676
 model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler gjennom\
   \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\u2026"

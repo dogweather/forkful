@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:42.747543-07:00
 description: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
   \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\
   \ les\u2026"
-lastmod: 2024-02-18 23:09:08.580626
+lastmod: 2024-02-19 22:05:16.357160
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
   \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\

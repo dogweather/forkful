@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/comparing-two-dates/
 date: 2024-01-20 17:32:36.906136-07:00
 description: "Comparer deux dates, c'est mesurer leur \xE9cart ou v\xE9rifier leur\
   \ ordre chronologique. On fait \xE7a pour planifier des \xE9v\xE9nements, calculer\
   \ des d\xE9lais ou\u2026"
-lastmod: 2024-02-18 23:09:08.448351
+lastmod: 2024-02-19 22:05:16.236355
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est mesurer leur \xE9cart ou v\xE9rifier leur ordre\
   \ chronologique. On fait \xE7a pour planifier des \xE9v\xE9nements, calculer des\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:47.654872-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma forma de\
   \ filtrar strings, preservando s\xF3 o que \xE9 relevante para o seu contexto. Programadores\
   \ fazem\u2026"
-lastmod: 2024-02-18 23:08:57.745722
+lastmod: 2024-02-19 22:05:05.207434
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma forma de filtrar\
   \ strings, preservando s\xF3 o que \xE9 relevante para o seu contexto. Programadores\

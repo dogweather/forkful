@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:28.833576-07:00
 description: "A Rust interactive shell, or REPL (Read-Eval-Print Loop), lets you run\
   \ Rust code on-the-fly, seeing instant results, perfect for experimentation or\u2026"
-lastmod: 2024-02-18 23:09:10.850200
+lastmod: 2024-02-19 22:05:18.366851
 model: gpt-4-1106-preview
 summary: "A Rust interactive shell, or REPL (Read-Eval-Print Loop), lets you run Rust\
   \ code on-the-fly, seeing instant results, perfect for experimentation or\u2026"

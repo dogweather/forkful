@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:14.077210-07:00
@@ -10,7 +8,7 @@ description: "\u5728 Go \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\u
   \u5458\u4F7F\u7528\u8FD9\u79CD\u65B9\u5F0F\u6765\u5C06\u5E38\u89C4\u8F93\u51FA\u4E0E\
   \u9519\u8BEF\u4FE1\u606F\u5206\u5F00\uFF0C\u4F7F\u5F97\u8C03\u8BD5\u548C\u65E5\u5FD7\
   \u89E3\u6790\u66F4\u52A0\u76F4\u63A5\u3002"
-lastmod: 2024-02-18 23:08:58.724090
+lastmod: 2024-02-19 22:05:06.240522
 model: gpt-4-0125-preview
 summary: "\u5728 Go \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u6D89\
   \u53CA\u5C06\u9519\u8BEF\u6D88\u606F\u6216\u8BCA\u65AD\u4FE1\u606F\u5BFC\u5411\u4E0D\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:48.404022-07:00
 description: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 standard\
   \ per accedere a risorse protette da username e password. I programmatori le usano\u2026"
-lastmod: 2024-02-18 23:08:56.212208
+lastmod: 2024-02-19 22:05:02.843200
 model: gpt-4-1106-preview
 summary: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 standard\
   \ per accedere a risorse protette da username e password. I programmatori le usano\u2026"

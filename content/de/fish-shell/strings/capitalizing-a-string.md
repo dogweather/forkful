@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/fish-shell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:22.454498-07:00
 description: "Das Kapitalisieren eines Strings bedeutet, ihn so zu modifizieren, dass\
   \ der erste Buchstabe gro\xDFgeschrieben und der Rest des Strings kleingeschrieben\u2026"
-lastmod: 2024-02-18 23:09:05.305781
+lastmod: 2024-02-19 22:05:13.229485
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, ihn so zu modifizieren, dass\
   \ der erste Buchstabe gro\xDFgeschrieben und der Rest des Strings kleingeschrieben\u2026"

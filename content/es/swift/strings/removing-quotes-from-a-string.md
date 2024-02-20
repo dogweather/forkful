@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/swift/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:58.646941-07:00
 description: "Eliminar las comillas de una cadena significa quitar cualquier marca\
   \ de comillas que encierre el contenido. Hacemos esto para sanear entradas, preparar\u2026"
-lastmod: 2024-02-18 23:09:10.344768
+lastmod: 2024-02-19 22:05:17.909633
 model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena significa quitar cualquier marca de\
   \ comillas que encierre el contenido. Hacemos esto para sanear entradas, preparar\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/bash/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:39.138761-07:00
 description: "Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten\
   \ en andere belangrijke informatie van de draaiende processen van een programma\
   \ naar een\u2026"
-lastmod: 2024-02-18 23:09:02.047836
+lastmod: 2024-02-19 22:05:10.073279
 model: gpt-4-0125-preview
 summary: "Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten en andere\
   \ belangrijke informatie van de draaiende processen van een programma naar een\u2026"

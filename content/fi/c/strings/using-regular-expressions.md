@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:13.716822-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) tarjoavat tavan etsi\xE4, vastata\
   \ ja manipuloida merkkijonoja k\xE4ytt\xE4en m\xE4\xE4riteltyj\xE4 kaavoja. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.120366
+lastmod: 2024-02-19 22:05:15.922037
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) tarjoavat tavan etsi\xE4, vastata\
   \ ja manipuloida merkkijonoja k\xE4ytt\xE4en m\xE4\xE4riteltyj\xE4 kaavoja. Ohjelmoijat\

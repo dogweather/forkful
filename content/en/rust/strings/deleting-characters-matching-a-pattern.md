@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/rust/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:51.970216-07:00
 description: "Deleting characters matching a pattern in a string means finding and\
   \ removing specific sequences of characters. Programmers do it to clean up text,\
   \ parse\u2026"
-lastmod: 2024-02-18 23:09:10.833149
+lastmod: 2024-02-19 22:05:18.351469
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in a string means finding and removing\
   \ specific sequences of characters. Programmers do it to clean up text, parse\u2026"

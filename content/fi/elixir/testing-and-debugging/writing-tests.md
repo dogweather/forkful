@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elixir/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:26.697342-07:00
 description: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
   \ skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n varmistaakseen\u2026"
-lastmod: 2024-02-18 23:09:07.277357
+lastmod: 2024-02-19 22:05:15.171278
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
   \ skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekev\xE4t t\xE4\

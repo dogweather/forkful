@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:51.941165-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP w Google Apps Script polega na\
   \ programowym wywo\u0142aniu zewn\u0119trznego serwera internetowego lub API. Programi\u015B\
   ci robi\u0105 to, aby pobiera\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.143262
+lastmod: 2024-02-19 22:04:54.082169
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP w Google Apps Script polega na programowym\
   \ wywo\u0142aniu zewn\u0119trznego serwera internetowego lub API. Programi\u015B\

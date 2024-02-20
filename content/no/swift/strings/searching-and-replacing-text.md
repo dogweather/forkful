@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/swift/searching-and-replacing-text/
 date: 2024-01-20 17:58:36.284973-07:00
 description: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fraser\
   \ i en streng. Det sparer tid og minimerer feil n\xE5r du jobber med store datamengder\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:54.254917
+lastmod: 2024-02-19 22:05:00.401230
 model: gpt-4-1106-preview
 summary: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fraser i\
   \ en streng. Det sparer tid og minimerer feil n\xE5r du jobber med store datamengder\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/working-with-xml/
 date: 2024-01-25 03:39:28.770982-07:00
 description: "Working with XML means parsing, manipulating, and writing XML data using\
   \ programming. Programmers handle XML to exchange data across different systems,\u2026"
-lastmod: 2024-02-18 23:09:10.831241
+lastmod: 2024-02-19 22:05:18.349731
 model: gpt-4-1106-preview
 summary: "Working with XML means parsing, manipulating, and writing XML data using\
   \ programming. Programmers handle XML to exchange data across different systems,\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:22.390881-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es cuando accedemos\
   \ a recursos protegidos en la web usando un nombre de usuario y contrase\xF1a.\u2026"
-lastmod: 2024-02-18 23:09:10.452926
+lastmod: 2024-02-19 22:05:18.006026
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es cuando accedemos\
   \ a recursos protegidos en la web usando un nombre de usuario y contrase\xF1a.\u2026"

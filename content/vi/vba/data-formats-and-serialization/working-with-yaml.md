@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:52.499057-07:00
@@ -8,7 +6,7 @@ description: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\", 
   \ m\u1ED9t ng\xF4n ng\u1EEF tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\
   \u1ECDc cho con ng\u01B0\u1EDDi, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
   ng cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh. L\u1EADp\u2026"
-lastmod: 2024-02-18 23:08:50.532602
+lastmod: 2024-02-19 22:04:55.620484
 model: gpt-4-0125-preview
 summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\", l\xE0\
   \ m\u1ED9t ng\xF4n ng\u1EEF tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\

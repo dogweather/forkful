@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/swift/working-with-toml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:05.725924-07:00
@@ -14,7 +12,7 @@ description: "TOML (\u042F\u0437\u044B\u043A \u0422\u043E\u043C\u0430, \u043E\u0
   \u0435\u0439 \u0447\u0435\u0442\u043A\u043E\u0439 \u0441\u0435\u043C\u0430\u043D\
   \u0442\u0438\u043A\u0435. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\
   \u0441\u0442\u044B\u2026"
-lastmod: 2024-02-18 23:08:57.437026
+lastmod: 2024-02-19 22:05:04.706653
 model: gpt-4-0125-preview
 summary: "TOML (\u042F\u0437\u044B\u043A \u0422\u043E\u043C\u0430, \u043E\u0447\u0435\
   \u0432\u0438\u0434\u043D\u044B\u0439 \u0438 \u043C\u0438\u043D\u0438\u043C\u0430\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/handling-errors/
 date: 2024-01-26 00:55:55.369307-07:00
 description: "\xC5 h\xE5ndtere feil i PowerShell betyr \xE5 forutse uhell og h\xE5\
   ndtere dem p\xE5 en smidig m\xE5te. Programmerere gj\xF8r dette for \xE5 forhindre\
   \ krasjer og gi brukere\u2026"
-lastmod: 2024-02-18 23:08:54.107236
+lastmod: 2024-02-19 22:05:00.293669
 model: gpt-4-1106-preview
 summary: "\xC5 h\xE5ndtere feil i PowerShell betyr \xE5 forutse uhell og h\xE5ndtere\
   \ dem p\xE5 en smidig m\xE5te. Programmerere gj\xF8r dette for \xE5 forhindre krasjer\

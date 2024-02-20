@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/generating-random-numbers/
 date: 2024-01-27 20:34:17.772647-07:00
 description: "Generowanie losowych liczb w programowaniu polega na tworzeniu liczb,\
   \ kt\xF3re nie wykazuj\u0105 \u017Cadnego przewidywalnego wzorca. Programi\u015B\
   ci robi\u0105 to z r\xF3\u017Cnych\u2026"
-lastmod: 2024-02-18 23:08:49.557673
+lastmod: 2024-02-19 22:04:54.491670
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w programowaniu polega na tworzeniu liczb, kt\xF3\
   re nie wykazuj\u0105 \u017Cadnego przewidywalnego wzorca. Programi\u015Bci robi\u0105\

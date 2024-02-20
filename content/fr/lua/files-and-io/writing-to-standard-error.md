@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/lua/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:45.687361-07:00
 description: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les\
   \ messages d'erreur et les sorties de diagnostic vers un canal distinct, diff\xE9\
   rent de la\u2026"
-lastmod: 2024-02-18 23:09:08.987994
+lastmod: 2024-02-19 22:05:16.675283
 model: gpt-4-0125-preview
 summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les messages\
   \ d'erreur et les sorties de diagnostic vers un canal distinct, diff\xE9rent de\

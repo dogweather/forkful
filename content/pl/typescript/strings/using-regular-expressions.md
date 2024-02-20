@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/typescript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:43.028180-07:00
 description: "Wyra\u017Cenia regularne, zwane r\xF3wnie\u017C regex, to pot\u0119\u017C\
   ne narz\u0119dzie do dopasowywania wzorc\xF3w i wyszukiwania w programowaniu. Programi\u015B\
   ci u\u017Cywaj\u0105 wyra\u017Ce\u0144\u2026"
-lastmod: 2024-02-18 23:08:49.338316
+lastmod: 2024-02-19 22:04:54.255405
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne, zwane r\xF3wnie\u017C regex, to pot\u0119\u017C\
   ne narz\u0119dzie do dopasowywania wzorc\xF3w i wyszukiwania w programowaniu. Programi\u015B\

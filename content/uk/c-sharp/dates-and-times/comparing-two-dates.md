@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/c-sharp/comparing-two-dates/
 date: 2024-01-20 17:32:28.192156-07:00
 description: "Comparing dates lets you determine the relationship between two points\
   \ in time. It's essential for checking expirations, scheduling tasks, or measuring\u2026"
-lastmod: 2024-02-18 23:09:00.364413
+lastmod: 2024-02-19 22:05:08.336491
 model: gpt-4-1106-preview
 summary: "Comparing dates lets you determine the relationship between two points in\
   \ time. It's essential for checking expirations, scheduling tasks, or measuring\u2026"

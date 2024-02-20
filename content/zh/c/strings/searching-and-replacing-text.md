@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:12.685082-07:00
@@ -11,7 +9,7 @@ description: "\u5728 C \u4E2D\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u6D89\u5
   \u4F5C\u662F\u4E3A\u4E86\u5904\u7406\u6587\u672C\u6570\u636E - \u4EFB\u52A1\u8303\
   \u56F4\u4ECE\u6570\u636E\u6E05\u6D17\u548C\u683C\u5F0F\u5316\u5230\u52A8\u6001\u751F\
   \u6210\u5185\u5BB9\u3002"
-lastmod: 2024-02-18 23:08:59.544489
+lastmod: 2024-02-19 22:05:07.356557
 model: gpt-4-0125-preview
 summary: "\u5728 C \u4E2D\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u6D89\u53CA\u5230\
   \u627E\u51FA\u4E00\u4E2A\u8F83\u5927\u5B57\u7B26\u4E32\u5185\u7684\u7279\u5B9A\u5B50\

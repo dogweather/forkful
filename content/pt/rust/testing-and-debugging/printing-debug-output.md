@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/printing-debug-output/
 date: 2024-01-20 17:53:20.529372-07:00
 description: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o estado\
   \ de vari\xE1veis ou o fluxo do c\xF3digo. Programadores fazem isso para entender\
   \ e corrigir\u2026"
-lastmod: 2024-02-18 23:08:57.931313
+lastmod: 2024-02-19 22:05:05.404558
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o estado de\
   \ vari\xE1veis ou o fluxo do c\xF3digo. Programadores fazem isso para entender e\

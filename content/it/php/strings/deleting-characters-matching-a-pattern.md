@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/php/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:50.479350-07:00
 description: "\"Che cosa e perch\xE9?\" Eliminare caratteri che corrispondono a un\
   \ modello specifico \xE8 come fare il pruning su un albero; togli i rami non necessari.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.955809
+lastmod: 2024-02-19 22:05:02.567428
 model: gpt-4-1106-preview
 summary: "\"Che cosa e perch\xE9?\" Eliminare caratteri che corrispondono a un modello\
   \ specifico \xE8 come fare il pruning su un albero; togli i rami non necessari.\

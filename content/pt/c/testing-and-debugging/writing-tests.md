@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/c/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:37.375992-07:00
 description: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxiliares\
   \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo. Os programadores\u2026"
-lastmod: 2024-02-18 23:08:58.623215
+lastmod: 2024-02-19 22:05:06.123825
 model: gpt-4-0125-preview
 summary: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxiliares\
   \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo. Os programadores\u2026"

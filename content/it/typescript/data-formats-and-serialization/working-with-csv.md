@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/typescript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:33.942683-07:00
 description: "Lavorare con i file CSV (Valori Separati da Virgola) implica la lettura\
   \ e la scrittura di file CSV, un formato comune di scambio dati utilizzato per la\u2026"
-lastmod: 2024-02-18 23:08:55.662108
+lastmod: 2024-02-19 22:05:02.259344
 model: gpt-4-0125-preview
 summary: "Lavorare con i file CSV (Valori Separati da Virgola) implica la lettura\
   \ e la scrittura di file CSV, un formato comune di scambio dati utilizzato per la\u2026"

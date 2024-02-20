@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:19.664601-07:00
 description: "Las expresiones regulares (regex) son patrones utilizados para hacer\
   \ coincidir combinaciones de caracteres en cadenas de texto. Los programadores las\u2026"
-lastmod: 2024-02-18 23:09:09.494303
+lastmod: 2024-02-19 22:05:17.150311
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son patrones utilizados para hacer coincidir\
   \ combinaciones de caracteres en cadenas de texto. Los programadores las\u2026"

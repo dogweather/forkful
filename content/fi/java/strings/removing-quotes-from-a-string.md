@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/java/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:47.703538-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien\u2014\
   yhden (' '), kaksinkertaisen (\" \") tai molempien\u2014poistamista tekstidatasta.\u2026"
-lastmod: 2024-02-18 23:09:07.445370
+lastmod: 2024-02-19 22:05:15.328732
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien\u2014\
   yhden (' '), kaksinkertaisen (\" \") tai molempien\u2014poistamista tekstidatasta.\u2026"

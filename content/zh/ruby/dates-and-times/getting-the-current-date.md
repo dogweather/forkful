@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/ruby/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:40.673749-07:00
@@ -10,7 +8,7 @@ description: "\u5728\u51E0\u4E4E\u6240\u6709\u7F16\u7A0B\u5DE5\u4F5C\u4E2D\uFF0C
   \u65E5\u671F\u6233\u7684\u62A5\u544A\u3002\u5728Ruby\u4E2D\uFF0C\u53EF\u4EE5\u901A\
   \u8FC7\u4F7F\u7528\u6807\u51C6\u5E93\u8F7B\u677E\u5B8C\u6210\uFF0C\u7B80\u5316\u6D89\
   \u53CA\u65E5\u671F\u7684\u64CD\u4F5C\u3002"
-lastmod: 2024-02-18 23:08:59.610112
+lastmod: 2024-02-19 22:05:07.448069
 model: gpt-4-0125-preview
 summary: "\u5728\u51E0\u4E4E\u6240\u6709\u7F16\u7A0B\u5DE5\u4F5C\u4E2D\uFF0C\u83B7\
   \u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\u4E2A\u57FA\u672C\u4EFB\u52A1\uFF0C\u4ECE\

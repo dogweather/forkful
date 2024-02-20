@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:49.390394-07:00
 description: "Supprimer des caract\xE8res selon un mod\xE8le (pattern) c'est enlever\
   \ des \xE9l\xE9ments d'une cha\xEEne qui correspondent \xE0 un crit\xE8re pr\xE9\
   cis. Les d\xE9veloppeurs le font\u2026"
-lastmod: 2024-02-18 23:09:08.415999
+lastmod: 2024-02-19 22:05:16.207761
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un mod\xE8le (pattern) c'est enlever des\
   \ \xE9l\xE9ments d'une cha\xEEne qui correspondent \xE0 un crit\xE8re pr\xE9cis.\

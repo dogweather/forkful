@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/bash/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:48.107457-07:00
 description: "Das Kapitalisieren eines Strings in Bash beinhaltet die Umwandlung des\
   \ ersten Buchstabens des Strings in einen Gro\xDFbuchstaben, w\xE4hrend der Rest\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:05.034221
+lastmod: 2024-02-19 22:05:12.971689
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in Bash beinhaltet die Umwandlung des ersten\
   \ Buchstabens des Strings in einen Gro\xDFbuchstaben, w\xE4hrend der Rest des\u2026"

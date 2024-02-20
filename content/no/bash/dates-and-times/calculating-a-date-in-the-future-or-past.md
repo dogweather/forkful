@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/bash/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:30.144085-07:00
 description: "Dato-beregning er \xE5 finne en fremtidig eller tidligere dato basert\
   \ p\xE5 en gitt dato. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere frister,\
   \ planlegge hendelser\u2026"
-lastmod: 2024-02-18 23:08:54.071133
+lastmod: 2024-02-19 22:05:00.254595
 model: gpt-4-1106-preview
 summary: "Dato-beregning er \xE5 finne en fremtidig eller tidligere dato basert p\xE5\
   \ en gitt dato. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere frister, planlegge\

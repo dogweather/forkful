@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:52.101052-07:00
 description: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos\
   \ desenvolvedores acompanhar o passo a passo do seu c\xF3digo, inspecionar vari\xE1\
   veis e\u2026"
-lastmod: 2024-02-18 23:08:58.624268
+lastmod: 2024-02-19 22:05:06.124924
 model: gpt-4-0125-preview
 summary: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos desenvolvedores\
   \ acompanhar o passo a passo do seu c\xF3digo, inspecionar vari\xE1veis e\u2026"

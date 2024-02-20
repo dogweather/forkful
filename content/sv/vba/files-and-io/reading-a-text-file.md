@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:37.430639-07:00
 description: "Att l\xE4sa en textfil i Visual Basic for Applications (VBA) involverar\
   \ att programm\xE4ssigt komma \xE5t och extrahera inneh\xE5llet i en textfil fr\xE5\
   n inom en\u2026"
-lastmod: 2024-02-18 23:08:51.645067
+lastmod: 2024-02-19 22:04:56.969266
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Visual Basic for Applications (VBA) involverar\
   \ att programm\xE4ssigt komma \xE5t och extrahera inneh\xE5llet i en textfil fr\xE5\

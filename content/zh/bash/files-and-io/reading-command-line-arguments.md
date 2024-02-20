@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/bash/reading-command-line-arguments/
 date: 2024-01-20 17:55:32.675950-07:00
 description: "\u5728Bash\u811A\u672C\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\
   \u662F\u83B7\u53D6\u7528\u6237\u8F93\u5165\u6570\u636E\u7684\u65B9\u6CD5\u4E4B\u4E00\
@@ -8,7 +6,7 @@ description: "\u5728Bash\u811A\u672C\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u
   \u7075\u6D3B\uFF0C\u53EF\u4EE5\u6839\u636E\u4E0D\u540C\u8F93\u5165\u6267\u884C\u4E0D\
   \u540C\u64CD\u4F5C\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.305893
+lastmod: 2024-02-19 22:05:07.029895
 model: gpt-4-1106-preview
 summary: "\u5728Bash\u811A\u672C\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u662F\
   \u83B7\u53D6\u7528\u6237\u8F93\u5165\u6570\u636E\u7684\u65B9\u6CD5\u4E4B\u4E00\u3002\

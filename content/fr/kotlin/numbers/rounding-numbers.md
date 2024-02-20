@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/kotlin/rounding-numbers/
 date: 2024-01-26 03:45:27.058769-07:00
 description: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
   \ ou \xE0 un degr\xE9 de pr\xE9cision sp\xE9cifi\xE9. Les programmeurs le font pour\
   \ am\xE9liorer la\u2026"
-lastmod: 2024-02-18 23:09:08.775279
+lastmod: 2024-02-19 22:05:16.480169
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
   \ ou \xE0 un degr\xE9 de pr\xE9cision sp\xE9cifi\xE9. Les programmeurs le font pour\

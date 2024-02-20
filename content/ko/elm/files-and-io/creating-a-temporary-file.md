@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elm/creating-a-temporary-file/
 date: 2024-01-20 17:40:03.895307-07:00
 description: "\uC784\uC2DC \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uB294 \uAC74 \uB370\
   \uC774\uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\
@@ -10,7 +8,7 @@ description: "\uC784\uC2DC \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uB294 \uAC74 \u
   \ \uD655\uBCF4\uD558\uAE30 \uC704\uD574 \uC784\uC2DC \uD30C\uC77C\uC744 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.115098
+lastmod: 2024-02-19 22:05:14.050740
 model: gpt-4-1106-preview
 summary: "\uC784\uC2DC \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uB294 \uAC74 \uB370\uC774\
   \uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\uD55C\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/kotlin/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:16.848624-07:00
 description: "Lavorare con JSON (JavaScript Object Notation) in Kotlin comporta l'analisi\
   \ (parsing) e la generazione di dati JSON. I programmatori fanno ci\xF2 per\u2026"
-lastmod: 2024-02-18 23:08:55.866749
+lastmod: 2024-02-19 22:05:02.476416
 model: gpt-4-0125-preview
 summary: "Lavorare con JSON (JavaScript Object Notation) in Kotlin comporta l'analisi\
   \ (parsing) e la generazione di dati JSON. I programmatori fanno ci\xF2 per\u2026"

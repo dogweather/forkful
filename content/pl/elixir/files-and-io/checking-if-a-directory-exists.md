@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elixir/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:15.897727-07:00
 description: "Sprawdzanie, czy katalog istnieje w Elixirze, polega na weryfikacji\
   \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
   \ plik\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: 2024-02-18 23:08:49.320589
+lastmod: 2024-02-19 22:04:54.236777
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Elixirze, polega na weryfikacji obecno\u015B\
   ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie plik\xF3w.\

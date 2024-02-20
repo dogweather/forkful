@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/google-apps-script/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:05.952635-07:00
@@ -13,7 +11,7 @@ description: "\u041D\u0430\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0442\u043
   \ \u0432\u0430\u0448\u0435\u0433\u043E \u043A\u043E\u0434\u0430, \u0447\u0442\u043E\
   \u0431\u044B \u0443\u0431\u0435\u0434\u0438\u0442\u044C\u0441\u044F, \u0447\u0442\
   \u043E \u043E\u043D\u2026"
-lastmod: 2024-02-18 23:08:56.485791
+lastmod: 2024-02-19 22:05:03.177465
 model: gpt-4-0125-preview
 summary: "\u041D\u0430\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0442\u0435\u0441\
   \u0442\u043E\u0432 \u0432 Google Apps Script (GAS) \u0441\u0432\u044F\u0437\u0430\

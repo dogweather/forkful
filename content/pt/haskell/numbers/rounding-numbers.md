@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/haskell/rounding-numbers/
 date: 2024-01-26 03:44:49.932659-07:00
 description: "Arredondar n\xFAmeros significa ajust\xE1-los ao inteiro mais pr\xF3\
   ximo ou \xE0 casa decimal especificada. Programadores arredondam n\xFAmeros para\
   \ controlar precis\xE3o,\u2026"
-lastmod: 2024-02-18 23:08:58.194095
+lastmod: 2024-02-19 22:05:05.665468
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao inteiro mais pr\xF3ximo\
   \ ou \xE0 casa decimal especificada. Programadores arredondam n\xFAmeros para controlar\

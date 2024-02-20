@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/python/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:38.636725-07:00
 description: "HTML parsen is het proces van HTML-code nemen en informatie daaruit\
   \ extraheren, een beetje zoals het vinden van naalden in een hooiberg \u2013 als\
   \ de hooiberg\u2026"
-lastmod: 2024-02-18 23:09:01.431153
+lastmod: 2024-02-19 22:05:09.461727
 model: gpt-4-0125-preview
 summary: "HTML parsen is het proces van HTML-code nemen en informatie daaruit extraheren,\
   \ een beetje zoals het vinden van naalden in een hooiberg \u2013 als de hooiberg\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:32.209352-07:00
 description: "Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen\
   \ of je iets te geven. Programmeurs doen dit om te interacteren met webservices,\u2026"
-lastmod: 2024-02-18 23:09:01.802091
+lastmod: 2024-02-19 22:05:09.818798
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen of\
   \ je iets te geven. Programmeurs doen dit om te interacteren met webservices,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:34.339380-07:00
 description: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonon merkkien lukum\xE4\
   \xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, kun heid\xE4n t\xE4ytyy\
   \ k\xE4sitell\xE4 tekstin\u2026"
-lastmod: 2024-02-18 23:09:07.565395
+lastmod: 2024-02-19 22:05:15.415516
 model: gpt-4-1106-preview
 summary: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonon merkkien lukum\xE4\
   \xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, kun heid\xE4n t\xE4ytyy\

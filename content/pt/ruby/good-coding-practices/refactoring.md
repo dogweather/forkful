@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/ruby/refactoring/
 date: 2024-01-26 03:37:05.480226-07:00
 description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
   \ existente sem alterar seu comportamento externo. Programadores refatoram para\
   \ melhorar\u2026"
-lastmod: 2024-02-18 23:08:58.673906
+lastmod: 2024-02-19 22:05:06.176531
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
   \ existente sem alterar seu comportamento externo. Programadores refatoram para\

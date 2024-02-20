@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/fish-shell/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:44.696696-07:00
@@ -8,7 +6,7 @@ description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA
   i kh\xF4ng gi\xFAp \u0111\u1EA3m b\u1EA3o m\u1ED9t ch\u01B0\u01A1ng tr\xECnh ho\u1EA1\
   t \u0111\u1ED9ng tr\xEAn c\xE1c \u0111\u01B0\u1EDDng d\u1EABn h\u1EE3p l\u1EC7,\
   \ ng\u0103n ch\u1EB7n l\u1ED7i. \u0110i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho\u2026"
-lastmod: 2024-02-18 23:08:51.202171
+lastmod: 2024-02-19 22:04:56.465283
 model: gpt-4-0125-preview
 summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4\
   ng gi\xFAp \u0111\u1EA3m b\u1EA3o m\u1ED9t ch\u01B0\u01A1ng tr\xECnh ho\u1EA1t \u0111\

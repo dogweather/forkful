@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/python/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:32.196382-07:00
@@ -12,7 +10,7 @@ description: "CSV (Comma-Separated Values) \u0915\u0947 \u0938\u093E\u0925 \u091
   \ \u0921\u0947\u091F\u093E \u0938\u094D\u091F\u094B\u0930 \u0915\u0930\u0928\u0947\
   \ \u0915\u0947 \u0932\u093F\u090F \u090F\u0915 \u0938\u093E\u092E\u093E\u0928\u094D\
   \u092F \u092A\u094D\u0930\u093E\u0930\u0942\u092A \u0939\u0948\u0964\u2026"
-lastmod: 2024-02-18 23:09:02.688222
+lastmod: 2024-02-19 22:05:10.688210
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\
   \u092E \u0915\u0930\u0928\u093E \u0907\u0938\u092E\u0947\u0902 \u0938\u0947 \u092A\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/c-sharp/concatenating-strings/
 date: 2024-01-20 17:35:20.082417-07:00
 description: "Yhdist\xE4mme merkkijonoja luodaaksemme uusia isompia tekstej\xE4. T\xE4\
   m\xE4 on t\xE4rke\xE4\xE4, kun haluamme n\xE4ytt\xE4\xE4 k\xE4ytt\xE4jille dynaamisia\
   \ viestej\xE4 tai rakennamme\u2026"
-lastmod: 2024-02-18 23:09:07.611822
+lastmod: 2024-02-19 22:05:15.458445
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4mme merkkijonoja luodaaksemme uusia isompia tekstej\xE4. T\xE4\
   m\xE4 on t\xE4rke\xE4\xE4, kun haluamme n\xE4ytt\xE4\xE4 k\xE4ytt\xE4jille dynaamisia\

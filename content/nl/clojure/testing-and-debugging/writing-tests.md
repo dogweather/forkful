@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/clojure/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:50.672347-07:00
 description: "Tests schrijven betekent code cre\xEBren die controleert of andere code\
   \ werkt zoals verwacht. Programmeurs doen dit om bugs te vangen, betrouwbaarheid\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.483634
+lastmod: 2024-02-19 22:05:09.511974
 model: gpt-4-0125-preview
 summary: "Tests schrijven betekent code cre\xEBren die controleert of andere code\
   \ werkt zoals verwacht. Programmeurs doen dit om bugs te vangen, betrouwbaarheid\

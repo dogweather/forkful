@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/fish-shell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:34.892666-07:00
 description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb\xE4\
   r att du \xF6verf\xF6r inloggningsuppgifter (anv\xE4ndarnamn och l\xF6senord) i\
   \ klartext, kodat med\u2026"
-lastmod: 2024-02-18 23:08:52.207306
+lastmod: 2024-02-19 22:04:57.584282
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb\xE4\
   r att du \xF6verf\xF6r inloggningsuppgifter (anv\xE4ndarnamn och l\xF6senord) i\

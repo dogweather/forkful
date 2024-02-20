@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/powershell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:41.411313-07:00
 description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums in PowerShell\
   \ bedeutet einfach, bestimmte Zeitspannen zu einem existierenden Datum hinzuzuf\xFC\
   gen\u2026"
-lastmod: 2024-02-18 23:09:05.115294
+lastmod: 2024-02-19 22:05:13.048793
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums in PowerShell\
   \ bedeutet einfach, bestimmte Zeitspannen zu einem existierenden Datum hinzuzuf\xFC\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/python/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:12.336735-07:00
 description: "Escribir en el error est\xE1ndar en Python trata sobre dirigir los mensajes\
   \ de error o diagn\xF3sticos de tu programa al flujo de error (`stderr`), separado\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:09.574257
+lastmod: 2024-02-19 22:05:17.222499
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar en Python trata sobre dirigir los mensajes\
   \ de error o diagn\xF3sticos de tu programa al flujo de error (`stderr`), separado\

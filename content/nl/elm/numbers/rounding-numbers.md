@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:40.580332-07:00
 description: "Afronden van getallen is het aanpassen van een decimaal naar de dichtstbijzijnde\
   \ hele waarde of naar een gespecificeerd aantal fractionele cijfers.\u2026"
-lastmod: 2024-02-18 23:09:01.753755
+lastmod: 2024-02-19 22:05:09.772547
 model: gpt-4-0125-preview
 summary: "Afronden van getallen is het aanpassen van een decimaal naar de dichtstbijzijnde\
   \ hele waarde of naar een gespecificeerd aantal fractionele cijfers.\u2026"

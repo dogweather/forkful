@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c-sharp/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:16.462698-07:00
 description: "Pliki CSV (Comma-Separated Values, warto\u015Bci rozdzielane przecinkami)\
   \ s\u0105 powszechnym formatem wymiany danych, kt\xF3ry przedstawia dane tabelaryczne\
   \ w postaci\u2026"
-lastmod: 2024-02-18 23:08:49.634240
+lastmod: 2024-02-19 22:04:54.565908
 model: gpt-4-0125-preview
 summary: "Pliki CSV (Comma-Separated Values, warto\u015Bci rozdzielane przecinkami)\
   \ s\u0105 powszechnym formatem wymiany danych, kt\xF3ry przedstawia dane tabelaryczne\

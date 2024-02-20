@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/bash/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:51.232226-07:00
 description: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Bashu polega na\
   \ przekszta\u0142ceniu pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, pozostawiaj\u0105\
   c reszt\u0119 ci\u0105gu bez zmian.\u2026"
-lastmod: 2024-02-18 23:08:49.765428
+lastmod: 2024-02-19 22:04:54.704029
 model: gpt-4-0125-preview
 summary: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Bashu polega na przekszta\u0142\
   ceniu pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, pozostawiaj\u0105\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/clojure/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:51.678926-07:00
 description: "REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), \xE8\
   \ un ambiente di programmazione per testare dinamicamente codice Clojure pezzo per\
   \ pezzo. I\u2026"
-lastmod: 2024-02-18 23:08:55.562457
+lastmod: 2024-02-19 22:05:02.152731
 model: gpt-4-0125-preview
 summary: "REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), \xE8 un ambiente\
   \ di programmazione per testare dinamicamente codice Clojure pezzo per pezzo. I\u2026"

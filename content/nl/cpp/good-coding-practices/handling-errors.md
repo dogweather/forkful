@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:58.397821-07:00
 description: "Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd\
   \ gaan. Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"
-lastmod: 2024-02-18 23:09:02.191156
+lastmod: 2024-02-19 22:05:10.207479
 model: gpt-4-0125-preview
 summary: "Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd gaan.\
   \ Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"

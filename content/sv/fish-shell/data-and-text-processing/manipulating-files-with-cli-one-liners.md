@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/fish-shell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:04.985539-07:00
 description: "I programmeringsv\xE4rlden, s\xE4rskilt n\xE4r man hanterar Linux- eller\
   \ Unix-milj\xF6er, \xE4r manipulation av filer direkt fr\xE5n kommandoradsgr\xE4\
   nssnittet (CLI) inte\u2026"
-lastmod: 2024-02-18 23:08:52.202486
+lastmod: 2024-02-19 22:04:57.578825
 model: gpt-4-0125-preview
 summary: "I programmeringsv\xE4rlden, s\xE4rskilt n\xE4r man hanterar Linux- eller\
   \ Unix-milj\xF6er, \xE4r manipulation av filer direkt fr\xE5n kommandoradsgr\xE4\

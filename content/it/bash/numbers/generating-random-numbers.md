@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/generating-random-numbers/
 date: 2024-01-27 20:32:47.358841-07:00
 description: "Generare numeri casuali in Bash offre un modo per introdurre imprevedibilit\xE0\
   \ negli script, fondamentale per compiti come generare password sicure,\u2026"
-lastmod: 2024-02-18 23:08:56.046531
+lastmod: 2024-02-19 22:05:02.664264
 model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Bash offre un modo per introdurre imprevedibilit\xE0\
   \ negli script, fondamentale per compiti come generare password sicure,\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/clojure/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:49.209774-07:00
 description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\
   \xE4 tekstidatan j\xE4sent\xE4misen ja generoinnin rivein\xE4 ja sarakkeina, samankaltaisesti\
   \ kuin\u2026"
-lastmod: 2024-02-18 23:09:07.252606
+lastmod: 2024-02-19 22:05:15.148443
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\xE4\
   \ tekstidatan j\xE4sent\xE4misen ja generoinnin rivein\xE4 ja sarakkeina, samankaltaisesti\

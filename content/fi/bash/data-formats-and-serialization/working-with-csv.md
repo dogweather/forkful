@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/bash/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:10.063566-07:00
 description: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa koskee\
   \ tekstimuodossa tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja\
   \ manipulointia.\u2026"
-lastmod: 2024-02-18 23:09:07.828910
+lastmod: 2024-02-19 22:05:15.657305
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa koskee tekstimuodossa\
   \ tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja manipulointia.\u2026"

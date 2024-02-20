@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -15,7 +13,7 @@ description: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u043E\u0437\u043D
   \ \u043C\u0430\u043D\u0438\u043F\u0443\u043B\u0438\u0440\u043E\u0432\u0430\u0442\
   \u044C \u0432\u0435\u0431-\u043A\u043E\u043D\u0442\u0435\u043D\u0442\u043E\u043C\
   ,\u2026"
-lastmod: 2024-02-18 23:08:57.457266
+lastmod: 2024-02-19 22:05:04.739835
 model: gpt-4-0125-preview
 summary: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u043E\u0437\u043D\u0430\
   \u0447\u0430\u0435\u0442 \u0438\u0437\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u0435\

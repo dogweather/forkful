@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:33.004354-07:00
 description: "Reguliere expressies (regex) laten je zoeken naar patronen in tekst\u2014\
   denk aan jokertekens op stero\xEFden. Programmeurs gebruiken ze om invoer te valideren,\u2026"
-lastmod: 2024-02-18 23:09:02.127534
+lastmod: 2024-02-19 22:05:10.146775
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) laten je zoeken naar patronen in tekst\u2014\
   denk aan jokertekens op stero\xEFden. Programmeurs gebruiken ze om invoer te valideren,\u2026"

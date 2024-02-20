@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/comparing-two-dates/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:26.644212-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97C \uBE44\uA
   \ \uACC4\uD68D, \uB610\uB294 \uCF58\uD150\uCE20 \uC2A4\uCF00\uC904\uB9C1\uACFC \uAC19\
   \uC740 \uAE30\uB2A5\uC744 \uD6A8\uACFC\uC801\uC73C\uB85C \uAD6C\uD604\uD560 \uC218\
   \u2026"
-lastmod: 2024-02-18 23:09:05.577703
+lastmod: 2024-02-19 22:05:13.493390
 model: gpt-4-0125-preview
 summary: "Google Apps Script\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\
   \uB294 \uAC83\uC740 \uC2A4\uCF00\uC904\uB9C1, \uD0C0\uC784\uB77C\uC778, \uB610\uB294\

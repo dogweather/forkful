@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:44.476013-07:00
 description: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
   \ suurten kirjainten muuntamista niiden pieniksi vastineiksi. T\xE4m\xE4 prosessi\
   \ on\u2026"
-lastmod: 2024-02-18 23:09:07.395555
+lastmod: 2024-02-19 22:05:15.281842
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
   \ suurten kirjainten muuntamista niiden pieniksi vastineiksi. T\xE4m\xE4 prosessi\

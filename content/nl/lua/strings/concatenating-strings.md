@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:05.694101-07:00
 description: "Het samenvoegen van strings betekent dat je ze achter elkaar plakt om\
   \ een nieuwe te maken. Programmeurs doen dit om dynamisch tekst op te bouwen, zoals\u2026"
-lastmod: 2024-02-18 23:09:01.982386
+lastmod: 2024-02-19 22:05:10.003479
 model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings betekent dat je ze achter elkaar plakt om een\
   \ nieuwe te maken. Programmeurs doen dit om dynamisch tekst op te bouwen, zoals\u2026"

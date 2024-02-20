@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/cpp/printing-debug-output/
 date: 2024-01-20 17:52:12.920422-07:00
 description: "Stampare output di debug significa mostrare informazioni temporanee\
   \ che aiutano i programmatori a capire cosa sta succedendo nel codice. Lo fanno\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:56.174790
+lastmod: 2024-02-19 22:05:02.803895
 model: gpt-4-1106-preview
 summary: "Stampare output di debug significa mostrare informazioni temporanee che\
   \ aiutano i programmatori a capire cosa sta succedendo nel codice. Lo fanno per\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/rust/interpolating-a-string/
 date: 2024-01-20 17:51:43.291698-07:00
 description: "L'interpolation de cha\xEEne permet d'ins\xE9rer des variables dans\
   \ des textes. Les programmeurs l'utilisent pour cr\xE9er des messages dynamiques\
   \ et personnaliser\u2026"
-lastmod: 2024-02-18 23:09:08.513245
+lastmod: 2024-02-19 22:05:16.295866
 model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEne permet d'ins\xE9rer des variables dans des\
   \ textes. Les programmeurs l'utilisent pour cr\xE9er des messages dynamiques et\

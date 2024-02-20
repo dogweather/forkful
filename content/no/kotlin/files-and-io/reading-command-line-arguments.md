@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/kotlin/reading-command-line-arguments/
 date: 2024-01-20 17:56:14.191718-07:00
 description: "Kommandolinjeargumenter lar deg sende informasjon til programmet ditt\
   \ ved oppstart, slik at oppf\xF8rselen kan tilpasses p\xE5 fly. Programmerere gj\xF8\
   r dette for\u2026"
-lastmod: 2024-02-18 23:08:53.867305
+lastmod: 2024-02-19 22:05:00.033685
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar deg sende informasjon til programmet ditt ved\
   \ oppstart, slik at oppf\xF8rselen kan tilpasses p\xE5 fly. Programmerere gj\xF8\

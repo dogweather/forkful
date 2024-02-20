@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:55.575805-07:00
 description: "De lengte van een reeks vinden betekent het tellen van het aantal karakters\
   \ erin. Programmeurs doen dit om invoer te valideren, buffers te dimensioneren\u2026"
-lastmod: 2024-02-18 23:09:02.312930
+lastmod: 2024-02-19 22:05:10.322776
 model: gpt-4-0125-preview
 summary: "De lengte van een reeks vinden betekent het tellen van het aantal karakters\
   \ erin. Programmeurs doen dit om invoer te valideren, buffers te dimensioneren\u2026"

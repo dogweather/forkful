@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/printing-debug-output/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:17.284611-07:00
 description: "Nella programmazione informatica, \"Stampare l'output di debug\" implica\
   \ produrre messaggi informativi dettagliati che aiutano gli sviluppatori a\u2026"
-lastmod: 2024-02-18 23:08:55.435020
+lastmod: 2024-02-19 22:05:02.015732
 model: gpt-4-0125-preview
 summary: "Nella programmazione informatica, \"Stampare l'output di debug\" implica\
   \ produrre messaggi informativi dettagliati che aiutano gli sviluppatori a\u2026"

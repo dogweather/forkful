@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/java/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:22.826195-07:00
 description: "Estrarre una data da una stringa implica convertire la rappresentazione\
   \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\u2026"
-lastmod: 2024-02-18 23:08:55.774536
+lastmod: 2024-02-19 22:05:02.379199
 model: gpt-4-0125-preview
 summary: "Estrarre una data da una stringa implica convertire la rappresentazione\
   \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\u2026"

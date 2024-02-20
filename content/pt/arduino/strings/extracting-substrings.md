@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/extracting-substrings/
 date: 2024-01-20 17:44:54.134333-07:00
 description: "Extrair substrings significa pegar partes espec\xEDficas de uma string.\
   \ Programadores fazem isso para manipular, analisar ou validar dados de texto de\
   \ forma\u2026"
-lastmod: 2024-02-18 23:08:58.399515
+lastmod: 2024-02-19 22:05:05.886448
 model: gpt-4-1106-preview
 summary: "Extrair substrings significa pegar partes espec\xEDficas de uma string.\
   \ Programadores fazem isso para manipular, analisar ou validar dados de texto de\

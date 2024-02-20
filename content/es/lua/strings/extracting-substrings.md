@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/lua/extracting-substrings/
 date: 2024-01-20 17:46:00.771951-07:00
 description: "Extraer subcadenas significa sacar partes espec\xEDficas de un texto.\
   \ Los programadores lo hacen para procesar y manejar datos de forma precisa."
-lastmod: 2024-02-18 23:09:10.107711
+lastmod: 2024-02-19 22:05:17.698777
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas significa sacar partes espec\xEDficas de un texto. Los\
   \ programadores lo hacen para procesar y manejar datos de forma precisa."

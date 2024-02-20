@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/powershell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:31.197865-07:00
 description: "Assoziative Arrays, auch bekannt als Hashtabellen oder W\xF6rterb\xFC\
   cher in PowerShell, erm\xF6glichen es Ihnen, Daten in Schl\xFCssel-Wert-Paaren zu\
   \ speichern, was\u2026"
-lastmod: 2024-02-18 23:09:05.091627
+lastmod: 2024-02-19 22:05:13.026388
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, auch bekannt als Hashtabellen oder W\xF6rterb\xFCcher\
   \ in PowerShell, erm\xF6glichen es Ihnen, Daten in Schl\xFCssel-Wert-Paaren zu speichern,\

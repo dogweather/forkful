@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:22.395197-07:00
 description: "C-kielen debuggerit ovat erikoisty\xF6kaluja, jotka mahdollistavat ohjelmoijille\
   \ koodin vaiheittaisen suorituksen seurannan, muuttujien tarkastelun ja\u2026"
-lastmod: 2024-02-18 23:09:08.137783
+lastmod: 2024-02-19 22:05:15.938473
 model: gpt-4-0125-preview
 summary: "C-kielen debuggerit ovat erikoisty\xF6kaluja, jotka mahdollistavat ohjelmoijille\
   \ koodin vaiheittaisen suorituksen seurannan, muuttujien tarkastelun ja\u2026"

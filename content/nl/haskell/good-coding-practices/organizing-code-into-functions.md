@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:02.510931-07:00
 description: "Het organiseren van code in functies in Haskell betekent het opsplitsen\
   \ van je code in herbruikbare, benoemde blokken. Waarom? Het houdt je code DRY\u2026"
-lastmod: 2024-02-18 23:09:01.904969
+lastmod: 2024-02-19 22:05:09.928571
 model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies in Haskell betekent het opsplitsen\
   \ van je code in herbruikbare, benoemde blokken. Waarom? Het houdt je code DRY\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/ruby/extracting-substrings/
 date: 2024-01-20 17:46:54.743606-07:00
 description: "\u0909\u092A\u0935\u093E\u091A\u094D\u092F (substring) \u090F\u0915\
   \ \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u093E \u090F\u0915 \u0916\
@@ -12,7 +10,7 @@ description: "\u0909\u092A\u0935\u093E\u091A\u094D\u092F (substring) \u090F\u091
   \ \u0939\u0948\u0902 \u0915\u094D\u092F\u094B\u0902\u0915\u093F \u0905\u0915\u094D\
   \u0938\u0930 \u092A\u0942\u0930\u0940 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\
   \u0917 \u0915\u0947\u2026"
-lastmod: 2024-02-18 23:09:04.272194
+lastmod: 2024-02-19 22:05:12.244304
 model: gpt-4-1106-preview
 summary: "\u0909\u092A\u0935\u093E\u091A\u094D\u092F (substring) \u090F\u0915 \u0938\
   \u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u093E \u090F\u0915 \u0916\u093E\

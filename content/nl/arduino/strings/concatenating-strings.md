@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:37.755504-07:00
 description: "Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt\
   \ om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen,\u2026"
-lastmod: 2024-02-18 23:09:02.129683
+lastmod: 2024-02-19 22:05:10.148795
 model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt\
   \ om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen,\u2026"

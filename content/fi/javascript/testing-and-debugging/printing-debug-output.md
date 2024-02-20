@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/javascript/printing-debug-output/
 date: 2024-01-20 17:53:18.113790-07:00
 description: "JavaScriptissa virheiden j\xE4ljitys (debugging) tarkoittaa koodin suorituksen\
   \ tarkkailua, jotta voidaan ymm\xE4rt\xE4\xE4, miss\xE4 ja miksi virheit\xE4 ilmenee.\u2026"
-lastmod: 2024-02-18 23:09:08.038390
+lastmod: 2024-02-19 22:05:15.847214
 model: gpt-4-1106-preview
 summary: "JavaScriptissa virheiden j\xE4ljitys (debugging) tarkoittaa koodin suorituksen\
   \ tarkkailua, jotta voidaan ymm\xE4rt\xE4\xE4, miss\xE4 ja miksi virheit\xE4 ilmenee.\u2026"

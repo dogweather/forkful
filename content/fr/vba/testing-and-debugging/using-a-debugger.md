@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:20.480102-07:00
 description: "Utiliser un d\xE9bogueur dans Visual Basic pour Applications (VBA) consiste\
   \ \xE0 ex\xE9cuter votre code pas \xE0 pas pour inspecter son flux d'ex\xE9cution\
   \ et l'\xE9tat de\u2026"
-lastmod: 2024-02-18 23:09:08.584369
+lastmod: 2024-02-19 22:05:16.360466
 model: gpt-4-0125-preview
 summary: "Utiliser un d\xE9bogueur dans Visual Basic pour Applications (VBA) consiste\
   \ \xE0 ex\xE9cuter votre code pas \xE0 pas pour inspecter son flux d'ex\xE9cution\

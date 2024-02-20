@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/typescript/printing-debug-output/
 date: 2024-01-20 17:53:54.326117-07:00
 description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uBB58 \uD558\
   \uACE0 \uC788\uB294\uC9C0 \uBCF4\uC5EC\uC90D\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
@@ -8,7 +6,7 @@ description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uBB58 \u
   \ \uCC3E\uACE0 \uC774\uD574\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574\
   \uC11C\uC8E0."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.823384
+lastmod: 2024-02-19 22:05:13.735672
 model: gpt-4-1106-preview
 summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uBB58 \uD558\uACE0\
   \ \uC788\uB294\uC9C0 \uBCF4\uC5EC\uC90D\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:57.324377-07:00
 description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740\
   \ \uBB38\uC790\uC5F4\uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790\uC758 \uC218\uB97C \uC138\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC
   \uC9C1\uC744 \uC2E4\uD589\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.741050
+lastmod: 2024-02-19 22:05:13.652201
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uBB38\
   \uC790\uC5F4\uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790\uC758 \uC218\uB97C \uC138\uB294\

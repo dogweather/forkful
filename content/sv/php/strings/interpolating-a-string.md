@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/php/interpolating-a-string/
 date: 2024-01-20 17:51:26.930779-07:00
 description: "Interpolera en str\xE4ng inneb\xE4r att infoga variabelv\xE4rden direkt\
   \ i str\xE4ngen. Programmerare g\xF6r detta f\xF6r att smidigt kunna bygga dynamiska\
   \ texter utan att\u2026"
-lastmod: 2024-02-18 23:08:51.864981
+lastmod: 2024-02-19 22:04:57.205526
 model: gpt-4-1106-preview
 summary: "Interpolera en str\xE4ng inneb\xE4r att infoga variabelv\xE4rden direkt\
   \ i str\xE4ngen. Programmerare g\xF6r detta f\xF6r att smidigt kunna bygga dynamiska\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/haskell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:47.127903-07:00
 description: "Lavorare con i CSV (Valori Separati da Virgola) implica l'analisi e\
   \ la generazione di file che memorizzano dati tabellari in un formato semplice e\
   \ basato\u2026"
-lastmod: 2024-02-18 23:08:55.951883
+lastmod: 2024-02-19 22:05:02.563488
 model: gpt-4-0125-preview
 summary: "Lavorare con i CSV (Valori Separati da Virgola) implica l'analisi e la generazione\
   \ di file che memorizzano dati tabellari in un formato semplice e basato\u2026"

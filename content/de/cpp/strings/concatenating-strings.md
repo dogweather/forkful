@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/concatenating-strings/
 date: 2024-01-20 17:34:24.271687-07:00
 description: "String-Konkatenation ist das Verkn\xFCpfen zweier oder mehrerer Zeichenketten.\
   \ Programmierer nutzen diese Technik, um dynamische Texte zu erzeugen, Daten zu\u2026"
-lastmod: 2024-02-18 23:09:05.180311
+lastmod: 2024-02-19 22:05:13.111029
 model: gpt-4-1106-preview
 summary: "String-Konkatenation ist das Verkn\xFCpfen zweier oder mehrerer Zeichenketten.\
   \ Programmierer nutzen diese Technik, um dynamische Texte zu erzeugen, Daten zu\u2026"

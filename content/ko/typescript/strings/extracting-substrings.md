@@ -1,13 +1,11 @@
 ---
-aliases:
-- /ko/typescript/extracting-substrings/
 date: 2024-01-20 17:46:31.157352-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\
   \uCD9C\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130 \uAC00\uACF5\uC774\
   \uB098 \uD2B9\uC815 \uC815\uBCF4\uB97C \uC5BB\uAE30 \uC704\uD574\uC11C \uD504\uB85C\
   \uADF8\uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.803325
+lastmod: 2024-02-19 22:05:13.715986
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\uCD9C\
   \uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130 \uAC00\uACF5\uC774\uB098\

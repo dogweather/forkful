@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/reading-command-line-arguments/
 date: 2024-01-20 17:55:42.729081-07:00
 description: "Komennon rivin argumentit ovat parametreja, jotka annetaan ohjelmalle\
   \ sen k\xE4ynnistyess\xE4. Ne mahdollistavat joustavan ohjelman k\xE4yt\xF6n, koska\
   \ k\xE4ytt\xE4j\xE4 voi\u2026"
-lastmod: 2024-02-18 23:09:07.960920
+lastmod: 2024-02-19 22:05:15.775832
 model: gpt-4-1106-preview
 summary: "Komennon rivin argumentit ovat parametreja, jotka annetaan ohjelmalle sen\
   \ k\xE4ynnistyess\xE4. Ne mahdollistavat joustavan ohjelman k\xE4yt\xF6n, koska\

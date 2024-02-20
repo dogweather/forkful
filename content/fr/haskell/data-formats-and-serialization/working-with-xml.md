@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/haskell/working-with-xml/
 date: 2024-01-26 04:31:36.890410-07:00
 description: "Travailler avec XML en Haskell implique l'analyse, la manipulation et\
   \ la g\xE9n\xE9ration de structures XML. Les programmeurs manipulent XML pour interagir\
   \ avec\u2026"
-lastmod: 2024-02-18 23:09:08.902398
+lastmod: 2024-02-19 22:05:16.596287
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en Haskell implique l'analyse, la manipulation et la\
   \ g\xE9n\xE9ration de structures XML. Les programmeurs manipulent XML pour interagir\

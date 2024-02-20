@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/concatenating-strings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:42.557057-07:00
 description: "La concat\xE9nation de cha\xEEnes en C consiste \xE0 joindre deux cha\xEE\
   nes ou plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs\
   \ effectuent cette\u2026"
-lastmod: 2024-02-18 23:09:09.345542
+lastmod: 2024-02-19 22:05:17.013096
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation de cha\xEEnes en C consiste \xE0 joindre deux cha\xEE\
   nes ou plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs\

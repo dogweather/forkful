@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:47.927093-07:00
 description: "The interactive shell, or Read-Eval-Print Loop (REPL), lets you type\
   \ PowerShell commands and get immediate feedback. Programmers use it to test code\u2026"
-lastmod: 2024-02-18 23:09:11.275654
+lastmod: 2024-02-19 22:05:18.748465
 model: gpt-4-1106-preview
 summary: "The interactive shell, or Read-Eval-Print Loop (REPL), lets you type PowerShell\
   \ commands and get immediate feedback. Programmers use it to test code\u2026"

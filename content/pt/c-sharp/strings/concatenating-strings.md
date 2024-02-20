@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/c-sharp/concatenating-strings/
 date: 2024-01-20 17:34:38.280980-07:00
 description: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
   \ em uma s\xF3. Programadores fazem isso para construir mensagens, caminhos de\u2026"
-lastmod: 2024-02-18 23:08:58.149605
+lastmod: 2024-02-19 22:05:05.617524
 model: gpt-4-1106-preview
 summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
   \ em uma s\xF3. Programadores fazem isso para construir mensagens, caminhos de\u2026"

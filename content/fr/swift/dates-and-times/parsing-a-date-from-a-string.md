@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/swift/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:29.388608-07:00
 description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des repr\xE9sentations textuelles de date et d'heure en un objet\
   \ `Date`. Ce\u2026"
-lastmod: 2024-02-18 23:09:09.219009
+lastmod: 2024-02-19 22:05:16.886691
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des repr\xE9sentations textuelles de date et d'heure en un objet\

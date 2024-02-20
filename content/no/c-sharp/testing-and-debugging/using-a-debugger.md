@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/using-a-debugger/
 date: 2024-01-26 03:48:24.443494-07:00
 description: "\xC5 bruke en feils\xF8ker betyr \xE5 ta i bruk spesialiserte verkt\xF8\
   y for \xE5 teste og diagnostisere kode. Programutviklere gj\xF8r det for \xE5 knuse\
   \ feil, forst\xE5\u2026"
-lastmod: 2024-02-18 23:08:53.898222
+lastmod: 2024-02-19 22:05:00.066923
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en feils\xF8ker betyr \xE5 ta i bruk spesialiserte verkt\xF8\
   y for \xE5 teste og diagnostisere kode. Programutviklere gj\xF8r det for \xE5 knuse\

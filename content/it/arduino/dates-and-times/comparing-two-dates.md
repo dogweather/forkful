@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/arduino/comparing-two-dates/
 date: 2024-01-20 17:32:24.569574-07:00
 description: "Confrontare due date significa stabilire quale sia precedente, successiva\
   \ o se coincidano. Lo si fa per tracciare intervalli di tempo, gestire eventi e\u2026"
-lastmod: 2024-02-18 23:08:56.145283
+lastmod: 2024-02-19 22:05:02.771887
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa stabilire quale sia precedente, successiva\
   \ o se coincidano. Lo si fa per tracciare intervalli di tempo, gestire eventi e\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/cpp/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:07.787392-07:00
 description: "Stripar aspas de uma string significa remover aquelas inc\xF4modas aspas\
   \ duplas ou simples que envolvem nosso texto (' ou \"). Programadores frequentemente\u2026"
-lastmod: 2024-02-18 23:08:58.438172
+lastmod: 2024-02-19 22:05:05.927701
 model: gpt-4-0125-preview
 summary: "Stripar aspas de uma string significa remover aquelas inc\xF4modas aspas\
   \ duplas ou simples que envolvem nosso texto (' ou \"). Programadores frequentemente\u2026"

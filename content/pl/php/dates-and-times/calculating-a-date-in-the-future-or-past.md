@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:14.134465-07:00
 description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
   \ spos\xF3b na ustalenie, jaki dzie\u0144 b\u0119dzie za X dni, lub jaki by\u0142\
   \ Y dni temu. Programi\u015Bci robi\u0105 to, by\u2026"
-lastmod: 2024-02-18 23:08:49.709319
+lastmod: 2024-02-19 22:04:54.645770
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to spos\xF3\
   b na ustalenie, jaki dzie\u0144 b\u0119dzie za X dni, lub jaki by\u0142 Y dni temu.\

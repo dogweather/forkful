@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/haskell/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:27.610722-07:00
 description: "Eliminar comillas de una cadena significa quitar cualquier comilla\u2014\
   simple (' ') o doble (\" \")\u2014que sea parte de los datos de la cadena. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.014826
+lastmod: 2024-02-19 22:05:17.614350
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena significa quitar cualquier comilla\u2014\
   simple (' ') o doble (\" \")\u2014que sea parte de los datos de la cadena. Los programadores\u2026"

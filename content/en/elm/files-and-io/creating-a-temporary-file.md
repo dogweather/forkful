@@ -1,9 +1,7 @@
 ---
-aliases:
-- /en/elm/creating-a-temporary-file/
 date: 2024-01-20 17:40:08.399607-07:00
 description: null
-lastmod: 2024-02-18 23:09:10.990883
+lastmod: 2024-02-19 22:05:18.495880
 model: gpt-4-1106-preview
 summary: null
 title: Creating a temporary file

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c/rounding-numbers/
 date: 2024-02-03 17:50:04.693524-07:00
 description: "Rounding numbers is the process of adjusting the digits of a number\
   \ to reduce its precision according to certain rules, either towards the nearest\
   \ whole\u2026"
-lastmod: 2024-02-18 23:09:11.517501
+lastmod: 2024-02-19 22:05:18.968380
 model: gpt-4-0125-preview
 summary: "Rounding numbers is the process of adjusting the digits of a number to reduce\
   \ its precision according to certain rules, either towards the nearest whole\u2026"

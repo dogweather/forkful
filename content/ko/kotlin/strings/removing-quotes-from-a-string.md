@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:27.830545-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\uAC70\
   \uD55C\uB2E4\uB294 \uAC83\uC740 \uB2E8\uC77C(' ') \uB610\uB294 \uC774\uC911(\" \"\
@@ -11,7 +9,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\uAC
   \uB97C \uC704\uD55C \uC900\uBE44, \uB610\uB294 \uB530\uC634\uD45C \uC790\uCCB4\uAC00\
   \ \uB370\uC774\uD130\uC758 \uC758\uBBF8\uC640 \uAD00\uB828\uC774 \uC5C6\uC744 \uB54C\
   \ \uC774 \uC791\uC5C5\uC744 \uC790\uC8FC\u2026"
-lastmod: 2024-02-18 23:09:06.131505
+lastmod: 2024-02-19 22:05:14.066157
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\uAC70\uD55C\
   \uB2E4\uB294 \uAC83\uC740 \uB2E8\uC77C(' ') \uB610\uB294 \uC774\uC911(\" \") \uB530\

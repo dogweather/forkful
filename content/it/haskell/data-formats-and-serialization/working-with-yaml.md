@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/haskell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:33.628679-07:00
 description: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 uno standard\
   \ di serializzazione di dati amichevole per l'utente che pu\xF2 essere utilizzato\
   \ per tutti i\u2026"
-lastmod: 2024-02-18 23:08:55.949654
+lastmod: 2024-02-19 22:05:02.561256
 model: gpt-4-0125-preview
 summary: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 uno standard di serializzazione\
   \ di dati amichevole per l'utente che pu\xF2 essere utilizzato per tutti i\u2026"

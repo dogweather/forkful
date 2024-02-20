@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/reading-a-text-file/
 date: 2024-01-20 17:53:54.728538-07:00
 description: "\xC5 lese en tekstfil betyr \xE5 hente data fra en fil lagret p\xE5\
   \ disken for \xE5 bruke den i et program. Programmerere gj\xF8r dette fordi filer\
   \ ofte inneholder\u2026"
-lastmod: 2024-02-18 23:08:53.580798
+lastmod: 2024-02-19 22:04:59.704845
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 hente data fra en fil lagret p\xE5 disken\
   \ for \xE5 bruke den i et program. Programmerere gj\xF8r dette fordi filer ofte\

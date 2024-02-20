@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/clojure/capitalizing-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:19.373119-07:00
 description: "Een string kapitaliseren betekent dat je de eerste letter hoofdletter\
   \ maakt en de rest kleine letters. We doen dit om gegevens te normaliseren en de\u2026"
-lastmod: 2024-02-18 23:09:01.461150
+lastmod: 2024-02-19 22:05:09.490372
 model: gpt-4-0125-preview
 summary: "Een string kapitaliseren betekent dat je de eerste letter hoofdletter maakt\
   \ en de rest kleine letters. We doen dit om gegevens te normaliseren en de\u2026"

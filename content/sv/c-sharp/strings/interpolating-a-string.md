@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/c-sharp/interpolating-a-string/
 date: 2024-01-20 17:50:23.371599-07:00
 description: "Stringinterpolering i C# l\xE5ter dig smidigt infoga variabler i str\xE4\
   ngar. Det g\xF6r koden mer l\xE4slig och underl\xE4ttar dynamisk textmanipulation."
-lastmod: 2024-02-18 23:08:51.781274
+lastmod: 2024-02-19 22:04:57.115407
 model: gpt-4-1106-preview
 summary: "Stringinterpolering i C# l\xE5ter dig smidigt infoga variabler i str\xE4\
   ngar. Det g\xF6r koden mer l\xE4slig och underl\xE4ttar dynamisk textmanipulation."

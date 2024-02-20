@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:52.999073-07:00
 description: "Eliminar las comillas de una cadena en C implica extraer el contenido\
   \ textual sin las comillas simples (' ') o dobles (\" \") que la encapsulan. Este\u2026"
-lastmod: 2024-02-18 23:09:10.486932
+lastmod: 2024-02-19 22:05:18.038502
 model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena en C implica extraer el contenido textual\
   \ sin las comillas simples (' ') o dobles (\" \") que la encapsulan. Este\u2026"

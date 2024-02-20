@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/arduino/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:16.775074-07:00
 description: "Das Parsen eines Datums aus einem String in Arduino umfasst das Extrahieren\
   \ und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer\u2026"
-lastmod: 2024-02-18 23:09:05.155307
+lastmod: 2024-02-19 22:05:13.087116
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Arduino umfasst das Extrahieren\
   \ und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer\u2026"

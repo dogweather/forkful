@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/ruby/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:12.150351-07:00
 description: "Mik\xE4 & Miksi? Kun puhutaan merkkien poistamisesta kuvion mukaan Rubyss\xE4\
   , tarkoitamme prosessia, jossa etsit\xE4\xE4n ja poistetaan merkkej\xE4 merkkijonosta\u2026"
-lastmod: 2024-02-18 23:09:08.163388
+lastmod: 2024-02-19 22:05:15.977401
 model: gpt-4-1106-preview
 summary: "Mik\xE4 & Miksi? Kun puhutaan merkkien poistamisesta kuvion mukaan Rubyss\xE4\
   , tarkoitamme prosessia, jossa etsit\xE4\xE4n ja poistetaan merkkej\xE4 merkkijonosta\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/reading-a-text-file/
 date: 2024-01-20 17:55:12.004837-07:00
 description: "Leer un archivo de texto implica cargar su contenido en un programa\
   \ para procesar esa informaci\xF3n. Los programadores hacen esto para manipular\
   \ datos,\u2026"
-lastmod: 2024-02-18 23:09:09.721961
+lastmod: 2024-02-19 22:05:17.347940
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto implica cargar su contenido en un programa para\
   \ procesar esa informaci\xF3n. Los programadores hacen esto para manipular datos,\u2026"

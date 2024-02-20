@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/creating-a-temporary-file/
 date: 2024-01-20 17:40:03.170769-07:00
 description: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uB370\uC774\uD130\uB97C\
   \ \uC77C\uC2DC\uC801\uC73C\uB85C \uC800\uC7A5\uD560 \uD30C\uC77C\uC744 \uB9CC\uB4DC\
@@ -10,7 +8,7 @@ description: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uB370\uC774\uD130\uB
   \ \uC911\uC5D0 \uC784\uC2DC \uACB0\uACFC\uB97C \uC4F8 \uB54C \uC0AC\uC6A9\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.250990
+lastmod: 2024-02-19 22:05:14.173619
 model: gpt-4-1106-preview
 summary: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uB370\uC774\uD130\uB97C \uC77C\
   \uC2DC\uC801\uC73C\uB85C \uC800\uC7A5\uD560 \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294\

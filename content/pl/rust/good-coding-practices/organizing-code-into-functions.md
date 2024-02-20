@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/organizing-code-into-functions/
 date: 2024-01-26 01:16:15.506147-07:00
 description: "Organizowanie kodu w funkcje polega na rozbijaniu programu na wielokrotnie\
   \ u\u017Cywane, modu\u0142owe kawa\u0142ki identyfikowane przez nazw\u0119. Robimy\
   \ to, aby nasz kod\u2026"
-lastmod: 2024-02-18 23:08:49.395404
+lastmod: 2024-02-19 22:04:54.316851
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje polega na rozbijaniu programu na wielokrotnie\
   \ u\u017Cywane, modu\u0142owe kawa\u0142ki identyfikowane przez nazw\u0119. Robimy\

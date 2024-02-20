@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/rounding-numbers/
 date: 2024-01-26 03:45:41.398731-07:00
 description: "Avrunding er \xE5 klippe av st\xF8yen etter et visst punkt i et tall.\
   \ Programmerere avrunder for \xE5 kontrollere presisjon, h\xE5ndtere minne, eller\
   \ gj\xF8re output\u2026"
-lastmod: 2024-02-18 23:08:54.304330
+lastmod: 2024-02-19 22:05:00.455102
 model: gpt-4-0125-preview
 summary: "Avrunding er \xE5 klippe av st\xF8yen etter et visst punkt i et tall. Programmerere\
   \ avrunder for \xE5 kontrollere presisjon, h\xE5ndtere minne, eller gj\xF8re output\u2026"

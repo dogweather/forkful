@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/ruby/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:20.979987-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica consiste\
   \ em incluir credenciais de usu\xE1rio e senha codificadas em Base64 no cabe\xE7\
   alho da requisi\xE7\xE3o.\u2026"
-lastmod: 2024-02-18 23:08:58.665476
+lastmod: 2024-02-19 22:05:06.167479
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica consiste\
   \ em incluir credenciais de usu\xE1rio e senha codificadas em Base64 no cabe\xE7\

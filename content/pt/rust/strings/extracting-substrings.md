@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/rust/extracting-substrings/
 date: 2024-01-20 17:46:25.082824-07:00
 description: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string\
   \ maior. Fazemos isso para manipular ou analisar partes espec\xEDficas de texto."
-lastmod: 2024-02-18 23:08:57.916650
+lastmod: 2024-02-19 22:05:05.390323
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string maior.\
   \ Fazemos isso para manipular ou analisar partes espec\xEDficas de texto."

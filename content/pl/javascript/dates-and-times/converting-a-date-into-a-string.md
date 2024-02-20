@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:08.682754-07:00
 description: "Czasami potrzebujemy reprezentowa\u0107 dat\u0119 tekstowo - do wy\u015B\
   wietlenia, logowania czy zapisywania. Robimy to, przekszta\u0142caj\u0105c obiekty\
   \ daty (`Date`) w\u2026"
-lastmod: 2024-02-18 23:08:50.004972
+lastmod: 2024-02-19 22:04:54.959123
 model: gpt-4-1106-preview
 summary: "Czasami potrzebujemy reprezentowa\u0107 dat\u0119 tekstowo - do wy\u015B\
   wietlenia, logowania czy zapisywania. Robimy to, przekszta\u0142caj\u0105c obiekty\

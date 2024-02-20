@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/reading-command-line-arguments/
 date: 2024-01-20 17:56:40.503373-07:00
 description: "Reading command line arguments lets your Python script play nice with\
   \ user inputs from the terminal. Why? Well, because flexibility is key; users can\u2026"
-lastmod: 2024-02-18 23:09:10.696884
+lastmod: 2024-02-19 22:05:18.229226
 model: gpt-4-1106-preview
 summary: "Reading command line arguments lets your Python script play nice with user\
   \ inputs from the terminal. Why? Well, because flexibility is key; users can\u2026"

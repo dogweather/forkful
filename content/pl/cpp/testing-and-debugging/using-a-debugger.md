@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/using-a-debugger/
 date: 2024-01-26 03:47:54.677346-07:00
 description: "U\u017Cycie debugera oznacza uruchomienie narz\u0119dzia, kt\xF3re pozwala\
   \ zajrze\u0107 do wn\u0119trza dzia\u0142aj\u0105cego programu, aby zrozumie\u0107\
   , co si\u0119 w nim naprawd\u0119 dzieje.\u2026"
-lastmod: 2024-02-18 23:08:49.916011
+lastmod: 2024-02-19 22:04:54.863559
 model: gpt-4-0125-preview
 summary: "U\u017Cycie debugera oznacza uruchomienie narz\u0119dzia, kt\xF3re pozwala\
   \ zajrze\u0107 do wn\u0119trza dzia\u0142aj\u0105cego programu, aby zrozumie\u0107\

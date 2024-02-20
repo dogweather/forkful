@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:33.722457-07:00
 description: "HTML parsen betekent het doorzoeken van de structuur en inhoud van een\
   \ HTML-bestand om informatie te extraheren. Programmeurs doen dit om data te\u2026"
-lastmod: 2024-02-18 23:09:02.037366
+lastmod: 2024-02-19 22:05:10.064107
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent het doorzoeken van de structuur en inhoud van een HTML-bestand\
   \ om informatie te extraheren. Programmeurs doen dit om data te\u2026"

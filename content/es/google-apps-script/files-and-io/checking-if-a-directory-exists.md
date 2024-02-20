@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:53.503797-07:00
 description: "Comprobar si un directorio existe en Google Apps Script implica verificar\
   \ la presencia de una carpeta dentro de Google Drive. Los programadores a menudo\u2026"
-lastmod: 2024-02-18 23:09:09.524824
+lastmod: 2024-02-19 22:05:17.177546
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en Google Apps Script implica verificar\
   \ la presencia de una carpeta dentro de Google Drive. Los programadores a menudo\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:47.757607-07:00
 description: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub\
   \ otwarciu pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015B\
   cia/wyj\u015Bcia plik\xF3w\u2026"
-lastmod: 2024-02-18 23:08:50.099921
+lastmod: 2024-02-19 22:04:55.086236
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub otwarciu\
   \ pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015Bcia/wyj\u015B\

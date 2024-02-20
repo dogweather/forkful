@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:33.107025-07:00
 description: "Het verwijderen van tekens die overeenkomen met een specifiek patroon\
   \ uit strings in C gaat over het verwijderen van alle instanties van bepaalde tekens\u2026"
-lastmod: 2024-02-18 23:09:02.354661
+lastmod: 2024-02-19 22:05:10.362065
 model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een specifiek patroon uit\
   \ strings in C gaat over het verwijderen van alle instanties van bepaalde tekens\u2026"

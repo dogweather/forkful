@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/arduino/sending-an-http-request/
 date: 2024-01-20 17:58:55.544615-07:00
 description: Inviamo una richiesta HTTP per comunicare con server web. Usato per ottenere
   informazioni da servizi internet o inviarne.
-lastmod: 2024-02-18 23:08:56.131397
+lastmod: 2024-02-19 22:05:02.756108
 model: gpt-4-1106-preview
 summary: Inviamo una richiesta HTTP per comunicare con server web. Usato per ottenere
   informazioni da servizi internet o inviarne.

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:04.220737-07:00
 description: "Escribir un archivo de texto en Google Apps Script permite a los desarrolladores\
   \ almacenar datos de manera persistente, haci\xE9ndolos accesibles para uso\u2026"
-lastmod: 2024-02-18 23:09:09.529683
+lastmod: 2024-02-19 22:05:17.181961
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Google Apps Script permite a los desarrolladores\
   \ almacenar datos de manera persistente, haci\xE9ndolos accesibles para uso\u2026"

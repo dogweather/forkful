@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:27.350751-07:00
@@ -14,7 +12,7 @@ description: "C\u3067\u306E\u30A8\u30E9\u30FC\u51E6\u7406\u306F\u3001\u30D7\u30E
   \u4E0B\u3067\u30BD\u30D5\u30C8\u30A6\u30A7\u30A2\u304C\u4FE1\u983C\u6027\u3068\u52B9\
   \u7387\u7684\u306B\u6A5F\u80FD\u3059\u308B\u3053\u3068\u3092\u4FDD\u8A3C\u3057\u307E\
   \u3059\u3002"
-lastmod: 2024-02-18 23:08:55.357182
+lastmod: 2024-02-19 22:05:01.914501
 model: gpt-4-0125-preview
 summary: "C\u3067\u306E\u30A8\u30E9\u30FC\u51E6\u7406\u306F\u3001\u30D7\u30ED\u30B0\
   \u30E9\u30E0\u5B9F\u884C\u4E2D\u306B\u767A\u751F\u3059\u308B\u7570\u5E38\u306A\u72B6\

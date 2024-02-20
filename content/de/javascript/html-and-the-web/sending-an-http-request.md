@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/sending-an-http-request/
 date: 2024-01-20 18:00:01.951548-07:00
 description: "Ein HTTP-Request erm\xF6glicht es deinem Code, mit einem Webserver zu\
   \ sprechen; man holt oder sendet Daten. Programmierer brauchen das f\xFCr APIs,\
   \ um z.B.\u2026"
-lastmod: 2024-02-18 23:09:05.275421
+lastmod: 2024-02-19 22:05:13.200248
 model: gpt-4-1106-preview
 summary: "Ein HTTP-Request erm\xF6glicht es deinem Code, mit einem Webserver zu sprechen;\
   \ man holt oder sendet Daten. Programmierer brauchen das f\xFCr APIs, um z.B.\u2026"

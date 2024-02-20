@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:19.791839-07:00
@@ -12,7 +10,7 @@ description: "Fish Shell\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC
   \uB098 \uB9AC\uB514\uB809\uC158\uD558\uC5EC \uB514\uBC84\uAE45 \uBC0F \uB85C\uAE45\
   \ \uD504\uB85C\uC138\uC2A4\uB97C \uC6D0\uD65C\uD558\uAC8C \uD558\uAE30 \uC704\uD574\
   \ \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.906880
+lastmod: 2024-02-19 22:05:14.794288
 model: gpt-4-0125-preview
 summary: "Fish Shell\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\
   \uB294 \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8\uC744 \uD45C\uC900 \uCD9C\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/typescript/working-with-yaml/
 date: 2024-02-03 19:03:32.739842-07:00
 description: "YAML, a data serialization language designed to be human-friendly, is\
   \ often used for configuration files, inter-process messaging, and data storage.\u2026"
-lastmod: 2024-02-18 23:09:10.827435
+lastmod: 2024-02-19 22:05:18.346316
 model: gpt-4-0125-preview
 summary: "YAML, a data serialization language designed to be human-friendly, is often\
   \ used for configuration files, inter-process messaging, and data storage.\u2026"

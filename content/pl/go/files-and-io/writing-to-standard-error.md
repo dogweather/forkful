@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:22.715444-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Go polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnoz nieprzeznaczonych dla g\u0142\xF3\
   wnego strumienia wyj\u015Bciowego.\u2026"
-lastmod: 2024-02-18 23:08:49.116857
+lastmod: 2024-02-19 22:04:54.055593
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Go polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnoz nieprzeznaczonych dla g\u0142\xF3\

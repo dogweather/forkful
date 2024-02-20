@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/using-an-interactive-shell-repl/
 date: 2024-01-26 04:18:08.445119-07:00
 description: "K\xE4ytt\xE4m\xE4ll\xE4 interaktiivista kuorta eli Read-Eval-Print-Loopia\
   \ (REPL) voit koodata vuorovaikutteisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ Swift-koodinp\xE4tkien\u2026"
-lastmod: 2024-02-18 23:09:07.991516
+lastmod: 2024-02-19 22:05:15.804163
 model: gpt-4-0125-preview
 summary: "K\xE4ytt\xE4m\xE4ll\xE4 interaktiivista kuorta eli Read-Eval-Print-Loopia\
   \ (REPL) voit koodata vuorovaikutteisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\

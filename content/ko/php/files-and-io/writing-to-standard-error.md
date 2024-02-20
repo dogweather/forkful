@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:37.728923-07:00
@@ -13,7 +11,7 @@ description: "PHP\uC5D0\uC11C \uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uAE30\uB8
   . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774 \uAE30\uC220\uC744 \uC0AC\uC6A9\
   \uD558\uC5EC \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uAC00 \uD504\uB85C\uADF8\uB7A8\uC758\
   \u2026"
-lastmod: 2024-02-18 23:09:06.377897
+lastmod: 2024-02-19 22:05:14.293040
 model: gpt-4-0125-preview
 summary: "PHP\uC5D0\uC11C \uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uAE30\uB85D\uD558\
   \uB294 \uAC83\uC740 \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8 \uC815\uBCF4\

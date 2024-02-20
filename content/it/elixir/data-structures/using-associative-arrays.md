@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.491836-07:00
 description: "In Elixir, gli array associativi, chiamati Mappe, sono collezioni di\
   \ coppie chiave-valore dove una chiave unica punta a un valore. Sono estremamente\
   \ utili\u2026"
-lastmod: 2024-02-18 23:08:55.594272
+lastmod: 2024-02-19 22:05:02.186602
 model: gpt-4-0125-preview
 summary: "In Elixir, gli array associativi, chiamati Mappe, sono collezioni di coppie\
   \ chiave-valore dove una chiave unica punta a un valore. Sono estremamente utili\u2026"

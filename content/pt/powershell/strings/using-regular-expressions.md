@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/powershell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:44.570055-07:00
 description: "Express\xF5es regulares (regex) s\xE3o sequ\xEAncias de caracteres que\
   \ formam um padr\xE3o de pesquisa, usadas principalmente para busca e manipula\xE7\
   \xE3o de strings.\u2026"
-lastmod: 2024-02-18 23:08:58.357016
+lastmod: 2024-02-19 22:05:05.841254
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) s\xE3o sequ\xEAncias de caracteres que formam\
   \ um padr\xE3o de pesquisa, usadas principalmente para busca e manipula\xE7\xE3\

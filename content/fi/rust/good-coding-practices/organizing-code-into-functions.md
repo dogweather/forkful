@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/organizing-code-into-functions/
 date: 2024-01-26 01:16:17.280527-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelmasi jakamista\
   \ uudelleenk\xE4ytett\xE4viin, modulaarisiin palasiin, joita kutsutaan nimell\xE4\
   . Teemme sen\u2026"
-lastmod: 2024-02-18 23:09:07.369609
+lastmod: 2024-02-19 22:05:15.257341
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelmasi jakamista uudelleenk\xE4\
   ytett\xE4viin, modulaarisiin palasiin, joita kutsutaan nimell\xE4. Teemme sen\u2026"

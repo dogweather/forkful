@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/rust/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:01.923448-07:00
 description: "Reguliere expressies, of kortweg regex, zijn reeksen van tekens die\
   \ zoekpatronen vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken\
   \ of te\u2026"
-lastmod: 2024-02-18 23:09:01.608190
+lastmod: 2024-02-19 22:05:09.631715
 model: gpt-4-0125-preview
 summary: "Reguliere expressies, of kortweg regex, zijn reeksen van tekens die zoekpatronen\
   \ vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken of te\u2026"

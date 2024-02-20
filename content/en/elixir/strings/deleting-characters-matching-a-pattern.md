@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elixir/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:59.535072-07:00
 description: "Deleting characters matching a pattern is all about finding specific\
   \ sequences of characters and getting rid of them. Programmers do this to sanitize\u2026"
-lastmod: 2024-02-18 23:09:10.749842
+lastmod: 2024-02-19 22:05:18.276593
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern is all about finding specific sequences\
   \ of characters and getting rid of them. Programmers do this to sanitize\u2026"

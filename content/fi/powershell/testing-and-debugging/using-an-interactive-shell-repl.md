@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/powershell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:36.469903-07:00
 description: "Interaktiivinen kuori eli Read-Eval-Print Loop (REPL) mahdollistaa PowerShell-komentojen\
   \ kirjoittamisen ja v\xE4litt\xF6m\xE4n palautteen saamisen. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.855006
+lastmod: 2024-02-19 22:05:15.680003
 model: gpt-4-0125-preview
 summary: "Interaktiivinen kuori eli Read-Eval-Print Loop (REPL) mahdollistaa PowerShell-komentojen\
   \ kirjoittamisen ja v\xE4litt\xF6m\xE4n palautteen saamisen. Ohjelmoijat\u2026"

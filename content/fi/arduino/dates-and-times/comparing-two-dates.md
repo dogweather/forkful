@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/comparing-two-dates/
 date: 2024-01-20 17:32:27.534742-07:00
 description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4m\xE4\xE4\
   n niiden j\xE4rjestys tai aikaero. Tarpeen esimerkiksi ajanhallinnassa ja tapahtumien\
   \ seurannassa."
-lastmod: 2024-02-18 23:09:07.912723
+lastmod: 2024-02-19 22:05:15.731904
 model: gpt-4-1106-preview
 summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4m\xE4\xE4n niiden\
   \ j\xE4rjestys tai aikaero. Tarpeen esimerkiksi ajanhallinnassa ja tapahtumien seurannassa."

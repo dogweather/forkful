@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:26.018827-07:00
 description: "Virheiden k\xE4sittely Go:ssa tarkoittaa virhetilanteiden tunnistamista\
   \ ja niihin vastaamista ohjelmassasi. Ohjelmoijat k\xE4ytt\xE4v\xE4t virheenk\xE4\
   sittely\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.093981
+lastmod: 2024-02-19 22:05:14.973848
 model: gpt-4-0125-preview
 summary: "Virheiden k\xE4sittely Go:ssa tarkoittaa virhetilanteiden tunnistamista\
   \ ja niihin vastaamista ohjelmassasi. Ohjelmoijat k\xE4ytt\xE4v\xE4t virheenk\xE4\

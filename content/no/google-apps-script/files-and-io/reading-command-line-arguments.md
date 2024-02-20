@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:22.623263-07:00
 description: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av en\
   \ misvisende betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt\
   \ i\u2026"
-lastmod: 2024-02-18 23:08:53.497775
+lastmod: 2024-02-19 22:04:59.613103
 model: gpt-4-0125-preview
 summary: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av en misvisende\
   \ betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt i\u2026"

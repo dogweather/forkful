@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/starting-a-new-project/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:29.983848-07:00
 description: "\xC5 starte et nytt prosjekt i Go inneb\xE6rer \xE5 sette opp et arbeidsomr\xE5\
   de og initialisere det med de n\xF8dvendige Go-modulene. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.436604
+lastmod: 2024-02-19 22:04:59.547202
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i Go inneb\xE6rer \xE5 sette opp et arbeidsomr\xE5\
   de og initialisere det med de n\xF8dvendige Go-modulene. Programmerere gj\xF8r dette\

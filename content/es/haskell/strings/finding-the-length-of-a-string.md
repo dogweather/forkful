@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/haskell/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:36.641919-07:00
 description: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
   \ contiene. Los programadores lo hacen para validar entradas, controlar bucles,\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:10.018268
+lastmod: 2024-02-19 22:05:17.617237
 model: gpt-4-1106-preview
 summary: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
   \ contiene. Los programadores lo hacen para validar entradas, controlar bucles,\

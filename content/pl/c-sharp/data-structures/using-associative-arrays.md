@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c-sharp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:08.647715-07:00
 description: "Tablice asocjacyjne, czyli s\u0142owniki w C#, pozwalaj\u0105 przechowywa\u0107\
   \ i zarz\u0105dza\u0107 parami kluczy i warto\u015Bci. S\u0105 Twoim pierwszym wyborem,\
   \ gdy potrzebujesz szybko\u2026"
-lastmod: 2024-02-18 23:08:49.603751
+lastmod: 2024-02-19 22:04:54.534054
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czyli s\u0142owniki w C#, pozwalaj\u0105 przechowywa\u0107\
   \ i zarz\u0105dza\u0107 parami kluczy i warto\u015Bci. S\u0105 Twoim pierwszym wyborem,\

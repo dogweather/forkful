@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:53.995088-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylim\xE4\xE4r\xE4\
   isten kaksois- tai yksitt\xE4isten lainausmerkkien karsimista, joita et todellisuudessa\
   \ tarvitse\u2026"
-lastmod: 2024-02-18 23:09:07.490767
+lastmod: 2024-02-19 22:05:15.370616
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylim\xE4\xE4r\xE4isten\
   \ kaksois- tai yksitt\xE4isten lainausmerkkien karsimista, joita et todellisuudessa\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/cpp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:53.775582-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na\
   \ wyprowadzaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105\
   \ oddzielone od g\u0142\xF3wnego wyniku\u2026"
-lastmod: 2024-02-18 23:08:49.927864
+lastmod: 2024-02-19 22:04:54.876214
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na wyprowadzaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105 oddzielone\

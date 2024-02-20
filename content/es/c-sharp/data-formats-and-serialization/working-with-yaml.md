@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c-sharp/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:58.110505-07:00
 description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
   \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
-lastmod: 2024-02-18 23:09:10.004102
+lastmod: 2024-02-19 22:05:17.604496
 model: gpt-4-0125-preview
 summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
   \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"

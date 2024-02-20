@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/typescript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:53.217999-07:00
@@ -11,7 +9,7 @@ description: "\u4F7F\u7528 TypeScript \u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B
   \u4FC3\u8FDB\u4EE3\u7801\u7684\u53EF\u7EF4\u62A4\u6027\u589E\u957F\uFF0C\u56E0\u4E3A\
   \ TypeScript \u7684\u9759\u6001\u7C7B\u578B\u6DFB\u52A0\u4E86\u4E00\u5C42\u53EF\u9884\
   \u6D4B\u6027\u5230 JavaScript \u6D4B\u8BD5\u4E2D\u3002"
-lastmod: 2024-02-18 23:08:58.907096
+lastmod: 2024-02-19 22:05:06.491719
 model: gpt-4-0125-preview
 summary: "\u4F7F\u7528 TypeScript \u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA\
   \u81EA\u52A8\u5316\u811A\u672C\u6765\u9A8C\u8BC1\u4EE3\u7801\u7684\u529F\u80FD\u6027\

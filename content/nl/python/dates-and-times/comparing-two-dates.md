@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/python/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:45.955146-07:00
 description: "Het vergelijken van twee datums betekent controleren welke eerst komt\
   \ of hoe ver ze uit elkaar liggen in tijd. Programmeurs doen dit om evenementen\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.447275
+lastmod: 2024-02-19 22:05:09.477282
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums betekent controleren welke eerst komt of\
   \ hoe ver ze uit elkaar liggen in tijd. Programmeurs doen dit om evenementen te\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/rounding-numbers/
 date: 2024-01-26 03:46:00.669325-07:00
 description: "Arrondir des nombres signifie supprimer les d\xE9cimales pour obtenir\
   \ une pr\xE9cision d\xE9finie, souvent jusqu'aux nombres entiers. Les programmeurs\
   \ arrondissent\u2026"
-lastmod: 2024-02-18 23:09:08.916842
+lastmod: 2024-02-19 22:05:16.609304
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie supprimer les d\xE9cimales pour obtenir une\
   \ pr\xE9cision d\xE9finie, souvent jusqu'aux nombres entiers. Les programmeurs arrondissent\u2026"

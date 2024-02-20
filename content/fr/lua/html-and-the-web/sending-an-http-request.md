@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/sending-an-http-request/
 date: 2024-01-20 17:59:55.710254-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. On le fait souvent pour int\xE9grer du contenu web dans nos apps ou pour\
   \ communiquer\u2026"
-lastmod: 2024-02-18 23:09:08.966178
+lastmod: 2024-02-19 22:05:16.655076
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. On le fait souvent pour int\xE9grer du contenu web dans nos apps ou pour\

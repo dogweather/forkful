@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:24.949096-07:00
 description: "Skicka en HTTP-f\xF6rfr\xE5gan med basic-autentisering inneb\xE4r att\
   \ koda ihop anv\xE4ndarnamn och l\xF6senord och skicka med det i en f\xF6rfr\xE5\
   gans `Authorization`\u2026"
-lastmod: 2024-02-18 23:08:51.749527
+lastmod: 2024-02-19 22:04:57.084927
 model: gpt-4-1106-preview
 summary: "Skicka en HTTP-f\xF6rfr\xE5gan med basic-autentisering inneb\xE4r att koda\
   \ ihop anv\xE4ndarnamn och l\xF6senord och skicka med det i en f\xF6rfr\xE5gans\

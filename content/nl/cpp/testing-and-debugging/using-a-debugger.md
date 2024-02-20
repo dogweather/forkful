@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/using-a-debugger/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:44.899315-07:00
 description: "Een debugger gebruiken betekent het opstarten van een hulpmiddel waarmee\
   \ je binnenin je lopende programma kunt kijken om te begrijpen wat er echt gebeurt.\u2026"
-lastmod: 2024-02-18 23:09:02.187922
+lastmod: 2024-02-19 22:05:10.204297
 model: gpt-4-0125-preview
 summary: "Een debugger gebruiken betekent het opstarten van een hulpmiddel waarmee\
   \ je binnenin je lopende programma kunt kijken om te begrijpen wat er echt gebeurt.\u2026"

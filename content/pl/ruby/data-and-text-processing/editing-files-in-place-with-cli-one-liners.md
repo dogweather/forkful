@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:54.677391-07:00
 description: "Edycja plik\xF3w na miejscu z u\u017Cyciem jednolinijkowych polece\u0144\
   \ CLI (Command Line Interface) w Ruby pozwala na modyfikowanie plik\xF3w bezpo\u015B\
   rednio z terminala,\u2026"
-lastmod: 2024-02-18 23:08:50.121841
+lastmod: 2024-02-19 22:04:55.110290
 model: gpt-4-0125-preview
 summary: "Edycja plik\xF3w na miejscu z u\u017Cyciem jednolinijkowych polece\u0144\
   \ CLI (Command Line Interface) w Ruby pozwala na modyfikowanie plik\xF3w bezpo\u015B\

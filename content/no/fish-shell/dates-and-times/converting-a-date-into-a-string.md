@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/fish-shell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:25.913792-07:00
 description: "\xC5 konvertere en dato til en streng betyr \xE5 endre dens format fra\
   \ et daterepresentasjonssystem til en tekstrepresentasjon. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:54.362805
+lastmod: 2024-02-19 22:05:00.518499
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre dens format fra et\
   \ daterepresentasjonssystem til en tekstrepresentasjon. Programmerere gj\xF8r dette\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:14.985642-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res permet de la formater\
   \ pour l'affichage ou le stockage. Les programmeurs font \xE7a pour la lisibilit\xE9\
   \ et pour\u2026"
-lastmod: 2024-02-18 23:09:09.080959
+lastmod: 2024-02-19 22:05:16.761626
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la formater pour\
   \ l'affichage ou le stockage. Les programmeurs font \xE7a pour la lisibilit\xE9\

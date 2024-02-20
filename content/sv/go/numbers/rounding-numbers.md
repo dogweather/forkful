@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:08.169838-07:00
 description: "Avrundning av tal handlar om att justera v\xE4rdet av ett tal till det\
   \ n\xE4rmaste hela talet eller till ett specifikt antal decimaler. Programmerare\
   \ g\xF6r detta\u2026"
-lastmod: 2024-02-18 23:08:51.327866
+lastmod: 2024-02-19 22:04:56.619225
 model: gpt-4-0125-preview
 summary: "Avrundning av tal handlar om att justera v\xE4rdet av ett tal till det n\xE4\
   rmaste hela talet eller till ett specifikt antal decimaler. Programmerare g\xF6\

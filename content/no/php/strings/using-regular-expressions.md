@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/php/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:40.724162-07:00
 description: "Regul\xE6re uttrykk (regex) i PHP er m\xF8nstre brukt til \xE5 matche\
   \ tegnkombinasjoner i strenger, noe som muliggj\xF8r avanserte s\xF8k-og-erstatt-operasjoner\
   \ og\u2026"
-lastmod: 2024-02-18 23:08:53.965610
+lastmod: 2024-02-19 22:05:00.139459
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i PHP er m\xF8nstre brukt til \xE5 matche tegnkombinasjoner\
   \ i strenger, noe som muliggj\xF8r avanserte s\xF8k-og-erstatt-operasjoner og\u2026"

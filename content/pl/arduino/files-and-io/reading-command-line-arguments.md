@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/arduino/reading-command-line-arguments/
 date: 2024-01-20 17:55:39.237148-07:00
 description: "\"Co i Dlaczego?\" Czytanie argument\xF3w linii polece\u0144 to spos\xF3\
   b na wprowadzanie danych do programu, gdy jest on uruchamiany. Programi\u015Bci\
   \ u\u017Cywaj\u0105 tego, by\u2026"
-lastmod: 2024-02-18 23:08:49.884287
+lastmod: 2024-02-19 22:04:54.831357
 model: gpt-4-1106-preview
 summary: "\"Co i Dlaczego?\" Czytanie argument\xF3w linii polece\u0144 to spos\xF3\
   b na wprowadzanie danych do programu, gdy jest on uruchamiany. Programi\u015Bci\

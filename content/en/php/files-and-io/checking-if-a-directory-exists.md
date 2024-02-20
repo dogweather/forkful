@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/checking-if-a-directory-exists/
 date: 2024-02-03 19:02:39.871634-07:00
 description: "Checking if a directory exists is a fundamental task in PHP programming,\
   \ as it allows you to verify the presence of a directory before performing\u2026"
-lastmod: 2024-02-18 23:09:11.151449
+lastmod: 2024-02-19 22:05:18.642743
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists is a fundamental task in PHP programming,\
   \ as it allows you to verify the presence of a directory before performing\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:54.739159-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications\
   \ (VBA) polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych\
   \ daty. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:49.444139
+lastmod: 2024-02-19 22:04:54.369521
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications (VBA)\
   \ polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych daty.\

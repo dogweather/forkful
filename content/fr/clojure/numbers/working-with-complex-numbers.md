@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/working-with-complex-numbers/
 date: 2024-01-26 04:38:39.398329-07:00
 description: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une partie\
   \ suppl\xE9mentaire, l'unit\xE9 imaginaire 'i'. Les programmeurs les utilisent dans\
   \ divers\u2026"
-lastmod: 2024-02-18 23:09:08.380087
+lastmod: 2024-02-19 22:05:16.174847
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une partie suppl\xE9\
   mentaire, l'unit\xE9 imaginaire 'i'. Les programmeurs les utilisent dans divers\u2026"

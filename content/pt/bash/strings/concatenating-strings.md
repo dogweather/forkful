@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/concatenating-strings/
 date: 2024-01-20 17:34:00.499087-07:00
 description: "Concatenar strings \xE9 o ato de juntar texto em peda\xE7os, criando\
   \ uma \xFAnica sequ\xEAncia cont\xEDnua. Programadores fazem isso para montar mensagens,\
   \ gerar\u2026"
-lastmod: 2024-02-18 23:08:58.315434
+lastmod: 2024-02-19 22:05:05.797322
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 o ato de juntar texto em peda\xE7os, criando uma\
   \ \xFAnica sequ\xEAncia cont\xEDnua. Programadores fazem isso para montar mensagens,\

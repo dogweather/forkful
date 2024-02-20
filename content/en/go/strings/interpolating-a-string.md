@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/interpolating-a-string/
 date: 2024-02-03 17:50:05.456347-07:00
 description: "String interpolation is a method to construct strings that incorporate\
   \ variables, enabling dynamic string creation. Programmers do this to customize\u2026"
-lastmod: 2024-02-18 23:09:10.582553
+lastmod: 2024-02-19 22:05:18.126755
 model: gpt-4-0125-preview
 summary: "String interpolation is a method to construct strings that incorporate variables,\
   \ enabling dynamic string creation. Programmers do this to customize\u2026"

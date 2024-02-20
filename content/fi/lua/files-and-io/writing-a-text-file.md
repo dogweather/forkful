@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/lua/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:56.205256-07:00
 description: "Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista\
   \ tai avaamista kirjoitustilassa ja sen j\xE4lkeen tiedosto-operaatioiden k\xE4\
   ytt\xE4mist\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.776651
+lastmod: 2024-02-19 22:05:15.609750
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista tai\
   \ avaamista kirjoitustilassa ja sen j\xE4lkeen tiedosto-operaatioiden k\xE4ytt\xE4\

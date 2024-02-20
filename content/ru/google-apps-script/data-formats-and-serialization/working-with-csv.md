@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:35.123920-07:00
@@ -12,7 +10,7 @@ description: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 \u0444\u0430\u0439\u04
   \u0442\u0435\u043D\u0438\u0435, \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\
   \u0435 \u0438 \u0437\u0430\u043F\u0438\u0441\u044C \u0442\u0435\u043A\u0441\u0442\
   \u043E\u0432\u044B\u0445\u2026"
-lastmod: 2024-02-18 23:08:56.509116
+lastmod: 2024-02-19 22:05:03.213430
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 \u0444\u0430\u0439\u043B\u0430\
   \u043C\u0438 CSV (Comma-Separated Values, \u0437\u043D\u0430\u0447\u0435\u043D\u0438\

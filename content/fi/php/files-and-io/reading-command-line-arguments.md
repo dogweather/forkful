@@ -1,9 +1,7 @@
 ---
-aliases:
-- /fi/php/reading-command-line-arguments/
 date: 2024-01-20 17:56:27.568862-07:00
 description: '`'
-lastmod: 2024-02-18 23:09:07.728690
+lastmod: 2024-02-19 22:05:15.565772
 model: gpt-4-1106-preview
 summary: '`'
 title: Komennoriviparametrien lukeminen

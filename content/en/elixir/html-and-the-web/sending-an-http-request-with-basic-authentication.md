@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/elixir/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:29.109075-07:00
 description: "Sending an HTTP request with basic authentication involves adding a\
   \ username and password to your request to access a protected resource. Programmers\
   \ do\u2026"
-lastmod: 2024-02-18 23:09:10.765416
+lastmod: 2024-02-19 22:05:18.290685
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves adding a username\
   \ and password to your request to access a protected resource. Programmers do\u2026"

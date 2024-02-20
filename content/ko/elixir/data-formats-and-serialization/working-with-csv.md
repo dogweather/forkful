@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:43.484290-07:00
@@ -13,7 +11,7 @@ description: "CSV (\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12) \uD30C\uC77C\uC
   \uC131\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC2DC\uC2A4\
   \uD15C \uAC04\uC758 \uB370\uC774\uD130 \uAD50\uD658, \uBE60\uB978 \uB370\uC774\uD130\
   \ \uD3B8\uC9D1, \uB610\uB294 \uAC00\uBCCD\uACE0\u2026"
-lastmod: 2024-02-18 23:09:05.790264
+lastmod: 2024-02-19 22:05:13.703078
 model: gpt-4-0125-preview
 summary: "CSV (\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12) \uD30C\uC77C\uC744 \uC791\
   \uC5C5\uD558\uB294 \uAC83\uC740 \uC774\uB7EC\uD55C \uD30C\uC77C\uC5D0\uC11C \uB370\

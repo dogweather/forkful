@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:44.810184-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 stripe bort de\
   \ ekstra doble eller enkle anf\xF8rselstegnene som du faktisk ikke trenger i den\
   \ bearbeidede\u2026"
-lastmod: 2024-02-18 23:08:53.799632
+lastmod: 2024-02-19 22:04:59.942685
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 stripe bort de ekstra\
   \ doble eller enkle anf\xF8rselstegnene som du faktisk ikke trenger i den bearbeidede\u2026"

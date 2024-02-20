@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/google-apps-script/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:50.079360-07:00
@@ -14,7 +12,7 @@ description: "\u8907\u7D20\u6570\u306F\u3001\u5B9F\u6570\u90E8\u3068\u865A\u6570
   \u5B66\u8A08\u7B97\u3001\u30B7\u30B0\u30CA\u30EB\u51E6\u7406\u306A\u3069\u3078\u306E\
   \u5BFE\u5FDC\u80FD\u529B\u3092\u62E1\u5F35\u3059\u308B\u3053\u3068\u304C\u3067\u304D\
   \u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.515988
+lastmod: 2024-02-19 22:05:00.704831
 model: gpt-4-0125-preview
 summary: "\u8907\u7D20\u6570\u306F\u3001\u5B9F\u6570\u90E8\u3068\u865A\u6570\u90E8\
   \u306E\u7D44\u307F\u5408\u308F\u305B\uFF08\u4F8B\uFF1A3 + 4i\uFF09\u3067\u8868\u3055\

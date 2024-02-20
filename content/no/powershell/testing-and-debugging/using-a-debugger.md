@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/using-a-debugger/
 date: 2024-01-26 03:50:58.380537-07:00
 description: "\xC5 bruke en feils\xF8ker betyr \xE5 sette brytepunkter, g\xE5 gjennom\
   \ koden din trinn for trinn, overv\xE5ke variabler og inspisere tilstanden til programmet\
   \ ditt mens\u2026"
-lastmod: 2024-02-18 23:08:54.104511
+lastmod: 2024-02-19 22:05:00.290664
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en feils\xF8ker betyr \xE5 sette brytepunkter, g\xE5 gjennom\
   \ koden din trinn for trinn, overv\xE5ke variabler og inspisere tilstanden til programmet\

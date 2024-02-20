@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/rounding-numbers/
 date: 2024-01-26 03:46:49.451668-07:00
 description: "Arrondir des nombres signifie approximer une valeur num\xE9rique \xE0\
   \ une pr\xE9cision sp\xE9cifique, typiquement pour \xE9liminer les d\xE9cimales\
   \ ind\xE9sirables. Les\u2026"
-lastmod: 2024-02-18 23:09:09.203156
+lastmod: 2024-02-19 22:05:16.872161
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie approximer une valeur num\xE9rique \xE0 une\
   \ pr\xE9cision sp\xE9cifique, typiquement pour \xE9liminer les d\xE9cimales ind\xE9\

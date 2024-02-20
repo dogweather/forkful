@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:23.634801-07:00
 description: "Apagar caracteres que seguem um padr\xE3o espec\xEDfico ajuda a limpar\
   \ e formatar strings para os requisitos do seu aplicativo. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.516862
+lastmod: 2024-02-19 22:05:06.010653
 model: gpt-4-1106-preview
 summary: "Apagar caracteres que seguem um padr\xE3o espec\xEDfico ajuda a limpar e\
   \ formatar strings para os requisitos do seu aplicativo. Programadores fazem isso\

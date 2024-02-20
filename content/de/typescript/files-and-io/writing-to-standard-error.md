@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:35.149980-07:00
 description: "In TypeScript ist das Schreiben auf Standardfehler (stderr) ein Prozess\
   \ des Sendens von Fehlermeldungen oder Protokollen direkt an den Fehlerausgabestrom\u2026"
-lastmod: 2024-02-18 23:09:04.613994
+lastmod: 2024-02-19 22:05:12.570909
 model: gpt-4-0125-preview
 summary: "In TypeScript ist das Schreiben auf Standardfehler (stderr) ein Prozess\
   \ des Sendens von Fehlermeldungen oder Protokollen direkt an den Fehlerausgabestrom\u2026"

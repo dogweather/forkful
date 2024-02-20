@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/kotlin/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:11.797536-07:00
 description: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
   res d'une cha\xEEne de texte en leur \xE9quivalent minuscule. Les programmeurs font\
   \ cela\u2026"
-lastmod: 2024-02-18 23:09:08.766614
+lastmod: 2024-02-19 22:05:16.472220
 model: gpt-4-1106-preview
 summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
   res d'une cha\xEEne de texte en leur \xE9quivalent minuscule. Les programmeurs font\

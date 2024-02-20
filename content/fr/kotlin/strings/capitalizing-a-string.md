@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/kotlin/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:38.354320-07:00
 description: "En programmation, mettre en majuscule une cha\xEEne de caract\xE8res\
   \ consiste \xE0 convertir son premier caract\xE8re en majuscule s'il ne l'est pas\
   \ d\xE9j\xE0, ce qui est\u2026"
-lastmod: 2024-02-18 23:09:08.762324
+lastmod: 2024-02-19 22:05:16.468311
 model: gpt-4-0125-preview
 summary: "En programmation, mettre en majuscule une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir son premier caract\xE8re en majuscule s'il ne l'est pas d\xE9j\xE0\

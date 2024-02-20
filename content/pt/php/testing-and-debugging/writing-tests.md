@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/php/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.213264-07:00
 description: "Escrever testes em programa\xE7\xE3o envolve criar e executar scripts\
   \ que verificam se o c\xF3digo se comporta conforme esperado sob v\xE1rias condi\xE7\
   \xF5es. Os\u2026"
-lastmod: 2024-02-18 23:08:58.244409
+lastmod: 2024-02-19 22:05:05.719320
 model: gpt-4-0125-preview
 summary: "Escrever testes em programa\xE7\xE3o envolve criar e executar scripts que\
   \ verificam se o c\xF3digo se comporta conforme esperado sob v\xE1rias condi\xE7\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/removing-quotes-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:42.544642-07:00
@@ -8,7 +6,7 @@ description: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7
   \ trong PHP c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF nh\u1EEFng k\xFD t\u1EF1 d\u1EA5\
   u ngo\u1EB7c k\xE9p (`\"`) ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n (`'`) c\xF3\
   \ th\u1EC3 l\xE0m r\u1ED1i lo\u1EA1n logic code\u2026"
-lastmod: 2024-02-18 23:08:50.777331
+lastmod: 2024-02-19 22:04:55.932125
 model: gpt-4-0125-preview
 summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i trong\
   \ PHP c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF nh\u1EEFng k\xFD t\u1EF1 d\u1EA5\

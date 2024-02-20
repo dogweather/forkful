@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/powershell/refactoring/
 date: 2024-01-26 03:36:56.802495-07:00
 description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre de ikke-\u2026"
-lastmod: 2024-02-18 23:08:54.108083
+lastmod: 2024-02-19 22:05:00.294578
 model: gpt-4-0125-preview
 summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre de ikke-\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/starting-a-new-project/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:46.370222-07:00
 description: "Avviare un nuovo progetto in Google Apps Script (GAS) comporta l'inizializzazione\
   \ di un file script all'interno dell'ecosistema Google (Google Drive,\u2026"
-lastmod: 2024-02-18 23:08:55.478410
+lastmod: 2024-02-19 22:05:02.062195
 model: gpt-4-0125-preview
 summary: "Avviare un nuovo progetto in Google Apps Script (GAS) comporta l'inizializzazione\
   \ di un file script all'interno dell'ecosistema Google (Google Drive,\u2026"

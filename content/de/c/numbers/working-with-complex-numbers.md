@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:53.913110-07:00
 description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil,\
   \ dargestellt als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:05.366191
+lastmod: 2024-02-19 22:05:13.286623
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, dargestellt\
   \ als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist. Programmierer\u2026"

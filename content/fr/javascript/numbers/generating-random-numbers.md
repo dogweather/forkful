@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/javascript/generating-random-numbers/
 date: 2024-01-27 20:34:14.825848-07:00
 description: "La g\xE9n\xE9ration de nombres al\xE9atoires en JavaScript est une technique\
   \ utilis\xE9e pour cr\xE9er de l'impr\xE9visibilit\xE9 dans les applications, depuis\
   \ les jeux qui\u2026"
-lastmod: 2024-02-18 23:09:09.251245
+lastmod: 2024-02-19 22:05:16.916378
 model: gpt-4-0125-preview
 summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en JavaScript est une technique\
   \ utilis\xE9e pour cr\xE9er de l'impr\xE9visibilit\xE9 dans les applications, depuis\

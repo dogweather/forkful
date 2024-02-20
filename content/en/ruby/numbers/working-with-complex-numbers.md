@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/working-with-complex-numbers/
 date: 2024-01-25 02:59:41.349298-07:00
 description: "Complex numbers, comprised of a real and an imaginary part (like 3+4i),\
   \ are a staple in engineering and physics. Programmers work with them in\u2026"
-lastmod: 2024-02-18 23:09:11.557763
+lastmod: 2024-02-19 22:05:19.005289
 model: gpt-4-1106-preview
 summary: "Complex numbers, comprised of a real and an imaginary part (like 3+4i),\
   \ are a staple in engineering and physics. Programmers work with them in\u2026"

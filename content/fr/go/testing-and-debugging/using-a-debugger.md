@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:03.394298-07:00
 description: "Utiliser un d\xE9bogueur en programmation Go implique l'utilisation\
   \ d'outils ou de fonctionnalit\xE9s pour inspecter et modifier l'\xE9tat d'un programme\
   \ en cours\u2026"
-lastmod: 2024-02-18 23:09:08.239481
+lastmod: 2024-02-19 22:05:16.046270
 model: gpt-4-0125-preview
 summary: "Utiliser un d\xE9bogueur en programmation Go implique l'utilisation d'outils\
   \ ou de fonctionnalit\xE9s pour inspecter et modifier l'\xE9tat d'un programme en\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:57.574102-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 strukturere Google\
   \ Apps Script-koden din ved \xE5 separere logiske segmenter i distinkte blokker,\
   \ hver med ansvar\u2026"
-lastmod: 2024-02-18 23:08:53.486951
+lastmod: 2024-02-19 22:04:59.601822
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 strukturere Google Apps\
   \ Script-koden din ved \xE5 separere logiske segmenter i distinkte blokker, hver\

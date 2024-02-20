@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:02.061984-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces wyci\u0105gania\
   \ specyficznych sekwencji z \u0142a\u0144cucha tekstowego. Programi\u015Bci robi\u0105\
   \ to, by oczy\u015Bci\u0107 dane, usun\u0105\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.723659
+lastmod: 2024-02-19 22:04:54.659662
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces wyci\u0105gania specyficznych\
   \ sekwencji z \u0142a\u0144cucha tekstowego. Programi\u015Bci robi\u0105 to, by\

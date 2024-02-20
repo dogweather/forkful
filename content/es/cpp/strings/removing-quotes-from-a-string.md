@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/cpp/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:07.668373-07:00
 description: "Eliminar comillas de una cadena significa quitar esos molestos caracteres\
   \ dobles o simples que encierran nuestro texto (' o \"). Los programadores a menudo\u2026"
-lastmod: 2024-02-18 23:09:10.295429
+lastmod: 2024-02-19 22:05:17.868056
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena significa quitar esos molestos caracteres\
   \ dobles o simples que encierran nuestro texto (' o \"). Los programadores a menudo\u2026"

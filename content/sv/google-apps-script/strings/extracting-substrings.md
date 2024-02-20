@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:07.739278-07:00
 description: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en str\xE4\
   ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan. Programmerare\
   \ g\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.366562
+lastmod: 2024-02-19 22:04:56.661878
 model: gpt-4-0125-preview
 summary: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en str\xE4\
   ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan. Programmerare\

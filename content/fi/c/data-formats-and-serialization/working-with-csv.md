@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:53.273387-07:00
 description: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely\
   \ tarkoittaa tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4\
   rjestetty\u2026"
-lastmod: 2024-02-18 23:09:08.158801
+lastmod: 2024-02-19 22:05:15.971417
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa\
   \ tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4rjestetty\u2026"

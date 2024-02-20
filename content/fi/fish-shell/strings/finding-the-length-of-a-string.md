@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:19.636867-07:00
 description: "Stringin pituuden m\xE4\xE4ritt\xE4minen tarkoittaa merkkijonon merkkien\
   \ lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 saadakseen\
   \ tietoa datan muodosta,\u2026"
-lastmod: 2024-02-18 23:09:08.071996
+lastmod: 2024-02-19 22:05:15.877974
 model: gpt-4-1106-preview
 summary: "Stringin pituuden m\xE4\xE4ritt\xE4minen tarkoittaa merkkijonon merkkien\
   \ lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 saadakseen\

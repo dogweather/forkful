@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/go/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:39.361456-07:00
 description: "Los arreglos asociativos, conocidos como mapas en Go, te permiten almacenar\
   \ pares clave-valor donde cada clave \xFAnica se asocia a un valor. Los\u2026"
-lastmod: 2024-02-18 23:09:09.446564
+lastmod: 2024-02-19 22:05:17.106776
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos como mapas en Go, te permiten almacenar\
   \ pares clave-valor donde cada clave \xFAnica se asocia a un valor. Los\u2026"

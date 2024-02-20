@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/lua/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:12.385001-07:00
 description: "REPL oznacza Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
   \ interaktywne \u015Brodowisko, gdzie mo\u017Cna szybko testowa\u0107 kod. Programi\u015B\
   ci u\u017Cywaj\u0105 go do\u2026"
-lastmod: 2024-02-18 23:08:49.741518
+lastmod: 2024-02-19 22:04:54.678341
 model: gpt-4-0125-preview
 summary: "REPL oznacza Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
   \ interaktywne \u015Brodowisko, gdzie mo\u017Cna szybko testowa\u0107 kod. Programi\u015B\

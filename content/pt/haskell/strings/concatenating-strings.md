@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/haskell/concatenating-strings/
 date: 2024-01-20 17:34:55.212749-07:00
 description: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma nova string. Programadores fazem isso para manipular texto, construir\u2026"
-lastmod: 2024-02-18 23:08:58.191189
+lastmod: 2024-02-19 22:05:05.662225
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma nova string. Programadores fazem isso para manipular texto, construir\u2026"

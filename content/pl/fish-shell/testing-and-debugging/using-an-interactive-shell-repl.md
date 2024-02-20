@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/fish-shell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:14:04.961096-07:00
 description: "REPL, czyli Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
   \ to interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze\
   \ wej\u015Bcia\u2026"
-lastmod: 2024-02-18 23:08:50.038290
+lastmod: 2024-02-19 22:04:55.017566
 model: gpt-4-0125-preview
 summary: "REPL, czyli Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj), to\
   \ interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze wej\u015B\

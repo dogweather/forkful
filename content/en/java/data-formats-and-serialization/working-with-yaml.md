@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/java/working-with-yaml/
 date: 2024-02-03 19:03:12.830996-07:00
 description: "YAML, short for \"YAML Ain't Markup Language,\" is a human-readable\
   \ data serialization standard that programmers use for configuration files, data\
   \ dumping,\u2026"
-lastmod: 2024-02-18 23:09:10.950715
+lastmod: 2024-02-19 22:05:18.458551
 model: gpt-4-0125-preview
 summary: "YAML, short for \"YAML Ain't Markup Language,\" is a human-readable data\
   \ serialization standard that programmers use for configuration files, data dumping,\u2026"

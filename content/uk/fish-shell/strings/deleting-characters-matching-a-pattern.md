@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/fish-shell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:13.429887-07:00
 description: ''
-lastmod: 2024-02-18 23:09:01.080679
+lastmod: 2024-02-19 22:05:09.119547
 model: gpt-4-1106-preview
 summary: ''
 title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\

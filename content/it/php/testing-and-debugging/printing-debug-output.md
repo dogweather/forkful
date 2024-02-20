@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/php/printing-debug-output/
 date: 2024-01-20 17:52:52.687790-07:00
 description: "Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codice.\
   \ Lo facciamo per trovare gli errori pi\xF9 velocemente e capire meglio il flusso\
   \ del\u2026"
-lastmod: 2024-02-18 23:08:55.973213
+lastmod: 2024-02-19 22:05:02.585799
 model: gpt-4-1106-preview
 summary: "Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codice.\
   \ Lo facciamo per trovare gli errori pi\xF9 velocemente e capire meglio il flusso\

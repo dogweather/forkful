@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/vba/refactoring/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:52.186511-07:00
 description: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve modificar a estrutura\
   \ do c\xF3digo sem alterar seu comportamento, para melhorar aspectos como legibilidade,\u2026"
-lastmod: 2024-02-18 23:08:57.983541
+lastmod: 2024-02-19 22:05:05.458221
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve modificar a estrutura do\
   \ c\xF3digo sem alterar seu comportamento, para melhorar aspectos como legibilidade,\u2026"

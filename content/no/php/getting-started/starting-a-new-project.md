@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/starting-a-new-project/
 date: 2024-01-20 18:04:10.370550-07:00
 description: "\xC5 starte et nytt prosjekt er som \xE5 slippe l\xF8s kreativiteten\
   \ din med kode som lerret. Programmerere gj\xF8r det for \xE5 l\xF8se problemer,\
   \ utforske nye ideer,\u2026"
-lastmod: 2024-02-18 23:08:53.975977
+lastmod: 2024-02-19 22:05:00.150725
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt er som \xE5 slippe l\xF8s kreativiteten din\
   \ med kode som lerret. Programmerere gj\xF8r det for \xE5 l\xF8se problemer, utforske\

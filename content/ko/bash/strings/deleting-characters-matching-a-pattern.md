@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:38.021634-07:00
 description: "\uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C\
   \uD558\uAE30\uB294 \uD2B9\uC815 \uBB38\uC790 \uB610\uB294 \uBB38\uC790\uC5F4\uC744\
@@ -10,7 +8,7 @@ description: "\uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC
   \uBCF4\uB97C \uBC30\uC81C\uD560 \uB54C \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.457620
+lastmod: 2024-02-19 22:05:14.368372
 model: gpt-4-1106-preview
 summary: "\uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C\uD558\
   \uAE30\uB294 \uD2B9\uC815 \uBB38\uC790 \uB610\uB294 \uBB38\uC790\uC5F4\uC744 \uCC3E\

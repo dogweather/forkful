@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/java/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:07.312355-07:00
@@ -14,7 +12,7 @@ description: "\uC790\uBC14\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7
   \uD558\uB294 \uD504\uB85C\uADF8\uB7A8\uC5D0\uC11C \uC624\uB958\uB098 \uC608\uC678\
   \uB97C \uD53C\uD558\uACE0 \uBCF4\uB2E4 \uC6D0\uD65C\uD55C \uC2E4\uD589\uACFC \uB354\
   \u2026"
-lastmod: 2024-02-18 23:09:06.043249
+lastmod: 2024-02-19 22:05:13.980248
 model: gpt-4-0125-preview
 summary: "\uC790\uBC14\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC\uB97C\
   \ \uD655\uC778\uD558\uB294 \uAC83\uC740 \uD30C\uC77C \uC2DC\uC2A4\uD15C \uB514\uB809\

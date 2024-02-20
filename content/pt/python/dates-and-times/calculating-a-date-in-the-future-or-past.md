@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:42.520475-07:00
 description: "Calcular uma data futura ou passada significa simplesmente adicionar\
   \ ou subtrair dias, meses ou anos de uma data espec\xEDfica. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:57.774208
+lastmod: 2024-02-19 22:05:05.238209
 model: gpt-4-1106-preview
 summary: "Calcular uma data futura ou passada significa simplesmente adicionar ou\
   \ subtrair dias, meses ou anos de uma data espec\xEDfica. Programadores fazem isso\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/using-associative-arrays/
 date: 2024-01-30 18:57:17.219485-07:00
 description: "Associative arrays, or what Rustaceans call \"hash maps,\" are collections\
   \ that store data in key-value pairs. Programmers use them for quick data lookup,\u2026"
-lastmod: 2024-02-18 23:09:10.841639
+lastmod: 2024-02-19 22:05:18.359149
 model: gpt-4-0125-preview
 summary: "Associative arrays, or what Rustaceans call \"hash maps,\" are collections\
   \ that store data in key-value pairs. Programmers use them for quick data lookup,\u2026"

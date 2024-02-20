@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/haskell/starting-a-new-project/
 date: 2024-01-20 18:03:41.789285-07:00
 description: "Iniziare un nuovo progetto in Haskell significa digitare alcuni comandi\
   \ per creare una struttura di base. I programmatori lo fanno per avere un ambiente\u2026"
-lastmod: 2024-02-18 23:08:55.930829
+lastmod: 2024-02-19 22:05:02.541469
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto in Haskell significa digitare alcuni comandi\
   \ per creare una struttura di base. I programmatori lo fanno per avere un ambiente\u2026"

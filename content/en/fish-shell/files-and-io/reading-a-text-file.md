@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/fish-shell/reading-a-text-file/
 date: 2024-01-20 17:54:14.326383-07:00
 description: "Reading a text file is grabbing the data within a file for processing.\
   \ Programmers do it to extract information, configure apps, parse logs, or just\
   \ feed\u2026"
-lastmod: 2024-02-18 23:09:11.498260
+lastmod: 2024-02-19 22:05:18.950565
 model: gpt-4-1106-preview
 summary: "Reading a text file is grabbing the data within a file for processing. Programmers\
   \ do it to extract information, configure apps, parse logs, or just feed\u2026"

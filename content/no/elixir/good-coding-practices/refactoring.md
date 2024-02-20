@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/refactoring/
 date: 2024-01-26 01:18:23.770597-07:00
 description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende kode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\
   \ attributter\u2026"
-lastmod: 2024-02-18 23:08:53.612743
+lastmod: 2024-02-19 22:04:59.739577
 model: gpt-4-0125-preview
 summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende kode uten\
   \ \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\

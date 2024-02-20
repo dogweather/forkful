@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/using-an-interactive-shell-repl/
 date: 2024-01-26 04:11:05.859846-07:00
 description: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno de programaci\xF3\
   n de computadoras simple e interactivo. Los programadores lo utilizan para\u2026"
-lastmod: 2024-02-18 23:09:10.169115
+lastmod: 2024-02-19 22:05:17.755398
 model: gpt-4-0125-preview
 summary: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno de programaci\xF3\
   n de computadoras simple e interactivo. Los programadores lo utilizan para\u2026"

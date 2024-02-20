@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/refactoring/
 date: 2024-01-26 01:46:46.913075-07:00
 description: "Refaktorisering er kunsten \xE5 justere eksisterende kode for \xE5 forbedre\
   \ strukturen, lesbarheten, og effektiviteten uten \xE5 endre dens eksterne oppf\xF8\
   rsel.\u2026"
-lastmod: 2024-02-18 23:08:54.023755
+lastmod: 2024-02-19 22:05:00.203392
 model: gpt-4-0125-preview
 summary: "Refaktorisering er kunsten \xE5 justere eksisterende kode for \xE5 forbedre\
   \ strukturen, lesbarheten, og effektiviteten uten \xE5 endre dens eksterne oppf\xF8\

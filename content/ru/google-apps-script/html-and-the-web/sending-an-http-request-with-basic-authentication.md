@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/google-apps-script/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:09.040689-07:00
@@ -14,7 +12,7 @@ description: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430
   \u043A \u0437\u0430\u043F\u0440\u043E\u0441\u0430 \u0434\u043B\u044F \u0434\u043E\
   \u0441\u0442\u0443\u043F\u0430 \u043A \u0437\u0430\u0449\u0438\u0449\u0435\u043D\
   \u043D\u044B\u043C \u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043C.\u2026"
-lastmod: 2024-02-18 23:08:56.480697
+lastmod: 2024-02-19 22:05:03.169631
 model: gpt-4-0125-preview
 summary: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\
   \u0440\u043E\u0441\u0430 \u0441 \u0431\u0430\u0437\u043E\u0432\u043E\u0439 \u0430\

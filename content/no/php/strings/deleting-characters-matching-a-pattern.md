@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:52.732065-07:00
 description: "I PHP kan vi slette tegn som passer til et m\xF8nster for \xE5 rense\
   \ data eller forenkle behandlingen av tekststrenger. Programmerere gj\xF8r dette\
   \ for \xE5 fjerne\u2026"
-lastmod: 2024-02-18 23:08:53.960232
+lastmod: 2024-02-19 22:05:00.133545
 model: gpt-4-1106-preview
 summary: "I PHP kan vi slette tegn som passer til et m\xF8nster for \xE5 rense data\
   \ eller forenkle behandlingen av tekststrenger. Programmerere gj\xF8r dette for\

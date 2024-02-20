@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/downloading-a-web-page/
 date: 2024-01-20 17:45:03.809782-07:00
 description: "Scaricare una pagina web significa acquisire i dati da un URL. I programmatori\
   \ lo fanno per recuperare informazioni, consumare servizi web o per integrare\u2026"
-lastmod: 2024-02-18 23:08:56.211327
+lastmod: 2024-02-19 22:05:02.842262
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa acquisire i dati da un URL. I programmatori\
   \ lo fanno per recuperare informazioni, consumare servizi web o per integrare\u2026"

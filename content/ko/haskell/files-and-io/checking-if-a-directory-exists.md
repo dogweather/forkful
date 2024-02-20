@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:32.291984-07:00
@@ -14,7 +12,7 @@ description: "\uB514\uB809\uD1A0\uB9AC \uC874\uC7AC \uC5EC\uBD80\uB97C \uD655\uC
   \ \uD544\uC694\uD55C \uB514\uB809\uD1A0\uB9AC\uAC00 \uC7A5\uC18C\uC5D0 \uC788\uB294\
   \uC9C0 \uD655\uC778\uD558\uAC70\uB098 \uB514\uB809\uD1A0\uB9AC\uB97C \uC911\uBCF5\
   \uC73C\uB85C\u2026"
-lastmod: 2024-02-18 23:09:06.309525
+lastmod: 2024-02-19 22:05:14.228628
 model: gpt-4-0125-preview
 summary: "\uB514\uB809\uD1A0\uB9AC \uC874\uC7AC \uC5EC\uBD80\uB97C \uD655\uC778\uD558\
   \uB294 \uAC83\uC740 \uB9CE\uC740 \uD504\uB85C\uADF8\uB798\uBC0D \uC791\uC5C5\uC5D0\

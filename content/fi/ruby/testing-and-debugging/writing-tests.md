@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/ruby/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:14.156097-07:00
 description: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
   \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.186611
+lastmod: 2024-02-19 22:05:15.999354
 model: gpt-4-0125-preview
 summary: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
   \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"

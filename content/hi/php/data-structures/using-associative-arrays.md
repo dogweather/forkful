@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/php/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:36.390503-07:00
@@ -13,7 +11,7 @@ description: "PHP \u092E\u0947\u0902 \u0938\u0939\u092F\u094B\u091C\u0940 \u0938
   \u091C\u093E\u092F \u090F\u0915 \u092E\u0928\u0941\u0937\u094D\u092F-\u092A\u0920\
   \u0928\u0940\u092F \u0915\u0941\u0902\u091C\u0940 \u0915\u093E \u0909\u092A\u092F\
   \u094B\u0917 \u0915\u0930\u0915\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.486802
+lastmod: 2024-02-19 22:05:11.476795
 model: gpt-4-0125-preview
 summary: "PHP \u092E\u0947\u0902 \u0938\u0939\u092F\u094B\u091C\u0940 \u0938\u0930\
   \u0923\u093F\u092F\u093E\u0901 (Associative arrays) \u0910\u0938\u0940 \u0938\u0941\

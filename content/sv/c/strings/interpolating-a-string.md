@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:24.862763-07:00
 description: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen av\
   \ str\xE4ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.235417
+lastmod: 2024-02-19 22:04:57.618070
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen av str\xE4\
   ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar. Programmerare g\xF6\

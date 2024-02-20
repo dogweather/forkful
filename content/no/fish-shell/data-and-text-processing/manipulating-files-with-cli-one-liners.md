@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/fish-shell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:20:59.095345-07:00
 description: "I programmeringsverdenen, spesielt n\xE5r man h\xE5ndterer Linux- eller\
   \ Unix-milj\xF8er, er manipulering av filer direkte fra kommandolinjegrensesnittet\
   \ (CLI) ikke\u2026"
-lastmod: 2024-02-18 23:08:54.346383
+lastmod: 2024-02-19 22:05:00.500619
 model: gpt-4-0125-preview
 summary: "I programmeringsverdenen, spesielt n\xE5r man h\xE5ndterer Linux- eller\
   \ Unix-milj\xF8er, er manipulering av filer direkte fra kommandolinjegrensesnittet\

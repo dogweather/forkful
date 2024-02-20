@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/java/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:33.205741-07:00
@@ -14,7 +12,7 @@ description: "\u092E\u093E\u0928\u0915 \u0924\u094D\u0930\u0941\u091F\u093F (std
   \ \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930 \u0907\u0938\u0947\
   \ \u092E\u093E\u0928\u0915 \u0906\u0909\u091F\u092A\u0941\u091F (stdout) \u0938\u0947\
   \u2026"
-lastmod: 2024-02-18 23:09:03.145115
+lastmod: 2024-02-19 22:05:11.141064
 model: gpt-4-0125-preview
 summary: "\u092E\u093E\u0928\u0915 \u0924\u094D\u0930\u0941\u091F\u093F (stderr) \u092E\
   \u0947\u0902 \u0932\u093F\u0916\u0928\u093E \u092F\u093E\u0928\u0940 \u0915\u0902\

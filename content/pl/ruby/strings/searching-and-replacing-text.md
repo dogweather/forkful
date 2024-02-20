@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/searching-and-replacing-text/
 date: 2024-01-20 17:58:30.745140-07:00
 description: "Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalaj\u0105\
   cy zamieni\u0107 pewne wyra\u017Cenia czy ci\u0105gi znak\xF3w na inne. Programi\u015B\
   ci u\u017Cywaj\u0105 tego,\u2026"
-lastmod: 2024-02-18 23:08:50.109295
+lastmod: 2024-02-19 22:04:55.096694
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalaj\u0105\
   cy zamieni\u0107 pewne wyra\u017Cenia czy ci\u0105gi znak\xF3w na inne. Programi\u015B\

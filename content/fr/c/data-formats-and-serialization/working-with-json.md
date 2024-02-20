@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/c/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:51.325832-07:00
 description: "Travailler avec JSON (JavaScript Object Notation) en C implique l'analyse,\
   \ la g\xE9n\xE9ration, et la manipulation des structures de donn\xE9es JSON. Les\u2026"
-lastmod: 2024-02-18 23:09:09.381588
+lastmod: 2024-02-19 22:05:17.046395
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON (JavaScript Object Notation) en C implique l'analyse,\
   \ la g\xE9n\xE9ration, et la manipulation des structures de donn\xE9es JSON. Les\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/php/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:55.012637-07:00
@@ -13,7 +11,7 @@ description: "JSON, \u0430\u0431\u043E JavaScript Object Notation, \u0446\u0435 
   \u043E\u0431\u043B\u044F\u0442\u0438 \u0442\u0430 \u0433\u0435\u043D\u0435\u0440\
   \u0443\u0432\u0430\u0442\u0438 \u043C\u0430\u0448\u0438\u043D\u0430\u043C\u0438\
   .\u2026"
-lastmod: 2024-02-18 23:09:00.533265
+lastmod: 2024-02-19 22:05:08.501479
 model: gpt-4-0125-preview
 summary: "JSON, \u0430\u0431\u043E JavaScript Object Notation, \u0446\u0435 \u043B\
   \u0435\u0433\u043A\u0438\u0439 \u0444\u043E\u0440\u043C\u0430\u0442 \u043E\u0431\

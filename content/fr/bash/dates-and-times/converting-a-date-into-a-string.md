@@ -1,9 +1,7 @@
 ---
-aliases:
-- /fr/bash/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:48.126759-07:00
 description: ("
-lastmod: 2024-02-18 23:09:09.031779
+lastmod: 2024-02-19 22:05:16.716313
 model: gpt-4-1106-preview
 summary: ("
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"

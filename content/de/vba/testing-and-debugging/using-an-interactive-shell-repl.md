@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/vba/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:51.235100-07:00
 description: "Eine interaktive Shell oder Read-Eval-Print-Schleife (REPL) erm\xF6\
   glicht es Benutzern, Befehle einzugeben, auszuf\xFChren und die Ergebnisse in Echtzeit\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.691159
+lastmod: 2024-02-19 22:05:12.644095
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder Read-Eval-Print-Schleife (REPL) erm\xF6glicht\
   \ es Benutzern, Befehle einzugeben, auszuf\xFChren und die Ergebnisse in Echtzeit\

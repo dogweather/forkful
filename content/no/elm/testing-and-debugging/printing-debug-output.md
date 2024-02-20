@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/printing-debug-output/
 date: 2024-01-20 17:52:21.420264-07:00
 description: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore hva\
   \ programmet ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 forst\xE5 feil og\
   \ forbedre kodeflyten."
-lastmod: 2024-02-18 23:08:53.813874
+lastmod: 2024-02-19 22:04:59.957246
 model: gpt-4-1106-preview
 summary: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore hva programmet\
   \ ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 forst\xE5 feil og forbedre\

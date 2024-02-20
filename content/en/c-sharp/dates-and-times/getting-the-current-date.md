@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/getting-the-current-date/
 date: 2024-02-03 19:02:38.771485-07:00
 description: "Getting the current date in C# involves fetching the current date and\
   \ time details from the system. Programmers often need to access this information\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:11.064719
+lastmod: 2024-02-19 22:05:18.563564
 model: gpt-4-0125-preview
 summary: "Getting the current date in C# involves fetching the current date and time\
   \ details from the system. Programmers often need to access this information for\u2026"

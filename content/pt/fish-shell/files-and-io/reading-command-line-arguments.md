@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/reading-command-line-arguments/
 date: 2024-01-20 17:56:04.604035-07:00
 description: "Ler argumentos da linha de comandos \xE9 pegar as informa\xE7\xF5es\
   \ que um usu\xE1rio digita quando executa seu script. Programadores fazem isso para\
   \ permitir que os\u2026"
-lastmod: 2024-02-18 23:08:58.590908
+lastmod: 2024-02-19 22:05:06.089462
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comandos \xE9 pegar as informa\xE7\xF5es que\
   \ um usu\xE1rio digita quando executa seu script. Programadores fazem isso para\

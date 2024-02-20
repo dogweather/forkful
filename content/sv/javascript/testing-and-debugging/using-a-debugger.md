@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/using-a-debugger/
 date: 2024-01-26 03:50:38.186246-07:00
 description: "Att anv\xE4nda en debugger inneb\xE4r att man nyttjar specialiserade\
   \ verktyg f\xF6r att kunna titta in under huven p\xE5 sin kod, och se hur den k\xF6\
   rs steg f\xF6r steg.\u2026"
-lastmod: 2024-02-18 23:08:52.169130
+lastmod: 2024-02-19 22:04:57.541092
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda en debugger inneb\xE4r att man nyttjar specialiserade verktyg\
   \ f\xF6r att kunna titta in under huven p\xE5 sin kod, och se hur den k\xF6rs steg\

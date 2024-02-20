@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/vba/concatenating-strings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:00.847827-07:00
 description: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das\
   \ Zusammenf\xFCgen von zwei oder mehr Zeichenketten zu einer einzigen Einheit. Dies\
   \ ist\u2026"
-lastmod: 2024-02-18 23:09:04.679343
+lastmod: 2024-02-19 22:05:12.632920
 model: gpt-4-0125-preview
 summary: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das Zusammenf\xFC\
   gen von zwei oder mehr Zeichenketten zu einer einzigen Einheit. Dies ist\u2026"

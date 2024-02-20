@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:08.466096-07:00
 description: "Calculer la longueur d'une cha\xEEne, c'est simplement compter le nombre\
   \ de caract\xE8res qu'elle contient. Les programmeurs le font pour valider des donn\xE9\
   es,\u2026"
-lastmod: 2024-02-18 23:09:09.055857
+lastmod: 2024-02-19 22:05:16.738307
 model: gpt-4-1106-preview
 summary: "Calculer la longueur d'une cha\xEEne, c'est simplement compter le nombre\
   \ de caract\xE8res qu'elle contient. Les programmeurs le font pour valider des donn\xE9\

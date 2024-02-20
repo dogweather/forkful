@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/generating-random-numbers/
 date: 2024-01-27 20:26:07.218110-07:00
 description: "Generating random numbers in programming is about creating non-deterministic\
   \ or unpredictable numeric values. Programmers use random numbers for a variety\u2026"
-lastmod: 2024-02-18 23:09:11.392618
+lastmod: 2024-02-19 22:05:18.854071
 model: gpt-4-0125-preview
 summary: "Generating random numbers in programming is about creating non-deterministic\
   \ or unpredictable numeric values. Programmers use random numbers for a variety\u2026"

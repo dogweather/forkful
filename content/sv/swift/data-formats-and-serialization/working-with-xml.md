@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/swift/working-with-xml/
 date: 2024-01-26 04:36:05.757421-07:00
 description: "Att arbeta med XML inneb\xE4r att tolka och generera XML-data i Swift.\
   \ Programmerare g\xF6r detta f\xF6r datautbyte, s\xE4rskilt n\xE4r de integrerar\
   \ med system d\xE4r XML\u2026"
-lastmod: 2024-02-18 23:08:52.147499
+lastmod: 2024-02-19 22:04:57.517188
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att tolka och generera XML-data i Swift. Programmerare\
   \ g\xF6r detta f\xF6r datautbyte, s\xE4rskilt n\xE4r de integrerar med system d\xE4\

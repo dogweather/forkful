@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/typescript/starting-a-new-project/
 date: 2024-01-20 18:04:50.785692-07:00
 description: "\xC5 starte et nytt prosjekt i TypeScript er som \xE5 rulle ut et blankt\
   \ lerret; det gir deg en ren start for \xE5 kode noe nytt. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.645716
+lastmod: 2024-02-19 22:04:59.775522
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt i TypeScript er som \xE5 rulle ut et blankt\
   \ lerret; det gir deg en ren start for \xE5 kode noe nytt. Programmerere gj\xF8\

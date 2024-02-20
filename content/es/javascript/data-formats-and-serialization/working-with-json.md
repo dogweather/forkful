@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/javascript/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:18.444890-07:00
 description: "JSON (Notaci\xF3n de Objeto de JavaScript) es un formato ligero de intercambio\
   \ de datos, f\xE1cil de leer y escribir para los humanos y de analizar y generar\u2026"
-lastmod: 2024-02-18 23:09:10.428530
+lastmod: 2024-02-19 22:05:17.983873
 model: gpt-4-0125-preview
 summary: "JSON (Notaci\xF3n de Objeto de JavaScript) es un formato ligero de intercambio\
   \ de datos, f\xE1cil de leer y escribir para los humanos y de analizar y generar\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:10.553545-07:00
 description: "Het samenvoegen van strings betekent dat je ze achter elkaar plakt om\
   \ een nieuwe string te maken. Het is handig voor het cre\xEBren van aangepaste berichten,\u2026"
-lastmod: 2024-02-18 23:09:01.703956
+lastmod: 2024-02-19 22:05:09.724453
 model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings betekent dat je ze achter elkaar plakt om een\
   \ nieuwe string te maken. Het is handig voor het cre\xEBren van aangepaste berichten,\u2026"

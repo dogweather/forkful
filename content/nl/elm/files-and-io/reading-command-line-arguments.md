@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:05.008585-07:00
 description: "Opdrachtregelargumenten stellen gebruikers in staat om data aan jouw\
   \ programma te voeden wanneer ze het starten. Programmeurs lezen deze om het gedrag\
   \ van\u2026"
-lastmod: 2024-02-18 23:09:01.776380
+lastmod: 2024-02-19 22:05:09.794526
 model: gpt-4-0125-preview
 summary: "Opdrachtregelargumenten stellen gebruikers in staat om data aan jouw programma\
   \ te voeden wanneer ze het starten. Programmeurs lezen deze om het gedrag van\u2026"

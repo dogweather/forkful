@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:46.529419-07:00
 description: "Een webpagina downloaden in Visual Basic for Applications (VBA) betekent\
   \ het ophalen van de HTML-inhoud van een webpagina van het internet. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.664419
+lastmod: 2024-02-19 22:05:09.685668
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden in Visual Basic for Applications (VBA) betekent\
   \ het ophalen van de HTML-inhoud van een webpagina van het internet. Programmeurs\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:56.553234-07:00
 description: "Lavorare con file CSV (Comma-Separated Values - Valori Separati da Virgola)\
   \ in Google Apps Script comporta la lettura, modifica e scrittura di file di\u2026"
-lastmod: 2024-02-18 23:08:55.502211
+lastmod: 2024-02-19 22:05:02.087889
 model: gpt-4-0125-preview
 summary: "Lavorare con file CSV (Comma-Separated Values - Valori Separati da Virgola)\
   \ in Google Apps Script comporta la lettura, modifica e scrittura di file di\u2026"

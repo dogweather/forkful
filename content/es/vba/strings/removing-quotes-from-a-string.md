@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:18.978096-07:00
 description: "Eliminar comillas de una cadena en VBA implica quitar instancias de\
   \ comillas simples (`'`) o dobles (`\"`) que pueden encapsular o estar incrustadas\
   \ dentro\u2026"
-lastmod: 2024-02-18 23:09:09.782397
+lastmod: 2024-02-19 22:05:17.402940
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena en VBA implica quitar instancias de comillas\
   \ simples (`'`) o dobles (`\"`) que pueden encapsular o estar incrustadas dentro\u2026"

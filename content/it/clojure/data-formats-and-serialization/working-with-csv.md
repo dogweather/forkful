@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/clojure/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:02.289171-07:00
 description: "Lavorare con file CSV (Valori Separati da Virgola) comporta l'analisi\
   \ e la generazione di dati testuali strutturati come righe e colonne, simili ai\
   \ dati\u2026"
-lastmod: 2024-02-18 23:08:55.582130
+lastmod: 2024-02-19 22:05:02.174017
 model: gpt-4-0125-preview
 summary: "Lavorare con file CSV (Valori Separati da Virgola) comporta l'analisi e\
   \ la generazione di dati testuali strutturati come righe e colonne, simili ai dati\u2026"

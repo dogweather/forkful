@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:32.644278-07:00
 description: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est d\xE9couvrir\
   \ combien de caract\xE8res elle contient. Les programmeurs le font pour valider\
   \ des saisies\u2026"
-lastmod: 2024-02-18 23:09:08.471697
+lastmod: 2024-02-19 22:05:16.257926
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est d\xE9couvrir\
   \ combien de caract\xE8res elle contient. Les programmeurs le font pour valider\

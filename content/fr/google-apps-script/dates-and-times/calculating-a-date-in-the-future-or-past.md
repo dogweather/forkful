@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/google-apps-script/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:49.669678-07:00
 description: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manipuler\
   \ des objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement.\u2026"
-lastmod: 2024-02-18 23:09:08.305835
+lastmod: 2024-02-19 22:05:16.107707
 model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manipuler des\
   \ objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement.\u2026"

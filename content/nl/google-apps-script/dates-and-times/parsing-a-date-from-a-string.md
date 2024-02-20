@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:18.625988-07:00
 description: "Een datum uit een string parsen houdt in dat tekst die een datum vertegenwoordigt\
   \ wordt omgezet in een datumobject, waardoor programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.396416
+lastmod: 2024-02-19 22:05:09.428548
 model: gpt-4-0125-preview
 summary: "Een datum uit een string parsen houdt in dat tekst die een datum vertegenwoordigt\
   \ wordt omgezet in een datumobject, waardoor programmeurs\u2026"

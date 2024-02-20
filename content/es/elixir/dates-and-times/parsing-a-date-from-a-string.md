@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/elixir/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 02:05:05.416869-07:00
 description: "Convertir una fecha de un string se trata de tomar texto, como \"2023-04-05\"\
   , y convertirlo a un formato de fecha que tu programa pueda entender y usar.\u2026"
-lastmod: 2024-02-18 23:09:09.658318
+lastmod: 2024-02-19 22:05:17.298264
 model: gpt-4-0125-preview
 summary: "Convertir una fecha de un string se trata de tomar texto, como \"2023-04-05\"\
   , y convertirlo a un formato de fecha que tu programa pueda entender y usar.\u2026"

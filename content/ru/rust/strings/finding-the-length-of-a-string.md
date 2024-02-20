@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/rust/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:57:54.251387-07:00
@@ -14,7 +12,7 @@ description: "\u041D\u0430\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u043
   \u0442\u043E \u0434\u043B\u044F \u0442\u043E\u0433\u043E, \u0447\u0442\u043E\u0431\
   \u044B \u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u043E \u043F\u0440\
   \u043E\u0432\u0435\u0440\u044F\u0442\u044C,\u2026"
-lastmod: 2024-02-18 23:08:56.724948
+lastmod: 2024-02-19 22:05:03.561533
 model: gpt-4-0125-preview
 summary: "\u041D\u0430\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0434\u043B\
   \u0438\u043D\u044B \u0441\u0442\u0440\u043E\u043A\u0438 \u043E\u0437\u043D\u0430\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/haskell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:42.083039-07:00
 description: "Convertir una cadena de texto a min\xFAsculas es tomar cada letra en\
   \ may\xFAscula y cambiarla por su equivalente en min\xFAscula. Los programadores\
   \ hacen esto para\u2026"
-lastmod: 2024-02-18 23:09:10.013773
+lastmod: 2024-02-19 22:05:17.613391
 model: gpt-4-1106-preview
 summary: "Convertir una cadena de texto a min\xFAsculas es tomar cada letra en may\xFA\
   scula y cambiarla por su equivalente en min\xFAscula. Los programadores hacen esto\

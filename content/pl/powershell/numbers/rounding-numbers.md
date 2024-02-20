@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/rounding-numbers/
 date: 2024-01-26 03:46:26.530789-07:00
 description: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci do najbli\u017C\
   szej liczby ca\u0142kowitej lub okre\u015Blonego miejsca dziesi\u0119tnego. Programi\u015B\
   ci zaokr\u0105glaj\u0105 liczby,\u2026"
-lastmod: 2024-02-18 23:08:49.821933
+lastmod: 2024-02-19 22:04:54.763598
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci do najbli\u017C\
   szej liczby ca\u0142kowitej lub okre\u015Blonego miejsca dziesi\u0119tnego. Programi\u015B\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/working-with-json/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:04.105193-07:00
@@ -12,7 +10,7 @@ description: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4
   \u79CD\u7F16\u7A0B\u73AF\u5883\u4E2D\uFF08\u5305\u62ECVisual Basic for Applications\uFF08\
   VBA\uFF09\uFF09\u4EE5\u7ED3\u6784\u5316\u3001\u53EF\u8BBF\u95EE\u7684\u65B9\u5F0F\
   \u5B58\u50A8\u4FE1\u606F\u3002"
-lastmod: 2024-02-18 23:08:59.002103
+lastmod: 2024-02-19 22:05:06.624223
 model: gpt-4-0125-preview
 summary: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\u79CD\
   \u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u4EBA\u7C7B\u6613\

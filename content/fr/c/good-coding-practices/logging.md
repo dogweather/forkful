@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/c/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:48.144656-07:00
 description: "La journalisation en C consiste \xE0 enregistrer le flux et les \xE9\
   v\xE9nements notables d'un programme pendant son ex\xE9cution, fournissant un examen\
   \ tangible de\u2026"
-lastmod: 2024-02-18 23:09:09.363646
+lastmod: 2024-02-19 22:05:17.029700
 model: gpt-4-0125-preview
 summary: "La journalisation en C consiste \xE0 enregistrer le flux et les \xE9v\xE9\
   nements notables d'un programme pendant son ex\xE9cution, fournissant un examen\

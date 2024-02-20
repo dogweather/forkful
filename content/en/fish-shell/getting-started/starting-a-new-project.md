@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/starting-a-new-project/
 date: 2024-01-20 18:03:14.094776-07:00
 description: "Starting a new project means initializing a fresh directory with everything\
   \ you need to get coding. Programmers do this to kick-off development in a\u2026"
-lastmod: 2024-02-18 23:09:11.481787
+lastmod: 2024-02-19 22:05:18.935225
 model: gpt-4-1106-preview
 summary: "Starting a new project means initializing a fresh directory with everything\
   \ you need to get coding. Programmers do this to kick-off development in a\u2026"

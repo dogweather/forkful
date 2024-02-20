@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/bash/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:58.616225-07:00
 description: "Att h\xE4mta det aktuella datumet i Bash inneb\xE4r att anv\xE4nda inbyggda\
   \ kommandon f\xF6r att visa datum och tid i olika format. Programmerare anv\xE4\
   nder denna\u2026"
-lastmod: 2024-02-18 23:08:51.971393
+lastmod: 2024-02-19 22:04:57.323506
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i Bash inneb\xE4r att anv\xE4nda inbyggda\
   \ kommandon f\xF6r att visa datum och tid i olika format. Programmerare anv\xE4\

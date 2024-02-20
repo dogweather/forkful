@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/vba/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:10:00.553250-07:00
 description: "Visual Basic for\u2026"
-lastmod: 2024-02-18 23:08:54.776923
+lastmod: 2024-02-19 22:05:01.072311
 model: gpt-4-0125-preview
 summary: "Visual Basic for\u2026"
 title: "\u6A19\u6E96\u30A8\u30E9\u30FC\u3078\u306E\u66F8\u304D\u8FBC\u307F"

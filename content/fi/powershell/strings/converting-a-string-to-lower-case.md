@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/powershell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:23.851647-07:00
 description: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 tiedon\
   \ vertailu ja k\xE4sittely on yhdenmukaista, tapahtuipa se sitten k\xE4ytt\xF6liittym\xE4\
   ss\xE4 tai\u2026"
-lastmod: 2024-02-18 23:09:07.836132
+lastmod: 2024-02-19 22:05:15.663872
 model: gpt-4-1106-preview
 summary: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 tiedon\
   \ vertailu ja k\xE4sittely on yhdenmukaista, tapahtuipa se sitten k\xE4ytt\xF6liittym\xE4\

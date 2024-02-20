@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/rounding-numbers/
 date: 2024-01-26 03:44:06.987667-07:00
 description: "Arredondar n\xFAmeros consiste em eliminar casas decimais para simplificar\
   \ seus dados ou adequ\xE1-los a formatos espec\xEDficos. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.568414
+lastmod: 2024-02-19 22:05:06.065729
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros consiste em eliminar casas decimais para simplificar\
   \ seus dados ou adequ\xE1-los a formatos espec\xEDficos. Programadores fazem isso\

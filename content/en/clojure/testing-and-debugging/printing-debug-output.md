@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/printing-debug-output/
 date: 2024-01-20 17:52:15.932187-07:00
 description: "Printing debug output is like leaving breadcrumbs in your code: it shows\
   \ the trail of data and logic flow during execution. Programmers use it to track\u2026"
-lastmod: 2024-02-18 23:09:10.726473
+lastmod: 2024-02-19 22:05:18.255641
 model: gpt-4-1106-preview
 summary: "Printing debug output is like leaving breadcrumbs in your code: it shows\
   \ the trail of data and logic flow during execution. Programmers use it to track\u2026"

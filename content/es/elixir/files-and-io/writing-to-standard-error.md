@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/elixir/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:54.427919-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Elixir es un m\xE9todo\
   \ para dirigir mensajes de error y diagn\xF3sticos por separado de la salida principal\
   \ (stdout).\u2026"
-lastmod: 2024-02-18 23:09:09.674720
+lastmod: 2024-02-19 22:05:17.305291
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Elixir es un m\xE9todo para\
   \ dirigir mensajes de error y diagn\xF3sticos por separado de la salida principal\

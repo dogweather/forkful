@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/writing-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:56.370471-07:00
 description: "Een tekstbestand schrijven in PHP gaat over het opslaan van gegevens\
   \ naar een bestand op de server. Programmeurs doen dit vaak voor datalogging,\u2026"
-lastmod: 2024-02-18 23:09:01.965531
+lastmod: 2024-02-19 22:05:09.987150
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in PHP gaat over het opslaan van gegevens naar\
   \ een bestand op de server. Programmeurs doen dit vaak voor datalogging,\u2026"

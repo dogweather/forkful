@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/working-with-xml/
 date: 2024-01-26 04:32:36.938542-07:00
 description: "Att arbeta med XML inneb\xE4r att analysera, fr\xE5ga och manipulera\
   \ XML-dokument med Java. Programmerare g\xF6r detta f\xF6r datautbyte, konfigurationshantering\
   \ och\u2026"
-lastmod: 2024-02-18 23:08:51.692850
+lastmod: 2024-02-19 22:04:57.022182
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att analysera, fr\xE5ga och manipulera XML-dokument\
   \ med Java. Programmerare g\xF6r detta f\xF6r datautbyte, konfigurationshantering\

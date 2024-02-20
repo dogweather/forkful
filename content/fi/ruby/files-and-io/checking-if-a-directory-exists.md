@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/ruby/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:15.570706-07:00
 description: "Tarkistamalla, onko hakemisto olemassa Rubylla, ohjelmoijat voivat varmistaa\
   \ hakemiston olemassaolon ennen toimintojen, kuten tiedostojen lukemisen tai\u2026"
-lastmod: 2024-02-18 23:09:08.198615
+lastmod: 2024-02-19 22:05:16.010388
 model: gpt-4-0125-preview
 summary: "Tarkistamalla, onko hakemisto olemassa Rubylla, ohjelmoijat voivat varmistaa\
   \ hakemiston olemassaolon ennen toimintojen, kuten tiedostojen lukemisen tai\u2026"

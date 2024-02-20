@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/powershell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:16.677984-07:00
 description: "Att skriva till standardfel (stderr) i PowerShell inneb\xE4r att skicka\
   \ felmeddelanden eller diagnostik direkt till stderr-str\xF6mmen, separat fr\xE5\
   n\u2026"
-lastmod: 2024-02-18 23:08:52.019878
+lastmod: 2024-02-19 22:04:57.375884
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i PowerShell inneb\xE4r att skicka\
   \ felmeddelanden eller diagnostik direkt till stderr-str\xF6mmen, separat fr\xE5\

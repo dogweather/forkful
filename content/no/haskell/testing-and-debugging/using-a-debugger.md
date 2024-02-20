@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/haskell/using-a-debugger/
 date: 2024-01-26 03:49:24.935174-07:00
 description: "\xC5 bruke en feils\xF8ker betyr \xE5 dykke inn i koden din med verkt\xF8\
   y designet for \xE5 inspisere, pause og manipulere et program midt i utf\xF8relsen.\
   \ Programmerere\u2026"
-lastmod: 2024-02-18 23:08:53.939240
+lastmod: 2024-02-19 22:05:00.110568
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en feils\xF8ker betyr \xE5 dykke inn i koden din med verkt\xF8\
   y designet for \xE5 inspisere, pause og manipulere et program midt i utf\xF8relsen.\

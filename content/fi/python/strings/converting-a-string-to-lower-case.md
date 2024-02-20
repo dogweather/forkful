@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/python/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:18.249088-07:00
 description: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 teksti\
   \ on yhdenmukainen ja vertailukelpoinen. T\xE4m\xE4 on hy\xF6dyllist\xE4 erityisesti\
   \ tietojen\u2026"
-lastmod: 2024-02-18 23:09:07.170003
+lastmod: 2024-02-19 22:05:15.044723
 model: gpt-4-1106-preview
 summary: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 teksti\
   \ on yhdenmukainen ja vertailukelpoinen. T\xE4m\xE4 on hy\xF6dyllist\xE4 erityisesti\

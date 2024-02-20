@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/javascript/working-with-toml/
 date: 2024-01-26 04:24:05.249892-07:00
 description: "TOML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 Tom's\
   \ Obvious, Minimal Language (\u041E\u0447\u0435\u0432\u0438\u0434\u043D\u0430 \u043C\
@@ -10,7 +8,7 @@ description: "TOML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 Tom'
   \u0432\u0430\u0442\u0438 \u043A\u043E\u043D\u0444\u0456\u0433\u0443\u0440\u0430\u0446\
   \u0456\u0439\u043D\u0456 \u0444\u0430\u0439\u043B\u0438. \u041F\u0440\u043E\u0433\
   \u0440\u0430\u043C\u0456\u0441\u0442\u0438\u2026"
-lastmod: 2024-02-18 23:09:01.075947
+lastmod: 2024-02-19 22:05:09.114966
 model: gpt-4-0125-preview
 summary: "TOML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 Tom's Obvious,\
   \ Minimal Language (\u041E\u0447\u0435\u0432\u0438\u0434\u043D\u0430 \u043C\u0456\

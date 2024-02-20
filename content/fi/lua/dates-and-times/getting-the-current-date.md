@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/lua/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:15.049822-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen ohjelmoinnissa on olennainen\
   \ teht\xE4v\xE4 monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat\
   \ tai teht\xE4vien\u2026"
-lastmod: 2024-02-18 23:09:07.768254
+lastmod: 2024-02-19 22:05:15.601933
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen ohjelmoinnissa on olennainen\
   \ teht\xE4v\xE4 monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat\

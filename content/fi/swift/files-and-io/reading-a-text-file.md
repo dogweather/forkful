@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/reading-a-text-file/
 date: 2024-01-20 17:55:15.650173-07:00
 description: "Luemme tekstifailia, kun haluamme ohjelmassamme k\xE4sitell\xE4 failissa\
   \ olevaa dataa. Se on arkip\xE4iv\xE4inen tapa saada sis\xE4lt\xF6\xE4 ohjelmaan;\
   \ olkoon kyse\u2026"
-lastmod: 2024-02-18 23:09:08.008778
+lastmod: 2024-02-19 22:05:15.819899
 model: gpt-4-1106-preview
 summary: "Luemme tekstifailia, kun haluamme ohjelmassamme k\xE4sitell\xE4 failissa\
   \ olevaa dataa. Se on arkip\xE4iv\xE4inen tapa saada sis\xE4lt\xF6\xE4 ohjelmaan;\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/java/extracting-substrings/
 date: 2024-01-20 17:45:46.817922-07:00
 description: "Extracting substrings means pulling out a specific part of a string\u2014\
   a sequence of characters inside a bigger string. Programmers slice and dice strings\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:10.920330
+lastmod: 2024-02-19 22:05:18.430884
 model: gpt-4-1106-preview
 summary: "Extracting substrings means pulling out a specific part of a string\u2014\
   a sequence of characters inside a bigger string. Programmers slice and dice strings\

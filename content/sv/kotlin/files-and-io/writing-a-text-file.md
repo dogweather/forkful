@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/kotlin/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:17.074415-07:00
 description: "Att skriva en textfil i Kotlin inneb\xE4r att skapa en fil och mata\
   \ in textinneh\xE5ll i den, en vanlig uppgift f\xF6r att lagra data, logga eller\u2026"
-lastmod: 2024-02-18 23:08:51.770436
+lastmod: 2024-02-19 22:04:57.104848
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Kotlin inneb\xE4r att skapa en fil och mata in textinneh\xE5\
   ll i den, en vanlig uppgift f\xF6r att lagra data, logga eller\u2026"

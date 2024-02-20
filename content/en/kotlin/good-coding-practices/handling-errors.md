@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/kotlin/handling-errors/
 date: 2024-01-21 21:19:08.961743-07:00
 description: "Handling errors is how your code deals with problems that pop up during\
   \ execution\u2014like handling a curveball without dropping it. Programmers do it\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.020568
+lastmod: 2024-02-19 22:05:18.523084
 model: gpt-4-1106-preview
 summary: "Handling errors is how your code deals with problems that pop up during\
   \ execution\u2014like handling a curveball without dropping it. Programmers do it\

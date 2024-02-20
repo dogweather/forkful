@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/google-apps-script/working-with-complex-numbers/
 date: 2024-02-01 21:12:06.181398-07:00
 description: "Complex numbers, represented as a combination of real and imaginary\
   \ units (e.g., 3 + 4i), are fundamental in various computational problems, especially\
   \ in\u2026"
-lastmod: 2024-02-18 23:09:10.633165
+lastmod: 2024-02-19 22:05:18.171307
 model: gpt-4-0125-preview
 summary: "Complex numbers, represented as a combination of real and imaginary units\
   \ (e.g., 3 + 4i), are fundamental in various computational problems, especially\

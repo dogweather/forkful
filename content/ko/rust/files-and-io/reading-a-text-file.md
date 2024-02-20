@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/reading-a-text-file/
 date: 2024-01-20 17:55:40.838324-07:00
 description: "(\uBB34\uC5C7\uACFC \uC65C?) \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\
   \uB780 \uB370\uC774\uD130\uB97C \uD30C\uC77C\uC5D0\uC11C \uBD88\uB7EC\uC640 \uC0AC\
@@ -9,7 +7,7 @@ description: "(\uBB34\uC5C7\uACFC \uC65C?) \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77
   \ \uBD84\uC11D \uB4F1 \uB2E4\uC591\uD55C \uBAA9\uC801\uC73C\uB85C \uC774\uB97C \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.911385
+lastmod: 2024-02-19 22:05:13.846538
 model: gpt-4-1106-preview
 summary: "(\uBB34\uC5C7\uACFC \uC65C?) \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\
   \uB780 \uB370\uC774\uD130\uB97C \uD30C\uC77C\uC5D0\uC11C \uBD88\uB7EC\uC640 \uC0AC\

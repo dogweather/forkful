@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/php/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:10.957514-07:00
@@ -14,7 +12,7 @@ description: "PHP\u3067\u6587\u5B57\u5217\u304B\u3089\u65E5\u4ED8\u3092\u30D1\u3
   \u3046\u969B\u3001\u7279\u306B\u30C7\u30FC\u30BF\u306E\u691C\u8A3C\u3001\u64CD\u4F5C\
   \u3001\u4FDD\u5B58\u3001\u304A\u3088\u3073\u8868\u793A\u306E\u76EE\u7684\u3067\u975E\
   \u5E38\u306B\u91CD\u8981\u3067\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.003690
+lastmod: 2024-02-19 22:05:01.397123
 model: gpt-4-0125-preview
 summary: "PHP\u3067\u6587\u5B57\u5217\u304B\u3089\u65E5\u4ED8\u3092\u30D1\u30FC\u30B9\
   \u3059\u308B\u3053\u3068\u306F\u3001\u65E5\u4ED8\u304A\u3088\u3073/\u307E\u305F\u306F\

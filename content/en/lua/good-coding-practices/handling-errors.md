@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/handling-errors/
 date: 2024-01-21 21:19:09.020887-07:00
 description: "Handling errors in coding is about expecting the unexpected. It's the\
   \ art of planning for when things go sideways so you can keep your program running\u2026"
-lastmod: 2024-02-18 23:09:11.186026
+lastmod: 2024-02-19 22:05:18.674261
 model: gpt-4-1106-preview
 summary: "Handling errors in coding is about expecting the unexpected. It's the art\
   \ of planning for when things go sideways so you can keep your program running\u2026"

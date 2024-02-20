@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/ruby/interpolating-a-string/
 date: 2024-01-20 17:51:28.257230-07:00
 description: "Stringin interpolointi tarkoittaa muuttujien tai lausekkeiden arvojen\
   \ sy\xF6tt\xE4mist\xE4 suoraan merkkijonoon. Koodaajat tekev\xE4t t\xE4t\xE4, koska\
   \ se tekee koodista\u2026"
-lastmod: 2024-02-18 23:09:08.165453
+lastmod: 2024-02-19 22:05:15.979341
 model: gpt-4-1106-preview
 summary: "Stringin interpolointi tarkoittaa muuttujien tai lausekkeiden arvojen sy\xF6\
   tt\xE4mist\xE4 suoraan merkkijonoon. Koodaajat tekev\xE4t t\xE4t\xE4, koska se tekee\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/reading-a-text-file/
 date: 2024-01-20 17:53:39.725483-07:00
 description: "Lire un fichier texte, c'est parcourir et manipuler le contenu stock\xE9\
   . Les programmeurs le font pour traiter des donn\xE9es, configurer des logiciels,\
   \ et\u2026"
-lastmod: 2024-02-18 23:09:09.038088
+lastmod: 2024-02-19 22:05:16.722166
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est parcourir et manipuler le contenu stock\xE9\
   . Les programmeurs le font pour traiter des donn\xE9es, configurer des logiciels,\

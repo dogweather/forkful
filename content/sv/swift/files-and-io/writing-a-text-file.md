@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/swift/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:43.623661-07:00
 description: "Att skriva en textfil i Swift g\xF6r det m\xF6jligt att permanent lagra\
   \ str\xE4ngdata p\xE5 filsystemet, vilket \xE4r avg\xF6rande f\xF6r uppgifter s\xE5\
   som att spara\u2026"
-lastmod: 2024-02-18 23:08:52.141869
+lastmod: 2024-02-19 22:04:57.510740
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Swift g\xF6r det m\xF6jligt att permanent lagra\
   \ str\xE4ngdata p\xE5 filsystemet, vilket \xE4r avg\xF6rande f\xF6r uppgifter s\xE5\

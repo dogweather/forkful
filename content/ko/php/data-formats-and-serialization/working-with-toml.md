@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/working-with-toml/
 date: 2024-01-26 04:24:47.265754-07:00
 description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC904\uC784\uB9D0\uB85C\
   , JSON\uC774\uB098 YAML\uACFC \uC720\uC0AC\uD55C \uB370\uC774\uD130 \uD615\uC2DD\
@@ -9,7 +7,7 @@ description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC904\uC784\uB9D
   \uC774\uD130 \uAD6C\uC870\uB85C \uC798 \uBCC0\uD658\uB418\uACE0 \uC9C1\uAD00\uC801\
   \uC774\uAE30 \uB54C\uBB38\uC5D0 \uC124\uC815 \uD30C\uC77C\uC6A9\uC73C\uB85C \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.388696
+lastmod: 2024-02-19 22:05:14.303127
 model: gpt-4-0125-preview
 summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC904\uC784\uB9D0\uB85C\
   , JSON\uC774\uB098 YAML\uACFC \uC720\uC0AC\uD55C \uB370\uC774\uD130 \uD615\uC2DD\

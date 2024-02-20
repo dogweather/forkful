@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/searching-and-replacing-text/
 date: 2024-01-20 17:58:54.933514-07:00
 description: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache\
   \ avec des mots pour les transformer ou les corriger. Les programmeurs le font pour\
   \ mettre\u2026"
-lastmod: 2024-02-18 23:09:08.465289
+lastmod: 2024-02-19 22:05:16.252122
 model: gpt-4-1106-preview
 summary: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache avec\
   \ des mots pour les transformer ou les corriger. Les programmeurs le font pour mettre\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:29.423576-07:00
 description: "String \u0915\u0940 length \u091C\u093E\u0928\u0928\u093E \u092E\u0924\
   \u0932\u092C \u0939\u094B\u0924\u093E \u0939\u0948 character \u0915\u0940 \u0938\
@@ -9,7 +7,7 @@ description: "String \u0915\u0940 length \u091C\u093E\u0928\u0928\u093E \u092E\u
   \u0948 \u0915\u094D\u092F\u094B\u0902\u0915\u093F programmers \u0915\u094B \u0905\
   \u0915\u094D\u0938\u0930 data \u092F\u093E input \u0915\u094B validate \u0914\u0930\
   \ process \u0915\u0930\u0928\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.329713
+lastmod: 2024-02-19 22:05:11.322527
 model: gpt-4-1106-preview
 summary: "String \u0915\u0940 length \u091C\u093E\u0928\u0928\u093E \u092E\u0924\u0932\
   \u092C \u0939\u094B\u0924\u093E \u0939\u0948 character \u0915\u0940 \u0938\u0902\

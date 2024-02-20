@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/logging/
 date: 2024-01-26 01:07:26.904384-07:00
 description: "El registro (logging) es b\xE1sicamente como mantener un diario para\
   \ tu c\xF3digo; es la acci\xF3n de registrar eventos, errores y otros puntos de\
   \ datos\u2026"
-lastmod: 2024-02-18 23:09:10.080896
+lastmod: 2024-02-19 22:05:17.674465
 model: gpt-4-1106-preview
 summary: "El registro (logging) es b\xE1sicamente como mantener un diario para tu\
   \ c\xF3digo; es la acci\xF3n de registrar eventos, errores y otros puntos de datos\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/c-sharp/reading-command-line-arguments/
 date: 2024-01-20 17:55:37.612528-07:00
 description: "Los argumentos de la l\xEDnea de comandos son datos que pasas a tu aplicaci\xF3\
   n al iniciarla. Los programadores los usan para personalizar la ejecuci\xF3n del\u2026"
-lastmod: 2024-02-18 23:09:09.998586
+lastmod: 2024-02-19 22:05:17.599438
 model: gpt-4-1106-preview
 summary: "Los argumentos de la l\xEDnea de comandos son datos que pasas a tu aplicaci\xF3\
   n al iniciarla. Los programadores los usan para personalizar la ejecuci\xF3n del\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elm/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:39.587688-07:00
 description: "Convertir una fecha en un texto significa transformar la representaci\xF3\
   n de tiempo (como `Date`) en una cadena de caracteres legible (como `\"2021-12-31\"\
   `).\u2026"
-lastmod: 2024-02-18 23:09:09.903058
+lastmod: 2024-02-19 22:05:17.512939
 model: gpt-4-1106-preview
 summary: "Convertir una fecha en un texto significa transformar la representaci\xF3\
   n de tiempo (como `Date`) en una cadena de caracteres legible (como `\"2021-12-31\"\

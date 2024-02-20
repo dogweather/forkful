@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/haskell/downloading-a-web-page/
 date: 2024-01-20 17:44:20.095762-07:00
 description: "Ladataan nettisivu, eli noudetaan webbisivun sis\xE4lt\xF6 ohjelmoitavasti.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan ker\xE4\xE4miseen, testaukseen tai palvelujen\u2026"
-lastmod: 2024-02-18 23:09:07.665268
+lastmod: 2024-02-19 22:05:15.507681
 model: gpt-4-1106-preview
 summary: "Ladataan nettisivu, eli noudetaan webbisivun sis\xE4lt\xF6 ohjelmoitavasti.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan ker\xE4\xE4miseen, testaukseen tai palvelujen\u2026"

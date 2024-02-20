@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:39.349340-07:00
 description: "I programmeringsverdenen inneb\xE6rer arbeid med CSV-filer (kommaseparerte\
   \ verdier) \xE5 lese fra og skrive data til tekstfiler organisert i rader, der hver\
   \ rad\u2026"
-lastmod: 2024-02-18 23:08:54.417513
+lastmod: 2024-02-19 22:05:00.578288
 model: gpt-4-0125-preview
 summary: "I programmeringsverdenen inneb\xE6rer arbeid med CSV-filer (kommaseparerte\
   \ verdier) \xE5 lese fra og skrive data til tekstfiler organisert i rader, der hver\

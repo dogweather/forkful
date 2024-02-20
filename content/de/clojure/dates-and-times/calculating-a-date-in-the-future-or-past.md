@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/clojure/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:06.115858-07:00
 description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glicht\
   \ es, Zeitintervalle zu manipulieren. Entwickler nutzen diese M\xF6glichkeit, um\
   \ Funktionen\u2026"
-lastmod: 2024-02-18 23:09:04.521311
+lastmod: 2024-02-19 22:05:12.482653
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glicht\
   \ es, Zeitintervalle zu manipulieren. Entwickler nutzen diese M\xF6glichkeit, um\

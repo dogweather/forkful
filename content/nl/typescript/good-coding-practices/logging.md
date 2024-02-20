@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/typescript/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:09.458964-07:00
 description: "Loggen is het proces van het vastleggen van gebeurtenissen, fouten en\
   \ andere significante informatie tijdens de uitvoering van een programma naar een\u2026"
-lastmod: 2024-02-18 23:09:01.580230
+lastmod: 2024-02-19 22:05:09.604857
 model: gpt-4-0125-preview
 summary: "Loggen is het proces van het vastleggen van gebeurtenissen, fouten en andere\
   \ significante informatie tijdens de uitvoering van een programma naar een\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:02.859862-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) implica leer\
   \ o escribir en archivos de texto plano donde los campos de datos est\xE1n separados\
   \ por\u2026"
-lastmod: 2024-02-18 23:09:09.823624
+lastmod: 2024-02-19 22:05:17.440592
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica leer o escribir\
   \ en archivos de texto plano donde los campos de datos est\xE1n separados por\u2026"

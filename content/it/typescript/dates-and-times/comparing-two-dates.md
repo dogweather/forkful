@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/typescript/comparing-two-dates/
 date: 2024-01-20 17:33:50.411943-07:00
 description: "Confrontare due date significa verificare se sono uguali, quale precede\
   \ o segue l'altra. I programmatori lo fanno per gestire eventi, scadenze, o\u2026"
-lastmod: 2024-02-18 23:08:55.652155
+lastmod: 2024-02-19 22:05:02.249129
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa verificare se sono uguali, quale precede\
   \ o segue l'altra. I programmatori lo fanno per gestire eventi, scadenze, o\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/haskell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:51.839516-07:00
@@ -12,7 +10,7 @@ description: "\u0915\u093F\u0938\u0940 \u0936\u092C\u094D\u0926 \u0915\u094B Cap
   \ \u092C\u0926\u0932\u0928\u093E, \u0938\u093E\u0925 \u0939\u0940 \u092C\u093E\u0915\
   \u0940 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u091B\u094B\u091F\
   \u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902\u2026"
-lastmod: 2024-02-18 23:09:03.392348
+lastmod: 2024-02-19 22:05:11.383903
 model: gpt-4-0125-preview
 summary: "\u0915\u093F\u0938\u0940 \u0936\u092C\u094D\u0926 \u0915\u094B Capitalize\
   \ \u0915\u0930\u0928\u0947 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948, \u0926\

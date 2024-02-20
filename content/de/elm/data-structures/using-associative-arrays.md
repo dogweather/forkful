@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/elm/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.601580-07:00
 description: "Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries,\
   \ ordnen Schl\xFCsseln Werte zu, was das Suchen, Einf\xFCgen und L\xF6schen von\
   \ Werten super\u2026"
-lastmod: 2024-02-18 23:09:04.774106
+lastmod: 2024-02-19 22:05:12.723097
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries, ordnen\
   \ Schl\xFCsseln Werte zu, was das Suchen, Einf\xFCgen und L\xF6schen von Werten\

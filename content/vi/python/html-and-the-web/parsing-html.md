@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/python/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:25.047008-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh
   y m\xE3 HTML v\xE0 tr\xEDch xu\u1EA5t th\xF4ng tin t\u1EEB n\xF3, gi\u1ED1ng nh\u01B0\
   \ vi\u1EC7c t\xECm kim trong \u0111\u1ED1ng r\u01A1m\u2014n\u1EBFu nh\u01B0 \u0111\
   \u1ED1ng r\u01A1m \u0111\u01B0\u1EE3c l\xE0m t\u1EEB c\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.265454
+lastmod: 2024-02-19 22:04:55.287284
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh l\u1EA5\
   y m\xE3 HTML v\xE0 tr\xEDch xu\u1EA5t th\xF4ng tin t\u1EEB n\xF3, gi\u1ED1ng nh\u01B0\

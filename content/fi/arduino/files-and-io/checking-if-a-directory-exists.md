@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/arduino/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:55.115619-07:00
 description: "Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla\
   \ tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai\u2026"
-lastmod: 2024-02-18 23:09:07.914776
+lastmod: 2024-02-19 22:05:15.733758
 model: gpt-4-0125-preview
 summary: "Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla\
   \ tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai\u2026"

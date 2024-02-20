@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/clojure/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:56.378953-07:00
 description: "YAML, rekursiivinen lyhenne sanoista \"YAML Ain't Markup Language\"\
   , on ihmisen luettavissa oleva datan sarjallistamisformaatti, jota k\xE4ytet\xE4\
   \xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.250240
+lastmod: 2024-02-19 22:05:15.146290
 model: gpt-4-0125-preview
 summary: "YAML, rekursiivinen lyhenne sanoista \"YAML Ain't Markup Language\", on\
   \ ihmisen luettavissa oleva datan sarjallistamisformaatti, jota k\xE4ytet\xE4\xE4\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/elm/rounding-numbers/
 date: 2024-01-26 03:44:44.321885-07:00
 description: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s\
   \ cercano o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores\
   \ redondean\u2026"
-lastmod: 2024-02-18 23:09:09.885149
+lastmod: 2024-02-19 22:05:17.496279
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s cercano\
   \ o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores redondean\u2026"

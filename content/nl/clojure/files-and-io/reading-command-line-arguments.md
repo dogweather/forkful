@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/clojure/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:57.659603-07:00
 description: "Het lezen van commandoregelargumenten laat een programma informatie\
   \ rechtstreeks uit de terminalopdracht van de gebruiker halen. Programmeurs doen\
   \ dit om\u2026"
-lastmod: 2024-02-18 23:09:01.496822
+lastmod: 2024-02-19 22:05:09.524401
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten laat een programma informatie rechtstreeks\
   \ uit de terminalopdracht van de gebruiker halen. Programmeurs doen dit om\u2026"

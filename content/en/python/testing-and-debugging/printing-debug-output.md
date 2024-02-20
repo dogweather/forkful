@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/printing-debug-output/
 date: 2024-01-20 17:53:05.673374-07:00
 description: "Printing debug output is like having a conversation with your code to\
   \ figure out what it's thinking. Programmers do it to track down gremlins causing\u2026"
-lastmod: 2024-02-18 23:09:10.683974
+lastmod: 2024-02-19 22:05:18.217619
 model: gpt-4-1106-preview
 summary: "Printing debug output is like having a conversation with your code to figure\
   \ out what it's thinking. Programmers do it to track down gremlins causing\u2026"

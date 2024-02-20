@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/swift/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:00:15.422665-07:00
@@ -13,7 +11,7 @@ description: "\u0410\u043D\u0430\u043B\u0438\u0437 HTML \u043F\u0440\u0435\u0434
   \ \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 \u2014 \u0442\u0435\u043A\
   \u0441\u0442\u043E\u0432, \u0441\u0441\u044B\u043B\u043E\u043A, \u0438\u0437\u043E\
   \u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0439 \u0438 \u0442. \u0434.\u2026"
-lastmod: 2024-02-18 23:08:57.406394
+lastmod: 2024-02-19 22:05:04.657566
 model: gpt-4-0125-preview
 summary: "\u0410\u043D\u0430\u043B\u0438\u0437 HTML \u043F\u0440\u0435\u0434\u0441\
   \u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u0441\u043E\u0431\u043E\u0439 \u043F\

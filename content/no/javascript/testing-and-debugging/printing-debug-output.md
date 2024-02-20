@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/printing-debug-output/
 date: 2024-01-20 17:52:55.826173-07:00
 description: "\xC5 skrive ut feils\xF8kingsdata, eller \"debug output\", lar utviklere\
   \ se hva som skjer i koden under kj\xF8ring. Vi gj\xF8r det for \xE5 forst\xE5 feil,\
   \ optimalisere\u2026"
-lastmod: 2024-02-18 23:08:54.311336
+lastmod: 2024-02-19 22:05:00.462609
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut feils\xF8kingsdata, eller \"debug output\", lar utviklere\
   \ se hva som skjer i koden under kj\xF8ring. Vi gj\xF8r det for \xE5 forst\xE5 feil,\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/python/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:35.869506-07:00
 description: "Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien\
   \ luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.187460
+lastmod: 2024-02-19 22:05:15.073149
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien\
   \ luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekev\xE4t t\xE4\

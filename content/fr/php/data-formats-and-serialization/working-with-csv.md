@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/php/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:43.143880-07:00
 description: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs\
   \ S\xE9par\xE9es par des Virgules) implique de lire et d\u2019\xE9crire des donn\xE9\
   es dans des fichiers\u2026"
-lastmod: 2024-02-18 23:09:08.947590
+lastmod: 2024-02-19 22:05:16.637483
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs S\xE9\
   par\xE9es par des Virgules) implique de lire et d\u2019\xE9crire des donn\xE9es\

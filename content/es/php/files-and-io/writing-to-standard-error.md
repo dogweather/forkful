@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/php/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:58.898930-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en PHP se trata de dirigir\
   \ mensajes de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar\
   \ (stdout),\u2026"
-lastmod: 2024-02-18 23:09:10.091758
+lastmod: 2024-02-19 22:05:17.684196
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en PHP se trata de dirigir mensajes\
   \ de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar (stdout),\u2026"

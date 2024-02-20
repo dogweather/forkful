@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/powershell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:33.726998-07:00
 description: "Les tableaux associatifs, \xE9galement connus sous le nom de tables\
   \ de hachage ou de dictionnaires dans PowerShell, vous permettent de stocker des\
   \ donn\xE9es en\u2026"
-lastmod: 2024-02-18 23:09:09.057997
+lastmod: 2024-02-19 22:05:16.740332
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, \xE9galement connus sous le nom de tables de hachage\
   \ ou de dictionnaires dans PowerShell, vous permettent de stocker des donn\xE9es\

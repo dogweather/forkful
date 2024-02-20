@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/downloading-a-web-page/
 date: 2024-01-20 17:43:33.042835-07:00
 description: "Mik\xE4 ja miksi? Ladataan web-sivu, eli haetaan tiedot internetiss\xE4\
   \ olevasta osoitteesta. Koodarit tekev\xE4t t\xE4m\xE4n, kun tarvitsevat p\xE4ivitt\xE4\
   \xE4 laitteen dataa\u2026"
-lastmod: 2024-02-18 23:09:07.898877
+lastmod: 2024-02-19 22:05:15.719308
 model: gpt-4-1106-preview
 summary: "Mik\xE4 ja miksi? Ladataan web-sivu, eli haetaan tiedot internetiss\xE4\
   \ olevasta osoitteesta. Koodarit tekev\xE4t t\xE4m\xE4n, kun tarvitsevat p\xE4ivitt\xE4\

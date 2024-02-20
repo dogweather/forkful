@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/vba/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:17.450264-07:00
 description: "Tworzenie tymczasowego pliku w Visual Basic for Applications (VBA) polega\
   \ na programowym generowaniu pliku do kr\xF3tkoterminowego u\u017Cytku, typowo dla\u2026"
-lastmod: 2024-02-18 23:08:49.455126
+lastmod: 2024-02-19 22:04:54.381199
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Visual Basic for Applications (VBA) polega\
   \ na programowym generowaniu pliku do kr\xF3tkoterminowego u\u017Cytku, typowo dla\u2026"

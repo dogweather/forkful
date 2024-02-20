@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/fish-shell/working-with-json/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:58.966569-07:00
@@ -12,7 +10,7 @@ description: "JSON (JavaScript Object Notation, \u043D\u043E\u0442\u0430\u0446\u
   \u044F \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0438\u0440\u043E\u0432\u0430\
   \u043D\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445. \u041F\u0440\u043E\
   \u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B\u2026"
-lastmod: 2024-02-18 23:08:57.539201
+lastmod: 2024-02-19 22:05:04.870461
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation, \u043D\u043E\u0442\u0430\u0446\u0438\u044F\
   \ \u043E\u0431\u044A\u0435\u043A\u0442\u043E\u0432 JavaScript) - \u044D\u0442\u043E\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/java/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:22.695390-07:00
 description: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair dados\
   \ como texto, links ou outros elementos. Fazemos isso para interagir com ou raspar\
   \ conte\xFAdo\u2026"
-lastmod: 2024-02-18 23:08:58.016446
+lastmod: 2024-02-19 22:05:05.492772
 model: gpt-4-0125-preview
 summary: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair dados como\
   \ texto, links ou outros elementos. Fazemos isso para interagir com ou raspar conte\xFA\

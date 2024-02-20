@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:37.701172-07:00
 description: "Le format des valeurs s\xE9par\xE9es par des virgules (CSV) est omnipr\xE9\
   sent pour l'\xE9change de donn\xE9es en raison de sa simplicit\xE9 et de sa facilit\xE9\
   \ d'int\xE9gration\u2026"
-lastmod: 2024-02-18 23:09:08.263029
+lastmod: 2024-02-19 22:05:16.069398
 model: gpt-4-0125-preview
 summary: "Le format des valeurs s\xE9par\xE9es par des virgules (CSV) est omnipr\xE9\
   sent pour l'\xE9change de donn\xE9es en raison de sa simplicit\xE9 et de sa facilit\xE9\

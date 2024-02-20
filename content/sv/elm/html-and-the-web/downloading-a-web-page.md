@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elm/downloading-a-web-page/
 date: 2024-01-20 17:43:53.139302-07:00
 description: "Att ladda ner en webbsida betyder att h\xE4mta dess inneh\xE5ll via\
   \ internet. Programmerare g\xF6r detta f\xF6r att bearbeta information, fylla appar\
   \ med data eller\u2026"
-lastmod: 2024-02-18 23:08:51.708433
+lastmod: 2024-02-19 22:04:57.039383
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida betyder att h\xE4mta dess inneh\xE5ll via internet.\
   \ Programmerare g\xF6r detta f\xF6r att bearbeta information, fylla appar med data\

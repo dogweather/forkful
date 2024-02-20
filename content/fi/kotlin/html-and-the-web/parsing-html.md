@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/parsing-html/
 date: 2024-01-20 15:32:28.787617-07:00
 description: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin\
   \ muuttamista rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6\
   dyksi. Koodaajat\u2026"
-lastmod: 2024-02-18 23:09:07.572585
+lastmod: 2024-02-19 22:05:15.422056
 summary: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin muuttamista\
   \ rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6dyksi. Koodaajat\u2026"
 title: "HTML:n j\xE4sent\xE4minen"

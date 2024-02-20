@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elm/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:23.725371-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base significa passare\
   \ username e password per accedere a risorse protette. I programmatori lo fanno\
   \ per\u2026"
-lastmod: 2024-02-18 23:08:55.805713
+lastmod: 2024-02-19 22:05:02.411903
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base significa passare\
   \ username e password per accedere a risorse protette. I programmatori lo fanno\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:59.995400-07:00
 description: "\uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\
   \uB294 \uAC83\uC740 \uD2B9\uC815 \uC870\uAC74\uC744 \uCDA9\uC871\uD558\uB294 \uBB38\
@@ -10,7 +8,7 @@ description: "\uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD
   \uC744 \uC81C\uAC70\uD558\uC5EC \uC790\uB8CC\uB97C \uAC00\uACF5\uD558\uB294 \uB370\
   \ \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.854200
+lastmod: 2024-02-19 22:05:14.744559
 model: gpt-4-1106-preview
 summary: "\uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294\
   \ \uAC83\uC740 \uD2B9\uC815 \uC870\uAC74\uC744 \uCDA9\uC871\uD558\uB294 \uBB38\uC790\

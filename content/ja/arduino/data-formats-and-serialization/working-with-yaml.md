@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/arduino/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:47.984817-07:00
 description: "YAML\uFF08YAML Ain't Markup\u2026"
-lastmod: 2024-02-18 23:08:55.170945
+lastmod: 2024-02-19 22:05:01.636405
 model: gpt-4-0125-preview
 summary: "YAML\uFF08YAML Ain't Markup\u2026"
 title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"

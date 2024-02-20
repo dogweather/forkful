@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/rounding-numbers/
 date: 2024-01-25 03:00:05.161534-07:00
 description: "Rounding numbers means adjusting them to the nearest integer or specified\
   \ decimal place. Programmers round numbers to control precision, tailor outputs\u2026"
-lastmod: 2024-02-18 23:09:11.091074
+lastmod: 2024-02-19 22:05:18.587495
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to the nearest integer or specified\
   \ decimal place. Programmers round numbers to control precision, tailor outputs\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:17.073010-07:00
 description: "\u0907\u0902\u091F\u0930\u090F\u0915\u094D\u091F\u093F\u0935 \u0936\u0947\
   \u0932 \u092F\u093E REPL (Read-Eval-Print Loops), \u0906\u092A\u0915\u094B \u0909\
@@ -11,7 +9,7 @@ description: "\u0907\u0902\u091F\u0930\u090F\u0915\u094D\u091F\u093F\u0935 \u093
   \ \u0938\u093E\u0925 \u091B\u0947\u0921\u093C\u091B\u093E\u0921\u093C \u0915\u0930\
   \u0928\u0947 \u0915\u0940 \u0905\u0928\u0941\u092E\u0924\u093F \u0926\u0947\u0924\
   \u0947\u2026"
-lastmod: 2024-02-18 23:09:04.046417
+lastmod: 2024-02-19 22:05:12.028173
 model: gpt-4-0125-preview
 summary: "\u0907\u0902\u091F\u0930\u090F\u0915\u094D\u091F\u093F\u0935 \u0936\u0947\
   \u0932 \u092F\u093E REPL (Read-Eval-Print Loops), \u0906\u092A\u0915\u094B \u0909\

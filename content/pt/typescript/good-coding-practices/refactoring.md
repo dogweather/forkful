@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/typescript/refactoring/
 date: 2024-01-26 03:36:46.490053-07:00
 description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
   \ existente sem alterar seu comportamento externo. Os programadores fazem isso para\
   \ tornar o\u2026"
-lastmod: 2024-02-18 23:08:57.893277
+lastmod: 2024-02-19 22:05:05.366093
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
   \ existente sem alterar seu comportamento externo. Os programadores fazem isso para\

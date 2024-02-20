@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:56.230298-07:00
 description: "Pisanie test\xF3w w programowaniu polega na tworzeniu konkretnych procedur\
   \ w celu walidacji funkcjonalno\u015Bci i wydajno\u015Bci fragment\xF3w kodu, zapewniaj\u0105\
   c ich\u2026"
-lastmod: 2024-02-18 23:08:49.437946
+lastmod: 2024-02-19 22:04:54.362768
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu konkretnych procedur\
   \ w celu walidacji funkcjonalno\u015Bci i wydajno\u015Bci fragment\xF3w kodu, zapewniaj\u0105\

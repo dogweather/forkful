@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/powershell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:24.034460-07:00
@@ -12,7 +10,7 @@ description: "\u5728 PowerShell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F
   \u4E8B\u4EF6\u3001\u5B89\u6392\u4EFB\u52A1\u4EE5\u53CA\u5728\u811A\u672C\u548C\u5E94\
   \u7528\u7A0B\u5E8F\u4E2D\u5904\u7406\u4E0E\u65E5\u671F\u76F8\u5173\u7684\u903B\u8F91\
   \u3002"
-lastmod: 2024-02-18 23:08:59.341213
+lastmod: 2024-02-19 22:05:07.077872
 model: gpt-4-0125-preview
 summary: "\u5728 PowerShell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u6307\
   \u63D0\u53D6\u7CFB\u7EDF\u5F53\u524D\u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u8FD9\

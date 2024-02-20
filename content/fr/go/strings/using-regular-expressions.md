@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:11.259589-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en programmation sont utilis\xE9\
   es pour rechercher, correspondre et manipuler des cha\xEEnes de caract\xE8res bas\xE9\
   es sur des\u2026"
-lastmod: 2024-02-18 23:09:08.219387
+lastmod: 2024-02-19 22:05:16.029589
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en programmation sont utilis\xE9\
   es pour rechercher, correspondre et manipuler des cha\xEEnes de caract\xE8res bas\xE9\

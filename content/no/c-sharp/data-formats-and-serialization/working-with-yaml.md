@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/c-sharp/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:53.780222-07:00
 description: "YAML, som st\xE5r for YAML Ain't Markup Language, er et menneskelesbart\
   \ data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler,\u2026"
-lastmod: 2024-02-18 23:08:53.913504
+lastmod: 2024-02-19 22:05:00.083411
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er et menneskelesbart\
   \ data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler,\u2026"

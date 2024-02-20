@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/organizing-code-into-functions/
 date: 2024-01-26 01:16:08.012505-07:00
 description: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en\
   \ bloques modulares reutilizables. Hacemos esto para mantener las cosas DRY (Don't\
   \ Repeat\u2026"
-lastmod: 2024-02-18 23:09:09.708800
+lastmod: 2024-02-19 22:05:17.335957
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en bloques\
   \ modulares reutilizables. Hacemos esto para mantener las cosas DRY (Don't Repeat\u2026"

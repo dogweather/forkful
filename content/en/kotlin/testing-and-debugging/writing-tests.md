@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/writing-tests/
 date: 2024-02-03 19:03:33.785130-07:00
 description: "Writing tests in Kotlin involves crafting code snippets that automatically\
   \ validate the functional correctness of your software modules, ensuring they\u2026"
-lastmod: 2024-02-18 23:09:11.016520
+lastmod: 2024-02-19 22:05:18.519475
 model: gpt-4-0125-preview
 summary: "Writing tests in Kotlin involves crafting code snippets that automatically\
   \ validate the functional correctness of your software modules, ensuring they\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/rust/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:56.952104-07:00
 description: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
   \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\
   \ webb-\u2026"
-lastmod: 2024-02-18 23:08:51.581707
+lastmod: 2024-02-19 22:04:56.899978
 model: gpt-4-0125-preview
 summary: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
   \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:49.486166-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.494923
+lastmod: 2024-02-19 22:05:00.676407
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30C7\u30A3\u30EC\u30AF\u30C8\u30EA\u304C\u5B58\u5728\u3059\u308B\u304B\u3069\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/fish-shell/rounding-numbers/
 date: 2024-01-26 03:44:05.968619-07:00
 description: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
   \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"
-lastmod: 2024-02-18 23:08:54.344567
+lastmod: 2024-02-19 22:05:00.498678
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
   \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"

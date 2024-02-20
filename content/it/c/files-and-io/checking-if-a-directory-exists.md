@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:29.307418-07:00
 description: "Verificare se una directory esiste in C implica interrogare il file\
   \ system per verificare se un determinato percorso conduce a una directory. I\u2026"
-lastmod: 2024-02-18 23:08:56.353763
+lastmod: 2024-02-19 22:05:02.992666
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in C implica interrogare il file system\
   \ per verificare se un determinato percorso conduce a una directory. I\u2026"

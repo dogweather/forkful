@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/google-apps-script/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:59.155450-07:00
@@ -13,7 +11,7 @@ description: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u043
   \u043E\u0441\u0442\u0443\u043F\u043D\u0438\u043C\u0438 \u0434\u043B\u044F \u043C\
   \u0430\u0439\u0431\u0443\u0442\u043D\u044C\u043E\u0433\u043E \u0432\u0438\u043A\u043E\
   \u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0430\u0431\u043E\u2026"
-lastmod: 2024-02-18 23:08:59.765633
+lastmod: 2024-02-19 22:05:07.615027
 model: gpt-4-0125-preview
 summary: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0435\u043A\
   \u0441\u0442\u043E\u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443 \u0432\

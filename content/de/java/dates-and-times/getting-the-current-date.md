@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/java/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:41.826776-07:00
 description: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation,\
   \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie\u2026"
-lastmod: 2024-02-18 23:09:04.748010
+lastmod: 2024-02-19 22:05:12.698308
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation,\
   \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie\u2026"

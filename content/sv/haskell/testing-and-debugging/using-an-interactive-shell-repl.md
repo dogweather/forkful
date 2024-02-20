@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/haskell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:14:55.960533-07:00
 description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5\
   ter dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\
   \ av\u2026"
-lastmod: 2024-02-18 23:08:51.838677
+lastmod: 2024-02-19 22:04:57.176893
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5ter\
   \ dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\

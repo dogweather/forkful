@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/lua/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:45.641527-07:00
@@ -14,7 +12,7 @@ description: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902
   \ \u0939\u0948 \u0915\u093F \u0906\u092A\u0915\u0940 \u090F\u092A\u094D\u0932\u093F\
   \u0915\u0947\u0936\u0928 \u0915\u0947 \u0935\u093F\u092D\u093F\u0928\u094D\u0928\
   \ \u0939\u093F\u0938\u094D\u0938\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.582113
+lastmod: 2024-02-19 22:05:11.570967
 model: gpt-4-0125-preview
 summary: "\u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
   \ \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u0923 \u0932\u093F\u0916\

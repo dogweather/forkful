@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:07.576123-07:00
 description: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher, vous permet de taper du\
   \ code C# et de l'ex\xE9cuter interactivement. Les programmeurs l'utilisent pour\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:08.829553
+lastmod: 2024-02-19 22:05:16.529926
 model: gpt-4-0125-preview
 summary: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher, vous permet de taper du code\
   \ C# et de l'ex\xE9cuter interactivement. Les programmeurs l'utilisent pour des\u2026"

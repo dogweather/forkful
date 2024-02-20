@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:47.298909-07:00
 description: "(\uBB34\uC5C7\uACFC \uC65C?) \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\
   \uC11C \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC74\
@@ -9,7 +7,7 @@ description: "(\uBB34\uC5C7\uACFC \uC65C?) \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\
   \uC5D0 \uB0A0\uC9DC\uB97C \uD45C\uC2DC\uD558\uAC70\uB098 \uB0A0\uC9DC\uB97C \uC11C\
   \uBC84\uB85C \uBCF4\uB0BC \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.830973
+lastmod: 2024-02-19 22:05:14.721625
 model: gpt-4-1106-preview
 summary: "(\uBB34\uC5C7\uACFC \uC65C?) \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C\
   \ \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC74 \uB0A0\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/working-with-toml/
 date: 2024-01-25 03:39:57.074924-07:00
 description: "TOML is an acronym for Tom's Obvious, Minimal Language, a configuration\
   \ file format that's easy to read due to its clear semantics. Programmers use it\
   \ for\u2026"
-lastmod: 2024-02-18 23:09:11.077542
+lastmod: 2024-02-19 22:05:18.575249
 model: gpt-4-1106-preview
 summary: "TOML is an acronym for Tom's Obvious, Minimal Language, a configuration\
   \ file format that's easy to read due to its clear semantics. Programmers use it\

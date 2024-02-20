@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/comparing-two-dates/
 date: 2024-01-20 17:33:04.102632-07:00
 description: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC74 \uD558\uB098\
   \uC758 \uB0A0\uC9DC\uAC00 \uB2E4\uB978 \uB0A0\uC9DC\uBCF4\uB2E4 \uBE60\uB978\uC9C0\
@@ -10,7 +8,7 @@ description: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC74 \uD558\u
   \ \uAC19\uC740 \uC791\uC5C5\uC744 \uC704\uD574 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.774776
+lastmod: 2024-02-19 22:05:13.687404
 model: gpt-4-1106-preview
 summary: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC74 \uD558\uB098\uC758\
   \ \uB0A0\uC9DC\uAC00 \uB2E4\uB978 \uB0A0\uC9DC\uBCF4\uB2E4 \uBE60\uB978\uC9C0, \uB2A6\

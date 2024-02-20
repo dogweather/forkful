@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/php/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:07.500777-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe est une t\xE2che fondamentale\
   \ en programmation PHP, car cela permet de v\xE9rifier la pr\xE9sence d'un r\xE9\
   pertoire avant\u2026"
-lastmod: 2024-02-18 23:09:08.938462
+lastmod: 2024-02-19 22:05:16.629093
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe est une t\xE2che fondamentale en\
   \ programmation PHP, car cela permet de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire\

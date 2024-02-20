@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/arduino/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:58.903387-07:00
@@ -8,7 +6,7 @@ description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc
   \ m\xE3 HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t c\xE1c ph\u1EA7n h\u1EEFu \xEDch -\
   \ gi\u1ED1ng nh\u01B0 t\xECm s\u1ED1 \u0111i\u1EC7n tho\u1EA1i tr\xEAn m\u1ED9t\
   \ trang li\xEAn h\u1EC7. T\u1EA1i sao l\u1EA1i l\xE0m\u2026"
-lastmod: 2024-02-18 23:08:50.997844
+lastmod: 2024-02-19 22:04:56.186558
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua m\xE3\
   \ HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t c\xE1c ph\u1EA7n h\u1EEFu \xEDch - gi\u1ED1\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/logging/
 date: 2024-01-25 02:03:56.995806-07:00
 description: "Logging is the practice of recording events, errors, and other significant\
   \ information from the running processes of a program to a file or an output\u2026"
-lastmod: 2024-02-18 23:09:11.236529
+lastmod: 2024-02-19 22:05:18.713156
 model: gpt-4-1106-preview
 summary: "Logging is the practice of recording events, errors, and other significant\
   \ information from the running processes of a program to a file or an output\u2026"

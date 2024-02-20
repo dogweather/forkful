@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:19.241669-07:00
 description: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF6\
   ra vanliga filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script.\
   \ Det \xE4r\u2026"
-lastmod: 2024-02-18 23:08:52.290352
+lastmod: 2024-02-19 22:04:57.679161
 model: gpt-4-0125-preview
 summary: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF6ra vanliga\
   \ filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script. Det\

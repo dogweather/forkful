@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:14:27.151355-07:00
 description: "Editing files in-place with CLI one-liners in PowerShell is about making\
   \ direct modifications to files from the command line, without the need to open\u2026"
-lastmod: 2024-02-18 23:09:11.269825
+lastmod: 2024-02-19 22:05:18.743150
 model: gpt-4-0125-preview
 summary: "Editing files in-place with CLI one-liners in PowerShell is about making\
   \ direct modifications to files from the command line, without the need to open\u2026"

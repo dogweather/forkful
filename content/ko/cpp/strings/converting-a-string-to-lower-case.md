@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:54.067759-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\
   \uB294 \uAC83\uC740 \uBB38\uC790\uAC00 \uAC16\uB294 \uB300\uC18C\uBB38\uC790\uB97C\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC790\uC8FC \uC4F0\uB294 \uAE30\uB2A5\uC785\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.663268
+lastmod: 2024-02-19 22:05:14.563143
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uBB38\uC790\uAC00 \uAC16\uB294 \uB300\uC18C\uBB38\uC790\uB97C \uBB34\

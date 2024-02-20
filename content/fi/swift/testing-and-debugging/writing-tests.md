@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/swift/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:01.656260-07:00
 description: "Testien kirjoittaminen Swiftill\xE4 sis\xE4lt\xE4\xE4 koodin luomista\
   \ ja suorittamista, joka varmistaa muiden sovelluksesi koodiyksik\xF6iden oikeellisuuden.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.993573
+lastmod: 2024-02-19 22:05:15.806131
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Swiftill\xE4 sis\xE4lt\xE4\xE4 koodin luomista ja\
   \ suorittamista, joka varmistaa muiden sovelluksesi koodiyksik\xF6iden oikeellisuuden.\

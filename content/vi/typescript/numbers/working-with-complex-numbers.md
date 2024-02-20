@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/typescript/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:51.456967-07:00
@@ -8,7 +6,7 @@ description: "S\u1ED1 ph\u1EE9c, bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0
   t ph\u1EA7n \u1EA3o (th\u01B0\u1EDDng \u0111\u01B0\u1EE3c vi\u1EBFt d\u01B0\u1EDB\
   i d\u1EA1ng a + bi), m\u1EDF ra kh\u1EA3 n\u0103ng t\xEDnh to\xE1n kh\xF4ng th\u1EF1\
   c t\u1EBF ho\u1EB7c kh\xF4ng th\u1EC3 th\u1EF1c hi\u1EC7n ch\u1EC9 v\u1EDBi\u2026"
-lastmod: 2024-02-18 23:08:50.408325
+lastmod: 2024-02-19 22:04:55.459898
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c, bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
   t ph\u1EA7n \u1EA3o (th\u01B0\u1EDDng \u0111\u01B0\u1EE3c vi\u1EBFt d\u01B0\u1EDB\

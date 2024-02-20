@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/arduino/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:56.069444-07:00
 description: "Ein Datum in einen String umzuwandeln bedeutet, es in eine lesbare Zeichenfolge\
   \ zu formatieren. Programmierer machen das, um Daten benutzerfreundlich\u2026"
-lastmod: 2024-02-18 23:09:05.157638
+lastmod: 2024-02-19 22:05:13.089392
 model: gpt-4-1106-preview
 summary: "Ein Datum in einen String umzuwandeln bedeutet, es in eine lesbare Zeichenfolge\
   \ zu formatieren. Programmierer machen das, um Daten benutzerfreundlich\u2026"

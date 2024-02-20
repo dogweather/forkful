@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/lua/downloading-a-web-page/
 date: 2024-01-20 17:44:24.694553-07:00
 description: "Ladataan verkkosivu tarkoittaa sen sis\xE4ll\xF6n kopioimista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sen datan jalostukseen, automatisointiin tai backupointiin."
-lastmod: 2024-02-18 23:09:07.755755
+lastmod: 2024-02-19 22:05:15.590566
 model: gpt-4-1106-preview
 summary: "Ladataan verkkosivu tarkoittaa sen sis\xE4ll\xF6n kopioimista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sen datan jalostukseen, automatisointiin tai backupointiin."

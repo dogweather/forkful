@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c-sharp/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:50.077397-07:00
@@ -9,7 +7,7 @@ description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\
   \xEDch ng\u1EAFn h\u1EA1n, nh\u01B0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u ch\u1EC9\
   \ c\u1EA7n trong qu\xE1 tr\xECnh th\u1EF1c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1\
   ng\u2026"
-lastmod: 2024-02-18 23:08:50.719869
+lastmod: 2024-02-19 22:04:55.859146
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129\
   a l\xE0 b\u1EA1n \u0111ang t\u1EA1o m\u1ED9t t\u1EC7p cho m\u1ED9t m\u1EE5c \u0111\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:24.485282-07:00
@@ -12,7 +10,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAC
   \ \uC774\uB7EC\uD55C \uC791\uC5C5\uC744 \uC218\uD589\uD558\uC5EC \uD14D\uC2A4\uD2B8\
   \ \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uC5C5\uB370\uC774\uD2B8\
   , \uC815\uB9AC\uD558\uAC70\uB098 \uBCC0\uD658\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.454541
+lastmod: 2024-02-19 22:05:13.372882
 model: gpt-4-0125-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAC80\uC0C9\
   \ \uBC0F \uB300\uCCB4\uB294 \uB370\uC774\uD130 \uC870\uC791 \uBC0F \uC18C\uD504\uD2B8\

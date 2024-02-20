@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:00.107013-07:00
 description: "Manejar errores en C involucra detectar y responder a condiciones an\xF3\
   malas que surgen durante la ejecuci\xF3n del programa. Los programadores hacen esto\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:10.510335
+lastmod: 2024-02-19 22:05:18.061015
 model: gpt-4-0125-preview
 summary: "Manejar errores en C involucra detectar y responder a condiciones an\xF3\
   malas que surgen durante la ejecuci\xF3n del programa. Los programadores hacen esto\

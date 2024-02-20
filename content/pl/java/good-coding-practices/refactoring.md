@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/refactoring/
 date: 2024-01-26 01:40:14.416400-07:00
 description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\u2014\
   zmiany faktoryzacji\u2014bez zmiany jego zewn\u0119trznego zachowania. Programi\u015B\
   ci robi\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.486240
+lastmod: 2024-02-19 22:04:54.415598
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\u2014\
   zmiany faktoryzacji\u2014bez zmiany jego zewn\u0119trznego zachowania. Programi\u015B\

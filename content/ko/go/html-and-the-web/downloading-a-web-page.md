@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:20.467411-07:00
@@ -13,7 +11,7 @@ description: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB2
   \uC2DD\uC73C\uB85C \uC0C1\uD638 \uC791\uC6A9\uD558\uC5EC \uC791\uC5C5\uC744 \uC790\
   \uB3D9\uD654\uD558\uAE30 \uC704\uD574 \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
-lastmod: 2024-02-18 23:09:05.478698
+lastmod: 2024-02-19 22:05:13.396681
 model: gpt-4-0125-preview
 summary: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294 \uAC83\
   \uC740 HTTP/HTTPS \uD504\uB85C\uD1A0\uCF5C\uC744 \uD1B5\uD574 \uC6F9 \uD398\uC774\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/powershell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:35.101344-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
   \ communiquer de mani\xE8re s\xE9curis\xE9e avec un serveur web en fournissant nom\
   \ d'utilisateur et\u2026"
-lastmod: 2024-02-18 23:09:09.067895
+lastmod: 2024-02-19 22:05:16.749606
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est communiquer\
   \ de mani\xE8re s\xE9curis\xE9e avec un serveur web en fournissant nom d'utilisateur\

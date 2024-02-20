@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c-sharp/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:52.574322-07:00
 description: "Analizar una fecha de una cadena en C# implica convertir las representaciones\
   \ textuales de fechas y horas en un objeto `DateTime`. Esto es esencial para\u2026"
-lastmod: 2024-02-18 23:09:09.992178
+lastmod: 2024-02-19 22:05:17.593590
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena en C# implica convertir las representaciones\
   \ textuales de fechas y horas en un objeto `DateTime`. Esto es esencial para\u2026"

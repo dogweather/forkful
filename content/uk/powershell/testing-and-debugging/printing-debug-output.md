@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/powershell/printing-debug-output/
 date: 2024-01-20 17:53:05.849971-07:00
 description: "Debug output is like a breadcrumb trail in a dark forest \u2013 those\
   \ print statements we use to follow our code's execution. Programmers print debug\
   \ output to\u2026"
-lastmod: 2024-02-18 23:09:00.733469
+lastmod: 2024-02-19 22:05:08.790356
 model: gpt-4-1106-preview
 summary: "Debug output is like a breadcrumb trail in a dark forest \u2013 those print\
   \ statements we use to follow our code's execution. Programmers print debug output\

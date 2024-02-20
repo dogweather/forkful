@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/sending-an-http-request/
 date: 2024-01-20 17:59:22.887557-07:00
 description: Sending an HTTP request fetches data from a web server. Programmers do
   this to interact with web services, gather info, or communicate between systems.
-lastmod: 2024-02-18 23:09:11.352423
+lastmod: 2024-02-19 22:05:18.817430
 model: gpt-4-1106-preview
 summary: Sending an HTTP request fetches data from a web server. Programmers do this
   to interact with web services, gather info, or communicate between systems.

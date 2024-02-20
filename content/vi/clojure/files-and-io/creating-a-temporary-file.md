@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:27.281008-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECn
   \ t\u1EA1o m\u1ED9t t\u1EC7p ng\u1EAFn h\u1EA1n cho vi\u1EC7c l\u01B0u tr\u1EEF\
   \ d\u1EEF li\u1EC7u trung gian. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFA\
   ng cho c\xE1c m\u1EE5c \u0111\xEDch nh\u01B0 l\u01B0u tr\u1EEF t\u1EA1m\u2026"
-lastmod: 2024-02-18 23:08:50.335991
+lastmod: 2024-02-19 22:04:55.377892
 model: gpt-4-0125-preview
 summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh t\u1EA1\
   o m\u1ED9t t\u1EC7p ng\u1EAFn h\u1EA1n cho vi\u1EC7c l\u01B0u tr\u1EEF d\u1EEF li\u1EC7\

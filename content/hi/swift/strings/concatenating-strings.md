@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/swift/concatenating-strings/
 date: 2024-01-20 17:36:25.560326-07:00
 description: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u0915\u093E\
   \ \u091C\u094B\u0921\u093C Concatenating strings \u0939\u094B\u0924\u093E \u0939\
@@ -11,7 +9,7 @@ description: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u091
   \u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 \u092F\u0939 \u0907\u0938\u0932\
   \u093F\u090F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0924\u093E\u0915\u093F\
   \ \u0935\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.952571
+lastmod: 2024-02-19 22:05:11.935202
 model: gpt-4-1106-preview
 summary: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u0915\u093E\
   \ \u091C\u094B\u0921\u093C Concatenating strings \u0939\u094B\u0924\u093E \u0939\

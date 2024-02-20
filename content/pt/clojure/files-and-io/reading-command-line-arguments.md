@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/clojure/reading-command-line-arguments/
 date: 2024-01-20 17:55:35.370171-07:00
 description: "Ler argumentos de linha de comando \xE9 pegar entrada diretamente de\
   \ quem executou o programa. Fazemos isso para personalizar a execu\xE7\xE3o ou passar\u2026"
-lastmod: 2024-02-18 23:08:57.817856
+lastmod: 2024-02-19 22:05:05.285539
 model: gpt-4-1106-preview
 summary: "Ler argumentos de linha de comando \xE9 pegar entrada diretamente de quem\
   \ executou o programa. Fazemos isso para personalizar a execu\xE7\xE3o ou passar\u2026"

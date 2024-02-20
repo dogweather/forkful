@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/handling-errors/
 date: 2024-01-26 00:55:09.012855-07:00
 description: "Virheiden k\xE4sittely on tapa, jolla koodisi k\xE4sittelee ongelmia,\
   \ jotka ilmenev\xE4t suorituksen aikana - kuin ottaisi vastaan \xE4killisen sy\xF6\
   t\xF6n pudottamatta\u2026"
-lastmod: 2024-02-18 23:09:07.582868
+lastmod: 2024-02-19 22:05:15.431358
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely on tapa, jolla koodisi k\xE4sittelee ongelmia, jotka\
   \ ilmenev\xE4t suorituksen aikana - kuin ottaisi vastaan \xE4killisen sy\xF6t\xF6\

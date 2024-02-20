@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:54.615591-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n es filtrar un string\
   \ para quitarle ciertas cosas seg\xFAn reglas definidas, como letras o n\xFAmeros\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:10.056574
+lastmod: 2024-02-19 22:05:17.652496
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es filtrar un string\
   \ para quitarle ciertas cosas seg\xFAn reglas definidas, como letras o n\xFAmeros\

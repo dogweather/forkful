@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/typescript/handling-errors/
 date: 2024-01-26 00:58:56.662670-07:00
 description: "Tratar erros \xE9 sobre esperar o inesperado; \xE9 como gerenciamos\
   \ quando as coisas d\xE3o errado no nosso c\xF3digo. Fazemos isso para evitar falhas\
   \ e para dar aos\u2026"
-lastmod: 2024-02-18 23:08:57.892411
+lastmod: 2024-02-19 22:05:05.365093
 model: gpt-4-1106-preview
 summary: "Tratar erros \xE9 sobre esperar o inesperado; \xE9 como gerenciamos quando\
   \ as coisas d\xE3o errado no nosso c\xF3digo. Fazemos isso para evitar falhas e\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/bash/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:52.218672-07:00
@@ -12,7 +10,7 @@ description: "\u5728 Bash \u4E2D\u5C06\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927
   \uFF0C\u8FD9\u4E9B\u89C4\u8303\u8981\u6C42\u67D0\u4E9B\u5B57\u7B26\u4E32\u4EE5\u5927\
   \u5199\u5B57\u6BCD\u5F00\u5934\uFF0C\u4EE5\u63D0\u9AD8\u53EF\u8BFB\u6027\u6216\u51FA\
   \u4E8E\u6837\u5F0F\u504F\u597D\u3002"
-lastmod: 2024-02-18 23:08:59.275984
+lastmod: 2024-02-19 22:05:06.988670
 model: gpt-4-0125-preview
 summary: "\u5728 Bash \u4E2D\u5C06\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199\
   \u6D89\u53CA\u5230\u5C06\u5B57\u7B26\u4E32\u7684\u7B2C\u4E00\u4E2A\u5B57\u7B26\u8F6C\

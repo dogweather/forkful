@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/javascript/starting-a-new-project/
 date: 2024-01-20 18:04:01.072654-07:00
 description: "Comenzar un proyecto nuevo es como plantar una semilla digital, esperando\
   \ que crezca y se convierta en algo incre\xEDble. Los programadores iniciamos\u2026"
-lastmod: 2024-02-18 23:09:10.405430
+lastmod: 2024-02-19 22:05:17.963410
 model: gpt-4-1106-preview
 summary: "Comenzar un proyecto nuevo es como plantar una semilla digital, esperando\
   \ que crezca y se convierta en algo incre\xEDble. Los programadores iniciamos\u2026"

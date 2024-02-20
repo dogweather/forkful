@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/python/reading-command-line-arguments/
 date: 2024-01-20 17:56:45.498739-07:00
 description: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es Programmen, beim\
   \ Start Parameter von au\xDFen zu empfangen. Diese Flexibilit\xE4t ist essentiell,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:04.478436
+lastmod: 2024-02-19 22:05:12.442369
 model: gpt-4-1106-preview
 summary: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es Programmen, beim\
   \ Start Parameter von au\xDFen zu empfangen. Diese Flexibilit\xE4t ist essentiell,\

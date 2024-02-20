@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/elixir/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:28.059879-07:00
 description: ''
-lastmod: 2024-02-18 23:08:59.867790
+lastmod: 2024-02-19 22:05:07.774920
 model: gpt-4-1106-preview
 summary: ''
 title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\

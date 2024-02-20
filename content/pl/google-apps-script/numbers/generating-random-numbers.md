@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/google-apps-script/generating-random-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:47.713194-07:00
 description: "Generowanie losowych liczb to podstawowe zadanie w programowaniu, u\u017C\
   ywane w wielu aplikacjach, takich jak symulacje, gry i systemy bezpiecze\u0144stwa.\u2026"
-lastmod: 2024-02-18 23:08:49.142106
+lastmod: 2024-02-19 22:04:54.081011
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb to podstawowe zadanie w programowaniu, u\u017C\
   ywane w wielu aplikacjach, takich jak symulacje, gry i systemy bezpiecze\u0144stwa.\u2026"

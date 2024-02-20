@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/javascript/interpolating-a-string/
 date: 2024-01-20 17:51:00.255099-07:00
 description: "L\u2019interpolazione di stringhe in JavaScript consente di inserire\
   \ espressioni all\u2019interno di una stringa, rendendone la composizione dinamica\
   \ e flessibile.\u2026"
-lastmod: 2024-02-18 23:08:56.239648
+lastmod: 2024-02-19 22:05:02.872464
 model: gpt-4-1106-preview
 summary: "L\u2019interpolazione di stringhe in JavaScript consente di inserire espressioni\
   \ all\u2019interno di una stringa, rendendone la composizione dinamica e flessibile.\u2026"

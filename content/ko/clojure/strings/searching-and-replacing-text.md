@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/searching-and-replacing-text/
 date: 2024-01-20 17:57:27.683223-07:00
 description: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uBB38\uC790\
   \uC5F4\uC5D0\uC11C \uD2B9\uC815 \uB2E8\uC5B4\uB098 \uD328\uD134\uC744 \uCC3E\uC544\
@@ -9,7 +7,7 @@ description: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uBB38\u
   \uB3D9\uD654\uB41C \uC218\uC815 \uC791\uC5C5, \uCF54\uB4DC \uB9AC\uD329\uD1A0\uB9C1\
   \ \uB4F1\uC5D0 \uC774\uB97C \uD65C\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.667438
+lastmod: 2024-02-19 22:05:13.581128
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uBB38\uC790\uC5F4\
   \uC5D0\uC11C \uD2B9\uC815 \uB2E8\uC5B4\uB098 \uD328\uD134\uC744 \uCC3E\uC544 \uB2E4\

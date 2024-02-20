@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:21.939712-07:00
 description: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
   \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\
   \ widzie\u0107 wyniki,\u2026"
-lastmod: 2024-02-18 23:08:50.081779
+lastmod: 2024-02-19 22:04:55.066413
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
   \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\

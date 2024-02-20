@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/fish-shell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:41.473993-07:00
 description: "Travailler avec le JSON dans le Fish Shell implique l'analyse et la\
   \ g\xE9n\xE9ration de donn\xE9es JSON, une t\xE2che courante pour configurer des\
   \ applications,\u2026"
-lastmod: 2024-02-18 23:09:09.330024
+lastmod: 2024-02-19 22:05:16.997279
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON dans le Fish Shell implique l'analyse et la g\xE9\
   n\xE9ration de donn\xE9es JSON, une t\xE2che courante pour configurer des applications,\u2026"

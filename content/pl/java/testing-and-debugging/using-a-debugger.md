@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/using-a-debugger/
 date: 2024-01-26 03:49:52.247658-07:00
 description: "U\u017Cycie debugera oznacza wykorzystanie narz\u0119dzia do testowania\
   \ i naprawiania b\u0142\u0119d\xF3w w kodzie. Programi\u015Bci robi\u0105 to, aby\
   \ zrozumie\u0107 przep\u0142yw swoich\u2026"
-lastmod: 2024-02-18 23:08:49.482399
+lastmod: 2024-02-19 22:04:54.411574
 model: gpt-4-0125-preview
 summary: "U\u017Cycie debugera oznacza wykorzystanie narz\u0119dzia do testowania\
   \ i naprawiania b\u0142\u0119d\xF3w w kodzie. Programi\u015Bci robi\u0105 to, aby\

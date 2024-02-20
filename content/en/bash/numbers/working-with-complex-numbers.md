@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/working-with-complex-numbers/
 date: 2024-01-25 02:59:42.293888-07:00
 description: "Complex numbers consist of a real part and an imaginary part. Programmers\
   \ use them in fields like signal processing, quantum mechanics, and whenever the\u2026"
-lastmod: 2024-02-18 23:09:11.221674
+lastmod: 2024-02-19 22:05:18.699522
 model: gpt-4-1106-preview
 summary: "Complex numbers consist of a real part and an imaginary part. Programmers\
   \ use them in fields like signal processing, quantum mechanics, and whenever the\u2026"

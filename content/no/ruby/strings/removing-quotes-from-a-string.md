@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:18.277085-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de\
   \ doble eller enkle anf\xF8rselstegnene som omslutter tekstverdier. Programmerere\
   \ gj\xF8r dette ofte\u2026"
-lastmod: 2024-02-18 23:08:54.425309
+lastmod: 2024-02-19 22:05:00.586535
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de doble\
   \ eller enkle anf\xF8rselstegnene som omslutter tekstverdier. Programmerere gj\xF8\

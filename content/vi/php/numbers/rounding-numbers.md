@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:03.912046-07:00
@@ -9,7 +7,7 @@ description: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 c\u1EAFt b\u1ECF ph\
   t \u0111\u1ECBnh, th\u01B0\u1EDDng l\xE0 \u0111\u1EBFn s\u1ED1 nguy\xEAn. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn l\xE0m tr\xF2n \u0111\u1EC3 \u0111\u01A1n gi\u1EA3n\
   \ h\xF3a c\xE1c ph\xE9p\u2026"
-lastmod: 2024-02-18 23:08:50.785032
+lastmod: 2024-02-19 22:04:55.942025
 model: gpt-4-0125-preview
 summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 c\u1EAFt b\u1ECF ph\u1EA7\
   n th\u1EADp ph\xE2n \u0111\u1EC3 \u0111\u1EA1t \u0111\u1ED9 ch\xEDnh x\xE1c nh\u1EA5\

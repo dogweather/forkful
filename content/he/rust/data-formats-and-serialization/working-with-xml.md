@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/rust/working-with-xml/
 date: 2024-01-26 04:36:06.786893-07:00
 description: "XML, \u05E9\u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\
   \u05D5\u05EA \u05E9\u05DC eXtensible Markup Language, \u05D4\u05D5\u05D0 \u05DB\u05DE\
@@ -10,7 +8,7 @@ description: "XML, \u05E9\u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D
   \u05DD \u05DE\u05E2\u05E8\u05DB\u05D5\u05EA \u05D9\u05E9\u05E0\u05D5\u05EA, \u05EA\
   \u05D5\u05DB\u05E0\u05D5\u05EA \u05D0\u05E8\u05D2\u05D5\u05E0\u05D9\u05D5\u05EA\
   \ \u05D0\u05D5 API-\u2026"
-lastmod: 2024-02-18 23:08:52.640704
+lastmod: 2024-02-19 22:04:58.241380
 model: gpt-4-0125-preview
 summary: "XML, \u05E9\u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\
   \u05D5\u05EA \u05E9\u05DC eXtensible Markup Language, \u05D4\u05D5\u05D0 \u05DB\u05DE\

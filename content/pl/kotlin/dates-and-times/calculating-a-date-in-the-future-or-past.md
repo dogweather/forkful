@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:28.145140-07:00
 description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
   \ spos\xF3b na znalezienie dat, kt\xF3re s\u0105 okre\u015Blon\u0105 liczb\u0119\
   \ dni przed lub po danej dacie. Programi\u015Bci u\u017Cywaj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.582262
+lastmod: 2024-02-19 22:04:54.510441
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to spos\xF3\
   b na znalezienie dat, kt\xF3re s\u0105 okre\u015Blon\u0105 liczb\u0119 dni przed\

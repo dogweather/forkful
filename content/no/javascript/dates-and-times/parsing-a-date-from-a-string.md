@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/javascript/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:24.474645-07:00
 description: "\xC5 parse en dato fra en streng lar programmerere konvertere tekstlige\
   \ datorepresentasjoner til JavaScript `Date`-objekter. Dette letter manipulering,\u2026"
-lastmod: 2024-02-18 23:08:54.317902
+lastmod: 2024-02-19 22:05:00.470073
 model: gpt-4-0125-preview
 summary: "\xC5 parse en dato fra en streng lar programmerere konvertere tekstlige\
   \ datorepresentasjoner til JavaScript `Date`-objekter. Dette letter manipulering,\u2026"

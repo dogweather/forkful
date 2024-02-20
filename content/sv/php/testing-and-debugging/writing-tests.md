@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/php/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:24.102120-07:00
 description: "Att skriva tester i programmering involverar att skapa och k\xF6ra skript\
   \ som verifierar att koden beter sig som f\xF6rv\xE4ntat under olika f\xF6rh\xE5\
   llanden.\u2026"
-lastmod: 2024-02-18 23:08:51.881666
+lastmod: 2024-02-19 22:04:57.224087
 model: gpt-4-0125-preview
 summary: "Att skriva tester i programmering involverar att skapa och k\xF6ra skript\
   \ som verifierar att koden beter sig som f\xF6rv\xE4ntat under olika f\xF6rh\xE5\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/rust/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:29.321030-07:00
 description: "En el desarrollo de software, a menudo es necesario verificar si un\
   \ directorio existe para evitar errores al intentar acceder, leer o escribir archivos.\u2026"
-lastmod: 2024-02-18 23:09:09.764595
+lastmod: 2024-02-19 22:05:17.386669
 model: gpt-4-0125-preview
 summary: "En el desarrollo de software, a menudo es necesario verificar si un directorio\
   \ existe para evitar errores al intentar acceder, leer o escribir archivos.\u2026"

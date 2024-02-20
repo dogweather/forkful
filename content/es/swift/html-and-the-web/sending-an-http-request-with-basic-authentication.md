@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/swift/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:50.753772-07:00
 description: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica es simplemente\
   \ una manera de asegurar que la comunicaci\xF3n entre un cliente y un servidor sea\
   \ privada.\u2026"
-lastmod: 2024-02-18 23:09:10.357746
+lastmod: 2024-02-19 22:05:17.921062
 model: gpt-4-1106-preview
 summary: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica es simplemente\
   \ una manera de asegurar que la comunicaci\xF3n entre un cliente y un servidor sea\

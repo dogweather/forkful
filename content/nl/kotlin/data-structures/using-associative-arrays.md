@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:58.787581-07:00
 description: "Associatieve arrays, ofwel maps, in Kotlin zijn collecties die sleutel-waardeparen\
   \ opslaan. Programmeurs gebruiken ze voor het effici\xEBnt organiseren en\u2026"
-lastmod: 2024-02-18 23:09:01.797739
+lastmod: 2024-02-19 22:05:09.814464
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, ofwel maps, in Kotlin zijn collecties die sleutel-waardeparen\
   \ opslaan. Programmeurs gebruiken ze voor het effici\xEBnt organiseren en\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/kotlin/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:56.185111-07:00
 description: "Karakters verwijderen die overeenkomen met een patroon gaat over het\
   \ vinden en verwijderen van specifieke reeksen karakters in een string op basis\
   \ van\u2026"
-lastmod: 2024-02-18 23:09:01.787995
+lastmod: 2024-02-19 22:05:09.805424
 model: gpt-4-0125-preview
 summary: "Karakters verwijderen die overeenkomen met een patroon gaat over het vinden\
   \ en verwijderen van specifieke reeksen karakters in een string op basis van\u2026"

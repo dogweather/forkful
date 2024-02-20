@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/elixir/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:49.177501-07:00
 description: "Capitalizar una cadena implica convertir la primera letra de la cadena\
   \ en may\xFAscula mientras aseguramos que el resto de las letras est\xE9n en min\xFA\
   sculas.\u2026"
-lastmod: 2024-02-18 23:09:09.630599
+lastmod: 2024-02-19 22:05:17.273185
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica convertir la primera letra de la cadena en\
   \ may\xFAscula mientras aseguramos que el resto de las letras est\xE9n en min\xFA\

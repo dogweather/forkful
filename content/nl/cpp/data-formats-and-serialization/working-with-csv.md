@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:13.013916-07:00
 description: "Werken met CSV (Comma-Separated Values) betekent het omgaan met platte\
   \ tekstbestanden die tabelgegevens opslaan. Programmeurs gebruiken CSV omdat het\u2026"
-lastmod: 2024-02-18 23:09:02.207170
+lastmod: 2024-02-19 22:05:10.222651
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) betekent het omgaan met platte tekstbestanden\
   \ die tabelgegevens opslaan. Programmeurs gebruiken CSV omdat het\u2026"

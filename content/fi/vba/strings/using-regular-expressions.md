@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:53.760117-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
   \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.398919
+lastmod: 2024-02-19 22:05:15.285019
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
   \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:49.503462-07:00
 description: "Afronden van getallen gaat over het aanpassen van een waarde naar het\
   \ dichtstbijzijnde geheel getal of opgegeven decimale plaats. Programmeurs ronden\u2026"
-lastmod: 2024-02-18 23:09:02.083751
+lastmod: 2024-02-19 22:05:10.105710
 model: gpt-4-0125-preview
 summary: "Afronden van getallen gaat over het aanpassen van een waarde naar het dichtstbijzijnde\
   \ geheel getal of opgegeven decimale plaats. Programmeurs ronden\u2026"

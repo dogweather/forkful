@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/vba/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:25.437207-07:00
@@ -13,7 +11,7 @@ description: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456
   \u0430\u0437\u0456\u0432 \u0432 \u043B\u0456\u0442\u0435\u0440\u0430\u043B \u0440\
   \u044F\u0434\u043A\u0430, \u0449\u043E \u0434\u043E\u0437\u0432\u043E\u043B\u044F\
   \u0454 \u0434\u0438\u043D\u0430\u043C\u0456\u0447\u043D\u043E\u2026"
-lastmod: 2024-02-18 23:09:00.016937
+lastmod: 2024-02-19 22:05:07.998286
 model: gpt-4-0125-preview
 summary: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F\
   \ \u0440\u044F\u0434\u043A\u0456\u0432 \u0443 Visual Basic \u0434\u043B\u044F \u0434\

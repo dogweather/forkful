@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/arduino/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:43.084399-07:00
@@ -14,7 +12,7 @@ description: "Arduino\u74B0\u5883\u3067\u30C6\u30B9\u30C8\u3092\u66F8\u304F\u306
   \u308A\u56F0\u96E3\u3067\u3042\u308B\u7D44\u307F\u8FBC\u307F\u30B7\u30B9\u30C6\u30E0\
   \u3067\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306E\u54C1\u8CEA\u3092\u5411\u4E0A\u3055\
   \u305B\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.156120
+lastmod: 2024-02-19 22:05:01.617435
 model: gpt-4-0125-preview
 summary: "Arduino\u74B0\u5883\u3067\u30C6\u30B9\u30C8\u3092\u66F8\u304F\u3068\u306F\
   \u3001Arduino\u30C7\u30D0\u30A4\u30B9\u4E0A\u306E\u30B3\u30FC\u30C9\u306E\u6A5F\u80FD\

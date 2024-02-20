@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:37.070681-07:00
 description: "Ottenere la data corrente in Go \xE8 un compito fondamentale per i programmatori,\
   \ paragonabile alla diffusione di \"Hello, World!\". \xC8 essenziale per compiti\u2026"
-lastmod: 2024-02-18 23:08:55.443396
+lastmod: 2024-02-19 22:05:02.024828
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Go \xE8 un compito fondamentale per i programmatori,\
   \ paragonabile alla diffusione di \"Hello, World!\". \xC8 essenziale per compiti\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/java/concatenating-strings/
 date: 2024-01-20 17:35:04.416969-07:00
 description: "La concatenazione di stringhe \xE8 l'unione di due o pi\xF9 stringhe\
   \ in un'unica. I programmatori la usano per manipolare testi, creare messaggi, o\
   \ combinare\u2026"
-lastmod: 2024-02-18 23:08:55.758400
+lastmod: 2024-02-19 22:05:02.361705
 model: gpt-4-1106-preview
 summary: "La concatenazione di stringhe \xE8 l'unione di due o pi\xF9 stringhe in\
   \ un'unica. I programmatori la usano per manipolare testi, creare messaggi, o combinare\u2026"

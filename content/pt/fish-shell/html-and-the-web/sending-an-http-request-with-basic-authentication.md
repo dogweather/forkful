@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:42.714322-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de username e password no cabe\xE7alho da requisi\xE7\xE3\
   o. Programadores fazem\u2026"
-lastmod: 2024-02-18 23:08:58.575300
+lastmod: 2024-02-19 22:05:06.073049
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de username e password no cabe\xE7alho da requisi\xE7\xE3\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/javascript/sending-an-http-request/
 date: 2024-01-20 18:00:06.671907-07:00
 description: "\u5728JavaScript\u4E2D\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u4E0E\u670D\
   \u52A1\u5668\u4EA4\u6362\u6570\u636E\u7684\u65B9\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\
@@ -9,7 +7,7 @@ description: "\u5728JavaScript\u4E2D\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u4E0E\u67
   \u65B0\u7F51\u9875\u5185\u5BB9\u800C\u4E0D\u9700\u8981\u91CD\u65B0\u52A0\u8F7D\u9875\
   \u9762\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.476424
+lastmod: 2024-02-19 22:05:07.263865
 model: gpt-4-1106-preview
 summary: "\u5728JavaScript\u4E2D\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u4E0E\u670D\u52A1\
   \u5668\u4EA4\u6362\u6570\u636E\u7684\u65B9\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\

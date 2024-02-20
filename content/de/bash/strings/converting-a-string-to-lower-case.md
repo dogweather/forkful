@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/bash/converting-a-string-to-lower-case/
 date: 2024-01-20 17:37:54.982811-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben in Bash bedeutet, alle\
   \ Gro\xDFbuchstaben in einem Text in ihre entsprechenden Kleinbuchstaben zu \xE4\
   ndern.\u2026"
-lastmod: 2024-02-18 23:09:05.038290
+lastmod: 2024-02-19 22:05:12.975624
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben in Bash bedeutet, alle Gro\xDF\
   buchstaben in einem Text in ihre entsprechenden Kleinbuchstaben zu \xE4ndern.\u2026"

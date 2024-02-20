@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c-sharp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:17.875196-07:00
 description: "Das Kapitalisieren eines Strings in C# beinhaltet die Umwandlung des\
   \ ersten Zeichens eines Strings in Gro\xDFbuchstaben, falls dies nicht bereits der\
   \ Fall\u2026"
-lastmod: 2024-02-18 23:09:04.853639
+lastmod: 2024-02-19 22:05:12.798397
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in C# beinhaltet die Umwandlung des ersten\
   \ Zeichens eines Strings in Gro\xDFbuchstaben, falls dies nicht bereits der Fall\u2026"

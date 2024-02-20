@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/kotlin/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:43.903769-07:00
 description: "Calcolare la lunghezza di una stringa significa scoprire quanti caratteri\
   \ contiene. I programmatori lo fanno per validare l'input, troncare il testo,\u2026"
-lastmod: 2024-02-18 23:08:55.837538
+lastmod: 2024-02-19 22:05:02.445573
 model: gpt-4-1106-preview
 summary: "Calcolare la lunghezza di una stringa significa scoprire quanti caratteri\
   \ contiene. I programmatori lo fanno per validare l'input, troncare il testo,\u2026"

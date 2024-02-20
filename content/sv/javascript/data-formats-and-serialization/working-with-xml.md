@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/working-with-xml/
 date: 2024-01-26 04:32:41.767956-07:00
 description: "Att arbeta med XML inneb\xE4r att tolka, manipulera och producera XML-inneh\xE5\
   ll med hj\xE4lp av kod. Programmerare g\xF6r detta eftersom XML \xE4r brett anv\xE4\
   nd f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.188378
+lastmod: 2024-02-19 22:04:57.563356
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att tolka, manipulera och producera XML-inneh\xE5\
   ll med hj\xE4lp av kod. Programmerare g\xF6r detta eftersom XML \xE4r brett anv\xE4\

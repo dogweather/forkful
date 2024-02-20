@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/working-with-complex-numbers/
 date: 2024-01-25 03:00:07.667826-07:00
 description: "Complex numbers extend the real numbers with an additional part, the\
   \ imaginary unit 'i'. Programmers use them in various domains, including signal\u2026"
-lastmod: 2024-02-18 23:09:10.717452
+lastmod: 2024-02-19 22:05:18.247815
 model: gpt-4-1106-preview
 summary: "Complex numbers extend the real numbers with an additional part, the imaginary\
   \ unit 'i'. Programmers use them in various domains, including signal\u2026"

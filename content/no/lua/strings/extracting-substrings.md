@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/extracting-substrings/
 date: 2024-01-20 17:45:57.320669-07:00
 description: "\xC5 trekke ut substringer betyr \xE5 hente ut bestemte deler av en\
   \ streng. Programmerere gj\xF8r dette for \xE5 bearbeide, sjekke eller manipulere\
   \ tekst p\xE5 et mer\u2026"
-lastmod: 2024-02-18 23:08:54.005117
+lastmod: 2024-02-19 22:05:00.182863
 model: gpt-4-1106-preview
 summary: "\xC5 trekke ut substringer betyr \xE5 hente ut bestemte deler av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 bearbeide, sjekke eller manipulere tekst\

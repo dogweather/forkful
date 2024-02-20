@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/c/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:33.361642-07:00
 description: "Converter uma string para min\xFAsculas em C envolve transformar todas\
   \ as letras mai\xFAsculas de uma string dada em suas correspondentes min\xFAsculas.\u2026"
-lastmod: 2024-02-18 23:08:58.605135
+lastmod: 2024-02-19 22:05:06.104679
 model: gpt-4-0125-preview
 summary: "Converter uma string para min\xFAsculas em C envolve transformar todas as\
   \ letras mai\xFAsculas de uma string dada em suas correspondentes min\xFAsculas.\u2026"

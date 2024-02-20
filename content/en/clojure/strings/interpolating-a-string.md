@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/interpolating-a-string/
 date: 2024-01-20 17:50:29.119372-07:00
 description: "String interpolation lets us toss variables into strings without a fuss.\
   \ Why? To dynamically construct text\u2014way handier than old-school string\u2026"
-lastmod: 2024-02-18 23:09:10.709650
+lastmod: 2024-02-19 22:05:18.240587
 model: gpt-4-1106-preview
 summary: "String interpolation lets us toss variables into strings without a fuss.\
   \ Why? To dynamically construct text\u2014way handier than old-school string\u2026"

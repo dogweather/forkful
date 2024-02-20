@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/using-a-debugger/
 date: 2024-01-26 04:10:00.232015-07:00
 description: "Usar un depurador es como otorgarte una visi\xF3n de rayos X para echar\
   \ un vistazo a la ejecuci\xF3n de tu c\xF3digo. Los programadores lo hacen para\
   \ detectar\u2026"
-lastmod: 2024-02-18 23:09:09.754019
+lastmod: 2024-02-19 22:05:17.377115
 model: gpt-4-0125-preview
 summary: "Usar un depurador es como otorgarte una visi\xF3n de rayos X para echar\
   \ un vistazo a la ejecuci\xF3n de tu c\xF3digo. Los programadores lo hacen para\

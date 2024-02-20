@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:53.496563-07:00
 description: "Loggen in C houdt in dat je de stroom en opmerkelijke gebeurtenissen\
   \ van een programma tijdens de uitvoering registreert, waardoor een tastbare\u2026"
-lastmod: 2024-02-18 23:09:02.380086
+lastmod: 2024-02-19 22:05:10.386851
 model: gpt-4-0125-preview
 summary: "Loggen in C houdt in dat je de stroom en opmerkelijke gebeurtenissen van\
   \ een programma tijdens de uitvoering registreert, waardoor een tastbare\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /ja/clojure/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:22.689767-07:00
 description: ''
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.603698
+lastmod: 2024-02-19 22:05:00.831469
 model: gpt-4-1106-preview
 summary: ''
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\

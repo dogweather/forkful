@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/kotlin/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:28.212366-07:00
 description: "Twee data vergelijken betekent controleren of de ene v\xF3\xF3r of na\
   \ de andere komt, of dat ze op hetzelfde moment zijn. Programmeurs doen dit voor\
   \ taken zoals\u2026"
-lastmod: 2024-02-18 23:09:01.819479
+lastmod: 2024-02-19 22:05:09.835483
 model: gpt-4-0125-preview
 summary: "Twee data vergelijken betekent controleren of de ene v\xF3\xF3r of na de\
   \ andere komt, of dat ze op hetzelfde moment zijn. Programmeurs doen dit voor taken\

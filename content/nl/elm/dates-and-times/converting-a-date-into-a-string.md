@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/converting-a-date-into-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:22.834645-07:00
 description: "Een datum omzetten naar een string betekent het veranderen van een datumwaarde,\
   \ die computers begrijpen, naar een voor mensen leesbaar formaat. We doen\u2026"
-lastmod: 2024-02-18 23:09:01.772058
+lastmod: 2024-02-19 22:05:09.790467
 model: gpt-4-0125-preview
 summary: "Een datum omzetten naar een string betekent het veranderen van een datumwaarde,\
   \ die computers begrijpen, naar een voor mensen leesbaar formaat. We doen\u2026"

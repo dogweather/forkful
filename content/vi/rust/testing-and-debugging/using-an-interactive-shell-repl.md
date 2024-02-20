@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/rust/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:22.847900-07:00
@@ -8,7 +6,7 @@ description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c Rust, hay REPL (Read-Eval-Pr
   \ Loop), cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 Rust t\u1EE9c th\xEC, xem k\u1EBF\
   t qu\u1EA3 ngay l\u1EADp t\u1EE9c, r\u1EA5t ho\xE0n h\u1EA3o cho vi\u1EC7c th\u1EED\
   \ nghi\u1EC7m\u2026"
-lastmod: 2024-02-18 23:08:50.463834
+lastmod: 2024-02-19 22:04:55.530565
 model: gpt-4-0125-preview
 summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c Rust, hay REPL (Read-Eval-Print Loop),\
   \ cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 Rust t\u1EE9c th\xEC, xem k\u1EBFt qu\u1EA3\

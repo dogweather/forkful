@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/elixir/reading-a-text-file/
 date: 2024-01-20 17:53:59.924655-07:00
 description: "Att l\xE4sa en textfil betyder att man h\xE4mtar inneh\xE5llet fr\xE5\
   n en fil f\xF6r att anv\xE4nda det i sitt program. Programmerare g\xF6r detta f\xF6\
   r att manipulera data,\u2026"
-lastmod: 2024-02-18 23:08:51.519668
+lastmod: 2024-02-19 22:04:56.831485
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil betyder att man h\xE4mtar inneh\xE5llet fr\xE5n en\
   \ fil f\xF6r att anv\xE4nda det i sitt program. Programmerare g\xF6r detta f\xF6\

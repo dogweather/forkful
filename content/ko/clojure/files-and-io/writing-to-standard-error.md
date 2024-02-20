@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:51.634093-07:00
@@ -12,7 +10,7 @@ description: "\uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\uAE30\uB294 \uC624\
   \uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBCC4\uD558\uC5EC \uB354 \uD6A8\uACFC\uC801\
   \uC778 \uB514\uBC84\uAE45\uACFC \uB85C\uAE45\uC744 \uAC00\uB2A5\uD558\uAC8C \uD569\
   \uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.715471
+lastmod: 2024-02-19 22:05:13.627620
 model: gpt-4-0125-preview
 summary: "\uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\uAE30\uB294 \uC624\uB958\
   \ \uBA54\uC2DC\uC9C0\uC640 \uC9C4\uB2E8\uC744 \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC\

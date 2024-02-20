@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/kotlin/sending-an-http-request/
 date: 2024-01-20 18:00:15.783024-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller handling\
   \ fra en webserver. Programmerere gj\xF8r det for \xE5 integrere nettjenester og\
   \ hente data dynamisk."
-lastmod: 2024-02-18 23:08:53.848891
+lastmod: 2024-02-19 22:04:59.994786
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller handling fra\
   \ en webserver. Programmerere gj\xF8r det for \xE5 integrere nettjenester og hente\

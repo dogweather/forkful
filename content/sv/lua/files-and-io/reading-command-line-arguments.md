@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/reading-command-line-arguments/
 date: 2024-01-20 17:56:41.370092-07:00
 description: "Kommandoradsargument l\xE5ter anv\xE4ndare ge instruktioner till ett\
   \ program n\xE4r de startar det. Programmerare anv\xE4nder detta f\xF6r att g\xF6\
   ra program flexibla och\u2026"
-lastmod: 2024-02-18 23:08:51.933528
+lastmod: 2024-02-19 22:04:57.281644
 model: gpt-4-1106-preview
 summary: "Kommandoradsargument l\xE5ter anv\xE4ndare ge instruktioner till ett program\
   \ n\xE4r de startar det. Programmerare anv\xE4nder detta f\xF6r att g\xF6ra program\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/concatenating-strings/
 date: 2024-01-20 17:35:36.432972-07:00
 description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC5F4\
   \uC744 \uD558\uB098\uB85C \uBD99\uC774\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\
@@ -8,7 +6,7 @@ description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC
   \uC131\uC744 \uC8FC\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
   \ \uC774 \uBC29\uBC95\uC744 \uC790\uC8FC \uC501\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.340140
+lastmod: 2024-02-19 22:05:14.257327
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC5F4\uC744\
   \ \uD558\uB098\uB85C \uBD99\uC774\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130\

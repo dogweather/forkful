@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:19.687293-07:00
 description: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica es el proceso\
   \ de realizar una solicitud a un servicio web requiriendo usuario y contrase\xF1\
   a codificados\u2026"
-lastmod: 2024-02-18 23:09:10.215144
+lastmod: 2024-02-19 22:05:17.797431
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica es el proceso\
   \ de realizar una solicitud a un servicio web requiriendo usuario y contrase\xF1\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/writing-to-standard-error/
 date: 2024-02-03 19:03:35.565671-07:00
 description: "Writing to standard error (stderr) in PowerShell involves sending error\
   \ messages or diagnostics directly to the stderr stream, distinct from the standard\u2026"
-lastmod: 2024-02-18 23:09:11.290452
+lastmod: 2024-02-19 22:05:18.761644
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in PowerShell involves sending error\
   \ messages or diagnostics directly to the stderr stream, distinct from the standard\u2026"

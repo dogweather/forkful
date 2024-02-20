@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/javascript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:36.440285-07:00
 description: "Capitalizar uma string significa converter o primeiro caractere da string\
   \ para mai\xFAsculo, mantendo os caracteres restantes como est\xE3o. Essa opera\xE7\
   \xE3o \xE9\u2026"
-lastmod: 2024-02-18 23:08:58.515806
+lastmod: 2024-02-19 22:05:06.009566
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string significa converter o primeiro caractere da string\
   \ para mai\xFAsculo, mantendo os caracteres restantes como est\xE3o. Essa opera\xE7\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/php/interpolating-a-string/
 date: 2024-01-20 17:51:21.538405-07:00
 description: "String interpolation lets you inject variable values directly into a\
   \ string. Programmers use it to weave variables into text, making the code cleaner\
   \ and\u2026"
-lastmod: 2024-02-18 23:09:11.123438
+lastmod: 2024-02-19 22:05:18.617179
 model: gpt-4-1106-preview
 summary: "String interpolation lets you inject variable values directly into a string.\
   \ Programmers use it to weave variables into text, making the code cleaner and\u2026"

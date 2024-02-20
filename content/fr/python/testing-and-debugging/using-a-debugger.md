@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/using-a-debugger/
 date: 2024-01-26 04:08:55.437362-07:00
 description: "\"Utiliser un d\xE9bogueur\" consiste \xE0 parcourir pas \xE0 pas votre\
   \ code Python pour d\xE9couvrir des bugs et comprendre le comportement. Nous le\
   \ faisons parce que\u2026"
-lastmod: 2024-02-18 23:09:08.345058
+lastmod: 2024-02-19 22:05:16.142855
 model: gpt-4-0125-preview
 summary: "\"Utiliser un d\xE9bogueur\" consiste \xE0 parcourir pas \xE0 pas votre\
   \ code Python pour d\xE9couvrir des bugs et comprendre le comportement. Nous le\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:35.075274-07:00
 description: "Het lezen van commandoregelargumenten stelt je Swift-programma in staat\
   \ om extra details te grijpen wanneer gebruikers het uitvoeren. Dit is belangrijk\u2026"
-lastmod: 2024-02-18 23:09:02.246068
+lastmod: 2024-02-19 22:05:10.259722
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten stelt je Swift-programma in staat\
   \ om extra details te grijpen wanneer gebruikers het uitvoeren. Dit is belangrijk\u2026"

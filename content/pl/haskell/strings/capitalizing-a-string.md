@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/haskell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:26.277432-07:00
 description: "Capitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszej litery\
   \ danego ci\u0105gu na wielk\u0105 liter\u0119, przy jednoczesnym zapewnieniu, \u017C\
   e reszta liter pozostanie\u2026"
-lastmod: 2024-02-18 23:08:49.637261
+lastmod: 2024-02-19 22:04:54.569176
 model: gpt-4-0125-preview
 summary: "Capitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszej litery\
   \ danego ci\u0105gu na wielk\u0105 liter\u0119, przy jednoczesnym zapewnieniu, \u017C\

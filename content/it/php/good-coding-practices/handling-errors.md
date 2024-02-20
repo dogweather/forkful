@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/php/handling-errors/
 date: 2024-01-26 00:55:27.441360-07:00
 description: "La gestione degli errori in PHP riguarda la gestione e la risposta a\
   \ condizioni che interrompono il flusso normale di un programma, come file mancanti\
   \ o\u2026"
-lastmod: 2024-02-18 23:08:55.977817
+lastmod: 2024-02-19 22:05:02.590735
 model: gpt-4-1106-preview
 summary: "La gestione degli errori in PHP riguarda la gestione e la risposta a condizioni\
   \ che interrompono il flusso normale di un programma, come file mancanti o\u2026"

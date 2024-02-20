@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/comparing-two-dates/
 date: 2024-01-20 17:34:01.682983-07:00
 description: "Comparer deux dates, c'est voir laquelle vient avant ou apr\xE8s, ou\
   \ si elles sont identiques. Les devs le font pour g\xE9rer des \xE9ch\xE9ances,\
   \ trier des\u2026"
-lastmod: 2024-02-18 23:09:08.495561
+lastmod: 2024-02-19 22:05:16.279716
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est voir laquelle vient avant ou apr\xE8s, ou si\
   \ elles sont identiques. Les devs le font pour g\xE9rer des \xE9ch\xE9ances, trier\

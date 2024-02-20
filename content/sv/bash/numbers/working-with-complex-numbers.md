@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/working-with-complex-numbers/
 date: 2024-01-26 04:37:10.079707-07:00
 description: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del. Programmerare\
   \ anv\xE4nder dem inom omr\xE5den s\xE5som signalbehandling, kvantmekanik och n\xE4\
   rhelst\u2026"
-lastmod: 2024-02-18 23:08:51.953574
+lastmod: 2024-02-19 22:04:57.303873
 model: gpt-4-0125-preview
 summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del. Programmerare\
   \ anv\xE4nder dem inom omr\xE5den s\xE5som signalbehandling, kvantmekanik och n\xE4\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/arduino/working-with-yaml/
 date: 2024-02-03 19:03:09.945156-07:00
 description: "YAML (YAML Ain't Markup Language) is a human-readable data serialization\
   \ standard that can be used for configuration files, inter-program communication,\u2026"
-lastmod: 2024-02-18 23:09:11.335122
+lastmod: 2024-02-19 22:05:18.801759
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) is a human-readable data serialization\
   \ standard that can be used for configuration files, inter-program communication,\u2026"

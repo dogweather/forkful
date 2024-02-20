@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:39.219358-07:00
 description: "Los n\xFAmeros complejos constan de una parte real y una parte imaginaria,\
   \ representados como `a + bi` donde `i` es la ra\xEDz cuadrada de `-1`. Los\u2026"
-lastmod: 2024-02-18 23:09:10.493922
+lastmod: 2024-02-19 22:05:18.045545
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos constan de una parte real y una parte imaginaria,\
   \ representados como `a + bi` donde `i` es la ra\xEDz cuadrada de `-1`. Los\u2026"

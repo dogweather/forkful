@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/cpp/rounding-numbers/
 date: 2024-01-26 03:43:34.234392-07:00
 description: "Att avrunda tal inneb\xE4r att justera ett v\xE4rde till n\xE4rmaste\
   \ heltal eller angiven precision. Utvecklare g\xF6r detta f\xF6r att f\xF6renkla,\
   \ anpassa sig till\u2026"
-lastmod: 2024-02-18 23:08:52.078926
+lastmod: 2024-02-19 22:04:57.440778
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att justera ett v\xE4rde till n\xE4rmaste heltal\
   \ eller angiven precision. Utvecklare g\xF6r detta f\xF6r att f\xF6renkla, anpassa\

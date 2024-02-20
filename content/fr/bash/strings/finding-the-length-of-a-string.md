@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/bash/finding-the-length-of-a-string/
 date: 2024-01-20 17:46:49.071632-07:00
 description: "(Mesurer la longueur d'une cha\xEEne : Quoi et Pourquoi?) Calculer la\
   \ longueur d'une cha\xEEne de caract\xE8res, c'est compter le nombre de ses \xE9\
   l\xE9ments. C'est\u2026"
-lastmod: 2024-02-18 23:09:09.006867
+lastmod: 2024-02-19 22:05:16.692614
 model: gpt-4-1106-preview
 summary: "(Mesurer la longueur d'une cha\xEEne : Quoi et Pourquoi?) Calculer la longueur\
   \ d'une cha\xEEne de caract\xE8res, c'est compter le nombre de ses \xE9l\xE9ments.\

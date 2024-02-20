@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/vba/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:38.684936-07:00
 description: "In Visual Basic for Applications (VBA), recuperare la data corrente\
   \ \xE8 un compito comune che permette ai programmatori di lavorare dinamicamente\
   \ con le\u2026"
-lastmod: 2024-02-18 23:08:55.734176
+lastmod: 2024-02-19 22:05:02.336005
 model: gpt-4-0125-preview
 summary: "In Visual Basic for Applications (VBA), recuperare la data corrente \xE8\
   \ un compito comune che permette ai programmatori di lavorare dinamicamente con\

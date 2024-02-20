@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:27.481072-07:00
 description: "Enlever les guillemets d'une cha\xEEne de caract\xE8res signifie se\
   \ d\xE9faire de ces enveloppes suppl\xE9mentaires pour obtenir le texte pur \xE0\
   \ l'int\xE9rieur. Les\u2026"
-lastmod: 2024-02-18 23:09:08.420455
+lastmod: 2024-02-19 22:05:16.211510
 model: gpt-4-0125-preview
 summary: "Enlever les guillemets d'une cha\xEEne de caract\xE8res signifie se d\xE9\
   faire de ces enveloppes suppl\xE9mentaires pour obtenir le texte pur \xE0 l'int\xE9\

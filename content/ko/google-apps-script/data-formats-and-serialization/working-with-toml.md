@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:18.689879-07:00
@@ -12,7 +10,7 @@ description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85
   \uAC8C \uAD00\uB9AC\uD560 \uC218 \uC788\uB3C4\uB85D \uC9C1\uAD00\uC801\uC774\uACE0\
   \ \uC0AC\uB78C\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uD615\uD0DC\uB85C \uB418\uC5B4\
   \ \uC788\uAE30\u2026"
-lastmod: 2024-02-18 23:09:05.596190
+lastmod: 2024-02-19 22:05:13.511439
 model: gpt-4-0125-preview
 summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C, \uBA85\
   \uD655\uD55C \uC758\uBBF8\uB860\uC73C\uB85C \uC778\uD574 \uC77D\uAE30 \uC26C\uC6B4\

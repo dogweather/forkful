@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/powershell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:56.096811-07:00
 description: "Tiedostojen paikan p\xE4\xE4ll\xE4 muokkaaminen CLI-yhden komentorivin\
   \ avulla PowerShelliss\xE4 tarkoittaa suorien muutosten tekemist\xE4 tiedostoihin\
   \ komentorivilt\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.847730
+lastmod: 2024-02-19 22:05:15.674395
 model: gpt-4-0125-preview
 summary: "Tiedostojen paikan p\xE4\xE4ll\xE4 muokkaaminen CLI-yhden komentorivin avulla\
   \ PowerShelliss\xE4 tarkoittaa suorien muutosten tekemist\xE4 tiedostoihin komentorivilt\xE4\

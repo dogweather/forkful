@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:10:06.588131-07:00
 description: "Manipulating files with CLI (Command Line Interface) one-liners involves\
   \ using Bash scripts or commands to perform actions on files, like creating,\u2026"
-lastmod: 2024-02-18 23:09:11.224607
+lastmod: 2024-02-19 22:05:18.702156
 model: gpt-4-0125-preview
 summary: "Manipulating files with CLI (Command Line Interface) one-liners involves\
   \ using Bash scripts or commands to perform actions on files, like creating,\u2026"

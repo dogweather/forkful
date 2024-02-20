@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/working-with-xml/
 date: 2024-01-26 04:35:59.971439-07:00
 description: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o primo\
   \ verborr\xE1gico do JSON. Voc\xEA ter\xE1 que lidar com XML ao trabalhar com sistemas\
   \ legados,\u2026"
-lastmod: 2024-02-18 23:08:57.953671
+lastmod: 2024-02-19 22:05:05.427624
 model: gpt-4-0125-preview
 summary: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o primo\
   \ verborr\xE1gico do JSON. Voc\xEA ter\xE1 que lidar com XML ao trabalhar com sistemas\

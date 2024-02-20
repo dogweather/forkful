@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/using-associative-arrays/
 date: 2024-01-30 18:57:22.346401-07:00
 description: "Associative arrays, or maps, in Kotlin are collections that store key-value\
   \ pairs. Programmers use them for efficiently organizing and retrieving data\u2026"
-lastmod: 2024-02-18 23:09:11.005907
+lastmod: 2024-02-19 22:05:18.509934
 model: gpt-4-0125-preview
 summary: "Associative arrays, or maps, in Kotlin are collections that store key-value\
   \ pairs. Programmers use them for efficiently organizing and retrieving data\u2026"

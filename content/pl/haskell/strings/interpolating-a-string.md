@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/interpolating-a-string/
 date: 2024-01-20 17:50:52.523618-07:00
 description: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci\
   \ zmiennych bezpo\u015Brednio w stringu. Programi\u015Bci robi\u0105 to, aby generowa\u0107\
   \ dynamiczne teksty z danych,\u2026"
-lastmod: 2024-02-18 23:08:49.640026
+lastmod: 2024-02-19 22:04:54.572139
 model: gpt-4-1106-preview
 summary: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci zmiennych\
   \ bezpo\u015Brednio w stringu. Programi\u015Bci robi\u0105 to, aby generowa\u0107\

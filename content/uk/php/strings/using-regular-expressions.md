@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/php/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:09.036496-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0456 \u0432\u043
   \u0438\u043A\u043E\u043D\u0443\u0432\u0430\u0442\u0438 \u0441\u043A\u043B\u0430\u0434\
   \u043D\u0456 \u043E\u043F\u0435\u0440\u0430\u0446\u0456\u0457 \u043F\u043E\u0448\
   \u0443\u043A\u0443\u2026"
-lastmod: 2024-02-18 23:09:00.475842
+lastmod: 2024-02-19 22:05:08.445919
 model: gpt-4-0125-preview
 summary: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0456 \u0432\u0438\u0440\
   \u0430\u0437\u0438 (regex) \u0432 PHP - \u0446\u0435 \u0448\u0430\u0431\u043B\u043E\

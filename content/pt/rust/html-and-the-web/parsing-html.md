@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/rust/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:57.660825-07:00
 description: "Analisar HTML em Rust trata-se de extrair dados de documentos HTML,\
   \ o que \xE9 essencial para web scraping, extra\xE7\xE3o de dados ou constru\xE7\
   \xE3o de web crawlers.\u2026"
-lastmod: 2024-02-18 23:08:57.926114
+lastmod: 2024-02-19 22:05:05.399490
 model: gpt-4-0125-preview
 summary: "Analisar HTML em Rust trata-se de extrair dados de documentos HTML, o que\
   \ \xE9 essencial para web scraping, extra\xE7\xE3o de dados ou constru\xE7\xE3o\

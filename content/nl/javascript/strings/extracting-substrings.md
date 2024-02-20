@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:40.419628-07:00
 description: "Het extraheren van substrings betekent het grijpen van een stukje van\
   \ een string. Programmeurs snijden en hakken in strings om data te isoleren, een\u2026"
-lastmod: 2024-02-18 23:09:02.263512
+lastmod: 2024-02-19 22:05:10.276135
 model: gpt-4-0125-preview
 summary: "Het extraheren van substrings betekent het grijpen van een stukje van een\
   \ string. Programmeurs snijden en hakken in strings om data te isoleren, een\u2026"

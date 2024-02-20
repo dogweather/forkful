@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/working-with-json/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:53.019390-07:00
 description: "JSON, eller JavaScript Object Notation, \xE4r ett l\xE4ttviktigt format\
   \ f\xF6r lagring och transport av data, idealiskt f\xF6r kommunikation server-till-klient\
   \ samt\u2026"
-lastmod: 2024-02-18 23:08:51.401687
+lastmod: 2024-02-19 22:04:56.701463
 model: gpt-4-0125-preview
 summary: "JSON, eller JavaScript Object Notation, \xE4r ett l\xE4ttviktigt format\
   \ f\xF6r lagring och transport av data, idealiskt f\xF6r kommunikation server-till-klient\

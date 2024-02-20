@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/comparing-two-dates/
 date: 2024-01-20 17:33:55.888336-07:00
 description: "Confrontare due date significa verificare se sono uguali, quale precede\
   \ l'altra, o calcolarne la differenza. I programmatori lo fanno per gestire eventi,\u2026"
-lastmod: 2024-02-18 23:08:55.692296
+lastmod: 2024-02-19 22:05:02.291579
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa verificare se sono uguali, quale precede\
   \ l'altra, o calcolarne la differenza. I programmatori lo fanno per gestire eventi,\u2026"

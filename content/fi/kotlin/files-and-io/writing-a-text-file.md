@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/kotlin/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:25.425553-07:00
 description: "Tekstitiedoston kirjoittaminen Kotlinilla sis\xE4lt\xE4\xE4 tiedoston\
   \ luomisen ja tekstisis\xE4ll\xF6n sy\xF6tt\xE4misen siihen, mik\xE4 on yleinen\
   \ teht\xE4v\xE4 datan tallentamiseksi,\u2026"
-lastmod: 2024-02-18 23:09:07.594778
+lastmod: 2024-02-19 22:05:15.442484
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Kotlinilla sis\xE4lt\xE4\xE4 tiedoston luomisen\
   \ ja tekstisis\xE4ll\xF6n sy\xF6tt\xE4misen siihen, mik\xE4 on yleinen teht\xE4\

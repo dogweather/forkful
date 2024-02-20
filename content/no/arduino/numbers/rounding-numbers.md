@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/rounding-numbers/
 date: 2024-01-26 03:42:41.564841-07:00
 description: "Avrunding av tall inneb\xE6rer \xE5 trimme et desimaltall til sin n\xE6\
   rmeste hele verdi eller til et bestemt antall desimalplasser. Programmerere runder\
   \ av tall\u2026"
-lastmod: 2024-02-18 23:08:54.137262
+lastmod: 2024-02-19 22:05:00.324604
 model: gpt-4-0125-preview
 summary: "Avrunding av tall inneb\xE6rer \xE5 trimme et desimaltall til sin n\xE6\
   rmeste hele verdi eller til et bestemt antall desimalplasser. Programmerere runder\

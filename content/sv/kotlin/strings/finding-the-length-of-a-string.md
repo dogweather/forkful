@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:57.610845-07:00
 description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
   \ tecken den inneh\xE5ller. Programmerare g\xF6r detta f\xF6r att validera input,\
   \ skapa loopar, eller\u2026"
-lastmod: 2024-02-18 23:08:51.741251
+lastmod: 2024-02-19 22:04:57.075838
 model: gpt-4-1106-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
   \ tecken den inneh\xE5ller. Programmerare g\xF6r detta f\xF6r att validera input,\

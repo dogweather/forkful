@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/typescript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:07.697556-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente buscar\
   \ ciertos caracteres en un texto y quitarlos. Los programadores lo hacen para limpiar\u2026"
-lastmod: 2024-02-18 23:09:09.685760
+lastmod: 2024-02-19 22:05:17.315433
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente buscar\
   \ ciertos caracteres en un texto y quitarlos. Los programadores lo hacen para limpiar\u2026"

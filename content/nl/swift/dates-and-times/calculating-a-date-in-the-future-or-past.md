@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:15.099636-07:00
 description: "Ooit moeten zoeken naar een datum in het verleden of toekomst? Programmatisch\
   \ berekenen we vaak datums voor deadlines, herinneringen of evenementen. Weten\u2026"
-lastmod: 2024-02-18 23:09:02.243931
+lastmod: 2024-02-19 22:05:10.257676
 model: gpt-4-0125-preview
 summary: "Ooit moeten zoeken naar een datum in het verleden of toekomst? Programmatisch\
   \ berekenen we vaak datums voor deadlines, herinneringen of evenementen. Weten\u2026"

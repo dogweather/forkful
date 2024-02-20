@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:55.836549-07:00
 description: "Code opsplitsen in functies betekent het verdelen van je code in kleinere,\
   \ herbruikbare stukken. We doen dit om herhaling te voorkomen, onze code leesbaar\u2026"
-lastmod: 2024-02-18 23:09:02.189043
+lastmod: 2024-02-19 22:05:10.205409
 model: gpt-4-0125-preview
 summary: "Code opsplitsen in functies betekent het verdelen van je code in kleinere,\
   \ herbruikbare stukken. We doen dit om herhaling te voorkomen, onze code leesbaar\u2026"

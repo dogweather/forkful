@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/kotlin/logging/
 date: 2024-01-26 01:07:01.248634-07:00
 description: "Lokitus on pohjimmiltaan tapa kirjata tapahtumia ja tietoja ohjelmistosovelluksesta\
   \ ulkoiseen l\xE4hteeseen, kuten tiedostoon tai konsolille. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.581736
+lastmod: 2024-02-19 22:05:15.430398
 model: gpt-4-1106-preview
 summary: "Lokitus on pohjimmiltaan tapa kirjata tapahtumia ja tietoja ohjelmistosovelluksesta\
   \ ulkoiseen l\xE4hteeseen, kuten tiedostoon tai konsolille. Ohjelmoijat\u2026"

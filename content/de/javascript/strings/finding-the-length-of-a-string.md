@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:30.376083-07:00
 description: "Das Ermitteln der L\xE4nge eines Strings bedeutet, zu z\xE4hlen, wie\
   \ viele Zeichen er enth\xE4lt. Programmierer tun dies, um die Verarbeitung von Textdaten\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:05.269189
+lastmod: 2024-02-19 22:05:13.194368
 model: gpt-4-1106-preview
 summary: "Das Ermitteln der L\xE4nge eines Strings bedeutet, zu z\xE4hlen, wie viele\
   \ Zeichen er enth\xE4lt. Programmierer tun dies, um die Verarbeitung von Textdaten\

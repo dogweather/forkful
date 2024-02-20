@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/reading-a-text-file/
 date: 2024-01-20 17:54:34.988032-07:00
 description: "Ler um arquivo de texto significa extrair a informa\xE7\xE3o dele para\
   \ ser processada. Programadores fazem isso para manipular dados, configurar programas\
   \ ou\u2026"
-lastmod: 2024-02-18 23:08:58.133223
+lastmod: 2024-02-19 22:05:05.599998
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto significa extrair a informa\xE7\xE3o dele para ser\
   \ processada. Programadores fazem isso para manipular dados, configurar programas\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/lua/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:25.104872-07:00
 description: "Les expressions r\xE9guli\xE8res en programmation permettent de rechercher\
   \ et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs sp\xE9\
   cifiques. Les\u2026"
-lastmod: 2024-02-18 23:09:08.958546
+lastmod: 2024-02-19 22:05:16.647682
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res en programmation permettent de rechercher\
   \ et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs sp\xE9\

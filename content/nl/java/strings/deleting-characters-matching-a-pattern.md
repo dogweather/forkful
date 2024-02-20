@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:55.091359-07:00
 description: "Het verwijderen van tekens die overeenkomen met een patroon gaat over\
   \ het vinden van specifieke reeksen tekens in een string en deze wegdoen. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.695368
+lastmod: 2024-02-19 22:05:09.716246
 model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een patroon gaat over het\
   \ vinden van specifieke reeksen tekens in een string en deze wegdoen. Programmeurs\u2026"

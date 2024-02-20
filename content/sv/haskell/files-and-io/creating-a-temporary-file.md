@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/haskell/creating-a-temporary-file/
 date: 2024-01-20 17:40:21.783453-07:00
 description: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar\
   \ data under programmets k\xF6rning. Programmerare g\xF6r detta f\xF6r att hantera\
   \ data som inte beh\xF6ver\u2026"
-lastmod: 2024-02-18 23:08:51.856015
+lastmod: 2024-02-19 22:04:57.195747
 model: gpt-4-1106-preview
 summary: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar data\
   \ under programmets k\xF6rning. Programmerare g\xF6r detta f\xF6r att hantera data\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/typescript/working-with-toml/
 date: 2024-01-26 04:27:07.830457-07:00
 description: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\u7684\u7F29\u5199\uFF0C\
   \u662F\u4E00\u79CD\u7C7B\u4F3C\u4E8EJSON\u6216YAML\u7684\u6570\u636E\u5E8F\u5217\
@@ -8,7 +6,7 @@ description: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\u7684\u7F29\u5199\
   \u662F\u56E0\u4E3A\u5B83\u5177\u6709\u4EBA\u7C7B\u53EF\u8BFB\u6027\u548C\u76F4\u63A5\
   \u6620\u5C04\u5230\u6570\u636E\u7C7B\u578B\u7684\u7279\u70B9\uFF0C\u4F7F\u5176\u6210\
   \u4E3A\u914D\u7F6E\u6587\u4EF6\u548C\u6570\u636E\u4EA4\u6362\u7684\u9996\u9009\u3002"
-lastmod: 2024-02-18 23:08:58.924995
+lastmod: 2024-02-19 22:05:06.516133
 model: gpt-4-0125-preview
 summary: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\u7684\u7F29\u5199\uFF0C\u662F\
   \u4E00\u79CD\u7C7B\u4F3C\u4E8EJSON\u6216YAML\u7684\u6570\u636E\u5E8F\u5217\u5316\

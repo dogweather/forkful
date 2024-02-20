@@ -1,13 +1,11 @@
 ---
-aliases:
-- /en/haskell/using-associative-arrays/
 changelog:
 - 2024-01-30, dogweather, reviewed
 date: 2024-01-30 18:57:14.735713-07:00
 description: "Associative arrays, or dictionaries, in Haskell are all about mapping\
   \ keys to values for quick lookup and efficient data management. Programmers use\
   \ them\u2026"
-lastmod: 2024-02-18 23:09:11.089156
+lastmod: 2024-02-19 22:05:18.585751
 model: gpt-4-0125-preview
 summary: "Associative arrays, or dictionaries, in Haskell are all about mapping keys\
   \ to values for quick lookup and efficient data management. Programmers use them\u2026"

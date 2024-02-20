@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/lua/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:59.713760-07:00
 description: "Scoprire la lunghezza di una stringa significa sapere quanti caratteri\
   \ contiene. Lo facciamo quando, ad esempio, dobbiamo validare l'input, manipolare\u2026"
-lastmod: 2024-02-18 23:08:56.002292
+lastmod: 2024-02-19 22:05:02.616982
 model: gpt-4-1106-preview
 summary: "Scoprire la lunghezza di una stringa significa sapere quanti caratteri contiene.\
   \ Lo facciamo quando, ad esempio, dobbiamo validare l'input, manipolare\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/arduino/parsing-html/
 date: 2024-02-03 19:02:46.168722-07:00
 description: "Parsing HTML in Arduino projects is about extracting information from\
   \ web pages. Programmers do this to enable their Arduino devices to interact with\
   \ the\u2026"
-lastmod: 2024-02-18 23:09:11.313442
+lastmod: 2024-02-19 22:05:18.782543
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Arduino projects is about extracting information from web\
   \ pages. Programmers do this to enable their Arduino devices to interact with the\u2026"

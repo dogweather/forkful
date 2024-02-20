@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/typescript/organizing-code-into-functions/
 date: 2024-01-26 01:16:22.474002-07:00
 description: "\xC5 organisere kode i funksjoner betyr \xE5 bryte opp koden din i gjenbrukbare,\
   \ modul\xE6re blokker. Vi gj\xF8r dette for \xE5 holde ting DRY (Don't Repeat Yourself),\u2026"
-lastmod: 2024-02-18 23:08:53.650372
+lastmod: 2024-02-19 22:04:59.780638
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner betyr \xE5 bryte opp koden din i gjenbrukbare,\
   \ modul\xE6re blokker. Vi gj\xF8r dette for \xE5 holde ting DRY (Don't Repeat Yourself),\u2026"

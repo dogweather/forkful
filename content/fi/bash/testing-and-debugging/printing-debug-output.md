@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/printing-debug-output/
 date: 2024-01-20 17:52:10.142316-07:00
 description: "Debug-tulosteiden tulostaminen on viestien n\xE4ytt\xE4mist\xE4 konsolissa,\
   \ joka auttaa koodin toiminnan ymm\xE4rt\xE4misess\xE4. Ohjelmoijat tekev\xE4t sit\xE4\
   , koska se on\u2026"
-lastmod: 2024-02-18 23:09:07.807285
+lastmod: 2024-02-19 22:05:15.637508
 model: gpt-4-1106-preview
 summary: "Debug-tulosteiden tulostaminen on viestien n\xE4ytt\xE4mist\xE4 konsolissa,\
   \ joka auttaa koodin toiminnan ymm\xE4rt\xE4misess\xE4. Ohjelmoijat tekev\xE4t sit\xE4\

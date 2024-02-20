@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/cpp/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:28.747705-07:00
 description: "Analizar una fecha a partir de una cadena implica interpretar el formato\
   \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\
   \ a\xF1o.\u2026"
-lastmod: 2024-02-18 23:09:10.320888
+lastmod: 2024-02-19 22:05:17.889076
 model: gpt-4-0125-preview
 summary: "Analizar una fecha a partir de una cadena implica interpretar el formato\
   \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\

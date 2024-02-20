@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/ruby/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:58.148648-07:00
 description: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg\
   \ som forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre\
   \ korrekthet,\u2026"
-lastmod: 2024-02-18 23:08:54.441834
+lastmod: 2024-02-19 22:05:00.604588
 model: gpt-4-0125-preview
 summary: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg som\
   \ forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre korrekthet,\u2026"

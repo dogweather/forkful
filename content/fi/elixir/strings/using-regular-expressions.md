@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elixir/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:34.163592-07:00
 description: "Elixiriss\xE4 s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
   \xE4n merkkijonojen hakemiseen, t\xE4sm\xE4\xE4miseen ja manipulointiin tiettyjen\
   \ mallien perusteella. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.262819
+lastmod: 2024-02-19 22:05:15.157876
 model: gpt-4-0125-preview
 summary: "Elixiriss\xE4 s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
   \xE4n merkkijonojen hakemiseen, t\xE4sm\xE4\xE4miseen ja manipulointiin tiettyjen\

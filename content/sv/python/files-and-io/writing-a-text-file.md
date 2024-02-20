@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/python/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:04.693224-07:00
 description: "Att skriva till en textfil i Python \xE4r en grundl\xE4ggande uppgift\
   \ som inneb\xE4r att skapa eller \xF6ppna en fil f\xF6r att sedan l\xE4gga till\
   \ eller skriva \xF6ver text.\u2026"
-lastmod: 2024-02-18 23:08:51.439331
+lastmod: 2024-02-19 22:04:56.743412
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Python \xE4r en grundl\xE4ggande uppgift som\
   \ inneb\xE4r att skapa eller \xF6ppna en fil f\xF6r att sedan l\xE4gga till eller\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pl/elixir/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 02:05:16.016190-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu\
   \ tekstu, takiego jak \"2023-04-05\", na format daty, kt\xF3ry Tw\xF3j program mo\u017C\
   e zrozumie\u0107 i z kt\xF3rym\u2026"
-lastmod: 2024-02-18 23:08:49.315018
+lastmod: 2024-02-19 22:04:54.231370
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu tekstu,\
   \ takiego jak \"2023-04-05\", na format daty, kt\xF3ry Tw\xF3j program mo\u017C\

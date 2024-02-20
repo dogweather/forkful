@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:56.679912-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
   \ transmettre des donn\xE9es \xE0 un serveur tout en fournissant un nom d'utilisateur\
   \ et un mot\u2026"
-lastmod: 2024-02-18 23:09:08.969415
+lastmod: 2024-02-19 22:05:16.658069
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est transmettre\
   \ des donn\xE9es \xE0 un serveur tout en fournissant un nom d'utilisateur et un\

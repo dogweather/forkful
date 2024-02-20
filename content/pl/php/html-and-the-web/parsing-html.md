@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/php/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:44.264362-07:00
 description: "Parsowanie HTML w PHP polega na wydobywaniu okre\u015Blonych informacji\
   \ z dokument\xF3w HTML. Programi\u015Bci wykonuj\u0105 to zadanie, aby automatyzowa\u0107\
   \ ekstrakcj\u0119\u2026"
-lastmod: 2024-02-18 23:08:49.692531
+lastmod: 2024-02-19 22:04:54.629138
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w PHP polega na wydobywaniu okre\u015Blonych informacji\
   \ z dokument\xF3w HTML. Programi\u015Bci wykonuj\u0105 to zadanie, aby automatyzowa\u0107\

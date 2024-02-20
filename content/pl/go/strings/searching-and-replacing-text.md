@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:22.342165-07:00
 description: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
   \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\
   \ danymi i\u2026"
-lastmod: 2024-02-18 23:08:49.079819
+lastmod: 2024-02-19 22:04:54.017749
 model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
   \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\

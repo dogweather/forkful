@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:14:01.965126-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EBFt th\u1EED nghi\u1EC7m trong l\u1EADp tr\xECnh ngh\u0129a 
   \ t\u1EA1o ra c\xE1c k\u1ECBch b\u1EA3n ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\
   n c\xF3 ch\u1EA1y \u0111\xFAng kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
   m vi\u1EC7c n\xE0y \u0111\u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i\u2026"
-lastmod: 2024-02-18 23:08:50.938186
+lastmod: 2024-02-19 22:04:56.134910
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt th\u1EED nghi\u1EC7m trong l\u1EADp tr\xECnh ngh\u0129a l\xE0\
   \ t\u1EA1o ra c\xE1c k\u1ECBch b\u1EA3n ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\

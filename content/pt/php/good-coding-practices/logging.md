@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/logging/
 date: 2024-01-26 01:07:05.330672-07:00
 description: "O registro de atividades (logging) \xE9 basicamente como manter um di\xE1\
   rio para o seu c\xF3digo; \xE9 o ato de gravar eventos, erros e outros pontos de\
   \ dados\u2026"
-lastmod: 2024-02-18 23:08:58.247226
+lastmod: 2024-02-19 22:05:05.722469
 model: gpt-4-1106-preview
 summary: "O registro de atividades (logging) \xE9 basicamente como manter um di\xE1\
   rio para o seu c\xF3digo; \xE9 o ato de gravar eventos, erros e outros pontos de\

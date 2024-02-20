@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/haskell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:48.293256-07:00
 description: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje funkcje\
   \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole. Programi\u015B\
   ci robi\u0105 to,\u2026"
-lastmod: 2024-02-18 23:08:49.656837
+lastmod: 2024-02-19 22:04:54.590107
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje funkcje\
   \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole. Programi\u015B\

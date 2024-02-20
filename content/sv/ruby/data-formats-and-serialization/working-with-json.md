@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/ruby/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:02.752073-07:00
 description: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ som \xE4r utbrett i webbapplikationer f\xF6r datav\xE4xling mellan klienter och\
   \ servrar.\u2026"
-lastmod: 2024-02-18 23:08:52.315731
+lastmod: 2024-02-19 22:04:57.708178
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ som \xE4r utbrett i webbapplikationer f\xF6r datav\xE4xling mellan klienter och\

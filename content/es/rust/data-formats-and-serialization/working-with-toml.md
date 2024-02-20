@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/rust/working-with-toml/
 date: 2024-01-26 04:25:53.837180-07:00
 description: "TOML es un lenguaje de serializaci\xF3n de datos legible por humanos,\
   \ a menudo utilizado para configuraciones. Los programadores usan TOML por su simplicidad\u2026"
-lastmod: 2024-02-18 23:09:09.774453
+lastmod: 2024-02-19 22:05:17.395683
 model: gpt-4-0125-preview
 summary: "TOML es un lenguaje de serializaci\xF3n de datos legible por humanos, a\
   \ menudo utilizado para configuraciones. Los programadores usan TOML por su simplicidad\u2026"

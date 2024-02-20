@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/downloading-a-web-page/
 date: 2024-01-20 17:43:41.312182-07:00
 description: "Descargar una p\xE1gina web significa obtener su contenido, usualmente\
   \ en formato HTML, a trav\xE9s de Internet. Los programadores lo hacen para analizar\
   \ datos,\u2026"
-lastmod: 2024-02-18 23:09:09.601756
+lastmod: 2024-02-19 22:05:17.246726
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa obtener su contenido, usualmente en\
   \ formato HTML, a trav\xE9s de Internet. Los programadores lo hacen para analizar\

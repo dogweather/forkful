@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/clojure/logging/
 date: 2024-01-26 01:02:03.261837-07:00
 description: "Le logging est en quelque sorte l'\xE9quivalent logiciel du journal\
   \ de bord d'un navire ; c'est un moyen d'enregistrer les \xE9v\xE9nements qui se\
   \ produisent\u2026"
-lastmod: 2024-02-18 23:09:08.393750
+lastmod: 2024-02-19 22:05:16.187099
 model: gpt-4-1106-preview
 summary: "Le logging est en quelque sorte l'\xE9quivalent logiciel du journal de bord\
   \ d'un navire ; c'est un moyen d'enregistrer les \xE9v\xE9nements qui se produisent\u2026"

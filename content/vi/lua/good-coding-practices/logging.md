@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:29.300631-07:00
@@ -8,7 +6,7 @@ description: "Logging (ghi nh\u1EADt k\xFD) l\xE0 vi\u1EC7c ghi l\u1EA1i c\xE1c 
   \ ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c \u0111i\u1EC3m d\u1EEF li\u1EC7u quan tr\u1ECD\
   ng kh\xE1c x\u1EA3y ra trong v\xF2ng \u0111\u1EDDi c\u1EE7a m\u1ED9t \u1EE9ng d\u1EE5\
   ng ph\u1EA7n m\u1EC1m. L\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: 2024-02-18 23:08:50.843963
+lastmod: 2024-02-19 22:04:56.016299
 model: gpt-4-0125-preview
 summary: "Logging (ghi nh\u1EADt k\xFD) l\xE0 vi\u1EC7c ghi l\u1EA1i c\xE1c s\u1EF1\
   \ ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c \u0111i\u1EC3m d\u1EEF li\u1EC7u quan tr\u1ECD\

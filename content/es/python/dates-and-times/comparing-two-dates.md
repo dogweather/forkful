@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/python/comparing-two-dates/
 date: 2024-01-20 17:33:46.516200-07:00
 description: "Comparar dos fechas en Python significa revisar la diferencia de tiempo\
   \ entre ellas. Los programadores lo hacen para manejar eventos, validar periodos,\
   \ o\u2026"
-lastmod: 2024-02-18 23:09:09.569990
+lastmod: 2024-02-19 22:05:17.218635
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas en Python significa revisar la diferencia de tiempo\
   \ entre ellas. Los programadores lo hacen para manejar eventos, validar periodos,\

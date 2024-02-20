@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -14,7 +12,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD5
   \ \uB2E4\uC591\uD55C \uD615\uC2DD\uC73C\uB85C \uC874\uC7AC\uD558\uBA70, \uC774\uB97C\
   \ \uBE44\uAD50, \uC815\uB82C \uB610\uB294 \uC801\uC808\uD788 \uC800\uC7A5\uD558\uAE30\
   \ \uC704\uD574\uC11C\uB294\u2026"
-lastmod: 2024-02-18 23:09:05.770060
+lastmod: 2024-02-19 22:05:13.682029
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\uB294\
   \ \uAC83\uC740 \"2023-04-05\"\uC640 \uAC19\uC740 \uD14D\uC2A4\uD2B8\uB97C \uCDE8\

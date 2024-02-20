@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/cpp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:18.103419-07:00
 description: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder\
   \ \xD6ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\u2026"
-lastmod: 2024-02-18 23:09:05.208235
+lastmod: 2024-02-19 22:05:13.137151
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder \xD6\
   ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\u2026"

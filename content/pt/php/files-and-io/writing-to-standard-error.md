@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/php/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:08.600820-07:00
 description: "Escrever no erro padr\xE3o (stderr) em PHP diz respeito a direcionar\
   \ mensagens de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout),\
   \ permitindo que\u2026"
-lastmod: 2024-02-18 23:08:58.257208
+lastmod: 2024-02-19 22:05:05.732717
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em PHP diz respeito a direcionar mensagens\
   \ de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout), permitindo\

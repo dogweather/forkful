@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/kotlin/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:41.449257-07:00
 description: "Att kapitalisera en str\xE4ng i programmering inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i str\xE4ngen till versal om det inte redan \xE4r det, vilket\
   \ \xE4r anv\xE4ndbart\u2026"
-lastmod: 2024-02-18 23:08:51.733751
+lastmod: 2024-02-19 22:04:57.067330
 model: gpt-4-0125-preview
 summary: "Att kapitalisera en str\xE4ng i programmering inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i str\xE4ngen till versal om det inte redan \xE4r det, vilket\

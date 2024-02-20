@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/cpp/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:56.926144-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) c\xF3 ngh\u012
   a l\xE0 g\u1EEDi c\xE1c th\xF4ng b\xE1o l\u1ED7i v\xE0 th\xF4ng tin ch\u1EA9n \u0111\
   o\xE1n \u0111\u1EBFn m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7t, t\xE1ch bi\u1EC7t kh\u1ECF\
   i \u0111\u1EA7u ra th\u01B0\u1EDDng\u2026"
-lastmod: 2024-02-18 23:08:51.062038
+lastmod: 2024-02-19 22:04:56.267255
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) c\xF3 ngh\u0129a l\xE0\
   \ g\u1EEDi c\xE1c th\xF4ng b\xE1o l\u1ED7i v\xE0 th\xF4ng tin ch\u1EA9n \u0111o\xE1\

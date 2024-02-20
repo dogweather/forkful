@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/rounding-numbers/
 date: 2024-01-26 03:43:52.819457-07:00
 description: "Arrondir des nombres signifie les ajuster \xE0 une valeur proche pour\
   \ la simplicit\xE9 ou pour correspondre \xE0 une certaine pr\xE9cision. C'est utile\
   \ pour am\xE9liorer\u2026"
-lastmod: 2024-02-18 23:09:08.428497
+lastmod: 2024-02-19 22:05:16.218557
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie les ajuster \xE0 une valeur proche pour la\
   \ simplicit\xE9 ou pour correspondre \xE0 une certaine pr\xE9cision. C'est utile\

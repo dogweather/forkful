@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/downloading-a-web-page/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:49.745769-07:00
 description: "Baixar uma p\xE1gina da web em C envolve acessar programaticamente o\
   \ conte\xFAdo de uma p\xE1gina da web pela internet e salv\xE1-lo localmente para\
   \ processamento ou\u2026"
-lastmod: 2024-02-18 23:08:58.617805
+lastmod: 2024-02-19 22:05:06.118057
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina da web em C envolve acessar programaticamente o conte\xFA\
   do de uma p\xE1gina da web pela internet e salv\xE1-lo localmente para processamento\

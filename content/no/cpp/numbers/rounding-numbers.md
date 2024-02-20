@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/cpp/rounding-numbers/
 date: 2024-01-26 03:43:07.499235-07:00
 description: "\xC5 avrunde tall betyr \xE5 justere en verdi til n\xE6rmeste heltall\
   \ eller spesifisert presisjon. Utviklere gj\xF8r dette for \xE5 forenkle, tilpasse\
   \ seg virkelighetens\u2026"
-lastmod: 2024-02-18 23:08:54.179528
+lastmod: 2024-02-19 22:05:00.367014
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall betyr \xE5 justere en verdi til n\xE6rmeste heltall eller\
   \ spesifisert presisjon. Utviklere gj\xF8r dette for \xE5 forenkle, tilpasse seg\

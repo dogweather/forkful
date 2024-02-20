@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/haskell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:53.199380-07:00
 description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\
   \xE4 tiedostojen j\xE4sent\xE4misen ja luomisen, jotka tallentavat taulukkomuotoista\
   \ dataa\u2026"
-lastmod: 2024-02-18 23:09:07.690479
+lastmod: 2024-02-19 22:05:15.530782
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\xE4\
   \ tiedostojen j\xE4sent\xE4misen ja luomisen, jotka tallentavat taulukkomuotoista\

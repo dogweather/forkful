@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/vba/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:29.804724-07:00
@@ -13,7 +11,7 @@ description: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0456 \u0432\u043
   \u043F\u0443\u043B\u044E\u0432\u0430\u043D\u043D\u044F \u0440\u044F\u0434\u043A\u0430\
   \u043C\u0438. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438\
   \u2026"
-lastmod: 2024-02-18 23:09:00.024650
+lastmod: 2024-02-19 22:05:08.005695
 model: gpt-4-0125-preview
 summary: "\u0420\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0456 \u0432\u0438\u0440\
   \u0430\u0437\u0438 (regex) \u0432 Visual Basic \u0434\u043B\u044F \u0414\u043E\u0434\

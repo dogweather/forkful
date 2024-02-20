@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elm/extracting-substrings/
 date: 2024-01-20 17:45:23.694495-07:00
 description: "Substringien poiminta on prosessi, jossa valitaan osajono isommasta\
   \ jonosta. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 esimerkiksi datan siistimiseen\
   \ ja tietojen\u2026"
-lastmod: 2024-02-18 23:09:07.491817
+lastmod: 2024-02-19 22:05:15.371626
 model: gpt-4-1106-preview
 summary: "Substringien poiminta on prosessi, jossa valitaan osajono isommasta jonosta.\
   \ Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 esimerkiksi datan siistimiseen ja tietojen\u2026"

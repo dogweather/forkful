@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/rust/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:14.230399-07:00
 description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res est\
   \ une t\xE2che courante lorsqu'il s'agit de g\xE9rer les entr\xE9es utilisateur\
   \ ou de lire des donn\xE9es\u2026"
-lastmod: 2024-02-18 23:09:08.539396
+lastmod: 2024-02-19 22:05:16.319637
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res est une\
   \ t\xE2che courante lorsqu'il s'agit de g\xE9rer les entr\xE9es utilisateur ou de\

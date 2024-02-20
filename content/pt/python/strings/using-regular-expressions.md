@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/python/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:19.779729-07:00
 description: "Express\xF5es regulares (regex) s\xE3o padr\xF5es usados para combinar\
   \ sequ\xEAncias de caracteres em strings. Programadores as utilizam para buscar,\
   \ editar ou\u2026"
-lastmod: 2024-02-18 23:08:57.751469
+lastmod: 2024-02-19 22:05:05.213543
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) s\xE3o padr\xF5es usados para combinar sequ\xEA\
   ncias de caracteres em strings. Programadores as utilizam para buscar, editar ou\u2026"

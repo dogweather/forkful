@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/reading-a-text-file/
 date: 2024-01-20 17:54:09.803081-07:00
 description: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\xE4\
   lt\xF6\xE4. T\xE4m\xE4 on peruskauraa, koska tiedot tallennetaan ja jaetaan usein\
   \ tekstitiedostoina."
-lastmod: 2024-02-18 23:09:07.292440
+lastmod: 2024-02-19 22:05:15.185290
 model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\xE4lt\xF6\
   \xE4. T\xE4m\xE4 on peruskauraa, koska tiedot tallennetaan ja jaetaan usein tekstitiedostoina."

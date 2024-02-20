@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:06.068723-07:00
 description: "Ber\xE4kning av datum handlar om att ta reda p\xE5 exakta framtida eller\
   \ f\xF6rflutna tidpunkter baserat p\xE5 nuvarande datum. Programmerare g\xF6r detta\
   \ f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.556348
+lastmod: 2024-02-19 22:04:56.871483
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av datum handlar om att ta reda p\xE5 exakta framtida eller\
   \ f\xF6rflutna tidpunkter baserat p\xE5 nuvarande datum. Programmerare g\xF6r detta\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/javascript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:43.569620-07:00
 description: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para\
   \ tarefas de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a\
   \ presen\xE7a do\u2026"
-lastmod: 2024-02-18 23:08:58.546341
+lastmod: 2024-02-19 22:05:06.042296
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para tarefas\
   \ de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a presen\xE7\

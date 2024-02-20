@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/fish-shell/refactoring/
 date: 2024-01-26 01:17:59.406526-07:00
 description: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
   \ senza cambiarne il comportamento esterno per migliorare attributi non funzionali.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:56.303727
+lastmod: 2024-02-19 22:05:02.940287
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
   \ senza cambiarne il comportamento esterno per migliorare attributi non funzionali.\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/java/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:32.852713-07:00
 description: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie\
   \ viele Zeichen er enth\xE4lt. Entwickler brauchen diese Information, um Eingaben\
   \ zu validieren,\u2026"
-lastmod: 2024-02-18 23:09:04.727511
+lastmod: 2024-02-19 22:05:12.679199
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie viele\
   \ Zeichen er enth\xE4lt. Entwickler brauchen diese Information, um Eingaben zu validieren,\u2026"

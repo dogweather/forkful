@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/ruby/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:16.503417-07:00
 description: "Capire la lunghezza di una stringa significa contare i caratteri che\
   \ la compongono. Lo facciamo per validare l'input, limitare il testo, o gestire\
   \ la\u2026"
-lastmod: 2024-02-18 23:08:56.372653
+lastmod: 2024-02-19 22:05:03.012519
 model: gpt-4-1106-preview
 summary: "Capire la lunghezza di una stringa significa contare i caratteri che la\
   \ compongono. Lo facciamo per validare l'input, limitare il testo, o gestire la\u2026"

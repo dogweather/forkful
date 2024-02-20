@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/creating-a-temporary-file/
 date: 2024-01-20 17:41:39.967018-07:00
 description: "Tworzenie pliku tymczasowego to proces generowania pliku, kt\xF3ry ma\
   \ s\u0142u\u017Cy\u0107 chwilowym celom i zwykle jest usuwany po u\u017Cyciu. Programi\u015B\
   ci u\u017Cywaj\u0105 plik\xF3w\u2026"
-lastmod: 2024-02-18 23:08:49.367037
+lastmod: 2024-02-19 22:04:54.286544
 model: gpt-4-1106-preview
 summary: "Tworzenie pliku tymczasowego to proces generowania pliku, kt\xF3ry ma s\u0142\
   u\u017Cy\u0107 chwilowym celom i zwykle jest usuwany po u\u017Cyciu. Programi\u015B\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:13.735712-07:00
 description: "C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa sy\xF6\
   tteiden vastaanottamisen suoraan terminaalista, mik\xE4 lis\xE4\xE4 ohjelmien joustavuutta\
   \ ja\u2026"
-lastmod: 2024-02-18 23:09:08.150717
+lastmod: 2024-02-19 22:05:15.950956
 model: gpt-4-0125-preview
 summary: "C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa sy\xF6tteiden\
   \ vastaanottamisen suoraan terminaalista, mik\xE4 lis\xE4\xE4 ohjelmien joustavuutta\

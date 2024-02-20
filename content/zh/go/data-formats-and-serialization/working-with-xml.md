@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/go/working-with-xml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:11.274201-07:00
@@ -12,7 +10,7 @@ description: "\u5728 Go \u4E2D\u5904\u7406 XML \u6D89\u53CA\u89E3\u6790\uFF08\u8
   \u7CFB\u7EDF\u95F4\u7684\u6570\u636E\u4EA4\u6362\uFF0C\u5C24\u5176\u662F\u5728 XML\
   \ \u662F\u9996\u9009\u6216\u9057\u7559\u6570\u636E\u683C\u5F0F\u7684\u73AF\u5883\
   \u4E2D\u3002"
-lastmod: 2024-02-18 23:08:58.732021
+lastmod: 2024-02-19 22:05:06.251968
 model: gpt-4-0125-preview
 summary: "\u5728 Go \u4E2D\u5904\u7406 XML \u6D89\u53CA\u89E3\u6790\uFF08\u8BFB\u53D6\
   \uFF09\u548C\u751F\u6210\uFF08\u5199\u5165\uFF09XML \u6587\u6863\u2014\u2014\u8FD9\

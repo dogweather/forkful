@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/java/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:50.938122-07:00
 description: "Wielk\u0105 liter\u0105 nazywamy zmodyfikowanie pierwszej litery ka\u017C\
   dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105c jednocze\u015B\
   nie, \u017Ce reszta liter pozostaje ma\u0142a.\u2026"
-lastmod: 2024-02-18 23:08:49.461516
+lastmod: 2024-02-19 22:04:54.388333
 model: gpt-4-0125-preview
 summary: "Wielk\u0105 liter\u0105 nazywamy zmodyfikowanie pierwszej litery ka\u017C\
   dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105c jednocze\u015B\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/starting-a-new-project/
 date: 2024-01-20 18:03:54.090705-07:00
 description: "\xC5 starte et nytt prosjekt er som \xE5 lage en bl\xE5kopi fra scratch\
   \ \u2013 det legger grunnlaget for hva som skal bygges. Programmerere gj\xF8r dette\
   \ for \xE5 bringe nye\u2026"
-lastmod: 2024-02-18 23:08:54.016448
+lastmod: 2024-02-19 22:05:00.195197
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt er som \xE5 lage en bl\xE5kopi fra scratch\
   \ \u2013 det legger grunnlaget for hva som skal bygges. Programmerere gj\xF8r dette\

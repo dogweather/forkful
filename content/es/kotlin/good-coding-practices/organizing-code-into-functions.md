@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/kotlin/organizing-code-into-functions/
 date: 2024-01-26 01:11:32.143731-07:00
 description: "Organizar el c\xF3digo en funciones significa dividir tu programa en\
   \ piezas reutilizables, cada una manejando una tarea espec\xEDfica. Hacemos esto\
   \ para que el\u2026"
-lastmod: 2024-02-18 23:09:09.941806
+lastmod: 2024-02-19 22:05:17.548489
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones significa dividir tu programa en piezas\
   \ reutilizables, cada una manejando una tarea espec\xEDfica. Hacemos esto para que\

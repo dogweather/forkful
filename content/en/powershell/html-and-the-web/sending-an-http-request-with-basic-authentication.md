@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:23.036437-07:00
 description: "Sending an HTTP request with basic authentication is when your program\
   \ reaches out to a web server and says \"Hey, it's me,\" using a username and password.\u2026"
-lastmod: 2024-02-18 23:09:11.273666
+lastmod: 2024-02-19 22:05:18.746661
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication is when your program reaches\
   \ out to a web server and says \"Hey, it's me,\" using a username and password.\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/parsing-html/
 date: 2024-01-20 15:33:59.514523-07:00
 description: "Parsing HTML oznacza proces analizowania struktury kodu HTML, aby wydoby\u0107\
   \ z niego konkretne dane. Programi\u015Bci robi\u0105 to, by pozyska\u0107 informacje\
   \ ze stron\u2026"
-lastmod: 2024-02-18 23:08:49.950800
+lastmod: 2024-02-19 22:04:54.900668
 summary: "Parsing HTML oznacza proces analizowania struktury kodu HTML, aby wydoby\u0107\
   \ z niego konkretne dane. Programi\u015Bci robi\u0105 to, by pozyska\u0107 informacje\
   \ ze stron\u2026"

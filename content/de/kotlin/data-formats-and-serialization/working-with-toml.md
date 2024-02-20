@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/working-with-toml/
 date: 2024-01-26 04:23:40.352463-07:00
 description: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache. Es wird f\xFC\
   r Konfigurationsdateien verwendet, weil es f\xFCr Menschen leicht zu lesen und zu\
   \ schreiben\u2026"
-lastmod: 2024-02-18 23:09:04.851471
+lastmod: 2024-02-19 22:05:12.796159
 model: gpt-4-0125-preview
 summary: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache. Es wird f\xFC\
   r Konfigurationsdateien verwendet, weil es f\xFCr Menschen leicht zu lesen und zu\

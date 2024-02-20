@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:13.097833-07:00
 description: "Het ontleden van een datum uit een string in C betreft het omzetten\
   \ van tekstuele voorstellingen van data naar een formaat dat programma's effectiever\u2026"
-lastmod: 2024-02-18 23:09:02.383428
+lastmod: 2024-02-19 22:05:10.389947
 model: gpt-4-0125-preview
 summary: "Het ontleden van een datum uit een string in C betreft het omzetten van\
   \ tekstuele voorstellingen van data naar een formaat dat programma's effectiever\u2026"

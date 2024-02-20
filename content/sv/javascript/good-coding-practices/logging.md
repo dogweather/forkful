@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/logging/
 date: 2024-01-26 01:07:11.981497-07:00
 description: "Loggning \xE4r i ett n\xF6tskal som att h\xE5lla en dagbok f\xF6r din\
   \ applikation \u2013 den registrerar h\xE4ndelser, fel och andra signifikanta \xE5\
   tg\xE4rder som sker medan\u2026"
-lastmod: 2024-02-18 23:08:52.170898
+lastmod: 2024-02-19 22:04:57.543223
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r i ett n\xF6tskal som att h\xE5lla en dagbok f\xF6r din applikation\
   \ \u2013 den registrerar h\xE4ndelser, fel och andra signifikanta \xE5tg\xE4rder\

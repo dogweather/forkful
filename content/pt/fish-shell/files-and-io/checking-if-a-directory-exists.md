@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/fish-shell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:14.988558-07:00
 description: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts\
   \ tomem decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\
   rios,\u2026"
-lastmod: 2024-02-18 23:08:58.589886
+lastmod: 2024-02-19 22:05:06.088306
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts tomem\
   \ decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\

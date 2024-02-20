@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/lua/removing-quotes-from-a-string/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:01:54.226369-07:00
@@ -15,7 +13,7 @@ description: "\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u043A\u0430\u043
   \u0435\u043B\u0430\u044E\u0442 \u044D\u0442\u043E \u0434\u043B\u044F \u0441\u0430\
   \u043D\u0430\u0446\u0438\u0438 \u0432\u0432\u043E\u0434\u0430, \u0434\u043B\u044F\
   \u2026"
-lastmod: 2024-02-18 23:08:57.136163
+lastmod: 2024-02-19 22:05:04.229104
 model: gpt-4-0125-preview
 summary: "\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u043A\u0430\u0432\u044B\
   \u0447\u0435\u043A \u0438\u0437 \u0441\u0442\u0440\u043E\u043A\u0438 \u043E\u0437\

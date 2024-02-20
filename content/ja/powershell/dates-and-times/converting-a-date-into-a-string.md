@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/powershell/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:38.219236-07:00
 description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u3068\
   \u3044\u3046\u306E\u306F\u3001\u65E5\u4ED8\u306E\u30C7\u30FC\u30BF\u3092\u8AAD\u307F\
@@ -11,7 +9,7 @@ description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B
   \u64CD\u4F5C\u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:55.125240
+lastmod: 2024-02-19 22:05:01.573057
 model: gpt-4-1106-preview
 summary: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u3068\
   \u3044\u3046\u306E\u306F\u3001\u65E5\u4ED8\u306E\u30C7\u30FC\u30BF\u3092\u8AAD\u307F\

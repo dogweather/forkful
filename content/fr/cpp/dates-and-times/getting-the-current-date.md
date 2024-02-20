@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/cpp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:07.117094-07:00
 description: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
   \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"
-lastmod: 2024-02-18 23:09:09.172452
+lastmod: 2024-02-19 22:05:16.844947
 model: gpt-4-0125-preview
 summary: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
   \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"

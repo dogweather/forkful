@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/python/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:42.977064-07:00
 description: "Parsear HTML implica analizar el c\xF3digo HTML de una p\xE1gina web\
   \ para extraer informaci\xF3n o elementos espec\xEDficos, una tarea com\xFAn para\
   \ el web scraping, la\u2026"
-lastmod: 2024-02-18 23:09:09.553827
+lastmod: 2024-02-19 22:05:17.203858
 model: gpt-4-0125-preview
 summary: "Parsear HTML implica analizar el c\xF3digo HTML de una p\xE1gina web para\
   \ extraer informaci\xF3n o elementos espec\xEDficos, una tarea com\xFAn para el\

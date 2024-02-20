@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/parsing-html/
 date: 2024-02-03 17:50:06.970770-07:00
 description: "Parsing HTML in Go involves analyzing the content of HTML files to extract\
   \ data, manipulate the structure, or to convert HTML into other formats.\u2026"
-lastmod: 2024-02-18 23:09:10.594232
+lastmod: 2024-02-19 22:05:18.137161
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Go involves analyzing the content of HTML files to extract\
   \ data, manipulate the structure, or to convert HTML into other formats.\u2026"

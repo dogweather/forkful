@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/clojure/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:05.915060-07:00
 description: "Een tijdelijk bestand maken is het proces van het cre\xEBren van een\
   \ kortstondig bestand voor tussentijdse gegevensopslag. Programmeurs gebruiken ze\
   \ voor\u2026"
-lastmod: 2024-02-18 23:09:01.501105
+lastmod: 2024-02-19 22:05:09.528503
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand maken is het proces van het cre\xEBren van een kortstondig\
   \ bestand voor tussentijdse gegevensopslag. Programmeurs gebruiken ze voor\u2026"

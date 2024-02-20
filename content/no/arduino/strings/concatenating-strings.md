@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/concatenating-strings/
 date: 2024-01-20 17:34:09.893713-07:00
 description: "Konkatenering av strenger er prosessen med \xE5 sette sammen to eller\
   \ flere tekststrenger. Programmerere gj\xF8r dette for \xE5 bygge meldinger, lage\
   \ dynamiske\u2026"
-lastmod: 2024-02-18 23:08:54.134113
+lastmod: 2024-02-19 22:05:00.321598
 model: gpt-4-1106-preview
 summary: "Konkatenering av strenger er prosessen med \xE5 sette sammen to eller flere\
   \ tekststrenger. Programmerere gj\xF8r dette for \xE5 bygge meldinger, lage dynamiske\u2026"

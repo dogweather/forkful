@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:43.357823-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740, \uB2E8\uC21C\uD788 \uB0A0\uC9DC \uAC1D\uCCB4\uB97C \uD14D\uC2A4\uD2B8\
@@ -10,7 +8,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB2
   \uC73C\uB85C \uC804\uC2DC\uD558\uAE30 \uC704\uD574 \uC774 \uBCC0\uD658\uC744 \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.043972
+lastmod: 2024-02-19 22:05:14.924873
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
   \uC740, \uB2E8\uC21C\uD788 \uB0A0\uC9DC \uAC1D\uCCB4\uB97C \uD14D\uC2A4\uD2B8 \uD615\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/elm/handling-errors/
 date: 2024-01-21 21:19:20.721824-07:00
 description: "Handling errors means writing code that can anticipate and deal with\
   \ things going wrong. Programmers do it to prevent crashes, protect data integrity,\
   \ and\u2026"
-lastmod: 2024-02-18 23:09:10.979280
+lastmod: 2024-02-19 22:05:18.485516
 model: gpt-4-1106-preview
 summary: "Handling errors means writing code that can anticipate and deal with things\
   \ going wrong. Programmers do it to prevent crashes, protect data integrity, and\u2026"

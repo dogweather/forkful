@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/interpolating-a-string/
 date: 2024-01-20 17:51:03.376959-07:00
 description: "L'interpolazione di stringhe \xE8 un modo per inserire valori di variabili\
   \ direttamente all'interno di una stringa di testo. I programmatori la usano per\u2026"
-lastmod: 2024-02-18 23:08:55.752974
+lastmod: 2024-02-19 22:05:02.355943
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe \xE8 un modo per inserire valori di variabili\
   \ direttamente all'interno di una stringa di testo. I programmatori la usano per\u2026"

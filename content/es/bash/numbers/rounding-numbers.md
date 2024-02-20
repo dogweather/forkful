@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/rounding-numbers/
 date: 2024-01-26 03:42:37.095687-07:00
 description: "Redondear n\xFAmeros significa cortar los decimales a un valor m\xE1\
   s simple que es suficientemente bueno para un contexto dado. Los programadores redondean\u2026"
-lastmod: 2024-02-18 23:09:10.159616
+lastmod: 2024-02-19 22:05:17.746637
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa cortar los decimales a un valor m\xE1s simple\
   \ que es suficientemente bueno para un contexto dado. Los programadores redondean\u2026"

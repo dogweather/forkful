@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/handling-errors/
 date: 2024-01-26 00:36:59.711946-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w w skryptach Bash polega na przewidywaniu,\
   \ gdzie mog\u0105 pojawi\u0107 si\u0119 problemy i radzenie sobie z nimi w elegancki\
   \ spos\xF3b. Dlaczego? Poniewa\u017C\u2026"
-lastmod: 2024-02-18 23:08:49.792366
+lastmod: 2024-02-19 22:04:54.732180
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w skryptach Bash polega na przewidywaniu,\
   \ gdzie mog\u0105 pojawi\u0107 si\u0119 problemy i radzenie sobie z nimi w elegancki\

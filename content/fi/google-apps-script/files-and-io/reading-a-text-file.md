@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:24.650408-07:00
 description: "Tekstitiedoston lukeminen Google Apps Scriptill\xE4 (GAS) sis\xE4lt\xE4\
   \xE4 p\xE4\xE4syn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka\
   \ on tallennettu\u2026"
-lastmod: 2024-02-18 23:09:07.156468
+lastmod: 2024-02-19 22:05:15.032050
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen Google Apps Scriptill\xE4 (GAS) sis\xE4lt\xE4\xE4\
   \ p\xE4\xE4syn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka\

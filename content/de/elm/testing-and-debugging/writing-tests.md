@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/elm/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:22.308619-07:00
 description: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um die\
   \ Korrektheit Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich\
   \ wie\u2026"
-lastmod: 2024-02-18 23:09:04.785261
+lastmod: 2024-02-19 22:05:12.733455
 model: gpt-4-0125-preview
 summary: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um die Korrektheit\
   \ Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich wie\u2026"

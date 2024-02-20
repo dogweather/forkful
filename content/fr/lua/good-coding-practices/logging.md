@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/logging/
 date: 2024-01-26 01:07:10.246884-07:00
 description: "Le logging est la pratique consistant \xE0 enregistrer des \xE9v\xE9\
   nements, des erreurs et d'autres points de donn\xE9es significatifs qui se produisent\
   \ tout au long\u2026"
-lastmod: 2024-02-18 23:09:08.976683
+lastmod: 2024-02-19 22:05:16.664810
 model: gpt-4-1106-preview
 summary: "Le logging est la pratique consistant \xE0 enregistrer des \xE9v\xE9nements,\
   \ des erreurs et d'autres points de donn\xE9es significatifs qui se produisent tout\

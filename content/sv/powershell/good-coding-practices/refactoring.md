@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/powershell/refactoring/
 date: 2024-01-26 03:38:23.027288-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig datakod\
   \ utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra mjukvarans\
   \ icke-\u2026"
-lastmod: 2024-02-18 23:08:52.011986
+lastmod: 2024-02-19 22:04:57.367424
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datakod utan\
   \ att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra mjukvarans\

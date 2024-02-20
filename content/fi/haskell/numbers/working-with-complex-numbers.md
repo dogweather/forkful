@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/working-with-complex-numbers/
 date: 2024-01-26 04:41:23.304358-07:00
 description: "Kompleksiluvut, jotka koostuvat reaali- ja imagin\xE4\xE4riosasta, ovat\
   \ olennaisia monilla laskennallisilla aloilla kuten insin\xF6\xF6ritieteess\xE4\
   , fysiikassa ja\u2026"
-lastmod: 2024-02-18 23:09:07.659989
+lastmod: 2024-02-19 22:05:15.502707
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaali- ja imagin\xE4\xE4riosasta, ovat\
   \ olennaisia monilla laskennallisilla aloilla kuten insin\xF6\xF6ritieteess\xE4\

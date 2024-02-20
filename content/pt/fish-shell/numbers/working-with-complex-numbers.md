@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/fish-shell/working-with-complex-numbers/
 date: 2024-01-26 04:40:05.191192-07:00
 description: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidimensionais\
   \ para um plano complexo bidimensional. Programadores os usam em campos como\u2026"
-lastmod: 2024-02-18 23:08:58.567529
+lastmod: 2024-02-19 22:05:06.064747
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidimensionais\
   \ para um plano complexo bidimensional. Programadores os usam em campos como\u2026"

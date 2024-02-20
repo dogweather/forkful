@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:21.964052-07:00
 description: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Datei\
   \ auf Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\u2026"
-lastmod: 2024-02-18 23:09:05.393971
+lastmod: 2024-02-19 22:05:13.313342
 model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Datei auf\
   \ Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\u2026"

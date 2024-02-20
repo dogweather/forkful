@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/working-with-xml/
 date: 2024-01-26 04:34:14.789353-07:00
 description: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do przechowywania i transportu\
   \ danych. Programi\u015Bci pracuj\u0105 z XML, aby umo\u017Cliwi\u0107 interoperacyjno\u015B\
   \u0107 mi\u0119dzy aplikacjami i\u2026"
-lastmod: 2024-02-18 23:08:49.721180
+lastmod: 2024-02-19 22:04:54.657479
 model: gpt-4-0125-preview
 summary: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do przechowywania i transportu\
   \ danych. Programi\u015Bci pracuj\u0105 z XML, aby umo\u017Cliwi\u0107 interoperacyjno\u015B\

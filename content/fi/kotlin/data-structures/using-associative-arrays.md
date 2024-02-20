@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/kotlin/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:39.647937-07:00
 description: "Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotka\
   \ tallentavat avain-arvo -pareja. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 dataan\
   \ tehokkaasti\u2026"
-lastmod: 2024-02-18 23:09:07.567447
+lastmod: 2024-02-19 22:05:15.417367
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotka tallentavat\
   \ avain-arvo -pareja. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 dataan tehokkaasti\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:36.349780-07:00
 description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 REPL(Read-Eval-Print\
   \ Loop)\uC740 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uCF54\uB4DC\uB97C \uD14C\uC2A4\uD2B8\
@@ -9,7 +7,7 @@ description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 REPL(Read-Eval
   \uD2B8\uB97C \uC791\uC131\uD558\uC9C0 \uC54A\uACE0\uB3C4 Ruby\uC758 \uBBF8\uBB18\
   \uD55C \uCC28\uC774\uC810\uC744 \uC2E4\uD5D8\uD558\uACE0, \uB514\uBC84\uADF8\uD558\
   \uBA70, \uBC30\uC6B8 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:07.028083
+lastmod: 2024-02-19 22:05:14.910011
 model: gpt-4-0125-preview
 summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 REPL(Read-Eval-Print\
   \ Loop)\uC740 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uCF54\uB4DC\uB97C \uD14C\uC2A4\uD2B8\

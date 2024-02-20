@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/c-sharp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:03.379665-07:00
 description: "Zmienianie ci\u0105gu znak\xF3w na ma\u0142e litery to proces zamiany\
   \ wszystkich wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Programi\u015B\
   ci to robi\u0105, aby\u2026"
-lastmod: 2024-02-18 23:08:49.598209
+lastmod: 2024-02-19 22:04:54.527655
 model: gpt-4-1106-preview
 summary: "Zmienianie ci\u0105gu znak\xF3w na ma\u0142e litery to proces zamiany wszystkich\
   \ wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Programi\u015Bci\

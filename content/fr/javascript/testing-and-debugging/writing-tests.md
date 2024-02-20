@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/javascript/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:16.105872-07:00
 description: "\xC9crire des tests en JavaScript fait r\xE9f\xE9rence \xE0 la pratique\
   \ de cr\xE9er des scripts automatis\xE9s qui ex\xE9cutent votre code pour garantir\
   \ qu'il se comporte\u2026"
-lastmod: 2024-02-18 23:09:09.259873
+lastmod: 2024-02-19 22:05:16.924182
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en JavaScript fait r\xE9f\xE9rence \xE0 la pratique\
   \ de cr\xE9er des scripts automatis\xE9s qui ex\xE9cutent votre code pour garantir\

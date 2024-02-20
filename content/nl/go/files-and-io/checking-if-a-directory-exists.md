@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:32.276212-07:00
 description: "Controleren of een map bestaat in Go is cruciaal voor applicaties die\
   \ interageren met het bestandssysteem, om fouten te voorkomen bij het proberen te\u2026"
-lastmod: 2024-02-18 23:09:01.354643
+lastmod: 2024-02-19 22:05:09.387639
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Go is cruciaal voor applicaties die interageren\
   \ met het bestandssysteem, om fouten te voorkomen bij het proberen te\u2026"

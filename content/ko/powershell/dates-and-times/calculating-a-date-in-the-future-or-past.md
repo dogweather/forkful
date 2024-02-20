@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:00.688872-07:00
 description: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uBBF8\uB798\uB098 \uACFC\uAC70\uC758\
   \ \uD2B9\uC815 \uB0A0\uC9DC\uB97C \uAD6C\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC2A4\
@@ -8,7 +6,7 @@ description: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uBBF8\uB798\uB098 \uACFC\uAC70\uC
   \uC77C \uC124\uC815 \uB4F1\uC744 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
   \uC774 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.575578
+lastmod: 2024-02-19 22:05:14.480407
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uD2B9\
   \uC815 \uB0A0\uC9DC\uB97C \uAD6C\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC2A4\uCF00\

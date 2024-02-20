@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/cpp/using-a-debugger/
 date: 2024-01-26 03:47:39.571618-07:00
 description: "Usar un depurador significa iniciar una herramienta que te permite observar\
   \ dentro de tu programa en ejecuci\xF3n para entender qu\xE9 est\xE1 sucediendo\u2026"
-lastmod: 2024-02-18 23:09:10.315274
+lastmod: 2024-02-19 22:05:17.884298
 model: gpt-4-0125-preview
 summary: "Usar un depurador significa iniciar una herramienta que te permite observar\
   \ dentro de tu programa en ejecuci\xF3n para entender qu\xE9 est\xE1 sucediendo\u2026"

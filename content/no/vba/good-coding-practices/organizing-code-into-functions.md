@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:34.267441-07:00
 description: "\xC5 organisere kode i funksjoner i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer \xE5 bryte ned et program i mindre, h\xE5ndterbare deler kjent som\
   \ funksjoner.\u2026"
-lastmod: 2024-02-18 23:08:53.734127
+lastmod: 2024-02-19 22:04:59.871464
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer \xE5 bryte ned et program i mindre, h\xE5ndterbare deler kjent som\

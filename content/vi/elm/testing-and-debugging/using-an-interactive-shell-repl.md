@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/elm/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:31.422852-07:00
@@ -9,7 +7,7 @@ description: "V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL) l\xE0
   n gi\u1EA3n, x\u1EED l\xFD t\u1EEBng \u0111\u1EA7u v\xE0o c\u1EE7a ng\u01B0\u1EDD\
   i d\xF9ng, \u0111\xE1nh gi\xE1 ch\xFAng, v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3 v\u1EC1\
   \ cho\u2026"
-lastmod: 2024-02-18 23:08:50.605463
+lastmod: 2024-02-19 22:04:55.714228
 model: gpt-4-0125-preview
 summary: "V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL) l\xE0 m\u1ED9\
   t m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c \u0111\u01A1\

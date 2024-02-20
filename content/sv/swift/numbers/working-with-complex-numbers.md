@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/swift/working-with-complex-numbers/
 date: 2024-01-26 04:45:43.380668-07:00
 description: "Komplexa tal har en reell del och en imagin\xE4r del (som 3 + 4i). Programmerare\
   \ anv\xE4nder dem i Swift f\xF6r uppgifter som signalbehandling, att l\xF6sa vissa\u2026"
-lastmod: 2024-02-18 23:08:52.118665
+lastmod: 2024-02-19 22:04:57.484652
 model: gpt-4-0125-preview
 summary: "Komplexa tal har en reell del och en imagin\xE4r del (som 3 + 4i). Programmerare\
   \ anv\xE4nder dem i Swift f\xF6r uppgifter som signalbehandling, att l\xF6sa vissa\u2026"

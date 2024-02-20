@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/java/sending-an-http-request/
 date: 2024-01-20 18:00:20.129152-07:00
 description: "Enviar una petici\xF3n HTTP es el proceso de solicitar o enviar datos\
   \ a un servidor web. Los programadores lo hacen para interactuar con servicios web,\u2026"
-lastmod: 2024-02-18 23:09:09.841688
+lastmod: 2024-02-19 22:05:17.457022
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP es el proceso de solicitar o enviar datos a\
   \ un servidor web. Los programadores lo hacen para interactuar con servicios web,\u2026"

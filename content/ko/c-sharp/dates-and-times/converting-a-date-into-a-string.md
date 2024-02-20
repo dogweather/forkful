@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c-sharp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:32.976999-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 DateTime \uAC1D\uCCB4\uB97C \uD14D\uC2A4\uD2B8 \uD615\uC2DD\uC73C\
@@ -10,7 +8,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB2
   \uD558\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774 \uBCC0\
   \uD658\uC744 \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.238439
+lastmod: 2024-02-19 22:05:14.162153
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
   \uC740 DateTime \uAC1D\uCCB4\uB97C \uD14D\uC2A4\uD2B8 \uD615\uC2DD\uC73C\uB85C \uBC14\

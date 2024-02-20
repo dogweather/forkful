@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/arduino/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:32.072301-07:00
 description: "JSON, ou Nota\xE7\xE3o de Objeto JavaScript, \xE9 um formato leve de\
   \ troca de dados, tornando-o perfeito para armazenamento de dados ou arquivos de\
   \ configura\xE7\xE3o em\u2026"
-lastmod: 2024-02-18 23:08:58.430399
+lastmod: 2024-02-19 22:05:05.919475
 model: gpt-4-0125-preview
 summary: "JSON, ou Nota\xE7\xE3o de Objeto JavaScript, \xE9 um formato leve de troca\
   \ de dados, tornando-o perfeito para armazenamento de dados ou arquivos de configura\xE7\

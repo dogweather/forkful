@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/downloading-a-web-page/
 date: 2024-01-20 17:45:05.202346-07:00
 description: "Downloading a web page means grabbing the HTML content from the internet.\
   \ Programmers do it to parse the data, scrape information, or monitor changes\u2026"
-lastmod: 2024-02-18 23:09:11.564617
+lastmod: 2024-02-19 22:05:19.011487
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the HTML content from the internet.\
   \ Programmers do it to parse the data, scrape information, or monitor changes\u2026"

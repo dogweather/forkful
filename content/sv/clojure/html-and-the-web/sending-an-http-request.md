@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/sending-an-http-request/
 date: 2024-01-20 17:59:14.491633-07:00
 description: "Att skicka en HTTP-beg\xE4ran \xE4r hur en dator eller app fr\xE5gar\
   \ efter data fr\xE5n en server eller en tj\xE4nst p\xE5 n\xE4tet. Programmerare\
   \ g\xF6r detta f\xF6r att interagera\u2026"
-lastmod: 2024-02-18 23:08:51.459156
+lastmod: 2024-02-19 22:04:56.765152
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran \xE4r hur en dator eller app fr\xE5gar efter\
   \ data fr\xE5n en server eller en tj\xE4nst p\xE5 n\xE4tet. Programmerare g\xF6\

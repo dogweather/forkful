@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:24.463723-07:00
@@ -13,7 +11,7 @@ description: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0921\u093E\u0
   \u0936\u093E\u0924\u093E \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\
   \u0930\u093E\u092E\u0930 \u0905\u0915\u094D\u0938\u0930 \u092F\u0939 \u091C\u093E\
   \u0901\u091A\u2026"
-lastmod: 2024-02-18 23:09:02.596325
+lastmod: 2024-02-19 22:05:10.598163
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0921\u093E\u092F\u0930\
   \u0947\u0915\u094D\u091F\u0930\u0940 \u0915\u0947 \u0905\u0938\u094D\u0924\u093F\

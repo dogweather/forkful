@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/handling-errors/
 date: 2024-01-26 00:49:32.716273-07:00
 description: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht.\
   \ Sie ist wichtig, weil sie Abst\xFCrze verhindert und Ihre Software robust und\u2026"
-lastmod: 2024-02-18 23:09:05.196897
+lastmod: 2024-02-19 22:05:13.126259
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht.\
   \ Sie ist wichtig, weil sie Abst\xFCrze verhindert und Ihre Software robust und\u2026"

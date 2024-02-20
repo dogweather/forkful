@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/concatenating-strings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:41.146895-07:00
@@ -11,7 +9,7 @@ description: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\uFF0C\u8F
   \u6237\u6D88\u606F\u3001\u521B\u5EFASQL\u67E5\u8BE2\u7B49\u81F3\u5173\u91CD\u8981\
   \uFF0C\u56E0\u4E3A\u5B83\u5141\u8BB8\u52A8\u6001\u521B\u5EFA\u548C\u64CD\u4F5C\u5B57\
   \u7B26\u4E32\u6570\u636E\u3002"
-lastmod: 2024-02-18 23:08:58.972691
+lastmod: 2024-02-19 22:05:06.582337
 model: gpt-4-0125-preview
 summary: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\uFF0C\u8FDE\u63A5\
   \u64CD\u4F5C\u6D89\u53CA\u5C06\u4E24\u4E2A\u6216\u66F4\u591A\u5B57\u7B26\u4E32\u5408\

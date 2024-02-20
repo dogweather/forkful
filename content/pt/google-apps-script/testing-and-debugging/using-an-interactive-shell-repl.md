@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:43.514195-07:00
 description: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
   o (REPL, do ingl\xEAs), \xE9 um ambiente de programa\xE7\xE3o simples e interativo\
   \ que recebe entradas\u2026"
-lastmod: 2024-02-18 23:08:57.717696
+lastmod: 2024-02-19 22:05:05.178118
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o (REPL,\
   \ do ingl\xEAs), \xE9 um ambiente de programa\xE7\xE3o simples e interativo que\

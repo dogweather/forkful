@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/kotlin/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:51.596097-07:00
 description: "REPL (Read-Eval-Print Loop - P\u0119tla Czytaj-Wykonaj-Wypisz) to proste,\
   \ interaktywne \u015Brodowisko programistyczne. Programi\u015Bci u\u017Cywaj\u0105\
   \ go do szybkich pr\xF3b\u2026"
-lastmod: 2024-02-18 23:08:49.570692
+lastmod: 2024-02-19 22:04:54.497627
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop - P\u0119tla Czytaj-Wykonaj-Wypisz) to proste,\
   \ interaktywne \u015Brodowisko programistyczne. Programi\u015Bci u\u017Cywaj\u0105\

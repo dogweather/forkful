@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:10.472439-07:00
 description: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na przekszta\u0142\
   ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki. Proces\
   \ ten jest niezb\u0119dny\u2026"
-lastmod: 2024-02-18 23:08:49.419730
+lastmod: 2024-02-19 22:04:54.343238
 model: gpt-4-0125-preview
 summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na przekszta\u0142\
   ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki. Proces\

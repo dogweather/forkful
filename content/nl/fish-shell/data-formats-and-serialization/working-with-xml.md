@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:21.181022-07:00
 description: "Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,\
   \ gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en\u2026"
-lastmod: 2024-02-18 23:09:02.352448
+lastmod: 2024-02-19 22:05:10.359969
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,\
   \ gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en\u2026"

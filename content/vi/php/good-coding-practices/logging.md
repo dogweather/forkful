@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:34.712060-07:00
@@ -8,7 +6,7 @@ description: "Ghi log c\u01A1 b\u1EA3n gi\u1ED1ng nh\u01B0 vi\u1EC7c gi\u1EEF m\
   t cu\u1ED1n nh\u1EADt k\xFD cho m\xE3 c\u1EE7a b\u1EA1n; \u0111\xF3 l\xE0 h\xE0\
   nh \u0111\u1ED9ng ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c \u0111\
   i\u1EC3m d\u1EEF li\u1EC7u \u0111\xE1ng ch\xFA \xFD kh\xE1c x\u1EA3y ra khi\u2026"
-lastmod: 2024-02-18 23:08:50.798262
+lastmod: 2024-02-19 22:04:55.958626
 model: gpt-4-0125-preview
 summary: "Ghi log c\u01A1 b\u1EA3n gi\u1ED1ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9\
   t cu\u1ED1n nh\u1EADt k\xFD cho m\xE3 c\u1EE7a b\u1EA1n; \u0111\xF3 l\xE0 h\xE0\

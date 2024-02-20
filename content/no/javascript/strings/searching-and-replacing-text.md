@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/searching-and-replacing-text/
 date: 2024-01-20 17:58:16.756907-07:00
 description: "S\xF8king og erstatting av tekst lar oss finne spesifikke ord eller\
   \ m\xF8nstre og bytte dem ut med noe annet. Det sparer tid, unng\xE5r feil og automatiserer\
   \ endel\u2026"
-lastmod: 2024-02-18 23:08:54.295240
+lastmod: 2024-02-19 22:05:00.445092
 model: gpt-4-1106-preview
 summary: "S\xF8king og erstatting av tekst lar oss finne spesifikke ord eller m\xF8\
   nstre og bytte dem ut med noe annet. Det sparer tid, unng\xE5r feil og automatiserer\

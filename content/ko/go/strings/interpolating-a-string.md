@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/go/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:39.603739-07:00
@@ -12,7 +10,7 @@ description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0
   \uC815\uD558\uAC70\uB098, URL\uC744 \uAD6C\uC131\uD558\uAC70\uB098, SQL \uCFFC\uB9AC\
   \uB97C \uC0DD\uC131\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD558\
   \uBA70, \uC774\uB97C \uD1B5\uD574 \uCF54\uB4DC\uC758\u2026"
-lastmod: 2024-02-18 23:09:05.456181
+lastmod: 2024-02-19 22:05:13.374506
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0\uC218\
   \uB97C \uD3EC\uD568\uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAD6C\uC131\uD558\uB294\

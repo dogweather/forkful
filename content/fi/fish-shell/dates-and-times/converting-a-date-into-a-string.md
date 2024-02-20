@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:19.845274-07:00
 description: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4n esitt\xE4mist\xE4 luettavassa muodossa. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n, jotta p\xE4iv\xE4m\xE4\xE4r\xE4t olisivat\u2026"
-lastmod: 2024-02-18 23:09:08.096913
+lastmod: 2024-02-19 22:05:15.900349
 model: gpt-4-1106-preview
 summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa p\xE4\
   iv\xE4m\xE4\xE4r\xE4n esitt\xE4mist\xE4 luettavassa muodossa. Ohjelmoijat tekev\xE4\

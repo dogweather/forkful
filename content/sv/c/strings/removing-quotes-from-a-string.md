@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:11.869370-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng i C inneb\xE4r att extrahera\
   \ textinneh\xE5llet utan de omslutande enkla (' ') eller dubbla (\" \") citattecknen.\
   \ Denna\u2026"
-lastmod: 2024-02-18 23:08:52.237478
+lastmod: 2024-02-19 22:04:57.620339
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng i C inneb\xE4r att extrahera\
   \ textinneh\xE5llet utan de omslutande enkla (' ') eller dubbla (\" \") citattecknen.\

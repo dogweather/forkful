@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:03.274420-07:00
 description: "Un REPL, o Ciclo Leggi-Valuta-Stampa, \xE8 un ambiente di programmazione\
   \ che accetta input singoli dall'utente, li esegue e restituisce il risultato\u2026"
-lastmod: 2024-02-18 23:08:55.522850
+lastmod: 2024-02-19 22:05:02.109879
 model: gpt-4-0125-preview
 summary: "Un REPL, o Ciclo Leggi-Valuta-Stampa, \xE8 un ambiente di programmazione\
   \ che accetta input singoli dall'utente, li esegue e restituisce il risultato\u2026"

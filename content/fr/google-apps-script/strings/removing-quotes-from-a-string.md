@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/removing-quotes-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:09.933986-07:00
 description: "Supprimer les guillemets d'une cha\xEEne dans Google Apps Script consiste\
   \ \xE0 \xE9liminer les guillemets inutiles qui peuvent entourer vos donn\xE9es de\
   \ cha\xEEne,\u2026"
-lastmod: 2024-02-18 23:09:08.273172
+lastmod: 2024-02-19 22:05:16.078479
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne dans Google Apps Script consiste\
   \ \xE0 \xE9liminer les guillemets inutiles qui peuvent entourer vos donn\xE9es de\

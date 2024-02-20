@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:14:06.539131-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) cho ph\xE9p ch\u01B0
   ng tr\xECnh c\u1EE7a b\u1EA1n b\xE1o c\xE1o v\u1EC1 l\u1ED7i m\xE0 kh\xF4ng l\xE0\
   m l\u1ED9n x\u1ED9n \u0111\u1EA7u ra chu\u1EA9n (stdout). \u0110\xE2y l\xE0 m\u1ED9\
   t t\xEDn hi\u1EC7u r\xF5 r\xE0ng cho ng\u01B0\u1EDDi\u2026"
-lastmod: 2024-02-18 23:08:50.855037
+lastmod: 2024-02-19 22:04:56.030060
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) cho ph\xE9p ch\u01B0\u01A1\
   ng tr\xECnh c\u1EE7a b\u1EA1n b\xE1o c\xE1o v\u1EC1 l\u1ED7i m\xE0 kh\xF4ng l\xE0\

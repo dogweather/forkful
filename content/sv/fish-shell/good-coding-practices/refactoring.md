@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/fish-shell/refactoring/
 date: 2024-01-26 01:18:06.456649-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan\
   \ att \xE4ndra dess externa beteende f\xF6r att f\xF6rb\xE4ttra icke-funktionella\
   \ attribut.\u2026"
-lastmod: 2024-02-18 23:08:52.215631
+lastmod: 2024-02-19 22:04:57.594692
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan att\
   \ \xE4ndra dess externa beteende f\xF6r att f\xF6rb\xE4ttra icke-funktionella attribut.\u2026"

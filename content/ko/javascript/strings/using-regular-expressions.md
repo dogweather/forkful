@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:23.505515-07:00
@@ -11,7 +9,7 @@ description: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uC815\uADDC\uD45
   \uC0C9, \uCD94\uCD9C, \uD14D\uC2A4\uD2B8 \uC870\uC791\uC5D0 \uC0AC\uC6A9\uD558\uC5EC\
   \ \uAC04\uACB0\uD55C \uCF54\uB4DC\uB85C \uAC15\uB825\uD55C \uBB38\uC790\uC5F4 \uCC98\
   \uB9AC \uC791\uC5C5\uC744 \uC218\uD589\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.797910
+lastmod: 2024-02-19 22:05:14.689125
 model: gpt-4-0125-preview
 summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uC815\uADDC\uD45C\uD604\
   \uC2DD(regex)\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0\uC11C \uBB38\uC790 \uC870\uD569\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/clojure/comparing-two-dates/
 date: 2024-01-20 17:32:50.757932-07:00
 description: "Comparar dos fechas significa verificar c\xF3mo se relacionan cronol\xF3\
   gicamente. Los programadores lo hacen para manejar eventos, periodos de tiempo y\u2026"
-lastmod: 2024-02-18 23:09:09.616528
+lastmod: 2024-02-19 22:05:17.260259
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas significa verificar c\xF3mo se relacionan cronol\xF3\
   gicamente. Los programadores lo hacen para manejar eventos, periodos de tiempo y\u2026"

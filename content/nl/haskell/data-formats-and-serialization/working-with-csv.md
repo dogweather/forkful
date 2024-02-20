@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/haskell/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:18.185528-07:00
 description: "Werken met CSV (Comma-Separated Values), betekent het lezen en schrijven\
   \ van gegevens in tabelvorm. Programmeurs gebruiken CSV vanwege de eenvoud en brede\u2026"
-lastmod: 2024-02-18 23:09:01.923420
+lastmod: 2024-02-19 22:05:09.946139
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values), betekent het lezen en schrijven\
   \ van gegevens in tabelvorm. Programmeurs gebruiken CSV vanwege de eenvoud en brede\u2026"

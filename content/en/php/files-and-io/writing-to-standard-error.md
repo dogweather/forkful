@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/writing-to-standard-error/
 date: 2024-02-03 19:03:36.286422-07:00
 description: "Writing to standard error (stderr) in PHP is about directing error messages\
   \ or diagnostics separately from standard output (stdout), allowing developers\u2026"
-lastmod: 2024-02-18 23:09:11.153429
+lastmod: 2024-02-19 22:05:18.644489
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in PHP is about directing error messages\
   \ or diagnostics separately from standard output (stdout), allowing developers\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:50.761649-07:00
@@ -14,7 +12,7 @@ description: "Go \u092E\u0947\u0902 \u092F\u0939 \u091C\u093E\u0902\u091A\u0928\
   \u0935\u092A\u0942\u0930\u094D\u0923 \u0939\u0948, \u0924\u093E\u0915\u093F \u0928\
   \u093F\u0930\u094D\u0926\u0947\u0936\u093F\u0915\u093E\u0913\u0902 \u0924\u0915\
   \ \u092A\u0939\u0941\u0902\u091A\u0928\u0947\u2026"
-lastmod: 2024-02-18 23:09:02.513382
+lastmod: 2024-02-19 22:05:10.515940
 model: gpt-4-0125-preview
 summary: "Go \u092E\u0947\u0902 \u092F\u0939 \u091C\u093E\u0902\u091A\u0928\u093E\
   \ \u0915\u093F \u0915\u094B\u0908 \u0928\u093F\u0930\u094D\u0926\u0947\u0936\u093F\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/typescript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:18:29.873282-07:00
 description: "Un Read-Eval-Print-Loop (REPL) \xE8 un ambiente di programmazione che\
   \ prende singoli input dall'utente, li esegue e restituisce il risultato all'utente.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.641773
+lastmod: 2024-02-19 22:05:02.238141
 model: gpt-4-0125-preview
 summary: "Un Read-Eval-Print-Loop (REPL) \xE8 un ambiente di programmazione che prende\
   \ singoli input dall'utente, li esegue e restituisce il risultato all'utente. I\u2026"

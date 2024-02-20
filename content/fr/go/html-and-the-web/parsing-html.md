@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:51.113839-07:00
 description: "L'analyse du HTML en Go consiste \xE0 examiner le contenu des fichiers\
   \ HTML pour extraire des donn\xE9es, manipuler la structure, ou convertir le HTML\
   \ dans\u2026"
-lastmod: 2024-02-18 23:09:08.230248
+lastmod: 2024-02-19 22:05:16.038441
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML en Go consiste \xE0 examiner le contenu des fichiers HTML\
   \ pour extraire des donn\xE9es, manipuler la structure, ou convertir le HTML dans\u2026"

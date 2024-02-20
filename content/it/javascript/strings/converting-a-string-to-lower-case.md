@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:29.760361-07:00
 description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabetici in minuscole. I programmatori lo fanno per uniformare i dati,\u2026"
-lastmod: 2024-02-18 23:08:56.240571
+lastmod: 2024-02-19 22:05:02.873410
 model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabetici in minuscole. I programmatori lo fanno per uniformare i dati,\u2026"

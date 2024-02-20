@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/reading-command-line-arguments/
 date: 2024-01-20 17:55:45.927454-07:00
 description: "Leggere gli argomenti della riga di comando permette al tuo programma\
   \ C++ di accettare input quando \xE8 avviato dal terminale o da una shell. I\u2026"
-lastmod: 2024-02-18 23:08:56.187108
+lastmod: 2024-02-19 22:05:02.816936
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando permette al tuo programma C++\
   \ di accettare input quando \xE8 avviato dal terminale o da una shell. I\u2026"

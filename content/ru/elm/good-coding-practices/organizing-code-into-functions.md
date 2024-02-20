@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/elm/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:00:19.927204-07:00
@@ -14,7 +12,7 @@ description: "\u0421\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0442\u044C \u043
   \ \u043D\u0430 Elm \u0447\u0438\u0441\u0442\u044B\u043C, \u043C\u043D\u043E\u0433\
   \u043E\u0440\u0430\u0437\u043E\u0432\u044B\u043C \u0438 \u043B\u0435\u0433\u0447\
   \u0435\u2026"
-lastmod: 2024-02-18 23:08:56.900212
+lastmod: 2024-02-19 22:05:03.860256
 model: gpt-4-0125-preview
 summary: "\u0421\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0442\u044C \u0432\u0435\
   \u0441\u044C \u043A\u043E\u0434 \u0432 \u043E\u0434\u043D\u0443 \u0431\u043E\u043B\

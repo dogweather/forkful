@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:57.465242-07:00
@@ -12,7 +10,7 @@ description: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8005\u8BF4\u8BFB\u53D6-\u6C42
   \u5458\u4F7F\u7528REPL\u8FDB\u884C\u5FEB\u901F\u539F\u578B\u8BBE\u8BA1\u3001\u8C03\
   \u8BD5\u4EE5\u53CA\u4EE5\u4EA4\u4E92\u65B9\u5F0F\u5B66\u4E60\u7F16\u7A0B\u8BED\u8A00\
   \u7684\u8BED\u6CD5\u548C\u884C\u4E3A\u3002"
-lastmod: 2024-02-18 23:08:58.752028
+lastmod: 2024-02-19 22:05:06.280442
 model: gpt-4-0125-preview
 summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8005\u8BF4\u8BFB\u53D6-\u6C42\u503C\
   -\u6253\u5370\u5FAA\u73AF\uFF08REPL\uFF09\uFF0C\u662F\u4E00\u4E2A\u7B80\u5355\u7684\

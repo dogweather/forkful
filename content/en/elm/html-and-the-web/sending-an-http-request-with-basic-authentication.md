@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:30.602993-07:00
 description: "Sending an HTTP request with basic authentication involves attaching\
   \ login credentials (username and password) to the request headers to access protected\u2026"
-lastmod: 2024-02-18 23:09:10.971502
+lastmod: 2024-02-19 22:05:18.477914
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves attaching login\
   \ credentials (username and password) to the request headers to access protected\u2026"

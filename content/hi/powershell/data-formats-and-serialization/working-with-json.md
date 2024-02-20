@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:04.883165-07:00
@@ -11,7 +9,7 @@ description: "PowerShell \u0915\u093E JSON (JavaScript Object Notation) \u0915\u
   \ \u0921\u0947\u091F\u093E \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902\
   \ \u0939\u0948, \u091C\u094B \u0935\u0947\u092C \u092A\u0930 \u0921\u0947\u091F\u093E\
   \ \u0935\u093F\u0928\u093F\u092E\u092F \u0915\u0947 \u0932\u093F\u090F\u2026"
-lastmod: 2024-02-18 23:09:03.777289
+lastmod: 2024-02-19 22:05:11.762274
 model: gpt-4-0125-preview
 summary: "PowerShell \u0915\u093E JSON (JavaScript Object Notation) \u0915\u0947 \u0938\
   \u093E\u0925 \u090F\u0915\u0940\u0915\u0930\u0923 \u092A\u093E\u0930\u094D\u0938\

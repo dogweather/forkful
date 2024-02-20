@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/c-sharp/printing-debug-output/
 date: 2024-01-20 17:52:18.834576-07:00
 description: "Printing debug output \u2013 \u0446\u0435 \u044F\u043A \u0431\u0440\u0430\
   \u0442\u0438 \u043D\u043E\u0442\u0430\u0442\u043A\u0438 \u0432 \u043F\u0440\u043E\
@@ -11,7 +9,7 @@ description: "Printing debug output \u2013 \u0446\u0435 \u044F\u043A \u0431\u044
   \u0438. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438 \u0440\
   \u043E\u0431\u043B\u044F\u0442\u044C \u0446\u0435, \u0449\u043E\u0431 \u043B\u0435\
   \u0433\u0448\u0435\u2026"
-lastmod: 2024-02-18 23:09:00.345915
+lastmod: 2024-02-19 22:05:08.319102
 model: gpt-4-1106-preview
 summary: "Printing debug output \u2013 \u0446\u0435 \u044F\u043A \u0431\u0440\u0430\
   \u0442\u0438 \u043D\u043E\u0442\u0430\u0442\u043A\u0438 \u0432 \u043F\u0440\u043E\

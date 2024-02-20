@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/reading-a-text-file/
 date: 2024-01-20 17:55:18.500741-07:00
 description: "Czytanie pliku tekstowego to odczytywanie danych z pliku zapisanego\
   \ w formacie tekstowym. Programi\u015Bci robi\u0105 to, by np. wczyta\u0107 konfiguracj\u0119\
   , dane\u2026"
-lastmod: 2024-02-18 23:08:49.407076
+lastmod: 2024-02-19 22:04:54.329333
 model: gpt-4-1106-preview
 summary: "Czytanie pliku tekstowego to odczytywanie danych z pliku zapisanego w formacie\
   \ tekstowym. Programi\u015Bci robi\u0105 to, by np. wczyta\u0107 konfiguracj\u0119\

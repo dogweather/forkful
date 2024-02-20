@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/java/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:00:02.624849-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u043E\u0437\u043D
   \u043B\u0435\u043C\u0435\u043D\u0442\u044B. \u041C\u044B \u0434\u0435\u043B\u0430\
   \u0435\u043C \u044D\u0442\u043E \u0434\u043B\u044F \u0432\u0437\u0430\u0438\u043C\
   \u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0441\u2026"
-lastmod: 2024-02-18 23:08:56.838244
+lastmod: 2024-02-19 22:05:03.738351
 model: gpt-4-0125-preview
 summary: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u043E\u0437\u043D\u0430\
   \u0447\u0430\u0435\u0442 \u043F\u0440\u043E\u043D\u0438\u043A\u043D\u043E\u0432\u0435\

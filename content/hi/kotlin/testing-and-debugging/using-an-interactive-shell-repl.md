@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/kotlin/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:27.396414-07:00
 description: "REPL (Read-Eval-Print Loop) \u090F\u0915 \u0938\u0930\u0932, \u0907\u0902\
   \u091F\u0930\u0948\u0915\u094D\u091F\u093F\u0935 \u0915\u0902\u092A\u094D\u092F\u0942\
@@ -11,7 +9,7 @@ description: "REPL (Read-Eval-Print Loop) \u090F\u0915 \u0938\u0930\u0932, \u090
   \u0902\u0917 \u092A\u0930\u0940\u0915\u094D\u0937\u0923, \u0938\u094D\u0928\u093F\
   \u092A\u0947\u091F\u094D\u0938 \u0915\u0940 \u091C\u093E\u0901\u091A, \u092F\u093E\
   \ \u092A\u0942\u0930\u0940\u2026"
-lastmod: 2024-02-18 23:09:03.271846
+lastmod: 2024-02-19 22:05:11.265859
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop) \u090F\u0915 \u0938\u0930\u0932, \u0907\u0902\
   \u091F\u0930\u0948\u0915\u094D\u091F\u093F\u0935 \u0915\u0902\u092A\u094D\u092F\u0942\

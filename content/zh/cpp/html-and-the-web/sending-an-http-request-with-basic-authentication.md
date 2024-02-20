@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/cpp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:31.202502-07:00
 description: "\u53D1\u9001\u5E26\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u8BA9\
   \u4F60\u7684\u5E94\u7528\u53EF\u4EE5\u5B89\u5168\u8BBF\u95EE\u9700\u8981\u7528\u6237\
@@ -8,7 +6,7 @@ description: "\u53D1\u9001\u5E26\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u
   \u4E3A\u4E86\u4FDD\u62A4\u6570\u636E\uFF0C\u907F\u514D\u672A\u6388\u6743\u8BBF\u95EE\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.405198
+lastmod: 2024-02-19 22:05:07.166502
 model: gpt-4-1106-preview
 summary: "\u53D1\u9001\u5E26\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u8BA9\u4F60\
   \u7684\u5E94\u7528\u53EF\u4EE5\u5B89\u5168\u8BBF\u95EE\u9700\u8981\u7528\u6237\u540D\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/downloading-a-web-page/
 date: 2024-01-20 17:44:24.285016-07:00
 description: "Downloading a web page means grabbing the HTML from a given URL to see\
   \ or use locally. Programmers do this for stuff like web scraping, offline reading,\u2026"
-lastmod: 2024-02-18 23:09:11.011504
+lastmod: 2024-02-19 22:05:18.515088
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the HTML from a given URL to see or\
   \ use locally. Programmers do this for stuff like web scraping, offline reading,\u2026"

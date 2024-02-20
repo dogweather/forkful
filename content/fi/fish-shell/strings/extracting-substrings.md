@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/extracting-substrings/
 date: 2024-01-20 17:45:48.115249-07:00
 description: "Mik\xE4 se on ja miksi se on tarpeellista? Merkkijonojen osien irrottaminen\
   \ \u2013 eli substringien erist\xE4minen \u2013 tarkoittaa tietyn merkkijonon aliosan\
   \ kaivamista\u2026"
-lastmod: 2024-02-18 23:09:08.069784
+lastmod: 2024-02-19 22:05:15.875902
 model: gpt-4-1106-preview
 summary: "Mik\xE4 se on ja miksi se on tarpeellista? Merkkijonojen osien irrottaminen\
   \ \u2013 eli substringien erist\xE4minen \u2013 tarkoittaa tietyn merkkijonon aliosan\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/kotlin/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:19.244408-07:00
 description: "Parser du HTML signifie diss\xE9quer le balisage d'une page web en quelque\
   \ chose qu'un programme peut comprendre et manipuler. Les programmeurs analysent\
   \ le\u2026"
-lastmod: 2024-02-18 23:09:08.778465
+lastmod: 2024-02-19 22:05:16.483063
 model: gpt-4-0125-preview
 summary: "Parser du HTML signifie diss\xE9quer le balisage d'une page web en quelque\
   \ chose qu'un programme peut comprendre et manipuler. Les programmeurs analysent\

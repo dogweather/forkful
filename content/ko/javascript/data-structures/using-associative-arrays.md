@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:32.798122-07:00
@@ -11,7 +9,7 @@ description: "\uC5F0\uAD00 \uBC30\uC5F4 \uB610\uB294 JavaScript\uC5D0\uC11C \uB3
   \uC5D0 \uC811\uADFC\uD558\uAE38 \uC6D0\uD560 \uB54C \uC720\uC6A9\uD558\uBA70, \uC774\
   \uB294 \uCF54\uB4DC\uB97C \uB354 \uC77D\uAE30 \uC27D\uACE0 \uC720\uC5F0\uD558\uAC8C\
   \ \uB9CC\uB4ED\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.801979
+lastmod: 2024-02-19 22:05:14.693250
 model: gpt-4-0125-preview
 summary: "\uC5F0\uAD00 \uBC30\uC5F4 \uB610\uB294 JavaScript\uC5D0\uC11C \uB354 \uC815\
   \uD655\uD558\uAC8C \uC54C\uB824\uC9C4 \uAC1D\uCCB4\uB97C \uC0AC\uC6A9\uD558\uBA74\

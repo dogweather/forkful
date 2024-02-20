@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:45.936174-07:00
@@ -9,7 +7,7 @@ description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong c\xE1
   \ n\xE0y b\u1EB1ng t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB kh\xE1c. L\u1EADp tr\xECnh\
   \ vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, s\u1EED\
   a l\u1ED7i,\u2026"
-lastmod: 2024-02-18 23:08:50.914936
+lastmod: 2024-02-19 22:04:56.105857
 model: gpt-4-0125-preview
 summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong c\xE1c t\u1EC7\
   p: n\xF3 l\xE0 ho\xE1n \u0111\u1ED5i t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB n\xE0y b\u1EB1\

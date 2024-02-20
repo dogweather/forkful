@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/arduino/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:08.375240-07:00
 description: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely Arduinossa k\xE4\
   sitt\xE4\xE4 lukemisen ja kirjoittamisen CSV-tiedostoihin, joita yleisesti s\xE4\
   ilytet\xE4\xE4n SD-\u2026"
-lastmod: 2024-02-18 23:09:07.923594
+lastmod: 2024-02-19 22:05:15.741898
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely Arduinossa k\xE4\
   sitt\xE4\xE4 lukemisen ja kirjoittamisen CSV-tiedostoihin, joita yleisesti s\xE4\

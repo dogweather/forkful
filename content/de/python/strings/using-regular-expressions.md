@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/python/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:08.789897-07:00
 description: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden,\
   \ um Kombinationen von Zeichen in Zeichenketten zu finden. Programmierer nutzen\
   \ sie f\xFCr die\u2026"
-lastmod: 2024-02-18 23:09:04.451613
+lastmod: 2024-02-19 22:05:12.416424
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden, um Kombinationen\
   \ von Zeichen in Zeichenketten zu finden. Programmierer nutzen sie f\xFCr die\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/handling-errors/
 date: 2024-01-26 00:37:07.489429-07:00
 description: "La gestion des erreurs dans vos programmes intercepte les impr\xE9vus\
   \ qui tentent de vous mettre des b\xE2tons dans les roues. Vous le faites pour \xE9\
   viter \xE0\u2026"
-lastmod: 2024-02-18 23:09:09.122631
+lastmod: 2024-02-19 22:05:16.799511
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs dans vos programmes intercepte les impr\xE9vus qui\
   \ tentent de vous mettre des b\xE2tons dans les roues. Vous le faites pour \xE9\

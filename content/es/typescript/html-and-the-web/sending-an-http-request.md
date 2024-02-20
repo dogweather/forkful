@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/typescript/sending-an-http-request/
 date: 2024-01-20 18:00:33.811078-07:00
 description: "Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un\
   \ servidor web. Lo hacemos para interactuar con APIs, obtener recursos, enviar\u2026"
-lastmod: 2024-02-18 23:09:09.699555
+lastmod: 2024-02-19 22:05:17.327646
 model: gpt-4-1106-preview
 summary: "Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un servidor\
   \ web. Lo hacemos para interactuar con APIs, obtener recursos, enviar\u2026"

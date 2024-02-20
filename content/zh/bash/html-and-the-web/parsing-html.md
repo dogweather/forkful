@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/bash/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:28.325215-07:00
@@ -8,7 +6,7 @@ description: "\u89E3\u6790 HTML \u610F\u5473\u7740\u4ED4\u7EC6\u68C0\u67E5 HTML 
   \u4EF6\u7684\u7ED3\u6784\u548C\u5185\u5BB9\uFF0C\u4EE5\u63D0\u53D6\u4FE1\u606F\u3002\
   \u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u8BBF\u95EE\u6570\u636E\u3001\
   \u64CD\u4F5C\u5185\u5BB9\u6216\u6293\u53D6\u7F51\u7AD9\u3002"
-lastmod: 2024-02-18 23:08:59.290598
+lastmod: 2024-02-19 22:05:07.008425
 model: gpt-4-0125-preview
 summary: "\u89E3\u6790 HTML \u610F\u5473\u7740\u4ED4\u7EC6\u68C0\u67E5 HTML \u6587\
   \u4EF6\u7684\u7ED3\u6784\u548C\u5185\u5BB9\uFF0C\u4EE5\u63D0\u53D6\u4FE1\u606F\u3002\

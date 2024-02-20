@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/python/interpolating-a-string/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:23:50.789079-07:00
 description: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
   \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"
-lastmod: 2024-02-18 23:09:09.541213
+lastmod: 2024-02-19 22:05:17.192535
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
   \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"

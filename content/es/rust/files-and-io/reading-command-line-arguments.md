@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/reading-command-line-arguments/
 date: 2024-01-20 17:56:44.858783-07:00
 description: "Leer argumentos de la l\xEDnea de comandos es capturar los datos que\
   \ un usuario introduce al ejecutar un programa desde la terminal. Los programadores\
   \ usan\u2026"
-lastmod: 2024-02-18 23:09:09.765710
+lastmod: 2024-02-19 22:05:17.387672
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos es capturar los datos que un\
   \ usuario introduce al ejecutar un programa desde la terminal. Los programadores\

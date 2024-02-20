@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/working-with-xml/
 date: 2024-01-26 04:30:19.645924-07:00
 description: "\xC5 jobbe med XML inneb\xE6rer parsing, transformasjon og generering\
   \ av XML-dokumenter i Elm. Det gj\xF8res for \xE5 samhandle med mange webtjenester\
   \ og eldre\u2026"
-lastmod: 2024-02-18 23:08:53.834326
+lastmod: 2024-02-19 22:04:59.979565
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, transformasjon og generering av\
   \ XML-dokumenter i Elm. Det gj\xF8res for \xE5 samhandle med mange webtjenester\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:24.041478-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma-Separated Val
   \ trong Google Apps Script bao g\u1ED3m vi\u1EC7c \u0111\u1ECDc, s\u1EEDa \u0111\
   \u1ED5i v\xE0 ghi c\xE1c t\u1EC7p v\u0103n b\u1EA3n thu\u1EA7n t\xFAy, n\u01A1i\
   \ m\u1ED7i d\xF2ng \u0111\u1EA1i\u2026"
-lastmod: 2024-02-18 23:08:50.245746
+lastmod: 2024-02-19 22:04:55.262098
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma-Separated Values) trong\
   \ Google Apps Script bao g\u1ED3m vi\u1EC7c \u0111\u1ECDc, s\u1EEDa \u0111\u1ED5\

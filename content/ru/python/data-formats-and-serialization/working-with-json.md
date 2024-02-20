@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/python/working-with-json/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:32.042215-07:00
@@ -13,7 +11,7 @@ description: "JSON (JavaScript Object Notation) \u044F\u0432\u043B\u044F\u0435\u
   \u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442\
   \ JSON \u0434\u043B\u044F \u0443\u0434\u043E\u0431\u043D\u043E\u0439 \u043F\u0435\
   \u0440\u0435\u0434\u0430\u0447\u0438\u2026"
-lastmod: 2024-02-18 23:08:56.558379
+lastmod: 2024-02-19 22:05:03.293040
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \u044F\u0432\u043B\u044F\u0435\u0442\u0441\
   \u044F \u043F\u043E\u0432\u0441\u0435\u043C\u0435\u0441\u0442\u043D\u043E \u0438\

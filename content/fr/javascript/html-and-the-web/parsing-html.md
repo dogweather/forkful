@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 03:00:43.691521-07:00
 description: "L'analyse (parsing) HTML consiste \xE0 extraire des donn\xE9es des documents\
   \ HTML. Les programmeurs le font pour interagir avec ou manipuler le contenu web,\u2026"
-lastmod: 2024-02-18 23:09:09.253496
+lastmod: 2024-02-19 22:05:16.918393
 model: gpt-4-0125-preview
 summary: "L'analyse (parsing) HTML consiste \xE0 extraire des donn\xE9es des documents\
   \ HTML. Les programmeurs le font pour interagir avec ou manipuler le contenu web,\u2026"

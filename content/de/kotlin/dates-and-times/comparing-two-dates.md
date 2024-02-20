@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/kotlin/comparing-two-dates/
 date: 2024-01-20 17:33:16.538684-07:00
 description: "Beim Vergleichen zweier Daten geht es darum, zu ermitteln, ob ein Datum\
   \ vor, nach oder am gleichen Tag wie ein anderes liegt. Programmierer nutzen diesen\u2026"
-lastmod: 2024-02-18 23:09:04.839711
+lastmod: 2024-02-19 22:05:12.785085
 model: gpt-4-1106-preview
 summary: "Beim Vergleichen zweier Daten geht es darum, zu ermitteln, ob ein Datum\
   \ vor, nach oder am gleichen Tag wie ein anderes liegt. Programmierer nutzen diesen\u2026"

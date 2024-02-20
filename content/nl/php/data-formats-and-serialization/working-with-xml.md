@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:31.716754-07:00
 description: "XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren\
   \ van gegevens. Programmeurs werken met XML om interoperabiliteit tussen\u2026"
-lastmod: 2024-02-18 23:09:01.971807
+lastmod: 2024-02-19 22:05:09.993272
 model: gpt-4-0125-preview
 summary: "XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren\
   \ van gegevens. Programmeurs werken met XML om interoperabiliteit tussen\u2026"

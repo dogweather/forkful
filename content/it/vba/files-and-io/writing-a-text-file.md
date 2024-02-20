@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:10.670784-07:00
 description: "Scrivere un file di testo in Visual Basic for Applications (VBA) implica\
   \ la creazione, modifica o aggiunta di dati testuali ai file, un compito\u2026"
-lastmod: 2024-02-18 23:08:55.742406
+lastmod: 2024-02-19 22:05:02.344864
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Visual Basic for Applications (VBA) implica\
   \ la creazione, modifica o aggiunta di dati testuali ai file, un compito\u2026"

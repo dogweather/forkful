@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/comparing-two-dates/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:38.979771-07:00
 description: "\xC5 sammenligne to datoer i C inneb\xE6rer \xE5 bestemme det kronologiske\
   \ forholdet mellom dem - om \xE9n dato kommer f\xF8r den andre eller om de er like.\
   \ Denne evnen\u2026"
-lastmod: 2024-02-18 23:08:54.407018
+lastmod: 2024-02-19 22:05:00.566745
 model: gpt-4-0125-preview
 summary: "\xC5 sammenligne to datoer i C inneb\xE6rer \xE5 bestemme det kronologiske\
   \ forholdet mellom dem - om \xE9n dato kommer f\xF8r den andre eller om de er like.\

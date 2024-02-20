@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/reading-command-line-arguments/
 date: 2024-01-20 17:56:23.958791-07:00
 description: "Command line arguments \u0935\u094B \u091A\u0940\u091C\u0947\u0902 \u0939\
   \u094B\u0924\u0940 \u0939\u0948\u0902 \u091C\u094B \u0939\u092E \u0905\u092A\u0928\
@@ -10,7 +8,7 @@ description: "Command line arguments \u0935\u094B \u091A\u0940\u091C\u0947\u0902
   \u094D\u0939\u0947\u0902 \u0907\u0938\u0932\u093F\u090F \u092A\u0922\u093C\u0924\
   \u0947 \u0939\u0948\u0902 \u0924\u093E\u0915\u093F \u0909\u092A\u092F\u094B\u0917\
   \u0915\u0930\u094D\u0924\u093E\u2026"
-lastmod: 2024-02-18 23:09:04.071617
+lastmod: 2024-02-19 22:05:12.053085
 model: gpt-4-1106-preview
 summary: "Command line arguments \u0935\u094B \u091A\u0940\u091C\u0947\u0902 \u0939\
   \u094B\u0924\u0940 \u0939\u0948\u0902 \u091C\u094B \u0939\u092E \u0905\u092A\u0928\

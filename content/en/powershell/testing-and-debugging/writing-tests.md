@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/writing-tests/
 date: 2024-02-03 19:03:32.163002-07:00
 description: "Writing tests in PowerShell involves creating scripts that automatically\
   \ validate the functionality of your PowerShell code, ensuring it behaves as\u2026"
-lastmod: 2024-02-18 23:09:11.277548
+lastmod: 2024-02-19 22:05:18.750199
 model: gpt-4-0125-preview
 summary: "Writing tests in PowerShell involves creating scripts that automatically\
   \ validate the functionality of your PowerShell code, ensuring it behaves as\u2026"

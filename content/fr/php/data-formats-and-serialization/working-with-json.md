@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/php/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:35.077059-07:00
 description: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9change\
   \ de donn\xE9es qui est facile \xE0 lire et \xE0 \xE9crire pour les humains, et\
   \ facile \xE0 analyser et\u2026"
-lastmod: 2024-02-18 23:09:08.946369
+lastmod: 2024-02-19 22:05:16.636336
 model: gpt-4-0125-preview
 summary: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9change\
   \ de donn\xE9es qui est facile \xE0 lire et \xE0 \xE9crire pour les humains, et\

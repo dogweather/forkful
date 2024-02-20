@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:53.828008-07:00
 description: "Tests schrijven betekent het cre\xEBren van code die controleert of\
   \ je hoofdcode werkt zoals verwacht. Programmeurs testen om bugs vroeg op te sporen,\u2026"
-lastmod: 2024-02-18 23:09:01.763387
+lastmod: 2024-02-19 22:05:09.782084
 model: gpt-4-0125-preview
 summary: "Tests schrijven betekent het cre\xEBren van code die controleert of je hoofdcode\
   \ werkt zoals verwacht. Programmeurs testen om bugs vroeg op te sporen,\u2026"

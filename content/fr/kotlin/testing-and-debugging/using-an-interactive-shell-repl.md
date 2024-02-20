@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/kotlin/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:48.350784-07:00
 description: "Un REPL (Read-Eval-Print Loop, soit Boucle de Lire-\xC9valuer-Imprimer)\
   \ est un environnement de programmation informatique simple et interactif. Les\u2026"
-lastmod: 2024-02-18 23:09:08.782594
+lastmod: 2024-02-19 22:05:16.486787
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print Loop, soit Boucle de Lire-\xC9valuer-Imprimer)\
   \ est un environnement de programmation informatique simple et interactif. Les\u2026"

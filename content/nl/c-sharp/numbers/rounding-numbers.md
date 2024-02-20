@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c-sharp/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:49.682790-07:00
 description: "Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde\
   \ gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere\u2026"
-lastmod: 2024-02-18 23:09:01.846640
+lastmod: 2024-02-19 22:05:09.863683
 model: gpt-4-0125-preview
 summary: "Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde\
   \ gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere\u2026"

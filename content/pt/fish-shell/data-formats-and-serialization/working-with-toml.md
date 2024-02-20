@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/fish-shell/working-with-toml/
 date: 2024-01-26 04:21:36.353182-07:00
 description: "TOML \xE9 um formato de arquivo de configura\xE7\xE3o, f\xE1cil de ler\
   \ e escrever para humanos, e f\xE1cil de analisar e gerar para m\xE1quinas. Programadores\
   \ trabalham com\u2026"
-lastmod: 2024-02-18 23:08:58.598900
+lastmod: 2024-02-19 22:05:06.098096
 model: gpt-4-0125-preview
 summary: "TOML \xE9 um formato de arquivo de configura\xE7\xE3o, f\xE1cil de ler e\
   \ escrever para humanos, e f\xE1cil de analisar e gerar para m\xE1quinas. Programadores\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:30.784809-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
   \ o processo de acessar recursos protegidos em um servidor, fornecendo um nome de\
   \ usu\xE1rio e senha.\u2026"
-lastmod: 2024-02-18 23:08:58.060223
+lastmod: 2024-02-19 22:05:05.538224
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 o\
   \ processo de acessar recursos protegidos em um servidor, fornecendo um nome de\

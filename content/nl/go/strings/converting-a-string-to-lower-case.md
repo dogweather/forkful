@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/go/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:54.159451-07:00
 description: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
   \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"
-lastmod: 2024-02-18 23:09:01.323646
+lastmod: 2024-02-19 22:05:09.357724
 model: gpt-4-0125-preview
 summary: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
   \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"

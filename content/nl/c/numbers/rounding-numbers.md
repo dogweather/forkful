@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:38.470018-07:00
 description: "Getallen afronden is het proces waarbij de cijfers van een nummer worden\
   \ aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het\u2026"
-lastmod: 2024-02-18 23:09:02.366955
+lastmod: 2024-02-19 22:05:10.373925
 model: gpt-4-0125-preview
 summary: "Getallen afronden is het proces waarbij de cijfers van een nummer worden\
   \ aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het\u2026"

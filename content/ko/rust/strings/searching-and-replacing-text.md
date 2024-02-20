@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/searching-and-replacing-text/
 date: 2024-01-20 17:58:57.845403-07:00
 description: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uBB38\uC790\
   \uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC744 \uCC3E\uACE0 \uC774\uB97C \uB2E4\
@@ -10,7 +8,7 @@ description: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uBB38\u
   \uC790 \uC785\uB825 \uCC98\uB9AC \uB4F1\uC744 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.861854
+lastmod: 2024-02-19 22:05:13.797633
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uBB38\uC790\uC5F4\
   \uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC744 \uCC3E\uACE0 \uC774\uB97C \uB2E4\uB978\

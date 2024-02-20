@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/kotlin/refactoring/
 date: 2024-01-26 01:43:01.513441-07:00
 description: "Le refactoring est le processus de modification du code existant pour\
   \ am\xE9liorer sa structure, sa lisibilit\xE9 et sa performance sans changer son\u2026"
-lastmod: 2024-02-18 23:09:08.790197
+lastmod: 2024-02-19 22:05:16.493604
 model: gpt-4-0125-preview
 summary: "Le refactoring est le processus de modification du code existant pour am\xE9\
   liorer sa structure, sa lisibilit\xE9 et sa performance sans changer son\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/php/organizing-code-into-functions/
 date: 2024-01-26 01:11:40.201558-07:00
 description: "Att organisera kod i funktioner handlar om att dela upp din kod i \xE5\
   teranv\xE4ndbara block med definierade syften. Vi g\xF6r det f\xF6r att h\xE5lla\
   \ saker och ting\u2026"
-lastmod: 2024-02-18 23:08:51.883633
+lastmod: 2024-02-19 22:04:57.226284
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att dela upp din kod i \xE5teranv\xE4\
   ndbara block med definierade syften. Vi g\xF6r det f\xF6r att h\xE5lla saker och\

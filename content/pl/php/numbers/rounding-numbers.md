@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/rounding-numbers/
 date: 2024-01-26 03:46:10.530588-07:00
 description: "Zaokr\u0105glanie liczb oznacza ucinanie miejsc dziesi\u0119tnych do\
   \ okre\u015Blonej precyzji, cz\u0119sto do liczb ca\u0142kowitych. Programi\u015B\
   ci zaokr\u0105glaj\u0105, aby upraszcza\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.689382
+lastmod: 2024-02-19 22:04:54.626042
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza ucinanie miejsc dziesi\u0119tnych do okre\u015B\
   lonej precyzji, cz\u0119sto do liczb ca\u0142kowitych. Programi\u015Bci zaokr\u0105\

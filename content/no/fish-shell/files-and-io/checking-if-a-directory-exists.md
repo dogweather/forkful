@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/fish-shell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:21.172837-07:00
 description: "\xC5 sjekke om en katalog eksisterer i Fish Shell gj\xF8r det mulig\
   \ for skript \xE5 ta beslutninger basert p\xE5 tilstedev\xE6relsen eller frav\xE6\
   ret av katalogstrukturer,\u2026"
-lastmod: 2024-02-18 23:08:54.365585
+lastmod: 2024-02-19 22:05:00.521517
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer i Fish Shell gj\xF8r det mulig for\
   \ skript \xE5 ta beslutninger basert p\xE5 tilstedev\xE6relsen eller frav\xE6ret\

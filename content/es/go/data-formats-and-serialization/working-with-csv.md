@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:36.148989-07:00
 description: "El formato de Valores Separados por Comas (CSV) es omnipresente para\
   \ el intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n\
   \ con la\u2026"
-lastmod: 2024-02-18 23:09:09.481903
+lastmod: 2024-02-19 22:05:17.139225
 model: gpt-4-0125-preview
 summary: "El formato de Valores Separados por Comas (CSV) es omnipresente para el\
   \ intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n con\

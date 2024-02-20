@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/typescript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:57.944350-07:00
 description: "YAML, et data serialiseringsspr\xE5k designet for \xE5 v\xE6re brukervennlig,\
   \ brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring.\u2026"
-lastmod: 2024-02-18 23:08:53.664365
+lastmod: 2024-02-19 22:04:59.795608
 model: gpt-4-0125-preview
 summary: "YAML, et data serialiseringsspr\xE5k designet for \xE5 v\xE6re brukervennlig,\
   \ brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring.\u2026"

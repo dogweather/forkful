@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/java/working-with-toml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:53.031415-07:00
@@ -12,7 +10,7 @@ description: "TOML \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442 \"Tom's Obvi
   \u044B\u0445, \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u044B\
   \u0439 \u0434\u043B\u044F \u0444\u0430\u0439\u043B\u043E\u0432 \u043A\u043E\u043D\
   \u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0438.\u2026"
-lastmod: 2024-02-18 23:08:56.870640
+lastmod: 2024-02-19 22:05:03.808475
 model: gpt-4-0125-preview
 summary: "TOML \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442 \"Tom's Obvious, Minimal\
   \ Language\" (\u0422\u043E\u043C\u043E\u0432 \u042F\u0432\u043D\u044B\u0439, \u041C\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/java/interpolating-a-string/
 date: 2024-01-20 17:51:01.158472-07:00
 description: "String-Interpolation erm\xF6glicht es, Variablenwerte nahtlos in Strings\
   \ einzubetten. Wir nutzen es, um dynamischen Text leichter lesbar und wartbar zu\u2026"
-lastmod: 2024-02-18 23:09:04.722245
+lastmod: 2024-02-19 22:05:12.674184
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablenwerte nahtlos in Strings\
   \ einzubetten. Wir nutzen es, um dynamischen Text leichter lesbar und wartbar zu\u2026"

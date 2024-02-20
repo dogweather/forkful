@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/cpp/creating-a-temporary-file/
 date: 2024-01-20 17:39:46.700926-07:00
 description: "Ein tempor\xE4res File ist eine kurzlebige Datei, die w\xE4hrend der\
   \ Ausf\xFChrung eines Programms erstellt und oft danach gel\xF6scht wird. Programmierer\
   \ nutzen sie\u2026"
-lastmod: 2024-02-18 23:09:05.209374
+lastmod: 2024-02-19 22:05:13.138314
 model: gpt-4-1106-preview
 summary: "Ein tempor\xE4res File ist eine kurzlebige Datei, die w\xE4hrend der Ausf\xFC\
   hrung eines Programms erstellt und oft danach gel\xF6scht wird. Programmierer nutzen\

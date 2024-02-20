@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/clojure/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:28.300526-07:00
@@ -13,7 +11,7 @@ description: "\uD074\uB85C\uC800\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC8
   \ \uC218 \uC788\uB294 \uB514\uB809\uD1A0\uB9AC\uC5D0\uC11C \uC77D\uAC70\uB098 \uC4F0\
   \uB294 \uB3D9\uC548 \uC624\uB958\uB97C \uBC29\uC9C0\uD558\uC5EC, \uB85C\uBC84\uC2A4\
   \uD2B8\uD558\uACE0 \uC624\uB958 \uC5C6\uB294 \uCF54\uB4DC \uC2E4\uD589\uC744\u2026"
-lastmod: 2024-02-18 23:09:05.712431
+lastmod: 2024-02-19 22:05:13.624680
 model: gpt-4-0125-preview
 summary: "\uD074\uB85C\uC800\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC\
   \ \uC5EC\uBD80\uB97C \uD655\uC778\uD558\uB294 \uAC83\uC740 \uD074\uB85C\uC800 \uC560\

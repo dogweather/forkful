@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/haskell/using-a-debugger/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:40.091457-07:00
@@ -15,7 +13,7 @@ description: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D
   \u0438 \u0438 \u043C\u0430\u043D\u0438\u043F\u0443\u043B\u0438\u0440\u043E\u0432\
   \u0430\u043D\u0438\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043E\u0439\
   \ \u0432\u2026"
-lastmod: 2024-02-18 23:08:57.054508
+lastmod: 2024-02-19 22:05:04.099755
 model: gpt-4-0125-preview
 summary: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\
   \u0435 \u043E\u0442\u043B\u0430\u0434\u0447\u0438\u043A\u0430 \u043E\u0437\u043D\

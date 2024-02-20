@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/c-sharp/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:00.177256-07:00
 description: "L'analisi dell'HTML nella programmazione consiste nell'analizzare la\
   \ struttura di un documento HTML, permettendo di estrarre, manipolare e interagire\
   \ con\u2026"
-lastmod: 2024-02-18 23:08:55.885606
+lastmod: 2024-02-19 22:05:02.495316
 model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML nella programmazione consiste nell'analizzare la struttura\
   \ di un documento HTML, permettendo di estrarre, manipolare e interagire con\u2026"

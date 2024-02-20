@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/c-sharp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:15.208482-07:00
 description: "Converter uma data em uma string transforma o objeto `DateTime` em texto\
   \ leg\xEDvel. Fazemos isso para exibir datas de forma adequada em interfaces de\u2026"
-lastmod: 2024-02-18 23:08:58.168664
+lastmod: 2024-02-19 22:05:05.638381
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string transforma o objeto `DateTime` em texto\
   \ leg\xEDvel. Fazemos isso para exibir datas de forma adequada em interfaces de\u2026"

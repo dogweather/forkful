@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/concatenating-strings/
 date: 2024-01-20 17:35:42.391730-07:00
 description: "Combining strings, or concatenation, is like making a train of words.\
   \ We do it to stitch together text values, creating phrases, sentences, or anything\u2026"
-lastmod: 2024-02-18 23:09:11.263863
+lastmod: 2024-02-19 22:05:18.737647
 model: gpt-4-1106-preview
 summary: "Combining strings, or concatenation, is like making a train of words. We\
   \ do it to stitch together text values, creating phrases, sentences, or anything\u2026"

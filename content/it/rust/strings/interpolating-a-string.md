@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/interpolating-a-string/
 date: 2024-01-20 17:51:37.875780-07:00
 description: "L'interpolazione di stringhe permette di iniettare dei valori direttamente\
   \ all'interno di una stringa. I programmatori la usano per concatenare variabili,\u2026"
-lastmod: 2024-02-18 23:08:55.667514
+lastmod: 2024-02-19 22:05:02.265122
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe permette di iniettare dei valori direttamente\
   \ all'interno di una stringa. I programmatori la usano per concatenare variabili,\u2026"

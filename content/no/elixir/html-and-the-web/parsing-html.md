@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/elixir/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:25.279462-07:00
 description: "Parsing av HTML i Elixir handler om \xE5 trekke ut informasjon fra HTML-dokumenter.\
   \ Programmerere gj\xF8r dette for \xE5 programmelt interagere med nettsider,\u2026"
-lastmod: 2024-02-18 23:08:53.602817
+lastmod: 2024-02-19 22:04:59.728395
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i Elixir handler om \xE5 trekke ut informasjon fra HTML-dokumenter.\
   \ Programmerere gj\xF8r dette for \xE5 programmelt interagere med nettsider,\u2026"

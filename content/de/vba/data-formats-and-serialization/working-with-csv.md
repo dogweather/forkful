@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/vba/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:05.516150-07:00
 description: "Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas getrennte\
   \ Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei\u2026"
-lastmod: 2024-02-18 23:09:04.715405
+lastmod: 2024-02-19 22:05:12.667527
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas getrennte\
   \ Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei\u2026"

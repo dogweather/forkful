@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/generating-random-numbers/
 date: 2024-01-27 20:35:05.004318-07:00
 description: "Generowanie losowych liczb w PHP dotyczy produkcji nieprzewidywalnych\
   \ warto\u015Bci w okre\u015Blonym zakresie, co jest niezb\u0119dne do zada\u0144\
   \ takich jak tworzenie\u2026"
-lastmod: 2024-02-18 23:08:49.690334
+lastmod: 2024-02-19 22:04:54.627012
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w PHP dotyczy produkcji nieprzewidywalnych warto\u015B\
   ci w okre\u015Blonym zakresie, co jest niezb\u0119dne do zada\u0144 takich jak tworzenie\u2026"

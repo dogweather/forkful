@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:37.760770-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera text\
   \ som representerar ett datum till ett datumobjekt, vilket m\xF6jligg\xF6r f\xF6\
   r programmerare att\u2026"
-lastmod: 2024-02-18 23:08:51.388875
+lastmod: 2024-02-19 22:04:56.687250
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera text\
   \ som representerar ett datum till ett datumobjekt, vilket m\xF6jligg\xF6r f\xF6\

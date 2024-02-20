@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:56.546141-07:00
 description: "Deleting characters matching a pattern means removing specific sequences\
   \ of characters from a string based on a defined pattern, like digits or\u2026"
-lastmod: 2024-02-18 23:09:11.380891
+lastmod: 2024-02-19 22:05:18.843645
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern means removing specific sequences\
   \ of characters from a string based on a defined pattern, like digits or\u2026"

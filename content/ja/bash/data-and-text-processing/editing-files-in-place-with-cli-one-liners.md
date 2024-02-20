@@ -1,9 +1,7 @@
 ---
-aliases:
-- /ja/bash/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:21:51.519868-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.070426
+lastmod: 2024-02-19 22:05:01.492766
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "CLI\u30EF\u30F3\u30E9\u30A4\u30CA\u30FC\u3067\u306E\u30D5\u30A1\u30A4\u30EB\

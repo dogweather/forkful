@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/go/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:09.841480-07:00
 description: "Eine interaktive Shell oder eine Read-Eval-Print-Schleife (REPL) erm\xF6\
   glicht es Ihnen, in Echtzeit mit Go-Code zu experimentieren, Befehle auszuf\xFC\
   hren und\u2026"
-lastmod: 2024-02-18 23:09:04.365546
+lastmod: 2024-02-19 22:05:12.334745
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder eine Read-Eval-Print-Schleife (REPL) erm\xF6\
   glicht es Ihnen, in Echtzeit mit Go-Code zu experimentieren, Befehle auszuf\xFC\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/python/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:04.501287-07:00
@@ -12,7 +10,7 @@ description: "\u4F7F\u7528 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u
   \u95F4\u4EA4\u6362\u548C\u5B58\u50A8\u6570\u636E\uFF0C\u4F7F\u7528\u4E00\u79CD\u7B80\
   \u5355\u7684\u57FA\u4E8E\u6587\u672C\u7684\u683C\u5F0F\uFF0C\u5F97\u5230\u4E86\u5E7F\
   \u6CDB\u652F\u6301\u3002"
-lastmod: 2024-02-18 23:08:58.810676
+lastmod: 2024-02-19 22:05:06.361786
 model: gpt-4-0125-preview
 summary: "\u4F7F\u7528 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u53CA\u4ECE\
   \ CSV \u6587\u4EF6\u8BFB\u53D6\u6570\u636E\u548C\u5411 CSV \u6587\u4EF6\u5199\u5165\

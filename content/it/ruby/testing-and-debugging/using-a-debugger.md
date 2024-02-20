@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/ruby/using-a-debugger/
 date: 2024-01-26 04:09:47.739381-07:00
 description: "Usare un debugger in Ruby fornisce ai programmatori un superpotere:\
   \ mettere in pausa il loro codice, ispezionare le variabili e passare attraverso\
   \ il loro\u2026"
-lastmod: 2024-02-18 23:08:56.387347
+lastmod: 2024-02-19 22:05:03.027948
 model: gpt-4-0125-preview
 summary: "Usare un debugger in Ruby fornisce ai programmatori un superpotere: mettere\
   \ in pausa il loro codice, ispezionare le variabili e passare attraverso il loro\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/javascript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:10.631344-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in JavaScript sind Muster, die verwendet\
   \ werden, um Zeichenkombinationen in Zeichenketten abzugleichen. Programmierer nutzen\u2026"
-lastmod: 2024-02-18 23:09:05.268124
+lastmod: 2024-02-19 22:05:13.193348
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in JavaScript sind Muster, die verwendet\
   \ werden, um Zeichenkombinationen in Zeichenketten abzugleichen. Programmierer nutzen\u2026"

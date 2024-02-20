@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:36.734807-07:00
 description: "Calculer une date dans le futur ou le pass\xE9, c'est ajuster une date\
   \ donn\xE9e en y ajoutant ou soustrayant des jours, des mois, etc. Les programmeurs\
   \ le font\u2026"
-lastmod: 2024-02-18 23:09:08.449442
+lastmod: 2024-02-19 22:05:16.237267
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est ajuster une date donn\xE9\
   e en y ajoutant ou soustrayant des jours, des mois, etc. Les programmeurs le font\u2026"

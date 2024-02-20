@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/working-with-complex-numbers/
 date: 2024-01-25 02:59:36.321582-07:00
 description: "Complex numbers have a real part and an imaginary part and are crucial\
   \ in various fields such as engineering, physics, and computer graphics. Programmers\u2026"
-lastmod: 2024-02-18 23:09:10.842588
+lastmod: 2024-02-19 22:05:18.360004
 model: gpt-4-1106-preview
 summary: "Complex numbers have a real part and an imaginary part and are crucial in\
   \ various fields such as engineering, physics, and computer graphics. Programmers\u2026"

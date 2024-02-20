@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:44.282636-07:00
@@ -13,7 +11,7 @@ description: "Go \u092E\u0947\u0902 \u092C\u0947\u0938\u093F\u0915 \u092A\u094D\
   \u094D\u092F \u0939\u094B\u0924\u093E \u0939\u0948 \u091C\u093F\u0938\u092E\u0947\
   \u0902 \u090F\u0915 \u0909\u092A\u092F\u094B\u0917\u0915\u0930\u094D\u0924\u093E\
   \ \u0928\u093E\u092E \u0914\u0930 \u092A\u093E\u0938\u0935\u0930\u094D\u0921\u2026"
-lastmod: 2024-02-18 23:09:02.484244
+lastmod: 2024-02-19 22:05:10.487142
 model: gpt-4-0125-preview
 summary: "Go \u092E\u0947\u0902 \u092C\u0947\u0938\u093F\u0915 \u092A\u094D\u0930\u092E\
   \u093E\u0923\u0940\u0915\u0930\u0923 \u0915\u0947 \u0938\u093E\u0925 HTTP \u0905\

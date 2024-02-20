@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/logging/
 date: 2024-01-25 02:04:12.450554-07:00
 description: "Logging is essentially jotting down what your application is up to\u2014\
   a diary, if you will, but for code. Programmers do it to keep track of the nitty-\u2026"
-lastmod: 2024-02-18 23:09:11.487787
+lastmod: 2024-02-19 22:05:18.940742
 model: gpt-4-1106-preview
 summary: "Logging is essentially jotting down what your application is up to\u2014\
   a diary, if you will, but for code. Programmers do it to keep track of the nitty-\u2026"

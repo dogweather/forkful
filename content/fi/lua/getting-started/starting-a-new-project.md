@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/lua/starting-a-new-project/
 date: 2024-01-20 18:03:50.170752-07:00
 description: "Uusien projektien aloittaminen tarkoittaa puhtaalta p\xF6yd\xE4lt\xE4\
   \ aloittamista. Ohjelmoijat tekev\xE4t sen tuodakseen uudet ideansa eloon ja ratkaistakseen\u2026"
-lastmod: 2024-02-18 23:09:07.757772
+lastmod: 2024-02-19 22:05:15.592384
 model: gpt-4-1106-preview
 summary: "Uusien projektien aloittaminen tarkoittaa puhtaalta p\xF6yd\xE4lt\xE4 aloittamista.\
   \ Ohjelmoijat tekev\xE4t sen tuodakseen uudet ideansa eloon ja ratkaistakseen\u2026"

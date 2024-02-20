@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/creating-a-temporary-file/
 date: 2024-01-20 17:39:56.412545-07:00
 description: "Cr\xE9er un fichier temporaire, c'est g\xE9n\xE9rer un fichier destin\xE9\
   \ \xE0 un usage court terme, souvent pour manipuler des donn\xE9es transitoires.\
   \ Les programmeurs le\u2026"
-lastmod: 2024-02-18 23:09:08.456295
+lastmod: 2024-02-19 22:05:16.243806
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est g\xE9n\xE9rer un fichier destin\xE9\
   \ \xE0 un usage court terme, souvent pour manipuler des donn\xE9es transitoires.\

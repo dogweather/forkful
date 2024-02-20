@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c-sharp/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:14.664260-07:00
 description: "Wielko\u015B\u0107 liter w ci\u0105gu znak\xF3w w C# polega na zamianie\
   \ pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli nie jest ona\
   \ ju\u017C wielka. Ta zmiana mo\u017Ce by\u0107 kluczowa\u2026"
-lastmod: 2024-02-18 23:08:49.594490
+lastmod: 2024-02-19 22:04:54.523445
 model: gpt-4-0125-preview
 summary: "Wielko\u015B\u0107 liter w ci\u0105gu znak\xF3w w C# polega na zamianie\
   \ pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli nie jest ona\

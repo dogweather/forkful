@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:16:52.234819-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi ch\u1EE9
   \ th\u1EF1c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c bao g\u1ED3m t\xEAn ng\u01B0\
   \u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u \u0111\u01B0\u1EE3c m\xE3 h\xF3a d\u01B0\
   \u1EDBi d\u1EA1ng base64 trong header c\u1EE7a y\xEAu c\u1EA7u. L\u1EADp\u2026"
-lastmod: 2024-02-18 23:08:51.135778
+lastmod: 2024-02-19 22:04:56.362296
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi ch\u1EE9ng th\u1EF1\
   c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c bao g\u1ED3m t\xEAn ng\u01B0\u1EDDi d\xF9\

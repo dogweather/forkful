@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/interpolating-a-string/
 date: 2024-01-20 17:50:17.479268-07:00
 description: "Interpolacja string\xF3w pozwala na wstawienie warto\u015Bci zmiennych\
   \ bezpo\u015Brednio w ci\u0105g tekstowy. Programi\u015Bci u\u017Cywaj\u0105 jej,\
   \ aby \u0142atwiej formatowa\u0107 wiadomo\u015Bci i\u2026"
-lastmod: 2024-02-18 23:08:49.896270
+lastmod: 2024-02-19 22:04:54.844400
 model: gpt-4-1106-preview
 summary: "Interpolacja string\xF3w pozwala na wstawienie warto\u015Bci zmiennych bezpo\u015B\
   rednio w ci\u0105g tekstowy. Programi\u015Bci u\u017Cywaj\u0105 jej, aby \u0142\

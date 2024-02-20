@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:28.935075-07:00
 description: "Het berekenen van een toekomstige of verleden datum houdt in dat je\
   \ met datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:02.340733
+lastmod: 2024-02-19 22:05:10.348764
 model: gpt-4-0125-preview
 summary: "Het berekenen van een toekomstige of verleden datum houdt in dat je met\
   \ datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:27.270324-07:00
 description: "Converter uma string para letras min\xFAsculas no Google Apps Script,\
   \ uma linguagem de script baseada na nuvem para automatiza\xE7\xE3o de tarefas atrav\xE9\
   s dos\u2026"
-lastmod: 2024-02-18 23:08:57.701005
+lastmod: 2024-02-19 22:05:05.160592
 model: gpt-4-0125-preview
 summary: "Converter uma string para letras min\xFAsculas no Google Apps Script, uma\
   \ linguagem de script baseada na nuvem para automatiza\xE7\xE3o de tarefas atrav\xE9\

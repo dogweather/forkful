@@ -1,13 +1,11 @@
 ---
-aliases:
-- /ja/go/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:00.779358-07:00
 description: "Go\u3067\u306EYAML\u306E\u53D6\u308A\u6271\u3044\u306B\u306F\u3001\u4EBA\
   \u9593\u306B\u3084\u3055\u3057\u3044\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u6A19\u6E96\
   \u3067\u3042\u308BYAML\uFF08YAML Ain't Markup\u2026"
-lastmod: 2024-02-18 23:08:54.500660
+lastmod: 2024-02-19 22:05:00.684249
 model: gpt-4-0125-preview
 summary: "Go\u3067\u306EYAML\u306E\u53D6\u308A\u6271\u3044\u306B\u306F\u3001\u4EBA\
   \u9593\u306B\u3084\u3055\u3057\u3044\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u6A19\u6E96\

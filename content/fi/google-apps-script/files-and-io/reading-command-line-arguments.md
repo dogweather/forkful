@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/google-apps-script/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:29.389292-07:00
 description: "Komennon rivin argumenttien lukeminen Google Apps Scriptiss\xE4 on hieman\
   \ harhaanjohtavaa, sill\xE4 toisin kuin perinteisiss\xE4 komentorivik\xE4ytt\xF6\
   liittymiss\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.154080
+lastmod: 2024-02-19 22:05:15.029887
 model: gpt-4-0125-preview
 summary: "Komennon rivin argumenttien lukeminen Google Apps Scriptiss\xE4 on hieman\
   \ harhaanjohtavaa, sill\xE4 toisin kuin perinteisiss\xE4 komentorivik\xE4ytt\xF6\

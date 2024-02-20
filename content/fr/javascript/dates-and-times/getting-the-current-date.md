@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/javascript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:47.977989-07:00
 description: "Obtenir la date courante en JavaScript est une t\xE2che fondamentale,\
   \ qui implique de r\xE9cup\xE9rer et \xE9ventuellement de manipuler la date et l'heure\
   \ du jour.\u2026"
-lastmod: 2024-02-18 23:09:09.267773
+lastmod: 2024-02-19 22:05:16.931203
 model: gpt-4-0125-preview
 summary: "Obtenir la date courante en JavaScript est une t\xE2che fondamentale, qui\
   \ implique de r\xE9cup\xE9rer et \xE9ventuellement de manipuler la date et l'heure\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:57.459625-07:00
 description: "Tablice asocjacyjne, znane w Go jako mapy, pozwalaj\u0105 przechowywa\u0107\
   \ pary klucz-warto\u015B\u0107, gdzie ka\u017Cdy unikalny klucz odpowiada warto\u015B\
   ci. Programi\u015Bci u\u017Cywaj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.089169
+lastmod: 2024-02-19 22:04:54.027323
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane w Go jako mapy, pozwalaj\u0105 przechowywa\u0107\
   \ pary klucz-warto\u015B\u0107, gdzie ka\u017Cdy unikalny klucz odpowiada warto\u015B\

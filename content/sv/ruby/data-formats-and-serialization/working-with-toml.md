@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/working-with-toml/
 date: 2024-01-26 04:26:03.030000-07:00
 description: "TOML \xE4r ett konfigurationsfilformat som \xE4r l\xE4tt att l\xE4sa\
   \ p\xE5 grund av dess tydliga semantik. Programmerare anv\xE4nder TOML f\xF6r att\
   \ hantera appkonfigurationer\u2026"
-lastmod: 2024-02-18 23:08:52.317971
+lastmod: 2024-02-19 22:04:57.710403
 model: gpt-4-0125-preview
 summary: "TOML \xE4r ett konfigurationsfilformat som \xE4r l\xE4tt att l\xE4sa p\xE5\
   \ grund av dess tydliga semantik. Programmerare anv\xE4nder TOML f\xF6r att hantera\

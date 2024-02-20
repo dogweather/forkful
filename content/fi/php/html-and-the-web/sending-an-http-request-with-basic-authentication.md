@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/php/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:38.022706-07:00
 description: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n perusautentikoinnilla, ohjelmoija\
   \ voi turvata p\xE4\xE4syn tiettyihin web-resursseihin. T\xE4t\xE4 k\xE4ytet\xE4\
   \xE4n yleisesti API:en suojattuun\u2026"
-lastmod: 2024-02-18 23:09:07.711226
+lastmod: 2024-02-19 22:05:15.550150
 model: gpt-4-1106-preview
 summary: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n perusautentikoinnilla, ohjelmoija\
   \ voi turvata p\xE4\xE4syn tiettyihin web-resursseihin. T\xE4t\xE4 k\xE4ytet\xE4\

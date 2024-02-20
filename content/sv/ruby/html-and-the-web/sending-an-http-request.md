@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/sending-an-http-request/
 date: 2024-01-20 18:00:28.526973-07:00
 description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att din applikation eller skript\
   \ g\xF6r en f\xF6rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka\
   \ information.\u2026"
-lastmod: 2024-02-18 23:08:52.292297
+lastmod: 2024-02-19 22:04:57.681290
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att din applikation eller skript\
   \ g\xF6r en f\xF6rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka\

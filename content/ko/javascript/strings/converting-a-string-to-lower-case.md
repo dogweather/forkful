@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:52.142210-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBC14\uAFBC\uB2E4\
   \uB294 \uAC83\uC740, \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C \uADF8\uC5D0 \uD574\uB2F9\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBC14\uAFBC\uB2
   \uC790\uC5F4 \uBE44\uAD50\uB098 \uAC80\uC0C9\uC744 \uD560 \uB54C \uC8FC\uB85C \uC0AC\
   \uC6A9\uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.793467
+lastmod: 2024-02-19 22:05:14.684360
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBC14\uAFBC\uB2E4\uB294\
   \ \uAC83\uC740, \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C \uADF8\uC5D0 \uD574\uB2F9\uD558\

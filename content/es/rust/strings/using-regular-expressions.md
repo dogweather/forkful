@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/rust/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:09.031800-07:00
 description: "Las expresiones regulares, o regex, permiten a los desarrolladores buscar,\
   \ coincidir y manipular cadenas con t\xE9cnicas avanzadas de coincidencia de\u2026"
-lastmod: 2024-02-18 23:09:09.738222
+lastmod: 2024-02-19 22:05:17.362749
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares, o regex, permiten a los desarrolladores buscar,\
   \ coincidir y manipular cadenas con t\xE9cnicas avanzadas de coincidencia de\u2026"

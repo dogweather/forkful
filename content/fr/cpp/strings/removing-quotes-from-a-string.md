@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/cpp/removing-quotes-from-a-string/
 date: 2024-01-26 03:37:55.572557-07:00
 description: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res signifie retirer\
   \ ces nuisibles guillemets doubles ou simples qui encadrent notre texte (' ou \"\
   ). Les\u2026"
-lastmod: 2024-02-18 23:09:09.147064
+lastmod: 2024-02-19 22:05:16.822133
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res signifie retirer\
   \ ces nuisibles guillemets doubles ou simples qui encadrent notre texte (' ou \"\

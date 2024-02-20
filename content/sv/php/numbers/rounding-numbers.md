@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/php/rounding-numbers/
 date: 2024-01-26 03:46:02.082417-07:00
 description: "Att avrunda tal inneb\xE4r att klippa av decimalerna till en inst\xE4\
   lld precision, ofta till hela tal. Programmerare avrundar f\xF6r att f\xF6renkla\
   \ ber\xE4kningar,\u2026"
-lastmod: 2024-02-18 23:08:51.873352
+lastmod: 2024-02-19 22:04:57.214911
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att klippa av decimalerna till en inst\xE4lld\
   \ precision, ofta till hela tal. Programmerare avrundar f\xF6r att f\xF6renkla ber\xE4\

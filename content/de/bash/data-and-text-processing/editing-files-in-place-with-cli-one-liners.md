@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:21:12.913995-07:00
 description: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigurationsdateien\
   \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen. Sie\u2026"
-lastmod: 2024-02-18 23:09:05.049814
+lastmod: 2024-02-19 22:05:12.986429
 model: gpt-4-0125-preview
 summary: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigurationsdateien\
   \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen. Sie\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:07.466916-07:00
@@ -8,7 +6,7 @@ description: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i ngh\u0129a l\x
   \ chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n ng\xE0y d\u1EC5 \u0111\u1ECDc c\u1EE7\
   a con ng\u01B0\u1EDDi sang \u0111\u1ECBnh d\u1EA1ng m\xE0 m\xE1y t\xEDnh c\xF3 th\u1EC3\
   \ hi\u1EC3u \u0111\u01B0\u1EE3c. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
-lastmod: 2024-02-18 23:08:50.325203
+lastmod: 2024-02-19 22:04:55.364086
 model: gpt-4-0125-preview
 summary: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
   n \u0111\u1ED5i v\u0103n b\u1EA3n ng\xE0y d\u1EC5 \u0111\u1ECDc c\u1EE7a con ng\u01B0\

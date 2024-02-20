@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/typescript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:49.610504-07:00
 description: "HTTP-Anfragen mit Basisauthentifizierung schicken Nutzername und Passwort\
   \ codiert im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"
-lastmod: 2024-02-18 23:09:04.596327
+lastmod: 2024-02-19 22:05:12.554208
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basisauthentifizierung schicken Nutzername und Passwort\
   \ codiert im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"

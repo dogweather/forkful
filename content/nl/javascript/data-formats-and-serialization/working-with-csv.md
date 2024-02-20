@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:06.780424-07:00
 description: "Werken met CSV (Comma-Separated Values of komma-gescheiden waarden)\
   \ in JavaScript betekent meestal het parseren en genereren van tekstgegevens voor\u2026"
-lastmod: 2024-02-18 23:09:02.301147
+lastmod: 2024-02-19 22:05:10.311624
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values of komma-gescheiden waarden) in JavaScript\
   \ betekent meestal het parseren en genereren van tekstgegevens voor\u2026"

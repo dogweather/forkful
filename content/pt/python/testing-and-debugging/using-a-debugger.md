@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/using-a-debugger/
 date: 2024-01-26 04:08:54.084302-07:00
 description: "\"Usar um depurador\" significa percorrer o seu c\xF3digo Python para\
   \ descobrir erros e entender o comportamento. Fazemos isso porque \xE9 muito mais\
   \ f\xE1cil do que\u2026"
-lastmod: 2024-02-18 23:08:57.765637
+lastmod: 2024-02-19 22:05:05.229023
 model: gpt-4-0125-preview
 summary: "\"Usar um depurador\" significa percorrer o seu c\xF3digo Python para descobrir\
   \ erros e entender o comportamento. Fazemos isso porque \xE9 muito mais f\xE1cil\

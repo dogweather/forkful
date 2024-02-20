@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/fish-shell/logging/
 date: 2024-01-26 01:03:27.732027-07:00
 description: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 haciendo:\
   \ un diario, por as\xED decirlo, pero para el c\xF3digo. Los programadores lo hacen\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:10.460444
+lastmod: 2024-02-19 22:05:18.012954
 model: gpt-4-1106-preview
 summary: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 haciendo:\
   \ un diario, por as\xED decirlo, pero para el c\xF3digo. Los programadores lo hacen\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c-sharp/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:57.411408-07:00
 description: "Parsowanie HTML w programowaniu polega na analizie struktury dokumentu\
   \ HTML, co pozwala na ekstrakcj\u0119, manipulacj\u0119 i interakcj\u0119 z jego\
   \ zawarto\u015Bci\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.608452
+lastmod: 2024-02-19 22:04:54.539372
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w programowaniu polega na analizie struktury dokumentu HTML,\
   \ co pozwala na ekstrakcj\u0119, manipulacj\u0119 i interakcj\u0119 z jego zawarto\u015B\

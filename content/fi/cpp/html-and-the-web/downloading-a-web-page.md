@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/downloading-a-web-page/
 date: 2024-01-20 17:44:10.397686-07:00
 description: "Webbisivun lataaminen tarkoittaa sen sis\xE4ll\xF6n hakemista internetist\xE4\
   . Ohjelmoijat lataavat sivuja tietojen ker\xE4\xE4miseen, palveluiden integrointiin\
   \ ja\u2026"
-lastmod: 2024-02-18 23:09:07.942483
+lastmod: 2024-02-19 22:05:15.759154
 model: gpt-4-1106-preview
 summary: "Webbisivun lataaminen tarkoittaa sen sis\xE4ll\xF6n hakemista internetist\xE4\
   . Ohjelmoijat lataavat sivuja tietojen ker\xE4\xE4miseen, palveluiden integrointiin\

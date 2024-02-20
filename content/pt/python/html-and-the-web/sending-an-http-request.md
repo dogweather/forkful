@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/sending-an-http-request/
 date: 2024-01-20 18:00:28.560747-07:00
 description: "Enviar um pedido HTTP \xE9 como voc\xEA faz seu c\xF3digo conversar\
   \ com a web. Programadores fazem isso para buscar dados, enviar informa\xE7\xF5\
   es, interagir com APIs \u2013\u2026"
-lastmod: 2024-02-18 23:08:57.758033
+lastmod: 2024-02-19 22:05:05.220798
 model: gpt-4-1106-preview
 summary: "Enviar um pedido HTTP \xE9 como voc\xEA faz seu c\xF3digo conversar com\
   \ a web. Programadores fazem isso para buscar dados, enviar informa\xE7\xF5es, interagir\

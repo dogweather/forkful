@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/using-an-interactive-shell-repl/
 date: 2024-01-26 04:11:16.702791-07:00
 description: "REPL tarkoittaa Lue-Arvo-Tulosta-Toista -silmukkaa, yksinkertaista,\
   \ interaktiivista ohjelmointiymp\xE4rist\xF6\xE4. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ kirjoittaakseen ja\u2026"
-lastmod: 2024-02-18 23:09:07.806235
+lastmod: 2024-02-19 22:05:15.636531
 model: gpt-4-0125-preview
 summary: "REPL tarkoittaa Lue-Arvo-Tulosta-Toista -silmukkaa, yksinkertaista, interaktiivista\
   \ ohjelmointiymp\xE4rist\xF6\xE4. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 kirjoittaakseen\

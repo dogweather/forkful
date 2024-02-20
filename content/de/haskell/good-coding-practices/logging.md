@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/haskell/logging/
 date: 2024-01-26 01:07:04.543913-07:00
 description: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur\
   \ von Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"
-lastmod: 2024-02-18 23:09:04.923773
+lastmod: 2024-02-19 22:05:12.864798
 model: gpt-4-1106-preview
 summary: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur von\
   \ Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"

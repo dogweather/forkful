@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/c-sharp/reading-command-line-arguments/
 date: 2024-01-20 17:55:34.179201-07:00
 description: "Reading command line arguments means grabbing the extra bits of data\
   \ you pass to a program when you start it in a console. Programmers do it to let\
   \ users\u2026"
-lastmod: 2024-02-18 23:09:00.368577
+lastmod: 2024-02-19 22:05:08.340405
 model: gpt-4-1106-preview
 summary: "Reading command line arguments means grabbing the extra bits of data you\
   \ pass to a program when you start it in a console. Programmers do it to let users\u2026"

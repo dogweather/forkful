@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/cpp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:22.057613-07:00
 description: "Att h\xE4mta det aktuella datumet i C++ \xE4r en grundl\xE4ggande uppgift\
   \ f\xF6r program som beh\xF6ver bearbeta eller visa datum baserat p\xE5 systemets\
   \ klocka. Det \xE4r\u2026"
-lastmod: 2024-02-18 23:08:52.093850
+lastmod: 2024-02-19 22:04:57.457400
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i C++ \xE4r en grundl\xE4ggande uppgift\
   \ f\xF6r program som beh\xF6ver bearbeta eller visa datum baserat p\xE5 systemets\

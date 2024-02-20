@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/lua/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:59.013252-07:00
 description: "REPL \u043E\u0437\u043D\u0430\u0447\u0430\u0454 Read-Eval-Print Loop\
   \ (\u0426\u0438\u043A\u043B \u0427\u0438\u0442\u0430\u043D\u043D\u044F-\u0412\u0438\
@@ -11,7 +9,7 @@ description: "REPL \u043E\u0437\u043D\u0430\u0447\u0430\u0454 Read-Eval-Print Lo
   \u0435\u0441\u0442\u0443\u0432\u0430\u0442\u0438 \u043A\u043E\u0434. \u041F\u0440\
   \u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438 \u0432\u0438\u043A\u043E\u0440\
   \u0438\u0441\u0442\u043E\u0432\u0443\u044E\u0442\u044C\u2026"
-lastmod: 2024-02-18 23:09:00.570824
+lastmod: 2024-02-19 22:05:08.537938
 model: gpt-4-0125-preview
 summary: "REPL \u043E\u0437\u043D\u0430\u0447\u0430\u0454 Read-Eval-Print Loop (\u0426\
   \u0438\u043A\u043B \u0427\u0438\u0442\u0430\u043D\u043D\u044F-\u0412\u0438\u043A\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/clojure/starting-a-new-project/
 date: 2024-01-20 18:03:21.068200-07:00
 description: "Kun aloitat uuden projektin, luot pohjan tulevalle koodillesi. Koodarit\
   \ aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai\u2026"
-lastmod: 2024-02-18 23:09:07.229192
+lastmod: 2024-02-19 22:05:15.126572
 model: gpt-4-1106-preview
 summary: "Kun aloitat uuden projektin, luot pohjan tulevalle koodillesi. Koodarit\
   \ aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai\u2026"

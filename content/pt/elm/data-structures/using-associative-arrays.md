@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/elm/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:53.839837-07:00
 description: "Arrays associativos, ou como o Elm os chama, Dicion\xE1rios, mapeiam\
   \ chaves para valores de uma forma que torna a busca, inser\xE7\xE3o e exclus\xE3\
   o de valores\u2026"
-lastmod: 2024-02-18 23:08:58.053742
+lastmod: 2024-02-19 22:05:05.531346
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou como o Elm os chama, Dicion\xE1rios, mapeiam chaves\
   \ para valores de uma forma que torna a busca, inser\xE7\xE3o e exclus\xE3o de valores\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/javascript/working-with-toml/
 date: 2024-01-26 04:23:45.447274-07:00
 description: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
   \ definiert, wie Konfigurationsdateien strukturiert werden sollen. Programmierer\
   \ arbeiten\u2026"
-lastmod: 2024-02-18 23:09:05.303743
+lastmod: 2024-02-19 22:05:13.227520
 model: gpt-4-0125-preview
 summary: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, definiert,\
   \ wie Konfigurationsdateien strukturiert werden sollen. Programmierer arbeiten\u2026"

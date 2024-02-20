@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/rust/printing-debug-output/
 date: 2024-01-20 17:53:09.841237-07:00
 description: "Debug-Ausgabe zu drucken bedeutet, Zwischenergebnisse und Variablenwerte\
   \ w\xE4hrend der Laufzeit in die Konsole zu schreiben. Programmierer nutzen das,\
   \ um\u2026"
-lastmod: 2024-02-18 23:09:04.644193
+lastmod: 2024-02-19 22:05:12.599316
 model: gpt-4-1106-preview
 summary: "Debug-Ausgabe zu drucken bedeutet, Zwischenergebnisse und Variablenwerte\
   \ w\xE4hrend der Laufzeit in die Konsole zu schreiben. Programmierer nutzen das,\

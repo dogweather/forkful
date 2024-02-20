@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/vba/working-with-complex-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:17.834670-07:00
 description: "Trabajar con n\xFAmeros complejos implica realizar operaciones matem\xE1\
   ticas en n\xFAmeros que tienen tanto una parte real como una imaginaria. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:09.789337
+lastmod: 2024-02-19 22:05:17.409374
 model: gpt-4-0125-preview
 summary: "Trabajar con n\xFAmeros complejos implica realizar operaciones matem\xE1\
   ticas en n\xFAmeros que tienen tanto una parte real como una imaginaria. Los programadores\u2026"

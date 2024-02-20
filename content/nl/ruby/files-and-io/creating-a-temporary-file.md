@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:23.516785-07:00
 description: "In Ruby helpt het maken van een tijdelijk bestand om gevoelige gegevens\
   \ te beschermen en vluchtige opslagbehoeften te beheren. Programmeurs gebruiken\
   \ het\u2026"
-lastmod: 2024-02-18 23:09:02.443499
+lastmod: 2024-02-19 22:05:10.447633
 model: gpt-4-0125-preview
 summary: "In Ruby helpt het maken van een tijdelijk bestand om gevoelige gegevens\
   \ te beschermen en vluchtige opslagbehoeften te beheren. Programmeurs gebruiken\

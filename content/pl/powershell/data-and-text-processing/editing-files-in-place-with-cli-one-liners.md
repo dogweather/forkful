@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:55.275241-07:00
 description: "Edycja plik\xF3w w miejscu za pomoc\u0105 jednolinijkowych polece\u0144\
   \ CLI w PowerShellu polega na dokonywaniu bezpo\u015Brednich modyfikacji plik\xF3\
   w z linii polece\u0144, bez\u2026"
-lastmod: 2024-02-18 23:08:49.824862
+lastmod: 2024-02-19 22:04:54.766564
 model: gpt-4-0125-preview
 summary: "Edycja plik\xF3w w miejscu za pomoc\u0105 jednolinijkowych polece\u0144\
   \ CLI w PowerShellu polega na dokonywaniu bezpo\u015Brednich modyfikacji plik\xF3\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:59.158090-07:00
 description: "Foutafhandeling in Bash-scripting gaat over het anticiperen op momenten\
   \ waarop dingen mis kunnen gaan en hier sierlijk mee omgaan. Waarom? Nou, het houdt\u2026"
-lastmod: 2024-02-18 23:09:02.048961
+lastmod: 2024-02-19 22:05:10.074309
 model: gpt-4-0125-preview
 summary: "Foutafhandeling in Bash-scripting gaat over het anticiperen op momenten\
   \ waarop dingen mis kunnen gaan en hier sierlijk mee omgaan. Waarom? Nou, het houdt\u2026"

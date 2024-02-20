@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/python/concatenating-strings/
 date: 2024-01-20 17:35:49.050839-07:00
 description: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string\xF3w) to proces\
   \ tworzenia jednego ci\u0105gu ze dwojga lub wi\u0119cej. Programi\u015Bci u\u017C\
   ywaj\u0105 tej techniki do budowania komunikat\xF3w,\u2026"
-lastmod: 2024-02-18 23:08:49.214264
+lastmod: 2024-02-19 22:04:54.125206
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string\xF3w) to proces tworzenia\
   \ jednego ci\u0105gu ze dwojga lub wi\u0119cej. Programi\u015Bci u\u017Cywaj\u0105\

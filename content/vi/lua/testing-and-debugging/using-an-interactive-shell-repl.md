@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:25.502988-07:00
@@ -8,7 +6,7 @@ description: "REPL vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop, m\u1ED9t m\
   i tr\u01B0\u1EDDng t\u01B0\u01A1ng t\xE1c n\u01A1i b\u1EA1n c\xF3 th\u1EC3 nhanh\
   \ ch\xF3ng ki\u1EC3m tra m\xE3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
   ng n\xF3 \u0111\u1EC3 th\u1EED nghi\u1EC7m, g\u1EE1\u2026"
-lastmod: 2024-02-18 23:08:50.838654
+lastmod: 2024-02-19 22:04:56.009473
 model: gpt-4-0125-preview
 summary: "REPL vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop, m\u1ED9t m\xF4i tr\u01B0\
   \u1EDDng t\u01B0\u01A1ng t\xE1c n\u01A1i b\u1EA1n c\xF3 th\u1EC3 nhanh ch\xF3ng\

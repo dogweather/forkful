@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/elixir/comparing-two-dates/
 date: 2024-01-20 17:32:37.842708-07:00
 description: "Comparing two dates means checking how they relate to each other\u2014\
   are they the same, is one earlier, or is it later. Programmers need this for scheduling\u2026"
-lastmod: 2024-02-18 23:08:59.898290
+lastmod: 2024-02-19 22:05:07.825473
 model: gpt-4-1106-preview
 summary: "Comparing two dates means checking how they relate to each other\u2014are\
   \ they the same, is one earlier, or is it later. Programmers need this for scheduling\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/rust/interpolating-a-string/
 date: 2024-01-20 17:51:30.648021-07:00
 description: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig\
   \ text. Programmerare g\xF6r detta f\xF6r att skapa dynamiska meddelanden, d\xE4\
   r inneh\xE5llet kan\u2026"
-lastmod: 2024-02-18 23:08:51.570782
+lastmod: 2024-02-19 22:04:56.887701
 model: gpt-4-1106-preview
 summary: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig text.\
   \ Programmerare g\xF6r detta f\xF6r att skapa dynamiska meddelanden, d\xE4r inneh\xE5\

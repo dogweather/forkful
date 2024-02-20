@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/fish-shell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:28.127421-07:00
@@ -13,7 +11,7 @@ description: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u043F\u043E\u043B
   \ \u0437 \u0432\u0435\u0431-\u0434\u0430\u043D\u043D\u0438\u043C\u0438. \u041F\u0440\
   \u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438 \u0440\u043E\u0431\u043B\u044F\
   \u0442\u044C \u0446\u0435, \u0449\u043E\u0431\u2026"
-lastmod: 2024-02-18 23:09:01.108841
+lastmod: 2024-02-19 22:05:09.146799
 model: gpt-4-0125-preview
 summary: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u043F\u043E\u043B\u044F\
   \u0433\u0430\u0454 \u0432 \u0435\u043A\u0441\u0442\u0440\u0430\u043A\u0446\u0456\

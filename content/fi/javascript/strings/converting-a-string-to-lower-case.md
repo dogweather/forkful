@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:09.654545-07:00
 description: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan\
   \ yhten\xE4ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla. Koodarit tekev\xE4\
   t t\xE4t\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.021882
+lastmod: 2024-02-19 22:05:15.831767
 model: gpt-4-1106-preview
 summary: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan yhten\xE4\
   ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla. Koodarit tekev\xE4t t\xE4\

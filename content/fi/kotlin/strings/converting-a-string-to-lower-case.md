@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:52.837415-07:00
 description: "\"Mit\xE4 & Miksi?\" Stringin muuttaminen pieniksi kirjaimiksi tarkoittaa\
   \ alkuper\xE4isen merkkijonon muuntamista versioksi, jossa kaikki isot kirjaimet\
   \ ovat\u2026"
-lastmod: 2024-02-18 23:09:07.561124
+lastmod: 2024-02-19 22:05:15.411626
 model: gpt-4-1106-preview
 summary: "\"Mit\xE4 & Miksi?\" Stringin muuttaminen pieniksi kirjaimiksi tarkoittaa\
   \ alkuper\xE4isen merkkijonon muuntamista versioksi, jossa kaikki isot kirjaimet\

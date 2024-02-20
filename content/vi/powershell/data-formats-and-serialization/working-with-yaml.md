@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/powershell/working-with-yaml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:32.081683-07:00
@@ -8,7 +6,7 @@ description: "YAML l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng serialization d\u1EEF
   u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi. C\xE1c l\u1EADp tr\xECnh vi\xEA\
   n s\u1EED d\u1EE5ng n\xF3 cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, trao \u0111\u1ED5\
   i d\u1EEF li\u1EC7u gi\u1EEFa c\xE1c ng\xF4n\u2026"
-lastmod: 2024-02-18 23:08:50.957146
+lastmod: 2024-02-19 22:04:56.158799
 model: gpt-4-0125-preview
 summary: "YAML l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng serialization d\u1EEF li\u1EC7\
   u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi. C\xE1c l\u1EADp tr\xECnh vi\xEA\

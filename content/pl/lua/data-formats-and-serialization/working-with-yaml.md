@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/lua/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:05.264390-07:00
 description: "YAML, co jest skr\xF3tem od \"YAML Ain't Markup Language\", to standard\
   \ serializacji danych czytelnych dla cz\u0142owieka, kt\xF3ry cz\u0119sto u\u017C\
   ywany jest w plikach\u2026"
-lastmod: 2024-02-18 23:08:49.760261
+lastmod: 2024-02-19 22:04:54.698475
 model: gpt-4-0125-preview
 summary: "YAML, co jest skr\xF3tem od \"YAML Ain't Markup Language\", to standard\
   \ serializacji danych czytelnych dla cz\u0142owieka, kt\xF3ry cz\u0119sto u\u017C\

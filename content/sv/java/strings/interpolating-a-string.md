@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/interpolating-a-string/
 date: 2024-01-20 17:51:16.589686-07:00
 description: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler och\
   \ str\xE4ngar f\xF6r att skapa en ny, sammansatt str\xE4ng. Programmerare interpolerar\
   \ str\xE4ngar f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.656299
+lastmod: 2024-02-19 22:04:56.981597
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler och str\xE4\
   ngar f\xF6r att skapa en ny, sammansatt str\xE4ng. Programmerare interpolerar str\xE4\

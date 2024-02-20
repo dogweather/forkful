@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:03.289938-07:00
 description: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
   \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"
-lastmod: 2024-02-18 23:09:01.662216
+lastmod: 2024-02-19 22:05:09.683454
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
   \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"

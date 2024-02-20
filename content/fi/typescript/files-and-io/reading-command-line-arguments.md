@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/typescript/reading-command-line-arguments/
 date: 2024-01-20 17:57:09.153762-07:00
 description: "Komennoriviargumenttien lukeminen tarkoittaa k\xE4ytt\xE4j\xE4n antamien\
   \ sy\xF6tteiden noutamista komentorivilt\xE4 ohjelman suorituksen aikana. Ohjelmoijat\
   \ tekev\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.335406
+lastmod: 2024-02-19 22:05:15.225593
 model: gpt-4-1106-preview
 summary: "Komennoriviargumenttien lukeminen tarkoittaa k\xE4ytt\xE4j\xE4n antamien\
   \ sy\xF6tteiden noutamista komentorivilt\xE4 ohjelman suorituksen aikana. Ohjelmoijat\

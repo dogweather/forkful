@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:28.169255-07:00
 description: "A interpola\xE7\xE3o de strings, na programa\xE7\xE3o, envolve a constru\xE7\
   \xE3o de strings atrav\xE9s da incorpora\xE7\xE3o de express\xF5es dentro de strings\
   \ literais. Programadores\u2026"
-lastmod: 2024-02-18 23:08:58.604054
+lastmod: 2024-02-19 22:05:06.103555
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings, na programa\xE7\xE3o, envolve a constru\xE7\
   \xE3o de strings atrav\xE9s da incorpora\xE7\xE3o de express\xF5es dentro de strings\

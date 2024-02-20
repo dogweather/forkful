@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:46.786599-07:00
@@ -13,7 +11,7 @@ description: "Bash\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB294
   \uD558\uAE30 \uC704\uD574 \uD14C\uC2A4\uD2B8\uB97C \uC218\uD589\uD558\uC5EC, \uBC30\
   \uD3EC \uC804\uC5D0 \uC624\uB958\uC640 \uBC84\uADF8\uB97C \uC7A1\uC2B5\uB2C8\uB2E4\
   ."
-lastmod: 2024-02-18 23:09:06.490374
+lastmod: 2024-02-19 22:05:14.399520
 model: gpt-4-0125-preview
 summary: "Bash\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB294 \uAC83\
   \uC740 Bash \uC2A4\uD06C\uB9BD\uD2B8\uC758 \uAE30\uB2A5\uC744 \uAC80\uC99D\uD558\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/vba/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:40.564668-07:00
 description: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
   \ en dato som er et spesifikt antall dager, m\xE5neder eller \xE5r fra en gitt dato.\u2026"
-lastmod: 2024-02-18 23:08:53.742386
+lastmod: 2024-02-19 22:04:59.880359
 model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
   \ en dato som er et spesifikt antall dager, m\xE5neder eller \xE5r fra en gitt dato.\u2026"

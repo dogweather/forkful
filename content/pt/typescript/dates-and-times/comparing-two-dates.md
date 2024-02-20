@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/typescript/comparing-two-dates/
 date: 2024-01-20 17:34:19.887590-07:00
 description: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre\
   \ elas: qual vem antes, se s\xE3o iguais ou qual \xE9 posterior. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:57.897252
+lastmod: 2024-02-19 22:05:05.370433
 model: gpt-4-1106-preview
 summary: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre elas:\
   \ qual vem antes, se s\xE3o iguais ou qual \xE9 posterior. Programadores fazem isso\

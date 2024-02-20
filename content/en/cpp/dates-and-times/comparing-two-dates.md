@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/cpp/comparing-two-dates/
 date: 2024-01-20 17:32:32.259273-07:00
 description: "Comparing dates is about figuring out which of two dates is earlier,\
   \ later, or if they're the same. Programmers do it for organizing events, expiring\u2026"
-lastmod: 2024-02-18 23:09:11.367537
+lastmod: 2024-02-19 22:05:18.831193
 model: gpt-4-1106-preview
 summary: "Comparing dates is about figuring out which of two dates is earlier, later,\
   \ or if they're the same. Programmers do it for organizing events, expiring\u2026"

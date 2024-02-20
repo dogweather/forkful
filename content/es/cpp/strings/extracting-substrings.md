@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/cpp/extracting-substrings/
 date: 2024-01-20 17:45:17.840882-07:00
 description: "Extraer subcadenas es tomar pedazos espec\xEDficos de una cadena de\
   \ texto. Los programadores lo hacen para analizar datos, validar entradas o simplemente\u2026"
-lastmod: 2024-02-18 23:09:10.296748
+lastmod: 2024-02-19 22:05:17.868942
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas es tomar pedazos espec\xEDficos de una cadena de texto.\
   \ Los programadores lo hacen para analizar datos, validar entradas o simplemente\u2026"

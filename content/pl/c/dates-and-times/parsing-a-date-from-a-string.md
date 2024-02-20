@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:12.766394-07:00
 description: "Parsowanie daty ze stringa w j\u0119zyku C polega na konwersji tekstowych\
   \ reprezentacji dat na format, kt\xF3ry programy mog\u0105 bardziej efektywnie manipulowa\u0107\
   \ i\u2026"
-lastmod: 2024-02-18 23:08:50.090118
+lastmod: 2024-02-19 22:04:55.075478
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa w j\u0119zyku C polega na konwersji tekstowych\
   \ reprezentacji dat na format, kt\xF3ry programy mog\u0105 bardziej efektywnie manipulowa\u0107\

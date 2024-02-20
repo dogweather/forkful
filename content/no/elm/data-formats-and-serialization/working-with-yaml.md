@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/elm/working-with-yaml/
 date: 2024-01-19
 description: "YAML er et dataformat for \xE5 skrive konfigurasjoner lett leslig for\
   \ mennesker. Programmerere bruker det for \xE5 h\xE5ndtere konfigurasjoner og datautveksling."
-lastmod: 2024-02-18 23:08:53.830296
+lastmod: 2024-02-19 22:04:59.975541
 summary: "YAML er et dataformat for \xE5 skrive konfigurasjoner lett leslig for mennesker.\
   \ Programmerere bruker det for \xE5 h\xE5ndtere konfigurasjoner og datautveksling."
 title: Arbeid med YAML

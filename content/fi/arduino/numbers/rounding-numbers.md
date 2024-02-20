@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/rounding-numbers/
 date: 2024-01-26 03:42:55.761671-07:00
 description: "Numeroiden py\xF6rist\xE4minen on desimaalin leikkaamista l\xE4himp\xE4\
   \xE4n kokonaislukuun tai asetettuun m\xE4\xE4r\xE4\xE4n desimaalipaikkoja. Ohjelmoijat\
   \ py\xF6rist\xE4v\xE4t numeroita,\u2026"
-lastmod: 2024-02-18 23:09:07.894731
+lastmod: 2024-02-19 22:05:15.715464
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen on desimaalin leikkaamista l\xE4himp\xE4\xE4\
   n kokonaislukuun tai asetettuun m\xE4\xE4r\xE4\xE4n desimaalipaikkoja. Ohjelmoijat\

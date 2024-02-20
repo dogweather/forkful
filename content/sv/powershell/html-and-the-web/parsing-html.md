@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/powershell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:00.178103-07:00
 description: "Att analysera HTML med PowerShell handlar om att dissekera HTML-inneh\xE5\
   ll f\xF6r att extrahera specifika data eller automatisera webbrelaterade uppgifter.\u2026"
-lastmod: 2024-02-18 23:08:52.001792
+lastmod: 2024-02-19 22:04:57.356425
 model: gpt-4-0125-preview
 summary: "Att analysera HTML med PowerShell handlar om att dissekera HTML-inneh\xE5\
   ll f\xF6r att extrahera specifika data eller automatisera webbrelaterade uppgifter.\u2026"

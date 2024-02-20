@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/working-with-xml/
 date: 2024-01-26 04:34:20.036693-07:00
 description: "\xC5 jobbe med XML inneb\xE6rer \xE5 manipulere og f\xE5 tilgang til\
   \ data strukturert i det utvidbare merkespr\xE5ket (eXtensible Markup Language).\
   \ Programmerere\u2026"
-lastmod: 2024-02-18 23:08:54.124094
+lastmod: 2024-02-19 22:05:00.311599
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer \xE5 manipulere og f\xE5 tilgang til data\
   \ strukturert i det utvidbare merkespr\xE5ket (eXtensible Markup Language). Programmerere\u2026"

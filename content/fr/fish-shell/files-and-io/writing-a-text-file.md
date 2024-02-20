@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/fish-shell/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:36.462027-07:00
 description: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker\
   \ des donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration\
   \ ou la\u2026"
-lastmod: 2024-02-18 23:09:09.326560
+lastmod: 2024-02-19 22:05:16.994000
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker des\
   \ donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration ou\

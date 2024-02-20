@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/c/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:20.000396-07:00
 description: "Ottenere la data corrente in C comporta l'accesso alla libreria standard\
   \ C per recuperare e formattare la data e l'ora correnti del sistema. I\u2026"
-lastmod: 2024-02-18 23:08:56.349562
+lastmod: 2024-02-19 22:05:02.988331
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in C comporta l'accesso alla libreria standard\
   \ C per recuperare e formattare la data e l'ora correnti del sistema. I\u2026"

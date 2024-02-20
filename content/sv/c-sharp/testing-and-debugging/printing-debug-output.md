@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/printing-debug-output/
 date: 2024-01-20 17:52:20.631255-07:00
 description: "Vi pratar om `debug output` \u2013 textmeddelanden som hj\xE4lper utvecklare\
   \ att fels\xF6ka kod. Varf\xF6r? F\xF6r att sp\xE5ra vad koden g\xF6r och hitta\
   \ buggarna snabbt."
-lastmod: 2024-02-18 23:08:51.798259
+lastmod: 2024-02-19 22:04:57.132658
 model: gpt-4-1106-preview
 summary: "Vi pratar om `debug output` \u2013 textmeddelanden som hj\xE4lper utvecklare\
   \ att fels\xF6ka kod. Varf\xF6r? F\xF6r att sp\xE5ra vad koden g\xF6r och hitta\

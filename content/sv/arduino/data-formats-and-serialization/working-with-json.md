@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/arduino/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:37.107703-07:00
 description: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-\u2026"
-lastmod: 2024-02-18 23:08:52.064379
+lastmod: 2024-02-19 22:04:57.424757
 model: gpt-4-0125-preview
 summary: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-\u2026"

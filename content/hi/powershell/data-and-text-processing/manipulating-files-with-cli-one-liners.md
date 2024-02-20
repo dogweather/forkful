@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:22:29.450819-07:00
 description: "PowerShell \u092E\u0947\u0902 CLI \u0935\u0928-\u0932\u093E\u0907\u0928\
   \u0930\u094D\u0938 \u0915\u0947 \u0938\u093E\u0925 \u092B\u093C\u093E\u0907\u0932\
@@ -11,7 +9,7 @@ description: "PowerShell \u092E\u0947\u0902 CLI \u0935\u0928-\u0932\u093E\u0907\
   \u093E, \u0938\u094D\u0925\u093E\u0928\u093E\u0902\u0924\u0930\u093F\u0924 \u0915\
   \u0930\u0928\u093E \u092F\u093E \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0915\
   \u0930\u0928\u093E\u0964\u2026"
-lastmod: 2024-02-18 23:09:03.728316
+lastmod: 2024-02-19 22:05:11.714570
 model: gpt-4-0125-preview
 summary: "PowerShell \u092E\u0947\u0902 CLI \u0935\u0928-\u0932\u093E\u0907\u0928\u0930\
   \u094D\u0938 \u0915\u0947 \u0938\u093E\u0925 \u092B\u093C\u093E\u0907\u0932\u094B\

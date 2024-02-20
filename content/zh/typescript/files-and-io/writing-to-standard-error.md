@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:42.375562-07:00
@@ -13,7 +11,7 @@ description: "\u5728TypeScript\u4E2D\uFF0C\u5411\u6807\u51C6\u9519\u8BEF\uFF08st
   \u4E0B\u8BCA\u65AD\u95EE\u9898\u81F3\u5173\u91CD\u8981\uFF0C\u786E\u4FDD\u9519\u8BEF\
   \u5904\u7406\u548C\u65E5\u5FD7\u8BB0\u5F55\u5F97\u5230\u9AD8\u6548\u3001\u7EDF\u4E00\
   \u7684\u7BA1\u7406\u3002"
-lastmod: 2024-02-18 23:08:58.918422
+lastmod: 2024-02-19 22:05:06.507073
 model: gpt-4-0125-preview
 summary: "\u5728TypeScript\u4E2D\uFF0C\u5411\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\
   \u5199\u5165\u662F\u5C06\u9519\u8BEF\u6D88\u606F\u6216\u65E5\u5FD7\u76F4\u63A5\u53D1\

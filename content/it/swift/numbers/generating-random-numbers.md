@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/generating-random-numbers/
 date: 2024-01-27 20:35:25.921645-07:00
 description: "La generazione di numeri casuali nella programmazione riguarda la creazione\
   \ di valori numerici non deterministici o imprevedibili. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:56.208778
+lastmod: 2024-02-19 22:05:02.839625
 model: gpt-4-0125-preview
 summary: "La generazione di numeri casuali nella programmazione riguarda la creazione\
   \ di valori numerici non deterministici o imprevedibili. I programmatori\u2026"

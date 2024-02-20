@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/bash/concatenating-strings/
 date: 2024-01-20 17:34:16.433471-07:00
 description: "Concatenar cadenas es simplemente combinar dos o m\xE1s textos en uno\
   \ solo. Los programadores lo hacen para manejar din\xE1micamente la informaci\xF3\
   n, como\u2026"
-lastmod: 2024-02-18 23:09:10.156507
+lastmod: 2024-02-19 22:05:17.743767
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas es simplemente combinar dos o m\xE1s textos en uno solo.\
   \ Los programadores lo hacen para manejar din\xE1micamente la informaci\xF3n, como\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/working-with-xml/
 date: 2024-01-25 03:39:58.864514-07:00
 description: "Working with XML involves parsing and manipulating XML documents using\
   \ code. Programmers do this to read, write, and modify data in a structured, portable\u2026"
-lastmod: 2024-02-18 23:09:11.209968
+lastmod: 2024-02-19 22:05:18.689149
 model: gpt-4-1106-preview
 summary: "Working with XML involves parsing and manipulating XML documents using code.\
   \ Programmers do this to read, write, and modify data in a structured, portable\u2026"

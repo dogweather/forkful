@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/powershell/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:04.268461-07:00
 description: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5\
   \ transformere det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten\
   \ av strengen\u2026"
-lastmod: 2024-02-18 23:08:54.082624
+lastmod: 2024-02-19 22:05:00.267113
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5 transformere\
   \ det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten av strengen\u2026"

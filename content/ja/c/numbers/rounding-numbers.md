@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:38.534383-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.344495
+lastmod: 2024-02-19 22:05:01.895657
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u6570\u5024\u306E\u4E38\u3081\u8FBC\u307F"

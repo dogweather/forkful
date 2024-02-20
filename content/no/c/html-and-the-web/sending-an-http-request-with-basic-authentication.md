@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:15.243583-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i\
   \ C involverer \xE5 lage en HTTP-foresp\xF8rsel som inkluderer en autorisasjonsheader\
   \ med\u2026"
-lastmod: 2024-02-18 23:08:54.393880
+lastmod: 2024-02-19 22:05:00.552361
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i C involverer\
   \ \xE5 lage en HTTP-foresp\xF8rsel som inkluderer en autorisasjonsheader med\u2026"

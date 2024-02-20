@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:01.697187-07:00
 description: "Refactoring is het proces van het herstructureren van bestaande computercodes\
   \ zonder het externe gedrag ervan te wijzigen. Programmeurs voeren refactoring\u2026"
-lastmod: 2024-02-18 23:09:01.954834
+lastmod: 2024-02-19 22:05:09.976459
 model: gpt-4-0125-preview
 summary: "Refactoring is het proces van het herstructureren van bestaande computercodes\
   \ zonder het externe gedrag ervan te wijzigen. Programmeurs voeren refactoring\u2026"

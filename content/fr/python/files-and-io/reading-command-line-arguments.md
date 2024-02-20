@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/reading-command-line-arguments/
 date: 2024-01-20 17:56:44.477376-07:00
 description: "Lire les arguments de ligne de commande permet \xE0 vos scripts Python\
   \ de prendre des donn\xE9es directement depuis le terminal. Les programmeurs utilisent\
   \ cela\u2026"
-lastmod: 2024-02-18 23:09:08.357198
+lastmod: 2024-02-19 22:05:16.153754
 model: gpt-4-1106-preview
 summary: "Lire les arguments de ligne de commande permet \xE0 vos scripts Python de\
   \ prendre des donn\xE9es directement depuis le terminal. Les programmeurs utilisent\

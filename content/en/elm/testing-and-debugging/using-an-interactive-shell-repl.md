@@ -1,13 +1,11 @@
 ---
-aliases:
-- /en/elm/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-31, dogweather, reviewed
 date: 2024-01-25 03:39:27.205304-07:00
 description: "The Read-Eval-Print Loop (REPL) is a simple, interactive programming\
   \ environment that takes single user inputs, evaluates them, and returns the result\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:10.973491
+lastmod: 2024-02-19 22:05:18.480033
 model: gpt-4-1106-preview
 summary: "The Read-Eval-Print Loop (REPL) is a simple, interactive programming environment\
   \ that takes single user inputs, evaluates them, and returns the result to\u2026"

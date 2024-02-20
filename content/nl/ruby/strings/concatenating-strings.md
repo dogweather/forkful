@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:09.277637-07:00
 description: "Strings aan elkaar plakken is gewoon een chique manier om te zeggen\
   \ 'ze achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren,\u2026"
-lastmod: 2024-02-18 23:09:02.411101
+lastmod: 2024-02-19 22:05:10.416387
 model: gpt-4-0125-preview
 summary: "Strings aan elkaar plakken is gewoon een chique manier om te zeggen 'ze\
   \ achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren,\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/rust/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:39.282115-07:00
 description: "Recuperar la fecha actual en Rust es una tarea com\xFAn para acciones\
   \ como registrar, operaciones basadas en tiempo o simplemente mostrar la fecha.\
   \ A\u2026"
-lastmod: 2024-02-18 23:09:09.760515
+lastmod: 2024-02-19 22:05:17.382975
 model: gpt-4-0125-preview
 summary: "Recuperar la fecha actual en Rust es una tarea com\xFAn para acciones como\
   \ registrar, operaciones basadas en tiempo o simplemente mostrar la fecha. A\u2026"

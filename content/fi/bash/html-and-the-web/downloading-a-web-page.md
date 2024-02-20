@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/bash/downloading-a-web-page/
 date: 2024-01-20 17:43:14.143267-07:00
 description: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."
-lastmod: 2024-02-18 23:09:07.803266
+lastmod: 2024-02-19 22:05:15.633869
 model: gpt-4-1106-preview
 summary: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:49.586224-07:00
 description: "Convertir une cha\xEEne en minuscules avec Google Apps Script, un langage\
   \ de script bas\xE9 sur le cloud pour automatiser des t\xE2ches \xE0 travers les\
   \ produits\u2026"
-lastmod: 2024-02-18 23:09:08.271898
+lastmod: 2024-02-19 22:05:16.077341
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne en minuscules avec Google Apps Script, un langage\
   \ de script bas\xE9 sur le cloud pour automatiser des t\xE2ches \xE0 travers les\

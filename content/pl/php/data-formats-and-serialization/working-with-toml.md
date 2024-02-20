@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/working-with-toml/
 date: 2024-01-26 04:24:53.483613-07:00
 description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format danych\
   \ podobny do JSON lub YAML, ale bardziej czytelny dla ludzi. Programi\u015Bci u\u017C\
   ywaj\u0105 go do\u2026"
-lastmod: 2024-02-18 23:08:49.720303
+lastmod: 2024-02-19 22:04:54.656533
 model: gpt-4-0125-preview
 summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format danych podobny\
   \ do JSON lub YAML, ale bardziej czytelny dla ludzi. Programi\u015Bci u\u017Cywaj\u0105\

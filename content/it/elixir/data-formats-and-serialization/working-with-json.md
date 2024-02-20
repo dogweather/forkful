@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/elixir/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:08.269618-07:00
 description: "Lavorare con JSON implica analizzare le stringhe formattate JSON in\
   \ strutture dati che Elixir pu\xF2 manipolare e serializzare le strutture dati di\
   \ Elixir di\u2026"
-lastmod: 2024-02-18 23:08:55.620953
+lastmod: 2024-02-19 22:05:02.215561
 model: gpt-4-0125-preview
 summary: "Lavorare con JSON implica analizzare le stringhe formattate JSON in strutture\
   \ dati che Elixir pu\xF2 manipolare e serializzare le strutture dati di Elixir di\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/fish-shell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:25.109127-07:00
 description: "Virheiden kirjoittaminen (stderr) Fish Shelliss\xE4 tarkoittaa virheilmoitusten\
   \ tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n tavallisesta tulosteesta\u2026"
-lastmod: 2024-02-18 23:09:08.102204
+lastmod: 2024-02-19 22:05:15.905231
 model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen (stderr) Fish Shelliss\xE4 tarkoittaa virheilmoitusten\
   \ tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n tavallisesta tulosteesta\u2026"

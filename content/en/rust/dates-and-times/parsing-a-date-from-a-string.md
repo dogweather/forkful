@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/rust/parsing-a-date-from-a-string/
 date: 2024-02-03 19:03:00.528809-07:00
 description: "Parsing a date from a string is a common task when dealing with user\
   \ input or reading data from files, which involves converting string data into a\
   \ date\u2026"
-lastmod: 2024-02-18 23:09:10.858010
+lastmod: 2024-02-19 22:05:18.374022
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string is a common task when dealing with user input\
   \ or reading data from files, which involves converting string data into a date\u2026"

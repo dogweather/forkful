@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/cpp/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:53.839018-07:00
@@ -12,7 +10,7 @@ description: "YAML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 YAML
   \u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438 \u0432\u0438\u043A\u043E\
   \u0440\u0438\u0441\u0442\u043E\u0432\u0443\u044E\u0442\u044C \u0439\u043E\u0433\u043E\
   \ \u0434\u043B\u044F \u0444\u0430\u0439\u043B\u0456\u0432\u2026"
-lastmod: 2024-02-18 23:09:00.925143
+lastmod: 2024-02-19 22:05:08.966894
 model: gpt-4-0125-preview
 summary: "YAML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 YAML Ain't\
   \ Markup Language, \u0446\u0435 \u0444\u043E\u0440\u043C\u0430\u0442 \u0441\u0435\

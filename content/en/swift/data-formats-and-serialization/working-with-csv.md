@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/working-with-csv/
 date: 2024-02-03 19:03:11.918503-07:00
 description: "Working with CSV (Comma-Separated Values) files involves parsing and\
   \ generating structured data from text files where each line represents a record\
   \ and\u2026"
-lastmod: 2024-02-18 23:09:11.418528
+lastmod: 2024-02-19 22:05:18.877678
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) files involves parsing and generating\
   \ structured data from text files where each line represents a record and\u2026"

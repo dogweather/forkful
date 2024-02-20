@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/c-sharp/searching-and-replacing-text/
 date: 2024-01-20 17:57:59.228887-07:00
 description: "Ohjelmoinnissa tekstinhaku ja -korvaus tarkoittaa merkkijonon etsimist\xE4\
   \ ja sen korvaamista toisella. Sit\xE4 k\xE4ytet\xE4\xE4n tiedon muokkaukseen ja\u2026"
-lastmod: 2024-02-18 23:09:07.604574
+lastmod: 2024-02-19 22:05:15.451671
 model: gpt-4-1106-preview
 summary: "Ohjelmoinnissa tekstinhaku ja -korvaus tarkoittaa merkkijonon etsimist\xE4\
   \ ja sen korvaamista toisella. Sit\xE4 k\xE4ytet\xE4\xE4n tiedon muokkaukseen ja\u2026"

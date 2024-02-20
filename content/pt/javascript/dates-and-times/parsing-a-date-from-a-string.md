@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/javascript/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:28.428307-07:00
 description: "Analisar uma data de uma string permite que programadores convertam\
   \ representa\xE7\xF5es textuais de datas em objetos `Date` do JavaScript, facilitando\u2026"
-lastmod: 2024-02-18 23:08:58.541509
+lastmod: 2024-02-19 22:05:06.037250
 model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string permite que programadores convertam representa\xE7\
   \xF5es textuais de datas em objetos `Date` do JavaScript, facilitando\u2026"

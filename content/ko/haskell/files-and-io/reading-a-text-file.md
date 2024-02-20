@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/haskell/reading-a-text-file/
 date: 2024-01-20 17:54:42.623259-07:00
 description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294\uB2E4\uB294 \uAC83\
   \uC740 \uD30C\uC77C\uC5D0 \uC800\uC7A5\uB41C \uB0B4\uC6A9\uC744 \uC77D\uC5B4 \uD504\
@@ -9,7 +7,7 @@ description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294\uB2E4\uB294 \uA
   , \uC124\uC815\uC744 \uBD88\uB7EC\uC624\uBA70, \uC785\uB825\uC744 \uBC1B\uAE30 \uC704\
   \uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.314068
+lastmod: 2024-02-19 22:05:14.232952
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294\uB2E4\uB294 \uAC83\uC740\
   \ \uD30C\uC77C\uC5D0 \uC800\uC7A5\uB41C \uB0B4\uC6A9\uC744 \uC77D\uC5B4 \uD504\uB85C\

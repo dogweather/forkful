@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/javascript/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:05.786878-07:00
 description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5922\u5922\u3059\u308B\u3068\
   \u306F\u3001Date \u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092\u30C6\u30AD\u30B9\u30C8\
@@ -9,7 +7,7 @@ description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5922\u5922\u3059\u308B
   \u9332\u76EE\u7684\u3067\u958B\u767A\u8005\u304C\u3088\u304F\u4F7F\u3044\u307E\u3059\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:55.279719
+lastmod: 2024-02-19 22:05:01.801484
 model: gpt-4-1106-preview
 summary: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5922\u5922\u3059\u308B\u3068\
   \u306F\u3001Date \u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092\u30C6\u30AD\u30B9\u30C8\

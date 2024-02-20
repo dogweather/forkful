@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:44.273231-07:00
@@ -14,7 +12,7 @@ description: "Bash \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\
   \ \u0915\u0930\u0928\u0947 \u0938\u0947 \u092A\u0939\u0932\u0947 \u0921\u093E\u092F\
   \u0930\u0947\u0915\u094D\u091F\u0930\u0940 \u0915\u0940 \u0909\u092A\u0938\u094D\
   \u0925\u093F\u0924\u093F \u0915\u0940\u2026"
-lastmod: 2024-02-18 23:09:03.683316
+lastmod: 2024-02-19 22:05:11.670681
 model: gpt-4-0125-preview
 summary: "Bash \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
   \ \u092E\u0947\u0902, \u092F\u0939 \u091C\u093E\u0902\u091A\u0928\u093E \u0915\u093F\

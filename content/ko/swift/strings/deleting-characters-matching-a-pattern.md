@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/swift/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:25.769388-07:00
 description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uC77C\
   \uCE58\uD558\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uB370\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uC
   \ \uBB38\uC790\uB97C \uC81C\uAC70\uD560 \uC77C\uC774 \uC790\uC8FC \uBC1C\uC0DD\uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.725008
+lastmod: 2024-02-19 22:05:14.619550
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uC77C\uCE58\
   \uD558\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uB370\uC774\

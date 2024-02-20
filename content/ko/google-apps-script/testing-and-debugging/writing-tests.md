@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/google-apps-script/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:10:10.787021-07:00
@@ -13,7 +11,7 @@ description: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8(GAS)\uC5D0\uC11C \uD14C\uC2A4
   \uC5D0 \uBC84\uADF8\uB97C \uC7A1\uACE0, \uCF54\uB4DC \uD488\uC9C8\uC744 \uAC1C\uC120\
   \uD558\uBA70, \uC5C5\uB370\uC774\uD2B8\uC640 \uC720\uC9C0\uBCF4\uC218\uB97C \uC27D\
   \uAC8C \uD560 \uC218\u2026"
-lastmod: 2024-02-18 23:09:05.561916
+lastmod: 2024-02-19 22:05:13.477673
 model: gpt-4-0125-preview
 summary: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8(GAS)\uC5D0\uC11C \uD14C\uC2A4\uD2B8\
   \uB97C \uC791\uC131\uD55C\uB2E4\uB294 \uAC83\uC740 \uCF54\uB4DC\uC758 \uB3D9\uC791\

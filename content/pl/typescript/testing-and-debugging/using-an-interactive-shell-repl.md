@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:18:54.124150-07:00
 description: "Read-Eval-Print-Loop (REPL) to \u015Brodowisko programistyczne, kt\xF3\
   re przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i zwraca wynik\
   \ u\u017Cytkownikowi.\u2026"
-lastmod: 2024-02-18 23:08:49.349529
+lastmod: 2024-02-19 22:04:54.267659
 model: gpt-4-0125-preview
 summary: "Read-Eval-Print-Loop (REPL) to \u015Brodowisko programistyczne, kt\xF3re\
   \ przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i zwraca wynik\

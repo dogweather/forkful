@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:47.401780-07:00
 description: "Elixiriss\xE4 assosiatiiviset taulukot, kutsuttuina karttoina (Maps),\
   \ ovat avain-arvo-pareista koostuvia kokoelmia, joissa uniikki avain osoittaa arvoon.\
   \ Ne\u2026"
-lastmod: 2024-02-18 23:09:07.266025
+lastmod: 2024-02-19 22:05:15.160840
 model: gpt-4-0125-preview
 summary: "Elixiriss\xE4 assosiatiiviset taulukot, kutsuttuina karttoina (Maps), ovat\
   \ avain-arvo-pareista koostuvia kokoelmia, joissa uniikki avain osoittaa arvoon.\

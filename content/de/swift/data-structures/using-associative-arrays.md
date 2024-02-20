@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/swift/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:56.290726-07:00
 description: "Assoziative Arrays, in Swift als W\xF6rterb\xFCcher (dictionaries) bekannt,\
   \ erm\xF6glichen es Ihnen, Daten als Schl\xFCssel-Wert-Paare zu speichern und zu\
   \ verwalten.\u2026"
-lastmod: 2024-02-18 23:09:05.226658
+lastmod: 2024-02-19 22:05:13.154107
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, in Swift als W\xF6rterb\xFCcher (dictionaries) bekannt,\
   \ erm\xF6glichen es Ihnen, Daten als Schl\xFCssel-Wert-Paare zu speichern und zu\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/working-with-toml/
 date: 2024-01-25 03:39:59.768388-07:00
 description: "Working with TOML involves parsing and generating TOML (Tom's Obvious,\
   \ Minimal Language) data with Haskell. Programmers do it to easily manage\u2026"
-lastmod: 2024-02-18 23:09:11.118726
+lastmod: 2024-02-19 22:05:18.612842
 model: gpt-4-1106-preview
 summary: "Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal\
   \ Language) data with Haskell. Programmers do it to easily manage\u2026"

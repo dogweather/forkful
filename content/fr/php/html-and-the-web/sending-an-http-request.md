@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/php/sending-an-http-request/
 date: 2024-01-20 18:00:20.366042-07:00
 description: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de communiquer\
   \ avec d'autres services web. On le fait pour \xE9changer des donn\xE9es, r\xE9\
   cup\xE9rer du\u2026"
-lastmod: 2024-02-18 23:09:08.919083
+lastmod: 2024-02-19 22:05:16.611313
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de communiquer\
   \ avec d'autres services web. On le fait pour \xE9changer des donn\xE9es, r\xE9\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c-sharp/capitalizing-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:40.393493-07:00
 description: "Een tekenreeks kapitaliseren in programmeren betekent alle letters in\
   \ een tekenreeks in hoofdletters omzetten. Het is een vaak voorkomende taak voor\
   \ het\u2026"
-lastmod: 2024-02-18 23:09:01.833619
+lastmod: 2024-02-19 22:05:09.849893
 model: gpt-4-0125-preview
 summary: "Een tekenreeks kapitaliseren in programmeren betekent alle letters in een\
   \ tekenreeks in hoofdletters omzetten. Het is een vaak voorkomende taak voor het\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/logging/
 date: 2024-01-26 01:07:18.275264-07:00
 description: "Il logging, in poche parole, \xE8 come tenere un diario per la tua applicazione:\
   \ registra eventi, errori e altre azioni significative che avvengono mentre il\u2026"
-lastmod: 2024-02-18 23:08:56.259088
+lastmod: 2024-02-19 22:05:02.892711
 model: gpt-4-1106-preview
 summary: "Il logging, in poche parole, \xE8 come tenere un diario per la tua applicazione:\
   \ registra eventi, errori e altre azioni significative che avvengono mentre il\u2026"

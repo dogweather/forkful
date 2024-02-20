@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/logging/
 date: 2024-01-26 01:00:41.547277-07:00
 description: "Logging er prosessen med \xE5 registrere applikasjonshendelser og datautskrift\
   \ under kj\xF8retid. Programmerere logger for \xE5 diagnostisere feil, overv\xE5\
   ke\u2026"
-lastmod: 2024-02-18 23:08:53.900072
+lastmod: 2024-02-19 22:05:00.068986
 model: gpt-4-1106-preview
 summary: "Logging er prosessen med \xE5 registrere applikasjonshendelser og datautskrift\
   \ under kj\xF8retid. Programmerere logger for \xE5 diagnostisere feil, overv\xE5\

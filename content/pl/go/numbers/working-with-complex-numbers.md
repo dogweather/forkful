@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:26.133187-07:00
 description: "Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu\
   \ liczbami, kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105\
   , jak i urojon\u0105, zwykle wyra\u017Cane jako\u2026"
-lastmod: 2024-02-18 23:08:49.090317
+lastmod: 2024-02-19 22:04:54.028563
 model: gpt-4-0125-preview
 summary: "Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu liczbami,\
   \ kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105, jak i urojon\u0105\

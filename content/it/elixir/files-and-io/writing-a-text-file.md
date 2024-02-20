@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/elixir/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:37.760458-07:00
 description: "Scrivere su un file di testo in Elixir \xE8 una competenza essenziale\
   \ per gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\u2026"
-lastmod: 2024-02-18 23:08:55.618058
+lastmod: 2024-02-19 22:05:02.212431
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Elixir \xE8 una competenza essenziale per\
   \ gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\u2026"

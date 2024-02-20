@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:03.729322-07:00
 description: "Manipular archivos con l\xEDneas de comando \xFAnicas en PowerShell\
   \ se trata de alterar, mover u obtener datos de archivos directamente desde la l\xED\
   nea de\u2026"
-lastmod: 2024-02-18 23:09:10.209893
+lastmod: 2024-02-19 22:05:17.792615
 model: gpt-4-0125-preview
 summary: "Manipular archivos con l\xEDneas de comando \xFAnicas en PowerShell se trata\
   \ de alterar, mover u obtener datos de archivos directamente desde la l\xEDnea de\u2026"

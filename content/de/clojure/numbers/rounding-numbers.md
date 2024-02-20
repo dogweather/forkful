@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/clojure/rounding-numbers/
 date: 2024-01-26 03:43:30.134244-07:00
 description: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zahl\
   \ oder auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie\
   \ f\xFCr die\u2026"
-lastmod: 2024-02-18 23:09:04.501735
+lastmod: 2024-02-19 22:05:12.464058
 model: gpt-4-0125-preview
 summary: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zahl oder\
   \ auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie f\xFC\

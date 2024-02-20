@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/python/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:38.060045-07:00
 description: "YAML, czyli YAML Ain't Markup Language, to format serializacji danych\
   \ czytelny dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105 YAML dla plik\xF3\
   w konfiguracyjnych,\u2026"
-lastmod: 2024-02-18 23:08:49.243113
+lastmod: 2024-02-19 22:04:54.154555
 model: gpt-4-0125-preview
 summary: "YAML, czyli YAML Ain't Markup Language, to format serializacji danych czytelny\
   \ dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105 YAML dla plik\xF3w konfiguracyjnych,\u2026"

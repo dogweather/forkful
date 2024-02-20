@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/working-with-json/
 date: 2024-02-03 19:02:58.472005-07:00
 description: "PowerShell's integration with JSON (JavaScript Object Notation) is about\
   \ parsing (reading) and generating (writing) JSON data, a common format for data\u2026"
-lastmod: 2024-02-18 23:09:11.295292
+lastmod: 2024-02-19 22:05:18.766047
 model: gpt-4-0125-preview
 summary: "PowerShell's integration with JSON (JavaScript Object Notation) is about\
   \ parsing (reading) and generating (writing) JSON data, a common format for data\u2026"

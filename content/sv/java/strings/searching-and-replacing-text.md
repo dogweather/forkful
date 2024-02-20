@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/searching-and-replacing-text/
 date: 2024-01-20 17:58:34.147405-07:00
 description: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att automatiskt hitta specifika\
   \ teckenstr\xE4ngar i en text och byta ut dem mot andra str\xE4ngar. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.655414
+lastmod: 2024-02-19 22:04:56.980621
 model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att automatiskt hitta specifika\
   \ teckenstr\xE4ngar i en text och byta ut dem mot andra str\xE4ngar. Programmerare\

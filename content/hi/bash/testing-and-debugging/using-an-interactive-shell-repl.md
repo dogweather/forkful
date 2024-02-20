@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/bash/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:04.632744-07:00
 description: "REPL \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 Read-Eval-Print\
   \ Loop, \u090F\u0915 \u0938\u093E\u0927\u093E\u0930\u0923, \u0907\u0902\u091F\u0930\
@@ -11,7 +9,7 @@ description: "REPL \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 Read-Eval-
   \u0940 \u0938\u0947 \u0915\u094B\u0921 \u0932\u093F\u0916\u0928\u0947 \u0914\u0930\
   \ \u091F\u0947\u0938\u094D\u091F \u0915\u0930\u0928\u0947, \u0938\u093F\u0902\u091F\
   \u0948\u0915\u094D\u0938 \u0915\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.659720
+lastmod: 2024-02-19 22:05:11.647578
 model: gpt-4-0125-preview
 summary: "REPL \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 Read-Eval-Print\
   \ Loop, \u090F\u0915 \u0938\u093E\u0927\u093E\u0930\u0923, \u0907\u0902\u091F\u0930\

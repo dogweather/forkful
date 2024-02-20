@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:19.938921-07:00
 description: "Werken met CSV (Comma-Separated Values) bestanden betekent het lezen\
   \ van en schrijven naar platte tekstbestanden waarbij elke rij een datagegeven is.\u2026"
-lastmod: 2024-02-18 23:09:01.457928
+lastmod: 2024-02-19 22:05:09.487303
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) bestanden betekent het lezen van\
   \ en schrijven naar platte tekstbestanden waarbij elke rij een datagegeven is.\u2026"

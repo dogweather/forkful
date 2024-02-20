@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/refactoring/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:07.478605-07:00
@@ -11,7 +9,7 @@ description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u91CD\u6784\u6D89\u53CA\u4FEE\u6539
   \u7801\u66F4\u9AD8\u6548\u3001\u66F4\u6613\u4E8E\u7406\u89E3\u3001\u672A\u6765\u66F4\
   \u6613\u4E8E\u4FEE\u6539\uFF0C\u5E76\u51CF\u5C11\u51FA\u73B0\u9519\u8BEF\u7684\u53EF\
   \u80FD\u6027\u3002"
-lastmod: 2024-02-18 23:08:58.989331
+lastmod: 2024-02-19 22:05:06.605672
 model: gpt-4-0125-preview
 summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u91CD\u6784\u6D89\u53CA\u4FEE\u6539\u4EE3\
   \u7801\u7684\u7ED3\u6784\u800C\u4E0D\u6539\u53D8\u5176\u884C\u4E3A\uFF0C\u4EE5\u6539\

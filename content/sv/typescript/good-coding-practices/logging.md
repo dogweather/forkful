@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/logging/
 date: 2024-01-26 01:09:28.099358-07:00
 description: "Loggning \xE4r processen att registrera h\xE4ndelser, fel och annan\
   \ viktig information under ett programs utf\xF6rande till ett externt medium, ofta\
   \ filer eller\u2026"
-lastmod: 2024-02-18 23:08:51.549700
+lastmod: 2024-02-19 22:04:56.864257
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r processen att registrera h\xE4ndelser, fel och annan viktig\
   \ information under ett programs utf\xF6rande till ett externt medium, ofta filer\

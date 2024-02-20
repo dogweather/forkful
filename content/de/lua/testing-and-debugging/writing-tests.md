@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/lua/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:12.138218-07:00
 description: "Das Schreiben von Tests in der Programmierung bedeutet, kleine, separate\
   \ Codeteile zu erstellen, um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile\
   \ Ihrer\u2026"
-lastmod: 2024-02-18 23:09:05.010889
+lastmod: 2024-02-19 22:05:12.949265
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in der Programmierung bedeutet, kleine, separate\
   \ Codeteile zu erstellen, um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile\

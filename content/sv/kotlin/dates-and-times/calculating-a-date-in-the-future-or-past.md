@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/kotlin/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:19.992591-07:00
 description: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar\
   \ om att l\xE4gga till eller dra bort tid fr\xE5n ett specifikt datum. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.765004
+lastmod: 2024-02-19 22:04:57.099331
 model: gpt-4-1106-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar om att\
   \ l\xE4gga till eller dra bort tid fr\xE5n ett specifikt datum. Programmerare g\xF6\

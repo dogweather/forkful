@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:27.376379-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng i C# betyr at du tar bort\
   \ de plagsomme doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som omslutter\
   \ teksten din.\u2026"
-lastmod: 2024-02-18 23:08:53.881999
+lastmod: 2024-02-19 22:05:00.049342
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i C# betyr at du tar bort de\
   \ plagsomme doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som omslutter teksten\

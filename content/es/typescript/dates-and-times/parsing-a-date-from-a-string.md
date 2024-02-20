@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/typescript/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:37.791153-07:00
 description: "Analizar una fecha desde una cadena implica convertir representaciones\
   \ textuales de fechas y horas en un formato que pueda ser manipulado y analizado\
   \ por\u2026"
-lastmod: 2024-02-18 23:09:09.712969
+lastmod: 2024-02-19 22:05:17.339895
 model: gpt-4-0125-preview
 summary: "Analizar una fecha desde una cadena implica convertir representaciones textuales\
   \ de fechas y horas en un formato que pueda ser manipulado y analizado por\u2026"

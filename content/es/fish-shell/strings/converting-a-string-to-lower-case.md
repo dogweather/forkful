@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/fish-shell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:21.426434-07:00
 description: "Convertir un string a min\xFAsculas significa cambiar todas las letras\
   \ de may\xFAsculas a min\xFAsculas. Los programadores hacen esto para normalizar\
   \ texto,\u2026"
-lastmod: 2024-02-18 23:09:10.436942
+lastmod: 2024-02-19 22:05:17.991551
 model: gpt-4-1106-preview
 summary: "Convertir un string a min\xFAsculas significa cambiar todas las letras de\
   \ may\xFAsculas a min\xFAsculas. Los programadores hacen esto para normalizar texto,\u2026"

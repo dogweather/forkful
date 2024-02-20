@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/php/comparing-two-dates/
 date: 2024-01-20 17:33:22.340326-07:00
 description: "Vertailemme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, kun haluamme tiet\xE4\
   \xE4 niiden ajallisen eron tai selvitt\xE4\xE4 kumpi on aikaisempi tai my\xF6h\xE4\
   isempi. T\xE4m\xE4 on t\xE4rke\xE4\xE4 esimerkiksi\u2026"
-lastmod: 2024-02-18 23:09:07.725591
+lastmod: 2024-02-19 22:05:15.562897
 model: gpt-4-1106-preview
 summary: "Vertailemme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, kun haluamme tiet\xE4\xE4\
   \ niiden ajallisen eron tai selvitt\xE4\xE4 kumpi on aikaisempi tai my\xF6h\xE4\

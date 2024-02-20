@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:47.804240-07:00
@@ -8,7 +6,7 @@ description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u
   i trong Go bao g\u1ED3m vi\u1EC7c bi\u1EBFn m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3\
   ng `time.Time` th\xE0nh \u0111\u1ECBnh d\u1EA1ng chu\u1ED7i d\u1EC5 \u0111\u1ECD\
   c. L\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng th\u1EF1c hi\u1EC7n\u2026"
-lastmod: 2024-02-18 23:08:50.183763
+lastmod: 2024-02-19 22:04:55.183933
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7i\
   \ trong Go bao g\u1ED3m vi\u1EC7c bi\u1EBFn m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3\

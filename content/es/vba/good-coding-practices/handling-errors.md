@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/vba/handling-errors/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:02.544800-07:00
 description: "El manejo de errores en Visual Basic para Aplicaciones (VBA) se refiere\
   \ al proceso de anticipar, detectar y resolver errores de programaci\xF3n, de\u2026"
-lastmod: 2024-02-18 23:09:09.805649
+lastmod: 2024-02-19 22:05:17.424320
 model: gpt-4-0125-preview
 summary: "El manejo de errores en Visual Basic para Aplicaciones (VBA) se refiere\
   \ al proceso de anticipar, detectar y resolver errores de programaci\xF3n, de\u2026"

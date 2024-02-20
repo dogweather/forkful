@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:28.998504-07:00
 description: "\xC5 finne lengden av en streng betyr \xE5 telle antall tegn i den.\
   \ Programmere gj\xF8r dette for \xE5 validere input, manipulere tekst eller for\
   \ \xE5 avgrense data f\xF8r\u2026"
-lastmod: 2024-02-18 23:08:53.556023
+lastmod: 2024-02-19 22:04:59.677180
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden av en streng betyr \xE5 telle antall tegn i den. Programmere\
   \ gj\xF8r dette for \xE5 validere input, manipulere tekst eller for \xE5 avgrense\

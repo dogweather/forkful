@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/arduino/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:06.322117-07:00
 description: "Een webpagina downloaden betekent het ophalen van de HTML-inhoud van\
   \ de URL waar je naar kijkt. Programmeurs doen dit om gegevens te trekken, hun gadgets\u2026"
-lastmod: 2024-02-18 23:09:02.137253
+lastmod: 2024-02-19 22:05:10.155873
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het ophalen van de HTML-inhoud van de\
   \ URL waar je naar kijkt. Programmeurs doen dit om gegevens te trekken, hun gadgets\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/arduino/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:39.861331-07:00
 description: "YAML (YAML N\xE3o \xE9 Uma Linguagem de Marca\xE7\xE3o) \xE9 um padr\xE3\
   o de serializa\xE7\xE3o de dados leg\xEDvel por humanos, que pode ser usado para\
   \ arquivos de configura\xE7\xE3o,\u2026"
-lastmod: 2024-02-18 23:08:58.429295
+lastmod: 2024-02-19 22:05:05.918280
 model: gpt-4-0125-preview
 summary: "YAML (YAML N\xE3o \xE9 Uma Linguagem de Marca\xE7\xE3o) \xE9 um padr\xE3\
   o de serializa\xE7\xE3o de dados leg\xEDvel por humanos, que pode ser usado para\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/javascript/reading-a-text-file/
 date: 2024-01-20 17:54:44.275941-07:00
 description: "Leggere un file di testo significa estrarre dati da un documento salvato\
   \ sul tuo dispositivo o server. Programmatore lo fanno per manipolare,\u2026"
-lastmod: 2024-02-18 23:08:56.269802
+lastmod: 2024-02-19 22:05:02.904277
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa estrarre dati da un documento salvato\
   \ sul tuo dispositivo o server. Programmatore lo fanno per manipolare,\u2026"

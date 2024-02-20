@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/java/comparing-two-dates/
 date: 2024-01-20 17:33:03.571927-07:00
 description: "Comparer deux dates permet de d\xE9terminer laquelle est ant\xE9rieure,\
   \ post\xE9rieure ou si elles sont identiques. Les programmeurs utilisent cette comparaison\u2026"
-lastmod: 2024-02-18 23:09:08.641963
+lastmod: 2024-02-19 22:05:16.412795
 model: gpt-4-1106-preview
 summary: "Comparer deux dates permet de d\xE9terminer laquelle est ant\xE9rieure,\
   \ post\xE9rieure ou si elles sont identiques. Les programmeurs utilisent cette comparaison\u2026"

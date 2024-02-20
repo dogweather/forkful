@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fr/c-sharp/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:46.556508-07:00
 description: "L'analyse syntaxique du HTML en programmation implique l'analyse de\
   \ la structure d'un document HTML, ce qui vous permet d'extraire, de manipuler et\u2026"
-lastmod: 2024-02-18 23:09:08.825276
+lastmod: 2024-02-19 22:05:16.526009
 model: gpt-4-0125-preview
 summary: "L'analyse syntaxique du HTML en programmation implique l'analyse de la structure\
   \ d'un document HTML, ce qui vous permet d'extraire, de manipuler et\u2026"

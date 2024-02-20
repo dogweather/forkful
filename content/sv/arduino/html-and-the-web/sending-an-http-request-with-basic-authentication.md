@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/arduino/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:00:51.982616-07:00
 description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
   \ inneb\xE4r att \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord i kodad form till\
   \ en server f\xF6r att bekr\xE4fta\u2026"
-lastmod: 2024-02-18 23:08:52.044235
+lastmod: 2024-02-19 22:04:57.402401
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
   r att \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord i kodad form till en server\

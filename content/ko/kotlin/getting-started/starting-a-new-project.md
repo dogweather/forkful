@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/starting-a-new-project/
 date: 2024-01-20 18:03:52.149756-07:00
 description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30\uB294 \uBE48\
   \ \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uB294 \uAC83\uACFC \uAC19\
@@ -8,7 +6,7 @@ description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30\uB294 \uB
   \ \uC2E4\uD604\uD558\uACE0 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574\
   \ \uC0C8\uB85C\uC6B4 \uD504\uB85C\uC81D\uD2B8\uB97C \uB9CC\uB4E0\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.150464
+lastmod: 2024-02-19 22:05:14.084242
 model: gpt-4-1106-preview
 summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30\uB294 \uBE48 \uCE94\
   \uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uB294 \uAC83\uACFC \uAC19\uB2E4\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:04.901464-07:00
 description: "Sending an HTTP request with basic authentication involves adding a\
   \ username and password to access a resource on a server. Programmers use it because\u2026"
-lastmod: 2024-02-18 23:09:11.136824
+lastmod: 2024-02-19 22:05:18.629477
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves adding a username\
   \ and password to access a resource on a server. Programmers use it because\u2026"

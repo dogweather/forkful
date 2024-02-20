@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/ruby/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:58.426621-07:00
 description: "JSON (JavaScript Object Notation) \xE9 um formato leve de troca de dados,\
   \ prevalente em aplica\xE7\xF5es web para a troca de dados entre clientes e servidores.\u2026"
-lastmod: 2024-02-18 23:08:58.687309
+lastmod: 2024-02-19 22:05:06.190354
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE9 um formato leve de troca de dados,\
   \ prevalente em aplica\xE7\xF5es web para a troca de dados entre clientes e servidores.\u2026"

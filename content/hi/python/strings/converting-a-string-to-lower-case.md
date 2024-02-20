@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/python/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:50.200154-07:00
 description: "\u090F\u0915 string \u0915\u094B lower case \u092E\u0947\u0902 \u092C\
   \u0926\u0932\u0928\u0947 \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0938\
@@ -10,7 +8,7 @@ description: "\u090F\u0915 string \u0915\u094B lower case \u092E\u0947\u0902 \u0
   \u0930\u094D\u092F\u0915\u094D\u0930\u092E\u0915\u0930\u094D\u0924\u093E \u0906\u092E\
   \u0924\u094C\u0930 \u092A\u0930 \u0907\u0938\u0947 \u0921\u093E\u091F\u093E \u0938\
   \u093E\u092B \u0915\u0930\u0928\u0947, user input\u2026"
-lastmod: 2024-02-18 23:09:02.623775
+lastmod: 2024-02-19 22:05:10.625364
 model: gpt-4-1106-preview
 summary: "\u090F\u0915 string \u0915\u094B lower case \u092E\u0947\u0902 \u092C\u0926\
   \u0932\u0928\u0947 \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0938\u092D\

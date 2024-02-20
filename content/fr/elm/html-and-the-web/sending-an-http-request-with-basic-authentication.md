@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elm/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:32.928982-07:00
 description: "En Elm, envoyer une requ\xEAte HTTP avec une authentification de base\
   \ consiste \xE0 transmettre des identifiants (nom d'utilisateur et mot de passe)\
   \ pour\u2026"
-lastmod: 2024-02-18 23:09:08.733883
+lastmod: 2024-02-19 22:05:16.442842
 model: gpt-4-1106-preview
 summary: "En Elm, envoyer une requ\xEAte HTTP avec une authentification de base consiste\
   \ \xE0 transmettre des identifiants (nom d'utilisateur et mot de passe) pour\u2026"

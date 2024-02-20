@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:46.780211-07:00
 description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740\
   , \uBB38\uC790\uAC00 \uC5BC\uB9C8\uB098 \uB9CE\uC740\uC9C0 \uC138\uB294 \uAC70\uC608\
@@ -8,7 +6,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC
   \ \uBC18\uBCF5, \uBB38\uC790\uC5F4 \uC790\uB974\uAE30 \uAC19\uC740 \uC791\uC5C5\uC744\
   \ \uD560 \uB54C \uD544\uC694\uD574\uC694."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.135934
+lastmod: 2024-02-19 22:05:14.070361
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740, \uBB38\
   \uC790\uAC00 \uC5BC\uB9C8\uB098 \uB9CE\uC740\uC9C0 \uC138\uB294 \uAC70\uC608\uC694\

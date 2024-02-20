@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:17.890727-07:00
 description: "Numeroiden py\xF6rist\xE4minen ohjelmoinnissa tarkoittaa numeron likim\xE4\
   \xE4r\xE4ist\xE4 py\xF6rist\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn\
   \ desimaalipaikkojen m\xE4\xE4r\xE4\xE4n.\u2026"
-lastmod: 2024-02-18 23:09:07.404648
+lastmod: 2024-02-19 22:05:15.290391
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen ohjelmoinnissa tarkoittaa numeron likim\xE4\
   \xE4r\xE4ist\xE4 py\xF6rist\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn\

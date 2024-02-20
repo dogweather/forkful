@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/parsing-a-date-from-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:03.966091-07:00
 description: "Een datum parsen vanuit een string betekent het omzetten van tekst naar\
   \ een datumobject. Dit doen we omdat het gemakkelijker is om met data te werken,\u2026"
-lastmod: 2024-02-18 23:09:01.444100
+lastmod: 2024-02-19 22:05:09.474242
 model: gpt-4-0125-preview
 summary: "Een datum parsen vanuit een string betekent het omzetten van tekst naar\
   \ een datumobject. Dit doen we omdat het gemakkelijker is om met data te werken,\u2026"

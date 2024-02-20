@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:19.638091-07:00
@@ -11,7 +9,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C HTTP \uC694\uCCAD\u
   \uAC70\uB098 \uC628\uB77C\uC778 API\uC640 \uC0C1\uD638 \uC791\uC6A9\uD558\uAC70\uB098\
   , Excel, Access \uB610\uB294 \uB9DE\uCDA4\uD615 VBA \uC194\uB8E8\uC158\uACFC \uAC19\
   \uC740\u2026"
-lastmod: 2024-02-18 23:09:05.946826
+lastmod: 2024-02-19 22:05:13.881820
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\
   \uB0B4\uB294 \uAC83\uC740 HTTP\uB97C \uD1B5\uD574 \uC6F9 \uC790\uC6D0\uC774\uB098\

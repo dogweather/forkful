@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:01.333200-07:00
 description: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6rer\
   \ koding og dekoding av data mellom Go-datastrukturer og JSON-format. Denne oppgaven\
   \ er\u2026"
-lastmod: 2024-02-18 23:08:53.458334
+lastmod: 2024-02-19 22:04:59.570980
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6rer koding\
   \ og dekoding av data mellom Go-datastrukturer og JSON-format. Denne oppgaven er\u2026"

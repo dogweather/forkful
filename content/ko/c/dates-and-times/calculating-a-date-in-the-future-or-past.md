@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:24.353290-07:00
@@ -13,7 +11,7 @@ description: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\uC
   \uC131, \uB9CC\uB8CC \uB0A0\uC9DC \uCC98\uB9AC \uB4F1\uC758 \uC791\uC5C5\uC744 \uC704\
   \uD574 \uC218\uD589\uD558\uB294\uB370, \uC774\uB294 \uCE98\uB9B0\uB354 \uC2DC\uC2A4\
   \uD15C\uBD80\uD130 \uAE08\uC735\u2026"
-lastmod: 2024-02-18 23:09:06.975973
+lastmod: 2024-02-19 22:05:14.860635
 model: gpt-4-0125-preview
 summary: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\uD558\
   \uB294 \uAC83\uC740 \uC8FC\uC5B4\uC9C4 \uB0A0\uC9DC\uB85C\uBD80\uD130 \uD2B9\uC815\

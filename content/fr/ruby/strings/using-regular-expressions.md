@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/ruby/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:05.435035-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en Ruby sont des motifs utilis\xE9\
   s pour associer des combinaisons de caract\xE8res dans des cha\xEEnes de caract\xE8\
   res,\u2026"
-lastmod: 2024-02-18 23:09:09.393955
+lastmod: 2024-02-19 22:05:17.057547
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en Ruby sont des motifs utilis\xE9\
   s pour associer des combinaisons de caract\xE8res dans des cha\xEEnes de caract\xE8\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:47.027546-07:00
 description: "Associatieve arrays, of zoals ze in JavaScript accurater bekend staan,\
   \ objecten, stellen je in staat om sleutels aan waarden te koppelen. Dit is bijzonder\u2026"
-lastmod: 2024-02-18 23:09:02.267810
+lastmod: 2024-02-19 22:05:10.280223
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, of zoals ze in JavaScript accurater bekend staan, objecten,\
   \ stellen je in staat om sleutels aan waarden te koppelen. Dit is bijzonder\u2026"

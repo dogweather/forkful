@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/arduino/concatenating-strings/
 date: 2024-01-20 17:34:06.997156-07:00
 description: "Concatenar cadenas significa juntar dos o m\xE1s textos en uno solo.\
   \ Los programadores lo hacen para construir mensajes, combinar datos y presentar\u2026"
-lastmod: 2024-02-18 23:09:10.252950
+lastmod: 2024-02-19 22:05:17.831739
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas significa juntar dos o m\xE1s textos en uno solo. Los\
   \ programadores lo hacen para construir mensajes, combinar datos y presentar\u2026"

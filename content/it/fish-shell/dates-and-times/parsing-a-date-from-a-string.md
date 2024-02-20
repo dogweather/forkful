@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/fish-shell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:06.096662-07:00
 description: "L'analisi di una data da una stringa comporta l'estrazione delle informazioni\
   \ sulla data codificate all'interno di stringhe e la loro conversione in un\u2026"
-lastmod: 2024-02-18 23:08:56.304736
+lastmod: 2024-02-19 22:05:02.941358
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa comporta l'estrazione delle informazioni\
   \ sulla data codificate all'interno di stringhe e la loro conversione in un\u2026"

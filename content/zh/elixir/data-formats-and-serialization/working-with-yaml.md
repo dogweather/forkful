@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/elixir/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:11.326988-07:00
@@ -12,7 +10,7 @@ description: "YAML\uFF0C\u5168\u79F0\u662FYAML Ain't Markup Language\uFF08YAML\u
   \u6240\u4EE5\u4F7F\u7528\u5B83\uFF0C\u662F\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\
   \u4EE5\u53CA\u5B83\u80FD\u591F\u8F7B\u677E\u8868\u793A\u590D\u6742\u7684\u5C42\u6B21\
   \u6570\u636E\u3002"
-lastmod: 2024-02-18 23:08:58.884015
+lastmod: 2024-02-19 22:05:06.461094
 model: gpt-4-0125-preview
 summary: "YAML\uFF0C\u5168\u79F0\u662FYAML Ain't Markup Language\uFF08YAML\u4E0D\u662F\
   \u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\u7684\

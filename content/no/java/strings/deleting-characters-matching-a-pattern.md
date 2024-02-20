@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/java/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:32.731276-07:00
 description: "Slettes matchende tegn er \xE5 fjerne bestemte sekvenser av tegn fra\
   \ en streng, basert p\xE5 et m\xF8nster. Programmerere gj\xF8r dette for \xE5 rense\
   \ data, forenkle\u2026"
-lastmod: 2024-02-18 23:08:53.755964
+lastmod: 2024-02-19 22:04:59.895007
 model: gpt-4-1106-preview
 summary: "Slettes matchende tegn er \xE5 fjerne bestemte sekvenser av tegn fra en\
   \ streng, basert p\xE5 et m\xF8nster. Programmerere gj\xF8r dette for \xE5 rense\

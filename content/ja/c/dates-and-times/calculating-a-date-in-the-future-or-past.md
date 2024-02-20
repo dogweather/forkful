@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/c/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:06.052613-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.363000
+lastmod: 2024-02-19 22:05:01.922330
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u300C\u672A\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u306E\u8A08\

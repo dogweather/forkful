@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/swift/sending-an-http-request/
 date: 2024-01-20 18:00:45.550818-07:00
 description: "Sending an HTTP request lets your app talk to a web server\u2014like\
   \ asking for data or sending it. Programmers use this to interact with web APIs,\
   \ grabbing\u2026"
-lastmod: 2024-02-18 23:09:00.956304
+lastmod: 2024-02-19 22:05:08.997713
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request lets your app talk to a web server\u2014like asking\
   \ for data or sending it. Programmers use this to interact with web APIs, grabbing\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/swift/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:14.499567-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Swiftille tarkoittaa `Date`\
   \ luokan k\xE4ytt\xE4mist\xE4 p\xE4\xE4st\xE4ksesi k\xE4siksi p\xE4iv\xE4m\xE4\xE4\
   r\xE4\xE4n ja aikaan, jolloin sovellusta ajetaan.\u2026"
-lastmod: 2024-02-18 23:09:08.001214
+lastmod: 2024-02-19 22:05:15.813006
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Swiftille tarkoittaa `Date`\
   \ luokan k\xE4ytt\xE4mist\xE4 p\xE4\xE4st\xE4ksesi k\xE4siksi p\xE4iv\xE4m\xE4\xE4\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/clojure/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:09.763207-07:00
 description: "Lavorare con il JSON (JavaScript Object Notation) in Clojure comporta\
   \ l'analisi delle stringhe JSON in strutture dati di Clojure (mappe, vettori) e\u2026"
-lastmod: 2024-02-18 23:08:55.581087
+lastmod: 2024-02-19 22:05:02.172889
 model: gpt-4-0125-preview
 summary: "Lavorare con il JSON (JavaScript Object Notation) in Clojure comporta l'analisi\
   \ delle stringhe JSON in strutture dati di Clojure (mappe, vettori) e\u2026"

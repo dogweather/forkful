@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/rust/working-with-xml/
 date: 2024-01-26 04:36:39.229744-07:00
 description: "XML, \u091C\u093F\u0938\u0915\u093E \u092A\u0942\u0930\u093E \u0928\u093E\
   \u092E eXtensible Markup Language \u0939\u0948, JSON \u0915\u093E \u0935\u093F\u0938\
@@ -10,7 +8,7 @@ description: "XML, \u091C\u093F\u0938\u0915\u093E \u092A\u0942\u0930\u093E \u092
   \u0930\u092A\u094D\u0930\u093E\u0907\u091C \u0938\u0949\u092B\u094D\u091F\u0935\u0947\
   \u092F\u0930 \u092F\u093E \u0909\u0928 APIs \u0915\u0947 \u0938\u093E\u0925 \u0915\
   \u093E\u092E \u0915\u0930\u0924\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.000810
+lastmod: 2024-02-19 22:05:10.998457
 model: gpt-4-0125-preview
 summary: "XML, \u091C\u093F\u0938\u0915\u093E \u092A\u0942\u0930\u093E \u0928\u093E\
   \u092E eXtensible Markup Language \u0939\u0948, JSON \u0915\u093E \u0935\u093F\u0938\

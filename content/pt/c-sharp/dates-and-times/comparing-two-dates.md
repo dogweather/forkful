@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/comparing-two-dates/
 date: 2024-01-20 17:33:08.739385-07:00
 description: "Comparar duas datas \xE9 verificar a rela\xE7\xE3o temporal entre elas.\
   \ Programadores fazem isso para gerenciar eventos, validar prazos, organizar cronogramas\
   \ e\u2026"
-lastmod: 2024-02-18 23:08:58.169540
+lastmod: 2024-02-19 22:05:05.639313
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 verificar a rela\xE7\xE3o temporal entre elas.\
   \ Programadores fazem isso para gerenciar eventos, validar prazos, organizar cronogramas\

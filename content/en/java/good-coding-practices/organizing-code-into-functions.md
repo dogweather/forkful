@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/organizing-code-into-functions/
 date: 2024-01-25 02:59:34.954384-07:00
 description: "Organizing code into functions means breaking down the beast of a program\
   \ into manageable chunks, each doing a distinct task. Programmers do this to make\u2026"
-lastmod: 2024-02-18 23:09:10.936335
+lastmod: 2024-02-19 22:05:18.445573
 model: gpt-4-1106-preview
 summary: "Organizing code into functions means breaking down the beast of a program\
   \ into manageable chunks, each doing a distinct task. Programmers do this to make\u2026"

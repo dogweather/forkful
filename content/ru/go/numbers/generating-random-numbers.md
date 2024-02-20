@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/go/generating-random-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:53.541543-07:00
@@ -14,7 +12,7 @@ description: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043
   \u0442\u044C \u043A\u043E\u0442\u043E\u0440\u0443\u044E \u0440\u0430\u0437\u0443\
   \u043C\u043D\u043E \u0442\u043E\u0447\u043D\u043E \u043C\u043E\u0436\u043D\u043E\
   \ \u043D\u0435 \u043B\u0443\u0447\u0448\u0435, \u0447\u0435\u043C\u2026"
-lastmod: 2024-02-18 23:08:56.423468
+lastmod: 2024-02-19 22:05:03.077468
 model: gpt-4-0125-preview
 summary: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043B\u0443\
   \u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 \u043F\

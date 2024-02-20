@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/organizing-code-into-functions/
 date: 2024-01-26 01:10:25.068697-07:00
 description: "Att organisera kod i funktioner inneb\xE4r att bryta ner ett stort program\
   \ i hanterbara delar, d\xE4r varje del utf\xF6r en distinkt uppgift. Programmerare\
   \ g\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.674635
+lastmod: 2024-02-19 22:04:57.002017
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner inneb\xE4r att bryta ner ett stort program\
   \ i hanterbara delar, d\xE4r varje del utf\xF6r en distinkt uppgift. Programmerare\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/lua/extracting-substrings/
 date: 2024-01-20 17:46:22.798337-07:00
 description: "Substringit ovat osia isommista tekstijonoista. K\xE4yt\xE4mme substringien\
   \ irrottamista, kun haluamme prosessoida tai analysoida pienempi\xE4 tietoja, kuten\u2026"
-lastmod: 2024-02-18 23:09:07.745472
+lastmod: 2024-02-19 22:05:15.581353
 model: gpt-4-1106-preview
 summary: "Substringit ovat osia isommista tekstijonoista. K\xE4yt\xE4mme substringien\
   \ irrottamista, kun haluamme prosessoida tai analysoida pienempi\xE4 tietoja, kuten\u2026"

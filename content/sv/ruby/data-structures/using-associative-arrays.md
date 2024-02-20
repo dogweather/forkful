@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/ruby/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:54.301462-07:00
 description: "Associativa arrayer, som oftare kallas hashar i Ruby, g\xF6r det m\xF6\
   jligt att para ihop unika nycklar med v\xE4rden. De \xE4r oumb\xE4rliga n\xE4r du\
   \ beh\xF6ver h\xE5lla reda\u2026"
-lastmod: 2024-02-18 23:08:52.286648
+lastmod: 2024-02-19 22:04:57.674868
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, som oftare kallas hashar i Ruby, g\xF6r det m\xF6jligt\
   \ att para ihop unika nycklar med v\xE4rden. De \xE4r oumb\xE4rliga n\xE4r du beh\xF6\

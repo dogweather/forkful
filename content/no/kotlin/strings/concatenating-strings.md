@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/kotlin/concatenating-strings/
 date: 2024-01-20 17:35:38.950381-07:00
 description: "I programmering, \xE5 sl\xE5 sammen strenger (concatenating strings)\
   \ er rett og slett \xE5 sette dem sammen i \xE9n. Vi gj\xF8r det for \xE5 bygge\
   \ setninger, lage meldinger\u2026"
-lastmod: 2024-02-18 23:08:53.844200
+lastmod: 2024-02-19 22:04:59.989762
 model: gpt-4-1106-preview
 summary: "I programmering, \xE5 sl\xE5 sammen strenger (concatenating strings) er\
   \ rett og slett \xE5 sette dem sammen i \xE9n. Vi gj\xF8r det for \xE5 bygge setninger,\

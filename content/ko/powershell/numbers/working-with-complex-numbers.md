@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/working-with-complex-numbers/
 date: 2024-01-26 04:44:06.667947-07:00
 description: "\uBCF5\uC18C\uC218(complex numbers), \uC989 \uC2E4\uC218\uBD80\uC640\
   \ \uD5C8\uC218\uBD80(\uC608: 3 + 4i)\uB97C \uAC00\uC9C4 \uC218\uB294 \uACF5\uD559\
@@ -9,7 +7,7 @@ description: "\uBCF5\uC18C\uC218(complex numbers), \uC989 \uC2E4\uC218\uBD80\uC6
   \uB4E4\uC740 \uC774\uB97C \uC2DC\uBBAC\uB808\uC774\uC158, \uC2E0\uD638 \uCC98\uB9AC\
   , \uD2B9\uC815 \uC720\uD615\uC758 \uC218\uD559 \uBB38\uC81C \uD574\uACB0\uC5D0 \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.541436
+lastmod: 2024-02-19 22:05:14.448144
 model: gpt-4-0125-preview
 summary: "\uBCF5\uC18C\uC218(complex numbers), \uC989 \uC2E4\uC218\uBD80\uC640 \uD5C8\
   \uC218\uBD80(\uC608: 3 + 4i)\uB97C \uAC00\uC9C4 \uC218\uB294 \uACF5\uD559, \uBB3C\

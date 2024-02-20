@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/ruby/downloading-a-web-page/
 date: 2024-01-20 17:44:36.945852-07:00
 description: "Baixar uma p\xE1gina da web \xE9 simplesmente o ato de obter o conte\xFA\
   do HTML dessa p\xE1gina para seu uso local. Programadores fazem isso para an\xE1\
   lise de dados,\u2026"
-lastmod: 2024-02-18 23:08:58.664513
+lastmod: 2024-02-19 22:05:06.166483
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 simplesmente o ato de obter o conte\xFA\
   do HTML dessa p\xE1gina para seu uso local. Programadores fazem isso para an\xE1\

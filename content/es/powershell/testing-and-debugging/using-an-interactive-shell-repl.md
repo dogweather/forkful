@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/powershell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:37.517542-07:00
 description: "La shell interactiva, o Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), te permite escribir comandos de PowerShell y obtener\u2026"
-lastmod: 2024-02-18 23:09:10.217231
+lastmod: 2024-02-19 22:05:17.799317
 model: gpt-4-0125-preview
 summary: "La shell interactiva, o Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), te permite escribir comandos de PowerShell y obtener\u2026"

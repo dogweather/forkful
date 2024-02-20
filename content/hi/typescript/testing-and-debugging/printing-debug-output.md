@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/typescript/printing-debug-output/
 date: 2024-01-20 17:53:37.176518-07:00
 description: "Debug output \u092A\u094D\u0930\u093F\u0902\u091F \u0915\u0930\u0928\
   \u0947 \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0915\u094B\u0921 \u092E\
@@ -11,7 +9,7 @@ description: "Debug output \u092A\u094D\u0930\u093F\u0902\u091F \u0915\u0930\u09
   \ \u0907\u0938\u0932\u093F\u090F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0924\
   \u093E\u0915\u093F \u0915\u094B\u0921 \u0915\u0940 \u0916\u094B\u091C\u092C\u0940\
   \u0928 \u0915\u0930\u0924\u0947 \u0938\u092E\u092F\u2026"
-lastmod: 2024-02-18 23:09:02.884167
+lastmod: 2024-02-19 22:05:10.882798
 model: gpt-4-1106-preview
 summary: "Debug output \u092A\u094D\u0930\u093F\u0902\u091F \u0915\u0930\u0928\u0947\
   \ \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0915\u094B\u0921 \u092E\u0947\

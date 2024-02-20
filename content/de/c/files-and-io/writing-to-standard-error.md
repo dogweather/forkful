@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:49.226331-07:00
 description: "Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung von\
   \ Fehlermeldungen und diagnostischen Informationen an einen separaten Stream vom\u2026"
-lastmod: 2024-02-18 23:09:05.392841
+lastmod: 2024-02-19 22:05:13.312258
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung von Fehlermeldungen\
   \ und diagnostischen Informationen an einen separaten Stream vom\u2026"

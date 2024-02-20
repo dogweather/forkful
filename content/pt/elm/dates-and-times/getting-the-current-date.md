@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/elm/getting-the-current-date/
 date: 2024-01-20 15:14:02.712219-07:00
 description: "Conseguir a data atual significa acessar o momento exato em que o c\xF3\
   digo est\xE1 sendo executado. Programadores fazem isso para marcar eventos, gerenciar\u2026"
-lastmod: 2024-02-18 23:08:58.070743
+lastmod: 2024-02-19 22:05:05.549620
 summary: "Conseguir a data atual significa acessar o momento exato em que o c\xF3\
   digo est\xE1 sendo executado. Programadores fazem isso para marcar eventos, gerenciar\u2026"
 title: Obtendo a data atual

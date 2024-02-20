@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/php/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:20.695576-07:00
 description: "Een nieuw PHP-project starten betekent een basis opzetten om je webapp\
   \ of script op te bouwen. We doen dit om fris te starten, onze idee\xEBn in code\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:01.945871
+lastmod: 2024-02-19 22:05:09.968076
 model: gpt-4-0125-preview
 summary: "Een nieuw PHP-project starten betekent een basis opzetten om je webapp of\
   \ script op te bouwen. We doen dit om fris te starten, onze idee\xEBn in code te\u2026"

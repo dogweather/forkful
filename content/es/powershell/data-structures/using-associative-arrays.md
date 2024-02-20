@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/powershell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:29.326230-07:00
 description: "Los arrays asociativos, tambi\xE9n conocidos como tablas hash o diccionarios\
   \ en PowerShell, te permiten almacenar datos en pares clave-valor, haciendo que\
   \ la\u2026"
-lastmod: 2024-02-18 23:09:10.205692
+lastmod: 2024-02-19 22:05:17.788636
 model: gpt-4-0125-preview
 summary: "Los arrays asociativos, tambi\xE9n conocidos como tablas hash o diccionarios\
   \ en PowerShell, te permiten almacenar datos en pares clave-valor, haciendo que\

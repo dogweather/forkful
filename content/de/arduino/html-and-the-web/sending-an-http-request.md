@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/arduino/sending-an-http-request/
 date: 2024-01-20 17:58:51.582090-07:00
 description: "HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren\
   \ \u2013 so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-\u2026"
-lastmod: 2024-02-18 23:09:05.142718
+lastmod: 2024-02-19 22:05:13.074844
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren \u2013\
   \ so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-\u2026"

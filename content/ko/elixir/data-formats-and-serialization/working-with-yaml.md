@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:14.567152-07:00
@@ -12,7 +10,7 @@ description: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C
   . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uADF8\uAC83\uC758 \uB2E8\uC21C\uC131\
   \uACFC \uBCF5\uC7A1\uD55C \uACC4\uCE35\uC801 \uB370\uC774\uD130\uB97C \uC27D\uAC8C\
   \ \uD45C\uD604\uD560 \uC218\u2026"
-lastmod: 2024-02-18 23:09:05.786882
+lastmod: 2024-02-19 22:05:13.699652
 model: gpt-4-0125-preview
 summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C, \uAD6C\
   \uC131 \uD30C\uC77C\uACFC \uC11C\uB85C \uB2E4\uB978 \uB370\uC774\uD130 \uAD6C\uC870\

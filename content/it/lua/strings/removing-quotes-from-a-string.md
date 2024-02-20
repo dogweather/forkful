@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:31.203131-07:00
 description: "Rimuovere le virgolette da una stringa significa spogliare il testo\
   \ di quei caratteri di virgoletta doppia o singola che lo abbracciano. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:55.999760
+lastmod: 2024-02-19 22:05:02.614268
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa spogliare il testo di quei\
   \ caratteri di virgoletta doppia o singola che lo abbracciano. I programmatori\u2026"

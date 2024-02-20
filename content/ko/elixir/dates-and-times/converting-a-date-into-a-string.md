@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:09.893910-07:00
 description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uC77C\uC815\uD55C \uD615\uC2DD\uC758 \uBB38\uC790\uC5F4\uB85C \uB0A0\
@@ -9,7 +7,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB2
   \uB294 \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\uC758 \uB0A0\uC9DC \uB370\uC774\uD130\
   \ \uAD50\uD658\uC744 \uC704\uD574 \uC8FC\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.773390
+lastmod: 2024-02-19 22:05:13.685943
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
   \uC740 \uC77C\uC815\uD55C \uD615\uC2DD\uC758 \uBB38\uC790\uC5F4\uB85C \uB0A0\uC9DC\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/ruby/starting-a-new-project/
 date: 2024-01-20 18:04:16.866742-07:00
 description: "Ein neues Projekt zu starten bedeutet, etwas von Grund auf neu zu gestalten.\
   \ Programmierer machen das, um ihre Ideen zu verwirklichen und ma\xDFgeschneiderte\u2026"
-lastmod: 2024-02-18 23:09:05.424094
+lastmod: 2024-02-19 22:05:13.343618
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, etwas von Grund auf neu zu gestalten.\
   \ Programmierer machen das, um ihre Ideen zu verwirklichen und ma\xDFgeschneiderte\u2026"

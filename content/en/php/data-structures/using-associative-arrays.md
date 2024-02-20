@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/using-associative-arrays/
 date: 2024-01-30 18:57:18.177593-07:00
 description: "Associative arrays in PHP are like super-charged lists where each element\
   \ can be accessed using a human-readable key instead of just numbers. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.130049
+lastmod: 2024-02-19 22:05:18.623356
 model: gpt-4-0125-preview
 summary: "Associative arrays in PHP are like super-charged lists where each element\
   \ can be accessed using a human-readable key instead of just numbers. Programmers\u2026"

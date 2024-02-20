@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/fish-shell/starting-a-new-project/
 date: 2024-01-20 18:03:35.233181-07:00
 description: "Iniciar un nuevo proyecto es como preparar el terreno antes de construir\
   \ una casa; es el proceso de configurar las bases para tu c\xF3digo. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.453962
+lastmod: 2024-02-19 22:05:18.006990
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es como preparar el terreno antes de construir\
   \ una casa; es el proceso de configurar las bases para tu c\xF3digo. Los programadores\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/go/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:25.158533-07:00
 description: "Go\u3067JSON\uFF08JavaScript Object\u2026"
-lastmod: 2024-02-18 23:08:54.501596
+lastmod: 2024-02-19 22:05:00.685178
 model: gpt-4-0125-preview
 summary: "Go\u3067JSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u5229\u7528\u3059\u308B"

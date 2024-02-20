@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/organizing-code-into-functions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:22.166036-07:00
 description: "L'organisation du code en fonctions dans Visual Basic pour Applications\
   \ (VBA) implique de d\xE9composer un programme en pi\xE8ces plus petites et g\xE9\
   rables,\u2026"
-lastmod: 2024-02-18 23:09:08.585581
+lastmod: 2024-02-19 22:05:16.361524
 model: gpt-4-0125-preview
 summary: "L'organisation du code en fonctions dans Visual Basic pour Applications\
   \ (VBA) implique de d\xE9composer un programme en pi\xE8ces plus petites et g\xE9\

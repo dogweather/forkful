@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/using-associative-arrays/
 date: 2024-01-30 18:57:13.867437-07:00
 description: "Associative arrays, or as they're more accurately known in JavaScript,\
   \ objects, let you map keys to values. This is super handy for when you need a\u2026"
-lastmod: 2024-02-18 23:09:11.430999
+lastmod: 2024-02-19 22:05:18.888794
 model: gpt-4-0125-preview
 summary: "Associative arrays, or as they're more accurately known in JavaScript, objects,\
   \ let you map keys to values. This is super handy for when you need a\u2026"

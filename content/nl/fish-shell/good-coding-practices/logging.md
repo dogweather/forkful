@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:49.382375-07:00
 description: "Loggen is in essentie het opschrijven van wat je applicatie doet - een\
   \ dagboek, als je wilt, maar dan voor code. Programmeurs doen dit om de fijne\u2026"
-lastmod: 2024-02-18 23:09:02.333210
+lastmod: 2024-02-19 22:05:10.341410
 model: gpt-4-0125-preview
 summary: "Loggen is in essentie het opschrijven van wat je applicatie doet - een dagboek,\
   \ als je wilt, maar dan voor code. Programmeurs doen dit om de fijne\u2026"

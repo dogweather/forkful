@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/clojure/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:54.026083-07:00
 description: "\xC5 parse en dato fra en streng i Clojure handler om \xE5 konvertere\
   \ tekstlige representasjoner av datoer og tider til en mer brukbar form (f.eks.\
   \ Clojures\u2026"
-lastmod: 2024-02-18 23:08:53.573282
+lastmod: 2024-02-19 22:04:59.696363
 model: gpt-4-0125-preview
 summary: "\xC5 parse en dato fra en streng i Clojure handler om \xE5 konvertere tekstlige\
   \ representasjoner av datoer og tider til en mer brukbar form (f.eks. Clojures\u2026"

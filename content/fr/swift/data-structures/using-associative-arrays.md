@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/swift/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:08.171943-07:00
 description: "Les tableaux associatifs, connus sous le nom de dictionnaires dans Swift,\
   \ vous permettent de stocker et de g\xE9rer des donn\xE9es sous forme de paires\
   \ cl\xE9-\u2026"
-lastmod: 2024-02-18 23:09:09.200978
+lastmod: 2024-02-19 22:05:16.870016
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus sous le nom de dictionnaires dans Swift,\
   \ vous permettent de stocker et de g\xE9rer des donn\xE9es sous forme de paires\

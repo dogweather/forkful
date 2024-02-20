@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/extracting-substrings/
 date: 2024-01-20 17:46:50.792503-07:00
 description: "L'extraction de sous-cha\xEEnes consiste \xE0 prendre des morceaux sp\xE9\
   cifiques d'une cha\xEEne de caract\xE8res. Les d\xE9veloppeurs le font pour analyser,\
   \ manipuler ou\u2026"
-lastmod: 2024-02-18 23:09:08.469524
+lastmod: 2024-02-19 22:05:16.255935
 model: gpt-4-1106-preview
 summary: "L'extraction de sous-cha\xEEnes consiste \xE0 prendre des morceaux sp\xE9\
   cifiques d'une cha\xEEne de caract\xE8res. Les d\xE9veloppeurs le font pour analyser,\

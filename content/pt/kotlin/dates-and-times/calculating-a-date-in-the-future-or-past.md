@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:31.537423-07:00
 description: "Calcular datas no futuro ou no passado \xE9 basicamente adicionar ou\
   \ subtrair dias, meses ou anos a uma data espec\xEDfica. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.129214
+lastmod: 2024-02-19 22:05:05.595616
 model: gpt-4-1106-preview
 summary: "Calcular datas no futuro ou no passado \xE9 basicamente adicionar ou subtrair\
   \ dias, meses ou anos a uma data espec\xEDfica. Programadores fazem isso para\u2026"

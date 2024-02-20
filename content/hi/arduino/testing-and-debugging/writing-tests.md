@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/arduino/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:14.337310-07:00
@@ -14,7 +12,7 @@ description: "Arduino \u0935\u093E\u0924\u093E\u0935\u0930\u0923 \u092E\u0947\u0
   \u094B\u0921 \u0915\u0940 \u0915\u093E\u0930\u094D\u092F\u0915\u094D\u0937\u092E\
   \u0924\u093E \u0915\u094B \u092E\u093E\u0928\u094D\u092F \u0915\u0930\u0924\u0947\
   \u2026"
-lastmod: 2024-02-18 23:09:03.820322
+lastmod: 2024-02-19 22:05:11.803973
 model: gpt-4-0125-preview
 summary: "Arduino \u0935\u093E\u0924\u093E\u0935\u0930\u0923 \u092E\u0947\u0902 \u092A\
   \u0930\u0940\u0915\u094D\u0937\u0923 \u0932\u093F\u0916\u0928\u093E, \u0906\u091F\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/rounding-numbers/
 date: 2024-01-26 03:43:30.285703-07:00
 description: "Avrundning av tal handlar om att justera ett tal till n\xE4rmaste hela\
   \ tal eller till en viss decimalprecision. Vi avrundar tal f\xF6r att f\xF6renkla\
   \ dem f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:51.457360
+lastmod: 2024-02-19 22:04:56.763154
 model: gpt-4-0125-preview
 summary: "Avrundning av tal handlar om att justera ett tal till n\xE4rmaste hela tal\
   \ eller till en viss decimalprecision. Vi avrundar tal f\xF6r att f\xF6renkla dem\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/clojure/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:47.894004-07:00
 description: "Capitalizar uma string envolve modificar a string de modo que seu primeiro\
   \ caractere seja mai\xFAsculo, enquanto o restante da string permanece inalterado.\u2026"
-lastmod: 2024-02-18 23:08:57.786293
+lastmod: 2024-02-19 22:05:05.250808
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve modificar a string de modo que seu primeiro\
   \ caractere seja mai\xFAsculo, enquanto o restante da string permanece inalterado.\u2026"

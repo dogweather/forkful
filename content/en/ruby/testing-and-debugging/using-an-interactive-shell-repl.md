@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:37.470710-07:00
 description: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you test\
   \ code in real time. Programmers use it to experiment, debug, and learn Ruby's nuances\u2026"
-lastmod: 2024-02-18 23:09:11.567553
+lastmod: 2024-02-19 22:05:19.014135
 model: gpt-4-1106-preview
 summary: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you test code\
   \ in real time. Programmers use it to experiment, debug, and learn Ruby's nuances\u2026"

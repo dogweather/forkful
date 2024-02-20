@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/google-apps-script/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:17.600768-07:00
 description: "Das Drucken von Debug-Ausgaben beinhaltet das strategische Platzieren\
   \ von Protokollaussagen in Ihrem Code, um Variablenwerte, Ausf\xFChrungsfluss oder\u2026"
-lastmod: 2024-02-18 23:09:04.416785
+lastmod: 2024-02-19 22:05:12.383553
 model: gpt-4-0125-preview
 summary: "Das Drucken von Debug-Ausgaben beinhaltet das strategische Platzieren von\
   \ Protokollaussagen in Ihrem Code, um Variablenwerte, Ausf\xFChrungsfluss oder\u2026"

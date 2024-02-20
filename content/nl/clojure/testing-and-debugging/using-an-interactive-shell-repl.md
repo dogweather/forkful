@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/clojure/using-an-interactive-shell-repl/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:21.112275-07:00
 description: "REPL, oftewel Read-Eval-Print Loop, is een programmeeromgeving voor\
   \ het dynamisch testen van Clojure-code stuk voor stuk. Programmeurs gebruiken het\
   \ voor\u2026"
-lastmod: 2024-02-18 23:09:01.481427
+lastmod: 2024-02-19 22:05:09.509931
 model: gpt-4-0125-preview
 summary: "REPL, oftewel Read-Eval-Print Loop, is een programmeeromgeving voor het\
   \ dynamisch testen van Clojure-code stuk voor stuk. Programmeurs gebruiken het voor\u2026"

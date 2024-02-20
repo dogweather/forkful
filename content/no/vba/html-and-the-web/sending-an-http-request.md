@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/sending-an-http-request/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:06.340247-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer programmatisk tilgang til webressurser eller webtjenester ved \xE5\
   \ gj\xF8re\u2026"
-lastmod: 2024-02-18 23:08:53.724613
+lastmod: 2024-02-19 22:04:59.861048
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer programmatisk tilgang til webressurser eller webtjenester ved \xE5\

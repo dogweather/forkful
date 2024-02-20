@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/haskell/downloading-a-web-page/
 date: 2024-01-20 17:44:10.661467-07:00
 description: "Scaricare una pagina web significa ottenere il contenuto HTML di quella\
   \ pagina via internet. I programmatori lo fanno per analizzare dati, testare siti\
   \ o\u2026"
-lastmod: 2024-02-18 23:08:55.929009
+lastmod: 2024-02-19 22:05:02.539604
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa ottenere il contenuto HTML di quella\
   \ pagina via internet. I programmatori lo fanno per analizzare dati, testare siti\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:48.116673-07:00
 description: "\xC5 gj\xF8re om en streng til store bokstaver i C inneb\xE6rer \xE5\
   \ konvertere f\xF8rste tegn i hvert ord i en gitt streng til stor bokstav hvis det\
   \ er en liten\u2026"
-lastmod: 2024-02-18 23:08:54.376178
+lastmod: 2024-02-19 22:05:00.532956
 model: gpt-4-0125-preview
 summary: "\xC5 gj\xF8re om en streng til store bokstaver i C inneb\xE6rer \xE5 konvertere\
   \ f\xF8rste tegn i hvert ord i en gitt streng til stor bokstav hvis det er en liten\u2026"

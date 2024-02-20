@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/fish-shell/comparing-two-dates/
 date: 2024-01-20 17:32:57.483532-07:00
 description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla vilket som\
   \ \xE4r tidigast eller senast, eller om de \xE4r samma. Programmerare g\xF6r detta\
   \ f\xF6r att hantera\u2026"
-lastmod: 2024-02-18 23:08:52.219655
+lastmod: 2024-02-19 22:04:57.599448
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla vilket som \xE4\
   r tidigast eller senast, eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6\

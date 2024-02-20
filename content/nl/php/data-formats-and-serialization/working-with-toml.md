@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/php/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:53.327687-07:00
 description: "TOML, een afkorting voor Tom's Obvious, Minimal Language, is een gegevensformaat\
   \ vergelijkbaar met JSON of YAML, maar makkelijker leesbaar voor mensen.\u2026"
-lastmod: 2024-02-18 23:09:01.970773
+lastmod: 2024-02-19 22:05:09.992284
 model: gpt-4-0125-preview
 summary: "TOML, een afkorting voor Tom's Obvious, Minimal Language, is een gegevensformaat\
   \ vergelijkbaar met JSON of YAML, maar makkelijker leesbaar voor mensen.\u2026"

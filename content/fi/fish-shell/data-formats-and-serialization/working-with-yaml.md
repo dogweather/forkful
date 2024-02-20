@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/fish-shell/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:31.388613-07:00
 description: "YAML-tiedostojen k\xE4sittelyyn kuuluu YAML-tiedostojen (YAML Ain't\
   \ Markup Language) j\xE4sent\xE4minen ja manipulointi, jotka ovat konfiguraatiotiedostoissa\u2026"
-lastmod: 2024-02-18 23:09:08.106421
+lastmod: 2024-02-19 22:05:15.909289
 model: gpt-4-0125-preview
 summary: "YAML-tiedostojen k\xE4sittelyyn kuuluu YAML-tiedostojen (YAML Ain't Markup\
   \ Language) j\xE4sent\xE4minen ja manipulointi, jotka ovat konfiguraatiotiedostoissa\u2026"

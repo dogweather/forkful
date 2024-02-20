@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/google-apps-script/checking-if-a-directory-exists/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:50.809410-07:00
@@ -13,7 +11,7 @@ description: "\u041F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0430 \u0456\u044
   \u0438 \u0447\u0430\u0441\u0442\u043E \u0432\u0438\u043A\u043E\u043D\u0443\u044E\
   \u0442\u044C \u0446\u044E \u043F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0443\
   , \u0449\u043E\u0431\u2026"
-lastmod: 2024-02-18 23:08:59.760652
+lastmod: 2024-02-19 22:05:07.607672
 model: gpt-4-0125-preview
 summary: "\u041F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0430 \u0456\u0441\u043D\
   \u0443\u0432\u0430\u043D\u043D\u044F \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\

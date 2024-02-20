@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/java/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:58.200112-07:00
 description: "Eliminar comillas de una cadena significa quitar cualquier tipo de comillas\u2014\
   simples (' '), dobles (\" \") o ambas\u2014de los datos de texto. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:09.832283
+lastmod: 2024-02-19 22:05:17.448435
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena significa quitar cualquier tipo de comillas\u2014\
   simples (' '), dobles (\" \") o ambas\u2014de los datos de texto. Los programadores\u2026"

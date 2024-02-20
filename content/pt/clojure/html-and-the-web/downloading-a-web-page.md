@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/clojure/downloading-a-web-page/
 date: 2024-01-20 17:43:48.609855-07:00
 description: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo da\
   \ internet para o seu computador. Programadores fazem isso para coletar dados, automatizar\u2026"
-lastmod: 2024-02-18 23:08:57.801515
+lastmod: 2024-02-19 22:05:05.267189
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo da internet\
   \ para o seu computador. Programadores fazem isso para coletar dados, automatizar\u2026"

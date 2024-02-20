@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/using-a-debugger/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:58.657848-07:00
 description: "Debuggere i C er spesialiserte verkt\xF8y som lar utviklere g\xE5 gjennom\
   \ koden sin trinn for trinn, inspisere variabler og f\xF8lge utf\xF8relsesflyten.\
   \ Denne\u2026"
-lastmod: 2024-02-18 23:08:54.399011
+lastmod: 2024-02-19 22:05:00.557922
 model: gpt-4-0125-preview
 summary: "Debuggere i C er spesialiserte verkt\xF8y som lar utviklere g\xE5 gjennom\
   \ koden sin trinn for trinn, inspisere variabler og f\xF8lge utf\xF8relsesflyten.\

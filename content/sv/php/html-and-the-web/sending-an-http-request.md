@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/php/sending-an-http-request/
 date: 2024-01-20 18:00:10.161608-07:00
 description: "Att skicka en HTTP-beg\xE4ran \xE4r processen att be en server om data\
   \ eller utf\xF6ra en \xE5tg\xE4rd. Programmerare g\xF6r detta f\xF6r att interagera\
   \ med webbtj\xE4nster,\u2026"
-lastmod: 2024-02-18 23:08:51.875178
+lastmod: 2024-02-19 22:04:57.216950
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran \xE4r processen att be en server om data eller\
   \ utf\xF6ra en \xE5tg\xE4rd. Programmerare g\xF6r detta f\xF6r att interagera med\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:29.222778-07:00
 description: "Converting a date into a string means changing the date's format from\
   \ its raw or timestamp form into a human-readable sequence of characters. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.492506
+lastmod: 2024-02-19 22:05:18.945321
 model: gpt-4-1106-preview
 summary: "Converting a date into a string means changing the date's format from its\
   \ raw or timestamp form into a human-readable sequence of characters. Programmers\u2026"

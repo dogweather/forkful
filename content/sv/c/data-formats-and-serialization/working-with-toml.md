@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/working-with-toml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:36.154562-07:00
 description: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett konfigurationsfilformat\
   \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\
   \ anv\xE4nder det\u2026"
-lastmod: 2024-02-18 23:08:52.275271
+lastmod: 2024-02-19 22:04:57.662440
 model: gpt-4-0125-preview
 summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett konfigurationsfilformat\
   \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/kotlin/using-a-debugger/
 date: 2024-01-26 03:49:50.074976-07:00
 description: "Plonger dans un d\xE9bogueur, c'est tout simplement parcourir votre\
   \ code pas \xE0 pas, observer les rouages en action et attraper ces ennuyeux bugs\
   \ sur le fait.\u2026"
-lastmod: 2024-02-18 23:09:08.785901
+lastmod: 2024-02-19 22:05:16.489736
 model: gpt-4-0125-preview
 summary: "Plonger dans un d\xE9bogueur, c'est tout simplement parcourir votre code\
   \ pas \xE0 pas, observer les rouages en action et attraper ces ennuyeux bugs sur\

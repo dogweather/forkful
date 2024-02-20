@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/c-sharp/reading-a-text-file/
 date: 2024-01-20 17:54:06.503662-07:00
 description: "Lire un fichier texte, c'est parcourir son contenu avec votre programme.\
   \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."
-lastmod: 2024-02-18 23:09:08.847009
+lastmod: 2024-02-19 22:05:16.546112
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est parcourir son contenu avec votre programme.\
   \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."

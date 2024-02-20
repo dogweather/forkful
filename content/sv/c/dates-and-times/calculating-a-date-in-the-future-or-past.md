@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:56.623750-07:00
 description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att\
   \ best\xE4mma ett specifikt datum genom att l\xE4gga till eller dra ifr\xE5n ett\
   \ visst antal dagar,\u2026"
-lastmod: 2024-02-18 23:08:52.264790
+lastmod: 2024-02-19 22:04:57.650741
 model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att best\xE4\
   mma ett specifikt datum genom att l\xE4gga till eller dra ifr\xE5n ett visst antal\

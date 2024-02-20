@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/concatenating-strings/
 date: 2024-01-20 17:35:51.847539-07:00
 description: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich w jeden. Programi\u015B\
   ci robi\u0105 to, \u017Ceby tworzy\u0107 sensowne komunikaty lub dynamicznie budowa\u0107\
   \ tekst."
-lastmod: 2024-02-18 23:08:49.945084
+lastmod: 2024-02-19 22:04:54.894607
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich w jeden. Programi\u015B\
   ci robi\u0105 to, \u017Ceby tworzy\u0107 sensowne komunikaty lub dynamicznie budowa\u0107\

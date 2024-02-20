@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/swift/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:24.215826-07:00
@@ -14,7 +12,7 @@ description: "\u0928\u093F\u092F\u092E\u093F\u0924 \u0905\u092D\u093F\u0935\u094
   \ \u092E\u093F\u0932\u093E\u0928 \u092F\u093E \u0939\u0947\u0930\u092B\u0947\u0930\
   \ \u0915\u093E\u0930\u094D\u092F\u094B\u0902 \u0915\u0947 \u0932\u093F\u090F \u0915\
   \u093F\u092F\u093E\u2026"
-lastmod: 2024-02-18 23:09:03.949044
+lastmod: 2024-02-19 22:05:11.931832
 model: gpt-4-0125-preview
 summary: "\u0928\u093F\u092F\u092E\u093F\u0924 \u0905\u092D\u093F\u0935\u094D\u092F\
   \u0915\u094D\u0924\u093F\u092F\u093E\u0901, \u092F\u093E regex, \u0935\u0947 \u0935\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/organizing-code-into-functions/
 date: 2024-01-26 01:11:18.380176-07:00
 description: "Att organisera kod i funktioner bryter ner uppgifter i \xE5teranv\xE4\
   ndbara delar, vilket g\xF6r koden renare och mer underh\xE5llbar. Detta g\xF6rs\
   \ f\xF6r att minska\u2026"
-lastmod: 2024-02-18 23:08:52.170042
+lastmod: 2024-02-19 22:04:57.542193
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner bryter ner uppgifter i \xE5teranv\xE4ndbara\
   \ delar, vilket g\xF6r koden renare och mer underh\xE5llbar. Detta g\xF6rs f\xF6\

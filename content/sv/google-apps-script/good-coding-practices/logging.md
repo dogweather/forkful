@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/logging/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:17.982887-07:00
 description: "Loggning i programmering inneb\xE4r att man registrerar h\xE4ndelser,\
   \ fel eller anm\xE4rkningsv\xE4rda f\xF6reteelser under k\xF6rning. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.385741
+lastmod: 2024-02-19 22:04:56.683345
 model: gpt-4-0125-preview
 summary: "Loggning i programmering inneb\xE4r att man registrerar h\xE4ndelser, fel\
   \ eller anm\xE4rkningsv\xE4rda f\xF6reteelser under k\xF6rning. Programmerare g\xF6\

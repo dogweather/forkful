@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/javascript/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:43.217553-07:00
@@ -13,7 +11,7 @@ description: "\u0410\u043D\u0430\u043B\u0456\u0437 \u0434\u0430\u0442\u0438 \u04
   \u0442\u0438 `Date` JavaScript, \u0441\u043F\u0440\u0438\u044F\u044E\u0447\u0438\
   \ \u043C\u0430\u043D\u0456\u043F\u0443\u043B\u044F\u0446\u0456\u044F\u043C \u0437\
   \ \u0434\u0430\u0442\u0430\u043C\u0438,\u2026"
-lastmod: 2024-02-18 23:09:01.052191
+lastmod: 2024-02-19 22:05:09.091704
 model: gpt-4-0125-preview
 summary: "\u0410\u043D\u0430\u043B\u0456\u0437 \u0434\u0430\u0442\u0438 \u0437 \u0440\
   \u044F\u0434\u043A\u0430 \u0434\u043E\u0437\u0432\u043E\u043B\u044F\u0454 \u043F\

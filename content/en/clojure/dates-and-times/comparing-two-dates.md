@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/clojure/comparing-two-dates/
 date: 2024-01-20 17:32:28.116760-07:00
 description: "Comparing two dates means checking how they relate\u2014is one earlier,\
   \ later, or the exact same as the other? Programmers do this to handle deadlines,\u2026"
-lastmod: 2024-02-18 23:09:10.736193
+lastmod: 2024-02-19 22:05:18.264314
 model: gpt-4-1106-preview
 summary: "Comparing two dates means checking how they relate\u2014is one earlier,\
   \ later, or the exact same as the other? Programmers do this to handle deadlines,\u2026"

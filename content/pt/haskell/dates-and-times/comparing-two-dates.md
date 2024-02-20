@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/haskell/comparing-two-dates/
 date: 2024-01-20 17:33:05.194546-07:00
 description: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre\
   \ elas: qual \xE9 anterior, posterior ou se s\xE3o a mesma. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:58.211414
+lastmod: 2024-02-19 22:05:05.684245
 model: gpt-4-1106-preview
 summary: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre elas:\
   \ qual \xE9 anterior, posterior ou se s\xE3o a mesma. Programadores fazem isso para\u2026"

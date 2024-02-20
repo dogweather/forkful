@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/concatenating-strings/
 date: 2024-01-20 17:35:12.789124-07:00
 description: "Yhdistelemme merkkijonoja (eli teemme konkatenointia) liitt\xE4\xE4\
   ksemme tekstinp\xE4tki\xE4 yhteen. Se on peruskauraa kaikessa ohjelmoinnissa: loihdit\
   \ viestej\xE4,\u2026"
-lastmod: 2024-02-18 23:09:07.657880
+lastmod: 2024-02-19 22:05:15.500758
 model: gpt-4-1106-preview
 summary: "Yhdistelemme merkkijonoja (eli teemme konkatenointia) liitt\xE4\xE4ksemme\
   \ tekstinp\xE4tki\xE4 yhteen. Se on peruskauraa kaikessa ohjelmoinnissa: loihdit\

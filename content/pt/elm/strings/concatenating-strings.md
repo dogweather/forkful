@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/concatenating-strings/
 date: 2024-01-20 17:34:43.441174-07:00
 description: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Programadores\
   \ fazem isso para montar senten\xE7as, mensagens, ou combinar dados de forma din\xE2\
   mica."
-lastmod: 2024-02-18 23:08:58.052800
+lastmod: 2024-02-19 22:05:05.530354
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Programadores\
   \ fazem isso para montar senten\xE7as, mensagens, ou combinar dados de forma din\xE2\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/ruby/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:18.014625-07:00
 description: "\xC5 skrive til standardfeil (stderr) i Ruby handler om \xE5 dirigere\
   \ feilmeldinger eller diagnostikk til en separat utstr\xF8m, forskjellig fra standardutgangen\u2026"
-lastmod: 2024-02-18 23:08:54.454189
+lastmod: 2024-02-19 22:05:00.617805
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i Ruby handler om \xE5 dirigere feilmeldinger\
   \ eller diagnostikk til en separat utstr\xF8m, forskjellig fra standardutgangen\u2026"

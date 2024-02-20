@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/swift/capitalizing-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:35.073632-07:00
 description: "Capitalisatie betekent het veranderen van de eerste letter van woorden\
   \ naar hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk\u2026"
-lastmod: 2024-02-18 23:09:02.210306
+lastmod: 2024-02-19 22:05:10.225652
 model: gpt-4-0125-preview
 summary: "Capitalisatie betekent het veranderen van de eerste letter van woorden naar\
   \ hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk\u2026"

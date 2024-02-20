@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/starting-a-new-project/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:20.857753-07:00
 description: "Een nieuw project starten betekent vaak het cre\xEBren van een mappenstructuur\
   \ en initi\xEBle bestanden - een beetje zoals het leggen van de fundering van een\u2026"
-lastmod: 2024-02-18 23:09:02.040665
+lastmod: 2024-02-19 22:05:10.067079
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent vaak het cre\xEBren van een mappenstructuur\
   \ en initi\xEBle bestanden - een beetje zoals het leggen van de fundering van een\u2026"

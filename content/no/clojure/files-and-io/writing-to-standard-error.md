@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/clojure/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:47.330594-07:00
 description: "\xC5 skrive til standardfeil (stderr) handler om \xE5 styre feilmeldinger\
   \ og diagnostikk til stderr-str\xF8mmen, separat fra standard utgang (stdout).\u2026"
-lastmod: 2024-02-18 23:08:53.579891
+lastmod: 2024-02-19 22:04:59.703789
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) handler om \xE5 styre feilmeldinger\
   \ og diagnostikk til stderr-str\xF8mmen, separat fra standard utgang (stdout).\u2026"

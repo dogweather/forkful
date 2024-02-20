@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/ruby/reading-a-text-file/
 date: 2024-01-20 17:55:22.117344-07:00
 description: "Ler um arquivo de texto em Ruby significa pegar dados de um arquivo\
   \ `.txt` e us\xE1-los no seu programa. Isso \xE9 crucial quando voc\xEA quer processar\u2026"
-lastmod: 2024-02-18 23:08:58.683029
+lastmod: 2024-02-19 22:05:06.185792
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em Ruby significa pegar dados de um arquivo `.txt`\
   \ e us\xE1-los no seu programa. Isso \xE9 crucial quando voc\xEA quer processar\u2026"

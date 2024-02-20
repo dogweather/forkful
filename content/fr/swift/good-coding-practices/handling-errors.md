@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/handling-errors/
 date: 2024-01-26 00:57:58.109377-07:00
 description: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre aux\
   \ probl\xE8mes qui surviennent lorsque votre code est ex\xE9cut\xE9. Nous le faisons\
   \ pour contr\xF4ler le\u2026"
-lastmod: 2024-02-18 23:09:09.216816
+lastmod: 2024-02-19 22:05:16.884755
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre aux probl\xE8\
   mes qui surviennent lorsque votre code est ex\xE9cut\xE9. Nous le faisons pour contr\xF4\

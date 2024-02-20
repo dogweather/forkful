@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/google-apps-script/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:43.798629-07:00
@@ -12,7 +10,7 @@ description: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u044
   \u0430\u043D\u0438\u0445 \u0456\u0437 \u0444\u0430\u0439\u043B\u0456\u0432, \u0437\
   \u0431\u0435\u0440\u0435\u0436\u0435\u043D\u0438\u0445 \u0443 Google Drive \u0430\
   \u0431\u043E \u0456\u043D\u0448\u043E\u043C\u0443\u2026"
-lastmod: 2024-02-18 23:08:59.764418
+lastmod: 2024-02-19 22:05:07.613194
 model: gpt-4-0125-preview
 summary: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u0442\
   \u043E\u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443 \u0432 Google Apps\

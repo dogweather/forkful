@@ -1,9 +1,7 @@
 ---
-aliases:
-- /ja/java/refactoring/
 date: 2024-01-26 01:40:17.336462-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.809467
+lastmod: 2024-02-19 22:05:01.120239
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30EA\u30D5\u30A1\u30AF\u30BF\u30EA\u30F3\u30B0"

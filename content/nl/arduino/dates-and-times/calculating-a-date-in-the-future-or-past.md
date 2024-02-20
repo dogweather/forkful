@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/arduino/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:35.669627-07:00
 description: "Het berekenen van een datum in de toekomst of het verleden betekent\
   \ het bepalen van een specifieke dag voor of na een gegeven datum. Programmeurs\
   \ doen dit\u2026"
-lastmod: 2024-02-18 23:09:02.152584
+lastmod: 2024-02-19 22:05:10.170203
 model: gpt-4-0125-preview
 summary: "Het berekenen van een datum in de toekomst of het verleden betekent het\
   \ bepalen van een specifieke dag voor of na een gegeven datum. Programmeurs doen\

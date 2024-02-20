@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/sending-an-http-request/
 date: 2024-01-20 17:59:24.066585-07:00
 description: "Enviar una solicitud HTTP es la forma de pedir datos o realizar una\
   \ acci\xF3n en un servidor web. Los programadores lo hacen para interactuar con\
   \ APIs,\u2026"
-lastmod: 2024-02-18 23:09:09.599678
+lastmod: 2024-02-19 22:05:17.244823
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP es la forma de pedir datos o realizar una acci\xF3\
   n en un servidor web. Los programadores lo hacen para interactuar con APIs,\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/haskell/downloading-a-web-page/
 date: 2024-01-20 17:44:29.824908-07:00
 description: "Descargar una p\xE1gina web significa traer el contenido de dicha p\xE1\
   gina a tu ordenador o servidor. Los programadores hacen esto para analizar datos,\u2026"
-lastmod: 2024-02-18 23:09:10.026597
+lastmod: 2024-02-19 22:05:17.624756
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa traer el contenido de dicha p\xE1\
   gina a tu ordenador o servidor. Los programadores hacen esto para analizar datos,\u2026"

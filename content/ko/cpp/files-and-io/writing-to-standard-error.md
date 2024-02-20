@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:45.171292-07:00
@@ -13,7 +11,7 @@ description: "C++\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(`stderr`)\uB85C \uC791\u
   \uB825\uACFC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBCC4\uD568\uC73C\uB85C\
   \uC368 \uB514\uBC84\uAE45\uACFC \uC624\uB958 \uCC98\uB9AC\uB97C \uC27D\uAC8C \uD560\
   \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.709236
+lastmod: 2024-02-19 22:05:14.605034
 model: gpt-4-0125-preview
 summary: "C++\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(`stderr`)\uB85C \uC791\uC131\uD558\
   \uAE30\uB780 \uBA54\uC778 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\uACFC \uBD84\uB9AC\

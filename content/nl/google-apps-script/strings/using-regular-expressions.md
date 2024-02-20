@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/using-regular-expressions/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:43.012975-07:00
 description: "Reguliere Expressies (regex) zijn patronen die worden gebruikt om combinaties\
   \ van karakters in strings te matchen. Programmeurs benutten ze voor het\u2026"
-lastmod: 2024-02-18 23:09:01.374273
+lastmod: 2024-02-19 22:05:09.407000
 model: gpt-4-0125-preview
 summary: "Reguliere Expressies (regex) zijn patronen die worden gebruikt om combinaties\
   \ van karakters in strings te matchen. Programmeurs benutten ze voor het\u2026"

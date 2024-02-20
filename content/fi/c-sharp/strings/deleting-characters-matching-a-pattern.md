@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/c-sharp/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:41:43.713822-07:00
 description: "Kun puhutaan merkkijonosta ja sen tietyll\xE4 mallilla vastaavien merkkien\
   \ poistamisesta, tarkoitamme prosessia, jolla etsimme ja h\xE4vit\xE4mme tietyn\
   \ mallin\u2026"
-lastmod: 2024-02-18 23:09:07.603552
+lastmod: 2024-02-19 22:05:15.450745
 model: gpt-4-1106-preview
 summary: "Kun puhutaan merkkijonosta ja sen tietyll\xE4 mallilla vastaavien merkkien\
   \ poistamisesta, tarkoitamme prosessia, jolla etsimme ja h\xE4vit\xE4mme tietyn\

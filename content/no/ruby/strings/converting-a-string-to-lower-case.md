@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/ruby/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:20.967412-07:00
 description: "\xC5 endre en streng til sm\xE5 bokstaver i Ruby betyr \xE5 konvertere\
   \ alle bokstavene i strengen til deres minuskul versjoner. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:54.424399
+lastmod: 2024-02-19 22:05:00.585568
 model: gpt-4-1106-preview
 summary: "\xC5 endre en streng til sm\xE5 bokstaver i Ruby betyr \xE5 konvertere alle\
   \ bokstavene i strengen til deres minuskul versjoner. Programmerere gj\xF8r dette\

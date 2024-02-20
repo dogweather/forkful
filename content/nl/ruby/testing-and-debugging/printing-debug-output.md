@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/ruby/printing-debug-output/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:24.725390-07:00
 description: "Debug-output printen in Ruby is als broodkruimels achterlaten in je\
   \ code om variabele waarden en programmaduur bij te houden. Programmeurs doen dit\
   \ om\u2026"
-lastmod: 2024-02-18 23:09:02.425360
+lastmod: 2024-02-19 22:05:10.429854
 model: gpt-4-0125-preview
 summary: "Debug-output printen in Ruby is als broodkruimels achterlaten in je code\
   \ om variabele waarden en programmaduur bij te houden. Programmeurs doen dit om\u2026"

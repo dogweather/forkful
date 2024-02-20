@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:06.082414-07:00
 description: "Arrondir les nombres en programmation consiste \xE0 approximer un nombre\
   \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales. Les\
   \ programmeurs\u2026"
-lastmod: 2024-02-18 23:09:08.572216
+lastmod: 2024-02-19 22:05:16.349460
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres en programmation consiste \xE0 approximer un nombre\
   \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales. Les\

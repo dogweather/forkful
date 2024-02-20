@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/bash/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:20:49.525493-07:00
 description: "CLI(Command Line Interface)\uB97C \uC0AC\uC6A9\uD55C \uD30C\uC77C \uC870\
   \uC791\uC740 Bash \uC2A4\uD06C\uB9BD\uD2B8\uB098 \uBA85\uB839\uC5B4\uB97C \uC0AC\
@@ -10,7 +8,7 @@ description: "CLI(Command Line Interface)\uB97C \uC0AC\uC6A9\uD55C \uD30C\uC77C 
   . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uCC98\uB9AC \uC18D\uB3C4\
   , \uC790\uB3D9\uD654 \uBC0F \uD2B9\uD788 \uADF8\uB798\uD53D \uC778\uD130\uD398\uC774\
   \uC2A4\uAC00 \uC5C6\uB294\u2026"
-lastmod: 2024-02-18 23:09:06.476609
+lastmod: 2024-02-19 22:05:14.386830
 model: gpt-4-0125-preview
 summary: "CLI(Command Line Interface)\uB97C \uC0AC\uC6A9\uD55C \uD30C\uC77C \uC870\
   \uC791\uC740 Bash \uC2A4\uD06C\uB9BD\uD2B8\uB098 \uBA85\uB839\uC5B4\uB97C \uC0AC\

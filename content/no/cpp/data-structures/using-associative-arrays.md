@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:20.576425-07:00
 description: "Assosiative tabeller, kjent som `std::map` eller `std::unordered_map`\
   \ i C++, brobygger gapet mellom tabellindekser og virkelige data, og lar deg bruke\u2026"
-lastmod: 2024-02-18 23:08:54.177551
+lastmod: 2024-02-19 22:05:00.365018
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent som `std::map` eller `std::unordered_map` i\
   \ C++, brobygger gapet mellom tabellindekser og virkelige data, og lar deg bruke\u2026"

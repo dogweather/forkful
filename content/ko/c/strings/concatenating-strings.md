@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/concatenating-strings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:47.727796-07:00
@@ -13,7 +11,7 @@ description: "C\uC5D0\uC11C\uC758 \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uB450 \
   \uB294 \uC758\uBBF8 \uC788\uB294 \uBA54\uC2DC\uC9C0, \uD30C\uC77C \uACBD\uB85C \uB610\
   \uB294 \uB2E4\uC591\uD55C \uBB38\uC790\uC5F4 \uC18C\uC2A4\uC5D0\uC11C \uC870\uB9BD\
   \uB41C \uB370\uC774\uD130\uB97C \uC0DD\uC131\uD558\uB294 \uB370\u2026"
-lastmod: 2024-02-18 23:09:06.937318
+lastmod: 2024-02-19 22:05:14.823642
 model: gpt-4-0125-preview
 summary: "C\uC5D0\uC11C\uC758 \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uB450 \uAC1C\
   \ \uC774\uC0C1\uC758 \uBB38\uC790\uC5F4\uC744 \uB05D\uACFC \uB05D\uC73C\uB85C \uC5F0\

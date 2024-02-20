@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/fish-shell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:11.748235-07:00
 description: "Das Parsen von HTML dreht sich um das Extrahieren von Daten oder Informationen\
   \ aus HTML-Inhalten, eine g\xE4ngige Aufgabe beim Umgang mit Webdaten.\u2026"
-lastmod: 2024-02-18 23:09:05.323828
+lastmod: 2024-02-19 22:05:13.246017
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML dreht sich um das Extrahieren von Daten oder Informationen\
   \ aus HTML-Inhalten, eine g\xE4ngige Aufgabe beim Umgang mit Webdaten.\u2026"

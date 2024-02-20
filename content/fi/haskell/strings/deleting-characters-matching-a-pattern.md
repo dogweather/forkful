@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/haskell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:19.161789-07:00
 description: "Haskellissa merkkien poistaminen kuvion mukaisesti tarkoittaa ei-toivottujen\
   \ merkkien suodattamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan\u2026"
-lastmod: 2024-02-18 23:09:07.649580
+lastmod: 2024-02-19 22:05:15.493244
 model: gpt-4-1106-preview
 summary: "Haskellissa merkkien poistaminen kuvion mukaisesti tarkoittaa ei-toivottujen\
   \ merkkien suodattamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan\u2026"

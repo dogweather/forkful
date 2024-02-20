@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/lua/refactoring/
 date: 2024-01-26 01:47:20.418807-07:00
 description: "Refaktorisering \xE4r konsten att justera befintlig kod f\xF6r att f\xF6\
   rb\xE4ttra dess struktur, l\xE4sbarhet och effektivitet utan att \xE4ndra dess externa\
   \ beteende.\u2026"
-lastmod: 2024-02-18 23:08:51.926547
+lastmod: 2024-02-19 22:04:57.274149
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r konsten att justera befintlig kod f\xF6r att f\xF6\
   rb\xE4ttra dess struktur, l\xE4sbarhet och effektivitet utan att \xE4ndra dess externa\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:03.996018-07:00
 description: "Il logging nello sviluppo software \xE8 il processo di registrazione\
   \ di informazioni sull'esecuzione di un programma, progettato per tracciare il suo\u2026"
-lastmod: 2024-02-18 23:08:55.439213
+lastmod: 2024-02-19 22:05:02.020303
 model: gpt-4-0125-preview
 summary: "Il logging nello sviluppo software \xE8 il processo di registrazione di\
   \ informazioni sull'esecuzione di un programma, progettato per tracciare il suo\u2026"

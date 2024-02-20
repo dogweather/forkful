@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/sending-an-http-request/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:50.168257-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 initiere et kall\
   \ fra din Go-applikasjon til en webserver, API eller en hvilken som helst annen\
   \ HTTP-basert\u2026"
-lastmod: 2024-02-18 23:08:53.432495
+lastmod: 2024-02-19 22:04:59.542716
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 initiere et kall fra\
   \ din Go-applikasjon til en webserver, API eller en hvilken som helst annen HTTP-basert\u2026"

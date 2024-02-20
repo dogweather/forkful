@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/lua/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:56:42.172767-07:00
@@ -14,7 +12,7 @@ description: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0438
   \u0441\u043A\u043E\u0433\u043E \u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\u0430\
   \u043D\u0438\u044F \u0442\u0435\u043A\u0441\u0442\u0430, \u043D\u0430\u043F\u0440\
   \u0438\u043C\u0435\u0440, \u0434\u043B\u044F\u2026"
-lastmod: 2024-02-18 23:08:57.140743
+lastmod: 2024-02-19 22:05:04.236780
 model: gpt-4-0125-preview
 summary: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0438\u044F\
   \ \u0441\u0442\u0440\u043E\u043A - \u044D\u0442\u043E \u0438\u0445 \u0441\u0446\u0435\

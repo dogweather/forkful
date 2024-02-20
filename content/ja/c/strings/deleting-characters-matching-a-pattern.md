@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/c/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:33.677821-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.334012
+lastmod: 2024-02-19 22:05:01.880953
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u306E\u524A\

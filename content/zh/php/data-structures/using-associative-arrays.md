@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/php/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:20.790331-07:00
@@ -10,7 +8,7 @@ description: "\u5728PHP\u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u5C31\u50CF\u52A0\u5
   \u5B57\u6765\u8BBF\u95EE\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\u6765\u66F4\
   \u76F4\u89C2\u5730\u5B58\u50A8\u548C\u64CD\u7EB5\u6570\u636E\uFF0C\u4ECE\u800C\u4F7F\
   \u4EE3\u7801\u66F4\u6613\u4E8E\u9605\u8BFB\u548C\u7EF4\u62A4\u3002"
-lastmod: 2024-02-18 23:08:59.209671
+lastmod: 2024-02-19 22:05:06.897219
 model: gpt-4-0125-preview
 summary: "\u5728PHP\u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u5C31\u50CF\u52A0\u5F3A\u7248\
   \u7684\u5217\u8868\uFF0C\u6BCF\u4E2A\u5143\u7D20\u90FD\u53EF\u4EE5\u901A\u8FC7\u4E00\

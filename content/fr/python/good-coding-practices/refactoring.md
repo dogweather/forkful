@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/python/refactoring/
 date: 2024-01-26 03:38:04.966916-07:00
 description: "Le remaniement est le processus de restructuration du code informatique\
   \ existant\u2014changer le factoring\u2014sans modifier son comportement externe.\
   \ Les\u2026"
-lastmod: 2024-02-18 23:09:08.349302
+lastmod: 2024-02-19 22:05:16.146662
 model: gpt-4-0125-preview
 summary: "Le remaniement est le processus de restructuration du code informatique\
   \ existant\u2014changer le factoring\u2014sans modifier son comportement externe.\

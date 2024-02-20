@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:57.086573-07:00
 description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740\
   \ \uBB38\uC790\uC5F4\uC5D0 \uC788\uB294 \uBB38\uC790\uC758 \uC218\uB97C \uC138\uB294\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC
   \ \uD558\uAE30 \uC704\uD574 \uC774 \uC815\uBCF4\uB97C \uD544\uC694\uB85C \uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.799309
+lastmod: 2024-02-19 22:05:14.690563
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uBB38\
   \uC790\uC5F4\uC5D0 \uC788\uB294 \uBB38\uC790\uC758 \uC218\uB97C \uC138\uB294 \uACFC\

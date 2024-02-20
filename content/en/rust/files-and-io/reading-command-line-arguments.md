@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/rust/reading-command-line-arguments/
 date: 2024-01-20 17:57:02.616433-07:00
 description: Reading command line arguments in Rust lets programs take user input
   on launch. It's key for custom behavior without a GUI.
-lastmod: 2024-02-18 23:09:10.863839
+lastmod: 2024-02-19 22:05:18.379255
 model: gpt-4-1106-preview
 summary: Reading command line arguments in Rust lets programs take user input on launch.
   It's key for custom behavior without a GUI.

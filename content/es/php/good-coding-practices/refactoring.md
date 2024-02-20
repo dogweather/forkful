@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/php/refactoring/
 date: 2024-01-26 01:47:49.972137-07:00
 description: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de\
   \ un ordenador existente sin cambiar su comportamiento externo. Los programadores\u2026"
-lastmod: 2024-02-18 23:09:10.083045
+lastmod: 2024-02-19 22:05:17.676351
 model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de un\
   \ ordenador existente sin cambiar su comportamiento externo. Los programadores\u2026"

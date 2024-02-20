@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/arduino/starting-a-new-project/
 date: 2024-01-20 18:02:45.085294-07:00
 description: "Att starta ett nytt projekt inneb\xE4r att skapa en ny kodbas fr\xE5\
   n grunden, speciellt anpassad f\xF6r en unik uppgift. Programmerare g\xF6r detta\
   \ f\xF6r att testa\u2026"
-lastmod: 2024-02-18 23:08:52.045169
+lastmod: 2024-02-19 22:04:57.403527
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt inneb\xE4r att skapa en ny kodbas fr\xE5n grunden,\
   \ speciellt anpassad f\xF6r en unik uppgift. Programmerare g\xF6r detta f\xF6r att\

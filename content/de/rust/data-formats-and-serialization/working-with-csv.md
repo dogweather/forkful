@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/rust/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:23.488824-07:00
 description: "Die Arbeit mit CSV-Dateien (Werte getrennt durch Kommata) bezieht sich\
   \ auf das Lesen von und Schreiben in einfache Textdateien, die tabellarische Daten\u2026"
-lastmod: 2024-02-18 23:09:04.665706
+lastmod: 2024-02-19 22:05:12.619987
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Werte getrennt durch Kommata) bezieht sich auf\
   \ das Lesen von und Schreiben in einfache Textdateien, die tabellarische Daten\u2026"

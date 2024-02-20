@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/java/reading-command-line-arguments/
 date: 2024-01-20 17:56:14.846737-07:00
 description: "Leggere gli argomenti della riga di comando significa accedere ai parametri\
   \ passati al tuo programma quando viene avviato da una shell. I programmatori lo\u2026"
-lastmod: 2024-02-18 23:08:55.780250
+lastmod: 2024-02-19 22:05:02.385218
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando significa accedere ai parametri\
   \ passati al tuo programma quando viene avviato da una shell. I programmatori lo\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:31.866743-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
   \ enviar um pedido a um servidor web que exige usu\xE1rio e senha no cabe\xE7alho.\
   \ Programadores fazem isso\u2026"
-lastmod: 2024-02-18 23:08:58.449445
+lastmod: 2024-02-19 22:05:05.939578
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 enviar\
   \ um pedido a um servidor web que exige usu\xE1rio e senha no cabe\xE7alho. Programadores\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/creating-a-temporary-file/
 date: 2024-01-20 17:40:05.770021-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 simplesmente gerar um arquivo que\
   \ \xE9 destinado a ser usado por um breve per\xEDodo de tempo. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:58.078818
+lastmod: 2024-02-19 22:05:05.558275
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 simplesmente gerar um arquivo que \xE9\
   \ destinado a ser usado por um breve per\xEDodo de tempo. Programadores fazem isso\

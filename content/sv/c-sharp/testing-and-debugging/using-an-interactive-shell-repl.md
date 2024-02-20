@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:25.633148-07:00
 description: "En REPL, eller Read-Eval-Print Loop, l\xE5ter dig skriva C#-kod och\
   \ k\xF6ra den interaktivt. Programmerare anv\xE4nder det f\xF6r snabba experiment,\
   \ fels\xF6kning eller\u2026"
-lastmod: 2024-02-18 23:08:51.797337
+lastmod: 2024-02-19 22:04:57.131671
 model: gpt-4-0125-preview
 summary: "En REPL, eller Read-Eval-Print Loop, l\xE5ter dig skriva C#-kod och k\xF6\
   ra den interaktivt. Programmerare anv\xE4nder det f\xF6r snabba experiment, fels\xF6\

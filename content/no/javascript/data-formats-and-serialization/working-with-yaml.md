@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/javascript/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:36.601474-07:00
 description: "YAML, forkortelse for YAML Ain't Markup Language, er et menneskelesbart\
   \ data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler\u2026"
-lastmod: 2024-02-18 23:08:54.328822
+lastmod: 2024-02-19 22:05:00.481436
 model: gpt-4-0125-preview
 summary: "YAML, forkortelse for YAML Ain't Markup Language, er et menneskelesbart\
   \ data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler\u2026"

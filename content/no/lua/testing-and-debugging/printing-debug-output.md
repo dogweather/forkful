@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/lua/printing-debug-output/
 date: 2024-01-20 17:53:03.716825-07:00
 description: "\xC5 skrive ut feils\xF8kingsinformasjon betyr at du legger inn ekstra\
   \ kode som hjelper deg \xE5 se hva som skjer i programmet ditt. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:54.018297
+lastmod: 2024-02-19 22:05:00.197183
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut feils\xF8kingsinformasjon betyr at du legger inn ekstra kode\
   \ som hjelper deg \xE5 se hva som skjer i programmet ditt. Programmerere gj\xF8\

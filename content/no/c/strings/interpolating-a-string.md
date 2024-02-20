@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:19.057644-07:00
 description: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av\
   \ strenger ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8\
   rer gj\xF8r dette\u2026"
-lastmod: 2024-02-18 23:08:54.379386
+lastmod: 2024-02-19 22:05:00.536459
 model: gpt-4-0125-preview
 summary: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av strenger\
   \ ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8rer gj\xF8\

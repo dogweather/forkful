@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:47.709242-07:00
 description: "Encontrar o comprimento de uma string em Go trata-se de determinar o\
   \ n\xFAmero de caracteres que ela cont\xE9m. Programadores realizam essa opera\xE7\
   \xE3o\u2026"
-lastmod: 2024-02-18 23:08:57.658789
+lastmod: 2024-02-19 22:05:05.113390
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string em Go trata-se de determinar o n\xFA\
   mero de caracteres que ela cont\xE9m. Programadores realizam essa opera\xE7\xE3\

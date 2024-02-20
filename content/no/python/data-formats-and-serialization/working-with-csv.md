@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/python/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:07.117359-07:00
 description: "\xC5 jobbe med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra\
   \ og skriving til CSV-filer, et vanlig format for lagring av tabul\xE6re data. Programmerere\
   \ gj\xF8r\u2026"
-lastmod: 2024-02-18 23:08:53.545519
+lastmod: 2024-02-19 22:04:59.666192
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
   \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data. Programmerere\

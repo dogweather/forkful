@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/rust/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:35.680358-07:00
 description: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen,\
   \ ob ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\
   \ zu\u2026"
-lastmod: 2024-02-18 23:09:04.656844
+lastmod: 2024-02-19 22:05:12.611401
 model: gpt-4-0125-preview
 summary: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen, ob\
   \ ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\

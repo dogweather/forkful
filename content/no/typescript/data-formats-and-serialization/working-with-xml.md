@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/typescript/working-with-xml/
 date: 2024-01-26 04:36:21.322905-07:00
 description: "\xC5 jobbe med XML betyr \xE5 analysere, manipulere og skrive XML-data\
   \ ved hjelp av programmering. Programmerere h\xE5ndterer XML for \xE5 utveksle data\
   \ p\xE5 tvers av\u2026"
-lastmod: 2024-02-18 23:08:53.668255
+lastmod: 2024-02-19 22:04:59.799940
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr \xE5 analysere, manipulere og skrive XML-data ved\
   \ hjelp av programmering. Programmerere h\xE5ndterer XML for \xE5 utveksle data\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:18:22.962589-07:00
 description: "Un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9\
   s) es un entorno de programaci\xF3n que toma entradas individuales del usuario,\
   \ las ejecuta y\u2026"
-lastmod: 2024-02-18 23:09:09.704572
+lastmod: 2024-02-19 22:05:17.332125
 model: gpt-4-0125-preview
 summary: "Un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9s) es\
   \ un entorno de programaci\xF3n que toma entradas individuales del usuario, las\

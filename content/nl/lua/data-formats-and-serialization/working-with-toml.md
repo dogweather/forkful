@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:54.389349-07:00
 description: "Werken met TOML houdt het parsen en genereren van TOML (Tom's Obvious,\
   \ Minimal Language) gegevens met Lua in. Programmeurs gebruiken TOML voor\u2026"
-lastmod: 2024-02-18 23:09:02.016701
+lastmod: 2024-02-19 22:05:10.037054
 model: gpt-4-0125-preview
 summary: "Werken met TOML houdt het parsen en genereren van TOML (Tom's Obvious, Minimal\
   \ Language) gegevens met Lua in. Programmeurs gebruiken TOML voor\u2026"

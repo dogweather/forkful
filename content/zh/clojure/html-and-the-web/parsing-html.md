@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/clojure/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:46.605276-07:00
@@ -9,7 +7,7 @@ description: "\u5728Clojure\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u5230\u4ECEHTML\u6
   \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u52A8\u6001\u8BBF\u95EE\u3001\u64CD\u4F5C\
   \u6216\u76D1\u63A7\u7F51\u9875\u5185\u5BB9\uFF0C\u81EA\u52A8\u5316\u4EFB\u52A1\u6216\
   \u5C06\u6570\u636E\u8F93\u5165\u5230\u5E94\u7528\u7A0B\u5E8F\u4E2D\u3002"
-lastmod: 2024-02-18 23:08:58.826384
+lastmod: 2024-02-19 22:05:06.382932
 model: gpt-4-0125-preview
 summary: "\u5728Clojure\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u5230\u4ECEHTML\u6587\u6863\
   \u4E2D\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u63D0\u53D6\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\

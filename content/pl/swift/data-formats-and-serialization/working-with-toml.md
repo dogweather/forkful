@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/working-with-toml/
 date: 2024-01-26 04:26:47.984840-07:00
 description: "TOML (Tom's Obvious, Minimal Language) to format serializacji danych,\
   \ kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swoim jasnym semantykom. Programi\u015B\
   ci u\u017Cywaj\u0105\u2026"
-lastmod: 2024-02-18 23:08:49.975635
+lastmod: 2024-02-19 22:04:54.927025
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) to format serializacji danych, kt\xF3\
   ry jest \u0142atwy do odczytania dzi\u0119ki swoim jasnym semantykom. Programi\u015B\

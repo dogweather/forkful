@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:43.770400-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1E
   c qu\xE1 kh\u1EE9 bao g\u1ED3m vi\u1EC7c thao t\xE1c v\u1EDBi ng\xE0y \u0111\u1EC3\
   \ t\xECm ra ch\xFAng s\u1EBD tr\u1EDF n\xEAn nh\u01B0 th\u1EBF n\xE0o sau m\u1ED9\
   t kho\u1EA3ng th\u1EDDi gian nh\u1EA5t \u0111\u1ECBnh\u2026"
-lastmod: 2024-02-18 23:08:50.329546
+lastmod: 2024-02-19 22:04:55.369566
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
   \ kh\u1EE9 bao g\u1ED3m vi\u1EC7c thao t\xE1c v\u1EDBi ng\xE0y \u0111\u1EC3 t\xEC\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/elm/working-with-json/
 date: 2024-02-03 19:03:19.813824-07:00
 description: "Working with JSON in Elm is about decoding JSON data into Elm types\
   \ and encoding Elm values back into JSON. This process is crucial for web applications\u2026"
-lastmod: 2024-02-18 23:09:10.992669
+lastmod: 2024-02-19 22:05:18.497495
 model: gpt-4-0125-preview
 summary: "Working with JSON in Elm is about decoding JSON data into Elm types and\
   \ encoding Elm values back into JSON. This process is crucial for web applications\u2026"

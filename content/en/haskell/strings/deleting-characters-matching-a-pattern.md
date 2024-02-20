@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:30.351248-07:00
 description: "Deleting characters that match a specific pattern is about sifting through\
   \ text and removing bits you don't need. Programmers do this to cleanse data,\u2026"
-lastmod: 2024-02-18 23:09:11.080430
+lastmod: 2024-02-19 22:05:18.577880
 model: gpt-4-1106-preview
 summary: "Deleting characters that match a specific pattern is about sifting through\
   \ text and removing bits you don't need. Programmers do this to cleanse data,\u2026"

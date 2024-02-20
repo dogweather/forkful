@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:06.289960-07:00
 description: "Virheiden k\xE4sittely C:ss\xE4 tarkoittaa ohjelman suorituksen aikana\
   \ esiintyvien poikkeavien tilanteiden havaitsemista ja niihin vastaamista. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:08.141085
+lastmod: 2024-02-19 22:05:15.941648
 model: gpt-4-0125-preview
 summary: "Virheiden k\xE4sittely C:ss\xE4 tarkoittaa ohjelman suorituksen aikana esiintyvien\
   \ poikkeavien tilanteiden havaitsemista ja niihin vastaamista. Ohjelmoijat\u2026"

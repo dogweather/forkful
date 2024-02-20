@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:02:51.902928-07:00
 description: "Wysy\u0142amy zapytanie HTTP z podstawowym uwierzytelnieniem, by uzyska\u0107\
   \ dost\u0119p do zasob\xF3w wymagaj\u0105cych prostej autoryzacji. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
-lastmod: 2024-02-18 23:08:49.347637
+lastmod: 2024-02-19 22:04:54.265489
 model: gpt-4-1106-preview
 summary: "Wysy\u0142amy zapytanie HTTP z podstawowym uwierzytelnieniem, by uzyska\u0107\
   \ dost\u0119p do zasob\xF3w wymagaj\u0105cych prostej autoryzacji. Programi\u015B\

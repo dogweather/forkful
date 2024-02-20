@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/swift/creating-a-temporary-file/
 date: 2024-01-20 17:41:34.617389-07:00
 description: "Crear un archivo temporal significa hacer un fichero que s\xF3lo se\
   \ va a necesitar por poco tiempo, generalmente durante la ejecuci\xF3n de un programa\
   \ o parte\u2026"
-lastmod: 2024-02-18 23:09:10.379281
+lastmod: 2024-02-19 22:05:17.940475
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal significa hacer un fichero que s\xF3lo se va a\
   \ necesitar por poco tiempo, generalmente durante la ejecuci\xF3n de un programa\

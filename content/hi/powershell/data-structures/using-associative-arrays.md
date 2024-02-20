@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/powershell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:40.184308-07:00
@@ -13,7 +11,7 @@ description: "\u090F\u0938\u094B\u0938\u093F\u090F\u091F\u093F\u0935 \u0910\u093
   \u093C\u094B\u0902 \u092E\u0947\u0902 \u0938\u0902\u0917\u094D\u0930\u0939\u093F\
   \u0924 \u0915\u0930\u0928\u0947 \u0926\u0947\u0924\u0947 \u0939\u0948\u0902, \u091C\
   \u093F\u0938\u0938\u0947 \u0921\u093E\u091F\u093E \u0915\u0940\u2026"
-lastmod: 2024-02-18 23:09:03.721075
+lastmod: 2024-02-19 22:05:11.707256
 model: gpt-4-0125-preview
 summary: "\u090F\u0938\u094B\u0938\u093F\u090F\u091F\u093F\u0935 \u0910\u0930\u0947\
   , \u091C\u093F\u0928\u094D\u0939\u0947\u0902 PowerShell \u092E\u0947\u0902 \u0939\

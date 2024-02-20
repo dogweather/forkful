@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/arduino/concatenating-strings/
 date: 2024-01-20 17:34:16.557369-07:00
 description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli konkatenacja,\
   \ to proces tworzenia jednego \u0142a\u0144cucha z dw\xF3ch lub wi\u0119cej istniej\u0105\
   cych. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.862260
+lastmod: 2024-02-19 22:04:54.807439
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli konkatenacja,\
   \ to proces tworzenia jednego \u0142a\u0144cucha z dw\xF3ch lub wi\u0119cej istniej\u0105\

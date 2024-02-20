@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/php/printing-debug-output/
 date: 2024-01-20 17:53:13.121783-07:00
 description: "Drukowanie informacji debugowych w PHP to wy\u015Bwietlanie danych,\
   \ kt\xF3re pomagaj\u0105 nam zrozumie\u0107, co si\u0119 dzieje w naszym skrypcie.\
   \ Robimy to, \u017Ceby szybko\u2026"
-lastmod: 2024-02-18 23:08:49.697696
+lastmod: 2024-02-19 22:04:54.634070
 model: gpt-4-1106-preview
 summary: "Drukowanie informacji debugowych w PHP to wy\u015Bwietlanie danych, kt\xF3\
   re pomagaj\u0105 nam zrozumie\u0107, co si\u0119 dzieje w naszym skrypcie. Robimy\

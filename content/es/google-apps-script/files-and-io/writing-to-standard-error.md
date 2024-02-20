@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/google-apps-script/writing-to-standard-error/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:53.617213-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en lenguajes de programaci\xF3\
   n se trata de dirigir mensajes de error y diagn\xF3sticos a un flujo separado, aparte\
   \ de la\u2026"
-lastmod: 2024-02-18 23:09:09.527336
+lastmod: 2024-02-19 22:05:17.179831
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en lenguajes de programaci\xF3\
   n se trata de dirigir mensajes de error y diagn\xF3sticos a un flujo separado, aparte\

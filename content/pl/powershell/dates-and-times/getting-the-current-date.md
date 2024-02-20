@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/powershell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:31.214149-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w PowerShell polega na uzyskiwaniu\
   \ aktualnej daty i godziny systemu. Ta operacja jest fundamentalna dla zada\u0144\
   \ takich jak\u2026"
-lastmod: 2024-02-18 23:08:49.839306
+lastmod: 2024-02-19 22:04:54.782365
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w PowerShell polega na uzyskiwaniu aktualnej\
   \ daty i godziny systemu. Ta operacja jest fundamentalna dla zada\u0144 takich jak\u2026"

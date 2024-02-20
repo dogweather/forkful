@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/javascript/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:11.948520-07:00
 description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie se\
   \ d\xE9barrasser de ces marques de citation ennuyeuses qui peuvent perturber votre\
   \ code, surtout\u2026"
-lastmod: 2024-02-18 23:09:09.242493
+lastmod: 2024-02-19 22:05:16.908358
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie se d\xE9\
   barrasser de ces marques de citation ennuyeuses qui peuvent perturber votre code,\

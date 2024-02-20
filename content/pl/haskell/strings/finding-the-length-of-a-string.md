@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:32.655044-07:00
 description: "Liczenie d\u0142ugo\u015Bci \u0142a\u0144cucha to ustalenie, ile znak\xF3\
   w zawiera tekst. Programi\u015Bci robi\u0105 to, \u017Ceby wiedzie\u0107, jak du\u017C\
   o danych przetwarzaj\u0105 i by zarz\u0105dza\u0107 nimi\u2026"
-lastmod: 2024-02-18 23:08:49.644528
+lastmod: 2024-02-19 22:04:54.576907
 model: gpt-4-1106-preview
 summary: "Liczenie d\u0142ugo\u015Bci \u0142a\u0144cucha to ustalenie, ile znak\xF3\
   w zawiera tekst. Programi\u015Bci robi\u0105 to, \u017Ceby wiedzie\u0107, jak du\u017C\

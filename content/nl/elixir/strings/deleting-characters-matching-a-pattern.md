@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elixir/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:33.659824-07:00
 description: "Het verwijderen van karakters die overeenkomen met een patroon gaat\
   \ helemaal om het vinden van specifieke reeksen van karakters en het verwijderen\
   \ ervan.\u2026"
-lastmod: 2024-02-18 23:09:01.508596
+lastmod: 2024-02-19 22:05:09.535637
 model: gpt-4-0125-preview
 summary: "Het verwijderen van karakters die overeenkomen met een patroon gaat helemaal\
   \ om het vinden van specifieke reeksen van karakters en het verwijderen ervan.\u2026"

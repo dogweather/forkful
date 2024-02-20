@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/bash/logging/
 date: 2024-01-26 00:59:40.964223-07:00
 description: "O registro de logs \xE9 a pr\xE1tica de gravar eventos, erros e outras\
   \ informa\xE7\xF5es significativas dos processos em execu\xE7\xE3o de um programa\
   \ em um arquivo ou\u2026"
-lastmod: 2024-02-18 23:08:58.331891
+lastmod: 2024-02-19 22:05:05.814408
 model: gpt-4-1106-preview
 summary: "O registro de logs \xE9 a pr\xE1tica de gravar eventos, erros e outras informa\xE7\
   \xF5es significativas dos processos em execu\xE7\xE3o de um programa em um arquivo\

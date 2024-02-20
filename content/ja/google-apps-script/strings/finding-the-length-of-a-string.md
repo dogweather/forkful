@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/google-apps-script/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:40.394839-07:00
 description: "Google Apps\u2026"
-lastmod: 2024-02-18 23:08:54.513206
+lastmod: 2024-02-19 22:05:00.700812
 model: gpt-4-0125-preview
 summary: "Google Apps\u2026"
 title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u306E\u53D6\u5F97"

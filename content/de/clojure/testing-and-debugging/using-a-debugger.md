@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/clojure/using-a-debugger/
 date: 2024-01-26 03:48:19.590829-07:00
 description: "Einen Debugger zu verwenden bedeutet, sich selbst mit einer Lupe auszustatten,\
   \ um den eigenen Code genau unter die Lupe zu nehmen. Programmierer tun dies,\u2026"
-lastmod: 2024-02-18 23:09:04.511875
+lastmod: 2024-02-19 22:05:12.473771
 model: gpt-4-0125-preview
 summary: "Einen Debugger zu verwenden bedeutet, sich selbst mit einer Lupe auszustatten,\
   \ um den eigenen Code genau unter die Lupe zu nehmen. Programmierer tun dies,\u2026"

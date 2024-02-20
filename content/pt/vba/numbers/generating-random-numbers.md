@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/vba/generating-random-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:05.899915-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios no Visual Basic for Applications (VBA)\
   \ permite que programas simulem processos com elementos de chance ou variabilidade,\
   \ como a\u2026"
-lastmod: 2024-02-18 23:08:57.969233
+lastmod: 2024-02-19 22:05:05.443177
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios no Visual Basic for Applications (VBA) permite\
   \ que programas simulem processos com elementos de chance ou variabilidade, como\

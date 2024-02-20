@@ -1,13 +1,11 @@
 ---
-aliases:
-- /zh/powershell/reading-command-line-arguments/
 date: 2024-01-20 17:56:29.725252-07:00
 description: "\u5728 PowerShell \u811A\u672C\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\
   \u6570\u53EF\u4EE5\u8BA9\u4F60\u7684\u811A\u672C\u6839\u636E\u7528\u6237\u8F93\u5165\
   \u5B9A\u5236\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u4E3A\u4E86\u589E\
   \u52A0\u811A\u672C\u7684\u7075\u6D3B\u6027\u548C\u5B9E\u7528\u6027\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:59.345586
+lastmod: 2024-02-19 22:05:07.083430
 model: gpt-4-1106-preview
 summary: "\u5728 PowerShell \u811A\u672C\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\
   \u6570\u53EF\u4EE5\u8BA9\u4F60\u7684\u811A\u672C\u6839\u636E\u7528\u6237\u8F93\u5165\

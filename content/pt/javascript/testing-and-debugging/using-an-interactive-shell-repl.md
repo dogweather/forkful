@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/using-an-interactive-shell-repl/
 date: 2024-01-26 04:15:31.495023-07:00
 description: "Shells interativos, ou REPLs (Read-Eval-Print Loops, ou La\xE7os de\
   \ Ler-Avaliar-Imprimir), permitem que voc\xEA execute c\xF3digo de forma instant\xE2\
   nea, testando\u2026"
-lastmod: 2024-02-18 23:08:58.533872
+lastmod: 2024-02-19 22:05:06.029169
 model: gpt-4-0125-preview
 summary: "Shells interativos, ou REPLs (Read-Eval-Print Loops, ou La\xE7os de Ler-Avaliar-Imprimir),\
   \ permitem que voc\xEA execute c\xF3digo de forma instant\xE2nea, testando\u2026"

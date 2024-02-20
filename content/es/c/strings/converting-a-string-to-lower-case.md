@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/converting-a-string-to-lower-case/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:31.831941-07:00
 description: "Convertir una cadena a min\xFAsculas en C implica transformar todas\
   \ las letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.485755
+lastmod: 2024-02-19 22:05:18.037292
 model: gpt-4-0125-preview
 summary: "Convertir una cadena a min\xFAsculas en C implica transformar todas las\
   \ letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas.\

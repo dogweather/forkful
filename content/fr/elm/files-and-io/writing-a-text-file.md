@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elm/writing-a-text-file/
 date: 2024-01-19
 description: "\xC9crire un fichier texte consiste \xE0 sauvegarder des donn\xE9es\
   \ en format lisible. Les d\xE9veloppeurs le font pour conserver des configurations,\
   \ sauver des\u2026"
-lastmod: 2024-02-18 23:09:08.754581
+lastmod: 2024-02-19 22:05:16.461215
 summary: "\xC9crire un fichier texte consiste \xE0 sauvegarder des donn\xE9es en format\
   \ lisible. Les d\xE9veloppeurs le font pour conserver des configurations, sauver\
   \ des\u2026"

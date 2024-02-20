@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/fish-shell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:12.506058-07:00
 description: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 trekke ut datoinformasjon\
   \ kodet innenfor strenger og konvertere den til et strukturert format som\u2026"
-lastmod: 2024-02-18 23:08:54.360807
+lastmod: 2024-02-19 22:05:00.516297
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 trekke ut datoinformasjon\
   \ kodet innenfor strenger og konvertere den til et strukturert format som\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/elm/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:33.183553-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in der Programmierung sind Muster,\
   \ die zum Abgleichen von Zeichenkombinationen in Strings verwendet werden. In Elm,\
   \ genau wie\u2026"
-lastmod: 2024-02-18 23:09:04.771010
+lastmod: 2024-02-19 22:05:12.720161
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in der Programmierung sind Muster, die\
   \ zum Abgleichen von Zeichenkombinationen in Strings verwendet werden. In Elm, genau\

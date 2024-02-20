@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:32.154302-07:00
@@ -13,7 +11,7 @@ description: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \u
   \uD55C \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uC77C\uC815 \uC791\uC5C5\
   \uC744 \uC790\uB3D9\uD654\uD558\uAE30 \uC704\uD574 \uC774 \uAE30\uB2A5\uC774 \uD544\
   \uC694\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.975083
+lastmod: 2024-02-19 22:05:13.909737
 model: gpt-4-0125-preview
 summary: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\
   \uD558\uB294 \uAC83\uC740 \uC8FC\uC5B4\uC9C4 \uB0A0\uC9DC\uB85C\uBD80\uD130 \uD2B9\

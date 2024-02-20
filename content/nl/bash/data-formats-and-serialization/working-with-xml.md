@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/bash/working-with-xml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:04.068587-07:00
 description: "Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens\
   \ in het Extensible Markup Language-formaat. Programmeurs worstelen met XML,\u2026"
-lastmod: 2024-02-18 23:09:02.069461
+lastmod: 2024-02-19 22:05:10.092116
 model: gpt-4-0125-preview
 summary: "Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens\
   \ in het Extensible Markup Language-formaat. Programmeurs worstelen met XML,\u2026"

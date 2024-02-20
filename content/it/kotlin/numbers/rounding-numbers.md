@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/kotlin/rounding-numbers/
 date: 2024-01-26 03:45:38.225872-07:00
 description: "Arrotondare i numeri significa aggiustarli al numero intero pi\xF9 vicino\
   \ o a un grado di precisione specificato. I programmatori lo fanno per migliorare\
   \ la\u2026"
-lastmod: 2024-02-18 23:08:55.841148
+lastmod: 2024-02-19 22:05:02.449434
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa aggiustarli al numero intero pi\xF9 vicino\
   \ o a un grado di precisione specificato. I programmatori lo fanno per migliorare\

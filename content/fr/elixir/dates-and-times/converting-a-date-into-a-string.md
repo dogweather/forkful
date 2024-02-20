@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:29.839999-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res permet de l'afficher\
   \ dans un format lisible pour l'humain. Les d\xE9veloppeurs utilisent cette conversion\
   \ pour\u2026"
-lastmod: 2024-02-18 23:09:08.447282
+lastmod: 2024-02-19 22:05:16.235425
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res permet de l'afficher dans\
   \ un format lisible pour l'humain. Les d\xE9veloppeurs utilisent cette conversion\

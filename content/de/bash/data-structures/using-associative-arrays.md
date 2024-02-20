@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/bash/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:52.688770-07:00
 description: "Assoziative Arrays sind wie aufgeladene Arrays, die es Ihnen erlauben,\
   \ Strings als Indizes anstelle von nur Ganzzahlen zu verwenden. Programmierer nutzen\u2026"
-lastmod: 2024-02-18 23:09:05.044476
+lastmod: 2024-02-19 22:05:12.981506
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays sind wie aufgeladene Arrays, die es Ihnen erlauben, Strings\
   \ als Indizes anstelle von nur Ganzzahlen zu verwenden. Programmierer nutzen\u2026"

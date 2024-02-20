@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/editing-files-in-place-with-cli-one-liners/
 date: 2024-01-27 16:20:49.785598-07:00
 description: "Editar archivos en el lugar con l\xEDneas de comando (CLI) de una sola\
   \ l\xEDnea en PowerShell se trata de hacer modificaciones directas a los archivos\
   \ desde la\u2026"
-lastmod: 2024-02-18 23:09:10.211047
+lastmod: 2024-02-19 22:05:17.793630
 model: gpt-4-0125-preview
 summary: "Editar archivos en el lugar con l\xEDneas de comando (CLI) de una sola l\xED\
   nea en PowerShell se trata de hacer modificaciones directas a los archivos desde\

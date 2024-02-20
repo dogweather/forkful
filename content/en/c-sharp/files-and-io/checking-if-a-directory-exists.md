@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/checking-if-a-directory-exists/
 date: 2024-02-03 19:02:42.891176-07:00
 description: "Checking if a directory exists in C# involves verifying the presence\
   \ of a folder at a specified path in the file system. Programmers do this to avoid\u2026"
-lastmod: 2024-02-18 23:09:11.068659
+lastmod: 2024-02-19 22:05:18.567219
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in C# involves verifying the presence of\
   \ a folder at a specified path in the file system. Programmers do this to avoid\u2026"

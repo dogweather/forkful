@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:07.311221-07:00
 description: "La interpolaci\xF3n de cadenas, en programaci\xF3n, implica la construcci\xF3\
   n de cadenas mediante la incrustaci\xF3n de expresiones dentro de cadenas literales.\
   \ Los\u2026"
-lastmod: 2024-02-18 23:09:10.484527
+lastmod: 2024-02-19 22:05:18.036094
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas, en programaci\xF3n, implica la construcci\xF3\
   n de cadenas mediante la incrustaci\xF3n de expresiones dentro de cadenas literales.\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/concatenating-strings/
 date: 2024-01-20 17:33:51.943093-07:00
 description: "Concat\xE9ner des cha\xEEnes, c'est les assembler bout \xE0 bout. On\
   \ le fait pour construire du texte dynamiquement, combiner des donn\xE9es ou cr\xE9\
   er des commandes."
-lastmod: 2024-02-18 23:09:09.106298
+lastmod: 2024-02-19 22:05:16.784797
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes, c'est les assembler bout \xE0 bout. On le\
   \ fait pour construire du texte dynamiquement, combiner des donn\xE9es ou cr\xE9\

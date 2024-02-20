@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/kotlin/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:38.729741-07:00
 description: "Rimuovere caratteri che corrispondono a un modello \xE8 il processo\
   \ di eliminare sequenze specifiche di caratteri da una stringa. I programmatori\
   \ lo fanno\u2026"
-lastmod: 2024-02-18 23:08:55.831324
+lastmod: 2024-02-19 22:05:02.438972
 model: gpt-4-1106-preview
 summary: "Rimuovere caratteri che corrispondono a un modello \xE8 il processo di eliminare\
   \ sequenze specifiche di caratteri da una stringa. I programmatori lo fanno\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/vba/working-with-yaml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:20.825237-07:00
 description: "YAML, wat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare gegevensserialisatietaal die vaak wordt gebruikt voor\u2026"
-lastmod: 2024-02-18 23:09:01.688801
+lastmod: 2024-02-19 22:05:09.709607
 model: gpt-4-0125-preview
 summary: "YAML, wat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare gegevensserialisatietaal die vaak wordt gebruikt voor\u2026"

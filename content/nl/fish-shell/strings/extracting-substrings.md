@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/fish-shell/extracting-substrings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:39.239154-07:00
 description: "Substrings extraheren betekent specifieke delen uit een string halen.\
   \ Programmeurs doen dit om gegevens te isoleren, input te reinigen of informatie\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:02.310827
+lastmod: 2024-02-19 22:05:10.320788
 model: gpt-4-0125-preview
 summary: "Substrings extraheren betekent specifieke delen uit een string halen. Programmeurs\
   \ doen dit om gegevens te isoleren, input te reinigen of informatie te\u2026"

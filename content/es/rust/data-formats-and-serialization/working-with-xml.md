@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/rust/working-with-xml/
 date: 2024-01-26 04:35:21.116154-07:00
 description: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
   \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"
-lastmod: 2024-02-18 23:09:09.775435
+lastmod: 2024-02-19 22:05:17.396569
 model: gpt-4-0125-preview
 summary: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
   \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"

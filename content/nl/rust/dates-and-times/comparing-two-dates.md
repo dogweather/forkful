@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/comparing-two-dates/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:30.294194-07:00
 description: "Het vergelijken van twee datums betekent controleren of ze gelijk zijn,\
   \ of dat de ene voor of na de andere komt. Programmeurs gebruiken dit voor het\u2026"
-lastmod: 2024-02-18 23:09:01.632990
+lastmod: 2024-02-19 22:05:09.655378
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums betekent controleren of ze gelijk zijn,\
   \ of dat de ene voor of na de andere komt. Programmeurs gebruiken dit voor het\u2026"

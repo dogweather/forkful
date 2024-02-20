@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/printing-debug-output/
 date: 2024-01-20 17:53:09.336681-07:00
 description: "Imprimir salida de depuraci\xF3n en PHP significa mostrar datos en pantalla\
   \ para entender qu\xE9 est\xE1 pasando dentro de tu c\xF3digo. Los programadores\
   \ lo hacen\u2026"
-lastmod: 2024-02-18 23:09:10.076681
+lastmod: 2024-02-19 22:05:17.670419
 model: gpt-4-1106-preview
 summary: "Imprimir salida de depuraci\xF3n en PHP significa mostrar datos en pantalla\
   \ para entender qu\xE9 est\xE1 pasando dentro de tu c\xF3digo. Los programadores\

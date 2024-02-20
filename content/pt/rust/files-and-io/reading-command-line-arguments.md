@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/rust/reading-command-line-arguments/
 date: 2024-01-20 17:57:02.185620-07:00
 description: "Ler argumentos da linha de comando permite que programas em Rust recebam\
   \ inputs externos ao serem executados. Programadores utilizam essa t\xE9cnica para\u2026"
-lastmod: 2024-02-18 23:08:57.944208
+lastmod: 2024-02-19 22:05:05.417837
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando permite que programas em Rust recebam\
   \ inputs externos ao serem executados. Programadores utilizam essa t\xE9cnica para\u2026"

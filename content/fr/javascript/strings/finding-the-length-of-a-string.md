@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/javascript/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:48.924493-07:00
 description: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie compter\
   \ le nombre de caract\xE8res qu'elle contient. C'est essentiel pour valider des\
   \ entr\xE9es,\u2026"
-lastmod: 2024-02-18 23:09:09.245765
+lastmod: 2024-02-19 22:05:16.911373
 model: gpt-4-1106-preview
 summary: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie compter\
   \ le nombre de caract\xE8res qu'elle contient. C'est essentiel pour valider des\

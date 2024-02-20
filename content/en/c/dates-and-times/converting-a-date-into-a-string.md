@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/converting-a-date-into-a-string/
 date: 2024-02-03 17:50:03.941196-07:00
 description: "Converting a date into a string in C involves translating a date structure\
   \ or timestamp into a human-readable format. Programmers often perform this task\u2026"
-lastmod: 2024-02-18 23:09:11.533735
+lastmod: 2024-02-19 22:05:18.983397
 model: gpt-4-0125-preview
 summary: "Converting a date into a string in C involves translating a date structure\
   \ or timestamp into a human-readable format. Programmers often perform this task\u2026"

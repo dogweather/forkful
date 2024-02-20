@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/organizing-code-into-functions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:07.501883-07:00
 description: "Al je code in \xE9\xE9n grote hoop gooien? Slecht idee. Het onderverdelen\
   \ in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger\
   \ om\u2026"
-lastmod: 2024-02-18 23:09:01.765565
+lastmod: 2024-02-19 22:05:09.784213
 model: gpt-4-0125-preview
 summary: "Al je code in \xE9\xE9n grote hoop gooien? Slecht idee. Het onderverdelen\
   \ in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger\

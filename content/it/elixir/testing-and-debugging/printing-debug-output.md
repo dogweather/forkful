@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elixir/printing-debug-output/
 date: 2024-01-20 17:52:29.351062-07:00
 description: "Stampare l'output di debug significa mostrare temporaneamente i valori\
   \ in fase di esecuzione per capire che diavolo sta facendo il codice. Si fa per\u2026"
-lastmod: 2024-02-18 23:08:55.603057
+lastmod: 2024-02-19 22:05:02.196017
 model: gpt-4-1106-preview
 summary: "Stampare l'output di debug significa mostrare temporaneamente i valori in\
   \ fase di esecuzione per capire che diavolo sta facendo il codice. Si fa per\u2026"

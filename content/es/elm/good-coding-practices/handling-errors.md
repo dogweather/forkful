@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/elm/handling-errors/
 date: 2024-01-26 00:51:34.885160-07:00
 description: "Manejar errores significa escribir c\xF3digo que pueda anticipar y lidiar\
   \ con situaciones problem\xE1ticas. Los programadores lo hacen para prevenir fallas,\u2026"
-lastmod: 2024-02-18 23:09:09.898898
+lastmod: 2024-02-19 22:05:17.509109
 model: gpt-4-1106-preview
 summary: "Manejar errores significa escribir c\xF3digo que pueda anticipar y lidiar\
   \ con situaciones problem\xE1ticas. Los programadores lo hacen para prevenir fallas,\u2026"

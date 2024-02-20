@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/go/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:43.657527-07:00
 description: "Die L\xE4nge eines Strings in Go zu finden, bedeutet, die Anzahl der\
   \ Zeichen zu bestimmen, die er enth\xE4lt. Programmierer f\xFChren diese Operation\
   \ routinem\xE4\xDFig\u2026"
-lastmod: 2024-02-18 23:09:04.352942
+lastmod: 2024-02-19 22:05:12.322661
 model: gpt-4-0125-preview
 summary: "Die L\xE4nge eines Strings in Go zu finden, bedeutet, die Anzahl der Zeichen\
   \ zu bestimmen, die er enth\xE4lt. Programmierer f\xFChren diese Operation routinem\xE4\

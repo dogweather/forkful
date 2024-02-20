@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/arduino/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:49.696908-07:00
 description: "Att f\xE5 det aktuella datumet i Arduino-projekt inneb\xE4r att erh\xE5\
   lla realtidsinformation som kan vara avg\xF6rande f\xF6r loggning, tidsst\xE4mpling\
   \ eller\u2026"
-lastmod: 2024-02-18 23:08:52.053787
+lastmod: 2024-02-19 22:04:57.413209
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Arduino-projekt inneb\xE4r att erh\xE5\
   lla realtidsinformation som kan vara avg\xF6rande f\xF6r loggning, tidsst\xE4mpling\

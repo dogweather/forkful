@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/extracting-substrings/
 date: 2024-01-20 17:46:26.574168-07:00
 description: "Utdrag av substringer er n\xE5r du henter en del av en streng. Programmerere\
   \ gj\xF8r dette for \xE5 manipulere og analysere tekst, som \xE5 hente ut et brukernavn\
   \ fra\u2026"
-lastmod: 2024-02-18 23:08:53.964664
+lastmod: 2024-02-19 22:05:00.138460
 model: gpt-4-1106-preview
 summary: "Utdrag av substringer er n\xE5r du henter en del av en streng. Programmerere\
   \ gj\xF8r dette for \xE5 manipulere og analysere tekst, som \xE5 hente ut et brukernavn\

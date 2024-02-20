@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/php/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:54.561842-07:00
@@ -8,7 +6,7 @@ description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong
   \ c\xF3 ngh\u0129a l\xE0 l\u1EA5y c\xE1c \u0111\u1EA7u v\xE0o \u0111\u01B0\u1EE3\
   c truy\u1EC1n v\xE0o script c\u1EE7a b\u1EA1n khi n\xF3 \u0111\u01B0\u1EE3c ch\u1EA1\
   y trong console. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
-lastmod: 2024-02-18 23:08:50.807997
+lastmod: 2024-02-19 22:04:55.971566
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong PHP c\xF3\
   \ ngh\u0129a l\xE0 l\u1EA5y c\xE1c \u0111\u1EA7u v\xE0o \u0111\u01B0\u1EE3c truy\u1EC1\

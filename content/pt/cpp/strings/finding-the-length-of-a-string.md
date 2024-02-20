@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:09.986891-07:00
 description: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string significa\
   \ descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precis\xE3\
   o, seja\u2026"
-lastmod: 2024-02-18 23:08:58.441023
+lastmod: 2024-02-19 22:05:05.930751
 model: gpt-4-1106-preview
 summary: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string significa\
   \ descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precis\xE3\

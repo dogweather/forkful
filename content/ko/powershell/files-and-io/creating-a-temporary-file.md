@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/creating-a-temporary-file/
 date: 2024-01-20 17:41:02.444360-07:00
 description: "\uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC784\uC2DC \uD30C\uC77C\uC744\
   \ \uB9CC\uB4DC\uB294 \uAC74 \uB370\uC774\uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C\
@@ -9,7 +7,7 @@ description: "\uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC784\uC2DC \uD30C\uC77C\uC7
   , \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8 \uAC04 \uB370\uC774\uD130\uB97C \uC804\uC1A1\
   \uD558\uB294 \uB370 \uC4F0\uC9C0\uC694."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.584730
+lastmod: 2024-02-19 22:05:14.488928
 model: gpt-4-1106-preview
 summary: "\uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\
   \uB4DC\uB294 \uAC74 \uB370\uC774\uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C \uC800\

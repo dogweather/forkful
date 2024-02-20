@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:04.493166-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c in ra th\xF4ng tin g\u1EE1 l\u1ED7i trong Visual Basic f
   \ Applications (VBA) bao g\u1ED3m vi\u1EC7c \u0111\u1EB7t chi\u1EBFn l\u01B0\u1EE3\
   c c\xE1c c\xE2u l\u1EC7nh in trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3\
   n th\u1ECB gi\xE1 tr\u1ECB\u2026"
-lastmod: 2024-02-18 23:08:50.512315
+lastmod: 2024-02-19 22:04:55.594665
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c in ra th\xF4ng tin g\u1EE1 l\u1ED7i trong Visual Basic for Applications\
   \ (VBA) bao g\u1ED3m vi\u1EC7c \u0111\u1EB7t chi\u1EBFn l\u01B0\u1EE3c c\xE1c c\xE2\

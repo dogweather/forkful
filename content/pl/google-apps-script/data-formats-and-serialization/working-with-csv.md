@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pl/google-apps-script/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:11.168082-07:00
 description: "Praca z plikami CSV (Comma-Separated Values, warto\u015Bci rozdzielone\
   \ przecinkami) w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu\u2026"
-lastmod: 2024-02-18 23:08:49.177348
+lastmod: 2024-02-19 22:04:54.112369
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecinkami)\
   \ w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:00.254739-07:00
 description: "Tekstitiedoston kirjoittaminen Go:lla tarkoittaa tietorivien luomista\
   \ ja kirjoittamista uuteen tai olemassa olevaan tekstitiedostoon. Ohjelmoijat tekev\xE4\
   t\u2026"
-lastmod: 2024-02-18 23:09:07.106703
+lastmod: 2024-02-19 22:05:14.985961
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Go:lla tarkoittaa tietorivien luomista ja\
   \ kirjoittamista uuteen tai olemassa olevaan tekstitiedostoon. Ohjelmoijat tekev\xE4\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/downloading-a-web-page/
 date: 2024-01-20 17:43:35.028671-07:00
 description: "Downloading a web page means grabbing the raw HTML content from the\
   \ internet using code. Programmers do this to process data, interact with web services,\u2026"
-lastmod: 2024-02-18 23:09:11.053216
+lastmod: 2024-02-19 22:05:18.553061
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the raw HTML content from the internet\
   \ using code. Programmers do this to process data, interact with web services,\u2026"

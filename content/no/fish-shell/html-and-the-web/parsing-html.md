@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/fish-shell/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:11.861189-07:00
 description: "Parsing av HTML handler om \xE5 trekke ut data eller informasjon fra\
   \ HTML-innhold, en vanlig oppgave n\xE5r man h\xE5ndterer webdata. Programmerere\
   \ gj\xF8r dette for\u2026"
-lastmod: 2024-02-18 23:08:54.349389
+lastmod: 2024-02-19 22:05:00.503882
 model: gpt-4-0125-preview
 summary: "Parsing av HTML handler om \xE5 trekke ut data eller informasjon fra HTML-innhold,\
   \ en vanlig oppgave n\xE5r man h\xE5ndterer webdata. Programmerere gj\xF8r dette\

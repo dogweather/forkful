@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/interpolating-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:40.659650-07:00
 description: "Interpolacja \u0142a\u0144cuch\xF3w to metoda konstruowania \u0142a\u0144\
   cuch\xF3w, kt\xF3re w\u0142\u0105czaj\u0105 zmienne, umo\u017Cliwiaj\u0105c dynamiczne\
   \ tworzenie \u0142a\u0144cuch\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: 2024-02-18 23:08:49.080919
+lastmod: 2024-02-19 22:04:54.018914
 model: gpt-4-0125-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w to metoda konstruowania \u0142a\u0144\
   cuch\xF3w, kt\xF3re w\u0142\u0105czaj\u0105 zmienne, umo\u017Cliwiaj\u0105c dynamiczne\

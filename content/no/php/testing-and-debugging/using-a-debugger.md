@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/using-a-debugger/
 date: 2024-01-26 03:50:42.836384-07:00
 description: "En debugger er et verkt\xF8y som hjelper programmerere med \xE5 forst\xE5\
   \ hva koden deres faktisk gj\xF8r mens den kj\xF8rer. Det er forst\xF8rrelsesglasset\
   \ som lar oss\u2026"
-lastmod: 2024-02-18 23:08:53.979625
+lastmod: 2024-02-19 22:05:00.154759
 model: gpt-4-0125-preview
 summary: "En debugger er et verkt\xF8y som hjelper programmerere med \xE5 forst\xE5\
   \ hva koden deres faktisk gj\xF8r mens den kj\xF8rer. Det er forst\xF8rrelsesglasset\

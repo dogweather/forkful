@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/typescript/creating-a-temporary-file/
 date: 2024-01-20 17:41:26.586975-07:00
 description: "Cr\xE9er un fichier temporaire c'est comme griffonner sur un bout de\
   \ papier pour ne pas oublier quelque chose \u2013 c'est provisoire. Les programmeurs\
   \ en ont\u2026"
-lastmod: 2024-02-18 23:09:08.503264
+lastmod: 2024-02-19 22:05:16.286765
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire c'est comme griffonner sur un bout de papier\
   \ pour ne pas oublier quelque chose \u2013 c'est provisoire. Les programmeurs en\

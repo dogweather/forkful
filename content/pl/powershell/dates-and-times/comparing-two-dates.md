@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/comparing-two-dates/
 date: 2024-01-20 17:34:02.689243-07:00
 description: "Por\xF3wnywanie dat to sprawdzanie, kt\xF3ra z nich jest wcze\u015B\
   niejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015Bci robi\u0105\
   \ to, by zarz\u0105dza\u0107 harmonogramami,\u2026"
-lastmod: 2024-02-18 23:08:49.841239
+lastmod: 2024-02-19 22:04:54.784466
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dat to sprawdzanie, kt\xF3ra z nich jest wcze\u015Bniejsza,\
   \ p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015Bci robi\u0105 to,\

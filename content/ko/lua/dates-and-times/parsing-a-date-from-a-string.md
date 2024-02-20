@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:58.635872-07:00
@@ -13,7 +11,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD5
   \uAE45, \uC2DC\uAC04 \uACC4\uC0B0 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC6A9\uC774\uD558\
   \uAC8C \uD558\uACE0 \uC778\uAC04\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uB0A0\uC9DC\
   \ \uD615\uC2DD\uACFC \uCEF4\uD4E8\uD130\uAC00\u2026"
-lastmod: 2024-02-18 23:09:06.430996
+lastmod: 2024-02-19 22:05:14.343262
 model: gpt-4-0125-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\uB2E4\
   \uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC758 \uD14D\uC2A4\uD2B8 \uD45C\

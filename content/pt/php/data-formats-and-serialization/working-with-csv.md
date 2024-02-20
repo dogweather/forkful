@@ -1,12 +1,10 @@
 ---
-aliases:
-- /pt/php/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:38.837225-07:00
 description: "Trabalhar com CSV (Comma-Separated Values ou Valores Separados por V\xED\
   rgula) envolve ler e escrever dados em arquivos CSV, um formato popular para\u2026"
-lastmod: 2024-02-18 23:08:58.263321
+lastmod: 2024-02-19 22:05:05.739155
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Comma-Separated Values ou Valores Separados por V\xED\
   rgula) envolve ler e escrever dados em arquivos CSV, um formato popular para\u2026"

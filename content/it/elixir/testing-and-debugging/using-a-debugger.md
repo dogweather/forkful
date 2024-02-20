@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/elixir/using-a-debugger/
 date: 2024-01-26 03:48:21.142169-07:00
 description: "L'uso di un debugger in Elixir comporta l'esecuzione passo passo del\
   \ codice, l'ispezione delle variabili e il tracciamento dei flussi per eliminare\
   \ gli\u2026"
-lastmod: 2024-02-18 23:08:55.604888
+lastmod: 2024-02-19 22:05:02.198170
 model: gpt-4-0125-preview
 summary: "L'uso di un debugger in Elixir comporta l'esecuzione passo passo del codice,\
   \ l'ispezione delle variabili e il tracciamento dei flussi per eliminare gli\u2026"

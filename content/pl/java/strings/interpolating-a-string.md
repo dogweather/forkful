@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/java/interpolating-a-string/
 date: 2024-01-20 17:51:00.354502-07:00
 description: "Interpolacja \u0142a\u0144cuch\xF3w to proces wstawiania warto\u015B\
   ci zmiennych do ci\u0105gu znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 jej dla\
   \ dynamizmu kodu i uproszczenia generowania\u2026"
-lastmod: 2024-02-18 23:08:49.464335
+lastmod: 2024-02-19 22:04:54.391383
 model: gpt-4-1106-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w to proces wstawiania warto\u015Bci zmiennych\
   \ do ci\u0105gu znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 jej dla dynamizmu\

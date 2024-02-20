@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/vba/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:40.691316-07:00
 description: "La creazione di un file temporaneo in Visual Basic for Applications\
   \ (VBA) comporta la generazione programmata di un file per un uso a breve termine,\u2026"
-lastmod: 2024-02-18 23:08:55.743462
+lastmod: 2024-02-19 22:05:02.345979
 model: gpt-4-0125-preview
 summary: "La creazione di un file temporaneo in Visual Basic for Applications (VBA)\
   \ comporta la generazione programmata di un file per un uso a breve termine,\u2026"

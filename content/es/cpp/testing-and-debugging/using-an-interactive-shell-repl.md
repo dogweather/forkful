@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/cpp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:03.021272-07:00
 description: "Un REPL (Read-Eval-Print-Loop, Ciclo de Leer-Evaluar-Imprimir) es un\
   \ entorno de programaci\xF3n interactivo y simple. Los programadores lo utilizan\
   \ para la\u2026"
-lastmod: 2024-02-18 23:09:10.311956
+lastmod: 2024-02-19 22:05:17.881324
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print-Loop, Ciclo de Leer-Evaluar-Imprimir) es un entorno\
   \ de programaci\xF3n interactivo y simple. Los programadores lo utilizan para la\u2026"

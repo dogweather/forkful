@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/go/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:49.662691-07:00
@@ -14,7 +12,7 @@ description: "\u05DE\u05E6\u05D9\u05D0\u05EA \u05D0\u05D5\u05E8\u05DA \u05E9\u05
   \u05D5\u05EA \u05D1\u05D9\u05E2\u05D9\u05DC\u05D5\u05EA \u05E2\u05DD \u05DE\u05D7\
   \u05E8\u05D5\u05D6\u05D5\u05EA, \u05D0\u05DD \u05D6\u05D4 \u05DC\u05E6\u05D5\u05E8\
   \u05DA \u05D0\u05D9\u05DE\u05D5\u05EA,\u2026"
-lastmod: 2024-02-18 23:08:52.329221
+lastmod: 2024-02-19 22:04:57.728748
 model: gpt-4-0125-preview
 summary: "\u05DE\u05E6\u05D9\u05D0\u05EA \u05D0\u05D5\u05E8\u05DA \u05E9\u05DC \u05DE\
   \u05D7\u05E8\u05D5\u05D6\u05EA \u05D1-Go \u05D4\u05D9\u05D0 \u05E2\u05E0\u05D9\u05D9\

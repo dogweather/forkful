@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/c-sharp/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:08.654248-07:00
@@ -12,7 +10,7 @@ description: "\u4F7F\u7528 JSON (JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5) \u53
   \u8BFB\u4E14\u4E0E\u8BED\u8A00\u65E0\u5173\uFF0C\u8FD9\u4F7F\u5F97\u5B83\u5BF9\u4E8E\
   \u5904\u7406\u7F51\u7EDC\u5E94\u7528\u6216\u4E0E\u57FA\u4E8E Web \u7684\u6570\u636E\
   \u4EA4\u4E92\u7684 C# \u7A0B\u5E8F\u5458\u6765\u8BF4\u81F3\u5173\u91CD\u8981\u3002"
-lastmod: 2024-02-18 23:08:59.151635
+lastmod: 2024-02-19 22:05:06.829660
 model: gpt-4-0125-preview
 summary: "\u4F7F\u7528 JSON (JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5) \u5305\u62EC\
   \u89E3\u6790\u3001\u751F\u6210\u548C\u67E5\u8BE2 JSON \u6570\u636E\uFF0C\u8FD9\u662F\

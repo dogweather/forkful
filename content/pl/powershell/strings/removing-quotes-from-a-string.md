@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:13.742061-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w ze stringa w PowerShellu polega na wyeliminowaniu\
   \ pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu otaczaj\u0105\
   cych tekst.\u2026"
-lastmod: 2024-02-18 23:08:49.815117
+lastmod: 2024-02-19 22:04:54.756346
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa w PowerShellu polega na wyeliminowaniu\
   \ pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu otaczaj\u0105\

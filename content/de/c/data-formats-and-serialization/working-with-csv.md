@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:52.995548-07:00
 description: "Im Bereich der Programmierung beinhaltet die Arbeit mit CSV-Dateien\
   \ (Comma-Separated Values, d.h. durch Kommas getrennte Werte) das Lesen von und\
   \ das\u2026"
-lastmod: 2024-02-18 23:09:05.399835
+lastmod: 2024-02-19 22:05:13.318942
 model: gpt-4-0125-preview
 summary: "Im Bereich der Programmierung beinhaltet die Arbeit mit CSV-Dateien (Comma-Separated\
   \ Values, d.h. durch Kommas getrennte Werte) das Lesen von und das\u2026"

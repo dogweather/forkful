@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:52.696086-07:00
 description: "In Ruby betekent het converteren van een string naar kleine letters\
   \ dat alle hoofdletters in de string worden veranderd in hun kleine letter tegenhangers.\u2026"
-lastmod: 2024-02-18 23:09:02.405742
+lastmod: 2024-02-19 22:05:10.411249
 model: gpt-4-0125-preview
 summary: "In Ruby betekent het converteren van een string naar kleine letters dat\
   \ alle hoofdletters in de string worden veranderd in hun kleine letter tegenhangers.\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c/logging/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:03.561730-07:00
 description: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und\
   \ bemerkenswerter Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet\
   \ eine\u2026"
-lastmod: 2024-02-18 23:09:05.381048
+lastmod: 2024-02-19 22:05:13.301153
 model: gpt-4-0125-preview
 summary: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und bemerkenswerter\
   \ Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet eine\u2026"

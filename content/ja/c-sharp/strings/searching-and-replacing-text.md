@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c-sharp/searching-and-replacing-text/
 date: 2024-01-20 17:57:35.853150-07:00
 description: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB\u306F\u6587\
   \u5B57\u5217\u5185\u3067\u7279\u5B9A\u306E\u6587\u5B57\u3084\u5358\u8A9E\u3092\u898B\
@@ -10,7 +8,7 @@ description: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB\u306F
   \u5316\u30BF\u30B9\u30AF\u306E\u305F\u3081\u306B\u3088\u304F\u4F7F\u3044\u307E\u3059\
   \u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.904544
+lastmod: 2024-02-19 22:05:01.254113
 model: gpt-4-1106-preview
 summary: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB\u306F\u6587\
   \u5B57\u5217\u5185\u3067\u7279\u5B9A\u306E\u6587\u5B57\u3084\u5358\u8A9E\u3092\u898B\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/haskell/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:48.921006-07:00
 description: "Trabajar con CSVs (Valores Separados por Comas) implica analizar y generar\
   \ archivos que almacenan datos tabulares en un formato de texto simple. Los\u2026"
-lastmod: 2024-02-18 23:09:10.052392
+lastmod: 2024-02-19 22:05:17.648573
 model: gpt-4-0125-preview
 summary: "Trabajar con CSVs (Valores Separados por Comas) implica analizar y generar\
   \ archivos que almacenan datos tabulares en un formato de texto simple. Los\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/kotlin/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:22.396960-07:00
 description: "We halen de huidige datum op om de gegevens van vandaag te kennen. Het\
   \ is cruciaal voor tal van functies \u2013 denk aan logs, proefversies, evenementen.\
   \ Wat\u2026"
-lastmod: 2024-02-18 23:09:01.817243
+lastmod: 2024-02-19 22:05:09.833404
 model: gpt-4-0125-preview
 summary: "We halen de huidige datum op om de gegevens van vandaag te kennen. Het is\
   \ cruciaal voor tal van functies \u2013 denk aan logs, proefversies, evenementen.\

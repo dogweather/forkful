@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/cpp/sending-an-http-request/
 date: 2024-01-20 17:59:20.927289-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir dados ou recursos\
   \ de um servidor usando o protocolo HTTP. Programadores fazem isso para interagir\
   \ com\u2026"
-lastmod: 2024-02-18 23:08:58.446571
+lastmod: 2024-02-19 22:05:05.936600
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir dados ou recursos\
   \ de um servidor usando o protocolo HTTP. Programadores fazem isso para interagir\

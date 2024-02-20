@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/bash/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:14.075150-07:00
 description: "Scrivere un file di testo in Bash consente di automatizzare la memorizzazione\
   \ dei dati, il logging, le impostazioni di configurazione e altro. \xC8 una\u2026"
-lastmod: 2024-02-18 23:08:56.069925
+lastmod: 2024-02-19 22:05:02.690366
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Bash consente di automatizzare la memorizzazione\
   \ dei dati, il logging, le impostazioni di configurazione e altro. \xC8 una\u2026"

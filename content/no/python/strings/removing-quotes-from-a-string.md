@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/removing-quotes-from-a-string/
 date: 2024-01-26 03:42:23.459164-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr vanligvis \xE5 strippe\
   \ bort overfl\xF8dige doble (\") eller enkle (') anf\xF8rselstegn. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.513024
+lastmod: 2024-02-19 22:04:59.629654
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr vanligvis \xE5 strippe\
   \ bort overfl\xF8dige doble (\") eller enkle (') anf\xF8rselstegn. Programmerere\

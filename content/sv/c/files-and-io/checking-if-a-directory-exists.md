@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:05.368505-07:00
 description: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5\
   gar filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"
-lastmod: 2024-02-18 23:08:52.265933
+lastmod: 2024-02-19 22:04:57.652023
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5gar\
   \ filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"

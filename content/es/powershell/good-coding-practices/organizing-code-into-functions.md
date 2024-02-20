@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/powershell/organizing-code-into-functions/
 date: 2024-01-26 01:11:29.414973-07:00
 description: "Organizar el c\xF3digo en funciones consiste en envolver segmentos de\
   \ c\xF3digo que realizan tareas espec\xEDficas y asignarles un nombre. Se hace para\
   \ hacer el\u2026"
-lastmod: 2024-02-18 23:09:10.221492
+lastmod: 2024-02-19 22:05:17.803179
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones consiste en envolver segmentos de c\xF3\
   digo que realizan tareas espec\xEDficas y asignarles un nombre. Se hace para hacer\

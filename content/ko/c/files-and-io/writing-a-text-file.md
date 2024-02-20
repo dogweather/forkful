@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:42.671556-07:00
@@ -13,7 +11,7 @@ description: "C\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\u
   \uC815, \uB610\uB294 \uC0AC\uC6A9\uC790 \uC0DD\uC131 \uCF58\uD150\uCE20\uC640 \uAC19\
   \uC740 \uB370\uC774\uD130\uB97C \uC9C0\uC18D\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC774\
   \uB97C \uC218\uD589\uD558\uBA70, \uC774\uB97C \uD1B5\uD574\u2026"
-lastmod: 2024-02-18 23:09:06.984991
+lastmod: 2024-02-19 22:05:14.869077
 model: gpt-4-0125-preview
 summary: "C\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD55C\uB2E4\
   \uB294 \uAC83\uC740 \uD30C\uC77C\uC744 \uC4F0\uAE30 \uBAA8\uB4DC\uB85C \uC0DD\uC131\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/cpp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:40.595452-07:00
 description: "Att skriva till standardfelet (`stderr`) i C++ inneb\xE4r att skicka\
   \ ut felmeddelanden eller diagnostik som \xE4r separata fr\xE5n huvudprogrammets\
   \ utdata.\u2026"
-lastmod: 2024-02-18 23:08:52.099617
+lastmod: 2024-02-19 22:04:57.463636
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfelet (`stderr`) i C++ inneb\xE4r att skicka ut\
   \ felmeddelanden eller diagnostik som \xE4r separata fr\xE5n huvudprogrammets utdata.\u2026"

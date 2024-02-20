@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/google-apps-script/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:48.795489-07:00
 description: "Capitalizar uma string envolve modificar a entrada de modo que o primeiro\
   \ caractere seja mai\xFAsculo, enquanto os restantes permane\xE7am min\xFAsculos,\
   \ comumente\u2026"
-lastmod: 2024-02-18 23:08:57.696468
+lastmod: 2024-02-19 22:05:05.155712
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve modificar a entrada de modo que o primeiro\
   \ caractere seja mai\xFAsculo, enquanto os restantes permane\xE7am min\xFAsculos,\

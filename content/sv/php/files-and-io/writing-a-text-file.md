@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/php/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:48.060690-07:00
 description: "Att skriva en textfil i PHP inneb\xE4r att skapa eller \xF6ppna en fil\
   \ och infoga inneh\xE5ll i den. Programmerare g\xF6r detta f\xF6r att bevara data,\
   \ som\u2026"
-lastmod: 2024-02-18 23:08:51.895929
+lastmod: 2024-02-19 22:04:57.240118
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i PHP inneb\xE4r att skapa eller \xF6ppna en fil och\
   \ infoga inneh\xE5ll i den. Programmerare g\xF6r detta f\xF6r att bevara data, som\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/working-with-toml/
 date: 2024-01-26 04:24:44.577346-07:00
 description: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem\
   \ M\xEDnima e \xD3bvia do Tom), \xE9 um formato de dados semelhante ao JSON ou YAML,\
   \ mas mais f\xE1cil de\u2026"
-lastmod: 2024-02-18 23:08:58.264307
+lastmod: 2024-02-19 22:05:05.740217
 model: gpt-4-0125-preview
 summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem M\xED\
   nima e \xD3bvia do Tom), \xE9 um formato de dados semelhante ao JSON ou YAML, mas\

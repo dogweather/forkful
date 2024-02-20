@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/go/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:21.120974-07:00
 description: "Att skriva till standardfel (stderr) i Go inneb\xE4r att styra felmeddelanden\
   \ eller diagnostik som inte \xE4r avsedda f\xF6r huvudutdatastr\xF6mmen. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.350584
+lastmod: 2024-02-19 22:04:56.644166
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Go inneb\xE4r att styra felmeddelanden\
   \ eller diagnostik som inte \xE4r avsedda f\xF6r huvudutdatastr\xF6mmen. Programmerare\u2026"

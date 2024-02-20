@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:50.545586-07:00
 description: "W programowaniu Bash sprawdzanie, czy katalog istnieje, jest kluczowym\
   \ mechanizmem kontrolnym wykorzystywanym do weryfikacji obecno\u015Bci katalogu\
   \ przed\u2026"
-lastmod: 2024-02-18 23:08:49.799443
+lastmod: 2024-02-19 22:04:54.739806
 model: gpt-4-0125-preview
 summary: "W programowaniu Bash sprawdzanie, czy katalog istnieje, jest kluczowym mechanizmem\
   \ kontrolnym wykorzystywanym do weryfikacji obecno\u015Bci katalogu przed\u2026"

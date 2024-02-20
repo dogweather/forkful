@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/elm/working-with-complex-numbers/
 date: 2024-01-25 03:00:04.589438-07:00
 description: "Complex numbers are a combo of real and imaginary numbers, like `a +\
   \ bi` where `i` is the square root of -1. They're key in fields like engineering\
   \ and\u2026"
-lastmod: 2024-02-18 23:09:10.965906
+lastmod: 2024-02-19 22:05:18.472415
 model: gpt-4-1106-preview
 summary: "Complex numbers are a combo of real and imaginary numbers, like `a + bi`\
   \ where `i` is the square root of -1. They're key in fields like engineering and\u2026"

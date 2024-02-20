@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/c-sharp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:29.591536-07:00
 description: "Escribir un archivo de texto en C# implica crear o modificar program\xE1\
   ticamente archivos de texto en el sistema de archivos - una tarea fundamental para\u2026"
-lastmod: 2024-02-18 23:09:10.001885
+lastmod: 2024-02-19 22:05:17.602459
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en C# implica crear o modificar program\xE1\
   ticamente archivos de texto en el sistema de archivos - una tarea fundamental para\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:07.507451-07:00
 description: "\xC5 beregne en dato i fremtiden eller fortiden i Go inneb\xE6rer \xE5\
   \ manipulere dato- og tidsverdier for \xE5 bestemme et spesifikt punkt i forhold\
   \ til en gitt\u2026"
-lastmod: 2024-02-18 23:08:53.450018
+lastmod: 2024-02-19 22:04:59.561904
 model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden i Go inneb\xE6rer \xE5 manipulere\
   \ dato- og tidsverdier for \xE5 bestemme et spesifikt punkt i forhold til en gitt\u2026"

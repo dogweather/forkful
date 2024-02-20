@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/downloading-a-web-page/
 date: 2024-01-20 17:44:03.230611-07:00
 description: "Downloading a web page means grabbing its data over the internet; it's\
   \ like saving a copy to read or process locally. Programmers do it to scrape content,\u2026"
-lastmod: 2024-02-18 23:09:11.094851
+lastmod: 2024-02-19 22:05:18.590961
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing its data over the internet; it's like\
   \ saving a copy to read or process locally. Programmers do it to scrape content,\u2026"

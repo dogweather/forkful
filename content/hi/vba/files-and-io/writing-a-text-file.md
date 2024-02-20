@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/vba/writing-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:45.799476-07:00
@@ -14,7 +12,7 @@ description: "\u0935\u093F\u091C\u0941\u0905\u0932 \u092C\u0947\u0938\u093F\u091
   \u0921\u093C\u0928\u0947 \u0938\u0947 \u0938\u0902\u092C\u0902\u0927\u093F\u0924\
   \ \u0939\u094B\u0924\u093E \u0939\u0948, \u091C\u094B \u0906\u0909\u091F\u092A\u0941\
   \u091F\u094D\u0938\u2026"
-lastmod: 2024-02-18 23:09:03.070802
+lastmod: 2024-02-19 22:05:11.067517
 model: gpt-4-0125-preview
 summary: "\u0935\u093F\u091C\u0941\u0905\u0932 \u092C\u0947\u0938\u093F\u0915 \u092B\
   \u0949\u0930 \u090F\u092A\u094D\u0932\u093F\u0915\u0947\u0936\u0928\u094D\u0938\

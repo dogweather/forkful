@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/elm/starting-a-new-project/
 date: 2024-01-20 18:03:09.371599-07:00
 description: Creare un nuovo progetto Elm significa mettere su qualcosa di fresco.
   Lo facciamo per sperimentare, imparare o per costruire qualcosa di utilizzabile.
-lastmod: 2024-02-18 23:08:55.806568
+lastmod: 2024-02-19 22:05:02.412814
 model: gpt-4-1106-preview
 summary: Creare un nuovo progetto Elm significa mettere su qualcosa di fresco. Lo
   facciamo per sperimentare, imparare o per costruire qualcosa di utilizzabile.

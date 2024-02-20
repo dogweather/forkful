@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/fish-shell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:42.235067-07:00
@@ -12,7 +10,7 @@ description: "\u5728 Fish Shell \u4E2D\u5904\u7406 JSON \u6D89\u53CA\u89E3\u6790
   \ \u4E2D\u76F4\u63A5\u638C\u63E1\u5176\u64CD\u4F5C\u53EF\u4EE5\u663E\u8457\u63D0\
   \u9AD8\u7A0B\u5E8F\u5458\u7684\u81EA\u52A8\u5316\u548C\u6570\u636E\u5904\u7406\u6548\
   \u7387\u3002"
-lastmod: 2024-02-18 23:08:59.538856
+lastmod: 2024-02-19 22:05:07.348120
 model: gpt-4-0125-preview
 summary: "\u5728 Fish Shell \u4E2D\u5904\u7406 JSON \u6D89\u53CA\u89E3\u6790\u548C\
   \u751F\u6210 JSON \u6570\u636E\uFF0C\u8FD9\u5BF9\u4E8E\u914D\u7F6E\u5E94\u7528\u7A0B\

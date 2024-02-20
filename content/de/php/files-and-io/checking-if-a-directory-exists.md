@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/php/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:30.307855-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
   \ Aufgabe in der PHP-Programmierung, da es Ihnen erm\xF6glicht, die Pr\xE4senz eines\u2026"
-lastmod: 2024-02-18 23:09:04.977385
+lastmod: 2024-02-19 22:05:12.917370
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
   \ Aufgabe in der PHP-Programmierung, da es Ihnen erm\xF6glicht, die Pr\xE4senz eines\u2026"

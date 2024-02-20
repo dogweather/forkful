@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/powershell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:01.704143-07:00
 description: "A an\xE1lise de uma data a partir de uma string consiste em reconhecer\
   \ e converter datas escritas em forma de texto para um tipo de dado de data que\
   \ o\u2026"
-lastmod: 2024-02-18 23:08:58.377977
+lastmod: 2024-02-19 22:05:05.863418
 model: gpt-4-0125-preview
 summary: "A an\xE1lise de uma data a partir de uma string consiste em reconhecer e\
   \ converter datas escritas em forma de texto para um tipo de dado de data que o\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/lua/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:45.307494-07:00
 description: "Mit\xE4 & Miksi? Lua:ssa merkkien poistaminen kuvion mukaan on tapa\
   \ siivota merkkijonoja \u2013 otetaan pois mit\xE4 ei tarvita. Koodarit k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 esimerkiksi\u2026"
-lastmod: 2024-02-18 23:09:07.740498
+lastmod: 2024-02-19 22:05:15.576819
 model: gpt-4-1106-preview
 summary: "Mit\xE4 & Miksi? Lua:ssa merkkien poistaminen kuvion mukaan on tapa siivota\
   \ merkkijonoja \u2013 otetaan pois mit\xE4 ei tarvita. Koodarit k\xE4ytt\xE4v\xE4\

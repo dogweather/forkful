@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/clojure/organizing-code-into-functions/
 date: 2024-01-26 01:09:39.129860-07:00
 description: "Partir el c\xF3digo en funciones se trata de empaquetar bloques de c\xF3\
   digo que cumplen tareas espec\xEDficas. Hacer esto vuelve tu c\xF3digo limpio, m\xE1\
   s f\xE1cil de\u2026"
-lastmod: 2024-02-18 23:09:09.608971
+lastmod: 2024-02-19 22:05:17.253330
 model: gpt-4-1106-preview
 summary: "Partir el c\xF3digo en funciones se trata de empaquetar bloques de c\xF3\
   digo que cumplen tareas espec\xEDficas. Hacer esto vuelve tu c\xF3digo limpio, m\xE1\

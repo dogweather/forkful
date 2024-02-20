@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/python/searching-and-replacing-text/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:08.816746-07:00
 description: "Zoeken en vervangen van tekst gaat over het vinden van tekenreeksen\
   \ in een tekstblok en deze veranderen in iets anders. Programmeurs doen dit voor\
   \ het\u2026"
-lastmod: 2024-02-18 23:09:01.416649
+lastmod: 2024-02-19 22:05:09.448101
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst gaat over het vinden van tekenreeksen in een\
   \ tekstblok en deze veranderen in iets anders. Programmeurs doen dit voor het\u2026"

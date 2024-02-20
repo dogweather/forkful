@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/cpp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:02.571149-07:00
 description: "Convertir una fecha a texto permite mostrarla en diferentes formatos,\
   \ facilitando la lectura para humanos o la compatibilidad con sistemas externos.\
   \ Es\u2026"
-lastmod: 2024-02-18 23:09:10.323945
+lastmod: 2024-02-19 22:05:17.891128
 model: gpt-4-1106-preview
 summary: "Convertir una fecha a texto permite mostrarla en diferentes formatos, facilitando\
   \ la lectura para humanos o la compatibilidad con sistemas externos. Es\u2026"

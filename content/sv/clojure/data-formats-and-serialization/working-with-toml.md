@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/working-with-toml/
 date: 2024-01-26 04:20:39.508304-07:00
 description: "Att arbeta med TOML inneb\xE4r att du hanterar data i det minimala formatet\
   \ \"Toms Obvious, Minimal Language\", popul\xE4rt f\xF6r konfigurationsfiler p\xE5\
   \ grund av\u2026"
-lastmod: 2024-02-18 23:08:51.484728
+lastmod: 2024-02-19 22:04:56.793363
 model: gpt-4-0125-preview
 summary: "Att arbeta med TOML inneb\xE4r att du hanterar data i det minimala formatet\
   \ \"Toms Obvious, Minimal Language\", popul\xE4rt f\xF6r konfigurationsfiler p\xE5\

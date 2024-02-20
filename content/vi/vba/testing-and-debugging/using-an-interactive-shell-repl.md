@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:24.780742-07:00
@@ -8,7 +6,7 @@ description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, ho\u1EB7c V\xF2ng l\u1EB7p 
   \u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p ng\u01B0\u1EDDi d\xF9ng nh\u1EAD\
   p l\u1EC7nh, th\u1EF1c thi ch\xFAng v\xE0 xem k\u1EBFt qu\u1EA3 ngay l\u1EADp t\u1EE9\
   c. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
-lastmod: 2024-02-18 23:08:50.511210
+lastmod: 2024-02-19 22:04:55.593328
 model: gpt-4-0125-preview
 summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, ho\u1EB7c V\xF2ng l\u1EB7p \u0110\
   \u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p ng\u01B0\u1EDDi d\xF9ng nh\u1EAD\

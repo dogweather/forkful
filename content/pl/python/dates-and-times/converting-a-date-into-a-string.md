@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/python/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:33.589899-07:00
 description: "Zamiana daty na napis (string) pozwala na \u0142atwe wy\u015Bwietlenie\
   \ i zapisanie daty w czytelnej formie tekstowej. Programi\u015Bci korzystaj\u0105\
   \ z tej konwersji, by\u2026"
-lastmod: 2024-02-18 23:08:49.234092
+lastmod: 2024-02-19 22:04:54.145353
 model: gpt-4-1106-preview
 summary: "Zamiana daty na napis (string) pozwala na \u0142atwe wy\u015Bwietlenie i\
   \ zapisanie daty w czytelnej formie tekstowej. Programi\u015Bci korzystaj\u0105\

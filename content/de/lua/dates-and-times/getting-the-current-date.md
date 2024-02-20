@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/lua/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:06.697703-07:00
 description: "Das Abrufen des aktuellen Datums in der Programmierung ist eine entscheidende\
   \ Aufgabe f\xFCr eine Vielzahl von Anwendungen, einschlie\xDFlich Logging,\u2026"
-lastmod: 2024-02-18 23:09:05.018331
+lastmod: 2024-02-19 22:05:12.956434
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in der Programmierung ist eine entscheidende\
   \ Aufgabe f\xFCr eine Vielzahl von Anwendungen, einschlie\xDFlich Logging,\u2026"

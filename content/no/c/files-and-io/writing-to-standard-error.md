@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/c/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:07.493051-07:00
 description: "\xC5 skrive til standardfeil i C inneb\xE6rer \xE5 dirigere feilmeldinger\
   \ og diagnostisk informasjon til en separat str\xF8m fra hovedprogramutdataen. Programmerere\u2026"
-lastmod: 2024-02-18 23:08:54.411221
+lastmod: 2024-02-19 22:05:00.571461
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil i C inneb\xE6rer \xE5 dirigere feilmeldinger\
   \ og diagnostisk informasjon til en separat str\xF8m fra hovedprogramutdataen. Programmerere\u2026"

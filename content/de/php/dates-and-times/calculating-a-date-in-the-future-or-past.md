@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:27.044460-07:00
 description: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen\
   \ es, Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management,\u2026"
-lastmod: 2024-02-18 23:09:04.976323
+lastmod: 2024-02-19 22:05:12.916357
 model: gpt-4-1106-preview
 summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
   \ Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management,\u2026"

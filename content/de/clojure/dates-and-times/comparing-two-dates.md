@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/clojure/comparing-two-dates/
 date: 2024-01-20 17:32:28.099360-07:00
 description: "Das Vergleichen zweier Daten bedeutet, die zeitliche Reihenfolge zu\
   \ bestimmen oder zu pr\xFCfen, ob sie gleich sind. Programmierer machen das, um\
   \ Termine zu\u2026"
-lastmod: 2024-02-18 23:09:04.520324
+lastmod: 2024-02-19 22:05:12.481738
 model: gpt-4-1106-preview
 summary: "Das Vergleichen zweier Daten bedeutet, die zeitliche Reihenfolge zu bestimmen\
   \ oder zu pr\xFCfen, ob sie gleich sind. Programmierer machen das, um Termine zu\u2026"

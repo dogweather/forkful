@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/fish-shell/interpolating-a-string/
 date: 2024-01-20 17:50:49.970956-07:00
 description: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart\
   \ dir viel Tipparbeit und vereinfacht die Code-Wartung. Es erm\xF6glicht dynamische\u2026"
-lastmod: 2024-02-18 23:09:05.308818
+lastmod: 2024-02-19 22:05:13.232344
 model: gpt-4-1106-preview
 summary: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart dir\
   \ viel Tipparbeit und vereinfacht die Code-Wartung. Es erm\xF6glicht dynamische\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/elm/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:17.789713-07:00
 description: "Capitalizar uma string envolve transformar o caractere inicial de uma\
   \ dada string para mai\xFAsculo enquanto mant\xE9m o resto em min\xFAsculo, frequentemente\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.044126
+lastmod: 2024-02-19 22:05:05.521576
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve transformar o caractere inicial de uma dada\
   \ string para mai\xFAsculo enquanto mant\xE9m o resto em min\xFAsculo, frequentemente\

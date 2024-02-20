@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/cpp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:13.924319-07:00
 description: "Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe\
   \ f\xFCr Programme, die Daten verarbeiten oder anzeigen m\xFCssen, die auf der Systemuhr\u2026"
-lastmod: 2024-02-18 23:09:05.200056
+lastmod: 2024-02-19 22:05:13.129266
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe f\xFC\
   r Programme, die Daten verarbeiten oder anzeigen m\xFCssen, die auf der Systemuhr\u2026"

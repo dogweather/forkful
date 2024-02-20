@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/ruby/starting-a-new-project/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:27.071982-07:00
@@ -14,7 +12,7 @@ description: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u043
   \u0449\u0430\u0435\u0442\u0435 \u0438\u0445 \u0432 \u043A\u043E\u0434, \u043A\u043E\
   \u0442\u043E\u0440\u044B\u0439 \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u0435\u0442\
   \ \u0447\u0442\u043E-\u0442\u043E\u2026"
-lastmod: 2024-02-18 23:08:57.620801
+lastmod: 2024-02-19 22:05:04.998646
 model: gpt-4-0125-preview
 summary: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u0433\u043E\
   \ \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u043F\u043E\u0445\u043E\u0436\u0435\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elm/handling-errors/
 date: 2024-01-26 00:51:45.810407-07:00
 description: "G\xE9rer les erreurs signifie \xE9crire du code qui peut anticiper et\
   \ traiter les probl\xE8mes qui surviennent. Les programmeurs le font pour \xE9viter\
   \ les plantages,\u2026"
-lastmod: 2024-02-18 23:09:08.742854
+lastmod: 2024-02-19 22:05:16.450747
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs signifie \xE9crire du code qui peut anticiper et traiter\
   \ les probl\xE8mes qui surviennent. Les programmeurs le font pour \xE9viter les\

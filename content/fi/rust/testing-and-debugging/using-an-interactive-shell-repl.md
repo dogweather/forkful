@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/using-an-interactive-shell-repl/
 date: 2024-01-26 04:18:21.115907-07:00
 description: "Rustin interaktiivinen kuori eli REPL (Lue-Arvo-Tulosta-Silmukka) mahdollistaa\
   \ Rust-koodin suorittamisen lennossa, tarjoten v\xE4litt\xF6mi\xE4 tuloksia, mik\xE4\
   \ on\u2026"
-lastmod: 2024-02-18 23:09:07.365541
+lastmod: 2024-02-19 22:05:15.253568
 model: gpt-4-0125-preview
 summary: "Rustin interaktiivinen kuori eli REPL (Lue-Arvo-Tulosta-Silmukka) mahdollistaa\
   \ Rust-koodin suorittamisen lennossa, tarjoten v\xE4litt\xF6mi\xE4 tuloksia, mik\xE4\

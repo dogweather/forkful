@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/cpp/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:14.166338-07:00
 description: "Hakemiston olemassaolon tarkistaminen tarkoittaa m\xE4\xE4ritt\xE4mist\xE4\
   , onko tietyss\xE4 polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen\
   \ tai niihin\u2026"
-lastmod: 2024-02-18 23:09:07.959772
+lastmod: 2024-02-19 22:05:15.774790
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen tarkoittaa m\xE4\xE4ritt\xE4mist\xE4\
   , onko tietyss\xE4 polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen\

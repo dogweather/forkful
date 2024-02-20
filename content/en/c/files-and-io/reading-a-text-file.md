@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/reading-a-text-file/
 date: 2024-02-03 17:50:04.231953-07:00
 description: "Reading a text file in C involves opening a file on your system to extract\
   \ information and manipulate or display it as needed. Programmers often do this\u2026"
-lastmod: 2024-02-18 23:09:11.539542
+lastmod: 2024-02-19 22:05:18.988711
 model: gpt-4-0125-preview
 summary: "Reading a text file in C involves opening a file on your system to extract\
   \ information and manipulate or display it as needed. Programmers often do this\u2026"

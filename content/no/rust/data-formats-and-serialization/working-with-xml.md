@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/rust/working-with-xml/
 date: 2024-01-26 04:36:00.017800-07:00
 description: "XML, forkortet for eXtensible Markup Language, er som en ordrik fetter\
   \ av JSON. Du vil st\xF8te p\xE5 XML n\xE5r du h\xE5ndterer eldre systemer, bedriftsprogramvare,\u2026"
-lastmod: 2024-02-18 23:08:53.708943
+lastmod: 2024-02-19 22:04:59.843826
 model: gpt-4-0125-preview
 summary: "XML, forkortet for eXtensible Markup Language, er som en ordrik fetter av\
   \ JSON. Du vil st\xF8te p\xE5 XML n\xE5r du h\xE5ndterer eldre systemer, bedriftsprogramvare,\u2026"

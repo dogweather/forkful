@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/bash/sending-an-http-request/
 date: 2024-01-20 17:59:11.596561-07:00
 description: "Enviar una solicitud HTTP permite a tu script interactuar con servicios\
   \ web, obtener datos o invocar operaciones remotas. Los programadores hacen esto\u2026"
-lastmod: 2024-02-18 23:09:10.164049
+lastmod: 2024-02-19 22:05:17.750654
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP permite a tu script interactuar con servicios\
   \ web, obtener datos o invocar operaciones remotas. Los programadores hacen esto\u2026"

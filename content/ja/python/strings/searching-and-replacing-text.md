@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/python/searching-and-replacing-text/
 date: 2024-01-20 17:58:29.177150-07:00
 description: "Searching and replacing text in Python means finding strings and swapping\
   \ them with something else. Programmers do this for editing code, processing data,\u2026"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:54.549934
+lastmod: 2024-02-19 22:05:00.750678
 model: gpt-4-1106-preview
 summary: "Searching and replacing text in Python means finding strings and swapping\
   \ them with something else. Programmers do this for editing code, processing data,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/downloading-a-web-page/
 date: 2024-01-20 17:43:34.478613-07:00
 description: "Baixar uma p\xE1gina da web \xE9 pegar o seu conte\xFAdo usando c\xF3\
   digo. Programadores fazem isso para an\xE1lise de dados, testes automatizados ou\
   \ para turbinar\u2026"
-lastmod: 2024-02-18 23:08:58.156317
+lastmod: 2024-02-19 22:05:05.625078
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 pegar o seu conte\xFAdo usando c\xF3digo.\
   \ Programadores fazem isso para an\xE1lise de dados, testes automatizados ou para\

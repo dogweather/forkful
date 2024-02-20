@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/haskell/handling-errors/
 date: 2024-01-26 00:53:15.582051-07:00
 description: "Att hantera fel i programmering handlar om att f\xF6rvalta det ov\xE4\
   ntade\u2014saker som kan g\xE5 fel. Programmerare g\xF6r detta f\xF6r att s\xE4\
   kerst\xE4lla att deras program\u2026"
-lastmod: 2024-02-18 23:08:51.844106
+lastmod: 2024-02-19 22:04:57.182886
 model: gpt-4-1106-preview
 summary: "Att hantera fel i programmering handlar om att f\xF6rvalta det ov\xE4ntade\u2014\
   saker som kan g\xE5 fel. Programmerare g\xF6r detta f\xF6r att s\xE4kerst\xE4lla\

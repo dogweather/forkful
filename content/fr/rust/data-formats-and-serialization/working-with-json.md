@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/rust/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:29.755273-07:00
 description: "Travailler avec le JSON (JavaScript Object Notation) en Rust consiste\
   \ \xE0 analyser les donn\xE9es JSON pour les transformer en structures de donn\xE9\
   es Rust et \xE0\u2026"
-lastmod: 2024-02-18 23:09:08.553172
+lastmod: 2024-02-19 22:05:16.331891
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON (JavaScript Object Notation) en Rust consiste \xE0\
   \ analyser les donn\xE9es JSON pour les transformer en structures de donn\xE9es\

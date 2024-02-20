@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/python/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:38.671149-07:00
 description: "Het cre\xEBren van een tijdelijk bestand betekent het maken van een\
   \ bestand dat niet hoeft te blijven bestaan nadat je klaar bent met het gebruiken\
   \ ervan.\u2026"
-lastmod: 2024-02-18 23:09:01.454769
+lastmod: 2024-02-19 22:05:09.484261
 model: gpt-4-0125-preview
 summary: "Het cre\xEBren van een tijdelijk bestand betekent het maken van een bestand\
   \ dat niet hoeft te blijven bestaan nadat je klaar bent met het gebruiken ervan.\u2026"

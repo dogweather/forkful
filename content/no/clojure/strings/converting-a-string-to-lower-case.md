@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/clojure/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:01.461622-07:00
 description: "Omforme en streng til sm\xE5 bokstaver handler om \xE5 konvertere alle\
   \ bokstavene i en gitt streng til deres sm\xE5bokstavversjoner. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.552313
+lastmod: 2024-02-19 22:04:59.673269
 model: gpt-4-1106-preview
 summary: "Omforme en streng til sm\xE5 bokstaver handler om \xE5 konvertere alle bokstavene\
   \ i en gitt streng til deres sm\xE5bokstavversjoner. Programmerere gj\xF8r dette\

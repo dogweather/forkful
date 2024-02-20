@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:29.633276-07:00
 description: "Converter datas em strings permite mostrar datas de forma leg\xEDvel\
   \ e formatada. Programadores fazem isso para facilitar a intera\xE7\xE3o com usu\xE1\
   rios, armazenar\u2026"
-lastmod: 2024-02-18 23:08:58.071616
+lastmod: 2024-02-19 22:05:05.550551
 model: gpt-4-1106-preview
 summary: "Converter datas em strings permite mostrar datas de forma leg\xEDvel e formatada.\
   \ Programadores fazem isso para facilitar a intera\xE7\xE3o com usu\xE1rios, armazenar\u2026"

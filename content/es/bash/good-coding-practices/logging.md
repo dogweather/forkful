@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/bash/logging/
 date: 2024-01-26 00:58:40.900052-07:00
 description: "El registro (logging) es la pr\xE1ctica de documentar eventos, errores\
   \ y otra informaci\xF3n significativa de los procesos en ejecuci\xF3n de un programa\
   \ en un\u2026"
-lastmod: 2024-02-18 23:09:10.174240
+lastmod: 2024-02-19 22:05:17.760186
 model: gpt-4-1106-preview
 summary: "El registro (logging) es la pr\xE1ctica de documentar eventos, errores y\
   \ otra informaci\xF3n significativa de los procesos en ejecuci\xF3n de un programa\

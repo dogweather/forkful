@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/organizing-code-into-functions/
 date: 2024-01-26 01:11:37.998037-07:00
 description: "Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie u\u017Cyteczne\
   \ fragmenty. Chodzi o to, by kod by\u0142 czytelny, \u0142atwy w zarz\u0105dzaniu\
   \ i mniej podatny na\u2026"
-lastmod: 2024-02-18 23:08:50.130974
+lastmod: 2024-02-19 22:04:55.120481
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie u\u017Cyteczne\
   \ fragmenty. Chodzi o to, by kod by\u0142 czytelny, \u0142atwy w zarz\u0105dzaniu\

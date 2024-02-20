@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/rust/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:10.904229-07:00
 description: String interpolatie voegt variabelen direct in strings in. Het maakt
   het bouwen van strings soepel en leesbaar, en vermijdt onhandige aaneenschakelingen.
-lastmod: 2024-02-18 23:09:01.603902
+lastmod: 2024-02-19 22:05:09.627600
 model: gpt-4-0125-preview
 summary: String interpolatie voegt variabelen direct in strings in. Het maakt het
   bouwen van strings soepel en leesbaar, en vermijdt onhandige aaneenschakelingen.

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:11.814868-07:00
 description: "Remover aspas de uma string significa se livrar dessas inc\xF4modas\
   \ marcas de cota\xE7\xE3o que podem bagun\xE7ar seu c\xF3digo, especialmente quando\
   \ voc\xEA est\xE1\u2026"
-lastmod: 2024-02-18 23:08:58.520581
+lastmod: 2024-02-19 22:05:06.014686
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa se livrar dessas inc\xF4modas marcas\
   \ de cota\xE7\xE3o que podem bagun\xE7ar seu c\xF3digo, especialmente quando voc\xEA\

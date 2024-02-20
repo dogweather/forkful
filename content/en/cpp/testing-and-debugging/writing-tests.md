@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/cpp/writing-tests/
 date: 2024-02-03 19:03:20.795391-07:00
 description: "Writing tests in C++ involves creating small, self-contained programs\
   \ that automatically verify the behavior of sections of your codebase. Programmers\
   \ do\u2026"
-lastmod: 2024-02-18 23:09:11.358992
+lastmod: 2024-02-19 22:05:18.823366
 model: gpt-4-0125-preview
 summary: "Writing tests in C++ involves creating small, self-contained programs that\
   \ automatically verify the behavior of sections of your codebase. Programmers do\u2026"

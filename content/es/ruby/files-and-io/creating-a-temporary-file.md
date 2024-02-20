@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/ruby/creating-a-temporary-file/
 date: 2024-01-20 17:41:10.282374-07:00
 description: "Crear un archivo temporal es como abrir un cuaderno para apuntes r\xE1\
   pidos que sabes que no necesitar\xE1s despu\xE9s. Los programadores lo hacen para\
   \ guardar\u2026"
-lastmod: 2024-02-18 23:09:10.573212
+lastmod: 2024-02-19 22:05:18.118177
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es como abrir un cuaderno para apuntes r\xE1pidos\
   \ que sabes que no necesitar\xE1s despu\xE9s. Los programadores lo hacen para guardar\u2026"

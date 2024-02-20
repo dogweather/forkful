@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/sending-an-http-request/
 date: 2024-01-20 17:59:33.250170-07:00
 description: "\"Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikowania si\u0119\
   \ z serwerem w celu pobrania lub wys\u0142ania danych. Programi\u015Bci robi\u0105\
   \ to, aby wymienia\u0107 dane z aplikacjami\u2026"
-lastmod: 2024-02-18 23:08:49.261695
+lastmod: 2024-02-19 22:04:54.174204
 model: gpt-4-1106-preview
 summary: "\"Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikowania si\u0119\
   \ z serwerem w celu pobrania lub wys\u0142ania danych. Programi\u015Bci robi\u0105\

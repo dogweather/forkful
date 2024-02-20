@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/php/creating-a-temporary-file/
 date: 2024-01-20 17:40:51.548537-07:00
 description: "Crear un archivo temporal es simplemente generar un fichero que solo\
   \ necesitas durante la ejecuci\xF3n de tu script PHP. Los programadores lo hacen\
   \ para no\u2026"
-lastmod: 2024-02-18 23:09:10.094993
+lastmod: 2024-02-19 22:05:17.687135
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es simplemente generar un fichero que solo necesitas\
   \ durante la ejecuci\xF3n de tu script PHP. Los programadores lo hacen para no\u2026"

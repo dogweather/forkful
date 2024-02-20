@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/reading-a-text-file/
 date: 2024-01-20 17:53:45.419439-07:00
 description: "Reading a text file means getting the content from a file into your\
   \ script. Programmers do it to work with data, configuration, or to automate systems\u2026"
-lastmod: 2024-02-18 23:09:11.247195
+lastmod: 2024-02-19 22:05:18.722767
 model: gpt-4-1106-preview
 summary: "Reading a text file means getting the content from a file into your script.\
   \ Programmers do it to work with data, configuration, or to automate systems\u2026"

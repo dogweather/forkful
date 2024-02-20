@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/python/generating-random-numbers/
 date: 2024-01-27 20:26:11.845598-07:00
 description: "Generating random numbers involves creating numbers that cannot be reasonably\
   \ predicted better than by chance, which is essential for developing\u2026"
-lastmod: 2024-02-18 23:09:10.677193
+lastmod: 2024-02-19 22:05:18.211508
 model: gpt-4-0125-preview
 summary: "Generating random numbers involves creating numbers that cannot be reasonably\
   \ predicted better than by chance, which is essential for developing\u2026"

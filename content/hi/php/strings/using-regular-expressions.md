@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/php/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:47.157503-07:00
@@ -14,7 +12,7 @@ description: "PHP \u092E\u0947\u0902 \u0928\u093F\u092F\u092E\u093F\u0924 \u0905
   \ \u091C\u091F\u093F\u0932 \u0916\u094B\u091C-\u0914\u0930-\u092A\u094D\u0930\u0924\
   \u093F\u0938\u094D\u0925\u093E\u092A\u0928 \u0915\u093E\u0930\u094D\u092F\u094B\u0902\
   \ \u0914\u0930\u2026"
-lastmod: 2024-02-18 23:09:03.481280
+lastmod: 2024-02-19 22:05:11.471259
 model: gpt-4-0125-preview
 summary: "PHP \u092E\u0947\u0902 \u0928\u093F\u092F\u092E\u093F\u0924 \u0905\u092D\
   \u093F\u0935\u094D\u092F\u0915\u094D\u0924\u093F\u092F\u093E\u0901 (regex) \u0938\

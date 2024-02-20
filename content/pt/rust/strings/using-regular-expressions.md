@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/rust/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:24.229385-07:00
 description: "Express\xF5es regulares, ou regex, permitem que desenvolvedores procurem,\
   \ combinem e manipulem strings com t\xE9cnicas avan\xE7adas de correspond\xEAncia\
   \ de padr\xF5es.\u2026"
-lastmod: 2024-02-18 23:08:57.917571
+lastmod: 2024-02-19 22:05:05.391306
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares, ou regex, permitem que desenvolvedores procurem,\
   \ combinem e manipulem strings com t\xE9cnicas avan\xE7adas de correspond\xEAncia\

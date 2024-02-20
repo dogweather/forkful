@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/go/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:10.050878-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Go l\xE0 m\u1E
   t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n d\xE0nh cho l\u1EADp tr\xECnh vi\xEAn, t\u01B0\
   \u01A1ng t\u1EF1 nh\u01B0 \"Hello, World!\" v\u1EC1 m\u1EE9c \u0111\u1ED9 ph\u1ED5\
   \ bi\u1EBFn. N\xF3 c\u1EA7n thi\u1EBFt cho c\xE1c\u2026"
-lastmod: 2024-02-18 23:08:50.182618
+lastmod: 2024-02-19 22:04:55.182495
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Go l\xE0 m\u1ED9t nhi\u1EC7\
   m v\u1EE5 c\u01A1 b\u1EA3n d\xE0nh cho l\u1EADp tr\xECnh vi\xEAn, t\u01B0\u01A1\

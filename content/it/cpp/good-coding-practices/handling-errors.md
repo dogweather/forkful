@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/cpp/handling-errors/
 date: 2024-01-26 00:49:27.909391-07:00
 description: "Gestire gli errori significa pianificare per quando le cose vanno storte.\
   \ \xC8 vitale perch\xE9 aiuta ad evitare crash e rende il tuo software robusto e\
   \ facile\u2026"
-lastmod: 2024-02-18 23:08:56.179385
+lastmod: 2024-02-19 22:05:02.808963
 model: gpt-4-1106-preview
 summary: "Gestire gli errori significa pianificare per quando le cose vanno storte.\
   \ \xC8 vitale perch\xE9 aiuta ad evitare crash e rende il tuo software robusto e\

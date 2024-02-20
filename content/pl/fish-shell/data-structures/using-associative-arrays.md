@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/fish-shell/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:59.015234-07:00
 description: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0107\
   \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\
   \ informacji za pomoc\u0105\u2026"
-lastmod: 2024-02-18 23:08:50.027835
+lastmod: 2024-02-19 22:04:55.005989
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0107\
   \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\

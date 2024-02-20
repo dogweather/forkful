@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/cpp/reading-a-text-file/
 date: 2024-01-20 17:53:52.444741-07:00
 description: "Leggere un file di testo in C++ significa estrarre dati da un documento\
   \ salvato sul tuo disco. I programmatori fanno questo per processare le\u2026"
-lastmod: 2024-02-18 23:08:56.189104
+lastmod: 2024-02-19 22:05:02.818975
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo in C++ significa estrarre dati da un documento\
   \ salvato sul tuo disco. I programmatori fanno questo per processare le\u2026"

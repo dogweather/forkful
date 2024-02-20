@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/rust/working-with-complex-numbers/
 date: 2024-01-26 04:45:43.023442-07:00
 description: "Liczby z\u0142o\u017Cone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015B\
   ci rzeczywistej i urojonej i s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach,\
   \ takich jak in\u017Cynieria, fizyka i grafika komputerowa.\u2026"
-lastmod: 2024-02-18 23:08:49.384183
+lastmod: 2024-02-19 22:04:54.304884
 model: gpt-4-0125-preview
 summary: "Liczby z\u0142o\u017Cone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci\
   \ rzeczywistej i urojonej i s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach,\

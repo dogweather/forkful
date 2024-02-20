@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/typescript/concatenating-strings/
 date: 2024-01-20 17:35:58.889866-07:00
 description: "Concatenating strings means sticking them together end-to-end to make\
   \ one longer string. Programmers do this to combine text in ways that make sense\
   \ for\u2026"
-lastmod: 2024-02-18 23:08:59.921802
+lastmod: 2024-02-19 22:05:07.861775
 model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking them together end-to-end to make one\
   \ longer string. Programmers do this to combine text in ways that make sense for\u2026"

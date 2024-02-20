@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/c/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:41.797070-07:00
@@ -14,7 +12,7 @@ description: "\u0417\u0430\u043F\u0438\u0441 \u0432 \u0441\u0442\u0430\u043D\u04
   \ \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u0457 \u0434\u043E \u043E\
   \u043A\u0440\u0435\u043C\u043E\u0433\u043E \u043F\u043E\u0442\u043E\u043A\u0443\
   \ \u0432\u0456\u0434 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0433\u043E\u2026"
-lastmod: 2024-02-18 23:09:01.225478
+lastmod: 2024-02-19 22:05:09.260963
 model: gpt-4-0125-preview
 summary: "\u0417\u0430\u043F\u0438\u0441 \u0432 \u0441\u0442\u0430\u043D\u0434\u0430\
   \u0440\u0442\u043D\u0438\u0439 \u043F\u043E\u0442\u0456\u043A \u043F\u043E\u043C\

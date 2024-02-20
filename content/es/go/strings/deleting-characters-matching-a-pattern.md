@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/go/deleting-characters-matching-a-pattern/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:35.124580-07:00
 description: "Eliminar caracteres que coincidan con un patr\xF3n espec\xEDfico se\
   \ trata de eliminar ciertos caracteres o secuencias de caracteres de cadenas, basado\
   \ en reglas\u2026"
-lastmod: 2024-02-18 23:09:09.436307
+lastmod: 2024-02-19 22:05:17.096875
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coincidan con un patr\xF3n espec\xEDfico se trata\
   \ de eliminar ciertos caracteres o secuencias de caracteres de cadenas, basado en\

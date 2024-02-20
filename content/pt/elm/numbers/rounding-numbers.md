@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/rounding-numbers/
 date: 2024-01-26 03:44:14.570125-07:00
 description: "Arredondar n\xFAmeros \xE9 ajustar um decimal para o seu valor inteiro\
   \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Os programadores\
   \ arredondam\u2026"
-lastmod: 2024-02-18 23:08:58.055628
+lastmod: 2024-02-19 22:05:05.533398
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 ajustar um decimal para o seu valor inteiro mais\
   \ pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Os programadores\

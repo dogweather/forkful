@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/kotlin/using-a-debugger/
 date: 2024-01-25 20:50:19.224696-07:00
 description: "Diving into a debugger is all about stepping through your code, watching\
   \ the gears turn and catching those pesky bugs red-handed. Programmers use\u2026"
-lastmod: 2024-02-18 23:09:11.017516
+lastmod: 2024-02-19 22:05:18.520329
 model: gpt-4-1106-preview
 summary: "Diving into a debugger is all about stepping through your code, watching\
   \ the gears turn and catching those pesky bugs red-handed. Programmers use\u2026"

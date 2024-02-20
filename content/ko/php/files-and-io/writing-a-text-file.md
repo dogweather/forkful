@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:50.462072-07:00
@@ -12,7 +10,7 @@ description: "PHP\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131
   \uD55C \uCF58\uD150\uCE20\uB098 \uB85C\uADF8\uC640 \uAC19\uC740 \uB370\uC774\uD130\
   \uB97C \uC9C0\uC18D\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\
   \uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.380736
+lastmod: 2024-02-19 22:05:14.295722
 model: gpt-4-0125-preview
 summary: "PHP\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD558\
   \uB294 \uAC83\uC740 \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uAC70\uB098 \uC5F4\uACE0\

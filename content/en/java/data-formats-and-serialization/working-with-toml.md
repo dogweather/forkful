@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/java/working-with-toml/
 date: 2024-01-25 03:39:31.741670-07:00
 description: "TOML stands for Tom's Obvious, Minimal Language. It's a data serialization\
   \ format used for config files. Programmers use it because it's easy to read,\u2026"
-lastmod: 2024-02-18 23:09:10.953657
+lastmod: 2024-02-19 22:05:18.461152
 model: gpt-4-1106-preview
 summary: "TOML stands for Tom's Obvious, Minimal Language. It's a data serialization\
   \ format used for config files. Programmers use it because it's easy to read,\u2026"

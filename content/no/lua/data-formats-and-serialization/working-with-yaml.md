@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/lua/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:09.343791-07:00
 description: "YAML, forkortet fra \"YAML Ain't Markup Language\", er en menneskelesbar\
   \ data-serialiseringsstandard som ofte brukes for konfigurasjonsfiler og\u2026"
-lastmod: 2024-02-18 23:08:54.035267
+lastmod: 2024-02-19 22:05:00.216009
 model: gpt-4-0125-preview
 summary: "YAML, forkortet fra \"YAML Ain't Markup Language\", er en menneskelesbar\
   \ data-serialiseringsstandard som ofte brukes for konfigurasjonsfiler og\u2026"

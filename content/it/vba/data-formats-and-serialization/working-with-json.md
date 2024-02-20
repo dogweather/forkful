@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/vba/working-with-json/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:43.521867-07:00
 description: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati\
   \ leggero che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine\
   \ da\u2026"
-lastmod: 2024-02-18 23:08:55.745651
+lastmod: 2024-02-19 22:05:02.348372
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati leggero\
   \ che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine da\u2026"

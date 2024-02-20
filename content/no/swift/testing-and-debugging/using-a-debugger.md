@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/swift/using-a-debugger/
 date: 2024-01-26 04:10:55.172891-07:00
 description: "\xC5 bruke en feils\xF8ker betyr \xE5 utnytte spesialiserte verkt\xF8\
   y for \xE5 teste og inspisere koden din mens den kj\xF8rer. Det er en stor sak fordi\
   \ det lar deg se hva\u2026"
-lastmod: 2024-02-18 23:08:54.273329
+lastmod: 2024-02-19 22:05:00.421057
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en feils\xF8ker betyr \xE5 utnytte spesialiserte verkt\xF8y for\
   \ \xE5 teste og inspisere koden din mens den kj\xF8rer. Det er en stor sak fordi\

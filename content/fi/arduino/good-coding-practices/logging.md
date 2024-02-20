@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/logging/
 date: 2024-01-26 00:59:29.100907-07:00
 description: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai toimintojen\
   \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.906078
+lastmod: 2024-02-19 22:05:15.725857
 model: gpt-4-1106-preview
 summary: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai toimintojen\
   \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\

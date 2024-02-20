@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/python/concatenating-strings/
 date: 2024-01-20 17:35:44.480822-07:00
 description: "La concatenazione di stringhe \xE8 l'atto di unire due o pi\xF9 sequenze\
   \ di caratteri. I programmatori la utilizzano per costruire frasi, generare output\u2026"
-lastmod: 2024-02-18 23:08:55.513547
+lastmod: 2024-02-19 22:05:02.099905
 model: gpt-4-1106-preview
 summary: "La concatenazione di stringhe \xE8 l'atto di unire due o pi\xF9 sequenze\
   \ di caratteri. I programmatori la utilizzano per costruire frasi, generare output\u2026"

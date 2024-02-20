@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/organizing-code-into-functions/
 date: 2024-02-03 17:50:12.605034-07:00
 description: "Organizing code into functions in Go involves breaking down code into\
   \ reusable, modular blocks that perform specific tasks. This approach enhances code\u2026"
-lastmod: 2024-02-18 23:09:10.602235
+lastmod: 2024-02-19 22:05:18.144226
 model: gpt-4-0125-preview
 summary: "Organizing code into functions in Go involves breaking down code into reusable,\
   \ modular blocks that perform specific tasks. This approach enhances code\u2026"

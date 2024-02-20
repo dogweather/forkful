@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/working-with-complex-numbers/
 date: 2024-01-25 02:59:38.100386-07:00
 description: "Complex numbers are numbers with a real and an imaginary part (like\
   \ 3 + 4i). They crop up in various programming problems, especially in signal\u2026"
-lastmod: 2024-02-18 23:09:11.431960
+lastmod: 2024-02-19 22:05:18.889680
 model: gpt-4-1106-preview
 summary: "Complex numbers are numbers with a real and an imaginary part (like 3 +\
   \ 4i). They crop up in various programming problems, especially in signal\u2026"

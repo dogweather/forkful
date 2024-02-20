@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/haskell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:53.704428-07:00
@@ -11,7 +9,7 @@ description: "Haskell \u092E\u0947\u0902 JSON (JavaScript Object Notation) \u091
   \u0928\u0947 \u0914\u0930 Haskell \u092A\u094D\u0930\u0915\u093E\u0930\u094B\u0902\
   \ \u0915\u094B \u0935\u093E\u092A\u0938 JSON \u092E\u0947\u0902 \u092C\u0926\u0932\
   \u0928\u0947\u2026"
-lastmod: 2024-02-18 23:09:03.462223
+lastmod: 2024-02-19 22:05:11.452323
 model: gpt-4-0125-preview
 summary: "Haskell \u092E\u0947\u0902 JSON (JavaScript Object Notation) \u0915\u0947\
   \ \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E, JSON \u0921\u0947\

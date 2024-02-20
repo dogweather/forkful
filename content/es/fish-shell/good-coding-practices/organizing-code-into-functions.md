@@ -1,6 +1,4 @@
 ---
-aliases:
-- /es/fish-shell/organizing-code-into-functions/
 changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 23:01:32.943608-07:00
 description: "Organizar el c\xF3digo en funciones trata de agrupar trozos de script\
   \ para realizar tareas espec\xEDficas. Lo hacemos porque hace que el c\xF3digo sea\
   \ m\xE1s f\xE1cil de\u2026"
-lastmod: 2024-02-18 23:09:10.459323
+lastmod: 2024-02-19 22:05:18.011936
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones trata de agrupar trozos de script para\
   \ realizar tareas espec\xEDficas. Lo hacemos porque hace que el c\xF3digo sea m\xE1\

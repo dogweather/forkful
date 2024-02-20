@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/javascript/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:11.593838-07:00
@@ -8,7 +6,7 @@ description: "N\u1ED9i suy chu\u1ED7i l\xE0 c\xE1ch \u0111\u1EC3 nh\xFAng tr\u1E
   c ti\u1EBFp c\xE1c bi\u1EBFn v\xE0o b\xEAn trong m\u1ED9t chu\u1ED7i. L\u1EADp tr\xEC\
   nh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 n\u1ED1i c\xE1c bi\u1EBFn v\xE0\
   \ chu\u1ED7i m\u1ED9t c\xE1ch hi\u1EC7u qu\u1EA3, l\xE0m cho\u2026"
-lastmod: 2024-02-18 23:08:51.120687
+lastmod: 2024-02-19 22:04:56.342817
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i l\xE0 c\xE1ch \u0111\u1EC3 nh\xFAng tr\u1EF1c ti\u1EBF\
   p c\xE1c bi\u1EBFn v\xE0o b\xEAn trong m\u1ED9t chu\u1ED7i. L\u1EADp tr\xECnh vi\xEA\

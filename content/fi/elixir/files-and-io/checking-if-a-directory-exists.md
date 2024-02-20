@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/elixir/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:09.683563-07:00
 description: "Hakemiston olemassaolon tarkistaminen Elixiriss\xE4 on hakemiston l\xE4\
   sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4\
   ss\xE4. Ohjelmoijat tekev\xE4t\u2026"
-lastmod: 2024-02-18 23:09:07.289343
+lastmod: 2024-02-19 22:05:15.182421
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Elixiriss\xE4 on hakemiston l\xE4\
   sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4\

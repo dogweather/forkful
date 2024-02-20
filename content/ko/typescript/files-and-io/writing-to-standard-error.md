@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/typescript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:38.830702-07:00
@@ -12,7 +10,7 @@ description: "TypeScript\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC
   \ \uB370\uC774\uD130\uC5D0 \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\uC6A9\uB418\uB294\
   \ \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uAC04\uC12D\uD558\uC9C0 \uC54A\uACE0\
   \ \uBB38\uC81C\uB97C\u2026"
-lastmod: 2024-02-18 23:09:05.844857
+lastmod: 2024-02-19 22:05:13.779568
 model: gpt-4-0125-preview
 summary: "TypeScript\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\uAE30\
   \uB294 \uD658\uACBD\uC758 \uC624\uB958 \uCD9C\uB825 \uC2A4\uD2B8\uB9BC(\uC608: node.js\

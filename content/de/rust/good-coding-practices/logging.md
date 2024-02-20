@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/rust/logging/
 date: 2024-01-26 01:08:00.287664-07:00
 description: "Logging ist wie das F\xFChren eines Tagebuchs f\xFCr Ihre Anwendung;\
   \ es ist die Praxis, Ereignisse, Fehler und andere relevante Daten w\xE4hrend der\
   \ Laufzeit\u2026"
-lastmod: 2024-02-18 23:09:04.648275
+lastmod: 2024-02-19 22:05:12.603180
 model: gpt-4-1106-preview
 summary: "Logging ist wie das F\xFChren eines Tagebuchs f\xFCr Ihre Anwendung; es\
   \ ist die Praxis, Ereignisse, Fehler und andere relevante Daten w\xE4hrend der Laufzeit\u2026"

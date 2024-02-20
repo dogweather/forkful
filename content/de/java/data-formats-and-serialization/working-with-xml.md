@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/java/working-with-xml/
 date: 2024-01-26 04:32:21.203411-07:00
 description: "Die Arbeit mit XML umfasst das Parsen, Abfragen und Manipulieren von\
   \ XML-Dokumenten mit Java. Programmierer tun dies f\xFCr den Datenaustausch, die\u2026"
-lastmod: 2024-02-18 23:09:04.763143
+lastmod: 2024-02-19 22:05:12.712789
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst das Parsen, Abfragen und Manipulieren von XML-Dokumenten\
   \ mit Java. Programmierer tun dies f\xFCr den Datenaustausch, die\u2026"

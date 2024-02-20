@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/rust/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:20.709349-07:00
 description: "Tekstitiedoston kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 tiedoston\
   \ luonnin, siihen kirjoittamisen ja mahdollisesti datan lis\xE4\xE4misen tiedostoon\u2026"
-lastmod: 2024-02-18 23:09:07.383508
+lastmod: 2024-02-19 22:05:15.270231
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 tiedoston luonnin,\
   \ siihen kirjoittamisen ja mahdollisesti datan lis\xE4\xE4misen tiedostoon\u2026"

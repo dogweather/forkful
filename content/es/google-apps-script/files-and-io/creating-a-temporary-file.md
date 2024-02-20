@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/google-apps-script/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:30.523930-07:00
 description: "Crear un archivo temporal en Google Apps Script implica generar un archivo\
   \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos\u2026"
-lastmod: 2024-02-18 23:09:09.530842
+lastmod: 2024-02-19 22:05:17.182996
 model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en Google Apps Script implica generar un archivo\
   \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos\u2026"

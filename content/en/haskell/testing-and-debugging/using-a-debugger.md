@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/using-a-debugger/
 date: 2024-01-25 20:50:03.292712-07:00
 description: "Using a debugger means diving into your code with tools designed to\
   \ inspect, pause, and manipulate a program mid-execution. Programmers do it to chase\u2026"
-lastmod: 2024-02-18 23:09:11.100635
+lastmod: 2024-02-19 22:05:18.596215
 model: gpt-4-1106-preview
 summary: "Using a debugger means diving into your code with tools designed to inspect,\
   \ pause, and manipulate a program mid-execution. Programmers do it to chase\u2026"

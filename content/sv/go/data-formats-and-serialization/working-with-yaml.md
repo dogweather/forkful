@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:56.431863-07:00
 description: "Att arbeta med YAML i Go handlar om att tolka YAML-filer (YAML Ain't\
   \ Markup Language), en m\xE4nniskov\xE4nlig standard f\xF6r data-serialisering,\
   \ till Go-\u2026"
-lastmod: 2024-02-18 23:08:51.354743
+lastmod: 2024-02-19 22:04:56.648921
 model: gpt-4-0125-preview
 summary: "Att arbeta med YAML i Go handlar om att tolka YAML-filer (YAML Ain't Markup\
   \ Language), en m\xE4nniskov\xE4nlig standard f\xF6r data-serialisering, till Go-\u2026"

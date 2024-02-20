@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/comparing-two-dates/
 date: 2024-01-20 17:32:28.515744-07:00
 description: "Comparer deux dates, c'est mesurer la diff\xE9rence entre elles ; on\
   \ le fait pour suivre des \xE9v\xE9nements, des d\xE9lais ou pour de la synchronisation.\
   \ C'est\u2026"
-lastmod: 2024-02-18 23:09:09.128257
+lastmod: 2024-02-19 22:05:16.804682
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est mesurer la diff\xE9rence entre elles ; on le\
   \ fait pour suivre des \xE9v\xE9nements, des d\xE9lais ou pour de la synchronisation.\

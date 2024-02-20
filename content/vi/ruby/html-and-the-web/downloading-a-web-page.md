@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/ruby/downloading-a-web-page/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:49.168064-07:00
@@ -8,7 +6,7 @@ description: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y n\u1ED
   i dung HTML t\u1EEB internet. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
   u \u0111\xF3 \u0111\u1EC3 ph\xE2n t\xEDch d\u1EEF li\u1EC7u, thu th\u1EADp th\xF4\
   ng tin, ho\u1EB7c theo d\xF5i c\xE1c\u2026"
-lastmod: 2024-02-18 23:08:51.283589
+lastmod: 2024-02-19 22:04:56.567970
 model: gpt-4-0125-preview
 summary: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung\
   \ HTML t\u1EEB internet. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\

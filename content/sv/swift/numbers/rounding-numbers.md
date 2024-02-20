@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/swift/rounding-numbers/
 date: 2024-01-26 03:46:38.372831-07:00
 description: "Att avrunda tal inneb\xE4r att approximera ett numeriskt v\xE4rde till\
   \ en specifik precision, vanligtvis f\xF6r att ta bort o\xF6nskade decimaler. Programmerare\u2026"
-lastmod: 2024-02-18 23:08:52.119605
+lastmod: 2024-02-19 22:04:57.485578
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att approximera ett numeriskt v\xE4rde till en\
   \ specifik precision, vanligtvis f\xF6r att ta bort o\xF6nskade decimaler. Programmerare\u2026"

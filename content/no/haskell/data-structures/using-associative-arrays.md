@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/haskell/using-associative-arrays/
 changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:38.135493-07:00
 description: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
   \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering. Programmerere\u2026"
-lastmod: 2024-02-18 23:08:53.928127
+lastmod: 2024-02-19 22:05:00.098463
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
   \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering. Programmerere\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/sending-an-http-request/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:30.989014-07:00
@@ -8,7 +6,7 @@ description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 g\xF5 c
   a m\u1ED9t m\xE1y ch\u1EE7 web, y\xEAu c\u1EA7u d\u1EEF li\u1EC7u ho\u1EB7c ph\u1EE5\
   c v\u1EE5 m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1c API,\u2026"
-lastmod: 2024-02-18 23:08:51.086625
+lastmod: 2024-02-19 22:04:56.299158
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 g\xF5 c\u1EED\
   a m\u1ED9t m\xE1y ch\u1EE7 web, y\xEAu c\u1EA7u d\u1EEF li\u1EC7u ho\u1EB7c ph\u1EE5\

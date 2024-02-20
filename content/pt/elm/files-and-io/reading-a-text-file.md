@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/elm/reading-a-text-file/
 date: 2024-01-20 17:54:08.355465-07:00
 description: "Ler um arquivo de texto \xE9 simplesmente acessar o conte\xFAdo armazenado\
   \ em um arquivo no formato de texto em seu programa. Programadores fazem isso para\u2026"
-lastmod: 2024-02-18 23:08:58.077133
+lastmod: 2024-02-19 22:05:05.556437
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 simplesmente acessar o conte\xFAdo armazenado\
   \ em um arquivo no formato de texto em seu programa. Programadores fazem isso para\u2026"

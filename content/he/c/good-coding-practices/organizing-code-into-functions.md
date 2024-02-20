@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/c/organizing-code-into-functions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:49.885314-07:00
@@ -14,7 +12,7 @@ description: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05E7\u05D5\u05D3 \u05DC\u05E4\u05
   \u05E4\u05E8 \u05D0\u05EA \u05E7\u05E8\u05D9\u05D0\u05D5\u05EA \u05D4\u05E7\u05D5\
   \u05D3, \u05DE\u05E7\u05DC \u05E2\u05DC \u05D3\u05D9\u05D1\u05D0\u05D2\u05D9\u05E0\
   \u05D2 \u05D5\u05E7\u05D9\u05D3\u05D5\u05DD\u2026"
-lastmod: 2024-02-18 23:08:53.348696
+lastmod: 2024-02-19 22:04:59.412838
 model: gpt-4-0125-preview
 summary: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05E7\u05D5\u05D3 \u05DC\u05E4\u05D5\u05E0\
   \u05E7\u05E6\u05D9\u05D5\u05EA \u05D1-C \u05DE\u05E2\u05E8\u05D1 \u05E9\u05D1\u05D9\

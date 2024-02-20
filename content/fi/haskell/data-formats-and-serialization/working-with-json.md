@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/haskell/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:41.947965-07:00
 description: "JSONin (JavaScript Object Notation) k\xE4sittely Haskellissa sis\xE4\
   lt\xE4\xE4 JSON-datan j\xE4sent\xE4misen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen\
   \ takaisin\u2026"
-lastmod: 2024-02-18 23:09:07.689321
+lastmod: 2024-02-19 22:05:15.529702
 model: gpt-4-0125-preview
 summary: "JSONin (JavaScript Object Notation) k\xE4sittely Haskellissa sis\xE4lt\xE4\
   \xE4 JSON-datan j\xE4sent\xE4misen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen\

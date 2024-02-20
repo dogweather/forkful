@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/c-sharp/generating-random-numbers/
 date: 2024-01-27 20:32:38.198865-07:00
 description: "Generar n\xFAmeros aleatorios en C# implica la creaci\xF3n de valores\
   \ num\xE9ricos impredecibles dentro de un rango especificado. Los programadores\
   \ utilizan estos\u2026"
-lastmod: 2024-02-18 23:09:09.977610
+lastmod: 2024-02-19 22:05:17.580585
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en C# implica la creaci\xF3n de valores num\xE9\
   ricos impredecibles dentro de un rango especificado. Los programadores utilizan\

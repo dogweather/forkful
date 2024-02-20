@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/c-sharp/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:13.816632-07:00
 description: "Trova la lunghezza di una stringa per sapere quanti caratteri contiene.\
   \ Utile per validazione input, manipolazione testi, e generazione dinamica di\u2026"
-lastmod: 2024-02-18 23:08:55.878935
+lastmod: 2024-02-19 22:05:02.488570
 model: gpt-4-1106-preview
 summary: "Trova la lunghezza di una stringa per sapere quanti caratteri contiene.\
   \ Utile per validazione input, manipolazione testi, e generazione dinamica di\u2026"

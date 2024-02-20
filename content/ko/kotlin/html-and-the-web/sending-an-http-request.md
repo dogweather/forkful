@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/kotlin/sending-an-http-request/
 date: 2024-01-20 17:59:56.970285-07:00
 description: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30\uB294 \uC11C\uBC84\uC5D0 \uC815\
   \uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\uD130\uB97C \uC804\uC1A1\
@@ -9,7 +7,7 @@ description: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30\uB294 \uC11C\uBC84\uC5D0 \uC8
   \uBE44\uC2A4\uC5D0 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\uACE0 \uBCF4\uB0B4\
   \uAE30 \uC704\uD574 \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.144729
+lastmod: 2024-02-19 22:05:14.078873
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30\uB294 \uC11C\uBC84\uC5D0 \uC815\uBCF4\
   \uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uB370\uC774\uD130\uB97C \uC804\uC1A1\uD558\

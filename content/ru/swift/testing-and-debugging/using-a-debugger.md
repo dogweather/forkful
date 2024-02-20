@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/swift/using-a-debugger/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:52.616117-07:00
@@ -15,7 +13,7 @@ description: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D
   \ \u0432\u0440\u0435\u043C\u044F \u0435\u0433\u043E \u0432\u044B\u043F\u043E\u043B\
   \u043D\u0435\u043D\u0438\u044F. \u042D\u0442\u043E \u0432\u0430\u0436\u043D\u043E\
   ,\u2026"
-lastmod: 2024-02-18 23:08:57.414657
+lastmod: 2024-02-19 22:05:04.670945
 model: gpt-4-0125-preview
 summary: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\
   \u0435 \u043E\u0442\u043B\u0430\u0434\u0447\u0438\u043A\u0430 \u043E\u0437\u043D\

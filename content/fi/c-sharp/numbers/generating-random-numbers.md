@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/c-sharp/generating-random-numbers/
 date: 2024-01-27 20:33:02.273957-07:00
 description: "Satunnaislukujen tuottaminen C#-kielell\xE4 k\xE4sitt\xE4\xE4 ennalta-arvaamattomien\
   \ numeeristen arvojen luomisen m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t n\xE4it\xE4\u2026"
-lastmod: 2024-02-18 23:09:07.616151
+lastmod: 2024-02-19 22:05:15.462391
 model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen C#-kielell\xE4 k\xE4sitt\xE4\xE4 ennalta-arvaamattomien\
   \ numeeristen arvojen luomisen m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4. Ohjelmoijat\

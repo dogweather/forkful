@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/bash/extracting-substrings/
 date: 2024-01-20 17:45:17.492325-07:00
 description: "Wyci\u0105ganie podci\u0105g\xF3w to wydobywanie konkretnych fragment\xF3\
   w tekstu z wi\u0119kszych ci\u0105g\xF3w znak\xF3w. Programi\u015Bci robi\u0105\
   \ to, by manipulowa\u0107 danymi, weryfikowa\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.771062
+lastmod: 2024-02-19 22:04:54.710112
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie podci\u0105g\xF3w to wydobywanie konkretnych fragment\xF3\
   w tekstu z wi\u0119kszych ci\u0105g\xF3w znak\xF3w. Programi\u015Bci robi\u0105\

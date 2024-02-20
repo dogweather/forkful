@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/go/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:21.903918-07:00
 description: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
   o (REPL), permite que voc\xEA experimente c\xF3digo Go em tempo real, executando\
   \ comandos e obtendo\u2026"
-lastmod: 2024-02-18 23:08:57.670304
+lastmod: 2024-02-19 22:05:05.127420
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o (REPL),\
   \ permite que voc\xEA experimente c\xF3digo Go em tempo real, executando comandos\

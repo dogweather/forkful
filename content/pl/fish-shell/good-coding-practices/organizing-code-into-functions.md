@@ -1,6 +1,4 @@
 ---
-aliases:
-- /pl/fish-shell/organizing-code-into-functions/
 changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 23:01:35.003642-07:00
 description: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w skryptu\
   \ do realizacji konkretnych zada\u0144. Robimy to, poniewa\u017C sprawia to, \u017C\
   e kod jest\u2026"
-lastmod: 2024-02-18 23:08:50.042178
+lastmod: 2024-02-19 22:04:55.021716
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w skryptu\
   \ do realizacji konkretnych zada\u0144. Robimy to, poniewa\u017C sprawia to, \u017C\

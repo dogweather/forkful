@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/clojure/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:50.328758-07:00
 description: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensagens\
   \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\
   o (stdout).\u2026"
-lastmod: 2024-02-18 23:08:57.818801
+lastmod: 2024-02-19 22:05:05.286602
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensagens\
   \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/typescript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:26.070865-07:00
 description: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\xF8\
   nsters\xF8king og -matching i programmering. Programmerere bruker regex til oppgaver\
   \ som \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.635628
+lastmod: 2024-02-19 22:04:59.764073
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\xF8nsters\xF8\
   king og -matching i programmering. Programmerere bruker regex til oppgaver som \xE5\

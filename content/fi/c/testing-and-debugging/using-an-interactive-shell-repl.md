@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/c/using-an-interactive-shell-repl/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:37.537744-07:00
 description: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksell\xE4\
   \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\u2026"
-lastmod: 2024-02-18 23:09:08.134447
+lastmod: 2024-02-19 22:05:15.935248
 model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksell\xE4\
   \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\u2026"

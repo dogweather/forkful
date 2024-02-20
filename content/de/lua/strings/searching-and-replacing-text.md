@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/lua/searching-and-replacing-text/
 date: 2024-01-20 17:58:09.097304-07:00
 description: "Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man\
   \ findet spezifische Textmuster und ersetzt sie durch andere Inhalte. Programmierer\u2026"
-lastmod: 2024-02-18 23:09:04.991503
+lastmod: 2024-02-19 22:05:12.930635
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man findet\
   \ spezifische Textmuster und ersetzt sie durch andere Inhalte. Programmierer\u2026"

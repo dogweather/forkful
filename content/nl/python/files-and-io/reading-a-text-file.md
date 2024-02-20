@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/python/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:02.390705-07:00
 description: "Een tekstbestand lezen in Python betekent het ophalen van gegevens uit\
   \ een bestand dat toegankelijk is op je schijf of over een netwerk. Programmeurs\u2026"
-lastmod: 2024-02-18 23:09:01.452648
+lastmod: 2024-02-19 22:05:09.482240
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in Python betekent het ophalen van gegevens uit een\
   \ bestand dat toegankelijk is op je schijf of over een netwerk. Programmeurs\u2026"

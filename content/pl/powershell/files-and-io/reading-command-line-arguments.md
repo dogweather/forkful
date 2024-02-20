@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/reading-command-line-arguments/
 date: 2024-01-20 17:56:38.076474-07:00
 description: "W PowerShellu argumenty wiersza polece\u0144 to dane przekazywane do\
   \ skryptu przy jego wywo\u0142ywaniu. Programi\u015Bci u\u017Cywaj\u0105 ich, by\
   \ dostosowa\u0107 dzia\u0142anie skryptu\u2026"
-lastmod: 2024-02-18 23:08:49.844150
+lastmod: 2024-02-19 22:04:54.787600
 model: gpt-4-1106-preview
 summary: "W PowerShellu argumenty wiersza polece\u0144 to dane przekazywane do skryptu\
   \ przy jego wywo\u0142ywaniu. Programi\u015Bci u\u017Cywaj\u0105 ich, by dostosowa\u0107\

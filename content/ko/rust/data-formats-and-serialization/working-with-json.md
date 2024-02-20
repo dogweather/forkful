@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:25.556036-07:00
@@ -11,7 +9,7 @@ description: "Rust\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8
   \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 API, \uC124\
   \uC815 \uD30C\uC77C \uB610\uB294 JSON\uC774 \uC0AC\uC6A9\uB418\uB294 \uBAA8\uB4E0\
   \u2026"
-lastmod: 2024-02-18 23:09:05.917585
+lastmod: 2024-02-19 22:05:13.852729
 model: gpt-4-0125-preview
 summary: "Rust\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB294\
   \ \uAC83\uC740 JSON \uB370\uC774\uD130\uB97C Rust \uB370\uC774\uD130 \uAD6C\uC870\

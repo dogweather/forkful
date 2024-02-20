@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:22.512990-07:00
 description: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique\
   \ d'acc\xE9der programmatiquement et d'extraire le contenu d'un fichier texte depuis\
   \ une\u2026"
-lastmod: 2024-02-18 23:09:08.600028
+lastmod: 2024-02-19 22:05:16.374733
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique d'acc\xE9\
   der programmatiquement et d'extraire le contenu d'un fichier texte depuis une\u2026"

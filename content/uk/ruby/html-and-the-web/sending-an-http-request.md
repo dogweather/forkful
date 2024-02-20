@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/ruby/sending-an-http-request/
 date: 2024-01-20 18:00:30.101099-07:00
 description: "\u0421\u0443\u0442\u044C \u0442\u0430 \u041F\u0440\u0438\u0447\u0438\
   \u043D\u0438? Sending HTTP requests is how your Ruby program talks to the web; it's\
   \ like asking a question and awaiting the answer. Programmers do this\u2026"
-lastmod: 2024-02-18 23:09:01.270485
+lastmod: 2024-02-19 22:05:09.305079
 model: gpt-4-1106-preview
 summary: "\u0421\u0443\u0442\u044C \u0442\u0430 \u041F\u0440\u0438\u0447\u0438\u043D\
   \u0438? Sending HTTP requests is how your Ruby program talks to the web; it's like\

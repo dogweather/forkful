@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/kotlin/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:23.495514-07:00
 description: "Regul\xE6re uttrykk (regex) er et kraftig verkt\xF8y for tekstbehandling,\
   \ som lar programmerere s\xF8ke, matche og manipulere strenger med avanserte\u2026"
-lastmod: 2024-02-18 23:08:53.842252
+lastmod: 2024-02-19 22:04:59.987640
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er et kraftig verkt\xF8y for tekstbehandling,\
   \ som lar programmerere s\xF8ke, matche og manipulere strenger med avanserte\u2026"

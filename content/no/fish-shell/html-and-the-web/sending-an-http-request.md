@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/fish-shell/sending-an-http-request/
 date: 2024-01-20 17:59:31.597265-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller \xE5 utl\xF8\
   se en handling p\xE5 en webserver. Programmerere gj\xF8r dette for \xE5 hente innhold,\
   \ oppdatere data,\u2026"
-lastmod: 2024-02-18 23:08:54.348412
+lastmod: 2024-02-19 22:05:00.502838
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller \xE5 utl\xF8\
   se en handling p\xE5 en webserver. Programmerere gj\xF8r dette for \xE5 hente innhold,\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/cpp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:09.494018-07:00
 description: "Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsen\xE4isten ohjelmien\
   \ luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan.\u2026"
-lastmod: 2024-02-18 23:09:07.947548
+lastmod: 2024-02-19 22:05:15.763741
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsen\xE4isten ohjelmien\
   \ luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan.\u2026"

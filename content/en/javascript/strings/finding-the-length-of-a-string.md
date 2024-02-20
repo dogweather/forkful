@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:29.353328-07:00
 description: Finding a string's length means counting its characters. Programmers
   do it to validate input, loop through strings, and manipulate text data efficiently.
-lastmod: 2024-02-18 23:09:11.429141
+lastmod: 2024-02-19 22:05:18.887110
 model: gpt-4-1106-preview
 summary: Finding a string's length means counting its characters. Programmers do it
   to validate input, loop through strings, and manipulate text data efficiently.

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/fish-shell/printing-debug-output/
 date: 2024-01-20 17:52:51.328411-07:00
 description: "Imprimir datos de depuraci\xF3n significa mostrar informaci\xF3n \xFA\
   til para entender qu\xE9 hace tu c\xF3digo. Los programadores lo hacen para rastrear\
   \ errores y\u2026"
-lastmod: 2024-02-18 23:09:10.456080
+lastmod: 2024-02-19 22:05:18.008944
 model: gpt-4-1106-preview
 summary: "Imprimir datos de depuraci\xF3n significa mostrar informaci\xF3n \xFAtil\
   \ para entender qu\xE9 hace tu c\xF3digo. Los programadores lo hacen para rastrear\

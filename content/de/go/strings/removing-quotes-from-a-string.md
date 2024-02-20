@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:15.503289-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Go bedeutet,\
   \ die f\xFChrenden und abschlie\xDFenden Anf\xFChrungszeichen (`\"` oder `'`) aus\
   \ einem gegebenen\u2026"
-lastmod: 2024-02-18 23:09:04.349356
+lastmod: 2024-02-19 22:05:12.319329
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Go bedeutet,\
   \ die f\xFChrenden und abschlie\xDFenden Anf\xFChrungszeichen (`\"` oder `'`) aus\

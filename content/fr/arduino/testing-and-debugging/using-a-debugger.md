@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/using-a-debugger/
 date: 2024-01-26 03:47:20.321423-07:00
 description: "Un d\xE9bogueur est un outil qui vous aide \xE0 \xE9liminer les bugs\
   \ de votre code en vous permettant de faire une pause, de fouiller un peu partout\
   \ et de\u2026"
-lastmod: 2024-02-18 23:09:09.119310
+lastmod: 2024-02-19 22:05:16.796530
 model: gpt-4-0125-preview
 summary: "Un d\xE9bogueur est un outil qui vous aide \xE0 \xE9liminer les bugs de\
   \ votre code en vous permettant de faire une pause, de fouiller un peu partout et\

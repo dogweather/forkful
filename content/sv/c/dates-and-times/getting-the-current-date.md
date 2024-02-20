@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:25.394640-07:00
 description: "Att f\xE5 det aktuella datumet i C inneb\xE4r att man utnyttjar det\
   \ standardiserade C-biblioteket f\xF6r att h\xE4mta och formatera systemets nuvarande\
   \ datum och tid.\u2026"
-lastmod: 2024-02-18 23:08:52.261635
+lastmod: 2024-02-19 22:04:57.647107
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i C inneb\xE4r att man utnyttjar det standardiserade\
   \ C-biblioteket f\xF6r att h\xE4mta och formatera systemets nuvarande datum och\

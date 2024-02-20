@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/clojure/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:55.185611-07:00
 description: "YAML, un acr\xF3nimo recursivo de \"YAML Ain't Markup Language\" (YAML\
   \ no es un lenguaje de marcado), es un formato de serializaci\xF3n de datos legible\
   \ por\u2026"
-lastmod: 2024-02-18 23:09:09.625107
+lastmod: 2024-02-19 22:05:17.268007
 model: gpt-4-0125-preview
 summary: "YAML, un acr\xF3nimo recursivo de \"YAML Ain't Markup Language\" (YAML no\
   \ es un lenguaje de marcado), es un formato de serializaci\xF3n de datos legible\

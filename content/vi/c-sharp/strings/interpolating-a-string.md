@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c-sharp/interpolating-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:13.433991-07:00
@@ -8,7 +6,7 @@ description: "N\u1ED9i suy (interpolation) chu\u1ED7i cho ph\xE9p b\u1EA1n x\xE2
   \ d\u1EF1ng chu\u1ED7i s\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c \u0111\u01B0\u1EE3\
   c nh\xFAng tr\u1EF1c ti\u1EBFp. N\xF3 gi\xFAp m\xE3 l\u1EC7nh d\u1EC5 \u0111\u1ECD\
   c v\xE0 vi\u1EC7c \u0111\u1ECBnh d\u1EA1ng tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
-lastmod: 2024-02-18 23:08:50.682275
+lastmod: 2024-02-19 22:04:55.811411
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy (interpolation) chu\u1ED7i cho ph\xE9p b\u1EA1n x\xE2y d\u1EF1\
   ng chu\u1ED7i s\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c \u0111\u01B0\u1EE3c nh\xFAng\

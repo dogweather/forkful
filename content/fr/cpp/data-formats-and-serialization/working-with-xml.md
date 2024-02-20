@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/cpp/working-with-xml/
 date: 2024-01-26 04:28:23.396727-07:00
 description: "Travailler avec le XML signifie analyser, cr\xE9er et manipuler des\
   \ donn\xE9es XML (eXtensible Markup Language). Les programmeurs g\xE8rent le XML\
   \ pour traiter\u2026"
-lastmod: 2024-02-18 23:09:09.188636
+lastmod: 2024-02-19 22:05:16.859291
 model: gpt-4-0125-preview
 summary: "Travailler avec le XML signifie analyser, cr\xE9er et manipuler des donn\xE9\
   es XML (eXtensible Markup Language). Les programmeurs g\xE8rent le XML pour traiter\u2026"

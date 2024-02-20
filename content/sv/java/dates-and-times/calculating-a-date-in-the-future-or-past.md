@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/java/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:26.717069-07:00
 description: "Att ber\xE4kna datum i framtiden eller f\xF6rflutna inneb\xE4r att du\
   \ r\xE4knar ut ett exakt datum f\xF6re eller efter en specifik punkt i tiden. Programmerare\
   \ g\xF6r detta\u2026"
-lastmod: 2024-02-18 23:08:51.681988
+lastmod: 2024-02-19 22:04:57.010329
 model: gpt-4-1106-preview
 summary: "Att ber\xE4kna datum i framtiden eller f\xF6rflutna inneb\xE4r att du r\xE4\
   knar ut ett exakt datum f\xF6re eller efter en specifik punkt i tiden. Programmerare\

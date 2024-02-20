@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/kotlin/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:44.011820-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Kotlin inneb\xE6rer \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe p\xE5 en spesifisert sti. Programmerere utf\xF8\
   rer denne oppgaven\u2026"
-lastmod: 2024-02-18 23:08:53.866330
+lastmod: 2024-02-19 22:05:00.032529
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Kotlin inneb\xE6rer \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe p\xE5 en spesifisert sti. Programmerere utf\xF8\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/creating-a-temporary-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:20.963329-07:00
 description: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een\
   \ bestand voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan.\u2026"
-lastmod: 2024-02-18 23:09:02.113115
+lastmod: 2024-02-19 22:05:10.133491
 model: gpt-4-0125-preview
 summary: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een bestand\
   \ voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan.\u2026"

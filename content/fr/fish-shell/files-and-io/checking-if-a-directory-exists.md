@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/fish-shell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:14.085304-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe dans le Fish Shell permet aux\
   \ scripts de prendre des d\xE9cisions bas\xE9es sur la pr\xE9sence ou l'absence\
   \ de structures de\u2026"
-lastmod: 2024-02-18 23:09:09.322143
+lastmod: 2024-02-19 22:05:16.989873
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans le Fish Shell permet aux scripts\
   \ de prendre des d\xE9cisions bas\xE9es sur la pr\xE9sence ou l'absence de structures\

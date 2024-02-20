@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/typescript/sending-an-http-request/
 date: 2024-01-20 18:01:05.092869-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel er m\xE5ten nettlesere og servere\
   \ snakker med hverandre p\xE5; du sp\xF8r etter data, den returnerer data. Programmerere\
   \ gj\xF8r dette for\u2026"
-lastmod: 2024-02-18 23:08:53.642017
+lastmod: 2024-02-19 22:04:59.771305
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel er m\xE5ten nettlesere og servere snakker\
   \ med hverandre p\xE5; du sp\xF8r etter data, den returnerer data. Programmerere\

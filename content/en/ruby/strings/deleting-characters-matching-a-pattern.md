@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/ruby/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:52.715524-07:00
 description: "Deleting characters matching a pattern in strings is about surgically\
   \ removing bits you don't need, like stripping hashtags from tweets. Programmers\
   \ do it\u2026"
-lastmod: 2024-02-18 23:09:11.548170
+lastmod: 2024-02-19 22:05:18.996615
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in strings is about surgically removing\
   \ bits you don't need, like stripping hashtags from tweets. Programmers do it\u2026"

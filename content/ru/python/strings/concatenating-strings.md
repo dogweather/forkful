@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/python/concatenating-strings/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:56:37.012178-07:00
@@ -14,7 +12,7 @@ description: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0438
   \u0442\u0440\u043E\u043A. \u041C\u044B \u0434\u0435\u043B\u0430\u0435\u043C \u044D\
   \u0442\u043E \u0434\u043B\u044F \u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\
   \u0430\u043D\u0438\u044F \u0442\u0435\u043A\u0441\u0442\u0430;\u2026"
-lastmod: 2024-02-18 23:08:56.523321
+lastmod: 2024-02-19 22:05:03.236575
 model: gpt-4-0125-preview
 summary: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0438\u044F\
   \ \u0441\u0442\u0440\u043E\u043A \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442\

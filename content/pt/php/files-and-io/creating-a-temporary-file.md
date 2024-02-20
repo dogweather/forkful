@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/php/creating-a-temporary-file/
 date: 2024-01-20 17:40:45.610333-07:00
 description: "Criar um arquivo tempor\xE1rio em PHP \xE9 como rabiscar em um papel\
   \ de rascunho. Programadores fazem isso quando querem guardar dados rapidamente\
   \ sem precisar\u2026"
-lastmod: 2024-02-18 23:08:58.260163
+lastmod: 2024-02-19 22:05:05.735826
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio em PHP \xE9 como rabiscar em um papel de\
   \ rascunho. Programadores fazem isso quando querem guardar dados rapidamente sem\

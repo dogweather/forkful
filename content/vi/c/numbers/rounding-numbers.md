@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/c/rounding-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:09.496667-07:00
@@ -9,7 +7,7 @@ description: "L\xE0m tr\xF2n s\u1ED1 l\xE0 qu\xE1 tr\xECnh \u0111i\u1EC1u ch\u1E
   \u1ED9 ch\xEDnh x\xE1c theo nh\u1EEFng quy t\u1EAFc nh\u1EA5t \u0111\u1ECBnh, ho\u1EB7\
   c v\u1EC1 ph\xEDa s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c m\u1ED9t s\u1ED1\
   \u2026"
-lastmod: 2024-02-18 23:08:51.228332
+lastmod: 2024-02-19 22:04:56.497561
 model: gpt-4-0125-preview
 summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 qu\xE1 tr\xECnh \u0111i\u1EC1u ch\u1EC9nh c\xE1\
   c ch\u1EEF s\u1ED1 c\u1EE7a m\u1ED9t s\u1ED1 \u0111\u1EC3 gi\u1EA3m \u0111\u1ED9\

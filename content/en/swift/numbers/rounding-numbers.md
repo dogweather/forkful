@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/swift/rounding-numbers/
 date: 2024-01-25 02:59:55.932693-07:00
 description: "Rounding numbers means approximating a numerical value to a specific\
   \ precision, typically to remove unwanted decimals. Programmers round to manage\
   \ memory,\u2026"
-lastmod: 2024-02-18 23:09:11.391687
+lastmod: 2024-02-19 22:05:18.853206
 model: gpt-4-1106-preview
 summary: "Rounding numbers means approximating a numerical value to a specific precision,\
   \ typically to remove unwanted decimals. Programmers round to manage memory,\u2026"

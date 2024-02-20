@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/java/converting-a-string-to-lower-case/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:38.219026-07:00
@@ -9,7 +7,7 @@ description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDDng c\x
   i trong chu\u1ED7i v\u1EC1 d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xEC\
   nh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 chu\u1EA9n h\xF3a d\u1EEF\
   \u2026"
-lastmod: 2024-02-18 23:08:50.542599
+lastmod: 2024-02-19 22:04:55.633300
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129\
   a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i trong chu\u1ED7\

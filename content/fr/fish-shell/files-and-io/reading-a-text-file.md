@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/reading-a-text-file/
 date: 2024-01-20 17:54:14.683057-07:00
 description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser. Les\
   \ programmeurs le font pour manipuler des donn\xE9es, configurer des syst\xE8mes,\
   \ ou\u2026"
-lastmod: 2024-02-18 23:09:09.325510
+lastmod: 2024-02-19 22:05:16.993024
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser. Les programmeurs\
   \ le font pour manipuler des donn\xE9es, configurer des syst\xE8mes, ou\u2026"

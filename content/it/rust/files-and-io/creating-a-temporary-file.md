@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/rust/creating-a-temporary-file/
 date: 2024-01-20 17:41:25.229969-07:00
 description: "La creazione di un file temporaneo \xE8 il processo di generazione di\
   \ un file che si intende utilizzare per un breve periodo di tempo. In Rust, i\u2026"
-lastmod: 2024-02-18 23:08:55.698778
+lastmod: 2024-02-19 22:05:02.298426
 model: gpt-4-1106-preview
 summary: "La creazione di un file temporaneo \xE8 il processo di generazione di un\
   \ file che si intende utilizzare per un breve periodo di tempo. In Rust, i\u2026"

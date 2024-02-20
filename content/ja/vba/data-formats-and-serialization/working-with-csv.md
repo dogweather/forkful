@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/vba/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:49.168633-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:54.782815
+lastmod: 2024-02-19 22:05:01.078853
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "CSV\u3068\u306E\u4F5C\u696D"

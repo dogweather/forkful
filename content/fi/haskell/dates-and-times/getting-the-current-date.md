@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/haskell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:36.707747-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Haskellissa k\xE4sitt\xE4\
   \xE4 j\xE4rjestelm\xE4n nykyisen ajan hankkimisen ja sen muuntamisen luettavaan\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4muotoon. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.677367
+lastmod: 2024-02-19 22:05:15.518758
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Haskellissa k\xE4sitt\xE4\
   \xE4 j\xE4rjestelm\xE4n nykyisen ajan hankkimisen ja sen muuntamisen luettavaan\

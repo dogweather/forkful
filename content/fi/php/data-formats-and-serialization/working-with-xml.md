@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/php/working-with-xml/
 date: 2024-01-26 04:34:05.207443-07:00
 description: "XML on merkkauskieli, jota k\xE4ytet\xE4\xE4n datan tallentamiseen ja\
   \ siirt\xE4miseen. Ohjelmoijat ty\xF6skentelev\xE4t XML:n parissa mahdollistaakseen\
   \ sovellusten ja\u2026"
-lastmod: 2024-02-18 23:09:07.738290
+lastmod: 2024-02-19 22:05:15.574739
 model: gpt-4-0125-preview
 summary: "XML on merkkauskieli, jota k\xE4ytet\xE4\xE4n datan tallentamiseen ja siirt\xE4\
   miseen. Ohjelmoijat ty\xF6skentelev\xE4t XML:n parissa mahdollistaakseen sovellusten\

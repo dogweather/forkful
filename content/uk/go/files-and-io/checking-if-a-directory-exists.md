@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:28.637347-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0430 \u043D\u043
   \u043C\u0438\u043B\u043E\u043A \u043F\u0440\u0438 \u0441\u043F\u0440\u043E\u0431\
   \u0456 \u0434\u043E\u0441\u0442\u0443\u043F\u0443 \u0430\u0431\u043E \u0437\u043C\
   \u0456\u043D\u0438\u2026"
-lastmod: 2024-02-18 23:08:59.707685
+lastmod: 2024-02-19 22:05:07.527808
 model: gpt-4-0125-preview
 summary: "\u041F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0430 \u043D\u0430\u044F\
   \u0432\u043D\u043E\u0441\u0442\u0456 \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\

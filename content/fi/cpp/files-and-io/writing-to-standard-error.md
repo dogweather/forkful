@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/cpp/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:40.336820-07:00
 description: "Virheilmoitusten kirjoittaminen standardivirheeseen (`stderr`) C++:ssa\
   \ tarkoittaa virheviestien tai diagnostiikkatietojen tulostamista, jotka ovat\u2026"
-lastmod: 2024-02-18 23:09:07.961946
+lastmod: 2024-02-19 22:05:15.776778
 model: gpt-4-0125-preview
 summary: "Virheilmoitusten kirjoittaminen standardivirheeseen (`stderr`) C++:ssa tarkoittaa\
   \ virheviestien tai diagnostiikkatietojen tulostamista, jotka ovat\u2026"

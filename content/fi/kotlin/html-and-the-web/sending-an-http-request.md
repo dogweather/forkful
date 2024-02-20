@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/kotlin/sending-an-http-request/
 date: 2024-01-20 18:00:09.548060-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa siirt\xE4\xE4 tietoa verkon\
   \ yli palvelimelle. Koodarit tekev\xE4t t\xE4t\xE4 hakiakseen tai l\xE4hett\xE4\xE4\
   kseen dataa, p\xE4ivitt\xE4\xE4kseen tilaa\u2026"
-lastmod: 2024-02-18 23:09:07.571626
+lastmod: 2024-02-19 22:05:15.421185
 model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa siirt\xE4\xE4 tietoa verkon yli\
   \ palvelimelle. Koodarit tekev\xE4t t\xE4t\xE4 hakiakseen tai l\xE4hett\xE4\xE4\

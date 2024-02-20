@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/swift/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:30.601140-07:00
 description: "Capitaliser une cha\xEEne de caract\xE8res en Swift modifie la cha\xEE\
   ne donn\xE9e de mani\xE8re que son premier caract\xE8re soit en majuscule et les\
   \ caract\xE8res restants\u2026"
-lastmod: 2024-02-18 23:09:09.189802
+lastmod: 2024-02-19 22:05:16.860334
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res en Swift modifie la cha\xEEne\
   \ donn\xE9e de mani\xE8re que son premier caract\xE8re soit en majuscule et les\

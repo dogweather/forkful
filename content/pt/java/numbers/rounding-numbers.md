@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/rounding-numbers/
 date: 2024-01-26 03:45:34.935448-07:00
 description: "Arredondar n\xFAmeros significa ajust\xE1-los a um determinado grau\
   \ de precis\xE3o. Programadores fazem isso para simplificar n\xFAmeros para legibilidade,\
   \ cumprir\u2026"
-lastmod: 2024-02-18 23:08:58.013387
+lastmod: 2024-02-19 22:05:05.489513
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajust\xE1-los a um determinado grau de precis\xE3\
   o. Programadores fazem isso para simplificar n\xFAmeros para legibilidade, cumprir\u2026"

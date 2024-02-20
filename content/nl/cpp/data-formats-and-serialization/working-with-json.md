@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/working-with-json/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:22.067395-07:00
 description: "Werken met JSON (JavaScript Object Notation) in C++ houdt in dat je\
   \ tekstuele gegevens die als JSON zijn geformatteerd, gaat parsen en genereren.\u2026"
-lastmod: 2024-02-18 23:09:02.206134
+lastmod: 2024-02-19 22:05:10.221679
 model: gpt-4-0125-preview
 summary: "Werken met JSON (JavaScript Object Notation) in C++ houdt in dat je tekstuele\
   \ gegevens die als JSON zijn geformatteerd, gaat parsen en genereren.\u2026"

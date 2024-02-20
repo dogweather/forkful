@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/python/creating-a-temporary-file/
 date: 2024-01-20 17:40:55.011294-07:00
 description: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter, die w\xE4hrend\
   \ der Laufzeit eines Programms f\xFCr Datentransfer, Zwischenspeicherungen oder\
   \ Sicherheitszwecke\u2026"
-lastmod: 2024-02-18 23:09:04.482657
+lastmod: 2024-02-19 22:05:12.446325
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter, die w\xE4hrend der\
   \ Laufzeit eines Programms f\xFCr Datentransfer, Zwischenspeicherungen oder Sicherheitszwecke\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/bash/using-an-interactive-shell-repl/
 date: 2024-01-26 04:11:02.113709-07:00
 description: "REPL steht f\xFCr Read-Eval-Print Loop, eine einfache, interaktive Computerprogrammierumgebung.\
   \ Programmierer nutzen es, um schnell Code zu schreiben und zu\u2026"
-lastmod: 2024-02-18 23:09:05.056134
+lastmod: 2024-02-19 22:05:12.992112
 model: gpt-4-0125-preview
 summary: "REPL steht f\xFCr Read-Eval-Print Loop, eine einfache, interaktive Computerprogrammierumgebung.\
   \ Programmierer nutzen es, um schnell Code zu schreiben und zu\u2026"

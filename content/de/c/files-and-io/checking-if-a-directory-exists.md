@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/c/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:35.000398-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet\
   \ die Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu\
   \ einem\u2026"
-lastmod: 2024-02-18 23:09:05.390554
+lastmod: 2024-02-19 22:05:13.310014
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet die\
   \ Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu einem\u2026"

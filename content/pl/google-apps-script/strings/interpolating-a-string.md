@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/google-apps-script/interpolating-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:48.843186-07:00
 description: "Interpolacja ci\u0105g\xF3w w Google Apps Script umo\u017Cliwia dynamiczne\
   \ osadzanie wyra\u017Ce\u0144 w ci\u0105gach, u\u0142atwiaj\u0105c tworzenie bardziej\
   \ czytelnego i \u0142atwiejszego do\u2026"
-lastmod: 2024-02-18 23:08:49.130611
+lastmod: 2024-02-19 22:04:54.069541
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w w Google Apps Script umo\u017Cliwia dynamiczne\
   \ osadzanie wyra\u017Ce\u0144 w ci\u0105gach, u\u0142atwiaj\u0105c tworzenie bardziej\

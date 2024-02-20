@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/c-sharp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:39.528908-07:00
 description: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym\
   \ tworzeniem lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym\
   \ zadaniem dla wielu\u2026"
-lastmod: 2024-02-18 23:08:49.628996
+lastmod: 2024-02-19 22:04:54.561484
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym tworzeniem\
   \ lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym zadaniem\

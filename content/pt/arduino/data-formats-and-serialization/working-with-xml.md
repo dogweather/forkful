@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/arduino/working-with-xml/
 date: 2024-01-26 04:27:23.265478-07:00
 description: "Trabalhar com XML no Arduino envolve analisar e manipular dados XML,\
   \ geralmente vindos de APIs da web ou arquivos de configura\xE7\xE3o. Os programadores\
   \ fazem\u2026"
-lastmod: 2024-02-18 23:08:58.432483
+lastmod: 2024-02-19 22:05:05.921710
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML no Arduino envolve analisar e manipular dados XML, geralmente\
   \ vindos de APIs da web ou arquivos de configura\xE7\xE3o. Os programadores fazem\u2026"

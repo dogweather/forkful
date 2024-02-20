@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/rust/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:19.767781-07:00
 description: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu\
   \ i potencjalnie dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015B\
   ci wykonuj\u0105 t\u0119\u2026"
-lastmod: 2024-02-18 23:08:49.408008
+lastmod: 2024-02-19 22:04:54.330487
 model: gpt-4-0125-preview
 summary: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu i potencjalnie\
   \ dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015Bci wykonuj\u0105\

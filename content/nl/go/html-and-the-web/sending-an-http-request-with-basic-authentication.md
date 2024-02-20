@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/go/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:10.998048-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt\
   \ in dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam\
   \ en\u2026"
-lastmod: 2024-02-18 23:09:01.337951
+lastmod: 2024-02-19 22:05:09.371573
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt in\
   \ dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam en\u2026"

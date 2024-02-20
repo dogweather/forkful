@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elixir/organizing-code-into-functions/
 date: 2024-01-26 01:09:34.111248-07:00
 description: "\xC5 organisere kode i funksjoner inneb\xE6rer \xE5 gruppere relaterte\
   \ operasjoner i gjenbrukbare blokker. Vi gj\xF8r dette for \xE5 forbedre lesbarhet\
   \ og\u2026"
-lastmod: 2024-02-18 23:08:53.610102
+lastmod: 2024-02-19 22:04:59.736650
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner inneb\xE6rer \xE5 gruppere relaterte operasjoner\
   \ i gjenbrukbare blokker. Vi gj\xF8r dette for \xE5 forbedre lesbarhet og\u2026"

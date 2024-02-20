@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/cpp/rounding-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:53.822099-07:00
 description: "Het afronden van getallen betekent het aanpassen van een waarde naar\
   \ de dichtstbijzijnde gehele getal of een gespecificeerde precisie. Ontwikkelaars\
   \ doen\u2026"
-lastmod: 2024-02-18 23:09:02.177200
+lastmod: 2024-02-19 22:05:10.194066
 model: gpt-4-0125-preview
 summary: "Het afronden van getallen betekent het aanpassen van een waarde naar de\
   \ dichtstbijzijnde gehele getal of een gespecificeerde precisie. Ontwikkelaars doen\u2026"

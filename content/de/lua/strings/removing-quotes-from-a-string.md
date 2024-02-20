@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/lua/removing-quotes-from-a-string/
 date: 2024-01-26 03:40:20.310137-07:00
 description: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese doppelten\
   \ oder einfachen Anf\xFChrungszeichen, die deinen Text umarmen, wegzusch\xE4len.\u2026"
-lastmod: 2024-02-18 23:09:04.994446
+lastmod: 2024-02-19 22:05:12.933363
 model: gpt-4-0125-preview
 summary: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese doppelten\
   \ oder einfachen Anf\xFChrungszeichen, die deinen Text umarmen, wegzusch\xE4len.\u2026"

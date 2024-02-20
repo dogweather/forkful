@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/typescript/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:30.708107-07:00
 description: "Le espressioni regolari, o regex, rappresentano uno strumento potente\
   \ per la ricerca e il confronto di pattern nella programmazione. I programmatori\u2026"
-lastmod: 2024-02-18 23:08:55.631026
+lastmod: 2024-02-19 22:05:02.226331
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari, o regex, rappresentano uno strumento potente per\
   \ la ricerca e il confronto di pattern nella programmazione. I programmatori\u2026"

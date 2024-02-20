@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:20.336144-07:00
 description: "La ricerca e la sostituzione di testo nella programmazione facilitano\
   \ la modifica e la gestione delle stringhe, che sono compiti fondamentali nella\u2026"
-lastmod: 2024-02-18 23:08:55.416701
+lastmod: 2024-02-19 22:05:01.995970
 model: gpt-4-0125-preview
 summary: "La ricerca e la sostituzione di testo nella programmazione facilitano la\
   \ modifica e la gestione delle stringhe, che sono compiti fondamentali nella\u2026"

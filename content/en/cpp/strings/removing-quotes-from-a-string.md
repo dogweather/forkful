@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/cpp/removing-quotes-from-a-string/
 date: 2024-01-25 20:50:01.125261-07:00
 description: "Stripping quotes from a string means peeling away those pesky double\
   \ or single characters that encase our text (' or \"). Programmers often do this\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.343751
+lastmod: 2024-02-19 22:05:18.809684
 model: gpt-4-1106-preview
 summary: "Stripping quotes from a string means peeling away those pesky double or\
   \ single characters that encase our text (' or \"). Programmers often do this to\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/powershell/working-with-toml/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:04.622760-07:00
 description: "TOML, kort voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat\
   \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"
-lastmod: 2024-02-18 23:09:02.117455
+lastmod: 2024-02-19 22:05:10.137599
 model: gpt-4-0125-preview
 summary: "TOML, kort voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat\
   \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/java/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:04.156050-07:00
 description: "En Java, los arreglos asociativos, o mapas, te permiten almacenar pares\
   \ de clave-valor para una b\xFAsqueda y manipulaci\xF3n de datos eficiente. Los\u2026"
-lastmod: 2024-02-18 23:09:09.837452
+lastmod: 2024-02-19 22:05:17.453177
 model: gpt-4-0125-preview
 summary: "En Java, los arreglos asociativos, o mapas, te permiten almacenar pares\
   \ de clave-valor para una b\xFAsqueda y manipulaci\xF3n de datos eficiente. Los\u2026"

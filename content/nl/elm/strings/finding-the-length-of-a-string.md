@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elm/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:00.797049-07:00
 description: "De lengte van een string bepalen betekent het tellen van de karakters.\
   \ Programmeurs doen dit om invoer te valideren, tekst te manipuleren of simpelweg\
   \ om\u2026"
-lastmod: 2024-02-18 23:09:01.749348
+lastmod: 2024-02-19 22:05:09.768300
 model: gpt-4-0125-preview
 summary: "De lengte van een string bepalen betekent het tellen van de karakters. Programmeurs\
   \ doen dit om invoer te valideren, tekst te manipuleren of simpelweg om\u2026"

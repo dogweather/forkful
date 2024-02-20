@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/google-apps-script/refactoring/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:52.934781-07:00
 description: "Refaktorisering i programmeringslexikonet refererar till processen att\
   \ omstrukturera befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess\
   \ externa\u2026"
-lastmod: 2024-02-18 23:08:51.387784
+lastmod: 2024-02-19 22:04:56.685872
 model: gpt-4-0125-preview
 summary: "Refaktorisering i programmeringslexikonet refererar till processen att omstrukturera\
   \ befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess externa\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/c-sharp/logging/
 date: 2024-01-26 01:01:18.530477-07:00
 description: "Loggning \xE4r processen att registrera applikationsh\xE4ndelser och\
   \ datautskrift under k\xF6rning. Programmerare loggar f\xF6r att diagnostisera buggar,\
   \ \xF6vervaka\u2026"
-lastmod: 2024-02-18 23:08:51.802161
+lastmod: 2024-02-19 22:04:57.136997
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r processen att registrera applikationsh\xE4ndelser och datautskrift\
   \ under k\xF6rning. Programmerare loggar f\xF6r att diagnostisera buggar, \xF6vervaka\u2026"

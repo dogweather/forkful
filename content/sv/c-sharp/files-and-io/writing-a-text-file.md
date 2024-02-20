@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c-sharp/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:30.881335-07:00
 description: "Att skriva en textfil i C# involverar att programmatiskt skapa eller\
   \ \xE4ndra textfiler i filsystemet - en grundl\xE4ggande uppgift f\xF6r m\xE5nga\
   \ applikationer,\u2026"
-lastmod: 2024-02-18 23:08:51.813825
+lastmod: 2024-02-19 22:04:57.149860
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i C# involverar att programmatiskt skapa eller \xE4\
   ndra textfiler i filsystemet - en grundl\xE4ggande uppgift f\xF6r m\xE5nga applikationer,\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:26.009400-07:00
 description: "Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme usein\
   \ puhdistaa sy\xF6tteit\xE4, muotoilla tietoja tai tehd\xE4 merkkijonok\xE4sittely\xE4\
   .\u2026"
-lastmod: 2024-02-18 23:09:08.064755
+lastmod: 2024-02-19 22:05:15.871108
 model: gpt-4-1106-preview
 summary: "Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme usein\
   \ puhdistaa sy\xF6tteit\xE4, muotoilla tietoja tai tehd\xE4 merkkijonok\xE4sittely\xE4\

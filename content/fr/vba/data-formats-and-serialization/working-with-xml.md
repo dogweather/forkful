@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/working-with-xml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:59.197227-07:00
 description: "Travailler avec XML dans Visual Basic pour Applications (VBA) implique\
   \ l'analyse, la cr\xE9ation et la modification de documents XML dans le contexte\
   \ des\u2026"
-lastmod: 2024-02-18 23:09:08.608530
+lastmod: 2024-02-19 22:05:16.382532
 model: gpt-4-0125-preview
 summary: "Travailler avec XML dans Visual Basic pour Applications (VBA) implique l'analyse,\
   \ la cr\xE9ation et la modification de documents XML dans le contexte des\u2026"

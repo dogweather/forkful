@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/google-apps-script/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:43.642408-07:00
 description: "Arrondir les nombres, un concept fondamental en programmation informatique,\
   \ consiste \xE0 ajuster un nombre \xE0 l'entier le plus proche ou \xE0 un nombre\
   \ sp\xE9cifi\xE9\u2026"
-lastmod: 2024-02-18 23:09:08.281759
+lastmod: 2024-02-19 22:05:16.086220
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres, un concept fondamental en programmation informatique,\
   \ consiste \xE0 ajuster un nombre \xE0 l'entier le plus proche ou \xE0 un nombre\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/go/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:21.617718-07:00
 description: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des portions\
   \ sp\xE9cifiques d'une cha\xEEne en fonction de leurs positions. Les programmeurs\
   \ r\xE9alisent\u2026"
-lastmod: 2024-02-18 23:09:08.218074
+lastmod: 2024-02-19 22:05:16.028485
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des portions sp\xE9\
   cifiques d'une cha\xEEne en fonction de leurs positions. Les programmeurs r\xE9\

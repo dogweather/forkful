@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:22.781400-07:00
 description: "Merkkijonosta lainausmerkit poistaminen C-kieless\xE4 tarkoittaa tekstisis\xE4\
   ll\xF6n erottamista ilman ymp\xE4r\xF6ivi\xE4 yksitt\xE4isi\xE4 (' ') tai kaksois\
   \ (\" \")\u2026"
-lastmod: 2024-02-18 23:09:08.117914
+lastmod: 2024-02-19 22:05:15.919820
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkit poistaminen C-kieless\xE4 tarkoittaa tekstisis\xE4\
   ll\xF6n erottamista ilman ymp\xE4r\xF6ivi\xE4 yksitt\xE4isi\xE4 (' ') tai kaksois\

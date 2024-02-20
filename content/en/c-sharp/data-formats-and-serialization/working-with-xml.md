@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/c-sharp/working-with-xml/
 date: 2024-01-25 03:39:37.694349-07:00
 description: "XML (eXtensible Markup Language) is about structuring data in a readable\
   \ format. Programmers juggle XML for configuration, data exchange between apps,\
   \ and\u2026"
-lastmod: 2024-02-18 23:09:11.078501
+lastmod: 2024-02-19 22:05:18.576129
 model: gpt-4-1106-preview
 summary: "XML (eXtensible Markup Language) is about structuring data in a readable\
   \ format. Programmers juggle XML for configuration, data exchange between apps,\

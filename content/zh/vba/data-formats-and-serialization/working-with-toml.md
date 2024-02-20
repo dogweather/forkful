@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:54.673491-07:00
@@ -10,7 +8,7 @@ description: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\
   \u3002\u7A0B\u5E8F\u5458\u5229\u7528TOML\u56E0\u5176\u53EF\u8BFB\u6027\u548C\u6613\
   \u4E8E\u6620\u5C04\u5230\u6570\u636E\u7ED3\u6784\u7684\u7279\u70B9\uFF0C\u4F7F\u5F97\
   \u5728\u5404\u79CD\u7F16\u7A0B\u73AF\u5883\u4E2D\uFF0C\u5305\u62ECVisual Basic for\u2026"
-lastmod: 2024-02-18 23:08:59.004070
+lastmod: 2024-02-19 22:05:06.627000
 model: gpt-4-0125-preview
 summary: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u7684\u660E\
   \u663E\u3001\u6700\u5C0F\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u4E3B\u8981\u7528\

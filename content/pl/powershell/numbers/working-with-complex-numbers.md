@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/powershell/working-with-complex-numbers/
 date: 2024-01-26 04:44:14.642879-07:00
 description: "Liczby zespolone, czyli te posiadaj\u0105ce cz\u0119\u015B\u0107 rzeczywist\u0105\
   \ i urojon\u0105 (jak 3 + 4i), s\u0105 niezb\u0119dne w takich dziedzinach jak in\u017C\
   ynieria, fizyka i data science.\u2026"
-lastmod: 2024-02-18 23:08:49.820973
+lastmod: 2024-02-19 22:04:54.762599
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, czyli te posiadaj\u0105ce cz\u0119\u015B\u0107 rzeczywist\u0105\
   \ i urojon\u0105 (jak 3 + 4i), s\u0105 niezb\u0119dne w takich dziedzinach jak in\u017C\

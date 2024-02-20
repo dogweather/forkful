@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/javascript/handling-errors/
 date: 2024-01-26 00:53:51.728622-07:00
 description: "La gestion des erreurs consiste \xE0 g\xE9rer les situations o\xF9 votre\
   \ code ne se comporte pas comme pr\xE9vu. C'est crucial car cela permet \xE0 vos\
   \ programmes de se\u2026"
-lastmod: 2024-02-18 23:09:09.264379
+lastmod: 2024-02-19 22:05:16.928152
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs consiste \xE0 g\xE9rer les situations o\xF9 votre\
   \ code ne se comporte pas comme pr\xE9vu. C'est crucial car cela permet \xE0 vos\

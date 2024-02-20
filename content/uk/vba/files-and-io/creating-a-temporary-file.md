@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/vba/creating-a-temporary-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:47.141698-07:00
@@ -13,7 +11,7 @@ description: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u043
   \u043D\u043E\u0433\u043E \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\
   \u043D\u044F, \u0437\u0430\u0437\u0432\u0438\u0447\u0430\u0439 \u0434\u043B\u044F\
   \u2026"
-lastmod: 2024-02-18 23:09:00.080476
+lastmod: 2024-02-19 22:05:08.059980
 model: gpt-4-0125-preview
 summary: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0438\u043C\
   \u0447\u0430\u0441\u043E\u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443\

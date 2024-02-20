@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/kotlin/working-with-xml/
 date: 2024-01-26 04:32:58.739123-07:00
 description: "Travailler avec XML implique l'analyse, la cr\xE9ation et la manipulation\
   \ de documents XML - un langage de balisage pour le stockage et le transfert de\u2026"
-lastmod: 2024-02-18 23:09:08.807905
+lastmod: 2024-02-19 22:05:16.510247
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique l'analyse, la cr\xE9ation et la manipulation\
   \ de documents XML - un langage de balisage pour le stockage et le transfert de\u2026"

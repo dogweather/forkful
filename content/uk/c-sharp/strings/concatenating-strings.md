@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/c-sharp/concatenating-strings/
 date: 2024-01-20 17:34:29.528232-07:00
 description: "Concatenating strings is about sticking them together end-to-end. Programmers\
   \ concatenate to build up texts dynamically, like creating messages or\u2026"
-lastmod: 2024-02-18 23:09:00.326930
+lastmod: 2024-02-19 22:05:08.300583
 model: gpt-4-1106-preview
 summary: "Concatenating strings is about sticking them together end-to-end. Programmers\
   \ concatenate to build up texts dynamically, like creating messages or\u2026"

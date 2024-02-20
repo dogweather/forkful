@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/downloading-a-web-page/
 date: 2024-01-20 17:44:22.156762-07:00
 description: "Lataamme verkkosivun sis\xE4lt\xF6\xE4 tutkiaksemme sen rakennetta tai\
   \ hy\xF6dynt\xE4\xE4ksemme tietoja. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi\
   \ datankeruuseen, palveluiden\u2026"
-lastmod: 2024-02-18 23:09:07.456895
+lastmod: 2024-02-19 22:05:15.339433
 model: gpt-4-1106-preview
 summary: "Lataamme verkkosivun sis\xE4lt\xF6\xE4 tutkiaksemme sen rakennetta tai hy\xF6\
   dynt\xE4\xE4ksemme tietoja. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datankeruuseen,\

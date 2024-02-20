@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/arduino/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:01.148231-07:00
 description: "Att skriva med stor bokstav inneb\xE4r att konvertera det f\xF6rsta\
   \ tecknet i varje ord i en str\xE4ng till versal samtidigt som resten beh\xE5lls\
   \ som gemener. Denna\u2026"
-lastmod: 2024-02-18 23:08:52.028698
+lastmod: 2024-02-19 22:04:57.385362
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav inneb\xE4r att konvertera det f\xF6rsta tecknet\
   \ i varje ord i en str\xE4ng till versal samtidigt som resten beh\xE5lls som gemener.\

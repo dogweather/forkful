@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:51.058893-07:00
 description: "Tekstitiedoston lukeminen Visual Basic for Applications (VBA) -ohjelmalla\
   \ sis\xE4lt\xE4\xE4 ohjelmakoodin avulla teht\xE4v\xE4n p\xE4\xE4syn ja tiedoston\
   \ sis\xE4ll\xF6n purkamisen\u2026"
-lastmod: 2024-02-18 23:09:07.431234
+lastmod: 2024-02-19 22:05:15.315543
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen Visual Basic for Applications (VBA) -ohjelmalla\
   \ sis\xE4lt\xE4\xE4 ohjelmakoodin avulla teht\xE4v\xE4n p\xE4\xE4syn ja tiedoston\

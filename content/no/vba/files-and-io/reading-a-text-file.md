@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:35.103944-07:00
 description: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\
   \ en\u2026"
-lastmod: 2024-02-18 23:08:53.746508
+lastmod: 2024-02-19 22:04:59.884975
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6rer\
   \ \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\

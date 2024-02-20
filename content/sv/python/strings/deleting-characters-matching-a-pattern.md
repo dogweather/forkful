@@ -1,10 +1,8 @@
 ---
-aliases:
-- /sv/python/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:48.189724-07:00
 description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man filtrerar\
   \ bort specifika karakt\xE4rer fr\xE5n en str\xE4ng baserat p\xE5 definierade kriterier.\u2026"
-lastmod: 2024-02-18 23:08:51.406850
+lastmod: 2024-02-19 22:04:56.707488
 model: gpt-4-1106-preview
 summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man filtrerar\
   \ bort specifika karakt\xE4rer fr\xE5n en str\xE4ng baserat p\xE5 definierade kriterier.\u2026"

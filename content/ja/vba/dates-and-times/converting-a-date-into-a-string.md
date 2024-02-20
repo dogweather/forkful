@@ -1,11 +1,9 @@
 ---
-aliases:
-- /ja/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:09.836854-07:00
 description: "Visual Basic for\u2026"
-lastmod: 2024-02-18 23:08:54.772406
+lastmod: 2024-02-19 22:05:01.067130
 model: gpt-4-0125-preview
 summary: "Visual Basic for\u2026"
 title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"

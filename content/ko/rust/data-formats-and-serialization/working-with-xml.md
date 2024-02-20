@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/working-with-xml/
 date: 2024-01-26 04:35:55.387282-07:00
 description: "XML\uC740 eXtensible Markup Language\uC758 \uC57D\uC5B4\uB85C, JSON\uC758\
   \ \uC7A5\uD669\uD55C \uC0AC\uCD0C\uACFC \uAC19\uC2B5\uB2C8\uB2E4. \uC5EC\uB7EC\uBD84\
@@ -9,7 +7,7 @@ description: "XML\uC740 eXtensible Markup Language\uC758 \uC57D\uC5B4\uB85C, JSO
   \uC9C0 \uC54A\uC740 API\uB97C \uB2E4\uB8F0 \uB54C XML\uACFC \uC528\uB984\uD558\uAC8C\
   \ \uB420 \uAC83\uC785\uB2C8\uB2E4. XML\uC740 \uB370\uC774\uD130 \uAD50\uD658\uC5D0\
   \uC11C \uC5EC\uC804\uD788 \uADF8\u2026"
-lastmod: 2024-02-18 23:09:05.922080
+lastmod: 2024-02-19 22:05:13.857182
 model: gpt-4-0125-preview
 summary: "XML\uC740 eXtensible Markup Language\uC758 \uC57D\uC5B4\uB85C, JSON\uC758\
   \ \uC7A5\uD669\uD55C \uC0AC\uCD0C\uACFC \uAC19\uC2B5\uB2C8\uB2E4. \uC5EC\uB7EC\uBD84\

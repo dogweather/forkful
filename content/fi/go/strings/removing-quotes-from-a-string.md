@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/go/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:33.044836-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun\
   \ merkkijonon alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"
-lastmod: 2024-02-18 23:09:07.070708
+lastmod: 2024-02-19 22:05:14.951639
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun merkkijonon\
   \ alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"

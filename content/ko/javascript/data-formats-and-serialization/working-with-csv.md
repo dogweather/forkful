@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/javascript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:28.528101-07:00
@@ -13,7 +11,7 @@ description: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C CSV(\uC27C\uD45C\
   \ \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774\
   \ \uC774\uB97C \uC218\uD589\uD558\uB294 \uC774\uC720\uB294 \uC560\uD50C\uB9AC\uCF00\
   \uC774\uC158, \uB370\uC774\uD130\uBCA0\uC774\uC2A4, \uC2DC\uC2A4\uD15C\u2026"
-lastmod: 2024-02-18 23:09:06.847789
+lastmod: 2024-02-19 22:05:14.738466
 model: gpt-4-0125-preview
 summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C CSV(\uC27C\uD45C\uB85C\
   \ \uAD6C\uBD84\uB41C \uAC12\uB4E4)\uB97C \uCC98\uB9AC\uD558\uB294 \uAC83\uC740 \uC678\

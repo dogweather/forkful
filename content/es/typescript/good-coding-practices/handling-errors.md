@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/typescript/handling-errors/
 date: 2024-01-26 00:58:10.232860-07:00
 description: "El manejo de errores se refiere a esperar lo inesperado; es c\xF3mo\
   \ administramos cuando las cosas van mal en nuestro c\xF3digo. Lo hacemos para evitar\
   \ bloqueos\u2026"
-lastmod: 2024-02-18 23:09:09.710878
+lastmod: 2024-02-19 22:05:17.337864
 model: gpt-4-1106-preview
 summary: "El manejo de errores se refiere a esperar lo inesperado; es c\xF3mo administramos\
   \ cuando las cosas van mal en nuestro c\xF3digo. Lo hacemos para evitar bloqueos\u2026"

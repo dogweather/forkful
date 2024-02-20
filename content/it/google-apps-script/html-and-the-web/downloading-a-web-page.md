@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/google-apps-script/downloading-a-web-page/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:32.298891-07:00
 description: "Scaricare una pagina web in Google Apps Script comporta il recupero\
   \ del contenuto di una pagina web tramite HTML per vari scopi, come lo scraping\
   \ web,\u2026"
-lastmod: 2024-02-18 23:08:55.476266
+lastmod: 2024-02-19 22:05:02.059977
 model: gpt-4-0125-preview
 summary: "Scaricare una pagina web in Google Apps Script comporta il recupero del\
   \ contenuto di una pagina web tramite HTML per vari scopi, come lo scraping web,\u2026"

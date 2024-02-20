@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/swift/searching-and-replacing-text/
 date: 2024-01-20 17:58:44.178581-07:00
 description: "Searching and replacing text in programming is exactly what it sounds\
   \ like: scanning strings for certain patterns and swapping those out for something\u2026"
-lastmod: 2024-02-18 23:09:11.381836
+lastmod: 2024-02-19 22:05:18.844512
 model: gpt-4-1106-preview
 summary: "Searching and replacing text in programming is exactly what it sounds like:\
   \ scanning strings for certain patterns and swapping those out for something\u2026"

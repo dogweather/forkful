@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/vba/printing-debug-output/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:23.737007-07:00
 description: "Imprimer des sorties de d\xE9bogage dans Visual Basic pour Applications\
   \ (VBA) implique de placer strat\xE9giquement des instructions print dans votre\
   \ code pour\u2026"
-lastmod: 2024-02-18 23:09:08.581837
+lastmod: 2024-02-19 22:05:16.358249
 model: gpt-4-0125-preview
 summary: "Imprimer des sorties de d\xE9bogage dans Visual Basic pour Applications\
   \ (VBA) implique de placer strat\xE9giquement des instructions print dans votre\

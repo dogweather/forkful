@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/python/using-a-debugger/
 date: 2024-01-26 04:09:04.557774-07:00
 description: "\"U\u017Cywanie debugera\" polega na krok po kroku przegl\u0105daniu\
   \ kodu Pythona, aby odkrywa\u0107 b\u0142\u0119dy i rozumie\u0107 zachowanie. Robimy\
   \ to, poniewa\u017C jest to znacznie\u2026"
-lastmod: 2024-02-18 23:08:49.227244
+lastmod: 2024-02-19 22:04:54.138264
 model: gpt-4-0125-preview
 summary: "\"U\u017Cywanie debugera\" polega na krok po kroku przegl\u0105daniu kodu\
   \ Pythona, aby odkrywa\u0107 b\u0142\u0119dy i rozumie\u0107 zachowanie. Robimy\

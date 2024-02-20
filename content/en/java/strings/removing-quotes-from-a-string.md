@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/java/removing-quotes-from-a-string/
 date: 2024-01-25 20:49:58.976094-07:00
 description: "Removing quotes from a string means stripping out any quotation marks\u2014\
   single (' '), double (\" \"), or both\u2014from the text data. Programmers do it\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:10.919320
+lastmod: 2024-02-19 22:05:18.429953
 model: gpt-4-1106-preview
 summary: "Removing quotes from a string means stripping out any quotation marks\u2014\
   single (' '), double (\" \"), or both\u2014from the text data. Programmers do it\

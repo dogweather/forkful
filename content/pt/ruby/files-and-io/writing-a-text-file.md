@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/ruby/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:54.798102-07:00
 description: "Escrever em um arquivo de texto em Ruby \xE9 uma opera\xE7\xE3o fundamental\
   \ que permite armazenar sa\xEDdas e dados de forma persistente, possibilitando o\
   \ acesso ou a\u2026"
-lastmod: 2024-02-18 23:08:58.684085
+lastmod: 2024-02-19 22:05:06.186936
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Ruby \xE9 uma opera\xE7\xE3o fundamental\
   \ que permite armazenar sa\xEDdas e dados de forma persistente, possibilitando o\

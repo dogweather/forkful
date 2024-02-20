@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:00:46.388908-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med basisgodkjenning betyr \xE5 kreve\
   \ tilgang til en beskyttet ressurs p\xE5 nettet ved \xE5 inkludere brukernavn og\
   \ passord.\u2026"
-lastmod: 2024-02-18 23:08:54.142413
+lastmod: 2024-02-19 22:05:00.329805
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med basisgodkjenning betyr \xE5 kreve\
   \ tilgang til en beskyttet ressurs p\xE5 nettet ved \xE5 inkludere brukernavn og\

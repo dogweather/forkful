@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/php/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:22.157866-07:00
 description: "Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista\
   \ ja suorittamista, jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.\u2026"
-lastmod: 2024-02-18 23:09:07.715268
+lastmod: 2024-02-19 22:05:15.553861
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista ja suorittamista,\
   \ jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.\u2026"

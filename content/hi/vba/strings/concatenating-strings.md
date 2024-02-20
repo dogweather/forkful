@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/vba/concatenating-strings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:58.121744-07:00
@@ -14,7 +12,7 @@ description: "\u0935\u093F\u091C\u093C\u0941\u0905\u0932 \u092C\u0947\u0938\u093
   \u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u092E\u0947\u0902 \u090F\
   \u0915 \u092E\u094C\u0932\u093F\u0915 \u0915\u093E\u0930\u094D\u092F \u0939\u0948\
   , \u091C\u094B\u2026"
-lastmod: 2024-02-18 23:09:03.019405
+lastmod: 2024-02-19 22:05:11.016879
 model: gpt-4-0125-preview
 summary: "\u0935\u093F\u091C\u093C\u0941\u0905\u0932 \u092C\u0947\u0938\u093F\u0915\
   \ \u092B\u0949\u0930 \u090F\u092A\u094D\u0932\u0940\u0915\u0947\u0936\u0928\u094D\

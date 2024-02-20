@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/refactoring/
 date: 2024-01-26 03:36:56.295531-07:00
 description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenrakennetaan\
   \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4t sit\xE4\
   \u2026"
-lastmod: 2024-02-18 23:09:07.998793
+lastmod: 2024-02-19 22:05:15.810812
 model: gpt-4-0125-preview
 summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenrakennetaan\
   \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4t sit\xE4\

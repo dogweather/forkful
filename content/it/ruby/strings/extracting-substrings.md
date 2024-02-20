@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/ruby/extracting-substrings/
 date: 2024-01-20 17:46:33.980109-07:00
 description: "Estrarre sottostringhe significa selezionare parti specifiche di una\
   \ stringa. Programmatori lo fanno per manipolare testo: validare input, estrarre\
   \ dati,\u2026"
-lastmod: 2024-02-18 23:08:56.370815
+lastmod: 2024-02-19 22:05:03.010562
 model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa selezionare parti specifiche di una stringa.\
   \ Programmatori lo fanno per manipolare testo: validare input, estrarre dati,\u2026"

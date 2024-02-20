@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/go/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:30.966260-07:00
 description: "Die Arbeit mit YAML in Go beinhaltet das Parsen von YAML-Dateien (YAML\
   \ Ain't Markup Language), einem menschenfreundlichen Daten-Serialisierungsstandard,\u2026"
-lastmod: 2024-02-18 23:09:04.387431
+lastmod: 2024-02-19 22:05:12.355992
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit YAML in Go beinhaltet das Parsen von YAML-Dateien (YAML Ain't\
   \ Markup Language), einem menschenfreundlichen Daten-Serialisierungsstandard,\u2026"

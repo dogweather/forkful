@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
@@ -14,7 +12,7 @@ description: "Elixir\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC
   \uC5D0 \uBBFC\uAC10\uD55C \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uB9CC\uB4E4\
   \uACE0, \uC6F9 \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB9AC\uD3EC\uD2B8\
   \uB098 \uD0C0\uC784\uC2A4\uD0EC\uD504\uB97C\u2026"
-lastmod: 2024-02-18 23:09:05.771850
+lastmod: 2024-02-19 22:05:13.684111
 model: gpt-4-0125-preview
 summary: "Elixir\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB294\
   \ \uAC83\uC740 \uC2DC\uC2A4\uD15C\uC758 \uB0A0\uC9DC\uC640 \uC2DC\uAC04 \uC815\uBCF4\

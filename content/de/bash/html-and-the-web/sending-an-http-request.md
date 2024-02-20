@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/bash/sending-an-http-request/
 date: 2024-01-20 17:59:02.407574-07:00
 description: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs.\
   \ Programmierer nutzen sie, um mit Webservern zu kommunizieren \u2013 Daten abfragen\
   \ oder\u2026"
-lastmod: 2024-02-18 23:09:05.051087
+lastmod: 2024-02-19 22:05:12.987506
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs. Programmierer\
   \ nutzen sie, um mit Webservern zu kommunizieren \u2013 Daten abfragen oder\u2026"

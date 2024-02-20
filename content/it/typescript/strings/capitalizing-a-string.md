@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/typescript/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:40.794443-07:00
 description: "Capitalizzare una stringa comporta modificare il primo carattere di\
   \ una data stringa in maiuscolo se \xE8 in minuscolo, lasciando spesso inalterata\
   \ la\u2026"
-lastmod: 2024-02-18 23:08:55.624794
+lastmod: 2024-02-19 22:05:02.219679
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa comporta modificare il primo carattere di una\
   \ data stringa in maiuscolo se \xE8 in minuscolo, lasciando spesso inalterata la\u2026"

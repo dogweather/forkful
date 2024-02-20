@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/refactoring/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:10.846321-07:00
 description: "Ohjelmoinnissa refaktorointi tarkoittaa koodin rakenteen muuttamista\
   \ muuttamatta sen toimintaa, jotta esimerkiksi sen luettavuus, yll\xE4pidett\xE4\
   vyys tai\u2026"
-lastmod: 2024-02-18 23:09:07.420682
+lastmod: 2024-02-19 22:05:15.305506
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa refaktorointi tarkoittaa koodin rakenteen muuttamista muuttamatta\
   \ sen toimintaa, jotta esimerkiksi sen luettavuus, yll\xE4pidett\xE4vyys tai\u2026"

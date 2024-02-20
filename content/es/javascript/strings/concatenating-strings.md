@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/javascript/concatenating-strings/
 date: 2024-01-20 17:35:02.532994-07:00
 description: "Concatenar cadenas significa unir dos o m\xE1s textos en uno. Los programadores\
   \ lo hacen para manipular y combinar informaci\xF3n textual de manera din\xE1mica\
   \ y\u2026"
-lastmod: 2024-02-18 23:09:10.395822
+lastmod: 2024-02-19 22:05:17.954947
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas significa unir dos o m\xE1s textos en uno. Los programadores\
   \ lo hacen para manipular y combinar informaci\xF3n textual de manera din\xE1mica\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/google-apps-script/reading-command-line-arguments/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:51.591440-07:00
 description: "Leggere gli argomenti della riga di comando in Google Apps Script \xE8\
   \ un po' improprio perch\xE9, a differenza delle interfacce a riga di comando tradizionali\u2026"
-lastmod: 2024-02-18 23:08:55.494617
+lastmod: 2024-02-19 22:05:02.079596
 model: gpt-4-0125-preview
 summary: "Leggere gli argomenti della riga di comando in Google Apps Script \xE8 un\
   \ po' improprio perch\xE9, a differenza delle interfacce a riga di comando tradizionali\u2026"

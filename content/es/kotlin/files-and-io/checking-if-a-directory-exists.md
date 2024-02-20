@@ -1,12 +1,10 @@
 ---
-aliases:
-- /es/kotlin/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:37.683391-07:00
 description: "Comprobar si un directorio existe en Kotlin implica verificar la presencia\
   \ de un directorio en una ruta especificada. Los programadores realizan esta\u2026"
-lastmod: 2024-02-18 23:09:09.951777
+lastmod: 2024-02-19 22:05:17.557179
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en Kotlin implica verificar la presencia\
   \ de un directorio en una ruta especificada. Los programadores realizan esta\u2026"

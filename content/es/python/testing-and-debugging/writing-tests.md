@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/python/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:27.244641-07:00
 description: "Escribir pruebas en Python implica crear scripts automatizados para\
   \ validar la correcci\xF3n de tu c\xF3digo. Los programadores hacen esto para asegurarse\
   \ de\u2026"
-lastmod: 2024-02-18 23:09:09.560265
+lastmod: 2024-02-19 22:05:17.209835
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Python implica crear scripts automatizados para validar\
   \ la correcci\xF3n de tu c\xF3digo. Los programadores hacen esto para asegurarse\

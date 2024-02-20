@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/haskell/reading-command-line-arguments/
 date: 2024-01-20 17:56:16.539737-07:00
 description: "Ler argumentos da linha de comando \xE9 o ato de pegar informa\xE7\xF5\
   es digitadas pelo usu\xE1rio quando eles executam seu programa. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-18 23:08:58.214413
+lastmod: 2024-02-19 22:05:05.687432
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando \xE9 o ato de pegar informa\xE7\xF5es\
   \ digitadas pelo usu\xE1rio quando eles executam seu programa. Programadores fazem\

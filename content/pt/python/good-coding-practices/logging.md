@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/python/logging/
 date: 2024-01-26 01:07:43.561422-07:00
 description: "O logging \xE9 o processo de registrar eventos da aplica\xE7\xE3o enquanto\
   \ um programa est\xE1 em execu\xE7\xE3o, fornecendo um rastro de migalhas para an\xE1\
   lise post-mortem\u2026"
-lastmod: 2024-02-18 23:08:57.767424
+lastmod: 2024-02-19 22:05:05.231005
 model: gpt-4-1106-preview
 summary: "O logging \xE9 o processo de registrar eventos da aplica\xE7\xE3o enquanto\
   \ um programa est\xE1 em execu\xE7\xE3o, fornecendo um rastro de migalhas para an\xE1\

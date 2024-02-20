@@ -1,12 +1,10 @@
 ---
-aliases:
-- /sv/java/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:37.033311-07:00
 description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language,\" \xE4r en l\xE4\
   sbar standard f\xF6r dataserialisering som programmerare anv\xE4nder f\xF6r konfigurationsfiler,\u2026"
-lastmod: 2024-02-18 23:08:51.688875
+lastmod: 2024-02-19 22:04:57.017919
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language,\" \xE4r en l\xE4\
   sbar standard f\xF6r dataserialisering som programmerare anv\xE4nder f\xF6r konfigurationsfiler,\u2026"

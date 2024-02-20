@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/using-an-interactive-shell-repl/
 date: 2024-01-26 04:11:14.709113-07:00
 description: "REPL sta per Read-Eval-Print Loop (Ciclo di Lettura-Valutazione-Stampa),\
   \ un ambiente di programmazione computerizzato semplice e interattivo. I\u2026"
-lastmod: 2024-02-18 23:08:56.054134
+lastmod: 2024-02-19 22:05:02.672902
 model: gpt-4-0125-preview
 summary: "REPL sta per Read-Eval-Print Loop (Ciclo di Lettura-Valutazione-Stampa),\
   \ un ambiente di programmazione computerizzato semplice e interattivo. I\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/google-apps-script/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:36.074554-07:00
 description: "Een tekstbestand lezen met Google Apps Script (GAS) omvat het toegang\
   \ krijgen tot en het extraheren van tekstgegevens uit bestanden opgeslagen in Google\u2026"
-lastmod: 2024-02-18 23:09:01.405610
+lastmod: 2024-02-19 22:05:09.437153
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen met Google Apps Script (GAS) omvat het toegang krijgen\
   \ tot en het extraheren van tekstgegevens uit bestanden opgeslagen in Google\u2026"

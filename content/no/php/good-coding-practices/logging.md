@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/php/logging/
 date: 2024-01-26 01:07:49.412606-07:00
 description: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din;\
   \ det er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle\
   \ datapunkter som\u2026"
-lastmod: 2024-02-18 23:08:53.981434
+lastmod: 2024-02-19 22:05:00.156750
 model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din; det\
   \ er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle datapunkter\

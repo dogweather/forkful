@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/vba/using-a-debugger/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:43.656132-07:00
@@ -12,7 +10,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uBC84\uAC70\
   \uBCC4\uD558\uACE0 \uC218\uC815\uD558\uB294 \uB370 \uC911\uC694\uD558\uBA70, \uACB0\
   \uAD6D \uCF54\uB4DC\uAC00 \uC608\uC0C1\uB300\uB85C \uC2E4\uD589\uB418\uB3C4\uB85D\
   \ \uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:05.960177
+lastmod: 2024-02-19 22:05:13.894969
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uBC84\uAC70\uB97C\
   \ \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \uCF54\uB4DC\uB97C \uB2E8\uACC4\uBCC4\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/vba/parsing-html/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:02.752208-07:00
 description: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
   \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\
   t\u2026"
-lastmod: 2024-02-18 23:09:07.408101
+lastmod: 2024-02-19 22:05:15.293586
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
   \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\

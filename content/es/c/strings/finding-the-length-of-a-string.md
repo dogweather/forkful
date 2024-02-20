@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/c/finding-the-length-of-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:29.076204-07:00
 description: "Encontrar la longitud de una cadena en C implica determinar el n\xFA\
   mero de caracteres antes del terminador nulo `\\0`. Los programadores hacen esto\
   \ para\u2026"
-lastmod: 2024-02-18 23:09:10.490459
+lastmod: 2024-02-19 22:05:18.042030
 model: gpt-4-0125-preview
 summary: "Encontrar la longitud de una cadena en C implica determinar el n\xFAmero\
   \ de caracteres antes del terminador nulo `\\0`. Los programadores hacen esto para\u2026"

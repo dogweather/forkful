@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/working-with-xml/
 date: 2024-01-26 04:32:50.043810-07:00
 description: "XML:n kanssa ty\xF6skentely tarkoittaa XML-sis\xE4ll\xF6n j\xE4sent\xE4\
   mist\xE4, muokkaamista ja tuottamista koodin avulla. Ohjelmoijat tekev\xE4t n\xE4\
   in, koska XML:\xE4\xE4 k\xE4ytet\xE4\xE4n\u2026"
-lastmod: 2024-02-18 23:09:08.062537
+lastmod: 2024-02-19 22:05:15.869076
 model: gpt-4-0125-preview
 summary: "XML:n kanssa ty\xF6skentely tarkoittaa XML-sis\xE4ll\xF6n j\xE4sent\xE4\
   mist\xE4, muokkaamista ja tuottamista koodin avulla. Ohjelmoijat tekev\xE4t n\xE4\

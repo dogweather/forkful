@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/c-sharp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:04.359725-07:00
 description: "Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, ett\xE4\
   \ voimme vertailla tekstej\xE4 tasapuolisesti riippumatta alkuper\xE4isest\xE4 kirjainkoosta\
   \ tai\u2026"
-lastmod: 2024-02-18 23:09:07.606544
+lastmod: 2024-02-19 22:05:15.453454
 model: gpt-4-1106-preview
 summary: "Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, ett\xE4 voimme\
   \ vertailla tekstej\xE4 tasapuolisesti riippumatta alkuper\xE4isest\xE4 kirjainkoosta\

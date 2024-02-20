@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/typescript/refactoring/
 date: 2024-01-26 03:36:26.384554-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\
   \ utan att \xE4ndra dess yttre beteende. Programmerare g\xF6r det f\xF6r att g\xF6\
   ra koden renare,\u2026"
-lastmod: 2024-02-18 23:08:51.551523
+lastmod: 2024-02-19 22:04:56.866219
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
   \ att \xE4ndra dess yttre beteende. Programmerare g\xF6r det f\xF6r att g\xF6ra\

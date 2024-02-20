@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:02.446846-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa p\xE4\
   iv\xE4m\xE4\xE4r\xE4\xE4 edustavan tietorakenteen siirt\xE4mist\xE4 tekstiesitykseen.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta\u2026"
-lastmod: 2024-02-18 23:09:07.956653
+lastmod: 2024-02-19 22:05:15.771754
 model: gpt-4-1106-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa p\xE4iv\xE4\
   m\xE4\xE4r\xE4\xE4 edustavan tietorakenteen siirt\xE4mist\xE4 tekstiesitykseen.\

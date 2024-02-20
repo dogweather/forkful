@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/go/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:43.896099-07:00
@@ -12,7 +10,7 @@ description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON (JavaScript Objec
   \u0430\u043D\u0438\u0445 Go \u0442\u0430 \u0444\u043E\u0440\u043C\u0430\u0442\u043E\
   \u043C JSON. \u0426\u0435 \u0437\u0430\u0432\u0434\u0430\u043D\u043D\u044F \u0454\
   \ \u043F\u043E\u0432\u0441\u044E\u0434\u043D\u0438\u043C\u2026"
-lastmod: 2024-02-18 23:08:59.716288
+lastmod: 2024-02-19 22:05:07.540733
 model: gpt-4-0125-preview
 summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON (JavaScript Object Notation)\
   \ \u0432 Go \u0432\u043A\u043B\u044E\u0447\u0430\u0454 \u043A\u043E\u0434\u0443\u0432\

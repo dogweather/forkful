@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/google-apps-script/generating-random-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:11.962863-07:00
@@ -12,7 +10,7 @@ description: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u5B57\u662F
   \u4EEC\u5728 Google \u751F\u6001\u7CFB\u7EDF\u5185\u7684\u5E94\u7528\u7A0B\u5E8F\
   \uFF08\u5305\u62EC Sheets\u3001Docs \u548C Forms\uFF09\u6DFB\u52A0\u4E0D\u53EF\u9884\
   \u6D4B\u6027\u3002"
-lastmod: 2024-02-18 23:08:58.745837
+lastmod: 2024-02-19 22:05:06.271989
 model: gpt-4-0125-preview
 summary: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u5B57\u662F\u4E00\
   \u9879\u57FA\u672C\u4EFB\u52A1\uFF0C\u7528\u4E8E\u4F17\u591A\u5E94\u7528\u4E2D\uFF0C\

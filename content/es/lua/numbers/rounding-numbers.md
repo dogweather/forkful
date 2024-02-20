@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/lua/rounding-numbers/
 date: 2024-01-26 03:45:47.962019-07:00
 description: "Redondear n\xFAmeros significa ajustarlos al entero m\xE1s cercano o\
   \ al lugar decimal especificado. Es un pilar en la programaci\xF3n para reducir\
   \ la complejidad,\u2026"
-lastmod: 2024-02-18 23:09:10.113957
+lastmod: 2024-02-19 22:05:17.704526
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa ajustarlos al entero m\xE1s cercano o al\
   \ lugar decimal especificado. Es un pilar en la programaci\xF3n para reducir la\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/lua/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:11.295197-07:00
 description: "Een HTTP-verzoek verzenden met basisverificatie is wanneer je een oproep\
   \ doet naar een webserver, inclusief een gebruikersnaam en wachtwoord voor toegang.\u2026"
-lastmod: 2024-02-18 23:09:01.990996
+lastmod: 2024-02-19 22:05:10.012135
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden met basisverificatie is wanneer je een oproep\
   \ doet naar een webserver, inclusief een gebruikersnaam en wachtwoord voor toegang.\u2026"

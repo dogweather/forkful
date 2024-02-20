@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/c/working-with-complex-numbers/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:58.215094-07:00
@@ -14,7 +12,7 @@ description: "\u8907\u7D20\u6570\u306F\u5B9F\u90E8\u3068\u865A\u90E8\u304B\u3089
   \u3001\u7279\u5B9A\u306E\u7A2E\u985E\u306E\u6570\u5B66\u65B9\u7A0B\u5F0F\u306E\u89E3\
   \u6C7A\u306B\u5F7C\u3089\u306E\u30E6\u30CB\u30FC\u30AF\u306A\u7279\u6027\u3092\u6D3B\
   \u7528\u3057\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.343461
+lastmod: 2024-02-19 22:05:01.894654
 model: gpt-4-0125-preview
 summary: "\u8907\u7D20\u6570\u306F\u5B9F\u90E8\u3068\u865A\u90E8\u304B\u3089\u69CB\
   \u6210\u3055\u308C\u3001\u300Ca + bi\u300D\u3068\u8868\u3055\u308C\u307E\u3059\u3002\

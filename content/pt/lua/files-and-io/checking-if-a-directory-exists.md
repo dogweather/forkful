@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/lua/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:54.411229-07:00
 description: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ ao escrever scripts que interagem com o sistema de arquivos, garantindo que seu\
   \ programa opere\u2026"
-lastmod: 2024-02-18 23:08:58.296240
+lastmod: 2024-02-19 22:05:05.775998
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ ao escrever scripts que interagem com o sistema de arquivos, garantindo que seu\

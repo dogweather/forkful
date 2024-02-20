@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/typescript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:32:29.412439-07:00
 description: "Calcolare una data nel futuro o nel passato significa semplicemente\
   \ aggiungere o sottrarre un certo numero di giorni, mesi o anni da una data specifica.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:55.653037
+lastmod: 2024-02-19 22:05:02.250015
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato significa semplicemente aggiungere\
   \ o sottrarre un certo numero di giorni, mesi o anni da una data specifica. I\u2026"

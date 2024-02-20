@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/fish-shell/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:43.233353-07:00
 description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res consiste \xE0\
   \ enlever ces fameux guillemets simples (' ') ou doubles (\" \") de vos donn\xE9\
   es textuelles. Les\u2026"
-lastmod: 2024-02-18 23:09:09.290244
+lastmod: 2024-02-19 22:05:16.960530
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res consiste \xE0 enlever\
   \ ces fameux guillemets simples (' ') ou doubles (\" \") de vos donn\xE9es textuelles.\

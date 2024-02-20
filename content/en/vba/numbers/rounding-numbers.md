@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/rounding-numbers/
 date: 2024-02-01 21:30:24.812939-07:00
 description: "Rounding numbers in programming is about approximating a number to its\
   \ nearest whole number or to a certain number of decimal places. Programmers round\u2026"
-lastmod: 2024-02-18 23:09:10.884823
+lastmod: 2024-02-19 22:05:18.398231
 model: gpt-4-0125-preview
 summary: "Rounding numbers in programming is about approximating a number to its nearest\
   \ whole number or to a certain number of decimal places. Programmers round\u2026"

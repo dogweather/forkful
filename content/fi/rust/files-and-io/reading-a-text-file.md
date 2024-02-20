@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/rust/reading-a-text-file/
 date: 2024-01-20 17:55:13.622010-07:00
 description: "Rustissa tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6\
   n saattamista ohjelman k\xE4ytt\xF6\xF6n. Ohjelmoijat lukevat tiedostoja, koska\
   \ niist\xE4 saadaan\u2026"
-lastmod: 2024-02-18 23:09:07.382458
+lastmod: 2024-02-19 22:05:15.269250
 model: gpt-4-1106-preview
 summary: "Rustissa tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n saattamista\
   \ ohjelman k\xE4ytt\xF6\xF6n. Ohjelmoijat lukevat tiedostoja, koska niist\xE4 saadaan\u2026"

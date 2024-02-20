@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/cpp/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:02.971404-07:00
@@ -12,7 +10,7 @@ description: "\u7528C++\u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\u5C0F\u5
   \uFF08\u5373\uFF0C\u65B0\u7684\u66F4\u6539\u7834\u574F\u73B0\u6709\u529F\u80FD\uFF09\
   \u4EE5\u53CA\u968F\u65F6\u95F4\u63A8\u79FB\u4FC3\u8FDB\u4EE3\u7801\u5E93\u7684\u53EF\
   \u7EF4\u62A4\u6027\u3002"
-lastmod: 2024-02-18 23:08:59.408525
+lastmod: 2024-02-19 22:05:07.171017
 model: gpt-4-0125-preview
 summary: "\u7528C++\u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\u5C0F\u578B\u7684\
   \u3001\u72EC\u7ACB\u7684\u7A0B\u5E8F\uFF0C\u8FD9\u4E9B\u7A0B\u5E8F\u80FD\u81EA\u52A8\

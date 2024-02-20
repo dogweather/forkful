@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/cpp/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:10.945573-07:00
 description: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar ett\
   \ s\xF6km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar. Programmerare\
   \ anv\xE4nder dem f\xF6r\u2026"
-lastmod: 2024-02-18 23:08:52.074248
+lastmod: 2024-02-19 22:04:57.435571
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar ett s\xF6\
   km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar. Programmerare\

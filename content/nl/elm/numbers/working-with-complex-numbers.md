@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elm/working-with-complex-numbers/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:57.320260-07:00
 description: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
   \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"
-lastmod: 2024-02-18 23:09:01.752661
+lastmod: 2024-02-19 22:05:09.771526
 model: gpt-4-0125-preview
 summary: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
   \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"

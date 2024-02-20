@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/clojure/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:24.675048-07:00
 description: "Converting a date to a string means transforming a date object into\
   \ human-readable text. Programmers do it to display dates in understandable formats\
   \ or\u2026"
-lastmod: 2024-02-18 23:09:10.735241
+lastmod: 2024-02-19 22:05:18.263460
 model: gpt-4-1106-preview
 summary: "Converting a date to a string means transforming a date object into human-readable\
   \ text. Programmers do it to display dates in understandable formats or\u2026"

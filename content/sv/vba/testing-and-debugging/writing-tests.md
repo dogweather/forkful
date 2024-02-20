@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/writing-tests/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:56.776142-07:00
 description: "Att skriva tester inom programmering inneb\xE4r att skapa specifika\
   \ procedurer f\xF6r att validera funktionaliteten och prestandan hos dina kodsegment,\
   \ f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.630546
+lastmod: 2024-02-19 22:04:56.953358
 model: gpt-4-0125-preview
 summary: "Att skriva tester inom programmering inneb\xE4r att skapa specifika procedurer\
   \ f\xF6r att validera funktionaliteten och prestandan hos dina kodsegment, f\xF6\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/c-sharp/organizing-code-into-functions/
 date: 2024-01-26 01:09:41.385527-07:00
 description: "Regrouper le code en fonctions, c'est comme trier des briques LEGO dans\
   \ des bacs \u2013 cela facilite leur recherche et leur utilisation. Nous faisons\
   \ cela\u2026"
-lastmod: 2024-02-18 23:09:08.833834
+lastmod: 2024-02-19 22:05:16.533840
 model: gpt-4-1106-preview
 summary: "Regrouper le code en fonctions, c'est comme trier des briques LEGO dans\
   \ des bacs \u2013 cela facilite leur recherche et leur utilisation. Nous faisons\

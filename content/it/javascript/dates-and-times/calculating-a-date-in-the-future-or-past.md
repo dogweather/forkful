@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/javascript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:14.364798-07:00
 description: "Calcolare una data futura o passata significa semplicemente determinare\
   \ una data aggiungendo o sottraendo giorni, mesi o anni da una data di partenza.\
   \ I\u2026"
-lastmod: 2024-02-18 23:08:56.265785
+lastmod: 2024-02-19 22:05:02.899933
 model: gpt-4-1106-preview
 summary: "Calcolare una data futura o passata significa semplicemente determinare\
   \ una data aggiungendo o sottraendo giorni, mesi o anni da una data di partenza.\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/powershell/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:45.511524-07:00
 description: "\xC5 skrive tester i PowerShell involverer \xE5 lage skript som automatisk\
   \ validerer funksjonaliteten til PowerShell-koden din, for \xE5 sikre at den oppf\xF8\
   rer seg\u2026"
-lastmod: 2024-02-18 23:08:54.103566
+lastmod: 2024-02-19 22:05:00.289617
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i PowerShell involverer \xE5 lage skript som automatisk\
   \ validerer funksjonaliteten til PowerShell-koden din, for \xE5 sikre at den oppf\xF8\

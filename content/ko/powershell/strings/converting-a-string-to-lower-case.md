@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/powershell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:11.080344-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\
   \uB2E4\uB294 \uAC74, \uBB38\uC790\uC5F4 \uB0B4\uC758 \uBAA8\uB4E0 \uB300\uBB38\uC790\
@@ -10,7 +8,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uB098, \uB300\uC18C\uBB38\uC790\uB97C \uAD6C\uBCC4\uD558\uC9C0 \uC54A\uB294 \uAC80\
   \uC0C9\uC744 \uC218\uD589\uD560 \uB54C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.530996
+lastmod: 2024-02-19 22:05:14.437862
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\uB2E4\
   \uB294 \uAC74, \uBB38\uC790\uC5F4 \uB0B4\uC758 \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C\

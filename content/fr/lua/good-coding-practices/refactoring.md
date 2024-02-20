@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/lua/refactoring/
 date: 2024-01-26 01:45:47.099488-07:00
 description: "Le remaniement (ou refactoring) est l'art de retoucher le code existant\
   \ pour am\xE9liorer sa structure, sa lisibilit\xE9 et son efficacit\xE9 sans en\
   \ alt\xE9rer le\u2026"
-lastmod: 2024-02-18 23:09:08.978787
+lastmod: 2024-02-19 22:05:16.666711
 model: gpt-4-0125-preview
 summary: "Le remaniement (ou refactoring) est l'art de retoucher le code existant\
   \ pour am\xE9liorer sa structure, sa lisibilit\xE9 et son efficacit\xE9 sans en\

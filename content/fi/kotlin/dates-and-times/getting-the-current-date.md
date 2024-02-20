@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/kotlin/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:24.836746-07:00
 description: "Ohjelmoinnissa nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen on perusteht\xE4\
   v\xE4, joka mahdollistaa kehitt\xE4jille p\xE4\xE4syn nykyisen p\xE4iv\xE4m\xE4\xE4\
   r\xE4n tarkastelemiseen, n\xE4ytt\xE4miseen\u2026"
-lastmod: 2024-02-18 23:09:07.586312
+lastmod: 2024-02-19 22:05:15.434422
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen on perusteht\xE4\
   v\xE4, joka mahdollistaa kehitt\xE4jille p\xE4\xE4syn nykyisen p\xE4iv\xE4m\xE4\xE4\

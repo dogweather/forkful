@@ -1,12 +1,10 @@
 ---
-aliases:
-- /zh/elixir/starting-a-new-project/
 date: 2024-01-20 18:03:08.445990-07:00
 description: "\u65B0\u5EFA\u9879\u76EE\uFF0C\u5C31\u662F\u4ECE\u96F6\u5F00\u59CB\u521B\
   \u5EFA\u7A0B\u5E8F\u3002\u7A0B\u5E8F\u5458\u65B0\u5EFA\u9879\u76EE\u6765\u5B9E\u73B0\
   \u60F3\u6CD5\uFF0C\u89E3\u51B3\u95EE\u9898\u3002"
 isCJKLanguage: true
-lastmod: 2024-02-18 23:08:58.866596
+lastmod: 2024-02-19 22:05:06.437513
 model: gpt-4-1106-preview
 summary: "\u65B0\u5EFA\u9879\u76EE\uFF0C\u5C31\u662F\u4ECE\u96F6\u5F00\u59CB\u521B\
   \u5EFA\u7A0B\u5E8F\u3002\u7A0B\u5E8F\u5458\u65B0\u5EFA\u9879\u76EE\u6765\u5B9E\u73B0\

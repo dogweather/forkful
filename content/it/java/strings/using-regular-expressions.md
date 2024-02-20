@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/java/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:24.383275-07:00
 description: "Le espressioni regolari (regex) in Java ti permettono di definire schemi\
   \ specifici per cercare, manipolare o validare stringhe nel tuo codice. I\u2026"
-lastmod: 2024-02-18 23:08:55.756656
+lastmod: 2024-02-19 22:05:02.359838
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in Java ti permettono di definire schemi\
   \ specifici per cercare, manipolare o validare stringhe nel tuo codice. I\u2026"

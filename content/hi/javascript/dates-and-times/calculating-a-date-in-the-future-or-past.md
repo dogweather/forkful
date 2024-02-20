@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/javascript/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:41.664690-07:00
 description: "JavaScript \u092E\u0947\u0902 \u092D\u0935\u093F\u0937\u094D\u092F \u092F\
   \u093E \u0905\u0924\u0940\u0924 \u0915\u0940 \u0924\u093E\u0930\u0940\u0916 \u0915\
@@ -12,7 +10,7 @@ description: "JavaScript \u092E\u0947\u0902 \u092D\u0935\u093F\u0937\u094D\u092F
   \u094B\u0902 \u0915\u0947 \u0930\u093F\u0915\u093E\u0930\u094D\u0921\u094D\u200C\
   \u0938 \u0915\u094B \u0938\u0902\u092D\u093E\u0932\u0928\u0947 \u092E\u0947\u0902\
   \u2026"
-lastmod: 2024-02-18 23:09:04.067994
+lastmod: 2024-02-19 22:05:12.049585
 model: gpt-4-1106-preview
 summary: "JavaScript \u092E\u0947\u0902 \u092D\u0935\u093F\u0937\u094D\u092F \u092F\
   \u093E \u0905\u0924\u0940\u0924 \u0915\u0940 \u0924\u093E\u0930\u0940\u0916 \u0915\

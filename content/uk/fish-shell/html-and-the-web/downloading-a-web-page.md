@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/fish-shell/downloading-a-web-page/
 date: 2024-01-20 17:44:08.930540-07:00
 description: "Downloading a web page means grabbing its HTML content from the internet.\
   \ Programmers do this to automate data collection, test websites, or analyze\u2026"
-lastmod: 2024-02-18 23:09:01.110076
+lastmod: 2024-02-19 22:05:09.147946
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing its HTML content from the internet.\
   \ Programmers do this to automate data collection, test websites, or analyze\u2026"

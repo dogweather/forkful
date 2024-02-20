@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:29.060091-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\xE4\
   \xE4 `time.Time` -oliomuunnoksen luettavaan merkkijonomuotoon. Ohjelmoijat suorittavat\
   \ usein t\xE4m\xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.098633
+lastmod: 2024-02-19 22:05:14.978344
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\xE4\
   \xE4 `time.Time` -oliomuunnoksen luettavaan merkkijonomuotoon. Ohjelmoijat suorittavat\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:24.035740-07:00
 description: "Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonojen\
   \ muokkausta ja hallintaa, mik\xE4 on perusteht\xE4v\xE4 datan k\xE4sittelyss\xE4\
   \ ja\u2026"
-lastmod: 2024-02-18 23:09:07.067309
+lastmod: 2024-02-19 22:05:14.948016
 model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonojen\
   \ muokkausta ja hallintaa, mik\xE4 on perusteht\xE4v\xE4 datan k\xE4sittelyss\xE4\

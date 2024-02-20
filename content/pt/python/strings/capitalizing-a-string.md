@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/python/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:09.142599-07:00
 description: "Capitalizar uma string significa converter o primeiro caractere de uma\
   \ string para mai\xFAscula e o restante para min\xFAscula. Esta opera\xE7\xE3o \xE9\
   \ comumente usada\u2026"
-lastmod: 2024-02-18 23:08:57.744724
+lastmod: 2024-02-19 22:05:05.206352
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string significa converter o primeiro caractere de uma string\
   \ para mai\xFAscula e o restante para min\xFAscula. Esta opera\xE7\xE3o \xE9 comumente\

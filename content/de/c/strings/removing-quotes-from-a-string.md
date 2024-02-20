@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/removing-quotes-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:06.824802-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in C beinhaltet\
   \ das Extrahieren des Textinhalts ohne die einschlie\xDFenden einfachen (' ') oder\u2026"
-lastmod: 2024-02-18 23:09:05.359263
+lastmod: 2024-02-19 22:05:13.280019
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in C beinhaltet\
   \ das Extrahieren des Textinhalts ohne die einschlie\xDFenden einfachen (' ') oder\u2026"

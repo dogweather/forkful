@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/typescript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:05.985271-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o significa usar algoritmos\
   \ para encontrar e remover certos caracteres de uma string. Fazemos isso para\u2026"
-lastmod: 2024-02-18 23:08:57.869889
+lastmod: 2024-02-19 22:05:05.341549
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o significa usar algoritmos\
   \ para encontrar e remover certos caracteres de uma string. Fazemos isso para\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/typescript/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:36.027522-07:00
 description: "Zamiana daty na ci\u0105g znak\xF3w to proces przekszta\u0142cania obiekt\xF3\
   w daty w tekst. Robimy to, by \u0142atwiej by\u0142o przechowywa\u0107, wy\u015B\
   wietla\u0107 oraz wsp\xF3\u0142dzieli\u0107\u2026"
-lastmod: 2024-02-18 23:08:49.359260
+lastmod: 2024-02-19 22:04:54.278215
 model: gpt-4-1106-preview
 summary: "Zamiana daty na ci\u0105g znak\xF3w to proces przekszta\u0142cania obiekt\xF3\
   w daty w tekst. Robimy to, by \u0142atwiej by\u0142o przechowywa\u0107, wy\u015B\

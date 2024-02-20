@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/swift/using-a-debugger/
 date: 2024-01-26 04:10:40.698006-07:00
 description: "Usare un debugger significa utilizzare strumenti specializzati per testare\
   \ e ispezionare il tuo codice mentre viene eseguito. \xC8 importante perch\xE9 ti\u2026"
-lastmod: 2024-02-18 23:08:56.216734
+lastmod: 2024-02-19 22:05:02.848104
 model: gpt-4-0125-preview
 summary: "Usare un debugger significa utilizzare strumenti specializzati per testare\
   \ e ispezionare il tuo codice mentre viene eseguito. \xC8 importante perch\xE9 ti\u2026"

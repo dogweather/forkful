@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/powershell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:23.866101-07:00
 description: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 endre\
   \ alle bokstaver i teksten til deres lavere kasse ekvivalent. Programmerere gj\xF8\
   r dette for data-\u2026"
-lastmod: 2024-02-18 23:08:54.086473
+lastmod: 2024-02-19 22:05:00.271399
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 endre alle\
   \ bokstaver i teksten til deres lavere kasse ekvivalent. Programmerere gj\xF8r dette\

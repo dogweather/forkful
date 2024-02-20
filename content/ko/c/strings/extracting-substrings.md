@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/extracting-substrings/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:35.320801-07:00
@@ -13,7 +11,7 @@ description: "C\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\uCD9C\u
   \uB9AC \uB610\uB294 \uC785\uB825 \uC720\uD6A8\uC131 \uAC80\uC0AC\uB97C \uC704\uD574\
   \ \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uBA70, \uC774\uB294 \uD14D\uC2A4\uD2B8\
   \ \uB370\uC774\uD130\uB97C\u2026"
-lastmod: 2024-02-18 23:09:06.931990
+lastmod: 2024-02-19 22:05:14.818527
 model: gpt-4-0125-preview
 summary: "C\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\uCD9C\uD558\uB294\
   \ \uAC83\uC740 \uC9C0\uC815\uB41C \uAE30\uC900(\uC608: \uC704\uCE58, \uAE38\uC774\

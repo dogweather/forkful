@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/reading-command-line-arguments/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:12.801397-07:00
 description: "In C-programmering maakt het lezen van commandoregelargumenten het mogelijk\
   \ dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de\u2026"
-lastmod: 2024-02-18 23:09:02.390471
+lastmod: 2024-02-19 22:05:10.396358
 model: gpt-4-0125-preview
 summary: "In C-programmering maakt het lezen van commandoregelargumenten het mogelijk\
   \ dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/java/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:46.168370-07:00
 description: "Converter uma data em string \xE9 o processo de transformar a representa\xE7\
   \xE3o de data e hora do seu formato original, geralmente num\xE9rico ou de objeto,\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.030123
+lastmod: 2024-02-19 22:05:05.507010
 model: gpt-4-1106-preview
 summary: "Converter uma data em string \xE9 o processo de transformar a representa\xE7\
   \xE3o de data e hora do seu formato original, geralmente num\xE9rico ou de objeto,\

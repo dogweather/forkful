@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/lua/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:10.154747-07:00
 description: "Il recupero della data corrente nella programmazione \xE8 un compito\
   \ cruciale per una moltitudine di applicazioni, inclusi i registri degli eventi,\
   \ la\u2026"
-lastmod: 2024-02-18 23:08:56.020995
+lastmod: 2024-02-19 22:05:02.636970
 model: gpt-4-0125-preview
 summary: "Il recupero della data corrente nella programmazione \xE8 un compito cruciale\
   \ per una moltitudine di applicazioni, inclusi i registri degli eventi, la\u2026"

@@ -1,9 +1,7 @@
 ---
-aliases:
-- /de/cpp/extracting-substrings/
 date: 2024-01-20 17:45:04.577701-07:00
 description: '#'
-lastmod: 2024-02-18 23:09:05.177405
+lastmod: 2024-02-19 22:05:13.108296
 model: gpt-4-1106-preview
 summary: '#'
 title: Teilstrings extrahieren

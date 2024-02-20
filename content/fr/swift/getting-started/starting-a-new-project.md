@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/starting-a-new-project/
 date: 2024-01-20 18:04:45.665816-07:00
 description: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour traduire\
   \ des id\xE9es en code. C'est essentiel pour structurer ses pens\xE9es, tester des\
   \ concepts,\u2026"
-lastmod: 2024-02-18 23:09:09.209385
+lastmod: 2024-02-19 22:05:16.878073
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour traduire\
   \ des id\xE9es en code. C'est essentiel pour structurer ses pens\xE9es, tester des\

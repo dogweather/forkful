@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/ruby/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:02.327205-07:00
@@ -14,7 +12,7 @@ description: "Ruby \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u0923
   \u092E\u0930 \u0938\u0939\u0940\u092A\u0928 \u0915\u0940 \u091C\u093E\u0902\u091A\
   , \u092A\u093F\u091B\u0921\u093C\u0947\u092A\u0928 \u0915\u094B \u0930\u094B\u0915\
   \u0928\u0947 \u0914\u0930\u2026"
-lastmod: 2024-02-18 23:09:04.303151
+lastmod: 2024-02-19 22:05:12.274538
 model: gpt-4-0125-preview
 summary: "Ruby \u092E\u0947\u0902 \u092A\u0930\u0940\u0915\u094D\u0937\u0923 \u0906\
   \u092A\u0915\u0947 \u0915\u094B\u0921 \u0915\u0947 \u0935\u093F\u092D\u093F\u0928\

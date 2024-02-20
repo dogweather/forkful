@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/swift/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:07.266765-07:00
 description: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts dataformat\
   \ for datautveksling. Programmerere bruker JSON for \xE5 overf\xF8re data mellom\
   \ en server og en\u2026"
-lastmod: 2024-02-18 23:08:54.289561
+lastmod: 2024-02-19 22:05:00.438661
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts dataformat\
   \ for datautveksling. Programmerere bruker JSON for \xE5 overf\xF8re data mellom\

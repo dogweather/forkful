@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/elixir/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:55.067717-07:00
 description: "De lengte van een string vinden, betekent bepalen hoeveel karakters\
   \ deze bevat. Programmeurs doen dit om invoer te valideren, limieten af te dwingen\
   \ of\u2026"
-lastmod: 2024-02-18 23:09:01.516107
+lastmod: 2024-02-19 22:05:09.543017
 model: gpt-4-0125-preview
 summary: "De lengte van een string vinden, betekent bepalen hoeveel karakters deze\
   \ bevat. Programmeurs doen dit om invoer te valideren, limieten af te dwingen of\u2026"

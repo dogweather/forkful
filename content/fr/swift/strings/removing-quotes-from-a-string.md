@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/swift/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:48.698710-07:00
 description: "Supprimer les guillemets d'une cha\xEEne signifie retirer toutes les\
   \ marques de citation qui encadrent le contenu. Nous faisons cela pour assainir\
   \ les\u2026"
-lastmod: 2024-02-18 23:09:09.195553
+lastmod: 2024-02-19 22:05:16.865106
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie retirer toutes les marques\
   \ de citation qui encadrent le contenu. Nous faisons cela pour assainir les\u2026"

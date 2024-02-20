@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/working-with-toml/
 date: 2024-01-26 04:25:53.853171-07:00
 description: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu\
   \ dzi\u0119ki swojej jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105 TOML do\
   \ zarz\u0105dzania konfiguracjami\u2026"
-lastmod: 2024-02-18 23:08:50.148733
+lastmod: 2024-02-19 22:04:55.139503
 model: gpt-4-0125-preview
 summary: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu\
   \ dzi\u0119ki swojej jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105 TOML do\

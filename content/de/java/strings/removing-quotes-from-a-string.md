@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/java/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:46.651404-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, alle\
   \ Anf\xFChrungszeichen \u2013 ob einfach (' '), doppelt (\" \") oder beides \u2013\
   \ aus den Textdaten zu\u2026"
-lastmod: 2024-02-18 23:09:04.724312
+lastmod: 2024-02-19 22:05:12.676149
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, alle Anf\xFC\
   hrungszeichen \u2013 ob einfach (' '), doppelt (\" \") oder beides \u2013 aus den\

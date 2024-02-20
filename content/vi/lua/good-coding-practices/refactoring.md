@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/lua/refactoring/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:29.744015-07:00
@@ -8,7 +6,7 @@ description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 ngh\u1EC7 thu\u1EADt ch\u1EC9nh s\u1
   a m\xE3 code hi\u1EC7n c\xF3 \u0111\u1EC3 c\u1EA3i thi\u1EC7n c\u1EA5u tr\xFAc,\
   \ t\xEDnh d\u1EC5 \u0111\u1ECDc v\xE0 hi\u1EC7u qu\u1EA3 m\xE0 kh\xF4ng thay \u0111\
   \u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a n\xF3. L\u1EADp tr\xECnh\u2026"
-lastmod: 2024-02-18 23:08:50.846113
+lastmod: 2024-02-19 22:04:56.019074
 model: gpt-4-0125-preview
 summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 ngh\u1EC7 thu\u1EADt ch\u1EC9nh s\u1EEDa m\xE3\
   \ code hi\u1EC7n c\xF3 \u0111\u1EC3 c\u1EA3i thi\u1EC7n c\u1EA5u tr\xFAc, t\xED\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /it/cpp/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:17.720316-07:00
 description: "Gli array associativi, noti come `std::map` o `std::unordered_map` in\
   \ C++, colmano il divario tra gli indici degli array e i dati del mondo reale,\u2026"
-lastmod: 2024-02-18 23:08:56.165877
+lastmod: 2024-02-19 22:05:02.794176
 model: gpt-4-0125-preview
 summary: "Gli array associativi, noti come `std::map` o `std::unordered_map` in C++,\
   \ colmano il divario tra gli indici degli array e i dati del mondo reale,\u2026"

@@ -1,9 +1,7 @@
 ---
-aliases:
-- /ja/bash/rounding-numbers/
 date: 2024-01-26 03:43:10.488564-07:00
 description: "\u2026"
-lastmod: 2024-02-18 23:08:55.067921
+lastmod: 2024-02-19 22:05:01.489643
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u6570\u5024\u306E\u4E38\u3081\u51E6\u7406"

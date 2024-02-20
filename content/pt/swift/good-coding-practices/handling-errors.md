@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/swift/handling-errors/
 date: 2024-01-26 00:57:35.390988-07:00
 description: "Tratar erros em Swift significa antecipar e responder a problemas que\
   \ surgem quando seu c\xF3digo \xE9 executado. Fazemos isso para controlar o caos\u2014\
   evitando\u2026"
-lastmod: 2024-02-18 23:08:58.498207
+lastmod: 2024-02-19 22:05:05.991235
 model: gpt-4-1106-preview
 summary: "Tratar erros em Swift significa antecipar e responder a problemas que surgem\
   \ quando seu c\xF3digo \xE9 executado. Fazemos isso para controlar o caos\u2014\

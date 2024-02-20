@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/ruby/using-an-interactive-shell-repl/
 date: 2024-01-26 04:17:26.260591-07:00
 description: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Ler-Avaliar-Imprimir),\
   \ permite testar c\xF3digo em tempo real. Programadores o utilizam para\u2026"
-lastmod: 2024-02-18 23:08:58.667345
+lastmod: 2024-02-19 22:05:06.169415
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Ler-Avaliar-Imprimir),\
   \ permite testar c\xF3digo em tempo real. Programadores o utilizam para\u2026"

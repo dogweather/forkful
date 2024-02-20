@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/vba/starting-a-new-project/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:55.992414-07:00
 description: "\xC5 starte et nytt prosjekt i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 sette opp et milj\xF8 innenfor en vertsapplikasjon, som Excel, for \xE5\
   \ automatisere\u2026"
-lastmod: 2024-02-18 23:08:53.728906
+lastmod: 2024-02-19 22:04:59.865701
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 sette opp et milj\xF8 innenfor en vertsapplikasjon, som Excel, for \xE5\

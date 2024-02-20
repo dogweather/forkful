@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/swift/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:34.692445-07:00
 description: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Swift inneb\xE4\
   r att man modifierar den givna str\xE4ngen s\xE5 att dess f\xF6rsta tecken \xE4\
   r versalt, och de \xE5terst\xE5ende\u2026"
-lastmod: 2024-02-18 23:08:52.108356
+lastmod: 2024-02-19 22:04:57.473413
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Swift inneb\xE4r att\
   \ man modifierar den givna str\xE4ngen s\xE5 att dess f\xF6rsta tecken \xE4r versalt,\

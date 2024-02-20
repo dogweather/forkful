@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/fish-shell/handling-errors/
 date: 2024-01-26 00:52:27.213944-07:00
 description: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett\
   \ smidigt s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4\
   ndares h\xE5r gr\xE5nar."
-lastmod: 2024-02-18 23:08:52.214782
+lastmod: 2024-02-19 22:04:57.593729
 model: gpt-4-1106-preview
 summary: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett smidigt\
   \ s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4ndares h\xE5\

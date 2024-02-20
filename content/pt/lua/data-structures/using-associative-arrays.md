@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/lua/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:54.802832-07:00
 description: "Arrays associativos s\xE3o como apertos de m\xE3o secretos para dados\
   \ em Lua\u2014em vez de apenas n\xFAmeros se alinhando obedientemente por \xEDndice,\
   \ suas chaves podem\u2026"
-lastmod: 2024-02-18 23:08:58.275399
+lastmod: 2024-02-19 22:05:05.752207
 model: gpt-4-0125-preview
 summary: "Arrays associativos s\xE3o como apertos de m\xE3o secretos para dados em\
   \ Lua\u2014em vez de apenas n\xFAmeros se alinhando obedientemente por \xEDndice,\

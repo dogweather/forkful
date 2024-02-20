@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/swift/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:54.766068-07:00
 description: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisl\xE4\
   heinen tiedon sarjallistamisstandardi kaikille ohjelmointikielille. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t\u2026"
-lastmod: 2024-02-18 23:09:08.012081
+lastmod: 2024-02-19 22:05:15.822922
 model: gpt-4-0125-preview
 summary: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisl\xE4heinen\
   \ tiedon sarjallistamisstandardi kaikille ohjelmointikielille. Ohjelmoijat k\xE4\

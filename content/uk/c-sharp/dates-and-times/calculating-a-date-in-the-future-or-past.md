@@ -1,10 +1,8 @@
 ---
-aliases:
-- /uk/c-sharp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:30.640954-07:00
 description: Calculating a future or past date is manipulating a current date to get
   another date. Programmers do it to manage events, deadlines, or schedules.
-lastmod: 2024-02-18 23:09:00.365523
+lastmod: 2024-02-19 22:05:08.337488
 model: gpt-4-1106-preview
 summary: Calculating a future or past date is manipulating a current date to get another
   date. Programmers do it to manage events, deadlines, or schedules.

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/bash/working-with-complex-numbers/
 date: 2024-01-26 04:36:39.816396-07:00
 description: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
   \ imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement\u2026"
-lastmod: 2024-02-18 23:09:09.010043
+lastmod: 2024-02-19 22:05:16.695551
 model: gpt-4-0125-preview
 summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
   \ imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement\u2026"

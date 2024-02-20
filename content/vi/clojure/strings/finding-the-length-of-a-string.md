@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/clojure/finding-the-length-of-a-string/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:05.906152-07:00
@@ -8,7 +6,7 @@ description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i 
   \ Clojure tr\u1EA3 v\u1EC1 s\u1ED1 l\u01B0\u1EE3ng c\xE1c k\xFD t\u1EF1 trong chu\u1ED7\
   i \u0111\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng c\u1EA7n th\xF4\
   ng tin n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1c \u0111\u1EA7u v\xE0o, l\u1EB7p\u2026"
-lastmod: 2024-02-18 23:08:50.304647
+lastmod: 2024-02-19 22:04:55.337598
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
   \ Clojure tr\u1EA3 v\u1EC1 s\u1ED1 l\u01B0\u1EE3ng c\xE1c k\xFD t\u1EF1 trong chu\u1ED7\

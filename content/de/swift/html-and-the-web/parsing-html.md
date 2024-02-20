@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/swift/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:18.620679-07:00
 description: "Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und\
   \ Interpretierens der Struktur von HTML-Inhalten, typischerweise um spezifische\
   \ Daten\u2026"
-lastmod: 2024-02-18 23:09:05.231953
+lastmod: 2024-02-19 22:05:13.158880
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und Interpretierens\
   \ der Struktur von HTML-Inhalten, typischerweise um spezifische Daten\u2026"

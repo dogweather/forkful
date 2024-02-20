@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/arduino/reading-a-text-file/
 date: 2024-01-20 17:53:40.510256-07:00
 description: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
   \ dans votre programme. Les programmeurs font \xE7a pour acc\xE9der aux donn\xE9\
   es, configurer des\u2026"
-lastmod: 2024-02-18 23:09:09.133709
+lastmod: 2024-02-19 22:05:16.809770
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
   \ dans votre programme. Les programmeurs font \xE7a pour acc\xE9der aux donn\xE9\

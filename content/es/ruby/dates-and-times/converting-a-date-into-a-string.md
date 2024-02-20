@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/ruby/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:16.451158-07:00
 description: "Convertir una fecha a cadena permite mostrarla en un formato legible\
   \ o almacenarla en una base de datos. Los programadores hacen esto para presentar\
   \ las\u2026"
-lastmod: 2024-02-18 23:09:10.564821
+lastmod: 2024-02-19 22:05:18.110527
 model: gpt-4-1106-preview
 summary: "Convertir una fecha a cadena permite mostrarla en un formato legible o almacenarla\
   \ en una base de datos. Los programadores hacen esto para presentar las\u2026"

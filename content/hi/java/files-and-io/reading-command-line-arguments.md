@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/java/reading-command-line-arguments/
 date: 2024-01-20 17:56:46.662451-07:00
 description: "Command line arguments \u0935\u094B \u092A\u0948\u0930\u093E\u092E\u0940\
   \u091F\u0930 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u091C\u094B \u0939\u092E\
@@ -10,7 +8,7 @@ description: "Command line arguments \u0935\u094B \u092A\u0948\u0930\u093E\u092E
   \u093C\u0930\u0942\u0930\u0940 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u0915\
   \u094D\u092F\u094B\u0902\u0915\u093F \u0907\u0928\u0915\u0940 \u092E\u0926\u0926\
   \ \u0938\u0947 \u0939\u092E program\u2026"
-lastmod: 2024-02-18 23:09:03.143357
+lastmod: 2024-02-19 22:05:11.139362
 model: gpt-4-1106-preview
 summary: "Command line arguments \u0935\u094B \u092A\u0948\u0930\u093E\u092E\u0940\
   \u091F\u0930 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u091C\u094B \u0939\u092E\

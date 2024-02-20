@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/python/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:15.415186-07:00
 description: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les\
   \ messages d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019\
   erreur (`stderr`),\u2026"
-lastmod: 2024-02-18 23:09:08.358288
+lastmod: 2024-02-19 22:05:16.154760
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les messages\
   \ d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019erreur\

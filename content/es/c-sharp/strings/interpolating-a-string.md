@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/c-sharp/interpolating-a-string/
 date: 2024-01-20 17:50:42.503816-07:00
 description: "Interpolar una cadena en C# significa incrustar expresiones dentro de\
   \ una cuerda literal. Lo hacemos para construir din\xE1micamente cadenas de texto,\u2026"
-lastmod: 2024-02-18 23:09:09.967133
+lastmod: 2024-02-19 22:05:17.570964
 model: gpt-4-1106-preview
 summary: "Interpolar una cadena en C# significa incrustar expresiones dentro de una\
   \ cuerda literal. Lo hacemos para construir din\xE1micamente cadenas de texto,\u2026"

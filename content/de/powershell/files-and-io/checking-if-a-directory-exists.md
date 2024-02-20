@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/powershell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:42.579423-07:00
 description: "In PowerShell ist die \xDCberpr\xFCfung, ob ein Verzeichnis existiert,\
   \ eine h\xE4ufige Aufgabe, die Skripte dabei unterst\xFCtzt, Entscheidungen basierend\
   \ auf der\u2026"
-lastmod: 2024-02-18 23:09:05.116503
+lastmod: 2024-02-19 22:05:13.049822
 model: gpt-4-0125-preview
 summary: "In PowerShell ist die \xDCberpr\xFCfung, ob ein Verzeichnis existiert, eine\
   \ h\xE4ufige Aufgabe, die Skripte dabei unterst\xFCtzt, Entscheidungen basierend\

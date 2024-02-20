@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/javascript/interpolating-a-string/
 date: 2024-01-20 17:51:09.475999-07:00
 description: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\xF5\
   es e texto dentro de uma string. Programadores fazem isso para tornar o c\xF3digo\
   \ mais\u2026"
-lastmod: 2024-02-18 23:08:58.518735
+lastmod: 2024-02-19 22:05:06.012721
 model: gpt-4-1106-preview
 summary: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\xF5\
   es e texto dentro de uma string. Programadores fazem isso para tornar o c\xF3digo\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/cpp/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:47.808419-07:00
 description: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezieht\
   \ sich darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln.\u2026"
-lastmod: 2024-02-18 23:09:05.203005
+lastmod: 2024-02-19 22:05:13.132002
 model: gpt-4-1106-preview
 summary: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezieht sich\
   \ darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln.\u2026"

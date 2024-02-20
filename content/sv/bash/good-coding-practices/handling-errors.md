@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/bash/handling-errors/
 date: 2024-01-26 00:49:33.730980-07:00
 description: "Att hantera fel i Bash-scripting handlar om att f\xF6rutse var saker\
   \ kan g\xE5 fel och hantera det p\xE5 ett smidigt s\xE4tt. Varf\xF6r? Jo, det h\xE5\
   ller ditt skript\u2026"
-lastmod: 2024-02-18 23:08:51.968471
+lastmod: 2024-02-19 22:04:57.320334
 model: gpt-4-1106-preview
 summary: "Att hantera fel i Bash-scripting handlar om att f\xF6rutse var saker kan\
   \ g\xE5 fel och hantera det p\xE5 ett smidigt s\xE4tt. Varf\xF6r? Jo, det h\xE5\

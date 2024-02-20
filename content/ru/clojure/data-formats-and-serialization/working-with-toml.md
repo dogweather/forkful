@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/clojure/working-with-toml/
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:04:27.829397-07:00
@@ -12,7 +10,7 @@ description: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 TOML \u043E\u0437\u043
   \u043E\u043F\u0443\u043B\u044F\u0440\u043D\u043E\u043C \u0434\u043B\u044F \u043A\
   \u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\
   \u0445 \u0444\u0430\u0439\u043B\u043E\u0432\u2026"
-lastmod: 2024-02-18 23:08:56.610520
+lastmod: 2024-02-19 22:05:03.378962
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 TOML \u043E\u0437\u043D\u0430\
   \u0447\u0430\u0435\u0442, \u0447\u0442\u043E \u0432\u044B \u0440\u0430\u0431\u043E\

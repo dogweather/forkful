@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/google-apps-script/working-with-toml/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:32.885558-07:00
 description: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language, on asetustiedostomuoto,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat\u2026"
-lastmod: 2024-02-18 23:09:07.163526
+lastmod: 2024-02-19 22:05:15.038614
 model: gpt-4-0125-preview
 summary: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language, on asetustiedostomuoto,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat\u2026"

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/c-sharp/working-with-json/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:11.840105-07:00
 description: "Arbeid med JSON (JavaScript Object Notation) involverer parsing, generering\
   \ og sp\xF8rring av JSON-data, noe som gj\xF8r det til en kritisk ferdighet for\u2026"
-lastmod: 2024-02-18 23:08:53.914506
+lastmod: 2024-02-19 22:05:00.084466
 model: gpt-4-0125-preview
 summary: "Arbeid med JSON (JavaScript Object Notation) involverer parsing, generering\
   \ og sp\xF8rring av JSON-data, noe som gj\xF8r det til en kritisk ferdighet for\u2026"

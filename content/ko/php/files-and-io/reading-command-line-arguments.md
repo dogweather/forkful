@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/reading-command-line-arguments/
 date: 2024-01-20 17:56:42.263052-07:00
 description: "PHP\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\
   \uC740 \uC0AC\uC6A9\uC790\uAC00 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0 \uCD94\uAC00 \uB370\
@@ -10,7 +8,7 @@ description: "PHP\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294
   \ \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uC791\uC131\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.376330
+lastmod: 2024-02-19 22:05:14.291547
 model: gpt-4-1106-preview
 summary: "PHP\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\
   \uC740 \uC0AC\uC6A9\uC790\uAC00 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0 \uCD94\uAC00 \uB370\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/google-apps-script/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:18.663470-07:00
 description: "Assosiative tabeller, kjent som objekter i Google Apps Script (en variant\
   \ av JavaScript), lar programmerere lage samlinger av n\xF8kkel-verdi-par. Denne\u2026"
-lastmod: 2024-02-18 23:08:53.473100
+lastmod: 2024-02-19 22:04:59.586785
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent som objekter i Google Apps Script (en variant\
   \ av JavaScript), lar programmerere lage samlinger av n\xF8kkel-verdi-par. Denne\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/vba/reading-a-text-file/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:19.639587-07:00
@@ -8,7 +6,7 @@ description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Visual Bas
   \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0 tr\xEDch xu\u1EA5\
   t n\u1ED9i dung c\u1EE7a t\u1EC7p v\u0103n b\u1EA3n m\u1ED9t c\xE1ch l\u1EADp tr\xEC\
   nh t\u1EEB b\xEAn trong\u2026"
-lastmod: 2024-02-18 23:08:50.529230
+lastmod: 2024-02-19 22:04:55.616092
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Visual Basic for\
   \ Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0 tr\xEDch xu\u1EA5\

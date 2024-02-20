@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/elm/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:20.239495-07:00
 description: "\xC5 tolke en dato fra en streng i Elm involverer konvertering av tekstlig\
   \ informasjon som representerer datoer og tider til et format som Elm kan forst\xE5\
   \ og\u2026"
-lastmod: 2024-02-18 23:08:53.820508
+lastmod: 2024-02-19 22:04:59.964612
 model: gpt-4-0125-preview
 summary: "\xC5 tolke en dato fra en streng i Elm involverer konvertering av tekstlig\
   \ informasjon som representerer datoer og tider til et format som Elm kan forst\xE5\

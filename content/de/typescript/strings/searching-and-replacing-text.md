@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/typescript/searching-and-replacing-text/
 date: 2024-01-20 17:58:59.742030-07:00
 description: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
   \ in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen\u2026"
-lastmod: 2024-02-18 23:09:04.580910
+lastmod: 2024-02-19 22:05:12.539623
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
   \ in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen\u2026"

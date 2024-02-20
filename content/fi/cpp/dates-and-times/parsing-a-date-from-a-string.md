@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/cpp/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:46.484061-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa merkkijonon\
   \ muodon tulkintaa p\xE4iv\xE4m\xE4\xE4r\xE4n osien, kuten p\xE4iv\xE4n, kuukauden\
   \ ja vuoden, erottamiseksi.\u2026"
-lastmod: 2024-02-18 23:09:07.954229
+lastmod: 2024-02-19 22:05:15.769446
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa merkkijonon\
   \ muodon tulkintaa p\xE4iv\xE4m\xE4\xE4r\xE4n osien, kuten p\xE4iv\xE4n, kuukauden\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/java/starting-a-new-project/
 date: 2024-01-20 18:03:56.599373-07:00
 description: "Avviare un nuovo progetto significa creare un ambiente per sviluppare\
   \ il tuo software. Lo fai per partire con un'organizzazione chiara e permettere\
   \ una\u2026"
-lastmod: 2024-02-18 23:08:55.766463
+lastmod: 2024-02-19 22:05:02.370557
 model: gpt-4-1106-preview
 summary: "Avviare un nuovo progetto significa creare un ambiente per sviluppare il\
   \ tuo software. Lo fai per partire con un'organizzazione chiara e permettere una\u2026"

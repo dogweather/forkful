@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/haskell/writing-to-standard-error/
 date: 2024-02-03 19:03:30.324317-07:00
 description: "Writing to standard error (stderr) in Haskell allows programs to differentiate\
   \ their output between normal results and error messages. This is crucial for\u2026"
-lastmod: 2024-02-18 23:09:11.112013
+lastmod: 2024-02-19 22:05:18.606722
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Haskell allows programs to differentiate\
   \ their output between normal results and error messages. This is crucial for\u2026"

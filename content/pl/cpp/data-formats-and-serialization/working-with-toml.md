@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/cpp/working-with-toml/
 date: 2024-01-26 04:19:58.316251-07:00
 description: "TOML (Tom's Obvious, Minimal Language) to format serializacji danych\
   \ \u0142atwy do odczytu dzi\u0119ki jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105\
   \ TOML do plik\xF3w\u2026"
-lastmod: 2024-02-18 23:08:49.934855
+lastmod: 2024-02-19 22:04:54.883568
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) to format serializacji danych \u0142\
   atwy do odczytu dzi\u0119ki jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105\

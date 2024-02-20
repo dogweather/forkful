@@ -1,11 +1,9 @@
 ---
-aliases:
-- /uk/arduino/starting-a-new-project/
 date: 2024-01-20 18:02:38.416096-07:00
 description: "Starting a new Arduino project means initializing a fresh sketch to\
   \ build your unique idea. Programmers kick off new projects to solve problems, learn,\
   \ or\u2026"
-lastmod: 2024-02-18 23:09:00.804176
+lastmod: 2024-02-19 22:05:08.861572
 model: gpt-4-1106-preview
 summary: "Starting a new Arduino project means initializing a fresh sketch to build\
   \ your unique idea. Programmers kick off new projects to solve problems, learn,\

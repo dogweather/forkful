@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/fish-shell/working-with-complex-numbers/
 date: 2024-01-26 04:40:01.518867-07:00
 description: "Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista\
   \ kaksiulotteiseen kompleksitasoon. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla\
   \ kuten\u2026"
-lastmod: 2024-02-18 23:09:08.075149
+lastmod: 2024-02-19 22:05:15.880836
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista kaksiulotteiseen\
   \ kompleksitasoon. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten\u2026"

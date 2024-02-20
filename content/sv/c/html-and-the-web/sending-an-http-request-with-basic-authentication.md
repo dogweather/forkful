@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/c/sending-an-http-request-with-basic-authentication/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:19.741445-07:00
 description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C\
   \ inneb\xE4r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader\
   \ med\u2026"
-lastmod: 2024-02-18 23:08:52.250045
+lastmod: 2024-02-19 22:04:57.634663
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C inneb\xE4\
   r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader med\u2026"

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/clojure/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:02.336315-07:00
 description: "Pisanie test\xF3w w Clojure, podobnie jak w innych j\u0119zykach programowania,\
   \ polega na tworzeniu dedykowanego kodu, kt\xF3ry weryfikuje, czy g\u0142\xF3wna\
   \ baza kodu\u2026"
-lastmod: 2024-02-18 23:08:49.268258
+lastmod: 2024-02-19 22:04:54.181305
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Clojure, podobnie jak w innych j\u0119zykach programowania,\
   \ polega na tworzeniu dedykowanego kodu, kt\xF3ry weryfikuje, czy g\u0142\xF3wna\

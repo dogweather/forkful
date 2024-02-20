@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/searching-and-replacing-text/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:14.746064-07:00
 description: "\xC5 s\xF8ke og erstatte tekst i programmering letter modifikasjon og\
   \ h\xE5ndtering av tekststrenger, som er en grunnleggende oppgave i databehandling\
   \ og\u2026"
-lastmod: 2024-02-18 23:08:53.420174
+lastmod: 2024-02-19 22:04:59.529042
 model: gpt-4-0125-preview
 summary: "\xC5 s\xF8ke og erstatte tekst i programmering letter modifikasjon og h\xE5\
   ndtering av tekststrenger, som er en grunnleggende oppgave i databehandling og\u2026"

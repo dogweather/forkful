@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/arduino/rounding-numbers/
 date: 2024-01-25 03:00:01.439059-07:00
 description: "Rounding numbers is trimming a decimal to its closest whole value or\
   \ to a set number of decimal places. Programmers round numbers to make them easier\
   \ to\u2026"
-lastmod: 2024-02-18 23:09:11.310542
+lastmod: 2024-02-19 22:05:18.779982
 model: gpt-4-1106-preview
 summary: "Rounding numbers is trimming a decimal to its closest whole value or to\
   \ a set number of decimal places. Programmers round numbers to make them easier\

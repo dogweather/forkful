@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/powershell/sending-an-http-request/
 date: 2024-01-20 18:00:10.141822-07:00
 description: "HTTP-Anfragen sind essentiell, um mit Webdiensten zu kommunizieren,\
   \ indem Daten gesendet und empfangen werden. Programmierer nutzen sie, um Informationen\u2026"
-lastmod: 2024-02-18 23:09:05.097871
+lastmod: 2024-02-19 22:05:13.032267
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind essentiell, um mit Webdiensten zu kommunizieren, indem\
   \ Daten gesendet und empfangen werden. Programmierer nutzen sie, um Informationen\u2026"

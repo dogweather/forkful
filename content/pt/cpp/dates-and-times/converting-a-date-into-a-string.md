@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/cpp/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:15.831387-07:00
 description: "Converter uma data em string significa transformar uma representa\xE7\
   \xE3o de data (geralmente um tipo espec\xEDfico como `std::chrono::system_clock::time_point`)\u2026"
-lastmod: 2024-02-18 23:08:58.460878
+lastmod: 2024-02-19 22:05:05.951575
 model: gpt-4-1106-preview
 summary: "Converter uma data em string significa transformar uma representa\xE7\xE3\
   o de data (geralmente um tipo espec\xEDfico como `std::chrono::system_clock::time_point`)\u2026"

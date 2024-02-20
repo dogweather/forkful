@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/elixir/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:42.046294-07:00
 description: "\xC5 skrive til en tekstfil i Elixir er en essensiell ferdighet for\
   \ utviklere, som tillater dataoppbevaring, logging, eller eksportering av menneskelesbart\u2026"
-lastmod: 2024-02-18 23:08:53.622511
+lastmod: 2024-02-19 22:04:59.749951
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Elixir er en essensiell ferdighet for utviklere,\
   \ som tillater dataoppbevaring, logging, eller eksportering av menneskelesbart\u2026"

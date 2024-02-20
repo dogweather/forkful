@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:28.633424-07:00
 description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC258 \uB610\uB294 REPL(Read-Eval-Print\
   \ Loop)\uC744 \uC0AC\uC6A9\uD558\uBA74 PHP \uCF54\uB4DC\uB97C \uC989\uC11D\uC5D0\
@@ -9,7 +7,7 @@ description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC258 \uB610\uB294 REPL(Read-Eval-
   \uC774\uBA70, \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uC804\uCCB4\uC801\uC73C\uB85C \uC0DD\
   \uC131\uD558\uB294 \uBD80\uB2F4 \uC5C6\uC774 \uCF54\uB4DC \uC870\uAC01\uC744 \uD14C\
   \uC2A4\uD2B8\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.354856
+lastmod: 2024-02-19 22:05:14.271155
 model: gpt-4-0125-preview
 summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC258 \uB610\uB294 REPL(Read-Eval-Print\
   \ Loop)\uC744 \uC0AC\uC6A9\uD558\uBA74 PHP \uCF54\uB4DC\uB97C \uC989\uC11D\uC5D0\

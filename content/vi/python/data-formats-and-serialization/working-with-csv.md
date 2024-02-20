@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/python/working-with-csv/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:27.414695-07:00
@@ -8,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma-Separated Val
   \ - Gi\xE1 tr\u1ECB Ph\xE2n c\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129\
   a l\xE0 \u0111\u1ECDc t\u1EEB v\xE0 ghi d\u1EEF li\u1EC7u v\xE0o c\xE1c t\u1EC7\
   p v\u0103n b\u1EA3n \u0111\u01A1n gi\u1EA3n, n\u01A1i m\u1ED7i\u2026"
-lastmod: 2024-02-18 23:08:50.292764
+lastmod: 2024-02-19 22:04:55.322469
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma-Separated Values -\
   \ Gi\xE1 tr\u1ECB Ph\xE2n c\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a\

@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/c/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:54.473087-07:00
 description: "In de wereld van het programmeren omvat het werken met CSV (Comma-Separated\
   \ Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn\u2026"
-lastmod: 2024-02-18 23:09:02.398149
+lastmod: 2024-02-19 22:05:10.403701
 model: gpt-4-0125-preview
 summary: "In de wereld van het programmeren omvat het werken met CSV (Comma-Separated\
   \ Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/typescript/working-with-complex-numbers/
 date: 2024-01-26 04:46:08.755653-07:00
 description: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rteil\
   \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\
   \ nur reellen\u2026"
-lastmod: 2024-02-18 23:09:04.590246
+lastmod: 2024-02-19 22:05:12.548485
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rteil\
   \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\

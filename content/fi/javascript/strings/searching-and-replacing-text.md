@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/javascript/searching-and-replacing-text/
 date: 2024-01-20 17:58:20.460227-07:00
 description: "Tekstin etsiminen ja korvaaminen on vakiintunut keino manipuloida stringej\xE4\
   : l\xF6yd\xE4t ja korvaat m\xE4\xE4ritetty\xE4 teksti\xE4. K\xE4yt\xE4mme t\xE4\
   t\xE4 nopeuttaaksemme\u2026"
-lastmod: 2024-02-18 23:09:08.019863
+lastmod: 2024-02-19 22:05:15.829961
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen on vakiintunut keino manipuloida stringej\xE4\
   : l\xF6yd\xE4t ja korvaat m\xE4\xE4ritetty\xE4 teksti\xE4. K\xE4yt\xE4mme t\xE4\

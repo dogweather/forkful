@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/elm/extracting-substrings/
 date: 2024-01-20 17:45:35.679302-07:00
 description: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string\
   \ - como cortar um peda\xE7o de torta para provar. Programadores fazem isso para\
   \ manipular e\u2026"
-lastmod: 2024-02-18 23:08:58.049885
+lastmod: 2024-02-19 22:05:05.527395
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string - como\
   \ cortar um peda\xE7o de torta para provar. Programadores fazem isso para manipular\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/ruby/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:08.633463-07:00
 description: "Capitalizar uma string na programa\xE7\xE3o frequentemente se refere\
   \ a converter a primeira letra de uma string para mai\xFAscula e o restante para\
   \ min\xFAscula. Os\u2026"
-lastmod: 2024-02-18 23:08:58.646846
+lastmod: 2024-02-19 22:05:06.148221
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string na programa\xE7\xE3o frequentemente se refere a converter\
   \ a primeira letra de uma string para mai\xFAscula e o restante para min\xFAscula.\

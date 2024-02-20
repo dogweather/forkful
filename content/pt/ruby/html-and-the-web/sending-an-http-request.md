@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/ruby/sending-an-http-request/
 date: 2024-01-20 18:00:20.331192-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o ato de pedir informa\xE7\xF5\
   es a um servidor web. Programadores fazem isso para interagir com APIs, solicitar\
   \ dados, ou submeter\u2026"
-lastmod: 2024-02-18 23:08:58.662628
+lastmod: 2024-02-19 22:05:06.164472
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o ato de pedir informa\xE7\xF5es a\
   \ um servidor web. Programadores fazem isso para interagir com APIs, solicitar dados,\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/php/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:56.974962-07:00
 description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC5F4\
   \uC5D0 \uC788\uB294 \uBB38\uC790 \uC218\uB97C \uCE74\uC6B4\uD2B8\uD569\uB2C8\uB2E4\
@@ -8,7 +6,7 @@ description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC
   \ \uAC80\uC99D, \uB610\uB294 UI \uB514\uC790\uC778\uC744 \uC870\uC728\uD560 \uB54C\
   \ \uC774 \uC815\uBCF4\uAC00 \uD544\uC694\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.338915
+lastmod: 2024-02-19 22:05:14.256183
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC5F4\uC5D0\
   \ \uC788\uB294 \uBB38\uC790 \uC218\uB97C \uCE74\uC6B4\uD2B8\uD569\uB2C8\uB2E4. \uD504\

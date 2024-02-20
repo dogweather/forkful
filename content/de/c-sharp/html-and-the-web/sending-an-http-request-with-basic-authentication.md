@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/c-sharp/sending-an-http-request-with-basic-authentication/
 date: 2024-01-20 18:01:05.824648-07:00
 description: "HTTP-Anfragen mit Basisauthentifizierung erlauben es einem Client, sich\
   \ mit Benutzername und Passwort gegen\xFCber einem Server zu authentifizieren.\u2026"
-lastmod: 2024-02-18 23:09:04.871200
+lastmod: 2024-02-19 22:05:12.815600
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basisauthentifizierung erlauben es einem Client, sich\
   \ mit Benutzername und Passwort gegen\xFCber einem Server zu authentifizieren.\u2026"

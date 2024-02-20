@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/rust/generating-random-numbers/
 date: 2024-01-27 20:35:04.321366-07:00
 description: "Generar n\xFAmeros aleatorios en Rust implica utilizar bibliotecas para\
   \ producir valores num\xE9ricos imprevistos, lo cual es indispensable para tareas\
   \ que van\u2026"
-lastmod: 2024-02-18 23:09:09.744475
+lastmod: 2024-02-19 22:05:17.368458
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en Rust implica utilizar bibliotecas para\
   \ producir valores num\xE9ricos imprevistos, lo cual es indispensable para tareas\

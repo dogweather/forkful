@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/clojure/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:28.982112-07:00
 description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
   \ spos\xF3b na ustalenie warto\u015Bci daty przed lub po okre\u015Blonym czasie.\
   \ Programi\u015Bci robi\u0105 to m.in. do \u015Bledzenia\u2026"
-lastmod: 2024-02-18 23:08:49.277753
+lastmod: 2024-02-19 22:04:54.191504
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to spos\xF3\
   b na ustalenie warto\u015Bci daty przed lub po okre\u015Blonym czasie. Programi\u015B\

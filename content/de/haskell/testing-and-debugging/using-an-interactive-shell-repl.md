@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/haskell/using-an-interactive-shell-repl/
 date: 2024-01-26 04:14:43.343685-07:00
 description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) in Haskell erm\xF6\
   glicht es Ihnen, Code-Schnipsel live auszuf\xFChren. Es ist ein Spielplatz f\xFC\
   r\u2026"
-lastmod: 2024-02-18 23:09:04.918653
+lastmod: 2024-02-19 22:05:12.860098
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) in Haskell erm\xF6\
   glicht es Ihnen, Code-Schnipsel live auszuf\xFChren. Es ist ein Spielplatz f\xFC\

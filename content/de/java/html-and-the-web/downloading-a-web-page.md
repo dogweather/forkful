@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/java/downloading-a-web-page/
 date: 2024-01-20 17:44:17.562035-07:00
 description: "Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen und\
   \ lokal zu speichern. Programmierer tun dies, um Inhalte zu analysieren, zu\u2026"
-lastmod: 2024-02-18 23:09:04.735668
+lastmod: 2024-02-19 22:05:12.686910
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen und lokal\
   \ zu speichern. Programmierer tun dies, um Inhalte zu analysieren, zu\u2026"

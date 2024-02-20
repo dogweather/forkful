@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/organizing-code-into-functions/
 date: 2024-02-03 17:50:02.611930-07:00
 description: "Organizing code into functions in C involves breaking down complex tasks\
   \ into smaller, reusable blocks of code. This practice enhances readability,\u2026"
-lastmod: 2024-02-18 23:09:11.528095
+lastmod: 2024-02-19 22:05:18.978149
 model: gpt-4-0125-preview
 summary: "Organizing code into functions in C involves breaking down complex tasks\
   \ into smaller, reusable blocks of code. This practice enhances readability,\u2026"

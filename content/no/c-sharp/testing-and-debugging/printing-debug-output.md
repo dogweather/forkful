@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/c-sharp/printing-debug-output/
 date: 2024-01-20 17:52:04.615061-07:00
 description: "Skrive ut feils\xF8kingsdata hjelper utviklere \xE5 se hva som foreg\xE5\
   r under panseret av programmene sine. Vi gj\xF8r det for \xE5 fakke bugs og forst\xE5\
   \ flyten, uten \xE5\u2026"
-lastmod: 2024-02-18 23:08:53.896318
+lastmod: 2024-02-19 22:05:00.064731
 model: gpt-4-1106-preview
 summary: "Skrive ut feils\xF8kingsdata hjelper utviklere \xE5 se hva som foreg\xE5\
   r under panseret av programmene sine. Vi gj\xF8r det for \xE5 fakke bugs og forst\xE5\

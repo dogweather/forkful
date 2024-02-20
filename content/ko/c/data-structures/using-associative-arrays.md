@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/c/using-associative-arrays/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:52.955909-07:00
@@ -13,7 +11,7 @@ description: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 \uB2E4\uB978 \uC5B8\uC5B4\uC5D0\uC
   \ \uC0AC\uC6A9\uD558\uC5EC \uB370\uC774\uD130 \uC811\uADFC\uC744 \uB354 \uC9C1\uAD00\
   \uC801\uC774\uACE0 \uC720\uC5F0\uD558\uAC8C \uB9CC\uB4E4\uC5B4 \uD504\uB85C\uADF8\
   \uB798\uBA38\uC5D0\uAC8C \uC774\uC810\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.939113
+lastmod: 2024-02-19 22:05:14.825354
 model: gpt-4-0125-preview
 summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 \uB2E4\uB978 \uC5B8\uC5B4\uC5D0\uC11C\uB294\
   \ \uB9F5 \uB610\uB294 \uC0AC\uC804\uC73C\uB85C \uC54C\uB824\uC838 \uC788\uB294\uB370\

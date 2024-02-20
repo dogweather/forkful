@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/elixir/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:51.388379-07:00
 description: "Das Schreiben auf Standardfehler (stderr) in Elixir ist eine Methode,\
   \ Fehlermeldungen und Diagnosen getrennt von der Hauptausgabe (stdout) zu lenken.\u2026"
-lastmod: 2024-02-18 23:09:04.569218
+lastmod: 2024-02-19 22:05:12.528157
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler (stderr) in Elixir ist eine Methode, Fehlermeldungen\
   \ und Diagnosen getrennt von der Hauptausgabe (stdout) zu lenken.\u2026"

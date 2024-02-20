@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/go/calculating-a-date-in-the-future-or-past/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:21.054405-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuudessa tai menneisyydess\xE4\
   \ Go:ssa k\xE4sitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan arvojen manipulointia\
   \ m\xE4\xE4ritt\xE4m\xE4\xE4n tietyn pisteen suhteessa\u2026"
-lastmod: 2024-02-18 23:09:07.101013
+lastmod: 2024-02-19 22:05:14.980628
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuudessa tai menneisyydess\xE4\
   \ Go:ssa k\xE4sitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan arvojen manipulointia\

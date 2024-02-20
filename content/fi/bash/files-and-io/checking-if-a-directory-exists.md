@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/bash/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:55.293122-07:00
 description: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen\
   \ valvontamekanismi, jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo\
   \ ennen\u2026"
-lastmod: 2024-02-18 23:09:07.820255
+lastmod: 2024-02-19 22:05:15.649403
 model: gpt-4-0125-preview
 summary: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen valvontamekanismi,\
   \ jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo ennen\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/reading-a-text-file/
 date: 2024-01-20 17:55:05.327164-07:00
 description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uD30C\uC77C\uC5D0\
   \ \uC800\uC7A5\uB41C \uBB38\uC790 \uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC640 \uD504\
@@ -9,7 +7,7 @@ description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uD30C\uC77C\u
   \uC815, \uB370\uC774\uD130 \uC800\uC7A5, \uB85C\uADF8 \uBD84\uC11D \uB4F1 \uB2E4\
   \uC591\uD55C \uC791\uC5C5\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.652001
+lastmod: 2024-02-19 22:05:13.565846
 model: gpt-4-1106-preview
 summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uD30C\uC77C\uC5D0 \uC800\
   \uC7A5\uB41C \uBB38\uC790 \uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC640 \uD504\uB85C\

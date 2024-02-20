@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/ruby/reading-a-text-file/
 date: 2024-01-20 17:55:11.157626-07:00
 description: "L\xE4sa en textfil? Det handlar om att f\xE5 fram informationen skriven\
   \ i filen och anv\xE4nda den i ditt program. Utvecklare g\xF6r det f\xF6r att ladda\
   \ data,\u2026"
-lastmod: 2024-02-18 23:08:52.311758
+lastmod: 2024-02-19 22:04:57.703736
 model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil? Det handlar om att f\xE5 fram informationen skriven\
   \ i filen och anv\xE4nda den i ditt program. Utvecklare g\xF6r det f\xF6r att ladda\

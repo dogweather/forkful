@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/haskell/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:17.616669-07:00
@@ -11,7 +9,7 @@ description: "\u5728 Haskell \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08std
   \u800C\u4E0D\u4F1A\u8BA9\u6807\u51CA\u8F93\u51FA\uFF08stdout\uFF09\u53D8\u5F97\u6742\
   \u4E71\u65E0\u7AE0\uFF0Cstdout \u5F80\u5F80\u643A\u5E26\u7A0B\u5E8F\u7684\u4E3B\u8981\
   \u6570\u636E\u6216\u7ED3\u679C\u3002"
-lastmod: 2024-02-18 23:08:59.192775
+lastmod: 2024-02-19 22:05:06.874150
 model: gpt-4-0125-preview
 summary: "\u5728 Haskell \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\
   \u5141\u8BB8\u7A0B\u5E8F\u533A\u5206\u5B83\u4EEC\u7684\u8F93\u51FA\uFF0C\u628A\u6B63\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /no/kotlin/parsing-a-date-from-a-string/
 date: 2024-01-20 15:37:14.737512-07:00
 description: "Dato-parsing fra en streng betyr \xE5 konvertere tekst til et `Date`-objekt.\
   \ Programmerere gj\xF8r dette for \xE5 h\xE5ndtere datoer og tider p\xE5 en standardisert,\u2026"
-lastmod: 2024-02-18 23:08:53.861601
+lastmod: 2024-02-19 22:05:00.027342
 summary: "Dato-parsing fra en streng betyr \xE5 konvertere tekst til et `Date`-objekt.\
   \ Programmerere gj\xF8r dette for \xE5 h\xE5ndtere datoer og tider p\xE5 en standardisert,\u2026"
 title: Tolke en dato fra en streng

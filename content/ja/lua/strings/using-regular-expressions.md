@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/lua/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:43.499909-07:00
@@ -14,7 +12,7 @@ description: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3051\u308B
   \u30FC\u306F\u691C\u8A3C\u3001\u691C\u7D22\u3001\u30C6\u30AD\u30B9\u30C8\u64CD\u4F5C\
   \u306A\u3069\u306E\u30BF\u30B9\u30AF\u306B\u305D\u308C\u3089\u3092\u4F7F\u7528\u3057\
   \u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:55.024558
+lastmod: 2024-02-19 22:05:01.426111
 model: gpt-4-0125-preview
 summary: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3051\u308B\u6B63\
   \u898F\u8868\u73FE\u306F\u3001\u7279\u5B9A\u306E\u30D1\u30BF\u30FC\u30F3\u306B\u57FA\

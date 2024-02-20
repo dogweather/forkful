@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/typescript/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:43:15.349400-07:00
 description: "Slette tegn som matcher et m\xF8nster handler om \xE5 finne og fjerne\
   \ bestemte sekvenser fra en tekststreng. Programmerere gj\xF8r dette for \xE5 rense\
   \ input,\u2026"
-lastmod: 2024-02-18 23:08:53.630255
+lastmod: 2024-02-19 22:04:59.758298
 model: gpt-4-1106-preview
 summary: "Slette tegn som matcher et m\xF8nster handler om \xE5 finne og fjerne bestemte\
   \ sekvenser fra en tekststreng. Programmerere gj\xF8r dette for \xE5 rense input,\u2026"

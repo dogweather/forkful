@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/elixir/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:34.227193-07:00
 description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt. kommagetrennte\
   \ Werte) umfasst das Lesen von und das Schreiben in diese Dateien, was eine h\xE4\
   ufige\u2026"
-lastmod: 2024-02-18 23:09:04.575787
+lastmod: 2024-02-19 22:05:12.534493
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt. kommagetrennte Werte)\
   \ umfasst das Lesen von und das Schreiben in diese Dateien, was eine h\xE4ufige\u2026"

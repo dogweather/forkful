@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/lua/generating-random-numbers/
 date: 2024-01-27 20:34:40.838596-07:00
 description: "Generare numeri casuali nella programmazione riguarda la produzione\
   \ di valori numerici imprevedibili che possono essere utilizzati per una variet\xE0\
   \ di\u2026"
-lastmod: 2024-02-18 23:08:56.006819
+lastmod: 2024-02-19 22:05:02.621851
 model: gpt-4-0125-preview
 summary: "Generare numeri casuali nella programmazione riguarda la produzione di valori\
   \ numerici imprevedibili che possono essere utilizzati per una variet\xE0 di\u2026"

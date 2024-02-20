@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/c-sharp/logging/
 date: 2024-01-26 01:01:19.142651-07:00
 description: "Logging (registro de logs) \xE9 o processo de gravar os eventos da aplica\xE7\
   \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o. Programadores realizam registros\
   \ de logs\u2026"
-lastmod: 2024-02-18 23:08:58.163782
+lastmod: 2024-02-19 22:05:05.633185
 model: gpt-4-1106-preview
 summary: "Logging (registro de logs) \xE9 o processo de gravar os eventos da aplica\xE7\
   \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o. Programadores realizam registros\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/kotlin/reading-a-text-file/
 date: 2024-01-20 17:54:52.766937-07:00
 description: "Leer un archivo de texto en Kotlin es acceder y manipular el contenido\
   \ de un archivo almacenado en el disco. Los programadores lo hacen para trabajar\
   \ con\u2026"
-lastmod: 2024-02-18 23:09:09.955058
+lastmod: 2024-02-19 22:05:17.560169
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en Kotlin es acceder y manipular el contenido de\
   \ un archivo almacenado en el disco. Los programadores lo hacen para trabajar con\u2026"

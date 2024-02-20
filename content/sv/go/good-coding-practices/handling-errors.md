@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/go/handling-errors/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:09.826289-07:00
 description: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felvillkor\
   \ i ditt program. Programmerare \xE4gnar sig \xE5t felhantering f\xF6r att s\xE4\
   kerst\xE4lla att deras\u2026"
-lastmod: 2024-02-18 23:08:51.341230
+lastmod: 2024-02-19 22:04:56.634152
 model: gpt-4-0125-preview
 summary: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felvillkor\
   \ i ditt program. Programmerare \xE4gnar sig \xE5t felhantering f\xF6r att s\xE4\

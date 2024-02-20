@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/c/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:37.661617-07:00
@@ -14,7 +12,7 @@ description: "\u0420\u0430\u0437\u0431\u043E\u0440 \u0434\u0430\u0442\u044B \u04
   \u043C\u043C\u044B \u043C\u043E\u0433\u0443\u0442 \u0431\u043E\u043B\u0435\u0435\
   \ \u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u043E \u043C\u0430\u043D\
   \u0438\u043F\u0443\u043B\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0438\u2026"
-lastmod: 2024-02-18 23:08:57.576977
+lastmod: 2024-02-19 22:05:04.930150
 model: gpt-4-0125-preview
 summary: "\u0420\u0430\u0437\u0431\u043E\u0440 \u0434\u0430\u0442\u044B \u0438\u0437\
   \ \u0441\u0442\u0440\u043E\u043A\u0438 \u0432 \u044F\u0437\u044B\u043A\u0435 C \u0432\

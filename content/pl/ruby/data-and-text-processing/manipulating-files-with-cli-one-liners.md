@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/manipulating-files-with-cli-one-liners/
 date: 2024-01-27 16:21:38.017624-07:00
 description: "Manipulowanie plikami przy u\u017Cyciu jednoliniowych polece\u0144 CLI\
   \ w Ruby polega na wykonywaniu typowych operacji na plikach bezpo\u015Brednio z\
   \ poziomu terminala za\u2026"
-lastmod: 2024-02-18 23:08:50.120812
+lastmod: 2024-02-19 22:04:55.109185
 model: gpt-4-0125-preview
 summary: "Manipulowanie plikami przy u\u017Cyciu jednoliniowych polece\u0144 CLI w\
   \ Ruby polega na wykonywaniu typowych operacji na plikach bezpo\u015Brednio z poziomu\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/vba/sending-an-http-request/
 date: 2024-02-01 21:30:32.625793-07:00
 description: "Sending an HTTP request in Visual Basic for Applications (VBA) involves\
   \ programmatically accessing web resources or web services by making requests over\u2026"
-lastmod: 2024-02-18 23:09:10.886742
+lastmod: 2024-02-19 22:05:18.399944
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request in Visual Basic for Applications (VBA) involves\
   \ programmatically accessing web resources or web services by making requests over\u2026"

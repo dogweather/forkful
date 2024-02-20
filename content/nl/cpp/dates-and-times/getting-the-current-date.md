@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/cpp/getting-the-current-date/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:56.160251-07:00
 description: "Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:\
   \ denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te\u2026"
-lastmod: 2024-02-18 23:09:02.194296
+lastmod: 2024-02-19 22:05:10.210478
 model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:\
   \ denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te\u2026"

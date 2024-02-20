@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/python/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:29.154581-07:00
 description: "\uBB38\uC790\uC5F4 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uBB38\
   \uC790\uAC00 \uBA87 \uAC1C \uC788\uB294\uC9C0 \uACC4\uC0B0\uD558\uB294 \uAC83\uC785\
@@ -8,7 +6,7 @@ description: "\uBB38\uC790\uC5F4 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \u
   \uAE30, \uD615\uC2DD \uB9DE\uCD94\uAE30 \uB4F1\uC744 \uC704\uD574 \uAE38\uC774\uB97C\
   \ \uC54C\uC544\uC57C \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.611246
+lastmod: 2024-02-19 22:05:13.526106
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uBB38\uC790\
   \uAC00 \uBA87 \uAC1C \uC788\uB294\uC9C0 \uACC4\uC0B0\uD558\uB294 \uAC83\uC785\uB2C8\

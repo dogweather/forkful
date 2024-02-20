@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pl/php/searching-and-replacing-text/
 date: 2024-01-20 17:58:24.683887-07:00
 description: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: lokalizujemy\
   \ fragmenty ci\u0105g\xF3w znak\xF3w i podmieniamy je na inne. Czemu? By automatycznie\u2026"
-lastmod: 2024-02-18 23:08:49.679634
+lastmod: 2024-02-19 22:04:54.615589
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: lokalizujemy\
   \ fragmenty ci\u0105g\xF3w znak\xF3w i podmieniamy je na inne. Czemu? By automatycznie\u2026"

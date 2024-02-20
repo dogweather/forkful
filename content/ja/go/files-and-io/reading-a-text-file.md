@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/go/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:13.476245-07:00
@@ -16,7 +14,7 @@ description: "Go\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u3092\u8A
   \u3044\u307E\u3059\u3002\u3053\u308C\u306F\u30BD\u30D5\u30C8\u30A6\u30A7\u30A2\u958B\
   \u767A\u306B\u304A\u3051\u308B\u57FA\u790E\u7684\u306A\u30B9\u30AD\u30EB\u3067\u3059\
   \u3002"
-lastmod: 2024-02-18 23:08:54.497831
+lastmod: 2024-02-19 22:05:00.681300
 model: gpt-4-0125-preview
 summary: "Go\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u3092\u8AAD\u307F\
   \u8FBC\u3080\u3053\u3068\u306F\u3001\u30C7\u30A3\u30B9\u30AF\u306B\u4FDD\u5B58\u3055\

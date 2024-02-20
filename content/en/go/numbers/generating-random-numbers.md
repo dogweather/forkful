@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/go/generating-random-numbers/
 date: 2024-02-03 17:50:07.025730-07:00
 description: "Generating random numbers in programming is about creating a sequence\
   \ of numbers that cannot be reasonably predicted better than by chance. Programmers\
   \ do\u2026"
-lastmod: 2024-02-18 23:09:10.592274
+lastmod: 2024-02-19 22:05:18.135437
 model: gpt-4-0125-preview
 summary: "Generating random numbers in programming is about creating a sequence of\
   \ numbers that cannot be reasonably predicted better than by chance. Programmers\

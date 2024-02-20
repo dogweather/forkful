@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/clojure/interpolating-a-string/
 date: 2024-01-20 17:50:29.443077-07:00
 description: "Interpola\xE7\xE3o de strings permite injetar vari\xE1veis diretamente\
   \ em um peda\xE7o de texto. Programadores fazem isso para construir strings de forma\
   \ din\xE2mica e\u2026"
-lastmod: 2024-02-18 23:08:57.789208
+lastmod: 2024-02-19 22:05:05.253892
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de strings permite injetar vari\xE1veis diretamente em\
   \ um peda\xE7o de texto. Programadores fazem isso para construir strings de forma\

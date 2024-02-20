@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/organizing-code-into-functions/
 date: 2024-01-26 01:11:28.897653-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu programa\
   \ em partes reutiliz\xE1veis, cada uma lidando com uma tarefa espec\xEDfica. Fazemos\
   \ isso para tornar\u2026"
-lastmod: 2024-02-18 23:08:58.114381
+lastmod: 2024-02-19 22:05:05.587531
 model: gpt-4-1106-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu programa em\
   \ partes reutiliz\xE1veis, cada uma lidando com uma tarefa espec\xEDfica. Fazemos\

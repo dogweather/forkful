@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/javascript/reading-command-line-arguments/
 date: 2024-01-20 17:56:05.403364-07:00
 description: "Reading command line arguments means grabbing the extras users tack\
   \ onto commands when they run your script. Programmers do it to let users customize\u2026"
-lastmod: 2024-02-18 23:09:11.453123
+lastmod: 2024-02-19 22:05:18.909255
 model: gpt-4-1106-preview
 summary: "Reading command line arguments means grabbing the extras users tack onto\
   \ commands when they run your script. Programmers do it to let users customize\u2026"

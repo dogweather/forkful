@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/java/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:03.445937-07:00
 description: "Een tekstbestand lezen betekent dat je programma inhoud uit een bestand\
   \ opslokt als een string. Programmeurs doen dit om gegevens te verwerken of te\u2026"
-lastmod: 2024-02-18 23:09:01.732293
+lastmod: 2024-02-19 22:05:09.751874
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent dat je programma inhoud uit een bestand\
   \ opslokt als een string. Programmeurs doen dit om gegevens te verwerken of te\u2026"

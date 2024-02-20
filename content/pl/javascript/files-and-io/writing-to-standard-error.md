@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/javascript/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:47.544593-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w JavaScript polega\
   \ na kierowaniu komunikat\xF3w o b\u0142\u0119dach lub jakichkolwiek wa\u017Cnych\
   \ informacji do specyficznego,\u2026"
-lastmod: 2024-02-18 23:08:50.009775
+lastmod: 2024-02-19 22:04:54.964208
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w JavaScript polega na\
   \ kierowaniu komunikat\xF3w o b\u0142\u0119dach lub jakichkolwiek wa\u017Cnych informacji\

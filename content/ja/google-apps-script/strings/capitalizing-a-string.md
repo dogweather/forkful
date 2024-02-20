@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/google-apps-script/capitalizing-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:08.306099-07:00
@@ -14,7 +12,7 @@ description: "\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u306B\u3059\u308B\u3068
   \u4E00\u8CAB\u6027\u3092\u4FDD\u8A3C\u3057\u3001\u30E6\u30FC\u30B6\u30FC\u30A4\u30F3\
   \u30BF\u30FC\u30D5\u30A7\u30FC\u30B9\u3084\u6587\u66F8\u5185\u306E\u53EF\u8AAD\u6027\
   \u3092\u5411\u4E0A\u3055\u305B\u307E\u3059\u3002"
-lastmod: 2024-02-18 23:08:54.505486
+lastmod: 2024-02-19 22:05:00.691341
 model: gpt-4-0125-preview
 summary: "\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u306B\u3059\u308B\u3068\u3044\
   \u3046\u306E\u306F\u3001\u5165\u529B\u3067\u6700\u521D\u306E\u6587\u5B57\u3092\u5927\

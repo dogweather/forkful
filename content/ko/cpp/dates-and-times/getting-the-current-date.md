@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/cpp/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:16.912958-07:00
@@ -11,7 +9,7 @@ description: "C++\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC80\uC0C9\uD558
   \uB2C8\uB2E4. \uB85C\uAE45, \uD0C0\uC784 \uC2A4\uD0EC\uD551, \uC791\uC5C5 \uC608\
   \uC57D \uBC0F \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC5D0 \uC758\uC874\uD558\uB294 \uBAA8\
   \uB4E0 \uAE30\uB2A5\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
-lastmod: 2024-02-18 23:09:06.699881
+lastmod: 2024-02-19 22:05:14.596437
 model: gpt-4-0125-preview
 summary: "C++\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC80\uC0C9\uD558\uB294\
   \ \uAC83\uC740 \uC2DC\uC2A4\uD15C\uC758 \uC2DC\uACC4\uB97C \uAE30\uBC18\uC73C\uB85C\

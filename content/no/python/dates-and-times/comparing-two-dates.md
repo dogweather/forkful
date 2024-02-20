@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/python/comparing-two-dates/
 date: 2024-01-20 17:33:37.803650-07:00
 description: "Sammenligne to datoer handler om \xE5 finne ut hvilken som er tidligst\
   \ eller om de er like. Programmerere trenger \xE5 gj\xF8re dette for \xE5 sortere\
   \ eventer,\u2026"
-lastmod: 2024-02-18 23:08:53.536189
+lastmod: 2024-02-19 22:04:59.655639
 model: gpt-4-1106-preview
 summary: "Sammenligne to datoer handler om \xE5 finne ut hvilken som er tidligst eller\
   \ om de er like. Programmerere trenger \xE5 gj\xF8re dette for \xE5 sortere eventer,\u2026"

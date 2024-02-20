@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/fish-shell/reading-a-text-file/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:50.495010-07:00
 description: "Een tekstbestand lezen betekent de gegevens binnen een bestand ophalen\
   \ voor verwerking. Programmeurs doen dit om informatie te extraheren, apps te\u2026"
-lastmod: 2024-02-18 23:09:02.344944
+lastmod: 2024-02-19 22:05:10.352954
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent de gegevens binnen een bestand ophalen voor\
   \ verwerking. Programmeurs doen dit om informatie te extraheren, apps te\u2026"

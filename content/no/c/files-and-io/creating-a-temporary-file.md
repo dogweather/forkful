@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/c/creating-a-temporary-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:20.133674-07:00
 description: "\xC5 opprette en midlertidig fil i C inneb\xE6rer \xE5 generere en fil\
   \ som er ment \xE5 bli brukt over en kort varighet, vanligvis som rableplass for\
   \ databehandling\u2026"
-lastmod: 2024-02-18 23:08:54.414278
+lastmod: 2024-02-19 22:05:00.574914
 model: gpt-4-0125-preview
 summary: "\xC5 opprette en midlertidig fil i C inneb\xE6rer \xE5 generere en fil som\
   \ er ment \xE5 bli brukt over en kort varighet, vanligvis som rableplass for databehandling\u2026"

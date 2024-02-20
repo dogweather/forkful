@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/go/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:06.310072-07:00
 description: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
   \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse. Programmerere\
   \ utf\xF8rer ofte\u2026"
-lastmod: 2024-02-18 23:08:53.454210
+lastmod: 2024-02-19 22:04:59.566343
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
   \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse. Programmerere\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/vba/working-with-csv/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:43.894860-07:00
@@ -13,7 +11,7 @@ description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 \u0444\u0430\u0439\u04
   \u043F\u0438\u0441 \u0434\u043E \u043D\u0438\u0445, \u0434\u0435 \u043F\u043E\u043B\
   \u044F \u0434\u0430\u043D\u0438\u0445 \u0440\u043E\u0437\u0434\u0456\u043B\u0435\
   \u043D\u0456\u2026"
-lastmod: 2024-02-18 23:09:00.085810
+lastmod: 2024-02-19 22:05:08.065290
 model: gpt-4-0125-preview
 summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 \u0444\u0430\u0439\u043B\u0430\
   \u043C\u0438 CSV (Comma Separated Values - \u0417\u043D\u0430\u0447\u0435\u043D\u043D\

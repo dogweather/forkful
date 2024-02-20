@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/elixir/removing-quotes-from-a-string/
 date: 2024-01-26 03:39:06.450740-07:00
 description: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese zus\xE4\
   tzlichen Verpackungen abzulegen, um den sauberen Text im Inneren zu erhalten.\u2026"
-lastmod: 2024-02-18 23:09:04.539155
+lastmod: 2024-02-19 22:05:12.499523
 model: gpt-4-0125-preview
 summary: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese zus\xE4\
   tzlichen Verpackungen abzulegen, um den sauberen Text im Inneren zu erhalten.\u2026"

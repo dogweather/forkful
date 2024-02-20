@@ -1,6 +1,4 @@
 ---
-aliases:
-- /vi/swift/checking-if-a-directory-exists/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:19.422090-07:00
@@ -8,7 +6,7 @@ description: "Trong Swift, vi\u1EC7c ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\
   c t\u1ED3n t\u1EA1i gi\xFAp b\u1EA1n x\xE1c nh\u1EADn tr\u1EA1ng th\xE1i c\u1EE7\
   a h\u1EC7 th\u1ED1ng t\u1EC7p tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc ho\u1EB7\
   c ghi d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
-lastmod: 2024-02-18 23:08:51.105883
+lastmod: 2024-02-19 22:04:56.324029
 model: gpt-4-0125-preview
 summary: "Trong Swift, vi\u1EC7c ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5\
   c t\u1ED3n t\u1EA1i gi\xFAp b\u1EA1n x\xE1c nh\u1EADn tr\u1EA1ng th\xE1i c\u1EE7\

@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/fish-shell/writing-tests/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:21.700379-07:00
 description: "Tests schrijven is kleine controles cre\xEBren om ervoor te zorgen dat\
   \ je code zich gedraagt zoals verwacht. Programmeurs schrijven tests om bugs vroeg\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:02.329829
+lastmod: 2024-02-19 22:05:10.338122
 model: gpt-4-0125-preview
 summary: "Tests schrijven is kleine controles cre\xEBren om ervoor te zorgen dat je\
   \ code zich gedraagt zoals verwacht. Programmeurs schrijven tests om bugs vroeg\

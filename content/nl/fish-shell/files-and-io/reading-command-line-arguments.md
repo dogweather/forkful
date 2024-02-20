@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/fish-shell/reading-command-line-arguments/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:10.181830-07:00
 description: "Command line argumenten lezen is het oppakken van de extra bits die\
   \ je typt na de naam van je script, zoals geheime handdrukken om het gedrag van\
   \ een\u2026"
-lastmod: 2024-02-18 23:09:02.342866
+lastmod: 2024-02-19 22:05:10.350925
 model: gpt-4-0125-preview
 summary: "Command line argumenten lezen is het oppakken van de extra bits die je typt\
   \ na de naam van je script, zoals geheime handdrukken om het gedrag van een\u2026"

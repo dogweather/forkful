@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/ruby/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:21.535715-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
   \ doppelten oder einfachen Anf\xFChrungszeichen wegzunehmen, die Textwerte umschlie\xDF\
   en.\u2026"
-lastmod: 2024-02-18 23:09:05.408316
+lastmod: 2024-02-19 22:05:13.326957
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
   \ doppelten oder einfachen Anf\xFChrungszeichen wegzunehmen, die Textwerte umschlie\xDF\

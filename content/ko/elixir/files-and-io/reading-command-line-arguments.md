@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elixir/reading-command-line-arguments/
 date: 2024-01-20 17:55:59.138032-07:00
 description: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30\uB294 \uD504\uB85C\uADF8\
   \uB7A8\uC774 \uC2DC\uC791\uD560 \uB54C \uC0AC\uC6A9\uC790\uB85C\uBD80\uD130 \uC785\
@@ -9,7 +7,7 @@ description: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30\uB294 \uD504\uB85C\u
   \uADF8\uB7A8\uC5D0\uAC8C \uB3D9\uC791\uC744 \uC9C0\uC2DC\uD558\uAC70\uB098 \uC124\
   \uC815\uC744 \uC804\uB2EC\uD560 \uC218 \uC788\uC5B4\uC694."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.779256
+lastmod: 2024-02-19 22:05:13.691932
 model: gpt-4-1106-preview
 summary: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30\uB294 \uD504\uB85C\uADF8\uB7A8\
   \uC774 \uC2DC\uC791\uD560 \uB54C \uC0AC\uC6A9\uC790\uB85C\uBD80\uD130 \uC785\uB825\

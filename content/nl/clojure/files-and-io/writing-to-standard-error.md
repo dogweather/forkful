@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/clojure/writing-to-standard-error/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:17.527597-07:00
 description: "Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen\
   \ en diagnostiek uit te sturen. Programmeurs doen dit om ze te scheiden van de\u2026"
-lastmod: 2024-02-18 23:09:01.497881
+lastmod: 2024-02-19 22:05:09.525425
 model: gpt-4-0125-preview
 summary: "Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen\
   \ en diagnostiek uit te sturen. Programmeurs doen dit om ze te scheiden van de\u2026"

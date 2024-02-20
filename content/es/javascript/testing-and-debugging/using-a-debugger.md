@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/javascript/using-a-debugger/
 date: 2024-01-26 03:50:04.836379-07:00
 description: "Usar un depurador significa aprovechar herramientas especializadas que\
   \ te permiten echar un vistazo bajo el cap\xF3 de tu c\xF3digo, observ\xE1ndolo\
   \ ejecutarse\u2026"
-lastmod: 2024-02-18 23:09:10.409693
+lastmod: 2024-02-19 22:05:17.967247
 model: gpt-4-0125-preview
 summary: "Usar un depurador significa aprovechar herramientas especializadas que te\
   \ permiten echar un vistazo bajo el cap\xF3 de tu c\xF3digo, observ\xE1ndolo ejecutarse\u2026"

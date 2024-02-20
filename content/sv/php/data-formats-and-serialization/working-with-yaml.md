@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/php/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:22.892013-07:00
 description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\xE4\
   sbart data-serialiseringsformat som vanligtvis anv\xE4nds f\xF6r konfigurationsfiler.\
   \ Programmerare\u2026"
-lastmod: 2024-02-18 23:08:51.897805
+lastmod: 2024-02-19 22:04:57.242323
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\xE4\
   sbart data-serialiseringsformat som vanligtvis anv\xE4nds f\xF6r konfigurationsfiler.\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/google-apps-script/finding-the-length-of-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:53.617759-07:00
@@ -12,7 +10,7 @@ description: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u0
   \u0924 \u0915\u0930\u0928\u0947 \u0926\u0947\u0924\u0940 \u090F\u0915 JavaScript\
   \ \u0915\u094D\u0932\u093E\u0909\u0921 \u0938\u094D\u0915\u094D\u0930\u093F\u092A\
   \u094D\u091F\u093F\u0902\u0917 \u092D\u093E\u0937\u093E \u0939\u0948,\u2026"
-lastmod: 2024-02-18 23:09:02.549701
+lastmod: 2024-02-19 22:05:10.551893
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\
   \u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u092E\u094D\u092C\u093E\u0908 \u0916\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/interpolating-a-string/
 date: 2024-01-20 17:50:50.782053-07:00
 description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780, \uBB38\uC790\uC5F4 \uB0B4\
   \uC5D0 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC0BD\uC785\uD558\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780, \uBB38\uC790\uC5F4 \u
   \uD655\uD558\uAC8C \uC0DD\uC131\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.856895
+lastmod: 2024-02-19 22:05:14.747086
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780, \uBB38\uC790\uC5F4 \uB0B4\uC5D0\
   \ \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC0BD\uC785\uD558\uB294\

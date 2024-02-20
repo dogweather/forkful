@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/typescript/organizing-code-into-functions/
 date: 2024-01-26 01:16:58.084185-07:00
 description: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05E7\u05D5\u05D3 \u05DC\u05EA\u05D5\
   \u05DA \u05E4\u05D5\u05E0\u05E7\u05E6\u05D9\u05D5\u05EA \u05DE\u05E9\u05DE\u05E2\
@@ -11,7 +9,7 @@ description: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05E7\u05D5\u05D3 \u05DC\u05EA\u05
   \ \u05D6\u05D0\u05EA \u05E2\u05DC \u05DE\u05E0\u05EA \u05DC\u05E9\u05DE\u05D5\u05E8\
   \ \u05E2\u05DC \u05D4\u05E2\u05E7\u05E8\u05D5\u05DF \u05E9\u05DC DRY (Don't Repeat\
   \ Yourself \u2013 \u05D0\u05DC\u2026"
-lastmod: 2024-02-18 23:08:52.575972
+lastmod: 2024-02-19 22:04:58.132875
 model: gpt-4-0125-preview
 summary: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05E7\u05D5\u05D3 \u05DC\u05EA\u05D5\u05DA\
   \ \u05E4\u05D5\u05E0\u05E7\u05E6\u05D9\u05D5\u05EA \u05DE\u05E9\u05DE\u05E2\u05D5\

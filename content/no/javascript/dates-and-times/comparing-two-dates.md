@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/javascript/comparing-two-dates/
 date: 2024-01-20 17:33:25.243945-07:00
 description: "\xC5 sammenligne to datoer betyr enkelt og greit \xE5 finne ut hvilken\
   \ som er tidligst, senest eller om de er like. Det gj\xF8r programmerere for \xE5\
   \ kontrollere\u2026"
-lastmod: 2024-02-18 23:08:54.320693
+lastmod: 2024-02-19 22:05:00.473215
 model: gpt-4-1106-preview
 summary: "\xC5 sammenligne to datoer betyr enkelt og greit \xE5 finne ut hvilken som\
   \ er tidligst, senest eller om de er like. Det gj\xF8r programmerere for \xE5 kontrollere\u2026"

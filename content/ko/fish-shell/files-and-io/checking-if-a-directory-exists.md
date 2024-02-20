@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:31.793692-07:00
@@ -13,7 +11,7 @@ description: "Fish Shell\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC
   \uAC8C \uD569\uB2C8\uB2E4. \uC774 \uAE30\uBC95\uC740 \uD30C\uC77C\uC2DC\uC2A4\uD15C\
   \uACFC \uC608\uCE21 \uAC00\uB2A5\uD55C \uBC29\uC2DD\uC73C\uB85C \uC0C1\uD638 \uC791\
   \uC6A9\uD558\uB294\u2026"
-lastmod: 2024-02-18 23:09:06.903937
+lastmod: 2024-02-19 22:05:14.791526
 model: gpt-4-0125-preview
 summary: "Fish Shell\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC \uC5EC\
   \uBD80\uB97C \uD655\uC778\uD558\uB294 \uAC83\uC740, \uC2A4\uD06C\uB9BD\uD2B8\uAC00\

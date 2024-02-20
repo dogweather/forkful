@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/swift/finding-the-length-of-a-string/
 date: 2024-01-20 17:48:32.384449-07:00
 description: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de caract\xE8\
   res qui la composent. Les programmeurs le font pour valider des saisies, optimiser\u2026"
-lastmod: 2024-02-18 23:09:09.198857
+lastmod: 2024-02-19 22:05:16.868106
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de caract\xE8\
   res qui la composent. Les programmeurs le font pour valider des saisies, optimiser\u2026"

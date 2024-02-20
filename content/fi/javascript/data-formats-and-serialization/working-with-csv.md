@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/javascript/working-with-csv/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:31.624544-07:00
 description: "CSV:n (pilkuilla erotetut arvot) k\xE4sittely JavaScriptill\xE4 tarkoittaa\
   \ CSV-tiedostojen j\xE4sent\xE4mist\xE4 tai luomista, jotta voidaan joko ottaa vastaan\u2026"
-lastmod: 2024-02-18 23:09:08.060349
+lastmod: 2024-02-19 22:05:15.867070
 model: gpt-4-0125-preview
 summary: "CSV:n (pilkuilla erotetut arvot) k\xE4sittely JavaScriptill\xE4 tarkoittaa\
   \ CSV-tiedostojen j\xE4sent\xE4mist\xE4 tai luomista, jotta voidaan joko ottaa vastaan\u2026"

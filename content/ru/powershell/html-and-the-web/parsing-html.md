@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ru/powershell/parsing-html/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:00:10.384742-07:00
@@ -14,7 +12,7 @@ description: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u043E\u0437\u043D
   \u0442\u0438\u0437\u0430\u0446\u0438\u0438 \u0432\u0435\u0431-\u0441\u043A\u0440\
   \u0430\u043F\u0438\u043D\u0433\u0430, \u0434\u043E\u0431\u044B\u0447\u0438 \u0434\
   \u0430\u043D\u043D\u044B\u0445 \u0438\u043B\u0438\u2026"
-lastmod: 2024-02-18 23:08:57.255289
+lastmod: 2024-02-19 22:05:04.418908
 model: gpt-4-0125-preview
 summary: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u043E\u0437\u043D\u0430\
   \u0447\u0430\u0435\u0442 \u0430\u043D\u0430\u043B\u0438\u0437 \u0441\u043E\u0434\

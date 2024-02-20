@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/fish-shell/handling-errors/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:45.993610-07:00
 description: "Foutafhandeling stelt je script in staat om elegant om te gaan met het\
   \ onverwachte. We doen dit om falen te beheren zonder onze gebruiker grijs haar\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:02.334274
+lastmod: 2024-02-19 22:05:10.342420
 model: gpt-4-0125-preview
 summary: "Foutafhandeling stelt je script in staat om elegant om te gaan met het onverwachte.\
   \ We doen dit om falen te beheren zonder onze gebruiker grijs haar te\u2026"

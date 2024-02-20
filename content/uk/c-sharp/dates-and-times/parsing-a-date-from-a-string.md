@@ -1,6 +1,4 @@
 ---
-aliases:
-- /uk/c-sharp/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:22.321798-07:00
@@ -13,7 +11,7 @@ description: "\u0410\u043D\u0430\u043B\u0456\u0437 \u0434\u0430\u0442\u0438 \u04
   \u0435\u043E\u0431\u0445\u0456\u0434\u043D\u043E \u0434\u043B\u044F \u0434\u043E\
   \u0434\u0430\u0442\u043A\u0456\u0432, \u044F\u043A\u0456 \u043F\u043E\u0442\u0440\
   \u0435\u0431\u0443\u044E\u0442\u044C\u2026"
-lastmod: 2024-02-18 23:09:00.358990
+lastmod: 2024-02-19 22:05:08.331643
 model: gpt-4-0125-preview
 summary: "\u0410\u043D\u0430\u043B\u0456\u0437 \u0434\u0430\u0442\u0438 \u0437 \u0440\
   \u044F\u0434\u043A\u0430 \u0432 C# \u043F\u043E\u043B\u044F\u0433\u0430\u0454 \u0443\

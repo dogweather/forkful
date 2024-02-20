@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/javascript/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:57.084444-07:00
 description: "Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende\
   \ Aufgabe, die das Abrufen und m\xF6glicherweise Manipulieren des heutigen Datums\
   \ und der\u2026"
-lastmod: 2024-02-18 23:09:05.290070
+lastmod: 2024-02-19 22:05:13.214397
 model: gpt-4-0125-preview
 summary: "Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende Aufgabe,\
   \ die das Abrufen und m\xF6glicherweise Manipulieren des heutigen Datums und der\u2026"

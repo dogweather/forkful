@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/fish-shell/comparing-two-dates/
 date: 2024-01-20 17:33:17.596329-07:00
 description: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74, \uB450\
   \ \uC2DC\uC810 \uC0AC\uC774\uC758 \uCC28\uC774\uB97C \uC54C\uC544\uB0B4\uB294 \uAC83\
@@ -8,7 +6,7 @@ description: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74, \
   \ \uACC4\uC0B0\uD558\uAC70\uB098 \uB0A0\uC9DC\uB97C \uC815\uB82C\uD558\uAE30 \uC704\
   \uD574 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.901001
+lastmod: 2024-02-19 22:05:14.788807
 model: gpt-4-1106-preview
 summary: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74, \uB450\
   \ \uC2DC\uC810 \uC0AC\uC774\uC758 \uCC28\uC774\uB97C \uC54C\uC544\uB0B4\uB294 \uAC83\

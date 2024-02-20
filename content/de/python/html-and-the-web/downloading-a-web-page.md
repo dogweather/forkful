@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/python/downloading-a-web-page/
 date: 2024-01-20 17:44:47.122293-07:00
 description: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite zu holen\
   \ und lokal zu speichern. Programmierer machen das, um Daten zu analysieren,\u2026"
-lastmod: 2024-02-18 23:09:04.460807
+lastmod: 2024-02-19 22:05:12.425152
 model: gpt-4-1106-preview
 summary: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite zu holen und\
   \ lokal zu speichern. Programmierer machen das, um Daten zu analysieren,\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/haskell/sending-an-http-request/
 date: 2024-01-20 17:59:54.985795-07:00
 description: "Enviar una solicitud HTTP significa pedirle a un servidor informaci\xF3\
   n o enviarle datos. Los programadores lo hacen para interactuar con servicios web,\u2026"
-lastmod: 2024-02-18 23:09:10.024622
+lastmod: 2024-02-19 22:05:17.622951
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP significa pedirle a un servidor informaci\xF3\
   n o enviarle datos. Los programadores lo hacen para interactuar con servicios web,\u2026"

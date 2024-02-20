@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/capitalizing-a-string/
 date: 2024-02-03 17:50:09.051331-07:00
 description: "Capitalizing a string in C involves converting the first character of\
   \ each word in a given string to uppercase if it is a lowercase letter. Programmers\u2026"
-lastmod: 2024-02-18 23:09:11.505882
+lastmod: 2024-02-19 22:05:18.957865
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in C involves converting the first character of each\
   \ word in a given string to uppercase if it is a lowercase letter. Programmers\u2026"

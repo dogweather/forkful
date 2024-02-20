@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/powershell/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:58.061103-07:00
 description: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
   \ alfab\xE9ticos de una cadena de texto a su equivalente en min\xFAsculas. Los\u2026"
-lastmod: 2024-02-18 23:09:10.199421
+lastmod: 2024-02-19 22:05:17.782869
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
   \ alfab\xE9ticos de una cadena de texto a su equivalente en min\xFAsculas. Los\u2026"

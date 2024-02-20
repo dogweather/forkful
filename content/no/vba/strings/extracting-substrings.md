@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/vba/extracting-substrings/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:28.117074-07:00
 description: "\xC5 trekke ut delstrenger i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 isolere spesifikke deler av en streng basert p\xE5 gitte kriterier. Programmerere\u2026"
-lastmod: 2024-02-18 23:08:53.716299
+lastmod: 2024-02-19 22:04:59.851852
 model: gpt-4-0125-preview
 summary: "\xC5 trekke ut delstrenger i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 isolere spesifikke deler av en streng basert p\xE5 gitte kriterier. Programmerere\u2026"

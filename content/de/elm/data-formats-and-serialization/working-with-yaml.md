@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/elm/working-with-yaml/
 date: 2024-01-19
 description: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen\
   \ von Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
   \ es\u2026"
-lastmod: 2024-02-18 23:09:04.802994
+lastmod: 2024-02-19 22:05:12.750605
 summary: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen von\
   \ Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
   \ es\u2026"

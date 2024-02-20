@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:10.267180-07:00
 description: "Zmiana stringa na ma\u0142e litery to prosty proces, gdzie wszystkie\
   \ litery w napisie s\u0105 konwertowane na ich ma\u0142e odpowiedniki. Programi\u015B\
   ci robi\u0105 to, by\u2026"
-lastmod: 2024-02-18 23:08:49.940380
+lastmod: 2024-02-19 22:04:54.889460
 model: gpt-4-1106-preview
 summary: "Zmiana stringa na ma\u0142e litery to prosty proces, gdzie wszystkie litery\
   \ w napisie s\u0105 konwertowane na ich ma\u0142e odpowiedniki. Programi\u015Bci\

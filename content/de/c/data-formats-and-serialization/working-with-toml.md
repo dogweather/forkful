@@ -1,12 +1,10 @@
 ---
-aliases:
-- /de/c/working-with-toml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:10.965767-07:00
 description: "TOML (Tom's Obvious, Minimal Language) ist ein Konfigurationsdateiformat,\
   \ das aufgrund seiner klaren Semantik leicht zu lesen ist. Programmierer verwenden\u2026"
-lastmod: 2024-02-18 23:09:05.401041
+lastmod: 2024-02-19 22:05:13.320076
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) ist ein Konfigurationsdateiformat,\
   \ das aufgrund seiner klaren Semantik leicht zu lesen ist. Programmierer verwenden\u2026"

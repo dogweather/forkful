@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/haskell/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:59.458854-07:00
 description: "Muuttamalla p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi voimme n\xE4ytt\xE4\
   \xE4 sen helposti ymm\xE4rrett\xE4v\xE4ss\xE4 muodossa. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n, jotta p\xE4iv\xE4m\xE4\xE4r\xE4t sopivat\u2026"
-lastmod: 2024-02-18 23:09:07.678517
+lastmod: 2024-02-19 22:05:15.519809
 model: gpt-4-1106-preview
 summary: "Muuttamalla p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi voimme n\xE4ytt\xE4\
   \xE4 sen helposti ymm\xE4rrett\xE4v\xE4ss\xE4 muodossa. Ohjelmoijat tekev\xE4t t\xE4\

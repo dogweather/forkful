@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/elm/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:03.711018-07:00
 description: "Escribir en el error est\xE1ndar (stderr) se trata de redirigir los\
   \ mensajes de error y diagn\xF3sticos por separado del resultado principal del programa,\
   \ que\u2026"
-lastmod: 2024-02-18 23:09:09.908236
+lastmod: 2024-02-19 22:05:17.517685
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) se trata de redirigir los mensajes\
   \ de error y diagn\xF3sticos por separado del resultado principal del programa,\

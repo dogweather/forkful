@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/google-apps-script/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:42.974938-07:00
 description: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekst\
   \ som representerer en dato, til et datoomsjekt, noe som muliggj\xF8r at programmerere\
   \ kan\u2026"
-lastmod: 2024-02-18 23:08:53.491384
+lastmod: 2024-02-19 22:04:59.606400
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekst\
   \ som representerer en dato, til et datoomsjekt, noe som muliggj\xF8r at programmerere\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/fish-shell/interpolating-a-string/
 date: 2024-01-20 17:50:35.921519-07:00
 description: "Interpolating a string means blending variables or expressions within\
   \ a string. It saves time and enhances readability by allowing dynamic content without\u2026"
-lastmod: 2024-02-18 23:09:11.465510
+lastmod: 2024-02-19 22:05:18.920499
 model: gpt-4-1106-preview
 summary: "Interpolating a string means blending variables or expressions within a\
   \ string. It saves time and enhances readability by allowing dynamic content without\u2026"

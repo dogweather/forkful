@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/clojure/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:51.694744-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w w Clojure polega na przekszta\u0142\
   caniu tekstowych reprezentacji dat i czas\xF3w na bardziej u\u017Cyteczn\u0105 form\u0119\
   \ (np. obiekt DateTime\u2026"
-lastmod: 2024-02-18 23:08:49.273873
+lastmod: 2024-02-19 22:04:54.187316
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Clojure polega na przekszta\u0142\
   caniu tekstowych reprezentacji dat i czas\xF3w na bardziej u\u017Cyteczn\u0105 form\u0119\

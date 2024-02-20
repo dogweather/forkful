@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/checking-if-a-directory-exists/
 date: 2024-02-03 17:50:07.908091-07:00
 description: "Checking whether a directory exists in C involves querying the file\
   \ system to verify if a specific path leads to a directory. Programmers often perform\u2026"
-lastmod: 2024-02-18 23:09:11.536673
+lastmod: 2024-02-19 22:05:18.986092
 model: gpt-4-0125-preview
 summary: "Checking whether a directory exists in C involves querying the file system\
   \ to verify if a specific path leads to a directory. Programmers often perform\u2026"

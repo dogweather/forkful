@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fi/elixir/extracting-substrings/
 date: 2024-01-20 17:45:49.829968-07:00
 description: "Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat\
   \ tekev\xE4t t\xE4t\xE4 tietojen j\xE4sentelyyn, tietokantojen k\xE4sittelyyn ja\u2026"
-lastmod: 2024-02-18 23:09:07.261775
+lastmod: 2024-02-19 22:05:15.156878
 model: gpt-4-1106-preview
 summary: "Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat\
   \ tekev\xE4t t\xE4t\xE4 tietojen j\xE4sentelyyn, tietokantojen k\xE4sittelyyn ja\u2026"

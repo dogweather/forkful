@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/javascript/starting-a-new-project/
 date: 2024-01-20 18:03:50.128202-07:00
 description: "Att starta ett nytt projekt \xE4r att skapa en tom duk f\xF6r att koda\
   \ n\xE5got fr\xE5n grunden. Programmerare g\xF6r detta f\xF6r att oms\xE4tta id\xE9\
   er i verklighet, l\xF6sa\u2026"
-lastmod: 2024-02-18 23:08:52.165385
+lastmod: 2024-02-19 22:04:57.536831
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt \xE4r att skapa en tom duk f\xF6r att koda n\xE5\
   got fr\xE5n grunden. Programmerare g\xF6r detta f\xF6r att oms\xE4tta id\xE9er i\

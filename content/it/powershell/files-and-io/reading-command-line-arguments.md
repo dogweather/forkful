@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/powershell/reading-command-line-arguments/
 date: 2024-01-20 17:56:31.647075-07:00
 description: "Leggere gli argomenti della riga di comando significa catturare le informazioni\
   \ inserite quando un programma viene avviato. I programmatori lo fanno per\u2026"
-lastmod: 2024-02-18 23:08:56.109204
+lastmod: 2024-02-19 22:05:02.732470
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando significa catturare le informazioni\
   \ inserite quando un programma viene avviato. I programmatori lo fanno per\u2026"

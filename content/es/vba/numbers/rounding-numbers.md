@@ -1,13 +1,11 @@
 ---
-aliases:
-- /es/vba/rounding-numbers/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:57.673812-07:00
 description: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar un\
   \ n\xFAmero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares\
   \ decimales. Los\u2026"
-lastmod: 2024-02-18 23:09:09.790514
+lastmod: 2024-02-19 22:05:17.410460
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar un n\xFA\
   mero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares decimales.\

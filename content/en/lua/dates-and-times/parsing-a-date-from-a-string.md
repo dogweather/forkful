@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/lua/parsing-a-date-from-a-string/
 date: 2024-02-03 19:02:42.879082-07:00
 description: "Parsing a date from a string involves converting textual representations\
   \ of dates and times into a format that can be easily manipulated, stored, or\u2026"
-lastmod: 2024-02-18 23:09:11.187881
+lastmod: 2024-02-19 22:05:18.676001
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string involves converting textual representations\
   \ of dates and times into a format that can be easily manipulated, stored, or\u2026"

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /he/fish-shell/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:56.854163-07:00
@@ -14,7 +12,7 @@ description: "\u05E0\u05D9\u05EA\u05D5\u05D7 \u05EA\u05D0\u05E8\u05D9\u05DA \u05
   \ \u05D5\u05D9\u05DB\u05D5\u05DC\u05D5\u05EA \u05DC\u05EA\u05E4\u05E2\u05DC \u05D5\
   \u05DC\u05E9\u05E0\u05D5\u05EA. \u05DE\u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05E2\
   \u05D5\u05E9\u05D9\u05DD \u05D6\u05D0\u05EA \u05DB\u05D3\u05D9\u2026"
-lastmod: 2024-02-18 23:08:53.305298
+lastmod: 2024-02-19 22:04:59.341274
 model: gpt-4-0125-preview
 summary: "\u05E0\u05D9\u05EA\u05D5\u05D7 \u05EA\u05D0\u05E8\u05D9\u05DA \u05DE\u05DE\
   \u05D7\u05E8\u05D5\u05D6\u05EA \u05DB\u05D5\u05DC\u05DC \u05D0\u05EA \u05D7\u05D9\

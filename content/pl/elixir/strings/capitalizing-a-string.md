@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/elixir/capitalizing-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:50.436775-07:00
 description: "Zwi\u0119kszanie wielko\u015Bci pierwszej litery ci\u0105gu polega na\
   \ zamianie pierwszej litery ci\u0105gu na wielk\u0105, przy jednoczesnym zapewnieniu,\
   \ \u017Ce reszta liter jest\u2026"
-lastmod: 2024-02-18 23:08:49.289610
+lastmod: 2024-02-19 22:04:54.203996
 model: gpt-4-0125-preview
 summary: "Zwi\u0119kszanie wielko\u015Bci pierwszej litery ci\u0105gu polega na zamianie\
   \ pierwszej litery ci\u0105gu na wielk\u0105, przy jednoczesnym zapewnieniu, \u017C\

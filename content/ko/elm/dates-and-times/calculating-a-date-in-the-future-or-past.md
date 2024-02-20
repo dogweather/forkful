@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/elm/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:31:06.353693-07:00
 description: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\
   \uC740 \uD2B9\uC815 \uAE30\uAC04\uC744 \uB354\uD558\uAC70\uB098 \uBE7C\uC11C \uC0C8\
@@ -10,7 +8,7 @@ description: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\u
   \uC744 \uAD6C\uD604\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.106300
+lastmod: 2024-02-19 22:05:14.042422
 model: gpt-4-1106-preview
 summary: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uC740\
   \ \uD2B9\uC815 \uAE30\uAC04\uC744 \uB354\uD558\uAC70\uB098 \uBE7C\uC11C \uC0C8\uB85C\

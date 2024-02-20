@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/kotlin/logging/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:16.225747-07:00
 description: "Loggen, in de kern, is de praktijk van het vastleggen van gebeurtenissen\
   \ en gegevens van een softwareapplicatie naar een externe uitvoer, zoals een\u2026"
-lastmod: 2024-02-18 23:09:01.812773
+lastmod: 2024-02-19 22:05:09.829106
 model: gpt-4-0125-preview
 summary: "Loggen, in de kern, is de praktijk van het vastleggen van gebeurtenissen\
   \ en gegevens van een softwareapplicatie naar een externe uitvoer, zoals een\u2026"

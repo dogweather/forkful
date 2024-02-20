@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/fish-shell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:28.123294-07:00
 description: "Obtenir la date actuelle en programmation est une t\xE2che fondamentale\
   \ qui permet de r\xE9cup\xE9rer et de manipuler les donn\xE9es de date et d'heure\
   \ du syst\xE8me.\u2026"
-lastmod: 2024-02-18 23:09:09.317727
+lastmod: 2024-02-19 22:05:16.985863
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en programmation est une t\xE2che fondamentale\
   \ qui permet de r\xE9cup\xE9rer et de manipuler les donn\xE9es de date et d'heure\

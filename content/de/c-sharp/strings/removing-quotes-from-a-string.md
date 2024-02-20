@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/c-sharp/removing-quotes-from-a-string/
 date: 2024-01-26 03:38:11.066663-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in C# bedeutet,\
   \ dass Sie diese l\xE4stigen doppelten (`\"`) oder einfachen (`'`) Anf\xFChrungszeichen,\
   \ die\u2026"
-lastmod: 2024-02-18 23:09:04.858693
+lastmod: 2024-02-19 22:05:12.803357
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in C# bedeutet,\
   \ dass Sie diese l\xE4stigen doppelten (`\"`) oder einfachen (`'`) Anf\xFChrungszeichen,\

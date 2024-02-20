@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/powershell/searching-and-replacing-text/
 date: 2024-01-20 17:58:30.050587-07:00
 description: "La ricerca e sostituzione di testo permette di localizzare stringhe\
   \ specifiche in un documento e cambiarle con altre. Programmare queste operazioni\u2026"
-lastmod: 2024-02-18 23:08:56.078510
+lastmod: 2024-02-19 22:05:02.699899
 model: gpt-4-1106-preview
 summary: "La ricerca e sostituzione di testo permette di localizzare stringhe specifiche\
   \ in un documento e cambiarle con altre. Programmare queste operazioni\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/bash/interpolating-a-string/
 date: 2024-01-20 17:50:14.918678-07:00
 description: "Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden sis\xE4\
   llytt\xE4mist\xE4 osaksi merkkijonoja. Koodarit k\xE4ytt\xE4v\xE4t t\xE4t\xE4, koska\
   \ se tekee koodista\u2026"
-lastmod: 2024-02-18 23:09:07.787636
+lastmod: 2024-02-19 22:05:15.619733
 model: gpt-4-1106-preview
 summary: "Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden sis\xE4llytt\xE4\
   mist\xE4 osaksi merkkijonoja. Koodarit k\xE4ytt\xE4v\xE4t t\xE4t\xE4, koska se tekee\

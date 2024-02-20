@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/lua/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:55.873352-07:00
 description: "Les tableaux associatifs sont comme des poign\xE9es de main secr\xE8\
   tes pour les donn\xE9es en Lua\u2014au lieu de simplement num\xE9roter les indices\
   \ de mani\xE8re ordonn\xE9e,\u2026"
-lastmod: 2024-02-18 23:09:08.961822
+lastmod: 2024-02-19 22:05:16.651006
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs sont comme des poign\xE9es de main secr\xE8tes\
   \ pour les donn\xE9es en Lua\u2014au lieu de simplement num\xE9roter les indices\

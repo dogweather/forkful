@@ -1,12 +1,10 @@
 ---
-aliases:
-- /fi/python/writing-to-standard-error/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:29.743769-07:00
 description: "Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten\
   \ tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen\u2026"
-lastmod: 2024-02-18 23:09:07.201258
+lastmod: 2024-02-19 22:05:15.100169
 model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten\
   \ tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /pt/elixir/interpolating-a-string/
 date: 2024-01-20 17:50:45.751851-07:00
 description: "Interpolar uma string em Elixir significa inserir valores de vari\xE1\
   veis ou express\xF5es diretamente dentro dela. Programadores fazem isso para compor\u2026"
-lastmod: 2024-02-18 23:08:57.830634
+lastmod: 2024-02-19 22:05:05.299306
 model: gpt-4-1106-preview
 summary: "Interpolar uma string em Elixir significa inserir valores de vari\xE1veis\
   \ ou express\xF5es diretamente dentro dela. Programadores fazem isso para compor\u2026"

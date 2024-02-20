@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/elixir/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:50.895247-07:00
 description: "In Elixir worden associatieve arrays, genaamd Maps, gebruikt als collecties\
   \ van sleutel-waardeparen waar een unieke sleutel naar een waarde wijst. Ze zijn\u2026"
-lastmod: 2024-02-18 23:09:01.518454
+lastmod: 2024-02-19 22:05:09.545105
 model: gpt-4-0125-preview
 summary: "In Elixir worden associatieve arrays, genaamd Maps, gebruikt als collecties\
   \ van sleutel-waardeparen waar een unieke sleutel naar een waarde wijst. Ze zijn\u2026"

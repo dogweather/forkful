@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/java/converting-a-date-into-a-string/
 date: 2024-01-20 17:36:38.613492-07:00
 description: "Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi, koska ihmissilm\xE4\
   lle ymm\xE4rrett\xE4v\xE4 muoto on helpompi k\xE4sitell\xE4. Ohjelmoinnissa se on\
   \ hy\xF6dyllist\xE4 lokitusta,\u2026"
-lastmod: 2024-02-18 23:09:07.470560
+lastmod: 2024-02-19 22:05:15.352126
 model: gpt-4-1106-preview
 summary: "Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi, koska ihmissilm\xE4\
   lle ymm\xE4rrett\xE4v\xE4 muoto on helpompi k\xE4sitell\xE4. Ohjelmoinnissa se on\

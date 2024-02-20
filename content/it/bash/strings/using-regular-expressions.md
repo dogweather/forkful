@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/bash/using-regular-expressions/
 date: 2024-01-19
 description: "Le espressioni regolari sono modelli usati per trovare corrispondenze\
   \ di testo. I programmatori le usano per semplificare compiti come la ricerca, la\u2026"
-lastmod: 2024-02-18 23:08:56.041240
+lastmod: 2024-02-19 22:05:02.658562
 summary: "Le espressioni regolari sono modelli usati per trovare corrispondenze di\
   \ testo. I programmatori le usano per semplificare compiti come la ricerca, la\u2026"
 title: Utilizzo delle espressioni regolari

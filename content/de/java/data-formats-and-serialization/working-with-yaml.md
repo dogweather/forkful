@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/java/working-with-yaml/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:36.393245-07:00
 description: "YAML, kurz f\xFCr \"YAML Ain't Markup Language\", ist ein f\xFCr Menschen\
   \ lesbarer Daten-Serialisierungsstandard, den Programmierer f\xFCr Konfigurationsdateien,\
   \ das\u2026"
-lastmod: 2024-02-18 23:09:04.758798
+lastmod: 2024-02-19 22:05:12.708641
 model: gpt-4-0125-preview
 summary: "YAML, kurz f\xFCr \"YAML Ain't Markup Language\", ist ein f\xFCr Menschen\
   \ lesbarer Daten-Serialisierungsstandard, den Programmierer f\xFCr Konfigurationsdateien,\

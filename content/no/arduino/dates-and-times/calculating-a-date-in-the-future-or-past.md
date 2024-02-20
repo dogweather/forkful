@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/arduino/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:28:33.266953-07:00
 description: "\xC5 kalkulere en dato i fremtiden eller fortiden handler om \xE5 ta\
   \ en startdato og legge til eller trekke fra dager, m\xE5neder eller \xE5r. Programmerere\
   \ bruker\u2026"
-lastmod: 2024-02-18 23:08:54.155520
+lastmod: 2024-02-19 22:05:00.343345
 model: gpt-4-1106-preview
 summary: "\xC5 kalkulere en dato i fremtiden eller fortiden handler om \xE5 ta en\
   \ startdato og legge til eller trekke fra dager, m\xE5neder eller \xE5r. Programmerere\

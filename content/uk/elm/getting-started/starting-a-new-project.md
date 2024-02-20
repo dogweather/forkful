@@ -1,9 +1,7 @@
 ---
-aliases:
-- /uk/elm/starting-a-new-project/
 date: 2024-01-20 18:03:21.486767-07:00
 description: ''
-lastmod: 2024-02-18 23:09:00.192793
+lastmod: 2024-02-19 22:05:08.170024
 model: gpt-4-1106-preview
 summary: ''
 title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\

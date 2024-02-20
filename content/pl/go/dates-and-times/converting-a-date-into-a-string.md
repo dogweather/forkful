@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/go/converting-a-date-into-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:33.501451-07:00
 description: "Konwersja daty na ci\u0105g znak\xF3w w Go polega na przekszta\u0142\
   ceniu obiektu `time.Time` na czytelny format ci\u0105gu znak\xF3w. Programi\u015B\
   ci cz\u0119sto wykonuj\u0105 t\u0119 operacj\u0119,\u2026"
-lastmod: 2024-02-18 23:08:49.111184
+lastmod: 2024-02-19 22:04:54.049939
 model: gpt-4-0125-preview
 summary: "Konwersja daty na ci\u0105g znak\xF3w w Go polega na przekszta\u0142ceniu\
   \ obiektu `time.Time` na czytelny format ci\u0105gu znak\xF3w. Programi\u015Bci\

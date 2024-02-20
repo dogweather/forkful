@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/fish-shell/searching-and-replacing-text/
 date: 2024-01-20 17:58:09.049121-07:00
 description: "S\xF8k og erstatt lar deg finne tekststrenger og bytte dem ut med noe\
   \ annet. Programmere gj\xF8r dette for \xE5 effektivisere kodingen, fikse feil,\
   \ eller endre\u2026"
-lastmod: 2024-02-18 23:08:54.335546
+lastmod: 2024-02-19 22:05:00.488800
 model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt lar deg finne tekststrenger og bytte dem ut med noe annet.\
   \ Programmere gj\xF8r dette for \xE5 effektivisere kodingen, fikse feil, eller endre\u2026"

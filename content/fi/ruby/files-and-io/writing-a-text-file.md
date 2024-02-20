@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/ruby/writing-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:03.851304-07:00
 description: "Tekstitiedostoon kirjoittaminen Rubylla on perustoiminto, jonka avulla\
   \ voit tallentaa tulosteita ja tietoja pysyv\xE4sti, mahdollistaen datan my\xF6\
   hemp\xE4\xE4\u2026"
-lastmod: 2024-02-18 23:09:08.202809
+lastmod: 2024-02-19 22:05:16.014433
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Rubylla on perustoiminto, jonka avulla voit\
   \ tallentaa tulosteita ja tietoja pysyv\xE4sti, mahdollistaen datan my\xF6hemp\xE4\

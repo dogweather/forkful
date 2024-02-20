@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/javascript/using-associative-arrays/
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:04.755768-07:00
 description: "Assosiatiiviset taulukot eli niin kuin Javascriptiss\xE4 tarkemmin tunnetaan,\
   \ objektit, mahdollistavat avainten m\xE4\xE4rityksen arvoille. T\xE4m\xE4 on eritt\xE4\
   in\u2026"
-lastmod: 2024-02-18 23:09:08.028184
+lastmod: 2024-02-19 22:05:15.837512
 model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot eli niin kuin Javascriptiss\xE4 tarkemmin tunnetaan,\
   \ objektit, mahdollistavat avainten m\xE4\xE4rityksen arvoille. T\xE4m\xE4 on eritt\xE4\

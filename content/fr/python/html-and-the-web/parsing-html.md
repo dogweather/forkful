@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fr/python/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:44.099667-07:00
 description: "L'analyse du HTML implique l'\xE9tude du code HTML d'une page web pour\
   \ extraire des informations ou des \xE9l\xE9ments sp\xE9cifiques, une t\xE2che commune\
   \ pour le web\u2026"
-lastmod: 2024-02-18 23:09:08.337585
+lastmod: 2024-02-19 22:05:16.135896
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML implique l'\xE9tude du code HTML d'une page web pour extraire\
   \ des informations ou des \xE9l\xE9ments sp\xE9cifiques, une t\xE2che commune pour\

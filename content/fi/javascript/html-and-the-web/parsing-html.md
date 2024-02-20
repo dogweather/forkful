@@ -1,6 +1,4 @@
 ---
-aliases:
-- /fi/javascript/parsing-html/
 changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
@@ -8,7 +6,7 @@ date: 2024-01-28 03:00:49.630402-07:00
 description: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4\
   lt\xF6\xE4,\u2026"
-lastmod: 2024-02-18 23:09:08.033405
+lastmod: 2024-02-19 22:05:15.842658
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista. Ohjelmoijat\
   \ tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4lt\xF6\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/ruby/concatenating-strings/
 date: 2024-01-20 17:35:25.859561-07:00
 description: "Konkatenacja string\xF3w to po prostu \u0142\u0105czenie tekst\xF3w\
   \ w jeden ci\u0105g. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107 wiadomo\u015B\
   ci, generowa\u0107 unikatowe identyfikatory, czy te\u017C\u2026"
-lastmod: 2024-02-18 23:08:50.115784
+lastmod: 2024-02-19 22:04:55.104029
 model: gpt-4-1106-preview
 summary: "Konkatenacja string\xF3w to po prostu \u0142\u0105czenie tekst\xF3w w jeden\
   \ ci\u0105g. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107 wiadomo\u015B\

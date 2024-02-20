@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/rust/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:24.739796-07:00
 description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\
   \uB294 \uAC83\uC740 \uD14D\uC2A4\uD2B8\uC758 \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C\
@@ -11,7 +9,7 @@ description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD5
   \uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:05.864604
+lastmod: 2024-02-19 22:05:13.800469
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uC740 \uD14D\uC2A4\uD2B8\uC758 \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C \uD574\

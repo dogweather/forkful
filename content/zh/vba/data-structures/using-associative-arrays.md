@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/using-associative-arrays/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:38.764807-07:00
@@ -10,7 +8,7 @@ description: "\u5173\u8054\u6570\u7EC4\u5728 Visual Basic for Applications (VBA)
   \u6548\u7684\u6570\u636E\u5B58\u50A8\u548C\u68C0\u7D22\u81F3\u5173\u91CD\u8981\uFF0C\
   \u63D0\u4F9B\u4E86\u4E00\u79CD\u6BD4\u4F20\u7EDF\u6570\u7EC4\u7D22\u5F15\u66F4\u7075\
   \u6D3B\u76F4\u89C2\u7684\u6570\u636E\u7BA1\u7406\u65B9\u5F0F\u3002"
-lastmod: 2024-02-18 23:08:58.973647
+lastmod: 2024-02-19 22:05:06.583677
 model: gpt-4-0125-preview
 summary: "\u5173\u8054\u6570\u7EC4\u5728 Visual Basic for Applications (VBA) \u4E2D\
   \u901A\u5E38\u88AB\u79F0\u4E3A\u5B57\u5178\uFF0C\u5141\u8BB8\u7A0B\u5E8F\u5458\u521B\

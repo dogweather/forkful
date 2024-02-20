@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/elixir/calculating-a-date-in-the-future-or-past/
 date: 2024-01-20 17:30:50.638459-07:00
 description: "Figuring out a future or past date involves computing a date that is\
   \ so many days, months, or years from a specific point in time. Programmers often\
   \ need\u2026"
-lastmod: 2024-02-18 23:09:10.778799
+lastmod: 2024-02-19 22:05:18.302917
 model: gpt-4-1106-preview
 summary: "Figuring out a future or past date involves computing a date that is so\
   \ many days, months, or years from a specific point in time. Programmers often need\u2026"

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/haskell/generating-random-numbers/
 date: 2024-01-27 20:34:09.917010-07:00
 description: "Generowanie liczb losowych w Haskellu polega na tworzeniu liczb, kt\xF3\
   re s\u0105 nieprzewidywalne wed\u0142ug ludzkich standard\xF3w. Jest to kluczowe\
   \ w scenariuszach\u2026"
-lastmod: 2024-02-18 23:08:49.649245
+lastmod: 2024-02-19 22:04:54.582080
 model: gpt-4-0125-preview
 summary: "Generowanie liczb losowych w Haskellu polega na tworzeniu liczb, kt\xF3\
   re s\u0105 nieprzewidywalne wed\u0142ug ludzkich standard\xF3w. Jest to kluczowe\

@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/handling-errors/
 date: 2024-01-26 00:50:07.844104-07:00
 description: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattomat\
   \ asiat, jotka yritt\xE4v\xE4t kaataa suunnitelmasi. Sen tarkoitus on est\xE4\xE4\
   \ Arduinoasi\u2026"
-lastmod: 2024-02-18 23:09:07.907124
+lastmod: 2024-02-19 22:05:15.726808
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattomat asiat,\
   \ jotka yritt\xE4v\xE4t kaataa suunnitelmasi. Sen tarkoitus on est\xE4\xE4 Arduinoasi\u2026"

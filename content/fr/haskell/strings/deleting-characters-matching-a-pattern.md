@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/haskell/deleting-characters-matching-a-pattern/
 date: 2024-01-20 17:42:15.235094-07:00
 description: "Supprimer des caract\xE8res correspondant \xE0 un motif consiste \xE0\
   \ enlever de notre texte des s\xE9quences sp\xE9cifiques de caract\xE8res. On le\
   \ fait souvent pour\u2026"
-lastmod: 2024-02-18 23:09:08.857559
+lastmod: 2024-02-19 22:05:16.555419
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res correspondant \xE0 un motif consiste \xE0 enlever\
   \ de notre texte des s\xE9quences sp\xE9cifiques de caract\xE8res. On le fait souvent\

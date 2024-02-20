@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/swift/logging/
 date: 2024-01-26 01:08:16.980724-07:00
 description: "Logowanie to proces rejestrowania zachowa\u0144 aplikacji, b\u0142\u0119\
   d\xF3w i innych wa\u017Cnych informacji na trwa\u0142ym no\u015Bniku, takim jak\
   \ plik lub baza danych. Programi\u015Bci\u2026"
-lastmod: 2024-02-18 23:08:49.959197
+lastmod: 2024-02-19 22:04:54.909591
 model: gpt-4-1106-preview
 summary: "Logowanie to proces rejestrowania zachowa\u0144 aplikacji, b\u0142\u0119\
   d\xF3w i innych wa\u017Cnych informacji na trwa\u0142ym no\u015Bniku, takim jak\

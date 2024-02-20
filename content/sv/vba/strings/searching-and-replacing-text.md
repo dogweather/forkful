@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/vba/searching-and-replacing-text/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:21.402020-07:00
 description: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA)\
   \ \xE4r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\
   \ och databaser.\u2026"
-lastmod: 2024-02-18 23:08:51.610621
+lastmod: 2024-02-19 22:04:56.931837
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA) \xE4\
   r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\

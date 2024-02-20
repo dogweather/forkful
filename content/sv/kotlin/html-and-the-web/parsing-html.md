@@ -1,13 +1,11 @@
 ---
-aliases:
-- /sv/kotlin/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:28.459562-07:00
 description: "Att tolka HTML inneb\xE4r att dissekera en webbsidas m\xE4rkspr\xE5\
   k till n\xE5got som ett program kan f\xF6rst\xE5 och manipulera. Programmerare tolkar\
   \ HTML f\xF6r att\u2026"
-lastmod: 2024-02-18 23:08:51.747612
+lastmod: 2024-02-19 22:04:57.082926
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r att dissekera en webbsidas m\xE4rkspr\xE5k till\
   \ n\xE5got som ett program kan f\xF6rst\xE5 och manipulera. Programmerare tolkar\

@@ -1,6 +1,4 @@
 ---
-aliases:
-- /zh/vba/getting-the-current-date/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:35.734695-07:00
@@ -11,7 +9,7 @@ description: "\u5728Visual Basic for Applications (VBA)\u4E2D\uFF0C\u83B7\u53D6\
   \u4E8E\u65E5\u5FD7\u8BB0\u5F55\u3001\u65F6\u95F4\u6233\u4E8B\u52A1\u6216\u8FDB\u884C\
   \u57FA\u4E8E\u65E5\u671F\u7684\u8BA1\u7B97\u7B49\u64CD\u4F5C\u81F3\u5173\u91CD\u8981\
   \u3002"
-lastmod: 2024-02-18 23:08:58.991260
+lastmod: 2024-02-19 22:05:06.608289
 model: gpt-4-0125-preview
 summary: "\u5728Visual Basic for Applications (VBA)\u4E2D\uFF0C\u83B7\u53D6\u5F53\u524D\
   \u65E5\u671F\u662F\u4E00\u4E2A\u5E38\u89C1\u4EFB\u52A1\uFF0C\u5B83\u4F7F\u7A0B\u5E8F\

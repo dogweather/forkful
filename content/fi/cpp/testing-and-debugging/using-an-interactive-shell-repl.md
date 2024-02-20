@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/cpp/using-an-interactive-shell-repl/
 date: 2024-01-26 04:12:13.102310-07:00
 description: "REPL (Read-Eval-Print Loop, lue-arvioi-tulosta-silmukka) on yksinkertainen,\
   \ vuorovaikutteinen ohjelmointiymp\xE4rist\xF6. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \u2026"
-lastmod: 2024-02-18 23:09:07.945482
+lastmod: 2024-02-19 22:05:15.761860
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop, lue-arvioi-tulosta-silmukka) on yksinkertainen,\
   \ vuorovaikutteinen ohjelmointiymp\xE4rist\xF6. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\

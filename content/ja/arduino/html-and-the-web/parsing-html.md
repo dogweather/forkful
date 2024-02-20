@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ja/arduino/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:54.371913-07:00
@@ -14,7 +12,7 @@ description: "Arduino\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3067\u306EHTML\u306E\
   \u7684\u3067\u30A6\u30A7\u30D6\u30B5\u30A4\u30C8\u304B\u3089\u30C7\u30FC\u30BF\u3092\
   \u53CE\u96C6\u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\
   \u3002"
-lastmod: 2024-02-18 23:08:55.151408
+lastmod: 2024-02-19 22:05:01.610634
 model: gpt-4-0125-preview
 summary: "Arduino\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3067\u306EHTML\u306E\u89E3\u6790\
   \u3068\u306F\u3001\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u304B\u3089\u60C5\u5831\u3092\

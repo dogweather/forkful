@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/php/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:48.723364-07:00
 description: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you write\
   \ and run PHP code on-the-fly. It's ideal for experimentation, debugging, or learning,\u2026"
-lastmod: 2024-02-18 23:09:11.138746
+lastmod: 2024-02-19 22:05:18.631222
 model: gpt-4-1106-preview
 summary: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you write and\
   \ run PHP code on-the-fly. It's ideal for experimentation, debugging, or learning,\u2026"

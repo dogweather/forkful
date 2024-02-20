@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/lua/finding-the-length-of-a-string/
 date: 2024-01-20 17:47:52.317372-07:00
 description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740\
   , \uADF8 \uBB38\uC790\uC5F4\uC774 \uBA87 \uAC1C\uC758 \uBB38\uC790\uB85C \uC774\uB8E8\
@@ -9,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC
   , \uC785\uB825 \uAC80\uC99D, UI \uB514\uC790\uC778 \uB4F1\uC758 \uC774\uC720\uB85C\
   \ \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:06.402941
+lastmod: 2024-02-19 22:05:14.316726
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740, \uADF8\
   \ \uBB38\uC790\uC5F4\uC774 \uBA87 \uAC1C\uC758 \uBB38\uC790\uB85C \uC774\uB8E8\uC5B4\

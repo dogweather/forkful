@@ -1,13 +1,11 @@
 ---
-aliases:
-- /no/elm/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:41.365232-07:00
 description: "\xC5 sjekke om en katalog eksisterer betyr \xE5 bekrefte om en spesifikk\
   \ mappebane er til stede i filsystemet. Programmerere gj\xF8r dette for \xE5 unng\xE5\
   \ feil n\xE5r de\u2026"
-lastmod: 2024-02-18 23:08:53.825127
+lastmod: 2024-02-19 22:04:59.969685
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer betyr \xE5 bekrefte om en spesifikk\
   \ mappebane er til stede i filsystemet. Programmerere gj\xF8r dette for \xE5 unng\xE5\

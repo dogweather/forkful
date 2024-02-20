@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/kotlin/sending-an-http-request/
 date: 2024-01-20 18:00:08.705201-07:00
 description: "HTTP-Anfragen sind das Herzst\xFCck der Kommunikation im Web. Programmierer\
   \ verwenden sie, um Daten von Servern zu holen oder an diese zu senden \u2013\u2026"
-lastmod: 2024-02-18 23:09:04.823084
+lastmod: 2024-02-19 22:05:12.769173
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind das Herzst\xFCck der Kommunikation im Web. Programmierer\
   \ verwenden sie, um Daten von Servern zu holen oder an diese zu senden \u2013\u2026"

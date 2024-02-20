@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/ruby/converting-a-date-into-a-string/
 date: 2024-01-20 17:37:47.932423-07:00
 description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta sit\xE4 voi\
   \ k\xE4ytt\xE4\xE4 tekstiyhteyksiss\xE4, kuten k\xE4ytt\xF6liittymiss\xE4 ja raporteissa.\
   \ Koodarit tekev\xE4t t\xE4m\xE4n esitt\xE4\xE4kseen\u2026"
-lastmod: 2024-02-18 23:09:08.195389
+lastmod: 2024-02-19 22:05:16.007401
 model: gpt-4-1106-preview
 summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta sit\xE4 voi k\xE4\
   ytt\xE4\xE4 tekstiyhteyksiss\xE4, kuten k\xE4ytt\xF6liittymiss\xE4 ja raporteissa.\

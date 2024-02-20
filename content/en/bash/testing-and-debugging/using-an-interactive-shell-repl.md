@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/bash/using-an-interactive-shell-repl/
 date: 2024-01-25 03:39:54.985454-07:00
 description: "REPL stands for Read-Eval-Print Loop, a simple, interactive computer\
   \ programming environment. Coders use it to quickly write and test code, experiment\u2026"
-lastmod: 2024-02-18 23:09:11.231745
+lastmod: 2024-02-19 22:05:18.708666
 model: gpt-4-1106-preview
 summary: "REPL stands for Read-Eval-Print Loop, a simple, interactive computer programming\
   \ environment. Coders use it to quickly write and test code, experiment\u2026"

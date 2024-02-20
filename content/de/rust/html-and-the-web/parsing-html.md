@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/rust/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:05.342740-07:00
 description: "Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu\
   \ extrahieren, was f\xFCr das Web-Scraping, die Datengewinnung oder den Aufbau von\
   \ Web-\u2026"
-lastmod: 2024-02-18 23:09:04.639143
+lastmod: 2024-02-19 22:05:12.594595
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu extrahieren,\
   \ was f\xFCr das Web-Scraping, die Datengewinnung oder den Aufbau von Web-\u2026"

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/ruby/removing-quotes-from-a-string/
 date: 2024-01-25 20:50:11.984167-07:00
 description: "Stripping quotes from a string means peeling away those double or single\
   \ quote marks that wrap around text values. Programmers often do this to clean up\u2026"
-lastmod: 2024-02-18 23:09:11.552056
+lastmod: 2024-02-19 22:05:19.000028
 model: gpt-4-1106-preview
 summary: "Stripping quotes from a string means peeling away those double or single\
   \ quote marks that wrap around text values. Programmers often do this to clean up\u2026"

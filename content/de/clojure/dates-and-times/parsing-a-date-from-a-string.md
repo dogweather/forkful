@@ -1,13 +1,11 @@
 ---
-aliases:
-- /de/clojure/parsing-a-date-from-a-string/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:47.293630-07:00
 description: "Das Parsen eines Datums aus einem String in Clojure bezieht sich auf\
   \ das Umwandeln textueller Darstellungen von Daten und Zeiten in eine nutzbarere\
   \ Form\u2026"
-lastmod: 2024-02-18 23:09:04.517068
+lastmod: 2024-02-19 22:05:12.478643
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Clojure bezieht sich auf das\
   \ Umwandeln textueller Darstellungen von Daten und Zeiten in eine nutzbarere Form\u2026"

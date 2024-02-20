@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/php/searching-and-replacing-text/
 date: 2024-01-20 17:58:27.928375-07:00
 description: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-Dich-Fix-Dich-Prozess:\
   \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine\u2026"
-lastmod: 2024-02-18 23:09:04.946422
+lastmod: 2024-02-19 22:05:12.886359
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-Dich-Fix-Dich-Prozess:\
   \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine\u2026"

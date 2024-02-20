@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/javascript/checking-if-a-directory-exists/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:45.985179-07:00
 description: "\xC5 sjekke om en mappe finnes i JavaScript er essensielt for oppgaver\
   \ som involverer manipulasjon av filer, slik at skript kan verifisere mappens\u2026"
-lastmod: 2024-02-18 23:08:54.322565
+lastmod: 2024-02-19 22:05:00.475208
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe finnes i JavaScript er essensielt for oppgaver som\
   \ involverer manipulasjon av filer, slik at skript kan verifisere mappens\u2026"

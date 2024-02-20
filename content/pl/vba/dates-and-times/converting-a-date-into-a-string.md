@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pl/vba/converting-a-date-into-a-string/
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:34.499120-07:00
 description: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Visual Basic for Applications\
   \ (VBA) to proces zmiany typu danych daty na format \u0142a\u0144cucha znak\xF3\
   w. Programi\u015Bci cz\u0119sto\u2026"
-lastmod: 2024-02-18 23:08:49.446236
+lastmod: 2024-02-19 22:04:54.371940
 model: gpt-4-0125-preview
 summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Visual Basic for Applications\
   \ (VBA) to proces zmiany typu danych daty na format \u0142a\u0144cucha znak\xF3\

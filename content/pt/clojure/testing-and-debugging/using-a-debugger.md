@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/clojure/using-a-debugger/
 date: 2024-01-26 03:48:18.335639-07:00
 description: "Usar um depurador significa que voc\xEA est\xE1 se equipando com uma\
   \ lupa para examinar seu c\xF3digo. Os programadores fazem isso para eliminar bugs,\
   \ entender o\u2026"
-lastmod: 2024-02-18 23:08:57.807194
+lastmod: 2024-02-19 22:05:05.273660
 model: gpt-4-0125-preview
 summary: "Usar um depurador significa que voc\xEA est\xE1 se equipando com uma lupa\
   \ para examinar seu c\xF3digo. Os programadores fazem isso para eliminar bugs, entender\

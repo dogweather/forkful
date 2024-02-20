@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/haskell/using-regular-expressions/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:58.946175-07:00
 description: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka\
   \ m\xE4\xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n yleens\xE4 merkkijonojen\
   \ etsimiseen ja\u2026"
-lastmod: 2024-02-18 23:09:07.655750
+lastmod: 2024-02-19 22:05:15.498817
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka\
   \ m\xE4\xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n yleens\xE4 merkkijonojen\

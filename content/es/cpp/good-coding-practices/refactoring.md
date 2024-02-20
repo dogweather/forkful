@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/cpp/refactoring/
 date: 2024-01-26 01:17:19.562146-07:00
 description: "Refactorizar es el proceso de cambiar la estructura interna de un programa\
   \ inform\xE1tico sin alterar su comportamiento externo. Los programadores lo hacen\u2026"
-lastmod: 2024-02-18 23:09:10.319794
+lastmod: 2024-02-19 22:05:17.888064
 model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de cambiar la estructura interna de un programa\
   \ inform\xE1tico sin alterar su comportamiento externo. Los programadores lo hacen\u2026"

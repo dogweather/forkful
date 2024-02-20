@@ -1,11 +1,9 @@
 ---
-aliases:
-- /it/java/extracting-substrings/
 date: 2024-01-20 17:45:43.340594-07:00
 description: "Estrarre sottostringhe significa selezionare parti specifiche di una\
   \ stringa di testo. I programmatori lo fanno per manipolare e analizzare i dati,\
   \ come\u2026"
-lastmod: 2024-02-18 23:08:55.755741
+lastmod: 2024-02-19 22:05:02.358856
 model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa selezionare parti specifiche di una stringa\
   \ di testo. I programmatori lo fanno per manipolare e analizzare i dati, come\u2026"

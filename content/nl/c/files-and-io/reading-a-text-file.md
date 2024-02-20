@@ -1,13 +1,11 @@
 ---
-aliases:
-- /nl/c/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:17.974462-07:00
 description: "Een tekstbestand lezen in C houdt in dat je een bestand op je systeem\
   \ opent om informatie te extraheren en deze naar behoefte te manipuleren of weer\
   \ te\u2026"
-lastmod: 2024-02-18 23:09:02.392691
+lastmod: 2024-02-19 22:05:10.398447
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in C houdt in dat je een bestand op je systeem opent\
   \ om informatie te extraheren en deze naar behoefte te manipuleren of weer te\u2026"

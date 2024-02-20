@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/elixir/searching-and-replacing-text/
 date: 2024-01-20 17:57:31.203811-07:00
 description: "Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista\
   \ toisiksi. Ohjelmoijat tekev\xE4t sit\xE4, koska se on nopea keino muuttaa dataa,\
   \ korjata\u2026"
-lastmod: 2024-02-18 23:09:07.257797
+lastmod: 2024-02-19 22:05:15.153233
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi.\
   \ Ohjelmoijat tekev\xE4t sit\xE4, koska se on nopea keino muuttaa dataa, korjata\u2026"

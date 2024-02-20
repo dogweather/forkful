@@ -1,12 +1,10 @@
 ---
-aliases:
-- /no/c/parsing-html/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:54.287380-07:00
 description: "Parsing av HTML i C inneb\xE6rer analyse av HTML-dokumenter for effektivt\
   \ \xE5 trekke ut data, struktur eller spesifikke deler, ofte som et forstadium til\u2026"
-lastmod: 2024-02-18 23:08:54.391793
+lastmod: 2024-02-19 22:05:00.550100
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i C inneb\xE6rer analyse av HTML-dokumenter for effektivt\
   \ \xE5 trekke ut data, struktur eller spesifikke deler, ofte som et forstadium til\u2026"

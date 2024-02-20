@@ -1,13 +1,11 @@
 ---
-aliases:
-- /it/powershell/getting-the-current-date/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:37.226709-07:00
 description: "Ottenere la data corrente in PowerShell riguarda il recupero della data\
   \ e dell'ora attuali del sistema. Quest'operazione \xE8 fondamentale per compiti\
   \ come\u2026"
-lastmod: 2024-02-18 23:08:56.104511
+lastmod: 2024-02-19 22:05:02.727605
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in PowerShell riguarda il recupero della data\
   \ e dell'ora attuali del sistema. Quest'operazione \xE8 fondamentale per compiti\

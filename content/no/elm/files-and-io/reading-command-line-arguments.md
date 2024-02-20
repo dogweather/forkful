@@ -1,11 +1,9 @@
 ---
-aliases:
-- /no/elm/reading-command-line-arguments/
 date: 2024-01-20 17:55:58.007157-07:00
 description: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF8\
   rsel ved oppstart. Vi bruker det for \xE5 tilpasse kj\xF8ringen av koden uten \xE5\
   \ endre selve\u2026"
-lastmod: 2024-02-18 23:08:53.826068
+lastmod: 2024-02-19 22:04:59.970818
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF8rsel\
   \ ved oppstart. Vi bruker det for \xE5 tilpasse kj\xF8ringen av koden uten \xE5\

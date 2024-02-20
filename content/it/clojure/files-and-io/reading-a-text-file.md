@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/clojure/reading-a-text-file/
 date: 2024-01-20 17:53:56.747636-07:00
 description: "Leggere un file di testo consiste nell'acquisire dati da un file salvato\
   \ sul tuo disco. I programmatori lo fanno per elaborare o analizzare contenuti,\u2026"
-lastmod: 2024-02-18 23:08:55.577291
+lastmod: 2024-02-19 22:05:02.168764
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo consiste nell'acquisire dati da un file salvato\
   \ sul tuo disco. I programmatori lo fanno per elaborare o analizzare contenuti,\u2026"

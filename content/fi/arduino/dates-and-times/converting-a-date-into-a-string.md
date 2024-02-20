@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/arduino/converting-a-date-into-a-string/
 date: 2024-01-20 17:35:46.940612-07:00
 description: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on tapa esitt\xE4\
   \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4 helposti luettavassa formaatissa. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n, jotta voidaan tallentaa,\u2026"
-lastmod: 2024-02-18 23:09:07.911711
+lastmod: 2024-02-19 22:05:15.730981
 model: gpt-4-1106-preview
 summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on tapa esitt\xE4\
   \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4 helposti luettavassa formaatissa. Ohjelmoijat tekev\xE4\

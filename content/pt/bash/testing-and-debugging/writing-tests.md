@@ -1,13 +1,11 @@
 ---
-aliases:
-- /pt/bash/writing-tests/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:35.473067-07:00
 description: "Escrever testes em Bash envolve criar scripts de casos de teste para\
   \ validar a funcionalidade dos seus scripts Bash. Os programadores realizam testes\
   \ para\u2026"
-lastmod: 2024-02-18 23:08:58.329139
+lastmod: 2024-02-19 22:05:05.811444
 model: gpt-4-0125-preview
 summary: "Escrever testes em Bash envolve criar scripts de casos de teste para validar\
   \ a funcionalidade dos seus scripts Bash. Os programadores realizam testes para\u2026"

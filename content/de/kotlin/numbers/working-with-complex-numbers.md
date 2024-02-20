@@ -1,10 +1,8 @@
 ---
-aliases:
-- /de/kotlin/working-with-complex-numbers/
 date: 2024-01-26 04:42:36.965924-07:00
 description: "Komplexe Zahlen erweitern unser Zahlensystem um die Quadratwurzeln negativer\
   \ Zahlen, wobei die 'imagin\xE4re' Einheit i gleich der Quadratwurzel von -1 ist.\u2026"
-lastmod: 2024-02-18 23:09:04.819736
+lastmod: 2024-02-19 22:05:12.766311
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern unser Zahlensystem um die Quadratwurzeln negativer\
   \ Zahlen, wobei die 'imagin\xE4re' Einheit i gleich der Quadratwurzel von -1 ist.\u2026"

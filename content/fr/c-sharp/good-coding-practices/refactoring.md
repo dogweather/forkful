@@ -1,10 +1,8 @@
 ---
-aliases:
-- /fr/c-sharp/refactoring/
 date: 2024-01-26 01:17:08.223293-07:00
 description: "Le remaniement est le processus de restructuration du code informatique\
   \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"
-lastmod: 2024-02-18 23:09:08.837083
+lastmod: 2024-02-19 22:05:16.536855
 model: gpt-4-0125-preview
 summary: "Le remaniement est le processus de restructuration du code informatique\
   \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"

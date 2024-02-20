@@ -1,10 +1,8 @@
 ---
-aliases:
-- /it/ruby/removing-quotes-from-a-string/
 date: 2024-01-26 03:41:36.744547-07:00
 description: "Rimuovere le virgolette da una stringa significa togliere quei segni\
   \ di virgolette doppie o singole che circondano i valori di testo. Gli sviluppatori\u2026"
-lastmod: 2024-02-18 23:08:56.369903
+lastmod: 2024-02-19 22:05:03.009606
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa togliere quei segni di\
   \ virgolette doppie o singole che circondano i valori di testo. Gli sviluppatori\u2026"

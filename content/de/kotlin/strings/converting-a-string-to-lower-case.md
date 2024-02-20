@@ -1,11 +1,9 @@
 ---
-aliases:
-- /de/kotlin/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:48.321835-07:00
 description: "Umwandlung einer Zeichenkette in Kleinbuchstaben bedeutet, dass alle\
   \ Gro\xDFbuchstaben in ihrer kleingeschriebenen Form dargestellt werden. Das ist\
   \ n\xFCtzlich\u2026"
-lastmod: 2024-02-18 23:09:04.812372
+lastmod: 2024-02-19 22:05:12.759522
 model: gpt-4-1106-preview
 summary: "Umwandlung einer Zeichenkette in Kleinbuchstaben bedeutet, dass alle Gro\xDF\
   buchstaben in ihrer kleingeschriebenen Form dargestellt werden. Das ist n\xFCtzlich\u2026"

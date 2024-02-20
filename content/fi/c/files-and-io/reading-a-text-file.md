@@ -1,13 +1,11 @@
 ---
-aliases:
-- /fi/c/reading-a-text-file/
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:36.100839-07:00
 description: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista\
   \ j\xE4rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi\
   \ tai\u2026"
-lastmod: 2024-02-18 23:09:08.152960
+lastmod: 2024-02-19 22:05:15.952985
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista j\xE4\
   rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi tai\u2026"

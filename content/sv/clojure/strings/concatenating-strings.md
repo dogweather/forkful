@@ -1,11 +1,9 @@
 ---
-aliases:
-- /sv/clojure/concatenating-strings/
 date: 2024-01-20 17:34:24.380582-07:00
 description: "I programmering inneb\xE4r 'konkatenering av str\xE4ngar' att sm\xE4\
   lta samman tv\xE5 eller fler textstycken. Vi g\xF6r det f\xF6r att skapa meningsfulla\
   \ meddelanden, bygga\u2026"
-lastmod: 2024-02-18 23:08:51.454580
+lastmod: 2024-02-19 22:04:56.760129
 model: gpt-4-1106-preview
 summary: "I programmering inneb\xE4r 'konkatenering av str\xE4ngar' att sm\xE4lta\
   \ samman tv\xE5 eller fler textstycken. Vi g\xF6r det f\xF6r att skapa meningsfulla\

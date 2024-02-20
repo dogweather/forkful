@@ -1,6 +1,4 @@
 ---
-aliases:
-- /hi/java/using-an-interactive-shell-repl/
 date: 2024-01-26 04:16:21.845068-07:00
 description: "REPL (Read-Eval-Print Loop) \u090F\u0915 \u0907\u0902\u091F\u0930\u090F\
   \u0915\u094D\u091F\u093F\u0935 \u0936\u0947\u0932 \u0939\u0948 \u091C\u094B \u090F\
@@ -11,7 +9,7 @@ description: "REPL (Read-Eval-Print Loop) \u090F\u0915 \u0907\u0902\u091F\u0930\
   , \u0914\u0930 \u092A\u0930\u093F\u0923\u093E\u092E \u0932\u094C\u091F\u093E\u0924\
   \u093E \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\
   \u0930\u2026"
-lastmod: 2024-02-18 23:09:03.117802
+lastmod: 2024-02-19 22:05:11.114256
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop) \u090F\u0915 \u0907\u0902\u091F\u0930\u090F\u0915\
   \u094D\u091F\u093F\u0935 \u0936\u0947\u0932 \u0939\u0948 \u091C\u094B \u090F\u0915\

@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c/generating-random-numbers/
 date: 2024-02-03 17:50:18.648341-07:00
 description: "Generating random numbers in C involves creating values that are unpredictable\
   \ and follow a specific distribution, such as uniform or normal. This\u2026"
-lastmod: 2024-02-18 23:09:11.518495
+lastmod: 2024-02-19 22:05:18.969264
 model: gpt-4-0125-preview
 summary: "Generating random numbers in C involves creating values that are unpredictable\
   \ and follow a specific distribution, such as uniform or normal. This\u2026"

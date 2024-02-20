@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pl/javascript/comparing-two-dates/
 date: 2024-01-20 17:33:12.082695-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat pozwala zrozumie\u0107, kt\xF3ra jest wcze\u015B\
   niejsza czy p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby zarz\u0105dza\u0107\
   \ terminami, sprawdza\u0107 r\xF3\u017Cnice czasowe\u2026"
-lastmod: 2024-02-18 23:08:50.005862
+lastmod: 2024-02-19 22:04:54.960125
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat pozwala zrozumie\u0107, kt\xF3ra jest wcze\u015B\
   niejsza czy p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby zarz\u0105dza\u0107\

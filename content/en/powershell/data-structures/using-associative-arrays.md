@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/powershell/using-associative-arrays/
 date: 2024-01-30 18:57:29.755923-07:00
 description: "Associative arrays, also known as hash tables or dictionaries in PowerShell,\
   \ let you store data in key-value pairs, making data retrieval straightforward\u2026"
-lastmod: 2024-02-18 23:09:11.264917
+lastmod: 2024-02-19 22:05:18.738633
 model: gpt-4-0125-preview
 summary: "Associative arrays, also known as hash tables or dictionaries in PowerShell,\
   \ let you store data in key-value pairs, making data retrieval straightforward\u2026"

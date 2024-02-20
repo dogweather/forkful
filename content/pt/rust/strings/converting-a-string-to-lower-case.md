@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/rust/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:12.643401-07:00
 description: "Converter uma string para min\xFAsculas significa transformar todos\
   \ os caracteres alfab\xE9ticos do texto para sua forma min\xFAscula. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-18 23:08:57.914772
+lastmod: 2024-02-19 22:05:05.388330
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas significa transformar todos os caracteres\
   \ alfab\xE9ticos do texto para sua forma min\xFAscula. Programadores fazem isso\u2026"

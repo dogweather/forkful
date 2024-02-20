@@ -1,6 +1,4 @@
 ---
-aliases:
-- /ko/ruby/comparing-two-dates/
 date: 2024-01-20 17:34:04.114388-07:00
 description: "\uB370\uC774\uD130\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450\
   \ \uB0A0\uC9DC\uC758 \uCC28\uC774\uB97C \uACC4\uC0B0\uD558\uB294 \uAC83\uC785\uB2C8\
@@ -9,7 +7,7 @@ description: "\uB370\uC774\uD130\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB
   \uACFC\uB97C \uCE21\uC815\uD558\uAE30 \uC704\uD574 \uC885\uC885 \uC774 \uC791\uC5C5\
   \uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-18 23:09:07.045306
+lastmod: 2024-02-19 22:05:14.926189
 model: gpt-4-1106-preview
 summary: "\uB370\uC774\uD130\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uB0A0\
   \uC9DC\uC758 \uCC28\uC774\uB97C \uACC4\uC0B0\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4\

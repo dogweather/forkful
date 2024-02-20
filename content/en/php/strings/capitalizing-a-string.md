@@ -1,11 +1,9 @@
 ---
-aliases:
-- /en/php/capitalizing-a-string/
 date: 2024-02-03 19:02:32.487209-07:00
 description: "Capitalizing a string involves modifying the first character of given\
   \ text to uppercase, ensuring sentences, titles, or proper names start correctly\
   \ in a\u2026"
-lastmod: 2024-02-18 23:09:11.120569
+lastmod: 2024-02-19 22:05:18.614553
 model: gpt-4-0125-preview
 summary: "Capitalizing a string involves modifying the first character of given text\
   \ to uppercase, ensuring sentences, titles, or proper names start correctly in a\u2026"

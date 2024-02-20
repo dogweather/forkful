@@ -1,11 +1,9 @@
 ---
-aliases:
-- /es/lua/generating-random-numbers/
 date: 2024-01-27 20:34:39.792165-07:00
 description: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de producir\
   \ valores num\xE9ricos impredecibles que se pueden usar para una variedad de prop\xF3\
   sitos, como\u2026"
-lastmod: 2024-02-18 23:09:10.114983
+lastmod: 2024-02-19 22:05:17.705593
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de producir valores\
   \ num\xE9ricos impredecibles que se pueden usar para una variedad de prop\xF3sitos,\

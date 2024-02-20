@@ -1,12 +1,10 @@
 ---
-aliases:
-- /nl/ruby/using-regular-expressions/
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:40.202043-07:00
 description: "Reguliere expressies (regex) zijn patronen die worden gebruikt om combinaties\
   \ van karakters in strings te vinden. Programmeurs gebruiken ze voor het\u2026"
-lastmod: 2024-02-18 23:09:02.408962
+lastmod: 2024-02-19 22:05:10.414340
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) zijn patronen die worden gebruikt om combinaties\
   \ van karakters in strings te vinden. Programmeurs gebruiken ze voor het\u2026"

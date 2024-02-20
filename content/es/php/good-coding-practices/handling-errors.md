@@ -1,10 +1,8 @@
 ---
-aliases:
-- /es/php/handling-errors/
 date: 2024-01-26 00:55:07.072183-07:00
 description: "El manejo de errores en PHP se trata de administrar y responder a condiciones\
   \ que interrumpen el flujo normal de un programa, como archivos que faltan o\u2026"
-lastmod: 2024-02-18 23:09:10.081965
+lastmod: 2024-02-19 22:05:17.675441
 model: gpt-4-1106-preview
 summary: "El manejo de errores en PHP se trata de administrar y responder a condiciones\
   \ que interrumpen el flujo normal de un programa, como archivos que faltan o\u2026"

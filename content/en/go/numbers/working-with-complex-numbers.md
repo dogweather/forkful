@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/go/working-with-complex-numbers/
 date: 2024-02-03 17:50:08.701621-07:00
 description: "Working with complex numbers in programming involves manipulating numbers\
   \ that have both a real and an imaginary part, typically expressed as `a + bi`.\u2026"
-lastmod: 2024-02-18 23:09:10.590345
+lastmod: 2024-02-19 22:05:18.133679
 model: gpt-4-0125-preview
 summary: "Working with complex numbers in programming involves manipulating numbers\
   \ that have both a real and an imaginary part, typically expressed as `a + bi`.\u2026"

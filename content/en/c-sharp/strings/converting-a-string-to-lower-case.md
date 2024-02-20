@@ -1,10 +1,8 @@
 ---
-aliases:
-- /en/c-sharp/converting-a-string-to-lower-case/
 date: 2024-01-20 17:38:15.002505-07:00
 description: "Converting a string to lowercase means transforming all uppercase characters\
   \ in the text to their lowercase equivalents. Programmers do it for\u2026"
-lastmod: 2024-02-18 23:09:11.041526
+lastmod: 2024-02-19 22:05:18.542514
 model: gpt-4-1106-preview
 summary: "Converting a string to lowercase means transforming all uppercase characters\
   \ in the text to their lowercase equivalents. Programmers do it for\u2026"

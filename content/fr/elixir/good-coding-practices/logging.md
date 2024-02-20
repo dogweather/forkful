@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fr/elixir/logging/
 date: 2024-01-26 01:02:35.248928-07:00
 description: "La journalisation dans le d\xE9veloppement de logiciels est la technique\
   \ permettant d'enregistrer les \xE9v\xE9nements qui se produisent pendant l'ex\xE9\
   cution d'un\u2026"
-lastmod: 2024-02-18 23:09:08.441439
+lastmod: 2024-02-19 22:05:16.230148
 model: gpt-4-1106-preview
 summary: "La journalisation dans le d\xE9veloppement de logiciels est la technique\
   \ permettant d'enregistrer les \xE9v\xE9nements qui se produisent pendant l'ex\xE9\

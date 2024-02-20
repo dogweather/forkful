@@ -1,11 +1,9 @@
 ---
-aliases:
-- /fi/swift/converting-a-string-to-lower-case/
 date: 2024-01-20 17:39:08.554349-07:00
 description: "Tekstin muuttaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
   \ kirjainten muuntamista vastaaviksi pienaakkosiksi. T\xE4t\xE4 tehd\xE4\xE4n yhten\xE4\
   ist\xE4m\xE4\xE4n\u2026"
-lastmod: 2024-02-18 23:09:07.975704
+lastmod: 2024-02-19 22:05:15.789565
 model: gpt-4-1106-preview
 summary: "Tekstin muuttaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
   \ kirjainten muuntamista vastaaviksi pienaakkosiksi. T\xE4t\xE4 tehd\xE4\xE4n yhten\xE4\

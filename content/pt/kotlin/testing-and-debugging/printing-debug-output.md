@@ -1,11 +1,9 @@
 ---
-aliases:
-- /pt/kotlin/printing-debug-output/
 date: 2024-01-20 17:53:02.557226-07:00
 description: "Mostrar outputs de debug \xE9 basicamente imprimir mensagens no console\
   \ do seu programa para entender o que est\xE1 acontecendo durante a execu\xE7\xE3\
   o.\u2026"
-lastmod: 2024-02-18 23:08:58.111374
+lastmod: 2024-02-19 22:05:05.584368
 model: gpt-4-1106-preview
 summary: "Mostrar outputs de debug \xE9 basicamente imprimir mensagens no console\
   \ do seu programa para entender o que est\xE1 acontecendo durante a execu\xE7\xE3\
