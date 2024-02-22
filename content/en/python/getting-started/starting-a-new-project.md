@@ -1,68 +1,131 @@
 ---
-date: 2024-01-20 18:04:06.901675-07:00
-description: "Starting a new project is all about creating a fresh directory with\
-  \ files set up for your new code adventure. It's like breaking ground on a building\
-  \ site\u2026"
-lastmod: 2024-02-19 22:05:18.215873
-model: gpt-4-1106-preview
-summary: "Starting a new project is all about creating a fresh directory with files\
-  \ set up for your new code adventure. It's like breaking ground on a building site\u2026"
-title: Starting a new project
+title:                "Starting a new project"
+date:                  2024-02-22T14:52:40.960064-07:00
+model:                 gpt-4-0125-preview
+changelog:
+- 2024-02-22, dogweather, reviewed 
 ---
 
 {{< edit_this_page >}}
 
 ## What & Why?
 
-Starting a new project is all about creating a fresh directory with files set up for your new code adventure. It's like breaking ground on a building site but for programmers. We do this to transform ideas into working software, organize our code, and manage complexity from the get-go.
+Starting a new project in Python is about setting up a structured, maintainable framework from the outset. Programmers do this to ensure that their code is easy to read, debug, and collaborate on, especially as the project and the team working on it grow over time.
 
 ## How to:
 
-Let's start a Python project. First up, make a new directory:
+### Create a Virtual Environment
+A virtual environment is a self-contained directory that contains all the necessary executables to use the packages that a Python project would need. It is advisable to create a virtual environment for each project to avoid conflicts between project dependencies. Use the `venv` module, which is part of the standard Python library.
 
-```bash
-mkdir my_new_project
-cd my_new_project
+```shell
+# Replace 'myproject' with the name of your project
+python3 -m venv myproject-env
 ```
 
-Now, set up a virtual environment - this keeps our project's dependencies nice and tidy:
+To activate the virtual environment:
 
-```bash
-python -m venv venv
-source venv/bin/activate # On Windows, use `venv\Scripts\activate`
+On Windows:
+```shell
+myproject-env\Scripts\activate.bat
 ```
 
-With our virtual land prepped, sow the seeds of your project with a `main.py` file:
-
-```bash
-touch main.py
-echo "print('Hello, new project!')" > main.py
-python main.py
+On Unix or MacOS:
+```shell
+source myproject-env/bin/activate
 ```
 
-Output:
-```plaintext
-Hello, new project!
+Sample Output (the output may slightly vary depending on the OS):
+```shell
+(myproject-env) $
 ```
 
-For good measure, let’s pin down the dependencies early. Even if none exist yet:
+### Installing Packages
+Use `pip`, the package installer for Python, to install, upgrade, and remove packages. Here is how you can install a popular third-party library, `requests`, to make HTTP requests:
 
-```bash
-pip freeze > requirements.txt
+```shell
+pip install requests
 ```
 
-And that's the embryo of your project. From here, it grows.
+Sample Output:
+```shell
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s
+Installing collected packages: requests
+Successfully installed requests-2.25.1
+```
 
-## Deep Dive
+### Setting Up a Project Structure
+A typical Python project might look something like this:
 
-In the past, many a programmer would just wing it, starting code in a solitary file. Chaos would often ensue as the project grew. Nowadays, we've got better practices.
+```
+myproject/
+│
+├── myproject-env/    # Virtual environment
+├── docs/             # Documentation
+├── tests/            # Unit and integration tests
+│   └── __init__.py
+├── myproject/        # Project source code 
+│   ├── __init__.py
+│   └── main.py
+├── setup.py          # Project setup file
+└── README.md         # Project overview
+```
 
-For Python, we've got conventions like PEP 8 for style guidelines. There are also tools like `cookiecutter` which create projects from templates. Want a web app? There's a template for that. It's set up to save you time.
+### Create Your First Program
+Create a `main.py` file inside the `myproject` directory. Here is an example of a simple program:
 
-On the other hand, you might like to do it manually, as we showed above. This method gives you total control, building your project from scratch. Just remember to keep track of dependencies with `requirements.txt`. It's crucial for when you share your project or deploy it.
+```python
+# myproject/myproject/main.py
+def greet(name):
+    return f"Hello, {name}!"
 
-## See Also
+if __name__ == "__main__":
+    print(greet("World"))
+```
 
-- [The Hitchhiker's Guide to Python](https://docs.python-guide.org/) - An opinionated guide on best practices in Python.
-- [PEP 8 -- Style Guide for Python Code](https://peps.python.org/pep-0008/) - The style Bible for Python developers.
-- [Cookiecutter](https://github.com/cookiecutter/cookiecutter) - A command-line utility to create projects from templates.
+Run your program:
+
+```shell
+python myproject/main.py
+```
+
+Sample Output:
+```shell
+Hello, World!
+```
+
+### Use a Framework for Larger Projects
+For larger projects, especially web applications, frameworks like Django or Flask are invaluable. Here's how to install Flask and create a simple "Hello, World" web application:
+
+```shell
+pip install Flask
+```
+
+Create a `app.py` file with the following content:
+
+```python
+# app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Run the Flask application:
+
+```shell
+flask run
+```
+
+Sample Output:
+```shell
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+Navigate to `http://127.0.0.1:5000/` in your web browser, and you should see the "Hello, World!" message.
