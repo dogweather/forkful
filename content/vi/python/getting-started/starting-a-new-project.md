@@ -1,75 +1,132 @@
 ---
+title:                "Bắt đầu một dự án mới"
+date:                  2024-02-22T17:30:06.753054-07:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-01-28, gpt-4-0125-preview, translated from English
-date: 2024-01-28 22:09:05.698888-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\u1EC1\
-  u b\u1EAFt \u0111\u1EA7u t\u1EEB vi\u1EC7c t\u1EA1o m\u1ED9t th\u01B0 m\u1EE5c m\u1EDB\
-  i v\u1EDBi c\xE1c t\u1EC7p \u0111\u01B0\u1EE3c thi\u1EBFt l\u1EADp s\u1EB5n cho\
-  \ cu\u1ED9c phi\xEAu l\u01B0u code m\u1EDBi c\u1EE7a b\u1EA1n. \u0110\xF3 gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c kh\u1EDFi\u2026"
-lastmod: 2024-02-19 22:04:55.291736
-model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\u1EC1u b\u1EAF\
-  t \u0111\u1EA7u t\u1EEB vi\u1EC7c t\u1EA1o m\u1ED9t th\u01B0 m\u1EE5c m\u1EDBi v\u1EDB\
-  i c\xE1c t\u1EC7p \u0111\u01B0\u1EE3c thi\u1EBFt l\u1EADp s\u1EB5n cho cu\u1ED9\
-  c phi\xEAu l\u01B0u code m\u1EDBi c\u1EE7a b\u1EA1n. \u0110\xF3 gi\u1ED1ng nh\u01B0\
-  \ vi\u1EC7c kh\u1EDFi\u2026"
-title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+  - 2024-02-22, dogweather, reviewed
+  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Gì và Tại sao?
+## Cái gì & Tại sao?
 
-Bắt đầu một dự án mới đều bắt đầu từ việc tạo một thư mục mới với các tệp được thiết lập sẵn cho cuộc phiêu lưu code mới của bạn. Đó giống như việc khởi công xây dựng tại một công trường xây dựng nhưng đối với các lập trình viên. Chúng ta làm điều này để biến ý tưởng thành phần mềm hoạt động, tổ chức code của mình và quản lý độ phức tạp ngay từ đầu.
+Khởi đầu một dự án mới bằng Python là việc thiết lập một khuôn khổ có cấu trúc, dễ bảo trì ngay từ đầu. Lập trình viên làm điều này để đảm bảo rằng mã của họ dễ đọc, dễ gỡ lỗi và dễ hợp tác, đặc biệt là khi dự án và đội ngũ làm việc trên dự án đó phát triển theo thời gian.
 
 ## Làm thế nào:
 
-Hãy bắt đầu một dự án Python. Đầu tiên, tạo một thư mục mới:
+### Tạo một Môi trường Ảo
+Môi trường ảo là một thư mục tự chứa tất cả các tệp thực thi cần thiết để sử dụng các gói mà một dự án Python cần. Nên tạo môi trường ảo cho từng dự án để tránh xung đột giữa các phụ thuộc của dự án. Sử dụng mô-đun `venv`, là một phần của thư viện chuẩn Python.
 
-```bash
-mkdir my_new_project
-cd my_new_project
+```shell
+# Thay thế 'myproject' bằng tên dự án của bạn
+python3 -m venv myproject-env
 ```
 
-Bây giờ, thiết lập một môi trường ảo - điều này giữ cho các phụ thuộc dự án của chúng ta gọn gàng và ngăn nắp:
+Để kích hoạt môi trường ảo:
 
-```bash
-python -m venv venv
-source venv/bin/activate # Trên Windows, sử dụng `venv\Scripts\activate`
+Trên Windows:
+```shell
+myproject-env\Scripts\activate.bat
 ```
 
-Với mảnh đất ảo đã được chuẩn bị, gieo hạt giống cho dự án của bạn với tệp `main.py`:
-
-```bash
-touch main.py
-echo "print('Xin chào, dự án mới!')" > main.py
-python main.py
+Trên Unix hoặc MacOS:
+```shell
+source myproject-env/bin/activate
 ```
 
-Đầu ra:
-```plaintext
-Xin chào, dự án mới!
+Kết quả mẫu (kết quả có thể thay đổi nhẹ tùy theo hệ điều hành):
+```shell
+(myproject-env) $
 ```
 
-Làm một cách cẩn thận, hãy gắn kết các phụ thuộc sớm. Ngay cả khi chưa tồn tại bất kỳ cái nào:
+### Cài đặt Gói
+Sử dụng `pip`, trình cài đặt gói cho Python, để cài đặt, nâng cấp và gỡ bỏ các gói. Dưới đây là cách bạn có thể cài đặt một thư viện bên thứ ba phổ biến, `requests`, để thực hiện các yêu cầu HTTP:
 
-```bash
-pip freeze > requirements.txt
+```shell
+pip install requests
 ```
 
-Và đó là hình mẫu ban đầu của dự án của bạn. Từ đây, nó sẽ phát triển.
+Kết quả mẫu:
+```shell
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s
+Installing collected packages: requests
+Successfully installed requests-2.25.1
+```
 
-## Tìm hiểu sâu hơn
+### Thiết lập Cấu trúc Dự án
+Một dự án Python điển hình có thể trông giống như sau:
 
-Trong quá khứ, nhiều lập trình viên chỉ việc tùy tiện bắt đầu code trong một tệp đơn lẻ. Hỗn loạn thường xuyên xảy ra khi dự án phát triển. Ngày nay, chúng ta đã có những thực hành tốt hơn.
+```
+myproject/
+│
+├── myproject-env/    # Môi trường ảo
+├── docs/             # Tài liệu
+├── tests/            # Kiểm thử đơn vị và tích hợp
+│   └── __init__.py
+├── myproject/        # Mã nguồn dự án
+│   ├── __init__.py
+│   └── main.py
+├── setup.py          # Tệp thiết lập dự án
+└── README.md         # Tổng quan dự án
+```
 
-Đối với Python, chúng ta có các quy ước như PEP 8 cho hướng dẫn về phong cách. Cũng có những công cụ như `cookiecutter` tạo dự án từ các mẫu. Muốn một ứng dụng web? Đã có mẫu cho điều đó. Nó được thiết lập để tiết kiệm thời gian cho bạn.
+### Tạo Chương trình Đầu tiên của Bạn
+Tạo một tệp `main.py` bên trong thư mục `myproject`. Dưới đây là một ví dụ về một chương trình đơn giản:
 
-Mặt khác, bạn có thể muốn tự làm theo cách mà chúng tôi đã trình bày ở trên. Phương pháp này cho bạn tổng kiểm soát, xây dựng dự án của bạn từ đầu. Chỉ cần nhớ theo dõi các phụ thuộc với `requirements.txt`. Điều này rất quan trọng khi bạn chia sẻ dự án hoặc triển khai nó.
+```python
+# myproject/myproject/main.py
+def greet(name):
+    return f"Xin chào, {name}!"
 
-## Xem thêm
+if __name__ == "__main__":
+    print(greet("Thế giới"))
+```
 
-- [The Hitchhiker's Guide to Python](https://docs.python-guide.org/) - Hướng dẫn mang tính chất phê bình về các thực hành tốt nhất trong Python.
-- [PEP 8 -- Style Guide for Python Code](https://peps.python.org/pep-0008/) - Kinh thánh về phong cách cho các nhà phát triển Python.
-- [Cookiecutter](https://github.com/cookiecutter/cookiecutter) - Một tiện ích dòng lệnh để tạo dự án từ các mẫu.
+Chạy chương trình của bạn:
+
+```shell
+python myproject/main.py
+```
+
+Kết quả mẫu:
+```shell
+Xin chào, Thế giới!
+```
+
+### Sử dụng một Framework cho các Dự án Lớn hơn
+Đối với các dự án lớn hơn, đặc biệt là các ứng dụng web, các framework như Django hoặc Flask là vô giá. Dưới đây là cách cài đặt Flask và tạo một ứng dụng web "Xin chào, Thế giới" đơn giản:
+
+```shell
+pip install Flask
+```
+
+Tạo một tệp `app.py` với nội dung sau:
+
+```python
+# app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Xin chào, Thế giới!</p>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Chạy ứng dụng Flask:
+
+```shell
+flask run
+```
+
+Kết quả mẫu:
+```shell
+ * Running on http://127.0.0.1:5000/ (Nhấn CTRL+C để thoát)
+```
+
+Truy cập vào `http://127.0.0.1:5000/` trên trình duyệt web của bạn, và bạn sẽ thấy thông điệp "Xin chào, Thế giới!".

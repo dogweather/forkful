@@ -1,74 +1,132 @@
 ---
-date: 2024-01-20 18:04:08.196793-07:00
-description: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
-  \ um eine Idee in ein lauff\xE4higes Programm zu verwandeln. Programmierer machen\
-  \ das,\u2026"
-lastmod: 2024-02-19 22:05:12.427012
-model: gpt-4-1106-preview
-summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
-  \ um eine Idee in ein lauff\xE4higes Programm zu verwandeln. Programmierer machen\
-  \ das,\u2026"
-title: Einen neuen Projekt starten
+title:                "Ein neues Projekt starten"
+date:                  2024-02-22T17:30:12.097340-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-22, dogweather, reviewed
+  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen, um eine Idee in ein lauffähiges Programm zu verwandeln. Programmierer machen das, um Probleme zu lösen, Neues zu schaffen oder einfach zum Lernen.
 
-## How to:
-Um ein neues Projekt in Python zu beginnen, brauchst du als Erstes eine ordentliche Umgebung:
+Ein neues Projekt in Python zu starten bedeutet, von Anfang an ein strukturiertes, wartbares Framework einzurichten. Programmierer machen dies, um sicherzustellen, dass ihr Code leicht zu lesen, zu debuggen und zu bearbeiten ist, besonders wenn das Projekt und das Team, das daran arbeitet, im Laufe der Zeit wachsen.
 
-```Python
-# Stelle sicher, dass Python installiert ist:
-python --version
+## Wie man:
 
-# Lege ein neues Verzeichnis für dein Projekt an:
-mkdir mein_neues_projekt
-cd mein_neues_projekt
+### Virtuelle Umgebung erstellen
+Eine virtuelle Umgebung ist ein eigenständiges Verzeichnis, das alle notwendigen Ausführbaren enthält, um die Pakete zu verwenden, die ein Python-Projekt benötigen würde. Es ist ratsam, für jedes Projekt eine virtuelle Umgebung zu erstellen, um Konflikte zwischen Projekt-Abhängigkeiten zu vermeiden. Verwende das `venv`-Modul, das Teil der Standardbibliothek von Python ist.
 
-# Initialisiere ein virtuelles Environment (optional, aber empfohlen)
-python -m venv venv
-source venv/bin/activate
-
-# Installiere benötigte Pakete
-pip install <paketname>
+```shell
+# Ersetze 'myproject' mit dem Namen deines Projekts
+python3 -m venv myproject-env
 ```
 
-Sample output:
+Um die virtuelle Umgebung zu aktivieren:
 
-```
-Python 3.10.2
-```
-
-Füge jetzt eine `main.py` Datei hinzu und beginne zu coden:
-
-```Python
-# main.py
-print("Hallo Welt, ich bin ein neues Projekt!")
+Unter Windows:
+```shell
+myproject-env\Scripts\activate.bat
 ```
 
-Führe es aus:
-
-```bash
-python main.py
+Unter Unix oder MacOS:
+```shell
+source myproject-env/bin/activate
 ```
 
-Sample output:
+Beispielausgabe (die Ausgabe kann je nach Betriebssystem leicht variieren):
+```shell
+(myproject-env) $
+```
+
+### Pakete installieren
+Verwende `pip`, den Paketinstaller für Python, um Pakete zu installieren, zu aktualisieren und zu entfernen. Hier ist, wie du eine beliebte Drittanbieter-Bibliothek, `requests`, zum Durchführen von HTTP-Anfragen installieren kannst:
+
+```shell
+pip install requests
+```
+
+Beispielausgabe:
+```shell
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s
+Installing collected packages: requests
+Erfolgreich installiert requests-2.25.1
+```
+
+### Projektstruktur einrichten
+Ein typisches Python-Projekt könnte folgendermaßen aussehen:
 
 ```
-Hallo Welt, ich bin ein neues Projekt!
+myproject/
+│
+├── myproject-env/    # Virtuelle Umgebung
+├── docs/             # Dokumentation
+├── tests/            # Einheiten- und Integrationstests
+│   └── __init__.py
+├── myproject/        # Quellcode des Projekts
+│   ├── __init__.py
+│   └── main.py
+├── setup.py          # Projektsetup-Datei
+└── README.md         # Projektübersicht
 ```
 
-## Deep Dive
-Bevor wir so einfach Projekte starten konnten, mussten Entwickler ihre Entwicklungs- und Laufzeitumgebungen mühsam von Hand konfigurieren. Virtuelle Umgebungen, wie sie heute verfügbar sind, waren ein Game-Changer. Sie ermöglichen es, abhängige Softwarepakete projektweise zu isolieren. Alternativen zu `venv` sind `pipenv` oder `conda`.
+### Erstelle dein erstes Programm
+Erstelle eine `main.py`-Datei im Verzeichnis `myproject`. Hier ist ein Beispiel für ein einfaches Programm:
 
-Gut strukturierte Projekte verwenden oft `requirements.txt` für Paketabhängigkeiten oder `Pipfile` bei der Verwendung von `pipenv`. Für größere Projekte ist es wichtig, die Dateistruktur sauber zu halten. Module, Tests, Dokumentationen und Setup-Dateien sollten klar getrennt sein.
+```python
+# myproject/myproject/main.py
+def greet(name):
+    return f"Hallo, {name}!"
 
-Ein weiterer wichtiger Aspekt ist die Versionierung deiner Software, besonders bei Zusammenarbeit im Team. Dazu werden oft Tools wie Git verwendet. Für die Verwaltung deines Codes stellen Plattformen wie GitHub, GitLab oder Bitbucket Repositories zur Verfügung.
+if __name__ == "__main__":
+    print(greet("Welt"))
+```
 
-## See Also
-- Die offizielle Python-Dokumentation: https://docs.python.org/3/tutorial/venv.html
-- Git-Einführung: https://git-scm.com/book/de/v2
-- Pipenv: https://pipenv.pypa.io/en/latest/
-- Projektstruktur-Leitfaden: https://docs.python-guide.org/writing/structure/
+Führe dein Programm aus:
+
+```shell
+python myproject/main.py
+```
+
+Beispielausgabe:
+```shell
+Hallo, Welt!
+```
+
+### Verwende ein Framework für größere Projekte
+Für größere Projekte, insbesondere Webanwendungen, sind Frameworks wie Django oder Flask von unschätzbarem Wert. So installierst du Flask und erstellst eine einfache "Hello, World"-Webanwendung:
+
+```shell
+pip install Flask
+```
+
+Erstelle eine `app.py`-Datei mit folgendem Inhalt:
+
+```python
+# app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hallo, Welt!</p>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Führe die Flask-Anwendung aus:
+
+```shell
+flask run
+```
+
+Beispielausgabe:
+```shell
+ * Running on http://127.0.0.1:5000/ (Drücke CTRL+C zum Beenden)
+```
+
+Navigiere in deinem Webbrowser zu `http://127.0.0.1:5000/`, und du solltest die "Hallo, Welt!"-Nachricht sehen.

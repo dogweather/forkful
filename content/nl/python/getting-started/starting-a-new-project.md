@@ -1,70 +1,132 @@
 ---
+title:                "Een nieuw project starten"
+date:                  2024-02-22T17:30:11.656533-07:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-01-28, gpt-4-0125-preview, translated from English
-date: 2024-01-28 22:09:22.143147-07:00
-description: "Een nieuw project starten gaat helemaal over het cre\xEBren van een\
-  \ verse map met bestanden opgezet voor je nieuwe code avontuur. Het is alsof je\
-  \ de grond\u2026"
-lastmod: 2024-02-19 22:05:09.464905
-model: gpt-4-0125-preview
-summary: "Een nieuw project starten gaat helemaal over het cre\xEBren van een verse\
-  \ map met bestanden opgezet voor je nieuwe code avontuur. Het is alsof je de grond\u2026"
-title: Een nieuw project starten
+  - 2024-02-22, dogweather, reviewed
+  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Een nieuw project starten gaat helemaal over het creëren van een verse map met bestanden opgezet voor je nieuwe code avontuur. Het is alsof je de grond breekt op een bouwterrein, maar dan voor programmeurs. We doen dit om ideeën om te zetten in werkende software, onze code te organiseren en vanaf het begin de complexiteit te beheren.
+Een nieuw project starten in Python gaat over het opzetten van een gestructureerd, onderhoudbaar kader vanaf het begin. Programmeurs doen dit om ervoor te zorgen dat hun code gemakkelijk te lezen, te debuggen en samen aan te werken is, vooral naarmate het project en het team dat eraan werkt in de loop van de tijd groeien.
 
-## Hoe:
+## Hoe te:
 
-Laten we een Python project starten. Eerst, maak een nieuwe map:
+### Maak een Virtuele Omgeving
+Een virtuele omgeving is een zelfstandige map die alle benodigde uitvoerbare bestanden bevat om de pakketten te gebruiken die een Python-project nodig zou hebben. Het is raadzaam om voor elk project een virtuele omgeving te creëren om conflicten tussen projectafhankelijkheden te vermijden. Gebruik de `venv`-module, die deel uitmaakt van de standaard Python-bibliotheek.
 
-```bash
-mkdir my_new_project
-cd my_new_project
+```shell
+# Vervang 'mijnproject' met de naam van jouw project
+python3 -m venv mijnproject-env
 ```
 
-Nu, stel een virtuele omgeving in - dit houdt de afhankelijkheden van ons project netjes:
+Om de virtuele omgeving te activeren:
 
-```bash
-python -m venv venv
-source venv/bin/activate # Op Windows, gebruik `venv\Scripts\activate`
+Op Windows:
+```shell
+mijnproject-env\Scripts\activate.bat
 ```
 
-Met ons virtuele land voorbereid, zaai de zaden van je project met een `main.py` bestand:
-
-```bash
-touch main.py
-echo "print('Hallo, nieuw project!')" > main.py
-python main.py
+Op Unix of MacOS:
+```shell
+source mijnproject-env/bin/activate
 ```
 
-Uitvoer:
-```plaintext
-Hallo, nieuw project!
+Voorbeelduitvoer (de uitvoer kan enigszins variëren afhankelijk van het besturingssysteem):
+```shell
+(mijnproject-env) $
 ```
 
-Voor de goede orde, laten we de afhankelijkheden vroeg vastleggen. Zelfs als deze nog niet bestaan:
+### Pakketten Installeren
+Gebruik `pip`, de pakketinstallateur voor Python, om pakketten te installeren, upgraden en verwijderen. Hier is hoe je een populaire bibliotheek van derden, `requests`, kunt installeren om HTTP-verzoeken te maken:
 
-```bash
-pip freeze > requirements.txt
+```shell
+pip install requests
 ```
 
-En dat is het embryo van je project. Vanaf hier groeit het.
+Voorbeelduitvoer:
+```shell
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s
+Installing collected packages: requests
+Successfully installed requests-2.25.1
+```
 
-## Diep Duiken
+### Een Projectstructuur Opzetten
+Een typisch Python-project kan er ongeveer zo uitzien:
 
-In het verleden zou menig programmeur het gewoon op de bonnefooi doen, beginnend met code in een eenzaam bestand. Chaos zou vaak volgen naarmate het project groeide. Tegenwoordig, hebben we betere praktijken.
+```
+mijnproject/
+│
+├── mijnproject-env/    # Virtuele omgeving
+├── docs/               # Documentatie
+├── tests/              # Unit- en integratietests
+│   └── __init__.py
+├── mijnproject/        # Broncode van het project 
+│   ├── __init__.py
+│   └── main.py
+├── setup.py            # Project setup bestand
+└── README.md           # Projectoverzicht
+```
 
-Voor Python, hebben we conventies zoals PEP 8 voor stijlrichtlijnen. Er zijn ook tools zoals `cookiecutter` die projecten creëren vanuit sjablonen. Wil je een webapp? Er is een sjabloon voor. Het is opgezet om je tijd te besparen.
+### Maak Je Eerste Programma
+Maak een `main.py` bestand binnen de `mijnproject` map. Hier is een voorbeeld van een eenvoudig programma:
 
-Aan de andere kant, vind je het misschien leuk om het handmatig te doen, zoals we hierboven hebben laten zien. Deze methode geeft je totale controle, je project opbouwend vanaf nul. Onthoud gewoon om de afhankelijkheden bij te houden met `requirements.txt`. Het is cruciaal voor wanneer je jouw project deelt of uitrolt.
+```python
+# mijnproject/mijnproject/main.py
+def groet(naam):
+    return f"Hallo, {naam}!"
 
-## Zie Ook
+if __name__ == "__main__":
+    print(groet("Wereld"))
+```
 
-- [De Liftgids voor Python](https://docs.python-guide.org/) - Een eigenzinnige gids over beste praktijken in Python.
-- [PEP 8 -- Stijlgids voor Python Code](https://peps.python.org/pep-0008/) - De stijlbijbel voor Python ontwikkelaars.
-- [Cookiecutter](https://github.com/cookiecutter/cookiecutter) - Een command-line hulpprogramma om projecten te creëren vanuit sjablonen.
+Draai je programma:
+
+```shell
+python mijnproject/main.py
+```
+
+Voorbeelduitvoer:
+```shell
+Hallo, Wereld!
+```
+
+### Gebruik een Framework voor Grotere Projecten
+Voor grotere projecten, vooral webapplicaties, zijn frameworks zoals Django of Flask van onschatbare waarde. Hier is hoe je Flask installeert en een eenvoudige "Hallo, Wereld" webapplicatie maakt:
+
+```shell
+pip install Flask
+```
+
+Maak een `app.py` bestand met de volgende inhoud:
+
+```python
+# app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hallo_wereld():
+    return "<p>Hallo, Wereld!</p>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Draai de Flask-applicatie:
+
+```shell
+flask run
+```
+
+Voorbeelduitvoer:
+```shell
+ * Draait op http://127.0.0.1:5000/ (Druk op CTRL+C om te stoppen)
+```
+
+Navigeer naar `http://127.0.0.1:5000/` in je webbrowser, en je zou de boodschap "Hallo, Wereld!" moeten zien.

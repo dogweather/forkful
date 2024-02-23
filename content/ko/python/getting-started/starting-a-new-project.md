@@ -1,72 +1,132 @@
 ---
-date: 2024-01-20 18:04:31.321784-07:00
-description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uC740 \uBE48 \uCE94\uBC84\
-  \uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uB4EF \uCF54\uB4DC\uB85C \uC774\uC0C1\
-  \uC744 \uD604\uC2E4\uB85C \uB9CC\uB4DC\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\
-  \uB85C\uADF8\uB798\uBA38\uB294 \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C\
-  \ \uC2E4\uD5D8\uD558\uAC70\uB098 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\
-  \uD574 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD569\uB2C8\uB2E4."
-isCJKLanguage: true
-lastmod: 2024-02-19 22:05:13.540211
-model: gpt-4-1106-preview
-summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uC740 \uBE48 \uCE94\uBC84\uC2A4\
-  \uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uB4EF \uCF54\uB4DC\uB85C \uC774\uC0C1\uC744\
-  \ \uD604\uC2E4\uB85C \uB9CC\uB4DC\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\
-  \uADF8\uB798\uBA38\uB294 \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C \uC2E4\
-  \uD5D8\uD558\uAC70\uB098 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574\
-  \ \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD569\uB2C8\uB2E4."
-title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
+title:                "새 프로젝트 시작하기"
+date:                  2024-02-22T17:30:02.756263-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-22, dogweather, reviewed
+  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
+## 무엇을, 왜?
 
-새 프로젝트 시작은 빈 캔버스에 그림을 그리듯 코드로 이상을 현실로 만드는 과정입니다. 프로그래머는 새로운 아이디어를 실험하거나 문제를 해결하기 위해 프로젝트를 시작합니다.
+새로운 Python 프로젝트를 시작하는 것은 처음부터 구조화되고 유지보수 가능한 프레임워크를 설정하는 것에 관한 것입니다. 프로그래머는 이것을 통해 코드가 읽기 쉽고, 디버그하기 쉽고, 특히 프로젝트와 그것을 작업하는 팀이 시간이 지남에 따라 성장함에 따라 협업하기 쉽도록 합니다.
 
-## How to: (방법)
+## 어떻게:
 
-새 프로젝트를 시작하려면, 먼저 환경을 설정하고 기본 구조를 만듭니다. 파이썬에서 이는 간단합니다. 예를 들어, 가상 환경을 생성하고 필요한 라이브러리를 설치해 봅시다.
+### 가상 환경 만들기
+가상 환경은 Python 프로젝트가 필요로 하는 패키지를 사용하기 위한 필수 실행 파일을 포함한 독립적인 디렉토리입니다. 프로젝트 간의 종속성 충돌을 피하기 위해 각 프로젝트에 대해 가상 환경을 생성하는 것이 좋습니다. 표준 Python 라이브러리의 일부인 `venv` 모듈을 사용합니다.
 
-```Python
-# 가상 환경 만들기
-python -m venv myprojectenv
+```shell
+# 'myproject'를 프로젝트의 이름으로 교체하세요
+python3 -m venv myproject-env
+```
 
-# 가상 환경 활성화
-# Windows
-myprojectenv\Scripts\activate.bat
-# macOS or Linux
-source myprojectenv/bin/activate
+가상 환경을 활성화하려면:
 
-# 필요한 라이브러리 설치하기, 예: Flask 웹 프레임워크
+Windows에서:
+```shell
+myproject-env\Scripts\activate.bat
+```
+
+Unix 또는 MacOS에서:
+```shell
+source myproject-env/bin/activate
+```
+
+샘플 출력 (운영 체제에 따라 출력이 약간 다를 수 있습니다):
+```shell
+(myproject-env) $
+```
+
+### 패키지 설치하기
+Python용 패키지 설치 프로그램인 `pip`을 사용하여 패키지를 설치, 업그레이드 및 제거합니다. 여기 HTTP 요청을 만들기 위해 인기 있는 서드파티 라이브러리인 `requests`를 설치하는 방법입니다:
+
+```shell
+pip install requests
+```
+
+샘플 출력:
+```shell
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s
+Installing collected packages: requests
+Successfully installed requests-2.25.1
+```
+
+### 프로젝트 구조 설정하기
+전형적인 Python 프로젝트는 다음과 같을 수 있습니다:
+
+```
+myproject/
+│
+├── myproject-env/    # 가상 환경
+├── docs/             # 문서
+├── tests/            # 단위 및 통합 테스트
+│   └── __init__.py
+├── myproject/        # 프로젝트 소스 코드
+│   ├── __init__.py
+│   └── main.py
+├── setup.py          # 프로젝트 설정 파일
+└── README.md         # 프로젝트 개요
+```
+
+### 첫 번째 프로그램 만들기
+`myproject` 디렉토리 내부에 `main.py` 파일을 생성합니다. 여기 간단한 프로그램의 예가 있습니다:
+
+```python
+# myproject/myproject/main.py
+def greet(name):
+    return f"Hello, {name}!"
+
+if __name__ == "__main__":
+    print(greet("World"))
+```
+
+프로그램 실행하기:
+
+```shell
+python myproject/main.py
+```
+
+샘플 출력:
+```shell
+Hello, World!
+```
+
+### 더 큰 프로젝트를 위해 프레임워크 사용하기
+특히 웹 어플리케이션과 같은 더 큰 프로젝트의 경우, Django나 Flask와 같은 프레임워크가 매우 유용합니다. Flask를 설치하고 간단한 "Hello, World" 웹 어플리케이션을 생성하는 방법은 다음과 같습니다:
+
+```shell
 pip install Flask
+```
 
-# 간단한 'hello world' 앱 만들기
+다음 내용을 포함하는 `app.py` 파일을 생성합니다:
+
+```python
+# app.py
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def hello_world():
-    return 'Hello, World!'
+    return "<p>Hello, World!</p>"
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    app.run(debug=True)
 ```
 
-실행 후, 브라우저에서 `localhost:5000`을 찾으면 'Hello, World!'가 표시됩니다.
+Flask 어플리케이션 실행하기:
 
-## Deep Dive (심층 탐구)
+```shell
+flask run
+```
 
-과거에는 프로그래밍 프로젝트 시작이 오늘날보다 복잡했습니다. 터미널과 텍스트 에디터로 모든 것을 수동으로 해야 했죠. 지금은 다양한 툴과 프레임워크로 더 쉽게 진행할 수 있습니다. 예를 들어, Django나 Flask 같은 웹 프레임워크는 웹 애플리케이션의 기본 구조를 빠르게 구축할 수 있는 템플릿과 툴을 제공합니다. 또한, Git과 같은 버전 관리 시스템은 코드 변경 사항을 추적하면서 협업을 용이하게 합니다.
+샘플 출력:
+```shell
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
 
-대안으로는 Node.js, Ruby on Rails, .NET 등 다른 프로그래밍 언어와 프레임워크도 존재하지만, 파이썬은 그 가독성과 강력한 라이브러리 생태계로 인해 많은 개발자에게 사랑받습니다.
-
-프로젝트를 구현할 때는 기능 뿐 아니라 코드의 유지보수성, 확장성, 그리고 테스트 가능성도 중요하게 고려해야 합니다. 이런 측면에서 코딩 컨벤션과 좋은 소프트웨어 설계 원칙에 익숙해지는 것이 중요합니다.
-
-## See Also (참고 자료)
-
-- Flask 공식 문서: https://flask.palletsprojects.com/
-- Python 가상 환경 가이드 : https://docs.python.org/ko/3/library/venv.html
-- Git 초보자 가이드: https://git-scm.com/book/ko/v2
-- 파이썬 코딩 스타일 가이드(PEP 8): https://www.python.org/dev/peps/pep-0008/
-- 파이썬 프로젝트 구조 가이드: https://docs.python-guide.org/writing/structure/
+웹 브라우저에서 `http://127.0.0.1:5000/`로 이동하면 "Hello, World!" 메시지를 볼 수 있습니다.

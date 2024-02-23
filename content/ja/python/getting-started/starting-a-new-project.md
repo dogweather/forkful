@@ -1,77 +1,132 @@
 ---
-date: 2024-01-20 18:04:44.894331-07:00
-description: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\
-  \u308B\u3068\u306F\u3001\u65B0\u305F\u306A\u30A2\u30A4\u30C7\u30A3\u30A2\u3084\u554F\
-  \u984C\u3092\u89E3\u6C7A\u3059\u308B\u305F\u3081\u306E\u30BD\u30D5\u30C8\u30A6\u30A7\
-  \u30A2\u3092\u30B3\u30FC\u30C7\u30A3\u30F3\u30B0\u3059\u308B\u3053\u3068\u3067\u3059\
-  \u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u65B0\u3057\u3044\u6A5F\u80FD\u3092\
-  \u4F5C\u6210\u3057\u305F\u308A\u3001\u5B66\u7FD2\u3057\u305F\u308A\u3001\u5B9F\u9A13\
-  \u3092\u3057\u305F\u308A\u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\
-  \u307E\u3059\u3002"
-isCJKLanguage: true
-lastmod: 2024-02-19 22:05:00.772313
-model: gpt-4-1106-preview
-summary: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\
-  \u308B\u3068\u306F\u3001\u65B0\u305F\u306A\u30A2\u30A4\u30C7\u30A3\u30A2\u3084\u554F\
-  \u984C\u3092\u89E3\u6C7A\u3059\u308B\u305F\u3081\u306E\u30BD\u30D5\u30C8\u30A6\u30A7\
-  \u30A2\u3092\u30B3\u30FC\u30C7\u30A3\u30F3\u30B0\u3059\u308B\u3053\u3068\u3067\u3059\
-  \u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u65B0\u3057\u3044\u6A5F\u80FD\u3092\
-  \u4F5C\u6210\u3057\u305F\u308A\u3001\u5B66\u7FD2\u3057\u305F\u308A\u3001\u5B9F\u9A13\
-  \u3092\u3057\u305F\u308A\u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\
-  \u307E\u3059\u3002"
-title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B"
+title:                "新プロジェクトの開始"
+date:                  2024-02-22T17:30:27.950806-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-22, dogweather, reviewed
+  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-新しいプロジェクトを始めるとは、新たなアイディアや問題を解決するためのソフトウェアをコーディングすることです。プログラマーは新しい機能を作成したり、学習したり、実験をしたりするためにこれを行います。
+## 何を、なぜ？
 
-## How to: (どのようにして：)
-新しいPythonプロジェクトを始める基本的な手順です。
+Pythonで新しいプロジェクトを始めるということは、初めから構造を持たせて、メンテナンスがしやすいフレームワークを設定することについてです。プログラマーは、コードが読みやすく、デバッグしやすく、特にプロジェクトや作業しているチームが時間とともに成長するにつれて、共同作業がしやすいようにするためにこれを行います。
 
-```Python
-# プロジェクトディレクトリを作成します。
-mkdir my_new_project
-cd my_new_project
+## どうやって：
 
-# 仮想環境を作成し、アクティベートします。
-python -m venv venv
-source venv/bin/activate  # MacOS/Linux
-venv\Scripts\activate  # Windows
+### 仮想環境の作成
+仮想環境は、Pythonプロジェクトが必要とするパッケージを使用するための実行可能ファイルがすべて含まれている自己完結型のディレクトリです。プロジェクト依存関係間の衝突を避けるために、各プロジェクトに対して仮想環境を作成することが望ましいです。標準Pythonライブラリの一部である`venv`モジュールを使用してください。
 
-# 必要なパッケージをインストールします。
-pip install flask
+```shell
+# 'myproject'をあなたのプロジェクトの名前に置き換えてください
+python3 -m venv myproject-env
+```
 
-# プロジェクトファイルを作成します。
-touch app.py  # MacOS/Linux
-type nul > app.py # Windows
+仮想環境をアクティブにするには：
 
-# サンプルコードをapp.pyに書き込みます。
-echo "from flask import Flask
+Windowsの場合：
+```shell
+myproject-env\Scripts\activate.bat
+```
+
+UnixまたはMacOSの場合：
+```shell
+source myproject-env/bin/activate
+```
+
+サンプル出力（出力はOSによって若干異なる場合があります）：
+```shell
+(myproject-env) $
+```
+
+### パッケージのインストール
+Pythonのパッケージインストーラーである`pip`を使用して、パッケージをインストール、アップグレード、および削除します。ここでは、HTTPリクエストを行うための人気のあるサードパーティライブラリ`requests`をインストールする方法を示します：
+
+```shell
+pip install requests
+```
+
+サンプル出力：
+```shell
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s
+Installing collected packages: requests
+Successfully installed requests-2.25.1
+```
+
+### プロジェクト構造の設定
+典型的なPythonプロジェクトは、このような形になるかもしれません：
+
+```
+myproject/
+│
+├── myproject-env/    # 仮想環境
+├── docs/             # ドキュメント
+├── tests/            # ユニットおよび統合テスト
+│   └── __init__.py
+├── myproject/        # プロジェクトのソースコード 
+│   ├── __init__.py
+│   └── main.py
+├── setup.py          # プロジェクト設定ファイル
+└── README.md         # プロジェクト概要
+```
+
+### 最初のプログラムを作成する
+`myproject`ディレクトリ内に`main.py`ファイルを作成します。ここにシンプルなプログラムの例を示します：
+
+```python
+# myproject/myproject/main.py
+def greet(name):
+    return f"Hello, {name}!"
+
+if __name__ == "__main__":
+    print(greet("World"))
+```
+
+プログラムを実行する：
+
+```shell
+python myproject/main.py
+```
+
+サンプル出力：
+```shell
+Hello, World!
+```
+
+### より大きなプロジェクトのためのフレームワークを使用する
+特にウェブアプリケーションの場合、DjangoやFlaskのようなフレームワークは非常に貴重です。Flaskをインストールして、シンプルな「Hello, World」ウェブアプリケーションを作成する方法はこちらです：
+
+```shell
+pip install Flask
+```
+
+次の内容で`app.py`ファイルを作成します：
+
+```python
+# app.py
+from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def hello_world():
-    return 'Hello, World!'
+    return "<p>Hello, World!</p>"
 
-if __name__ == '__main__':
-    app.run()" > app.py
-
-# アプリケーションを実行します。
-python app.py
+if __name__ == "__main__":
+    app.run(debug=True)
 ```
 
-サンプル出力:
+Flaskアプリケーションを実行する：
+
+```shell
+flask run
 ```
+
+サンプル出力：
+```shell
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-## Deep Dive (深掘り)
-プロジェクトを始める古い方法には、グローバル環境でライブラリをインストールする方法が含まれますが、これはバージョンの衝突や依存関係の問題を引き起こす可能性があります。仮想環境を使用すると、プロジェクトごとの隔離された環境を作成できます。FlaskはPythonの軽量なウェブフレームワークで、プロトタイピングに適しています。ただし、大規模なプロジェクトではDjangoのようなフルスタックフレームワークの方が向いている場合があります。Gitでバージョン管理を始めることも、新しいプロジェクトで一般的に推奨されるステップです。
-
-## See Also (関連情報)
-- Pythonの公式仮想環境ガイド: https://docs.python.org/3/library/venv.html
-- Flask公式ドキュメント: https://flask.palletsprojects.com/
-- PythonのDjangoフレームワーク: https://www.djangoproject.com/
-- Gitの基本: https://git-scm.com/book/ja/v2
+ウェブブラウザで`http://127.0.0.1:5000/`にアクセスすると、「Hello, World!」のメッセージが表示されます。

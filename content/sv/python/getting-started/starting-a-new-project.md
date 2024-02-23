@@ -1,71 +1,132 @@
 ---
-date: 2024-01-20 18:04:28.668383-07:00
-description: "Att starta ett nytt projekt \xE4r som att \xF6ppna ett blankt blad \u2013\
-  \ det \xE4r h\xE4r all kod b\xF6rjar sitt liv. Programmerare g\xF6r detta f\xF6\
-  r att omvandla id\xE9er till\u2026"
-lastmod: 2024-02-19 22:04:56.724770
-model: gpt-4-1106-preview
-summary: "Att starta ett nytt projekt \xE4r som att \xF6ppna ett blankt blad \u2013\
-  \ det \xE4r h\xE4r all kod b\xF6rjar sitt liv. Programmerare g\xF6r detta f\xF6\
-  r att omvandla id\xE9er till\u2026"
-title: "Att p\xE5b\xF6rja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+date:                  2024-02-22T17:30:17.778833-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-22, dogweather, reviewed
+  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
 
-Att starta ett nytt projekt är som att öppna ett blankt blad – det är här all kod börjar sitt liv. Programmerare gör detta för att omvandla idéer till verklighet, testa ny kunskap, eller lösa specifika problem.
+Att starta ett nytt projekt i Python handlar om att från början sätta upp en strukturerad, underhållbar ram. Programmerare gör detta för att säkerställa att deras kod är lätt att läsa, felsöka och samarbeta kring, särskilt eftersom projektet och teamet som arbetar med det växer över tid.
 
-## Så här gör du:
+## Hur man gör:
 
-Att kicka igång ett nytt Python-projekt är rätt framat. Först, se till att du har Python installerat. Du kan kontrollera din version genom att skriva `python --version` i terminalen. Sen skapar du en ny mapp och ett Python-skript inuti den.
+### Skapa en virtuell miljö
+En virtuell miljö är en självständig katalog som innehåller alla nödvändiga exekverbara filer för att använda de paket som ett Python-projekt skulle behöva. Det är rådligt att skapa en virtuell miljö för varje projekt för att undvika konflikter mellan projektberoenden. Använd `venv`-modulen, som är en del av Pythons standardbibliotek.
 
-```Python
-# Skapa en mapp för ditt projekt
-mkdir mitt_nya_projekt
-
-# Byt till din nya mapp
-cd mitt_nya_projekt
-
-# Skapa en ny Python-fil
-touch huvud.py
-
-# Öppna filen i din favoriteditor och skriv din första kod
-echo "print('Hej på er, programmerare!')" > huvud.py
-
-# Kör skriptet
-python huvud.py
+```shell
+# Byt ut 'myproject' mot namnet på ditt projekt
+python3 -m venv myproject-env
 ```
 
-Output:
+För att aktivera den virtuella miljön:
 
-```
-Hej på er, programmerare!
-```
-
-## Djupdykning:
-
-Historiskt sett har Python-projekt startats manuellt som jag visade ovan, eller i utvecklingsmiljöer som har vissa automatiseringar. Numera använder många `virtualenv` för att skapa en isolerad miljö för sina projekt. Det hjälper till att hålla beroenden separata per projekt.
-
-Ett alternativ till `virtualenv` är `pipenv` som hanterar virtuella miljöer och beroenden smidigt i bakgrunden. För större projekt, särskilt de som delas med andra, är det bra med ett verktyg som `Poetry` som sköter beroenden och paket versioner mer noggrant.
-
-```bash
-# Installation av pipenv
-pip install pipenv
-
-# Skapa en virtuell miljö och aktivera den
-pipenv shell
-
-# Lägg till beroenden
-pipenv install requests
+På Windows:
+```shell
+myproject-env\Scripts\activate.bat
 ```
 
-Detta gör det enklare att hantera projektets komplexitet och förenklar samarbeten.
+På Unix eller MacOS:
+```shell
+source myproject-env/bin/activate
+```
 
-## Se även:
+Exempel på utdata (utdatan kan variera något beroende på OS):
+```shell
+(myproject-env) $
+```
 
-- [Python's officiella startsida](https://www.python.org/)
-- [Virtualenv dokumentation](https://virtualenv.pypa.io/en/latest/)
-- [Pipenv & virtual environments guide](https://realpython.com/pipenv-guide/)
-- [Poetry: Python dependency management](https://python-poetry.org/docs/)
+### Installera paket
+Använd `pip`, paketinstallationsprogrammet för Python, för att installera, uppgradera och ta bort paket. Så här kan du installera ett populärt tredjepartsbibliotek, `requests`, för att göra HTTP-förfrågningar:
+
+```shell
+pip install requests
+```
+
+Exempel på utdata:
+```shell
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s
+Installerar insamlade paket: requests
+Lyckades installera requests-2.25.1
+```
+
+### Sätta upp en projektstruktur
+Ett typiskt Python-projekt kan se ut ungefär så här:
+
+```
+myproject/
+│
+├── myproject-env/    # Virtuell miljö
+├── docs/             # Dokumentation
+├── tests/            # Enhetstester och integrationstester
+│   └── __init__.py
+├── myproject/        # Projektets källkod 
+│   ├── __init__.py
+│   └── main.py
+├── setup.py          # Projektets installationsfil
+└── README.md         # Projektöversikt
+```
+
+### Skapa ditt första program
+Skapa en `main.py`-fil inuti `myproject`-katalogen. Här är ett exempel på ett enkelt program:
+
+```python
+# myproject/myproject/main.py
+def greet(name):
+    return f"Hej, {name}!"
+
+if __name__ == "__main__":
+    print(greet("Världen"))
+```
+
+Kör ditt program:
+
+```shell
+python myproject/main.py
+```
+
+Exempel på utdata:
+```shell
+Hej, Världen!
+```
+
+### Använda ett ramverk för större projekt
+För större projekt, särskilt webbapplikationer, är ramverk som Django eller Flask ovärderliga. Så här installerar du Flask och skapar en enkel "Hello, World"-webbapplikation:
+
+```shell
+pip install Flask
+```
+
+Skapa en `app.py`-fil med följande innehåll:
+
+```python
+# app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hej, Världen!</p>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Kör Flask-applikationen:
+
+```shell
+flask run
+```
+
+Exempel på utdata:
+```shell
+ * Running on http://127.0.0.1:5000/ (Tryck på CTRL+C för att avsluta)
+```
+
+Navigera till `http://127.0.0.1:5000/` i din webbläsare, och du bör se meddelandet "Hej, Världen!".

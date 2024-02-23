@@ -1,48 +1,132 @@
 ---
-date: 2024-01-20 18:04:16.830388-07:00
-description: "Commencer un nouveau projet, c'est mettre les bases d'une application\
-  \ ou d'un script. On le fait pour r\xE9soudre un probl\xE8me, tester une id\xE9\
-  e, ou apprendre\u2026"
-lastmod: 2024-02-19 22:05:16.138928
-model: gpt-4-1106-preview
-summary: "Commencer un nouveau projet, c'est mettre les bases d'une application ou\
-  \ d'un script. On le fait pour r\xE9soudre un probl\xE8me, tester une id\xE9e, ou\
-  \ apprendre\u2026"
-title: Lancement d'un nouveau projet
+title:                "Démarrer un nouveau projet"
+date:                  2024-02-22T17:29:57.341989-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-22, dogweather, reviewed
+  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi & Pourquoi ?)
-Commencer un nouveau projet, c'est mettre les bases d'une application ou d'un script. On le fait pour résoudre un problème, tester une idée, ou apprendre quelque chose de nouveau.
+## Quoi & Pourquoi ?
 
-## How to: (Comment faire :)
-Pour démarrer, on configure l'environnement et on crée un fichier `main.py` :
+Commencer un nouveau projet en Python, c'est mettre en place dès le départ une structure organisée et maintenable. Les programmeurs font cela pour s'assurer que leur code est facile à lire, à déboguer et à collaborer, surtout à mesure que le projet et l'équipe qui travaille dessus grandissent avec le temps.
 
-```Python
-# Installation de l'environnement virtuel
-python -m venv mon_projet_env
-# Activation de l'environnement virtuel
-# Sur Windows:
-mon_projet_env\Scripts\activate.bat
-# Sur Unix ou MacOS:
-source mon_projet_env/bin/activate
-# Création du fichier main.py
-echo "print('Salut, nouveau projet!')" > main.py
-# Exécution du fichier
-python main.py
+## Comment faire :
+
+### Créer un Environnement Virtuel
+Un environnement virtuel est un répertoire autonome qui contient tous les exécutables nécessaires pour utiliser les paquets dont un projet Python aurait besoin. Il est conseillé de créer un environnement virtuel pour chaque projet afin d'éviter les conflits entre les dépendances des projets. Utilisez le module `venv`, qui fait partie de la bibliothèque standard de Python.
+
+```shell
+# Remplacez 'myproject' par le nom de votre projet
+python3 -m venv myproject-env
 ```
 
-Résultat :
+Pour activer l'environnement virtuel :
 
-```Python
-Salut, nouveau projet!
+Sous Windows :
+```shell
+myproject-env\Scripts\activate.bat
 ```
 
-## Deep Dive (Plongée en profondeur)
-Historiquement, les programmeurs créaient des scripts sans isoler les dépendances, ce qui pouvait mener à des conflits entre projets. L'utilisation d'environnements virtuels (`venv`) règle ce problème. Des alternatives existent comme `pipenv` ou `conda`, qui offrent des fonctionnalités supplémentaires. Au niveau de l'implémentation, bien structurer son projet dès le départ est crucial : penser à bien nommer les dossiers et fichiers, organiser le code en modules et paquets, et documenter son code. Cela simplifie la maintenance et la collaboration.
+Sous Unix ou MacOS :
+```shell
+source myproject-env/bin/activate
+```
 
-## See Also (Voir aussi)
-- Documentation officielle pour venv : https://docs.python.org/3/library/venv.html
-- Guide sur les environnements virtuels : https://realpython.com/python-virtual-environments-a-primer/
-- Bonnes pratiques pour structurer un projet : https://docs.python-guide.org/writing/structure/
+Exemple de Sortie (la sortie peut légèrement varier selon l'OS) :
+```shell
+(myproject-env) $
+```
+
+### Installer des Paquets
+Utilisez `pip`, l'installateur de paquets pour Python, pour installer, mettre à niveau et supprimer des paquets. Voici comment vous pouvez installer une bibliothèque tierce populaire, `requests`, pour faire des requêtes HTTP :
+
+```shell
+pip install requests
+```
+
+Exemple de Sortie :
+```shell
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s
+Installing collected packages: requests
+Successfully installed requests-2.25.1
+```
+
+### Mettre en Place une Structure de Projet
+Un projet Python typique pourrait ressembler à cela :
+
+```
+myproject/
+│
+├── myproject-env/    # Environnement virtuel
+├── docs/             # Documentation
+├── tests/            # Tests unitaires et d'intégration
+│   └── __init__.py
+├── myproject/        # Code source du projet
+│   ├── __init__.py
+│   └── main.py
+├── setup.py          # Fichier de configuration du projet
+└── README.md         # Vue d'ensemble du projet
+```
+
+### Créez Votre Premier Programme
+Créez un fichier `main.py` dans le répertoire `myproject`. Voici un exemple de programme simple :
+
+```python
+# myproject/myproject/main.py
+def greet(name):
+    return f"Bonjour, {name}!"
+
+if __name__ == "__main__":
+    print(greet("le monde"))
+```
+
+Exécutez votre programme :
+
+```shell
+python myproject/main.py
+```
+
+Exemple de Sortie :
+```shell
+Bonjour, le monde!
+```
+
+### Utiliser un Cadre de Travail pour les Grands Projets
+Pour les grands projets, en particulier les applications web, des cadres de travail comme Django ou Flask sont inestimables. Voici comment installer Flask et créer une simple application web "Hello, World" :
+
+```shell
+pip install Flask
+```
+
+Créez un fichier `app.py` avec le contenu suivant :
+
+```python
+# app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Bonjour, le monde !</p>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Exécutez l'application Flask :
+
+```shell
+flask run
+```
+
+Exemple de Sortie :
+```shell
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+Naviguez vers `http://127.0.0.1:5000/` dans votre navigateur web, et vous devriez voir le message "Bonjour, le monde !".

@@ -1,64 +1,132 @@
 ---
-date: 2024-01-20 18:04:24.324549-07:00
-description: "\u958B\u59CB\u4E00\u500B\u65B0\u9805\u76EE\u5C31\u662F\u5275\u5EFA\u4E00\
-  \u500B\u5168\u65B0\u7684\u7A0B\u5F0F\u78BC\u57FA\u790E\u3002\u7A0B\u5E8F\u54E1\u9019\
-  \u9EBC\u505A\u662F\u70BA\u4E86\u89E3\u6C7A\u7279\u5B9A\u554F\u984C\uFF0C\u6216\u8005\
-  \u958B\u767C\u4E00\u500B\u6709\u8DA3\u7684\u60F3\u6CD5\u3002"
-isCJKLanguage: true
-lastmod: 2024-02-19 22:05:06.335591
-model: gpt-4-1106-preview
-summary: "\u958B\u59CB\u4E00\u500B\u65B0\u9805\u76EE\u5C31\u662F\u5275\u5EFA\u4E00\
-  \u500B\u5168\u65B0\u7684\u7A0B\u5F0F\u78BC\u57FA\u790E\u3002\u7A0B\u5E8F\u54E1\u9019\
-  \u9EBC\u505A\u662F\u70BA\u4E86\u89E3\u6C7A\u7279\u5B9A\u554F\u984C\uFF0C\u6216\u8005\
-  \u958B\u767C\u4E00\u500B\u6709\u8DA3\u7684\u60F3\u6CD5\u3002"
-title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+title:                "启动新项目"
+date:                  2024-02-22T17:30:28.977337-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-22, dogweather, reviewed
+  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什麼？為什麼？)
-開始一個新項目就是創建一個全新的程式碼基礎。程序員這麼做是為了解決特定問題，或者開發一個有趣的想法。
+## 什么 & 为什么？
 
-## How to: (怎麼做：)
-```Python
-# 建立一個新項目
+在Python中启动一个新项目就是从一开始就建立一个结构化、可维护的框架。程序员这样做是为了确保他们的代码易于阅读、调试和协作，尤其是随着项目和团队的成长。
 
-# 1. 建立一個新的Python虛擬環境
-python -m venv my_project_env
+## 如何操作：
 
-# 2. 啟動虛擬環境
-# 在Windows上:
-my_project_env\Scripts\activate
-# 在Unix或MacOS上:
-source my_project_env/bin/activate
+### 创建虚拟环境
+虚拟环境是一个包含所有必要执行文件的独立目录，用于使用Python项目需要的包。建议为每个项目创建一个虚拟环境，以避免项目依赖之间的冲突。使用`venv`模块，它是标准Python库的一部分。
 
-# 3. 安裝需要的套件
-pip install flask
+```shell
+# 用你的项目名称替换'myproject'
+python3 -m venv myproject-env
+```
 
-# 4. 創建一個app.py檔案，並寫入以下代碼
+激活虚拟环境：
+
+在Windows上：
+```shell
+myproject-env\Scripts\activate.bat
+```
+
+在Unix或MacOS上：
+```shell
+source myproject-env/bin/activate
+```
+
+示例输出（输出可能因操作系统略有不同）：
+```shell
+(myproject-env) $
+```
+
+### 安装包
+用`pip`，即Python的包安装工具，来安装、升级和移除包。以下是如何安装一个流行的第三方库`requests`以发起HTTP请求：
+
+```shell
+pip install requests
+```
+
+示例输出：
+```shell
+收集requests
+  下载requests-2.25.1-py2.py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 1.3 MB/s 
+安装收集的包：requests
+成功安装requests-2.25.1
+```
+
+### 建立项目结构
+一个典型的Python项目可能看起来像这样：
+
+```
+myproject/
+│
+├── myproject-env/    # 虚拟环境
+├── docs/             # 文档
+├── tests/            # 单元和集成测试
+│   └── __init__.py
+├── myproject/        # 项目源代码
+│   ├── __init__.py
+│   └── main.py
+├── setup.py          # 项目设置文件
+└── README.md         # 项目概览
+```
+
+### 创建你的第一个程序
+在`myproject`目录内创建一个名为`main.py`的文件。这是一个简单程序的示例：
+
+```python
+# myproject/myproject/main.py
+def greet(name):
+    return f"Hello, {name}!"
+
+if __name__ == "__main__":
+    print(greet("World"))
+```
+
+运行你的程序：
+
+```shell
+python myproject/main.py
+```
+
+示例输出：
+```shell
+Hello, World!
+```
+
+### 对于更大的项目使用框架
+对于更大的项目，尤其是网络应用，像Django或Flask这样的框架至关重要。以下是如何安装Flask并创建一个简单的"Hello, World"网络应用：
+
+```shell
+pip install Flask
+```
+
+创建一个名为`app.py`且内容如下的文件：
+
+```python
 # app.py
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def hello_world():
-    return 'Hello, World!'
+    return "<p>Hello, World!</p>"
 
-# 5. 運行應用程序
-# 設定環境變量
-export FLASK_APP=app
-# 啟動伺服器
-flask run
-
-# 瀏覽器顯示結果
-* Running on http://127.0.0.1:5000/
+if __name__ == "__main__":
+    app.run(debug=True)
 ```
 
-## Deep Dive (深入探討)
-開始新項目不僅限於編寫代碼。它的歷史背後包含了從版本控制的實踐（如git初始化）到專案管理工具的選擇（比如Jira或Trello）。選擇正確的框架和庫（例如Flask或Django）可以決定項目的起步速度。實現細節也關鍵，比如配置開發環境、解決依賴性問題和持續集成設置。
+运行Flask应用：
 
-## See Also (延伸閱讀)
-- [Flask 官方文檔](https://flask.palletsprojects.com/en/latest/)
-- [Python 虛擬環境指南](https://docs.python.org/3/library/venv.html)
-- [Python 官方教程](https://docs.python.org/3/tutorial/index.html)
-- [Git 版本控制入門](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+```shell
+flask run
+```
+
+示例输出：
+```shell
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+在你的网络浏览器导航到`http://127.0.0.1:5000/`，你应该会看到"Hello, World!"消息。
