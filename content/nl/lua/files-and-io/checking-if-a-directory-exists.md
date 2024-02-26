@@ -5,7 +5,7 @@ date: 2024-01-28 21:56:25.856269-07:00
 description: "Controleren of een map bestaat betekent verifi\xEBren of een folder\
   \ aanwezig is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen,\
   \ zoals\u2026"
-lastmod: 2024-02-19 22:05:10.027696
+lastmod: '2024-02-25T18:49:48.290729-07:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat betekent verifi\xEBren of een folder aanwezig\
   \ is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen, zoals\u2026"

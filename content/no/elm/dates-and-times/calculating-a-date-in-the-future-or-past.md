@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:08.903313-07:00
 description: "Beregning av fremtidig eller tidligere dato betyr \xE5 finne en dato\
   \ f\xF8r eller etter en spesifikk dag. Programmerere gj\xF8r dette for funksjonalitet\
   \ som\u2026"
-lastmod: 2024-02-19 22:04:59.968427
+lastmod: '2024-02-25T18:49:38.901087-07:00'
 model: gpt-4-1106-preview
 summary: "Beregning av fremtidig eller tidligere dato betyr \xE5 finne en dato f\xF8\
   r eller etter en spesifikk dag. Programmerere gj\xF8r dette for funksjonalitet som\u2026"

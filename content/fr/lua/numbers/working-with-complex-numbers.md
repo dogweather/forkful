@@ -2,7 +2,7 @@
 date: 2024-01-26 04:43:19.254417-07:00
 description: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9rique\
   \ unidimensionnelle dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire.\u2026"
-lastmod: 2024-02-19 22:05:16.652067
+lastmod: '2024-02-25T18:49:54.635849-07:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9rique unidimensionnelle\
   \ dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire.\u2026"

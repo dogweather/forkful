@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "Le espressioni regolari (regex) sono modelli per cercare e manipolare\
   \ testo. Sono usate dai programmatori per validare, estrarre o sostituire parti\
   \ di\u2026"
-lastmod: 2024-02-19 22:05:02.141203
+lastmod: '2024-02-25T18:49:40.960662-07:00'
 summary: "Le espressioni regolari (regex) sono modelli per cercare e manipolare testo.\
   \ Sono usate dai programmatori per validare, estrarre o sostituire parti di\u2026"
 title: Utilizzo delle espressioni regolari

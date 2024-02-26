@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:21.485494-07:00
 description: "Att skriva till standardfel (stderr) i Ruby handlar om att dirigera\
   \ felmeddelanden eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5\
   n\u2026"
-lastmod: 2024-02-19 22:04:57.702655
+lastmod: '2024-02-25T18:49:36.761866-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Ruby handlar om att dirigera felmeddelanden\
   \ eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5n\u2026"

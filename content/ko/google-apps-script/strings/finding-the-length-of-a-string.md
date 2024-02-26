@@ -10,7 +10,7 @@ description: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC7
   \ \uC218\uB97C \uACB0\uC815\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\uB2C8\
   \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC785\uB825\uC744 \uAC80\uC99D\
   \uD558\uAC70\uB098,\u2026"
-lastmod: 2024-02-19 22:05:13.456085
+lastmod: '2024-02-25T18:49:51.555382-07:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C\
   \ \uCC3E\uB294 \uAC83\uC740 JavaScript \uD074\uB77C\uC6B0\uB4DC \uC2A4\uD06C\uB9BD\

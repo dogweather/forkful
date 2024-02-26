@@ -2,7 +2,7 @@
 date: 2024-01-27 16:21:19.895288-07:00
 description: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
   \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista\u2026"
-lastmod: 2024-02-19 22:05:15.884677
+lastmod: '2024-02-25T18:49:53.897688-07:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
   \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista\u2026"

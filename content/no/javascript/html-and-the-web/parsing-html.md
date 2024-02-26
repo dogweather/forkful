@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-28 03:00:44.896374-07:00
 description: "\xC5 parse HTML betyr \xE5 trekke ut data fra HTML-dokumenter. Programmerere\
   \ gj\xF8r dette for \xE5 samhandle med eller manipulere webinnhold, automatisere\u2026"
-lastmod: 2024-02-19 22:05:00.458084
+lastmod: '2024-02-25T18:49:39.360178-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML betyr \xE5 trekke ut data fra HTML-dokumenter. Programmerere\
   \ gj\xF8r dette for \xE5 samhandle med eller manipulere webinnhold, automatisere\u2026"

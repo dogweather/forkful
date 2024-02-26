@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:14.264377-07:00
 description: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer \xE5\
   \ lese fra og skrive data til disse filene, noe som er en vanlig n\xF8dvendighet\
   \ for oppgaver som\u2026"
-lastmod: 2024-02-19 22:04:59.754186
+lastmod: '2024-02-25T18:49:38.692503-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer \xE5 lese\
   \ fra og skrive data til disse filene, noe som er en vanlig n\xF8dvendighet for\

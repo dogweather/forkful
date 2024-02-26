@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:09.933363-07:00
 description: "Sending an HTTP request is how your JavaScript code asks the internet\
   \ for data or sends data to a server. We do it to interact with web services, grab\u2026"
-lastmod: 2024-02-19 22:05:09.069603
+lastmod: '2024-02-25T18:49:47.396387-07:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is how your JavaScript code asks the internet for\
   \ data or sends data to a server. We do it to interact with web services, grab\u2026"

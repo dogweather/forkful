@@ -3,7 +3,7 @@ date: 2024-01-26 04:17:08.792030-07:00
 description: "REPL, eli Read-Eval-Print -silmukka, on ohjelmointiymp\xE4rist\xF6,\
   \ joka ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa\
   \ ne ja palauttaa tuloksen\u2026"
-lastmod: 2024-02-19 22:05:15.058986
+lastmod: '2024-02-25T18:49:53.119751-07:00'
 model: gpt-4-0125-preview
 summary: "REPL, eli Read-Eval-Print -silmukka, on ohjelmointiymp\xE4rist\xF6, joka\
   \ ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa\

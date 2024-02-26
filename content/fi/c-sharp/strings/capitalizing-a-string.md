@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:20.707397-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa merkkijonon\
   \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole. T\xE4\
   m\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.449738
+lastmod: '2024-02-25T18:49:53.471828-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa merkkijonon\
   \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole. T\xE4\

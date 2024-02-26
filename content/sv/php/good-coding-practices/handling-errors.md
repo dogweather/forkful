@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:36.541894-07:00
 description: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\xE5\
   nd som st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller\
   \ felaktig\u2026"
-lastmod: 2024-02-19 22:04:57.228338
+lastmod: '2024-02-25T18:49:36.306841-07:00'
 model: gpt-4-1106-preview
 summary: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\xE5nd som\
   \ st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller felaktig\u2026"

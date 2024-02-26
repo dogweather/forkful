@@ -5,7 +5,7 @@ date: 2024-01-28 22:09:44.356476-07:00
 description: "Reguliere expressies, of regex, zijn patronen die gebruikt worden om\
   \ combinaties van karakters in strings te matchen. Programmeurs gebruiken ze voor\
   \ het\u2026"
-lastmod: 2024-02-19 22:05:10.232770
+lastmod: '2024-02-25T18:49:48.477764-07:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies, of regex, zijn patronen die gebruikt worden om combinaties\
   \ van karakters in strings te matchen. Programmeurs gebruiken ze voor het\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:09.603902-07:00
 description: "Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata\
   \ tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekev\xE4\
   t\u2026"
-lastmod: 2024-02-19 22:05:15.132169
+lastmod: '2024-02-25T18:49:53.165892-07:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata\
   \ tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekev\xE4\

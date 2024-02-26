@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:49.032649-07:00
 description: "Att j\xE4mf\xF6ra tv\xE5 datum i programmering \xE4r en grundl\xE4ggande\
   \ uppgift som l\xE5ter utvecklare utv\xE4rdera den kronologiska relationen mellan\
   \ datum. S\xE5dana\u2026"
-lastmod: 2024-02-19 22:04:56.639755
+lastmod: '2024-02-25T18:49:35.741587-07:00'
 model: gpt-4-0125-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum i programmering \xE4r en grundl\xE4ggande\
   \ uppgift som l\xE5ter utvecklare utv\xE4rdera den kronologiska relationen mellan\

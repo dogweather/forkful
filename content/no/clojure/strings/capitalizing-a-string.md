@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:53.738362-07:00
 description: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre strengen\
   \ slik at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir\
   \ uendret.\u2026"
-lastmod: 2024-02-19 22:04:59.669288
+lastmod: '2024-02-25T18:49:38.613837-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre strengen slik\
   \ at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir uendret.\u2026"

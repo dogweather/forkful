@@ -3,7 +3,7 @@ date: 2024-01-25 03:39:34.032559-07:00
 description: "\"Working with XML\" refers to the process of reading, creating, and\
   \ modifying XML (eXtensible Markup Language) files using programming. Programmers\
   \ do it\u2026"
-lastmod: 2024-02-19 22:05:18.237071
+lastmod: '2024-02-25T18:49:56.193277-07:00'
 model: gpt-4-1106-preview
 summary: "\"Working with XML\" refers to the process of reading, creating, and modifying\
   \ XML (eXtensible Markup Language) files using programming. Programmers do it\u2026"

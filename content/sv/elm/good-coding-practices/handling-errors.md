@@ -3,7 +3,7 @@ date: 2024-01-26 00:51:36.490459-07:00
 description: "Att hantera fel inneb\xE4r att skriva kod som kan f\xF6rutse och hantera\
   \ n\xE4r saker g\xE5r fel. Programmerare g\xF6r det f\xF6r att f\xF6rhindra krascher,\
   \ skydda\u2026"
-lastmod: 2024-02-19 22:04:57.048456
+lastmod: '2024-02-25T18:49:36.131292-07:00'
 model: gpt-4-1106-preview
 summary: "Att hantera fel inneb\xE4r att skriva kod som kan f\xF6rutse och hantera\
   \ n\xE4r saker g\xE5r fel. Programmerare g\xF6r det f\xF6r att f\xF6rhindra krascher,\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:26.296088-07:00
 description: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir strings\
   \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings.\
   \ Programadores fazem isso\u2026"
-lastmod: 2024-02-19 22:05:05.104544
+lastmod: '2024-02-25T18:49:43.709692-07:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir strings\
   \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings.\

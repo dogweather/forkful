@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:42.415931-07:00
 description: "Calculating a future or past date involves manipulating dates to find\
   \ out what day it was or will be. Programmers do this for scheduling, reminders,\
   \ or\u2026"
-lastmod: 2024-02-19 22:05:18.947093
+lastmod: '2024-02-25T18:49:56.921726-07:00'
 model: gpt-4-1106-preview
 summary: "Calculating a future or past date involves manipulating dates to find out\
   \ what day it was or will be. Programmers do this for scheduling, reminders, or\u2026"

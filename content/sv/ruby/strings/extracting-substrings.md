@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:35.844550-07:00
 description: "I Ruby \xE4r att extrahera substr\xE4ngar en stil med att plocka specifika\
   \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r det f\xF6r att bearbeta text,\
   \ validera indata\u2026"
-lastmod: 2024-02-19 22:04:57.670884
+lastmod: '2024-02-25T18:49:36.732244-07:00'
 model: gpt-4-1106-preview
 summary: "I Ruby \xE4r att extrahera substr\xE4ngar en stil med att plocka specifika\
   \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r det f\xF6r att bearbeta text,\

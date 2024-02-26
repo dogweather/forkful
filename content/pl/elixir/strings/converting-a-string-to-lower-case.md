@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:05.288209-07:00
 description: "Zamiana napisu na ma\u0142e litery to zmiana wszystkich wielkich liter\
   \ na ich ma\u0142e odpowiedniki. W programowaniu robimy to dla sp\xF3jno\u015Bci\
   \ danych, \u0142atwiejszego\u2026"
-lastmod: 2024-02-19 22:04:54.207886
+lastmod: '2024-02-25T18:49:33.450331-07:00'
 model: gpt-4-1106-preview
 summary: "Zamiana napisu na ma\u0142e litery to zmiana wszystkich wielkich liter na\
   \ ich ma\u0142e odpowiedniki. W programowaniu robimy to dla sp\xF3jno\u015Bci danych,\

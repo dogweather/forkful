@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:07.968693-07:00
 description: "W \u015Bwiecie programowania, szczeg\xF3lnie podczas pracy z systemami\
   \ Linux lub Unix, manipulacja plikami bezpo\u015Brednio z poziomu interfejsu linii\
   \ komend (CLI)\u2026"
-lastmod: 2024-02-19 22:04:55.010107
+lastmod: '2024-02-25T18:49:34.209102-07:00'
 model: gpt-4-0125-preview
 summary: "W \u015Bwiecie programowania, szczeg\xF3lnie podczas pracy z systemami Linux\
   \ lub Unix, manipulacja plikami bezpo\u015Brednio z poziomu interfejsu linii komend\

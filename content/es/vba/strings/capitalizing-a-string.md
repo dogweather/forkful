@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:16.387912-07:00
 description: "Capitalizar una cadena en Visual Basic para Aplicaciones (VBA) implica\
   \ convertir el primer car\xE1cter de cada palabra en una cadena a may\xFAsculas,\
   \ asegurando\u2026"
-lastmod: 2024-02-19 22:05:17.397576
+lastmod: '2024-02-25T18:49:55.365481-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en Visual Basic para Aplicaciones (VBA) implica convertir\
   \ el primer car\xE1cter de cada palabra en una cadena a may\xFAsculas, asegurando\u2026"

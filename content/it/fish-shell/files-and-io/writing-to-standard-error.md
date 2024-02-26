@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:33:12.822597-07:00
 description: "Scrivere su standard error (stderr) in Fish Shell riguarda il reindirizzare\
   \ messaggi di errore o diagnostica separatamente dall'output standard (stdout).\u2026"
-lastmod: 2024-02-19 22:05:02.948389
+lastmod: '2024-02-25T18:49:41.717885-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Fish Shell riguarda il reindirizzare\
   \ messaggi di errore o diagnostica separatamente dall'output standard (stdout).\u2026"

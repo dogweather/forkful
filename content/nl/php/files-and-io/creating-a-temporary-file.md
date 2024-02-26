@@ -5,7 +5,7 @@ date: 2024-01-28 21:58:32.575950-07:00
 description: "Het aanmaken van een tijdelijk bestand in PHP betekent dat je een bestand\
   \ maakt dat net lang genoeg blijft bestaan om te gebruiken, en dan poef\u2014het\
   \ is\u2026"
-lastmod: 2024-02-19 22:05:09.988213
+lastmod: '2024-02-25T18:49:48.253686-07:00'
 model: gpt-4-0125-preview
 summary: "Het aanmaken van een tijdelijk bestand in PHP betekent dat je een bestand\
   \ maakt dat net lang genoeg blijft bestaan om te gebruiken, en dan poef\u2014het\

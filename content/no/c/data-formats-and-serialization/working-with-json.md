@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:06.159840-07:00
 description: "\xC5 jobbe med JSON (JavaScript Object Notation) i C inneb\xE6rer \xE5\
   \ parsing, generere og manipulere JSON datastrukturer. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.577206
+lastmod: '2024-02-25T18:49:39.473098-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i C inneb\xE6rer \xE5 parsing,\
   \ generere og manipulere JSON datastrukturer. Programmerere gj\xF8r dette for \xE5\

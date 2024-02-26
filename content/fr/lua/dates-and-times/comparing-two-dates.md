@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:15.049543-07:00
 description: "Comparer deux dates, c'est mettre c\xF4te \xE0 c\xF4te deux moments\
   \ distincts pour voir lequel vient avant ou apr\xE8s, ou s'ils sont identiques.\
   \ En programmation, on\u2026"
-lastmod: 2024-02-19 22:05:16.670940
+lastmod: '2024-02-25T18:49:54.654143-07:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est mettre c\xF4te \xE0 c\xF4te deux moments distincts\
   \ pour voir lequel vient avant ou apr\xE8s, ou s'ils sont identiques. En programmation,\

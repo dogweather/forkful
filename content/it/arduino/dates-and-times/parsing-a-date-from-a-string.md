@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:19.468012-07:00
 description: "Effettuare il parsing di una data da una stringa in Arduino comporta\
   \ l'estrazione e la conversione delle componenti della data (anno, mese, giorno)\
   \ da una\u2026"
-lastmod: 2024-02-19 22:05:02.768531
+lastmod: '2024-02-25T18:49:41.551164-07:00'
 model: gpt-4-0125-preview
 summary: "Effettuare il parsing di una data da una stringa in Arduino comporta l'estrazione\
   \ e la conversione delle componenti della data (anno, mese, giorno) da una\u2026"

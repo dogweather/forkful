@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:29.997778-07:00
 description: "Interpolar uma string significa incorporar vari\xE1veis ou express\xF5\
   es em meio a um texto fixo para criar mensagens din\xE2micas. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-19 22:05:05.925787
+lastmod: '2024-02-25T18:49:44.483602-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string significa incorporar vari\xE1veis ou express\xF5es\
   \ em meio a um texto fixo para criar mensagens din\xE2micas. Programadores fazem\

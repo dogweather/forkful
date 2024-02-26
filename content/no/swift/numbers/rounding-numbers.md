@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:38.331734-07:00
 description: "\xC5 avrunde tall betyr \xE5 tiln\xE6rme en numerisk verdi til en spesifikk\
   \ presisjon, typisk for \xE5 fjerne u\xF8nskede desimaler. Programmerere avrunder\
   \ for \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.411184
+lastmod: '2024-02-25T18:49:39.315761-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall betyr \xE5 tiln\xE6rme en numerisk verdi til en spesifikk\
   \ presisjon, typisk for \xE5 fjerne u\xF8nskede desimaler. Programmerere avrunder\

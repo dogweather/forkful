@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:33.495071-07:00
 description: "Tests in PowerShell zu schreiben, umfasst das Erstellen von Skripten,\
   \ die automatisch die Funktionalit\xE4t Ihres PowerShell-Codes validieren und\u2026"
-lastmod: 2024-02-19 22:05:13.038988
+lastmod: '2024-02-25T18:49:51.159513-07:00'
 model: gpt-4-0125-preview
 summary: "Tests in PowerShell zu schreiben, umfasst das Erstellen von Skripten, die\
   \ automatisch die Funktionalit\xE4t Ihres PowerShell-Codes validieren und\u2026"

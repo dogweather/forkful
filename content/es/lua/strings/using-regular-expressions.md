@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:27.349636-07:00
 description: "Las expresiones regulares en la programaci\xF3n permiten la b\xFAsqueda\
   \ y manipulaci\xF3n de cadenas basadas en patrones espec\xEDficos. Los programadores\
   \ las\u2026"
-lastmod: 2024-02-19 22:05:17.699700
+lastmod: '2024-02-25T18:49:55.663202-07:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares en la programaci\xF3n permiten la b\xFAsqueda\
   \ y manipulaci\xF3n de cadenas basadas en patrones espec\xEDficos. Los programadores\

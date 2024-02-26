@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:27.888030-07:00
 description: "\xC9crire des tests en PowerShell implique de cr\xE9er des scripts qui\
   \ valident automatiquement le fonctionnement de votre code PowerShell, en garantissant\u2026"
-lastmod: 2024-02-19 22:05:16.753475
+lastmod: '2024-02-25T18:49:54.733753-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en PowerShell implique de cr\xE9er des scripts qui valident\
   \ automatiquement le fonctionnement de votre code PowerShell, en garantissant\u2026"

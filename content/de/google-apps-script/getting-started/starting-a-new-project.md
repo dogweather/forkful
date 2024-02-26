@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:27.507025-07:00
 description: "Ein neues Projekt in Google Apps Script (GAS) zu starten, bedeutet,\
   \ eine Skriptdatei innerhalb des Google-\xD6kosystems (Google Drive, Docs, Sheets\
   \ usw.) zu\u2026"
-lastmod: 2024-02-19 22:05:12.381346
+lastmod: '2024-02-25T18:49:50.534625-07:00'
 model: gpt-4-0125-preview
 summary: "Ein neues Projekt in Google Apps Script (GAS) zu starten, bedeutet, eine\
   \ Skriptdatei innerhalb des Google-\xD6kosystems (Google Drive, Docs, Sheets usw.)\

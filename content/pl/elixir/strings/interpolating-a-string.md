@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:40.544914-07:00
 description: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to wstawianie warto\u015B\
   ci zmiennych wewn\u0105trz stringa. Programi\u015Bci u\u017Cywaj\u0105 jej do tworzenia\
   \ elastycznych wiadomo\u015Bci i\u2026"
-lastmod: 2024-02-19 22:04:54.206940
+lastmod: '2024-02-25T18:49:33.449399-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to wstawianie warto\u015B\
   ci zmiennych wewn\u0105trz stringa. Programi\u015Bci u\u017Cywaj\u0105 jej do tworzenia\

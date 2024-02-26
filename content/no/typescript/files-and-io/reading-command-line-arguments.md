@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:57.680744-07:00
 description: "Lesing av kommandolinjeargumenter lar programmereren hente input direkte\
   \ fra brukerens terminal. Det er nyttig for skript og applikasjoner som krever\u2026"
-lastmod: 2024-02-19 22:04:59.790847
+lastmod: '2024-02-25T18:49:38.727294-07:00'
 model: gpt-4-1106-preview
 summary: "Lesing av kommandolinjeargumenter lar programmereren hente input direkte\
   \ fra brukerens terminal. Det er nyttig for skript og applikasjoner som krever\u2026"

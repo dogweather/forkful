@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:42.422121-07:00
 description: "Avrunding av tall, et grunnleggende konsept innen dataprogrammering,\
   \ inneb\xE6rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert\
   \ antall\u2026"
-lastmod: 2024-02-19 22:04:59.588983
+lastmod: '2024-02-25T18:49:38.539374-07:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall, et grunnleggende konsept innen dataprogrammering, inneb\xE6\
   rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert antall\u2026"

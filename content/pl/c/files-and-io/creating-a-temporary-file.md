@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:19.951180-07:00
 description: "Tworzenie tymczasowego pliku w j\u0119zyku C polega na generowaniu pliku,\
   \ kt\xF3ry ma by\u0107 u\u017Cywany przez kr\xF3tki czas, zazwyczaj jako przestrze\u0144\
   \ robocza dla\u2026"
-lastmod: 2024-02-19 22:04:55.087452
+lastmod: '2024-02-25T18:49:34.281263-07:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w j\u0119zyku C polega na generowaniu pliku,\
   \ kt\xF3ry ma by\u0107 u\u017Cywany przez kr\xF3tki czas, zazwyczaj jako przestrze\u0144\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:59.338866-07:00
 description: "Finne lengden til en streng er \xE5 telle antall tegn den inneholder.\
   \ Programmerere gj\xF8r dette for validering, formatering eller andre logiske form\xE5\
   l i kode."
-lastmod: 2024-02-19 22:05:00.589595
+lastmod: '2024-02-25T18:49:39.484871-07:00'
 model: gpt-4-1106-preview
 summary: "Finne lengden til en streng er \xE5 telle antall tegn den inneholder. Programmerere\
   \ gj\xF8r dette for validering, formatering eller andre logiske form\xE5l i kode."

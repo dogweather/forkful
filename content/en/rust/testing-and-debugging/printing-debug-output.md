@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:24.504452-07:00
 description: "Printing debug output lets you peek at your program's state without\
   \ a full-blown debugger. It's quick, dirty, and perfect for tracing pesky bugs when\
   \ you\u2026"
-lastmod: 2024-02-19 22:05:18.367733
+lastmod: '2024-02-25T18:49:56.321998-07:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output lets you peek at your program's state without a full-blown\
   \ debugger. It's quick, dirty, and perfect for tracing pesky bugs when you\u2026"

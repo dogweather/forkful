@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:05.660565-07:00
 description: "Das Gro\xDFschreiben eines Strings in der Programmierung bezieht sich\
   \ oft darauf, den ersten Buchstaben eines Strings in Gro\xDFbuchstaben und den Rest\
   \ in\u2026"
-lastmod: 2024-02-19 22:05:13.322248
+lastmod: '2024-02-25T18:49:51.429676-07:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in der Programmierung bezieht sich oft\
   \ darauf, den ersten Buchstaben eines Strings in Gro\xDFbuchstaben und den Rest\

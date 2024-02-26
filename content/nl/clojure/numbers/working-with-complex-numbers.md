@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:11.251125-07:00
 description: "Complexe getallen breiden de re\xEBle getallen uit met een extra deel,\
   \ de imaginaire eenheid 'i'. Programmeurs gebruiken ze in verschillende domeinen,\u2026"
-lastmod: 2024-02-19 22:05:09.501649
+lastmod: '2024-02-25T18:49:47.806881-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallen uit met een extra deel, de\
   \ imaginaire eenheid 'i'. Programmeurs gebruiken ze in verschillende domeinen,\u2026"

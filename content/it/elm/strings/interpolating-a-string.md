@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:47.957806-07:00
 description: "Interpolare una stringa significa inserire variabili o espressioni all'interno\
   \ di una stringa di testo. I programmatori lo fanno per creare messaggi\u2026"
-lastmod: 2024-02-19 22:05:02.398452
+lastmod: '2024-02-25T18:49:41.205013-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolare una stringa significa inserire variabili o espressioni all'interno\
   \ di una stringa di testo. I programmatori lo fanno per creare messaggi\u2026"

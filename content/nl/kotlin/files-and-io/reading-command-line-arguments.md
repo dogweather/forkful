@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:34.623876-07:00
 description: "Commandoregelargumenten lezen betekent data ophalen die aan je programma\
   \ wordt doorgegeven wanneer het start. Programmeurs hebben dit nodig om gebruikers\u2026"
-lastmod: 2024-02-19 22:05:09.838743
+lastmod: '2024-02-25T18:49:48.122702-07:00'
 model: gpt-4-0125-preview
 summary: "Commandoregelargumenten lezen betekent data ophalen die aan je programma\
   \ wordt doorgegeven wanneer het start. Programmeurs hebben dit nodig om gebruikers\u2026"

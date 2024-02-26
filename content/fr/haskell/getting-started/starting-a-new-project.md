@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:29.838667-07:00
 description: "Commencer un nouveau projet en Haskell, c'est partir de z\xE9ro pour\
   \ cr\xE9er un programme. Les programmeurs se lancent dans cette aventure pour concr\xE9\
   tiser une\u2026"
-lastmod: 2024-02-19 22:05:16.572204
+lastmod: '2024-02-25T18:49:54.557484-07:00'
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet en Haskell, c'est partir de z\xE9ro pour cr\xE9\
   er un programme. Les programmeurs se lancent dans cette aventure pour concr\xE9\

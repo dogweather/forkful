@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:20.109303-07:00
 description: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um\
   \ Daten wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"
-lastmod: 2024-02-19 22:05:12.685989
+lastmod: '2024-02-25T18:49:50.825617-07:00'
 model: gpt-4-0125-preview
 summary: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um Daten\
   \ wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"

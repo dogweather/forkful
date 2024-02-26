@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:48.428377-07:00
 description: "Das Vergleichen von zwei Daten zeigt uns, welches Datum fr\xFCher oder\
   \ sp\xE4ter ist. Programmierer nutzen dies f\xFCr Funktionalit\xE4ten wie G\xFC\
   ltigkeitspr\xFCfungen,\u2026"
-lastmod: 2024-02-19 22:05:13.355647
+lastmod: '2024-02-25T18:49:51.459042-07:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen von zwei Daten zeigt uns, welches Datum fr\xFCher oder sp\xE4\
   ter ist. Programmierer nutzen dies f\xFCr Funktionalit\xE4ten wie G\xFCltigkeitspr\xFC\

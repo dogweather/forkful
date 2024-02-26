@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:57.245131-07:00
 description: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallintaa\
   \ ja niihin reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten\
   \ puuttuvia\u2026"
-lastmod: 2024-02-19 22:05:15.557766
+lastmod: '2024-02-25T18:49:53.575717-07:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallintaa ja niihin\
   \ reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten puuttuvia\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-27 10:42:41.231494-07:00
 description: "Konkatenere strenger handler om \xE5 sette sammen to eller flere strenger\
   \ for \xE5 danne en enkelt tekstbit. Du kan trenge \xE5 sl\xE5 sammen tekst for\
   \ \xE5 generere\u2026"
-lastmod: 2024-02-19 22:04:59.722361
+lastmod: '2024-02-25T18:49:38.662999-07:00'
 model: gpt-4-0125-preview
 summary: "Konkatenere strenger handler om \xE5 sette sammen to eller flere strenger\
   \ for \xE5 danne en enkelt tekstbit. Du kan trenge \xE5 sl\xE5 sammen tekst for\

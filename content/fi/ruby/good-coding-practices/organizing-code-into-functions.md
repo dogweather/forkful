@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:22.243342-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin jakaa skriptisi uudelleenk\xE4\
   ytett\xE4viin osiin. Kaikki on kiinni siit\xE4, ett\xE4 koodisi on siisti\xE4, hallittavaa\
   \ ja v\xE4hemm\xE4n\u2026"
-lastmod: 2024-02-19 22:05:16.001291
+lastmod: '2024-02-25T18:49:53.996098-07:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin jakaa skriptisi uudelleenk\xE4ytett\xE4\
   viin osiin. Kaikki on kiinni siit\xE4, ett\xE4 koodisi on siisti\xE4, hallittavaa\

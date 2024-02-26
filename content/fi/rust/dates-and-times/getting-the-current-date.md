@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:50.456938-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Rustissa on yleinen teht\xE4\
   v\xE4 lokitusta, aikaan perustuvia operaatioita tai yksinkertaisesti p\xE4iv\xE4\
   m\xE4\xE4r\xE4n n\xE4ytt\xE4mist\xE4 varten.\u2026"
-lastmod: 2024-02-19 22:05:15.262406
+lastmod: '2024-02-25T18:49:53.291771-07:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Rustissa on yleinen teht\xE4\
   v\xE4 lokitusta, aikaan perustuvia operaatioita tai yksinkertaisesti p\xE4iv\xE4\

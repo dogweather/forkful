@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:31.526357-07:00
 description: "Writing tests in programming involves creating small, separate pieces\
   \ of code to automatically verify that different parts of your application work\
   \ as\u2026"
-lastmod: 2024-02-19 22:05:18.670498
+lastmod: '2024-02-25T18:49:56.648177-07:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in programming involves creating small, separate pieces of\
   \ code to automatically verify that different parts of your application work as\u2026"

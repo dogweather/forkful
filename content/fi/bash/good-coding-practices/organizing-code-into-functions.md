@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:12.560901-07:00
 description: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
   \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\
   vi\xE4. Se tekee\u2026"
-lastmod: 2024-02-19 22:05:15.640435
+lastmod: '2024-02-25T18:49:53.656247-07:00'
 model: gpt-4-1106-preview
 summary: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
   \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\

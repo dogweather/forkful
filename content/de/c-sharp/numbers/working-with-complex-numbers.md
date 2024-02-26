@@ -3,7 +3,7 @@ date: 2024-01-26 04:38:03.592463-07:00
 description: "Komplexe Zahlen erweitern unser Zahlensystem um imagin\xE4re Zahlen\
   \ und erm\xF6glichen es uns, Gleichungen zu l\xF6sen, die keine reellen L\xF6sungen\
   \ haben.\u2026"
-lastmod: 2024-02-19 22:05:12.809655
+lastmod: '2024-02-25T18:49:50.942788-07:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern unser Zahlensystem um imagin\xE4re Zahlen und\
   \ erm\xF6glichen es uns, Gleichungen zu l\xF6sen, die keine reellen L\xF6sungen\

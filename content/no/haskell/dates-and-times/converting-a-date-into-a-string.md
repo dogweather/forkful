@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:34.355068-07:00
 description: "Omforming fra dato til streng lar oss vise datoer som lesbare tekststrenger.\
   \ Dette er essensielt for brukergrensesnitt og datalagring i et forst\xE5elig\u2026"
-lastmod: 2024-02-19 22:05:00.117863
+lastmod: '2024-02-25T18:49:39.025955-07:00'
 model: gpt-4-1106-preview
 summary: "Omforming fra dato til streng lar oss vise datoer som lesbare tekststrenger.\
   \ Dette er essensielt for brukergrensesnitt og datalagring i et forst\xE5elig\u2026"

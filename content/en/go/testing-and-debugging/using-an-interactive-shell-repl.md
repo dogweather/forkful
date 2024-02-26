@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:12.851556-07:00
 description: "An interactive shell, or Read-Eval-Print Loop (REPL), lets you experiment\
   \ with Go code in real-time, executing commands and getting immediate feedback.\u2026"
-lastmod: 2024-02-19 22:05:18.140733
+lastmod: '2024-02-25T18:49:56.099788-07:00'
 model: gpt-4-0125-preview
 summary: "An interactive shell, or Read-Eval-Print Loop (REPL), lets you experiment\
   \ with Go code in real-time, executing commands and getting immediate feedback.\u2026"

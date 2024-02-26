@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:20.131458-07:00
 description: "Standardivirheeseen (stderr) kirjoittaminen Haskellissa mahdollistaa\
   \ ohjelmien tulosteiden erottamisen normaalien tulosten ja virheilmoitusten v\xE4\
   lill\xE4.\u2026"
-lastmod: 2024-02-19 22:05:15.524752
+lastmod: '2024-02-25T18:49:53.544206-07:00'
 model: gpt-4-0125-preview
 summary: "Standardivirheeseen (stderr) kirjoittaminen Haskellissa mahdollistaa ohjelmien\
   \ tulosteiden erottamisen normaalien tulosten ja virheilmoitusten v\xE4lill\xE4\

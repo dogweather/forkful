@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:53.168649-07:00
 description: "Code opsplitsen in functies betekent scripts onderverdelen in kleinere,\
   \ herbruikbare blokken die specifieke taken uitvoeren. Het maakt de code netter,\u2026"
-lastmod: 2024-02-19 22:05:10.072300
+lastmod: '2024-02-25T18:49:48.326355-07:00'
 model: gpt-4-0125-preview
 summary: "Code opsplitsen in functies betekent scripts onderverdelen in kleinere,\
   \ herbruikbare blokken die specifieke taken uitvoeren. Het maakt de code netter,\u2026"

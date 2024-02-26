@@ -2,7 +2,7 @@
 date: 2024-01-26 04:23:10.337980-07:00
 description: "TOML st\xE5r for Toms Opplagte, Minimale Spr\xE5k. Det er et data serialiseringsformat\
   \ brukt for konfigurasjonsfiler. Programmerere bruker det fordi det er lett\u2026"
-lastmod: 2024-02-19 22:04:59.935813
+lastmod: '2024-02-25T18:49:38.869668-07:00'
 model: gpt-4-0125-preview
 summary: "TOML st\xE5r for Toms Opplagte, Minimale Spr\xE5k. Det er et data serialiseringsformat\
   \ brukt for konfigurasjonsfiler. Programmerere bruker det fordi det er lett\u2026"

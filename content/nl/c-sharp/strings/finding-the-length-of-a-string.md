@@ -5,7 +5,7 @@ date: 2024-01-28 22:00:08.685040-07:00
 description: "Het vinden van een stringlengte betekent het tellen van de tekens. We\
   \ doen dit om invoer te valideren, door tekens te lopen, bronnen toe te wijzen,\
   \ of uit\u2026"
-lastmod: 2024-02-19 22:05:09.858989
+lastmod: '2024-02-25T18:49:48.140552-07:00'
 model: gpt-4-0125-preview
 summary: "Het vinden van een stringlengte betekent het tellen van de tekens. We doen\
   \ dit om invoer te valideren, door tekens te lopen, bronnen toe te wijzen, of uit\u2026"

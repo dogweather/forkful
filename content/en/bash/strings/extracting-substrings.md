@@ -2,7 +2,7 @@
 date: 2024-01-20 17:45:02.853770-07:00
 description: "Extracting substrings means pulling out specific parts of strings \u2014\
   \ think like snipping a bit of thread from a sweater. Programmers do it to isolate,\u2026"
-lastmod: 2024-02-19 22:05:18.695253
+lastmod: '2024-02-25T18:49:56.672283-07:00'
 model: gpt-4-1106-preview
 summary: "Extracting substrings means pulling out specific parts of strings \u2014\
   \ think like snipping a bit of thread from a sweater. Programmers do it to isolate,\u2026"

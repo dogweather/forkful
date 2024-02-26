@@ -6,7 +6,7 @@ description: "Trong l\u1EADp tr\xECnh, vi\u1EC7c l\u1EA5y ng\xE0y th\xE1ng hi\u1
   n t\u1EA1i gi\xFAp theo d\xF5i s\u1EF1 ki\u1EC7n ho\u1EB7c ghi l\u1EA1i d\u1EEF\
   \ li\u1EC7u. N\xF3 r\u1EA5t h\u1EEFu \xEDch cho vi\u1EC7c \u0111\xE1nh d\u1EA5u\
   \ th\u1EDDi gian, l\u1EADp l\u1ECBch, ho\u1EB7c ch\u1EC9\u2026"
-lastmod: 2024-02-19 22:04:55.543839
+lastmod: '2024-02-25T18:49:34.727650-07:00'
 model: gpt-4-0125-preview
 summary: "Trong l\u1EADp tr\xECnh, vi\u1EC7c l\u1EA5y ng\xE0y th\xE1ng hi\u1EC7n t\u1EA1\
   i gi\xFAp theo d\xF5i s\u1EF1 ki\u1EC7n ho\u1EB7c ghi l\u1EA1i d\u1EEF li\u1EC7\

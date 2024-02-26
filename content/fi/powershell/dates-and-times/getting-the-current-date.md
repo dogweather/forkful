@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:50.152616-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PowerShelliss\xE4 tarkoittaa\
   \ j\xE4rjestelm\xE4n nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan noutamista. T\xE4\
   m\xE4 toiminto on perustavaa laatua oleva\u2026"
-lastmod: 2024-02-19 22:05:15.688897
+lastmod: '2024-02-25T18:49:53.703549-07:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PowerShelliss\xE4 tarkoittaa\
   \ j\xE4rjestelm\xE4n nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan noutamista. T\xE4\

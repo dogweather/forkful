@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:19.695808-07:00
 description: "Recuperar a data atual na programa\xE7\xE3o \xE9 uma tarefa crucial\
   \ para uma infinidade de aplica\xE7\xF5es, incluindo registro de atividades (logging),\
   \ marca\xE7\xE3o de\u2026"
-lastmod: 2024-02-19 22:05:05.771649
+lastmod: '2024-02-25T18:49:44.339511-07:00'
 model: gpt-4-0125-preview
 summary: "Recuperar a data atual na programa\xE7\xE3o \xE9 uma tarefa crucial para\
   \ uma infinidade de aplica\xE7\xF5es, incluindo registro de atividades (logging),\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:07.224157-07:00
 description: "Debuggers in C zijn gespecialiseerde tools die ontwikkelaars in staat\
   \ stellen om stap voor stap door hun code te gaan, variabelen te inspecteren en\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:10.384833
+lastmod: '2024-02-25T18:49:48.620544-07:00'
 model: gpt-4-0125-preview
 summary: "Debuggers in C zijn gespecialiseerde tools die ontwikkelaars in staat stellen\
   \ om stap voor stap door hun code te gaan, variabelen te inspecteren en de\u2026"

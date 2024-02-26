@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:17.699083-07:00
 description: "Een toekomstige of verleden datum berekenen is gewoon een gegeven datum\
   \ aanpassen met een bepaalde hoeveelheid tijd. Programmeurs doen dit om deadlines,\u2026"
-lastmod: 2024-02-19 22:05:09.792489
+lastmod: '2024-02-25T18:49:48.078814-07:00'
 model: gpt-4-0125-preview
 summary: "Een toekomstige of verleden datum berekenen is gewoon een gegeven datum\
   \ aanpassen met een bepaalde hoeveelheid tijd. Programmeurs doen dit om deadlines,\u2026"

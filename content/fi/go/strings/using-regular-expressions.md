@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:17.191541-07:00
 description: "Ohjelmoinnissa s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
   \xE4n etsim\xE4\xE4n, vastaamaan ja manipuloimaan merkkijonoja tiettyjen mallien\
   \ perusteella. Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:14.953928
+lastmod: '2024-02-25T18:49:53.018440-07:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
   \xE4n etsim\xE4\xE4n, vastaamaan ja manipuloimaan merkkijonoja tiettyjen mallien\

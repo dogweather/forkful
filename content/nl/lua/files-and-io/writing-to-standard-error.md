@@ -5,7 +5,7 @@ date: 2024-01-28 22:13:32.557068-07:00
 description: "Schrijven naar standaardfout (stderr) laat je programma praten over\
   \ fouten zonder de standaarduitvoer (stdout) te verstoppen. Het is een duidelijk\
   \ signaal\u2026"
-lastmod: 2024-02-19 22:05:10.029910
+lastmod: '2024-02-25T18:49:48.292739-07:00'
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) laat je programma praten over fouten\
   \ zonder de standaarduitvoer (stdout) te verstoppen. Het is een duidelijk signaal\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:16.637262-07:00
 description: "Escrever para o erro padr\xE3o em Python trata-se de direcionar as mensagens\
   \ de erro ou diagn\xF3sticos do seu programa para o fluxo de erro (`stderr`),\u2026"
-lastmod: 2024-02-19 22:05:05.241342
+lastmod: '2024-02-25T18:49:43.832680-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o em Python trata-se de direcionar as mensagens\
   \ de erro ou diagn\xF3sticos do seu programa para o fluxo de erro (`stderr`),\u2026"

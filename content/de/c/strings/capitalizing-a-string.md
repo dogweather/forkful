@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:52.396867-07:00
 description: "Das Gro\xDFschreiben eines Strings in C beinhaltet das Umwandeln des\
   \ ersten Buchstabens jedes Wortes in einem gegebenen String in Gro\xDFbuchstaben,\
   \ falls es\u2026"
-lastmod: 2024-02-19 22:05:13.274485
+lastmod: '2024-02-25T18:49:51.384495-07:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in C beinhaltet das Umwandeln des ersten\
   \ Buchstabens jedes Wortes in einem gegebenen String in Gro\xDFbuchstaben, falls\

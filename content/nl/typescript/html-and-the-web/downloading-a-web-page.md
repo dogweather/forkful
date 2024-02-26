@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:36.364606-07:00
 description: "Een webpagina downloaden betekent het binnenhalen van de HTML, CSS en\
   \ mogelijk andere bronnen van de URL die je bezoekt. Programmeurs doen dit om inhoud\u2026"
-lastmod: 2024-02-19 22:05:09.596558
+lastmod: '2024-02-25T18:49:47.895756-07:00'
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het binnenhalen van de HTML, CSS en mogelijk\
   \ andere bronnen van de URL die je bezoekt. Programmeurs doen dit om inhoud\u2026"

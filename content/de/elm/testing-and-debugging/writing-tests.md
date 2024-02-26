@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:22.308619-07:00
 description: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um die\
   \ Korrektheit Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich\
   \ wie\u2026"
-lastmod: 2024-02-19 22:05:12.733455
+lastmod: '2024-02-25T18:49:50.871038-07:00'
 model: gpt-4-0125-preview
 summary: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um die Korrektheit\
   \ Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich wie\u2026"

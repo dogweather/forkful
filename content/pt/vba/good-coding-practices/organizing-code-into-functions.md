@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:22.229806-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es no Visual Basic for Applications\
   \ (VBA) envolve dividir um programa em partes menores e gerenci\xE1veis, conhecidas\
   \ como\u2026"
-lastmod: 2024-02-19 22:05:05.454698
+lastmod: '2024-02-25T18:49:44.038428-07:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es no Visual Basic for Applications\
   \ (VBA) envolve dividir um programa em partes menores e gerenci\xE1veis, conhecidas\

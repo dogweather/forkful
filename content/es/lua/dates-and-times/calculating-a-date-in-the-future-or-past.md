@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:50.812594-07:00
 description: "Calcular una fecha en el futuro o pasado es hallar una fecha espec\xED\
   fica antes o despu\xE9s de otra conocida. Programadores lo hacen para gestionar\
   \ eventos,\u2026"
-lastmod: 2024-02-19 22:05:17.723064
+lastmod: '2024-02-25T18:49:55.686848-07:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado es hallar una fecha espec\xEDfica\
   \ antes o despu\xE9s de otra conocida. Programadores lo hacen para gestionar eventos,\u2026"

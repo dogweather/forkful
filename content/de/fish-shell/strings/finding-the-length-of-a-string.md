@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:14.918279-07:00
 description: "Das Ermitteln der Zeichenkettenl\xE4nge bedeutet, zu z\xE4hlen, wie\
   \ viele Zeichen in einer Zeichenkette vorhanden sind. Programmierer ben\xF6tigen\
   \ diese\u2026"
-lastmod: 2024-02-19 22:05:13.237234
+lastmod: '2024-02-25T18:49:51.349038-07:00'
 model: gpt-4-1106-preview
 summary: "Das Ermitteln der Zeichenkettenl\xE4nge bedeutet, zu z\xE4hlen, wie viele\
   \ Zeichen in einer Zeichenkette vorhanden sind. Programmierer ben\xF6tigen diese\u2026"

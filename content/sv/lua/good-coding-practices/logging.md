@@ -2,7 +2,7 @@
 date: 2024-01-26 01:07:29.274461-07:00
 description: "Loggning \xE4r praxisen att spela in h\xE4ndelser, fel och andra betydande\
   \ datapunkter som intr\xE4ffar inom livscykeln f\xF6r en mjukvaruapplikation. Programmerare\u2026"
-lastmod: 2024-02-19 22:04:57.272148
+lastmod: '2024-02-25T18:49:36.358840-07:00'
 model: gpt-4-1106-preview
 summary: "Loggning \xE4r praxisen att spela in h\xE4ndelser, fel och andra betydande\
   \ datapunkter som intr\xE4ffar inom livscykeln f\xF6r en mjukvaruapplikation. Programmerare\u2026"

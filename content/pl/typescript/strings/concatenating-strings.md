@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:40.731035-07:00
 description: "\u0141\u0105czymy napisy (stringi), \u017Ceby uformowa\u0107 nowy, wi\u0119\
   kszy tekst. Robimy to, by wy\u015Bwietli\u0107 komunikaty, zbudowa\u0107 zapytania\
   \ do bazy danych, albo po prostu\u2026"
-lastmod: 2024-02-19 22:04:54.257471
+lastmod: '2024-02-25T18:49:33.500369-07:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czymy napisy (stringi), \u017Ceby uformowa\u0107 nowy, wi\u0119\
   kszy tekst. Robimy to, by wy\u015Bwietli\u0107 komunikaty, zbudowa\u0107 zapytania\

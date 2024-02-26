@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:30.944924-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt\xF3\
   re umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym. Jest\
   \ to kluczowe dla funkcji\u2026"
-lastmod: 2024-02-19 22:04:54.642600
+lastmod: '2024-02-25T18:49:33.871885-07:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt\xF3re\
   \ umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym. Jest\

@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "Trabalhar com JSON (JavaScript Object Notation) significa manipular\
   \ dados no formato leve de interc\xE2mbio que \xE9 f\xE1cil de ler para humanos\
   \ e simples para\u2026"
-lastmod: 2024-02-19 22:05:06.005516
+lastmod: '2024-02-25T18:49:44.559137-07:00'
 summary: "Trabalhar com JSON (JavaScript Object Notation) significa manipular dados\
   \ no formato leve de interc\xE2mbio que \xE9 f\xE1cil de ler para humanos e simples\
   \ para\u2026"

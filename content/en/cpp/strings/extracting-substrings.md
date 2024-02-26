@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:06.166590-07:00
 description: "Extracting substrings means snatching little pieces out of a larger\
   \ string. Programmers do this to isolate, process, or analyze specific data within\
   \ text,\u2026"
-lastmod: 2024-02-19 22:05:18.810548
+lastmod: '2024-02-25T18:49:56.786462-07:00'
 model: gpt-4-1106-preview
 summary: "Extracting substrings means snatching little pieces out of a larger string.\
   \ Programmers do this to isolate, process, or analyze specific data within text,\u2026"

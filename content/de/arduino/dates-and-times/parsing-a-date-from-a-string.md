@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:13:16.775074-07:00
 description: "Das Parsen eines Datums aus einem String in Arduino umfasst das Extrahieren\
   \ und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer\u2026"
-lastmod: 2024-02-19 22:05:13.087116
+lastmod: '2024-02-25T18:49:51.204734-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Arduino umfasst das Extrahieren\
   \ und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer\u2026"

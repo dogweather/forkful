@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:38.097415-07:00
 description: "Convertir une cha\xEEne en minuscules est une op\xE9ration fondamentale\
   \ qui permet l'uniformit\xE9 et la coh\xE9rence dans le traitement du texte, essentielle\
   \ pour\u2026"
-lastmod: 2024-02-19 22:05:16.026206
+lastmod: '2024-02-25T18:49:54.019900-07:00'
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne en minuscules est une op\xE9ration fondamentale\
   \ qui permet l'uniformit\xE9 et la coh\xE9rence dans le traitement du texte, essentielle\

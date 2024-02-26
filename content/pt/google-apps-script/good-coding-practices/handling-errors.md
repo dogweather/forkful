@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:12.073586-07:00
 description: "O tratamento de erros no Google Apps Script \xE9 sobre prever, capturar\
   \ e responder a exce\xE7\xF5es ou erros que ocorrem durante a execu\xE7\xE3o do\
   \ script. Os\u2026"
-lastmod: 2024-02-19 22:05:05.184904
+lastmod: '2024-02-25T18:49:43.779521-07:00'
 model: gpt-4-0125-preview
 summary: "O tratamento de erros no Google Apps Script \xE9 sobre prever, capturar\
   \ e responder a exce\xE7\xF5es ou erros que ocorrem durante a execu\xE7\xE3o do\

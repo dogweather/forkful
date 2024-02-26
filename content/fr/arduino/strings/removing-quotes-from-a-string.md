@@ -3,7 +3,7 @@ date: 2024-01-26 03:37:07.351486-07:00
 description: "Supprimer les guillemets d'une cha\xEEne signifie \xE9liminer toutes\
   \ les instances de caract\xE8res de guillemets simples (`'`) ou doubles (`\"`) qui\
   \ entourent le\u2026"
-lastmod: 2024-02-19 22:05:16.780872
+lastmod: '2024-02-25T18:49:54.772009-07:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie \xE9liminer toutes les\
   \ instances de caract\xE8res de guillemets simples (`'`) ou doubles (`\"`) qui entourent\

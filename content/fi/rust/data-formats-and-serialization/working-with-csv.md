@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:27.176692-07:00
 description: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa tabulaarisen\
   \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja\u2026"
-lastmod: 2024-02-19 22:05:15.274723
+lastmod: '2024-02-25T18:49:53.303363-07:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa tabulaarisen\
   \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja\u2026"

@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:11.576511-07:00
 description: "TOML, which stands for Tom's Obvious, Minimal Language, is a data serialization\
   \ format predominantly used for configuration files. Programmers leverage\u2026"
-lastmod: 2024-02-19 22:05:18.423858
+lastmod: '2024-02-25T18:49:56.377233-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, which stands for Tom's Obvious, Minimal Language, is a data serialization\
   \ format predominantly used for configuration files. Programmers leverage\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:30.577599-07:00
 description: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar dados\
   \ JSON para e de um formato utiliz\xE1vel em TypeScript. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-19 22:05:05.379893
+lastmod: '2024-02-25T18:49:43.968915-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar dados JSON\
   \ para e de um formato utiliz\xE1vel em TypeScript. Programadores fazem isso para\u2026"

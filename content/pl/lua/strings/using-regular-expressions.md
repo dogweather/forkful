@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:56.753496-07:00
 description: "Wyra\u017Cenia regularne w programowaniu umo\u017Cliwiaj\u0105 dopasowywanie\
   \ wzorc\xF3w i manipulowanie ci\u0105gami znak\xF3w na podstawie okre\u015Blonych\
   \ wzor\xF3w. Programi\u015Bci u\u017Cywaj\u0105\u2026"
-lastmod: 2024-02-19 22:04:54.665869
+lastmod: '2024-02-25T18:49:33.894117-07:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne w programowaniu umo\u017Cliwiaj\u0105 dopasowywanie\
   \ wzorc\xF3w i manipulowanie ci\u0105gami znak\xF3w na podstawie okre\u015Blonych\

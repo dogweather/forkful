@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:09.800571-07:00
 description: "Calcular una fecha futura o pasada es simplemente sumar o restar d\xED\
   as a una fecha dada. Los programadores lo hacen para manejar eventos, vencimientos\
   \ o\u2026"
-lastmod: 2024-02-19 22:05:17.892942
+lastmod: '2024-02-25T18:49:55.858160-07:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha futura o pasada es simplemente sumar o restar d\xEDas\
   \ a una fecha dada. Los programadores lo hacen para manejar eventos, vencimientos\

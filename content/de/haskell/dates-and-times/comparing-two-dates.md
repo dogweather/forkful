@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:17.972760-07:00
 description: "Vergleichen von zwei Daten bedeutet, zu pr\xFCfen, ob ein Datum vor,\
   \ gleich oder nach einem anderen liegt. Programmierer ben\xF6tigen das, um zeitliche\
   \ Abl\xE4ufe\u2026"
-lastmod: 2024-02-19 22:05:12.870747
+lastmod: '2024-02-25T18:49:51.000511-07:00'
 model: gpt-4-1106-preview
 summary: "Vergleichen von zwei Daten bedeutet, zu pr\xFCfen, ob ein Datum vor, gleich\
   \ oder nach einem anderen liegt. Programmierer ben\xF6tigen das, um zeitliche Abl\xE4\

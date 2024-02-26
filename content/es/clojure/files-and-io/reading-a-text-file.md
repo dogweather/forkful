@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:58.415796-07:00
 description: "Leer un archivo de texto es obtener su contenido para procesarlo. Los\
   \ programadores hacen esto para manipular datos, configuraciones o simplemente\u2026"
-lastmod: 2024-02-19 22:05:17.265083
+lastmod: '2024-02-25T18:49:55.235195-07:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es obtener su contenido para procesarlo. Los programadores\
   \ hacen esto para manipular datos, configuraciones o simplemente\u2026"

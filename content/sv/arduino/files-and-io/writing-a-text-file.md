@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:09.197379-07:00
 description: "Att skriva en textfil i Arduino inneb\xE4r att spara data till en fil\
   \ p\xE5 ett SD-kort eller liknande lagringsmodul, ofta f\xF6r datainsamlings\xE4\
   ndam\xE5l.\u2026"
-lastmod: 2024-02-19 22:04:57.421482
+lastmod: '2024-02-25T18:49:36.501127-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Arduino inneb\xE4r att spara data till en fil p\xE5\
   \ ett SD-kort eller liknande lagringsmodul, ofta f\xF6r datainsamlings\xE4ndam\xE5\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:45.330322-07:00
 description: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu\
   \ zmniejszenia jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017C\
   szej liczby\u2026"
-lastmod: 2024-02-19 22:04:55.058120
+lastmod: '2024-02-25T18:49:34.254065-07:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu zmniejszenia\
   \ jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017Cszej liczby\u2026"

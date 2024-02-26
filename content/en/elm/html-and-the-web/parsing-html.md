@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:39.515187-07:00
 description: "Parsing HTML in Elm involves extracting information from HTML documents.\
   \ Programmers do it to interface with web content or APIs that return HTML,\u2026"
-lastmod: 2024-02-19 22:05:18.476168
+lastmod: '2024-02-25T18:49:56.452221-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Elm involves extracting information from HTML documents.\
   \ Programmers do it to interface with web content or APIs that return HTML,\u2026"

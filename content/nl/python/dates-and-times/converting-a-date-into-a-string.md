@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:25.041199-07:00
 description: "Datums omzetten naar strings verandert een datumobject in een tekstformaat.\
   \ Programmeurs doen dit om datums op een gebruikersvriendelijke manier weer te\u2026"
-lastmod: 2024-02-19 22:05:09.476266
+lastmod: '2024-02-25T18:49:47.781851-07:00'
 model: gpt-4-0125-preview
 summary: "Datums omzetten naar strings verandert een datumobject in een tekstformaat.\
   \ Programmeurs doen dit om datums op een gebruikersvriendelijke manier weer te\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:10.309882-07:00
 description: "Refatora\xE7\xE3o na programa\xE7\xE3o envolve a reestrutura\xE7\xE3\
   o do c\xF3digo de computador existente \u2014 mudando a fatora\xE7\xE3o \u2014 sem\
   \ alterar seu comportamento externo.\u2026"
-lastmod: 2024-02-19 22:05:05.136039
+lastmod: '2024-02-25T18:49:43.734234-07:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o na programa\xE7\xE3o envolve a reestrutura\xE7\xE3o do\
   \ c\xF3digo de computador existente \u2014 mudando a fatora\xE7\xE3o \u2014 sem\

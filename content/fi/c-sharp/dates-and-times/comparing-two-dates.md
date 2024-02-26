@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:32.610973-07:00
 description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tiet\xE4\xE4ksemme,\
   \ kumpi on ensin tai paljonko aikaa on kulunut niiden v\xE4lill\xE4. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n hallitakseen\u2026"
-lastmod: 2024-02-19 22:05:15.479198
+lastmod: '2024-02-25T18:49:53.500284-07:00'
 model: gpt-4-1106-preview
 summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tiet\xE4\xE4ksemme, kumpi\
   \ on ensin tai paljonko aikaa on kulunut niiden v\xE4lill\xE4. Ohjelmoijat tekev\xE4\

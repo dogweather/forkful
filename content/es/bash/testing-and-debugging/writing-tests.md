@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:26.468596-07:00
 description: "Escribir pruebas en Bash implica crear scripts de casos de prueba para\
   \ validar la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas\u2026"
-lastmod: 2024-02-19 22:05:17.757360
+lastmod: '2024-02-25T18:49:55.720725-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Bash implica crear scripts de casos de prueba para validar\
   \ la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas\u2026"

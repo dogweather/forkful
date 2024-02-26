@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:25.215597-07:00
 description: "Capitalizar uma string significa modific\xE1-la para que a primeira\
   \ letra fique em mai\xFAscula e o restante da string em min\xFAscula. Essa \xE9\
   \ uma tarefa comum no\u2026"
-lastmod: 2024-02-19 22:05:06.053751
+lastmod: '2024-02-25T18:49:44.604157-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string significa modific\xE1-la para que a primeira letra\
   \ fique em mai\xFAscula e o restante da string em min\xFAscula. Essa \xE9 uma tarefa\

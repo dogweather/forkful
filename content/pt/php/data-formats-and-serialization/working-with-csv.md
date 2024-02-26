@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:38.837225-07:00
 description: "Trabalhar com CSV (Comma-Separated Values ou Valores Separados por V\xED\
   rgula) envolve ler e escrever dados em arquivos CSV, um formato popular para\u2026"
-lastmod: 2024-02-19 22:05:05.739155
+lastmod: '2024-02-25T18:49:44.310378-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Comma-Separated Values ou Valores Separados por V\xED\
   rgula) envolve ler e escrever dados em arquivos CSV, um formato popular para\u2026"

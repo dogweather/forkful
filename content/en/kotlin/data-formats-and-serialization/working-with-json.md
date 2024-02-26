@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:16.078931-07:00
 description: "Working with JSON (JavaScript Object Notation) in Kotlin involves parsing\
   \ and generating JSON data. Programmers do this to easily exchange data between\u2026"
-lastmod: 2024-02-19 22:05:18.535356
+lastmod: '2024-02-25T18:49:56.513902-07:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) in Kotlin involves parsing\
   \ and generating JSON data. Programmers do this to easily exchange data between\u2026"

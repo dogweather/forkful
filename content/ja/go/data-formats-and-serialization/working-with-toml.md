@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:01.160964-07:00
 description: "TOML\uFF08Tom's Obvious, Minimal\u2026"
-lastmod: 2024-02-19 22:05:00.687852
+lastmod: '2024-02-25T18:49:39.576244-07:00'
 model: gpt-4-0125-preview
 summary: "TOML\uFF08Tom's Obvious, Minimal\u2026"
 title: "TOML\u3092\u64CD\u4F5C\u3059\u308B"

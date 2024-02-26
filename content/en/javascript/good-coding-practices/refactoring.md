@@ -2,7 +2,7 @@
 date: 2024-01-25 02:12:36.188969-07:00
 description: "Refactoring is the process of restructuring existing computer code without\
   \ changing its external behavior. Programmers do it to improve the nonfunctional\u2026"
-lastmod: 2024-02-19 22:05:18.902965
+lastmod: '2024-02-25T18:49:56.876082-07:00'
 model: gpt-4-1106-preview
 summary: "Refactoring is the process of restructuring existing computer code without\
   \ changing its external behavior. Programmers do it to improve the nonfunctional\u2026"

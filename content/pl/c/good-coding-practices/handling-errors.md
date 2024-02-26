@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:17.723308-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w w C polega na wykrywaniu i reagowaniu\
   \ na nietypowe warunki, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonania programu.\
   \ Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: 2024-02-19 22:04:55.073277
+lastmod: '2024-02-25T18:49:34.268171-07:00'
 model: gpt-4-0125-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w C polega na wykrywaniu i reagowaniu na\
   \ nietypowe warunki, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonania programu.\

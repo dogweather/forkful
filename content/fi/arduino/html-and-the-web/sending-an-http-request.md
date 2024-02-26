@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:49.102790-07:00
 description: "HTTP-pyynt\xF6 on tapa hakea tai l\xE4hett\xE4\xE4 tietoja verkon yli\
   \ palvelimelle. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 tietojen synkronointiin,\
   \ API-kutsuihin ja\u2026"
-lastmod: 2024-02-19 22:05:15.717352
+lastmod: '2024-02-25T18:49:53.731702-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 on tapa hakea tai l\xE4hett\xE4\xE4 tietoja verkon yli palvelimelle.\
   \ Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 tietojen synkronointiin, API-kutsuihin\

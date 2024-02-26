@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:16.380287-07:00
 description: "Associatieve arrays, of objecten in TypeScript, laten je strings (of\
   \ sleutels) gebruiken om toegang te krijgen tot waardeparen. Programmeurs gebruiken\
   \ ze\u2026"
-lastmod: 2024-02-19 22:05:09.590054
+lastmod: '2024-02-25T18:49:47.889790-07:00'
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, of objecten in TypeScript, laten je strings (of sleutels)\
   \ gebruiken om toegang te krijgen tot waardeparen. Programmeurs gebruiken ze\u2026"

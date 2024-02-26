@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:47.486041-07:00
 description: "Calcolare una data nel futuro o nel passato comporta la determinazione\
   \ di una data specifica aggiungendo o sottraendo un certo numero di giorni, mesi\
   \ o\u2026"
-lastmod: 2024-02-19 22:05:02.991527
+lastmod: '2024-02-25T18:49:41.758444-07:00'
 model: gpt-4-0125-preview
 summary: "Calcolare una data nel futuro o nel passato comporta la determinazione di\
   \ una data specifica aggiungendo o sottraendo un certo numero di giorni, mesi o\u2026"

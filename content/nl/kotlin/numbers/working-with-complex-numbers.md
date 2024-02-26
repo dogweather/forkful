@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:10.722410-07:00
 description: "Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels\
   \ van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de\u2026"
-lastmod: 2024-02-19 22:05:09.815599
+lastmod: '2024-02-25T18:49:48.101034-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels\
   \ van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de\u2026"

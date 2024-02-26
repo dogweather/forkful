@@ -5,7 +5,7 @@ date: 2024-01-28 22:04:09.332106-07:00
 description: "Het parsen van een datum uit een string betekent het converteren van\
   \ tekst naar een datumformaat dat je code kan begrijpen. We doen dit omdat datums\
   \ vaak\u2026"
-lastmod: 2024-02-19 22:05:09.652327
+lastmod: '2024-02-25T18:49:47.947787-07:00'
 model: gpt-4-0125-preview
 summary: "Het parsen van een datum uit een string betekent het converteren van tekst\
   \ naar een datumformaat dat je code kan begrijpen. We doen dit omdat datums vaak\u2026"

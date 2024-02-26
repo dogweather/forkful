@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:48.049666-07:00
 description: "Convertir una fecha en una cadena en Visual Basic para Aplicaciones\
   \ (VBA) es un proceso utilizado para cambiar el tipo de datos de una fecha a un\
   \ formato\u2026"
-lastmod: 2024-02-19 22:05:17.428562
+lastmod: '2024-02-25T18:49:55.395914-07:00'
 model: gpt-4-0125-preview
 summary: "Convertir una fecha en una cadena en Visual Basic para Aplicaciones (VBA)\
   \ es un proceso utilizado para cambiar el tipo de datos de una fecha a un formato\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:10.527411-07:00
 description: "Ottenere la data corrente in TypeScript, un linguaggio basato su JavaScript,\
   \ consente di accedere e manipolare le informazioni sulla data e l'ora\u2026"
-lastmod: 2024-02-19 22:05:02.247207
+lastmod: '2024-02-25T18:49:41.063269-07:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in TypeScript, un linguaggio basato su JavaScript,\
   \ consente di accedere e manipolare le informazioni sulla data e l'ora\u2026"

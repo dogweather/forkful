@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:47.897900-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na inicjowaniu po\u0142\
   \u0105czenia z aplikacji Go do serwera sieciowego, API lub innej us\u0142ugi opartej\
   \ na protokole HTTP. Programi\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.032031
+lastmod: '2024-02-25T18:49:33.272346-07:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na inicjowaniu po\u0142\u0105\
   czenia z aplikacji Go do serwera sieciowego, API lub innej us\u0142ugi opartej na\

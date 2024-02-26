@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:56:08.397043-07:00
 description: "Il logging in Visual Basic for Applications (VBA) implica la registrazione\
   \ di informazioni sul comportamento a runtime di un programma in un file, console\u2026"
-lastmod: 2024-02-19 22:05:02.331350
+lastmod: '2024-02-25T18:49:41.142801-07:00'
 model: gpt-4-0125-preview
 summary: "Il logging in Visual Basic for Applications (VBA) implica la registrazione\
   \ di informazioni sul comportamento a runtime di un programma in un file, console\u2026"

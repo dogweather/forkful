@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:16.190176-07:00
 description: "Logowanie w Visual Basic for Applications (VBA) polega na rejestrowaniu\
   \ informacji o zachowaniu programu w czasie jego dzia\u0142ania do pliku, konsoli\
   \ lub\u2026"
-lastmod: 2024-02-19 22:04:54.366047
+lastmod: '2024-02-25T18:49:33.604245-07:00'
 model: gpt-4-0125-preview
 summary: "Logowanie w Visual Basic for Applications (VBA) polega na rejestrowaniu\
   \ informacji o zachowaniu programu w czasie jego dzia\u0142ania do pliku, konsoli\

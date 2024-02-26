@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:39.996785-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en C# implica dirigir los\
   \ mensajes de error y los diagn\xF3sticos de forma separada del salida regular (stdout)\
   \ para\u2026"
-lastmod: 2024-02-19 22:05:17.600412
+lastmod: '2024-02-25T18:49:55.564164-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en C# implica dirigir los mensajes\
   \ de error y los diagn\xF3sticos de forma separada del salida regular (stdout) para\u2026"

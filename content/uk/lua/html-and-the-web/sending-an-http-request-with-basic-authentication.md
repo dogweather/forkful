@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:10.161830-07:00
 description: "Sending an HTTP request with basic authentication involves attaching\
   \ a username and password to the request header. Programmers use it to access resources\u2026"
-lastmod: 2024-02-19 22:05:08.534669
+lastmod: '2024-02-25T18:49:46.976511-07:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves attaching a username\
   \ and password to the request header. Programmers use it to access resources\u2026"

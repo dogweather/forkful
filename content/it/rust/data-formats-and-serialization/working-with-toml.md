@@ -2,7 +2,7 @@
 date: 2024-01-26 04:26:15.269322-07:00
 description: "TOML \xE8 un linguaggio di serializzazione dati leggibile dall'uomo,\
   \ spesso utilizzato per le configurazioni. I programmatori usano TOML per la sua\u2026"
-lastmod: 2024-02-19 22:05:02.302657
+lastmod: '2024-02-25T18:49:41.116213-07:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE8 un linguaggio di serializzazione dati leggibile dall'uomo, spesso\
   \ utilizzato per le configurazioni. I programmatori usano TOML per la sua\u2026"

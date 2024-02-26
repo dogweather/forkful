@@ -3,7 +3,7 @@ date: 2024-01-26 03:50:31.284215-07:00
 description: "Debugger to narz\u0119dzie, kt\xF3re pozwala inspekcjonowa\u0107 i kontrolowa\u0107\
   \ wykonanie programu, u\u0142atwiaj\u0105c wskazanie momentu, kiedy co\u015B idzie\
   \ nie tak. Programi\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.681737
+lastmod: '2024-02-25T18:49:33.909552-07:00'
 model: gpt-4-0125-preview
 summary: "Debugger to narz\u0119dzie, kt\xF3re pozwala inspekcjonowa\u0107 i kontrolowa\u0107\
   \ wykonanie programu, u\u0142atwiaj\u0105c wskazanie momentu, kiedy co\u015B idzie\

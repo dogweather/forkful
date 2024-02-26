@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:40.344673-07:00
 description: "En la programaci\xF3n Bash, comprobar si un directorio existe es un\
   \ mecanismo de control esencial utilizado para verificar la presencia de un directorio\u2026"
-lastmod: 2024-02-19 22:05:17.768013
+lastmod: '2024-02-25T18:49:55.731167-07:00'
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n Bash, comprobar si un directorio existe es un mecanismo\
   \ de control esencial utilizado para verificar la presencia de un directorio\u2026"

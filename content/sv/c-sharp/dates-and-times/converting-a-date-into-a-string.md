@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:09.684219-07:00
 description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att man byter\
   \ formatet fr\xE5n ett `DateTime` objekt till en textrepresentation. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-19 22:04:57.142303
+lastmod: '2024-02-25T18:49:36.223334-07:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att man byter formatet\
   \ fr\xE5n ett `DateTime` objekt till en textrepresentation. Programmerare g\xF6\

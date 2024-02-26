@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:35.079251-07:00
 description: "Mit JSON (JavaScript Object Notation) zu arbeiten bedeutet, dieses leichte\
   \ Datenaustauschformat in Ihren Java-Anwendungen zu handhaben. Programmierer\u2026"
-lastmod: 2024-02-19 22:05:12.709737
+lastmod: '2024-02-25T18:49:50.848378-07:00'
 model: gpt-4-0125-preview
 summary: "Mit JSON (JavaScript Object Notation) zu arbeiten bedeutet, dieses leichte\
   \ Datenaustauschformat in Ihren Java-Anwendungen zu handhaben. Programmierer\u2026"

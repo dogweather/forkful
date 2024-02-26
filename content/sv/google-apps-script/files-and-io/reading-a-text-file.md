@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:52.941690-07:00
 description: "Att l\xE4sa en textfil i Google Apps Script (GAS) inneb\xE4r att f\xE5\
   \ tillg\xE5ng till och extrahera textdata fr\xE5n filer som \xE4r lagrade p\xE5\
   \ Google Drive eller annan\u2026"
-lastmod: 2024-02-19 22:04:56.696747
+lastmod: '2024-02-25T18:49:35.794231-07:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Google Apps Script (GAS) inneb\xE4r att f\xE5 tillg\xE5\
   ng till och extrahera textdata fr\xE5n filer som \xE4r lagrade p\xE5 Google Drive\

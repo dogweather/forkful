@@ -3,7 +3,7 @@ date: 2024-01-26 04:24:02.645470-07:00
 description: "Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Daten\
   \ (Tom's Offensichtliche, Minimale Sprache) mit Lua. Programmierer nutzen TOML f\xFC\
   r\u2026"
-lastmod: 2024-02-19 22:05:12.969640
+lastmod: '2024-02-25T18:49:51.091405-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Daten (Tom's\
   \ Offensichtliche, Minimale Sprache) mit Lua. Programmierer nutzen TOML f\xFCr\u2026"

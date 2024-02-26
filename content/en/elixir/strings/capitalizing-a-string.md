@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:30.450485-07:00
 description: "Capitalizing a string involves converting the first letter of the string\
   \ to uppercase while ensuring the rest of the letters are in lowercase. This action\u2026"
-lastmod: 2024-02-19 22:05:18.275732
+lastmod: '2024-02-25T18:49:56.231447-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizing a string involves converting the first letter of the string\
   \ to uppercase while ensuring the rest of the letters are in lowercase. This action\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:06.246817-07:00
 description: "Last ned en nettside inneb\xE6rer \xE5 hente HTML-innholdet fra URL-en\
   \ og lagre det lokalt. Programmerere gj\xF8r dette for datainnhenting, web scraping,\
   \ eller\u2026"
-lastmod: 2024-02-19 22:04:59.910120
+lastmod: '2024-02-25T18:49:38.844243-07:00'
 model: gpt-4-1106-preview
 summary: "Last ned en nettside inneb\xE6rer \xE5 hente HTML-innholdet fra URL-en og\
   \ lagre det lokalt. Programmerere gj\xF8r dette for datainnhenting, web scraping,\

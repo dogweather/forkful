@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:13.205772-07:00
 description: "Fehlerbehandlung in PHP bezieht sich auf das Verwalten und Reagieren\
   \ auf Bedingungen, die den normalen Ablauf eines Programms st\xF6ren, wie fehlende\
   \ Dateien\u2026"
-lastmod: 2024-02-19 22:05:12.910392
+lastmod: '2024-02-25T18:49:51.035981-07:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in PHP bezieht sich auf das Verwalten und Reagieren auf\
   \ Bedingungen, die den normalen Ablauf eines Programms st\xF6ren, wie fehlende Dateien\u2026"

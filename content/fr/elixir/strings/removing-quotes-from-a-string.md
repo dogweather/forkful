@@ -3,7 +3,7 @@ date: 2024-01-26 03:38:27.481072-07:00
 description: "Enlever les guillemets d'une cha\xEEne de caract\xE8res signifie se\
   \ d\xE9faire de ces enveloppes suppl\xE9mentaires pour obtenir le texte pur \xE0\
   \ l'int\xE9rieur. Les\u2026"
-lastmod: 2024-02-19 22:05:16.211510
+lastmod: '2024-02-25T18:49:54.198956-07:00'
 model: gpt-4-0125-preview
 summary: "Enlever les guillemets d'une cha\xEEne de caract\xE8res signifie se d\xE9\
   faire de ces enveloppes suppl\xE9mentaires pour obtenir le texte pur \xE0 l'int\xE9\

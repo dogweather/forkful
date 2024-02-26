@@ -3,7 +3,7 @@ date: 2024-01-26 04:11:30.109259-07:00
 description: "REPL to skr\xF3t od Read-Eval-Print Loop, prostego, interaktywnego \u015B\
   rodowiska programistycznego. Programi\u015Bci u\u017Cywaj\u0105 go do szybkiego\
   \ pisania i testowania\u2026"
-lastmod: 2024-02-19 22:04:54.726156
+lastmod: '2024-02-25T18:49:33.953813-07:00'
 model: gpt-4-0125-preview
 summary: "REPL to skr\xF3t od Read-Eval-Print Loop, prostego, interaktywnego \u015B\
   rodowiska programistycznego. Programi\u015Bci u\u017Cywaj\u0105 go do szybkiego\

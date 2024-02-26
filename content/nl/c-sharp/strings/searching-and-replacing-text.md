@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:03.299782-07:00
 description: "Tekst in strings zoeken en vervangen stelt je in staat gegevens te updaten\
   \ zonder handmatige wijzigingen. Programmeurs hebben dit nodig om\u2026"
-lastmod: 2024-02-19 22:05:09.852021
+lastmod: '2024-02-25T18:49:48.134577-07:00'
 model: gpt-4-0125-preview
 summary: "Tekst in strings zoeken en vervangen stelt je in staat gegevens te updaten\
   \ zonder handmatige wijzigingen. Programmeurs hebben dit nodig om\u2026"

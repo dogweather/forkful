@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:33.767948-07:00
 description: "Reading a text file is pulling info from a .txt document into your program.\
   \ Programmers do it to access and manipulate data: config settings, logs,\u2026"
-lastmod: 2024-02-19 22:05:18.910993
+lastmod: '2024-02-25T18:49:56.884161-07:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file is pulling info from a .txt document into your program.\
   \ Programmers do it to access and manipulate data: config settings, logs,\u2026"

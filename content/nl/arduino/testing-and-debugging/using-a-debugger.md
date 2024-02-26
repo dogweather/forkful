@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:29.337271-07:00
 description: "Een debugger is een tool die je helpt om bugs in je code te verpletteren\
   \ door je de mogelijkheid te geven om te pauzeren, rond te kijken en te ontdekken\u2026"
-lastmod: 2024-02-19 22:05:10.160947
+lastmod: '2024-02-25T18:49:48.410023-07:00'
 model: gpt-4-0125-preview
 summary: "Een debugger is een tool die je helpt om bugs in je code te verpletteren\
   \ door je de mogelijkheid te geven om te pauzeren, rond te kijken en te ontdekken\u2026"

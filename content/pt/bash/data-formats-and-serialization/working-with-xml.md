@@ -3,7 +3,7 @@ date: 2024-01-26 04:27:56.491997-07:00
 description: "Trabalhar com XML envolve o parseamento, extra\xE7\xE3o e manipula\xE7\
   \xE3o de dados no formato da Linguagem de Marca\xE7\xE3o Extens\xEDvel. Programadores\
   \ lidam com o XML j\xE1\u2026"
-lastmod: 2024-02-19 22:05:05.833403
+lastmod: '2024-02-25T18:49:44.396432-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML envolve o parseamento, extra\xE7\xE3o e manipula\xE7\xE3\
   o de dados no formato da Linguagem de Marca\xE7\xE3o Extens\xEDvel. Programadores\

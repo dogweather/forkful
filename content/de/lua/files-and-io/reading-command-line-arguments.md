@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:24.504819-07:00
 description: "Kommandozeilenargumente sind Parameter, die ein Programm beim Start\
   \ \xFCber die Konsole erh\xE4lt. Sie erm\xF6glichen es dem Benutzer, das Verhalten\
   \ des Programms\u2026"
-lastmod: 2024-02-19 22:05:12.961405
+lastmod: '2024-02-25T18:49:51.083628-07:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind Parameter, die ein Programm beim Start \xFC\
   ber die Konsole erh\xE4lt. Sie erm\xF6glichen es dem Benutzer, das Verhalten des\

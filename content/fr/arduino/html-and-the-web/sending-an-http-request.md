@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:10.916264-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. On le fait pour interagir avec le web : r\xE9cup\xE9rer de l'info, envoyer\
   \ des commandes,\u2026"
-lastmod: 2024-02-19 22:05:16.789720
+lastmod: '2024-02-25T18:49:54.780742-07:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
   \ web. On le fait pour interagir avec le web : r\xE9cup\xE9rer de l'info, envoyer\

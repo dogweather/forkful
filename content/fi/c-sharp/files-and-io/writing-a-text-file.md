@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:41.525022-07:00
 description: "Tekstitiedoston kirjoittaminen C#:ssa k\xE4sitt\xE4\xE4 ohjelmallisesti\
   \ tekstiedostojen luomisen tai muokkaamisen tiedostoj\xE4rjestelm\xE4ss\xE4 - t\xE4\
   m\xE4 on perusteht\xE4v\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.485159
+lastmod: '2024-02-25T18:49:53.506036-07:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen C#:ssa k\xE4sitt\xE4\xE4 ohjelmallisesti\
   \ tekstiedostojen luomisen tai muokkaamisen tiedostoj\xE4rjestelm\xE4ss\xE4 - t\xE4\

@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:49.610504-07:00
 description: "HTTP-Anfragen mit Basisauthentifizierung schicken Nutzername und Passwort\
   \ codiert im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"
-lastmod: 2024-02-19 22:05:12.554208
+lastmod: '2024-02-25T18:49:50.699727-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basisauthentifizierung schicken Nutzername und Passwort\
   \ codiert im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"

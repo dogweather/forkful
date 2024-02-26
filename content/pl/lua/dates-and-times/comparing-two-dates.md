@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:27.241791-07:00
 description: "W skr\xF3cie, por\xF3wnywanie dw\xF3ch dat to sprawdzenie, kt\xF3ra\
   \ z nich jest wcze\u015Bniejsza, p\xF3\u017Aniejsza, czy te\u017C czy s\u0105 identyczne.\
   \ Programi\u015Bci robi\u0105 to cz\u0119sto, aby\u2026"
-lastmod: 2024-02-19 22:04:54.690123
+lastmod: '2024-02-25T18:49:33.917542-07:00'
 model: gpt-4-1106-preview
 summary: "W skr\xF3cie, por\xF3wnywanie dw\xF3ch dat to sprawdzenie, kt\xF3ra z nich\
   \ jest wcze\u015Bniejsza, p\xF3\u017Aniejsza, czy te\u017C czy s\u0105 identyczne.\

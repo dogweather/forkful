@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:07.967968-07:00
 description: "Working with JSON involves parsing JSON-formatted strings into data\
   \ structures that Elixir can manipulate, and serializing Elixir data structures\
   \ back\u2026"
-lastmod: 2024-02-19 22:05:18.309932
+lastmod: '2024-02-25T18:49:56.264357-07:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON involves parsing JSON-formatted strings into data structures\
   \ that Elixir can manipulate, and serializing Elixir data structures back\u2026"

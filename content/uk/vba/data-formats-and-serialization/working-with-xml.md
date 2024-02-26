@@ -9,7 +9,7 @@ description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 XML \u0443 Visual Basi
   \ XML-\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0456\u0432 \u0443 \u043A\
   \u043E\u043D\u0442\u0435\u043A\u0441\u0442\u0456 \u0437\u0430\u0441\u0442\u043E\u0441\
   \u0443\u043D\u043A\u0456\u0432 Microsoft Office.\u2026"
-lastmod: 2024-02-19 22:05:08.068711
+lastmod: '2024-02-25T18:49:46.535857-07:00'
 model: gpt-4-0125-preview
 summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 XML \u0443 Visual Basic for\
   \ Applications (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\u0454 \u0430\u043D\u0430\

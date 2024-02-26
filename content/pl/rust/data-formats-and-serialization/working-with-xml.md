@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:52.849089-07:00
 description: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn\
   \ JSON-a. Z XML-em b\u0119dziesz si\u0119 zmaga\u0107, maj\u0105c do czynienia ze\
   \ starszymi systemami,\u2026"
-lastmod: 2024-02-19 22:04:54.337278
+lastmod: '2024-02-25T18:49:33.576815-07:00'
 model: gpt-4-0125-preview
 summary: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn JSON-a.\
   \ Z XML-em b\u0119dziesz si\u0119 zmaga\u0107, maj\u0105c do czynienia ze starszymi\

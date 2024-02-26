@@ -5,7 +5,7 @@ date: 2024-02-01 22:09:50.002797-07:00
 description: "Escrever para o erro padr\xE3o em Visual Basic for Applications (VBA)\
   \ envolve direcionar mensagens de erro ou diagn\xF3sticos \xE0 parte da sa\xEDda\
   \ padr\xE3o,\u2026"
-lastmod: 2024-02-19 22:05:05.467318
+lastmod: '2024-02-25T18:49:44.050027-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o em Visual Basic for Applications (VBA) envolve\
   \ direcionar mensagens de erro ou diagn\xF3sticos \xE0 parte da sa\xEDda padr\xE3\

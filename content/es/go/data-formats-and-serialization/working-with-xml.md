@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:56.116242-07:00
 description: "Trabajar con XML en Go implica analizar (leer) y generar (escribir)\
   \ documentos XML, un formato est\xE1ndar para el intercambio de datos estructurados.\
   \ Los\u2026"
-lastmod: 2024-02-19 22:05:17.141494
+lastmod: '2024-02-25T18:49:55.112858-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML en Go implica analizar (leer) y generar (escribir) documentos\
   \ XML, un formato est\xE1ndar para el intercambio de datos estructurados. Los\u2026"

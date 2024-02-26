@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:20.786904-07:00
 description: "Working with XML in Go involves parsing (reading) and generating (writing)\
   \ XML documents\u2014a standard format for structured data interchange. Programmers\
   \ do\u2026"
-lastmod: 2024-02-19 22:05:18.160799
+lastmod: '2024-02-25T18:49:56.119576-07:00'
 model: gpt-4-0125-preview
 summary: "Working with XML in Go involves parsing (reading) and generating (writing)\
   \ XML documents\u2014a standard format for structured data interchange. Programmers\

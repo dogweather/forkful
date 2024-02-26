@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:16.555034-07:00
 description: "Buscar y reemplazar texto es una t\xE9cnica para identificar cadenas\
   \ de caracteres y sustituirlas por otras. Los programadores la usan para modificar\
   \ c\xF3digo,\u2026"
-lastmod: 2024-02-19 22:05:17.695169
+lastmod: '2024-02-25T18:49:55.658649-07:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es una t\xE9cnica para identificar cadenas de\
   \ caracteres y sustituirlas por otras. Los programadores la usan para modificar\

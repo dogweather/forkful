@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:36.148989-07:00
 description: "El formato de Valores Separados por Comas (CSV) es omnipresente para\
   \ el intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n\
   \ con la\u2026"
-lastmod: 2024-02-19 22:05:17.139225
+lastmod: '2024-02-25T18:49:55.110512-07:00'
 model: gpt-4-0125-preview
 summary: "El formato de Valores Separados por Comas (CSV) es omnipresente para el\
   \ intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n con\

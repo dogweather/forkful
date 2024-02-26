@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:07.580006-07:00
 description: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk. Vi lager\
   \ dem for sikker og flyktig datah\xE5ndtering, ofte ved h\xE5ndtering av store datamengder\
   \ eller\u2026"
-lastmod: 2024-02-19 22:05:00.082422
+lastmod: '2024-02-25T18:49:38.990517-07:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk. Vi lager dem\
   \ for sikker og flyktig datah\xE5ndtering, ofte ved h\xE5ndtering av store datamengder\

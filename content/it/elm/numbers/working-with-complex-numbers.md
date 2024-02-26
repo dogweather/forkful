@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:24.822224-07:00
 description: "I numeri complessi sono una combinazione di numeri reali e immaginari,\
   \ come `a + bi` dove `i` \xE8 la radice quadrata di -1. Sono fondamentali in campi\
   \ come\u2026"
-lastmod: 2024-02-19 22:05:02.406210
+lastmod: '2024-02-25T18:49:41.212299-07:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono una combinazione di numeri reali e immaginari, come\
   \ `a + bi` dove `i` \xE8 la radice quadrata di -1. Sono fondamentali in campi come\u2026"

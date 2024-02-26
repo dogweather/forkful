@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:17.972536-07:00
 description: "Elm non supporta nativamente YAML, un formato di serializzazione dei\
   \ dati spesso utilizzato per file di configurazione o condivisione di dati, a causa\
   \ del\u2026"
-lastmod: 2024-02-19 22:05:02.432469
+lastmod: '2024-02-25T18:49:41.237033-07:00'
 model: gpt-4-0125-preview
 summary: "Elm non supporta nativamente YAML, un formato di serializzazione dei dati\
   \ spesso utilizzato per file di configurazione o condivisione di dati, a causa del\u2026"

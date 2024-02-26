@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:22.157866-07:00
 description: "Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista\
   \ ja suorittamista, jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.\u2026"
-lastmod: 2024-02-19 22:05:15.553861
+lastmod: '2024-02-25T18:49:53.571979-07:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista ja suorittamista,\
   \ jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.\u2026"

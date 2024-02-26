@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:00:13.178114-07:00
 description: "Refactoring in de programmeertaal verwijst naar het proces van het herstructureren\
   \ van bestaande computercode\u2014het veranderen van de factoring zonder het\u2026"
-lastmod: 2024-02-19 22:05:09.427411
+lastmod: '2024-02-25T18:49:47.736079-07:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in de programmeertaal verwijst naar het proces van het herstructureren\
   \ van bestaande computercode\u2014het veranderen van de factoring zonder het\u2026"

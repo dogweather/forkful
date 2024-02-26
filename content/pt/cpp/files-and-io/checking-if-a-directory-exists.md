@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:53.274473-07:00
 description: "Verificar se um diret\xF3rio existe \xE9 sobre determinar a presen\xE7\
   a de um diret\xF3rio em um caminho especificado antes de realizar opera\xE7\xF5\
   es como ler ou escrever\u2026"
-lastmod: 2024-02-19 22:05:05.954791
+lastmod: '2024-02-25T18:49:44.511336-07:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 sobre determinar a presen\xE7a\
   \ de um diret\xF3rio em um caminho especificado antes de realizar opera\xE7\xF5\

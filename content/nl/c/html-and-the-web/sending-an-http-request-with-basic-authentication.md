@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:09.308651-07:00
 description: "Een HTTP-verzoek met basisauthenticatie verzenden in C omvat het opstellen\
   \ van een HTTP-verzoek dat een Authorization-header bevat met gebruikersgegevens\u2026"
-lastmod: 2024-02-19 22:05:10.379552
+lastmod: '2024-02-25T18:49:48.615570-07:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek met basisauthenticatie verzenden in C omvat het opstellen\
   \ van een HTTP-verzoek dat een Authorization-header bevat met gebruikersgegevens\u2026"

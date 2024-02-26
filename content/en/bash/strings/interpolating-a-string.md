@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:08.463610-07:00
 description: String interpolation lets you insert values into a string. It's handy
   for creating custom messages, automating commands, and scripting like a boss.
-lastmod: 2024-02-19 22:05:18.692696
+lastmod: '2024-02-25T18:49:56.669807-07:00'
 model: gpt-4-1106-preview
 summary: String interpolation lets you insert values into a string. It's handy for
   creating custom messages, automating commands, and scripting like a boss.

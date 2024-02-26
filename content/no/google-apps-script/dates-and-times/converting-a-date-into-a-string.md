@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:57.856992-07:00
 description: "Konvertering av datoer til strenger er en grunnleggende oppgave som\
   \ gj\xF8r det mulig for programmerere \xE5 manipulere og vise datoinformasjon i\
   \ et\u2026"
-lastmod: 2024-02-19 22:04:59.608674
+lastmod: '2024-02-25T18:49:38.557626-07:00'
 model: gpt-4-0125-preview
 summary: "Konvertering av datoer til strenger er en grunnleggende oppgave som gj\xF8\
   r det mulig for programmerere \xE5 manipulere og vise datoinformasjon i et\u2026"

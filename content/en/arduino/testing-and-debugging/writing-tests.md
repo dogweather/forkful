@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:20.256456-07:00
 description: "Writing tests in the Arduino environment refers to the process of creating\
   \ automated tests that validate the functionality of your code on Arduino\u2026"
-lastmod: 2024-02-19 22:05:18.786855
+lastmod: '2024-02-25T18:49:56.762552-07:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in the Arduino environment refers to the process of creating\
   \ automated tests that validate the functionality of your code on Arduino\u2026"

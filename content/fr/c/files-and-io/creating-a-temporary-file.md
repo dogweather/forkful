@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:06.845096-07:00
 description: "Cr\xE9er un fichier temporaire en C consiste \xE0 g\xE9n\xE9rer un fichier\
   \ destin\xE9 \xE0 \xEAtre utilis\xE9 pendant une courte dur\xE9e, g\xE9n\xE9ralement\
   \ comme espace de travail\u2026"
-lastmod: 2024-02-19 22:05:17.044178
+lastmod: '2024-02-25T18:49:55.017352-07:00'
 model: gpt-4-0125-preview
 summary: "Cr\xE9er un fichier temporaire en C consiste \xE0 g\xE9n\xE9rer un fichier\
   \ destin\xE9 \xE0 \xEAtre utilis\xE9 pendant une courte dur\xE9e, g\xE9n\xE9ralement\

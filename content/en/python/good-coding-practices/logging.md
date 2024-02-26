@@ -2,7 +2,7 @@
 date: 2024-01-25 02:03:41.790707-07:00
 description: "Logging is the process of recording application events while a program\
   \ runs, providing a breadcrumb trail for post-mortem analysis and real-time\u2026"
-lastmod: 2024-02-19 22:05:18.221012
+lastmod: '2024-02-25T18:49:56.177838-07:00'
 model: gpt-4-1106-preview
 summary: "Logging is the process of recording application events while a program runs,\
   \ providing a breadcrumb trail for post-mortem analysis and real-time\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:33.683038-07:00
 description: "L\xE4het\xE4mme HTTP-pyynt\xF6j\xE4 kommunikoidaksemme web-palvelimien\
   \ kanssa. Koodarit tekev\xE4t sen hakeakseen tietoa, l\xE4hett\xE4\xE4kseen dataa\
   \ ja interaktoidakseen\u2026"
-lastmod: 2024-02-19 22:05:15.054114
+lastmod: '2024-02-25T18:49:53.114644-07:00'
 model: gpt-4-1106-preview
 summary: "L\xE4het\xE4mme HTTP-pyynt\xF6j\xE4 kommunikoidaksemme web-palvelimien kanssa.\
   \ Koodarit tekev\xE4t sen hakeakseen tietoa, l\xE4hett\xE4\xE4kseen dataa ja interaktoidakseen\u2026"

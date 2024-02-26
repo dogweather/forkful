@@ -7,7 +7,7 @@ description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a
   a b\u1EA1n. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED\
   \ l\xFD, ph\xE2n t\xEDch, ho\u1EB7c hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u \u0111\xE3\
   \u2026"
-lastmod: 2024-02-19 22:04:56.031435
+lastmod: '2024-02-25T18:49:35.188015-07:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
   \ t\u1EA3i n\u1ED9i dung c\u1EE7a n\xF3 v\xE0o ch\u01B0\u01A1ng tr\xECnh c\u1EE7\

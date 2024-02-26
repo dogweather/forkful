@@ -6,7 +6,7 @@ description: "Ghi ch\xE9p trong l\u1EADp tr\xECnh nh\u01B0 l\xE0 vi\u1EC7c gi\u1
   \ m\u1ED9t nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n. \u0110\xF3\
   \ l\xE0 s\u1EF1 ghi ch\xE9p c\xF3 h\u1EC7 th\u1ED1ng c\xE1c s\u1EF1 ki\u1EC7n, th\xF4\
   ng \u0111i\u1EC7p v\xE0 \u0111i\u1EC3m d\u1EEF li\u1EC7u m\xE0 cho\u2026"
-lastmod: 2024-02-19 22:04:56.579461
+lastmod: '2024-02-25T18:49:35.684378-07:00'
 model: gpt-4-0125-preview
 summary: "Ghi ch\xE9p trong l\u1EADp tr\xECnh nh\u01B0 l\xE0 vi\u1EC7c gi\u1EEF m\u1ED9\
   t nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n. \u0110\xF3 l\xE0 s\u1EF1\

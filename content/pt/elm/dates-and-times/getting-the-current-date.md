@@ -2,7 +2,7 @@
 date: 2024-01-20 15:14:02.712219-07:00
 description: "Conseguir a data atual significa acessar o momento exato em que o c\xF3\
   digo est\xE1 sendo executado. Programadores fazem isso para marcar eventos, gerenciar\u2026"
-lastmod: 2024-02-19 22:05:05.549620
+lastmod: '2024-02-25T18:49:44.131659-07:00'
 summary: "Conseguir a data atual significa acessar o momento exato em que o c\xF3\
   digo est\xE1 sendo executado. Programadores fazem isso para marcar eventos, gerenciar\u2026"
 title: Obtendo a data atual

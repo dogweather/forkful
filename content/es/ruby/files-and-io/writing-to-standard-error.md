@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:11.733505-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Ruby trata sobre dirigir\
   \ mensajes de error o diagn\xF3sticos a un flujo de salida separado, distinto de\
   \ la salida\u2026"
-lastmod: 2024-02-19 22:05:18.115219
+lastmod: '2024-02-25T18:49:56.074715-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Ruby trata sobre dirigir mensajes\
   \ de error o diagn\xF3sticos a un flujo de salida separado, distinto de la salida\u2026"

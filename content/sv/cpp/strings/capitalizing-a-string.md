@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:14.842233-07:00
 description: "Att g\xF6ra en str\xE4ngs f\xF6rsta bokstav i varje ord versal handlar\
   \ om att konvertera den initiala karakt\xE4ren av varje ord i str\xE4ngen till versal\
   \ om den \xE4r i\u2026"
-lastmod: 2024-02-19 22:04:57.428168
+lastmod: '2024-02-25T18:49:36.507427-07:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra en str\xE4ngs f\xF6rsta bokstav i varje ord versal handlar om\
   \ att konvertera den initiala karakt\xE4ren av varje ord i str\xE4ngen till versal\

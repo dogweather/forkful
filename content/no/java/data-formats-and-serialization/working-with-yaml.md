@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:25:39.111699-07:00
 description: "YAML, forkortet for \"YAML Ain't Markup Language\", er en menneskelesbar\
   \ standard for data-serialisering som programmerere bruker for konfigurasjonsfiler,\u2026"
-lastmod: 2024-02-19 22:04:59.932532
+lastmod: '2024-02-25T18:49:38.866643-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, forkortet for \"YAML Ain't Markup Language\", er en menneskelesbar\
   \ standard for data-serialisering som programmerere bruker for konfigurasjonsfiler,\u2026"

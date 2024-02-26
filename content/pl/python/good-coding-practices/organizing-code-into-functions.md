@@ -2,7 +2,7 @@
 date: 2024-01-26 01:11:37.918310-07:00
 description: "Organizacja kodu w funkcje polega na podziale kodu na wielokrotnie u\u017C\
   ywalne bloki o okre\u015Blonych celach. Robimy to, aby kod by\u0142 bardziej przejrzysty,\u2026"
-lastmod: 2024-02-19 22:04:54.139213
+lastmod: '2024-02-25T18:49:33.380739-07:00'
 model: gpt-4-1106-preview
 summary: "Organizacja kodu w funkcje polega na podziale kodu na wielokrotnie u\u017C\
   ywalne bloki o okre\u015Blonych celach. Robimy to, aby kod by\u0142 bardziej przejrzysty,\u2026"

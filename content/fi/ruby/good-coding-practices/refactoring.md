@@ -2,7 +2,7 @@
 date: 2024-01-26 03:36:57.422645-07:00
 description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakenneuudistetaan\
   \ muuttamatta sen ulkoista toimintaa. Ohjelmoijat refaktoroivat\u2026"
-lastmod: 2024-02-19 22:05:16.004072
+lastmod: '2024-02-25T18:49:53.998784-07:00'
 model: gpt-4-0125-preview
 summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakenneuudistetaan\
   \ muuttamatta sen ulkoista toimintaa. Ohjelmoijat refaktoroivat\u2026"

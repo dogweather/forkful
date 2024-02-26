@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:55.806538-07:00
 description: "JSON (JavaScript Object Notation) \xE9 um formato leve de interc\xE2\
   mbio de dados que \xE9 f\xE1cil de ler e escrever por humanos, e de analisar e gerar\
   \ por m\xE1quinas.\u2026"
-lastmod: 2024-02-19 22:05:05.473037
+lastmod: '2024-02-25T18:49:44.055990-07:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE9 um formato leve de interc\xE2mbio\
   \ de dados que \xE9 f\xE1cil de ler e escrever por humanos, e de analisar e gerar\

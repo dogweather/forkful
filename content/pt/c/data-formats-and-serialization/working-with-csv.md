@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:52.007769-07:00
 description: "No mundo da programa\xE7\xE3o, trabalhar com arquivos CSV (Valores Separados\
   \ por V\xEDrgula) envolve ler e escrever dados em arquivos de texto organizados\
   \ por\u2026"
-lastmod: 2024-02-19 22:05:06.144900
+lastmod: '2024-02-25T18:49:44.690681-07:00'
 model: gpt-4-0125-preview
 summary: "No mundo da programa\xE7\xE3o, trabalhar com arquivos CSV (Valores Separados\
   \ por V\xEDrgula) envolve ler e escrever dados em arquivos de texto organizados\

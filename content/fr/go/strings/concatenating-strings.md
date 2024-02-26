@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:55.306351-07:00
 description: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEEnes\
   \ ou plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs font\
   \ cela pour g\xE9n\xE9rer\u2026"
-lastmod: 2024-02-19 22:05:16.031807
+lastmod: '2024-02-25T18:49:54.025350-07:00'
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEEnes ou\
   \ plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs font\

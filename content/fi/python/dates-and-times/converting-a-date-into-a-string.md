@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:15.309715-07:00
 description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta voimme n\xE4\
   ytt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n haluamassamme muodossa. Sit\xE4 tarvitaan\
   \ lokitiedostoissa, k\xE4ytt\xF6liittymiss\xE4 ja datan\u2026"
-lastmod: 2024-02-19 22:05:15.090626
+lastmod: '2024-02-25T18:49:53.129261-07:00'
 model: gpt-4-1106-preview
 summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta voimme n\xE4ytt\xE4\
   \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n haluamassamme muodossa. Sit\xE4 tarvitaan lokitiedostoissa,\

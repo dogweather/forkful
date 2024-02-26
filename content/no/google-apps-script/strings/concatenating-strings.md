@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:12.621564-07:00
 description: "Konkatenere (sammensl\xE5) strenger inneb\xE6rer \xE5 kombinere to eller\
   \ flere strenger til en enkelt streng. Programmerere gj\xF8r dette for \xE5 dynamisk\
   \ konstruere\u2026"
-lastmod: 2024-02-19 22:04:59.585724
+lastmod: '2024-02-25T18:49:38.536221-07:00'
 model: gpt-4-0125-preview
 summary: "Konkatenere (sammensl\xE5) strenger inneb\xE6rer \xE5 kombinere to eller\
   \ flere strenger til en enkelt streng. Programmerere gj\xF8r dette for \xE5 dynamisk\

@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:40.954767-07:00
 description: "Py\xF6rist\xE4minen tarkoittaa lukujen s\xE4\xE4t\xE4mist\xE4 l\xE4\
   himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4ritettyyn tarkkuusasteeseen. Ohjelmoijat\
   \ py\xF6rist\xE4v\xE4t lukuja\u2026"
-lastmod: 2024-02-19 22:05:15.988525
+lastmod: '2024-02-25T18:49:53.984055-07:00'
 model: gpt-4-0125-preview
 summary: "Py\xF6rist\xE4minen tarkoittaa lukujen s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\
   \xE4n kokonaislukuun tai m\xE4\xE4ritettyyn tarkkuusasteeseen. Ohjelmoijat py\xF6\

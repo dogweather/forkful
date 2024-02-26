@@ -2,7 +2,7 @@
 date: 2024-01-20 17:39:21.906784-07:00
 description: "Creating a temporary file in Bash means making a file that your scripts\
   \ can use to store data briefly. Programmers do this to stash bits of info while\u2026"
-lastmod: 2024-02-19 22:05:18.724496
+lastmod: '2024-02-25T18:49:56.700548-07:00'
 model: gpt-4-1106-preview
 summary: "Creating a temporary file in Bash means making a file that your scripts\
   \ can use to store data briefly. Programmers do this to stash bits of info while\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 21:55:25.541405-07:00
 description: "Het berekenen van toekomstige of verleden data betekent uitzoeken wat\
   \ de datum zal zijn na of voor een bepaalde hoeveelheid tijd. Programmeurs doen\
   \ dit\u2026"
-lastmod: 2024-02-19 22:05:10.026659
+lastmod: '2024-02-25T18:49:48.289756-07:00'
 model: gpt-4-0125-preview
 summary: "Het berekenen van toekomstige of verleden data betekent uitzoeken wat de\
   \ datum zal zijn na of voor een bepaalde hoeveelheid tijd. Programmeurs doen dit\u2026"

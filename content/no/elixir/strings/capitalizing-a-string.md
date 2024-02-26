@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:47.943399-07:00
 description: "\xC5 kapitalisere en streng involverer \xE5 konvertere den f\xF8rste\
   \ bokstaven i strengen til stor bokstav, mens man s\xF8rger for at resten av bokstavene\
   \ er i sm\xE5\u2026"
-lastmod: 2024-02-19 22:04:59.713512
+lastmod: '2024-02-25T18:49:38.654742-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng involverer \xE5 konvertere den f\xF8rste bokstaven\
   \ i strengen til stor bokstav, mens man s\xF8rger for at resten av bokstavene er\

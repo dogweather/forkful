@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:59.236205-07:00
 description: "Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt\xF3ra z nich jest\
   \ wcze\u015Bniejsza, p\xF3\u017Aniejsza, czy mo\u017Ce identyczna. Programi\u015B\
   ci robi\u0105 to, \u017Ceby obs\u0142ugiwa\u0107 wydarzenia\u2026"
-lastmod: 2024-02-19 22:04:54.599239
+lastmod: '2024-02-25T18:49:33.829771-07:00'
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt\xF3ra z nich jest wcze\u015B\
   niejsza, p\xF3\u017Aniejsza, czy mo\u017Ce identyczna. Programi\u015Bci robi\u0105\

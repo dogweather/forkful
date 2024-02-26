@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:51.148272-07:00
 description: "Lancer un nouveau projet Java, c'est cr\xE9er un espace o\xF9 votre\
   \ code va prendre vie. On le fait pour transformer une id\xE9e en une application\
   \ qui peut\u2026"
-lastmod: 2024-02-19 22:05:16.401145
+lastmod: '2024-02-25T18:49:54.388322-07:00'
 model: gpt-4-1106-preview
 summary: "Lancer un nouveau projet Java, c'est cr\xE9er un espace o\xF9 votre code\
   \ va prendre vie. On le fait pour transformer une id\xE9e en une application qui\

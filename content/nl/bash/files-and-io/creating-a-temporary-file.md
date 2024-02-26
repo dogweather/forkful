@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:58:15.805125-07:00
 description: "Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand\
   \ dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan.\u2026"
-lastmod: 2024-02-19 22:05:10.086922
+lastmod: '2024-02-25T18:49:48.340074-07:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand\
   \ dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan.\u2026"

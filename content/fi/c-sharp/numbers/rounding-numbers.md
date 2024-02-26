@@ -3,7 +3,7 @@ date: 2024-01-26 03:43:47.838751-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4himp\xE4\xE4n m\xE4\xE4riteltyyn paikkakerta-arvoon - ajattele niiden kiinnitt\xE4\
   mist\xE4 yksinkertaisempaan\u2026"
-lastmod: 2024-02-19 22:05:15.461400
+lastmod: '2024-02-25T18:49:53.483097-07:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4himp\xE4\xE4n m\xE4\xE4riteltyyn paikkakerta-arvoon - ajattele niiden kiinnitt\xE4\

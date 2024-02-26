@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:07.310824-07:00
 description: "Parsing a date from a string in Go involves converting the date represented\
   \ as text into a more usable format (e.g., `time.Time`). Programmers perform\u2026"
-lastmod: 2024-02-19 22:05:18.147781
+lastmod: '2024-02-25T18:49:56.106645-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Go involves converting the date represented\
   \ as text into a more usable format (e.g., `time.Time`). Programmers perform\u2026"

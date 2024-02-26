@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:09.496604-07:00
 description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
   \ tecken den inneh\xE5ller. Programmerare g\xF6r detta f\xF6r att validera indata,\
   \ manipulera text eller\u2026"
-lastmod: 2024-02-19 22:04:57.210820
+lastmod: '2024-02-25T18:49:36.289763-07:00'
 model: gpt-4-1106-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
   \ tecken den inneh\xE5ller. Programmerare g\xF6r detta f\xF6r att validera indata,\

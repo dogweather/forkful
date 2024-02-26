@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:12.473652-07:00
 description: "Ler argumentos da linha de comando em Visual Basic para Aplica\xE7\xF5\
   es (VBA) envolve acessar par\xE2metros passados ao seu programa durante a execu\xE7\
   \xE3o. Esta\u2026"
-lastmod: 2024-02-19 22:05:05.466192
+lastmod: '2024-02-25T18:49:44.048964-07:00'
 model: gpt-4-0125-preview
 summary: "Ler argumentos da linha de comando em Visual Basic para Aplica\xE7\xF5es\
   \ (VBA) envolve acessar par\xE2metros passados ao seu programa durante a execu\xE7\

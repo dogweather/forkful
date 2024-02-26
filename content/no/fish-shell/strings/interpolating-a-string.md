@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:37.467224-07:00
 description: "Interpolering av strenger lar deg bake inn variabler eller uttrykk i\
   \ en tekststreng. Det gj\xF8r koden mer fleksibel og lesbar n\xE5r du skal bygge\
   \ dynamisk\u2026"
-lastmod: 2024-02-19 22:05:00.489748
+lastmod: '2024-02-25T18:49:39.389381-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av strenger lar deg bake inn variabler eller uttrykk i en\
   \ tekststreng. Det gj\xF8r koden mer fleksibel og lesbar n\xE5r du skal bygge dynamisk\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:30:57.863462-07:00
 description: "Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowanym\
   \ formacie, u\u017Cywanym w konfiguracjach, komunikacji i wielu innych. Programi\u015B\
   ci\u2026"
-lastmod: 2024-02-19 22:04:55.042353
+lastmod: '2024-02-25T18:49:34.239366-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowanym\
   \ formacie, u\u017Cywanym w konfiguracjach, komunikacji i wielu innych. Programi\u015B\

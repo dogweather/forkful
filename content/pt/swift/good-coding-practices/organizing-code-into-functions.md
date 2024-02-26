@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:10.636724-07:00
 description: "Agrupar c\xF3digo em fun\xE7\xF5es \xE9 decompor tarefas em peda\xE7\
   os reutiliz\xE1veis. Isso torna o c\xF3digo limpo, menos propenso a erros e mais\
   \ f\xE1cil de depurar ou\u2026"
-lastmod: 2024-02-19 22:05:05.989295
+lastmod: '2024-02-25T18:49:44.543485-07:00'
 model: gpt-4-0125-preview
 summary: "Agrupar c\xF3digo em fun\xE7\xF5es \xE9 decompor tarefas em peda\xE7os reutiliz\xE1\
   veis. Isso torna o c\xF3digo limpo, menos propenso a erros e mais f\xE1cil de depurar\

@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:06.215032-07:00
 description: "De huidige datum in PHP verkrijgen draait allemaal om het plukken van\
   \ de datum en tijd van vandaag direct vanaf de server. Programmeurs doen dit om\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:09.978819
+lastmod: '2024-02-25T18:49:48.244309-07:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in PHP verkrijgen draait allemaal om het plukken van de\
   \ datum en tijd van vandaag direct vanaf de server. Programmeurs doen dit om de\u2026"

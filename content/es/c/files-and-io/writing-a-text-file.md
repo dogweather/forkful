@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:16.713003-07:00
 description: "Escribir un archivo de texto en C implica crear o abrir un archivo en\
   \ modo de escritura y luego usar las funciones de E/S de archivos de C para guardar\u2026"
-lastmod: 2024-02-19 22:05:18.072882
+lastmod: '2024-02-25T18:49:56.033541-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en C implica crear o abrir un archivo en modo\
   \ de escritura y luego usar las funciones de E/S de archivos de C para guardar\u2026"

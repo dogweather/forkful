@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:36.864913-07:00
 description: "La interpolaci\xF3n de cadenas nos permite infundir variables dentro\
   \ de un texto, creando as\xED una cadena personalizada en tiempo de ejecuci\xF3\
   n. Los\u2026"
-lastmod: 2024-02-19 22:05:17.358966
+lastmod: '2024-02-25T18:49:55.327177-07:00'
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas nos permite infundir variables dentro de\
   \ un texto, creando as\xED una cadena personalizada en tiempo de ejecuci\xF3n. Los\u2026"

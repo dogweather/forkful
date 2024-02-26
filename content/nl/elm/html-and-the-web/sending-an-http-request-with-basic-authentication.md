@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:12.555375-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat\
   \ inloggegevens (gebruikersnaam en wachtwoord) aan de verzoekheaders worden\u2026"
-lastmod: 2024-02-19 22:05:09.777943
+lastmod: '2024-02-25T18:49:48.065225-07:00'
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat inloggegevens\
   \ (gebruikersnaam en wachtwoord) aan de verzoekheaders worden\u2026"

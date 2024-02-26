@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:37.240438-07:00
 description: "Inviare una richiesta HTTP \xE8 il modo in cui un programma richiede\
   \ informazioni da un server. I programmatori lo fanno per interagire con web API,\u2026"
-lastmod: 2024-02-19 22:05:02.927953
+lastmod: '2024-02-25T18:49:41.699095-07:00'
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP \xE8 il modo in cui un programma richiede informazioni\
   \ da un server. I programmatori lo fanno per interagire con web API,\u2026"

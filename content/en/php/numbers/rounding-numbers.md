@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:57.892439-07:00
 description: "Rounding numbers means chopping off the decimals to a set precision,\
   \ often to whole numbers. Programmers round to simplify calculations, improve\u2026"
-lastmod: 2024-02-19 22:05:18.625105
+lastmod: '2024-02-25T18:49:56.602816-07:00'
 model: gpt-4-1106-preview
 summary: "Rounding numbers means chopping off the decimals to a set precision, often\
   \ to whole numbers. Programmers round to simplify calculations, improve\u2026"

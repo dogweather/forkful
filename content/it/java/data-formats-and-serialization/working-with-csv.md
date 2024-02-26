@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:34.667076-07:00
 description: "Lavorare con file CSV comporta la lettura da e la scrittura su file\
   \ di Valori Separati da Virgola (CSV), un formato popolare per lo scambio di dati\
   \ perch\xE9\u2026"
-lastmod: 2024-02-19 22:05:02.392389
+lastmod: '2024-02-25T18:49:41.199300-07:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con file CSV comporta la lettura da e la scrittura su file di Valori\
   \ Separati da Virgola (CSV), un formato popolare per lo scambio di dati perch\xE9\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:13.096247-07:00
 description: "Por\u0456vnyannya dvokh dat - tse sposib vstanovlennya chasovoyi r\u0456\
   znits\u0456 m\u0456zh nimi. Program\u0456sti robyat\u02B9 tse, shchob v\u0456dkr\u0456\
   plyuvaty podiyi v chas\u0456, zapuskaty\u2026"
-lastmod: 2024-02-19 22:05:07.895182
+lastmod: '2024-02-25T18:49:46.370782-07:00'
 model: gpt-4-1106-preview
 summary: "Por\u0456vnyannya dvokh dat - tse sposib vstanovlennya chasovoyi r\u0456\
   znits\u0456 m\u0456zh nimi. Program\u0456sti robyat\u02B9 tse, shchob v\u0456dkr\u0456\

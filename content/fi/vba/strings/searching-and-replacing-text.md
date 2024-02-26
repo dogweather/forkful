@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:09.212114-07:00
 description: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA)\
   \ -ymp\xE4rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"
-lastmod: 2024-02-19 22:05:15.279794
+lastmod: '2024-02-25T18:49:53.308213-07:00'
 model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA) -ymp\xE4\
   rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"

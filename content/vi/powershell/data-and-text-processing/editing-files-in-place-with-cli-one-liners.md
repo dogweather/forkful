@@ -6,7 +6,7 @@ description: "S\u1EEDa \u0111\u1ED5i t\u1EC7p t\u1EA1i ch\u1ED7 v\u1EDBi c\xE1c 
   ng l\u1EC7nh CLI b\u1EB1ng PowerShell l\xE0 v\u1EC1 vi\u1EC7c th\u1EF1c hi\u1EC7\
   n ch\u1EC9nh s\u1EEDa tr\u1EF1c ti\u1EBFp c\xE1c t\u1EC7p t\u1EEB d\xF2ng l\u1EC7\
   nh, kh\xF4ng c\u1EA7n m\u1EDF ch\xFAng trong m\u1ED9t\u2026"
-lastmod: 2024-02-19 22:04:56.123843
+lastmod: '2024-02-25T18:49:35.276161-07:00'
 model: gpt-4-0125-preview
 summary: "S\u1EEDa \u0111\u1ED5i t\u1EC7p t\u1EA1i ch\u1ED7 v\u1EDBi c\xE1c d\xF2\
   ng l\u1EC7nh CLI b\u1EB1ng PowerShell l\xE0 v\u1EC1 vi\u1EC7c th\u1EF1c hi\u1EC7\

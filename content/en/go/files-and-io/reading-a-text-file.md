@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:07.560349-07:00
 description: "Reading a text file in Go involves accessing and retrieving content\
   \ from a file stored on disk for processing or analysis. Programmers frequently\
   \ perform\u2026"
-lastmod: 2024-02-19 22:05:18.154732
+lastmod: '2024-02-25T18:49:56.113452-07:00'
 model: gpt-4-0125-preview
 summary: "Reading a text file in Go involves accessing and retrieving content from\
   \ a file stored on disk for processing or analysis. Programmers frequently perform\u2026"

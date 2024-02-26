@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:01.419082-07:00
 description: "\xC9crire sur l'erreur standard (stderr) en PHP consiste \xE0 diriger\
   \ les messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie standard\
   \ (stdout),\u2026"
-lastmod: 2024-02-19 22:05:16.631163
+lastmod: '2024-02-25T18:49:54.616003-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en PHP consiste \xE0 diriger les\
   \ messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie standard (stdout),\u2026"

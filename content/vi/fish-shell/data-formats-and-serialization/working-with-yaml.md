@@ -6,7 +6,7 @@ description: "YAML, \"YAML Ain't Markup Language\" (YAML kh\xF4ng ph\u1EA3i l\xE
   \ Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u), l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n m\xE3\
   \ h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi, c\xF3\
   \ k\xFD hi\u1EC7u \u01B0u vi\u1EC7t\u2026"
-lastmod: 2024-02-19 22:04:56.473462
+lastmod: '2024-02-25T18:49:35.585646-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, \"YAML Ain't Markup Language\" (YAML kh\xF4ng ph\u1EA3i l\xE0 Ng\xF4\
   n ng\u1EEF \u0110\xE1nh d\u1EA5u), l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n m\xE3 h\xF3\

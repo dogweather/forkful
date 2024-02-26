@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:25.995963-07:00
 description: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\xF8\
   rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\
   \ sm\xE5.\u2026"
-lastmod: 2024-02-19 22:05:00.088690
+lastmod: '2024-02-25T18:49:38.996716-07:00'
 model: gpt-4-0125-preview
 summary: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\xF8\
   rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\

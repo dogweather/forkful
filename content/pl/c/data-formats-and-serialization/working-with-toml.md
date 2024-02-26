@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:45.775556-07:00
 description: "TOML (Tom's Obvious, Minimal Language) to format pliku konfiguracyjnego,\
   \ kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce. Programi\u015B\
   ci\u2026"
-lastmod: 2024-02-19 22:04:55.092198
+lastmod: '2024-02-25T18:49:34.285577-07:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) to format pliku konfiguracyjnego,\
   \ kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce. Programi\u015B\

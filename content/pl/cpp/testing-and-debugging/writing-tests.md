@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:06.853562-07:00
 description: "Pisanie test\xF3w w C++ polega na tworzeniu ma\u0142ych, samodzielnych\
   \ program\xF3w, kt\xF3re automatycznie weryfikuj\u0105 zachowanie fragment\xF3w\
   \ twojej bazy kodu.\u2026"
-lastmod: 2024-02-19 22:04:54.862508
+lastmod: '2024-02-25T18:49:34.088328-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w C++ polega na tworzeniu ma\u0142ych, samodzielnych program\xF3\
   w, kt\xF3re automatycznie weryfikuj\u0105 zachowanie fragment\xF3w twojej bazy kodu.\u2026"

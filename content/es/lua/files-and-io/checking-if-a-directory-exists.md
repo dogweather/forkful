@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:59.019784-07:00
 description: "Verificar si un directorio existe es una operaci\xF3n fundamental al\
   \ escribir scripts que interact\xFAan con el sistema de archivos, asegurando que\
   \ tu programa\u2026"
-lastmod: 2024-02-19 22:05:17.724039
+lastmod: '2024-02-25T18:49:55.687818-07:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe es una operaci\xF3n fundamental al escribir\
   \ scripts que interact\xFAan con el sistema de archivos, asegurando que tu programa\u2026"

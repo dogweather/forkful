@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:23.974378-07:00
 description: "Het huidige datum in Ruby pakken is zo simpel als het klinkt: de datum\
   \ van vandaag ophalen. Programmeurs hebben dit nodig voor taken vari\xEBrend van\
   \ loggen\u2026"
-lastmod: 2024-02-19 22:05:10.438199
+lastmod: '2024-02-25T18:49:48.671420-07:00'
 model: gpt-4-0125-preview
 summary: "Het huidige datum in Ruby pakken is zo simpel als het klinkt: de datum van\
   \ vandaag ophalen. Programmeurs hebben dit nodig voor taken vari\xEBrend van loggen\u2026"

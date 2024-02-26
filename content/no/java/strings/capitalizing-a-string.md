@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:46.940187-07:00
 description: "Det \xE5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre den\
   \ f\xF8rste bokstaven i hvert ord i strengen til stor bokstav, mens man s\xF8rger\
   \ for at resten forblir\u2026"
-lastmod: 2024-02-19 22:04:59.893912
+lastmod: '2024-02-25T18:49:38.829101-07:00'
 model: gpt-4-0125-preview
 summary: "Det \xE5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre den f\xF8\
   rste bokstaven i hvert ord i strengen til stor bokstav, mens man s\xF8rger for at\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:45.462488-07:00
 description: "Scrivere su un file di testo in Fish Shell consente di memorizzare dati\
   \ in modo persistente, facilitando il recupero o la manipolazione dei dati sia dallo\u2026"
-lastmod: 2024-02-19 22:05:02.950398
+lastmod: '2024-02-25T18:49:41.719748-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Fish Shell consente di memorizzare dati\
   \ in modo persistente, facilitando il recupero o la manipolazione dei dati sia dallo\u2026"

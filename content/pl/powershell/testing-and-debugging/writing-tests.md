@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:44.241871-07:00
 description: "Pisanie test\xF3w w PowerShellu polega na tworzeniu skrypt\xF3w, kt\xF3\
   re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego kodu PowerShell,\
   \ zapewniaj\u0105c, \u017Ce\u2026"
-lastmod: 2024-02-19 22:04:54.774830
+lastmod: '2024-02-25T18:49:34.002643-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w PowerShellu polega na tworzeniu skrypt\xF3w, kt\xF3\
   re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego kodu PowerShell,\

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:43:29.667567-07:00
 description: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \xFC\
   blicherweise geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener\u2026"
-lastmod: 2024-02-19 22:05:12.895899
+lastmod: '2024-02-25T18:49:51.023009-07:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \xFCblicherweise\
   \ geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:17.483545-07:00
 description: "Mettre en majuscule une cha\xEEne de caract\xE8res en C# consiste \xE0\
   \ convertir le premier caract\xE8re d'une cha\xEEne en majuscule s'il ne l'est pas\
   \ d\xE9j\xE0. Cette\u2026"
-lastmod: 2024-02-19 22:05:16.511331
+lastmod: '2024-02-25T18:49:54.498174-07:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne de caract\xE8res en C# consiste \xE0 convertir\
   \ le premier caract\xE8re d'une cha\xEEne en majuscule s'il ne l'est pas d\xE9j\xE0\

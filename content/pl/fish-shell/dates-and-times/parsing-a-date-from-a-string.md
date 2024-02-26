@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:25.591683-07:00
 description: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie\
   \ zakodowanej w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format,\
   \ kt\xF3ry\u2026"
-lastmod: 2024-02-19 22:04:55.025654
+lastmod: '2024-02-25T18:49:34.224410-07:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie zakodowanej\
   \ w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format, kt\xF3ry\u2026"

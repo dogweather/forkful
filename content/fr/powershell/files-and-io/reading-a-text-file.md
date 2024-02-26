@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:02.542082-07:00
 description: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
   \ ou le manipuler. Les programmeurs font \xE7a pour traiter des donn\xE9es, configurer\
   \ des\u2026"
-lastmod: 2024-02-19 22:05:16.767572
+lastmod: '2024-02-25T18:49:54.758791-07:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
   \ ou le manipuler. Les programmeurs font \xE7a pour traiter des donn\xE9es, configurer\

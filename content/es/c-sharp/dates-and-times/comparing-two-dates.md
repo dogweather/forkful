@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:32.873417-07:00
 description: "Comparar dos fechas significa verificar si una es anterior, posterior\
   \ o igual a la otra. Los programadores lo hacen para gestionar eventos, validar\u2026"
-lastmod: 2024-02-19 22:05:17.596587
+lastmod: '2024-02-25T18:49:55.560406-07:00'
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas significa verificar si una es anterior, posterior o\
   \ igual a la otra. Los programadores lo hacen para gestionar eventos, validar\u2026"

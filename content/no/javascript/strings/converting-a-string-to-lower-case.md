@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:46.173798-07:00
 description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle\
   \ store bokstaver i teksten til deres sm\xE5 bokstav-ekvivalenter. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.447026
+lastmod: '2024-02-25T18:49:39.349897-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle store\
   \ bokstaver i teksten til deres sm\xE5 bokstav-ekvivalenter. Programmerere gj\xF8\

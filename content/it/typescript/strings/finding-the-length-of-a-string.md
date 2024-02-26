@@ -2,7 +2,7 @@
 date: 2024-01-20 17:48:38.175242-07:00
 description: "Calcolare la lunghezza di una stringa significa contare quanti caratteri\
   \ contiene. I programmatori lo fanno per validazioni, limitazioni di input e\u2026"
-lastmod: 2024-02-19 22:05:02.227335
+lastmod: '2024-02-25T18:49:41.044735-07:00'
 model: gpt-4-1106-preview
 summary: "Calcolare la lunghezza di una stringa significa contare quanti caratteri\
   \ contiene. I programmatori lo fanno per validazioni, limitazioni di input e\u2026"

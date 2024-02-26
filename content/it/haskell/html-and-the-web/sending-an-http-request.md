@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:38.970846-07:00
 description: "Mandare una richiesta HTTP significa ordinare al tuo programma di chiacchierare\
   \ con un server web. Questo lo fanno i programmatori per scambiare dati -\u2026"
-lastmod: 2024-02-19 22:05:02.537580
+lastmod: '2024-02-25T18:49:41.336532-07:00'
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP significa ordinare al tuo programma di chiacchierare\
   \ con un server web. Questo lo fanno i programmatori per scambiare dati -\u2026"

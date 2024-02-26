@@ -2,7 +2,7 @@
 date: 2024-01-20 17:33:46.644216-07:00
 description: "Confrontare due date significa verificare se una data \xE8 precedente,\
   \ successiva o uguale a un'altra. I programmatori fanno questo per gestire eventi,\u2026"
-lastmod: 2024-02-19 22:05:02.856124
+lastmod: '2024-02-25T18:49:41.631864-07:00'
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa verificare se una data \xE8 precedente, successiva\
   \ o uguale a un'altra. I programmatori fanno questo per gestire eventi,\u2026"

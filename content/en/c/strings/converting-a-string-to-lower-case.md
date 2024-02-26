@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:08.457437-07:00
 description: "Converting a string to lowercase in C involves transforming all uppercase\
   \ letters in a given string to their corresponding lowercase equivalents.\u2026"
-lastmod: 2024-02-19 22:05:18.961391
+lastmod: '2024-02-25T18:49:56.936697-07:00'
 model: gpt-4-0125-preview
 summary: "Converting a string to lowercase in C involves transforming all uppercase\
   \ letters in a given string to their corresponding lowercase equivalents.\u2026"

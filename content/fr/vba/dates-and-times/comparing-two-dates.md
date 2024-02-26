@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:59.194242-07:00
 description: "Comparer deux dates en Visual Basic pour Applications (VBA) consiste\
   \ \xE0 d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre.\
   \ Les\u2026"
-lastmod: 2024-02-19 22:05:16.369076
+lastmod: '2024-02-25T18:49:54.354516-07:00'
 model: gpt-4-0125-preview
 summary: "Comparer deux dates en Visual Basic pour Applications (VBA) consiste \xE0\
   \ d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre. Les\u2026"

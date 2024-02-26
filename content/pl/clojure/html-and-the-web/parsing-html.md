@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:50.248374-07:00
 description: "Parsowanie HTML w Clojure wi\u0105\u017Ce si\u0119 z programowym ekstrahowaniem\
   \ informacji z dokument\xF3w HTML. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
   \ dost\u0119p, manipulowa\u0107 lub\u2026"
-lastmod: 2024-02-19 22:04:54.175238
+lastmod: '2024-02-25T18:49:33.417500-07:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Clojure wi\u0105\u017Ce si\u0119 z programowym ekstrahowaniem\
   \ informacji z dokument\xF3w HTML. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\

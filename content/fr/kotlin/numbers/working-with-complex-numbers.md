@@ -3,7 +3,7 @@ date: 2024-01-26 04:43:36.185998-07:00
 description: "Les nombres complexes \xE9largissent notre syst\xE8me num\xE9rique pour\
   \ inclure les racines carr\xE9es des nombres n\xE9gatifs, o\xF9 l'unit\xE9 \"imaginaire\"\
   \ i \xE9quivaut \xE0 la\u2026"
-lastmod: 2024-02-19 22:05:16.479166
+lastmod: '2024-02-25T18:49:54.466839-07:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9largissent notre syst\xE8me num\xE9rique pour\
   \ inclure les racines carr\xE9es des nombres n\xE9gatifs, o\xF9 l'unit\xE9 \"imaginaire\"\

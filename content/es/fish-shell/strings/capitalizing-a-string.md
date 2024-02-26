@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:13.861291-07:00
 description: "Capitalizar una cadena significa modificarla de modo que la primera\
   \ letra est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula. Esta es\
   \ una tarea com\xFAn\u2026"
-lastmod: 2024-02-19 22:05:17.987847
+lastmod: '2024-02-25T18:49:55.953014-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena significa modificarla de modo que la primera letra\
   \ est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula. Esta es una tarea\

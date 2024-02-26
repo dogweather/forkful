@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:24.297928-07:00
 description: "Att skriva till standardfel i Python handlar om att rikta ditt programs\
   \ felmeddelanden eller diagnostik till felstr\xF6mmen (`stderr`), separat fr\xE5\
   n\u2026"
-lastmod: 2024-02-19 22:04:56.741302
+lastmod: '2024-02-25T18:49:35.836730-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel i Python handlar om att rikta ditt programs\
   \ felmeddelanden eller diagnostik till felstr\xF6mmen (`stderr`), separat fr\xE5\

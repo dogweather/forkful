@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:18.659281-07:00
 description: "Cr\xE9er un fichier temporaire, c'est une fa\xE7on d'avoir un stockage\
   \ \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. Les programmeurs le font\
   \ pour manipuler des\u2026"
-lastmod: 2024-02-19 22:05:16.329783
+lastmod: '2024-02-25T18:49:54.315126-07:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est une fa\xE7on d'avoir un stockage \xE9\
   ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. Les programmeurs le font pour\

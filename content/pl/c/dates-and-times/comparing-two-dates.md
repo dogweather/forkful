@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:37.521180-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat w j\u0119zyku C polega na ustaleniu, kt\xF3\
   ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza, lub czy s\u0105\
   \ takie same. Mo\u017Cliwo\u015B\u0107 ta jest\u2026"
-lastmod: 2024-02-19 22:04:55.079186
+lastmod: '2024-02-25T18:49:34.273581-07:00'
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w j\u0119zyku C polega na ustaleniu, kt\xF3\
   ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza, lub czy s\u0105\

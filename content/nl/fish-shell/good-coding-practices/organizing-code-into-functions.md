@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-28 23:01:27.107827-07:00
 description: "Het organiseren van code in functies gaat over het bundelen van stukjes\
   \ script om specifieke taken uit te voeren. We doen dit omdat het de code\u2026"
-lastmod: 2024-02-19 22:05:10.340344
+lastmod: '2024-02-25T18:49:48.578777-07:00'
 model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies gaat over het bundelen van stukjes\
   \ script om specifieke taken uit te voeren. We doen dit omdat het de code\u2026"

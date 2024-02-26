@@ -2,7 +2,7 @@
 date: 2024-01-27 20:26:06.703048-07:00
 description: "Generating random numbers in Ruby involves creating numbers that cannot\
   \ be predicted logically, essential for scenarios such as simulations, cryptography,\u2026"
-lastmod: 2024-02-19 22:05:19.007125
+lastmod: '2024-02-25T18:49:56.982191-07:00'
 model: gpt-4-0125-preview
 summary: "Generating random numbers in Ruby involves creating numbers that cannot\
   \ be predicted logically, essential for scenarios such as simulations, cryptography,\u2026"

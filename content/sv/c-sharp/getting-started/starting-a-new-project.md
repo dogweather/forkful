@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:17.790824-07:00
 description: "Att starta ett nytt projekt i C# inneb\xE4r skapandet av en grundl\xE4\
   ggande struktur f\xF6r din kod d\xE4r allt det roliga kan h\xE4nda. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: 2024-02-19 22:04:57.130689
+lastmod: '2024-02-25T18:49:36.212723-07:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt i C# inneb\xE4r skapandet av en grundl\xE4ggande\
   \ struktur f\xF6r din kod d\xE4r allt det roliga kan h\xE4nda. Programmerare g\xF6\

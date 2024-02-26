@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:06.986361-07:00
 description: "\xC5 hente den n\xE5v\xE6rende datoen i Swift inneb\xE6rer \xE5 bruke\
   \ `Date`-klassen for \xE5 f\xE5 tilgang til datoen og tiden appen blir kj\xF8rt.\
   \ Programmerere trenger \xE5 hente\u2026"
-lastmod: 2024-02-19 22:05:00.427074
+lastmod: '2024-02-25T18:49:39.331222-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i Swift inneb\xE6rer \xE5 bruke `Date`-klassen\
   \ for \xE5 f\xE5 tilgang til datoen og tiden appen blir kj\xF8rt. Programmerere\

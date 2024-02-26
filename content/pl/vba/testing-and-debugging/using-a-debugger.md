@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:03:30.504801-07:00
 description: "U\u017Cycie debugera w Visual Basic dla Aplikacji (VBA) polega na krokowym\
   \ uruchamianiu kodu w celu inspekcji jego przep\u0142ywu wykonania i stan\xF3w zmiennych.\u2026"
-lastmod: 2024-02-19 22:04:54.363911
+lastmod: '2024-02-25T18:49:33.602186-07:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cycie debugera w Visual Basic dla Aplikacji (VBA) polega na krokowym\
   \ uruchamianiu kodu w celu inspekcji jego przep\u0142ywu wykonania i stan\xF3w zmiennych.\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:52.677381-07:00
 description: "Trouver la longueur d'une cha\xEEne de caract\xE8res en Visual Basic\
   \ pour Applications (VBA) consiste \xE0 d\xE9terminer le nombre de caract\xE8res\
   \ qu'elle contient. Les\u2026"
-lastmod: 2024-02-19 22:05:16.345037
+lastmod: '2024-02-25T18:49:54.330215-07:00'
 model: gpt-4-0125-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res en Visual Basic pour\
   \ Applications (VBA) consiste \xE0 d\xE9terminer le nombre de caract\xE8res qu'elle\

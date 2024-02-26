@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "W PowerShellu zapis do strumienia b\u0142\u0119d\xF3w (standard error)\
   \ pozwala odseparowa\u0107 normalne wyniki dzia\u0142ania skryptu od komunikat\xF3\
   w o b\u0142\u0119dach. Programi\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.788537
+lastmod: '2024-02-25T18:49:34.016583-07:00'
 summary: "W PowerShellu zapis do strumienia b\u0142\u0119d\xF3w (standard error) pozwala\
   \ odseparowa\u0107 normalne wyniki dzia\u0142ania skryptu od komunikat\xF3w o b\u0142\
   \u0119dach. Programi\u015Bci\u2026"

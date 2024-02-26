@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:47.213583-07:00
 description: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
   \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"
-lastmod: 2024-02-19 22:05:09.868927
+lastmod: '2024-02-25T18:49:48.149309-07:00'
 model: gpt-4-0125-preview
 summary: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
   \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"

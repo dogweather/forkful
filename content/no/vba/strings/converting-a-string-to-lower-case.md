@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:17.848297-07:00
 description: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 transformere\
   \ alle store bokstaver i en streng til deres sm\xE5 bokstav-ekvivalenter. Denne\
   \ prosessen er\u2026"
-lastmod: 2024-02-19 22:04:59.849586
+lastmod: '2024-02-25T18:49:38.786980-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 transformere\
   \ alle store bokstaver i en streng til deres sm\xE5 bokstav-ekvivalenter. Denne\

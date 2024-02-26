@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:14.329355-07:00
 description: "Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelmiston\
   \ kehitysvaiheen aloittamista. Ohjelmoijat tekev\xE4t sen, jotta voivat ratkaista\u2026"
-lastmod: 2024-02-19 22:05:15.467187
+lastmod: '2024-02-25T18:49:53.488640-07:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelmiston\
   \ kehitysvaiheen aloittamista. Ohjelmoijat tekev\xE4t sen, jotta voivat ratkaista\u2026"

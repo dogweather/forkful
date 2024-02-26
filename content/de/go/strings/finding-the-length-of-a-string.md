@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:43.657527-07:00
 description: "Die L\xE4nge eines Strings in Go zu finden, bedeutet, die Anzahl der\
   \ Zeichen zu bestimmen, die er enth\xE4lt. Programmierer f\xFChren diese Operation\
   \ routinem\xE4\xDFig\u2026"
-lastmod: 2024-02-19 22:05:12.322661
+lastmod: '2024-02-25T18:49:50.479040-07:00'
 model: gpt-4-0125-preview
 summary: "Die L\xE4nge eines Strings in Go zu finden, bedeutet, die Anzahl der Zeichen\
   \ zu bestimmen, die er enth\xE4lt. Programmierer f\xFChren diese Operation routinem\xE4\

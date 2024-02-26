@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:17.077850-07:00
 description: "TOML, abreviatura de Tom's Obvious, Minimal Language, define c\xF3mo\
   \ estructurar archivos de configuraci\xF3n. Los programadores trabajan con TOML\
   \ porque es\u2026"
-lastmod: 2024-02-19 22:05:17.985913
+lastmod: '2024-02-25T18:49:55.951110-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, abreviatura de Tom's Obvious, Minimal Language, define c\xF3mo estructurar\
   \ archivos de configuraci\xF3n. Los programadores trabajan con TOML porque es\u2026"

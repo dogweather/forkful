@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:11.076997-07:00
 description: "Reading command line arguments in Google Apps Script is a bit of a misnomer\
   \ because, unlike traditional command-line interfaces in programming languages\u2026"
-lastmod: 2024-02-19 22:05:18.190961
+lastmod: '2024-02-25T18:49:56.148718-07:00'
 model: gpt-4-0125-preview
 summary: "Reading command line arguments in Google Apps Script is a bit of a misnomer\
   \ because, unlike traditional command-line interfaces in programming languages\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:53.096448-07:00
 description: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tecken\
   \ som matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade\
   \ sekvenser. Detta\u2026"
-lastmod: 2024-02-19 22:04:56.752134
+lastmod: '2024-02-25T18:49:35.847364-07:00'
 model: gpt-4-1106-preview
 summary: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tecken som\
   \ matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade sekvenser.\

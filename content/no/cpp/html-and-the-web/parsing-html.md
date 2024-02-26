@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:29.859211-07:00
 description: "\xC5 parse HTML betyr \xE5 bryte ned HTML-innhold til noe et program\
   \ kan forst\xE5 og manipulere. Utviklere gj\xF8r dette for \xE5 trekke ut data,\
   \ manipulere innhold\u2026"
-lastmod: 2024-02-19 22:05:00.370120
+lastmod: '2024-02-25T18:49:39.277047-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML betyr \xE5 bryte ned HTML-innhold til noe et program kan\
   \ forst\xE5 og manipulere. Utviklere gj\xF8r dette for \xE5 trekke ut data, manipulere\

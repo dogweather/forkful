@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:37.633006-07:00
 description: "Starting a fresh Java project is like setting up a new canvas for your\
   \ masterpiece. Programmers kick off new projects to turn ideas into functional\u2026"
-lastmod: 2024-02-19 22:05:18.441319
+lastmod: '2024-02-25T18:49:56.394130-07:00'
 model: gpt-4-1106-preview
 summary: "Starting a fresh Java project is like setting up a new canvas for your masterpiece.\
   \ Programmers kick off new projects to turn ideas into functional\u2026"

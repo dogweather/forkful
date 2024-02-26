@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:05.342598-07:00
 description: "Printing debug output involves strategically placing log statements\
   \ in your code to display variable values, execution flow, or message errors during\u2026"
-lastmod: 2024-02-19 22:05:18.179322
+lastmod: '2024-02-25T18:49:56.137646-07:00'
 model: gpt-4-0125-preview
 summary: "Printing debug output involves strategically placing log statements in your\
   \ code to display variable values, execution flow, or message errors during\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:44.643420-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
   \ communiquer avec un serveur Web en fournissant des identifiants (username/password)\u2026"
-lastmod: 2024-02-19 22:05:16.309868
+lastmod: '2024-02-25T18:49:54.295495-07:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est communiquer\
   \ avec un serveur Web en fournissant des identifiants (username/password)\u2026"

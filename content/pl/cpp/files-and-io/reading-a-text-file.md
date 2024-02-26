@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:50.873895-07:00
 description: "Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych\
   \ w pliku na dysku. Programi\u015Bci robi\u0105 to, by umo\u017Cliwi\u0107 aplikacjom\
   \ korzystanie z\u2026"
-lastmod: 2024-02-19 22:04:54.877247
+lastmod: '2024-02-25T18:49:34.102285-07:00'
 model: gpt-4-1106-preview
 summary: "Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych\
   \ w pliku na dysku. Programi\u015Bci robi\u0105 to, by umo\u017Cliwi\u0107 aplikacjom\

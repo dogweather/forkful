@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:04.476648-07:00
 description: "Wyra\u017Cenia regularne w programowaniu to sekwencje znak\xF3w definiuj\u0105\
   ce wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ci\u0105\
   gami\u2026"
-lastmod: 2024-02-19 22:04:54.575803
+lastmod: '2024-02-25T18:49:33.805600-07:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne w programowaniu to sekwencje znak\xF3w definiuj\u0105\
   ce wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ci\u0105\

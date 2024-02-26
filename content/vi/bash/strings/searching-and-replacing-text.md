@@ -6,7 +6,7 @@ description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong bash 
   \ ngh\u0129a l\xE0 thay th\u1EBF t\u1EEB ho\u1EB7c m\u1EABu trong m\u1ED9t chu\u1ED7\
   i ho\u1EB7c t\u1EC7p b\u1EB1ng th\u1EE9 g\xEC \u0111\xF3 kh\xE1c. \u0110\xE2y l\xE0\
   \ m\u1ED9t nhi\u1EC7m v\u1EE5 h\xE0ng ng\xE0y cho\u2026"
-lastmod: 2024-02-19 22:04:56.045069
+lastmod: '2024-02-25T18:49:35.201226-07:00'
 model: gpt-4-0125-preview
 summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong bash c\xF3\
   \ ngh\u0129a l\xE0 thay th\u1EBF t\u1EEB ho\u1EB7c m\u1EABu trong m\u1ED9t chu\u1ED7\

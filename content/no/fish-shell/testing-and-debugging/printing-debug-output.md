@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:42.813239-07:00
 description: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva koden\
   \ v\xE5r egentlig gj\xF8r. Programmerere bruker dette for \xE5 finne bugs eller\
   \ forst\xE5 flyten\u2026"
-lastmod: 2024-02-19 22:05:00.508929
+lastmod: '2024-02-25T18:49:39.407228-07:00'
 model: gpt-4-1106-preview
 summary: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva koden\
   \ v\xE5r egentlig gj\xF8r. Programmerere bruker dette for \xE5 finne bugs eller\

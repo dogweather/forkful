@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:50.076982-07:00
 description: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on kyse\
   \ yleisten tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4\
   en Ruby-\u2026"
-lastmod: 2024-02-19 22:05:15.990507
+lastmod: '2024-02-25T18:49:53.985872-07:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on kyse yleisten\
   \ tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4en Ruby-\u2026"

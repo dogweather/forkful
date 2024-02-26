@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:40.040450-07:00
 description: "Travailler avec XML en Elixir implique de parser, cr\xE9er et manipuler\
   \ des donn\xE9es XML. Les programmeurs s'attaquent \xE0 XML car il est largement\
   \ r\xE9pandu dans\u2026"
-lastmod: 2024-02-19 22:05:16.249145
+lastmod: '2024-02-25T18:49:54.235619-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en Elixir implique de parser, cr\xE9er et manipuler\
   \ des donn\xE9es XML. Les programmeurs s'attaquent \xE0 XML car il est largement\

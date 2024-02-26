@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:38.543193-07:00
 description: "Mettere tutto il tuo codice in un grande mucchio? Brutta idea. Dividerlo\
   \ in funzioni? Buona idea. Mantiene il tuo codice Elm pulito, riutilizzabile e pi\xF9\
   \u2026"
-lastmod: 2024-02-19 22:05:02.417721
+lastmod: '2024-02-25T18:49:41.223083-07:00'
 model: gpt-4-1106-preview
 summary: "Mettere tutto il tuo codice in un grande mucchio? Brutta idea. Dividerlo\
   \ in funzioni? Buona idea. Mantiene il tuo codice Elm pulito, riutilizzabile e pi\xF9\

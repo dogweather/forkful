@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:08.821698-07:00
 description: "Converting a string to lower case in Google Apps Script, a cloud-based\
   \ scripting language for automating tasks across Google products, is a fundamental\u2026"
-lastmod: 2024-02-19 22:05:18.165205
+lastmod: '2024-02-25T18:49:56.123882-07:00'
 model: gpt-4-0125-preview
 summary: "Converting a string to lower case in Google Apps Script, a cloud-based scripting\
   \ language for automating tasks across Google products, is a fundamental\u2026"

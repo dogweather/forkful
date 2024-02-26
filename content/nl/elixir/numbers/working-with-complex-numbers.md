@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:13.669953-07:00
 description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
   \ `3 + 4i`). Ze worden gebruikt in de techniek, fysica, en bepaalde computerproblemen.\u2026"
-lastmod: 2024-02-19 22:05:09.546165
+lastmod: '2024-02-25T18:49:47.848596-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
   \ `3 + 4i`). Ze worden gebruikt in de techniek, fysica, en bepaalde computerproblemen.\u2026"

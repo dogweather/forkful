@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:44.647749-07:00
 description: "U\u017Cywanie debugera w programowaniu w Go polega na wykorzystaniu\
   \ narz\u0119dzi lub funkcji do inspekcji i modyfikacji stanu dzia\u0142aj\u0105\
   cego programu w celu\u2026"
-lastmod: 2024-02-19 22:04:54.041916
+lastmod: '2024-02-25T18:49:33.281485-07:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cywanie debugera w programowaniu w Go polega na wykorzystaniu narz\u0119\
   dzi lub funkcji do inspekcji i modyfikacji stanu dzia\u0142aj\u0105cego programu\

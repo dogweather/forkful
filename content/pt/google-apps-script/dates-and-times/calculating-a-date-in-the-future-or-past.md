@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:49:01.827437-07:00
 description: "Calcular uma data no futuro ou no passado trata-se de manipular objetos\
   \ de data para encontrar datas al\xE9m ou antes da data presente, respectivamente.\u2026"
-lastmod: 2024-02-19 22:05:05.192198
+lastmod: '2024-02-25T18:49:43.786038-07:00'
 model: gpt-4-0125-preview
 summary: "Calcular uma data no futuro ou no passado trata-se de manipular objetos\
   \ de data para encontrar datas al\xE9m ou antes da data presente, respectivamente.\u2026"

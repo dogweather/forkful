@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:15.927104-07:00
 description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en\
   \ Haskell implique la conversion de repr\xE9sentations textuelles de dates en un\
   \ format structur\xE9\u2026"
-lastmod: 2024-02-19 22:05:16.581066
+lastmod: '2024-02-25T18:49:54.565916-07:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en Haskell\
   \ implique la conversion de repr\xE9sentations textuelles de dates en un format\

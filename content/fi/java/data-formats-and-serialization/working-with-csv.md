@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:28.500154-07:00
 description: "CSV-tiedostojen k\xE4sittelyyn kuuluu lukeminen ja kirjoittaminen pilkuilla\
   \ erotettuihin arvoihin (CSV) tiedostoihin, mik\xE4 on suosittu tiedonvaihdon muoto,\u2026"
-lastmod: 2024-02-19 22:05:15.363095
+lastmod: '2024-02-25T18:49:53.388590-07:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen k\xE4sittelyyn kuuluu lukeminen ja kirjoittaminen pilkuilla\
   \ erotettuihin arvoihin (CSV) tiedostoihin, mik\xE4 on suosittu tiedonvaihdon muoto,\u2026"

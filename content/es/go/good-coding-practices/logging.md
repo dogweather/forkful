@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:55.244930-07:00
 description: "El registro (logging) en el desarrollo de software es el proceso de\
   \ grabar informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\
   \ su\u2026"
-lastmod: 2024-02-19 22:05:17.121979
+lastmod: '2024-02-25T18:49:55.092961-07:00'
 model: gpt-4-0125-preview
 summary: "El registro (logging) en el desarrollo de software es el proceso de grabar\
   \ informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\

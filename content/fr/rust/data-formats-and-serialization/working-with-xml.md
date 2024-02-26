@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:36.755185-07:00
 description: "XML, abr\xE9viation de eXtensible Markup Language, est comme le cousin\
   \ verbeux de JSON. Vous aurez \xE0 vous d\xE9battre avec XML lors de la manipulation\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:16.334920
+lastmod: '2024-02-25T18:49:54.320195-07:00'
 model: gpt-4-0125-preview
 summary: "XML, abr\xE9viation de eXtensible Markup Language, est comme le cousin verbeux\
   \ de JSON. Vous aurez \xE0 vous d\xE9battre avec XML lors de la manipulation de\u2026"

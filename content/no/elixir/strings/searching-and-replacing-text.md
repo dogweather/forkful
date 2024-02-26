@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:47.894526-07:00
 description: "S\xF8king og erstattning av tekst lar oss finne bestemte ord eller uttrykk\
   \ og bytte dem ut med noe annet. Programmerere gj\xF8r dette for \xE5 oppdatere\
   \ kode,\u2026"
-lastmod: 2024-02-19 22:04:59.715538
+lastmod: '2024-02-25T18:49:38.656619-07:00'
 model: gpt-4-1106-preview
 summary: "S\xF8king og erstattning av tekst lar oss finne bestemte ord eller uttrykk\
   \ og bytte dem ut med noe annet. Programmerere gj\xF8r dette for \xE5 oppdatere\

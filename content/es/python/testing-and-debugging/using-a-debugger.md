@@ -3,7 +3,7 @@ date: 2024-01-26 03:50:57.351341-07:00
 description: "\"Usar un depurador\" se trata de avanzar paso a paso por tu c\xF3digo\
   \ Python para descubrir errores y entender el comportamiento. Lo hacemos porque\
   \ es mucho\u2026"
-lastmod: 2024-02-19 22:05:17.210823
+lastmod: '2024-02-25T18:49:55.182105-07:00'
 model: gpt-4-0125-preview
 summary: "\"Usar un depurador\" se trata de avanzar paso a paso por tu c\xF3digo Python\
   \ para descubrir errores y entender el comportamiento. Lo hacemos porque es mucho\u2026"

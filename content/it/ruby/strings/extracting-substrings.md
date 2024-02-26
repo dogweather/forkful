@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:33.980109-07:00
 description: "Estrarre sottostringhe significa selezionare parti specifiche di una\
   \ stringa. Programmatori lo fanno per manipolare testo: validare input, estrarre\
   \ dati,\u2026"
-lastmod: 2024-02-19 22:05:03.010562
+lastmod: '2024-02-25T18:49:41.776515-07:00'
 model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa selezionare parti specifiche di una stringa.\
   \ Programmatori lo fanno per manipolare testo: validare input, estrarre dati,\u2026"

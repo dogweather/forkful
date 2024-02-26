@@ -2,7 +2,7 @@
 date: 2024-01-27 16:21:33.298146-07:00
 description: "Manipuler des fichiers avec des lignes de commande (CLI) one-liners\
   \ en Ruby consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\u2026"
-lastmod: 2024-02-19 22:05:17.064518
+lastmod: '2024-02-25T18:49:55.037370-07:00'
 model: gpt-4-0125-preview
 summary: "Manipuler des fichiers avec des lignes de commande (CLI) one-liners en Ruby\
   \ consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:12.163406-07:00
 description: "Konvertering av dato til streng gj\xF8r datoen lesbar for mennesker.\
   \ Dette er nyttig for visning, logging eller formatert utveksling mellom systemer."
-lastmod: 2024-02-19 22:05:00.074291
+lastmod: '2024-02-25T18:49:38.982752-07:00'
 model: gpt-4-1106-preview
 summary: "Konvertering av dato til streng gj\xF8r datoen lesbar for mennesker. Dette\
   \ er nyttig for visning, logging eller formatert utveksling mellom systemer."

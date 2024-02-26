@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:37.287113-07:00
 description: "(\u0429\u043E \u0456 \u0427\u043E\u043C\u0443?) String interpolation\
   \ allows embedding expressions within string literals. Programmers use it to concatenate\
   \ strings and expressions neatly\u2026"
-lastmod: 2024-02-19 22:05:07.852302
+lastmod: '2024-02-25T18:49:46.329010-07:00'
 model: gpt-4-1106-preview
 summary: "(\u0429\u043E \u0456 \u0427\u043E\u043C\u0443?) String interpolation allows\
   \ embedding expressions within string literals. Programmers use it to concatenate\

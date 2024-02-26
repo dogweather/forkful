@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:46.387430-07:00
 description: "Reading command line arguments lets a program grab data right from the\
   \ terminal\u2014stuff like settings or file names. Programmers do it to customize\
   \ a\u2026"
-lastmod: 2024-02-19 22:05:18.304679
+lastmod: '2024-02-25T18:49:56.259325-07:00'
 model: gpt-4-1106-preview
 summary: "Reading command line arguments lets a program grab data right from the terminal\u2014\
   stuff like settings or file names. Programmers do it to customize a\u2026"

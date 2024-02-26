@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:50.041102-07:00
 description: "El registro (logging) en programaci\xF3n implica grabar eventos, errores\
   \ u ocurrencias notables durante el tiempo de ejecuci\xF3n. Los programadores lo\
   \ hacen\u2026"
-lastmod: 2024-02-19 22:05:17.168673
+lastmod: '2024-02-25T18:49:55.140432-07:00'
 model: gpt-4-0125-preview
 summary: "El registro (logging) en programaci\xF3n implica grabar eventos, errores\
   \ u ocurrencias notables durante el tiempo de ejecuci\xF3n. Los programadores lo\

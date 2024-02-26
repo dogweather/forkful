@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:38.647184-07:00
 description: "Att tolka HTML inneb\xE4r att bryta ner HTML-inneh\xE5ll till n\xE5\
   got som ett program kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta\
   \ f\xF6r att extrahera data,\u2026"
-lastmod: 2024-02-19 22:04:57.443822
+lastmod: '2024-02-25T18:49:36.522122-07:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r att bryta ner HTML-inneh\xE5ll till n\xE5got som\
   \ ett program kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta f\xF6\

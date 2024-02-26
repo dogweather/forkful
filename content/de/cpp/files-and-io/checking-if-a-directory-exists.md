@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:56.732375-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen,\
   \ ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen\
   \ wie\u2026"
-lastmod: 2024-02-19 22:05:13.133003
+lastmod: '2024-02-25T18:49:51.248833-07:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen,\
   \ ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen\

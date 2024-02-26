@@ -5,7 +5,7 @@ date: 2024-01-30 19:11:44.433916-07:00
 description: "Gli array associativi in Lua sono come strette di mano segrete per i\
   \ dati \u2014 invece di avere solo numeri che si allineano diligentemente per indice,\
   \ le tue\u2026"
-lastmod: 2024-02-19 22:05:02.618915
+lastmod: '2024-02-25T18:49:41.413979-07:00'
 model: gpt-4-0125-preview
 summary: "Gli array associativi in Lua sono come strette di mano segrete per i dati\
   \ \u2014 invece di avere solo numeri che si allineano diligentemente per indice,\

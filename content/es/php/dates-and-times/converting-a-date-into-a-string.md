@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:58.611362-07:00
 description: "Convertir una fecha a cadena en PHP implica pasar de un formato de fecha\
   \ a uno de texto. Esto es clave para manejar fechas en formatos legibles por\u2026"
-lastmod: 2024-02-19 22:05:17.679348
+lastmod: '2024-02-25T18:49:55.642399-07:00'
 model: gpt-4-1106-preview
 summary: "Convertir una fecha a cadena en PHP implica pasar de un formato de fecha\
   \ a uno de texto. Esto es clave para manejar fechas en formatos legibles por\u2026"

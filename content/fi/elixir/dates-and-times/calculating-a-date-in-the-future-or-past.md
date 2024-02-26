@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:34.558383-07:00
 description: "Menneiden tai tulevien p\xE4ivien laskenta on p\xE4iv\xE4m\xE4\xE4rien\
   \ manipulointia. Sit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi vanhentumisp\xE4ivien, tapahtumien\
   \ ajoitusten tai\u2026"
-lastmod: 2024-02-19 22:05:15.181453
+lastmod: '2024-02-25T18:49:53.213787-07:00'
 model: gpt-4-1106-preview
 summary: "Menneiden tai tulevien p\xE4ivien laskenta on p\xE4iv\xE4m\xE4\xE4rien manipulointia.\
   \ Sit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi vanhentumisp\xE4ivien, tapahtumien ajoitusten\

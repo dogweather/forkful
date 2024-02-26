@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:09:43.174356-07:00
 description: "Obtener la fecha actual en JavaScript es una tarea fundamental, que\
   \ implica recuperar y posiblemente manipular la fecha y hora de hoy. Los programadores\u2026"
-lastmod: 2024-02-19 22:05:17.973066
+lastmod: '2024-02-25T18:49:55.938401-07:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en JavaScript es una tarea fundamental, que implica\
   \ recuperar y posiblemente manipular la fecha y hora de hoy. Los programadores\u2026"

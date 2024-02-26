@@ -2,7 +2,7 @@
 date: 2024-01-20 17:48:16.922077-07:00
 description: "Sapere la lunghezza di una stringa significa contarne i caratteri. I\
   \ programmatori lo fanno per validazione, manipolazione o semplicemente per avere\u2026"
-lastmod: 2024-02-19 22:05:02.269998
+lastmod: '2024-02-25T18:49:41.085158-07:00'
 model: gpt-4-1106-preview
 summary: "Sapere la lunghezza di una stringa significa contarne i caratteri. I programmatori\
   \ lo fanno per validazione, manipolazione o semplicemente per avere\u2026"

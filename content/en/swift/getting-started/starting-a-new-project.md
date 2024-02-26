@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:29.139305-07:00
 description: "Starting a new project is just rolling up your sleeves and setting up\
   \ the initial environment and files for your coding adventure. Programmers kick\
   \ off\u2026"
-lastmod: 2024-02-19 22:05:18.858401
+lastmod: '2024-02-25T18:49:56.832916-07:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project is just rolling up your sleeves and setting up the\
   \ initial environment and files for your coding adventure. Programmers kick off\u2026"

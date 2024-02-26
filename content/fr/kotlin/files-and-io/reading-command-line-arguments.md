@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:12.949992-07:00
 description: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des donn\xE9\
   es fournies lorsque vous lancez votre programme. C'est crucial car \xE7a permet\
   \ aux\u2026"
-lastmod: 2024-02-19 22:05:16.500596
+lastmod: '2024-02-25T18:49:54.488003-07:00'
 model: gpt-4-1106-preview
 summary: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des donn\xE9\
   es fournies lorsque vous lancez votre programme. C'est crucial car \xE7a permet\

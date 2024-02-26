@@ -2,7 +2,7 @@
 date: 2024-01-26 00:50:03.952948-07:00
 description: "H\xE5ndtering av feil i C# dreier seg om \xE5 h\xE5ndtere det uventede\u2014\
   som \xE5 snuble i skolissene. Programmer kan snuble over d\xE5rlige data eller ustabile\u2026"
-lastmod: 2024-02-19 22:05:00.069995
+lastmod: '2024-02-25T18:49:38.978835-07:00'
 model: gpt-4-1106-preview
 summary: "H\xE5ndtering av feil i C# dreier seg om \xE5 h\xE5ndtere det uventede\u2014\
   som \xE5 snuble i skolissene. Programmer kan snuble over d\xE5rlige data eller ustabile\u2026"

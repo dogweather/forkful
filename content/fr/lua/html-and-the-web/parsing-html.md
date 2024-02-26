@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:25.055990-07:00
 description: "L'analyse du HTML implique l'extraction de donn\xE9es et d'informations\
   \ \xE0 partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:16.656075
+lastmod: '2024-02-25T18:49:54.639714-07:00'
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML implique l'extraction de donn\xE9es et d'informations\
   \ \xE0 partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse\

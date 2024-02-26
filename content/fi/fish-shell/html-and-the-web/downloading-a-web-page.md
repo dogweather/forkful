@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:53.722354-07:00
 description: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n netist\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan analysointiin, testaukseen tai automatisointiin."
-lastmod: 2024-02-19 22:05:15.887579
+lastmod: '2024-02-25T18:49:53.900579-07:00'
 model: gpt-4-1106-preview
 summary: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n netist\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan analysointiin, testaukseen tai automatisointiin."

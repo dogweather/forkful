@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:21.402020-07:00
 description: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA)\
   \ \xE4r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\
   \ och databaser.\u2026"
-lastmod: 2024-02-19 22:04:56.931837
+lastmod: '2024-02-25T18:49:36.021436-07:00'
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA) \xE4\
   r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\

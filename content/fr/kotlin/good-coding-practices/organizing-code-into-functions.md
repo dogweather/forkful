@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:56.504995-07:00
 description: "Organiser le code en fonctions signifie diviser votre programme en morceaux\
   \ r\xE9utilisables, chacun g\xE9rant une t\xE2che sp\xE9cifique. Nous faisons cela\
   \ pour\u2026"
-lastmod: 2024-02-19 22:05:16.490698
+lastmod: '2024-02-25T18:49:54.478057-07:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions signifie diviser votre programme en morceaux\
   \ r\xE9utilisables, chacun g\xE9rant une t\xE2che sp\xE9cifique. Nous faisons cela\

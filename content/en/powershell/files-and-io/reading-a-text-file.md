@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:00.852821-07:00
 description: "Reading a text file means pulling its content into a form your program\
   \ can work with. Programmers do it for data processing, configuration, logging \u2013\
   \u2026"
-lastmod: 2024-02-19 22:05:18.762535
+lastmod: '2024-02-25T18:49:56.738205-07:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file means pulling its content into a form your program can\
   \ work with. Programmers do it for data processing, configuration, logging \u2013\

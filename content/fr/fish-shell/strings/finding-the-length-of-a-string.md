@@ -2,7 +2,7 @@
 date: 2024-01-20 17:47:11.905892-07:00
 description: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de caract\xE8\
   res qu'elle contient. C'est essentiel pour valider des donn\xE9es, trancher des\u2026"
-lastmod: 2024-02-19 22:05:16.963537
+lastmod: '2024-02-25T18:49:54.940742-07:00'
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de caract\xE8\
   res qu'elle contient. C'est essentiel pour valider des donn\xE9es, trancher des\u2026"

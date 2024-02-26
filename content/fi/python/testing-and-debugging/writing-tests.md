@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:35.869506-07:00
 description: "Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien\
   \ luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n\u2026"
-lastmod: 2024-02-19 22:05:15.073149
+lastmod: '2024-02-25T18:49:53.121513-07:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien\
   \ luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekev\xE4t t\xE4\

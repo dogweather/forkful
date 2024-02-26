@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:36.688714-07:00
 description: "Das Arbeiten mit CSV-Dateien (Comma-Separated Values, also durch Kommas\
   \ getrennte Werte) ist eine g\xE4ngige Aufgabe beim Verwalten und Manipulieren von\u2026"
-lastmod: 2024-02-19 22:05:13.058004
+lastmod: '2024-02-25T18:49:51.177776-07:00'
 model: gpt-4-0125-preview
 summary: "Das Arbeiten mit CSV-Dateien (Comma-Separated Values, also durch Kommas\
   \ getrennte Werte) ist eine g\xE4ngige Aufgabe beim Verwalten und Manipulieren von\u2026"

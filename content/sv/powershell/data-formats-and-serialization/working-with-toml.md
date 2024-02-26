@@ -3,7 +3,7 @@ date: 2024-01-26 04:25:04.496779-07:00
 description: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4\
   r ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\
   \ semantik.\u2026"
-lastmod: 2024-02-19 22:04:57.383298
+lastmod: '2024-02-25T18:49:36.464448-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r\
   \ ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\

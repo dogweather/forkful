@@ -3,7 +3,7 @@ date: 2024-01-26 04:21:20.878884-07:00
 description: "TOML est un format de fichier de configuration, facile \xE0 lire et\
   \ \xE0 \xE9crire pour les humains, et facile \xE0 analyser et \xE0 g\xE9n\xE9rer\
   \ pour les machines. Les\u2026"
-lastmod: 2024-02-19 22:05:16.999672
+lastmod: '2024-02-25T18:49:54.975103-07:00'
 model: gpt-4-0125-preview
 summary: "TOML est un format de fichier de configuration, facile \xE0 lire et \xE0\
   \ \xE9crire pour les humains, et facile \xE0 analyser et \xE0 g\xE9n\xE9rer pour\

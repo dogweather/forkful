@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:50.946982-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C implica\
   \ crear una solicitud HTTP que incluya un encabezado de Autorizaci\xF3n con credenciales\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:18.052426
+lastmod: '2024-02-25T18:49:56.013714-07:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C implica crear\
   \ una solicitud HTTP que incluya un encabezado de Autorizaci\xF3n con credenciales\

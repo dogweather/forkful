@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:15:24.671649-07:00
 description: "Das Schreiben einer Textdatei in Go umfasst das Erstellen und Schreiben\
   \ von Zeichenketten von Daten in eine neue oder vorhandene Textdatei. Programmierer\u2026"
-lastmod: 2024-02-19 22:05:12.353725
+lastmod: '2024-02-25T18:49:50.508132-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Go umfasst das Erstellen und Schreiben\
   \ von Zeichenketten von Daten in eine neue oder vorhandene Textdatei. Programmierer\u2026"

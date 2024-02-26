@@ -2,7 +2,7 @@
 date: 2024-01-26 04:42:54.264007-07:00
 description: "Komplekse tall er tall med en reel og en imagin\xE6r del (som 3 + 4i).\
   \ De dukker opp i ulike programmeringsproblemer, spesielt i signalbehandling,\u2026"
-lastmod: 2024-02-19 22:05:00.454138
+lastmod: '2024-02-25T18:49:39.356504-07:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall er tall med en reel og en imagin\xE6r del (som 3 + 4i). De\
   \ dukker opp i ulike programmeringsproblemer, spesielt i signalbehandling,\u2026"

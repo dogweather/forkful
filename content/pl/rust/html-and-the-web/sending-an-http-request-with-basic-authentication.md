@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:43.912205-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to proces, gdzie przekazujesz nazw\u0119 u\u017Cytkownika i has\u0142o w nag\u0142\
   \xF3wku, aby uzyska\u0107 dost\u0119p do zasob\xF3w\u2026"
-lastmod: 2024-02-19 22:04:54.310823
+lastmod: '2024-02-25T18:49:33.551685-07:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to proces, gdzie przekazujesz nazw\u0119 u\u017Cytkownika i has\u0142o w nag\u0142\

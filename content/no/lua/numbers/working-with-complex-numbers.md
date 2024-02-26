@@ -2,7 +2,7 @@
 date: 2024-01-26 04:43:09.880899-07:00
 description: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen til\
   \ det todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse. Programmerere\u2026"
-lastmod: 2024-02-19 22:05:00.187882
+lastmod: '2024-02-25T18:49:39.096208-07:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen til det\
   \ todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse. Programmerere\u2026"

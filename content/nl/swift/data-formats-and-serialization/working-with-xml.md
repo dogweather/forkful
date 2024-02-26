@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:31.885458-07:00
 description: "Werken met XML betekent het parseren en genereren van XML-gegevens in\
   \ Swift. Programmeurs doen dit voor gegevensuitwisseling, vooral wanneer ze integreren\u2026"
-lastmod: 2024-02-19 22:05:10.268771
+lastmod: '2024-02-25T18:49:48.511862-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren en genereren van XML-gegevens in Swift.\
   \ Programmeurs doen dit voor gegevensuitwisseling, vooral wanneer ze integreren\u2026"

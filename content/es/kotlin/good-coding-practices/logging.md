@@ -3,7 +3,7 @@ date: 2024-01-26 01:06:48.729910-07:00
 description: "El registro de eventos, en esencia, es la pr\xE1ctica de grabar eventos\
   \ y datos de una aplicaci\xF3n de software a una salida externa, como un archivo\
   \ o\u2026"
-lastmod: 2024-02-19 22:05:17.549459
+lastmod: '2024-02-25T18:49:55.514238-07:00'
 model: gpt-4-1106-preview
 summary: "El registro de eventos, en esencia, es la pr\xE1ctica de grabar eventos\
   \ y datos de una aplicaci\xF3n de software a una salida externa, como un archivo\

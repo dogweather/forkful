@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:04.144975-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
   \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\
   es, jogos e sistemas de\u2026"
-lastmod: 2024-02-19 22:05:05.171021
+lastmod: '2024-02-25T18:49:43.766428-07:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
   \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\

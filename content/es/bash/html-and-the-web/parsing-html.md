@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:21.220880-07:00
 description: "Parsear HTML significa tamizar la estructura y el contenido de un archivo\
   \ HTML para extraer informaci\xF3n. Los programadores lo hacen para acceder a datos,\u2026"
-lastmod: 2024-02-19 22:05:17.751580
+lastmod: '2024-02-25T18:49:55.715243-07:00'
 model: gpt-4-0125-preview
 summary: "Parsear HTML significa tamizar la estructura y el contenido de un archivo\
   \ HTML para extraer informaci\xF3n. Los programadores lo hacen para acceder a datos,\u2026"

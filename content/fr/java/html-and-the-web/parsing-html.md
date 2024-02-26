@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:19.183377-07:00
 description: "L'analyse HTML implique de fouiller dans le balisage pour extraire des\
   \ donn\xE9es comme du texte, des liens ou d'autres \xE9l\xE9ments. Nous le faisons\
   \ pour\u2026"
-lastmod: 2024-02-19 22:05:16.398308
+lastmod: '2024-02-25T18:49:54.385505-07:00'
 model: gpt-4-0125-preview
 summary: "L'analyse HTML implique de fouiller dans le balisage pour extraire des donn\xE9\
   es comme du texte, des liens ou d'autres \xE9l\xE9ments. Nous le faisons pour\u2026"

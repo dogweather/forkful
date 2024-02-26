@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:11.924149-07:00
 description: "Dateien direkt im Terminal mit CLI (Command Line Interface)-Einzeilern\
   \ in Ruby zu bearbeiten, erm\xF6glich es Ihnen, Dateien direkt vom Terminal aus\
   \ zu\u2026"
-lastmod: 2024-02-19 22:05:13.336954
+lastmod: '2024-02-25T18:49:51.443485-07:00'
 model: gpt-4-0125-preview
 summary: "Dateien direkt im Terminal mit CLI (Command Line Interface)-Einzeilern in\
   \ Ruby zu bearbeiten, erm\xF6glich es Ihnen, Dateien direkt vom Terminal aus zu\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:38.685590-07:00
 description: "Werken met YAML betekent het parsen en genereren van YAML-geformatteerde\
   \ data, een voor mensen leesbare standaard voor data-serialisatie. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:09.574525
+lastmod: '2024-02-25T18:49:47.875150-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met YAML betekent het parsen en genereren van YAML-geformatteerde\
   \ data, een voor mensen leesbare standaard voor data-serialisatie. Programmeurs\u2026"

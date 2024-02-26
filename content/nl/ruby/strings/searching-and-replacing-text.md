@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:22.197976-07:00
 description: "Zoeken en vervangen van tekst is het verwisselen van specifieke woorden\
   \ of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij\u2026"
-lastmod: 2024-02-19 22:05:10.409220
+lastmod: '2024-02-25T18:49:48.643580-07:00'
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst is het verwisselen van specifieke woorden\
   \ of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij\u2026"

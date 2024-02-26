@@ -3,7 +3,7 @@ date: 2024-01-26 04:42:03.153866-07:00
 description: "Les nombres complexes sont des nombres ayant une partie r\xE9elle et\
   \ une partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers probl\xE8mes\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:16.914387
+lastmod: '2024-02-25T18:49:54.901969-07:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes sont des nombres ayant une partie r\xE9elle et une\
   \ partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers probl\xE8mes de\u2026"

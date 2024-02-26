@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:50.895109-07:00
 description: "Trabajar con CSV (Valores Separados por Comas) implica leer y escribir\
   \ datos en archivos CSV, un formato com\xFAn para almacenar datos tabulares. Los\u2026"
-lastmod: 2024-02-19 22:05:17.228557
+lastmod: '2024-02-25T18:49:55.199530-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con CSV (Valores Separados por Comas) implica leer y escribir datos\
   \ en archivos CSV, un formato com\xFAn para almacenar datos tabulares. Los\u2026"

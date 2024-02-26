@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:17.887275-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP significa solicitar dados ou servi\xE7\
   os atrav\xE9s da internet. Programadores fazem isso para interagir com APIs, servi\xE7\
   os web, ou\u2026"
-lastmod: 2024-02-19 22:05:05.804582
+lastmod: '2024-02-25T18:49:44.369229-07:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP significa solicitar dados ou servi\xE7\
   os atrav\xE9s da internet. Programadores fazem isso para interagir com APIs, servi\xE7\

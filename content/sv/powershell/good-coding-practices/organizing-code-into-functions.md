@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:44.591230-07:00
 description: "Att organisera kod i funktioner handlar om att kapsla in delar av kod\
   \ som utf\xF6r specifika uppgifter och ge dem ett namn. Det g\xF6rs f\xF6r att g\xF6\
   ra koden\u2026"
-lastmod: 2024-02-19 22:04:57.364447
+lastmod: '2024-02-25T18:49:36.446543-07:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att kapsla in delar av kod som\
   \ utf\xF6r specifika uppgifter och ge dem ett namn. Det g\xF6rs f\xF6r att g\xF6\

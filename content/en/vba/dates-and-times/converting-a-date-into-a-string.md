@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:19.679520-07:00
 description: "Converting a date into a string in Visual Basic for Applications (VBA)\
   \ is a process used for changing the data type of a date to a string format.\u2026"
-lastmod: 2024-02-19 22:05:18.413294
+lastmod: '2024-02-25T18:49:56.367006-07:00'
 model: gpt-4-0125-preview
 summary: "Converting a date into a string in Visual Basic for Applications (VBA) is\
   \ a process used for changing the data type of a date to a string format.\u2026"

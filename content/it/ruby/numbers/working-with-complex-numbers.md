@@ -2,7 +2,7 @@
 date: 2024-01-26 04:45:16.769770-07:00
 description: "I numeri complessi, costituiti da una parte reale e una immaginaria\
   \ (come 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano\u2026"
-lastmod: 2024-02-19 22:05:03.015377
+lastmod: '2024-02-25T18:49:41.781310-07:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi, costituiti da una parte reale e una immaginaria (come\
   \ 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano\u2026"

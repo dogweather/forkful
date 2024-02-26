@@ -3,7 +3,7 @@ date: 2024-01-26 04:41:55.018579-07:00
 description: "N\xFAmeros complexos expandem a linha dos n\xFAmeros reais atrav\xE9\
   s da adi\xE7\xE3o de uma unidade imagin\xE1ria, `i`, onde `i^2 = -1`. Eles s\xE3\
   o cruciais em campos como\u2026"
-lastmod: 2024-02-19 22:05:05.488501
+lastmod: '2024-02-25T18:49:44.071143-07:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos expandem a linha dos n\xFAmeros reais atrav\xE9s da\
   \ adi\xE7\xE3o de uma unidade imagin\xE1ria, `i`, onde `i^2 = -1`. Eles s\xE3o cruciais\

@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:37.470710-07:00
 description: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you test\
   \ code in real time. Programmers use it to experiment, debug, and learn Ruby's nuances\u2026"
-lastmod: 2024-02-19 22:05:19.014135
+lastmod: '2024-02-25T18:49:56.989251-07:00'
 model: gpt-4-1106-preview
 summary: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you test code\
   \ in real time. Programmers use it to experiment, debug, and learn Ruby's nuances\u2026"

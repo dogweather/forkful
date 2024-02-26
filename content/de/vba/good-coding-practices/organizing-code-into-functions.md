@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:56:29.608672-07:00
 description: "Code in Funktionen in Visual Basic f\xFCr Anwendungen (VBA) zu organisieren,\
   \ bedeutet, ein Programm in kleinere, handhabbare St\xFCcke, bekannt als Funktionen,\u2026"
-lastmod: 2024-02-19 22:05:12.648655
+lastmod: '2024-02-25T18:49:50.790422-07:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen in Visual Basic f\xFCr Anwendungen (VBA) zu organisieren,\
   \ bedeutet, ein Programm in kleinere, handhabbare St\xFCcke, bekannt als Funktionen,\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:35.147376-07:00
 description: "XML (eXtensible Markup Language) trata-se de estruturar dados em um\
   \ formato leg\xEDvel. Programadores manipulam o XML para configura\xE7\xE3o, troca\
   \ de dados entre\u2026"
-lastmod: 2024-02-19 22:05:05.651883
+lastmod: '2024-02-25T18:49:44.229540-07:00'
 model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) trata-se de estruturar dados em um formato\
   \ leg\xEDvel. Programadores manipulam o XML para configura\xE7\xE3o, troca de dados\

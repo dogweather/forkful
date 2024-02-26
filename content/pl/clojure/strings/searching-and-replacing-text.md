@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:29.505163-07:00
 description: "Wyszukiwanie i zamiana tekstu to podstawy manipulacji stringami. Programi\u015B\
   ci robi\u0105 to, by zmieni\u0107 kod, poprawi\u0107 dane, albo automatycznie aktualizowa\u0107\
   \u2026"
-lastmod: 2024-02-19 22:04:54.161785
+lastmod: '2024-02-25T18:49:33.403762-07:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to podstawy manipulacji stringami. Programi\u015B\
   ci robi\u0105 to, by zmieni\u0107 kod, poprawi\u0107 dane, albo automatycznie aktualizowa\u0107\

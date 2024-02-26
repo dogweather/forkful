@@ -7,7 +7,7 @@ description: "X\u1EED l\xFD l\u1ED7i trong c\xE1c ch\u01B0\u01A1ng tr\xECnh c\u1
   \ tr\u01B0\u1EDBc s\u1EBD c\u1ED1 g\u1EAFng l\xE0m b\u1EA1n v\u1EA5p ng\xE3. B\u1EA1\
   n l\xE0m \u0111i\u1EC1u \u0111\xF3 \u0111\u1EC3 gi\u1EEF cho Arduino c\u1EE7a b\u1EA1\
   n kh\xF4ng\u2026"
-lastmod: 2024-02-19 22:04:56.198429
+lastmod: '2024-02-25T18:49:35.345939-07:00'
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i trong c\xE1c ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1\
   n b\u1EAFt l\u1EA5y nh\u1EEFng \u0111i\u1EC1u kh\xF4ng l\u01B0\u1EDDng tr\u01B0\u1EDB\

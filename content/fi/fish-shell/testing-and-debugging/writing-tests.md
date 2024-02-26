@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:45.803491-07:00
 description: "Testien kirjoittaminen Fish Shelliss\xE4 tarkoittaa skriptien luomista,\
   \ jotka automaattisesti suorittavat koodisi varmistaakseen sen toimivan odotetulla\u2026"
-lastmod: 2024-02-19 22:05:15.892252
+lastmod: '2024-02-25T18:49:53.905156-07:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Fish Shelliss\xE4 tarkoittaa skriptien luomista,\
   \ jotka automaattisesti suorittavat koodisi varmistaakseen sen toimivan odotetulla\u2026"

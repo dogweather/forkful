@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:14.767147-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Java er en grunnleggende oppgave\
   \ som involverer \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
   r man leser\u2026"
-lastmod: 2024-02-19 22:04:59.926368
+lastmod: '2024-02-25T18:49:38.860405-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Java er en grunnleggende oppgave som\
   \ involverer \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:53:42.171609-07:00
 description: "Sammenligning av to datoer i programmering er en grunnleggende oppgave\
   \ som lar utviklere evaluere den kronologiske relasjonen mellom datoer. Slike\u2026"
-lastmod: 2024-02-19 22:04:59.560771
+lastmod: '2024-02-25T18:49:38.512356-07:00'
 model: gpt-4-0125-preview
 summary: "Sammenligning av to datoer i programmering er en grunnleggende oppgave som\
   \ lar utviklere evaluere den kronologiske relasjonen mellom datoer. Slike\u2026"

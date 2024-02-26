@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:59.848917-07:00
 description: "Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt\
   \ en manipuleert met behulp van verschillende bibliotheken. Programmeurs werken\
   \ met\u2026"
-lastmod: 2024-02-19 22:05:10.405829
+lastmod: '2024-02-25T18:49:48.640565-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt en\
   \ manipuleert met behulp van verschillende bibliotheken. Programmeurs werken met\u2026"

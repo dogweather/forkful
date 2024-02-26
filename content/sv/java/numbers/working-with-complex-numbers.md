@@ -3,7 +3,7 @@ date: 2024-01-26 04:42:08.732969-07:00
 description: "Komplexa tal utvidgar den reella talaxeln genom till\xE4gget av en imagin\xE4\
   r enhet, `i`, d\xE4r `i^2 = -1`. De \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6\
   rsvetenskap,\u2026"
-lastmod: 2024-02-19 22:04:56.989715
+lastmod: '2024-02-25T18:49:36.076375-07:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar den reella talaxeln genom till\xE4gget av en imagin\xE4\
   r enhet, `i`, d\xE4r `i^2 = -1`. De \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6\

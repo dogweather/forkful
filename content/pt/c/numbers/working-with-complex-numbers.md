@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:53.740793-07:00
 description: "N\xFAmeros complexos consistem em uma parte real e uma parte imagin\xE1\
   ria, representados como `a + bi`, onde `i` \xE9 a raiz quadrada de `-1`. Programadores\u2026"
-lastmod: 2024-02-19 22:05:06.112389
+lastmod: '2024-02-25T18:49:44.659680-07:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos consistem em uma parte real e uma parte imagin\xE1\
   ria, representados como `a + bi`, onde `i` \xE9 a raiz quadrada de `-1`. Programadores\u2026"

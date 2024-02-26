@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:13.844130-07:00
 description: "Escribir un archivo de texto en JavaScript a menudo se refiere a crear\
   \ y guardar datos en un formato simple y legible para el registro, exportaci\xF3\
   n de\u2026"
-lastmod: 2024-02-19 22:05:17.980832
+lastmod: '2024-02-25T18:49:55.946070-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en JavaScript a menudo se refiere a crear y\
   \ guardar datos en un formato simple y legible para el registro, exportaci\xF3n\

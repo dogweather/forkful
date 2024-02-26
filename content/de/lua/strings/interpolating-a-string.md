@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:21.238720-07:00
 description: "String-Interpolation erm\xF6glicht es, Variablen innerhalb eines Strings\
   \ einzuf\xFCgen, um dynamische Nachrichten zu erstellen. Programmierer benutzen\
   \ das, um\u2026"
-lastmod: 2024-02-19 22:05:12.931516
+lastmod: '2024-02-25T18:49:51.055970-07:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablen innerhalb eines Strings\
   \ einzuf\xFCgen, um dynamische Nachrichten zu erstellen. Programmierer benutzen\

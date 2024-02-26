@@ -3,7 +3,7 @@ date: 2024-01-26 01:00:35.021147-07:00
 description: "La journalisation, dans le contexte de la programmation, est le processus\
   \ d'enregistrement des \xE9v\xE9nements, des \xE9tats et des informations dans un\
   \ fichier\u2026"
-lastmod: 2024-02-19 22:05:16.840916
+lastmod: '2024-02-25T18:49:54.830531-07:00'
 model: gpt-4-1106-preview
 summary: "La journalisation, dans le contexte de la programmation, est le processus\
   \ d'enregistrement des \xE9v\xE9nements, des \xE9tats et des informations dans un\

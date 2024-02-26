@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:03.951636-07:00
 description: "Escrever em um arquivo de texto em Python \xE9 uma tarefa fundamental\
   \ que envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto.\
   \ Essa\u2026"
-lastmod: 2024-02-19 22:05:05.243396
+lastmod: '2024-02-25T18:49:43.834640-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Python \xE9 uma tarefa fundamental que\
   \ envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto.\

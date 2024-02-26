@@ -3,7 +3,7 @@ date: 2024-01-20 15:32:56.837266-07:00
 description: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML\
   \ em uma estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
   \ fazem isso para\u2026"
-lastmod: 2024-02-19 22:05:05.579504
+lastmod: '2024-02-25T18:49:44.160901-07:00'
 summary: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML em uma\
   \ estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
   \ fazem isso para\u2026"

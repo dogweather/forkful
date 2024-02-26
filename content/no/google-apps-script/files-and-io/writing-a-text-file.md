@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:21.425028-07:00
 description: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data\
   \ p\xE5 en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk\
   \ eller analyse.\u2026"
-lastmod: 2024-02-19 22:04:59.616573
+lastmod: '2024-02-25T18:49:38.565004-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data p\xE5\
   \ en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk eller\

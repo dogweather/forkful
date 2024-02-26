@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:05.347340-07:00
 description: "Escrever testes em Go envolve criar peda\xE7os de c\xF3digo pequenos\
   \ e gerenci\xE1veis que validam a funcionalidade e o comportamento da sua aplica\xE7\
   \xE3o.\u2026"
-lastmod: 2024-02-19 22:05:05.129910
+lastmod: '2024-02-25T18:49:43.728831-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Go envolve criar peda\xE7os de c\xF3digo pequenos e gerenci\xE1\
   veis que validam a funcionalidade e o comportamento da sua aplica\xE7\xE3o.\u2026"

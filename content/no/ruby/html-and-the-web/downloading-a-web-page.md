@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:36.351315-07:00
 description: "\xC5 laste ned en webside betyr \xE5 hente HTML-innholdet fra en URL\
   \ og lagre det p\xE5 din egen datamaskin. Programmerere gj\xF8r dette for \xE5 analysere\
   \ innholdet,\u2026"
-lastmod: 2024-02-19 22:05:00.599623
+lastmod: '2024-02-25T18:49:39.494534-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 laste ned en webside betyr \xE5 hente HTML-innholdet fra en URL og\
   \ lagre det p\xE5 din egen datamaskin. Programmerere gj\xF8r dette for \xE5 analysere\

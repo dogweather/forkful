@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:06.457994-07:00
 description: "Interpolare una stringa significa inserire dinamicamente espressioni\
   \ o variabili direttamente all'interno di una stringa di testo. I programmatori\
   \ lo\u2026"
-lastmod: 2024-02-19 22:05:02.526500
+lastmod: '2024-02-25T18:49:41.326528-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolare una stringa significa inserire dinamicamente espressioni o variabili\
   \ direttamente all'interno di una stringa di testo. I programmatori lo\u2026"

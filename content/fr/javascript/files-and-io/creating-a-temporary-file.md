@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:49.703368-07:00
 description: "Cr\xE9er un fichier temporaire, c'est comme griffonner une note sur\
   \ un bout de papier pour ne pas oublier quelque chose d'important - sauf qu'on le\
   \ fait sur\u2026"
-lastmod: 2024-02-19 22:05:16.940277
+lastmod: '2024-02-25T18:49:54.927095-07:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est comme griffonner une note sur un bout\
   \ de papier pour ne pas oublier quelque chose d'important - sauf qu'on le fait sur\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:00.571325-07:00
 description: "La concatenazione di stringhe implica l'unione di due o pi\xF9 stringhe\
   \ da capo a fine per formare una nuova stringa. I programmatori fanno ci\xF2 per\
   \ generare\u2026"
-lastmod: 2024-02-19 22:05:02.003498
+lastmod: '2024-02-25T18:49:40.829727-07:00'
 model: gpt-4-0125-preview
 summary: "La concatenazione di stringhe implica l'unione di due o pi\xF9 stringhe\
   \ da capo a fine per formare una nuova stringa. I programmatori fanno ci\xF2 per\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:35.319760-07:00
 description: "Google Apps Scriptin (GAS) virheenkorjaus k\xE4sitt\xE4\xE4 prosessin,\
   \ jossa skripteist\xE4 tunnistetaan ja poistetaan virheit\xE4. N\xE4m\xE4 skriptit\
   \ on tarkoitettu Google\u2026"
-lastmod: 2024-02-19 22:05:15.017733
+lastmod: '2024-02-25T18:49:53.079263-07:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Scriptin (GAS) virheenkorjaus k\xE4sitt\xE4\xE4 prosessin, jossa\
   \ skripteist\xE4 tunnistetaan ja poistetaan virheit\xE4. N\xE4m\xE4 skriptit on\

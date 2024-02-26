@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:49.848592-07:00
 description: "Last ned en nettside betyr \xE5 hente HTML-innholdet fra en nettadresse.\
   \ Programmerere gj\xF8r dette for \xE5 analysere innholdet, teste tilgjengelighet,\
   \ eller\u2026"
-lastmod: 2024-02-19 22:05:00.239407
+lastmod: '2024-02-25T18:49:39.146698-07:00'
 model: gpt-4-1106-preview
 summary: "Last ned en nettside betyr \xE5 hente HTML-innholdet fra en nettadresse.\
   \ Programmerere gj\xF8r dette for \xE5 analysere innholdet, teste tilgjengelighet,\

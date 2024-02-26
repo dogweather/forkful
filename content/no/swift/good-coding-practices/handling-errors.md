@@ -3,7 +3,7 @@ date: 2024-01-26 00:57:55.209145-07:00
 description: "\xC5 h\xE5ndtere feil i Swift betyr \xE5 forutse og svare p\xE5 problemer\
   \ som dukker opp n\xE5r koden din kj\xF8rer. Vi gj\xF8r det for \xE5 kontrollere\
   \ kaoset\u2014holde apper fra \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.424008
+lastmod: '2024-02-25T18:49:39.328133-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 h\xE5ndtere feil i Swift betyr \xE5 forutse og svare p\xE5 problemer\
   \ som dukker opp n\xE5r koden din kj\xF8rer. Vi gj\xF8r det for \xE5 kontrollere\

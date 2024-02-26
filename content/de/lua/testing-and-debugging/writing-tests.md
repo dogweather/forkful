@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:12.138218-07:00
 description: "Das Schreiben von Tests in der Programmierung bedeutet, kleine, separate\
   \ Codeteile zu erstellen, um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile\
   \ Ihrer\u2026"
-lastmod: 2024-02-19 22:05:12.949265
+lastmod: '2024-02-25T18:49:51.072338-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in der Programmierung bedeutet, kleine, separate\
   \ Codeteile zu erstellen, um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile\

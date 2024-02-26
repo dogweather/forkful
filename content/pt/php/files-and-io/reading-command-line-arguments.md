@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:31.746095-07:00
 description: "Comandos na linha de comando s\xE3o instru\xE7\xF5es que voc\xEA insere\
   \ diretamente no terminal para executar um programa com op\xE7\xF5es espec\xEDficas.\
   \ Os programadores\u2026"
-lastmod: 2024-02-19 22:05:05.731655
+lastmod: '2024-02-25T18:49:44.303143-07:00'
 model: gpt-4-1106-preview
 summary: "Comandos na linha de comando s\xE3o instru\xE7\xF5es que voc\xEA insere\
   \ diretamente no terminal para executar um programa com op\xE7\xF5es espec\xEDficas.\

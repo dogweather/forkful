@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:50.445044-07:00
 description: "Reguliere expressies (regex) zijn zoekpatronen die worden gebruikt om\
   \ combinaties van karakters in strings te matchen. Programmeurs gebruiken ze voor\u2026"
-lastmod: 2024-02-19 22:05:09.956008
+lastmod: '2024-02-25T18:49:48.222218-07:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) zijn zoekpatronen die worden gebruikt om combinaties\
   \ van karakters in strings te matchen. Programmeurs gebruiken ze voor\u2026"

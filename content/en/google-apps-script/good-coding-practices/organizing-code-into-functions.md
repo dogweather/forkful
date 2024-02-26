@@ -3,7 +3,7 @@ date: 2024-02-01 21:12:07.643672-07:00
 description: "Organizing code into functions is about structuring your Google Apps\
   \ Script code by separating logical segments into distinct blocks, each performing\
   \ a\u2026"
-lastmod: 2024-02-19 22:05:18.181888
+lastmod: '2024-02-25T18:49:56.140143-07:00'
 model: gpt-4-0125-preview
 summary: "Organizing code into functions is about structuring your Google Apps Script\
   \ code by separating logical segments into distinct blocks, each performing a\u2026"

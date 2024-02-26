@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:25.783910-07:00
 description: Downloading a web page means grabbing the data of a site. Programmers
   do it to parse data, monitor changes, or to interact with web services.
-lastmod: 2024-02-19 22:05:08.239327
+lastmod: '2024-02-25T18:49:46.697277-07:00'
 model: gpt-4-1106-preview
 summary: Downloading a web page means grabbing the data of a site. Programmers do
   it to parse data, monitor changes, or to interact with web services.

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:12:38.709675-07:00
 description: "TOML (Tom's Obvious, Minimal Language) es un formato de archivo de configuraci\xF3\
   n que es f\xE1cil de leer debido a su sintaxis simple. Los programadores usan\u2026"
-lastmod: 2024-02-19 22:05:17.140353
+lastmod: '2024-02-25T18:49:55.111632-07:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) es un formato de archivo de configuraci\xF3\
   n que es f\xE1cil de leer debido a su sintaxis simple. Los programadores usan\u2026"

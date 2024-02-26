@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:46.484061-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa merkkijonon\
   \ muodon tulkintaa p\xE4iv\xE4m\xE4\xE4r\xE4n osien, kuten p\xE4iv\xE4n, kuukauden\
   \ ja vuoden, erottamiseksi.\u2026"
-lastmod: 2024-02-19 22:05:15.769446
+lastmod: '2024-02-25T18:49:53.783932-07:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa merkkijonon\
   \ muodon tulkintaa p\xE4iv\xE4m\xE4\xE4r\xE4n osien, kuten p\xE4iv\xE4n, kuukauden\

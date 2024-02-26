@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:39.786275-07:00
 description: "Foutafhandeling is hoe je beheert wat er gebeurt wanneer er iets misgaat\
   \ in je code. Het is essentieel omdat het ervoor zorgt dat je programma's op een\u2026"
-lastmod: 2024-02-19 22:05:10.295783
+lastmod: '2024-02-25T18:49:48.537292-07:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling is hoe je beheert wat er gebeurt wanneer er iets misgaat\
   \ in je code. Het is essentieel omdat het ervoor zorgt dat je programma's op een\u2026"

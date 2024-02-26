@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:44.909930-07:00
 description: "Een HTTP-verzoek versturen betekent een server vragen om gegevens of\
   \ acties, zoals het ophalen van een webpagina of het versturen van een formulier.\u2026"
-lastmod: 2024-02-19 22:05:09.729750
+lastmod: '2024-02-25T18:49:48.020674-07:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen betekent een server vragen om gegevens of acties,\
   \ zoals het ophalen van een webpagina of het versturen van een formulier.\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:01.734972-07:00
 description: "Strenginterpolasjon lar deg bake variabler og uttrykk rett inn i strenger,\
   \ noe som gj\xF8r koden mer lesbar og skrivbar. Programmerere bruker det for \xE5\
   \ sl\xE5\u2026"
-lastmod: 2024-02-19 22:04:59.983676
+lastmod: '2024-02-25T18:49:38.915695-07:00'
 model: gpt-4-1106-preview
 summary: "Strenginterpolasjon lar deg bake variabler og uttrykk rett inn i strenger,\
   \ noe som gj\xF8r koden mer lesbar og skrivbar. Programmerere bruker det for \xE5\

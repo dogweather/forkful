@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:55.015055-07:00
 description: "Working with XML in Haskell involves parsing, manipulating, and generating\
   \ XML structures. Programmers handle XML to interact with numerous applications\u2026"
-lastmod: 2024-02-19 22:05:18.613693
+lastmod: '2024-02-25T18:49:56.591843-07:00'
 model: gpt-4-1106-preview
 summary: "Working with XML in Haskell involves parsing, manipulating, and generating\
   \ XML structures. Programmers handle XML to interact with numerous applications\u2026"

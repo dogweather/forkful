@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:00.218205-07:00
 description: "Concat\xE9ner des cha\xEEnes, c'est les coller bout \xE0 bout. Les programmeurs\
   \ le font pour assembler des textes dynamiques, comme cr\xE9er des messages ou g\xE9\
   rer des\u2026"
-lastmod: 2024-02-19 22:05:16.693566
+lastmod: '2024-02-25T18:49:54.675771-07:00'
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes, c'est les coller bout \xE0 bout. Les programmeurs\
   \ le font pour assembler des textes dynamiques, comme cr\xE9er des messages ou g\xE9\

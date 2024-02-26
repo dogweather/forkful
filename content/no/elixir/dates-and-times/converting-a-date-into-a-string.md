@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:09.563584-07:00
 description: "Dato til streng-konvertering tar en dato og gj\xF8r den om til en tekstbasert\
   \ representasjon. Dette gj\xF8r det enklere \xE5 vise datoen for mennesker eller\
   \ \xE5\u2026"
-lastmod: 2024-02-19 22:04:59.742933
+lastmod: '2024-02-25T18:49:38.682021-07:00'
 model: gpt-4-1106-preview
 summary: "Dato til streng-konvertering tar en dato og gj\xF8r den om til en tekstbasert\
   \ representasjon. Dette gj\xF8r det enklere \xE5 vise datoen for mennesker eller\

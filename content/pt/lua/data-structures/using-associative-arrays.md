@@ -5,7 +5,7 @@ date: 2024-01-30 19:11:54.802832-07:00
 description: "Arrays associativos s\xE3o como apertos de m\xE3o secretos para dados\
   \ em Lua\u2014em vez de apenas n\xFAmeros se alinhando obedientemente por \xEDndice,\
   \ suas chaves podem\u2026"
-lastmod: 2024-02-19 22:05:05.752207
+lastmod: '2024-02-25T18:49:44.322418-07:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos s\xE3o como apertos de m\xE3o secretos para dados em\
   \ Lua\u2014em vez de apenas n\xFAmeros se alinhando obedientemente por \xEDndice,\

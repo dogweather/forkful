@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:05:58.013267-07:00
 description: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
   \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was\u2026"
-lastmod: 2024-02-19 22:05:13.311180
+lastmod: '2024-02-25T18:49:51.419095-07:00'
 model: gpt-4-0125-preview
 summary: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
   \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was\u2026"

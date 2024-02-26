@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:57.107413-07:00
 description: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE3\
   o espec\xEDfica. Programadores fazem isso para controlar a sa\xEDda num\xE9rica\
   \ para leitura, fins de\u2026"
-lastmod: 2024-02-19 22:05:05.352278
+lastmod: '2024-02-25T18:49:43.943326-07:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE3o espec\xED\
   fica. Programadores fazem isso para controlar a sa\xEDda num\xE9rica para leitura,\

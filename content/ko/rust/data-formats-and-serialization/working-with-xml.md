@@ -7,7 +7,7 @@ description: "XML\uC740 eXtensible Markup Language\uC758 \uC57D\uC5B4\uB85C, JSO
   \uC9C0 \uC54A\uC740 API\uB97C \uB2E4\uB8F0 \uB54C XML\uACFC \uC528\uB984\uD558\uAC8C\
   \ \uB420 \uAC83\uC785\uB2C8\uB2E4. XML\uC740 \uB370\uC774\uD130 \uAD50\uD658\uC5D0\
   \uC11C \uC5EC\uC804\uD788 \uADF8\u2026"
-lastmod: 2024-02-19 22:05:13.857182
+lastmod: '2024-02-25T18:49:51.958147-07:00'
 model: gpt-4-0125-preview
 summary: "XML\uC740 eXtensible Markup Language\uC758 \uC57D\uC5B4\uB85C, JSON\uC758\
   \ \uC7A5\uD669\uD55C \uC0AC\uCD0C\uACFC \uAC19\uC2B5\uB2C8\uB2E4. \uC5EC\uB7EC\uBD84\

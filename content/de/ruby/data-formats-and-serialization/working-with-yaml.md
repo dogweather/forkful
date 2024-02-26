@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:26.134673-07:00
 description: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, wird in Ruby\
   \ umfangreich f\xFCr Konfigurationsdateien und die Serialisierung von Daten verwendet,\
   \ aufgrund\u2026"
-lastmod: 2024-02-19 22:05:13.363719
+lastmod: '2024-02-25T18:49:51.466620-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, wird in Ruby umfangreich\
   \ f\xFCr Konfigurationsdateien und die Serialisierung von Daten verwendet, aufgrund\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:39:17.025953-07:00
 description: "Trasformare una stringa in minuscolo significa convertire tutti i caratteri\
   \ alfabetici in minuscole. Questo serve per standardizzare l'input degli utenti,\u2026"
-lastmod: 2024-02-19 22:05:02.266033
+lastmod: '2024-02-25T18:49:41.081512-07:00'
 model: gpt-4-1106-preview
 summary: "Trasformare una stringa in minuscolo significa convertire tutti i caratteri\
   \ alfabetici in minuscole. Questo serve per standardizzare l'input degli utenti,\u2026"

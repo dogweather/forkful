@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:45.985179-07:00
 description: "\xC5 sjekke om en mappe finnes i JavaScript er essensielt for oppgaver\
   \ som involverer manipulasjon av filer, slik at skript kan verifisere mappens\u2026"
-lastmod: 2024-02-19 22:05:00.475208
+lastmod: '2024-02-25T18:49:39.375952-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe finnes i JavaScript er essensielt for oppgaver som\
   \ involverer manipulasjon av filer, slik at skript kan verifisere mappens\u2026"

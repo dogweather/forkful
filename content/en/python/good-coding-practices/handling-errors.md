@@ -3,7 +3,7 @@ date: 2024-01-21 21:19:35.648555-07:00
 description: "Handling errors in Python (or any programming language) is about expecting\
   \ the unexpected \u2013 it\u2019s the art of gracefully managing when things go\
   \ south in\u2026"
-lastmod: 2024-02-19 22:05:18.221897
+lastmod: '2024-02-25T18:49:56.178727-07:00'
 model: gpt-4-1106-preview
 summary: "Handling errors in Python (or any programming language) is about expecting\
   \ the unexpected \u2013 it\u2019s the art of gracefully managing when things go\

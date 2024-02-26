@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:59.724797-07:00
 description: "Travailler avec des nombres complexes en programmation implique de manipuler\
   \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\u2026"
-lastmod: 2024-02-19 22:05:16.033979
+lastmod: '2024-02-25T18:49:54.027487-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des nombres complexes en programmation implique de manipuler\
   \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\u2026"

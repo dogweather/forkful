@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:08.055660-07:00
 description: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language, \xE9 um padr\xE3\
   o de serializa\xE7\xE3o de dados leg\xEDvel por humanos comumente usado para arquivos\
   \ de configura\xE7\xE3o e\u2026"
-lastmod: 2024-02-19 22:05:05.335289
+lastmod: '2024-02-25T18:49:43.927045-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language, \xE9 um padr\xE3o\
   \ de serializa\xE7\xE3o de dados leg\xEDvel por humanos comumente usado para arquivos\

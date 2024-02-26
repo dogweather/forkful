@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:53.679898-07:00
 description: "\xC9crire sur l'erreur standard en C implique de diriger les messages\
   \ d'erreur et les informations de diagnostic vers un flux distinct de la sortie\u2026"
-lastmod: 2024-02-19 22:05:17.040800
+lastmod: '2024-02-25T18:49:55.014066-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard en C implique de diriger les messages d'erreur\
   \ et les informations de diagnostic vers un flux distinct de la sortie\u2026"

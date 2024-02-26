@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:52.924566-07:00
 description: "Imprimir sa\xEDdas de depura\xE7\xE3o envolve colocar estrategicamente\
   \ declara\xE7\xF5es de registro no seu c\xF3digo para exibir valores de vari\xE1\
   veis, fluxo de execu\xE7\xE3o ou\u2026"
-lastmod: 2024-02-19 22:05:05.179314
+lastmod: '2024-02-25T18:49:43.774145-07:00'
 model: gpt-4-0125-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o envolve colocar estrategicamente declara\xE7\
   \xF5es de registro no seu c\xF3digo para exibir valores de vari\xE1veis, fluxo de\

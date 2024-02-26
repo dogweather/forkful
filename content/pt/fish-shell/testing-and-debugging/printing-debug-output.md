@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:43.651320-07:00
 description: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o que\
   \ um script est\xE1 fazendo e onde pode estar o problema. Programadores recorrem\
   \ a isso quando o\u2026"
-lastmod: 2024-02-19 22:05:06.075994
+lastmod: '2024-02-25T18:49:44.625381-07:00'
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o que um\
   \ script est\xE1 fazendo e onde pode estar o problema. Programadores recorrem a\

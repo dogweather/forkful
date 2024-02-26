@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:06.421607-07:00
 description: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est compter\
   \ combien d'\xE9l\xE9ments (bytes, en g\xE9n\xE9ral) elle contient. Les programmeurs\
   \ font cela pour\u2026"
-lastmod: 2024-02-19 22:05:16.301147
+lastmod: '2024-02-25T18:49:54.287011-07:00'
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est compter combien\
   \ d'\xE9l\xE9ments (bytes, en g\xE9n\xE9ral) elle contient. Les programmeurs font\

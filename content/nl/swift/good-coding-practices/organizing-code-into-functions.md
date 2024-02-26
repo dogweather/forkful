@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:22.758031-07:00
 description: "Code groeperen in functies is het opsplitsen van taken in herbruikbare\
   \ blokken. Hierdoor wordt de code overzichtelijk, minder foutgevoelig en makkelijker\u2026"
-lastmod: 2024-02-19 22:05:10.249405
+lastmod: '2024-02-25T18:49:48.493372-07:00'
 model: gpt-4-0125-preview
 summary: "Code groeperen in functies is het opsplitsen van taken in herbruikbare blokken.\
   \ Hierdoor wordt de code overzichtelijk, minder foutgevoelig en makkelijker\u2026"

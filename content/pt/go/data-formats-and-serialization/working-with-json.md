@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:12:06.202398-07:00
 description: "Trabalhar com JSON (JavaScript Object Notation) em Go envolve codificar\
   \ e decodificar dados entre estruturas de dados de Go e o formato JSON. Essa tarefa\u2026"
-lastmod: 2024-02-19 22:05:05.150917
+lastmod: '2024-02-25T18:49:43.747934-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) em Go envolve codificar\
   \ e decodificar dados entre estruturas de dados de Go e o formato JSON. Essa tarefa\u2026"

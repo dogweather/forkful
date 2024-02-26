@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:33.143450-07:00
 description: "En HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6rer\
   \ \xE5 sende brukernavn og passord over nett for \xE5 verifisere en brukers identitet.\
   \ Programmerere\u2026"
-lastmod: 2024-02-19 22:05:00.286084
+lastmod: '2024-02-25T18:49:39.194114-07:00'
 model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6rer \xE5\
   \ sende brukernavn og passord over nett for \xE5 verifisere en brukers identitet.\

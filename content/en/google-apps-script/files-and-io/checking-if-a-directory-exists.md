@@ -2,7 +2,7 @@
 date: 2024-02-01 21:11:59.808475-07:00
 description: "Checking if a directory exists in Google Apps Script involves verifying\
   \ the presence of a folder within Google Drive. Programmers often perform this check\u2026"
-lastmod: 2024-02-19 22:05:18.190078
+lastmod: '2024-02-25T18:49:56.147879-07:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Google Apps Script involves verifying\
   \ the presence of a folder within Google Drive. Programmers often perform this check\u2026"

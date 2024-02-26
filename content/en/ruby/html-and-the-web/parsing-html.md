@@ -2,7 +2,7 @@
 date: 2024-01-20 15:33:38.456428-07:00
 description: "Parsing HTML means tearing apart a chuck of HTML code to grasp its structure\
   \ and content. Programmers do it to extract data, manipulate content, or\u2026"
-lastmod: 2024-02-19 22:05:19.010656
+lastmod: '2024-02-25T18:49:56.985833-07:00'
 summary: "Parsing HTML means tearing apart a chuck of HTML code to grasp its structure\
   \ and content. Programmers do it to extract data, manipulate content, or\u2026"
 title: Parsing HTML

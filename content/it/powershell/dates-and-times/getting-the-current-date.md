@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:37.226709-07:00
 description: "Ottenere la data corrente in PowerShell riguarda il recupero della data\
   \ e dell'ora attuali del sistema. Quest'operazione \xE8 fondamentale per compiti\
   \ come\u2026"
-lastmod: 2024-02-19 22:05:02.727605
+lastmod: '2024-02-25T18:49:41.513822-07:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in PowerShell riguarda il recupero della data\
   \ e dell'ora attuali del sistema. Quest'operazione \xE8 fondamentale per compiti\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:12.335764-07:00
 description: "\xC9crire des tests en programmation implique de cr\xE9er et d'ex\xE9\
   cuter des scripts qui v\xE9rifient que le code se comporte comme pr\xE9vu dans diverses\
   \ conditions.\u2026"
-lastmod: 2024-02-19 22:05:16.618149
+lastmod: '2024-02-25T18:49:54.602175-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en programmation implique de cr\xE9er et d'ex\xE9cuter\
   \ des scripts qui v\xE9rifient que le code se comporte comme pr\xE9vu dans diverses\

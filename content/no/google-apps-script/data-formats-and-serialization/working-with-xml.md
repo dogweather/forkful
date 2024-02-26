@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:49.162853-07:00
 description: "\xC5 jobbe med XML i Google Apps Script lar programmerere parse, manipulere\
   \ og generere XML-data, som er essensielt for webtjenester og konfigurasjoner.\u2026"
-lastmod: 2024-02-19 22:04:59.623307
+lastmod: '2024-02-25T18:49:38.571228-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Google Apps Script lar programmerere parse, manipulere\
   \ og generere XML-data, som er essensielt for webtjenester og konfigurasjoner.\u2026"

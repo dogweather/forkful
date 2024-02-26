@@ -2,7 +2,7 @@
 date: 2024-01-27 16:20:41.969806-07:00
 description: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzeilern\
   \ in PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der\u2026"
-lastmod: 2024-02-19 22:05:13.031276
+lastmod: '2024-02-25T18:49:51.151525-07:00'
 model: gpt-4-0125-preview
 summary: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzeilern in\
   \ PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der\u2026"

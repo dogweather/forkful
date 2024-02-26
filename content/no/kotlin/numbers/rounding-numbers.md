@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:26.748679-07:00
 description: "Avrunding av tall inneb\xE6rer \xE5 justere dem til n\xE6rmeste hele\
   \ tall eller til en spesifisert grad av presisjon. Programmerere gj\xF8r dette for\
   \ \xE5 forbedre\u2026"
-lastmod: 2024-02-19 22:04:59.992776
+lastmod: '2024-02-25T18:49:38.924339-07:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall inneb\xE6rer \xE5 justere dem til n\xE6rmeste hele tall\
   \ eller til en spesifisert grad av presisjon. Programmerere gj\xF8r dette for \xE5\

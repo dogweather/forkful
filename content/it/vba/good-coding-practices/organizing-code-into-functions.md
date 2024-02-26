@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:30.693651-07:00
 description: "Organizzare il codice in funzioni in Visual Basic for Applications (VBA)\
   \ comporta la suddivisione di un programma in pezzi pi\xF9 piccoli e gestibili,\
   \ noti\u2026"
-lastmod: 2024-02-19 22:05:02.330269
+lastmod: '2024-02-25T18:49:41.141787-07:00'
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni in Visual Basic for Applications (VBA)\
   \ comporta la suddivisione di un programma in pezzi pi\xF9 piccoli e gestibili,\

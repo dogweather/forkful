@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:20.862198-07:00
 description: "Complexe getallen breiden de re\xEBle getallen uit door een imaginair\
   \ eenheid toe te voegen, voorgesteld als 'i', waarbij i^2 = -1. Programmeurs gebruiken\
   \ ze\u2026"
-lastmod: 2024-02-19 22:05:10.193011
+lastmod: '2024-02-25T18:49:48.440166-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallen uit door een imaginair eenheid\
   \ toe te voegen, voorgesteld als 'i', waarbij i^2 = -1. Programmeurs gebruiken ze\u2026"

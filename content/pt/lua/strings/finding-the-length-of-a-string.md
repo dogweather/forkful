@@ -2,7 +2,7 @@
 date: 2024-01-20 17:47:41.283724-07:00
 description: "Descobrir o comprimento de uma string \xE9 basicamente saber quantos\
   \ caracteres ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
-lastmod: 2024-02-19 22:05:05.750203
+lastmod: '2024-02-25T18:49:44.320602-07:00'
 model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string \xE9 basicamente saber quantos caracteres\
   \ ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"

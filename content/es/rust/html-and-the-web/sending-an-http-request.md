@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:34.805176-07:00
 description: "Enviar una petici\xF3n HTTP es comunicarte con un servidor para intercambiar\
   \ datos. Los programadores lo hacen para interactuar con servicios web, como APIs,\u2026"
-lastmod: 2024-02-19 22:05:17.369366
+lastmod: '2024-02-25T18:49:55.337313-07:00'
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP es comunicarte con un servidor para intercambiar\
   \ datos. Los programadores lo hacen para interactuar con servicios web, como APIs,\u2026"

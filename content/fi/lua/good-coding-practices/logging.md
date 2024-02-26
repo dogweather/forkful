@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:36.097219-07:00
 description: "Lokitus on k\xE4yt\xE4nt\xF6 tallentaa tapahtumia, virheit\xE4 ja muita\
   \ merkitt\xE4vi\xE4 datapisteit\xE4, jotka ilmenev\xE4t ohjelmistosovelluksen elinkaaren\
   \ aikana. Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.597925
+lastmod: '2024-02-25T18:49:53.614582-07:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on k\xE4yt\xE4nt\xF6 tallentaa tapahtumia, virheit\xE4 ja muita\
   \ merkitt\xE4vi\xE4 datapisteit\xE4, jotka ilmenev\xE4t ohjelmistosovelluksen elinkaaren\

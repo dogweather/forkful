@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:51.058893-07:00
 description: "Tekstitiedoston lukeminen Visual Basic for Applications (VBA) -ohjelmalla\
   \ sis\xE4lt\xE4\xE4 ohjelmakoodin avulla teht\xE4v\xE4n p\xE4\xE4syn ja tiedoston\
   \ sis\xE4ll\xF6n purkamisen\u2026"
-lastmod: 2024-02-19 22:05:15.315543
+lastmod: '2024-02-25T18:49:53.342949-07:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen Visual Basic for Applications (VBA) -ohjelmalla\
   \ sis\xE4lt\xE4\xE4 ohjelmakoodin avulla teht\xE4v\xE4n p\xE4\xE4syn ja tiedoston\

@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:12.540343-07:00
 description: "Starta ett nytt projekt inneb\xE4r att skapa en ny bas d\xE4r din kod\
   \ kan v\xE4xa och utvecklas. Programmerare g\xF6r det f\xF6r att omvandla id\xE9\
   er till k\xF6rbar kod som\u2026"
-lastmod: 2024-02-19 22:04:56.769460
+lastmod: '2024-02-25T18:49:35.863628-07:00'
 model: gpt-4-1106-preview
 summary: "Starta ett nytt projekt inneb\xE4r att skapa en ny bas d\xE4r din kod kan\
   \ v\xE4xa och utvecklas. Programmerare g\xF6r det f\xF6r att omvandla id\xE9er till\

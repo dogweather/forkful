@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:53.029638-07:00
 description: "Een tekstbestand schrijven in programmeren betekent het cre\xEBren en\
   \ opslaan van gegevens in een leesbaar bestandsformaat, zoals .txt. Programmeurs\
   \ doen dit\u2026"
-lastmod: 2024-02-19 22:05:09.841737
+lastmod: '2024-02-25T18:49:48.125530-07:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in programmeren betekent het cre\xEBren en opslaan\
   \ van gegevens in een leesbaar bestandsformaat, zoals .txt. Programmeurs doen dit\u2026"

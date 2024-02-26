@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:05:43.845697-07:00
 description: "JSON, o JavaScript Object Notation, \xE8 un formato leggero per l'archiviazione\
   \ e il trasporto dei dati, ideale per la comunicazione server-client e i file\u2026"
-lastmod: 2024-02-19 22:05:02.086738
+lastmod: '2024-02-25T18:49:40.908031-07:00'
 model: gpt-4-0125-preview
 summary: "JSON, o JavaScript Object Notation, \xE8 un formato leggero per l'archiviazione\
   \ e il trasporto dei dati, ideale per la comunicazione server-client e i file\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:30:32.955696-07:00
 description: "\xC5 jobbe med XML betyr \xE5 h\xE5ndtere data i et utbredt, strukturert\
   \ format som brukes i konfigurasjoner, meldingsutveksling og mer. Programmerere\
   \ manipulerer\u2026"
-lastmod: 2024-02-19 22:05:00.531861
+lastmod: '2024-02-25T18:49:39.429049-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr \xE5 h\xE5ndtere data i et utbredt, strukturert\
   \ format som brukes i konfigurasjoner, meldingsutveksling og mer. Programmerere\

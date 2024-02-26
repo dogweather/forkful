@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:35.113330-07:00
 description: "Att extrahera substr\xE4ngar inneb\xE4r att plocka ut specifika delar\
   \ fr\xE5n en str\xE4ng. Programmerare g\xF6r detta f\xF6r att manipulera text, validera\
   \ input, eller\u2026"
-lastmod: 2024-02-19 22:04:57.208640
+lastmod: '2024-02-25T18:49:36.287597-07:00'
 model: gpt-4-1106-preview
 summary: "Att extrahera substr\xE4ngar inneb\xE4r att plocka ut specifika delar fr\xE5\
   n en str\xE4ng. Programmerare g\xF6r detta f\xF6r att manipulera text, validera\

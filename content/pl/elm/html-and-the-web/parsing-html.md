@@ -3,7 +3,7 @@ date: 2024-01-20 15:32:09.180890-07:00
 description: "Parseowanie HTML to proces przekszta\u0142cania surowego kodu HTML na\
   \ struktur\u0119, z kt\xF3r\u0105 Elm mo\u017Ce pracowa\u0107 programistycznie.\
   \ Robimy to, \u017Ceby m\xF3c manipulowa\u0107 i\u2026"
-lastmod: 2024-02-19 22:04:54.449498
+lastmod: '2024-02-25T18:49:33.683545-07:00'
 summary: "Parseowanie HTML to proces przekszta\u0142cania surowego kodu HTML na struktur\u0119\
   , z kt\xF3r\u0105 Elm mo\u017Ce pracowa\u0107 programistycznie. Robimy to, \u017C\
   eby m\xF3c manipulowa\u0107 i\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:44.692781-07:00
 description: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te\
   \ lezen en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:10.358947
+lastmod: '2024-02-25T18:49:48.595990-07:00'
 model: gpt-4-0125-preview
 summary: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen\
   \ en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"

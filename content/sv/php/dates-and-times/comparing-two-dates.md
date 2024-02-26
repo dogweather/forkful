@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:24.981729-07:00
 description: "J\xE4mf\xF6r tv\xE5 datum inneb\xE4r att avg\xF6ra tidsordningen mellan\
   \ dem - vilket \xE4r tidigare, senare eller om de \xE4r identiska. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: 2024-02-19 22:04:57.233627
+lastmod: '2024-02-25T18:49:36.311947-07:00'
 model: gpt-4-1106-preview
 summary: "J\xE4mf\xF6r tv\xE5 datum inneb\xE4r att avg\xF6ra tidsordningen mellan\
   \ dem - vilket \xE4r tidigare, senare eller om de \xE4r identiska. Programmerare\

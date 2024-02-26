@@ -6,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Bash mang l\u1
   i c\xE1ch th\u1EE9c \u0111\u1EC3 b\u1ED5 sung t\xEDnh kh\xF4ng d\u1EF1 \u0111o\xE1\
   n tr\u01B0\u1EDBc v\xE0o c\xE1c script, \u0111i\u1EC1u n\xE0y r\u1EA5t c\u1EA7n\
   \ thi\u1EBFt cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 t\u1EA1o m\u1EADt\u2026"
-lastmod: 2024-02-19 22:04:56.059621
+lastmod: '2024-02-25T18:49:35.215810-07:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Bash mang l\u1EA1i c\xE1\
   ch th\u1EE9c \u0111\u1EC3 b\u1ED5 sung t\xEDnh kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\

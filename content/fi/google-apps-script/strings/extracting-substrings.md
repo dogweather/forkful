@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:01.989144-07:00
 description: "Merkkijonojen osien poiminta tarkoittaa osan merkkijonosta ottamista\
   \ - k\xE4yt\xE4nn\xF6ss\xE4 uuden merkkijonon luomista olemassa olevan osasta. Ohjelmoijat\
   \ tekev\xE4t\u2026"
-lastmod: 2024-02-19 22:05:15.000034
+lastmod: '2024-02-25T18:49:53.062518-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen osien poiminta tarkoittaa osan merkkijonosta ottamista - k\xE4\
   yt\xE4nn\xF6ss\xE4 uuden merkkijonon luomista olemassa olevan osasta. Ohjelmoijat\

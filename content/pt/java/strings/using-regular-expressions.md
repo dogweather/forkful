@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:08.209363-07:00
 description: "Express\xF5es regulares (regex) em Java permitem definir padr\xF5es\
   \ espec\xEDficos para pesquisar, manipular ou validar strings no seu c\xF3digo.\
   \ Programadores as\u2026"
-lastmod: 2024-02-19 22:05:05.484472
+lastmod: '2024-02-25T18:49:44.067372-07:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Java permitem definir padr\xF5es espec\xED\
   ficos para pesquisar, manipular ou validar strings no seu c\xF3digo. Programadores\

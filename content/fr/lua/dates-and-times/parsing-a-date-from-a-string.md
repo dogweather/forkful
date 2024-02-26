@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:49.186479-07:00
 description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures en un format\
   \ qui peut \xEAtre\u2026"
-lastmod: 2024-02-19 22:05:16.667806
+lastmod: '2024-02-25T18:49:54.651083-07:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures en un format\

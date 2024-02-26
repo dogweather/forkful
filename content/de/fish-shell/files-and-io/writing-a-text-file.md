@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:47.630930-07:00
 description: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es Ihnen,\
   \ Daten dauerhaft zu speichern. Dies erleichtert die Datenwiederherstellung oder\u2026"
-lastmod: 2024-02-19 22:05:13.266776
+lastmod: '2024-02-25T18:49:51.377432-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es Ihnen,\
   \ Daten dauerhaft zu speichern. Dies erleichtert die Datenwiederherstellung oder\u2026"

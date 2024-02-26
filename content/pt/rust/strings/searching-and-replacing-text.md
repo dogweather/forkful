@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:46.368494-07:00
 description: "Substituir texto numa string \xE9 como trocar pe\xE7as de roupa; voc\xEA\
   \ pega uma palavra ou frase e troca por outra. Programadores fazem isso para atualizar\u2026"
-lastmod: 2024-02-19 22:05:05.386197
+lastmod: '2024-02-25T18:49:43.974711-07:00'
 model: gpt-4-1106-preview
 summary: "Substituir texto numa string \xE9 como trocar pe\xE7as de roupa; voc\xEA\
   \ pega uma palavra ou frase e troca por outra. Programadores fazem isso para atualizar\u2026"

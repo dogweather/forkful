@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:17.864731-07:00
 description: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais\
   \ pr\xF3ximo ou para um ponto decimal especificado. Programadores arredondam n\xFA\
   meros para\u2026"
-lastmod: 2024-02-19 22:05:05.846182
+lastmod: '2024-02-25T18:49:44.408843-07:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais pr\xF3\
   ximo ou para um ponto decimal especificado. Programadores arredondam n\xFAmeros\

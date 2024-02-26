@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:03.601210-07:00
 description: "Tilap\xE4iset tiedostot ovat v\xE4liaikaisia tiedostoja, joita k\xE4\
   ytet\xE4\xE4n dataa k\xE4sitelless\xE4 tai tallennettaessa. Ne ovat hy\xF6dyllisi\xE4\
   , kun tarvitaan nopeaa,\u2026"
-lastmod: 2024-02-19 22:05:15.697655
+lastmod: '2024-02-25T18:49:53.712221-07:00'
 model: gpt-4-1106-preview
 summary: "Tilap\xE4iset tiedostot ovat v\xE4liaikaisia tiedostoja, joita k\xE4ytet\xE4\
   \xE4n dataa k\xE4sitelless\xE4 tai tallennettaessa. Ne ovat hy\xF6dyllisi\xE4, kun\

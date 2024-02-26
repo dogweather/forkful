@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:59.743955-07:00
 description: "Argumenty linii polece\u0144 to parametry przekazywane do programu,\
   \ kiedy jest on uruchamiany z terminala. Programi\u015Bci korzystaj\u0105 z nich,\
   \ by wp\u0142ywa\u0107 na\u2026"
-lastmod: 2024-02-19 22:04:54.918809
+lastmod: '2024-02-25T18:49:34.142808-07:00'
 model: gpt-4-1106-preview
 summary: "Argumenty linii polece\u0144 to parametry przekazywane do programu, kiedy\
   \ jest on uruchamiany z terminala. Programi\u015Bci korzystaj\u0105 z nich, by wp\u0142\

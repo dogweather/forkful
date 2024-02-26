@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:06.685688-07:00
 description: "Schrijven naar standaardfout, `stderr`, geeft foutberichten apart van\
   \ de standaarduitvoer, `stdout`. Programmeurs gebruiken `stderr` om fouten te\u2026"
-lastmod: 2024-02-19 22:05:10.083879
+lastmod: '2024-02-25T18:49:48.337258-07:00'
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout, `stderr`, geeft foutberichten apart van de\
   \ standaarduitvoer, `stdout`. Programmeurs gebruiken `stderr` om fouten te\u2026"

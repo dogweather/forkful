@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:03.553010-07:00
 description: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla\
   \ cz\u0142owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania.\u2026"
-lastmod: 2024-02-19 22:04:54.923941
+lastmod: '2024-02-25T18:49:34.147955-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla cz\u0142\
   owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania.\u2026"

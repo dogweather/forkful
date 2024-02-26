@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:07:28.434350-07:00
 description: "Refaktorisering i programmering inneb\xE6rer omstrukturering av eksisterende\
   \ dataprogramkode - endring av faktoriseringen - uten \xE5 endre dens eksterne\u2026"
-lastmod: 2024-02-19 22:04:59.556336
+lastmod: '2024-02-25T18:49:38.508188-07:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering i programmering inneb\xE6rer omstrukturering av eksisterende\
   \ dataprogramkode - endring av faktoriseringen - uten \xE5 endre dens eksterne\u2026"

@@ -6,7 +6,7 @@ date: 2024-02-03 19:09:27.081064-07:00
 description: "Att f\xE5 det aktuella datumet i Elixir inneb\xE4r att man f\xE5r tillg\xE5\
   ng till systemets datum- och tidsinformation, en vanlig uppgift f\xF6r loggning,\
   \ datumm\xE4rkning\u2026"
-lastmod: 2024-02-19 22:04:56.824192
+lastmod: '2024-02-25T18:49:35.919393-07:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Elixir inneb\xE4r att man f\xE5r tillg\xE5\
   ng till systemets datum- och tidsinformation, en vanlig uppgift f\xF6r loggning,\

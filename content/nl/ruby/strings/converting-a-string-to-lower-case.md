@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:52.696086-07:00
 description: "In Ruby betekent het converteren van een string naar kleine letters\
   \ dat alle hoofdletters in de string worden veranderd in hun kleine letter tegenhangers.\u2026"
-lastmod: 2024-02-19 22:05:10.411249
+lastmod: '2024-02-25T18:49:48.645486-07:00'
 model: gpt-4-0125-preview
 summary: "In Ruby betekent het converteren van een string naar kleine letters dat\
   \ alle hoofdletters in de string worden veranderd in hun kleine letter tegenhangers.\u2026"

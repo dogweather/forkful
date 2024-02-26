@@ -2,7 +2,7 @@
 date: 2024-01-26 03:42:24.752922-07:00
 description: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren\
   \ Wert zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist. Programmierer\u2026"
-lastmod: 2024-02-19 22:05:12.983409
+lastmod: '2024-02-25T18:49:51.104793-07:00'
 model: gpt-4-0125-preview
 summary: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren Wert\
   \ zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist. Programmierer\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:34.338711-07:00
 description: "Nello sviluppo software, spesso \xE8 necessario verificare se una directory\
   \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file.\u2026"
-lastmod: 2024-02-19 22:05:02.293513
+lastmod: '2024-02-25T18:49:41.107406-07:00'
 model: gpt-4-0125-preview
 summary: "Nello sviluppo software, spesso \xE8 necessario verificare se una directory\
   \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file.\u2026"

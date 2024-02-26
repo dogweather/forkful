@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:38.406582-07:00
 description: "Att sl\xE5 ihop str\xE4ngar, eller konkatenering, inneb\xE4r att du\
   \ s\xE4tter samman tv\xE5 eller flera textstr\xE4ngar till en. Vi g\xF6r det f\xF6\
   r att skapa dynamisk text, som\u2026"
-lastmod: 2024-02-19 22:04:57.482589
+lastmod: '2024-02-25T18:49:36.559171-07:00'
 model: gpt-4-1106-preview
 summary: "Att sl\xE5 ihop str\xE4ngar, eller konkatenering, inneb\xE4r att du s\xE4\
   tter samman tv\xE5 eller flera textstr\xE4ngar till en. Vi g\xF6r det f\xF6r att\

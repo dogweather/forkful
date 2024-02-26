@@ -2,7 +2,7 @@
 date: 2024-01-26 03:37:46.189108-07:00
 description: "Rimuovere le virgolette da una stringa comporta l'eliminazione dei segni\
   \ di citazione che racchiudono la stringa. I programmatori spesso desiderano farlo\u2026"
-lastmod: 2024-02-19 22:05:02.656845
+lastmod: '2024-02-25T18:49:41.448975-07:00'
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa comporta l'eliminazione dei segni\
   \ di citazione che racchiudono la stringa. I programmatori spesso desiderano farlo\u2026"

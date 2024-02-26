@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:58.255629-07:00
 description: "Converter uma data em uma string no Visual Basic for Applications (VBA)\
   \ \xE9 um processo usado para mudar o tipo de dados de uma data para um formato\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:05.461657
+lastmod: '2024-02-25T18:49:44.044695-07:00'
 model: gpt-4-0125-preview
 summary: "Converter uma data em uma string no Visual Basic for Applications (VBA)\
   \ \xE9 um processo usado para mudar o tipo de dados de uma data para um formato\

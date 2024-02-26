@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:25.293542-07:00
 description: "Express\xF5es regulares (regex) em C# s\xE3o uma ferramenta poderosa\
   \ para correspond\xEAncia de padr\xF5es dentro de strings, permitindo que programadores\
   \ procurem,\u2026"
-lastmod: 2024-02-19 22:05:05.615483
+lastmod: '2024-02-25T18:49:44.195417-07:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em C# s\xE3o uma ferramenta poderosa para\
   \ correspond\xEAncia de padr\xF5es dentro de strings, permitindo que programadores\

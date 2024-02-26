@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:16.561306-07:00
 description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No Es Un Lenguaje\
   \ de Marcado), es ampliamente usado en Ruby para archivos de configuraci\xF3n y\u2026"
-lastmod: 2024-02-19 22:05:18.119168
+lastmod: '2024-02-25T18:49:56.078605-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No Es Un Lenguaje\
   \ de Marcado), es ampliamente usado en Ruby para archivos de configuraci\xF3n y\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:25.262073-07:00
 description: "Att skriva till standardfel (stderr) i Haskell g\xF6r det m\xF6jligt\
   \ f\xF6r program att skilja sin utdata mellan normala resultat och felmeddelanden.\
   \ Detta \xE4r\u2026"
-lastmod: 2024-02-19 22:04:57.192609
+lastmod: '2024-02-25T18:49:36.271053-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Haskell g\xF6r det m\xF6jligt f\xF6\
   r program att skilja sin utdata mellan normala resultat och felmeddelanden. Detta\

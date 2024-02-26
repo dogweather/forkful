@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:23.769340-07:00
 description: "V\xE4liaikaistiedoston luominen Visual Basic for Applicationsissa (VBA)\
   \ tarkoittaa ohjelmallisesti lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston\
   \ tuottamista,\u2026"
-lastmod: 2024-02-19 22:05:15.317655
+lastmod: '2024-02-25T18:49:53.345009-07:00'
 model: gpt-4-0125-preview
 summary: "V\xE4liaikaistiedoston luominen Visual Basic for Applicationsissa (VBA)\
   \ tarkoittaa ohjelmallisesti lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston\

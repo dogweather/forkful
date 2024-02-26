@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:14.156097-07:00
 description: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
   \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.999354
+lastmod: '2024-02-25T18:49:53.994182-07:00'
 model: gpt-4-0125-preview
 summary: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
   \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"

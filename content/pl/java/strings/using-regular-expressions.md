@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:18.339899-07:00
 description: "Wyra\u017Cenia regularne (regex) w Javie pozwalaj\u0105 definiowa\u0107\
   \ specyficzne wzorce do wyszukiwania, manipulowania lub walidacji ci\u0105g\xF3\
   w znak\xF3w w twoim kodzie.\u2026"
-lastmod: 2024-02-19 22:04:54.395379
+lastmod: '2024-02-25T18:49:33.631933-07:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Javie pozwalaj\u0105 definiowa\u0107\
   \ specyficzne wzorce do wyszukiwania, manipulowania lub walidacji ci\u0105g\xF3\

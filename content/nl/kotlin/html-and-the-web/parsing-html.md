@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:32.645612-07:00
 description: "HTML parseren betekent het ontleden van de opmaak van een webpagina\
   \ in iets dat een programma kan begrijpen en manipuleren. Programmeurs parseren\
   \ HTML om\u2026"
-lastmod: 2024-02-19 22:05:09.819806
+lastmod: '2024-02-25T18:49:48.104954-07:00'
 model: gpt-4-0125-preview
 summary: "HTML parseren betekent het ontleden van de opmaak van een webpagina in iets\
   \ dat een programma kan begrijpen en manipuleren. Programmeurs parseren HTML om\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:27:47.056171-07:00
 description: "Praca z XML na Arduino polega na analizowaniu (parsowaniu) i manipulowaniu\
   \ danymi XML, kt\xF3re zwykle pochodz\u0105 z interfejs\xF3w API sieci Web lub plik\xF3\
   w\u2026"
-lastmod: 2024-02-19 22:04:54.840187
+lastmod: '2024-02-25T18:49:34.066785-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML na Arduino polega na analizowaniu (parsowaniu) i manipulowaniu\
   \ danymi XML, kt\xF3re zwykle pochodz\u0105 z interfejs\xF3w API sieci Web lub plik\xF3\

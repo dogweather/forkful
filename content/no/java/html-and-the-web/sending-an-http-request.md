@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:51.506210-07:00
 description: "I Java sender vi HTTP-foresp\xF8rsler for \xE5 snakke med websider og\
   \ tjenester. Det er essensielt for \xE5 hente data, sende informasjon og integrere\
   \ med et utall\u2026"
-lastmod: 2024-02-19 22:04:59.908186
+lastmod: '2024-02-25T18:49:38.842496-07:00'
 model: gpt-4-1106-preview
 summary: "I Java sender vi HTTP-foresp\xF8rsler for \xE5 snakke med websider og tjenester.\
   \ Det er essensielt for \xE5 hente data, sende informasjon og integrere med et utall\u2026"

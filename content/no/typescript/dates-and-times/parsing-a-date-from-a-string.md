@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:38.169299-07:00
 description: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konvertere\
   \ tekstlige representasjoner av datoer og tider til et format som kan manipuleres\
   \ og\u2026"
-lastmod: 2024-02-19 22:04:59.784617
+lastmod: '2024-02-25T18:49:38.721250-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konvertere tekstlige\
   \ representasjoner av datoer og tider til et format som kan manipuleres og\u2026"

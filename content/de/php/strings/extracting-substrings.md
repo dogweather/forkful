@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:07.717593-07:00
 description: "Substring-Extraktion bedeutet, gezielt Teile eines Strings herauszuschneiden.\
   \ Programmierer nutzen das, um Daten zu manipulieren, Inhalte zu analysieren\u2026"
-lastmod: 2024-02-19 22:05:12.890520
+lastmod: '2024-02-25T18:49:51.018408-07:00'
 model: gpt-4-1106-preview
 summary: "Substring-Extraktion bedeutet, gezielt Teile eines Strings herauszuschneiden.\
   \ Programmierer nutzen das, um Daten zu manipulieren, Inhalte zu analysieren\u2026"

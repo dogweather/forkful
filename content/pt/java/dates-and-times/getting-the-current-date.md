@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:44.652994-07:00
 description: "Obter a data atual em Java \xE9 uma opera\xE7\xE3o fundamental que permite\
   \ aos programadores manipular objetos de data para opera\xE7\xF5es como registro\
   \ (logging),\u2026"
-lastmod: 2024-02-19 22:05:05.505965
+lastmod: '2024-02-25T18:49:44.087525-07:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em Java \xE9 uma opera\xE7\xE3o fundamental que permite\
   \ aos programadores manipular objetos de data para opera\xE7\xF5es como registro\

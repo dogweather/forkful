@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:00.841912-07:00
 description: "Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazione\
   \ e la manipolazione di documenti XML utilizzando varie librerie. I programmatori\
   \ si\u2026"
-lastmod: 2024-02-19 22:05:03.003910
+lastmod: '2024-02-25T18:49:41.770291-07:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazione e\
   \ la manipolazione di documenti XML utilizzando varie librerie. I programmatori\

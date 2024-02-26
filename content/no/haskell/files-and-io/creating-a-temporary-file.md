@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:24.344850-07:00
 description: "Oppretting av en midlertidig fil lar programmer lagre data som trengs\
   \ for kort tid. Vi gj\xF8r dette for \xE5 h\xE5ndtere data som ikke trenger \xE5\
   \ bli varig lagret\u2026"
-lastmod: 2024-02-19 22:05:00.126059
+lastmod: '2024-02-25T18:49:39.035127-07:00'
 model: gpt-4-1106-preview
 summary: "Oppretting av en midlertidig fil lar programmer lagre data som trengs for\
   \ kort tid. Vi gj\xF8r dette for \xE5 h\xE5ndtere data som ikke trenger \xE5 bli\

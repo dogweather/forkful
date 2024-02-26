@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:07.396267-07:00
 description: "Hier is een snel voorbeeld met behulp van JavaScript's Fetch API: ```javascript\
   \ const url = 'https://some-protected-resource.com/data'; const username =\u2026"
-lastmod: 2024-02-19 22:05:10.287477
+lastmod: '2024-02-25T18:49:48.529422-07:00'
 model: gpt-4-0125-preview
 summary: "Hier is een snel voorbeeld met behulp van JavaScript's Fetch API: ```javascript\
   \ const url = 'https://some-protected-resource.com/data'; const username =\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:44.617780-07:00
 description: "Calcular o comprimento de uma string \xE9 simplesmente descobrir quantos\
   \ caracteres ela possui. Programadores fazem isso para validar entradas, limitar\
   \ texto\u2026"
-lastmod: 2024-02-19 22:05:05.661219
+lastmod: '2024-02-25T18:49:44.238000-07:00'
 model: gpt-4-1106-preview
 summary: "Calcular o comprimento de uma string \xE9 simplesmente descobrir quantos\
   \ caracteres ela possui. Programadores fazem isso para validar entradas, limitar\

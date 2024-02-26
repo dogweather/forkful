@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:17.426859-07:00
 description: "Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. Programmeren\
   \ doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun\u2026"
-lastmod: 2024-02-19 22:05:09.650240
+lastmod: '2024-02-25T18:49:47.945759-07:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. Programmeren\
   \ doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun\u2026"

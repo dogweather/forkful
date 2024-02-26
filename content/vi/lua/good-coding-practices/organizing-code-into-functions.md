@@ -6,7 +6,7 @@ description: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 vi\
   c ph\xE2n chia k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i nh\u1ECF\
   \ - h\xE3y ngh\u0129 \u0111\u1EBFn ch\xFAng nh\u01B0 c\xE1c kh\u1ED1i LEGO ch\u1EE9\
   c n\u0103ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u\u2026"
-lastmod: 2024-02-19 22:04:56.014954
+lastmod: '2024-02-25T18:49:35.172464-07:00'
 model: gpt-4-0125-preview
 summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7\
   c ph\xE2n chia k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i nh\u1ECF\

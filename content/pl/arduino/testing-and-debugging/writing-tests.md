@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:43.608105-07:00
 description: "Pisanie test\xF3w w \u015Brodowisku Arduino odnosi si\u0119 do procesu\
   \ tworzenia automatycznych test\xF3w, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\
   \u0107 twojego kodu na urz\u0105dzeniach\u2026"
-lastmod: 2024-02-19 22:04:54.818870
+lastmod: '2024-02-25T18:49:34.046617-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w \u015Brodowisku Arduino odnosi si\u0119 do procesu tworzenia\
   \ automatycznych test\xF3w, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 twojego\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:03:15.107622-07:00
 description: "Zoeken en vervangen van tekst in Visual Basic for Applications (VBA)\
   \ is essentieel voor het programmatisch bewerken van documenten, spreadsheets en\u2026"
-lastmod: 2024-02-19 22:05:09.670681
+lastmod: '2024-02-25T18:49:47.965063-07:00'
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst in Visual Basic for Applications (VBA) is\
   \ essentieel voor het programmatisch bewerken van documenten, spreadsheets en\u2026"

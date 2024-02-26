@@ -2,7 +2,7 @@
 date: 2024-01-20 17:39:54.162274-07:00
 description: "Crear un archivo temporal significa fabricar un fichero dise\xF1ado\
   \ para ser usado brevemente, usualmente como espacio de trabajo temporal. Los programadores\u2026"
-lastmod: 2024-02-19 22:05:17.267005
+lastmod: '2024-02-25T18:49:55.237089-07:00'
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal significa fabricar un fichero dise\xF1ado para\
   \ ser usado brevemente, usualmente como espacio de trabajo temporal. Los programadores\u2026"

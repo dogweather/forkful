@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:06:54.251152-07:00
 description: "Getallen afronden betekent het afhakken van decimale getallen tot een\
   \ vastgelegde nauwkeurigheid, vaak tot hele getallen. Programmeurs ronden af om\u2026"
-lastmod: 2024-02-19 22:05:09.961605
+lastmod: '2024-02-25T18:49:48.227193-07:00'
 model: gpt-4-0125-preview
 summary: "Getallen afronden betekent het afhakken van decimale getallen tot een vastgelegde\
   \ nauwkeurigheid, vaak tot hele getallen. Programmeurs ronden af om\u2026"

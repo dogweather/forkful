@@ -5,7 +5,7 @@ date: 2024-01-28 22:04:38.636725-07:00
 description: "HTML parsen is het proces van HTML-code nemen en informatie daaruit\
   \ extraheren, een beetje zoals het vinden van naalden in een hooiberg \u2013 als\
   \ de hooiberg\u2026"
-lastmod: 2024-02-19 22:05:09.461727
+lastmod: '2024-02-25T18:49:47.768283-07:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen is het proces van HTML-code nemen en informatie daaruit extraheren,\
   \ een beetje zoals het vinden van naalden in een hooiberg \u2013 als de hooiberg\u2026"

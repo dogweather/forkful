@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:00.636311-07:00
 description: "\"Arbeta med XML\" avser processen att l\xE4sa, skapa och modifiera\
   \ XML (eXtensible Markup Language)-filer med programmering. Programmerare g\xF6\
   r det eftersom\u2026"
-lastmod: 2024-02-19 22:04:56.749942
+lastmod: '2024-02-25T18:49:35.844735-07:00'
 model: gpt-4-0125-preview
 summary: "\"Arbeta med XML\" avser processen att l\xE4sa, skapa och modifiera XML\
   \ (eXtensible Markup Language)-filer med programmering. Programmerare g\xF6r det\

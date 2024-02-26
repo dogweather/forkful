@@ -3,7 +3,7 @@ date: 2024-01-26 04:31:45.838452-07:00
 description: "\xC5 arbeide med XML i Haskell inneb\xE6rer parsing, manipulering og\
   \ generering av XML-strukturer. Programmerere h\xE5ndterer XML for \xE5 samhandle\
   \ med tallrike\u2026"
-lastmod: 2024-02-19 22:05:00.131283
+lastmod: '2024-02-25T18:49:39.040497-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med XML i Haskell inneb\xE6rer parsing, manipulering og generering\
   \ av XML-strukturer. Programmerere h\xE5ndterer XML for \xE5 samhandle med tallrike\u2026"

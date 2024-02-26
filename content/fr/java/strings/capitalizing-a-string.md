@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:43.567344-07:00
 description: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi\xE8\
   re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\
   \ en\u2026"
-lastmod: 2024-02-19 22:05:16.383624
+lastmod: '2024-02-25T18:49:54.370014-07:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi\xE8\
   re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\

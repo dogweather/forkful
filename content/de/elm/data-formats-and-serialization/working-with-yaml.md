@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen\
   \ von Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
   \ es\u2026"
-lastmod: 2024-02-19 22:05:12.750605
+lastmod: '2024-02-25T18:49:50.887028-07:00'
 summary: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen von\
   \ Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
   \ es\u2026"

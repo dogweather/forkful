@@ -2,7 +2,7 @@
 date: 2024-01-26 01:17:00.772174-07:00
 description: "Le refactoring est le processus de changement de la structure interne\
   \ d'un programme informatique sans alt\xE9rer son comportement externe. Les programmeurs\u2026"
-lastmod: 2024-02-19 22:05:16.842793
+lastmod: '2024-02-25T18:49:54.832381-07:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring est le processus de changement de la structure interne d'un\
   \ programme informatique sans alt\xE9rer son comportement externe. Les programmeurs\u2026"

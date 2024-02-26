@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:37.556752-07:00
 description: "Escrever para o erro padr\xE3o (`stderr`) em C++ envolve a sa\xEDda\
   \ de mensagens de erro ou diagn\xF3sticos que s\xE3o separados da sa\xEDda principal\
   \ do programa. Os\u2026"
-lastmod: 2024-02-19 22:05:05.956981
+lastmod: '2024-02-25T18:49:44.513320-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (`stderr`) em C++ envolve a sa\xEDda de mensagens\
   \ de erro ou diagn\xF3sticos que s\xE3o separados da sa\xEDda principal do programa.\

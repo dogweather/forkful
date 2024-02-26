@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:55.048803-07:00
 description: "Reading command line arguments in Haskell lets you snatch user inputs\
   \ when they run your program. Why? To customize program behavior on the fly, without\u2026"
-lastmod: 2024-02-19 22:05:18.605860
+lastmod: '2024-02-25T18:49:56.584291-07:00'
 model: gpt-4-1106-preview
 summary: "Reading command line arguments in Haskell lets you snatch user inputs when\
   \ they run your program. Why? To customize program behavior on the fly, without\u2026"

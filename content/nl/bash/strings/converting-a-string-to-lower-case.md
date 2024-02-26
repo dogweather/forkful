@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:35.409220-07:00
 description: "Het omzetten van strings naar kleine letters is het transformeren van\
   \ alle alfabetische tekens in een string naar hun kleine lettervorm. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:10.050593
+lastmod: '2024-02-25T18:49:48.305542-07:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van strings naar kleine letters is het transformeren van alle\
   \ alfabetische tekens in een string naar hun kleine lettervorm. Programmeurs\u2026"

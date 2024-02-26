@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:42.119694-07:00
 description: "Liczby zespolone to po\u0142\u0105czenie liczb rzeczywistych i urojonych,\
   \ jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1. S\u0105 kluczowe\
   \ w dziedzinach\u2026"
-lastmod: 2024-02-19 22:04:54.445403
+lastmod: '2024-02-25T18:49:33.679735-07:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone to po\u0142\u0105czenie liczb rzeczywistych i urojonych,\
   \ jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1. S\u0105 kluczowe\

@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:30.875521-07:00
 description: "Logowanie w programowaniu polega zasadniczo na pozostawianiu \u015B\
   ladu w postaci zarejestrowanych zdarze\u0144 lub wiadomo\u015Bci, kt\xF3re mog\u0105\
   \ by\u0107 wykorzystane do\u2026"
-lastmod: 2024-02-19 22:04:54.593036
+lastmod: '2024-02-25T18:49:33.823257-07:00'
 model: gpt-4-1106-preview
 summary: "Logowanie w programowaniu polega zasadniczo na pozostawianiu \u015Bladu\
   \ w postaci zarejestrowanych zdarze\u0144 lub wiadomo\u015Bci, kt\xF3re mog\u0105\

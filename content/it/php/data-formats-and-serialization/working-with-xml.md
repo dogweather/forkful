@@ -2,7 +2,7 @@
 date: 2024-01-26 04:34:17.939098-07:00
 description: "XML \xE8 un linguaggio di markup utilizzato per memorizzare e trasportare\
   \ dati. I programmatori lavorano con XML per consentire l'interoperabilit\xE0 tra\u2026"
-lastmod: 2024-02-19 22:05:02.608654
+lastmod: '2024-02-25T18:49:41.403664-07:00'
 model: gpt-4-0125-preview
 summary: "XML \xE8 un linguaggio di markup utilizzato per memorizzare e trasportare\
   \ dati. I programmatori lavorano con XML per consentire l'interoperabilit\xE0 tra\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:04:33.123292-07:00
 description: "Log em programa\xE7\xE3o \xE9 basicamente deixar um rastro de migalhas\
   \ na forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar\
   \ o que sua\u2026"
-lastmod: 2024-02-19 22:05:05.677993
+lastmod: '2024-02-25T18:49:44.253007-07:00'
 model: gpt-4-1106-preview
 summary: "Log em programa\xE7\xE3o \xE9 basicamente deixar um rastro de migalhas na\
   \ forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar o\

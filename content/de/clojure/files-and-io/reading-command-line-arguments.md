@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:38.396030-07:00
 description: "Lesen von Kommandozeilenargumenten erm\xF6glicht es Programmen, beim\
   \ Start spezifische Optionen und Daten zu erhalten. Programmierer nutzen dies, um\u2026"
-lastmod: 2024-02-19 22:05:12.484701
+lastmod: '2024-02-25T18:49:50.633188-07:00'
 model: gpt-4-1106-preview
 summary: "Lesen von Kommandozeilenargumenten erm\xF6glicht es Programmen, beim Start\
   \ spezifische Optionen und Daten zu erhalten. Programmierer nutzen dies, um\u2026"

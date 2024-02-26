@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:10.772977-07:00
 description: "Escrever testes em Rust envolve criar verifica\xE7\xF5es automatizadas\
   \ para assegurar que seu c\xF3digo executa conforme o esperado. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-19 22:05:05.405577
+lastmod: '2024-02-25T18:49:43.992361-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Rust envolve criar verifica\xE7\xF5es automatizadas para\
   \ assegurar que seu c\xF3digo executa conforme o esperado. Programadores fazem isso\

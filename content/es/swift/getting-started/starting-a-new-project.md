@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:24.262092-07:00
 description: "Iniciar un nuevo proyecto en Swift es crear desde cero un espacio de\
   \ trabajo para dar vida a tus ideas. Los programadores inician proyectos para resolver\u2026"
-lastmod: 2024-02-19 22:05:17.922000
+lastmod: '2024-02-25T18:49:55.886887-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto en Swift es crear desde cero un espacio de trabajo\
   \ para dar vida a tus ideas. Los programadores inician proyectos para resolver\u2026"

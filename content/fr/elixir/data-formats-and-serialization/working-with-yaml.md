@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:04.778001-07:00
 description: "YAML, acronyme de YAML Ain't Markup Language, est un standard de s\xE9\
   rialisation de donn\xE9es lisible par l'humain, couramment utilis\xE9 pour les fichiers\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:16.244865
+lastmod: '2024-02-25T18:49:54.231499-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, acronyme de YAML Ain't Markup Language, est un standard de s\xE9rialisation\
   \ de donn\xE9es lisible par l'humain, couramment utilis\xE9 pour les fichiers de\u2026"

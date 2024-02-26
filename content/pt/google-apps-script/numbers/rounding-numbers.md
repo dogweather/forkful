@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:21.113822-07:00
 description: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3o\
   \ de computadores, envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou\
   \ para um n\xFAmero\u2026"
-lastmod: 2024-02-19 22:05:05.169821
+lastmod: '2024-02-25T18:49:43.765326-07:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3o de computadores,\
   \ envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou para um n\xFAmero\u2026"

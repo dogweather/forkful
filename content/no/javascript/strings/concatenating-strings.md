@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:06.629855-07:00
 description: "\xC5 sammenk\xE6de strenger (strings) betyr \xE5 sette dem sammen i\
   \ \xE9n. Vi gj\xF8r det for \xE5 bygge tekstbasert data, som meldinger eller kode,\
   \ p\xE5 en dynamisk og\u2026"
-lastmod: 2024-02-19 22:05:00.452083
+lastmod: '2024-02-25T18:49:39.354597-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sammenk\xE6de strenger (strings) betyr \xE5 sette dem sammen i \xE9\
   n. Vi gj\xF8r det for \xE5 bygge tekstbasert data, som meldinger eller kode, p\xE5\

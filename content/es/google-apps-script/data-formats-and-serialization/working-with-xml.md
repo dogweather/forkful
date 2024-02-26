@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:25.301285-07:00
 description: "Trabajar con XML en Google Apps Script permite a los programadores analizar,\
   \ manipular y generar datos XML, esencial para servicios web y configuraciones.\u2026"
-lastmod: 2024-02-19 22:05:17.188522
+lastmod: '2024-02-25T18:49:55.160342-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML en Google Apps Script permite a los programadores analizar,\
   \ manipular y generar datos XML, esencial para servicios web y configuraciones.\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:20.772742-07:00
 description: "Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud\
   \ van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit\u2026"
-lastmod: 2024-02-19 22:05:10.445646
+lastmod: '2024-02-25T18:49:48.678242-07:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud\
   \ van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit\u2026"

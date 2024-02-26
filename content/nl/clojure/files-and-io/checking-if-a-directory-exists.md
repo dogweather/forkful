@@ -5,7 +5,7 @@ date: 2024-01-28 21:55:35.738580-07:00
 description: "Controleren of een directory bestaat betekent bevestigen of een pad\
   \ naar een directory op je bestandssysteem wijst. Programmeurs doen dit om fouten\
   \ te\u2026"
-lastmod: 2024-02-19 22:05:09.523360
+lastmod: '2024-02-25T18:49:47.827225-07:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat betekent bevestigen of een pad naar\
   \ een directory op je bestandssysteem wijst. Programmeurs doen dit om fouten te\u2026"

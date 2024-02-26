@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:22.789970-07:00
 description: "Complex numbers consist of a real part and an imaginary part, represented\
   \ as `a + bi` where `i` is the square root of `-1`. Programmers work with complex\u2026"
-lastmod: 2024-02-19 22:05:18.967487
+lastmod: '2024-02-25T18:49:56.942816-07:00'
 model: gpt-4-0125-preview
 summary: "Complex numbers consist of a real part and an imaginary part, represented\
   \ as `a + bi` where `i` is the square root of `-1`. Programmers work with complex\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:31.391206-07:00
 description: "Working with XML means parsing and generating XML data in Swift. Programmers\
   \ do this for data interchange, especially when integrating with systems where\u2026"
-lastmod: 2024-02-19 22:05:18.879455
+lastmod: '2024-02-25T18:49:56.853419-07:00'
 model: gpt-4-1106-preview
 summary: "Working with XML means parsing and generating XML data in Swift. Programmers\
   \ do this for data interchange, especially when integrating with systems where\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:09.110956-07:00
 description: "Reading a text file means pulling text data from a file on your system\
   \ - it's basic I/O. Programmers need this to access and manipulate data, like configs\u2026"
-lastmod: 2024-02-19 22:05:07.979110
+lastmod: '2024-02-25T18:49:46.451133-07:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file means pulling text data from a file on your system -\
   \ it's basic I/O. Programmers need this to access and manipulate data, like configs\u2026"

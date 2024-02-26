@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:23.563546-07:00
 description: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 como separar pe\xE7as de LEGO\
   \ em caixas\u2014torna encontrar e usar essas pe\xE7as mais f\xE1cil. Fazemos isso\
   \ para evitar repeti\xE7\xE3o, para\u2026"
-lastmod: 2024-02-19 22:05:05.632179
+lastmod: '2024-02-25T18:49:44.210901-07:00'
 model: gpt-4-1106-preview
 summary: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 como separar pe\xE7as de LEGO\
   \ em caixas\u2014torna encontrar e usar essas pe\xE7as mais f\xE1cil. Fazemos isso\

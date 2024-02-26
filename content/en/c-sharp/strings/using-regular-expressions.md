@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:12.497974-07:00
 description: "Regular expressions (regex) in C# are a powerful tool for pattern matching\
   \ within strings, allowing programmers to search, replace, split, or extract data\u2026"
-lastmod: 2024-02-19 22:05:18.545192
+lastmod: '2024-02-25T18:49:56.524383-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in C# are a powerful tool for pattern matching\
   \ within strings, allowing programmers to search, replace, split, or extract data\u2026"

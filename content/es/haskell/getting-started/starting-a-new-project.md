@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:06.661037-07:00
 description: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de\
   \ programaci\xF3n funcional pura. Los programadores emprenden esta tarea para explorar\u2026"
-lastmod: 2024-02-19 22:05:17.626616
+lastmod: '2024-02-25T18:49:55.589685-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de programaci\xF3\
   n funcional pura. Los programadores emprenden esta tarea para explorar\u2026"

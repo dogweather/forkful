@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:28.313919-07:00
 description: "Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren\
   \ van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van\u2026"
-lastmod: 2024-02-19 22:05:10.421639
+lastmod: '2024-02-25T18:49:48.655657-07:00'
 model: gpt-4-0125-preview
 summary: "Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren\
   \ van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van\u2026"

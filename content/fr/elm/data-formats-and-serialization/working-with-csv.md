@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:15.642754-07:00
 description: "Travailler avec du CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
   \ d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9es tabulaires\
   \ dans un\u2026"
-lastmod: 2024-02-19 22:05:16.465348
+lastmod: '2024-02-25T18:49:54.453389-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec du CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
   \ d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9es tabulaires\

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:28:57.506935-07:00
 description: "XML (eXtensible Markup Language) koskee datan rakenteellistamista luettavassa\
   \ muodossa. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4 konfiguraatioon, datan vaihtoon\u2026"
-lastmod: 2024-02-19 22:05:15.491291
+lastmod: '2024-02-25T18:49:53.512064-07:00'
 model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) koskee datan rakenteellistamista luettavassa\
   \ muodossa. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4 konfiguraatioon, datan vaihtoon\u2026"

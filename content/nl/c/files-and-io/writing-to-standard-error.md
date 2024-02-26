@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:15:01.143013-07:00
 description: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
   \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"
-lastmod: 2024-02-19 22:05:10.397413
+lastmod: '2024-02-25T18:49:48.632575-07:00'
 model: gpt-4-0125-preview
 summary: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
   \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:04.891766-07:00
 description: "Transformer une cha\xEEne de caract\xE8res en minuscules, c'est simplement\
   \ changer tous les caract\xE8res majuscules en leur \xE9quivalent minuscule. Les\
   \ programmeurs\u2026"
-lastmod: 2024-02-19 22:05:16.688620
+lastmod: '2024-02-25T18:49:54.670969-07:00'
 model: gpt-4-1106-preview
 summary: "Transformer une cha\xEEne de caract\xE8res en minuscules, c'est simplement\
   \ changer tous les caract\xE8res majuscules en leur \xE9quivalent minuscule. Les\

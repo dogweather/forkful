@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:35.176483-07:00
 description: "Ler um arquivo de texto em Visual Basic para Aplica\xE7\xF5es (VBA)\
   \ envolve acessar e extrair programaticamente o conte\xFAdo de um arquivo de texto\
   \ de dentro de\u2026"
-lastmod: 2024-02-19 22:05:05.468461
+lastmod: '2024-02-25T18:49:44.051107-07:00'
 model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto em Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
   \ acessar e extrair programaticamente o conte\xFAdo de um arquivo de texto de dentro\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:43.714356-07:00
 description: "In der Bash-Programmierung ist die \xDCberpr\xFCfung, ob ein Verzeichnis\
   \ existiert, ein wesentlicher Kontrollmechanismus, der dazu dient, die Existenz\
   \ eines\u2026"
-lastmod: 2024-02-19 22:05:13.004859
+lastmod: '2024-02-25T18:49:51.125950-07:00'
 model: gpt-4-0125-preview
 summary: "In der Bash-Programmierung ist die \xDCberpr\xFCfung, ob ein Verzeichnis\
   \ existiert, ein wesentlicher Kontrollmechanismus, der dazu dient, die Existenz\

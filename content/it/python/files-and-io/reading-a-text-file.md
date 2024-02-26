@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:59.837862-07:00
 description: "Leggere un file di testo in Python significa accedere al suo contenuto\
   \ per usarlo nel programma. I programmatori lo fanno per ottener dati, configurazioni\u2026"
-lastmod: 2024-02-19 22:05:02.125995
+lastmod: '2024-02-25T18:49:40.946081-07:00'
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo in Python significa accedere al suo contenuto per\
   \ usarlo nel programma. I programmatori lo fanno per ottener dati, configurazioni\u2026"

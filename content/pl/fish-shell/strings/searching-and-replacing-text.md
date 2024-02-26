@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:00.452548-07:00
 description: "Wyszukiwanie i zamiana tekstu to zmiana jednego ci\u0105gu znak\xF3\
   w na inny. Programi\u015Bci robi\u0105 to, aby szybko poprawia\u0107 b\u0142\u0119\
   dy, aktualizowa\u0107 kod lub zmienia\u0107 dane."
-lastmod: 2024-02-19 22:04:54.976033
+lastmod: '2024-02-25T18:49:34.197353-07:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to zmiana jednego ci\u0105gu znak\xF3w na\
   \ inny. Programi\u015Bci robi\u0105 to, aby szybko poprawia\u0107 b\u0142\u0119\

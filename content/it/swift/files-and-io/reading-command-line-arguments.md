@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:15.608388-07:00
 description: "Leggere gli argomenti della riga di comando significa estrarre i dati\
   \ inseriti dagli utenti quando avviano il tuo programma da terminale. I programmatori\u2026"
-lastmod: 2024-02-19 22:05:02.859112
+lastmod: '2024-02-25T18:49:41.634689-07:00'
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando significa estrarre i dati inseriti\
   \ dagli utenti quando avviano il tuo programma da terminale. I programmatori\u2026"

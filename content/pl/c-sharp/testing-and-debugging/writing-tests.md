@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:18.228086-07:00
 description: "Pisanie test\xF3w w C# polega na tworzeniu zautomatyzowanych skrypt\xF3\
   w w celu weryfikacji funkcjonalno\u015Bci kodu, gwarantuj\u0105c, \u017Ce dzia\u0142\
   a on zgodnie z\u2026"
-lastmod: 2024-02-19 22:04:54.545802
+lastmod: '2024-02-25T18:49:33.776544-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w C# polega na tworzeniu zautomatyzowanych skrypt\xF3\
   w w celu weryfikacji funkcjonalno\u015Bci kodu, gwarantuj\u0105c, \u017Ce dzia\u0142\

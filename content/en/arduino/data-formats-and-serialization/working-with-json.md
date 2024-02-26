@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:10.620226-07:00
 description: "JSON, or JavaScript Object Notation, is a lightweight data interchange\
   \ format, making it perfect for data storage or configuration files in Arduino\u2026"
-lastmod: 2024-02-19 22:05:18.802646
+lastmod: '2024-02-25T18:49:56.778609-07:00'
 model: gpt-4-0125-preview
 summary: "JSON, or JavaScript Object Notation, is a lightweight data interchange format,\
   \ making it perfect for data storage or configuration files in Arduino\u2026"

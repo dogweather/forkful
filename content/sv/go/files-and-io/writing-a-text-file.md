@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:37.235201-07:00
 description: "Att skriva en textfil i Go inneb\xE4r att skapa och skriva str\xE4ngar\
   \ av data till en ny eller befintlig textfil. Programmerare g\xF6r detta f\xF6r\
   \ att bevara data,\u2026"
-lastmod: 2024-02-19 22:04:56.646476
+lastmod: '2024-02-25T18:49:35.748004-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Go inneb\xE4r att skapa och skriva str\xE4ngar av\
   \ data till en ny eller befintlig textfil. Programmerare g\xF6r detta f\xF6r att\

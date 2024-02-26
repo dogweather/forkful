@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:01.808204-07:00
 description: "Searching and replacing text in programming facilitates the modification\
   \ and management of strings, which is a fundamental task in data manipulation and\u2026"
-lastmod: 2024-02-19 22:05:18.125906
+lastmod: '2024-02-25T18:49:56.085349-07:00'
 model: gpt-4-0125-preview
 summary: "Searching and replacing text in programming facilitates the modification\
   \ and management of strings, which is a fundamental task in data manipulation and\u2026"

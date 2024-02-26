@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:29.944599-07:00
 description: "Szukanie i zamiana tekstu to zamiana jednego ci\u0105gu znak\xF3w na\
   \ inny. Programi\u015Bci wykorzystuj\u0105 t\u0119 technik\u0119, by automatycznie\
   \ korygowa\u0107 b\u0142\u0119dy, aktualizowa\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.800231
+lastmod: '2024-02-25T18:49:34.027966-07:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to zamiana jednego ci\u0105gu znak\xF3w na inny.\
   \ Programi\u015Bci wykorzystuj\u0105 t\u0119 technik\u0119, by automatycznie korygowa\u0107\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:15.123430-07:00
 description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin l\xE4pik\xE4ymist\xE4\
   \ l\xF6yt\xE4\xE4kseen, poimiakseen tai manipuloidakseen tietoa. Ohjelmoijat tekev\xE4\
   t sit\xE4 vuorovaikuttaakseen\u2026"
-lastmod: 2024-02-19 22:05:15.207491
+lastmod: '2024-02-25T18:49:53.239249-07:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin l\xE4pik\xE4ymist\xE4 l\xF6\
   yt\xE4\xE4kseen, poimiakseen tai manipuloidakseen tietoa. Ohjelmoijat tekev\xE4\

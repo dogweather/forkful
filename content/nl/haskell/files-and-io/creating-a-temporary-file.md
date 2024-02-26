@@ -5,7 +5,7 @@ date: 2024-01-28 21:58:09.714148-07:00
 description: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand\
   \ voor kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering\
   \ van\u2026"
-lastmod: 2024-02-19 22:05:09.943167
+lastmod: '2024-02-25T18:49:48.209925-07:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand voor\
   \ kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering\

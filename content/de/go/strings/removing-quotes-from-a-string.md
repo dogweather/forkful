@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:15.503289-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Go bedeutet,\
   \ die f\xFChrenden und abschlie\xDFenden Anf\xFChrungszeichen (`\"` oder `'`) aus\
   \ einem gegebenen\u2026"
-lastmod: 2024-02-19 22:05:12.319329
+lastmod: '2024-02-25T18:49:50.475527-07:00'
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Go bedeutet,\
   \ die f\xFChrenden und abschlie\xDFenden Anf\xFChrungszeichen (`\"` oder `'`) aus\

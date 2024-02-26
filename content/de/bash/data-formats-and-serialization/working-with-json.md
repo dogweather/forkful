@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:32.672077-07:00
 description: "Mit JSON in Bash-Programmierung zu arbeiten bedeutet, JSON-Daten direkt\
   \ von der Kommandozeile aus zu parsen, zu extrahieren und zu manipulieren.\u2026"
-lastmod: 2024-02-19 22:05:13.012201
+lastmod: '2024-02-25T18:49:51.132883-07:00'
 model: gpt-4-0125-preview
 summary: "Mit JSON in Bash-Programmierung zu arbeiten bedeutet, JSON-Daten direkt\
   \ von der Kommandozeile aus zu parsen, zu extrahieren und zu manipulieren.\u2026"

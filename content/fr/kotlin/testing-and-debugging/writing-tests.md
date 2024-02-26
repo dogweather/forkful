@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:57.393761-07:00
 description: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de\
   \ code qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\
   \ en\u2026"
-lastmod: 2024-02-19 22:05:16.488726
+lastmod: '2024-02-25T18:49:54.476137-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de code\
   \ qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\

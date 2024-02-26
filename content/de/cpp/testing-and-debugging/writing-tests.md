@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:07.863598-07:00
 description: "Tests in C++ zu schreiben bedeutet, kleine, in sich geschlossene Programme\
   \ zu erstellen, die automatisch das Verhalten von Abschnitten Ihrer Codebasis\u2026"
-lastmod: 2024-02-19 22:05:13.122348
+lastmod: '2024-02-25T18:49:51.238640-07:00'
 model: gpt-4-0125-preview
 summary: "Tests in C++ zu schreiben bedeutet, kleine, in sich geschlossene Programme\
   \ zu erstellen, die automatisch das Verhalten von Abschnitten Ihrer Codebasis\u2026"

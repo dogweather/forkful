@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:07.804612-07:00
 description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet i Go inneb\xE4\
   r att man hanterar datum- och tidsv\xE4rden f\xF6r att best\xE4mma en specifik punkt\
   \ relativt till ett\u2026"
-lastmod: 2024-02-19 22:04:56.640872
+lastmod: '2024-02-25T18:49:35.742671-07:00'
 model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet i Go inneb\xE4r\
   \ att man hanterar datum- och tidsv\xE4rden f\xF6r att best\xE4mma en specifik punkt\

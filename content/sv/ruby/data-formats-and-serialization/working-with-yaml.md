@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:30.853232-07:00
 description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, anv\xE4nds flitigt\
   \ i Ruby f\xF6r konfigurationsfiler och data-serialisering p\xE5 grund av sitt l\xE4\
   ttl\xE4sta format.\u2026"
-lastmod: 2024-02-19 22:04:57.706964
+lastmod: '2024-02-25T18:49:36.765945-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, anv\xE4nds flitigt\
   \ i Ruby f\xF6r konfigurationsfiler och data-serialisering p\xE5 grund av sitt l\xE4\

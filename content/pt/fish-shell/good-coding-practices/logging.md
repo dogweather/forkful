@@ -3,7 +3,7 @@ date: 2024-01-26 01:03:41.839293-07:00
 description: "Registrar (logging) \xE9, essencialmente, anotar o que seu aplicativo\
   \ est\xE1 fazendo \u2014 um di\xE1rio, por assim dizer, mas para o c\xF3digo. Os\
   \ programadores fazem\u2026"
-lastmod: 2024-02-19 22:05:06.080204
+lastmod: '2024-02-25T18:49:44.629399-07:00'
 model: gpt-4-1106-preview
 summary: "Registrar (logging) \xE9, essencialmente, anotar o que seu aplicativo est\xE1\
   \ fazendo \u2014 um di\xE1rio, por assim dizer, mas para o c\xF3digo. Os programadores\

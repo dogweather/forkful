@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:21.886881-07:00
 description: "Analizzare una data da una stringa in Elm comporta la trasformazione\
   \ delle informazioni testuali che rappresentano date e orari in un formato che Elm\
   \ pu\xF2\u2026"
-lastmod: 2024-02-19 22:05:02.421733
+lastmod: '2024-02-25T18:49:41.226904-07:00'
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa in Elm comporta la trasformazione delle\
   \ informazioni testuali che rappresentano date e orari in un formato che Elm pu\xF2\

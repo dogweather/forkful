@@ -2,7 +2,7 @@
 date: 2024-01-20 18:01:36.556352-07:00
 description: "Sending an HTTP request with basic authentication means your program\
   \ knocks on a web service's door, passing a username and password for entry.\u2026"
-lastmod: 2024-02-19 22:05:18.591821
+lastmod: '2024-02-25T18:49:56.570686-07:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication means your program knocks\
   \ on a web service's door, passing a username and password for entry.\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:47.293630-07:00
 description: "Das Parsen eines Datums aus einem String in Clojure bezieht sich auf\
   \ das Umwandeln textueller Darstellungen von Daten und Zeiten in eine nutzbarere\
   \ Form\u2026"
-lastmod: 2024-02-19 22:05:12.478643
+lastmod: '2024-02-25T18:49:50.627415-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Clojure bezieht sich auf das\
   \ Umwandeln textueller Darstellungen von Daten und Zeiten in eine nutzbarere Form\u2026"

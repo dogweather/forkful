@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:06:17.433775-07:00
 description: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut argumentene\
   \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten.\u2026"
-lastmod: 2024-02-19 22:04:59.564178
+lastmod: '2024-02-25T18:49:38.515518-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut argumentene\
   \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten.\u2026"

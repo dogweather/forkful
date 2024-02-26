@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:21.317784-07:00
 description: "JSON, or JavaScript Object Notation, is a lightweight format for storing\
   \ and transporting data, ideal for server-to-client communication and configuration\u2026"
-lastmod: 2024-02-19 22:05:18.196287
+lastmod: '2024-02-25T18:49:56.153850-07:00'
 model: gpt-4-0125-preview
 summary: "JSON, or JavaScript Object Notation, is a lightweight format for storing\
   \ and transporting data, ideal for server-to-client communication and configuration\u2026"

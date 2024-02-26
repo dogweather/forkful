@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:58.276564-07:00
 description: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu Google Apps Scriptiss\xE4\
   , joka on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen\
   \ teht\xE4v\xE4 kehitt\xE4jille,\u2026"
-lastmod: 2024-02-19 22:05:15.026578
+lastmod: '2024-02-25T18:49:53.087958-07:00'
 model: gpt-4-0125-preview
 summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu Google Apps Scriptiss\xE4, joka\
   \ on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen teht\xE4\

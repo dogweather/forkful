@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:53.156310-07:00
 description: "Att skriva tester i Haskell handlar om att s\xE4kerst\xE4lla att dina\
   \ funktioner fungerar som f\xF6rv\xE4ntat genom automatiserade kontroller. Programmerare\
   \ g\xF6r det\u2026"
-lastmod: 2024-02-19 22:04:57.178877
+lastmod: '2024-02-25T18:49:36.257899-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Haskell handlar om att s\xE4kerst\xE4lla att dina funktioner\
   \ fungerar som f\xF6rv\xE4ntat genom automatiserade kontroller. Programmerare g\xF6\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:18.089492-07:00
 description: "Escrever para o erro padr\xE3o (stderr) em Haskell permite que os programas\
   \ diferenciem sua sa\xEDda entre resultados normais e mensagens de erro. Isso \xE9\
   \u2026"
-lastmod: 2024-02-19 22:05:05.688513
+lastmod: '2024-02-25T18:49:44.262698-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) em Haskell permite que os programas\
   \ diferenciem sua sa\xEDda entre resultados normais e mensagens de erro. Isso \xE9\

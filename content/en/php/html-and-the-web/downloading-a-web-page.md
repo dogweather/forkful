@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:38.940649-07:00
 description: "Downloading a web page means grabbing the online content so you can\
   \ use or analyze it offline. Programmers do it for web scraping, data analysis,\
   \ or to\u2026"
-lastmod: 2024-02-19 22:05:18.628613
+lastmod: '2024-02-25T18:49:56.606143-07:00'
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the online content so you can use\
   \ or analyze it offline. Programmers do it for web scraping, data analysis, or to\u2026"

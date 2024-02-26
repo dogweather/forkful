@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:26.596924-07:00
 description: "Iniciar un nuevo proyecto en Go implica configurar un espacio de trabajo\
   \ e inicializarlo con los m\xF3dulos de Go necesarios. Los programadores hacen esto\u2026"
-lastmod: 2024-02-19 22:05:17.115555
+lastmod: '2024-02-25T18:49:55.086625-07:00'
 model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en Go implica configurar un espacio de trabajo\
   \ e inicializarlo con los m\xF3dulos de Go necesarios. Los programadores hacen esto\u2026"

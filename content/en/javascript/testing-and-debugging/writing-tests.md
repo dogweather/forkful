@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:37.303108-07:00
 description: "Writing tests in JavaScript refers to the practice of creating automated\
   \ scripts that run your code to ensure it behaves as expected, which can\u2026"
-lastmod: 2024-02-19 22:05:18.898312
+lastmod: '2024-02-25T18:49:56.871863-07:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in JavaScript refers to the practice of creating automated\
   \ scripts that run your code to ensure it behaves as expected, which can\u2026"

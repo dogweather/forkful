@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:22.782145-07:00
 description: "Printing debug output is like having a conversation with your code.\
   \ It's about inserting print statements to show what's going on under the hood of\
   \ your\u2026"
-lastmod: 2024-02-19 22:05:18.749343
+lastmod: '2024-02-25T18:49:56.725168-07:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output is like having a conversation with your code. It's\
   \ about inserting print statements to show what's going on under the hood of your\u2026"

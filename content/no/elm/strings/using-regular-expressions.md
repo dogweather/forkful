@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:48.307178-07:00
 description: "Regul\xE6re uttrykk (regex) i programmering er m\xF8nstre brukt for\
   \ \xE5 matche kombinasjoner av tegn i strenger. I Elm, akkurat som i andre spr\xE5\
   k, bruker\u2026"
-lastmod: 2024-02-19 22:04:59.944711
+lastmod: '2024-02-25T18:49:38.878199-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i programmering er m\xF8nstre brukt for \xE5\
   \ matche kombinasjoner av tegn i strenger. I Elm, akkurat som i andre spr\xE5k,\

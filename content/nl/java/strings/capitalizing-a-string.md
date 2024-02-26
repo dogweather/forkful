@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:16.578357-07:00
 description: "Een string met hoofdletters maken betekent de eerste letter in hoofdletters\
   \ zetten en de rest van de letters in kleine letters. Programmeurs gebruiken dit\u2026"
-lastmod: 2024-02-19 22:05:09.715184
+lastmod: '2024-02-25T18:49:48.007084-07:00'
 model: gpt-4-0125-preview
 summary: "Een string met hoofdletters maken betekent de eerste letter in hoofdletters\
   \ zetten en de rest van de letters in kleine letters. Programmeurs gebruiken dit\u2026"

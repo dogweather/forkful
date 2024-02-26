@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:30.337747-07:00
 description: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen oder\
   \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen.\u2026"
-lastmod: 2024-02-19 22:05:12.715788
+lastmod: '2024-02-25T18:49:50.854165-07:00'
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen oder\
   \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen.\u2026"

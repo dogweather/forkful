@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:14.512896-07:00
 description: "Le espressioni regolari (regex) nella programmazione sono utilizzate\
   \ per cercare, corrispondere e manipolare stringhe basate su specifici modelli.\
   \ I\u2026"
-lastmod: 2024-02-19 22:05:02.001461
+lastmod: '2024-02-25T18:49:40.827751-07:00'
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) nella programmazione sono utilizzate per\
   \ cercare, corrispondere e manipolare stringhe basate su specifici modelli. I\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:14.749037-07:00
 description: "Lesen einer Textdatei bedeutet, Daten aus einer Datei im Textformat\
   \ zu holen. Programmiere machen das, um Konfigurationen zu laden, Nutzerdaten zu\u2026"
-lastmod: 2024-02-19 22:05:13.178402
+lastmod: '2024-02-25T18:49:51.292610-07:00'
 model: gpt-4-1106-preview
 summary: "Lesen einer Textdatei bedeutet, Daten aus einer Datei im Textformat zu holen.\
   \ Programmiere machen das, um Konfigurationen zu laden, Nutzerdaten zu\u2026"

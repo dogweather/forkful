@@ -5,7 +5,7 @@ date: 2024-01-30 19:12:55.135152-07:00
 description: "Asocjacyjne tablice w PHP s\u0105 jak na\u0142adowane mo\u017Cliwo\u015B\
   ciami listy, gdzie ka\u017Cdy element mo\u017Cna uzyska\u0107 przy u\u017Cyciu klucza\
   \ zrozumia\u0142ego dla cz\u0142owieka zamiast\u2026"
-lastmod: 2024-02-19 22:04:54.623956
+lastmod: '2024-02-25T18:49:33.854057-07:00'
 model: gpt-4-0125-preview
 summary: "Asocjacyjne tablice w PHP s\u0105 jak na\u0142adowane mo\u017Cliwo\u015B\
   ciami listy, gdzie ka\u017Cdy element mo\u017Cna uzyska\u0107 przy u\u017Cyciu klucza\

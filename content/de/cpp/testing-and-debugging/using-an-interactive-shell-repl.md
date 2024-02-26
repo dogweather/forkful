@@ -2,7 +2,7 @@
 date: 2024-01-26 04:12:02.092219-07:00
 description: "Ein REPL (Read-Eval-Print-Loop) ist eine einfache, interaktive Programmierumgebung.\
   \ Programmierer nutzen es f\xFCr Echtzeit-Sprachexperimente, schnelle\u2026"
-lastmod: 2024-02-19 22:05:13.120454
+lastmod: '2024-02-25T18:49:51.236838-07:00'
 model: gpt-4-0125-preview
 summary: "Ein REPL (Read-Eval-Print-Loop) ist eine einfache, interaktive Programmierumgebung.\
   \ Programmierer nutzen es f\xFCr Echtzeit-Sprachexperimente, schnelle\u2026"

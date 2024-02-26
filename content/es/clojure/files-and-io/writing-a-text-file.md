@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:22.856652-07:00
 description: "Escribir un archivo de texto en Clojure implica crear o modificar archivos\
   \ para guardar datos fuera de tu aplicaci\xF3n, lo que permite la persistencia,\u2026"
-lastmod: 2024-02-19 22:05:17.266019
+lastmod: '2024-02-25T18:49:55.236108-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Clojure implica crear o modificar archivos\
   \ para guardar datos fuera de tu aplicaci\xF3n, lo que permite la persistencia,\u2026"

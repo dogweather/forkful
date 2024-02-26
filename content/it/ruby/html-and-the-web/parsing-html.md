@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:59.740001-07:00
 description: "Analizzare l'HTML significa smontare un pezzo di codice HTML per comprenderne\
   \ la struttura e il contenuto. I programmatori lo fanno per estrarre dati,\u2026"
-lastmod: 2024-02-19 22:05:03.021255
+lastmod: '2024-02-25T18:49:41.786976-07:00'
 model: gpt-4-0125-preview
 summary: "Analizzare l'HTML significa smontare un pezzo di codice HTML per comprenderne\
   \ la struttura e il contenuto. I programmatori lo fanno per estrarre dati,\u2026"

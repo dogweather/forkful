@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:58.409165-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n permite limpiar y\
   \ normalizar datos en tus scripts. Programadores lo hacen para simplificar el an\xE1\
   lisis de\u2026"
-lastmod: 2024-02-19 22:05:17.780163
+lastmod: '2024-02-25T18:49:55.746104-07:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n permite limpiar y normalizar\
   \ datos en tus scripts. Programadores lo hacen para simplificar el an\xE1lisis de\u2026"

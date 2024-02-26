@@ -2,7 +2,7 @@
 date: 2024-01-26 03:50:10.781579-07:00
 description: "Mergulhar em um depurador \xE9 tudo sobre percorrer seu c\xF3digo, observar\
   \ as engrenagens funcionando e pegar aqueles erros esquivos em flagrante. Os\u2026"
-lastmod: 2024-02-19 22:05:05.586457
+lastmod: '2024-02-25T18:49:44.167490-07:00'
 model: gpt-4-0125-preview
 summary: "Mergulhar em um depurador \xE9 tudo sobre percorrer seu c\xF3digo, observar\
   \ as engrenagens funcionando e pegar aqueles erros esquivos em flagrante. Os\u2026"

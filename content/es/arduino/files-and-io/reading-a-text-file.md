@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:40.860012-07:00
 description: "Leer un archivo de texto implica acceder y extraer datos de un documento\
   \ almacenado, generalmente en una memoria SD o similar. Los programadores leen\u2026"
-lastmod: 2024-02-19 22:05:17.856126
+lastmod: '2024-02-25T18:49:55.822014-07:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto implica acceder y extraer datos de un documento\
   \ almacenado, generalmente en una memoria SD o similar. Los programadores leen\u2026"

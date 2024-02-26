@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:29.907974-07:00
 description: "De huidige datum ophalen in PowerShell is simpelweg het systeemidee\
   \ van de datum van vandaag verkrijgen. Programmeurs gebruiken dit om logboeken te\u2026"
-lastmod: 2024-02-19 22:05:10.124330
+lastmod: '2024-02-25T18:49:48.375036-07:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum ophalen in PowerShell is simpelweg het systeemidee van\
   \ de datum van vandaag verkrijgen. Programmeurs gebruiken dit om logboeken te\u2026"

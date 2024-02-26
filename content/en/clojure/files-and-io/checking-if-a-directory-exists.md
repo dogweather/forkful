@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:36.400359-07:00
 description: "Checking if a directory exists in Clojure involves verifying the presence\
   \ of a file system directory from within your Clojure application. This task is\u2026"
-lastmod: 2024-02-19 22:05:18.266078
+lastmod: '2024-02-25T18:49:56.222085-07:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Clojure involves verifying the presence\
   \ of a file system directory from within your Clojure application. This task is\u2026"

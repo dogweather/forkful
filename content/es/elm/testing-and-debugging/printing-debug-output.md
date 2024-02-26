@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:32.241728-07:00
 description: "Imprimir mensajes de depuraci\xF3n es como dejar migajas de pan para\
   \ seguir tu camino en el c\xF3digo. Los programadores lo hacemos para entender qu\xE9\
   \ est\xE1\u2026"
-lastmod: 2024-02-19 22:05:17.503759
+lastmod: '2024-02-25T18:49:55.469910-07:00'
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n es como dejar migajas de pan para seguir\
   \ tu camino en el c\xF3digo. Los programadores lo hacemos para entender qu\xE9 est\xE1\

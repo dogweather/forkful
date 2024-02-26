@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:54:54.212486-07:00
 description: "La gestione degli errori in Google Apps Script riguarda la previsione,\
   \ l'intercettazione e la risposta alle eccezioni o errori che si verificano durante\u2026"
-lastmod: 2024-02-19 22:05:02.070180
+lastmod: '2024-02-25T18:49:40.893136-07:00'
 model: gpt-4-0125-preview
 summary: "La gestione degli errori in Google Apps Script riguarda la previsione, l'intercettazione\
   \ e la risposta alle eccezioni o errori che si verificano durante\u2026"

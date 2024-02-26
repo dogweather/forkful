@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:13.000506-07:00
 description: "Het verwijderen van aanhalingstekens uit een string in VBA houdt in\
   \ dat enkele (`'`) of dubbele (`\"`) aanhalingstekens, die een string kunnen omsluiten\
   \ of\u2026"
-lastmod: 2024-02-19 22:05:09.673755
+lastmod: '2024-02-25T18:49:47.968026-07:00'
 model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een string in VBA houdt in dat\
   \ enkele (`'`) of dubbele (`\"`) aanhalingstekens, die een string kunnen omsluiten\

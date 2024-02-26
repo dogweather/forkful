@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:14.988558-07:00
 description: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts\
   \ tomem decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\
   rios,\u2026"
-lastmod: 2024-02-19 22:05:06.088306
+lastmod: '2024-02-25T18:49:44.637016-07:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts tomem\
   \ decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\

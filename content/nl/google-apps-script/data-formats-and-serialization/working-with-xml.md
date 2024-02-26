@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:33.586368-07:00
 description: "Werken met XML in Google Apps Script stelt programmeurs in staat om\
   \ XML-gegevens te parseren, te manipuleren en te genereren, essentieel voor webservices\u2026"
-lastmod: 2024-02-19 22:05:09.444918
+lastmod: '2024-02-25T18:49:47.752323-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML in Google Apps Script stelt programmeurs in staat om XML-gegevens\
   \ te parseren, te manipuleren en te genereren, essentieel voor webservices\u2026"

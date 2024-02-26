@@ -6,7 +6,7 @@ description: "Vi\u1EC7c \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong 
   \ Apps Script (GAS) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0 tr\xEDch xu\u1EA5\
   t d\u1EEF li\u1EC7u v\u0103n b\u1EA3n t\u1EEB c\xE1c t\u1EC7p \u0111\u01B0\u1EE3\
   c l\u01B0u tr\u1EEF tr\xEAn Google Drive ho\u1EB7c\u2026"
-lastmod: 2024-02-19 22:04:55.254857
+lastmod: '2024-02-25T18:49:34.438662-07:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Google\
   \ Apps Script (GAS) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0 tr\xEDch xu\u1EA5\

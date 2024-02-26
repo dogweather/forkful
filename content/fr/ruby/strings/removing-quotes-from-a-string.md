@@ -2,7 +2,7 @@
 date: 2024-01-26 03:41:23.184999-07:00
 description: "Supprimer les guillemets d'une cha\xEEne signifie retirer ces marques\
   \ de citation doubles ou simples qui entourent les valeurs de texte. Les programmeurs\u2026"
-lastmod: 2024-02-19 22:05:17.055561
+lastmod: '2024-02-25T18:49:55.028631-07:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie retirer ces marques de\
   \ citation doubles ou simples qui entourent les valeurs de texte. Les programmeurs\u2026"

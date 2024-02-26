@@ -2,7 +2,7 @@
 date: 2024-01-26 01:09:10.018671-07:00
 description: "Dividere il codice in funzioni significa suddividere gli script in blocchi\
   \ pi\xF9 piccoli e riutilizzabili che svolgono compiti specifici. Rende il codice\u2026"
-lastmod: 2024-02-19 22:05:02.677026
+lastmod: '2024-02-25T18:49:41.466934-07:00'
 model: gpt-4-1106-preview
 summary: "Dividere il codice in funzioni significa suddividere gli script in blocchi\
   \ pi\xF9 piccoli e riutilizzabili che svolgono compiti specifici. Rende il codice\u2026"

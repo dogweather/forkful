@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:18:31.181748-07:00
 description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich\
   \ um die Verarbeitung und Manipulation von tabellarischen Daten, die im\u2026"
-lastmod: 2024-02-19 22:05:13.013240
+lastmod: '2024-02-25T18:49:51.133880-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich um\
   \ die Verarbeitung und Manipulation von tabellarischen Daten, die im\u2026"

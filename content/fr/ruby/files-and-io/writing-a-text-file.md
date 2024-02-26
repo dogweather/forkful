@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:04.067481-07:00
 description: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fondamentale\
   \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\u2026"
-lastmod: 2024-02-19 22:05:17.088409
+lastmod: '2024-02-25T18:49:55.060420-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fondamentale\
   \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\u2026"

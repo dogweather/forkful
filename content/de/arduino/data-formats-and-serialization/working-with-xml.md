@@ -2,7 +2,7 @@
 date: 2024-01-26 04:27:23.182934-07:00
 description: "Die Arbeit mit XML auf Arduino umfasst das Parsen und Manipulieren von\
   \ XML-Daten, die \xFCblicherweise von Web-APIs oder Konfigurationsdateien kommen.\u2026"
-lastmod: 2024-02-19 22:05:13.101512
+lastmod: '2024-02-25T18:49:51.218683-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML auf Arduino umfasst das Parsen und Manipulieren von XML-Daten,\
   \ die \xFCblicherweise von Web-APIs oder Konfigurationsdateien kommen.\u2026"

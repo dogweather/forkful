@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:16.588308-07:00
 description: "\xC5 manipulere filer med CLI en-linjers i Ruby handler om \xE5 utf\xF8\
   re vanlige filoperasjoner direkte fra terminalen ved \xE5 bruke Ruby-skript. Det\
   \ er en\u2026"
-lastmod: 2024-02-19 22:05:00.595525
+lastmod: '2024-02-25T18:49:39.490657-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 manipulere filer med CLI en-linjers i Ruby handler om \xE5 utf\xF8\
   re vanlige filoperasjoner direkte fra terminalen ved \xE5 bruke Ruby-skript. Det\

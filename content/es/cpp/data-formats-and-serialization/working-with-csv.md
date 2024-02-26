@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:00.274319-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de\
   \ procesar y manipular datos almacenados en un formato de texto simple, donde cada\
   \ l\xEDnea\u2026"
-lastmod: 2024-02-19 22:05:17.901951
+lastmod: '2024-02-25T18:49:55.867077-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de procesar\
   \ y manipular datos almacenados en un formato de texto simple, donde cada l\xED\

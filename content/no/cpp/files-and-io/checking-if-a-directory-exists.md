@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:56.406676-07:00
 description: "\xC5 sjekke om en mappe eksisterer handler om \xE5 fastsl\xE5 tilstedev\xE6\
   relsen av en mappe p\xE5 en angitt sti f\xF8r man utf\xF8rer operasjoner som \xE5\
   \ lese fra eller skrive\u2026"
-lastmod: 2024-02-19 22:05:00.387573
+lastmod: '2024-02-25T18:49:39.293736-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer handler om \xE5 fastsl\xE5 tilstedev\xE6\
   relsen av en mappe p\xE5 en angitt sti f\xF8r man utf\xF8rer operasjoner som \xE5\

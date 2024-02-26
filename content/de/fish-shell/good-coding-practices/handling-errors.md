@@ -3,7 +3,7 @@ date: 2024-01-26 00:52:12.895491-07:00
 description: "Fehlerbehandlung erm\xF6glicht es Ihrem Skript, sich anmutig mit dem\
   \ Unerwarteten auseinanderzusetzen. Wir tun dies, um Fehler zu verwalten, ohne das\
   \ Haar\u2026"
-lastmod: 2024-02-19 22:05:13.255754
+lastmod: '2024-02-25T18:49:51.366945-07:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung erm\xF6glicht es Ihrem Skript, sich anmutig mit dem Unerwarteten\
   \ auseinanderzusetzen. Wir tun dies, um Fehler zu verwalten, ohne das Haar\u2026"

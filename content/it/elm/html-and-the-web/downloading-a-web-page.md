@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:48.272053-07:00
 description: "Scaricare una pagina web significa recuperarne i contenuti via HTTP\
   \ per usarli in una app. I programmatori lo fanno per accedere a dati dinamici,\u2026"
-lastmod: 2024-02-19 22:05:02.410995
+lastmod: '2024-02-25T18:49:41.216788-07:00'
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa recuperarne i contenuti via HTTP per\
   \ usarli in una app. I programmatori lo fanno per accedere a dati dinamici,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-25 17:07:00.069426-07:00
 description: "La interpolaci\xF3n de cadenas en C# te permite crear una nueva cadena\
   \ al incluir expresiones dentro de un literal de cadena, lo que facilita el formateo\
   \ y\u2026"
-lastmod: 2024-02-25 18:27:15.207471
+lastmod: '2024-02-25T18:49:55.535419-07:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas en C# te permite crear una nueva cadena al\
   \ incluir expresiones dentro de un literal de cadena, lo que facilita el formateo\

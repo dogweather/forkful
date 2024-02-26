@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:55.519514-07:00
 description: "Extrair substrings em Visual Basic for Applications (VBA) envolve isolar\
   \ partes espec\xEDficas de uma string com base em crit\xE9rios dados. Programadores\
   \ fazem\u2026"
-lastmod: 2024-02-19 22:05:05.435430
+lastmod: '2024-02-25T18:49:44.020111-07:00'
 model: gpt-4-0125-preview
 summary: "Extrair substrings em Visual Basic for Applications (VBA) envolve isolar\
   \ partes espec\xEDficas de uma string com base em crit\xE9rios dados. Programadores\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:22.437188-07:00
 description: "Analizar una fecha de una cadena en Arduino implica extraer y convertir\
   \ los componentes de la fecha (a\xF1o, mes, d\xEDa) de una representaci\xF3n textual\
   \ a un\u2026"
-lastmod: 2024-02-19 22:05:17.848146
+lastmod: '2024-02-25T18:49:55.814286-07:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena en Arduino implica extraer y convertir\
   \ los componentes de la fecha (a\xF1o, mes, d\xEDa) de una representaci\xF3n textual\

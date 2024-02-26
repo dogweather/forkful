@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:35.476321-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en programmation sont des motifs\
   \ utilis\xE9s pour la correspondance de combinaisons de caract\xE8res dans des cha\xEE\
   nes de\u2026"
-lastmod: 2024-02-19 22:05:16.432832
+lastmod: '2024-02-25T18:49:54.421571-07:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en programmation sont des motifs\
   \ utilis\xE9s pour la correspondance de combinaisons de caract\xE8res dans des cha\xEE\

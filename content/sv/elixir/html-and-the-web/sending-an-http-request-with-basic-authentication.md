@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:47.128414-07:00
 description: "Att skicka en HTTP-beg\xE4ran med basautentisering inneb\xE4r att du\
   \ anv\xE4nder anv\xE4ndarnamn och l\xF6senord f\xF6r att f\xE5 tillg\xE5ng till\
   \ en resurs p\xE5 webben.\u2026"
-lastmod: 2024-02-19 22:04:56.812966
+lastmod: '2024-02-25T18:49:35.908312-07:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran med basautentisering inneb\xE4r att du anv\xE4\
   nder anv\xE4ndarnamn och l\xF6senord f\xF6r att f\xE5 tillg\xE5ng till en resurs\

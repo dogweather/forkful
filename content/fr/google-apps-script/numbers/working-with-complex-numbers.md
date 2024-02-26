@@ -5,7 +5,7 @@ date: 2024-02-01 22:07:38.530232-07:00
 description: "Les nombres complexes, repr\xE9sent\xE9s comme une combinaison d'unit\xE9\
   s r\xE9elles et imaginaires (par exemple, 3 + 4i), sont fondamentaux dans divers\
   \ probl\xE8mes de\u2026"
-lastmod: 2024-02-19 22:05:16.085110
+lastmod: '2024-02-25T18:49:54.074526-07:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes, repr\xE9sent\xE9s comme une combinaison d'unit\xE9\
   s r\xE9elles et imaginaires (par exemple, 3 + 4i), sont fondamentaux dans divers\

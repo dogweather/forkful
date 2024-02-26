@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:48.155349-07:00
 description: "Regular expressions (regex) in Elixir are used for searching, matching,\
   \ and manipulating strings based on specific patterns. Programmers leverage regex\u2026"
-lastmod: 2024-02-19 22:05:18.281672
+lastmod: '2024-02-25T18:49:56.237311-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Elixir are used for searching, matching,\
   \ and manipulating strings based on specific patterns. Programmers leverage regex\u2026"

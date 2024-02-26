@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:12.214704-07:00
 description: "Starting a new project is like planting a seed in your digital garden\u2014\
   you're kicking off a fresh bundle of ideas, and turning them into code that does\u2026"
-lastmod: 2024-02-19 22:05:19.013215
+lastmod: '2024-02-25T18:49:56.988346-07:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project is like planting a seed in your digital garden\u2014\
   you're kicking off a fresh bundle of ideas, and turning them into code that does\u2026"

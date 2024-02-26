@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:15.127049-07:00
 description: "Logging Visual Basic for Applications (VBA) -ymp\xE4rist\xF6ss\xE4 tarkoittaa\
   \ ohjelman suoritusk\xE4ytt\xE4ytymisen tallentamista tiedostoon, konsoliin tai\
   \ tietokantaan.\u2026"
-lastmod: 2024-02-19 22:05:15.303458
+lastmod: '2024-02-25T18:49:53.331253-07:00'
 model: gpt-4-0125-preview
 summary: "Logging Visual Basic for Applications (VBA) -ymp\xE4rist\xF6ss\xE4 tarkoittaa\
   \ ohjelman suoritusk\xE4ytt\xE4ytymisen tallentamista tiedostoon, konsoliin tai\

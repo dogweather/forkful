@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:25.510424-07:00
 description: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von\
   \ Text, der ein Datum darstellt, in ein Datum-Objekt, was Programmierern erm\xF6\
   glicht,\u2026"
-lastmod: 2024-02-19 22:05:12.391178
+lastmod: '2024-02-25T18:49:50.544394-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von Text,\
   \ der ein Datum darstellt, in ein Datum-Objekt, was Programmierern erm\xF6glicht,\u2026"

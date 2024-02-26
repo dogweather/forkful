@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:21.512292-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base comporta la codifica\
   \ di un nome utente e di una password in un'intestazione di richiesta per\u2026"
-lastmod: 2024-02-19 22:05:02.061103
+lastmod: '2024-02-25T18:49:40.884611-07:00'
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base comporta la codifica\
   \ di un nome utente e di una password in un'intestazione di richiesta per\u2026"

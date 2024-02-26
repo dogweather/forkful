@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:25.221283-07:00
 description: "Finding the length of a string in Visual Basic for Applications (VBA)\
   \ involves determining the number of characters it contains. Programmers frequently\u2026"
-lastmod: 2024-02-19 22:05:18.394779
+lastmod: '2024-02-25T18:49:56.348952-07:00'
 model: gpt-4-0125-preview
 summary: "Finding the length of a string in Visual Basic for Applications (VBA) involves\
   \ determining the number of characters it contains. Programmers frequently\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:11.809657-07:00
 description: "Verificar si un directorio existe en Fish Shell permite que los scripts\
   \ tomen decisiones basadas en la presencia o ausencia de estructuras de directorio,\u2026"
-lastmod: 2024-02-19 22:05:18.020604
+lastmod: '2024-02-25T18:49:55.985096-07:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Fish Shell permite que los scripts\
   \ tomen decisiones basadas en la presencia o ausencia de estructuras de directorio,\u2026"

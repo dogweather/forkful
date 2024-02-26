@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:47.320839-07:00
 description: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer des\
   \ donn\xE9es directement du terminal lors de l'ex\xE9cution d'un script. Les programmeurs\
   \ le font\u2026"
-lastmod: 2024-02-19 22:05:17.085448
+lastmod: '2024-02-25T18:49:55.057544-07:00'
 model: gpt-4-1106-preview
 summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer des donn\xE9\
   es directement du terminal lors de l'ex\xE9cution d'un script. Les programmeurs\

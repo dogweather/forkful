@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:57.787759-07:00
 description: "Iniciar um novo projeto em Java \xE9 como plantar uma semente digital\
   \ \u2013 voc\xEA come\xE7a com uma tela em branco e transforma-a em algo que pode\
   \ resolver\u2026"
-lastmod: 2024-02-19 22:05:05.495768
+lastmod: '2024-02-25T18:49:44.077757-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em Java \xE9 como plantar uma semente digital \u2013\
   \ voc\xEA come\xE7a com uma tela em branco e transforma-a em algo que pode resolver\u2026"

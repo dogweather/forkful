@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:26.755889-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Rust consiste en dirigir\
   \ mensajes de error y diagn\xF3sticos a la consola por separado de la salida est\xE1\
   ndar\u2026"
-lastmod: 2024-02-19 22:05:17.388684
+lastmod: '2024-02-25T18:49:55.356704-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Rust consiste en dirigir mensajes\
   \ de error y diagn\xF3sticos a la consola por separado de la salida est\xE1ndar\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:54.677391-07:00
 description: "Edycja plik\xF3w na miejscu z u\u017Cyciem jednolinijkowych polece\u0144\
   \ CLI (Command Line Interface) w Ruby pozwala na modyfikowanie plik\xF3w bezpo\u015B\
   rednio z terminala,\u2026"
-lastmod: 2024-02-19 22:04:55.110290
+lastmod: '2024-02-25T18:49:34.303922-07:00'
 model: gpt-4-0125-preview
 summary: "Edycja plik\xF3w na miejscu z u\u017Cyciem jednolinijkowych polece\u0144\
   \ CLI (Command Line Interface) w Ruby pozwala na modyfikowanie plik\xF3w bezpo\u015B\

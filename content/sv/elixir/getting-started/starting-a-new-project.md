@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:33.467600-07:00
 description: "Att starta ett nytt projekt i Elixir inneb\xE4r att skapa en ren arbetsyta\
   \ f\xF6r din kod. Programmerare g\xF6r det f\xF6r att f\xE5 en strukturerad b\xF6\
   rjan och\u2026"
-lastmod: 2024-02-19 22:04:56.813987
+lastmod: '2024-02-25T18:49:35.909311-07:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt i Elixir inneb\xE4r att skapa en ren arbetsyta\
   \ f\xF6r din kod. Programmerare g\xF6r det f\xF6r att f\xE5 en strukturerad b\xF6\

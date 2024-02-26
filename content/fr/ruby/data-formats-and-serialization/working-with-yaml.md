@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:20.538766-07:00
 description: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un\
   \ langage de balisage), est largement utilis\xE9 en Ruby pour les fichiers de configuration\u2026"
-lastmod: 2024-02-19 22:05:17.090469
+lastmod: '2024-02-25T18:49:55.062583-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
   \ de balisage), est largement utilis\xE9 en Ruby pour les fichiers de configuration\u2026"

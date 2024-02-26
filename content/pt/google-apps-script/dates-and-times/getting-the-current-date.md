@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:54:21.840341-07:00
 description: "Obter a data atual no Google Apps Script \xE9 sobre buscar a data e\
   \ hora ao vivo, uma tarefa comum para automatizar tarefas, fazer registros e marcar\u2026"
-lastmod: 2024-02-19 22:05:05.188574
+lastmod: '2024-02-25T18:49:43.782854-07:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual no Google Apps Script \xE9 sobre buscar a data e hora\
   \ ao vivo, uma tarefa comum para automatizar tarefas, fazer registros e marcar\u2026"

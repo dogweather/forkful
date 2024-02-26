@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:13.121783-07:00
 description: "Drukowanie informacji debugowych w PHP to wy\u015Bwietlanie danych,\
   \ kt\xF3re pomagaj\u0105 nam zrozumie\u0107, co si\u0119 dzieje w naszym skrypcie.\
   \ Robimy to, \u017Ceby szybko\u2026"
-lastmod: 2024-02-19 22:04:54.634070
+lastmod: '2024-02-25T18:49:33.863970-07:00'
 model: gpt-4-1106-preview
 summary: "Drukowanie informacji debugowych w PHP to wy\u015Bwietlanie danych, kt\xF3\
   re pomagaj\u0105 nam zrozumie\u0107, co si\u0119 dzieje w naszym skrypcie. Robimy\

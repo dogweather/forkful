@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:56.096811-07:00
 description: "Tiedostojen paikan p\xE4\xE4ll\xE4 muokkaaminen CLI-yhden komentorivin\
   \ avulla PowerShelliss\xE4 tarkoittaa suorien muutosten tekemist\xE4 tiedostoihin\
   \ komentorivilt\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.674395
+lastmod: '2024-02-25T18:49:53.689139-07:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen paikan p\xE4\xE4ll\xE4 muokkaaminen CLI-yhden komentorivin avulla\
   \ PowerShelliss\xE4 tarkoittaa suorien muutosten tekemist\xE4 tiedostoihin komentorivilt\xE4\

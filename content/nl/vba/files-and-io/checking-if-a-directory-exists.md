@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:49:01.698113-07:00
 description: "Controleren of een map bestaat in Visual Basic for Applications (VBA)\
   \ gaat over het verifi\xEBren van de aanwezigheid van een map binnen het bestandssysteem\u2026"
-lastmod: 2024-02-19 22:05:09.703149
+lastmod: '2024-02-25T18:49:47.996073-07:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Visual Basic for Applications (VBA) gaat\
   \ over het verifi\xEBren van de aanwezigheid van een map binnen het bestandssysteem\u2026"

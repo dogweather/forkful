@@ -3,7 +3,7 @@ date: 2024-01-26 01:40:18.637946-07:00
 description: "Refactoring \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo de\
   \ computador existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento\
   \ externo. Programadores\u2026"
-lastmod: 2024-02-19 22:05:05.503749
+lastmod: '2024-02-25T18:49:44.085420-07:00'
 model: gpt-4-0125-preview
 summary: "Refactoring \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo de computador\
   \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo.\

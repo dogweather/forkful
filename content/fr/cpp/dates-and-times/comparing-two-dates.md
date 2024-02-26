@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:37.045179-07:00
 description: "Comparer deux dates, c'est v\xE9rifier laquelle vient avant ou apr\xE8\
   s l'autre, ou si elles sont identiques. Les programmeurs font cela pour trier des\u2026"
-lastmod: 2024-02-19 22:05:16.846838
+lastmod: '2024-02-25T18:49:54.836341-07:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est v\xE9rifier laquelle vient avant ou apr\xE8s\
   \ l'autre, ou si elles sont identiques. Les programmeurs font cela pour trier des\u2026"

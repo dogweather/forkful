@@ -2,7 +2,7 @@
 date: 2024-01-26 04:42:20.971162-07:00
 description: "Komplekse tall utvider den reelle tallinjen gjennom tillegg av en imagin\xE6\
   r enhet, `i`, der `i^2 = -1`. De er avgj\xF8rende i felter som ingeni\xF8rvitenskap,\u2026"
-lastmod: 2024-02-19 22:04:59.905104
+lastmod: '2024-02-25T18:49:38.839657-07:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider den reelle tallinjen gjennom tillegg av en imagin\xE6\
   r enhet, `i`, der `i^2 = -1`. De er avgj\xF8rende i felter som ingeni\xF8rvitenskap,\u2026"

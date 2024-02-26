@@ -2,7 +2,7 @@
 date: 2024-01-26 00:52:22.480055-07:00
 description: "La gestione degli errori consente al tuo script di affrontare l'inaspettato\
   \ con eleganza. Lo si fa per gestire i fallimenti senza far diventare i capelli\u2026"
-lastmod: 2024-02-19 22:05:02.939339
+lastmod: '2024-02-25T18:49:41.709498-07:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori consente al tuo script di affrontare l'inaspettato\
   \ con eleganza. Lo si fa per gestire i fallimenti senza far diventare i capelli\u2026"

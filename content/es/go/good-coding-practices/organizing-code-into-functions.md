@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:43.600412-07:00
 description: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\xF3\
   digo en bloques modulares reutilizables que realizan tareas espec\xEDficas. Este\
   \ enfoque mejora\u2026"
-lastmod: 2024-02-19 22:05:17.120904
+lastmod: '2024-02-25T18:49:55.091903-07:00'
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\xF3digo\
   \ en bloques modulares reutilizables que realizan tareas espec\xEDficas. Este enfoque\

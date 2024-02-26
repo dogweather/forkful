@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:41.138354-07:00
 description: "Analisar HTML em Clojure envolve extrair programaticamente informa\xE7\
   \xF5es de documentos HTML. Programadores fazem isso para acessar, manipular ou monitorar\u2026"
-lastmod: 2024-02-19 22:05:05.266073
+lastmod: '2024-02-25T18:49:43.856086-07:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML em Clojure envolve extrair programaticamente informa\xE7\xF5\
   es de documentos HTML. Programadores fazem isso para acessar, manipular ou monitorar\u2026"

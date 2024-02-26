@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:28.929083-07:00
 description: "Escrever testes em C# envolve criar scripts automatizados para validar\
   \ a funcionalidade do seu c\xF3digo, assegurando que ele se comporte conforme o\u2026"
-lastmod: 2024-02-19 22:05:05.630121
+lastmod: '2024-02-25T18:49:44.208906-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em C# envolve criar scripts automatizados para validar a\
   \ funcionalidade do seu c\xF3digo, assegurando que ele se comporte conforme o\u2026"

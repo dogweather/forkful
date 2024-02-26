@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:54.639722-07:00
 description: "Comparer deux dates c'est mesurer la diff\xE9rence ou v\xE9rifier la\
   \ relation entre elles. Les programmeurs s'en servent pour des t\xE2ches comme valider\
   \ des\u2026"
-lastmod: 2024-02-19 22:05:16.987863
+lastmod: '2024-02-25T18:49:54.964102-07:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates c'est mesurer la diff\xE9rence ou v\xE9rifier la relation\
   \ entre elles. Les programmeurs s'en servent pour des t\xE2ches comme valider des\u2026"

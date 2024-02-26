@@ -2,7 +2,7 @@
 date: 2024-01-26 03:40:02.380159-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten\
   \ (' ') tai kaksinkertaisten (\" \") lainausmerkkien karsimista osana merkkijonotietoa.\u2026"
-lastmod: 2024-02-19 22:05:15.496877
+lastmod: '2024-02-25T18:49:53.517513-07:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten ('\
   \ ') tai kaksinkertaisten (\" \") lainausmerkkien karsimista osana merkkijonotietoa.\u2026"

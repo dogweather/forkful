@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:15.254339-07:00
 description: "Konwersja stringa do ma\u0142ych liter polega na zmianie ka\u017Cdej\
   \ wielkiej litery na odpowiadaj\u0105c\u0105 jej ma\u0142\u0105. Programi\u015B\
   ci robi\u0105 to, by ujednolici\u0107 dane \u2013 na\u2026"
-lastmod: 2024-02-19 22:04:54.755359
+lastmod: '2024-02-25T18:49:33.982799-07:00'
 model: gpt-4-1106-preview
 summary: "Konwersja stringa do ma\u0142ych liter polega na zmianie ka\u017Cdej wielkiej\
   \ litery na odpowiadaj\u0105c\u0105 jej ma\u0142\u0105. Programi\u015Bci robi\u0105\

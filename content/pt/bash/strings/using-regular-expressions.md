@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:01.475370-07:00
 description: "Express\xF5es regulares (regex) no Bash permitem que voc\xEA pesquise,\
   \ manipule e manuseie strings e arquivos com base em padr\xF5es espec\xEDficos.\
   \ Programadores\u2026"
-lastmod: 2024-02-19 22:05:05.795368
+lastmod: '2024-02-25T18:49:44.360561-07:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) no Bash permitem que voc\xEA pesquise, manipule\
   \ e manuseie strings e arquivos com base em padr\xF5es espec\xEDficos. Programadores\u2026"

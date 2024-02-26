@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:37.234550-07:00
 description: "Interpola\xE7\xE3o de string permite injetar valores em uma cadeia de\
   \ caracteres, tornando seu c\xF3digo mais limpo e leg\xEDvel. Programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-19 22:05:05.837367
+lastmod: '2024-02-25T18:49:44.400433-07:00'
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de string permite injetar valores em uma cadeia de caracteres,\
   \ tornando seu c\xF3digo mais limpo e leg\xEDvel. Programadores fazem isso para\u2026"

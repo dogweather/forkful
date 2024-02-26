@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:04.984214-07:00
 description: "Konwersja daty do postaci \u0142a\u0144cucha znak\xF3w umo\u017Cliwia\
   \ jej zapis i wy\u015Bwietlanie w ludzko zrozumia\u0142ym formacie. Programi\u015B\
   ci wykonuj\u0105 t\u0119 operacj\u0119, by \u0142atwiej\u2026"
-lastmod: 2024-02-19 22:04:54.189520
+lastmod: '2024-02-25T18:49:33.431998-07:00'
 model: gpt-4-1106-preview
 summary: "Konwersja daty do postaci \u0142a\u0144cucha znak\xF3w umo\u017Cliwia jej\
   \ zapis i wy\u015Bwietlanie w ludzko zrozumia\u0142ym formacie. Programi\u015Bci\

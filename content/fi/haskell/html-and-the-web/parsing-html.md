@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:24.243055-07:00
 description: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan,\
   \ HTML-sis\xE4ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen.\u2026"
-lastmod: 2024-02-19 22:05:15.506631
+lastmod: '2024-02-25T18:49:53.526872-07:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan, HTML-sis\xE4\
   ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen.\u2026"

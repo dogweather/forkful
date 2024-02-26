@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:05.596768-07:00
 description: "YAML, rekurencyjny akronim od \"YAML Ain't Markup Language\" (YAML nie\
   \ jest j\u0119zykiem znacznik\xF3w), to format serializacji danych czytelny dla\
   \ cz\u0142owieka,\u2026"
-lastmod: 2024-02-19 22:04:54.198631
+lastmod: '2024-02-25T18:49:33.441083-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, rekurencyjny akronim od \"YAML Ain't Markup Language\" (YAML nie jest\
   \ j\u0119zykiem znacznik\xF3w), to format serializacji danych czytelny dla cz\u0142\

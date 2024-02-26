@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:32.212117-07:00
 description: "Szukanie i zamiana tekstu to podstawa edycji - chodzi o zmian\u0119\
   \ jednego ci\u0105gu znak\xF3w na inny. Programi\u015Bci robi\u0105 to, by szybko\
   \ poprawia\u0107 b\u0142\u0119dy, aktualizowa\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.117841
+lastmod: '2024-02-25T18:49:33.359052-07:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to podstawa edycji - chodzi o zmian\u0119 jednego\
   \ ci\u0105gu znak\xF3w na inny. Programi\u015Bci robi\u0105 to, by szybko poprawia\u0107\

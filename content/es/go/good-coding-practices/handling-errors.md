@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:58:06.309425-07:00
 description: "El manejo de errores en Go implica reconocer y responder a las condiciones\
   \ de error en tu programa. Los programadores se dedican al manejo de errores para\u2026"
-lastmod: 2024-02-19 22:05:17.123074
+lastmod: '2024-02-25T18:49:55.094046-07:00'
 model: gpt-4-0125-preview
 summary: "El manejo de errores en Go implica reconocer y responder a las condiciones\
   \ de error en tu programa. Los programadores se dedican al manejo de errores para\u2026"

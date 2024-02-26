@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:56.530577-07:00
 description: "Getting the current date in programming is crucial for a myriad of reasons,\
   \ including logging, timestamping events, and scheduling tasks. In Clojure, a\u2026"
-lastmod: 2024-02-19 22:05:18.262577
+lastmod: '2024-02-25T18:49:56.218666-07:00'
 model: gpt-4-0125-preview
 summary: "Getting the current date in programming is crucial for a myriad of reasons,\
   \ including logging, timestamping events, and scheduling tasks. In Clojure, a\u2026"

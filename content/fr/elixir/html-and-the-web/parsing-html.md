@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:49.791565-07:00
 description: "L'analyse de HTML en Elixir consiste \xE0 extraire des informations\
   \ des documents HTML. Les programmeurs font cela pour interagir de mani\xE8re programmatique\u2026"
-lastmod: 2024-02-19 22:05:16.221541
+lastmod: '2024-02-25T18:49:54.208849-07:00'
 model: gpt-4-0125-preview
 summary: "L'analyse de HTML en Elixir consiste \xE0 extraire des informations des\
   \ documents HTML. Les programmeurs font cela pour interagir de mani\xE8re programmatique\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:58.849195-07:00
 description: "Complex numbers extend the idea of one-dimensional number lines to a\
   \ two-dimensional complex plane. Programmers use them in fields like engineering,\u2026"
-lastmod: 2024-02-19 22:05:18.927317
+lastmod: '2024-02-25T18:49:56.901627-07:00'
 model: gpt-4-1106-preview
 summary: "Complex numbers extend the idea of one-dimensional number lines to a two-dimensional\
   \ complex plane. Programmers use them in fields like engineering,\u2026"

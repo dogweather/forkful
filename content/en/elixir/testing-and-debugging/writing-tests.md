@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:26.395083-07:00
 description: "Writing tests in Elixir involves creating automated scripts to validate\
   \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"
-lastmod: 2024-02-19 22:05:18.294101
+lastmod: '2024-02-25T18:49:56.249138-07:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in Elixir involves creating automated scripts to validate\
   \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"

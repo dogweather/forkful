@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:07.599494-07:00
 description: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel.\
   \ Programmeurs gebruiken ze in velden zoals signaalverwerking, kwantummechanica,\
   \ en\u2026"
-lastmod: 2024-02-19 22:05:10.057750
+lastmod: '2024-02-25T18:49:48.312420-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel. Programmeurs\
   \ gebruiken ze in velden zoals signaalverwerking, kwantummechanica, en\u2026"

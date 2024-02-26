@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:17.123817-07:00
 description: "Escrever para o erro padr\xE3o (stderr) no Fish Shell \xE9 sobre direcionar\
   \ mensagens de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout).\
   \ Os\u2026"
-lastmod: 2024-02-19 22:05:06.090575
+lastmod: '2024-02-25T18:49:44.638984-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) no Fish Shell \xE9 sobre direcionar\
   \ mensagens de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout).\

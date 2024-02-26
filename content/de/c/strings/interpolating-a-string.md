@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:58:06.426412-07:00
 description: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau von\
   \ Zeichenketten, indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet\u2026"
-lastmod: 2024-02-19 22:05:13.277850
+lastmod: '2024-02-25T18:49:51.387742-07:00'
 model: gpt-4-0125-preview
 summary: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau von Zeichenketten,\
   \ indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet\u2026"

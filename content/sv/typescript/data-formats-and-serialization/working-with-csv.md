@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:28.607955-07:00
 description: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
   n och skriva till CSV-filer, ett vanligt datautbytesformat som anv\xE4nds p\xE5\
   \ grund av sin\u2026"
-lastmod: 2024-02-19 22:04:56.881202
+lastmod: '2024-02-25T18:49:35.973984-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
   n och skriva till CSV-filer, ett vanligt datautbytesformat som anv\xE4nds p\xE5\

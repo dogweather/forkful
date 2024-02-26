@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:25.560402-07:00
 description: String interpolation is about inserting variables into strings. We do
   it to construct messages on the fly, personalize output, or build dynamic queries.
-lastmod: 2024-02-19 22:05:18.807971
+lastmod: '2024-02-25T18:49:56.783920-07:00'
 model: gpt-4-1106-preview
 summary: String interpolation is about inserting variables into strings. We do it
   to construct messages on the fly, personalize output, or build dynamic queries.

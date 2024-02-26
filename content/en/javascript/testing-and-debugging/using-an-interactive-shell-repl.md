@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:46.320314-07:00
 description: "Interactive shells, or REPLs (Read-Eval-Print Loops), let you run code\
   \ on the fly, testing functions, algorithms, or fiddling with ideas. They're the\u2026"
-lastmod: 2024-02-19 22:05:18.896590
+lastmod: '2024-02-25T18:49:56.870155-07:00'
 model: gpt-4-1106-preview
 summary: "Interactive shells, or REPLs (Read-Eval-Print Loops), let you run code on\
   \ the fly, testing functions, algorithms, or fiddling with ideas. They're the\u2026"

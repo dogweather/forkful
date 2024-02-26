@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:24.379648-07:00
 description: "Writing a text file in Bash allows you to automate data storage, logging,\
   \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"
-lastmod: 2024-02-19 22:05:18.723620
+lastmod: '2024-02-25T18:49:56.699693-07:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in Bash allows you to automate data storage, logging,\
   \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"

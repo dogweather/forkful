@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:57.068265-07:00
 description: "Misurare la lunghezza di una stringa significa contare i caratteri che\
   \ la compongono. I programmatori lo fanno per validare l\u2019input, troncare il\
   \ testo o\u2026"
-lastmod: 2024-02-19 22:05:02.574201
+lastmod: '2024-02-25T18:49:41.370816-07:00'
 model: gpt-4-1106-preview
 summary: "Misurare la lunghezza di una stringa significa contare i caratteri che la\
   \ compongono. I programmatori lo fanno per validare l\u2019input, troncare il testo\

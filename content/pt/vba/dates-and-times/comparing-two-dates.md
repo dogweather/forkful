@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:49:53.101465-07:00
 description: "Comparar duas datas em Visual Basic for Applications (VBA) envolve determinar\
   \ a rela\xE7\xE3o cronol\xF3gica entre elas. Programadores fazem isso para executar\u2026"
-lastmod: 2024-02-19 22:05:05.462809
+lastmod: '2024-02-25T18:49:44.045764-07:00'
 model: gpt-4-0125-preview
 summary: "Comparar duas datas em Visual Basic for Applications (VBA) envolve determinar\
   \ a rela\xE7\xE3o cronol\xF3gica entre elas. Programadores fazem isso para executar\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:34.382177-07:00
 description: "Arredondar \xE9 eliminar o ru\xEDdo ap\xF3s um determinado ponto em\
   \ um n\xFAmero. Programadores arredondam para controlar a precis\xE3o, gerenciar\
   \ mem\xF3ria ou tornar a\u2026"
-lastmod: 2024-02-19 22:05:06.022166
+lastmod: '2024-02-25T18:49:44.574415-07:00'
 model: gpt-4-0125-preview
 summary: "Arredondar \xE9 eliminar o ru\xEDdo ap\xF3s um determinado ponto em um n\xFA\
   mero. Programadores arredondam para controlar a precis\xE3o, gerenciar mem\xF3ria\

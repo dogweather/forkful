@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:13.191332-07:00
 description: "I PowerShell \xE4r kontrollen om en katalog finns en vanlig uppgift\
   \ som hj\xE4lper skript att fatta beslut baserat p\xE5 filsystemets struktur\u2014\
   till exempel f\xF6r att\u2026"
-lastmod: 2024-02-19 22:04:57.373809
+lastmod: '2024-02-25T18:49:36.455481-07:00'
 model: gpt-4-0125-preview
 summary: "I PowerShell \xE4r kontrollen om en katalog finns en vanlig uppgift som\
   \ hj\xE4lper skript att fatta beslut baserat p\xE5 filsystemets struktur\u2014till\

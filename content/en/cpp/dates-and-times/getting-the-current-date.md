@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:47.219646-07:00
 description: "Retrieving the current date in C++ is a fundamental task for programs\
   \ that need to process or display dates based on the system's clock. It's essential\u2026"
-lastmod: 2024-02-19 22:05:18.829463
+lastmod: '2024-02-25T18:49:56.805026-07:00'
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in C++ is a fundamental task for programs that\
   \ need to process or display dates based on the system's clock. It's essential\u2026"

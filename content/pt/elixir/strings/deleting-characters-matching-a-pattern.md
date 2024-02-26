@@ -2,7 +2,7 @@
 date: 2024-01-20 17:42:04.027764-07:00
 description: "Eliminar caracteres de uma string que correspondem a um padr\xE3o \xE9\
   \ fundamental para limpar dados ou modificar texto. Programadores o fazem para simplificar\u2026"
-lastmod: 2024-02-19 22:05:05.297351
+lastmod: '2024-02-25T18:49:43.884124-07:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres de uma string que correspondem a um padr\xE3o \xE9 fundamental\
   \ para limpar dados ou modificar texto. Programadores o fazem para simplificar\u2026"

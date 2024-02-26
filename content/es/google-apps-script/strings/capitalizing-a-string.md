@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:48:41.848657-07:00
 description: "Capitalizar una cadena implica modificar la entrada de modo que el primer\
   \ car\xE1cter sea may\xFAscula mientras que el resto permanezca en min\xFAsculas,\u2026"
-lastmod: 2024-02-19 22:05:17.142605
+lastmod: '2024-02-25T18:49:55.114116-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica modificar la entrada de modo que el primer\
   \ car\xE1cter sea may\xFAscula mientras que el resto permanezca en min\xFAsculas,\u2026"

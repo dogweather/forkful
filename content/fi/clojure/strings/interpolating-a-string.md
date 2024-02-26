@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:38.113165-07:00
 description: "String-interpoloinnissa sijoitetaan muuttujia tai lausekkeita osaksi\
   \ merkkijonoja. Koodarit tekev\xE4t t\xE4t\xE4 dynaamisten tekstien luomiseen ja\
   \ koodin\u2026"
-lastmod: 2024-02-19 22:05:15.112485
+lastmod: '2024-02-25T18:49:53.146071-07:00'
 model: gpt-4-1106-preview
 summary: "String-interpoloinnissa sijoitetaan muuttujia tai lausekkeita osaksi merkkijonoja.\
   \ Koodarit tekev\xE4t t\xE4t\xE4 dynaamisten tekstien luomiseen ja koodin\u2026"

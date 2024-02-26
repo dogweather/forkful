@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:22.342165-07:00
 description: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
   \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\
   \ danymi i\u2026"
-lastmod: 2024-02-19 22:04:54.017749
+lastmod: '2024-02-25T18:49:33.257521-07:00'
 model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
   \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\

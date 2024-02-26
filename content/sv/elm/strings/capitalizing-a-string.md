@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:19.617947-07:00
 description: "Att versalisera en str\xE4ng inneb\xE4r att omvandla det inledande tecknet\
   \ i en given str\xE4ng till versal medan resten beh\xE5lls i gemener, ofta f\xF6\
   r standardiserad\u2026"
-lastmod: 2024-02-19 22:04:57.023247
+lastmod: '2024-02-25T18:49:36.107567-07:00'
 model: gpt-4-0125-preview
 summary: "Att versalisera en str\xE4ng inneb\xE4r att omvandla det inledande tecknet\
   \ i en given str\xE4ng till versal medan resten beh\xE5lls i gemener, ofta f\xF6\

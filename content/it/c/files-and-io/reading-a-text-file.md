@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:10.596532-07:00
 description: "Leggere un file di testo in C comporta l'apertura di un file sul tuo\
   \ sistema per estrarne informazioni e manipolarle o visualizzarle secondo necessit\xE0\
   . I\u2026"
-lastmod: 2024-02-19 22:05:02.995935
+lastmod: '2024-02-25T18:49:41.762657-07:00'
 model: gpt-4-0125-preview
 summary: "Leggere un file di testo in C comporta l'apertura di un file sul tuo sistema\
   \ per estrarne informazioni e manipolarle o visualizzarle secondo necessit\xE0.\

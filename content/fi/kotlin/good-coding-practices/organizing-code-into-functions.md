@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:57.174305-07:00
 description: "Koodin organisointi funktioihin tarkoittaa ohjelmasi pilkkomista uudelleenk\xE4\
   ytett\xE4viin osiin, joista jokainen k\xE4sittelee tietty\xE4 teht\xE4v\xE4\xE4\
   . T\xE4m\xE4 tehd\xE4\xE4n\u2026"
-lastmod: 2024-02-19 22:05:15.429474
+lastmod: '2024-02-25T18:49:53.452665-07:00'
 model: gpt-4-1106-preview
 summary: "Koodin organisointi funktioihin tarkoittaa ohjelmasi pilkkomista uudelleenk\xE4\
   ytett\xE4viin osiin, joista jokainen k\xE4sittelee tietty\xE4 teht\xE4v\xE4\xE4\

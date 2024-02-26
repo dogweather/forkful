@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:33.369339-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
   \ tekstist\xE4 Date-objektiksi muuntamista. T\xE4m\xE4 toiminto on olennainen sovelluksille,\
   \ jotka k\xE4sittelev\xE4t\u2026"
-lastmod: 2024-02-19 22:05:15.433303
+lastmod: '2024-02-25T18:49:53.456383-07:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstist\xE4\
   \ Date-objektiksi muuntamista. T\xE4m\xE4 toiminto on olennainen sovelluksille,\

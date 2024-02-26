@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:55.049121-07:00
 description: "Analizzare HTML in Elm implica l'estrazione di informazioni da documenti\
   \ HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che\u2026"
-lastmod: 2024-02-19 22:05:02.410035
+lastmod: '2024-02-25T18:49:41.215886-07:00'
 model: gpt-4-0125-preview
 summary: "Analizzare HTML in Elm implica l'estrazione di informazioni da documenti\
   \ HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che\u2026"

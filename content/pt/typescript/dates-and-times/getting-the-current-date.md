@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:09.273195-07:00
 description: "Obter a data atual em TypeScript, uma linguagem constru\xEDda sobre\
   \ o JavaScript, permite acessar e manipular as informa\xE7\xF5es da data e hora\
   \ atuais.\u2026"
-lastmod: 2024-02-19 22:05:05.368423
+lastmod: '2024-02-25T18:49:43.958286-07:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em TypeScript, uma linguagem constru\xEDda sobre o JavaScript,\
   \ permite acessar e manipular as informa\xE7\xF5es da data e hora atuais.\u2026"

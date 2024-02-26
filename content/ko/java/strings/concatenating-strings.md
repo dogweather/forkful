@@ -6,7 +6,7 @@ description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC740 \uB45
   \uC9C0\uB97C \uAD6C\uC131\uD558\uAC70\uB098, \uB370\uC774\uD130\uB97C \uD615\uC2DD\
   \uD654\uD560 \uB54C \uBB38\uC790\uC5F4\uC744 \uC5F0\uACB0\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-19 22:05:13.944485
+lastmod: '2024-02-25T18:49:52.039770-07:00'
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC740 \uB450 \uAC1C\
   \ \uC774\uC0C1\uC758 \uBB38\uC790\uC5F4\uC744 \uD558\uB098\uB85C \uBB36\uB294 \uAC83\

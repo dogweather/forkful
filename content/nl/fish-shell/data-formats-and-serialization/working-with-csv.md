@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:08.261235-07:00
 description: "Werken met CSV (Comma-Separated Values, komma-gescheiden waarden) omvat\
   \ het parseren en manipuleren van gegevens die gestructureerd zijn als rijen en\u2026"
-lastmod: 2024-02-19 22:05:10.357946
+lastmod: '2024-02-25T18:49:48.595044-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values, komma-gescheiden waarden) omvat\
   \ het parseren en manipuleren van gegevens die gestructureerd zijn als rijen en\u2026"

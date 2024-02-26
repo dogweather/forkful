@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:34.426413-07:00
 description: "\xC5 tolke en dato fra en streng inneb\xE6rer \xE5 forst\xE5 strengformatet\
   \ for \xE5 trekke ut dato-komponenter som dag, m\xE5ned og \xE5r. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.382315
+lastmod: '2024-02-25T18:49:39.288551-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 tolke en dato fra en streng inneb\xE6rer \xE5 forst\xE5 strengformatet\
   \ for \xE5 trekke ut dato-komponenter som dag, m\xE5ned og \xE5r. Programmerere\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:24.527406-07:00
 description: "Wypisywanie debugowania to wy\u015Bwietlanie informacji o dzia\u0142\
   aniu programu \u2013 pomaga to programistom \u0142apa\u0107 b\u0142\u0119dy. Wykorzystujemy\
   \ to, aby zobaczy\u0107, co si\u0119\u2026"
-lastmod: 2024-02-19 22:04:54.313789
+lastmod: '2024-02-25T18:49:33.554603-07:00'
 model: gpt-4-1106-preview
 summary: "Wypisywanie debugowania to wy\u015Bwietlanie informacji o dzia\u0142aniu\
   \ programu \u2013 pomaga to programistom \u0142apa\u0107 b\u0142\u0119dy. Wykorzystujemy\

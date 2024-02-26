@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:07.618631-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta Visual Basic for\
   \ Applications (VBA) -ohjelmistossa tarkoittaa tekstin, joka esitt\xE4\xE4 p\xE4\
   iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista\u2026"
-lastmod: 2024-02-19 22:05:15.306641
+lastmod: '2024-02-25T18:49:53.334359-07:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta Visual Basic for Applications\
   \ (VBA) -ohjelmistossa tarkoittaa tekstin, joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4\

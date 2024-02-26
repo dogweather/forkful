@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:00:01.372714-07:00
 description: "Analisar HTML em Go envolve examinar o conte\xFAdo de arquivos HTML\
   \ para extrair dados, manipular a estrutura ou converter o HTML em outros formatos.\u2026"
-lastmod: 2024-02-19 22:05:05.122162
+lastmod: '2024-02-25T18:49:43.722390-07:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML em Go envolve examinar o conte\xFAdo de arquivos HTML para\
   \ extrair dados, manipular a estrutura ou converter o HTML em outros formatos.\u2026"

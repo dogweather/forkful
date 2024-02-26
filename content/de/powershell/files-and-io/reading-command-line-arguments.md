@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:50.111510-07:00
 description: "Kommandozeilenargumente zu lesen hei\xDFt, Eingaben von Benutzern zu\
   \ verarbeiten, die ein Skript ausgef\xFChrt haben. Programmierer nutzen das, um\
   \ Skripts\u2026"
-lastmod: 2024-02-19 22:05:13.050896
+lastmod: '2024-02-25T18:49:51.170985-07:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente zu lesen hei\xDFt, Eingaben von Benutzern zu verarbeiten,\
   \ die ein Skript ausgef\xFChrt haben. Programmierer nutzen das, um Skripts\u2026"

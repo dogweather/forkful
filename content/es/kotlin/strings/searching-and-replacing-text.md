@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:21.811291-07:00
 description: "Buscar y reemplazar texto es como usar el comando \"buscar\" de tu lector\
   \ PDF, pero en el c\xF3digo puedes cambiar todas las apariciones de un patr\xF3\
   n por otro.\u2026"
-lastmod: 2024-02-19 22:05:17.528501
+lastmod: '2024-02-25T18:49:55.493504-07:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es como usar el comando \"buscar\" de tu lector\
   \ PDF, pero en el c\xF3digo puedes cambiar todas las apariciones de un patr\xF3\

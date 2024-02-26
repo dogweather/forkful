@@ -2,7 +2,7 @@
 date: 2024-01-25 03:00:04.957882-07:00
 description: "Complex numbers extend the idea of the one-dimensional number line into\
   \ the two-dimensional plane by including a perpendicular imaginary axis. Programmers\u2026"
-lastmod: 2024-02-19 22:05:18.661808
+lastmod: '2024-02-25T18:49:56.639128-07:00'
 model: gpt-4-1106-preview
 summary: "Complex numbers extend the idea of the one-dimensional number line into\
   \ the two-dimensional plane by including a perpendicular imaginary axis. Programmers\u2026"

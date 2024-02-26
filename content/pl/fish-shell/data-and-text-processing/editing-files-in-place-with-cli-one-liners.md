@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:35.961609-07:00
 description: "Edycja plik\xF3w bezpo\u015Brednio z linii polece\u0144 za pomoc\u0105\
   \ jednolinijkowc\xF3w CLI polega na dokonywaniu zmian bezpo\u015Brednio w plikach,\
   \ bez otwierania ich w\u2026"
-lastmod: 2024-02-19 22:04:55.011282
+lastmod: '2024-02-25T18:49:34.210275-07:00'
 model: gpt-4-0125-preview
 summary: "Edycja plik\xF3w bezpo\u015Brednio z linii polece\u0144 za pomoc\u0105 jednolinijkowc\xF3\
   w CLI polega na dokonywaniu zmian bezpo\u015Brednio w plikach, bez otwierania ich\

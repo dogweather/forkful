@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:53.139027-07:00
 description: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vastaanottamista\
   \ k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa,\
   \ koska se\u2026"
-lastmod: 2024-02-19 22:05:15.397727
+lastmod: '2024-02-25T18:49:53.422099-07:00'
 model: gpt-4-1106-preview
 summary: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vastaanottamista\
   \ k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa,\

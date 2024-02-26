@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:10.558506-07:00
 description: "Wyra\u017Cenia regularne (regex) s\u0105 wzorcami u\u017Cywanymi do\
   \ dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci\
   \ wykorzystuj\u0105 je do wyszukiwania,\u2026"
-lastmod: 2024-02-19 22:04:54.074290
+lastmod: '2024-02-25T18:49:33.313926-07:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) s\u0105 wzorcami u\u017Cywanymi do dopasowywania\
   \ kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci wykorzystuj\u0105\

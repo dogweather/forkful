@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:18.857704-07:00
 description: "Deleting characters matching a pattern means getting rid of specific\
   \ sequences of characters from strings\u2014think cleaning up data or inputs. Programmers\
   \ do\u2026"
-lastmod: 2024-02-19 22:05:18.770363
+lastmod: '2024-02-25T18:49:56.745873-07:00'
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern means getting rid of specific sequences\
   \ of characters from strings\u2014think cleaning up data or inputs. Programmers\

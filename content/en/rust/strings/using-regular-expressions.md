@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:13.620376-07:00
 description: "Regular expressions, or regex, allow developers to search, match, and\
   \ manipulate strings with advanced pattern-matching techniques. In Rust, utilizing\u2026"
-lastmod: 2024-02-19 22:05:18.356615
+lastmod: '2024-02-25T18:49:56.311026-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions, or regex, allow developers to search, match, and manipulate\
   \ strings with advanced pattern-matching techniques. In Rust, utilizing\u2026"

@@ -6,7 +6,7 @@ description: "M\u1EA3ng k\u1EBFt h\u1EE3p, c\xF2n \u0111\u01B0\u1EE3c bi\u1EBFt 
   \u1EBFn nh\u01B0 b\u1EA3ng b\u0103m ho\u1EB7c t\u1EEB \u0111i\u1EC3n trong PowerShell,\
   \ cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1\
   ng c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB, gi\xFAp vi\u1EC7c truy xu\u1EA5t\u2026"
-lastmod: 2024-02-19 22:04:56.116793
+lastmod: '2024-02-25T18:49:35.269096-07:00'
 model: gpt-4-0125-preview
 summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, c\xF2n \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\
   \u1EBFn nh\u01B0 b\u1EA3ng b\u0103m ho\u1EB7c t\u1EEB \u0111i\u1EC3n trong PowerShell,\

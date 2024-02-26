@@ -3,7 +3,7 @@ date: 2024-01-26 04:34:43.300468-07:00
 description: "\"Lavorare con XML\" si riferisce al processo di lettura, creazione\
   \ e modifica dei file XML (eXtensible Markup Language) utilizzando la programmazione.\
   \ I\u2026"
-lastmod: 2024-02-19 22:05:02.133324
+lastmod: '2024-02-25T18:49:40.953050-07:00'
 model: gpt-4-0125-preview
 summary: "\"Lavorare con XML\" si riferisce al processo di lettura, creazione e modifica\
   \ dei file XML (eXtensible Markup Language) utilizzando la programmazione. I\u2026"

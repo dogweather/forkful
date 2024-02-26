@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:59.074995-07:00
 description: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem l\xE4\
   ngeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten\
   \ zu\u2026"
-lastmod: 2024-02-19 22:05:12.850491
+lastmod: '2024-02-25T18:49:50.981222-07:00'
 model: gpt-4-1106-preview
 summary: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem l\xE4\
   ngeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:48.897118-07:00
 description: "Searching and replacing text means finding specific sequences of characters\
   \ in a string and swapping them with something else. Programmers do this for\u2026"
-lastmod: 2024-02-19 22:05:07.775704
+lastmod: '2024-02-25T18:49:46.258920-07:00'
 model: gpt-4-1106-preview
 summary: "Searching and replacing text means finding specific sequences of characters\
   \ in a string and swapping them with something else. Programmers do this for\u2026"

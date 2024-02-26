@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:57.151866-07:00
 description: "Het vergelijken van twee datums betekent controleren of ze gelijk zijn,\
   \ of uitzoeken welke eerder of later komt. Programmeurs doen dit om gebeurtenissen\u2026"
-lastmod: 2024-02-19 22:05:10.440402
+lastmod: '2024-02-25T18:49:48.673381-07:00'
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums betekent controleren of ze gelijk zijn,\
   \ of uitzoeken welke eerder of later komt. Programmeurs doen dit om gebeurtenissen\u2026"

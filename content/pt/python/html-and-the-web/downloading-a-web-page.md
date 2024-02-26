@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:44.354413-07:00
 description: "Baixar uma p\xE1gina da web \xE9 o processo de salvar os dados de uma\
   \ p\xE1gina em um arquivo local. Programadores fazem isso para analisar o conte\xFA\
   do, obter\u2026"
-lastmod: 2024-02-19 22:05:05.222938
+lastmod: '2024-02-25T18:49:43.814725-07:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 o processo de salvar os dados de uma p\xE1\
   gina em um arquivo local. Programadores fazem isso para analisar o conte\xFAdo,\

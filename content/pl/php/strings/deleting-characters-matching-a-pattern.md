@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:42.774548-07:00
 description: "Usuwanie znak\xF3w odpowiadaj\u0105cych okre\u015Blonemu wzorcowi to\
   \ po prostu filtrowanie tekstu. Programi\u015Bci robi\u0105 to, by oczy\u015Bci\u0107\
   \ dane, usun\u0105\u0107 niepotrzebne\u2026"
-lastmod: 2024-02-19 22:04:54.614622
+lastmod: '2024-02-25T18:49:33.845022-07:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w odpowiadaj\u0105cych okre\u015Blonemu wzorcowi to po\
   \ prostu filtrowanie tekstu. Programi\u015Bci robi\u0105 to, by oczy\u015Bci\u0107\

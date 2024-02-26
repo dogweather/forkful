@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:16.467523-07:00
 description: "En feils\xF8ker er et verkt\xF8y som hjelper deg med \xE5 klemme ut\
   \ feil i koden din ved \xE5 la deg pause, utforske, og finne ut hva som egentlig\
   \ foreg\xE5r under\u2026"
-lastmod: 2024-02-19 22:05:00.333884
+lastmod: '2024-02-25T18:49:39.242046-07:00'
 model: gpt-4-0125-preview
 summary: "En feils\xF8ker er et verkt\xF8y som hjelper deg med \xE5 klemme ut feil\
   \ i koden din ved \xE5 la deg pause, utforske, og finne ut hva som egentlig foreg\xE5\

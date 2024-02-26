@@ -2,7 +2,7 @@
 date: 2024-01-26 04:21:18.694397-07:00
 description: "TOML, forkortelse for Toms Obvious, Minimal Language, er et dataserialiseringspr\xE5\
   k. Elm-programmerere bruker det til \xE5 h\xE5ndtere konfigurasjonsdata fordi\u2026"
-lastmod: 2024-02-19 22:04:59.978609
+lastmod: '2024-02-25T18:49:38.910614-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, forkortelse for Toms Obvious, Minimal Language, er et dataserialiseringspr\xE5\
   k. Elm-programmerere bruker det til \xE5 h\xE5ndtere konfigurasjonsdata fordi\u2026"

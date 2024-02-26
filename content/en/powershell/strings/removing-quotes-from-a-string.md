@@ -3,7 +3,7 @@ date: 2024-01-25 20:50:29.988124-07:00
 description: "Removing quotes from a string in PowerShell strips out single (`'`)\
   \ or double (`\"`) quotation marks wrapped around your text. Programmers often need\
   \ to\u2026"
-lastmod: 2024-02-19 22:05:18.734162
+lastmod: '2024-02-25T18:49:56.710081-07:00'
 model: gpt-4-1106-preview
 summary: "Removing quotes from a string in PowerShell strips out single (`'`) or double\
   \ (`\"`) quotation marks wrapped around your text. Programmers often need to\u2026"

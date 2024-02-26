@@ -2,7 +2,7 @@
 date: 2024-01-26 03:42:46.666327-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista yksinkertaisempaan\
   \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa. Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.627943
+lastmod: '2024-02-25T18:49:53.644160-07:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista yksinkertaisempaan\
   \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa. Ohjelmoijat\u2026"

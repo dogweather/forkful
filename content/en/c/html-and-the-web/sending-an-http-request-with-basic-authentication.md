@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:08.997620-07:00
 description: "Sending an HTTP request with basic authentication in C involves crafting\
   \ an HTTP request that includes an Authorization header with user credentials\u2026"
-lastmod: 2024-02-19 22:05:18.972886
+lastmod: '2024-02-25T18:49:56.948131-07:00'
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request with basic authentication in C involves crafting\
   \ an HTTP request that includes an Authorization header with user credentials\u2026"

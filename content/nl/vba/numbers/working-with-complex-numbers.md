@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:05.450973-07:00
 description: "Werken met complexe getallen houdt in dat je wiskundige bewerkingen\
   \ uitvoert op getallen die zowel een re\xEBel deel als een imaginair deel hebben.\u2026"
-lastmod: 2024-02-19 22:05:09.679899
+lastmod: '2024-02-25T18:49:47.974540-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met complexe getallen houdt in dat je wiskundige bewerkingen uitvoert\
   \ op getallen die zowel een re\xEBel deel als een imaginair deel hebben.\u2026"

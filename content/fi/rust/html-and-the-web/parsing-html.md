@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:00.379539-07:00
 description: "HTML:n j\xE4sent\xE4minen Rustilla koskee tietojen poimimista HTML-dokumenteista,\
   \ mik\xE4 on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipij\xF6\
   iden\u2026"
-lastmod: 2024-02-19 22:05:15.249813
+lastmod: '2024-02-25T18:49:53.279568-07:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Rustilla koskee tietojen poimimista HTML-dokumenteista,\
   \ mik\xE4 on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipij\xF6\

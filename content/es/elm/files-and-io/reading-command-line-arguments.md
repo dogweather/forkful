@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:21.227350-07:00
 description: "Leer argumentos de l\xEDnea de comandos significa obtener datos directamente\
   \ cuando ejecutas un programa. Los programadores hacen esto para personalizar la\u2026"
-lastmod: 2024-02-19 22:05:17.516713
+lastmod: '2024-02-25T18:49:55.482066-07:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de l\xEDnea de comandos significa obtener datos directamente\
   \ cuando ejecutas un programa. Los programadores hacen esto para personalizar la\u2026"

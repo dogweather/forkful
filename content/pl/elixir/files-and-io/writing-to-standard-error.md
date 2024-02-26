@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:10.807558-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Elixirze to spos\xF3\
   b na kierowanie komunikat\xF3w o b\u0142\u0119dach i diagnostyki, oddzielnie od\
   \ g\u0142\xF3wnego wyniku (stdout).\u2026"
-lastmod: 2024-02-19 22:04:54.238831
+lastmod: '2024-02-25T18:49:33.481637-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Elixirze to spos\xF3\
   b na kierowanie komunikat\xF3w o b\u0142\u0119dach i diagnostyki, oddzielnie od\

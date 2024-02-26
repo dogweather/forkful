@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:24.329034-07:00
 description: "HTML zu parsen bedeutet, HTML-Inhalte so aufzubrechen, dass ein Programm\
   \ sie verstehen und manipulieren kann. Programmierer tun dies, um Daten zu\u2026"
-lastmod: 2024-02-19 22:05:13.116800
+lastmod: '2024-02-25T18:49:51.233359-07:00'
 model: gpt-4-0125-preview
 summary: "HTML zu parsen bedeutet, HTML-Inhalte so aufzubrechen, dass ein Programm\
   \ sie verstehen und manipulieren kann. Programmierer tun dies, um Daten zu\u2026"

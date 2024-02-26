@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:11:57.031715-07:00
 description: "Werken met JSON (JavaScript Object Notation) in C houdt in dat je JSON-gegevensstructuren\
   \ moet parsen, genereren en manipuleren. Programmeurs doen dit om\u2026"
-lastmod: 2024-02-19 22:05:10.402683
+lastmod: '2024-02-25T18:49:48.637636-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met JSON (JavaScript Object Notation) in C houdt in dat je JSON-gegevensstructuren\
   \ moet parsen, genereren en manipuleren. Programmeurs doen dit om\u2026"

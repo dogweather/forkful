@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:25.015258-07:00
 description: "Das Extrahieren von Teilzeichenketten ist der Prozess, spezifische Teile\
   \ aus einem String herauszuschneiden. Programmierer nutzen dies f\xFCr Aufgaben\
   \ wie\u2026"
-lastmod: 2024-02-19 22:05:12.585911
+lastmod: '2024-02-25T18:49:50.730123-07:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilzeichenketten ist der Prozess, spezifische Teile\
   \ aus einem String herauszuschneiden. Programmierer nutzen dies f\xFCr Aufgaben\

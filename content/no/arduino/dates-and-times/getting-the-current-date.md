@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:46.849050-07:00
 description: "\xC5 f\xE5 tak i dagens dato i Arduino-prosjekter inneb\xE6rer \xE5\
   \ skaffe sanntidsinformasjon som kan v\xE6re avgj\xF8rende for logging, tidsstempling\
   \ eller planlegging av\u2026"
-lastmod: 2024-02-19 22:05:00.340301
+lastmod: '2024-02-25T18:49:39.248207-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 tak i dagens dato i Arduino-prosjekter inneb\xE6rer \xE5 skaffe\
   \ sanntidsinformasjon som kan v\xE6re avgj\xF8rende for logging, tidsstempling eller\

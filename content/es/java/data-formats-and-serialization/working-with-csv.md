@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:15.701735-07:00
 description: "Trabajar con archivos CSV implica leer y escribir datos en archivos\
   \ de Valores Separados por Comas (CSV), un formato popular para el intercambio de\
   \ datos\u2026"
-lastmod: 2024-02-19 22:05:17.482112
+lastmod: '2024-02-25T18:49:55.448613-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV implica leer y escribir datos en archivos de Valores\
   \ Separados por Comas (CSV), un formato popular para el intercambio de datos\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:09.367418-07:00
 description: "Lavorare con XML significa analizzare, manipolare e scrivere dati XML\
   \ utilizzando la programmazione. I programmatori gestiscono XML per lo scambio di\
   \ dati\u2026"
-lastmod: 2024-02-19 22:05:02.261347
+lastmod: '2024-02-25T18:49:41.076876-07:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con XML significa analizzare, manipolare e scrivere dati XML utilizzando\
   \ la programmazione. I programmatori gestiscono XML per lo scambio di dati\u2026"

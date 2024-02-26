@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:15.915338-07:00
 description: "\xC5 laste ned en nettside betyr \xE5 hente alt innholdet p\xE5 den\
   \ - tekst, bilder, stilsett og lignende - gjennom internett. Programmere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.104555
+lastmod: '2024-02-25T18:49:39.012604-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 laste ned en nettside betyr \xE5 hente alt innholdet p\xE5 den - tekst,\
   \ bilder, stilsett og lignende - gjennom internett. Programmere gj\xF8r dette for\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:09:50.906949-07:00
 description: "Usar um depurador (debugger) em Ruby d\xE1 aos programadores o superpoder\
   \ de pausar o c\xF3digo, inspecionar vari\xE1veis e avan\xE7ar atrav\xE9s do c\xF3\
   digo linha por\u2026"
-lastmod: 2024-02-19 22:05:06.172436
+lastmod: '2024-02-25T18:49:44.716482-07:00'
 model: gpt-4-0125-preview
 summary: "Usar um depurador (debugger) em Ruby d\xE1 aos programadores o superpoder\
   \ de pausar o c\xF3digo, inspecionar vari\xE1veis e avan\xE7ar atrav\xE9s do c\xF3\

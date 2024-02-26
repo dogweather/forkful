@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:16.752202-07:00
 description: "Logging no desenvolvimento de software \xE9 o processo de registrar\
   \ informa\xE7\xF5es sobre a execu\xE7\xE3o de um programa, projetado para rastrear\
   \ seu comportamento e\u2026"
-lastmod: 2024-02-19 22:05:05.133702
+lastmod: '2024-02-25T18:49:43.732100-07:00'
 model: gpt-4-0125-preview
 summary: "Logging no desenvolvimento de software \xE9 o processo de registrar informa\xE7\
   \xF5es sobre a execu\xE7\xE3o de um programa, projetado para rastrear seu comportamento\

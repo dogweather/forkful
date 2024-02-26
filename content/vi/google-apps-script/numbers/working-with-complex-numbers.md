@@ -7,7 +7,7 @@ description: "S\u1ED1 ph\u1EE9c, \u0111\u01B0\u1EE3c bi\u1EC3u di\u1EC5n nh\u01B
   o (v\xED d\u1EE5, 3 + 4i), l\xE0 c\u01A1 b\u1EA3n trong nhi\u1EC1u v\u1EA5n \u0111\
   \u1EC1 t\xEDnh to\xE1n, \u0111\u1EB7c bi\u1EC7t trong k\u1EF9 thu\u1EADt, v\u1EAD\
   t\u2026"
-lastmod: 2024-02-19 22:04:55.220263
+lastmod: '2024-02-25T18:49:34.406875-07:00'
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c, \u0111\u01B0\u1EE3c bi\u1EC3u di\u1EC5n nh\u01B0 l\xE0\
   \ s\u1EF1 k\u1EBFt h\u1EE3p c\u1EE7a ph\u1EA7n th\u1EF1c v\xE0 ph\u1EA7n \u1EA3\

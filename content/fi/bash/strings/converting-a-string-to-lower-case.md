@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:54.363733-07:00
 description: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\xE4\
   lt\xF6\xE4 huomiottaen kirjainkoon."
-lastmod: 2024-02-19 22:05:15.620553
+lastmod: '2024-02-25T18:49:53.636994-07:00'
 model: gpt-4-1106-preview
 summary: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\xE4lt\xF6\
   \xE4 huomiottaen kirjainkoon."

@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:29.137653-07:00
 description: "Ottenere la data corrente in Python \xE8 un'operazione fondamentale\
   \ per molte applicazioni, come la registrazione degli eventi (logging), l'analisi\
   \ dei dati\u2026"
-lastmod: 2024-02-19 22:05:02.119128
+lastmod: '2024-02-25T18:49:40.939441-07:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Python \xE8 un'operazione fondamentale per\
   \ molte applicazioni, come la registrazione degli eventi (logging), l'analisi dei\

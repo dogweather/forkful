@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:44.037535-07:00
 description: "L'affichage des informations de d\xE9bogage, c'est \xE9crire des donn\xE9\
   es dans la console pour comprendre ce qui se passe dans le code. Les d\xE9veloppeurs\
   \ le font\u2026"
-lastmod: 2024-02-19 22:05:16.487754
+lastmod: '2024-02-25T18:49:54.475186-07:00'
 model: gpt-4-1106-preview
 summary: "L'affichage des informations de d\xE9bogage, c'est \xE9crire des donn\xE9\
   es dans la console pour comprendre ce qui se passe dans le code. Les d\xE9veloppeurs\

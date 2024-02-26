@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:18.699318-07:00
 description: "W programowaniu w j\u0119zyku C, odczytywanie argument\xF3w linii polece\u0144\
   \ pozwala programom na przyjmowanie danych wej\u015Bciowych bezpo\u015Brednio z\
   \ terminala,\u2026"
-lastmod: 2024-02-19 22:04:55.082791
+lastmod: '2024-02-25T18:49:34.276890-07:00'
 model: gpt-4-0125-preview
 summary: "W programowaniu w j\u0119zyku C, odczytywanie argument\xF3w linii polece\u0144\
   \ pozwala programom na przyjmowanie danych wej\u015Bciowych bezpo\u015Brednio z\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:41.169308-07:00
 description: "Regulj\xE4ra uttryck (regex) inom programmering \xE4r m\xF6nster som\
   \ anv\xE4nds f\xF6r att matcha teckenkombinationer i str\xE4ngar. I Elm, precis\
   \ som i andra spr\xE5k,\u2026"
-lastmod: 2024-02-19 22:04:57.030364
+lastmod: '2024-02-25T18:49:36.114216-07:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) inom programmering \xE4r m\xF6nster som anv\xE4\
   nds f\xF6r att matcha teckenkombinationer i str\xE4ngar. I Elm, precis som i andra\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:55.771843-07:00
 description: "Kun poistetaan merkkej\xE4 kuvion mukaisesti, k\xE4sitell\xE4\xE4n tekstitiedostoja\
   \ tai merkkijonoja niin, ett\xE4 tietyt osat saadaan poistettua. Ohjelmoijat tekev\xE4\
   t\u2026"
-lastmod: 2024-02-19 22:05:15.617901
+lastmod: '2024-02-25T18:49:53.634417-07:00'
 model: gpt-4-1106-preview
 summary: "Kun poistetaan merkkej\xE4 kuvion mukaisesti, k\xE4sitell\xE4\xE4n tekstitiedostoja\
   \ tai merkkijonoja niin, ett\xE4 tietyt osat saadaan poistettua. Ohjelmoijat tekev\xE4\

@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:47.319162-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base signifie\
   \ inclure des informations d'identification cod\xE9es dans les en-t\xEAtes pour\
   \ acc\xE9der \xE0 une\u2026"
-lastmod: 2024-02-19 22:05:16.266816
+lastmod: '2024-02-25T18:49:54.252959-07:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base signifie inclure\
   \ des informations d'identification cod\xE9es dans les en-t\xEAtes pour acc\xE9\

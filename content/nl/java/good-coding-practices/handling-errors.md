@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:40.812406-07:00
 description: "Foutafhandeling betekent code schrijven die anticipeert op en omgaat\
   \ met dingen die misgaan. Programmeurs doen dit om software robuust te maken, waardoor\u2026"
-lastmod: 2024-02-19 22:05:09.741571
+lastmod: '2024-02-25T18:49:48.031429-07:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling betekent code schrijven die anticipeert op en omgaat met\
   \ dingen die misgaan. Programmeurs doen dit om software robuust te maken, waardoor\u2026"

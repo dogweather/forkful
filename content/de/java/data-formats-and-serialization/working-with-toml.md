@@ -3,7 +3,7 @@ date: 2024-01-26 04:22:45.380058-07:00
 description: "TOML steht f\xFCr Toms Offensichtliche, Minimalistische Sprache. Es\
   \ ist ein Daten-Serialisierungsformat, das f\xFCr Konfigurationsdateien verwendet\
   \ wird.\u2026"
-lastmod: 2024-02-19 22:05:12.711867
+lastmod: '2024-02-25T18:49:50.850419-07:00'
 model: gpt-4-0125-preview
 summary: "TOML steht f\xFCr Toms Offensichtliche, Minimalistische Sprache. Es ist\
   \ ein Daten-Serialisierungsformat, das f\xFCr Konfigurationsdateien verwendet wird.\u2026"

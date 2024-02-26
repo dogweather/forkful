@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:29.639958-07:00
 description: "Das Vergleichen zweier Daten ermittelt, welches fr\xFCher oder sp\xE4\
   ter liegt oder ob sie identisch sind. F\xFCr Programmierer ist das wichtig, um Zeitdifferenzen\u2026"
-lastmod: 2024-02-19 22:05:13.002842
+lastmod: '2024-02-25T18:49:51.124010-07:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen zweier Daten ermittelt, welches fr\xFCher oder sp\xE4ter\
   \ liegt oder ob sie identisch sind. F\xFCr Programmierer ist das wichtig, um Zeitdifferenzen\u2026"

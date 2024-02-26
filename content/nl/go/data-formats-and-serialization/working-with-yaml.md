@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:50.244135-07:00
 description: "Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup\
   \ Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert\u2026"
-lastmod: 2024-02-19 22:05:09.393936
+lastmod: '2024-02-25T18:49:47.704922-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup\
   \ Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert\u2026"

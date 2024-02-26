@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:44.152654-07:00
 description: "Organiser le code en fonctions dans Haskell signifie d\xE9composer votre\
   \ code en blocs nomm\xE9s r\xE9utilisables. Pourquoi ? Cela permet de garder votre\
   \ code DRY\u2026"
-lastmod: 2024-02-19 22:05:16.577188
+lastmod: '2024-02-25T18:49:54.562171-07:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions dans Haskell signifie d\xE9composer votre\
   \ code en blocs nomm\xE9s r\xE9utilisables. Pourquoi ? Cela permet de garder votre\

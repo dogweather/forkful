@@ -2,7 +2,7 @@
 date: 2024-01-20 17:45:04.691204-07:00
 description: "Das Herunterladen einer Webseite bedeutet, ihre Inhalte programmgesteuert\
   \ abzurufen, um sie zu verarbeiten oder offline zu speichern. Programmierer machen\u2026"
-lastmod: 2024-02-19 22:05:12.553315
+lastmod: '2024-02-25T18:49:50.698868-07:00'
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet, ihre Inhalte programmgesteuert\
   \ abzurufen, um sie zu verarbeiten oder offline zu speichern. Programmierer machen\u2026"

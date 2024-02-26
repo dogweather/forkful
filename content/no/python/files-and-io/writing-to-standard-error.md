@@ -2,7 +2,7 @@
 date: 2024-01-19
 description: "Skriving til standard error (stderr) er hvordan programmer rapporterer\
   \ feil og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout).\u2026"
-lastmod: 2024-02-19 22:04:59.659680
+lastmod: '2024-02-25T18:49:38.604955-07:00'
 summary: "Skriving til standard error (stderr) er hvordan programmer rapporterer feil\
   \ og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout).\u2026"
 title: Skrive til standardfeil

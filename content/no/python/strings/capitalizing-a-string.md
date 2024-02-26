@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:12.621353-07:00
 description: "\xC5 kapitalisere en streng betyr \xE5 konvertere det f\xF8rste tegnet\
   \ i en streng til stor bokstav og resten til sm\xE5 bokstaver. Denne operasjonen\
   \ brukes ofte i\u2026"
-lastmod: 2024-02-19 22:04:59.624461
+lastmod: '2024-02-25T18:49:38.572269-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng betyr \xE5 konvertere det f\xF8rste tegnet i\
   \ en streng til stor bokstav og resten til sm\xE5 bokstaver. Denne operasjonen brukes\

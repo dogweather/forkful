@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:56.272841-07:00
 description: "Pisanie test\xF3w w Google Apps Script (GAS) polega na tworzeniu automatycznych\
   \ skrypt\xF3w, kt\xF3re weryfikuj\u0105 zachowanie Twoich kod\xF3w, zapewniaj\u0105\
   c ich\u2026"
-lastmod: 2024-02-19 22:04:54.090219
+lastmod: '2024-02-25T18:49:33.330841-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Google Apps Script (GAS) polega na tworzeniu automatycznych\
   \ skrypt\xF3w, kt\xF3re weryfikuj\u0105 zachowanie Twoich kod\xF3w, zapewniaj\u0105\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:22.798814-07:00
 description: "Calculer une date dans le futur ou dans le pass\xE9, c'est juste des\
   \ maths avec des jours, des mois, des ann\xE9es. Les devs manipulent des dates pour\
   \ planifier\u2026"
-lastmod: 2024-02-19 22:05:16.280632
+lastmod: '2024-02-25T18:49:54.266198-07:00'
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou dans le pass\xE9, c'est juste des maths\
   \ avec des jours, des mois, des ann\xE9es. Les devs manipulent des dates pour planifier\u2026"

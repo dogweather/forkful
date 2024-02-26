@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:14.190544-07:00
 description: "Das Abrufen des aktuellen Datums in PHP ist eine grundlegende Aufgabe,\
   \ die es Ihnen erm\xF6glicht, das Systemdatum und die Systemzeit abzurufen und zu\u2026"
-lastmod: 2024-02-19 22:05:12.913486
+lastmod: '2024-02-25T18:49:51.038882-07:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in PHP ist eine grundlegende Aufgabe, die\
   \ es Ihnen erm\xF6glicht, das Systemdatum und die Systemzeit abzurufen und zu\u2026"

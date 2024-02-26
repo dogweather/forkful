@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:29.604068-07:00
 description: "Writing to standard error (stderr) in Fish Shell is about directing\
   \ error messages or diagnostics separately from the standard output (stdout).\u2026"
-lastmod: 2024-02-19 22:05:18.949687
+lastmod: '2024-02-25T18:49:56.924577-07:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Fish Shell is about directing error\
   \ messages or diagnostics separately from the standard output (stdout).\u2026"

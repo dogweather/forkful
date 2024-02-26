@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:56.147417-07:00
 description: "Refactoring is het proces van het herstructureren van bestaande computercode\
   \ zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de\u2026"
-lastmod: 2024-02-19 22:05:09.607080
+lastmod: '2024-02-25T18:49:47.905327-07:00'
 model: gpt-4-0125-preview
 summary: "Refactoring is het proces van het herstructureren van bestaande computercode\
   \ zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de\u2026"

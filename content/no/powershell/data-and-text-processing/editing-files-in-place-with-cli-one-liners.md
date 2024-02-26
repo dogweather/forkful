@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:46.274650-07:00
 description: "\xC5 redigere filer p\xE5 stedet med CLI-enlinjers i PowerShell handler\
   \ om \xE5 gj\xF8re direkte endringer i filer fra kommandolinjen, uten behov for\
   \ \xE5 \xE5pne dem i en\u2026"
-lastmod: 2024-02-19 22:05:00.282269
+lastmod: '2024-02-25T18:49:39.190218-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 redigere filer p\xE5 stedet med CLI-enlinjers i PowerShell handler\
   \ om \xE5 gj\xF8re direkte endringer i filer fra kommandolinjen, uten behov for\

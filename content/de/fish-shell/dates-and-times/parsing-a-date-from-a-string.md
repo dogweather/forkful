@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:09.719117-07:00
 description: "Das Parsen eines Datums aus einem String beinhaltet das Extrahieren\
   \ von Datumsinformationen, die innerhalb von Strings kodiert sind, und die Umwandlung\
   \ in\u2026"
-lastmod: 2024-02-19 22:05:13.257676
+lastmod: '2024-02-25T18:49:51.368954-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet das Extrahieren von\
   \ Datumsinformationen, die innerhalb von Strings kodiert sind, und die Umwandlung\

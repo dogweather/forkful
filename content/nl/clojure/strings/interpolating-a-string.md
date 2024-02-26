@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:57.099731-07:00
 description: "Stringinterpolatie stelt ons in staat variabelen zonder moeite in strings\
   \ te gooien. Waarom? Om dynamisch tekst te construeren - veel handiger dan de\u2026"
-lastmod: 2024-02-19 22:05:09.493393
+lastmod: '2024-02-25T18:49:47.799018-07:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt ons in staat variabelen zonder moeite in strings\
   \ te gooien. Waarom? Om dynamisch tekst te construeren - veel handiger dan de\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:29.248051-07:00
 description: "S\xF8k og erstatt er prosessen med \xE5 finne tekststrenger og bytte\
   \ dem ut med noe annet. Programmerere bruker dette for \xE5 oppdatere kode, korrigere\
   \ feil,\u2026"
-lastmod: 2024-02-19 22:05:00.223276
+lastmod: '2024-02-25T18:49:39.130033-07:00'
 model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt er prosessen med \xE5 finne tekststrenger og bytte dem\
   \ ut med noe annet. Programmerere bruker dette for \xE5 oppdatere kode, korrigere\

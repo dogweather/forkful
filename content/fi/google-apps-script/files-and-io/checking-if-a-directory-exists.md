@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:53.557304-07:00
 description: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoittaa\
   \ kansion olemassaolon varmistamista Google Drivess\xE4. Ohjelmoijat suorittavat\
   \ usein\u2026"
-lastmod: 2024-02-19 22:05:15.028841
+lastmod: '2024-02-25T18:49:53.090167-07:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoittaa\
   \ kansion olemassaolon varmistamista Google Drivess\xE4. Ohjelmoijat suorittavat\

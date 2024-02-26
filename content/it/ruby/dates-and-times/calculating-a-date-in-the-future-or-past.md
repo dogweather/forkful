@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:55.207269-07:00
 description: "Calcolare una data futura o passata significa semplicemente scoprire\
   \ che giorno sar\xE0 o \xE8 stato dopo o prima di un certo periodo. I programmatori\
   \ lo fanno\u2026"
-lastmod: 2024-02-19 22:05:03.037134
+lastmod: '2024-02-25T18:49:41.801547-07:00'
 model: gpt-4-1106-preview
 summary: "Calcolare una data futura o passata significa semplicemente scoprire che\
   \ giorno sar\xE0 o \xE8 stato dopo o prima di un certo periodo. I programmatori\

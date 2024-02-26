@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:41.341271-07:00
 description: "Registrar es b\xE1sicamente dejar un rastro de migajas a trav\xE9s de\
   \ tu c\xF3digo - es la forma de mantener un control de lo que est\xE1 sucediendo\
   \ cuando tu script\u2026"
-lastmod: 2024-02-19 22:05:17.804184
+lastmod: '2024-02-25T18:49:55.770985-07:00'
 model: gpt-4-1106-preview
 summary: "Registrar es b\xE1sicamente dejar un rastro de migajas a trav\xE9s de tu\
   \ c\xF3digo - es la forma de mantener un control de lo que est\xE1 sucediendo cuando\

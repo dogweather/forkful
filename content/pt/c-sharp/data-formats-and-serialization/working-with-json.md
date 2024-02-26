@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:10.596502-07:00
 description: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar, gerar\
   \ e consultar dados JSON, tornando-se uma habilidade cr\xEDtica para a programa\xE7\
   \xE3o\u2026"
-lastmod: 2024-02-19 22:05:05.648650
+lastmod: '2024-02-25T18:49:44.226440-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar, gerar\
   \ e consultar dados JSON, tornando-se uma habilidade cr\xEDtica para a programa\xE7\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:13.160140-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en Java vous permettent de\
   \ d\xE9finir des motifs sp\xE9cifiques pour rechercher, manipuler ou valider des\
   \ cha\xEEnes de\u2026"
-lastmod: 2024-02-19 22:05:16.390420
+lastmod: '2024-02-25T18:49:54.377226-07:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en Java vous permettent de d\xE9\
   finir des motifs sp\xE9cifiques pour rechercher, manipuler ou valider des cha\xEE\

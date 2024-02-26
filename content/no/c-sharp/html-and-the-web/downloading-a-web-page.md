@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:47.162005-07:00
 description: "Nedlasting av en nettside betyr at du henter ned HTML innholdet fra\
   \ en nettadresse. Programmerere gj\xF8r dette for \xE5 bearbeide data, skrape informasjon,\u2026"
-lastmod: 2024-02-19 22:05:00.060761
+lastmod: '2024-02-25T18:49:38.970100-07:00'
 model: gpt-4-1106-preview
 summary: "Nedlasting av en nettside betyr at du henter ned HTML innholdet fra en nettadresse.\
   \ Programmerere gj\xF8r dette for \xE5 bearbeide data, skrape informasjon,\u2026"

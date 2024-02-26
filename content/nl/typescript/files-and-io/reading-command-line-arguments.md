@@ -5,7 +5,7 @@ date: 2024-01-28 22:05:25.508968-07:00
 description: "Opdrachtregelargumenten stellen gebruikers in staat om gegevens door\
   \ te geven aan een programma wanneer ze het uitvoeren. Programmeurs gebruiken ze\
   \ om het\u2026"
-lastmod: 2024-02-19 22:05:09.614237
+lastmod: '2024-02-25T18:49:47.911944-07:00'
 model: gpt-4-0125-preview
 summary: "Opdrachtregelargumenten stellen gebruikers in staat om gegevens door te\
   \ geven aan een programma wanneer ze het uitvoeren. Programmeurs gebruiken ze om\

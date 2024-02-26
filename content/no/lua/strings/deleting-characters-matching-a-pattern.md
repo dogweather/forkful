@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:48.188094-07:00
 description: "\xC5 slette tegn som matcher et m\xF8nster i Lua betyr \xE5 fjerne spesifikke\
   \ deler av en streng basert p\xE5 regler eller 'patterns'. Programm\xF8rer gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.177969
+lastmod: '2024-02-25T18:49:39.086407-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 slette tegn som matcher et m\xF8nster i Lua betyr \xE5 fjerne spesifikke\
   \ deler av en streng basert p\xE5 regler eller 'patterns'. Programm\xF8rer gj\xF8\

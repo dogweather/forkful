@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:36.829276-07:00
 description: "Leggere un file di testo permette ai programmi di processare dati salvati\
   \ su disco. Programmatori lo fanno per analizzare, modificare o semplicemente\u2026"
-lastmod: 2024-02-19 22:05:02.558182
+lastmod: '2024-02-25T18:49:41.355735-07:00'
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo permette ai programmi di processare dati salvati\
   \ su disco. Programmatori lo fanno per analizzare, modificare o semplicemente\u2026"

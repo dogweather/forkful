@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:31.203811-07:00
 description: "Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista\
   \ toisiksi. Ohjelmoijat tekev\xE4t sit\xE4, koska se on nopea keino muuttaa dataa,\
   \ korjata\u2026"
-lastmod: 2024-02-19 22:05:15.153233
+lastmod: '2024-02-25T18:49:53.186256-07:00'
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi.\
   \ Ohjelmoijat tekev\xE4t sit\xE4, koska se on nopea keino muuttaa dataa, korjata\u2026"

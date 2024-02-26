@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:39.345310-07:00
 description: "Obter a data atual \xE9 uma tarefa essencial em quase qualquer empreitada\
   \ de programa\xE7\xE3o, desde registrar atividades em uma aplica\xE7\xE3o at\xE9\
   \ gerar relat\xF3rios\u2026"
-lastmod: 2024-02-19 22:05:06.178688
+lastmod: '2024-02-25T18:49:44.722655-07:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual \xE9 uma tarefa essencial em quase qualquer empreitada\
   \ de programa\xE7\xE3o, desde registrar atividades em uma aplica\xE7\xE3o at\xE9\

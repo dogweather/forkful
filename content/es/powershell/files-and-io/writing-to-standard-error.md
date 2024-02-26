@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:03.916053-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en PowerShell implica enviar\
   \ mensajes de error o diagn\xF3sticos directamente al flujo de stderr, distinto\
   \ del flujo\u2026"
-lastmod: 2024-02-19 22:05:17.814114
+lastmod: '2024-02-25T18:49:55.780638-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en PowerShell implica enviar mensajes\
   \ de error o diagn\xF3sticos directamente al flujo de stderr, distinto del flujo\u2026"

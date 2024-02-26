@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:01:31.363877-07:00
 description: "Pesquisar e substituir texto em Visual Basic for Applications (VBA)\
   \ \xE9 essencial para editar documentos, planilhas e bancos de dados programaticamente.\u2026"
-lastmod: 2024-02-19 22:05:05.430927
+lastmod: '2024-02-25T18:49:44.015897-07:00'
 model: gpt-4-0125-preview
 summary: "Pesquisar e substituir texto em Visual Basic for Applications (VBA) \xE9\
   \ essencial para editar documentos, planilhas e bancos de dados programaticamente.\u2026"

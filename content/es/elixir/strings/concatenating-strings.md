@@ -3,7 +3,7 @@ date: 2024-01-27 10:42:28.298638-07:00
 description: "Concatenar cadenas trata sobre unir dos o m\xE1s cadenas para formar\
   \ un solo texto. Podr\xEDas necesitar fusionar texto para generar mensajes de usuario,\
   \ crear\u2026"
-lastmod: 2024-02-19 22:05:17.281527
+lastmod: '2024-02-25T18:49:55.251543-07:00'
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas trata sobre unir dos o m\xE1s cadenas para formar un\
   \ solo texto. Podr\xEDas necesitar fusionar texto para generar mensajes de usuario,\

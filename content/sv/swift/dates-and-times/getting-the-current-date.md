@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:01.185838-07:00
 description: "Att f\xE5 det aktuella datumet i Swift inneb\xE4r att anv\xE4nda `Date`-klassen\
   \ f\xF6r att f\xE5 tillg\xE5ng till datum och tid n\xE4r appen k\xF6rs. Programmerare\
   \ beh\xF6ver h\xE4mta\u2026"
-lastmod: 2024-02-19 22:04:57.502325
+lastmod: '2024-02-25T18:49:36.577245-07:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Swift inneb\xE4r att anv\xE4nda `Date`-klassen\
   \ f\xF6r att f\xE5 tillg\xE5ng till datum och tid n\xE4r appen k\xF6rs. Programmerare\

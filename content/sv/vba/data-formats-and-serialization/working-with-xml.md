@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:54.381527-07:00
 description: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4r\
   \ att analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-\u2026"
-lastmod: 2024-02-19 22:04:56.977354
+lastmod: '2024-02-25T18:49:36.064485-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4r att\
   \ analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-\u2026"

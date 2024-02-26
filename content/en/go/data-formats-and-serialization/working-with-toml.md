@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:15.883688-07:00
 description: "TOML (Tom's Obvious, Minimal Language) is a configuration file format\
   \ that's easy to read due to its simple syntax. Programmers use TOML to configure\u2026"
-lastmod: 2024-02-19 22:05:18.159927
+lastmod: '2024-02-25T18:49:56.118704-07:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) is a configuration file format that's\
   \ easy to read due to its simple syntax. Programmers use TOML to configure\u2026"

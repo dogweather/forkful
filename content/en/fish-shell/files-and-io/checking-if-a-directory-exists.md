@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:29.788794-07:00
 description: "Checking if a directory exists in Fish Shell allows scripts to make\
   \ decisions based on the presence or absence of directory structures, enabling tasks\u2026"
-lastmod: 2024-02-19 22:05:18.947959
+lastmod: '2024-02-25T18:49:56.922830-07:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Fish Shell allows scripts to make decisions\
   \ based on the presence or absence of directory structures, enabling tasks\u2026"

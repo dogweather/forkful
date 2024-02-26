@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:38.810478-07:00
 description: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in dein Programm zu\
   \ laden. Programmierer tun dies, um Daten zu verarbeiten, Konfigurationen zu laden\
   \ oder\u2026"
-lastmod: 2024-02-19 22:05:12.705451
+lastmod: '2024-02-25T18:49:50.844389-07:00'
 model: gpt-4-1106-preview
 summary: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in dein Programm zu laden.\
   \ Programmierer tun dies, um Daten zu verarbeiten, Konfigurationen zu laden oder\u2026"

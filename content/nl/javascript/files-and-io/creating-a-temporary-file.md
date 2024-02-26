@@ -5,7 +5,7 @@ date: 2024-01-28 21:58:22.698805-07:00
 description: "Het maken van een tijdelijk bestand stelt je app in staat om gegevens\
   \ op te slaan die het niet voor altijd nodig heeft. Het komt van pas wanneer je\
   \ te\u2026"
-lastmod: 2024-02-19 22:05:10.308346
+lastmod: '2024-02-25T18:49:48.548808-07:00'
 model: gpt-4-0125-preview
 summary: "Het maken van een tijdelijk bestand stelt je app in staat om gegevens op\
   \ te slaan die het niet voor altijd nodig heeft. Het komt van pas wanneer je te\u2026"

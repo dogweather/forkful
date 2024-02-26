@@ -5,7 +5,7 @@ date: 2024-01-30 19:10:13.417490-07:00
 description: "In der Welt von Arduino erm\xF6glichen assoziative Arrays, Schl\xFC\
   ssel mit Werten zu verkn\xFCpfen, \xE4hnlich wie man Socken ihren Paaren zuordnet.\
   \ Sie sind eine\u2026"
-lastmod: 2024-02-19 22:05:13.070909
+lastmod: '2024-02-25T18:49:51.189776-07:00'
 model: gpt-4-0125-preview
 summary: "In der Welt von Arduino erm\xF6glichen assoziative Arrays, Schl\xFCssel\
   \ mit Werten zu verkn\xFCpfen, \xE4hnlich wie man Socken ihren Paaren zuordnet.\

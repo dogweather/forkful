@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:07.839559-07:00
 description: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript\
   \ aufbauenden Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen\u2026"
-lastmod: 2024-02-19 22:05:12.565050
+lastmod: '2024-02-25T18:49:50.710203-07:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript aufbauenden\
   \ Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen\u2026"

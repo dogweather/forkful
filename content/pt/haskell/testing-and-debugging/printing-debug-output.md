@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:41.876850-07:00
 description: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o envolve exibir valores\
   \ intermedi\xE1rios para entender o comportamento do programa. Programadores o fazem\
   \ para encontrar e\u2026"
-lastmod: 2024-02-19 22:05:05.673509
+lastmod: '2024-02-25T18:49:44.249226-07:00'
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o envolve exibir valores intermedi\xE1\
   rios para entender o comportamento do programa. Programadores o fazem para encontrar\

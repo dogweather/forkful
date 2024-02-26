@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:30.355149-07:00
 description: "I Kotlin, som i andre programmeringsspr\xE5k, betyr sletting av tegn\
   \ som matcher et m\xF8nster \xE5 fjerne bestemte sekvenser fra en streng. Vi gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:04:59.981739
+lastmod: '2024-02-25T18:49:38.913849-07:00'
 model: gpt-4-1106-preview
 summary: "I Kotlin, som i andre programmeringsspr\xE5k, betyr sletting av tegn som\
   \ matcher et m\xF8nster \xE5 fjerne bestemte sekvenser fra en streng. Vi gj\xF8\

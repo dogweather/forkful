@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:18.330087-07:00
 description: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
   \ concatenan para combinar textos, como nombres y apellidos, o para construir\u2026"
-lastmod: 2024-02-19 22:05:17.660060
+lastmod: '2024-02-25T18:49:55.622132-07:00'
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
   \ concatenan para combinar textos, como nombres y apellidos, o para construir\u2026"

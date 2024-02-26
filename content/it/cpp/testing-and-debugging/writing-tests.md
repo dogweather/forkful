@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:58.917894-07:00
 description: "Scrivere test in C++ implica creare piccoli programmi autocontenuti\
   \ che verificano automaticamente il comportamento di sezioni del tuo codice. I\u2026"
-lastmod: 2024-02-19 22:05:02.804826
+lastmod: '2024-02-25T18:49:41.584476-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in C++ implica creare piccoli programmi autocontenuti che\
   \ verificano automaticamente il comportamento di sezioni del tuo codice. I\u2026"

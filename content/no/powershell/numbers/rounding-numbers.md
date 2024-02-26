@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:24.910441-07:00
 description: "Avrunding av tall handler om \xE5 justere en verdi til n\xE6rmeste heltall\
   \ eller angitt desimalplass. Programmerere runder av tall for \xE5 forenkle data,\
   \ forbedre\u2026"
-lastmod: 2024-02-19 22:05:00.279318
+lastmod: '2024-02-25T18:49:39.187299-07:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall handler om \xE5 justere en verdi til n\xE6rmeste heltall\
   \ eller angitt desimalplass. Programmerere runder av tall for \xE5 forenkle data,\

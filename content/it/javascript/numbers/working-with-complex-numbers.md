@@ -2,7 +2,7 @@
 date: 2024-01-26 04:42:38.272858-07:00
 description: "I numeri complessi sono numeri con una parte reale e una immaginaria\
   \ (come 3 + 4i). Emergono in vari problemi di programmazione, specialmente nel\u2026"
-lastmod: 2024-02-19 22:05:02.880199
+lastmod: '2024-02-25T18:49:41.654289-07:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono numeri con una parte reale e una immaginaria (come\
   \ 3 + 4i). Emergono in vari problemi di programmazione, specialmente nel\u2026"

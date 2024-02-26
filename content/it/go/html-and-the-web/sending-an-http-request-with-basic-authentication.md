@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:06.848360-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base in Go comporta\
   \ l'aggiunta di un'intestazione di autorizzazione alla tua richiesta che include\
   \ un\u2026"
-lastmod: 2024-02-19 22:05:02.012341
+lastmod: '2024-02-25T18:49:40.838140-07:00'
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base in Go comporta l'aggiunta\
   \ di un'intestazione di autorizzazione alla tua richiesta che include un\u2026"

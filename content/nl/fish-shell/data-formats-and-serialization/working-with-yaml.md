@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:44.293893-07:00
 description: "YAML, \"YAML Ain't Markup Language\", is een gebruiksvriendelijke data-serialisatiestandaard\
   \ die notatieel superieur is aan tabel- en opmaaktalen voor\u2026"
-lastmod: 2024-02-19 22:05:10.355949
+lastmod: '2024-02-25T18:49:48.593159-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, \"YAML Ain't Markup Language\", is een gebruiksvriendelijke data-serialisatiestandaard\
   \ die notatieel superieur is aan tabel- en opmaaktalen voor\u2026"

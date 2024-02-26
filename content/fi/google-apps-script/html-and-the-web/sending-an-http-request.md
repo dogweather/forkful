@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:19.033902-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
   \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.009031
+lastmod: '2024-02-25T18:49:53.070801-07:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
   \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:05.247384-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Fish Shell se trata de\
   \ dirigir mensajes de error o diagn\xF3sticos de forma separada de la salida est\xE1\
   ndar\u2026"
-lastmod: 2024-02-19 22:05:18.022742
+lastmod: '2024-02-25T18:49:55.987042-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Fish Shell se trata de dirigir\
   \ mensajes de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar\u2026"

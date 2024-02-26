@@ -3,7 +3,7 @@ date: 2024-01-26 03:49:18.798157-07:00
 description: "U\u017Cywanie debugera w Elixirze polega na przest\u0119powaniu przez\
   \ kod, inspekcji zmiennych i \u015Bledzeniu przep\u0142yw\xF3w w celu zgniecenia\
   \ b\u0142\u0119d\xF3w. Programi\u015Bci robi\u0105\u2026"
-lastmod: 2024-02-19 22:04:54.226274
+lastmod: '2024-02-25T18:49:33.468842-07:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cywanie debugera w Elixirze polega na przest\u0119powaniu przez kod,\
   \ inspekcji zmiennych i \u015Bledzeniu przep\u0142yw\xF3w w celu zgniecenia b\u0142\

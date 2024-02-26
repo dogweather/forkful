@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:41.148972-07:00
 description: "String lowercasing is transforming all alphabet characters in a string\
   \ to their lower case form. Programmers lower case strings for consistency,\u2026"
-lastmod: 2024-02-19 22:05:18.693536
+lastmod: '2024-02-25T18:49:56.670598-07:00'
 model: gpt-4-1106-preview
 summary: "String lowercasing is transforming all alphabet characters in a string to\
   \ their lower case form. Programmers lower case strings for consistency,\u2026"

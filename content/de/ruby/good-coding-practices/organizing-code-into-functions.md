@@ -2,7 +2,7 @@
 date: 2024-01-26 01:11:54.403673-07:00
 description: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare\
   \ Bl\xF6cke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger\u2026"
-lastmod: 2024-02-19 22:05:13.348543
+lastmod: '2024-02-25T18:49:51.452523-07:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare\
   \ Bl\xF6cke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger\u2026"

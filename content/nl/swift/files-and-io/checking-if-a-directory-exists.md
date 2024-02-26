@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:22.795740-07:00
 description: "In Swift helpt het controleren of een directory bestaat om de status\
   \ van een bestandssysteem te bevestigen voordat je gegevens leest of schrijft.\u2026"
-lastmod: 2024-02-19 22:05:10.258708
+lastmod: '2024-02-25T18:49:48.502205-07:00'
 model: gpt-4-0125-preview
 summary: "In Swift helpt het controleren of een directory bestaat om de status van\
   \ een bestandssysteem te bevestigen voordat je gegevens leest of schrijft.\u2026"

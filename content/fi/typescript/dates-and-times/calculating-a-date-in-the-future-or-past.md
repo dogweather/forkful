@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:58.667204-07:00
 description: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 kun\
   \ sovelluksemme tarvitsevat aikaperusteisia toimintoja, kuten er\xE4p\xE4ivien hallintaa\
   \ tai aikajana-\u2026"
-lastmod: 2024-02-19 22:05:15.223605
+lastmod: '2024-02-25T18:49:53.254333-07:00'
 model: gpt-4-1106-preview
 summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 kun sovelluksemme\
   \ tarvitsevat aikaperusteisia toimintoja, kuten er\xE4p\xE4ivien hallintaa tai aikajana-\u2026"

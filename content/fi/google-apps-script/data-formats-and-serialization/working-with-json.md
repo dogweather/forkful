@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:19.263131-07:00
 description: "JSON, eli JavaScript Object Notation, on kevyt muoto datan tallentamiseen\
   \ ja siirt\xE4miseen, ihanteellinen palvelimen ja asiakkaan v\xE4liseen kommunikointiin\u2026"
-lastmod: 2024-02-19 22:05:15.036373
+lastmod: '2024-02-25T18:49:53.097560-07:00'
 model: gpt-4-0125-preview
 summary: "JSON, eli JavaScript Object Notation, on kevyt muoto datan tallentamiseen\
   \ ja siirt\xE4miseen, ihanteellinen palvelimen ja asiakkaan v\xE4liseen kommunikointiin\u2026"

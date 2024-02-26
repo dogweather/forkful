@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:54:01.727992-07:00
 description: "Converter uma data em uma string em C envolve traduzir uma estrutura\
   \ de data ou carimbo de tempo para um formato leg\xEDvel por humanos. Programadores\u2026"
-lastmod: 2024-02-19 22:05:06.132624
+lastmod: '2024-02-25T18:49:44.678993-07:00'
 model: gpt-4-0125-preview
 summary: "Converter uma data em uma string em C envolve traduzir uma estrutura de\
   \ data ou carimbo de tempo para um formato leg\xEDvel por humanos. Programadores\u2026"

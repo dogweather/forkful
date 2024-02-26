@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:52:37.419466-07:00
 description: "Das Kapitalisieren eines Strings (Zeichenkette) beinhaltet, den ersten\
   \ Buchstaben eines gegebenen Strings in Gro\xDFbuchstaben umzuwandeln, falls dieser\u2026"
-lastmod: 2024-02-19 22:05:12.313772
+lastmod: '2024-02-25T18:49:50.469694-07:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings (Zeichenkette) beinhaltet, den ersten Buchstaben\
   \ eines gegebenen Strings in Gro\xDFbuchstaben umzuwandeln, falls dieser\u2026"

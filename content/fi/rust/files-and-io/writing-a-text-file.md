@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:20.709349-07:00
 description: "Tekstitiedoston kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 tiedoston\
   \ luonnin, siihen kirjoittamisen ja mahdollisesti datan lis\xE4\xE4misen tiedostoon\u2026"
-lastmod: 2024-02-19 22:05:15.270231
+lastmod: '2024-02-25T18:49:53.299339-07:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 tiedoston luonnin,\
   \ siihen kirjoittamisen ja mahdollisesti datan lis\xE4\xE4misen tiedostoon\u2026"

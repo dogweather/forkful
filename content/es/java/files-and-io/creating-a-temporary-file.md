@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:37.889818-07:00
 description: "Crear un archivo temporal significa generar un fichero que solo se usa\
   \ durante la ejecuci\xF3n de un programa. Los programadores lo hacen para manejar\
   \ datos\u2026"
-lastmod: 2024-02-19 22:05:17.478981
+lastmod: '2024-02-25T18:49:55.445416-07:00'
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal significa generar un fichero que solo se usa durante\
   \ la ejecuci\xF3n de un programa. Los programadores lo hacen para manejar datos\u2026"

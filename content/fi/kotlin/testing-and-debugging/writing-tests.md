@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:08.992962-07:00
 description: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rakentamista,\
   \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen\u2026"
-lastmod: 2024-02-19 22:05:15.427512
+lastmod: '2024-02-25T18:49:53.450773-07:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rakentamista,\
   \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen\u2026"

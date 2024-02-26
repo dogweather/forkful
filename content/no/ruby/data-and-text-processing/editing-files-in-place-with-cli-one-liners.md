@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:00.295390-07:00
 description: "\xC5 redigere filer p\xE5 stedet med CLI (kommandolinjegrensesnitt)\
   \ en-linjers kommandoer i Ruby lar deg endre filer direkte fra terminalen din, uten\
   \ \xE5 m\xE5tte\u2026"
-lastmod: 2024-02-19 22:05:00.596539
+lastmod: '2024-02-25T18:49:39.491600-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 redigere filer p\xE5 stedet med CLI (kommandolinjegrensesnitt) en-linjers\
   \ kommandoer i Ruby lar deg endre filer direkte fra terminalen din, uten \xE5 m\xE5\

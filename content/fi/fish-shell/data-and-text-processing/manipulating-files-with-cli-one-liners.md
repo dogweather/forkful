@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:21.234163-07:00
 description: "Ohjelmoinnin maailmassa, erityisesti Linux- tai Unix-ymp\xE4rist\xF6\
   iss\xE4, tiedostojen suora manipulointi komentorivilt\xE4 (CLI) ei ole pelk\xE4\
   st\xE4\xE4n mukavuuskysymys\u2026"
-lastmod: 2024-02-19 22:05:15.883651
+lastmod: '2024-02-25T18:49:53.896645-07:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnin maailmassa, erityisesti Linux- tai Unix-ymp\xE4rist\xF6iss\xE4\
   , tiedostojen suora manipulointi komentorivilt\xE4 (CLI) ei ole pelk\xE4st\xE4\xE4\

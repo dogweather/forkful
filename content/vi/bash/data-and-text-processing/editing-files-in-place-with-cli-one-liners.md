@@ -6,7 +6,7 @@ description: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n v\u1EEBa ph\xE1t h
   n ra r\u1EB1ng b\u1EA1n c\u1EA7n ph\u1EA3i c\u1EADp nh\u1EADt h\xE0ng lo\u1EA1t\
   \ cho m\u1ED9t s\u1ED1 t\u1EC7p c\u1EA5u h\xECnh \u0111ang n\u1EB1m tr\xEAn m\xE1\
   y ch\u1EE7 c\u1EE7a m\xECnh. B\u1EA1n c\xF3 th\u1EC3 m\u1EDF t\u1EEBng t\u1EC7p,\u2026"
-lastmod: 2024-02-19 22:04:56.062605
+lastmod: '2024-02-25T18:49:35.218725-07:00'
 model: gpt-4-0125-preview
 summary: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n v\u1EEBa ph\xE1t hi\u1EC7\
   n ra r\u1EB1ng b\u1EA1n c\u1EA7n ph\u1EA3i c\u1EADp nh\u1EADt h\xE0ng lo\u1EA1t\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:01.168827-07:00
 description: "Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta.\
   \ Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten signaalink\xE4sittely, kvanttimekaniikka\
   \ ja\u2026"
-lastmod: 2024-02-19 22:05:15.627040
+lastmod: '2024-02-25T18:49:53.643286-07:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten signaalink\xE4sittely, kvanttimekaniikka\

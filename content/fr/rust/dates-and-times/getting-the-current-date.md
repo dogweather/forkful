@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:55.862777-07:00
 description: "R\xE9cup\xE9rer la date actuelle en Rust est une t\xE2che courante pour\
   \ des op\xE9rations telles que la journalisation, les op\xE9rations bas\xE9es sur\
   \ le temps ou\u2026"
-lastmod: 2024-02-19 22:05:16.320802
+lastmod: '2024-02-25T18:49:54.306275-07:00'
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle en Rust est une t\xE2che courante pour\
   \ des op\xE9rations telles que la journalisation, les op\xE9rations bas\xE9es sur\

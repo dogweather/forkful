@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:22.443214-07:00
 description: "\xC5 hente den gjeldende datoen i PHP er en grunnleggende oppgave som\
   \ lar deg hente og manipulere systemets dato og klokkeslett. Dette er avgj\xF8rende\
   \ for\u2026"
-lastmod: 2024-02-19 22:05:00.160912
+lastmod: '2024-02-25T18:49:39.069314-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den gjeldende datoen i PHP er en grunnleggende oppgave som lar\
   \ deg hente og manipulere systemets dato og klokkeslett. Dette er avgj\xF8rende\

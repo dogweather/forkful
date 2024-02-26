@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:55.293122-07:00
 description: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen\
   \ valvontamekanismi, jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo\
   \ ennen\u2026"
-lastmod: 2024-02-19 22:05:15.649403
+lastmod: '2024-02-25T18:49:53.664897-07:00'
 model: gpt-4-0125-preview
 summary: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen valvontamekanismi,\
   \ jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo ennen\u2026"

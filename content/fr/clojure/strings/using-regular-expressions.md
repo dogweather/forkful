@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:30.099619-07:00
 description: "Les expressions r\xE9guli\xE8res, un outil puissant pour la correspondance\
   \ de motifs et la manipulation de donn\xE9es, sont essentielles dans les t\xE2ches\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:16.170727
+lastmod: '2024-02-25T18:49:54.159596-07:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, un outil puissant pour la correspondance\
   \ de motifs et la manipulation de donn\xE9es, sont essentielles dans les t\xE2ches\

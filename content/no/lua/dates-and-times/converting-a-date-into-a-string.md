@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:13.808884-07:00
 description: "Konvertering av en dato til en streng betyr \xE5 forvandle datoomr\xE5\
   det til tekstformat. Programmere gj\xF8r dette for \xE5 gj\xF8re datoene lesbare\
   \ for mennesker\u2026"
-lastmod: 2024-02-19 22:05:00.206693
+lastmod: '2024-02-25T18:49:39.114059-07:00'
 model: gpt-4-1106-preview
 summary: "Konvertering av en dato til en streng betyr \xE5 forvandle datoomr\xE5det\
   \ til tekstformat. Programmere gj\xF8r dette for \xE5 gj\xF8re datoene lesbare for\

@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:45.126377-07:00
 description: "A REPL, or Read-Eval-Print Loop, lets you type C# code and run it interactively.\
   \ Programmers use it for quick experiments, debugging, or learning C#,\u2026"
-lastmod: 2024-02-19 22:05:18.555672
+lastmod: '2024-02-25T18:49:56.535434-07:00'
 model: gpt-4-1106-preview
 summary: "A REPL, or Read-Eval-Print Loop, lets you type C# code and run it interactively.\
   \ Programmers use it for quick experiments, debugging, or learning C#,\u2026"

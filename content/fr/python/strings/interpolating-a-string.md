@@ -6,7 +6,7 @@ date: 2024-01-28 21:23:54.078755-07:00
 description: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\xE9\
   rer des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res. Les programmeurs\
   \ l'utilisent\u2026"
-lastmod: 2024-02-19 22:05:16.124138
+lastmod: '2024-02-25T18:49:54.113558-07:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\xE9rer\
   \ des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res. Les programmeurs\

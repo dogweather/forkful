@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:04:54.195018-07:00
 description: "Een tekstbestand lezen betekent gegevens uit een bestand op uw schijf\
   \ in uw programma krijgen. Programmeurs doen dit om inhoud te verwerken of analyseren\u2026"
-lastmod: 2024-02-19 22:05:09.526431
+lastmod: '2024-02-25T18:49:47.830134-07:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent gegevens uit een bestand op uw schijf in\
   \ uw programma krijgen. Programmeurs doen dit om inhoud te verwerken of analyseren\u2026"

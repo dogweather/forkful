@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:14.499712-07:00
 description: "Kompleksiluvut, jotka koostuvat reaali- ja imaginaariosasta (kuten 3+4i),\
   \ ovat vakiovaruste insin\xF6\xF6reill\xE4 ja fyysikoilla. Ohjelmoijat ty\xF6skentelev\xE4\
   t\u2026"
-lastmod: 2024-02-19 22:05:15.987532
+lastmod: '2024-02-25T18:49:53.983135-07:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaali- ja imaginaariosasta (kuten 3+4i),\
   \ ovat vakiovaruste insin\xF6\xF6reill\xE4 ja fyysikoilla. Ohjelmoijat ty\xF6skentelev\xE4\

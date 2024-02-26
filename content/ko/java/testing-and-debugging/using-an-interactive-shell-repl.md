@@ -8,7 +8,7 @@ description: "REPL(Read-Eval-Print Loop)\uC740 \uC0AC\uC6A9\uC790\uC758 \uB2E8\u
   \ \uD568\uC73C\uB85C\uC368, \uBE60\uB978 \uC2E4\uD5D8, \uB514\uBC84\uAE45 \uB610\
   \uB294 \uD559\uC2B5\uC744 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
-lastmod: 2024-02-19 22:05:13.960054
+lastmod: '2024-02-25T18:49:52.053974-07:00'
 model: gpt-4-0125-preview
 summary: "REPL(Read-Eval-Print Loop)\uC740 \uC0AC\uC6A9\uC790\uC758 \uB2E8\uC77C \uC785\
   \uB825\uC744 \uCC98\uB9AC\uD558\uACE0, \uCF54\uB4DC\uB97C \uC2E4\uD589\uD558\uBA70\

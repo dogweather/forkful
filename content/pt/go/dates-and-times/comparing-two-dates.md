@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:39.650917-07:00
 description: "Comparar duas datas na programa\xE7\xE3o \xE9 uma tarefa fundamental\
   \ que permite aos desenvolvedores avaliar a rela\xE7\xE3o cronol\xF3gica entre datas.\
   \ Tais compara\xE7\xF5es\u2026"
-lastmod: 2024-02-19 22:05:05.140554
+lastmod: '2024-02-25T18:49:43.738427-07:00'
 model: gpt-4-0125-preview
 summary: "Comparar duas datas na programa\xE7\xE3o \xE9 uma tarefa fundamental que\
   \ permite aos desenvolvedores avaliar a rela\xE7\xE3o cronol\xF3gica entre datas.\

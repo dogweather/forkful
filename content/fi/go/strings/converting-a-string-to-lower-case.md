@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:04.735038-07:00
 description: "Merkkijonon muuntaminen pieniksi kirjaimiksi on perustoiminto, joka\
   \ mahdollistaa yhten\xE4isyyden ja johdonmukaisuuden tekstink\xE4sittelyss\xE4,\
   \ mik\xE4 on\u2026"
-lastmod: 2024-02-19 22:05:14.950495
+lastmod: '2024-02-25T18:49:53.015329-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi on perustoiminto, joka mahdollistaa\
   \ yhten\xE4isyyden ja johdonmukaisuuden tekstink\xE4sittelyss\xE4, mik\xE4 on\u2026"

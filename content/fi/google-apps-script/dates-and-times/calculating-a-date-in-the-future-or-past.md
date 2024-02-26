@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:25.624898-07:00
 description: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
   \ liittyy p\xE4iv\xE4m\xE4\xE4r\xE4objektien manipulointiin l\xF6yt\xE4\xE4kseen\
   \ tulevia tai menneit\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4 nykyhetkeen\u2026"
-lastmod: 2024-02-19 22:05:15.027760
+lastmod: '2024-02-25T18:49:53.089097-07:00'
 model: gpt-4-0125-preview
 summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen liittyy\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4objektien manipulointiin l\xF6yt\xE4\xE4kseen tulevia\

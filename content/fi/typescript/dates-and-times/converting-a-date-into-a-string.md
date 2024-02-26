@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:05.623499-07:00
 description: "\"Mik\xE4 ja Miksi?\" Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi\
   \ hallitaksemme sen esitysmuotoa. T\xE4m\xE4 tekee p\xE4iv\xE4m\xE4\xE4rien kanssa\
   \ ty\xF6skentelyst\xE4 helpompaa, kuten\u2026"
-lastmod: 2024-02-19 22:05:15.221711
+lastmod: '2024-02-25T18:49:53.252532-07:00'
 model: gpt-4-1106-preview
 summary: "\"Mik\xE4 ja Miksi?\" Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi\
   \ hallitaksemme sen esitysmuotoa. T\xE4m\xE4 tekee p\xE4iv\xE4m\xE4\xE4rien kanssa\

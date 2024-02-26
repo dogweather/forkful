@@ -2,7 +2,7 @@
 date: 2024-01-20 17:28:30.879408-07:00
 description: "Calculating a future or past date involves figuring out what the date\
   \ was, or will be, after or before a specific time interval. Programmers often need\u2026"
-lastmod: 2024-02-19 22:05:18.566330
+lastmod: '2024-02-25T18:49:56.545843-07:00'
 model: gpt-4-1106-preview
 summary: "Calculating a future or past date involves figuring out what the date was,\
   \ or will be, after or before a specific time interval. Programmers often need\u2026"

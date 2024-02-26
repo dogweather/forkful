@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-28 21:23:40.105231-07:00
 description: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler.\
   \ Programmerere bruker det for \xE5 dynamisk sette inn verdier i strenger, noe som\u2026"
-lastmod: 2024-02-19 22:04:59.627588
+lastmod: '2024-02-25T18:49:38.575514-07:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler.\
   \ Programmerere bruker det for \xE5 dynamisk sette inn verdier i strenger, noe som\u2026"

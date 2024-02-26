@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:16.733715-07:00
 description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, d\xE9finit\
   \ comment structurer les fichiers de configuration. Les programmeurs travaillent\
   \ avec TOML car\u2026"
-lastmod: 2024-02-19 22:05:16.953573
+lastmod: '2024-02-25T18:49:54.931258-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, d\xE9finit comment\
   \ structurer les fichiers de configuration. Les programmeurs travaillent avec TOML\

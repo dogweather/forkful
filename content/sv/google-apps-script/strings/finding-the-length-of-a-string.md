@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:54:17.662520-07:00
 description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Google Apps Script, ett JavaScript-baserat\
   \ molnskriptspr\xE5k som l\xE5ter dig automatisera uppgifter \xF6ver Googles produkter,\u2026"
-lastmod: 2024-02-19 22:04:56.664118
+lastmod: '2024-02-25T18:49:35.764999-07:00'
 model: gpt-4-0125-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Google Apps Script, ett JavaScript-baserat\
   \ molnskriptspr\xE5k som l\xE5ter dig automatisera uppgifter \xF6ver Googles produkter,\u2026"

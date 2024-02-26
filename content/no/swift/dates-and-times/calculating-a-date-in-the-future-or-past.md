@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:11.584586-07:00
 description: "Regne ut en fremtidig eller fortidig dato betyr \xE5 beregne en dato\
   \ f\xF8r eller etter et bestemt startpunkt. Programmerere gj\xF8r dette for \xE5\
   \ h\xE5ndtere\u2026"
-lastmod: 2024-02-19 22:05:00.430112
+lastmod: '2024-02-25T18:49:39.334149-07:00'
 model: gpt-4-1106-preview
 summary: "Regne ut en fremtidig eller fortidig dato betyr \xE5 beregne en dato f\xF8\
   r eller etter et bestemt startpunkt. Programmerere gj\xF8r dette for \xE5 h\xE5\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:58.350388-07:00
 description: "Capitalizar uma string no Visual Basic for Applications (VBA) envolve\
   \ converter o primeiro caractere de cada palavra em uma string para mai\xFAscula\
   \ enquanto\u2026"
-lastmod: 2024-02-19 22:05:05.428679
+lastmod: '2024-02-25T18:49:44.013769-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string no Visual Basic for Applications (VBA) envolve converter\
   \ o primeiro caractere de cada palavra em uma string para mai\xFAscula enquanto\u2026"

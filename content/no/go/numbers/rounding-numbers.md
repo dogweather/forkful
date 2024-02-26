@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:56.438089-07:00
 description: "Avrunding av tall handler om \xE5 justere verdien av et tall til det\
   \ n\xE6rmeste hele tallet eller til et spesifikt antall desimaler. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-19 22:04:59.540425
+lastmod: '2024-02-25T18:49:38.493360-07:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall handler om \xE5 justere verdien av et tall til det n\xE6\
   rmeste hele tallet eller til et spesifikt antall desimaler. Programmerere gj\xF8\

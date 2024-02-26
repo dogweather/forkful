@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:44.687685-07:00
 description: "R\xE9cup\xE9rer la date actuelle en Bash implique l'utilisation de commandes\
   \ int\xE9gr\xE9es pour afficher la date et l'heure dans divers formats. Les programmeurs\u2026"
-lastmod: 2024-02-19 22:05:16.715425
+lastmod: '2024-02-25T18:49:54.696560-07:00'
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle en Bash implique l'utilisation de commandes\
   \ int\xE9gr\xE9es pour afficher la date et l'heure dans divers formats. Les programmeurs\u2026"

@@ -6,7 +6,7 @@ date: 2024-01-28 22:08:15.634438-07:00
 description: "Elk project begint met een eerste stap. Voor programmeurs betekent dat\
   \ het opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\
   \ dit\u2026"
-lastmod: 2024-02-19 22:05:09.923462
+lastmod: '2024-02-25T18:49:48.191484-07:00'
 model: gpt-4-0125-preview
 summary: "Elk project begint met een eerste stap. Voor programmeurs betekent dat het\
   \ opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\

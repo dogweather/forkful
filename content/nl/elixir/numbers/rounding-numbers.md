@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:06:51.460870-07:00
 description: "Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde\
   \ voor eenvoud of om te voldoen aan een bepaalde precisie. Het is nuttig voor het\u2026"
-lastmod: 2024-02-19 22:05:09.547246
+lastmod: '2024-02-25T18:49:47.849609-07:00'
 model: gpt-4-0125-preview
 summary: "Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde\
   \ voor eenvoud of om te voldoen aan een bepaalde precisie. Het is nuttig voor het\u2026"

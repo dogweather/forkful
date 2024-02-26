@@ -2,7 +2,7 @@
 date: 2024-01-19
 description: "Escribir un archivo de texto consiste en guardar datos en un documento\
   \ que puedas leer y editar. Los programadores lo hacen para mantener la\u2026"
-lastmod: 2024-02-19 22:05:17.519574
+lastmod: '2024-02-25T18:49:55.484844-07:00'
 summary: "Escribir un archivo de texto consiste en guardar datos en un documento que\
   \ puedas leer y editar. Los programadores lo hacen para mantener la\u2026"
 title: Escritura de un archivo de texto

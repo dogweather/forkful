@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:03.782641-07:00
 description: "Obliczenie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
   \ po prostu wyznaczenie dat r\xF3\u017Cni\u0105cych si\u0119 o ustalon\u0105 liczb\u0119\
   \ dni od dzi\u015B. Programi\u015Bci robi\u0105 to, by\u2026"
-lastmod: 2024-02-19 22:04:55.030226
+lastmod: '2024-02-25T18:49:34.228450-07:00'
 model: gpt-4-1106-preview
 summary: "Obliczenie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to po\
   \ prostu wyznaczenie dat r\xF3\u017Cni\u0105cych si\u0119 o ustalon\u0105 liczb\u0119\

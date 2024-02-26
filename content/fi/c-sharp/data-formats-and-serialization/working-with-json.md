@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:24.120150-07:00
 description: "JSON (JavaScript Object Notation) -tiedon k\xE4sittelyyn kuuluu JSON-tiedon\
   \ j\xE4sennys, tuottaminen ja kysely, mik\xE4 tekee siit\xE4 kriittisen taidon\u2026"
-lastmod: 2024-02-19 22:05:15.488218
+lastmod: '2024-02-25T18:49:53.509040-07:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) -tiedon k\xE4sittelyyn kuuluu JSON-tiedon\
   \ j\xE4sennys, tuottaminen ja kysely, mik\xE4 tekee siit\xE4 kriittisen taidon\u2026"

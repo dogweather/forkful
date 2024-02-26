@@ -3,7 +3,7 @@ date: 2024-01-26 04:18:19.854126-07:00
 description: "Korzystanie z interaktywnej pow\u0142oki, czyli p\u0119tli czytaj-wykonaj-drukuj\
   \ (REPL), pozwala na interaktywne programowanie. Programi\u015Bci u\u017Cywaj\u0105\
   \ jej do szybkiego\u2026"
-lastmod: 2024-02-19 22:04:54.904636
+lastmod: '2024-02-25T18:49:34.129177-07:00'
 model: gpt-4-0125-preview
 summary: "Korzystanie z interaktywnej pow\u0142oki, czyli p\u0119tli czytaj-wykonaj-drukuj\
   \ (REPL), pozwala na interaktywne programowanie. Programi\u015Bci u\u017Cywaj\u0105\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:51.727157-07:00
 description: "Een debugger gebruiken betekent dat je jezelf uitrust met een vergrootglas\
   \ om je code nauwkeurig te onderzoeken. Programmeurs doen dit om fouten te\u2026"
-lastmod: 2024-02-19 22:05:09.512976
+lastmod: '2024-02-25T18:49:47.817523-07:00'
 model: gpt-4-0125-preview
 summary: "Een debugger gebruiken betekent dat je jezelf uitrust met een vergrootglas\
   \ om je code nauwkeurig te onderzoeken. Programmeurs doen dit om fouten te\u2026"

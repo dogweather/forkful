@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:10.587492-07:00
 description: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
   \ dans une for\xEAt de mots pour d\xE9nicher une phrase et la transformer en quelque\
   \ chose\u2026"
-lastmod: 2024-02-19 22:05:16.470337
+lastmod: '2024-02-25T18:49:54.458304-07:00'
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
   \ dans une for\xEAt de mots pour d\xE9nicher une phrase et la transformer en quelque\

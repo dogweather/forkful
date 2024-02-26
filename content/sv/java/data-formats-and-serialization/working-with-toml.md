@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:21.874473-07:00
 description: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k. Det \xE4r ett\
   \ data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler. Programmerare\
   \ anv\xE4nder det eftersom\u2026"
-lastmod: 2024-02-19 22:04:57.021236
+lastmod: '2024-02-25T18:49:36.105637-07:00'
 model: gpt-4-0125-preview
 summary: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k. Det \xE4r ett data-serialiseringsformat\
   \ som anv\xE4nds f\xF6r konfigurationsfiler. Programmerare anv\xE4nder det eftersom\u2026"

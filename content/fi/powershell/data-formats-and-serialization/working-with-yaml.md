@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:16.233957-07:00
 description: "YAML, tai YAML Ain't Markup Language, on ihmisen luettavissa oleva datan\
   \ serialisointikieli. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein konfiguraatiotiedostojen\
   \ ja\u2026"
-lastmod: 2024-02-19 22:05:15.698630
+lastmod: '2024-02-25T18:49:53.713179-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, tai YAML Ain't Markup Language, on ihmisen luettavissa oleva datan\
   \ serialisointikieli. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein konfiguraatiotiedostojen\

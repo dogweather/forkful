@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:00.630190-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng i Google Apps Script handler\
   \ om \xE5 eliminere un\xF8dvendige anf\xF8rselstegn som kan omgi string-dataen din,\
   \ vanligvis\u2026"
-lastmod: 2024-02-19 22:04:59.581200
+lastmod: '2024-02-25T18:49:38.531488-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Google Apps Script handler\
   \ om \xE5 eliminere un\xF8dvendige anf\xF8rselstegn som kan omgi string-dataen din,\

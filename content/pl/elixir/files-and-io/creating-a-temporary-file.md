@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:00.515995-07:00
 description: "Tworzymy tymczasowy plik, by obrabia\u0107 dane, kt\xF3re nie musz\u0105\
   \ trwa\u0107 d\u0142ugo. Programi\u015Bci robi\u0105 to, by testowa\u0107 kod, przechowywa\u0107\
   \ dane sekwencyjnie, lub\u2026"
-lastmod: 2024-02-19 22:04:54.241875
+lastmod: '2024-02-25T18:49:33.484658-07:00'
 model: gpt-4-1106-preview
 summary: "Tworzymy tymczasowy plik, by obrabia\u0107 dane, kt\xF3re nie musz\u0105\
   \ trwa\u0107 d\u0142ugo. Programi\u015Bci robi\u0105 to, by testowa\u0107 kod, przechowywa\u0107\

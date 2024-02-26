@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:15.229784-07:00
 description: "Wysy\u0142anie zapytania HTTP z podstawow\u0105 autentykacj\u0105 to\
   \ proces uwierzytelniania u\u017Cytkownika przez serwer przy u\u017Cyciu loginu\
   \ i has\u0142a zakodowanych w base64.\u2026"
-lastmod: 2024-02-19 22:04:54.405952
+lastmod: '2024-02-25T18:49:33.641694-07:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie zapytania HTTP z podstawow\u0105 autentykacj\u0105 to proces\
   \ uwierzytelniania u\u017Cytkownika przez serwer przy u\u017Cyciu loginu i has\u0142\

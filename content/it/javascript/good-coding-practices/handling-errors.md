@@ -3,7 +3,7 @@ date: 2024-01-26 00:54:10.645836-07:00
 description: "La gestione degli errori \xE8 il modo in cui si gestiscono le situazioni\
   \ impreviste nel codice. \xC8 fondamentale perch\xE9 permette ai tuoi programmi\
   \ di fallire\u2026"
-lastmod: 2024-02-19 22:05:02.893725
+lastmod: '2024-02-25T18:49:41.667197-07:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori \xE8 il modo in cui si gestiscono le situazioni\
   \ impreviste nel codice. \xC8 fondamentale perch\xE9 permette ai tuoi programmi\

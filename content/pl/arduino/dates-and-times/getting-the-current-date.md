@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:04.269480-07:00
 description: "Pobieranie aktualnej daty w projektach Arduino polega na uzyskiwaniu\
   \ informacji w czasie rzeczywistym, co mo\u017Ce by\u0107 kluczowe do logowania,\
   \ stemplowania\u2026"
-lastmod: 2024-02-19 22:04:54.826208
+lastmod: '2024-02-25T18:49:34.053652-07:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w projektach Arduino polega na uzyskiwaniu informacji\
   \ w czasie rzeczywistym, co mo\u017Ce by\u0107 kluczowe do logowania, stemplowania\u2026"

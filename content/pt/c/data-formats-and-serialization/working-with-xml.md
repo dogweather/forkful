@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:12:57.820772-07:00
 description: "Trabalhar com XML em C envolve analisar, consultar e manipular documentos\
   \ XML usando diversas bibliotecas. Programadores lidam com XML devido ao seu uso\u2026"
-lastmod: 2024-02-19 22:05:06.147116
+lastmod: '2024-02-25T18:49:44.692807-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML em C envolve analisar, consultar e manipular documentos\
   \ XML usando diversas bibliotecas. Programadores lidam com XML devido ao seu uso\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:09.049923-07:00
 description: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps\
   \ Script, einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in\
   \ Google-\u2026"
-lastmod: 2024-02-19 22:05:12.365885
+lastmod: '2024-02-25T18:49:50.519839-07:00'
 model: gpt-4-0125-preview
 summary: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script,\
   \ einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in Google-\u2026"

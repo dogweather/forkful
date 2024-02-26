@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:14.552323-07:00
 description: "Kun koodaat, joskus haluat kurkata ohjelman toimintaan \u2013 se on\
   \ debug-tulostus. Se auttaa sinua n\xE4kem\xE4\xE4n, miss\xE4 pisteess\xE4 ohjelma\
   \ m\xE4tt\xE4\xE4 tai miten data\u2026"
-lastmod: 2024-02-19 22:05:15.762815
+lastmod: '2024-02-25T18:49:53.776998-07:00'
 model: gpt-4-1106-preview
 summary: "Kun koodaat, joskus haluat kurkata ohjelman toimintaan \u2013 se on debug-tulostus.\
   \ Se auttaa sinua n\xE4kem\xE4\xE4n, miss\xE4 pisteess\xE4 ohjelma m\xE4tt\xE4\xE4\

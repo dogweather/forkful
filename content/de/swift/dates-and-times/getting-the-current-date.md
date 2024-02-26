@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:11.260701-07:00
 description: "Das aktuelle Datum in Swift zu bekommen, erfordert die Verwendung der\
   \ `Date`-Klasse, um auf das Datum und die Uhrzeit zuzugreifen, zu denen die App\u2026"
-lastmod: 2024-02-19 22:05:13.171415
+lastmod: '2024-02-25T18:49:51.286055-07:00'
 model: gpt-4-0125-preview
 summary: "Das aktuelle Datum in Swift zu bekommen, erfordert die Verwendung der `Date`-Klasse,\
   \ um auf das Datum und die Uhrzeit zuzugreifen, zu denen die App\u2026"

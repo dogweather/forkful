@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:11:23.245684-07:00
 description: "En el \xE1mbito de la programaci\xF3n, trabajar con archivos CSV (Valores\
   \ Separados por Comas) implica leer y escribir datos en archivos de texto organizados\u2026"
-lastmod: 2024-02-19 22:05:18.077290
+lastmod: '2024-02-25T18:49:56.037833-07:00'
 model: gpt-4-0125-preview
 summary: "En el \xE1mbito de la programaci\xF3n, trabajar con archivos CSV (Valores\
   \ Separados por Comas) implica leer y escribir datos en archivos de texto organizados\u2026"

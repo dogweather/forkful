@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:36.847329-07:00
 description: "YAML, un lenguaje de serializaci\xF3n de datos dise\xF1ado para ser\
   \ amigable con el humano, se usa a menudo para archivos de configuraci\xF3n, mensajes\
   \ entre\u2026"
-lastmod: 2024-02-19 22:05:17.350922
+lastmod: '2024-02-25T18:49:55.319432-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, un lenguaje de serializaci\xF3n de datos dise\xF1ado para ser amigable\
   \ con el humano, se usa a menudo para archivos de configuraci\xF3n, mensajes entre\u2026"

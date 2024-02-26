@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:30.451147-07:00
 description: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite \xFCber\
   \ das Internet auf deinen Computer zu \xFCbertragen. Programmierer tun dies, um\
   \ Daten zu\u2026"
-lastmod: 2024-02-19 22:05:12.944371
+lastmod: '2024-02-25T18:49:51.067967-07:00'
 model: gpt-4-1106-preview
 summary: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite \xFCber das\
   \ Internet auf deinen Computer zu \xFCbertragen. Programmierer tun dies, um Daten\

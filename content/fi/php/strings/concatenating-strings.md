@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:46.546659-07:00
 description: "Stringien yhdistely eli konkatenointi tarkoittaa tekstijonojen liitt\xE4\
   mist\xE4 yhteen. Sit\xE4 k\xE4ytet\xE4\xE4n, koska usein haluat muodostaa dynaamisia\
   \ tekstej\xE4, kuten\u2026"
-lastmod: 2024-02-19 22:05:15.542385
+lastmod: '2024-02-25T18:49:53.560995-07:00'
 model: gpt-4-1106-preview
 summary: "Stringien yhdistely eli konkatenointi tarkoittaa tekstijonojen liitt\xE4\
   mist\xE4 yhteen. Sit\xE4 k\xE4ytet\xE4\xE4n, koska usein haluat muodostaa dynaamisia\

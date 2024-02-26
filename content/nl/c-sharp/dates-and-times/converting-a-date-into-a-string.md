@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:20.221296-07:00
 description: "Het omzetten van een datum naar een tekenreeks in C# houdt in dat het\
   \ formaat van een DateTime-object wordt veranderd naar een tekstweergave. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:09.881488
+lastmod: '2024-02-25T18:49:48.160855-07:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een tekenreeks in C# houdt in dat het formaat\
   \ van een DateTime-object wordt veranderd naar een tekstweergave. Programmeurs\u2026"

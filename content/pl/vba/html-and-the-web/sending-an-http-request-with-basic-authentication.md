@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:57.647993-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
   \ w Visual Basic for Applications (VBA) dotyczy dost\u0119pu do zasob\xF3w sieciowych\
   \ chronionych przez dane\u2026"
-lastmod: 2024-02-19 22:04:54.358192
+lastmod: '2024-02-25T18:49:33.596566-07:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
   \ w Visual Basic for Applications (VBA) dotyczy dost\u0119pu do zasob\xF3w sieciowych\

@@ -6,7 +6,7 @@ description: "Vi\u1EBFt test trong Google Apps Script (GAS) l\xE0 v\u1EC1 vi\u1E
   c t\u1EA1o ra c\xE1c script t\u1EF1 \u0111\u1ED9ng \u0111\u1EC3 x\xE1c minh h\xE0\
   nh vi c\u1EE7a m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o ch\xFA\
   ng ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong\u2026"
-lastmod: 2024-02-19 22:04:55.234745
+lastmod: '2024-02-25T18:49:34.420216-07:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test trong Google Apps Script (GAS) l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1\
   o ra c\xE1c script t\u1EF1 \u0111\u1ED9ng \u0111\u1EC3 x\xE1c minh h\xE0nh vi c\u1EE7\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:33.582878-07:00
 description: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen C-kieless\xE4 tarkoittaa\
   \ merkkien lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4 ennen nolla-terminaattoria `\\\
   0`. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\u2026"
-lastmod: 2024-02-19 22:05:15.923168
+lastmod: '2024-02-25T18:49:53.935187-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen C-kieless\xE4 tarkoittaa merkkien\
   \ lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4 ennen nolla-terminaattoria `\\0`. Ohjelmoijat\

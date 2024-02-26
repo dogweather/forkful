@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:13.807014-07:00
 description: "Working with CSV (Comma-Separated Values) files is a common task for\
   \ managing and manipulating data in a structured, tabular form. Programmers often\u2026"
-lastmod: 2024-02-19 22:05:18.766945
+lastmod: '2024-02-25T18:49:56.742492-07:00'
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) files is a common task for managing\
   \ and manipulating data in a structured, tabular form. Programmers often\u2026"

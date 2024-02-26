@@ -5,7 +5,7 @@ changelog:
 date: 2024-02-22 17:30:10.233314-07:00
 description: "Iniciar un nuevo proyecto en Python se trata de establecer un marco\
   \ estructurado y mantenido desde el principio. Los programadores hacen esto para\u2026"
-lastmod: 2024-02-25 18:27:14.835429
+lastmod: '2024-02-25T18:49:55.178292-07:00'
 model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en Python se trata de establecer un marco estructurado\
   \ y mantenido desde el principio. Los programadores hacen esto para\u2026"

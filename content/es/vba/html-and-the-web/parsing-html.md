@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:01.170809-07:00
 description: "Parsear HTML en Visual Basic for Applications (VBA) implica extraer\
   \ informaci\xF3n espec\xEDfica de un documento HTML. Los programadores lo hacen\
   \ para\u2026"
-lastmod: 2024-02-19 22:05:17.413613
+lastmod: '2024-02-25T18:49:55.381147-07:00'
 model: gpt-4-0125-preview
 summary: "Parsear HTML en Visual Basic for Applications (VBA) implica extraer informaci\xF3\
   n espec\xEDfica de un documento HTML. Los programadores lo hacen para\u2026"

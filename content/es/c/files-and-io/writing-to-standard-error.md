@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:56.311221-07:00
 description: "Escribir en el error est\xE1ndar en C implica dirigir los mensajes de\
   \ error y la informaci\xF3n de diagn\xF3stico a un flujo separado del resultado\
   \ principal del\u2026"
-lastmod: 2024-02-19 22:05:18.070631
+lastmod: '2024-02-25T18:49:56.031433-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar en C implica dirigir los mensajes de error\
   \ y la informaci\xF3n de diagn\xF3stico a un flujo separado del resultado principal\

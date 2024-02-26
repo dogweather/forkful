@@ -10,7 +10,7 @@ description: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C
   \ \uC124\uC815\uC744 \uAD6C\uC870\uC801\uC774\uBA74\uC11C\uB3C4 \uAC04\uB2E8\uD55C\
   \ \uBC29\uC2DD\uC73C\uB85C \uAD00\uB9AC\uD558\uAE30 \uC704\uD574 \uC885\uC885 YAML\uC744\
   \u2026"
-lastmod: 2024-02-19 22:05:14.113428
+lastmod: '2024-02-25T18:49:52.198495-07:00'
 model: gpt-4-0125-preview
 summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C, \uAD6C\
   \uC131 \uD30C\uC77C, \uB370\uC774\uD130 \uC800\uC7A5, \uD504\uB85C\uC138\uC2A4 \uAC04\

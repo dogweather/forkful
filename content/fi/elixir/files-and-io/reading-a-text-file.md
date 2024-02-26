@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:09.803081-07:00
 description: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\xE4\
   lt\xF6\xE4. T\xE4m\xE4 on peruskauraa, koska tiedot tallennetaan ja jaetaan usein\
   \ tekstitiedostoina."
-lastmod: 2024-02-19 22:05:15.185290
+lastmod: '2024-02-25T18:49:53.217545-07:00'
 model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\xE4lt\xF6\
   \xE4. T\xE4m\xE4 on peruskauraa, koska tiedot tallennetaan ja jaetaan usein tekstitiedostoina."

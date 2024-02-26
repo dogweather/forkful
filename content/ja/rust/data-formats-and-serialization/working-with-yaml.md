@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:04.022560-07:00
 description: "Rust\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3044\u3066\
   \u3001YAML\uFF08YAML Ain't Markup\u2026"
-lastmod: 2024-02-19 22:05:01.022118
+lastmod: '2024-02-25T18:49:39.898084-07:00'
 model: gpt-4-0125-preview
 summary: "Rust\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3044\u3066\u3001\
   YAML\uFF08YAML Ain't Markup\u2026"

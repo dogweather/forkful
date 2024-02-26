@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:08.375950-07:00
 description: "Wyszukiwanie i zamiana tekstu w Visual Basic dla Aplikacji (VBA) jest\
   \ niezb\u0119dne do programistycznego edytowania dokument\xF3w, arkuszy kalkulacyjnych\
   \ i baz\u2026"
-lastmod: 2024-02-19 22:04:54.340863
+lastmod: '2024-02-25T18:49:33.580101-07:00'
 model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zamiana tekstu w Visual Basic dla Aplikacji (VBA) jest niezb\u0119\
   dne do programistycznego edytowania dokument\xF3w, arkuszy kalkulacyjnych i baz\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 21:59:28.287773-07:00
 description: "Het downloaden van een webpagina betekent het binnenhalen van de online\
   \ inhoud, zodat je deze offline kunt gebruiken of analyseren. Programmeurs doen\
   \ dit\u2026"
-lastmod: 2024-02-19 22:05:09.965857
+lastmod: '2024-02-25T18:49:48.231655-07:00'
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina betekent het binnenhalen van de online\
   \ inhoud, zodat je deze offline kunt gebruiken of analyseren. Programmeurs doen\

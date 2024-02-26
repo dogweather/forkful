@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:42.257455-07:00
 description: "Att tolka HTML i programmering inneb\xE4r att analysera en HTML-dokuments\
   \ struktur, vilket m\xF6jligg\xF6r f\xF6r dig att extrahera, manipulera och interagera\
   \ med\u2026"
-lastmod: 2024-02-19 22:04:57.127619
+lastmod: '2024-02-25T18:49:36.209622-07:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML i programmering inneb\xE4r att analysera en HTML-dokuments\
   \ struktur, vilket m\xF6jligg\xF6r f\xF6r dig att extrahera, manipulera och interagera\

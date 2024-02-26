@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:11.536762-07:00
 description: "Escribir un archivo de texto en Kotlin implica crear un archivo e ingresar\
   \ contenido de texto en \xE9l, una tarea com\xFAn para almacenar datos, registrar\
   \ o\u2026"
-lastmod: 2024-02-19 22:05:17.561151
+lastmod: '2024-02-25T18:49:55.525684-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Kotlin implica crear un archivo e ingresar\
   \ contenido de texto en \xE9l, una tarea com\xFAn para almacenar datos, registrar\

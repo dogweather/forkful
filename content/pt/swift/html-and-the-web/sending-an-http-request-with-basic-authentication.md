@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:45.784615-07:00
 description: "Em Swift, enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1\
   sica significa passar um usu\xE1rio e senha para acessar um recurso protegido na\
   \ web. Programadores\u2026"
-lastmod: 2024-02-19 22:05:05.983268
+lastmod: '2024-02-25T18:49:44.537826-07:00'
 model: gpt-4-1106-preview
 summary: "Em Swift, enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1\
   sica significa passar um usu\xE1rio e senha para acessar um recurso protegido na\

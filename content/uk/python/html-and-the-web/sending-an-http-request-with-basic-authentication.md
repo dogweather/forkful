@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:33.773894-07:00
 description: "Sending an HTTP request with basic authentication means adding login\
   \ credentials to your web request for access. We do this to securely communicate\
   \ with\u2026"
-lastmod: 2024-02-19 22:05:07.655309
+lastmod: '2024-02-25T18:49:46.140894-07:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication means adding login credentials\
   \ to your web request for access. We do this to securely communicate with\u2026"

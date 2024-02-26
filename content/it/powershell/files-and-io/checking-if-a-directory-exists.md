@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:04.136107-07:00
 description: "In PowerShell, verificare l'esistenza di una directory \xE8 un compito\
   \ comune che aiuta gli script a prendere decisioni basate sulla struttura dei file\u2026"
-lastmod: 2024-02-19 22:05:02.731441
+lastmod: '2024-02-25T18:49:41.517447-07:00'
 model: gpt-4-0125-preview
 summary: "In PowerShell, verificare l'esistenza di una directory \xE8 un compito comune\
   \ che aiuta gli script a prendere decisioni basate sulla struttura dei file\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:03.376959-07:00
 description: "L'interpolazione di stringhe \xE8 un modo per inserire valori di variabili\
   \ direttamente all'interno di una stringa di testo. I programmatori la usano per\u2026"
-lastmod: 2024-02-19 22:05:02.355943
+lastmod: '2024-02-25T18:49:41.165571-07:00'
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe \xE8 un modo per inserire valori di variabili\
   \ direttamente all'interno di una stringa di testo. I programmatori la usano per\u2026"

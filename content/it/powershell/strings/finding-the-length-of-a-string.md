@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:02.048924-07:00
 description: "Trova la lunghezza di una stringa significa contare i caratteri che\
   \ la compongono. Programmatori lo fanno per validazioni, manipolazione di testo\
   \ e per\u2026"
-lastmod: 2024-02-19 22:05:02.705986
+lastmod: '2024-02-25T18:49:41.493225-07:00'
 model: gpt-4-1106-preview
 summary: "Trova la lunghezza di una stringa significa contare i caratteri che la compongono.\
   \ Programmatori lo fanno per validazioni, manipolazione di testo e per\u2026"

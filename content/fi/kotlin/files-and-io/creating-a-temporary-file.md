@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:53.145710-07:00
 description: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedosto,\
   \ johon ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niit\xE4\
   \ datan v\xE4liaikaiseen\u2026"
-lastmod: 2024-02-19 22:05:15.443501
+lastmod: '2024-02-25T18:49:53.465937-07:00'
 model: gpt-4-1106-preview
 summary: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedosto, johon\
   \ ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niit\xE4 datan\

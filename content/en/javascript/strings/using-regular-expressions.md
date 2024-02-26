@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:56.534396-07:00
 description: "Regular expressions (regex) in JavaScript are patterns used to match\
   \ character combinations in strings. Programmers use them for searching, extracting,\u2026"
-lastmod: 2024-02-19 22:05:18.886240
+lastmod: '2024-02-25T18:49:56.860031-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in JavaScript are patterns used to match character\
   \ combinations in strings. Programmers use them for searching, extracting,\u2026"

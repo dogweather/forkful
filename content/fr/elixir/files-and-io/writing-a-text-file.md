@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:31.829985-07:00
 description: "\xC9crire dans un fichier texte avec Elixir est une comp\xE9tence essentielle\
   \ pour les d\xE9veloppeurs, permettant la persistance des donn\xE9es, le journalisation\
   \ ou\u2026"
-lastmod: 2024-02-19 22:05:16.242697
+lastmod: '2024-02-25T18:49:54.229482-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Elixir est une comp\xE9tence essentielle\
   \ pour les d\xE9veloppeurs, permettant la persistance des donn\xE9es, le journalisation\

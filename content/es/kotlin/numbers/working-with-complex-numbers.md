@@ -3,7 +3,7 @@ date: 2024-01-26 04:42:34.476111-07:00
 description: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para\
   \ incluir las ra\xEDces cuadradas de n\xFAmeros negativos, donde la unidad \"imaginaria\"\
   \ i es igual a\u2026"
-lastmod: 2024-02-19 22:05:17.536965
+lastmod: '2024-02-25T18:49:55.501769-07:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para incluir\
   \ las ra\xEDces cuadradas de n\xFAmeros negativos, donde la unidad \"imaginaria\"\

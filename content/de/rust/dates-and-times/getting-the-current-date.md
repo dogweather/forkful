@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:47.604989-07:00
 description: "Das Abrufen des aktuellen Datums in Rust ist eine g\xE4ngige Aufgabe\
   \ f\xFCr Dinge wie das Logging, zeitbasierte Operationen oder einfach nur, um das\
   \ Datum\u2026"
-lastmod: 2024-02-19 22:05:12.607553
+lastmod: '2024-02-25T18:49:50.750909-07:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Rust ist eine g\xE4ngige Aufgabe f\xFC\
   r Dinge wie das Logging, zeitbasierte Operationen oder einfach nur, um das Datum\u2026"

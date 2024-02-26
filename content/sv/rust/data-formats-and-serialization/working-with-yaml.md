@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:41.207630-07:00
 description: "I Rust-programmering inneb\xE4r arbete med YAML (YAML Ain't Markup Language)\
   \ att tolka och generera data i YAML-format, en m\xE4nniskov\xE4nlig standard f\xF6\
   r data-\u2026"
-lastmod: 2024-02-19 22:04:56.924184
+lastmod: '2024-02-25T18:49:36.014271-07:00'
 model: gpt-4-0125-preview
 summary: "I Rust-programmering inneb\xE4r arbete med YAML (YAML Ain't Markup Language)\
   \ att tolka och generera data i YAML-format, en m\xE4nniskov\xE4nlig standard f\xF6\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:10.482594-07:00
 description: "Calcular uma data no futuro ou passado \xE9 simplesmente descobrir qual\
   \ ser\xE1 ou qual foi a data ap\xF3s ou antes de um certo per\xEDodo de tempo. Programadores\u2026"
-lastmod: 2024-02-19 22:05:05.867557
+lastmod: '2024-02-25T18:49:44.428899-07:00'
 model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou passado \xE9 simplesmente descobrir qual\
   \ ser\xE1 ou qual foi a data ap\xF3s ou antes de um certo per\xEDodo de tempo. Programadores\u2026"

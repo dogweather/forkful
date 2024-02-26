@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:29.595616-07:00
 description: "\xC5 lese en tekstfil i Google Apps Script (GAS) inneb\xE6rer \xE5 f\xE5\
   \ tilgang til og trekke ut tekstdata fra filer lagret i Google Drive eller annen\
   \ tilgjengelig\u2026"
-lastmod: 2024-02-19 22:04:59.615433
+lastmod: '2024-02-25T18:49:38.563942-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i Google Apps Script (GAS) inneb\xE6rer \xE5 f\xE5\
   \ tilgang til og trekke ut tekstdata fra filer lagret i Google Drive eller annen\

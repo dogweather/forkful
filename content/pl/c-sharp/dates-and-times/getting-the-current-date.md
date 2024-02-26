@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:16.021710-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w C# polega na uzyskaniu obecnych\
   \ informacji o dacie i czasie z systemu. Programi\u015Bci cz\u0119sto musz\u0105\
   \ uzyska\u0107 dost\u0119p do tych\u2026"
-lastmod: 2024-02-19 22:04:54.553098
+lastmod: '2024-02-25T18:49:33.783458-07:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w C# polega na uzyskaniu obecnych informacji\
   \ o dacie i czasie z systemu. Programi\u015Bci cz\u0119sto musz\u0105 uzyska\u0107\

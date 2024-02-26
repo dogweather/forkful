@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:12.700449-07:00
 description: "No PowerShell, verificar se um diret\xF3rio existe \xE9 uma tarefa comum\
   \ que ajuda os scripts a tomarem decis\xF5es baseadas na estrutura do sistema de\u2026"
-lastmod: 2024-02-19 22:05:05.868621
+lastmod: '2024-02-25T18:49:44.429906-07:00'
 model: gpt-4-0125-preview
 summary: "No PowerShell, verificar se um diret\xF3rio existe \xE9 uma tarefa comum\
   \ que ajuda os scripts a tomarem decis\xF5es baseadas na estrutura do sistema de\u2026"

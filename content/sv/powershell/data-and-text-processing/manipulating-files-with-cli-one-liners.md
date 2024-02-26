@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:22.811186-07:00
 description: "Att manipulera filer med CLI-enradare i PowerShell handlar om att snabbt\
   \ \xE4ndra, flytta eller erh\xE5lla fildata direkt fr\xE5n kommandoraden. Programmerare\
   \ g\xF6r\u2026"
-lastmod: 2024-02-19 22:04:57.353335
+lastmod: '2024-02-25T18:49:36.435982-07:00'
 model: gpt-4-0125-preview
 summary: "Att manipulera filer med CLI-enradare i PowerShell handlar om att snabbt\
   \ \xE4ndra, flytta eller erh\xE5lla fildata direkt fr\xE5n kommandoraden. Programmerare\

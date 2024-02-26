@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:40.548706-07:00
 description: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst. Vi\
   \ gj\xF8r det for \xE5 bygge brukertilpassede meldinger eller for \xE5 kombinere\
   \ data dynamisk."
-lastmod: 2024-02-19 22:04:59.940755
+lastmod: '2024-02-25T18:49:38.874445-07:00'
 model: gpt-4-1106-preview
 summary: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst. Vi gj\xF8\
   r det for \xE5 bygge brukertilpassede meldinger eller for \xE5 kombinere data dynamisk."

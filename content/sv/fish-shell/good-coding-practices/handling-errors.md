@@ -3,7 +3,7 @@ date: 2024-01-26 00:52:27.213944-07:00
 description: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett\
   \ smidigt s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4\
   ndares h\xE5r gr\xE5nar."
-lastmod: 2024-02-19 22:04:57.593729
+lastmod: '2024-02-25T18:49:36.660989-07:00'
 model: gpt-4-1106-preview
 summary: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett smidigt\
   \ s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4ndares h\xE5\

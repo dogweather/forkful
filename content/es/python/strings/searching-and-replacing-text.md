@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:27.803192-07:00
 description: "Buscar y reemplazar texto es simplemente encontrar una cadena de caracteres\
   \ en un texto y cambiarla por otra diferente. Los programadores lo hacen todo el\u2026"
-lastmod: 2024-02-19 22:05:17.191528
+lastmod: '2024-02-25T18:49:55.163285-07:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es simplemente encontrar una cadena de caracteres\
   \ en un texto y cambiarla por otra diferente. Los programadores lo hacen todo el\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:48.960918-07:00
 description: "CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaatti,\
   \ joka esitt\xE4\xE4 taulukollista tietoa puhtaana tekstin\xE4 k\xE4ytt\xE4en pilkkuja\
   \ arvojen\u2026"
-lastmod: 2024-02-19 22:05:15.489310
+lastmod: '2024-02-25T18:49:53.510102-07:00'
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaatti,\
   \ joka esitt\xE4\xE4 taulukollista tietoa puhtaana tekstin\xE4 k\xE4ytt\xE4en pilkkuja\

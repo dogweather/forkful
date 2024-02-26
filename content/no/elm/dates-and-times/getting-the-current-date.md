@@ -3,7 +3,7 @@ date: 2024-01-20 15:14:18.979784-07:00
 description: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
   \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
   \ nyttig for alt\u2026"
-lastmod: 2024-02-19 22:04:59.965703
+lastmod: '2024-02-25T18:49:38.898742-07:00'
 summary: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
   \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
   \ nyttig for alt\u2026"

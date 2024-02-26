@@ -3,7 +3,7 @@ date: 2024-01-26 00:58:48.154449-07:00
 description: "\"Logging\" \xE9 a pr\xE1tica de manter um registro de eventos, transa\xE7\
   \xF5es ou atividades que acontecem ao longo do tempo em um sistema. Programadores\
   \ o utilizam\u2026"
-lastmod: 2024-02-19 22:05:05.903617
+lastmod: '2024-02-25T18:49:44.462804-07:00'
 model: gpt-4-1106-preview
 summary: "\"Logging\" \xE9 a pr\xE1tica de manter um registro de eventos, transa\xE7\
   \xF5es ou atividades que acontecem ao longo do tempo em um sistema. Programadores\

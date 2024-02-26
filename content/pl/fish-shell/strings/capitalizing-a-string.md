@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:27.304585-07:00
 description: "Zmiana pierwszej litery \u0142a\u0144cucha na wielk\u0105, a reszty\
   \ na ma\u0142e litery, oznacza modyfikacj\u0119 tekstu w taki spos\xF3b, by pierwsza\
   \ litera by\u0142a wielka, a pozosta\u0142a\u2026"
-lastmod: 2024-02-19 22:04:54.973808
+lastmod: '2024-02-25T18:49:34.195320-07:00'
 model: gpt-4-0125-preview
 summary: "Zmiana pierwszej litery \u0142a\u0144cucha na wielk\u0105, a reszty na ma\u0142\
   e litery, oznacza modyfikacj\u0119 tekstu w taki spos\xF3b, by pierwsza litera by\u0142\

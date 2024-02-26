@@ -3,7 +3,7 @@ date: 2024-01-26 04:34:14.586588-07:00
 description: "Die Arbeit mit XML umfasst die Manipulation und den Zugriff auf Daten,\
   \ die in der eXtensible Markup Language strukturiert sind. Programmierer arbeiten\
   \ mit\u2026"
-lastmod: 2024-02-19 22:05:13.059967
+lastmod: '2024-02-25T18:49:51.179662-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst die Manipulation und den Zugriff auf Daten, die\
   \ in der eXtensible Markup Language strukturiert sind. Programmierer arbeiten mit\u2026"

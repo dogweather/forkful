@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:56.842768-07:00
 description: "Le espressioni regolari nella programmazione sono sequenze di caratteri\
   \ che definiscono un modello di ricerca, tipicamente impiegate per la ricerca e\
   \ la\u2026"
-lastmod: 2024-02-19 22:05:02.530493
+lastmod: '2024-02-25T18:49:41.330144-07:00'
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari nella programmazione sono sequenze di caratteri\
   \ che definiscono un modello di ricerca, tipicamente impiegate per la ricerca e\

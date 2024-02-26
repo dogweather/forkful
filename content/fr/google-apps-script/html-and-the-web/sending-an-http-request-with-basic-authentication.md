@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:01.336403-07:00
 description: "L'envoi d'une requ\xEAte HTTP avec une authentification de base consiste\
   \ \xE0 coder un nom d'utilisateur et un mot de passe dans un en-t\xEAte de requ\xEA\
   te pour\u2026"
-lastmod: 2024-02-19 22:05:16.091746
+lastmod: '2024-02-25T18:49:54.081080-07:00'
 model: gpt-4-0125-preview
 summary: "L'envoi d'une requ\xEAte HTTP avec une authentification de base consiste\
   \ \xE0 coder un nom d'utilisateur et un mot de passe dans un en-t\xEAte de requ\xEA\

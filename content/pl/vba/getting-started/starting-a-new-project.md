@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:13.101268-07:00
 description: "Rozpocz\u0119cie nowego projektu w Visual Basic for Applications (VBA)\
   \ wi\u0105\u017Ce si\u0119 z konfiguracj\u0105 \u015Brodowiska w aplikacji hosta,\
   \ takiej jak Excel, aby\u2026"
-lastmod: 2024-02-19 22:04:54.359393
+lastmod: '2024-02-25T18:49:33.597691-07:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w Visual Basic for Applications (VBA) wi\u0105\
   \u017Ce si\u0119 z konfiguracj\u0105 \u015Brodowiska w aplikacji hosta, takiej jak\

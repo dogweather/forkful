@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:48.082105-07:00
 description: "Wypisywanie informacji diagnostycznych (debug) pomaga \u015Bledzi\u0107\
   , co si\u0119 dzieje w programie. U\u017Cywamy tego, by szybko znale\u017A\u0107\
   \ i naprawi\u0107 b\u0142\u0119dy."
-lastmod: 2024-02-19 22:04:54.817880
+lastmod: '2024-02-25T18:49:34.045489-07:00'
 model: gpt-4-1106-preview
 summary: "Wypisywanie informacji diagnostycznych (debug) pomaga \u015Bledzi\u0107\
   , co si\u0119 dzieje w programie. U\u017Cywamy tego, by szybko znale\u017A\u0107\

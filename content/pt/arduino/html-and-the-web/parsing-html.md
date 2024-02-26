@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:49.528851-07:00
 description: "Fazer parsing de HTML em projetos Arduino \xE9 sobre extrair informa\xE7\
   \xF5es de p\xE1ginas web. Programadores fazem isso para permitir que seus dispositivos\
   \ Arduino\u2026"
-lastmod: 2024-02-19 22:05:05.895550
+lastmod: '2024-02-25T18:49:44.455073-07:00'
 model: gpt-4-0125-preview
 summary: "Fazer parsing de HTML em projetos Arduino \xE9 sobre extrair informa\xE7\
   \xF5es de p\xE1ginas web. Programadores fazem isso para permitir que seus dispositivos\

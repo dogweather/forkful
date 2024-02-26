@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:41.238678-07:00
 description: "Imprimir salida de depuraci\xF3n implica colocar estrat\xE9gicamente\
   \ declaraciones de registro en su c\xF3digo para mostrar los valores de las variables,\
   \ el flujo\u2026"
-lastmod: 2024-02-19 22:05:17.164386
+lastmod: '2024-02-25T18:49:55.136191-07:00'
 model: gpt-4-0125-preview
 summary: "Imprimir salida de depuraci\xF3n implica colocar estrat\xE9gicamente declaraciones\
   \ de registro en su c\xF3digo para mostrar los valores de las variables, el flujo\u2026"

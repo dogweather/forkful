@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-30 19:13:10.230636-07:00
 description: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem\
   \ armazenar e gerenciar dados em pares chave-valor. Programadores os usam para organizar\u2026"
-lastmod: 2024-02-19 22:05:05.976559
+lastmod: '2024-02-25T18:49:44.531424-07:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem armazenar\
   \ e gerenciar dados em pares chave-valor. Programadores os usam para organizar\u2026"

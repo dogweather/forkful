@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:26.001825-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn\
   \ tarkkuuteen. Ohjelmoijat tekev\xE4t n\xE4in hallitakseen numeerista tulostetta\
   \ luettavuuden,\u2026"
-lastmod: 2024-02-19 22:05:15.204534
+lastmod: '2024-02-25T18:49:53.236471-07:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn tarkkuuteen.\
   \ Ohjelmoijat tekev\xE4t n\xE4in hallitakseen numeerista tulostetta luettavuuden,\u2026"

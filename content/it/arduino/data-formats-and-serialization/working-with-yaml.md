@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:40.950037-07:00
 description: "YAML (YAML Ain't Markup Language) \xE8 uno standard di serializzazione\
   \ di dati leggibile dall'uomo che pu\xF2 essere utilizzato per file di configurazione,\u2026"
-lastmod: 2024-02-19 22:05:02.780212
+lastmod: '2024-02-25T18:49:41.561627-07:00'
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) \xE8 uno standard di serializzazione di\
   \ dati leggibile dall'uomo che pu\xF2 essere utilizzato per file di configurazione,\u2026"

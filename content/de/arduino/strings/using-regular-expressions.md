@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:57.859873-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuster\
   \ definieren, die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation\
   \ verwendet\u2026"
-lastmod: 2024-02-19 22:05:13.067828
+lastmod: '2024-02-25T18:49:51.186976-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuster definieren,\
   \ die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation verwendet\u2026"

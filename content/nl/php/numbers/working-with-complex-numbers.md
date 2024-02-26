@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:57.448499-07:00
 description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel, meestal\
   \ geschreven als `a + bi`. Ze zijn cruciaal in geavanceerde wiskunde, natuurkunde,\u2026"
-lastmod: 2024-02-19 22:05:09.960501
+lastmod: '2024-02-25T18:49:48.226142-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel, meestal\
   \ geschreven als `a + bi`. Ze zijn cruciaal in geavanceerde wiskunde, natuurkunde,\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:42:42.361483-07:00
 description: "Deleting characters matching a pattern in Lua is about using patterns\
   \ to identify and remove specific sequences of characters from a string. Programmers\u2026"
-lastmod: 2024-02-19 22:05:18.653239
+lastmod: '2024-02-25T18:49:56.630279-07:00'
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in Lua is about using patterns to\
   \ identify and remove specific sequences of characters from a string. Programmers\u2026"

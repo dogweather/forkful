@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:06.679780-07:00
 description: "Reading command line arguments in Visual Basic for Applications (VBA)\
   \ involves accessing parameters passed to your program upon execution. This technique\u2026"
-lastmod: 2024-02-19 22:05:18.416832
+lastmod: '2024-02-25T18:49:56.370440-07:00'
 model: gpt-4-0125-preview
 summary: "Reading command line arguments in Visual Basic for Applications (VBA) involves\
   \ accessing parameters passed to your program upon execution. This technique\u2026"

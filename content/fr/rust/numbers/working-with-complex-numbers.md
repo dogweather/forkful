@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:14.502187-07:00
 description: "Les nombres complexes comportent une partie r\xE9elle et une partie\
   \ imaginaire et sont cruciaux dans divers domaines tels que l'ing\xE9nierie, la\
   \ physique et\u2026"
-lastmod: 2024-02-19 22:05:16.304001
+lastmod: '2024-02-25T18:49:54.289854-07:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes comportent une partie r\xE9elle et une partie imaginaire\
   \ et sont cruciaux dans divers domaines tels que l'ing\xE9nierie, la physique et\u2026"

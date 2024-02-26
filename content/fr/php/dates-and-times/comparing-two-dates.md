@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:28.004305-07:00
 description: "Comparer deux dates, c'est voir si elles sont identiques, quelle est\
   \ la plus r\xE9cente, etc. En PHP, on fait \xE7a souvent pour valider des \xE9v\xE9\
   nements, des\u2026"
-lastmod: 2024-02-19 22:05:16.627139
+lastmod: '2024-02-25T18:49:54.611579-07:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est voir si elles sont identiques, quelle est la\
   \ plus r\xE9cente, etc. En PHP, on fait \xE7a souvent pour valider des \xE9v\xE9\

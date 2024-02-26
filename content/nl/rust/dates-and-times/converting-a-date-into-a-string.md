@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:45.171100-07:00
 description: "Het converteren van een datum naar een string in Rust stelt ons in staat\
   \ om data weer te geven in een voor mensen leesbaar formaat. We doen dit voor UI's,\u2026"
-lastmod: 2024-02-19 22:05:09.654372
+lastmod: '2024-02-25T18:49:47.949722-07:00'
 model: gpt-4-0125-preview
 summary: "Het converteren van een datum naar een string in Rust stelt ons in staat\
   \ om data weer te geven in een voor mensen leesbaar formaat. We doen dit voor UI's,\u2026"

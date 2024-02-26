@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:24.388101-07:00
 description: "Starting a new project is about laying the groundwork for your coding\
   \ masterpiece. As programmers, we do it to break ground on a fresh idea or implement\u2026"
-lastmod: 2024-02-19 22:05:18.747615
+lastmod: '2024-02-25T18:49:56.723437-07:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project is about laying the groundwork for your coding masterpiece.\
   \ As programmers, we do it to break ground on a fresh idea or implement\u2026"

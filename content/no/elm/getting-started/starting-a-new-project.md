@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:21.406676-07:00
 description: "Et nytt prosjekt er starten p\xE5 en frisk kodebase, og programmerere\
   \ starter nye prosjekter for \xE5 realisere unike ideer eller l\xF8se spesifikke\
   \ problemer. Det\u2026"
-lastmod: 2024-02-19 22:04:59.955372
+lastmod: '2024-02-25T18:49:38.888854-07:00'
 model: gpt-4-1106-preview
 summary: "Et nytt prosjekt er starten p\xE5 en frisk kodebase, og programmerere starter\
   \ nye prosjekter for \xE5 realisere unike ideer eller l\xF8se spesifikke problemer.\

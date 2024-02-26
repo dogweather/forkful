@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:34.625519-07:00
 description: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar mensajes\
   \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa.\u2026"
-lastmod: 2024-02-19 22:05:17.895871
+lastmod: '2024-02-25T18:49:55.861049-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar mensajes\
   \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa.\u2026"

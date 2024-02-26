@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:49:40.564668-07:00
 description: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
   \ en dato som er et spesifikt antall dager, m\xE5neder eller \xE5r fra en gitt dato.\u2026"
-lastmod: 2024-02-19 22:04:59.880359
+lastmod: '2024-02-25T18:49:38.816418-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
   \ en dato som er et spesifikt antall dager, m\xE5neder eller \xE5r fra en gitt dato.\u2026"

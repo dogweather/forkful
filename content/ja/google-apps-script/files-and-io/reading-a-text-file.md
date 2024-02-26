@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:58:26.082369-07:00
 description: "Google Apps Script\uFF08GAS\uFF09\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\
   \u30A1\u30A4\u30EB\u3092\u8AAD\u307F\u8FBC\u3080\u3068\u306F\u3001Google\u2026"
-lastmod: 2024-02-19 22:05:00.738383
+lastmod: '2024-02-25T18:49:39.622204-07:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script\uFF08GAS\uFF09\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\
   \u30A4\u30EB\u3092\u8AAD\u307F\u8FBC\u3080\u3068\u306F\u3001Google\u2026"

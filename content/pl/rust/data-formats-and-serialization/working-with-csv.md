@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:36.392094-07:00
 description: "Praca z plikami CSV (Comma-Separated Values - Warto\u015Bci Rozdzielone\
   \ Przecinkami) polega na odczytywaniu z i zapisywaniu do prostych plik\xF3w tekstowych,\u2026"
-lastmod: 2024-02-19 22:04:54.335061
+lastmod: '2024-02-25T18:49:33.574874-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values - Warto\u015Bci Rozdzielone\
   \ Przecinkami) polega na odczytywaniu z i zapisywaniu do prostych plik\xF3w tekstowych,\u2026"

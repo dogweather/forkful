@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:50.328758-07:00
 description: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensagens\
   \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\
   o (stdout).\u2026"
-lastmod: 2024-02-19 22:05:05.286602
+lastmod: '2024-02-25T18:49:43.874261-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensagens\
   \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\

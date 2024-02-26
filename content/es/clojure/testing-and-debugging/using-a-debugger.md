@@ -3,7 +3,7 @@ date: 2024-01-26 03:48:33.010311-07:00
 description: "Usar un depurador significa que te est\xE1s equipando con una lupa para\
   \ escudri\xF1ar tu c\xF3digo. Los programadores hacen esto para aplastar errores,\
   \ entender el\u2026"
-lastmod: 2024-02-19 22:05:17.252392
+lastmod: '2024-02-25T18:49:55.222791-07:00'
 model: gpt-4-0125-preview
 summary: "Usar un depurador significa que te est\xE1s equipando con una lupa para\
   \ escudri\xF1ar tu c\xF3digo. Los programadores hacen esto para aplastar errores,\

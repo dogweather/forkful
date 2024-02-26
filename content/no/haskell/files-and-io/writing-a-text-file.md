@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:06.137984-07:00
 description: "\xC5 skrive til en tekstfil i Haskell handler om programmatisk \xE5\
   \ opprette eller oppdatere filer med tekstinnhold. Programmerere gj\xF8r dette for\
   \ \xE5 lagre data\u2026"
-lastmod: 2024-02-19 22:05:00.124998
+lastmod: '2024-02-25T18:49:39.034135-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Haskell handler om programmatisk \xE5 opprette\
   \ eller oppdatere filer med tekstinnhold. Programmerere gj\xF8r dette for \xE5 lagre\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:04:52.471856-07:00
 description: "Capitalizzare una stringa in Bash comporta la trasformazione del primo\
   \ carattere della stringa in maiuscolo lasciando inalterata il resto della stringa.\u2026"
-lastmod: 2024-02-19 22:05:02.652240
+lastmod: '2024-02-25T18:49:41.444599-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in Bash comporta la trasformazione del primo carattere\
   \ della stringa in maiuscolo lasciando inalterata il resto della stringa.\u2026"

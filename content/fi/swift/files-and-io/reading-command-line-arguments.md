@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:54.670264-07:00
 description: "Komennon rivin argumentit ovat ohjelmalle sy\xF6tettyj\xE4 tietoja,\
   \ joita k\xE4sitell\xE4\xE4n sen k\xE4ynnistyess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t niit\xE4 mukauttaakseen ohjelman\u2026"
-lastmod: 2024-02-19 22:05:15.817954
+lastmod: '2024-02-25T18:49:53.830339-07:00'
 model: gpt-4-1106-preview
 summary: "Komennon rivin argumentit ovat ohjelmalle sy\xF6tettyj\xE4 tietoja, joita\
   \ k\xE4sitell\xE4\xE4n sen k\xE4ynnistyess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4\

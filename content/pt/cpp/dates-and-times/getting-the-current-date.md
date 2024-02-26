@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:10.543236-07:00
 description: "Recuperar a data atual em C++ \xE9 uma tarefa fundamental para programas\
   \ que precisam processar ou exibir datas baseadas no rel\xF3gio do sistema. \xC9\
   \ essencial\u2026"
-lastmod: 2024-02-19 22:05:05.950578
+lastmod: '2024-02-25T18:49:44.507565-07:00'
 model: gpt-4-0125-preview
 summary: "Recuperar a data atual em C++ \xE9 uma tarefa fundamental para programas\
   \ que precisam processar ou exibir datas baseadas no rel\xF3gio do sistema. \xC9\

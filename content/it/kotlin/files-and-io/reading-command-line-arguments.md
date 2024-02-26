@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:16.459090-07:00
 description: "Leggere gli argomenti della riga di comando in Kotlin significa prelevare\
   \ dati inseriti dall'utente al momento dell'esecuzione di un programma. \xC8 utile\u2026"
-lastmod: 2024-02-19 22:05:02.469895
+lastmod: '2024-02-25T18:49:41.273429-07:00'
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando in Kotlin significa prelevare\
   \ dati inseriti dall'utente al momento dell'esecuzione di un programma. \xC8 utile\u2026"

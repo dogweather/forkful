@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:35.000398-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet\
   \ die Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu\
   \ einem\u2026"
-lastmod: 2024-02-19 22:05:13.310014
+lastmod: '2024-02-25T18:49:51.418036-07:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet die\
   \ Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu einem\u2026"

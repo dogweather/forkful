@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:25.143802-07:00
 description: "Analisar uma data a partir de uma string \xE9 uma tarefa comum ao lidar\
   \ com entrada de usu\xE1rio ou leitura de dados de arquivos, o que envolve converter\
   \ os\u2026"
-lastmod: 2024-02-19 22:05:05.411650
+lastmod: '2024-02-25T18:49:43.998133-07:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string \xE9 uma tarefa comum ao lidar\
   \ com entrada de usu\xE1rio ou leitura de dados de arquivos, o que envolve converter\

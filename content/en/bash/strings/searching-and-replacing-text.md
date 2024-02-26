@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:00.215150-07:00
 description: "Searching and replacing text in bash means swapping out words or patterns\
   \ in a string or file with something else. It's a day-to-day task for cleaning\u2026"
-lastmod: 2024-02-19 22:05:18.691840
+lastmod: '2024-02-25T18:49:56.668959-07:00'
 model: gpt-4-1106-preview
 summary: "Searching and replacing text in bash means swapping out words or patterns\
   \ in a string or file with something else. It's a day-to-day task for cleaning\u2026"

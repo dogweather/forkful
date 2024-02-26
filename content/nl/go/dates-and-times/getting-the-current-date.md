@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:48.743597-07:00
 description: "Het verkrijgen van de huidige datum in Go is een fundamentele taak voor\
   \ programmeurs, vergelijkbaar met \"Hallo, wereld!\" in zijn alomtegenwoordigheid.\
   \ Het\u2026"
-lastmod: 2024-02-19 22:05:09.383418
+lastmod: '2024-02-25T18:49:47.695043-07:00'
 model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in Go is een fundamentele taak voor\
   \ programmeurs, vergelijkbaar met \"Hallo, wereld!\" in zijn alomtegenwoordigheid.\

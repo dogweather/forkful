@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:28.647391-07:00
 description: "Downloading a web page simply means fetching its content, usually in\
   \ HTML format, to either view or process locally. Programmers download web pages\
   \ to\u2026"
-lastmod: 2024-02-19 22:05:18.819026
+lastmod: '2024-02-25T18:49:56.794739-07:00'
 model: gpt-4-1106-preview
 summary: "Downloading a web page simply means fetching its content, usually in HTML\
   \ format, to either view or process locally. Programmers download web pages to\u2026"

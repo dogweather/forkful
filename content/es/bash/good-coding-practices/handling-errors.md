@@ -3,7 +3,7 @@ date: 2024-01-26 00:37:18.314422-07:00
 description: "Manejar errores en scripts de Bash consiste en anticipar d\xF3nde pueden\
   \ surgir problemas y abordarlos de manera elegante. \xBFPor qu\xE9? Bueno, mantiene\
   \ tu\u2026"
-lastmod: 2024-02-19 22:05:17.761171
+lastmod: '2024-02-25T18:49:55.724507-07:00'
 model: gpt-4-1106-preview
 summary: "Manejar errores en scripts de Bash consiste en anticipar d\xF3nde pueden\
   \ surgir problemas y abordarlos de manera elegante. \xBFPor qu\xE9? Bueno, mantiene\

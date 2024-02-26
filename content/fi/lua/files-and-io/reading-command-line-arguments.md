@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:36.455037-07:00
 description: "Mit\xE4 & Miksi? Komentoriviparametrien lukeminen mahdollistaa argumenttien\
   \ vastaanottamisen suoraan ohjelmallesi. K\xE4yt\xE4mme sit\xE4, jotta k\xE4ytt\xE4\
   j\xE4t voivat\u2026"
-lastmod: 2024-02-19 22:05:15.606942
+lastmod: '2024-02-25T18:49:53.623756-07:00'
 model: gpt-4-1106-preview
 summary: "Mit\xE4 & Miksi? Komentoriviparametrien lukeminen mahdollistaa argumenttien\
   \ vastaanottamisen suoraan ohjelmallesi. K\xE4yt\xE4mme sit\xE4, jotta k\xE4ytt\xE4\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:49.675510-07:00
 description: "Pisanie na standardowe wyj\u015Bcie b\u0142\u0119d\xF3w (stderr) w programowaniu\
   \ Arduino polega na kierowaniu komunikat\xF3w o b\u0142\u0119dach i diagnostyki\
   \ do osobnego kana\u0142u,\u2026"
-lastmod: 2024-02-19 22:04:54.832404
+lastmod: '2024-02-25T18:49:34.059590-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie na standardowe wyj\u015Bcie b\u0142\u0119d\xF3w (stderr) w programowaniu\
   \ Arduino polega na kierowaniu komunikat\xF3w o b\u0142\u0119dach i diagnostyki\

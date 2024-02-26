@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:51.235100-07:00
 description: "Eine interaktive Shell oder Read-Eval-Print-Schleife (REPL) erm\xF6\
   glicht es Benutzern, Befehle einzugeben, auszuf\xFChren und die Ergebnisse in Echtzeit\
   \ zu\u2026"
-lastmod: 2024-02-19 22:05:12.644095
+lastmod: '2024-02-25T18:49:50.786171-07:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder Read-Eval-Print-Schleife (REPL) erm\xF6glicht\
   \ es Benutzern, Befehle einzugeben, auszuf\xFChren und die Ergebnisse in Echtzeit\

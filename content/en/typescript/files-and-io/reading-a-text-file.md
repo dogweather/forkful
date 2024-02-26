@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:05.959383-07:00
 description: "Reading a text file is grabbing the content from a file that's structured\
   \ as human-readable text. Programmers do it to process or analyze the data, like\u2026"
-lastmod: 2024-02-19 22:05:18.343752
+lastmod: '2024-02-25T18:49:56.297600-07:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file is grabbing the content from a file that's structured\
   \ as human-readable text. Programmers do it to process or analyze the data, like\u2026"

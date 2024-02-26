@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:53.279595-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en Visual Basic pour Applications\
   \ (VBA) consiste \xE0 confirmer la pr\xE9sence d'un dossier dans le syst\xE8me de\
   \ fichiers avant\u2026"
-lastmod: 2024-02-19 22:05:16.371304
+lastmod: '2024-02-25T18:49:54.357114-07:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Visual Basic pour Applications\
   \ (VBA) consiste \xE0 confirmer la pr\xE9sence d'un dossier dans le syst\xE8me de\

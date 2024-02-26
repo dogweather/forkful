@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:34.273976-07:00
 description: "HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten\
   \ zu extrahieren. Programmierer f\xFChren diese Aufgabe aus, um die\u2026"
-lastmod: 2024-02-19 22:05:12.899624
+lastmod: '2024-02-25T18:49:51.026569-07:00'
 model: gpt-4-0125-preview
 summary: "HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten\
   \ zu extrahieren. Programmierer f\xFChren diese Aufgabe aus, um die\u2026"

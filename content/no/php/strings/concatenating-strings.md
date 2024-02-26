@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:31.354207-07:00
 description: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger. Det lar\
   \ programmerere sette sammen ord og setninger dynamisk, noe som er viktig i alt\
   \ fra \xE5 lage\u2026"
-lastmod: 2024-02-19 22:05:00.141438
+lastmod: '2024-02-25T18:49:39.050634-07:00'
 model: gpt-4-1106-preview
 summary: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger. Det lar programmerere\
   \ sette sammen ord og setninger dynamisk, noe som er viktig i alt fra \xE5 lage\u2026"

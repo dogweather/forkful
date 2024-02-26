@@ -3,7 +3,7 @@ date: 2024-01-26 03:49:57.934879-07:00
 description: "Usar um depurador significa aproveitar ferramentas especializadas que\
   \ permitem espiar o interior do seu c\xF3digo, acompanhando sua execu\xE7\xE3o passo\
   \ a passo.\u2026"
-lastmod: 2024-02-19 22:05:06.032227
+lastmod: '2024-02-25T18:49:44.583900-07:00'
 model: gpt-4-0125-preview
 summary: "Usar um depurador significa aproveitar ferramentas especializadas que permitem\
   \ espiar o interior do seu c\xF3digo, acompanhando sua execu\xE7\xE3o passo a passo.\u2026"

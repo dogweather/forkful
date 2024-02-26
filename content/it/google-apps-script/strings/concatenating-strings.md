@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:01.527162-07:00
 description: "Concatenare le stringhe significa combinare due o pi\xF9 stringhe in\
   \ una singola stringa. I programmatori lo fanno per costruire dinamicamente messaggi,\
   \ URL\u2026"
-lastmod: 2024-02-19 22:05:02.052132
+lastmod: '2024-02-25T18:49:40.875651-07:00'
 model: gpt-4-0125-preview
 summary: "Concatenare le stringhe significa combinare due o pi\xF9 stringhe in una\
   \ singola stringa. I programmatori lo fanno per costruire dinamicamente messaggi,\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:39.271868-07:00
 description: "Converting a date to a string in Swift lets you format dates for humans.\
   \ It's key for UI display, logging, or whenever you need dates to make sense to\u2026"
-lastmod: 2024-02-19 22:05:18.868000
+lastmod: '2024-02-25T18:49:56.842261-07:00'
 model: gpt-4-1106-preview
 summary: "Converting a date to a string in Swift lets you format dates for humans.\
   \ It's key for UI display, logging, or whenever you need dates to make sense to\u2026"

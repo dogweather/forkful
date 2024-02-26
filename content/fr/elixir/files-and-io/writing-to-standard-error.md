@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:51.573339-07:00
 description: "\xC9crire sur l'erreur standard (stderr) en Elixir est une m\xE9thode\
   \ permettant de diriger les messages d'erreur et les diagnostics \xE0 part de la\
   \ sortie\u2026"
-lastmod: 2024-02-19 22:05:16.240485
+lastmod: '2024-02-25T18:49:54.227521-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Elixir est une m\xE9thode permettant\
   \ de diriger les messages d'erreur et les diagnostics \xE0 part de la sortie\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:34:39.097866-07:00
 description: "Praca z XML polega na manipulowaniu i dost\u0119powi do danych zorganizowanych\
   \ w j\u0119zyku eXtensible Markup Language. Programi\u015Bci pracuj\u0105 z XML,\
   \ aby umo\u017Cliwi\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.796753
+lastmod: '2024-02-25T18:49:34.024579-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML polega na manipulowaniu i dost\u0119powi do danych zorganizowanych\
   \ w j\u0119zyku eXtensible Markup Language. Programi\u015Bci pracuj\u0105 z XML,\

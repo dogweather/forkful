@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:18.139022-07:00
 description: "Regul\xE6re uttrykk (regex) i Ruby er m\xF8nstre som brukes til \xE5\
   \ matche tegnkombinasjoner i strenger, noe som gj\xF8r det mulig for utviklere \xE5\
   \ s\xF8ke etter, matche\u2026"
-lastmod: 2024-02-19 22:05:00.588570
+lastmod: '2024-02-25T18:49:39.483888-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Ruby er m\xF8nstre som brukes til \xE5 matche\
   \ tegnkombinasjoner i strenger, noe som gj\xF8r det mulig for utviklere \xE5 s\xF8\

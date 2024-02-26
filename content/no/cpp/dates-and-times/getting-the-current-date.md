@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:58.270575-07:00
 description: "\xC5 hente den n\xE5v\xE6rende datoen i C++ er en grunnleggende oppgave\
   \ for programmer som trenger \xE5 behandle eller vise datoer basert p\xE5 systemets\
   \ klokke. Det er\u2026"
-lastmod: 2024-02-19 22:05:00.383450
+lastmod: '2024-02-25T18:49:39.289641-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i C++ er en grunnleggende oppgave\
   \ for programmer som trenger \xE5 behandle eller vise datoer basert p\xE5 systemets\

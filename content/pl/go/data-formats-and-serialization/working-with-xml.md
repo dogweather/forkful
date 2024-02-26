@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:15.375664-07:00
 description: "Praca z XML w Go polega na parsowaniu (czytaniu) i generowaniu (pisaniu)\
   \ dokument\xF3w XML \u2013 standardowym formacie do wymiany strukturyzowanych danych.\u2026"
-lastmod: 2024-02-19 22:04:54.064852
+lastmod: '2024-02-25T18:49:33.304039-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w Go polega na parsowaniu (czytaniu) i generowaniu (pisaniu)\
   \ dokument\xF3w XML \u2013 standardowym formacie do wymiany strukturyzowanych danych.\u2026"

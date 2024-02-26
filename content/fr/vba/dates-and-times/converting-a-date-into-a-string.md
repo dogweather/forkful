@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:53.850062-07:00
 description: "La conversion d'une date en cha\xEEne de caract\xE8res dans Visual Basic\
   \ pour Applications (VBA) consiste \xE0 modifier le type de donn\xE9es d'une date\
   \ pour la\u2026"
-lastmod: 2024-02-19 22:05:16.367957
+lastmod: '2024-02-25T18:49:54.353340-07:00'
 model: gpt-4-0125-preview
 summary: "La conversion d'une date en cha\xEEne de caract\xE8res dans Visual Basic\
   \ pour Applications (VBA) consiste \xE0 modifier le type de donn\xE9es d'une date\

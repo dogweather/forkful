@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:07.895198-07:00
 description: "Un shell interactif, ou boucle lire-\xE9valuer-afficher (REPL, de l'anglais\
   \ Read-Eval-Print Loop), vous permet d'exp\xE9rimenter avec du code Go en temps\
   \ r\xE9el,\u2026"
-lastmod: 2024-02-19 22:05:16.042949
+lastmod: '2024-02-25T18:49:54.036162-07:00'
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou boucle lire-\xE9valuer-afficher (REPL, de l'anglais\
   \ Read-Eval-Print Loop), vous permet d'exp\xE9rimenter avec du code Go en temps\

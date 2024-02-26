@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:52.039532-07:00
 description: "Wyra\u017Cenia regularne, czyli regex, pozwalaj\u0105 programistom wyszukiwa\u0107\
   , dopasowywa\u0107 i manipulowa\u0107 ci\u0105gami znak\xF3w, wykorzystuj\u0105\
   c zaawansowane techniki\u2026"
-lastmod: 2024-02-19 22:04:54.300532
+lastmod: '2024-02-25T18:49:33.541469-07:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne, czyli regex, pozwalaj\u0105 programistom wyszukiwa\u0107\
   , dopasowywa\u0107 i manipulowa\u0107 ci\u0105gami znak\xF3w, wykorzystuj\u0105\

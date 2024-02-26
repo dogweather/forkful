@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:15.471490-07:00
 description: "Att arbeta med XML i C inneb\xE4r att tolka, f\xF6rfr\xE5ga och manipulera\
   \ XML-dokument med hj\xE4lp av olika bibliotek. Programmerare engagerar sig med\
   \ XML p\xE5 grund\u2026"
-lastmod: 2024-02-19 22:04:57.663644
+lastmod: '2024-02-25T18:49:36.724870-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML i C inneb\xE4r att tolka, f\xF6rfr\xE5ga och manipulera\
   \ XML-dokument med hj\xE4lp av olika bibliotek. Programmerare engagerar sig med\

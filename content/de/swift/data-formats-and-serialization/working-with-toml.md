@@ -2,7 +2,7 @@
 date: 2024-01-26 04:26:23.857387-07:00
 description: "TOML (Tom's Offensichtliche, Minimale Sprache) ist ein Daten-Serialisierungsformat,\
   \ das dank seiner klaren Semantik leicht zu lesen ist. Programmierer\u2026"
-lastmod: 2024-02-19 22:05:13.184655
+lastmod: '2024-02-25T18:49:51.298152-07:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Offensichtliche, Minimale Sprache) ist ein Daten-Serialisierungsformat,\
   \ das dank seiner klaren Semantik leicht zu lesen ist. Programmierer\u2026"

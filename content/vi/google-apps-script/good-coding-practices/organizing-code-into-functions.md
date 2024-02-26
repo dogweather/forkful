@@ -6,7 +6,7 @@ description: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 v\u1EC1 vi\u1
   c c\u1EA5u tr\xFAc m\xE3 Google Apps Script c\u1EE7a b\u1EA1n b\u1EB1ng c\xE1ch\
   \ t\xE1ch c\xE1c ph\xE2n \u0111o\u1EA1n logic th\xE0nh c\xE1c kh\u1ED1i ri\xEAng\
   \ bi\u1EC7t, m\u1ED7i kh\u1ED1i th\u1EF1c\u2026"
-lastmod: 2024-02-19 22:04:55.237588
+lastmod: '2024-02-25T18:49:34.422786-07:00'
 model: gpt-4-0125-preview
 summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 v\u1EC1 vi\u1EC7c c\u1EA5\
   u tr\xFAc m\xE3 Google Apps Script c\u1EE7a b\u1EA1n b\u1EB1ng c\xE1ch t\xE1ch c\xE1\

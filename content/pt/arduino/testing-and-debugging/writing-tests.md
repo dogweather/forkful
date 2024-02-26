@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:34.681520-07:00
 description: "Escrever testes no ambiente Arduino refere-se ao processo de criar testes\
   \ automatizados que validam a funcionalidade do seu c\xF3digo em dispositivos\u2026"
-lastmod: 2024-02-19 22:05:05.900547
+lastmod: '2024-02-25T18:49:44.459803-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes no ambiente Arduino refere-se ao processo de criar testes\
   \ automatizados que validam a funcionalidade do seu c\xF3digo em dispositivos\u2026"

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:40.371358-07:00
 description: "Testing in Ruby is about verifying that your code behaves as expected\
   \ under various conditions. Programmers write tests to ensure correctness, prevent\u2026"
-lastmod: 2024-02-19 22:05:19.015871
+lastmod: '2024-02-25T18:49:56.990955-07:00'
 model: gpt-4-0125-preview
 summary: "Testing in Ruby is about verifying that your code behaves as expected under\
   \ various conditions. Programmers write tests to ensure correctness, prevent\u2026"

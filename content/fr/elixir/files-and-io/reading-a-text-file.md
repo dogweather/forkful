@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:53.809833-07:00
 description: "Lire un fichier texte en programmation, c'est r\xE9colter le contenu\
   \ d'un fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait\
   \ \xE7a pour\u2026"
-lastmod: 2024-02-19 22:05:16.241607
+lastmod: '2024-02-25T18:49:54.228510-07:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte en programmation, c'est r\xE9colter le contenu d'un\
   \ fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait \xE7\

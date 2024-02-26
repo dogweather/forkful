@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:34.124319-07:00
 description: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes litt,\
   \ og s\xE5 forsvinner de. Programmerere bruker dem for \xE5 lagre midlertidig data\
   \ som ikke\u2026"
-lastmod: 2024-02-19 22:05:00.436538
+lastmod: '2024-02-25T18:49:39.340092-07:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes litt,\
   \ og s\xE5 forsvinner de. Programmerere bruker dem for \xE5 lagre midlertidig data\

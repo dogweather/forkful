@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:14.746932-07:00
 description: "Assoziative Arrays oder Objekte in TypeScript erm\xF6glichen es Ihnen,\
   \ mit Strings (oder Schl\xFCsseln) auf Wertpaare zuzugreifen. Programmierer nutzen\
   \ sie f\xFCr\u2026"
-lastmod: 2024-02-19 22:05:12.547447
+lastmod: '2024-02-25T18:49:50.693248-07:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays oder Objekte in TypeScript erm\xF6glichen es Ihnen, mit\
   \ Strings (oder Schl\xFCsseln) auf Wertpaare zuzugreifen. Programmierer nutzen sie\

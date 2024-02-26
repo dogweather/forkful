@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:39.750809-07:00
 description: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie\
   \ u\u017Cywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania.\
   \ Podej\u015Bcie to poprawia\u2026"
-lastmod: 2024-02-19 22:04:54.043077
+lastmod: '2024-02-25T18:49:33.282588-07:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie u\u017C\
   ywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania. Podej\u015B\

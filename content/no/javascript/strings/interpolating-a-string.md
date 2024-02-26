@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:59.943159-07:00
 description: "Interpolering av strenger i JavaScript betyr \xE5 sette sammen bitene\
   \ av tekst og variabler til en helhetlig streng. Vi gj\xF8r det for \xE5 lage dynamiske\u2026"
-lastmod: 2024-02-19 22:05:00.446040
+lastmod: '2024-02-25T18:49:39.348938-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av strenger i JavaScript betyr \xE5 sette sammen bitene av\
   \ tekst og variabler til en helhetlig streng. Vi gj\xF8r det for \xE5 lage dynamiske\u2026"

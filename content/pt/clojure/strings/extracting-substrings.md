@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:16.911728-07:00
 description: "Extrair substrings \xE9 uma maneira de pegar peda\xE7os de uma string\
   \ \u2014 como pegar s\xF3 o nome de algu\xE9m numa frase de boas-vindas. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-19 22:05:05.256781
+lastmod: '2024-02-25T18:49:43.847495-07:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 uma maneira de pegar peda\xE7os de uma string \u2014\
   \ como pegar s\xF3 o nome de algu\xE9m numa frase de boas-vindas. Programadores\

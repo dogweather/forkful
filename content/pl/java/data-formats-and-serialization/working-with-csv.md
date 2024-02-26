@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:00.832330-07:00
 description: "Praca z plikami CSV obejmuje odczytywanie z nich danych oraz zapisywanie\
   \ danych do plik\xF3w o warto\u015Bciach oddzielonych przecinkami (CSV), popularnego\u2026"
-lastmod: 2024-02-19 22:04:54.430136
+lastmod: '2024-02-25T18:49:33.665568-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV obejmuje odczytywanie z nich danych oraz zapisywanie\
   \ danych do plik\xF3w o warto\u015Bciach oddzielonych przecinkami (CSV), popularnego\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:44.446058-07:00
 description: "JSON (JavaScript Object Notation) er et lettvekts datautvekslingsformat\
   \ som er lett for mennesker \xE5 lese og skrive, og for maskiner \xE5 analysere\
   \ og\u2026"
-lastmod: 2024-02-19 22:04:59.889499
+lastmod: '2024-02-25T18:49:38.824860-07:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) er et lettvekts datautvekslingsformat\
   \ som er lett for mennesker \xE5 lese og skrive, og for maskiner \xE5 analysere\

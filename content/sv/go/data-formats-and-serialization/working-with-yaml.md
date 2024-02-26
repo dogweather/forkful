@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:56.431863-07:00
 description: "Att arbeta med YAML i Go handlar om att tolka YAML-filer (YAML Ain't\
   \ Markup Language), en m\xE4nniskov\xE4nlig standard f\xF6r data-serialisering,\
   \ till Go-\u2026"
-lastmod: 2024-02-19 22:04:56.648921
+lastmod: '2024-02-25T18:49:35.750133-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med YAML i Go handlar om att tolka YAML-filer (YAML Ain't Markup\
   \ Language), en m\xE4nniskov\xE4nlig standard f\xF6r data-serialisering, till Go-\u2026"

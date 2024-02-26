@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:06:46.943051-07:00
 description: "Getallen afronden betekent het benaderen van een numerieke waarde tot\
   \ een specifieke precisie, typisch om ongewenste decimalen te verwijderen.\u2026"
-lastmod: 2024-02-19 22:05:10.238135
+lastmod: '2024-02-25T18:49:48.482627-07:00'
 model: gpt-4-0125-preview
 summary: "Getallen afronden betekent het benaderen van een numerieke waarde tot een\
   \ specifieke precisie, typisch om ongewenste decimalen te verwijderen.\u2026"

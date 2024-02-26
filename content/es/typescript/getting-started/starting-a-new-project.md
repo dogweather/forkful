@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:26.627277-07:00
 description: "Empezar un nuevo proyecto en TypeScript es como plantar una semilla\
   \ digital; le das los nutrientes b\xE1sicos y la ves crecer. Los programadores arrancan\u2026"
-lastmod: 2024-02-19 22:05:17.331215
+lastmod: '2024-02-25T18:49:55.300392-07:00'
 model: gpt-4-1106-preview
 summary: "Empezar un nuevo proyecto en TypeScript es como plantar una semilla digital;\
   \ le das los nutrientes b\xE1sicos y la ves crecer. Los programadores arrancan\u2026"

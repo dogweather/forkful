@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:52.504653-07:00
 description: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista, onko\
   \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
   \ tekev\xE4t niin\u2026"
-lastmod: 2024-02-19 22:05:15.396744
+lastmod: '2024-02-25T18:49:53.421170-07:00'
 model: gpt-4-0125-preview
 summary: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista, onko\
   \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\

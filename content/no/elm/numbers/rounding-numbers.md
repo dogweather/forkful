@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:27.594801-07:00
 description: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste hele\
   \ verdi eller til et spesifisert antall desimaler. Programmerere avrunder for \xE5\
   \ redusere\u2026"
-lastmod: 2024-02-19 22:04:59.949658
+lastmod: '2024-02-25T18:49:38.883146-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste hele verdi\
   \ eller til et spesifisert antall desimaler. Programmerere avrunder for \xE5 redusere\u2026"

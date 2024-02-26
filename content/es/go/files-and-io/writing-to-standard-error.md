@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:17.932476-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Go implica dirigir mensajes\
   \ de error o diagn\xF3sticos que no est\xE1n destinados para el flujo principal\
   \ de salida.\u2026"
-lastmod: 2024-02-19 22:05:17.132691
+lastmod: '2024-02-25T18:49:55.103966-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Go implica dirigir mensajes\
   \ de error o diagn\xF3sticos que no est\xE1n destinados para el flujo principal\

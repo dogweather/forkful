@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:42.995104-07:00
 description: "Escribir pruebas en programaci\xF3n implica crear peque\xF1as piezas\
   \ de c\xF3digo separadas para verificar autom\xE1ticamente que diferentes partes\
   \ de tu aplicaci\xF3n\u2026"
-lastmod: 2024-02-19 22:05:17.713334
+lastmod: '2024-02-25T18:49:55.676799-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en programaci\xF3n implica crear peque\xF1as piezas de\
   \ c\xF3digo separadas para verificar autom\xE1ticamente que diferentes partes de\

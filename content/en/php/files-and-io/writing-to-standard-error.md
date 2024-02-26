@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:36.286422-07:00
 description: "Writing to standard error (stderr) in PHP is about directing error messages\
   \ or diagnostics separately from standard output (stdout), allowing developers\u2026"
-lastmod: 2024-02-19 22:05:18.644489
+lastmod: '2024-02-25T18:49:56.621566-07:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in PHP is about directing error messages\
   \ or diagnostics separately from standard output (stdout), allowing developers\u2026"

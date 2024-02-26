@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:19.688043-07:00
 description: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus\
   \ siglas en ingl\xE9s), es un entorno de programaci\xF3n simple e interactivo que\
   \ toma\u2026"
-lastmod: 2024-02-19 22:05:17.163296
+lastmod: '2024-02-25T18:49:55.135069-07:00'
 model: gpt-4-0125-preview
 summary: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), es un entorno de programaci\xF3n simple e interactivo que toma\u2026"

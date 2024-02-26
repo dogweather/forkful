@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:15.890972-07:00
 description: "\xC9crire sur l'erreur standard (stderr) en Ruby, c'est diriger les\
   \ messages d'erreur ou les diagnostics vers un flux de sortie s\xE9par\xE9, distinct\
   \ de la sortie\u2026"
-lastmod: 2024-02-19 22:05:17.086453
+lastmod: '2024-02-25T18:49:55.058518-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Ruby, c'est diriger les messages\
   \ d'erreur ou les diagnostics vers un flux de sortie s\xE9par\xE9, distinct de la\

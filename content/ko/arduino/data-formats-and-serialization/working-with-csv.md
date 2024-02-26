@@ -10,7 +10,7 @@ description: "\uC544\uB450\uC774\uB178\uC5D0\uC11C CSV(Comma-Separated Values, \
   \ \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC13C\uC11C \uB370\
   \uC774\uD130 \uC218\uC9D1, \uAD6C\uC131 \uB9E4\uAC1C\uBCC0\uC218 \uC800\uC7A5 \uB610\
   \uB294\u2026"
-lastmod: 2024-02-19 22:05:14.554726
+lastmod: '2024-02-25T18:49:52.628315-07:00'
 model: gpt-4-0125-preview
 summary: "\uC544\uB450\uC774\uB178\uC5D0\uC11C CSV(Comma-Separated Values, \uC27C\uD45C\
   \uB85C \uAD6C\uBD84\uB41C \uAC12) \uD30C\uC77C\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740\

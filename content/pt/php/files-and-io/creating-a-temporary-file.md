@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:45.610333-07:00
 description: "Criar um arquivo tempor\xE1rio em PHP \xE9 como rabiscar em um papel\
   \ de rascunho. Programadores fazem isso quando querem guardar dados rapidamente\
   \ sem precisar\u2026"
-lastmod: 2024-02-19 22:05:05.735826
+lastmod: '2024-02-25T18:49:44.307044-07:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio em PHP \xE9 como rabiscar em um papel de\
   \ rascunho. Programadores fazem isso quando querem guardar dados rapidamente sem\

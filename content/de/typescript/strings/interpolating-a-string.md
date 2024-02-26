@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:43.090036-07:00
 description: "String-Interpolation erm\xF6glicht das Einf\xFCgen von Variablenwerten\
   \ in einen String. Das macht den Code lesbarer und die String-Manipulation effizienter."
-lastmod: 2024-02-19 22:05:12.540584
+lastmod: '2024-02-25T18:49:50.686744-07:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht das Einf\xFCgen von Variablenwerten in\
   \ einen String. Das macht den Code lesbarer und die String-Manipulation effizienter."

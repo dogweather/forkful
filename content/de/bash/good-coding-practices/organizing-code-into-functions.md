@@ -2,7 +2,7 @@
 date: 2024-01-26 01:09:06.424881-07:00
 description: "Code in Funktionen zu unterteilen bedeutet, Skripte in kleinere, wiederverwendbare\
   \ Bl\xF6cke zu zerlegen, die spezifische Aufgaben erledigen. Das macht den\u2026"
-lastmod: 2024-02-19 22:05:12.995967
+lastmod: '2024-02-25T18:49:51.117154-07:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu unterteilen bedeutet, Skripte in kleinere, wiederverwendbare\
   \ Bl\xF6cke zu zerlegen, die spezifische Aufgaben erledigen. Das macht den\u2026"

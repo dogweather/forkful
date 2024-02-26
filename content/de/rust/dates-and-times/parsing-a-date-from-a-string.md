@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:32.801096-07:00
 description: "Das Parsen eines Datums aus einem String ist eine g\xE4ngige Aufgabe,\
   \ wenn es um die Verarbeitung von Benutzereingaben oder das Lesen von Daten aus\
   \ Dateien\u2026"
-lastmod: 2024-02-19 22:05:12.606425
+lastmod: '2024-02-25T18:49:50.749820-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String ist eine g\xE4ngige Aufgabe, wenn\
   \ es um die Verarbeitung von Benutzereingaben oder das Lesen von Daten aus Dateien\u2026"

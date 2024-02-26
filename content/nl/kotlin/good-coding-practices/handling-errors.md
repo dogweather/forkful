@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:58.414702-07:00
 description: "Het afhandelen van fouten is hoe je code omgaat met problemen die opduiken\
   \ tijdens de uitvoering - zoals een onverwachte wending zonder deze te laten\u2026"
-lastmod: 2024-02-19 22:05:09.830186
+lastmod: '2024-02-25T18:49:48.114657-07:00'
 model: gpt-4-0125-preview
 summary: "Het afhandelen van fouten is hoe je code omgaat met problemen die opduiken\
   \ tijdens de uitvoering - zoals een onverwachte wending zonder deze te laten\u2026"

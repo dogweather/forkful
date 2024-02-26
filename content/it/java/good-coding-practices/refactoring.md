@@ -3,7 +3,7 @@ date: 2024-01-26 01:18:50.344627-07:00
 description: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente\u2014cambiando il factoring\u2014senza alterarne il comportamento esterno.\
   \ I\u2026"
-lastmod: 2024-02-19 22:05:02.378141
+lastmod: '2024-02-25T18:49:41.185950-07:00'
 model: gpt-4-0125-preview
 summary: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente\u2014cambiando il factoring\u2014senza alterarne il comportamento esterno.\

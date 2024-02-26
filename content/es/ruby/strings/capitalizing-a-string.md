@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:07.376032-07:00
 description: "Capitalizar una cadena en programaci\xF3n a menudo se refiere a convertir\
   \ el primer car\xE1cter de una cadena a may\xFAscula y el resto a min\xFAscula.\
   \ Los\u2026"
-lastmod: 2024-02-19 22:05:18.080582
+lastmod: '2024-02-25T18:49:56.041092-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en programaci\xF3n a menudo se refiere a convertir\
   \ el primer car\xE1cter de una cadena a may\xFAscula y el resto a min\xFAscula.\

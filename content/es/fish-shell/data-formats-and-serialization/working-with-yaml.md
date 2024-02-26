@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:23.602298-07:00
 description: "Trabajar con YAML implica analizar y manipular archivos YAML (YAML Ain't\
   \ Markup Language), un formato de serializaci\xF3n de datos utilizado para archivos\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:18.027107
+lastmod: '2024-02-25T18:49:55.990865-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con YAML implica analizar y manipular archivos YAML (YAML Ain't\
   \ Markup Language), un formato de serializaci\xF3n de datos utilizado para archivos\

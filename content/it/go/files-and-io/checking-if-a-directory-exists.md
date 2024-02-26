@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:52:29.284726-07:00
 description: "Verificare se una directory esiste in Go \xE8 fondamentale per le applicazioni\
   \ che interagiscono con il file system, per evitare errori quando si tenta di\u2026"
-lastmod: 2024-02-19 22:05:02.029351
+lastmod: '2024-02-25T18:49:40.854218-07:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Go \xE8 fondamentale per le applicazioni\
   \ che interagiscono con il file system, per evitare errori quando si tenta di\u2026"

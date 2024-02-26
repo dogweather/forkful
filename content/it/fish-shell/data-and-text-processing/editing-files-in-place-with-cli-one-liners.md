@@ -2,7 +2,7 @@
 date: 2024-01-27 16:20:47.378695-07:00
 description: "Modificare file sul posto con righe di comando \xE8 il processo di apportare\
   \ cambiamenti direttamente ai file dalla riga di comando, senza aprirli in un\u2026"
-lastmod: 2024-02-19 22:05:02.926988
+lastmod: '2024-02-25T18:49:41.698141-07:00'
 model: gpt-4-0125-preview
 summary: "Modificare file sul posto con righe di comando \xE8 il processo di apportare\
   \ cambiamenti direttamente ai file dalla riga di comando, senza aprirli in un\u2026"

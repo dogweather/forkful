@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:48.978863-07:00
 description: "Crear un archivo temporal en Visual Basic para Aplicaciones (VBA) implica\
   \ generar program\xE1ticamente un archivo para uso a corto plazo, t\xEDpicamente\
   \ para el\u2026"
-lastmod: 2024-02-19 22:05:17.437220
+lastmod: '2024-02-25T18:49:55.404435-07:00'
 model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en Visual Basic para Aplicaciones (VBA) implica\
   \ generar program\xE1ticamente un archivo para uso a corto plazo, t\xEDpicamente\

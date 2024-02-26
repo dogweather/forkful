@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:19.351279-07:00
 description: "Pisanie do standardowego b\u0142\u0119du w Pythonie dotyczy przekierowania\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki programu do strumienia b\u0142\
   \u0119d\xF3w (`stderr`),\u2026"
-lastmod: 2024-02-19 22:04:54.150456
+lastmod: '2024-02-25T18:49:33.391949-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du w Pythonie dotyczy przekierowania\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki programu do strumienia b\u0142\

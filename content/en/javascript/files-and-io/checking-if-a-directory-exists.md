@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:38.194848-07:00
 description: "Checking if a directory exists in JavaScript is essential for file manipulation\
   \ tasks, enabling scripts to verify directory presence before reading from\u2026"
-lastmod: 2024-02-19 22:05:18.908361
+lastmod: '2024-02-25T18:49:56.881097-07:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in JavaScript is essential for file manipulation\
   \ tasks, enabling scripts to verify directory presence before reading from\u2026"

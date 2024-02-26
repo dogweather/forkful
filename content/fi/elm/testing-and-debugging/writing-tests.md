@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:32.533374-07:00
 description: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapausten\
   \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.386170
+lastmod: '2024-02-25T18:49:53.411124-07:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapausten\
   \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti.\

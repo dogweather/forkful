@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:18.135346-07:00
 description: "Avrundning av tal inneb\xE4r att trimma ett nummer till en specifik\
   \ precision. Programmerare g\xF6r detta f\xF6r att kontrollera numerisk utdata f\xF6\
   r l\xE4sbarhet,\u2026"
-lastmod: 2024-02-19 22:04:56.852343
+lastmod: '2024-02-25T18:49:35.946588-07:00'
 model: gpt-4-0125-preview
 summary: "Avrundning av tal inneb\xE4r att trimma ett nummer till en specifik precision.\
   \ Programmerare g\xF6r detta f\xF6r att kontrollera numerisk utdata f\xF6r l\xE4\

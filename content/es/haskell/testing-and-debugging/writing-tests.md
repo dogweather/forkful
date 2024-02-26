@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:32.052437-07:00
 description: "Escribir pruebas en Haskell se trata de asegurar que tus funciones funcionen\
   \ como se espera mediante controles automatizados. Los programadores lo hacen\u2026"
-lastmod: 2024-02-19 22:05:17.629437
+lastmod: '2024-02-25T18:49:55.592406-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Haskell se trata de asegurar que tus funciones funcionen\
   \ como se espera mediante controles automatizados. Los programadores lo hacen\u2026"

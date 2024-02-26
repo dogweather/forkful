@@ -6,7 +6,7 @@ description: "HTML parsing \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 HT
   \ pages \u0938\u0947 information \u0928\u093F\u0915\u093E\u0932\u0928\u0947 \u0915\
   \u0947 \u0932\u093F\u090F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902, \u091C\u0948\
   \u0938\u0947 \u0915\u093F web\u2026"
-lastmod: 2024-02-19 22:05:11.334601
+lastmod: '2024-02-25T18:49:49.527784-07:00'
 summary: "HTML parsing \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 HTML documents\
   \ \u0938\u0947 data extract \u0915\u0930\u0928\u093E\u0964 Programmers \u0907\u0938\
   \u0915\u093E \u0907\u0938\u094D\u0924\u0947\u092E\u093E\u0932 web pages \u0938\u0947\

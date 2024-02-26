@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:59.462130-07:00
 description: "Parsowanie HTML w Rust polega na wydobywaniu danych z dokument\xF3w\
   \ HTML, co jest kluczowe dla web scrapingu, ekstrakcji danych lub budowania web\
   \ crawler\xF3w.\u2026"
-lastmod: 2024-02-19 22:04:54.308809
+lastmod: '2024-02-25T18:49:33.549746-07:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Rust polega na wydobywaniu danych z dokument\xF3w HTML,\
   \ co jest kluczowe dla web scrapingu, ekstrakcji danych lub budowania web crawler\xF3\

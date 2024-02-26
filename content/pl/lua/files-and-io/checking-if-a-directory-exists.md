@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:52.524785-07:00
 description: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja podczas pisania\
   \ skrypt\xF3w wchodz\u0105cych w interakcj\u0119 z systemem plik\xF3w, zapewniaj\u0105\
   ca, \u017Ce program\u2026"
-lastmod: 2024-02-19 22:04:54.692183
+lastmod: '2024-02-25T18:49:33.919505-07:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja podczas pisania\
   \ skrypt\xF3w wchodz\u0105cych w interakcj\u0119 z systemem plik\xF3w, zapewniaj\u0105\

@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:56.065519-07:00
 description: "Error handling in Google Apps Script is about predicting, catching,\
   \ and responding to exceptions or errors that occur during script execution. Programmers\u2026"
-lastmod: 2024-02-19 22:05:18.183578
+lastmod: '2024-02-25T18:49:56.141787-07:00'
 model: gpt-4-0125-preview
 summary: "Error handling in Google Apps Script is about predicting, catching, and\
   \ responding to exceptions or errors that occur during script execution. Programmers\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:44.875273-07:00
 description: "Tarkistaminen, l\xF6ytyyk\xF6 kansio Go:ssa, on kriittist\xE4 sovelluksille,\
   \ jotka ovat vuorovaikutuksessa tiedostoj\xE4rjestelm\xE4n kanssa, jotta v\xE4ltet\xE4\
   \xE4n virheet\u2026"
-lastmod: 2024-02-19 22:05:14.981761
+lastmod: '2024-02-25T18:49:53.044833-07:00'
 model: gpt-4-0125-preview
 summary: "Tarkistaminen, l\xF6ytyyk\xF6 kansio Go:ssa, on kriittist\xE4 sovelluksille,\
   \ jotka ovat vuorovaikutuksessa tiedostoj\xE4rjestelm\xE4n kanssa, jotta v\xE4ltet\xE4\

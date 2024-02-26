@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:17.196189-07:00
 description: "Regular expressions (regex) in programming are used to search, match,\
   \ and manipulate strings based on specific patterns. Programmers use them for tasks\u2026"
-lastmod: 2024-02-19 22:05:18.130226
+lastmod: '2024-02-25T18:49:56.089575-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in programming are used to search, match, and\
   \ manipulate strings based on specific patterns. Programmers use them for tasks\u2026"

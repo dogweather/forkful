@@ -3,7 +3,7 @@ date: 2024-01-27 20:34:17.358717-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios em programa\xE7\xE3o \xE9 sobre criar\
   \ n\xFAmeros que n\xE3o t\xEAm qualquer padr\xE3o previs\xEDvel. Programadores fazem\
   \ isso por v\xE1rias raz\xF5es,\u2026"
-lastmod: 2024-02-19 22:05:05.577562
+lastmod: '2024-02-25T18:49:44.159036-07:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em programa\xE7\xE3o \xE9 sobre criar n\xFA\
   meros que n\xE3o t\xEAm qualquer padr\xE3o previs\xEDvel. Programadores fazem isso\

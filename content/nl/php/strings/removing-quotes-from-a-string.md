@@ -5,7 +5,7 @@ date: 2024-01-28 22:06:20.851009-07:00
 description: "Het verwijderen van aanhalingstekens uit een string in PHP betekent\
   \ het weghalen van die vervelende dubbele (`\"`) of enkele (`'`) aanhalingstekens\
   \ die je\u2026"
-lastmod: 2024-02-19 22:05:09.954049
+lastmod: '2024-02-25T18:49:48.220331-07:00'
 model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een string in PHP betekent het\
   \ weghalen van die vervelende dubbele (`\"`) of enkele (`'`) aanhalingstekens die\

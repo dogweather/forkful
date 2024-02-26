@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:21.192207-07:00
 description: "In Rust programming, working with YAML (YAML Ain't Markup Language)\
   \ is about parsing and generating data in YAML format, a human-friendly data\u2026"
-lastmod: 2024-02-19 22:05:18.383517
+lastmod: '2024-02-25T18:49:56.337627-07:00'
 model: gpt-4-0125-preview
 summary: "In Rust programming, working with YAML (YAML Ain't Markup Language) is about\
   \ parsing and generating data in YAML format, a human-friendly data\u2026"

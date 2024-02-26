@@ -2,7 +2,7 @@
 date: 2024-01-26 01:11:49.838528-07:00
 description: "Code in Funktionen zu organisieren, bedeutet, Aufgaben in wiederverwendbare\
   \ Bl\xF6cke zu zerlegen. Es macht den Code sauberer, weniger fehleranf\xE4llig und\u2026"
-lastmod: 2024-02-19 22:05:13.166504
+lastmod: '2024-02-25T18:49:51.281457-07:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren, bedeutet, Aufgaben in wiederverwendbare\
   \ Bl\xF6cke zu zerlegen. Es macht den Code sauberer, weniger fehleranf\xE4llig und\u2026"

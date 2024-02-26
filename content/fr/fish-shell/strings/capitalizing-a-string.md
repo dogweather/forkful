@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:21.469262-07:00
 description: "Mettre en majuscule une cha\xEEne de caract\xE8res signifie la modifier\
   \ pour que la premi\xE8re lettre soit en majuscule et que le reste de la cha\xEE\
   ne soit en\u2026"
-lastmod: 2024-02-19 22:05:16.955642
+lastmod: '2024-02-25T18:49:54.933175-07:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne de caract\xE8res signifie la modifier\
   \ pour que la premi\xE8re lettre soit en majuscule et que le reste de la cha\xEE\

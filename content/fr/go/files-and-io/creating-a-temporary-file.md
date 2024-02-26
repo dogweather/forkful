@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:17.564265-07:00
 description: "La cr\xE9ation d'un fichier temporaire en Go permet la g\xE9n\xE9ration\
   \ d'un fichier non persistant destin\xE9 \xE0 une utilisation \xE0 court terme,\
   \ principalement pour\u2026"
-lastmod: 2024-02-19 22:05:16.066056
+lastmod: '2024-02-25T18:49:54.055721-07:00'
 model: gpt-4-0125-preview
 summary: "La cr\xE9ation d'un fichier temporaire en Go permet la g\xE9n\xE9ration\
   \ d'un fichier non persistant destin\xE9 \xE0 une utilisation \xE0 court terme,\

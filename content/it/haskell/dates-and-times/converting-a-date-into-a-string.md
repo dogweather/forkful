@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:48.723872-07:00
 description: "Convertire una data in una stringa significa trasformare la rappresentazione\
   \ di un momento temporale in testo leggibile. Lo facciamo per memorizzare,\u2026"
-lastmod: 2024-02-19 22:05:02.552197
+lastmod: '2024-02-25T18:49:41.350198-07:00'
 model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformare la rappresentazione\
   \ di un momento temporale in testo leggibile. Lo facciamo per memorizzare,\u2026"

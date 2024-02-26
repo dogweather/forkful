@@ -6,7 +6,7 @@ description: "String interpolation \u092E\u0924\u0932\u092C \u0939\u0948 \u090F\
   \u0930\u0924\u0947 \u0939\u0948\u0902 \u0915\u094D\u092F\u094B\u0902\u0915\u093F\
   \ \u0907\u0938\u0938\u0947 dynamic strings \u092C\u0928\u093E\u0928\u093E \u0906\
   \u0938\u093E\u0928 \u0939\u094B\u2026"
-lastmod: 2024-02-19 22:05:11.388823
+lastmod: '2024-02-25T18:49:49.579352-07:00'
 model: gpt-4-1106-preview
 summary: "String interpolation \u092E\u0924\u0932\u092C \u0939\u0948 \u090F\u0915\
   \ string \u0915\u0947 \u0905\u0902\u0926\u0930 variable \u0915\u0940 values \u0915\

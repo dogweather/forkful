@@ -3,7 +3,7 @@ date: 2024-02-01 21:30:17.126306-07:00
 description: "Comparing two dates in Visual Basic for Applications (VBA) involves\
   \ determining their chronological relationship to each other. Programmers do this\
   \ to\u2026"
-lastmod: 2024-02-19 22:05:18.414178
+lastmod: '2024-02-25T18:49:56.367861-07:00'
 model: gpt-4-0125-preview
 summary: "Comparing two dates in Visual Basic for Applications (VBA) involves determining\
   \ their chronological relationship to each other. Programmers do this to\u2026"

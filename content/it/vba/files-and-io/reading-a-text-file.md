@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:58:56.701694-07:00
 description: "Leggere un file di testo in Visual Basic for Applications (VBA) implica\
   \ l'accesso programmatico ed estrazione del contenuto di un file di testo\u2026"
-lastmod: 2024-02-19 22:05:02.343845
+lastmod: '2024-02-25T18:49:41.154122-07:00'
 model: gpt-4-0125-preview
 summary: "Leggere un file di testo in Visual Basic for Applications (VBA) implica\
   \ l'accesso programmatico ed estrazione del contenuto di un file di testo\u2026"

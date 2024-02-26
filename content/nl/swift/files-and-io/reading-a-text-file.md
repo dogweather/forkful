@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:04.813260-07:00
 description: "Een tekstbestand lezen in Swift betekent het ophalen van de inhoud van\
   \ een bestand dat is opgeslagen op schijf. Programmeurs doen dit om te werken met\u2026"
-lastmod: 2024-02-19 22:05:10.261754
+lastmod: '2024-02-25T18:49:48.505080-07:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in Swift betekent het ophalen van de inhoud van een\
   \ bestand dat is opgeslagen op schijf. Programmeurs doen dit om te werken met\u2026"

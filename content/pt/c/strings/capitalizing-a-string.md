@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:38.244720-07:00
 description: "Capitalizar uma string em C envolve converter o primeiro caractere de\
   \ cada palavra em uma dada string para mai\xFAsculo, caso seja uma letra min\xFA\
   scula. Os\u2026"
-lastmod: 2024-02-19 22:05:06.100122
+lastmod: '2024-02-25T18:49:44.647846-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string em C envolve converter o primeiro caractere de cada\
   \ palavra em uma dada string para mai\xFAsculo, caso seja uma letra min\xFAscula.\

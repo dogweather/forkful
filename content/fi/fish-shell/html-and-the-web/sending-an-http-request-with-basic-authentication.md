@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:38.981305-07:00
 description: "L\xE4het\xE4mme HTTP-pyynn\xF6n perusautentikoinnilla, kun haluamme\
   \ p\xE4\xE4st\xE4 k\xE4siksi suojattuun resurssiin verkkopalvelussa. Se on tapa\
   \ todentaa k\xE4ytt\xE4j\xE4n\u2026"
-lastmod: 2024-02-19 22:05:15.888463
+lastmod: '2024-02-25T18:49:53.901461-07:00'
 model: gpt-4-1106-preview
 summary: "L\xE4het\xE4mme HTTP-pyynn\xF6n perusautentikoinnilla, kun haluamme p\xE4\
   \xE4st\xE4 k\xE4siksi suojattuun resurssiin verkkopalvelussa. Se on tapa todentaa\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:13:33.202127-07:00
 description: "Das Parsen eines Datums aus einem String beinhaltet die Interpretation\
   \ des Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.\u2026"
-lastmod: 2024-02-19 22:05:13.128153
+lastmod: '2024-02-25T18:49:51.244181-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Interpretation des\
   \ Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.\u2026"

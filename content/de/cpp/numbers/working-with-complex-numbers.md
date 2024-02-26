@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:39.725072-07:00
 description: "Komplexe Zahlen erweitern die reellen Zahlen durch Hinzuf\xFCgen einer\
   \ imagin\xE4ren Einheit, dargestellt als 'i', wobei i^2 = -1. Programmierer verwenden\
   \ sie\u2026"
-lastmod: 2024-02-19 22:05:13.113027
+lastmod: '2024-02-25T18:49:51.229759-07:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die reellen Zahlen durch Hinzuf\xFCgen einer imagin\xE4\
   ren Einheit, dargestellt als 'i', wobei i^2 = -1. Programmierer verwenden sie\u2026"

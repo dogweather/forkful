@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:09.779303-07:00
 description: "Att kontrollera om en mapp finns \xE4r en grundl\xE4ggande uppgift i\
   \ PHP-programmering eftersom det l\xE5ter dig verifiera n\xE4rvaron av en mapp innan\
   \ du utf\xF6r\u2026"
-lastmod: 2024-02-19 22:04:57.235831
+lastmod: '2024-02-25T18:49:36.313980-07:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns \xE4r en grundl\xE4ggande uppgift i PHP-programmering\
   \ eftersom det l\xE5ter dig verifiera n\xE4rvaron av en mapp innan du utf\xF6r\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:48:53.844534-07:00
 description: "Capitalizzare una stringa comporta la modifica dell'input in modo che\
   \ il primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"
-lastmod: 2024-02-19 22:05:02.041841
+lastmod: '2024-02-25T18:49:40.865885-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa comporta la modifica dell'input in modo che il\
   \ primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"

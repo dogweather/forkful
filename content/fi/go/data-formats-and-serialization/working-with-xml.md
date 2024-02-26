@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:18.646173-07:00
 description: "XML:n k\xE4sittely Go:ssa kattaa XML-dokumenttien j\xE4sennyksen (lukemisen)\
   \ ja luonnin (kirjoittaminen) \u2013 vakiomuodon rakenteelliselle tietojenvaihdolle.\u2026"
-lastmod: 2024-02-19 22:05:14.992458
+lastmod: '2024-02-25T18:49:53.055147-07:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Go:ssa kattaa XML-dokumenttien j\xE4sennyksen (lukemisen)\
   \ ja luonnin (kirjoittaminen) \u2013 vakiomuodon rakenteelliselle tietojenvaihdolle.\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:24.262059-07:00
 description: "S\xF8k og erstatt i tekst betyr \xE5 finne spesifikke ord eller fraser\
   \ og bytte dem ut med andre. Programmerere bruker dette til \xE5 oppdatere kode,\
   \ rette feil\u2026"
-lastmod: 2024-02-19 22:04:59.626497
+lastmod: '2024-02-25T18:49:38.574552-07:00'
 model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt i tekst betyr \xE5 finne spesifikke ord eller fraser og\
   \ bytte dem ut med andre. Programmerere bruker dette til \xE5 oppdatere kode, rette\

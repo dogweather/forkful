@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:27.103418-07:00
 description: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
   \ i m\xE5nga programmeringsuppgifter, som m\xF6jligg\xF6r villkorliga \xE5tg\xE4\
   rder baserat p\xE5 n\xE4rvaron\u2026"
-lastmod: 2024-02-19 22:04:57.190465
+lastmod: '2024-02-25T18:49:36.268872-07:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
   \ i m\xE5nga programmeringsuppgifter, som m\xF6jligg\xF6r villkorliga \xE5tg\xE4\

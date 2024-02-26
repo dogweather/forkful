@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:06.976620-07:00
 description: "Debugoutput afdrukken is als een gesprek voeren met je code. Het gaat\
   \ over het invoegen van printfuncties om te tonen wat er onder de motorkap van je\u2026"
-lastmod: 2024-02-19 22:05:10.116077
+lastmod: '2024-02-25T18:49:48.367350-07:00'
 model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken is als een gesprek voeren met je code. Het gaat over\
   \ het invoegen van printfuncties om te tonen wat er onder de motorkap van je\u2026"

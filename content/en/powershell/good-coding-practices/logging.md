@@ -2,7 +2,7 @@
 date: 2024-01-25 02:03:10.867875-07:00
 description: "Logging is basically leaving a breadcrumb trail through your code -\
   \ it's how you keep tabs on what's happening when your script's running in the wild.\u2026"
-lastmod: 2024-02-19 22:05:18.752820
+lastmod: '2024-02-25T18:49:56.728622-07:00'
 model: gpt-4-1106-preview
 summary: "Logging is basically leaving a breadcrumb trail through your code - it's\
   \ how you keep tabs on what's happening when your script's running in the wild.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:30:50.510130-07:00
 description: "Lavorare con XML significa gestire dati in un formato strutturato e\
   \ pervasivo, usato in configurazioni, messaggistica e altro. I programmatori manipolano\u2026"
-lastmod: 2024-02-19 22:05:02.956601
+lastmod: '2024-02-25T18:49:41.725597-07:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con XML significa gestire dati in un formato strutturato e pervasivo,\
   \ usato in configurazioni, messaggistica e altro. I programmatori manipolano\u2026"

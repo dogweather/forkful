@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:58.801202-07:00
 description: "Buscar y reemplazar texto se refiere a localizar ciertos caracteres\
   \ o palabras y cambiarlos por otros. Programadores hacen esto para actualizar datos,\u2026"
-lastmod: 2024-02-19 22:05:18.082512
+lastmod: '2024-02-25T18:49:56.042992-07:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto se refiere a localizar ciertos caracteres o palabras\
   \ y cambiarlos por otros. Programadores hacen esto para actualizar datos,\u2026"

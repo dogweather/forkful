@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:36.162588-07:00
 description: "Enviar una solicitud HTTP es comunicarse con un servidor web, pidiendo\
   \ informaci\xF3n o enviando datos. Los programadores lo hacen para integrar funciones\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:17.876681
+lastmod: '2024-02-25T18:49:55.842117-07:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP es comunicarse con un servidor web, pidiendo informaci\xF3\
   n o enviando datos. Los programadores lo hacen para integrar funciones de\u2026"

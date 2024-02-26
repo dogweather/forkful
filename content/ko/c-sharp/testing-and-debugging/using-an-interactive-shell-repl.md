@@ -7,7 +7,7 @@ description: "REPL\uC774\uB780 Read-Eval-Print Loop\uC758 \uC57D\uC790\uB85C, C#
   \ C#\uB97C \uBE60\uB974\uAC8C \uC2E4\uD5D8, \uB514\uBC84\uAE45\uD558\uAC70\uB098\
   \ \uD559\uC2B5\uD558\uB294 \uB370\uC5D0 REPL\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
-lastmod: 2024-02-19 22:05:14.147244
+lastmod: '2024-02-25T18:49:52.232471-07:00'
 model: gpt-4-0125-preview
 summary: "REPL\uC774\uB780 Read-Eval-Print Loop\uC758 \uC57D\uC790\uB85C, C# \uCF54\
   \uB4DC\uB97C \uC785\uB825\uD558\uC5EC \uC0C1\uD638\uC791\uC6A9\uD558\uBA70 \uC2E4\

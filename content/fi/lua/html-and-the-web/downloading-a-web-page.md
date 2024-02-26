@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:24.694553-07:00
 description: "Ladataan verkkosivu tarkoittaa sen sis\xE4ll\xF6n kopioimista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sen datan jalostukseen, automatisointiin tai backupointiin."
-lastmod: 2024-02-19 22:05:15.590566
+lastmod: '2024-02-25T18:49:53.607391-07:00'
 model: gpt-4-1106-preview
 summary: "Ladataan verkkosivu tarkoittaa sen sis\xE4ll\xF6n kopioimista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sen datan jalostukseen, automatisointiin tai backupointiin."

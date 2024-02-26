@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:32.852713-07:00
 description: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie\
   \ viele Zeichen er enth\xE4lt. Entwickler brauchen diese Information, um Eingaben\
   \ zu validieren,\u2026"
-lastmod: 2024-02-19 22:05:12.679199
+lastmod: '2024-02-25T18:49:50.819149-07:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie viele\
   \ Zeichen er enth\xE4lt. Entwickler brauchen diese Information, um Eingaben zu validieren,\u2026"

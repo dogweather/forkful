@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:40.983301-07:00
 description: "Escrever testes em Elm envolve a cria\xE7\xE3o de casos de teste para\
   \ verificar a corre\xE7\xE3o do seu c\xF3digo Elm, garantindo que ele se comporte\
   \ conforme esperado.\u2026"
-lastmod: 2024-02-19 22:05:05.542202
+lastmod: '2024-02-25T18:49:44.123812-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Elm envolve a cria\xE7\xE3o de casos de teste para verificar\
   \ a corre\xE7\xE3o do seu c\xF3digo Elm, garantindo que ele se comporte conforme\

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:33.752386-07:00
 description: "Getting the current date in JavaScript is a fundamental task, involving\
   \ retrieving and possibly manipulating today's date and time. Programmers perform\u2026"
-lastmod: 2024-02-19 22:05:18.904767
+lastmod: '2024-02-25T18:49:56.877761-07:00'
 model: gpt-4-0125-preview
 summary: "Getting the current date in JavaScript is a fundamental task, involving\
   \ retrieving and possibly manipulating today's date and time. Programmers perform\u2026"

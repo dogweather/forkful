@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:45.392595-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben\
   \ des Strings in ihre entsprechenden Kleinbuchstabenversionen zu konvertieren.\u2026"
-lastmod: 2024-02-19 22:05:13.064719
+lastmod: '2024-02-25T18:49:51.184224-07:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben\
   \ des Strings in ihre entsprechenden Kleinbuchstabenversionen zu konvertieren.\u2026"

@@ -6,7 +6,7 @@ description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i tro
   \ C bao g\u1ED3m vi\u1EC7c d\u1ECBch m\u1ED9t c\u1EA5u tr\xFAc ng\xE0y th\xE1ng\
   \ ho\u1EB7c d\u1EA5u th\u1EDDi gian th\xE0nh \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\
   \u1ECDc cho con ng\u01B0\u1EDDi. C\xE1c l\u1EADp tr\xECnh\u2026"
-lastmod: 2024-02-19 22:04:56.521898
+lastmod: '2024-02-25T18:49:35.631175-07:00'
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong C bao\
   \ g\u1ED3m vi\u1EC7c d\u1ECBch m\u1ED9t c\u1EA5u tr\xFAc ng\xE0y th\xE1ng ho\u1EB7\

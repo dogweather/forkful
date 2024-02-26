@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:37.703402-07:00
 description: "Escrever no erro padr\xE3o (stderr) envolve emitir mensagens de erro\
   \ e diagn\xF3sticos no console ou terminal. Os programadores fazem isso para separar\
   \ as\u2026"
-lastmod: 2024-02-19 22:05:05.512150
+lastmod: '2024-02-25T18:49:44.093334-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) envolve emitir mensagens de erro e diagn\xF3\
   sticos no console ou terminal. Os programadores fazem isso para separar as\u2026"

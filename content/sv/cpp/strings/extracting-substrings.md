@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:12.247581-07:00
 description: "Att extrahera delstr\xE4ngar \xE4r processen att plocka ut specificerade\
   \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta, analysera\
   \ eller\u2026"
-lastmod: 2024-02-19 22:04:57.434470
+lastmod: '2024-02-25T18:49:36.513356-07:00'
 model: gpt-4-1106-preview
 summary: "Att extrahera delstr\xE4ngar \xE4r processen att plocka ut specificerade\
   \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta, analysera\

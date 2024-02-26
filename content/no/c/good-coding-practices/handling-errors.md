@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:59.557022-07:00
 description: "\xC5 h\xE5ndtere feil i C inneb\xE6rer \xE5 oppdage og respondere p\xE5\
   \ unormale tilstander som oppst\xE5r under kj\xF8ring av programmet. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.561159
+lastmod: '2024-02-25T18:49:39.457616-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 h\xE5ndtere feil i C inneb\xE6rer \xE5 oppdage og respondere p\xE5\
   \ unormale tilstander som oppst\xE5r under kj\xF8ring av programmet. Programmerere\

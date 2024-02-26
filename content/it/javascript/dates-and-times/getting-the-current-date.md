@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:01.646444-07:00
 description: "Ottenere la data corrente in JavaScript \xE8 un compito fondamentale,\
   \ che comporta il recupero e, eventualmente, la manipolazione della data e dell'ora\
   \ di\u2026"
-lastmod: 2024-02-19 22:05:02.897028
+lastmod: '2024-02-25T18:49:41.670161-07:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in JavaScript \xE8 un compito fondamentale, che\
   \ comporta il recupero e, eventualmente, la manipolazione della data e dell'ora\

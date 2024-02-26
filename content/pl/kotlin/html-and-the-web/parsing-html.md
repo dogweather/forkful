@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:37.346264-07:00
 description: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony internetowej\
   \ na co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015B\
   ci parsuj\u0105 HTML w celu\u2026"
-lastmod: 2024-02-19 22:04:54.493684
+lastmod: '2024-02-25T18:49:33.726663-07:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony internetowej na\
   \ co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015B\

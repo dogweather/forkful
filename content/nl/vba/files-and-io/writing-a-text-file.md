@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:19.376206-07:00
 description: "Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt\
   \ in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een\u2026"
-lastmod: 2024-02-19 22:05:09.707515
+lastmod: '2024-02-25T18:49:48.000092-07:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt\
   \ in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een\u2026"

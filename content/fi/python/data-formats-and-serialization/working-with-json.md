@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:11.790279-07:00
 description: "Ty\xF6skentely JSON-muotoisten merkkijonojen (JavaScript Object Notation)\
   \ kanssa sis\xE4lt\xE4\xE4 JSON-muotoisten merkkijonojen j\xE4sent\xE4misen Python-objekteiksi\
   \ ja\u2026"
-lastmod: 2024-02-19 22:05:15.105570
+lastmod: '2024-02-25T18:49:53.138920-07:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSON-muotoisten merkkijonojen (JavaScript Object Notation)\
   \ kanssa sis\xE4lt\xE4\xE4 JSON-muotoisten merkkijonojen j\xE4sent\xE4misen Python-objekteiksi\

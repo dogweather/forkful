@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:23.977224-07:00
 description: "Reading a text file in Google Apps Script (GAS) involves accessing and\
   \ extracting text data from files stored in Google Drive or other accessible cloud-\u2026"
-lastmod: 2024-02-19 22:05:18.192773
+lastmod: '2024-02-25T18:49:56.150448-07:00'
 model: gpt-4-0125-preview
 summary: "Reading a text file in Google Apps Script (GAS) involves accessing and extracting\
   \ text data from files stored in Google Drive or other accessible cloud-\u2026"

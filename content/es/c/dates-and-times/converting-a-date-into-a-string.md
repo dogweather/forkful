@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:51.891412-07:00
 description: "Convertir una fecha en una cadena en C implica traducir una estructura\
   \ de fecha o marcar una fecha en un formato legible por humanos. Los programadores\
   \ a\u2026"
-lastmod: 2024-02-19 22:05:18.065249
+lastmod: '2024-02-25T18:49:56.026205-07:00'
 model: gpt-4-0125-preview
 summary: "Convertir una fecha en una cadena en C implica traducir una estructura de\
   \ fecha o marcar una fecha en un formato legible por humanos. Los programadores\

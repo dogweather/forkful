@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:10.039512-07:00
 description: "Het lezen van commandoregelargumenten in Haskell laat je gebruikersinvoer\
   \ opsnuiven wanneer ze je programma uitvoeren. Waarom? Om het gedrag van het\u2026"
-lastmod: 2024-02-19 22:05:09.939012
+lastmod: '2024-02-25T18:49:48.205913-07:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten in Haskell laat je gebruikersinvoer\
   \ opsnuiven wanneer ze je programma uitvoeren. Waarom? Om het gedrag van het\u2026"

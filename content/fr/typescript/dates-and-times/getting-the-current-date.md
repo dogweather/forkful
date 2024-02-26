@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:54.572526-07:00
 description: "Obtenir la date courante en TypeScript, un langage construit sur JavaScript,\
   \ vous permet d'acc\xE9der et de manipuler les informations actuelles de date et\u2026"
-lastmod: 2024-02-19 22:05:16.277788
+lastmod: '2024-02-25T18:49:54.263438-07:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date courante en TypeScript, un langage construit sur JavaScript,\
   \ vous permet d'acc\xE9der et de manipuler les informations actuelles de date et\u2026"

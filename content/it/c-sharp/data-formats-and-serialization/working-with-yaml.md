@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:54.433718-07:00
 description: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
   \ di dati leggibile dall'uomo. I programmatori lo usano spesso per file di\u2026"
-lastmod: 2024-02-19 22:05:02.518312
+lastmod: '2024-02-25T18:49:41.318755-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
   \ di dati leggibile dall'uomo. I programmatori lo usano spesso per file di\u2026"

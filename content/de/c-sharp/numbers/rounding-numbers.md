@@ -2,7 +2,7 @@
 date: 2024-01-26 03:43:15.680281-07:00
 description: "Zahlen runden bedeutet, sie auf den n\xE4chsten angegebenen Stellenwert\
   \ anzupassen \u2013 man k\xF6nnte sagen, sie auf eine einfachere Form zu reduzieren.\u2026"
-lastmod: 2024-02-19 22:05:12.810622
+lastmod: '2024-02-25T18:49:50.943693-07:00'
 model: gpt-4-0125-preview
 summary: "Zahlen runden bedeutet, sie auf den n\xE4chsten angegebenen Stellenwert\
   \ anzupassen \u2013 man k\xF6nnte sagen, sie auf eine einfachere Form zu reduzieren.\u2026"

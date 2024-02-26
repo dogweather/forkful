@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:00.464734-07:00
 description: "Writing to standard error (stderr) in Go involves directing error messages\
   \ or diagnostics not meant for the main output stream. Programmers use this to\u2026"
-lastmod: 2024-02-19 22:05:18.153873
+lastmod: '2024-02-25T18:49:56.112621-07:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Go involves directing error messages\
   \ or diagnostics not meant for the main output stream. Programmers use this to\u2026"

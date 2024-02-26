@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:32.061017-07:00
 description: "\xC9crire dans un fichier texte avec Lua implique la cr\xE9ation ou\
   \ l'ouverture d'un fichier en mode \xE9criture, puis l'utilisation d'op\xE9rations\
   \ sur le fichier\u2026"
-lastmod: 2024-02-19 22:05:16.677359
+lastmod: '2024-02-25T18:49:54.660034-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Lua implique la cr\xE9ation ou l'ouverture\
   \ d'un fichier en mode \xE9criture, puis l'utilisation d'op\xE9rations sur le fichier\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:02.752208-07:00
 description: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
   \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\
   t\u2026"
-lastmod: 2024-02-19 22:05:15.293586
+lastmod: '2024-02-25T18:49:53.321787-07:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
   \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\

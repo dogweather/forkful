@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:10.813394-07:00
 description: "Escribir pruebas en C# implica crear scripts automatizados para validar\
   \ la funcionalidad de tu c\xF3digo, asegurando que se comporte como se espera. Los\u2026"
-lastmod: 2024-02-19 22:05:17.587921
+lastmod: '2024-02-25T18:49:55.551955-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en C# implica crear scripts automatizados para validar\
   \ la funcionalidad de tu c\xF3digo, asegurando que se comporte como se espera. Los\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:06.492430-07:00
 description: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa\
   \ liittyy JSON-datamuodon j\xE4sennys- ja luontitoimiin. Ohjelmoijat tekev\xE4t\
   \ t\xE4m\xE4n\u2026"
-lastmod: 2024-02-19 22:05:15.445619
+lastmod: '2024-02-25T18:49:53.467953-07:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa liittyy\
   \ JSON-datamuodon j\xE4sennys- ja luontitoimiin. Ohjelmoijat tekev\xE4t t\xE4m\xE4\

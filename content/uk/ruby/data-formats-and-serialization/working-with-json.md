@@ -10,7 +10,7 @@ description: "JSON (JavaScript Object Notation) - \u0446\u0435 \u043B\u0435\u043
   \u043A\u0430\u0445 \u0434\u043B\u044F \u043E\u0431\u043C\u0456\u043D\u0443 \u0434\
   \u0430\u043D\u0438\u043C\u0438 \u043C\u0456\u0436 \u043A\u043B\u0456\u0454\u043D\
   \u0442\u0430\u043C\u0438 \u0442\u0430\u2026"
-lastmod: 2024-02-19 22:05:09.347197
+lastmod: '2024-02-25T18:49:47.660073-07:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) - \u0446\u0435 \u043B\u0435\u0433\u043A\
   \u0438\u0439 \u0444\u043E\u0440\u043C\u0430\u0442 \u043E\u0431\u043C\u0456\u043D\

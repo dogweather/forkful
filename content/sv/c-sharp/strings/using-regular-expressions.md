@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:36.377958-07:00
 description: "Regulj\xE4ra uttryck (regex) i C# \xE4r ett kraftfullt verktyg f\xF6\
   r m\xF6nsterpassning inom str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6r programmerare\
   \ att s\xF6ka, ers\xE4tta, dela upp\u2026"
-lastmod: 2024-02-19 22:04:57.119383
+lastmod: '2024-02-25T18:49:36.201023-07:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i C# \xE4r ett kraftfullt verktyg f\xF6r m\xF6\
   nsterpassning inom str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6r programmerare att\

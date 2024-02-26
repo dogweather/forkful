@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:59.423234-07:00
 description: "TOML, short for Tom's Obvious, Minimal Language, defines how to structure\
   \ config files. Programmers work with TOML because it's easy to read, write, and\u2026"
-lastmod: 2024-02-19 22:05:18.916172
+lastmod: '2024-02-25T18:49:56.889749-07:00'
 model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, defines how to structure\
   \ config files. Programmers work with TOML because it's easy to read, write, and\u2026"

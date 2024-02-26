@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:57.267112-07:00
 description: "Wycinanie pod\u0142a\u0144cuch\xF3w to proces wyodr\u0119bniania fragment\xF3\
   w tekstu z wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to,\
   \ aby manipulowa\u0107 i analizowa\u0107 dane\u2026"
-lastmod: 2024-02-19 22:04:54.804254
+lastmod: '2024-02-25T18:49:34.031927-07:00'
 model: gpt-4-1106-preview
 summary: "Wycinanie pod\u0142a\u0144cuch\xF3w to proces wyodr\u0119bniania fragment\xF3\
   w tekstu z wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to,\

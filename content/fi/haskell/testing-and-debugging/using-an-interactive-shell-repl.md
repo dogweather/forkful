@@ -3,7 +3,7 @@ date: 2024-01-26 04:14:57.385625-07:00
 description: "Interaktiivinen kuori eli REPL (Read-Eval-Print Loop) Haskellissa antaa\
   \ sinun suorittaa koodinp\xE4tki\xE4 reaaliajassa. Se on leikkikentt\xE4 nopeaa\
   \ palautetta,\u2026"
-lastmod: 2024-02-19 22:05:15.510033
+lastmod: '2024-02-25T18:49:53.530117-07:00'
 model: gpt-4-0125-preview
 summary: "Interaktiivinen kuori eli REPL (Read-Eval-Print Loop) Haskellissa antaa\
   \ sinun suorittaa koodinp\xE4tki\xE4 reaaliajassa. Se on leikkikentt\xE4 nopeaa\

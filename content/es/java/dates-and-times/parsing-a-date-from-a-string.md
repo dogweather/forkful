@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:16.083734-07:00
 description: "Convertir una fecha de una cadena implica convertir la representaci\xF3\
   n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\
   \ m\xE1s\u2026"
-lastmod: 2024-02-19 22:05:17.469027
+lastmod: '2024-02-25T18:49:55.435560-07:00'
 model: gpt-4-0125-preview
 summary: "Convertir una fecha de una cadena implica convertir la representaci\xF3\
   n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\

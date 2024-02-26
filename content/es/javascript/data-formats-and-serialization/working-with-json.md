@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:18.444890-07:00
 description: "JSON (Notaci\xF3n de Objeto de JavaScript) es un formato ligero de intercambio\
   \ de datos, f\xE1cil de leer y escribir para los humanos y de analizar y generar\u2026"
-lastmod: 2024-02-19 22:05:17.983873
+lastmod: '2024-02-25T18:49:55.949112-07:00'
 model: gpt-4-0125-preview
 summary: "JSON (Notaci\xF3n de Objeto de JavaScript) es un formato ligero de intercambio\
   \ de datos, f\xE1cil de leer y escribir para los humanos y de analizar y generar\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-25 17:06:54.235897-07:00
 description: "Interpolacja ci\u0105g\xF3w w C# pozwala na tworzenie nowego ci\u0105\
   gu przez w\u0142\u0105czenie wyra\u017Ce\u0144 wewn\u0105trz litera\u0142u ci\u0105\
   gu, co u\u0142atwia formatowanie i \u0142\u0105czenie ci\u0105g\xF3w.\u2026"
-lastmod: 2024-02-25 18:26:53.435256
+lastmod: '2024-02-25T18:49:33.758529-07:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w w C# pozwala na tworzenie nowego ci\u0105gu\
   \ przez w\u0142\u0105czenie wyra\u017Ce\u0144 wewn\u0105trz litera\u0142u ci\u0105\

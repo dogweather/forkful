@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:56.150030-07:00
 description: "Enviar una solicitud HTTP es c\xF3mo tu programa habla con el mundo:\
   \ pide datos a un servidor o les dice qu\xE9 hacer. Los programadores lo hacen para\u2026"
-lastmod: 2024-02-19 22:05:17.959706
+lastmod: '2024-02-25T18:49:55.925143-07:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP es c\xF3mo tu programa habla con el mundo: pide\
   \ datos a un servidor o les dice qu\xE9 hacer. Los programadores lo hacen para\u2026"

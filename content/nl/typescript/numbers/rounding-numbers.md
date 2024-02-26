@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:09.373717-07:00
 description: "Rondgetallen is het bijsnijden van een getal naar een specifieke precisie.\
   \ Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid,\u2026"
-lastmod: 2024-02-19 22:05:09.592317
+lastmod: '2024-02-25T18:49:47.891808-07:00'
 model: gpt-4-0125-preview
 summary: "Rondgetallen is het bijsnijden van een getal naar een specifieke precisie.\
   \ Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid,\u2026"

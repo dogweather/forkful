@@ -5,7 +5,7 @@ date: 2024-01-28 22:04:33.558533-07:00
 description: "Debugoutput afdrukken is informatie op je scherm gooien om te zien wat\
   \ er aan de hand is met je code. Programmeurs doen dit om gremlins in de machine\
   \ op\u2026"
-lastmod: 2024-02-19 22:05:10.015186
+lastmod: '2024-02-25T18:49:48.278794-07:00'
 model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken is informatie op je scherm gooien om te zien wat er\
   \ aan de hand is met je code. Programmeurs doen dit om gremlins in de machine op\u2026"

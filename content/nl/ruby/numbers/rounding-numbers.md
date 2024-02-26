@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:09.626968-07:00
 description: "Het afronden van getallen betekent het aanpassen ervan naar het dichtstbijzijnde\
   \ gehele getal of naar een gespecificeerde mate van precisie. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:10.419490
+lastmod: '2024-02-25T18:49:48.653265-07:00'
 model: gpt-4-0125-preview
 summary: "Het afronden van getallen betekent het aanpassen ervan naar het dichtstbijzijnde\
   \ gehele getal of naar een gespecificeerde mate van precisie. Programmeurs\u2026"

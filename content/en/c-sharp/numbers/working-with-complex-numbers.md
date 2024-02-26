@@ -2,7 +2,7 @@
 date: 2024-01-25 03:00:29.786885-07:00
 description: "Complex numbers expand our number system to include imaginary numbers,\
   \ allowing us to solve equations that don't have real solutions. Programmers work\u2026"
-lastmod: 2024-02-19 22:05:18.548675
+lastmod: '2024-02-25T18:49:56.528276-07:00'
 model: gpt-4-1106-preview
 summary: "Complex numbers expand our number system to include imaginary numbers, allowing\
   \ us to solve equations that don't have real solutions. Programmers work\u2026"

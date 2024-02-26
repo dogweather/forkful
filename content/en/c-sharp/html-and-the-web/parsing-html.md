@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:47.855631-07:00
 description: "Parsing HTML in programming involves analyzing the structure of an HTML\
   \ document, allowing you to extract, manipulate, and interact with its content\u2026"
-lastmod: 2024-02-19 22:05:18.552166
+lastmod: '2024-02-25T18:49:56.531975-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in programming involves analyzing the structure of an HTML\
   \ document, allowing you to extract, manipulate, and interact with its content\u2026"

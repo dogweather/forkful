@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:00:02.950357-07:00
 description: "De lengte van een string bepalen betekent vaststellen uit hoeveel karakters\
   \ deze bestaat. Programmeurs hebben deze informatie vaak nodig voor taken zoals\u2026"
-lastmod: 2024-02-19 22:05:09.956981
+lastmod: '2024-02-25T18:49:48.223148-07:00'
 model: gpt-4-0125-preview
 summary: "De lengte van een string bepalen betekent vaststellen uit hoeveel karakters\
   \ deze bestaat. Programmeurs hebben deze informatie vaak nodig voor taken zoals\u2026"

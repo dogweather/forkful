@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:35.075577-07:00
 description: "Checking if a directory exists is a fundamental operation when writing\
   \ scripts that interact with the filesystem, ensuring that your program operates\
   \ on\u2026"
-lastmod: 2024-02-19 22:05:18.680349
+lastmod: '2024-02-25T18:49:56.657662-07:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists is a fundamental operation when writing scripts\
   \ that interact with the filesystem, ensuring that your program operates on\u2026"

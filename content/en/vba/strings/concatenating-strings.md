@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:36.235039-07:00
 description: "Concatenation in Visual Basic for Applications (VBA) involves joining\
   \ two or more strings into a single entity. This is a fundamental task in programming,\u2026"
-lastmod: 2024-02-19 22:05:18.395659
+lastmod: '2024-02-25T18:49:56.349812-07:00'
 model: gpt-4-0125-preview
 summary: "Concatenation in Visual Basic for Applications (VBA) involves joining two\
   \ or more strings into a single entity. This is a fundamental task in programming,\u2026"

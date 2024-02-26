@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:08.134260-07:00
 description: "Extracting substrings involves retrieving specific portions of a string\
   \ based on their positions. Programmers frequently perform this operation to process\u2026"
-lastmod: 2024-02-19 22:05:18.129377
+lastmod: '2024-02-25T18:49:56.088741-07:00'
 model: gpt-4-0125-preview
 summary: "Extracting substrings involves retrieving specific portions of a string\
   \ based on their positions. Programmers frequently perform this operation to process\u2026"

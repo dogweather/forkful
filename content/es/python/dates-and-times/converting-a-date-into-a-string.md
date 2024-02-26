@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:28.867053-07:00
 description: "Convertir una fecha a texto significa transformar un objeto `datetime`\
   \ en Python a un formato de cadena de caracteres (string). Esto se hace para\u2026"
-lastmod: 2024-02-19 22:05:17.217728
+lastmod: '2024-02-25T18:49:55.188900-07:00'
 model: gpt-4-1106-preview
 summary: "Convertir una fecha a texto significa transformar un objeto `datetime` en\
   \ Python a un formato de cadena de caracteres (string). Esto se hace para\u2026"

@@ -6,7 +6,7 @@ description: "So s\xE1nh hai ng\xE0y gi\u1ED1ng nh\u01B0 h\u1ECFi, \"Con g\xE0 h
   \ qu\u1EA3 tr\u1EE9ng c\xE1i n\xE0o c\xF3 tr\u01B0\u1EDBc?\" nh\u01B0ng v\u1EDB\
   i ng\xE0y tr\xEAn l\u1ECBch. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u \u0111\
   \xF3 \u0111\u1EC3 s\u1EAFp x\u1EBFp s\u1EF1 ki\u1EC7n, k\xEDch\u2026"
-lastmod: 2024-02-19 22:04:56.321157
+lastmod: '2024-02-25T18:49:35.459973-07:00'
 model: gpt-4-0125-preview
 summary: "So s\xE1nh hai ng\xE0y gi\u1ED1ng nh\u01B0 h\u1ECFi, \"Con g\xE0 hay qu\u1EA3\
   \ tr\u1EE9ng c\xE1i n\xE0o c\xF3 tr\u01B0\u1EDBc?\" nh\u01B0ng v\u1EDBi ng\xE0y\

@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:33.441599-07:00
 description: "Rounding numbers is about chopping off decimal places to simplify your\
   \ data or fit specific formats. Programmers do it for user-friendly display,\u2026"
-lastmod: 2024-02-19 22:05:18.928165
+lastmod: '2024-02-25T18:49:56.902469-07:00'
 model: gpt-4-1106-preview
 summary: "Rounding numbers is about chopping off decimal places to simplify your data\
   \ or fit specific formats. Programmers do it for user-friendly display,\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:34.019672-07:00
 description: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4:\
   \ ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitaan erityisp\xE4ivien k\xE4sittely\xE4\
   \ tai aikajaksojen laskentaa."
-lastmod: 2024-02-19 22:05:15.691808
+lastmod: '2024-02-25T18:49:53.706456-07:00'
 model: gpt-4-1106-preview
 summary: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4: ohjelmoijat\
   \ tekev\xE4t t\xE4t\xE4, kun tarvitaan erityisp\xE4ivien k\xE4sittely\xE4 tai aikajaksojen\

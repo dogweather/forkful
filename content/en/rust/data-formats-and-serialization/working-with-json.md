@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:14.383596-07:00
 description: "Working with JSON (JavaScript Object Notation) in Rust is about parsing\
   \ JSON data into Rust data structures and serializing Rust data structures back\
   \ into\u2026"
-lastmod: 2024-02-19 22:05:18.384414
+lastmod: '2024-02-25T18:49:56.338506-07:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) in Rust is about parsing\
   \ JSON data into Rust data structures and serializing Rust data structures back\

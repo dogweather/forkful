@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:09.933986-07:00
 description: "Supprimer les guillemets d'une cha\xEEne dans Google Apps Script consiste\
   \ \xE0 \xE9liminer les guillemets inutiles qui peuvent entourer vos donn\xE9es de\
   \ cha\xEEne,\u2026"
-lastmod: 2024-02-19 22:05:16.078479
+lastmod: '2024-02-25T18:49:54.068034-07:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne dans Google Apps Script consiste\
   \ \xE0 \xE9liminer les guillemets inutiles qui peuvent entourer vos donn\xE9es de\

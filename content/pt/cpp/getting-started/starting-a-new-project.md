@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:11.979230-07:00
 description: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho limpo\
   \ para desenvolver c\xF3digo desde o come\xE7o. Programadores fazem isso para organizar\
   \ melhor\u2026"
-lastmod: 2024-02-19 22:05:05.940561
+lastmod: '2024-02-25T18:49:44.498044-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho limpo\
   \ para desenvolver c\xF3digo desde o come\xE7o. Programadores fazem isso para organizar\

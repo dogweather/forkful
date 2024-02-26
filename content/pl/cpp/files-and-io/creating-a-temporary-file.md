@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:39.412613-07:00
 description: "(\"Co i dlaczego?\") Tworzenie pliku tymczasowego daje ci miejsce do\
   \ przechowywania danych, kt\xF3re s\u0105 wa\u017Cne w trakcie wykonywania programu,\
   \ ale nie po jego\u2026"
-lastmod: 2024-02-19 22:04:54.879314
+lastmod: '2024-02-25T18:49:34.104456-07:00'
 model: gpt-4-1106-preview
 summary: "(\"Co i dlaczego?\") Tworzenie pliku tymczasowego daje ci miejsce do przechowywania\
   \ danych, kt\xF3re s\u0105 wa\u017Cne w trakcie wykonywania programu, ale nie po\

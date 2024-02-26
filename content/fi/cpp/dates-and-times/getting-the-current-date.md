@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:07.425788-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen C++:lla on perusteht\xE4\
   v\xE4 ohjelmille, jotka tarvitsevat k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 p\xE4iv\xE4\
   m\xE4\xE4ri\xE4 j\xE4rjestelm\xE4n kellon mukaan. Se on\u2026"
-lastmod: 2024-02-19 22:05:15.770630
+lastmod: '2024-02-25T18:49:53.785109-07:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen C++:lla on perusteht\xE4v\xE4\
   \ ohjelmille, jotka tarvitsevat k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 p\xE4iv\xE4\

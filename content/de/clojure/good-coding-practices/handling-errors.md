@@ -3,7 +3,7 @@ date: 2024-01-26 00:51:59.026553-07:00
 description: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen\
   \ \u2013 wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert. Programmierer\
   \ m\xF6gen es\u2026"
-lastmod: 2024-02-19 22:05:12.476617
+lastmod: '2024-02-25T18:49:50.625472-07:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen \u2013\
   \ wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert. Programmierer m\xF6\

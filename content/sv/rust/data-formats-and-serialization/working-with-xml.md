@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:50.743722-07:00
 description: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON:s\
   \ ordrika kusin. Du kommer att brottas med XML n\xE4r du hanterar legacysystem,\
   \ f\xF6retagsprogramvara\u2026"
-lastmod: 2024-02-19 22:04:56.928399
+lastmod: '2024-02-25T18:49:36.018259-07:00'
 model: gpt-4-0125-preview
 summary: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON:s ordrika\
   \ kusin. Du kommer att brottas med XML n\xE4r du hanterar legacysystem, f\xF6retagsprogramvara\u2026"

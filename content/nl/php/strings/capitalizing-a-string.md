@@ -5,7 +5,7 @@ date: 2024-01-28 21:55:59.642219-07:00
 description: "Het kapitaliseren van een string betekent het veranderen van de eerste\
   \ letter van elk woord naar een hoofdletter. Programmeurs kapitaliseren strings\
   \ voor\u2026"
-lastmod: 2024-02-19 22:05:09.949072
+lastmod: '2024-02-25T18:49:48.215573-07:00'
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een string betekent het veranderen van de eerste letter\
   \ van elk woord naar een hoofdletter. Programmeurs kapitaliseren strings voor\u2026"

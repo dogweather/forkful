@@ -6,7 +6,7 @@ description: "Ghi v\xE0o l\u1ED7i chu\u1EA9n trong Visual Basic for Applications
   \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\
   i ho\u1EB7c ch\u1EA9n \u0111o\xE1n ra kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, th\u01B0\
   \u1EDDng l\xE0 t\u1EDBi\u2026"
-lastmod: 2024-02-19 22:04:55.614624
+lastmod: '2024-02-25T18:49:34.791041-07:00'
 model: gpt-4-0125-preview
 summary: "Ghi v\xE0o l\u1ED7i chu\u1EA9n trong Visual Basic for Applications (VBA)\
   \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\

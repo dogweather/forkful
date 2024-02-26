@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:19.760423-07:00
 description: "Capitalizar una cadena en Rust implica modificar la cadena para que\
   \ su primer car\xE1cter est\xE9 en may\xFAscula si es una letra, mientras que el\
   \ resto de la\u2026"
-lastmod: 2024-02-19 22:05:17.356043
+lastmod: '2024-02-25T18:49:55.324401-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en Rust implica modificar la cadena para que su primer\
   \ car\xE1cter est\xE9 en may\xFAscula si es una letra, mientras que el resto de\

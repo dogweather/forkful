@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:28.751199-07:00
 description: "Complexe getallen breiden het idee van eendimensionale getallenlijnen\
   \ uit naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden\u2026"
-lastmod: 2024-02-19 22:05:10.325801
+lastmod: '2024-02-25T18:49:48.564990-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden het idee van eendimensionale getallenlijnen uit\
   \ naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden\u2026"

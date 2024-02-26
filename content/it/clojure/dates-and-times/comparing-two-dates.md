@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:48.829064-07:00
 description: "Comparare due date significa verificare se sono uguali, quale precede\
   \ l'altra o quanti giorni ci sono tra di loro. I programmatori fanno questo per\u2026"
-lastmod: 2024-02-19 22:05:02.163642
+lastmod: '2024-02-25T18:49:40.983135-07:00'
 model: gpt-4-1106-preview
 summary: "Comparare due date significa verificare se sono uguali, quale precede l'altra\
   \ o quanti giorni ci sono tra di loro. I programmatori fanno questo per\u2026"

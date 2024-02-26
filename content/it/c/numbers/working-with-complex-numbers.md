@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:51.855289-07:00
 description: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
   \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`. I\u2026"
-lastmod: 2024-02-19 22:05:02.969776
+lastmod: '2024-02-25T18:49:41.737985-07:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
   \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`. I\u2026"

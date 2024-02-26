@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:25.452076-07:00
 description: "Working with JSON (JavaScript Object Notation) involves parsing JSON\
   \ formatted strings into Python objects and vice versa. This is crucial for web\
   \ and API\u2026"
-lastmod: 2024-02-19 22:05:18.234459
+lastmod: '2024-02-25T18:49:56.190727-07:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) involves parsing JSON formatted\
   \ strings into Python objects and vice versa. This is crucial for web and API\u2026"

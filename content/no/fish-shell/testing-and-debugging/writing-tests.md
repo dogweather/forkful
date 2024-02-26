@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:36.842264-07:00
 description: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som automatisk\
   \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater.\
   \ Denne\u2026"
-lastmod: 2024-02-19 22:05:00.509958
+lastmod: '2024-02-25T18:49:39.408250-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som automatisk\
   \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater.\

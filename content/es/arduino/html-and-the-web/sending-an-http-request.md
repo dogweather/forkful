@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:06.620091-07:00
 description: "Enviar una petici\xF3n HTTP es b\xE1sicamente pedirle datos a una p\xE1\
   gina web o servidor. Lo hacemos para interactuar con servicios web, sea para recoger\u2026"
-lastmod: 2024-02-19 22:05:17.836504
+lastmod: '2024-02-25T18:49:55.802657-07:00'
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP es b\xE1sicamente pedirle datos a una p\xE1\
   gina web o servidor. Lo hacemos para interactuar con servicios web, sea para recoger\u2026"

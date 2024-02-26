@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:34.498508-07:00
 description: "\xC9crire des tests dans Google Apps Script (GAS) consiste \xE0 cr\xE9\
   er des scripts automatis\xE9s pour v\xE9rifier le comportement de vos codes, en\
   \ s'assurant qu'ils\u2026"
-lastmod: 2024-02-19 22:05:16.096223
+lastmod: '2024-02-25T18:49:54.085525-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests dans Google Apps Script (GAS) consiste \xE0 cr\xE9er\
   \ des scripts automatis\xE9s pour v\xE9rifier le comportement de vos codes, en s'assurant\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:46.992939-07:00
 description: "Parsowanie HTML w PowerShell to proces analizowania zawarto\u015Bci\
   \ HTML w celu wyodr\u0119bnienia konkretnych danych lub automatyzacji zada\u0144\
   \ zwi\u0105zanych z sieci\u0105.\u2026"
-lastmod: 2024-02-19 22:04:54.768763
+lastmod: '2024-02-25T18:49:33.996788-07:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w PowerShell to proces analizowania zawarto\u015Bci HTML\
   \ w celu wyodr\u0119bnienia konkretnych danych lub automatyzacji zada\u0144 zwi\u0105\

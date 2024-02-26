@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:38.818610-07:00
 description: "Le d\xE9bogage, on conna\xEEt : imprimer des sorties dans la console\
   \ pour comprendre ce qui se passe dans le code. Pourquoi ? Pour traquer les bugs\
   \ plus vite et\u2026"
-lastmod: 2024-02-19 22:05:16.403009
+lastmod: '2024-02-25T18:49:54.390188-07:00'
 model: gpt-4-1106-preview
 summary: "Le d\xE9bogage, on conna\xEEt : imprimer des sorties dans la console pour\
   \ comprendre ce qui se passe dans le code. Pourquoi ? Pour traquer les bugs plus\

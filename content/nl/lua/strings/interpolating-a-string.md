@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:53.610232-07:00
 description: "Stringinterpolatie stelt je in staat om variabelen direct in te voegen\
   \ in strings. Dit wordt gedaan om dynamisch strings op te bouwen en de code schoon\
   \ te\u2026"
-lastmod: 2024-02-19 22:05:09.997329
+lastmod: '2024-02-25T18:49:48.262370-07:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt je in staat om variabelen direct in te voegen in\
   \ strings. Dit wordt gedaan om dynamisch strings op te bouwen en de code schoon\

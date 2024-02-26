@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:52:43.726610-07:00
 description: "Baixar uma p\xE1gina da web em Visual Basic for Applications (VBA) envolve\
   \ obter o conte\xFAdo HTML de uma p\xE1gina da web da Internet. Programadores\u2026"
-lastmod: 2024-02-19 22:05:05.446477
+lastmod: '2024-02-25T18:49:44.030921-07:00'
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina da web em Visual Basic for Applications (VBA) envolve\
   \ obter o conte\xFAdo HTML de uma p\xE1gina da web da Internet. Programadores\u2026"

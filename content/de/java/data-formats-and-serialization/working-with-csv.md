@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:19.525507-07:00
 description: "Die Arbeit mit CSV-Dateien umfasst das Lesen von und das Schreiben in\
   \ Dateien mit kommaseparierten Werten (CSV), einem beliebten Format f\xFCr den\u2026"
-lastmod: 2024-02-19 22:05:12.710853
+lastmod: '2024-02-25T18:49:50.849427-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien umfasst das Lesen von und das Schreiben in Dateien\
   \ mit kommaseparierten Werten (CSV), einem beliebten Format f\xFCr den\u2026"

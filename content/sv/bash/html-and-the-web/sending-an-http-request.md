@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:15.717088-07:00
 description: "Att skicka en HTTP-f\xF6rfr\xE5gan handlar om att be om data fr\xE5\
   n en webbserver. Programmerare g\xF6r detta f\xF6r att interagera med webbaserade\
   \ tj\xE4nster eller h\xE4mta\u2026"
-lastmod: 2024-02-19 22:04:57.309308
+lastmod: '2024-02-25T18:49:36.394452-07:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan handlar om att be om data fr\xE5n en\
   \ webbserver. Programmerare g\xF6r detta f\xF6r att interagera med webbaserade tj\xE4\

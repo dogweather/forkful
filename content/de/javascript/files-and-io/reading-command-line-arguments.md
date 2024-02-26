@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:11.145890-07:00
 description: "Kommandozeilenargumente sind die Parameter, die du deinem Programm beim\
   \ Start \xFCbergibst. Programmierer nutzen sie, um ihre Anwendungen flexibel zu\u2026"
-lastmod: 2024-02-19 22:05:13.219308
+lastmod: '2024-02-25T18:49:51.331791-07:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind die Parameter, die du deinem Programm beim\
   \ Start \xFCbergibst. Programmierer nutzen sie, um ihre Anwendungen flexibel zu\u2026"

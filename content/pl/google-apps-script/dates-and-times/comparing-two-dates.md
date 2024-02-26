@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:01.452770-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat w Google Apps Script, pochodnej JavaScriptu\
   \ dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programist\xF3\
   w\u2026"
-lastmod: 2024-02-19 22:04:54.100627
+lastmod: '2024-02-25T18:49:33.340786-07:00'
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w Google Apps Script, pochodnej JavaScriptu\
   \ dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programist\xF3\

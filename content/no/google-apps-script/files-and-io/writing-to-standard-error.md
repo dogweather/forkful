@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:48.558996-07:00
 description: "\xC5 skrive til standardfeil (stderr) i programmeringsspr\xE5k handler\
   \ om \xE5 dirigere feilmeldinger og diagnostikk til en separat str\xF8m, bort fra\
   \ standard utgang\u2026"
-lastmod: 2024-02-19 22:04:59.614321
+lastmod: '2024-02-25T18:49:38.562893-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i programmeringsspr\xE5k handler om\
   \ \xE5 dirigere feilmeldinger og diagnostikk til en separat str\xF8m, bort fra standard\

@@ -3,7 +3,7 @@ date: 2024-01-20 15:34:10.927158-07:00
 description: "Parsear HTML es el proceso de convertir texto HTML en una estructura\
   \ de datos comprensible y manipulable por programas. Los programadores lo hacen\
   \ para\u2026"
-lastmod: 2024-02-19 22:05:17.328487
+lastmod: '2024-02-25T18:49:55.297689-07:00'
 summary: "Parsear HTML es el proceso de convertir texto HTML en una estructura de\
   \ datos comprensible y manipulable por programas. Los programadores lo hacen para\u2026"
 title: "An\xE1lisis de HTML"

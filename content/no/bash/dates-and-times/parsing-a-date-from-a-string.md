@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:13:41.965206-07:00
 description: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
   \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\u2026"
-lastmod: 2024-02-19 22:05:00.250499
+lastmod: '2024-02-25T18:49:39.157490-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
   \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\u2026"

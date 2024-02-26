@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:58.397821-07:00
 description: "Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd\
   \ gaan. Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"
-lastmod: 2024-02-19 22:05:10.207479
+lastmod: '2024-02-25T18:49:48.453696-07:00'
 model: gpt-4-0125-preview
 summary: "Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd gaan.\
   \ Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:17.826760-07:00
 description: "Writing a text file in TypeScript is a critical skill for data persistence,\
   \ configurations, or log generation. Programmers often perform this task to\u2026"
-lastmod: 2024-02-19 22:05:18.344599
+lastmod: '2024-02-25T18:49:56.298428-07:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in TypeScript is a critical skill for data persistence,\
   \ configurations, or log generation. Programmers often perform this task to\u2026"

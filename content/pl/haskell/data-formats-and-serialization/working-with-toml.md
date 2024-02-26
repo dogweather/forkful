@@ -3,7 +3,7 @@ date: 2024-01-26 04:22:49.007974-07:00
 description: "Praca z TOML polega na parsowaniu i generowaniu danych TOML (Tom's Obvious,\
   \ Minimal Language) przy u\u017Cyciu j\u0119zyka Haskell. Programi\u015Bci robi\u0105\
   \ to, aby \u0142atwo\u2026"
-lastmod: 2024-02-19 22:04:54.611243
+lastmod: '2024-02-25T18:49:33.841749-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z TOML polega na parsowaniu i generowaniu danych TOML (Tom's Obvious,\
   \ Minimal Language) przy u\u017Cyciu j\u0119zyka Haskell. Programi\u015Bci robi\u0105\

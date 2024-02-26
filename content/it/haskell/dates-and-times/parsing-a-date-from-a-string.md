@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:14:18.019066-07:00
 description: "L'analisi di una data da una stringa in Haskell consiste nel convertire\
   \ le rappresentazioni testuali delle date in un formato strutturato che il programma\u2026"
-lastmod: 2024-02-19 22:05:02.550113
+lastmod: '2024-02-25T18:49:41.348224-07:00'
 model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa in Haskell consiste nel convertire\
   \ le rappresentazioni testuali delle date in un formato strutturato che il programma\u2026"

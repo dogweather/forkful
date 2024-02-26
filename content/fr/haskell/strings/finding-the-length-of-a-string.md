@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:25.569033-07:00
 description: "La longueur d'une cha\xEEne, c'est compter les \xE9l\xE9ments qui la\
   \ composent. Les programmeurs le font pour valider des donn\xE9es, optimiser des\
   \ performances ou\u2026"
-lastmod: 2024-02-19 22:05:16.562278
+lastmod: '2024-02-25T18:49:54.547922-07:00'
 model: gpt-4-1106-preview
 summary: "La longueur d'une cha\xEEne, c'est compter les \xE9l\xE9ments qui la composent.\
   \ Les programmeurs le font pour valider des donn\xE9es, optimiser des performances\

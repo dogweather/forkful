@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:03.814688-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat w programowaniu to podstawowe zadanie,\
   \ pozwalaj\u0105ce programistom na ocen\u0119 chronologicznych relacji mi\u0119\
   dzy datami. Takie por\xF3wnania\u2026"
-lastmod: 2024-02-19 22:04:54.051048
+lastmod: '2024-02-25T18:49:33.290604-07:00'
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w programowaniu to podstawowe zadanie, pozwalaj\u0105\
   ce programistom na ocen\u0119 chronologicznych relacji mi\u0119dzy datami. Takie\

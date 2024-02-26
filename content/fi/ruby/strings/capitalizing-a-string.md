@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:21.983477-07:00
 description: "Merkkijonon alkukirjaimen suurentaminen ohjelmoinnissa viittaa yleens\xE4\
   \ ensimm\xE4isen merkin muuntamiseen suuraakkoseksi ja lopun pienaakkosiksi. Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.976330
+lastmod: '2024-02-25T18:49:53.972732-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen ohjelmoinnissa viittaa yleens\xE4\
   \ ensimm\xE4isen merkin muuntamiseen suuraakkoseksi ja lopun pienaakkosiksi. Ohjelmoijat\u2026"

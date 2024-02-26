@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:06.989044-07:00
 description: "Trabajar con JSON (JavaScript Object Notation) en Clojure implica analizar\
   \ cadenas JSON en estructuras de datos de Clojure (mapas, vectores) y viceversa.\u2026"
-lastmod: 2024-02-19 22:05:17.269090
+lastmod: '2024-02-25T18:49:55.239150-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (JavaScript Object Notation) en Clojure implica analizar\
   \ cadenas JSON en estructuras de datos de Clojure (mapas, vectores) y viceversa.\u2026"

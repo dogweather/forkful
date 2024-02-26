@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:48.448800-07:00
 description: "Regular expressions in C++ are sequences of characters that define a\
   \ search pattern, used for string matching or manipulation. Programmers use them\
   \ for\u2026"
-lastmod: 2024-02-19 22:05:18.811407
+lastmod: '2024-02-25T18:49:56.787285-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions in C++ are sequences of characters that define a search\
   \ pattern, used for string matching or manipulation. Programmers use them for\u2026"

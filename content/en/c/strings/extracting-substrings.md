@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:12.750500-07:00
 description: "Extracting substrings in C involves creating a smaller string (substring)\
   \ from a larger string based on specified criteria, such as position and length.\u2026"
-lastmod: 2024-02-19 22:05:18.963174
+lastmod: '2024-02-25T18:49:56.938485-07:00'
 model: gpt-4-0125-preview
 summary: "Extracting substrings in C involves creating a smaller string (substring)\
   \ from a larger string based on specified criteria, such as position and length.\u2026"

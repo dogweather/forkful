@@ -2,7 +2,7 @@
 date: 2024-01-26 04:17:57.607268-07:00
 description: "L'utilisation d'une coquille interactive, ou d'une boucle de lecture-\xE9\
   valuation-impression (REPL), vous permet de coder de mani\xE8re interactive. Les\u2026"
-lastmod: 2024-02-19 22:05:16.878979
+lastmod: '2024-02-25T18:49:54.867714-07:00'
 model: gpt-4-0125-preview
 summary: "L'utilisation d'une coquille interactive, ou d'une boucle de lecture-\xE9\
   valuation-impression (REPL), vous permet de coder de mani\xE8re interactive. Les\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:50.713841-07:00
 description: "Analizar HTML significa desglosar un trozo de c\xF3digo HTML para comprender\
   \ su estructura y contenido. Los programadores lo hacen para extraer datos,\u2026"
-lastmod: 2024-02-19 22:05:18.096851
+lastmod: '2024-02-25T18:49:56.056884-07:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML significa desglosar un trozo de c\xF3digo HTML para comprender\
   \ su estructura y contenido. Los programadores lo hacen para extraer datos,\u2026"

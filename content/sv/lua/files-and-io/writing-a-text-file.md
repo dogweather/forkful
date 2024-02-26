@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:43.508219-07:00
 description: "Att skriva till en textfil i Lua inneb\xE4r att skapa eller \xF6ppna\
   \ en fil i skrivl\xE4ge, och sedan anv\xE4nda filoperationer f\xF6r att infoga text.\
   \ Det \xE4r en\u2026"
-lastmod: 2024-02-19 22:04:57.284676
+lastmod: '2024-02-25T18:49:36.371150-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Lua inneb\xE4r att skapa eller \xF6ppna en\
   \ fil i skrivl\xE4ge, och sedan anv\xE4nda filoperationer f\xF6r att infoga text.\

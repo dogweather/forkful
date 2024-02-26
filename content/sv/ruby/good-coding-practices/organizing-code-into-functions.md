@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:38.584754-07:00
 description: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv\xE4\
   ndbara delar. Det handlar allt om att g\xF6ra din kod ren, hanterbar och mindre\
   \ buggig.\u2026"
-lastmod: 2024-02-19 22:04:57.690951
+lastmod: '2024-02-25T18:49:36.751103-07:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv\xE4ndbara\
   \ delar. Det handlar allt om att g\xF6ra din kod ren, hanterbar och mindre buggig.\u2026"

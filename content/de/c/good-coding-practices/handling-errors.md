@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:04.012275-07:00
 description: "Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anomale\
   \ Bedingungen, die w\xE4hrend der Programmausf\xFChrung auftreten. Programmierer\
   \ tun\u2026"
-lastmod: 2024-02-19 22:05:13.302224
+lastmod: '2024-02-25T18:49:51.410679-07:00'
 model: gpt-4-0125-preview
 summary: "Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anomale\
   \ Bedingungen, die w\xE4hrend der Programmausf\xFChrung auftreten. Programmierer\

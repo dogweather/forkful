@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:26.224094-07:00
 description: "Checking if a directory exists in Ruby allows programmers to verify\
   \ the presence of a directory before performing operations like reading files or\u2026"
-lastmod: 2024-02-19 22:05:19.025568
+lastmod: '2024-02-25T18:49:57.000763-07:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Ruby allows programmers to verify the\
   \ presence of a directory before performing operations like reading files or\u2026"

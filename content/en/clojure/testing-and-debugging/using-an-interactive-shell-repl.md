@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:48.374381-07:00
 description: "REPL, or Read-Eval-Print Loop, is a programming environment for dynamically\
   \ testing Clojure code piece by piece. Coders use it for immediate feedback,\u2026"
-lastmod: 2024-02-19 22:05:18.254760
+lastmod: '2024-02-25T18:49:56.211009-07:00'
 model: gpt-4-1106-preview
 summary: "REPL, or Read-Eval-Print Loop, is a programming environment for dynamically\
   \ testing Clojure code piece by piece. Coders use it for immediate feedback,\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:45:14.371612-07:00
 description: "Extrair substrings significa pegar peda\xE7os de uma string. Programadores\
   \ fazem isso para manipular e analisar dados mais facilmente."
-lastmod: 2024-02-19 22:05:05.794412
+lastmod: '2024-02-25T18:49:44.359668-07:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings significa pegar peda\xE7os de uma string. Programadores\
   \ fazem isso para manipular e analisar dados mais facilmente."

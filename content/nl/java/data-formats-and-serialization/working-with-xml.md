@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:28.858512-07:00
 description: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
   \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"
-lastmod: 2024-02-19 22:05:09.758994
+lastmod: '2024-02-25T18:49:48.047944-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
   \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"

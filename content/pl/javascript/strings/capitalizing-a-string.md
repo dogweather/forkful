@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:48.151744-07:00
 description: "Wielk\u0105 liter\u0105 na pocz\u0105tku ci\u0105gu znak\xF3w (ang.\
   \ capitalizing a string) rozumiemy zamian\u0119 pierwszej litery ci\u0105gu na du\u017C\
   \u0105, pozostawiaj\u0105c pozosta\u0142e znaki bez\u2026"
-lastmod: 2024-02-19 22:04:54.929077
+lastmod: '2024-02-25T18:49:34.152875-07:00'
 model: gpt-4-0125-preview
 summary: "Wielk\u0105 liter\u0105 na pocz\u0105tku ci\u0105gu znak\xF3w (ang. capitalizing\
   \ a string) rozumiemy zamian\u0119 pierwszej litery ci\u0105gu na du\u017C\u0105\

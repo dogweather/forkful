@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:22.584825-07:00
 description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
   \ proces ustalenia daty, dodaj\u0105c lub odejmuj\u0105c pewien czas od bie\u017C\
   \u0105cej daty. Programi\u015Bci wykonuj\u0105 to\u2026"
-lastmod: 2024-02-19 22:04:54.916757
+lastmod: '2024-02-25T18:49:34.140829-07:00'
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to proces\
   \ ustalenia daty, dodaj\u0105c lub odejmuj\u0105c pewien czas od bie\u017C\u0105\

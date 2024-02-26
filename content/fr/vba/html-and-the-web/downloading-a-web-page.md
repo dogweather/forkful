@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:41.643128-07:00
 description: "T\xE9l\xE9charger une page web en Visual Basic pour Applications (VBA)\
   \ consiste \xE0 r\xE9cup\xE9rer le contenu HTML d'une page web depuis Internet.\
   \ Les programmeurs\u2026"
-lastmod: 2024-02-19 22:05:16.353865
+lastmod: '2024-02-25T18:49:54.338953-07:00'
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web en Visual Basic pour Applications (VBA) consiste\
   \ \xE0 r\xE9cup\xE9rer le contenu HTML d'une page web depuis Internet. Les programmeurs\u2026"

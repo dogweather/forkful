@@ -5,7 +5,7 @@ date: 2024-01-28 22:05:52.888017-07:00
 description: "Refactoring is het proces van het wijzigen van de interne structuur\
   \ van een computerprogramma zonder het externe gedrag aan te passen. Programmeurs\
   \ doen\u2026"
-lastmod: 2024-02-19 22:05:10.208478
+lastmod: '2024-02-25T18:49:48.454616-07:00'
 model: gpt-4-0125-preview
 summary: "Refactoring is het proces van het wijzigen van de interne structuur van\
   \ een computerprogramma zonder het externe gedrag aan te passen. Programmeurs doen\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:09.277637-07:00
 description: "Strings aan elkaar plakken is gewoon een chique manier om te zeggen\
   \ 'ze achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren,\u2026"
-lastmod: 2024-02-19 22:05:10.416387
+lastmod: '2024-02-25T18:49:48.650312-07:00'
 model: gpt-4-0125-preview
 summary: "Strings aan elkaar plakken is gewoon een chique manier om te zeggen 'ze\
   \ achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren,\u2026"

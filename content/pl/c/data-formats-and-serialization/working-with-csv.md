@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:49.480327-07:00
 description: "W \u015Bwiecie programowania praca z plikami CSV (Comma-Separated Values)\
   \ obejmuje odczyt z plik\xF3w tekstowych oraz zapis danych do nich, zorganizowanych\
   \ w\u2026"
-lastmod: 2024-02-19 22:04:55.090987
+lastmod: '2024-02-25T18:49:34.284495-07:00'
 model: gpt-4-0125-preview
 summary: "W \u015Bwiecie programowania praca z plikami CSV (Comma-Separated Values)\
   \ obejmuje odczyt z plik\xF3w tekstowych oraz zapis danych do nich, zorganizowanych\

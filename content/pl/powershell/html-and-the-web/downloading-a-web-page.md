@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:41.242455-07:00
 description: "\"Co to jest i po co?\" Pobieranie strony internetowej to zapisanie\
   \ jej zawarto\u015Bci na dysk. Programi\u015Bci robi\u0105 to, aby przetworzy\u0107\
   \ dane, pobra\u0107 wa\u017Cne\u2026"
-lastmod: 2024-02-19 22:04:54.769952
+lastmod: '2024-02-25T18:49:33.997859-07:00'
 model: gpt-4-1106-preview
 summary: "\"Co to jest i po co?\" Pobieranie strony internetowej to zapisanie jej\
   \ zawarto\u015Bci na dysk. Programi\u015Bci robi\u0105 to, aby przetworzy\u0107\

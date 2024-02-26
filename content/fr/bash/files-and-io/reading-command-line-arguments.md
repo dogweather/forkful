@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:23.137244-07:00
 description: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les\
   \ donn\xE9es fournies lors du lancement d'un script Bash. Les programmeurs utilisent\
   \ cette\u2026"
-lastmod: 2024-02-19 22:05:16.720154
+lastmod: '2024-02-25T18:49:54.701244-07:00'
 model: gpt-4-1106-preview
 summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
   es fournies lors du lancement d'un script Bash. Les programmeurs utilisent cette\u2026"

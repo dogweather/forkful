@@ -2,7 +2,7 @@
 date: 2024-01-25 03:40:06.585419-07:00
 description: "Working with XML means parsing, transforming, and generating XML documents\
   \ in Elm. It's done to interact with many web services and legacy systems that\u2026"
-lastmod: 2024-02-19 22:05:18.500102
+lastmod: '2024-02-25T18:49:56.477918-07:00'
 model: gpt-4-1106-preview
 summary: "Working with XML means parsing, transforming, and generating XML documents\
   \ in Elm. It's done to interact with many web services and legacy systems that\u2026"

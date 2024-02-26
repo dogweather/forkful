@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:45.046064-07:00
 description: "Escribir en un archivo de texto en Fish Shell te permite almacenar datos\
   \ de manera persistente, facilitando la recuperaci\xF3n o manipulaci\xF3n f\xE1\
   cil de datos\u2026"
-lastmod: 2024-02-19 22:05:18.024977
+lastmod: '2024-02-25T18:49:55.988961-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en un archivo de texto en Fish Shell te permite almacenar datos\
   \ de manera persistente, facilitando la recuperaci\xF3n o manipulaci\xF3n f\xE1\

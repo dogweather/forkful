@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:33.304610-07:00
 description: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142\
   ceniu pierwszej litery danego \u0142a\u0144cucha na wielk\u0105 liter\u0119, zachowuj\u0105\
   c reszt\u0119 liter w formie ma\u0142ych, cz\u0119sto\u2026"
-lastmod: 2024-02-19 22:04:54.433696
+lastmod: '2024-02-25T18:49:33.668544-07:00'
 model: gpt-4-0125-preview
 summary: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142ceniu\
   \ pierwszej litery danego \u0142a\u0144cucha na wielk\u0105 liter\u0119, zachowuj\u0105\

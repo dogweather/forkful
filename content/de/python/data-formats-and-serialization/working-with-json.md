@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:58.322411-07:00
 description: "Die Arbeit mit JSON (JavaScript Object Notation) beinhaltet das Parsen\
   \ von JSON-formatierten Strings in Python-Objekte und umgekehrt. Dies ist\u2026"
-lastmod: 2024-02-19 22:05:12.448418
+lastmod: '2024-02-25T18:49:50.598849-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) beinhaltet das Parsen von\
   \ JSON-formatierten Strings in Python-Objekte und umgekehrt. Dies ist\u2026"

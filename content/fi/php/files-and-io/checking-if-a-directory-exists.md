@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:25.662840-07:00
 description: "Hakemiston olemassaolon tarkistaminen on perusteht\xE4v\xE4 PHP-ohjelmoinnissa,\
   \ koska se mahdollistaa hakemiston l\xE4sn\xE4olon varmistamisen ennen toimintoja,\
   \ kuten\u2026"
-lastmod: 2024-02-19 22:05:15.564902
+lastmod: '2024-02-25T18:49:53.582558-07:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perusteht\xE4v\xE4 PHP-ohjelmoinnissa,\
   \ koska se mahdollistaa hakemiston l\xE4sn\xE4olon varmistamisen ennen toimintoja,\

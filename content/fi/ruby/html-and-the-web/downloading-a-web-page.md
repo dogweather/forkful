@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:58.324776-07:00
 description: "Ladataan verkkosivu tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
   \ ohjelmoimalla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n esimerkiksi tiedonkeruuta, sis\xE4\
   ll\xF6n\u2026"
-lastmod: 2024-02-19 22:05:15.994680
+lastmod: '2024-02-25T18:49:53.989649-07:00'
 model: gpt-4-1106-preview
 summary: "Ladataan verkkosivu tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
   \ ohjelmoimalla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n esimerkiksi tiedonkeruuta, sis\xE4\

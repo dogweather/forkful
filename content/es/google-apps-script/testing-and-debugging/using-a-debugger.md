@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:03.581800-07:00
 description: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci\xF3\
   n y eliminaci\xF3n de errores de los scripts destinados a automatizar Google Apps\
   \ o\u2026"
-lastmod: 2024-02-19 22:05:17.166513
+lastmod: '2024-02-25T18:49:55.138311-07:00'
 model: gpt-4-0125-preview
 summary: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci\xF3\
   n y eliminaci\xF3n de errores de los scripts destinados a automatizar Google Apps\

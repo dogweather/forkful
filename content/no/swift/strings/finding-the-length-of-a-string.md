@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:24.964862-07:00
 description: "\xC5 finne lengden av en streng er \xE5 m\xE5le antallet tegn den inneholder.\
   \ Programmerere gj\xF8r dette for data validering, grensesjekking og n\xE5r man\
   \ manipulerer\u2026"
-lastmod: 2024-02-19 22:05:00.407307
+lastmod: '2024-02-25T18:49:39.311887-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden av en streng er \xE5 m\xE5le antallet tegn den inneholder.\
   \ Programmerere gj\xF8r dette for data validering, grensesjekking og n\xE5r man\

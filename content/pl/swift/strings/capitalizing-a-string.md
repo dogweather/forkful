@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:33.346792-07:00
 description: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Swift polega na\
   \ modyfikacji danego ci\u0105gu znak\xF3w, tak aby jego pierwsza litera by\u0142\
   a wielka, a pozosta\u0142e ma\u0142e.\u2026"
-lastmod: 2024-02-19 22:04:54.885568
+lastmod: '2024-02-25T18:49:34.110507-07:00'
 model: gpt-4-0125-preview
 summary: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Swift polega na modyfikacji\
   \ danego ci\u0105gu znak\xF3w, tak aby jego pierwsza litera by\u0142a wielka, a\

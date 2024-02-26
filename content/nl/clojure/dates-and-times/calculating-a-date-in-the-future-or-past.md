@@ -5,7 +5,7 @@ date: 2024-01-28 21:55:16.808680-07:00
 description: "Het berekenen van toekomstige of verleden datums betreft het manipuleren\
   \ van datums om erachter te komen wat ze zullen zijn na een bepaalde periode of\
   \ wat\u2026"
-lastmod: 2024-02-19 22:05:09.522236
+lastmod: '2024-02-25T18:49:47.826253-07:00'
 model: gpt-4-0125-preview
 summary: "Het berekenen van toekomstige of verleden datums betreft het manipuleren\
   \ van datums om erachter te komen wat ze zullen zijn na een bepaalde periode of\

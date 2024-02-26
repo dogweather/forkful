@@ -6,7 +6,7 @@ description: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Google Apps Script c
   \ ph\xE9p l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1p, ch\u1EC9nh s\u1EED\
   a, v\xE0 t\u1EA1o d\u1EEF li\u1EC7u XML, \u0111\xE2y l\xE0 \u0111i\u1EC1u c\u1EA7\
   n thi\u1EBFt cho c\xE1c\u2026"
-lastmod: 2024-02-19 22:04:55.264921
+lastmod: '2024-02-25T18:49:34.447828-07:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Google Apps Script cho ph\xE9\
   p l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1p, ch\u1EC9nh s\u1EEDa,\

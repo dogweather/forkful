@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:58:16.929377-07:00
 description: "Een tijdelijk bestand aanmaken betekent dat je een bestand genereert\
   \ voor een kortetermijndoel, zoals het opslaan van gegevens die alleen nodig zijn\u2026"
-lastmod: 2024-02-19 22:05:09.889971
+lastmod: '2024-02-25T18:49:48.168450-07:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand aanmaken betekent dat je een bestand genereert voor\
   \ een kortetermijndoel, zoals het opslaan van gegevens die alleen nodig zijn\u2026"

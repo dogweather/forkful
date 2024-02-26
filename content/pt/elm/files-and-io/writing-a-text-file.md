@@ -2,7 +2,7 @@
 date: 2024-01-19
 description: "Escrever um arquivo de texto permite salvar dados de forma persistente.\
   \ Programadores fazem isso para manter registros, configura\xE7\xF5es ou compartilhar\u2026"
-lastmod: 2024-02-19 22:05:05.557354
+lastmod: '2024-02-25T18:49:44.139605-07:00'
 summary: "Escrever um arquivo de texto permite salvar dados de forma persistente.\
   \ Programadores fazem isso para manter registros, configura\xE7\xF5es ou compartilhar\u2026"
 title: Escrevendo um arquivo de texto

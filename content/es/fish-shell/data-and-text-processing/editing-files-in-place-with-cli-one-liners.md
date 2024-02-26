@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:40.463361-07:00
 description: "Editar archivos directamente con l\xEDneas de comando (CLI one-liners)\
   \ se trata de hacer cambios directamente en los archivos desde la l\xEDnea de comando,\
   \ sin\u2026"
-lastmod: 2024-02-19 22:05:18.001939
+lastmod: '2024-02-25T18:49:55.966839-07:00'
 model: gpt-4-0125-preview
 summary: "Editar archivos directamente con l\xEDneas de comando (CLI one-liners) se\
   \ trata de hacer cambios directamente en los archivos desde la l\xEDnea de comando,\

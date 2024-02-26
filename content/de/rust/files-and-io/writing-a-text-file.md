@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:07.847355-07:00
 description: "Das Schreiben einer Textdatei in Rust beinhaltet das Erstellen, Beschreiben\
   \ und potenziell Anh\xE4ngen von Daten an eine Datei im Dateisystem. Programmierer\u2026"
-lastmod: 2024-02-19 22:05:12.615625
+lastmod: '2024-02-25T18:49:50.758339-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Rust beinhaltet das Erstellen, Beschreiben\
   \ und potenziell Anh\xE4ngen von Daten an eine Datei im Dateisystem. Programmierer\u2026"

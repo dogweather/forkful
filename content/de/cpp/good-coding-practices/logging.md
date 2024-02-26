@@ -2,7 +2,7 @@
 date: 2024-01-26 00:59:57.140829-07:00
 description: "Das Protokollieren im Kontext der Programmierung ist der Prozess, Ereignisse,\
   \ Zust\xE4nde und Informationen in einer Datei oder einem anderen Ausgabemedium\u2026"
-lastmod: 2024-02-19 22:05:13.125289
+lastmod: '2024-02-25T18:49:51.241432-07:00'
 model: gpt-4-1106-preview
 summary: "Das Protokollieren im Kontext der Programmierung ist der Prozess, Ereignisse,\
   \ Zust\xE4nde und Informationen in einer Datei oder einem anderen Ausgabemedium\u2026"

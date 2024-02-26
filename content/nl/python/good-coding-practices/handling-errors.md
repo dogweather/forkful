@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:23.666645-07:00
 description: "Het afhandelen van fouten in Python (of elke programmeertaal) gaat over\
   \ het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met\u2026"
-lastmod: 2024-02-19 22:05:09.472103
+lastmod: '2024-02-25T18:49:47.777953-07:00'
 model: gpt-4-0125-preview
 summary: "Het afhandelen van fouten in Python (of elke programmeertaal) gaat over\
   \ het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met\u2026"

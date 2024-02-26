@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:58.685835-07:00
 description: "Converting a date to a string in C# is about changing the format from\
   \ a DateTime object to a text representation. Programmers do this for displaying\
   \ dates\u2026"
-lastmod: 2024-02-19 22:05:18.564452
+lastmod: '2024-02-25T18:49:56.544034-07:00'
 model: gpt-4-1106-preview
 summary: "Converting a date to a string in C# is about changing the format from a\
   \ DateTime object to a text representation. Programmers do this for displaying dates\u2026"

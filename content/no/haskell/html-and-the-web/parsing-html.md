@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:15.608836-07:00
 description: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data,\
   \ manipulere HTML-innhold eller interagere med nettsider programmatisk. Denne operasjonen\
   \ er\u2026"
-lastmod: 2024-02-19 22:05:00.103465
+lastmod: '2024-02-25T18:49:39.011598-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data, manipulere\
   \ HTML-innhold eller interagere med nettsider programmatisk. Denne operasjonen er\u2026"

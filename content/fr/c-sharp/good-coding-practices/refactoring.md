@@ -2,7 +2,7 @@
 date: 2024-01-26 01:17:08.223293-07:00
 description: "Le remaniement est le processus de restructuration du code informatique\
   \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"
-lastmod: 2024-02-19 22:05:16.536855
+lastmod: '2024-02-25T18:49:54.523138-07:00'
 model: gpt-4-0125-preview
 summary: "Le remaniement est le processus de restructuration du code informatique\
   \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"

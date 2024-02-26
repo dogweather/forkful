@@ -2,7 +2,7 @@
 date: 2024-01-26 00:58:30.878939-07:00
 description: "\"Logging\" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen\
   \ oder Aktivit\xE4ten, die im Laufe der Zeit in einem System stattfinden. Programmierer\u2026"
-lastmod: 2024-02-19 22:05:13.084075
+lastmod: '2024-02-25T18:49:51.201898-07:00'
 model: gpt-4-1106-preview
 summary: "\"Logging\" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen oder\
   \ Aktivit\xE4ten, die im Laufe der Zeit in einem System stattfinden. Programmierer\u2026"

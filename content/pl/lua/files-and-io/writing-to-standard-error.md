@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:48.261756-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach oraz wyj\u015B\u0107 diagnostycznych do osobnego\
   \ kana\u0142u, r\xF3\u017Cnego od standardowego\u2026"
-lastmod: 2024-02-19 22:04:54.694306
+lastmod: '2024-02-25T18:49:33.921624-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu komunikat\xF3\
   w o b\u0142\u0119dach oraz wyj\u015B\u0107 diagnostycznych do osobnego kana\u0142\

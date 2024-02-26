@@ -2,7 +2,7 @@
 date: 2024-01-20 17:33:04.863825-07:00
 description: "Sammenligning av to datoer handler om \xE5 sjekke hvilken som er tidligst,\
   \ om de er like, eller om den ene ligger etter den andre. Programmerere trenger\u2026"
-lastmod: 2024-02-19 22:05:00.519480
+lastmod: '2024-02-25T18:49:39.417151-07:00'
 model: gpt-4-1106-preview
 summary: "Sammenligning av to datoer handler om \xE5 sjekke hvilken som er tidligst,\
   \ om de er like, eller om den ene ligger etter den andre. Programmerere trenger\u2026"

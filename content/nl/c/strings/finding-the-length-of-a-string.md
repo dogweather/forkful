@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:56:43.211143-07:00
 description: "Het vinden van de lengte van een reeks in C houdt in dat wordt bepaald\
   \ hoeveel tekens er zijn voor de null-terminator `\\0`. Programmeurs doen dit om\u2026"
-lastmod: 2024-02-19 22:05:10.369468
+lastmod: '2024-02-25T18:49:48.606163-07:00'
 model: gpt-4-0125-preview
 summary: "Het vinden van de lengte van een reeks in C houdt in dat wordt bepaald hoeveel\
   \ tekens er zijn voor de null-terminator `\\0`. Programmeurs doen dit om\u2026"

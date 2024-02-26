@@ -5,7 +5,7 @@ date: 2024-01-28 22:02:03.501681-07:00
 description: "Stringinterpolatie gaat over het invoegen van variabelen in strings.\
   \ We doen dit om ter plekke berichten samen te stellen, output te personaliseren\
   \ of\u2026"
-lastmod: 2024-02-19 22:05:10.184914
+lastmod: '2024-02-25T18:49:48.432460-07:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie gaat over het invoegen van variabelen in strings. We\
   \ doen dit om ter plekke berichten samen te stellen, output te personaliseren of\u2026"

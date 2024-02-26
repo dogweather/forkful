@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:17.849098-07:00
 description: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \xD6\
   ffnen einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\u2026"
-lastmod: 2024-02-19 22:05:13.314453
+lastmod: '2024-02-25T18:49:51.422162-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \xD6ffnen\
   \ einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:23.500599-07:00
 description: "Les tableaux associatifs, souvent connus sous le nom de dictionnaires\
   \ dans Visual Basic pour Applications (VBA), permettent aux programmeurs de cr\xE9\
   er des\u2026"
-lastmod: 2024-02-19 22:05:16.347249
+lastmod: '2024-02-25T18:49:54.332441-07:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, souvent connus sous le nom de dictionnaires dans\
   \ Visual Basic pour Applications (VBA), permettent aux programmeurs de cr\xE9er\

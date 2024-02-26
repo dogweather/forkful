@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:14.503733-07:00
 description: "La gestion des erreurs en PHP consiste \xE0 g\xE9rer et r\xE9pondre\
   \ \xE0 des conditions qui perturbent le d\xE9roulement normal d\u2019un programme,\
   \ telles que des fichiers\u2026"
-lastmod: 2024-02-19 22:05:16.622140
+lastmod: '2024-02-25T18:49:54.606563-07:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs en PHP consiste \xE0 g\xE9rer et r\xE9pondre \xE0\
   \ des conditions qui perturbent le d\xE9roulement normal d\u2019un programme, telles\

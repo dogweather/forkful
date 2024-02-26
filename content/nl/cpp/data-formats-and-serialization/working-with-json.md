@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:22.067395-07:00
 description: "Werken met JSON (JavaScript Object Notation) in C++ houdt in dat je\
   \ tekstuele gegevens die als JSON zijn geformatteerd, gaat parsen en genereren.\u2026"
-lastmod: 2024-02-19 22:05:10.221679
+lastmod: '2024-02-25T18:49:48.467196-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met JSON (JavaScript Object Notation) in C++ houdt in dat je tekstuele\
   \ gegevens die als JSON zijn geformatteerd, gaat parsen en genereren.\u2026"

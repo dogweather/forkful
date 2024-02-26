@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:11.211977-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShelliss\xE4\
   \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\u2026"
-lastmod: 2024-02-19 22:05:15.660127
+lastmod: '2024-02-25T18:49:53.675291-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShelliss\xE4\
   \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\u2026"

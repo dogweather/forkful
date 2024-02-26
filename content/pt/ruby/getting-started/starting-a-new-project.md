@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:17.118975-07:00
 description: "Iniciar um novo projeto \xE9 como colocar a primeira pedra na constru\xE7\
   \xE3o de uma ideia. Programadores fazem isso para transformar solu\xE7\xF5es imagin\xE1\
   rias em\u2026"
-lastmod: 2024-02-19 22:05:06.168484
+lastmod: '2024-02-25T18:49:44.712768-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto \xE9 como colocar a primeira pedra na constru\xE7\
   \xE3o de uma ideia. Programadores fazem isso para transformar solu\xE7\xF5es imagin\xE1\

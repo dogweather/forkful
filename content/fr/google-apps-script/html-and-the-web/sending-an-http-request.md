@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:01:27.545091-07:00
 description: "Envoyer une requ\xEAte HTTP avec Google Apps Script consiste \xE0 effectuer\
   \ programmatiquement un appel \xE0 un serveur web externe ou une API. Les programmeurs\u2026"
-lastmod: 2024-02-19 22:05:16.088429
+lastmod: '2024-02-25T18:49:54.077809-07:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec Google Apps Script consiste \xE0 effectuer\
   \ programmatiquement un appel \xE0 un serveur web externe ou une API. Les programmeurs\u2026"

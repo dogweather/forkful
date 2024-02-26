@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:35.949534-07:00
 description: "Regulj\xE4ra uttryck, ett kraftfullt verktyg f\xF6r m\xF6nsterigenk\xE4\
   nning och datahantering, \xE4r essentiella i textbehandlingsuppgifter s\xE5som att\
   \ validera\u2026"
-lastmod: 2024-02-19 22:04:56.758099
+lastmod: '2024-02-25T18:49:35.853231-07:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck, ett kraftfullt verktyg f\xF6r m\xF6nsterigenk\xE4\
   nning och datahantering, \xE4r essentiella i textbehandlingsuppgifter s\xE5som att\

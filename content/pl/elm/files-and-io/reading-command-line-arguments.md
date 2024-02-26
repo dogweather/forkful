@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:50.971506-07:00
 description: "Czytanie argument\xF3w z linii polece\u0144 to spos\xF3b na przekazywanie\
   \ danych do programu podczas jego uruchamiania. Programi\u015Bci robi\u0105 to,\
   \ by zwi\u0119kszy\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.467836
+lastmod: '2024-02-25T18:49:33.701316-07:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w z linii polece\u0144 to spos\xF3b na przekazywanie\
   \ danych do programu podczas jego uruchamiania. Programi\u015Bci robi\u0105 to,\

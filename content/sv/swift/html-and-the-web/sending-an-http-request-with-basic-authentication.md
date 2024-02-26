@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:40.531034-07:00
 description: "Att skicka en HTTP-beg\xE4ran med Basic Authentication inneb\xE4r att\
   \ du inkluderar anv\xE4ndarens legitimationer i en header f\xF6r att f\xE5 tillg\xE5\
   ng till skyddade\u2026"
-lastmod: 2024-02-19 22:04:57.490833
+lastmod: '2024-02-25T18:49:36.566789-07:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran med Basic Authentication inneb\xE4r att du\
   \ inkluderar anv\xE4ndarens legitimationer i en header f\xF6r att f\xE5 tillg\xE5\

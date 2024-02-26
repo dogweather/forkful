@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:55.389469-07:00
 description: "Pisanie pliku tekstowego w Clojure polega na tworzeniu lub modyfikowaniu\
   \ plik\xF3w w celu zapisania danych poza aplikacj\u0105, umo\u017Cliwiaj\u0105c\
   \ trwa\u0142o\u015B\u0107,\u2026"
-lastmod: 2024-02-19 22:04:54.196596
+lastmod: '2024-02-25T18:49:33.439049-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w Clojure polega na tworzeniu lub modyfikowaniu\
   \ plik\xF3w w celu zapisania danych poza aplikacj\u0105, umo\u017Cliwiaj\u0105c\

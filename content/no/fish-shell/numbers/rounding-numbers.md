@@ -2,7 +2,7 @@
 date: 2024-01-26 03:44:05.968619-07:00
 description: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
   \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"
-lastmod: 2024-02-19 22:05:00.498678
+lastmod: '2024-02-25T18:49:39.397676-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
   \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"

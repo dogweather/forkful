@@ -3,7 +3,7 @@ date: 2024-01-26 03:42:49.455390-07:00
 description: "Avrundning av tal inneb\xE4r att trimma ett decimaltal till dess n\xE4\
   rmaste hela v\xE4rde eller till ett best\xE4mt antal decimaler. Programmerare avrundar\
   \ tal f\xF6r\u2026"
-lastmod: 2024-02-19 22:04:57.397218
+lastmod: '2024-02-25T18:49:36.478151-07:00'
 model: gpt-4-0125-preview
 summary: "Avrundning av tal inneb\xE4r att trimma ett decimaltal till dess n\xE4rmaste\
   \ hela v\xE4rde eller till ett best\xE4mt antal decimaler. Programmerare avrundar\

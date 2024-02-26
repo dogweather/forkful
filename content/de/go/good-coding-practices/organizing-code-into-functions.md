@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:00:02.674929-07:00
 description: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wiederverwendbare,\
   \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren.\u2026"
-lastmod: 2024-02-19 22:05:12.339355
+lastmod: '2024-02-25T18:49:50.494615-07:00'
 model: gpt-4-0125-preview
 summary: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wiederverwendbare,\
   \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren.\u2026"

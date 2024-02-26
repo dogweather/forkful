@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:36.900227-07:00
 description: "Converter uma string para min\xFAsculas \xE9 transformar todos os caracteres\
   \ alfab\xE9ticos dela em suas vers\xF5es min\xFAsculas. Programadores fazem isso\
   \ para\u2026"
-lastmod: 2024-02-19 22:05:05.657111
+lastmod: '2024-02-25T18:49:44.234227-07:00'
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas \xE9 transformar todos os caracteres\
   \ alfab\xE9ticos dela em suas vers\xF5es min\xFAsculas. Programadores fazem isso\

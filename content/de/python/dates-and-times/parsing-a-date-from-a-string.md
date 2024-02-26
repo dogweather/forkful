@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:14:52.591364-07:00
 description: "Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von\
   \ textuellen Datum- und Zeitinformationen in ein datetime-Objekt oder ein \xE4quivalentes\u2026"
-lastmod: 2024-02-19 22:05:12.435981
+lastmod: '2024-02-25T18:49:50.587281-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von textuellen\
   \ Datum- und Zeitinformationen in ein datetime-Objekt oder ein \xE4quivalentes\u2026"

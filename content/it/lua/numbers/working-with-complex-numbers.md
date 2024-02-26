@@ -2,7 +2,7 @@
 date: 2024-01-26 04:43:28.679638-07:00
 description: "I numeri complessi estendono l'idea della linea numerica unidimensionale\
   \ al piano bidimensionale includendo un asse immaginario perpendicolare. I\u2026"
-lastmod: 2024-02-19 22:05:02.619970
+lastmod: '2024-02-25T18:49:41.414952-07:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi estendono l'idea della linea numerica unidimensionale\
   \ al piano bidimensionale includendo un asse immaginario perpendicolare. I\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:26.970658-07:00
 description: "Stringinterpolatie stelt u in staat om variabelen direct in een string\
   \ te injecteren. Programmeurs gebruiken het om variabelen in tekst te verweven,\u2026"
-lastmod: 2024-02-19 22:05:09.952068
+lastmod: '2024-02-25T18:49:48.218433-07:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt u in staat om variabelen direct in een string te\
   \ injecteren. Programmeurs gebruiken het om variabelen in tekst te verweven,\u2026"

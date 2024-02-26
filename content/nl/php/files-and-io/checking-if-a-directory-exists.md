@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:14.606191-07:00
 description: "Controleren of een directory bestaat laat je de aanwezigheid van een\
   \ map in het bestandssysteem bevestigen voordat je probeert deze te gebruiken.\u2026"
-lastmod: 2024-02-19 22:05:09.982953
+lastmod: '2024-02-25T18:49:48.248414-07:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat laat je de aanwezigheid van een map\
   \ in het bestandssysteem bevestigen voordat je probeert deze te gebruiken.\u2026"

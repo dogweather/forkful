@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:39.581886-07:00
 description: "Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite,\
   \ um spezifische Informationen oder Elemente zu extrahieren. Es ist eine g\xE4ngige\u2026"
-lastmod: 2024-02-19 22:05:12.424151
+lastmod: '2024-02-25T18:49:50.576037-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite,\
   \ um spezifische Informationen oder Elemente zu extrahieren. Es ist eine g\xE4ngige\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:23.896483-07:00
 description: "Czytanie plik\xF3w tekstowych polega na za\u0142adowaniu ich zawarto\u015B\
   ci do programu. Programi\u015Bci robi\u0105 to, \u017Ceby przetwarza\u0107 dane,\
   \ konfigurowa\u0107 aplikacje lub\u2026"
-lastmod: 2024-02-19 22:04:54.470080
+lastmod: '2024-02-25T18:49:33.703348-07:00'
 model: gpt-4-1106-preview
 summary: "Czytanie plik\xF3w tekstowych polega na za\u0142adowaniu ich zawarto\u015B\
   ci do programu. Programi\u015Bci robi\u0105 to, \u017Ceby przetwarza\u0107 dane,\

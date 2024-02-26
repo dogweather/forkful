@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-28 03:00:40.575760-07:00
 description: "Analizar HTML significa extraer datos de documentos HTML. Los programadores\
   \ lo hacen para interactuar con o manipular contenido web, automatizar la\u2026"
-lastmod: 2024-02-19 22:05:17.960673
+lastmod: '2024-02-25T18:49:55.926112-07:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML significa extraer datos de documentos HTML. Los programadores\
   \ lo hacen para interactuar con o manipular contenido web, automatizar la\u2026"

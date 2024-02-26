@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:49.759452-07:00
 description: "Lire les arguments de la ligne de commande, \xE7a consiste \xE0 r\xE9\
   cup\xE9rer ce que l'utilisateur tape apr\xE8s le nom de ton script. On fait \xE7\
   a pour rendre nos\u2026"
-lastmod: 2024-02-19 22:05:16.990976
+lastmod: '2024-02-25T18:49:54.967042-07:00'
 model: gpt-4-1106-preview
 summary: "Lire les arguments de la ligne de commande, \xE7a consiste \xE0 r\xE9cup\xE9\
   rer ce que l'utilisateur tape apr\xE8s le nom de ton script. On fait \xE7a pour\

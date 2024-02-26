@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:05.456347-07:00
 description: "String interpolation is a method to construct strings that incorporate\
   \ variables, enabling dynamic string creation. Programmers do this to customize\u2026"
-lastmod: 2024-02-19 22:05:18.126755
+lastmod: '2024-02-25T18:49:56.086179-07:00'
 model: gpt-4-0125-preview
 summary: "String interpolation is a method to construct strings that incorporate variables,\
   \ enabling dynamic string creation. Programmers do this to customize\u2026"

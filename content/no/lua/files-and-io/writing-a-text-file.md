@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:46.882601-07:00
 description: "\xC5 skrive til en tekstfil i Lua inneb\xE6rer \xE5 opprette eller \xE5\
   pne en fil i skrivemodus, og deretter bruke filoperasjoner til \xE5 sette inn tekst.\
   \ Dette er en\u2026"
-lastmod: 2024-02-19 22:05:00.213944
+lastmod: '2024-02-25T18:49:39.120925-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Lua inneb\xE6rer \xE5 opprette eller \xE5\
   pne en fil i skrivemodus, og deretter bruke filoperasjoner til \xE5 sette inn tekst.\

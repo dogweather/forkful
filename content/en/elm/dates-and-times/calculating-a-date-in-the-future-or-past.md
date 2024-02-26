@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:39.440942-07:00
 description: "Calculating a future or past date is just tweaking a given date by a\
   \ set amount of time. Programmers do it to handle deadlines, events, reminders\u2014\
   anything\u2026"
-lastmod: 2024-02-19 22:05:18.490762
+lastmod: '2024-02-25T18:49:56.467933-07:00'
 model: gpt-4-1106-preview
 summary: "Calculating a future or past date is just tweaking a given date by a set\
   \ amount of time. Programmers do it to handle deadlines, events, reminders\u2014\

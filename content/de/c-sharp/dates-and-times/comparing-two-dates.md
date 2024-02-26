@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:46.124981-07:00
 description: "Das Vergleichen von zwei Daten \xFCberpr\xFCft, ob sie gleich sind,\
   \ oder ermittelt, welches fr\xFCher oder sp\xE4ter liegt. Entwickler ben\xF6tigen\
   \ dies f\xFCr\u2026"
-lastmod: 2024-02-19 22:05:12.828564
+lastmod: '2024-02-25T18:49:50.960353-07:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen von zwei Daten \xFCberpr\xFCft, ob sie gleich sind, oder\
   \ ermittelt, welches fr\xFCher oder sp\xE4ter liegt. Entwickler ben\xF6tigen dies\

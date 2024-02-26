@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:20.581173-07:00
 description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ est une technique utilis\xE9e pour nettoyer ou formater des cha\xEEnes de caract\xE8\
   res en\u2026"
-lastmod: 2024-02-19 22:05:16.073969
+lastmod: '2024-02-25T18:49:54.063546-07:00'
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ est une technique utilis\xE9e pour nettoyer ou formater des cha\xEEnes de caract\xE8\

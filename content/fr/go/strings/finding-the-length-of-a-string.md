@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:56.212131-07:00
 description: "Trouver la longueur d'une cha\xEEne en Go consiste \xE0 d\xE9terminer\
   \ le nombre de caract\xE8res qu'elle contient. Les programmeurs effectuent r\xE9\
   guli\xE8rement cette\u2026"
-lastmod: 2024-02-19 22:05:16.030700
+lastmod: '2024-02-25T18:49:54.024271-07:00'
 model: gpt-4-0125-preview
 summary: "Trouver la longueur d'une cha\xEEne en Go consiste \xE0 d\xE9terminer le\
   \ nombre de caract\xE8res qu'elle contient. Les programmeurs effectuent r\xE9guli\xE8\

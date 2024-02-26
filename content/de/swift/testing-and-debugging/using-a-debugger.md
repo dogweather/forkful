@@ -3,7 +3,7 @@ date: 2024-01-26 04:10:28.202713-07:00
 description: "Ein Debugger wird eingesetzt, um spezialisierte Werkzeuge zu nutzen,\
   \ mit denen Ihr Code w\xE4hrend der Ausf\xFChrung getestet und inspiziert werden\
   \ kann. Das\u2026"
-lastmod: 2024-02-19 22:05:13.165560
+lastmod: '2024-02-25T18:49:51.280549-07:00'
 model: gpt-4-0125-preview
 summary: "Ein Debugger wird eingesetzt, um spezialisierte Werkzeuge zu nutzen, mit\
   \ denen Ihr Code w\xE4hrend der Ausf\xFChrung getestet und inspiziert werden kann.\

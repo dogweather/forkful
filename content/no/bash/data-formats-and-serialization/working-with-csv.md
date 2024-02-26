@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:49.382736-07:00
 description: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Bash inneb\xE6\
   rer \xE5 behandle og manipulere tabelldata lagret i vanlig tekstformat. Dette er\
   \ essensielt for\u2026"
-lastmod: 2024-02-19 22:05:00.263968
+lastmod: '2024-02-25T18:49:39.171452-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Bash inneb\xE6rer\
   \ \xE5 behandle og manipulere tabelldata lagret i vanlig tekstformat. Dette er essensielt\

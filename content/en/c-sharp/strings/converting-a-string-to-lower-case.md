@@ -2,7 +2,7 @@
 date: 2024-01-20 17:38:15.002505-07:00
 description: "Converting a string to lowercase means transforming all uppercase characters\
   \ in the text to their lowercase equivalents. Programmers do it for\u2026"
-lastmod: 2024-02-19 22:05:18.542514
+lastmod: '2024-02-25T18:49:56.521244-07:00'
 model: gpt-4-1106-preview
 summary: "Converting a string to lowercase means transforming all uppercase characters\
   \ in the text to their lowercase equivalents. Programmers do it for\u2026"

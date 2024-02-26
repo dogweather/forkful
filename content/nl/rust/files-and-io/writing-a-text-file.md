@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:01.638036-07:00
 description: "Schrijven naar een tekstbestand is het opslaan van gegevens als leesbare\
   \ tekens in een bestand op uw opslagapparaat. Programmeurs doen dit om gegevens\u2026"
-lastmod: 2024-02-19 22:05:09.661442
+lastmod: '2024-02-25T18:49:47.956389-07:00'
 model: gpt-4-0125-preview
 summary: "Schrijven naar een tekstbestand is het opslaan van gegevens als leesbare\
   \ tekens in een bestand op uw opslagapparaat. Programmeurs doen dit om gegevens\u2026"

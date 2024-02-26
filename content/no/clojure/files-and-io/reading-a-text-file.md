@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:54.728538-07:00
 description: "\xC5 lese en tekstfil betyr \xE5 hente data fra en fil lagret p\xE5\
   \ disken for \xE5 bruke den i et program. Programmerere gj\xF8r dette fordi filer\
   \ ofte inneholder\u2026"
-lastmod: 2024-02-19 22:04:59.704845
+lastmod: '2024-02-25T18:49:38.646629-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 hente data fra en fil lagret p\xE5 disken\
   \ for \xE5 bruke den i et program. Programmerere gj\xF8r dette fordi filer ofte\

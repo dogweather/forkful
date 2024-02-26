@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:39.135210-07:00
 description: "Calcolare una data nel futuro o nel passato permette di trovare date\
   \ specifiche a partire da un punto noto. I programmatori lo fanno per gestire eventi,\u2026"
-lastmod: 2024-02-19 22:05:02.639878
+lastmod: '2024-02-25T18:49:41.433218-07:00'
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato permette di trovare date specifiche\
   \ a partire da un punto noto. I programmatori lo fanno per gestire eventi,\u2026"

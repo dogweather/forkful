@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:22.477437-07:00
 description: "Comprobar si un directorio existe significa confirmar si una ruta de\
   \ carpeta espec\xEDfica est\xE1 presente en el sistema de archivos. Los programadores\
   \ lo\u2026"
-lastmod: 2024-02-19 22:05:17.515763
+lastmod: '2024-02-25T18:49:55.481152-07:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe significa confirmar si una ruta de carpeta\
   \ espec\xEDfica est\xE1 presente en el sistema de archivos. Los programadores lo\u2026"

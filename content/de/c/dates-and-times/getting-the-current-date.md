@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:57:38.863862-07:00
 description: "Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf die\
   \ Standard-C-Bibliothek, um das aktuelle Datum und die aktuelle Zeit des Systems\u2026"
-lastmod: 2024-02-19 22:05:13.305562
+lastmod: '2024-02-25T18:49:51.413808-07:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf die Standard-C-Bibliothek,\
   \ um das aktuelle Datum und die aktuelle Zeit des Systems\u2026"

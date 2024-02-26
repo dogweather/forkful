@@ -3,7 +3,7 @@ date: 2024-01-26 00:51:04.460534-07:00
 description: "Fehler zu behandeln bedeutet, Code zu schreiben, der damit umgehen kann,\
   \ wenn etwas schiefgeht. Programmierer tun das, um Abst\xFCrze zu verhindern und\
   \ um\u2026"
-lastmod: 2024-02-19 22:05:12.519026
+lastmod: '2024-02-25T18:49:50.666134-07:00'
 model: gpt-4-1106-preview
 summary: "Fehler zu behandeln bedeutet, Code zu schreiben, der damit umgehen kann,\
   \ wenn etwas schiefgeht. Programmierer tun das, um Abst\xFCrze zu verhindern und\

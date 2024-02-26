@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:47.162652-07:00
 description: "Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von\
   \ integrierten Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten\u2026"
-lastmod: 2024-02-19 22:05:13.000885
+lastmod: '2024-02-25T18:49:51.121872-07:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von integrierten\
   \ Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten\u2026"

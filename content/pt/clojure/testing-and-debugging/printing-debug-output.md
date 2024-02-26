@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:32.085052-07:00
 description: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 essencialmente escrever informa\xE7\
   \xF5es dos seus programas para ajudar a entender o que est\xE1 a acontecer enquanto\
   \ o c\xF3digo\u2026"
-lastmod: 2024-02-19 22:05:05.271536
+lastmod: '2024-02-25T18:49:43.860757-07:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 essencialmente escrever informa\xE7\
   \xF5es dos seus programas para ajudar a entender o que est\xE1 a acontecer enquanto\

@@ -6,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi YAML \u0111\u1EC1 c\u1EADp \u0111\u1EBFn
   c ph\xE2n t\xEDch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u trong ng\xF4n ng\u1EEF YAML Ain't\
   \ Markup Language th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi. L\u1EADp tr\xEC\
   nh vi\xEAn s\u1EED d\u1EE5ng n\xF3\u2026"
-lastmod: 2024-02-19 22:04:56.272844
+lastmod: '2024-02-25T18:49:35.415401-07:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7\
   c ph\xE2n t\xEDch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u trong ng\xF4n ng\u1EEF YAML Ain't\

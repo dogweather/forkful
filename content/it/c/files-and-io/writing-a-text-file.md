@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:27.878052-07:00
 description: "Scrivere un file di testo in C comporta la creazione o l'apertura di\
   \ un file in modalit\xE0 di scrittura e poi l'uso delle funzioni di I/O su file\
   \ di C per\u2026"
-lastmod: 2024-02-19 22:05:02.997064
+lastmod: '2024-02-25T18:49:41.763903-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in C comporta la creazione o l'apertura di un\
   \ file in modalit\xE0 di scrittura e poi l'uso delle funzioni di I/O su file di\

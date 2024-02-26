@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:24.890926-07:00
 description: "Checking if a directory exists in Elixir is about verifying the presence\
   \ of a directory at a specified path in the file system. Programmers do this to\u2026"
-lastmod: 2024-02-19 22:05:18.303783
+lastmod: '2024-02-25T18:49:56.258473-07:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Elixir is about verifying the presence\
   \ of a directory at a specified path in the file system. Programmers do this to\u2026"

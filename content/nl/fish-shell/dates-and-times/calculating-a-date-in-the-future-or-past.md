@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:28.935075-07:00
 description: "Het berekenen van een toekomstige of verleden datum houdt in dat je\
   \ met datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:10.348764
+lastmod: '2024-02-25T18:49:48.586573-07:00'
 model: gpt-4-0125-preview
 summary: "Het berekenen van een toekomstige of verleden datum houdt in dat je met\
   \ datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"

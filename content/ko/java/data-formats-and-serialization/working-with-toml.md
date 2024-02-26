@@ -6,7 +6,7 @@ description: "TOML\uC740 Tom's Obvious, Minimal Language\uB97C \uC758\uBBF8\uD56
   . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uC27D\uAC8C \uC77D\uACE0\
   \ \uC4F8 \uC218 \uC788\uC73C\uBA70, \uD574\uC2DC \uD14C\uC774\uBE14\uC5D0 \uC798\
   \ \uB9F5\uD551\uB418\uAE30 \uB54C\uBB38\uC5D0 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
-lastmod: 2024-02-19 22:05:13.994672
+lastmod: '2024-02-25T18:49:52.085048-07:00'
 model: gpt-4-0125-preview
 summary: "TOML\uC740 Tom's Obvious, Minimal Language\uB97C \uC758\uBBF8\uD569\uB2C8\
   \uB2E4. \uC774\uAC83\uC740 \uAD6C\uC131 \uD30C\uC77C\uC744 \uC704\uD574 \uC0AC\uC6A9\

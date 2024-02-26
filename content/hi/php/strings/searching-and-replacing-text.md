@@ -7,7 +7,7 @@ description: "Searching and replacing text in PHP \u092E\u0924\u0932\u092C \u093
   \u0902 \u0921\u0947\u091F\u093E \u0915\u094B \u092B\u0949\u0930\u094D\u092E\u0947\
   \u091F \u092F\u093E \u0905\u092A\u0921\u0947\u091F \u0915\u0930\u0928\u0947 \u0915\
   \u0947 \u0932\u093F\u090F, \u091C\u0948\u0938\u0947 \u0915\u093F\u0938\u0940\u2026"
-lastmod: 2024-02-19 22:05:11.462748
+lastmod: '2024-02-25T18:49:49.650083-07:00'
 model: gpt-4-1106-preview
 summary: "Searching and replacing text in PHP \u092E\u0924\u0932\u092C \u0939\u0948\
   \ \u0926\u093F\u090F \u0917\u090F \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u0915\

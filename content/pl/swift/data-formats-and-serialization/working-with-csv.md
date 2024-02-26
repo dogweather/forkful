@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:47.055452-07:00
 description: "Praca z plikami CSV (warto\u015Bci oddzielone przecinkami) polega na\
   \ parsowaniu i generowaniu strukturalnych danych z plik\xF3w tekstowych, gdzie ka\u017C\
   da linia\u2026"
-lastmod: 2024-02-19 22:04:54.925932
+lastmod: '2024-02-25T18:49:34.149887-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (warto\u015Bci oddzielone przecinkami) polega na parsowaniu\
   \ i generowaniu strukturalnych danych z plik\xF3w tekstowych, gdzie ka\u017Cda linia\u2026"

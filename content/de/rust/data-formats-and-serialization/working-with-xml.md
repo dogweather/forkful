@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:21.198965-07:00
 description: "XML, die Abk\xFCrzung f\xFCr eXtensible Markup Language, ist wie der\
   \ geschw\xE4tzige Cousin von JSON. Mit XML setzen Sie sich auseinander, wenn es\
   \ um\u2026"
-lastmod: 2024-02-19 22:05:12.621949
+lastmod: '2024-02-25T18:49:50.764282-07:00'
 model: gpt-4-0125-preview
 summary: "XML, die Abk\xFCrzung f\xFCr eXtensible Markup Language, ist wie der geschw\xE4\
   tzige Cousin von JSON. Mit XML setzen Sie sich auseinander, wenn es um\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:29.321969-07:00
 description: "Trabajar con JSON (JavaScript Object Notation) implica analizar datos\
   \ JSON para convertirlos de y hacia un formato utilizable en TypeScript. Los\u2026"
-lastmod: 2024-02-19 22:05:17.351975
+lastmod: '2024-02-25T18:49:55.320465-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (JavaScript Object Notation) implica analizar datos JSON\
   \ para convertirlos de y hacia un formato utilizable en TypeScript. Los\u2026"

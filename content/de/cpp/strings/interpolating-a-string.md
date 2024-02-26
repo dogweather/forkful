@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:25.842274-07:00
 description: "String-Interpolation erleichtert das Zusammensetzen von Strings, indem\
   \ Variablen oder Ausdr\xFCcke direkt in String-Literale eingebettet werden. Es macht\
   \ den\u2026"
-lastmod: 2024-02-19 22:05:13.105606
+lastmod: '2024-02-25T18:49:51.222484-07:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erleichtert das Zusammensetzen von Strings, indem Variablen\
   \ oder Ausdr\xFCcke direkt in String-Literale eingebettet werden. Es macht den\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:16:46.640989-07:00
 description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119\
   tla Czytaj-Ewaluuj-Wypisz) pozwala na pisania i uruchamianie kodu PHP na bie\u017C\
   \u0105co. Jest to\u2026"
-lastmod: 2024-02-19 22:04:54.633047
+lastmod: '2024-02-25T18:49:33.862851-07:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119tla\
   \ Czytaj-Ewaluuj-Wypisz) pozwala na pisania i uruchamianie kodu PHP na bie\u017C\

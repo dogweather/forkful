@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:11.248285-07:00
 description: "Ler argumentos da linha de comando \xE9 simplesmente capturar entradas\
   \ fornecidas durante a execu\xE7\xE3o de um programa. Programadores fazem isso para\
   \ permitir\u2026"
-lastmod: 2024-02-19 22:05:06.183664
+lastmod: '2024-02-25T18:49:44.731902-07:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando \xE9 simplesmente capturar entradas fornecidas\
   \ durante a execu\xE7\xE3o de um programa. Programadores fazem isso para permitir\u2026"

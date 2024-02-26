@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:57.907089-07:00
 description: "Controleren of een map bestaat in Elixir zorgt ervoor dat je interactie\
   \ hebt met een geldig bestandspad. Programmeurs doen dit om fouten te vermijden,\u2026"
-lastmod: 2024-02-19 22:05:09.568321
+lastmod: '2024-02-25T18:49:47.869410-07:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Elixir zorgt ervoor dat je interactie\
   \ hebt met een geldig bestandspad. Programmeurs doen dit om fouten te vermijden,\u2026"

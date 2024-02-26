@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:05.656700-07:00
 description: Basic authentication slaps a username:password combo onto an HTTP request.
   Devs use it for a quick-and-dirty way to prove who's asking for what on the web.
-lastmod: 2024-02-19 22:05:18.515965
+lastmod: '2024-02-25T18:49:56.494219-07:00'
 model: gpt-4-1106-preview
 summary: Basic authentication slaps a username:password combo onto an HTTP request.
   Devs use it for a quick-and-dirty way to prove who's asking for what on the web.

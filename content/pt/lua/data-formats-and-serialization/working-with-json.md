@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:20.099269-07:00
 description: "Trabalhar com JSON em Lua envolve a an\xE1lise de strings formatadas\
   \ em JSON para tabelas Lua e vice-versa, possibilitando uma f\xE1cil troca de dados\
   \ entre\u2026"
-lastmod: 2024-02-19 22:05:05.784005
+lastmod: '2024-02-25T18:49:44.350351-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON em Lua envolve a an\xE1lise de strings formatadas em\
   \ JSON para tabelas Lua e vice-versa, possibilitando uma f\xE1cil troca de dados\

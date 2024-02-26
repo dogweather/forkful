@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:42.149344-07:00
 description: "JSONin k\xE4sittely Bash-ohjelmoinnissa sis\xE4lt\xE4\xE4 JSON-tietojen\
   \ j\xE4sent\xE4misen, poimimisen ja manipuloinnin suoraan komentorivilt\xE4. Ohjelmoijat\
   \ tekev\xE4t n\xE4in\u2026"
-lastmod: 2024-02-19 22:05:15.656263
+lastmod: '2024-02-25T18:49:53.671543-07:00'
 model: gpt-4-0125-preview
 summary: "JSONin k\xE4sittely Bash-ohjelmoinnissa sis\xE4lt\xE4\xE4 JSON-tietojen\
   \ j\xE4sent\xE4misen, poimimisen ja manipuloinnin suoraan komentorivilt\xE4. Ohjelmoijat\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:18.769653-07:00
 description: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
   \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"
-lastmod: 2024-02-19 22:05:09.438320
+lastmod: '2024-02-25T18:49:47.746284-07:00'
 model: gpt-4-0125-preview
 summary: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
   \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"

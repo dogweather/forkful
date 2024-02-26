@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:08.130580-07:00
 description: "Interpolacja ci\u0105gu znak\xF3w umo\u017Cliwia wstawianie zmiennych\
   \ bezpo\u015Brednio w tekst. U\u017Cywamy jej, by u\u0142atwi\u0107 tworzenie dynamicznych\
   \ wiadomo\u015Bci i formatowa\u0107 je\u2026"
-lastmod: 2024-02-19 22:04:54.801219
+lastmod: '2024-02-25T18:49:34.028944-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja ci\u0105gu znak\xF3w umo\u017Cliwia wstawianie zmiennych bezpo\u015B\
   rednio w tekst. U\u017Cywamy jej, by u\u0142atwi\u0107 tworzenie dynamicznych wiadomo\u015B\

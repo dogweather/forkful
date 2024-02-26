@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:15.552423-07:00
 description: "Eine Textdatei in Kotlin zu schreiben, beinhaltet das Erstellen einer\
   \ Datei und das Eingeben von Textinhalten in diese, eine g\xE4ngige Aufgabe zum\
   \ Speichern\u2026"
-lastmod: 2024-02-19 22:05:12.791150
+lastmod: '2024-02-25T18:49:50.925521-07:00'
 model: gpt-4-0125-preview
 summary: "Eine Textdatei in Kotlin zu schreiben, beinhaltet das Erstellen einer Datei\
   \ und das Eingeben von Textinhalten in diese, eine g\xE4ngige Aufgabe zum Speichern\u2026"

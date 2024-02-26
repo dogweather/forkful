@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:13.830910-07:00
 description: "Czytanie pliku tekstowego w j\u0119zyku C polega na otwarciu pliku w\
   \ systemie w celu wydobycia informacji oraz ich manipulowania lub wy\u015Bwietlania\
   \ zgodnie z\u2026"
-lastmod: 2024-02-19 22:04:55.085091
+lastmod: '2024-02-25T18:49:34.279072-07:00'
 model: gpt-4-0125-preview
 summary: "Czytanie pliku tekstowego w j\u0119zyku C polega na otwarciu pliku w systemie\
   \ w celu wydobycia informacji oraz ich manipulowania lub wy\u015Bwietlania zgodnie\

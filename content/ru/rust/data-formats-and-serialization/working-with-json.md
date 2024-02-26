@@ -11,7 +11,7 @@ description: "JSON (JavaScript Object Notation) \u2014 \u044D\u0442\u043E \u0442
   \u0442\u043E\u0442\u044B \u0438 \u043C\u0435\u0436\u044F\u0437\u044B\u043A\u043E\
   \u0432\u043E\u0439 \u0441\u043E\u0432\u043C\u0435\u0441\u0442\u0438\u043C\u043E\u0441\
   \u0442\u0438,\u2026"
-lastmod: 2024-02-19 22:05:03.620370
+lastmod: '2024-02-25T18:49:42.370789-07:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \u2014 \u044D\u0442\u043E \u0442\u0435\
   \u043A\u0441\u0442\u043E\u0432\u044B\u0439 \u0444\u043E\u0440\u043C\u0430\u0442\

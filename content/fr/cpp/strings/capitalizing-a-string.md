@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:04.994202-07:00
 description: "Mettre une cha\xEEne de caract\xE8res en capitales implique de convertir\
   \ le premier caract\xE8re de chaque mot de la cha\xEEne en majuscule s'il est en\
   \ minuscule,\u2026"
-lastmod: 2024-02-19 22:05:16.817190
+lastmod: '2024-02-25T18:49:54.807557-07:00'
 model: gpt-4-0125-preview
 summary: "Mettre une cha\xEEne de caract\xE8res en capitales implique de convertir\
   \ le premier caract\xE8re de chaque mot de la cha\xEEne en majuscule s'il est en\

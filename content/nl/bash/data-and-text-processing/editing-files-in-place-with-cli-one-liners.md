@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:00:19.709788-07:00
 description: "Stel je voor dat je er net achter komt dat je een batch-update moet\
   \ uitvoeren op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"
-lastmod: 2024-02-19 22:05:10.062028
+lastmod: '2024-02-25T18:49:48.316576-07:00'
 model: gpt-4-0125-preview
 summary: "Stel je voor dat je er net achter komt dat je een batch-update moet uitvoeren\
   \ op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"

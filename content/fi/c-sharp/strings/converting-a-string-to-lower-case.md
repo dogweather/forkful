@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:04.359725-07:00
 description: "Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, ett\xE4\
   \ voimme vertailla tekstej\xE4 tasapuolisesti riippumatta alkuper\xE4isest\xE4 kirjainkoosta\
   \ tai\u2026"
-lastmod: 2024-02-19 22:05:15.453454
+lastmod: '2024-02-25T18:49:53.475583-07:00'
 model: gpt-4-1106-preview
 summary: "Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, ett\xE4 voimme\
   \ vertailla tekstej\xE4 tasapuolisesti riippumatta alkuper\xE4isest\xE4 kirjainkoosta\

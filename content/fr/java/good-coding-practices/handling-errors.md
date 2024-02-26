@@ -3,7 +3,7 @@ date: 2024-01-26 00:53:12.922871-07:00
 description: "G\xE9rer les erreurs signifie \xE9crire du code qui anticipe et traite\
   \ les probl\xE8mes susceptibles de survenir. Les programmeurs le font pour rendre\
   \ les\u2026"
-lastmod: 2024-02-19 22:05:16.407832
+lastmod: '2024-02-25T18:49:54.394978-07:00'
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs signifie \xE9crire du code qui anticipe et traite les\
   \ probl\xE8mes susceptibles de survenir. Les programmeurs le font pour rendre les\u2026"

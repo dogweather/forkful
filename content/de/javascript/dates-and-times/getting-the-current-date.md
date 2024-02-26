@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:57.084444-07:00
 description: "Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende\
   \ Aufgabe, die das Abrufen und m\xF6glicherweise Manipulieren des heutigen Datums\
   \ und der\u2026"
-lastmod: 2024-02-19 22:05:13.214397
+lastmod: '2024-02-25T18:49:51.327175-07:00'
 model: gpt-4-0125-preview
 summary: "Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende Aufgabe,\
   \ die das Abrufen und m\xF6glicherweise Manipulieren des heutigen Datums und der\u2026"

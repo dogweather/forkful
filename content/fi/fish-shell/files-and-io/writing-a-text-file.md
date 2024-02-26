@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:56.092973-07:00
 description: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa datan\
   \ pysyv\xE4n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia\
   \ joko samalla\u2026"
-lastmod: 2024-02-19 22:05:15.907242
+lastmod: '2024-02-25T18:49:53.919726-07:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa datan pysyv\xE4\
   n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia joko samalla\u2026"

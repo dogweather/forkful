@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:38.440396-07:00
 description: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de usu\xE1rio e senha em um cabe\xE7alho para acessar um recurso\
   \ protegido.\u2026"
-lastmod: 2024-02-19 22:05:05.401511
+lastmod: '2024-02-25T18:49:43.988601-07:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de usu\xE1rio e senha em um cabe\xE7alho para acessar um recurso\

@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:14.564394-07:00
 description: "Downloading a web page in Visual Basic for Applications (VBA) involves\
   \ fetching the HTML content of a web page from the Internet. Programmers often\u2026"
-lastmod: 2024-02-19 22:05:18.401664
+lastmod: '2024-02-25T18:49:56.355703-07:00'
 model: gpt-4-0125-preview
 summary: "Downloading a web page in Visual Basic for Applications (VBA) involves fetching\
   \ the HTML content of a web page from the Internet. Programmers often\u2026"

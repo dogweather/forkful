@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:14.619305-07:00
 description: "Je code organiseren in functies splitst je script in herbruikbare delen.\
   \ Het gaat allemaal om het schoon, beheersbaar en minder foutgevoelig maken van\
   \ je\u2026"
-lastmod: 2024-02-19 22:05:10.432859
+lastmod: '2024-02-25T18:49:48.666318-07:00'
 model: gpt-4-0125-preview
 summary: "Je code organiseren in functies splitst je script in herbruikbare delen.\
   \ Het gaat allemaal om het schoon, beheersbaar en minder foutgevoelig maken van\

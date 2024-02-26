@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:27.644485-07:00
 description: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 sobre empacotar blocos de\
   \ c\xF3digo que realizam tarefas espec\xEDficas. Fazer isso torna seu c\xF3digo\
   \ limpo, mais f\xE1cil de manter e\u2026"
-lastmod: 2024-02-19 22:05:05.274663
+lastmod: '2024-02-25T18:49:43.863653-07:00'
 model: gpt-4-1106-preview
 summary: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 sobre empacotar blocos de c\xF3\
   digo que realizam tarefas espec\xEDficas. Fazer isso torna seu c\xF3digo limpo,\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:44.537063-07:00
 description: "I sammanhanget av Arduino-programmering \xE4r det viktigt att kontrollera\
   \ om en mapp finns p\xE5 ett SD-kort eller liknande lagringsmodul f\xF6r att kunna\
   \ l\xE4sa\u2026"
-lastmod: 2024-02-19 22:04:57.417317
+lastmod: '2024-02-25T18:49:36.497038-07:00'
 model: gpt-4-0125-preview
 summary: "I sammanhanget av Arduino-programmering \xE4r det viktigt att kontrollera\
   \ om en mapp finns p\xE5 ett SD-kort eller liknande lagringsmodul f\xF6r att kunna\

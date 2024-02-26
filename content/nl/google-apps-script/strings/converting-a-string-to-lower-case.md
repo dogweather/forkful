@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:51:25.398796-07:00
 description: "Het omzetten van een string naar kleine letters in Google Apps Script,\
   \ een cloudgebaseerde scripttaal voor het automatiseren van taken in Google-\u2026"
-lastmod: 2024-02-19 22:05:09.403587
+lastmod: '2024-02-25T18:49:47.713926-07:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van een string naar kleine letters in Google Apps Script, een\
   \ cloudgebaseerde scripttaal voor het automatiseren van taken in Google-\u2026"

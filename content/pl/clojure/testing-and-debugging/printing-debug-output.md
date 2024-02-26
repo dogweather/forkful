@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:10.962410-07:00
 description: "W debugowaniu wypisywanie komunikat\xF3w to jak zostawianie sobie notatek\
   \ po drodze - \u017Ceby wiedzie\u0107, co si\u0119 dzieje. Programi\u015Bci u\u017C\
   ywaj\u0105 tego, aby zobaczy\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.180303
+lastmod: '2024-02-25T18:49:33.422493-07:00'
 model: gpt-4-1106-preview
 summary: "W debugowaniu wypisywanie komunikat\xF3w to jak zostawianie sobie notatek\
   \ po drodze - \u017Ceby wiedzie\u0107, co si\u0119 dzieje. Programi\u015Bci u\u017C\

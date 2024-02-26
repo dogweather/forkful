@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:42.154829-07:00
 description: "Het aaneenschakelen van strings betekent dat ze achter elkaar worden\
   \ geplakt. Programmeurs doen dit om tekst te combineren, zoals het bouwen van een\u2026"
-lastmod: 2024-02-19 22:05:10.323762
+lastmod: '2024-02-25T18:49:48.563046-07:00'
 model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings betekent dat ze achter elkaar worden geplakt.\
   \ Programmeurs doen dit om tekst te combineren, zoals het bouwen van een\u2026"

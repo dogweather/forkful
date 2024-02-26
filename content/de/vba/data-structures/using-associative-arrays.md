@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:25.389715-07:00
 description: "Assoziative Arrays, oft auch als W\xF6rterb\xFCcher in Visual Basic\
   \ f\xFCr Anwendungen (VBA) bekannt, erm\xF6glichen es Programmierern, Sammlungen\
   \ von Schl\xFCssel-Wert-\u2026"
-lastmod: 2024-02-19 22:05:12.634022
+lastmod: '2024-02-25T18:49:50.776559-07:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oft auch als W\xF6rterb\xFCcher in Visual Basic f\xFC\
   r Anwendungen (VBA) bekannt, erm\xF6glichen es Programmierern, Sammlungen von Schl\xFC\

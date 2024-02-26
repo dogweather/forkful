@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:07:38.470018-07:00
 description: "Getallen afronden is het proces waarbij de cijfers van een nummer worden\
   \ aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het\u2026"
-lastmod: 2024-02-19 22:05:10.373925
+lastmod: '2024-02-25T18:49:48.610254-07:00'
 model: gpt-4-0125-preview
 summary: "Getallen afronden is het proces waarbij de cijfers van een nummer worden\
   \ aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het\u2026"

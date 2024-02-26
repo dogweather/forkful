@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:43.092097-07:00
 description: "Converter uma string para min\xFAsculas significa transformar todos\
   \ os caracteres alfab\xE9ticos da string de mai\xFAsculas para min\xFAsculas. Programadores\
   \ realizam\u2026"
-lastmod: 2024-02-19 22:05:05.884498
+lastmod: '2024-02-25T18:49:44.444573-07:00'
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas significa transformar todos os caracteres\
   \ alfab\xE9ticos da string de mai\xFAsculas para min\xFAsculas. Programadores realizam\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:06:08.160782-07:00
 description: "En programmation C, lire les arguments de la ligne de commande permet\
   \ aux programmes d'accepter des entr\xE9es directement depuis le terminal, ce qui\u2026"
-lastmod: 2024-02-19 22:05:17.039724
+lastmod: '2024-02-25T18:49:55.013033-07:00'
 model: gpt-4-0125-preview
 summary: "En programmation C, lire les arguments de la ligne de commande permet aux\
   \ programmes d'accepter des entr\xE9es directement depuis le terminal, ce qui\u2026"

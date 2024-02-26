@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:22.759639-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente\
   \ filtrar strings para remover pe\xE7as desnecess\xE1rias ou espec\xEDficas. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-19 22:05:06.054808
+lastmod: '2024-02-25T18:49:44.605391-07:00'
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente filtrar\
   \ strings para remover pe\xE7as desnecess\xE1rias ou espec\xEDficas. Programadores\

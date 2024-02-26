@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:00.160115-07:00
 description: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do procesu\
   \ restrukturyzacji istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji\
   \ bez zmiany jego\u2026"
-lastmod: 2024-02-19 22:04:54.095868
+lastmod: '2024-02-25T18:49:33.336362-07:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do procesu restrukturyzacji\
   \ istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji bez zmiany jego\u2026"

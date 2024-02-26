@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:41.655399-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 opprette og sende\
   \ en foresp\xF8rsel til en webserver for \xE5 hente eller sende inn data. Programmerere\
   \ gj\xF8r dette i C\u2026"
-lastmod: 2024-02-19 22:05:00.548933
+lastmod: '2024-02-25T18:49:39.445927-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 opprette og sende en\
   \ foresp\xF8rsel til en webserver for \xE5 hente eller sende inn data. Programmerere\

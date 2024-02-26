@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:53.464183-07:00
 description: "Mit\xE4 ja miksi? Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4\
   m\xE4\xE4ri\xE4, koska el\xE4mme kalentereissa ja aikatauluissa. Ohjelmoijina tarvitsemme\
   \ t\xE4t\xE4 toimintoa\u2026"
-lastmod: 2024-02-19 22:05:15.437364
+lastmod: '2024-02-25T18:49:53.460262-07:00'
 model: gpt-4-1106-preview
 summary: "Mit\xE4 ja miksi? Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\
   \xE4ri\xE4, koska el\xE4mme kalentereissa ja aikatauluissa. Ohjelmoijina tarvitsemme\

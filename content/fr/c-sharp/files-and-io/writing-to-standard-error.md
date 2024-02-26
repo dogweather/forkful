@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:39.263891-07:00
 description: "\xC9crire sur l'erreur standard (stderr) en C# implique de diriger les\
   \ messages d'erreur et les diagnostics s\xE9par\xE9ment de la sortie r\xE9guli\xE8\
   re (stdout) pour\u2026"
-lastmod: 2024-02-19 22:05:16.545080
+lastmod: '2024-02-25T18:49:54.531038-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en C# implique de diriger les messages\
   \ d'erreur et les diagnostics s\xE9par\xE9ment de la sortie r\xE9guli\xE8re (stdout)\

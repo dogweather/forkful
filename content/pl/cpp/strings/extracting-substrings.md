@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:25.531448-07:00
 description: "Wyodr\u0119bnianie podci\u0105g\xF3w to proces wycinania fragment\xF3\
   w z wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\
   \ i analizowa\u0107 tekst, weryfikowa\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.847390
+lastmod: '2024-02-25T18:49:34.073722-07:00'
 model: gpt-4-1106-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w to proces wycinania fragment\xF3w z\
   \ wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\

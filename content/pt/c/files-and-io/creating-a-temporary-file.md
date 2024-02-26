@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:08.330832-07:00
 description: "Criar um arquivo tempor\xE1rio em C envolve gerar um arquivo destinado\
   \ a ser usado por curta dura\xE7\xE3o, geralmente como espa\xE7o de rascunho para\
   \ processamento\u2026"
-lastmod: 2024-02-19 22:05:06.141556
+lastmod: '2024-02-25T18:49:44.687488-07:00'
 model: gpt-4-0125-preview
 summary: "Criar um arquivo tempor\xE1rio em C envolve gerar um arquivo destinado a\
   \ ser usado por curta dura\xE7\xE3o, geralmente como espa\xE7o de rascunho para\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:42.955500-07:00
 description: "Het kapitaliseren van een string betekent het converteren van het eerste\
   \ karakter naar een hoofdletter en de rest in kleine letters houden. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:09.759996
+lastmod: '2024-02-25T18:49:48.048916-07:00'
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een string betekent het converteren van het eerste\
   \ karakter naar een hoofdletter en de rest in kleine letters houden. Programmeurs\u2026"

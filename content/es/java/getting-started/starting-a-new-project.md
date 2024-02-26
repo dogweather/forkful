@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:55.102231-07:00
 description: "Empezar un nuevo proyecto en Java es configurar un entorno desde cero\
   \ para codificar una aplicaci\xF3n fresca. Programadores lo hacen para innovar,\
   \ resolver\u2026"
-lastmod: 2024-02-19 22:05:17.460609
+lastmod: '2024-02-25T18:49:55.427319-07:00'
 model: gpt-4-1106-preview
 summary: "Empezar un nuevo proyecto en Java es configurar un entorno desde cero para\
   \ codificar una aplicaci\xF3n fresca. Programadores lo hacen para innovar, resolver\u2026"

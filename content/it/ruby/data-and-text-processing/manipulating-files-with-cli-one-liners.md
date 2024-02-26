@@ -2,7 +2,7 @@
 date: 2024-01-27 16:21:15.048091-07:00
 description: "Manipolare file con one-liner CLI in Ruby consiste nell'eseguire operazioni\
   \ comuni sui file direttamente dal tuo terminale utilizzando script Ruby. \xC8 un\u2026"
-lastmod: 2024-02-19 22:05:03.018228
+lastmod: '2024-02-25T18:49:41.784086-07:00'
 model: gpt-4-0125-preview
 summary: "Manipolare file con one-liner CLI in Ruby consiste nell'eseguire operazioni\
   \ comuni sui file direttamente dal tuo terminale utilizzando script Ruby. \xC8 un\u2026"

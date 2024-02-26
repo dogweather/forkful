@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:43.328748-07:00
 description: "Organiser le code en fonctions consiste \xE0 regrouper les op\xE9rations\
   \ li\xE9es en blocs r\xE9utilisables. Nous le faisons pour am\xE9liorer la lisibilit\xE9\
   \ et la\u2026"
-lastmod: 2024-02-19 22:05:16.229223
+lastmod: '2024-02-25T18:49:54.216379-07:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions consiste \xE0 regrouper les op\xE9rations\
   \ li\xE9es en blocs r\xE9utilisables. Nous le faisons pour am\xE9liorer la lisibilit\xE9\

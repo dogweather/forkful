@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:04.229027-07:00
 description: "Enviar una solicitud HTTP significa pedirle a un servidor web que comparta\
   \ datos o que reciba los tuyos. Los programadores lo hacen para interactuar con\u2026"
-lastmod: 2024-02-19 22:05:17.706620
+lastmod: '2024-02-25T18:49:55.669823-07:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP significa pedirle a un servidor web que comparta\
   \ datos o que reciba los tuyos. Los programadores lo hacen para interactuar con\u2026"

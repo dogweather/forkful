@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:17.450478-07:00
 description: "\xC5 trekke ut understrenger betyr \xE5 plukke bestemte deler ut av\
   \ en tekststreng. Programmerere gj\xF8r dette for \xE5 analysere data, rense inndata\
   \ eller jobbe med\u2026"
-lastmod: 2024-02-19 22:05:00.273405
+lastmod: '2024-02-25T18:49:39.180744-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 trekke ut understrenger betyr \xE5 plukke bestemte deler ut av en tekststreng.\
   \ Programmerere gj\xF8r dette for \xE5 analysere data, rense inndata eller jobbe\

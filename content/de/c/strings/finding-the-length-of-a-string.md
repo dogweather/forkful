@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:56:23.691369-07:00
 description: "Die Ermittlung der L\xE4nge eines Strings in C beinhaltet die Bestimmung\
   \ der Anzahl der Zeichen vor dem Nullterminator `\\0`. Programmierer tun dies, um\u2026"
-lastmod: 2024-02-19 22:05:13.283385
+lastmod: '2024-02-25T18:49:51.393020-07:00'
 model: gpt-4-0125-preview
 summary: "Die Ermittlung der L\xE4nge eines Strings in C beinhaltet die Bestimmung\
   \ der Anzahl der Zeichen vor dem Nullterminator `\\0`. Programmierer tun dies, um\u2026"

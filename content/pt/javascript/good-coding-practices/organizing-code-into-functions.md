@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:01.780022-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es segmenta tarefas em peda\xE7\
   os reutiliz\xE1veis, tornando o c\xF3digo mais limpo e f\xE1cil de manter. Fazemos\
   \ isso para reduzir a\u2026"
-lastmod: 2024-02-19 22:05:06.033212
+lastmod: '2024-02-25T18:49:44.584828-07:00'
 model: gpt-4-1106-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es segmenta tarefas em peda\xE7os reutiliz\xE1\
   veis, tornando o c\xF3digo mais limpo e f\xE1cil de manter. Fazemos isso para reduzir\

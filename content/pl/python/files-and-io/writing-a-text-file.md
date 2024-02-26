@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:22.215750-07:00
 description: "Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, kt\xF3re\
   \ obejmuje tworzenie lub otwieranie pliku, a nast\u0119pnie dodawanie do niego tekstu\
   \ lub\u2026"
-lastmod: 2024-02-19 22:04:54.152479
+lastmod: '2024-02-25T18:49:33.394404-07:00'
 model: gpt-4-0125-preview
 summary: "Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, kt\xF3re obejmuje\
   \ tworzenie lub otwieranie pliku, a nast\u0119pnie dodawanie do niego tekstu lub\u2026"

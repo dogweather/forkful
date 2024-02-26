@@ -2,7 +2,7 @@
 date: 2024-01-26 04:17:04.412781-07:00
 description: "La shell interattiva, o Ciclo Leggi-Valuta-Stampa (REPL, dall'inglese\
   \ Read-Eval-Print Loop), ti consente di digitare comandi PowerShell e ottenere un\u2026"
-lastmod: 2024-02-19 22:05:02.718371
+lastmod: '2024-02-25T18:49:41.505231-07:00'
 model: gpt-4-0125-preview
 summary: "La shell interattiva, o Ciclo Leggi-Valuta-Stampa (REPL, dall'inglese Read-Eval-Print\
   \ Loop), ti consente di digitare comandi PowerShell e ottenere un\u2026"

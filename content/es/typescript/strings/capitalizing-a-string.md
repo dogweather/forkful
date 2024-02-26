@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:32.285288-07:00
 description: "Capitalizar una cadena implica modificar el primer car\xE1cter de una\
   \ cadena dada a may\xFAsculas si est\xE1 en min\xFAsculas, a menudo dejando el resto\
   \ de la cadena\u2026"
-lastmod: 2024-02-19 22:05:17.314406
+lastmod: '2024-02-25T18:49:55.283553-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica modificar el primer car\xE1cter de una cadena\
   \ dada a may\xFAsculas si est\xE1 en min\xFAsculas, a menudo dejando el resto de\

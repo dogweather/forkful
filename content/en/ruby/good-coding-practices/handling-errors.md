@@ -5,7 +5,7 @@ date: 2024-01-21 21:19:07.187007-07:00
 description: "Error handling is about expecting the unexpected in code \u2014 managing\
   \ mistakes and problems gracefully without crashing. Programmers do it to control\
   \ the\u2026"
-lastmod: 2024-02-19 22:05:19.019467
+lastmod: '2024-02-25T18:49:56.994500-07:00'
 model: gpt-4-1106-preview
 summary: "Error handling is about expecting the unexpected in code \u2014 managing\
   \ mistakes and problems gracefully without crashing. Programmers do it to control\

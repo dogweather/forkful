@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:09.088845-07:00
 description: "Tekstitiedoston kirjoittaminen Google Apps Scriptill\xE4 mahdollistaa\
   \ kehitt\xE4jille datan tallentamisen pysyv\xE4sti, tehden siit\xE4 saatavilla tulevaa\
   \ k\xE4ytt\xF6\xE4 tai\u2026"
-lastmod: 2024-02-19 22:05:15.033152
+lastmod: '2024-02-25T18:49:53.094387-07:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Google Apps Scriptill\xE4 mahdollistaa kehitt\xE4\
   jille datan tallentamisen pysyv\xE4sti, tehden siit\xE4 saatavilla tulevaa k\xE4\

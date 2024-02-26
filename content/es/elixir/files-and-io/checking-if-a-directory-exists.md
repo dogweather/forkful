@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:03.591465-07:00
 description: "Verificar si un directorio existe en Elixir se trata de confirmar la\
   \ presencia de un directorio en una ruta especificada en el sistema de archivos.\
   \ Los\u2026"
-lastmod: 2024-02-19 22:05:17.303281
+lastmod: '2024-02-25T18:49:55.272803-07:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Elixir se trata de confirmar la presencia\
   \ de un directorio en una ruta especificada en el sistema de archivos. Los\u2026"

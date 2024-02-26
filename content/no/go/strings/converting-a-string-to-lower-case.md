@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:55:04.417003-07:00
 description: "Konvertering av en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
   \ som muliggj\xF8r uniformitet og konsistens i tekstbehandling, essensielt for\u2026"
-lastmod: 2024-02-19 22:04:59.531304
+lastmod: '2024-02-25T18:49:38.484994-07:00'
 model: gpt-4-0125-preview
 summary: "Konvertering av en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
   \ som muliggj\xF8r uniformitet og konsistens i tekstbehandling, essensielt for\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:14.353142-07:00
 description: "Das Schreiben auf den Standardfehler (stderr) in Bash bedeutet, Fehlermeldungen\
   \ oder jede wichtige diagnostische Ausgabe getrennt von der Standardausgabe\u2026"
-lastmod: 2024-02-19 22:05:13.006995
+lastmod: '2024-02-25T18:49:51.127964-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) in Bash bedeutet, Fehlermeldungen\
   \ oder jede wichtige diagnostische Ausgabe getrennt von der Standardausgabe\u2026"

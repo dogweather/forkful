@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:04.520351-07:00
 description: "Downloading a web page in Google Apps Script involves fetching the content\
   \ of a web page via HTML for various purposes, such as web scraping, data\u2026"
-lastmod: 2024-02-19 22:05:18.175826
+lastmod: '2024-02-25T18:49:56.134214-07:00'
 model: gpt-4-0125-preview
 summary: "Downloading a web page in Google Apps Script involves fetching the content\
   \ of a web page via HTML for various purposes, such as web scraping, data\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:14.201533-07:00
 description: "Iniciar un nuevo proyecto es b\xE1sicamente establecer el terreno para\
   \ tu futuro c\xF3digo. Los programadores lo hacen para comenzar con una base estructurada\
   \ y\u2026"
-lastmod: 2024-02-19 22:05:17.248557
+lastmod: '2024-02-25T18:49:55.219041-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es b\xE1sicamente establecer el terreno para tu\
   \ futuro c\xF3digo. Los programadores lo hacen para comenzar con una base estructurada\

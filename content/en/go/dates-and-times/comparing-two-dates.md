@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:15.338186-07:00
 description: "Comparing two dates in programming is a fundamental task allowing developers\
   \ to evaluate the chronological relationship between dates. Such comparisons\u2026"
-lastmod: 2024-02-19 22:05:18.150385
+lastmod: '2024-02-25T18:49:56.109185-07:00'
 model: gpt-4-0125-preview
 summary: "Comparing two dates in programming is a fundamental task allowing developers\
   \ to evaluate the chronological relationship between dates. Such comparisons\u2026"

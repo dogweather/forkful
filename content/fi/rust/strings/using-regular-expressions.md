@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:07.896724-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4\
   jille merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\
   \u2026"
-lastmod: 2024-02-19 22:05:15.242182
+lastmod: '2024-02-25T18:49:53.272192-07:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4jille\
   \ merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\

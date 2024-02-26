@@ -5,7 +5,7 @@ date: 2024-01-28 21:57:11.910023-07:00
 description: "Een datum omzetten naar een string in Elixir verandert de datum van\
   \ een struct naar een leesbare reeks tekens voor weergave of opslag. Programmeurs\
   \ doen\u2026"
-lastmod: 2024-02-19 22:05:09.565249
+lastmod: '2024-02-25T18:49:47.866512-07:00'
 model: gpt-4-0125-preview
 summary: "Een datum omzetten naar een string in Elixir verandert de datum van een\
   \ struct naar een leesbare reeks tekens voor weergave of opslag. Programmeurs doen\u2026"

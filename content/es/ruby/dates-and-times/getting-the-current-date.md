@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:27.089663-07:00
 description: "Obtener la fecha actual es una tarea esencial en casi cualquier esfuerzo\
   \ de programaci\xF3n, desde registrar actividades en una aplicaci\xF3n hasta generar\u2026"
-lastmod: 2024-02-19 22:05:18.109556
+lastmod: '2024-02-25T18:49:56.068966-07:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual es una tarea esencial en casi cualquier esfuerzo\
   \ de programaci\xF3n, desde registrar actividades en una aplicaci\xF3n hasta generar\u2026"

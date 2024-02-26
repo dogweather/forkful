@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:14.618285-07:00
 description: "CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Werte,\
   \ sind ein \xFCbliches Datenformat f\xFCr den Austausch, das tabellarische Daten\
   \ in\u2026"
-lastmod: 2024-02-19 22:05:12.838797
+lastmod: '2024-02-25T18:49:50.970057-07:00'
 model: gpt-4-0125-preview
 summary: "CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Werte,\
   \ sind ein \xFCbliches Datenformat f\xFCr den Austausch, das tabellarische Daten\

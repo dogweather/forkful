@@ -2,7 +2,7 @@
 date: 2024-01-26 04:27:22.145456-07:00
 description: "Trabajar con XML en Arduino involucra analizar y manipular datos XML,\
   \ que usualmente provienen de APIs web o archivos de configuraci\xF3n. Los programadores\u2026"
-lastmod: 2024-02-19 22:05:17.862329
+lastmod: '2024-02-25T18:49:55.828106-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML en Arduino involucra analizar y manipular datos XML, que\
   \ usualmente provienen de APIs web o archivos de configuraci\xF3n. Los programadores\u2026"

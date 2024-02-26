@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:06.466232-07:00
 description: "Att skapa en tempor\xE4r fil inneb\xE4r att generera en fil som endast\
   \ \xE4r avsedd f\xF6r tillf\xE4llig anv\xE4ndning. Programmerare g\xF6r detta f\xF6\
   r att hantera data som\u2026"
-lastmod: 2024-02-19 22:04:57.379048
+lastmod: '2024-02-25T18:49:36.460415-07:00'
 model: gpt-4-1106-preview
 summary: "Att skapa en tempor\xE4r fil inneb\xE4r att generera en fil som endast \xE4\
   r avsedd f\xF6r tillf\xE4llig anv\xE4ndning. Programmerare g\xF6r detta f\xF6r att\

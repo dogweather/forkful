@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:40.975270-07:00
 description: "Debugger in C sind spezialisierte Werkzeuge, die es Entwicklern erm\xF6\
   glichen, Schritt f\xFCr Schritt durch ihren Code zu gehen, Variablen zu \xFCberpr\xFC\
   fen und\u2026"
-lastmod: 2024-02-19 22:05:13.298987
+lastmod: '2024-02-25T18:49:51.407593-07:00'
 model: gpt-4-0125-preview
 summary: "Debugger in C sind spezialisierte Werkzeuge, die es Entwicklern erm\xF6\
   glichen, Schritt f\xFCr Schritt durch ihren Code zu gehen, Variablen zu \xFCberpr\xFC\

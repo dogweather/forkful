@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:40.291775-07:00
 description: "Sapere la lunghezza di una stringa significa contarne i caratteri. Lo\
   \ facciamo per verificare input dell'utente, per manipolare testo o semplicemente\
   \ per\u2026"
-lastmod: 2024-02-19 22:05:02.659432
+lastmod: '2024-02-25T18:49:41.451385-07:00'
 model: gpt-4-1106-preview
 summary: "Sapere la lunghezza di una stringa significa contarne i caratteri. Lo facciamo\
   \ per verificare input dell'utente, per manipolare testo o semplicemente per\u2026"

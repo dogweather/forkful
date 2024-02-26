@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:31.280862-07:00
 description: "Travailler avec JSON en programmation Bash implique d'analyser, d'extraire\
   \ et de manipuler des donn\xE9es JSON directement depuis la ligne de commande. Les\u2026"
-lastmod: 2024-02-19 22:05:16.726315
+lastmod: '2024-02-25T18:49:54.707286-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON en programmation Bash implique d'analyser, d'extraire\
   \ et de manipuler des donn\xE9es JSON directement depuis la ligne de commande. Les\u2026"

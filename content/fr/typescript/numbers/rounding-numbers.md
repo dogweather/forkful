@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:17.114965-07:00
 description: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une pr\xE9\
   cision sp\xE9cifique. Les programmeurs le font pour contr\xF4ler la sortie num\xE9\
   rique afin\u2026"
-lastmod: 2024-02-19 22:05:16.261926
+lastmod: '2024-02-25T18:49:54.248153-07:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une pr\xE9\
   cision sp\xE9cifique. Les programmeurs le font pour contr\xF4ler la sortie num\xE9\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:29.677647-07:00
 description: "Deleting characters matching a pattern in Bash lets you manipulate strings\
   \ to fit your needs\u2014like stripping unwanted chars or sanitizing input. It's\
   \ the\u2026"
-lastmod: 2024-02-19 22:05:18.690928
+lastmod: '2024-02-25T18:49:56.668059-07:00'
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in Bash lets you manipulate strings\
   \ to fit your needs\u2014like stripping unwanted chars or sanitizing input. It's\

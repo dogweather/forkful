@@ -2,7 +2,7 @@
 date: 2024-01-20 17:34:42.744165-07:00
 description: "Concatenare le stringhe significa unirle in una sola. I programmatori\
   \ lo fanno per costruire testo dinamicamente, come combinare nome e cognome o generare\u2026"
-lastmod: 2024-02-19 22:05:02.489516
+lastmod: '2024-02-25T18:49:41.291920-07:00'
 model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unirle in una sola. I programmatori lo\
   \ fanno per costruire testo dinamicamente, come combinare nome e cognome o generare\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:41.715386-07:00
 description: "\xC9crire un fichier texte en Go implique de cr\xE9er et d'\xE9crire\
   \ des cha\xEEnes de donn\xE9es dans un fichier texte nouveau ou existant. Les programmeurs\
   \ font cela\u2026"
-lastmod: 2024-02-19 22:05:16.064928
+lastmod: '2024-02-25T18:49:54.054608-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Go implique de cr\xE9er et d'\xE9crire des\
   \ cha\xEEnes de donn\xE9es dans un fichier texte nouveau ou existant. Les programmeurs\

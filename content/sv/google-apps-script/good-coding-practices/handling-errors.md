@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:01.803816-07:00
 description: "Felhantering i Google Apps Script handlar om att f\xF6rutse, f\xE5nga\
   \ och svara p\xE5 undantag eller fel som uppst\xE5r under skriptets k\xF6rning.\
   \ Programmerare\u2026"
-lastmod: 2024-02-19 22:04:56.684666
+lastmod: '2024-02-25T18:49:35.783439-07:00'
 model: gpt-4-0125-preview
 summary: "Felhantering i Google Apps Script handlar om att f\xF6rutse, f\xE5nga och\
   \ svara p\xE5 undantag eller fel som uppst\xE5r under skriptets k\xF6rning. Programmerare\u2026"

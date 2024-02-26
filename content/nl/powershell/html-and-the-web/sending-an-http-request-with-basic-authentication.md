@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:16.438387-07:00
 description: "Een HTTP-verzoek verzenden met basisauthenticatie is wanneer je programma\
   \ contact maakt met een webserver en zegt: \"H\xE9, ik ben het,\" met behulp van\
   \ een\u2026"
-lastmod: 2024-02-19 22:05:10.112728
+lastmod: '2024-02-25T18:49:48.364381-07:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden met basisauthenticatie is wanneer je programma\
   \ contact maakt met een webserver en zegt: \"H\xE9, ik ben het,\" met behulp van\

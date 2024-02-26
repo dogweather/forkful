@@ -6,7 +6,7 @@ date: 2024-01-28 21:23:40.973933-07:00
 description: "Str\xE4nginterpolering \xE4r metoden att b\xE4dda in uttryck inom str\xE4\
   ngliteraler. Programmerare anv\xE4nder det f\xF6r att dynamiskt infoga v\xE4rden\
   \ i str\xE4ngar, vilket\u2026"
-lastmod: 2024-02-19 22:04:56.709560
+lastmod: '2024-02-25T18:49:35.806563-07:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering \xE4r metoden att b\xE4dda in uttryck inom str\xE4\
   ngliteraler. Programmerare anv\xE4nder det f\xF6r att dynamiskt infoga v\xE4rden\

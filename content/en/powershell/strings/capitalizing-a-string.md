@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:42.618463-07:00
 description: "Capitalizing a string in PowerShell involves transforming the first\
   \ character of a given string to uppercase while leaving the rest of the string\u2026"
-lastmod: 2024-02-19 22:05:18.729722
+lastmod: '2024-02-25T18:49:56.705591-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in PowerShell involves transforming the first character\
   \ of a given string to uppercase while leaving the rest of the string\u2026"

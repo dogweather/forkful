@@ -3,7 +3,7 @@ date: 2024-01-26 04:26:13.785024-07:00
 description: "TOML er et menneskelesbart data serialiseringsspr\xE5k, ofte brukt for\
   \ konfigurasjoner. Programmerere bruker TOML p\xE5 grunn av dets enkelhet og klarhet,\
   \ som\u2026"
-lastmod: 2024-02-19 22:04:59.842726
+lastmod: '2024-02-25T18:49:38.780761-07:00'
 model: gpt-4-0125-preview
 summary: "TOML er et menneskelesbart data serialiseringsspr\xE5k, ofte brukt for konfigurasjoner.\
   \ Programmerere bruker TOML p\xE5 grunn av dets enkelhet og klarhet, som\u2026"

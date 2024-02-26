@@ -2,7 +2,7 @@
 date: 2024-01-26 03:40:53.425198-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa niiden\
   \ kiusallisten kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien\u2026"
-lastmod: 2024-02-19 22:05:15.538306
+lastmod: '2024-02-25T18:49:53.557219-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa niiden kiusallisten\
   \ kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien\u2026"

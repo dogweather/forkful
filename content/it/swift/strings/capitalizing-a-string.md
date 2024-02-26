@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:31.363892-07:00
 description: "Capitalizzare una stringa in Swift modifica la stringa data in modo\
   \ che il suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli. I\u2026"
-lastmod: 2024-02-19 22:05:02.826951
+lastmod: '2024-02-25T18:49:41.604918-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in Swift modifica la stringa data in modo che\
   \ il suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli. I\u2026"

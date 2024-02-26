@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:38.505539-07:00
 description: "Ottenere la data corrente in Haskell comporta il recupero del tempo\
   \ corrente del sistema e la sua trasformazione in un formato di data leggibile.\
   \ I\u2026"
-lastmod: 2024-02-19 22:05:02.551194
+lastmod: '2024-02-25T18:49:41.349264-07:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Haskell comporta il recupero del tempo corrente\
   \ del sistema e la sua trasformazione in un formato di data leggibile. I\u2026"

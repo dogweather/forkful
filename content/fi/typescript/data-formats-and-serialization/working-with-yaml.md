@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:18.898952-07:00
 description: "YAML, ihmisl\xE4heisesti suunniteltu tietojen serialisointikieli, on\
   \ usein k\xE4yt\xF6ss\xE4 konfiguraatiotiedostoissa, prosessien v\xE4lisess\xE4\
   \ viestinn\xE4ss\xE4 ja tietojen\u2026"
-lastmod: 2024-02-19 22:05:15.230552
+lastmod: '2024-02-25T18:49:53.260991-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, ihmisl\xE4heisesti suunniteltu tietojen serialisointikieli, on usein\
   \ k\xE4yt\xF6ss\xE4 konfiguraatiotiedostoissa, prosessien v\xE4lisess\xE4 viestinn\xE4\

@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separeras\
   \ med kommatecken. Programmerare anv\xE4nder CSV f\xF6r enkelheten att lagra och\
   \ utbyta data mellan\u2026"
-lastmod: 2024-02-19 22:04:57.515250
+lastmod: '2024-02-25T18:49:36.589006-07:00'
 summary: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separeras med\
   \ kommatecken. Programmerare anv\xE4nder CSV f\xF6r enkelheten att lagra och utbyta\
   \ data mellan\u2026"

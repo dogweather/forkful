@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:34.842112-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Fish Shelliss\xE4 mahdollistavat\
   \ merkkijonojen etsimisen, vastaavuuksien l\xF6yt\xE4misen ja manipuloinnin tiettyjen\
   \ mallien\u2026"
-lastmod: 2024-02-19 22:05:15.876945
+lastmod: '2024-02-25T18:49:53.889832-07:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Fish Shelliss\xE4 mahdollistavat\
   \ merkkijonojen etsimisen, vastaavuuksien l\xF6yt\xE4misen ja manipuloinnin tiettyjen\

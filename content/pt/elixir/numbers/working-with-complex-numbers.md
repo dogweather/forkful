@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:14.856685-07:00
 description: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria\
   \ (como `3 + 4i`). Eles s\xE3o usados em engenharia, f\xEDsica e certos problemas\
   \ de computa\xE7\xE3o.\u2026"
-lastmod: 2024-02-19 22:05:05.307604
+lastmod: '2024-02-25T18:49:43.893426-07:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria (como\
   \ `3 + 4i`). Eles s\xE3o usados em engenharia, f\xEDsica e certos problemas de computa\xE7\

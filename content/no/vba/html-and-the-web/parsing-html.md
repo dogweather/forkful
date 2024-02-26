@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:12.801023-07:00
 description: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 trekke ut spesifikk informasjon fra et HTML-dokument. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:04:59.862245
+lastmod: '2024-02-25T18:49:38.798619-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE6rer \xE5\
   \ trekke ut spesifikk informasjon fra et HTML-dokument. Programmerere gj\xF8r dette\

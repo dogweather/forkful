@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:52:46.309129-07:00
 description: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter\
   \ van een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"
-lastmod: 2024-02-19 22:05:09.353549
+lastmod: '2024-02-25T18:49:47.666349-07:00'
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van\
   \ een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"

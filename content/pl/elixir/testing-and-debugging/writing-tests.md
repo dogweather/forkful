@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:31.347116-07:00
 description: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych skrypt\xF3\
   w w celu weryfikacji zachowania Twojego kodu. Programi\u015Bci robi\u0105 to, aby\
   \ zapewni\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.225262
+lastmod: '2024-02-25T18:49:33.467843-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych skrypt\xF3\
   w w celu weryfikacji zachowania Twojego kodu. Programi\u015Bci robi\u0105 to, aby\

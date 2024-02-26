@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:27.408580-07:00
 description: "Scaricare una pagina web significa prelevare il suo contenuto HTML,\
   \ CSS e JavaScript dal server a locale. Si fa per elaborare dati, fare test o archiviare\u2026"
-lastmod: 2024-02-19 22:05:02.885022
+lastmod: '2024-02-25T18:49:41.658793-07:00'
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa prelevare il suo contenuto HTML, CSS\
   \ e JavaScript dal server a locale. Si fa per elaborare dati, fare test o archiviare\u2026"

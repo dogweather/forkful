@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:27.531579-07:00
 description: "Regulj\xE4ra uttryck, eller regex, l\xE5ter utvecklare s\xF6ka, matcha\
   \ och manipulera str\xE4ngar med avancerade m\xF6nsterpassningstekniker. I Rust\
   \ hj\xE4lper anv\xE4ndning\u2026"
-lastmod: 2024-02-19 22:04:56.891822
+lastmod: '2024-02-25T18:49:35.983986-07:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck, eller regex, l\xE5ter utvecklare s\xF6ka, matcha och\
   \ manipulera str\xE4ngar med avancerade m\xF6nsterpassningstekniker. I Rust hj\xE4\

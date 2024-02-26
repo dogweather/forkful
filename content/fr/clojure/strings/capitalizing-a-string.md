@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:58.896473-07:00
 description: "La capitalisation d'une cha\xEEne implique de modifier la cha\xEEne\
   \ afin que son premier caract\xE8re soit en majuscule, tandis que le reste de la\
   \ cha\xEEne demeure\u2026"
-lastmod: 2024-02-19 22:05:16.164000
+lastmod: '2024-02-25T18:49:54.153035-07:00'
 model: gpt-4-0125-preview
 summary: "La capitalisation d'une cha\xEEne implique de modifier la cha\xEEne afin\
   \ que son premier caract\xE8re soit en majuscule, tandis que le reste de la cha\xEE\

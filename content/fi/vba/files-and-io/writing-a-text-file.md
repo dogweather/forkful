@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:36.020471-07:00
 description: "Tekstitiedoston kirjoittaminen Visual Basic for Applications (VBA) -ohjelmistolla\
   \ liittyy tiedostoihin tekstidatan luomiseen, muokkaamiseen tai\u2026"
-lastmod: 2024-02-19 22:05:15.316583
+lastmod: '2024-02-25T18:49:53.343963-07:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Visual Basic for Applications (VBA) -ohjelmistolla\
   \ liittyy tiedostoihin tekstidatan luomiseen, muokkaamiseen tai\u2026"

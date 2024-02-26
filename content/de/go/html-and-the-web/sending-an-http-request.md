@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:36.179364-07:00
 description: "Das Senden einer HTTP-Anfrage beinhaltet, dass von Ihrer Go-Anwendung\
   \ ein Aufruf zu einem Webserver, einer API oder einem anderen HTTP-basierten Dienst\u2026"
-lastmod: 2024-02-19 22:05:12.329271
+lastmod: '2024-02-25T18:49:50.485259-07:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage beinhaltet, dass von Ihrer Go-Anwendung ein\
   \ Aufruf zu einem Webserver, einer API oder einem anderen HTTP-basierten Dienst\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:01.436897-07:00
 description: "Escrever testes em Swift envolve criar e executar c\xF3digo que verifica\
   \ a corre\xE7\xE3o de outras unidades de c\xF3digo na sua aplica\xE7\xE3o. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-19 22:05:05.987267
+lastmod: '2024-02-25T18:49:44.541573-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Swift envolve criar e executar c\xF3digo que verifica\
   \ a corre\xE7\xE3o de outras unidades de c\xF3digo na sua aplica\xE7\xE3o. Programadores\

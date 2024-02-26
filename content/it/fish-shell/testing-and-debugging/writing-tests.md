@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:48.734497-07:00
 description: "Scrivere test in Fish Shell comporta la creazione di script che eseguono\
   \ automaticamente il tuo codice per validarne il comportamento rispetto ai\u2026"
-lastmod: 2024-02-19 22:05:02.935033
+lastmod: '2024-02-25T18:49:41.705370-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in Fish Shell comporta la creazione di script che eseguono\
   \ automaticamente il tuo codice per validarne il comportamento rispetto ai\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:54.660899-07:00
 description: "Zoeken en vervangen van tekst in programmeren is precies wat het lijkt:\
   \ het scannen van strings op bepaalde patronen en deze vervangen door iets anders.\u2026"
-lastmod: 2024-02-19 22:05:10.227702
+lastmod: '2024-02-25T18:49:48.472931-07:00'
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst in programmeren is precies wat het lijkt:\
   \ het scannen van strings op bepaalde patronen en deze vervangen door iets anders.\u2026"

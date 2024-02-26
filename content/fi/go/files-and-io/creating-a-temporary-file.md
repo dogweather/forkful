@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:04.799561-07:00
 description: "V\xE4liaikaistiedoston luominen Go:lla mahdollistaa v\xE4liaikaisen,\
   \ lyhytaikaiseen k\xE4ytt\xF6\xF6n suunnitellun tiedoston luomisen, joka on tarkoitettu\
   \ p\xE4\xE4asiassa\u2026"
-lastmod: 2024-02-19 22:05:14.987035
+lastmod: '2024-02-25T18:49:53.049917-07:00'
 model: gpt-4-0125-preview
 summary: "V\xE4liaikaistiedoston luominen Go:lla mahdollistaa v\xE4liaikaisen, lyhytaikaiseen\
   \ k\xE4ytt\xF6\xF6n suunnitellun tiedoston luomisen, joka on tarkoitettu p\xE4\xE4\

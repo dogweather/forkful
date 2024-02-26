@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:36.726573-07:00
 description: "Merkkijonon interpolointi tarkoittaa muuttujien ja lausekkeiden yhdist\xE4\
   mist\xE4 merkkijonojen sis\xE4\xE4n. Sit\xE4 k\xE4ytet\xE4\xE4n dynaamisen tekstin\
   \ luontiin, joka\u2026"
-lastmod: 2024-02-19 22:05:15.746805
+lastmod: '2024-02-25T18:49:53.760587-07:00'
 model: gpt-4-1106-preview
 summary: "Merkkijonon interpolointi tarkoittaa muuttujien ja lausekkeiden yhdist\xE4\
   mist\xE4 merkkijonojen sis\xE4\xE4n. Sit\xE4 k\xE4ytet\xE4\xE4n dynaamisen tekstin\

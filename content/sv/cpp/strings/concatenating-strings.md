@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:21.430573-07:00
 description: "Att konkatenera str\xE4ngar inneb\xE4r att s\xE4tta ihop tv\xE5 eller\
   \ flera textbitar till en enda str\xE4ng. Programmerare g\xF6r det f\xF6r att skapa\
   \ meningar, meddelanden\u2026"
-lastmod: 2024-02-19 22:04:57.437694
+lastmod: '2024-02-25T18:49:36.516289-07:00'
 model: gpt-4-1106-preview
 summary: "Att konkatenera str\xE4ngar inneb\xE4r att s\xE4tta ihop tv\xE5 eller flera\
   \ textbitar till en enda str\xE4ng. Programmerare g\xF6r det f\xF6r att skapa meningar,\

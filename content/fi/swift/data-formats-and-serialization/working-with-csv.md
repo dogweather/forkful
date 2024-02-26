@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:05.648349-07:00
 description: "CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) ty\xF6\
   skentely sis\xE4lt\xE4\xE4 rakenteellisen datan j\xE4sennyksen ja tuottamisen teksti-\u2026"
-lastmod: 2024-02-19 22:05:15.825026
+lastmod: '2024-02-25T18:49:53.837206-07:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) ty\xF6\
   skentely sis\xE4lt\xE4\xE4 rakenteellisen datan j\xE4sennyksen ja tuottamisen teksti-\u2026"

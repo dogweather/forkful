@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:05.840678-07:00
 description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att du filtrerar\
   \ ut specifika tecken eller teckenf\xF6ljder fr\xE5n en textstr\xE4ng. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-19 22:04:57.068484
+lastmod: '2024-02-25T18:49:36.150829-07:00'
 model: gpt-4-1106-preview
 summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att du filtrerar\
   \ ut specifika tecken eller teckenf\xF6ljder fr\xE5n en textstr\xE4ng. Programmerare\

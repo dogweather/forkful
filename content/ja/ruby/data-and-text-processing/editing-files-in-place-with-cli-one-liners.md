@@ -1,7 +1,7 @@
 ---
 date: 2024-01-27 16:21:00.793885-07:00
 description: "\u2026"
-lastmod: 2024-02-19 22:05:01.954524
+lastmod: '2024-02-25T18:49:40.782809-07:00'
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "CLI\u30EF\u30F3\u30E9\u30A4\u30CA\u30FC\u3067\u306E\u30D5\u30A1\u30A4\u30EB\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:42.987996-07:00
 description: "Leer un archivo de texto en Java significa extraer la informaci\xF3\
   n contenida en \xE9l. Los programadores lo hacen para trabajar con datos, configuraciones\
   \ o\u2026"
-lastmod: 2024-02-19 22:05:17.477036
+lastmod: '2024-02-25T18:49:55.443471-07:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en Java significa extraer la informaci\xF3n contenida\
   \ en \xE9l. Los programadores lo hacen para trabajar con datos, configuraciones\

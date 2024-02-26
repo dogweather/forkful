@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:11.141568-07:00
 description: "Midlertidige filer er filer som styres av systemet, og som slettes automatisk\
   \ n\xE5r de ikke lenger er n\xF8dvendige. Programmerere bruker dem for \xE5 h\xE5\
   ndtere\u2026"
-lastmod: 2024-02-19 22:05:00.620921
+lastmod: '2024-02-25T18:49:39.514780-07:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer er filer som styres av systemet, og som slettes automatisk\
   \ n\xE5r de ikke lenger er n\xF8dvendige. Programmerere bruker dem for \xE5 h\xE5\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:30.947845-07:00
 description: "Refaktorering inom programmering inneb\xE4r att man omstrukturerar befintlig\
   \ kod utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra\
   \ icke-\u2026"
-lastmod: 2024-02-19 22:04:57.644758
+lastmod: '2024-02-25T18:49:36.706939-07:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering inom programmering inneb\xE4r att man omstrukturerar befintlig\
   \ kod utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra\

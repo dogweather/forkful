@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:07.835118-07:00
 description: "Loggf\xF8ring er som \xE5 holde en journal for applikasjonen din; det\
   \ er praksisen med \xE5 registrere hendelser, feil og annen relevant data under\
   \ kj\xF8retid.\u2026"
-lastmod: 2024-02-19 22:04:59.824995
+lastmod: '2024-02-25T18:49:38.762002-07:00'
 model: gpt-4-1106-preview
 summary: "Loggf\xF8ring er som \xE5 holde en journal for applikasjonen din; det er\
   \ praksisen med \xE5 registrere hendelser, feil og annen relevant data under kj\xF8\

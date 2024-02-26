@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:13.741004-07:00
 description: "Die Arbeit mit JSON (JavaScript Object Notation) umfasst das Parsen,\
   \ Generieren und Abfragen von JSON-Daten und ist somit eine entscheidende F\xE4\
   higkeit f\xFCr\u2026"
-lastmod: 2024-02-19 22:05:12.837640
+lastmod: '2024-02-25T18:49:50.968993-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) umfasst das Parsen, Generieren\
   \ und Abfragen von JSON-Daten und ist somit eine entscheidende F\xE4higkeit f\xFC\

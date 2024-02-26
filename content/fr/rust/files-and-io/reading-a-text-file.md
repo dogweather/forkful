@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:00.330171-07:00
 description: "En Rust, lire un fichier texte, c'est collecter son contenu pour l'utiliser\
   \ dans votre programme. On le fait souvent pour traiter des donn\xE9es en batch,\u2026"
-lastmod: 2024-02-19 22:05:16.327768
+lastmod: '2024-02-25T18:49:54.313135-07:00'
 model: gpt-4-1106-preview
 summary: "En Rust, lire un fichier texte, c'est collecter son contenu pour l'utiliser\
   \ dans votre programme. On le fait souvent pour traiter des donn\xE9es en batch,\u2026"

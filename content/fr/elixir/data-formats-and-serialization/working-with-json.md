@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:08.275751-07:00
 description: "Travailler avec JSON implique l'analyse de cha\xEEnes format\xE9es JSON\
   \ en structures de donn\xE9es que Elixir peut manipuler, et la s\xE9rialisation\
   \ de structures de\u2026"
-lastmod: 2024-02-19 22:05:16.245972
+lastmod: '2024-02-25T18:49:54.232560-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON implique l'analyse de cha\xEEnes format\xE9es JSON\
   \ en structures de donn\xE9es que Elixir peut manipuler, et la s\xE9rialisation\

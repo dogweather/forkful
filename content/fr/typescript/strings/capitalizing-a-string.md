@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:39.020300-07:00
 description: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
   \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule s'il est en minuscule,\
   \ laissant\u2026"
-lastmod: 2024-02-19 22:05:16.250154
+lastmod: '2024-02-25T18:49:54.236599-07:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
   \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule s'il est en minuscule,\

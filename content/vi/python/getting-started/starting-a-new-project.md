@@ -8,7 +8,7 @@ description: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng 
   \ tr\xFAc, d\u1EC5 b\u1EA3o tr\xEC ngay t\u1EEB \u0111\u1EA7u. L\u1EADp tr\xECnh\
   \ vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1\
   ng m\xE3 c\u1EE7a\u2026"
-lastmod: 2024-02-25 18:26:54.140221
+lastmod: '2024-02-25T18:49:34.473944-07:00'
 model: gpt-4-0125-preview
 summary: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng Python\
   \ l\xE0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t khu\xF4n kh\u1ED5 c\xF3 c\u1EA5u\

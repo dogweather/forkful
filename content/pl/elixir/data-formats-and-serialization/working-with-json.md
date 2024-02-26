@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:08.876975-07:00
 description: "Praca z JSON polega na parsowaniu ci\u0105g\xF3w znak\xF3w w formacie\
   \ JSON na struktury danych, kt\xF3re Elixir mo\u017Ce manipulowa\u0107, oraz na\
   \ serializacji struktur danych\u2026"
-lastmod: 2024-02-19 22:04:54.243968
+lastmod: '2024-02-25T18:49:33.486775-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON polega na parsowaniu ci\u0105g\xF3w znak\xF3w w formacie JSON\
   \ na struktury danych, kt\xF3re Elixir mo\u017Ce manipulowa\u0107, oraz na serializacji\

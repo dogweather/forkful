@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:40.919848-07:00
 description: "Mik\xE4 & Miksi? P\xE4iv\xE4m\xE4\xE4r\xE4n muunto merkkijonoksi mahdollistaa\
   \ ajanhetkien tallentamisen tekstipohjaisessa muodossa. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n helpottaakseen\u2026"
-lastmod: 2024-02-19 22:05:15.263469
+lastmod: '2024-02-25T18:49:53.292814-07:00'
 model: gpt-4-1106-preview
 summary: "Mik\xE4 & Miksi? P\xE4iv\xE4m\xE4\xE4r\xE4n muunto merkkijonoksi mahdollistaa\
   \ ajanhetkien tallentamisen tekstipohjaisessa muodossa. Ohjelmoijat tekev\xE4t t\xE4\

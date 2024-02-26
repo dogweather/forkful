@@ -3,7 +3,7 @@ date: 2024-01-26 04:15:52.276625-07:00
 description: "REPL (Read-Eval-Print Loop) on yksinkertainen, interaktiivinen ohjelmointiymp\xE4\
   rist\xF6. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 nopeisiin koodikokeiluihin, koodinp\xE4\
   tkien\u2026"
-lastmod: 2024-02-19 22:05:15.425680
+lastmod: '2024-02-25T18:49:53.449005-07:00'
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop) on yksinkertainen, interaktiivinen ohjelmointiymp\xE4\
   rist\xF6. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 nopeisiin koodikokeiluihin, koodinp\xE4\

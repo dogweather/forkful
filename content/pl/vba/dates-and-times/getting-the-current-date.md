@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:47.655538-07:00
 description: "W Visual Basic for Applications (VBA), pobieranie bie\u017C\u0105cej\
   \ daty to powszechne zadanie, kt\xF3re umo\u017Cliwia programistom dynamiczn\u0105\
   \ prac\u0119 z datami w ich\u2026"
-lastmod: 2024-02-19 22:04:54.370676
+lastmod: '2024-02-25T18:49:33.608552-07:00'
 model: gpt-4-0125-preview
 summary: "W Visual Basic for Applications (VBA), pobieranie bie\u017C\u0105cej daty\
   \ to powszechne zadanie, kt\xF3re umo\u017Cliwia programistom dynamiczn\u0105 prac\u0119\

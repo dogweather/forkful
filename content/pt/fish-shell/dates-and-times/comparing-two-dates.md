@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:03.469034-07:00
 description: "Comparar duas datas significa verificar a diferen\xE7a ou a rela\xE7\
   \xE3o temporal entre elas, como qual vem antes ou quanto tempo se passou entre uma\
   \ e outra.\u2026"
-lastmod: 2024-02-19 22:05:06.086267
+lastmod: '2024-02-25T18:49:44.635133-07:00'
 model: gpt-4-1106-preview
 summary: "Comparar duas datas significa verificar a diferen\xE7a ou a rela\xE7\xE3\
   o temporal entre elas, como qual vem antes ou quanto tempo se passou entre uma e\

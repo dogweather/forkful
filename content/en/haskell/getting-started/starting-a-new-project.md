@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-20 18:03:42.182088-07:00
 description: "Every project starts with a single step. For programmers, that means\
   \ setting up the initial structure and writing kick-off code. We do this to transform\u2026"
-lastmod: 2024-02-19 22:05:18.592772
+lastmod: '2024-02-25T18:49:56.571608-07:00'
 model: gpt-4-1106-preview
 summary: "Every project starts with a single step. For programmers, that means setting\
   \ up the initial structure and writing kick-off code. We do this to transform\u2026"

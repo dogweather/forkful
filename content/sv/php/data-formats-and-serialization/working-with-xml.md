@@ -3,7 +3,7 @@ date: 2024-01-26 04:34:14.448313-07:00
 description: "XML \xE4r ett m\xE4rkspr\xE5k som anv\xE4nds f\xF6r att lagra och transportera\
   \ data. Programmerare arbetar med XML f\xF6r att m\xF6jligg\xF6ra interoperabilitet\
   \ mellan\u2026"
-lastmod: 2024-02-19 22:04:57.246747
+lastmod: '2024-02-25T18:49:36.324132-07:00'
 model: gpt-4-0125-preview
 summary: "XML \xE4r ett m\xE4rkspr\xE5k som anv\xE4nds f\xF6r att lagra och transportera\
   \ data. Programmerare arbetar med XML f\xF6r att m\xF6jligg\xF6ra interoperabilitet\

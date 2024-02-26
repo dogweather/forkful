@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:11.596153-07:00
 description: "Arrotondare i numeri significa regolarli al numero intero pi\xF9 vicino\
   \ o a una frazione con una certa precisione. I programmatori arrotondano i numeri\
   \ per\u2026"
-lastmod: 2024-02-19 22:05:02.273756
+lastmod: '2024-02-25T18:49:41.088680-07:00'
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa regolarli al numero intero pi\xF9 vicino\
   \ o a una frazione con una certa precisione. I programmatori arrotondano i numeri\

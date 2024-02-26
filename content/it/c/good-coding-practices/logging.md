@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:23.868581-07:00
 description: "Il logging in C comporta la registrazione del flusso e degli eventi\
   \ notevoli di un programma durante il suo runtime, fornendo una revisione tangibile\
   \ del\u2026"
-lastmod: 2024-02-19 22:05:02.983997
+lastmod: '2024-02-25T18:49:41.751349-07:00'
 model: gpt-4-0125-preview
 summary: "Il logging in C comporta la registrazione del flusso e degli eventi notevoli\
   \ di un programma durante il suo runtime, fornendo una revisione tangibile del\u2026"

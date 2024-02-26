@@ -2,7 +2,7 @@
 date: 2024-01-27 16:21:20.706969-07:00
 description: "Tiedostojen k\xE4sittely CLI-yksirivikomennoin PowerShelliss\xE4 tarkoittaa\
   \ tiedostojen nopeaa muuttamista, siirt\xE4mist\xE4 tai tiedon saamista suoraan\u2026"
-lastmod: 2024-02-19 22:05:15.673406
+lastmod: '2024-02-25T18:49:53.688204-07:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen k\xE4sittely CLI-yksirivikomennoin PowerShelliss\xE4 tarkoittaa\
   \ tiedostojen nopeaa muuttamista, siirt\xE4mist\xE4 tai tiedon saamista suoraan\u2026"

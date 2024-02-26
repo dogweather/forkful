@@ -5,7 +5,7 @@ date: 2024-01-30 19:10:44.325808-07:00
 description: "Assosiative tabeller, eller ordb\xF8ker i C#, lar deg lagre og h\xE5\
   ndtere par av n\xF8kler og verdier. De er din go-to n\xE5r du trenger \xE5 hente\
   \ verdier raskt basert\u2026"
-lastmod: 2024-02-19 22:05:00.054601
+lastmod: '2024-02-25T18:49:38.964206-07:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller ordb\xF8ker i C#, lar deg lagre og h\xE5ndtere\
   \ par av n\xF8kler og verdier. De er din go-to n\xE5r du trenger \xE5 hente verdier\

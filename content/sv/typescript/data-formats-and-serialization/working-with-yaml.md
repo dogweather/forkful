@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:50.748053-07:00
 description: "YAML, ett dataserialiseringsspr\xE5k designat f\xF6r att vara anv\xE4\
   ndarv\xE4nligt, anv\xE4nds ofta f\xF6r konfigurationsfiler, mellanprocessmeddelanden\
   \ och datalagring.\u2026"
-lastmod: 2024-02-19 22:04:56.878800
+lastmod: '2024-02-25T18:49:35.971877-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, ett dataserialiseringsspr\xE5k designat f\xF6r att vara anv\xE4ndarv\xE4\
   nligt, anv\xE4nds ofta f\xF6r konfigurationsfiler, mellanprocessmeddelanden och\

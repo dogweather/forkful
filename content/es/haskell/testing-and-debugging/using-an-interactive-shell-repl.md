@@ -2,7 +2,7 @@
 date: 2024-01-26 04:14:42.696727-07:00
 description: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), en Haskell\
   \ te permite ejecutar fragmentos de c\xF3digo en vivo. Es un espacio de juego para\u2026"
-lastmod: 2024-02-19 22:05:17.627540
+lastmod: '2024-02-25T18:49:55.590564-07:00'
 model: gpt-4-0125-preview
 summary: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), en Haskell\
   \ te permite ejecutar fragmentos de c\xF3digo en vivo. Es un espacio de juego para\u2026"

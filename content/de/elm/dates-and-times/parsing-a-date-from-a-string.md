@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:55.074989-07:00
 description: "Das Parsen eines Datums aus einem String in Elm beinhaltet das Umwandeln\
   \ von Textinformationen, die Daten und Zeiten repr\xE4sentieren, in ein Format,\
   \ das\u2026"
-lastmod: 2024-02-19 22:05:12.739492
+lastmod: '2024-02-25T18:49:50.876740-07:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Elm beinhaltet das Umwandeln\
   \ von Textinformationen, die Daten und Zeiten repr\xE4sentieren, in ein Format,\

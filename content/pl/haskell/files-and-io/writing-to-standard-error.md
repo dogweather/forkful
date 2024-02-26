@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:20.828476-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Haskellu pozwala\
   \ programom rozr\xF3\u017Cnia\u0107 ich wyj\u015Bcie pomi\u0119dzy normalnymi wynikami\
   \ a komunikatami o b\u0142\u0119dach. Jest to\u2026"
-lastmod: 2024-02-19 22:04:54.603775
+lastmod: '2024-02-25T18:49:33.834073-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Haskellu pozwala programom\
   \ rozr\xF3\u017Cnia\u0107 ich wyj\u015Bcie pomi\u0119dzy normalnymi wynikami a komunikatami\

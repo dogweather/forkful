@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:26.559625-07:00
 description: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage sm\xE5, separate\
   \ deler av kode for automatisk \xE5 verifisere at ulike deler av applikasjonen din\
   \ fungerer som\u2026"
-lastmod: 2024-02-19 22:05:00.198216
+lastmod: '2024-02-25T18:49:39.106232-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage sm\xE5, separate\
   \ deler av kode for automatisk \xE5 verifisere at ulike deler av applikasjonen din\

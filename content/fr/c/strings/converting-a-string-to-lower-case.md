@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:30.086073-07:00
 description: "Convertir une cha\xEEne en minuscules en C implique de transformer toutes\
   \ les lettres majuscules d'une cha\xEEne donn\xE9e en leurs \xE9quivalents en minuscules.\
   \ Les\u2026"
-lastmod: 2024-02-19 22:05:17.007179
+lastmod: '2024-02-25T18:49:54.981587-07:00'
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne en minuscules en C implique de transformer toutes\
   \ les lettres majuscules d'une cha\xEEne donn\xE9e en leurs \xE9quivalents en minuscules.\

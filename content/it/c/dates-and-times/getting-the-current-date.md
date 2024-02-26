@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:57:20.000396-07:00
 description: "Ottenere la data corrente in C comporta l'accesso alla libreria standard\
   \ C per recuperare e formattare la data e l'ora correnti del sistema. I\u2026"
-lastmod: 2024-02-19 22:05:02.988331
+lastmod: '2024-02-25T18:49:41.755413-07:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in C comporta l'accesso alla libreria standard\
   \ C per recuperare e formattare la data e l'ora correnti del sistema. I\u2026"

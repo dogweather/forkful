@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:54.796485-07:00
 description: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet \xE4r precis\
   \ vad det l\xE5ter som \u2013 att hitta ett specifikt datum f\xF6re eller efter\
   \ en given tidpunkt.\u2026"
-lastmod: 2024-02-19 22:04:57.600557
+lastmod: '2024-02-25T18:49:36.667082-07:00'
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet \xE4r precis vad\
   \ det l\xE5ter som \u2013 att hitta ett specifikt datum f\xF6re eller efter en given\

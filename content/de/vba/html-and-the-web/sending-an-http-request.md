@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:55.489489-07:00
 description: "Das Senden einer HTTP-Anfrage in Visual Basic for Applications (VBA)\
   \ beinhaltet den programmatischen Zugriff auf Webressourcen oder Webservices durch\
   \ das\u2026"
-lastmod: 2024-02-19 22:05:12.638537
+lastmod: '2024-02-25T18:49:50.780876-07:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage in Visual Basic for Applications (VBA) beinhaltet\
   \ den programmatischen Zugriff auf Webressourcen oder Webservices durch das\u2026"

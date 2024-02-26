@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:08.332707-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em\
   \ Go envolve adicionar um cabe\xE7alho de autoriza\xE7\xE3o \xE0 sua requisi\xE7\
   \xE3o, que inclui um nome de usu\xE1rio e\u2026"
-lastmod: 2024-02-19 22:05:05.124902
+lastmod: '2024-02-25T18:49:43.724513-07:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em Go\
   \ envolve adicionar um cabe\xE7alho de autoriza\xE7\xE3o \xE0 sua requisi\xE7\xE3\

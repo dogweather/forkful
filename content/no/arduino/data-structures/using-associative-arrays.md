@@ -5,7 +5,7 @@ date: 2024-01-30 19:10:11.601710-07:00
 description: "I Arduino-verdenen lar assoiative matriser deg pare n\xF8kler med verdier,\
   \ litt som \xE5 matche sokker med deres par. De er et f\xF8rstevalg n\xE5r du trenger\
   \ \xE5 lagre\u2026"
-lastmod: 2024-02-19 22:05:00.322630
+lastmod: '2024-02-25T18:49:39.230909-07:00'
 model: gpt-4-0125-preview
 summary: "I Arduino-verdenen lar assoiative matriser deg pare n\xF8kler med verdier,\
   \ litt som \xE5 matche sokker med deres par. De er et f\xF8rstevalg n\xE5r du trenger\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:34.527685-07:00
 description: "Att extrahera delstr\xE4ngar inneb\xE4r att h\xE4mta specifika delar\
   \ av en str\xE4ng baserat p\xE5 deras positioner. Programmerare utf\xF6r ofta denna\
   \ operation f\xF6r att\u2026"
-lastmod: 2024-02-19 22:04:56.612289
+lastmod: '2024-02-25T18:49:35.715235-07:00'
 model: gpt-4-0125-preview
 summary: "Att extrahera delstr\xE4ngar inneb\xE4r att h\xE4mta specifika delar av\
   \ en str\xE4ng baserat p\xE5 deras positioner. Programmerare utf\xF6r ofta denna\

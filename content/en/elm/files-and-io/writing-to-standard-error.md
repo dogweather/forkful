@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:26.066148-07:00
 description: "Writing to standard error (stderr) is about redirecting error messages\
   \ and diagnostics separate from the main program output, which goes to standard\u2026"
-lastmod: 2024-02-19 22:05:18.493292
+lastmod: '2024-02-25T18:49:56.471008-07:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) is about redirecting error messages and\
   \ diagnostics separate from the main program output, which goes to standard\u2026"

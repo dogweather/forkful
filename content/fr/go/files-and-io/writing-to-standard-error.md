@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:15:13.782899-07:00
 description: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger les\
   \ messages d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie\u2026"
-lastmod: 2024-02-19 22:05:16.062771
+lastmod: '2024-02-25T18:49:54.052494-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger les messages\
   \ d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie\u2026"

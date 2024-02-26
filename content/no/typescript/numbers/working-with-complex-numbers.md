@@ -3,7 +3,7 @@ date: 2024-01-26 04:46:23.798045-07:00
 description: "Komplekse tall, som best\xE5r av en reell del og en imagin\xE6r del\
   \ (vanligvis skrevet som a + bi), \xE5pner for beregninger som er upraktiske eller\
   \ umulige med\u2026"
-lastmod: 2024-02-19 22:04:59.768275
+lastmod: '2024-02-25T18:49:38.706130-07:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell del og en imagin\xE6r del (vanligvis\
   \ skrevet som a + bi), \xE5pner for beregninger som er upraktiske eller umulige\

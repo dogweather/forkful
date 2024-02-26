@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:25.732336-07:00
 description: "Capitalizar uma string em Rust envolve modificar a string de modo que\
   \ seu primeiro caractere seja mai\xFAsculo, caso seja uma letra, enquanto o restante\
   \ da\u2026"
-lastmod: 2024-02-19 22:05:05.384057
+lastmod: '2024-02-25T18:49:43.972795-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string em Rust envolve modificar a string de modo que seu\
   \ primeiro caractere seja mai\xFAsculo, caso seja uma letra, enquanto o restante\

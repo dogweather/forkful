@@ -6,7 +6,7 @@ description: "HTTP \uC694\uCCAD\uC740 \uB370\uC774\uD130\uB97C \uC8FC\uACE0\uBC1
   \uB529\uD574 \uC11C\uBC84\uB85C \uBCF4\uB0B4 \uC548\uC804\uD558\uAC8C \uB85C\uADF8\
   \uC778\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-19 22:05:14.022272
+lastmod: '2024-02-25T18:49:52.110085-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC740 \uB370\uC774\uD130\uB97C \uC8FC\uACE0\uBC1B\uC744\
   \ \uB54C \uC501\uB2C8\uB2E4. \uAE30\uBCF8 \uC778\uC99D(basic authentication)\uC740\

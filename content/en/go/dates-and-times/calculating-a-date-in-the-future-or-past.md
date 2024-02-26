@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:14.920822-07:00
 description: "Calculating a date in the future or past in Go involves manipulating\
   \ date and time values to determine a specific point relative to a given date.\u2026"
-lastmod: 2024-02-19 22:05:18.151261
+lastmod: '2024-02-25T18:49:56.110039-07:00'
 model: gpt-4-0125-preview
 summary: "Calculating a date in the future or past in Go involves manipulating date\
   \ and time values to determine a specific point relative to a given date.\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 22:06:46.167999-07:00
 description: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde hele\
   \ getal of een fractie met een bepaalde precisie. Programmeurs ronden getallen af\
   \ om\u2026"
-lastmod: 2024-02-19 22:05:09.636802
+lastmod: '2024-02-25T18:49:47.933167-07:00'
 model: gpt-4-0125-preview
 summary: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde hele getal\
   \ of een fractie met een bepaalde precisie. Programmeurs ronden getallen af om\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:29.541317-07:00
 description: "Obter a data atual em programa\xE7\xE3o \xE9 uma tarefa fundamental\
   \ que permite recuperar e manipular os dados de data e hora do sistema. Em tarefas\
   \ de scripting e\u2026"
-lastmod: 2024-02-19 22:05:06.084290
+lastmod: '2024-02-25T18:49:44.633254-07:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em programa\xE7\xE3o \xE9 uma tarefa fundamental que\
   \ permite recuperar e manipular os dados de data e hora do sistema. Em tarefas de\

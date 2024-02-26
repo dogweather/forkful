@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:24.654262-07:00
 description: "Travailler avec YAML implique l'analyse et la manipulation de fichiers\
   \ YAML (YAML Ain't Markup Language), un format de s\xE9rialisation de donn\xE9es\
   \ utilis\xE9\u2026"
-lastmod: 2024-02-19 22:05:16.996104
+lastmod: '2024-02-25T18:49:54.971911-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec YAML implique l'analyse et la manipulation de fichiers YAML\
   \ (YAML Ain't Markup Language), un format de s\xE9rialisation de donn\xE9es utilis\xE9\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:47.225591-07:00
 description: "\xC5 skrive tester i Elixir involverer \xE5 lage automatiserte skript\
   \ for \xE5 validere oppf\xF8rselen til koden din. Programmerere gj\xF8r dette for\
   \ \xE5 sikre kvalitet,\u2026"
-lastmod: 2024-02-19 22:04:59.734594
+lastmod: '2024-02-25T18:49:38.674144-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Elixir involverer \xE5 lage automatiserte skript for\
   \ \xE5 validere oppf\xF8rselen til koden din. Programmerere gj\xF8r dette for \xE5\

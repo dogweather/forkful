@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:04:53.756793-07:00
 description: "Reguliere expressies (regex) in Visual Basic for Applications (VBA)\
   \ bieden een krachtige manier om te zoeken, te matchen en strings te manipuleren.\u2026"
-lastmod: 2024-02-19 22:05:09.675755
+lastmod: '2024-02-25T18:49:47.969955-07:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) in Visual Basic for Applications (VBA) bieden\
   \ een krachtige manier om te zoeken, te matchen en strings te manipuleren.\u2026"

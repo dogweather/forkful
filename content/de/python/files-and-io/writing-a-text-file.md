@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:02.048691-07:00
 description: "Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe,\
   \ die das Erstellen oder \xD6ffnen einer Datei und dann das Anh\xE4ngen oder\u2026"
-lastmod: 2024-02-19 22:05:12.445289
+lastmod: '2024-02-25T18:49:50.595877-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe,\
   \ die das Erstellen oder \xD6ffnen einer Datei und dann das Anh\xE4ngen oder\u2026"

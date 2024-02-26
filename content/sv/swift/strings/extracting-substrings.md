@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:44.439511-07:00
 description: "Extrahering av substr\xE4ngar involverar att plocka specifika delar\
   \ ur en str\xE4ng, n\xE5got som ofta nyttjas f\xF6r att bearbeta textdata efter\
   \ behov. Det sparas\u2026"
-lastmod: 2024-02-19 22:04:57.479492
+lastmod: '2024-02-25T18:49:36.556242-07:00'
 model: gpt-4-1106-preview
 summary: "Extrahering av substr\xE4ngar involverar att plocka specifika delar ur en\
   \ str\xE4ng, n\xE5got som ofta nyttjas f\xF6r att bearbeta textdata efter behov.\

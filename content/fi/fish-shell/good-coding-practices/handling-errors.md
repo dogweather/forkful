@@ -3,7 +3,7 @@ date: 2024-01-26 00:52:39.955148-07:00
 description: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4\
   \ odottamattomia tilanteita sulavasti. Teemme sen hallitaksemme ep\xE4onnistumisia\
   \ aiheuttamatta\u2026"
-lastmod: 2024-02-19 22:05:15.896242
+lastmod: '2024-02-25T18:49:53.909080-07:00'
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4 odottamattomia\
   \ tilanteita sulavasti. Teemme sen hallitaksemme ep\xE4onnistumisia aiheuttamatta\u2026"

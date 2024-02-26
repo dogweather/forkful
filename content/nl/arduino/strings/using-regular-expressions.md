@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:33.004354-07:00
 description: "Reguliere expressies (regex) laten je zoeken naar patronen in tekst\u2014\
   denk aan jokertekens op stero\xEFden. Programmeurs gebruiken ze om invoer te valideren,\u2026"
-lastmod: 2024-02-19 22:05:10.146775
+lastmod: '2024-02-25T18:49:48.396207-07:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) laten je zoeken naar patronen in tekst\u2014\
   denk aan jokertekens op stero\xEFden. Programmeurs gebruiken ze om invoer te valideren,\u2026"

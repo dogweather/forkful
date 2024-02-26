@@ -2,7 +2,7 @@
 date: 2024-01-26 01:06:58.361329-07:00
 description: "Le journalisation (logging en anglais) est essentiellement le processus\
   \ d'enregistrement d\u2019\xE9v\xE9nements qui se produisent au sein d'une application\u2026"
-lastmod: 2024-02-19 22:05:16.406851
+lastmod: '2024-02-25T18:49:54.393982-07:00'
 model: gpt-4-1106-preview
 summary: "Le journalisation (logging en anglais) est essentiellement le processus\
   \ d'enregistrement d\u2019\xE9v\xE9nements qui se produisent au sein d'une application\u2026"

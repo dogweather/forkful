@@ -2,7 +2,7 @@
 date: 2024-01-26 04:35:15.556873-07:00
 description: "Trabalhar com XML significa fazer o parsing, gerar e manipular documentos\
   \ XML (eXtensible Markup Language) usando c\xF3digo. Programadores fazem isso para\u2026"
-lastmod: 2024-02-19 22:05:06.193472
+lastmod: '2024-02-25T18:49:44.749803-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML significa fazer o parsing, gerar e manipular documentos\
   \ XML (eXtensible Markup Language) usando c\xF3digo. Programadores fazem isso para\u2026"

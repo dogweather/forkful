@@ -2,7 +2,7 @@
 date: 2024-01-26 04:13:02.044311-07:00
 description: "Una shell interactiva, o REPL (Read-Eval-Print Loop, Bucle de Leer-Evaluar-Imprimir),\
   \ te permite probar fragmentos de c\xF3digo en tiempo real. Los\u2026"
-lastmod: 2024-02-19 22:05:17.291026
+lastmod: '2024-02-25T18:49:55.260896-07:00'
 model: gpt-4-0125-preview
 summary: "Una shell interactiva, o REPL (Read-Eval-Print Loop, Bucle de Leer-Evaluar-Imprimir),\
   \ te permite probar fragmentos de c\xF3digo en tiempo real. Los\u2026"

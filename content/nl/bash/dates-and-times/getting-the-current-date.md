@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:08.614804-07:00
 description: "De huidige datum in bash pakken gaat over het verkrijgen van de datum\
   \ en tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie,\u2026"
-lastmod: 2024-02-19 22:05:10.077491
+lastmod: '2024-02-25T18:49:48.331353-07:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in bash pakken gaat over het verkrijgen van de datum en\
   \ tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie,\u2026"

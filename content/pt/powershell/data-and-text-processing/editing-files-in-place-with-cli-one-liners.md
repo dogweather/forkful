@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:40.576630-07:00
 description: "Editar arquivos no local com comandos de linha de comando (CLI) em uma\
   \ linha no PowerShell \xE9 sobre fazer modifica\xE7\xF5es diretas nos arquivos a\
   \ partir da\u2026"
-lastmod: 2024-02-19 22:05:05.849147
+lastmod: '2024-02-25T18:49:44.411671-07:00'
 model: gpt-4-0125-preview
 summary: "Editar arquivos no local com comandos de linha de comando (CLI) em uma linha\
   \ no PowerShell \xE9 sobre fazer modifica\xE7\xF5es diretas nos arquivos a partir\

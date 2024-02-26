@@ -3,7 +3,7 @@ date: 2024-01-26 04:44:10.859646-07:00
 description: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
   \u015B\u0107 urojon\u0105, zazwyczaj zapisywane jako `a + bi`. S\u0105 kluczowe\
   \ w zaawansowanej matematyce, fizyce, in\u017Cynierii\u2026"
-lastmod: 2024-02-19 22:04:54.625041
+lastmod: '2024-02-25T18:49:33.855126-07:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
   \u015B\u0107 urojon\u0105, zazwyczaj zapisywane jako `a + bi`. S\u0105 kluczowe\

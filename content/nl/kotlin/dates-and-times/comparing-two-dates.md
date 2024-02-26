@@ -5,7 +5,7 @@ date: 2024-01-28 21:56:28.212366-07:00
 description: "Twee data vergelijken betekent controleren of de ene v\xF3\xF3r of na\
   \ de andere komt, of dat ze op hetzelfde moment zijn. Programmeurs doen dit voor\
   \ taken zoals\u2026"
-lastmod: 2024-02-19 22:05:09.835483
+lastmod: '2024-02-25T18:49:48.119703-07:00'
 model: gpt-4-0125-preview
 summary: "Twee data vergelijken betekent controleren of de ene v\xF3\xF3r of na de\
   \ andere komt, of dat ze op hetzelfde moment zijn. Programmeurs doen dit voor taken\

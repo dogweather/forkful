@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:43.690529-07:00
 description: "Converter uma data em uma string significa transformar a representa\xE7\
   \xE3o de uma data, normalmente numa estrutura de dados espec\xEDfica, para um formato\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:05.683235
+lastmod: '2024-02-25T18:49:44.257846-07:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string significa transformar a representa\xE7\xE3\
   o de uma data, normalmente numa estrutura de dados espec\xEDfica, para um formato\

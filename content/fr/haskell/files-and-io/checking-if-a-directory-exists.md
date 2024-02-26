@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:24.209008-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ dans de nombreuses t\xE2ches de programmation, permettant des actions conditionnelles\
   \ bas\xE9es\u2026"
-lastmod: 2024-02-19 22:05:16.586047
+lastmod: '2024-02-25T18:49:54.570736-07:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ dans de nombreuses t\xE2ches de programmation, permettant des actions conditionnelles\

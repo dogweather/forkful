@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:35.803196-07:00
 description: "Las expresiones regulares (regex) son secuencias de caracteres que forman\
   \ un patr\xF3n de b\xFAsqueda, utilizadas principalmente para la b\xFAsqueda y manipulaci\xF3\
   n\u2026"
-lastmod: 2024-02-19 22:05:17.785707
+lastmod: '2024-02-25T18:49:55.751827-07:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son secuencias de caracteres que forman\
   \ un patr\xF3n de b\xFAsqueda, utilizadas principalmente para la b\xFAsqueda y manipulaci\xF3\

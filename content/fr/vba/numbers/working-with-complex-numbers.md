@@ -5,7 +5,7 @@ date: 2024-02-01 22:07:50.216203-07:00
 description: "Travailler avec des nombres complexes implique d'effectuer des op\xE9\
   rations math\xE9matiques sur des nombres ayant \xE0 la fois une partie r\xE9elle\
   \ et une partie\u2026"
-lastmod: 2024-02-19 22:05:16.348358
+lastmod: '2024-02-25T18:49:54.333527-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des nombres complexes implique d'effectuer des op\xE9rations\
   \ math\xE9matiques sur des nombres ayant \xE0 la fois une partie r\xE9elle et une\

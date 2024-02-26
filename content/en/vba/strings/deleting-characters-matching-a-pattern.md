@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:25.216747-07:00
 description: "Deleting characters matching a specific pattern in Visual Basic for\
   \ Applications (VBA) involves identifying and subsequently removing characters or\u2026"
-lastmod: 2024-02-19 22:05:18.388723
+lastmod: '2024-02-25T18:49:56.342704-07:00'
 model: gpt-4-0125-preview
 summary: "Deleting characters matching a specific pattern in Visual Basic for Applications\
   \ (VBA) involves identifying and subsequently removing characters or\u2026"

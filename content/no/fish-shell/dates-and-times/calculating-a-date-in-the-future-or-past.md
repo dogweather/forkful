@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:47.492545-07:00
 description: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 finne\
   \ en bestemt dag f\xF8r eller etter et utgangspunkt. Utviklere bruker dette for\
   \ \xE5 h\xE5ndtere\u2026"
-lastmod: 2024-02-19 22:05:00.520468
+lastmod: '2024-02-25T18:49:39.418062-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 finne en\
   \ bestemt dag f\xF8r eller etter et utgangspunkt. Utviklere bruker dette for \xE5\

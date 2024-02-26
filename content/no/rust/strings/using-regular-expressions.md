@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:22.327591-07:00
 description: "Regul\xE6re uttrykk, eller regex, lar utviklere s\xF8ke, matche og manipulere\
   \ strenger med avanserte m\xF8nsters\xF8kingsteknikker. I Rust bidrar bruk av regex\
   \ til\u2026"
-lastmod: 2024-02-19 22:04:59.807955
+lastmod: '2024-02-25T18:49:38.744110-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk, eller regex, lar utviklere s\xF8ke, matche og manipulere\
   \ strenger med avanserte m\xF8nsters\xF8kingsteknikker. I Rust bidrar bruk av regex\

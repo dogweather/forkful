@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:57.402354-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w j\u0119zykach programowania\
   \ dotyczy kierowania komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego\
   \ strumienia,\u2026"
-lastmod: 2024-02-19 22:04:54.105534
+lastmod: '2024-02-25T18:49:33.345316-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w j\u0119zykach programowania\
   \ dotyczy kierowania komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego\

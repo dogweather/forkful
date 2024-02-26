@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:32.072301-07:00
 description: "JSON, ou Nota\xE7\xE3o de Objeto JavaScript, \xE9 um formato leve de\
   \ troca de dados, tornando-o perfeito para armazenamento de dados ou arquivos de\
   \ configura\xE7\xE3o em\u2026"
-lastmod: 2024-02-19 22:05:05.919475
+lastmod: '2024-02-25T18:49:44.477678-07:00'
 model: gpt-4-0125-preview
 summary: "JSON, ou Nota\xE7\xE3o de Objeto JavaScript, \xE9 um formato leve de troca\
   \ de dados, tornando-o perfeito para armazenamento de dados ou arquivos de configura\xE7\

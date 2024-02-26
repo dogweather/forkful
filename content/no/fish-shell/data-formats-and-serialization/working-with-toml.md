@@ -3,7 +3,7 @@ date: 2024-01-26 04:21:33.734363-07:00
 description: "TOML er et config-filformat, lett for mennesker \xE5 lese og skrive,\
   \ og lett for maskiner \xE5 analysere og generere. Programmerere jobber med TOML\
   \ for klare,\u2026"
-lastmod: 2024-02-19 22:05:00.530928
+lastmod: '2024-02-25T18:49:39.428169-07:00'
 model: gpt-4-0125-preview
 summary: "TOML er et config-filformat, lett for mennesker \xE5 lese og skrive, og\
   \ lett for maskiner \xE5 analysere og generere. Programmerere jobber med TOML for\

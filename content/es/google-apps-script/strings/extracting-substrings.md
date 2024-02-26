@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:52:46.081604-07:00
 description: "La extracci\xF3n de subcadenas implica tomar una porci\xF3n de una cadena,\
   \ esencialmente creando una nueva cadena a partir de una existente. Los programadores\u2026"
-lastmod: 2024-02-19 22:05:17.149245
+lastmod: '2024-02-25T18:49:55.121099-07:00'
 model: gpt-4-0125-preview
 summary: "La extracci\xF3n de subcadenas implica tomar una porci\xF3n de una cadena,\
   \ esencialmente creando una nueva cadena a partir de una existente. Los programadores\u2026"

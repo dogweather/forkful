@@ -6,7 +6,7 @@ date: 2024-01-28 23:01:48.206450-07:00
 description: "Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu\
   \ b\xFCndeln, um spezifische Aufgaben zu erledigen. Wir tun dies, da es den Code\
   \ leichter\u2026"
-lastmod: 2024-02-19 22:05:13.253777
+lastmod: '2024-02-25T18:49:51.365077-07:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu b\xFC\
   ndeln, um spezifische Aufgaben zu erledigen. Wir tun dies, da es den Code leichter\u2026"

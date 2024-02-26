@@ -8,7 +8,7 @@ description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB2
   \uC2A4\uD15C\uC73C\uB85C \uC804\uC1A1\uD560 \uB54C \uC774\uB97C \uC218\uD589\uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-19 22:05:13.750330
+lastmod: '2024-02-25T18:49:51.879670-07:00'
 model: gpt-4-1106-preview
 summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
   \uC740 JavaScript\uC758 Date \uAC1D\uCCB4\uB97C \uC77D\uAE30 \uC26C\uC6B4 \uD14D\

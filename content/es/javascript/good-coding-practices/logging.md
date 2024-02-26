@@ -3,7 +3,7 @@ date: 2024-01-26 01:06:52.421728-07:00
 description: "El registro (logging), en pocas palabras, es como mantener un diario\
   \ para tu aplicaci\xF3n: registra eventos, errores y otras acciones significativas\
   \ que\u2026"
-lastmod: 2024-02-19 22:05:17.969062
+lastmod: '2024-02-25T18:49:55.934423-07:00'
 model: gpt-4-1106-preview
 summary: "El registro (logging), en pocas palabras, es como mantener un diario para\
   \ tu aplicaci\xF3n: registra eventos, errores y otras acciones significativas que\u2026"

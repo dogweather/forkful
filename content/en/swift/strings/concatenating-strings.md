@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:33.715662-07:00
 description: "Concatenating strings is gluing separate strings together to make a\
   \ new one. Programmers do it to combine text dynamically, like putting together\u2026"
-lastmod: 2024-02-19 22:05:18.850621
+lastmod: '2024-02-25T18:49:56.825408-07:00'
 model: gpt-4-1106-preview
 summary: "Concatenating strings is gluing separate strings together to make a new\
   \ one. Programmers do it to combine text dynamically, like putting together\u2026"

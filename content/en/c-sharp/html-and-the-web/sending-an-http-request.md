@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:13.483723-07:00
 description: "Sending an HTTP request is a way for programs to communicate over the\
   \ web, asking for data or submitting some. Programmers do it to interact with APIs,\u2026"
-lastmod: 2024-02-19 22:05:18.551323
+lastmod: '2024-02-25T18:49:56.531128-07:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is a way for programs to communicate over the web,\
   \ asking for data or submitting some. Programmers do it to interact with APIs,\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:57.407788-07:00
 description: "Werken met XML omvat het manipuleren en toegang krijgen tot gegevens\
   \ gestructureerd in de eXtensible Markup Language. Programmeurs werken met XML om\u2026"
-lastmod: 2024-02-19 22:05:10.138634
+lastmod: '2024-02-25T18:49:48.388435-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML omvat het manipuleren en toegang krijgen tot gegevens gestructureerd\
   \ in de eXtensible Markup Language. Programmeurs werken met XML om\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:10.457969-07:00
 description: "Een debugger is een hulpmiddel dat programmeurs helpt te begrijpen wat\
   \ hun code daadwerkelijk doet terwijl deze wordt uitgevoerd. Het is de vergrootglas\u2026"
-lastmod: 2024-02-19 22:05:09.972384
+lastmod: '2024-02-25T18:49:48.237812-07:00'
 model: gpt-4-0125-preview
 summary: "Een debugger is een hulpmiddel dat programmeurs helpt te begrijpen wat hun\
   \ code daadwerkelijk doet terwijl deze wordt uitgevoerd. Het is de vergrootglas\u2026"

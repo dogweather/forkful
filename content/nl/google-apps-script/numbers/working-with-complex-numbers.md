@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:38.793153-07:00
 description: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle en\
   \ imaginaire eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele\u2026"
-lastmod: 2024-02-19 22:05:09.411575
+lastmod: '2024-02-25T18:49:47.721070-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle en imaginaire\
   \ eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele\u2026"

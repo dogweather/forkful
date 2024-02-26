@@ -3,7 +3,7 @@ date: 2024-01-21 21:19:30.352445-07:00
 description: "Handling errors in programming is about managing the unexpected\u2014\
   things that can go wrong. Programmers do it to ensure that their programs can cope\
   \ with\u2026"
-lastmod: 2024-02-19 22:05:18.598806
+lastmod: '2024-02-25T18:49:56.577478-07:00'
 model: gpt-4-1106-preview
 summary: "Handling errors in programming is about managing the unexpected\u2014things\
   \ that can go wrong. Programmers do it to ensure that their programs can cope with\u2026"

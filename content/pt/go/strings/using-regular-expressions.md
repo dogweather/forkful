@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:23.437775-07:00
 description: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o usadas para\
   \ procurar, combinar e manipular strings baseadas em padr\xF5es espec\xEDficos.\
   \ Programadores as\u2026"
-lastmod: 2024-02-19 22:05:05.112064
+lastmod: '2024-02-25T18:49:43.713923-07:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o usadas para\
   \ procurar, combinar e manipular strings baseadas em padr\xF5es espec\xEDficos.\

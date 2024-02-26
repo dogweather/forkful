@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:15.706053-07:00
 description: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\xE4\
   \xE4 datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\u2026"
-lastmod: 2024-02-19 22:05:15.572737
+lastmod: '2024-02-25T18:49:53.590025-07:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\xE4\xE4\
   \ datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\u2026"

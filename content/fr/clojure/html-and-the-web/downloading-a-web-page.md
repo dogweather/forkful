@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:30.126068-07:00
 description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
   \ Internet. Les programmeurs le font pour analyser des donn\xE9es, automatiser des\
   \ t\xE2ches ou agr\xE9ger\u2026"
-lastmod: 2024-02-19 22:05:16.179570
+lastmod: '2024-02-25T18:49:54.168171-07:00'
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via Internet.\
   \ Les programmeurs le font pour analyser des donn\xE9es, automatiser des t\xE2ches\

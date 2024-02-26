@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:18.499503-07:00
 description: "Att arbeta med CSV-filer i Ruby erbjuder ett rakt p\xE5 sak-s\xE4tt\
   \ att hantera tabul\xE4r data. Programmerare \xE4gnar sig ofta \xE5t detta f\xF6\
   r datautvinning,\u2026"
-lastmod: 2024-02-19 22:04:57.709354
+lastmod: '2024-02-25T18:49:36.768070-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer i Ruby erbjuder ett rakt p\xE5 sak-s\xE4tt att\
   \ hantera tabul\xE4r data. Programmerare \xE4gnar sig ofta \xE5t detta f\xF6r datautvinning,\u2026"

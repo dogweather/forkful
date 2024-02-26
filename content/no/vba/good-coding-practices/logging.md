@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:13.363018-07:00
 description: "Logging i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 registrere\
   \ informasjon om et programs kj\xF8retidsoppf\xF8rsel til en fil, konsoll eller\
   \ database.\u2026"
-lastmod: 2024-02-19 22:04:59.872559
+lastmod: '2024-02-25T18:49:38.808587-07:00'
 model: gpt-4-0125-preview
 summary: "Logging i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 registrere\
   \ informasjon om et programs kj\xF8retidsoppf\xF8rsel til en fil, konsoll eller\

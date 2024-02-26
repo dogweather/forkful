@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:18.014625-07:00
 description: "\xC5 skrive til standardfeil (stderr) i Ruby handler om \xE5 dirigere\
   \ feilmeldinger eller diagnostikk til en separat utstr\xF8m, forskjellig fra standardutgangen\u2026"
-lastmod: 2024-02-19 22:05:00.617805
+lastmod: '2024-02-25T18:49:39.511888-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i Ruby handler om \xE5 dirigere feilmeldinger\
   \ eller diagnostikk til en separat utstr\xF8m, forskjellig fra standardutgangen\u2026"

@@ -7,7 +7,7 @@ description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85
   \uC77C\uC5D0 \uC544\uC8FC \uC801\uD569\uD558\uBA70, YAML\uACFC \uBE44\uC2B7\uD55C\
   \ \uB290\uB08C\uC774\uC9C0\uB9CC \uC0AC\uB78C\uC774 \uBCF4\uAE30\uC5D0\uB294 JSON\uBCF4\
   \uB2E4 \uB35C \uBC88\uAC70\uB86D\uC2B5\uB2C8\uB2E4."
-lastmod: 2024-02-19 22:05:14.429464
+lastmod: '2024-02-25T18:49:52.508122-07:00'
 model: gpt-4-0125-preview
 summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C, \uB370\
   \uC774\uD130 \uC9C1\uB82C\uD654 \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\

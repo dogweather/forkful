@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:18.727246-07:00
 description: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na wprowadzanie\
   \ danych do programu bezpo\u015Brednio z terminala. Programi\u015Bci to robi\u0105\
   , by sterowa\u0107 zachowaniem\u2026"
-lastmod: 2024-02-19 22:04:54.282297
+lastmod: '2024-02-25T18:49:33.524120-07:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na wprowadzanie danych\
   \ do programu bezpo\u015Brednio z terminala. Programi\u015Bci to robi\u0105, by\

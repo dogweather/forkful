@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:09.683563-07:00
 description: "Hakemiston olemassaolon tarkistaminen Elixiriss\xE4 on hakemiston l\xE4\
   sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4\
   ss\xE4. Ohjelmoijat tekev\xE4t\u2026"
-lastmod: 2024-02-19 22:05:15.182421
+lastmod: '2024-02-25T18:49:53.214734-07:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Elixiriss\xE4 on hakemiston l\xE4\
   sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4\

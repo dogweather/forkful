@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:13.916001-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 o processo de criar um arquivo que\
   \ \xE9 usado apenas durante a vida \xFAtil de um programa ou processo. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-19 22:05:05.960319
+lastmod: '2024-02-25T18:49:44.516284-07:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de criar um arquivo que \xE9\
   \ usado apenas durante a vida \xFAtil de um programa ou processo. Programadores\

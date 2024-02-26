@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:27.603434-07:00
 description: "Kommandozeilenargumente erm\xF6glichen es einem Programm, beim Start\
   \ Eingaben zu empfangen. Das ist praktisch, um dem Programm zu sagen, was es tun\
   \ soll,\u2026"
-lastmod: 2024-02-19 22:05:13.134110
+lastmod: '2024-02-25T18:49:51.249852-07:00'
 model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente erm\xF6glichen es einem Programm, beim Start Eingaben\
   \ zu empfangen. Das ist praktisch, um dem Programm zu sagen, was es tun soll,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:27.572730-07:00
 description: "Att ladda ner en webbsida i C inneb\xE4r att programmatiskt f\xE5 tillg\xE5\
   ng till inneh\xE5llet p\xE5 en webbsida \xF6ver internet och spara det lokalt f\xF6\
   r bearbetning\u2026"
-lastmod: 2024-02-19 22:04:57.633537
+lastmod: '2024-02-25T18:49:36.696227-07:00'
 model: gpt-4-0125-preview
 summary: "Att ladda ner en webbsida i C inneb\xE4r att programmatiskt f\xE5 tillg\xE5\
   ng till inneh\xE5llet p\xE5 en webbsida \xF6ver internet och spara det lokalt f\xF6\

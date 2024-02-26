@@ -5,7 +5,7 @@ date: 2024-01-28 21:56:24.574599-07:00
 description: "Een string met een hoofdletter laten beginnen betekent dat je de eerste\
   \ letter van elk woord omzet naar een hoofdletter. Programmeurs doen dit om tekst\
   \ te\u2026"
-lastmod: 2024-02-19 22:05:09.804396
+lastmod: '2024-02-25T18:49:48.090238-07:00'
 model: gpt-4-0125-preview
 summary: "Een string met een hoofdletter laten beginnen betekent dat je de eerste\
   \ letter van elk woord omzet naar een hoofdletter. Programmeurs doen dit om tekst\

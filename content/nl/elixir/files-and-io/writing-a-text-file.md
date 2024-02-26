@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:17.590097-07:00
 description: "Het schrijven van een tekstbestand houdt in dat gegevens worden opgeslagen\
   \ in een bestand in een door mensen leesbaar formaat. Programmeurs doen dit om\u2026"
-lastmod: 2024-02-19 22:05:09.572514
+lastmod: '2024-02-25T18:49:47.873222-07:00'
 model: gpt-4-0125-preview
 summary: "Het schrijven van een tekstbestand houdt in dat gegevens worden opgeslagen\
   \ in een bestand in een door mensen leesbaar formaat. Programmeurs doen dit om\u2026"

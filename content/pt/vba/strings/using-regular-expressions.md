@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:04:53.138767-07:00
 description: "Express\xF5es regulares (regex) no Visual Basic for Applications (VBA)\
   \ oferecem uma maneira poderosa de pesquisar, combinar e manipular strings.\u2026"
-lastmod: 2024-02-19 22:05:05.436491
+lastmod: '2024-02-25T18:49:44.021102-07:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) no Visual Basic for Applications (VBA) oferecem\
   \ uma maneira poderosa de pesquisar, combinar e manipular strings.\u2026"

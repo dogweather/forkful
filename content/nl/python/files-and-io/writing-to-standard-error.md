@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:31.325356-07:00
 description: "Standaardfout, vaak aangeduid als stderr, is een vooraf gedefinieerde\
   \ bestandsstroom voor het loggen van foutmeldingen. Programmeurs gebruiken het om\u2026"
-lastmod: 2024-02-19 22:05:09.481248
+lastmod: '2024-02-25T18:49:47.786578-07:00'
 model: gpt-4-0125-preview
 summary: "Standaardfout, vaak aangeduid als stderr, is een vooraf gedefinieerde bestandsstroom\
   \ voor het loggen van foutmeldingen. Programmeurs gebruiken het om\u2026"

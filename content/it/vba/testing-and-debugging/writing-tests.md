@@ -5,7 +5,7 @@ date: 2024-02-01 22:09:07.632262-07:00
 description: "Scrivere test nella programmazione comporta la creazione di procedure\
   \ specifiche per validare la funzionalit\xE0 e le prestazioni dei tuoi segmenti\
   \ di\u2026"
-lastmod: 2024-02-19 22:05:02.328032
+lastmod: '2024-02-25T18:49:41.139727-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test nella programmazione comporta la creazione di procedure specifiche\
   \ per validare la funzionalit\xE0 e le prestazioni dei tuoi segmenti di\u2026"

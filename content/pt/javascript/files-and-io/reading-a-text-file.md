@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:36.677633-07:00
 description: "Ler um arquivo de texto em JavaScript significa acessar o conte\xFA\
   do guardado em um arquivo `.txt` - uma tarefa b\xE1sica e crucial. Programadores\
   \ fazem isso\u2026"
-lastmod: 2024-02-19 22:05:06.045447
+lastmod: '2024-02-25T18:49:44.596459-07:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em JavaScript significa acessar o conte\xFAdo guardado\
   \ em um arquivo `.txt` - uma tarefa b\xE1sica e crucial. Programadores fazem isso\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:34.244820-07:00
 description: "Das Kapitalisieren eines Strings in Swift ver\xE4ndert den gegebenen\
   \ String so, dass sein erstes Zeichen gro\xDFgeschrieben wird und die verbleibenden\
   \ Zeichen\u2026"
-lastmod: 2024-02-19 22:05:13.144426
+lastmod: '2024-02-25T18:49:51.260066-07:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in Swift ver\xE4ndert den gegebenen String\
   \ so, dass sein erstes Zeichen gro\xDFgeschrieben wird und die verbleibenden Zeichen\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 22:11:55.375759-07:00
 description: "Werken met XML betekent het parseren, transformeren en genereren van\
   \ XML-documenten in Elm. Dit wordt gedaan om te interageren met veel webdiensten\
   \ en\u2026"
-lastmod: 2024-02-19 22:05:09.803265
+lastmod: '2024-02-25T18:49:48.089279-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren, transformeren en genereren van XML-documenten\
   \ in Elm. Dit wordt gedaan om te interageren met veel webdiensten en\u2026"

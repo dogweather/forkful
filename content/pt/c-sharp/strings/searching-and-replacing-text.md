@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:33.335540-07:00
 description: "Procurar e substituir texto \xE9 uma forma de encontrar uma sequ\xEA\
   ncia espec\xEDfica de caracteres em uma string e troc\xE1-la por outra. Programadores\
   \ costumam\u2026"
-lastmod: 2024-02-19 22:05:05.610543
+lastmod: '2024-02-25T18:49:44.190565-07:00'
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 uma forma de encontrar uma sequ\xEAncia\
   \ espec\xEDfica de caracteres em uma string e troc\xE1-la por outra. Programadores\

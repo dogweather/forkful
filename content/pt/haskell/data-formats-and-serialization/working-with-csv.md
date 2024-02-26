@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:52.150084-07:00
 description: "Trabalhar com CSVs (Valores Separados por V\xEDrgula) envolve analisar\
   \ e gerar arquivos que armazenam dados tabulares em um formato de texto simples.\u2026"
-lastmod: 2024-02-19 22:05:05.695169
+lastmod: '2024-02-25T18:49:44.268667-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSVs (Valores Separados por V\xEDrgula) envolve analisar e\
   \ gerar arquivos que armazenam dados tabulares em um formato de texto simples.\u2026"

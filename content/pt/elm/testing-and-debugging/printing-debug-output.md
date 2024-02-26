@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:19.930933-07:00
 description: "Imprimir sa\xEDda de debug \xE9 como espiar no funcionamento do seu\
   \ c\xF3digo. Programadores fazem isso para entender o que est\xE1 acontecendo, encontrar\
   \ bugs e\u2026"
-lastmod: 2024-02-19 22:05:05.541181
+lastmod: '2024-02-25T18:49:44.122807-07:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDda de debug \xE9 como espiar no funcionamento do seu c\xF3\
   digo. Programadores fazem isso para entender o que est\xE1 acontecendo, encontrar\

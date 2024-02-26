@@ -2,7 +2,7 @@
 date: 2024-01-26 04:13:55.129760-07:00
 description: "REPL, o Ciclo de Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
   n interactivo que toma las entradas de los usuarios, las ejecuta y devuelve el\u2026"
-lastmod: 2024-02-19 22:05:18.007948
+lastmod: '2024-02-25T18:49:55.972628-07:00'
 model: gpt-4-0125-preview
 summary: "REPL, o Ciclo de Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
   n interactivo que toma las entradas de los usuarios, las ejecuta y devuelve el\u2026"

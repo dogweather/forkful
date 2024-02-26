@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:29.357441-07:00
 description: "Het downloaden van een webpagina betekent het verkrijgen van gegevens\
   \ van het web en deze in je app brengen. Programmeurs doen dit om inhoud op te halen,\u2026"
-lastmod: 2024-02-19 22:05:10.242327
+lastmod: '2024-02-25T18:49:48.486578-07:00'
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina betekent het verkrijgen van gegevens van\
   \ het web en deze in je app brengen. Programmeurs doen dit om inhoud op te halen,\u2026"

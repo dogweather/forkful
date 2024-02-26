@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:42.594301-07:00
 description: "Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode\
   \ inn i en streng. Vi gj\xF8r det for \xE5 bygge dynamiske strenger raskt og rent."
-lastmod: 2024-02-19 22:05:00.584635
+lastmod: '2024-02-25T18:49:39.480026-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode\
   \ inn i en streng. Vi gj\xF8r det for \xE5 bygge dynamiske strenger raskt og rent."

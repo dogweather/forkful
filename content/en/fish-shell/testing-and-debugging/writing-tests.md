@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:22.617664-07:00
 description: "Writing tests in Fish Shell involves creating scripts that automatically\
   \ run your code to validate its behavior against expected outcomes. This practice\u2026"
-lastmod: 2024-02-19 22:05:18.937798
+lastmod: '2024-02-25T18:49:56.912619-07:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in Fish Shell involves creating scripts that automatically\
   \ run your code to validate its behavior against expected outcomes. This practice\u2026"

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:38.431289-07:00
 description: "Fetching the current date in Python is a staple operation for many applications,\
   \ such as logging, data analysis, and time-based decision-making. It's\u2026"
-lastmod: 2024-02-19 22:05:18.224805
+lastmod: '2024-02-25T18:49:56.181448-07:00'
 model: gpt-4-0125-preview
 summary: "Fetching the current date in Python is a staple operation for many applications,\
   \ such as logging, data analysis, and time-based decision-making. It's\u2026"

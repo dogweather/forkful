@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:15.006325-07:00
 description: "HTTP-pyynt\xF6 on verkkoresurssin (yleens\xE4 web-sivun tai API:n) hakemiskutsu.\
   \ Ohjelmoijat l\xE4hett\xE4v\xE4t n\xE4it\xE4 pyynt\xF6j\xE4 tietojen noutamiseksi,\
   \ l\xE4hett\xE4miseksi,\u2026"
-lastmod: 2024-02-19 22:05:15.631968
+lastmod: '2024-02-25T18:49:53.648121-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 on verkkoresurssin (yleens\xE4 web-sivun tai API:n) hakemiskutsu.\
   \ Ohjelmoijat l\xE4hett\xE4v\xE4t n\xE4it\xE4 pyynt\xF6j\xE4 tietojen noutamiseksi,\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:02.615556-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwendet\
   \ werden, um Zeichenkombinationen in Strings zu finden. Sie erm\xF6glichen es Entwicklern,\
   \ Text\u2026"
-lastmod: 2024-02-19 22:05:13.328929
+lastmod: '2024-02-25T18:49:51.436037-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwendet werden,\
   \ um Zeichenkombinationen in Strings zu finden. Sie erm\xF6glichen es Entwicklern,\

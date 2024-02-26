@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:59.868967-07:00
 description: "Merkkijonon pituuden selvitt\xE4minen tarkoittaa merkkien lukum\xE4\xE4\
   r\xE4n laskemista. Ohjelmoijat tarvitsevat t\xE4t\xE4 esimerkiksi sy\xF6tteiden\
   \ validointiin ja tietojen\u2026"
-lastmod: 2024-02-19 22:05:15.624239
+lastmod: '2024-02-25T18:49:53.640580-07:00'
 model: gpt-4-1106-preview
 summary: "Merkkijonon pituuden selvitt\xE4minen tarkoittaa merkkien lukum\xE4\xE4\
   r\xE4n laskemista. Ohjelmoijat tarvitsevat t\xE4t\xE4 esimerkiksi sy\xF6tteiden\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:19.269579-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
   \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\
   \ T\xE4m\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.939607
+lastmod: '2024-02-25T18:49:53.951336-07:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
   \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\

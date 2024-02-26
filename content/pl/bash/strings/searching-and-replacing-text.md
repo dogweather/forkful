@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:12.712992-07:00
 description: "Wyszukiwanie i zamiana tekstu to operacje na ci\u0105gach znak\xF3w,\
   \ umo\u017Cliwiaj\u0105ce szybkie modyfikowanie tre\u015Bci. W programowaniu stosuje\
   \ si\u0119 je dla efektywno\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.706118
+lastmod: '2024-02-25T18:49:33.933226-07:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to operacje na ci\u0105gach znak\xF3w, umo\u017C\
   liwiaj\u0105ce szybkie modyfikowanie tre\u015Bci. W programowaniu stosuje si\u0119\

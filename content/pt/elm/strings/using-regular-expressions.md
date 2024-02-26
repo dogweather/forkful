@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:38.510109-07:00
 description: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o padr\xF5\
   es utilizados para combinar sequ\xEAncias de caracteres em strings. No Elm, assim\
   \ como em outras\u2026"
-lastmod: 2024-02-19 22:05:05.528422
+lastmod: '2024-02-25T18:49:44.109212-07:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o padr\xF5es utilizados\
   \ para combinar sequ\xEAncias de caracteres em strings. No Elm, assim como em outras\u2026"

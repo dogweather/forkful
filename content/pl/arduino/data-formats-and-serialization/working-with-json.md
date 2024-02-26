@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:54.481512-07:00
 description: "JSON, czyli Notacja Obiekt\xF3w JavaScript, to lekki format wymiany\
   \ danych, idealny do przechowywania danych lub plik\xF3w konfiguracyjnych w projektach\u2026"
-lastmod: 2024-02-19 22:04:54.837934
+lastmod: '2024-02-25T18:49:34.064662-07:00'
 model: gpt-4-0125-preview
 summary: "JSON, czyli Notacja Obiekt\xF3w JavaScript, to lekki format wymiany danych,\
   \ idealny do przechowywania danych lub plik\xF3w konfiguracyjnych w projektach\u2026"

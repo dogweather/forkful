@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:05.937706-07:00
 description: "Feilh\xE5ndtering er m\xE5ten du h\xE5ndterer ting p\xE5 n\xE5r koden\
   \ din ikke fungerer som den skal. Det er n\xF8kkelen fordi det hjelper programmene\
   \ dine \xE5 feile med\u2026"
-lastmod: 2024-02-19 22:05:00.467951
+lastmod: '2024-02-25T18:49:39.369304-07:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering er m\xE5ten du h\xE5ndterer ting p\xE5 n\xE5r koden din\
   \ ikke fungerer som den skal. Det er n\xF8kkelen fordi det hjelper programmene dine\

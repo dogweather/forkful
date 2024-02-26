@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:07.540105-07:00
 description: "JSONin (JavaScript Object Notation) k\xE4sittely Rustissa tarkoittaa\
   \ JSON-datan j\xE4sent\xE4mist\xE4 Rustin datarakenteisiin ja Rustin datarakenteiden\
   \ sarjoittamista\u2026"
-lastmod: 2024-02-19 22:05:15.273666
+lastmod: '2024-02-25T18:49:53.302351-07:00'
 model: gpt-4-0125-preview
 summary: "JSONin (JavaScript Object Notation) k\xE4sittely Rustissa tarkoittaa JSON-datan\
   \ j\xE4sent\xE4mist\xE4 Rustin datarakenteisiin ja Rustin datarakenteiden sarjoittamista\u2026"

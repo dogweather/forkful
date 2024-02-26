@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:34.124491-07:00
 description: "Refactoring in programming involves modifying the structure of code\
   \ without changing its behavior, to improve aspects like readability, maintainability,\u2026"
-lastmod: 2024-02-19 22:05:18.410635
+lastmod: '2024-02-25T18:49:56.364426-07:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in programming involves modifying the structure of code without\
   \ changing its behavior, to improve aspects like readability, maintainability,\u2026"

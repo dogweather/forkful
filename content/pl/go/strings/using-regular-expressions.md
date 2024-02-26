@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:35.218322-07:00
 description: "Wyra\u017Cenia regularne (regex) w programowaniu s\u0105 u\u017Cywane\
   \ do wyszukiwania, dopasowywania i manipulowania ci\u0105gami znak\xF3w na podstawie\
   \ okre\u015Blonych wzorc\xF3w.\u2026"
-lastmod: 2024-02-19 22:04:54.023650
+lastmod: '2024-02-25T18:49:33.263443-07:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w programowaniu s\u0105 u\u017Cywane do\
   \ wyszukiwania, dopasowywania i manipulowania ci\u0105gami znak\xF3w na podstawie\

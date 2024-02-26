@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:34.371036-07:00
 description: "\xC5 jobbe med JSON i Bash-programmering inneb\xE6rer parsing, uttrekking\
   \ og manipulering av JSON-data direkte fra kommandolinjen. Programmerere gj\xF8\
   r ofte dette\u2026"
-lastmod: 2024-02-19 22:05:00.262860
+lastmod: '2024-02-25T18:49:39.170422-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Bash-programmering inneb\xE6rer parsing, uttrekking\
   \ og manipulering av JSON-data direkte fra kommandolinjen. Programmerere gj\xF8\

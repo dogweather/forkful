@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:06.227894-07:00
 description: "Logging in software development is the process of recording information\
   \ about a program\u2019s execution, designed to track its behavior and diagnose\
   \ issues.\u2026"
-lastmod: 2024-02-19 22:05:18.145081
+lastmod: '2024-02-25T18:49:56.104018-07:00'
 model: gpt-4-0125-preview
 summary: "Logging in software development is the process of recording information\
   \ about a program\u2019s execution, designed to track its behavior and diagnose\

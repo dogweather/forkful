@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:19.749392-07:00
 description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon ensimm\xE4\
   isen merkin muuttamista isoksi kirjaimeksi ja lopun pieniksi kirjaimiksi. T\xE4\
   t\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.040788
+lastmod: '2024-02-25T18:49:53.101754-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon ensimm\xE4\
   isen merkin muuttamista isoksi kirjaimeksi ja lopun pieniksi kirjaimiksi. T\xE4\

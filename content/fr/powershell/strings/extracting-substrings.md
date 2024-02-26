@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:17.755008-07:00
 description: "Extraire des sous-cha\xEEnes, c'est comme couper un morceau de votre\
   \ baguette pr\xE9f\xE9r\xE9e \u2013 vous prenez juste la partie que vous voulez.\
   \ Les programmeurs font\u2026"
-lastmod: 2024-02-19 22:05:16.736190
+lastmod: '2024-02-25T18:49:54.716981-07:00'
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est comme couper un morceau de votre baguette\
   \ pr\xE9f\xE9r\xE9e \u2013 vous prenez juste la partie que vous voulez. Les programmeurs\

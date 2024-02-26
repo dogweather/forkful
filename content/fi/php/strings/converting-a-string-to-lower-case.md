@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:01.037425-07:00
 description: "Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten muuntamista\
   \ pienaakkosiksi. T\xE4m\xE4 helpottaa esimerkiksi k\xE4ytt\xE4j\xE4n sy\xF6tteen\
   \ vertailua,\u2026"
-lastmod: 2024-02-19 22:05:15.537417
+lastmod: '2024-02-25T18:49:53.556391-07:00'
 model: gpt-4-1106-preview
 summary: "Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten muuntamista\
   \ pienaakkosiksi. T\xE4m\xE4 helpottaa esimerkiksi k\xE4ytt\xE4j\xE4n sy\xF6tteen\

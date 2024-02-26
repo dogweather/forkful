@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:57.584565-07:00
 description: "Stringinterpolatie is een manier om variabelen rechtstreeks in een string\
   \ in te sluiten. Programmeurs gebruiken het om variabelen en strings effici\xEB\
   nt te\u2026"
-lastmod: 2024-02-19 22:05:10.272988
+lastmod: '2024-02-25T18:49:48.515731-07:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie is een manier om variabelen rechtstreeks in een string\
   \ in te sluiten. Programmeurs gebruiken het om variabelen en strings effici\xEB\

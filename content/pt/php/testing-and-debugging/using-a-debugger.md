@@ -3,7 +3,7 @@ date: 2024-01-26 03:50:31.380799-07:00
 description: "Um depurador \xE9 uma ferramenta que ajuda os programadores a entender\
   \ o que seu c\xF3digo est\xE1 realmente fazendo enquanto \xE9 executado. \xC9 a\
   \ lupa que nos permite\u2026"
-lastmod: 2024-02-19 22:05:05.720411
+lastmod: '2024-02-25T18:49:44.292420-07:00'
 model: gpt-4-0125-preview
 summary: "Um depurador \xE9 uma ferramenta que ajuda os programadores a entender o\
   \ que seu c\xF3digo est\xE1 realmente fazendo enquanto \xE9 executado. \xC9 a lupa\

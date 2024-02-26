@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:45.753915-07:00
 description: "Tablice asocjacyjne, cz\u0119sto nazywane s\u0142ownikami w Visual Basic\
   \ dla Aplikacji (VBA), pozwalaj\u0105 programistom na tworzenie kolekcji par klucz-warto\u015B\
   \u0107. Ta\u2026"
-lastmod: 2024-02-19 22:04:54.350188
+lastmod: '2024-02-25T18:49:33.588959-07:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, cz\u0119sto nazywane s\u0142ownikami w Visual Basic\
   \ dla Aplikacji (VBA), pozwalaj\u0105 programistom na tworzenie kolekcji par klucz-warto\u015B\

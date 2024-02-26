@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:28.693380-07:00
 description: "I PHP s\xF8ker og erstatter vi tekst for \xE5 oppdatere data eller formatere\
   \ output. Dette sparer tid og automatiserer kjedelige oppgaver."
-lastmod: 2024-02-19 22:05:00.134543
+lastmod: '2024-02-25T18:49:39.043986-07:00'
 model: gpt-4-1106-preview
 summary: "I PHP s\xF8ker og erstatter vi tekst for \xE5 oppdatere data eller formatere\
   \ output. Dette sparer tid og automatiserer kjedelige oppgaver."

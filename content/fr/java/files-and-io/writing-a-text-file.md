@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:11.853228-07:00
 description: "\xC9crire un fichier texte en Java consiste \xE0 utiliser les capacit\xE9\
   s du langage pour cr\xE9er et \xE9crire du contenu dans des fichiers sur le syst\xE8\
   me de fichiers.\u2026"
-lastmod: 2024-02-19 22:05:16.418706
+lastmod: '2024-02-25T18:49:54.406656-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Java consiste \xE0 utiliser les capacit\xE9\
   s du langage pour cr\xE9er et \xE9crire du contenu dans des fichiers sur le syst\xE8\

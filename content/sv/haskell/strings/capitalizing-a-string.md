@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:21.459938-07:00
 description: "Att f\xF6rstora en str\xE4ng inneb\xE4r att omvandla den f\xF6rsta bokstaven\
   \ i en given str\xE4ng till versal medan resten av bokst\xE4verna f\xF6rblir gemener.\
   \ Programmerare\u2026"
-lastmod: 2024-02-19 22:04:57.157455
+lastmod: '2024-02-25T18:49:36.237666-07:00'
 model: gpt-4-0125-preview
 summary: "Att f\xF6rstora en str\xE4ng inneb\xE4r att omvandla den f\xF6rsta bokstaven\
   \ i en given str\xE4ng till versal medan resten av bokst\xE4verna f\xF6rblir gemener.\

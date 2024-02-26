@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:45.157987-07:00
 description: "\xC9crire des tests en Java consiste \xE0 v\xE9rifier que votre code\
   \ se comporte comme pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent\
   \ des tests pour\u2026"
-lastmod: 2024-02-19 22:05:16.404005
+lastmod: '2024-02-25T18:49:54.391142-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Java consiste \xE0 v\xE9rifier que votre code se\
   \ comporte comme pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent\

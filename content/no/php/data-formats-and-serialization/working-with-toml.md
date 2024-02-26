@@ -3,7 +3,7 @@ date: 2024-01-26 04:24:37.477933-07:00
 description: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et dataformat\
   \ liknende JSON eller YAML, men enklere \xE5 lese for mennesker. Programmerere bruker\
   \ det\u2026"
-lastmod: 2024-02-19 22:05:00.174868
+lastmod: '2024-02-25T18:49:39.083320-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et dataformat\
   \ liknende JSON eller YAML, men enklere \xE5 lese for mennesker. Programmerere bruker\

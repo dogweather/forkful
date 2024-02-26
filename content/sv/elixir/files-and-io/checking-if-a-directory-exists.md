@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:05.406878-07:00
 description: "Att kontrollera om en katalog finns i Elixir handlar om att verifiera\
   \ n\xE4rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare\
   \ g\xF6r detta\u2026"
-lastmod: 2024-02-19 22:04:56.828381
+lastmod: '2024-02-25T18:49:35.923442-07:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Elixir handlar om att verifiera n\xE4\
   rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare\

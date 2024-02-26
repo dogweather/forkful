@@ -6,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong TypeScript li\
   n quan \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4\
   ng th\u1EC3 \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\xE3\
   \ x\xE1c \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn t\u1EADn\u2026"
-lastmod: 2024-02-19 22:04:55.462670
+lastmod: '2024-02-25T18:49:34.638853-07:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong TypeScript li\xEAn quan\
   \ \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3\

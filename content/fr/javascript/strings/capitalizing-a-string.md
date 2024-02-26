@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:39.634245-07:00
 description: "Mettre une cha\xEEne de caract\xE8res en capitale signifie convertir\
   \ le premier caract\xE8re de la cha\xEEne en majuscule tout en conservant les caract\xE8\
   res restants\u2026"
-lastmod: 2024-02-19 22:05:16.903308
+lastmod: '2024-02-25T18:49:54.891383-07:00'
 model: gpt-4-0125-preview
 summary: "Mettre une cha\xEEne de caract\xE8res en capitale signifie convertir le\
   \ premier caract\xE8re de la cha\xEEne en majuscule tout en conservant les caract\xE8\

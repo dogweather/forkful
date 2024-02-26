@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:40.069239-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste\
   \ \xE0 fournir un nom d'utilisateur et un mot de passe pour acc\xE9der \xE0 une\
   \ ressource web.\u2026"
-lastmod: 2024-02-19 22:05:16.877127
+lastmod: '2024-02-25T18:49:54.865906-07:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste \xE0\
   \ fournir un nom d'utilisateur et un mot de passe pour acc\xE9der \xE0 une ressource\

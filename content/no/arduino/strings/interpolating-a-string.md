@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:04.699881-07:00
 description: "Interpolering av strenger lar deg sette verdier direkte inn i en tekststreng,\
   \ noe som er hendig for \xE5 lage dynamisk tekst, som f.eks. sensorverdier eller\u2026"
-lastmod: 2024-02-19 22:05:00.315629
+lastmod: '2024-02-25T18:49:39.224269-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av strenger lar deg sette verdier direkte inn i en tekststreng,\
   \ noe som er hendig for \xE5 lage dynamisk tekst, som f.eks. sensorverdier eller\u2026"

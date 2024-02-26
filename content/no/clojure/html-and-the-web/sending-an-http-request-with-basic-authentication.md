@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:25.904701-07:00
 description: "HTTP-foresp\xF8rsler med grunnleggende autentisering inneb\xE6rer \xE5\
   \ sende brukernavn og passord i en header for tilgang. Programmerere bruker dette\
   \ for \xE5 sikre\u2026"
-lastmod: 2024-02-19 22:04:59.686231
+lastmod: '2024-02-25T18:49:38.629959-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-foresp\xF8rsler med grunnleggende autentisering inneb\xE6rer \xE5 sende\
   \ brukernavn og passord i en header for tilgang. Programmerere bruker dette for\

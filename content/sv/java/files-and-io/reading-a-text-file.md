@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:36.465649-07:00
 description: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en\
   \ fil som finns lagrad p\xE5 din dator eller server. Programmerare g\xF6r detta\
   \ f\xF6r att kunna arbeta med\u2026"
-lastmod: 2024-02-19 22:04:57.014714
+lastmod: '2024-02-25T18:49:36.099542-07:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en fil\
   \ som finns lagrad p\xE5 din dator eller server. Programmerare g\xF6r detta f\xF6\

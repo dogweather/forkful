@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:29.105636-07:00
 description: "Logowanie to w zasadzie oprogramowaniowy odpowiednik dziennika pok\u0142\
   adowego statku; jest to spos\xF3b na rejestrowanie zdarze\u0144, kt\xF3re maj\u0105\
   \ miejsce podczas\u2026"
-lastmod: 2024-02-19 22:04:54.184192
+lastmod: '2024-02-25T18:49:33.426432-07:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to w zasadzie oprogramowaniowy odpowiednik dziennika pok\u0142\
   adowego statku; jest to spos\xF3b na rejestrowanie zdarze\u0144, kt\xF3re maj\u0105\

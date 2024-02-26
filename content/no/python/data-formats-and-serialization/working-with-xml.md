@@ -2,7 +2,7 @@
 date: 2024-01-26 04:34:53.948477-07:00
 description: "\"Arbeid med XML\" refererer til prosessen med \xE5 lese, opprette og\
   \ modifisere XML (eXtensible Markup Language) filer ved hjelp av programmering.\u2026"
-lastmod: 2024-02-19 22:04:59.668225
+lastmod: '2024-02-25T18:49:38.612829-07:00'
 model: gpt-4-0125-preview
 summary: "\"Arbeid med XML\" refererer til prosessen med \xE5 lese, opprette og modifisere\
   \ XML (eXtensible Markup Language) filer ved hjelp av programmering.\u2026"

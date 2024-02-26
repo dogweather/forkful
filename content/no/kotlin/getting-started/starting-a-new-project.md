@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:08.160687-07:00
 description: "\xC5 starte et nytt prosjekt inneb\xE6rer \xE5 opprette en grunnleggende\
   \ ramme for kode du skal skrive. Programmerere gj\xF8r dette for \xE5 organisere\
   \ og strukturere\u2026"
-lastmod: 2024-02-19 22:05:00.011616
+lastmod: '2024-02-25T18:49:38.930228-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt inneb\xE6rer \xE5 opprette en grunnleggende\
   \ ramme for kode du skal skrive. Programmerere gj\xF8r dette for \xE5 organisere\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:04.650386-07:00
 description: "\xC5 jobbe med CSV-filer (Comma-Separated Values) inneb\xE6rer parsing\
   \ og generering av tekstdata strukturert som rader og kolonner, likt som regnearkdata.\u2026"
-lastmod: 2024-02-19 22:04:59.710386
+lastmod: '2024-02-25T18:49:38.651732-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma-Separated Values) inneb\xE6rer parsing og\
   \ generering av tekstdata strukturert som rader og kolonner, likt som regnearkdata.\u2026"

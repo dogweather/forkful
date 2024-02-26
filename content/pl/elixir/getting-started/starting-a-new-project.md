@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:29.042748-07:00
 description: "Rozpoczynanie nowego projektu to jak otwieranie nowego rozdzia\u0142\
   u: jest \u015Bwie\u017Ce, czyste i wszystko jest mo\u017Cliwe. Programi\u015Bci\
   \ zaczynaj\u0105 nowe projekty, by\u2026"
-lastmod: 2024-02-19 22:04:54.222269
+lastmod: '2024-02-25T18:49:33.464928-07:00'
 model: gpt-4-1106-preview
 summary: "Rozpoczynanie nowego projektu to jak otwieranie nowego rozdzia\u0142u: jest\
   \ \u015Bwie\u017Ce, czyste i wszystko jest mo\u017Cliwe. Programi\u015Bci zaczynaj\u0105\

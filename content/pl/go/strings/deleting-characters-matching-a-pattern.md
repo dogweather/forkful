@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:40.153644-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca polega\
   \ na usuni\u0119ciu pewnych znak\xF3w lub sekwencji znak\xF3w ze \u0142a\u0144cuch\xF3\
   w tekstowych, na podstawie regu\u0142\u2026"
-lastmod: 2024-02-19 22:04:54.016532
+lastmod: '2024-02-25T18:49:33.256246-07:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca polega na\
   \ usuni\u0119ciu pewnych znak\xF3w lub sekwencji znak\xF3w ze \u0142a\u0144cuch\xF3\

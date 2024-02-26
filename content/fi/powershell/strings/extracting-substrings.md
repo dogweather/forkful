@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:32.838555-07:00
 description: "Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty\
   \ osa merkkijonosta. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain\
   \ pala dataa\u2026"
-lastmod: 2024-02-19 22:05:15.665731
+lastmod: '2024-02-25T18:49:53.680764-07:00'
 model: gpt-4-1106-preview
 summary: "Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty osa\
   \ merkkijonosta. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain pala\

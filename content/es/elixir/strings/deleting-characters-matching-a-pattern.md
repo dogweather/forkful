@@ -2,7 +2,7 @@
 date: 2024-01-20 17:42:03.943203-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n permite limpiar o\
   \ procesar datos antes de usarlos. Los programadores lo hacen para validar entrada,\u2026"
-lastmod: 2024-02-19 22:05:17.274180
+lastmod: '2024-02-25T18:49:55.244199-07:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n permite limpiar o procesar\
   \ datos antes de usarlos. Los programadores lo hacen para validar entrada,\u2026"

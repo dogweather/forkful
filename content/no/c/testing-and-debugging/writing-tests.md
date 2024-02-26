@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:19.432774-07:00
 description: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogrammer\
   \ eller funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere\u2026"
-lastmod: 2024-02-19 22:05:00.556842
+lastmod: '2024-02-25T18:49:39.453580-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogrammer eller\
   \ funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere\u2026"

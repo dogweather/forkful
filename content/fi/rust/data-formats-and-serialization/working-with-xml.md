@@ -2,7 +2,7 @@
 date: 2024-01-26 04:35:29.618764-07:00
 description: "XML, lyhenne sanoista eXtensible Markup Language, on kuin JSONin sanavalmis\
   \ serkku. Joudut painimaan XML:n kanssa, kun ty\xF6skentelet perint\xF6j\xE4rjestelmien,\u2026"
-lastmod: 2024-02-19 22:05:15.276618
+lastmod: '2024-02-25T18:49:53.305177-07:00'
 model: gpt-4-0125-preview
 summary: "XML, lyhenne sanoista eXtensible Markup Language, on kuin JSONin sanavalmis\
   \ serkku. Joudut painimaan XML:n kanssa, kun ty\xF6skentelet perint\xF6j\xE4rjestelmien,\u2026"

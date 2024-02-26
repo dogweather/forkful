@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:42.089248-07:00
 description: "\xC9crire des tests dans l'environnement Arduino fait r\xE9f\xE9rence\
   \ au processus de cr\xE9ation de tests automatis\xE9s qui valident la fonctionnalit\xE9\
   \ de votre code\u2026"
-lastmod: 2024-02-19 22:05:16.795471
+lastmod: '2024-02-25T18:49:54.786407-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests dans l'environnement Arduino fait r\xE9f\xE9rence au\
   \ processus de cr\xE9ation de tests automatis\xE9s qui valident la fonctionnalit\xE9\

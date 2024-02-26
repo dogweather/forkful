@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:49.179976-07:00
 description: "Att arbeta med JSON i Elm handlar om att avkoda JSON-data till Elm-typer\
   \ och koda om Elm-v\xE4rden tillbaka till JSON. Denna process \xE4r avg\xF6rande\
   \ f\xF6r\u2026"
-lastmod: 2024-02-19 22:04:57.063152
+lastmod: '2024-02-25T18:49:36.145101-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Elm handlar om att avkoda JSON-data till Elm-typer\
   \ och koda om Elm-v\xE4rden tillbaka till JSON. Denna process \xE4r avg\xF6rande\

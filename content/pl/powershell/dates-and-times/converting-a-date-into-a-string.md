@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:29.994754-07:00
 description: "Co to jest konwersja daty na \u0142a\u0144cuch znak\xF3w? To proces\
   \ zmiany formatu daty z jej wbudowanego typu w PowerShell do postaci tekstowej,\
   \ czyli stringa. Po co\u2026"
-lastmod: 2024-02-19 22:04:54.783441
+lastmod: '2024-02-25T18:49:34.011620-07:00'
 model: gpt-4-1106-preview
 summary: "Co to jest konwersja daty na \u0142a\u0144cuch znak\xF3w? To proces zmiany\
   \ formatu daty z jej wbudowanego typu w PowerShell do postaci tekstowej, czyli stringa.\

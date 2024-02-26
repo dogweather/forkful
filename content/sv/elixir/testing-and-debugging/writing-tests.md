@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:46.961399-07:00
 description: "Att skriva tester i Elixir inneb\xE4r att man skapar automatiserade\
   \ skript f\xF6r att validera beteendet hos ens kod. Programmerare g\xF6r detta f\xF6\
   r att\u2026"
-lastmod: 2024-02-19 22:04:56.816916
+lastmod: '2024-02-25T18:49:35.912143-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Elixir inneb\xE4r att man skapar automatiserade skript\
   \ f\xF6r att validera beteendet hos ens kod. Programmerare g\xF6r detta f\xF6r att\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:33.693479-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) dans Elixir sont utilis\xE9\
   es pour chercher, faire correspondre, et manipuler des cha\xEEnes de caract\xE8\
   res bas\xE9es sur des\u2026"
-lastmod: 2024-02-19 22:05:16.213478
+lastmod: '2024-02-25T18:49:54.200866-07:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) dans Elixir sont utilis\xE9es pour\
   \ chercher, faire correspondre, et manipuler des cha\xEEnes de caract\xE8res bas\xE9\

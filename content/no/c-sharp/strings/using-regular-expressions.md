@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:31.690021-07:00
 description: "Regul\xE6re uttrykk (regex) i C# er et kraftig verkt\xF8y for m\xF8\
   nsters\xF8king i strenger, som lar programmerere s\xF8ke etter, erstatte, splitte\
   \ eller trekke ut data\u2026"
-lastmod: 2024-02-19 22:05:00.051387
+lastmod: '2024-02-25T18:49:38.961172-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i C# er et kraftig verkt\xF8y for m\xF8nsters\xF8\
   king i strenger, som lar programmerere s\xF8ke etter, erstatte, splitte eller trekke\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:51.321877-07:00
 description: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w danym\
   \ tek\u015Bcie. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\
   \ czy dane wprowadzone przez u\u017Cytkownika pasuj\u0105 do\u2026"
-lastmod: 2024-02-19 22:04:54.486549
+lastmod: '2024-02-25T18:49:33.719851-07:00'
 model: gpt-4-1106-preview
 summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w danym\
   \ tek\u015Bcie. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\

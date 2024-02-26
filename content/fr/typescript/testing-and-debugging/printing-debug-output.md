@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:20.230842-07:00
 description: "Imprimer des informations de d\xE9bogage, c'est afficher des valeurs\
   \ internes du programme pour comprendre son comportement. Les programmeurs le font\
   \ pour\u2026"
-lastmod: 2024-02-19 22:05:16.269702
+lastmod: '2024-02-25T18:49:54.255735-07:00'
 model: gpt-4-1106-preview
 summary: "Imprimer des informations de d\xE9bogage, c'est afficher des valeurs internes\
   \ du programme pour comprendre son comportement. Les programmeurs le font pour\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-30 19:11:50.991805-07:00
 description: "Assosiative arrays, eller som de mer n\xF8yaktig er kjent som i JavaScript,\
   \ objekter, lar deg knytte n\xF8kler til verdier. Dette er super praktisk for n\xE5\
   r du\u2026"
-lastmod: 2024-02-19 22:05:00.453100
+lastmod: '2024-02-25T18:49:39.355545-07:00'
 model: gpt-4-0125-preview
 summary: "Assosiative arrays, eller som de mer n\xF8yaktig er kjent som i JavaScript,\
   \ objekter, lar deg knytte n\xF8kler til verdier. Dette er super praktisk for n\xE5\

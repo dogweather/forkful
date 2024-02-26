@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:43.396336-07:00
 description: "Ein String in Kleinbuchstaben umzuwandeln, bedeutet, jeden Gro\xDFbuchstaben\
   \ in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern. Programmierer nutzen\
   \ das, um\u2026"
-lastmod: 2024-02-19 22:05:13.190444
+lastmod: '2024-02-25T18:49:51.303628-07:00'
 model: gpt-4-1106-preview
 summary: "Ein String in Kleinbuchstaben umzuwandeln, bedeutet, jeden Gro\xDFbuchstaben\
   \ in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern. Programmierer nutzen\

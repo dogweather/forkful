@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:42.943524-07:00
 description: "Analizar HTML en Google Apps Script implica extraer datos de contenido\
   \ HTML, lo cual es especialmente \xFAtil al interactuar con p\xE1ginas web o fuentes\
   \ de\u2026"
-lastmod: 2024-02-19 22:05:17.158918
+lastmod: '2024-02-25T18:49:55.130647-07:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML en Google Apps Script implica extraer datos de contenido HTML,\
   \ lo cual es especialmente \xFAtil al interactuar con p\xE1ginas web o fuentes de\u2026"

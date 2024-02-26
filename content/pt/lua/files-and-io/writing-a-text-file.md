@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:49.532865-07:00
 description: "Escrever em um arquivo de texto em Lua envolve criar ou abrir um arquivo\
   \ no modo de escrita, e ent\xE3o usar opera\xE7\xF5es de arquivo para inserir texto.\
   \ Esta \xE9\u2026"
-lastmod: 2024-02-19 22:05:05.780527
+lastmod: '2024-02-25T18:49:44.347251-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Lua envolve criar ou abrir um arquivo\
   \ no modo de escrita, e ent\xE3o usar opera\xE7\xF5es de arquivo para inserir texto.\

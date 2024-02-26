@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:12.778784-07:00
 description: "Writing a text file in Clojure involves creating or modifying files\
   \ to save data outside your application, enabling persistence, configuration, logging,\u2026"
-lastmod: 2024-02-19 22:05:18.269474
+lastmod: '2024-02-25T18:49:56.225443-07:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in Clojure involves creating or modifying files to save\
   \ data outside your application, enabling persistence, configuration, logging,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:08.672307-07:00
 description: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poimimista\
   \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t n\xE4in, jotta he voivat k\xE4ytt\xE4\
   \xE4 web-sis\xE4lt\xF6\xE4 tai\u2026"
-lastmod: 2024-02-19 22:05:15.380518
+lastmod: '2024-02-25T18:49:53.405707-07:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poimimista\
   \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t n\xE4in, jotta he voivat k\xE4ytt\xE4\

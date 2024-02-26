@@ -5,7 +5,7 @@ date: 2024-02-25 17:06:53.132911-07:00
 description: "L'interpolation de cha\xEEnes en C# vous permet de cr\xE9er une nouvelle\
   \ cha\xEEne en incluant des expressions \xE0 l'int\xE9rieur d'un litt\xE9ral de\
   \ cha\xEEne, facilitant\u2026"
-lastmod: 2024-02-25 18:27:14.157778
+lastmod: '2024-02-25T18:49:54.501076-07:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes en C# vous permet de cr\xE9er une nouvelle\
   \ cha\xEEne en incluant des expressions \xE0 l'int\xE9rieur d'un litt\xE9ral de\

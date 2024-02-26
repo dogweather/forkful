@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:58.465212-07:00
 description: "Wyra\u017Cenia regularne (regex) w Visual Basic for Applications (VBA)\
   \ stanowi\u0105 pot\u0119\u017Cne narz\u0119dzie do wyszukiwania, dopasowywania\
   \ i manipulowania ci\u0105gami\u2026"
-lastmod: 2024-02-19 22:04:54.346724
+lastmod: '2024-02-25T18:49:33.585647-07:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Visual Basic for Applications (VBA) stanowi\u0105\
   \ pot\u0119\u017Cne narz\u0119dzie do wyszukiwania, dopasowywania i manipulowania\

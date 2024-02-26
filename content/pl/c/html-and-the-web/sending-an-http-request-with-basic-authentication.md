@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:53.920973-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
   \ w j\u0119zyku C polega na przygotowaniu \u017C\u0105dania HTTP, kt\xF3re zawiera\
   \ nag\u0142\xF3wek Authorization z\u2026"
-lastmod: 2024-02-19 22:04:55.064077
+lastmod: '2024-02-25T18:49:34.259543-07:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem w\
   \ j\u0119zyku C polega na przygotowaniu \u017C\u0105dania HTTP, kt\xF3re zawiera\

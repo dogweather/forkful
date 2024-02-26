@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:29.187512-07:00
 description: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites\
   \ notes dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font\
   \ \xE7a pour\u2026"
-lastmod: 2024-02-19 22:05:16.530865
+lastmod: '2024-02-25T18:49:54.517332-07:00'
 model: gpt-4-1106-preview
 summary: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites notes\
   \ dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font \xE7\

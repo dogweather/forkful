@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:54.067706-07:00
 description: "Immagina di aver appena scoperto di dover fare un aggiornamento batch\
   \ a diversi file di configurazione presenti sul tuo server. Potresti aprire ogni\
   \ file,\u2026"
-lastmod: 2024-02-19 22:05:02.666300
+lastmod: '2024-02-25T18:49:41.457697-07:00'
 model: gpt-4-0125-preview
 summary: "Immagina di aver appena scoperto di dover fare un aggiornamento batch a\
   \ diversi file di configurazione presenti sul tuo server. Potresti aprire ogni file,\u2026"

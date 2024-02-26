@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:48.024640-07:00
 description: String interpolation lets you embed variables and expressions into strings.
   It keeps your code readable and flexible - no plus signs, no muss, no fuss.
-lastmod: 2024-02-19 22:05:18.316050
+lastmod: '2024-02-25T18:49:56.270340-07:00'
 model: gpt-4-1106-preview
 summary: String interpolation lets you embed variables and expressions into strings.
   It keeps your code readable and flexible - no plus signs, no muss, no fuss.

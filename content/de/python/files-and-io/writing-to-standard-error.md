@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:10.778212-07:00
 description: "Das Schreiben auf Standardfehler in Python bedeutet, die Fehlermeldungen\
   \ oder Diagnosen Ihres Programms auf den Fehlerstrom (`stderr`) zu lenken, getrennt\u2026"
-lastmod: 2024-02-19 22:05:12.443349
+lastmod: '2024-02-25T18:49:50.594032-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler in Python bedeutet, die Fehlermeldungen\
   \ oder Diagnosen Ihres Programms auf den Fehlerstrom (`stderr`) zu lenken, getrennt\u2026"

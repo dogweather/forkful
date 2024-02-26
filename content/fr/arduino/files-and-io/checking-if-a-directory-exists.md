@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:36.275118-07:00
 description: "Dans le contexte de la programmation Arduino, v\xE9rifier si un r\xE9\
   pertoire existe sur une carte SD ou un module de stockage similaire vous permet\
   \ de lire ou\u2026"
-lastmod: 2024-02-19 22:05:16.806681
+lastmod: '2024-02-25T18:49:54.797313-07:00'
 model: gpt-4-0125-preview
 summary: "Dans le contexte de la programmation Arduino, v\xE9rifier si un r\xE9pertoire\
   \ existe sur une carte SD ou un module de stockage similaire vous permet de lire\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:47.461359-07:00
 description: "La gestion des erreurs en C consiste \xE0 d\xE9tecter et r\xE9pondre\
   \ aux conditions anomales qui surviennent pendant l'ex\xE9cution d'un programme.\
   \ Les programmeurs\u2026"
-lastmod: 2024-02-19 22:05:17.030774
+lastmod: '2024-02-25T18:49:55.004416-07:00'
 model: gpt-4-0125-preview
 summary: "La gestion des erreurs en C consiste \xE0 d\xE9tecter et r\xE9pondre aux\
   \ conditions anomales qui surviennent pendant l'ex\xE9cution d'un programme. Les\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:03.378274-07:00
 description: "Travailler avec des fichiers CSV (Comma Separated Values, ou valeurs\
   \ s\xE9par\xE9es par des virgules) consiste \xE0 traiter et manipuler des donn\xE9\
   es stock\xE9es dans\u2026"
-lastmod: 2024-02-19 22:05:16.857226
+lastmod: '2024-02-25T18:49:54.846566-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Comma Separated Values, ou valeurs s\xE9\
   par\xE9es par des virgules) consiste \xE0 traiter et manipuler des donn\xE9es stock\xE9\

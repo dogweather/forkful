@@ -5,7 +5,7 @@ date: 2024-01-30 19:12:21.707261-07:00
 description: "Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk\
   \ element toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats\
   \ van\u2026"
-lastmod: 2024-02-19 22:05:09.959353
+lastmod: '2024-02-25T18:49:48.225085-07:00'
 model: gpt-4-0125-preview
 summary: "Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk element\
   \ toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats van\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:06.802505-07:00
 description: "\xC5 sjekke om en katalog finnes i Elixir handler om \xE5 verifisere\
   \ tilstedev\xE6relsen av en katalog p\xE5 en angitt bane i filsystemet. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: 2024-02-19 22:04:59.745904
+lastmod: '2024-02-25T18:49:38.684780-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog finnes i Elixir handler om \xE5 verifisere tilstedev\xE6\
   relsen av en katalog p\xE5 en angitt bane i filsystemet. Programmerere gj\xF8r dette\u2026"

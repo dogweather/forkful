@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:18.656983-07:00
 description: Sending an HTTP request means requesting data from a resource on the
   web. Programmers do it to interact with APIs, scrape web content, or talk to servers.
-lastmod: 2024-02-19 22:05:19.009842
+lastmod: '2024-02-25T18:49:56.985032-07:00'
 model: gpt-4-1106-preview
 summary: Sending an HTTP request means requesting data from a resource on the web.
   Programmers do it to interact with APIs, scrape web content, or talk to servers.

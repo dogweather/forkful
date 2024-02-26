@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:42.507057-07:00
 description: "Na programa\xE7\xE3o Bash, verificar se um diret\xF3rio existe \xE9\
   \ um mecanismo de controle essencial usado para verificar a presen\xE7a de um diret\xF3\
   rio antes de\u2026"
-lastmod: 2024-02-19 22:05:05.822859
+lastmod: '2024-02-25T18:49:44.386340-07:00'
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o Bash, verificar se um diret\xF3rio existe \xE9 um mecanismo\
   \ de controle essencial usado para verificar a presen\xE7a de um diret\xF3rio antes\

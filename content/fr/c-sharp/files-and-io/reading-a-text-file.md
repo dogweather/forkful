@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:06.503662-07:00
 description: "Lire un fichier texte, c'est parcourir son contenu avec votre programme.\
   \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."
-lastmod: 2024-02-19 22:05:16.546112
+lastmod: '2024-02-25T18:49:54.532034-07:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est parcourir son contenu avec votre programme.\
   \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."

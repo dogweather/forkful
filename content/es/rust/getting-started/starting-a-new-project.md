@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:27.648649-07:00
 description: "Iniciar un proyecto nuevo en Rust significa crear una estructura b\xE1\
   sica de archivos y c\xF3digo; es el punto de partida para toda aplicaci\xF3n. Los\u2026"
-lastmod: 2024-02-19 22:05:17.373273
+lastmod: '2024-02-25T18:49:55.340987-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo en Rust significa crear una estructura b\xE1sica\
   \ de archivos y c\xF3digo; es el punto de partida para toda aplicaci\xF3n. Los\u2026"

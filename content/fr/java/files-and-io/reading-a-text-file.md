@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:19.446497-07:00
 description: "Lire un fichier texte, c'est quoi ? C\u2019est parcourir un fichier\
   \ et en extraire des donn\xE9es pour les utiliser dans votre programme. Pourquoi\
   \ ? Parce qu'on a\u2026"
-lastmod: 2024-02-19 22:05:16.417691
+lastmod: '2024-02-25T18:49:54.405592-07:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est quoi ? C\u2019est parcourir un fichier et en\
   \ extraire des donn\xE9es pour les utiliser dans votre programme. Pourquoi ? Parce\

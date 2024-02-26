@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:27.106553-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PHP:ssa on perusteht\xE4\
   v\xE4, joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan hakemisen\
   \ sek\xE4 manipuloinnin. T\xE4m\xE4 on\u2026"
-lastmod: 2024-02-19 22:05:15.560853
+lastmod: '2024-02-25T18:49:53.578731-07:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PHP:ssa on perusteht\xE4v\xE4\
   , joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan hakemisen\

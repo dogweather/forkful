@@ -6,7 +6,7 @@ description: "Trong Ruby, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m gi\xFAp 
   o v\u1EC7 d\u1EEF li\u1EC7u nh\u1EA1y c\u1EA3m v\xE0 qu\u1EA3n l\xFD nhu c\u1EA7\
   u l\u01B0u tr\u1EEF tho\xE1ng qua. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
   ng n\xF3 cho vi\u1EC7c x\u1EED l\xFD t\u1EC7p ng\u1EAFn\u2026"
-lastmod: 2024-02-19 22:04:56.597871
+lastmod: '2024-02-25T18:49:35.701202-07:00'
 model: gpt-4-0125-preview
 summary: "Trong Ruby, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m gi\xFAp b\u1EA3\
   o v\u1EC7 d\u1EEF li\u1EC7u nh\u1EA1y c\u1EA3m v\xE0 qu\u1EA3n l\xFD nhu c\u1EA7\

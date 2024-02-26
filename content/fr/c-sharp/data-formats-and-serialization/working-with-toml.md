@@ -3,7 +3,7 @@ date: 2024-01-26 04:20:04.688360-07:00
 description: "TOML est un acronyme pour Tom's Obvious, Minimal Language, un format\
   \ de fichier de configuration qui est facile \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique\
   \ claire. Les\u2026"
-lastmod: 2024-02-19 22:05:16.552465
+lastmod: '2024-02-25T18:49:54.538311-07:00'
 model: gpt-4-0125-preview
 summary: "TOML est un acronyme pour Tom's Obvious, Minimal Language, un format de\
   \ fichier de configuration qui est facile \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique\

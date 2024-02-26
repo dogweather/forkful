@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:47.474915-07:00
 description: "\xC5 analysere en dato fra en streng handler om \xE5 konvertere tekst\
   \ som representerer en dato til et `Date` eller `DateTime`-objekt som Ruby forst\xE5\
   r.\u2026"
-lastmod: 2024-02-19 22:05:00.610707
+lastmod: '2024-02-25T18:49:39.505229-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng handler om \xE5 konvertere tekst som\
   \ representerer en dato til et `Date` eller `DateTime`-objekt som Ruby forst\xE5\

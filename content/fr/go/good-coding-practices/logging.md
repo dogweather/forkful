@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:03.211545-07:00
 description: "Le journalisation dans le d\xE9veloppement logiciel est le processus\
   \ d'enregistrement d'informations sur l'ex\xE9cution d'un programme, con\xE7u pour\
   \ suivre son\u2026"
-lastmod: 2024-02-19 22:05:16.048414
+lastmod: '2024-02-25T18:49:54.041556-07:00'
 model: gpt-4-0125-preview
 summary: "Le journalisation dans le d\xE9veloppement logiciel est le processus d'enregistrement\
   \ d'informations sur l'ex\xE9cution d'un programme, con\xE7u pour suivre son\u2026"

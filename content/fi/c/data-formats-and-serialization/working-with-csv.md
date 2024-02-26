@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:53.273387-07:00
 description: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely\
   \ tarkoittaa tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4\
   rjestetty\u2026"
-lastmod: 2024-02-19 22:05:15.971417
+lastmod: '2024-02-25T18:49:53.969557-07:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa\
   \ tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4rjestetty\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:06.587399-07:00
 description: "Sletting av tegn som matcher et m\xF8nster fjerner spesifikke deler\
   \ av en streng basert p\xE5 gitte kriterier. Programmerere gj\xF8r dette for \xE5\
   \ rense data,\u2026"
-lastmod: 2024-02-19 22:04:59.625516
+lastmod: '2024-02-25T18:49:38.573648-07:00'
 model: gpt-4-1106-preview
 summary: "Sletting av tegn som matcher et m\xF8nster fjerner spesifikke deler av en\
   \ streng basert p\xE5 gitte kriterier. Programmerere gj\xF8r dette for \xE5 rense\

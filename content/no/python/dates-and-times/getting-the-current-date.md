@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:34.463824-07:00
 description: "\xC5 hente dagens dato i Python er en grunnleggende operasjon for mange\
   \ applikasjoner, som logging, dataanalyse og tidsbasert beslutningstaking. Det handler\u2026"
-lastmod: 2024-02-19 22:04:59.653404
+lastmod: '2024-02-25T18:49:38.599497-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente dagens dato i Python er en grunnleggende operasjon for mange\
   \ applikasjoner, som logging, dataanalyse og tidsbasert beslutningstaking. Det handler\u2026"

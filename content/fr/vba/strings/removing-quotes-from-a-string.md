@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:00:30.660223-07:00
 description: "La suppression des guillemets d'une cha\xEEne dans VBA implique de retirer\
   \ les instances de guillemets simples (`'`) ou doubles (`\"`) qui peuvent encapsuler\u2026"
-lastmod: 2024-02-19 22:05:16.341603
+lastmod: '2024-02-25T18:49:54.326849-07:00'
 model: gpt-4-0125-preview
 summary: "La suppression des guillemets d'une cha\xEEne dans VBA implique de retirer\
   \ les instances de guillemets simples (`'`) ou doubles (`\"`) qui peuvent encapsuler\u2026"

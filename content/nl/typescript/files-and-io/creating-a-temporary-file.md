@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:09.968231-07:00
 description: "Een tijdelijk bestand maken betekent het cre\xEBren van een bestand\
   \ dat slechts voor korte tijd nodig is, meestal tijdens de uitvoering van een programma.\u2026"
-lastmod: 2024-02-19 22:05:09.618379
+lastmod: '2024-02-25T18:49:47.915721-07:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand maken betekent het cre\xEBren van een bestand dat\
   \ slechts voor korte tijd nodig is, meestal tijdens de uitvoering van een programma.\u2026"

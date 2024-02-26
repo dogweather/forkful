@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:35.709161-07:00
 description: "Eliminar caracteres siguiendo un patr\xF3n implica usar filtros para\
   \ quitar ciertos caracteres de strings de texto. Los programadores lo hacen para\
   \ limpiar\u2026"
-lastmod: 2024-02-19 22:05:17.736029
+lastmod: '2024-02-25T18:49:55.699748-07:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres siguiendo un patr\xF3n implica usar filtros para quitar\
   \ ciertos caracteres de strings de texto. Los programadores lo hacen para limpiar\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:00.736919-07:00
 description: "Scrivere un file di testo in Google Apps Script permette agli sviluppatori\
   \ di memorizzare dati in modo persistente, rendendoli accessibili per utilizzi o\u2026"
-lastmod: 2024-02-19 22:05:02.083092
+lastmod: '2024-02-25T18:49:40.904843-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Google Apps Script permette agli sviluppatori\
   \ di memorizzare dati in modo persistente, rendendoli accessibili per utilizzi o\u2026"

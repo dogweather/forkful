@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:19.813824-07:00
 description: "Working with JSON in Elm is about decoding JSON data into Elm types\
   \ and encoding Elm values back into JSON. This process is crucial for web applications\u2026"
-lastmod: 2024-02-19 22:05:18.497495
+lastmod: '2024-02-25T18:49:56.475322-07:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON in Elm is about decoding JSON data into Elm types and\
   \ encoding Elm values back into JSON. This process is crucial for web applications\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 00:51:49.300220-07:00
 description: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka pystyy\
   \ k\xE4sittelem\xE4\xE4n kun asiat menev\xE4t pieleen. Ohjelmoijat tekev\xE4t sit\xE4\
   \ est\xE4\xE4kseen kaatumiset\u2026"
-lastmod: 2024-02-19 22:05:15.175180
+lastmod: '2024-02-25T18:49:53.207631-07:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka pystyy k\xE4\
   sittelem\xE4\xE4n kun asiat menev\xE4t pieleen. Ohjelmoijat tekev\xE4t sit\xE4 est\xE4\

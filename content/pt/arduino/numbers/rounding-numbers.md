@@ -3,7 +3,7 @@ date: 2024-01-26 03:43:00.718458-07:00
 description: "Arredondar n\xFAmeros \xE9 cortar um decimal para o seu valor inteiro\
   \ mais pr\xF3ximo ou para um n\xFAmero determinado de casas decimais. Os programadores\
   \ arredondam\u2026"
-lastmod: 2024-02-19 22:05:05.892541
+lastmod: '2024-02-25T18:49:44.452227-07:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 cortar um decimal para o seu valor inteiro mais\
   \ pr\xF3ximo ou para um n\xFAmero determinado de casas decimais. Os programadores\

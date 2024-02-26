@@ -3,7 +3,7 @@ date: 2024-01-26 04:38:30.199614-07:00
 description: "Komplexa tal utvidgar v\xE5rt talsystem f\xF6r att inkludera imagin\xE4\
   ra tal, vilket m\xF6jligg\xF6r l\xF6sningar p\xE5 ekvationer som inte har reella\
   \ l\xF6sningar.\u2026"
-lastmod: 2024-02-19 22:04:57.123604
+lastmod: '2024-02-25T18:49:36.205346-07:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar v\xE5rt talsystem f\xF6r att inkludera imagin\xE4\
   ra tal, vilket m\xF6jligg\xF6r l\xF6sningar p\xE5 ekvationer som inte har reella\

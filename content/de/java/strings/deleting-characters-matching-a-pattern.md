@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:33.321964-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet,\
   \ bestimmte Segmente aus einem String zu entfernen, die das vorgegebene Muster erf\xFC\
   llen.\u2026"
-lastmod: 2024-02-19 22:05:12.672125
+lastmod: '2024-02-25T18:49:50.812590-07:00'
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
   \ Segmente aus einem String zu entfernen, die das vorgegebene Muster erf\xFCllen.\u2026"

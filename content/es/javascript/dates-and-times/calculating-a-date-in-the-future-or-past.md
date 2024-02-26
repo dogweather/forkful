@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:17.779455-07:00
 description: "Calcular una fecha en el futuro o en el pasado es simplemente ajustar\
   \ la fecha actual para obtener otra. Los programadores lo hacen para manejar reservas,\u2026"
-lastmod: 2024-02-19 22:05:17.975801
+lastmod: '2024-02-25T18:49:55.941052-07:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o en el pasado es simplemente ajustar la\
   \ fecha actual para obtener otra. Los programadores lo hacen para manejar reservas,\u2026"

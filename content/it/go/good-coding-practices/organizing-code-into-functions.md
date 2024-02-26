@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:59:24.788809-07:00
 description: "Organizzare il codice in funzioni in Go implica la suddivisione del\
   \ codice in blocchi riutilizzabili e modulari che eseguono compiti specifici. Questo\u2026"
-lastmod: 2024-02-19 22:05:02.019147
+lastmod: '2024-02-25T18:49:40.844606-07:00'
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni in Go implica la suddivisione del codice\
   \ in blocchi riutilizzabili e modulari che eseguono compiti specifici. Questo\u2026"

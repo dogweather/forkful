@@ -6,7 +6,7 @@ date: 2024-02-03 19:09:25.137812-07:00
 description: "Obter a data atual em Elixir envolve acessar as informa\xE7\xF5es de\
   \ data e hora do sistema, uma tarefa comum para registro em log, marca\xE7\xE3o\
   \ de data ou qualquer\u2026"
-lastmod: 2024-02-19 22:05:05.324792
+lastmod: '2024-02-25T18:49:43.917087-07:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em Elixir envolve acessar as informa\xE7\xF5es de data\
   \ e hora do sistema, uma tarefa comum para registro em log, marca\xE7\xE3o de data\

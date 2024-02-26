@@ -3,7 +3,7 @@ date: 2024-01-27 20:32:40.956797-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios em projetos Arduino envolve produzir\
   \ valores que s\xE3o imprevis\xEDveis por design, crucial para aplica\xE7\xF5es\
   \ como jogos, simula\xE7\xF5es e\u2026"
-lastmod: 2024-02-19 22:05:05.893555
+lastmod: '2024-02-25T18:49:44.453181-07:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em projetos Arduino envolve produzir valores\
   \ que s\xE3o imprevis\xEDveis por design, crucial para aplica\xE7\xF5es como jogos,\

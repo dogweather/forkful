@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:28.447292-07:00
 description: "Att organisera kod i funktioner handlar om att paketera kodblock som\
   \ utf\xF6r specifika uppgifter. Genom att g\xF6ra detta blir koden renare, l\xE4\
   ttare att\u2026"
-lastmod: 2024-02-19 22:04:56.774510
+lastmod: '2024-02-25T18:49:35.868314-07:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att paketera kodblock som utf\xF6\
   r specifika uppgifter. Genom att g\xF6ra detta blir koden renare, l\xE4ttare att\u2026"

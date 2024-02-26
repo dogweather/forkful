@@ -3,7 +3,7 @@ date: 2024-01-21 21:19:19.875424-07:00
 description: "Handling errors is about expecting the unexpected; it's how we manage\
   \ when things go wrong in our code. We do it to avoid crashes and to give users\
   \ a\u2026"
-lastmod: 2024-02-19 22:05:18.334940
+lastmod: '2024-02-25T18:49:56.289072-07:00'
 model: gpt-4-1106-preview
 summary: "Handling errors is about expecting the unexpected; it's how we manage when\
   \ things go wrong in our code. We do it to avoid crashes and to give users a\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:53.948286-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta C#:ssa tarkoittaa\
   \ p\xE4iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi.\
   \ T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6nt\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.475981
+lastmod: '2024-02-25T18:49:53.497151-07:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta C#:ssa tarkoittaa p\xE4\
   iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi.\

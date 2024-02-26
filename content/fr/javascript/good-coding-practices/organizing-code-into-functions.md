@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:08.941884-07:00
 description: "Organiser le code en fonctions divise les t\xE2ches en morceaux r\xE9\
   utilisables, rendant le code plus propre et plus facile \xE0 maintenir. Nous faisons\
   \ cela pour\u2026"
-lastmod: 2024-02-19 22:05:16.926214
+lastmod: '2024-02-25T18:49:54.913399-07:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions divise les t\xE2ches en morceaux r\xE9utilisables,\
   \ rendant le code plus propre et plus facile \xE0 maintenir. Nous faisons cela pour\u2026"

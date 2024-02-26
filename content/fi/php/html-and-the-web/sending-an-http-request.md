@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:11.703472-07:00
 description: "PHP:ss\xE4 HTTP-pyynt\xF6 l\xE4hett\xE4\xE4 tietoja palvelimelle tai\
   \ hakee niit\xE4 sielt\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta voivat siirt\xE4\
   \xE4 dataa, hakea resursseja tai\u2026"
-lastmod: 2024-02-19 22:05:15.547308
+lastmod: '2024-02-25T18:49:53.565662-07:00'
 model: gpt-4-1106-preview
 summary: "PHP:ss\xE4 HTTP-pyynt\xF6 l\xE4hett\xE4\xE4 tietoja palvelimelle tai hakee\
   \ niit\xE4 sielt\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta voivat siirt\xE4\

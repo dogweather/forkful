@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:27.651279-07:00
 description: "Writing a text file in Elm involves creating and saving textual data\
   \ to a file from an Elm application. Programmers often need to generate reports,\
   \ logs,\u2026"
-lastmod: 2024-02-19 22:05:18.495038
+lastmod: '2024-02-25T18:49:56.472834-07:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in Elm involves creating and saving textual data to\
   \ a file from an Elm application. Programmers often need to generate reports, logs,\u2026"

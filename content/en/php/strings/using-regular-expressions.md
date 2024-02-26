@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:06.388600-07:00
 description: "Regular expressions (regex) in PHP are patterns used to match character\
   \ combinations in strings, allowing for sophisticated search-and-replace operations\u2026"
-lastmod: 2024-02-19 22:05:18.620642
+lastmod: '2024-02-25T18:49:56.598618-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in PHP are patterns used to match character\
   \ combinations in strings, allowing for sophisticated search-and-replace operations\u2026"

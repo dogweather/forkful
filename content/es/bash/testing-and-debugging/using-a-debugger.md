@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:23.601844-07:00
 description: "Usar un depurador en Bash significa aprovechar herramientas para probar\
   \ y encontrar problemas en tus scripts, como atrapar errores que hacen que tu c\xF3\
   digo\u2026"
-lastmod: 2024-02-19 22:05:17.758287
+lastmod: '2024-02-25T18:49:55.721621-07:00'
 model: gpt-4-0125-preview
 summary: "Usar un depurador en Bash significa aprovechar herramientas para probar\
   \ y encontrar problemas en tus scripts, como atrapar errores que hacen que tu c\xF3\

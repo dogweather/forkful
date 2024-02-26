@@ -3,7 +3,7 @@ date: 2024-02-03 17:49:58.148338-07:00
 description: "Writing tests in C involves creating smaller, auxiliary programs or\
   \ functions that automatically verify the functionality of your code. Programmers\
   \ do it\u2026"
-lastmod: 2024-02-19 22:05:18.976432
+lastmod: '2024-02-25T18:49:56.951612-07:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in C involves creating smaller, auxiliary programs or functions\
   \ that automatically verify the functionality of your code. Programmers do it\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:22.676661-07:00
 description: "Rimuovere le virgolette da una stringa in VBA comporta l'eliminazione\
   \ delle istanze di virgolette singole (`'`) o doppie (`\"`) che possono incapsulare\
   \ o\u2026"
-lastmod: 2024-02-19 22:05:02.310412
+lastmod: '2024-02-25T18:49:41.123282-07:00'
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa in VBA comporta l'eliminazione delle\
   \ istanze di virgolette singole (`'`) o doppie (`\"`) che possono incapsulare o\u2026"

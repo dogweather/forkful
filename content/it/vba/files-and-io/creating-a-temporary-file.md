@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:51:40.691316-07:00
 description: "La creazione di un file temporaneo in Visual Basic for Applications\
   \ (VBA) comporta la generazione programmata di un file per un uso a breve termine,\u2026"
-lastmod: 2024-02-19 22:05:02.345979
+lastmod: '2024-02-25T18:49:41.156149-07:00'
 model: gpt-4-0125-preview
 summary: "La creazione di un file temporaneo in Visual Basic for Applications (VBA)\
   \ comporta la generazione programmata di un file per un uso a breve termine,\u2026"

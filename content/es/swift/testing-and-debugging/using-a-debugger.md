@@ -2,7 +2,7 @@
 date: 2024-01-26 04:10:28.961829-07:00
 description: "Usar un depurador significa aprovechar herramientas especializadas para\
   \ probar e inspeccionar tu c\xF3digo mientras se ejecuta. Es importante porque te\u2026"
-lastmod: 2024-02-19 22:05:17.925794
+lastmod: '2024-02-25T18:49:55.890592-07:00'
 model: gpt-4-0125-preview
 summary: "Usar un depurador significa aprovechar herramientas especializadas para\
   \ probar e inspeccionar tu c\xF3digo mientras se ejecuta. Es importante porque te\u2026"

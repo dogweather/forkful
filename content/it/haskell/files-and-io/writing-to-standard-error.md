@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:14.636659-07:00
 description: "Scrivere su standard error (stderr) in Haskell consente ai programmi\
   \ di differenziare il loro output tra risultati normali e messaggi di errore. Questo\
   \ \xE8\u2026"
-lastmod: 2024-02-19 22:05:02.557114
+lastmod: '2024-02-25T18:49:41.354791-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Haskell consente ai programmi di\
   \ differenziare il loro output tra risultati normali e messaggi di errore. Questo\

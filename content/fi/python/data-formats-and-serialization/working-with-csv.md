@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:00.119000-07:00
 description: "Ty\xF6skentely CSV:n (pilkuin erotetut arvot) parissa sis\xE4lt\xE4\xE4\
   \ lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan\
   \ tallentamiseen.\u2026"
-lastmod: 2024-02-19 22:05:15.106684
+lastmod: '2024-02-25T18:49:53.140126-07:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely CSV:n (pilkuin erotetut arvot) parissa sis\xE4lt\xE4\xE4\
   \ lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan\

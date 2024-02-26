@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:13.593397-07:00
 description: "Escrever em um arquivo de texto em C++ envolve criar ou abrir um arquivo\
   \ e, em seguida, escrever dados nele, o que \xE9 uma tarefa fundamental para\u2026"
-lastmod: 2024-02-19 22:05:05.959106
+lastmod: '2024-02-25T18:49:44.515277-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em C++ envolve criar ou abrir um arquivo\
   \ e, em seguida, escrever dados nele, o que \xE9 uma tarefa fundamental para\u2026"

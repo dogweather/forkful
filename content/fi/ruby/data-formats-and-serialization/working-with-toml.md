@@ -2,7 +2,7 @@
 date: 2024-01-26 04:26:00.594768-07:00
 description: "TOML on konfiguraatiotiedostomuoto, joka on helppo lukea sen selkeiden\
   \ semantiikkojen ansiosta. Ohjelmoijat k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4 sovellusten\u2026"
-lastmod: 2024-02-19 22:05:16.019603
+lastmod: '2024-02-25T18:49:54.013427-07:00'
 model: gpt-4-0125-preview
 summary: "TOML on konfiguraatiotiedostomuoto, joka on helppo lukea sen selkeiden semantiikkojen\
   \ ansiosta. Ohjelmoijat k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4 sovellusten\u2026"

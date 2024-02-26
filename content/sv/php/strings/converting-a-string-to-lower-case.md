@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:04.736538-07:00
 description: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att\
   \ \xE4ndra alla stora bokst\xE4ver till sina motsvarande sm\xE5 bokst\xE4ver. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: 2024-02-19 22:04:57.206512
+lastmod: '2024-02-25T18:49:36.285707-07:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att \xE4\
   ndra alla stora bokst\xE4ver till sina motsvarande sm\xE5 bokst\xE4ver. Programmerare\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:31.716754-07:00
 description: "XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren\
   \ van gegevens. Programmeurs werken met XML om interoperabiliteit tussen\u2026"
-lastmod: 2024-02-19 22:05:09.993272
+lastmod: '2024-02-25T18:49:48.258502-07:00'
 model: gpt-4-0125-preview
 summary: "XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren\
   \ van gegevens. Programmeurs werken met XML om interoperabiliteit tussen\u2026"

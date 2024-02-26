@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:46.693454-07:00
 description: "Sprawdzanie, czy katalog istnieje w TypeScript, jest kluczowe dla zada\u0144\
   \ zwi\u0105zanych z zarz\u0105dzaniem plikami, takich jak odczytywanie z plik\xF3\
   w lub\u2026"
-lastmod: 2024-02-19 22:04:54.281228
+lastmod: '2024-02-25T18:49:33.523105-07:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w TypeScript, jest kluczowe dla zada\u0144\
   \ zwi\u0105zanych z zarz\u0105dzaniem plikami, takich jak odczytywanie z plik\xF3\

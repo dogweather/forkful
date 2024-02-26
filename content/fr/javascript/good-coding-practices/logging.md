@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:17.220133-07:00
 description: "La journalisation, en r\xE9sum\xE9, c'est comme tenir un journal pour\
   \ votre application \u2014 elle enregistre les \xE9v\xE9nements, les erreurs et\
   \ d'autres actions\u2026"
-lastmod: 2024-02-19 22:05:16.927140
+lastmod: '2024-02-25T18:49:54.914306-07:00'
 model: gpt-4-1106-preview
 summary: "La journalisation, en r\xE9sum\xE9, c'est comme tenir un journal pour votre\
   \ application \u2014 elle enregistre les \xE9v\xE9nements, les erreurs et d'autres\

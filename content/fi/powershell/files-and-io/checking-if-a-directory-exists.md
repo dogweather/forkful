@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:15.949984-07:00
 description: "PowerShellissa hakemiston olemassaolon tarkistaminen on yleinen teht\xE4\
   v\xE4, joka auttaa skriptej\xE4 tekem\xE4\xE4n p\xE4\xE4t\xF6ksi\xE4 tiedostoj\xE4\
   rjestelm\xE4n rakenteeseen\u2026"
-lastmod: 2024-02-19 22:05:15.692775
+lastmod: '2024-02-25T18:49:53.707402-07:00'
 model: gpt-4-0125-preview
 summary: "PowerShellissa hakemiston olemassaolon tarkistaminen on yleinen teht\xE4\
   v\xE4, joka auttaa skriptej\xE4 tekem\xE4\xE4n p\xE4\xE4t\xF6ksi\xE4 tiedostoj\xE4\

@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:56.869208-07:00
 description: "Redondear n\xFAmeros implica ajustar un n\xFAmero a una precisi\xF3\
   n espec\xEDfica. Los programadores lo hacen para controlar la salida num\xE9rica\
   \ para mejorar la\u2026"
-lastmod: 2024-02-19 22:05:17.325787
+lastmod: '2024-02-25T18:49:55.295043-07:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros implica ajustar un n\xFAmero a una precisi\xF3n espec\xED\
   fica. Los programadores lo hacen para controlar la salida num\xE9rica para mejorar\

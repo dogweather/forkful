@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:40.722998-07:00
 description: "Praca z JSON-em (JavaScript Object Notation) polega na parsowaniu danych\
   \ JSON do i z u\u017Cywalnego formatu w TypeScript. Programi\u015Bci robi\u0105\
   \ to, aby \u0142atwo\u2026"
-lastmod: 2024-02-19 22:04:54.288869
+lastmod: '2024-02-25T18:49:33.530433-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON-em (JavaScript Object Notation) polega na parsowaniu danych\
   \ JSON do i z u\u017Cywalnego formatu w TypeScript. Programi\u015Bci robi\u0105\

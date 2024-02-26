@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:09.916572-07:00
 description: "Obtener la fecha actual en programaci\xF3n es crucial por una mir\xED\
   ada de razones, incluyendo el registro (logging), marcar eventos con una fecha y\
   \ hora\u2026"
-lastmod: 2024-02-19 22:05:17.258353
+lastmod: '2024-02-25T18:49:55.228594-07:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en programaci\xF3n es crucial por una mir\xEDada\
   \ de razones, incluyendo el registro (logging), marcar eventos con una fecha y hora\u2026"

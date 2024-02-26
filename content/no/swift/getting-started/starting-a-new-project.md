@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:49.932823-07:00
 description: "\xC5 starte et nytt prosjekt i Swift handler om \xE5 skape en ren skifer\
   \ for koden din. Vi gj\xF8r det for \xE5 realisere nye ideer, l\xF8se problemer\
   \ eller l\xE6re noe\u2026"
-lastmod: 2024-02-19 22:05:00.416912
+lastmod: '2024-02-25T18:49:39.321472-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt i Swift handler om \xE5 skape en ren skifer\
   \ for koden din. Vi gj\xF8r det for \xE5 realisere nye ideer, l\xF8se problemer\

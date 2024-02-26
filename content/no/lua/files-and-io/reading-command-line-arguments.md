@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:31.589614-07:00
 description: Lesing av kommandolinjeargumenter lar oss ta imot data fra brukere utenfor
   et Lua-script. Slik kan programmer bli mer fleksible og brukertilpassede.
-lastmod: 2024-02-19 22:05:00.210730
+lastmod: '2024-02-25T18:49:39.117969-07:00'
 model: gpt-4-1106-preview
 summary: Lesing av kommandolinjeargumenter lar oss ta imot data fra brukere utenfor
   et Lua-script. Slik kan programmer bli mer fleksible og brukertilpassede.

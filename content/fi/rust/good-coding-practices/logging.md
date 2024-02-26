@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:36.044457-07:00
 description: "Lokitus on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi; se\
   \ on tapa tallentaa tapahtumat, virheet ja muut olennaiset tiedot ohjelman suorituksen\
   \ aikana.\u2026"
-lastmod: 2024-02-19 22:05:15.258262
+lastmod: '2024-02-25T18:49:53.287754-07:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi; se on\
   \ tapa tallentaa tapahtumat, virheet ja muut olennaiset tiedot ohjelman suorituksen\

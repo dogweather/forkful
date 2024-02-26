@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:48.711581-07:00
 description: "Reguliere expressies (regex) zijn krachtige patronen voor het overeenkomen\
   \ van tekstreeksen. Programmeurs gebruiken regex om effici\xEBnt te zoeken,\u2026"
-lastmod: 2024-02-19 22:05:10.100276
+lastmod: '2024-02-25T18:49:48.352612-07:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) zijn krachtige patronen voor het overeenkomen\
   \ van tekstreeksen. Programmeurs gebruiken regex om effici\xEBnt te zoeken,\u2026"

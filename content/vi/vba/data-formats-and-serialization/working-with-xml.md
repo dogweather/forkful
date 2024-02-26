@@ -6,7 +6,7 @@ description: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Visual Basic for App
   \ (VBA) bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 s\u1EED\
   a \u0111\u1ED5i c\xE1c t\xE0i li\u1EC7u XML trong b\u1ED1i c\u1EA3nh c\u1EE7a c\xE1\
   c \u1EE9ng\u2026"
-lastmod: 2024-02-19 22:04:55.626214
+lastmod: '2024-02-25T18:49:34.801652-07:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Visual Basic for Applications\
   \ (VBA) bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 s\u1EED\

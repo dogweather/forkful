@@ -2,7 +2,7 @@
 date: 2024-01-26 01:02:43.657794-07:00
 description: "Logging i programvareutvikling er teknikken for \xE5 registrere hendelser\
   \ som finner sted mens et program kj\xF8rer, vanligvis til en fil eller et eksternt\u2026"
-lastmod: 2024-02-19 22:04:59.737583
+lastmod: '2024-02-25T18:49:38.676869-07:00'
 model: gpt-4-1106-preview
 summary: "Logging i programvareutvikling er teknikken for \xE5 registrere hendelser\
   \ som finner sted mens et program kj\xF8rer, vanligvis til en fil eller et eksternt\u2026"

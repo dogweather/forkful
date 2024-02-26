@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:17:57.154735-07:00
 description: "Las expresiones regulares (regex) en Ruby son patrones utilizados para\
   \ coincidir con combinaciones de caracteres en cadenas, lo que permite a los\u2026"
-lastmod: 2024-02-19 22:05:18.087114
+lastmod: '2024-02-25T18:49:56.047467-07:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Ruby son patrones utilizados para coincidir\
   \ con combinaciones de caracteres en cadenas, lo que permite a los\u2026"

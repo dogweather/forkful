@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:21.458660-07:00
 description: "\xC5 starte et nytt prosjekt i C# er \xE5 opprette en struktur av koder\
   \ og filer for \xE5 bygge en applikasjon eller et bibliotek. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:05:00.062789
+lastmod: '2024-02-25T18:49:38.971913-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt i C# er \xE5 opprette en struktur av koder\
   \ og filer for \xE5 bygge en applikasjon eller et bibliotek. Programmerere gj\xF8\

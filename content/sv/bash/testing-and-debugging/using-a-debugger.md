@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:27.375181-07:00
 description: "Att anv\xE4nda en debugger i Bash inneb\xE4r att utnyttja verktyg f\xF6\
   r att testa och hitta problem i dina skript, s\xE5som att f\xE5nga buggar som kraschar\
   \ din kod\u2026"
-lastmod: 2024-02-19 22:04:57.317352
+lastmod: '2024-02-25T18:49:36.402076-07:00'
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda en debugger i Bash inneb\xE4r att utnyttja verktyg f\xF6\
   r att testa och hitta problem i dina skript, s\xE5som att f\xE5nga buggar som kraschar\

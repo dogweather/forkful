@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:58.134559-07:00
 description: "Ler argumentos da linha de comando no Google Apps Script \xE9 um pouco\
   \ inadequado porque, ao contr\xE1rio de interfaces de linha de comando tradicionais\
   \ em\u2026"
-lastmod: 2024-02-19 22:05:05.194779
+lastmod: '2024-02-25T18:49:43.788082-07:00'
 model: gpt-4-0125-preview
 summary: "Ler argumentos da linha de comando no Google Apps Script \xE9 um pouco inadequado\
   \ porque, ao contr\xE1rio de interfaces de linha de comando tradicionais em\u2026"

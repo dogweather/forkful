@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:23.485862-07:00
 description: "Textsuche und -ersatz ist ein Vorgang, bei dem spezifische Textfragmente\
   \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Funktion,\
   \ um\u2026"
-lastmod: 2024-02-19 22:05:12.454443
+lastmod: '2024-02-25T18:49:50.604604-07:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz ist ein Vorgang, bei dem spezifische Textfragmente\
   \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Funktion,\

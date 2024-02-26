@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:54.095470-07:00
 description: "HTML parsen betekent het converteren van HTML-tekst naar een datastructuur\
   \ waarmee je programma kan werken. Programmeurs doen dit om de inhoud van\u2026"
-lastmod: 2024-02-19 22:05:09.775849
+lastmod: '2024-02-25T18:49:48.063338-07:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent het converteren van HTML-tekst naar een datastructuur\
   \ waarmee je programma kan werken. Programmeurs doen dit om de inhoud van\u2026"

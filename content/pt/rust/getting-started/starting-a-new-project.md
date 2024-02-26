@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:21.806036-07:00
 description: "Iniciar um novo projeto em Rust \xE9 como desenhar o molde para uma\
   \ nova inven\xE7\xE3o. Programadores fazem isso para transformar ideias em c\xF3\
   digo, criando a base\u2026"
-lastmod: 2024-02-19 22:05:05.402517
+lastmod: '2024-02-25T18:49:43.989537-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em Rust \xE9 como desenhar o molde para uma nova\
   \ inven\xE7\xE3o. Programadores fazem isso para transformar ideias em c\xF3digo,\

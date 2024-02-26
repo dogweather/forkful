@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:26.165810-07:00
 description: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique relatif.\
   \ Les d\xE9veloppeurs le font pour trier des \xE9v\xE9nements, g\xE9rer des d\xE9\
   lais ou v\xE9rifier des\u2026"
-lastmod: 2024-02-19 22:05:16.193167
+lastmod: '2024-02-25T18:49:54.181464-07:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique relatif.\
   \ Les d\xE9veloppeurs le font pour trier des \xE9v\xE9nements, g\xE9rer des d\xE9\

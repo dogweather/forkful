@@ -3,7 +3,7 @@ date: 2024-01-26 04:14:57.902357-07:00
 description: "Um shell interativo, ou REPL (Read-Eval-Print Loop), no Haskell permite\
   \ executar trechos de c\xF3digo ao vivo. \xC9 um espa\xE7o de experimenta\xE7\xE3\
   o para feedback\u2026"
-lastmod: 2024-02-19 22:05:05.672514
+lastmod: '2024-02-25T18:49:44.248331-07:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop), no Haskell permite\
   \ executar trechos de c\xF3digo ao vivo. \xC9 um espa\xE7o de experimenta\xE7\xE3\

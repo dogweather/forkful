@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:17.180147-07:00
 description: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tett\xE4\
   vi\xE4 tiedonpaloja. Niit\xE4 k\xE4ytet\xE4\xE4n, koska ne mahdollistavat k\xE4\
   ytt\xE4j\xE4n tarpeisiin mukautuvat\u2026"
-lastmod: 2024-02-19 22:05:15.439528
+lastmod: '2024-02-25T18:49:53.462172-07:00'
 model: gpt-4-1106-preview
 summary: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tett\xE4\
   vi\xE4 tiedonpaloja. Niit\xE4 k\xE4ytet\xE4\xE4n, koska ne mahdollistavat k\xE4\

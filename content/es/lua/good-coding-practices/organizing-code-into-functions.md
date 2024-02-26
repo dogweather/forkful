@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:08.421501-07:00
 description: "Organizar el c\xF3digo en funciones se trata de descomponer tu scripting\
   \ en pedazos peque\xF1os\u2014piensa en bloques de LEGO funcionales. Lo hacemos\
   \ para obtener\u2026"
-lastmod: 2024-02-19 22:05:17.715278
+lastmod: '2024-02-25T18:49:55.678789-07:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones se trata de descomponer tu scripting\
   \ en pedazos peque\xF1os\u2014piensa en bloques de LEGO funcionales. Lo hacemos\

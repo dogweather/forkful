@@ -2,7 +2,7 @@
 date: 2024-01-26 01:16:07.214805-07:00
 description: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare,\
   \ modulare Bl\xF6cke zu gliedern, die durch einen Namen identifiziert werden.\u2026"
-lastmod: 2024-02-19 22:05:12.602231
+lastmod: '2024-02-25T18:49:50.746000-07:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare,\
   \ modulare Bl\xF6cke zu gliedern, die durch einen Namen identifiziert werden.\u2026"

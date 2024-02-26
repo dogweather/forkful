@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:59.839026-07:00
 description: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely on yleinen teht\xE4\
   v\xE4 datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa.\u2026"
-lastmod: 2024-02-19 22:05:15.700763
+lastmod: '2024-02-25T18:49:53.715294-07:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely on yleinen teht\xE4\
   v\xE4 datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa.\u2026"

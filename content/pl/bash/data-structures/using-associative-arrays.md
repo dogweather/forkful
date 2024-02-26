@@ -5,7 +5,7 @@ date: 2024-01-30 19:10:08.671526-07:00
 description: "Tablice asocjacyjne to jakby na\u0142adowane tablice, kt\xF3re pozwalaj\u0105\
   \ u\u017Cywa\u0107 ci\u0105g\xF3w znak\xF3w jako indeks\xF3w zamiast samych liczb\
   \ ca\u0142kowitych. Programi\u015Bci u\u017Cywaj\u0105\u2026"
-lastmod: 2024-02-19 22:04:54.714651
+lastmod: '2024-02-25T18:49:33.941629-07:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne to jakby na\u0142adowane tablice, kt\xF3re pozwalaj\u0105\
   \ u\u017Cywa\u0107 ci\u0105g\xF3w znak\xF3w jako indeks\xF3w zamiast samych liczb\

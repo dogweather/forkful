@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:48.059339-07:00
 description: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir mensajes\
   \ de error y diagn\xF3sticos al flujo stderr, separado de la salida est\xE1ndar\
   \ (stdout). Los\u2026"
-lastmod: 2024-02-19 22:05:17.264126
+lastmod: '2024-02-25T18:49:55.234259-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir mensajes de\
   \ error y diagn\xF3sticos al flujo stderr, separado de la salida est\xE1ndar (stdout).\

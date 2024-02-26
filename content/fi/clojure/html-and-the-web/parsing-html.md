@@ -3,7 +3,7 @@ date: 2024-01-20 15:30:45.707879-07:00
 description: "(Mit\xE4 & Miksi?) HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin\
   \ rakenteen lukemista ja sen sis\xE4ll\xF6n muuntamista k\xE4sitelt\xE4v\xE4ksi\
   \ tietorakenteeksi. Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.123873
+lastmod: '2024-02-25T18:49:53.157397-07:00'
 summary: "(Mit\xE4 & Miksi?) HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin rakenteen\
   \ lukemista ja sen sis\xE4ll\xF6n muuntamista k\xE4sitelt\xE4v\xE4ksi tietorakenteeksi.\
   \ Ohjelmoijat\u2026"

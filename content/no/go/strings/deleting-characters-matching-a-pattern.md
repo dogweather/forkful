@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:30.041936-07:00
 description: "\xC5 slette tegn som matcher et spesifikt m\xF8nster handler om \xE5\
   \ fjerne visse tegn eller sekvenser av tegn fra strenger, basert p\xE5 regler definert\
   \ av et\u2026"
-lastmod: 2024-02-19 22:04:59.527898
+lastmod: '2024-02-25T18:49:38.481906-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 slette tegn som matcher et spesifikt m\xF8nster handler om \xE5 fjerne\
   \ visse tegn eller sekvenser av tegn fra strenger, basert p\xE5 regler definert\

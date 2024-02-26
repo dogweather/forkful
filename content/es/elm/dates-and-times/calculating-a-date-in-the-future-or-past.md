@@ -2,7 +2,7 @@
 date: 2024-01-20 17:30:42.251610-07:00
 description: "Calcular una fecha en el futuro o pasado es simplemente determinar una\
   \ nueva fecha sumando o restando d\xEDas, meses, o a\xF1os a una fecha dada. Los\u2026"
-lastmod: 2024-02-19 22:05:17.514778
+lastmod: '2024-02-25T18:49:55.480190-07:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado es simplemente determinar una nueva\
   \ fecha sumando o restando d\xEDas, meses, o a\xF1os a una fecha dada. Los\u2026"

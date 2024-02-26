@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:05.899915-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios no Visual Basic for Applications (VBA)\
   \ permite que programas simulem processos com elementos de chance ou variabilidade,\
   \ como a\u2026"
-lastmod: 2024-02-19 22:05:05.443177
+lastmod: '2024-02-25T18:49:44.027599-07:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios no Visual Basic for Applications (VBA) permite\
   \ que programas simulem processos com elementos de chance ou variabilidade, como\

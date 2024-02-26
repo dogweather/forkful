@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:27.305696-07:00
 description: "Kommandolinjeargumenter lar brukere gi input til et skript n\xE5r de\
   \ kj\xF8rer det. Programmerere bruker dette for \xE5 lage fleksible og tilpassbare\
   \ scripts."
-lastmod: 2024-02-19 22:05:00.301965
+lastmod: '2024-02-25T18:49:39.210761-07:00'
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar brukere gi input til et skript n\xE5r de kj\xF8\
   rer det. Programmerere bruker dette for \xE5 lage fleksible og tilpassbare scripts."

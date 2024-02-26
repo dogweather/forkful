@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:43.201249-07:00
 description: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps\
   \ Script, chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach\
   \ Google, jest podstawowym\u2026"
-lastmod: 2024-02-19 22:04:54.070686
+lastmod: '2024-02-25T18:49:33.310382-07:00'
 model: gpt-4-0125-preview
 summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps Script,\
   \ chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach Google,\

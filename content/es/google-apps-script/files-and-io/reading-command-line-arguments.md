@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:49.858889-07:00
 description: "Leer argumentos de la l\xEDnea de comandos en Google Apps Script es\
   \ un poco un t\xE9rmino incorrecto porque, a diferencia de las interfaces de l\xED\
   nea de comandos\u2026"
-lastmod: 2024-02-19 22:05:17.178624
+lastmod: '2024-02-25T18:49:55.150537-07:00'
 model: gpt-4-0125-preview
 summary: "Leer argumentos de la l\xEDnea de comandos en Google Apps Script es un poco\
   \ un t\xE9rmino incorrecto porque, a diferencia de las interfaces de l\xEDnea de\

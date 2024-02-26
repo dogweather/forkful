@@ -2,7 +2,7 @@
 date: 2024-01-20 17:40:25.570523-07:00
 description: "Creating a temporary file lets your app stash data it doesn't need forever.\
   \ It's handy for when you're dealing with large data processing, caching, or\u2026"
-lastmod: 2024-02-19 22:05:18.912724
+lastmod: '2024-02-25T18:49:56.886008-07:00'
 model: gpt-4-1106-preview
 summary: "Creating a temporary file lets your app stash data it doesn't need forever.\
   \ It's handy for when you're dealing with large data processing, caching, or\u2026"

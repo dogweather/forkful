@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:32.093244-07:00
 description: "Arbeid med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
   \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data i ren tekst.\u2026"
-lastmod: 2024-02-19 22:05:00.041290
+lastmod: '2024-02-25T18:49:38.951486-07:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
   \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data i ren tekst.\u2026"

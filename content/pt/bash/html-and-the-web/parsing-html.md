@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:29.093603-07:00
 description: "Analisar HTML significa vasculhar a estrutura e o conte\xFAdo de um\
   \ arquivo HTML para extrair informa\xE7\xF5es. Programadores fazem isso para acessar\
   \ dados,\u2026"
-lastmod: 2024-02-19 22:05:05.805586
+lastmod: '2024-02-25T18:49:44.370173-07:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML significa vasculhar a estrutura e o conte\xFAdo de um arquivo\
   \ HTML para extrair informa\xE7\xF5es. Programadores fazem isso para acessar dados,\u2026"

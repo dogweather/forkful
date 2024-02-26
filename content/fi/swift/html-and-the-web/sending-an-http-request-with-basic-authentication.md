@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:56.304409-07:00
 description: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\xE4\
   ytt\xE4j\xE4nimi ja salasana verkon yli turvallisesti. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 tapaa, kun heid\xE4n t\xE4ytyy\u2026"
-lastmod: 2024-02-19 22:05:15.802290
+lastmod: '2024-02-25T18:49:53.815315-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\xE4ytt\xE4\
   j\xE4nimi ja salasana verkon yli turvallisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\

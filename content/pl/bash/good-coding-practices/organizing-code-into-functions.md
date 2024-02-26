@@ -3,7 +3,7 @@ date: 2024-01-26 01:08:48.444438-07:00
 description: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na\
   \ mniejsze, wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015B\
   lone zadania. Sprawia to, \u017Ce kod\u2026"
-lastmod: 2024-02-19 22:04:54.730187
+lastmod: '2024-02-25T18:49:33.957918-07:00'
 model: gpt-4-1106-preview
 summary: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na mniejsze,\
   \ wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015Blone zadania.\

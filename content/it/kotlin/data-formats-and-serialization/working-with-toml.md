@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:54.531560-07:00
 description: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
   \ di Tom). Viene utilizzato per i file di configurazione perch\xE9 \xE8 facile da\
   \ leggere\u2026"
-lastmod: 2024-02-19 22:05:02.478520
+lastmod: '2024-02-25T18:49:41.281599-07:00'
 model: gpt-4-0125-preview
 summary: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
   \ di Tom). Viene utilizzato per i file di configurazione perch\xE9 \xE8 facile da\

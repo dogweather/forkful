@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:47.374857-07:00
 description: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im Dateisystem\
   \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten.\
   \ Diese\u2026"
-lastmod: 2024-02-19 22:05:13.175421
+lastmod: '2024-02-25T18:49:51.289744-07:00'
 model: gpt-4-0125-preview
 summary: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im Dateisystem\
   \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten.\

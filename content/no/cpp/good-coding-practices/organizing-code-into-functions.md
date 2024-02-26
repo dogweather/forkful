@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:10.997260-07:00
 description: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp i\
   \ mindre, gjenbrukbare deler. Vi gj\xF8r det for \xE5 unng\xE5 gjentagelser, gj\xF8\
   re koden v\xE5r lesbar,\u2026"
-lastmod: 2024-02-19 22:05:00.378263
+lastmod: '2024-02-25T18:49:39.284807-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp i mindre,\
   \ gjenbrukbare deler. Vi gj\xF8r det for \xE5 unng\xE5 gjentagelser, gj\xF8re koden\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:37.452913-07:00
 description: "Converter uma data em uma string permite exibir e manipular datas num\
   \ formato leg\xEDvel para humanos. Programadores fazem isso para interagir com usu\xE1\
   rios,\u2026"
-lastmod: 2024-02-19 22:05:05.995361
+lastmod: '2024-02-25T18:49:44.549469-07:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string permite exibir e manipular datas num formato\
   \ leg\xEDvel para humanos. Programadores fazem isso para interagir com usu\xE1rios,\u2026"

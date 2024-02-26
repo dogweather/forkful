@@ -4,7 +4,7 @@ description: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha to liczba znak\xF3w w te
   cie. Programi\u015Bci licz\u0105 j\u0105, by zarz\u0105dza\u0107 danymi tekstowymi\
   \ \u2013 np. sprawdzi\u0107, czy has\u0142o ma odpowiedni\u0105 d\u0142ugo\u015B\
   \u0107 lub\u2026"
-lastmod: 2024-02-19 22:04:54.168014
+lastmod: '2024-02-25T18:49:33.409936-07:00'
 model: gpt-4-1106-preview
 summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha to liczba znak\xF3w w tek\u015B\
   cie. Programi\u015Bci licz\u0105 j\u0105, by zarz\u0105dza\u0107 danymi tekstowymi\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:04.571921-07:00
 description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att hantera\
   \ detta l\xE4tta datautbytesformat inuti dina Java-applikationer. Programmerare\
   \ v\xE4ljer\u2026"
-lastmod: 2024-02-19 22:04:57.019014
+lastmod: '2024-02-25T18:49:36.103541-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att hantera\
   \ detta l\xE4tta datautbytesformat inuti dina Java-applikationer. Programmerare\

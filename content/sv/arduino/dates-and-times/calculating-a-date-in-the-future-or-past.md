@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:40.163650-07:00
 description: "Ber\xE4kning av ett framtida eller f\xF6rflutet datum inneb\xE4r att\
   \ man r\xE4knar ut ett datum utifr\xE5n ett givet startdatum och en tidsspann. Programmerare\
   \ g\xF6r detta\u2026"
-lastmod: 2024-02-19 22:04:57.416260
+lastmod: '2024-02-25T18:49:36.496028-07:00'
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av ett framtida eller f\xF6rflutet datum inneb\xE4r att man\
   \ r\xE4knar ut ett datum utifr\xE5n ett givet startdatum och en tidsspann. Programmerare\

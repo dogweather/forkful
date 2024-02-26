@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:20.313360-07:00
 description: "Extraire des sous-cha\xEEnes en C consiste \xE0 cr\xE9er une cha\xEE\
   ne plus petite (sous-cha\xEEne) \xE0 partir d'une cha\xEEne plus grande en fonction\
   \ de crit\xE8res sp\xE9cifi\xE9s,\u2026"
-lastmod: 2024-02-19 22:05:17.009652
+lastmod: '2024-02-25T18:49:54.983765-07:00'
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes en C consiste \xE0 cr\xE9er une cha\xEEne plus\
   \ petite (sous-cha\xEEne) \xE0 partir d'une cha\xEEne plus grande en fonction de\

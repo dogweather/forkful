@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:07:29.698784-07:00
 description: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista\
   \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Tavoitteena on parantaa ei-\u2026"
-lastmod: 2024-02-19 22:05:15.942660
+lastmod: '2024-02-25T18:49:53.954316-07:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista\
   \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Tavoitteena on parantaa ei-\u2026"

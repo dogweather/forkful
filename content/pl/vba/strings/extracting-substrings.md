@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:35.704616-07:00
 description: "Wyodr\u0119bnianie podci\u0105g\xF3w w Visual Basic for Applications\
   \ (VBA) polega na izolowaniu okre\u015Blonych cz\u0119\u015Bci ci\u0105gu na podstawie\
   \ zadanych kryteri\xF3w. Programi\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.345606
+lastmod: '2024-02-25T18:49:33.584578-07:00'
 model: gpt-4-0125-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w w Visual Basic for Applications (VBA)\
   \ polega na izolowaniu okre\u015Blonych cz\u0119\u015Bci ci\u0105gu na podstawie\

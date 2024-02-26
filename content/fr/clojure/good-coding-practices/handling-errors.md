@@ -3,7 +3,7 @@ date: 2024-01-26 00:50:27.438056-07:00
 description: "La gestion des erreurs consiste \xE0 g\xE9rer l'inattendu dans les programmes\u2014\
   comme un videur faisant face \xE0 des perturbateurs. Les programmeurs pr\xE9f\xE8\
   rent que\u2026"
-lastmod: 2024-02-19 22:05:16.188084
+lastmod: '2024-02-25T18:49:54.176504-07:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs consiste \xE0 g\xE9rer l'inattendu dans les programmes\u2014\
   comme un videur faisant face \xE0 des perturbateurs. Les programmeurs pr\xE9f\xE8\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:46.561444-07:00
 description: "Das Vergleichen von zwei Daten bedeutet, zu \xFCberpr\xFCfen, welches\
   \ Datum fr\xFCher ist, sp\xE4ter oder ob sie identisch sind. Programmierer machen\
   \ das, um Termine\u2026"
-lastmod: 2024-02-19 22:05:12.439267
+lastmod: '2024-02-25T18:49:50.590226-07:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen von zwei Daten bedeutet, zu \xFCberpr\xFCfen, welches Datum\
   \ fr\xFCher ist, sp\xE4ter oder ob sie identisch sind. Programmierer machen das,\

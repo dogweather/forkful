@@ -2,7 +2,7 @@
 date: 2024-01-26 04:45:56.437962-07:00
 description: "Komplekse tall har en reel del og en imagin\xE6r del (som 3 + 4i). Programmerere\
   \ bruker dem i Swift for oppgaver som signalbehandling, l\xF8sning av visse\u2026"
-lastmod: 2024-02-19 22:05:00.410257
+lastmod: '2024-02-25T18:49:39.314844-07:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall har en reel del og en imagin\xE6r del (som 3 + 4i). Programmerere\
   \ bruker dem i Swift for oppgaver som signalbehandling, l\xF8sning av visse\u2026"

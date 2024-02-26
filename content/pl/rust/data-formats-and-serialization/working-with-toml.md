@@ -3,7 +3,7 @@ date: 2024-01-26 04:26:14.821380-07:00
 description: "TOML to j\u0119zyk serializacji danych czytelny dla cz\u0142owieka,\
   \ cz\u0119sto u\u017Cywany do konfiguracji. Programi\u015Bci u\u017Cywaj\u0105 TOML\
   \ ze wzgl\u0119du na jego prostot\u0119 i\u2026"
-lastmod: 2024-02-19 22:04:54.336259
+lastmod: '2024-02-25T18:49:33.575908-07:00'
 model: gpt-4-0125-preview
 summary: "TOML to j\u0119zyk serializacji danych czytelny dla cz\u0142owieka, cz\u0119\
   sto u\u017Cywany do konfiguracji. Programi\u015Bci u\u017Cywaj\u0105 TOML ze wzgl\u0119\

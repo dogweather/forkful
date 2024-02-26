@@ -3,7 +3,7 @@ date: 2024-01-26 01:17:35.291549-07:00
 description: "Refaktoryzacja to proces zmiany wewn\u0119trznej struktury programu\
   \ komputerowego bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci robi\u0105\
   \ to, aby oczy\u015Bci\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.867701
+lastmod: '2024-02-25T18:49:34.093140-07:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces zmiany wewn\u0119trznej struktury programu komputerowego\
   \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci robi\u0105 to,\

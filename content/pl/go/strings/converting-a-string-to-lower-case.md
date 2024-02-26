@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:58.121122-07:00
 description: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery to podstawowa\
   \ operacja umo\u017Cliwiaj\u0105ca jednolito\u015B\u0107 i sp\xF3jno\u015B\u0107\
   \ w przetwarzaniu tekstu, co jest niezb\u0119dne do zada\u0144\u2026"
-lastmod: 2024-02-19 22:04:54.020104
+lastmod: '2024-02-25T18:49:33.260004-07:00'
 model: gpt-4-0125-preview
 summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery to podstawowa operacja\
   \ umo\u017Cliwiaj\u0105ca jednolito\u015B\u0107 i sp\xF3jno\u015B\u0107 w przetwarzaniu\

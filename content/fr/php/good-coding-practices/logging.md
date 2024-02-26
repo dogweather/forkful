@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:09.884379-07:00
 description: "La journalisation est en gros l'\xE9quivalent de tenir un journal pour\
   \ votre code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et\
   \ d'autres\u2026"
-lastmod: 2024-02-19 22:05:16.621102
+lastmod: '2024-02-25T18:49:54.605519-07:00'
 model: gpt-4-1106-preview
 summary: "La journalisation est en gros l'\xE9quivalent de tenir un journal pour votre\
   \ code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres\u2026"

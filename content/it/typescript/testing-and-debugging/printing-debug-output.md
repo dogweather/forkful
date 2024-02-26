@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:26.024011-07:00
 description: "Stampare l'output di debug \xE8 mostrare valori e messaggi nel terminale\
   \ per tracciare cosa succede nel tuo codice. I programmatori lo fanno per capire\u2026"
-lastmod: 2024-02-19 22:05:02.239130
+lastmod: '2024-02-25T18:49:41.055742-07:00'
 model: gpt-4-1106-preview
 summary: "Stampare l'output di debug \xE8 mostrare valori e messaggi nel terminale\
   \ per tracciare cosa succede nel tuo codice. I programmatori lo fanno per capire\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-27 20:26:03.679950-07:00
 description: "Generating random numbers in Arduino projects involves producing values\
   \ that are unpredictable by design, crucial for applications like games,\u2026"
-lastmod: 2024-02-19 22:05:18.780817
+lastmod: '2024-02-25T18:49:56.756523-07:00'
 model: gpt-4-0125-preview
 summary: "Generating random numbers in Arduino projects involves producing values\
   \ that are unpredictable by design, crucial for applications like games,\u2026"

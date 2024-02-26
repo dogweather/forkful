@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:35.669996-07:00
 description: "Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens\
   \ manipuleert die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat\u2026"
-lastmod: 2024-02-19 22:05:10.178832
+lastmod: '2024-02-25T18:49:48.426733-07:00'
 model: gpt-4-0125-preview
 summary: "Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens manipuleert\
   \ die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:29.414973-07:00
 description: "Organizar el c\xF3digo en funciones consiste en envolver segmentos de\
   \ c\xF3digo que realizan tareas espec\xEDficas y asignarles un nombre. Se hace para\
   \ hacer el\u2026"
-lastmod: 2024-02-19 22:05:17.803179
+lastmod: '2024-02-25T18:49:55.770007-07:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones consiste en envolver segmentos de c\xF3\
   digo que realizan tareas espec\xEDficas y asignarles un nombre. Se hace para hacer\

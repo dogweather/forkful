@@ -3,7 +3,7 @@ date: 2024-01-26 04:22:52.558561-07:00
 description: "Travailler avec TOML implique l'analyse et la g\xE9n\xE9ration de donn\xE9\
   es TOML (Tom's Obvious, Minimal Language) avec Haskell. Les programmeurs le font\
   \ pour\u2026"
-lastmod: 2024-02-19 22:05:16.595368
+lastmod: '2024-02-25T18:49:54.579951-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec TOML implique l'analyse et la g\xE9n\xE9ration de donn\xE9\
   es TOML (Tom's Obvious, Minimal Language) avec Haskell. Les programmeurs le font\

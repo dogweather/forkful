@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:00.076068-07:00
 description: "Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von\
   \ Ereignissen und Datenausgaben einer Software w\xE4hrend ihres Betriebs \u2013\
   \ man kann sie\u2026"
-lastmod: 2024-02-19 22:05:12.736402
+lastmod: '2024-02-25T18:49:50.873876-07:00'
 model: gpt-4-1106-preview
 summary: "Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von Ereignissen\
   \ und Datenausgaben einer Software w\xE4hrend ihres Betriebs \u2013 man kann sie\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 00:59:18.755393-07:00
 description: "\"Logging\" significa mantenere un registro degli eventi, delle transazioni\
   \ o delle attivit\xE0 che si verificano nel tempo in un sistema. I programmatori\
   \ lo\u2026"
-lastmod: 2024-02-19 22:05:02.765024
+lastmod: '2024-02-25T18:49:41.548339-07:00'
 model: gpt-4-1106-preview
 summary: "\"Logging\" significa mantenere un registro degli eventi, delle transazioni\
   \ o delle attivit\xE0 che si verificano nel tempo in un sistema. I programmatori\

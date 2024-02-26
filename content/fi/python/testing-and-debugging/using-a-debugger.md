@@ -3,7 +3,7 @@ date: 2024-01-26 04:09:00.655890-07:00
 description: "\"Debuggerin k\xE4ytt\xF6\" tarkoittaa Python-koodisi l\xE4pik\xE4ymist\xE4\
   \ askel askeleelta virheiden l\xF6yt\xE4miseksi ja toiminnan ymm\xE4rt\xE4miseksi.\
   \ Teemme niin, koska se on\u2026"
-lastmod: 2024-02-19 22:05:15.077984
+lastmod: '2024-02-25T18:49:53.122490-07:00'
 model: gpt-4-0125-preview
 summary: "\"Debuggerin k\xE4ytt\xF6\" tarkoittaa Python-koodisi l\xE4pik\xE4ymist\xE4\
   \ askel askeleelta virheiden l\xF6yt\xE4miseksi ja toiminnan ymm\xE4rt\xE4miseksi.\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:03.629527-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w j\u0119zyku Go to podstawowe zadanie\
   \ dla programist\xF3w, por\xF3wnywalne z powszechno\u015Bci\u0105 \u201EHello, World!\u201D\
   . Jest niezb\u0119dne do zada\u0144 takich\u2026"
-lastmod: 2024-02-19 22:04:54.048788
+lastmod: '2024-02-25T18:49:33.288309-07:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w j\u0119zyku Go to podstawowe zadanie\
   \ dla programist\xF3w, por\xF3wnywalne z powszechno\u015Bci\u0105 \u201EHello, World!\u201D\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:52:58.917491-07:00
 description: "Het downloaden van een webpagina in Google Apps Script houdt in dat\
   \ de inhoud van een webpagina via HTML wordt opgehaald voor verschillende doeleinden,\u2026"
-lastmod: 2024-02-19 22:05:09.416828
+lastmod: '2024-02-25T18:49:47.726006-07:00'
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina in Google Apps Script houdt in dat de inhoud\
   \ van een webpagina via HTML wordt opgehaald voor verschillende doeleinden,\u2026"

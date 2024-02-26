@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:12:32.465143-07:00
 description: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di file di configurazione\
   \ facile da leggere grazie alla sua sintassi semplice. I programmatori\u2026"
-lastmod: 2024-02-19 22:05:02.039542
+lastmod: '2024-02-25T18:49:40.863788-07:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di file di configurazione\
   \ facile da leggere grazie alla sua sintassi semplice. I programmatori\u2026"

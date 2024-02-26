@@ -2,7 +2,7 @@
 date: 2024-01-26 04:15:54.755401-07:00
 description: "REPL steht f\xFCr Read-Eval-Print Loop, eine interaktive Umgebung, in\
   \ der man schnell Code testen kann. Programmierer nutzen sie zum Experimentieren,\u2026"
-lastmod: 2024-02-19 22:05:12.947179
+lastmod: '2024-02-25T18:49:51.070578-07:00'
 model: gpt-4-0125-preview
 summary: "REPL steht f\xFCr Read-Eval-Print Loop, eine interaktive Umgebung, in der\
   \ man schnell Code testen kann. Programmierer nutzen sie zum Experimentieren,\u2026"

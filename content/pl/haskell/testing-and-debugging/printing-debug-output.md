@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:50.182752-07:00
 description: "Wypisywanie informacji diagnostycznych (debug output) to spos\xF3b na\
   \ \u015Bledzenie tego, co si\u0119 dzieje w programie podczas jego dzia\u0142ania.\
   \ Programi\u015Bci u\u017Cywaj\u0105\u2026"
-lastmod: 2024-02-19 22:04:54.589082
+lastmod: '2024-02-25T18:49:33.819064-07:00'
 model: gpt-4-1106-preview
 summary: "Wypisywanie informacji diagnostycznych (debug output) to spos\xF3b na \u015B\
   ledzenie tego, co si\u0119 dzieje w programie podczas jego dzia\u0142ania. Programi\u015B\

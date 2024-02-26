@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:19.506035-07:00
 description: "Wysy\u0142anie zapytania HTTP z podstawowym uwierzytelnianiem to proces\
   \ przekazywania loginu i has\u0142a by uzyska\u0107 dost\u0119p do zabezpieczonych\
   \ zasob\xF3w. Programi\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.586221
+lastmod: '2024-02-25T18:49:33.815867-07:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie zapytania HTTP z podstawowym uwierzytelnianiem to proces\
   \ przekazywania loginu i has\u0142a by uzyska\u0107 dost\u0119p do zabezpieczonych\

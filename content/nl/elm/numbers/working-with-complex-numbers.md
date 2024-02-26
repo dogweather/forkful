@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:57.320260-07:00
 description: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
   \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"
-lastmod: 2024-02-19 22:05:09.771526
+lastmod: '2024-02-25T18:49:48.059388-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
   \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"

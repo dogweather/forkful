@@ -2,7 +2,7 @@
 date: 2024-01-26 04:37:49.451948-07:00
 description: "I numeri complessi estendono i numeri reali aggiungendo un'unit\xE0\
   \ immaginaria, rappresentata come 'i', dove i^2 = -1. I programmatori li usano per\u2026"
-lastmod: 2024-02-19 22:05:02.795158
+lastmod: '2024-02-25T18:49:41.575534-07:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi estendono i numeri reali aggiungendo un'unit\xE0 immaginaria,\
   \ rappresentata come 'i', dove i^2 = -1. I programmatori li usano per\u2026"

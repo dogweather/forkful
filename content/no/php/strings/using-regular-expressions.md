@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:40.724162-07:00
 description: "Regul\xE6re uttrykk (regex) i PHP er m\xF8nstre brukt til \xE5 matche\
   \ tegnkombinasjoner i strenger, noe som muliggj\xF8r avanserte s\xF8k-og-erstatt-operasjoner\
   \ og\u2026"
-lastmod: 2024-02-19 22:05:00.139459
+lastmod: '2024-02-25T18:49:39.048768-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i PHP er m\xF8nstre brukt til \xE5 matche tegnkombinasjoner\
   \ i strenger, noe som muliggj\xF8r avanserte s\xF8k-og-erstatt-operasjoner og\u2026"

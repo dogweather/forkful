@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:59.872451-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tekstu\
   \ tak, by usun\u0105\u0107 specyficzne sekwencje znak\xF3w. Programi\u015Bci robi\u0105\
   \ to, aby czy\u015Bci\u0107 dane,\u2026"
-lastmod: 2024-02-19 22:04:54.434910
+lastmod: '2024-02-25T18:49:33.669671-07:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tekstu\
   \ tak, by usun\u0105\u0107 specyficzne sekwencje znak\xF3w. Programi\u015Bci robi\u0105\

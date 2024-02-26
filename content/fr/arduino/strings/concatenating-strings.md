@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:51.943093-07:00
 description: "Concat\xE9ner des cha\xEEnes, c'est les assembler bout \xE0 bout. On\
   \ le fait pour construire du texte dynamiquement, combiner des donn\xE9es ou cr\xE9\
   er des commandes."
-lastmod: 2024-02-19 22:05:16.784797
+lastmod: '2024-02-25T18:49:54.775884-07:00'
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes, c'est les assembler bout \xE0 bout. On le\
   \ fait pour construire du texte dynamiquement, combiner des donn\xE9es ou cr\xE9\

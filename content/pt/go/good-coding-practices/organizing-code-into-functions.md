@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:30.742805-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\xF3\
   digo em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas. Esta\
   \ abordagem real\xE7a a\u2026"
-lastmod: 2024-02-19 22:05:05.132498
+lastmod: '2024-02-25T18:49:43.731011-07:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\xF3digo\
   \ em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas. Esta\

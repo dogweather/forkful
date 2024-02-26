@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:23.170611-07:00
 description: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
   res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\
   re soit une\u2026"
-lastmod: 2024-02-19 22:05:16.292949
+lastmod: '2024-02-25T18:49:54.278874-07:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
   res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:18.857011-07:00
 description: "\"Mik\xE4 & Miksi?\" P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi\
   \ palauttaa aika-arvon luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\
   \ koska se helpottaa p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
-lastmod: 2024-02-19 22:05:15.561909
+lastmod: '2024-02-25T18:49:53.579745-07:00'
 model: gpt-4-1106-preview
 summary: "\"Mik\xE4 & Miksi?\" P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi\
   \ palauttaa aika-arvon luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:10:12.372901-07:00
 description: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat\
   \ je tools of functies gebruikt om de staat van een draaiend programma te inspecteren\u2026"
-lastmod: 2024-02-19 22:05:09.377049
+lastmod: '2024-02-25T18:49:47.689017-07:00'
 model: gpt-4-0125-preview
 summary: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat je\
   \ tools of functies gebruikt om de staat van een draaiend programma te inspecteren\u2026"

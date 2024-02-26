@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:00.346637-07:00
 description: "Du\u017Ca litera na pocz\u0105tku ci\u0105gu znak\xF3w polega na zmodyfikowaniu\
   \ pierwszego znaku danego tekstu na wielk\u0105 liter\u0119, zapewniaj\u0105c, \u017C\
   e zdania, tytu\u0142y lub nazwy\u2026"
-lastmod: 2024-02-19 22:04:54.613477
+lastmod: '2024-02-25T18:49:33.843756-07:00'
 model: gpt-4-0125-preview
 summary: "Du\u017Ca litera na pocz\u0105tku ci\u0105gu znak\xF3w polega na zmodyfikowaniu\
   \ pierwszego znaku danego tekstu na wielk\u0105 liter\u0119, zapewniaj\u0105c, \u017C\

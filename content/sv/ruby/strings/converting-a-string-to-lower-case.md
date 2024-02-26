@@ -2,7 +2,7 @@
 date: 2024-01-20 17:39:11.311904-07:00
 description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla stora bokst\xE4\
   ver i texten f\xF6rvandlas till sm\xE5. Programmerare g\xF6r detta f\xF6r att standardisera\u2026"
-lastmod: 2024-02-19 22:04:57.668925
+lastmod: '2024-02-25T18:49:36.729841-07:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla stora bokst\xE4\
   ver i texten f\xF6rvandlas till sm\xE5. Programmerare g\xF6r detta f\xF6r att standardisera\u2026"

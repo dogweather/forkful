@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:00.408647-07:00
 description: "Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma\
   \ aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en\u2026"
-lastmod: 2024-02-19 22:05:09.922367
+lastmod: '2024-02-25T18:49:48.190472-07:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma\
   \ aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en\u2026"

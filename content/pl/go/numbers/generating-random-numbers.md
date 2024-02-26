@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:39.703723-07:00
 description: "Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji\
   \ liczb, kt\xF3rych nie mo\u017Cna racjonalnie przewidzie\u0107 lepiej ni\u017C\
   \ przez przypadek.\u2026"
-lastmod: 2024-02-19 22:04:54.030890
+lastmod: '2024-02-25T18:49:33.271230-07:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji\
   \ liczb, kt\xF3rych nie mo\u017Cna racjonalnie przewidzie\u0107 lepiej ni\u017C\

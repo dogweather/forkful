@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:12.466558-07:00
 description: "Working with JSON in Lua involves parsing JSON-formatted strings into\
   \ Lua tables and vice versa, enabling easy data interchange between Lua applications\u2026"
-lastmod: 2024-02-19 22:05:18.686531
+lastmod: '2024-02-25T18:49:56.663747-07:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON in Lua involves parsing JSON-formatted strings into Lua\
   \ tables and vice versa, enabling easy data interchange between Lua applications\u2026"

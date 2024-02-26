@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:25.775440-07:00
 description: "Controleren of een map bestaat zorgt ervoor dat een programma werkt\
   \ met geldige paden, wat fouten voorkomt. Het is cruciaal voor taken die specifieke\u2026"
-lastmod: 2024-02-19 22:05:10.349866
+lastmod: '2024-02-25T18:49:48.587536-07:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat zorgt ervoor dat een programma werkt met\
   \ geldige paden, wat fouten voorkomt. Het is cruciaal voor taken die specifieke\u2026"

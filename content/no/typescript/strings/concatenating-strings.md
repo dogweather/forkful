@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:49.184447-07:00
 description: "\"Concatenating strings\" betyr \xE5 lime sammen tekster for \xE5 danne\
   \ nye. Programmerere gj\xF8r dette for \xE5 manipulere tekst, vise meldinger eller\
   \ kombinere data\u2026"
-lastmod: 2024-02-19 22:04:59.765995
+lastmod: '2024-02-25T18:49:38.703794-07:00'
 model: gpt-4-1106-preview
 summary: "\"Concatenating strings\" betyr \xE5 lime sammen tekster for \xE5 danne\
   \ nye. Programmerere gj\xF8r dette for \xE5 manipulere tekst, vise meldinger eller\

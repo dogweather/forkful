@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:23.406072-07:00
 description: "Att kontrollera om en katalog finns i Go \xE4r avg\xF6rande f\xF6r applikationer\
   \ som interagerar med filsystemet, f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6\
   ker komma \xE5t\u2026"
-lastmod: 2024-02-19 22:04:56.642011
+lastmod: '2024-02-25T18:49:35.743783-07:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Go \xE4r avg\xF6rande f\xF6r applikationer\
   \ som interagerar med filsystemet, f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6\

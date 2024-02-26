@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:37.051940-07:00
 description: "Das Schreiben einer Textdatei in PHP umfasst das Erstellen oder \xD6\
   ffnen einer Datei und das Einf\xFCgen von Inhalten. Programmierer tun dies, um Daten\
   \ wie von\u2026"
-lastmod: 2024-02-19 22:05:12.921506
+lastmod: '2024-02-25T18:49:51.046427-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in PHP umfasst das Erstellen oder \xD6ffnen\
   \ einer Datei und das Einf\xFCgen von Inhalten. Programmierer tun dies, um Daten\

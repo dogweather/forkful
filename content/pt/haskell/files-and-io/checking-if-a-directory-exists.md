@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:27.523475-07:00
 description: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ em muitas tarefas de programa\xE7\xE3o, permitindo a\xE7\xF5es condicionais com\
   \ base na presen\xE7a ou\u2026"
-lastmod: 2024-02-19 22:05:05.686297
+lastmod: '2024-02-25T18:49:44.260697-07:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ em muitas tarefas de programa\xE7\xE3o, permitindo a\xE7\xF5es condicionais com\

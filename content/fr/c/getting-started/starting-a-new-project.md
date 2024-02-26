@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:31.368574-07:00
 description: "Commencer un nouveau projet en C n\xE9cessite la mise en place d'une\
   \ structure de code de base et d'un environnement pour g\xE9rer efficacement les\
   \ t\xE2ches de\u2026"
-lastmod: 2024-02-19 22:05:17.023166
+lastmod: '2024-02-25T18:49:54.996934-07:00'
 model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en C n\xE9cessite la mise en place d'une structure\
   \ de code de base et d'un environnement pour g\xE9rer efficacement les t\xE2ches\

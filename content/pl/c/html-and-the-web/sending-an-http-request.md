@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:36.313872-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u0142\
   aniu \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych.\
   \ Programi\u015Bci robi\u0105 to w j\u0119zyku C, aby\u2026"
-lastmod: 2024-02-19 22:04:55.060493
+lastmod: '2024-02-25T18:49:34.256292-07:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u0142aniu\
   \ \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych. Programi\u015B\

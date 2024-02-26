@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:42.902269-07:00
 description: "Regular expressions (regex) in Fish Shell allow you to search, match,\
   \ and manipulate strings based on specific patterns. Programmers utilize regex for\u2026"
-lastmod: 2024-02-19 22:05:18.923933
+lastmod: '2024-02-25T18:49:56.898203-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Fish Shell allow you to search, match, and\
   \ manipulate strings based on specific patterns. Programmers utilize regex for\u2026"

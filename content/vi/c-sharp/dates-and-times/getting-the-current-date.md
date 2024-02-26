@@ -7,7 +7,7 @@ description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C# bao g\u1ED3m vi\u1EC7
   ng h\u1ED3 h\u1EC7 th\u1ED1ng c\u1EE7a b\u1EA1n. \u0110i\u1EC1u n\xE0y r\u1EA5t\
   \ h\u1EEFu \xEDch cho vi\u1EC7c \u0111\xE1nh d\u1EA5u th\u1EDDi gian, nh\u1EADt\
   \ k\xFD,\u2026"
-lastmod: 2024-02-19 22:04:55.846641
+lastmod: '2024-02-25T18:49:35.014292-07:00'
 model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C# bao g\u1ED3m vi\u1EC7c n\u1EAF\
   m b\u1EAFt th\u1EDDi \u0111i\u1EC3m hi\u1EC7n t\u1EA1i t\u1EEB \u0111\u1ED3ng h\u1ED3\

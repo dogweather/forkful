@@ -3,7 +3,7 @@ date: 2024-01-20 15:31:47.530728-07:00
 description: "Parsing av HTML betyr \xE5 gj\xF8re om HTML-kode til noe et program\
   \ kan forst\xE5 og bruke. Programmerere gj\xF8r dette for \xE5 manipulere, hente\
   \ ut data eller generere\u2026"
-lastmod: 2024-02-19 22:04:59.952507
+lastmod: '2024-02-25T18:49:38.885817-07:00'
 summary: "Parsing av HTML betyr \xE5 gj\xF8re om HTML-kode til noe et program kan\
   \ forst\xE5 og bruke. Programmerere gj\xF8r dette for \xE5 manipulere, hente ut\
   \ data eller generere\u2026"

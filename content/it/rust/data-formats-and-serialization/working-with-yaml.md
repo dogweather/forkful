@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:59.483853-07:00
 description: "Nella programmazione in Rust, lavorare con YAML (YAML Ain't Markup Language)\
   \ significa effettuare il parsing e la generazione di dati in formato YAML, uno\u2026"
-lastmod: 2024-02-19 22:05:02.299434
+lastmod: '2024-02-25T18:49:41.113139-07:00'
 model: gpt-4-0125-preview
 summary: "Nella programmazione in Rust, lavorare con YAML (YAML Ain't Markup Language)\
   \ significa effettuare il parsing e la generazione di dati in formato YAML, uno\u2026"

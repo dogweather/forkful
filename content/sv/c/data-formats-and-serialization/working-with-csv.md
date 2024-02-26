@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:11:46.372285-07:00
 description: "Inom programmering involverar arbete med CSV-filer (Comma-Separated\
   \ Values, komma-separerade v\xE4rden) att l\xE4sa fr\xE5n och skriva data till textfiler\u2026"
-lastmod: 2024-02-19 22:04:57.661188
+lastmod: '2024-02-25T18:49:36.722151-07:00'
 model: gpt-4-0125-preview
 summary: "Inom programmering involverar arbete med CSV-filer (Comma-Separated Values,\
   \ komma-separerade v\xE4rden) att l\xE4sa fr\xE5n och skriva data till textfiler\u2026"

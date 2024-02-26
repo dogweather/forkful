@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:41.610940-07:00
 description: "Co i dlaczego? Konwersja daty na tekst to proces zmiany formatu daty\
   \ na \u0142a\u0144cuch znak\xF3w. Programi\u015Bci robi\u0105 to, by daty by\u0142\
   y czytelne dla ludzi i by mo\u017Cna\u2026"
-lastmod: 2024-02-19 22:04:54.598238
+lastmod: '2024-02-25T18:49:33.828760-07:00'
 model: gpt-4-1106-preview
 summary: "Co i dlaczego? Konwersja daty na tekst to proces zmiany formatu daty na\
   \ \u0142a\u0144cuch znak\xF3w. Programi\u015Bci robi\u0105 to, by daty by\u0142\

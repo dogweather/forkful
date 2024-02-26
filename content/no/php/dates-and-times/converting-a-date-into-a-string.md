@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:07.732561-07:00
 description: "\xC5 konvertere en dato til en streng i PHP betyr \xE5 endre et datoobjekt\
   \ til et leselig format. Programmerere gj\xF8r det for \xE5 vise datoer p\xE5 en\
   \ forst\xE5elig m\xE5te\u2026"
-lastmod: 2024-02-19 22:05:00.162030
+lastmod: '2024-02-25T18:49:39.070570-07:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng i PHP betyr \xE5 endre et datoobjekt\
   \ til et leselig format. Programmerere gj\xF8r det for \xE5 vise datoer p\xE5 en\

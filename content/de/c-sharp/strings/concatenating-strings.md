@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:31.700287-07:00
 description: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenation\"\
   \ genannt, ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu\
   \ einem\u2026"
-lastmod: 2024-02-19 22:05:12.807473
+lastmod: '2024-02-25T18:49:50.940838-07:00'
 model: gpt-4-1106-preview
 summary: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenation\" genannt,\
   \ ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu einem\u2026"

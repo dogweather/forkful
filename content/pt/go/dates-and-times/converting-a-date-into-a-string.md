@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:54:25.141144-07:00
 description: "Converter uma data em uma string em Go envolve transformar um objeto\
   \ `time.Time` em um formato de string leg\xEDvel. Programadores frequentemente realizam\u2026"
-lastmod: 2024-02-19 22:05:05.139433
+lastmod: '2024-02-25T18:49:43.737391-07:00'
 model: gpt-4-0125-preview
 summary: "Converter uma data em uma string em Go envolve transformar um objeto `time.Time`\
   \ em um formato de string leg\xEDvel. Programadores frequentemente realizam\u2026"

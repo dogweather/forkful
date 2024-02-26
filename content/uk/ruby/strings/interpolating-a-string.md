@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:40.447837-07:00
 description: String interpolation lets you plug values into a string. It's handy to
   avoid messy concatenation and make code more readable.
-lastmod: 2024-02-19 22:05:09.282268
+lastmod: '2024-02-25T18:49:47.598854-07:00'
 model: gpt-4-1106-preview
 summary: String interpolation lets you plug values into a string. It's handy to avoid
   messy concatenation and make code more readable.

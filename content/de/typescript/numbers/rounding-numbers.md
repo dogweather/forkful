@@ -2,7 +2,7 @@
 date: 2024-01-26 03:46:54.448527-07:00
 description: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezifische\
   \ Genauigkeit. Programmierer tun dies, um die numerische Ausgabe f\xFCr Lesbarkeit,\u2026"
-lastmod: 2024-02-19 22:05:12.549471
+lastmod: '2024-02-25T18:49:50.695185-07:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezifische\
   \ Genauigkeit. Programmierer tun dies, um die numerische Ausgabe f\xFCr Lesbarkeit,\u2026"

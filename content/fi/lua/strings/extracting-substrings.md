@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:22.798337-07:00
 description: "Substringit ovat osia isommista tekstijonoista. K\xE4yt\xE4mme substringien\
   \ irrottamista, kun haluamme prosessoida tai analysoida pienempi\xE4 tietoja, kuten\u2026"
-lastmod: 2024-02-19 22:05:15.581353
+lastmod: '2024-02-25T18:49:53.598482-07:00'
 model: gpt-4-1106-preview
 summary: "Substringit ovat osia isommista tekstijonoista. K\xE4yt\xE4mme substringien\
   \ irrottamista, kun haluamme prosessoida tai analysoida pienempi\xE4 tietoja, kuten\u2026"

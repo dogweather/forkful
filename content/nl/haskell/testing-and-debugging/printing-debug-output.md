@@ -5,7 +5,7 @@ date: 2024-01-28 22:04:45.607781-07:00
 description: "Debug-output afdrukken gaat over data uit je programma spugen om te\
   \ zien wat er onder de motorkap gebeurt. Programmeurs doen dit om variabelen te\
   \ volgen,\u2026"
-lastmod: 2024-02-19 22:05:09.925563
+lastmod: '2024-02-25T18:49:48.193440-07:00'
 model: gpt-4-0125-preview
 summary: "Debug-output afdrukken gaat over data uit je programma spugen om te zien\
   \ wat er onder de motorkap gebeurt. Programmeurs doen dit om variabelen te volgen,\u2026"

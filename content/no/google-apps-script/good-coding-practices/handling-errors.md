@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:02.798996-07:00
 description: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fange\
   \ opp, og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet.\
   \ Programmerere\u2026"
-lastmod: 2024-02-19 22:04:59.604132
+lastmod: '2024-02-25T18:49:38.553362-07:00'
 model: gpt-4-0125-preview
 summary: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fange opp,\
   \ og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet.\

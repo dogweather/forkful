@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:47.050144-07:00
 description: "In PHP betekent het converteren van een string naar kleine letters dat\
   \ alle alfabetische karakters in een string worden getransformeerd naar hun kleine\u2026"
-lastmod: 2024-02-19 22:05:09.953037
+lastmod: '2024-02-25T18:49:48.219365-07:00'
 model: gpt-4-0125-preview
 summary: "In PHP betekent het converteren van een string naar kleine letters dat alle\
   \ alfabetische karakters in een string worden getransformeerd naar hun kleine\u2026"

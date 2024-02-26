@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:49.619597-07:00
 description: "YAML, un langage de s\xE9rialisation de donn\xE9es con\xE7u pour \xEA\
   tre convivial, est souvent utilis\xE9 pour les fichiers de configuration, la messagerie\
   \ entre\u2026"
-lastmod: 2024-02-19 22:05:16.287781
+lastmod: '2024-02-25T18:49:54.273647-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, un langage de s\xE9rialisation de donn\xE9es con\xE7u pour \xEAtre\
   \ convivial, est souvent utilis\xE9 pour les fichiers de configuration, la messagerie\

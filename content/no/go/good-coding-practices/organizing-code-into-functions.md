@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:35.863246-07:00
 description: "\xC5 organisere kode i funksjoner i Go inneb\xE6rer \xE5 bryte ned kode\
   \ i gjenbrukbare, modul\xE6re blokker som utf\xF8rer spesifikke oppgaver. Denne\
   \ tiln\xE6rmingen\u2026"
-lastmod: 2024-02-19 22:04:59.552935
+lastmod: '2024-02-25T18:49:38.505081-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner i Go inneb\xE6rer \xE5 bryte ned kode\
   \ i gjenbrukbare, modul\xE6re blokker som utf\xF8rer spesifikke oppgaver. Denne\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:44.661135-07:00
 description: "Znalezienie d\u0142ugo\u015Bci stringa w C polega na okre\u015Bleniu\
   \ liczby znak\xF3w przed terminator nulowym `\\0`. Programi\u015Bci robi\u0105 to,\
   \ aby poprawnie manipulowa\u0107 ci\u0105gami\u2026"
-lastmod: 2024-02-19 22:04:55.053320
+lastmod: '2024-02-25T18:49:34.249606-07:00'
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci stringa w C polega na okre\u015Bleniu liczby\
   \ znak\xF3w przed terminator nulowym `\\0`. Programi\u015Bci robi\u0105 to, aby\

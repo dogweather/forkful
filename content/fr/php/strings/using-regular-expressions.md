@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:31.244579-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en PHP sont des motifs utilis\xE9\
   s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte,\
   \ permettant\u2026"
-lastmod: 2024-02-19 22:05:16.604101
+lastmod: '2024-02-25T18:49:54.588515-07:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en PHP sont des motifs utilis\xE9\
   s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte,\

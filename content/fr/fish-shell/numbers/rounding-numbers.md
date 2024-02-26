@@ -3,7 +3,7 @@ date: 2024-01-26 03:44:03.195543-07:00
 description: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour simplifier\
   \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques. Les programmeurs\
   \ le font\u2026"
-lastmod: 2024-02-19 22:05:16.967364
+lastmod: '2024-02-25T18:49:54.944473-07:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour simplifier\
   \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques. Les programmeurs\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:51.719481-07:00
 description: "Testning i Ruby handlar om att verifiera att din kod beter sig som f\xF6\
   rv\xE4ntat under olika f\xF6rh\xE5llanden. Programerare skriver tester f\xF6r att\
   \ s\xE4kerst\xE4lla\u2026"
-lastmod: 2024-02-19 22:04:57.688797
+lastmod: '2024-02-25T18:49:36.749181-07:00'
 model: gpt-4-0125-preview
 summary: "Testning i Ruby handlar om att verifiera att din kod beter sig som f\xF6\
   rv\xE4ntat under olika f\xF6rh\xE5llanden. Programerare skriver tester f\xF6r att\

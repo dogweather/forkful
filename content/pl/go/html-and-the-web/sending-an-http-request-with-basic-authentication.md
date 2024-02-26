@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:21.231843-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
   \ w Go polega na dodaniu do \u017C\u0105dania nag\u0142\xF3wka autoryzacji, kt\xF3\
   ry zawiera nazw\u0119 u\u017Cytkownika i has\u0142o w formie\u2026"
-lastmod: 2024-02-19 22:04:54.035741
+lastmod: '2024-02-25T18:49:33.275696-07:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
   \ w Go polega na dodaniu do \u017C\u0105dania nag\u0142\xF3wka autoryzacji, kt\xF3\

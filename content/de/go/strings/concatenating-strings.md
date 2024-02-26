@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:53:56.098006-07:00
 description: "Das Verketten von Zeichenfolgen beinhaltet das aneinanderf\xFCgen von\
   \ zwei oder mehreren Zeichenfolgen am Ende, um eine neue Zeichenfolge zu bilden.\u2026"
-lastmod: 2024-02-19 22:05:12.323735
+lastmod: '2024-02-25T18:49:50.480058-07:00'
 model: gpt-4-0125-preview
 summary: "Das Verketten von Zeichenfolgen beinhaltet das aneinanderf\xFCgen von zwei\
   \ oder mehreren Zeichenfolgen am Ende, um eine neue Zeichenfolge zu bilden.\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:27:49.112675-07:00
 description: "Praca z XML polega na parsowaniu, ekstrakcji i manipulowaniu danymi\
   \ w formacie j\u0119zyka znacznik\xF3w rozszerzalnych (XML). Programi\u015Bci borykaj\u0105\
   \ si\u0119 z XML,\u2026"
-lastmod: 2024-02-19 22:04:54.750228
+lastmod: '2024-02-25T18:49:33.977421-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML polega na parsowaniu, ekstrakcji i manipulowaniu danymi w formacie\
   \ j\u0119zyka znacznik\xF3w rozszerzalnych (XML). Programi\u015Bci borykaj\u0105\

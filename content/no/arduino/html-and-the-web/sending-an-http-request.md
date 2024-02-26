@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:56.301342-07:00
 description: "En HTTP-foresp\xF8rsel lar en Arduino snakke med internett - den sp\xF8\
   r, og et server svarer. Vi gj\xF8r dette for \xE5 sl\xE5 opp data, styre ting p\xE5\
   \ avstand, eller\u2026"
-lastmod: 2024-02-19 22:05:00.326728
+lastmod: '2024-02-25T18:49:39.235034-07:00'
 model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel lar en Arduino snakke med internett - den sp\xF8\
   r, og et server svarer. Vi gj\xF8r dette for \xE5 sl\xE5 opp data, styre ting p\xE5\

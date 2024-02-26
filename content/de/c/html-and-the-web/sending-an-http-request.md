@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:37.581063-07:00
 description: "Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer\
   \ Anfrage an einen Webserver, um Daten abzurufen oder zu \xFCbermitteln. Programmierer\u2026"
-lastmod: 2024-02-19 22:05:13.290100
+lastmod: '2024-02-25T18:49:51.399257-07:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer\
   \ Anfrage an einen Webserver, um Daten abzurufen oder zu \xFCbermitteln. Programmierer\u2026"

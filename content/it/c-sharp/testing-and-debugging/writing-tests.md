@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:13.809699-07:00
 description: "Scrivere test in C# comporta la creazione di script automatizzati per\
   \ validare la funzionalit\xE0 del proprio codice, assicurando che si comporti come\u2026"
-lastmod: 2024-02-19 22:05:02.501166
+lastmod: '2024-02-25T18:49:41.302771-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in C# comporta la creazione di script automatizzati per validare\
   \ la funzionalit\xE0 del proprio codice, assicurando che si comporti come\u2026"

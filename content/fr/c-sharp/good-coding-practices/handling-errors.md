@@ -3,7 +3,7 @@ date: 2024-01-26 00:49:54.306888-07:00
 description: "G\xE9rer les erreurs en C# consiste \xE0 prendre en charge l'inattendu,\
   \ comme tr\xE9bucher sur ses lacets. Les programmes peuvent buter sur des donn\xE9\
   es incorrectes\u2026"
-lastmod: 2024-02-19 22:05:16.535919
+lastmod: '2024-02-25T18:49:54.522249-07:00'
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs en C# consiste \xE0 prendre en charge l'inattendu,\
   \ comme tr\xE9bucher sur ses lacets. Les programmes peuvent buter sur des donn\xE9\

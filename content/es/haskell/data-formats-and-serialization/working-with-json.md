@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:09.877143-07:00
 description: "Trabajar con JSON (Notaci\xF3n de Objeto de JavaScript) en Haskell implica\
   \ analizar los datos JSON en tipos de Haskell y convertir los tipos de Haskell de\u2026"
-lastmod: 2024-02-19 22:05:17.647502
+lastmod: '2024-02-25T18:49:55.609898-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (Notaci\xF3n de Objeto de JavaScript) en Haskell implica\
   \ analizar los datos JSON en tipos de Haskell y convertir los tipos de Haskell de\u2026"

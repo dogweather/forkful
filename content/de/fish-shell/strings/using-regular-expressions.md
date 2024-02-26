@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:40.686838-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in der Fish Shell erm\xF6glichen es\
   \ Ihnen, Zeichenketten basierend auf bestimmten Mustern zu suchen, zu vergleichen\
   \ und zu\u2026"
-lastmod: 2024-02-19 22:05:13.236216
+lastmod: '2024-02-25T18:49:51.348071-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in der Fish Shell erm\xF6glichen es Ihnen,\
   \ Zeichenketten basierend auf bestimmten Mustern zu suchen, zu vergleichen und zu\u2026"

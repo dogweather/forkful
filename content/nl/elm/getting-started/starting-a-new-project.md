@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:14.065613-07:00
 description: "Een nieuw project starten in Elm betekent het opzetten van een schone\
   \ lei voor het bouwen van betrouwbare webapps. Programmeurs doen dit om te profiteren\u2026"
-lastmod: 2024-02-19 22:05:09.779001
+lastmod: '2024-02-25T18:49:48.066193-07:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Elm betekent het opzetten van een schone lei\
   \ voor het bouwen van betrouwbare webapps. Programmeurs doen dit om te profiteren\u2026"

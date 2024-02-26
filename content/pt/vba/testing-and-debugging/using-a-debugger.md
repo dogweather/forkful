@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:25.660577-07:00
 description: "Usar um depurador no Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
   \ executar o seu c\xF3digo passo a passo para inspecionar seu fluxo de execu\xE7\
   \xE3o e o estado das\u2026"
-lastmod: 2024-02-19 22:05:05.453501
+lastmod: '2024-02-25T18:49:44.037371-07:00'
 model: gpt-4-0125-preview
 summary: "Usar um depurador no Visual Basic para Aplica\xE7\xF5es (VBA) envolve executar\
   \ o seu c\xF3digo passo a passo para inspecionar seu fluxo de execu\xE7\xE3o e o\

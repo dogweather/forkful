@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:29.236228-07:00
 description: "\xC5 jobbe med JSON (JavaScript Object Notation) betyr \xE5 h\xE5ndtere\
   \ dette lette datautvekslingsformatet inne i Java-applikasjonene dine. Programmerere\
   \ velger\u2026"
-lastmod: 2024-02-19 22:04:59.933631
+lastmod: '2024-02-25T18:49:38.867676-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) betyr \xE5 h\xE5ndtere\
   \ dette lette datautvekslingsformatet inne i Java-applikasjonene dine. Programmerere\

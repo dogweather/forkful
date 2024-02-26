@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:25.408183-07:00
 description: "Writing a text file in Swift allows you to persistently store string\
   \ data on the filesystem, which is essential for tasks such as saving configuration\u2026"
-lastmod: 2024-02-19 22:05:18.874145
+lastmod: '2024-02-25T18:49:56.848293-07:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in Swift allows you to persistently store string data\
   \ on the filesystem, which is essential for tasks such as saving configuration\u2026"

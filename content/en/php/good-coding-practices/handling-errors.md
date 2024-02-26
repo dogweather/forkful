@@ -2,7 +2,7 @@
 date: 2024-01-25 02:51:32.393618-07:00
 description: "Error handling in PHP is about managing and responding to conditions\
   \ that disrupt the normal flow of a program, like missing files or bad data input.\u2026"
-lastmod: 2024-02-19 22:05:18.636492
+lastmod: '2024-02-25T18:49:56.613844-07:00'
 model: gpt-4-1106-preview
 summary: "Error handling in PHP is about managing and responding to conditions that\
   \ disrupt the normal flow of a program, like missing files or bad data input.\u2026"

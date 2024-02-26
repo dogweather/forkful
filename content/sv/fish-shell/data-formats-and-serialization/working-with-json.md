@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:44.754851-07:00
 description: "Att arbeta med JSON i Fish Shell inneb\xE4r att tolka och generera JSON-data,\
   \ en vanlig uppgift f\xF6r att konfigurera applikationer, API-interaktion och\u2026"
-lastmod: 2024-02-19 22:04:57.609914
+lastmod: '2024-02-25T18:49:36.675003-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Fish Shell inneb\xE4r att tolka och generera JSON-data,\
   \ en vanlig uppgift f\xF6r att konfigurera applikationer, API-interaktion och\u2026"

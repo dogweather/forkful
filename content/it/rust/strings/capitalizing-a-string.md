@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:28.696646-07:00
 description: "Capitalizzare una stringa in Rust comporta la modifica della stringa\
   \ in modo che il suo primo carattere sia una lettera maiuscola, lasciando inalterata\
   \ il\u2026"
-lastmod: 2024-02-19 22:05:02.262323
+lastmod: '2024-02-25T18:49:41.078012-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in Rust comporta la modifica della stringa in\
   \ modo che il suo primo carattere sia una lettera maiuscola, lasciando inalterata\

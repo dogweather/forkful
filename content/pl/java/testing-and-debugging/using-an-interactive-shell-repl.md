@@ -3,7 +3,7 @@ date: 2024-01-26 04:15:21.503483-07:00
 description: "REPL (Read-Eval-Print Loop), czyli p\u0119tla czytaj-wykonaj-drukuj,\
   \ to interaktywna pow\u0142oka, kt\xF3ra przetwarza pojedyncze wej\u015Bcia u\u017C\
   ytkownika, wykonuje kod i\u2026"
-lastmod: 2024-02-19 22:04:54.408037
+lastmod: '2024-02-25T18:49:33.643518-07:00'
 model: gpt-4-0125-preview
 summary: "REPL (Read-Eval-Print Loop), czyli p\u0119tla czytaj-wykonaj-drukuj, to\
   \ interaktywna pow\u0142oka, kt\xF3ra przetwarza pojedyncze wej\u015Bcia u\u017C\

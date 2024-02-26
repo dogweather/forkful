@@ -5,7 +5,7 @@ changelog:
 date: 2024-02-22 17:30:11.656533-07:00
 description: "Een nieuw project starten in Python gaat over het opzetten van een gestructureerd,\
   \ onderhoudbaar kader vanaf het begin. Programmeurs doen dit om ervoor te\u2026"
-lastmod: 2024-02-25 18:27:07.385981
+lastmod: '2024-02-25T18:49:47.771274-07:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Python gaat over het opzetten van een gestructureerd,\
   \ onderhoudbaar kader vanaf het begin. Programmeurs doen dit om ervoor te\u2026"

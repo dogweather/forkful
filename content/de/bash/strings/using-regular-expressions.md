@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:58.614392-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in Bash erm\xF6glichen es Ihnen, nach\
   \ bestimmten Mustern in Zeichenketten und Dateien zu suchen, diese zu manipulieren\
   \ und zu\u2026"
-lastmod: 2024-02-19 22:05:12.978561
+lastmod: '2024-02-25T18:49:51.100168-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Bash erm\xF6glichen es Ihnen, nach bestimmten\
   \ Mustern in Zeichenketten und Dateien zu suchen, diese zu manipulieren und zu\u2026"

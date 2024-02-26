@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:17.985468-07:00
 description: "Working with CSV (Comma-Separated Values) files in Arduino involves\
   \ reading from and writing to CSV files usually stored on an SD card, enabling data\u2026"
-lastmod: 2024-02-19 22:05:18.803517
+lastmod: '2024-02-25T18:49:56.779458-07:00'
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) files in Arduino involves reading\
   \ from and writing to CSV files usually stored on an SD card, enabling data\u2026"

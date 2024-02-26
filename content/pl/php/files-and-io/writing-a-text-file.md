@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:50.985310-07:00
 description: "Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarciu\
   \ pliku i wstawieniu do niego zawarto\u015Bci. Programi\u015Bci robi\u0105 to, aby\
   \ zachowa\u0107 dane,\u2026"
-lastmod: 2024-02-19 22:04:54.651097
+lastmod: '2024-02-25T18:49:33.879891-07:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarciu pliku\
   \ i wstawieniu do niego zawarto\u015Bci. Programi\u015Bci robi\u0105 to, aby zachowa\u0107\

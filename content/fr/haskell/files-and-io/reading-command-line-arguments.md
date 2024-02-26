@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:11.514412-07:00
 description: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les\
   \ donn\xE9es que l'utilisateur passe \xE0 votre programme lors de son ex\xE9cution.\
   \ On le fait pour\u2026"
-lastmod: 2024-02-19 22:05:16.587115
+lastmod: '2024-02-25T18:49:54.571772-07:00'
 model: gpt-4-1106-preview
 summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
   es que l'utilisateur passe \xE0 votre programme lors de son ex\xE9cution. On le\

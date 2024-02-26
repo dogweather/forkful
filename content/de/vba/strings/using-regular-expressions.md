@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:04:57.408193-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in Visual Basic for Applications (VBA)\
   \ bieten eine leistungsstarke M\xF6glichkeit, um Zeichenketten zu durchsuchen, abzugleichen\u2026"
-lastmod: 2024-02-19 22:05:12.630772
+lastmod: '2024-02-25T18:49:50.773254-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Visual Basic for Applications (VBA)\
   \ bieten eine leistungsstarke M\xF6glichkeit, um Zeichenketten zu durchsuchen, abzugleichen\u2026"

@@ -7,7 +7,7 @@ description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 t\u1EA1o ra m\
   n tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng \u0111\
   \u01B0\u1EE3c s\u1EED d\u1EE5ng cho nh\u1EEFng vi\u1EC7c nh\u01B0 d\u1EEF li\u1EC7\
   u trung gian.\u2026"
-lastmod: 2024-02-19 22:04:55.798975
+lastmod: '2024-02-25T18:49:34.968003-07:00'
 model: gpt-4-0125-preview
 summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 t\u1EA1o ra m\u1ED9\
   t t\u1EC7p \u0111\u01B0\u1EE3c d\u1EF1 \u0111\u1ECBnh s\u1ED1ng ng\u1EAFn h\u1EA1\

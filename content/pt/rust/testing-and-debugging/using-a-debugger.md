@@ -3,7 +3,7 @@ date: 2024-01-26 04:10:20.053395-07:00
 description: "Usar um depurador \xE9 como dar a si mesmo uma vis\xE3o de raio-x para\
   \ espiar a execu\xE7\xE3o do seu c\xF3digo. Programadores fazem isso para identificar\
   \ bugs, entender\u2026"
-lastmod: 2024-02-19 22:05:05.406591
+lastmod: '2024-02-25T18:49:43.993318-07:00'
 model: gpt-4-0125-preview
 summary: "Usar um depurador \xE9 como dar a si mesmo uma vis\xE3o de raio-x para espiar\
   \ a execu\xE7\xE3o do seu c\xF3digo. Programadores fazem isso para identificar bugs,\

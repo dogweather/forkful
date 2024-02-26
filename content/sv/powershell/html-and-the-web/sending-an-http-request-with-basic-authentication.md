@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:13.500169-07:00
 description: "HTTP-f\xF6rfr\xE5gningar med grundl\xE4ggande autentisering inneb\xE4\
   r att man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat i Base64, f\xF6\
   r att bevisa sin\u2026"
-lastmod: 2024-02-19 22:04:57.358422
+lastmod: '2024-02-25T18:49:36.440732-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-f\xF6rfr\xE5gningar med grundl\xE4ggande autentisering inneb\xE4r att\
   \ man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat i Base64, f\xF6\

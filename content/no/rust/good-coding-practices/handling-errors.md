@@ -3,7 +3,7 @@ date: 2024-01-26 00:57:14.324645-07:00
 description: "Feilh\xE5ndtering handler om \xE5 takle ting n\xE5r de skj\xE6rer seg.\
   \ Programmerere gj\xF8r dette for \xE5 h\xE5ndtere det uventede, slik at deres Rust-programmer\
   \ er robuste\u2026"
-lastmod: 2024-02-19 22:04:59.826041
+lastmod: '2024-02-25T18:49:38.762998-07:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering handler om \xE5 takle ting n\xE5r de skj\xE6rer seg. Programmerere\
   \ gj\xF8r dette for \xE5 h\xE5ndtere det uventede, slik at deres Rust-programmer\

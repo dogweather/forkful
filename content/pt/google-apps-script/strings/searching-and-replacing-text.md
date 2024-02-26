@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:10.743632-07:00
 description: "Buscar e substituir texto em Google Apps Script envolve identificar\
   \ programaticamente strings espec\xEDficas em um documento, planilha ou qualquer\
   \ outro tipo\u2026"
-lastmod: 2024-02-19 22:05:05.158219
+lastmod: '2024-02-25T18:49:43.754394-07:00'
 model: gpt-4-0125-preview
 summary: "Buscar e substituir texto em Google Apps Script envolve identificar programaticamente\
   \ strings espec\xEDficas em um documento, planilha ou qualquer outro tipo\u2026"

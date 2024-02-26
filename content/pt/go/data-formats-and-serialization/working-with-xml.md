@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:04.856656-07:00
 description: "Trabalhar com XML em Go envolve o parsing (leitura) e a gera\xE7\xE3\
   o (escrita) de documentos XML \u2014 um formato padr\xE3o para a troca de dados\
   \ estruturados.\u2026"
-lastmod: 2024-02-19 22:05:05.154497
+lastmod: '2024-02-25T18:49:43.751177-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML em Go envolve o parsing (leitura) e a gera\xE7\xE3o (escrita)\
   \ de documentos XML \u2014 um formato padr\xE3o para a troca de dados estruturados.\u2026"

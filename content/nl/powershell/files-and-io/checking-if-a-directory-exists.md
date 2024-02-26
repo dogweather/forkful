@@ -5,7 +5,7 @@ date: 2024-01-28 21:56:39.889899-07:00
 description: "Controleren of een directory bestaat is simpelweg verifi\xEBren of een\
   \ map aanwezig is op een gespecificeerd pad in het bestandssysteem. Programmeurs\
   \ doen\u2026"
-lastmod: 2024-02-19 22:05:10.128427
+lastmod: '2024-02-25T18:49:48.378853-07:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat is simpelweg verifi\xEBren of een map\
   \ aanwezig is op een gespecificeerd pad in het bestandssysteem. Programmeurs doen\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:24.658761-07:00
 description: "Een datum omzetten naar een string betekent het transformeren van een\
   \ datumobject naar leesbare tekst voor mensen. Programmeurs doen dit om data in\u2026"
-lastmod: 2024-02-19 22:05:09.520087
+lastmod: '2024-02-25T18:49:47.824285-07:00'
 model: gpt-4-0125-preview
 summary: "Een datum omzetten naar een string betekent het transformeren van een datumobject\
   \ naar leesbare tekst voor mensen. Programmeurs doen dit om data in\u2026"

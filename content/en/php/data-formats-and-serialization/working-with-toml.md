@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:36.379349-07:00
 description: "TOML, short for Tom's Obvious, Minimal Language, is a data format similar\
   \ to JSON or YAML, but easier to read for humans. Programmers use it for config\u2026"
-lastmod: 2024-02-19 22:05:18.650699
+lastmod: '2024-02-25T18:49:56.627603-07:00'
 model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, is a data format similar\
   \ to JSON or YAML, but easier to read for humans. Programmers use it for config\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:21.873727-07:00
 description: "Ruby allows sending HTTP requests with basic authentication easily.\
   \ Basic authentication protects resources by requiring credentials (username, password).\u2026"
-lastmod: 2024-02-19 22:05:09.309798
+lastmod: '2024-02-25T18:49:47.624752-07:00'
 model: gpt-4-1106-preview
 summary: "Ruby allows sending HTTP requests with basic authentication easily. Basic\
   \ authentication protects resources by requiring credentials (username, password).\u2026"

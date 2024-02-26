@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:24.960978-07:00
 description: "JSON (JavaScript Object Notation) is een tekstgebaseerd gegevensformaat\
   \ voor het opslaan en transporteren van data. Programmeurs gebruiken het omdat het\u2026"
-lastmod: 2024-02-19 22:05:09.945175
+lastmod: '2024-02-25T18:49:48.211847-07:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een tekstgebaseerd gegevensformaat\
   \ voor het opslaan en transporteren van data. Programmeurs gebruiken het omdat het\u2026"

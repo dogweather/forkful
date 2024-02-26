@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:00.424325-07:00
 description: "YAML, co rozszyfrowuje si\u0119 jako YAML Ain't Markup Language, to\
   \ wysoce czytelny format serializacji danych, cz\u0119sto u\u017Cywany do plik\xF3\
   w konfiguracyjnych,\u2026"
-lastmod: 2024-02-19 22:04:54.517932
+lastmod: '2024-02-25T18:49:33.749732-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, co rozszyfrowuje si\u0119 jako YAML Ain't Markup Language, to wysoce\
   \ czytelny format serializacji danych, cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\u2026"

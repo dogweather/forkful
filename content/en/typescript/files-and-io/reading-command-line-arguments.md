@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:02.958419-07:00
 description: Command line arguments let users pass data to a program when they run
   it. Programmers use them to customize a program's behavior without changing the
   code.
-lastmod: 2024-02-19 22:05:18.342019
+lastmod: '2024-02-25T18:49:56.295899-07:00'
 model: gpt-4-1106-preview
 summary: Command line arguments let users pass data to a program when they run it.
   Programmers use them to customize a program's behavior without changing the code.

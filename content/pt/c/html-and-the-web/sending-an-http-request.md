@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:27.934956-07:00
 description: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma solicita\xE7\
   \xE3o para um servidor web para recuperar ou submeter dados. Programadores fazem\
   \ isso em C\u2026"
-lastmod: 2024-02-19 22:05:06.115864
+lastmod: '2024-02-25T18:49:44.663065-07:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma solicita\xE7\
   \xE3o para um servidor web para recuperar ou submeter dados. Programadores fazem\

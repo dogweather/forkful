@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:21.463047-07:00
 description: "Een webpagina downloaden betekent in wezen het grijpen van de gegevens\
   \ van de URL die je opgeeft en deze op je lokale machine trekken. Programmeurs doen\u2026"
-lastmod: 2024-02-19 22:05:09.462825
+lastmod: '2024-02-25T18:49:47.769321-07:00'
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent in wezen het grijpen van de gegevens van\
   \ de URL die je opgeeft en deze op je lokale machine trekken. Programmeurs doen\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:12.582555-07:00
 description: "Interpolating a string means inserting dynamic values into a static\
   \ string. Programmers do it to make code flexible and to dynamically create strings\
   \ that\u2026"
-lastmod: 2024-02-19 22:05:11.539970
+lastmod: '2024-02-25T18:49:49.725332-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolating a string means inserting dynamic values into a static string.\
   \ Programmers do it to make code flexible and to dynamically create strings that\u2026"

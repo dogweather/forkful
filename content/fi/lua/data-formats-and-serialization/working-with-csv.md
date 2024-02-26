@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:41.407172-07:00
 description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tekstidatan\
   \ j\xE4sent\xE4minen ja tuottaminen riveihin ja sarakkeisiin j\xE4rjestettyn\xE4\
   , k\xE4ytt\xE4en\u2026"
-lastmod: 2024-02-19 22:05:15.613946
+lastmod: '2024-02-25T18:49:53.630550-07:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tekstidatan\
   \ j\xE4sent\xE4minen ja tuottaminen riveihin ja sarakkeisiin j\xE4rjestettyn\xE4\

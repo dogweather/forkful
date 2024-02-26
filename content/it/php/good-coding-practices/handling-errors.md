@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:27.441360-07:00
 description: "La gestione degli errori in PHP riguarda la gestione e la risposta a\
   \ condizioni che interrompono il flusso normale di un programma, come file mancanti\
   \ o\u2026"
-lastmod: 2024-02-19 22:05:02.590735
+lastmod: '2024-02-25T18:49:41.387193-07:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori in PHP riguarda la gestione e la risposta a condizioni\
   \ che interrompono il flusso normale di un programma, come file mancanti o\u2026"

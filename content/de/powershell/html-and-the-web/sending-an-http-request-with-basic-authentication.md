@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:16.318571-07:00
 description: "HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste\
   \ oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff\
   \ auf\u2026"
-lastmod: 2024-02-19 22:05:13.035152
+lastmod: '2024-02-25T18:49:51.155251-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste\
   \ oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff\

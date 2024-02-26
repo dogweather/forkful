@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:30.045190-07:00
 description: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstowej\
   \ informacji o dacie i czasie na obiekt datetime lub r\xF3wnowa\u017Cny, uporz\u0105\
   dkowany format.\u2026"
-lastmod: 2024-02-19 22:04:54.143196
+lastmod: '2024-02-25T18:49:33.384819-07:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstowej\
   \ informacji o dacie i czasie na obiekt datetime lub r\xF3wnowa\u017Cny, uporz\u0105\

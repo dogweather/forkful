@@ -3,7 +3,7 @@ date: 2024-01-26 04:38:47.914926-07:00
 description: "Les nombres complexes \xE9largissent notre syst\xE8me de nombres pour\
   \ inclure les nombres imaginaires, nous permettant de r\xE9soudre des \xE9quations\
   \ qui n'ont pas\u2026"
-lastmod: 2024-02-19 22:05:16.522120
+lastmod: '2024-02-25T18:49:54.508843-07:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9largissent notre syst\xE8me de nombres pour inclure\
   \ les nombres imaginaires, nous permettant de r\xE9soudre des \xE9quations qui n'ont\

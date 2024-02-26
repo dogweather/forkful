@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:16.048506-07:00
 description: "V\xE4liaikainen tiedosto on tilap\xE4inen, usein automaattisesti poistettava\
   \ tiedosto, jota k\xE4ytet\xE4\xE4n datan v\xE4liaikaiseen tallentamiseen. Ohjelmoijat\
   \ luovat\u2026"
-lastmod: 2024-02-19 22:05:15.779746
+lastmod: '2024-02-25T18:49:53.793704-07:00'
 model: gpt-4-1106-preview
 summary: "V\xE4liaikainen tiedosto on tilap\xE4inen, usein automaattisesti poistettava\
   \ tiedosto, jota k\xE4ytet\xE4\xE4n datan v\xE4liaikaiseen tallentamiseen. Ohjelmoijat\

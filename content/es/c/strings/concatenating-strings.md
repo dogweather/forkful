@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:44.813933-07:00
 description: "La concatenaci\xF3n de cadenas en C involucra unir dos o m\xE1s cadenas\
   \ de extremo a extremo para formar una nueva cadena. Los programadores realizan\
   \ esta\u2026"
-lastmod: 2024-02-19 22:05:18.043154
+lastmod: '2024-02-25T18:49:56.005277-07:00'
 model: gpt-4-0125-preview
 summary: "La concatenaci\xF3n de cadenas en C involucra unir dos o m\xE1s cadenas\
   \ de extremo a extremo para formar una nueva cadena. Los programadores realizan\

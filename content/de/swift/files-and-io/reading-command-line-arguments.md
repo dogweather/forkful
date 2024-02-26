@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:04.755367-07:00
 description: "Das Lesen von Kommandozeilenargumenten erm\xF6glicht es deinen Swift-Programmen,\
   \ beim Start Input zu erhalten \u2013 praktisch f\xFCr flexible Tools und\u2026"
-lastmod: 2024-02-19 22:05:13.176436
+lastmod: '2024-02-25T18:49:51.290708-07:00'
 model: gpt-4-1106-preview
 summary: "Das Lesen von Kommandozeilenargumenten erm\xF6glicht es deinen Swift-Programmen,\
   \ beim Start Input zu erhalten \u2013 praktisch f\xFCr flexible Tools und\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:08.658032-07:00
 description: "Comparer deux dates permet de d\xE9terminer laquelle est la plus ancienne\
   \ ou de calculer la dur\xE9e entre elles. C\u2019est crucial dans les t\xE2ches\
   \ comme\u2026"
-lastmod: 2024-02-19 22:05:16.584078
+lastmod: '2024-02-25T18:49:54.568843-07:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates permet de d\xE9terminer laquelle est la plus ancienne\
   \ ou de calculer la dur\xE9e entre elles. C\u2019est crucial dans les t\xE2ches\

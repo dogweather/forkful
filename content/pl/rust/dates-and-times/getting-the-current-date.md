@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:50.754375-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w Rust jest powszechnym zadaniem\
   \ w przypadkach takich jak logowanie, operacje czasowe, czy po prostu wy\u015Bwietlanie\
   \ daty. W\u2026"
-lastmod: 2024-02-19 22:04:54.322098
+lastmod: '2024-02-25T18:49:33.562538-07:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w Rust jest powszechnym zadaniem w przypadkach\
   \ takich jak logowanie, operacje czasowe, czy po prostu wy\u015Bwietlanie daty.\

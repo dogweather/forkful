@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:24.304740-07:00
 description: "Converting a string to lowercase means making every letter in the string\
   \ a small letter. It's handy for case-insensitive comparisons or preparing text\
   \ for\u2026"
-lastmod: 2024-02-19 22:05:18.353990
+lastmod: '2024-02-25T18:49:56.308410-07:00'
 model: gpt-4-1106-preview
 summary: "Converting a string to lowercase means making every letter in the string\
   \ a small letter. It's handy for case-insensitive comparisons or preparing text\

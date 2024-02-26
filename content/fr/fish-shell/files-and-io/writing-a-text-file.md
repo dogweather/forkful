@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:36.462027-07:00
 description: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker\
   \ des donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration\
   \ ou la\u2026"
-lastmod: 2024-02-19 22:05:16.994000
+lastmod: '2024-02-25T18:49:54.969909-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker des\
   \ donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration ou\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:12.690197-07:00
 description: "S\xF8king og erstatning av tekst i Google Apps Script inneb\xE6rer \xE5\
   \ programmert identifisere spesifikke strenger i et dokument, regneark eller annen\
   \ type\u2026"
-lastmod: 2024-02-19 22:04:59.577753
+lastmod: '2024-02-25T18:49:38.528202-07:00'
 model: gpt-4-0125-preview
 summary: "S\xF8king og erstatning av tekst i Google Apps Script inneb\xE6rer \xE5\
   \ programmert identifisere spesifikke strenger i et dokument, regneark eller annen\

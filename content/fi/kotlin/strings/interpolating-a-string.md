@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:06.115435-07:00
 description: "String-interpolaatio sallii muuttujien arvojen sis\xE4llytt\xE4misen\
   \ merkkijonoihin suoraan. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen tekstin\
   \ luomiseen ilman tarvetta\u2026"
-lastmod: 2024-02-19 22:05:15.410747
+lastmod: '2024-02-25T18:49:53.434541-07:00'
 model: gpt-4-1106-preview
 summary: "String-interpolaatio sallii muuttujien arvojen sis\xE4llytt\xE4misen merkkijonoihin\
   \ suoraan. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen tekstin luomiseen ilman\

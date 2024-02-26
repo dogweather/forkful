@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:17:06.284738-07:00
 description: "Las expresiones regulares (regex) en Java te permiten definir patrones\
   \ espec\xEDficos para buscar, manipular o validar cadenas en tu c\xF3digo. Los\u2026"
-lastmod: 2024-02-19 22:05:17.450322
+lastmod: '2024-02-25T18:49:55.417208-07:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Java te permiten definir patrones espec\xED\
   ficos para buscar, manipular o validar cadenas en tu c\xF3digo. Los\u2026"

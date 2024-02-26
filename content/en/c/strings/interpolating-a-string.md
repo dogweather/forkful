@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:04.452212-07:00
 description: "String interpolation, in programming, involves the construction of strings\
   \ by embedding expressions within literal strings. Programmers do this to create\u2026"
-lastmod: 2024-02-19 22:05:18.960515
+lastmod: '2024-02-25T18:49:56.935828-07:00'
 model: gpt-4-0125-preview
 summary: "String interpolation, in programming, involves the construction of strings\
   \ by embedding expressions within literal strings. Programmers do this to create\u2026"

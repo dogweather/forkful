@@ -9,7 +9,7 @@ description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u53D1\u9001 HTTP
   \u5E94\u7528\u7A0B\u5E8F\uFF08\u5982 Excel\u3001Access \u6216\u5B9A\u5236\u7684\
   \ VBA \u89E3\u51B3\u65B9\u6848\uFF09\u4E2D\u6293\u53D6\u6570\u636E\u3001\u4E0E\u5728\
   \u7EBF API\u2026"
-lastmod: 2024-02-19 22:05:06.589168
+lastmod: '2024-02-25T18:49:45.131049-07:00'
 model: gpt-4-0125-preview
 summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u53D1\u9001 HTTP \u8BF7\
   \u6C42\u6D89\u53CA\u901A\u8FC7 HTTP \u8BF7\u6C42\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u8BBF\

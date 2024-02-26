@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:39.775647-07:00
 description: "Uuden Swift-projektin aloittaminen tarkoittaa uuden sovelluksen tai\
   \ ohjelman kehityksen k\xE4ynnist\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
   n luodakseen ratkaisuja\u2026"
-lastmod: 2024-02-19 22:05:15.803225
+lastmod: '2024-02-25T18:49:53.816215-07:00'
 model: gpt-4-1106-preview
 summary: "Uuden Swift-projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelman\
   \ kehityksen k\xE4ynnist\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n luodakseen\

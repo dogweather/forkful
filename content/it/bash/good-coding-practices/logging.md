@@ -2,7 +2,7 @@
 date: 2024-01-26 00:59:27.816909-07:00
 description: "Il logging \xE8 la pratica di registrare eventi, errori e altre informazioni\
   \ significative dai processi in esecuzione di un programma su un file o uno stream\u2026"
-lastmod: 2024-02-19 22:05:02.677994
+lastmod: '2024-02-25T18:49:41.467808-07:00'
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 la pratica di registrare eventi, errori e altre informazioni\
   \ significative dai processi in esecuzione di un programma su un file o uno stream\u2026"

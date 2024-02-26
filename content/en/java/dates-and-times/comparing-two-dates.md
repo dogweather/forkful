@@ -2,7 +2,7 @@
 date: 2024-01-20 17:33:13.517035-07:00
 description: "Comparing two dates means finding out if one date comes before, after,\
   \ or is the same as another. Programmers do this to handle scheduling, deadlines,\u2026"
-lastmod: 2024-02-19 22:05:18.451608
+lastmod: '2024-02-25T18:49:56.404212-07:00'
 model: gpt-4-1106-preview
 summary: "Comparing two dates means finding out if one date comes before, after, or\
   \ is the same as another. Programmers do this to handle scheduling, deadlines,\u2026"

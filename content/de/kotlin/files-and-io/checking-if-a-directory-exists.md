@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:43.511443-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Kotlin existiert, beinhaltet\
   \ die Verifizierung der Pr\xE4senz eines Verzeichnisses an einem spezifizierten\
   \ Pfad.\u2026"
-lastmod: 2024-02-19 22:05:12.787037
+lastmod: '2024-02-25T18:49:50.921636-07:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Kotlin existiert, beinhaltet\
   \ die Verifizierung der Pr\xE4senz eines Verzeichnisses an einem spezifizierten\

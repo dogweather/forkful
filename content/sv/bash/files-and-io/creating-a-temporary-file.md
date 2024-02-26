@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:46.650442-07:00
 description: "Skapa en tempor\xE4r fil inneb\xE4r att du tillf\xE4lligt lagrar data\
   \ som beh\xF6vs under programmets k\xF6rning. Programmerare anv\xE4nder detta f\xF6\
   r att hantera\u2026"
-lastmod: 2024-02-19 22:04:57.332764
+lastmod: '2024-02-25T18:49:36.416721-07:00'
 model: gpt-4-1106-preview
 summary: "Skapa en tempor\xE4r fil inneb\xE4r att du tillf\xE4lligt lagrar data som\
   \ beh\xF6vs under programmets k\xF6rning. Programmerare anv\xE4nder detta f\xF6\

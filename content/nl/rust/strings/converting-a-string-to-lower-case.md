@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:37.760875-07:00
 description: "Een string omzetten naar kleine letters betekent elke letter in de string\
   \ veranderen in een kleine letter. Het is handig voor hoofdletterongevoelige\u2026"
-lastmod: 2024-02-19 22:05:09.628594
+lastmod: '2024-02-25T18:49:47.925243-07:00'
 model: gpt-4-0125-preview
 summary: "Een string omzetten naar kleine letters betekent elke letter in de string\
   \ veranderen in een kleine letter. Het is handig voor hoofdletterongevoelige\u2026"

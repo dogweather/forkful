@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:49.183859-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en TypeScript est essentiel pour\
   \ les t\xE2ches de gestion de fichiers, telles que lire ou \xE9crire des donn\xE9\
   es dans des\u2026"
-lastmod: 2024-02-19 22:05:16.281644
+lastmod: '2024-02-25T18:49:54.267186-07:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en TypeScript est essentiel pour\
   \ les t\xE2ches de gestion de fichiers, telles que lire ou \xE9crire des donn\xE9\

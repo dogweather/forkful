@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:27.556243-07:00
 description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datum\
   \ data fr\xE5n ett format som datorer f\xF6rst\xE5r till text som \xE4r l\xE4sbart\
   \ f\xF6r m\xE4nniskor.\u2026"
-lastmod: 2024-02-19 22:04:57.548580
+lastmod: '2024-02-25T18:49:36.619795-07:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datum\
   \ data fr\xE5n ett format som datorer f\xF6rst\xE5r till text som \xE4r l\xE4sbart\

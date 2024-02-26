@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:03.764716-07:00
 description: "Das Extrahieren von Teilzeichenketten in Visual Basic f\xFCr Applikationen\
   \ (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf\u2026"
-lastmod: 2024-02-19 22:05:12.629699
+lastmod: '2024-02-25T18:49:50.771994-07:00'
 model: gpt-4-0125-preview
 summary: "Das Extrahieren von Teilzeichenketten in Visual Basic f\xFCr Applikationen\
   \ (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf\u2026"

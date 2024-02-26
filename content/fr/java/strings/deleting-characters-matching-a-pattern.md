@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:44.276980-07:00
 description: "En Java, supprimer des caract\xE8res correspondant \xE0 un motif, c'est\
   \ retirer de fa\xE7on s\xE9lective certains caract\xE8res d'une cha\xEEne en se\
   \ basant sur des r\xE8gles\u2026"
-lastmod: 2024-02-19 22:05:16.384666
+lastmod: '2024-02-25T18:49:54.371107-07:00'
 model: gpt-4-1106-preview
 summary: "En Java, supprimer des caract\xE8res correspondant \xE0 un motif, c'est\
   \ retirer de fa\xE7on s\xE9lective certains caract\xE8res d'une cha\xEEne en se\

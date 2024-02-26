@@ -3,7 +3,7 @@ date: 2024-01-26 03:38:53.995088-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylim\xE4\xE4r\xE4\
   isten kaksois- tai yksitt\xE4isten lainausmerkkien karsimista, joita et todellisuudessa\
   \ tarvitse\u2026"
-lastmod: 2024-02-19 22:05:15.370616
+lastmod: '2024-02-25T18:49:53.396163-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylim\xE4\xE4r\xE4isten\
   \ kaksois- tai yksitt\xE4isten lainausmerkkien karsimista, joita et todellisuudessa\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:30.493722-07:00
 description: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu\
   \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\u2026"
-lastmod: 2024-02-19 22:05:13.353707
+lastmod: '2024-02-25T18:49:51.457219-07:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu\
   \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\u2026"

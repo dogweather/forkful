@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:14:49.146099-07:00
 description: "Analisar uma data a partir de uma string envolve converter representa\xE7\
   \xF5es textuais de datas e hor\xE1rios em um formato que pode ser facilmente manipulado,\u2026"
-lastmod: 2024-02-19 22:05:05.770441
+lastmod: '2024-02-25T18:49:44.338408-07:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve converter representa\xE7\
   \xF5es textuais de datas e hor\xE1rios em um formato que pode ser facilmente manipulado,\u2026"

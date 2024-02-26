@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:56.708620-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Visual Basic f\xFCr Anwendungen\
   \ (VBA) existiert, bedeutet, die Anwesenheit eines Ordners innerhalb des Dateisystems\
   \ zu\u2026"
-lastmod: 2024-02-19 22:05:12.658682
+lastmod: '2024-02-25T18:49:50.799887-07:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Visual Basic f\xFCr Anwendungen\
   \ (VBA) existiert, bedeutet, die Anwesenheit eines Ordners innerhalb des Dateisystems\

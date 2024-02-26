@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:27.276150-07:00
 description: "I JavaScript kan vi slette tegn som matcher et m\xF8nster gjennom regul\xE6\
   re uttrykk for \xE5 rense strenger, trekke ut data eller for en rekke andre oppgaver\
   \ som\u2026"
-lastmod: 2024-02-19 22:05:00.444110
+lastmod: '2024-02-25T18:49:39.347134-07:00'
 model: gpt-4-1106-preview
 summary: "I JavaScript kan vi slette tegn som matcher et m\xF8nster gjennom regul\xE6\
   re uttrykk for \xE5 rense strenger, trekke ut data eller for en rekke andre oppgaver\

@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "(\"Co i Dlaczego?\") Zapisywanie pliku tekstowego to spos\xF3b trwa\u0142\
   ego przechowywania danych. Programi\u015Bci robi\u0105 to, by zapisywa\u0107 ustawienia,\
   \ dane u\u017Cytkownika,\u2026"
-lastmod: 2024-02-19 22:04:54.605840
+lastmod: '2024-02-25T18:49:33.836070-07:00'
 summary: "(\"Co i Dlaczego?\") Zapisywanie pliku tekstowego to spos\xF3b trwa\u0142\
   ego przechowywania danych. Programi\u015Bci robi\u0105 to, by zapisywa\u0107 ustawienia,\
   \ dane u\u017Cytkownika,\u2026"

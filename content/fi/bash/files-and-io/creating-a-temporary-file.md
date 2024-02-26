@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:30.395676-07:00
 description: "Luodaan tilap\xE4isi\xE4 tiedostoja v\xE4liaikaisen datan s\xE4ilytt\xE4\
   miseen ja sen varmistamiseen, ett\xE4 sovelluksen k\xE4ytt\xE4m\xE4 ymp\xE4rist\xF6\
   \ pysyy siistin\xE4. Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.654194
+lastmod: '2024-02-25T18:49:53.669532-07:00'
 model: gpt-4-1106-preview
 summary: "Luodaan tilap\xE4isi\xE4 tiedostoja v\xE4liaikaisen datan s\xE4ilytt\xE4\
   miseen ja sen varmistamiseen, ett\xE4 sovelluksen k\xE4ytt\xE4m\xE4 ymp\xE4rist\xF6\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:58:02.140640-07:00
 description: "La gestione degli errori in Go implica il riconoscimento e la risposta\
   \ alle condizioni di errore nel tuo programma. I programmatori si impegnano nella\u2026"
-lastmod: 2024-02-19 22:05:02.021448
+lastmod: '2024-02-25T18:49:40.846781-07:00'
 model: gpt-4-0125-preview
 summary: "La gestione degli errori in Go implica il riconoscimento e la risposta alle\
   \ condizioni di errore nel tuo programma. I programmatori si impegnano nella\u2026"

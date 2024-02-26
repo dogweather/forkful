@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:16.363112-07:00
 description: "\xC5 f\xE5 den n\xE5v\xE6rende datoen i programmering er avgj\xF8rende\
   \ av en rekke grunner, inkludert logging, tidsstempel p\xE5 hendelser og planlegging\
   \ av oppgaver. I\u2026"
-lastmod: 2024-02-19 22:04:59.697519
+lastmod: '2024-02-25T18:49:38.640146-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 den n\xE5v\xE6rende datoen i programmering er avgj\xF8rende av\
   \ en rekke grunner, inkludert logging, tidsstempel p\xE5 hendelser og planlegging\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:05.197028-07:00
 description: "Concat\xE9ner des cha\xEEnes signifie les joindre bout \xE0 bout. Les\
   \ programmeurs font cela pour assembler des textes, des messages, ou des donn\xE9\
   es g\xE9n\xE9r\xE9s\u2026"
-lastmod: 2024-02-19 22:05:16.563196
+lastmod: '2024-02-25T18:49:54.548828-07:00'
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes signifie les joindre bout \xE0 bout. Les programmeurs\
   \ font cela pour assembler des textes, des messages, ou des donn\xE9es g\xE9n\xE9\

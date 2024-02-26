@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:19.417068-07:00
 description: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga de v\xE4rden som\
   \ anv\xE4nds n\xE4r du k\xF6r ett script. Det l\xE5ter dig anpassa scriptets beteende\
   \ utan att \xE4ndra koden."
-lastmod: 2024-02-19 22:04:57.328699
+lastmod: '2024-02-25T18:49:36.412887-07:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga de v\xE4rden som anv\xE4\
   nds n\xE4r du k\xF6r ett script. Det l\xE5ter dig anpassa scriptets beteende utan\

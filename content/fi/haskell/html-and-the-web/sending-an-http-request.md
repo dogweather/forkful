@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:56.180525-07:00
 description: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet\xE4\
   \xE4n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n, koska se\u2026"
-lastmod: 2024-02-19 22:05:15.505645
+lastmod: '2024-02-25T18:49:53.525932-07:00'
 model: gpt-4-1106-preview
 summary: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet\xE4\xE4\
   n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille. Ohjelmoijat\

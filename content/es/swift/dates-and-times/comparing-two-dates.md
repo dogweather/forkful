@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:09.427044-07:00
 description: "Comparar dos fechas es chequear c\xF3mo se relacionan en el tiempo:\
   \ si una es anterior, posterior o si son la misma. Los programadores lo hacen para\
   \ tareas\u2026"
-lastmod: 2024-02-19 22:05:17.933456
+lastmod: '2024-02-25T18:49:55.898162-07:00'
 model: gpt-4-1106-preview
 summary: "Comparar dos fechas es chequear c\xF3mo se relacionan en el tiempo: si una\
   \ es anterior, posterior o si son la misma. Los programadores lo hacen para tareas\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:19.055460-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym\
   \ to spos\xF3b na zapewnienie dost\u0119pu do zasob\xF3w wymagaj\u0105cych potwierdzenia\
   \ to\u017Csamo\u015Bci. Programi\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.676370
+lastmod: '2024-02-25T18:49:33.904681-07:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym to\
   \ spos\xF3b na zapewnienie dost\u0119pu do zasob\xF3w wymagaj\u0105cych potwierdzenia\

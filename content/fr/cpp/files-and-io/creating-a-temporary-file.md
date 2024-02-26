@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:34.484350-07:00
 description: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es de fa\xE7\
   on \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. On le fait pour manipuler\
   \ des donn\xE9es sans\u2026"
-lastmod: 2024-02-19 22:05:16.854005
+lastmod: '2024-02-25T18:49:54.843360-07:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es de fa\xE7\
   on \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. On le fait pour manipuler\

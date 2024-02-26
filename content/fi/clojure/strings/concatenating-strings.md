@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:34.948285-07:00
 description: "Yhdist\xE4minen (\"string concatenation\") on useiden merkkijonojen\
   \ liitt\xE4mist\xE4 yhteen. Koodarit tarvitsevat t\xE4t\xE4 toimintoa muodostaakseen\
   \ yksitt\xE4isist\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.118257
+lastmod: '2024-02-25T18:49:53.151425-07:00'
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4minen (\"string concatenation\") on useiden merkkijonojen liitt\xE4\
   mist\xE4 yhteen. Koodarit tarvitsevat t\xE4t\xE4 toimintoa muodostaakseen yksitt\xE4\

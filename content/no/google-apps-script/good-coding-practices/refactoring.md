@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:50.655600-07:00
 description: "Omstrukturering i programmeringsspr\xE5ket refererer til prosessen med\
   \ \xE5 restrukturere eksisterende dataprogramkode - endre faktoriseringen uten \xE5\
   \ endre den\u2026"
-lastmod: 2024-02-19 22:04:59.605214
+lastmod: '2024-02-25T18:49:38.554397-07:00'
 model: gpt-4-0125-preview
 summary: "Omstrukturering i programmeringsspr\xE5ket refererer til prosessen med \xE5\
   \ restrukturere eksisterende dataprogramkode - endre faktoriseringen uten \xE5 endre\

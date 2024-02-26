@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:20.562018-07:00
 description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in\
   \ staat om in real-time code te testen. Programmeurs gebruiken het om te experimenteren,\u2026"
-lastmod: 2024-02-19 22:05:10.428857
+lastmod: '2024-02-25T18:49:48.662512-07:00'
 model: gpt-4-0125-preview
 summary: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat\
   \ om in real-time code te testen. Programmeurs gebruiken het om te experimenteren,\u2026"

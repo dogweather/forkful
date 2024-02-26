@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:46.439533-07:00
 description: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten\
   \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"
-lastmod: 2024-02-19 22:05:15.511917
+lastmod: '2024-02-25T18:49:53.531911-07:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten\
   \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"

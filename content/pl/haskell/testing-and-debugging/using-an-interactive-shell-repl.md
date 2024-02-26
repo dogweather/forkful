@@ -3,7 +3,7 @@ date: 2024-01-26 04:15:06.923329-07:00
 description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Haskellu\
   \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo. Jest to plac zabaw dla\
   \ szybkiego\u2026"
-lastmod: 2024-02-19 22:04:54.588120
+lastmod: '2024-02-25T18:49:33.817897-07:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Haskellu\
   \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo. Jest to plac zabaw dla\

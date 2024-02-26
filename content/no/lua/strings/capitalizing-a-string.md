@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:49.991882-07:00
 description: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 endre det f\xF8rste tegnet\
   \ i hvert ord i en setning til stor bokstav, samtidig som resten sikres \xE5 v\xE6\
   re sm\xE5 bokstaver.\u2026"
-lastmod: 2024-02-19 22:05:00.176877
+lastmod: '2024-02-25T18:49:39.085351-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 endre det f\xF8rste tegnet\
   \ i hvert ord i en setning til stor bokstav, samtidig som resten sikres \xE5 v\xE6\

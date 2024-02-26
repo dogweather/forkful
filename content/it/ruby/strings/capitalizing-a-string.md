@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:13.688577-07:00
 description: "Capitalizzare una stringa nella programmazione spesso si riferisce alla\
   \ conversione del primo carattere di una stringa in maiuscolo e il resto in\u2026"
-lastmod: 2024-02-19 22:05:03.004977
+lastmod: '2024-02-25T18:49:41.771279-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa nella programmazione spesso si riferisce alla\
   \ conversione del primo carattere di una stringa in maiuscolo e il resto in\u2026"

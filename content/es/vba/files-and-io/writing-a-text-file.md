@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:58.794239-07:00
 description: "Escribir un archivo de texto en Visual Basic para Aplicaciones (VBA)\
   \ implica crear, modificar o a\xF1adir datos de texto a archivos, una tarea fundamental\u2026"
-lastmod: 2024-02-19 22:05:17.436137
+lastmod: '2024-02-25T18:49:55.403369-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Visual Basic para Aplicaciones (VBA) implica\
   \ crear, modificar o a\xF1adir datos de texto a archivos, una tarea fundamental\u2026"

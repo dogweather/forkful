@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:17.072015-07:00
 description: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un\
   \ langage de balisage), est un format de s\xE9rialisation de donn\xE9es lisible\
   \ par l'homme\u2026"
-lastmod: 2024-02-19 22:05:16.635191
+lastmod: '2024-02-25T18:49:54.620127-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
   \ de balisage), est un format de s\xE9rialisation de donn\xE9es lisible par l'homme\u2026"

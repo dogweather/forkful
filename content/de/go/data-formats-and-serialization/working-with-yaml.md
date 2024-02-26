@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:30.966260-07:00
 description: "Die Arbeit mit YAML in Go beinhaltet das Parsen von YAML-Dateien (YAML\
   \ Ain't Markup Language), einem menschenfreundlichen Daten-Serialisierungsstandard,\u2026"
-lastmod: 2024-02-19 22:05:12.355992
+lastmod: '2024-02-25T18:49:50.510286-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit YAML in Go beinhaltet das Parsen von YAML-Dateien (YAML Ain't\
   \ Markup Language), einem menschenfreundlichen Daten-Serialisierungsstandard,\u2026"

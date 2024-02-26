@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:09.582336-07:00
 description: "Interpolering i strenger lar oss sette inn variabler direkte i en tekst.\
   \ Programmerere gj\xF8r dette for \xE5 enkelt kunne bygge dynamiske meldinger."
-lastmod: 2024-02-19 22:04:59.896931
+lastmod: '2024-02-25T18:49:38.832056-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolering i strenger lar oss sette inn variabler direkte i en tekst.\
   \ Programmerere gj\xF8r dette for \xE5 enkelt kunne bygge dynamiske meldinger."

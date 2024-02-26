@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:50.472676-07:00
 description: "In der Programmierung bedeutet das L\xF6schen von Zeichen, die einem\
   \ Muster entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum\
   \ Beispiel\u2026"
-lastmod: 2024-02-19 22:05:12.756723
+lastmod: '2024-02-25T18:49:50.892818-07:00'
 model: gpt-4-1106-preview
 summary: "In der Programmierung bedeutet das L\xF6schen von Zeichen, die einem Muster\
   \ entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum Beispiel\u2026"

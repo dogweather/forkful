@@ -6,7 +6,7 @@ description: "Shell t\u01B0\u01A1ng t\xE1c, hay REPLs (V\xF2ng l\u1EB7p \u0110\u
   c-\u0110\xE1nh gi\xE1-In), cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 tr\xEAn m\xE1y bay,\
   \ ki\u1EC3m th\u1EED c\xE1c h\xE0m, thu\u1EADt to\xE1n, ho\u1EB7c ngh\u1ECBch ng\u1EE3\
   m v\u1EDBi \xFD t\u01B0\u1EDFng.\u2026"
-lastmod: 2024-02-19 22:04:56.365073
+lastmod: '2024-02-25T18:49:35.501914-07:00'
 model: gpt-4-0125-preview
 summary: "Shell t\u01B0\u01A1ng t\xE1c, hay REPLs (V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\
   \xE1nh gi\xE1-In), cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 tr\xEAn m\xE1y bay, ki\u1EC3\

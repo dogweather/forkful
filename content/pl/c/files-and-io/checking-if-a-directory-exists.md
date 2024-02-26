@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:48.671090-07:00
 description: "Sprawdzanie, czy katalog istnieje w j\u0119zyku C, polega na zapytaniu\
   \ systemu plik\xF3w, aby zweryfikowa\u0107, czy okre\u015Blona \u015Bcie\u017Cka\
   \ prowadzi do katalogu.\u2026"
-lastmod: 2024-02-19 22:04:55.081617
+lastmod: '2024-02-25T18:49:34.275797-07:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku C, polega na zapytaniu systemu\
   \ plik\xF3w, aby zweryfikowa\u0107, czy okre\u015Blona \u015Bcie\u017Cka prowadzi\

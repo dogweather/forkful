@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:09.494018-07:00
 description: "Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsen\xE4isten ohjelmien\
   \ luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan.\u2026"
-lastmod: 2024-02-19 22:05:15.763741
+lastmod: '2024-02-25T18:49:53.777994-07:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsen\xE4isten ohjelmien\
   \ luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:04.833629-07:00
 description: "Working with XML in Google Apps Script allows programmers to parse,\
   \ manipulate, and generate XML data, essential for web services and configurations.\u2026"
-lastmod: 2024-02-19 22:05:18.198940
+lastmod: '2024-02-25T18:49:56.156406-07:00'
 model: gpt-4-0125-preview
 summary: "Working with XML in Google Apps Script allows programmers to parse, manipulate,\
   \ and generate XML data, essential for web services and configurations.\u2026"

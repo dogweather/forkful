@@ -2,7 +2,7 @@
 date: 2024-01-26 00:51:37.323383-07:00
 description: "El manejo de errores permite que tu script trate lo inesperado de manera\
   \ elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros\u2026"
-lastmod: 2024-02-19 22:05:18.013890
+lastmod: '2024-02-25T18:49:55.978459-07:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores permite que tu script trate lo inesperado de manera\
   \ elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros\u2026"

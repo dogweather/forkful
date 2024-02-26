@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:42.892958-07:00
 description: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\xF8\
   ker, er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon.\
   \ I motsetning\u2026"
-lastmod: 2024-02-19 22:05:00.544244
+lastmod: '2024-02-25T18:49:39.441509-07:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\xF8ker,\
   \ er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon. I\

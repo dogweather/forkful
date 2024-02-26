@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:23.713105-07:00
 description: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script\
   \ inneb\xE4r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar\
   \ en\u2026"
-lastmod: 2024-02-19 22:04:56.702717
+lastmod: '2024-02-25T18:49:35.799595-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script inneb\xE4\
   r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar en\u2026"

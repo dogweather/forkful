@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:11.235825-07:00
 description: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),\
   \ is een alomtegenwoordig bestandsformaat voor het opslaan van tabelgegevens.\u2026"
-lastmod: 2024-02-19 22:05:09.991270
+lastmod: '2024-02-25T18:49:48.256609-07:00'
 model: gpt-4-0125-preview
 summary: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),\
   \ is een alomtegenwoordig bestandsformaat voor het opslaan van tabelgegevens.\u2026"

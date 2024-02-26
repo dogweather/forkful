@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:18.211429-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla tarkoittaa\
   \ k\xE4ytt\xE4j\xE4tilin tunnistetietojen (yleens\xE4 k\xE4ytt\xE4j\xE4nimi ja salasana)\
   \ l\xE4hett\xE4mist\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.056962
+lastmod: '2024-02-25T18:49:53.117519-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla tarkoittaa k\xE4\
   ytt\xE4j\xE4tilin tunnistetietojen (yleens\xE4 k\xE4ytt\xE4j\xE4nimi ja salasana)\

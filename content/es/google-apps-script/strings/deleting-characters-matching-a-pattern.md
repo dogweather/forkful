@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:57.250511-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico es\
   \ una t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n.\
   \ En el contexto de\u2026"
-lastmod: 2024-02-19 22:05:17.143706
+lastmod: '2024-02-25T18:49:55.115342-07:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico es una\
   \ t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n. En el\

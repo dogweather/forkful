@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:26.918818-07:00
 description: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4\
   , kuten `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla\
   \ kuten\u2026"
-lastmod: 2024-02-19 22:05:15.376682
+lastmod: '2024-02-25T18:49:53.402005-07:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4, kuten\
   \ `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla kuten\u2026"

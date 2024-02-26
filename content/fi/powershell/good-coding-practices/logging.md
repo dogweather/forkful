@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:52.374532-07:00
 description: "Lokit ovat k\xE4yt\xE4nn\xF6ss\xE4 murupolkuja koodisi l\xE4pi - ne\
   \ kertovat, mit\xE4 skriptillesi tapahtuu, kun se on \"villiss\xE4 luonnossa\" suorituksessa.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.684836
+lastmod: '2024-02-25T18:49:53.699597-07:00'
 model: gpt-4-1106-preview
 summary: "Lokit ovat k\xE4yt\xE4nn\xF6ss\xE4 murupolkuja koodisi l\xE4pi - ne kertovat,\
   \ mit\xE4 skriptillesi tapahtuu, kun se on \"villiss\xE4 luonnossa\" suorituksessa.\

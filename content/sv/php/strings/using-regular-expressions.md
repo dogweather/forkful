@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:45.583477-07:00
 description: "Regulj\xE4ra uttryck (regex) i PHP \xE4r m\xF6nster som anv\xE4nds f\xF6\
   r att matcha teckenkombinationer i str\xE4ngar, vilket m\xF6jligg\xF6r avancerade\
   \ s\xF6k-och-ers\xE4tt-\u2026"
-lastmod: 2024-02-19 22:04:57.209698
+lastmod: '2024-02-25T18:49:36.288725-07:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i PHP \xE4r m\xF6nster som anv\xE4nds f\xF6\
   r att matcha teckenkombinationer i str\xE4ngar, vilket m\xF6jligg\xF6r avancerade\

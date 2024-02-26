@@ -2,7 +2,7 @@
 date: 2024-01-27 16:21:12.913995-07:00
 description: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigurationsdateien\
   \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen. Sie\u2026"
-lastmod: 2024-02-19 22:05:12.986429
+lastmod: '2024-02-25T18:49:51.107685-07:00'
 model: gpt-4-0125-preview
 summary: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigurationsdateien\
   \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen. Sie\u2026"

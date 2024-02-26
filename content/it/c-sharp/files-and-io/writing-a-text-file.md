@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:35.810939-07:00
 description: "Scrivere un file di testo in C# comporta la creazione o modifica programmatica\
   \ di file di testo sul file system - un compito fondamentale per molte\u2026"
-lastmod: 2024-02-19 22:05:02.516339
+lastmod: '2024-02-25T18:49:41.316925-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in C# comporta la creazione o modifica programmatica\
   \ di file di testo sul file system - un compito fondamentale per molte\u2026"

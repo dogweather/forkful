@@ -3,7 +3,7 @@ date: 2024-01-26 04:19:03.513881-07:00
 description: "TOML, czyli Tom's Obvious, Minimal Language, to format serializacji\
   \ danych. Programi\u015Bci ceni\u0105 go za prostot\u0119 i czytelno\u015B\u0107\
   ; jest \u015Bwietny do plik\xF3w\u2026"
-lastmod: 2024-02-19 22:04:54.749276
+lastmod: '2024-02-25T18:49:33.976484-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, czyli Tom's Obvious, Minimal Language, to format serializacji danych.\
   \ Programi\u015Bci ceni\u0105 go za prostot\u0119 i czytelno\u015B\u0107; jest \u015B\

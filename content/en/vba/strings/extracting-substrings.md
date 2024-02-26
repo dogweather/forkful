@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:17.130436-07:00
 description: "Extracting substrings in Visual Basic for Applications (VBA) involves\
   \ isolating specific parts of a string based on given criteria. Programmers do this\u2026"
-lastmod: 2024-02-19 22:05:18.393071
+lastmod: '2024-02-25T18:49:56.347222-07:00'
 model: gpt-4-0125-preview
 summary: "Extracting substrings in Visual Basic for Applications (VBA) involves isolating\
   \ specific parts of a string based on given criteria. Programmers do this\u2026"

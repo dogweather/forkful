@@ -2,7 +2,7 @@
 date: 2024-01-20 17:28:42.737851-07:00
 description: "Calcolare le date nel futuro o nel passato significa determinare un\
   \ giorno specifico prima o dopo una data nota. I programmatori lo fanno per gestire\u2026"
-lastmod: 2024-02-19 22:05:02.685182
+lastmod: '2024-02-25T18:49:41.474329-07:00'
 model: gpt-4-1106-preview
 summary: "Calcolare le date nel futuro o nel passato significa determinare un giorno\
   \ specifico prima o dopo una data nota. I programmatori lo fanno per gestire\u2026"

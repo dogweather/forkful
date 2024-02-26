@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:02.684434-07:00
 description: "Loggen in programmeren is als het bijhouden van een dagboek voor je\
   \ applicatie. Het is het systematisch vastleggen van gebeurtenissen, berichten en\u2026"
-lastmod: 2024-02-19 22:05:10.433861
+lastmod: '2024-02-25T18:49:48.667275-07:00'
 model: gpt-4-0125-preview
 summary: "Loggen in programmeren is als het bijhouden van een dagboek voor je applicatie.\
   \ Het is het systematisch vastleggen van gebeurtenissen, berichten en\u2026"

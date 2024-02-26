@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:58:02.536018-07:00
 description: "Gestire gli errori in C comporta il rilevamento e la risposta a condizioni\
   \ anomale che si verificano durante l'esecuzione del programma. I programmatori\u2026"
-lastmod: 2024-02-19 22:05:02.985052
+lastmod: '2024-02-25T18:49:41.752342-07:00'
 model: gpt-4-0125-preview
 summary: "Gestire gli errori in C comporta il rilevamento e la risposta a condizioni\
   \ anomale che si verificano durante l'esecuzione del programma. I programmatori\u2026"

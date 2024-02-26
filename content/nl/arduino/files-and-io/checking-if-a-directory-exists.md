@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:36.857580-07:00
 description: "Controleren of een map bestaat gaat helemaal over het verifi\xEBren\
   \ van de aanwezigheid van een map op je opslag voordat je er iets mee doet. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:10.171374
+lastmod: '2024-02-25T18:49:48.419928-07:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat gaat helemaal over het verifi\xEBren van\
   \ de aanwezigheid van een map op je opslag voordat je er iets mee doet. Programmeurs\u2026"

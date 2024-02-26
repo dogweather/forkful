@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:55.666775-07:00
 description: "Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen \u2013\
   \ mahdollisuus luoda jotakin uutta. Koodarit tekev\xE4t sen ratkaistakseen ongelmia,\u2026"
-lastmod: 2024-02-19 22:05:15.424769
+lastmod: '2024-02-25T18:49:53.448133-07:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen \u2013 mahdollisuus\
   \ luoda jotakin uutta. Koodarit tekev\xE4t sen ratkaistakseen ongelmia,\u2026"

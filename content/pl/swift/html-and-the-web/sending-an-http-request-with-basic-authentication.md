@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:26.817411-07:00
 description: "Wys\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
   \ to proces dodania nag\u0142\xF3wka uwierzytelniaj\u0105cego do \u017C\u0105dania\
   \ HTTP. Programi\u015Bci to robi\u0105, by uzyska\u0107\u2026"
-lastmod: 2024-02-19 22:04:54.902689
+lastmod: '2024-02-25T18:49:34.127317-07:00'
 model: gpt-4-1106-preview
 summary: "Wys\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem to\
   \ proces dodania nag\u0142\xF3wka uwierzytelniaj\u0105cego do \u017C\u0105dania\

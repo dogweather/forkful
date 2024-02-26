@@ -3,7 +3,7 @@ date: 2024-01-26 01:06:52.431830-07:00
 description: "La registrazione (logging), in sostanza, \xE8 la pratica di annotare\
   \ eventi e dati da un'applicazione software su un output esterno, come un file o\
   \ la\u2026"
-lastmod: 2024-02-19 22:05:02.460790
+lastmod: '2024-02-25T18:49:41.264265-07:00'
 model: gpt-4-1106-preview
 summary: "La registrazione (logging), in sostanza, \xE8 la pratica di annotare eventi\
   \ e dati da un'applicazione software su un output esterno, come un file o la\u2026"

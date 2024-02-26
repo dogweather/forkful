@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:56.838430-07:00
 description: "Searching and replacing text means finding specific substrings and swapping\
   \ them out for something new. Why bother? It's everywhere: fixing typos in a\u2026"
-lastmod: 2024-02-19 22:05:18.881991
+lastmod: '2024-02-25T18:49:56.855890-07:00'
 model: gpt-4-1106-preview
 summary: "Searching and replacing text means finding specific substrings and swapping\
   \ them out for something new. Why bother? It's everywhere: fixing typos in a\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:48.703655-07:00
 description: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
   \ wszystkich wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy\
   \ to, by ujednolici\u0107 dane przed\u2026"
-lastmod: 2024-02-19 22:04:54.802197
+lastmod: '2024-02-25T18:49:34.029903-07:00'
 model: gpt-4-1106-preview
 summary: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
   \ wszystkich wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy\

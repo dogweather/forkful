@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:59:33.361706-07:00
 description: "Il refactoring nel lessico della programmazione si riferisce al processo\
   \ di ristrutturazione del codice informatico esistente\u2014modificando la\u2026"
-lastmod: 2024-02-19 22:05:02.071379
+lastmod: '2024-02-25T18:49:40.894167-07:00'
 model: gpt-4-0125-preview
 summary: "Il refactoring nel lessico della programmazione si riferisce al processo\
   \ di ristrutturazione del codice informatico esistente\u2014modificando la\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:21:06.635750-07:00
 description: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
   \ ist eine Daten-Serialisierungssprache. Elm-Programmierer verwenden sie zur Verwaltung\
   \ von\u2026"
-lastmod: 2024-02-19 22:05:12.753686
+lastmod: '2024-02-25T18:49:50.889918-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, ist\
   \ eine Daten-Serialisierungssprache. Elm-Programmierer verwenden sie zur Verwaltung\

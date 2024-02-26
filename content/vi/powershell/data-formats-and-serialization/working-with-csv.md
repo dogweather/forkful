@@ -3,7 +3,7 @@ changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:15.803832-07:00
 description: ''
-lastmod: 2024-02-19 22:04:56.161041
+lastmod: '2024-02-25T18:49:35.311785-07:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"

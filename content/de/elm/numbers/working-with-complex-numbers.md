@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:12.302213-07:00
 description: "Komplexe Zahlen sind eine Kombination aus reellen und imagin\xE4ren\
   \ Zahlen, wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist. Sie sind entscheidend\
   \ in\u2026"
-lastmod: 2024-02-19 22:05:12.724100
+lastmod: '2024-02-25T18:49:50.862051-07:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen sind eine Kombination aus reellen und imagin\xE4ren Zahlen,\
   \ wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist. Sie sind entscheidend in\u2026"

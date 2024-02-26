@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:51.252850-07:00
 description: "Confrontare due date significa verificarne le differenze o verificarne\
   \ l'ordine cronologico. I programmatori lo fanno per gestire scadenze, eventi, log\
   \ e\u2026"
-lastmod: 2024-02-19 22:05:02.729539
+lastmod: '2024-02-25T18:49:41.515656-07:00'
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa verificarne le differenze o verificarne l'ordine\
   \ cronologico. I programmatori lo fanno per gestire scadenze, eventi, log e\u2026"

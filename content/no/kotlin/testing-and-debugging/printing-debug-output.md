@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:00.316880-07:00
 description: "**Hva & Hvorfor?** Printing debug output lar oss vise verdier eller\
   \ meldinger mens programmet kj\xF8rer. Det er som en live-titt inn i appens hjerne,\
   \ nyttig\u2026"
-lastmod: 2024-02-19 22:05:00.013774
+lastmod: '2024-02-25T18:49:38.932014-07:00'
 model: gpt-4-1106-preview
 summary: "**Hva & Hvorfor?** Printing debug output lar oss vise verdier eller meldinger\
   \ mens programmet kj\xF8rer. Det er som en live-titt inn i appens hjerne, nyttig\u2026"

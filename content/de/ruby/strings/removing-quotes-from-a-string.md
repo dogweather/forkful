@@ -3,7 +3,7 @@ date: 2024-01-26 03:41:21.535715-07:00
 description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
   \ doppelten oder einfachen Anf\xFChrungszeichen wegzunehmen, die Textwerte umschlie\xDF\
   en.\u2026"
-lastmod: 2024-02-19 22:05:13.326957
+lastmod: '2024-02-25T18:49:51.434144-07:00'
 model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
   \ doppelten oder einfachen Anf\xFChrungszeichen wegzunehmen, die Textwerte umschlie\xDF\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:43.107413-07:00
 description: "Interpolacja string\xF3w pozwala wstawia\u0107 zmienne lub wyra\u017C\
   enia bezpo\u015Brednio do \u0142a\u0144cuch\xF3w znak\xF3w. Programi\u015Bci u\u017C\
   ywaj\u0105 jej dla czytelno\u015Bci i wygody, unikaj\u0105c\u2026"
-lastmod: 2024-02-19 22:04:54.296398
+lastmod: '2024-02-25T18:49:33.537557-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja string\xF3w pozwala wstawia\u0107 zmienne lub wyra\u017Cenia\
   \ bezpo\u015Brednio do \u0142a\u0144cuch\xF3w znak\xF3w. Programi\u015Bci u\u017C\

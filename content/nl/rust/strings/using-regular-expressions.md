@@ -5,7 +5,7 @@ date: 2024-01-28 22:10:01.923448-07:00
 description: "Reguliere expressies, of kortweg regex, zijn reeksen van tekens die\
   \ zoekpatronen vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken\
   \ of te\u2026"
-lastmod: 2024-02-19 22:05:09.631715
+lastmod: '2024-02-25T18:49:47.928173-07:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies, of kortweg regex, zijn reeksen van tekens die zoekpatronen\
   \ vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken of te\u2026"

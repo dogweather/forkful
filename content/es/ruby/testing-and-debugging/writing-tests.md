@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:46.905956-07:00
 description: "Probar en Ruby es verificar que tu c\xF3digo se comporte como se espera\
   \ bajo varias condiciones. Los programistas escriben pruebas para asegurar la\u2026"
-lastmod: 2024-02-19 22:05:18.102423
+lastmod: '2024-02-25T18:49:56.062307-07:00'
 model: gpt-4-0125-preview
 summary: "Probar en Ruby es verificar que tu c\xF3digo se comporte como se espera\
   \ bajo varias condiciones. Los programistas escriben pruebas para asegurar la\u2026"

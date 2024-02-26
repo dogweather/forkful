@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:14.499567-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Swiftille tarkoittaa `Date`\
   \ luokan k\xE4ytt\xE4mist\xE4 p\xE4\xE4st\xE4ksesi k\xE4siksi p\xE4iv\xE4m\xE4\xE4\
   r\xE4\xE4n ja aikaan, jolloin sovellusta ajetaan.\u2026"
-lastmod: 2024-02-19 22:05:15.813006
+lastmod: '2024-02-25T18:49:53.825538-07:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Swiftille tarkoittaa `Date`\
   \ luokan k\xE4ytt\xE4mist\xE4 p\xE4\xE4st\xE4ksesi k\xE4siksi p\xE4iv\xE4m\xE4\xE4\

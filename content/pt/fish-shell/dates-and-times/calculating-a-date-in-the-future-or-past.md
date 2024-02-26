@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:01.614346-07:00
 description: "Calcular datas futuras ou passadas \xE9 o processo de adicionar ou subtrair\
   \ dias a uma data espec\xEDfica. Programadores utilizam essa habilidade para\u2026"
-lastmod: 2024-02-19 22:05:06.087270
+lastmod: '2024-02-25T18:49:44.636050-07:00'
 model: gpt-4-1106-preview
 summary: "Calcular datas futuras ou passadas \xE9 o processo de adicionar ou subtrair\
   \ dias a uma data espec\xEDfica. Programadores utilizam essa habilidade para\u2026"

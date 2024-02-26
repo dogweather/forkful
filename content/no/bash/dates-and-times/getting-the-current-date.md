@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:47.967157-07:00
 description: "\xC5 hente dagens dato i Bash involverer bruk av innebygde kommandoer\
   \ for \xE5 vise dato og tid i forskjellige formater. Programmerere bruker denne\u2026"
-lastmod: 2024-02-19 22:05:00.251635
+lastmod: '2024-02-25T18:49:39.158805-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente dagens dato i Bash involverer bruk av innebygde kommandoer for\
   \ \xE5 vise dato og tid i forskjellige formater. Programmerere bruker denne\u2026"

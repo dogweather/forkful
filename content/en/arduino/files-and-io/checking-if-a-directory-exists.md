@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:36.680853-07:00
 description: "In the context of Arduino programming, checking if a directory exists\
   \ on an SD card or similar storage module allows you to read or write files without\u2026"
-lastmod: 2024-02-19 22:05:18.796502
+lastmod: '2024-02-25T18:49:56.772520-07:00'
 model: gpt-4-0125-preview
 summary: "In the context of Arduino programming, checking if a directory exists on\
   \ an SD card or similar storage module allows you to read or write files without\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:19.768258-07:00
 description: "\xC9crire des tests en Elixir implique la cr\xE9ation de scripts automatis\xE9\
   s pour valider le comportement de votre code. Les programmeurs font cela pour\u2026"
-lastmod: 2024-02-19 22:05:16.227278
+lastmod: '2024-02-25T18:49:54.214501-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Elixir implique la cr\xE9ation de scripts automatis\xE9\
   s pour valider le comportement de votre code. Les programmeurs font cela pour\u2026"

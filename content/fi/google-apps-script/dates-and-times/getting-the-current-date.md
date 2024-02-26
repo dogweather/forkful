@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:53.904090-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Google Apps Scriptill\xE4\
   \ tarkoittaa live-p\xE4iv\xE4m\xE4\xE4r\xE4n ja -ajan hakemista, yleist\xE4 teht\xE4\
   v\xE4\xE4 automaatioteht\xE4viss\xE4,\u2026"
-lastmod: 2024-02-19 22:05:15.024326
+lastmod: '2024-02-25T18:49:53.085751-07:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Google Apps Scriptill\xE4\
   \ tarkoittaa live-p\xE4iv\xE4m\xE4\xE4r\xE4n ja -ajan hakemista, yleist\xE4 teht\xE4\

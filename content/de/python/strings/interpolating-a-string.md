@@ -7,7 +7,7 @@ date: 2024-01-28 21:23:41.871760-07:00
 description: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale\
   \ einzubetten. Programmierer verwenden sie, um dynamisch Werte in Strings einzuf\xFC\
   gen, was\u2026"
-lastmod: 2024-02-19 22:05:12.412023
+lastmod: '2024-02-25T18:49:50.564883-07:00'
 model: gpt-4-0125-preview
 summary: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale einzubetten.\
   \ Programmierer verwenden sie, um dynamisch Werte in Strings einzuf\xFCgen, was\u2026"

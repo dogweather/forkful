@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:41.619340-07:00
 description: "Comparar duas datas em C envolve determinar a rela\xE7\xE3o cronol\xF3\
   gica entre elas -- se uma data precede a outra ou se s\xE3o iguais. Essa capacidade\
   \ \xE9 crucial em\u2026"
-lastmod: 2024-02-19 22:05:06.133726
+lastmod: '2024-02-25T18:49:44.680042-07:00'
 model: gpt-4-0125-preview
 summary: "Comparar duas datas em C envolve determinar a rela\xE7\xE3o cronol\xF3gica\
   \ entre elas -- se uma data precede a outra ou se s\xE3o iguais. Essa capacidade\

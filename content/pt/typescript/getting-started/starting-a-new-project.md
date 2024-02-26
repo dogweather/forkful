@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:31.744650-07:00
 description: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco para um\
   \ programador: \xE9 uma oportunidade de criar algo do zero. Programadores come\xE7\
   am novos\u2026"
-lastmod: 2024-02-19 22:05:05.358153
+lastmod: '2024-02-25T18:49:43.948794-07:00'
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco para um programador:\
   \ \xE9 uma oportunidade de criar algo do zero. Programadores come\xE7am novos\u2026"

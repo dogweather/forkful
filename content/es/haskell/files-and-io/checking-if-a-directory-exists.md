@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:18.956345-07:00
 description: "Comprobar si un directorio existe es una operaci\xF3n fundamental en\
   \ muchas tareas de programaci\xF3n, lo que permite realizar acciones condicionales\
   \ basadas en\u2026"
-lastmod: 2024-02-19 22:05:17.640102
+lastmod: '2024-02-25T18:49:55.602759-07:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe es una operaci\xF3n fundamental en muchas\
   \ tareas de programaci\xF3n, lo que permite realizar acciones condicionales basadas\

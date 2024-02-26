@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:02.306717-07:00
 description: "Verificar si un directorio existe en Clojure implica comprobar la presencia\
   \ de un directorio en el sistema de archivos desde dentro de tu aplicaci\xF3n\u2026"
-lastmod: 2024-02-19 22:05:17.262119
+lastmod: '2024-02-25T18:49:55.232305-07:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Clojure implica comprobar la presencia\
   \ de un directorio en el sistema de archivos desde dentro de tu aplicaci\xF3n\u2026"

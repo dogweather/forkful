@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:02.850869-07:00
 description: "Verificar se um diret\xF3rio existe em Java \xE9 uma tarefa fundamental\
   \ que envolve a verifica\xE7\xE3o da presen\xE7a de um diret\xF3rio no sistema de\
   \ arquivos antes de\u2026"
-lastmod: 2024-02-19 22:05:05.510042
+lastmod: '2024-02-25T18:49:44.091314-07:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Java \xE9 uma tarefa fundamental\
   \ que envolve a verifica\xE7\xE3o da presen\xE7a de um diret\xF3rio no sistema de\

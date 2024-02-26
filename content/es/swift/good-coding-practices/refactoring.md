@@ -3,7 +3,7 @@ date: 2024-01-26 03:36:37.413994-07:00
 description: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
   tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\
   \ para\u2026"
-lastmod: 2024-02-19 22:05:17.929475
+lastmod: '2024-02-25T18:49:55.894235-07:00'
 model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
   tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\

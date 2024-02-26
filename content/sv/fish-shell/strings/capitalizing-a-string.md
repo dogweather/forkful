@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:24.459065-07:00
 description: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5 att\
   \ den f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener.\
   \ Detta \xE4r en vanlig uppgift\u2026"
-lastmod: 2024-02-19 22:04:57.564463
+lastmod: '2024-02-25T18:49:36.633572-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5 att den\
   \ f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener. Detta\

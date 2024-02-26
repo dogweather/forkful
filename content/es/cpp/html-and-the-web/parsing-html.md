@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:24.028084-07:00
 description: "Analizar HTML significa descomponer el contenido HTML en algo que un\
   \ programa puede entender y manipular. Los programadores hacen esto para extraer\
   \ datos,\u2026"
-lastmod: 2024-02-19 22:05:17.877632
+lastmod: '2024-02-25T18:49:55.843044-07:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML significa descomponer el contenido HTML en algo que un programa\
   \ puede entender y manipular. Los programadores hacen esto para extraer datos,\u2026"

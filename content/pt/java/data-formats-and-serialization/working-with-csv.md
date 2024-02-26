@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:22.866362-07:00
 description: "Trabalhar com arquivos CSV envolve ler e escrever dados para arquivos\
   \ de Valores Separados por V\xEDrgula (CSV), um formato popular para troca de dados\u2026"
-lastmod: 2024-02-19 22:05:05.518523
+lastmod: '2024-02-25T18:49:44.099557-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV envolve ler e escrever dados para arquivos de\
   \ Valores Separados por V\xEDrgula (CSV), um formato popular para troca de dados\u2026"

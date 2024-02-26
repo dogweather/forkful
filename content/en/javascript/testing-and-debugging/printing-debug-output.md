@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:03.734143-07:00
 description: "Printing debug output in JavaScript is about showing variables, errors,\
   \ or any other info that helps figure out what your code is doing at a glance.\u2026"
-lastmod: 2024-02-19 22:05:18.897457
+lastmod: '2024-02-25T18:49:56.871020-07:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output in JavaScript is about showing variables, errors,\
   \ or any other info that helps figure out what your code is doing at a glance.\u2026"

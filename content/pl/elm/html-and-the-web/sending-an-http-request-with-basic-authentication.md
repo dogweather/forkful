@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:47.790947-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem\
   \ to metoda, gdzie login i has\u0142o s\u0105 dodawane do nag\u0142\xF3wk\xF3w \u017C\
   \u0105dania w celu dost\u0119pu do zabezpieczonych\u2026"
-lastmod: 2024-02-19 22:04:54.451450
+lastmod: '2024-02-25T18:49:33.685614-07:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem to\
   \ metoda, gdzie login i has\u0142o s\u0105 dodawane do nag\u0142\xF3wk\xF3w \u017C\

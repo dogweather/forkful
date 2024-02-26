@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:53.930514-07:00
 description: "Commencer un nouveau projet, c'est partir de z\xE9ro pour cr\xE9er un\
   \ programme original. Les programmeurs se lancent dans de nouveaux projets pour\
   \ r\xE9soudre un\u2026"
-lastmod: 2024-02-19 22:05:16.659039
+lastmod: '2024-02-25T18:49:54.642566-07:00'
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet, c'est partir de z\xE9ro pour cr\xE9er un programme\
   \ original. Les programmeurs se lancent dans de nouveaux projets pour r\xE9soudre\

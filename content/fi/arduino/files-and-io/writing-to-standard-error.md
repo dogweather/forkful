@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:54.175094-07:00
 description: "Standardivirheen (stderr) kirjoittaminen Arduinon ohjelmoinnissa tarkoittaa\
   \ virheilmoitusten ja diagnostiikkatietojen ohjaamista erilliselle kanavalle,\u2026"
-lastmod: 2024-02-19 22:05:15.735708
+lastmod: '2024-02-25T18:49:53.749909-07:00'
 model: gpt-4-0125-preview
 summary: "Standardivirheen (stderr) kirjoittaminen Arduinon ohjelmoinnissa tarkoittaa\
   \ virheilmoitusten ja diagnostiikkatietojen ohjaamista erilliselle kanavalle,\u2026"

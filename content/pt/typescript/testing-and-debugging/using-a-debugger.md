@@ -2,7 +2,7 @@
 date: 2024-01-26 04:11:08.800109-07:00
 description: "Um depurador \xE9 uma ferramenta que permite examinar e alterar os mecanismos\
   \ internos do seu c\xF3digo enquanto ele \xE9 executado. Os programadores usam para\u2026"
-lastmod: 2024-02-19 22:05:05.362170
+lastmod: '2024-02-25T18:49:43.952570-07:00'
 model: gpt-4-0125-preview
 summary: "Um depurador \xE9 uma ferramenta que permite examinar e alterar os mecanismos\
   \ internos do seu c\xF3digo enquanto ele \xE9 executado. Os programadores usam para\u2026"

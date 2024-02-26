@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:58.428380-07:00
 description: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel,\
   \ voorgesteld als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs\u2026"
-lastmod: 2024-02-19 22:05:10.372724
+lastmod: '2024-02-25T18:49:48.609205-07:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel, voorgesteld\
   \ als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs\u2026"

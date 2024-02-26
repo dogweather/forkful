@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:43.269461-07:00
 description: "Sending an HTTP request fetches data from or sends data to a web server.\
   \ Programmers do it to interact with web services or APIs \u2013 grabbing info,\
   \ posting\u2026"
-lastmod: 2024-02-19 22:05:18.362567
+lastmod: '2024-02-25T18:49:56.316937-07:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request fetches data from or sends data to a web server.\
   \ Programmers do it to interact with web services or APIs \u2013 grabbing info,\

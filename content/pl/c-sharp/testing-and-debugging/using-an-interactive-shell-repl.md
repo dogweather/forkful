@@ -3,7 +3,7 @@ date: 2024-01-26 04:12:26.437455-07:00
 description: "REPL, czyli p\u0119tla Czytaj-Wykonaj-Wypisz, pozwala wpisywa\u0107\
   \ i interaktywnie uruchamia\u0107 kod w C#. Programi\u015Bci u\u017Cywaj\u0105 go\
   \ do szybkich eksperyment\xF3w,\u2026"
-lastmod: 2024-02-19 22:04:54.543704
+lastmod: '2024-02-25T18:49:33.774656-07:00'
 model: gpt-4-0125-preview
 summary: "REPL, czyli p\u0119tla Czytaj-Wykonaj-Wypisz, pozwala wpisywa\u0107 i interaktywnie\
   \ uruchamia\u0107 kod w C#. Programi\u015Bci u\u017Cywaj\u0105 go do szybkich eksperyment\xF3\

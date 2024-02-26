@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:51.088441-07:00
 description: "Die Berechnung eines Datums in der Zukunft oder der Vergangenheit handelt\
   \ vom Manipulieren von Datumsobjekten, um Daten \xFCber das gegenw\xE4rtige Datum\
   \ hinaus\u2026"
-lastmod: 2024-02-19 22:05:12.395637
+lastmod: '2024-02-25T18:49:50.549063-07:00'
 model: gpt-4-0125-preview
 summary: "Die Berechnung eines Datums in der Zukunft oder der Vergangenheit handelt\
   \ vom Manipulieren von Datumsobjekten, um Daten \xFCber das gegenw\xE4rtige Datum\

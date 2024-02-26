@@ -6,7 +6,7 @@ date: 2024-02-22 17:29:57.341989-07:00
 description: "Commencer un nouveau projet en Python, c'est mettre en place d\xE8s\
   \ le d\xE9part une structure organis\xE9e et maintenable. Les programmeurs font\
   \ cela pour\u2026"
-lastmod: 2024-02-25 18:27:13.784191
+lastmod: '2024-02-25T18:49:54.128264-07:00'
 model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en Python, c'est mettre en place d\xE8s le d\xE9\
   part une structure organis\xE9e et maintenable. Les programmeurs font cela pour\u2026"

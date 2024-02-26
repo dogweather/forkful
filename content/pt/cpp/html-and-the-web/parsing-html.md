@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:35.767137-07:00
 description: "Analisar HTML significa decompor o conte\xFAdo HTML em algo que um programa\
   \ possa entender e manipular. Os programadores fazem isso para extrair dados,\u2026"
-lastmod: 2024-02-19 22:05:05.937595
+lastmod: '2024-02-25T18:49:44.495207-07:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML significa decompor o conte\xFAdo HTML em algo que um programa\
   \ possa entender e manipular. Os programadores fazem isso para extrair dados,\u2026"

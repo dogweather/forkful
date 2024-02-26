@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:04:19.664601-07:00
 description: "Las expresiones regulares (regex) son patrones utilizados para hacer\
   \ coincidir combinaciones de caracteres en cadenas de texto. Los programadores las\u2026"
-lastmod: 2024-02-19 22:05:17.150311
+lastmod: '2024-02-25T18:49:55.122169-07:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son patrones utilizados para hacer coincidir\
   \ combinaciones de caracteres en cadenas de texto. Los programadores las\u2026"

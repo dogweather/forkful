@@ -7,7 +7,7 @@ description: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentica
   \uC6A9\uD558\uB294 \uC774\uC720\uB294 \uAC04\uB2E8\uD558\uAC8C API\uB098 \uB9AC\uC18C\
   \uC2A4\uC5D0 \uBCF4\uC548\uC744 \uC694\uAD6C\uD560 \uB54C\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: 2024-02-19 22:05:13.731488
+lastmod: '2024-02-25T18:49:51.860952-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentication)\uC744\
   \ \uBD99\uC774\uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\

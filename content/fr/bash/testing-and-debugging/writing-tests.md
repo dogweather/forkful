@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:47.061995-07:00
 description: "\xC9crire des tests en Bash implique de scripter des cas de test pour\
   \ valider la fonctionnalit\xE9 de vos scripts Bash. Les programmeurs effectuent\
   \ des tests\u2026"
-lastmod: 2024-02-19 22:05:16.707903
+lastmod: '2024-02-25T18:49:54.689509-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Bash implique de scripter des cas de test pour valider\
   \ la fonctionnalit\xE9 de vos scripts Bash. Les programmeurs effectuent des tests\u2026"

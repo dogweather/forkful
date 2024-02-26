@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:09:07.117094-07:00
 description: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
   \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"
-lastmod: 2024-02-19 22:05:16.844947
+lastmod: '2024-02-25T18:49:54.834490-07:00'
 model: gpt-4-0125-preview
 summary: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
   \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"

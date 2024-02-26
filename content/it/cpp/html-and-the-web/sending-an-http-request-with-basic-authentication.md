@@ -2,7 +2,7 @@
 date: 2024-01-20 18:01:27.725201-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base significa trasmettere\
   \ username e password in formato codificato per accedere a risorse protette. I\u2026"
-lastmod: 2024-02-19 22:05:02.801037
+lastmod: '2024-02-25T18:49:41.580993-07:00'
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base significa trasmettere\
   \ username e password in formato codificato per accedere a risorse protette. I\u2026"

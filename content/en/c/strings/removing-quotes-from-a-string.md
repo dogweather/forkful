@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:08.196568-07:00
 description: "Removing quotes from a string in C involves extracting the textual content\
   \ without the encapsulating single (' ') or double (\" \") quotes. This process\
   \ is\u2026"
-lastmod: 2024-02-19 22:05:18.962278
+lastmod: '2024-02-25T18:49:56.937614-07:00'
 model: gpt-4-0125-preview
 summary: "Removing quotes from a string in C involves extracting the textual content\
   \ without the encapsulating single (' ') or double (\" \") quotes. This process\

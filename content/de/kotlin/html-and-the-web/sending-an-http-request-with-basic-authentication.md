@@ -2,7 +2,7 @@
 date: 2024-01-20 18:01:59.469239-07:00
 description: "HTTP-Anfragen mit Basic Authentication senden Nutzernamen und Passwort\
   \ im Base64-codierten Format im `Authorization`-Header, um sich gegen\xFCber einem\u2026"
-lastmod: 2024-02-19 22:05:12.772223
+lastmod: '2024-02-25T18:49:50.907429-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basic Authentication senden Nutzernamen und Passwort im\
   \ Base64-codierten Format im `Authorization`-Header, um sich gegen\xFCber einem\u2026"

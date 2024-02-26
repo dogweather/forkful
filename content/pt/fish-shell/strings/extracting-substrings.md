@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:31.716514-07:00
 description: "Extrair substrings \xE9 o ato de selecionar partes espec\xEDficas de\
   \ uma string. Programadores fazem isso para manipular e analisar dados de forma\
   \ mais granular."
-lastmod: 2024-02-19 22:05:06.059596
+lastmod: '2024-02-25T18:49:44.610062-07:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 o ato de selecionar partes espec\xEDficas de uma\
   \ string. Programadores fazem isso para manipular e analisar dados de forma mais\

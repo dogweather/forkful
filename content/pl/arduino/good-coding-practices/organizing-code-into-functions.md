@@ -3,7 +3,7 @@ date: 2024-01-26 01:08:39.068763-07:00
 description: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie\
   \ u\u017Cywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie.\
   \ Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: 2024-02-19 22:04:54.820956
+lastmod: '2024-02-25T18:49:34.048643-07:00'
 model: gpt-4-1106-preview
 summary: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie u\u017C\
   ywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie. Programi\u015B\

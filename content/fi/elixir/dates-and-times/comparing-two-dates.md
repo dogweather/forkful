@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:52.861425-07:00
 description: "`P\xE4iv\xE4m\xE4\xE4rien vertailu` tarkoittaa kahta p\xE4iv\xE4m\xE4\
   \xE4r\xE4\xE4 vertaamalla selvitt\xE4mist\xE4, kumpi on aikaisempi tai ovatko ne\
   \ samat. Ohjelmoijat vertailevat\u2026"
-lastmod: 2024-02-19 22:05:15.180496
+lastmod: '2024-02-25T18:49:53.212864-07:00'
 model: gpt-4-1106-preview
 summary: "`P\xE4iv\xE4m\xE4\xE4rien vertailu` tarkoittaa kahta p\xE4iv\xE4m\xE4\xE4\
   r\xE4\xE4 vertaamalla selvitt\xE4mist\xE4, kumpi on aikaisempi tai ovatko ne samat.\

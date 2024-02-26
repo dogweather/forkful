@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:54.764022-07:00
 description: "Att l\xE4sa kommandoradsargument handlar om att extrahera anv\xE4ndarinput\
   \ direkt fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att g\xF6ra sina\
   \ skript interaktiva\u2026"
-lastmod: 2024-02-19 22:04:57.603148
+lastmod: '2024-02-25T18:49:36.669100-07:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument handlar om att extrahera anv\xE4ndarinput\
   \ direkt fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att g\xF6ra sina\

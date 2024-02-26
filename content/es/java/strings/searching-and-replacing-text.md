@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:14.910645-07:00
 description: "Buscar y reemplazar texto es el proceso de localizar cadenas espec\xED\
   ficas en un texto y sustituirlas con otras diferentes. Los programadores lo hacen\
   \ para\u2026"
-lastmod: 2024-02-19 22:05:17.445677
+lastmod: '2024-02-25T18:49:55.412663-07:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es el proceso de localizar cadenas espec\xEDficas\
   \ en un texto y sustituirlas con otras diferentes. Los programadores lo hacen para\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:54.220058-07:00
 description: "Mandar una petici\xF3n HTTP es como enviar un mensaje a otra computadora\
   \ pidi\xE9ndole informaci\xF3n o para que realice una acci\xF3n. Los programadores\
   \ lo hacen\u2026"
-lastmod: 2024-02-19 22:05:17.498138
+lastmod: '2024-02-25T18:49:55.464421-07:00'
 model: gpt-4-1106-preview
 summary: "Mandar una petici\xF3n HTTP es como enviar un mensaje a otra computadora\
   \ pidi\xE9ndole informaci\xF3n o para que realice una acci\xF3n. Los programadores\

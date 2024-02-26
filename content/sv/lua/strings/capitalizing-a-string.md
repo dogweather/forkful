@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:58.912153-07:00
 description: "Att skriva med stor bokstav inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
   \ i varje ord i en mening till versal, samtidigt som man ser till att resten \xE4\
   r gemener.\u2026"
-lastmod: 2024-02-19 22:04:57.247811
+lastmod: '2024-02-25T18:49:36.325115-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
   \ i varje ord i en mening till versal, samtidigt som man ser till att resten \xE4\

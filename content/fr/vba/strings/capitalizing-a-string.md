@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:03.901273-07:00
 description: "La capitalisation d'une cha\xEEne de caract\xE8res dans Visual Basic\
   \ pour Applications (VBA) consiste \xE0 convertir le premier caract\xE8re de chaque\
   \ mot en\u2026"
-lastmod: 2024-02-19 22:05:16.335925
+lastmod: '2024-02-25T18:49:54.321185-07:00'
 model: gpt-4-0125-preview
 summary: "La capitalisation d'une cha\xEEne de caract\xE8res dans Visual Basic pour\
   \ Applications (VBA) consiste \xE0 convertir le premier caract\xE8re de chaque mot\

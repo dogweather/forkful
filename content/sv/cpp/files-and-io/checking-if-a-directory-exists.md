@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:13.438456-07:00
 description: "Att kontrollera om en katalog finns handlar om att avg\xF6ra n\xE4rvaron\
   \ av en katalog p\xE5 en specificerad s\xF6kv\xE4g innan man utf\xF6r operationer\
   \ som att l\xE4sa fr\xE5n\u2026"
-lastmod: 2024-02-19 22:04:57.461521
+lastmod: '2024-02-25T18:49:36.538975-07:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns handlar om att avg\xF6ra n\xE4rvaron\
   \ av en katalog p\xE5 en specificerad s\xF6kv\xE4g innan man utf\xF6r operationer\

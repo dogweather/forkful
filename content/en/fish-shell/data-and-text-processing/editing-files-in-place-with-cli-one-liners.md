@@ -2,7 +2,7 @@
 date: 2024-01-27 16:14:16.677583-07:00
 description: "Editing files in-place with CLI one-liners is about making changes directly\
   \ to files from the command line, without opening them in a text editor.\u2026"
-lastmod: 2024-02-19 22:05:18.930921
+lastmod: '2024-02-25T18:49:56.905242-07:00'
 model: gpt-4-0125-preview
 summary: "Editing files in-place with CLI one-liners is about making changes directly\
   \ to files from the command line, without opening them in a text editor.\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:42.807366-07:00
 description: "\xC9crire des tests en Fish Shell implique de cr\xE9er des scripts qui\
   \ ex\xE9cutent automatiquement votre code pour valider son comportement par rapport\
   \ aux\u2026"
-lastmod: 2024-02-19 22:05:16.978413
+lastmod: '2024-02-25T18:49:54.955076-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Fish Shell implique de cr\xE9er des scripts qui ex\xE9\
   cutent automatiquement votre code pour valider son comportement par rapport aux\u2026"

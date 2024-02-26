@@ -2,7 +2,7 @@
 date: 2024-01-26 04:34:19.691946-07:00
 description: "Trabalhar com XML envolve manipular e acessar dados estruturados na\
   \ Linguagem de Marca\xE7\xE3o Extens\xEDvel (eXtensible Markup Language). Os programadores\u2026"
-lastmod: 2024-02-19 22:05:05.879379
+lastmod: '2024-02-25T18:49:44.439914-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML envolve manipular e acessar dados estruturados na Linguagem\
   \ de Marca\xE7\xE3o Extens\xEDvel (eXtensible Markup Language). Os programadores\u2026"

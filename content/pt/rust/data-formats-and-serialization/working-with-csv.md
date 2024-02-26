@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:24.536383-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sobre\
   \ a leitura e escrita de arquivos de texto simples que armazenam dados tabulares.\u2026"
-lastmod: 2024-02-19 22:05:05.425600
+lastmod: '2024-02-25T18:49:44.010922-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sobre\
   \ a leitura e escrita de arquivos de texto simples que armazenam dados tabulares.\u2026"

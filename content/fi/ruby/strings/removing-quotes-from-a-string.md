@@ -2,7 +2,7 @@
 date: 2024-01-26 03:41:34.515772-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa tekstiarvojen ymp\xE4\
   rille kiedottujen kaksois- tai yksinkertaisten lainausmerkkien kuorimista pois.\u2026"
-lastmod: 2024-02-19 22:05:15.981207
+lastmod: '2024-02-25T18:49:53.977427-07:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa tekstiarvojen ymp\xE4\
   rille kiedottujen kaksois- tai yksinkertaisten lainausmerkkien kuorimista pois.\u2026"

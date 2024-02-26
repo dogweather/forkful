@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:25.131500-07:00
 description: "Konkatenacja \u0142a\u0144cuch\xF3w polega na \u0142\u0105czeniu dw\xF3\
   ch lub wi\u0119cej \u0142a\u0144cuch\xF3w w jeden \u0142a\u0144cuch. Programi\u015B\
   ci robi\u0105 to, aby dynamicznie konstruowa\u0107 wiadomo\u015Bci, adresy\u2026"
-lastmod: 2024-02-19 22:04:54.076599
+lastmod: '2024-02-25T18:49:33.316542-07:00'
 model: gpt-4-0125-preview
 summary: "Konkatenacja \u0142a\u0144cuch\xF3w polega na \u0142\u0105czeniu dw\xF3\
   ch lub wi\u0119cej \u0142a\u0144cuch\xF3w w jeden \u0142a\u0144cuch. Programi\u015B\

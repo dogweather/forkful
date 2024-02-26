@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:53.694868-07:00
 description: "JSON (Notaci\xF3n de Objetos de JavaScript) es un formato ligero de\
   \ intercambio de datos, prevalente en aplicaciones web para el intercambio de datos\
   \ entre\u2026"
-lastmod: 2024-02-19 22:05:18.120261
+lastmod: '2024-02-25T18:49:56.079732-07:00'
 model: gpt-4-0125-preview
 summary: "JSON (Notaci\xF3n de Objetos de JavaScript) es un formato ligero de intercambio\
   \ de datos, prevalente en aplicaciones web para el intercambio de datos entre\u2026"

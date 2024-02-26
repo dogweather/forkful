@@ -2,7 +2,7 @@
 date: 2024-01-20 17:38:02.441241-07:00
 description: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Gro\xDF\
   buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren.\u2026"
-lastmod: 2024-02-19 22:05:13.106519
+lastmod: '2024-02-25T18:49:51.223335-07:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Gro\xDF\
   buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:18.959791-07:00
 description: "Parsing HTML in Google Apps Script involves extracting data from HTML\
   \ content, which is particularly useful when interacting with web pages or web-based\u2026"
-lastmod: 2024-02-19 22:05:18.174964
+lastmod: '2024-02-25T18:49:56.133365-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Google Apps Script involves extracting data from HTML content,\
   \ which is particularly useful when interacting with web pages or web-based\u2026"

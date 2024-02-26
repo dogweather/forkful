@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:33.723292-07:00
 description: "Starta ett nytt projekt inneb\xE4r, rent tekniskt, att du skapar en\
   \ struktur f\xF6r att bygga din applikation fr\xE5n grunden. Programutvecklare g\xF6\
   r detta f\xF6r att\u2026"
-lastmod: 2024-02-19 22:04:57.041322
+lastmod: '2024-02-25T18:49:36.124420-07:00'
 model: gpt-4-1106-preview
 summary: "Starta ett nytt projekt inneb\xE4r, rent tekniskt, att du skapar en struktur\
   \ f\xF6r att bygga din applikation fr\xE5n grunden. Programutvecklare g\xF6r detta\

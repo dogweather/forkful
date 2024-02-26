@@ -2,7 +2,7 @@
 date: 2024-01-26 00:57:51.279238-07:00
 description: "Tratamento de erros \xE9 sobre lidar com as coisas quando elas n\xE3\
   o seguem conforme o planejado. Programadores fazem isso para lidar com o inesperado,\u2026"
-lastmod: 2024-02-19 22:05:05.409584
+lastmod: '2024-02-25T18:49:43.996170-07:00'
 model: gpt-4-1106-preview
 summary: "Tratamento de erros \xE9 sobre lidar com as coisas quando elas n\xE3o seguem\
   \ conforme o planejado. Programadores fazem isso para lidar com o inesperado,\u2026"

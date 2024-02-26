@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:55.869688-07:00
 description: "(Ekstrakcja podci\u0105g\xF3w - o co chodzi i dlaczego to robimy?) Szukasz\
   \ fragmentu tekstu w szerszym ci\u0105gu znak\xF3w? To ekstrakcja podci\u0105g\xF3\
   w. Programi\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.891454
+lastmod: '2024-02-25T18:49:34.116290-07:00'
 model: gpt-4-1106-preview
 summary: "(Ekstrakcja podci\u0105g\xF3w - o co chodzi i dlaczego to robimy?) Szukasz\
   \ fragmentu tekstu w szerszym ci\u0105gu znak\xF3w? To ekstrakcja podci\u0105g\xF3\

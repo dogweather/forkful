@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:08.488922-07:00
 description: "No mundo da programa\xE7\xE3o, especialmente ao lidar com ambientes\
   \ Linux ou Unix, manipular arquivos diretamente da interface de linha de comando\
   \ (CLI) n\xE3o \xE9\u2026"
-lastmod: 2024-02-19 22:05:06.067788
+lastmod: '2024-02-25T18:49:44.617595-07:00'
 model: gpt-4-0125-preview
 summary: "No mundo da programa\xE7\xE3o, especialmente ao lidar com ambientes Linux\
   \ ou Unix, manipular arquivos diretamente da interface de linha de comando (CLI)\

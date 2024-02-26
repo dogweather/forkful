@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:50:09.482019-07:00
 description: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
   \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"
-lastmod: 2024-02-19 22:05:09.409358
+lastmod: '2024-02-25T18:49:47.719040-07:00'
 model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
   \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"

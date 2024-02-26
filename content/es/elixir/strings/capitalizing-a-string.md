@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:49.177501-07:00
 description: "Capitalizar una cadena implica convertir la primera letra de la cadena\
   \ en may\xFAscula mientras aseguramos que el resto de las letras est\xE9n en min\xFA\
   sculas.\u2026"
-lastmod: 2024-02-19 22:05:17.273185
+lastmod: '2024-02-25T18:49:55.243236-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica convertir la primera letra de la cadena en\
   \ may\xFAscula mientras aseguramos que el resto de las letras est\xE9n en min\xFA\

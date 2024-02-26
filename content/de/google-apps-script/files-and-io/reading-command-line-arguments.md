@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:52.454894-07:00
 description: "Das Lesen von Befehlszeilenargumenten in Google Apps Script ist etwas\
   \ irref\xFChrend, denn im Gegensatz zu traditionellen Befehlszeilenschnittstellen\
   \ in\u2026"
-lastmod: 2024-02-19 22:05:12.397818
+lastmod: '2024-02-25T18:49:50.551235-07:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen von Befehlszeilenargumenten in Google Apps Script ist etwas irref\xFC\
   hrend, denn im Gegensatz zu traditionellen Befehlszeilenschnittstellen in\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:52.173820-07:00
 description: "HTTP-beg\xE4ran \xE4r hur din kod fr\xE5gar efter data or skickar information\
   \ till en server. Programmerare g\xF6r detta f\xF6r att interagera med webbtj\xE4\
   nster, h\xE4mta\u2026"
-lastmod: 2024-02-19 22:04:57.532698
+lastmod: '2024-02-25T18:49:36.605199-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP-beg\xE4ran \xE4r hur din kod fr\xE5gar efter data or skickar information\
   \ till en server. Programmerare g\xF6r detta f\xF6r att interagera med webbtj\xE4\

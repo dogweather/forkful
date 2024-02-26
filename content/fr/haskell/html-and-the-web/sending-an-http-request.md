@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:40.763419-07:00
 description: "En un clin d'oeil: une requ\xEAte HTTP envoie de l'info vers ou en re\xE7\
   oit depuis un serveur web. Les programmeurs l'utilisent pour interagir avec des\
   \ API,\u2026"
-lastmod: 2024-02-19 22:05:16.568059
+lastmod: '2024-02-25T18:49:54.553631-07:00'
 model: gpt-4-1106-preview
 summary: "En un clin d'oeil: une requ\xEAte HTTP envoie de l'info vers ou en re\xE7\
   oit depuis un serveur web. Les programmeurs l'utilisent pour interagir avec des\

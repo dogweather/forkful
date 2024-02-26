@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:17.974462-07:00
 description: "Een tekstbestand lezen in C houdt in dat je een bestand op je systeem\
   \ opent om informatie te extraheren en deze naar behoefte te manipuleren of weer\
   \ te\u2026"
-lastmod: 2024-02-19 22:05:10.398447
+lastmod: '2024-02-25T18:49:48.633564-07:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in C houdt in dat je een bestand op je systeem opent\
   \ om informatie te extraheren en deze naar behoefte te manipuleren of weer te\u2026"

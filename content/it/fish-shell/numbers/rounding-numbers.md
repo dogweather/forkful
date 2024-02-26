@@ -2,7 +2,7 @@
 date: 2024-01-26 03:44:11.397648-07:00
 description: "Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare\
   \ i dati o adattarli a formati specifici. I programmatori lo fanno per\u2026"
-lastmod: 2024-02-19 22:05:02.924017
+lastmod: '2024-02-25T18:49:41.695255-07:00'
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare\
   \ i dati o adattarli a formati specifici. I programmatori lo fanno per\u2026"

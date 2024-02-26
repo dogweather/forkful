@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:14.618570-07:00
 description: "Att arbeta med JSON i Swift inneb\xE4r att hantera ett l\xE4ttviktigt\
   \ dataformat f\xF6r datautbyte. Programmerare anv\xE4nder JSON f\xF6r att \xF6verf\xF6\
   ra data mellan en\u2026"
-lastmod: 2024-02-19 22:04:57.514261
+lastmod: '2024-02-25T18:49:36.588093-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Swift inneb\xE4r att hantera ett l\xE4ttviktigt dataformat\
   \ f\xF6r datautbyte. Programmerare anv\xE4nder JSON f\xF6r att \xF6verf\xF6ra data\

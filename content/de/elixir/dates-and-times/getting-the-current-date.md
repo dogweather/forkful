@@ -6,7 +6,7 @@ date: 2024-02-03 19:09:23.043432-07:00
 description: "Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die\
   \ Datums- und Zeitinformationen des Systems, eine allgemeine Aufgabe f\xFCr das\
   \ Logging,\u2026"
-lastmod: 2024-02-19 22:05:12.522215
+lastmod: '2024-02-25T18:49:50.669157-07:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die Datums-\
   \ und Zeitinformationen des Systems, eine allgemeine Aufgabe f\xFCr das Logging,\u2026"

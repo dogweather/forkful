@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:06.333749-07:00
 description: "Scrivere un file di testo in Arduino implica salvare dati su un file\
   \ presente su una scheda SD o un modulo di memorizzazione simile, spesso a scopo\
   \ di\u2026"
-lastmod: 2024-02-19 22:05:02.778176
+lastmod: '2024-02-25T18:49:41.559741-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Arduino implica salvare dati su un file presente\
   \ su una scheda SD o un modulo di memorizzazione simile, spesso a scopo di\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 03:49:52.159715-07:00
 description: "Korzystanie z debugera oznacza zag\u0142\u0119bianie si\u0119 w Tw\xF3\
   j kod przy u\u017Cyciu narz\u0119dzi zaprojektowanych do inspekcji, wstrzymywania\
   \ i manipulowania programem w\u2026"
-lastmod: 2024-02-19 22:04:54.591126
+lastmod: '2024-02-25T18:49:33.821270-07:00'
 model: gpt-4-0125-preview
 summary: "Korzystanie z debugera oznacza zag\u0142\u0119bianie si\u0119 w Tw\xF3j\
   \ kod przy u\u017Cyciu narz\u0119dzi zaprojektowanych do inspekcji, wstrzymywania\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:47.976522-07:00
 description: "W rozwoju oprogramowania cz\u0119sto potrzebne jest sprawdzenie, czy\
   \ katalog istnieje, aby unika\u0107 b\u0142\u0119d\xF3w podczas pr\xF3b dost\u0119\
   pu, odczytu lub zapisu plik\xF3w. Rust,\u2026"
-lastmod: 2024-02-19 22:04:54.326214
+lastmod: '2024-02-25T18:49:33.566485-07:00'
 model: gpt-4-0125-preview
 summary: "W rozwoju oprogramowania cz\u0119sto potrzebne jest sprawdzenie, czy katalog\
   \ istnieje, aby unika\u0107 b\u0142\u0119d\xF3w podczas pr\xF3b dost\u0119pu, odczytu\

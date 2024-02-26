@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:38.300946-07:00
 description: "Parsing HTML in Haskell allows you to extract data, manipulate HTML\
   \ content, or interact with web pages programmatically. This operation is essential\
   \ for\u2026"
-lastmod: 2024-02-19 22:05:18.590061
+lastmod: '2024-02-25T18:49:56.568963-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Haskell allows you to extract data, manipulate HTML content,\
   \ or interact with web pages programmatically. This operation is essential for\u2026"

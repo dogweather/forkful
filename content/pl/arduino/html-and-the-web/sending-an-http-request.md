@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:54.378016-07:00
 description: "HTTP request, czyli \u017C\u0105danie HTTP, to pro\u015Bba o dane z\
   \ sieci. Programi\u015Bci wykorzystuj\u0105 je do zdobycia danych ze stron internetowych\
   \ lub serwer\xF3w, co jest\u2026"
-lastmod: 2024-02-19 22:04:54.812871
+lastmod: '2024-02-25T18:49:34.040682-07:00'
 model: gpt-4-1106-preview
 summary: "HTTP request, czyli \u017C\u0105danie HTTP, to pro\u015Bba o dane z sieci.\
   \ Programi\u015Bci wykorzystuj\u0105 je do zdobycia danych ze stron internetowych\

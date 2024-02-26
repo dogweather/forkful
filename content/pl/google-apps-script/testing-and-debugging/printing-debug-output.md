@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:08.294092-07:00
 description: "Drukowanie wyj\u015Bcia debugowania polega na strategicznym umieszczaniu\
   \ w kodzie instrukcji logowania w celu wy\u015Bwietlenia warto\u015Bci zmiennych,\
   \ przep\u0142ywu\u2026"
-lastmod: 2024-02-19 22:04:54.089095
+lastmod: '2024-02-25T18:49:33.329710-07:00'
 model: gpt-4-0125-preview
 summary: "Drukowanie wyj\u015Bcia debugowania polega na strategicznym umieszczaniu\
   \ w kodzie instrukcji logowania w celu wy\u015Bwietlenia warto\u015Bci zmiennych,\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:24.862763-07:00
 description: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen av\
   \ str\xE4ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: 2024-02-19 22:04:57.618070
+lastmod: '2024-02-25T18:49:36.682297-07:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen av str\xE4\
   ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar. Programmerare g\xF6\

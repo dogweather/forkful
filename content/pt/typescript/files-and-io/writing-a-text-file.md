@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:31.282845-07:00
 description: "Escrever um arquivo de texto em TypeScript \xE9 uma habilidade crucial\
   \ para a persist\xEAncia de dados, configura\xE7\xF5es ou gera\xE7\xE3o de logs.\
   \ Programadores\u2026"
-lastmod: 2024-02-19 22:05:05.376625
+lastmod: '2024-02-25T18:49:43.965863-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em TypeScript \xE9 uma habilidade crucial para\
   \ a persist\xEAncia de dados, configura\xE7\xF5es ou gera\xE7\xE3o de logs. Programadores\u2026"

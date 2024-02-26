@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:17:33.872899-07:00
 description: "Regul\xE6re uttrykk i programmering tillater samsvarss\xF8king og manipulasjon\
   \ av strenger basert p\xE5 spesifikke m\xF8nstre. Programmerere bruker dem til oppgaver\u2026"
-lastmod: 2024-02-19 22:05:00.183851
+lastmod: '2024-02-25T18:49:39.092281-07:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk i programmering tillater samsvarss\xF8king og manipulasjon\
   \ av strenger basert p\xE5 spesifikke m\xF8nstre. Programmerere bruker dem til oppgaver\u2026"

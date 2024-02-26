@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:54.270225-07:00
 description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet,\
   \ zu einem gegebenen Datum eine bestimmte Zeitdauer hinzuzuf\xFCgen oder abzuziehen.\u2026"
-lastmod: 2024-02-19 22:05:12.610407
+lastmod: '2024-02-25T18:49:50.753653-07:00'
 model: gpt-4-1106-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet, zu\
   \ einem gegebenen Datum eine bestimmte Zeitdauer hinzuzuf\xFCgen oder abzuziehen.\u2026"

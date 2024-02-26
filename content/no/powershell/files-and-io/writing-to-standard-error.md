@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:21.346738-07:00
 description: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5\
   \ sende feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig\
   \ fra\u2026"
-lastmod: 2024-02-19 22:05:00.303031
+lastmod: '2024-02-25T18:49:39.211727-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5 sende\
   \ feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig fra\u2026"

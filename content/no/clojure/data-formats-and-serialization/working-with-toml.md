@@ -3,7 +3,7 @@ date: 2024-01-26 04:20:37.681644-07:00
 description: "\xC5 jobbe med TOML betyr at du h\xE5ndterer data i et minimalt format\
   \ kalt \"Tom's Obvious, Minimal Language\", som er popul\xE6rt for konfigurasjonsfiler\
   \ p\xE5 grunn\u2026"
-lastmod: 2024-02-19 22:04:59.711441
+lastmod: '2024-02-25T18:49:38.652710-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med TOML betyr at du h\xE5ndterer data i et minimalt format kalt\
   \ \"Tom's Obvious, Minimal Language\", som er popul\xE6rt for konfigurasjonsfiler\

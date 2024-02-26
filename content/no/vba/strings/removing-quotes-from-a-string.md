@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:00.046372-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strippe\
   \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\
   \ eller v\xE6re\u2026"
-lastmod: 2024-02-19 22:04:59.850708
+lastmod: '2024-02-25T18:49:38.788056-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strippe\
   \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\

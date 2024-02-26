@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:34:15.756437-07:00
 description: (
-lastmod: 2024-02-19 22:04:54.533027
+lastmod: '2024-02-25T18:49:33.764880-07:00'
 model: gpt-4-1106-preview
 summary: (
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"

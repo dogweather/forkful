@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:37.263898-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu\
   \ tekstu na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, kt\xF3re wchodz\u0105\
   \ w interakcje z\u2026"
-lastmod: 2024-02-19 22:04:54.505846
+lastmod: '2024-02-25T18:49:33.738523-07:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu tekstu\
   \ na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, kt\xF3re wchodz\u0105\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:42.391730-07:00
 description: "Combining strings, or concatenation, is like making a train of words.\
   \ We do it to stitch together text values, creating phrases, sentences, or anything\u2026"
-lastmod: 2024-02-19 22:05:18.737647
+lastmod: '2024-02-25T18:49:56.713427-07:00'
 model: gpt-4-1106-preview
 summary: "Combining strings, or concatenation, is like making a train of words. We\
   \ do it to stitch together text values, creating phrases, sentences, or anything\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:02.655305-07:00
 description: "Concatenar strings \xE9 o ato de juntar duas ou mais sequ\xEAncias de\
   \ caracteres para formar uma nova string. Programadores fazem isso para construir\
   \ mensagens,\u2026"
-lastmod: 2024-02-19 22:05:05.393303
+lastmod: '2024-02-25T18:49:43.981045-07:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 o ato de juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma nova string. Programadores fazem isso para construir mensagens,\u2026"

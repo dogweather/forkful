@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:18.647136-07:00
 description: "Envoyer une requ\xEAte HTTP permet \xE0 votre application de communiquer\
   \ avec le monde ext\xE9rieur : r\xE9cup\xE9rer des donn\xE9es, interagir avec des\
   \ API, etc. Les\u2026"
-lastmod: 2024-02-19 22:05:16.220549
+lastmod: '2024-02-25T18:49:54.207874-07:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application de communiquer\
   \ avec le monde ext\xE9rieur : r\xE9cup\xE9rer des donn\xE9es, interagir avec des\

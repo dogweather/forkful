@@ -2,7 +2,7 @@
 date: 2024-01-26 04:45:19.054577-07:00
 description: "I numeri complessi hanno una parte reale e una immaginaria e sono fondamentali\
   \ in vari campi come ingegneria, fisica e grafica computerizzata. Gli\u2026"
-lastmod: 2024-02-19 22:05:02.272859
+lastmod: '2024-02-25T18:49:41.087835-07:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi hanno una parte reale e una immaginaria e sono fondamentali\
   \ in vari campi come ingegneria, fisica e grafica computerizzata. Gli\u2026"

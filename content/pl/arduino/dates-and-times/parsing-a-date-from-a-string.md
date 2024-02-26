@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:25.882861-07:00
 description: "Parsowanie daty ze stringa w Arduino polega na wydobywaniu i konwertowaniu\
   \ komponent\xF3w daty (rok, miesi\u0105c, dzie\u0144) z reprezentacji tekstowej\
   \ na format,\u2026"
-lastmod: 2024-02-19 22:04:54.825056
+lastmod: '2024-02-25T18:49:34.052544-07:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa w Arduino polega na wydobywaniu i konwertowaniu\
   \ komponent\xF3w daty (rok, miesi\u0105c, dzie\u0144) z reprezentacji tekstowej\

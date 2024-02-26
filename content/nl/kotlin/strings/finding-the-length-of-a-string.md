@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:00:11.512055-07:00
 description: "Het vinden van de lengte van een string betekent het tellen van de tekens.\
   \ Programmeurs doen dit om invoer te valideren, door tekens te loopen of opslag\u2026"
-lastmod: 2024-02-19 22:05:09.812297
+lastmod: '2024-02-25T18:49:48.098076-07:00'
 model: gpt-4-0125-preview
 summary: "Het vinden van de lengte van een string betekent het tellen van de tekens.\
   \ Programmeurs doen dit om invoer te valideren, door tekens te loopen of opslag\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 01:01:01.388589-07:00
 description: "Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista\
   \ suoritusaikana. Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston\u2026"
-lastmod: 2024-02-19 22:05:15.472962
+lastmod: '2024-02-25T18:49:53.494264-07:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista suoritusaikana.\
   \ Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:56:13.064109-07:00
 description: "Organiser le code en fonctions consiste \xE0 structurer votre code Google\
   \ Apps Script en s\xE9parant les segments logiques en blocs distincts, chacun effectuant\u2026"
-lastmod: 2024-02-19 22:05:16.098512
+lastmod: '2024-02-25T18:49:54.087901-07:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions consiste \xE0 structurer votre code Google\
   \ Apps Script en s\xE9parant les segments logiques en blocs distincts, chacun effectuant\u2026"

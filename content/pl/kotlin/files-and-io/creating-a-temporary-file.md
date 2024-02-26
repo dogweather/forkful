@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:56.523554-07:00
 description: "Tworzenie pliku tymczasowego daje ci miejsce do przechowywania danych,\
   \ kt\xF3re s\u0105 potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci u\u017C\
   ywaj\u0105 ich do r\xF3\u017Cnych\u2026"
-lastmod: 2024-02-19 22:04:54.516857
+lastmod: '2024-02-25T18:49:33.748720-07:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie pliku tymczasowego daje ci miejsce do przechowywania danych, kt\xF3\
   re s\u0105 potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci u\u017Cywaj\u0105\

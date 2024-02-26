@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:48.940000-07:00
 description: "Les expressions r\xE9guli\xE8res en programmation sont des s\xE9quences\
   \ de caract\xE8res qui d\xE9finissent un motif de recherche, g\xE9n\xE9ralement\
   \ employ\xE9 pour la recherche\u2026"
-lastmod: 2024-02-19 22:05:16.561194
+lastmod: '2024-02-25T18:49:54.546868-07:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res en programmation sont des s\xE9quences\
   \ de caract\xE8res qui d\xE9finissent un motif de recherche, g\xE9n\xE9ralement\

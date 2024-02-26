@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:16:29.763947-07:00
 description: "Le espressioni regolari (regex) in C# sono uno strumento potente per\
   \ il riconoscimento di pattern all'interno delle stringhe, che permette ai\u2026"
-lastmod: 2024-02-19 22:05:02.487395
+lastmod: '2024-02-25T18:49:41.290076-07:00'
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in C# sono uno strumento potente per il\
   \ riconoscimento di pattern all'interno delle stringhe, che permette ai\u2026"

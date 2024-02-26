@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:13.735712-07:00
 description: "C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa sy\xF6\
   tteiden vastaanottamisen suoraan terminaalista, mik\xE4 lis\xE4\xE4 ohjelmien joustavuutta\
   \ ja\u2026"
-lastmod: 2024-02-19 22:05:15.950956
+lastmod: '2024-02-25T18:49:53.962269-07:00'
 model: gpt-4-0125-preview
 summary: "C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa sy\xF6tteiden\
   \ vastaanottamisen suoraan terminaalista, mik\xE4 lis\xE4\xE4 ohjelmien joustavuutta\

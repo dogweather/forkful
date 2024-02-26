@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:03.879370-07:00
 description: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu\
   \ dost\u0119pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu\
   \ jej lokalnie\u2026"
-lastmod: 2024-02-19 22:04:55.062855
+lastmod: '2024-02-25T18:49:34.258441-07:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu dost\u0119\
   pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu jej lokalnie\u2026"

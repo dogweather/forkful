@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:02.773083-07:00
 description: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
   es que l'utilisateur fournit lorsqu'il lance votre programme. Les programmeurs utilisent\u2026"
-lastmod: 2024-02-19 22:05:16.325765
+lastmod: '2024-02-25T18:49:54.311160-07:00'
 model: gpt-4-1106-preview
 summary: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
   es que l'utilisateur fournit lorsqu'il lance votre programme. Les programmeurs utilisent\u2026"

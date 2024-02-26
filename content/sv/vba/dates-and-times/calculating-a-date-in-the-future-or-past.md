@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:21.719927-07:00
 description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att\
   \ best\xE4mma ett datum som \xE4r ett angivet antal dagar, m\xE5nader eller \xE5\
   r bort fr\xE5n ett givet\u2026"
-lastmod: 2024-02-19 22:04:56.964607
+lastmod: '2024-02-25T18:49:36.052731-07:00'
 model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att best\xE4\
   mma ett datum som \xE4r ett angivet antal dagar, m\xE5nader eller \xE5r bort fr\xE5\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:01.711170-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) en Google Apps\
   \ Script implica leer, modificar y escribir archivos de texto plano donde cada l\xED\
   nea\u2026"
-lastmod: 2024-02-19 22:05:17.186303
+lastmod: '2024-02-25T18:49:55.158156-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) en Google Apps Script\
   \ implica leer, modificar y escribir archivos de texto plano donde cada l\xEDnea\u2026"

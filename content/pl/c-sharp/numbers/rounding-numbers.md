@@ -3,7 +3,7 @@ date: 2024-01-26 03:43:26.326395-07:00
 description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej\
   \ okre\u015Blonej warto\u015Bci miejsca \u2013 pomy\u015Bl o sprowadzeniu ich do\
   \ prostszej formy. Programi\u015Bci\u2026"
-lastmod: 2024-02-19 22:04:54.536189
+lastmod: '2024-02-25T18:49:33.767854-07:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej okre\u015B\
   lonej warto\u015Bci miejsca \u2013 pomy\u015Bl o sprowadzeniu ich do prostszej formy.\

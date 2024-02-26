@@ -5,7 +5,7 @@ date: 2024-01-28 22:13:26.716334-07:00
 description: "Het schrijven van tests in programmeren betekent het maken van scripts\
   \ die controleren of je code correct werkt. Programmeurs doen dit om bugs vroeg\
   \ op te\u2026"
-lastmod: 2024-02-19 22:05:10.117129
+lastmod: '2024-02-25T18:49:48.368314-07:00'
 model: gpt-4-0125-preview
 summary: "Het schrijven van tests in programmeren betekent het maken van scripts die\
   \ controleren of je code correct werkt. Programmeurs doen dit om bugs vroeg op te\u2026"

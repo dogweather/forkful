@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:47.775010-07:00
 description: "En HTTP-foresp\xF8rsel lar oss snakke med en webserver. Vi gj\xF8r dette\
   \ for \xE5 hente data, sende informasjon, eller starte handlinger p\xE5 nett."
-lastmod: 2024-02-19 22:04:59.815126
+lastmod: '2024-02-25T18:49:38.750912-07:00'
 model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel lar oss snakke med en webserver. Vi gj\xF8r dette\
   \ for \xE5 hente data, sende informasjon, eller starte handlinger p\xE5 nett."

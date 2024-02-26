@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:15.759631-07:00
 description: "Analisar uma data a partir de uma string em Haskell envolve converter\
   \ representa\xE7\xF5es textuais de datas em um formato estruturado que o programa\
   \ pode\u2026"
-lastmod: 2024-02-19 22:05:05.681110
+lastmod: '2024-02-25T18:49:44.255848-07:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Haskell envolve converter representa\xE7\
   \xF5es textuais de datas em um formato estruturado que o programa pode\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:16.869072-07:00
 description: "La recherche et le remplacement de texte en programmation facilitent\
   \ la modification et la gestion des cha\xEEnes de caract\xE8res, qui constituent\
   \ une t\xE2che\u2026"
-lastmod: 2024-02-19 22:05:16.023980
+lastmod: '2024-02-25T18:49:54.017790-07:00'
 model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte en programmation facilitent la\
   \ modification et la gestion des cha\xEEnes de caract\xE8res, qui constituent une\

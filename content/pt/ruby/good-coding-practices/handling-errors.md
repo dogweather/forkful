@@ -3,7 +3,7 @@ date: 2024-01-26 00:57:05.478681-07:00
 description: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo \u2014\
   \ gerenciar erros e problemas de forma graciosa sem falhar. Os programadores fazem\
   \ isso para\u2026"
-lastmod: 2024-02-19 22:05:06.175560
+lastmod: '2024-02-25T18:49:44.719387-07:00'
 model: gpt-4-1106-preview
 summary: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo \u2014\
   \ gerenciar erros e problemas de forma graciosa sem falhar. Os programadores fazem\

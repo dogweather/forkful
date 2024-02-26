@@ -3,7 +3,7 @@ date: 2024-01-26 03:39:07.668911-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kiusallisten kaksin-\
   \ tai yksinkertaisten lainausmerkkien h\xE4vitt\xE4mist\xE4 tekstin ymp\xE4rilt\xE4\
   . Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.114285
+lastmod: '2024-02-25T18:49:53.147658-07:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kiusallisten kaksin-\
   \ tai yksinkertaisten lainausmerkkien h\xE4vitt\xE4mist\xE4 tekstin ymp\xE4rilt\xE4\

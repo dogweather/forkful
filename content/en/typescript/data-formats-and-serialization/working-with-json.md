@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:18.338680-07:00
 description: "Working with JSON (JavaScript Object Notation) involves parsing JSON\
   \ data to and from a usable format in TypeScript. Programmers do this to manipulate,\u2026"
-lastmod: 2024-02-19 22:05:18.347170
+lastmod: '2024-02-25T18:49:56.300953-07:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) involves parsing JSON data\
   \ to and from a usable format in TypeScript. Programmers do this to manipulate,\u2026"

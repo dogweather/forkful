@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:45.226842-07:00
 description: "Parsing av HTML involverer analyse av en nettsides HTML-kode for \xE5\
   \ trekke ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping,\u2026"
-lastmod: 2024-02-19 22:04:59.639885
+lastmod: '2024-02-25T18:49:38.586854-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML involverer analyse av en nettsides HTML-kode for \xE5 trekke\
   \ ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping,\u2026"

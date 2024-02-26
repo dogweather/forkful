@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:52.749316-07:00
 description: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
   cego kodu bez zmiany jego zewn\u0119trznego zachowania, maj\u0105c na celu popraw\u0119\
   \ atrybut\xF3w\u2026"
-lastmod: 2024-02-19 22:04:55.074362
+lastmod: '2024-02-25T18:49:34.269221-07:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
   cego kodu bez zmiany jego zewn\u0119trznego zachowania, maj\u0105c na celu popraw\u0119\

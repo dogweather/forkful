@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:39.098598-07:00
 description: "Mittauksella tarkoitetaan merkkijonon pituuden selvitt\xE4mist\xE4.\
   \ Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintoa, jotta voivat k\xE4sitell\xE4 tekstidataa\
   \ tehokkaasti ja\u2026"
-lastmod: 2024-02-19 22:05:15.583306
+lastmod: '2024-02-25T18:49:53.600382-07:00'
 model: gpt-4-1106-preview
 summary: "Mittauksella tarkoitetaan merkkijonon pituuden selvitt\xE4mist\xE4. Ohjelmoijat\
   \ tarvitsevat t\xE4t\xE4 toimintoa, jotta voivat k\xE4sitell\xE4 tekstidataa tehokkaasti\

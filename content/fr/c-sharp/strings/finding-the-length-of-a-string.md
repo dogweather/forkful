@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:56.809897-07:00
 description: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
   \ On mesure \xE7a pour tout, des mots de passe aux tweets : c'est essentiel pour\
   \ valider,\u2026"
-lastmod: 2024-02-19 22:05:16.519181
+lastmod: '2024-02-25T18:49:54.505991-07:00'
 model: gpt-4-1106-preview
 summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
   \ On mesure \xE7a pour tout, des mots de passe aux tweets : c'est essentiel pour\

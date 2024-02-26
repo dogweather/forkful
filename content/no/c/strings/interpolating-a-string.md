@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:19.057644-07:00
 description: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av\
   \ strenger ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8\
   rer gj\xF8r dette\u2026"
-lastmod: 2024-02-19 22:05:00.536459
+lastmod: '2024-02-25T18:49:39.433739-07:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av strenger\
   \ ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8rer gj\xF8\

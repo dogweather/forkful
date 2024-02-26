@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:10.379686-07:00
 description: "Foutafhandeling is het verwachten van het onverwachte; het is hoe we\
   \ omgaan met problemen in onze code. We doen het om crashes te voorkomen en om\u2026"
-lastmod: 2024-02-19 22:05:09.606018
+lastmod: '2024-02-25T18:49:47.904406-07:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling is het verwachten van het onverwachte; het is hoe we omgaan\
   \ met problemen in onze code. We doen het om crashes te voorkomen en om\u2026"

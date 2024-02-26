@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:52.848987-07:00
 description: "**Co i Dlaczego?** Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3\
   w to po prostu sprawdzenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to,\
   \ by walidowa\u0107 dane wej\u015Bciowe,\u2026"
-lastmod: 2024-02-19 22:04:54.396465
+lastmod: '2024-02-25T18:49:33.632980-07:00'
 model: gpt-4-1106-preview
 summary: "**Co i Dlaczego?** Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to\
   \ po prostu sprawdzenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to,\

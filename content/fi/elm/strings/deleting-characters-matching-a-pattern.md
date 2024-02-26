@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:51.858781-07:00
 description: "Poistamme merkkijonoista merkkej\xE4, jotka vastaavat tietty\xE4 mallia,\
   \ siivotaan data tai muokataan teksti\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4, kun\
   \ halutaan puhdistaa\u2026"
-lastmod: 2024-02-19 22:05:15.367040
+lastmod: '2024-02-25T18:49:53.392637-07:00'
 model: gpt-4-1106-preview
 summary: "Poistamme merkkijonoista merkkej\xE4, jotka vastaavat tietty\xE4 mallia,\
   \ siivotaan data tai muokataan teksti\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4, kun\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:42.248523-07:00
 description: "Leer argumentos de la l\xEDnea de comandos te permite personalizar el\
   \ comportamiento de tu programa en tiempo real, pasando datos al ejecutarlo. Los\u2026"
-lastmod: 2024-02-19 22:05:17.221503
+lastmod: '2024-02-25T18:49:55.192584-07:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos te permite personalizar el comportamiento\
   \ de tu programa en tiempo real, pasando datos al ejecutarlo. Los\u2026"

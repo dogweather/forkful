@@ -3,7 +3,7 @@ date: 2024-01-26 03:36:54.379469-07:00
 description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
   \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
   o funcionais\u2026"
-lastmod: 2024-02-19 22:05:05.862331
+lastmod: '2024-02-25T18:49:44.423918-07:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
   \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\

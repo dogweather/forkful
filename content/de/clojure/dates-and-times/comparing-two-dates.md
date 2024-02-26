@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:28.099360-07:00
 description: "Das Vergleichen zweier Daten bedeutet, die zeitliche Reihenfolge zu\
   \ bestimmen oder zu pr\xFCfen, ob sie gleich sind. Programmierer machen das, um\
   \ Termine zu\u2026"
-lastmod: 2024-02-19 22:05:12.481738
+lastmod: '2024-02-25T18:49:50.630358-07:00'
 model: gpt-4-1106-preview
 summary: "Das Vergleichen zweier Daten bedeutet, die zeitliche Reihenfolge zu bestimmen\
   \ oder zu pr\xFCfen, ob sie gleich sind. Programmierer machen das, um Termine zu\u2026"

@@ -5,7 +5,7 @@ changelog:
 date: 2024-02-03 19:09:22.201377-07:00
 description: "Ottenere la data corrente in Elixir implica l'accesso alle informazioni\
   \ di data e ora del sistema, un compito comune per log, marcature di dati o\u2026"
-lastmod: 2024-02-19 22:05:02.204602
+lastmod: '2024-02-25T18:49:41.022036-07:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Elixir implica l'accesso alle informazioni\
   \ di data e ora del sistema, un compito comune per log, marcature di dati o\u2026"

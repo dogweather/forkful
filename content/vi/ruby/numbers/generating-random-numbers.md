@@ -6,7 +6,7 @@ description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Ruby bao g\u1E
   m vi\u1EC7c t\u1EA1o ra nh\u1EEFng s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1\
   n m\u1ED9t c\xE1ch logic, \u0111i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1\
   c k\u1ECBch b\u1EA3n nh\u01B0 m\xF4 ph\u1ECFng, m\xE3\u2026"
-lastmod: 2024-02-19 22:04:56.560760
+lastmod: '2024-02-25T18:49:35.667533-07:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Ruby bao g\u1ED3m vi\u1EC7\
   c t\u1EA1o ra nh\u1EEFng s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n m\u1ED9\

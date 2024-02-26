@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:41.947965-07:00
 description: "JSONin (JavaScript Object Notation) k\xE4sittely Haskellissa sis\xE4\
   lt\xE4\xE4 JSON-datan j\xE4sent\xE4misen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen\
   \ takaisin\u2026"
-lastmod: 2024-02-19 22:05:15.529702
+lastmod: '2024-02-25T18:49:53.548962-07:00'
 model: gpt-4-0125-preview
 summary: "JSONin (JavaScript Object Notation) k\xE4sittely Haskellissa sis\xE4lt\xE4\
   \xE4 JSON-datan j\xE4sent\xE4misen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen\

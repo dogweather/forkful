@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:30.089142-07:00
 description: "Escrever um arquivo de texto em C# envolve criar ou modificar programaticamente\
   \ arquivos de texto no sistema de arquivos - uma tarefa fundamental para\u2026"
-lastmod: 2024-02-19 22:05:05.645402
+lastmod: '2024-02-25T18:49:44.223368-07:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em C# envolve criar ou modificar programaticamente\
   \ arquivos de texto no sistema de arquivos - uma tarefa fundamental para\u2026"

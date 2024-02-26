@@ -3,7 +3,7 @@ date: 2024-01-26 03:40:25.443234-07:00
 description: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toute occurrence\
   \ de caract\xE8res de guillemets, qu'ils soient simples (' ') ou doubles (\" \"\
   ), des\u2026"
-lastmod: 2024-02-19 22:05:16.473186
+lastmod: '2024-02-25T18:49:54.461037-07:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toute occurrence\
   \ de caract\xE8res de guillemets, qu'ils soient simples (' ') ou doubles (\" \"\

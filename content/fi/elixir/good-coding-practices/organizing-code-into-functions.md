@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:53.033984-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa, ett\xE4 liittyv\xE4\
   t operaatiot ryhmitell\xE4\xE4n uudelleenk\xE4ytett\xE4viksi lohkoiksi. T\xE4m\xE4\
   \ tehd\xE4\xE4n luettavuuden ja\u2026"
-lastmod: 2024-02-19 22:05:15.173278
+lastmod: '2024-02-25T18:49:53.205670-07:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa, ett\xE4 liittyv\xE4t\
   \ operaatiot ryhmitell\xE4\xE4n uudelleenk\xE4ytett\xE4viksi lohkoiksi. T\xE4m\xE4\

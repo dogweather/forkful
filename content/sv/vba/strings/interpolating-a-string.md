@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:46.097648-07:00
 description: "Str\xE4nginterpolering i Visual Basic for Applications (VBA) avser processen\
   \ att b\xE4dda in variabler eller uttryck inom en str\xE4ngliteral, vilket m\xF6\
   jligg\xF6r\u2026"
-lastmod: 2024-02-19 22:04:56.932951
+lastmod: '2024-02-25T18:49:36.022476-07:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering i Visual Basic for Applications (VBA) avser processen\
   \ att b\xE4dda in variabler eller uttryck inom en str\xE4ngliteral, vilket m\xF6\

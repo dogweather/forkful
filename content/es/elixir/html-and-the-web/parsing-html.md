@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:54.556806-07:00
 description: "Parsear HTML en Elixir implica extraer informaci\xF3n de documentos\
   \ HTML. Los programadores hacen esto para interactuar program\xE1ticamente con p\xE1\
   ginas web,\u2026"
-lastmod: 2024-02-19 22:05:17.287325
+lastmod: '2024-02-25T18:49:55.257242-07:00'
 model: gpt-4-0125-preview
 summary: "Parsear HTML en Elixir implica extraer informaci\xF3n de documentos HTML.\
   \ Los programadores hacen esto para interactuar program\xE1ticamente con p\xE1ginas\

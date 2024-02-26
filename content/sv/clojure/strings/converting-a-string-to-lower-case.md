@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:04.950570-07:00
 description: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att\
   \ \xE4ndra varje bokstav till dess motsvarighet i gemener. Programmerare g\xF6r\
   \ detta f\xF6r att normalisera\u2026"
-lastmod: 2024-02-19 22:04:56.755114
+lastmod: '2024-02-25T18:49:35.850389-07:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att \xE4\
   ndra varje bokstav till dess motsvarighet i gemener. Programmerare g\xF6r detta\

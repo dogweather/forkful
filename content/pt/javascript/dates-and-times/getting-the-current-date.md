@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:45.851729-07:00
 description: "Obter a data atual em JavaScript \xE9 uma tarefa fundamental, envolvendo\
   \ a recupera\xE7\xE3o e, possivelmente, a manipula\xE7\xE3o da data e hora de hoje.\
   \ Programadores\u2026"
-lastmod: 2024-02-19 22:05:06.038405
+lastmod: '2024-02-25T18:49:44.589731-07:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em JavaScript \xE9 uma tarefa fundamental, envolvendo\
   \ a recupera\xE7\xE3o e, possivelmente, a manipula\xE7\xE3o da data e hora de hoje.\

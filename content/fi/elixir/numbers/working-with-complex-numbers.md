@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:18.685492-07:00
 description: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa (kuten `3 + 4i`).\
   \ Niit\xE4 k\xE4ytet\xE4\xE4n tekniikassa, fysiikassa sek\xE4 tietyiss\xE4 tietojenk\xE4\
   sittelyn ongelmissa.\u2026"
-lastmod: 2024-02-19 22:05:15.161829
+lastmod: '2024-02-25T18:49:53.194558-07:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa (kuten `3 + 4i`).\
   \ Niit\xE4 k\xE4ytet\xE4\xE4n tekniikassa, fysiikassa sek\xE4 tietyiss\xE4 tietojenk\xE4\

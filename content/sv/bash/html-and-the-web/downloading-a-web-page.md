@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:46.150282-07:00
 description: "Att ladda ned en webbsida inneb\xE4r att h\xE4mta allt inneh\xE5ll fr\xE5\
   n en webbsida till din lokala enhet. Programmerare g\xF6r detta f\xF6r att analysera\u2026"
-lastmod: 2024-02-19 22:04:57.311398
+lastmod: '2024-02-25T18:49:36.396467-07:00'
 model: gpt-4-1106-preview
 summary: "Att ladda ned en webbsida inneb\xE4r att h\xE4mta allt inneh\xE5ll fr\xE5\
   n en webbsida till din lokala enhet. Programmerare g\xF6r detta f\xF6r att analysera\u2026"

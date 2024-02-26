@@ -3,7 +3,7 @@ date: 2024-01-26 04:20:39.508304-07:00
 description: "Att arbeta med TOML inneb\xE4r att du hanterar data i det minimala formatet\
   \ \"Toms Obvious, Minimal Language\", popul\xE4rt f\xF6r konfigurationsfiler p\xE5\
   \ grund av\u2026"
-lastmod: 2024-02-19 22:04:56.793363
+lastmod: '2024-02-25T18:49:35.887894-07:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med TOML inneb\xE4r att du hanterar data i det minimala formatet\
   \ \"Toms Obvious, Minimal Language\", popul\xE4rt f\xF6r konfigurationsfiler p\xE5\

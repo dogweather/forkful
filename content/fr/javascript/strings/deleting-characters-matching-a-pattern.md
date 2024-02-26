@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:22.042815-07:00
 description: "En JavaScript, supprimer des caract\xE8res qui correspondent \xE0 un\
   \ motif, c'est comme filtrer les grains de sable d'un d\xE9sert - on ne garde que\
   \ ce qu'on veut.\u2026"
-lastmod: 2024-02-19 22:05:16.904395
+lastmod: '2024-02-25T18:49:54.892410-07:00'
 model: gpt-4-1106-preview
 summary: "En JavaScript, supprimer des caract\xE8res qui correspondent \xE0 un motif,\
   \ c'est comme filtrer les grains de sable d'un d\xE9sert - on ne garde que ce qu'on\

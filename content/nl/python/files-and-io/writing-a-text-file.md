@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:38.280905-07:00
 description: "Een tekstbestand schrijven in Python betekent het opslaan van strings\
   \ in een bestand op je schijf. Programmeurs doen dit om gegevens tussen sessies\
   \ te\u2026"
-lastmod: 2024-02-19 22:05:09.483244
+lastmod: '2024-02-25T18:49:47.788866-07:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Python betekent het opslaan van strings in\
   \ een bestand op je schijf. Programmeurs doen dit om gegevens tussen sessies te\u2026"

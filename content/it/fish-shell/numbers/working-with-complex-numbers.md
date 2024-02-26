@@ -2,7 +2,7 @@
 date: 2024-01-26 04:40:05.904963-07:00
 description: "I numeri complessi estendono l'idea delle linee numeriche unidimensionali\
   \ a un piano complesso bidimensionale. I programmatori li utilizzano in campi come\u2026"
-lastmod: 2024-02-19 22:05:02.923133
+lastmod: '2024-02-25T18:49:41.694423-07:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi estendono l'idea delle linee numeriche unidimensionali\
   \ a un piano complesso bidimensionale. I programmatori li utilizzano in campi come\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:55.185611-07:00
 description: "YAML, un acr\xF3nimo recursivo de \"YAML Ain't Markup Language\" (YAML\
   \ no es un lenguaje de marcado), es un formato de serializaci\xF3n de datos legible\
   \ por\u2026"
-lastmod: 2024-02-19 22:05:17.268007
+lastmod: '2024-02-25T18:49:55.238087-07:00'
 model: gpt-4-0125-preview
 summary: "YAML, un acr\xF3nimo recursivo de \"YAML Ain't Markup Language\" (YAML no\
   \ es un lenguaje de marcado), es un formato de serializaci\xF3n de datos legible\

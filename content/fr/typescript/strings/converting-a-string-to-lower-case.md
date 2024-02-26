@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:25.300864-07:00
 description: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
   res alphab\xE9tiques en leur \xE9quivalent en minuscule. Les programmeurs le font\
   \ pour\u2026"
-lastmod: 2024-02-19 22:05:16.253973
+lastmod: '2024-02-25T18:49:54.240378-07:00'
 model: gpt-4-1106-preview
 summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
   res alphab\xE9tiques en leur \xE9quivalent en minuscule. Les programmeurs le font\

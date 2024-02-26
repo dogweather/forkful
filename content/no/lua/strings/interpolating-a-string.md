@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:33.588686-07:00
 description: "Interpolering av en streng involverer \xE5 sette inn verdier inn i en\
   \ fast tekststreng. Programmerere gj\xF8r dette for \xE5 dynamisk generere tekst,\
   \ for eksempel\u2026"
-lastmod: 2024-02-19 22:05:00.179893
+lastmod: '2024-02-25T18:49:39.088371-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av en streng involverer \xE5 sette inn verdier inn i en fast\
   \ tekststreng. Programmerere gj\xF8r dette for \xE5 dynamisk generere tekst, for\

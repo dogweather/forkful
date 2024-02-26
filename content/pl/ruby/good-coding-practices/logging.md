@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:59.699207-07:00
 description: "Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej\
   \ aplikacji. Jest to systematyczne rejestrowanie zdarze\u0144, komunikat\xF3w i\
   \ punkt\xF3w danych,\u2026"
-lastmod: 2024-02-19 22:04:55.121472
+lastmod: '2024-02-25T18:49:34.315080-07:00'
 model: gpt-4-1106-preview
 summary: "Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej aplikacji.\
   \ Jest to systematyczne rejestrowanie zdarze\u0144, komunikat\xF3w i punkt\xF3w\

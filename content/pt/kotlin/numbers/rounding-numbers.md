@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:44.465822-07:00
 description: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
   \ pr\xF3ximo ou a um grau especificado de precis\xE3o. Programadores fazem isso\
   \ para melhorar a\u2026"
-lastmod: 2024-02-19 22:05:05.576552
+lastmod: '2024-02-25T18:49:44.158077-07:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
   \ pr\xF3ximo ou a um grau especificado de precis\xE3o. Programadores fazem isso\

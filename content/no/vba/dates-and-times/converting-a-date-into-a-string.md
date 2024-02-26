@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:51:02.916936-07:00
 description: "\xC5 konvertere en dato til en streng i Visual Basic for Applications\
   \ (VBA) er en prosess brukt for \xE5 endre datatypen til en dato til et strengformat.\u2026"
-lastmod: 2024-02-19 22:04:59.878086
+lastmod: '2024-02-25T18:49:38.814153-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 konvertere en dato til en streng i Visual Basic for Applications (VBA)\
   \ er en prosess brukt for \xE5 endre datatypen til en dato til et strengformat.\u2026"

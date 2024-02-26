@@ -2,7 +2,7 @@
 date: 2024-01-26 04:42:52.970110-07:00
 description: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadratroten\
   \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1.\u2026"
-lastmod: 2024-02-19 22:04:59.991787
+lastmod: '2024-02-25T18:49:38.923407-07:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadratroten\
   \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1.\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:41.670265-07:00
 description: "Lokitus on lyhyesti sanottuna kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4\
   \ sovelluksellesi - se tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4vi\xE4\
   \ toimia, jotka tapahtuvat\u2026"
-lastmod: 2024-02-19 22:05:15.851109
+lastmod: '2024-02-25T18:49:53.863088-07:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on lyhyesti sanottuna kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi\
   \ - se tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4vi\xE4 toimia, jotka\

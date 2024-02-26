@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:04.323999-07:00
 description: "Capitalizar un string implica convertir el car\xE1cter inicial de cada\
   \ palabra en el string a may\xFAscula si est\xE1 en min\xFAscula, manteniendo sin\
   \ cambio los\u2026"
-lastmod: 2024-02-19 22:05:17.863344
+lastmod: '2024-02-25T18:49:55.829125-07:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar un string implica convertir el car\xE1cter inicial de cada palabra\
   \ en el string a may\xFAscula si est\xE1 en min\xFAscula, manteniendo sin cambio\

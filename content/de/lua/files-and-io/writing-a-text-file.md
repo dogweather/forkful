@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:48.775396-07:00
 description: "Das Schreiben in eine Textdatei in Lua beinhaltet das Erstellen oder\
   \ \xD6ffnen einer Datei im Schreibmodus und anschlie\xDFend die Verwendung von\u2026"
-lastmod: 2024-02-19 22:05:12.964296
+lastmod: '2024-02-25T18:49:51.086365-07:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in Lua beinhaltet das Erstellen oder \xD6\
   ffnen einer Datei im Schreibmodus und anschlie\xDFend die Verwendung von\u2026"

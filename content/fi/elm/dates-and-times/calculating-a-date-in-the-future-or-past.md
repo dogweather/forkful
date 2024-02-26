@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:31:03.533254-07:00
 description: null
-lastmod: 2024-02-19 22:05:15.395944
+lastmod: '2024-02-25T18:49:53.420408-07:00'
 model: gpt-4-1106-preview
 summary: null
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"

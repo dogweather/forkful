@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:26.075592-07:00
 description: "Calculating a future or past date means finding a date some days, weeks,\
   \ months, or years from a certain point. Programmers often need this for tasks like\u2026"
-lastmod: 2024-02-19 22:05:18.907470
+lastmod: '2024-02-25T18:49:56.880259-07:00'
 model: gpt-4-1106-preview
 summary: "Calculating a future or past date means finding a date some days, weeks,\
   \ months, or years from a certain point. Programmers often need this for tasks like\u2026"

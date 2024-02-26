@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:11:54.503022-07:00
 description: "Trabalhar com JSON (JavaScript Object Notation) em C envolve analisar,\
   \ gerar e manipular estruturas de dados JSON. Programadores fazem isso para\u2026"
-lastmod: 2024-02-19 22:05:06.143845
+lastmod: '2024-02-25T18:49:44.689681-07:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) em C envolve analisar, gerar\
   \ e manipular estruturas de dados JSON. Programadores fazem isso para\u2026"

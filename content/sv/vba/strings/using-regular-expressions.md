@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:57.131218-07:00
 description: "Regular expressions (regulj\xE4ra uttryck) i Visual Basic for Applications\
   \ (VBA) erbjuder ett kraftfullt s\xE4tt att s\xF6ka, matcha och manipulera str\xE4\
   ngar.\u2026"
-lastmod: 2024-02-19 22:04:56.937511
+lastmod: '2024-02-25T18:49:36.026694-07:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regulj\xE4ra uttryck) i Visual Basic for Applications\
   \ (VBA) erbjuder ett kraftfullt s\xE4tt att s\xF6ka, matcha och manipulera str\xE4\

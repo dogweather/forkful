@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:21.127588-07:00
 description: "Ty\xF6skentely XML:n parissa tarkoittaa XML-dokumenttien (eXtensible\
   \ Markup Language) j\xE4sent\xE4mist\xE4, luomista ja manipulointia koodin avulla.\
   \ Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:16.020499
+lastmod: '2024-02-25T18:49:54.014283-07:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely XML:n parissa tarkoittaa XML-dokumenttien (eXtensible Markup\
   \ Language) j\xE4sent\xE4mist\xE4, luomista ja manipulointia koodin avulla. Ohjelmoijat\u2026"

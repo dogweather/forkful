@@ -2,7 +2,7 @@
 date: 2024-01-21 21:19:08.411809-07:00
 description: "Handling errors in PowerShell means predicting the mishaps and managing\
   \ them smoothly. Programmers do this to prevent crashes and provide users with\u2026"
-lastmod: 2024-02-19 22:05:18.753669
+lastmod: '2024-02-25T18:49:56.729456-07:00'
 model: gpt-4-1106-preview
 summary: "Handling errors in PowerShell means predicting the mishaps and managing\
   \ them smoothly. Programmers do this to prevent crashes and provide users with\u2026"

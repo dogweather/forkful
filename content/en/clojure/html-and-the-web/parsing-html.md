@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:49.120272-07:00
 description: "Parsing HTML in Clojure involves programmatically extracting information\
   \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"
-lastmod: 2024-02-19 22:05:18.251258
+lastmod: '2024-02-25T18:49:56.207589-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Clojure involves programmatically extracting information\
   \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"

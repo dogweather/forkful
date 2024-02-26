@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:41.330369-07:00
 description: "Sammanfogning av str\xE4ngar, eller \"concatenation\" som det ofta kallas,\
   \ inneb\xE4r att du kopplar ihop tv\xE5 eller flera textstycken till en enda str\xE4\
   ng.\u2026"
-lastmod: 2024-02-19 22:04:56.715782
+lastmod: '2024-02-25T18:49:35.812563-07:00'
 model: gpt-4-1106-preview
 summary: "Sammanfogning av str\xE4ngar, eller \"concatenation\" som det ofta kallas,\
   \ inneb\xE4r att du kopplar ihop tv\xE5 eller flera textstycken till en enda str\xE4\

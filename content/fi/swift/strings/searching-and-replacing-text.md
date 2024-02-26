@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:54.829623-07:00
 description: "Mik\xE4 ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen\
   \ hakuja ja niiden muuttamista ohjelmassa. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
   t\xE4 p\xE4ivitt\xE4en\u2026"
-lastmod: 2024-02-19 22:05:15.787642
+lastmod: '2024-02-25T18:49:53.801458-07:00'
 model: gpt-4-1106-preview
 summary: "Mik\xE4 ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen\
   \ hakuja ja niiden muuttamista ohjelmassa. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\

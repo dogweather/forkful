@@ -3,7 +3,7 @@ date: 2024-01-27 20:26:06.071881-07:00
 description: "Generating random numbers is a fundamental task in programming, used\
   \ for everything from data sampling to game development. In Fish Shell, making use\
   \ of\u2026"
-lastmod: 2024-02-19 22:05:18.929025
+lastmod: '2024-02-25T18:49:56.903324-07:00'
 model: gpt-4-0125-preview
 summary: "Generating random numbers is a fundamental task in programming, used for\
   \ everything from data sampling to game development. In Fish Shell, making use of\u2026"

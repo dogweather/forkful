@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:47.606435-07:00
 description: "Een HTTP-verzoek verzenden is de manier waarop je Arduino met het web\
   \ praat, zoals een server vragen om wat gegevens terug te sturen. Programmeurs doen\u2026"
-lastmod: 2024-02-19 22:05:10.153891
+lastmod: '2024-02-25T18:49:48.403245-07:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden is de manier waarop je Arduino met het web praat,\
   \ zoals een server vragen om wat gegevens terug te sturen. Programmeurs doen\u2026"

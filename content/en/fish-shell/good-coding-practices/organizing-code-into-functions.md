@@ -5,7 +5,7 @@ date: 2024-01-25 03:00:10.607473-07:00
 description: "Organizing code into functions is about bundling up bits of script to\
   \ do specific tasks. We do it because it makes code easier to read, test, and reuse\
   \ \u2014\u2026"
-lastmod: 2024-02-19 22:05:18.939760
+lastmod: '2024-02-25T18:49:56.914523-07:00'
 model: gpt-4-1106-preview
 summary: "Organizing code into functions is about bundling up bits of script to do\
   \ specific tasks. We do it because it makes code easier to read, test, and reuse\

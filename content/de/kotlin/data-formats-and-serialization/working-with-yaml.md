@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "YAML ist ein Format f\xFCr Daten, das auf Menschen ausgerichtet ist.\
   \ Programmierer nutzen es, weil es einfach zu lesen und zu schreiben ist und sich\
   \ gut f\xFCr\u2026"
-lastmod: 2024-02-19 22:05:12.793139
+lastmod: '2024-02-25T18:49:50.927395-07:00'
 summary: "YAML ist ein Format f\xFCr Daten, das auf Menschen ausgerichtet ist. Programmierer\
   \ nutzen es, weil es einfach zu lesen und zu schreiben ist und sich gut f\xFCr\u2026"
 title: Arbeiten mit YAML

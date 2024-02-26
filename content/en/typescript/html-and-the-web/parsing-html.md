@@ -3,7 +3,7 @@ date: 2024-01-20 15:33:59.686760-07:00
 description: "Parsing HTML means sifting through HTML code to find, extract, or manipulate\
   \ info. Programmers do it to interact with web content\u2014maybe scraping data,\
   \ or\u2026"
-lastmod: 2024-02-19 22:05:18.326223
+lastmod: '2024-02-25T18:49:56.280565-07:00'
 summary: "Parsing HTML means sifting through HTML code to find, extract, or manipulate\
   \ info. Programmers do it to interact with web content\u2014maybe scraping data,\
   \ or\u2026"

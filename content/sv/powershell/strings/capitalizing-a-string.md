@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:04.451254-07:00
 description: "Att skriva med stor bokstav i PowerShell inneb\xE4r att man omvandlar\
   \ det f\xF6rsta tecknet i en given str\xE4ng till versal medan resten av str\xE4\
   ngen l\xE4mnas\u2026"
-lastmod: 2024-02-19 22:04:57.339334
+lastmod: '2024-02-25T18:49:36.422637-07:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav i PowerShell inneb\xE4r att man omvandlar det\
   \ f\xF6rsta tecknet i en given str\xE4ng till versal medan resten av str\xE4ngen\

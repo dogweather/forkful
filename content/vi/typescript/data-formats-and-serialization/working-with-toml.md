@@ -6,7 +6,7 @@ description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language,
   \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF li\u1EC7u gi\u1ED1ng nh\u01B0\
   \ JSON ho\u1EB7c YAML. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC t\xED\
   nh d\u1EC5 \u0111\u1ECDc v\xE0 \xE1nh\u2026"
-lastmod: 2024-02-19 22:04:55.501371
+lastmod: '2024-02-25T18:49:34.675238-07:00'
 model: gpt-4-0125-preview
 summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
   \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF li\u1EC7u gi\u1ED1ng nh\u01B0\

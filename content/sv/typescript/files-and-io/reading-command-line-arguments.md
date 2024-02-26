@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:10.723284-07:00
 description: "Att l\xE4sa in kommandoradsargument \xE4r metoden att f\xE5nga anv\xE4\
   ndarinput fr\xE5n konsolen i ditt program. Programmerare g\xF6r det f\xF6r att till\xE5\
   ta anv\xE4ndare att\u2026"
-lastmod: 2024-02-19 22:04:56.873647
+lastmod: '2024-02-25T18:49:35.966952-07:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa in kommandoradsargument \xE4r metoden att f\xE5nga anv\xE4ndarinput\
   \ fr\xE5n konsolen i ditt program. Programmerare g\xF6r det f\xF6r att till\xE5\

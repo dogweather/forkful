@@ -3,7 +3,7 @@ date: 2024-01-20 15:33:14.375537-07:00
 description: "Parsing HTML inneb\xE4r att omvandla HTML-kod till en struktur som ett\
   \ program eller skript kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta\
   \ f\xF6r att\u2026"
-lastmod: 2024-02-19 22:04:56.721812
+lastmod: '2024-02-25T18:49:35.818281-07:00'
 summary: "Parsing HTML inneb\xE4r att omvandla HTML-kod till en struktur som ett program\
   \ eller skript kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta f\xF6\
   r att\u2026"

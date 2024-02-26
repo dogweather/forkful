@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:43.162345-07:00
 description: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig\
   \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\u2026"
-lastmod: 2024-02-19 22:05:00.085565
+lastmod: '2024-02-25T18:49:38.993670-07:00'
 model: gpt-4-0125-preview
 summary: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig\
   \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\u2026"

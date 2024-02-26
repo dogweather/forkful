@@ -3,7 +3,7 @@ date: 2024-01-26 00:57:20.604419-07:00
 description: "Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die auftreten,\
   \ wenn Ihr Code ausgef\xFChrt wird. Wir tun dies, um das Chaos zu kontrollieren\
   \ \u2013\u2026"
-lastmod: 2024-02-19 22:05:13.168400
+lastmod: '2024-02-25T18:49:51.283236-07:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die auftreten,\
   \ wenn Ihr Code ausgef\xFChrt wird. Wir tun dies, um das Chaos zu kontrollieren\

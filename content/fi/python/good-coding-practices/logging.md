@@ -2,7 +2,7 @@
 date: 2024-01-26 01:08:25.680327-07:00
 description: "Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman\
   \ suorituksen aikana, tarjoten j\xE4ljityspolkua j\xE4lkianalyysiin ja reaaliaikaiseen\u2026"
-lastmod: 2024-02-19 22:05:15.081441
+lastmod: '2024-02-25T18:49:53.124267-07:00'
 model: gpt-4-1106-preview
 summary: "Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman suorituksen\
   \ aikana, tarjoten j\xE4ljityspolkua j\xE4lkianalyysiin ja reaaliaikaiseen\u2026"

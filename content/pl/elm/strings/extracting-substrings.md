@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:37.337507-07:00
 description: "Wyci\u0105ganie podci\u0105g\xF3w to tak naprawd\u0119 wycinanie kawa\u0142\
   k\xF3w tekstu z wi\u0119kszych \u0142a\u0144cuch\xF3w znak\xF3w. Programi\u015B\
   ci robi\u0105 to, \u017Ceby dosta\u0107 u\u017Cyteczne informacje,\u2026"
-lastmod: 2024-02-19 22:04:54.440094
+lastmod: '2024-02-25T18:49:33.674620-07:00'
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie podci\u0105g\xF3w to tak naprawd\u0119 wycinanie kawa\u0142\
   k\xF3w tekstu z wi\u0119kszych \u0142a\u0144cuch\xF3w znak\xF3w. Programi\u015B\

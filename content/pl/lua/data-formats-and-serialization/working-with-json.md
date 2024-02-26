@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:30.260283-07:00
 description: "Praca z JSON w Lua polega na parsowaniu \u0142a\u0144cuch\xF3w znak\xF3\
   w sformatowanych w JSON do tabel Lua i odwrotnie, co umo\u017Cliwia \u0142atw\u0105\
   \ wymian\u0119 danych mi\u0119dzy\u2026"
-lastmod: 2024-02-19 22:04:54.699628
+lastmod: '2024-02-25T18:49:33.926944-07:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON w Lua polega na parsowaniu \u0142a\u0144cuch\xF3w znak\xF3\
   w sformatowanych w JSON do tabel Lua i odwrotnie, co umo\u017Cliwia \u0142atw\u0105\

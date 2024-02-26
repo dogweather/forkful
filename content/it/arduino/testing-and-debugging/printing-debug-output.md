@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:49.286378-07:00
 description: "Stampare l'output di debug aiuta a seguire ci\xF2 che Arduino sta facendo\
   \ e a capire problemi nel codice. Lo facciamo per testare e correggere pi\xF9\u2026"
-lastmod: 2024-02-19 22:05:02.760868
+lastmod: '2024-02-25T18:49:41.544581-07:00'
 model: gpt-4-1106-preview
 summary: "Stampare l'output di debug aiuta a seguire ci\xF2 che Arduino sta facendo\
   \ e a capire problemi nel codice. Lo facciamo per testare e correggere pi\xF9\u2026"

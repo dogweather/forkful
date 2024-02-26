@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:03.877086-07:00
 description: "Searching and replacing text in Java scribbles over original strings\
   \ with new characters - think of it as digital white-out. Programmers often use\
   \ this to\u2026"
-lastmod: 2024-02-19 22:05:18.427387
+lastmod: '2024-02-25T18:49:56.380683-07:00'
 model: gpt-4-1106-preview
 summary: "Searching and replacing text in Java scribbles over original strings with\
   \ new characters - think of it as digital white-out. Programmers often use this\

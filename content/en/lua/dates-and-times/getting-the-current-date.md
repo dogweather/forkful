@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:35.939026-07:00
 description: "Retrieving the current date in programming is a crucial task for a multitude\
   \ of applications, including logging, timestamping events, or scheduling tasks.\u2026"
-lastmod: 2024-02-19 22:05:18.676891
+lastmod: '2024-02-25T18:49:56.654253-07:00'
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in programming is a crucial task for a multitude\
   \ of applications, including logging, timestamping events, or scheduling tasks.\u2026"

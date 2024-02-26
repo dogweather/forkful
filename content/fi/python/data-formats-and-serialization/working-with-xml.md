@@ -2,7 +2,7 @@
 date: 2024-01-26 04:34:49.776731-07:00
 description: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup Language)\
   \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla. Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.108666
+lastmod: '2024-02-25T18:49:53.142281-07:00'
 model: gpt-4-0125-preview
 summary: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup Language)\
   \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla. Ohjelmoijat\u2026"

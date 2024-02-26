@@ -2,7 +2,7 @@
 date: 2024-01-26 04:44:08.341768-07:00
 description: "Komplexe Zahlen, die einen Realteil und einen Imagin\xE4rteil haben\
   \ (wie 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft.\u2026"
-lastmod: 2024-02-19 22:05:13.027414
+lastmod: '2024-02-25T18:49:51.147601-07:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, die einen Realteil und einen Imagin\xE4rteil haben (wie\
   \ 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft.\u2026"

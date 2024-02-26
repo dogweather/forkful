@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:20.369190-07:00
 description: "Reguliere expressies (regex) zoeken, matchen en manipuleren strings.\
   \ Ze worden gebruikt vanwege hun flexibiliteit en effici\xEBntie bij tekstverwerkingstaken."
-lastmod: 2024-02-19 22:05:09.497573
+lastmod: '2024-02-25T18:49:47.803005-07:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) zoeken, matchen en manipuleren strings. Ze\
   \ worden gebruikt vanwege hun flexibiliteit en effici\xEBntie bij tekstverwerkingstaken."

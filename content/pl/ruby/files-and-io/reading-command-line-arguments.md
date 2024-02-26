@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:41.522154-07:00
 description: "W Ruby, czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi\
   \ przyjmowa\u0107 dane wej\u015Bciowe z konsoli. Programi\u015Bci u\u017Cywaj\u0105\
   \ tej techniki, by uczyni\u0107\u2026"
-lastmod: 2024-02-19 22:04:55.131125
+lastmod: '2024-02-25T18:49:34.324053-07:00'
 model: gpt-4-1106-preview
 summary: "W Ruby, czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi\
   \ przyjmowa\u0107 dane wej\u015Bciowe z konsoli. Programi\u015Bci u\u017Cywaj\u0105\

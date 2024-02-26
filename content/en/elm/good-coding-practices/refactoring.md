@@ -3,7 +3,7 @@ date: 2024-01-25 02:12:15.719110-07:00
 description: "Refactoring is essentially spring cleaning your code base\u2014it's\
   \ about restructuring existing code without changing its external behavior. Programmers\
   \ do it\u2026"
-lastmod: 2024-02-19 22:05:18.486375
+lastmod: '2024-02-25T18:49:56.463357-07:00'
 model: gpt-4-1106-preview
 summary: "Refactoring is essentially spring cleaning your code base\u2014it's about\
   \ restructuring existing code without changing its external behavior. Programmers\

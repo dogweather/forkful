@@ -3,7 +3,7 @@ date: 2024-01-26 03:42:23.459164-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr vanligvis \xE5 strippe\
   \ bort overfl\xF8dige doble (\") eller enkle (') anf\xF8rselstegn. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
-lastmod: 2024-02-19 22:04:59.629654
+lastmod: '2024-02-25T18:49:38.577408-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr vanligvis \xE5 strippe\
   \ bort overfl\xF8dige doble (\") eller enkle (') anf\xF8rselstegn. Programmerere\

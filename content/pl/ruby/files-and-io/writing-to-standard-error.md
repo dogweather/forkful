@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:26.376529-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Ruby polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub informacji diagnostycznych do oddzielnego\
   \ strumienia\u2026"
-lastmod: 2024-02-19 22:04:55.132194
+lastmod: '2024-02-25T18:49:34.325038-07:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Ruby polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub informacji diagnostycznych do oddzielnego\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:19.034930-07:00
 description: "Stringinterpolasjon i PHP betyr \xE5 plassere variabler direkte i en\
   \ streng for \xE5 bygge den. Vi gj\xF8r det fordi det er raskt og leselig n\xE5\
   r vi vil bytte ut\u2026"
-lastmod: 2024-02-19 22:05:00.135480
+lastmod: '2024-02-25T18:49:39.044855-07:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolasjon i PHP betyr \xE5 plassere variabler direkte i en streng\
   \ for \xE5 bygge den. Vi gj\xF8r det fordi det er raskt og leselig n\xE5r vi vil\

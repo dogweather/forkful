@@ -5,7 +5,7 @@ date: 2024-01-28 22:04:57.659603-07:00
 description: "Het lezen van commandoregelargumenten laat een programma informatie\
   \ rechtstreeks uit de terminalopdracht van de gebruiker halen. Programmeurs doen\
   \ dit om\u2026"
-lastmod: 2024-02-19 22:05:09.524401
+lastmod: '2024-02-25T18:49:47.828176-07:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten laat een programma informatie rechtstreeks\
   \ uit de terminalopdracht van de gebruiker halen. Programmeurs doen dit om\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:35:21.116154-07:00
 description: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
   \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"
-lastmod: 2024-02-19 22:05:17.396569
+lastmod: '2024-02-25T18:49:55.364494-07:00'
 model: gpt-4-0125-preview
 summary: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
   \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"

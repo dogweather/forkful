@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:54.364457-07:00
 description: "Interpolar uma string significa inserir valores de vari\xE1veis ou express\xF5\
   es dentro dela para formar uma nova string. Programadores fazem isso para\u2026"
-lastmod: 2024-02-19 22:05:05.656060
+lastmod: '2024-02-25T18:49:44.233330-07:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string significa inserir valores de vari\xE1veis ou express\xF5\
   es dentro dela para formar uma nova string. Programadores fazem isso para\u2026"

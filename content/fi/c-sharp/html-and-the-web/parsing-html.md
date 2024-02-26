@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:09.979123-07:00
 description: "HTML:n j\xE4sennys ohjelmoinnissa tarkoittaa HTML-dokumentin rakenteen\
   \ analysoimista, mik\xE4 mahdollistaa sen sis\xE4ll\xF6n ohjelmallisen k\xE4sittelyn,\
   \ muokkaamisen\u2026"
-lastmod: 2024-02-19 22:05:15.464348
+lastmod: '2024-02-25T18:49:53.485916-07:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sennys ohjelmoinnissa tarkoittaa HTML-dokumentin rakenteen analysoimista,\
   \ mik\xE4 mahdollistaa sen sis\xE4ll\xF6n ohjelmallisen k\xE4sittelyn, muokkaamisen\u2026"

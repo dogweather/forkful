@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:26.662818-07:00
 description: "Wyszukiwanie i zast\u0119powanie tekstu w Google Apps Script polega\
   \ na programowym identyfikowaniu konkretnych ci\u0105g\xF3w znak\xF3w w dokumencie,\
   \ arkuszu\u2026"
-lastmod: 2024-02-19 22:04:54.068337
+lastmod: '2024-02-25T18:49:33.308070-07:00'
 model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zast\u0119powanie tekstu w Google Apps Script polega na programowym\
   \ identyfikowaniu konkretnych ci\u0105g\xF3w znak\xF3w w dokumencie, arkuszu\u2026"

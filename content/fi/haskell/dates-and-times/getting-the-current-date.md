@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:36.707747-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Haskellissa k\xE4sitt\xE4\
   \xE4 j\xE4rjestelm\xE4n nykyisen ajan hankkimisen ja sen muuntamisen luettavaan\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4muotoon. Ohjelmoijat\u2026"
-lastmod: 2024-02-19 22:05:15.518758
+lastmod: '2024-02-25T18:49:53.538509-07:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Haskellissa k\xE4sitt\xE4\
   \xE4 j\xE4rjestelm\xE4n nykyisen ajan hankkimisen ja sen muuntamisen luettavaan\

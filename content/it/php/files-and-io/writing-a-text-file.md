@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:44.247855-07:00
 description: "Scrivere un file di testo in PHP comporta la creazione o l'apertura\
   \ di un file e l'inserimento di contenuto al suo interno. I programmatori fanno\
   \ ci\xF2 per\u2026"
-lastmod: 2024-02-19 22:05:02.602224
+lastmod: '2024-02-25T18:49:41.397503-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in PHP comporta la creazione o l'apertura di un\
   \ file e l'inserimento di contenuto al suo interno. I programmatori fanno ci\xF2\

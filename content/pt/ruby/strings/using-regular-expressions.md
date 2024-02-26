@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:07.664577-07:00
 description: "Express\xF5es regulares (regex) em Ruby s\xE3o padr\xF5es usados para\
   \ combinar sequ\xEAncias de caracteres em strings, permitindo que desenvolvedores\
   \ pesquisem,\u2026"
-lastmod: 2024-02-19 22:05:06.155277
+lastmod: '2024-02-25T18:49:44.700317-07:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Ruby s\xE3o padr\xF5es usados para combinar\
   \ sequ\xEAncias de caracteres em strings, permitindo que desenvolvedores pesquisem,\u2026"

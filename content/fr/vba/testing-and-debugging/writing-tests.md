@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:44.884022-07:00
 description: "\xC9crire des tests en programmation implique de cr\xE9er des proc\xE9\
   dures sp\xE9cifiques pour valider la fonctionnalit\xE9 et la performance de vos\
   \ segments de code,\u2026"
-lastmod: 2024-02-19 22:05:16.359364
+lastmod: '2024-02-25T18:49:54.344553-07:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en programmation implique de cr\xE9er des proc\xE9dures\
   \ sp\xE9cifiques pour valider la fonctionnalit\xE9 et la performance de vos segments\

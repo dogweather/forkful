@@ -6,7 +6,7 @@ description: "Vi\u1EBFt test trong l\u1EADp tr\xECnh ngh\u0129a l\xE0 t\u1EA1o r
   \ c\xE1c mini-ch\u01B0\u01A1ng tr\xECnh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 c\u1EE7\
   a b\u1EA1n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4\
   ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
-lastmod: 2024-02-19 22:04:55.836764
+lastmod: '2024-02-25T18:49:35.005143-07:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test trong l\u1EADp tr\xECnh ngh\u0129a l\xE0 t\u1EA1o ra c\xE1\
   c mini-ch\u01B0\u01A1ng tr\xECnh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\

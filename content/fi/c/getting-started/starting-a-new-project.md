@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:20.395864-07:00
 description: "Uuden projektin aloittaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 perustavanlaatuisen\
   \ koodirakenteen ja ymp\xE4rist\xF6n pystytt\xE4misen, jotta kehitysteht\xE4v\xE4\
   t voidaan hallita\u2026"
-lastmod: 2024-02-19 22:05:15.934204
+lastmod: '2024-02-25T18:49:53.946155-07:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 perustavanlaatuisen\
   \ koodirakenteen ja ymp\xE4rist\xF6n pystytt\xE4misen, jotta kehitysteht\xE4v\xE4\

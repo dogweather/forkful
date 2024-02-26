@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:25.826513-07:00
 description: "Crear un fichero temporal es como hacer una nota adhesiva digital, algo\
   \ temporal para guardar datos que no necesitas a largo plazo. Los programadores\
   \ lo\u2026"
-lastmod: 2024-02-19 22:05:17.773096
+lastmod: '2024-02-25T18:49:55.736044-07:00'
 model: gpt-4-1106-preview
 summary: "Crear un fichero temporal es como hacer una nota adhesiva digital, algo\
   \ temporal para guardar datos que no necesitas a largo plazo. Los programadores\

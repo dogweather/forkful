@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:40.472743-07:00
 description: "Merkkien poistaminen, jotka t\xE4sm\xE4\xE4v\xE4t tiettyyn malliin,\
   \ tarkoittaa tiettyjen merkkien tai merkkijonojen poistamista merkkijonoista, s\xE4\
   \xE4nt\xF6jen perusteella,\u2026"
-lastmod: 2024-02-19 22:05:14.946716
+lastmod: '2024-02-25T18:49:53.012265-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkien poistaminen, jotka t\xE4sm\xE4\xE4v\xE4t tiettyyn malliin, tarkoittaa\
   \ tiettyjen merkkien tai merkkijonojen poistamista merkkijonoista, s\xE4\xE4nt\xF6\

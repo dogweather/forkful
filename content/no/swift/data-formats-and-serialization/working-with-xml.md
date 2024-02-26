@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:13.459688-07:00
 description: "\xC5 jobbe med XML betyr \xE5 analysere og generere XML-data i Swift.\
   \ Programmerere gj\xF8r dette for datamellomlagring, spesielt n\xE5r de integrerer\
   \ med systemer\u2026"
-lastmod: 2024-02-19 22:05:00.441996
+lastmod: '2024-02-25T18:49:39.345109-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr \xE5 analysere og generere XML-data i Swift. Programmerere\
   \ gj\xF8r dette for datamellomlagring, spesielt n\xE5r de integrerer med systemer\u2026"

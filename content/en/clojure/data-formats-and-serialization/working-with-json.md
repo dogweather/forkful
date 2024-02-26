@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:12.908663-07:00
 description: "Working with JSON (JavaScript Object Notation) in Clojure involves parsing\
   \ JSON strings into Clojure data structures (maps, vectors) and vice versa. This\u2026"
-lastmod: 2024-02-19 22:05:18.272166
+lastmod: '2024-02-25T18:49:56.228022-07:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) in Clojure involves parsing\
   \ JSON strings into Clojure data structures (maps, vectors) and vice versa. This\u2026"

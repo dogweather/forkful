@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:49.788099-07:00
 description: "Een webpagina downloaden in C houdt in dat je programmatisch toegang\
   \ krijgt tot de inhoud van een webpagina via het internet en deze lokaal opslaat\
   \ voor\u2026"
-lastmod: 2024-02-19 22:05:10.378519
+lastmod: '2024-02-25T18:49:48.614600-07:00'
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden in C houdt in dat je programmatisch toegang krijgt\
   \ tot de inhoud van een webpagina via het internet en deze lokaal opslaat voor\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:00.331541-07:00
 description: "Die Arbeit mit JSON (JavaScript Object Notation) in Kotlin umfasst das\
   \ Parsen und Generieren von JSON-Daten. Programmierer tun dies, um Daten leicht\u2026"
-lastmod: 2024-02-19 22:05:12.794084
+lastmod: '2024-02-25T18:49:50.928344-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) in Kotlin umfasst das Parsen\
   \ und Generieren von JSON-Daten. Programmierer tun dies, um Daten leicht\u2026"

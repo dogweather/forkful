@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:45.807993-07:00
 description: "Parsing HTML in PHP involves extracting specific information from HTML\
   \ documents. Programmers perform this task to automate data extraction, web scraping,\u2026"
-lastmod: 2024-02-19 22:05:18.627729
+lastmod: '2024-02-25T18:49:56.605304-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in PHP involves extracting specific information from HTML documents.\
   \ Programmers perform this task to automate data extraction, web scraping,\u2026"

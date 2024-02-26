@@ -6,7 +6,7 @@ date: 2024-01-28 03:01:14.207115-07:00
 description: "Att tolka HTML inneb\xE4r att extrahera data fr\xE5n HTML-dokument.\
   \ Programmerare g\xF6r detta f\xF6r att interagera med eller manipulera webbinneh\xE5\
   ll, automatisera\u2026"
-lastmod: 2024-02-19 22:04:57.533777
+lastmod: '2024-02-25T18:49:36.606177-07:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r att extrahera data fr\xE5n HTML-dokument. Programmerare\
   \ g\xF6r detta f\xF6r att interagera med eller manipulera webbinneh\xE5ll, automatisera\u2026"

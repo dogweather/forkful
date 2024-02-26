@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:25.420950-07:00
 description: "Iniciar un nuevo proyecto es como poner la primera piedra en la construcci\xF3\
   n de una casa: es el punto de partida para crear algo desde cero. Los\u2026"
-lastmod: 2024-02-19 22:05:18.099642
+lastmod: '2024-02-25T18:49:56.059590-07:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es como poner la primera piedra en la construcci\xF3\
   n de una casa: es el punto de partida para crear algo desde cero. Los\u2026"

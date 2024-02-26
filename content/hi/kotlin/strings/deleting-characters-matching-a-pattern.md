@@ -2,7 +2,7 @@
 date: 2024-01-20 17:42:30.709007-07:00
 description: "Pattern matching se hum kisi string mein se khas characters ya shabdon\
   \ ko dhundhkar unhe hata sakte hain. Programmers iska use karte hain data ko saf\u2026"
-lastmod: 2024-02-19 22:05:11.234415
+lastmod: '2024-02-25T18:49:49.431870-07:00'
 model: gpt-4-1106-preview
 summary: "Pattern matching se hum kisi string mein se khas characters ya shabdon ko\
   \ dhundhkar unhe hata sakte hain. Programmers iska use karte hain data ko saf\u2026"

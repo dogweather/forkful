@@ -3,7 +3,7 @@ date: 2024-01-26 04:12:22.043848-07:00
 description: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\xF8\
   re den interaktivt. Programmerere bruker det for raske eksperimenter, feils\xF8\
   king, eller\u2026"
-lastmod: 2024-02-19 22:05:00.063755
+lastmod: '2024-02-25T18:49:38.972815-07:00'
 model: gpt-4-0125-preview
 summary: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\xF8re\
   \ den interaktivt. Programmerere bruker det for raske eksperimenter, feils\xF8king,\

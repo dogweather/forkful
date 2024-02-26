@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:49.741520-07:00
 description: "Een tekstbestand schrijven in Go omvat het cre\xEBren en schrijven van\
   \ datareeksen in een nieuw of bestaand tekstbestand. Programmeurs doen dit om gegevens\u2026"
-lastmod: 2024-02-19 22:05:09.391768
+lastmod: '2024-02-25T18:49:47.702856-07:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Go omvat het cre\xEBren en schrijven van datareeksen\
   \ in een nieuw of bestaand tekstbestand. Programmeurs doen dit om gegevens\u2026"

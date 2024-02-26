@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:22.951903-07:00
 description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
   \ liitt\xE4mist\xE4 per\xE4kk\xE4in uuden merkkijonon muodostamiseksi. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n\u2026"
-lastmod: 2024-02-19 22:05:14.956252
+lastmod: '2024-02-25T18:49:53.020702-07:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
   \ liitt\xE4mist\xE4 per\xE4kk\xE4in uuden merkkijonon muodostamiseksi. Ohjelmoijat\

@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:44.095505-07:00
 description: "Koodin j\xE4senteleminen funktioiksi on kuin LEGO-palikoiden lajitteleminen\
   \ bokseihin\u2014se tekee niiden l\xF6yt\xE4misest\xE4 ja k\xE4yt\xF6st\xE4 helpompaa.\
   \ T\xE4m\xE4 tehd\xE4\xE4n\u2026"
-lastmod: 2024-02-19 22:05:15.472003
+lastmod: '2024-02-25T18:49:53.493403-07:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4senteleminen funktioiksi on kuin LEGO-palikoiden lajitteleminen\
   \ bokseihin\u2014se tekee niiden l\xF6yt\xE4misest\xE4 ja k\xE4yt\xF6st\xE4 helpompaa.\

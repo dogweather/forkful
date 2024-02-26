@@ -2,7 +2,7 @@
 date: 2024-01-26 04:37:03.267326-07:00
 description: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del. Programmerere\
   \ bruker dem innen felter som signalbehandling, kvantemekanikk, og n\xE5r som helst\u2026"
-lastmod: 2024-02-19 22:05:00.232118
+lastmod: '2024-02-25T18:49:39.139523-07:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del. Programmerere\
   \ bruker dem innen felter som signalbehandling, kvantemekanikk, og n\xE5r som helst\u2026"

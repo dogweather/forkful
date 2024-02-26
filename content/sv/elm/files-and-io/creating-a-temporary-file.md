@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:25.045675-07:00
 description: "Skapa en tillf\xE4llig fil inneb\xE4r att generera en fil som bara finns\
   \ under programmets k\xF6rtid, vanligtvis f\xF6r att hantera data tempor\xE4rt.\
   \ Programmerare g\xF6r\u2026"
-lastmod: 2024-02-19 22:04:57.060883
+lastmod: '2024-02-25T18:49:36.142974-07:00'
 model: gpt-4-1106-preview
 summary: "Skapa en tillf\xE4llig fil inneb\xE4r att generera en fil som bara finns\
   \ under programmets k\xF6rtid, vanligtvis f\xF6r att hantera data tempor\xE4rt.\

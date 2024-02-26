@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:39.600736-07:00
 description: "Arredondar n\xFAmeros \xE9 o processo de ajustar os d\xEDgitos de um\
   \ n\xFAmero para reduzir sua precis\xE3o de acordo com certas regras, seja em dire\xE7\
   \xE3o ao n\xFAmero\u2026"
-lastmod: 2024-02-19 22:05:06.113544
+lastmod: '2024-02-25T18:49:44.660793-07:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar os d\xEDgitos de um n\xFA\
   mero para reduzir sua precis\xE3o de acordo com certas regras, seja em dire\xE7\xE3\

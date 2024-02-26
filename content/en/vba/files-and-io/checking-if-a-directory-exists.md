@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:02.426774-07:00
 description: "Checking if a directory exists in Visual Basic for Applications (VBA)\
   \ is about verifying the presence of a folder within the file system before performing\u2026"
-lastmod: 2024-02-19 22:05:18.415952
+lastmod: '2024-02-25T18:49:56.369585-07:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Visual Basic for Applications (VBA) is\
   \ about verifying the presence of a folder within the file system before performing\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:03.789409-07:00
 description: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar\
   \ om att manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande\
   \ datum,\u2026"
-lastmod: 2024-02-19 22:04:56.692150
+lastmod: '2024-02-25T18:49:35.789953-07:00'
 model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar om att\
   \ manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande datum,\u2026"

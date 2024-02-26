@@ -2,7 +2,7 @@
 date: 2024-01-26 03:45:39.791884-07:00
 description: "Das Runden von Zahlen bedeutet, die Dezimalstellen auf eine festgelegte\
   \ Genauigkeit abzuschneiden, oft auf ganze Zahlen. Programmierer runden, um\u2026"
-lastmod: 2024-02-19 22:05:12.896843
+lastmod: '2024-02-25T18:49:51.023906-07:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, die Dezimalstellen auf eine festgelegte\
   \ Genauigkeit abzuschneiden, oft auf ganze Zahlen. Programmierer runden, um\u2026"

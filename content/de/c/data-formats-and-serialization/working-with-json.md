@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:49.247478-07:00
 description: "Die Arbeit mit JSON (JavaScript Object Notation) in C umfasst das Parsen,\
   \ Generieren und Manipulieren von JSON-Datenstrukturen. Programmierer tun dies,\
   \ um\u2026"
-lastmod: 2024-02-19 22:05:13.317898
+lastmod: '2024-02-25T18:49:51.425446-07:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) in C umfasst das Parsen,\
   \ Generieren und Manipulieren von JSON-Datenstrukturen. Programmierer tun dies,\

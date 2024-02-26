@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:33:16.499038-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Haskell permite a los programas\
   \ diferenciar su salida entre resultados normales y mensajes de error. Esto es\u2026"
-lastmod: 2024-02-19 22:05:17.642356
+lastmod: '2024-02-25T18:49:55.604924-07:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Haskell permite a los programas\
   \ diferenciar su salida entre resultados normales y mensajes de error. Esto es\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:29.451533-07:00
 description: "Att organisera kod i funktioner handlar om att strukturera din Google\
   \ Apps Script-kod genom att separera logiska segment till distinkta block, d\xE4\
   r varje\u2026"
-lastmod: 2024-02-19 22:04:56.681968
+lastmod: '2024-02-25T18:49:35.781314-07:00'
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner handlar om att strukturera din Google Apps\
   \ Script-kod genom att separera logiska segment till distinkta block, d\xE4r varje\u2026"

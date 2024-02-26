@@ -2,7 +2,7 @@
 date: 2024-01-26 04:32:43.753397-07:00
 description: "Trabajar con XML implica analizar, crear y manipular documentos XML,\
   \ un lenguaje de marcado para el almacenamiento y la transferencia de datos. Los\u2026"
-lastmod: 2024-02-19 22:05:17.567151
+lastmod: '2024-02-25T18:49:55.531562-07:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML implica analizar, crear y manipular documentos XML, un\
   \ lenguaje de marcado para el almacenamiento y la transferencia de datos. Los\u2026"

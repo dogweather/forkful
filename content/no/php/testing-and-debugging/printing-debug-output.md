@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:00.335081-07:00
 description: "Utskrift for feils\xF8king er som \xE5 droppe br\xF8dsmuler for \xE5\
   \ finne veien hjem; det hjelper utviklere \xE5 spore appens flyt og finne bugs.\
   \ Vi gj\xF8r det fordi det\u2026"
-lastmod: 2024-02-19 22:05:00.152650
+lastmod: '2024-02-25T18:49:39.061270-07:00'
 model: gpt-4-1106-preview
 summary: "Utskrift for feils\xF8king er som \xE5 droppe br\xF8dsmuler for \xE5 finne\
   \ veien hjem; det hjelper utviklere \xE5 spore appens flyt og finne bugs. Vi gj\xF8\

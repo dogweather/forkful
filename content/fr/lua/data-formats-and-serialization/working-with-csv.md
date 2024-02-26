@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:42.671643-07:00
 description: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs\
   \ S\xE9par\xE9es par des Virgules) implique de parser et de g\xE9n\xE9rer des donn\xE9\
   es textuelles\u2026"
-lastmod: 2024-02-19 22:05:16.681687
+lastmod: '2024-02-25T18:49:54.664236-07:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs S\xE9\
   par\xE9es par des Virgules) implique de parser et de g\xE9n\xE9rer des donn\xE9\

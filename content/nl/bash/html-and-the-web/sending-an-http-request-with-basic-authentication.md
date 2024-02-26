@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:42.186121-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat\
   \ een gebruikersnaam en wachtwoord worden verzonden om de identiteit van een\u2026"
-lastmod: 2024-02-19 22:05:10.066045
+lastmod: '2024-02-25T18:49:48.320460-07:00'
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat een\
   \ gebruikersnaam en wachtwoord worden verzonden om de identiteit van een\u2026"

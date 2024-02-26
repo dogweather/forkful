@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:18.649037-07:00
 description: "Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische\
   \ Daten aus gr\xF6\xDFeren Textmengen zu gewinnen. Programmierer nutzen diese Technik\u2026"
-lastmod: 2024-02-19 22:05:12.415361
+lastmod: '2024-02-25T18:49:50.567755-07:00'
 model: gpt-4-1106-preview
 summary: "Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische Daten\
   \ aus gr\xF6\xDFeren Textmengen zu gewinnen. Programmierer nutzen diese Technik\u2026"

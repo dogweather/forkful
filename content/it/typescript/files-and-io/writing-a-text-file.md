@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:32.763992-07:00
 description: "Scrivere un file di testo in TypeScript \xE8 un'abilit\xE0 critica per\
   \ la persistenza dei dati, le configurazioni o la generazione di log. I programmatori\u2026"
-lastmod: 2024-02-19 22:05:02.255109
+lastmod: '2024-02-25T18:49:41.071008-07:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in TypeScript \xE8 un'abilit\xE0 critica per la\
   \ persistenza dei dati, le configurazioni o la generazione di log. I programmatori\u2026"

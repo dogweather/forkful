@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:49.632031-07:00
 description: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma \xFAnica. Programadores fazem isso para manipular textos, como\u2026"
-lastmod: 2024-02-19 22:05:05.349253
+lastmod: '2024-02-25T18:49:43.940448-07:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma \xFAnica. Programadores fazem isso para manipular textos, como\u2026"

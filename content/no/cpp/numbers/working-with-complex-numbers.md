@@ -2,7 +2,7 @@
 date: 2024-01-26 04:37:48.129950-07:00
 description: "Komplekse tall utvider de reelle tallene ved \xE5 legge til en imagin\xE6\
   r enhet, representert som 'i', hvor i^2 = -1. Programm\xF8rer bruker dem for simuleringer,\u2026"
-lastmod: 2024-02-19 22:05:00.366060
+lastmod: '2024-02-25T18:49:39.272941-07:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider de reelle tallene ved \xE5 legge til en imagin\xE6\
   r enhet, representert som 'i', hvor i^2 = -1. Programm\xF8rer bruker dem for simuleringer,\u2026"

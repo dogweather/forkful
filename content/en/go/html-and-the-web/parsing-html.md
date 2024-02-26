@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:06.970770-07:00
 description: "Parsing HTML in Go involves analyzing the content of HTML files to extract\
   \ data, manipulate the structure, or to convert HTML into other formats.\u2026"
-lastmod: 2024-02-19 22:05:18.137161
+lastmod: '2024-02-25T18:49:56.096387-07:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Go involves analyzing the content of HTML files to extract\
   \ data, manipulate the structure, or to convert HTML into other formats.\u2026"

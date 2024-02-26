@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:21.008477-07:00
 description: "Lokitus on prosessi, jossa kirjataan tapahtumia, virheit\xE4 ja muita\
   \ merkitt\xE4vi\xE4 tietoja ohjelman suorituksen aikana ulkoiseen v\xE4lineeseen,\
   \ usein tiedostoon\u2026"
-lastmod: 2024-02-19 22:05:15.216488
+lastmod: '2024-02-25T18:49:53.247607-07:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on prosessi, jossa kirjataan tapahtumia, virheit\xE4 ja muita merkitt\xE4\
   vi\xE4 tietoja ohjelman suorituksen aikana ulkoiseen v\xE4lineeseen, usein tiedostoon\u2026"

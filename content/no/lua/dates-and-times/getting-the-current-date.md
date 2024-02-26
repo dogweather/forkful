@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:11.836815-07:00
 description: "\xC5 hente den aktuelle datoen i programmering er en avgj\xF8rende oppgave\
   \ for en rekke applikasjoner, inkludert logging, tidsstempelhendelser, eller\u2026"
-lastmod: 2024-02-19 22:05:00.205627
+lastmod: '2024-02-25T18:49:39.112907-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den aktuelle datoen i programmering er en avgj\xF8rende oppgave\
   \ for en rekke applikasjoner, inkludert logging, tidsstempelhendelser, eller\u2026"

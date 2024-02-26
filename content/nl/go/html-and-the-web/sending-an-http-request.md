@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:42.473950-07:00
 description: "Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie\
   \ een oproep wordt gedaan naar een webserver, API of een andere op HTTP-\u2026"
-lastmod: 2024-02-19 22:05:09.368338
+lastmod: '2024-02-25T18:49:47.680929-07:00'
 model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie\
   \ een oproep wordt gedaan naar een webserver, API of een andere op HTTP-\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:13:35.598191-07:00
 description: "O La\xE7o Ler-Avaliar-Imprimir (REPL, na sigla em ingl\xEAs) \xE9 um\
   \ ambiente de programa\xE7\xE3o interativo e simples que recebe entradas \xFAnicas\
   \ do usu\xE1rio, avalia-as\u2026"
-lastmod: 2024-02-19 22:05:05.540182
+lastmod: '2024-02-25T18:49:44.121855-07:00'
 model: gpt-4-0125-preview
 summary: "O La\xE7o Ler-Avaliar-Imprimir (REPL, na sigla em ingl\xEAs) \xE9 um ambiente\
   \ de programa\xE7\xE3o interativo e simples que recebe entradas \xFAnicas do usu\xE1\

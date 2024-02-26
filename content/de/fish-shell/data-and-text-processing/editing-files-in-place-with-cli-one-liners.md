@@ -2,7 +2,7 @@
 date: 2024-01-27 16:21:03.420373-07:00
 description: "Dateien direkt \xFCber die Kommandozeile mit CLI-Einzeilern zu bearbeiten,\
   \ bedeutet, direkt \xC4nderungen an Dateien vorzunehmen, ohne sie in einem Texteditor\u2026"
-lastmod: 2024-02-19 22:05:13.244071
+lastmod: '2024-02-25T18:49:51.355757-07:00'
 model: gpt-4-0125-preview
 summary: "Dateien direkt \xFCber die Kommandozeile mit CLI-Einzeilern zu bearbeiten,\
   \ bedeutet, direkt \xC4nderungen an Dateien vorzunehmen, ohne sie in einem Texteditor\u2026"

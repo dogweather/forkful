@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:29.743769-07:00
 description: "Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten\
   \ tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen\u2026"
-lastmod: 2024-02-19 22:05:15.100169
+lastmod: '2024-02-25T18:49:53.134058-07:00'
 model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten\
   \ tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen\u2026"

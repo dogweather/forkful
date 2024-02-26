@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:42.562601-07:00
 description: "\xC5 skrive en tekstfil i Go inneb\xE6rer \xE5 lage og skrive strenger\
   \ av data til en ny eller eksisterende tekstfil. Programmerere gj\xF8r dette for\
   \ \xE5 bevare data,\u2026"
-lastmod: 2024-02-19 22:04:59.567488
+lastmod: '2024-02-25T18:49:38.518606-07:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Go inneb\xE6rer \xE5 lage og skrive strenger av\
   \ data til en ny eller eksisterende tekstfil. Programmerere gj\xF8r dette for \xE5\
