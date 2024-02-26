@@ -1,10 +1,17 @@
 ---
-title:                "Att starta ett nytt projekt"
-date:                  2024-02-22T17:30:17.778833-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-22, dogweather, reviewed
-  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, dogweather, reviewed
+- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-22 17:30:17.778833-07:00
+description: "Att starta ett nytt projekt i Python handlar om att fr\xE5n b\xF6rjan\
+  \ s\xE4tta upp en strukturerad, underh\xE5llbar ram. Programmerare g\xF6r detta\
+  \ f\xF6r att s\xE4kerst\xE4lla\u2026"
+lastmod: 2024-02-25 18:26:55.490064
+model: gpt-4-0125-preview
+summary: "Att starta ett nytt projekt i Python handlar om att fr\xE5n b\xF6rjan s\xE4\
+  tta upp en strukturerad, underh\xE5llbar ram. Programmerare g\xF6r detta f\xF6r\
+  \ att s\xE4kerst\xE4lla\u2026"
+title: Att starta ett nytt projekt
 ---
 
 {{< edit_this_page >}}

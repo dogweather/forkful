@@ -1,10 +1,23 @@
 ---
-title:                "启动新项目"
-date:                  2024-02-22T17:30:28.977337-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-22, dogweather, reviewed
-  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, dogweather, reviewed
+- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-22 17:30:28.977337-07:00
+description: "\u5728Python\u4E2D\u542F\u52A8\u4E00\u4E2A\u65B0\u9879\u76EE\u5C31\u662F\
+  \u4ECE\u4E00\u5F00\u59CB\u5C31\u5EFA\u7ACB\u4E00\u4E2A\u7ED3\u6784\u5316\u3001\u53EF\
+  \u7EF4\u62A4\u7684\u6846\u67B6\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u786E\u4FDD\u4ED6\u4EEC\u7684\u4EE3\u7801\u6613\u4E8E\u9605\u8BFB\u3001\u8C03\
+  \u8BD5\u548C\u534F\u4F5C\uFF0C\u5C24\u5176\u662F\u968F\u7740\u9879\u76EE\u548C\u56E2\
+  \u961F\u7684\u6210\u957F\u3002"
+lastmod: 2024-02-25 18:27:04.473307
+model: gpt-4-0125-preview
+summary: "\u5728Python\u4E2D\u542F\u52A8\u4E00\u4E2A\u65B0\u9879\u76EE\u5C31\u662F\
+  \u4ECE\u4E00\u5F00\u59CB\u5C31\u5EFA\u7ACB\u4E00\u4E2A\u7ED3\u6784\u5316\u3001\u53EF\
+  \u7EF4\u62A4\u7684\u6846\u67B6\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u786E\u4FDD\u4ED6\u4EEC\u7684\u4EE3\u7801\u6613\u4E8E\u9605\u8BFB\u3001\u8C03\
+  \u8BD5\u548C\u534F\u4F5C\uFF0C\u5C24\u5176\u662F\u968F\u7740\u9879\u76EE\u548C\u56E2\
+  \u961F\u7684\u6210\u957F\u3002"
+title: "\u542F\u52A8\u65B0\u9879\u76EE"
 ---
 
 {{< edit_this_page >}}

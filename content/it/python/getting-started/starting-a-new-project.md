@@ -1,10 +1,15 @@
 ---
-title:                "Iniziare un nuovo progetto"
-date:                  2024-02-22T17:31:02.639168-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-22, dogweather, reviewed
-  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, dogweather, reviewed
+- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-22 17:31:02.639168-07:00
+description: "Avviare un nuovo progetto in Python significa impostare sin dall'inizio\
+  \ una struttura organizzata e mantenibile. I programmatori fanno ci\xF2 per garantire\u2026"
+lastmod: 2024-02-25 18:27:00.538549
+model: gpt-4-0125-preview
+summary: "Avviare un nuovo progetto in Python significa impostare sin dall'inizio\
+  \ una struttura organizzata e mantenibile. I programmatori fanno ci\xF2 per garantire\u2026"
+title: Iniziare un nuovo progetto
 ---
 
 {{< edit_this_page >}}

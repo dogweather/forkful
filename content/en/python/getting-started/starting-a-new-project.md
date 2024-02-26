@@ -1,9 +1,14 @@
 ---
-title:                "Starting a new project"
-date:                  2024-02-22T14:52:40.960064-07:00
-model:                 gpt-4-0125-preview
 changelog:
-- 2024-02-22, dogweather, reviewed 
+- 2024-02-22, dogweather, reviewed
+date: 2024-02-22 14:52:40.960064-07:00
+description: "Starting a new project in Python is about setting up a structured, maintainable\
+  \ framework from the outset. Programmers do this to ensure that their code\u2026"
+lastmod: 2024-02-25 18:27:15.854723
+model: gpt-4-0125-preview
+summary: "Starting a new project in Python is about setting up a structured, maintainable\
+  \ framework from the outset. Programmers do this to ensure that their code\u2026"
+title: Starting a new project
 ---
 
 {{< edit_this_page >}}

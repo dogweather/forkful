@@ -1,9 +1,16 @@
 ---
-title:                "Interpolando uma String"
-date:                  2024-02-25T17:06:50.981967-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-25 17:06:50.981967-07:00
+description: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string\
+  \ incluindo express\xF5es dentro de um literal de string, facilitando a formata\xE7\
+  \xE3o e a\u2026"
+lastmod: 2024-02-25 18:27:03.782709
+model: gpt-4-0125-preview
+summary: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string incluindo\
+  \ express\xF5es dentro de um literal de string, facilitando a formata\xE7\xE3o e\
+  \ a\u2026"
+title: Interpolando uma String
 ---
 
 {{< edit_this_page >}}

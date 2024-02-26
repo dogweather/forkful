@@ -1,10 +1,15 @@
 ---
-title:                "Ein neues Projekt starten"
-date:                  2024-02-22T17:30:12.097340-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-22, dogweather, reviewed
-  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, dogweather, reviewed
+- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-22 17:30:12.097340-07:00
+description: "Ein neues Projekt in Python zu starten bedeutet, von Anfang an ein strukturiertes,\
+  \ wartbares Framework einzurichten. Programmierer machen dies, um\u2026"
+lastmod: 2024-02-25 18:27:10.219412
+model: gpt-4-0125-preview
+summary: "Ein neues Projekt in Python zu starten bedeutet, von Anfang an ein strukturiertes,\
+  \ wartbares Framework einzurichten. Programmierer machen dies, um\u2026"
+title: Ein neues Projekt starten
 ---
 
 {{< edit_this_page >}}

@@ -1,10 +1,15 @@
 ---
-title:                "Iniciando un nuevo proyecto"
-date:                  2024-02-22T17:30:10.233314-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-22, dogweather, reviewed
-  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, dogweather, reviewed
+- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-22 17:30:10.233314-07:00
+description: "Iniciar un nuevo proyecto en Python se trata de establecer un marco\
+  \ estructurado y mantenido desde el principio. Los programadores hacen esto para\u2026"
+lastmod: 2024-02-25 18:27:14.835429
+model: gpt-4-0125-preview
+summary: "Iniciar un nuevo proyecto en Python se trata de establecer un marco estructurado\
+  \ y mantenido desde el principio. Los programadores hacen esto para\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

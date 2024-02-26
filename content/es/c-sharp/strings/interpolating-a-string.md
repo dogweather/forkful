@@ -1,9 +1,16 @@
 ---
-title:                "Interpolando una cadena de texto"
-date:                  2024-02-25T17:07:00.069426-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-25 17:07:00.069426-07:00
+description: "La interpolaci\xF3n de cadenas en C# te permite crear una nueva cadena\
+  \ al incluir expresiones dentro de un literal de cadena, lo que facilita el formateo\
+  \ y\u2026"
+lastmod: 2024-02-25 18:27:15.207471
+model: gpt-4-0125-preview
+summary: "La interpolaci\xF3n de cadenas en C# te permite crear una nueva cadena al\
+  \ incluir expresiones dentro de un literal de cadena, lo que facilita el formateo\
+  \ y\u2026"
+title: Interpolando una cadena de texto
 ---
 
 {{< edit_this_page >}}

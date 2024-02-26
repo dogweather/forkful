@@ -1,9 +1,16 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-date:                  2024-02-25T17:06:53.132911-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-25 17:06:53.132911-07:00
+description: "L'interpolation de cha\xEEnes en C# vous permet de cr\xE9er une nouvelle\
+  \ cha\xEEne en incluant des expressions \xE0 l'int\xE9rieur d'un litt\xE9ral de\
+  \ cha\xEEne, facilitant\u2026"
+lastmod: 2024-02-25 18:27:14.157778
+model: gpt-4-0125-preview
+summary: "L'interpolation de cha\xEEnes en C# vous permet de cr\xE9er une nouvelle\
+  \ cha\xEEne en incluant des expressions \xE0 l'int\xE9rieur d'un litt\xE9ral de\
+  \ cha\xEEne, facilitant\u2026"
+title: "Interpolation d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,14 @@
 ---
-title:                "Een string interpoleren"
-date:                  2024-02-25T17:06:50.580373-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-25 17:06:50.580373-07:00
+description: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
+  ren door expressies binnen een stringliteral op te nemen, waardoor het\u2026"
+lastmod: 2024-02-25 18:27:07.753290
+model: gpt-4-0125-preview
+summary: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
+  ren door expressies binnen een stringliteral op te nemen, waardoor het\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

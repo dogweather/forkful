@@ -1,7 +1,12 @@
 ---
-title:                "Interpolating a string"
-date:                  2024-02-25T17:04:52.754084-07:00
-model:                 gpt-4-0125-preview
+date: 2024-02-25 17:04:52.754084-07:00
+description: "String interpolation in C# allows you to create a new string by including\
+  \ expressions inside a string literal, making it easier to format and concatenate\u2026"
+lastmod: 2024-02-25 18:27:16.178693
+model: gpt-4-0125-preview
+summary: "String interpolation in C# allows you to create a new string by including\
+  \ expressions inside a string literal, making it easier to format and concatenate\u2026"
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

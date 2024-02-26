@@ -1,10 +1,17 @@
 ---
-title:                "Uuden projektin aloittaminen"
-date:                  2024-02-22T17:30:29.394060-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-22, dogweather, reviewed
-  - 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, dogweather, reviewed
+- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-02-22 17:30:29.394060-07:00
+description: "Uuden projektin aloittaminen Pythonilla tarkoittaa rakenteellisen, yll\xE4\
+  pidett\xE4v\xE4n kehyksen pystytt\xE4mist\xE4 alusta alkaen. Ohjelmoijat tekev\xE4\
+  t n\xE4in\u2026"
+lastmod: 2024-02-25 18:27:12.755496
+model: gpt-4-0125-preview
+summary: "Uuden projektin aloittaminen Pythonilla tarkoittaa rakenteellisen, yll\xE4\
+  pidett\xE4v\xE4n kehyksen pystytt\xE4mist\xE4 alusta alkaen. Ohjelmoijat tekev\xE4\
+  t n\xE4in\u2026"
+title: Uuden projektin aloittaminen
 ---
 
 {{< edit_this_page >}}
