@@ -1,50 +1,55 @@
 ---
-date: 2024-01-20 17:50:26.150930-07:00
-description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780, \uBB38\uC790\uC5F4 \uC548\
-  \uC5D0 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC9D1\uC5B4\uB123\
-  \uB294 \uAC83\uC785\uB2C8\uB2E4. \uCF54\uB4DC\uB97C \uAE54\uB054\uD558\uAC8C \uC720\
-  \uC9C0\uD558\uACE0 \uAC00\uB3C5\uC131\uC744 \uB192\uC774\uAE30 \uC704\uD574 \uC0AC\
-  \uC6A9\uD569\uB2C8\uB2E4."
-isCJKLanguage: true
-lastmod: 2024-02-19 22:05:14.125152
-model: gpt-4-1106-preview
-summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780, \uBB38\uC790\uC5F4 \uC548\uC5D0\
-  \ \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC9D1\uC5B4\uB123\uB294\
-  \ \uAC83\uC785\uB2C8\uB2E4. \uCF54\uB4DC\uB97C \uAE54\uB054\uD558\uAC8C \uC720\uC9C0\
-  \uD558\uACE0 \uAC00\uB3C5\uC131\uC744 \uB192\uC774\uAE30 \uC704\uD574 \uC0AC\uC6A9\
-  \uD569\uB2C8\uB2E4."
-title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+title:                "문자열 보간하기"
+date:                  2024-02-25T17:07:12.380490-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가요? 왜 사용하나요?)
-문자열 보간이란, 문자열 안에 변수나 표현식의 값을 집어넣는 것입니다. 코드를 깔끔하게 유지하고 가독성을 높이기 위해 사용합니다.
+## 무엇이며 왜인가?
+C#에서 문자열 보간은 문자열 리터럴 안에 표현식을 포함하여 새 문자열을 생성하게 해주어 문자열의 형식을 지정하고 연결하기 쉽게 해 줍니다. 프로그래머들은 동적 문자열 내용을 다룰 때 코드의 가독성과 유지보수성을 개선하기 위해 이 기능을 사용합니다.
 
-## How to: (어떻게 하나요?)
-```C#
-string name = "세종대왕";
-int year = 1443;
-string invention = "훈민정음";
+## 어떻게 사용하는가:
+C#에서 문자열 보간은 달러 기호(`$`)와 문자열 리터럴로 표시됩니다. 변수 이름이나 표현식은 중괄호(`{}`) 안에 포함됩니다.
 
-// 문자열 보간 사용
-string message = $"안녕하세요, {name}입니다. {year}년에 {invention}을 창제했습니다.";
-Console.WriteLine(message);
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"안녕, {name}! 너는 {age}살이야.";
+Console.WriteLine(interpolatedString);
+// 출력: 안녕, Jane! 너는 28살이야.
 ```
-출력: 안녕하세요, 세종대왕입니다. 1443년에 훈민정음을 창제했습니다.
 
-## Deep Dive (심층 분석)
-C# 6.0부터 문자열 보간이 도입되었고 `$` 기호와 중괄호 `{}`를 사용합니다. 문자열 보간 전에는 `string.Format`을 사용했지만 코드가 복잡해지기 쉽습니다. 문자열 보간은 내부적으로 `string.Format`을 호출하여 처리하지만 훨씬 직관적입니다. 컴파일러는 보간 문자열을 `FormattableString` 객체로 변환하여 컴파일 타임에 문자열을 구성하지 않고, 런타임에 평가합니다.
+더 복잡한 예에서, 중괄호 내에서 연산을 수행하거나 메서드를 호출할 수 있습니다:
 
-보간 문자열 내에서는 표현식을 직접 사용할 수도 있습니다:
-```C#
-int a = 10, b = 20;
-string sumMessage = $"10과 20의 합은 {a + b}입니다.";
-Console.WriteLine(sumMessage);
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"총 가격: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// 출력: 총 가격: $59.97
 ```
-출력: 10과 20의 합은 30입니다.
+중괄호 안의 `:C2` 형식 지정자는 숫자를 소수점 두 자리의 통화로 형식을 지정합니다.
 
-## See Also (관련 자료)
-- [Microsoft - 문자열 보간($)](https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/tokens/interpolated)
-- [C# 문자열 포맷](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.format?view=net-6.0)
-- [C# 가이드 - 문자열 보간의 사용](https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/keywords/interpolated-strings)
+더 고급 형식 지정이나 지역화가 필요한 시나리오에서는 `string.Format` 메서드나 Humanizer와 같은 라이브러리를 고려할 수 있습니다. Humanizer는 문자열, 날짜, 시간, 시간 범위, 숫자 및 수량을 더 읽기 쉬운 형식으로 조작하고 표시할 수 있습니다. 아래는 Humanizer를 사용한 복잡한 문자열 조작의 예입니다. Humanizer는 .NET 표준 라이브러리의 일부가 아니며 NuGet 패키지 `Humanizer`를 설치해야 합니다.
+
+먼저, NuGet을 통해 Humanizer를 설치하세요:
+
+```
+Install-Package Humanizer
+```
+
+그런 다음, 다음과 같이 사용할 수 있습니다:
+
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"이벤트가 {dayDifference}일 전이었습니다.".Humanize();
+Console.WriteLine(humanized);
+// 구성 및 문화에 따라 가능한 출력: 이벤트가 5일 전이었습니다.
+```
+
+이 예제는 기본 사용법을 보여줍니다. Humanizer는 문자열, 날짜, 숫자 등에 적용할 수 있는 다양한 기능을 지원하여 애플리케이션을 더욱 접근하기 쉽고 직관적으로 만듭니다.

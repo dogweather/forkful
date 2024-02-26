@@ -1,42 +1,55 @@
 ---
-date: 2024-01-20 17:50:41.261255-07:00
-description: "\u6587\u5B57\u5217\u88DC\u9593\u3068\u306F\u3001\u6587\u5B57\u5217\u306E\
-  \u4E2D\u306B\u76F4\u63A5\u5909\u6570\u306A\u3069\u3092\u57CB\u3081\u8FBC\u3080\u3053\
-  \u3068\u3067\u3059\u3002\u4F7F\u3046\u7406\u7531\u306F\u7C21\u5358\u3067\u3001\u30B3\
-  \u30FC\u30C9\u306E\u8AAD\u307F\u3084\u3059\u3055\u3092\u4FDD\u3061\u3064\u3064\u3001\
-  \u52D5\u7684\u306B\u6587\u5B57\u5217\u306E\u5185\u5BB9\u3092\u69CB\u7BC9\u3067\u304D\
-  \u308B\u304B\u3089\u3067\u3059\u3002"
-isCJKLanguage: true
-lastmod: 2024-02-19 22:05:01.255323
-model: gpt-4-1106-preview
-summary: "\u6587\u5B57\u5217\u88DC\u9593\u3068\u306F\u3001\u6587\u5B57\u5217\u306E\
-  \u4E2D\u306B\u76F4\u63A5\u5909\u6570\u306A\u3069\u3092\u57CB\u3081\u8FBC\u3080\u3053\
-  \u3068\u3067\u3059\u3002\u4F7F\u3046\u7406\u7531\u306F\u7C21\u5358\u3067\u3001\u30B3\
-  \u30FC\u30C9\u306E\u8AAD\u307F\u3084\u3059\u3055\u3092\u4FDD\u3061\u3064\u3064\u3001\
-  \u52D5\u7684\u306B\u6587\u5B57\u5217\u306E\u5185\u5BB9\u3092\u69CB\u7BC9\u3067\u304D\
-  \u308B\u304B\u3089\u3067\u3059\u3002"
-title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
+title:                "文字列の補間"
+date:                  2024-02-25T17:06:54.053293-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なぜ？とは？)
-文字列補間とは、文字列の中に直接変数などを埋め込むことです。使う理由は簡単で、コードの読みやすさを保ちつつ、動的に文字列の内容を構築できるからです。
+## 何となく理由
+C#での文字列補間は、文字列リテラル内に式を含めることで、新しい文字列を作成することを可能にします。これは文字列のフォーマットと連結を容易にするため、プログラマーは動的な文字列内容を扱う際にコードの読みやすさと保守性を向上させるためにこの機能を利用します。
 
-## How to: (方法)
-```C#
-string name = "Taro";
+## 方法
+C#での文字列補間は、ドル記号(`$`)に続いて文字列リテラルによって示されます。変数名や式は中括弧(`{}`)で囲まれます。
+
+```csharp
+string name = "Jane";
 int age = 28;
-string message = $"こんにちは、{name}さん。あなたは{age}歳ですね。";
-Console.WriteLine(message);
-```
-出力:
-```
-こんにちは、Taroさん。あなたは28歳ですね。
+string interpolatedString = $"こんにちは、{name}さん！ あなたは{age}歳です。";
+Console.WriteLine(interpolatedString);
+// 出力: こんにちは、Janeさん！ あなたは28歳です。
 ```
 
-## Deep Dive (探求)
-昔は`String.Format()`や文字列の連結を利用していましたが、C# 6.0から文字列補間が導入され、コードが格段に読みやすくなりました。補間は`$`記号を使い、中括弧`{}`で変数を囲むだけ。内部的には`String.Format()`が使用されているので、パフォーマンス上の大きな違いはありません。ただし、コンパイラが生成するILコードは若干異なることがあるので面白いですね。他の方法としては、`StringBuilder`を使う方法もありますが、簡単に済ませるには文字列補間がベストです。
+もう少し複雑な例では、中括弧内で操作を実行したりメソッドを呼び出したりすることができます:
 
-## See Also (関連情報)
-- Microsoftの公式ドキュメント: [String interpolation (C# Reference)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"合計価格: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// 出力: 合計価格: $59.97
+```
+中括弧内の`:C2`形式指定子は、数値を2小数点の通貨としてフォーマットします。
+
+より高度なフォーマットやローカリゼーションが必要な場合は、`string.Format`メソッドやHumanizerのようなライブラリの使用を検討するかもしれません。Humanizerは、文字列、日付、時間、タイムスパン、数値、量をより人間が読みやすい形式で操作し表示することができます。以下は、Humanizerを使用して複雑な文字列操作を行う例です。Humanizerは.NET標準ライブラリの一部ではなく、NuGetパッケージ`Humanizer`をインストールする必要があります。
+
+まず、NuGet経由でHumanizerをインストールします:
+
+```
+Install-Package Humanizer
+```
+
+その後、以下のように使用します:
+
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"そのイベントは{dayDifference}日前でした。".Humanize();
+Console.WriteLine(humanized);
+// 設定とカルチャーによって、可能な出力: そのイベントは5日前でした。
+```
+
+この例は基本的な使い方を示しています。Humanizerは、文字列、日付、数値などに適用できる幅広い機能をサポートしており、アプリケーションをよりアクセスしやすく直感的にします。

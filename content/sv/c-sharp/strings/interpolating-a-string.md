@@ -1,40 +1,55 @@
 ---
-date: 2024-01-20 17:50:23.371599-07:00
-description: "Stringinterpolering i C# l\xE5ter dig smidigt infoga variabler i str\xE4\
-  ngar. Det g\xF6r koden mer l\xE4slig och underl\xE4ttar dynamisk textmanipulation."
-lastmod: 2024-02-19 22:04:57.115407
-model: gpt-4-1106-preview
-summary: "Stringinterpolering i C# l\xE5ter dig smidigt infoga variabler i str\xE4\
-  ngar. Det g\xF6r koden mer l\xE4slig och underl\xE4ttar dynamisk textmanipulation."
-title: "Interpolera en str\xE4ng"
+title:                "Interpolering av en sträng"
+date:                  2024-02-25T17:07:02.554791-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Stringinterpolering i C# låter dig smidigt infoga variabler i strängar. Det gör koden mer läslig och underlättar dynamisk textmanipulation.
+Stränginterpolering i C# gör det möjligt att skapa en ny sträng genom att inkludera uttryck inuti en strängliteral, vilket underlättar formatering och sammanfogning av strängar. Programmerare använder denna funktion för att förbättra kodläsbarheten och underhållbarheten, särskilt när de hanterar dynamiskt stränginnehåll.
 
-## Så här gör du:
-```
-C#
-string name = "Anna";
-int age = 32;
-string greeting = $"Hej {name}, du är {age} år gammal.";
-Console.WriteLine(greeting);
-```
-Utskrift: `Hej Anna, du är 32 år gammal.`
+## Hur gör man:
+I C# anges stränginterpolering med ett dollartecken (`$`) följt av en strängliteral. Variabelnamn eller uttryck omsluts av måsvingar (`{}`).
 
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"Hej, {name}! Du är {age} år gammal.";
+Console.WriteLine(interpolatedString);
+// Utskrift: Hej, Jane! Du är 28 år gammal.
 ```
-C#
-double price = 99.50;
+
+I ett mer komplext exempel kan du utföra operationer eller anropa metoder inuti måsvingarna:
+
+```csharp
+double price = 19.99;
 int quantity = 3;
-string orderMessage = $"Totalt: {quantity} produkter för {price*quantity:C2}.";
-Console.WriteLine(orderMessage);
+string orderDetail = $"Totalt pris: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// Utskrift: Totalt pris: $59.97
 ```
-Utskrift: `Totalt: 3 produkter för 298,50 kr.`
+Format-specifikatorn `:C2` inuti måsvingarna formaterar numret som en valuta med två decimaler.
 
-## Djupdykning:
-Stringinterpolering introducerades i C# 6 och används med `$` före citattecknet. Det ersättade `String.Format()`, vilket var mer klumpigt. Till exempel `String.Format("Hej {0}, du är {1} år gammal.", name, age)`. Med stringinterpolering infogas värdena direkt och `{}` innehåller kod som körs vid exekvering. Det är viktigt att notera att C# kompilerar interpolerade strängar till `String.Format()` bakom kulisserna, vilket innebär att prestandan är densamma. Använd `{{` och `}}` för klammerparenteser i det slutliga strängresultatet.
+För scenarier som kräver mer avancerad formatering eller lokalisering kan du överväga att använda metoden `string.Format` eller bibliotek som Humanizer. Humanizer kan manipulera och visa strängar, datum, tider, tidsintervaller, nummer och kvantiteter i ett mer läsbart format. Nedan följer ett exempel på användning av Humanizer för komplex strängmanipulering. Notera att Humanizer inte är en del av .NET-standardsbiblioteket och kräver installation av NuGet-paketet `Humanizer`.
 
-## Se även:
-- [Microsofts officiella dokumentation om stringinterpolering](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+Först, installera Humanizer via NuGet:
+
+```
+Install-Package Humanizer
+```
+
+Sedan kan du använda det som följer:
+
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"Händelsen var {dayDifference} dagar sedan.".Humanize();
+Console.WriteLine(humanized);
+// Beroende på konfiguration och kultur, en möjlig utskrift: Händelsen var 5 dagar sedan.
+```
+
+Detta exempel demonstrerar grundläggande användning. Humanizer stöder ett brett utbud av funktionaliteter som kan appliceras på strängar, datum, nummer och mer, vilket gör dina applikationer mer tillgängliga och intuitiva.

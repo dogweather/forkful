@@ -1,61 +1,55 @@
 ---
-date: 2024-01-20 17:50:34.988572-07:00
-description: "\u5B57\u7B26\u4E32\u63D2\u503C\u662F\u5C06\u53D8\u91CF\u548C\u8868\u8FBE\
-  \u5F0F\u5D4C\u5165\u5230\u5B57\u7B26\u4E32\u5B57\u9762\u503C\u4E2D\u7684\u8FC7\u7A0B\
-  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7B80\u5316\u5B57\u7B26\
-  \u4E32\u7684\u7EC4\u5408\u548C\u683C\u5F0F\u5316\uFF0C\u4F7F\u4EE3\u7801\u66F4\u52A0\
-  \u6E05\u6670\u6613\u8BFB\u3002"
-isCJKLanguage: true
-lastmod: 2024-02-19 22:05:06.785871
-model: gpt-4-1106-preview
-summary: "\u5B57\u7B26\u4E32\u63D2\u503C\u662F\u5C06\u53D8\u91CF\u548C\u8868\u8FBE\
-  \u5F0F\u5D4C\u5165\u5230\u5B57\u7B26\u4E32\u5B57\u9762\u503C\u4E2D\u7684\u8FC7\u7A0B\
-  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7B80\u5316\u5B57\u7B26\
-  \u4E32\u7684\u7EC4\u5408\u548C\u683C\u5F0F\u5316\uFF0C\u4F7F\u4EE3\u7801\u66F4\u52A0\
-  \u6E05\u6670\u6613\u8BFB\u3002"
-title: "\u5B57\u7B26\u4E32\u63D2\u503C"
+title:                "字符串插值"
+date:                  2024-02-25T17:06:53.421699-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-字符串插值是将变量和表达式嵌入到字符串字面值中的过程。程序员这样做是为了简化字符串的组合和格式化，使代码更加清晰易读。
+## 什么和为什么?
+在C#中，字符串插值允许你通过在字符串字面量中包含表达式来创建新字符串，这使得格式化和连接字符串变得更简单。程序员们使用这个特性来提高代码的可读性和可维护性，特别是在处理动态字符串内容时。
 
-## How to: (如何做：)
-使用字符串插值，只需在字符串前加一个 `$` 符号，并将变量或表达式包围在 `{}` 中。
+## 如何操作:
+在C#中，字符串插值通过一个美元符号(`$`)跟随一个字符串字面量来表示。变量名或表达式被包围在花括号(`{}`)中。
 
-```C#
-string name = "小明";
+```csharp
+string name = "Jane";
 int age = 28;
-string greeting = $"你好, {name}! 你今年 {age} 岁。";
-
-Console.WriteLine(greeting);
+string interpolatedString = $"你好, {name}! 你今年 {age} 岁。";
+Console.WriteLine(interpolatedString);
+// 输出: 你好, Jane! 你今年 28 岁。
 ```
 
-输出：
+在更复杂的例子中，你可以在花括号内执行操作或调用方法：
+
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"总价: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// 输出: 总价: $59.97
 ```
-你好, 小明! 你今年 28 岁。
+花括号内的`:C2`格式说明符将该数字格式化为带有两位小数的货币格式。
+
+对于需要更高级格式化或本地化的场景，你可能会考虑使用`string.Format`方法或像Humanizer这样的库。Humanizer可以以更易读的格式管理和显示字符串、日期、时间、时间跨度、数字和数量。以下是使用Humanizer进行复杂字符串操作的一个例子。请注意，Humanizer不是.NET标准库的一部分，需要安装NuGet包`Humanizer`。
+
+首先，通过NuGet安装Humanizer：
+
+```
+Install-Package Humanizer
 ```
 
-## Deep Dive (深入探索)
-字符串插值在 C# 6.0 中被引入，并且自那以后就是格式化字符串的首选方法。在此之前，程序员通常使用 `String.Format()` 方法或加号 (`+`) 连接变量到字符串中。
+然后，你可以如下使用它：
 
-使用字符串插值，C# 编译器在幕后转换插值表达式为 `String.Format()` 调用。这意味着 `"Hello, {name}!"` 实际上是 `String.Format("Hello, {0}!", name)` 的现代化简写。字符串插值表达式中的代码在运行时计算，并且可以包括复杂的逻辑。
+```csharp
+using Humanizer;
 
-除了简单的变量替换，字符串插值也支持格式化。例如：
-
-```C#
-double price = 123.456;
-string message = $"价格: {price:C}";
-
-Console.WriteLine(message);
+int dayDifference = 5;
+string humanized = $"该事件发生在 {dayDifference} 天前。".Humanize();
+Console.WriteLine(humanized);
+// 根据配置和文化环境，可能的输出：该事件发生在 5 天前。
 ```
-输出一个格式化的货币值：
-```
-价格: ¥123.46
-```
-在上面的例子中，`:C` 指定了货币格式。字符串插值不止是方便，它还具有提升代码性能的潜能，尤其是在处理大量的字符串拼接时。
 
-## See Also (另请参阅)
-- [字符串插值 (官方文档)](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/tokens/interpolated)
-- [C# 字符串格式化](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/composite-formatting)
+这个例子演示了基本用法。Humanizer支持广泛的功能性，可以应用于字符串、日期、数字等，使你的应用更加易于访问和直观。

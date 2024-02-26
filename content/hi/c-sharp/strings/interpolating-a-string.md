@@ -1,49 +1,55 @@
 ---
-date: 2024-01-20 17:50:25.589944-07:00
-description: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\
-  \u0948 \u091C\u093F\u0938\u0938\u0947 \u0939\u092E variables \u0914\u0930 expressions\
-  \ \u0915\u094B directly strings \u0915\u0947 \u0905\u0902\u0926\u0930 \u091C\u094B\
-  \u0921\u093C \u0938\u0915\u0924\u0947 \u0939\u0948\u0902. \u092F\u0939 \u0915\u094B\
-  \u0921 \u0915\u094B \u0914\u0930 \u0905\u0927\u093F\u0915 \u092A\u0920\u0928\u0940\
-  \u092F \u0914\u0930 \u092E\u0947\u0902\u091F\u0947\u0928 \u0915\u0930\u0928\u0947\
-  \ \u092E\u0947\u0902\u2026"
-lastmod: 2024-02-19 22:05:11.314016
-model: gpt-4-1106-preview
-summary: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\u0948\
-  \ \u091C\u093F\u0938\u0938\u0947 \u0939\u092E variables \u0914\u0930 expressions\
-  \ \u0915\u094B directly strings \u0915\u0947 \u0905\u0902\u0926\u0930 \u091C\u094B\
-  \u0921\u093C \u0938\u0915\u0924\u0947 \u0939\u0948\u0902. \u092F\u0939 \u0915\u094B\
-  \u0921 \u0915\u094B \u0914\u0930 \u0905\u0927\u093F\u0915 \u092A\u0920\u0928\u0940\
-  \u092F \u0914\u0930 \u092E\u0947\u0902\u091F\u0947\u0928 \u0915\u0930\u0928\u0947\
-  \ \u092E\u0947\u0902\u2026"
-title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
-  \u094B\u0932\u0947\u0936\u0928"
+title:                "स्ट्रिंग का अंतर्कलन"
+date:                  2024-02-25T17:07:56.114882-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-String interpolation एक तरीका है जिससे हम variables और expressions को directly strings के अंदर जोड़ सकते हैं. यह कोड को और अधिक पठनीय और मेंटेन करने में आसान बनाता है.
+## क्या और क्यों?
+C# में स्ट्रिंग इंटरपोलेशन आपको एक स्ट्रिंग लिटरल के अंदर एक्सप्रेशन शामिल करके एक नई स्ट्रिंग बनाने की अनुमति देता है, इससे स्ट्रिंग्स को फॉर्मेट करना और उन्हें जोड़ना आसान हो जाता है। प्रोग्रामर्स इस सुविधा का उपयोग कोड की पठनीयता और अनुरक्षणीयता को सुधारने के लिए करते हैं, विशेष रूप से जब वे गतिशील स्ट्रिंग सामग्री से निपट रहे होते हैं।
 
-## How to: (कैसे करें:)
-```C#
-string name = "Rohan";
-int age = 25;
-// Using string interpolation
-string greeting = $"Hello, {name}! You are {age} years old.";
-Console.WriteLine(greeting);
-```
-Sample Output:
-```
-Hello, Rohan! You are 25 years old.
+## कैसे करें:
+C# में, स्ट्रिंग इंटरपोलेशन एक डॉलर साइन (`$`) द्वारा दिखाया जाता है, जिसके बाद एक स्ट्रिंग लिटरल आता है। वेरिएबल के नाम या एक्सप्रेशन को कर्ली ब्रेसिस (`{}`) के अंदर रखा जाता है।
+
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"Hello, {name}! You are {age} years old.";
+Console.WriteLine(interpolatedString);
+// आउटपुट: Hello, Jane! You are 28 years old.
 ```
 
-## Deep Dive (गहराई से जानकारी:)
-String interpolation C# में C# 6.0 से शुरू हुआ था. इससे पहले, programmers `String.Format()` का इस्तेमाल करते थे, जो एक तरह से अव्यवहारिक था क्योंकि आपको placeholders का ध्यान रखना पड़ता था. Interpolation में, आप { } braces के अंदर directly expressions डाल सकते हैं.
+एक और जटिल उदाहरण में, आप कर्ली ब्रेसिस के अंदर ऑपरेशन्स प्रदर्शित कर सकते हैं या मेथड कॉल कर सकते हैं:
 
-Implementation की बात करें तो, JIT compiler आपके interpolated string को `String.Format()` में बदल देता है. आप complex expressions भी use कर सकते हैं, जैसे `$"Sum of {a} and {b} is {a + b}"`. यह C# में एक साफ, संक्षिप्त और powerful feature है.
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"Total price: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// आउटपुट: Total price: $59.97
+```
+कर्ली ब्रेसिस के अंदर `:C2` फॉर्मेट स्पेसिफायर नंबर को दो दशमलव स्थानों के साथ एक मुद्रा के रूप में प्रारूपित करता है।
 
-## See Also (और देखें:)
-- [String interpolation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-- [C# Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/)
-- [String.Format Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.format)
+और अधिक उन्नत प्रारूपण या स्थानीयकरण की आवश्यकता वाले परिदृश्यों के लिए, आप `string.Format` मेथड या Humanizer जैसे लाइब्रेरीस का उपयोग करने पर विचार कर सकते हैं। Humanizer स्ट्रिंग्स, तारीखों, समय, समयकाल, संख्याओं, और मात्राओं को अधिक मानव-पठनीय प्रारूप में प्रदर्शित और निपटाने में सक्षम है। नीचे एक उदाहरण है जो जटिल स्ट्रिंग प्रबंधन के लिए Humanizer का उपयोग करता है। ध्यान दें कि Humanizer .NET स्टैंडर्ड लाइब्रेरी का हिस्सा नहीं है और इसके लिए NuGet पैकेज `Humanizer` को स्थापित करना आवश्यक है।
+
+पहले, NuGet के माध्यम से Humanizer स्थापित करें:
+
+```
+Install-Package Humanizer
+```
+
+फिर, आप इसे निम्नानुसार उपयोग कर सकते हैं:
+
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"The event was {dayDifference} days ago.".Humanize();
+Console.WriteLine(humanized);
+// निर्भर करता है कि कॉन्फ़िगरेशन और संस्कृति पर, संभावित आउटपुट: The event was 5 days ago.
+```
+
+यह उदाहरण मूल उपयोग दिखाता है। Humanizer स्ट्रिंग्स, तारीखें, संख्याएं, और अधिक को लागू करने के लिए व्यापक सीमा के कार्यक्षमताओं का समर्थन करता है, जिससे आपके एप्लिकेशन अधिक सुलभ और सहज बनते हैं।

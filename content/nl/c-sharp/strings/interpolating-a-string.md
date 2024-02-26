@@ -1,53 +1,55 @@
 ---
+title:                "Een string interpoleren"
+date:                  2024-02-25T17:06:50.580373-07:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-01-28, gpt-4-0125-preview, translated from English
-date: 2024-01-28 22:02:01.050396-07:00
-description: "String interpolatie stelt je in staat om strings te bouwen met behulp\
-  \ van ingesloten expressies. Het maakt code leesbaar en formatteren een fluitje\
-  \ van\u2026"
-lastmod: 2024-02-19 22:05:09.853192
-model: gpt-4-0125-preview
-summary: "String interpolatie stelt je in staat om strings te bouwen met behulp van\
-  \ ingesloten expressies. Het maakt code leesbaar en formatteren een fluitje van\u2026"
-title: Een string interpoleren
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-String interpolatie stelt je in staat om strings te bouwen met behulp van ingesloten expressies. Het maakt code leesbaar en formatteren een fluitje van een cent.
+Stringinterpolatie in C# stelt je in staat om een nieuwe string te creëren door expressies binnen een stringliteral op te nemen, waardoor het gemakkelijker wordt om strings te formatteren en te concatenaten. Programmeurs gebruiken deze functie om de leesbaarheid en het onderhoud van de code te verbeteren, met name wanneer ze te maken hebben met dynamische stringinhoud.
 
 ## Hoe te:
-```C#
-string naam = "Alex";
-int leeftijd = 29;
-string groet = $"Hallo, {naam}! Je bent {leeftijd} jaar oud.";
-Console.WriteLine(groet);
-```
-Uitvoer:
-```
-Hallo, Alex! Je bent 29 jaar oud.
-```
+In C# wordt stringinterpolatie aangeduid met een dollarteken (`$`) gevolgd door een stringliteral. De variabelenamen of expressies worden tussen accolades (`{}`) geplaatst.
 
-## Diepgaande Duik
-String interpolatie is geïntroduceerd in C# 6, wat het gemak van het formatteren van strings versterkt ten opzichte van de oudere `String.Format` methode. Historisch gezien zou je zoiets als dit kunnen tegenkomen:
-
-```C#
-string groet = string.Format("Hallo, {0}! Je bent {1} jaar oud.", naam, leeftijd);
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"Hallo, {name}! Je bent {age} jaar oud.";
+Console.WriteLine(interpolatedString);
+// Output: Hallo, Jane! Je bent 28 jaar oud.
 ```
 
-Interpolatie in C# is een syntactische suiker die de compiler omzet in een `String.Format` aanroep. Het werkt door de geïnterpoleerde string te parsen en de expressies ingesloten in `{}` te vervangen door de stringrepresentaties van de resultaten van de expressies. Intern gebruikt het een `StringBuilder` onder de motorkap, waardoor het efficiënter is dan concatenatie in loops.
+In een complexer voorbeeld kun je binnen de accolades operaties uitvoeren of methoden aanroepen:
 
-Een alternatief voor string interpolatie is de plus (`+`) operator voor concatenatie, maar dat kan snel onleesbaar en omslachtig worden, en vaak meer foutgevoelig.
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"Totale prijs: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// Output: Totale prijs: $59.97
+```
+De `:C2` formaatspecificeerder binnen de accolades formatteert het getal als een valuta met twee decimalen.
 
-```C#
-string groet = "Hallo, " + naam + "! Je bent " + leeftijd + " jaar oud.";
+Voor scenario's die geavanceerdere formattering of lokalisatie vereisen, kun je overwegen de `string.Format` methode of bibliotheken zoals Humanizer te gebruiken. Humanizer kan strings, datums, tijden, tijdsintervallen, getallen en hoeveelheden manipuleren en weergeven in een meer leesbaar formaat voor mensen. Hieronder is een voorbeeld van het gebruik van Humanizer voor complexe stringmanipulatie. Merk op dat Humanizer geen deel uitmaakt van de standaard .NET-bibliotheek en vereist dat het NuGet-pakket `Humanizer` wordt geïnstalleerd.
+
+Installeer eerst Humanizer via NuGet:
+
+```
+Install-Package Humanizer
 ```
 
-Gezien deze alternatieven is string interpolatie vaak de voorkeurskeuze vanwege de duidelijkheid en efficiëntie in de meeste scenario's.
+Vervolgens kun je het als volgt gebruiken:
 
-## Zie Ook
-Voor meer over string formattering in C#, MSDN is je maatje:
-- [String interpolatie](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-- [String.Format](https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-6.0)
-- [StringBuilder](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0)
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"Het evenement was {dayDifference} dagen geleden.".Humanize();
+Console.WriteLine(humanized);
+// Afhankelijk van de configuratie en cultuur, een mogelijke output: Het evenement was 5 dagen geleden.
+```
+
+Dit voorbeeld illustreert het basisgebruik. Humanizer ondersteunt een breed scala aan functionaliteiten die kunnen worden toegepast op strings, datums, getallen, en meer, waardoor je applicaties toegankelijker en intuïtiever worden.

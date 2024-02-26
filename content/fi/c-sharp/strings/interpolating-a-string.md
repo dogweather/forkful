@@ -1,52 +1,55 @@
 ---
-date: 2024-01-20 17:50:53.631203-07:00
-description: "Merkkijonojen interpolointi tarkoittaa muuttujien, lausekkeiden ja funktioiden\
-  \ arvojen sijoittamista suoraan merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
-  t\xE4\u2026"
-lastmod: 2024-02-19 22:05:15.452553
-model: gpt-4-1106-preview
-summary: "Merkkijonojen interpolointi tarkoittaa muuttujien, lausekkeiden ja funktioiden\
-  \ arvojen sijoittamista suoraan merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
-  t\xE4\u2026"
-title: Merkkijonon interpolointi
+title:                "Merkkijonon interpolointi"
+date:                  2024-02-25T17:06:58.048640-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Merkkijonojen interpolointi tarkoittaa muuttujien, lausekkeiden ja funktioiden arvojen sijoittamista suoraan merkkijonoihin. Ohjelmoijat käyttävät tätä tuottaakseen helposti luettavia ja ylläpidettäviä viestejä tai tulosteita.
+## Mikä ja miksi?
+Merkkijonon interpolaatio C#:ssa mahdollistaa uuden merkkijonon luomisen sisällyttämällä lausekkeita merkkijonoliteraalin sisään, mikä tekee merkkijonojen muotoilusta ja yhdistämisestä helpompaa. Ohjelmoijat käyttävät tätä ominaisuutta parantaakseen koodin luettavuutta ja ylläpidettävyyttä, erityisesti käsiteltäessä dynaamista merkkijonosisältöä.
 
-## How to:
-```C#
-// Käytetään merkkijonojen interpolointia muuttujien yhdistämiseen
-string nimi = "Pekka";
-int ika = 30;
-string tervehdys = $"Hei, minun nimeni on {nimi} ja olen {ika} vuotta vanha.";
+## Kuinka:
+C#:ssa merkkijonon interpolaatio merkitään dollarimerkillä (`$`) seurattuna merkkijonoliteraalista. Muuttujan nimet tai lausekkeet sijoitetaan aaltosulkeisiin (`{}`).
 
-Console.WriteLine(tervehdys);
-// Tuloste: Hei, minun nimeni on Pekka ja olen 30 vuotta vanha.
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"Hei, {name}! Olet {age} vuotta vanha.";
+Console.WriteLine(interpolatedString);
+// Tuloste: Hei, Jane! Olet 28 vuotta vanha.
 ```
 
-```C#
-// Laskelmien teko suoraan interpoloidussa merkkijonossa
-double hinta = 19.99;
-double vero = 0.24;
-string hintaviesti = $"Tuotteen loppuhinta veron kanssa on {hinta * (1 + vero):C}.";
+Monimutkaisemmassa esimerkissä voit suorittaa operaatioita tai kutsua metodeja aaltosulkujen sisällä:
 
-Console.WriteLine(hintaviesti);
-// Tuloste: Tuotteen loppuhinta veron kanssa on 24,79 €.
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"Kokonaishinta: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// Tuloste: Kokonaishinta: 59,97 $
+```
+Merkkijonon sisällä aaltosulkujen sisäinen `:C2` muotoilumääre muotoilee numeron valuuttana kahdella desimaalipaikalla.
+
+Skenaarioissa, jotka vaativat monimutkaisempaa muotoilua tai lokalisointia, kannattaa harkita `string.Format` -metodin käyttöä tai kirjastoja, kuten Humanizer. Humanizer voi manipuloida ja näyttää merkkijonoja, päivämääriä, aikoja, aikavälejä, numeroita ja määriä ihmisen luettavammassa muodossa. Alla on esimerkki Humanizerin käytöstä monimutkaisessa merkkijonomanipulaatiossa. Huomaa, että Humanizer ei ole osa .NET-standardikirjastoa ja sen asentaminen vaatii NuGet-paketin `Humanizer`.
+
+Asenna Humanizer ensin NuGetin kautta:
+
+```
+Install-Package Humanizer
 ```
 
-## Deep Dive
-Merkkijonojen interpolointi otettiin käyttöön C#:ssa versiossa 6.0 ja sitä on paranneltu versio versiolta. Ennen interpolointia ohjelmoijat käyttivät `String.Format()`-metodia tai konkatenointia, mutta nämä olivat monimutkaisempia ja alttiimpia virheille.
+Tämän jälkeen voit käyttää sitä seuraavasti:
 
-Interpoloitu merkkijono käyttää `$`-merkkiä tunnistamaan, että merkkijonto sisältää interpolaatioita. Käyttämällä `{}` aaltosulkeita, voimme laittaa muuttujia ja lausekkeita suoraan merkkijonon sisään.
+```csharp
+using Humanizer;
 
-C#:n kompilaattori käsittelee interpoloidut merkkijonot sisäisesti kutsumalla `String.Format()`-metodia. Tämä tarkoittaa, että suorituskyky on yhteneväinen `String.Format()`-kutsujen kanssa, mutta koodi on selkeämpää.
+int dayDifference = 5;
+string humanized = $"Tapahtuma oli {dayDifference} päivää sitten.".Humanize();
+Console.WriteLine(humanized);
+// Riippuen konfiguraatiosta ja kulttuurista, mahdollinen tuloste: Tapahtuma oli 5 päivää sitten.
+```
 
-Kun käytetään interpolointia suurissa projekteissa kannattaa kiinnittää huomiota siihen, miten interpolaatiot tehdään. Monien muuttujien ja monimutkaisten lausekkeiden kanssa koodi voi muuttua sekavaksi.
-
-## See Also
-- [Microsoftin dokumentaatio merkkijonojen interpoloinnista](https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/tokens/interpolated)
-- [C#-ohje: Merkkijonot](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/strings/)
-- [String.Format() metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.format?view=netcore-3.1)
+Tämä esimerkki osoittaa peruskäytön. Humanizer tukee laajaa valikoimaa toiminnallisuuksia, joita voidaan soveltaa merkkijonoihin, päivämääriin, numeroihin ja muuhun, tehden sovelluksistasi helpommin saavutettavia ja intuitiivisia.

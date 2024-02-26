@@ -1,44 +1,55 @@
 ---
-date: 2024-01-20 17:50:23.349565-07:00
-description: "Stringinterpolasjon lar deg plugge variabler og uttrykk rett inn i tekststrenger.\
-  \ Det forenkler b\xE5de koden og gj\xF8r det mer leselig, ved \xE5 slippe \xE5 bruke\u2026"
-lastmod: 2024-02-19 22:05:00.047473
-model: gpt-4-1106-preview
-summary: "Stringinterpolasjon lar deg plugge variabler og uttrykk rett inn i tekststrenger.\
-  \ Det forenkler b\xE5de koden og gj\xF8r det mer leselig, ved \xE5 slippe \xE5 bruke\u2026"
-title: Interpolering av en streng
+title:                "Interpolering av en streng"
+date:                  2024-02-25T17:07:03.825592-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Hva og hvorfor?
+Strenginterpolering i C# lar deg opprette en ny streng ved å inkludere uttrykk inni en strengbokstavelig, noe som gjør det enklere å formatere og konkatere strenger. Programmerere bruker denne funksjonen for å forbedre kodelesbarheten og vedlikeholdbarheten, spesielt når de håndterer dynamisk strenginnhold.
 
-Stringinterpolasjon lar deg plugge variabler og uttrykk rett inn i tekststrenger. Det forenkler både koden og gjør det mer leselig, ved å slippe å bruke en haug av `+` teikn for å sette sammen strenger.
+## Hvordan:
+I C#, indikeres strenginterpolering med et dollartegn (`$`) etterfulgt av en strengbokstavelig. Variabelnavnene eller uttrykkene er omsluttet med krøllparenteser (`{}`).
 
-## How to:
-
-Med interpolasjon bruker vi `{}` for å inkludere variabler inne i en streng, forhåndet av `$`:
-
-```C#
-string navn = "Ola";
-int alder = 25;
-string beskrivelse = $"Hei, jeg heter {navn} og jeg er {alder} år gammel.";
-Console.WriteLine(beskrivelse);
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"Hei, {name}! Du er {age} år gammel.";
+Console.WriteLine(interpolatedString);
+// Utskrift: Hei, Jane! Du er 28 år gammel.
 ```
 
-Sample output:
+I et mer komplekst eksempel kan du utføre operasjoner eller kalle metoder innenfor krøllparentesene:
+
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"Totalpris: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// Utskrift: Totalpris: $59.97
 ```
-Hei, jeg heter Ola og jeg er 25 år gammel.
+Formatbestemmeren `:C2` inni krøllparentesene formaterer tallet som en valuta med to desimaler.
+
+For scenarier som krever mer avansert formatering eller lokalisering, kan du vurdere å bruke `string.Format`-metoden eller biblioteker som Humanizer. Humanizer kan manipulere og vise strenger, datoer, tider, tidsintervaller, tall og mengder i et mer lesbart format for mennesker. Nedenfor er et eksempel på bruk av Humanizer for kompleks strengmanipulering. Merk at Humanizer ikke er en del av .NET standard biblioteket og krever installasjon av NuGet-pakken `Humanizer`.
+
+Først, installer Humanizer via NuGet:
+
+```
+Install-Package Humanizer
 ```
 
-## Deep Dive
+Deretter kan du bruke det slik:
 
-Før C# 6.0 brukte vi `String.Format` for å sette inn verdier i en streng, som så mer klønete ut. Etter C# 6.0 er interpolasjon standarden, da det både er enklere og raskere. Under panseret bruker C# en `FormattableString` klasse for å gjøre om kode med interpolasjon til kjørbar kode, og i kjøretid behandlet like som `String.Format`. Det finnes alternativer, som konkatenasjon (`+` operator) eller `StringBuilder`, men de anbefales for spesifikke tilfeller, ikke generelt.
+```csharp
+using Humanizer;
 
-## See Also
+int dayDifference = 5;
+string humanized = $"Arrangementet var for {dayDifference} dager siden.".Humanize();
+Console.WriteLine(humanized);
+// Avhengig av konfigurasjonen og kulturen, en mulig utskrift: Arrangementet var for 5 dager siden.
+```
 
-Her er enda mer lesestoff:
-
-- Microsofts offisielle dokumentasjon: [String Interpolation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-- Et dypdykk i `FormattableString`: [FormattableString Class](https://docs.microsoft.com/en-us/dotnet/api/system.formattablestring?view=net-6.0)
-- Når du bør bruke `StringBuilder`: [When to use StringBuilder](https://docs.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder)
+Dette eksempelet demonstrerer basisbruk. Humanizer støtter et bredt spekter av funksjonaliteter som kan brukes på strenger, datoer, tall og mer, noe som gjør applikasjonene dine mer tilgjengelige og intuitive.

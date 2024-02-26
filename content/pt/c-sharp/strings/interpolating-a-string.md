@@ -1,52 +1,55 @@
 ---
-date: 2024-01-20 17:50:28.260077-07:00
-description: "Interpola\xE7\xE3o de strings no C# permite injetar valores de vari\xE1\
-  veis dentro de uma string literal, melhorando a legibilidade e a manuten\xE7\xE3\
-  o do c\xF3digo.\u2026"
-lastmod: 2024-02-19 22:05:05.611511
-model: gpt-4-1106-preview
-summary: "Interpola\xE7\xE3o de strings no C# permite injetar valores de vari\xE1\
-  veis dentro de uma string literal, melhorando a legibilidade e a manuten\xE7\xE3\
-  o do c\xF3digo.\u2026"
-title: Interpolando uma string
+title:                "Interpolando uma String"
+date:                  2024-02-25T17:06:50.981967-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Quê & Porquê?
+A interpolação de strings em C# permite criar uma nova string incluindo expressões dentro de um literal de string, facilitando a formatação e a concatenação de strings. Os programadores utilizam esse recurso para melhorar a legibilidade e a manutenibilidade do código, especialmente ao lidar com conteúdo de string dinâmico.
 
-Interpolação de strings no C# permite injetar valores de variáveis dentro de uma string literal, melhorando a legibilidade e a manutenção do código. Programadores usam essa técnica para construir strings dinamicamente e evitar a concatenação manual, que pode se tornar confusa.
+## Como fazer:
+Em C#, a interpolação de string é indicada pelo sinal de dólar (`$`) seguido de um literal de string. Os nomes das variáveis ou expressões são delimitados por chaves (`{}`).
 
-## Como Fazer:
-
-```C#
-// Exemplo básico de interpolação de strings
-string nome = "João";
-int idade = 30;
-string mensagem = $"Olá, meu nome é {nome} e eu tenho {idade} anos.";
-Console.WriteLine(mensagem);
-
-// Saída: Olá, meu nome é João e eu tenho 30 anos.
-
-// Interpolação com expressões
-double preco = 99.99;
-int quantidade = 2;
-string recibo = $"O total é: {preco * quantidade:C}";
-Console.WriteLine(recibo);
-
-// Saída: O total é: R$ 199,98
+```csharp
+string nome = "Jane";
+int idade = 28;
+string stringInterpolada = $"Olá, {nome}! Você tem {idade} anos.";
+Console.WriteLine(stringInterpolada);
+// Saída: Olá, Jane! Você tem 28 anos.
 ```
 
-## Aprofundando:
+Em um exemplo mais complexo, você pode realizar operações ou chamar métodos dentro das chaves:
 
-Antes do C# 6, concatenar strings com o operador `+` era comum, mas isso podia levar a erros e código difícil de ler. A interpolação de strings introduzida no C# 6 apresentou uma maneira elegante de incorporar expressões dentro de strings através do uso de chaves `{ }` prefixadas com um cifrão `$`. Esta funcionalidade é similar ao `printf` em C ou ao `.format` em Python, mas é mais integrada à linguagem C# e suporta todas as suas expressões.
+```csharp
+double preco = 19.99;
+int quantidade = 3;
+string detalheDoPedido = $"Preço total: {preco * quantidade:C2}";
+Console.WriteLine(detalheDoPedido);
+// Saída: Preço total: $59.97
+```
+O especificador de formato `:C2` dentro das chaves formata o número como uma moeda com duas casas decimais.
 
-Alternativas incluem o uso do `string.Format()`, que serve ao mesmo propósito mas em sintaxe menos direta. Outras possibilidades são o uso de `StringBuilder` para montagens mais complexas ou manipulações de strings que demandam alto desempenho.
+Para cenários que requerem formatação mais avançada ou localização, você pode considerar usar o método `string.Format` ou bibliotecas como o Humanizer. O Humanizer pode manipular e exibir strings, datas, horários, intervalos de tempo, números e quantias de maneira mais legível para humanos. Abaixo está um exemplo de uso do Humanizer para manipulação complexa de strings. Note que o Humanizer não faz parte da biblioteca padrão do .NET e requer a instalação do pacote NuGet `Humanizer`.
 
-Internamente, a interpolação de strings é transformada pelo compilador em uma chamada para `string.Format()`, portanto não existe um ganho de performance, no entanto, a clareza do código é significativamente melhorada.
+Primeiro, instale o Humanizer via NuGet:
 
-## Veja Também:
+```
+Install-Package Humanizer
+```
 
-- Documentação Oficial da Microsoft sobre interpolação de strings: [Interpolação de strings (Guia de C#)](https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/tokens/interpolated)
-- Tutorial da Microsoft sobre como formatar strings em C#: [Formatação de tipos](https://docs.microsoft.com/pt-br/dotnet/standard/base-types/formatting-types)
-- Stack Overflow em Português, uma comunidade para programadores tirarem dúvidas: [Stack Overflow em Português](https://pt.stackoverflow.com/)
+Em seguida, você pode usá-lo da seguinte forma:
+
+```csharp
+using Humanizer;
+
+int diferencaDeDias = 5;
+string humanizado = $"O evento foi há {diferencaDeDias} dias.".Humanize();
+Console.WriteLine(humanizado);
+// Dependendo da configuração e cultura, uma possível saída: O evento foi há 5 dias atrás.
+```
+
+Este exemplo demonstra o uso básico. O Humanizer suporta uma ampla gama de funcionalidades que podem ser aplicadas a strings, datas, números e muito mais, tornando suas aplicações mais acessíveis e intuitivas.

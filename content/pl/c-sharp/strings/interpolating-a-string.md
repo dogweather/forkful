@@ -1,60 +1,55 @@
 ---
-date: 2024-01-20 17:50:40.594514-07:00
-description: "Interpolacja string\xF3w to spos\xF3b wkluczania zmiennych bezpo\u015B\
-  rednio w ci\u0105gi tekstowe. Programi\u015Bci u\u017Cywaj\u0105 jej, by \u0142\
-  atwo \u0142\u0105czy\u0107 tekst z danymi, co czyni kod\u2026"
-lastmod: 2024-02-19 22:04:54.526635
-model: gpt-4-1106-preview
-summary: "Interpolacja string\xF3w to spos\xF3b wkluczania zmiennych bezpo\u015Brednio\
-  \ w ci\u0105gi tekstowe. Programi\u015Bci u\u017Cywaj\u0105 jej, by \u0142atwo \u0142\
-  \u0105czy\u0107 tekst z danymi, co czyni kod\u2026"
-title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+title:                "Interpolacja łańcucha znaków"
+date:                  2024-02-25T17:06:54.235897-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
+## Co i dlaczego?
+Interpolacja ciągów w C# pozwala na tworzenie nowego ciągu przez włączenie wyrażeń wewnątrz literału ciągu, co ułatwia formatowanie i łączenie ciągów. Programiści używają tej funkcji, aby poprawić czytelność i możliwości utrzymania kodu, szczególnie przy pracy z dynamiczną zawartością ciągów.
 
-Interpolacja stringów to sposób wkluczania zmiennych bezpośrednio w ciągi tekstowe. Programiści używają jej, by łatwo łączyć tekst z danymi, co czyni kod bardziej czytelnym i prostszym w utrzymaniu.
+## Jak to zrobić:
+W C#, interpolacja ciągu jest oznaczana znakiem dolara (`$`) po którym następuje literał ciągu. Nazwy zmiennych lub wyrażenia umieszcza się w nawiasach klamrowych (`{}`).
 
-## How to (Jak to zrobić):
-
-Używamy znaku `$` i nawiasów klamrowych `{}`. Prosto, szybko, wygodnie.
-
-```C#
-string name = "Ania";
-int age = 25;
-string greeting = $"Cześć, nazywam się {name} i mam {age} lata.";
-Console.WriteLine(greeting);
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"Cześć, {name}! Masz {age} lat.";
+Console.WriteLine(interpolatedString);
+// Output: Cześć, Jane! Masz 28 lat.
 ```
 
-Output:
+W bardziej złożonym przykładzie możesz wykonywać operacje lub wywoływać metody wewnątrz nawiasów klamrowych:
+
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"Całkowita cena: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// Output: Całkowita cena: 59,97 $
 ```
-Cześć, nazywam się Ania i mam 25 lata.
+Specyfikator formatu `:C2` wewnątrz nawiasów klamrowych formatuje liczbę jako walutę z dwoma miejscami po przecinku.
+
+W scenariuszach wymagających bardziej zaawansowanego formatowania lub lokalizacji, możesz rozważyć użycie metody `string.Format` lub bibliotek takich jak Humanizer. Humanizer pozwala manipulować i wyświetlać ciągi, daty, czasy, okresy, liczby i ilości w bardziej zrozumiałym formacie. Poniżej znajduje się przykład użycia Humanizera do skomplikowanej manipulacji ciągiem. Zwróć uwagę, że Humanizer nie jest częścią standardowej biblioteki .NET i wymaga zainstalowania pakietu NuGet `Humanizer`.
+
+Najpierw zainstaluj Humanizer przez NuGet:
+
+```
+Install-Package Humanizer
 ```
 
-Możesz nawet wykonywać proste operacje:
-```C#
-int a = 10;
-int b = 5;
-string math = $"Dziesięć minus pięć to {a - b}.";
-Console.WriteLine(math);
+Następnie możesz użyć go w następujący sposób:
+
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"Wydarzenie miało miejsce {dayDifference} dni temu.".Humanize();
+Console.WriteLine(humanized);
+// W zależności od konfiguracji i kultury, możliwy output: Wydarzenie miało miejsce 5 dni temu.
 ```
 
-Output:
-```
-Dziesięć minus pięć to 5.
-```
-
-## Deep Dive (Głębsze spojrzenie)
-
-Interpolacja stringów w C# została wprowadzona w wersji 6.0. To ewolucja starego `String.Format()`, znacznie poprawiająca czytelność. Alternatywą są konkatenacja (+) i `StringBuilder`, ale one często sprawiają, że kod jest mniej zrozumiały.
-
-Implementacja w .NET używa `String.Format`, a za kulisami przekształca interpolowany string w odpowiedni kod wykorzystujący tę funkcję. Warto pamiętać, że interpolowane stringi są typami referencyjnymi i tworzą obiekty w trakcie wykonania programu.
-
-## See Also (Zobacz też)
-
-- [Dokumentacja Microsoft o interpolacji w C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/language-reference/tokens/interpolated)
-- [String.Format w MSDN](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.format?view=net-6.0)
-- [StringBuilder w MSDN](https://docs.microsoft.com/pl-pl/dotnet/api/system.text.stringbuilder?view=net-6.0)
-- [Tutorial o konkatenacji stringów](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/strings/)
+Ten przykład demonstruje podstawowe użycie. Humanizer wspiera szeroki zakres funkcjonalności, które mogą być stosowane do ciągów, dat, liczb i więcej, czyniąc twoje aplikacje bardziej dostępnymi i intuicyjnymi.

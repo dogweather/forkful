@@ -1,67 +1,55 @@
 ---
-date: 2024-01-20 17:50:41.544567-07:00
-description: "String-Interpolation in C# erm\xF6glicht es, Variablenwerte nahtlos\
-  \ in Strings einzubetten. Programmierer nutzen das, um lesbare und wartbare Codes\
-  \ zu\u2026"
-lastmod: 2024-02-19 22:05:12.801405
-model: gpt-4-1106-preview
-summary: "String-Interpolation in C# erm\xF6glicht es, Variablenwerte nahtlos in Strings\
-  \ einzubetten. Programmierer nutzen das, um lesbare und wartbare Codes zu\u2026"
-title: Zeichenketten interpolieren
+title:                "Interpolation eines Strings"
+date:                  2024-02-25T17:06:56.306880-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-String-Interpolation in C# ermöglicht es, Variablenwerte nahtlos in Strings einzubetten. Programmierer nutzen das, um lesbare und wartbare Codes zu erstellen, indem sie dynamische Inhalte in Strings einflechten.
+Die Zeichenketteninterpolation in C# ermöglicht es Ihnen, einen neuen String zu erstellen, indem Ausdrücke innerhalb eines Zeichenketten-Literals eingefügt werden. Dies erleichtert das Formatieren und Verketten von Strings. Programmierer nutzen dieses Feature, um die Lesbarkeit und Wartbarkeit des Codes zu verbessern, insbesondere wenn sie mit dynamischen Zeichenketteninhalten arbeiten.
 
-## Anleitung:
-Zuerst das Grundprinzip. Mit dem Dollarzeichen (`$`) vor einem String signalisieren Sie C#, dass die geschweiften Klammern (`{}`) innerhalb des Strings Variablen oder Ausdrücke enthalten, die interpoliert werden sollen.
+## Wie geht das:
+In C# wird die Zeichenketteninterpolation durch ein Dollarzeichen (`$`) angezeigt, gefolgt von einem Zeichenketten-Literal. Die Variablennamen oder Ausdrücke werden in geschweifte Klammern (`{}`) eingeschlossen.
 
-```C#
-string name = "Johannes";
+```csharp
+string name = "Jane";
 int age = 28;
-string greeting = $"Hallo, mein Name ist {name} und ich bin {age} Jahre alt.";
-Console.WriteLine(greeting);
-// Ausgabe: Hallo, mein Name ist Johannes und ich bin 28 Jahre alt.
+string interpolatedString = $"Hallo, {name}! Du bist {age} Jahre alt.";
+Console.WriteLine(interpolatedString);
+// Ausgabe: Hallo, Jane! Du bist 28 Jahre alt.
 ```
 
-Man kann auch Berechnungen direkt einfügen:
+In einem komplexeren Beispiel können Sie Operationen ausführen oder Methoden innerhalb der geschweiften Klammern aufrufen:
 
-```C#
-int a = 5;
-int b = 10;
-string calculation = $"Fünf plus zehn ist gleich {a + b}.";
-Console.WriteLine(calculation);
-// Ausgabe: Fünf plus zehn ist gleich 15.
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"Gesamtpreis: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// Ausgabe: Gesamtpreis: $59.97
+```
+Der `:C2` Formatierungshinweis innerhalb der geschweiften Klammern formatiert die Zahl als Währung mit zwei Dezimalstellen.
+
+Für Szenarien, die eine ausgefeiltere Formatierung oder Lokalisierung erfordern, könnten Sie die Methode `string.Format` in Betracht ziehen oder Bibliotheken wie Humanizer verwenden. Humanizer kann Strings, Daten, Zeiten, Zeitspannen, Zahlen und Mengen in einem leichter lesbaren Format bearbeiten und anzeigen. Unten ist ein Beispiel für die Verwendung von Humanizer für komplexe Zeichenkettenmanipulationen. Beachten Sie, dass Humanizer nicht Teil der .NET-Standardbibliothek ist und die Installation des NuGet-Pakets `Humanizer` erfordert.
+
+Zuerst installieren Sie Humanizer über NuGet:
+
+```
+Install-Package Humanizer
 ```
 
-Und so funktioniert es mit Objekten:
+Danach können Sie es wie folgt verwenden:
 
-```C#
-DateTime now = DateTime.Now;
-string timeStamp = $"Derzeit ist es {now.Hour}:{now.Minute} Uhr am {now.Day}.{now.Month}.{now.Year}.";
-Console.WriteLine(timeStamp);
-// Ausgabe zum Beispiel: Derzeit ist es 14:30 Uhr am 25.3.2023.
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"Die Veranstaltung war vor {dayDifference} Tagen.".Humanize();
+Console.WriteLine(humanized);
+// Abhängig von der Konfiguration und Kultur, mögliche Ausgabe: Die Veranstaltung war vor 5 Tagen.
 ```
 
-## Tiefgang:
-String-Interpolation ist seit C# 6.0 Teil der Sprache, erschienen 2015, und löste die Formatierung mit `String.Format()` ab – allerdings ohne es vollständig zu ersetzen. Die Lesbarkeit und Kürze des interpolierten Strings sind klare Vorteile.
-
-Hier sind Format-Alternativen in C#:
-
-- `String.Format()`: Traditionelle Methode, Platzhalter mit Indizes zu verwenden.
-  ```C#
-  string oldSchool = String.Format("Hallo, ich bin {0} und {1} Jahre alt.", name, age);
-  ```
-- `StringBuilder`: Gut für häufige Modifikation großer Strings.
-- `Concat()`, `Join()`: Zum Zusammenfügen von Strings.
-
-Bezüglich der Implementierung konvertiert der Compiler interpolierte Strings in `String.Format()` Aufrufe. Jede geschweifte Klammer wird zum Platzhalter. Deshalb sind die Leistungscharakteristiken ähnlich. 
-
-Außerdem, immer dran denken: `{` und `}` in interpolierte Strings direkt einbetten geht nicht ohne weiteres, da sie spezielle Zeichen sind. Für Literal `{` oder `}`, benutzen Sie `{{` oder `}}`.
-
-## Weiterführendes:
-- Microsoft Dokumentation über String-Interpolation: [docs.microsoft.com/de-de/dotnet/csharp/language-reference/tokens/interpolated](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/tokens/interpolated)
-- Mehr zu `String.Format()`: [docs.microsoft.com/de-de/dotnet/api/system.string.format](https://docs.microsoft.com/de-de/dotnet/api/system.string.format)
-- Performance-Aspekte: [csharpindepth.com/Articles/Strings](https://csharpindepth.com/Articles/Strings)
+Dieses Beispiel demonstriert die grundlegende Verwendung. Humanizer unterstützt eine breite Palette von Funktionalitäten, die auf Strings, Daten, Zahlen und mehr angewendet werden können, was Ihre Anwendungen zugänglicher und intuitiver macht.

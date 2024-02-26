@@ -1,56 +1,55 @@
 ---
+title:                "Nội suy chuỗi ký tự"
+date:                  2024-02-25T17:07:09.517331-07:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-01-28, gpt-4-0125-preview, translated from English
-date: 2024-01-28 22:02:13.433991-07:00
-description: "N\u1ED9i suy (interpolation) chu\u1ED7i cho ph\xE9p b\u1EA1n x\xE2y\
-  \ d\u1EF1ng chu\u1ED7i s\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c \u0111\u01B0\u1EE3\
-  c nh\xFAng tr\u1EF1c ti\u1EBFp. N\xF3 gi\xFAp m\xE3 l\u1EC7nh d\u1EC5 \u0111\u1ECD\
-  c v\xE0 vi\u1EC7c \u0111\u1ECBnh d\u1EA1ng tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
-lastmod: 2024-02-19 22:04:55.811411
-model: gpt-4-0125-preview
-summary: "N\u1ED9i suy (interpolation) chu\u1ED7i cho ph\xE9p b\u1EA1n x\xE2y d\u1EF1\
-  ng chu\u1ED7i s\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c \u0111\u01B0\u1EE3c nh\xFAng\
-  \ tr\u1EF1c ti\u1EBFp. N\xF3 gi\xFAp m\xE3 l\u1EC7nh d\u1EC5 \u0111\u1ECDc v\xE0\
-  \ vi\u1EC7c \u0111\u1ECBnh d\u1EA1ng tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
-title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+  - 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
-Nội suy (interpolation) chuỗi cho phép bạn xây dựng chuỗi sử dụng biểu thức được nhúng trực tiếp. Nó giúp mã lệnh dễ đọc và việc định dạng trở nên dễ dàng.
+## Cái gì và Tại sao?
+Nội suy chuỗi trong C# cho phép bạn tạo một chuỗi mới bằng cách bao gồm các biểu thức bên trong một chuỗi ký tự, làm cho việc định dạng và nối chuỗi trở nên dễ dàng hơn. Các lập trình viên sử dụng tính năng này để cải thiện tính đọc và bảo trì của mã, đặc biệt là khi xử lý nội dung chuỗi động.
 
-## Cách thực hiện:
-```C# 
-string name = "Alex";
-int age = 29;
-string greeting = $"Xin chào, {name}! Bạn {age} tuổi.";
-Console.WriteLine(greeting);
-```
-Đầu ra:
-```
-Xin chào, Alex! Bạn 29 tuổi.
-```
+## Làm thế nào:
+Trong C#, nội suy chuỗi được ký hiệu bằng dấu đô la (`$`) theo sau là một chuỗi ký tự. Tên biến hoặc biểu thức được đặt trong dấu ngoặc nhọn (`{}`).
 
-## Đi sâu vào vấn đề
-Nội suy chuỗi được giới thiệu trong C# 6, cải thiện khả năng định dạng chuỗi so với phương thức `String.Format` truyền thống. Trong lịch sử, bạn có thể đã nhìn thấy điều gì đó như thế này:
-
-```C# 
-string greeting = string.Format("Xin chào, {0}! Bạn {1} tuổi.", name, age);
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"Xin chào, {name}! Bạn {age} tuổi.";
+Console.WriteLine(interpolatedString);
+// Xuất ra: Xin chào, Jane! Bạn 28 tuổi.
 ```
 
-Nội suy trong C# là một cú pháp đơn giản mà trình biên dịch chuyển đổi thành một lời gọi `String.Format`. Nó hoạt động bằng cách phân tích chuỗi nội suy và thay thế các biểu thức được bao trong `{}` với các biểu diễn chuỗi của kết quả của các biểu thức. Ở bên trong, nó sử dụng `StringBuilder`, làm cho nó hiệu quả hơn việc nối chuỗi trong vòng lặp.
+Trong một ví dụ phức tạp hơn, bạn có thể thực hiện các phép toán hoặc gọi phương thức bên trong dấu ngoặc nhọn:
 
-Một phương án khác cho nội suy chuỗi là sử dụng toán tử cộng (`+`) để nối, nhưng điều này có thể trở nên khó đọc và cồng kềnh, và thường xuyên dễ mắc lỗi hơn.
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"Tổng giá: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// Xuất ra: Tổng giá: $59.97
+```
+Định dạng `:C2` bên trong dấu ngoặc nhọn định dạng số thành tiền tệ với hai chữ số thập phân.
 
-```C# 
-string greeting = "Xin chào, " + name + "! Bạn " + age + " tuổi.";
+Đối với các trường hợp cần định dạng hoặc địa phương hóa nâng cao hơn, bạn có thể cân nhắc sử dụng phương thức `string.Format` hoặc thư viện như Humanizer. Humanizer có thể thao tác và hiển thị chuỗi, ngày, giờ, khoảng thời gian, số và số lượng một cách dễ đọc hơn cho con người. Dưới đây là ví dụ về việc sử dụng Humanizer cho việc thao tác chuỗi phức tạp. Lưu ý rằng Humanizer không phải là một phần của thư viện chuẩn .NET và yêu cầu cài đặt gói NuGet `Humanizer`.
+
+Đầu tiên, cài đặt Humanizer qua NuGet:
+
+```
+Install-Package Humanizer
 ```
 
-Xét đến những phương án thay thế này, nội suy chuỗi thường là sự lựa chọn ưu tiên vì sự rõ ràng và hiệu quả của nó trong hầu hết các tình huống.
+Sau đó, bạn có thể sử dụng nó như sau:
 
-## Xem thêm
-Để biết thêm về việc định dạng chuỗi trong C#, MSDN là bạn đồng hành của bạn:
-- [Nội suy chuỗi](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-- [String.Format](https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-6.0)
-- [StringBuilder](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0)
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"Sự kiện đã diễn ra cách đây {dayDifference} ngày.".Humanize();
+Console.WriteLine(humanized);
+// Tùy thuộc vào cấu hình và văn hóa, một kết quả có thể: Sự kiện đã diễn ra cách đây 5 ngày.
+```
+
+Ví dụ này minh họa cách sử dụng cơ bản. Humanizer hỗ trợ một loạt các chức năng có thể được áp dụng cho chuỗi, ngày, số và hơn thế nữa, giúp các ứng dụng của bạn trở nên dễ tiếp cận và trực quan hơn.

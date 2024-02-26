@@ -1,50 +1,53 @@
 ---
-date: 2024-01-20 17:50:17.096727-07:00
-description: String interpolation lets you build strings using embedded expressions.
-  It makes code readable and formatting a breeze.
-lastmod: 2024-02-19 22:05:18.541716
-model: gpt-4-1106-preview
-summary: String interpolation lets you build strings using embedded expressions. It
-  makes code readable and formatting a breeze.
-title: Interpolating a string
+title:                "Interpolating a string"
+date:                  2024-02-25T17:04:52.754084-07:00
+model:                 gpt-4-0125-preview
 ---
 
 {{< edit_this_page >}}
 
 ## What & Why?
-String interpolation lets you build strings using embedded expressions. It makes code readable and formatting a breeze.
+String interpolation in C# allows you to create a new string by including expressions inside a string literal, making it easier to format and concatenate strings. Programmers use this feature to improve code readability and maintainability, especially when dealing with dynamic string content.
 
 ## How to:
-```C# 
-string name = "Alex";
-int age = 29;
-string greeting = $"Hello, {name}! You are {age} years old.";
-Console.WriteLine(greeting);
-```
-Output:
-```
-Hello, Alex! You are 29 years old.
-```
+In C#, string interpolation is denoted by a dollar sign (`$`) followed by a string literal. The variable names or expressions are enclosed within curly braces (`{}`).
 
-## Deep Dive
-String interpolation was introduced in C# 6, bolstering the ease of formatting strings beyond the older `String.Format` method. Historically, you might've seen something like this:
-
-```C# 
-string greeting = string.Format("Hello, {0}! You are {1} years old.", name, age);
+```csharp
+string name = "Jane";
+int age = 28;
+string interpolatedString = $"Hello, {name}! You are {age} years old.";
+Console.WriteLine(interpolatedString);
+// Output: Hello, Jane! You are 28 years old.
 ```
 
-Interpolation in C# is a syntactic sugar that the compiler converts into a `String.Format` call. It works by parsing the interpolated string and replacing the expressions enclosed in `{}` with the string representations of the expressions' results. Internally, it uses a `StringBuilder` under the hood, making it more efficient than concatenation in loops.
+In a more complex example, you can perform operations or call methods within the curly braces:
 
-Alternative to string interpolation is the plus (`+`) operator for concatenation, but that can quickly become unreadable and cumbersome, and often more error-prone.
+```csharp
+double price = 19.99;
+int quantity = 3;
+string orderDetail = $"Total price: {price * quantity:C2}";
+Console.WriteLine(orderDetail);
+// Output: Total price: $59.97
+```
+The `:C2` format specifier inside the curly braces formats the number as a currency with two decimal places.
 
-```C# 
-string greeting = "Hello, " + name + "! You are " + age + " years old.";
+For scenarios requiring more advanced formatting or localization, you might consider using the `string.Format` method or libraries like Humanizer. Humanizer can manipulate and display strings, dates, times, timespans, numbers, and quantities in a more human-readable format. Below is an example of using Humanizer for complex string manipulation. Note that Humanizer is not part of the .NET standard library and requires installing the NuGet package `Humanizer`.
+
+First, install Humanizer via NuGet:
+
+```
+Install-Package Humanizer
 ```
 
-Given these alternatives, string interpolation is often the preferred choice for its clarity and efficiency in most scenarios.
+Then, you can use it as follows:
 
-## See Also
-For more on string formatting in C#, MSDN is your pal:
-- [String interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-- [String.Format](https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-6.0)
-- [StringBuilder](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0)
+```csharp
+using Humanizer;
+
+int dayDifference = 5;
+string humanized = $"The event was {dayDifference} days ago.".Humanize();
+Console.WriteLine(humanized);
+// Depending on the configuration and culture, a possible output: The event was 5 days ago.
+```
+
+This example demonstrates basic usage. Humanizer supports a broad range of functionalities that can be applied to strings, dates, numbers, and more, making your applications more accessible and intuitive.
