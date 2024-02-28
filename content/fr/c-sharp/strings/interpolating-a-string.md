@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:53.132911-07:00
 description: "L'interpolation de cha\xEEnes en C# vous permet de cr\xE9er une nouvelle\
   \ cha\xEEne en incluant des expressions \xE0 l'int\xE9rieur d'un litt\xE9ral de\

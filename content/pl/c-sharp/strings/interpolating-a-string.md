@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:54.235897-07:00
 description: "Interpolacja ci\u0105g\xF3w w C# pozwala na tworzenie nowego ci\u0105\
   gu przez w\u0142\u0105czenie wyra\u017Ce\u0144 wewn\u0105trz litera\u0142u ci\u0105\

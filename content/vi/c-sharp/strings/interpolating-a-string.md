@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:07:09.517331-07:00
 description: "N\u1ED9i suy chu\u1ED7i trong C# cho ph\xE9p b\u1EA1n t\u1EA1o m\u1ED9\
   t chu\u1ED7i m\u1EDBi b\u1EB1ng c\xE1ch bao g\u1ED3m c\xE1c bi\u1EC3u th\u1EE9c\

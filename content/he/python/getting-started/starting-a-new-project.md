@@ -1,7 +1,7 @@
 ---
 changelog:
 - 2024-02-22, dogweather, reviewed
-- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:55.418067-07:00
 description: "\u05D4\u05EA\u05D7\u05DC\u05EA \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\
   \ \u05D7\u05D3\u05E9 \u05D1\u05E4\u05D9\u05D9\u05EA\u05D5\u05DF \u05DE\u05D3\u05D5\

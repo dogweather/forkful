@@ -1,7 +1,7 @@
 ---
 changelog:
 - 2024-02-22, dogweather, reviewed
-- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:31:02.639168-07:00
 description: "Avviare un nuovo progetto in Python significa impostare sin dall'inizio\
   \ una struttura organizzata e mantenibile. I programmatori fanno ci\xF2 per garantire\u2026"

@@ -1,7 +1,7 @@
 ---
 changelog:
 - 2024-02-22, dogweather, reviewed
-- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:29:57.476585-07:00
 description: "\xC5 starte et nytt prosjekt i Python handler om \xE5 sette opp et strukturert,\
   \ vedlikeholdbart rammeverk fra starten. Programmerere gj\xF8r dette for \xE5 sikre\

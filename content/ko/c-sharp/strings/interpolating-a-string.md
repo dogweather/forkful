@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:07:12.380490-07:00
 description: "C#\uC5D0\uC11C \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBB38\uC790\uC5F4\
   \ \uB9AC\uD130\uB7F4 \uC548\uC5D0 \uD45C\uD604\uC2DD\uC744 \uD3EC\uD568\uD558\uC5EC\

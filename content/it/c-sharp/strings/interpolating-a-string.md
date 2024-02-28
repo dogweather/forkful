@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:50.576729-07:00
 description: "L'interpolazione di stringhe in C# consente di creare una nuova stringa\
   \ includendo espressioni all'interno di un letterale stringa, facilitando cos\xEC\

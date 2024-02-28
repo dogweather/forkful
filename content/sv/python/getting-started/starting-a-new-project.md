@@ -1,7 +1,7 @@
 ---
 changelog:
 - 2024-02-22, dogweather, reviewed
-- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:17.778833-07:00
 description: "Att starta ett nytt projekt i Python handlar om att fr\xE5n b\xF6rjan\
   \ s\xE4tta upp en strukturerad, underh\xE5llbar ram. Programmerare g\xF6r detta\

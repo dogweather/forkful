@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:50.981967-07:00
 description: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string\
   \ incluindo express\xF5es dentro de um literal de string, facilitando a formata\xE7\

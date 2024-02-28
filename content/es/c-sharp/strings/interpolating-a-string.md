@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:07:00.069426-07:00
 description: "La interpolaci\xF3n de cadenas en C# te permite crear una nueva cadena\
   \ al incluir expresiones dentro de un literal de cadena, lo que facilita el formateo\

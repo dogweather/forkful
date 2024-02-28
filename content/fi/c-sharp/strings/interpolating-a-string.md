@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:58.048640-07:00
 description: "Merkkijonon interpolaatio C#:ssa mahdollistaa uuden merkkijonon luomisen\
   \ sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita merkkijonoliteraalin sis\xE4\xE4n, mik\xE4\

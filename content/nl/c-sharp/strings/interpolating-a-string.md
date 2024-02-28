@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:50.580373-07:00
 description: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
   ren door expressies binnen een stringliteral op te nemen, waardoor het\u2026"

@@ -1,7 +1,7 @@
 ---
 changelog:
 - 2024-02-22, dogweather, reviewed
-- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:06.753054-07:00
 description: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng Python\
   \ l\xE0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t khu\xF4n kh\u1ED5 c\xF3 c\u1EA5u\

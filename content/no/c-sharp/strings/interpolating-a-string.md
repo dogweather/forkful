@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:07:03.825592-07:00
 description: "Strenginterpolering i C# lar deg opprette en ny streng ved \xE5 inkludere\
   \ uttrykk inni en strengbokstavelig, noe som gj\xF8r det enklere \xE5 formatere\

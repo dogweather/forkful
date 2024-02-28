@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-02-25, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:07:02.554791-07:00
 description: "Str\xE4nginterpolering i C# g\xF6r det m\xF6jligt att skapa en ny str\xE4\
   ng genom att inkludera uttryck inuti en str\xE4ngliteral, vilket underl\xE4ttar\

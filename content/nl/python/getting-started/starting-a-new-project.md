@@ -1,7 +1,7 @@
 ---
 changelog:
 - 2024-02-22, dogweather, reviewed
-- 2024-02-22, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:11.656533-07:00
 description: "Een nieuw project starten in Python gaat over het opzetten van een gestructureerd,\
   \ onderhoudbaar kader vanaf het begin. Programmeurs doen dit om ervoor te\u2026"

@@ -4,7 +4,7 @@ date:                  2024-02-27T22:50:20.728417-07:00
 model:                 gpt-4-0125-preview
 changelog:
   - 2024-02-27, dogweather, edited and tested
-  - 2024-02-27, OpenAIModel.GPT_4_TURBO, translated from English
+  - 2024-02-27, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
