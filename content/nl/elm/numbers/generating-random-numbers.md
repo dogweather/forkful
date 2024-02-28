@@ -1,72 +1,77 @@
 ---
+title:                "Genereren van willekeurige getallen"
+date:                  2024-02-27T22:50:13.618240-07:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-01-28, gpt-4-0125-preview, translated from English
-date: 2024-01-28 22:01:27.449465-07:00
-description: "Het genereren van willekeurige getallen in Elm houdt in dat er onvoorspelbare\
-  \ numerieke waarden worden gecre\xEBerd die essentieel zijn voor applicaties\u2026"
-lastmod: '2024-02-25T18:49:48.061313-07:00'
-model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Elm houdt in dat er onvoorspelbare\
-  \ numerieke waarden worden gecre\xEBerd die essentieel zijn voor applicaties\u2026"
-title: Willekeurige getallen genereren
+  - 2024-02-27, dogweather, edited and tested
+  - 2024-02-27, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Het genereren van willekeurige getallen in Elm houdt in dat er onvoorspelbare numerieke waarden worden gecreëerd die essentieel zijn voor applicaties zoals games, simulaties en beveiligingsalgoritmen. Programmeurs gebruiken willekeurigheid om de variabiliteit van de echte wereld te simuleren, de gebruikerservaring te verbeteren of gegevens met versleutelingstechnieken te beveiligen.
+Het genereren van willekeurige getallen in Elm houdt het gebruik van de `Random` module in om pseudo-willekeurige getallen te produceren, die handig zijn voor een verscheidenheid aan taken zoals spellen, simulaties, en zelfs als onderdeel van algoritmen die stochastische processen vereisen. Deze mogelijkheid stelt ontwikkelaars in staat onvoorspelbaarheid en variëteit aan hun applicaties toe te voegen, wat de gebruikerservaring en functionaliteit verbetert.
 
 ## Hoe:
-Elm gaat anders om met willekeurigheid dan veel programmeertalen, door een systeem te gebruiken dat functies puur houdt. Om willekeurige getallen te genereren, moet je werken met Elm's `Random` module. Hier is een basisvoorbeeld van het genereren van een willekeurig getal tussen 1 en 100:
+De pure functionele aard van Elm betekent dat je niet direct willekeurige getallen kunt genereren zoals je misschien zou doen in imperatieve talen. In plaats daarvan gebruik je de `Random` module in combinatie met commando's. Hier is een basisvoorbeeld dat een willekeurig geheel getal tussen 1 en 100 genereert.
 
-```Elm
-import Html exposing (Html, text)
-import Random
+Installeer eerst de `Random` module met `elm install elm/random`. Importeer het vervolgens in je Elm-bestand, samen met de benodigde HTML- en event-modules, zoals zo:
 
-main : Html msg
-main =
-    Random.generate NewRandomNumber (Random.int 1 100)
-    |> Html.map (text << toString)
+`src/Main.elm`
 
-type Msg = NewRandomNumber Int
-```
+```elm
+module Main exposing (..)
 
-Dit fragment gebruikt `Random.generate` om een commando te creëren dat, wanneer uitgevoerd, een willekeurig getal binnen het opgegeven bereik produceert. De `type Msg` verklaring wordt gebruikt om het gegenereerde getal in de updatefunctie van je Elm-applicatie te verwerken.
-
-Voor een interactiever voorbeeld, laten we kijken naar een scenario waar gebruikers de generatie van willekeurige getallen activeren door te klikken:
-
-```Elm
-import Html exposing (Html, button, div, text)
+import Browser
+import Html exposing (Html, button, text, div)
 import Html.Events exposing (onClick)
 import Random
+```
 
-type alias Model = Int
+Om dit een zelfstandig voorbeeld te maken, kun je dit sjabloon toevoegen:
+```elm
+main =
+  Browser.element { init = init, update = update, subscriptions = subscriptions, view = view }
 
-type Msg = Generate
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model 0, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+```
+
+Definieer vervolgens een **commando** om een willekeurig getal te genereren. Dit houdt in dat je een `Msg` type instelt om het willekeurige getal te behandelen zodra het is gegenereerd, een `Model` om het op te slaan, en een update-functie om alles samen te binden.
+```elm
+type Msg
+    = Generate
+    | NewRandom Int
+
+type alias Model = { randomNumber : Int }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         Generate ->
-            (model, Random.generate NewRandomNumber (Random.int 1 100))
+            ( model, Random.generate NewRandom (Random.int 1 100) )
 
+        NewRandom number ->
+            ( { model | randomNumber = number }, Cmd.none )
+```
+
+Om een getallengeneratie te activeren, zou je een `Generate` bericht sturen, bijvoorbeeld via een knop in je weergave:
+```elm
 view : Model -> Html Msg
 view model =
     div []
-        [ text ("Gegenereerd getal: " ++ String.fromInt model)
-        , button [ onClick Generate ] [ text "Genereer nieuw getal" ]
+        [ div [] [ text ("Willekeurig Getal: " ++ String.fromInt model.randomNumber) ]
+        , button [ onClick Generate ] [ text "Genereer" ]
         ]
-
-type Msg = NewRandomNumber Int
 ```
 
-Deze Elm-applicatie introduceert interactiviteit, waarbij het display wordt bijgewerkt met een nieuw willekeurig getal telkens wanneer de gebruiker op de knop klikt.
+Wanneer je op de "Genereer" knop klikt, wordt een willekeurig getal tussen 1 en 100 weergegeven.
 
-## Diepere Duik
-Het ontwerp van Elm's systeem voor het genereren van willekeurige getallen komt voort uit de toewijding van de taal aan zuiverheid en voorspelbaarheid. In plaats van directe, onzuivere functies die bij elke aanroep verschillende waarden retourneren, encapsuleert Elm willekeurigheid in een `Cmd` structuur, in lijn met zijn architectuur die neveneffecten scheidt van zuivere functies.
+Deze simplistische benadering kan worden aangepast en uitgebreid, door gebruik te maken van andere functies in de `Random` module om willekeurige drijvende komma getallen, lijsten of zelfs complexe datastructuren te produceren op basis van aangepaste typen, waardoor een uitgebreide speeltuin wordt geboden voor het toevoegen van onvoorspelbaarheid aan je Elm-applicaties.
 
-Hoewel deze benadering consistentie in applicatiegedrag garandeert en het debuggen vergemakkelijkt, introduceert het een leercurve voor degenen die gewend zijn aan de imperatieve generatie van willekeurige getallen. De voordelen van het behouden van applicatiezuiverheid en de gemakkelijkheid van testen wegen echter vaak op tegen de initiële complexiteit.
-
-Elm's methode contrasteert ook met talen die globale generatoren van willekeurige getallen bieden, die subtiele bugs kunnen leiden door gedeelde staat. Door expliciete afhandeling van de generatie van willekeurige getallen en de effecten daarvan te eisen, moedigt Elm ontwikkelaars aan om kritischer na te denken over waar en hoe willekeurigheid hun applicaties beïnvloedt, resulterend in robuustere en voorspelbaardere code.
-
-Wat betreft alternatieven, bieden andere functionele talen vergelijkbare functionaliteiten maar kunnen ze deze op verschillende manieren implementeren. Haskell handhaaft bijvoorbeeld ook zuiverheid in de generatie van willekeurige getallen maar door het gebruik van monaden, een concept dat Elm bewust vermijdt om zijn model te vereenvoudigen. Vergelijkenderwijs is Elm's benadering toegankelijker voor nieuwkomers en benadrukt het een eenvoudige applicatiearchitectuur zonder de kracht van functionele programmeerprincipes op te offeren.
+De Elm-gids gaat veel meer in detail. Er is ook [een voorbeeld van het rollen van een zeszijdige dobbelsteen](https://guide.elm-lang.org/effects/random).

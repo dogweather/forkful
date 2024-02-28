@@ -1,72 +1,77 @@
 ---
-date: 2024-01-27 20:34:14.735389-07:00
-description: "Satunnaislukujen tuottaminen Elm-kieless\xE4 tarkoittaa ennustamattomien\
-  \ numeeristen arvojen luomista, jotka ovat olennaisia sovelluksissa, kuten peleiss\xE4\
-  ,\u2026"
-lastmod: '2024-02-25T18:49:53.403792-07:00'
-model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen Elm-kieless\xE4 tarkoittaa ennustamattomien\
-  \ numeeristen arvojen luomista, jotka ovat olennaisia sovelluksissa, kuten peleiss\xE4\
-  ,\u2026"
-title: Satunnaislukujen generointi
+title:                "Sattumanvaraisten numeroiden generointi"
+date:                  2024-02-27T22:50:15.929283-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-27, dogweather, edited and tested
+  - 2024-02-27, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Satunnaislukujen tuottaminen Elm-kielessä tarkoittaa ennustamattomien numeeristen arvojen luomista, jotka ovat olennaisia sovelluksissa, kuten peleissä, simulaatioissa ja turva-algoritmeissa. Ohjelmoijat käyttävät satunnaisuutta jäljittelemään todellisen maailman vaihtelevuutta, parantamaan käyttäjäkokemusta tai turvaamaan tietoja salausmenetelmien avulla.
+## Mitä & Miksi?
+Satunnaislukujen generointi Elm-kielessä vaatii `Random`-moduulin käyttöä pseudo-satunnaislukujen tuottamiseen, jotka ovat hyödyllisiä monenlaisissa tehtävissä kuten peleissä, simulaatioissa ja jopa algoritmeissä, jotka vaativat stokastisia prosesseja. Tämä ominaisuus mahdollistaa kehittäjille lisätä arvaamattomuutta ja monimuotoisuutta sovelluksiinsa, parantaen käyttäjäkokemusta ja toiminnallisuutta.
 
 ## Kuinka:
-Elm käsittelee satunnaisuutta eri tavalla kuin monet ohjelmointikielet, hyödyntäen järjestelmää, joka pitää funktiot puhtaina. Satunnaislukujen tuottamiseksi sinun on työskenneltävä Elmin `Random`-moduulin kanssa. Tässä on perusesimerkki satunnaisluvun tuottamisesta 1:n ja 100:n välillä:
+Elmin puhtaasti funktionaalinen luonne tarkoittaa, että et voi generoida satunnaislukuja suoraan kuten imperatiivisissa kielissä. Sen sijaan käytät `Random`-moduulia yhdessä komentojen kanssa. Tässä on perusesimerkki, joka generoi satunnaisen kokonaisluvun väliltä 1 ja 100.
 
-```Elm
-import Html exposing (Html, text)
-import Random
+Asenna ensin `Random`-moduuli komennolla `elm install elm/random`. Tuo se sitten Elm-tiedostoosi, yhdessä tarvittavien HTML- ja tapahtumamoduulien kanssa, näin:
 
-main : Html msg
-main =
-    Random.generate NewRandomNumber (Random.int 1 100)
-    |> Html.map (text << toString)
+`src/Main.elm`
 
-type Msg = NewRandomNumber Int
-```
+```elm
+module Main exposing (..)
 
-Tämä koodinpätkä käyttää `Random.generate`-toimintoa luodakseen komennon, joka suoritettuna tuottaa satunnaisluvun määritellyllä välillä. `type Msg` -julistusta käytetään käsittelemään luotua numeroa Elmin sovelluksen päivitysfunktiossa.
-
-Interaktiivisemman esimerkin katsomiseksi, tarkastele tilannetta, jossa käyttäjät laukaisevat satunnaislukujen tuotannon napsauttamalla:
-
-```Elm
-import Html exposing (Html, button, div, text)
+import Browser
+import Html exposing (Html, button, text, div)
 import Html.Events exposing (onClick)
 import Random
+```
 
-type alias Model = Int
+Jotta tämä on itsenäinen esimerkki, voit lisätä tämän rungon:
+```elm
+main =
+  Browser.element { init = init, update = update, subscriptions = subscriptions, view = view }
 
-type Msg = Generate
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model 0, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+```
+
+Seuraavaksi määrittele **komento** satunnaisluvun generoimiseksi. Tämä sisältää `Msg`-tyypin määrittelyn satunnaisluvun käsittelyä varten, kun se on generoitu, `Model`in sen tallentamiseen ja päivitysfunktion kaiken yhdistämiseksi.
+```elm
+type Msg
+    = Generate
+    | NewRandom Int
+
+type alias Model = { randomNumber : Int }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         Generate ->
-            (model, Random.generate NewRandomNumber (Random.int 1 100))
+            ( model, Random.generate NewRandom (Random.int 1 100) )
 
+        NewRandom number ->
+            ( { model | randomNumber = number }, Cmd.none )
+```
+
+Satunnaisluvun generoimisen laukaisemiseksi lähettäisit `Generate`-viestin, esimerkiksi napin kautta näkymässäsi:
+```elm
 view : Model -> Html Msg
 view model =
     div []
-        [ text ("Generated number: " ++ String.fromInt model)
-        , button [ onClick Generate ] [ text "Generate new number" ]
+        [ div [] [ text ("Satunnaisluku: " ++ String.fromInt model.randomNumber) ]
+        , button [ onClick Generate ] [ text "Generoi" ]
         ]
-
-type Msg = NewRandomNumber Int
 ```
 
-Tämä Elm-sovellus tuo mukanaan interaktiivisuutta, päivittäen näytön uudella satunnaisluvulla joka kerta, kun käyttäjä napsauttaa nappia.
+Kun klikkaat "Generoi"-nappia, näytölle tulee satunnainen luku väliltä 1 ja 100.
 
-## Syväsukellus
-Elmin satunnaislukujen tuottamisjärjestelmän suunnittelu johtuu kielen sitoumuksesta puhtauden ja ennustettavuuden periaatteisiin. Sen sijaan, että käytettäisiin suoria, epäpuhtaita funktioita, jotka palauttavat eri arvoja jokaisella kutsukerralla, Elm kapseloi satunnaisuuden `Cmd`-rakenteeseen, mikä on linjassa sen arkkitehtuurin kanssa, joka erottaa sivuvaikutukset puhtaista funktioista.
+Tämä yksinkertainen lähestymistapa voidaan sovittaa ja laajentaa, hyödyntämällä muita `Random`-moduulin toimintoja satunnaisten liukulukujen, listojen tai jopa monimutkaisten tietorakenteiden tuottamiseen perustuen mukautettuihin tyyppeihin, tarjoten laajan leikkipaikan arvaamattomuuden lisäämiseen Elm-sovelluksiisi.
 
-Vaikka tämä lähestymistapa takaa sovelluksen käyttäytymisen johdonmukaisuuden ja helpottaa vianetsintää, se tuo mukanaan oppimiskäyrän niille, jotka ovat tottuneet imperatiiviseen satunnaislukujen tuottamiseen. Kuitenkin sovelluksen puhtauden ylläpitämisen ja testaamisen helppouden edut usein voittavat alkuperäisen monimutkaisuuden.
-
-Elmin menetelmä eroaa myös kielistä, jotka tarjoavat globaaleja satunnaislukugeneraattoreita, jotka voivat johtaa hienovaraisiin virheisiin jaetun tilan vuoksi. Vaatimalla satunnaislukujen tuottamisen ja sen vaikutusten eksplisiittistä käsittelyä Elm kannustaa kehittäjiä pohtimaan kriittisemmin, missä ja miten satunnaisuus vaikuttaa heidän sovelluksiinsa, johtaen vankempiin ja ennustettavampiin koodiin.
-
-Vaihtoehtoja etsiessä, muut funktionaaliset kielet tarjoavat samankaltaisia toiminnallisuuksia, mutta saattavat toteuttaa ne eri tavoin. Esimerkiksi Haskell ylläpitää myös puhtautta satunnaislukujen tuottamisessa, mutta käyttäen hyväkseen monadeja, käsitettä, jota Elm tietoisesti välttää yksinkertaistaakseen omaa malliaan. Vertailtuna Elmin lähestymistapa on helpommin lähestyttävä uusille tulokkaille ja korostaa suoraviivaista sovellusarkkitehtuuria uhraamatta funktionaalisen ohjelmoinnin periaatteiden voimaa.
+Elm-opas käsittelee tätä paljon yksityiskohtaisemmin. Siinä on myös [esimerkki kuusisivuisen nopan heittämisestä](https://guide.elm-lang.org/effects/random).

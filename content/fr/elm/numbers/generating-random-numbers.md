@@ -1,72 +1,77 @@
 ---
-date: 2024-01-27 20:33:18.551265-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en Elm consiste \xE0 cr\xE9\
-  er des valeurs num\xE9riques impr\xE9visibles qui sont essentielles pour des applications\
-  \ comme les jeux,\u2026"
-lastmod: '2024-02-25T18:49:54.427438-07:00'
-model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Elm consiste \xE0 cr\xE9er des\
-  \ valeurs num\xE9riques impr\xE9visibles qui sont essentielles pour des applications\
-  \ comme les jeux,\u2026"
-title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-02-27T22:50:36.803137-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-27, dogweather, edited and tested
+  - 2024-02-27, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Générer des nombres aléatoires en Elm consiste à créer des valeurs numériques imprévisibles qui sont essentielles pour des applications comme les jeux, les simulations et les algorithmes de sécurité. Les programmeurs utilisent l'aléatoire pour simuler la variabilité du monde réel, améliorer l'expérience utilisateur ou sécuriser les données avec des techniques de cryptage.
+Générer des nombres aléatoires en Elm nécessite l'utilisation du module `Random` pour produire des nombres pseudo-aléatoires, qui s'avèrent utiles pour une variété de tâches telles que les jeux, les simulations, et même en tant que partie d'algorithmes nécessitant des processus stochastiques. Cette capacité permet aux développeurs d'ajouter de l'imprévisibilité et de la variété à leurs applications, améliorant l'expérience utilisateur et la fonctionnalité.
 
-## Comment :
-Elm gère l'aléatoire différemment de nombreux langages de programmation, en utilisant un système qui maintient les fonctions pures. Pour générer des nombres aléatoires, vous devez travailler avec le module `Random` d'Elm. Voici un exemple de base pour générer un nombre aléatoire entre 1 et 100 :
+## Comment faire :
+La nature purement fonctionnelle d'Elm signifie que vous ne pouvez pas générer des nombres aléatoires directement comme vous pourriez le faire dans les langages impératifs. Au lieu de cela, vous utilisez le module `Random` conjointement avec des commandes. Voici un exemple simple qui génère un entier aléatoire entre 1 et 100.
 
-```Elm
-import Html exposant (Html, text)
+D'abord, installez le module `Random` avec `elm install elm/random`. Ensuite, importez-le dans votre fichier Elm, ainsi que les modules HTML et événementiels nécessaires, comme ceci :
+
+`src/Main.elm`
+
+```elm
+module Main exposing (..)
+
+import Browser
+import Html exposing (Html, button, text, div)
+import Html.Events exposing (onClick)
 import Random
-
-main : Html msg
-main =
-    Random.generate NewRandomNumber (Random.int 1 100)
-    |> Html.map (text << toString)
-
-type Msg = NewRandomNumber Int
 ```
 
-Ce fragment utilise `Random.generate` pour créer une commande qui, une fois exécutée, produit un nombre aléatoire dans l'intervalle spécifié. La déclaration `type Msg` est utilisée pour gérer le nombre généré dans la fonction de mise à jour de votre application Elm.
+Pour que cet exemple soit autonome, vous pouvez ajouter ce code de base :
+```elm
+main =
+  Browser.element { init = init, update = update, subscriptions = subscriptions, view = view }
 
-Pour un exemple plus interactif, examinons un scénario où les utilisateurs déclenchent la génération de nombres aléatoires par un clic :
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model 0, Cmd.none)
 
-```Elm
-import Html exposant (Html, button, div, text)
-import Html.Events exposant (onClick)
-import Random
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+```
 
-type alias Model = Int
+Ensuite, définissez une **commande** pour générer un nombre aléatoire. Cela implique de mettre en place un type `Msg` pour gérer le nombre aléatoire une fois qu'il est généré, un `Model` pour le stocker, et une fonction de mise à jour pour tout lier.
+```elm
+type Msg
+    = Generate
+    | NewRandom Int
 
-type Msg = Generate
+type alias Model = { randomNumber : Int }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         Generate ->
-            (model, Random.generate NewRandomNumber (Random.int 1 100))
+            ( model, Random.generate NewRandom (Random.int 1 100) )
 
+        NewRandom number ->
+            ( { model | randomNumber = number }, Cmd.none )
+```
+
+Pour déclencher la génération d'un nombre, vous pourriez envoyer un message `Generate`, par exemple, via un bouton dans votre vue :
+```elm
 view : Model -> Html Msg
 view model =
     div []
-        [ text ("Nombre généré : " ++ String.fromInt model)
-        , button [ onClick Generate ] [ text "Générer un nouveau nombre" ]
+        [ div [] [ text ("Nombre Aléatoire : " ++ String.fromInt(model.randomNumber)) ]
+        , button [ onClick Generate ] [ text "Générer" ]
         ]
-
-type Msg = NewRandomNumber Int
 ```
 
-Cette application Elm introduit de l'interactivité, mettant à jour l'affichage avec un nouveau nombre aléatoire chaque fois que l'utilisateur clique sur le bouton.
+Lorsque vous cliquez sur le bouton "Générer", un nombre aléatoire entre 1 et 100 sera affiché.
 
-## Analyse Approfondie
-La conception du système de génération de nombres aléatoires d'Elm découle de l'engagement du langage envers la pureté et la prévisibilité. Au lieu de fonctions impures directes qui renvoient des valeurs différentes à chaque appel, Elm encapsule l'aléatoire dans une structure `Cmd`, s'alignant sur son architecture qui sépare les effets secondaires des fonctions pures.
+Cette approche simpliste peut être adaptée et élargie, en tirant parti des autres fonctions du module `Random` pour produire des flottants aléatoires, des listes, ou même des structures de données complexes basées sur des types personnalisés, offrant un vaste terrain de jeu pour ajouter de l’imprévisibilité à vos applications Elm.
 
-Bien que cette approche garantisse une cohérence dans le comportement de l'application et facilite le débogage, elle introduit une courbe d'apprentissage pour ceux qui sont habitués à la génération impérative de nombres aléatoires. Cependant, les avantages de maintenir la pureté de l'application et la facilité des tests l'emportent souvent sur la complexité initiale.
-
-La méthode d'Elm contraste également avec les langages qui offrent des générateurs de nombres aléatoires globaux, qui peuvent conduire à des bugs subtils en raison de l'état partagé. En exigeant une gestion explicite de la génération de nombres aléatoires et de ses effets, Elm encourage les développeurs à réfléchir plus critiqueusement sur où et comment l'aléatoire affecte leurs applications, conduisant à un code plus robuste et prévisible.
-
-Pour des alternatives, d'autres langages fonctionnels offrent des fonctionnalités similaires mais peuvent les implémenter différemment. Haskell, par exemple, maintient également la pureté dans la génération de nombres aléatoires mais à travers l'utilisation de monades, un concept qu'Elm évite délibérément pour simplifier son modèle. Comparativement, l'approche d'Elm est plus accessible aux nouveaux venus et met l'accent sur une architecture d'application simple sans sacrifier la puissance des principes de programmation fonctionnelle.
+Le Guide Elm va bien plus en détail. Il a aussi [un exemple pour lancer un dé à six faces](https://guide.elm-lang.org/effects/random).

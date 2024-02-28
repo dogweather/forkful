@@ -1,70 +1,77 @@
 ---
-date: 2024-01-27 20:33:44.745303-07:00
-description: "Das Generieren von Zufallszahlen in Elm beinhaltet die Erstellung unvorhersehbarer\
-  \ numerischer Werte, die f\xFCr Anwendungen wie Spiele, Simulationen und\u2026"
-lastmod: '2024-02-25T18:49:50.863818-07:00'
-model: gpt-4-0125-preview
-summary: "Das Generieren von Zufallszahlen in Elm beinhaltet die Erstellung unvorhersehbarer\
-  \ numerischer Werte, die f\xFCr Anwendungen wie Spiele, Simulationen und\u2026"
-title: Generierung von Zufallszahlen
+title:                "Zufallszahlen generieren"
+date:                  2024-02-27T22:50:18.221595-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-27, dogweather, edited and tested
+  - 2024-02-27, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Generieren von Zufallszahlen in Elm beinhaltet die Erstellung unvorhersehbarer numerischer Werte, die für Anwendungen wie Spiele, Simulationen und Sicherheitsalgorithmen unerlässlich sind. Programmierer verwenden Zufälligkeit, um reale Variabilität zu simulieren, die Benutzererfahrung zu verbessern oder Daten mit Verschlüsselungstechniken zu sichern.
+Das Generieren von Zufallszahlen in Elm erfordert die Verwendung des `Random`-Moduls, um Pseudozufallszahlen zu erzeugen, die für eine Vielzahl von Aufgaben wie Spiele, Simulationen und sogar als Teil von Algorithmen, die stochastische Prozesse benötigen, nützlich sind. Diese Fähigkeit ermöglicht es Entwicklern, Unvorhersehbarkeit und Vielfalt in ihre Anwendungen zu bringen, was die Benutzererfahrung und Funktionalität verbessert.
 
-## Wie:
-Elm geht anders als viele Programmiersprachen mit Zufälligkeit um und nutzt ein System, das Funktionen rein hält. Um Zufallszahlen zu generieren, müssen Sie mit dem `Random`-Modul von Elm arbeiten. Hier ist ein einfaches Beispiel, wie eine Zufallszahl zwischen 1 und 100 generiert wird:
+## Wie geht das:
+Elms reine funktionale Natur bedeutet, dass du nicht direkt Zufallszahlen generieren kannst, wie du es vielleicht in imperativen Sprachen tun würdest. Stattdessen verwendest du das `Random`-Modul in Verbindung mit Befehlen. Hier ist ein einfaches Beispiel, das eine zufällige Ganzzahl zwischen 1 und 100 generiert.
 
-```Elm
-import Html exposing (Html, text)
-import Random
+Zuerst installiere das `Random`-Modul mit `elm install elm/random`. Dann importiere es in deine Elm-Datei, zusammen mit den notwendigen HTML- und Event-Modulen, so:
 
-main : Html msg
-main =
-    Random.generate NewRandomNumber (Random.int 1 100)
-    |> Html.map (text << toString)
+`src/Main.elm`
 
-type Msg = NewRandomNumber Int
-```
+```elm
+module Main exposing (..)
 
-Dieser Schnipsel verwendet `Random.generate`, um einen Befehl zu erstellen, der bei der Ausführung eine Zufallszahl im angegebenen Bereich produziert. Die `type Msg`-Deklaration wird verwendet, um die generierte Zahl in der Update-Funktion Ihrer Elm-Anwendung zu behandeln.
-
-Für ein interaktiveres Beispiel sehen wir uns ein Szenario an, in dem Benutzer durch einen Klick die Generierung von Zufallszahlen auslösen:
-
-```Elm
-import Html exposing (Html, button, div, text)
+import Browser
+import Html exposing (Html, button, text, div)
 import Html.Events exposing (onClick)
 import Random
+```
 
-type alias Model = Int
+Um dies zu einem eigenständigen Beispiel zu machen, kannst du dieses Grundgerüst hinzufügen:
+```elm
+main =
+  Browser.element { init = init, update = update, subscriptions = subscriptions, view = view }
 
-type Msg = Generate
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model 0, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+```
+
+Als Nächstes definiere einen **Befehl**, um eine Zufallszahl zu generieren. Dies beinhaltet das Einrichten eines `Msg`-Typs, um die Zufallszahl zu verarbeiten, sobald sie generiert wurde, ein `Model`, um sie zu speichern, und eine Update-Funktion, um alles zusammenzubinden.
+```elm
+type Msg
+    = Generate
+    | NewRandom Int
+
+type alias Model = { randomNumber : Int }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         Generate ->
-            (model, Random.generate NewRandomNumber (Random.int 1 100))
+            ( model, Random.generate NewRandom (Random.int 1 100) )
 
+        NewRandom number ->
+            ( { model | randomNumber = number }, Cmd.none )
+```
+
+Um eine Zahlengenerierung auszulösen, würdest du eine `Generate`-Nachricht senden, zum Beispiel durch einen Knopf in deiner Ansicht:
+```elm
 view : Model -> Html Msg
 view model =
     div []
-        [ text ("Generierte Zahl: " ++ String.fromInt model)
-        , button [ onClick Generate ] [ text "Neue Zahl generieren" ]
+        [ div [] [ text ("Zufallszahl: " ++ String.fromInt model.randomNumber) ]
+        , button [ onClick Generate ] [ text "Generieren" ]
         ]
-
-type Msg = NewRandomNumber Int
 ```
 
-Diese Elm-Anwendung führt Interaktivität ein, indem das Display mit einer neuen Zufallszahl aktualisiert wird, jedes Mal wenn der Benutzer den Knopf klickt.
+Wenn du auf den "Generieren"-Knopf klickst, wird eine zufällige Zahl zwischen 1 und 100 angezeigt.
 
-## Tiefergehender Einblick
-Das Design von Elms System zur Generierung von Zufallszahlen resultiert aus dem Engagement der Sprache für Reinheit und Vorhersagbarkeit. Anstatt direkte, unreine Funktionen, die bei jedem Aufruf unterschiedliche Werte zurückgeben, kapselt Elm Zufälligkeit in einer `Cmd`-Struktur ein, im Einklang mit seiner Architektur, die Nebenwirkungen von reinen Funktionen trennt.
+Dieser einfache Ansatz kann angepasst und erweitert werden, indem andere Funktionen im `Random`-Modul genutzt werden, um Zufallsfloats, Listen oder sogar komplexe Datenstrukturen basierend auf benutzerdefinierten Typen zu erzeugen, und bietet so einen riesigen Spielplatz für die Hinzufügung von Unvorhersehbarkeit zu deinen Elm-Anwendungen.
 
-Obwohl dieser Ansatz Konsistenz im Verhalten der Anwendung garantiert und das Debugging erleichtert, führt er eine Lernkurve für diejenigen ein, die an die imperative Generierung von Zufallszahlen gewöhnt sind. Jedoch überwiegen die Vorteile der Aufrechterhaltung der Reinheit der Anwendung und die Leichtigkeit des Testens oft die anfängliche Komplexität.
-
-Elms Methode steht im Gegensatz zu Sprachen, die globale Generatoren für Zufallszahlen bieten, was zu subtilen Fehlern aufgrund von gemeinsam genutzten Zuständen führen kann. Indem Elm eine explizite Handhabung der Generierung von Zufallszahlen und ihrer Effekte erfordert, ermutigt es Entwickler, kritischer darüber nachzudenken, wo und wie Zufälligkeit ihre Anwendungen beeinflusst, was zu robusterem und vorhersagbarerem Code führt.
-
-Als Alternativen bieten andere funktionale Sprachen ähnliche Funktionalitäten, können diese jedoch unterschiedlich implementieren. Haskell hält beispielsweise auch die Reinheit bei der Generierung von Zufallszahlen aufrecht, aber durch die Verwendung von Monaden, ein Konzept, das Elm absichtlich vermeidet, um sein Modell zu vereinfachen. Im Vergleich ist Elms Ansatz für Neulinge zugänglicher und betont eine unkomplizierte Anwendungsarchitektur, ohne die Kraft der Prinzipien der funktionalen Programmierung zu opfern.
+Der Elm-Leitfaden geht viel detaillierter darauf ein. Es hat auch [ein Beispiel für das Würfeln eines sechsseitigen Würfels](https://guide.elm-lang.org/effects/random).

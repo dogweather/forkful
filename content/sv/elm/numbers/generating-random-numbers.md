@@ -1,72 +1,77 @@
 ---
-date: 2024-01-27 20:33:56.334179-07:00
-description: "Att generera slumpm\xE4ssiga nummer i Elm inneb\xE4r att skapa of\xF6\
-  ruts\xE4gbara numeriska v\xE4rden som \xE4r avg\xF6rande f\xF6r applikationer som\
-  \ spel, simuleringar och\u2026"
-lastmod: '2024-02-25T18:49:36.119893-07:00'
-model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga nummer i Elm inneb\xE4r att skapa of\xF6ruts\xE4\
-  gbara numeriska v\xE4rden som \xE4r avg\xF6rande f\xF6r applikationer som spel,\
-  \ simuleringar och\u2026"
-title: Generera slumptal
+title:                "Generera slumpmässiga tal"
+date:                  2024-02-27T22:50:35.453782-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-27, dogweather, edited and tested
+  - 2024-02-27, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att generera slumpmässiga nummer i Elm innebär att skapa oförutsägbara numeriska värden som är avgörande för applikationer som spel, simuleringar och säkerhetsalgoritmer. Programmerare använder slumpmässighet för att simulera verklig variabilitet, förbättra användarupplevelsen eller säkra data med krypteringstekniker.
+Att generera slumpmässiga nummer i Elm innebär att använda `Random`-modulen för att producera pseudo-slumpmässiga nummer, vilket är användbart för en mängd uppgifter såsom spel, simuleringar och även som en del av algoritmer som kräver stokastiska processer. Denna förmåga tillåter utvecklare att lägga till oförutsägbarhet och variation i sina applikationer, vilket förbättrar användarupplevelse och funktionalitet.
 
-## Hur:
-Elm hanterar slumpmässighet annorlunda än många programmeringsspråk, genom att använda ett system som håller funktioner rena. För att generera slumpmässiga nummer måste du arbeta med Elms `Random`-modul. Här är ett grundläggande exempel på hur man genererar ett slumpmässigt tal mellan 1 och 100:
+## Hur man gör:
+Elms rena funktionella natur innebär att du inte kan generera slumpmässiga nummer direkt som du kanske kan i imperativa språk. Istället använder du `Random`-modulen tillsammans med kommandon. Här är ett grundläggande exempel som genererar ett slumpmässigt heltal mellan 1 och 100.
 
-```Elm
-import Html exposing (Html, text)
-import Random
+Först, installera `Random`-modulen med `elm install elm/random`. Importera sedan den till din Elm-fil, tillsammans med de nödvändiga HTML- och händelsemodulerna, så här:
 
-main : Html msg
-main =
-    Random.generate NewRandomNumber (Random.int 1 100)
-    |> Html.map (text << toString)
+`src/Main.elm`
 
-type Msg = NewRandomNumber Int
-```
+```elm
+module Main exposing (..)
 
-Detta kodsnutt använder `Random.generate` för att skapa ett kommando som, när det utförs, producerar ett slumpmässigt nummer inom det angivna intervallet. Deklarationen `type Msg` används för att hantera det genererade numret i din Elmapplikations uppdateringsfunktion.
-
-För ett mer interaktivt exempel, låt oss titta på ett scenario där användare utlöser generering av slumpmässiga nummer genom ett klick:
-
-```Elm
-import Html exposing (Html, button, div, text)
+import Browser
+import Html exposing (Html, button, text, div)
 import Html.Events exposing (onClick)
 import Random
+```
 
-type alias Model = Int
+För att detta ska vara ett självständigt exempel kan du lägga till denna mallkod:
+```elm
+main =
+  Browser.element { init = init, update = update, subscriptions = subscriptions, view = view }
 
-type Msg = Generate
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model 0, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+```
+
+Nästa steg, definiera ett **kommando** för att generera ett slumpmässigt nummer. Detta innebär att ställa in en `Msg`-typ för att hantera det slumpmässiga numret när det har genererats, en `Model` för att lagra det, och en uppdateringsfunktion för att sammanbinda allt.
+```elm
+type Msg
+    = Generate
+    | NewRandom Int
+
+type alias Model = { randomNumber : Int }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         Generate ->
-            (model, Random.generate NewRandomNumber (Random.int 1 100))
+            ( model, Random.generate NewRandom (Random.int 1 100) )
 
+        NewRandom number ->
+            ( { model | randomNumber = number }, Cmd.none )
+```
+
+För att utlösa en nummergenerering skulle du skicka ett `Generate`-meddelande, till exempel genom en knapp i din vy:
+```elm
 view : Model -> Html Msg
 view model =
     div []
-        [ text ("Genererat nummer: " ++ String.fromInt model)
-        , button [ onClick Generate ] [ text "Generera nytt nummer" ]
+        [ div [] [ text ("Slumpmässigt Nummer: " ++ String.fromInt model.randomNumber) ]
+        , button [ onClick Generate ] [ text "Generera" ]
         ]
-
-type Msg = NewRandomNumber Int
 ```
 
-Denna Elmapplikation introducerar interaktivitet och uppdaterar visningen med ett nytt slumpmässigt nummer varje gång användaren klickar på knappen.
+När du klickar på "Generera"-knappen, kommer ett slumpmässigt nummer mellan 1 och 100 att visas.
 
-## Djupdykning
-Designen av Elms system för generering av slumpmässiga nummer härstammar från språkets engagemang för renhet och förutsägbarhet. Istället för direkta, orena funktioner som returnerar olika värden vid varje anrop, inkapslar Elm slumpmässigheten i en `Cmd`-struktur, i linje med dess arkitektur som separerar sidoeffekter från rena funktioner.
+Detta förenklade tillvägagångssätt kan anpassas och utvidgas, genom att utnyttja andra funktioner i `Random`-modulen för att producera slumpmässiga flyttal, listor eller till och med komplexa datastrukturer baserat på anpassade typer, vilket ger en stor lekplats för att lägga till oförutsägbarhet i dina Elm-applikationer.
 
-Även om detta tillvägagångssätt garanterar konsekvens i applikationsbeteendet och underlättar felsökning, introducerar det en inlärningskurva för de som är vana vid imperativ generering av slumpmässiga nummer. Dock överväger ofta fördelarna med att upprätthålla applikationsrenhet och enkelhet vid testning den initiala komplexiteten.
-
-Elms metod kontrasterar också med språk som erbjuder globala generatorer för slumpmässiga nummer, vilka kan leda till subtila buggar på grund av delat tillstånd. Genom att kräva explikit hantering av generering av slumpmässiga nummer och dess effekter, uppmuntrar Elm utvecklare att tänka mer kritiskt kring var och hur slumpmässighet påverkar deras applikationer, vilket leder till mer robust och förutsägbar kod.
-
-För alternativ erbjuder andra funktionella språk liknande funktionaliteter men kan implementera dem på olika sätt. Haskell, till exempel, bibehåller också renhet i generering av slumpmässiga nummer men genom användning av monader, ett koncept som Elm medvetet undviker för att förenkla sin modell. Jämfört med Elm är dess tillvägagångssätt mer tillgängligt för nykomlingar och betonar en okomplicerad applikationsarkitektur utan att offra kraften i principer för funktionell programmering.
+Elm-guiden går in på mycket mer detaljer. Den har också [ett exempel på att rulla en sexsidig tärning](https://guide.elm-lang.org/effects/random).

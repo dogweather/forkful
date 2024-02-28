@@ -1,70 +1,77 @@
 ---
-date: 2024-01-27 20:26:19.358617-07:00
-description: "Generating random numbers in Elm involves creating unpredictable numerical\
-  \ values that are essential for applications like games, simulations, and\u2026"
-lastmod: '2024-02-25T18:49:56.450414-07:00'
-model: gpt-4-0125-preview
-summary: "Generating random numbers in Elm involves creating unpredictable numerical\
-  \ values that are essential for applications like games, simulations, and\u2026"
-title: Generating random numbers
+title:                "Generating random numbers"
+date:                  2024-02-27T22:04:38.367952-07:00
+model:                 gpt-4-0125-preview
+changelog:
+- 2024-02-27, dogweather, edited and tested
 ---
 
 {{< edit_this_page >}}
 
 ## What & Why?
-Generating random numbers in Elm involves creating unpredictable numerical values that are essential for applications like games, simulations, and security algorithms. Programmers use randomness to simulate real-world variability, enhance user experience, or secure data with encryption techniques.
+Generating random numbers in Elm involves using the `Random` module to produce pseudo-random numbers, which come in handy for a variety of tasks such as games, simulations, and even as part of algorithms that require stochastic processes. This capability allows developers to add unpredictability and variety to their applications, enhancing user experience and functionality.
 
 ## How to:
-Elm handles randomness differently than many programming languages, utilizing a system that keeps functions pure. To generate random numbers, you must work with Elm's `Random` module. Here's a basic example of generating a random number between 1 and 100:
+Elm's pure functional nature means that you can't generate random numbers directly as you might in imperative languages. Instead, you use the `Random` module in conjunction with commands. Here's a basic example that generates a random integer between 1 and 100.
 
-```Elm
-import Html exposing (Html, text)
-import Random
+First, install the `Random` module with `elm install elm/random`. Then import it into your Elm file, along with the necessary HTML and event modules, like so:
 
-main : Html msg
-main =
-    Random.generate NewRandomNumber (Random.int 1 100)
-    |> Html.map (text << toString)
+`src/Main.elm`
 
-type Msg = NewRandomNumber Int
-```
+```elm
+module Main exposing (..)
 
-This snippet uses `Random.generate` to create a command that, when executed, produces a random number within the specified range. The `type Msg` declaration is used to handle the generated number in your Elm application's update function.
-
-For a more interactive example, let's look at a scenario where users trigger random number generation through a click:
-
-```Elm
-import Html exposing (Html, button, div, text)
+import Browser
+import Html exposing (Html, button, text, div)
 import Html.Events exposing (onClick)
 import Random
+```
 
-type alias Model = Int
+For this to be a self-contained example, you can add this boilerplate:
+```elm
+main =
+  Browser.element { init = init, update = update, subscriptions = subscriptions, view = view }
 
-type Msg = Generate
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model 0, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+```
+
+Next, define a **command** to generate a random number. This involves setting up a `Msg` type to handle the random number once it's generated, a `Model` to store it, and an update function to tie it all together.
+```elm
+type Msg
+    = Generate
+    | NewRandom Int
+
+type alias Model = { randomNumber : Int }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         Generate ->
-            (model, Random.generate NewRandomNumber (Random.int 1 100))
+            ( model, Random.generate NewRandom (Random.int 1 100) )
 
+        NewRandom number ->
+            ( { model | randomNumber = number }, Cmd.none )
+```
+
+To trigger a number generation, you would send a `Generate` message, for instance, through a button in your view:
+```elm
 view : Model -> Html Msg
 view model =
     div []
-        [ text ("Generated number: " ++ String.fromInt model)
-        , button [ onClick Generate ] [ text "Generate new number" ]
+        [ div [] [ text ("Random Number: " ++ String.fromInt model.randomNumber) ]
+        , button [ onClick Generate ] [ text "Generate" ]
         ]
-
-type Msg = NewRandomNumber Int
 ```
 
-This Elm application introduces interactivity, updating the display with a new random number each time the user clicks the button.
+When you click the "Generate" button, a random number between 1 and 100 will be displayed.
 
-## Deep Dive
-The design of Elm's random number generation system stems from the language's commitment to purity and predictability. Instead of direct, impure functions that return different values on each call, Elm encapsulates randomness in a `Cmd` structure, aligning with its architecture that separates side effects from pure functions.
+This simplistic approach can be adapted and expanded, leveraging other functions in the `Random` module to produce random floats, lists, or even complex data structures based on custom types, providing a vast playground for adding unpredictability to your Elm applications.
 
-While this approach guarantees consistency in application behavior and facilitates debugging, it introduces a learning curve for those accustomed to the imperative generation of random numbers. However, the benefits of maintaining application purity and the ease of testing often outweigh the initial complexity.
+The Elm Guide goes into much more detail. It also has [an example of rolling a six-sided die](https://guide.elm-lang.org/effects/random).
 
-Elm's method also contrasts with languages that offer global random number generators, which can lead to subtle bugs due to shared state. By requiring explicit handling of random number generation and its effects, Elm encourages developers to think more critically about where and how randomness affects their applications, leading to more robust and predictable code.
-
-For alternatives, other functional languages offer similar functionalities but may implement them differently. Haskell, for example, also maintains purity in random number generation but through the use of monads, a concept that Elm deliberately avoids to simplify its model. Comparatively, Elm's approach is more accessible to newcomers and emphasizes a straightforward application architecture without sacrificing the power of functional programming principles.

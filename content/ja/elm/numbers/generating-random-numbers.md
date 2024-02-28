@@ -1,88 +1,80 @@
 ---
-date: 2024-01-27 20:33:49.114260-07:00
-description: "Elm\u3067\u4E71\u6570\u3092\u751F\u6210\u3059\u308B\u3053\u3068\u306F\
-  \u3001\u30B2\u30FC\u30E0\u3001\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u3001\
-  \u30BB\u30AD\u30E5\u30EA\u30C6\u30A3\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0\u306A\u3069\
-  \u306E\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u306B\u4E0D\u53EF\u6B20\u306A\
-  \u4E88\u6E2C\u4E0D\u53EF\u80FD\u306A\u6570\u5024\u3092\u4F5C\u308A\u51FA\u3059\u3053\
-  \u3068\u3092\u610F\u5473\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\
-  \u306F\u3001\u73FE\u5B9F\u4E16\u754C\u306E\u5909\u52D5\u3092\u30B7\u30DF\u30E5\u30EC\
-  \u30FC\u30C8\u3057\u305F\u308A\u3001\u30E6\u30FC\u30B6\u30FC\u4F53\u9A13\u3092\u5411\
-  \u4E0A\u3055\u305B\u305F\u308A\u3001\u6697\u53F7\u5316\u6280\u8853\u3092\u7528\u3044\
-  \u3066\u30C7\u30FC\u30BF\u3092\u5B89\u5168\u306B\u4FDD\u3064\u305F\u3081\u306B\u3001\
-  \u4E71\u6570\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
-lastmod: '2024-02-25T18:49:40.030810-07:00'
-model: gpt-4-0125-preview
-summary: "Elm\u3067\u4E71\u6570\u3092\u751F\u6210\u3059\u308B\u3053\u3068\u306F\u3001\
-  \u30B2\u30FC\u30E0\u3001\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u3001\u30BB\
-  \u30AD\u30E5\u30EA\u30C6\u30A3\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0\u306A\u3069\u306E\
-  \u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u306B\u4E0D\u53EF\u6B20\u306A\u4E88\
-  \u6E2C\u4E0D\u53EF\u80FD\u306A\u6570\u5024\u3092\u4F5C\u308A\u51FA\u3059\u3053\u3068\
-  \u3092\u610F\u5473\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\
-  \u3001\u73FE\u5B9F\u4E16\u754C\u306E\u5909\u52D5\u3092\u30B7\u30DF\u30E5\u30EC\u30FC\
-  \u30C8\u3057\u305F\u308A\u3001\u30E6\u30FC\u30B6\u30FC\u4F53\u9A13\u3092\u5411\u4E0A\
-  \u3055\u305B\u305F\u308A\u3001\u6697\u53F7\u5316\u6280\u8853\u3092\u7528\u3044\u3066\
-  \u30C7\u30FC\u30BF\u3092\u5B89\u5168\u306B\u4FDD\u3064\u305F\u3081\u306B\u3001\u4E71\
-  \u6570\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
-title: "\u4E71\u6570\u306E\u751F\u6210"
+title:                "乱数の生成"
+date:                  2024-02-27T22:50:37.210043-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-27, dogweather, edited and tested
+  - 2024-02-27, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 何となぜ？
-Elmで乱数を生成することは、ゲーム、シミュレーション、セキュリティアルゴリズムなどのアプリケーションに不可欠な予測不可能な数値を作り出すことを意味します。プログラマーは、現実世界の変動をシミュレートしたり、ユーザー体験を向上させたり、暗号化技術を用いてデータを安全に保つために、乱数を使用します。
+Elmで乱数を生成するには、`Random`モジュールを使用して疑似乱数を生成します。これは、ゲーム、シミュレーション、または確率的プロセスが必要なアルゴリズムの一部として、さまざまなタスクに便利です。この機能により、開発者はアプリケーションに予測不可能さと多様性を追加でき、ユーザー体験と機能性を向上させることができます。
 
-## どのように：
-Elmは他の多くのプログラミング言語とは異なり、関数を純粋に保つシステムを利用して乱数を扱います。乱数を生成するには、Elmの `Random` モジュールを利用する必要があります。ここに、1から100までの乱数を生成する基本的な例を示します：
+## どのようにして：
+Elmの純粋関数的な性質は、命令型言語で可能なように直接乱数を生成できないことを意味します。代わりに、`Random`モジュールを命令と組み合わせて使用します。ここでは、1から100の間のランダムな整数を生成する基本的な例を示します。
 
-```Elm
-import Html exposing (Html, text)
-import Random
+まず、`elm install elm/random`で`Random`モジュールをインストールします。次に、必要なHTMLおよびイベントモジュールと共に、Elmファイルにインポートします。
 
-main : Html msg
-main =
-    Random.generate NewRandomNumber (Random.int 1 100)
-    |> Html.map (text << toString)
+`src/Main.elm`
 
-type Msg = NewRandomNumber Int
-```
+```elm
+module Main exposing (..)
 
-このスニペットは `Random.generate` を使用して、実行されると指定された範囲内で乱数を生成するコマンドを作成します。 `type Msg` 宣言は、Elmアプリケーションの更新関数で生成された数値を扱うために使用されます。
-
-もう少しインタラクティブな例として、ユーザーがクリックを通じて乱数生成をトリガーするシナリオを見てみましょう：
-
-```Elm
-import Html exposing (Html, button, div, text)
+import Browser
+import Html exposing (Html, button, text, div)
 import Html.Events exposing (onClick)
 import Random
+```
 
-type alias Model = Int
+これが自己完結型の例であるために、このボイラープレートを追加できます：
 
-type Msg = Generate
+```elm
+main =
+  Browser.element { init = init, update = update, subscriptions = subscriptions, view = view }
+
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model 0, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+```
+
+次に、ランダムな数字を生成する**コマンド**を定義します。これには、生成されたランダムな数字を処理するための`Msg`型の設定、それを格納する`Model`、そしてそれらをすべて結びつける更新関数が含まれます。
+
+```elm
+type Msg
+    = Generate
+    | NewRandom Int
+
+type alias Model = { randomNumber : Int }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         Generate ->
-            (model, Random.generate NewRandomNumber (Random.int 1 100))
+            ( model, Random.generate NewRandom (Random.int 1 100) )
 
+        NewRandom number ->
+            ( { model | randomNumber = number }, Cmd.none )
+```
+
+数字生成をトリガーするには、例えばビュー内のボタンを通じて`Generate`メッセージを送信します：
+
+```elm
 view : Model -> Html Msg
 view model =
     div []
-        [ text ("Generated number: " ++ String.fromInt model)
-        , button [ onClick Generate ] [ text "Generate new number" ]
+        [ div [] [ text ("Random Number: " ++ String.fromInt model.randomNumber) ]
+        , button [ onClick Generate ] [ text "Generate" ]
         ]
-
-type Msg = NewRandomNumber Int
 ```
 
-このElmアプリケーションは、ユーザーがボタンをクリックするたびに新しい乱数で表示を更新するインタラクティビティを導入しています。
+"Generate"ボタンをクリックすると、1から100の間のランダムな数字が表示されます。
 
-## 深堀り
-Elmの乱数生成システムの設計は、言語の純粋性と予測可能性へのコミットメントに由来しています。各呼び出しで異なる値を返す直接的な、純粋でない関数の代わりに、Elmは乱数を `Cmd` 構造でカプセル化し、副作用を純粋な関数から分離するそのアーキテクチャと一致させます。
+この単純なアプローチは、他の関数を利用して`Random`モジュールによりランダムな浮動小数点数、リスト、またはカスタムタイプに基づいた複雑なデータ構造を生成することにより適応され拡張され、Elmアプリケーションへの予測不可能さの追加のための広大な遊び場を提供します。
 
-このアプローチは、アプリケーションの振る舞いの一貫性を保証し、デバッグを容易にする一方で、乱数を命令形で生成するのに慣れている人には学習曲線を導入します。しかし、アプリケーションの純粋性を維持し、テストの容易さは、最初の複雑さをしばしば上回る利点です。
-
-Elmの方法は、グローバル乱数生成器を提供する言語とも対照的で、共有状態による微妙なバグを引き起こす可能性があります。乱数生成とその効果の明示的な処理を要求することにより、Elmは開発者がアプリケーションにおける乱数がどのように、そしてどこで影響を与えるかについてより批判的に考えるよう促し、より堅牢で予測可能なコードにつながります。
-
-代替手段として、他の関数型言語は類似の機能を提供していますが、異なる方法で実装する場合があります。例えば、Haskellも乱数生成の純粋性を維持していますが、モナドという、Elmが意図的に避ける概念を使用しています。比較的に、Elmのアプローチは新参者にとってよりアクセスしやすく、関数型プログラミングの原則の力を犠牲にすることなく、直接的なアプリケーションアーキテクチャを強調しています。
+Elmガイドでは、より詳細な情報が記載されています。また、[六面体のサイコロを振る例](https://guide.elm-lang.org/effects/random)もあります。

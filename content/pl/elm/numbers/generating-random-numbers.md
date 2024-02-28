@@ -1,72 +1,77 @@
 ---
-date: 2024-01-27 20:33:38.719502-07:00
-description: "Generowanie losowych liczb w Elm polega na tworzeniu nieprzewidywalnych\
-  \ warto\u015Bci liczbowych, kt\xF3re s\u0105 niezb\u0119dne dla aplikacji takich\
-  \ jak gry, symulacje i\u2026"
-lastmod: '2024-02-25T18:49:33.681609-07:00'
-model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w Elm polega na tworzeniu nieprzewidywalnych\
-  \ warto\u015Bci liczbowych, kt\xF3re s\u0105 niezb\u0119dne dla aplikacji takich\
-  \ jak gry, symulacje i\u2026"
-title: Generowanie liczb losowych
+title:                "Generowanie liczb losowych"
+date:                  2024-02-27T22:50:49.378371-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-02-27, dogweather, edited and tested
+  - 2024-02-27, OpenAIModel.GPT_4_TURBO, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Generowanie losowych liczb w Elm polega na tworzeniu nieprzewidywalnych wartości liczbowych, które są niezbędne dla aplikacji takich jak gry, symulacje i algorytmy zabezpieczające. Programiści używają losowości do symulacji zmienności rzeczywistej, zwiększenia jakości doświadczeń użytkownika lub zabezpieczenia danych za pomocą technik szyfrowania.
+Generowanie liczb losowych w Elm odbywa się przez użycie modułu `Random`, który pozwala na produkcję pseudo-losowych liczb. Liczby te przydają się w różnych zadaniach takich jak gry, symulacje, a nawet jako część algorytmów wymagających procesów stochastycznych. Ta możliwość pozwala programistom dodać nieprzewidywalność i różnorodność do ich aplikacji, zwiększając doświadczenie użytkownika i funkcjonalność.
 
 ## Jak to zrobić:
-Elm radzi sobie z losowością inaczej niż wiele języków programowania, wykorzystując system, który utrzymuje funkcje w czystości. Aby wygenerować losowe liczby, musisz pracować z modułem `Random` Elm. Oto podstawowy przykład generowania losowej liczby między 1 a 100:
+Czysto funkcyjna natura Elm oznacza, że nie możesz bezpośrednio generować liczb losowych, jak mogłoby to być w językach imperatywnych. Zamiast tego używasz modułu `Random` w połączeniu z komendami. Oto podstawowy przykład, który generuje losową liczbę całkowitą między 1 a 100.
 
-```Elm
-import Html exposing (Html, text)
-import Random
+Najpierw zainstaluj moduł `Random` za pomocą `elm install elm/random`. Następnie zaimportuj go do pliku Elm wraz z potrzebnymi modułami HTML i zdarzeń, tak jak poniżej:
 
-main : Html msg
-main =
-    Random.generate NewRandomNumber (Random.int 1 100)
-    |> Html.map (text << toString)
+`src/Main.elm`
 
-type Msg = NewRandomNumber Int
-```
+```elm
+module Main exposing (..)
 
-Ten fragment kodu używa `Random.generate`, aby stworzyć komendę, która po wykonaniu produkuje losową liczbę w określonym zakresie. Deklaracja `type Msg` jest używana do obsługi wygenerowanej liczby w funkcji aktualizacji twojej aplikacji Elm.
-
-Dla bardziej interaktywnego przykładu, spójrzmy na scenariusz, w którym użytkownicy wyzwalają generowanie losowych liczb przez kliknięcie:
-
-```Elm
-import Html exposing (Html, button, div, text)
+import Browser
+import Html exposing (Html, button, text, div)
 import Html.Events exposing (onClick)
 import Random
+```
 
-type alias Model = Int
+Aby to był samowystarczalny przykład, możesz dodać ten kod startowy:
+```elm
+main =
+  Browser.element { init = init, update = update, subscriptions = subscriptions, view = view }
 
-type Msg = Generate
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model 0, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+```
+
+Następnie zdefiniuj **komendę** do generowania losowej liczby. Obejmuje to ustawienie typu `Msg` do obsługi wygenerowanej liczby losowej, `Model` do jej przechowywania oraz funkcję aktualizującą, aby wszystko połączyć.
+```elm
+type Msg
+    = Generate
+    | NewRandom Int
+
+type alias Model = { randomNumber : Int }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         Generate ->
-            (model, Random.generate NewRandomNumber (Random.int 1 100))
+            ( model, Random.generate NewRandom (Random.int 1 100) )
 
+        NewRandom number ->
+            ( { model | randomNumber = number }, Cmd.none )
+```
+
+Aby zainicjować generowanie numeru, możesz wysłać wiadomość `Generate`, na przykład, poprzez przycisk w swoim widoku:
+```elm
 view : Model -> Html Msg
 view model =
     div []
-        [ text ("Wygenerowana liczba: " ++ String.fromInt model)
-        , button [ onClick Generate ] [ text "Generuj nową liczbę" ]
+        [ div [] [ text ("Random Number: " ++ String.fromInt model.randomNumber) ]
+        , button [ onClick Generate ] [ text "Generate" ]
         ]
-
-type Msg = NewRandomNumber Int
 ```
 
-Ta aplikacja Elm wprowadza interaktywność, aktualizując wyświetlaną liczbę na nową za każdym razem, gdy użytkownik kliknie przycisk.
+Kiedy klikniesz przycisk "Generate", zostanie wyświetlona losowa liczba między 1 a 100.
 
-## Pogłębiona analiza
-Projekt systemu generowania losowych liczb w Elm wynika z zaangażowania języka w czystość i przewidywalność. Zamiast bezpośrednich, nieczystych funkcji, które zwracają różne wartości przy każdym wywołaniu, Elm enkapsuluje losowość w strukturze `Cmd`, zgodnie z jego architekturą, która oddziela efekty uboczne od czystych funkcji.
+To uproszczone podejście można dostosować i rozszerzyć, wykorzystując inne funkcje w module `Random` do produkcji losowych liczb zmiennoprzecinkowych, list lub nawet złożonych struktur danych opartych na typach niestandardowych, zapewniając ogromne możliwości dodawania nieprzewidywalności do aplikacji Elm.
 
-Chociaż to podejście gwarantuje spójność w zachowaniu aplikacji i ułatwia debugowanie, wprowadza krzywą uczenia się dla osób przyzwyczajonych do imperatywnego generowania losowych liczb. Jednak korzyści płynące z utrzymania czystości aplikacji i łatwości testowania często przewyższają początkową złożoność.
-
-Metoda Elm kontrastuje również z językami, które oferują globalne generatory liczb losowych, co może prowadzić do subtelnych błędów z powodu współdzielonego stanu. Poprzez wymaganie wyraźnego obsługiwania generowania liczb losowych i jego efektów, Elm zachęca programistów do bardziej krytycznego myślenia o tym, gdzie i jak losowość wpływa na ich aplikacje, prowadząc do bardziej solidnego i przewidywalnego kodu.
-
-Jako alternatywy, inne języki funkcyjne oferują podobne funkcjonalności, ale mogą implementować je inaczej. Haskell, na przykład, także utrzymuje czystość w generowaniu liczb losowych, ale za pomocą monad, koncepcji, której Elm świadomie unika, aby uprościć swój model. Porównując, podejście Elm jest bardziej dostępne dla nowicjuszy i podkreśla prostotę architektury aplikacji bez poświęcania mocy zasad programowania funkcyjnego.
+Przewodnik Elm zawiera znacznie więcej informacji. Znajduje się tam również [przykład rzutu sześcienną kostką](https://guide.elm-lang.org/effects/random).
