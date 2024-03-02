@@ -1,8 +1,8 @@
 ---
 date:    2024-02-29T21:07:03.006780-07:00
-lastmod: 2024-03-01T22:07:23.729440-07:00
-description: 
-summary:     
+lastmod: 2024-03-01T22:11:36.650316-07:00
+description: ""
+summary:     ""
 cascade:
   images:
   - /languages/python.jpeg

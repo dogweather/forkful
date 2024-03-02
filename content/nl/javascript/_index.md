@@ -1,8 +1,8 @@
 ---
 date:    2024-02-29T21:07:03.006780-07:00
-lastmod: 2024-03-01T22:07:23.753759-07:00
-description: 
-summary:     
+lastmod: 2024-03-01T22:11:36.672734-07:00
+description: ""
+summary:     ""
 cascade:
   images:
   - /languages/javascript.jpeg
