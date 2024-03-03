@@ -1,10 +1,12 @@
 ---
-date:    2024-02-29T21:07:03.006780-07:00
-lastmod: 2024-03-01T22:11:36.679862-07:00
-description: ""
-summary:     ""
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-03-02 19:39:31.244394-07:00
+description: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas
+  de Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…
+summary: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas de
+  Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…
 cascade:
   images:
   - /languages/powershell.jpeg
-  programming_language: "PowerShell"
+  programming_language: PowerShell
 ---

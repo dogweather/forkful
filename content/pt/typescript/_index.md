@@ -1,10 +1,12 @@
 ---
-date:    2024-02-29T21:07:03.006780-07:00
-lastmod: 2024-03-01T22:11:36.680190-07:00
-description: ""
-summary:     ""
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-03-02 19:39:31.255704-07:00
+description: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas
+  de Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…
+summary: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas de
+  Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…
 cascade:
   images:
   - /languages/typescript.jpeg
-  programming_language: "TypeScript"
+  programming_language: TypeScript
 ---
