@@ -1,0 +1,67 @@
+---
+title:                "Usuwanie cudzysłowów z ciągu znaków"
+date:                  2024-03-08T21:56:34.252895-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+---
+
+{{< edit_this_page >}}
+
+## Co i dlaczego?
+Usuwanie cudzysłowów z ciągu znaków w Dart polega na usunięciu podwójnych (") lub pojedynczych (') cudzysłowów z początku i końca ciągu znaków, co jest przydatne do oczyszczania danych lub przygotowywania ciągu znaków do dalszej obróbki. Programiści robią to, aby normalizować dane wejściowe, zapewnić jednolitość w przechowywaniu danych lub gdy interfejsują się z API, które mogą zwracać dane w formatach z cudzysłowami.
+
+## Jak to zrobić:
+Dart oferuje proste sposoby na usunięcie cudzysłowów z ciągu znaków przy użyciu wbudowanych metod ciągu znaków, bez potrzeby korzystania z bibliotek firm trzecich.
+
+### Przykład 1: Użycie `replaceFirst` i `replaceAll`
+Jeśli masz do czynienia z ciągami znaków, które zaczynają się i kończą na cudzysłowach, możesz użyć metod `replaceFirst` i `replaceAll`, aby je usunąć.
+
+```dart
+String quotedString = '"Hello, World!"';
+String singleQuotedString = '\'Programowanie w Dart\'';
+
+// Usuwanie podwójnych cudzysłowów
+String noDoubleQuotes = quotedString.replaceFirst('"', '').replaceAll('"', '');
+print(noDoubleQuotes); // Wynik: Hello, World!
+
+// Usuwanie pojedynczych cudzysłowów
+String noSingleQuotes = singleQuotedString.replaceFirst('\'', '').replaceAll('\'', '');
+print(noSingleQuotes); // Wynik: Programowanie w Dart
+```
+
+### Przykład 2: Użycie `substring`
+Ta metoda jest użyteczna, gdy jesteś pewien, że cudzysłowy znajdują się na samym początku i końcu ciągu znaków.
+
+```dart
+String quotedString = '"Rozwój Flutter"';
+// Sprawdź, czy zaczyna się i kończy na cudzysłowach przed usunięciem, aby uniknąć błędów
+if (quotedString.startsWith('"') && quotedString.endsWith('"')) {
+  quotedString = quotedString.substring(1, quotedString.length - 1);
+}
+print(quotedString); // Wynik: Rozwój Flutter
+```
+
+### Przykład 3: Metoda rozszerzenia niestandardowego
+Dla większej możliwości ponownego użycia, szczególnie jeśli Twój projekt często wymaga usuwania cudzysłowów, rozważ stworzenie niestandardowego rozszerzenia `String`.
+
+```dart
+extension UnquoteString on String {
+  String unquote() {
+    var str = this;
+    if (str.startsWith('"') && str.endsWith('"') || str.startsWith('\'') && str.endsWith('\'')) {
+      str = str.substring(1, str.length - 1);
+    }
+    return str;
+  }
+}
+
+void main() {
+  String doubleQuoted = '"To jest Dart"';
+  String singleQuoted = '\'To jest niesamowite\'';
+  print(doubleQuoted.unquote()); // Wynik: To jest Dart
+  print(singleQuoted.unquote()); // Wynik: To jest niesamowite
+}
+```
+
+Te podejścia powinny pomóc Ci skutecznie usuwać cudzysłowy z ciągów znaków w Dart, zwiększając efektywność Twoich prac nad przetwarzaniem i przygotowaniem danych.

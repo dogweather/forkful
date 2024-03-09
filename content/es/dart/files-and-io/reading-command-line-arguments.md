@@ -1,0 +1,84 @@
+---
+title:                "Leyendo argumentos de la línea de comandos"
+date:                  2024-03-08T21:55:53.040707-07:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+---
+
+{{< edit_this_page >}}
+
+## ¿Qué y por qué?
+
+Leer los argumentos de la línea de comandos en Dart permite a los programadores introducir datos directamente en la consola al ejecutar un programa Dart, mejorando su interactividad y flexibilidad para varios casos de uso, incluyendo scripts de automatización, herramientas CLI o procesamiento por lotes. Esta característica es fundamental para crear aplicaciones de línea de comandos adaptables y amigables para el usuario.
+
+## Cómo hacerlo:
+
+Dart proporciona un enfoque sencillo para acceder a los argumentos de la línea de comandos a través de la `List<String> args` en el método principal. A continuación, se muestra un ejemplo simple que demuestra cómo leer y utilizar los argumentos de la línea de comandos.
+
+```dart
+// main.dart
+void main(List<String> args) {
+  print('Argumentos de la Línea de Comandos:');
+  for (var i = 0; i < args.length; i++) {
+    print('${i + 1}: ${args[i]}');
+  }
+}
+```
+
+Para ejecutar este programa Dart y pasar argumentos de línea de comandos, usa la CLI de Dart de la siguiente manera:
+
+```shell
+dart run main.dart Hello World!
+```
+
+Salida esperada:
+
+```
+Argumentos de la Línea de Comandos:
+1: Hello
+2: World!
+```
+
+### Usando una Biblioteca de Terceros Popular: `args`
+
+Aunque las capacidades integradas de Dart para manejar argumentos de línea de comandos son robustas para muchas aplicaciones, el paquete `args` proporciona una forma refinada de definir y analizar argumentos de línea de comandos para necesidades más complejas.
+
+Primero, añade el paquete `args` a tu `pubspec.yaml`:
+
+```yaml
+dependencies:
+  args: ^2.0.0
+```
+
+Luego, úsalo en tu programa de la siguiente manera:
+
+```dart
+// Usando el paquete 'args'
+import 'package:args/args.dart';
+
+void main(List<String> arguments) {
+  final parser = ArgParser()..addOption('name', abbr: 'n');
+  final argResults = parser.parse(arguments);
+
+  if (argResults.wasParsed('name')) {
+    print('Hola, ${argResults['name']}!');
+  } else {
+    print('No se proporcionó nombre.');
+  }
+}
+```
+
+Ejecuta el programa con un argumento nombrado:
+
+```shell
+dart run main.dart --name=John
+```
+
+Salida esperada:
+
+```
+Hola, John!
+```
+
+Esta introducción simple al análisis de argumentos de línea de comandos, tanto de forma nativa como con la biblioteca `args`, muestra cómo Dart puede manejar las entradas de usuario directamente desde la consola, abriendo un camino hacia la creación de aplicaciones CLI más interactivas y dinámicas.
