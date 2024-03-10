@@ -3,7 +3,8 @@ date: 2024-01-20 15:31:00.134803-07:00
 description: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, tipicamente\
   \ para extrair informa\xE7\xF5es dele. Programadores fazem isso para interagir com\
   \ dados de\u2026"
-lastmod: '2024-02-25T18:49:43.897142-07:00'
+lastmod: '2024-03-09T21:11:28.638200-07:00'
+model: unknown
 summary: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, tipicamente\
   \ para extrair informa\xE7\xF5es dele. Programadores fazem isso para interagir com\
   \ dados de\u2026"

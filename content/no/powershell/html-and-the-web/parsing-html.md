@@ -3,7 +3,8 @@ date: 2024-01-20 15:33:10.166240-07:00
 description: "Parsing av HTML handler om \xE5 tolke og trekke ut data fra HTML-koder.\
   \ Programmerere gj\xF8r dette for \xE5 automatisere prosesser, h\xF8ste data eller\
   \ integrere\u2026"
-lastmod: '2024-02-25T18:49:39.192233-07:00'
+lastmod: '2024-03-09T21:11:23.710261-07:00'
+model: unknown
 summary: "Parsing av HTML handler om \xE5 tolke og trekke ut data fra HTML-koder.\
   \ Programmerere gj\xF8r dette for \xE5 automatisere prosesser, h\xF8ste data eller\
   \ integrere\u2026"

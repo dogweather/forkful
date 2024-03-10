@@ -2,7 +2,8 @@
 date: 2024-01-20 15:34:00.673385-07:00
 description: "Le parsing HTML, c'est lire et convertir du code HTML en quelque chose\
   \ qu'une application peut comprendre et manipuler. Les programmeurs le font pour\u2026"
-lastmod: '2024-02-25T18:49:54.864067-07:00'
+lastmod: '2024-03-09T21:11:40.240410-07:00'
+model: unknown
 summary: "Le parsing HTML, c'est lire et convertir du code HTML en quelque chose qu'une\
   \ application peut comprendre et manipuler. Les programmeurs le font pour\u2026"
 title: Analyse syntaxique de HTML

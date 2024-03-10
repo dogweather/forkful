@@ -2,7 +2,8 @@
 date: 2024-01-20 15:31:09.248361-07:00
 description: "Il parsing HTML consiste nel trasformare il codice HTML in una struttura\
   \ dati manipolabile, come mappe o liste. I programmatori lo fanno per estrarre\u2026"
-lastmod: '2024-02-25T18:49:41.010027-07:00'
+lastmod: '2024-03-09T21:11:25.611753-07:00'
+model: unknown
 summary: "Il parsing HTML consiste nel trasformare il codice HTML in una struttura\
   \ dati manipolabile, come mappe o liste. I programmatori lo fanno per estrarre\u2026"
 title: Analisi dell'HTML

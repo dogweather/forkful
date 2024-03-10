@@ -3,7 +3,8 @@ date: 2024-01-20 15:32:53.283993-07:00
 description: "Parsing HTML \xE9 o processo de analisar o c\xF3digo de uma p\xE1gina\
   \ da web para extrair informa\xE7\xF5es espec\xEDficas. Programadores fazem isso\
   \ para automatizar a\u2026"
-lastmod: '2024-02-25T18:49:44.327297-07:00'
+lastmod: '2024-03-09T21:11:29.122990-07:00'
+model: unknown
 summary: "Parsing HTML \xE9 o processo de analisar o c\xF3digo de uma p\xE1gina da\
   \ web para extrair informa\xE7\xF5es espec\xEDficas. Programadores fazem isso para\
   \ automatizar a\u2026"

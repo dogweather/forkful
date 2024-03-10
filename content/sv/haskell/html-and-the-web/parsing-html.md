@@ -3,7 +3,8 @@ date: 2024-01-20 15:31:59.808672-07:00
 description: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till en\
   \ datastruktur som datorn kan jobba med. Programmerare g\xF6r detta f\xF6r att enkelt\
   \ kunna\u2026"
-lastmod: '2024-02-25T18:49:36.252407-07:00'
+lastmod: '2024-03-09T21:11:20.589271-07:00'
+model: unknown
 summary: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till en datastruktur\
   \ som datorn kan jobba med. Programmerare g\xF6r detta f\xF6r att enkelt kunna\u2026"
 title: Tolka HTML

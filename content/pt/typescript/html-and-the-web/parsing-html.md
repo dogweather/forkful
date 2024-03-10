@@ -2,7 +2,8 @@
 date: 2024-01-20 15:34:09.632447-07:00
 description: "Analisar HTML \xE9 o processo de converter string contendo HTML em algo\
   \ que possamos manipular no c\xF3digo, como um DOM (Document Object Model). Programadores\u2026"
-lastmod: '2024-02-25T18:49:43.946029-07:00'
+lastmod: '2024-03-09T21:11:28.727779-07:00'
+model: unknown
 summary: "Analisar HTML \xE9 o processo de converter string contendo HTML em algo\
   \ que possamos manipular no c\xF3digo, como um DOM (Document Object Model). Programadores\u2026"
 title: "An\xE1lise de HTML"

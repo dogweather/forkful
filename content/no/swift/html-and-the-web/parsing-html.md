@@ -3,7 +3,8 @@ date: 2024-01-20 15:34:06.387643-07:00
 description: "Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML betyr\
   \ \xE5 trekke ut data fra en webside sin kode. Programmerere gj\xF8r det for \xE5\
   \ kunne\u2026"
-lastmod: '2024-02-25T18:49:39.318782-07:00'
+lastmod: '2024-03-09T21:11:23.837419-07:00'
+model: unknown
 summary: "Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML betyr\
   \ \xE5 trekke ut data fra en webside sin kode. Programmerere gj\xF8r det for \xE5\
   \ kunne\u2026"

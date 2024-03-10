@@ -3,7 +3,8 @@ date: 2024-01-19
 description: "\"Quoi et Pourquoi ?\": V\xE9rifier si un dossier existe c'est s'assurer\
   \ que le chemin d'acc\xE8s pointe vers quelque chose de r\xE9el. Les d\xE9veloppeurs\
   \ font \xE7a pour\u2026"
-lastmod: '2024-02-25T18:49:54.445572-07:00'
+lastmod: '2024-03-09T21:11:39.820798-07:00'
+model: unknown
 summary: "\"Quoi et Pourquoi ?\": V\xE9rifier si un dossier existe c'est s'assurer\
   \ que le chemin d'acc\xE8s pointe vers quelque chose de r\xE9el. Les d\xE9veloppeurs\
   \ font \xE7a pour\u2026"

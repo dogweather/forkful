@@ -2,7 +2,8 @@
 date: 2024-01-19
 description: "Regular expressions, or regex, is a powerful pattern matching and searching\
   \ tool in programming. Programmers use regex for tasks like validating user\u2026"
-lastmod: '2024-02-25T18:49:56.273810-07:00'
+lastmod: '2024-03-09T21:11:41.758883-07:00'
+model: unknown
 summary: "Regular expressions, or regex, is a powerful pattern matching and searching\
   \ tool in programming. Programmers use regex for tasks like validating user\u2026"
 title: Using regular expressions

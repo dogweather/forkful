@@ -3,7 +3,8 @@ date: 2024-01-19
 description: "\xC9crire un fichier texte consiste \xE0 sauvegarder des donn\xE9es\
   \ en format lisible. Les d\xE9veloppeurs le font pour conserver des configurations,\
   \ sauver des\u2026"
-lastmod: '2024-02-25T18:49:54.449339-07:00'
+lastmod: '2024-03-09T21:11:39.824695-07:00'
+model: unknown
 summary: "\xC9crire un fichier texte consiste \xE0 sauvegarder des donn\xE9es en format\
   \ lisible. Les d\xE9veloppeurs le font pour conserver des configurations, sauver\
   \ des\u2026"

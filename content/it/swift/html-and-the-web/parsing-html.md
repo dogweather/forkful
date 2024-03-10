@@ -3,7 +3,8 @@ date: 2024-01-20 15:34:07.510905-07:00
 description: "L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine\
   \ web. I programmatori lo fanno per analizzare, manipolare o estrarre informazioni\
   \ in\u2026"
-lastmod: '2024-02-25T18:49:41.618138-07:00'
+lastmod: '2024-03-09T21:11:26.295126-07:00'
+model: unknown
 summary: "L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine web.\
   \ I programmatori lo fanno per analizzare, manipolare o estrarre informazioni in\u2026"
 title: Analisi dell'HTML

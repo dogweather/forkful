@@ -2,7 +2,8 @@
 date: 2024-01-20 15:33:14.281024-07:00
 description: Parsing HTML means extracting data from HTML content. Programmers do
   it to automate data retrieval from websites, like scraping prices or headlines.
-lastmod: '2024-02-25T18:49:47.122331-07:00'
+lastmod: '2024-03-09T21:11:32.073321-07:00'
+model: unknown
 summary: Parsing HTML means extracting data from HTML content. Programmers do it to
   automate data retrieval from websites, like scraping prices or headlines.
 title: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML"

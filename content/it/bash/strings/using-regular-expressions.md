@@ -2,7 +2,8 @@
 date: 2024-01-19
 description: "Le espressioni regolari sono modelli usati per trovare corrispondenze\
   \ di testo. I programmatori le usano per semplificare compiti come la ricerca, la\u2026"
-lastmod: '2024-02-25T18:49:41.450579-07:00'
+lastmod: '2024-03-09T21:11:26.123154-07:00'
+model: unknown
 summary: "Le espressioni regolari sono modelli usati per trovare corrispondenze di\
   \ testo. I programmatori le usano per semplificare compiti come la ricerca, la\u2026"
 title: Utilizzo delle espressioni regolari

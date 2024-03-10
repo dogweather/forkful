@@ -3,7 +3,8 @@ date: 2024-01-20 15:14:08.905113-07:00
 description: "En programmation, obtenir la date actuelle c'est r\xE9cup\xE9rer la\
   \ date et l'heure pr\xE9cises \xE0 l'instant T. Les d\xE9veloppeurs en ont besoin\
   \ pour tout : des\u2026"
-lastmod: '2024-02-25T18:49:54.441971-07:00'
+lastmod: '2024-03-09T21:11:39.816608-07:00'
+model: unknown
 summary: "En programmation, obtenir la date actuelle c'est r\xE9cup\xE9rer la date\
   \ et l'heure pr\xE9cises \xE0 l'instant T. Les d\xE9veloppeurs en ont besoin pour\
   \ tout : des\u2026"

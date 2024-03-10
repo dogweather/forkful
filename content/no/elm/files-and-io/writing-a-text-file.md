@@ -3,7 +3,8 @@ date: 2024-01-19
 description: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 disken.\
   \ Programmerere gj\xF8r dette for \xE5 lagre data som app-innstillinger, logger\
   \ eller \xE5 eksportere\u2026"
-lastmod: '2024-02-25T18:49:38.905693-07:00'
+lastmod: '2024-03-09T21:11:23.412516-07:00'
+model: unknown
 summary: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 disken.\
   \ Programmerere gj\xF8r dette for \xE5 lagre data som app-innstillinger, logger\
   \ eller \xE5 eksportere\u2026"

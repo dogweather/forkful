@@ -2,7 +2,8 @@
 date: 2024-01-20 15:14:01.855312-07:00
 description: "Obtener la fecha actual significa acceder al valor de la fecha y hora\
   \ del momento presente. Los programadores lo hacen para funciones como registros,\u2026"
-lastmod: '2024-02-25T18:49:55.477551-07:00'
+lastmod: '2024-03-09T21:11:40.915514-07:00'
+model: unknown
 summary: "Obtener la fecha actual significa acceder al valor de la fecha y hora del\
   \ momento presente. Los programadores lo hacen para funciones como registros,\u2026"
 title: Obteniendo la fecha actual

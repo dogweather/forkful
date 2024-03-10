@@ -3,7 +3,8 @@ date: 2024-01-20 15:33:59.514523-07:00
 description: "Parsing HTML oznacza proces analizowania struktury kodu HTML, aby wydoby\u0107\
   \ z niego konkretne dane. Programi\u015Bci robi\u0105 to, by pozyska\u0107 informacje\
   \ ze stron\u2026"
-lastmod: '2024-02-25T18:49:34.125457-07:00'
+lastmod: '2024-03-09T21:11:18.323512-07:00'
+model: unknown
 summary: "Parsing HTML oznacza proces analizowania struktury kodu HTML, aby wydoby\u0107\
   \ z niego konkretne dane. Programi\u015Bci robi\u0105 to, by pozyska\u0107 informacje\
   \ ze stron\u2026"

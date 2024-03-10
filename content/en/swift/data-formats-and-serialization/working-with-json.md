@@ -3,7 +3,8 @@ date: 2024-01-19
 description: "Working with JSON in Swift means dealing with a lightweight data format\
   \ for data interchange. Programmers use JSON to transmit data between a server and\
   \ a\u2026"
-lastmod: '2024-02-25T18:49:56.850888-07:00'
+lastmod: '2024-03-09T21:11:42.320247-07:00'
+model: unknown
 summary: "Working with JSON in Swift means dealing with a lightweight data format\
   \ for data interchange. Programmers use JSON to transmit data between a server and\
   \ a\u2026"

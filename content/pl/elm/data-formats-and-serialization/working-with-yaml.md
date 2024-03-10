@@ -3,7 +3,8 @@ date: 2024-01-19
 description: "YAML to format danych u\u017Cywany do konfiguracji i serializacji. Programi\u015B\
   ci korzystaj\u0105 z niego ze wzgl\u0119du na jego czytelno\u015B\u0107 i prostot\u0119\
   ."
-lastmod: '2024-02-25T18:49:33.706474-07:00'
+lastmod: '2024-03-09T21:11:17.904314-07:00'
+model: unknown
 summary: "YAML to format danych u\u017Cywany do konfiguracji i serializacji. Programi\u015B\
   ci korzystaj\u0105 z niego ze wzgl\u0119du na jego czytelno\u015B\u0107 i prostot\u0119\
   ."

@@ -3,7 +3,8 @@ date: 2024-01-20 15:32:30.888958-07:00
 description: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo que\
   \ tu programa pueda entender y manipular. Los programadores lo hacen para interactuar\
   \ con\u2026"
-lastmod: '2024-02-25T18:49:55.424626-07:00'
+lastmod: '2024-03-09T21:11:40.860714-07:00'
+model: unknown
 summary: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo que tu\
   \ programa pueda entender y manipular. Los programadores lo hacen para interactuar\
   \ con\u2026"

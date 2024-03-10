@@ -2,7 +2,8 @@
 date: 2024-01-20 15:32:16.739950-07:00
 description: "Parsing HTML means digging through the markup to extract data like text,\
   \ links, or other elements. We do it to interact with or scrape web content,\u2026"
-lastmod: '2024-02-25T18:49:56.391623-07:00'
+lastmod: '2024-03-09T21:11:41.880030-07:00'
+model: unknown
 summary: "Parsing HTML means digging through the markup to extract data like text,\
   \ links, or other elements. We do it to interact with or scrape web content,\u2026"
 title: Parsing HTML

@@ -2,7 +2,8 @@
 date: 2024-01-20 15:30:36.963297-07:00
 description: "Parsear HTML es interpretar y transformar el contenido de un documento\
   \ HTML en algo que tu programa C# puede manejar. Los programadores lo hacen para\u2026"
-lastmod: '2024-02-25T18:49:55.546571-07:00'
+lastmod: '2024-03-09T21:11:40.987462-07:00'
+model: unknown
 summary: "Parsear HTML es interpretar y transformar el contenido de un documento HTML\
   \ en algo que tu programa C# puede manejar. Los programadores lo hacen para\u2026"
 title: "An\xE1lisis de HTML"
