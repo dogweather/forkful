@@ -1,9 +1,16 @@
 ---
-title:                "Å starte et nytt prosjekt"
-date:                  2024-03-08T21:56:51.554502-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:51.554502-07:00
+description: "\xC5 starte et nytt prosjekt i Dart inneb\xE6rer \xE5 sette opp et milj\xF8\
+  \ som fremmer effektiv utvikling, testing og utrulling. Programmerere initierer\
+  \ nye Dart-\u2026"
+lastmod: '2024-03-09T21:06:05.246640-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 starte et nytt prosjekt i Dart inneb\xE6rer \xE5 sette opp et milj\xF8\
+  \ som fremmer effektiv utvikling, testing og utrulling. Programmerere initierer\
+  \ nye Dart-\u2026"
+title: "\xC5 starte et nytt prosjekt"
 ---
 
 {{< edit_this_page >}}

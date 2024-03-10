@@ -1,9 +1,14 @@
 ---
-title:                "Trabajando con YAML"
-date:                  2024-03-08T21:57:34.739794-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:34.739794-07:00
+description: "YAML, acr\xF3nimo de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
+  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
+lastmod: '2024-03-09T21:06:22.346175-07:00'
+model: gpt-4-0125-preview
+summary: "YAML, acr\xF3nimo de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
+  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
+title: Trabajando con YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,12 @@
 ---
-title:                "Concatenating strings"
-date:                  2024-03-08T21:33:23.660603-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:23.660603-07:00
+description: "Concatenating strings in programming involves combining two or more\
+  \ strings into one. Programmers do this to manipulate text data easily, construct\u2026"
+lastmod: '2024-03-09T21:06:23.351184-07:00'
+model: gpt-4-0125-preview
+summary: "Concatenating strings in programming involves combining two or more strings\
+  \ into one. Programmers do this to manipulate text data easily, construct\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

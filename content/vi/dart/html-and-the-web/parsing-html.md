@@ -1,9 +1,18 @@
 ---
-title:                "Phân Tích Cú Pháp HTML"
-date:                  2024-03-08T21:55:24.718062-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:24.718062-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong l\u1EADp tr\xECnh bao g\u1ED3\
+  m vi\u1EC7c tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u t\u1EEB t\xE0i li\u1EC7u HTML.\
+  \ L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1\
+  ng t\xE1c v\u1EDBi ho\u1EB7c c\u1EA1o d\u1EEF li\u1EC7u web\u2026"
+lastmod: '2024-03-09T21:06:01.001540-07:00'
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong l\u1EADp tr\xECnh bao g\u1ED3m\
+  \ vi\u1EC7c tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u t\u1EEB t\xE0i li\u1EC7u HTML.\
+  \ L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1\
+  ng t\xE1c v\u1EDBi ho\u1EB7c c\u1EA1o d\u1EEF li\u1EC7u web\u2026"
+title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 ---
 
 {{< edit_this_page >}}

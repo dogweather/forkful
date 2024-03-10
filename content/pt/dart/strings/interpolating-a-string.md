@@ -1,9 +1,15 @@
 ---
-title:                "Interpolando uma string"
-date:                  2024-03-08T21:54:48.075967-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:48.075967-07:00
+description: "A interpola\xE7\xE3o de strings \xE9 o processo de injetar valores de\
+  \ vari\xE1veis diretamente em strings, muitas vezes para criar mensagens significativas\
+  \ sem\u2026"
+lastmod: '2024-03-09T21:06:10.616196-07:00'
+model: gpt-4-0125-preview
+summary: "A interpola\xE7\xE3o de strings \xE9 o processo de injetar valores de vari\xE1\
+  veis diretamente em strings, muitas vezes para criar mensagens significativas sem\u2026"
+title: Interpolando uma string
 ---
 
 {{< edit_this_page >}}

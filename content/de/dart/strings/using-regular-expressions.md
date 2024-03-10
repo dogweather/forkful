@@ -1,9 +1,15 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
-date:                  2024-03-08T21:57:00.581557-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:00.581557-07:00
+description: "Regul\xE4re Ausdr\xFCcke (regex) in Dart bieten eine leistungsf\xE4\
+  hige M\xF6glichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer\
+  \ komplexe\u2026"
+lastmod: '2024-03-09T21:06:17.565877-07:00'
+model: gpt-4-0125-preview
+summary: "Regul\xE4re Ausdr\xFCcke (regex) in Dart bieten eine leistungsf\xE4hige\
+  \ M\xF6glichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer komplexe\u2026"
+title: "Regul\xE4re Ausdr\xFCcke verwenden"
 ---
 
 {{< edit_this_page >}}

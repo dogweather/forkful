@@ -1,9 +1,16 @@
 ---
-title:                "Avrundning av nummer"
-date:                  2024-03-08T21:56:31.750319-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:31.750319-07:00
+description: "Att avrunda tal \xE4r processen att justera ett tal till dess n\xE4\
+  rmaste hela tal eller till ett angivet antal decimaler. Programmerare avrundar ofta\
+  \ tal f\xF6r\u2026"
+lastmod: '2024-03-09T21:06:02.364203-07:00'
+model: gpt-4-0125-preview
+summary: "Att avrunda tal \xE4r processen att justera ett tal till dess n\xE4rmaste\
+  \ hela tal eller till ett angivet antal decimaler. Programmerare avrundar ofta tal\
+  \ f\xF6r\u2026"
+title: Avrundning av nummer
 ---
 
 {{< edit_this_page >}}

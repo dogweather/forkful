@@ -1,9 +1,14 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-date:                  2024-03-08T21:54:10.075877-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:10.075877-07:00
+description: "Calculer une date dans le futur ou dans le pass\xE9 est une t\xE2che\
+  \ courante pour les programmeurs, concernant la planification, les rappels, ou toute\u2026"
+lastmod: '2024-03-09T21:06:21.254270-07:00'
+model: gpt-4-0125-preview
+summary: "Calculer une date dans le futur ou dans le pass\xE9 est une t\xE2che courante\
+  \ pour les programmeurs, concernant la planification, les rappels, ou toute\u2026"
+title: "Calculer une date dans le futur ou le pass\xE9"
 ---
 
 {{< edit_this_page >}}

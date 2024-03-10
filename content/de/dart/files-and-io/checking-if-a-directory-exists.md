@@ -1,9 +1,16 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
-date:                  2024-03-08T21:53:31.085389-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:31.085389-07:00
+description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Dart existiert, dreht sich\
+  \ darum, die Anwesenheit eines Verzeichnisses auf einem angegebenen Pfad im Dateisystem\
+  \ zu\u2026"
+lastmod: '2024-03-09T21:06:17.589208-07:00'
+model: gpt-4-0125-preview
+summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Dart existiert, dreht sich darum,\
+  \ die Anwesenheit eines Verzeichnisses auf einem angegebenen Pfad im Dateisystem\
+  \ zu\u2026"
+title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

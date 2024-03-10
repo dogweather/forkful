@@ -1,9 +1,14 @@
 ---
-title:                "Die Länge einer Zeichenkette finden"
-date:                  2024-03-08T21:54:42.511163-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:42.511163-07:00
+description: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl der\
+  \ Codeeinheiten (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet)\u2026"
+lastmod: '2024-03-09T21:06:17.566808-07:00'
+model: gpt-4-0125-preview
+summary: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl der Codeeinheiten\
+  \ (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet)\u2026"
+title: "Die L\xE4nge einer Zeichenkette finden"
 ---
 
 {{< edit_this_page >}}

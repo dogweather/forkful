@@ -1,10 +1,13 @@
 ---
-title:                "乱数の生成"
-date:                  2024-02-27T22:50:37.210043-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-27, dogweather, edited and tested
-  - 2024-02-27, gpt-4-0125-preview, translated from English
+- 2024-02-27, dogweather, edited and tested
+- 2024-02-27, gpt-4-0125-preview, translated from English
+date: 2024-02-27 22:50:37.210043-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.655523-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u4E71\u6570\u306E\u751F\u6210"
 ---
 
 {{< edit_this_page >}}

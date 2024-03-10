@@ -1,9 +1,16 @@
 ---
-title:                "Generowanie liczb losowych"
-date:                  2024-03-08T21:55:01.770297-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:01.770297-07:00
+description: "Generowanie losowych liczb w Dart polega na tworzeniu warto\u015Bci\
+  \ numerycznych, kt\xF3re s\u0105 nieprzewidywalne i r\xF3\u017Cni\u0105 si\u0119\
+  \ przy ka\u017Cdym wykonaniu. Programi\u015Bci\u2026"
+lastmod: '2024-03-09T21:05:59.821819-07:00'
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb w Dart polega na tworzeniu warto\u015Bci numerycznych,\
+  \ kt\xF3re s\u0105 nieprzewidywalne i r\xF3\u017Cni\u0105 si\u0119 przy ka\u017C\
+  dym wykonaniu. Programi\u015Bci\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,14 @@
 ---
-title:                "Refactorización"
-date:                  2024-03-08T21:55:50.912313-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:50.912313-07:00
+description: "La refactorizaci\xF3n en Dart es el proceso de reestructurar c\xF3digo\
+  \ existente sin cambiar su comportamiento externo, dirigido a mejorar su estructura\u2026"
+lastmod: '2024-03-09T21:06:22.335213-07:00'
+model: gpt-4-0125-preview
+summary: "La refactorizaci\xF3n en Dart es el proceso de reestructurar c\xF3digo existente\
+  \ sin cambiar su comportamiento externo, dirigido a mejorar su estructura\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

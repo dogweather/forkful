@@ -1,9 +1,14 @@
 ---
-title:                "Ricerca e sostituzione del testo"
-date:                  2024-03-08T21:56:14.457336-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:14.457336-07:00
+description: "Cercare e sostituire testo in Dart comporta l'esame di stringhe per\
+  \ trovare determinati schemi o sequenze di caratteri e sostituirli con nuovo contenuto.\u2026"
+lastmod: '2024-03-09T21:06:07.663831-07:00'
+model: gpt-4-0125-preview
+summary: "Cercare e sostituire testo in Dart comporta l'esame di stringhe per trovare\
+  \ determinati schemi o sequenze di caratteri e sostituirli con nuovo contenuto.\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

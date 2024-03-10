@@ -1,9 +1,13 @@
 ---
-title:                "インタラクティブシェル（REPL）の使用"
-date:                  2024-03-08T21:57:38.188910-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:38.188910-07:00
+description: "Dart\u306E\u5BFE\u8A71\u578B\u30B7\u30A7\u30EB\uFF08REPL - Read-Evaluate-Print\u2026"
+lastmod: '2024-03-09T21:06:06.404396-07:00'
+model: gpt-4-0125-preview
+summary: "Dart\u306E\u5BFE\u8A71\u578B\u30B7\u30A7\u30EB\uFF08REPL - Read-Evaluate-Print\u2026"
+title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
+  \u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,13 @@
 ---
-title:                "Writing tests"
-date:                  2024-03-08T21:33:44.626135-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:44.626135-07:00
+description: "Writing tests in Dart involves creating test cases to automatically\
+  \ verify that different parts of your program work as expected. Programmers do this\
+  \ to\u2026"
+lastmod: '2024-03-09T21:06:23.359835-07:00'
+model: gpt-4-0125-preview
+summary: "Writing tests in Dart involves creating test cases to automatically verify\
+  \ that different parts of your program work as expected. Programmers do this to\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

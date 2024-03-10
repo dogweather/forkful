@@ -1,9 +1,16 @@
 ---
-title:                "Analiza składniowa HTML"
-date:                  2024-03-08T21:55:43.768241-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:43.768241-07:00
+description: "Przetwarzanie HTML w programowaniu polega na ekstrakcji danych z dokument\xF3\
+  w HTML. Programi\u015Bci robi\u0105 to, aby wchodzi\u0107 w interakcj\u0119 lub\
+  \ scrapowa\u0107 zawarto\u015B\u0107\u2026"
+lastmod: '2024-03-09T21:05:59.824158-07:00'
+model: gpt-4-0125-preview
+summary: "Przetwarzanie HTML w programowaniu polega na ekstrakcji danych z dokument\xF3\
+  w HTML. Programi\u015Bci robi\u0105 to, aby wchodzi\u0107 w interakcj\u0119 lub\
+  \ scrapowa\u0107 zawarto\u015B\u0107\u2026"
+title: "Analiza sk\u0142adniowa HTML"
 ---
 
 {{< edit_this_page >}}

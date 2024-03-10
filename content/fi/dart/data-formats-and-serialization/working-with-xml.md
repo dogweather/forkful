@@ -1,9 +1,15 @@
 ---
-title:                "Työskentely XML:n kanssa"
-date:                  2024-03-08T21:58:02.628473-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:02.628473-07:00
+description: "XML:n k\xE4sittely Dartissa sis\xE4lt\xE4\xE4 XML-dokumenttien j\xE4\
+  sennyksen, kyselyn ja muokkauksen, joka on olennainen prosessi sovelluksille, jotka\
+  \ ovat\u2026"
+lastmod: '2024-03-09T21:06:20.203149-07:00'
+model: gpt-4-0125-preview
+summary: "XML:n k\xE4sittely Dartissa sis\xE4lt\xE4\xE4 XML-dokumenttien j\xE4sennyksen,\
+  \ kyselyn ja muokkauksen, joka on olennainen prosessi sovelluksille, jotka ovat\u2026"
+title: "Ty\xF6skentely XML:n kanssa"
 ---
 
 {{< edit_this_page >}}

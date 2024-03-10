@@ -1,9 +1,14 @@
 ---
-title:                "Creazione di un file temporaneo"
-date:                  2024-03-08T21:54:14.023817-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:14.023817-07:00
+description: "Creare un file temporaneo in Dart implica la generazione di un file\
+  \ destinato a un uso a breve termine, principalmente per scenari come la memorizzazione\u2026"
+lastmod: '2024-03-09T21:06:07.696189-07:00'
+model: gpt-4-0125-preview
+summary: "Creare un file temporaneo in Dart implica la generazione di un file destinato\
+  \ a un uso a breve termine, principalmente per scenari come la memorizzazione\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

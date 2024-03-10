@@ -1,9 +1,16 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości"
-date:                  2024-03-08T21:53:53.633017-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:53.633017-07:00
+description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
+  \ powszechne zadanie dla programist\xF3w zajmuj\u0105cych si\u0119 planowaniem,\
+  \ przypomnieniami lub jak\u0105kolwiek funkcj\u0105\u2026"
+lastmod: '2024-03-09T21:05:59.840684-07:00'
+model: gpt-4-0125-preview
+summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to powszechne\
+  \ zadanie dla programist\xF3w zajmuj\u0105cych si\u0119 planowaniem, przypomnieniami\
+  \ lub jak\u0105kolwiek funkcj\u0105\u2026"
+title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 ---
 
 {{< edit_this_page >}}

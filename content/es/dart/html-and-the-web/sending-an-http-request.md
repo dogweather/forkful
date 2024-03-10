@@ -1,9 +1,14 @@
 ---
-title:                "Enviando una solicitud HTTP"
-date:                  2024-03-08T21:56:12.723996-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:12.723996-07:00
+description: "Enviar una solicitud HTTP en Dart es el proceso de iniciar comunicaciones\
+  \ con un servidor web o API desde una aplicaci\xF3n Dart. Los programadores lo hacen\u2026"
+lastmod: '2024-03-09T21:06:22.324336-07:00'
+model: gpt-4-0125-preview
+summary: "Enviar una solicitud HTTP en Dart es el proceso de iniciar comunicaciones\
+  \ con un servidor web o API desde una aplicaci\xF3n Dart. Los programadores lo hacen\u2026"
+title: Enviando una solicitud HTTP
 ---
 
 {{< edit_this_page >}}

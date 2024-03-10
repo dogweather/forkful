@@ -1,9 +1,16 @@
 ---
-title:                "Génération de nombres aléatoires"
-date:                  2024-03-08T21:54:44.130436-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:44.130436-07:00
+description: "La g\xE9n\xE9ration de nombres al\xE9atoires en Dart consiste \xE0 cr\xE9\
+  er des valeurs num\xE9riques impr\xE9visibles et diff\xE9rentes \xE0 chaque ex\xE9\
+  cution. Les programmeurs\u2026"
+lastmod: '2024-03-09T21:06:21.237580-07:00'
+model: gpt-4-0125-preview
+summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en Dart consiste \xE0 cr\xE9\
+  er des valeurs num\xE9riques impr\xE9visibles et diff\xE9rentes \xE0 chaque ex\xE9\
+  cution. Les programmeurs\u2026"
+title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 ---
 
 {{< edit_this_page >}}

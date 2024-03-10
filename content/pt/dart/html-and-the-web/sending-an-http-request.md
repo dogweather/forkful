@@ -1,9 +1,16 @@
 ---
-title:                "Enviando uma solicitação HTTP"
-date:                  2024-03-08T21:56:17.063633-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:17.063633-07:00
+description: "Enviar uma solicita\xE7\xE3o HTTP em Dart \xE9 o processo de iniciar\
+  \ comunica\xE7\xF5es com um servidor web ou API a partir de uma aplica\xE7\xE3o\
+  \ Dart. Programadores fazem\u2026"
+lastmod: '2024-03-09T21:06:10.626096-07:00'
+model: gpt-4-0125-preview
+summary: "Enviar uma solicita\xE7\xE3o HTTP em Dart \xE9 o processo de iniciar comunica\xE7\
+  \xF5es com um servidor web ou API a partir de uma aplica\xE7\xE3o Dart. Programadores\
+  \ fazem\u2026"
+title: "Enviando uma solicita\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Calcolare una data nel futuro o nel passato"
-date:                  2024-03-08T21:53:33.733974-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:33.733974-07:00
+description: "Calcolare una data nel futuro o nel passato \xE8 un compito comune per\
+  \ i programmatori, che si occupano di pianificazioni, promemoria o di qualsiasi\
+  \ funzione\u2026"
+lastmod: '2024-03-09T21:06:07.690171-07:00'
+model: gpt-4-0125-preview
+summary: "Calcolare una data nel futuro o nel passato \xE8 un compito comune per i\
+  \ programmatori, che si occupano di pianificazioni, promemoria o di qualsiasi funzione\u2026"
+title: Calcolare una data nel futuro o nel passato
 ---
 
 {{< edit_this_page >}}

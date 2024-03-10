@@ -1,9 +1,16 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
-date:                  2024-03-08T21:54:33.912976-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:33.912976-07:00
+description: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to podstawowa operacja\
+  \ polegaj\u0105ca na przekszta\u0142ceniu wszystkich znak\xF3w w danym ci\u0105\
+  gu na ich odpowiedniki w ma\u0142ych\u2026"
+lastmod: '2024-03-09T21:05:59.812143-07:00'
+model: gpt-4-0125-preview
+summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to podstawowa operacja\
+  \ polegaj\u0105ca na przekszta\u0142ceniu wszystkich znak\xF3w w danym ci\u0105\
+  gu na ich odpowiedniki w ma\u0142ych\u2026"
+title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

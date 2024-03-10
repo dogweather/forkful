@@ -1,9 +1,14 @@
 ---
-title:                "Työskentely YAML:n kanssa"
-date:                  2024-03-08T21:57:36.175232-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:36.175232-07:00
+description: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettava\
+  \ tietojen serialisointiformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 asetustiedostoihin,\u2026"
+lastmod: '2024-03-09T21:06:20.199684-07:00'
+model: gpt-4-0125-preview
+summary: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettava tietojen\
+  \ serialisointiformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 asetustiedostoihin,\u2026"
+title: "Ty\xF6skentely YAML:n kanssa"
 ---
 
 {{< edit_this_page >}}

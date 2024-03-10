@@ -1,9 +1,16 @@
 ---
-title:                "Bruke en debugger"
-date:                  2024-03-08T21:56:59.126883-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:59.126883-07:00
+description: "\xC5 bruke en debugger i Dart lar programmerere systematisk unders\xF8\
+  ke koden deres ved \xE5 sette brytepunkter, g\xE5 gjennom utf\xF8relsen steg for\
+  \ steg og inspisere\u2026"
+lastmod: '2024-03-09T21:06:05.250213-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en debugger i Dart lar programmerere systematisk unders\xF8ke\
+  \ koden deres ved \xE5 sette brytepunkter, g\xE5 gjennom utf\xF8relsen steg for\
+  \ steg og inspisere\u2026"
+title: Bruke en debugger
 ---
 
 {{< edit_this_page >}}

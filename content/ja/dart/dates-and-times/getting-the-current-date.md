@@ -1,9 +1,12 @@
 ---
-title:                "現在の日付の取得"
-date:                  2024-03-08T21:55:05.797549-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:05.797549-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.412120-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u73FE\u5728\u306E\u65E5\u4ED8\u306E\u53D6\u5F97"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Twee datums vergelijken"
-date:                  2024-03-08T21:53:43.809754-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:43.809754-07:00
+description: "Het vergelijken van twee datums in Dart omvat het evalueren van het\
+  \ tijdelijk verschil of de volgorde tussen hen, een essenti\xEBle functionaliteit\
+  \ in\u2026"
+lastmod: '2024-03-09T21:06:14.700403-07:00'
+model: gpt-4-0125-preview
+summary: "Het vergelijken van twee datums in Dart omvat het evalueren van het tijdelijk\
+  \ verschil of de volgorde tussen hen, een essenti\xEBle functionaliteit in\u2026"
+title: Twee datums vergelijken
 ---
 
 {{< edit_this_page >}}

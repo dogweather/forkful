@@ -1,9 +1,15 @@
 ---
-title:                "Analyse Syntaxique de HTML"
-date:                  2024-03-08T21:55:39.820232-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:39.820232-07:00
+description: "L'analyse HTML en programmation consiste \xE0 extraire des donn\xE9\
+  es de documents HTML. Les programmeurs font cela pour interagir avec ou gratter\
+  \ le contenu\u2026"
+lastmod: '2024-03-09T21:06:21.239431-07:00'
+model: gpt-4-0125-preview
+summary: "L'analyse HTML en programmation consiste \xE0 extraire des donn\xE9es de\
+  \ documents HTML. Les programmeurs font cela pour interagir avec ou gratter le contenu\u2026"
+title: Analyse Syntaxique de HTML
 ---
 
 {{< edit_this_page >}}

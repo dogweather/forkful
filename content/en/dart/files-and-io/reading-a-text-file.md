@@ -1,7 +1,12 @@
 ---
-title:                "Reading a text file"
-date:                  2024-03-08T21:33:26.393542-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:26.393542-07:00
+description: "Reading a text file in Dart involves accessing and retrieving data from\
+  \ files stored on the file system. Programmers do this to handle input data,\u2026"
+lastmod: '2024-03-09T21:06:23.369831-07:00'
+model: gpt-4-0125-preview
+summary: "Reading a text file in Dart involves accessing and retrieving data from\
+  \ files stored on the file system. Programmers do this to handle input data,\u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

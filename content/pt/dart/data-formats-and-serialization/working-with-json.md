@@ -1,9 +1,14 @@
 ---
-title:                "Trabalhando com JSON"
-date:                  2024-03-08T21:57:44.734963-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:44.734963-07:00
+description: "Trabalhar com JSON (JavaScript Object Notation) envolve a convers\xE3\
+  o de dados JSON de strings para objetos Dart e vice-versa, uma tarefa comum no\u2026"
+lastmod: '2024-03-09T21:06:10.648495-07:00'
+model: gpt-4-0125-preview
+summary: "Trabalhar com JSON (JavaScript Object Notation) envolve a convers\xE3o de\
+  \ dados JSON de strings para objetos Dart e vice-versa, uma tarefa comum no\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

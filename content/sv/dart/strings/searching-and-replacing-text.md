@@ -1,9 +1,16 @@
 ---
-title:                "Sökning och ersättning av text"
-date:                  2024-03-08T21:56:19.007172-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:19.007172-07:00
+description: "Att s\xF6ka och ers\xE4tta text i Dart inneb\xE4r att unders\xF6ka str\xE4\
+  ngar f\xF6r att hitta vissa m\xF6nster eller teckenf\xF6ljder och substituera dem\
+  \ med nytt inneh\xE5ll.\u2026"
+lastmod: '2024-03-09T21:06:02.354395-07:00'
+model: gpt-4-0125-preview
+summary: "Att s\xF6ka och ers\xE4tta text i Dart inneb\xE4r att unders\xF6ka str\xE4\
+  ngar f\xF6r att hitta vissa m\xF6nster eller teckenf\xF6ljder och substituera dem\
+  \ med nytt inneh\xE5ll.\u2026"
+title: "S\xF6kning och ers\xE4ttning av text"
 ---
 
 {{< edit_this_page >}}

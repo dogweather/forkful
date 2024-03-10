@@ -1,9 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
-date:                  2024-03-08T21:53:37.826805-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:37.826805-07:00
+description: "Merkkijonojen yhdist\xE4minen ohjelmoinnissa tarkoittaa kahden tai useamman\
+  \ merkkijonon liitt\xE4mist\xE4 yhteen. Ohjelmoijat tekev\xE4t n\xE4in k\xE4sitell\xE4\
+  kseen\u2026"
+lastmod: '2024-03-09T21:06:20.173116-07:00'
+model: gpt-4-0125-preview
+summary: "Merkkijonojen yhdist\xE4minen ohjelmoinnissa tarkoittaa kahden tai useamman\
+  \ merkkijonon liitt\xE4mist\xE4 yhteen. Ohjelmoijat tekev\xE4t n\xE4in k\xE4sitell\xE4\
+  kseen\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

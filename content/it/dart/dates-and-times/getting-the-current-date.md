@@ -1,9 +1,14 @@
 ---
-title:                "Ottenere la data corrente"
-date:                  2024-03-08T21:54:43.856468-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:43.856468-07:00
+description: "Ottenere la data corrente in Dart comporta l'interrogazione del sistema\
+  \ per conoscere la data e l'ora attuali. Questa funzionalit\xE0 \xE8 comunemente\u2026"
+lastmod: '2024-03-09T21:06:07.687435-07:00'
+model: gpt-4-0125-preview
+summary: "Ottenere la data corrente in Dart comporta l'interrogazione del sistema\
+  \ per conoscere la data e l'ora attuali. Questa funzionalit\xE0 \xE8 comunemente\u2026"
+title: Ottenere la data corrente
 ---
 
 {{< edit_this_page >}}

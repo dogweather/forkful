@@ -1,9 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
-date:                  2024-03-08T21:56:34.252895-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:34.252895-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Dart polega na\
+  \ usuni\u0119ciu podw\xF3jnych (\") lub pojedynczych (') cudzys\u0142ow\xF3w z pocz\u0105\
+  tku i ko\u0144ca ci\u0105gu znak\xF3w, co jest\u2026"
+lastmod: '2024-03-09T21:05:59.813333-07:00'
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Dart polega na usuni\u0119\
+  ciu podw\xF3jnych (\") lub pojedynczych (') cudzys\u0142ow\xF3w z pocz\u0105tku\
+  \ i ko\u0144ca ci\u0105gu znak\xF3w, co jest\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

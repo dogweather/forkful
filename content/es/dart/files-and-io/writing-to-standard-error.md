@@ -1,9 +1,16 @@
 ---
-title:                "Escribiendo al error estándar"
-date:                  2024-03-08T21:58:11.702543-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:11.702543-07:00
+description: "Escribir en el error est\xE1ndar (stderr) en Dart se trata de enviar\
+  \ mensajes de error y diagn\xF3sticos a un flujo separado, distinto de la salida\
+  \ est\xE1ndar\u2026"
+lastmod: '2024-03-09T21:06:22.342423-07:00'
+model: gpt-4-0125-preview
+summary: "Escribir en el error est\xE1ndar (stderr) en Dart se trata de enviar mensajes\
+  \ de error y diagn\xF3sticos a un flujo separado, distinto de la salida est\xE1\
+  ndar\u2026"
+title: "Escribiendo al error est\xE1ndar"
 ---
 
 {{< edit_this_page >}}

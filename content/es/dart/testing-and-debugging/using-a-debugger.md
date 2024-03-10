@@ -1,9 +1,16 @@
 ---
-title:                "Usando un depurador"
-date:                  2024-03-08T21:57:04.696629-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:04.696629-07:00
+description: "Usar un depurador en Dart permite a los programadores examinar met\xF3\
+  dicamente su c\xF3digo estableciendo puntos de interrupci\xF3n, avanzando paso a\
+  \ paso en la\u2026"
+lastmod: '2024-03-09T21:06:22.331454-07:00'
+model: gpt-4-0125-preview
+summary: "Usar un depurador en Dart permite a los programadores examinar met\xF3dicamente\
+  \ su c\xF3digo estableciendo puntos de interrupci\xF3n, avanzando paso a paso en\
+  \ la\u2026"
+title: Usando un depurador
 ---
 
 {{< edit_this_page >}}

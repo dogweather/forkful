@@ -1,9 +1,14 @@
 ---
-title:                "Att arbeta med komplexa tal"
-date:                  2024-03-08T21:58:11.378932-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:11.378932-07:00
+description: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (vanligtvis\
+  \ betecknad som a + bi), utvidgar begreppet odimensionella tal till ett\u2026"
+lastmod: '2024-03-09T21:06:02.363248-07:00'
+model: gpt-4-0125-preview
+summary: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (vanligtvis\
+  \ betecknad som a + bi), utvidgar begreppet odimensionella tal till ett\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

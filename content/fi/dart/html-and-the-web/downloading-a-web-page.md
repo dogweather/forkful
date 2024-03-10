@@ -1,9 +1,16 @@
 ---
-title:                "Web-sivun lataaminen"
-date:                  2024-03-08T21:54:23.808748-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:23.808748-07:00
+description: "Web-sivun lataaminen tarkoittaa web-sivun sis\xE4ll\xF6n noutamista\
+  \ sen URL-osoitteen kautta k\xE4sittely\xE4 tai tallennusta varten. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n tiedon\u2026"
+lastmod: '2024-03-09T21:06:20.179568-07:00'
+model: gpt-4-0125-preview
+summary: "Web-sivun lataaminen tarkoittaa web-sivun sis\xE4ll\xF6n noutamista sen\
+  \ URL-osoitteen kautta k\xE4sittely\xE4 tai tallennusta varten. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n tiedon\u2026"
+title: Web-sivun lataaminen
 ---
 
 {{< edit_this_page >}}

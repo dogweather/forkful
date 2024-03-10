@@ -1,9 +1,14 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
-date:                  2024-03-08T21:56:49.779768-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:49.779768-07:00
+description: "Assoziative Arrays in Dart, allgemein bekannt als Maps, sind Datenstrukturen,\
+  \ die Daten in Schl\xFCssel-Wert-Paaren speichern. Sie erm\xF6glichen es\u2026"
+lastmod: '2024-03-09T21:06:17.568667-07:00'
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays in Dart, allgemein bekannt als Maps, sind Datenstrukturen,\
+  \ die Daten in Schl\xFCssel-Wert-Paaren speichern. Sie erm\xF6glichen es\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Extrayendo subcadenas"
-date:                  2024-03-08T21:54:59.549185-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:59.549185-07:00
+description: "Extraer subcadenas se trata de recuperar partes espec\xEDficas de una\
+  \ cadena bas\xE1ndose en sus posiciones o patrones. Los programadores hacen esto\
+  \ para tareas\u2026"
+lastmod: '2024-03-09T21:06:22.316874-07:00'
+model: gpt-4-0125-preview
+summary: "Extraer subcadenas se trata de recuperar partes espec\xEDficas de una cadena\
+  \ bas\xE1ndose en sus posiciones o patrones. Los programadores hacen esto para tareas\u2026"
+title: Extrayendo subcadenas
 ---
 
 {{< edit_this_page >}}

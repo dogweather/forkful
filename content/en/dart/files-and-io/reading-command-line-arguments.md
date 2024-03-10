@@ -1,7 +1,12 @@
 ---
-title:                "Reading command line arguments"
-date:                  2024-03-08T21:33:34.618536-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:34.618536-07:00
+description: "Reading command line arguments in Dart enables programmers to input\
+  \ data directly into the console when executing a Dart program, enhancing its\u2026"
+lastmod: '2024-03-09T21:06:23.368417-07:00'
+model: gpt-4-0125-preview
+summary: "Reading command line arguments in Dart enables programmers to input data\
+  \ directly into the console when executing a Dart program, enhancing its\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

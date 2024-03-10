@@ -1,9 +1,16 @@
 ---
-title:                "Interpolacja ciągu znaków"
-date:                  2024-03-08T21:54:53.009756-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:53.009756-07:00
+description: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to proces wstrzykiwania\
+  \ warto\u015Bci zmiennych bezpo\u015Brednio w \u0142a\u0144cuchy znak\xF3w, cz\u0119\
+  sto w celu tworzenia znacz\u0105cych komunikat\xF3w\u2026"
+lastmod: '2024-03-09T21:05:59.811118-07:00'
+model: gpt-4-0125-preview
+summary: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to proces wstrzykiwania warto\u015B\
+  ci zmiennych bezpo\u015Brednio w \u0142a\u0144cuchy znak\xF3w, cz\u0119sto w celu\
+  \ tworzenia znacz\u0105cych komunikat\xF3w\u2026"
+title: "Interpolacja ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

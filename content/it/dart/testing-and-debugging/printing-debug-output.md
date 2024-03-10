@@ -1,9 +1,14 @@
 ---
-title:                "Stampa dell'output di debug"
-date:                  2024-03-08T21:55:40.999705-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:40.999705-07:00
+description: "Stampare l'output di debug in Dart riguarda la visualizzazione di informazioni\
+  \ sulla console durante l'esecuzione, permettendo agli sviluppatori di\u2026"
+lastmod: '2024-03-09T21:06:07.680277-07:00'
+model: gpt-4-0125-preview
+summary: "Stampare l'output di debug in Dart riguarda la visualizzazione di informazioni\
+  \ sulla console durante l'esecuzione, permettendo agli sviluppatori di\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

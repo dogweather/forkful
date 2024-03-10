@@ -1,9 +1,16 @@
 ---
-title:                "Het gebruik van een debugger"
-date:                  2024-03-08T21:56:41.654793-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:41.654793-07:00
+description: "Het gebruik van een debugger in Dart stelt programmeurs in staat om\
+  \ hun code methodisch te onderzoeken door breakpoints te zetten, stap voor stap\
+  \ door de\u2026"
+lastmod: '2024-03-09T21:06:14.693096-07:00'
+model: gpt-4-0125-preview
+summary: "Het gebruik van een debugger in Dart stelt programmeurs in staat om hun\
+  \ code methodisch te onderzoeken door breakpoints te zetten, stap voor stap door\
+  \ de\u2026"
+title: Het gebruik van een debugger
 ---
 
 {{< edit_this_page >}}

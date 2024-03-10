@@ -1,9 +1,16 @@
 ---
-title:                "Convirtiendo una cadena a minúsculas"
-date:                  2024-03-08T21:53:53.742658-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:53.742658-07:00
+description: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental\
+  \ que implica transformar todos los caracteres de una cadena dada a sus equivalentes\
+  \ en\u2026"
+lastmod: '2024-03-09T21:06:22.315018-07:00'
+model: gpt-4-0125-preview
+summary: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental que\
+  \ implica transformar todos los caracteres de una cadena dada a sus equivalentes\
+  \ en\u2026"
+title: "Convirtiendo una cadena a min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

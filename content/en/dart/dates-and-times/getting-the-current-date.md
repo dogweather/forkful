@@ -1,7 +1,12 @@
 ---
-title:                "Getting the current date"
-date:                  2024-03-08T21:33:23.280875-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:23.280875-07:00
+description: "Getting the current date in Dart involves querying the system for the\
+  \ current date and time. This functionality is commonly used in applications for\u2026"
+lastmod: '2024-03-09T21:06:23.364793-07:00'
+model: gpt-4-0125-preview
+summary: "Getting the current date in Dart involves querying the system for the current\
+  \ date and time. This functionality is commonly used in applications for\u2026"
+title: Getting the current date
 ---
 
 {{< edit_this_page >}}

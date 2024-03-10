@@ -1,9 +1,16 @@
 ---
-title:                "Porównywanie dwóch dat"
-date:                  2024-03-08T21:53:51.355383-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:51.355383-07:00
+description: "Por\xF3wnywanie dw\xF3ch dat w Dart polega na ocenie r\xF3\u017Cnicy\
+  \ czasowej lub kolejno\u015Bci mi\u0119dzy nimi, co jest kluczow\u0105 funkcjonalno\u015B\
+  ci\u0105 w aplikacjach zarz\u0105dzaj\u0105cych\u2026"
+lastmod: '2024-03-09T21:05:59.839527-07:00'
+model: gpt-4-0125-preview
+summary: "Por\xF3wnywanie dw\xF3ch dat w Dart polega na ocenie r\xF3\u017Cnicy czasowej\
+  \ lub kolejno\u015Bci mi\u0119dzy nimi, co jest kluczow\u0105 funkcjonalno\u015B\
+  ci\u0105 w aplikacjach zarz\u0105dzaj\u0105cych\u2026"
+title: "Por\xF3wnywanie dw\xF3ch dat"
 ---
 
 {{< edit_this_page >}}

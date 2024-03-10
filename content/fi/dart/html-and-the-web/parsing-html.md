@@ -1,9 +1,16 @@
 ---
-title:                "HTML:n jäsentäminen"
-date:                  2024-03-08T21:55:19.098508-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:19.098508-07:00
+description: "HTML:n j\xE4sent\xE4minen ohjelmoinnissa tarkoittaa tietojen kaivamista\
+  \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n vuorovaikuttaakseen tai\
+  \ kaivaakseen\u2026"
+lastmod: '2024-03-09T21:06:20.178651-07:00'
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen ohjelmoinnissa tarkoittaa tietojen kaivamista\
+  \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n vuorovaikuttaakseen tai\
+  \ kaivaakseen\u2026"
+title: "HTML:n j\xE4sent\xE4minen"
 ---
 
 {{< edit_this_page >}}

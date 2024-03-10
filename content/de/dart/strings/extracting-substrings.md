@@ -1,9 +1,14 @@
 ---
-title:                "Teilstrings extrahieren"
-date:                  2024-03-08T21:54:38.950998-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:38.950998-07:00
+description: "Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer\
+  \ Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern.\u2026"
+lastmod: '2024-03-09T21:06:17.564969-07:00'
+model: gpt-4-0125-preview
+summary: "Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer\
+  \ Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern.\u2026"
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

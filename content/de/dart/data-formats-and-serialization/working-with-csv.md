@@ -1,9 +1,14 @@
 ---
-title:                "Arbeiten mit CSV"
-date:                  2024-03-08T21:57:28.180583-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:28.180583-07:00
+description: "Die Arbeit mit CSV-Dateien (Comma Separated Values) beinhaltet das Parsen\
+  \ und Generieren von Textdateien, bei denen jede Zeile Werte enth\xE4lt, die durch\u2026"
+lastmod: '2024-03-09T21:06:17.596479-07:00'
+model: gpt-4-0125-preview
+summary: "Die Arbeit mit CSV-Dateien (Comma Separated Values) beinhaltet das Parsen\
+  \ und Generieren von Textdateien, bei denen jede Zeile Werte enth\xE4lt, die durch\u2026"
+title: Arbeiten mit CSV
 ---
 
 {{< edit_this_page >}}

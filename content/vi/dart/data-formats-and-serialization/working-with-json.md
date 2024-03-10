@@ -1,9 +1,18 @@
 ---
-title:                "Làm việc với JSON"
-date:                  2024-03-08T21:57:23.961653-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:23.961653-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) bao g\u1ED3\
+  m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p d\u1EEF li\u1EC7u JSON t\u1EEB chu\u1ED7\
+  i th\xE0nh c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng Dart v\xE0 ng\u01B0\u1EE3c l\u1EA1\
+  i, m\u1ED9t nhi\u1EC7m v\u1EE5\u2026"
+lastmod: '2024-03-09T21:06:01.025420-07:00'
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) bao g\u1ED3\
+  m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p d\u1EEF li\u1EC7u JSON t\u1EEB chu\u1ED7\
+  i th\xE0nh c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng Dart v\xE0 ng\u01B0\u1EE3c l\u1EA1\
+  i, m\u1ED9t nhi\u1EC7m v\u1EE5\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 ---
 
 {{< edit_this_page >}}

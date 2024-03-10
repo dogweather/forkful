@@ -1,7 +1,14 @@
 ---
-title:                "Using associative arrays"
-date:                  2024-03-08T21:33:37.742578-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:37.742578-07:00
+description: "Associative arrays in Dart, commonly known as Maps, are data structures\
+  \ that store data in key-value pairs. They enable programmers to access elements\
+  \ not\u2026"
+lastmod: '2024-03-09T21:06:23.351865-07:00'
+model: gpt-4-0125-preview
+summary: "Associative arrays in Dart, commonly known as Maps, are data structures\
+  \ that store data in key-value pairs. They enable programmers to access elements\
+  \ not\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

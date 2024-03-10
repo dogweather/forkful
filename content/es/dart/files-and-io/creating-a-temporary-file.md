@@ -1,9 +1,14 @@
 ---
-title:                "Creando un archivo temporal"
-date:                  2024-03-08T21:54:09.635258-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:09.635258-07:00
+description: "Crear un archivo temporal en Dart implica generar un archivo que est\xE1\
+  \ destinado para uso a corto plazo, principalmente para escenarios como almacenamiento\u2026"
+lastmod: '2024-03-09T21:06:22.345191-07:00'
+model: gpt-4-0125-preview
+summary: "Crear un archivo temporal en Dart implica generar un archivo que est\xE1\
+  \ destinado para uso a corto plazo, principalmente para escenarios como almacenamiento\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

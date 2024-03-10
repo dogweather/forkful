@@ -1,9 +1,16 @@
 ---
-title:                "Läsa argument från kommandoraden"
-date:                  2024-03-08T21:55:44.406075-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:44.406075-07:00
+description: "Att l\xE4sa kommandoradens argument i Dart m\xF6jligg\xF6r f\xF6r programmerare\
+  \ att direkt mata in data i konsolen n\xE4r ett Dart-program k\xF6rs, vilket f\xF6\
+  rb\xE4ttrar dess\u2026"
+lastmod: '2024-03-09T21:06:02.383414-07:00'
+model: gpt-4-0125-preview
+summary: "Att l\xE4sa kommandoradens argument i Dart m\xF6jligg\xF6r f\xF6r programmerare\
+  \ att direkt mata in data i konsolen n\xE4r ett Dart-program k\xF6rs, vilket f\xF6\
+  rb\xE4ttrar dess\u2026"
+title: "L\xE4sa argument fr\xE5n kommandoraden"
 ---
 
 {{< edit_this_page >}}

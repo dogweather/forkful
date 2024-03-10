@@ -1,9 +1,16 @@
 ---
-title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-03-08T21:54:39.083043-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:39.083043-07:00
+description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Dartissa sis\xE4lt\xE4\xE4\
+  \ j\xE4rjestelm\xE4n kyselyn nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan osalta.\
+  \ T\xE4t\xE4 toiminnallisuutta k\xE4ytet\xE4\xE4n yleisesti\u2026"
+lastmod: '2024-03-09T21:06:20.190511-07:00'
+model: gpt-4-0125-preview
+summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Dartissa sis\xE4lt\xE4\xE4\
+  \ j\xE4rjestelm\xE4n kyselyn nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan osalta.\
+  \ T\xE4t\xE4 toiminnallisuutta k\xE4ytet\xE4\xE4n yleisesti\u2026"
+title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 ---
 
 {{< edit_this_page >}}

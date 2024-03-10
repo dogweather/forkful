@@ -1,9 +1,16 @@
 ---
-title:                "Lähettäminen HTTP-pyyntö perustodennuksella"
-date:                  2024-03-08T21:56:19.532955-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:19.532955-07:00
+description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla sis\xE4lt\xE4\
+  \xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan liitt\xE4misen pyynt\xF6\xF6n k\xE4ytt\xE4\
+  j\xE4n henkil\xF6llisyyden varmistamiseksi.\u2026"
+lastmod: '2024-03-09T21:06:20.180526-07:00'
+model: gpt-4-0125-preview
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla sis\xE4lt\xE4\xE4\
+  \ k\xE4ytt\xE4j\xE4nimen ja salasanan liitt\xE4misen pyynt\xF6\xF6n k\xE4ytt\xE4\
+  j\xE4n henkil\xF6llisyyden varmistamiseksi.\u2026"
+title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 ---
 
 {{< edit_this_page >}}

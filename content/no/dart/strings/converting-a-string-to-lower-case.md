@@ -1,9 +1,14 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
-date:                  2024-03-08T21:54:04.528550-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:04.528550-07:00
+description: "\xC5 konvertere en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
+  \ som involverer \xE5 transformere alle tegnene i en gitt streng til deres\u2026"
+lastmod: '2024-03-09T21:06:05.233700-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 konvertere en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
+  \ som involverer \xE5 transformere alle tegnene i en gitt streng til deres\u2026"
+title: "Konvertere en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

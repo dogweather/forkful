@@ -1,9 +1,16 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-03-08T21:53:39.954536-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:39.954536-07:00
+description: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 modifier la\
+  \ premi\xE8re lettre d'un mot ou d'une phrase enti\xE8re en majuscule, tout en gardant\
+  \ le reste des\u2026"
+lastmod: '2024-03-09T21:06:21.224641-07:00'
+model: gpt-4-0125-preview
+summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 modifier la premi\xE8\
+  re lettre d'un mot ou d'une phrase enti\xE8re en majuscule, tout en gardant le reste\
+  \ des\u2026"
+title: "Mettre une cha\xEEne de caract\xE8res en majuscules"
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,12 @@
 ---
-title:                "Downloading a web page"
-date:                  2024-03-08T21:33:39.871728-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:39.871728-07:00
+description: "Downloading a web page involves fetching the content of a web page via\
+  \ its URL for processing or storage. Programmers do this to extract information,\u2026"
+lastmod: '2024-03-09T21:06:23.356137-07:00'
+model: gpt-4-0125-preview
+summary: "Downloading a web page involves fetching the content of a web page via its\
+  \ URL for processing or storage. Programmers do this to extract information,\u2026"
+title: Downloading a web page
 ---
 
 {{< edit_this_page >}}

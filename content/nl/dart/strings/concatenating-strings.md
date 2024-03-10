@@ -1,9 +1,14 @@
 ---
-title:                "Strings samenvoegen"
-date:                  2024-03-08T21:54:10.380126-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:10.380126-07:00
+description: "Het samenvoegen van strings in programmeren houdt in dat twee of meer\
+  \ strings tot \xE9\xE9n worden gecombineerd. Programmeurs doen dit om tekstgegevens\u2026"
+lastmod: '2024-03-09T21:06:14.681664-07:00'
+model: gpt-4-0125-preview
+summary: "Het samenvoegen van strings in programmeren houdt in dat twee of meer strings\
+  \ tot \xE9\xE9n worden gecombineerd. Programmeurs doen dit om tekstgegevens\u2026"
+title: Strings samenvoegen
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,14 @@
 ---
-title:                "Scrittura su errore standard"
-date:                  2024-03-08T21:57:59.571207-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:59.571207-07:00
+description: "Scrivere sull'errore standard (stderr) in Dart consiste nell'inviare\
+  \ messaggi di errore e diagnostica a un flusso separato, distinto dall'output standard\u2026"
+lastmod: '2024-03-09T21:06:07.693397-07:00'
+model: gpt-4-0125-preview
+summary: "Scrivere sull'errore standard (stderr) in Dart consiste nell'inviare messaggi\
+  \ di errore e diagnostica a un flusso separato, distinto dall'output standard\u2026"
+title: Scrittura su errore standard
 ---
 
 {{< edit_this_page >}}

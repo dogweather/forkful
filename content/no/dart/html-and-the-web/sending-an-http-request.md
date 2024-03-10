@@ -1,9 +1,15 @@
 ---
-title:                "Sende en HTTP-forespørsel"
-date:                  2024-03-08T21:56:28.787194-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:28.787194-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel i Dart er prosessen med \xE5 starte\
+  \ kommunikasjon med en webserver eller API fra en Dart-applikasjon. Programmerere\
+  \ gj\xF8r dette\u2026"
+lastmod: '2024-03-09T21:06:05.243079-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel i Dart er prosessen med \xE5 starte kommunikasjon\
+  \ med en webserver eller API fra en Dart-applikasjon. Programmerere gj\xF8r dette\u2026"
+title: "Sende en HTTP-foresp\xF8rsel"
 ---
 
 {{< edit_this_page >}}

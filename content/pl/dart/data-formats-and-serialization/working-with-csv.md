@@ -1,9 +1,15 @@
 ---
-title:                "Praca z CSV"
-date:                  2024-03-08T21:57:29.984930-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:29.984930-07:00
+description: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone\
+  \ przecinkami) polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie\
+  \ ka\u017Cda linia\u2026"
+lastmod: '2024-03-09T21:05:59.849006-07:00'
+model: gpt-4-0125-preview
+summary: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone przecinkami)\
+  \ polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie ka\u017Cda linia\u2026"
+title: Praca z CSV
 ---
 
 {{< edit_this_page >}}

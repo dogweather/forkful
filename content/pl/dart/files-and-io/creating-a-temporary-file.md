@@ -1,9 +1,14 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-date:                  2024-03-08T21:54:08.682773-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:08.682773-07:00
+description: "Tworzenie tymczasowego pliku w Dart polega na generowaniu pliku przeznaczonego\
+  \ do kr\xF3tkoterminowego u\u017Cytku, przede wszystkim w scenariuszach takich jak\u2026"
+lastmod: '2024-03-09T21:05:59.846302-07:00'
+model: gpt-4-0125-preview
+summary: "Tworzenie tymczasowego pliku w Dart polega na generowaniu pliku przeznaczonego\
+  \ do kr\xF3tkoterminowego u\u017Cytku, przede wszystkim w scenariuszach takich jak\u2026"
+title: Tworzenie tymczasowego pliku
 ---
 
 {{< edit_this_page >}}

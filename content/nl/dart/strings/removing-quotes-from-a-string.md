@@ -1,9 +1,15 @@
 ---
-title:                "Aanhalingstekens uit een tekenreeks verwijderen"
-date:                  2024-03-08T21:55:59.199732-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:59.199732-07:00
+description: "Het verwijderen van aanhalingstekens uit een string in Dart houdt in\
+  \ dat je de dubbele (\") of enkele (') aanhalingstekens aan het begin en einde van\
+  \ een\u2026"
+lastmod: '2024-03-09T21:06:14.678130-07:00'
+model: gpt-4-0125-preview
+summary: "Het verwijderen van aanhalingstekens uit een string in Dart houdt in dat\
+  \ je de dubbele (\") of enkele (') aanhalingstekens aan het begin en einde van een\u2026"
+title: Aanhalingstekens uit een tekenreeks verwijderen
 ---
 
 {{< edit_this_page >}}

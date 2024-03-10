@@ -1,9 +1,16 @@
 ---
-title:                "Gerando números aleatórios"
-date:                  2024-03-08T21:54:35.006129-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:35.006129-07:00
+description: "Gerar n\xFAmeros aleat\xF3rios em Dart envolve a cria\xE7\xE3o de valores\
+  \ num\xE9ricos que s\xE3o imprevis\xEDveis e diferem a cada execu\xE7\xE3o. Os programadores\
+  \ aproveitam essa\u2026"
+lastmod: '2024-03-09T21:06:10.625194-07:00'
+model: gpt-4-0125-preview
+summary: "Gerar n\xFAmeros aleat\xF3rios em Dart envolve a cria\xE7\xE3o de valores\
+  \ num\xE9ricos que s\xE3o imprevis\xEDveis e diferem a cada execu\xE7\xE3o. Os programadores\
+  \ aproveitam essa\u2026"
+title: "Gerando n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

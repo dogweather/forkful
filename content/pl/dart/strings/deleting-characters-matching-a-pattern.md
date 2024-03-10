@@ -1,9 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
-date:                  2024-03-08T21:54:10.270752-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:10.270752-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w ci\u0105\
+  gach znak\xF3w jest kluczowe dla walidacji danych, ich oczyszczania lub przygotowania\
+  \ tekstu do\u2026"
+lastmod: '2024-03-09T21:05:59.808892-07:00'
+model: gpt-4-0125-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w ci\u0105\
+  gach znak\xF3w jest kluczowe dla walidacji danych, ich oczyszczania lub przygotowania\
+  \ tekstu do\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

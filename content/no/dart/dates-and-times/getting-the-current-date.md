@@ -1,9 +1,16 @@
 ---
-title:                "Få den nåværende datoen"
-date:                  2024-03-08T21:54:42.601248-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:42.601248-07:00
+description: "\xC5 f\xE5 tak i den n\xE5v\xE6rende datoen i Dart inneb\xE6rer \xE5\
+  \ sp\xF8rre systemet om den n\xE5v\xE6rende datoen og tiden. Denne funksjonaliteten\
+  \ brukes ofte i applikasjoner\u2026"
+lastmod: '2024-03-09T21:06:05.255867-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 f\xE5 tak i den n\xE5v\xE6rende datoen i Dart inneb\xE6rer \xE5 sp\xF8\
+  rre systemet om den n\xE5v\xE6rende datoen og tiden. Denne funksjonaliteten brukes\
+  \ ofte i applikasjoner\u2026"
+title: "F\xE5 den n\xE5v\xE6rende datoen"
 ---
 
 {{< edit_this_page >}}

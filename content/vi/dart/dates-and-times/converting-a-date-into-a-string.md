@@ -1,9 +1,18 @@
 ---
-title:                "Chuyển đổi một ngày thành chuỗi"
-date:                  2024-03-08T21:54:13.324537-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:13.324537-07:00
+description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong\
+  \ Dart l\xE0 nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn khi b\u1EA1n c\u1EA7n hi\u1EC3\
+  n th\u1ECB th\xF4ng tin ng\xE0y v\xE0 gi\u1EDD d\u01B0\u1EDBi d\u1EA1ng c\xF3 th\u1EC3\
+  \ \u0111\u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi con ng\u01B0\u1EDDi, ho\u1EB7c\u2026"
+lastmod: '2024-03-09T21:06:01.015463-07:00'
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong Dart\
+  \ l\xE0 nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn khi b\u1EA1n c\u1EA7n hi\u1EC3n th\u1ECB\
+  \ th\xF4ng tin ng\xE0y v\xE0 gi\u1EDD d\u01B0\u1EDBi d\u1EA1ng c\xF3 th\u1EC3 \u0111\
+  \u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi con ng\u01B0\u1EDDi, ho\u1EB7c\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,12 @@
 ---
-title:                "Working with CSV"
-date:                  2024-03-08T21:33:55.387738-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:55.387738-07:00
+description: "Working with CSV (Comma Separated Values) files involves parsing and\
+  \ generating text files where each line holds values separated by commas. Programmers\u2026"
+lastmod: '2024-03-09T21:06:23.373297-07:00'
+model: gpt-4-0125-preview
+summary: "Working with CSV (Comma Separated Values) files involves parsing and generating\
+  \ text files where each line holds values separated by commas. Programmers\u2026"
+title: Working with CSV
 ---
 
 {{< edit_this_page >}}

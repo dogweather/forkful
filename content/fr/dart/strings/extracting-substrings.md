@@ -1,9 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
-date:                  2024-03-08T21:54:23.348861-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:23.348861-07:00
+description: "Extraire des sous-cha\xEEnes consiste \xE0 r\xE9cup\xE9rer des portions\
+  \ sp\xE9cifiques d'une cha\xEEne de caract\xE8res bas\xE9es sur leurs positions\
+  \ ou leurs motifs. Les\u2026"
+lastmod: '2024-03-09T21:06:21.230862-07:00'
+model: gpt-4-0125-preview
+summary: "Extraire des sous-cha\xEEnes consiste \xE0 r\xE9cup\xE9rer des portions\
+  \ sp\xE9cifiques d'une cha\xEEne de caract\xE8res bas\xE9es sur leurs positions\
+  \ ou leurs motifs. Les\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

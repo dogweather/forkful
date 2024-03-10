@@ -1,9 +1,16 @@
 ---
-title:                "Einen Debugger verwenden"
-date:                  2024-03-08T21:56:44.413329-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:44.413329-07:00
+description: "Die Verwendung eines Debuggers in Dart erm\xF6glicht es Programmierern,\
+  \ ihren Code systematisch zu \xFCberpr\xFCfen, indem sie Haltepunkte setzen, die\
+  \ Ausf\xFChrung\u2026"
+lastmod: '2024-03-09T21:06:17.580122-07:00'
+model: gpt-4-0125-preview
+summary: "Die Verwendung eines Debuggers in Dart erm\xF6glicht es Programmierern,\
+  \ ihren Code systematisch zu \xFCberpr\xFCfen, indem sie Haltepunkte setzen, die\
+  \ Ausf\xFChrung\u2026"
+title: Einen Debugger verwenden
 ---
 
 {{< edit_this_page >}}

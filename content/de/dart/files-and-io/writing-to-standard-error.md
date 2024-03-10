@@ -1,9 +1,14 @@
 ---
-title:                "Schreiben auf Standardfehler"
-date:                  2024-03-08T21:57:55.287778-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:55.287778-07:00
+description: "Das Schreiben auf Standardfehler (stderr) in Dart geht darum, Fehlermeldungen\
+  \ und Diagnostik in einen separaten Stream zu senden, der sich vom\u2026"
+lastmod: '2024-03-09T21:06:17.591024-07:00'
+model: gpt-4-0125-preview
+summary: "Das Schreiben auf Standardfehler (stderr) in Dart geht darum, Fehlermeldungen\
+  \ und Diagnostik in einen separaten Stream zu senden, der sich vom\u2026"
+title: Schreiben auf Standardfehler
 ---
 
 {{< edit_this_page >}}

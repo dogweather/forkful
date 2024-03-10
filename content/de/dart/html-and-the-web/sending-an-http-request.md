@@ -1,9 +1,14 @@
 ---
-title:                "Eine HTTP-Anfrage senden"
-date:                  2024-03-08T21:56:11.539831-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:11.539831-07:00
+description: "Das Senden einer HTTP-Anfrage in Dart ist der Prozess der Initiierung\
+  \ von Kommunikation mit einem Webserver oder einer API aus einer Dart-Anwendung\u2026"
+lastmod: '2024-03-09T21:06:17.572612-07:00'
+model: gpt-4-0125-preview
+summary: "Das Senden einer HTTP-Anfrage in Dart ist der Prozess der Initiierung von\
+  \ Kommunikation mit einem Webserver oder einer API aus einer Dart-Anwendung\u2026"
+title: Eine HTTP-Anfrage senden
 ---
 
 {{< edit_this_page >}}

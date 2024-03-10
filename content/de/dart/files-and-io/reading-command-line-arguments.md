@@ -1,9 +1,14 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-date:                  2024-03-08T21:55:44.797705-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:44.797705-07:00
+description: "Das Lesen von Befehlszeilenargumenten in Dart erm\xF6glicht es Programmierern,\
+  \ Daten direkt in die Konsole einzugeben, wenn ein Dart-Programm ausgef\xFChrt\u2026"
+lastmod: '2024-03-09T21:06:17.590123-07:00'
+model: gpt-4-0125-preview
+summary: "Das Lesen von Befehlszeilenargumenten in Dart erm\xF6glicht es Programmierern,\
+  \ Daten direkt in die Konsole einzugeben, wenn ein Dart-Programm ausgef\xFChrt\u2026"
+title: Befehlszeilenargumente lesen
 ---
 
 {{< edit_this_page >}}

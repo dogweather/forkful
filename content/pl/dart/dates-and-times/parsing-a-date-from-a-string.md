@@ -1,9 +1,16 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-date:                  2024-03-08T21:55:21.066965-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:21.066965-07:00
+description: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowaniu\
+  \ tekstowego przedstawienia dat i czas\xF3w na obiekt `DateTime`. Operacja ta jest\
+  \ niezb\u0119dna dla\u2026"
+lastmod: '2024-03-09T21:05:59.836502-07:00'
+model: gpt-4-0125-preview
+summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowaniu tekstowego\
+  \ przedstawienia dat i czas\xF3w na obiekt `DateTime`. Operacja ta jest niezb\u0119\
+  dna dla\u2026"
+title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

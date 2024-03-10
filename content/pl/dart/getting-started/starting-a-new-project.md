@@ -1,9 +1,16 @@
 ---
-title:                "Rozpoczęcie nowego projektu"
-date:                  2024-03-08T21:56:36.738915-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:36.738915-07:00
+description: "Rozpocz\u0119cie nowego projektu w Dart wymaga przygotowania \u015B\
+  rodowiska sprzyjaj\u0105cego efektywnej pracy, testowaniu i wdra\u017Caniu. Programi\u015B\
+  ci inicjuj\u0105 nowe\u2026"
+lastmod: '2024-03-09T21:05:59.827121-07:00'
+model: gpt-4-0125-preview
+summary: "Rozpocz\u0119cie nowego projektu w Dart wymaga przygotowania \u015Brodowiska\
+  \ sprzyjaj\u0105cego efektywnej pracy, testowaniu i wdra\u017Caniu. Programi\u015B\
+  ci inicjuj\u0105 nowe\u2026"
+title: "Rozpocz\u0119cie nowego projektu"
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,12 @@
 ---
-title:                "Converting a string to lower case"
-date:                  2024-03-08T21:33:50.597368-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:50.597368-07:00
+description: "Converting a string to lowercase is a fundamental operation that involves\
+  \ transforming all the characters in a given string to their lowercase\u2026"
+lastmod: '2024-03-09T21:06:23.347537-07:00'
+model: gpt-4-0125-preview
+summary: "Converting a string to lowercase is a fundamental operation that involves\
+  \ transforming all the characters in a given string to their lowercase\u2026"
+title: Converting a string to lower case
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Scrivere un file di testo"
-date:                  2024-03-08T21:57:44.183370-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:44.183370-07:00
+description: "Scrivere un file di testo in Dart implica la creazione o la modifica\
+  \ di file sul disco per memorizzare dati in un formato leggibile. I programmatori\
+  \ lo\u2026"
+lastmod: '2024-03-09T21:06:07.695330-07:00'
+model: gpt-4-0125-preview
+summary: "Scrivere un file di testo in Dart implica la creazione o la modifica di\
+  \ file sul disco per memorizzare dati in un formato leggibile. I programmatori lo\u2026"
+title: Scrivere un file di testo
 ---
 
 {{< edit_this_page >}}

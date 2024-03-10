@@ -1,9 +1,15 @@
 ---
-title:                "Sjekker om en katalog eksisterer"
-date:                  2024-03-08T21:53:37.767881-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:37.767881-07:00
+description: "\xC5 sjekke om en mappe eksisterer i Dart handler om \xE5 verifisere\
+  \ tilstedev\xE6relsen av en mappe p\xE5 en angitt bane i filsystemet f\xF8r man\
+  \ utf\xF8rer operasjoner\u2026"
+lastmod: '2024-03-09T21:06:05.259549-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 sjekke om en mappe eksisterer i Dart handler om \xE5 verifisere tilstedev\xE6\
+  relsen av en mappe p\xE5 en angitt bane i filsystemet f\xF8r man utf\xF8rer operasjoner\u2026"
+title: Sjekker om en katalog eksisterer
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,14 @@
 ---
-title:                "Comparando dos fechas"
-date:                  2024-03-08T21:53:55.991670-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:55.991670-07:00
+description: "Comparar dos fechas en Dart implica evaluar la diferencia temporal o\
+  \ el orden entre ellas, una funcionalidad esencial en aplicaciones que manejan eventos,\u2026"
+lastmod: '2024-03-09T21:06:22.338847-07:00'
+model: gpt-4-0125-preview
+summary: "Comparar dos fechas en Dart implica evaluar la diferencia temporal o el\
+  \ orden entre ellas, una funcionalidad esencial en aplicaciones que manejan eventos,\u2026"
+title: Comparando dos fechas
 ---
 
 {{< edit_this_page >}}

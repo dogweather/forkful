@@ -1,7 +1,12 @@
 ---
-title:                "Working with TOML"
-date:                  2024-03-08T21:33:31.340448-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:31.340448-07:00
+description: "TOML, or Tom's Obvious, Minimal Language, is a configuration file format\
+  \ that's easy to read due to its clear semantics. Programmers use it for\u2026"
+lastmod: '2024-03-09T21:06:23.374129-07:00'
+model: gpt-4-0125-preview
+summary: "TOML, or Tom's Obvious, Minimal Language, is a configuration file format\
+  \ that's easy to read due to its clear semantics. Programmers use it for\u2026"
+title: Working with TOML
 ---
 
 {{< edit_this_page >}}

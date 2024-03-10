@@ -1,9 +1,14 @@
 ---
-title:                "Oppretting av en midlertidig fil"
-date:                  2024-03-08T21:54:14.069796-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:14.069796-07:00
+description: "\xC5 opprette en midlertidig fil i Dart inneb\xE6rer \xE5 generere en\
+  \ fil som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data,\u2026"
+lastmod: '2024-03-09T21:06:05.264284-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 opprette en midlertidig fil i Dart inneb\xE6rer \xE5 generere en fil\
+  \ som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data,\u2026"
+title: Oppretting av en midlertidig fil
 ---
 
 {{< edit_this_page >}}

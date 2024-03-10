@@ -1,9 +1,16 @@
 ---
-title:                "Cálculo de una fecha en el futuro o pasado"
-date:                  2024-03-08T21:53:33.023731-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:33.023731-07:00
+description: "Calcular una fecha en el futuro o en el pasado es una tarea com\xFA\
+  n para los programadores, que se enfrentan a la programaci\xF3n de agendas, recordatorios\
+  \ o\u2026"
+lastmod: '2024-03-09T21:06:22.339737-07:00'
+model: gpt-4-0125-preview
+summary: "Calcular una fecha en el futuro o en el pasado es una tarea com\xFAn para\
+  \ los programadores, que se enfrentan a la programaci\xF3n de agendas, recordatorios\
+  \ o\u2026"
+title: "C\xE1lculo de una fecha en el futuro o pasado"
 ---
 
 {{< edit_this_page >}}

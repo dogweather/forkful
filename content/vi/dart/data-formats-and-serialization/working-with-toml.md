@@ -1,9 +1,18 @@
 ---
-title:                "Làm việc với TOML"
-date:                  2024-03-08T21:57:39.697717-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:39.697717-07:00
+description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
+  \ \u0111\u1ECBnh d\u1EA1ng file c\u1EA5u h\xECnh \u0111\u01B0\u1EE3c thi\u1EBFt\
+  \ k\u1EBF \u0111\u1EC3 d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0\
+  ng c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+lastmod: '2024-03-09T21:06:01.027513-07:00'
+model: gpt-4-0125-preview
+summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
+  \ \u0111\u1ECBnh d\u1EA1ng file c\u1EA5u h\xECnh \u0111\u01B0\u1EE3c thi\u1EBFt\
+  \ k\u1EBF \u0111\u1EC3 d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0\
+  ng c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Organisera kod i funktioner"
-date:                  2024-03-08T21:55:14.809323-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:14.809323-07:00
+description: "Att organisera kod i funktioner i Dart handlar om att definiera \xE5\
+  teranv\xE4ndbara kodblock som utf\xF6r specifika uppgifter, typiskt genom att ta\
+  \ emot indata,\u2026"
+lastmod: '2024-03-09T21:06:02.374417-07:00'
+model: gpt-4-0125-preview
+summary: "Att organisera kod i funktioner i Dart handlar om att definiera \xE5teranv\xE4\
+  ndbara kodblock som utf\xF6r specifika uppgifter, typiskt genom att ta emot indata,\u2026"
+title: Organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

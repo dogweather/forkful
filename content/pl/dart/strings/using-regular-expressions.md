@@ -1,9 +1,16 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
-date:                  2024-03-08T21:57:19.845633-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:19.845633-07:00
+description: "Wyra\u017Cenia regularne (regex) w Dart oferuj\u0105 pot\u0119\u017C\
+  ny spos\xF3b na wyszukiwanie i manipulowanie ci\u0105gami znak\xF3w, umo\u017Cliwiaj\u0105\
+  c programistom wykonywanie\u2026"
+lastmod: '2024-03-09T21:05:59.815416-07:00'
+model: gpt-4-0125-preview
+summary: "Wyra\u017Cenia regularne (regex) w Dart oferuj\u0105 pot\u0119\u017Cny spos\xF3\
+  b na wyszukiwanie i manipulowanie ci\u0105gami znak\xF3w, umo\u017Cliwiaj\u0105\
+  c programistom wykonywanie\u2026"
+title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 ---
 
 {{< edit_this_page >}}

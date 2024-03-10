@@ -1,9 +1,14 @@
 ---
-title:                "Het verzenden van een HTTP-verzoek"
-date:                  2024-03-08T21:56:19.684611-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:19.684611-07:00
+description: "Het versturen van een HTTP-verzoek in Dart is het proces van het starten\
+  \ van communicatie met een webserver of API vanuit een Dart-applicatie.\u2026"
+lastmod: '2024-03-09T21:06:14.686067-07:00'
+model: gpt-4-0125-preview
+summary: "Het versturen van een HTTP-verzoek in Dart is het proces van het starten\
+  \ van communicatie met een webserver of API vanuit een Dart-applicatie.\u2026"
+title: Het verzenden van een HTTP-verzoek
 ---
 
 {{< edit_this_page >}}

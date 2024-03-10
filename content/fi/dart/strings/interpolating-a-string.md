@@ -1,9 +1,14 @@
 ---
-title:                "Merkkijonon interpolaatio"
-date:                  2024-03-08T21:54:53.074955-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:53.074955-07:00
+description: "Merkkijonojen interpolaatio on prosessi, jossa muuttujien arvot lis\xE4\
+  t\xE4\xE4n suoraan merkkijonoihin, usein merkityksellisten viestien luomiseksi ilman\u2026"
+lastmod: '2024-03-09T21:06:20.167585-07:00'
+model: gpt-4-0125-preview
+summary: "Merkkijonojen interpolaatio on prosessi, jossa muuttujien arvot lis\xE4\
+  t\xE4\xE4n suoraan merkkijonoihin, usein merkityksellisten viestien luomiseksi ilman\u2026"
+title: Merkkijonon interpolaatio
 ---
 
 {{< edit_this_page >}}

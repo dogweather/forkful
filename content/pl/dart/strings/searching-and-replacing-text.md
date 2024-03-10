@@ -1,9 +1,16 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-date:                  2024-03-08T21:56:31.476213-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:31.476213-07:00
+description: "Wyszukiwanie i zamiana tekstu w j\u0119zyku Dart polega na badaniu ci\u0105\
+  g\xF3w znak\xF3w w celu znalezienia okre\u015Blonych wzorc\xF3w lub sekwencji znak\xF3\
+  w i zast\u0105pieniu ich\u2026"
+lastmod: '2024-03-09T21:05:59.810068-07:00'
+model: gpt-4-0125-preview
+summary: "Wyszukiwanie i zamiana tekstu w j\u0119zyku Dart polega na badaniu ci\u0105\
+  g\xF3w znak\xF3w w celu znalezienia okre\u015Blonych wzorc\xF3w lub sekwencji znak\xF3\
+  w i zast\u0105pieniu ich\u2026"
+title: "Wyszukiwanie i zast\u0119powanie tekstu"
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,12 @@
 ---
-title:                "Generating random numbers"
-date:                  2024-03-08T21:33:41.071470-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:41.071470-07:00
+description: "Generating random numbers in Dart involves creating numerical values\
+  \ that are unpredictable and differ on each execution. Programmers leverage this\u2026"
+lastmod: '2024-03-09T21:06:23.353998-07:00'
+model: gpt-4-0125-preview
+summary: "Generating random numbers in Dart involves creating numerical values that\
+  \ are unpredictable and differ on each execution. Programmers leverage this\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

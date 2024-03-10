@@ -1,9 +1,14 @@
 ---
-title:                "Interpolering av en streng"
-date:                  2024-03-08T21:55:01.000644-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:01.000644-07:00
+description: "Strenginterpolasjon er prosessen med \xE5 injisere variabelverdier direkte\
+  \ inn i strenger, ofte for \xE5 skape meningsfulle meldinger uten tungvinte\u2026"
+lastmod: '2024-03-09T21:06:05.232819-07:00'
+model: gpt-4-0125-preview
+summary: "Strenginterpolasjon er prosessen med \xE5 injisere variabelverdier direkte\
+  \ inn i strenger, ofte for \xE5 skape meningsfulle meldinger uten tungvinte\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

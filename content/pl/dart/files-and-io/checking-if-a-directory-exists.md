@@ -1,9 +1,16 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-03-08T21:54:03.432847-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:03.432847-07:00
+description: "Sprawdzanie, czy katalog istnieje w j\u0119zyku Dart, polega na weryfikacji\
+  \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
+  \ plik\xF3w przed wykonaniem\u2026"
+lastmod: '2024-03-09T21:05:59.841712-07:00'
+model: gpt-4-0125-preview
+summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku Dart, polega na weryfikacji\
+  \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
+  \ plik\xF3w przed wykonaniem\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

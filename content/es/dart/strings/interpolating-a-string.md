@@ -1,9 +1,14 @@
 ---
-title:                "Interpolando una cadena de texto"
-date:                  2024-03-08T21:54:58.472223-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:58.472223-07:00
+description: "La interpolaci\xF3n de cadenas es el proceso de inyectar valores de\
+  \ variables directamente en cadenas de texto, a menudo para crear mensajes significativos\u2026"
+lastmod: '2024-03-09T21:06:22.314138-07:00'
+model: gpt-4-0125-preview
+summary: "La interpolaci\xF3n de cadenas es el proceso de inyectar valores de variables\
+  \ directamente en cadenas de texto, a menudo para crear mensajes significativos\u2026"
+title: Interpolando una cadena de texto
 ---
 
 {{< edit_this_page >}}

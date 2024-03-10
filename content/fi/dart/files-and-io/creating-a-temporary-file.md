@@ -1,9 +1,16 @@
 ---
-title:                "Tilapäisen tiedoston luominen"
-date:                  2024-03-08T21:54:41.418260-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:41.418260-07:00
+description: "V\xE4liaikaisen tiedoston luominen Dartissa tarkoittaa sellaisen tiedoston\
+  \ tuottamista, joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, p\xE4\xE4asiassa\
+  \ skenaarioihin\u2026"
+lastmod: '2024-03-09T21:06:20.198741-07:00'
+model: gpt-4-0125-preview
+summary: "V\xE4liaikaisen tiedoston luominen Dartissa tarkoittaa sellaisen tiedoston\
+  \ tuottamista, joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, p\xE4\xE4asiassa\
+  \ skenaarioihin\u2026"
+title: "Tilap\xE4isen tiedoston luominen"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Convertir une chaîne en minuscules"
-date:                  2024-03-08T21:54:23.178844-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:23.178844-07:00
+description: "Convertir une cha\xEEne de caract\xE8res en minuscules est une op\xE9\
+  ration fondamentale qui consiste \xE0 transformer tous les caract\xE8res d'une cha\xEE\
+  ne donn\xE9e en\u2026"
+lastmod: '2024-03-09T21:06:21.228782-07:00'
+model: gpt-4-0125-preview
+summary: "Convertir une cha\xEEne de caract\xE8res en minuscules est une op\xE9ration\
+  \ fondamentale qui consiste \xE0 transformer tous les caract\xE8res d'une cha\xEE\
+  ne donn\xE9e en\u2026"
+title: "Convertir une cha\xEEne en minuscules"
 ---
 
 {{< edit_this_page >}}

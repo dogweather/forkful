@@ -1,10 +1,17 @@
 ---
-title:                "Generando números aleatorios"
-date:                  2024-02-27T22:50:20.728417-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-27, dogweather, edited and tested
-  - 2024-02-27, gpt-4-0125-preview, translated from English
+- 2024-02-27, dogweather, edited and tested
+- 2024-02-27, gpt-4-0125-preview, translated from English
+date: 2024-02-27 22:50:20.728417-07:00
+description: "Generar n\xFAmeros aleatorios en Elm implica usar el m\xF3dulo `Random`\
+  \ para producir n\xFAmeros pseudo-aleatorios, los cuales son \xFAtiles para una\
+  \ variedad de\u2026"
+lastmod: '2024-03-09T21:06:22.535671-07:00'
+model: gpt-4-0125-preview
+summary: "Generar n\xFAmeros aleatorios en Elm implica usar el m\xF3dulo `Random`\
+  \ para producir n\xFAmeros pseudo-aleatorios, los cuales son \xFAtiles para una\
+  \ variedad de\u2026"
+title: "Generando n\xFAmeros aleatorios"
 ---
 
 {{< edit_this_page >}}

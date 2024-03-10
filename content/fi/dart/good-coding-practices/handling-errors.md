@@ -1,9 +1,15 @@
 ---
-title:                "Virheiden käsittely"
-date:                  2024-03-08T21:55:43.690219-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:43.690219-07:00
+description: "Virheiden k\xE4sittely Dartissa tarkoittaa ohjelman suorituksen aikana\
+  \ ilmenevien poikkeusten ennakointia ja hallintaa luotettavuuden ja k\xE4ytett\xE4\
+  vyyden\u2026"
+lastmod: '2024-03-09T21:06:20.187773-07:00'
+model: gpt-4-0125-preview
+summary: "Virheiden k\xE4sittely Dartissa tarkoittaa ohjelman suorituksen aikana ilmenevien\
+  \ poikkeusten ennakointia ja hallintaa luotettavuuden ja k\xE4ytett\xE4vyyden\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

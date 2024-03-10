@@ -1,9 +1,15 @@
 ---
-title:                "Écrire un fichier texte"
-date:                  2024-03-08T21:57:46.056099-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:46.056099-07:00
+description: "\xC9crire un fichier texte en Dart implique de cr\xE9er ou de modifier\
+  \ des fichiers sur le disque pour stocker des donn\xE9es dans un format lisible.\
+  \ Les\u2026"
+lastmod: '2024-03-09T21:06:21.258844-07:00'
+model: gpt-4-0125-preview
+summary: "\xC9crire un fichier texte en Dart implique de cr\xE9er ou de modifier des\
+  \ fichiers sur le disque pour stocker des donn\xE9es dans un format lisible. Les\u2026"
+title: "\xC9crire un fichier texte"
 ---
 
 {{< edit_this_page >}}

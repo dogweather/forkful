@@ -1,9 +1,15 @@
 ---
-title:                "Arredondamento de números"
-date:                  2024-03-08T21:56:07.073671-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:07.073671-07:00
+description: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para o\
+  \ seu inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais.\
+  \ Programadores\u2026"
+lastmod: '2024-03-09T21:06:10.624313-07:00'
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para o seu\
+  \ inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais. Programadores\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Suchen und Ersetzen von Text"
-date:                  2024-03-08T21:56:17.776917-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:17.776917-07:00
+description: "Das Suchen und Ersetzen von Text in Dart beinhaltet die Untersuchung\
+  \ von Zeichenketten, um bestimmte Muster oder Zeichenfolgen zu finden und diese\
+  \ durch\u2026"
+lastmod: '2024-03-09T21:06:17.560789-07:00'
+model: gpt-4-0125-preview
+summary: "Das Suchen und Ersetzen von Text in Dart beinhaltet die Untersuchung von\
+  \ Zeichenketten, um bestimmte Muster oder Zeichenfolgen zu finden und diese durch\u2026"
+title: Suchen und Ersetzen von Text
 ---
 
 {{< edit_this_page >}}

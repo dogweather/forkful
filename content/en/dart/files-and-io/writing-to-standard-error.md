@@ -1,7 +1,12 @@
 ---
-title:                "Writing to standard error"
-date:                  2024-03-08T21:33:36.614571-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:36.614571-07:00
+description: "Writing to standard error (stderr) in Dart is about sending error messages\
+  \ and diagnostics to a separate stream, distinct from the standard output\u2026"
+lastmod: '2024-03-09T21:06:23.369136-07:00'
+model: gpt-4-0125-preview
+summary: "Writing to standard error (stderr) in Dart is about sending error messages\
+  \ and diagnostics to a separate stream, distinct from the standard output\u2026"
+title: Writing to standard error
 ---
 
 {{< edit_this_page >}}

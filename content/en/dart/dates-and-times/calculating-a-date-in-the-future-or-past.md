@@ -1,7 +1,12 @@
 ---
-title:                "Calculating a date in the future or past"
-date:                  2024-03-08T21:34:07.187133-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:34:07.187133-07:00
+description: "Calculating a date in the future or past is a common task for programmers,\
+  \ dealing with scheduling, reminders, or any feature that depends on date\u2026"
+lastmod: '2024-03-09T21:06:23.366986-07:00'
+model: gpt-4-0125-preview
+summary: "Calculating a date in the future or past is a common task for programmers,\
+  \ dealing with scheduling, reminders, or any feature that depends on date\u2026"
+title: Calculating a date in the future or past
 ---
 
 {{< edit_this_page >}}

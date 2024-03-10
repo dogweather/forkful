@@ -1,9 +1,16 @@
 ---
-title:                "Extraindo substrings"
-date:                  2024-03-08T21:55:00.194098-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:00.194098-07:00
+description: "Extrair substrings trata-se de recuperar por\xE7\xF5es espec\xEDficas\
+  \ de uma string baseadas em suas posi\xE7\xF5es ou padr\xF5es. Programadores fazem\
+  \ isso para tarefas\u2026"
+lastmod: '2024-03-09T21:06:10.618926-07:00'
+model: gpt-4-0125-preview
+summary: "Extrair substrings trata-se de recuperar por\xE7\xF5es espec\xEDficas de\
+  \ uma string baseadas em suas posi\xE7\xF5es ou padr\xF5es. Programadores fazem\
+  \ isso para tarefas\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

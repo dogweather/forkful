@@ -1,9 +1,16 @@
 ---
-title:                "Imprimer la sortie de débogage"
-date:                  2024-03-08T21:55:52.144816-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:52.144816-07:00
+description: "Imprimer le d\xE9bogage dans Dart consiste \xE0 afficher des informations\
+  \ dans la console pendant l'ex\xE9cution, permettant aux d\xE9veloppeurs de suivre\
+  \ le flux\u2026"
+lastmod: '2024-03-09T21:06:21.244026-07:00'
+model: gpt-4-0125-preview
+summary: "Imprimer le d\xE9bogage dans Dart consiste \xE0 afficher des informations\
+  \ dans la console pendant l'ex\xE9cution, permettant aux d\xE9veloppeurs de suivre\
+  \ le flux\u2026"
+title: "Imprimer la sortie de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

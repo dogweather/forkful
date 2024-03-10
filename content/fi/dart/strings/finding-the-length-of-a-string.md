@@ -1,9 +1,16 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
-date:                  2024-03-08T21:55:04.115942-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:04.115942-07:00
+description: "Merkkijonon pituuden selvitt\xE4minen Dartissa tarkoittaa annetun merkkijonon\
+  \ koodiyksik\xF6iden (k\xE4yt\xE4nn\xF6ss\xE4 merkkien m\xE4\xE4r\xE4 yksinkertaistettuna)\
+  \ m\xE4\xE4r\xE4n\u2026"
+lastmod: '2024-03-09T21:06:20.172186-07:00'
+model: gpt-4-0125-preview
+summary: "Merkkijonon pituuden selvitt\xE4minen Dartissa tarkoittaa annetun merkkijonon\
+  \ koodiyksik\xF6iden (k\xE4yt\xE4nn\xF6ss\xE4 merkkien m\xE4\xE4r\xE4 yksinkertaistettuna)\
+  \ m\xE4\xE4r\xE4n\u2026"
+title: "Merkkijonon pituuden selvitt\xE4minen"
 ---
 
 {{< edit_this_page >}}

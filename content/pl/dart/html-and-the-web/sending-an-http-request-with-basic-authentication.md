@@ -1,9 +1,16 @@
 ---
-title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem"
-date:                  2024-03-08T21:56:51.180619-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:51.180619-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
+  \ polega na do\u0142\u0105czeniu nazwy u\u017Cytkownika i has\u0142a do \u017C\u0105\
+  dania, w celu weryfikacji to\u017Csamo\u015Bci u\u017Cytkownika.\u2026"
+lastmod: '2024-03-09T21:05:59.826124-07:00'
+model: gpt-4-0125-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
+  \ polega na do\u0142\u0105czeniu nazwy u\u017Cytkownika i has\u0142a do \u017C\u0105\
+  dania, w celu weryfikacji to\u017Csamo\u015Bci u\u017Cytkownika.\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem"
 ---
 
 {{< edit_this_page >}}

@@ -1,10 +1,16 @@
 ---
-title:                "Sattumanvaraisten numeroiden generointi"
-date:                  2024-02-27T22:50:15.929283-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-27, dogweather, edited and tested
-  - 2024-02-27, gpt-4-0125-preview, translated from English
+- 2024-02-27, dogweather, edited and tested
+- 2024-02-27, gpt-4-0125-preview, translated from English
+date: 2024-02-27 22:50:15.929283-07:00
+description: "Satunnaislukujen generointi Elm-kieless\xE4 vaatii `Random`-moduulin\
+  \ k\xE4ytt\xF6\xE4 pseudo-satunnaislukujen tuottamiseen, jotka ovat hy\xF6dyllisi\xE4\
+  \ monenlaisissa\u2026"
+lastmod: '2024-03-09T21:06:20.385092-07:00'
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen generointi Elm-kieless\xE4 vaatii `Random`-moduulin k\xE4\
+  ytt\xF6\xE4 pseudo-satunnaislukujen tuottamiseen, jotka ovat hy\xF6dyllisi\xE4 monenlaisissa\u2026"
+title: Sattumanvaraisten numeroiden generointi
 ---
 
 {{< edit_this_page >}}

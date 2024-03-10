@@ -1,9 +1,14 @@
 ---
-title:                "Usando arrays associativos"
-date:                  2024-03-08T21:56:51.218382-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:51.218382-07:00
+description: "Arrays associativos em Dart, conhecidos como Maps, s\xE3o estruturas\
+  \ de dados que armazenam dados em pares de chave-valor. Eles permitem que os programadores\u2026"
+lastmod: '2024-03-09T21:06:10.622489-07:00'
+model: gpt-4-0125-preview
+summary: "Arrays associativos em Dart, conhecidos como Maps, s\xE3o estruturas de\
+  \ dados que armazenam dados em pares de chave-valor. Eles permitem que os programadores\u2026"
+title: Usando arrays associativos
 ---
 
 {{< edit_this_page >}}

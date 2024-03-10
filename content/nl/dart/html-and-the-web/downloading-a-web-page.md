@@ -1,9 +1,14 @@
 ---
-title:                "Een webpagina downloaden"
-date:                  2024-03-08T21:54:34.878241-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:34.878241-07:00
+description: "Een webpagina downloaden houdt in dat de inhoud van een webpagina via\
+  \ de URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om\u2026"
+lastmod: '2024-03-09T21:06:14.687727-07:00'
+model: gpt-4-0125-preview
+summary: "Een webpagina downloaden houdt in dat de inhoud van een webpagina via de\
+  \ URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om\u2026"
+title: Een webpagina downloaden
 ---
 
 {{< edit_this_page >}}

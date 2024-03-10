@@ -1,9 +1,14 @@
 ---
-title:                "Werken met CSV"
-date:                  2024-03-08T21:57:11.758090-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:11.758090-07:00
+description: "Werken met CSV (Comma Separated Values) bestanden betreft het parseren\
+  \ en genereren van tekstbestanden waarbij elke regel waarden bevat die door komma's\u2026"
+lastmod: '2024-03-09T21:06:14.709238-07:00'
+model: gpt-4-0125-preview
+summary: "Werken met CSV (Comma Separated Values) bestanden betreft het parseren en\
+  \ genereren van tekstbestanden waarbij elke regel waarden bevat die door komma's\u2026"
+title: Werken met CSV
 ---
 
 {{< edit_this_page >}}

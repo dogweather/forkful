@@ -1,9 +1,16 @@
 ---
-title:                "Nedlasting av en nettside"
-date:                  2024-03-08T21:54:32.697106-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:32.697106-07:00
+description: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente innholdet p\xE5 en\
+  \ nettside via dens URL for behandling eller lagring. Programmerere gj\xF8r dette\
+  \ for \xE5 trekke ut\u2026"
+lastmod: '2024-03-09T21:06:05.244857-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente innholdet p\xE5 en nettside\
+  \ via dens URL for behandling eller lagring. Programmerere gj\xF8r dette for \xE5\
+  \ trekke ut\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

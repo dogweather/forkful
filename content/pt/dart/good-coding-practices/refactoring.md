@@ -1,9 +1,15 @@
 ---
-title:                "Refatoração"
-date:                  2024-03-08T21:56:35.672200-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:35.672200-07:00
+description: "Refatora\xE7\xE3o em Dart \xE9 o processo de reestruturar o c\xF3digo\
+  \ existente sem alterar seu comportamento externo, visando melhorar sua estrutura\
+  \ interna,\u2026"
+lastmod: '2024-03-09T21:06:10.636771-07:00'
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o em Dart \xE9 o processo de reestruturar o c\xF3digo existente\
+  \ sem alterar seu comportamento externo, visando melhorar sua estrutura interna,\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

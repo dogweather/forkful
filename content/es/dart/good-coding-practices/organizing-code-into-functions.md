@@ -1,9 +1,16 @@
 ---
-title:                "Organizando el código en funciones"
-date:                  2024-03-08T21:55:37.721427-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:37.721427-07:00
+description: "Organizar el c\xF3digo en funciones en Dart consiste en definir bloques\
+  \ de c\xF3digo reutilizables que realizan tareas espec\xEDficas, t\xEDpicamente\
+  \ recibiendo\u2026"
+lastmod: '2024-03-09T21:06:22.332337-07:00'
+model: gpt-4-0125-preview
+summary: "Organizar el c\xF3digo en funciones en Dart consiste en definir bloques\
+  \ de c\xF3digo reutilizables que realizan tareas espec\xEDficas, t\xEDpicamente\
+  \ recibiendo\u2026"
+title: "Organizando el c\xF3digo en funciones"
 ---
 
 {{< edit_this_page >}}

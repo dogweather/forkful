@@ -1,9 +1,14 @@
 ---
-title:                "Leyendo un archivo de texto"
-date:                  2024-03-08T21:55:27.601486-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:27.601486-07:00
+description: "Leer un archivo de texto en Dart implica acceder y recuperar datos de\
+  \ archivos almacenados en el sistema de archivos. Los programadores hacen esto para\u2026"
+lastmod: '2024-03-09T21:06:22.343315-07:00'
+model: gpt-4-0125-preview
+summary: "Leer un archivo de texto en Dart implica acceder y recuperar datos de archivos\
+  \ almacenados en el sistema de archivos. Los programadores hacen esto para\u2026"
+title: Leyendo un archivo de texto
 ---
 
 {{< edit_this_page >}}

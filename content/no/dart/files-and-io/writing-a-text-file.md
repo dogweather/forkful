@@ -1,9 +1,16 @@
 ---
-title:                "Skrive en tekstfil"
-date:                  2024-03-08T21:57:46.113682-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:46.113682-07:00
+description: "\xC5 skrive en tekstfil i Dart inneb\xE6rer \xE5 opprette eller modifisere\
+  \ filer p\xE5 disken for \xE5 lagre data i et leselig format. Programmerere gj\xF8\
+  r dette for \xE5\u2026"
+lastmod: '2024-03-09T21:06:05.263343-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 skrive en tekstfil i Dart inneb\xE6rer \xE5 opprette eller modifisere\
+  \ filer p\xE5 disken for \xE5 lagre data i et leselig format. Programmerere gj\xF8\
+  r dette for \xE5\u2026"
+title: Skrive en tekstfil
 ---
 
 {{< edit_this_page >}}

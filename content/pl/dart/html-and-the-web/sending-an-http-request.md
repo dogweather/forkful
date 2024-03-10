@@ -1,9 +1,16 @@
 ---
-title:                "Wysyłanie żądania HTTP"
-date:                  2024-03-08T21:56:21.343706-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:21.343706-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP w j\u0119zyku Dart to proces inicjowania\
+  \ komunikacji z serwerem internetowym lub API z aplikacji Dart. Programi\u015Bci\
+  \ robi\u0105 to, aby\u2026"
+lastmod: '2024-03-09T21:05:59.823100-07:00'
+model: gpt-4-0125-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP w j\u0119zyku Dart to proces inicjowania\
+  \ komunikacji z serwerem internetowym lub API z aplikacji Dart. Programi\u015Bci\
+  \ robi\u0105 to, aby\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

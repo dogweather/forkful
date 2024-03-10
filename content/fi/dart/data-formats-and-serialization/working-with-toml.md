@@ -1,9 +1,16 @@
 ---
-title:                "TOML:n kanssa työskentely"
-date:                  2024-03-08T21:57:14.251709-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:14.251709-07:00
+description: "TOML, eli Tom's Obvious, Minimal Language, on konfigurointitiedostomuoto,\
+  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t\u2026"
+lastmod: '2024-03-09T21:06:20.202304-07:00'
+model: gpt-4-0125-preview
+summary: "TOML, eli Tom's Obvious, Minimal Language, on konfigurointitiedostomuoto,\
+  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t\u2026"
+title: "TOML:n kanssa ty\xF6skentely"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,18 @@
 ---
-title:                "Đọc các tham số dòng lệnh"
-date:                  2024-03-08T21:56:07.969026-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:07.969026-07:00
+description: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7\
+  nh trong Dart cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn nh\u1EADp d\u1EEF li\u1EC7u\
+  \ tr\u1EF1c ti\u1EBFp v\xE0o console khi th\u1EF1c thi m\u1ED9t ch\u01B0\u01A1ng\
+  \ tr\xECnh Dart, n\xE2ng cao t\xEDnh\u2026"
+lastmod: '2024-03-09T21:06:01.019582-07:00'
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong\
+  \ Dart cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn nh\u1EADp d\u1EEF li\u1EC7u tr\u1EF1\
+  c ti\u1EBFp v\xE0o console khi th\u1EF1c thi m\u1ED9t ch\u01B0\u01A1ng tr\xECnh\
+  \ Dart, n\xE2ng cao t\xEDnh\u2026"
+title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

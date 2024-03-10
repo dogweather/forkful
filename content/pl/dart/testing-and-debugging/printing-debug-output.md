@@ -1,9 +1,16 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
-date:                  2024-03-08T21:55:32.162054-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:32.162054-07:00
+description: "Wypisywanie danych diagnostycznych w Dart polega na wy\u015Bwietlaniu\
+  \ informacji w konsoli podczas dzia\u0142ania programu, co pozwala programistom\
+  \ \u015Bledzi\u0107 przep\u0142yw\u2026"
+lastmod: '2024-03-09T21:05:59.829129-07:00'
+model: gpt-4-0125-preview
+summary: "Wypisywanie danych diagnostycznych w Dart polega na wy\u015Bwietlaniu informacji\
+  \ w konsoli podczas dzia\u0142ania programu, co pozwala programistom \u015Bledzi\u0107\
+  \ przep\u0142yw\u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

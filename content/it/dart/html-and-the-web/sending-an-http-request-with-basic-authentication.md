@@ -1,9 +1,16 @@
 ---
-title:                "Inviare una richiesta HTTP con autenticazione di base"
-date:                  2024-03-08T21:56:19.472860-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:19.472860-07:00
+description: "Inviare una richiesta HTTP con autenticazione di base comporta l'aggiunta\
+  \ di un nome utente e di una password a una richiesta per verificare l'identit\xE0\
+  \u2026"
+lastmod: '2024-03-09T21:06:07.677368-07:00'
+model: gpt-4-0125-preview
+summary: "Inviare una richiesta HTTP con autenticazione di base comporta l'aggiunta\
+  \ di un nome utente e di una password a una richiesta per verificare l'identit\xE0\
+  \u2026"
+title: Inviare una richiesta HTTP con autenticazione di base
 ---
 
 {{< edit_this_page >}}

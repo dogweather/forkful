@@ -1,9 +1,16 @@
 ---
-title:                "Trabajando con números complejos"
-date:                  2024-03-08T21:57:37.673029-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:37.673029-07:00
+description: "Los n\xFAmeros complejos, compuestos por una parte real y una parte\
+  \ imaginaria (generalmente denotados como a + bi), extienden el concepto de los\
+  \ n\xFAmeros sin\u2026"
+lastmod: '2024-03-09T21:06:22.321523-07:00'
+model: gpt-4-0125-preview
+summary: "Los n\xFAmeros complejos, compuestos por una parte real y una parte imaginaria\
+  \ (generalmente denotados como a + bi), extienden el concepto de los n\xFAmeros\
+  \ sin\u2026"
+title: "Trabajando con n\xFAmeros complejos"
 ---
 
 {{< edit_this_page >}}

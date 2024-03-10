@@ -1,9 +1,16 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutna"
-date:                  2024-03-08T21:54:14.236975-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:14.236975-07:00
+description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet \xE4r en vanlig\
+  \ uppgift f\xF6r programmerare som hanterar schemal\xE4ggning, p\xE5minnelser eller\
+  \ n\xE5gon funktion som\u2026"
+lastmod: '2024-03-09T21:06:02.381610-07:00'
+model: gpt-4-0125-preview
+summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet \xE4r en vanlig\
+  \ uppgift f\xF6r programmerare som hanterar schemal\xE4ggning, p\xE5minnelser eller\
+  \ n\xE5gon funktion som\u2026"
+title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutna"
 ---
 
 {{< edit_this_page >}}

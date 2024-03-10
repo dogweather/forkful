@@ -1,9 +1,16 @@
 ---
-title:                "Utdrag av delstrenger"
-date:                  2024-03-08T21:54:49.537891-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:49.537891-07:00
+description: "\xC5 trekke ut delstrenger handler om \xE5 hente spesifikke deler av\
+  \ en streng basert p\xE5 deres posisjoner eller m\xF8nstre. Programmerere gj\xF8\
+  r dette for oppgaver\u2026"
+lastmod: '2024-03-09T21:06:05.235577-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 trekke ut delstrenger handler om \xE5 hente spesifikke deler av en\
+  \ streng basert p\xE5 deres posisjoner eller m\xF8nstre. Programmerere gj\xF8r dette\
+  \ for oppgaver\u2026"
+title: Utdrag av delstrenger
 ---
 
 {{< edit_this_page >}}

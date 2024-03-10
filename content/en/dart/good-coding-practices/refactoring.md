@@ -1,7 +1,12 @@
 ---
-title:                "Refactoring"
-date:                  2024-03-08T21:33:44.086666-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:44.086666-07:00
+description: "Refactoring in Dart is the process of restructuring existing code without\
+  \ changing its external behavior, aimed at improving its internal structure,\u2026"
+lastmod: '2024-03-09T21:06:23.363358-07:00'
+model: gpt-4-0125-preview
+summary: "Refactoring in Dart is the process of restructuring existing code without\
+  \ changing its external behavior, aimed at improving its internal structure,\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

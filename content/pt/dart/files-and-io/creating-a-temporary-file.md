@@ -1,9 +1,14 @@
 ---
-title:                "Criando um arquivo temporário"
-date:                  2024-03-08T21:54:34.966212-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:34.966212-07:00
+description: "Criar um arquivo tempor\xE1rio em Dart envolve gerar um arquivo destinado\
+  \ ao uso de curto prazo, principalmente para cen\xE1rios como cache de dados,\u2026"
+lastmod: '2024-03-09T21:06:10.646693-07:00'
+model: gpt-4-0125-preview
+summary: "Criar um arquivo tempor\xE1rio em Dart envolve gerar um arquivo destinado\
+  \ ao uso de curto prazo, principalmente para cen\xE1rios como cache de dados,\u2026"
+title: "Criando um arquivo tempor\xE1rio"
 ---
 
 {{< edit_this_page >}}

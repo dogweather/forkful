@@ -1,9 +1,16 @@
 ---
-title:                "Escrevendo para o erro padrão"
-date:                  2024-03-08T21:57:59.178142-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:59.178142-07:00
+description: "Escrever para o erro padr\xE3o (stderr) em Dart consiste em enviar mensagens\
+  \ de erro e diagn\xF3sticos para um fluxo separado, distinto da sa\xEDda padr\xE3\
+  o\u2026"
+lastmod: '2024-03-09T21:06:10.644044-07:00'
+model: gpt-4-0125-preview
+summary: "Escrever para o erro padr\xE3o (stderr) em Dart consiste em enviar mensagens\
+  \ de erro e diagn\xF3sticos para um fluxo separado, distinto da sa\xEDda padr\xE3\
+  o\u2026"
+title: "Escrevendo para o erro padr\xE3o"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Arbeta med YAML"
-date:                  2024-03-08T21:57:39.226366-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:39.226366-07:00
+description: "YAML, en f\xF6rkortning f\xF6r YAML Ain't Markup Language, \xE4r ett\
+  \ l\xE4sbart format f\xF6r dataserialisering. Programmerare anv\xE4nder det f\xF6\
+  r konfigurationsfiler,\u2026"
+lastmod: '2024-03-09T21:06:02.387863-07:00'
+model: gpt-4-0125-preview
+summary: "YAML, en f\xF6rkortning f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
+  sbart format f\xF6r dataserialisering. Programmerare anv\xE4nder det f\xF6r konfigurationsfiler,\u2026"
+title: Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

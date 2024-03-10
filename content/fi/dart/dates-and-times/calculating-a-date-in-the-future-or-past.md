@@ -1,9 +1,16 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-date:                  2024-03-08T21:53:42.248286-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:42.248286-07:00
+description: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
+  \ on yleinen teht\xE4v\xE4 ohjelmoijille, jotka ty\xF6skentelev\xE4t aikataulutusten,\
+  \ muistutusten tai mink\xE4\u2026"
+lastmod: '2024-03-09T21:06:20.193250-07:00'
+model: gpt-4-0125-preview
+summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen on\
+  \ yleinen teht\xE4v\xE4 ohjelmoijille, jotka ty\xF6skentelev\xE4t aikataulutusten,\
+  \ muistutusten tai mink\xE4\u2026"
+title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

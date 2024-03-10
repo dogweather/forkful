@@ -1,9 +1,14 @@
 ---
-title:                "HTML Parsen"
-date:                  2024-03-08T21:55:23.634422-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:23.634422-07:00
+description: "HTML parseren in programmeren betreft het extraheren van gegevens uit\
+  \ HTML-documenten. Programmeurs doen dit om te interageren met of webinhoud te\u2026"
+lastmod: '2024-03-09T21:06:14.686889-07:00'
+model: gpt-4-0125-preview
+summary: "HTML parseren in programmeren betreft het extraheren van gegevens uit HTML-documenten.\
+  \ Programmeurs doen dit om te interageren met of webinhoud te\u2026"
+title: HTML Parsen
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Eine Textdatei schreiben"
-date:                  2024-03-08T21:57:42.594043-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:42.594043-07:00
+description: "Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder\
+  \ Modifizieren von Dateien auf der Festplatte, um Daten in einem lesbaren Format\
+  \ zu\u2026"
+lastmod: '2024-03-09T21:06:17.592726-07:00'
+model: gpt-4-0125-preview
+summary: "Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder Modifizieren\
+  \ von Dateien auf der Festplatte, um Daten in einem lesbaren Format zu\u2026"
+title: Eine Textdatei schreiben
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,12 @@
 ---
-title:                "Capitalizing a string"
-date:                  2024-03-08T21:33:48.758582-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:48.758582-07:00
+description: "Capitalizing a string involves modifying the first letter of a word\
+  \ or entire sentence to uppercase, while keeping the rest of the characters as is.\u2026"
+lastmod: '2024-03-09T21:06:23.344487-07:00'
+model: gpt-4-0125-preview
+summary: "Capitalizing a string involves modifying the first letter of a word or entire\
+  \ sentence to uppercase, while keeping the rest of the characters as is.\u2026"
+title: Capitalizing a string
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Travailler avec des nombres complexes"
-date:                  2024-03-08T21:57:41.645879-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:41.645879-07:00
+description: "Les nombres complexes, constitu\xE9s d'une partie r\xE9elle et d'une\
+  \ partie imaginaire (g\xE9n\xE9ralement not\xE9s sous la forme a + bi), \xE9tendent\
+  \ le concept des\u2026"
+lastmod: '2024-03-09T21:06:21.235724-07:00'
+model: gpt-4-0125-preview
+summary: "Les nombres complexes, constitu\xE9s d'une partie r\xE9elle et d'une partie\
+  \ imaginaire (g\xE9n\xE9ralement not\xE9s sous la forme a + bi), \xE9tendent le\
+  \ concept des\u2026"
+title: Travailler avec des nombres complexes
 ---
 
 {{< edit_this_page >}}

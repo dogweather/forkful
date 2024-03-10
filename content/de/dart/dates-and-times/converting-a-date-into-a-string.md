@@ -1,9 +1,15 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-date:                  2024-03-08T21:53:26.628435-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:26.628435-07:00
+description: "Das Umwandeln eines Datums in einen String in Dart ist eine g\xE4ngige\
+  \ Aufgabe, wenn Sie Datum- und Zeitinformationen in einem f\xFCr Menschen lesbaren\
+  \ Format\u2026"
+lastmod: '2024-03-09T21:06:17.586451-07:00'
+model: gpt-4-0125-preview
+summary: "Das Umwandeln eines Datums in einen String in Dart ist eine g\xE4ngige Aufgabe,\
+  \ wenn Sie Datum- und Zeitinformationen in einem f\xFCr Menschen lesbaren Format\u2026"
+title: Ein Datum in einen String umwandeln
 ---
 
 {{< edit_this_page >}}

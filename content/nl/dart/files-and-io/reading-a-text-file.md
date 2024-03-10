@@ -1,9 +1,14 @@
 ---
-title:                "Een tekstbestand lezen"
-date:                  2024-03-08T21:55:32.944193-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:32.944193-07:00
+description: "Het lezen van een tekstbestand in Dart omvat het toegang krijgen tot\
+  \ en het ophalen van gegevens uit bestanden die zijn opgeslagen op het bestandssysteem.\u2026"
+lastmod: '2024-03-09T21:06:14.704851-07:00'
+model: gpt-4-0125-preview
+summary: "Het lezen van een tekstbestand in Dart omvat het toegang krijgen tot en\
+  \ het ophalen van gegevens uit bestanden die zijn opgeslagen op het bestandssysteem.\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

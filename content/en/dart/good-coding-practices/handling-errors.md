@@ -1,7 +1,12 @@
 ---
-title:                "Handling errors"
-date:                  2024-03-08T21:33:51.623284-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:51.623284-07:00
+description: "Handling errors in Dart is about anticipating and managing exceptions\
+  \ that arise during program execution to enhance reliability and usability.\u2026"
+lastmod: '2024-03-09T21:06:23.362661-07:00'
+model: gpt-4-0125-preview
+summary: "Handling errors in Dart is about anticipating and managing exceptions that\
+  \ arise during program execution to enhance reliability and usability.\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

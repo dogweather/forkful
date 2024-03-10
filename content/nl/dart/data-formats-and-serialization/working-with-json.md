@@ -1,9 +1,14 @@
 ---
-title:                "Werken met JSON"
-date:                  2024-03-08T21:57:46.662757-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:46.662757-07:00
+description: "Werken met JSON (JavaScript Object Notation) houdt in dat JSON-gegevens\
+  \ worden omgezet van strings naar Dart-objecten en vice versa, een veelvoorkomende\u2026"
+lastmod: '2024-03-09T21:06:14.708284-07:00'
+model: gpt-4-0125-preview
+summary: "Werken met JSON (JavaScript Object Notation) houdt in dat JSON-gegevens\
+  \ worden omgezet van strings naar Dart-objecten en vice versa, een veelvoorkomende\u2026"
+title: Werken met JSON
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Comparando duas datas"
-date:                  2024-03-08T21:53:42.724433-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:42.724433-07:00
+description: "Comparar duas datas em Dart envolve avaliar a diferen\xE7a temporal\
+  \ ou a ordem entre elas, uma funcionalidade essencial em aplica\xE7\xF5es que gerenciam\
+  \ eventos,\u2026"
+lastmod: '2024-03-09T21:06:10.640403-07:00'
+model: gpt-4-0125-preview
+summary: "Comparar duas datas em Dart envolve avaliar a diferen\xE7a temporal ou a\
+  \ ordem entre elas, uma funcionalidade essencial em aplica\xE7\xF5es que gerenciam\
+  \ eventos,\u2026"
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

@@ -1,10 +1,15 @@
 ---
-title:                "Generare numeri casuali"
-date:                  2024-02-27T22:50:15.127248-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-27, dogweather, edited and tested
-  - 2024-02-27, gpt-4-0125-preview, translated from English
+- 2024-02-27, dogweather, edited and tested
+- 2024-02-27, gpt-4-0125-preview, translated from English
+date: 2024-02-27 22:50:15.127248-07:00
+description: "Generare numeri casuali in Elm comporta l'utilizzo del modulo `Random`\
+  \ per produrre numeri pseudo-casuali, i quali sono utili per una variet\xE0 di compiti\u2026"
+lastmod: '2024-03-09T21:06:07.886954-07:00'
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali in Elm comporta l'utilizzo del modulo `Random` per\
+  \ produrre numeri pseudo-casuali, i quali sono utili per una variet\xE0 di compiti\u2026"
+title: Generare numeri casuali
 ---
 
 {{< edit_this_page >}}

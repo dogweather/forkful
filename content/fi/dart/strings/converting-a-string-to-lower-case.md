@@ -1,9 +1,14 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-date:                  2024-03-08T21:54:03.921177-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:03.921177-07:00
+description: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka\
+  \ k\xE4sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\u2026"
+lastmod: '2024-03-09T21:06:20.168499-07:00'
+model: gpt-4-0125-preview
+summary: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka k\xE4\
+  sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\u2026"
+title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

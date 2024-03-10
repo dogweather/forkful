@@ -1,9 +1,16 @@
 ---
-title:                "Konvertera en sträng till gemener"
-date:                  2024-03-08T21:53:57.389020-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:57.389020-07:00
+description: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
+  \ som inneb\xE4r att man transformerar alla tecken i en given str\xE4ng till deras\
+  \ gemena\u2026"
+lastmod: '2024-03-09T21:06:02.356418-07:00'
+model: gpt-4-0125-preview
+summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
+  \ som inneb\xE4r att man transformerar alla tecken i en given str\xE4ng till deras\
+  \ gemena\u2026"
+title: "Konvertera en str\xE4ng till gemener"
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,12 @@
 ---
-title:                "Converting a date into a string"
-date:                  2024-03-08T21:33:32.467377-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:32.467377-07:00
+description: "Converting a date into a string in Dart is a common task when you need\
+  \ to display date and time information in a human-readable format, or when you intend\u2026"
+lastmod: '2024-03-09T21:06:23.365517-07:00'
+model: gpt-4-0125-preview
+summary: "Converting a date into a string in Dart is a common task when you need to\
+  \ display date and time information in a human-readable format, or when you intend\u2026"
+title: Converting a date into a string
 ---
 
 {{< edit_this_page >}}

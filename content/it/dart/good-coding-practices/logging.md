@@ -1,9 +1,15 @@
 ---
-title:                "Registrazione"
-date:                  2024-03-08T21:55:01.431022-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:01.431022-07:00
+description: "Il logging in Dart si riferisce al processo di registrazione di vari\
+  \ livelli di informazioni durante l'esecuzione di un programma. I programmatori\
+  \ lo\u2026"
+lastmod: '2024-03-09T21:06:07.683854-07:00'
+model: gpt-4-0125-preview
+summary: "Il logging in Dart si riferisce al processo di registrazione di vari livelli\
+  \ di informazioni durante l'esecuzione di un programma. I programmatori lo\u2026"
+title: Registrazione
 ---
 
 {{< edit_this_page >}}

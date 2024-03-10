@@ -1,9 +1,16 @@
 ---
-title:                "Praca z YAML"
-date:                  2024-03-08T21:57:49.702473-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:49.702473-07:00
+description: "YAML, skr\xF3t od YAML Ain't Markup Language, to format serializacji\
+  \ danych, kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105\
+  \ go do plik\xF3w\u2026"
+lastmod: '2024-03-09T21:05:59.847253-07:00'
+model: gpt-4-0125-preview
+summary: "YAML, skr\xF3t od YAML Ain't Markup Language, to format serializacji danych,\
+  \ kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105\
+  \ go do plik\xF3w\u2026"
+title: Praca z YAML
 ---
 
 {{< edit_this_page >}}

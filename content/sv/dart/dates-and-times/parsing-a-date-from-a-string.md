@@ -1,9 +1,16 @@
 ---
-title:                "Analys av ett datum från en sträng"
-date:                  2024-03-08T21:55:40.500839-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:40.500839-07:00
+description: "Att tolka ett datum fr\xE5n en str\xE4ng i Dart inneb\xE4r att konvertera\
+  \ textrepresentation av datum och tider till ett `DateTime`-objekt. Denna operation\
+  \ \xE4r\u2026"
+lastmod: '2024-03-09T21:06:02.378002-07:00'
+model: gpt-4-0125-preview
+summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Dart inneb\xE4r att konvertera\
+  \ textrepresentation av datum och tider till ett `DateTime`-objekt. Denna operation\
+  \ \xE4r\u2026"
+title: "Analys av ett datum fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

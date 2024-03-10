@@ -1,9 +1,16 @@
 ---
-title:                "Att konvertera ett datum till en sträng"
-date:                  2024-03-08T21:53:56.678514-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:56.678514-07:00
+description: "Att konvertera ett datum till en str\xE4ng i Dart \xE4r en vanlig uppgift\
+  \ n\xE4r du beh\xF6ver visa datum- och tidsinformation i ett l\xE4ttl\xE4st format,\
+  \ eller n\xE4r du\u2026"
+lastmod: '2024-03-09T21:06:02.379809-07:00'
+model: gpt-4-0125-preview
+summary: "Att konvertera ett datum till en str\xE4ng i Dart \xE4r en vanlig uppgift\
+  \ n\xE4r du beh\xF6ver visa datum- och tidsinformation i ett l\xE4ttl\xE4st format,\
+  \ eller n\xE4r du\u2026"
+title: "Att konvertera ett datum till en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

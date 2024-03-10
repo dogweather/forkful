@@ -1,9 +1,14 @@
 ---
-title:                "De huidige datum krijgen"
-date:                  2024-03-08T21:54:42.366236-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:42.366236-07:00
+description: "De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd\
+  \ voor de huidige datum en tijd. Deze functionaliteit wordt vaak gebruikt in\u2026"
+lastmod: '2024-03-09T21:06:14.698614-07:00'
+model: gpt-4-0125-preview
+summary: "De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd\
+  \ voor de huidige datum en tijd. Deze functionaliteit wordt vaak gebruikt in\u2026"
+title: De huidige datum krijgen
 ---
 
 {{< edit_this_page >}}

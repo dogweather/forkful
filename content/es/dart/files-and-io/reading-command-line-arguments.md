@@ -1,9 +1,15 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-date:                  2024-03-08T21:55:53.040707-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:53.040707-07:00
+description: "Leer los argumentos de la l\xEDnea de comandos en Dart permite a los\
+  \ programadores introducir datos directamente en la consola al ejecutar un programa\
+  \ Dart,\u2026"
+lastmod: '2024-03-09T21:06:22.341501-07:00'
+model: gpt-4-0125-preview
+summary: "Leer los argumentos de la l\xEDnea de comandos en Dart permite a los programadores\
+  \ introducir datos directamente en la consola al ejecutar un programa Dart,\u2026"
+title: "Leyendo argumentos de la l\xEDnea de comandos"
 ---
 
 {{< edit_this_page >}}

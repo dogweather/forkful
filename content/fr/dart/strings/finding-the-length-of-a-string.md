@@ -1,9 +1,16 @@
 ---
-title:                "Trouver la longueur d'une chaîne"
-date:                  2024-03-08T21:54:27.048822-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:27.048822-07:00
+description: "Trouver la longueur d'une cha\xEEne de caract\xE8res (String) en Dart\
+  \ consiste \xE0 d\xE9terminer le nombre d'unit\xE9s de code (essentiellement, le\
+  \ nombre de caract\xE8res\u2026"
+lastmod: '2024-03-09T21:06:21.232859-07:00'
+model: gpt-4-0125-preview
+summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res (String) en Dart consiste\
+  \ \xE0 d\xE9terminer le nombre d'unit\xE9s de code (essentiellement, le nombre de\
+  \ caract\xE8res\u2026"
+title: "Trouver la longueur d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

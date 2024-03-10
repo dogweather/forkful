@@ -1,9 +1,24 @@
 ---
-title:                "TOML로 작업하기"
-date:                  2024-03-08T21:57:28.156024-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:28.156024-07:00
+description: "TOML, \uC989 Tom's Obvious, Minimal Language,\uB294 \uBA85\uD655\uD55C\
+  \ \uBB38\uBC95\uC73C\uB85C \uC778\uD574 \uC77D\uAE30 \uC26C\uC6B4 \uC124\uC815 \uD30C\
+  \uC77C \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774\
+  \ \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC744 \uC124\
+  \uC815\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD558\uB294\uB370, \uD30C\uC2F1\uD558\
+  \uAE30 \uC27D\uACE0 \uC624\uB958\uB098 \uD63C\uB780\uC744 \uCD5C\uC18C\uD654\uD569\
+  \uB2C8\uB2E4."
+lastmod: '2024-03-09T21:06:18.771604-07:00'
+model: gpt-4-0125-preview
+summary: "TOML, \uC989 Tom's Obvious, Minimal Language,\uB294 \uBA85\uD655\uD55C \uBB38\
+  \uBC95\uC73C\uB85C \uC778\uD574 \uC77D\uAE30 \uC26C\uC6B4 \uC124\uC815 \uD30C\uC77C\
+  \ \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC18C\
+  \uD504\uD2B8\uC6E8\uC5B4 \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC744 \uC124\uC815\
+  \uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD558\uB294\uB370, \uD30C\uC2F1\uD558\uAE30\
+  \ \uC27D\uACE0 \uC624\uB958\uB098 \uD63C\uB780\uC744 \uCD5C\uC18C\uD654\uD569\uB2C8\
+  \uB2E4."
+title: "TOML\uB85C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

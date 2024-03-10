@@ -1,9 +1,15 @@
 ---
-title:                "Estrazione di sottostringhe"
-date:                  2024-03-08T21:54:25.035161-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:25.035161-07:00
+description: "Estrarre sottosequenze si riferisce al recupero di porzioni specifiche\
+  \ di una stringa basate sulle loro posizioni o sui loro schemi. I programmatori\
+  \ fanno\u2026"
+lastmod: '2024-03-09T21:06:07.667477-07:00'
+model: gpt-4-0125-preview
+summary: "Estrarre sottosequenze si riferisce al recupero di porzioni specifiche di\
+  \ una stringa basate sulle loro posizioni o sui loro schemi. I programmatori fanno\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

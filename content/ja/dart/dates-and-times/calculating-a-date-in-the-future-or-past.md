@@ -1,9 +1,12 @@
 ---
-title:                "未来または過去の日付の計算"
-date:                  2024-03-08T21:53:39.281682-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:39.281682-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.414657-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u672A\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u306E\u8A08\u7B97"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,18 @@
 ---
-title:                "So sánh hai ngày"
-date:                  2024-03-08T21:53:59.874950-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:59.874950-07:00
+description: "So s\xE1nh hai ng\xE0y trong Dart bao g\u1ED3m vi\u1EC7c \u0111\xE1\
+  nh gi\xE1 s\u1EF1 kh\xE1c bi\u1EC7t v\u1EC1 th\u1EDDi gian ho\u1EB7c th\u1EE9 t\u1EF1\
+  \ gi\u1EEFa ch\xFAng, l\xE0 m\u1ED9t ch\u1EE9c n\u0103ng thi\u1EBFt y\u1EBFu trong\
+  \ c\xE1c \u1EE9ng d\u1EE5ng qu\u1EA3n l\xFD\u2026"
+lastmod: '2024-03-09T21:06:01.016445-07:00'
+model: gpt-4-0125-preview
+summary: "So s\xE1nh hai ng\xE0y trong Dart bao g\u1ED3m vi\u1EC7c \u0111\xE1nh gi\xE1\
+  \ s\u1EF1 kh\xE1c bi\u1EC7t v\u1EC1 th\u1EDDi gian ho\u1EB7c th\u1EE9 t\u1EF1 gi\u1EEF\
+  a ch\xFAng, l\xE0 m\u1ED9t ch\u1EE9c n\u0103ng thi\u1EBFt y\u1EBFu trong c\xE1c\
+  \ \u1EE9ng d\u1EE5ng qu\u1EA3n l\xFD\u2026"
+title: "So s\xE1nh hai ng\xE0y"
 ---
 
 {{< edit_this_page >}}

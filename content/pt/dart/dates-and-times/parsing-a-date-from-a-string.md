@@ -1,9 +1,16 @@
 ---
-title:                "Analisando uma data a partir de uma string"
-date:                  2024-03-08T21:55:15.990853-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:15.990853-07:00
+description: "Analisar uma data a partir de uma string em Dart envolve a convers\xE3\
+  o da representa\xE7\xE3o textual de datas e horas em um objeto `DateTime`. Essa\
+  \ opera\xE7\xE3o \xE9\u2026"
+lastmod: '2024-03-09T21:06:10.637685-07:00'
+model: gpt-4-0125-preview
+summary: "Analisar uma data a partir de uma string em Dart envolve a convers\xE3o\
+  \ da representa\xE7\xE3o textual de datas e horas em um objeto `DateTime`. Essa\
+  \ opera\xE7\xE3o \xE9\u2026"
+title: Analisando uma data a partir de uma string
 ---
 
 {{< edit_this_page >}}

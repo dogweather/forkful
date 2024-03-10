@@ -1,9 +1,18 @@
 ---
-title:                "Viết hoa một chuỗi ký tự"
-date:                  2024-03-08T21:54:09.957909-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:09.957909-07:00
+description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i bao g\u1ED3m vi\u1EC7c ch\u1EC9\
+  nh s\u1EEDa ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED9t t\u1EEB ho\u1EB7\
+  c c\u1EA3 c\xE2u th\xE0nh ch\u1EEF in hoa, trong khi gi\u1EEF nguy\xEAn c\xE1c k\xFD\
+  \ t\u1EF1 c\xF2n l\u1EA1i. C\xE1c l\u1EADp\u2026"
+lastmod: '2024-03-09T21:06:00.985320-07:00'
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i bao g\u1ED3m vi\u1EC7c ch\u1EC9\
+  nh s\u1EEDa ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED9t t\u1EEB ho\u1EB7\
+  c c\u1EA3 c\xE2u th\xE0nh ch\u1EEF in hoa, trong khi gi\u1EEF nguy\xEAn c\xE1c k\xFD\
+  \ t\u1EF1 c\xF2n l\u1EA1i. C\xE1c l\u1EADp\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

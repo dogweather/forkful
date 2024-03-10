@@ -1,9 +1,16 @@
 ---
-title:                "Descargando una página web"
-date:                  2024-03-08T21:54:26.320604-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:26.320604-07:00
+description: "Descargar una p\xE1gina web implica obtener el contenido de una p\xE1\
+  gina web a trav\xE9s de su URL para su procesamiento o almacenamiento. Los programadores\
+  \ hacen\u2026"
+lastmod: '2024-03-09T21:06:22.326082-07:00'
+model: gpt-4-0125-preview
+summary: "Descargar una p\xE1gina web implica obtener el contenido de una p\xE1gina\
+  \ web a trav\xE9s de su URL para su procesamiento o almacenamiento. Los programadores\
+  \ hacen\u2026"
+title: "Descargando una p\xE1gina web"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Sända en HTTP-förfrågan med grundläggande autentisering"
-date:                  2024-03-08T21:56:25.884646-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:25.884646-07:00
+description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
+  \ inneb\xE4r att bifoga ett anv\xE4ndarnamn och l\xF6senord till en f\xF6rfr\xE5\
+  gan f\xF6r att verifiera\u2026"
+lastmod: '2024-03-09T21:06:02.368902-07:00'
+model: gpt-4-0125-preview
+summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
+  r att bifoga ett anv\xE4ndarnamn och l\xF6senord till en f\xF6rfr\xE5gan f\xF6r\
+  \ att verifiera\u2026"
+title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 ---
 
 {{< edit_this_page >}}

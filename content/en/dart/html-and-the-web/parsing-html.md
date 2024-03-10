@@ -1,7 +1,12 @@
 ---
-title:                "Parsing HTML"
-date:                  2024-03-08T21:33:35.846788-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:35.846788-07:00
+description: "Parsing HTML in programming involves extracting data from HTML documents.\
+  \ Programmers do this to interact with or scrape web content for information\u2026"
+lastmod: '2024-03-09T21:06:23.355443-07:00'
+model: gpt-4-0125-preview
+summary: "Parsing HTML in programming involves extracting data from HTML documents.\
+  \ Programmers do this to interact with or scrape web content for information\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

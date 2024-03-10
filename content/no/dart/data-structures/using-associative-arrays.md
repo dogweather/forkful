@@ -1,9 +1,16 @@
 ---
-title:                "Bruke assosiativ tabeller"
-date:                  2024-03-08T21:56:57.273414-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:57.273414-07:00
+description: "Assosiative tabeller i Dart, ofte kjent som Maps, er datastrukturer\
+  \ som lagrer data i n\xF8kkel-verdi-par. De gj\xF8r det mulig for programmerere\
+  \ \xE5 f\xE5 tilgang\u2026"
+lastmod: '2024-03-09T21:06:05.239156-07:00'
+model: gpt-4-0125-preview
+summary: "Assosiative tabeller i Dart, ofte kjent som Maps, er datastrukturer som\
+  \ lagrer data i n\xF8kkel-verdi-par. De gj\xF8r det mulig for programmerere \xE5\
+  \ f\xE5 tilgang\u2026"
+title: Bruke assosiativ tabeller
 ---
 
 {{< edit_this_page >}}

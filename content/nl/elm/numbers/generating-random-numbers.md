@@ -1,10 +1,16 @@
 ---
-title:                "Genereren van willekeurige getallen"
-date:                  2024-02-27T22:50:13.618240-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-27, dogweather, edited and tested
-  - 2024-02-27, gpt-4-0125-preview, translated from English
+- 2024-02-27, dogweather, edited and tested
+- 2024-02-27, gpt-4-0125-preview, translated from English
+date: 2024-02-27 22:50:13.618240-07:00
+description: "Het genereren van willekeurige getallen in Elm houdt het gebruik van\
+  \ de `Random` module in om pseudo-willekeurige getallen te produceren, die handig\
+  \ zijn\u2026"
+lastmod: '2024-03-09T21:06:14.895670-07:00'
+model: gpt-4-0125-preview
+summary: "Het genereren van willekeurige getallen in Elm houdt het gebruik van de\
+  \ `Random` module in om pseudo-willekeurige getallen te produceren, die handig zijn\u2026"
+title: Genereren van willekeurige getallen
 ---
 
 {{< edit_this_page >}}

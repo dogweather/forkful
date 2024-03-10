@@ -1,9 +1,14 @@
 ---
-title:                "Escrevendo um arquivo de texto"
-date:                  2024-03-08T21:57:58.913275-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:58.913275-07:00
+description: "Escrever um arquivo de texto em Dart envolve criar ou modificar arquivos\
+  \ no disco para armazenar dados de forma leg\xEDvel. Programadores fazem isso para\u2026"
+lastmod: '2024-03-09T21:06:10.645816-07:00'
+model: gpt-4-0125-preview
+summary: "Escrever um arquivo de texto em Dart envolve criar ou modificar arquivos\
+  \ no disco para armazenar dados de forma leg\xEDvel. Programadores fazem isso para\u2026"
+title: Escrevendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

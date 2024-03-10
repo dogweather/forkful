@@ -1,9 +1,14 @@
 ---
-title:                "Trabalhando com XML"
-date:                  2024-03-08T21:57:41.494401-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:41.494401-07:00
+description: "Trabalhar com XML em Dart envolve analisar, consultar e modificar documentos\
+  \ XML, um processo crucial para aplica\xE7\xF5es que interagem com servi\xE7os web,\u2026"
+lastmod: '2024-03-09T21:06:10.651135-07:00'
+model: gpt-4-0125-preview
+summary: "Trabalhar com XML em Dart envolve analisar, consultar e modificar documentos\
+  \ XML, um processo crucial para aplica\xE7\xF5es que interagem com servi\xE7os web,\u2026"
+title: Trabalhando com XML
 ---
 
 {{< edit_this_page >}}

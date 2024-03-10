@@ -1,9 +1,16 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-03-08T21:58:16.345147-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:16.345147-07:00
+description: "Das Schreiben von Tests in Dart umfasst das Erstellen von Testf\xE4\
+  llen, um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile Ihres Programms\
+  \ wie erwartet\u2026"
+lastmod: '2024-03-09T21:06:17.579060-07:00'
+model: gpt-4-0125-preview
+summary: "Das Schreiben von Tests in Dart umfasst das Erstellen von Testf\xE4llen,\
+  \ um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile Ihres Programms wie\
+  \ erwartet\u2026"
+title: Tests schreiben
 ---
 
 {{< edit_this_page >}}

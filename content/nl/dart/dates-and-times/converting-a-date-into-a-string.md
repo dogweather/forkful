@@ -1,9 +1,14 @@
 ---
-title:                "Een datum omzetten naar een string"
-date:                  2024-03-08T21:53:37.203456-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:37.203456-07:00
+description: "Het omzetten van een datum naar een string in Dart is een veelvoorkomende\
+  \ taak wanneer u datum- en tijdinformatie op een voor mensen leesbare manier wilt\u2026"
+lastmod: '2024-03-09T21:06:14.699553-07:00'
+model: gpt-4-0125-preview
+summary: "Het omzetten van een datum naar een string in Dart is een veelvoorkomende\
+  \ taak wanneer u datum- en tijdinformatie op een voor mensen leesbare manier wilt\u2026"
+title: Een datum omzetten naar een string
 ---
 
 {{< edit_this_page >}}

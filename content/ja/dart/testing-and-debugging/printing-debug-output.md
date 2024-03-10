@@ -1,9 +1,12 @@
 ---
-title:                "デバッグ出力の印刷"
-date:                  2024-03-08T21:55:29.099207-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:29.099207-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.405140-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u306E\u5370\u5237"
 ---
 
 {{< edit_this_page >}}

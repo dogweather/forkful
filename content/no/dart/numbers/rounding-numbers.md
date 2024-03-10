@@ -1,9 +1,16 @@
 ---
-title:                "Avrunding av tall"
-date:                  2024-03-08T21:56:14.310552-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:14.310552-07:00
+description: "Avrunding av tall er prosessen med \xE5 justere et tall til n\xE6rmeste\
+  \ hele tall eller til et spesifisert antall desimalplasser. Programmerere runder\
+  \ ofte av\u2026"
+lastmod: '2024-03-09T21:06:05.241150-07:00'
+model: gpt-4-0125-preview
+summary: "Avrunding av tall er prosessen med \xE5 justere et tall til n\xE6rmeste\
+  \ hele tall eller til et spesifisert antall desimalplasser. Programmerere runder\
+  \ ofte av\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

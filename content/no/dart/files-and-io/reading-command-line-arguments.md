@@ -1,9 +1,16 @@
 ---
-title:                "Lese kommandolinje-argumenter"
-date:                  2024-03-08T21:55:41.696944-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:41.696944-07:00
+description: "\xC5 lese kommandolinjeargumenter i Dart gj\xF8r det mulig for programmerere\
+  \ \xE5 legge inn data direkte i konsollen n\xE5r de kj\xF8rer et Dart-program, noe\
+  \ som\u2026"
+lastmod: '2024-03-09T21:06:05.260476-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 lese kommandolinjeargumenter i Dart gj\xF8r det mulig for programmerere\
+  \ \xE5 legge inn data direkte i konsollen n\xE5r de kj\xF8rer et Dart-program, noe\
+  \ som\u2026"
+title: Lese kommandolinje-argumenter
 ---
 
 {{< edit_this_page >}}

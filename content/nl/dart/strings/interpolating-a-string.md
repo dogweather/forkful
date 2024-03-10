@@ -1,9 +1,14 @@
 ---
-title:                "Een string interpoleren"
-date:                  2024-03-08T21:54:49.446402-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:49.446402-07:00
+description: "Stringinterpolatie is het proces van het direct invoegen van variabele\
+  \ waarden in strings, vaak om betekenisvolle berichten te cre\xEBren zonder lastige\u2026"
+lastmod: '2024-03-09T21:06:14.676383-07:00'
+model: gpt-4-0125-preview
+summary: "Stringinterpolatie is het proces van het direct invoegen van variabele waarden\
+  \ in strings, vaak om betekenisvolle berichten te cre\xEBren zonder lastige\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,14 @@
 ---
-title:                "Eine Zeichenkette in Kleinbuchstaben umwandeln"
-date:                  2024-03-08T21:53:47.325517-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:47.325517-07:00
+description: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende\
+  \ Operation, die das Transformieren aller Zeichen eines gegebenen Strings in ihre\u2026"
+lastmod: '2024-03-09T21:06:17.562904-07:00'
+model: gpt-4-0125-preview
+summary: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende Operation,\
+  \ die das Transformieren aller Zeichen eines gegebenen Strings in ihre\u2026"
+title: Eine Zeichenkette in Kleinbuchstaben umwandeln
 ---
 
 {{< edit_this_page >}}

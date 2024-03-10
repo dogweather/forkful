@@ -1,9 +1,15 @@
 ---
-title:                "Obteniendo la fecha actual"
-date:                  2024-03-08T21:54:54.399823-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:54.399823-07:00
+description: "Obtener la fecha actual en Dart implica consultar al sistema sobre la\
+  \ fecha y hora actuales. Esta funcionalidad se utiliza com\xFAnmente en aplicaciones\
+  \ para\u2026"
+lastmod: '2024-03-09T21:06:22.337024-07:00'
+model: gpt-4-0125-preview
+summary: "Obtener la fecha actual en Dart implica consultar al sistema sobre la fecha\
+  \ y hora actuales. Esta funcionalidad se utiliza com\xFAnmente en aplicaciones para\u2026"
+title: Obteniendo la fecha actual
 ---
 
 {{< edit_this_page >}}

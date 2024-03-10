@@ -1,9 +1,16 @@
 ---
-title:                "Organisering av kode i funksjoner"
-date:                  2024-03-08T21:55:12.234752-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:12.234752-07:00
+description: "\xC5 organisere kode i funksjoner i Dart handler om \xE5 definere gjenbrukbare\
+  \ kodeblokker som utf\xF8rer spesifikke oppgaver, typisk ved \xE5 motta inndata,\
+  \ behandle\u2026"
+lastmod: '2024-03-09T21:06:05.251134-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 organisere kode i funksjoner i Dart handler om \xE5 definere gjenbrukbare\
+  \ kodeblokker som utf\xF8rer spesifikke oppgaver, typisk ved \xE5 motta inndata,\
+  \ behandle\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

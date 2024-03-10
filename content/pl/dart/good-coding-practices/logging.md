@@ -1,9 +1,16 @@
 ---
-title:                "Rejestrowanie"
-date:                  2024-03-08T21:55:25.149325-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:25.149325-07:00
+description: "Logowanie w Dart odnosi si\u0119 do procesu rejestrowania r\xF3\u017C\
+  nych poziom\xF3w informacji podczas wykonywania programu. Programi\u015Bci robi\u0105\
+  \ to, aby monitorowa\u0107\u2026"
+lastmod: '2024-03-09T21:05:59.833728-07:00'
+model: gpt-4-0125-preview
+summary: "Logowanie w Dart odnosi si\u0119 do procesu rejestrowania r\xF3\u017Cnych\
+  \ poziom\xF3w informacji podczas wykonywania programu. Programi\u015Bci robi\u0105\
+  \ to, aby monitorowa\u0107\u2026"
+title: Rejestrowanie
 ---
 
 {{< edit_this_page >}}

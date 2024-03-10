@@ -1,10 +1,19 @@
 ---
-title:                "Sinh số ngẫu nhiên"
-date:                  2024-02-27T22:50:22.468138-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-27, dogweather, edited and tested
-  - 2024-02-27, gpt-4-0125-preview, translated from English
+- 2024-02-27, dogweather, edited and tested
+- 2024-02-27, gpt-4-0125-preview, translated from English
+date: 2024-02-27 22:50:22.468138-07:00
+description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Elm bao g\u1ED3\
+  m vi\u1EC7c s\u1EED d\u1EE5ng module `Random` \u0111\u1EC3 s\u1EA3n xu\u1EA5t s\u1ED1\
+  \ gi\u1EA3 ng\u1EABu nhi\xEAn, r\u1EA5t h\u1EEFu \xEDch cho nhi\u1EC1u t\xE1c v\u1EE5\
+  \ nh\u01B0 tr\xF2 ch\u01A1i, m\xF4 ph\u1ECFng,\u2026"
+lastmod: '2024-03-09T21:06:01.274233-07:00'
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Elm bao g\u1ED3m vi\u1EC7\
+  c s\u1EED d\u1EE5ng module `Random` \u0111\u1EC3 s\u1EA3n xu\u1EA5t s\u1ED1 gi\u1EA3\
+  \ ng\u1EABu nhi\xEAn, r\u1EA5t h\u1EEFu \xEDch cho nhi\u1EC1u t\xE1c v\u1EE5 nh\u01B0\
+  \ tr\xF2 ch\u01A1i, m\xF4 ph\u1ECFng,\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

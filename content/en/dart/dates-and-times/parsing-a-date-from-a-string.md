@@ -1,7 +1,12 @@
 ---
-title:                "Parsing a date from a string"
-date:                  2024-03-08T21:33:23.665778-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:23.665778-07:00
+description: "Parsing a date from a string in Dart involves converting textual representation\
+  \ of dates and times into a `DateTime` object. This operation is essential\u2026"
+lastmod: '2024-03-09T21:06:23.364082-07:00'
+model: gpt-4-0125-preview
+summary: "Parsing a date from a string in Dart involves converting textual representation\
+  \ of dates and times into a `DateTime` object. This operation is essential\u2026"
+title: Parsing a date from a string
 ---
 
 {{< edit_this_page >}}

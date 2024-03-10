@@ -1,7 +1,12 @@
 ---
-title:                "Organizing code into functions"
-date:                  2024-03-08T21:33:29.906466-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:29.906466-07:00
+description: "Organizing code into functions in Dart is about defining reusable blocks\
+  \ of code that perform specific tasks, typically receiving inputs, processing data,\u2026"
+lastmod: '2024-03-09T21:06:23.361236-07:00'
+model: gpt-4-0125-preview
+summary: "Organizing code into functions in Dart is about defining reusable blocks\
+  \ of code that perform specific tasks, typically receiving inputs, processing data,\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

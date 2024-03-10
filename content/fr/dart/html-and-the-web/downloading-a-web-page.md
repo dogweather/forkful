@@ -1,9 +1,16 @@
 ---
-title:                "Télécharger une page web"
-date:                  2024-03-08T21:54:25.796801-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:25.796801-07:00
+description: "T\xE9l\xE9charger une page web implique de r\xE9cup\xE9rer le contenu\
+  \ d'une page web via son URL pour le traitement ou le stockage. Les programmeurs\
+  \ font cela pour\u2026"
+lastmod: '2024-03-09T21:06:21.240391-07:00'
+model: gpt-4-0125-preview
+summary: "T\xE9l\xE9charger une page web implique de r\xE9cup\xE9rer le contenu d'une\
+  \ page web via son URL pour le traitement ou le stockage. Les programmeurs font\
+  \ cela pour\u2026"
+title: "T\xE9l\xE9charger une page web"
 ---
 
 {{< edit_this_page >}}

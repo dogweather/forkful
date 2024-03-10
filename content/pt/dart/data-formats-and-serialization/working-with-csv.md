@@ -1,9 +1,15 @@
 ---
-title:                "Trabalhando com CSV"
-date:                  2024-03-08T21:57:46.330008-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:46.330008-07:00
+description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
+  \ analisar e gerar arquivos de texto onde cada linha cont\xE9m valores separados\
+  \ por\u2026"
+lastmod: '2024-03-09T21:06:10.649373-07:00'
+model: gpt-4-0125-preview
+summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve analisar\
+  \ e gerar arquivos de texto onde cada linha cont\xE9m valores separados por\u2026"
+title: Trabalhando com CSV
 ---
 
 {{< edit_this_page >}}

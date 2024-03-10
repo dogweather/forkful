@@ -1,9 +1,15 @@
 ---
-title:                "Werken met complexe getallen"
-date:                  2024-03-08T21:57:44.375687-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:44.375687-07:00
+description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel\
+  \ (gewoonlijk aangeduid als a + bi), breiden het concept van de dimensieloze getallen\
+  \ uit\u2026"
+lastmod: '2024-03-09T21:06:14.683412-07:00'
+model: gpt-4-0125-preview
+summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (gewoonlijk\
+  \ aangeduid als a + bi), breiden het concept van de dimensieloze getallen uit\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

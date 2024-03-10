@@ -1,9 +1,15 @@
 ---
-title:                "Refactoring"
-date:                  2024-03-08T21:55:54.902524-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:54.902524-07:00
+description: "Il refactoring in Dart \xE8 il processo di ristrutturazione del codice\
+  \ esistente senza cambiare il suo comportamento esterno, mirato a migliorare la\
+  \ sua\u2026"
+lastmod: '2024-03-09T21:06:07.685627-07:00'
+model: gpt-4-0125-preview
+summary: "Il refactoring in Dart \xE8 il processo di ristrutturazione del codice esistente\
+  \ senza cambiare il suo comportamento esterno, mirato a migliorare la sua\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

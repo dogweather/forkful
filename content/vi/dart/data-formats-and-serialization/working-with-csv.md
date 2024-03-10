@@ -1,9 +1,18 @@
 ---
-title:                "Làm việc với CSV"
-date:                  2024-03-08T21:57:23.389774-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:23.389774-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma Separated Values\
+  \ - Gi\xE1 tr\u1ECB T\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c\
+  \ ph\xE2n t\xEDch v\xE0 t\u1EA1o c\xE1c t\u1EC7p v\u0103n b\u1EA3n m\xE0 m\u1ED7\
+  i d\xF2ng ch\u1EE9a c\xE1c gi\xE1 tr\u1ECB\u2026"
+lastmod: '2024-03-09T21:06:01.026470-07:00'
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma Separated Values -\
+  \ Gi\xE1 tr\u1ECB T\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c ph\xE2\
+  n t\xEDch v\xE0 t\u1EA1o c\xE1c t\u1EC7p v\u0103n b\u1EA3n m\xE0 m\u1ED7i d\xF2\
+  ng ch\u1EE9a c\xE1c gi\xE1 tr\u1ECB\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

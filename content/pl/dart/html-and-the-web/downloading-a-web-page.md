@@ -1,9 +1,14 @@
 ---
-title:                "Pobieranie strony internetowej"
-date:                  2024-03-08T21:54:40.155105-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:40.155105-07:00
+description: "Pobieranie strony internetowej polega na pobraniu zawarto\u015Bci strony\
+  \ internetowej za pomoc\u0105 jej adresu URL w celu przetworzenia lub przechowania.\u2026"
+lastmod: '2024-03-09T21:05:59.825146-07:00'
+model: gpt-4-0125-preview
+summary: "Pobieranie strony internetowej polega na pobraniu zawarto\u015Bci strony\
+  \ internetowej za pomoc\u0105 jej adresu URL w celu przetworzenia lub przechowania.\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

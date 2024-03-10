@@ -1,9 +1,14 @@
 ---
-title:                "Substrings extraheren"
-date:                  2024-03-08T21:54:32.354609-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:32.354609-07:00
+description: "Het extraheren van substrings gaat over het ophalen van specifieke delen\
+  \ van een string op basis van hun posities of patronen. Programmeurs doen dit voor\u2026"
+lastmod: '2024-03-09T21:06:14.678997-07:00'
+model: gpt-4-0125-preview
+summary: "Het extraheren van substrings gaat over het ophalen van specifieke delen\
+  \ van een string op basis van hun posities of patronen. Programmeurs doen dit voor\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

@@ -1,7 +1,12 @@
 ---
-title:                "Comparing two dates"
-date:                  2024-03-08T21:33:48.838126-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:48.838126-07:00
+description: "Comparing two dates in Dart involves evaluating the temporal difference\
+  \ or order between them, an essential functionality in applications managing events,\u2026"
+lastmod: '2024-03-09T21:06:23.366240-07:00'
+model: gpt-4-0125-preview
+summary: "Comparing two dates in Dart involves evaluating the temporal difference\
+  \ or order between them, an essential functionality in applications managing events,\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

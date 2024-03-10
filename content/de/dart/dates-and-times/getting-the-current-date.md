@@ -1,9 +1,16 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-date:                  2024-03-08T21:54:40.310443-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:40.310443-07:00
+description: "Das Abrufen des aktuellen Datums in Dart beinhaltet eine Anfrage an\
+  \ das System nach dem aktuellen Datum und der Uhrzeit. Diese Funktionalit\xE4t wird\
+  \ h\xE4ufig\u2026"
+lastmod: '2024-03-09T21:06:17.585541-07:00'
+model: gpt-4-0125-preview
+summary: "Das Abrufen des aktuellen Datums in Dart beinhaltet eine Anfrage an das\
+  \ System nach dem aktuellen Datum und der Uhrzeit. Diese Funktionalit\xE4t wird\
+  \ h\xE4ufig\u2026"
+title: Das aktuelle Datum abrufen
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Convertendo uma data em uma string"
-date:                  2024-03-08T21:53:57.127309-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:57.127309-07:00
+description: "Converter uma data em uma string em Dart \xE9 uma tarefa comum quando\
+  \ voc\xEA precisa exibir informa\xE7\xF5es de data e hora em um formato leg\xED\
+  vel por humanos, ou\u2026"
+lastmod: '2024-03-09T21:06:10.639491-07:00'
+model: gpt-4-0125-preview
+summary: "Converter uma data em uma string em Dart \xE9 uma tarefa comum quando voc\xEA\
+  \ precisa exibir informa\xE7\xF5es de data e hora em um formato leg\xEDvel por humanos,\
+  \ ou\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

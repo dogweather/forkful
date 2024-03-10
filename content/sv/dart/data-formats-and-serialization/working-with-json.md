@@ -1,9 +1,16 @@
 ---
-title:                "Att Arbeta med JSON"
-date:                  2024-03-08T21:58:01.687998-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:01.687998-07:00
+description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka\
+  \ JSON-data fr\xE5n str\xE4ngar till Dart-objekt och tv\xE4rtom, en vanlig uppgift\
+  \ i webb- och\u2026"
+lastmod: '2024-03-09T21:06:02.388719-07:00'
+model: gpt-4-0125-preview
+summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka JSON-data\
+  \ fr\xE5n str\xE4ngar till Dart-objekt och tv\xE4rtom, en vanlig uppgift i webb-\
+  \ och\u2026"
+title: Att Arbeta med JSON
 ---
 
 {{< edit_this_page >}}

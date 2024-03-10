@@ -1,9 +1,16 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
-date:                  2024-03-08T21:57:41.612256-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:41.612256-07:00
+description: "Tablice asocjacyjne w Dart, znane r\xF3wnie\u017C jako Mapy, to struktury\
+  \ danych, kt\xF3re przechowuj\u0105 dane w parach klucz-warto\u015B\u0107. Umo\u017C\
+  liwiaj\u0105 programistom dost\u0119p\u2026"
+lastmod: '2024-03-09T21:05:59.818719-07:00'
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne w Dart, znane r\xF3wnie\u017C jako Mapy, to struktury\
+  \ danych, kt\xF3re przechowuj\u0105 dane w parach klucz-warto\u015B\u0107. Umo\u017C\
+  liwiaj\u0105 programistom dost\u0119p\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

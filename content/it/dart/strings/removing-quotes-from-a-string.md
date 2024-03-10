@@ -1,9 +1,15 @@
 ---
-title:                "Rimuovere le virgolette da una stringa"
-date:                  2024-03-08T21:56:16.142384-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:16.142384-07:00
+description: "Rimuovere le virgolette da una stringa in Dart comporta l'eliminazione\
+  \ dei segni di virgolettatura doppi (\") o singoli (') dall'inizio e dalla fine\
+  \ di una\u2026"
+lastmod: '2024-03-09T21:06:07.666555-07:00'
+model: gpt-4-0125-preview
+summary: "Rimuovere le virgolette da una stringa in Dart comporta l'eliminazione dei\
+  \ segni di virgolettatura doppi (\") o singoli (') dall'inizio e dalla fine di una\u2026"
+title: Rimuovere le virgolette da una stringa
 ---
 
 {{< edit_this_page >}}

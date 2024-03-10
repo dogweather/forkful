@@ -1,9 +1,14 @@
 ---
-title:                "Arbeide med YAML"
-date:                  2024-03-08T21:57:38.244940-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:38.244940-07:00
+description: "YAML, forkortelse for YAML Ain't Markup Language, er et menneskelesbart\
+  \ data serialiseringsformat. Programmerere bruker det for konfigurasjonsfiler,\u2026"
+lastmod: '2024-03-09T21:06:05.265201-07:00'
+model: gpt-4-0125-preview
+summary: "YAML, forkortelse for YAML Ain't Markup Language, er et menneskelesbart\
+  \ data serialiseringsformat. Programmerere bruker det for konfigurasjonsfiler,\u2026"
+title: Arbeide med YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,14 @@
 ---
-title:                "Lire les arguments de la ligne de commande"
-date:                  2024-03-08T21:55:38.848348-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:38.848348-07:00
+description: "Lire les arguments de la ligne de commande en Dart permet aux programmeurs\
+  \ d'entrer des donn\xE9es directement dans la console lors de l'ex\xE9cution d'un\u2026"
+lastmod: '2024-03-09T21:06:21.256118-07:00'
+model: gpt-4-0125-preview
+summary: "Lire les arguments de la ligne de commande en Dart permet aux programmeurs\
+  \ d'entrer des donn\xE9es directement dans la console lors de l'ex\xE9cution d'un\u2026"
+title: Lire les arguments de la ligne de commande
 ---
 
 {{< edit_this_page >}}

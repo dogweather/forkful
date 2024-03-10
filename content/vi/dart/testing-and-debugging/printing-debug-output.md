@@ -1,9 +1,18 @@
 ---
-title:                "In ra thông tin gỡ lỗi"
-date:                  2024-03-08T21:56:03.774161-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:03.774161-07:00
+description: "Vi\u1EC7c in th\xF4ng b\xE1o g\u1EE1 r\u1ED1i trong Dart li\xEAn quan\
+  \ \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB th\xF4ng tin l\xEAn b\u1EA3ng \u0111\
+  i\u1EC1u khi\u1EC3n trong qu\xE1 tr\xECnh th\u1EF1c thi, cho ph\xE9p c\xE1c nh\xE0\
+  \ ph\xE1t tri\u1EC3n theo\u2026"
+lastmod: '2024-03-09T21:06:01.006448-07:00'
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c in th\xF4ng b\xE1o g\u1EE1 r\u1ED1i trong Dart li\xEAn quan \u0111\
+  \u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB th\xF4ng tin l\xEAn b\u1EA3ng \u0111i\u1EC1\
+  u khi\u1EC3n trong qu\xE1 tr\xECnh th\u1EF1c thi, cho ph\xE9p c\xE1c nh\xE0 ph\xE1\
+  t tri\u1EC3n theo\u2026"
+title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

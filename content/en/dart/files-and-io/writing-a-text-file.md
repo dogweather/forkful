@@ -1,7 +1,12 @@
 ---
-title:                "Writing a text file"
-date:                  2024-03-08T21:33:37.309271-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:37.309271-07:00
+description: "Writing a text file in Dart involves creating or modifying files on\
+  \ the disk to store data in a readable format. Programmers do it to save application\u2026"
+lastmod: '2024-03-09T21:06:23.370514-07:00'
+model: gpt-4-0125-preview
+summary: "Writing a text file in Dart involves creating or modifying files on the\
+  \ disk to store data in a readable format. Programmers do it to save application\u2026"
+title: Writing a text file
 ---
 
 {{< edit_this_page >}}

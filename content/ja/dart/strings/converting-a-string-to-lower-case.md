@@ -1,9 +1,12 @@
 ---
-title:                "文字列を小文字に変換する"
-date:                  2024-03-08T21:54:18.174574-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:18.174574-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.390679-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

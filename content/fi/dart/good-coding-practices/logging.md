@@ -1,9 +1,14 @@
 ---
-title:                "Lokitiedostojen käsittely"
-date:                  2024-03-08T21:55:06.780593-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:06.780593-07:00
+description: "Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri\
+  \ tasojen tiedon tallentamiseen. Ohjelmoijat tekev\xE4t sen seuratakseen ohjelmiston\u2026"
+lastmod: '2024-03-09T21:06:20.186903-07:00'
+model: gpt-4-0125-preview
+summary: "Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri tasojen\
+  \ tiedon tallentamiseen. Ohjelmoijat tekev\xE4t sen seuratakseen ohjelmiston\u2026"
+title: "Lokitiedostojen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

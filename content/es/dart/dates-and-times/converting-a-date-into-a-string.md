@@ -1,9 +1,15 @@
 ---
-title:                "Convirtiendo una fecha en una cadena de texto"
-date:                  2024-03-08T21:53:31.766794-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:31.766794-07:00
+description: "Convertir una fecha en una cadena en Dart es una tarea com\xFAn cuando\
+  \ necesitas mostrar informaci\xF3n de fecha y hora en un formato legible por humanos,\
+  \ o\u2026"
+lastmod: '2024-03-09T21:06:22.337947-07:00'
+model: gpt-4-0125-preview
+summary: "Convertir una fecha en una cadena en Dart es una tarea com\xFAn cuando necesitas\
+  \ mostrar informaci\xF3n de fecha y hora en un formato legible por humanos, o\u2026"
+title: Convirtiendo una fecha en una cadena de texto
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Lähettämässä HTTP-pyyntö"
-date:                  2024-03-08T21:56:40.224090-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:40.224090-07:00
+description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoinnin\
+  \ aloittamista web-palvelimen tai API:n kanssa Dart-sovelluksesta. Ohjelmoijat tekev\xE4\
+  t sen\u2026"
+lastmod: '2024-03-09T21:06:20.177715-07:00'
+model: gpt-4-0125-preview
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoinnin aloittamista\
+  \ web-palvelimen tai API:n kanssa Dart-sovelluksesta. Ohjelmoijat tekev\xE4t sen\u2026"
+title: "L\xE4hett\xE4m\xE4ss\xE4 HTTP-pyynt\xF6"
 ---
 
 {{< edit_this_page >}}

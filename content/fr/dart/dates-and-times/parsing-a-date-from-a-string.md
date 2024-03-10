@@ -1,9 +1,16 @@
 ---
-title:                "Analyser une date à partir d'une chaîne de caractères"
-date:                  2024-03-08T21:55:15.612090-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:15.612090-07:00
+description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en\
+  \ Dart consiste \xE0 convertir une repr\xE9sentation textuelle des dates et heures\
+  \ en un objet\u2026"
+lastmod: '2024-03-09T21:06:21.250555-07:00'
+model: gpt-4-0125-preview
+summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en Dart\
+  \ consiste \xE0 convertir une repr\xE9sentation textuelle des dates et heures en\
+  \ un objet\u2026"
+title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

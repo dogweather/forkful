@@ -1,9 +1,15 @@
 ---
-title:                "Analyserer en dato fra en streng"
-date:                  2024-03-08T21:55:16.547052-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:16.547052-07:00
+description: "\xC5 analysere en dato fra en streng i Dart inneb\xE6rer konvertering\
+  \ av tekstlig representasjon av datoer og tider til et `DateTime`-objekt. Denne\
+  \ operasjonen\u2026"
+lastmod: '2024-03-09T21:06:05.254904-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 analysere en dato fra en streng i Dart inneb\xE6rer konvertering av\
+  \ tekstlig representasjon av datoer og tider til et `DateTime`-objekt. Denne operasjonen\u2026"
+title: Analyserer en dato fra en streng
 ---
 
 {{< edit_this_page >}}

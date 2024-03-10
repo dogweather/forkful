@@ -1,9 +1,14 @@
 ---
-title:                "Vergleich von zwei Daten"
-date:                  2024-03-08T21:53:36.857154-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:36.857154-07:00
+description: "Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung des\
+  \ zeitlichen Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche\u2026"
+lastmod: '2024-03-09T21:06:17.587365-07:00'
+model: gpt-4-0125-preview
+summary: "Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung des zeitlichen\
+  \ Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche\u2026"
+title: Vergleich von zwei Daten
 ---
 
 {{< edit_this_page >}}

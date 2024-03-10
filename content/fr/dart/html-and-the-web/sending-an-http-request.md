@@ -1,9 +1,14 @@
 ---
-title:                "Envoyer une requête HTTP"
-date:                  2024-03-08T21:56:12.448167-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:12.448167-07:00
+description: "Envoyer une requ\xEAte HTTP en Dart est le processus qui initie la communication\
+  \ avec un serveur web ou une API depuis une application Dart. Les programmeurs\u2026"
+lastmod: '2024-03-09T21:06:21.238513-07:00'
+model: gpt-4-0125-preview
+summary: "Envoyer une requ\xEAte HTTP en Dart est le processus qui initie la communication\
+  \ avec un serveur web ou une API depuis une application Dart. Les programmeurs\u2026"
+title: "Envoyer une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

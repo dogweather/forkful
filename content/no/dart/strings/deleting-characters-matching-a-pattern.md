@@ -1,9 +1,16 @@
 ---
-title:                "Slette tegn som samsvarer med et mønster"
-date:                  2024-03-08T21:54:17.357849-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:17.357849-07:00
+description: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster i strenger\
+  \ er avgj\xF8rende for datakontroll, sanitering eller n\xE5r man forbereder tekst\
+  \ til videre\u2026"
+lastmod: '2024-03-09T21:06:05.230847-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster i strenger er\
+  \ avgj\xF8rende for datakontroll, sanitering eller n\xE5r man forbereder tekst til\
+  \ videre\u2026"
+title: "Slette tegn som samsvarer med et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Concatenando strings"
-date:                  2024-03-08T21:53:31.462000-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:31.462000-07:00
+description: "Concatenar strings na programa\xE7\xE3o envolve combinar duas ou mais\
+  \ strings em uma. Os programadores fazem isso para manipular dados de texto com\
+  \ facilidade,\u2026"
+lastmod: '2024-03-09T21:06:10.621643-07:00'
+model: gpt-4-0125-preview
+summary: "Concatenar strings na programa\xE7\xE3o envolve combinar duas ou mais strings\
+  \ em uma. Os programadores fazem isso para manipular dados de texto com facilidade,\u2026"
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

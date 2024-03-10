@@ -1,9 +1,16 @@
 ---
-title:                "Hämta aktuellt datum"
-date:                  2024-03-08T21:55:03.729636-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:03.729636-07:00
+description: "Att h\xE4mta det aktuella datumet i Dart inneb\xE4r att man fr\xE5gar\
+  \ systemet efter det aktuella datumet och tiden. Denna funktionalitet anv\xE4nds\
+  \ vanligtvis i\u2026"
+lastmod: '2024-03-09T21:06:02.378889-07:00'
+model: gpt-4-0125-preview
+summary: "Att h\xE4mta det aktuella datumet i Dart inneb\xE4r att man fr\xE5gar systemet\
+  \ efter det aktuella datumet och tiden. Denna funktionalitet anv\xE4nds vanligtvis\
+  \ i\u2026"
+title: "H\xE4mta aktuellt datum"
 ---
 
 {{< edit_this_page >}}

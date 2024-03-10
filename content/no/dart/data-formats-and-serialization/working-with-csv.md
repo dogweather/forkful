@@ -1,9 +1,14 @@
 ---
-title:                "Arbeide med CSV"
-date:                  2024-03-08T21:57:26.808044-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:26.808044-07:00
+description: "Arbeid med CSV-filer (Comma Separated Values) inneb\xE6rer analyse og\
+  \ generering av tekstfiler hvor hver linje holder verdier separert av kommaer.\u2026"
+lastmod: '2024-03-09T21:06:05.267058-07:00'
+model: gpt-4-0125-preview
+summary: "Arbeid med CSV-filer (Comma Separated Values) inneb\xE6rer analyse og generering\
+  \ av tekstfiler hvor hver linje holder verdier separert av kommaer.\u2026"
+title: Arbeide med CSV
 ---
 
 {{< edit_this_page >}}

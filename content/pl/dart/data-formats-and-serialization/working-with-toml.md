@@ -1,9 +1,16 @@
 ---
-title:                "Praca z TOML"
-date:                  2024-03-08T21:57:32.925437-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:32.925437-07:00
+description: "TOML, czyli Tom's Obvious, Minimal Language (J\u0119zyk Oczywisty i\
+  \ Minimalny Toma), to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do\
+  \ odczytu dzi\u0119ki\u2026"
+lastmod: '2024-03-09T21:05:59.849900-07:00'
+model: gpt-4-0125-preview
+summary: "TOML, czyli Tom's Obvious, Minimal Language (J\u0119zyk Oczywisty i Minimalny\
+  \ Toma), to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu dzi\u0119\
+  ki\u2026"
+title: Praca z TOML
 ---
 
 {{< edit_this_page >}}

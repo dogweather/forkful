@@ -1,9 +1,15 @@
 ---
-title:                "Concatenando cadenas de texto"
-date:                  2024-03-08T21:53:40.914376-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:40.914376-07:00
+description: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\xE1\
+  s cadenas en una. Los programadores hacen esto para manipular datos de texto f\xE1\
+  cilmente,\u2026"
+lastmod: '2024-03-09T21:06:22.319630-07:00'
+model: gpt-4-0125-preview
+summary: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\xE1s cadenas\
+  \ en una. Los programadores hacen esto para manipular datos de texto f\xE1cilmente,\u2026"
+title: Concatenando cadenas de texto
 ---
 
 {{< edit_this_page >}}

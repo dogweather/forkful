@@ -1,9 +1,15 @@
 ---
-title:                "Analisi del HTML"
-date:                  2024-03-08T21:55:28.873051-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:28.873051-07:00
+description: "L'analisi di HTML nella programmazione implica l'estrazione di dati\
+  \ da documenti HTML. I programmatori fanno ci\xF2 per interagire o raschiare contenuti\
+  \ web\u2026"
+lastmod: '2024-03-09T21:06:07.675603-07:00'
+model: gpt-4-0125-preview
+summary: "L'analisi di HTML nella programmazione implica l'estrazione di dati da documenti\
+  \ HTML. I programmatori fanno ci\xF2 per interagire o raschiare contenuti web\u2026"
+title: Analisi del HTML
 ---
 
 {{< edit_this_page >}}

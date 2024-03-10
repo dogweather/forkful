@@ -1,9 +1,16 @@
 ---
-title:                "Imprimindo a saída de depuração"
-date:                  2024-03-08T21:55:36.265343-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:36.265343-07:00
+description: "Imprimir sa\xEDdas de depura\xE7\xE3o em Dart consiste em exibir informa\xE7\
+  \xF5es no console durante a execu\xE7\xE3o, permitindo que os desenvolvedores acompanhem\
+  \ o fluxo da\u2026"
+lastmod: '2024-03-09T21:06:10.631423-07:00'
+model: gpt-4-0125-preview
+summary: "Imprimir sa\xEDdas de depura\xE7\xE3o em Dart consiste em exibir informa\xE7\
+  \xF5es no console durante a execu\xE7\xE3o, permitindo que os desenvolvedores acompanhem\
+  \ o fluxo da\u2026"
+title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

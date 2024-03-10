@@ -1,9 +1,14 @@
 ---
-title:                "Skriving til standard feil"
-date:                  2024-03-08T21:58:12.037695-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:12.037695-07:00
+description: "\xC5 skrive til standardfeil (stderr) i Dart handler om \xE5 sende feilmeldinger\
+  \ og diagnostikk til en separat str\xF8m, som er forskjellig fra standardutdata\u2026"
+lastmod: '2024-03-09T21:06:05.261446-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 skrive til standardfeil (stderr) i Dart handler om \xE5 sende feilmeldinger\
+  \ og diagnostikk til en separat str\xF8m, som er forskjellig fra standardutdata\u2026"
+title: Skriving til standard feil
 ---
 
 {{< edit_this_page >}}

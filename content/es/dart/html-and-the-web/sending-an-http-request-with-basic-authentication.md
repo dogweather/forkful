@@ -1,9 +1,16 @@
 ---
-title:                "Enviando una solicitud HTTP con autenticación básica"
-date:                  2024-03-08T21:56:15.532259-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:15.532259-07:00
+description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica adjuntar\
+  \ un nombre de usuario y contrase\xF1a a una solicitud para verificar la identidad\
+  \ del\u2026"
+lastmod: '2024-03-09T21:06:22.326966-07:00'
+model: gpt-4-0125-preview
+summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica adjuntar\
+  \ un nombre de usuario y contrase\xF1a a una solicitud para verificar la identidad\
+  \ del\u2026"
+title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 ---
 
 {{< edit_this_page >}}

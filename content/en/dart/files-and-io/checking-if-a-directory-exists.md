@@ -1,7 +1,12 @@
 ---
-title:                "Checking if a directory exists"
-date:                  2024-03-08T21:33:21.816762-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:21.816762-07:00
+description: "Checking if a directory exists in Dart is about verifying the presence\
+  \ of a directory at a specified path on the file system before performing operations\u2026"
+lastmod: '2024-03-09T21:06:23.367711-07:00'
+model: gpt-4-0125-preview
+summary: "Checking if a directory exists in Dart is about verifying the presence of\
+  \ a directory at a specified path on the file system before performing operations\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

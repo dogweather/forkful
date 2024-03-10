@@ -1,7 +1,12 @@
 ---
-title:                "Interpolating a string"
-date:                  2024-03-08T21:33:18.550648-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:18.550648-07:00
+description: "String interpolation is the process of injecting variable values directly\
+  \ into strings, often for creating meaningful messages without cumbersome\u2026"
+lastmod: '2024-03-09T21:06:23.346836-07:00'
+model: gpt-4-0125-preview
+summary: "String interpolation is the process of injecting variable values directly\
+  \ into strings, often for creating meaningful messages without cumbersome\u2026"
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

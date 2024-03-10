@@ -1,9 +1,15 @@
 ---
-title:                "Interpolera en sträng"
-date:                  2024-03-08T21:54:49.559846-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:49.559846-07:00
+description: "Str\xE4nginterpolation \xE4r processen att injicera variabelv\xE4rden\
+  \ direkt i str\xE4ngar, ofta f\xF6r att skapa meningsfulla meddelanden utan omst\xE4\
+  ndiga\u2026"
+lastmod: '2024-03-09T21:06:02.355364-07:00'
+model: gpt-4-0125-preview
+summary: "Str\xE4nginterpolation \xE4r processen att injicera variabelv\xE4rden direkt\
+  \ i str\xE4ngar, ofta f\xF6r att skapa meningsfulla meddelanden utan omst\xE4ndiga\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

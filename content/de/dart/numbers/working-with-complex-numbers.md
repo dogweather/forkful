@@ -1,9 +1,16 @@
 ---
-title:                "Arbeiten mit komplexen Zahlen"
-date:                  2024-03-08T21:57:37.098847-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:37.098847-07:00
+description: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rteil\
+  \ (\xFCblicherweise als a + bi dargestellt), erweitern das Konzept der dimensionslosen\
+  \ Zahlen\u2026"
+lastmod: '2024-03-09T21:06:17.569736-07:00'
+model: gpt-4-0125-preview
+summary: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rteil (\xFC\
+  blicherweise als a + bi dargestellt), erweitern das Konzept der dimensionslosen\
+  \ Zahlen\u2026"
+title: Arbeiten mit komplexen Zahlen
 ---
 
 {{< edit_this_page >}}

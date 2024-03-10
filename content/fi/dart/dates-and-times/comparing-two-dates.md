@@ -1,9 +1,16 @@
 ---
-title:                "Kahden päivämäärän vertaaminen"
-date:                  2024-03-08T21:53:59.628983-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:59.628983-07:00
+description: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen Dartissa sis\xE4lt\xE4\
+  \xE4 niiden ajallisen eron tai j\xE4rjestyksen arvioimisen, mik\xE4 on olennainen\
+  \ toiminnallisuus sovelluksissa,\u2026"
+lastmod: '2024-03-09T21:06:20.192333-07:00'
+model: gpt-4-0125-preview
+summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen Dartissa sis\xE4lt\xE4\xE4\
+  \ niiden ajallisen eron tai j\xE4rjestyksen arvioimisen, mik\xE4 on olennainen toiminnallisuus\
+  \ sovelluksissa,\u2026"
+title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen"
 ---
 
 {{< edit_this_page >}}

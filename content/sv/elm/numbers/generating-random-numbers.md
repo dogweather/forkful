@@ -1,10 +1,17 @@
 ---
-title:                "Generera slumpmässiga tal"
-date:                  2024-02-27T22:50:35.453782-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-02-27, dogweather, edited and tested
-  - 2024-02-27, gpt-4-0125-preview, translated from English
+- 2024-02-27, dogweather, edited and tested
+- 2024-02-27, gpt-4-0125-preview, translated from English
+date: 2024-02-27 22:50:35.453782-07:00
+description: "Att generera slumpm\xE4ssiga nummer i Elm inneb\xE4r att anv\xE4nda\
+  \ `Random`-modulen f\xF6r att producera pseudo-slumpm\xE4ssiga nummer, vilket \xE4\
+  r anv\xE4ndbart f\xF6r en\u2026"
+lastmod: '2024-03-09T21:06:02.581621-07:00'
+model: gpt-4-0125-preview
+summary: "Att generera slumpm\xE4ssiga nummer i Elm inneb\xE4r att anv\xE4nda `Random`-modulen\
+  \ f\xF6r att producera pseudo-slumpm\xE4ssiga nummer, vilket \xE4r anv\xE4ndbart\
+  \ f\xF6r en\u2026"
+title: "Generera slumpm\xE4ssiga tal"
 ---
 
 {{< edit_this_page >}}

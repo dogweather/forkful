@@ -1,9 +1,15 @@
 ---
-title:                "Capitalizando uma string"
-date:                  2024-03-08T21:53:52.918660-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:52.918660-07:00
+description: "Colocar em mai\xFAscula uma string envolve modificar a primeira letra\
+  \ de uma palavra ou de uma frase inteira para mai\xFAscula, mantendo o resto dos\
+  \ caracteres\u2026"
+lastmod: '2024-03-09T21:06:10.613312-07:00'
+model: gpt-4-0125-preview
+summary: "Colocar em mai\xFAscula uma string envolve modificar a primeira letra de\
+  \ uma palavra ou de uma frase inteira para mai\xFAscula, mantendo o resto dos caracteres\u2026"
+title: Capitalizando uma string
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-date:                  2024-03-08T21:55:43.200429-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:43.200429-07:00
+description: "Komentoriviargumenttien lukeminen Dartissa mahdollistaa ohjelmoijien\
+  \ sy\xF6tt\xE4\xE4 tietoja suoraan konsoliin Dart-ohjelman suorittamisen aikana,\
+  \ parantaen sen\u2026"
+lastmod: '2024-03-09T21:06:20.195114-07:00'
+model: gpt-4-0125-preview
+summary: "Komentoriviargumenttien lukeminen Dartissa mahdollistaa ohjelmoijien sy\xF6\
+  tt\xE4\xE4 tietoja suoraan konsoliin Dart-ohjelman suorittamisen aikana, parantaen\
+  \ sen\u2026"
+title: Komentorivin argumenttien lukeminen
 ---
 
 {{< edit_this_page >}}

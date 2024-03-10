@@ -1,9 +1,15 @@
 ---
-title:                "Envoyer une requête HTTP avec une authentification de base"
-date:                  2024-03-08T21:56:16.464117-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:16.464117-07:00
+description: "Envoyer une requ\xEAte HTTP avec une authentification de base implique\
+  \ l'ajout d'un nom d'utilisateur et d'un mot de passe \xE0 une requ\xEAte pour v\xE9\
+  rifier\u2026"
+lastmod: '2024-03-09T21:06:21.241311-07:00'
+model: gpt-4-0125-preview
+summary: "Envoyer une requ\xEAte HTTP avec une authentification de base implique l'ajout\
+  \ d'un nom d'utilisateur et d'un mot de passe \xE0 une requ\xEAte pour v\xE9rifier\u2026"
+title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 ---
 
 {{< edit_this_page >}}

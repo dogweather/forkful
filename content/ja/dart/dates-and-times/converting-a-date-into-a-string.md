@@ -1,9 +1,12 @@
 ---
-title:                "日付を文字列に変換する"
-date:                  2024-03-08T21:53:43.864361-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:43.864361-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.412931-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

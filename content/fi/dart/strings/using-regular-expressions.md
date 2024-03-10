@@ -1,9 +1,15 @@
 ---
-title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-03-08T21:57:23.975736-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:23.975736-07:00
+description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Dart-kieless\xE4 tarjoavat\
+  \ tehokkaan tavan etsi\xE4 ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien\
+  \ suorittaa\u2026"
+lastmod: '2024-03-09T21:06:20.171262-07:00'
+model: gpt-4-0125-preview
+summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Dart-kieless\xE4 tarjoavat tehokkaan\
+  \ tavan etsi\xE4 ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien suorittaa\u2026"
+title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

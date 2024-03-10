@@ -1,9 +1,14 @@
 ---
-title:                "Buscando y reemplazando texto"
-date:                  2024-03-08T21:56:03.751537-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:03.751537-07:00
+description: "Buscar y reemplazar texto en Dart implica examinar cadenas para encontrar\
+  \ ciertos patrones o secuencias de caracteres y sustituirlos con nuevo contenido.\u2026"
+lastmod: '2024-03-09T21:06:22.313213-07:00'
+model: gpt-4-0125-preview
+summary: "Buscar y reemplazar texto en Dart implica examinar cadenas para encontrar\
+  \ ciertos patrones o secuencias de caracteres y sustituirlos con nuevo contenido.\u2026"
+title: Buscando y reemplazando texto
 ---
 
 {{< edit_this_page >}}

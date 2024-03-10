@@ -1,9 +1,16 @@
 ---
-title:                "Gör om en sträng till versaler"
-date:                  2024-03-08T21:53:38.856579-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:38.856579-07:00
+description: "Att g\xF6ra f\xF6rsta bokstaven i ett ord eller en hel mening till versal\
+  \ inneb\xE4r att man \xE4ndrar den f\xF6rsta bokstaven till stor bokstav, medan\
+  \ resten av tecknen\u2026"
+lastmod: '2024-03-09T21:06:02.352040-07:00'
+model: gpt-4-0125-preview
+summary: "Att g\xF6ra f\xF6rsta bokstaven i ett ord eller en hel mening till versal\
+  \ inneb\xE4r att man \xE4ndrar den f\xF6rsta bokstaven till stor bokstav, medan\
+  \ resten av tecknen\u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
 {{< edit_this_page >}}

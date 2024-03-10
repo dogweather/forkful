@@ -1,9 +1,16 @@
 ---
-title:                "Søk og erstatt tekst"
-date:                  2024-03-08T21:56:38.444397-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:38.444397-07:00
+description: "S\xF8king og erstatting av tekst i Dart inneb\xE6rer \xE5 unders\xF8\
+  ke strenger for \xE5 finne visse m\xF8nstre eller sekvenser av tegn og erstatte\
+  \ dem med nytt innhold.\u2026"
+lastmod: '2024-03-09T21:06:05.231858-07:00'
+model: gpt-4-0125-preview
+summary: "S\xF8king og erstatting av tekst i Dart inneb\xE6rer \xE5 unders\xF8ke strenger\
+  \ for \xE5 finne visse m\xF8nstre eller sekvenser av tegn og erstatte dem med nytt\
+  \ innhold.\u2026"
+title: "S\xF8k og erstatt tekst"
 ---
 
 {{< edit_this_page >}}

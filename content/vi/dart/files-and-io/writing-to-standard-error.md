@@ -1,9 +1,18 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
-date:                  2024-03-08T21:58:27.720708-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:27.720708-07:00
+description: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Dart l\xE0 v\u1EC1\
+  \ vi\u1EC7c g\u1EEDi th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1\
+  n \u0111\u1EBFn m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7t, kh\xE1c bi\u1EC7t so v\u1EDB\
+  i \u0111\u1EA7u ra chu\u1EA9n (stdout). C\xE1c\u2026"
+lastmod: '2024-03-09T21:06:01.020538-07:00'
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Dart l\xE0 v\u1EC1 vi\u1EC7\
+  c g\u1EEDi th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n \u0111\u1EBF\
+  n m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7t, kh\xE1c bi\u1EC7t so v\u1EDBi \u0111\u1EA7\
+  u ra chu\u1EA9n (stdout). C\xE1c\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

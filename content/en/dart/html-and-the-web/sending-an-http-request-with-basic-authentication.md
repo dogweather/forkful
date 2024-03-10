@@ -1,7 +1,13 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
-date:                  2024-03-08T21:33:34.209785-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:34.209785-07:00
+description: "Sending an HTTP request with basic authentication involves attaching\
+  \ a username and password to a request to verify the user's identity. Programmers\
+  \ use\u2026"
+lastmod: '2024-03-09T21:06:23.356852-07:00'
+model: gpt-4-0125-preview
+summary: "Sending an HTTP request with basic authentication involves attaching a username\
+  \ and password to a request to verify the user's identity. Programmers use\u2026"
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

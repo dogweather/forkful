@@ -1,9 +1,16 @@
 ---
-title:                "Ladda ner en webbsida"
-date:                  2024-03-08T21:54:39.181659-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:39.181659-07:00
+description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta inneh\xE5llet p\xE5\
+  \ en webbsida via dess URL f\xF6r bearbetning eller lagring. Programmerare g\xF6\
+  r detta f\xF6r att\u2026"
+lastmod: '2024-03-09T21:06:02.367980-07:00'
+model: gpt-4-0125-preview
+summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta inneh\xE5llet p\xE5 en\
+  \ webbsida via dess URL f\xF6r bearbetning eller lagring. Programmerare g\xF6r detta\
+  \ f\xF6r att\u2026"
+title: Ladda ner en webbsida
 ---
 
 {{< edit_this_page >}}

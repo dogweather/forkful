@@ -1,9 +1,15 @@
 ---
-title:                "Concatenazione di stringhe"
-date:                  2024-03-08T21:54:02.608059-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:02.608059-07:00
+description: "La concatenazione di stringhe nella programmazione implica l'unione\
+  \ di due o pi\xF9 stringhe in una sola. I programmatori fanno ci\xF2 per manipolare\
+  \ facilmente\u2026"
+lastmod: '2024-03-09T21:06:07.670212-07:00'
+model: gpt-4-0125-preview
+summary: "La concatenazione di stringhe nella programmazione implica l'unione di due\
+  \ o pi\xF9 stringhe in una sola. I programmatori fanno ci\xF2 per manipolare facilmente\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

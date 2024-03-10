@@ -1,9 +1,16 @@
 ---
-title:                "Pisanie do standardowego błędu"
-date:                  2024-03-08T21:58:06.120246-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:06.120246-07:00
+description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Dart polega na wysy\u0142\
+  aniu komunikat\xF3w o b\u0142\u0119dach i diagnostyk do oddzielnego strumienia,\
+  \ r\xF3\u017Cnego od standardowego\u2026"
+lastmod: '2024-03-09T21:05:59.843617-07:00'
+model: gpt-4-0125-preview
+summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Dart polega na wysy\u0142\
+  aniu komunikat\xF3w o b\u0142\u0119dach i diagnostyk do oddzielnego strumienia,\
+  \ r\xF3\u017Cnego od standardowego\u2026"
+title: "Pisanie do standardowego b\u0142\u0119du"
 ---
 
 {{< edit_this_page >}}

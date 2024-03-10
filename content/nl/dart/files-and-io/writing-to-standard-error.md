@@ -1,9 +1,14 @@
 ---
-title:                "Schrijven naar standaardfout"
-date:                  2024-03-08T21:58:02.675631-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:02.675631-07:00
+description: "Schrijven naar standaardfout (stderr) in Dart gaat over het verzenden\
+  \ van foutmeldingen en diagnostische gegevens naar een aparte stroom, los van de\u2026"
+lastmod: '2024-03-09T21:06:14.704042-07:00'
+model: gpt-4-0125-preview
+summary: "Schrijven naar standaardfout (stderr) in Dart gaat over het verzenden van\
+  \ foutmeldingen en diagnostische gegevens naar een aparte stroom, los van de\u2026"
+title: Schrijven naar standaardfout
 ---
 
 {{< edit_this_page >}}

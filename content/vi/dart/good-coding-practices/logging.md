@@ -1,9 +1,18 @@
 ---
-title:                "Ghi Lại"
-date:                  2024-03-08T21:55:11.838681-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:11.838681-07:00
+description: "Ghi nh\u1EADt k\xFD trong Dart \xE1m ch\u1EC9 qu\xE1 tr\xECnh ghi l\u1EA1\
+  i c\xE1c m\u1EE9c \u0111\u1ED9 th\xF4ng tin kh\xE1c nhau trong qu\xE1 tr\xECnh th\u1EF1\
+  c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1ng tr\xECnh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n\u2026"
+lastmod: '2024-03-09T21:06:01.010480-07:00'
+model: gpt-4-0125-preview
+summary: "Ghi nh\u1EADt k\xFD trong Dart \xE1m ch\u1EC9 qu\xE1 tr\xECnh ghi l\u1EA1\
+  i c\xE1c m\u1EE9c \u0111\u1ED9 th\xF4ng tin kh\xE1c nhau trong qu\xE1 tr\xECnh th\u1EF1\
+  c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1ng tr\xECnh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n\u2026"
+title: "Ghi L\u1EA1i"
 ---
 
 {{< edit_this_page >}}

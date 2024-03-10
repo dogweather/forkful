@@ -1,9 +1,18 @@
 ---
-title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-date:                  2024-03-08T21:56:03.995891-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:03.995891-07:00
+description: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7\
+  i trong Dart bao g\u1ED3m vi\u1EC7c g\u1EE1 b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p (\"\
+  ) ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n (') \u1EDF \u0111\u1EA7u v\xE0 cu\u1ED1\
+  i c\u1EE7a m\u1ED9t chu\u1ED7i, h\u1EEFu \xEDch cho vi\u1EC7c\u2026"
+lastmod: '2024-03-09T21:06:00.990936-07:00'
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7\
+  i trong Dart bao g\u1ED3m vi\u1EC7c g\u1EE1 b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p (\"\
+  ) ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n (') \u1EDF \u0111\u1EA7u v\xE0 cu\u1ED1\
+  i c\u1EE7a m\u1ED9t chu\u1ED7i, h\u1EEFu \xEDch cho vi\u1EC7c\u2026"
+title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

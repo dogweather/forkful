@@ -1,9 +1,14 @@
 ---
-title:                "Lavorare con YAML"
-date:                  2024-03-08T21:57:27.570998-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:27.570998-07:00
+description: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
+  \ dei dati leggibile dall'uomo. I programmatori lo utilizzano per file di\u2026"
+lastmod: '2024-03-09T21:06:07.697130-07:00'
+model: gpt-4-0125-preview
+summary: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
+  \ dei dati leggibile dall'uomo. I programmatori lo utilizzano per file di\u2026"
+title: Lavorare con YAML
 ---
 
 {{< edit_this_page >}}

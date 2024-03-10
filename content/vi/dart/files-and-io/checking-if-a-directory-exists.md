@@ -1,9 +1,20 @@
 ---
-title:                "Kiểm tra xem thư mục có tồn tại không"
-date:                  2024-03-08T21:53:47.391316-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:47.391316-07:00
+description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
+  i trong Dart kh\xF4ng l\xE0 vi\u1EC7c x\xE1c minh s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7\
+  a m\u1ED9t th\u01B0 m\u1EE5c t\u1EA1i m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn \u0111\
+  \xE3 ch\u1EC9 \u0111\u1ECBnh tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p tr\u01B0\u1EDB\
+  c\u2026"
+lastmod: '2024-03-09T21:06:01.018613-07:00'
+model: gpt-4-0125-preview
+summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i trong\
+  \ Dart kh\xF4ng l\xE0 vi\u1EC7c x\xE1c minh s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7\
+  a m\u1ED9t th\u01B0 m\u1EE5c t\u1EA1i m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn \u0111\
+  \xE3 ch\u1EC9 \u0111\u1ECBnh tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p tr\u01B0\u1EDB\
+  c\u2026"
+title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 ---
 
 {{< edit_this_page >}}

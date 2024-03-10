@@ -1,9 +1,15 @@
 ---
-title:                "Herunterladen einer Webseite"
-date:                  2024-03-08T21:54:13.875793-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:13.875793-07:00
+description: "Das Herunterladen einer Webseite beinhaltet das Abrufen des Inhalts\
+  \ einer Webseite \xFCber ihre URL zur Verarbeitung oder Speicherung. Programmierer\
+  \ tun\u2026"
+lastmod: '2024-03-09T21:06:17.574442-07:00'
+model: gpt-4-0125-preview
+summary: "Das Herunterladen einer Webseite beinhaltet das Abrufen des Inhalts einer\
+  \ Webseite \xFCber ihre URL zur Verarbeitung oder Speicherung. Programmierer tun\u2026"
+title: Herunterladen einer Webseite
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,12 @@
 ---
-title:                "新プロジェクトの開始"
-date:                  2024-03-08T21:56:55.773015-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:55.773015-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.403693-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u65B0\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306E\u958B\u59CB"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Concaténation de chaînes de caractères"
-date:                  2024-03-08T21:53:39.701703-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:39.701703-07:00
+description: "La concat\xE9nation de cha\xEEnes de caract\xE8res en programmation\
+  \ consiste \xE0 combiner deux cha\xEEnes ou plus en une seule. Les programmeurs\
+  \ font cela pour\u2026"
+lastmod: '2024-03-09T21:06:21.233831-07:00'
+model: gpt-4-0125-preview
+summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res en programmation consiste\
+  \ \xE0 combiner deux cha\xEEnes ou plus en une seule. Les programmeurs font cela\
+  \ pour\u2026"
+title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

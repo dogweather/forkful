@@ -1,9 +1,18 @@
 ---
-title:                "Nối chuỗi ký tự"
-date:                  2024-03-08T21:53:57.652501-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:57.652501-07:00
+description: "Trong l\u1EADp tr\xECnh, n\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh k\u1EBF\
+  t h\u1EE3p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7i th\xE0nh m\u1ED9t. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 d\u1EC5 d\xE0ng thao t\xE1\
+  c v\u1EDBi d\u1EEF li\u1EC7u v\u0103n b\u1EA3n, x\xE2y\u2026"
+lastmod: '2024-03-09T21:06:00.994945-07:00'
+model: gpt-4-0125-preview
+summary: "Trong l\u1EADp tr\xECnh, n\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh k\u1EBF\
+  t h\u1EE3p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7i th\xE0nh m\u1ED9t. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 d\u1EC5 d\xE0ng thao t\xE1\
+  c v\u1EDBi d\u1EEF li\u1EC7u v\u0103n b\u1EA3n, x\xE2y\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

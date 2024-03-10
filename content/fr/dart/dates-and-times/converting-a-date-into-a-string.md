@@ -1,9 +1,16 @@
 ---
-title:                "Convertir une date en chaîne de caractères"
-date:                  2024-03-08T21:53:32.350009-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:32.350009-07:00
+description: "Convertir une date en cha\xEEne de caract\xE8res dans Dart est une t\xE2\
+  che courante lorsque vous avez besoin d'afficher des informations de date et d'heure\
+  \ dans\u2026"
+lastmod: '2024-03-09T21:06:21.252421-07:00'
+model: gpt-4-0125-preview
+summary: "Convertir une date en cha\xEEne de caract\xE8res dans Dart est une t\xE2\
+  che courante lorsque vous avez besoin d'afficher des informations de date et d'heure\
+  \ dans\u2026"
+title: "Convertir une date en cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

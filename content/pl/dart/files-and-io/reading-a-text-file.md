@@ -1,9 +1,16 @@
 ---
-title:                "Czytanie pliku tekstowego"
-date:                  2024-03-08T21:55:33.878496-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:33.878496-07:00
+description: "Odczytywanie pliku tekstowego w Dart polega na dost\u0119pie i pobieraniu\
+  \ danych z plik\xF3w zapisanych w systemie plik\xF3w. Programi\u015Bci robi\u0105\
+  \ to, aby obs\u0142ugiwa\u0107\u2026"
+lastmod: '2024-03-09T21:05:59.844531-07:00'
+model: gpt-4-0125-preview
+summary: "Odczytywanie pliku tekstowego w Dart polega na dost\u0119pie i pobieraniu\
+  \ danych z plik\xF3w zapisanych w systemie plik\xF3w. Programi\u015Bci robi\u0105\
+  \ to, aby obs\u0142ugiwa\u0107\u2026"
+title: Czytanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

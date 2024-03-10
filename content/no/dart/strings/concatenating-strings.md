@@ -1,9 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
-date:                  2024-03-08T21:53:42.923024-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:42.923024-07:00
+description: "\xC5 konkatenerere strenger i programmering inneb\xE6rer \xE5 kombinere\
+  \ to eller flere strenger til \xE9n. Programmerere gj\xF8r dette for \xE5 enkelt\
+  \ manipulere tekstdata,\u2026"
+lastmod: '2024-03-09T21:06:05.238283-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 konkatenerere strenger i programmering inneb\xE6rer \xE5 kombinere\
+  \ to eller flere strenger til \xE9n. Programmerere gj\xF8r dette for \xE5 enkelt\
+  \ manipulere tekstdata,\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

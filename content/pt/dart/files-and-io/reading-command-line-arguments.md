@@ -1,9 +1,15 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-date:                  2024-03-08T21:55:40.654561-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:40.654561-07:00
+description: "Ler argumentos de linha de comando em Dart permite que programadores\
+  \ insiram dados diretamente no console ao executar um programa Dart, aumentando\
+  \ sua\u2026"
+lastmod: '2024-03-09T21:06:10.643136-07:00'
+model: gpt-4-0125-preview
+summary: "Ler argumentos de linha de comando em Dart permite que programadores insiram\
+  \ dados diretamente no console ao executar um programa Dart, aumentando sua\u2026"
+title: Lendo argumentos de linha de comando
 ---
 
 {{< edit_this_page >}}

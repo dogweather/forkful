@@ -1,9 +1,16 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
-date:                  2024-03-08T21:54:12.055367-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:12.055367-07:00
+description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en\
+  \ cadenas de texto es crucial para la validaci\xF3n de datos, la sanitizaci\xF3\
+  n o cuando se prepara\u2026"
+lastmod: '2024-03-09T21:06:22.312302-07:00'
+model: gpt-4-0125-preview
+summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en cadenas\
+  \ de texto es crucial para la validaci\xF3n de datos, la sanitizaci\xF3n o cuando\
+  \ se prepara\u2026"
+title: "Eliminando caracteres que coinciden con un patr\xF3n"
 ---
 
 {{< edit_this_page >}}

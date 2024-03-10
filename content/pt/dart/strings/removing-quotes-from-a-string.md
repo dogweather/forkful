@@ -1,9 +1,16 @@
 ---
-title:                "Removendo aspas de uma string"
-date:                  2024-03-08T21:56:21.037190-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:21.037190-07:00
+description: "Remover aspas de uma string em Dart envolve retirar as aspas duplas\
+  \ (\") ou simples (') do in\xEDcio e do fim de uma string, \xFAtil para limpeza\
+  \ de dados ou\u2026"
+lastmod: '2024-03-09T21:06:10.618018-07:00'
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string em Dart envolve retirar as aspas duplas (\"\
+  ) ou simples (') do in\xEDcio e do fim de uma string, \xFAtil para limpeza de dados\
+  \ ou\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

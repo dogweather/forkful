@@ -1,9 +1,19 @@
 ---
-title:                "Sử dụng giao diện dòng lệnh tương tác (REPL)"
-date:                  2024-03-08T21:56:56.515646-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:56.515646-07:00
+description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c (REPL - V\xF2ng l\u1EB7p \u0110\
+  \u1ECDc-\u0110\xE1nh gi\xE1-In) cho Dart cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn \u0111\
+  \xE1nh m\xE1y v\xE0 th\u1EF1c thi m\xE3 Dart t\u1EEBng d\xF2ng m\u1ED9t m\xE0 kh\xF4\
+  ng c\u1EA7n ph\u1EA3i bi\xEAn\u2026"
+lastmod: '2024-03-09T21:06:01.005464-07:00'
+model: gpt-4-0125-preview
+summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c (REPL - V\xF2ng l\u1EB7p \u0110\u1ECD\
+  c-\u0110\xE1nh gi\xE1-In) cho Dart cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn \u0111\xE1\
+  nh m\xE1y v\xE0 th\u1EF1c thi m\xE3 Dart t\u1EEBng d\xF2ng m\u1ED9t m\xE0 kh\xF4\
+  ng c\u1EA7n ph\u1EA3i bi\xEAn\u2026"
+title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
+  \ (REPL)"
 ---
 
 {{< edit_this_page >}}

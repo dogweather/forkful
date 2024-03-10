@@ -1,9 +1,16 @@
 ---
-title:                "Redondeo de números"
-date:                  2024-03-08T21:56:35.055946-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:35.055946-07:00
+description: "Redondear n\xFAmeros es el proceso de ajustar un n\xFAmero a su n\xFA\
+  mero entero m\xE1s cercano o a un n\xFAmero especificado de decimales. Los programadores\
+  \ a menudo\u2026"
+lastmod: '2024-03-09T21:06:22.322455-07:00'
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros es el proceso de ajustar un n\xFAmero a su n\xFAmero\
+  \ entero m\xE1s cercano o a un n\xFAmero especificado de decimales. Los programadores\
+  \ a menudo\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

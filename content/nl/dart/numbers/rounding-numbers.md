@@ -1,9 +1,14 @@
 ---
-title:                "Afronden van getallen"
-date:                  2024-03-08T21:56:11.013616-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:11.013616-07:00
+description: "Getallen afronden is het proces van het aanpassen van een getal naar\
+  \ het dichtstbijzijnde hele getal of naar een gespecificeerd aantal decimalen.\u2026"
+lastmod: '2024-03-09T21:06:14.684335-07:00'
+model: gpt-4-0125-preview
+summary: "Getallen afronden is het proces van het aanpassen van een getal naar het\
+  \ dichtstbijzijnde hele getal of naar een gespecificeerd aantal decimalen.\u2026"
+title: Afronden van getallen
 ---
 
 {{< edit_this_page >}}

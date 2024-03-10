@@ -1,9 +1,16 @@
 ---
-title:                "Wielka litera w łańcuchu znaków"
-date:                  2024-03-08T21:54:05.224032-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:05.224032-07:00
+description: "Zamiana liter na wielkie (kapitalizacja) w ci\u0105gu znak\xF3w polega\
+  \ na zmodyfikowaniu pierwszej litery s\u0142owa lub ca\u0142ego zdania na wielk\u0105\
+  \ liter\u0119, pozostawiaj\u0105c\u2026"
+lastmod: '2024-03-09T21:05:59.807160-07:00'
+model: gpt-4-0125-preview
+summary: "Zamiana liter na wielkie (kapitalizacja) w ci\u0105gu znak\xF3w polega na\
+  \ zmodyfikowaniu pierwszej litery s\u0142owa lub ca\u0142ego zdania na wielk\u0105\
+  \ liter\u0119, pozostawiaj\u0105c\u2026"
+title: "Wielka litera w \u0142a\u0144cuchu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,14 @@
 ---
-title:                "Een string converteren naar onderkast"
-date:                  2024-03-08T21:54:05.085934-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:05.085934-07:00
+description: "Een string omzetten naar kleine letters is een fundamentele bewerking\
+  \ waarbij alle tekens in een gegeven string worden getransformeerd naar hun\u2026"
+lastmod: '2024-03-09T21:06:14.677282-07:00'
+model: gpt-4-0125-preview
+summary: "Een string omzetten naar kleine letters is een fundamentele bewerking waarbij\
+  \ alle tekens in een gegeven string worden getransformeerd naar hun\u2026"
+title: Een string converteren naar onderkast
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Arrondissement des nombres"
-date:                  2024-03-08T21:56:39.382240-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:39.382240-07:00
+description: "Arrondir des nombres est le processus qui consiste \xE0 ajuster un nombre\
+  \ \xE0 son nombre entier le plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de d\xE9\
+  cimales. Les\u2026"
+lastmod: '2024-03-09T21:06:21.236671-07:00'
+model: gpt-4-0125-preview
+summary: "Arrondir des nombres est le processus qui consiste \xE0 ajuster un nombre\
+  \ \xE0 son nombre entier le plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de d\xE9\
+  cimales. Les\u2026"
+title: Arrondissement des nombres
 ---
 
 {{< edit_this_page >}}

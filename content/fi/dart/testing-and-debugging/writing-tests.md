@@ -1,9 +1,16 @@
 ---
-title:                "Testien kirjoittaminen"
-date:                  2024-03-08T21:58:14.253875-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:14.253875-07:00
+description: "Testien kirjoittaminen Dartissa sis\xE4lt\xE4\xE4 testitapausten luomisen,\
+  \ joiden avulla automaattisesti varmistetaan, ett\xE4 ohjelman eri osat toimivat\
+  \ odotetusti.\u2026"
+lastmod: '2024-03-09T21:06:20.184239-07:00'
+model: gpt-4-0125-preview
+summary: "Testien kirjoittaminen Dartissa sis\xE4lt\xE4\xE4 testitapausten luomisen,\
+  \ joiden avulla automaattisesti varmistetaan, ett\xE4 ohjelman eri osat toimivat\
+  \ odotetusti.\u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

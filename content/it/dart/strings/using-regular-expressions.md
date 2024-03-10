@@ -1,9 +1,14 @@
 ---
-title:                "Utilizzo di espressioni regolari"
-date:                  2024-03-08T21:56:59.920298-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:59.920298-07:00
+description: "Le espressioni regolari (regex) in Dart offrono un modo potente per\
+  \ cercare e manipolare le stringhe, consentendo ai programmatori di eseguire operazioni\u2026"
+lastmod: '2024-03-09T21:06:07.668341-07:00'
+model: gpt-4-0125-preview
+summary: "Le espressioni regolari (regex) in Dart offrono un modo potente per cercare\
+  \ e manipolare le stringhe, consentendo ai programmatori di eseguire operazioni\u2026"
+title: Utilizzo di espressioni regolari
 ---
 
 {{< edit_this_page >}}

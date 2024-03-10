@@ -1,9 +1,16 @@
 ---
-title:                "Pobieranie bieżącej daty"
-date:                  2024-03-08T21:55:03.073034-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:03.073034-07:00
+description: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapytaniem\
+  \ systemu o aktualn\u0105 dat\u0119 i czas. Ta funkcjonalno\u015B\u0107 jest powszechnie\
+  \ u\u017Cywana w aplikacjach do\u2026"
+lastmod: '2024-03-09T21:05:59.837416-07:00'
+model: gpt-4-0125-preview
+summary: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapytaniem\
+  \ systemu o aktualn\u0105 dat\u0119 i czas. Ta funkcjonalno\u015B\u0107 jest powszechnie\
+  \ u\u017Cywana w aplikacjach do\u2026"
+title: "Pobieranie bie\u017C\u0105cej daty"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Pisanie pliku tekstowego"
-date:                  2024-03-08T21:57:59.564994-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:59.564994-07:00
+description: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu\
+  \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym. Programi\u015B\
+  ci\u2026"
+lastmod: '2024-03-09T21:05:59.845416-07:00'
+model: gpt-4-0125-preview
+summary: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu\
+  \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym. Programi\u015B\
+  ci\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

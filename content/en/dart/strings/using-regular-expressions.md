@@ -1,7 +1,12 @@
 ---
-title:                "Using regular expressions"
-date:                  2024-03-08T21:33:26.327165-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:26.327165-07:00
+description: "Regular expressions (regex) in Dart offer a powerful way to search and\
+  \ manipulate strings, enabling programmers to perform complex text processing tasks\u2026"
+lastmod: '2024-03-09T21:06:23.349717-07:00'
+model: gpt-4-0125-preview
+summary: "Regular expressions (regex) in Dart offer a powerful way to search and manipulate\
+  \ strings, enabling programmers to perform complex text processing tasks\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

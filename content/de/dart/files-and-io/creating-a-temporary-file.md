@@ -1,9 +1,16 @@
 ---
-title:                "Eine temporäre Datei erstellen"
-date:                  2024-03-08T21:54:11.475931-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:11.475931-07:00
+description: "Die Erstellung einer tempor\xE4ren Datei in Dart beinhaltet das Generieren\
+  \ einer Datei, die f\xFCr die kurzfristige Nutzung vorgesehen ist, haupts\xE4chlich\
+  \ f\xFCr\u2026"
+lastmod: '2024-03-09T21:06:17.593632-07:00'
+model: gpt-4-0125-preview
+summary: "Die Erstellung einer tempor\xE4ren Datei in Dart beinhaltet das Generieren\
+  \ einer Datei, die f\xFCr die kurzfristige Nutzung vorgesehen ist, haupts\xE4chlich\
+  \ f\xFCr\u2026"
+title: "Eine tempor\xE4re Datei erstellen"
 ---
 
 {{< edit_this_page >}}

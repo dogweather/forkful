@@ -1,9 +1,16 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-date:                  2024-03-08T21:54:01.764260-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:01.764260-07:00
+description: "Tarkistaminen, onko kansio olemassa Dartissa, liittyy kansion olemassaolon\
+  \ varmistamiseen m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4ss\xE4 ennen\
+  \ tiedostojen\u2026"
+lastmod: '2024-03-09T21:06:20.194197-07:00'
+model: gpt-4-0125-preview
+summary: "Tarkistaminen, onko kansio olemassa Dartissa, liittyy kansion olemassaolon\
+  \ varmistamiseen m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4ss\xE4 ennen\
+  \ tiedostojen\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

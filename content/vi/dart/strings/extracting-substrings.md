@@ -1,9 +1,18 @@
 ---
-title:                "Trích xuất chuỗi con"
-date:                  2024-03-08T21:54:56.066135-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:56.066135-07:00
+description: "R\xFAt tr\xEDch c\xE1c chu\u1ED7i con l\xE0 vi\u1EC7c truy xu\u1EA5\
+  t c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEA\
+  n v\u1ECB tr\xED ho\u1EB7c c\xE1c m\u1EABu. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\
+  \ hi\u1EC7n \u0111i\u1EC1u n\xE0y cho c\xE1c nhi\u1EC7m v\u1EE5\u2026"
+lastmod: '2024-03-09T21:06:00.991924-07:00'
+model: gpt-4-0125-preview
+summary: "R\xFAt tr\xEDch c\xE1c chu\u1ED7i con l\xE0 vi\u1EC7c truy xu\u1EA5t c\xE1\
+  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEAn v\u1ECB\
+  \ tr\xED ho\u1EB7c c\xE1c m\u1EABu. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
+  n \u0111i\u1EC1u n\xE0y cho c\xE1c nhi\u1EC7m v\u1EE5\u2026"
+title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 ---
 
 {{< edit_this_page >}}

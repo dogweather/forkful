@@ -1,9 +1,16 @@
 ---
-title:                "Työskentely CSV:n kanssa"
-date:                  2024-03-08T21:57:24.534428-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:24.534428-07:00
+description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\
+  \xE4 teksti-tiedostojen j\xE4sennyksen ja luonnin, miss\xE4 jokainen rivi sis\xE4\
+  lt\xE4\xE4 pilkuilla erotettuja\u2026"
+lastmod: '2024-03-09T21:06:20.201422-07:00'
+model: gpt-4-0125-preview
+summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\xE4\
+  \ teksti-tiedostojen j\xE4sennyksen ja luonnin, miss\xE4 jokainen rivi sis\xE4lt\xE4\
+  \xE4 pilkuilla erotettuja\u2026"
+title: "Ty\xF6skentely CSV:n kanssa"
 ---
 
 {{< edit_this_page >}}

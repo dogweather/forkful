@@ -1,9 +1,15 @@
 ---
-title:                "Escribiendo pruebas"
-date:                  2024-03-08T21:57:50.937764-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:50.937764-07:00
+description: "Escribir pruebas en Dart implica crear casos de prueba para verificar\
+  \ autom\xE1ticamente que diferentes partes de tu programa funcionan como se espera.\
+  \ Los\u2026"
+lastmod: '2024-03-09T21:06:22.330581-07:00'
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en Dart implica crear casos de prueba para verificar autom\xE1\
+  ticamente que diferentes partes de tu programa funcionan como se espera. Los\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

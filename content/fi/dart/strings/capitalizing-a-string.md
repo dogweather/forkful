@@ -1,9 +1,16 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-03-08T21:54:07.501560-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:07.501560-07:00
+description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sanan tai kokonaisen\
+  \ lauseen ensimm\xE4isen kirjaimen muuttamista suuraakkoseksi, samalla kun loput\
+  \ merkit\u2026"
+lastmod: '2024-03-09T21:06:20.164177-07:00'
+model: gpt-4-0125-preview
+summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sanan tai kokonaisen\
+  \ lauseen ensimm\xE4isen kirjaimen muuttamista suuraakkoseksi, samalla kun loput\
+  \ merkit\u2026"
+title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

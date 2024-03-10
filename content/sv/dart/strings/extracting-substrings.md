@@ -1,9 +1,16 @@
 ---
-title:                "Extrahera delsträngar"
-date:                  2024-03-08T21:54:39.565548-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:39.565548-07:00
+description: "Att extrahera delstr\xE4ngar handlar om att h\xE4mta specifika delar\
+  \ av en str\xE4ng baserat p\xE5 deras positioner eller m\xF6nster. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+lastmod: '2024-03-09T21:06:02.358360-07:00'
+model: gpt-4-0125-preview
+summary: "Att extrahera delstr\xE4ngar handlar om att h\xE4mta specifika delar av\
+  \ en str\xE4ng baserat p\xE5 deras positioner eller m\xF6nster. Programmerare g\xF6\
+  r detta f\xF6r\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

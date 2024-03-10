@@ -1,9 +1,14 @@
 ---
-title:                "Iniciando un nuevo proyecto"
-date:                  2024-03-08T21:57:05.997315-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:05.997315-07:00
+description: "Iniciar un nuevo proyecto en Dart implica configurar un ambiente propicio\
+  \ para el desarrollo, pruebas e implementaci\xF3n eficientes. Los programadores\u2026"
+lastmod: '2024-03-09T21:06:22.327873-07:00'
+model: gpt-4-0125-preview
+summary: "Iniciar un nuevo proyecto en Dart implica configurar un ambiente propicio\
+  \ para el desarrollo, pruebas e implementaci\xF3n eficientes. Los programadores\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

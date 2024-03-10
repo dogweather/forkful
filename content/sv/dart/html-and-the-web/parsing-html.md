@@ -1,9 +1,16 @@
 ---
-title:                "Tolka HTML"
-date:                  2024-03-08T21:55:18.280850-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:18.280850-07:00
+description: "Att tolka HTML i programmering inneb\xE4r att extrahera data fr\xE5\
+  n HTML-dokument. Programmerare g\xF6r detta f\xF6r att interagera med eller skrapa\
+  \ webbinneh\xE5ll f\xF6r\u2026"
+lastmod: '2024-03-09T21:06:02.367115-07:00'
+model: gpt-4-0125-preview
+summary: "Att tolka HTML i programmering inneb\xE4r att extrahera data fr\xE5n HTML-dokument.\
+  \ Programmerare g\xF6r detta f\xF6r att interagera med eller skrapa webbinneh\xE5\
+  ll f\xF6r\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Een string met hoofdletters"
-date:                  2024-03-08T21:54:14.007126-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:14.007126-07:00
+description: "Het kapitaliseren van een string houdt in dat je de eerste letter van\
+  \ een woord of een hele zin wijzigt naar een hoofdletter, terwijl je de rest van\
+  \ de\u2026"
+lastmod: '2024-03-09T21:06:14.673596-07:00'
+model: gpt-4-0125-preview
+summary: "Het kapitaliseren van een string houdt in dat je de eerste letter van een\
+  \ woord of een hele zin wijzigt naar een hoofdletter, terwijl je de rest van de\u2026"
+title: Een string met hoofdletters
 ---
 
 {{< edit_this_page >}}

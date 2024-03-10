@@ -1,9 +1,15 @@
 ---
-title:                "Sette stor bokstav i en streng"
-date:                  2024-03-08T21:54:07.351975-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:07.351975-07:00
+description: "Det \xE5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre den\
+  \ f\xF8rste bokstaven i et ord eller en hel setning til stor bokstav, mens resten\
+  \ av tegnene\u2026"
+lastmod: '2024-03-09T21:06:05.229657-07:00'
+model: gpt-4-0125-preview
+summary: "Det \xE5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre den f\xF8\
+  rste bokstaven i et ord eller en hel setning til stor bokstav, mens resten av tegnene\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,16 @@
 ---
-title:                "Czytanie argumentów z linii poleceń"
-date:                  2024-03-08T21:56:07.190118-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:07.190118-07:00
+description: "Odczytywanie argument\xF3w linii polece\u0144 w Dart umo\u017Cliwia\
+  \ programistom bezpo\u015Brednie wprowadzanie danych do konsoli podczas wykonywania\
+  \ programu Dart,\u2026"
+lastmod: '2024-03-09T21:05:59.842682-07:00'
+model: gpt-4-0125-preview
+summary: "Odczytywanie argument\xF3w linii polece\u0144 w Dart umo\u017Cliwia programistom\
+  \ bezpo\u015Brednie wprowadzanie danych do konsoli podczas wykonywania programu\
+  \ Dart,\u2026"
+title: "Czytanie argument\xF3w z linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

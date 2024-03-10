@@ -1,7 +1,12 @@
 ---
-title:                "Working with JSON"
-date:                  2024-03-08T21:33:54.589252-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:54.589252-07:00
+description: "Working with JSON (JavaScript Object Notation) involves parsing JSON\
+  \ data from strings into Dart objects and vice versa, a common task in web and app\u2026"
+lastmod: '2024-03-09T21:06:23.372594-07:00'
+model: gpt-4-0125-preview
+summary: "Working with JSON (JavaScript Object Notation) involves parsing JSON data\
+  \ from strings into Dart objects and vice versa, a common task in web and app\u2026"
+title: Working with JSON
 ---
 
 {{< edit_this_page >}}

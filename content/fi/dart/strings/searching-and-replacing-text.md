@@ -1,9 +1,16 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
-date:                  2024-03-08T21:56:18.598417-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:18.598417-07:00
+description: "Tekstin etsiminen ja korvaaminen Dartissa k\xE4sitt\xE4\xE4 merkkijonojen\
+  \ tutkiskelua tietyt mallit tai merkkijonojen sekvenssit l\xF6yt\xE4\xE4kseen ja\
+  \ korvatakseen ne\u2026"
+lastmod: '2024-03-09T21:06:20.166518-07:00'
+model: gpt-4-0125-preview
+summary: "Tekstin etsiminen ja korvaaminen Dartissa k\xE4sitt\xE4\xE4 merkkijonojen\
+  \ tutkiskelua tietyt mallit tai merkkijonojen sekvenssit l\xF6yt\xE4\xE4kseen ja\
+  \ korvatakseen ne\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

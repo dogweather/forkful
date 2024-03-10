@@ -1,9 +1,16 @@
 ---
-title:                "Praca z JSON"
-date:                  2024-03-08T21:57:29.538316-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:29.538316-07:00
+description: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie danych\
+  \ JSON z ci\u0105g\xF3w znak\xF3w na obiekty Dart i odwrotnie, co jest powszechnym\
+  \ zadaniem w\u2026"
+lastmod: '2024-03-09T21:05:59.848111-07:00'
+model: gpt-4-0125-preview
+summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie danych JSON\
+  \ z ci\u0105g\xF3w znak\xF3w na obiekty Dart i odwrotnie, co jest powszechnym zadaniem\
+  \ w\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

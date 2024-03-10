@@ -1,9 +1,15 @@
 ---
-title:                "Generating random numbers"
-date:                  2024-02-27T22:04:38.367952-07:00
-model:                 gpt-4-0125-preview
 changelog:
 - 2024-02-27, dogweather, edited and tested
+date: 2024-02-27 22:04:38.367952-07:00
+description: "Generating random numbers in Elm involves using the `Random` module\
+  \ to produce pseudo-random numbers, which come in handy for a variety of tasks such\
+  \ as\u2026"
+lastmod: '2024-03-09T21:06:23.537711-07:00'
+model: gpt-4-0125-preview
+summary: "Generating random numbers in Elm involves using the `Random` module to produce\
+  \ pseudo-random numbers, which come in handy for a variety of tasks such as\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}
@@ -74,4 +80,3 @@ When you click the "Generate" button, a random number between 1 and 100 will be 
 This simplistic approach can be adapted and expanded, leveraging other functions in the `Random` module to produce random floats, lists, or even complex data structures based on custom types, providing a vast playground for adding unpredictability to your Elm applications.
 
 The Elm Guide goes into much more detail. It also has [an example of rolling a six-sided die](https://guide.elm-lang.org/effects/random).
-

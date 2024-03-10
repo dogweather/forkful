@@ -1,9 +1,15 @@
 ---
-title:                "Convertendo uma string para letras minúsculas"
-date:                  2024-03-08T21:53:59.740307-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:59.740307-07:00
+description: "Converter uma string para letras min\xFAsculas \xE9 uma opera\xE7\xE3\
+  o fundamental que envolve transformar todos os caracteres de uma string dada em\
+  \ seus equivalentes\u2026"
+lastmod: '2024-03-09T21:06:10.617074-07:00'
+model: gpt-4-0125-preview
+summary: "Converter uma string para letras min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
+  \ que envolve transformar todos os caracteres de uma string dada em seus equivalentes\u2026"
+title: "Convertendo uma string para letras min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

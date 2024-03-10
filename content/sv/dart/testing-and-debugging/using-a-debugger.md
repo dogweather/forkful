@@ -1,9 +1,15 @@
 ---
-title:                "Att använda en debugger"
-date:                  2024-03-08T21:56:43.358852-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:43.358852-07:00
+description: "Att anv\xE4nda en fels\xF6kare i Dart l\xE5ter programmerare metodiskt\
+  \ granska sin kod genom att s\xE4tta brytpunkter, stega igenom exekveringen och\
+  \ inspektera\u2026"
+lastmod: '2024-03-09T21:06:02.373536-07:00'
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en fels\xF6kare i Dart l\xE5ter programmerare metodiskt granska\
+  \ sin kod genom att s\xE4tta brytpunkter, stega igenom exekveringen och inspektera\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,15 @@
 ---
-title:                "Lavorare con TOML"
-date:                  2024-03-08T21:57:14.658410-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:14.658410-07:00
+description: "TOML, o Tom's Obvious, Minimal Language, \xE8 un formato di file di\
+  \ configurazione facile da leggere grazie alla sua chiara semantica. I programmatori\
+  \ lo\u2026"
+lastmod: '2024-03-09T21:06:07.699754-07:00'
+model: gpt-4-0125-preview
+summary: "TOML, o Tom's Obvious, Minimal Language, \xE8 un formato di file di configurazione\
+  \ facile da leggere grazie alla sua chiara semantica. I programmatori lo\u2026"
+title: Lavorare con TOML
 ---
 
 {{< edit_this_page >}}

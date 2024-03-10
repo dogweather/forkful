@@ -1,9 +1,12 @@
 ---
-title:                "コードを関数に整理する"
-date:                  2024-03-08T21:55:20.128856-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:20.128856-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.407829-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u30B3\u30FC\u30C9\u3092\u95A2\u6570\u306B\u6574\u7406\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

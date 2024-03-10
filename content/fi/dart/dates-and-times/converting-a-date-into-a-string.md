@@ -1,9 +1,16 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-date:                  2024-03-08T21:53:58.234697-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:53:58.234697-07:00
+description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Dart-kieless\xE4\
+  \ on yleinen teht\xE4v\xE4, kun tarvitsee n\xE4ytt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4\
+  r\xE4- ja aikatietoja ihmisluettavassa muodossa tai kun\u2026"
+lastmod: '2024-03-09T21:06:20.191428-07:00'
+model: gpt-4-0125-preview
+summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Dart-kieless\xE4 on\
+  \ yleinen teht\xE4v\xE4, kun tarvitsee n\xE4ytt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\
+  - ja aikatietoja ihmisluettavassa muodossa tai kun\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
 ---
 
 {{< edit_this_page >}}

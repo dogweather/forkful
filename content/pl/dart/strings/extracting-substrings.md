@@ -1,9 +1,16 @@
 ---
-title:                "Wydobywanie podciągów"
-date:                  2024-03-08T21:54:35.996567-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:35.996567-07:00
+description: "Wyodr\u0119bnianie podci\u0105g\xF3w dotyczy pozyskiwania okre\u015B\
+  lonych cz\u0119\u015Bci ci\u0105gu na podstawie ich pozycji lub wzorc\xF3w. Programi\u015B\
+  ci robi\u0105 to w celu zada\u0144 takich jak\u2026"
+lastmod: '2024-03-09T21:05:59.814446-07:00'
+model: gpt-4-0125-preview
+summary: "Wyodr\u0119bnianie podci\u0105g\xF3w dotyczy pozyskiwania okre\u015Blonych\
+  \ cz\u0119\u015Bci ci\u0105gu na podstawie ich pozycji lub wzorc\xF3w. Programi\u015B\
+  ci robi\u0105 to w celu zada\u0144 takich jak\u2026"
+title: "Wydobywanie podci\u0105g\xF3w"
 ---
 
 {{< edit_this_page >}}

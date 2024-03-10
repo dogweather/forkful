@@ -1,9 +1,18 @@
 ---
-title:                "Viết bài kiểm tra"
-date:                  2024-03-08T21:58:02.116928-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:58:02.116928-07:00
+description: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong Dart bao g\u1ED3\
+  m vi\u1EC7c t\u1EA1o ra c\xE1c tr\u01B0\u1EDDng h\u1EE3p ki\u1EC3m tra \u0111\u1EC3\
+  \ t\u1EF1 \u0111\u1ED9ng x\xE1c minh r\u1EB1ng c\xE1c ph\u1EA7n kh\xE1c nhau c\u1EE7\
+  a ch\u01B0\u01A1ng tr\xECnh ho\u1EA1t \u0111\u1ED9ng\u2026"
+lastmod: '2024-03-09T21:06:01.007439-07:00'
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong Dart bao g\u1ED3m\
+  \ vi\u1EC7c t\u1EA1o ra c\xE1c tr\u01B0\u1EDDng h\u1EE3p ki\u1EC3m tra \u0111\u1EC3\
+  \ t\u1EF1 \u0111\u1ED9ng x\xE1c minh r\u1EB1ng c\xE1c ph\u1EA7n kh\xE1c nhau c\u1EE7\
+  a ch\u01B0\u01A1ng tr\xECnh ho\u1EA1t \u0111\u1ED9ng\u2026"
+title: "Vi\u1EBFt b\xE0i ki\u1EC3m tra"
 ---
 
 {{< edit_this_page >}}

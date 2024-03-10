@@ -1,9 +1,15 @@
 ---
-title:                "Zeichenketten zusammenfügen"
-date:                  2024-03-08T21:54:02.904634-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:02.904634-07:00
+description: "Das Verketten von Zeichenfolgen in der Programmierung beinhaltet das\
+  \ Kombinieren von zwei oder mehreren Strings zu einem. Programmierer machen dies,\
+  \ um\u2026"
+lastmod: '2024-03-09T21:06:17.567742-07:00'
+model: gpt-4-0125-preview
+summary: "Das Verketten von Zeichenfolgen in der Programmierung beinhaltet das Kombinieren\
+  \ von zwei oder mehreren Strings zu einem. Programmierer machen dies, um\u2026"
+title: "Zeichenketten zusammenf\xFCgen"
 ---
 
 {{< edit_this_page >}}

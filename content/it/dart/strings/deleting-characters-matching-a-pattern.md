@@ -1,9 +1,16 @@
 ---
-title:                "Eliminare caratteri corrispondenti a un pattern"
-date:                  2024-03-08T21:54:06.600386-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:06.600386-07:00
+description: "La rimozione dei caratteri che corrispondono a uno specifico modello\
+  \ nelle stringhe \xE8 fondamentale per la validazione dei dati, la loro sanificazione\
+  \ o\u2026"
+lastmod: '2024-03-09T21:06:07.662920-07:00'
+model: gpt-4-0125-preview
+summary: "La rimozione dei caratteri che corrispondono a uno specifico modello nelle\
+  \ stringhe \xE8 fondamentale per la validazione dei dati, la loro sanificazione\
+  \ o\u2026"
+title: Eliminare caratteri corrispondenti a un pattern
 ---
 
 {{< edit_this_page >}}

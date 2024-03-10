@@ -1,9 +1,18 @@
 ---
-title:                "Bắt đầu một dự án mới"
-date:                  2024-03-08T21:57:05.790403-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:57:05.790403-07:00
+description: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi v\u1EDBi Dart\
+  \ bao g\u1ED3m vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t m\xF4i tr\u01B0\u1EDDng thu\u1EAD\
+  n l\u1EE3i cho vi\u1EC7c ph\xE1t tri\u1EC3n, ki\u1EC3m th\u1EED v\xE0 tri\u1EC3\
+  n khai hi\u1EC7u qu\u1EA3. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+lastmod: '2024-03-09T21:06:01.004492-07:00'
+model: gpt-4-0125-preview
+summary: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi v\u1EDBi Dart bao\
+  \ g\u1ED3m vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t m\xF4i tr\u01B0\u1EDDng thu\u1EAD\
+  n l\u1EE3i cho vi\u1EC7c ph\xE1t tri\u1EC3n, ki\u1EC3m th\u1EED v\xE0 tri\u1EC3\
+  n khai hi\u1EC7u qu\u1EA3. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 ---
 
 {{< edit_this_page >}}

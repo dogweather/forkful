@@ -1,9 +1,16 @@
 ---
-title:                "Bruke regulære uttrykk"
-date:                  2024-03-08T21:56:58.312478-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:56:58.312478-07:00
+description: "Regul\xE6re uttrykk (regex) i Dart tilbyr en kraftfull m\xE5te \xE5\
+  \ s\xF8ke og manipulere strenger p\xE5, som gj\xF8r det mulig for programmerere\
+  \ \xE5 utf\xF8re komplekse\u2026"
+lastmod: '2024-03-09T21:06:05.236437-07:00'
+model: gpt-4-0125-preview
+summary: "Regul\xE6re uttrykk (regex) i Dart tilbyr en kraftfull m\xE5te \xE5 s\xF8\
+  ke og manipulere strenger p\xE5, som gj\xF8r det mulig for programmerere \xE5 utf\xF8\
+  re komplekse\u2026"
+title: "Bruke regul\xE6re uttrykk"
 ---
 
 {{< edit_this_page >}}

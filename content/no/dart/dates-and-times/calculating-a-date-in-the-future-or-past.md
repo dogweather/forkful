@@ -1,9 +1,16 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
-date:                  2024-03-08T21:54:28.318611-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:28.318611-07:00
+description: "\xC5 beregne en dato i fremtiden eller fortiden er en vanlig oppgave\
+  \ for programmerere, som handler om planlegging, p\xE5minnelser, eller enhver funksjon\
+  \ som\u2026"
+lastmod: '2024-03-09T21:06:05.258632-07:00'
+model: gpt-4-0125-preview
+summary: "\xC5 beregne en dato i fremtiden eller fortiden er en vanlig oppgave for\
+  \ programmerere, som handler om planlegging, p\xE5minnelser, eller enhver funksjon\
+  \ som\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

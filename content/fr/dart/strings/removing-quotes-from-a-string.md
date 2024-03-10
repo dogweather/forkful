@@ -1,9 +1,16 @@
 ---
-title:                "Supprimer les guillemets d'une chaîne de caractères"
-date:                  2024-03-08T21:55:51.475469-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:55:51.475469-07:00
+description: "Enlever les guillemets d'une cha\xEEne de caract\xE8res en Dart consiste\
+  \ \xE0 retirer les marques de citation doubles (\") ou simples (') au d\xE9but et\
+  \ \xE0 la fin d'une\u2026"
+lastmod: '2024-03-09T21:06:21.229792-07:00'
+model: gpt-4-0125-preview
+summary: "Enlever les guillemets d'une cha\xEEne de caract\xE8res en Dart consiste\
+  \ \xE0 retirer les marques de citation doubles (\") ou simples (') au d\xE9but et\
+  \ \xE0 la fin d'une\u2026"
+title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

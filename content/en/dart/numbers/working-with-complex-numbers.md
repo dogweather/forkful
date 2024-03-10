@@ -1,7 +1,12 @@
 ---
-title:                "Working with complex numbers"
-date:                  2024-03-08T21:33:35.026149-07:00
-model:                 gpt-4-0125-preview
+date: 2024-03-08 21:33:35.026149-07:00
+description: "Complex numbers, consisting of a real and an imaginary part (usually\
+  \ denoted as a + bi), extend the concept of the dimensionless numbers to a two-\u2026"
+lastmod: '2024-03-09T21:06:23.352578-07:00'
+model: gpt-4-0125-preview
+summary: "Complex numbers, consisting of a real and an imaginary part (usually denoted\
+  \ as a + bi), extend the concept of the dimensionless numbers to a two-\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

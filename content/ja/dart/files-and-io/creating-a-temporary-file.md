@@ -1,9 +1,12 @@
 ---
-title:                "一時ファイルの作成"
-date:                  2024-03-08T21:54:26.181393-07:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-08 21:54:26.181393-07:00
+description: "\u2026"
+lastmod: '2024-03-09T21:06:06.419361-07:00'
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 ---
 
 {{< edit_this_page >}}
