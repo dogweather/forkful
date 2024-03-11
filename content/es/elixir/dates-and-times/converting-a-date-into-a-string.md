@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:22.271759-07:00
 description: "Convertir una fecha a una cadena de texto implica transformar un objeto\
   \ de fecha, que la computadora comprende, en una serie de caracteres legibles para\u2026"
-lastmod: '2024-02-25T18:49:55.270003-07:00'
+lastmod: '2024-03-11T00:14:32.540148-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una fecha a una cadena de texto implica transformar un objeto\
   \ de fecha, que la computadora comprende, en una serie de caracteres legibles para\u2026"

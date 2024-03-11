@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:14:09.109330-07:00
 description: "Analizar una fecha a partir de un string en Haskell implica convertir\
   \ representaciones textuales de fechas en un formato estructurado que el programa\u2026"
-lastmod: '2024-02-25T18:49:55.597986-07:00'
+lastmod: '2024-03-11T00:14:32.942445-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha a partir de un string en Haskell implica convertir representaciones\
   \ textuales de fechas en un formato estructurado que el programa\u2026"

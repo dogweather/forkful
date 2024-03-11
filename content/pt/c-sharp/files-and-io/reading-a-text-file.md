@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:54.519310-07:00
 description: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos bytes\
   \ pra tirar informa\xE7\xF5es \xFAteis de um arquivo `.txt`. Programadores fazem\
   \ isso porque,\u2026"
-lastmod: '2024-02-25T18:49:44.222396-07:00'
+lastmod: '2024-03-11T00:14:20.310337-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos bytes pra\
   \ tirar informa\xE7\xF5es \xFAteis de um arquivo `.txt`. Programadores fazem isso\

@@ -3,7 +3,7 @@ date: 2024-01-25 02:59:55.932693-07:00
 description: "Rounding numbers means approximating a numerical value to a specific\
   \ precision, typically to remove unwanted decimals. Programmers round to manage\
   \ memory,\u2026"
-lastmod: '2024-02-25T18:49:56.827903-07:00'
+lastmod: '2024-03-11T00:14:34.261807-06:00'
 model: gpt-4-1106-preview
 summary: "Rounding numbers means approximating a numerical value to a specific precision,\
   \ typically to remove unwanted decimals. Programmers round to manage memory,\u2026"

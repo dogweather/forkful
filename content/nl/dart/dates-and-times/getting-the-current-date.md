@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:54:42.366236-07:00
 description: "De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd\
   \ voor de huidige datum en tijd. Deze functionaliteit wordt vaak gebruikt in\u2026"
-lastmod: '2024-03-09T21:06:14.698614-07:00'
+lastmod: '2024-03-11T00:14:24.332532-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd\
   \ voor de huidige datum en tijd. Deze functionaliteit wordt vaak gebruikt in\u2026"

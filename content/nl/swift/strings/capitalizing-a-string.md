@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:35.073632-07:00
 description: "Capitalisatie betekent het veranderen van de eerste letter van woorden\
   \ naar hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk\u2026"
-lastmod: '2024-02-25T18:49:48.470977-07:00'
+lastmod: '2024-03-11T00:14:24.976903-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalisatie betekent het veranderen van de eerste letter van woorden naar\
   \ hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk\u2026"

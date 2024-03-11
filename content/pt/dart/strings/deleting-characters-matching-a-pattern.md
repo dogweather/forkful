@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:15.598822-07:00
 description: "Eliminar caracteres que correspondam a um padr\xE3o espec\xEDfico em\
   \ strings \xE9 crucial para a valida\xE7\xE3o de dados, saneamento ou quando se\
   \ prepara o texto para\u2026"
-lastmod: '2024-03-09T21:06:10.614358-07:00'
+lastmod: '2024-03-11T00:14:19.944794-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que correspondam a um padr\xE3o espec\xEDfico em strings\
   \ \xE9 crucial para a valida\xE7\xE3o de dados, saneamento ou quando se prepara\

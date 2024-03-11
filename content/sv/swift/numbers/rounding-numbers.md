@@ -2,7 +2,7 @@
 date: 2024-01-26 03:46:38.372831-07:00
 description: "Att avrunda tal inneb\xE4r att approximera ett numeriskt v\xE4rde till\
   \ en specifik precision, vanligtvis f\xF6r att ta bort o\xF6nskade decimaler. Programmerare\u2026"
-lastmod: '2024-02-25T18:49:36.562071-07:00'
+lastmod: '2024-03-11T00:14:11.640655-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att approximera ett numeriskt v\xE4rde till en\
   \ specifik precision, vanligtvis f\xF6r att ta bort o\xF6nskade decimaler. Programmerare\u2026"

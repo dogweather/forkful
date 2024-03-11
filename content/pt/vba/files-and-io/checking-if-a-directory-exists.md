@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:28.785297-07:00
 description: "Verificar se um diret\xF3rio existe no Visual Basic for Applications\
   \ (VBA) trata de confirmar a presen\xE7a de uma pasta dentro do sistema de arquivos\
   \ antes de\u2026"
-lastmod: '2024-02-25T18:49:44.047870-07:00'
+lastmod: '2024-03-11T00:14:20.122908-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Visual Basic for Applications (VBA)\
   \ trata de confirmar a presen\xE7a de uma pasta dentro do sistema de arquivos antes\

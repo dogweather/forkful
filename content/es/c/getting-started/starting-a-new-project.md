@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:00.375811-07:00
 description: "Iniciar un nuevo proyecto en C implica establecer una estructura de\
   \ c\xF3digo y un ambiente fundamentales para gestionar eficientemente las tareas\
   \ de\u2026"
-lastmod: '2024-02-25T18:49:56.014768-07:00'
+lastmod: '2024-03-11T00:14:33.384170-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en C implica establecer una estructura de c\xF3\
   digo y un ambiente fundamentales para gestionar eficientemente las tareas de\u2026"

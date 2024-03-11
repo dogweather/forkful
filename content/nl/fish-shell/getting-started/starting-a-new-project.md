@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:28.764235-07:00
 description: "Een nieuw project starten betekent het initialiseren van een verse map\
   \ met alles wat je nodig hebt om te beginnen met coderen. Programmeurs doen dit\
   \ om de\u2026"
-lastmod: '2024-02-25T18:49:48.573877-07:00'
+lastmod: '2024-03-11T00:14:25.086632-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het initialiseren van een verse map met\
   \ alles wat je nodig hebt om te beginnen met coderen. Programmeurs doen dit om de\u2026"

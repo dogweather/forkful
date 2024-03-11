@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:07.936628-07:00
 description: "Ein neues Projekt in C zu starten, umfasst das Einrichten einer grundlegenden\
   \ Code-Struktur und Umgebung, um Entwicklungsarbeiten effizient zu verwalten.\u2026"
-lastmod: '2024-02-25T18:49:51.403447-07:00'
+lastmod: '2024-03-11T00:14:28.263466-06:00'
 model: gpt-4-0125-preview
 summary: "Ein neues Projekt in C zu starten, umfasst das Einrichten einer grundlegenden\
   \ Code-Struktur und Umgebung, um Entwicklungsarbeiten effizient zu verwalten.\u2026"

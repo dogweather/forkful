@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:17.155493-07:00
 description: "Obter a data atual em C# envolve buscar os detalhes da data e hora atuais\
   \ do sistema. Programadores frequentemente precisam acessar essa informa\xE7\xE3\
   o para\u2026"
-lastmod: '2024-02-25T18:49:44.215763-07:00'
+lastmod: '2024-03-11T00:14:20.303424-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em C# envolve buscar os detalhes da data e hora atuais\
   \ do sistema. Programadores frequentemente precisam acessar essa informa\xE7\xE3\

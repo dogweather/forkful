@@ -3,7 +3,7 @@ changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:09.836854-07:00
 description: "Visual Basic for\u2026"
-lastmod: '2024-02-25T18:49:39.939923-07:00'
+lastmod: '2024-03-11T00:14:15.486734-06:00'
 model: gpt-4-0125-preview
 summary: "Visual Basic for\u2026"
 title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"

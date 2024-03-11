@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:20.131109-07:00
 description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\
   \ ensuite\u2026"
-lastmod: '2024-02-25T18:49:54.322282-07:00'
+lastmod: '2024-03-11T00:14:31.526178-06:00'
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\

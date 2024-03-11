@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:49.071516-07:00
 description: "Przetwarzanie daty z ci\u0105gu znak\xF3w w C# polega na konwertowaniu\
   \ tekstowych reprezentacji dat i czas\xF3w na obiekt `DateTime`. Jest to kluczowe\
   \ dla aplikacji,\u2026"
-lastmod: '2024-02-25T18:49:33.782356-07:00'
+lastmod: '2024-03-11T00:14:08.600909-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w w C# polega na konwertowaniu tekstowych\
   \ reprezentacji dat i czas\xF3w na obiekt `DateTime`. Jest to kluczowe dla aplikacji,\u2026"

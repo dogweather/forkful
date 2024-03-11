@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:02.058396-07:00
 description: "Travailler avec JSON (JavaScript Object Notation) implique d'analyser\
   \ des cha\xEEnes format\xE9es JSON en objets Python et vice versa. Cela est crucial\
   \ pour le\u2026"
-lastmod: '2024-02-25T18:49:54.149008-07:00'
+lastmod: '2024-03-11T00:14:31.292412-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON (JavaScript Object Notation) implique d'analyser des\
   \ cha\xEEnes format\xE9es JSON en objets Python et vice versa. Cela est crucial\

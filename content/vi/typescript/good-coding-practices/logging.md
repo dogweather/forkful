@@ -6,7 +6,7 @@ description: "Logging l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7
   \ l\u1ED7i v\xE0 c\xE1c th\xF4ng tin \u0111\xE1ng ch\xFA \xFD kh\xE1c trong qu\xE1\
   \ tr\xECnh th\u1EF1c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1ng tr\xECnh v\xE0o m\u1ED9\
   t ph\u01B0\u01A1ng ti\u1EC7n ngo\u1EA1i vi,\u2026"
-lastmod: '2024-02-25T18:49:34.653072-07:00'
+lastmod: '2024-03-11T00:14:09.586067-06:00'
 model: gpt-4-0125-preview
 summary: "Logging l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7\
   i v\xE0 c\xE1c th\xF4ng tin \u0111\xE1ng ch\xFA \xFD kh\xE1c trong qu\xE1 tr\xEC\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:01.119861-07:00
 description: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generowanie\
   \ danych XML. Programi\u015Bci robi\u0105 to dla wymiany danych, zw\u0142aszcza\
   \ podczas integracji z\u2026"
-lastmod: '2024-02-25T18:49:34.151871-07:00'
+lastmod: '2024-03-11T00:14:08.986111-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generowanie danych\
   \ XML. Programi\u015Bci robi\u0105 to dla wymiany danych, zw\u0142aszcza podczas\

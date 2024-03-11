@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:12.958077-07:00
 description: "Wycinanie podci\u0105g\xF3w to pobieranie fragment\xF3w z wi\u0119kszego\
   \ ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, by manipulowa\u0107 danymi,\
   \ wyci\u0105ga\u0107 informacje lub sprawdza\u0107\u2026"
-lastmod: '2024-02-25T18:49:33.630960-07:00'
+lastmod: '2024-03-11T00:14:08.442442-06:00'
 model: gpt-4-1106-preview
 summary: "Wycinanie podci\u0105g\xF3w to pobieranie fragment\xF3w z wi\u0119kszego\
   \ ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, by manipulowa\u0107 danymi,\

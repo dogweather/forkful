@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:55.775292-07:00
 description: "HTML:n j\xE4sennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen\
   \ tietojen tai elementtien erottamiseksi, mik\xE4 on yleinen teht\xE4v\xE4 verkkosivujen\u2026"
-lastmod: '2024-02-25T18:49:53.115592-07:00'
+lastmod: '2024-03-11T00:14:30.067714-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen\
   \ tietojen tai elementtien erottamiseksi, mik\xE4 on yleinen teht\xE4v\xE4 verkkosivujen\u2026"

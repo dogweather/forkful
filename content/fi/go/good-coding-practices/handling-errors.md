@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:26.018827-07:00
 description: "Virheiden k\xE4sittely Go:ssa tarkoittaa virhetilanteiden tunnistamista\
   \ ja niihin vastaamista ohjelmassasi. Ohjelmoijat k\xE4ytt\xE4v\xE4t virheenk\xE4\
   sittely\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.037362-07:00'
+lastmod: '2024-03-11T00:14:29.984108-06:00'
 model: gpt-4-0125-preview
 summary: "Virheiden k\xE4sittely Go:ssa tarkoittaa virhetilanteiden tunnistamista\
   \ ja niihin vastaamista ohjelmassasi. Ohjelmoijat k\xE4ytt\xE4v\xE4t virheenk\xE4\

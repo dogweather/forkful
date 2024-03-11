@@ -5,7 +5,7 @@ date: 2024-02-01 22:07:33.754844-07:00
 description: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
   \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\
   \ problemas\u2026"
-lastmod: '2024-02-25T18:49:43.764234-07:00'
+lastmod: '2024-03-11T00:14:19.764823-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
   \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\

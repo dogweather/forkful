@@ -3,7 +3,7 @@ date: 2024-01-20 15:34:13.802519-07:00
 description: "Parsear HTML \xE9 o ato de transformar texto HTML em algo que seu programa\
   \ entenda e possa manipular. Programadores fazem isso para extrair informa\xE7\xF5\
   es,\u2026"
-lastmod: '2024-03-09T21:11:29.337311-07:00'
+lastmod: '2024-03-11T00:14:20.650028-06:00'
 model: unknown
 summary: "Parsear HTML \xE9 o ato de transformar texto HTML em algo que seu programa\
   \ entenda e possa manipular. Programadores fazem isso para extrair informa\xE7\xF5\

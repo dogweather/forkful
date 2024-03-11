@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:52.140839-07:00
 description: "Parsing av HTML i programmering inneb\xE6rer \xE5 analysere strukturen\
   \ til et HTML-dokument, noe som gj\xF8r det mulig for deg \xE5 trekke ut, manipulere\
   \ og samhandle\u2026"
-lastmod: '2024-02-25T18:49:38.969081-07:00'
+lastmod: '2024-03-11T00:14:14.352082-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i programmering inneb\xE6rer \xE5 analysere strukturen til\
   \ et HTML-dokument, noe som gj\xF8r det mulig for deg \xE5 trekke ut, manipulere\

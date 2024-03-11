@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:15.593816-07:00
 description: "In Rust, die L\xE4nge eines Strings zu ermitteln bedeutet, herauszufinden,\
   \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das oft wissen,\
   \ um\u2026"
-lastmod: '2024-02-25T18:49:50.732067-07:00'
+lastmod: '2024-03-11T00:14:27.555013-06:00'
 model: gpt-4-1106-preview
 summary: "In Rust, die L\xE4nge eines Strings zu ermitteln bedeutet, herauszufinden,\
   \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das oft wissen,\

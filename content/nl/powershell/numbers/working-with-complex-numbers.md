@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:29.314281-07:00
 description: "Complexe getallen, die een re\xEBel deel en een imaginair deel hebben\
   \ (zoals 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en\u2026"
-lastmod: '2024-02-25T18:49:48.356559-07:00'
+lastmod: '2024-03-11T00:14:24.854244-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, die een re\xEBel deel en een imaginair deel hebben (zoals\
   \ 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en\u2026"

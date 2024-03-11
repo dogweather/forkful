@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:56:09.771796-07:00
 description: "Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Script\
   \ Code zu strukturieren, indem logische Segmente in separate Bl\xF6cke aufgeteilt\u2026"
-lastmod: '2024-02-25T18:49:50.539884-07:00'
+lastmod: '2024-03-11T00:14:27.299973-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Script Code\
   \ zu strukturieren, indem logische Segmente in separate Bl\xF6cke aufgeteilt\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:35.772309-07:00
 description: "I JavaScript bestemmer vi lengden p\xE5 en streng med `.length`-egenskapen.\
   \ Det hjelper oss med \xE5 h\xE5ndtere tekst, som \xE5 validering av input eller\
   \ looping\u2026"
-lastmod: '2024-02-25T18:49:39.353702-07:00'
+lastmod: '2024-03-11T00:14:14.774250-06:00'
 model: gpt-4-1106-preview
 summary: "I JavaScript bestemmer vi lengden p\xE5 en streng med `.length`-egenskapen.\
   \ Det hjelper oss med \xE5 h\xE5ndtere tekst, som \xE5 validering av input eller\

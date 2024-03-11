@@ -5,7 +5,7 @@ date: 2024-01-28 22:10:06.636785-07:00
 description: "Werken met JSON in Bash houdt in dat er JSON-geformatteerde gegevens\
   \ direct vanaf de opdrachtregel worden geparseerd en gegenereerd. Programmeurs doen\
   \ dit\u2026"
-lastmod: '2024-02-25T18:49:48.341982-07:00'
+lastmod: '2024-03-11T00:14:24.838601-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met JSON in Bash houdt in dat er JSON-geformatteerde gegevens direct\
   \ vanaf de opdrachtregel worden geparseerd en gegenereerd. Programmeurs doen dit\u2026"

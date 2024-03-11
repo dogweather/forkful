@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:34.179201-07:00
 description: "Reading command line arguments means grabbing the extra bits of data\
   \ you pass to a program when you start it in a console. Programmers do it to let\
   \ users\u2026"
-lastmod: '2024-02-25T18:49:46.794180-07:00'
+lastmod: '2024-03-11T00:14:23.171389-06:00'
 model: gpt-4-1106-preview
 summary: "Reading command line arguments means grabbing the extra bits of data you\
   \ pass to a program when you start it in a console. Programmers do it to let users\u2026"

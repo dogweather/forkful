@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:09.770581-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Python existiert, bedeutet,\
   \ die Anwesenheit eines Ordners im Dateisystem zu verifizieren, bevor Operationen\
   \ wie das\u2026"
-lastmod: '2024-02-25T18:49:50.592077-07:00'
+lastmod: '2024-03-11T00:14:27.356701-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Python existiert, bedeutet,\
   \ die Anwesenheit eines Ordners im Dateisystem zu verifizieren, bevor Operationen\

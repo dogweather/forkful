@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:56:31.007523-07:00
 description: "Commencer un nouveau projet en Dart implique de mettre en place un environnement\
   \ propice au d\xE9veloppement, aux tests et au d\xE9ploiement efficaces. Les\u2026"
-lastmod: '2024-03-09T21:06:21.242212-07:00'
+lastmod: '2024-03-11T00:14:31.406239-06:00'
 model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en Dart implique de mettre en place un environnement\
   \ propice au d\xE9veloppement, aux tests et au d\xE9ploiement efficaces. Les\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:09:20.712177-07:00
 description: "Ottenere la data corrente nella programmazione \xE8 un'operazione fondamentale\
   \ che consente di recuperare e manipolare i dati di data e ora del sistema.\u2026"
-lastmod: '2024-02-25T18:49:41.712359-07:00'
+lastmod: '2024-03-11T00:14:17.491672-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente nella programmazione \xE8 un'operazione fondamentale\
   \ che consente di recuperare e manipolare i dati di data e ora del sistema.\u2026"

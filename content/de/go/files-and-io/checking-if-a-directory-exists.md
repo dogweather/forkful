@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:35.244611-07:00
 description: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
   \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\
   \ des\u2026"
-lastmod: '2024-02-25T18:49:50.504024-07:00'
+lastmod: '2024-03-11T00:14:27.261535-06:00'
 model: gpt-4-0125-preview
 summary: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
   \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\

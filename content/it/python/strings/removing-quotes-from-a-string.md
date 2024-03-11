@@ -3,7 +3,7 @@ date: 2024-01-26 03:41:20.490541-07:00
 description: "Rimuovere le virgolette da una stringa significa solitamente eliminare\
   \ le superflue virgolette doppie (\") o singole ('). I programmatori fanno ci\xF2\
   \ per\u2026"
-lastmod: '2024-02-25T18:49:40.917406-07:00'
+lastmod: '2024-03-11T00:14:16.542919-06:00'
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa solitamente eliminare le\
   \ superflue virgolette doppie (\") o singole ('). I programmatori fanno ci\xF2 per\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 00:59:09.677598-07:00
 description: "La journalisation est une pratique qui consiste \xE0 enregistrer les\
   \ \xE9v\xE9nements, les erreurs et d'autres informations significatives issues des\
   \ processus en\u2026"
-lastmod: '2024-02-25T18:49:54.692313-07:00'
+lastmod: '2024-03-11T00:14:31.930621-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation est une pratique qui consiste \xE0 enregistrer les \xE9\
   v\xE9nements, les erreurs et d'autres informations significatives issues des processus\

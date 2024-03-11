@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:06.082414-07:00
 description: "Arrondir les nombres en programmation consiste \xE0 approximer un nombre\
   \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales. Les\
   \ programmeurs\u2026"
-lastmod: '2024-02-25T18:49:54.334619-07:00'
+lastmod: '2024-03-11T00:14:31.538856-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres en programmation consiste \xE0 approximer un nombre\
   \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales. Les\

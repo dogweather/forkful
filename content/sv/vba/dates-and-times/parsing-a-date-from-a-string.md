@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:57:43.165925-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng i Visual Basic for Applications\
   \ (VBA) handlar om att konvertera text som representerar ett datum till en datumdatatyp.\u2026"
-lastmod: '2024-02-25T18:49:36.048379-07:00'
+lastmod: '2024-03-11T00:14:11.095782-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Visual Basic for Applications\
   \ (VBA) handlar om att konvertera text som representerar ett datum till en datumdatatyp.\u2026"

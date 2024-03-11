@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:58:25.678548-07:00
 description: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na dost\u0119\
   pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym\u2026"
-lastmod: '2024-02-25T18:49:33.346398-07:00'
+lastmod: '2024-03-11T00:14:08.093913-06:00'
 model: gpt-4-0125-preview
 summary: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na dost\u0119\
   pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym\u2026"

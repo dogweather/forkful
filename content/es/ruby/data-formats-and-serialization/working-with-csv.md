@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:03.213949-07:00
 description: "Trabajar con archivos CSV en Ruby ofrece un enfoque directo para manejar\
   \ datos tabulares. Los programadores a menudo se involucran en esta pr\xE1ctica\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:56.080814-07:00'
+lastmod: '2024-03-11T00:14:33.455752-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV en Ruby ofrece un enfoque directo para manejar\
   \ datos tabulares. Los programadores a menudo se involucran en esta pr\xE1ctica\

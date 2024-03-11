@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:47.086903-07:00
 description: "String-Interpolation ist der Prozess, Variablenwerte direkt in Strings\
   \ einzuf\xFCgen, oft um aussagekr\xE4ftige Nachrichten ohne umst\xE4ndliche Verkettungen\
   \ zu\u2026"
-lastmod: '2024-03-09T21:06:17.561933-07:00'
+lastmod: '2024-03-11T00:14:27.457851-06:00'
 model: gpt-4-0125-preview
 summary: "String-Interpolation ist der Prozess, Variablenwerte direkt in Strings einzuf\xFC\
   gen, oft um aussagekr\xE4ftige Nachrichten ohne umst\xE4ndliche Verkettungen zu\u2026"

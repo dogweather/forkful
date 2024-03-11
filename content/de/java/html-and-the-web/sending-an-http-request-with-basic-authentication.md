@@ -2,7 +2,7 @@
 date: 2024-01-20 18:01:57.132684-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet das\
   \ \xDCbermitteln von Benutzername und Passwort in einem Base64-codierten Header.\u2026"
-lastmod: '2024-02-25T18:49:50.827318-07:00'
+lastmod: '2024-03-11T00:14:27.655132-06:00'
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet das \xDC\
   bermitteln von Benutzername und Passwort in einem Base64-codierten Header.\u2026"

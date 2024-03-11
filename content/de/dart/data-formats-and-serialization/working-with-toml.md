@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:57:33.102558-07:00
 description: "TOML oder Toms offensichtliche, minimale Sprache, ist ein Konfigurationsdateiformat,\
   \ das aufgrund seiner klaren Semantik leicht zu lesen ist.\u2026"
-lastmod: '2024-03-09T21:06:17.597351-07:00'
+lastmod: '2024-03-11T00:14:27.501441-06:00'
 model: gpt-4-0125-preview
 summary: "TOML oder Toms offensichtliche, minimale Sprache, ist ein Konfigurationsdateiformat,\
   \ das aufgrund seiner klaren Semantik leicht zu lesen ist.\u2026"

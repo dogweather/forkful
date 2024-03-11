@@ -7,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC774\uB780
   \uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uD558\uB824\uACE0 \uD504\uB85C\uADF8\uB798\
   \uBA38\uB294 \uBB38\uC790\uC5F4\uC744 \uC5F0\uACB0\uD574\uC694."
 isCJKLanguage: true
-lastmod: '2024-02-25T18:49:51.911502-07:00'
+lastmod: '2024-03-11T00:14:28.823819-06:00'
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC774\uB780, \uB458\
   \ \uC774\uC0C1\uC758 \uBB38\uC790\uC5F4\uC744 \uD558\uB098\uB85C \uD569\uCE58\uB294\

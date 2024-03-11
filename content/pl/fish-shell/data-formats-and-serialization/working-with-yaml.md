@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:25:28.389974-07:00
 description: "Praca z YAML polega na analizie i manipulacji plikami YAML (YAML Ain't\
   \ Markup Language), formacie serializacji danych u\u017Cywanym dla plik\xF3w\u2026"
-lastmod: '2024-02-25T18:49:34.235338-07:00'
+lastmod: '2024-03-11T00:14:09.075810-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z YAML polega na analizie i manipulacji plikami YAML (YAML Ain't Markup\
   \ Language), formacie serializacji danych u\u017Cywanym dla plik\xF3w\u2026"

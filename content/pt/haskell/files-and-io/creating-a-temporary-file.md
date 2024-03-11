@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:19.342292-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 gerar um arquivo que \xE9 destinado\
   \ a ser utilizado durante a execu\xE7\xE3o de um programa e, geralmente, exclu\xED\
   do ap\xF3s o uso.\u2026"
-lastmod: '2024-02-25T18:49:44.265569-07:00'
+lastmod: '2024-03-11T00:14:20.357064-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 gerar um arquivo que \xE9 destinado\
   \ a ser utilizado durante a execu\xE7\xE3o de um programa e, geralmente, exclu\xED\

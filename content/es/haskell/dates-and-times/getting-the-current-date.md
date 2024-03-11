@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:30.973636-07:00
 description: "Recuperar la fecha actual en Haskell implica obtener el tiempo actual\
   \ del sistema y transformarlo en un formato de fecha legible. Los programadores\
   \ hacen\u2026"
-lastmod: '2024-02-25T18:49:55.599004-07:00'
+lastmod: '2024-03-11T00:14:32.943614-06:00'
 model: gpt-4-0125-preview
 summary: "Recuperar la fecha actual en Haskell implica obtener el tiempo actual del\
   \ sistema y transformarlo en un formato de fecha legible. Los programadores hacen\u2026"

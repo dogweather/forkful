@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:15.745047-07:00
 description: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci liczby\
   \ do jej najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc\
   \ po przecinku. Programi\u015Bci\u2026"
-lastmod: '2024-02-25T18:49:33.269952-07:00'
+lastmod: '2024-03-11T00:14:08.014873-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci liczby do jej\
   \ najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po\

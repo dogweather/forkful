@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:55.724086-07:00
 description: "Calcular una fecha en el futuro o en el pasado implica determinar una\
   \ fecha que est\xE9 a un n\xFAmero especificado de d\xEDas, meses o a\xF1os de distancia\
   \ desde una\u2026"
-lastmod: '2024-02-25T18:49:55.398052-07:00'
+lastmod: '2024-03-11T00:14:32.722210-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o en el pasado implica determinar una fecha\
   \ que est\xE9 a un n\xFAmero especificado de d\xEDas, meses o a\xF1os de distancia\

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:37.283138-07:00
 description: "Writing tests in Elm involves crafting test cases to verify the correctness\
   \ of your Elm code, ensuring it behaves as expected. Programmers do it to catch\u2026"
-lastmod: '2024-02-25T18:49:56.458727-07:00'
+lastmod: '2024-03-11T00:14:33.878254-06:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in Elm involves crafting test cases to verify the correctness\
   \ of your Elm code, ensuring it behaves as expected. Programmers do it to catch\u2026"

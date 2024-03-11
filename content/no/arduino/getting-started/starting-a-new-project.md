@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:48.258209-07:00
 description: "\xC5 starte et nytt prosjekt betyr \xE5 lage et nytt skript eller program\
   \ fra bunnen av. Programmerere gj\xF8r dette for \xE5 skape tilpassede l\xF8sninger,\
   \ l\xE6re nye\u2026"
-lastmod: '2024-02-25T18:49:39.239021-07:00'
+lastmod: '2024-03-11T00:14:14.650179-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt betyr \xE5 lage et nytt skript eller program\
   \ fra bunnen av. Programmerere gj\xF8r dette for \xE5 skape tilpassede l\xF8sninger,\

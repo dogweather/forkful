@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:20.849523-07:00
 description: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
   \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\
   \ allerede er det. Denne\u2026"
-lastmod: '2024-02-25T18:49:38.954449-07:00'
+lastmod: '2024-03-11T00:14:14.334187-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
   \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\

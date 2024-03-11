@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:30.098795-07:00
 description: "Analisar uma data a partir de uma string envolve converter texto em\
   \ um objeto Date. Esta opera\xE7\xE3o \xE9 fundamental para aplica\xE7\xF5es que\
   \ interagem com datas\u2026"
-lastmod: '2024-02-25T18:49:44.172333-07:00'
+lastmod: '2024-03-11T00:14:20.256686-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve converter texto em um objeto\
   \ Date. Esta opera\xE7\xE3o \xE9 fundamental para aplica\xE7\xF5es que interagem\

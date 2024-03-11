@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:25.919598-07:00
 description: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
   \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\
   \ aplikacji. Programi\u015Bci pisz\u0105\u2026"
-lastmod: '2024-02-25T18:49:33.280379-07:00'
+lastmod: '2024-03-11T00:14:08.027668-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
   \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\

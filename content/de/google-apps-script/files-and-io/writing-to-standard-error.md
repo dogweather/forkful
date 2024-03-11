@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:48.538700-07:00
 description: "Das Schreiben auf Standardfehler (stderr) in Programmiersprachen handelt\
   \ davon, Fehlermeldungen und Diagnosen auf einen separaten Datenstrom, abseits der\u2026"
-lastmod: '2024-02-25T18:49:50.552392-07:00'
+lastmod: '2024-03-11T00:14:27.312417-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler (stderr) in Programmiersprachen handelt\
   \ davon, Fehlermeldungen und Diagnosen auf einen separaten Datenstrom, abseits der\u2026"

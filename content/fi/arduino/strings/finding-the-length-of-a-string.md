@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:48.693442-07:00
 description: "\"Stringin\" pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien\
   \ merkkien lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n esimerkiksi\
   \ tietojen\u2026"
-lastmod: '2024-02-25T18:49:53.726035-07:00'
+lastmod: '2024-03-11T00:14:30.839987-06:00'
 model: gpt-4-1106-preview
 summary: "\"Stringin\" pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien\
   \ merkkien lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n esimerkiksi\

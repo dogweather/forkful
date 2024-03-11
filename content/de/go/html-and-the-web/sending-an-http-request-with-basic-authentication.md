@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:57.833563-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet\
   \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen\u2026"
-lastmod: '2024-02-25T18:49:50.488327-07:00'
+lastmod: '2024-03-11T00:14:27.245031-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet\
   \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen\u2026"

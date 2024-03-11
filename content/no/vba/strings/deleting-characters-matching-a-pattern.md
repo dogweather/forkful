@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:22.415154-07:00
 description: "\xC5 slette tegn som matcher et spesifikt m\xF8nster i Visual Basic\
   \ for Applications (VBA) involverer \xE5 identifisere og deretter fjerne tegn eller\
   \ strenger som\u2026"
-lastmod: '2024-02-25T18:49:38.783773-07:00'
+lastmod: '2024-03-11T00:14:14.139776-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 slette tegn som matcher et spesifikt m\xF8nster i Visual Basic for\
   \ Applications (VBA) involverer \xE5 identifisere og deretter fjerne tegn eller\

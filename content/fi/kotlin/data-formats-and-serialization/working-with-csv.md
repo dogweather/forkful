@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:49.754023-07:00
 description: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu tietojen lukeminen\
   \ ja kirjoittaminen CSV-tiedostoihin, jotka ovat yleinen muoto taulukoiden tietojen\u2026"
-lastmod: '2024-02-25T18:49:53.468941-07:00'
+lastmod: '2024-03-11T00:14:30.499559-06:00'
 model: gpt-4-0125-preview
 summary: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu tietojen lukeminen\
   \ ja kirjoittaminen CSV-tiedostoihin, jotka ovat yleinen muoto taulukoiden tietojen\u2026"

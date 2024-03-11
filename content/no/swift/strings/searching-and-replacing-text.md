@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:36.284973-07:00
 description: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fraser\
   \ i en streng. Det sparer tid og minimerer feil n\xE5r du jobber med store datamengder\
   \ eller\u2026"
-lastmod: '2024-02-25T18:49:39.306393-07:00'
+lastmod: '2024-03-11T00:14:14.723149-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fraser i\
   \ en streng. Det sparer tid og minimerer feil n\xE5r du jobber med store datamengder\

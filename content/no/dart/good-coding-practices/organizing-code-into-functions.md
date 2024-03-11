@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:12.234752-07:00
 description: "\xC5 organisere kode i funksjoner i Dart handler om \xE5 definere gjenbrukbare\
   \ kodeblokker som utf\xF8rer spesifikke oppgaver, typisk ved \xE5 motta inndata,\
   \ behandle\u2026"
-lastmod: '2024-03-09T21:06:05.251134-07:00'
+lastmod: '2024-03-11T00:14:14.022571-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner i Dart handler om \xE5 definere gjenbrukbare\
   \ kodeblokker som utf\xF8rer spesifikke oppgaver, typisk ved \xE5 motta inndata,\

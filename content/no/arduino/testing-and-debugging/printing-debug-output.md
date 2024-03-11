@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:54.266485-07:00
 description: "\xC5 skrive ut feils\xF8kingsdata (\"debug output\") handler om \xE5\
   \ vise programdata og -tilstander til skjermen for \xE5 forst\xE5 hva koden faktisk\
   \ gj\xF8r. Programmerere\u2026"
-lastmod: '2024-02-25T18:49:39.239927-07:00'
+lastmod: '2024-03-11T00:14:14.651343-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut feils\xF8kingsdata (\"debug output\") handler om \xE5 vise\
   \ programdata og -tilstander til skjermen for \xE5 forst\xE5 hva koden faktisk gj\xF8\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:14.314566-07:00
 description: "Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):ssa\
   \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4. T\xE4\
   t\xE4 tekniikkaa\u2026"
-lastmod: '2024-02-25T18:49:53.340883-07:00'
+lastmod: '2024-03-11T00:14:30.356185-06:00'
 model: gpt-4-0125-preview
 summary: "Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):ssa\
   \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4. T\xE4\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:21.805021-07:00
 description: "Extracting substrings means grabbing a smaller piece from a larger string\u2014\
   kind of like slicing a cake to get a piece you actually want to eat. Programmers\u2026"
-lastmod: '2024-02-25T18:49:56.310149-07:00'
+lastmod: '2024-03-11T00:14:33.746952-06:00'
 model: gpt-4-1106-preview
 summary: "Extracting substrings means grabbing a smaller piece from a larger string\u2014\
   kind of like slicing a cake to get a piece you actually want to eat. Programmers\u2026"

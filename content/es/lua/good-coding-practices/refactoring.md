@@ -3,7 +3,7 @@ date: 2024-01-26 01:45:42.902855-07:00
 description: "Refactorizar es el arte de ajustar c\xF3digo existente para mejorar\
   \ su estructura, legibilidad y eficiencia sin alterar su comportamiento externo.\
   \ Los\u2026"
-lastmod: '2024-02-25T18:49:55.681567-07:00'
+lastmod: '2024-03-11T00:14:33.029999-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizar es el arte de ajustar c\xF3digo existente para mejorar su estructura,\
   \ legibilidad y eficiencia sin alterar su comportamiento externo. Los\u2026"

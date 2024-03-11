@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:11.520973-07:00
 description: "Remover aspas de uma string em VBA envolve eliminar inst\xE2ncias de\
   \ aspas simples (`'`) ou duplas (`\"`) que possam encapsular ou estar embutidas\
   \ na string.\u2026"
-lastmod: '2024-02-25T18:49:44.019048-07:00'
+lastmod: '2024-03-11T00:14:20.092520-06:00'
 model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em VBA envolve eliminar inst\xE2ncias de aspas\
   \ simples (`'`) ou duplas (`\"`) que possam encapsular ou estar embutidas na string.\u2026"

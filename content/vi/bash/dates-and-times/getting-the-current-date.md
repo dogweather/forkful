@@ -6,7 +6,7 @@ description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u
   y ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn\
   \ c\u1EA7n n\xF3 cho vi\u1EC7c ghi nh\u1EADt k\xFD, \u0111\xE1nh d\u1EA5u th\u1EDD\
   i gian, ho\u1EB7c l\xEAn l\u1ECBch c\xE1c t\xE1c\u2026"
-lastmod: '2024-02-25T18:49:35.237926-07:00'
+lastmod: '2024-03-11T00:14:10.183676-06:00'
 model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u1EA5y\
   \ ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn\

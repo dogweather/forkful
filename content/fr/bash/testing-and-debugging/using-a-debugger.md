@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:31.296164-07:00
 description: "Utiliser un d\xE9bogueur en Bash signifie utiliser des outils pour tester\
   \ et trouver des probl\xE8mes dans vos scripts, comme pi\xE9ger des bugs qui font\
   \ planter\u2026"
-lastmod: '2024-02-25T18:49:54.690468-07:00'
+lastmod: '2024-03-11T00:14:31.928700-06:00'
 model: gpt-4-0125-preview
 summary: "Utiliser un d\xE9bogueur en Bash signifie utiliser des outils pour tester\
   \ et trouver des probl\xE8mes dans vos scripts, comme pi\xE9ger des bugs qui font\

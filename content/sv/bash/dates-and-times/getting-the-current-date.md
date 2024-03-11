@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:58.616225-07:00
 description: "Att h\xE4mta det aktuella datumet i Bash inneb\xE4r att anv\xE4nda inbyggda\
   \ kommandon f\xF6r att visa datum och tid i olika format. Programmerare anv\xE4\
   nder denna\u2026"
-lastmod: '2024-02-25T18:49:36.408019-07:00'
+lastmod: '2024-03-11T00:14:11.474072-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i Bash inneb\xE4r att anv\xE4nda inbyggda\
   \ kommandon f\xF6r att visa datum och tid i olika format. Programmerare anv\xE4\

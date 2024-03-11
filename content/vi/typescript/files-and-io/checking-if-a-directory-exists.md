@@ -7,7 +7,7 @@ description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA
   \ s\u1EF1 c\xF3 m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc t\u1EEB n\xF3\
   \ ho\u1EB7c ghi v\xE0o n\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3\u2026"
-lastmod: '2024-02-25T18:49:34.663339-07:00'
+lastmod: '2024-03-11T00:14:09.596862-06:00'
 model: gpt-4-0125-preview
 summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4\
   ng l\xE0 \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng folder th\u1EF1c s\u1EF1\

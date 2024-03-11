@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:18:28.840971-07:00
 description: "Regulj\xE4ra uttryck, eller regex, \xE4r sekvenser av tecken som bildar\
   \ ett s\xF6km\xF6nster, ofta anv\xE4nda f\xF6r str\xE4ngmatchning eller manipuleringsuppgifter.\u2026"
-lastmod: '2024-02-25T18:49:36.557202-07:00'
+lastmod: '2024-03-11T00:14:11.635583-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck, eller regex, \xE4r sekvenser av tecken som bildar\
   \ ett s\xF6km\xF6nster, ofta anv\xE4nda f\xF6r str\xE4ngmatchning eller manipuleringsuppgifter.\u2026"

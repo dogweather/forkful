@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:31.371518-07:00
 description: "Organizzare il codice in funzioni riguarda la strutturazione del codice\
   \ di Google Apps Script separando i segmenti logici in blocchi distinti, ognuno\
   \ dei\u2026"
-lastmod: '2024-02-25T18:49:40.891103-07:00'
+lastmod: '2024-03-11T00:14:16.514341-06:00'
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni riguarda la strutturazione del codice\
   \ di Google Apps Script separando i segmenti logici in blocchi distinti, ognuno\

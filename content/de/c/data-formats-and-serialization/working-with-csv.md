@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:52.995548-07:00
 description: "Im Bereich der Programmierung beinhaltet die Arbeit mit CSV-Dateien\
   \ (Comma-Separated Values, d.h. durch Kommas getrennte Werte) das Lesen von und\
   \ das\u2026"
-lastmod: '2024-02-25T18:49:51.426483-07:00'
+lastmod: '2024-03-11T00:14:28.288569-06:00'
 model: gpt-4-0125-preview
 summary: "Im Bereich der Programmierung beinhaltet die Arbeit mit CSV-Dateien (Comma-Separated\
   \ Values, d.h. durch Kommas getrennte Werte) das Lesen von und das\u2026"

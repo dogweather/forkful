@@ -6,7 +6,7 @@ date: 2024-01-28 02:05:09.671092-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att ta text, som\
   \ \"2023-04-05\", och omvandla den till ett datumformat som ditt program kan f\xF6\
   rst\xE5 och arbeta\u2026"
-lastmod: '2024-02-25T18:49:35.918227-07:00'
+lastmod: '2024-03-11T00:14:10.907442-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att ta text, som \"\
   2023-04-05\", och omvandla den till ett datumformat som ditt program kan f\xF6rst\xE5\

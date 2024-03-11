@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:41.402275-07:00
 description: "Changer une cha\xEEne en minuscules, c'est transformer tous ses caract\xE8\
   res en leur \xE9quivalent en lettre minuscule. Les programmeurs font \xE7a pour\
   \ uniformiser\u2026"
-lastmod: '2024-02-25T18:49:54.374253-07:00'
+lastmod: '2024-03-11T00:14:31.578732-06:00'
 model: gpt-4-1106-preview
 summary: "Changer une cha\xEEne en minuscules, c'est transformer tous ses caract\xE8\
   res en leur \xE9quivalent en lettre minuscule. Les programmeurs font \xE7a pour\

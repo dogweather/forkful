@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:57.963990-07:00
 description: "Escribir pruebas en Clojure, al igual que en otros lenguajes de programaci\xF3\
   n, implica crear c\xF3digo dedicado para verificar que tu c\xF3digo principal\u2026"
-lastmod: '2024-02-25T18:49:55.221854-07:00'
+lastmod: '2024-03-11T00:14:32.490064-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Clojure, al igual que en otros lenguajes de programaci\xF3\
   n, implica crear c\xF3digo dedicado para verificar que tu c\xF3digo principal\u2026"

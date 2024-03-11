@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:47.699405-07:00
 description: "Att skriva till en textfil i Elixir \xE4r en viktig f\xE4rdighet f\xF6\
   r utvecklare, vilket m\xF6jligg\xF6r datalagring, loggning eller exportering av\
   \ m\xE4nniskol\xE4sbar\u2026"
-lastmod: '2024-02-25T18:49:35.927445-07:00'
+lastmod: '2024-03-11T00:14:10.917423-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Elixir \xE4r en viktig f\xE4rdighet f\xF6r\
   \ utvecklare, vilket m\xF6jligg\xF6r datalagring, loggning eller exportering av\

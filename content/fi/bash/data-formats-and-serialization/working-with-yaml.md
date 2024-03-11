@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:48.391143-07:00
 description: "YAML, joka tarkoittaa YAML Ain't Markup Languagea, on ihmisluettava\
   \ tiedon serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 asetustiedostoissa\
   \ sek\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.670495-07:00'
+lastmod: '2024-03-11T00:14:30.715883-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, joka tarkoittaa YAML Ain't Markup Languagea, on ihmisluettava tiedon\
   \ serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 asetustiedostoissa sek\xE4\

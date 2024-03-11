@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:37.494989-07:00
 description: "Verificar si un directorio existe en JavaScript es esencial para las\
   \ tareas de manipulaci\xF3n de archivos, permitiendo a los scripts verificar la\
   \ presencia\u2026"
-lastmod: '2024-02-25T18:49:55.941979-07:00'
+lastmod: '2024-03-11T00:14:33.305700-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en JavaScript es esencial para las tareas\
   \ de manipulaci\xF3n de archivos, permitiendo a los scripts verificar la presencia\u2026"

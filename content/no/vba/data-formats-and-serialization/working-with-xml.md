@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:55.728872-07:00
 description: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involverer\
   \ parsing, oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\u2026"
-lastmod: '2024-02-25T18:49:38.828009-07:00'
+lastmod: '2024-03-11T00:14:14.187696-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involverer parsing,\
   \ oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\u2026"

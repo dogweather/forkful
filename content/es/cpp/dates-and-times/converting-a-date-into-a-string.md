@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:02.571149-07:00
 description: "Convertir una fecha a texto permite mostrarla en diferentes formatos,\
   \ facilitando la lectura para humanos o la compatibilidad con sistemas externos.\
   \ Es\u2026"
-lastmod: '2024-02-25T18:49:55.856374-07:00'
+lastmod: '2024-03-11T00:14:33.209392-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una fecha a texto permite mostrarla en diferentes formatos, facilitando\
   \ la lectura para humanos o la compatibilidad con sistemas externos. Es\u2026"

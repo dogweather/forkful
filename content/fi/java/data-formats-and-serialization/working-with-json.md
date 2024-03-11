@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:25.288240-07:00
 description: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoittaa\
   \ t\xE4m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi.\
   \ Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.387552-07:00'
+lastmod: '2024-03-11T00:14:30.408949-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoittaa t\xE4\
   m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi.\

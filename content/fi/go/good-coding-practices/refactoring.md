@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:17.717668-07:00
 description: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan tietokonekoodin\
   \ uudelleenj\xE4rjestely\xE4\u2014faktorisoinnin muuttamista\u2014muuttamatta sen\
   \ ulkoista\u2026"
-lastmod: '2024-02-25T18:49:53.038336-07:00'
+lastmod: '2024-03-11T00:14:29.985120-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan tietokonekoodin\
   \ uudelleenj\xE4rjestely\xE4\u2014faktorisoinnin muuttamista\u2014muuttamatta sen\

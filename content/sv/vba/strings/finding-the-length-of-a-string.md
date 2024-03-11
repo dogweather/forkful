@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:50.637153-07:00
 description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Applications\
   \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller. Programmerare\
   \ utf\xF6r ofta denna\u2026"
-lastmod: '2024-02-25T18:49:36.027778-07:00'
+lastmod: '2024-03-11T00:14:11.074180-06:00'
 model: gpt-4-0125-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Applications\
   \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller. Programmerare\

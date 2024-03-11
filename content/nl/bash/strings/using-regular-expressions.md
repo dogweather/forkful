@@ -5,7 +5,7 @@ date: 2024-01-28 22:09:15.121981-07:00
 description: "Reguliere expressies (regex) zijn patronen die zoekcriteria voor tekst\
   \ defini\xEBren. Programmeurs gebruiken ze voor het matchen, vervangen of extraheren\
   \ van\u2026"
-lastmod: '2024-02-25T18:49:48.308463-07:00'
+lastmod: '2024-03-11T00:14:24.803439-06:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) zijn patronen die zoekcriteria voor tekst defini\xEB\
   ren. Programmeurs gebruiken ze voor het matchen, vervangen of extraheren van\u2026"

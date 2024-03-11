@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:20.536942-07:00
 description: "Refaktorering i Dart er prosessen med \xE5 restrukturere eksisterende\
   \ kode uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre dens\
   \ interne struktur,\u2026"
-lastmod: '2024-03-09T21:06:05.253838-07:00'
+lastmod: '2024-03-11T00:14:14.025901-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering i Dart er prosessen med \xE5 restrukturere eksisterende kode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre dens interne\

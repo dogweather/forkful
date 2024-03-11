@@ -5,7 +5,7 @@ date: 2024-02-01 22:07:25.969798-07:00
 description: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\xF6\
   n yhdistelm\xE4n\xE4 (esim. 3 + 4i), ovat keskeisi\xE4 erilaisissa laskennallisissa\
   \ ongelmissa,\u2026"
-lastmod: '2024-02-25T18:49:53.067674-07:00'
+lastmod: '2024-03-11T00:14:30.016867-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\xF6\
   n yhdistelm\xE4n\xE4 (esim. 3 + 4i), ovat keskeisi\xE4 erilaisissa laskennallisissa\

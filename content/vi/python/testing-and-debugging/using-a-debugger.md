@@ -6,7 +6,7 @@ description: "S\u1EED d\u1EE5ng debugger ch\xEDnh l\xE0 qu\xE1 tr\xECnh \u0111i 
   \ t\u1EEBng d\xF2ng code Python c\u1EE7a b\u1EA1n \u0111\u1EC3 t\xECm l\u1ED7i v\xE0\
   \ hi\u1EC3u r\xF5 h\xE0nh vi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh. Ch\xFAng ta l\xE0\
   m \u0111i\u1EC1u n\xE0y v\xEC n\xF3 d\u1EC5\u2026"
-lastmod: '2024-02-25T18:49:34.479153-07:00'
+lastmod: '2024-03-11T00:14:09.334165-06:00'
 model: gpt-4-0125-preview
 summary: "S\u1EED d\u1EE5ng debugger ch\xEDnh l\xE0 qu\xE1 tr\xECnh \u0111i qua t\u1EEB\
   ng d\xF2ng code Python c\u1EE7a b\u1EA1n \u0111\u1EC3 t\xECm l\u1ED7i v\xE0 hi\u1EC3\

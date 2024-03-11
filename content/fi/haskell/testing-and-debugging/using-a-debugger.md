@@ -3,7 +3,7 @@ date: 2024-01-26 03:50:13.140023-07:00
 description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa koodisi syv\xE4llist\xE4 tutkimista\
   \ ty\xF6kaluilla, jotka on suunniteltu tarkastelemaan, keskeytt\xE4m\xE4\xE4n ja\
   \ manipuloimaan ohjelmaa\u2026"
-lastmod: '2024-02-25T18:49:53.532857-07:00'
+lastmod: '2024-03-11T00:14:30.568874-06:00'
 model: gpt-4-0125-preview
 summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa koodisi syv\xE4llist\xE4 tutkimista\
   \ ty\xF6kaluilla, jotka on suunniteltu tarkastelemaan, keskeytt\xE4m\xE4\xE4n ja\

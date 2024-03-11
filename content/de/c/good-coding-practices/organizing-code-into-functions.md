@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:10.686488-07:00
 description: "Code in Funktionen in C zu organisieren, bedeutet komplexe Aufgaben\
   \ in kleinere, wiederverwendbare Codebl\xF6cke zu unterteilen. Diese Praxis verbessert\
   \ die\u2026"
-lastmod: '2024-02-25T18:49:51.408649-07:00'
+lastmod: '2024-03-11T00:14:28.269218-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen in C zu organisieren, bedeutet komplexe Aufgaben in kleinere,\
   \ wiederverwendbare Codebl\xF6cke zu unterteilen. Diese Praxis verbessert die\u2026"

@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:35.355748-07:00
 description: "Checking if a directory exists is about determining the presence of\
   \ a directory at a specified path before performing operations like reading from\
   \ or\u2026"
-lastmod: '2024-02-25T18:49:56.808458-07:00'
+lastmod: '2024-03-11T00:14:34.240219-06:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists is about determining the presence of a directory\
   \ at a specified path before performing operations like reading from or\u2026"

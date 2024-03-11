@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:30.317956-07:00
 description: "Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten\
   \ tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erill\xE4\xE4\
   n\u2026"
-lastmod: '2024-02-25T18:49:54.006608-07:00'
+lastmod: '2024-03-11T00:14:31.144694-06:00'
 model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten\
   \ tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erill\xE4\xE4\

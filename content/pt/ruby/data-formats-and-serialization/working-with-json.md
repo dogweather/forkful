@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:58.426621-07:00
 description: "JSON (JavaScript Object Notation) \xE9 um formato leve de troca de dados,\
   \ prevalente em aplica\xE7\xF5es web para a troca de dados entre clientes e servidores.\u2026"
-lastmod: '2024-02-25T18:49:44.746538-07:00'
+lastmod: '2024-03-11T00:14:20.862657-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE9 um formato leve de troca de dados,\
   \ prevalente em aplica\xE7\xF5es web para a troca de dados entre clientes e servidores.\u2026"

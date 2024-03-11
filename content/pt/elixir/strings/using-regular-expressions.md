@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:33.965900-07:00
 description: "Express\xF5es regulares (regex) em Elixir s\xE3o usadas para buscar,\
   \ combinar e manipular strings baseadas em padr\xF5es espec\xEDficos. Programadores\
   \ utilizam regex\u2026"
-lastmod: '2024-02-25T18:49:43.889508-07:00'
+lastmod: '2024-03-11T00:14:19.905060-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Elixir s\xE3o usadas para buscar, combinar\
   \ e manipular strings baseadas em padr\xF5es espec\xEDficos. Programadores utilizam\

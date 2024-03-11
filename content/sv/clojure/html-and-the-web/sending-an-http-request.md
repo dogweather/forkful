@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:14.491633-07:00
 description: "Att skicka en HTTP-beg\xE4ran \xE4r hur en dator eller app fr\xE5gar\
   \ efter data fr\xE5n en server eller en tj\xE4nst p\xE5 n\xE4tet. Programmerare\
   \ g\xF6r detta f\xF6r att interagera\u2026"
-lastmod: '2024-02-25T18:49:35.859826-07:00'
+lastmod: '2024-03-11T00:14:10.836859-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran \xE4r hur en dator eller app fr\xE5gar efter\
   \ data fr\xE5n en server eller en tj\xE4nst p\xE5 n\xE4tet. Programmerare g\xF6\

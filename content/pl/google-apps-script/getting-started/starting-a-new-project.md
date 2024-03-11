@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:14.944408-07:00
 description: "Rozpocz\u0119cie nowego projektu w Google Apps Script (GAS) wi\u0105\
   \u017Ce si\u0119 z inicjalizacj\u0105 pliku skryptu w ekosystemie Google (Google\
   \ Drive, Docs, Arkusze itp.) w\u2026"
-lastmod: '2024-02-25T18:49:33.327436-07:00'
+lastmod: '2024-03-11T00:14:08.074172-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w Google Apps Script (GAS) wi\u0105\u017C\
   e si\u0119 z inicjalizacj\u0105 pliku skryptu w ekosystemie Google (Google Drive,\

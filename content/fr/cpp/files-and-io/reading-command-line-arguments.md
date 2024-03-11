@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:29.369164-07:00
 description: "Lire les arguments de ligne de commande permet \xE0 vos programmes C++\
   \ d\u2019agir sur des infos fournies au lancement. On le fait pour rendre les applis\u2026"
-lastmod: '2024-02-25T18:49:54.839251-07:00'
+lastmod: '2024-03-11T00:14:32.076428-06:00'
 model: gpt-4-1106-preview
 summary: "Lire les arguments de ligne de commande permet \xE0 vos programmes C++ d\u2019\
   agir sur des infos fournies au lancement. On le fait pour rendre les applis\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:29.232157-07:00
 description: "R\xE9cup\xE9rer la date courante dans PowerShell consiste \xE0 obtenir\
   \ la date et l'heure actuelles du syst\xE8me. Cette op\xE9ration est fondamentale\
   \ pour des t\xE2ches\u2026"
-lastmod: '2024-02-25T18:49:54.741036-07:00'
+lastmod: '2024-03-11T00:14:31.981796-06:00'
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date courante dans PowerShell consiste \xE0 obtenir la\
   \ date et l'heure actuelles du syst\xE8me. Cette op\xE9ration est fondamentale pour\

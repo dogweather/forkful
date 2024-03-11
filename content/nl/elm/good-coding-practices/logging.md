@@ -5,7 +5,7 @@ date: 2024-01-28 22:02:43.229816-07:00
 description: "Loggen is in wezen het proces van het vastleggen van gebeurtenissen\
   \ en data-uitvoer van een softwareprogramma tijdens het draaien, denk erover als\
   \ het\u2026"
-lastmod: '2024-02-25T18:49:48.072064-07:00'
+lastmod: '2024-03-11T00:14:24.554337-06:00'
 model: gpt-4-0125-preview
 summary: "Loggen is in wezen het proces van het vastleggen van gebeurtenissen en data-uitvoer\
   \ van een softwareprogramma tijdens het draaien, denk erover als het\u2026"

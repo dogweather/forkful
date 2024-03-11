@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:57.652041-07:00
 description: "Drukowanie danych debugowania to jak rozmowa z programem: \"Co robisz?\"\
   . Programi\u015Bci u\u017Cywaj\u0105 tego do \u015Bledzenia warto\u015Bci i zachowania\
   \ aplikacji podczas\u2026"
-lastmod: '2024-02-25T18:49:33.731547-07:00'
+lastmod: '2024-03-11T00:14:08.548908-06:00'
 model: gpt-4-1106-preview
 summary: "Drukowanie danych debugowania to jak rozmowa z programem: \"Co robisz?\"\
   . Programi\u015Bci u\u017Cywaj\u0105 tego do \u015Bledzenia warto\u015Bci i zachowania\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:14.987121-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Python handler om \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe i filsystemet f\xF8r man utf\xF8rer operasjoner\
   \ som \xE5 lese eller\u2026"
-lastmod: '2024-02-25T18:49:38.603191-07:00'
+lastmod: '2024-03-11T00:14:13.895481-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Python handler om \xE5 verifisere tilstedev\xE6\
   relsen av en mappe i filsystemet f\xF8r man utf\xF8rer operasjoner som \xE5 lese\

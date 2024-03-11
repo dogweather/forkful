@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:33.745765-07:00
 description: "Analizar HTML en C implica examinar documentos HTML para extraer datos,\
   \ estructura o partes espec\xEDficas de forma eficiente, a menudo como precursor\
   \ de la\u2026"
-lastmod: '2024-02-25T18:49:56.011601-07:00'
+lastmod: '2024-03-11T00:14:33.380940-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML en C implica examinar documentos HTML para extraer datos,\
   \ estructura o partes espec\xEDficas de forma eficiente, a menudo como precursor\

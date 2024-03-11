@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:32.872057-07:00
 description: "Retrieving the current date in Bash involves using built-in commands\
   \ to display the date and time in various formats. Programmers use this functionality\u2026"
-lastmod: '2024-02-25T18:49:56.692843-07:00'
+lastmod: '2024-03-11T00:14:34.120813-06:00'
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in Bash involves using built-in commands to\
   \ display the date and time in various formats. Programmers use this functionality\u2026"

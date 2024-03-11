@@ -5,7 +5,7 @@ date: 2024-01-28 22:11:58.687308-07:00
 description: "Werken met YAML houdt in dat je gegevens parseert en genereert in de\
   \ voor mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het\
   \ voor\u2026"
-lastmod: '2024-02-25T18:49:48.466260-07:00'
+lastmod: '2024-03-11T00:14:24.971833-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met YAML houdt in dat je gegevens parseert en genereert in de voor\
   \ mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het voor\u2026"

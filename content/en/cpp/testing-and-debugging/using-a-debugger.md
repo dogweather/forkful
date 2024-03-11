@@ -3,7 +3,7 @@ date: 2024-01-25 20:50:24.639296-07:00
 description: "Using a debugger means firing up a tool that lets you peek inside your\
   \ running program to understand what's really happening. Programmers do this to\
   \ find\u2026"
-lastmod: '2024-02-25T18:49:56.799941-07:00'
+lastmod: '2024-03-11T00:14:34.231086-06:00'
 model: gpt-4-1106-preview
 summary: "Using a debugger means firing up a tool that lets you peek inside your running\
   \ program to understand what's really happening. Programmers do this to find\u2026"

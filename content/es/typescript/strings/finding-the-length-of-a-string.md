@@ -2,7 +2,7 @@
 date: 2024-01-20 17:48:15.930001-07:00
 description: "En TypeScript, hallar la longitud de una cadena implica contar la cantidad\
   \ de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para\u2026"
-lastmod: '2024-02-25T18:49:55.290980-07:00'
+lastmod: '2024-03-11T00:14:32.609527-06:00'
 model: gpt-4-1106-preview
 summary: "En TypeScript, hallar la longitud de una cadena implica contar la cantidad\
   \ de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para\u2026"

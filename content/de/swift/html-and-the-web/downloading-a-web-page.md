@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:43.239527-07:00
 description: "Das Herunterladen einer Webseite l\xE4dt deren Inhalt programmatisch\
   \ herunter, um Daten zu sammeln oder Dienste zu integrieren. Entwickler tun dies,\
   \ um\u2026"
-lastmod: '2024-02-25T18:49:51.275054-07:00'
+lastmod: '2024-03-11T00:14:28.126982-06:00'
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite l\xE4dt deren Inhalt programmatisch herunter,\
   \ um Daten zu sammeln oder Dienste zu integrieren. Entwickler tun dies, um\u2026"

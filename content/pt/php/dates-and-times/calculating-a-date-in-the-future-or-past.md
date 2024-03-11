@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:26.791419-07:00
 description: "Calcular uma data no futuro ou no passado \xE9 simplesmente identificar\
   \ uma data al\xE9m ou antes da atual. Programadores fazem isso para lidar com\u2026"
-lastmod: '2024-02-25T18:49:44.301135-07:00'
+lastmod: '2024-03-11T00:14:20.394997-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou no passado \xE9 simplesmente identificar\
   \ uma data al\xE9m ou antes da atual. Programadores fazem isso para lidar com\u2026"

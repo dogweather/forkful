@@ -2,7 +2,7 @@
 date: 2024-01-26 01:02:48.266092-07:00
 description: "Le journalisation, c'est essentiellement consigner ce que fait votre\
   \ application - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"
-lastmod: '2024-02-25T18:49:54.958073-07:00'
+lastmod: '2024-03-11T00:14:32.203708-06:00'
 model: gpt-4-1106-preview
 summary: "Le journalisation, c'est essentiellement consigner ce que fait votre application\
   \ - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"

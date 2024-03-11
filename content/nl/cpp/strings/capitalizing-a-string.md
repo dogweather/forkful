@@ -5,7 +5,7 @@ date: 2024-01-28 21:55:28.925104-07:00
 description: "Het kapitaliseren van een tekenreeks betekent het omzetten van alle\
   \ tekens in de tekst naar hoofdletters. Programmeurs doen dit voor uniformiteit,\
   \ nadruk,\u2026"
-lastmod: '2024-02-25T18:49:48.429614-07:00'
+lastmod: '2024-03-11T00:14:24.931634-06:00'
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een tekenreeks betekent het omzetten van alle tekens\
   \ in de tekst naar hoofdletters. Programmeurs doen dit voor uniformiteit, nadruk,\u2026"

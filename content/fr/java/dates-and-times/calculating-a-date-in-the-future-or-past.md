@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:23.368084-07:00
 description: "Calculer une date dans le futur ou le pass\xE9, c'est trouver une date\
   \ avant ou apr\xE8s une date donn\xE9e. Les programmeurs le font souvent pour des\u2026"
-lastmod: '2024-02-25T18:49:54.401328-07:00'
+lastmod: '2024-03-11T00:14:31.609305-06:00'
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est trouver une date avant\
   \ ou apr\xE8s une date donn\xE9e. Les programmeurs le font souvent pour des\u2026"

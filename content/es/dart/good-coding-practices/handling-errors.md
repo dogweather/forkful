@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:30.516104-07:00
 description: "Manejar errores en Dart se trata de anticipar y gestionar las excepciones\
   \ que surgen durante la ejecuci\xF3n del programa para mejorar la confiabilidad\
   \ y la\u2026"
-lastmod: '2024-03-09T21:06:22.334329-07:00'
+lastmod: '2024-03-11T00:14:32.581500-06:00'
 model: gpt-4-0125-preview
 summary: "Manejar errores en Dart se trata de anticipar y gestionar las excepciones\
   \ que surgen durante la ejecuci\xF3n del programa para mejorar la confiabilidad\

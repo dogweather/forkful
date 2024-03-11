@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:58.148648-07:00
 description: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg\
   \ som forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre\
   \ korrekthet,\u2026"
-lastmod: '2024-02-25T18:49:39.499288-07:00'
+lastmod: '2024-03-11T00:14:14.935057-06:00'
 model: gpt-4-0125-preview
 summary: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg som\
   \ forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre korrekthet,\u2026"

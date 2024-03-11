@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:55.159656-07:00
 description: "Omgj\xF8ring av tekst til sm\xE5 bokstaver betyr \xE5 konvertere alle\
   \ bokstavene i en streng til deres sm\xE5 bokstaver. Programmerere gj\xF8r dette\
   \ for \xE5 standardisere\u2026"
-lastmod: '2024-02-25T18:49:38.916602-07:00'
+lastmod: '2024-03-11T00:14:14.286715-06:00'
 model: gpt-4-1106-preview
 summary: "Omgj\xF8ring av tekst til sm\xE5 bokstaver betyr \xE5 konvertere alle bokstavene\
   \ i en streng til deres sm\xE5 bokstaver. Programmerere gj\xF8r dette for \xE5 standardisere\u2026"

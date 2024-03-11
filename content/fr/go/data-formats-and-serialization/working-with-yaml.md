@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:39.020135-07:00
 description: "Travailler avec YAML en Go implique l'analyse de fichiers YAML (YAML\
   \ Ain't Markup Language), un standard de s\xE9rialisation de donn\xE9es convivial\
   \ pour\u2026"
-lastmod: '2024-02-25T18:49:54.056810-07:00'
+lastmod: '2024-03-11T00:14:31.197184-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec YAML en Go implique l'analyse de fichiers YAML (YAML Ain't\
   \ Markup Language), un standard de s\xE9rialisation de donn\xE9es convivial pour\u2026"

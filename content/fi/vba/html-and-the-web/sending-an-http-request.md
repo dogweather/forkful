@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:42.188267-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Visual Basic for Applications (VBA)\
   \ -ohjelmassa tarkoittaa web-resurssien tai -palveluiden ohjelmallista k\xE4ytt\xF6\
   \xE4 tekem\xE4ll\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.320712-07:00'
+lastmod: '2024-03-11T00:14:30.334229-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Visual Basic for Applications (VBA) -ohjelmassa\
   \ tarkoittaa web-resurssien tai -palveluiden ohjelmallista k\xE4ytt\xF6\xE4 tekem\xE4\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:44.664371-07:00
 description: "Downloading a web page means grabbing the data from the web and bringing\
   \ it into your app. Programmers do it to fetch content, interact with online\u2026"
-lastmod: '2024-02-25T18:49:56.831239-07:00'
+lastmod: '2024-03-11T00:14:34.266046-06:00'
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the data from the web and bringing\
   \ it into your app. Programmers do it to fetch content, interact with online\u2026"

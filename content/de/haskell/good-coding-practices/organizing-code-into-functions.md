@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:47.613607-07:00
 description: "Code in Haskell in Funktionen zu organisieren bedeutet, Ihren Code in\
   \ wiederverwendbare, benannte Bl\xF6cke aufzubrechen. Warum? Es h\xE4lt Ihren Code\
   \ DRY\u2026"
-lastmod: '2024-02-25T18:49:50.994060-07:00'
+lastmod: '2024-03-11T00:14:27.833984-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Haskell in Funktionen zu organisieren bedeutet, Ihren Code in wiederverwendbare,\
   \ benannte Bl\xF6cke aufzubrechen. Warum? Es h\xE4lt Ihren Code DRY\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:01:14.630160-07:00
 description: "Das Suchen und Ersetzen von Text in Visual Basic f\xFCr Applikationen\
   \ (VBA) ist unerl\xE4sslich f\xFCr die programmatische Bearbeitung von Dokumenten,\u2026"
-lastmod: '2024-02-25T18:49:50.767473-07:00'
+lastmod: '2024-03-11T00:14:27.592176-06:00'
 model: gpt-4-0125-preview
 summary: "Das Suchen und Ersetzen von Text in Visual Basic f\xFCr Applikationen (VBA)\
   \ ist unerl\xE4sslich f\xFCr die programmatische Bearbeitung von Dokumenten,\u2026"

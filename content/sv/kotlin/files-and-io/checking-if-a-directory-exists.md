@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:41.866159-07:00
 description: "Att kontrollera om en katalog finns i Kotlin inneb\xE4r att verifiera\
   \ n\xE4rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g. Programmerare utf\xF6\
   r denna uppgift f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:36.182176-07:00'
+lastmod: '2024-03-11T00:14:11.242893-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Kotlin inneb\xE4r att verifiera n\xE4\
   rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g. Programmerare utf\xF6r denna\

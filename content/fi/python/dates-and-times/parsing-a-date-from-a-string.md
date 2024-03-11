@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:08.905973-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
   \ tekstuaalisen p\xE4iv\xE4- ja aikatiedon muuntamista datetime-objektiksi tai vastaavaksi\
   \ rakenteelliseksi\u2026"
-lastmod: '2024-02-25T18:49:53.127117-07:00'
+lastmod: '2024-03-11T00:14:30.079506-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstuaalisen\
   \ p\xE4iv\xE4- ja aikatiedon muuntamista datetime-objektiksi tai vastaavaksi rakenteelliseksi\u2026"

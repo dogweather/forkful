@@ -3,7 +3,7 @@ date: 2024-01-26 04:44:51.433838-07:00
 description: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` och\
   \ `b` \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`). I programmering\
   \ anv\xE4nder vi\u2026"
-lastmod: '2024-02-25T18:49:35.814626-07:00'
+lastmod: '2024-03-11T00:14:10.788070-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` och `b`\
   \ \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`). I programmering\

@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:33.068074-07:00
 description: "\xC5 lese en tekstfil i Dart inneb\xE6rer \xE5 f\xE5 tilgang til og\
   \ hente data fra filer lagret p\xE5 filsystemet. Programmerere gj\xF8r dette for\
   \ \xE5 h\xE5ndtere inndata,\u2026"
-lastmod: '2024-03-09T21:06:05.262394-07:00'
+lastmod: '2024-03-11T00:14:14.036263-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i Dart inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
   \ data fra filer lagret p\xE5 filsystemet. Programmerere gj\xF8r dette for \xE5\

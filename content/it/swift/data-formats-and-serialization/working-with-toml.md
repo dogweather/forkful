@@ -2,7 +2,7 @@
 date: 2024-01-26 04:26:29.948785-07:00
 description: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di serializzazione\
   \ dei dati che \xE8 facile da leggere grazie alla sua chiara semantica. I programmatori\u2026"
-lastmod: '2024-02-25T18:49:41.642580-07:00'
+lastmod: '2024-03-11T00:14:17.410505-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di serializzazione\
   \ dei dati che \xE8 facile da leggere grazie alla sua chiara semantica. I programmatori\u2026"

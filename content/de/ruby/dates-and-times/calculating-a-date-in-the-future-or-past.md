@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:12.679439-07:00
 description: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6glicht\
   \ es, mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder\u2026"
-lastmod: '2024-02-25T18:49:51.459908-07:00'
+lastmod: '2024-03-11T00:14:28.327577-06:00'
 model: gpt-4-1106-preview
 summary: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6glicht es,\
   \ mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:09.011324-07:00
 description: "Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielill\xE4\
   , sis\xE4lt\xE4\xE4 omistautuneen koodin luomisen p\xE4\xE4koodikannan toimivuuden\
   \ varmistamiseksi.\u2026"
-lastmod: '2024-02-25T18:49:53.162887-07:00'
+lastmod: '2024-03-11T00:14:30.117201-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielill\xE4\
   , sis\xE4lt\xE4\xE4 omistautuneen koodin luomisen p\xE4\xE4koodikannan toimivuuden\

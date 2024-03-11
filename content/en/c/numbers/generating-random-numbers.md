@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:18.648341-07:00
 description: "Generating random numbers in C involves creating values that are unpredictable\
   \ and follow a specific distribution, such as uniform or normal. This\u2026"
-lastmod: '2024-02-25T18:49:56.944588-07:00'
+lastmod: '2024-03-11T00:14:34.390065-06:00'
 model: gpt-4-0125-preview
 summary: "Generating random numbers in C involves creating values that are unpredictable\
   \ and follow a specific distribution, such as uniform or normal. This\u2026"

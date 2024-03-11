@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:26.810313-07:00
 description: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 envoyer des messages\
   \ d'erreur et des diagnostics sur un flux s\xE9par\xE9, distinct de la sortie standard\u2026"
-lastmod: '2024-02-25T18:49:54.488956-07:00'
+lastmod: '2024-03-11T00:14:31.707031-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 envoyer des messages\
   \ d'erreur et des diagnostics sur un flux s\xE9par\xE9, distinct de la sortie standard\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:55.747152-07:00
 description: "Co to jest i dlaczego? Obliczanie daty w przysz\u0142o\u015Bci albo\
   \ przesz\u0142o\u015Bci to ustalanie nowych dat na podstawie zadanej. Programi\u015B\
   ci robi\u0105 to dla organizacji\u2026"
-lastmod: '2024-02-25T18:49:33.478578-07:00'
+lastmod: '2024-03-11T00:14:08.229146-06:00'
 model: gpt-4-1106-preview
 summary: "Co to jest i dlaczego? Obliczanie daty w przysz\u0142o\u015Bci albo przesz\u0142\
   o\u015Bci to ustalanie nowych dat na podstawie zadanej. Programi\u015Bci robi\u0105\

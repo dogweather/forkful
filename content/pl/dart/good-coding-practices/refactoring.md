@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:02.723251-07:00
 description: "Refaktoryzacja w Dart to proces restrukturyzacji istniej\u0105cego kodu\
   \ bez zmiany jego zewn\u0119trznego zachowania, maj\u0105cy na celu popraw\u0119\
   \ jego wewn\u0119trznej\u2026"
-lastmod: '2024-03-09T21:05:59.835569-07:00'
+lastmod: '2024-03-11T00:14:08.272651-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja w Dart to proces restrukturyzacji istniej\u0105cego kodu\
   \ bez zmiany jego zewn\u0119trznego zachowania, maj\u0105cy na celu popraw\u0119\

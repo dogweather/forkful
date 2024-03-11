@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:33.023731-07:00
 description: "Calcular una fecha en el futuro o en el pasado es una tarea com\xFA\
   n para los programadores, que se enfrentan a la programaci\xF3n de agendas, recordatorios\
   \ o\u2026"
-lastmod: '2024-03-09T21:06:22.339737-07:00'
+lastmod: '2024-03-11T00:14:32.588073-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o en el pasado es una tarea com\xFAn para\
   \ los programadores, que se enfrentan a la programaci\xF3n de agendas, recordatorios\

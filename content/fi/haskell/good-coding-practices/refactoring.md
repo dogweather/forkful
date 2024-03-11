@@ -3,7 +3,7 @@ date: 2024-01-26 01:37:46.349654-07:00
 description: "Koodin refaktorointi on prosessi, jossa koodia muokataan siten, ett\xE4\
   \ sen ulkoinen toiminta ei muutu. Kyse on koodin siistimisest\xE4 ja j\xE4rjest\xE4\
   misest\xE4,\u2026"
-lastmod: '2024-02-25T18:49:53.536464-07:00'
+lastmod: '2024-03-11T00:14:30.572838-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin refaktorointi on prosessi, jossa koodia muokataan siten, ett\xE4\
   \ sen ulkoinen toiminta ei muutu. Kyse on koodin siistimisest\xE4 ja j\xE4rjest\xE4\

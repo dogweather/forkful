@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:48.745331-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet, tehokas ty\xF6kalu kuvioiden tunnistamiseen\
   \ ja datan k\xE4sittelyyn, ovat olennaisia tekstink\xE4sittelyteht\xE4viss\xE4 kuten\
   \ sy\xF6tteen\u2026"
-lastmod: '2024-02-25T18:49:53.149522-07:00'
+lastmod: '2024-03-11T00:14:30.102837-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet, tehokas ty\xF6kalu kuvioiden tunnistamiseen\
   \ ja datan k\xE4sittelyyn, ovat olennaisia tekstink\xE4sittelyteht\xE4viss\xE4 kuten\

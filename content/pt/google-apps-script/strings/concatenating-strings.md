@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:08.108299-07:00
 description: "Concatenar strings envolve combinar duas ou mais strings em uma \xFA\
   nica string. Programadores fazem isso para construir dinamicamente mensagens, URLs,\
   \ ou\u2026"
-lastmod: '2024-02-25T18:49:43.762140-07:00'
+lastmod: '2024-03-11T00:14:19.762493-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar strings envolve combinar duas ou mais strings em uma \xFAnica\
   \ string. Programadores fazem isso para construir dinamicamente mensagens, URLs,\

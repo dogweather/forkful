@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:19.687293-07:00
 description: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica es el proceso\
   \ de realizar una solicitud a un servicio web requiriendo usuario y contrase\xF1\
   a codificados\u2026"
-lastmod: '2024-02-25T18:49:55.764361-07:00'
+lastmod: '2024-03-11T00:14:33.112235-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica es el proceso\
   \ de realizar una solicitud a un servicio web requiriendo usuario y contrase\xF1\

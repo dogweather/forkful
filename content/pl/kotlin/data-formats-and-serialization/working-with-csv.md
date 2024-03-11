@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:42.145690-07:00
 description: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
   \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"
-lastmod: '2024-02-25T18:49:33.751848-07:00'
+lastmod: '2024-03-11T00:14:08.569790-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
   \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"

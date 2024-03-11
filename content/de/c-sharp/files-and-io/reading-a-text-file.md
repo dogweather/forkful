@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:00.454383-07:00
 description: "Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu\
   \ laden, damit Code sie verarbeiten kann. Programmierer machen das, um Inhalte zu\u2026"
-lastmod: '2024-02-25T18:49:50.965146-07:00'
+lastmod: '2024-03-11T00:14:27.801854-06:00'
 model: gpt-4-1106-preview
 summary: "Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu laden,\
   \ damit Code sie verarbeiten kann. Programmierer machen das, um Inhalte zu\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:44.118753-07:00
 description: "Analisar HTML envolve analisar o c\xF3digo HTML de uma p\xE1gina da\
   \ web para extrair informa\xE7\xF5es ou elementos espec\xEDficos, uma tarefa comum\
   \ para web scraping,\u2026"
-lastmod: '2024-02-25T18:49:43.813707-07:00'
+lastmod: '2024-03-11T00:14:19.817973-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML envolve analisar o c\xF3digo HTML de uma p\xE1gina da web\
   \ para extrair informa\xE7\xF5es ou elementos espec\xEDficos, uma tarefa comum para\

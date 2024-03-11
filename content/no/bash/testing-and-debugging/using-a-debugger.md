@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:46.011422-07:00
 description: "\xC5 bruke en feils\xF8ker i Bash betyr \xE5 utnytte verkt\xF8y for\
   \ \xE5 teste og finne problemer i skriptene dine, som \xE5 fange feil som f\xE5\
   r koden din til \xE5 krasje eller\u2026"
-lastmod: '2024-02-25T18:49:39.152495-07:00'
+lastmod: '2024-03-11T00:14:14.553958-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en feils\xF8ker i Bash betyr \xE5 utnytte verkt\xF8y for \xE5\
   \ teste og finne problemer i skriptene dine, som \xE5 fange feil som f\xE5r koden\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:48.458931-07:00
 description: "Escribir en un archivo de texto en Ruby es una operaci\xF3n fundamental\
   \ que te permite almacenar salida y datos de manera persistente, permitiendo que\
   \ los\u2026"
-lastmod: '2024-02-25T18:49:56.076639-07:00'
+lastmod: '2024-03-11T00:14:33.451209-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en un archivo de texto en Ruby es una operaci\xF3n fundamental\
   \ que te permite almacenar salida y datos de manera persistente, permitiendo que\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:50:53.303250-07:00
 description: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe,\
   \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\u2026"
-lastmod: '2024-02-25T18:49:50.546697-07:00'
+lastmod: '2024-03-11T00:14:27.306867-06:00'
 model: gpt-4-0125-preview
 summary: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe,\
   \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\u2026"

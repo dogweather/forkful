@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:20.962435-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en C# sont un outil puissant\
   \ pour la correspondance de motifs au sein des cha\xEEnes de caract\xE8res, permettant\
   \ aux\u2026"
-lastmod: '2024-02-25T18:49:54.504910-07:00'
+lastmod: '2024-03-11T00:14:31.725329-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en C# sont un outil puissant pour\
   \ la correspondance de motifs au sein des cha\xEEnes de caract\xE8res, permettant\

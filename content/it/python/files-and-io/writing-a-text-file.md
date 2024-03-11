@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:59.479666-07:00
 description: "Scrivere su un file di testo in Python \xE8 un'operazione fondamentale\
   \ che implica la creazione o l'apertura di un file e poi l'appendere o sovrascrivere\u2026"
-lastmod: '2024-02-25T18:49:40.947023-07:00'
+lastmod: '2024-03-11T00:14:16.575587-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Python \xE8 un'operazione fondamentale che\
   \ implica la creazione o l'apertura di un file e poi l'appendere o sovrascrivere\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:16.840748-07:00
 description: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter dig\
   \ lagra och hantera data som nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6\
   r att organisera data\u2026"
-lastmod: '2024-02-25T18:49:36.560157-07:00'
+lastmod: '2024-03-11T00:14:11.638739-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter dig lagra\
   \ och hantera data som nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6r\

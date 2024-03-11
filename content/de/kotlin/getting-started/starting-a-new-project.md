@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:55.780211-07:00
 description: "Ein neues Projekt zu starten bedeutet, von Grund auf einen frischen\
   \ Codebase zu erstellen. Programmierer machen das, um neue Ideen umzusetzen, Probleme\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:50.908325-07:00'
+lastmod: '2024-03-11T00:14:27.740288-06:00'
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, von Grund auf einen frischen Codebase\
   \ zu erstellen. Programmierer machen das, um neue Ideen umzusetzen, Probleme zu\u2026"

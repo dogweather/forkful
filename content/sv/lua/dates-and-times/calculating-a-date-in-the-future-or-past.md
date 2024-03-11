@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:28.802374-07:00
 description: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att man\
   \ \xE4ndrar ett specifikt datum med ett visst antal dagar, m\xE5nader eller \xE5\
   r. Programmerare g\xF6r\u2026"
-lastmod: '2024-02-25T18:49:36.366280-07:00'
+lastmod: '2024-03-11T00:14:11.429632-06:00'
 model: gpt-4-1106-preview
 summary: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att man \xE4\
   ndrar ett specifikt datum med ett visst antal dagar, m\xE5nader eller \xE5r. Programmerare\

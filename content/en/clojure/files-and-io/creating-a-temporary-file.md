@@ -2,7 +2,7 @@
 date: 2024-01-20 17:39:40.540640-07:00
 description: "Creating a temporary file is the process of making a short-lived file\
   \ for intermediate data storage. Programmers use them for things like caching, data\u2026"
-lastmod: '2024-02-25T18:49:56.226303-07:00'
+lastmod: '2024-03-11T00:14:33.615313-06:00'
 model: gpt-4-1106-preview
 summary: "Creating a temporary file is the process of making a short-lived file for\
   \ intermediate data storage. Programmers use them for things like caching, data\u2026"

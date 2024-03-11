@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:37.576833-07:00
 description: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkavan\
   \ koodiprojektin luomista. Koodarit tekev\xE4t sen aloittaakseen uuden idean kehitt\xE4\
   misen tai\u2026"
-lastmod: '2024-02-25T18:49:53.693906-07:00'
+lastmod: '2024-03-11T00:14:30.741810-06:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkavan\
   \ koodiprojektin luomista. Koodarit tekev\xE4t sen aloittaakseen uuden idean kehitt\xE4\

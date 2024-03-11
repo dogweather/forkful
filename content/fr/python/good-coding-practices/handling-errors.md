@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:07.758527-07:00
 description: "La gestion des erreurs en Python (ou dans tout autre langage de programmation)\
   \ consiste \xE0 anticiper l'inattendu \u2013 c'est l'art de g\xE9rer avec gr\xE2\
   ce lorsque\u2026"
-lastmod: '2024-02-25T18:49:54.135153-07:00'
+lastmod: '2024-03-11T00:14:31.278065-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs en Python (ou dans tout autre langage de programmation)\
   \ consiste \xE0 anticiper l'inattendu \u2013 c'est l'art de g\xE9rer avec gr\xE2\

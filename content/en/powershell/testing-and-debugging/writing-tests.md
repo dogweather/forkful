@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:32.163002-07:00
 description: "Writing tests in PowerShell involves creating scripts that automatically\
   \ validate the functionality of your PowerShell code, ensuring it behaves as\u2026"
-lastmod: '2024-02-25T18:49:56.726009-07:00'
+lastmod: '2024-03-11T00:14:34.155185-06:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in PowerShell involves creating scripts that automatically\
   \ validate the functionality of your PowerShell code, ensuring it behaves as\u2026"

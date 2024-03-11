@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:57:30.374321-07:00
 description: "Een datum parsen uit een string in Visual Basic for Applications (VBA)\
   \ gaat over het omzetten van tekst die een datum voorstelt naar een datum\u2026"
-lastmod: '2024-02-25T18:49:47.991089-07:00'
+lastmod: '2024-03-11T00:14:24.466264-06:00'
 model: gpt-4-0125-preview
 summary: "Een datum parsen uit een string in Visual Basic for Applications (VBA) gaat\
   \ over het omzetten van tekst die een datum voorstelt naar een datum\u2026"

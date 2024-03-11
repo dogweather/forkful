@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:02.903772-07:00
 description: "Przetwarzanie (parsing) HTML w Visual Basic for Applications (VBA) polega\
   \ na ekstrakcji okre\u015Blonych informacji z dokumentu HTML. Programi\u015Bci robi\u0105\
   \ to, aby\u2026"
-lastmod: '2024-02-25T18:49:33.594422-07:00'
+lastmod: '2024-03-11T00:14:08.404283-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie (parsing) HTML w Visual Basic for Applications (VBA) polega\
   \ na ekstrakcji okre\u015Blonych informacji z dokumentu HTML. Programi\u015Bci robi\u0105\

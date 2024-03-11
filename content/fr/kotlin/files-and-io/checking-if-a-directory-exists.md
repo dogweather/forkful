@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:06.766898-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en Kotlin implique de confirmer\
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9. Les programmeurs\
   \ r\xE9alisent cette t\xE2che\u2026"
-lastmod: '2024-02-25T18:49:54.487013-07:00'
+lastmod: '2024-03-11T00:14:31.704810-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Kotlin implique de confirmer la\
   \ pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9. Les programmeurs\

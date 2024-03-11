@@ -3,7 +3,7 @@ date: 2024-01-26 04:13:36.307589-07:00
 description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119\
   tla Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragment\xF3w kodu w czasie\
   \ rzeczywistym.\u2026"
-lastmod: '2024-02-25T18:49:33.465847-07:00'
+lastmod: '2024-03-11T00:14:08.216208-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119tla\
   \ Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragment\xF3w kodu w czasie rzeczywistym.\u2026"

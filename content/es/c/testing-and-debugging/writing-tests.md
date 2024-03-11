@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:31.670490-07:00
 description: "Escribir pruebas en C implica crear programas o funciones auxiliares\
   \ m\xE1s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3\
   digo. Los\u2026"
-lastmod: '2024-02-25T18:49:56.017891-07:00'
+lastmod: '2024-03-11T00:14:33.387413-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en C implica crear programas o funciones auxiliares m\xE1\
   s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3digo.\

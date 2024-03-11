@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:31.286728-07:00
 description: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme antall\
   \ tegn f\xF8r nullterminatoren `\\0`. Programmerere gj\xF8r dette for \xE5 kunne\
   \ manipulere strenger\u2026"
-lastmod: '2024-02-25T18:49:39.439385-07:00'
+lastmod: '2024-03-11T00:14:14.867497-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme antall\
   \ tegn f\xF8r nullterminatoren `\\0`. Programmerere gj\xF8r dette for \xE5 kunne\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:56.952104-07:00
 description: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
   \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\
   \ webb-\u2026"
-lastmod: '2024-02-25T18:49:35.991752-07:00'
+lastmod: '2024-03-11T00:14:11.036073-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
   \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\

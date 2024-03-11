@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:54.046209-07:00
 description: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a condi\xE7\
   \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa. Os programadores\
   \ fazem isso para\u2026"
-lastmod: '2024-02-25T18:49:44.674786-07:00'
+lastmod: '2024-03-11T00:14:20.799663-06:00'
 model: gpt-4-0125-preview
 summary: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a condi\xE7\
   \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa. Os programadores\

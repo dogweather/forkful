@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:17.820823-07:00
 description: "I Rust ger `len()` l\xE4ngden p\xE5 en str\xE4ng, det vill s\xE4ga hur\
   \ m\xE5nga bytes den \xE4r. Vi beh\xF6ver veta storleken f\xF6r att hantera textdata\
   \ effektivt - som att\u2026"
-lastmod: '2024-02-25T18:49:35.985015-07:00'
+lastmod: '2024-03-11T00:14:11.029050-06:00'
 model: gpt-4-1106-preview
 summary: "I Rust ger `len()` l\xE4ngden p\xE5 en str\xE4ng, det vill s\xE4ga hur m\xE5\
   nga bytes den \xE4r. Vi beh\xF6ver veta storleken f\xF6r att hantera textdata effektivt\

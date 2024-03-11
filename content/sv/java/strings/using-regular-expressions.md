@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:16.106858-07:00
 description: "Regular expressions (regulj\xE4ra uttryck) i Java l\xE5ter dig definiera\
   \ specifika m\xF6nster f\xF6r att s\xF6ka, manipulera eller validera str\xE4ngar\
   \ i din kod.\u2026"
-lastmod: '2024-02-25T18:49:36.072479-07:00'
+lastmod: '2024-03-11T00:14:11.122279-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regulj\xE4ra uttryck) i Java l\xE5ter dig definiera\
   \ specifika m\xF6nster f\xF6r att s\xF6ka, manipulera eller validera str\xE4ngar\

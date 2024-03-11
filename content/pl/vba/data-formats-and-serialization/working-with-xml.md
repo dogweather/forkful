@@ -5,7 +5,7 @@ date: 2024-02-01 22:06:53.835945-07:00
 description: "Praca z XML w Visual Basic for Applications (VBA) wi\u0105\u017Ce si\u0119\
   \ z parsowaniem, tworzeniem i modyfikowaniem dokument\xF3w XML w kontek\u015Bcie\
   \ aplikacji Microsoft\u2026"
-lastmod: '2024-02-25T18:49:33.623656-07:00'
+lastmod: '2024-03-11T00:14:08.434920-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w Visual Basic for Applications (VBA) wi\u0105\u017Ce si\u0119\
   \ z parsowaniem, tworzeniem i modyfikowaniem dokument\xF3w XML w kontek\u015Bcie\

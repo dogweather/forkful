@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:31.750319-07:00
 description: "Att avrunda tal \xE4r processen att justera ett tal till dess n\xE4\
   rmaste hela tal eller till ett angivet antal decimaler. Programmerare avrundar ofta\
   \ tal f\xF6r\u2026"
-lastmod: '2024-03-09T21:06:02.364203-07:00'
+lastmod: '2024-03-11T00:14:10.938307-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal \xE4r processen att justera ett tal till dess n\xE4rmaste\
   \ hela tal eller till ett angivet antal decimaler. Programmerare avrundar ofta tal\

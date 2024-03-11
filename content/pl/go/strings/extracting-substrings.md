@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:47.144020-07:00
 description: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na pobieraniu okre\u015B\
   lonych fragment\xF3w ci\u0105gu na podstawie ich pozycji. Programi\u015Bci cz\u0119\
   sto wykonuj\u0105 t\u0119 operacj\u0119, aby\u2026"
-lastmod: '2024-02-25T18:49:33.262348-07:00'
+lastmod: '2024-03-11T00:14:08.006679-06:00'
 model: gpt-4-0125-preview
 summary: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na pobieraniu okre\u015Blonych\
   \ fragment\xF3w ci\u0105gu na podstawie ich pozycji. Programi\u015Bci cz\u0119sto\

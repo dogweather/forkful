@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:04.947604-07:00
 description: "Capitalizzare una stringa in PowerShell comporta la trasformazione del\
   \ primo carattere di una determinata stringa in maiuscolo, lasciando inalterata\
   \ il\u2026"
-lastmod: '2024-02-25T18:49:41.485902-07:00'
+lastmod: '2024-03-11T00:14:17.236939-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in PowerShell comporta la trasformazione del primo\
   \ carattere di una determinata stringa in maiuscolo, lasciando inalterata il\u2026"

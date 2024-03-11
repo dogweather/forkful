@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:38.838300-07:00
 description: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo\
   \ che invia messaggi di errore o log direttamente al flusso di uscita di errore\u2026"
-lastmod: '2024-02-25T18:49:41.069113-07:00'
+lastmod: '2024-03-11T00:14:16.755729-06:00'
 model: gpt-4-0125-preview
 summary: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo che\
   \ invia messaggi di errore o log direttamente al flusso di uscita di errore\u2026"

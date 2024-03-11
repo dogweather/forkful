@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:21.939712-07:00
 description: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
   \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\
   \ widzie\u0107 wyniki,\u2026"
-lastmod: '2024-02-25T18:49:34.261699-07:00'
+lastmod: '2024-03-11T00:14:09.104563-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
   \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\

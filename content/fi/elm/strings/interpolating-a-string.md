@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:54.499244-07:00
 description: "Mik\xE4 on merkkijonojen interpolointi ja miksi ohjelmoijat k\xE4ytt\xE4\
   v\xE4t sit\xE4? Merkkijonojen interpoloinnilla tarkoitetaan muuttujien tai lausekkeiden\u2026"
-lastmod: '2024-02-25T18:49:53.394360-07:00'
+lastmod: '2024-03-11T00:14:30.416080-06:00'
 model: gpt-4-1106-preview
 summary: "Mik\xE4 on merkkijonojen interpolointi ja miksi ohjelmoijat k\xE4ytt\xE4\
   v\xE4t sit\xE4? Merkkijonojen interpoloinnilla tarkoitetaan muuttujien tai lausekkeiden\u2026"

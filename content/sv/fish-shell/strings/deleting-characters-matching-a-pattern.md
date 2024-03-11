@@ -2,7 +2,7 @@
 date: 2024-01-20 17:42:11.740036-07:00
 description: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
   \ hittar specifika sekvenser av tecken i en textstr\xE4ng och tar bort dem.\u2026"
-lastmod: '2024-02-25T18:49:36.634557-07:00'
+lastmod: '2024-03-11T00:14:11.719572-06:00'
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
   \ hittar specifika sekvenser av tecken i en textstr\xE4ng och tar bort dem.\u2026"

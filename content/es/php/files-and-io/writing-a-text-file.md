@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:34.743767-07:00
 description: "Escribir un archivo de texto en PHP implica crear o abrir un archivo\
   \ e insertar contenido en \xE9l. Los programadores hacen esto para persistir datos,\
   \ como\u2026"
-lastmod: '2024-02-25T18:49:55.649248-07:00'
+lastmod: '2024-03-11T00:14:32.995805-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en PHP implica crear o abrir un archivo e insertar\
   \ contenido en \xE9l. Los programadores hacen esto para persistir datos, como\u2026"

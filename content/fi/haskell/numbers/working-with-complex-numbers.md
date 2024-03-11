@@ -3,7 +3,7 @@ date: 2024-01-26 04:41:23.304358-07:00
 description: "Kompleksiluvut, jotka koostuvat reaali- ja imagin\xE4\xE4riosasta, ovat\
   \ olennaisia monilla laskennallisilla aloilla kuten insin\xF6\xF6ritieteess\xE4\
   , fysiikassa ja\u2026"
-lastmod: '2024-02-25T18:49:53.523164-07:00'
+lastmod: '2024-03-11T00:14:30.558836-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaali- ja imagin\xE4\xE4riosasta, ovat\
   \ olennaisia monilla laskennallisilla aloilla kuten insin\xF6\xF6ritieteess\xE4\

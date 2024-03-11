@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:43.948977-07:00
 description: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para\
   \ tarefas de gerenciamento de arquivos, como ler ou escrever dados em arquivos,\
   \ garantindo\u2026"
-lastmod: '2024-02-25T18:49:43.961955-07:00'
+lastmod: '2024-03-11T00:14:20.027855-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para tarefas\
   \ de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo\u2026"

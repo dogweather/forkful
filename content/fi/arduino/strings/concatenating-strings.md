@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:52.760012-07:00
 description: "Yhdist\xE4mme merkkijonoja, jotta saamme yksitt\xE4iset sanat tai palaset\
   \ muodostamaan j\xE4rkevi\xE4 lauseita tai viestej\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4\
   \ dataa v\xE4litett\xE4ess\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.726947-07:00'
+lastmod: '2024-03-11T00:14:30.841103-06:00'
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4mme merkkijonoja, jotta saamme yksitt\xE4iset sanat tai palaset\
   \ muodostamaan j\xE4rkevi\xE4 lauseita tai viestej\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4\

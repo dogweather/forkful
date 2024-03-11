@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:37.385573-07:00
 description: "Pobieranie strony internetowej oznacza \u015Bci\u0105gni\u0119cie jej\
   \ zawarto\u015Bci do lokalnej pami\u0119ci komputera. Programi\u015Bci to robi\u0105\
   , by przetworzy\u0107 dane, zautomatyzowa\u0107\u2026"
-lastmod: '2024-02-25T18:49:33.418541-07:00'
+lastmod: '2024-03-11T00:14:08.166562-06:00'
 model: gpt-4-1106-preview
 summary: "Pobieranie strony internetowej oznacza \u015Bci\u0105gni\u0119cie jej zawarto\u015B\
   ci do lokalnej pami\u0119ci komputera. Programi\u015Bci to robi\u0105, by przetworzy\u0107\

@@ -2,7 +2,7 @@
 date: 2024-01-27 16:10:06.588131-07:00
 description: "Manipulating files with CLI (Command Line Interface) one-liners involves\
   \ using Bash scripts or commands to perform actions on files, like creating,\u2026"
-lastmod: '2024-02-25T18:49:56.679051-07:00'
+lastmod: '2024-03-11T00:14:34.106547-06:00'
 model: gpt-4-0125-preview
 summary: "Manipulating files with CLI (Command Line Interface) one-liners involves\
   \ using Bash scripts or commands to perform actions on files, like creating,\u2026"

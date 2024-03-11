@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:15.413836-07:00
 description: "Verificar se um diret\xF3rio existe \xE9 uma tarefa fundamental na programa\xE7\
   \xE3o PHP, pois permite que voc\xEA verifique a presen\xE7a de um diret\xF3rio antes\
   \ de realizar\u2026"
-lastmod: '2024-02-25T18:49:44.302116-07:00'
+lastmod: '2024-03-11T00:14:20.396168-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 uma tarefa fundamental na programa\xE7\
   \xE3o PHP, pois permite que voc\xEA verifique a presen\xE7a de um diret\xF3rio antes\

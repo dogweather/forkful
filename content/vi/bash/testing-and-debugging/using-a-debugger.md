@@ -6,7 +6,7 @@ description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Bash c\
   \ ngh\u0129a l\xE0 s\u1EED d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3\
   m tra v\xE0 t\xECm l\u1ED7i trong c\xE1c script c\u1EE7a b\u1EA1n, ch\u1EB3ng h\u1EA1\
   n nh\u01B0 b\u1EAFt l\u1ED7i l\xE0m s\u1EADp m\xE3 c\u1EE7a\u2026"
-lastmod: '2024-02-25T18:49:35.230218-07:00'
+lastmod: '2024-03-11T00:14:10.175351-06:00'
 model: gpt-4-0125-preview
 summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Bash c\xF3 ngh\u0129\
   a l\xE0 s\u1EED d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3m tra v\xE0\

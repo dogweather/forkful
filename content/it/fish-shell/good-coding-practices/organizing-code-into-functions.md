@@ -6,7 +6,7 @@ date: 2024-01-28 23:01:30.280210-07:00
 description: "Organizzare il codice in funzioni significa raggruppare pezzi di script\
   \ per eseguire compiti specifici. Lo facciamo perch\xE9 rende il codice pi\xF9 facile\
   \ da\u2026"
-lastmod: '2024-02-25T18:49:41.707518-07:00'
+lastmod: '2024-03-11T00:14:17.486467-06:00'
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni significa raggruppare pezzi di script\
   \ per eseguire compiti specifici. Lo facciamo perch\xE9 rende il codice pi\xF9 facile\

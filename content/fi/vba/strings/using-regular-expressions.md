@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:53.760117-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
   \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\
   \ Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.313281-07:00'
+lastmod: '2024-03-11T00:14:30.325581-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
   \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\

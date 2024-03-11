@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:03.998061-07:00
 description: "Zapisywanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do strumienia stderr, oddzielnie\
   \ od standardowego\u2026"
-lastmod: '2024-02-25T18:49:33.436999-07:00'
+lastmod: '2024-03-11T00:14:08.186107-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do strumienia stderr, oddzielnie\

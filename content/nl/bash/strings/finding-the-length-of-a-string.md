@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:54.445466-07:00
 description: "De lengte van een string bepalen betekent het tellen van de karakters.\
   \ Programmeurs doen dit om invoer te valideren, door karakters te loopen, of\u2026"
-lastmod: '2024-02-25T18:49:48.309476-07:00'
+lastmod: '2024-03-11T00:14:24.804463-06:00'
 model: gpt-4-0125-preview
 summary: "De lengte van een string bepalen betekent het tellen van de karakters. Programmeurs\
   \ doen dit om invoer te valideren, door karakters te loopen, of\u2026"

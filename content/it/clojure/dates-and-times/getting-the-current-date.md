@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:09:12.327850-07:00
 description: "Ottenere la data corrente nella programmazione \xE8 cruciale per una\
   \ miriade di motivi, inclusi il logging, il timestamping degli eventi e la pianificazione\u2026"
-lastmod: '2024-02-25T18:49:40.981260-07:00'
+lastmod: '2024-03-11T00:14:16.612545-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente nella programmazione \xE8 cruciale per una miriade\
   \ di motivi, inclusi il logging, il timestamping degli eventi e la pianificazione\u2026"

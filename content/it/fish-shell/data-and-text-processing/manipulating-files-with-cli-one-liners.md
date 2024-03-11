@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:54.290005-07:00
 description: "Nel mondo della programmazione, specialmente quando si ha a che fare\
   \ con ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando\
   \ (CLI)\u2026"
-lastmod: '2024-02-25T18:49:41.697086-07:00'
+lastmod: '2024-03-11T00:14:17.475038-06:00'
 model: gpt-4-0125-preview
 summary: "Nel mondo della programmazione, specialmente quando si ha a che fare con\
   \ ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando (CLI)\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:40.211579-07:00
 description: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica significa\
   \ incluir credenciales de usuario para acceder a recursos protegidos. Los programadores\
   \ lo hacen\u2026"
-lastmod: '2024-02-25T18:49:55.467186-07:00'
+lastmod: '2024-03-11T00:14:32.797317-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica significa incluir\
   \ credenciales de usuario para acceder a recursos protegidos. Los programadores\

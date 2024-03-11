@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:34.043756-07:00
 description: "Trabajar con JSON en Fish Shell implica analizar y generar datos JSON,\
   \ una tarea com\xFAn para configurar aplicaciones, interacci\xF3n con API y optimizar\u2026"
-lastmod: '2024-02-25T18:49:55.991916-07:00'
+lastmod: '2024-03-11T00:14:33.360202-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON en Fish Shell implica analizar y generar datos JSON, una\
   \ tarea com\xFAn para configurar aplicaciones, interacci\xF3n con API y optimizar\u2026"

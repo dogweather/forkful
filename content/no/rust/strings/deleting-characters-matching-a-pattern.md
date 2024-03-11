@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:02.203599-07:00
 description: "Slette tegn som matcher et m\xF8nster handler om \xE5 filtrere ut spesifikke\
   \ karakterer fra en streng. Programmerere gj\xF8r dette for \xE5 rense data, forberede\u2026"
-lastmod: '2024-02-25T18:49:38.737967-07:00'
+lastmod: '2024-03-11T00:14:14.091184-06:00'
 model: gpt-4-1106-preview
 summary: "Slette tegn som matcher et m\xF8nster handler om \xE5 filtrere ut spesifikke\
   \ karakterer fra en streng. Programmerere gj\xF8r dette for \xE5 rense data, forberede\u2026"

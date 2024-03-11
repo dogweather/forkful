@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:30.155839-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on perustavaa\
   \ laatua oleva teht\xE4v\xE4, joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\
   \xE4r\xE4- ja aikatietojen noutamisen ja\u2026"
-lastmod: '2024-02-25T18:49:53.912101-07:00'
+lastmod: '2024-03-11T00:14:31.047203-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on perustavaa\
   \ laatua oleva teht\xE4v\xE4, joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\

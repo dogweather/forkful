@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:08.408602-07:00
 description: "Dividir el c\xF3digo en funciones significa descomponer los scripts\
   \ en bloques m\xE1s peque\xF1os y reutilizables que realizan tareas espec\xEDficas.\
   \ Hace que el\u2026"
-lastmod: '2024-02-25T18:49:55.722597-07:00'
+lastmod: '2024-03-11T00:14:33.072797-06:00'
 model: gpt-4-1106-preview
 summary: "Dividir el c\xF3digo en funciones significa descomponer los scripts en bloques\
   \ m\xE1s peque\xF1os y reutilizables que realizan tareas espec\xEDficas. Hace que\

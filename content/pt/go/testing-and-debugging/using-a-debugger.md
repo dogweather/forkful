@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:09.023739-07:00
 description: "Utilizar um depurador na programa\xE7\xE3o em Go envolve o uso de ferramentas\
   \ ou recursos para inspecionar e modificar o estado de um programa em execu\xE7\xE3\
   o para\u2026"
-lastmod: '2024-02-25T18:49:43.729901-07:00'
+lastmod: '2024-03-11T00:14:19.726405-06:00'
 model: gpt-4-0125-preview
 summary: "Utilizar um depurador na programa\xE7\xE3o em Go envolve o uso de ferramentas\
   \ ou recursos para inspecionar e modificar o estado de um programa em execu\xE7\xE3\

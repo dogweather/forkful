@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:58.168067-07:00
 description: "Manipulowanie plikami za pomoc\u0105 jednoliniowych polece\u0144 CLI\
   \ (Command Line Interface) polega na u\u017Cywaniu skrypt\xF3w Bash lub polece\u0144\
   \ do wykonywania dzia\u0142a\u0144 na\u2026"
-lastmod: '2024-02-25T18:49:33.946193-07:00'
+lastmod: '2024-03-11T00:14:08.769734-06:00'
 model: gpt-4-0125-preview
 summary: "Manipulowanie plikami za pomoc\u0105 jednoliniowych polece\u0144 CLI (Command\
   \ Line Interface) polega na u\u017Cywaniu skrypt\xF3w Bash lub polece\u0144 do wykonywania\

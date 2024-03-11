@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:07.190118-07:00
 description: "Odczytywanie argument\xF3w linii polece\u0144 w Dart umo\u017Cliwia\
   \ programistom bezpo\u015Brednie wprowadzanie danych do konsoli podczas wykonywania\
   \ programu Dart,\u2026"
-lastmod: '2024-03-09T21:05:59.842682-07:00'
+lastmod: '2024-03-11T00:14:08.281148-06:00'
 model: gpt-4-0125-preview
 summary: "Odczytywanie argument\xF3w linii polece\u0144 w Dart umo\u017Cliwia programistom\
   \ bezpo\u015Brednie wprowadzanie danych do konsoli podczas wykonywania programu\

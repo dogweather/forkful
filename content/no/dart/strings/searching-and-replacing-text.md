@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:38.444397-07:00
 description: "S\xF8king og erstatting av tekst i Dart inneb\xE6rer \xE5 unders\xF8\
   ke strenger for \xE5 finne visse m\xF8nstre eller sekvenser av tegn og erstatte\
   \ dem med nytt innhold.\u2026"
-lastmod: '2024-03-09T21:06:05.231858-07:00'
+lastmod: '2024-03-11T00:14:13.999139-06:00'
 model: gpt-4-0125-preview
 summary: "S\xF8king og erstatting av tekst i Dart inneb\xE6rer \xE5 unders\xF8ke strenger\
   \ for \xE5 finne visse m\xF8nstre eller sekvenser av tegn og erstatte dem med nytt\

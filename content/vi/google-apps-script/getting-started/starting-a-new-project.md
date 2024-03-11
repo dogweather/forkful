@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:15.184757-07:00
 description: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEAn Google\
   \ Apps Script (GAS) bao g\u1ED3m vi\u1EC7c kh\u1EDFi t\u1EA1o m\u1ED9t file script\
   \ b\xEAn trong h\u1EC7 sinh th\xE1i c\u1EE7a Google (Google Drive, Docs, Sheets,\u2026"
-lastmod: '2024-02-25T18:49:34.416157-07:00'
+lastmod: '2024-03-11T00:14:09.267705-06:00'
 model: gpt-4-0125-preview
 summary: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEAn Google Apps\
   \ Script (GAS) bao g\u1ED3m vi\u1EC7c kh\u1EDFi t\u1EA1o m\u1ED9t file script b\xEA\

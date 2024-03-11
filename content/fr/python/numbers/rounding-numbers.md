@@ -2,7 +2,7 @@
 date: 2024-01-26 03:47:01.917175-07:00
 description: "Arrondir des nombres signifie les ajuster pour les rapprocher d'une\
   \ valeur plus simple ou plus significative. Les programmeurs arrondissent les nombres\u2026"
-lastmod: '2024-02-25T18:49:54.122230-07:00'
+lastmod: '2024-03-11T00:14:31.265082-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie les ajuster pour les rapprocher d'une valeur\
   \ plus simple ou plus significative. Les programmeurs arrondissent les nombres\u2026"

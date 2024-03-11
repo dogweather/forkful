@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:04:59.073670-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon\
   \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput\u2026"
-lastmod: '2024-02-25T18:49:53.633427-07:00'
+lastmod: '2024-03-11T00:14:30.675776-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon\
   \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput\u2026"

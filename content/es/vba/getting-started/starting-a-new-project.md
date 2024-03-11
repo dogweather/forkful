@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:21.372345-07:00
 description: "Iniciar un nuevo proyecto en Visual Basic para Aplicaciones (VBA) implica\
   \ configurar un entorno dentro de una aplicaci\xF3n anfitriona, como Excel, para\u2026"
-lastmod: '2024-02-25T18:49:55.384329-07:00'
+lastmod: '2024-03-11T00:14:32.707990-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en Visual Basic para Aplicaciones (VBA) implica\
   \ configurar un entorno dentro de una aplicaci\xF3n anfitriona, como Excel, para\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:40.397957-07:00
 description: "Analisar HTML no Visual Basic for Applications (VBA) envolve extrair\
   \ informa\xE7\xF5es espec\xEDficas de um documento HTML. Programadores fazem isso\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:44.029849-07:00'
+lastmod: '2024-03-11T00:14:20.103778-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML no Visual Basic for Applications (VBA) envolve extrair informa\xE7\
   \xF5es espec\xEDficas de um documento HTML. Programadores fazem isso para\u2026"

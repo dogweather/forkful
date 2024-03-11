@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:05.802756-07:00
 description: "YAML, eine Abk\xFCrzung f\xFCr \"YAML Ain't Markup Language\", ist ein\
   \ f\xFCr Menschen lesbarer Standard zur Serialisierung von Daten, der h\xE4ufig\
   \ f\xFCr\u2026"
-lastmod: '2024-02-25T18:49:50.678654-07:00'
+lastmod: '2024-03-11T00:14:27.448963-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, eine Abk\xFCrzung f\xFCr \"YAML Ain't Markup Language\", ist ein f\xFC\
   r Menschen lesbarer Standard zur Serialisierung von Daten, der h\xE4ufig f\xFCr\u2026"

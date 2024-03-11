@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:00.880823-07:00
 description: "P\xE4iv\xE4m\xE4\xE4rien muuntaminen merkkijonoiksi on perustavaa laatua\
   \ oleva teht\xE4v\xE4, joka mahdollistaa ohjelmoijille p\xE4iv\xE4m\xE4\xE4r\xE4\
   tiedon k\xE4sittelyn ja n\xE4ytt\xE4misen\u2026"
-lastmod: '2024-02-25T18:49:53.086867-07:00'
+lastmod: '2024-03-11T00:14:30.036836-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4rien muuntaminen merkkijonoiksi on perustavaa laatua\
   \ oleva teht\xE4v\xE4, joka mahdollistaa ohjelmoijille p\xE4iv\xE4m\xE4\xE4r\xE4\

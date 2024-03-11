@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:44.417085-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) C#:ssa ovat tehokas ty\xF6\
   kalu merkkijonojen sis\xE4ll\xE4 tapahtuvaan mallin tunnistamiseen, jonka avulla\
   \ ohjelmoijat voivat\u2026"
-lastmod: '2024-02-25T18:49:53.478309-07:00'
+lastmod: '2024-03-11T00:14:30.510068-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) C#:ssa ovat tehokas ty\xF6kalu\
   \ merkkijonojen sis\xE4ll\xE4 tapahtuvaan mallin tunnistamiseen, jonka avulla ohjelmoijat\

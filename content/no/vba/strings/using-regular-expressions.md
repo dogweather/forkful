@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:56.520377-07:00
 description: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) tilbyr\
   \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5. Programmerere\
   \ bruker dem\u2026"
-lastmod: '2024-02-25T18:49:38.790188-07:00'
+lastmod: '2024-03-11T00:14:14.146972-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) tilbyr\
   \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5. Programmerere\

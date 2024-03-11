@@ -3,7 +3,7 @@ date: 2024-01-26 04:27:05.157728-07:00
 description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language (langage minimal\
   \ et \xE9vident de Tom), est un format de s\xE9rialisation de donn\xE9es semblable\
   \ \xE0 JSON ou\u2026"
-lastmod: '2024-02-25T18:49:54.276892-07:00'
+lastmod: '2024-03-11T00:14:31.477505-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language (langage minimal\
   \ et \xE9vident de Tom), est un format de s\xE9rialisation de donn\xE9es semblable\

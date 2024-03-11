@@ -3,7 +3,7 @@ date: 2024-01-26 04:33:29.570149-07:00
 description: "Lavorare con XML implica l'analisi e la manipolazione di documenti XML\
   \ tramite codice. I programmatori lo fanno per leggere, scrivere e modificare dati\
   \ in\u2026"
-lastmod: '2024-02-25T18:49:41.443696-07:00'
+lastmod: '2024-03-11T00:14:17.191427-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con XML implica l'analisi e la manipolazione di documenti XML tramite\
   \ codice. I programmatori lo fanno per leggere, scrivere e modificare dati in\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:21.085085-07:00
 description: "Interpolering av str\xE4ngar till\xE5ter dig att infoga variabler eller\
   \ uttryck i en str\xE4ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamiska\
   \ meddelanden och\u2026"
-lastmod: '2024-02-25T18:49:36.381214-07:00'
+lastmod: '2024-03-11T00:14:11.446350-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ngar till\xE5ter dig att infoga variabler eller\
   \ uttryck i en str\xE4ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamiska\

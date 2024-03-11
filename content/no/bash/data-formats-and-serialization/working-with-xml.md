@@ -3,7 +3,7 @@ date: 2024-01-26 04:27:40.198453-07:00
 description: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering\
   \ av data i Extensible Markup Language-formatet. Programmere sliter med XML siden\
   \ det er et\u2026"
-lastmod: '2024-02-25T18:49:39.173612-07:00'
+lastmod: '2024-03-11T00:14:14.576691-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering av\
   \ data i Extensible Markup Language-formatet. Programmere sliter med XML siden det\

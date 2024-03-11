@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:15.224042-07:00
 description: "Starting a new project means setting up a fresh codebase for your brilliant\
   \ ideas. Programmers do it to turn concepts into real, functioning apps or\u2026"
-lastmod: '2024-02-25T18:49:56.869320-07:00'
+lastmod: '2024-03-11T00:14:34.306932-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project means setting up a fresh codebase for your brilliant\
   \ ideas. Programmers do it to turn concepts into real, functioning apps or\u2026"

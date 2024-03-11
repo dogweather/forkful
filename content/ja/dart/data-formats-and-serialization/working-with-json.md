@@ -3,7 +3,7 @@ changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:27.529666-07:00
 description: "JSON\uFF08JavaScript Object\u2026"
-lastmod: '2024-03-09T21:06:06.420910-07:00'
+lastmod: '2024-03-11T00:14:15.328911-06:00'
 model: gpt-4-0125-preview
 summary: "JSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"

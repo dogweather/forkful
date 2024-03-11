@@ -2,7 +2,7 @@
 date: 2024-01-26 01:43:58.849283-07:00
 description: "Il refactoring \xE8 il processo di modificare il codice esistente per\
   \ migliorarne la struttura, la leggibilit\xE0 e le prestazioni senza cambiarne il\u2026"
-lastmod: '2024-02-25T18:49:41.266159-07:00'
+lastmod: '2024-03-11T00:14:16.977879-06:00'
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di modificare il codice esistente per migliorarne\
   \ la struttura, la leggibilit\xE0 e le prestazioni senza cambiarne il\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-25 03:39:37.694349-07:00
 description: "XML (eXtensible Markup Language) is about structuring data in a readable\
   \ format. Programmers juggle XML for configuration, data exchange between apps,\
   \ and\u2026"
-lastmod: '2024-02-25T18:49:56.555378-07:00'
+lastmod: '2024-03-11T00:14:33.975385-06:00'
 model: gpt-4-1106-preview
 summary: "XML (eXtensible Markup Language) is about structuring data in a readable\
   \ format. Programmers juggle XML for configuration, data exchange between apps,\

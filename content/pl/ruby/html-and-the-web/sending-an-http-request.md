@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:39.376305-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b na komunikacj\u0119\
   \ Twojego programu z serwerem webowym; wy\u015Blij zapytanie i odbierz odpowied\u017A\
   . Programi\u015Bci to robi\u0105, aby\u2026"
-lastmod: '2024-02-25T18:49:34.304969-07:00'
+lastmod: '2024-03-11T00:14:09.148900-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b na komunikacj\u0119 Twojego\
   \ programu z serwerem webowym; wy\u015Blij zapytanie i odbierz odpowied\u017A. Programi\u015B\

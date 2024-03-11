@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:12.090645-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
   \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn. Vi gj\xF8r dette\
   \ for \xE5 gj\xF8re\u2026"
-lastmod: '2024-02-25T18:49:38.760910-07:00'
+lastmod: '2024-03-11T00:14:14.115500-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
   \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn. Vi gj\xF8r dette\

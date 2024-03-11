@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:01.783838-07:00
 description: "Tworzenie tymczasowego pliku w Google Apps Script polega na generowaniu\
   \ pliku przeznaczonego do kr\xF3tkotrwa\u0142ego u\u017Cytku, zazwyczaj do przetwarzania\
   \ danych\u2026"
-lastmod: '2024-02-25T18:49:33.348690-07:00'
+lastmod: '2024-03-11T00:14:08.096147-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Google Apps Script polega na generowaniu\
   \ pliku przeznaczonego do kr\xF3tkotrwa\u0142ego u\u017Cytku, zazwyczaj do przetwarzania\

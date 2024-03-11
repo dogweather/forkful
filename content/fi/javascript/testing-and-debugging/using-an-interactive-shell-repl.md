@@ -2,7 +2,7 @@
 date: 2024-01-26 04:15:34.079291-07:00
 description: "Interaktiiviset kuoret eli REPL:t (Read-Eval-Print Loopit, Luke-Evaloi-Tulosta-Silmukka)\
   \ mahdollistavat koodin ajamisen lennosta, toimintojen, algoritmien\u2026"
-lastmod: '2024-02-25T18:49:53.857983-07:00'
+lastmod: '2024-03-11T00:14:30.993894-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiiviset kuoret eli REPL:t (Read-Eval-Print Loopit, Luke-Evaloi-Tulosta-Silmukka)\
   \ mahdollistavat koodin ajamisen lennosta, toimintojen, algoritmien\u2026"

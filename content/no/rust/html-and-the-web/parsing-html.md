@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:57.416671-07:00
 description: "\xC5 parse HTML i Rust handler om \xE5 trekke ut data fra HTML-dokumenter,\
   \ som er essensielt for web scraping, datautvinning eller bygging av nett-crawlere.\u2026"
-lastmod: '2024-02-25T18:49:38.751811-07:00'
+lastmod: '2024-03-11T00:14:14.106380-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML i Rust handler om \xE5 trekke ut data fra HTML-dokumenter,\
   \ som er essensielt for web scraping, datautvinning eller bygging av nett-crawlere.\u2026"

@@ -6,7 +6,7 @@ description: "Ch\u1EC9nh s\u1EEDa t\u1EADp tin t\u1EA1i ch\u1ED7 v\u1EDBi CLI (G
   \ di\u1EC7n D\xF2ng L\u1EC7nh) b\u1EB1ng m\u1ED9t d\xF2ng l\u1EC7nh trong Ruby cho\
   \ ph\xE9p b\u1EA1n s\u1EEDa \u0111\u1ED5i t\u1EADp tin tr\u1EF1c ti\u1EBFp t\u1EEB\
   \ terminal c\u1EE7a b\u1EA1n, kh\xF4ng\u2026"
-lastmod: '2024-02-25T18:49:35.670234-07:00'
+lastmod: '2024-03-11T00:14:10.636919-06:00'
 model: gpt-4-0125-preview
 summary: "Ch\u1EC9nh s\u1EEDa t\u1EADp tin t\u1EA1i ch\u1ED7 v\u1EDBi CLI (Giao di\u1EC7\
   n D\xF2ng L\u1EC7nh) b\u1EB1ng m\u1ED9t d\xF2ng l\u1EC7nh trong Ruby cho ph\xE9\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:12.322101-07:00
 description: "Arbeid med JSON (JavaScript Object Notation) i Kotlin involverer parsing\
   \ og generering av JSON-data. Programmerere gj\xF8r dette for \xE5 enkelt utveksle\
   \ data\u2026"
-lastmod: '2024-02-25T18:49:38.950489-07:00'
+lastmod: '2024-03-11T00:14:14.328938-06:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med JSON (JavaScript Object Notation) i Kotlin involverer parsing\
   \ og generering av JSON-data. Programmerere gj\xF8r dette for \xE5 enkelt utveksle\

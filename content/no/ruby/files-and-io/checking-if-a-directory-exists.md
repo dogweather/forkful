@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:15.859130-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Ruby gj\xF8r det mulig for programmerere\
   \ \xE5 bekrefte tilstedev\xE6relsen av en mappe f\xF8r de utf\xF8rer operasjoner\
   \ som \xE5 lese\u2026"
-lastmod: '2024-02-25T18:49:39.509947-07:00'
+lastmod: '2024-03-11T00:14:14.946755-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Ruby gj\xF8r det mulig for programmerere\
   \ \xE5 bekrefte tilstedev\xE6relsen av en mappe f\xF8r de utf\xF8rer operasjoner\

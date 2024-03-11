@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:53.775582-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na\
   \ wyprowadzaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105\
   \ oddzielone od g\u0142\xF3wnego wyniku\u2026"
-lastmod: '2024-02-25T18:49:34.101272-07:00'
+lastmod: '2024-03-11T00:14:08.931100-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na wyprowadzaniu\
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105 oddzielone\

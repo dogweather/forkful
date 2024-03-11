@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:51.980729-07:00
 description: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 uma\
   \ Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados\
   \ amig\xE1vel para humanos para\u2026"
-lastmod: '2024-02-25T18:49:44.558145-07:00'
+lastmod: '2024-03-11T00:14:20.675021-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 uma Linguagem\
   \ de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados amig\xE1\

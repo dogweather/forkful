@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:54.982802-07:00
 description: "CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is\
   \ een plat tekstformaat voor tabelgegevens. Programmeurs gebruiken CSV om gemakkelijk\u2026"
-lastmod: '2024-02-25T18:49:47.877031-07:00'
+lastmod: '2024-03-11T00:14:24.298055-06:00'
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is een\
   \ plat tekstformaat voor tabelgegevens. Programmeurs gebruiken CSV om gemakkelijk\u2026"

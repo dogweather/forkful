@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:59.130046-07:00
 description: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokument\xF3\
   w HTML. Programi\u015Bci robi\u0105 to, aby programowo wsp\xF3\u0142dzia\u0142a\u0107\
   \ ze stronami internetowymi,\u2026"
-lastmod: '2024-02-25T18:49:33.461899-07:00'
+lastmod: '2024-03-11T00:14:08.212246-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokument\xF3\
   w HTML. Programi\u015Bci robi\u0105 to, aby programowo wsp\xF3\u0142dzia\u0142a\u0107\

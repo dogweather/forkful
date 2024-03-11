@@ -3,7 +3,7 @@ date: 2024-01-26 00:52:20.221499-07:00
 description: "Tratar erros significa escrever c\xF3digo que pode antecipar e lidar\
   \ com situa\xE7\xF5es problem\xE1ticas. Os programadores fazem isso para prevenir\
   \ falhas, proteger\u2026"
-lastmod: '2024-02-25T18:49:44.128306-07:00'
+lastmod: '2024-03-11T00:14:20.209854-06:00'
 model: gpt-4-1106-preview
 summary: "Tratar erros significa escrever c\xF3digo que pode antecipar e lidar com\
   \ situa\xE7\xF5es problem\xE1ticas. Os programadores fazem isso para prevenir falhas,\

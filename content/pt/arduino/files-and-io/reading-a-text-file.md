@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:43.684854-07:00
 description: "Ler um arquivo de texto consiste em acessar e interpretar os dados contidos\
   \ em um arquivo no formato texto. Programadores fazem isso para manipular e\u2026"
-lastmod: '2024-02-25T18:49:44.473523-07:00'
+lastmod: '2024-03-11T00:14:20.583357-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto consiste em acessar e interpretar os dados contidos\
   \ em um arquivo no formato texto. Programadores fazem isso para manipular e\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:44.774452-07:00
 description: "Comprobar si un directorio existe trata de determinar la presencia de\
   \ un directorio en una ruta especificada antes de realizar operaciones como leer\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:55.859097-07:00'
+lastmod: '2024-03-11T00:14:33.212212-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe trata de determinar la presencia de un\
   \ directorio en una ruta especificada antes de realizar operaciones como leer o\u2026"

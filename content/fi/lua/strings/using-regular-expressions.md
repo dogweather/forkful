@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:44.566675-07:00
 description: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet mahdollistavat merkkijonojen\
   \ hakemisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t niit\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.599419-07:00'
+lastmod: '2024-03-11T00:14:30.640507-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet mahdollistavat merkkijonojen\
   \ hakemisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat k\xE4ytt\xE4\

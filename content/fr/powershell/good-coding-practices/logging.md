@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:40.281848-07:00
 description: "Le logging, c'est fondamentalement laisser une tra\xEEn\xE9e de miettes\
   \ \xE0 travers votre code - c'est la mani\xE8re de garder un \u0153il sur ce qui\
   \ se passe lorsque\u2026"
-lastmod: '2024-02-25T18:49:54.736683-07:00'
+lastmod: '2024-03-11T00:14:31.977183-06:00'
 model: gpt-4-1106-preview
 summary: "Le logging, c'est fondamentalement laisser une tra\xEEn\xE9e de miettes\
   \ \xE0 travers votre code - c'est la mani\xE8re de garder un \u0153il sur ce qui\

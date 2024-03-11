@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:21.906718-07:00
 description: "Tratar erros em Go envolve reconhecer e responder \xE0s condi\xE7\xF5\
   es de erro no seu programa. Os programadores se envolvem no tratamento de erros\
   \ para garantir\u2026"
-lastmod: '2024-02-25T18:49:43.733186-07:00'
+lastmod: '2024-03-11T00:14:19.729886-06:00'
 model: gpt-4-0125-preview
 summary: "Tratar erros em Go envolve reconhecer e responder \xE0s condi\xE7\xF5es\
   \ de erro no seu programa. Os programadores se envolvem no tratamento de erros para\

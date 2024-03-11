@@ -2,7 +2,7 @@
 date: 2024-01-26 04:22:29.417720-07:00
 description: "Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious,\
   \ Minimal Language) con Haskell. Los programadores lo hacen para administrar\u2026"
-lastmod: '2024-02-25T18:49:55.611894-07:00'
+lastmod: '2024-03-11T00:14:32.957856-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious,\
   \ Minimal Language) con Haskell. Los programadores lo hacen para administrar\u2026"

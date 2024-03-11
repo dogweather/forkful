@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:35.680358-07:00
 description: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen,\
   \ ob ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:50.754614-07:00'
+lastmod: '2024-03-11T00:14:27.578573-06:00'
 model: gpt-4-0125-preview
 summary: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen, ob\
   \ ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\

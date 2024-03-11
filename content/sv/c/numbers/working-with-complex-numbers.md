@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:53.173733-07:00
 description: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
   \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\
   \ komplexa\u2026"
-lastmod: '2024-02-25T18:49:36.690838-07:00'
+lastmod: '2024-03-11T00:14:11.779418-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
   \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\

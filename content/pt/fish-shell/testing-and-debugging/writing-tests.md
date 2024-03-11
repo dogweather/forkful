@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:32.516530-07:00
 description: "Escrever testes em Fish Shell envolve criar scripts que executam automaticamente\
   \ o seu c\xF3digo para validar seu comportamento em rela\xE7\xE3o aos resultados\u2026"
-lastmod: '2024-02-25T18:49:44.626342-07:00'
+lastmod: '2024-03-11T00:14:20.748720-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Fish Shell envolve criar scripts que executam automaticamente\
   \ o seu c\xF3digo para validar seu comportamento em rela\xE7\xE3o aos resultados\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:13.600128-07:00
 description: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de conte\xFA\
   do HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para\
   \ automatizar\u2026"
-lastmod: '2024-02-25T18:49:44.620648-07:00'
+lastmod: '2024-03-11T00:14:20.742643-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de conte\xFA\
   do HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para\

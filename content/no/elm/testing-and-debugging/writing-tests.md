@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:28.323824-07:00
 description: "\xC5 skrive tester i Elm involverer \xE5 lage testtilfeller for \xE5\
   \ verifisere korrektheten av Elm-koden din, og sikre at den oppf\xF8rer seg som\
   \ forventet.\u2026"
-lastmod: '2024-02-25T18:49:38.891721-07:00'
+lastmod: '2024-03-11T00:14:14.257506-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Elm involverer \xE5 lage testtilfeller for \xE5 verifisere\
   \ korrektheten av Elm-koden din, og sikre at den oppf\xF8rer seg som forventet.\u2026"

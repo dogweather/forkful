@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:47.709242-07:00
 description: "Encontrar o comprimento de uma string em Go trata-se de determinar o\
   \ n\xFAmero de caracteres que ela cont\xE9m. Programadores realizam essa opera\xE7\
   \xE3o\u2026"
-lastmod: '2024-02-25T18:49:43.714978-07:00'
+lastmod: '2024-03-11T00:14:19.710594-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string em Go trata-se de determinar o n\xFA\
   mero de caracteres que ela cont\xE9m. Programadores realizam essa opera\xE7\xE3\

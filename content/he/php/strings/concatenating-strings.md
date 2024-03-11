@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:18.924849-07:00
 description: "Concatenating strings means gluing separate pieces of text together.\
   \ Programmers do it to build dynamic content, like full names from first and last\
   \ or\u2026"
-lastmod: '2024-02-25T18:49:37.707971-07:00'
+lastmod: '2024-03-11T00:14:12.933244-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenating strings means gluing separate pieces of text together. Programmers\
   \ do it to build dynamic content, like full names from first and last or\u2026"

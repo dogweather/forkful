@@ -3,7 +3,7 @@ date: 2024-01-26 03:43:30.285703-07:00
 description: "Avrundning av tal handlar om att justera ett tal till n\xE4rmaste hela\
   \ tal eller till en viss decimalprecision. Vi avrundar tal f\xF6r att f\xF6renkla\
   \ dem f\xF6r\u2026"
-lastmod: '2024-02-25T18:49:35.857955-07:00'
+lastmod: '2024-03-11T00:14:10.834719-06:00'
 model: gpt-4-0125-preview
 summary: "Avrundning av tal handlar om att justera ett tal till n\xE4rmaste hela tal\
   \ eller till en viss decimalprecision. Vi avrundar tal f\xF6r att f\xF6renkla dem\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:26.697342-07:00
 description: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
   \ skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n varmistaakseen\u2026"
-lastmod: '2024-02-25T18:49:53.203784-07:00'
+lastmod: '2024-03-11T00:14:30.160972-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
   \ skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekev\xE4t t\xE4\

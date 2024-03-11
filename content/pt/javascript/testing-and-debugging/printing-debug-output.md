@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:55.390003-07:00
 description: "Debugar \xE9 tipo um GPS para desenvolvedores: ajuda a encontrar onde\
   \ as coisas d\xE3o errado. Imprimir sa\xEDdas de debug \xE9 deixar migalhas de p\xE3\
   o pelo c\xF3digo,\u2026"
-lastmod: '2024-02-25T18:49:44.581945-07:00'
+lastmod: '2024-03-11T00:14:20.700429-06:00'
 model: gpt-4-1106-preview
 summary: "Debugar \xE9 tipo um GPS para desenvolvedores: ajuda a encontrar onde as\
   \ coisas d\xE3o errado. Imprimir sa\xEDdas de debug \xE9 deixar migalhas de p\xE3\

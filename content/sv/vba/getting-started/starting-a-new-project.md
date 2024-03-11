@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:02.462655-07:00
 description: "Att starta ett nytt projekt i Visual Basic for Applications (VBA) inneb\xE4\
   r att man inr\xE4ttar en milj\xF6 inom ett v\xE4rdprogram, som Excel, f\xF6r att\
   \ automatisera\u2026"
-lastmod: '2024-02-25T18:49:36.038829-07:00'
+lastmod: '2024-03-11T00:14:11.085493-06:00'
 model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i Visual Basic for Applications (VBA) inneb\xE4\
   r att man inr\xE4ttar en milj\xF6 inom ett v\xE4rdprogram, som Excel, f\xF6r att\

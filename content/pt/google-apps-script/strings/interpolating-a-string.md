@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:16.747492-07:00
 description: "A interpola\xE7\xE3o de strings no Google Apps Script permite a incorpora\xE7\
   \xE3o din\xE2mica de express\xF5es dentro de strings, facilitando a cria\xE7\xE3\
   o de c\xF3digos mais\u2026"
-lastmod: '2024-02-25T18:49:43.755526-07:00'
+lastmod: '2024-03-11T00:14:19.755398-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings no Google Apps Script permite a incorpora\xE7\
   \xE3o din\xE2mica de express\xF5es dentro de strings, facilitando a cria\xE7\xE3\

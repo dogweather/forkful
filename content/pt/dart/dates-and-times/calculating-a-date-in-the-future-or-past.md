@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:41.057593-07:00
 description: "Calcular uma data no futuro ou no passado \xE9 uma tarefa comum para\
   \ programadores, lidando com agendamentos, lembretes ou qualquer funcionalidade\
   \ que\u2026"
-lastmod: '2024-03-09T21:06:10.641287-07:00'
+lastmod: '2024-03-11T00:14:19.979944-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular uma data no futuro ou no passado \xE9 uma tarefa comum para programadores,\
   \ lidando com agendamentos, lembretes ou qualquer funcionalidade que\u2026"

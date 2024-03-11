@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:59.119314-07:00
 description: "W kontek\u015Bcie programowania Arduino, sprawdzenie, czy katalog istnieje\
   \ na karcie SD lub podobnym module pami\u0119ci, pozwala na odczytywanie lub zapisywanie\u2026"
-lastmod: '2024-02-25T18:49:34.057573-07:00'
+lastmod: '2024-03-11T00:14:08.883465-06:00'
 model: gpt-4-0125-preview
 summary: "W kontek\u015Bcie programowania Arduino, sprawdzenie, czy katalog istnieje\
   \ na karcie SD lub podobnym module pami\u0119ci, pozwala na odczytywanie lub zapisywanie\u2026"

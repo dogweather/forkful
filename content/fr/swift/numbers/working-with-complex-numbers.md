@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:39.345835-07:00
 description: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire\
   \ (comme 3 + 4i). Les programmeurs les utilisent en Swift pour des t\xE2ches telles\
   \ que le\u2026"
-lastmod: '2024-02-25T18:49:54.860091-07:00'
+lastmod: '2024-03-11T00:14:32.098407-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire\
   \ (comme 3 + 4i). Les programmeurs les utilisent en Swift pour des t\xE2ches telles\

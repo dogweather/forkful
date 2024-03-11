@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:19.631260-07:00
 description: "Escrever para o erro padr\xE3o (stderr) em Ruby \xE9 sobre direcionar\
   \ mensagens de erro ou diagn\xF3sticos para um fluxo de sa\xEDda separado, distinto\
   \ da sa\xEDda\u2026"
-lastmod: '2024-02-25T18:49:44.739267-07:00'
+lastmod: '2024-03-11T00:14:20.857225-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) em Ruby \xE9 sobre direcionar mensagens\
   \ de erro ou diagn\xF3sticos para um fluxo de sa\xEDda separado, distinto da sa\xED\

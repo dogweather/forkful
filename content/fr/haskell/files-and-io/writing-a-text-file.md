@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:01.040249-07:00
 description: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou\
   \ mettre \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique.\
   \ Les programmeurs\u2026"
-lastmod: '2024-02-25T18:49:54.574665-07:00'
+lastmod: '2024-03-11T00:14:31.801830-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou mettre\
   \ \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique. Les\

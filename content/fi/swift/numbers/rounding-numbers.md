@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:08.243908-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeerisen arvon likim\xE4\
   \xE4r\xE4ist\xE4mist\xE4 tiettyyn tarkkuuteen, tyypillisesti ei-toivottujen desimaalien\
   \ poistamiseksi.\u2026"
-lastmod: '2024-02-25T18:49:53.810677-07:00'
+lastmod: '2024-03-11T00:14:30.942393-06:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeerisen arvon likim\xE4\xE4\
   r\xE4ist\xE4mist\xE4 tiettyyn tarkkuuteen, tyypillisesti ei-toivottujen desimaalien\

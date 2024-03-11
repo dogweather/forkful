@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:54.861204-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa jokaisen lauseen\
   \ sanan ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla varmistaen,\
   \ ett\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.592986-07:00'
+lastmod: '2024-03-11T00:14:30.633813-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa jokaisen lauseen\
   \ sanan ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla varmistaen,\

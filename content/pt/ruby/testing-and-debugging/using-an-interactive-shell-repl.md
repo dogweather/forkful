@@ -2,7 +2,7 @@
 date: 2024-01-26 04:17:26.260591-07:00
 description: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Ler-Avaliar-Imprimir),\
   \ permite testar c\xF3digo em tempo real. Programadores o utilizam para\u2026"
-lastmod: '2024-02-25T18:49:44.713638-07:00'
+lastmod: '2024-03-11T00:14:20.841604-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Ler-Avaliar-Imprimir),\
   \ permite testar c\xF3digo em tempo real. Programadores o utilizam para\u2026"

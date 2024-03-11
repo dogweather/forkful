@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:37.510676-07:00
 description: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat\
   \ som er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks. Programmerere bruker\
   \ TOML for \xE5\u2026"
-lastmod: '2024-02-25T18:49:38.523964-07:00'
+lastmod: '2024-03-11T00:14:13.809518-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat som\
   \ er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks. Programmerere bruker TOML\

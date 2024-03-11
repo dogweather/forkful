@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:57:26.808044-07:00
 description: "Arbeid med CSV-filer (Comma Separated Values) inneb\xE6rer analyse og\
   \ generering av tekstfiler hvor hver linje holder verdier separert av kommaer.\u2026"
-lastmod: '2024-03-09T21:06:05.267058-07:00'
+lastmod: '2024-03-11T00:14:14.041749-06:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med CSV-filer (Comma Separated Values) inneb\xE6rer analyse og generering\
   \ av tekstfiler hvor hver linje holder verdier separert av kommaer.\u2026"

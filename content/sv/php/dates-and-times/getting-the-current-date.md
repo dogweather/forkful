@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:19.849335-07:00
 description: "Att f\xE5 det aktuella datumet i PHP \xE4r en grundl\xE4ggande uppgift\
   \ som g\xF6r det m\xF6jligt f\xF6r dig att h\xE4mta och manipulera systemets datum\
   \ och tid. Detta \xE4r\u2026"
-lastmod: '2024-02-25T18:49:36.309764-07:00'
+lastmod: '2024-03-11T00:14:11.380676-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i PHP \xE4r en grundl\xE4ggande uppgift som\
   \ g\xF6r det m\xF6jligt f\xF6r dig att h\xE4mta och manipulera systemets datum och\

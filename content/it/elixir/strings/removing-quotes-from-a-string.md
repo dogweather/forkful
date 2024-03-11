@@ -3,7 +3,7 @@ date: 2024-01-26 03:38:34.331717-07:00
 description: "Rimuovere le virgolette da una stringa significa liberarsi di quegli\
   \ involucri extra per ottenere il testo pulito all'interno. I programmatori fanno\
   \ ci\xF2\u2026"
-lastmod: '2024-02-25T18:49:41.000255-07:00'
+lastmod: '2024-03-11T00:14:16.632514-06:00'
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa liberarsi di quegli involucri\
   \ extra per ottenere il testo pulito all'interno. I programmatori fanno ci\xF2\u2026"

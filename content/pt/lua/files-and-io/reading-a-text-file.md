@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:58.907591-07:00
 description: "Ler um arquivo de texto \xE9 simplesmente acessar e manipular o conte\xFA\
   do armazenado nele usando um programa. Programadores fazem isso para carregar\u2026"
-lastmod: '2024-02-25T18:49:44.346267-07:00'
+lastmod: '2024-03-11T00:14:20.445737-06:00'
 model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 simplesmente acessar e manipular o conte\xFA\
   do armazenado nele usando um programa. Programadores fazem isso para carregar\u2026"

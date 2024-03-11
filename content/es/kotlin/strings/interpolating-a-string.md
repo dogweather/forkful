@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:34.250543-07:00
 description: "La interpolaci\xF3n de cadenas permite incrustar valores de variables\
   \ directamente en una cadena de texto. Los programadores lo usan para hacer el c\xF3\
   digo m\xE1s\u2026"
-lastmod: '2024-02-25T18:49:55.494410-07:00'
+lastmod: '2024-03-11T00:14:32.827687-06:00'
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas permite incrustar valores de variables directamente\
   \ en una cadena de texto. Los programadores lo usan para hacer el c\xF3digo m\xE1\

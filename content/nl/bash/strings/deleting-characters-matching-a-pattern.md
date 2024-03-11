@@ -5,7 +5,7 @@ date: 2024-01-28 21:58:32.528387-07:00
 description: "Karakters verwijderen die overeenkomen met een patroon in Bash laat\
   \ je toe om strings te manipuleren naar je behoefte\u2014zoals ongewenste tekens\
   \ strippen of\u2026"
-lastmod: '2024-02-25T18:49:48.302589-07:00'
+lastmod: '2024-03-11T00:14:24.796948-06:00'
 model: gpt-4-0125-preview
 summary: "Karakters verwijderen die overeenkomen met een patroon in Bash laat je toe\
   \ om strings te manipuleren naar je behoefte\u2014zoals ongewenste tekens strippen\

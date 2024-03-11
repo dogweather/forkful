@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:31.379839-07:00
 description: "Att arbeta med CSV (Comma-Separated Values)-filer inneb\xE4r att l\xE4\
   sa fr\xE5n och skriva data till dessa filer, vilket \xE4r ett vanligt behov f\xF6\
   r uppgifter som\u2026"
-lastmod: '2024-02-25T18:49:35.931591-07:00'
+lastmod: '2024-03-11T00:14:10.921827-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma-Separated Values)-filer inneb\xE4r att l\xE4sa\
   \ fr\xE5n och skriva data till dessa filer, vilket \xE4r ett vanligt behov f\xF6\

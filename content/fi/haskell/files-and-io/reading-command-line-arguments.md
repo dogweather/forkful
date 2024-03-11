@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:02.282341-07:00
 description: "Komennon rivin argumenttien lukeminen mahdollistaa parametrien antamisen\
   \ ohjelmalle sen k\xE4ynnistyess\xE4. Ohjelmistokehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4\
   t t\xE4t\xE4 toimintoa\u2026"
-lastmod: '2024-02-25T18:49:53.543293-07:00'
+lastmod: '2024-03-11T00:14:30.580378-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon rivin argumenttien lukeminen mahdollistaa parametrien antamisen\
   \ ohjelmalle sen k\xE4ynnistyess\xE4. Ohjelmistokehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4\

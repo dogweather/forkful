@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:31.779228-07:00
 description: "Organiser le code en fonctions dans Go implique de diviser le code en\
   \ blocs r\xE9utilisables et modulaires qui effectuent des t\xE2ches sp\xE9cifiques.\
   \ Cette\u2026"
-lastmod: '2024-02-25T18:49:54.040506-07:00'
+lastmod: '2024-03-11T00:14:31.180745-06:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions dans Go implique de diviser le code en blocs\
   \ r\xE9utilisables et modulaires qui effectuent des t\xE2ches sp\xE9cifiques. Cette\u2026"

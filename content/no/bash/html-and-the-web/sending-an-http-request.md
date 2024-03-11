@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:57.790080-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel g\xE5r ut p\xE5 \xE5 be om data eller\
   \ handling fra en server. Programmerere gj\xF8r dette for \xE5 hente informasjon,\
   \ interagere med\u2026"
-lastmod: '2024-02-25T18:49:39.144794-07:00'
+lastmod: '2024-03-11T00:14:14.545972-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel g\xE5r ut p\xE5 \xE5 be om data eller\
   \ handling fra en server. Programmerere gj\xF8r dette for \xE5 hente informasjon,\

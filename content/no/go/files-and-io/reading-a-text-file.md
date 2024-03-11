@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:06.310072-07:00
 description: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
   \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse. Programmerere\
   \ utf\xF8rer ofte\u2026"
-lastmod: '2024-02-25T18:49:38.517545-07:00'
+lastmod: '2024-03-11T00:14:13.802282-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
   \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse. Programmerere\

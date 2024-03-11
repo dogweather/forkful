@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:08.928034-07:00
 description: "Temp-tiedoston luonti on v\xE4liaikaisten, usein kertak\xE4ytt\xF6isten\
   \ tiedostojen tekemist\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 esimerkiksi\
   \ datan v\xE4liaikaiss\xE4ilytykseen\u2026"
-lastmod: '2024-02-25T18:49:53.920694-07:00'
+lastmod: '2024-03-11T00:14:31.056109-06:00'
 model: gpt-4-1106-preview
 summary: "Temp-tiedoston luonti on v\xE4liaikaisten, usein kertak\xE4ytt\xF6isten\
   \ tiedostojen tekemist\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 esimerkiksi\

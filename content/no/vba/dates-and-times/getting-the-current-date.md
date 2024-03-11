@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:39.984767-07:00
 description: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende\
   \ datoen en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer\
   \ i sine\u2026"
-lastmod: '2024-02-25T18:49:38.813071-07:00'
+lastmod: '2024-03-11T00:14:14.171331-06:00'
 model: gpt-4-0125-preview
 summary: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende datoen\
   \ en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer i\

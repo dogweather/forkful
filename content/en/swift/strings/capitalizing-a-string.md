@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:38.526736-07:00
 description: "Capitalizing a string in Swift modifies the given string so that its\
   \ first character is uppercase, and the remaining characters are lowercase. Programmers\u2026"
-lastmod: '2024-02-25T18:49:56.817813-07:00'
+lastmod: '2024-03-11T00:14:34.250937-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in Swift modifies the given string so that its first\
   \ character is uppercase, and the remaining characters are lowercase. Programmers\u2026"

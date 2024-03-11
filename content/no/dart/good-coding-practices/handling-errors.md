@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:21.530737-07:00
 description: "H\xE5ndtering av feil i Dart handler om \xE5 forutse og h\xE5ndtere\
   \ unntak som oppst\xE5r under programkj\xF8ring for \xE5 forbedre p\xE5liteligheten\
   \ og brukervennligheten.\u2026"
-lastmod: '2024-03-09T21:06:05.252955-07:00'
+lastmod: '2024-03-11T00:14:14.024819-06:00'
 model: gpt-4-0125-preview
 summary: "H\xE5ndtering av feil i Dart handler om \xE5 forutse og h\xE5ndtere unntak\
   \ som oppst\xE5r under programkj\xF8ring for \xE5 forbedre p\xE5liteligheten og\

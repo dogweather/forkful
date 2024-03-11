@@ -3,7 +3,7 @@ date: 2024-01-26 01:03:40.767781-07:00
 description: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013\
   \ rodzaj dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015B\
   ledzi\u0107 detale, takie jak\u2026"
-lastmod: '2024-02-25T18:49:34.221533-07:00'
+lastmod: '2024-03-11T00:14:09.061444-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013 rodzaj\
   \ dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015Bledzi\u0107\

@@ -6,7 +6,7 @@ date: 2024-01-28 21:24:01.169975-07:00
 description: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
   es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\
   \ em\u2026"
-lastmod: '2024-02-25T18:49:43.802357-07:00'
+lastmod: '2024-03-11T00:14:19.805811-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
   es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\

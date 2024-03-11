@@ -2,7 +2,7 @@
 date: 2024-01-26 04:43:17.953657-07:00
 description: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen\
   \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin. Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.603166-07:00'
+lastmod: '2024-03-11T00:14:30.644618-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen\
   \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin. Ohjelmoijat\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:26.070865-07:00
 description: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\xF8\
   nsters\xF8king og -matching i programmering. Programmerere bruker regex til oppgaver\
   \ som \xE5\u2026"
-lastmod: '2024-02-25T18:49:38.701970-07:00'
+lastmod: '2024-03-11T00:14:14.052696-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\xF8nsters\xF8\
   king og -matching i programmering. Programmerere bruker regex til oppgaver som \xE5\

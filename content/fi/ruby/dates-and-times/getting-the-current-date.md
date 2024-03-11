@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:41.777200-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen on olennainen teht\xE4\
   v\xE4 l\xE4hes miss\xE4 tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen\
   \ lokituksesta sovelluksessa\u2026"
-lastmod: '2024-02-25T18:49:54.000888-07:00'
+lastmod: '2024-03-11T00:14:31.138787-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen on olennainen teht\xE4v\xE4\
   \ l\xE4hes miss\xE4 tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen\

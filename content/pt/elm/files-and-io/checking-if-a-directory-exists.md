@@ -3,7 +3,7 @@ date: 2024-01-20 14:56:14.068274-07:00
 description: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um\
   \ caminho espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\
   \ fazem isso\u2026"
-lastmod: '2024-03-09T21:11:28.920747-07:00'
+lastmod: '2024-03-11T00:14:20.216730-06:00'
 model: unknown
 summary: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um caminho\
   \ espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\

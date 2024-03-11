@@ -6,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c thao t\xE1c v
   \ truy c\u1EADp d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc trong Ng\xF4\
   n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng (eXtensible Markup Language).\
   \ C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: '2024-02-25T18:49:35.314076-07:00'
+lastmod: '2024-03-11T00:14:10.262946-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c thao t\xE1c v\xE0 truy\
   \ c\u1EADp d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc trong Ng\xF4n\

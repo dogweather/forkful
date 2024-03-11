@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:59:20.169530-07:00
 description: "\xC5 organisere kode i funksjoner i C inneb\xE6rer \xE5 bryte ned komplekse\
   \ oppgaver i mindre, gjenbrukbare blokker med kode. Denne praksisen forbedrer\u2026"
-lastmod: '2024-02-25T18:49:39.455591-07:00'
+lastmod: '2024-03-11T00:14:14.887134-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner i C inneb\xE6rer \xE5 bryte ned komplekse\
   \ oppgaver i mindre, gjenbrukbare blokker med kode. Denne praksisen forbedrer\u2026"

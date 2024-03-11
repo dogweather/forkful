@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:25.108008-07:00
 description: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implica\
   \ unir dos o m\xE1s cadenas en una \xFAnica entidad. Esta es una tarea fundamental\
   \ en\u2026"
-lastmod: '2024-02-25T18:49:55.374901-07:00'
+lastmod: '2024-03-11T00:14:32.698310-06:00'
 model: gpt-4-0125-preview
 summary: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implica unir\
   \ dos o m\xE1s cadenas en una \xFAnica entidad. Esta es una tarea fundamental en\u2026"

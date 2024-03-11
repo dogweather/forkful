@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:19.473332-07:00
 description: "Arrondir des nombres consiste \xE0 ajuster une valeur au plus proche\
   \ entier ou \xE0 un nombre de d\xE9cimales sp\xE9cifi\xE9. Les programmeurs arrondissent\
   \ les nombres\u2026"
-lastmod: '2024-02-25T18:49:54.722889-07:00'
+lastmod: '2024-03-11T00:14:31.962558-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir des nombres consiste \xE0 ajuster une valeur au plus proche entier\
   \ ou \xE0 un nombre de d\xE9cimales sp\xE9cifi\xE9. Les programmeurs arrondissent\

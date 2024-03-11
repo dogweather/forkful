@@ -3,7 +3,7 @@ date: 2024-01-26 04:46:08.755653-07:00
 description: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rteil\
   \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\
   \ nur reellen\u2026"
-lastmod: '2024-02-25T18:49:50.694241-07:00'
+lastmod: '2024-03-11T00:14:27.515459-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rteil\
   \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\

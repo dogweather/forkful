@@ -3,7 +3,7 @@ date: 2024-01-26 03:37:53.629879-07:00
 description: "Supprimer les guillemets d'une cha\xEEne consiste \xE0 retirer les marques\
   \ de citation qui encadrent la cha\xEEne. Les programmeurs souhaitent souvent le\
   \ faire\u2026"
-lastmod: '2024-02-25T18:49:54.671881-07:00'
+lastmod: '2024-03-11T00:14:31.908684-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne consiste \xE0 retirer les marques\
   \ de citation qui encadrent la cha\xEEne. Les programmeurs souhaitent souvent le\

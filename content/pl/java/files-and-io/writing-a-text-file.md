@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:20.611025-07:00
 description: "Zapisywanie pliku tekstowego w Javie dotyczy wykorzystywania mo\u017C\
   liwo\u015Bci j\u0119zyka do tworzenia plik\xF3w i zapisywania w nich tre\u015Bci\
   \ na systemie plik\xF3w.\u2026"
-lastmod: '2024-02-25T18:49:33.661608-07:00'
+lastmod: '2024-03-11T00:14:08.474418-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Javie dotyczy wykorzystywania mo\u017Cliwo\u015B\
   ci j\u0119zyka do tworzenia plik\xF3w i zapisywania w nich tre\u015Bci na systemie\

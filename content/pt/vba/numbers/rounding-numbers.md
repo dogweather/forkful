@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:57.014944-07:00
 description: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\xFA\
   mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais.\
   \ Programadores\u2026"
-lastmod: '2024-02-25T18:49:44.026347-07:00'
+lastmod: '2024-03-11T00:14:20.100314-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\xFA\
   mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais.\

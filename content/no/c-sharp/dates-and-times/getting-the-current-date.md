@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:15.826089-07:00
 description: "\xC5 f\xE5 tak i dagens dato i C# inneb\xE6rer \xE5 hente dagens dato-\
   \ og tidsdetaljer fra systemet. Programmerere trenger ofte \xE5 f\xE5 tilgang til\
   \ denne informasjonen\u2026"
-lastmod: '2024-02-25T18:49:38.981790-07:00'
+lastmod: '2024-03-11T00:14:14.366465-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 tak i dagens dato i C# inneb\xE6rer \xE5 hente dagens dato- og\
   \ tidsdetaljer fra systemet. Programmerere trenger ofte \xE5 f\xE5 tilgang til denne\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:52.033081-07:00
 description: "Creating a temporary file means making a file that's only needed for\
   \ a short time or for the current session. Programmers do it to store intermediate\
   \ data\u2026"
-lastmod: '2024-02-25T18:49:56.776848-07:00'
+lastmod: '2024-03-11T00:14:34.206970-06:00'
 model: gpt-4-1106-preview
 summary: "Creating a temporary file means making a file that's only needed for a short\
   \ time or for the current session. Programmers do it to store intermediate data\u2026"

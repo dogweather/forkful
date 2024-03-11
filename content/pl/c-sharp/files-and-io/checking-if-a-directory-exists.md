@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:08.298215-07:00
 description: "Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecno\u015B\
   ci folderu w okre\u015Blonej \u015Bcie\u017Cce w systemie plik\xF3w. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
-lastmod: '2024-02-25T18:49:33.787624-07:00'
+lastmod: '2024-03-11T00:14:08.606147-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecno\u015B\
   ci folderu w okre\u015Blonej \u015Bcie\u017Cce w systemie plik\xF3w. Programi\u015B\

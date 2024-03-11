@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:44.270186-07:00
 description: "Mik\xE4 & Miksi? Ohjelmoinnissa debug-tulostus tarkoittaa tilap\xE4\
   isten viestien tulostamista koodin suorituksen seuraamiseksi. K\xE4yt\xE4mme t\xE4\
   t\xE4 selvitt\xE4\xE4ksemme\u2026"
-lastmod: '2024-02-25T18:49:53.530997-07:00'
+lastmod: '2024-03-11T00:14:30.566962-06:00'
 model: gpt-4-1106-preview
 summary: "Mik\xE4 & Miksi? Ohjelmoinnissa debug-tulostus tarkoittaa tilap\xE4isten\
   \ viestien tulostamista koodin suorituksen seuraamiseksi. K\xE4yt\xE4mme t\xE4t\xE4\

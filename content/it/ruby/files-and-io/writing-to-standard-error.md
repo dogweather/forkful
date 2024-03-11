@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:21.977204-07:00
 description: "Scrivere sull'errore standard (stderr) in Ruby significa indirizzare\
   \ messaggi di errore o diagnostiche a un flusso di uscita separato, distinto\u2026"
-lastmod: '2024-02-25T18:49:41.804387-07:00'
+lastmod: '2024-03-11T00:14:17.590665-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere sull'errore standard (stderr) in Ruby significa indirizzare messaggi\
   \ di errore o diagnostiche a un flusso di uscita separato, distinto\u2026"

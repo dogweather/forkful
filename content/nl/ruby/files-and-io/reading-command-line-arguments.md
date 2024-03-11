@@ -5,7 +5,7 @@ date: 2024-01-28 22:05:40.088336-07:00
 description: "Het lezen van command-line argumenten in Ruby stelt scripts in staat\
   \ om direct bij het uitvoeren input te krijgen, zoals het configureren van opties\
   \ of\u2026"
-lastmod: '2024-02-25T18:49:48.676269-07:00'
+lastmod: '2024-03-11T00:14:25.217629-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van command-line argumenten in Ruby stelt scripts in staat om\
   \ direct bij het uitvoeren input te krijgen, zoals het configureren van opties of\u2026"

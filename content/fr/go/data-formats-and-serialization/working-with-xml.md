@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:06.925317-07:00
 description: "Travailler avec XML en Go implique d'analyser (lire) et de g\xE9n\xE9\
   rer (\xE9crire) des documents XML \u2013 un format standard pour l'\xE9change de\
   \ donn\xE9es structur\xE9es.\u2026"
-lastmod: '2024-02-25T18:49:54.061256-07:00'
+lastmod: '2024-03-11T00:14:31.201710-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en Go implique d'analyser (lire) et de g\xE9n\xE9rer\
   \ (\xE9crire) des documents XML \u2013 un format standard pour l'\xE9change de donn\xE9\

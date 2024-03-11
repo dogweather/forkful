@@ -2,7 +2,7 @@
 date: 2024-01-25 20:50:18.871808-07:00
 description: "A debugger is a tool that helps you squish bugs in your code by letting\
   \ you pause, poke around, and find out what's really going on under the hood.\u2026"
-lastmod: '2024-02-25T18:49:56.763538-07:00'
+lastmod: '2024-03-11T00:14:34.193498-06:00'
 model: gpt-4-1106-preview
 summary: "A debugger is a tool that helps you squish bugs in your code by letting\
   \ you pause, poke around, and find out what's really going on under the hood.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:38:48.117873-07:00
 description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil\
   \ (wie `3 + 4i`). Sie werden in der Ingenieurwissenschaft, Physik und bei bestimmten\u2026"
-lastmod: '2024-02-25T18:49:50.653407-07:00'
+lastmod: '2024-03-11T00:14:27.421381-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil (wie\
   \ `3 + 4i`). Sie werden in der Ingenieurwissenschaft, Physik und bei bestimmten\u2026"

@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:02.671575-07:00
 description: "Deleting characters matching a specific pattern from strings in C is\
   \ about removing all instances of certain characters that fit predefined criteria.\u2026"
-lastmod: '2024-02-25T18:49:56.934077-07:00'
+lastmod: '2024-03-11T00:14:34.377290-06:00'
 model: gpt-4-0125-preview
 summary: "Deleting characters matching a specific pattern from strings in C is about\
   \ removing all instances of certain characters that fit predefined criteria.\u2026"

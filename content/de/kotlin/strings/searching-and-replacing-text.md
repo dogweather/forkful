@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:00.793158-07:00
 description: "Suchen und Ersetzen ist die Aktion, Textmuster in einem String zu finden\
   \ und sie durch neue Inhalte zu ersetzen. Programmierer nutzen diese Funktion, um\u2026"
-lastmod: '2024-02-25T18:49:50.893740-07:00'
+lastmod: '2024-03-11T00:14:27.724971-06:00'
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen ist die Aktion, Textmuster in einem String zu finden\
   \ und sie durch neue Inhalte zu ersetzen. Programmierer nutzen diese Funktion, um\u2026"

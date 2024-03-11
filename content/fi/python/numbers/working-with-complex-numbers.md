@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:25.507465-07:00
 description: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b`\
   \ ovat reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`). Ohjelmoinnissa\
   \ niit\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.111925-07:00'
+lastmod: '2024-03-11T00:14:30.063913-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b` ovat\
   \ reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`). Ohjelmoinnissa niit\xE4\

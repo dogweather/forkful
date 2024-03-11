@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:02.205436-07:00
 description: "Criar um arquivo tempor\xE1rio em Visual Basic for Applications (VBA)\
   \ envolve gerar programaticamente um arquivo para uso de curto prazo, tipicamente\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:44.053222-07:00'
+lastmod: '2024-03-11T00:14:20.128418-06:00'
 model: gpt-4-0125-preview
 summary: "Criar um arquivo tempor\xE1rio em Visual Basic for Applications (VBA) envolve\
   \ gerar programaticamente um arquivo para uso de curto prazo, tipicamente para\u2026"

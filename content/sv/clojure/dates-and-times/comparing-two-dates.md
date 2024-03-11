@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:35.110405-07:00
 description: "J\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att bed\xF6ma vilket datum som\
   \ kommer f\xF6re eller efter ett annat, eller om de \xE4r samma. Programmerare beh\xF6\
   ver det f\xF6r att hantera\u2026"
-lastmod: '2024-02-25T18:49:35.875577-07:00'
+lastmod: '2024-03-11T00:14:10.864154-06:00'
 model: gpt-4-1106-preview
 summary: "J\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att bed\xF6ma vilket datum som kommer\
   \ f\xF6re eller efter ett annat, eller om de \xE4r samma. Programmerare beh\xF6\

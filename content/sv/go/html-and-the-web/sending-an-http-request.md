@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:38.975129-07:00
 description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att initiera ett anrop fr\xE5\
   n din Go-applikation till en webbserver, API eller n\xE5gon annan HTTP-baserad tj\xE4\
   nst.\u2026"
-lastmod: '2024-02-25T18:49:35.724460-07:00'
+lastmod: '2024-03-11T00:14:10.693189-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att initiera ett anrop fr\xE5n\
   \ din Go-applikation till en webbserver, API eller n\xE5gon annan HTTP-baserad tj\xE4\

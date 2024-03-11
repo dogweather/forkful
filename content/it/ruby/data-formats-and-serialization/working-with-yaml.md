@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:19.122221-07:00
 description: "YAML, che sta per YAML Ain't Markup Language, \xE8 ampiamente utilizzato\
   \ in Ruby per file di configurazione e serializzazione dei dati grazie al suo formato\u2026"
-lastmod: '2024-02-25T18:49:41.808185-07:00'
+lastmod: '2024-03-11T00:14:17.594981-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, che sta per YAML Ain't Markup Language, \xE8 ampiamente utilizzato\
   \ in Ruby per file di configurazione e serializzazione dei dati grazie al suo formato\u2026"

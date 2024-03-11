@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:46.917383-07:00
 description: "Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokument\xF3\
   w HTML, co jest kluczowe dla takich zada\u0144 jak scraping internetowy, analiza\
   \ danych\u2026"
-lastmod: '2024-02-25T18:49:33.902594-07:00'
+lastmod: '2024-03-11T00:14:08.725426-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokument\xF3\
   w HTML, co jest kluczowe dla takich zada\u0144 jak scraping internetowy, analiza\

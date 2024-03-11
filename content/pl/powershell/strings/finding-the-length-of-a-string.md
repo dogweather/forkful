@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:51.492693-07:00
 description: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to ilo\u015B\u0107\
   \ znak\xF3w, z kt\xF3rych si\u0119 sk\u0142ada. Programi\u015Bci musz\u0105 to sprawdza\u0107\
   , aby zarz\u0105dza\u0107 tekstem, np. w walidacji, ekstrakcji danych,\u2026"
-lastmod: '2024-02-25T18:49:33.987405-07:00'
+lastmod: '2024-03-11T00:14:08.812458-06:00'
 model: gpt-4-1106-preview
 summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to ilo\u015B\u0107 znak\xF3\
   w, z kt\xF3rych si\u0119 sk\u0142ada. Programi\u015Bci musz\u0105 to sprawdza\u0107\

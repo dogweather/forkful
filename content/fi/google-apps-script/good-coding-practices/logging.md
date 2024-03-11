@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:00.882655-07:00
 description: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheiden\
   \ tai merkitt\xE4vien esiintymien tallentamista suoritusaikana. Ohjelmoijat tekev\xE4\
   t n\xE4in\u2026"
-lastmod: '2024-02-25T18:49:53.081374-07:00'
+lastmod: '2024-03-11T00:14:30.031175-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheiden tai\
   \ merkitt\xE4vien esiintymien tallentamista suoritusaikana. Ohjelmoijat tekev\xE4\

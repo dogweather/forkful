@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:16.986069-07:00
 description: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
   \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"
-lastmod: '2024-02-25T18:49:34.260622-07:00'
+lastmod: '2024-03-11T00:14:09.103417-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
   \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:32.176436-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) implica el an\xE1\
   lisis, manipulaci\xF3n y generaci\xF3n de datos en un formato tabular que es ampliamente\u2026"
-lastmod: '2024-02-25T18:49:55.992967-07:00'
+lastmod: '2024-03-11T00:14:33.361308-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica el an\xE1\
   lisis, manipulaci\xF3n y generaci\xF3n de datos en un formato tabular que es ampliamente\u2026"

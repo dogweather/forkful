@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:15.006828-07:00
 description: "Ler argumentos da linha de comando em JavaScript significa pegar informa\xE7\
   \xF5es extras passadas ao iniciar um script Node.js. Programadores fazem isso para\u2026"
-lastmod: '2024-02-25T18:49:44.594481-07:00'
+lastmod: '2024-03-11T00:14:20.713770-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando em JavaScript significa pegar informa\xE7\
   \xF5es extras passadas ao iniciar um script Node.js. Programadores fazem isso para\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:07:40.976281-07:00
 description: "Trabalhar com n\xFAmeros complexos envolve realizar opera\xE7\xF5es\
   \ matem\xE1ticas em n\xFAmeros que possuem tanto uma parte real quanto uma parte\
   \ imagin\xE1ria.\u2026"
-lastmod: '2024-02-25T18:49:44.025285-07:00'
+lastmod: '2024-03-11T00:14:20.099168-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com n\xFAmeros complexos envolve realizar opera\xE7\xF5es matem\xE1\
   ticas em n\xFAmeros que possuem tanto uma parte real quanto uma parte imagin\xE1\

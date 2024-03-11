@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:30.680270-07:00
 description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Dart handlar om att best\xE4\
   mma antalet kodenheter (i grunden antalet tecken om man t\xE4nker p\xE5 det p\xE5\
   \ ett f\xF6renklat s\xE4tt) i\u2026"
-lastmod: '2024-03-09T21:06:02.360200-07:00'
+lastmod: '2024-03-11T00:14:10.933955-06:00'
 model: gpt-4-0125-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Dart handlar om att best\xE4mma\
   \ antalet kodenheter (i grunden antalet tecken om man t\xE4nker p\xE5 det p\xE5\

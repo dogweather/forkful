@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:53.217281-07:00
 description: "L'analisi di HTML in Rust \xE8 il processo di estrazione dati da documenti\
   \ HTML, essenziale per il web scraping, l'estrazione di dati o la costruzione di\
   \ web\u2026"
-lastmod: '2024-02-25T18:49:41.091411-07:00'
+lastmod: '2024-03-11T00:14:16.780770-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi di HTML in Rust \xE8 il processo di estrazione dati da documenti\
   \ HTML, essenziale per il web scraping, l'estrazione di dati o la costruzione di\

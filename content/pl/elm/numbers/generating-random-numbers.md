@@ -6,7 +6,7 @@ date: 2024-02-27 22:50:49.378371-07:00
 description: "Generowanie liczb losowych w Elm odbywa si\u0119 przez u\u017Cycie modu\u0142\
   u `Random`, kt\xF3ry pozwala na produkcj\u0119 pseudo-losowych liczb. Liczby te\
   \ przydaj\u0105 si\u0119 w\u2026"
-lastmod: '2024-03-09T21:06:00.052949-07:00'
+lastmod: '2024-03-11T00:14:08.495796-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie liczb losowych w Elm odbywa si\u0119 przez u\u017Cycie modu\u0142\
   u `Random`, kt\xF3ry pozwala na produkcj\u0119 pseudo-losowych liczb. Liczby te\

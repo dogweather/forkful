@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:23.585788-07:00
 description: "Stringinterpolation bedeutet, Variablen oder Ausdr\xFCcke in einen Textstring\
   \ einzusetzen. Programmierer nutzen das, um dynamische Werte in Skripten einfach\u2026"
-lastmod: '2024-02-25T18:49:51.096431-07:00'
+lastmod: '2024-03-11T00:14:27.942578-06:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolation bedeutet, Variablen oder Ausdr\xFCcke in einen Textstring\
   \ einzusetzen. Programmierer nutzen das, um dynamische Werte in Skripten einfach\u2026"

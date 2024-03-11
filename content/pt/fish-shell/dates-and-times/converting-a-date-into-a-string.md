@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:24.416687-07:00
 description: "Converter uma data em uma string \xE9 transformar a representa\xE7\xE3\
   o de tempo (normalmente n\xFAmeros) em texto leg\xEDvel. Fazemos isso para facilitar\
   \ a leitura,\u2026"
-lastmod: '2024-02-25T18:49:44.634217-07:00'
+lastmod: '2024-03-11T00:14:20.756954-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma data em uma string \xE9 transformar a representa\xE7\xE3o\
   \ de tempo (normalmente n\xFAmeros) em texto leg\xEDvel. Fazemos isso para facilitar\

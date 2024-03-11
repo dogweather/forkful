@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:45.246700-07:00
 description: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytte\
   \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\
   \ endre\u2026"
-lastmod: '2024-02-25T18:49:39.479151-07:00'
+lastmod: '2024-03-11T00:14:14.913076-06:00'
 model: gpt-4-1106-preview
 summary: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytte\
   \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\

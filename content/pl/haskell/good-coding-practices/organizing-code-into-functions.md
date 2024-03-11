@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:53.451207-07:00
 description: "Organizowanie kodu w funkcje w Haskellu oznacza rozk\u0142adanie kodu\
   \ na wielokrotnie u\u017Cywalne, nazwane bloki. Dlaczego? Pozwala to zachowa\u0107\
   \ zasad\u0119 DRY (Nie\u2026"
-lastmod: '2024-02-25T18:49:33.822293-07:00'
+lastmod: '2024-03-11T00:14:08.642737-06:00'
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje w Haskellu oznacza rozk\u0142adanie kodu na\
   \ wielokrotnie u\u017Cywalne, nazwane bloki. Dlaczego? Pozwala to zachowa\u0107\

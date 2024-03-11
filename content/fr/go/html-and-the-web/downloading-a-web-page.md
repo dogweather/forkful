@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:12.557861-07:00
 description: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
   \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\
   \ cela pour le\u2026"
-lastmod: '2024-02-25T18:49:54.032958-07:00'
+lastmod: '2024-03-11T00:14:31.172743-06:00'
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
   \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\

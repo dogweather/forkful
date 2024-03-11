@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:05.518595-07:00
 description: "Refactoring in programmeren houdt in dat bestaande computercodes worden\
   \ geherstructureerd\u2014de factoring wordt veranderd\u2014zonder dat hun externe\
   \ gedrag\u2026"
-lastmod: '2024-02-25T18:49:47.692970-07:00'
+lastmod: '2024-03-11T00:14:24.104274-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in programmeren houdt in dat bestaande computercodes worden\
   \ geherstructureerd\u2014de factoring wordt veranderd\u2014zonder dat hun externe\

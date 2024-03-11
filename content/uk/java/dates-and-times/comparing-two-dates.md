@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:06.605217-07:00
 description: "Comparing two dates lets you figure out their chronological sequence\
   \ \u2013 which one comes before or after, or if they're the same moment in time.\
   \ Programmers\u2026"
-lastmod: '2024-02-25T18:49:46.583246-07:00'
+lastmod: '2024-03-11T00:14:22.950365-06:00'
 model: gpt-4-1106-preview
 summary: "Comparing two dates lets you figure out their chronological sequence \u2013\
   \ which one comes before or after, or if they're the same moment in time. Programmers\u2026"

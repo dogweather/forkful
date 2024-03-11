@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:26.047038-07:00
 description: "Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu\
   \ PHP, poniewa\u017C pozwala na weryfikacj\u0119 obecno\u015Bci katalogu przed wykonaniem\u2026"
-lastmod: '2024-02-25T18:49:33.875861-07:00'
+lastmod: '2024-03-11T00:14:08.698308-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu\
   \ PHP, poniewa\u017C pozwala na weryfikacj\u0119 obecno\u015Bci katalogu przed wykonaniem\u2026"

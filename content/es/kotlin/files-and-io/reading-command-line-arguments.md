@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:38.101512-07:00
 description: "Leer argumentos de la l\xEDnea de comandos permite a tu programa en\
   \ Kotlin recibir datos externos al ejecutarse. Los programadores usan esto para\u2026"
-lastmod: '2024-02-25T18:49:55.522773-07:00'
+lastmod: '2024-03-11T00:14:32.859001-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite a tu programa en Kotlin\
   \ recibir datos externos al ejecutarse. Los programadores usan esto para\u2026"

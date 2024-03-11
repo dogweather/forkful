@@ -9,7 +9,7 @@ description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON (JavaScript Objec
   \u0445 Clojure (\u043C\u0430\u043F\u0438, \u0432\u0435\u043A\u0442\u043E\u0440\u0438\
   ) \u0456 \u043D\u0430\u0432\u043F\u0430\u043A\u0438. \u0426\u0435 \u0437\u0430\u0432\
   \u0434\u0430\u043D\u043D\u044F \u0454\u2026"
-lastmod: '2024-02-25T18:49:46.250638-07:00'
+lastmod: '2024-03-11T00:14:22.517797-06:00'
 model: gpt-4-0125-preview
 summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON (JavaScript Object Notation)\
   \ \u0443 Clojure \u0432\u043A\u043B\u044E\u0447\u0430\u0454 \u043F\u0430\u0440\u0441\

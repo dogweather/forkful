@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:22.183843-07:00
 description: "Testien kirjoittaminen TypeScriptill\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
   \ skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi. Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.244838-07:00'
+lastmod: '2024-03-11T00:14:30.251932-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen TypeScriptill\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
   \ skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi. Ohjelmoijat\u2026"

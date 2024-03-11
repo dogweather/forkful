@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:13.983645-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4riteltyyn desimaalipaikkaan. Se\
   \ on ohjelmoinnissa peruskauraa\u2026"
-lastmod: '2024-02-25T18:49:53.604074-07:00'
+lastmod: '2024-03-11T00:14:30.645568-06:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4riteltyyn desimaalipaikkaan. Se\

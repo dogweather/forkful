@@ -2,7 +2,7 @@
 date: 2024-01-27 16:20:58.500349-07:00
 description: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
   \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"
-lastmod: '2024-02-25T18:49:51.106667-07:00'
+lastmod: '2024-03-11T00:14:27.953448-06:00'
 model: gpt-4-0125-preview
 summary: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
   \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"

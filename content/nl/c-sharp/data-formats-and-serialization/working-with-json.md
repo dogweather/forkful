@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:17.080361-07:00
 description: "Werken met JSON betekent het verwerken en genereren van JSON (JavaScript\
   \ Object Notation) data in uw applicaties. Programmeurs doen dit omdat JSON een\u2026"
-lastmod: '2024-02-25T18:49:48.170319-07:00'
+lastmod: '2024-03-11T00:14:24.659347-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met JSON betekent het verwerken en genereren van JSON (JavaScript\
   \ Object Notation) data in uw applicaties. Programmeurs doen dit omdat JSON een\u2026"

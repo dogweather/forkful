@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:35.159926-07:00
 description: "Baixar uma p\xE1gina web no Google Apps Script envolve buscar o conte\xFA\
   do de uma p\xE1gina web via HTML para v\xE1rios prop\xF3sitos, como web scraping,\
   \ extra\xE7\xE3o de\u2026"
-lastmod: '2024-02-25T18:49:43.769673-07:00'
+lastmod: '2024-03-11T00:14:19.770477-06:00'
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina web no Google Apps Script envolve buscar o conte\xFA\
   do de uma p\xE1gina web via HTML para v\xE1rios prop\xF3sitos, como web scraping,\

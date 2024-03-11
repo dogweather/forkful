@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:05.821170-07:00
 description: "Inviare una richiesta HTTP con autenticazione di base in C comporta\
   \ la creazione di una richiesta HTTP che include un'intestazione di Autorizzazione\
   \ con\u2026"
-lastmod: '2024-02-25T18:49:41.744106-07:00'
+lastmod: '2024-03-11T00:14:17.526873-06:00'
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base in C comporta la creazione\
   \ di una richiesta HTTP che include un'intestazione di Autorizzazione con\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:52:25.551930-07:00
 description: "Beim Debuggen von C# Programmen ist das Ausgeben von Zwischenergebnissen\
   \ und Fehlersuchinformationen essenziell. Es hilft Entwicklerinnen und Entwicklern,\u2026"
-lastmod: '2024-02-25T18:49:50.950887-07:00'
+lastmod: '2024-03-11T00:14:27.786872-06:00'
 model: gpt-4-1106-preview
 summary: "Beim Debuggen von C# Programmen ist das Ausgeben von Zwischenergebnissen\
   \ und Fehlersuchinformationen essenziell. Es hilft Entwicklerinnen und Entwicklern,\u2026"

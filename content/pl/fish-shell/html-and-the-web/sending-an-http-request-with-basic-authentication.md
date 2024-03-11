@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:50.556483-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
   \ umo\u017Cliwia dost\u0119p do zabezpieczonych zasob\xF3w sieciowych. Programi\u015B\
   ci korzystaj\u0105 z tego mechanizmu,\u2026"
-lastmod: '2024-02-25T18:49:34.214310-07:00'
+lastmod: '2024-03-11T00:14:09.053876-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem umo\u017C\
   liwia dost\u0119p do zabezpieczonych zasob\xF3w sieciowych. Programi\u015Bci korzystaj\u0105\

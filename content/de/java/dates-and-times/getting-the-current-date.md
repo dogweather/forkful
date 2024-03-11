@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:09:41.826776-07:00
 description: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation,\
   \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie\u2026"
-lastmod: '2024-02-25T18:49:50.837612-07:00'
+lastmod: '2024-03-11T00:14:27.666088-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation,\
   \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie\u2026"

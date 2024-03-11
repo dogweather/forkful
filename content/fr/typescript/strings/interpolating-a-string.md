@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:38.160284-07:00
 description: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des variables ou des\
   \ expressions au sein d'une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent\
   \ pour\u2026"
-lastmod: '2024-02-25T18:49:54.239463-07:00'
+lastmod: '2024-03-11T00:14:31.437880-06:00'
 model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des variables ou des expressions\
   \ au sein d'une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent pour\u2026"

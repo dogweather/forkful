@@ -3,7 +3,7 @@ date: 2024-01-26 03:48:23.152351-07:00
 description: "Usar um depurador em Elixir envolve percorrer seu c\xF3digo, inspecionar\
   \ vari\xE1veis e rastrear fluxos para eliminar bugs. Os programadores fazem isso\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:43.903488-07:00'
+lastmod: '2024-03-11T00:14:19.920987-06:00'
 model: gpt-4-0125-preview
 summary: "Usar um depurador em Elixir envolve percorrer seu c\xF3digo, inspecionar\
   \ vari\xE1veis e rastrear fluxos para eliminar bugs. Os programadores fazem isso\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:57.236021-07:00
 description: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA)\
   \ polega na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142\
   ug sieciowych poprzez\u2026"
-lastmod: '2024-02-25T18:49:33.593306-07:00'
+lastmod: '2024-03-11T00:14:08.403118-06:00'
 model: gpt-4-0125-preview
 summary: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA) polega\
   \ na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142ug sieciowych\

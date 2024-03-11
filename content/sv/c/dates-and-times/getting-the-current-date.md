@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:25.394640-07:00
 description: "Att f\xE5 det aktuella datumet i C inneb\xE4r att man utnyttjar det\
   \ standardiserade C-biblioteket f\xF6r att h\xE4mta och formatera systemets nuvarande\
   \ datum och tid.\u2026"
-lastmod: '2024-02-25T18:49:36.709180-07:00'
+lastmod: '2024-03-11T00:14:11.798891-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i C inneb\xE4r att man utnyttjar det standardiserade\
   \ C-biblioteket f\xF6r att h\xE4mta och formatera systemets nuvarande datum och\

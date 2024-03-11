@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:23.859910-07:00
 description: "Strenginterpolering i Google Apps Script gj\xF8r det mulig for dynamisk\
   \ innlemming av uttrykk innenfor strenger, noe som letter skapelsen av mer lesbare\
   \ og\u2026"
-lastmod: '2024-02-25T18:49:38.529275-07:00'
+lastmod: '2024-03-11T00:14:13.815550-06:00'
 model: gpt-4-0125-preview
 summary: "Strenginterpolering i Google Apps Script gj\xF8r det mulig for dynamisk\
   \ innlemming av uttrykk innenfor strenger, noe som letter skapelsen av mer lesbare\

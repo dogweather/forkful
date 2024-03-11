@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:14.348240-07:00
 description: "Writing to a text file in Ruby is a fundamental operation that allows\
   \ you to store output and data persistently, enabling data to be accessed or modified\u2026"
-lastmod: '2024-02-25T18:49:57.004167-07:00'
+lastmod: '2024-03-11T00:14:34.455650-06:00'
 model: gpt-4-0125-preview
 summary: "Writing to a text file in Ruby is a fundamental operation that allows you\
   \ to store output and data persistently, enabling data to be accessed or modified\u2026"

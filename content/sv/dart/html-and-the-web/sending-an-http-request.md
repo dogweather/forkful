@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:48.094529-07:00
 description: "Att skicka en HTTP-f\xF6rfr\xE5gan i Dart \xE4r processen att initiera\
   \ kommunikation med en webbserver eller API fr\xE5n en Dart-applikation. Programmerare\
   \ g\xF6r detta\u2026"
-lastmod: '2024-03-09T21:06:02.366172-07:00'
+lastmod: '2024-03-11T00:14:10.940516-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan i Dart \xE4r processen att initiera kommunikation\
   \ med en webbserver eller API fr\xE5n en Dart-applikation. Programmerare g\xF6r\

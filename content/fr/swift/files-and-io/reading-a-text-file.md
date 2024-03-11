@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:17.497244-07:00
 description: "La lecture de fichiers texte consiste \xE0 acc\xE9der au contenu stock\xE9\
   \ dans des fichiers sur le disque pour pouvoir le manipuler ou l'analyser. Les\u2026"
-lastmod: '2024-02-25T18:49:54.883175-07:00'
+lastmod: '2024-03-11T00:14:32.122163-06:00'
 model: gpt-4-1106-preview
 summary: "La lecture de fichiers texte consiste \xE0 acc\xE9der au contenu stock\xE9\
   \ dans des fichiers sur le disque pour pouvoir le manipuler ou l'analyser. Les\u2026"

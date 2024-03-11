@@ -3,7 +3,7 @@ date: 2024-01-26 03:38:03.904983-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa \xE4rsytt\xE4vien\
   \ kaksin- tai yksinkertaisten merkkien (\u2018 tai \u201D) kuorimista tekstist\xE4\
   mme. Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.762352-07:00'
+lastmod: '2024-03-11T00:14:30.883304-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa \xE4rsytt\xE4vien kaksin-\
   \ tai yksinkertaisten merkkien (\u2018 tai \u201D) kuorimista tekstist\xE4mme. Ohjelmoijat\u2026"

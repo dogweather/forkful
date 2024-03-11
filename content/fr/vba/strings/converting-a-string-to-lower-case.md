@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:06.951748-07:00
 description: "Convertir une cha\xEEne en minuscules implique de transformer tous les\
   \ caract\xE8res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce\
   \ processus est\u2026"
-lastmod: '2024-02-25T18:49:54.325784-07:00'
+lastmod: '2024-03-11T00:14:31.529752-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne en minuscules implique de transformer tous les caract\xE8\
   res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce processus\

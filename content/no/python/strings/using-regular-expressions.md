@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:00.323314-07:00
 description: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finne\
   \ kombinasjoner av tegn i strenger. Programmerere benytter dem for s\xF8k, redigering\
   \ eller\u2026"
-lastmod: '2024-02-25T18:49:38.579291-07:00'
+lastmod: '2024-03-11T00:14:13.869388-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finne kombinasjoner\
   \ av tegn i strenger. Programmerere benytter dem for s\xF8k, redigering eller\u2026"

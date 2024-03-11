@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:43.421953-07:00
 description: "Regular expressions in programming are sequences of characters that\
   \ define a search pattern, typically employed for string searching and manipulation.\u2026"
-lastmod: '2024-02-25T18:49:56.562196-07:00'
+lastmod: '2024-03-11T00:14:33.983148-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions in programming are sequences of characters that define\
   \ a search pattern, typically employed for string searching and manipulation.\u2026"

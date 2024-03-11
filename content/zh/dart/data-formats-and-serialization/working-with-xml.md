@@ -9,7 +9,7 @@ description: "Dart \u7684\u6807\u51C6\u5E93\u4E2D\u6CA1\u6709\u5185\u7F6E\u652F\
   \u4F60\u7684 `pubspec.yaml` \u4E2D\uFF1A ```yaml dependencies: xml: ^5.0.0 // \u4F7F\
   \u7528\u53EF\u7528\u7684\u6700\u65B0\u7248\u672C ``` \u7136\u540E\uFF0C\u5728\u4F60\
   \u7684 Dart\u2026"
-lastmod: '2024-03-09T21:06:11.762517-07:00'
+lastmod: '2024-03-11T00:14:21.211537-06:00'
 model: gpt-4-0125-preview
 summary: "Dart \u7684\u6807\u51C6\u5E93\u4E2D\u6CA1\u6709\u5185\u7F6E\u652F\u6301\
   \ XML \u5904\u7406\u7684\u529F\u80FD\uFF0C\u56E0\u6B64\u9700\u8981\u4F7F\u7528\u7B2C\

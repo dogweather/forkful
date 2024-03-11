@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:47.532900-07:00
 description: "L'interpolation de cha\xEEnes est le processus d'injecter directement\
   \ des valeurs de variables dans des cha\xEEnes de caract\xE8res, souvent pour cr\xE9\
   er des\u2026"
-lastmod: '2024-03-09T21:06:21.227782-07:00'
+lastmod: '2024-03-11T00:14:31.389295-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes est le processus d'injecter directement des\
   \ valeurs de variables dans des cha\xEEnes de caract\xE8res, souvent pour cr\xE9\

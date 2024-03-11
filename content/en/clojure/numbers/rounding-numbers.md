@@ -2,7 +2,7 @@
 date: 2024-01-25 03:00:40.655499-07:00
 description: "Rounding numbers is about tweaking a number to the nearest whole, or\
   \ to a certain decimal precision. We round numbers to simplify them for human\u2026"
-lastmod: '2024-02-25T18:49:56.204810-07:00'
+lastmod: '2024-03-11T00:14:33.592141-06:00'
 model: gpt-4-1106-preview
 summary: "Rounding numbers is about tweaking a number to the nearest whole, or to\
   \ a certain decimal precision. We round numbers to simplify them for human\u2026"

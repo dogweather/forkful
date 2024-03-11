@@ -7,7 +7,7 @@ description: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u
   ch c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi c\u1EA3 con ng\u01B0\
   \u1EDDi v\xE0 m\xE1y m\xF3c. N\xF3 \u0111\xF3ng m\u1ED9t vai tr\xF2 ch\xEDnh trong\
   \ c\xE1c\u2026"
-lastmod: '2024-02-25T18:49:34.564037-07:00'
+lastmod: '2024-03-11T00:14:09.432522-06:00'
 model: gpt-4-0125-preview
 summary: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0\u1EE3\
   c thi\u1EBFt k\u1EBF \u0111\u1EC3 m\xE3 h\xF3a t\xE0i li\u1EC7u m\u1ED9t c\xE1ch\

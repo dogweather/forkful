@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:12.266329-07:00
 description: "Los n\xFAmeros complejos, representados como una combinaci\xF3n de unidades\
   \ reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas\u2026"
-lastmod: '2024-02-25T18:49:55.126371-07:00'
+lastmod: '2024-03-11T00:14:32.379063-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, representados como una combinaci\xF3n de unidades\
   \ reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas\u2026"

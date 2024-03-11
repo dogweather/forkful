@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:22.651966-07:00
 description: "Trasformare una data in stringa significa convertire il formato data\
   \ in testo leggibile. I programmatori lo fanno per mostrare date in formati diversi\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:41.228767-07:00'
+lastmod: '2024-03-11T00:14:16.933978-06:00'
 model: gpt-4-1106-preview
 summary: "Trasformare una data in stringa significa convertire il formato data in\
   \ testo leggibile. I programmatori lo fanno per mostrare date in formati diversi\

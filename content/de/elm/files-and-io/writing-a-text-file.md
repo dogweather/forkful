@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:05.246788-07:00
 description: "Das Schreiben einer Textdatei in Elm beinhaltet das Erstellen und Speichern\
   \ von textuellen Daten in einer Datei aus einer Elm-Anwendung heraus.\u2026"
-lastmod: '2024-02-25T18:49:50.885101-07:00'
+lastmod: '2024-03-11T00:14:27.715991-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Elm beinhaltet das Erstellen und Speichern\
   \ von textuellen Daten in einer Datei aus einer Elm-Anwendung heraus.\u2026"

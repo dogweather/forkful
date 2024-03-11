@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:14.811439-07:00
 description: "Por\xF3wnywanie dat oznacza ustalanie, kt\xF3ra data jest wcze\u015B\
   niejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015Bci robi\u0105\
   \ to, gdy musz\u0105 realizowa\u0107 logik\u0119\u2026"
-lastmod: '2024-02-25T18:49:33.655186-07:00'
+lastmod: '2024-03-11T00:14:08.468203-06:00'
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dat oznacza ustalanie, kt\xF3ra data jest wcze\u015Bniejsza,\
   \ p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015Bci robi\u0105 to,\

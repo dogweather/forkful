@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:29.330391-07:00
 description: "Merkkijonojen interpolaatio tarkoittaa muuttujien tai lausekkeiden arvojen\
   \ \"upottamista\" merkkijonoihin. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten\u2026"
-lastmod: '2024-02-25T18:49:53.595790-07:00'
+lastmod: '2024-03-11T00:14:30.636833-06:00'
 model: gpt-4-1106-preview
 summary: "Merkkijonojen interpolaatio tarkoittaa muuttujien tai lausekkeiden arvojen\
   \ \"upottamista\" merkkijonoihin. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten\u2026"

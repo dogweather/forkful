@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:12.853815-07:00
 description: "Il logging \xE8 essenzialmente il processo di registrazione di eventi\
   \ e output di dati da un software durante il suo funzionamento, pensalo come il\
   \ diario\u2026"
-lastmod: '2024-02-25T18:49:41.224036-07:00'
+lastmod: '2024-03-11T00:14:16.928277-06:00'
 model: gpt-4-1106-preview
 summary: "Il logging \xE8 essenzialmente il processo di registrazione di eventi e\
   \ output di dati da un software durante il suo funzionamento, pensalo come il diario\u2026"

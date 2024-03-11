@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:08.776489-07:00
 description: "Debuggers in C are specialized tools that allow developers to step through\
   \ their code, inspect variables, and monitor the execution flow. This process is\u2026"
-lastmod: '2024-02-25T18:49:56.952492-07:00'
+lastmod: '2024-03-11T00:14:34.400099-06:00'
 model: gpt-4-0125-preview
 summary: "Debuggers in C are specialized tools that allow developers to step through\
   \ their code, inspect variables, and monitor the execution flow. This process is\u2026"

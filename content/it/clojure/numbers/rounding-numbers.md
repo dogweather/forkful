@@ -2,7 +2,7 @@
 date: 2024-01-26 03:43:43.275396-07:00
 description: "Arrotondare i numeri consiste nel modificare un numero per approssimarlo\
   \ all'intero pi\xF9 vicino, o a una certa precisione decimale. Arrotondiamo i numeri\u2026"
-lastmod: '2024-02-25T18:49:40.965525-07:00'
+lastmod: '2024-03-11T00:14:16.595928-06:00'
 model: gpt-4-0125-preview
 summary: "Arrotondare i numeri consiste nel modificare un numero per approssimarlo\
   \ all'intero pi\xF9 vicino, o a una certa precisione decimale. Arrotondiamo i numeri\u2026"

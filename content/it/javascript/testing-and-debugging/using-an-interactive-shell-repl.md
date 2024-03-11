@@ -2,7 +2,7 @@
 date: 2024-01-26 04:15:38.798530-07:00
 description: "Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa),\
   \ ti permettono di eseguire codice al volo, testare funzioni,\u2026"
-lastmod: '2024-02-25T18:49:41.661350-07:00'
+lastmod: '2024-03-11T00:14:17.431875-06:00'
 model: gpt-4-0125-preview
 summary: "Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa),\
   \ ti permettono di eseguire codice al volo, testare funzioni,\u2026"

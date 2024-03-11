@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:10.246884-07:00
 description: "Le logging est la pratique consistant \xE0 enregistrer des \xE9v\xE9\
   nements, des erreurs et d'autres points de donn\xE9es significatifs qui se produisent\
   \ tout au long\u2026"
-lastmod: '2024-02-25T18:49:54.648162-07:00'
+lastmod: '2024-03-11T00:14:31.883294-06:00'
 model: gpt-4-1106-preview
 summary: "Le logging est la pratique consistant \xE0 enregistrer des \xE9v\xE9nements,\
   \ des erreurs et d'autres points de donn\xE9es significatifs qui se produisent tout\

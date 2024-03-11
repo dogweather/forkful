@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:17.785204-07:00
 description: "L'impression des sorties de d\xE9bogage implique de placer strat\xE9\
   giquement des d\xE9clarations de journalisation dans votre code pour afficher les\
   \ valeurs des\u2026"
-lastmod: '2024-02-25T18:49:54.084423-07:00'
+lastmod: '2024-03-11T00:14:31.226213-06:00'
 model: gpt-4-0125-preview
 summary: "L'impression des sorties de d\xE9bogage implique de placer strat\xE9giquement\
   \ des d\xE9clarations de journalisation dans votre code pour afficher les valeurs\

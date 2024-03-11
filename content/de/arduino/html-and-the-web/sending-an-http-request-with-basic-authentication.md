@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:05.490156-07:00
 description: "HTTP-Requests mit Basic Authentication senden Daten an einen Server,\
   \ gesch\xFCtzt durch Benutzername und Passwort. Programmierer nutzen das f\xFCr\
   \ sichere\u2026"
-lastmod: '2024-02-25T18:49:51.196404-07:00'
+lastmod: '2024-03-11T00:14:28.044948-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Requests mit Basic Authentication senden Daten an einen Server, gesch\xFC\
   tzt durch Benutzername und Passwort. Programmierer nutzen das f\xFCr sichere\u2026"

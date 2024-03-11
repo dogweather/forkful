@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:58.687298-07:00
 description: "Convertire una data in una stringa significa trasformare l'oggetto `Date`\
   \ di JavaScript in un formato di testo leggibile. Lo facciamo per semplificare la\u2026"
-lastmod: '2024-02-25T18:49:41.671142-07:00'
+lastmod: '2024-03-11T00:14:17.442328-06:00'
 model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformare l'oggetto `Date`\
   \ di JavaScript in un formato di testo leggibile. Lo facciamo per semplificare la\u2026"

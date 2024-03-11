@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:01.079897-07:00
 description: "Trabajar con JSON en Swift implica lidiar con un formato de datos ligero\
   \ para el intercambio de datos. Los programadores utilizan JSON para transmitir\u2026"
-lastmod: '2024-02-25T18:49:55.907556-07:00'
+lastmod: '2024-03-11T00:14:33.267226-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON en Swift implica lidiar con un formato de datos ligero\
   \ para el intercambio de datos. Los programadores utilizan JSON para transmitir\u2026"

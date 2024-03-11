@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:19.767781-07:00
 description: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu\
   \ i potencjalnie dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015B\
   ci wykonuj\u0105 t\u0119\u2026"
-lastmod: '2024-02-25T18:49:33.570624-07:00'
+lastmod: '2024-03-11T00:14:08.378750-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu i potencjalnie\
   \ dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015Bci wykonuj\u0105\

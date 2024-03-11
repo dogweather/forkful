@@ -4,7 +4,7 @@ description: "\u4EC0\u4E48\u4EE5\u53CA\u4E3A\u4EC0\u4E48? Temporary files are th
   \ created to temporarily contain information while a program is running. Programmers\
   \ create them for tasks like\u2026"
 isCJKLanguage: true
-lastmod: '2024-02-25T18:49:45.210250-07:00'
+lastmod: '2024-03-11T00:14:21.421265-06:00'
 model: gpt-4-1106-preview
 summary: "\u4EC0\u4E48\u4EE5\u53CA\u4E3A\u4EC0\u4E48? Temporary files are those created\
   \ to temporarily contain information while a program is running. Programmers create\

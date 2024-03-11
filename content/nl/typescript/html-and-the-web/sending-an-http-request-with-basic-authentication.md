@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:15.627684-07:00
 description: "In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie\
   \ het over het web schieten van data met een eenvoudige\u2026"
-lastmod: '2024-02-25T18:49:47.896690-07:00'
+lastmod: '2024-03-11T00:14:24.366187-06:00'
 model: gpt-4-0125-preview
 summary: "In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie\
   \ het over het web schieten van data met een eenvoudige\u2026"

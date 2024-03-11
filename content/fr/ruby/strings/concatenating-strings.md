@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:33.800521-07:00
 description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est les assembler bout\
   \ \xE0 bout. On le fait pour cr\xE9er des messages dynamiques, manipuler des donn\xE9\
   es textuelles, ou\u2026"
-lastmod: '2024-02-25T18:49:55.032554-07:00'
+lastmod: '2024-03-11T00:14:32.281400-06:00'
 model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est les assembler bout\
   \ \xE0 bout. On le fait pour cr\xE9er des messages dynamiques, manipuler des donn\xE9\

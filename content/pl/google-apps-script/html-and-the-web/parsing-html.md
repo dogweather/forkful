@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:57:26.651028-07:00
 description: "Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z tre\u015B\
   ci HTML, co jest szczeg\xF3lnie przydatne podczas interakcji ze stronami internetowymi\u2026"
-lastmod: '2024-02-25T18:49:33.323518-07:00'
+lastmod: '2024-03-11T00:14:08.070665-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z tre\u015B\
   ci HTML, co jest szczeg\xF3lnie przydatne podczas interakcji ze stronami internetowymi\u2026"

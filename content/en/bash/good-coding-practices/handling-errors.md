@@ -2,7 +2,7 @@
 date: 2024-01-21 21:19:09.389800-07:00
 description: "Handling errors in Bash scripting is about anticipating where things\
   \ might go sideways and dealing with it gracefully. Why? Well, it keeps your script\u2026"
-lastmod: '2024-02-25T18:49:56.690297-07:00'
+lastmod: '2024-03-11T00:14:34.118203-06:00'
 model: gpt-4-1106-preview
 summary: "Handling errors in Bash scripting is about anticipating where things might\
   \ go sideways and dealing with it gracefully. Why? Well, it keeps your script\u2026"

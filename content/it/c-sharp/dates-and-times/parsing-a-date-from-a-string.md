@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:13:39.680527-07:00
 description: "Effettuare il parsing di una data da una stringa in C# implica la conversione\
   \ delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.\u2026"
-lastmod: '2024-02-25T18:49:41.308449-07:00'
+lastmod: '2024-03-11T00:14:17.032232-06:00'
 model: gpt-4-0125-preview
 summary: "Effettuare il parsing di una data da una stringa in C# implica la conversione\
   \ delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.\u2026"

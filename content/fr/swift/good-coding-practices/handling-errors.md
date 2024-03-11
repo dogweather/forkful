@@ -3,7 +3,7 @@ date: 2024-01-26 00:57:58.109377-07:00
 description: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre aux\
   \ probl\xE8mes qui surviennent lorsque votre code est ex\xE9cut\xE9. Nous le faisons\
   \ pour contr\xF4ler le\u2026"
-lastmod: '2024-02-25T18:49:54.873375-07:00'
+lastmod: '2024-03-11T00:14:32.112046-06:00'
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre aux probl\xE8\
   mes qui surviennent lorsque votre code est ex\xE9cut\xE9. Nous le faisons pour contr\xF4\

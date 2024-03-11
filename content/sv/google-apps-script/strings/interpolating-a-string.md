@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:22.951935-07:00
 description: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk\
   \ inb\xE4ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av\
   \ mer l\xE4sbar och\u2026"
-lastmod: '2024-02-25T18:49:35.759203-07:00'
+lastmod: '2024-03-11T00:14:10.729871-06:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk inb\xE4\
   ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av mer l\xE4\

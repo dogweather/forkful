@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:09.242181-07:00
 description: "Downloading a web page is about fetching the HTML content of a web page\
   \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"
-lastmod: '2024-02-25T18:49:56.097231-07:00'
+lastmod: '2024-03-11T00:14:33.474567-06:00'
 model: gpt-4-0125-preview
 summary: "Downloading a web page is about fetching the HTML content of a web page\
   \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"

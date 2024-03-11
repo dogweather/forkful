@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:10.609396-07:00
 description: "Working with YAML involves parsing and manipulating YAML (YAML Ain't\
   \ Markup Language) files, a data serialization format used for configuration files,\
   \ in\u2026"
-lastmod: '2024-02-25T18:49:56.928457-07:00'
+lastmod: '2024-03-11T00:14:34.371001-06:00'
 model: gpt-4-0125-preview
 summary: "Working with YAML involves parsing and manipulating YAML (YAML Ain't Markup\
   \ Language) files, a data serialization format used for configuration files, in\u2026"

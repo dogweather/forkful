@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:07.381128-07:00
 description: "Lavorare con i file CSV in Ruby offre un approccio diretto per gestire\
   \ i dati tabellari. I programmatori spesso si dedicano a questa pratica per il\u2026"
-lastmod: '2024-02-25T18:49:41.810287-07:00'
+lastmod: '2024-03-11T00:14:17.597432-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con i file CSV in Ruby offre un approccio diretto per gestire i\
   \ dati tabellari. I programmatori spesso si dedicano a questa pratica per il\u2026"

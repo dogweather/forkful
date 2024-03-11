@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:37.898661-07:00
 description: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan\
   \ serialisointiformaatti ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa\
   \ tai datan\u2026"
-lastmod: '2024-02-25T18:49:53.426895-07:00'
+lastmod: '2024-03-11T00:14:30.452516-06:00'
 model: gpt-4-0125-preview
 summary: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan serialisointiformaatti\
   \ ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa tai datan\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:25.222977-07:00
 description: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o permite que programadores\
   \ rastreiem e entendam o que est\xE1 acontecendo dentro de seu c\xF3digo ao execut\xE1\
   -lo. Fazemos isso\u2026"
-lastmod: '2024-02-25T18:49:43.818662-07:00'
+lastmod: '2024-03-11T00:14:19.823166-06:00'
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o permite que programadores\
   \ rastreiem e entendam o que est\xE1 acontecendo dentro de seu c\xF3digo ao execut\xE1\

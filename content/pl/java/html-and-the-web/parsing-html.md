@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:32.759360-07:00
 description: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w celu\
   \ wydobycia danych takich jak tekst, linki czy inne elementy. Robimy to, aby interaktywnie\u2026"
-lastmod: '2024-02-25T18:49:33.639802-07:00'
+lastmod: '2024-03-11T00:14:08.452637-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w celu wydobycia\
   \ danych takich jak tekst, linki czy inne elementy. Robimy to, aby interaktywnie\u2026"

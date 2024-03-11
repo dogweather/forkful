@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:27.873137-07:00
 description: "Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale\
   \ machine. Programmeurs doen dit voor automatisering, data scraping, offline\u2026"
-lastmod: '2024-02-25T18:49:48.571985-07:00'
+lastmod: '2024-03-11T00:14:25.084670-06:00'
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale\
   \ machine. Programmeurs doen dit voor automatisering, data scraping, offline\u2026"

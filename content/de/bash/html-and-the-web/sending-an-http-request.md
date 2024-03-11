@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:02.407574-07:00
 description: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs.\
   \ Programmierer nutzen sie, um mit Webservern zu kommunizieren \u2013 Daten abfragen\
   \ oder\u2026"
-lastmod: '2024-02-25T18:49:51.108739-07:00'
+lastmod: '2024-03-11T00:14:27.955788-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs. Programmierer\
   \ nutzen sie, um mit Webservern zu kommunizieren \u2013 Daten abfragen oder\u2026"

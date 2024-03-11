@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:31.206573-07:00
 description: "Virhetulostuksen (stderr) kirjoittaminen Go:ssa tarkoittaa virheviestien\
   \ tai diagnostiikkojen ohjaamista pois p\xE4\xE4ulostulovirrasta. Ohjelmoijat k\xE4\
   ytt\xE4v\xE4t\u2026"
-lastmod: '2024-02-25T18:49:53.046858-07:00'
+lastmod: '2024-03-11T00:14:29.993927-06:00'
 model: gpt-4-0125-preview
 summary: "Virhetulostuksen (stderr) kirjoittaminen Go:ssa tarkoittaa virheviestien\
   \ tai diagnostiikkojen ohjaamista pois p\xE4\xE4ulostulovirrasta. Ohjelmoijat k\xE4\

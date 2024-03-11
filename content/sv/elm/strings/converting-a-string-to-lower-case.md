@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:29.235770-07:00
 description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla\
   \ bokst\xE4ver i str\xE4ngen till sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder\
   \ det f\xF6r enhetlighet i\u2026"
-lastmod: '2024-02-25T18:49:36.111369-07:00'
+lastmod: '2024-03-11T00:14:11.163780-06:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla bokst\xE4\
   ver i str\xE4ngen till sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder det f\xF6\

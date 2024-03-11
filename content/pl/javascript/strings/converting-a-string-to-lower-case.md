@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:59.319736-07:00
 description: "Konwersja \u0142a\u0144cucha znak\xF3w (string) do ma\u0142ych liter\
   \ to proces zmiany wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki.\
   \ Robimy to, aby ujednolici\u0107 dane,\u2026"
-lastmod: '2024-02-25T18:49:34.156647-07:00'
+lastmod: '2024-03-11T00:14:08.991258-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja \u0142a\u0144cucha znak\xF3w (string) do ma\u0142ych liter to\
   \ proces zmiany wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy\

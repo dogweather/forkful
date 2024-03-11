@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:00.781641-07:00
 description: "Det \xE5 laste ned en nettside betyr \xE5 hente HTML og andre data fra\
   \ en webserver. Vi programmerere gj\xF8r dette for \xE5 bruke eller bearbeide innholdet,\
   \ som data\u2026"
-lastmod: '2024-02-25T18:49:39.319663-07:00'
+lastmod: '2024-03-11T00:14:14.737422-06:00'
 model: gpt-4-1106-preview
 summary: "Det \xE5 laste ned en nettside betyr \xE5 hente HTML og andre data fra en\
   \ webserver. Vi programmerere gj\xF8r dette for \xE5 bruke eller bearbeide innholdet,\

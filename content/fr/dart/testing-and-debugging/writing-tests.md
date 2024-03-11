@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:52.235545-07:00
 description: "\xC9crire des tests en Dart consiste \xE0 cr\xE9er des cas de test pour\
   \ v\xE9rifier automatiquement que diff\xE9rentes parties de votre programme fonctionnent\
   \ comme\u2026"
-lastmod: '2024-03-09T21:06:21.244937-07:00'
+lastmod: '2024-03-11T00:14:31.409527-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Dart consiste \xE0 cr\xE9er des cas de test pour\
   \ v\xE9rifier automatiquement que diff\xE9rentes parties de votre programme fonctionnent\

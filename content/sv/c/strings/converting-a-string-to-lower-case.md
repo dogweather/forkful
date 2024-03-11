@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:37.956688-07:00
 description: "Att konvertera en str\xE4ng till gemener i C inneb\xE4r att omvandla\
   \ alla versaler i en given str\xE4ng till motsvarande gemener. Programmerare utf\xF6\
   r ofta denna\u2026"
-lastmod: '2024-02-25T18:49:36.683401-07:00'
+lastmod: '2024-03-11T00:14:11.771610-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till gemener i C inneb\xE4r att omvandla alla\
   \ versaler i en given str\xE4ng till motsvarande gemener. Programmerare utf\xF6\

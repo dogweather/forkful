@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:17.463377-07:00
 description: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
   \ wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. W programowaniu\
   \ robimy to dla jednolito\u015Bci\u2026"
-lastmod: '2024-02-25T18:49:33.405649-07:00'
+lastmod: '2024-03-11T00:14:08.154142-06:00'
 model: gpt-4-1106-preview
 summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
   \ wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. W programowaniu\

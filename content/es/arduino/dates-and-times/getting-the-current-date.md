@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:49.378801-07:00
 description: "Obtener la fecha actual en proyectos de Arduino implica la adquisici\xF3\
   n de informaci\xF3n en tiempo real que puede ser crucial para el registro, estampado\
   \ de\u2026"
-lastmod: '2024-02-25T18:49:55.815417-07:00'
+lastmod: '2024-03-11T00:14:33.166419-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en proyectos de Arduino implica la adquisici\xF3\
   n de informaci\xF3n en tiempo real que puede ser crucial para el registro, estampado\

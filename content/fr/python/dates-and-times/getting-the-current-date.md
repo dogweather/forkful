@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:28.434067-07:00
 description: "L'obtention de la date actuelle en Python est une op\xE9ration essentielle\
   \ pour de nombreuses applications, telles que la journalisation, l'analyse de\u2026"
-lastmod: '2024-02-25T18:49:54.138237-07:00'
+lastmod: '2024-03-11T00:14:31.281364-06:00'
 model: gpt-4-0125-preview
 summary: "L'obtention de la date actuelle en Python est une op\xE9ration essentielle\
   \ pour de nombreuses applications, telles que la journalisation, l'analyse de\u2026"

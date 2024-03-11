@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:57.089494-07:00
 description: "Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimist\xE4\
   \ ja niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t\
   \ sit\xE4 datan\u2026"
-lastmod: '2024-02-25T18:49:53.227387-07:00'
+lastmod: '2024-03-11T00:14:30.233202-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimist\xE4 ja\
   \ niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\

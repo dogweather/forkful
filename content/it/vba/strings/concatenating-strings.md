@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:24.332850-07:00
 description: "La concatenazione in Visual Basic for Applications (VBA) implica l'unione\
   \ di due o pi\xF9 stringhe in un'unica entit\xE0. Questo \xE8 un compito fondamentale\
   \ nella\u2026"
-lastmod: '2024-02-25T18:49:41.127437-07:00'
+lastmod: '2024-03-11T00:14:16.820526-06:00'
 model: gpt-4-0125-preview
 summary: "La concatenazione in Visual Basic for Applications (VBA) implica l'unione\
   \ di due o pi\xF9 stringhe in un'unica entit\xE0. Questo \xE8 un compito fondamentale\

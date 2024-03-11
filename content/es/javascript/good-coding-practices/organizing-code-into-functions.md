@@ -2,7 +2,7 @@
 date: 2024-01-26 01:10:51.916332-07:00
 description: "Organizar el c\xF3digo en funciones divide las tareas en piezas reutilizables,\
   \ lo que hace que el c\xF3digo sea m\xE1s limpio y mantenible. Hacemos esto para\u2026"
-lastmod: '2024-02-25T18:49:55.933541-07:00'
+lastmod: '2024-03-11T00:14:33.296103-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones divide las tareas en piezas reutilizables,\
   \ lo que hace que el c\xF3digo sea m\xE1s limpio y mantenible. Hacemos esto para\u2026"

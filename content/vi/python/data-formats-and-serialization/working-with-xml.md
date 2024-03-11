@@ -6,7 +6,7 @@ description: "\"L\xE0m vi\u1EC7c v\u1EDBi XML\" ch\u1EC9 qu\xE1 tr\xECnh \u0111\
   c, t\u1EA1o v\xE0 s\u1EEDa \u0111\u1ED5i c\xE1c t\u1EC7p XML (eXtensible Markup\
   \ Language) b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng l\u1EADp tr\xECnh. C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
-lastmod: '2024-02-25T18:49:34.504760-07:00'
+lastmod: '2024-03-11T00:14:09.373969-06:00'
 model: gpt-4-0125-preview
 summary: "\"L\xE0m vi\u1EC7c v\u1EDBi XML\" ch\u1EC9 qu\xE1 tr\xECnh \u0111\u1ECD\
   c, t\u1EA1o v\xE0 s\u1EEDa \u0111\u1ED5i c\xE1c t\u1EC7p XML (eXtensible Markup\

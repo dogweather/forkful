@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:54:48.584747-07:00
 description: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att h\xE4\
   mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\u2026"
-lastmod: '2024-02-25T18:49:35.786690-07:00'
+lastmod: '2024-03-11T00:14:10.759350-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att h\xE4\
   mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\u2026"

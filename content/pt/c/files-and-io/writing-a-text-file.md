@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:37.226691-07:00
 description: "Escrever um arquivo de texto em C envolve criar ou abrir um arquivo\
   \ no modo de escrita e, em seguida, usar as fun\xE7\xF5es de E/S (Entrada/Sa\xED\
   da) de arquivos\u2026"
-lastmod: '2024-02-25T18:49:44.686392-07:00'
+lastmod: '2024-03-11T00:14:20.811989-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em C envolve criar ou abrir um arquivo no modo\
   \ de escrita e, em seguida, usar as fun\xE7\xF5es de E/S (Entrada/Sa\xEDda) de arquivos\u2026"

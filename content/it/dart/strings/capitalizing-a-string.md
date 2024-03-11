@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:53:28.683778-07:00
 description: "Capitalizzare una stringa implica modificare la prima lettera di una\
   \ parola o di un'intera frase in maiuscolo, mantenendo inalterati tutti gli altri\u2026"
-lastmod: '2024-03-09T21:06:07.661905-07:00'
+lastmod: '2024-03-11T00:14:16.672194-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa implica modificare la prima lettera di una parola\
   \ o di un'intera frase in maiuscolo, mantenendo inalterati tutti gli altri\u2026"

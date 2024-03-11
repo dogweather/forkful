@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:46.982449-07:00
 description: "Leggere gli argomenti della riga di comando permette di passare informazioni\
   \ a un programma all'avvio. I programmatori lo fanno per rendere i loro script\u2026"
-lastmod: '2024-02-25T18:49:40.986001-07:00'
+lastmod: '2024-03-11T00:14:16.617565-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando permette di passare informazioni\
   \ a un programma all'avvio. I programmatori lo fanno per rendere i loro script\u2026"

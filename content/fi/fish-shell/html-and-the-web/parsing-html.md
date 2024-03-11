@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:22.048273-07:00
 description: "HTML:n j\xE4sent\xE4minen on tietojen tai datan poimimista HTML-sis\xE4\
   ll\xF6st\xE4, yleinen teht\xE4v\xE4 ty\xF6skennelt\xE4ess\xE4 web-datan kanssa.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
-lastmod: '2024-02-25T18:49:53.899632-07:00'
+lastmod: '2024-03-11T00:14:31.034253-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen on tietojen tai datan poimimista HTML-sis\xE4\
   ll\xF6st\xE4, yleinen teht\xE4v\xE4 ty\xF6skennelt\xE4ess\xE4 web-datan kanssa.\

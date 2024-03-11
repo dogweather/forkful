@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:03.742225-07:00
 description: "Logowanie w C polega na rejestrowaniu przep\u0142ywu i znacz\u0105cych\
   \ zdarze\u0144 programu podczas jego wykonania, zapewniaj\u0105c namacalny przegl\u0105\
   d jego zachowania i\u2026"
-lastmod: '2024-02-25T18:49:34.267087-07:00'
+lastmod: '2024-03-11T00:14:09.110322-06:00'
 model: gpt-4-0125-preview
 summary: "Logowanie w C polega na rejestrowaniu przep\u0142ywu i znacz\u0105cych zdarze\u0144\
   \ programu podczas jego wykonania, zapewniaj\u0105c namacalny przegl\u0105d jego\

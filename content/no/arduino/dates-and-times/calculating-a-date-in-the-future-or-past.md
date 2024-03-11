@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:33.266953-07:00
 description: "\xC5 kalkulere en dato i fremtiden eller fortiden handler om \xE5 ta\
   \ en startdato og legge til eller trekke fra dager, m\xE5neder eller \xE5r. Programmerere\
   \ bruker\u2026"
-lastmod: '2024-02-25T18:49:39.251082-07:00'
+lastmod: '2024-03-11T00:14:14.663427-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 kalkulere en dato i fremtiden eller fortiden handler om \xE5 ta en\
   \ startdato og legge til eller trekke fra dager, m\xE5neder eller \xE5r. Programmerere\

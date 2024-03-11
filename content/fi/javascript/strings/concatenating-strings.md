@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:57.429032-07:00
 description: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4\
   tk\xE4n liitt\xE4mist\xE4 yhteen. Koodarit tekev\xE4t t\xE4t\xE4 muodostaakseen\
   \ k\xE4ytt\xE4j\xE4lle n\xE4ytett\xE4vi\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.848898-07:00'
+lastmod: '2024-03-11T00:14:30.984242-06:00'
 model: gpt-4-1106-preview
 summary: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4tk\xE4\
   n liitt\xE4mist\xE4 yhteen. Koodarit tekev\xE4t t\xE4t\xE4 muodostaakseen k\xE4\

@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:11.275604-07:00
 description: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precyzji.\
   \ Programi\u015Bci robi\u0105 to, aby kontrolowa\u0107 numeryczne wyj\u015Bcie dla\
   \ czytelno\u015Bci, cel\xF3w\u2026"
-lastmod: '2024-02-25T18:49:33.503602-07:00'
+lastmod: '2024-03-11T00:14:08.306818-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precyzji.\
   \ Programi\u015Bci robi\u0105 to, aby kontrolowa\u0107 numeryczne wyj\u015Bcie dla\

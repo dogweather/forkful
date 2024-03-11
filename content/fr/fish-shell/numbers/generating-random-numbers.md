@@ -3,7 +3,7 @@ date: 2024-01-27 20:33:22.214806-07:00
 description: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
   \ en programmation, utilis\xE9e pour tout, de l'\xE9chantillonnage de donn\xE9es\
   \ au d\xE9veloppement de\u2026"
-lastmod: '2024-02-25T18:49:54.945409-07:00'
+lastmod: '2024-03-11T00:14:32.188994-06:00'
 model: gpt-4-0125-preview
 summary: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
   \ en programmation, utilis\xE9e pour tout, de l'\xE9chantillonnage de donn\xE9es\

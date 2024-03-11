@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:17.213264-07:00
 description: "Escrever testes em programa\xE7\xE3o envolve criar e executar scripts\
   \ que verificam se o c\xF3digo se comporta conforme esperado sob v\xE1rias condi\xE7\
   \xF5es. Os\u2026"
-lastmod: '2024-02-25T18:49:44.291421-07:00'
+lastmod: '2024-03-11T00:14:20.385011-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em programa\xE7\xE3o envolve criar e executar scripts que\
   \ verificam se o c\xF3digo se comporta conforme esperado sob v\xE1rias condi\xE7\

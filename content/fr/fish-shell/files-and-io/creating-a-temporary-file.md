@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:21.176089-07:00
 description: "Cr\xE9er un fichier temporaire c'est un peu comme prendre des notes\
   \ sur une napkin; \xE7a sert \xE0 stocker des infos de fa\xE7on \xE9ph\xE9m\xE8\
   re. Les d\xE9veloppeurs font \xE7a\u2026"
-lastmod: '2024-02-25T18:49:54.970929-07:00'
+lastmod: '2024-03-11T00:14:32.217138-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire c'est un peu comme prendre des notes sur\
   \ une napkin; \xE7a sert \xE0 stocker des infos de fa\xE7on \xE9ph\xE9m\xE8re. Les\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:57.101609-07:00
 description: "Hakeminen ja korvaaminen tekstiss\xE4 tarkoittaa jotakin merkkijonoa\
   \ toisella korvaamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4 koodin virheit\xE4 korjatessaan\
   \ tai\u2026"
-lastmod: '2024-02-25T18:49:53.103630-07:00'
+lastmod: '2024-03-11T00:14:30.054666-06:00'
 model: gpt-4-1106-preview
 summary: "Hakeminen ja korvaaminen tekstiss\xE4 tarkoittaa jotakin merkkijonoa toisella\
   \ korvaamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4 koodin virheit\xE4 korjatessaan\

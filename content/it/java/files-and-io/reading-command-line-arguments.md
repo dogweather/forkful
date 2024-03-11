@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:14.846737-07:00
 description: "Leggere gli argomenti della riga di comando significa accedere ai parametri\
   \ passati al tuo programma quando viene avviato da una shell. I programmatori lo\u2026"
-lastmod: '2024-02-25T18:49:41.192575-07:00'
+lastmod: '2024-03-11T00:14:16.893280-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando significa accedere ai parametri\
   \ passati al tuo programma quando viene avviato da una shell. I programmatori lo\u2026"

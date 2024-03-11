@@ -3,7 +3,7 @@ date: 2024-01-26 04:38:32.388615-07:00
 description: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para\
   \ incluir n\xFAmeros imaginarios, permiti\xE9ndonos resolver ecuaciones que no tienen\
   \ soluciones\u2026"
-lastmod: '2024-02-25T18:49:55.542949-07:00'
+lastmod: '2024-03-11T00:14:32.881502-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para incluir\
   \ n\xFAmeros imaginarios, permiti\xE9ndonos resolver ecuaciones que no tienen soluciones\u2026"

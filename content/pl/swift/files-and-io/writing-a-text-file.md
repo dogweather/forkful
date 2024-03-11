@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:57.814832-07:00
 description: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142\
   e przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\
   \ do zada\u0144 takich jak\u2026"
-lastmod: '2024-02-25T18:49:34.145795-07:00'
+lastmod: '2024-03-11T00:14:08.979871-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142e\
   \ przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\

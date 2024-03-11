@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:55.223349-07:00
 description: "Teilstrings extrahieren bedeutet, bestimmte Abschnitte aus einem l\xE4\
   ngeren String herauszuschneiden. Programmierer machen das, um Daten zu manipulieren,\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:50.689449-07:00'
+lastmod: '2024-03-11T00:14:27.509815-06:00'
 model: gpt-4-1106-preview
 summary: "Teilstrings extrahieren bedeutet, bestimmte Abschnitte aus einem l\xE4ngeren\
   \ String herauszuschneiden. Programmierer machen das, um Daten zu manipulieren,\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:19.384858-07:00
 description: "\xC9crire un fichier texte en Rust implique de cr\xE9er, \xE9crire et\
   \ potentiellement ajouter des donn\xE9es \xE0 un fichier sur le syst\xE8me de fichiers.\
   \ Les programmeurs\u2026"
-lastmod: '2024-02-25T18:49:54.314106-07:00'
+lastmod: '2024-03-11T00:14:31.517278-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Rust implique de cr\xE9er, \xE9crire et potentiellement\
   \ ajouter des donn\xE9es \xE0 un fichier sur le syst\xE8me de fichiers. Les programmeurs\u2026"

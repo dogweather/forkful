@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:00.371748-07:00
 description: "JSON(JavaScript Object\u2026"
-lastmod: '2024-02-25T18:49:40.537952-07:00'
+lastmod: '2024-03-11T00:14:16.131661-06:00'
 model: gpt-4-0125-preview
 summary: "JSON(JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"

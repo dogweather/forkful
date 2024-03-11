@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:10.508690-07:00
 description: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-drukuj (REPL),\
   \ pozwala u\u017Cytkownikom wprowadza\u0107 komendy, wykonywa\u0107 je i widzie\u0107\
   \ wyniki w czasie\u2026"
-lastmod: '2024-02-25T18:49:33.598801-07:00'
+lastmod: '2024-03-11T00:14:08.409260-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-drukuj (REPL),\
   \ pozwala u\u017Cytkownikom wprowadza\u0107 komendy, wykonywa\u0107 je i widzie\u0107\

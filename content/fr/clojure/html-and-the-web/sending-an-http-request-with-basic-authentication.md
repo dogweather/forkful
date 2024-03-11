@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:11.226042-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification basique transmet\
   \ des identifiants d\u2019acc\xE8s \xE0 un serveur web s\xE9curis\xE9. Les d\xE9\
   veloppeurs utilisent cela\u2026"
-lastmod: '2024-02-25T18:49:54.169084-07:00'
+lastmod: '2024-03-11T00:14:31.313884-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification basique transmet des\
   \ identifiants d\u2019acc\xE8s \xE0 un serveur web s\xE9curis\xE9. Les d\xE9veloppeurs\

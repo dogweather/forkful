@@ -6,7 +6,7 @@ date: 2024-01-28 23:01:33.081296-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 samle biter av skript\
   \ for \xE5 utf\xF8re spesifikke oppgaver. Vi gj\xF8r det fordi det gj\xF8r koden\
   \ lettere \xE5 lese, teste\u2026"
-lastmod: '2024-02-25T18:49:39.410253-07:00'
+lastmod: '2024-03-11T00:14:14.836254-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 samle biter av skript\
   \ for \xE5 utf\xF8re spesifikke oppgaver. Vi gj\xF8r det fordi det gj\xF8r koden\

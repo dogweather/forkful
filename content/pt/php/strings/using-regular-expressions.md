@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:33.193945-07:00
 description: "Express\xF5es regulares (regex) em PHP s\xE3o padr\xF5es usados para\
   \ combinar combina\xE7\xF5es de caracteres em strings, permitindo opera\xE7\xF5\
   es sofisticadas de busca e\u2026"
-lastmod: '2024-02-25T18:49:44.277939-07:00'
+lastmod: '2024-03-11T00:14:20.370652-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em PHP s\xE3o padr\xF5es usados para combinar\
   \ combina\xE7\xF5es de caracteres em strings, permitindo opera\xE7\xF5es sofisticadas\

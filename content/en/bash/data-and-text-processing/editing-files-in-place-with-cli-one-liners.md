@@ -2,7 +2,7 @@
 date: 2024-01-27 16:14:22.581240-07:00
 description: "Imagine you've just found out you need to make a batch update to several\
   \ configuration files sitting on your server. You could open each file, make the\u2026"
-lastmod: '2024-02-25T18:49:56.679985-07:00'
+lastmod: '2024-03-11T00:14:34.107598-06:00'
 model: gpt-4-0125-preview
 summary: "Imagine you've just found out you need to make a batch update to several\
   \ configuration files sitting on your server. You could open each file, make the\u2026"

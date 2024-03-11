@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:52.674229-07:00
 description: "La recherche et le remplacement de texte permettent de modifier des\
   \ cha\xEEnes en trouvant des motifs sp\xE9cifiques et en les substituant par d'autres.\
   \ C'est\u2026"
-lastmod: '2024-02-25T18:49:54.713281-07:00'
+lastmod: '2024-03-11T00:14:31.952126-06:00'
 model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de modifier des cha\xEE\
   nes en trouvant des motifs sp\xE9cifiques et en les substituant par d'autres. C'est\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 15:14:10.019563-07:00
 description: "Att f\xE5 tag p\xE5 det aktuella datumet inneb\xE4r att vi hittar dagens\
   \ datum i realtid. Programmerare g\xF6r detta f\xF6r funktioner som loggar, tidsst\xE4\
   mplar och\u2026"
-lastmod: '2024-03-09T21:11:20.469206-07:00'
+lastmod: '2024-03-11T00:14:11.189427-06:00'
 model: unknown
 summary: "Att f\xE5 tag p\xE5 det aktuella datumet inneb\xE4r att vi hittar dagens\
   \ datum i realtid. Programmerare g\xF6r detta f\xF6r funktioner som loggar, tidsst\xE4\

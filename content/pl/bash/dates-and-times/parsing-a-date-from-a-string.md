@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:11.225821-07:00
 description: "Analiza daty ze stringa w Bashu polega na ekstrakcji i konwersji informacji\
   \ daty z danych tekstowych na format, kt\xF3ry Bash mo\u017Ce manipulowa\u0107 lub\
   \ u\u017Cywa\u0107 do\u2026"
-lastmod: '2024-02-25T18:49:33.961861-07:00'
+lastmod: '2024-03-11T00:14:08.785851-06:00'
 model: gpt-4-0125-preview
 summary: "Analiza daty ze stringa w Bashu polega na ekstrakcji i konwersji informacji\
   \ daty z danych tekstowych na format, kt\xF3ry Bash mo\u017Ce manipulowa\u0107 lub\

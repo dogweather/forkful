@@ -3,7 +3,7 @@ date: 2024-01-26 00:23:44.186505-07:00
 description: "El manejo de errores en tus programas detecta los problemas imprevistos\
   \ que intentar\xE1n hacerte tropezar. Lo haces para evitar que tu Arduino tenga\
   \ un\u2026"
-lastmod: '2024-02-25T18:49:55.812318-07:00'
+lastmod: '2024-03-11T00:14:33.163146-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores en tus programas detecta los problemas imprevistos\
   \ que intentar\xE1n hacerte tropezar. Lo haces para evitar que tu Arduino tenga\

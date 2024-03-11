@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:31.931752-07:00
 description: "Lire un fichier texte en Dart implique l'acc\xE8s et la r\xE9cup\xE9\
   ration de donn\xE9es \xE0 partir de fichiers stock\xE9s sur le syst\xE8me de fichiers.\
   \ Les programmeurs\u2026"
-lastmod: '2024-03-09T21:06:21.257946-07:00'
+lastmod: '2024-03-11T00:14:31.425612-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en Dart implique l'acc\xE8s et la r\xE9cup\xE9ration\
   \ de donn\xE9es \xE0 partir de fichiers stock\xE9s sur le syst\xE8me de fichiers.\

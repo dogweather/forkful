@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:48.811914-07:00
 description: "En C++, supprimer des caract\xE8res qui correspondent \xE0 un motif\
   \ s\u2019av\xE8re utile pour nettoyer des strings, valider des entr\xE9es, ou pour\
   \ tout traitement de\u2026"
-lastmod: '2024-02-25T18:49:54.808636-07:00'
+lastmod: '2024-03-11T00:14:32.042232-06:00'
 model: gpt-4-1106-preview
 summary: "En C++, supprimer des caract\xE8res qui correspondent \xE0 un motif s\u2019\
   av\xE8re utile pour nettoyer des strings, valider des entr\xE9es, ou pour tout traitement\

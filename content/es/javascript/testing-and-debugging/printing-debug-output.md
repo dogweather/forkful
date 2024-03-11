@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:58.997777-07:00
 description: "Imprimir mensajes de depuraci\xF3n (debug output) es como dejar migas\
   \ de pan en tu c\xF3digo para entender qu\xE9 est\xE1 pasando. Los programadores\
   \ lo hacen para\u2026"
-lastmod: '2024-02-25T18:49:55.930664-07:00'
+lastmod: '2024-03-11T00:14:33.292938-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n (debug output) es como dejar migas de\
   \ pan en tu c\xF3digo para entender qu\xE9 est\xE1 pasando. Los programadores lo\

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:19.668689-07:00
 description: "Regular expressions in programming allow for pattern matching and manipulation\
   \ of strings based on specific patterns. Programmers use them for tasks like\u2026"
-lastmod: '2024-02-25T18:49:56.635225-07:00'
+lastmod: '2024-03-11T00:14:34.060953-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions in programming allow for pattern matching and manipulation\
   \ of strings based on specific patterns. Programmers use them for tasks like\u2026"

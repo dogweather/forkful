@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:21.299917-07:00
 description: "La integraci\xF3n de PowerShell con JSON (JavaScript Object Notation)\
   \ se trata de analizar (leer) y generar (escribir) datos JSON, un formato com\xFA\
   n para el\u2026"
-lastmod: '2024-02-25T18:49:55.785614-07:00'
+lastmod: '2024-03-11T00:14:33.134727-06:00'
 model: gpt-4-0125-preview
 summary: "La integraci\xF3n de PowerShell con JSON (JavaScript Object Notation) se\
   \ trata de analizar (leer) y generar (escribir) datos JSON, un formato com\xFAn\

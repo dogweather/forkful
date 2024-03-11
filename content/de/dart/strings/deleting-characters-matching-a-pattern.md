@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:54:25.341233-07:00
 description: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Strings entsprechen,\
   \ ist entscheidend f\xFCr die Datenvalidierung, -bereinigung oder die Vorbereitung\u2026"
-lastmod: '2024-03-09T21:06:17.559766-07:00'
+lastmod: '2024-03-11T00:14:27.455548-06:00'
 model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Strings entsprechen,\
   \ ist entscheidend f\xFCr die Datenvalidierung, -bereinigung oder die Vorbereitung\u2026"

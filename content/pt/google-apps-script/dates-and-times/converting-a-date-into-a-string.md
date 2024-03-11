@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:47.463217-07:00
 description: "Converter datas em strings \xE9 uma tarefa fundamental que possibilita\
   \ aos programadores manipular e apresentar informa\xE7\xF5es de data em um formato\
   \ leg\xEDvel por\u2026"
-lastmod: '2024-02-25T18:49:43.783923-07:00'
+lastmod: '2024-03-11T00:14:19.785994-06:00'
 model: gpt-4-0125-preview
 summary: "Converter datas em strings \xE9 uma tarefa fundamental que possibilita aos\
   \ programadores manipular e apresentar informa\xE7\xF5es de data em um formato leg\xED\

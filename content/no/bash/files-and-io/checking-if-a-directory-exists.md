@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:50.514844-07:00
 description: "I Bash-programmering er det \xE5 sjekke om en mappe eksisterer en essensiell\
   \ kontrollmekanisme som brukes for \xE5 verifisere tilstedev\xE6relsen av en mappe\
   \ f\xF8r\u2026"
-lastmod: '2024-02-25T18:49:39.163142-07:00'
+lastmod: '2024-03-11T00:14:14.565563-06:00'
 model: gpt-4-0125-preview
 summary: "I Bash-programmering er det \xE5 sjekke om en mappe eksisterer en essensiell\
   \ kontrollmekanisme som brukes for \xE5 verifisere tilstedev\xE6relsen av en mappe\

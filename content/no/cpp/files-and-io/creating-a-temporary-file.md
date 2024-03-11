@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:59.998868-07:00
 description: "Opprette en midlertidig fil betyr \xE5 skape en fil som er ment for\
   \ kortvarig bruk og ofte slettet etter bruk. Programmerere gj\xF8r dette for \xE5\
   \ lagre data\u2026"
-lastmod: '2024-02-25T18:49:39.298625-07:00'
+lastmod: '2024-03-11T00:14:14.713971-06:00'
 model: gpt-4-1106-preview
 summary: "Opprette en midlertidig fil betyr \xE5 skape en fil som er ment for kortvarig\
   \ bruk og ofte slettet etter bruk. Programmerere gj\xF8r dette for \xE5 lagre data\u2026"

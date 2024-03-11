@@ -1,7 +1,7 @@
 ---
 title: 'JavaScript: Open Source Programmeren Tutorials'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-10 18:56:23.455038-06:00
+lastmod: 2024-03-11 00:18:18.675690-06:00
 description: 'JavaScript: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
   Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking,…'
 summary: 'JavaScript: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,

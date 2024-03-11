@@ -3,7 +3,7 @@ date: 2024-01-26 03:50:22.616368-07:00
 description: "Korzystanie z debugera oznacza si\u0119gni\u0119cie po specjalistyczne\
   \ narz\u0119dzia, kt\xF3re pozwalaj\u0105 zajrze\u0107 pod mask\u0119 kodu, obserwuj\u0105\
   c jego dzia\u0142anie krok po kroku.\u2026"
-lastmod: '2024-02-25T18:49:34.174562-07:00'
+lastmod: '2024-03-11T00:14:09.010894-06:00'
 model: gpt-4-0125-preview
 summary: "Korzystanie z debugera oznacza si\u0119gni\u0119cie po specjalistyczne narz\u0119\
   dzia, kt\xF3re pozwalaj\u0105 zajrze\u0107 pod mask\u0119 kodu, obserwuj\u0105c\

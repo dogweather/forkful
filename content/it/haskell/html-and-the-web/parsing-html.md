@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:12.619816-07:00
 description: "Parsare HTML in Haskell ti permette di estrarre dati, manipolare il\
   \ contenuto HTML o interagire con le pagine web programmaticamente. Questa operazione\
   \ \xE8\u2026"
-lastmod: '2024-02-25T18:49:41.337425-07:00'
+lastmod: '2024-03-11T00:14:17.065676-06:00'
 model: gpt-4-0125-preview
 summary: "Parsare HTML in Haskell ti permette di estrarre dati, manipolare il contenuto\
   \ HTML o interagire con le pagine web programmaticamente. Questa operazione \xE8\

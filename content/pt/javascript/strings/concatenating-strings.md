@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:07.158914-07:00
 description: "Concatenar strings \xE9 simplesmente juntar dois ou mais peda\xE7os\
   \ de texto em um s\xF3. Programadores fazem isso para montar mensagens, combinar\
   \ dados e\u2026"
-lastmod: '2024-02-25T18:49:44.571535-07:00'
+lastmod: '2024-03-11T00:14:20.689415-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 simplesmente juntar dois ou mais peda\xE7os de texto\
   \ em um s\xF3. Programadores fazem isso para montar mensagens, combinar dados e\u2026"

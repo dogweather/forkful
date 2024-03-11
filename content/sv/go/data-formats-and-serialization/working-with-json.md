@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:11.366892-07:00
 description: "Att arbeta med JSON (JavaScript Object Notation) i Go inneb\xE4r att\
   \ koda om och avkoda data mellan Go datastrukturer och JSON-format. Denna uppgift\
   \ \xE4r\u2026"
-lastmod: '2024-02-25T18:49:35.751183-07:00'
+lastmod: '2024-03-11T00:14:10.721023-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) i Go inneb\xE4r att koda\
   \ om och avkoda data mellan Go datastrukturer och JSON-format. Denna uppgift \xE4\

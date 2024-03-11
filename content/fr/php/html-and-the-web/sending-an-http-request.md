@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:20.366042-07:00
 description: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de communiquer\
   \ avec d'autres services web. On le fait pour \xE9changer des donn\xE9es, r\xE9\
   cup\xE9rer du\u2026"
-lastmod: '2024-02-25T18:49:54.595509-07:00'
+lastmod: '2024-03-11T00:14:31.825254-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de communiquer\
   \ avec d'autres services web. On le fait pour \xE9changer des donn\xE9es, r\xE9\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:33:30.133890-07:00
 description: "Travailler avec XML implique l'analyse et la manipulation de documents\
   \ XML \xE0 l'aide de code. Les programmeurs font cela pour lire, \xE9crire et modifier\
   \ des\u2026"
-lastmod: '2024-02-25T18:49:54.666239-07:00'
+lastmod: '2024-03-11T00:14:31.902567-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique l'analyse et la manipulation de documents XML\
   \ \xE0 l'aide de code. Les programmeurs font cela pour lire, \xE9crire et modifier\

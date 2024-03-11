@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:18.947942-07:00
 description: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste\
   \ \xE0 joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9\
   . Ceci est une\u2026"
-lastmod: '2024-02-25T18:49:54.331364-07:00'
+lastmod: '2024-03-11T00:14:31.535315-06:00'
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste \xE0\
   \ joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9.\

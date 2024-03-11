@@ -2,7 +2,7 @@
 date: 2024-01-26 04:13:23.772953-07:00
 description: "Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive Programmierumgebung,\
   \ die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis\u2026"
-lastmod: '2024-02-25T18:49:50.869223-07:00'
+lastmod: '2024-03-11T00:14:27.699328-06:00'
 model: gpt-4-0125-preview
 summary: "Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive Programmierumgebung,\
   \ die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis\u2026"

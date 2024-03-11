@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:00.253775-07:00
 description: "Trabajar con JSON (JavaScript Object Notation) implica analizar, generar\
   \ y consultar datos JSON, lo que lo convierte en una habilidad cr\xEDtica para la\u2026"
-lastmod: '2024-02-25T18:49:55.569172-07:00'
+lastmod: '2024-03-11T00:14:32.910267-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (JavaScript Object Notation) implica analizar, generar\
   \ y consultar datos JSON, lo que lo convierte en una habilidad cr\xEDtica para la\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:42.552605-07:00
 description: "Een nieuw project starten in Rust betekent het opzetten van een basisstructuur\
   \ zodat je code een plek heeft om te leven. Programmeurs starten nieuwe\u2026"
-lastmod: '2024-02-25T18:49:47.938907-07:00'
+lastmod: '2024-03-11T00:14:24.412124-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Rust betekent het opzetten van een basisstructuur\
   \ zodat je code een plek heeft om te leven. Programmeurs starten nieuwe\u2026"

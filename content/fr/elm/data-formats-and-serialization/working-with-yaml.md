@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:22.165548-07:00
 description: "Elm n'int\xE8gre pas de support natif pour YAML, un format de s\xE9\
   rialisation de donn\xE9es souvent utilis\xE9 pour les fichiers de configuration\
   \ ou le partage de\u2026"
-lastmod: '2024-02-25T18:49:54.451191-07:00'
+lastmod: '2024-03-11T00:14:31.663054-06:00'
 model: gpt-4-0125-preview
 summary: "Elm n'int\xE8gre pas de support natif pour YAML, un format de s\xE9rialisation\
   \ de donn\xE9es souvent utilis\xE9 pour les fichiers de configuration ou le partage\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:40.951067-07:00
 description: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
   \ Pourquoi s'en soucier? Parce qu'on a souvent besoin de savoir o\xF9 on en est,\
   \ comme\u2026"
-lastmod: '2024-02-25T18:49:54.632918-07:00'
+lastmod: '2024-03-11T00:14:31.865864-06:00'
 model: gpt-4-1106-preview
 summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
   \ Pourquoi s'en soucier? Parce qu'on a souvent besoin de savoir o\xF9 on en est,\

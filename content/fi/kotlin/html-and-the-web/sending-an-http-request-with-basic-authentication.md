@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:51.988751-07:00
 description: "HTTP-pyynt\xF6 perusautentikoinnilla sis\xE4lt\xE4\xE4 k\xE4ytt\xE4\
   j\xE4nimen ja salasanan, joka l\xE4hetet\xE4\xE4n palvelimelle koodattuna. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t t\xE4t\xE4 autentikoimaan\u2026"
-lastmod: '2024-02-25T18:49:53.447259-07:00'
+lastmod: '2024-03-11T00:14:30.475368-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 perusautentikoinnilla sis\xE4lt\xE4\xE4 k\xE4ytt\xE4j\xE4\
   nimen ja salasanan, joka l\xE4hetet\xE4\xE4n palvelimelle koodattuna. Ohjelmoijat\

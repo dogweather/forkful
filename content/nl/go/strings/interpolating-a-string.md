@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:58:27.563476-07:00
 description: "Stringinterpolatie is een methode om strings te construeren die variabelen\
   \ bevatten, waardoor dynamische stringcreatie mogelijk is. Programmeurs doen dit\u2026"
-lastmod: '2024-02-25T18:49:47.669747-07:00'
+lastmod: '2024-03-11T00:14:24.079854-06:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie is een methode om strings te construeren die variabelen\
   \ bevatten, waardoor dynamische stringcreatie mogelijk is. Programmeurs doen dit\u2026"

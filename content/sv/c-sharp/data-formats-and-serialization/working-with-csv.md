@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:19.790459-07:00
 description: "CSV-filer (Comma-Separated Values) \xE4r ett vanligt datautbytesformat\
   \ som representerar tabul\xE4r data i ren text, genom att anv\xE4nda kommatecken\
   \ f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:36.234712-07:00'
+lastmod: '2024-03-11T00:14:11.300092-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-filer (Comma-Separated Values) \xE4r ett vanligt datautbytesformat som\
   \ representerar tabul\xE4r data i ren text, genom att anv\xE4nda kommatecken f\xF6\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:01.158472-07:00
 description: "String-Interpolation erm\xF6glicht es, Variablenwerte nahtlos in Strings\
   \ einzubetten. Wir nutzen es, um dynamischen Text leichter lesbar und wartbar zu\u2026"
-lastmod: '2024-02-25T18:49:50.814407-07:00'
+lastmod: '2024-03-11T00:14:27.641460-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablenwerte nahtlos in Strings\
   \ einzubetten. Wir nutzen es, um dynamischen Text leichter lesbar und wartbar zu\u2026"

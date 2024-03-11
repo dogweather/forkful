@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:01.398063-07:00
 description: "Travailler avec XML signifie analyser, manipuler et \xE9crire des donn\xE9\
   es XML en utilisant la programmation. Les programmeurs g\xE8rent l'XML pour \xE9\
   changer des\u2026"
-lastmod: '2024-02-25T18:49:54.277843-07:00'
+lastmod: '2024-03-11T00:14:31.478585-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML signifie analyser, manipuler et \xE9crire des donn\xE9\
   es XML en utilisant la programmation. Les programmeurs g\xE8rent l'XML pour \xE9\

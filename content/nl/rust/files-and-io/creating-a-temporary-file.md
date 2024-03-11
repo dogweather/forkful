@@ -5,7 +5,7 @@ date: 2024-01-28 21:58:46.856500-07:00
 description: "Een tijdelijk bestand maken betekent het cre\xEBren van een kortstondig\
   \ bestand voor tussenliggende verwerking. Programmeurs doen dit om gegevens op te\
   \ slaan\u2026"
-lastmod: '2024-02-25T18:49:47.957333-07:00'
+lastmod: '2024-03-11T00:14:24.431612-06:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand maken betekent het cre\xEBren van een kortstondig\
   \ bestand voor tussenliggende verwerking. Programmeurs doen dit om gegevens op te\

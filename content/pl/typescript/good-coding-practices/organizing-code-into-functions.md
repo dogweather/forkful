@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:23.376107-07:00
 description: "Organizowanie kodu w funkcje oznacza dzielenie kodu na wielokrotnie\
   \ u\u017Cywalne, modu\u0142owe bloki. Robimy to, aby utrzyma\u0107 zasad\u0119 DRY\
   \ (Don't Repeat Yourself -\u2026"
-lastmod: '2024-02-25T18:49:33.514171-07:00'
+lastmod: '2024-03-11T00:14:08.318111-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje oznacza dzielenie kodu na wielokrotnie u\u017C\
   ywalne, modu\u0142owe bloki. Robimy to, aby utrzyma\u0107 zasad\u0119 DRY (Don't\

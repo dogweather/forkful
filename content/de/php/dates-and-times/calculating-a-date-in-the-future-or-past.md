@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:27.044460-07:00
 description: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen\
   \ es, Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management,\u2026"
-lastmod: '2024-02-25T18:49:51.041554-07:00'
+lastmod: '2024-03-11T00:14:27.884073-06:00'
 model: gpt-4-1106-preview
 summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
   \ Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management,\u2026"

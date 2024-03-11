@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:03.729322-07:00
 description: "Manipular archivos con l\xEDneas de comando \xFAnicas en PowerShell\
   \ se trata de alterar, mover u obtener datos de archivos directamente desde la l\xED\
   nea de\u2026"
-lastmod: '2024-02-25T18:49:55.759308-07:00'
+lastmod: '2024-03-11T00:14:33.107128-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular archivos con l\xEDneas de comando \xFAnicas en PowerShell se trata\
   \ de alterar, mover u obtener datos de archivos directamente desde la l\xEDnea de\u2026"

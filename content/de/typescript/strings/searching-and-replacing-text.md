@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:59.742030-07:00
 description: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
   \ in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen\u2026"
-lastmod: '2024-02-25T18:49:50.685838-07:00'
+lastmod: '2024-03-11T00:14:27.505894-06:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
   \ in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen\u2026"

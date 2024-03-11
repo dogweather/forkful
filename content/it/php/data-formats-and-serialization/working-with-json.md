@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:36.914908-07:00
 description: "JSON, acronimo di JavaScript Object Notation, \xE8 un formato di scambio\
   \ dati leggero facile da leggere e scrivere per gli esseri umani e da analizzare\
   \ e\u2026"
-lastmod: '2024-02-25T18:49:41.400426-07:00'
+lastmod: '2024-03-11T00:14:17.139722-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, acronimo di JavaScript Object Notation, \xE8 un formato di scambio\
   \ dati leggero facile da leggere e scrivere per gli esseri umani e da analizzare\

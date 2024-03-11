@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:21.181022-07:00
 description: "Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,\
   \ gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en\u2026"
-lastmod: '2024-02-25T18:49:48.596966-07:00'
+lastmod: '2024-03-11T00:14:25.132386-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,\
   \ gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en\u2026"

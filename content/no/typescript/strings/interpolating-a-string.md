@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:50.797922-07:00
 description: "Strenginterpolasjon er det \xE5 sette sammen en streng med variabler\
   \ eller uttrykk. Programmerere bruker det for \xE5 lage dynamisk tekst og forbedre\u2026"
-lastmod: '2024-02-25T18:49:38.698277-07:00'
+lastmod: '2024-03-11T00:14:14.048685-06:00'
 model: gpt-4-1106-preview
 summary: "Strenginterpolasjon er det \xE5 sette sammen en streng med variabler eller\
   \ uttrykk. Programmerere bruker det for \xE5 lage dynamisk tekst og forbedre\u2026"

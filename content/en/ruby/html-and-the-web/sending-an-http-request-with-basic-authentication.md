@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:36.051914-07:00
 description: "In Ruby, sending an HTTP request with basic authentication involves\
   \ adding a username and password to your request header. Programmers do this to\
   \ access\u2026"
-lastmod: '2024-02-25T18:49:56.987486-07:00'
+lastmod: '2024-03-11T00:14:34.437873-06:00'
 model: gpt-4-1106-preview
 summary: "In Ruby, sending an HTTP request with basic authentication involves adding\
   \ a username and password to your request header. Programmers do this to access\u2026"

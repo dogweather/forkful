@@ -5,7 +5,7 @@ date: 2024-01-30 19:12:21.480911-07:00
 description: "Los arreglos asociativos son como apretones de manos secretos para datos\
   \ en Lua\u2014en vez de solo n\xFAmeros aline\xE1ndose obedientemente por \xEDndice,\
   \ tus llaves\u2026"
-lastmod: '2024-02-25T18:49:55.666015-07:00'
+lastmod: '2024-03-11T00:14:33.013746-06:00'
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos son como apretones de manos secretos para datos\
   \ en Lua\u2014en vez de solo n\xFAmeros aline\xE1ndose obedientemente por \xEDndice,\

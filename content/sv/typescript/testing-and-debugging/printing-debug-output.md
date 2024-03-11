@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:25.853827-07:00
 description: "Utskrift f\xF6r fels\xF6kning (debugging) \xE4r n\xE4r du skriver ut\
   \ data till konsolen f\xF6r att se vad som h\xE4nder i din kod. Programmerare g\xF6\
   r det f\xF6r att snabbt\u2026"
-lastmod: '2024-02-25T18:49:35.954201-07:00'
+lastmod: '2024-03-11T00:14:10.994267-06:00'
 model: gpt-4-1106-preview
 summary: "Utskrift f\xF6r fels\xF6kning (debugging) \xE4r n\xE4r du skriver ut data\
   \ till konsolen f\xF6r att se vad som h\xE4nder i din kod. Programmerare g\xF6r\

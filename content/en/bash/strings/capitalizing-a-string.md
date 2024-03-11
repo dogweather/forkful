@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:33.737797-07:00
 description: "Capitalizing a string in Bash involves transforming the first character\
   \ of the string to uppercase while leaving the rest of the string unchanged. This\u2026"
-lastmod: '2024-02-25T18:49:56.667165-07:00'
+lastmod: '2024-03-11T00:14:34.093651-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in Bash involves transforming the first character\
   \ of the string to uppercase while leaving the rest of the string unchanged. This\u2026"

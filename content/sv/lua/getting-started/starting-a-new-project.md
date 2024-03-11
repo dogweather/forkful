@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:06.957812-07:00
 description: "Att starta ett nytt projekt inneb\xE4r att skapa en ny mapp och filstruktur\
   \ f\xF6r ett programmeringsprojekt. Programmerare g\xF6r detta f\xF6r att organisera\
   \ kod,\u2026"
-lastmod: '2024-02-25T18:49:36.343474-07:00'
+lastmod: '2024-03-11T00:14:11.415714-06:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt inneb\xE4r att skapa en ny mapp och filstruktur\
   \ f\xF6r ett programmeringsprojekt. Programmerare g\xF6r detta f\xF6r att organisera\

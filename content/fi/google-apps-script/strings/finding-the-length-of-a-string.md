@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:41.974190-07:00
 description: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka\
   \ on JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\
   vi\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.064598-07:00'
+lastmod: '2024-03-11T00:14:30.013488-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka on\
   \ JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\

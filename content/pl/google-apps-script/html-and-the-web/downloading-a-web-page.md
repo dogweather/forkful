@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:44.835765-07:00
 description: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
   \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\
   w, takich jak web\u2026"
-lastmod: '2024-02-25T18:49:33.324829-07:00'
+lastmod: '2024-03-11T00:14:08.071813-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
   \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\

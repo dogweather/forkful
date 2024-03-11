@@ -2,7 +2,7 @@
 date: 2024-01-20 17:40:37.168662-07:00
 description: "Crear un archivo temporal es como anotar algo r\xE1pido en una servilleta:\
   \ es \xFAtil para guardar datos que solo necesitas durante un rato. Los programadores\u2026"
-lastmod: '2024-02-25T18:49:55.947085-07:00'
+lastmod: '2024-03-11T00:14:33.311548-06:00'
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es como anotar algo r\xE1pido en una servilleta:\
   \ es \xFAtil para guardar datos que solo necesitas durante un rato. Los programadores\u2026"

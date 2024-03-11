@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:22.109861-07:00
 description: "\xC5 sammenligne to datoer betyr \xE5 sjekke om de er like, hvilken\
   \ som kommer f\xF8rst, eller hvor lang tid det er mellom dem. Programmerere gj\xF8\
   r dette for \xE5\u2026"
-lastmod: '2024-02-25T18:49:39.071536-07:00'
+lastmod: '2024-03-11T00:14:14.466275-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sammenligne to datoer betyr \xE5 sjekke om de er like, hvilken som\
   \ kommer f\xF8rst, eller hvor lang tid det er mellom dem. Programmerere gj\xF8r\

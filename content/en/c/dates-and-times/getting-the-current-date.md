@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:03.964838-07:00
 description: "Getting the current date in C involves tapping into the standard C library\
   \ to fetch and format the system's current date and time. Programmers often need\u2026"
-lastmod: '2024-02-25T18:49:56.957559-07:00'
+lastmod: '2024-03-11T00:14:34.405946-06:00'
 model: gpt-4-0125-preview
 summary: "Getting the current date in C involves tapping into the standard C library\
   \ to fetch and format the system's current date and time. Programmers often need\u2026"

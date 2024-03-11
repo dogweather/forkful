@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:20.443641-07:00
 description: "O tratamento de erros no Visual Basic for Applications (VBA) refere-se\
   \ ao processo de antecipar, detectar e resolver erros de programa\xE7\xE3o, aplicativos\
   \ ou\u2026"
-lastmod: '2024-02-25T18:49:44.040470-07:00'
+lastmod: '2024-03-11T00:14:20.115160-06:00'
 model: gpt-4-0125-preview
 summary: "O tratamento de erros no Visual Basic for Applications (VBA) refere-se ao\
   \ processo de antecipar, detectar e resolver erros de programa\xE7\xE3o, aplicativos\

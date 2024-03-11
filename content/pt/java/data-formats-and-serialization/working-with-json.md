@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:16.540777-07:00
 description: "Trabalhar com JSON (Nota\xE7\xE3o de Objeto JavaScript) significa manipular\
   \ esse formato leve de interc\xE2mbio de dados dentro de suas aplica\xE7\xF5es Java.\u2026"
-lastmod: '2024-02-25T18:49:44.098514-07:00'
+lastmod: '2024-03-11T00:14:20.177729-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (Nota\xE7\xE3o de Objeto JavaScript) significa manipular\
   \ esse formato leve de interc\xE2mbio de dados dentro de suas aplica\xE7\xF5es Java.\u2026"

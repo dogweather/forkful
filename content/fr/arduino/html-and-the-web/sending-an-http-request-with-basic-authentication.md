@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:46.377056-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste\
   \ \xE0 transmettre des informations d'identification (nom d'utilisateur et mot de\
   \ passe)\u2026"
-lastmod: '2024-02-25T18:49:54.783558-07:00'
+lastmod: '2024-03-11T00:14:32.015275-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste \xE0\
   \ transmettre des informations d'identification (nom d'utilisateur et mot de passe)\u2026"

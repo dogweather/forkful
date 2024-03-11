@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:33:38.923033-07:00
 description: "\xC9crire sur la sortie d'erreur standard (stderr) consiste \xE0 afficher\
   \ des messages d'erreur et des diagnostics sur la console ou le terminal. Les\u2026"
-lastmod: '2024-02-25T18:49:54.404563-07:00'
+lastmod: '2024-03-11T00:14:31.612808-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur la sortie d'erreur standard (stderr) consiste \xE0 afficher\
   \ des messages d'erreur et des diagnostics sur la console ou le terminal. Les\u2026"

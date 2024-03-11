@@ -3,7 +3,7 @@ date: 2024-01-26 01:08:19.601292-07:00
 description: "La creaci\xF3n de registros (logging) en programaci\xF3n es como mantener\
   \ un diario para tu aplicaci\xF3n. Es el registro sistem\xE1tico de eventos, mensajes\
   \ y puntos\u2026"
-lastmod: '2024-02-25T18:49:56.065098-07:00'
+lastmod: '2024-03-11T00:14:33.439142-06:00'
 model: gpt-4-1106-preview
 summary: "La creaci\xF3n de registros (logging) en programaci\xF3n es como mantener\
   \ un diario para tu aplicaci\xF3n. Es el registro sistem\xE1tico de eventos, mensajes\

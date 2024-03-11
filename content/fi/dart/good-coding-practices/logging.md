@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:06.780593-07:00
 description: "Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri\
   \ tasojen tiedon tallentamiseen. Ohjelmoijat tekev\xE4t sen seuratakseen ohjelmiston\u2026"
-lastmod: '2024-03-09T21:06:20.186903-07:00'
+lastmod: '2024-03-11T00:14:30.209745-06:00'
 model: gpt-4-0125-preview
 summary: "Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri tasojen\
   \ tiedon tallentamiseen. Ohjelmoijat tekev\xE4t sen seuratakseen ohjelmiston\u2026"

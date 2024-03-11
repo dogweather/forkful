@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:30.297396-07:00
 description: "Mit\xE4 & Miksi? Luodaan v\xE4liaikainen tiedosto vastaanottamaan dataa,\
   \ joka ei tarvitse pysyv\xE4ist\xE4 tallennusta. K\xE4ytet\xE4\xE4n testauksessa,\
   \ v\xE4liaikaisessa datan\u2026"
-lastmod: '2024-02-25T18:49:53.547026-07:00'
+lastmod: '2024-03-11T00:14:30.584246-06:00'
 model: gpt-4-1106-preview
 summary: "Mit\xE4 & Miksi? Luodaan v\xE4liaikainen tiedosto vastaanottamaan dataa,\
   \ joka ei tarvitse pysyv\xE4ist\xE4 tallennusta. K\xE4ytet\xE4\xE4n testauksessa,\

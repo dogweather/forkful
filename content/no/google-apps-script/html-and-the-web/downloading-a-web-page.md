@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:36.303703-07:00
 description: "\xC5 laste ned en nettside i Google Apps Script inneb\xE6rer \xE5 hente\
   \ innholdet p\xE5 en nettside via HTML for ulike form\xE5l, som nettskraping, datautvinning\
   \ eller\u2026"
-lastmod: '2024-02-25T18:49:38.543698-07:00'
+lastmod: '2024-03-11T00:14:13.830232-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside i Google Apps Script inneb\xE6rer \xE5 hente\
   \ innholdet p\xE5 en nettside via HTML for ulike form\xE5l, som nettskraping, datautvinning\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:57.403889-07:00
 description: "YAML, ett rekursivt akronym f\xF6r \"YAML Ain't Markup Language\", \xE4\
   r ett m\xE4nniskol\xE4sbart data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler\
   \ och\u2026"
-lastmod: '2024-02-25T18:49:35.884353-07:00'
+lastmod: '2024-03-11T00:14:10.873300-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, ett rekursivt akronym f\xF6r \"YAML Ain't Markup Language\", \xE4\
   r ett m\xE4nniskol\xE4sbart data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler\

@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:37.645944-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende godkjenning betyr\
   \ \xE5 tilgangsautorisere ved \xE5 inkludere brukernavn og passord. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
-lastmod: '2024-02-25T18:49:39.404502-07:00'
+lastmod: '2024-03-11T00:14:14.829920-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende godkjenning betyr \xE5\
   \ tilgangsautorisere ved \xE5 inkludere brukernavn og passord. Programmerere gj\xF8\

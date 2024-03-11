@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:05:16.472178-07:00
 description: "Lire un fichier texte en C implique d'ouvrir un fichier sur votre syst\xE8\
   me pour extraire des informations et les manipuler ou les afficher selon le besoin.\u2026"
-lastmod: '2024-02-25T18:49:55.015129-07:00'
+lastmod: '2024-03-11T00:14:32.263141-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en C implique d'ouvrir un fichier sur votre syst\xE8\
   me pour extraire des informations et les manipuler ou les afficher selon le besoin.\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:12.317199-07:00
 description: "In Swift houdt het verkrijgen van de huidige datum in dat je toegang\
   \ krijgt tot de huidige tijd- en datuminstellingen van het systeem. Programmeurs\
   \ doen\u2026"
-lastmod: '2024-02-25T18:49:48.498186-07:00'
+lastmod: '2024-03-11T00:14:25.005910-06:00'
 model: gpt-4-0125-preview
 summary: "In Swift houdt het verkrijgen van de huidige datum in dat je toegang krijgt\
   \ tot de huidige tijd- en datuminstellingen van het systeem. Programmeurs doen\u2026"

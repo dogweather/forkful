@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:14.762723-07:00
 description: "Py\xF6rist\xE4minen, perusk\xE4site tietokoneohjelmoinnissa, tarkoittaa\
   \ luvun s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn m\xE4\
   \xE4r\xE4\xE4n desimaalipaikkoja.\u2026"
-lastmod: '2024-02-25T18:49:53.068744-07:00'
+lastmod: '2024-03-11T00:14:30.017980-06:00'
 model: gpt-4-0125-preview
 summary: "Py\xF6rist\xE4minen, perusk\xE4site tietokoneohjelmoinnissa, tarkoittaa\
   \ luvun s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn m\xE4\

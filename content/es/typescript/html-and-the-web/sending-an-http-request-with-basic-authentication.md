@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:44.713444-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
   \ credenciales de usuario y contrase\xF1a codificadas en la cabecera de la solicitud.\
   \ Los\u2026"
-lastmod: '2024-02-25T18:49:55.299482-07:00'
+lastmod: '2024-03-11T00:14:32.618585-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
   \ credenciales de usuario y contrase\xF1a codificadas en la cabecera de la solicitud.\

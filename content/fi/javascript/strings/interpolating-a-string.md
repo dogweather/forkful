@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:00.387197-07:00
 description: "String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdist\xE4\
   mist\xE4 merkkijonoihin. Koodareiden arjessa t\xE4m\xE4 on k\xE4yt\xE4nn\xF6llist\xE4\
   , sill\xE4 se helpottaa\u2026"
-lastmod: '2024-02-25T18:49:53.842969-07:00'
+lastmod: '2024-03-11T00:14:30.978018-06:00'
 model: gpt-4-1106-preview
 summary: "String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdist\xE4mist\xE4\
   \ merkkijonoihin. Koodareiden arjessa t\xE4m\xE4 on k\xE4yt\xE4nn\xF6llist\xE4,\

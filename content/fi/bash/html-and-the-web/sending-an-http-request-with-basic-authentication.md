@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:16.153281-07:00
 description: "L\xE4het\xE4t HTTP-pyynn\xF6n perusautentikoinnilla liitt\xE4\xE4ksesi\
   \ k\xE4ytt\xE4j\xE4tunnuksen ja salasanan verkkoresurssin pyynt\xF6\xF6n. Koodarit\
   \ tekev\xE4t t\xE4m\xE4n p\xE4\xE4st\xE4kseen\u2026"
-lastmod: '2024-02-25T18:49:53.650829-07:00'
+lastmod: '2024-03-11T00:14:30.695450-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4het\xE4t HTTP-pyynn\xF6n perusautentikoinnilla liitt\xE4\xE4ksesi k\xE4\
   ytt\xE4j\xE4tunnuksen ja salasanan verkkoresurssin pyynt\xF6\xF6n. Koodarit tekev\xE4\

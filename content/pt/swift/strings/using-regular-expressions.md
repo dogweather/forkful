@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:18.952259-07:00
 description: "Express\xF5es regulares, ou regex, s\xE3o sequ\xEAncias de caracteres\
   \ que formam um padr\xE3o de busca, frequentemente usadas para tarefas de correspond\xEA\
   ncia ou\u2026"
-lastmod: '2024-02-25T18:49:44.528618-07:00'
+lastmod: '2024-03-11T00:14:20.642202-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares, ou regex, s\xE3o sequ\xEAncias de caracteres que\
   \ formam um padr\xE3o de busca, frequentemente usadas para tarefas de correspond\xEA\

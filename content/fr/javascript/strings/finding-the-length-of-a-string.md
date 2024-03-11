@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:48.924493-07:00
 description: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie compter\
   \ le nombre de caract\xE8res qu'elle contient. C'est essentiel pour valider des\
   \ entr\xE9es,\u2026"
-lastmod: '2024-02-25T18:49:54.899051-07:00'
+lastmod: '2024-03-11T00:14:32.139736-06:00'
 model: gpt-4-1106-preview
 summary: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie compter\
   \ le nombre de caract\xE8res qu'elle contient. C'est essentiel pour valider des\

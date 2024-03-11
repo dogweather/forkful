@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:56.036260-07:00
 description: "TOML stands for Tom's Obvious, Minimal Language. It's used for configuration\
   \ files because it's easy to read and write for humans, while still being easy\u2026"
-lastmod: '2024-02-25T18:49:56.515802-07:00'
+lastmod: '2024-03-11T00:14:33.934705-06:00'
 model: gpt-4-1106-preview
 summary: "TOML stands for Tom's Obvious, Minimal Language. It's used for configuration\
   \ files because it's easy to read and write for humans, while still being easy\u2026"

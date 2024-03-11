@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:09.381171-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
   \ to spos\xF3b na autoryzacj\u0119 u\u017Cytkownika poprzez przesy\u0142anie loginu\
   \ i has\u0142a w nag\u0142\xF3wku HTTP.\u2026"
-lastmod: '2024-02-25T18:49:33.772777-07:00'
+lastmod: '2024-03-11T00:14:08.591064-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem to\
   \ spos\xF3b na autoryzacj\u0119 u\u017Cytkownika poprzez przesy\u0142anie loginu\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:39.199677-07:00
 description: "Complexe getallen breiden de re\xEBle getallenlijn uit door de toevoeging\
   \ van een imaginair eenheid, `i`, waarbij `i^2 = -1`. Ze zijn cruciaal in velden\u2026"
-lastmod: '2024-02-25T18:49:48.017755-07:00'
+lastmod: '2024-03-11T00:14:24.495866-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallenlijn uit door de toevoeging\
   \ van een imaginair eenheid, `i`, waarbij `i^2 = -1`. Ze zijn cruciaal in velden\u2026"

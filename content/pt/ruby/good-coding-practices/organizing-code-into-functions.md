@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:57.050308-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es divide seu script em partes reutiliz\xE1\
   veis. \xC9 tudo sobre tornar o c\xF3digo limpo, gerenci\xE1vel e menos propenso\
   \ a erros. C\xF3digo\u2026"
-lastmod: '2024-02-25T18:49:44.717458-07:00'
+lastmod: '2024-03-11T00:14:20.846175-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es divide seu script em partes reutiliz\xE1\
   veis. \xC9 tudo sobre tornar o c\xF3digo limpo, gerenci\xE1vel e menos propenso\

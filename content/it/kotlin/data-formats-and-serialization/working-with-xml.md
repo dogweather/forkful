@@ -3,7 +3,7 @@ date: 2024-01-26 04:33:10.490206-07:00
 description: "Lavorare con XML comporta l'analisi, la creazione e la manipolazione\
   \ di documenti XML, un linguaggio di markup per la memorizzazione e il trasferimento\
   \ di\u2026"
-lastmod: '2024-02-25T18:49:41.282532-07:00'
+lastmod: '2024-03-11T00:14:17.001267-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con XML comporta l'analisi, la creazione e la manipolazione di\
   \ documenti XML, un linguaggio di markup per la memorizzazione e il trasferimento\

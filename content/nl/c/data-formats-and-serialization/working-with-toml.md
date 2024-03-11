@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:12:20.276525-07:00
 description: "TOML (Tom's Obvious, Minimal Language) is een configuratiebestandsformaat\
   \ dat makkelijk te lezen is door zijn duidelijke semantiek. Programmeurs gebruiken\u2026"
-lastmod: '2024-02-25T18:49:48.639604-07:00'
+lastmod: '2024-03-11T00:14:25.178689-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) is een configuratiebestandsformaat\
   \ dat makkelijk te lezen is door zijn duidelijke semantiek. Programmeurs gebruiken\u2026"

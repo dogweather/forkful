@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:18.137242-07:00
 description: "\xC5 skrive tester i TypeScript inneb\xE6rer \xE5 lage automatiserte\
   \ skript for \xE5 verifisere funksjonaliteten og riktigheten av koden din. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: '2024-02-25T18:49:38.715603-07:00'
+lastmod: '2024-03-11T00:14:14.066943-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i TypeScript inneb\xE6rer \xE5 lage automatiserte skript\
   \ for \xE5 verifisere funksjonaliteten og riktigheten av koden din. Programmerere\

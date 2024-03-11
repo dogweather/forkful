@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:04:03.966091-07:00
 description: "Een datum parsen vanuit een string betekent het omzetten van tekst naar\
   \ een datumobject. Dit doen we omdat het gemakkelijker is om met data te werken,\u2026"
-lastmod: '2024-02-25T18:49:47.779971-07:00'
+lastmod: '2024-03-11T00:14:24.196534-06:00'
 model: gpt-4-0125-preview
 summary: "Een datum parsen vanuit een string betekent het omzetten van tekst naar\
   \ een datumobject. Dit doen we omdat het gemakkelijker is om met data te werken,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:15.527968-07:00
 description: "Het lezen van commandoregelargumenten in Go houdt in dat je de argumenten\
   \ die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal\
   \ of\u2026"
-lastmod: '2024-02-25T18:49:47.699982-07:00'
+lastmod: '2024-03-11T00:14:24.111543-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten in Go houdt in dat je de argumenten\
   \ die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal\

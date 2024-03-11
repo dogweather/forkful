@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:15.415186-07:00
 description: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les\
   \ messages d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019\
   erreur (`stderr`),\u2026"
-lastmod: '2024-02-25T18:49:54.143953-07:00'
+lastmod: '2024-03-11T00:14:31.287259-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les messages\
   \ d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019erreur\

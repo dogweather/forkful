@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:51.017004-07:00
 description: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvarande\
   \ f\xF6r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med\
   \ de flesta\u2026"
-lastmod: '2024-02-25T18:49:35.752233-07:00'
+lastmod: '2024-03-11T00:14:10.722342-06:00'
 model: gpt-4-0125-preview
 summary: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvarande f\xF6\
   r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med de flesta\u2026"

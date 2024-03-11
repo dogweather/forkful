@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:18.473156-07:00
 description: "Los arreglos asociativos, conocidos en Python como diccionarios, mapean\
   \ claves a valores, facilitando la recuperaci\xF3n, modificaci\xF3n o seguimiento\
   \ de datos\u2026"
-lastmod: '2024-02-25T18:49:55.170778-07:00'
+lastmod: '2024-03-11T00:14:32.435672-06:00'
 model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos en Python como diccionarios, mapean\
   \ claves a valores, facilitando la recuperaci\xF3n, modificaci\xF3n o seguimiento\

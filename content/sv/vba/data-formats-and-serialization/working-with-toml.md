@@ -5,7 +5,7 @@ date: 2024-02-01 22:06:27.253492-07:00
 description: "TOML, som st\xE5r f\xF6r Toms uppenbara, minimala spr\xE5k, \xE4r ett\
   \ data-serialiseringsformat som fr\xE4mst anv\xE4nds f\xF6r konfigurationsfiler.\
   \ Programmerare utnyttjar\u2026"
-lastmod: '2024-02-25T18:49:36.063452-07:00'
+lastmod: '2024-03-11T00:14:11.112533-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r f\xF6r Toms uppenbara, minimala spr\xE5k, \xE4r ett data-serialiseringsformat\
   \ som fr\xE4mst anv\xE4nds f\xF6r konfigurationsfiler. Programmerare utnyttjar\u2026"

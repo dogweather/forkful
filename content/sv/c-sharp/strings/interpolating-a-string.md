@@ -5,7 +5,7 @@ date: 2024-02-25 17:07:02.554791-07:00
 description: "Str\xE4nginterpolering i C# g\xF6r det m\xF6jligt att skapa en ny str\xE4\
   ng genom att inkludera uttryck inuti en str\xE4ngliteral, vilket underl\xE4ttar\
   \ formatering och\u2026"
-lastmod: '2024-02-25T18:49:36.196798-07:00'
+lastmod: '2024-03-11T00:14:11.258829-06:00'
 model: gpt-4-0125-preview
 summary: "Str\xE4nginterpolering i C# g\xF6r det m\xF6jligt att skapa en ny str\xE4\
   ng genom att inkludera uttryck inuti en str\xE4ngliteral, vilket underl\xE4ttar\

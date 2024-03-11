@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:53.119027-07:00
 description: "\xC5 hente den gjeldende datoen i Rust er en vanlig oppgave for oppgaver\
   \ som logging, tidsbaserte operasjoner, eller rett og slett for \xE5 vise datoen.\
   \ I\u2026"
-lastmod: '2024-02-25T18:49:38.766203-07:00'
+lastmod: '2024-03-11T00:14:14.121085-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den gjeldende datoen i Rust er en vanlig oppgave for oppgaver\
   \ som logging, tidsbaserte operasjoner, eller rett og slett for \xE5 vise datoen.\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:30.065636-07:00
 description: "YAML, som st\xE5r for YAML Ain't Markup Language, er mye brukt i Ruby\
   \ for konfigurasjonsfiler og dataserialisering p\xE5 grunn av sitt lesbare format.\u2026"
-lastmod: '2024-02-25T18:49:39.515727-07:00'
+lastmod: '2024-03-11T00:14:14.953243-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er mye brukt i Ruby for\
   \ konfigurasjonsfiler og dataserialisering p\xE5 grunn av sitt lesbare format.\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:00.642193-07:00
 description: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Daten\
   \ w\xE4hrend der Ausf\xFChrung eines Programms aufnehmen. Sie werden oft genutzt,\
   \ um Zwischenergebnisse\u2026"
-lastmod: '2024-02-25T18:49:50.926503-07:00'
+lastmod: '2024-03-11T00:14:27.759575-06:00'
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Daten w\xE4\
   hrend der Ausf\xFChrung eines Programms aufnehmen. Sie werden oft genutzt, um Zwischenergebnisse\u2026"

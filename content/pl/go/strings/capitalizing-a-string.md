@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:45.332269-07:00
 description: "Zamiana pierwszej litery \u0142a\u0144cucha na wielk\u0105 liter\u0119\
   \ polega na przekszta\u0142ceniu pierwszego znaku danego \u0142a\u0144cucha na wielk\u0105\
   \ liter\u0119, je\u015Bli jest on pisany ma\u0142\u0105\u2026"
-lastmod: '2024-02-25T18:49:33.252713-07:00'
+lastmod: '2024-03-11T00:14:07.997175-06:00'
 model: gpt-4-0125-preview
 summary: "Zamiana pierwszej litery \u0142a\u0144cucha na wielk\u0105 liter\u0119 polega\
   \ na przekszta\u0142ceniu pierwszego znaku danego \u0142a\u0144cucha na wielk\u0105\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:17.527597-07:00
 description: "Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen\
   \ en diagnostiek uit te sturen. Programmeurs doen dit om ze te scheiden van de\u2026"
-lastmod: '2024-02-25T18:49:47.829134-07:00'
+lastmod: '2024-03-11T00:14:24.248041-06:00'
 model: gpt-4-0125-preview
 summary: "Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen\
   \ en diagnostiek uit te sturen. Programmeurs doen dit om ze te scheiden van de\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:06:31.454366-07:00
 description: "O log, em resumo, \xE9 como manter um di\xE1rio para sua aplica\xE7\xE3\
   o \u2014 ele registra eventos, erros e outras a\xE7\xF5es significativas que ocorrem\
   \ enquanto o software\u2026"
-lastmod: '2024-02-25T18:49:44.585748-07:00'
+lastmod: '2024-03-11T00:14:20.704501-06:00'
 model: gpt-4-1106-preview
 summary: "O log, em resumo, \xE9 como manter um di\xE1rio para sua aplica\xE7\xE3\
   o \u2014 ele registra eventos, erros e outras a\xE7\xF5es significativas que ocorrem\

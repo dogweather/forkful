@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:38.630613-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende\
   \ Operation, die Einheitlichkeit und Konsistenz bei der Textverarbeitung erm\xF6\
   glicht,\u2026"
-lastmod: '2024-02-25T18:49:50.474424-07:00'
+lastmod: '2024-03-11T00:14:27.230283-06:00'
 model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende Operation,\
   \ die Einheitlichkeit und Konsistenz bei der Textverarbeitung erm\xF6glicht,\u2026"

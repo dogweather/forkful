@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:14.737043-07:00
 description: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013\
   \ het draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit\
   \ de\u2026"
-lastmod: '2024-02-25T18:49:48.034292-07:00'
+lastmod: '2024-03-11T00:14:24.513336-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013 het\
   \ draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit de\u2026"

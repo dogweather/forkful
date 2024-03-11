@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:36.661036-07:00
 description: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic pour\
   \ Applications (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date\
   \ en un type de\u2026"
-lastmod: '2024-02-25T18:49:54.351004-07:00'
+lastmod: '2024-03-11T00:14:31.555921-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic pour Applications\
   \ (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date en un type de\u2026"

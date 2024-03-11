@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:55.899156-07:00
 description: "Usar un depurador en la programaci\xF3n Go implica emplear herramientas\
   \ o caracter\xEDsticas para inspeccionar y modificar el estado de un programa en\
   \ ejecuci\xF3n\u2026"
-lastmod: '2024-02-25T18:49:55.090833-07:00'
+lastmod: '2024-03-11T00:14:32.343062-06:00'
 model: gpt-4-0125-preview
 summary: "Usar un depurador en la programaci\xF3n Go implica emplear herramientas\
   \ o caracter\xEDsticas para inspeccionar y modificar el estado de un programa en\

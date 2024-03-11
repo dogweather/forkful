@@ -3,7 +3,7 @@ date: 2024-01-26 03:44:44.321885-07:00
 description: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s\
   \ cercano o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores\
   \ redondean\u2026"
-lastmod: '2024-02-25T18:49:55.462583-07:00'
+lastmod: '2024-03-11T00:14:32.791920-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s cercano\
   \ o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores redondean\u2026"

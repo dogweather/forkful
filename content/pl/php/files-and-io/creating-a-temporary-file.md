@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:21.884177-07:00
 description: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo,\
   \ zanim uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105\
   \ to, by zarz\u0105dza\u0107 danymi\u2026"
-lastmod: '2024-02-25T18:49:33.880863-07:00'
+lastmod: '2024-03-11T00:14:08.703748-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo, zanim\
   \ uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105 to, by\

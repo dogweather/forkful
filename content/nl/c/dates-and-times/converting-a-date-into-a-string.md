@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:54:03.270702-07:00
 description: "Het omzetten van een datum naar een tekenreeks in C betreft het vertalen\
   \ van een datumstructuur of tijdstempel naar een voor mensen leesbaar formaat.\u2026"
-lastmod: '2024-02-25T18:49:48.627451-07:00'
+lastmod: '2024-03-11T00:14:25.165073-06:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een tekenreeks in C betreft het vertalen\
   \ van een datumstructuur of tijdstempel naar een voor mensen leesbaar formaat.\u2026"

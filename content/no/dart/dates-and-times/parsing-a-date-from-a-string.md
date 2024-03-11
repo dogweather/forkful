@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:16.547052-07:00
 description: "\xC5 analysere en dato fra en streng i Dart inneb\xE6rer konvertering\
   \ av tekstlig representasjon av datoer og tider til et `DateTime`-objekt. Denne\
   \ operasjonen\u2026"
-lastmod: '2024-03-09T21:06:05.254904-07:00'
+lastmod: '2024-03-11T00:14:14.027150-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Dart inneb\xE6rer konvertering av\
   \ tekstlig representasjon av datoer og tider til et `DateTime`-objekt. Denne operasjonen\u2026"

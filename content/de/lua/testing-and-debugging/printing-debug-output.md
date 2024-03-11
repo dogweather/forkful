@@ -2,7 +2,7 @@
 date: 2024-01-20 17:52:59.152151-07:00
 description: "Das Ausgeben von Debug-Informationen hilft beim Verstehen, was im Code\
   \ passiert. Programmierer nutzen es, um Fehler schnell zu finden und den\u2026"
-lastmod: '2024-02-25T18:49:51.071430-07:00'
+lastmod: '2024-03-11T00:14:27.915922-06:00'
 model: gpt-4-1106-preview
 summary: "Das Ausgeben von Debug-Informationen hilft beim Verstehen, was im Code passiert.\
   \ Programmierer nutzen es, um Fehler schnell zu finden und den\u2026"

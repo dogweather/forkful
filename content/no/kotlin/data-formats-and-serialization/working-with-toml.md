@@ -2,7 +2,7 @@
 date: 2024-01-26 04:24:28.389968-07:00
 description: "TOML betyr Tom's Obvious, Minimal Language. Det brukes for konfigurasjonsfiler\
   \ fordi det er lett \xE5 lese og skrive for mennesker, samtidig som det er lett\u2026"
-lastmod: '2024-02-25T18:49:38.952468-07:00'
+lastmod: '2024-03-11T00:14:14.331507-06:00'
 model: gpt-4-0125-preview
 summary: "TOML betyr Tom's Obvious, Minimal Language. Det brukes for konfigurasjonsfiler\
   \ fordi det er lett \xE5 lese og skrive for mennesker, samtidig som det er lett\u2026"

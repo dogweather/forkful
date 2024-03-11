@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:58.052055-07:00
 description: "Interpolar uma string \xE9 o ato de inserir dinamicamente vari\xE1veis\
   \ ou express\xF5es dentro dela. Programadores fazem isso para construir mensagens\
   \ ou comandos\u2026"
-lastmod: '2024-02-25T18:49:44.607305-07:00'
+lastmod: '2024-03-11T00:14:20.727774-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 o ato de inserir dinamicamente vari\xE1veis ou\
   \ express\xF5es dentro dela. Programadores fazem isso para construir mensagens ou\

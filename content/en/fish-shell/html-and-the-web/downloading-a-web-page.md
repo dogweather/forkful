@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:11.399176-07:00
 description: Downloading a webpage pulls its content from the web to your local machine.
   Programmers do it for automation, data scraping, offline access, or testing.
-lastmod: '2024-02-25T18:49:56.908367-07:00'
+lastmod: '2024-03-11T00:14:34.351039-06:00'
 model: gpt-4-1106-preview
 summary: Downloading a webpage pulls its content from the web to your local machine.
   Programmers do it for automation, data scraping, offline access, or testing.

@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:43.370282-07:00
 description: "L\xE4het\xE4mme HTTP-pyynn\xF6n vaihtaaksemme tietoja palvelimien kanssa.\
   \ Sit\xE4 k\xE4ytet\xE4\xE4n datan hakemiseen, l\xE4hett\xE4miseen ja web-palveluiden\
   \ hy\xF6dynt\xE4miseen."
-lastmod: '2024-02-25T18:49:53.278658-07:00'
+lastmod: '2024-03-11T00:14:30.287781-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4het\xE4mme HTTP-pyynn\xF6n vaihtaaksemme tietoja palvelimien kanssa.\
   \ Sit\xE4 k\xE4ytet\xE4\xE4n datan hakemiseen, l\xE4hett\xE4miseen ja web-palveluiden\

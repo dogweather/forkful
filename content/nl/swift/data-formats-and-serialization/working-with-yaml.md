@@ -5,7 +5,7 @@ date: 2024-01-28 22:11:54.860071-07:00
 description: "YAML, een afkorting voor \"YAML Ain't Markup Language\", is een voor\
   \ mensen leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden\
   \ te\u2026"
-lastmod: '2024-02-25T18:49:48.508039-07:00'
+lastmod: '2024-03-11T00:14:25.016684-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, een afkorting voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden te\u2026"

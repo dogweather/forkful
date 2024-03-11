@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:15.929272-07:00
 description: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens\
   \ de erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\
   \ Os\u2026"
-lastmod: '2024-02-25T18:49:43.742656-07:00'
+lastmod: '2024-03-11T00:14:19.740059-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens de\
   \ erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\

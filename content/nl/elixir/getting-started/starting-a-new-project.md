@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:17.841212-07:00
 description: "Een nieuw Elixir-project starten betekent het opzetten van een frisse\
   \ Mix-projectstructuur. Programmeurs doen dit om te beginnen met georganiseerde\
   \ code\u2026"
-lastmod: '2024-02-25T18:49:47.855365-07:00'
+lastmod: '2024-03-11T00:14:24.275904-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw Elixir-project starten betekent het opzetten van een frisse Mix-projectstructuur.\
   \ Programmeurs doen dit om te beginnen met georganiseerde code\u2026"

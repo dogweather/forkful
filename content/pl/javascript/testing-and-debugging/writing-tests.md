@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:40.492830-07:00
 description: "Pisanie test\xF3w w JavaScript odnosi si\u0119 do praktyki tworzenia\
   \ automatycznych skrypt\xF3w, kt\xF3re uruchamiaj\u0105 tw\xF3j kod, aby upewni\u0107\
   \ si\u0119, \u017Ce dzia\u0142a on zgodnie z\u2026"
-lastmod: '2024-02-25T18:49:34.173510-07:00'
+lastmod: '2024-03-11T00:14:09.009794-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w JavaScript odnosi si\u0119 do praktyki tworzenia automatycznych\
   \ skrypt\xF3w, kt\xF3re uruchamiaj\u0105 tw\xF3j kod, aby upewni\u0107 si\u0119\

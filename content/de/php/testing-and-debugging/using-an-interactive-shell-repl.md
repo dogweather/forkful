@@ -3,7 +3,7 @@ date: 2024-01-26 04:16:18.371083-07:00
 description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht\
   \ es Ihnen, PHP-Code spontan zu schreiben und auszuf\xFChren. Sie ist ideal f\xFC\
   r Experimente,\u2026"
-lastmod: '2024-02-25T18:49:51.030279-07:00'
+lastmod: '2024-03-11T00:14:27.872471-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht es\
   \ Ihnen, PHP-Code spontan zu schreiben und auszuf\xFChren. Sie ist ideal f\xFCr\

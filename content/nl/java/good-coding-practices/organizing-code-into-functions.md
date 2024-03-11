@@ -5,7 +5,7 @@ date: 2024-01-28 22:02:56.471306-07:00
 description: "Code organiseren in functies betekent het opdelen van het beest dat\
   \ een programma is in beheersbare delen, elk met een duidelijke taak. Programmeurs\
   \ doen\u2026"
-lastmod: '2024-02-25T18:49:48.029499-07:00'
+lastmod: '2024-03-11T00:14:24.508380-06:00'
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies betekent het opdelen van het beest dat een\
   \ programma is in beheersbare delen, elk met een duidelijke taak. Programmeurs doen\u2026"

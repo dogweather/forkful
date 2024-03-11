@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:29.490386-07:00
 description: "Enviar uma solicita\xE7\xE3o HTTP \xE9 como fazer uma pergunta a um\
   \ site e esperar uma resposta. Programadores fazem isso para interagir com APIs,\
   \ coletar dados ou\u2026"
-lastmod: '2024-02-25T18:49:43.855164-07:00'
+lastmod: '2024-03-11T00:14:19.865693-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP \xE9 como fazer uma pergunta a um site\
   \ e esperar uma resposta. Programadores fazem isso para interagir com APIs, coletar\

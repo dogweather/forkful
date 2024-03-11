@@ -5,7 +5,7 @@ date: 2024-01-28 22:13:08.002051-07:00
 description: "Schrijven naar standaardfout (stderr) betekent het versturen van je\
   \ foutmeldingen, gescheiden van de normale uitvoer (stdout). Programmeurs doen dit\
   \ om\u2026"
-lastmod: '2024-02-25T18:49:48.165681-07:00'
+lastmod: '2024-03-11T00:14:24.654160-06:00'
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) betekent het versturen van je foutmeldingen,\
   \ gescheiden van de normale uitvoer (stdout). Programmeurs doen dit om\u2026"

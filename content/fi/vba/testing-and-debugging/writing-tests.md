@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:51.491594-07:00
 description: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa tiettyjen menettelyjen\
   \ luomista koodin toimivuuden ja suorituskyvyn varmistamiseksi, varmistamaan, ett\xE4\
   \u2026"
-lastmod: '2024-02-25T18:49:53.328108-07:00'
+lastmod: '2024-03-11T00:14:30.342406-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa tiettyjen menettelyjen\
   \ luomista koodin toimivuuden ja suorituskyvyn varmistamiseksi, varmistamaan, ett\xE4\

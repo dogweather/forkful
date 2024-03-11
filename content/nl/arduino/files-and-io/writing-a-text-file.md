@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:51.400223-07:00
 description: "Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens\
   \ als tekst in een bestand, meestal op een SD-kaart. Programmeurs doen dit om\u2026"
-lastmod: '2024-02-25T18:49:48.423796-07:00'
+lastmod: '2024-03-11T00:14:24.925364-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens\
   \ als tekst in een bestand, meestal op een SD-kaart. Programmeurs doen dit om\u2026"

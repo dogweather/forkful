@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:30.025837-07:00
 description: "Odczytywanie argument\xF3w linii komend to spos\xF3b na przekazywanie\
   \ danych zewn\u0119trznych do programu przy jego starcie. Programi\u015Bci wykorzystuj\u0105\
   \ to, aby\u2026"
-lastmod: '2024-02-25T18:49:34.100262-07:00'
+lastmod: '2024-03-11T00:14:08.929980-06:00'
 model: gpt-4-1106-preview
 summary: "Odczytywanie argument\xF3w linii komend to spos\xF3b na przekazywanie danych\
   \ zewn\u0119trznych do programu przy jego starcie. Programi\u015Bci wykorzystuj\u0105\

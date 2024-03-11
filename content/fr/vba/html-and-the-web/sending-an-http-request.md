@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:53.962698-07:00
 description: "Envoyer une requ\xEAte HTTP en Visual Basic pour Applications (VBA)\
   \ implique un acc\xE8s programmatique aux ressources Web ou aux services Web en\
   \ effectuant des\u2026"
-lastmod: '2024-02-25T18:49:54.336777-07:00'
+lastmod: '2024-03-11T00:14:31.541081-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP en Visual Basic pour Applications (VBA) implique\
   \ un acc\xE8s programmatique aux ressources Web ou aux services Web en effectuant\

@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:50.779259-07:00
 description: "Logowanie w rozwoju oprogramowania to technika rejestrowania wydarze\u0144\
   , kt\xF3re zachodz\u0105 podczas dzia\u0142ania programu, zazwyczaj do pliku lub\
   \ zewn\u0119trznego\u2026"
-lastmod: '2024-02-25T18:49:33.471174-07:00'
+lastmod: '2024-03-11T00:14:08.221537-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie w rozwoju oprogramowania to technika rejestrowania wydarze\u0144\
   , kt\xF3re zachodz\u0105 podczas dzia\u0142ania programu, zazwyczaj do pliku lub\

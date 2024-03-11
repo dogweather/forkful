@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:34.093210-07:00
 description: "Avrunding av tall er prosessen med \xE5 justere sifrene i et tall for\
   \ \xE5 redusere presisjonen i henhold til visse regler, enten mot n\xE6rmeste hele\
   \ tall eller\u2026"
-lastmod: '2024-02-25T18:49:39.443652-07:00'
+lastmod: '2024-03-11T00:14:14.872835-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall er prosessen med \xE5 justere sifrene i et tall for \xE5\
   \ redusere presisjonen i henhold til visse regler, enten mot n\xE6rmeste hele tall\

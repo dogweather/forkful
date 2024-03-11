@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:08.646234-07:00
 description: "Mandare una richiesta HTTP significa chiedere dati o servizi a un server\
   \ web. Programmatori lo fanno per interagire con API, scaricare contenuti o inviare\u2026"
-lastmod: '2024-02-25T18:49:41.296446-07:00'
+lastmod: '2024-03-11T00:14:17.018350-06:00'
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP significa chiedere dati o servizi a un server\
   \ web. Programmatori lo fanno per interagire con API, scaricare contenuti o inviare\u2026"

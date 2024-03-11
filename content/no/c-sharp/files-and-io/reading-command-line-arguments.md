@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:42.021560-07:00
 description: "Kommandolinjeargumenter lar oss sende informasjon til et program n\xE5\
   r vi starter det. Vi gj\xF8r dette for \xE5 gi fleksibel kontroll over programmets\
   \ oppf\xF8rsel\u2026"
-lastmod: '2024-02-25T18:49:38.986648-07:00'
+lastmod: '2024-03-11T00:14:14.372531-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar oss sende informasjon til et program n\xE5r\
   \ vi starter det. Vi gj\xF8r dette for \xE5 gi fleksibel kontroll over programmets\

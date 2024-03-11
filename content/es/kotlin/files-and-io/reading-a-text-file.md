@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:52.766937-07:00
 description: "Leer un archivo de texto en Kotlin es acceder y manipular el contenido\
   \ de un archivo almacenado en el disco. Los programadores lo hacen para trabajar\
   \ con\u2026"
-lastmod: '2024-02-25T18:49:55.524728-07:00'
+lastmod: '2024-03-11T00:14:32.861092-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en Kotlin es acceder y manipular el contenido de\
   \ un archivo almacenado en el disco. Los programadores lo hacen para trabajar con\u2026"

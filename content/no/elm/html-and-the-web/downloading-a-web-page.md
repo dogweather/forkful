@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:52.578068-07:00
 description: "\xC5 laste ned en nettside er prosessen med \xE5 hente innholdet til\
   \ en nettside via internett, slik at du kan se eller bearbeide det i et program.\u2026"
-lastmod: '2024-02-25T18:49:38.886672-07:00'
+lastmod: '2024-03-11T00:14:14.252432-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 laste ned en nettside er prosessen med \xE5 hente innholdet til en\
   \ nettside via internett, slik at du kan se eller bearbeide det i et program.\u2026"

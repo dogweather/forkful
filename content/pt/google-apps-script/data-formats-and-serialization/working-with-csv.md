@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:05:22.348840-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgulas) no Google\
   \ Apps Script envolve ler, modificar e escrever arquivos de texto simples onde cada\u2026"
-lastmod: '2024-02-25T18:49:43.795805-07:00'
+lastmod: '2024-03-11T00:14:19.798757-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgulas) no Google\
   \ Apps Script envolve ler, modificar e escrever arquivos de texto simples onde cada\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:56.012937-07:00
 description: "Aloitamme uuden projektin luomalla puhtaan ty\xF6tilan, joka sis\xE4\
   lt\xE4\xE4 kaikki tarvittavat tiedostot ja hakemistorakenteet. Koodareina teemme\
   \ t\xE4m\xE4n, koska se\u2026"
-lastmod: '2024-02-25T18:49:53.282324-07:00'
+lastmod: '2024-03-11T00:14:30.291658-06:00'
 model: gpt-4-1106-preview
 summary: "Aloitamme uuden projektin luomalla puhtaan ty\xF6tilan, joka sis\xE4lt\xE4\
   \xE4 kaikki tarvittavat tiedostot ja hakemistorakenteet. Koodareina teemme t\xE4\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:04:54.287494-07:00
 description: "La capitalizzazione di una stringa comporta la trasformazione del carattere\
   \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo,\u2026"
-lastmod: '2024-02-25T18:49:41.202155-07:00'
+lastmod: '2024-03-11T00:14:16.903778-06:00'
 model: gpt-4-0125-preview
 summary: "La capitalizzazione di una stringa comporta la trasformazione del carattere\
   \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo,\u2026"

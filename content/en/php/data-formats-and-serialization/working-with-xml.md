@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:37.908801-07:00
 description: "XML is a markup language used for storing and transporting data. Programmers\
   \ work with XML to enable interoperability between applications and systems -\u2026"
-lastmod: '2024-02-25T18:49:56.628431-07:00'
+lastmod: '2024-03-11T00:14:34.053924-06:00'
 model: gpt-4-1106-preview
 summary: "XML is a markup language used for storing and transporting data. Programmers\
   \ work with XML to enable interoperability between applications and systems -\u2026"

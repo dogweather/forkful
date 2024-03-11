@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:26.387677-07:00
 description: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to\
   \ proces, w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML)\
   \ bezpo\u015Brednio na\u2026"
-lastmod: '2024-02-25T18:49:33.814851-07:00'
+lastmod: '2024-03-11T00:14:08.635656-06:00'
 model: gpt-4-1106-preview
 summary: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to proces,\
   \ w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML) bezpo\u015B\

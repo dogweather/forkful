@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:13.737190-07:00
 description: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
   \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\
   \ web-scrapingin, datan\u2026"
-lastmod: '2024-02-25T18:49:53.027955-07:00'
+lastmod: '2024-03-11T00:14:29.974224-06:00'
 model: gpt-4-0125-preview
 summary: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
   \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\

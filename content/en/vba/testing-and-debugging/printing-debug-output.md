@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:20.780352-07:00
 description: "Printing debug output in Visual Basic for Applications (VBA) involves\
   \ strategically placing print statements within your code to display variable values,\u2026"
-lastmod: '2024-02-25T18:49:56.359195-07:00'
+lastmod: '2024-03-11T00:14:33.799170-06:00'
 model: gpt-4-0125-preview
 summary: "Printing debug output in Visual Basic for Applications (VBA) involves strategically\
   \ placing print statements within your code to display variable values,\u2026"

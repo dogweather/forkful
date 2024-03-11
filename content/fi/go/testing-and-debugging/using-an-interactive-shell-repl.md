@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:35.827365-07:00
 description: "Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdollistaa\
   \ Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja v\xE4litt\xF6m\xE4\
   n\u2026"
-lastmod: '2024-02-25T18:49:53.031138-07:00'
+lastmod: '2024-03-11T00:14:29.977710-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdollistaa\
   \ Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja v\xE4litt\xF6m\xE4\

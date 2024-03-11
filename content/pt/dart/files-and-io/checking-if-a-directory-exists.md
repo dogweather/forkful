@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:28.621433-07:00
 description: "Checar se um diret\xF3rio existe em Dart \xE9 sobre verificar a presen\xE7\
   a de um diret\xF3rio em um caminho especificado no sistema de arquivos antes de\
   \ realizar\u2026"
-lastmod: '2024-03-09T21:06:10.642198-07:00'
+lastmod: '2024-03-11T00:14:19.981227-06:00'
 model: gpt-4-0125-preview
 summary: "Checar se um diret\xF3rio existe em Dart \xE9 sobre verificar a presen\xE7\
   a de um diret\xF3rio em um caminho especificado no sistema de arquivos antes de\

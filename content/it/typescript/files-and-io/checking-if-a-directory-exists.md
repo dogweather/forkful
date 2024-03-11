@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:46.882207-07:00
 description: "Controllare se una directory esiste in TypeScript \xE8 essenziale per\
   \ compiti di gestione dei file, come leggere o scrivere dati su file, assicurando\
   \ che le\u2026"
-lastmod: '2024-02-25T18:49:41.067049-07:00'
+lastmod: '2024-03-11T00:14:16.753588-06:00'
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in TypeScript \xE8 essenziale per compiti\
   \ di gestione dei file, come leggere o scrivere dati su file, assicurando che le\u2026"

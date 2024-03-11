@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:52.986340-07:00
 description: "Pobranie bie\u017C\u0105cej daty w Java to podstawowa operacja, kt\xF3\
   ra pozwala programistom manipulowa\u0107 obiektami dat do operacji takich jak logowanie,\
   \ obliczenia\u2026"
-lastmod: '2024-02-25T18:49:33.653081-07:00'
+lastmod: '2024-03-11T00:14:08.466128-06:00'
 model: gpt-4-0125-preview
 summary: "Pobranie bie\u017C\u0105cej daty w Java to podstawowa operacja, kt\xF3ra\
   \ pozwala programistom manipulowa\u0107 obiektami dat do operacji takich jak logowanie,\

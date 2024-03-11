@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:16.692993-07:00
 description: "Starting a new project means you're setting up the groundwork for your\
   \ brilliant idea. Programmers kick things off to transform concepts into code that\u2026"
-lastmod: '2024-02-25T18:49:56.645160-07:00'
+lastmod: '2024-03-11T00:14:34.070617-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project means you're setting up the groundwork for your brilliant\
   \ idea. Programmers kick things off to transform concepts into code that\u2026"

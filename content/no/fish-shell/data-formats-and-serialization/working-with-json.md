@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:49.505996-07:00
 description: "\xC5 jobbe med JSON i Fish Shell inneb\xE6rer parsing og generering\
   \ av JSON-data, en vanlig oppgave for konfigurering av applikasjoner, API-interaksjon,\
   \ og\u2026"
-lastmod: '2024-02-25T18:49:39.426017-07:00'
+lastmod: '2024-03-11T00:14:14.853353-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Fish Shell inneb\xE6rer parsing og generering av JSON-data,\
   \ en vanlig oppgave for konfigurering av applikasjoner, API-interaksjon, og\u2026"

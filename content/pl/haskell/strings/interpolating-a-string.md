@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:52.523618-07:00
 description: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci\
   \ zmiennych bezpo\u015Brednio w stringu. Programi\u015Bci robi\u0105 to, aby generowa\u0107\
   \ dynamiczne teksty z danych,\u2026"
-lastmod: '2024-02-25T18:49:33.801968-07:00'
+lastmod: '2024-03-11T00:14:08.621939-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci zmiennych\
   \ bezpo\u015Brednio w stringu. Programi\u015Bci robi\u0105 to, aby generowa\u0107\

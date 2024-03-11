@@ -3,7 +3,7 @@ date: 2024-01-26 04:42:55.096681-07:00
 description: "Komplexe Zahlen sind Zahlen mit einem Real- und einem Imagin\xE4rteil\
   \ (wie 3 + 4i). Sie tauchen in verschiedenen Programmierproblemen auf, insbesondere\
   \ in\u2026"
-lastmod: '2024-02-25T18:49:51.310600-07:00'
+lastmod: '2024-03-11T00:14:28.164248-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen sind Zahlen mit einem Real- und einem Imagin\xE4rteil (wie\
   \ 3 + 4i). Sie tauchen in verschiedenen Programmierproblemen auf, insbesondere in\u2026"

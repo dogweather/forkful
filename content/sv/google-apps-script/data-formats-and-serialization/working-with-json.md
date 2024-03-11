@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:53.019390-07:00
 description: "JSON, eller JavaScript Object Notation, \xE4r ett l\xE4ttviktigt format\
   \ f\xF6r lagring och transport av data, idealiskt f\xF6r kommunikation server-till-klient\
   \ samt\u2026"
-lastmod: '2024-02-25T18:49:35.798538-07:00'
+lastmod: '2024-03-11T00:14:10.771955-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, eller JavaScript Object Notation, \xE4r ett l\xE4ttviktigt format\
   \ f\xF6r lagring och transport av data, idealiskt f\xF6r kommunikation server-till-klient\

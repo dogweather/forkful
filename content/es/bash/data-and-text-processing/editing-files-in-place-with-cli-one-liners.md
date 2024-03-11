@@ -2,7 +2,7 @@
 date: 2024-01-27 16:20:58.296820-07:00
 description: "Imagina que acabas de descubrir que necesitas hacer una actualizaci\xF3\
   n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor.\u2026"
-lastmod: '2024-02-25T18:49:55.713296-07:00'
+lastmod: '2024-03-11T00:14:33.063287-06:00'
 model: gpt-4-0125-preview
 summary: "Imagina que acabas de descubrir que necesitas hacer una actualizaci\xF3\
   n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor.\u2026"

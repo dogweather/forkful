@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:13.013916-07:00
 description: "Werken met CSV (Comma-Separated Values) betekent het omgaan met platte\
   \ tekstbestanden die tabelgegevens opslaan. Programmeurs gebruiken CSV omdat het\u2026"
-lastmod: '2024-02-25T18:49:48.468125-07:00'
+lastmod: '2024-03-11T00:14:24.973857-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) betekent het omgaan met platte tekstbestanden\
   \ die tabelgegevens opslaan. Programmeurs gebruiken CSV omdat het\u2026"

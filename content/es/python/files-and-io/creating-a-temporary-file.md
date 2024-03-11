@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:07.600063-07:00
 description: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF3\
   n para guardar datos que solo necesitas durante la ejecuci\xF3n de tu script. Se\
   \ hace para no dejar\u2026"
-lastmod: '2024-02-25T18:49:55.196510-07:00'
+lastmod: '2024-03-11T00:14:32.463042-06:00'
 model: gpt-4-1106-preview
 summary: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF3n para\
   \ guardar datos que solo necesitas durante la ejecuci\xF3n de tu script. Se hace\

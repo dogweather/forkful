@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:40.251626-07:00
 description: "Perusautentikoinnilla varustetun HTTP-pyynn\xF6n l\xE4hett\xE4minen\
   \ on prosessi, jossa k\xE4ytt\xE4j\xE4tunnus ja salasana l\xE4hetet\xE4\xE4n HTTP-otsikoissa\
   \ palvelimelle. K\xE4yt\xE4mme\u2026"
-lastmod: '2024-02-25T18:49:53.407506-07:00'
+lastmod: '2024-03-11T00:14:30.430692-06:00'
 model: gpt-4-1106-preview
 summary: "Perusautentikoinnilla varustetun HTTP-pyynn\xF6n l\xE4hett\xE4minen on prosessi,\
   \ jossa k\xE4ytt\xE4j\xE4tunnus ja salasana l\xE4hetet\xE4\xE4n HTTP-otsikoissa\

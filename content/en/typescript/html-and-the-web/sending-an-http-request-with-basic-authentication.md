@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:54.663141-07:00
 description: "In TypeScript, sending an HTTP request with basic authentication means\
   \ shooting data across the web with a simple username:password combo for access.\
   \ It's\u2026"
-lastmod: '2024-02-25T18:49:56.282275-07:00'
+lastmod: '2024-03-11T00:14:33.717725-06:00'
 model: gpt-4-1106-preview
 summary: "In TypeScript, sending an HTTP request with basic authentication means shooting\
   \ data across the web with a simple username:password combo for access. It's\u2026"

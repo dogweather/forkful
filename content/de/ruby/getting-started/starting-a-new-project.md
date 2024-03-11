@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:16.866742-07:00
 description: "Ein neues Projekt zu starten bedeutet, etwas von Grund auf neu zu gestalten.\
   \ Programmierer machen das, um ihre Ideen zu verwirklichen und ma\xDFgeschneiderte\u2026"
-lastmod: '2024-02-25T18:49:51.448050-07:00'
+lastmod: '2024-03-11T00:14:28.313641-06:00'
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, etwas von Grund auf neu zu gestalten.\
   \ Programmierer machen das, um ihre Ideen zu verwirklichen und ma\xDFgeschneiderte\u2026"

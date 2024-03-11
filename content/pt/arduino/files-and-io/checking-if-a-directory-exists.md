@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:40.543879-07:00
 description: "No contexto da programa\xE7\xE3o Arduino, verificar se um diret\xF3\
   rio existe em um cart\xE3o SD ou m\xF3dulo de armazenamento similar permite que\
   \ voc\xEA leia ou escreva\u2026"
-lastmod: '2024-02-25T18:49:44.470591-07:00'
+lastmod: '2024-03-11T00:14:20.580262-06:00'
 model: gpt-4-0125-preview
 summary: "No contexto da programa\xE7\xE3o Arduino, verificar se um diret\xF3rio existe\
   \ em um cart\xE3o SD ou m\xF3dulo de armazenamento similar permite que voc\xEA leia\

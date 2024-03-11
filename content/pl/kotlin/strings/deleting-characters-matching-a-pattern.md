@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:45.221868-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja tekst\xF3\
   w, usuwanie niechcianych znak\xF3w. Programi\u015Bci robi\u0105 to, aby wyczy\u015B\
   ci\u0107 dane, usun\u0105\u0107 b\u0142\u0119dy lub\u2026"
-lastmod: '2024-02-25T18:49:33.712862-07:00'
+lastmod: '2024-03-11T00:14:08.529479-06:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja tekst\xF3w, usuwanie\
   \ niechcianych znak\xF3w. Programi\u015Bci robi\u0105 to, aby wyczy\u015Bci\u0107\

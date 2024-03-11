@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:39.883120-07:00
 description: "Assoziative Arrays, in Go als Maps bekannt, erm\xF6glichen es dir, Schl\xFC\
   ssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schl\xFCssel auf einen\
   \ Wert\u2026"
-lastmod: '2024-02-25T18:49:50.481113-07:00'
+lastmod: '2024-03-11T00:14:27.237473-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, in Go als Maps bekannt, erm\xF6glichen es dir, Schl\xFC\
   ssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schl\xFCssel auf einen\

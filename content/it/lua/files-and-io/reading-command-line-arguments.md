@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:31.334649-07:00
 description: "Leggere gli argomenti della riga di comando in Lua significa estrarre\
   \ i dati inseriti dall'utente quando avvia il tuo script. I programmatori fanno\
   \ questo\u2026"
-lastmod: '2024-02-25T18:49:41.435100-07:00'
+lastmod: '2024-03-11T00:14:17.181323-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando in Lua significa estrarre i\
   \ dati inseriti dall'utente quando avvia il tuo script. I programmatori fanno questo\u2026"

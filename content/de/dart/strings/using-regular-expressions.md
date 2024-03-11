@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:00.581557-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in Dart bieten eine leistungsf\xE4\
   hige M\xF6glichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer\
   \ komplexe\u2026"
-lastmod: '2024-03-09T21:06:17.565877-07:00'
+lastmod: '2024-03-11T00:14:27.462710-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Dart bieten eine leistungsf\xE4hige\
   \ M\xF6glichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer komplexe\u2026"

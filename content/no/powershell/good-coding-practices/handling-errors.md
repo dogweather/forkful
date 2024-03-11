@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:55.369307-07:00
 description: "\xC5 h\xE5ndtere feil i PowerShell betyr \xE5 forutse uhell og h\xE5\
   ndtere dem p\xE5 en smidig m\xE5te. Programmerere gj\xF8r dette for \xE5 forhindre\
   \ krasjer og gi brukere\u2026"
-lastmod: '2024-02-25T18:49:39.202451-07:00'
+lastmod: '2024-03-11T00:14:14.612279-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 h\xE5ndtere feil i PowerShell betyr \xE5 forutse uhell og h\xE5ndtere\
   \ dem p\xE5 en smidig m\xE5te. Programmerere gj\xF8r dette for \xE5 forhindre krasjer\

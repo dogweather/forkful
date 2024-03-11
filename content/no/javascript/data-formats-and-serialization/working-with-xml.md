@@ -2,7 +2,7 @@
 date: 2024-01-26 04:32:37.548223-07:00
 description: "\xC5 jobbe med XML betyr \xE5 analysere, manipulere og produsere XML-innhold\
   \ ved hjelp av kode. Programmerere gj\xF8r det fordi XML er mye brukt til\u2026"
-lastmod: '2024-02-25T18:49:39.385647-07:00'
+lastmod: '2024-03-11T00:14:14.808924-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr \xE5 analysere, manipulere og produsere XML-innhold\
   \ ved hjelp av kode. Programmerere gj\xF8r det fordi XML er mye brukt til\u2026"

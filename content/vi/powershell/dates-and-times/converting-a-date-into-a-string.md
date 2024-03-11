@@ -6,7 +6,7 @@ description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\
   i trong PowerShell c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i \u0111\u1ED1i t\u01B0\
   \u1EE3ng `DateTime` th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n. L\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
-lastmod: '2024-02-25T18:49:35.297668-07:00'
+lastmod: '2024-03-11T00:14:10.246386-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7\
   i trong PowerShell c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i \u0111\u1ED1i t\u01B0\

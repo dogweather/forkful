@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:51:04.659748-07:00
 description: "Convertire una stringa in minuscolo in Google Apps Script, un linguaggio\
   \ di scripting basato su cloud per automatizzare compiti attraverso i prodotti\u2026"
-lastmod: '2024-02-25T18:49:40.870287-07:00'
+lastmod: '2024-03-11T00:14:16.491779-06:00'
 model: gpt-4-0125-preview
 summary: "Convertire una stringa in minuscolo in Google Apps Script, un linguaggio\
   \ di scripting basato su cloud per automatizzare compiti attraverso i prodotti\u2026"

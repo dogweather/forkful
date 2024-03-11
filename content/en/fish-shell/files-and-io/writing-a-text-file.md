@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:09.278904-07:00
 description: "Writing to a text file in Fish Shell allows you to store data persistently,\
   \ enabling easy data retrieval or manipulation by either the same Fish script or\u2026"
-lastmod: '2024-02-25T18:49:56.926667-07:00'
+lastmod: '2024-03-11T00:14:34.368907-06:00'
 model: gpt-4-0125-preview
 summary: "Writing to a text file in Fish Shell allows you to store data persistently,\
   \ enabling easy data retrieval or manipulation by either the same Fish script or\u2026"

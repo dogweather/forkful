@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:22.208768-07:00
 description: "\xC5 skrive tester i C# inneb\xE6rer \xE5 lage automatiserte skript\
   \ for \xE5 validere funksjonaliteten til koden din, for \xE5 sikre at den oppf\xF8\
   rer seg som forventet.\u2026"
-lastmod: '2024-02-25T18:49:38.974716-07:00'
+lastmod: '2024-03-11T00:14:14.358451-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i C# inneb\xE6rer \xE5 lage automatiserte skript for\
   \ \xE5 validere funksjonaliteten til koden din, for \xE5 sikre at den oppf\xF8rer\

@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:21.760885-07:00
 description: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea en\
   \ Ruby se trata de realizar operaciones comunes con archivos directamente desde\
   \ tu terminal\u2026"
-lastmod: '2024-02-25T18:49:56.054013-07:00'
+lastmod: '2024-03-11T00:14:33.426897-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea en Ruby\
   \ se trata de realizar operaciones comunes con archivos directamente desde tu terminal\u2026"

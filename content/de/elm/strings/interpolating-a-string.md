@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:33.702713-07:00
 description: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten\
   \ einzuf\xFCgen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder\u2026"
-lastmod: '2024-02-25T18:49:50.855013-07:00'
+lastmod: '2024-03-11T00:14:27.684143-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten einzuf\xFC\
   gen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder\u2026"

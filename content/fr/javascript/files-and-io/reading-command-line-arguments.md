@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:18.424998-07:00
 description: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
   es que les utilisateurs passent \xE0 votre programme Node.js quand ils le lancent.\
   \ On fait\u2026"
-lastmod: '2024-02-25T18:49:54.923132-07:00'
+lastmod: '2024-03-11T00:14:32.165526-06:00'
 model: gpt-4-1106-preview
 summary: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
   es que les utilisateurs passent \xE0 votre programme Node.js quand ils le lancent.\

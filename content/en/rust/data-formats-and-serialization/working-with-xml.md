@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:48.963450-07:00
 description: "XML, short for eXtensible Markup Language, is like JSON's verbose cousin.\
   \ You'll wrestle with XML when dealing with legacy systems, enterprise software,\u2026"
-lastmod: '2024-02-25T18:49:56.341016-07:00'
+lastmod: '2024-03-11T00:14:33.779970-06:00'
 model: gpt-4-1106-preview
 summary: "XML, short for eXtensible Markup Language, is like JSON's verbose cousin.\
   \ You'll wrestle with XML when dealing with legacy systems, enterprise software,\u2026"

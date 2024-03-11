@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:14:29.595722-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textrepresentationen\
   \ av ett datum och tid till ett `Date`-objekt eller ett modernare\u2026"
-lastmod: '2024-02-25T18:49:36.091600-07:00'
+lastmod: '2024-03-11T00:14:11.142417-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textrepresentationen\
   \ av ett datum och tid till ett `Date`-objekt eller ett modernare\u2026"

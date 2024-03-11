@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:57.815673-07:00
 description: "Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo\
   \ in modo programmabile. I programmatori lo fanno per manipolare, analizzare\u2026"
-lastmod: '2024-02-25T18:49:41.520329-07:00'
+lastmod: '2024-03-11T00:14:17.276567-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo\
   \ in modo programmabile. I programmatori lo fanno per manipolare, analizzare\u2026"

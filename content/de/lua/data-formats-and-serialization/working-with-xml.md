@@ -2,7 +2,7 @@
 date: 2024-01-26 04:33:24.900880-07:00
 description: "Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten\
   \ mithilfe von Code. Programmierer machen dies, um Daten in einem strukturierten,\u2026"
-lastmod: '2024-02-25T18:49:51.092281-07:00'
+lastmod: '2024-03-11T00:14:27.938252-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten\
   \ mithilfe von Code. Programmierer machen dies, um Daten in einem strukturierten,\u2026"

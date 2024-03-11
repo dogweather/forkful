@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:01.333725-07:00
 description: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode\
   \ som verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: '2024-02-25T18:49:39.324218-07:00'
+lastmod: '2024-03-11T00:14:14.742595-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode som\
   \ verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\

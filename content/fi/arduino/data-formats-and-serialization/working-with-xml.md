@@ -2,7 +2,7 @@
 date: 2024-01-26 04:27:22.157068-07:00
 description: "Ty\xF6skentely XML:n kanssa Arduinolla k\xE4sitt\xE4\xE4 XML-datan j\xE4\
   sent\xE4mist\xE4 ja manipulointia, joka usein tulee web-API:sta tai konfiguraatiotiedostoista.\u2026"
-lastmod: '2024-02-25T18:49:53.756809-07:00'
+lastmod: '2024-03-11T00:14:30.875612-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely XML:n kanssa Arduinolla k\xE4sitt\xE4\xE4 XML-datan j\xE4\
   sent\xE4mist\xE4 ja manipulointia, joka usein tulee web-API:sta tai konfiguraatiotiedostoista.\u2026"

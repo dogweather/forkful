@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:44.044363-07:00
 description: "Zamiana pierwszej litery ka\u017Cdego wyrazu w ci\u0105gu znak\xF3w\
   \ na wielk\u0105 (capitalization) w Visual Basic for Applications (VBA) polega na\
   \ przekszta\u0142ceniu\u2026"
-lastmod: '2024-02-25T18:49:33.577842-07:00'
+lastmod: '2024-03-11T00:14:08.386427-06:00'
 model: gpt-4-0125-preview
 summary: "Zamiana pierwszej litery ka\u017Cdego wyrazu w ci\u0105gu znak\xF3w na wielk\u0105\
   \ (capitalization) w Visual Basic for Applications (VBA) polega na przekszta\u0142\

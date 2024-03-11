@@ -2,7 +2,7 @@
 date: 2024-01-26 01:07:04.543913-07:00
 description: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur\
   \ von Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"
-lastmod: '2024-02-25T18:49:50.994918-07:00'
+lastmod: '2024-03-11T00:14:27.834872-06:00'
 model: gpt-4-1106-preview
 summary: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur von\
   \ Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"

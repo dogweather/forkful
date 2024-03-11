@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:55.580943-07:00
 description: "Att kontrollera om en katalog finns i Dart handlar om att verifiera\
   \ n\xE4rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet innan man\
   \ utf\xF6r operationer\u2026"
-lastmod: '2024-03-09T21:06:02.382539-07:00'
+lastmod: '2024-03-11T00:14:10.960375-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Dart handlar om att verifiera n\xE4\
   rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet innan man utf\xF6\

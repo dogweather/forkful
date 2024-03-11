@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:59.824232-07:00
 description: "Reading a text file in PHP means pulling content from a file into your\
   \ script. Programmers do this to handle data storage, configuration, or to process\u2026"
-lastmod: '2024-02-25T18:49:56.622436-07:00'
+lastmod: '2024-03-11T00:14:34.047323-06:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file in PHP means pulling content from a file into your script.\
   \ Programmers do this to handle data storage, configuration, or to process\u2026"

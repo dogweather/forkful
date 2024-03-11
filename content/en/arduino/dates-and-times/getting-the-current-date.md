@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:37.384870-07:00
 description: "Getting the current date in Arduino projects involves obtaining real-time\
   \ information that can be crucial for logging, timestamping, or scheduling tasks.\u2026"
-lastmod: '2024-02-25T18:49:56.769061-07:00'
+lastmod: '2024-03-11T00:14:34.198856-06:00'
 model: gpt-4-0125-preview
 summary: "Getting the current date in Arduino projects involves obtaining real-time\
   \ information that can be crucial for logging, timestamping, or scheduling tasks.\u2026"

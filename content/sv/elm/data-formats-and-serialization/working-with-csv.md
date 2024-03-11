@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:31.003091-07:00
 description: "Att arbeta med CSV (Comma Separated Values) involverar tolkning och\
   \ generering av filer som lagrar tabul\xE4r data i ett enkelt, klartextformat. Detta\u2026"
-lastmod: '2024-02-25T18:49:36.146193-07:00'
+lastmod: '2024-03-11T00:14:11.202785-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma Separated Values) involverar tolkning och generering\
   \ av filer som lagrar tabul\xE4r data i ett enkelt, klartextformat. Detta\u2026"

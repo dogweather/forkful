@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:04.612154-07:00
 description: "Iniciar un proyecto nuevo en C++ es establecer la base del c\xF3digo\
   \ desde donde todo crece. Programadores lo hacen para transformar ideas en software\u2026"
-lastmod: '2024-02-25T18:49:55.845908-07:00'
+lastmod: '2024-03-11T00:14:33.198676-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo en C++ es establecer la base del c\xF3digo desde\
   \ donde todo crece. Programadores lo hacen para transformar ideas en software\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:30:40.022980-07:00
 description: "Mit XML zu arbeiten bedeutet, Daten in einem weit verbreiteten, strukturierten\
   \ Format zu handhaben, das in Konfigurationen, Nachrichten\xFCbermittlungen und\u2026"
-lastmod: '2024-02-25T18:49:51.383487-07:00'
+lastmod: '2024-03-11T00:14:28.241398-06:00'
 model: gpt-4-0125-preview
 summary: "Mit XML zu arbeiten bedeutet, Daten in einem weit verbreiteten, strukturierten\
   \ Format zu handhaben, das in Konfigurationen, Nachrichten\xFCbermittlungen und\u2026"

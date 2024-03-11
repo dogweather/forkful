@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:01.305431-07:00
 description: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w, czyli \"concatenating strings\"\
   , pozwala sklei\u0107 ze sob\u0105 dwie lub wi\u0119cej r\xF3\u017Cnych cz\u0119\
   \u015Bci tekstu. Programi\u015Bci robi\u0105 to, aby tworzy\u0107\u2026"
-lastmod: '2024-02-25T18:49:34.161678-07:00'
+lastmod: '2024-03-11T00:14:08.996601-06:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w, czyli \"concatenating strings\"\
   , pozwala sklei\u0107 ze sob\u0105 dwie lub wi\u0119cej r\xF3\u017Cnych cz\u0119\

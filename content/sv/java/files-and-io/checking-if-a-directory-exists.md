@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:58.608216-07:00
 description: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande\
   \ uppgift som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet\
   \ innan man l\xE4ser\u2026"
-lastmod: '2024-02-25T18:49:36.096578-07:00'
+lastmod: '2024-03-11T00:14:11.147669-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande uppgift\
   \ som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet innan\

@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:11.937066-07:00
 description: "HTTP-pyynt\xF6 on web-palvelimen kanssa kommunikoinnin tavallinen tapa.\
   \ Koodarit l\xE4hett\xE4v\xE4t HTTP-pyynt\xF6j\xE4 vaihtaakseen dataa palvelinten\
   \ ja front-end\u2026"
-lastmod: '2024-02-25T18:49:53.853581-07:00'
+lastmod: '2024-03-11T00:14:30.989081-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 on web-palvelimen kanssa kommunikoinnin tavallinen tapa.\
   \ Koodarit l\xE4hett\xE4v\xE4t HTTP-pyynt\xF6j\xE4 vaihtaakseen dataa palvelinten\

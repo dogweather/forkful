@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:07:15.329838-07:00
 description: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
   \ textuel sans les guillemets simples (' ') ou doubles (\" \"). Ce processus est\u2026"
-lastmod: '2024-02-25T18:49:54.982653-07:00'
+lastmod: '2024-03-11T00:14:32.229936-06:00'
 model: gpt-4-0125-preview
 summary: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
   \ textuel sans les guillemets simples (' ') ou doubles (\" \"). Ce processus est\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:51.870876-07:00
 description: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon n\xE5\
   r man skriver skript som samhandler med filsystemet, og s\xF8rger for at programmet\
   \ ditt\u2026"
-lastmod: '2024-02-25T18:49:39.117007-07:00'
+lastmod: '2024-03-11T00:14:14.515959-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon n\xE5r\
   \ man skriver skript som samhandler med filsystemet, og s\xF8rger for at programmet\

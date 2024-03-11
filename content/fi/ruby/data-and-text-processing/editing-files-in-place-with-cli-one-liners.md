@@ -2,7 +2,7 @@
 date: 2024-01-27 16:21:14.423327-07:00
 description: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Line\
   \ Interface) yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen\u2026"
-lastmod: '2024-02-25T18:49:53.986843-07:00'
+lastmod: '2024-03-11T00:14:31.124061-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Line Interface)\
   \ yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:41.961492-07:00
 description: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enhver\
   \ programmeringsinnsats, fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere\
   \ rapporter\u2026"
-lastmod: '2024-02-25T18:49:39.506267-07:00'
+lastmod: '2024-03-11T00:14:14.942831-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enhver programmeringsinnsats,\
   \ fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere rapporter\u2026"

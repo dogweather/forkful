@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:17.319349-07:00
 description: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) significa manejar\
   \ este formato ligero de intercambio de datos dentro de tus aplicaciones Java. Los\u2026"
-lastmod: '2024-02-25T18:49:55.447539-07:00'
+lastmod: '2024-03-11T00:14:32.775449-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) significa manejar\
   \ este formato ligero de intercambio de datos dentro de tus aplicaciones Java. Los\u2026"

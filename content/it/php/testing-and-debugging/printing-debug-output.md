@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:52.687790-07:00
 description: "Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codice.\
   \ Lo facciamo per trovare gli errori pi\xF9 velocemente e capire meglio il flusso\
   \ del\u2026"
-lastmod: '2024-02-25T18:49:41.382173-07:00'
+lastmod: '2024-03-11T00:14:17.117281-06:00'
 model: gpt-4-1106-preview
 summary: "Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codice.\
   \ Lo facciamo per trovare gli errori pi\xF9 velocemente e capire meglio il flusso\

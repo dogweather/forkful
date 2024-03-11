@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:32.072862-07:00
 description: "Een datum in de toekomst of het verleden berekenen houdt in dat je een\
   \ bekende datum aanpast met een bepaald aantal dagen, maanden of jaren. Programmeurs\u2026"
-lastmod: '2024-02-25T18:49:48.037233-07:00'
+lastmod: '2024-03-11T00:14:24.516402-06:00'
 model: gpt-4-0125-preview
 summary: "Een datum in de toekomst of het verleden berekenen houdt in dat je een bekende\
   \ datum aanpast met een bepaald aantal dagen, maanden of jaren. Programmeurs\u2026"

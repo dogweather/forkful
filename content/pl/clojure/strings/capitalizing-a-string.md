@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:03.165308-07:00
 description: "Kapitalizacja ci\u0105gu znak\xF3w polega na zmodyfikowaniu ci\u0105\
   gu tak, aby jego pierwszy znak by\u0142 wielk\u0105 liter\u0105, podczas gdy reszta\
   \ ci\u0105gu pozostaje niezmieniona.\u2026"
-lastmod: '2024-02-25T18:49:33.401486-07:00'
+lastmod: '2024-03-11T00:14:08.149855-06:00'
 model: gpt-4-0125-preview
 summary: "Kapitalizacja ci\u0105gu znak\xF3w polega na zmodyfikowaniu ci\u0105gu tak,\
   \ aby jego pierwszy znak by\u0142 wielk\u0105 liter\u0105, podczas gdy reszta ci\u0105\

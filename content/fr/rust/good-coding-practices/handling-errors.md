@@ -3,7 +3,7 @@ date: 2024-01-26 00:57:51.098076-07:00
 description: "La gestion des erreurs consiste \xE0 g\xE9rer les choses quand elles\
   \ ne se d\xE9roulent pas comme pr\xE9vu. Les programmeurs le font pour g\xE9rer\
   \ l'inattendu, en\u2026"
-lastmod: '2024-02-25T18:49:54.303180-07:00'
+lastmod: '2024-03-11T00:14:31.505273-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs consiste \xE0 g\xE9rer les choses quand elles ne\
   \ se d\xE9roulent pas comme pr\xE9vu. Les programmeurs le font pour g\xE9rer l'inattendu,\

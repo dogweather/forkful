@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:45.003668-07:00
 description: "El registro de actividades en C implica grabar el flujo y los eventos\
   \ notables de un programa durante su tiempo de ejecuci\xF3n, proporcionando una\
   \ revisi\xF3n\u2026"
-lastmod: '2024-02-25T18:49:56.020996-07:00'
+lastmod: '2024-03-11T00:14:33.390632-06:00'
 model: gpt-4-0125-preview
 summary: "El registro de actividades en C implica grabar el flujo y los eventos notables\
   \ de un programa durante su tiempo de ejecuci\xF3n, proporcionando una revisi\xF3\

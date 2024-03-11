@@ -5,7 +5,7 @@ date: 2024-03-08 21:58:03.298655-07:00
 description: "Kompleksiluvut, jotka koostuvat reaalisesta ja imaginaarisesta osasta\
   \ (yleens\xE4 merkitty a + bi), laajentavat ulottuvuudettomien lukujen k\xE4sitett\xE4\
   \u2026"
-lastmod: '2024-03-09T21:06:20.174965-07:00'
+lastmod: '2024-03-11T00:14:30.195381-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaalisesta ja imaginaarisesta osasta (yleens\xE4\
   \ merkitty a + bi), laajentavat ulottuvuudettomien lukujen k\xE4sitett\xE4\u2026"

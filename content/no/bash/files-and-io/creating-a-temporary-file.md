@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:24.573368-07:00
 description: "Oppretting av midlertidige filer lar oss holde data midlertidig under\
   \ programmets kj\xF8ring. Programmerere gj\xF8r dette for sikkerhetskopiering, for\
   \ \xE5 unng\xE5\u2026"
-lastmod: '2024-02-25T18:49:39.168241-07:00'
+lastmod: '2024-03-11T00:14:14.571066-06:00'
 model: gpt-4-1106-preview
 summary: "Oppretting av midlertidige filer lar oss holde data midlertidig under programmets\
   \ kj\xF8ring. Programmerere gj\xF8r dette for sikkerhetskopiering, for \xE5 unng\xE5\

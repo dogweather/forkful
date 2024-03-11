@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:47.902867-07:00
 description: "Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych\
   \ i urojonych (np. 3 + 4i), s\u0105 fundamentalne w r\xF3\u017Cnych problemach obliczeniowych,\u2026"
-lastmod: '2024-02-25T18:49:33.318863-07:00'
+lastmod: '2024-03-11T00:14:08.066272-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych\
   \ i urojonych (np. 3 + 4i), s\u0105 fundamentalne w r\xF3\u017Cnych problemach obliczeniowych,\u2026"

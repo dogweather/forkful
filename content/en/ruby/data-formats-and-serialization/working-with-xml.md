@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:58.779376-07:00
 description: "Working with XML means parsing, generating, and manipulating XML (eXtensible\
   \ Markup Language) documents using code. Programmers do it to interact with\u2026"
-lastmod: '2024-02-25T18:49:57.009255-07:00'
+lastmod: '2024-03-11T00:14:34.460937-06:00'
 model: gpt-4-1106-preview
 summary: "Working with XML means parsing, generating, and manipulating XML (eXtensible\
   \ Markup Language) documents using code. Programmers do it to interact with\u2026"

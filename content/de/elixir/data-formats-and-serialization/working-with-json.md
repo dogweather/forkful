@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:08.203794-07:00
 description: "Die Arbeit mit JSON umfasst das Parsen von JSON-formatierten Strings\
   \ in Datenstrukturen, die Elixir manipulieren kann, und das Serialisieren von Elixir-\u2026"
-lastmod: '2024-02-25T18:49:50.679689-07:00'
+lastmod: '2024-03-11T00:14:27.450138-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON umfasst das Parsen von JSON-formatierten Strings in\
   \ Datenstrukturen, die Elixir manipulieren kann, und das Serialisieren von Elixir-\u2026"

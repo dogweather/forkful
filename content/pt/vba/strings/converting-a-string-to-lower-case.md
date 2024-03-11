@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:20.594718-07:00
 description: "Converter uma string para min\xFAsculas envolve transformar todos os\
   \ caracteres mai\xFAsculos de uma string em seus equivalentes min\xFAsculos. Esse\
   \ processo \xE9\u2026"
-lastmod: '2024-02-25T18:49:44.017993-07:00'
+lastmod: '2024-03-11T00:14:20.091380-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma string para min\xFAsculas envolve transformar todos os caracteres\
   \ mai\xFAsculos de uma string em seus equivalentes min\xFAsculos. Esse processo\

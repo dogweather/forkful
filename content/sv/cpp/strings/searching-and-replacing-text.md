@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:16.709512-07:00
 description: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut\
   \ den mot n\xE5got annat. Programmerare anv\xE4nder det f\xF6r att snabbt \xE4ndra\
   \ kod, data eller dokument,\u2026"
-lastmod: '2024-02-25T18:49:36.509462-07:00'
+lastmod: '2024-03-11T00:14:11.583613-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut den\
   \ mot n\xE5got annat. Programmerare anv\xE4nder det f\xF6r att snabbt \xE4ndra kod,\

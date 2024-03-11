@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:53.369643-07:00
 description: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent\xE4\
   mist\xE4, luomista ja manipulointia. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4\
   , koska se on laajalti k\xE4yt\xF6ss\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.224535-07:00'
+lastmod: '2024-03-11T00:14:30.181899-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4\
   , luomista ja manipulointia. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4, koska\

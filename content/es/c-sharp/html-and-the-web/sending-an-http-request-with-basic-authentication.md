@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:25.700822-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica permite a tu\
   \ aplicaci\xF3n comunicarse con servicios web que requieren usuario y contrase\xF1\
   a. Los\u2026"
-lastmod: '2024-02-25T18:49:55.548328-07:00'
+lastmod: '2024-03-11T00:14:32.887541-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica permite a tu aplicaci\xF3\
   n comunicarse con servicios web que requieren usuario y contrase\xF1a. Los\u2026"

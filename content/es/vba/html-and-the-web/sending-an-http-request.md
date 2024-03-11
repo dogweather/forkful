@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:01:44.562961-07:00
 description: "Enviar una solicitud HTTP en Visual Basic para Aplicaciones (VBA) implica\
   \ acceder program\xE1ticamente a recursos o servicios web mediante solicitudes sobre\u2026"
-lastmod: '2024-02-25T18:49:55.380099-07:00'
+lastmod: '2024-03-11T00:14:32.703700-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP en Visual Basic para Aplicaciones (VBA) implica\
   \ acceder program\xE1ticamente a recursos o servicios web mediante solicitudes sobre\u2026"

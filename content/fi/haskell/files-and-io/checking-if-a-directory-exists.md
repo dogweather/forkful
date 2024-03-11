@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:37.950076-07:00
 description: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointiteht\xE4\
   viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden\u2026"
-lastmod: '2024-02-25T18:49:53.542316-07:00'
+lastmod: '2024-03-11T00:14:30.579362-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointiteht\xE4\
   viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden\u2026"

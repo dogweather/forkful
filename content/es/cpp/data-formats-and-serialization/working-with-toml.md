@@ -3,7 +3,7 @@ date: 2024-01-26 04:19:31.050141-07:00
 description: "TOML (Lenguaje M\xEDnimo y Obvio de Tom) es un formato de serializaci\xF3\
   n de datos f\xE1cil de leer debido a su sem\xE1ntica clara. Los programadores utilizan\
   \ TOML\u2026"
-lastmod: '2024-02-25T18:49:55.868107-07:00'
+lastmod: '2024-03-11T00:14:33.222159-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Lenguaje M\xEDnimo y Obvio de Tom) es un formato de serializaci\xF3\
   n de datos f\xE1cil de leer debido a su sem\xE1ntica clara. Los programadores utilizan\

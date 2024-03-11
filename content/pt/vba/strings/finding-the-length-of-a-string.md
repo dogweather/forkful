@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:40.410848-07:00
 description: "Encontrar o comprimento de uma string em Visual Basic para Aplica\xE7\
   \xF5es (VBA) envolve determinar o n\xFAmero de caracteres que ela cont\xE9m. Programadores\u2026"
-lastmod: '2024-02-25T18:49:44.022126-07:00'
+lastmod: '2024-03-11T00:14:20.095819-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string em Visual Basic para Aplica\xE7\xF5\
   es (VBA) envolve determinar o n\xFAmero de caracteres que ela cont\xE9m. Programadores\u2026"

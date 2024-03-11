@@ -2,7 +2,7 @@
 date: 2024-01-27 16:10:06.688509-07:00
 description: "In the realm of programming, especially when dealing with Linux or Unix\
   \ environments, manipulating files directly from the command line interface (CLI)\u2026"
-lastmod: '2024-02-25T18:49:56.904215-07:00'
+lastmod: '2024-03-11T00:14:34.347195-06:00'
 model: gpt-4-0125-preview
 summary: "In the realm of programming, especially when dealing with Linux or Unix\
   \ environments, manipulating files directly from the command line interface (CLI)\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:58.077726-07:00
 description: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for\
   \ \xE5 rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper\
   \ \xE5 holde\u2026"
-lastmod: '2024-02-25T18:49:38.872687-07:00'
+lastmod: '2024-03-11T00:14:14.237581-06:00'
 model: gpt-4-1106-preview
 summary: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for \xE5\
   \ rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper\

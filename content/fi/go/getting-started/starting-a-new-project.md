@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:46.286154-07:00
 description: "Uuden projektin aloittaminen Go:ssa sis\xE4lt\xE4\xE4 ty\xF6tilan pystytt\xE4\
   misen ja sen alustamisen tarvittavilla Go-moduuleilla. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n koodin\u2026"
-lastmod: '2024-02-25T18:49:53.030127-07:00'
+lastmod: '2024-03-11T00:14:29.976652-06:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Go:ssa sis\xE4lt\xE4\xE4 ty\xF6tilan pystytt\xE4\
   misen ja sen alustamisen tarvittavilla Go-moduuleilla. Ohjelmoijat tekev\xE4t t\xE4\

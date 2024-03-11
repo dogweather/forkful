@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:11.168082-07:00
 description: "Praca z plikami CSV (Comma-Separated Values, warto\u015Bci rozdzielone\
   \ przecinkami) w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu\u2026"
-lastmod: '2024-02-25T18:49:33.352571-07:00'
+lastmod: '2024-03-11T00:14:08.099761-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecinkami)\
   \ w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:06:56.957891-07:00
 description: "Le refactoring en programmation implique de restructurer le code existant\
   \ sans en changer le comportement externe, dans le but d'am\xE9liorer des attributs\u2026"
-lastmod: '2024-02-25T18:49:55.005447-07:00'
+lastmod: '2024-03-11T00:14:32.253226-06:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring en programmation implique de restructurer le code existant\
   \ sans en changer le comportement externe, dans le but d'am\xE9liorer des attributs\u2026"

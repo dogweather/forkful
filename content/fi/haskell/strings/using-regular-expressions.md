@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:58.946175-07:00
 description: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka\
   \ m\xE4\xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n yleens\xE4 merkkijonojen\
   \ etsimiseen ja\u2026"
-lastmod: '2024-02-25T18:49:53.519414-07:00'
+lastmod: '2024-03-11T00:14:30.554802-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka\
   \ m\xE4\xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n yleens\xE4 merkkijonojen\

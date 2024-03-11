@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:09.475999-07:00
 description: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\xF5\
   es e texto dentro de uma string. Programadores fazem isso para tornar o c\xF3digo\
   \ mais\u2026"
-lastmod: '2024-02-25T18:49:44.565975-07:00'
+lastmod: '2024-03-11T00:14:20.683567-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\xF5\
   es e texto dentro de uma string. Programadores fazem isso para tornar o c\xF3digo\

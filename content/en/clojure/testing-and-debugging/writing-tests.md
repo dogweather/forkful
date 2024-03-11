@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:16.905534-07:00
 description: "Writing tests in Clojure, much like in other programming languages,\
   \ involves creating dedicated code to verify that your main codebase works as expected.\u2026"
-lastmod: '2024-02-25T18:49:56.212698-07:00'
+lastmod: '2024-03-11T00:14:33.600708-06:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in Clojure, much like in other programming languages, involves\
   \ creating dedicated code to verify that your main codebase works as expected.\u2026"

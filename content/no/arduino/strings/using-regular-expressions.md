@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:55.440404-07:00
 description: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som definerer s\xF8\
   kem\xF8nstre, prim\xE6rt brukt for strengsammenligning og manipulering. Programmerere\
   \ utnytter\u2026"
-lastmod: '2024-02-25T18:49:39.228028-07:00'
+lastmod: '2024-03-11T00:14:14.638276-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som definerer s\xF8kem\xF8\
   nstre, prim\xE6rt brukt for strengsammenligning og manipulering. Programmerere utnytter\u2026"

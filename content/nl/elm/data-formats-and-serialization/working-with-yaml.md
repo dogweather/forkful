@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:04.386386-07:00
 description: "YAML, een voor mensen begrijpelijke data-serialisatiestandaard, wordt\
   \ gebruikt voor configuratiebestanden en gegevensuitwisseling. Programmeurs zijn\
   \ er\u2026"
-lastmod: '2024-02-25T18:49:48.085394-07:00'
+lastmod: '2024-03-11T00:14:24.568298-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, een voor mensen begrijpelijke data-serialisatiestandaard, wordt gebruikt\
   \ voor configuratiebestanden en gegevensuitwisseling. Programmeurs zijn er\u2026"

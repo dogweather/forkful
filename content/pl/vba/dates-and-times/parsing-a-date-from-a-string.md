@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:54.739159-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications\
   \ (VBA) polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych\
   \ daty. Programi\u015Bci\u2026"
-lastmod: '2024-02-25T18:49:33.607503-07:00'
+lastmod: '2024-03-11T00:14:08.418170-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications (VBA)\
   \ polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych daty.\

@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:14.287298-07:00
 description: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il primo\
   \ passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa\
   \ di\u2026"
-lastmod: '2024-02-25T18:49:41.300125-07:00'
+lastmod: '2024-03-11T00:14:17.022505-06:00'
 model: gpt-4-1106-preview
 summary: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il primo\
   \ passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa\

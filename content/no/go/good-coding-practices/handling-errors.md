@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:01.950141-07:00
 description: "\xC5 h\xE5ndtere feil i Go inneb\xE6rer \xE5 gjenkjenne og reagere p\xE5\
   \ feilsituasjoner i programmet ditt. Programmere engasjerer seg i feilh\xE5ndtering\
   \ for \xE5 sikre at\u2026"
-lastmod: '2024-02-25T18:49:38.507195-07:00'
+lastmod: '2024-03-11T00:14:13.790151-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 h\xE5ndtere feil i Go inneb\xE6rer \xE5 gjenkjenne og reagere p\xE5\
   \ feilsituasjoner i programmet ditt. Programmere engasjerer seg i feilh\xE5ndtering\

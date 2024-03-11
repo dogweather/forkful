@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:59.740307-07:00
 description: "Converter uma string para letras min\xFAsculas \xE9 uma opera\xE7\xE3\
   o fundamental que envolve transformar todos os caracteres de uma string dada em\
   \ seus equivalentes\u2026"
-lastmod: '2024-03-09T21:06:10.617074-07:00'
+lastmod: '2024-03-11T00:14:19.948053-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma string para letras min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
   \ que envolve transformar todos os caracteres de uma string dada em seus equivalentes\u2026"

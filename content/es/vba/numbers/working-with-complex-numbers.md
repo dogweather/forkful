@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:17.834670-07:00
 description: "Trabajar con n\xFAmeros complejos implica realizar operaciones matem\xE1\
   ticas en n\xFAmeros que tienen tanto una parte real como una imaginaria. Los programadores\u2026"
-lastmod: '2024-02-25T18:49:55.376943-07:00'
+lastmod: '2024-03-11T00:14:32.700419-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con n\xFAmeros complejos implica realizar operaciones matem\xE1\
   ticas en n\xFAmeros que tienen tanto una parte real como una imaginaria. Los programadores\u2026"

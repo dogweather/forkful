@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:00.012065-07:00
 description: "Code organiseren in functies gaat over het verpakken van codeblokken\
   \ die specifieke taken uitvoeren en deze een naam geven. Dit wordt gedaan om code\u2026"
-lastmod: '2024-02-25T18:49:48.370216-07:00'
+lastmod: '2024-03-11T00:14:24.869476-06:00'
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies gaat over het verpakken van codeblokken die\
   \ specifieke taken uitvoeren en deze een naam geven. Dit wordt gedaan om code\u2026"

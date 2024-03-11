@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:56.205256-07:00
 description: "Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista\
   \ tai avaamista kirjoitustilassa ja sen j\xE4lkeen tiedosto-operaatioiden k\xE4\
   ytt\xE4mist\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.626482-07:00'
+lastmod: '2024-03-11T00:14:30.668293-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista tai\
   \ avaamista kirjoitustilassa ja sen j\xE4lkeen tiedosto-operaatioiden k\xE4ytt\xE4\

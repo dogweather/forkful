@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:49.045284-07:00
 description: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het\
   \ coderen van een gebruikersnaam en wachtwoord in een aanvraagheader om toegang\
   \ te\u2026"
-lastmod: '2024-02-25T18:49:47.726992-07:00'
+lastmod: '2024-03-11T00:14:24.140467-06:00'
 model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het coderen\
   \ van een gebruikersnaam en wachtwoord in een aanvraagheader om toegang te\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:53.843687-07:00
 description: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4\
   misen ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\
   \ joustavamman, sill\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.748994-07:00'
+lastmod: '2024-03-11T00:14:30.866538-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4misen\
   \ ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\

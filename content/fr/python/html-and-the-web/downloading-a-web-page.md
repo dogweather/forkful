@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:42.311365-07:00
 description: "T\xE9l\xE9charger une page Web, c'est r\xE9cup\xE9rer son contenu via\
   \ le r\xE9seau. Les programmeurs font \xE7a pour analyser des donn\xE9es, tester\
   \ des sites, ou automatiser\u2026"
-lastmod: '2024-02-25T18:49:54.126290-07:00'
+lastmod: '2024-03-11T00:14:31.269102-06:00'
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page Web, c'est r\xE9cup\xE9rer son contenu via le\
   \ r\xE9seau. Les programmeurs font \xE7a pour analyser des donn\xE9es, tester des\

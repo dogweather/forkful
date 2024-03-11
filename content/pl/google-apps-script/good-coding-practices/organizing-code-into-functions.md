@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:40.408627-07:00
 description: "Organizacja kodu w funkcje polega na strukturyzowaniu kodu Google Apps\
   \ Script poprzez oddzielanie logicznych segment\xF3w w odr\u0119bne bloki, z kt\xF3\
   rych ka\u017Cdy\u2026"
-lastmod: '2024-02-25T18:49:33.333012-07:00'
+lastmod: '2024-03-11T00:14:08.079885-06:00'
 model: gpt-4-0125-preview
 summary: "Organizacja kodu w funkcje polega na strukturyzowaniu kodu Google Apps Script\
   \ poprzez oddzielanie logicznych segment\xF3w w odr\u0119bne bloki, z kt\xF3rych\

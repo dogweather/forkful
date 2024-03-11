@@ -3,7 +3,7 @@ date: 2024-01-26 01:08:23.836062-07:00
 description: "Logowanie, w swojej istocie, jest praktyk\u0105 rejestrowania zdarze\u0144\
   \ i danych z aplikacji oprogramowania do zewn\u0119trznego wyj\u015Bcia, takiego\
   \ jak plik lub\u2026"
-lastmod: '2024-02-25T18:49:33.735534-07:00'
+lastmod: '2024-03-11T00:14:08.553061-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie, w swojej istocie, jest praktyk\u0105 rejestrowania zdarze\u0144\
   \ i danych z aplikacji oprogramowania do zewn\u0119trznego wyj\u015Bcia, takiego\

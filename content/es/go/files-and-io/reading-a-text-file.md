@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:05:05.794803-07:00
 description: "Leer un archivo de texto en Go implica acceder y recuperar contenido\
   \ de un archivo almacenado en disco para su procesamiento o an\xE1lisis. Los programadores\u2026"
-lastmod: '2024-02-25T18:49:55.105043-07:00'
+lastmod: '2024-03-11T00:14:32.357262-06:00'
 model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en Go implica acceder y recuperar contenido de\
   \ un archivo almacenado en disco para su procesamiento o an\xE1lisis. Los programadores\u2026"

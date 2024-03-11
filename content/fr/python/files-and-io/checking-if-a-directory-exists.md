@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:11.560208-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en Python consiste \xE0 confirmer\
   \ la pr\xE9sence d'un dossier dans le syst\xE8me de fichiers avant d'effectuer des\
   \ op\xE9rations\u2026"
-lastmod: '2024-02-25T18:49:54.141979-07:00'
+lastmod: '2024-03-11T00:14:31.285220-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Python consiste \xE0 confirmer\
   \ la pr\xE9sence d'un dossier dans le syst\xE8me de fichiers avant d'effectuer des\

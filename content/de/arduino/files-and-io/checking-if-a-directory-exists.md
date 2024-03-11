@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:42.523345-07:00
 description: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob ein\
   \ Verzeichnis auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert,\
   \ wichtig, um\u2026"
-lastmod: '2024-02-25T18:49:51.209625-07:00'
+lastmod: '2024-03-11T00:14:28.058690-06:00'
 model: gpt-4-0125-preview
 summary: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob ein Verzeichnis\
   \ auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert, wichtig, um\u2026"

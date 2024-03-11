@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:38.122284-07:00
 description: "Zmiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 w j\u0119\
   zyku Rust polega na modyfikacji ci\u0105gu tak, aby jego pierwszy znak by\u0142\
   \ du\u017C\u0105 liter\u0105, je\u015Bli jest liter\u0105,\u2026"
-lastmod: '2024-02-25T18:49:33.534523-07:00'
+lastmod: '2024-03-11T00:14:08.339490-06:00'
 model: gpt-4-0125-preview
 summary: "Zmiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 w j\u0119zyku\
   \ Rust polega na modyfikacji ci\u0105gu tak, aby jego pierwszy znak by\u0142 du\u017C\

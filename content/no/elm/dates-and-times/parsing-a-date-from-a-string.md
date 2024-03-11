@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:20.239495-07:00
 description: "\xC5 tolke en dato fra en streng i Elm involverer konvertering av tekstlig\
   \ informasjon som representerer datoer og tider til et format som Elm kan forst\xE5\
   \ og\u2026"
-lastmod: '2024-02-25T18:49:38.897745-07:00'
+lastmod: '2024-03-11T00:14:14.264267-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 tolke en dato fra en streng i Elm involverer konvertering av tekstlig\
   \ informasjon som representerer datoer og tider til et format som Elm kan forst\xE5\

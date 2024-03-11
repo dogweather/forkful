@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:31.156112-07:00
 description: "L\xE4sning av en textfil inneb\xE4r att man tar information lagrad som\
   \ text och g\xF6r den tillg\xE4nglig i din applikation. Programmerare g\xF6r detta\
   \ f\xF6r att hantera\u2026"
-lastmod: '2024-02-25T18:49:36.625630-07:00'
+lastmod: '2024-03-11T00:14:11.709871-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sning av en textfil inneb\xE4r att man tar information lagrad som text\
   \ och g\xF6r den tillg\xE4nglig i din applikation. Programmerare g\xF6r detta f\xF6\

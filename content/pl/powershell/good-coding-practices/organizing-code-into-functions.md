@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:16.578349-07:00
 description: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w kodu,\
   \ kt\xF3re wykonuj\u0105 okre\u015Blone zadania i nadawaniu im nazwy. Robi si\u0119\
   \ to, aby kod by\u0142\u2026"
-lastmod: '2024-02-25T18:49:34.004608-07:00'
+lastmod: '2024-03-11T00:14:08.829557-06:00'
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w kodu, kt\xF3\
   re wykonuj\u0105 okre\u015Blone zadania i nadawaniu im nazwy. Robi si\u0119 to,\

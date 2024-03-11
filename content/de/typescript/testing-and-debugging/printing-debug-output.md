@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:37.182179-07:00
 description: "Debug-Output ist wie das Fl\xFCstern deines Codes. Es verr\xE4t dir,\
   \ was im Code passiert, w\xE4hrend er l\xE4uft. Warum? Weil wir Menschen nicht in\
   \ Matrix-Code sehen\u2026"
-lastmod: '2024-02-25T18:49:50.702479-07:00'
+lastmod: '2024-03-11T00:14:27.524328-06:00'
 model: gpt-4-1106-preview
 summary: "Debug-Output ist wie das Fl\xFCstern deines Codes. Es verr\xE4t dir, was\
   \ im Code passiert, w\xE4hrend er l\xE4uft. Warum? Weil wir Menschen nicht in Matrix-Code\

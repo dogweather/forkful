@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:11.451435-07:00
 description: "Wyszukiwanie i zamiana tekstu to podstawa przetwarzania ci\u0105g\xF3\
   w znak\xF3w, umo\u017Cliwiaj\u0105ca podmian\u0119 okre\u015Blonych fragment\xF3\
   w na nowe. Programi\u015Bci korzystaj\u0105 z\u2026"
-lastmod: '2024-02-25T18:49:33.493433-07:00'
+lastmod: '2024-03-11T00:14:08.295762-06:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to podstawa przetwarzania ci\u0105g\xF3w znak\xF3\
   w, umo\u017Cliwiaj\u0105ca podmian\u0119 okre\u015Blonych fragment\xF3w na nowe.\

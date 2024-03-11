@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:51.554502-07:00
 description: "\xC5 starte et nytt prosjekt i Dart inneb\xE6rer \xE5 sette opp et milj\xF8\
   \ som fremmer effektiv utvikling, testing og utrulling. Programmerere initierer\
   \ nye Dart-\u2026"
-lastmod: '2024-03-09T21:06:05.246640-07:00'
+lastmod: '2024-03-11T00:14:14.017130-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i Dart inneb\xE6rer \xE5 sette opp et milj\xF8\
   \ som fremmer effektiv utvikling, testing og utrulling. Programmerere initierer\

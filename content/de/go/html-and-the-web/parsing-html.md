@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:59:51.454246-07:00
 description: "Das Parsen von HTML in Go umfasst die Analyse des Inhalts von HTML-Dateien,\
   \ um Daten zu extrahieren, die Struktur zu manipulieren oder HTML in andere\u2026"
-lastmod: '2024-02-25T18:49:50.486293-07:00'
+lastmod: '2024-03-11T00:14:27.242902-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Go umfasst die Analyse des Inhalts von HTML-Dateien,\
   \ um Daten zu extrahieren, die Struktur zu manipulieren oder HTML in andere\u2026"

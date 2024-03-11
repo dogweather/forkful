@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:29.273214-07:00
 description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel en\
   \ zijn cruciaal in diverse velden zoals engineering, fysica en computergrafiek.\u2026"
-lastmod: '2024-02-25T18:49:47.932184-07:00'
+lastmod: '2024-03-11T00:14:24.404803-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel en zijn\
   \ cruciaal in diverse velden zoals engineering, fysica en computergrafiek.\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:29.077781-07:00
 description: "D\xE9marrer un nouveau projet dans Google Apps Script (GAS) n\xE9cessite\
   \ d'initialiser un fichier de script au sein de l'\xE9cosyst\xE8me Google (Google\
   \ Drive, Docs,\u2026"
-lastmod: '2024-02-25T18:49:54.082200-07:00'
+lastmod: '2024-03-11T00:14:31.223961-06:00'
 model: gpt-4-0125-preview
 summary: "D\xE9marrer un nouveau projet dans Google Apps Script (GAS) n\xE9cessite\
   \ d'initialiser un fichier de script au sein de l'\xE9cosyst\xE8me Google (Google\

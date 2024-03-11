@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:07.094884-07:00
 description: "U\u017Cycie wielkiej litery w ci\u0105gu znak\xF3w w PowerShellu polega\
   \ na przekszta\u0142ceniu pierwszego znaku danego ci\u0105gu na wielk\u0105 liter\u0119\
   , pozostawiaj\u0105c reszt\u0119 ci\u0105gu\u2026"
-lastmod: '2024-02-25T18:49:33.978498-07:00'
+lastmod: '2024-03-11T00:14:08.803508-06:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cycie wielkiej litery w ci\u0105gu znak\xF3w w PowerShellu polega\
   \ na przekszta\u0142ceniu pierwszego znaku danego ci\u0105gu na wielk\u0105 liter\u0119\

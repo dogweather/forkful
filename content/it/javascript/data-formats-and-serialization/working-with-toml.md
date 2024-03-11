@@ -2,7 +2,7 @@
 date: 2024-01-26 04:23:27.663270-07:00
 description: "TOML, acronimo di Tom's Obvious, Minimal Language, definisce come strutturare\
   \ i file di configurazione. I programmatori lavorano con TOML perch\xE9 \xE8 facile\u2026"
-lastmod: '2024-02-25T18:49:41.682776-07:00'
+lastmod: '2024-03-11T00:14:17.457372-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, acronimo di Tom's Obvious, Minimal Language, definisce come strutturare\
   \ i file di configurazione. I programmatori lavorano con TOML perch\xE9 \xE8 facile\u2026"

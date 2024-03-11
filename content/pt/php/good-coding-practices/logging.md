@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:05.330672-07:00
 description: "O registro de atividades (logging) \xE9 basicamente como manter um di\xE1\
   rio para o seu c\xF3digo; \xE9 o ato de gravar eventos, erros e outros pontos de\
   \ dados\u2026"
-lastmod: '2024-02-25T18:49:44.294327-07:00'
+lastmod: '2024-03-11T00:14:20.387999-06:00'
 model: gpt-4-1106-preview
 summary: "O registro de atividades (logging) \xE9 basicamente como manter um di\xE1\
   rio para o seu c\xF3digo; \xE9 o ato de gravar eventos, erros e outros pontos de\

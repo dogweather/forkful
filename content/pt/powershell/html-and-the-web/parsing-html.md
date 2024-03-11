@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:43.228141-07:00
 description: "Analisar HTML no PowerShell \xE9 sobre desmembrar conte\xFAdo HTML para\
   \ extrair dados espec\xEDficos ou automatizar tarefas relacionadas \xE0 web. Os\
   \ programadores\u2026"
-lastmod: '2024-02-25T18:49:44.413594-07:00'
+lastmod: '2024-03-11T00:14:20.519130-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML no PowerShell \xE9 sobre desmembrar conte\xFAdo HTML para\
   \ extrair dados espec\xEDficos ou automatizar tarefas relacionadas \xE0 web. Os\

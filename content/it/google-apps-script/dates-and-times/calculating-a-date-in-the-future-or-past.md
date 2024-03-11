@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:56.326257-07:00
 description: "Calcolare una data nel futuro o nel passato consiste nel manipolare\
   \ gli oggetti data per trovare date oltre o prima della data attuale, rispettivamente.\
   \ I\u2026"
-lastmod: '2024-02-25T18:49:40.899601-07:00'
+lastmod: '2024-03-11T00:14:16.523516-06:00'
 model: gpt-4-0125-preview
 summary: "Calcolare una data nel futuro o nel passato consiste nel manipolare gli\
   \ oggetti data per trovare date oltre o prima della data attuale, rispettivamente.\

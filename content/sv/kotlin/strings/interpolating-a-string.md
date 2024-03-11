@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:14.333197-07:00
 description: "Stringinterpolering \xE4r n\xE4r du plockar in variabler eller uttryck\
   \ direkt i en textstr\xE4ng. Det g\xF6r din kod mer l\xE4sbar och effektiv eftersom\
   \ du slipper\u2026"
-lastmod: '2024-02-25T18:49:36.153060-07:00'
+lastmod: '2024-03-11T00:14:11.209991-06:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolering \xE4r n\xE4r du plockar in variabler eller uttryck direkt\
   \ i en textstr\xE4ng. Det g\xF6r din kod mer l\xE4sbar och effektiv eftersom du\

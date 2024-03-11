@@ -3,7 +3,7 @@ date: 2024-01-26 04:43:02.987590-07:00
 description: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr\xF6\
   tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\
   \ av -1.\u2026"
-lastmod: '2024-02-25T18:49:36.160920-07:00'
+lastmod: '2024-03-11T00:14:11.218664-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr\xF6\
   tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\

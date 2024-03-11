@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:06.833963-07:00
 description: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamentale\
   \ che consente di conservare output e dati in modo persistente, rendendo possibili\u2026"
-lastmod: '2024-02-25T18:49:41.806254-07:00'
+lastmod: '2024-03-11T00:14:17.592605-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamentale che\
   \ consente di conservare output e dati in modo persistente, rendendo possibili\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:36.962345-07:00
 description: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenger\
   \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par. Programmerere bruker dem\
   \ for mer\u2026"
-lastmod: '2024-02-25T18:49:38.704726-07:00'
+lastmod: '2024-03-11T00:14:14.055596-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenger\
   \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par. Programmerere bruker dem\

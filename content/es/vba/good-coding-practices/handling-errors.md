@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:55:02.544800-07:00
 description: "El manejo de errores en Visual Basic para Aplicaciones (VBA) se refiere\
   \ al proceso de anticipar, detectar y resolver errores de programaci\xF3n, de\u2026"
-lastmod: '2024-02-25T18:49:55.391681-07:00'
+lastmod: '2024-03-11T00:14:32.715528-06:00'
 model: gpt-4-0125-preview
 summary: "El manejo de errores en Visual Basic para Aplicaciones (VBA) se refiere\
   \ al proceso de anticipar, detectar y resolver errores de programaci\xF3n, de\u2026"

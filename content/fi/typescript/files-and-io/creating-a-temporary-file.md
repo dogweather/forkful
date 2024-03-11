@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:42.172042-07:00
 description: "Tilap\xE4istiedosto on v\xE4liaikainen tallennuspaikka dataa varten.\
   \ Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4, kun haluavat k\xE4sitell\xE4 tietoa,\
   \ joka ei vaadi pysyv\xE4\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.260024-07:00'
+lastmod: '2024-03-11T00:14:30.267832-06:00'
 model: gpt-4-1106-preview
 summary: "Tilap\xE4istiedosto on v\xE4liaikainen tallennuspaikka dataa varten. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4, kun haluavat k\xE4sitell\xE4 tietoa, joka ei vaadi\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:01.392250-07:00
 description: "Fouten afhandelen betekent code schrijven die kan omgaan met situaties\
   \ die fout lopen. Programmeurs doen dit om crashes te voorkomen en om ervoor te\u2026"
-lastmod: '2024-02-25T18:49:47.862415-07:00'
+lastmod: '2024-03-11T00:14:24.282921-06:00'
 model: gpt-4-0125-preview
 summary: "Fouten afhandelen betekent code schrijven die kan omgaan met situaties die\
   \ fout lopen. Programmeurs doen dit om crashes te voorkomen en om ervoor te\u2026"

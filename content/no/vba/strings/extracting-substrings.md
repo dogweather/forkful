@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:28.117074-07:00
 description: "\xC5 trekke ut delstrenger i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 isolere spesifikke deler av en streng basert p\xE5 gitte kriterier. Programmerere\u2026"
-lastmod: '2024-02-25T18:49:38.789144-07:00'
+lastmod: '2024-03-11T00:14:14.145722-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 trekke ut delstrenger i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 isolere spesifikke deler av en streng basert p\xE5 gitte kriterier. Programmerere\u2026"

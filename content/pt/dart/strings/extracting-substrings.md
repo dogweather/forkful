@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:00.194098-07:00
 description: "Extrair substrings trata-se de recuperar por\xE7\xF5es espec\xEDficas\
   \ de uma string baseadas em suas posi\xE7\xF5es ou padr\xF5es. Programadores fazem\
   \ isso para tarefas\u2026"
-lastmod: '2024-03-09T21:06:10.618926-07:00'
+lastmod: '2024-03-11T00:14:19.950499-06:00'
 model: gpt-4-0125-preview
 summary: "Extrair substrings trata-se de recuperar por\xE7\xF5es espec\xEDficas de\
   \ uma string baseadas em suas posi\xE7\xF5es ou padr\xF5es. Programadores fazem\

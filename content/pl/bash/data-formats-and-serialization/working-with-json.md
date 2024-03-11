@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:43.312661-07:00
 description: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu\
   \ danymi JSON bezpo\u015Brednio z linii polece\u0144. Programi\u015Bci cz\u0119\
   sto robi\u0105 to, aby p\u0142ynnie\u2026"
-lastmod: '2024-02-25T18:49:33.974349-07:00'
+lastmod: '2024-03-11T00:14:08.798887-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu danymi\
   \ JSON bezpo\u015Brednio z linii polece\u0144. Programi\u015Bci cz\u0119sto robi\u0105\

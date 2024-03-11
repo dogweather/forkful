@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:06:40.396795-07:00
 description: "Afronden van getallen betekent het trimmen van een decimaal naar de\
   \ dichtstbijzijnde gehele waarde of naar een vastgesteld aantal decimalen. Programmeurs\u2026"
-lastmod: '2024-02-25T18:49:48.401315-07:00'
+lastmod: '2024-03-11T00:14:24.902136-06:00'
 model: gpt-4-0125-preview
 summary: "Afronden van getallen betekent het trimmen van een decimaal naar de dichtstbijzijnde\
   \ gehele waarde of naar een vastgesteld aantal decimalen. Programmeurs\u2026"

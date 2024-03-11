@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:18.103419-07:00
 description: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder\
   \ \xD6ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\u2026"
-lastmod: '2024-02-25T18:49:51.252608-07:00'
+lastmod: '2024-03-11T00:14:28.104434-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder \xD6\
   ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\u2026"

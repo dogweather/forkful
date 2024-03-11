@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:37.375992-07:00
 description: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxiliares\
   \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo. Os programadores\u2026"
-lastmod: '2024-02-25T18:49:44.670614-07:00'
+lastmod: '2024-03-11T00:14:20.795193-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxiliares\
   \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo. Os programadores\u2026"

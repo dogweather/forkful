@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:10.458274-07:00
 description: "Extrair substrings significa selecionar partes espec\xEDficas de uma\
   \ string de texto. Programadores recorrem a esta t\xE9cnica para manipular e analisar\
   \ dados,\u2026"
-lastmod: '2024-02-25T18:49:44.403205-07:00'
+lastmod: '2024-03-11T00:14:20.507185-06:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings significa selecionar partes espec\xEDficas de uma string\
   \ de texto. Programadores recorrem a esta t\xE9cnica para manipular e analisar dados,\u2026"

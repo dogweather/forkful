@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:58:19.343320-07:00
 description: "String interpolatie, in programmeren, houdt in dat strings worden opgebouwd\
   \ door expressies in te sluiten binnen letterlijke strings. Programmeurs doen\u2026"
-lastmod: '2024-02-25T18:49:48.600978-07:00'
+lastmod: '2024-03-11T00:14:25.137042-06:00'
 model: gpt-4-0125-preview
 summary: "String interpolatie, in programmeren, houdt in dat strings worden opgebouwd\
   \ door expressies in te sluiten binnen letterlijke strings. Programmeurs doen\u2026"

@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-30 19:11:38.135493-07:00
 description: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
   \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering. Programmerere\u2026"
-lastmod: '2024-02-25T18:49:39.006355-07:00'
+lastmod: '2024-03-11T00:14:14.395376-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
   \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering. Programmerere\u2026"

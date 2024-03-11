@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:58.724123-07:00
 description: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch zug\xE4\
   nglich zu machen. Programmierer tun dies, um Daten zu verarbeiten, Skripte zu\u2026"
-lastmod: '2024-02-25T18:49:51.172887-07:00'
+lastmod: '2024-03-11T00:14:28.020726-06:00'
 model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch zug\xE4\
   nglich zu machen. Programmierer tun dies, um Daten zu verarbeiten, Skripte zu\u2026"

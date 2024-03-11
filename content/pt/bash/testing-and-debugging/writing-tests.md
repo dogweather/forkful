@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:35.473067-07:00
 description: "Escrever testes em Bash envolve criar scripts de casos de teste para\
   \ validar a funcionalidade dos seus scripts Bash. Os programadores realizam testes\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:44.375682-07:00'
+lastmod: '2024-03-11T00:14:20.477535-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Bash envolve criar scripts de casos de teste para validar\
   \ a funcionalidade dos seus scripts Bash. Os programadores realizam testes para\u2026"

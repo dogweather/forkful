@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:23.087575-07:00
 description: "\xC5 trekke ut understrenger inneb\xE6rer \xE5 hente en del av en tekststreng.\
   \ Dette brukes for \xE5 bearbeide eller analysere spesifikke datasegmenter fra en\
   \ st\xF8rre\u2026"
-lastmod: '2024-02-25T18:49:39.267671-07:00'
+lastmod: '2024-03-11T00:14:14.681540-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 trekke ut understrenger inneb\xE6rer \xE5 hente en del av en tekststreng.\
   \ Dette brukes for \xE5 bearbeide eller analysere spesifikke datasegmenter fra en\

@@ -3,7 +3,7 @@ date: 2024-01-27 10:43:11.660520-07:00
 description: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
   \ para formar um \xFAnico texto. Voc\xEA pode precisar mesclar textos para gerar\
   \ mensagens de\u2026"
-lastmod: '2024-02-25T18:49:43.891367-07:00'
+lastmod: '2024-03-11T00:14:19.907123-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
   \ para formar um \xFAnico texto. Voc\xEA pode precisar mesclar textos para gerar\

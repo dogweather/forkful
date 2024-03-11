@@ -5,7 +5,7 @@ date: 2024-01-28 21:57:51.709248-07:00
 description: "Het converteren van een datum naar een string zet het datumobject om\
   \ in tekst die we kunnen lezen en gebruiken. Programmeurs doen dit om datums in\
   \ een\u2026"
-lastmod: '2024-02-25T18:49:48.672413-07:00'
+lastmod: '2024-03-11T00:14:25.213687-06:00'
 model: gpt-4-0125-preview
 summary: "Het converteren van een datum naar een string zet het datumobject om in\
   \ tekst die we kunnen lezen en gebruiken. Programmeurs doen dit om datums in een\u2026"

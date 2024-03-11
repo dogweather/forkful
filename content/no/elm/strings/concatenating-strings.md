@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:36.708009-07:00
 description: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
   \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\
   \ innhold,\u2026"
-lastmod: '2024-02-25T18:49:38.880341-07:00'
+lastmod: '2024-03-11T00:14:14.245306-06:00'
 model: gpt-4-1106-preview
 summary: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
   \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\

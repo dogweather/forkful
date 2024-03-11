@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:25.519893-07:00
 description: "Het downloaden van een webpagina betekent het ophalen van de HTML van\
   \ een gegeven URL om lokaal te bekijken of te gebruiken. Programmeurs doen dit voor\u2026"
-lastmod: '2024-02-25T18:49:48.105903-07:00'
+lastmod: '2024-03-11T00:14:24.589846-06:00'
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina betekent het ophalen van de HTML van een\
   \ gegeven URL om lokaal te bekijken of te gebruiken. Programmeurs doen dit voor\u2026"

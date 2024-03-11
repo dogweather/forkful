@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:43.642408-07:00
 description: "Arrondir les nombres, un concept fondamental en programmation informatique,\
   \ consiste \xE0 ajuster un nombre \xE0 l'entier le plus proche ou \xE0 un nombre\
   \ sp\xE9cifi\xE9\u2026"
-lastmod: '2024-02-25T18:49:54.075608-07:00'
+lastmod: '2024-03-11T00:14:31.217239-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres, un concept fondamental en programmation informatique,\
   \ consiste \xE0 ajuster un nombre \xE0 l'entier le plus proche ou \xE0 un nombre\

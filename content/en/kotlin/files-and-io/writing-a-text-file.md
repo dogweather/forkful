@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:08.673982-07:00
 description: "Writing a text file in Kotlin involves creating a file and inputting\
   \ text content into it, a common task for storing data, logging, or configuration\u2026"
-lastmod: '2024-02-25T18:49:56.511295-07:00'
+lastmod: '2024-03-11T00:14:33.930288-06:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in Kotlin involves creating a file and inputting text\
   \ content into it, a common task for storing data, logging, or configuration\u2026"

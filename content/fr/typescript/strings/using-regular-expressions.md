@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:05.333545-07:00
 description: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant de\
   \ correspondance et de recherche de motifs en programmation. Les programmeurs utilisent\u2026"
-lastmod: '2024-02-25T18:49:54.243292-07:00'
+lastmod: '2024-03-11T00:14:31.441921-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant de correspondance\
   \ et de recherche de motifs en programmation. Les programmeurs utilisent\u2026"

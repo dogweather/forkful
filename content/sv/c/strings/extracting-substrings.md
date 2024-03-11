@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:28.662984-07:00
 description: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
   ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\
   \ s\xE5som position och\u2026"
-lastmod: '2024-02-25T18:49:36.685528-07:00'
+lastmod: '2024-03-11T00:14:11.773866-06:00'
 model: gpt-4-0125-preview
 summary: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
   ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\

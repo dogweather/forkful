@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:42.056527-07:00
 description: "Recuperar la fecha actual en Bash implica usar comandos integrados para\
   \ mostrar la fecha y la hora en varios formatos. Los programadores utilizan esta\u2026"
-lastmod: '2024-02-25T18:49:55.727499-07:00'
+lastmod: '2024-03-11T00:14:33.077832-06:00'
 model: gpt-4-0125-preview
 summary: "Recuperar la fecha actual en Bash implica usar comandos integrados para\
   \ mostrar la fecha y la hora en varios formatos. Los programadores utilizan esta\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:32.947126-07:00
 description: "Escrever testes em programa\xE7\xE3o envolve criar procedimentos espec\xED\
   ficos para validar a funcionalidade e o desempenho dos seus segmentos de c\xF3digo,\u2026"
-lastmod: '2024-02-25T18:49:44.036311-07:00'
+lastmod: '2024-03-11T00:14:20.110757-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em programa\xE7\xE3o envolve criar procedimentos espec\xED\
   ficos para validar a funcionalidade e o desempenho dos seus segmentos de c\xF3digo,\u2026"

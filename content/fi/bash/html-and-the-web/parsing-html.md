@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:45.806141-07:00
 description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja sis\xE4\
   ll\xF6n seulomista tiedon poimimiseksi. Ohjelmoijat tekev\xE4t sit\xE4 p\xE4\xE4\
   st\xE4kseen k\xE4siksi\u2026"
-lastmod: '2024-02-25T18:49:53.649066-07:00'
+lastmod: '2024-03-11T00:14:30.693587-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja sis\xE4\
   ll\xF6n seulomista tiedon poimimiseksi. Ohjelmoijat tekev\xE4t sit\xE4 p\xE4\xE4\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:44.996071-07:00
 description: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji\
   \ ze stron internetowych. Programi\u015Bci robi\u0105 to, aby umo\u017Cliwi\u0107\
   \ ich urz\u0105dzeniom\u2026"
-lastmod: '2024-02-25T18:49:34.041653-07:00'
+lastmod: '2024-03-11T00:14:08.866803-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji\
   \ ze stron internetowych. Programi\u015Bci robi\u0105 to, aby umo\u017Cliwi\u0107\

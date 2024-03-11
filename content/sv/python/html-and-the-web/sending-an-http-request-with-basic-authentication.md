@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:36.364267-07:00
 description: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF6\
   r att s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:35.820086-07:00'
+lastmod: '2024-03-11T00:14:10.794166-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF6r att\
   \ s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet. Programmerare\

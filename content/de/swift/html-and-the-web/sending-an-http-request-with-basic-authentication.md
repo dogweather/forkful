@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:54.481387-07:00
 description: "Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung f\xFCgen wir\
   \ Anmeldeinformationen in den Request-Header ein, um uns beim Server zu\u2026"
-lastmod: '2024-02-25T18:49:51.275919-07:00'
+lastmod: '2024-03-11T00:14:28.127891-06:00'
 model: gpt-4-1106-preview
 summary: "Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung f\xFCgen wir Anmeldeinformationen\
   \ in den Request-Header ein, um uns beim Server zu\u2026"

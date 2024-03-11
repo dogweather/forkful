@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:10.270752-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w ci\u0105\
   gach znak\xF3w jest kluczowe dla walidacji danych, ich oczyszczania lub przygotowania\
   \ tekstu do\u2026"
-lastmod: '2024-03-09T21:05:59.808892-07:00'
+lastmod: '2024-03-11T00:14:08.243276-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w ci\u0105\
   gach znak\xF3w jest kluczowe dla walidacji danych, ich oczyszczania lub przygotowania\

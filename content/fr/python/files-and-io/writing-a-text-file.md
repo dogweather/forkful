@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:56.442243-07:00
 description: "\xC9crire dans un fichier texte avec Python est une t\xE2che fondamentale\
   \ qui implique de cr\xE9er ou d'ouvrir un fichier, puis d'y ajouter du texte ou\
   \ de le\u2026"
-lastmod: '2024-02-25T18:49:54.145931-07:00'
+lastmod: '2024-03-11T00:14:31.289286-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Python est une t\xE2che fondamentale\
   \ qui implique de cr\xE9er ou d'ouvrir un fichier, puis d'y ajouter du texte ou\

@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:58.961671-07:00
 description: "N\xE4r du startar ett nytt projekt skapar du en grund f\xF6r din kod.\
   \ Programmerare g\xF6r detta f\xF6r att organisera och strukturera sitt arbete fr\xE5\
   n b\xF6rjan."
-lastmod: '2024-02-25T18:49:36.398334-07:00'
+lastmod: '2024-03-11T00:14:11.464013-06:00'
 model: gpt-4-1106-preview
 summary: "N\xE4r du startar ett nytt projekt skapar du en grund f\xF6r din kod. Programmerare\
   \ g\xF6r detta f\xF6r att organisera och strukturera sitt arbete fr\xE5n b\xF6rjan."

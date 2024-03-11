@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:07.727684-07:00
 description: "String interpolation is a way to embed variables directly within a string.\
   \ Programmers use it to concatenate variables and strings efficiently, making\u2026"
-lastmod: '2024-02-25T18:49:56.856710-07:00'
+lastmod: '2024-03-11T00:14:34.293443-06:00'
 model: gpt-4-1106-preview
 summary: "String interpolation is a way to embed variables directly within a string.\
   \ Programmers use it to concatenate variables and strings efficiently, making\u2026"

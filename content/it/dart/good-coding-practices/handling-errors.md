@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:15.284290-07:00
 description: "La gestione degli errori in Dart riguarda l'anticipazione e la gestione\
   \ delle eccezioni che si verificano durante l'esecuzione del programma per\u2026"
-lastmod: '2024-03-09T21:06:07.684724-07:00'
+lastmod: '2024-03-11T00:14:16.700699-06:00'
 model: gpt-4-0125-preview
 summary: "La gestione degli errori in Dart riguarda l'anticipazione e la gestione\
   \ delle eccezioni che si verificano durante l'esecuzione del programma per\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:02.150977-07:00
 description: "Iniciar un nuevo proyecto es crear la base sobre la cual construir\xE1\
   s tu aplicaci\xF3n. Los programadores comienzan nuevos proyectos para transformar\
   \ ideas en\u2026"
-lastmod: '2024-02-25T18:49:55.673974-07:00'
+lastmod: '2024-03-11T00:14:33.021757-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es crear la base sobre la cual construir\xE1s\
   \ tu aplicaci\xF3n. Los programadores comienzan nuevos proyectos para transformar\

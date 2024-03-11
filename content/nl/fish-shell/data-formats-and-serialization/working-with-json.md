@@ -5,7 +5,7 @@ date: 2024-01-28 22:10:17.994422-07:00
 description: "JSON (JavaScript Object Notation) is een gegevensindeling die wordt\
   \ gebruikt voor het representeren van gestructureerde data. Programmeurs gebruiken\
   \ JSON\u2026"
-lastmod: '2024-02-25T18:49:48.594106-07:00'
+lastmod: '2024-03-11T00:14:25.129305-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een gegevensindeling die wordt gebruikt\
   \ voor het representeren van gestructureerde data. Programmeurs gebruiken JSON\u2026"

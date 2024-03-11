@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:35.617039-07:00
 description: "HTML:n j\xE4sent\xE4minen Google Apps Scriptiss\xE4 tarkoittaa tietojen\
   \ poimimista HTML-sis\xE4ll\xF6st\xE4, mik\xE4 on erityisen hy\xF6dyllist\xE4, kun\
   \ toimitaan verkkosivujen tai\u2026"
-lastmod: '2024-02-25T18:49:53.071842-07:00'
+lastmod: '2024-03-11T00:14:30.021172-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Google Apps Scriptiss\xE4 tarkoittaa tietojen\
   \ poimimista HTML-sis\xE4ll\xF6st\xE4, mik\xE4 on erityisen hy\xF6dyllist\xE4, kun\

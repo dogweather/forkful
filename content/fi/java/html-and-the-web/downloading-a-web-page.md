@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:22.156762-07:00
 description: "Lataamme verkkosivun sis\xE4lt\xF6\xE4 tutkiaksemme sen rakennetta tai\
   \ hy\xF6dynt\xE4\xE4ksemme tietoja. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi\
   \ datankeruuseen, palveluiden\u2026"
-lastmod: '2024-02-25T18:49:53.366042-07:00'
+lastmod: '2024-03-11T00:14:30.384310-06:00'
 model: gpt-4-1106-preview
 summary: "Lataamme verkkosivun sis\xE4lt\xF6\xE4 tutkiaksemme sen rakennetta tai hy\xF6\
   dynt\xE4\xE4ksemme tietoja. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datankeruuseen,\

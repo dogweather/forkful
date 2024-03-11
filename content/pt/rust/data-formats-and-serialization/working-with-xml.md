@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:59.971439-07:00
 description: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o primo\
   \ verborr\xE1gico do JSON. Voc\xEA ter\xE1 que lidar com XML ao trabalhar com sistemas\
   \ legados,\u2026"
-lastmod: '2024-02-25T18:49:44.012787-07:00'
+lastmod: '2024-03-11T00:14:20.085400-06:00'
 model: gpt-4-0125-preview
 summary: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o primo\
   \ verborr\xE1gico do JSON. Voc\xEA ter\xE1 que lidar com XML ao trabalhar com sistemas\

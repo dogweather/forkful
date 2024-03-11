@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:30.103527-07:00
 description: "Extraer subcadenas es el proceso de seleccionar y copiar un conjunto\
   \ de caracteres espec\xEDficos de una cadena de texto m\xE1s grande. Los programadores\
   \ lo\u2026"
-lastmod: '2024-02-25T18:49:55.167057-07:00'
+lastmod: '2024-03-11T00:14:32.431756-06:00'
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas es el proceso de seleccionar y copiar un conjunto de\
   \ caracteres espec\xEDficos de una cadena de texto m\xE1s grande. Los programadores\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:07.425604-07:00
 description: "Att skriva en textfil i Bash g\xF6r det m\xF6jligt att automatisera\
   \ lagring av data, loggning, konfigurationsinst\xE4llningar och mer. Det \xE4r en\
   \ grundl\xE4ggande\u2026"
-lastmod: '2024-02-25T18:49:36.415739-07:00'
+lastmod: '2024-03-11T00:14:11.482206-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Bash g\xF6r det m\xF6jligt att automatisera lagring\
   \ av data, loggning, konfigurationsinst\xE4llningar och mer. Det \xE4r en grundl\xE4\

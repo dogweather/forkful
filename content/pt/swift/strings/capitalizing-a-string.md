@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:28.086100-07:00
 description: "Capitalizar uma string em Swift modifica a string dada de modo que seu\
   \ primeiro caractere seja mai\xFAsculo, e os caracteres restantes sejam min\xFA\
   sculos.\u2026"
-lastmod: '2024-02-25T18:49:44.522256-07:00'
+lastmod: '2024-03-11T00:14:20.635289-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string em Swift modifica a string dada de modo que seu primeiro\
   \ caractere seja mai\xFAsculo, e os caracteres restantes sejam min\xFAsculos.\u2026"

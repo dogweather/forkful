@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:58.854865-07:00
 description: "Analisar HTML significa desmembrar um peda\xE7o de c\xF3digo HTML para\
   \ compreender sua estrutura e conte\xFAdo. Os programadores fazem isso para extrair\
   \ dados,\u2026"
-lastmod: '2024-02-25T18:49:44.709931-07:00'
+lastmod: '2024-03-11T00:14:20.837716-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML significa desmembrar um peda\xE7o de c\xF3digo HTML para compreender\
   \ sua estrutura e conte\xFAdo. Os programadores fazem isso para extrair dados,\u2026"

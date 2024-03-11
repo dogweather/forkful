@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:05:52.245010-07:00
 description: "Mettre en majuscule une cha\xEEne implique de modifier le premier caract\xE8\
   re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\u2026"
-lastmod: '2024-02-25T18:49:54.581875-07:00'
+lastmod: '2024-03-11T00:14:31.809452-06:00'
 model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne implique de modifier le premier caract\xE8\
   re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:56:02.832114-07:00
 description: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
   \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"
-lastmod: '2024-02-25T18:49:47.682922-07:00'
+lastmod: '2024-03-11T00:14:24.093556-06:00'
 model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
   \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"

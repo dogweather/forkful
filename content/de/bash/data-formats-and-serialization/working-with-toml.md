@@ -3,7 +3,7 @@ date: 2024-01-26 04:18:44.284314-07:00
 description: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Format\
   \ zur Serialisierung von Daten. Programmierer sch\xE4tzen es wegen seiner Einfachheit\
   \ und\u2026"
-lastmod: '2024-02-25T18:49:51.134853-07:00'
+lastmod: '2024-03-11T00:14:27.982754-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Format\
   \ zur Serialisierung von Daten. Programmierer sch\xE4tzen es wegen seiner Einfachheit\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:05:10.339057-07:00
 description: "Das Lesen einer Textdatei in Go beinhaltet den Zugriff auf und das Abrufen\
   \ von Inhalten aus einer auf dem Datentr\xE4ger gespeicherten Datei zur Verarbeitung\u2026"
-lastmod: '2024-02-25T18:49:50.507095-07:00'
+lastmod: '2024-03-11T00:14:27.264700-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in Go beinhaltet den Zugriff auf und das Abrufen\
   \ von Inhalten aus einer auf dem Datentr\xE4ger gespeicherten Datei zur Verarbeitung\u2026"

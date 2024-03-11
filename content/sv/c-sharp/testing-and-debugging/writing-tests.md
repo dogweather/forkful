@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:13.005481-07:00
 description: "Att skriva tester i C# inneb\xE4r att skapa automatiserade skript f\xF6\
   r att validera din kods funktionalitet, s\xE4kerst\xE4lla att den beter sig som\
   \ f\xF6rv\xE4ntat.\u2026"
-lastmod: '2024-02-25T18:49:36.215526-07:00'
+lastmod: '2024-03-11T00:14:11.280121-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i C# inneb\xE4r att skapa automatiserade skript f\xF6\
   r att validera din kods funktionalitet, s\xE4kerst\xE4lla att den beter sig som\

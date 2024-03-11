@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:42.664106-07:00
 description: "Parsing a date from a string in Elm involves converting textual information\
   \ representing dates and times into a format that Elm can understand and\u2026"
-lastmod: '2024-02-25T18:49:56.464298-07:00'
+lastmod: '2024-03-11T00:14:33.883855-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Elm involves converting textual information\
   \ representing dates and times into a format that Elm can understand and\u2026"

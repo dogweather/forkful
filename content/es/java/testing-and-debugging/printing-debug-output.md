@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:50.266460-07:00
 description: "Imprimir mensajes de depuraci\xF3n es el arte de mostrar informaci\xF3\
   n temporal en la consola para entender qu\xE9 est\xE1 pasando en nuestro c\xF3digo.\
   \ Los\u2026"
-lastmod: '2024-02-25T18:49:55.429107-07:00'
+lastmod: '2024-03-11T00:14:32.755154-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir mensajes de depuraci\xF3n es el arte de mostrar informaci\xF3n\
   \ temporal en la consola para entender qu\xE9 est\xE1 pasando en nuestro c\xF3digo.\

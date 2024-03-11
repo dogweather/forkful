@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:19.359731-07:00
 description: "Lokittaminen on k\xE4yt\xE4nn\xF6ss\xE4 kuin p\xE4iv\xE4kirjan pit\xE4\
   mist\xE4 koodillesi; se on tapa tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4\
   vi\xE4 datapisteit\xE4, jotka\u2026"
-lastmod: '2024-02-25T18:49:53.574798-07:00'
+lastmod: '2024-03-11T00:14:30.614491-06:00'
 model: gpt-4-1106-preview
 summary: "Lokittaminen on k\xE4yt\xE4nn\xF6ss\xE4 kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4\
   \ koodillesi; se on tapa tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4\

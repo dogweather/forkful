@@ -3,7 +3,7 @@ date: 2024-02-01 21:30:17.266913-07:00
 description: "Reading a text file in Visual Basic for Applications (VBA) involves\
   \ programmatically accessing and extracting the contents of a text file from within\
   \ an\u2026"
-lastmod: '2024-02-25T18:49:56.372142-07:00'
+lastmod: '2024-03-11T00:14:33.812383-06:00'
 model: gpt-4-0125-preview
 summary: "Reading a text file in Visual Basic for Applications (VBA) involves programmatically\
   \ accessing and extracting the contents of a text file from within an\u2026"

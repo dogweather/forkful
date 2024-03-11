@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:28.401275-07:00
 description: "Chercher et remplacer du texte, c'est juste modifier une cha\xEEne par\
   \ une autre dans un bloc de texte. Les programmeurs font \xE7a souvent pour corriger\
   \ des\u2026"
-lastmod: '2024-02-25T18:49:54.416388-07:00'
+lastmod: '2024-03-11T00:14:31.624882-06:00'
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est juste modifier une cha\xEEne par une\
   \ autre dans un bloc de texte. Les programmeurs font \xE7a souvent pour corriger\

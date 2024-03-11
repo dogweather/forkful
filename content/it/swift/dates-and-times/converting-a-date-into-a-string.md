@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:33.484879-07:00
 description: "Tradurre una data in una stringa vuol dire trasformarla in un formato\
   \ leggibile per gli umani. I programmatori lo fanno per mostrare le date in un'app\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:41.631020-07:00'
+lastmod: '2024-03-11T00:14:17.398198-06:00'
 model: gpt-4-1106-preview
 summary: "Tradurre una data in una stringa vuol dire trasformarla in un formato leggibile\
   \ per gli umani. I programmatori lo fanno per mostrare le date in un'app o\u2026"

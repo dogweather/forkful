@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:29.176776-07:00
 description: "S\xF6kning och ers\xE4ttning av text hanterar automatisk \xE4ndring\
   \ av str\xE4ngar i filer. Programmerare anv\xE4nder det f\xF6r att effektivisera\
   \ uppdateringar, korrigera\u2026"
-lastmod: '2024-02-25T18:49:36.380322-07:00'
+lastmod: '2024-03-11T00:14:11.445406-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF6kning och ers\xE4ttning av text hanterar automatisk \xE4ndring av str\xE4\
   ngar i filer. Programmerare anv\xE4nder det f\xF6r att effektivisera uppdateringar,\

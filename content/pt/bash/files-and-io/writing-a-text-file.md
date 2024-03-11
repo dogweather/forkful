@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:08.193191-07:00
 description: "Escrever um arquivo de texto em Bash permite automatizar o armazenamento\
   \ de dados, registro, configura\xE7\xF5es e muito mais. \xC9 uma habilidade fundamental\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:44.390265-07:00'
+lastmod: '2024-03-11T00:14:20.493383-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Bash permite automatizar o armazenamento\
   \ de dados, registro, configura\xE7\xF5es e muito mais. \xC9 uma habilidade fundamental\

@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:27.889129-07:00
 description: "Att skapa en tempor\xE4r fil i Dart inneb\xE4r att man genererar en\
   \ fil som \xE4r avsedd f\xF6r kortsiktig anv\xE4ndning, fr\xE4mst f\xF6r scenarier\
   \ som cachning av data,\u2026"
-lastmod: '2024-03-09T21:06:02.386953-07:00'
+lastmod: '2024-03-11T00:14:10.965921-06:00'
 model: gpt-4-0125-preview
 summary: "Att skapa en tempor\xE4r fil i Dart inneb\xE4r att man genererar en fil\
   \ som \xE4r avsedd f\xF6r kortsiktig anv\xE4ndning, fr\xE4mst f\xF6r scenarier som\

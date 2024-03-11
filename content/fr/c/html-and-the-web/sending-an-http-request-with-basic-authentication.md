@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:00.344765-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base en C n\xE9\
   cessite de cr\xE9er une requ\xEAte HTTP qui inclut un en-t\xEAte d'autorisation\
   \ avec les\u2026"
-lastmod: '2024-02-25T18:49:54.995804-07:00'
+lastmod: '2024-03-11T00:14:32.243407-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base en C n\xE9\
   cessite de cr\xE9er une requ\xEAte HTTP qui inclut un en-t\xEAte d'autorisation\

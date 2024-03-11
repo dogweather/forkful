@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:44.024902-07:00
 description: "O formato Comma-Separated Values (CSV) \xE9 onipresente para a troca\
   \ de dados devido \xE0 sua simplicidade e facilidade de integra\xE7\xE3o com a maioria\
   \ das\u2026"
-lastmod: '2024-02-25T18:49:43.748997-07:00'
+lastmod: '2024-03-11T00:14:19.747494-06:00'
 model: gpt-4-0125-preview
 summary: "O formato Comma-Separated Values (CSV) \xE9 onipresente para a troca de\
   \ dados devido \xE0 sua simplicidade e facilidade de integra\xE7\xE3o com a maioria\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:44.533230-07:00
 description: "Baixar uma p\xE1gina da web \xE9 o processo de pegar o conte\xFAdo de\
   \ uma p\xE1gina atrav\xE9s da Internet e salv\xE1-lo localmente. Programadores fazem\
   \ isso para an\xE1lise\u2026"
-lastmod: '2024-02-25T18:49:44.496152-07:00'
+lastmod: '2024-03-11T00:14:20.606773-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 o processo de pegar o conte\xFAdo de uma\
   \ p\xE1gina atrav\xE9s da Internet e salv\xE1-lo localmente. Programadores fazem\

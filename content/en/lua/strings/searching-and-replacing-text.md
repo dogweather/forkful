@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:20.125940-07:00
 description: "Searching and replacing text means swapping out specific strings in\
   \ a block of text with others. Programmers do this for tasks like fixing errors,\u2026"
-lastmod: '2024-02-25T18:49:56.631154-07:00'
+lastmod: '2024-03-11T00:14:34.056601-06:00'
 model: gpt-4-1106-preview
 summary: "Searching and replacing text means swapping out specific strings in a block\
   \ of text with others. Programmers do this for tasks like fixing errors,\u2026"

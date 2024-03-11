@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:49.970956-07:00
 description: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart\
   \ dir viel Tipparbeit und vereinfacht die Code-Wartung. Es erm\xF6glicht dynamische\u2026"
-lastmod: '2024-02-25T18:49:51.344345-07:00'
+lastmod: '2024-03-11T00:14:28.199609-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart dir\
   \ viel Tipparbeit und vereinfacht die Code-Wartung. Es erm\xF6glicht dynamische\u2026"

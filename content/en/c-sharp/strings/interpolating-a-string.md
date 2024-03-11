@@ -2,7 +2,7 @@
 date: 2024-02-25 17:04:52.754084-07:00
 description: "String interpolation in C# allows you to create a new string by including\
   \ expressions inside a string literal, making it easier to format and concatenate\u2026"
-lastmod: '2024-02-25T18:49:56.520378-07:00'
+lastmod: '2024-03-11T00:14:33.939802-06:00'
 model: gpt-4-0125-preview
 summary: "String interpolation in C# allows you to create a new string by including\
   \ expressions inside a string literal, making it easier to format and concatenate\u2026"

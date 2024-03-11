@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:17.894171-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Visual Basic for\
   \ Applications (VBA) -ohjelmointikieless\xE4 on prosessi, jossa p\xE4iv\xE4m\xE4\
   \xE4r\xE4n datatyyppi muutetaan\u2026"
-lastmod: '2024-02-25T18:49:53.336477-07:00'
+lastmod: '2024-03-11T00:14:30.351546-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Visual Basic for Applications\
   \ (VBA) -ohjelmointikieless\xE4 on prosessi, jossa p\xE4iv\xE4m\xE4\xE4r\xE4n datatyyppi\

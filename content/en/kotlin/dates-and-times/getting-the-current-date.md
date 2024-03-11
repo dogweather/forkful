@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:48.540827-07:00
 description: "In programming, getting the current date is a fundamental task that\
   \ enables developers to access, display, or manipulate the current date within their\u2026"
-lastmod: '2024-02-25T18:49:56.503798-07:00'
+lastmod: '2024-03-11T00:14:33.923255-06:00'
 model: gpt-4-0125-preview
 summary: "In programming, getting the current date is a fundamental task that enables\
   \ developers to access, display, or manipulate the current date within their\u2026"

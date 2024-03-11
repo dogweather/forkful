@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:29.226472-07:00
 description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla versaler\
   \ (stora bokst\xE4ver) i en text omvandlas till gemener (sm\xE5 bokst\xE4ver). Programmerare\
   \ g\xF6r\u2026"
-lastmod: '2024-02-25T18:49:36.241450-07:00'
+lastmod: '2024-03-11T00:14:11.307409-06:00'
 model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla versaler (stora\
   \ bokst\xE4ver) i en text omvandlas till gemener (sm\xE5 bokst\xE4ver). Programmerare\

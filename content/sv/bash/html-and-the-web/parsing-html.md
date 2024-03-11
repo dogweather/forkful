@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:31.909745-07:00
 description: "Att parsa HTML inneb\xE4r att g\xE5 igenom strukturen och inneh\xE5\
   llet i en HTML-fil f\xF6r att extrahera information. Programmerare g\xF6r det f\xF6\
   r att komma \xE5t data,\u2026"
-lastmod: '2024-02-25T18:49:36.395493-07:00'
+lastmod: '2024-03-11T00:14:11.461033-06:00'
 model: gpt-4-0125-preview
 summary: "Att parsa HTML inneb\xE4r att g\xE5 igenom strukturen och inneh\xE5llet\
   \ i en HTML-fil f\xF6r att extrahera information. Programmerare g\xF6r det f\xF6\

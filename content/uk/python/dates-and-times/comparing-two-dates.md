@@ -2,7 +2,7 @@
 date: 2024-01-20 17:33:32.346766-07:00
 description: "Comparing two dates lets you see which is earlier or later, or if they're\
   \ the same. Programmers do this to track events, handle bookings, or set up\u2026"
-lastmod: '2024-02-25T18:49:46.162393-07:00'
+lastmod: '2024-03-11T00:14:22.426067-06:00'
 model: gpt-4-1106-preview
 summary: "Comparing two dates lets you see which is earlier or later, or if they're\
   \ the same. Programmers do this to track events, handle bookings, or set up\u2026"

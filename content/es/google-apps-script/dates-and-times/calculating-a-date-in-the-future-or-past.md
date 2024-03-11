@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:48:57.453320-07:00
 description: "Calcular una fecha en el futuro o en el pasado se trata de manipular\
   \ objetos de fecha para encontrar fechas m\xE1s all\xE1 o antes de la fecha actual,\u2026"
-lastmod: '2024-02-25T18:49:55.148443-07:00'
+lastmod: '2024-03-11T00:14:32.412073-06:00'
 model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o en el pasado se trata de manipular objetos\
   \ de fecha para encontrar fechas m\xE1s all\xE1 o antes de la fecha actual,\u2026"

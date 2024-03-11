@@ -7,7 +7,7 @@ description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0
   \uACE0, \uBB38\uC790\uC5F4\uC744 \uC27D\uAC8C \uC870\uC791\uD558\uAE30 \uC704\uD574\
   \ \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-02-25T18:49:52.693581-07:00'
+lastmod: '2024-03-11T00:14:29.636133-06:00'
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0\uC218\
   \uB098 \uC0C1\uC218, \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uBB38\uC790\uC5F4 \uB0B4\

@@ -3,7 +3,7 @@ date: 2024-01-26 01:00:15.712620-07:00
 description: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3\
   w i innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do\
   \ pliku lub strumienia wyj\u015Bciowego.\u2026"
-lastmod: '2024-02-25T18:49:33.958885-07:00'
+lastmod: '2024-03-11T00:14:08.782636-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3w i\
   \ innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do pliku\

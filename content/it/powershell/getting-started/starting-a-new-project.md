@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:02.923861-07:00
 description: "Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere\
   \ problemi specifici. I programmatori lo fanno per innovare, lavorare su idee\u2026"
-lastmod: '2024-02-25T18:49:41.504369-07:00'
+lastmod: '2024-03-11T00:14:17.255849-06:00'
 model: gpt-4-1106-preview
 summary: "Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere problemi\
   \ specifici. I programmatori lo fanno per innovare, lavorare su idee\u2026"

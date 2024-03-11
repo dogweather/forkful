@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:30.954119-07:00
 description: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum in eine\
   \ Textform zu bringen, die Menschen lesen k\xF6nnen. Programmierer machen das, um\
   \ Daten\u2026"
-lastmod: '2024-02-25T18:49:51.371022-07:00'
+lastmod: '2024-03-11T00:14:28.228526-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum in eine Textform\
   \ zu bringen, die Menschen lesen k\xF6nnen. Programmierer machen das, um Daten\u2026"

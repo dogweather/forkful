@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:04:35.640748-07:00
 description: "Debugoutput afdrukken in JavaScript gaat over het tonen van variabelen,\
   \ fouten of andere informatie die helpt om snel te begrijpen wat je code doet.\u2026"
-lastmod: '2024-02-25T18:49:48.532465-07:00'
+lastmod: '2024-03-11T00:14:25.042773-06:00'
 model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken in JavaScript gaat over het tonen van variabelen,\
   \ fouten of andere informatie die helpt om snel te begrijpen wat je code doet.\u2026"

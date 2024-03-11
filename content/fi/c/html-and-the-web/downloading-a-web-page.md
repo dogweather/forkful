@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:00.601234-07:00
 description: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti\
   \ internetsivun sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen\
   \ k\xE4sittely\xE4 tai offline-\u2026"
-lastmod: '2024-02-25T18:49:53.943736-07:00'
+lastmod: '2024-03-11T00:14:31.080186-06:00'
 model: gpt-4-0125-preview
 summary: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti internetsivun\
   \ sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen k\xE4sittely\xE4\

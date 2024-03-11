@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:25.994422-07:00
 description: "Wypisywanie danych debugowych to jak rozmowa z komputerem \u2013 wysy\u0142\
   asz mu pytanie i czekasz na odpowied\u017A. Programi\u015Bci to robi\u0105, aby\
   \ zrozumie\u0107, co dzieje si\u0119\u2026"
-lastmod: '2024-02-25T18:49:34.130108-07:00'
+lastmod: '2024-03-11T00:14:08.963155-06:00'
 model: gpt-4-1106-preview
 summary: "Wypisywanie danych debugowych to jak rozmowa z komputerem \u2013 wysy\u0142\
   asz mu pytanie i czekasz na odpowied\u017A. Programi\u015Bci to robi\u0105, aby\

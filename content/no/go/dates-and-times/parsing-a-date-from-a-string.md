@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:05:11.013444-07:00
 description: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
   \ representert som tekst til et mer brukbart format (f.eks. `time.Time`). Programmerere\u2026"
-lastmod: '2024-02-25T18:49:38.509260-07:00'
+lastmod: '2024-03-11T00:14:13.792488-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
   \ representert som tekst til et mer brukbart format (f.eks. `time.Time`). Programmerere\u2026"

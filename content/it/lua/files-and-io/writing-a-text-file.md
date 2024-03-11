@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:43.564995-07:00
 description: "Scrivere su un file di testo in Lua comporta la creazione o l'apertura\
   \ di un file in modalit\xE0 di scrittura, quindi utilizzare le operazioni sui file\
   \ per\u2026"
-lastmod: '2024-02-25T18:49:41.437897-07:00'
+lastmod: '2024-03-11T00:14:17.184660-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Lua comporta la creazione o l'apertura di\
   \ un file in modalit\xE0 di scrittura, quindi utilizzare le operazioni sui file\

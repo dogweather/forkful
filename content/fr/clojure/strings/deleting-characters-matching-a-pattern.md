@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:06.420847-07:00
 description: "En programmation, supprimer des caract\xE8res selon un motif, c'est\
   \ chercher et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte.\
   \ On fait \xE7a\u2026"
-lastmod: '2024-02-25T18:49:54.154085-07:00'
+lastmod: '2024-03-11T00:14:31.298116-06:00'
 model: gpt-4-1106-preview
 summary: "En programmation, supprimer des caract\xE8res selon un motif, c'est chercher\
   \ et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte. On fait\

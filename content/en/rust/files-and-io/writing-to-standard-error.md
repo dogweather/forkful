@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:38.101347-07:00
 description: "Writing to standard error (stderr) in Rust is about directing error\
   \ messages and diagnostics to the console separately from the standard output (stdout).\u2026"
-lastmod: '2024-02-25T18:49:56.334228-07:00'
+lastmod: '2024-03-11T00:14:33.772282-06:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Rust is about directing error messages\
   \ and diagnostics to the console separately from the standard output (stdout).\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:52.139592-07:00
 description: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kodebase.\
   \ Programmerere gj\xF8r det for \xE5 skape nye applikasjoner, l\xF8se problemer\
   \ eller\u2026"
-lastmod: '2024-02-25T18:49:39.362731-07:00'
+lastmod: '2024-03-11T00:14:14.783740-06:00'
 model: gpt-4-1106-preview
 summary: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kodebase.\
   \ Programmerere gj\xF8r det for \xE5 skape nye applikasjoner, l\xF8se problemer\

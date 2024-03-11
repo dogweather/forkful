@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:15.736891-07:00
 description: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
   \ tarkoittaa tietyn ajanjakson lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4\
   \ p\xE4iv\xE4st\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
-lastmod: '2024-02-25T18:49:53.172807-07:00'
+lastmod: '2024-03-11T00:14:30.127919-06:00'
 model: gpt-4-1106-preview
 summary: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
   \ tietyn ajanjakson lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4\

@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:15.582559-07:00
 description: "Deleting characters matching a specific pattern is a technique used\
   \ to cleanse or format strings in programming. In the context of Google Apps Script,\u2026"
-lastmod: '2024-02-25T18:49:56.121329-07:00'
+lastmod: '2024-03-11T00:14:33.502072-06:00'
 model: gpt-4-0125-preview
 summary: "Deleting characters matching a specific pattern is a technique used to cleanse\
   \ or format strings in programming. In the context of Google Apps Script,\u2026"

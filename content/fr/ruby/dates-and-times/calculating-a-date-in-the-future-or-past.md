@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:51.441520-07:00
 description: "Calculer une date dans le futur ou le pass\xE9, c'est d\xE9terminer\
   \ une date relative \xE0 une autre en y ajoutant ou en retranchant un certain temps.\
   \ Les\u2026"
-lastmod: '2024-02-25T18:49:55.055562-07:00'
+lastmod: '2024-03-11T00:14:32.306086-06:00'
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est d\xE9terminer une\
   \ date relative \xE0 une autre en y ajoutant ou en retranchant un certain temps.\

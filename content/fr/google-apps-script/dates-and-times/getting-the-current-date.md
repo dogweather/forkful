@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:30.976121-07:00
 description: "Obtenir la date actuelle avec Google Apps Script consiste \xE0 r\xE9\
   cup\xE9rer la date et l'heure en direct, une t\xE2che courante pour l'automatisation\
   \ des t\xE2ches,\u2026"
-lastmod: '2024-02-25T18:49:54.093705-07:00'
+lastmod: '2024-03-11T00:14:31.235457-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle avec Google Apps Script consiste \xE0 r\xE9cup\xE9\
   rer la date et l'heure en direct, une t\xE2che courante pour l'automatisation des\

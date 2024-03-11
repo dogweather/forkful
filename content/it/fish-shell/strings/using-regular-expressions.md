@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:16:47.108031-07:00
 description: "Le espressioni regolari (regex) in Fish Shell ti permettono di cercare,\
   \ correlare e manipolare stringhe basate su schemi specifici. I programmatori\u2026"
-lastmod: '2024-02-25T18:49:41.690722-07:00'
+lastmod: '2024-03-11T00:14:17.467473-06:00'
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in Fish Shell ti permettono di cercare,\
   \ correlare e manipolare stringhe basate su schemi specifici. I programmatori\u2026"

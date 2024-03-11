@@ -2,7 +2,7 @@
 date: 2024-01-26 04:37:02.945670-07:00
 description: "I numeri complessi sono costituiti da una parte reale e una immaginaria.\
   \ I programmatori li utilizzano in campi come l'elaborazione dei segnali, la\u2026"
-lastmod: '2024-02-25T18:49:41.454004-07:00'
+lastmod: '2024-03-11T00:14:17.203027-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi sono costituiti da una parte reale e una immaginaria.\
   \ I programmatori li utilizzano in campi come l'elaborazione dei segnali, la\u2026"

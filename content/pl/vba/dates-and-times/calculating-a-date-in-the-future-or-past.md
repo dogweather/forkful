@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:31.039455-07:00
 description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
   \ na okre\u015Bleniu daty, kt\xF3ra jest okre\u015Blon\u0105 liczb\u0119 dni, miesi\u0119\
   cy lub lat dalej od danej daty.\u2026"
-lastmod: '2024-02-25T18:49:33.611908-07:00'
+lastmod: '2024-03-11T00:14:08.422682-06:00'
 model: gpt-4-0125-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
   \ na okre\u015Bleniu daty, kt\xF3ra jest okre\u015Blon\u0105 liczb\u0119 dni, miesi\u0119\

@@ -3,7 +3,7 @@ date: 2024-01-26 00:54:11.869434-07:00
 description: "Fehlerbehandlung ist die Art und Weise, wie Ihr Code Probleme bew\xE4\
   ltigt, die w\xE4hrend der Ausf\xFChrung auftreten - wie das Fangen eines unerwarteten\
   \ Balls,\u2026"
-lastmod: '2024-02-25T18:49:50.915002-07:00'
+lastmod: '2024-03-11T00:14:27.747225-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung ist die Art und Weise, wie Ihr Code Probleme bew\xE4ltigt,\
   \ die w\xE4hrend der Ausf\xFChrung auftreten - wie das Fangen eines unerwarteten\

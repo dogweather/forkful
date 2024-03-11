@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:28.747705-07:00
 description: "Analizar una fecha a partir de una cadena implica interpretar el formato\
   \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\
   \ a\xF1o.\u2026"
-lastmod: '2024-02-25T18:49:55.854345-07:00'
+lastmod: '2024-03-11T00:14:33.207334-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha a partir de una cadena implica interpretar el formato\
   \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\

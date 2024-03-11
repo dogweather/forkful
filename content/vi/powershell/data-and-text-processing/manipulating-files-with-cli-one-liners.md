@@ -6,7 +6,7 @@ description: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1
   \ l\u1EC7nh m\u1ED9t d\xF2ng trong PowerShell li\xEAn quan \u0111\u1EBFn vi\u1EC7\
   c nhanh ch\xF3ng thay \u0111\u1ED5i, di chuy\u1EC3n ho\u1EB7c l\u1EA5y d\u1EEF li\u1EC7\
   u t\u1EC7p tin tr\u1EF1c\u2026"
-lastmod: '2024-02-25T18:49:35.274766-07:00'
+lastmod: '2024-03-11T00:14:10.222529-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7\
   nh m\u1ED9t d\xF2ng trong PowerShell li\xEAn quan \u0111\u1EBFn vi\u1EC7c nhanh\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:01.260168-07:00
 description: "Supprimer des caract\xE8res selon un patron, c'est filtrer une cha\xEE\
   ne de caract\xE8res pour en \xE9liminer certains \xE9l\xE9ments. Les programmeurs\
   \ le font pour\u2026"
-lastmod: '2024-02-25T18:49:54.237650-07:00'
+lastmod: '2024-03-11T00:14:31.435947-06:00'
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un patron, c'est filtrer une cha\xEEne\
   \ de caract\xE8res pour en \xE9liminer certains \xE9l\xE9ments. Les programmeurs\

@@ -6,7 +6,7 @@ date: 2024-01-28 23:01:35.003642-07:00
 description: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w skryptu\
   \ do realizacji konkretnych zada\u0144. Robimy to, poniewa\u017C sprawia to, \u017C\
   e kod jest\u2026"
-lastmod: '2024-02-25T18:49:34.220519-07:00'
+lastmod: '2024-03-11T00:14:09.060379-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w skryptu\
   \ do realizacji konkretnych zada\u0144. Robimy to, poniewa\u017C sprawia to, \u017C\

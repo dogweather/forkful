@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:04.182021-07:00
 description: "XML:n k\xE4sittely tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4 ja\
   \ tuottamista Swiftiss\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 tiedonvaihtoa varten,\
   \ erityisesti silloin, kun\u2026"
-lastmod: '2024-02-25T18:49:53.839113-07:00'
+lastmod: '2024-03-11T00:14:30.973675-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4 ja tuottamista\
   \ Swiftiss\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 tiedonvaihtoa varten, erityisesti\

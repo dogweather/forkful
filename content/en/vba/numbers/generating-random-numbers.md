@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:24.808919-07:00
 description: "Generating random numbers in Visual Basic for Applications (VBA) allows\
   \ programs to simulate processes with elements of chance or variability, such as\u2026"
-lastmod: '2024-02-25T18:49:56.353173-07:00'
+lastmod: '2024-03-11T00:14:33.792746-06:00'
 model: gpt-4-0125-preview
 summary: "Generating random numbers in Visual Basic for Applications (VBA) allows\
   \ programs to simulate processes with elements of chance or variability, such as\u2026"

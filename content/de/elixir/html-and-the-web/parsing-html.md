@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:42.251444-07:00
 description: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen\
   \ aus HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"
-lastmod: '2024-02-25T18:49:50.657056-07:00'
+lastmod: '2024-03-11T00:14:27.425138-06:00'
 model: gpt-4-0125-preview
 summary: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus\
   \ HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"

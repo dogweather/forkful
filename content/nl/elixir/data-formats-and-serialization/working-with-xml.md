@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:15.639804-07:00
 description: "Werken met XML in Elixir betekent het parseren, cre\xEBren en manipuleren\
   \ van XML-gegevens. Programmeurs pakken XML aan omdat het wijdverbreid is in\u2026"
-lastmod: '2024-02-25T18:49:47.878910-07:00'
+lastmod: '2024-03-11T00:14:24.299982-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML in Elixir betekent het parseren, cre\xEBren en manipuleren\
   \ van XML-gegevens. Programmeurs pakken XML aan omdat het wijdverbreid is in\u2026"

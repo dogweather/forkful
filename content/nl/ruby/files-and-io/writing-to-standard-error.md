@@ -5,7 +5,7 @@ date: 2024-01-28 22:13:41.666380-07:00
 description: "Standaardfout (`stderr`) is een stroom die los staat van standaarduitvoer\
   \ (`stdout`) en wordt voornamelijk gebruikt voor het uitgeven van foutmeldingen\
   \ of\u2026"
-lastmod: '2024-02-25T18:49:48.677228-07:00'
+lastmod: '2024-03-11T00:14:25.218618-06:00'
 model: gpt-4-0125-preview
 summary: "Standaardfout (`stderr`) is een stroom die los staat van standaarduitvoer\
   \ (`stdout`) en wordt voornamelijk gebruikt voor het uitgeven van foutmeldingen\

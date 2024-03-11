@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:21.167265-07:00
 description: "L'interpolazione di stringhe consente di inserire variabili dentro una\
   \ stringa di testo. Lo facciamo per rendere il codice pi\xF9 leggibile e per comporre\u2026"
-lastmod: '2024-02-25T18:49:41.530637-07:00'
+lastmod: '2024-03-11T00:14:17.288396-06:00'
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe consente di inserire variabili dentro una stringa\
   \ di testo. Lo facciamo per rendere il codice pi\xF9 leggibile e per comporre\u2026"

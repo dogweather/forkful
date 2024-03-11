@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:58.002080-07:00
 description: "Encontrar o comprimento de uma string no Google Apps Script, uma linguagem\
   \ de scripting em nuvem JavaScript que permite automatizar tarefas em produtos do\u2026"
-lastmod: '2024-02-25T18:49:43.760902-07:00'
+lastmod: '2024-03-11T00:14:19.761379-06:00'
 model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string no Google Apps Script, uma linguagem\
   \ de scripting em nuvem JavaScript que permite automatizar tarefas em produtos do\u2026"

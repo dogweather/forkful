@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:28.085806-07:00
 description: "Een nieuw project starten gaat over het leggen van de fundamenten voor\
   \ je codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten\
   \ of\u2026"
-lastmod: '2024-02-25T18:49:48.365434-07:00'
+lastmod: '2024-03-11T00:14:24.864009-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten gaat over het leggen van de fundamenten voor je\
   \ codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten of\u2026"

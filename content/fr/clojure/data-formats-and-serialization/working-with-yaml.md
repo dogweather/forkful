@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:52.401814-07:00
 description: "YAML, un acronyme r\xE9cursif pour \"YAML Ain't Markup Language\" (YAML\
   \ n'est pas un langage de balisage), est un format de s\xE9rialisation de donn\xE9\
   es lisible\u2026"
-lastmod: '2024-02-25T18:49:54.189223-07:00'
+lastmod: '2024-03-11T00:14:31.335175-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, un acronyme r\xE9cursif pour \"YAML Ain't Markup Language\" (YAML\
   \ n'est pas un langage de balisage), est un format de s\xE9rialisation de donn\xE9\

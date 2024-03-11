@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:15.864864-07:00
 description: "Wyszukiwanie i zamiana tekstu to podstawowe operacje umo\u017Cliwiaj\u0105\
   ce zmian\u0119 jednego ci\u0105gu znak\xF3w na inny w obr\u0119bie wi\u0119kszego\
   \ tekstu. Programi\u015Bci robi\u0105 to\u2026"
-lastmod: '2024-02-25T18:49:33.626943-07:00'
+lastmod: '2024-03-11T00:14:08.438433-06:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to podstawowe operacje umo\u017Cliwiaj\u0105\
   ce zmian\u0119 jednego ci\u0105gu znak\xF3w na inny w obr\u0119bie wi\u0119kszego\

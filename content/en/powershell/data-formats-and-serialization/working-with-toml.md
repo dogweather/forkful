@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:51.843009-07:00
 description: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ format that's easy to read due to its clear semantics. Programmers use it for\u2026"
-lastmod: '2024-02-25T18:49:56.743344-07:00'
+lastmod: '2024-03-11T00:14:34.173471-06:00'
 model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ format that's easy to read due to its clear semantics. Programmers use it for\u2026"

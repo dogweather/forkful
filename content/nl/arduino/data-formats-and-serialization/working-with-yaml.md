@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:24.039567-07:00
 description: "YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te begrijpen\
   \ gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken\u2026"
-lastmod: '2024-02-25T18:49:48.425784-07:00'
+lastmod: '2024-03-11T00:14:24.927520-06:00'
 model: gpt-4-0125-preview
 summary: "YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te begrijpen\
   \ gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken\u2026"

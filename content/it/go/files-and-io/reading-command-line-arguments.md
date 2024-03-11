@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:12.760859-07:00
 description: "Leggere gli argomenti da linea di comando in Go implica l'estrazione\
   \ degli argomenti forniti a un programma durante la sua invocazione dal terminale\
   \ o dal\u2026"
-lastmod: '2024-02-25T18:49:40.855287-07:00'
+lastmod: '2024-03-11T00:14:16.475158-06:00'
 model: gpt-4-0125-preview
 summary: "Leggere gli argomenti da linea di comando in Go implica l'estrazione degli\
   \ argomenti forniti a un programma durante la sua invocazione dal terminale o dal\u2026"

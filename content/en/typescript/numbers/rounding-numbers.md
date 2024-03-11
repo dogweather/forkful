@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:42.587583-07:00
 description: "Rounding numbers is trimming a number to a specific precision. Programmers\
   \ do it to control numerical output for readability, display purposes, or when\u2026"
-lastmod: '2024-02-25T18:49:56.278001-07:00'
+lastmod: '2024-03-11T00:14:33.713275-06:00'
 model: gpt-4-1106-preview
 summary: "Rounding numbers is trimming a number to a specific precision. Programmers\
   \ do it to control numerical output for readability, display purposes, or when\u2026"

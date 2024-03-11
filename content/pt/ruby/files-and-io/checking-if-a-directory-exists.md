@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:14.014719-07:00
 description: "Verificar se um diret\xF3rio existe em Ruby permite que programadores\
   \ verifiquem a presen\xE7a de um diret\xF3rio antes de realizar opera\xE7\xF5es\
   \ como ler arquivos ou\u2026"
-lastmod: '2024-02-25T18:49:44.730706-07:00'
+lastmod: '2024-03-11T00:14:20.855200-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Ruby permite que programadores verifiquem\
   \ a presen\xE7a de um diret\xF3rio antes de realizar opera\xE7\xF5es como ler arquivos\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:38.985265-07:00
 description: "Das Herunterladen einer Webseite erm\xF6glicht es uns, den Inhalt abzurufen\
   \ und zu nutzen. Programmierer machen dies, um Daten zu analysieren, zu \xFCberwachen,\u2026"
-lastmod: '2024-02-25T18:49:50.617435-07:00'
+lastmod: '2024-03-11T00:14:27.383806-06:00'
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite erm\xF6glicht es uns, den Inhalt abzurufen\
   \ und zu nutzen. Programmierer machen dies, um Daten zu analysieren, zu \xFCberwachen,\u2026"

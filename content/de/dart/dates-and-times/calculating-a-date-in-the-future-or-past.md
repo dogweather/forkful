@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:42.681926-07:00
 description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine\
   \ g\xE4ngige Aufgabe f\xFCr Programmierer, die sich mit Terminplanung, Erinnerungen\
   \ oder\u2026"
-lastmod: '2024-03-09T21:06:17.588261-07:00'
+lastmod: '2024-03-11T00:14:27.490382-06:00'
 model: gpt-4-0125-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine g\xE4\
   ngige Aufgabe f\xFCr Programmierer, die sich mit Terminplanung, Erinnerungen oder\u2026"

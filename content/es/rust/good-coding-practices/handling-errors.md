@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:59.700648-07:00
 description: "El manejo de errores es lidiar con las cosas cuando se tuercen. Los\
   \ programadores lo hacen para manejar lo inesperado, asegurando que sus programas\
   \ en\u2026"
-lastmod: '2024-02-25T18:49:55.348133-07:00'
+lastmod: '2024-03-11T00:14:32.669670-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores es lidiar con las cosas cuando se tuercen. Los programadores\
   \ lo hacen para manejar lo inesperado, asegurando que sus programas en\u2026"

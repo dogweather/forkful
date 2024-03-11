@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:59.505873-07:00
 description: "Een tekstbestand schrijven betekent data opslaan in een bestand op de\
   \ schijf in tekstformaat. Programmeurs doen dit voor data-opslag, configuratie,\u2026"
-lastmod: '2024-02-25T18:49:48.083765-07:00'
+lastmod: '2024-03-11T00:14:24.566652-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven betekent data opslaan in een bestand op de schijf\
   \ in tekstformaat. Programmeurs doen dit voor data-opslag, configuratie,\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:22.396960-07:00
 description: "We halen de huidige datum op om de gegevens van vandaag te kennen. Het\
   \ is cruciaal voor tal van functies \u2013 denk aan logs, proefversies, evenementen.\
   \ Wat\u2026"
-lastmod: '2024-02-25T18:49:48.117708-07:00'
+lastmod: '2024-03-11T00:14:24.602022-06:00'
 model: gpt-4-0125-preview
 summary: "We halen de huidige datum op om de gegevens van vandaag te kennen. Het is\
   \ cruciaal voor tal van functies \u2013 denk aan logs, proefversies, evenementen.\

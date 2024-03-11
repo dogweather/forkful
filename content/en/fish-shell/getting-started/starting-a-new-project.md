@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:14.094776-07:00
 description: "Starting a new project means initializing a fresh directory with everything\
   \ you need to get coding. Programmers do this to kick-off development in a\u2026"
-lastmod: '2024-02-25T18:49:56.910083-07:00'
+lastmod: '2024-03-11T00:14:34.352841-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project means initializing a fresh directory with everything\
   \ you need to get coding. Programmers do this to kick-off development in a\u2026"

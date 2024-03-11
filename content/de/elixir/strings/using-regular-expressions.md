@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:16:29.192011-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in Elixir werden verwendet, um in Zeichenketten\
   \ basierend auf spezifischen Mustern zu suchen, \xDCbereinstimmungen zu finden und\u2026"
-lastmod: '2024-02-25T18:49:50.649493-07:00'
+lastmod: '2024-03-11T00:14:27.417016-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Elixir werden verwendet, um in Zeichenketten\
   \ basierend auf spezifischen Mustern zu suchen, \xDCbereinstimmungen zu finden und\u2026"

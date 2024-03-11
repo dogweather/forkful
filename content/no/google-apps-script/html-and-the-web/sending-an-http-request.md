@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:46.274847-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om \xE5\
   \ programmert utf\xF8re et kall til en ekstern webserver eller API. Programmerere\
   \ gj\xF8r dette for\u2026"
-lastmod: '2024-02-25T18:49:38.541582-07:00'
+lastmod: '2024-03-11T00:14:13.828002-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om \xE5 programmert\
   \ utf\xF8re et kall til en ekstern webserver eller API. Programmerere gj\xF8r dette\

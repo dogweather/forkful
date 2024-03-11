@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:52.918102-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Go implica\
   \ agregar un encabezado de autorizaci\xF3n a tu solicitud que incluya un nombre\
   \ de usuario y\u2026"
-lastmod: '2024-02-25T18:49:55.085558-07:00'
+lastmod: '2024-03-11T00:14:32.337618-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Go implica agregar\
   \ un encabezado de autorizaci\xF3n a tu solicitud que incluya un nombre de usuario\

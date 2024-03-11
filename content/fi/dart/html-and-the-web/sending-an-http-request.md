@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:40.224090-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoinnin\
   \ aloittamista web-palvelimen tai API:n kanssa Dart-sovelluksesta. Ohjelmoijat tekev\xE4\
   t sen\u2026"
-lastmod: '2024-03-09T21:06:20.177715-07:00'
+lastmod: '2024-03-11T00:14:30.198982-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoinnin aloittamista\
   \ web-palvelimen tai API:n kanssa Dart-sovelluksesta. Ohjelmoijat tekev\xE4t sen\u2026"

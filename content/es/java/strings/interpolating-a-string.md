@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:11.692932-07:00
 description: "Interpolar una cadena significa insertar valores dentro de una string\
   \ de forma din\xE1mica para construir un mensaje. Los programadores lo hacen para\
   \ hacer\u2026"
-lastmod: '2024-02-25T18:49:55.413551-07:00'
+lastmod: '2024-03-11T00:14:32.738652-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar una cadena significa insertar valores dentro de una string de\
   \ forma din\xE1mica para construir un mensaje. Los programadores lo hacen para hacer\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:22.777526-07:00
 description: "Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista\
   \ toiseen. Koodareille t\xE4m\xE4 on t\xE4rke\xE4\xE4, koska koodin muokkaaminen,\
   \ virheiden\u2026"
-lastmod: '2024-02-25T18:49:53.433664-07:00'
+lastmod: '2024-03-11T00:14:30.459924-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista\
   \ toiseen. Koodareille t\xE4m\xE4 on t\xE4rke\xE4\xE4, koska koodin muokkaaminen,\

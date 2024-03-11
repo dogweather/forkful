@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:23.750393-07:00
 description: "Czytanie argument\xF3w z linii polece\u0144 pozwala naszym skryptom\
   \ Lua na interakcj\u0119 z u\u017Cytkownikiem lub innymi programami poprzez parametry\
   \ uruchomieniowe.\u2026"
-lastmod: '2024-02-25T18:49:33.920540-07:00'
+lastmod: '2024-03-11T00:14:08.743945-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w z linii polece\u0144 pozwala naszym skryptom Lua\
   \ na interakcj\u0119 z u\u017Cytkownikiem lub innymi programami poprzez parametry\

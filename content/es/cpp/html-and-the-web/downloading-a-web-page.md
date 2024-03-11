@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:28.420987-07:00
 description: "Descargar una p\xE1gina web significa traer el contenido de una p\xE1\
   gina de Internet a tu propia m\xE1quina. Los programadores hacen esto para analizar\
   \ los datos,\u2026"
-lastmod: '2024-02-25T18:49:55.843992-07:00'
+lastmod: '2024-03-11T00:14:33.196801-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa traer el contenido de una p\xE1gina\
   \ de Internet a tu propia m\xE1quina. Los programadores hacen esto para analizar\

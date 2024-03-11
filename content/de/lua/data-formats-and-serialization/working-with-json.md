@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:14.410424-07:00
 description: "Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatierten\
   \ Strings in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen\u2026"
-lastmod: '2024-02-25T18:49:51.089344-07:00'
+lastmod: '2024-03-11T00:14:27.935242-06:00'
 model: gpt-4-0125-preview
 summary: "Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatierten Strings\
   \ in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen\u2026"

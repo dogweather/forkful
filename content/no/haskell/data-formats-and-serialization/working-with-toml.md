@@ -3,7 +3,7 @@ date: 2024-01-26 04:22:44.089246-07:00
 description: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \xC5\
   penbare, Minimale Spr\xE5k) data med Haskell. Programmerere gj\xF8r dette for enkelt\
   \ \xE5 h\xE5ndtere\u2026"
-lastmod: '2024-02-25T18:49:39.039225-07:00'
+lastmod: '2024-03-11T00:14:14.430974-06:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \xC5penbare,\
   \ Minimale Spr\xE5k) data med Haskell. Programmerere gj\xF8r dette for enkelt \xE5\

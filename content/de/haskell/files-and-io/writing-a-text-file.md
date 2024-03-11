@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:53.950102-07:00
 description: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien\
   \ mit textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"
-lastmod: '2024-02-25T18:49:51.006164-07:00'
+lastmod: '2024-03-11T00:14:27.846507-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien mit\
   \ textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"

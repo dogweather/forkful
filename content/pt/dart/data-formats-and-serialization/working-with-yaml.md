@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:28.535190-07:00
 description: "YAML, sigla para YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma Linguagem\
   \ de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xEDvel\
   \ por humanos.\u2026"
-lastmod: '2024-03-09T21:06:10.647621-07:00'
+lastmod: '2024-03-11T00:14:19.987678-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, sigla para YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma Linguagem\
   \ de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xEDvel\

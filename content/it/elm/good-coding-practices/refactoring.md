@@ -3,7 +3,7 @@ date: 2024-01-26 01:17:44.328992-07:00
 description: "Il refactoring \xE8 essenzialmente come fare le pulizie di primavera\
   \ nel tuo codice\u2014riguarda la ristrutturazione del codice esistente senza modificarne\
   \ il\u2026"
-lastmod: '2024-02-25T18:49:41.225911-07:00'
+lastmod: '2024-03-11T00:14:16.930304-06:00'
 model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 essenzialmente come fare le pulizie di primavera nel\
   \ tuo codice\u2014riguarda la ristrutturazione del codice esistente senza modificarne\

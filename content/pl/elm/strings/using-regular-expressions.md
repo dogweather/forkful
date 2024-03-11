@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:44.072939-07:00
 description: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017Cywane\
   \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w. W Elm, podobnie\
   \ jak w innych j\u0119zykach,\u2026"
-lastmod: '2024-02-25T18:49:33.675647-07:00'
+lastmod: '2024-03-11T00:14:08.489462-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017Cywane\
   \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w. W Elm, podobnie\

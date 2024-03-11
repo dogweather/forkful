@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:11.861189-07:00
 description: "Parsing av HTML handler om \xE5 trekke ut data eller informasjon fra\
   \ HTML-innhold, en vanlig oppgave n\xE5r man h\xE5ndterer webdata. Programmerere\
   \ gj\xF8r dette for\u2026"
-lastmod: '2024-02-25T18:49:39.402658-07:00'
+lastmod: '2024-03-11T00:14:14.827992-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML handler om \xE5 trekke ut data eller informasjon fra HTML-innhold,\
   \ en vanlig oppgave n\xE5r man h\xE5ndterer webdata. Programmerere gj\xF8r dette\

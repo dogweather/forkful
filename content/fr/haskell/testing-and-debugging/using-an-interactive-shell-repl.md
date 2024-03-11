@@ -2,7 +2,7 @@
 date: 2024-01-26 04:14:45.200745-07:00
 description: "Un shell interactif, ou REPL (Read-Eval-Print Loop), en Haskell vous\
   \ permet d'ex\xE9cuter des extraits de code en direct. C'est un terrain de jeu pour\u2026"
-lastmod: '2024-02-25T18:49:54.558386-07:00'
+lastmod: '2024-03-11T00:14:31.784503-06:00'
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop), en Haskell vous permet\
   \ d'ex\xE9cuter des extraits de code en direct. C'est un terrain de jeu pour\u2026"

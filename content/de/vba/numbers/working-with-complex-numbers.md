@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:05.738369-07:00
 description: "Die Arbeit mit komplexen Zahlen umfasst das Ausf\xFChren mathematischer\
   \ Operationen mit Zahlen, die sowohl einen Realteil als auch einen Imagin\xE4rteil\
   \ haben.\u2026"
-lastmod: '2024-02-25T18:49:50.777654-07:00'
+lastmod: '2024-03-11T00:14:27.602325-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit komplexen Zahlen umfasst das Ausf\xFChren mathematischer\
   \ Operationen mit Zahlen, die sowohl einen Realteil als auch einen Imagin\xE4rteil\

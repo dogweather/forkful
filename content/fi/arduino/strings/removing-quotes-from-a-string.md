@@ -3,7 +3,7 @@ date: 2024-01-26 03:37:05.556687-07:00
 description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten\
   \ (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4\
   rilt\xE4.\u2026"
-lastmod: '2024-02-25T18:49:53.723156-07:00'
+lastmod: '2024-03-11T00:14:30.836446-06:00'
 model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten (`'`)\
   \ tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4rilt\xE4\

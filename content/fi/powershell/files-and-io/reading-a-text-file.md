@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:49.027823-07:00
 description: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen\
   \ tiedoston sis\xE4lt\xE4. Ohjelmoijat lukevat tekstitiedostoja, koska monet\u2026"
-lastmod: '2024-02-25T18:49:53.710294-07:00'
+lastmod: '2024-03-11T00:14:30.771146-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen\
   \ tiedoston sis\xE4lt\xE4. Ohjelmoijat lukevat tekstitiedostoja, koska monet\u2026"

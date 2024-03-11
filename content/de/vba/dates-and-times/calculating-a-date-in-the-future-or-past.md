@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:49:06.029488-07:00
 description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit umfasst\
   \ die Bestimmung eines Datums, das eine festgelegte Anzahl von Tagen, Monaten oder\u2026"
-lastmod: '2024-02-25T18:49:50.798825-07:00'
+lastmod: '2024-03-11T00:14:27.624969-06:00'
 model: gpt-4-0125-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit umfasst die\
   \ Bestimmung eines Datums, das eine festgelegte Anzahl von Tagen, Monaten oder\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:27.551915-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in C# sind ein m\xE4chtiges Werkzeug\
   \ f\xFCr das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern\
   \ erm\xF6glicht,\u2026"
-lastmod: '2024-02-25T18:49:50.938896-07:00'
+lastmod: '2024-03-11T00:14:27.774029-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in C# sind ein m\xE4chtiges Werkzeug f\xFC\
   r das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern erm\xF6\

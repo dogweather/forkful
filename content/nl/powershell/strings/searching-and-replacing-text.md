@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:14.191039-07:00
 description: "Zoeken en vervangen van tekst in bestanden: het is het verwisselen van\
   \ woorden of zinsdelen door anderen. Programmeurs gebruiken het om code bij te\u2026"
-lastmod: '2024-02-25T18:49:48.347799-07:00'
+lastmod: '2024-03-11T00:14:24.844927-06:00'
 model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst in bestanden: het is het verwisselen van woorden\
   \ of zinsdelen door anderen. Programmeurs gebruiken het om code bij te\u2026"

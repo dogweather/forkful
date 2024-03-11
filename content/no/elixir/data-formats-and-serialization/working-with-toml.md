@@ -3,7 +3,7 @@ date: 2024-01-26 04:20:53.540368-07:00
 description: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplagte,\
   \ Minimale Spr\xE5k) data ved bruk av Elixir. Programmerere bruker det til \xE5\
   \ h\xE5ndtere\u2026"
-lastmod: '2024-02-25T18:49:38.693497-07:00'
+lastmod: '2024-03-11T00:14:13.994695-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplagte,\
   \ Minimale Spr\xE5k) data ved bruk av Elixir. Programmerere bruker det til \xE5\

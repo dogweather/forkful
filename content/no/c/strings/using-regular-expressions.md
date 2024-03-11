@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:50.566384-07:00
 description: "Regul\xE6re uttrykk (regex) gir en m\xE5te \xE5 s\xF8ke, matche og manipulere\
   \ strenger ved hjelp av definerte m\xF8nstre. Programmerere bruker dem omfattende\
   \ for\u2026"
-lastmod: '2024-02-25T18:49:39.438180-07:00'
+lastmod: '2024-03-11T00:14:14.866404-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) gir en m\xE5te \xE5 s\xF8ke, matche og manipulere\
   \ strenger ved hjelp av definerte m\xF8nstre. Programmerere bruker dem omfattende\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:18.230753-07:00
 description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a an\xE1\
   lise e gera\xE7\xE3o de arquivos que armazenam dados tabulares num formato simples\
   \ de texto puro.\u2026"
-lastmod: '2024-02-25T18:49:44.143804-07:00'
+lastmod: '2024-03-11T00:14:20.225029-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a an\xE1lise\
   \ e gera\xE7\xE3o de arquivos que armazenam dados tabulares num formato simples\

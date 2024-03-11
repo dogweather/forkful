@@ -2,7 +2,7 @@
 date: 2024-01-20 17:38:08.381675-07:00
 description: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen,
   vertailuihin ja haun yksinkertaistamiseen.
-lastmod: '2024-02-25T18:49:53.146869-07:00'
+lastmod: '2024-03-11T00:14:30.099887-06:00'
 model: gpt-4-1106-preview
 summary: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen,
   vertailuihin ja haun yksinkertaistamiseen.

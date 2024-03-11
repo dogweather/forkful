@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:18.282491-07:00
 description: "Interpolating a string means splicing variables into text. We do it\
   \ to build dynamic strings \u2013 think personalized messages or live data displays\
   \ in your\u2026"
-lastmod: '2024-02-25T18:49:46.542090-07:00'
+lastmod: '2024-03-11T00:14:22.905370-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolating a string means splicing variables into text. We do it to build\
   \ dynamic strings \u2013 think personalized messages or live data displays in your\u2026"

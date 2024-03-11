@@ -2,7 +2,7 @@
 date: 2024-01-20 17:34:37.642361-07:00
 description: "Concatenar cadenas significa unir dos o m\xE1s textos en uno solo. Esto\
   \ es clave cuando necesitamos mostrar mensajes personalizados al usuario o combinar\u2026"
-lastmod: '2024-02-25T18:49:55.541053-07:00'
+lastmod: '2024-03-11T00:14:32.879213-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas significa unir dos o m\xE1s textos en uno solo. Esto\
   \ es clave cuando necesitamos mostrar mensajes personalizados al usuario o combinar\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:08.798319-07:00
 description: "Assoziative Arrays, bekannt als Objekte in Google Apps Script (eine\
   \ Variante von JavaScript), erm\xF6glichen es Programmierern, Sammlungen von Schl\xFC\
   ssel-\u2026"
-lastmod: '2024-02-25T18:49:50.526186-07:00'
+lastmod: '2024-03-11T00:14:27.285593-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, bekannt als Objekte in Google Apps Script (eine Variante\
   \ von JavaScript), erm\xF6glichen es Programmierern, Sammlungen von Schl\xFCssel-\u2026"

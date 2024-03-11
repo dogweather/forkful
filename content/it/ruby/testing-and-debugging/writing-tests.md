@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:55.105294-07:00
 description: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
   \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
-lastmod: '2024-02-25T18:49:41.792208-07:00'
+lastmod: '2024-03-11T00:14:17.577432-06:00'
 model: gpt-4-0125-preview
 summary: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
   \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"

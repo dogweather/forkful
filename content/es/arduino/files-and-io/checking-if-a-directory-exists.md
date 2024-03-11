@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:44.363836-07:00
 description: "En el contexto de la programaci\xF3n en Arduino, comprobar si un directorio\
   \ existe en una tarjeta SD o m\xF3dulo de almacenamiento similar te permite leer\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:55.819084-07:00'
+lastmod: '2024-03-11T00:14:33.170298-06:00'
 model: gpt-4-0125-preview
 summary: "En el contexto de la programaci\xF3n en Arduino, comprobar si un directorio\
   \ existe en una tarjeta SD o m\xF3dulo de almacenamiento similar te permite leer\

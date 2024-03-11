@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:26.957715-07:00
 description: "CSV:n (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tiedostojen j\xE4\
   sent\xE4minen ja tuottaminen, jotka tallentavat taulukollisia tietoja yksinkertaisessa,\u2026"
-lastmod: '2024-02-25T18:49:53.428980-07:00'
+lastmod: '2024-03-11T00:14:30.454654-06:00'
 model: gpt-4-0125-preview
 summary: "CSV:n (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tiedostojen j\xE4\
   sent\xE4minen ja tuottaminen, jotka tallentavat taulukollisia tietoja yksinkertaisessa,\u2026"

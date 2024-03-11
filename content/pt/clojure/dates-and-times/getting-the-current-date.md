@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:10.377251-07:00
 description: "Obter a data atual na programa\xE7\xE3o \xE9 crucial por uma mir\xED\
   ade de raz\xF5es, incluindo o registro em log, marca\xE7\xE3o de tempo em eventos\
   \ e agendamento de tarefas.\u2026"
-lastmod: '2024-02-25T18:49:43.868580-07:00'
+lastmod: '2024-03-11T00:14:19.880787-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual na programa\xE7\xE3o \xE9 crucial por uma mir\xEDade\
   \ de raz\xF5es, incluindo o registro em log, marca\xE7\xE3o de tempo em eventos\

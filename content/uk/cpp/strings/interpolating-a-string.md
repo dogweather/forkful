@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:21.617948-07:00
 description: "\u0429\u043E \u0442\u0430 \u043D\u0430\u0432\u0456\u0449\u043E? Interpolating\
   \ a string means inserting values into a predefined text format. Programmers do\
   \ it to build dynamic strings without the\u2026"
-lastmod: '2024-02-25T18:49:47.236848-07:00'
+lastmod: '2024-03-11T00:14:23.635534-06:00'
 model: gpt-4-1106-preview
 summary: "\u0429\u043E \u0442\u0430 \u043D\u0430\u0432\u0456\u0449\u043E? Interpolating\
   \ a string means inserting values into a predefined text format. Programmers do\

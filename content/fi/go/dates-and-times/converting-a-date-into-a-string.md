@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:29.060091-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\xE4\
   \xE4 `time.Time` -oliomuunnoksen luettavaan merkkijonomuotoon. Ohjelmoijat suorittavat\
   \ usein t\xE4m\xE4n\u2026"
-lastmod: '2024-02-25T18:49:53.041548-07:00'
+lastmod: '2024-03-11T00:14:29.988452-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\xE4\
   \xE4 `time.Time` -oliomuunnoksen luettavaan merkkijonomuotoon. Ohjelmoijat suorittavat\

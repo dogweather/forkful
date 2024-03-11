@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:25:37.033311-07:00
 description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language,\" \xE4r en l\xE4\
   sbar standard f\xF6r dataserialisering som programmerare anv\xE4nder f\xF6r konfigurationsfiler,\u2026"
-lastmod: '2024-02-25T18:49:36.102509-07:00'
+lastmod: '2024-03-11T00:14:11.153836-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language,\" \xE4r en l\xE4\
   sbar standard f\xF6r dataserialisering som programmerare anv\xE4nder f\xF6r konfigurationsfiler,\u2026"

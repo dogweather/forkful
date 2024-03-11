@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:41.154699-07:00
 description: "Een HTTP-verzoek verzenden betekent een verzoek doen aan een externe\
   \ server voor gegevens of actie. Programmeurs doen dit om te interageren met\u2026"
-lastmod: '2024-02-25T18:49:48.273051-07:00'
+lastmod: '2024-03-11T00:14:24.765954-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden betekent een verzoek doen aan een externe server\
   \ voor gegevens of actie. Programmeurs doen dit om te interageren met\u2026"

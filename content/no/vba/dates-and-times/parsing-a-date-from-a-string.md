@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:44.514908-07:00
 description: "\xC5 analysere en dato fra en streng i Visual Basic for Applications\
   \ (VBA) handler om \xE5 konvertere tekst som representerer en dato til en datatotype\
   \ for\u2026"
-lastmod: '2024-02-25T18:49:38.811837-07:00'
+lastmod: '2024-03-11T00:14:14.170186-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Visual Basic for Applications (VBA)\
   \ handler om \xE5 konvertere tekst som representerer en dato til en datatotype for\u2026"

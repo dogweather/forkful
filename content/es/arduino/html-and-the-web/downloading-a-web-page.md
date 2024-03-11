@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:16.533112-07:00
 description: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servidor\
   \ de internet que nos mande los datos de una p\xE1gina. Los programadores hacen\
   \ esto para obtener\u2026"
-lastmod: '2024-02-25T18:49:55.804544-07:00'
+lastmod: '2024-03-11T00:14:33.155173-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servidor de internet\
   \ que nos mande los datos de una p\xE1gina. Los programadores hacen esto para obtener\u2026"

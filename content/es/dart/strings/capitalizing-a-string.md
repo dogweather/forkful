@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:53:39.753046-07:00
 description: "Capitalizar una cadena implica modificar la primera letra de una palabra\
   \ o toda una oraci\xF3n a may\xFAsculas, mientras se mantienen el resto de los caracteres\u2026"
-lastmod: '2024-03-09T21:06:22.311149-07:00'
+lastmod: '2024-03-11T00:14:32.554150-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica modificar la primera letra de una palabra\
   \ o toda una oraci\xF3n a may\xFAsculas, mientras se mantienen el resto de los caracteres\u2026"

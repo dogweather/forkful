@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:14.762933-07:00
 description: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer for\
   \ \xE5 utvikle programvare. Programmerere gj\xF8r dette for \xE5 realisere nye ideer,\
   \ l\xF8se problemer,\u2026"
-lastmod: '2024-02-25T18:49:39.014622-07:00'
+lastmod: '2024-03-11T00:14:14.404427-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer for \xE5\
   \ utvikle programvare. Programmerere gj\xF8r dette for \xE5 realisere nye ideer,\

@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:27.652437-07:00
 description: "Iniziare un nuovo progetto significa creare un ambiente di lavoro da\
   \ zero, dove il codice prende vita. Si fa per trasformare le idee in software\u2026"
-lastmod: '2024-02-25T18:49:41.053813-07:00'
+lastmod: '2024-03-11T00:14:16.738246-06:00'
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto significa creare un ambiente di lavoro da zero,\
   \ dove il codice prende vita. Si fa per trasformare le idee in software\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 03:41:40.527533-07:00
 description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man skalar\
   \ bort de dubbla eller enkla citattecken som omsluter textv\xE4rden. Programmerare\
   \ g\xF6r ofta detta\u2026"
-lastmod: '2024-02-25T18:49:36.731136-07:00'
+lastmod: '2024-03-11T00:14:11.822245-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man skalar bort\
   \ de dubbla eller enkla citattecken som omsluter textv\xE4rden. Programmerare g\xF6\

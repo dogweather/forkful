@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:39.007943-07:00
 description: "Organizacja kodu w funkcje w j\u0119zyku Dart polega na definiowaniu\
   \ ponownie wykorzystywalnych blok\xF3w kodu, kt\xF3re wykonuj\u0105 okre\u015Blone\
   \ zadania, zwykle\u2026"
-lastmod: '2024-03-09T21:05:59.832685-07:00'
+lastmod: '2024-03-11T00:14:08.269126-06:00'
 model: gpt-4-0125-preview
 summary: "Organizacja kodu w funkcje w j\u0119zyku Dart polega na definiowaniu ponownie\
   \ wykorzystywalnych blok\xF3w kodu, kt\xF3re wykonuj\u0105 okre\u015Blone zadania,\

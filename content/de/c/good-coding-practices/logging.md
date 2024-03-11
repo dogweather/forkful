@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:03.561730-07:00
 description: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und\
   \ bemerkenswerter Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet\
   \ eine\u2026"
-lastmod: '2024-02-25T18:49:51.409638-07:00'
+lastmod: '2024-03-11T00:14:28.270309-06:00'
 model: gpt-4-0125-preview
 summary: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und bemerkenswerter\
   \ Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet eine\u2026"

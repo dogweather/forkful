@@ -5,7 +5,7 @@ date: 2024-01-28 22:05:10.181830-07:00
 description: "Command line argumenten lezen is het oppakken van de extra bits die\
   \ je typt na de naam van je script, zoals geheime handdrukken om het gedrag van\
   \ een\u2026"
-lastmod: '2024-02-25T18:49:48.588496-07:00'
+lastmod: '2024-03-11T00:14:25.121987-06:00'
 model: gpt-4-0125-preview
 summary: "Command line argumenten lezen is het oppakken van de extra bits die je typt\
   \ na de naam van je script, zoals geheime handdrukken om het gedrag van een\u2026"

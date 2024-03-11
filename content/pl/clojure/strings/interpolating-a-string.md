@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:45.349516-07:00
 description: "Interpolacja \u0142a\u0144cuch\xF3w pozwala wple\u015B\u0107 warto\u015B\
   ci zmiennych w tekst. Programi\u015Bci robi\u0105 to, by dynamicznie generowa\u0107\
   \ tre\u015B\u0107 \u2013 dzi\u0119ki temu kod jest bardziej\u2026"
-lastmod: '2024-02-25T18:49:33.404701-07:00'
+lastmod: '2024-03-11T00:14:08.153169-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w pozwala wple\u015B\u0107 warto\u015B\
   ci zmiennych w tekst. Programi\u015Bci robi\u0105 to, by dynamicznie generowa\u0107\

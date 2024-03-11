@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:20.173020-07:00
 description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir un texte repr\xE9sentant une date en un objet `Date` ou `DateTime`\
   \ que Ruby\u2026"
-lastmod: '2024-02-25T18:49:55.051667-07:00'
+lastmod: '2024-03-11T00:14:32.301698-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir un texte repr\xE9sentant une date en un objet `Date` ou `DateTime`\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:00.107013-07:00
 description: "Manejar errores en C involucra detectar y responder a condiciones an\xF3\
   malas que surgen durante la ejecuci\xF3n del programa. Los programadores hacen esto\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:56.022041-07:00'
+lastmod: '2024-03-11T00:14:33.391686-06:00'
 model: gpt-4-0125-preview
 summary: "Manejar errores en C involucra detectar y responder a condiciones an\xF3\
   malas que surgen durante la ejecuci\xF3n del programa. Los programadores hacen esto\

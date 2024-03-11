@@ -3,7 +3,7 @@ date: 2024-01-26 04:42:44.039296-07:00
 description: "I numeri complessi ampliano il nostro sistema numerico per includere\
   \ le radici quadrate dei numeri negativi, dove l'unit\xE0 'immaginaria' i equivale\
   \ alla\u2026"
-lastmod: '2024-02-25T18:49:41.252172-07:00'
+lastmod: '2024-03-11T00:14:16.961659-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi ampliano il nostro sistema numerico per includere le\
   \ radici quadrate dei numeri negativi, dove l'unit\xE0 'immaginaria' i equivale\

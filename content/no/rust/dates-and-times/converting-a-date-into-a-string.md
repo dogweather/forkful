@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:40.399193-07:00
 description: "\xC5 konvertere en dato til en streng betyr \xE5 endre datotypen fra\
   \ et datorepresentasjonsformat til en tekststreng. Dette er nyttig for \xE5 vise\
   \ datoer til\u2026"
-lastmod: '2024-02-25T18:49:38.767223-07:00'
+lastmod: '2024-03-11T00:14:14.122201-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre datotypen fra et\
   \ datorepresentasjonsformat til en tekststreng. Dette er nyttig for \xE5 vise datoer\

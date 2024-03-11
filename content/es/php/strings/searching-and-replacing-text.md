@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:25.229043-07:00
 description: "Buscar y reemplazar texto es b\xE1sicamente cuando encuentras una cadena\
   \ de texto y la cambias por otra. Los programadores lo hacen para actualizar datos,\u2026"
-lastmod: '2024-02-25T18:49:55.615747-07:00'
+lastmod: '2024-03-11T00:14:32.962153-06:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es b\xE1sicamente cuando encuentras una cadena\
   \ de texto y la cambias por otra. Los programadores lo hacen para actualizar datos,\u2026"

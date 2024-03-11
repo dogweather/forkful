@@ -2,7 +2,7 @@
 date: 2024-01-20 17:34:34.275788-07:00
 description: "String-Konkatenierung ist das Zusammenf\xFCgen von zwei oder mehreren\
   \ Textst\xFCcken zu einem einzigen String. Programmierer nutzen das, um dynamische\u2026"
-lastmod: '2024-02-25T18:49:50.860124-07:00'
+lastmod: '2024-03-11T00:14:27.689498-06:00'
 model: gpt-4-1106-preview
 summary: "String-Konkatenierung ist das Zusammenf\xFCgen von zwei oder mehreren Textst\xFC\
   cken zu einem einzigen String. Programmierer nutzen das, um dynamische\u2026"

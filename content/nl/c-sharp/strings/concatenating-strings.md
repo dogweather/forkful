@@ -5,7 +5,7 @@ date: 2024-01-28 21:57:05.750794-07:00
 description: "Concatenatie is het proces van het aan elkaar plakken van strings. We\
   \ doen dit omdat we vaak woorden of symbolen moeten combineren om zinnen, berichten\
   \ te\u2026"
-lastmod: '2024-02-25T18:49:48.141541-07:00'
+lastmod: '2024-03-11T00:14:24.626862-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenatie is het proces van het aan elkaar plakken van strings. We doen\
   \ dit omdat we vaak woorden of symbolen moeten combineren om zinnen, berichten te\u2026"

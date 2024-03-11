@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:20.082417-07:00
 description: "Yhdist\xE4mme merkkijonoja luodaaksemme uusia isompia tekstej\xE4. T\xE4\
   m\xE4 on t\xE4rke\xE4\xE4, kun haluamme n\xE4ytt\xE4\xE4 k\xE4ytt\xE4jille dynaamisia\
   \ viestej\xE4 tai rakennamme\u2026"
-lastmod: '2024-02-25T18:49:53.480258-07:00'
+lastmod: '2024-03-11T00:14:30.512177-06:00'
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4mme merkkijonoja luodaaksemme uusia isompia tekstej\xE4. T\xE4\
   m\xE4 on t\xE4rke\xE4\xE4, kun haluamme n\xE4ytt\xE4\xE4 k\xE4ytt\xE4jille dynaamisia\

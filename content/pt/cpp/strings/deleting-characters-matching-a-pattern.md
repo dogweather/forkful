@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:59.623503-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma opera\xE7\
   \xE3o de filtragem onde escolhemos caracteres espec\xEDficos de uma string para\
   \ remover, baseando-\u2026"
-lastmod: '2024-02-25T18:49:44.481786-07:00'
+lastmod: '2024-03-11T00:14:20.592155-06:00'
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma opera\xE7\xE3\
   o de filtragem onde escolhemos caracteres espec\xEDficos de uma string para remover,\

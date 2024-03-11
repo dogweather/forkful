@@ -3,7 +3,7 @@ date: 2024-01-26 03:39:07.856319-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng handler om \xE5 stripe bort\
   \ de irriterende enkle (' ') eller doble (\" \") anf\xF8rselstegnene fra tekstdataene\
   \ dine.\u2026"
-lastmod: '2024-02-25T18:49:39.391154-07:00'
+lastmod: '2024-03-11T00:14:14.815333-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng handler om \xE5 stripe bort de\
   \ irriterende enkle (' ') eller doble (\" \") anf\xF8rselstegnene fra tekstdataene\

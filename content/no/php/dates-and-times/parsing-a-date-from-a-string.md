@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:58.849429-07:00
 description: "\xC5 analysere en dato fra en tekststreng i PHP inneb\xE6rer \xE5 konvertere\
   \ tekst som representerer en dato og/eller tid til et PHP `DateTime`-objekt eller\
   \ andre\u2026"
-lastmod: '2024-02-25T18:49:39.068275-07:00'
+lastmod: '2024-03-11T00:14:14.462729-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en tekststreng i PHP inneb\xE6rer \xE5 konvertere\
   \ tekst som representerer en dato og/eller tid til et PHP `DateTime`-objekt eller\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:10.748664-07:00
 description: "Buscar y reemplazar texto en la programaci\xF3n de Arduino es esencial\
   \ para editar cadenas, como cambiar una palabra o frase por otra. Esta t\xE9cnica\
   \ es \xFAtil\u2026"
-lastmod: '2024-02-25T18:49:55.791522-07:00'
+lastmod: '2024-03-11T00:14:33.141028-06:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto en la programaci\xF3n de Arduino es esencial para\
   \ editar cadenas, como cambiar una palabra o frase por otra. Esta t\xE9cnica es\

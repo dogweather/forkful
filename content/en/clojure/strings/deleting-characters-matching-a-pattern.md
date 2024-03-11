@@ -2,7 +2,7 @@
 date: 2024-01-20 17:41:52.447367-07:00
 description: "Deleting characters matching a pattern means scrubbing specific sequences\
   \ from a string. Programmers do it to clean data, enforce formats, or remove\u2026"
-lastmod: '2024-02-25T18:49:56.195010-07:00'
+lastmod: '2024-03-11T00:14:33.582116-06:00'
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern means scrubbing specific sequences\
   \ from a string. Programmers do it to clean data, enforce formats, or remove\u2026"

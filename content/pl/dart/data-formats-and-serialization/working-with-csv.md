@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:29.984930-07:00
 description: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone\
   \ przecinkami) polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie\
   \ ka\u017Cda linia\u2026"
-lastmod: '2024-03-09T21:05:59.849006-07:00'
+lastmod: '2024-03-11T00:14:08.289772-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone przecinkami)\
   \ polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie ka\u017Cda linia\u2026"

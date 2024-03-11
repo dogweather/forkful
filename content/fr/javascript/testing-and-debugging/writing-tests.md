@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:16.105872-07:00
 description: "\xC9crire des tests en JavaScript fait r\xE9f\xE9rence \xE0 la pratique\
   \ de cr\xE9er des scripts automatis\xE9s qui ex\xE9cutent votre code pour garantir\
   \ qu'il se comporte\u2026"
-lastmod: '2024-02-25T18:49:54.911415-07:00'
+lastmod: '2024-03-11T00:14:32.152927-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en JavaScript fait r\xE9f\xE9rence \xE0 la pratique\
   \ de cr\xE9er des scripts automatis\xE9s qui ex\xE9cutent votre code pour garantir\

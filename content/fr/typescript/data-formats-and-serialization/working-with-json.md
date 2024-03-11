@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:28.421063-07:00
 description: "Travailler avec le JSON (JavaScript Object Notation) implique de parser\
   \ les donn\xE9es JSON vers et depuis un format utilisable en TypeScript. Les\u2026"
-lastmod: '2024-02-25T18:49:54.274752-07:00'
+lastmod: '2024-03-11T00:14:31.475275-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON (JavaScript Object Notation) implique de parser\
   \ les donn\xE9es JSON vers et depuis un format utilisable en TypeScript. Les\u2026"

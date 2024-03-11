@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:05.676902-07:00
 description: "Estrarre sottostringhe significa prendere pezzetti di testo da una stringa\
   \ pi\xF9 grande. Lo facciamo per analizzare, manipolare o validare dati e rendere\u2026"
-lastmod: '2024-02-25T18:49:41.368918-07:00'
+lastmod: '2024-03-11T00:14:17.101626-06:00'
 model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa prendere pezzetti di testo da una stringa\
   \ pi\xF9 grande. Lo facciamo per analizzare, manipolare o validare dati e rendere\u2026"

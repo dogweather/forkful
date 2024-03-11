@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:56.537442-07:00
 description: "Parsowanie HTML w C polega na analizowaniu dokument\xF3w HTML w celu\
   \ efektywnego wydobycia danych, struktury lub konkretnych cz\u0119\u015Bci, cz\u0119\
   sto jako preludium do\u2026"
-lastmod: '2024-02-25T18:49:34.257371-07:00'
+lastmod: '2024-03-11T00:14:09.099488-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w C polega na analizowaniu dokument\xF3w HTML w celu efektywnego\
   \ wydobycia danych, struktury lub konkretnych cz\u0119\u015Bci, cz\u0119sto jako\

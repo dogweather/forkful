@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:32.673164-07:00
 description: "Working with XML involves parsing, creating, and manipulating XML documents\u2014\
   a markup language for data storage and transfer. Programmers do it because\u2026"
-lastmod: '2024-02-25T18:49:56.516815-07:00'
+lastmod: '2024-03-11T00:14:33.935577-06:00'
 model: gpt-4-1106-preview
 summary: "Working with XML involves parsing, creating, and manipulating XML documents\u2014\
   a markup language for data storage and transfer. Programmers do it because\u2026"

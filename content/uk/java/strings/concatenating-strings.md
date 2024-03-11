@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:10.967983-07:00
 description: "String concatenation is the process of linking strings together. Programmers\
   \ use it to combine text, like creating sentences dynamically in a program or\u2026"
-lastmod: '2024-02-25T18:49:46.550561-07:00'
+lastmod: '2024-03-11T00:14:22.914811-06:00'
 model: gpt-4-1106-preview
 summary: "String concatenation is the process of linking strings together. Programmers\
   \ use it to combine text, like creating sentences dynamically in a program or\u2026"

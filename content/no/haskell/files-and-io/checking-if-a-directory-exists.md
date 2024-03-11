@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:26.455493-07:00
 description: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon i mange\
   \ programmeringsoppgaver, som tillater betingede handlinger basert p\xE5 tilstedev\xE6\
   relsen\u2026"
-lastmod: '2024-02-25T18:49:39.029384-07:00'
+lastmod: '2024-03-11T00:14:14.420543-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon i mange\
   \ programmeringsoppgaver, som tillater betingede handlinger basert p\xE5 tilstedev\xE6\

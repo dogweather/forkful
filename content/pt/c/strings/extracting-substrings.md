@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:26.414946-07:00
 description: "Extrair substrings em C envolve criar uma string menor (substring) a\
   \ partir de uma string maior com base em crit\xE9rios especificados, como posi\xE7\
   \xE3o e\u2026"
-lastmod: '2024-02-25T18:49:44.654475-07:00'
+lastmod: '2024-03-11T00:14:20.778151-06:00'
 model: gpt-4-0125-preview
 summary: "Extrair substrings em C envolve criar uma string menor (substring) a partir\
   \ de uma string maior com base em crit\xE9rios especificados, como posi\xE7\xE3\

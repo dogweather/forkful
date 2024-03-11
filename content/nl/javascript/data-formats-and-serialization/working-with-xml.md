@@ -5,7 +5,7 @@ date: 2024-01-28 22:11:13.288557-07:00
 description: "Werken met XML betekent het parseren, manipuleren en produceren van\
   \ XML-inhoud met behulp van code. Programmeurs doen dit omdat XML veel gebruikt\
   \ wordt\u2026"
-lastmod: '2024-02-25T18:49:48.553502-07:00'
+lastmod: '2024-03-11T00:14:25.065031-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren, manipuleren en produceren van XML-inhoud\
   \ met behulp van code. Programmeurs doen dit omdat XML veel gebruikt wordt\u2026"

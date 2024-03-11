@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:28.833576-07:00
 description: "A Rust interactive shell, or REPL (Read-Eval-Print Loop), lets you run\
   \ Rust code on-the-fly, seeing instant results, perfect for experimentation or\u2026"
-lastmod: '2024-02-25T18:49:56.321134-07:00'
+lastmod: '2024-03-11T00:14:33.758491-06:00'
 model: gpt-4-1106-preview
 summary: "A Rust interactive shell, or REPL (Read-Eval-Print Loop), lets you run Rust\
   \ code on-the-fly, seeing instant results, perfect for experimentation or\u2026"

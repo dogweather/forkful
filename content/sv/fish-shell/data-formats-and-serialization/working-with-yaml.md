@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:41.342767-07:00
 description: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML\
   \ Ain't Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6\
   r\u2026"
-lastmod: '2024-02-25T18:49:36.673954-07:00'
+lastmod: '2024-03-11T00:14:11.760956-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML Ain't\
   \ Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6r\u2026"

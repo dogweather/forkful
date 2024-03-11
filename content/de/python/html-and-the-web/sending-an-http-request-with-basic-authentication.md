@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:27.566128-07:00
 description: "HTTP-Anfragen mit Basisauthentifizierung senden bedeutet, Benutzername\
   \ und Passwort sicher mitzuschicken, um Zugang zu gesch\xFCtzten Ressourcen zu bekommen.\u2026"
-lastmod: '2024-02-25T18:49:50.577862-07:00'
+lastmod: '2024-03-11T00:14:27.341485-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basisauthentifizierung senden bedeutet, Benutzername und\
   \ Passwort sicher mitzuschicken, um Zugang zu gesch\xFCtzten Ressourcen zu bekommen.\u2026"

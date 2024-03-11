@@ -6,7 +6,7 @@ date: 2024-02-03 19:09:25.678498-07:00
 description: "Obtener la fecha actual en Elixir implica acceder a la informaci\xF3\
   n de fecha y hora del sistema, una tarea com\xFAn para registrar, marcar datos o\
   \ cualquier\u2026"
-lastmod: '2024-02-25T18:49:55.268997-07:00'
+lastmod: '2024-03-11T00:14:32.539114-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en Elixir implica acceder a la informaci\xF3n de\
   \ fecha y hora del sistema, una tarea com\xFAn para registrar, marcar datos o cualquier\u2026"

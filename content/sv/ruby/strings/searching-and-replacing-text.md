@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:41.697270-07:00
 description: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika textstr\xE4\
   ngar och byta ut dem med n\xE5got annat. Programmerare g\xF6r detta f\xF6r att snabbt\
   \ uppdatera kod,\u2026"
-lastmod: '2024-02-25T18:49:36.727992-07:00'
+lastmod: '2024-03-11T00:14:11.818430-06:00'
 model: gpt-4-1106-preview
 summary: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika textstr\xE4\
   ngar och byta ut dem med n\xE5got annat. Programmerare g\xF6r detta f\xF6r att snabbt\

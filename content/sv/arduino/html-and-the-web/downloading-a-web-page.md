@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:32.772197-07:00
 description: "Ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-data fr\xE5n en server\
   \ till din Arduino. Programmerare g\xF6r det f\xF6r att interagera med webben, samla\
   \ data eller\u2026"
-lastmod: '2024-02-25T18:49:36.481935-07:00'
+lastmod: '2024-03-11T00:14:11.553984-06:00'
 model: gpt-4-1106-preview
 summary: "Ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-data fr\xE5n en server\
   \ till din Arduino. Programmerare g\xF6r det f\xF6r att interagera med webben, samla\

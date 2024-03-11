@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:37.107703-07:00
 description: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-\u2026"
-lastmod: '2024-02-25T18:49:36.504188-07:00'
+lastmod: '2024-03-11T00:14:11.578023-06:00'
 model: gpt-4-0125-preview
 summary: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-\u2026"

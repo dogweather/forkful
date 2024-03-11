@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:33.589899-07:00
 description: "Zamiana daty na napis (string) pozwala na \u0142atwe wy\u015Bwietlenie\
   \ i zapisanie daty w czytelnej formie tekstowej. Programi\u015Bci korzystaj\u0105\
   \ z tej konwersji, by\u2026"
-lastmod: '2024-02-25T18:49:33.386981-07:00'
+lastmod: '2024-03-11T00:14:08.134891-06:00'
 model: gpt-4-1106-preview
 summary: "Zamiana daty na napis (string) pozwala na \u0142atwe wy\u015Bwietlenie i\
   \ zapisanie daty w czytelnej formie tekstowej. Programi\u015Bci korzystaj\u0105\

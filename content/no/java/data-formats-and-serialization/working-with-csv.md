@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:30.137566-07:00
 description: "\xC5 jobbe med CSV-filer involverer lesing fra og skriving av data til\
   \ komma-separerte verdier (CSV)-filer, et popul\xE6rt format for datautveksling\
   \ fordi det\u2026"
-lastmod: '2024-02-25T18:49:38.868689-07:00'
+lastmod: '2024-03-11T00:14:14.233164-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer involverer lesing fra og skriving av data til komma-separerte\
   \ verdier (CSV)-filer, et popul\xE6rt format for datautveksling fordi det\u2026"

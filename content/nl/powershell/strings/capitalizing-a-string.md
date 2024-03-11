@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:28.443821-07:00
 description: "Een tekenreeks kapitaliseren betekent dat elke letter met een hoofdletter\
   \ begint, doorgaans gebruikt voor titels of om eigennamen te benadrukken.\u2026"
-lastmod: '2024-02-25T18:49:48.345780-07:00'
+lastmod: '2024-03-11T00:14:24.842650-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekenreeks kapitaliseren betekent dat elke letter met een hoofdletter\
   \ begint, doorgaans gebruikt voor titels of om eigennamen te benadrukken.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:38:53.131250-07:00
 description: "In PHP, converting a string to lower case means transforming all alphabetical\
   \ characters in a string to their lowercase variant. Programmers do this for\u2026"
-lastmod: '2024-02-25T18:49:56.596115-07:00'
+lastmod: '2024-03-11T00:14:34.019354-06:00'
 model: gpt-4-1106-preview
 summary: "In PHP, converting a string to lower case means transforming all alphabetical\
   \ characters in a string to their lowercase variant. Programmers do this for\u2026"

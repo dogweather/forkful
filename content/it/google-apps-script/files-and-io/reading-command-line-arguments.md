@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:59:51.591440-07:00
 description: "Leggere gli argomenti della riga di comando in Google Apps Script \xE8\
   \ un po' improprio perch\xE9, a differenza delle interfacce a riga di comando tradizionali\u2026"
-lastmod: '2024-02-25T18:49:40.901622-07:00'
+lastmod: '2024-03-11T00:14:16.525807-06:00'
 model: gpt-4-0125-preview
 summary: "Leggere gli argomenti della riga di comando in Google Apps Script \xE8 un\
   \ po' improprio perch\xE9, a differenza delle interfacce a riga di comando tradizionali\u2026"

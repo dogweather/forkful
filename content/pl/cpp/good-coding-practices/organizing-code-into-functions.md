@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:04.986266-07:00
 description: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod na\
   \ mniejsze, wielokrotnego u\u017Cytku cz\u0119\u015Bci. Robimy to, aby unika\u0107\
   \ powt\xF3rze\u0144, uczyni\u0107 nasz kod\u2026"
-lastmod: '2024-02-25T18:49:34.090304-07:00'
+lastmod: '2024-03-11T00:14:08.918488-06:00'
 model: gpt-4-1106-preview
 summary: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod na mniejsze,\
   \ wielokrotnego u\u017Cytku cz\u0119\u015Bci. Robimy to, aby unika\u0107 powt\xF3\

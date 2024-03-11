@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:31.102471-07:00
 description: "Ler um arquivo de texto em Dart envolve acessar e recuperar dados de\
   \ arquivos armazenados no sistema de arquivos. Os programadores fazem isso para\u2026"
-lastmod: '2024-03-09T21:06:10.644941-07:00'
+lastmod: '2024-03-11T00:14:19.984445-06:00'
 model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto em Dart envolve acessar e recuperar dados de arquivos\
   \ armazenados no sistema de arquivos. Os programadores fazem isso para\u2026"

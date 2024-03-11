@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:02.919077-07:00
 description: "Praca z XML w j\u0119zyku C wi\u0105\u017Ce si\u0119 z parsowaniem,\
   \ wyszukiwaniem i manipulowaniem dokumentami XML za pomoc\u0105 r\xF3\u017Cnych\
   \ bibliotek. Programi\u015Bci anga\u017Cuj\u0105 si\u0119 w\u2026"
-lastmod: '2024-02-25T18:49:34.286666-07:00'
+lastmod: '2024-03-11T00:14:09.130921-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w j\u0119zyku C wi\u0105\u017Ce si\u0119 z parsowaniem, wyszukiwaniem\
   \ i manipulowaniem dokumentami XML za pomoc\u0105 r\xF3\u017Cnych bibliotek. Programi\u015B\

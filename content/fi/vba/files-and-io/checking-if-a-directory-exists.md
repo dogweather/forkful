@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:49:11.993379-07:00
 description: "Hakemiston olemassaolon tarkistaminen Visual Basic for Applications\
   \ -ohjelmointikieless\xE4 (VBA) liittyy kansion olemassaolon varmentamiseen\u2026"
-lastmod: '2024-02-25T18:49:53.339795-07:00'
+lastmod: '2024-03-11T00:14:30.355115-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Visual Basic for Applications -ohjelmointikieless\xE4\
   \ (VBA) liittyy kansion olemassaolon varmentamiseen\u2026"

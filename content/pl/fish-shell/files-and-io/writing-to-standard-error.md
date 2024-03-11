@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:20.020414-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Fish Shell polega\
   \ na kierowaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki osobno od standardowego\
   \ wyj\u015Bcia (stdout).\u2026"
-lastmod: '2024-02-25T18:49:34.231472-07:00'
+lastmod: '2024-03-11T00:14:09.071793-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Fish Shell polega na\
   \ kierowaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki osobno od standardowego\

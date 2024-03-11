@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:30.096080-07:00
 description: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de modifier\
   \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\u2026"
-lastmod: '2024-02-25T18:49:54.187219-07:00'
+lastmod: '2024-03-11T00:14:31.332941-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de modifier\
   \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\u2026"

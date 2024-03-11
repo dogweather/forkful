@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:34.472563-07:00
 description: "Extracting substrings is about pulling out specific bits of text from\
   \ a string. Programmers do it to manipulate and use parts of data\u2014like grabbing\u2026"
-lastmod: '2024-02-25T18:49:56.976187-07:00'
+lastmod: '2024-03-11T00:14:34.425521-06:00'
 model: gpt-4-1106-preview
 summary: "Extracting substrings is about pulling out specific bits of text from a\
   \ string. Programmers do it to manipulate and use parts of data\u2014like grabbing\u2026"

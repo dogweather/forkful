@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:09.529952-07:00
 description: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
   \ ja diagnostiikkatietojen ohjaamista erilleen p\xE4\xE4ohjelman tulosteesta, joka\
   \ menee\u2026"
-lastmod: '2024-02-25T18:49:53.423011-07:00'
+lastmod: '2024-03-11T00:14:30.448211-06:00'
 model: gpt-4-0125-preview
 summary: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja\
   \ diagnostiikkatietojen ohjaamista erilleen p\xE4\xE4ohjelman tulosteesta, joka\

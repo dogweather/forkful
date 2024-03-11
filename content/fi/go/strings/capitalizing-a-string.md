@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:56.976210-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4\
   \ annetun merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on\
   \ pienaakkonen,\u2026"
-lastmod: '2024-02-25T18:49:53.010834-07:00'
+lastmod: '2024-03-11T00:14:29.956493-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4 annetun\
   \ merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on pienaakkonen,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:53.875549-07:00
 description: "P\xE4iv\xE4m\xE4\xE4rien vertaaminen Visual Basic for Applications (VBA)\
   \ -ohjelmointikieless\xE4 tarkoittaa niiden aikaj\xE4rjestyssuhteen m\xE4\xE4ritt\xE4\
   mist\xE4 toisiinsa n\xE4hden.\u2026"
-lastmod: '2024-02-25T18:49:53.337586-07:00'
+lastmod: '2024-03-11T00:14:30.352691-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4rien vertaaminen Visual Basic for Applications (VBA)\
   \ -ohjelmointikieless\xE4 tarkoittaa niiden aikaj\xE4rjestyssuhteen m\xE4\xE4ritt\xE4\

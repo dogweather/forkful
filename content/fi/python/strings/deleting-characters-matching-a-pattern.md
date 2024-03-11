@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:08.648776-07:00
 description: "Kun puhumme merkkien poistamisesta kuvion mukaan, tarkoitamme tiettyj\xE4\
   \ merkkej\xE4 sis\xE4lt\xE4vien osien paikantamista ja poistamista merkkijonosta.\
   \ T\xE4m\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.102703-07:00'
+lastmod: '2024-03-11T00:14:30.053655-06:00'
 model: gpt-4-1106-preview
 summary: "Kun puhumme merkkien poistamisesta kuvion mukaan, tarkoitamme tiettyj\xE4\
   \ merkkej\xE4 sis\xE4lt\xE4vien osien paikantamista ja poistamista merkkijonosta.\

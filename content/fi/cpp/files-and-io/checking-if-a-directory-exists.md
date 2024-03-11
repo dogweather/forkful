@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:14.166338-07:00
 description: "Hakemiston olemassaolon tarkistaminen tarkoittaa m\xE4\xE4ritt\xE4mist\xE4\
   , onko tietyss\xE4 polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen\
   \ tai niihin\u2026"
-lastmod: '2024-02-25T18:49:53.788928-07:00'
+lastmod: '2024-03-11T00:14:30.917793-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen tarkoittaa m\xE4\xE4ritt\xE4mist\xE4\
   , onko tietyss\xE4 polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen\

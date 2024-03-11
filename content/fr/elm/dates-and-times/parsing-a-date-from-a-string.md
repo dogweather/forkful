@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:59.988722-07:00
 description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en\
   \ Elm consiste \xE0 convertir des informations textuelles repr\xE9sentant des dates\
   \ et des heures en\u2026"
-lastmod: '2024-02-25T18:49:54.440943-07:00'
+lastmod: '2024-03-11T00:14:31.651605-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en Elm\
   \ consiste \xE0 convertir des informations textuelles repr\xE9sentant des dates\

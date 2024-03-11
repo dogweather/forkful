@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:35.101344-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
   \ communiquer de mani\xE8re s\xE9curis\xE9e avec un serveur web en fournissant nom\
   \ d'utilisateur et\u2026"
-lastmod: '2024-02-25T18:49:54.729968-07:00'
+lastmod: '2024-03-11T00:14:31.969768-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est communiquer\
   \ de mani\xE8re s\xE9curis\xE9e avec un serveur web en fournissant nom d'utilisateur\

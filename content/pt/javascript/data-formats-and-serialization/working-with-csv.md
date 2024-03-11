@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:16.613422-07:00
 description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) em JavaScript envolve\
   \ a an\xE1lise ou gera\xE7\xE3o de arquivos CSV para ingerir dados tabulares de\
   \ fontes\u2026"
-lastmod: '2024-02-25T18:49:44.601279-07:00'
+lastmod: '2024-03-11T00:14:20.721202-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) em JavaScript envolve\
   \ a an\xE1lise ou gera\xE7\xE3o de arquivos CSV para ingerir dados tabulares de\

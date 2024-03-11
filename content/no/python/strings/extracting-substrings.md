@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:12.556831-07:00
 description: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng.\
   \ Vi gj\xF8r dette for \xE5 analysere, transformere, eller bruke deler av dataene\
   \ uten \xE5\u2026"
-lastmod: '2024-02-25T18:49:38.578356-07:00'
+lastmod: '2024-03-11T00:14:13.868408-06:00'
 model: gpt-4-1106-preview
 summary: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng.\
   \ Vi gj\xF8r dette for \xE5 analysere, transformere, eller bruke deler av dataene\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:45.810583-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ lors de l'\xE9criture de scripts qui interagissent avec le syst\xE8me de fichiers,\
   \ en s'assurant\u2026"
-lastmod: '2024-02-25T18:49:54.656055-07:00'
+lastmod: '2024-03-11T00:14:31.891877-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
   \ lors de l'\xE9criture de scripts qui interagissent avec le syst\xE8me de fichiers,\

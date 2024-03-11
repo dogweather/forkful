@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:13.647547-07:00
 description: "Das Umwandeln eines Datums in einen String erm\xF6glicht es uns, Datumsangaben\
   \ in einem lesbaren Format zu repr\xE4sentieren. Wir machen das f\xFCr die\u2026"
-lastmod: '2024-02-25T18:49:50.629488-07:00'
+lastmod: '2024-03-11T00:14:27.396248-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String erm\xF6glicht es uns, Datumsangaben\
   \ in einem lesbaren Format zu repr\xE4sentieren. Wir machen das f\xFCr die\u2026"

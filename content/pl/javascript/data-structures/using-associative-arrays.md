@@ -5,7 +5,7 @@ date: 2024-01-30 19:12:09.587143-07:00
 description: "Tablice asocjacyjne, czy te\u017C dok\u0142adniej w kontek\u015Bcie\
   \ JavaScript, obiekty, pozwalaj\u0105 na mapowanie kluczy do warto\u015Bci. Jest\
   \ to niezwykle przydatne, gdy\u2026"
-lastmod: '2024-02-25T18:49:34.162710-07:00'
+lastmod: '2024-03-11T00:14:08.997689-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czy te\u017C dok\u0142adniej w kontek\u015Bcie JavaScript,\
   \ obiekty, pozwalaj\u0105 na mapowanie kluczy do warto\u015Bci. Jest to niezwykle\

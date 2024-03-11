@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:28.746706-07:00
 description: "La gestione degli errori nella programmazione riguarda l'anticipare\
   \ l'inaspettato. \xC8 l'arte di pianificare per quando le cose non vanno come previsto\
   \ cos\xEC\u2026"
-lastmod: '2024-02-25T18:49:41.427550-07:00'
+lastmod: '2024-03-11T00:14:17.171800-06:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori nella programmazione riguarda l'anticipare l'inaspettato.\
   \ \xC8 l'arte di pianificare per quando le cose non vanno come previsto cos\xEC\u2026"

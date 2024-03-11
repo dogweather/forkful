@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:33.570475-07:00
 description: "Tekstitiedoston lukeminen Dartilla tarkoittaa tiedostojen tietojen k\xE4\
   ytt\xE4mist\xE4 ja hakemista tiedostoj\xE4rjestelm\xE4st\xE4. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n\u2026"
-lastmod: '2024-03-09T21:06:20.196980-07:00'
+lastmod: '2024-03-11T00:14:30.221746-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen Dartilla tarkoittaa tiedostojen tietojen k\xE4\
   ytt\xE4mist\xE4 ja hakemista tiedostoj\xE4rjestelm\xE4st\xE4. Ohjelmoijat tekev\xE4\

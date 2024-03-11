@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:26.328063-07:00
 description: "Escribir pruebas en PowerShell implica crear scripts que validen autom\xE1\
   ticamente la funcionalidad de tu c\xF3digo de PowerShell, asegur\xE1ndose de que\
   \ se\u2026"
-lastmod: '2024-02-25T18:49:55.768089-07:00'
+lastmod: '2024-03-11T00:14:33.116222-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en PowerShell implica crear scripts que validen autom\xE1\
   ticamente la funcionalidad de tu c\xF3digo de PowerShell, asegur\xE1ndose de que\

@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:59.702145-07:00
 description: "A REPL (Read-Eval-Print-Loop) is a simple, interactive programming environment.\
   \ Programmers use it for real-time language experimentation, quick tasks, or\u2026"
-lastmod: '2024-02-25T18:49:56.797347-07:00'
+lastmod: '2024-03-11T00:14:34.228419-06:00'
 model: gpt-4-1106-preview
 summary: "A REPL (Read-Eval-Print-Loop) is a simple, interactive programming environment.\
   \ Programmers use it for real-time language experimentation, quick tasks, or\u2026"

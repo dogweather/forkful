@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:46.693913-07:00
 description: "Ein neues Projekt zu beginnen bedeutet, eine frische Arbeitsumgebung\
   \ f\xFCr eine bestimmte Aufgabe zu schaffen. Programmierer tun dies, um ihre Ideen\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:51.156385-07:00'
+lastmod: '2024-03-11T00:14:28.004287-06:00'
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu beginnen bedeutet, eine frische Arbeitsumgebung f\xFC\
   r eine bestimmte Aufgabe zu schaffen. Programmierer tun dies, um ihre Ideen zu\u2026"

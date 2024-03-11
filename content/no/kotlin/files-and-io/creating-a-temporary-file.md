@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:54.004169-07:00
 description: "Midlertidige filer er kortvarige datalagringselementer som skapes under\
   \ kj\xF8ring av programmer. Programmerere lager dem for \xE5 h\xE5ndtere store datastr\xF8\
   mmer,\u2026"
-lastmod: '2024-02-25T18:49:38.948472-07:00'
+lastmod: '2024-03-11T00:14:14.326534-06:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer er kortvarige datalagringselementer som skapes under\
   \ kj\xF8ring av programmer. Programmerere lager dem for \xE5 h\xE5ndtere store datastr\xF8\

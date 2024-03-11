@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:04.644256-07:00
 description: "Att f\xE5 det aktuella datumet i TypeScript, ett spr\xE5k byggt p\xE5\
   \ JavaScript, g\xF6r det m\xF6jligt f\xF6r dig att komma \xE5t och manipulera nuvarande\
   \ datum- och\u2026"
-lastmod: '2024-02-25T18:49:35.962038-07:00'
+lastmod: '2024-03-11T00:14:11.003722-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i TypeScript, ett spr\xE5k byggt p\xE5 JavaScript,\
   \ g\xF6r det m\xF6jligt f\xF6r dig att komma \xE5t och manipulera nuvarande datum-\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:00.255806-07:00
 description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u015B\
   ci, by m\xF3c przetwarza\u0107 lokalnie. Programi\u015Bci robi\u0105 to, aby analizowa\u0107\
   \ dane, monitorowa\u0107 zmiany\u2026"
-lastmod: '2024-02-25T18:49:33.462945-07:00'
+lastmod: '2024-03-11T00:14:08.213282-06:00'
 model: gpt-4-1106-preview
 summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u015B\
   ci, by m\xF3c przetwarza\u0107 lokalnie. Programi\u015Bci robi\u0105 to, aby analizowa\u0107\

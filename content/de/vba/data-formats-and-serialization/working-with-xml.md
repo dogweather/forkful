@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:41.587832-07:00
 description: "Die Arbeit mit XML in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet\
   \ das Parsen, Erstellen und Modifizieren von XML-Dokumenten im Kontext von Microsoft\u2026"
-lastmod: '2024-02-25T18:49:50.810536-07:00'
+lastmod: '2024-03-11T00:14:27.637199-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet das\
   \ Parsen, Erstellen und Modifizieren von XML-Dokumenten im Kontext von Microsoft\u2026"

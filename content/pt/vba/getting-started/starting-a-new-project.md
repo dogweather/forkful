@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:31.990809-07:00
 description: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA)\
   \ envolve configurar um ambiente dentro de um aplicativo host, como o Excel, para\
   \ automatizar\u2026"
-lastmod: '2024-02-25T18:49:44.033072-07:00'
+lastmod: '2024-03-11T00:14:20.107147-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
   \ configurar um ambiente dentro de um aplicativo host, como o Excel, para automatizar\u2026"

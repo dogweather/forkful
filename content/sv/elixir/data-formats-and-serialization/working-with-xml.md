@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:59.344024-07:00
 description: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera\
   \ XML-data. Programmerare tar sig an XML eftersom det \xE4r utbrett inom webbtj\xE4\
   nster,\u2026"
-lastmod: '2024-02-25T18:49:35.933541-07:00'
+lastmod: '2024-03-11T00:14:10.923816-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera XML-data.\
   \ Programmerare tar sig an XML eftersom det \xE4r utbrett inom webbtj\xE4nster,\u2026"

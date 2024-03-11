@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:41.037037-07:00
 description: "Werken met TOML betekent het parseren en genereren van TOML (Tom's Obvious,\
   \ Minimal Language) gegevens met Elixir. Programmeurs gebruiken het om\u2026"
-lastmod: '2024-02-25T18:49:47.877979-07:00'
+lastmod: '2024-03-11T00:14:24.299020-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met TOML betekent het parseren en genereren van TOML (Tom's Obvious,\
   \ Minimal Language) gegevens met Elixir. Programmeurs gebruiken het om\u2026"

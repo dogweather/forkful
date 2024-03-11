@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:05.342740-07:00
 description: "Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu\
   \ extrahieren, was f\xFCr das Web-Scraping, die Datengewinnung oder den Aufbau von\
   \ Web-\u2026"
-lastmod: '2024-02-25T18:49:50.738397-07:00'
+lastmod: '2024-03-11T00:14:27.561574-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu extrahieren,\
   \ was f\xFCr das Web-Scraping, die Datengewinnung oder den Aufbau von Web-\u2026"

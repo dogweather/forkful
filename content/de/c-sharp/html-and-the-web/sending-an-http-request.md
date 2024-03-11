@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:18.422486-07:00
 description: "HTTP-Anfragen erm\xF6glichen die Kommunikation zwischen deiner Software\
   \ und Webdiensten. Programmierer senden diese Anfragen, um Daten zu holen oder zu\u2026"
-lastmod: '2024-02-25T18:49:50.945475-07:00'
+lastmod: '2024-03-11T00:14:27.781272-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen erm\xF6glichen die Kommunikation zwischen deiner Software\
   \ und Webdiensten. Programmierer senden diese Anfragen, um Daten zu holen oder zu\u2026"

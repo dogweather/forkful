@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:45.665816-07:00
 description: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour traduire\
   \ des id\xE9es en code. C'est essentiel pour structurer ses pens\xE9es, tester des\
   \ concepts,\u2026"
-lastmod: '2024-02-25T18:49:54.866827-07:00'
+lastmod: '2024-03-11T00:14:32.105213-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour traduire\
   \ des id\xE9es en code. C'est essentiel pour structurer ses pens\xE9es, tester des\

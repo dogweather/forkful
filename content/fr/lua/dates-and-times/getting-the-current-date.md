@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:12.303497-07:00
 description: "R\xE9cup\xE9rer la date actuelle en programmation est une t\xE2che cruciale\
   \ pour de nombreuses applications, y compris la journalisation, le marquage temporel\
   \ des\u2026"
-lastmod: '2024-02-25T18:49:54.652210-07:00'
+lastmod: '2024-03-11T00:14:31.887476-06:00'
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle en programmation est une t\xE2che cruciale\
   \ pour de nombreuses applications, y compris la journalisation, le marquage temporel\

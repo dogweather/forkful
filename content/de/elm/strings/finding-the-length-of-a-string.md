@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:16.838925-07:00
 description: "\"Was & Warum?\" - Die L\xE4nge eines Strings festzustellen bedeutet,\
   \ die Anzahl der Zeichen zu ermitteln. Programmierer machen das oft, um die Eingabe\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:50.859262-07:00'
+lastmod: '2024-03-11T00:14:27.688606-06:00'
 model: gpt-4-1106-preview
 summary: "\"Was & Warum?\" - Die L\xE4nge eines Strings festzustellen bedeutet, die\
   \ Anzahl der Zeichen zu ermitteln. Programmierer machen das oft, um die Eingabe\

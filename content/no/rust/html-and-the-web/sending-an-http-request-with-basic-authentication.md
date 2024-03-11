@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:49.709627-07:00
 description: "En HTTP-foresp\xF8rsel med basisgodkjenning lar et program be om data\
   \ fra en server ved \xE5 inkludere brukernavn og passord i foresp\xF8rselen. Programmerere\u2026"
-lastmod: '2024-02-25T18:49:38.753888-07:00'
+lastmod: '2024-03-11T00:14:14.108611-06:00'
 model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel med basisgodkjenning lar et program be om data fra\
   \ en server ved \xE5 inkludere brukernavn og passord i foresp\xF8rselen. Programmerere\u2026"

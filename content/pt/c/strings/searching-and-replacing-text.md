@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:25.026823-07:00
 description: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
   ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"
-lastmod: '2024-02-25T18:49:44.650240-07:00'
+lastmod: '2024-03-11T00:14:20.773720-06:00'
 model: gpt-4-0125-preview
 summary: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
   ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"

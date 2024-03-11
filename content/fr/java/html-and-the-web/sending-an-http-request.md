@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:56.760946-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de faire\
   \ quelque chose pour vous, comme r\xE9cup\xE9rer une page web. Les d\xE9veloppeurs\
   \ le font pour\u2026"
-lastmod: '2024-02-25T18:49:54.384516-07:00'
+lastmod: '2024-03-11T00:14:31.590707-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de faire\
   \ quelque chose pour vous, comme r\xE9cup\xE9rer une page web. Les d\xE9veloppeurs\

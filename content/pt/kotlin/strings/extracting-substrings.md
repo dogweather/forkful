@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:07.952590-07:00
 description: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string. Programadores\
   \ fazem isso quando precisam manipular ou analisar partes espec\xEDficas de textos,\u2026"
-lastmod: '2024-02-25T18:49:44.152385-07:00'
+lastmod: '2024-03-11T00:14:20.234367-06:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string. Programadores\
   \ fazem isso quando precisam manipular ou analisar partes espec\xEDficas de textos,\u2026"

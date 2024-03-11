@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:30.235451-07:00
 description: "Suchen und Ersetzen von Text ist ein Vorgang, bei dem bestimmte Textmuster\
   \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Technik,\u2026"
-lastmod: '2024-02-25T18:49:50.644996-07:00'
+lastmod: '2024-03-11T00:14:27.412362-06:00'
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text ist ein Vorgang, bei dem bestimmte Textmuster\
   \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Technik,\u2026"

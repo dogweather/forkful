@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:25.034027-07:00
 description: "Luodaan v\xE4liaikainen tiedosto eli temp-file - mut miksi? Se on tiedosto,\
   \ jota k\xE4ytet\xE4\xE4n v\xE4liaikaisesti dataa tallentaessa, ja sit\xE4 tarvitaan,\
   \ koska se\u2026"
-lastmod: '2024-02-25T18:49:53.300295-07:00'
+lastmod: '2024-03-11T00:14:30.311098-06:00'
 model: gpt-4-1106-preview
 summary: "Luodaan v\xE4liaikainen tiedosto eli temp-file - mut miksi? Se on tiedosto,\
   \ jota k\xE4ytet\xE4\xE4n v\xE4liaikaisesti dataa tallentaessa, ja sit\xE4 tarvitaan,\

@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:40.454677-07:00
 description: "Modificare i file sul posto con i one-liner CLI in PowerShell riguarda\
   \ l'apportare modifiche dirette ai file dalla riga di comando, senza la necessit\xE0\
   \ di\u2026"
-lastmod: '2024-02-25T18:49:41.499810-07:00'
+lastmod: '2024-03-11T00:14:17.251291-06:00'
 model: gpt-4-0125-preview
 summary: "Modificare i file sul posto con i one-liner CLI in PowerShell riguarda l'apportare\
   \ modifiche dirette ai file dalla riga di comando, senza la necessit\xE0 di\u2026"

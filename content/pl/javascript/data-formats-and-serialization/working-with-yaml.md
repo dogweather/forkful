@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:41.605910-07:00
 description: "YAML, b\u0119d\u0105cy skr\xF3tem od \"YAML Ain't Markup Language\"\
   , to format serializacji danych, kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015B\
   ci cz\u0119sto u\u017Cywaj\u0105 go do\u2026"
-lastmod: '2024-02-25T18:49:34.190286-07:00'
+lastmod: '2024-03-11T00:14:09.028153-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, b\u0119d\u0105cy skr\xF3tem od \"YAML Ain't Markup Language\", to\
   \ format serializacji danych, kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015B\

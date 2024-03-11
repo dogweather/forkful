@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:11.081898-07:00
 description: "Kapitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszego znaku\
   \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105\
   c jednocze\u015Bnie, \u017Ce pozosta\u0142e litery\u2026"
-lastmod: '2024-02-25T18:49:34.025655-07:00'
+lastmod: '2024-03-11T00:14:08.851143-06:00'
 model: gpt-4-0125-preview
 summary: "Kapitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszego znaku\
   \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105\

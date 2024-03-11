@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:58:05.910736-07:00
 description: "Een tekenreeks converteren naar kleine letters betekent het veranderen\
   \ van alle hoofdletters in de tekst naar hun kleine letter equivalenten. Programmeurs\u2026"
-lastmod: '2024-02-25T18:49:47.757202-07:00'
+lastmod: '2024-03-11T00:14:24.172920-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekenreeks converteren naar kleine letters betekent het veranderen van\
   \ alle hoofdletters in de tekst naar hun kleine letter equivalenten. Programmeurs\u2026"

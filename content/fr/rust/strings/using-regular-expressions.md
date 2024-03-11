@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:08.419765-07:00
 description: "Les expressions r\xE9guli\xE8res, ou regex, permettent aux d\xE9veloppeurs\
   \ de rechercher, faire correspondre et manipuler des cha\xEEnes de caract\xE8res\
   \ avec des\u2026"
-lastmod: '2024-02-25T18:49:54.285950-07:00'
+lastmod: '2024-03-11T00:14:31.487243-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, ou regex, permettent aux d\xE9veloppeurs\
   \ de rechercher, faire correspondre et manipuler des cha\xEEnes de caract\xE8res\

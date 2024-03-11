@@ -2,7 +2,7 @@
 date: 2024-01-26 04:15:21.225736-07:00
 description: "Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucles\
   \ de Leer-Evaluar-Imprimir), te permiten ejecutar c\xF3digo sobre la marcha, probando\u2026"
-lastmod: '2024-02-25T18:49:55.929731-07:00'
+lastmod: '2024-03-11T00:14:33.291765-06:00'
 model: gpt-4-0125-preview
 summary: "Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucles de Leer-Evaluar-Imprimir),\
   \ te permiten ejecutar c\xF3digo sobre la marcha, probando\u2026"

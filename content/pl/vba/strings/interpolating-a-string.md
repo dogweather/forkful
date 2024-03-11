@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:02.315407-07:00
 description: "Interpolacja ci\u0105g\xF3w w Visual Basic for Applications (VBA) odnosi\
   \ si\u0119 do procesu osadzania zmiennych lub wyra\u017Ce\u0144 w dos\u0142ownym\
   \ ci\u0105gu znak\xF3w, co umo\u017Cliwia\u2026"
-lastmod: '2024-02-25T18:49:33.581201-07:00'
+lastmod: '2024-03-11T00:14:08.390575-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w w Visual Basic for Applications (VBA) odnosi\
   \ si\u0119 do procesu osadzania zmiennych lub wyra\u017Ce\u0144 w dos\u0142ownym\

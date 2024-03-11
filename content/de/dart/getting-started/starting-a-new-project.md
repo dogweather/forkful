@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:56:29.278396-07:00
 description: "Ein neues Projekt in Dart zu starten, erfordert das Einrichten einer\
   \ Umgebung, die eine effiziente Entwicklung, Tests und Bereitstellung f\xF6rdert.\u2026"
-lastmod: '2024-03-09T21:06:17.576198-07:00'
+lastmod: '2024-03-11T00:14:27.475425-06:00'
 model: gpt-4-0125-preview
 summary: "Ein neues Projekt in Dart zu starten, erfordert das Einrichten einer Umgebung,\
   \ die eine effiziente Entwicklung, Tests und Bereitstellung f\xF6rdert.\u2026"

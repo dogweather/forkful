@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:40.363062-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen merkitsee puhelun aloittamista Go-sovelluksestasi\
   \ web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun.\u2026"
-lastmod: '2024-02-25T18:49:53.025817-07:00'
+lastmod: '2024-03-11T00:14:29.972048-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen merkitsee puhelun aloittamista Go-sovelluksestasi\
   \ web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun.\u2026"

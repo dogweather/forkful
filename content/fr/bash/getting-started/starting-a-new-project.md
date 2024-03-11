@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:43.386486-07:00
 description: "Commencer un nouveau projet, c'est comme planter une graine digitale\
   \ \u2013 on ne sait jamais quel arbre \xE7a va devenir. Les programmeurs lancent\
   \ des projets\u2026"
-lastmod: '2024-02-25T18:49:54.686738-07:00'
+lastmod: '2024-03-11T00:14:31.924627-06:00'
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet, c'est comme planter une graine digitale \u2013\
   \ on ne sait jamais quel arbre \xE7a va devenir. Les programmeurs lancent des projets\u2026"

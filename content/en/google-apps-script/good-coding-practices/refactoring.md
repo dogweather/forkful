@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:12.931066-07:00
 description: "Refactoring in the programming lexicon refers to the process of restructuring\
   \ existing computer code\u2014changing the factoring without changing its external\u2026"
-lastmod: '2024-02-25T18:49:56.142619-07:00'
+lastmod: '2024-03-11T00:14:33.525374-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in the programming lexicon refers to the process of restructuring\
   \ existing computer code\u2014changing the factoring without changing its external\u2026"

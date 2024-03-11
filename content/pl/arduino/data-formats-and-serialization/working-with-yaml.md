@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:25:09.721826-07:00
 description: "YAML (YAML Ain't Markup Language) to standard serializacji danych czytelnych\
   \ dla cz\u0142owieka, kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany dla plik\xF3w konfiguracyjnych,\u2026"
-lastmod: '2024-02-25T18:49:34.063612-07:00'
+lastmod: '2024-03-11T00:14:08.889621-06:00'
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) to standard serializacji danych czytelnych\
   \ dla cz\u0142owieka, kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany dla plik\xF3w konfiguracyjnych,\u2026"

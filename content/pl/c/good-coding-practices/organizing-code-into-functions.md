@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:17.710850-07:00
 description: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z\u0142\
   o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu. Praktyka\
   \ ta poprawia\u2026"
-lastmod: '2024-02-25T18:49:34.266051-07:00'
+lastmod: '2024-03-11T00:14:09.109230-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z\u0142\
   o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu. Praktyka\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:05.962758-07:00
 description: "\"Mik\xE4 ja Miksi?\" Tekstitiedoston lukeminen tarkoittaa tiedon hakemista\
   \ levylt\xE4 ohjelmaan. Ohjelmoijat tekev\xE4t sen datan k\xE4sittelyyn, analysointiin\
   \ tai\u2026"
-lastmod: '2024-02-25T18:49:53.176638-07:00'
+lastmod: '2024-03-11T00:14:30.131836-06:00'
 model: gpt-4-1106-preview
 summary: "\"Mik\xE4 ja Miksi?\" Tekstitiedoston lukeminen tarkoittaa tiedon hakemista\
   \ levylt\xE4 ohjelmaan. Ohjelmoijat tekev\xE4t sen datan k\xE4sittelyyn, analysointiin\

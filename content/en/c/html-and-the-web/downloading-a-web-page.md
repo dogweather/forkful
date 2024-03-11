@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:09.875050-07:00
 description: "Downloading a web page in C involves programmatically accessing the\
   \ content of a web page over the internet and saving it locally for processing or\u2026"
-lastmod: '2024-02-25T18:49:56.947260-07:00'
+lastmod: '2024-03-11T00:14:34.393890-06:00'
 model: gpt-4-0125-preview
 summary: "Downloading a web page in C involves programmatically accessing the content\
   \ of a web page over the internet and saving it locally for processing or\u2026"

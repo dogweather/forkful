@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:05.405162-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ que voc\xEA est\xE1 acessando um recurso protegido na web com usu\xE1rio e senha.\
   \ Programadores fazem\u2026"
-lastmod: '2024-02-25T18:49:44.329089-07:00'
+lastmod: '2024-03-11T00:14:20.427244-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ que voc\xEA est\xE1 acessando um recurso protegido na web com usu\xE1rio e senha.\

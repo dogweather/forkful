@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:33.560340-07:00
 description: "Trabajar con JSON en programaci\xF3n Bash implica analizar, extraer\
   \ y manipular datos JSON directamente desde la l\xEDnea de comandos. Los programadores\
   \ a\u2026"
-lastmod: '2024-02-25T18:49:55.738112-07:00'
+lastmod: '2024-03-11T00:14:33.088932-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON en programaci\xF3n Bash implica analizar, extraer y manipular\
   \ datos JSON directamente desde la l\xEDnea de comandos. Los programadores a\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:07:10.416028-07:00
 description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\xE4\
   sligt dataserialiseringspr\xE5k som ofta anv\xE4nds f\xF6r konfigurationsfiler.\
   \ Programmerare anv\xE4nder\u2026"
-lastmod: '2024-02-25T18:49:36.060193-07:00'
+lastmod: '2024-03-11T00:14:11.109055-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\xE4\
   sligt dataserialiseringspr\xE5k som ofta anv\xE4nds f\xF6r konfigurationsfiler.\

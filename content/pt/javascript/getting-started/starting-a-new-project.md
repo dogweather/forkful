@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:02.907062-07:00
 description: "Iniciar um novo projeto \xE9 como abrir uma p\xE1gina em branco onde\
   \ voc\xEA colocar\xE1 seu c\xF3digo criativo em a\xE7\xE3o. Programadores fazem\
   \ isso para transformar ideias\u2026"
-lastmod: '2024-02-25T18:49:44.580070-07:00'
+lastmod: '2024-03-11T00:14:20.698477-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto \xE9 como abrir uma p\xE1gina em branco onde voc\xEA\
   \ colocar\xE1 seu c\xF3digo criativo em a\xE7\xE3o. Programadores fazem isso para\

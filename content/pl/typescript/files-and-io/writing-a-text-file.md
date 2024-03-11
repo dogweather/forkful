@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:40.616971-07:00
 description: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119\
   tno\u015Bci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3\
   w. Programi\u015Bci cz\u0119sto wykonuj\u0105 to\u2026"
-lastmod: '2024-02-25T18:49:33.527175-07:00'
+lastmod: '2024-03-11T00:14:08.331701-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119tno\u015B\
   ci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3w.\

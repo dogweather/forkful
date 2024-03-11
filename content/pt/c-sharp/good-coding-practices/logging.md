@@ -3,7 +3,7 @@ date: 2024-01-26 01:01:19.142651-07:00
 description: "Logging (registro de logs) \xE9 o processo de gravar os eventos da aplica\xE7\
   \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o. Programadores realizam registros\
   \ de logs\u2026"
-lastmod: '2024-02-25T18:49:44.211845-07:00'
+lastmod: '2024-03-11T00:14:20.299168-06:00'
 model: gpt-4-1106-preview
 summary: "Logging (registro de logs) \xE9 o processo de gravar os eventos da aplica\xE7\
   \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o. Programadores realizam registros\

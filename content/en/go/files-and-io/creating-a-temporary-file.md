@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:13.471894-07:00
 description: "Creating a temporary file in Go allows for the generation of a non-persistent\
   \ file designed for short-term use, mainly for tasks such as storing interim\u2026"
-lastmod: '2024-02-25T18:49:56.115224-07:00'
+lastmod: '2024-03-11T00:14:33.495267-06:00'
 model: gpt-4-0125-preview
 summary: "Creating a temporary file in Go allows for the generation of a non-persistent\
   \ file designed for short-term use, mainly for tasks such as storing interim\u2026"

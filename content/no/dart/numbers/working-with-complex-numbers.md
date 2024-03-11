@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:58:00.674315-07:00
 description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (vanligvis\
   \ betegnet som a + bi), utvider konseptet av dimensjonsl\xF8se tall til et todimensjonalt\u2026"
-lastmod: '2024-03-09T21:06:05.240255-07:00'
+lastmod: '2024-03-11T00:14:14.009192-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (vanligvis\
   \ betegnet som a + bi), utvider konseptet av dimensjonsl\xF8se tall til et todimensjonalt\u2026"

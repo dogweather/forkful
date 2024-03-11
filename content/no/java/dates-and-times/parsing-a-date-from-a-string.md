@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:14:28.543908-07:00
 description: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere en\
   \ tekstrepresentasjon av en dato og tid til et `Date` objekt eller et mer moderne\u2026"
-lastmod: '2024-02-25T18:49:38.855013-07:00'
+lastmod: '2024-03-11T00:14:14.218143-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere en tekstrepresentasjon\
   \ av en dato og tid til et `Date` objekt eller et mer moderne\u2026"

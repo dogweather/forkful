@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:05.665932-07:00
 description: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de\
   \ uma p\xE1gina da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem\
   \ isso para\u2026"
-lastmod: '2024-02-25T18:49:43.723427-07:00'
+lastmod: '2024-03-11T00:14:19.719520-06:00'
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de uma\
   \ p\xE1gina da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem\

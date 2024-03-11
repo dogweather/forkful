@@ -3,7 +3,7 @@ date: 2024-01-26 03:37:45.539599-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
   cie wszystkich wyst\u0105pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3\
   w cudzys\u0142owu otaczaj\u0105cych tekst.\u2026"
-lastmod: '2024-02-25T18:49:34.030902-07:00'
+lastmod: '2024-03-11T00:14:08.856294-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
   cie wszystkich wyst\u0105pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3\

@@ -3,7 +3,7 @@ date: 2024-01-26 01:17:58.158354-07:00
 description: "Refactoring ist im Grunde genommen wie ein Fr\xFChjahrsputz f\xFCr Ihre\
   \ Codebasis \u2013 es geht darum, bestehenden Code umzustrukturieren, ohne sein\
   \ externes\u2026"
-lastmod: '2024-02-25T18:49:50.875738-07:00'
+lastmod: '2024-03-11T00:14:27.706223-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist im Grunde genommen wie ein Fr\xFChjahrsputz f\xFCr Ihre\
   \ Codebasis \u2013 es geht darum, bestehenden Code umzustrukturieren, ohne sein\

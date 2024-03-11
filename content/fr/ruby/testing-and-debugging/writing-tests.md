@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:46.293863-07:00
 description: "Le test en Ruby consiste \xE0 v\xE9rifier que votre code se comporte\
   \ comme pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent des tests\
   \ pour assurer la\u2026"
-lastmod: '2024-02-25T18:49:55.045955-07:00'
+lastmod: '2024-03-11T00:14:32.295795-06:00'
 model: gpt-4-0125-preview
 summary: "Le test en Ruby consiste \xE0 v\xE9rifier que votre code se comporte comme\
   \ pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent des tests pour\

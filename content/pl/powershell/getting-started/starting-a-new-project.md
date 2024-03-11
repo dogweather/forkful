@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:20.682126-07:00
 description: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u0142\
   e zadania programistyczne. Programi\u015Bci robi\u0105 to, \u017Ceby zorganizowa\u0107\
   \ kod, \u015Brodowisko pracy\u2026"
-lastmod: '2024-02-25T18:49:33.999768-07:00'
+lastmod: '2024-03-11T00:14:08.824459-06:00'
 model: gpt-4-1106-preview
 summary: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u0142e\
   \ zadania programistyczne. Programi\u015Bci robi\u0105 to, \u017Ceby zorganizowa\u0107\

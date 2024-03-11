@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:22.869553-07:00
 description: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana\
   \ JavaScript), umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\
   \u0107.\u2026"
-lastmod: '2024-02-25T18:49:33.317739-07:00'
+lastmod: '2024-03-11T00:14:08.065162-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana JavaScript),\
   \ umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\u0107\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:46.287204-07:00
 description: "Praca z XML oznacza parsowanie, manipulacj\u0119 i zapisywanie danych\
   \ XML za pomoc\u0105 programowania. Programi\u015Bci obs\u0142uguj\u0105 XML, aby\
   \ wymienia\u0107 dane mi\u0119dzy r\xF3\u017Cnymi\u2026"
-lastmod: '2024-02-25T18:49:33.533463-07:00'
+lastmod: '2024-03-11T00:14:08.338216-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML oznacza parsowanie, manipulacj\u0119 i zapisywanie danych XML\
   \ za pomoc\u0105 programowania. Programi\u015Bci obs\u0142uguj\u0105 XML, aby wymienia\u0107\

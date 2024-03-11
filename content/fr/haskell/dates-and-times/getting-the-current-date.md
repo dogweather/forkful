@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:31.312136-07:00
 description: "R\xE9cup\xE9rer la date actuelle en Haskell implique d'obtenir le temps\
   \ syst\xE8me actuel et de le transformer en un format de date lisible. Les programmeurs\
   \ font\u2026"
-lastmod: '2024-02-25T18:49:54.566980-07:00'
+lastmod: '2024-03-11T00:14:31.793710-06:00'
 model: gpt-4-0125-preview
 summary: "R\xE9cup\xE9rer la date actuelle en Haskell implique d'obtenir le temps\
   \ syst\xE8me actuel et de le transformer en un format de date lisible. Les programmeurs\

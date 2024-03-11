@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:43.430952-07:00
 description: "Working with XML in Dart involves parsing, querying, and modifying XML\
   \ documents, a process crucial for applications that interact with web services,\u2026"
-lastmod: '2024-03-09T21:06:23.374849-07:00'
+lastmod: '2024-03-11T00:14:33.700804-06:00'
 model: gpt-4-0125-preview
 summary: "Working with XML in Dart involves parsing, querying, and modifying XML documents,\
   \ a process crucial for applications that interact with web services,\u2026"

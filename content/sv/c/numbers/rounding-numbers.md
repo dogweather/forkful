@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:52.650120-07:00
 description: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
   r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\
   \ talet\u2026"
-lastmod: '2024-02-25T18:49:36.691909-07:00'
+lastmod: '2024-03-11T00:14:11.780504-06:00'
 model: gpt-4-0125-preview
 summary: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
   r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\

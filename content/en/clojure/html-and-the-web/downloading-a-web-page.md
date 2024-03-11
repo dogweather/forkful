@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:37.240018-07:00
 description: "Downloading a web page means grabbing the HTML from a URL so your program\
   \ can work with it. Programmers do it to scrape data, automate web interactions\
   \ or\u2026"
-lastmod: '2024-02-25T18:49:56.208464-07:00'
+lastmod: '2024-03-11T00:14:33.596134-06:00'
 model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing the HTML from a URL so your program\
   \ can work with it. Programmers do it to scrape data, automate web interactions\

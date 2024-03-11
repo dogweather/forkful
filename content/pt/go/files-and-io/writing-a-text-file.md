@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:43.910344-07:00
 description: "Escrever um arquivo de texto em Go envolve criar e escrever strings\
   \ de dados em um novo ou existente arquivo de texto. Programadores fazem isso para\u2026"
-lastmod: '2024-02-25T18:49:43.744708-07:00'
+lastmod: '2024-03-11T00:14:19.742204-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Go envolve criar e escrever strings de dados\
   \ em um novo ou existente arquivo de texto. Programadores fazem isso para\u2026"

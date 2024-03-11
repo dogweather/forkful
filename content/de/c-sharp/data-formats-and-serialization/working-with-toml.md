@@ -3,7 +3,7 @@ date: 2024-01-26 04:20:04.751331-07:00
 description: "TOML ist ein Akronym f\xFCr Toms Offensichtliche, Minimale Sprache,\
   \ ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen\
   \ ist.\u2026"
-lastmod: '2024-02-25T18:49:50.971116-07:00'
+lastmod: '2024-03-11T00:14:27.808628-06:00'
 model: gpt-4-0125-preview
 summary: "TOML ist ein Akronym f\xFCr Toms Offensichtliche, Minimale Sprache, ein\
   \ Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen\

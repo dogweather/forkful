@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:09.416163-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista,\
   \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista\u2026"
-lastmod: '2024-02-25T18:49:53.458445-07:00'
+lastmod: '2024-03-11T00:14:30.487771-06:00'
 model: gpt-4-1106-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista,\
   \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista\u2026"

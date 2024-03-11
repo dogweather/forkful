@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:42.083039-07:00
 description: "Convertir una cadena de texto a min\xFAsculas es tomar cada letra en\
   \ may\xFAscula y cambiarla por su equivalente en min\xFAscula. Los programadores\
   \ hacen esto para\u2026"
-lastmod: '2024-02-25T18:49:55.576778-07:00'
+lastmod: '2024-03-11T00:14:32.919250-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una cadena de texto a min\xFAsculas es tomar cada letra en may\xFA\
   scula y cambiarla por su equivalente en min\xFAscula. Los programadores hacen esto\

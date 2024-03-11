@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:34.253078-07:00
 description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, erm\xF6glicht\
   \ es, Strings in Bash effizient zu bearbeiten. Programmierer nutzen dies, um Eingaben\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:51.094553-07:00'
+lastmod: '2024-03-11T00:14:27.940467-06:00'
 model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, erm\xF6glicht\
   \ es, Strings in Bash effizient zu bearbeiten. Programmierer nutzen dies, um Eingaben\

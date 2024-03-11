@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:37.378610-07:00
 description: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing\
   \ og generering av strukturerte data fra tekstfiler der hver linje representerer\
   \ en post og\u2026"
-lastmod: '2024-02-25T18:49:39.343136-07:00'
+lastmod: '2024-03-11T00:14:14.762899-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing og\
   \ generering av strukturerte data fra tekstfiler der hver linje representerer en\

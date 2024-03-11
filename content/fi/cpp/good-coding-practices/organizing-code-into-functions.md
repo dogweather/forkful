@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:53.079061-07:00
 description: "Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiksi,\
   \ uudelleenk\xE4ytett\xE4viksi osiksi. Sen tavoitteena on toiston v\xE4ltt\xE4minen,\
   \ koodin\u2026"
-lastmod: '2024-02-25T18:49:53.780172-07:00'
+lastmod: '2024-03-11T00:14:30.908184-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiksi, uudelleenk\xE4\
   ytett\xE4viksi osiksi. Sen tavoitteena on toiston v\xE4ltt\xE4minen, koodin\u2026"

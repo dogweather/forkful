@@ -2,7 +2,7 @@
 date: 2024-01-20 17:41:11.103703-07:00
 description: "Temporary files are files created to hold data temporarily while a program\
   \ is running. Programmers use them for tasks like managing large data that won't\u2026"
-lastmod: '2024-02-25T18:49:47.656964-07:00'
+lastmod: '2024-03-11T00:14:24.067059-06:00'
 model: gpt-4-1106-preview
 summary: "Temporary files are files created to hold data temporarily while a program\
   \ is running. Programmers use them for tasks like managing large data that won't\u2026"

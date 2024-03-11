@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:05.552077-07:00
 description: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar strings\
   \ formatadas em JSON para objetos Python e vice-versa. Isso \xE9 crucial para o\u2026"
-lastmod: '2024-02-25T18:49:43.837715-07:00'
+lastmod: '2024-03-11T00:14:19.844131-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar strings\
   \ formatadas em JSON para objetos Python e vice-versa. Isso \xE9 crucial para o\u2026"

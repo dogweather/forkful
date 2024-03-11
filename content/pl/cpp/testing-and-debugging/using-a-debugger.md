@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:54.677346-07:00
 description: "U\u017Cycie debugera oznacza uruchomienie narz\u0119dzia, kt\xF3re pozwala\
   \ zajrze\u0107 do wn\u0119trza dzia\u0142aj\u0105cego programu, aby zrozumie\u0107\
   , co si\u0119 w nim naprawd\u0119 dzieje.\u2026"
-lastmod: '2024-02-25T18:49:34.089343-07:00'
+lastmod: '2024-03-11T00:14:08.917404-06:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cycie debugera oznacza uruchomienie narz\u0119dzia, kt\xF3re pozwala\
   \ zajrze\u0107 do wn\u0119trza dzia\u0142aj\u0105cego programu, aby zrozumie\u0107\

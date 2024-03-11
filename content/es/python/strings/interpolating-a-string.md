@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-28 21:23:50.789079-07:00
 description: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
   \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"
-lastmod: '2024-02-25T18:49:55.164274-07:00'
+lastmod: '2024-03-11T00:14:32.428898-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
   \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"

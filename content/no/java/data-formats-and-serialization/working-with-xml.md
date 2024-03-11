@@ -2,7 +2,7 @@
 date: 2024-01-26 04:32:38.768670-07:00
 description: "\xC5 jobbe med XML inneb\xE6rer parsing, sp\xF8rring og manipulering\
   \ av XML-dokumenter med Java. Programmerere gj\xF8r dette for datautveksling, konfigurasjonsstyring\u2026"
-lastmod: '2024-02-25T18:49:38.870720-07:00'
+lastmod: '2024-03-11T00:14:14.235120-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, sp\xF8rring og manipulering av\
   \ XML-dokumenter med Java. Programmerere gj\xF8r dette for datautveksling, konfigurasjonsstyring\u2026"

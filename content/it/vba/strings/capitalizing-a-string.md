@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:49:30.516454-07:00
 description: "Capitalizzare una stringa in Visual Basic for Applications (VBA) significa\
   \ convertire il primo carattere di ogni parola in una stringa in maiuscolo,\u2026"
-lastmod: '2024-02-25T18:49:41.118065-07:00'
+lastmod: '2024-03-11T00:14:16.810097-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in Visual Basic for Applications (VBA) significa\
   \ convertire il primo carattere di ogni parola in una stringa in maiuscolo,\u2026"

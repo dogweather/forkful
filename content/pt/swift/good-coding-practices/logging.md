@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:09.404601-07:00
 description: "O registro de logs \xE9 o processo de gravar comportamentos, erros e\
   \ outras informa\xE7\xF5es importantes de uma aplica\xE7\xE3o em um meio persistente,\
   \ como um arquivo\u2026"
-lastmod: '2024-02-25T18:49:44.544387-07:00'
+lastmod: '2024-03-11T00:14:20.658945-06:00'
 model: gpt-4-1106-preview
 summary: "O registro de logs \xE9 o processo de gravar comportamentos, erros e outras\
   \ informa\xE7\xF5es importantes de uma aplica\xE7\xE3o em um meio persistente, como\

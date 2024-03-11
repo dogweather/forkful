@@ -6,7 +6,7 @@ date: 2024-02-27 22:50:20.728417-07:00
 description: "Generar n\xFAmeros aleatorios en Elm implica usar el m\xF3dulo `Random`\
   \ para producir n\xFAmeros pseudo-aleatorios, los cuales son \xFAtiles para una\
   \ variedad de\u2026"
-lastmod: '2024-03-09T21:06:22.535671-07:00'
+lastmod: '2024-03-11T00:14:32.793015-06:00'
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en Elm implica usar el m\xF3dulo `Random`\
   \ para producir n\xFAmeros pseudo-aleatorios, los cuales son \xFAtiles para una\

@@ -6,7 +6,7 @@ date: 2024-02-22 17:30:10.136520-07:00
 description: "Rozpoczynaj\u0105c nowy projekt w Pythonie chodzi o to, aby od samego\
   \ pocz\u0105tku ustawi\u0107 zorganizowan\u0105 i \u0142atw\u0105 w utrzymaniu struktur\u0119\
   . Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: '2024-02-25T18:49:33.375285-07:00'
+lastmod: '2024-03-11T00:14:08.122969-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpoczynaj\u0105c nowy projekt w Pythonie chodzi o to, aby od samego pocz\u0105\
   tku ustawi\u0107 zorganizowan\u0105 i \u0142atw\u0105 w utrzymaniu struktur\u0119\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:18.966699-07:00
 description: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe p\xE5 en spesifisert bane i filsystemet. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: '2024-02-25T18:49:38.985512-07:00'
+lastmod: '2024-03-11T00:14:14.371499-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifisere tilstedev\xE6\
   relsen av en mappe p\xE5 en spesifisert bane i filsystemet. Programmerere gj\xF8\

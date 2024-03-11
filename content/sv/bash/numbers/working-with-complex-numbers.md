@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:10.079707-07:00
 description: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del. Programmerare\
   \ anv\xE4nder dem inom omr\xE5den s\xE5som signalbehandling, kvantmekanik och n\xE4\
   rhelst\u2026"
-lastmod: '2024-02-25T18:49:36.389449-07:00'
+lastmod: '2024-03-11T00:14:11.454675-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del. Programmerare\
   \ anv\xE4nder dem inom omr\xE5den s\xE5som signalbehandling, kvantmekanik och n\xE4\

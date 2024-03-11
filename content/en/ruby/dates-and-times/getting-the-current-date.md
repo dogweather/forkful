@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:28.432475-07:00
 description: "Fetching the current date is an essential task in almost any programming\
   \ endeavor, from logging activities in an application to generating reports with\u2026"
-lastmod: '2024-02-25T18:49:56.997275-07:00'
+lastmod: '2024-03-11T00:14:34.448376-06:00'
 model: gpt-4-0125-preview
 summary: "Fetching the current date is an essential task in almost any programming\
   \ endeavor, from logging activities in an application to generating reports with\u2026"

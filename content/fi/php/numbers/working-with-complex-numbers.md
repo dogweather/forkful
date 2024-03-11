@@ -2,7 +2,7 @@
 date: 2024-01-26 04:43:38.562956-07:00
 description: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 kirjoitetaan\
   \ muodossa `a + bi`. Ne ovat keskeisi\xE4 edistyneess\xE4 matematiikassa, fysiikassa,\u2026"
-lastmod: '2024-02-25T18:49:53.562885-07:00'
+lastmod: '2024-03-11T00:14:30.601505-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 kirjoitetaan\
   \ muodossa `a + bi`. Ne ovat keskeisi\xE4 edistyneess\xE4 matematiikassa, fysiikassa,\u2026"

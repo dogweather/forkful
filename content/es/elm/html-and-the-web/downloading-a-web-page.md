@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:06.008784-07:00
 description: "Bajar una p\xE1gina web es el proceso de obtener su contenido HTML a\
   \ trav\xE9s de internet. Los programadores lo hacen para procesar datos, mostrar\
   \ contenido en\u2026"
-lastmod: '2024-02-25T18:49:55.466296-07:00'
+lastmod: '2024-03-11T00:14:32.796304-06:00'
 model: gpt-4-1106-preview
 summary: "Bajar una p\xE1gina web es el proceso de obtener su contenido HTML a trav\xE9\
   s de internet. Los programadores lo hacen para procesar datos, mostrar contenido\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:51.305895-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res consiste \xE0 transformer\
   \ une repr\xE9sentation de date (typiquement num\xE9rique) en texte lisible. Les\
   \ programmeurs\u2026"
-lastmod: '2024-02-25T18:49:54.794510-07:00'
+lastmod: '2024-03-11T00:14:32.026965-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res consiste \xE0 transformer\
   \ une repr\xE9sentation de date (typiquement num\xE9rique) en texte lisible. Les\

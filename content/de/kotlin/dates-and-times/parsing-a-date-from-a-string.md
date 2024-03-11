@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:28.358626-07:00
 description: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von\
   \ Text in ein Date-Objekt. Diese Operation ist grundlegend f\xFCr Anwendungen, die\
   \ mit\u2026"
-lastmod: '2024-02-25T18:49:50.916914-07:00'
+lastmod: '2024-03-11T00:14:27.749264-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von Text\
   \ in ein Date-Objekt. Diese Operation ist grundlegend f\xFCr Anwendungen, die mit\u2026"

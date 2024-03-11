@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:10.210720-07:00
 description: "Elm does not have built-in support for YAML, a data serialization format\
   \ often used for configuration files or data sharing, due to its strong emphasis\
   \ on\u2026"
-lastmod: '2024-02-25T18:49:56.474404-07:00'
+lastmod: '2024-03-11T00:14:33.893496-06:00'
 model: gpt-4-0125-preview
 summary: "Elm does not have built-in support for YAML, a data serialization format\
   \ often used for configuration files or data sharing, due to its strong emphasis\

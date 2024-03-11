@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:17.875876-07:00
 description: "Sprawdzanie, czy katalog istnieje w Ruby, pozwala programistom na weryfikacj\u0119\
   \ obecno\u015Bci katalogu przed wykonaniem operacji takich jak odczytywanie plik\xF3\
   w\u2026"
-lastmod: '2024-02-25T18:49:34.323054-07:00'
+lastmod: '2024-03-11T00:14:09.168205-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Ruby, pozwala programistom na weryfikacj\u0119\
   \ obecno\u015Bci katalogu przed wykonaniem operacji takich jak odczytywanie plik\xF3\

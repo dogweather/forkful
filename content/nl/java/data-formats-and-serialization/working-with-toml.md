@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:55.267511-07:00
 description: "TOML staat voor Tom's Obvious, Minimal Language. Het is een gegevensserialisatieformaat\
   \ dat wordt gebruikt voor configuratiebestanden. Programmeurs\u2026"
-lastmod: '2024-02-25T18:49:48.046999-07:00'
+lastmod: '2024-03-11T00:14:24.526405-06:00'
 model: gpt-4-0125-preview
 summary: "TOML staat voor Tom's Obvious, Minimal Language. Het is een gegevensserialisatieformaat\
   \ dat wordt gebruikt voor configuratiebestanden. Programmeurs\u2026"

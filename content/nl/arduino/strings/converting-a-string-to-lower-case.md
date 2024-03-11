@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:34.290973-07:00
 description: "Het omzetten van een string naar kleine letters verandert alle hoofdletters\
   \ in de tekst in hun kleine tegenhangers. Programmeurs doen dit voor\u2026"
-lastmod: '2024-02-25T18:49:48.393250-07:00'
+lastmod: '2024-03-11T00:14:24.893755-06:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van een string naar kleine letters verandert alle hoofdletters\
   \ in de tekst in hun kleine tegenhangers. Programmeurs doen dit voor\u2026"

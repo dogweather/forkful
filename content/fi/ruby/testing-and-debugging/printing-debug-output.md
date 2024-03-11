@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:33.494522-07:00
 description: "Debug-tulostus on koodissa olevien `puts` tai `p` -komentojen k\xE4\
   ytt\xF6\xE4 v\xE4liaikaisten viestien n\xE4ytt\xE4miseen, jotta n\xE4hd\xE4\xE4\
   n mit\xE4 ohjelmassa tapahtuu. Se\u2026"
-lastmod: '2024-02-25T18:49:53.993254-07:00'
+lastmod: '2024-03-11T00:14:31.130784-06:00'
 model: gpt-4-1106-preview
 summary: "Debug-tulostus on koodissa olevien `puts` tai `p` -komentojen k\xE4ytt\xF6\
   \xE4 v\xE4liaikaisten viestien n\xE4ytt\xE4miseen, jotta n\xE4hd\xE4\xE4n mit\xE4\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:41:33.442263-07:00
 description: "Los n\xFAmeros complejos expanden la l\xEDnea de n\xFAmeros reales a\
   \ trav\xE9s de la adici\xF3n de una unidad imaginaria, `i`, donde `i^2 = -1`. Son\
   \ cruciales en campos\u2026"
-lastmod: '2024-02-25T18:49:55.420951-07:00'
+lastmod: '2024-03-11T00:14:32.746600-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos expanden la l\xEDnea de n\xFAmeros reales a trav\xE9\
   s de la adici\xF3n de una unidad imaginaria, `i`, donde `i^2 = -1`. Son cruciales\

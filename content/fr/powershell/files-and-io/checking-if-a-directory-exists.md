@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:03.646255-07:00
 description: "Dans PowerShell, v\xE9rifier si un r\xE9pertoire existe est une t\xE2\
   che courante qui aide les scripts \xE0 prendre des d\xE9cisions bas\xE9es sur la\
   \ structure du syst\xE8me\u2026"
-lastmod: '2024-02-25T18:49:54.749586-07:00'
+lastmod: '2024-03-11T00:14:31.985822-06:00'
 model: gpt-4-0125-preview
 summary: "Dans PowerShell, v\xE9rifier si un r\xE9pertoire existe est une t\xE2che\
   \ courante qui aide les scripts \xE0 prendre des d\xE9cisions bas\xE9es sur la structure\

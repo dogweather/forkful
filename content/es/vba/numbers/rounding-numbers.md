@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:57.673812-07:00
 description: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar un\
   \ n\xFAmero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares\
   \ decimales. Los\u2026"
-lastmod: '2024-02-25T18:49:55.377998-07:00'
+lastmod: '2024-03-11T00:14:32.701545-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar un n\xFA\
   mero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares decimales.\

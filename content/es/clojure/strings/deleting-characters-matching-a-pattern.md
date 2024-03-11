@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:46.947632-07:00
 description: "Eliminar caracteres seg\xFAn un patr\xF3n es filtrar ciertos caracteres\
   \ de una cadena de texto, dejando solo los que necesitamos. Los programadores lo\
   \ hacen\u2026"
-lastmod: '2024-02-25T18:49:55.203392-07:00'
+lastmod: '2024-03-11T00:14:32.470910-06:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres seg\xFAn un patr\xF3n es filtrar ciertos caracteres\
   \ de una cadena de texto, dejando solo los que necesitamos. Los programadores lo\

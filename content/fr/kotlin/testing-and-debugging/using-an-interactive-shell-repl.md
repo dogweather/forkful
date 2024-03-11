@@ -2,7 +2,7 @@
 date: 2024-01-26 04:15:48.350784-07:00
 description: "Un REPL (Read-Eval-Print Loop, soit Boucle de Lire-\xC9valuer-Imprimer)\
   \ est un environnement de programmation informatique simple et interactif. Les\u2026"
-lastmod: '2024-02-25T18:49:54.474263-07:00'
+lastmod: '2024-03-11T00:14:31.689388-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print Loop, soit Boucle de Lire-\xC9valuer-Imprimer)\
   \ est un environnement de programmation informatique simple et interactif. Les\u2026"

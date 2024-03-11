@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:11.058697-07:00
 description: "Iniziare un nuovo progetto in Elixir significa creare una base da cui\
   \ far evolvere il tuo codice. I programmatori aprono nuovi progetti per organizzare\u2026"
-lastmod: '2024-02-25T18:49:41.012662-07:00'
+lastmod: '2024-03-11T00:14:16.645518-06:00'
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto in Elixir significa creare una base da cui far\
   \ evolvere il tuo codice. I programmatori aprono nuovi progetti per organizzare\u2026"

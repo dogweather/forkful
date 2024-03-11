@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:18.481726-07:00
 description: "Searching and replacing text in C involves identifying specific substrings\
   \ within a larger string and substituting them with different substrings.\u2026"
-lastmod: '2024-02-25T18:49:56.934951-07:00'
+lastmod: '2024-03-11T00:14:34.378274-06:00'
 model: gpt-4-0125-preview
 summary: "Searching and replacing text in C involves identifying specific substrings\
   \ within a larger string and substituting them with different substrings.\u2026"

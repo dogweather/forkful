@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:56.599373-07:00
 description: "Avviare un nuovo progetto significa creare un ambiente per sviluppare\
   \ il tuo software. Lo fai per partire con un'organizzazione chiara e permettere\
   \ una\u2026"
-lastmod: '2024-02-25T18:49:41.178888-07:00'
+lastmod: '2024-03-11T00:14:16.877975-06:00'
 model: gpt-4-1106-preview
 summary: "Avviare un nuovo progetto significa creare un ambiente per sviluppare il\
   \ tuo software. Lo fai per partire con un'organizzazione chiara e permettere una\u2026"

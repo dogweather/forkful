@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:04.176146-07:00
 description: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de vous\
   \ fournir des donn\xE9es, ou d'y soumettre des infos. Les devs font \xE7a pour int\xE9\
   ragir avec\u2026"
-lastmod: '2024-02-25T18:49:54.250104-07:00'
+lastmod: '2024-03-11T00:14:31.449547-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de vous\
   \ fournir des donn\xE9es, ou d'y soumettre des infos. Les devs font \xE7a pour int\xE9\

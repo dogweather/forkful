@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:41.293324-07:00
 description: "YAML (YAML Ain't Markup Language) es un est\xE1ndar de serializaci\xF3\
   n de datos legible por humanos que puede ser utilizado para archivos de configuraci\xF3\
   n,\u2026"
-lastmod: '2024-02-25T18:49:55.824951-07:00'
+lastmod: '2024-03-11T00:14:33.176404-06:00'
 model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) es un est\xE1ndar de serializaci\xF3n\
   \ de datos legible por humanos que puede ser utilizado para archivos de configuraci\xF3\

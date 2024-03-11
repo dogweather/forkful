@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:55.156988-07:00
 description: "Escribir pruebas en Rust implica crear comprobaciones automatizadas\
   \ para asegurar que tu c\xF3digo funciona como se espera. Los programadores hacen\
   \ esto para\u2026"
-lastmod: '2024-02-25T18:49:55.344144-07:00'
+lastmod: '2024-03-11T00:14:32.665760-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Rust implica crear comprobaciones automatizadas para\
   \ asegurar que tu c\xF3digo funciona como se espera. Los programadores hacen esto\

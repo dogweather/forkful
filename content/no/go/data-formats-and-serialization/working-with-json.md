@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:01.333200-07:00
 description: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6rer\
   \ koding og dekoding av data mellom Go-datastrukturer og JSON-format. Denne oppgaven\
   \ er\u2026"
-lastmod: '2024-02-25T18:49:38.521727-07:00'
+lastmod: '2024-03-11T00:14:13.807132-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6rer koding\
   \ og dekoding av data mellom Go-datastrukturer og JSON-format. Denne oppgaven er\u2026"

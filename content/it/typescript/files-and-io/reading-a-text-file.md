@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:07.584036-07:00
 description: "Leggere un file di testo significa accedere al suo contenuto tramite\
   \ codice. I programmatori lo fanno per processare dati, configurazioni o per leggere\u2026"
-lastmod: '2024-02-25T18:49:41.070109-07:00'
+lastmod: '2024-03-11T00:14:16.756773-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa accedere al suo contenuto tramite codice.\
   \ I programmatori lo fanno per processare dati, configurazioni o per leggere\u2026"

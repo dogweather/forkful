@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:42.905363-07:00
 description: "Tekstitiedoston kirjoittaminen PHP:ss\xE4 sis\xE4lt\xE4\xE4 tiedoston\
   \ luomisen tai avaamisen ja sis\xE4ll\xF6n lis\xE4\xE4misen siihen. Ohjelmoijat\
   \ tekev\xE4t n\xE4in tallentaakseen\u2026"
-lastmod: '2024-02-25T18:49:53.586113-07:00'
+lastmod: '2024-03-11T00:14:30.626376-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen PHP:ss\xE4 sis\xE4lt\xE4\xE4 tiedoston luomisen\
   \ tai avaamisen ja sis\xE4ll\xF6n lis\xE4\xE4misen siihen. Ohjelmoijat tekev\xE4\

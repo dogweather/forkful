@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:03.944945-07:00
 description: "Omformning av en str\xE4ng till gemener inneb\xE4r att omvandla alla\
   \ stora bokst\xE4ver i en textstr\xE4ng till sm\xE5 bokst\xE4ver. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:35.894636-07:00'
+lastmod: '2024-03-11T00:14:10.883606-06:00'
 model: gpt-4-1106-preview
 summary: "Omformning av en str\xE4ng till gemener inneb\xE4r att omvandla alla stora\
   \ bokst\xE4ver i en textstr\xE4ng till sm\xE5 bokst\xE4ver. Programmerare g\xF6\

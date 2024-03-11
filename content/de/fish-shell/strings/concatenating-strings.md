@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:47.349514-07:00
 description: "Beim Verketten von Strings geht es darum, sie aneinanderzureihen, um\
   \ einen l\xE4ngeren String zu bilden. Programmierer machen das, um dynamische Texte\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:51.349920-07:00'
+lastmod: '2024-03-11T00:14:28.205648-06:00'
 model: gpt-4-1106-preview
 summary: "Beim Verketten von Strings geht es darum, sie aneinanderzureihen, um einen\
   \ l\xE4ngeren String zu bilden. Programmierer machen das, um dynamische Texte zu\u2026"

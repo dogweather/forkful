@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:12.231814-07:00
 description: "Lavorare con JSON (JavaScript Object Notation) implica l'analisi, la\
   \ generazione e l'interrogazione di dati JSON, rendendolo una competenza fondamentale\u2026"
-lastmod: '2024-02-25T18:49:41.319783-07:00'
+lastmod: '2024-03-11T00:14:17.045175-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con JSON (JavaScript Object Notation) implica l'analisi, la generazione\
   \ e l'interrogazione di dati JSON, rendendolo una competenza fondamentale\u2026"

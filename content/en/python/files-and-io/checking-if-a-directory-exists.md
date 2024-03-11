@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:30.098252-07:00
 description: "Checking if a directory exists in Python is about verifying the presence\
   \ of a folder in the filesystem before performing operations like reading or\u2026"
-lastmod: '2024-02-25T18:49:56.184819-07:00'
+lastmod: '2024-03-11T00:14:33.570512-06:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Python is about verifying the presence\
   \ of a folder in the filesystem before performing operations like reading or\u2026"

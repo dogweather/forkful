@@ -5,7 +5,7 @@ date: 2024-01-28 22:00:46.892857-07:00
 description: "De huidige datum in Elm krijgen betekent het ophalen van de huidige\
   \ kalenderdatum van het systeem. We doen dit om gebeurtenissen te timestampen, taken\
   \ te\u2026"
-lastmod: '2024-02-25T18:49:48.075973-07:00'
+lastmod: '2024-03-11T00:14:24.558525-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in Elm krijgen betekent het ophalen van de huidige kalenderdatum\
   \ van het systeem. We doen dit om gebeurtenissen te timestampen, taken te\u2026"

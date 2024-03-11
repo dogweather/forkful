@@ -3,7 +3,7 @@ date: 2024-01-26 04:17:46.038921-07:00
 description: "Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czytaj-Wykonaj-Wydrukuj),\
   \ pozwala testowa\u0107 kod w czasie rzeczywistym. Programi\u015Bci u\u017Cywaj\u0105\
   \u2026"
-lastmod: '2024-02-25T18:49:34.309823-07:00'
+lastmod: '2024-03-11T00:14:09.153576-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czytaj-Wykonaj-Wydrukuj),\
   \ pozwala testowa\u0107 kod w czasie rzeczywistym. Programi\u015Bci u\u017Cywaj\u0105\

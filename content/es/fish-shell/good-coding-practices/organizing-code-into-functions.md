@@ -6,7 +6,7 @@ date: 2024-01-28 23:01:32.943608-07:00
 description: "Organizar el c\xF3digo en funciones trata de agrupar trozos de script\
   \ para realizar tareas espec\xEDficas. Lo hacemos porque hace que el c\xF3digo sea\
   \ m\xE1s f\xE1cil de\u2026"
-lastmod: '2024-02-25T18:49:55.976529-07:00'
+lastmod: '2024-03-11T00:14:33.344053-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones trata de agrupar trozos de script para\
   \ realizar tareas espec\xEDficas. Lo hacemos porque hace que el c\xF3digo sea m\xE1\

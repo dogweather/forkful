@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:09.852088-07:00
 description: "Envoyer une requ\xEAte HTTP avec authentification basique, c'est transmettre\
   \ vos identifiants (username/password) en s\xE9curis\xE9 pour acc\xE9der \xE0 une\
   \ ressource.\u2026"
-lastmod: '2024-02-25T18:49:54.598443-07:00'
+lastmod: '2024-03-11T00:14:31.828664-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec authentification basique, c'est transmettre\
   \ vos identifiants (username/password) en s\xE9curis\xE9 pour acc\xE9der \xE0 une\

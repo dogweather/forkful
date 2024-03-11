@@ -3,7 +3,7 @@ date: 2024-01-26 04:19:10.421191-07:00
 description: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et format\
   \ for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet;\
   \ det er\u2026"
-lastmod: '2024-02-25T18:49:39.172571-07:00'
+lastmod: '2024-03-11T00:14:14.575559-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et format\
   \ for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet;\

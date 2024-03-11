@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:42.191919-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
   \ ler ou escrever em arquivos de texto simples nos quais os campos de dados s\xE3\
   o separados\u2026"
-lastmod: '2024-02-25T18:49:44.057146-07:00'
+lastmod: '2024-03-11T00:14:20.131926-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve ler\
   \ ou escrever em arquivos de texto simples nos quais os campos de dados s\xE3o separados\u2026"

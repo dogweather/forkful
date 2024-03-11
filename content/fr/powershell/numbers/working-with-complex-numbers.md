@@ -3,7 +3,7 @@ date: 2024-01-26 04:44:02.681944-07:00
 description: "Les nombres complexes, ceux ayant une partie r\xE9elle et une partie\
   \ imaginaire (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9\
   nierie, la\u2026"
-lastmod: '2024-02-25T18:49:54.721915-07:00'
+lastmod: '2024-03-11T00:14:31.961593-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes, ceux ayant une partie r\xE9elle et une partie imaginaire\
   \ (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9nierie, la\u2026"

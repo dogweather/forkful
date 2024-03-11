@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:25.748322-07:00
 description: "Trouver la longueur d'une cha\xEEne de caract\xE8res dans Google Apps\
   \ Script, un langage de script cloud JavaScript qui vous permet d'automatiser des\
   \ t\xE2ches \xE0\u2026"
-lastmod: '2024-02-25T18:49:54.071333-07:00'
+lastmod: '2024-03-11T00:14:31.212807-06:00'
 model: gpt-4-0125-preview
 summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res dans Google Apps Script,\
   \ un langage de script cloud JavaScript qui vous permet d'automatiser des t\xE2\

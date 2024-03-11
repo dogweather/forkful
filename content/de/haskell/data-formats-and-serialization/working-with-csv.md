@@ -2,7 +2,7 @@
 date: 2024-01-19
 description: "CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische\
   \ Daten speichern. Programmierer nutzen CSV, weil es ein weit verbreitetes, leicht\u2026"
-lastmod: '2024-03-09T21:11:36.185848-07:00'
+lastmod: '2024-03-11T00:14:27.850939-06:00'
 model: unknown
 summary: "CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische\
   \ Daten speichern. Programmierer nutzen CSV, weil es ein weit verbreitetes, leicht\u2026"

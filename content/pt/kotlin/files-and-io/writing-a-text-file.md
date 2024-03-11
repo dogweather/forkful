@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:20.530207-07:00
 description: "Escrever um arquivo de texto em Kotlin envolve criar um arquivo e inserir\
   \ conte\xFAdo de texto nele, uma tarefa comum para armazenar dados, registrar logs\
   \ ou\u2026"
-lastmod: '2024-02-25T18:49:44.181214-07:00'
+lastmod: '2024-03-11T00:14:20.266084-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Kotlin envolve criar um arquivo e inserir\
   \ conte\xFAdo de texto nele, uma tarefa comum para armazenar dados, registrar logs\

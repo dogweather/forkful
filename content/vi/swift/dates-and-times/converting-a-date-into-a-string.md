@@ -6,7 +6,7 @@ description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\
   i trong Swift gi\xFAp b\u1EA1n \u0111\u1ECBnh d\u1EA1ng ng\xE0y th\xE1ng cho con\
   \ ng\u01B0\u1EDDi. \u0110\xE2y l\xE0 ch\xECa kh\xF3a cho vi\u1EC7c hi\u1EC3n th\u1ECB\
   \ giao di\u1EC7n ng\u01B0\u1EDDi d\xF9ng,\u2026"
-lastmod: '2024-02-25T18:49:35.458713-07:00'
+lastmod: '2024-03-11T00:14:10.415199-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\u1ED7\
   i trong Swift gi\xFAp b\u1EA1n \u0111\u1ECBnh d\u1EA1ng ng\xE0y th\xE1ng cho con\

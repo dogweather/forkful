@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:40.607086-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n luomista ja\
   \ l\xE4hett\xE4mist\xE4 verkkopalvelimelle tietojen noutamiseksi tai l\xE4hett\xE4\
   miseksi. Ohjelmoijat tekev\xE4t\u2026"
-lastmod: '2024-02-25T18:49:53.941607-07:00'
+lastmod: '2024-03-11T00:14:31.078019-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n luomista ja l\xE4\
   hett\xE4mist\xE4 verkkopalvelimelle tietojen noutamiseksi tai l\xE4hett\xE4miseksi.\

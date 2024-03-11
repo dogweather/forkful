@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:46.043728-07:00
 description: "Procurar e substituir texto \xE9 basicamente mudar uma string por outra\
   \ em um bloco de texto. Programadores fazem isso para atualizar dados, corrigir\
   \ erros,\u2026"
-lastmod: '2024-02-25T18:49:44.524112-07:00'
+lastmod: '2024-03-11T00:14:20.637398-06:00'
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 basicamente mudar uma string por outra\
   \ em um bloco de texto. Programadores fazem isso para atualizar dados, corrigir\

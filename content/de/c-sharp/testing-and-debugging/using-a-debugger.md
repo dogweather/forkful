@@ -3,7 +3,7 @@ date: 2024-01-26 03:48:09.939683-07:00
 description: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu\
   \ nutzen, um Code zu testen und zu diagnostizieren. Programmierer tun dies, um Bugs\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:50.952796-07:00'
+lastmod: '2024-03-11T00:14:27.788822-06:00'
 model: gpt-4-0125-preview
 summary: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu nutzen,\
   \ um Code zu testen und zu diagnostizieren. Programmierer tun dies, um Bugs zu\u2026"

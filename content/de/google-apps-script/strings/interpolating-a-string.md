@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:55:20.718901-07:00
 description: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht das\
   \ dynamische Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung\u2026"
-lastmod: '2024-02-25T18:49:50.518790-07:00'
+lastmod: '2024-03-11T00:14:27.277509-06:00'
 model: gpt-4-0125-preview
 summary: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht das dynamische\
   \ Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung\u2026"

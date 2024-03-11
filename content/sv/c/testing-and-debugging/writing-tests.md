@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:41.076417-07:00
 description: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
   \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\
   r detta\u2026"
-lastmod: '2024-02-25T18:49:36.701553-07:00'
+lastmod: '2024-03-11T00:14:11.791009-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
   \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\

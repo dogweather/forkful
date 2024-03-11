@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:01.968609-07:00
 description: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
   \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\
   \ b\xF6rjar\u2026"
-lastmod: '2024-02-25T18:49:36.281374-07:00'
+lastmod: '2024-03-11T00:14:11.350097-06:00'
 model: gpt-4-0125-preview
 summary: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
   \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\

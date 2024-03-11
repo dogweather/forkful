@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:49.861096-07:00
 description: "Avviare un nuovo progetto Kotlin significa preparare l'ambiente per\
   \ scrivere codice. Lo facciamo perch\xE9 abbiamo un'idea da trasformare in un'app\u2026"
-lastmod: '2024-02-25T18:49:41.258366-07:00'
+lastmod: '2024-03-11T00:14:16.968733-06:00'
 model: gpt-4-1106-preview
 summary: "Avviare un nuovo progetto Kotlin significa preparare l'ambiente per scrivere\
   \ codice. Lo facciamo perch\xE9 abbiamo un'idea da trasformare in un'app\u2026"

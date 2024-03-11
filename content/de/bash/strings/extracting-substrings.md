@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:55.636805-07:00
 description: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Textabschnitte\
   \ aus l\xE4ngeren Strings herauszul\xF6sen. Das ist n\xFCtzlich, wenn du Daten bearbeiten\u2026"
-lastmod: '2024-02-25T18:49:51.099202-07:00'
+lastmod: '2024-03-11T00:14:27.945490-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Textabschnitte\
   \ aus l\xE4ngeren Strings herauszul\xF6sen. Das ist n\xFCtzlich, wenn du Daten bearbeiten\u2026"

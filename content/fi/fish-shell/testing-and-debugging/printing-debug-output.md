@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:37.240200-07:00
 description: "Kun tulostetaan debuggausinformaatiota, ohjelmisto kehitt\xE4j\xE4t\
   \ tulostavat v\xE4liaikaisia muuttujien arvoja tai viestej\xE4. T\xE4m\xE4 auttaa\
   \ ymm\xE4rt\xE4m\xE4\xE4n ohjelman\u2026"
-lastmod: '2024-02-25T18:49:53.904226-07:00'
+lastmod: '2024-03-11T00:14:31.038939-06:00'
 model: gpt-4-1106-preview
 summary: "Kun tulostetaan debuggausinformaatiota, ohjelmisto kehitt\xE4j\xE4t tulostavat\
   \ v\xE4liaikaisia muuttujien arvoja tai viestej\xE4. T\xE4m\xE4 auttaa ymm\xE4rt\xE4\

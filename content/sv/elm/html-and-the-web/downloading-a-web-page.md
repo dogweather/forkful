@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:53.139302-07:00
 description: "Att ladda ner en webbsida betyder att h\xE4mta dess inneh\xE5ll via\
   \ internet. Programmerare g\xF6r detta f\xF6r att bearbeta information, fylla appar\
   \ med data eller\u2026"
-lastmod: '2024-02-25T18:49:36.122599-07:00'
+lastmod: '2024-03-11T00:14:11.176143-06:00'
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida betyder att h\xE4mta dess inneh\xE5ll via internet.\
   \ Programmerare g\xF6r detta f\xF6r att bearbeta information, fylla appar med data\

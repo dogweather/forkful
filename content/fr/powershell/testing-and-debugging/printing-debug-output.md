@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:25.946819-07:00
 description: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et\
   \ les \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\
   \ ce qui se\u2026"
-lastmod: '2024-02-25T18:49:54.732806-07:00'
+lastmod: '2024-03-11T00:14:31.973099-06:00'
 model: gpt-4-1106-preview
 summary: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et les\
   \ \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\

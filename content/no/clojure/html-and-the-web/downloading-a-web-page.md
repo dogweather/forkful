@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:34.459982-07:00
 description: "Nedlasting av en nettside betyr \xE5 hente ned HTML-innholdet s\xE5\
   \ det kan analyseres eller manipuleres lokalt. Programmerere gj\xF8r dette for datainnsamling,\u2026"
-lastmod: '2024-02-25T18:49:38.629060-07:00'
+lastmod: '2024-03-11T00:14:13.923831-06:00'
 model: gpt-4-1106-preview
 summary: "Nedlasting av en nettside betyr \xE5 hente ned HTML-innholdet s\xE5 det\
   \ kan analyseres eller manipuleres lokalt. Programmerere gj\xF8r dette for datainnsamling,\u2026"

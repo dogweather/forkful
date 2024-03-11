@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:04:02.260111-07:00
 description: "Het parsen van HTML is het proces waarbij een string van HTML wordt\
   \ ontleed en omgezet in een gegevensstructuur die je programma kan begrijpen en\u2026"
-lastmod: '2024-02-25T18:49:47.936084-07:00'
+lastmod: '2024-03-11T00:14:24.408959-06:00'
 model: gpt-4-0125-preview
 summary: "Het parsen van HTML is het proces waarbij een string van HTML wordt ontleed\
   \ en omgezet in een gegevensstructuur die je programma kan begrijpen en\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:06.976600-07:00
 description: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
   \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\
   es d'une date\u2026"
-lastmod: '2024-02-25T18:49:54.355918-07:00'
+lastmod: '2024-03-11T00:14:31.560456-06:00'
 model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
   \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\

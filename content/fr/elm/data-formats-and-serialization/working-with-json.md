@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:33.104491-07:00
 description: "Travailler avec JSON en Elm consiste \xE0 d\xE9coder des donn\xE9es\
   \ JSON en types Elm et \xE0 encoder des valeurs Elm en retour en JSON. Ce processus\
   \ est crucial pour\u2026"
-lastmod: '2024-02-25T18:49:54.452327-07:00'
+lastmod: '2024-03-11T00:14:31.664325-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON en Elm consiste \xE0 d\xE9coder des donn\xE9es JSON\
   \ en types Elm et \xE0 encoder des valeurs Elm en retour en JSON. Ce processus est\

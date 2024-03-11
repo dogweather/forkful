@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:54.016266-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Visual Basic for Applications (VBA)\
   \ handler om \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
   r man utf\xF8rer\u2026"
-lastmod: '2024-02-25T18:49:38.817515-07:00'
+lastmod: '2024-03-11T00:14:14.175917-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Visual Basic for Applications (VBA)\
   \ handler om \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\

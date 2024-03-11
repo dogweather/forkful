@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:50.627179-07:00
 description: "Rozpocz\u0119cie nowego projektu to stawianie pierwszych krok\xF3w w\
   \ tworzeniu twojej aplikacji czy systemu. Programi\u015Bci robi\u0105 to, by przekszta\u0142\
   ci\u0107 pomys\u0142y w\u2026"
-lastmod: '2024-02-25T18:49:33.729508-07:00'
+lastmod: '2024-03-11T00:14:08.547007-06:00'
 model: gpt-4-1106-preview
 summary: "Rozpocz\u0119cie nowego projektu to stawianie pierwszych krok\xF3w w tworzeniu\
   \ twojej aplikacji czy systemu. Programi\u015Bci robi\u0105 to, by przekszta\u0142\

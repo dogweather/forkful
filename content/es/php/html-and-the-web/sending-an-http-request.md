@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:22.559097-07:00
 description: "Enviar una solicitud HTTP significa pedirle datos a un servidor web\
   \ desde tu script PHP. Programadores lo hacen para interactuar con otros sistemas,\
   \ como\u2026"
-lastmod: '2024-02-25T18:49:55.627153-07:00'
+lastmod: '2024-03-11T00:14:32.974029-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP significa pedirle datos a un servidor web desde\
   \ tu script PHP. Programadores lo hacen para interactuar con otros sistemas, como\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:40.692405-07:00
 description: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det\
   \ er en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\
   \ Utviklere\u2026"
-lastmod: '2024-02-25T18:49:38.636277-07:00'
+lastmod: '2024-03-11T00:14:13.931818-06:00'
 model: gpt-4-1106-preview
 summary: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det er\
   \ en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\

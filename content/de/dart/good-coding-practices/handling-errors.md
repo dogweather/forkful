@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:37.033305-07:00
 description: "Fehlerbehandlung in Dart geht darum, Ausnahmen, die w\xE4hrend der Ausf\xFC\
   hrung des Programms auftreten, vorherzusehen und zu verwalten, um die Zuverl\xE4\
   ssigkeit\u2026"
-lastmod: '2024-03-09T21:06:17.582837-07:00'
+lastmod: '2024-03-11T00:14:27.483472-06:00'
 model: gpt-4-0125-preview
 summary: "Fehlerbehandlung in Dart geht darum, Ausnahmen, die w\xE4hrend der Ausf\xFC\
   hrung des Programms auftreten, vorherzusehen und zu verwalten, um die Zuverl\xE4\

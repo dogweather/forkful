@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:39.258909-07:00
 description: "Die Ermittlung der L\xE4nge eines Strings in Visual Basic for Applications\
   \ (VBA) umfasst die Bestimmung der Anzahl der Zeichen, die er enth\xE4lt. Programmierer\u2026"
-lastmod: '2024-02-25T18:49:50.774375-07:00'
+lastmod: '2024-03-11T00:14:27.599094-06:00'
 model: gpt-4-0125-preview
 summary: "Die Ermittlung der L\xE4nge eines Strings in Visual Basic for Applications\
   \ (VBA) umfasst die Bestimmung der Anzahl der Zeichen, die er enth\xE4lt. Programmierer\u2026"

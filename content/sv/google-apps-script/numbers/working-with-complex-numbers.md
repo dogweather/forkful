@@ -5,7 +5,7 @@ date: 2024-02-01 22:07:36.905840-07:00
 description: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
   ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\
   \ s\xE4rskilt inom\u2026"
-lastmod: '2024-02-25T18:49:35.768166-07:00'
+lastmod: '2024-03-11T00:14:10.739586-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
   ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\

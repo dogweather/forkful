@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:05.673374-07:00
 description: "Printing debug output is like having a conversation with your code to\
   \ figure out what it's thinking. Programmers do it to track down gremlins causing\u2026"
-lastmod: '2024-02-25T18:49:56.174508-07:00'
+lastmod: '2024-03-11T00:14:33.559968-06:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output is like having a conversation with your code to figure\
   \ out what it's thinking. Programmers do it to track down gremlins causing\u2026"

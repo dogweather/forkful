@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:15:08.429086-07:00
 description: "Interpretar una fecha de un string se trata de convertir texto que representa\
   \ una fecha en un objeto `Date` o `DateTime` que Ruby entiende. Los\u2026"
-lastmod: '2024-02-25T18:49:56.067926-07:00'
+lastmod: '2024-03-11T00:14:33.442096-06:00'
 model: gpt-4-0125-preview
 summary: "Interpretar una fecha de un string se trata de convertir texto que representa\
   \ una fecha en un objeto `Date` o `DateTime` que Ruby entiende. Los\u2026"

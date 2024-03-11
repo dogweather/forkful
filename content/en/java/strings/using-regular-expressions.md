@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:04.819670-07:00
 description: "Regular expressions (regex) in Java allow you to define specific patterns\
   \ to search, manipulate, or validate strings in your code. Programmers use them\u2026"
-lastmod: '2024-02-25T18:49:56.384954-07:00'
+lastmod: '2024-03-11T00:14:33.826130-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Java allow you to define specific patterns\
   \ to search, manipulate, or validate strings in your code. Programmers use them\u2026"

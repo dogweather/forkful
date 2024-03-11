@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:05:10.534955-07:00
 description: "Das Arbeiten mit CSV-Dateien (Comma-Separated Values, kommagetrennte\
   \ Werte) in Google Apps Script umfasst das Lesen, Modifizieren und Schreiben von\u2026"
-lastmod: '2024-02-25T18:49:50.558816-07:00'
+lastmod: '2024-03-11T00:14:27.319233-06:00'
 model: gpt-4-0125-preview
 summary: "Das Arbeiten mit CSV-Dateien (Comma-Separated Values, kommagetrennte Werte)\
   \ in Google Apps Script umfasst das Lesen, Modifizieren und Schreiben von\u2026"

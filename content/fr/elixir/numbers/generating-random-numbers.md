@@ -3,7 +3,7 @@ date: 2024-01-27 20:33:30.222539-07:00
 description: "La g\xE9n\xE9ration de nombres al\xE9atoires en Elixir est une t\xE2\
   che de programmation fondamentale, essentielle pour les applications n\xE9cessitant\
   \ des r\xE9sultats\u2026"
-lastmod: '2024-02-25T18:49:54.206857-07:00'
+lastmod: '2024-03-11T00:14:31.354634-06:00'
 model: gpt-4-0125-preview
 summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en Elixir est une t\xE2che\
   \ de programmation fondamentale, essentielle pour les applications n\xE9cessitant\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:30.997038-07:00
 description: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkzeug\
   \ f\xFCr Mustererkennung und -suche in der Programmierung. Programmierer nutzen\
   \ Regex f\xFCr Aufgaben\u2026"
-lastmod: '2024-02-25T18:49:50.690412-07:00'
+lastmod: '2024-03-11T00:14:27.511017-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkzeug f\xFC\
   r Mustererkennung und -suche in der Programmierung. Programmierer nutzen Regex f\xFC\

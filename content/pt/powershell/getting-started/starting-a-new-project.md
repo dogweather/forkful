@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:26.632335-07:00
 description: "Iniciar um novo projeto em PowerShell \xE9 como abrir um livro branco;\
   \ voc\xEA cria um espa\xE7o para desenvolver scripts e solu\xE7\xF5es automatizadas.\
   \ Programadores\u2026"
-lastmod: '2024-02-25T18:49:44.416437-07:00'
+lastmod: '2024-03-11T00:14:20.522102-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em PowerShell \xE9 como abrir um livro branco; voc\xEA\
   \ cria um espa\xE7o para desenvolver scripts e solu\xE7\xF5es automatizadas. Programadores\u2026"

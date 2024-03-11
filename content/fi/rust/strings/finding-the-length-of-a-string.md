@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:58.534358-07:00
 description: "Selvitet\xE4\xE4n merkkijonon pituuden Rust-kieless\xE4: se tarkoittaa\
   \ siis merkkijonossa olevien merkkien m\xE4\xE4r\xE4n laskemista. Ohjelmoija tarvitsee\
   \ t\xE4t\xE4 tietoa\u2026"
-lastmod: '2024-02-25T18:49:53.273178-07:00'
+lastmod: '2024-03-11T00:14:30.281746-06:00'
 model: gpt-4-1106-preview
 summary: "Selvitet\xE4\xE4n merkkijonon pituuden Rust-kieless\xE4: se tarkoittaa siis\
   \ merkkijonossa olevien merkkien m\xE4\xE4r\xE4n laskemista. Ohjelmoija tarvitsee\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:21.577065-07:00
 description: "Das Schreiben auf den Standardfehler (stderr) in der Arduino-Programmierung\
   \ bedeutet, Fehlermeldungen und Diagnosen in einen separaten Kanal zu leiten, um\u2026"
-lastmod: '2024-02-25T18:49:51.211599-07:00'
+lastmod: '2024-03-11T00:14:28.061068-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) in der Arduino-Programmierung\
   \ bedeutet, Fehlermeldungen und Diagnosen in einen separaten Kanal zu leiten, um\u2026"

@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:43.410385-07:00
 description: "\xC5 jobbe med XML i Dart inneb\xE6rer parsing, sp\xF8rre og modifisere\
   \ XML-dokumenter, en prosess som er avgj\xF8rende for applikasjoner som samhandler\
   \ med\u2026"
-lastmod: '2024-03-09T21:06:05.268809-07:00'
+lastmod: '2024-03-11T00:14:14.044170-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Dart inneb\xE6rer parsing, sp\xF8rre og modifisere\
   \ XML-dokumenter, en prosess som er avgj\xF8rende for applikasjoner som samhandler\

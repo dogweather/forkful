@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:15.864231-07:00
 description: "Imprimir sa\xEDda de depura\xE7\xE3o trata de gerar mensagens de log\
   \ tempor\xE1rias e informativas que podem ajudar os programadores a entender o fluxo\
   \ e o estado de\u2026"
-lastmod: '2024-02-25T18:49:44.669590-07:00'
+lastmod: '2024-03-11T00:14:20.794045-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir sa\xEDda de depura\xE7\xE3o trata de gerar mensagens de log tempor\xE1\
   rias e informativas que podem ajudar os programadores a entender o fluxo e o estado\

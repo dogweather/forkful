@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:32.770787-07:00
 description: "Tempor\xE4re Dateien sind kurzlebige Dateien f\xFCr Daten, die w\xE4\
   hrend der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert\
   \ werden sollen.\u2026"
-lastmod: '2024-02-25T18:49:51.007122-07:00'
+lastmod: '2024-03-11T00:14:27.847500-06:00'
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind kurzlebige Dateien f\xFCr Daten, die w\xE4hrend\
   \ der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert werden\

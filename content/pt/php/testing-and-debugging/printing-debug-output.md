@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:11.278437-07:00
 description: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\
   \xF5es de interesse durante a execu\xE7\xE3o de um programa, geralmente para rastrear\
   \ bugs ou verificar\u2026"
-lastmod: '2024-02-25T18:49:44.290407-07:00'
+lastmod: '2024-03-11T00:14:20.383959-06:00'
 model: gpt-4-1106-preview
 summary: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\
   \xF5es de interesse durante a execu\xE7\xE3o de um programa, geralmente para rastrear\

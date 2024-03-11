@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:13.749231-07:00
 description: "Das Parsen eines Datums aus einer Zeichenkette in Dart beinhaltet die\
   \ Umwandlung von textueller Darstellung von Daten und Zeiten in ein `DateTime`-Objekt.\u2026"
-lastmod: '2024-03-09T21:06:17.584642-07:00'
+lastmod: '2024-03-11T00:14:27.485776-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einer Zeichenkette in Dart beinhaltet die Umwandlung\
   \ von textueller Darstellung von Daten und Zeiten in ein `DateTime`-Objekt.\u2026"

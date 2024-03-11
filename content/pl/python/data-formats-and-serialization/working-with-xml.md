@@ -3,7 +3,7 @@ date: 2024-01-26 04:34:59.617139-07:00
 description: "\"Praca z XML\" odnosi si\u0119 do procesu odczytu, tworzenia i modyfikacji\
   \ plik\xF3w XML (eXtensible Markup Language) za pomoc\u0105 programowania. Programi\u015B\
   ci robi\u0105\u2026"
-lastmod: '2024-02-25T18:49:33.400451-07:00'
+lastmod: '2024-03-11T00:14:08.148686-06:00'
 model: gpt-4-0125-preview
 summary: "\"Praca z XML\" odnosi si\u0119 do procesu odczytu, tworzenia i modyfikacji\
   \ plik\xF3w XML (eXtensible Markup Language) za pomoc\u0105 programowania. Programi\u015B\

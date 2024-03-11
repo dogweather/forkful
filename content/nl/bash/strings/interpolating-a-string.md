@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:54.284238-07:00
 description: "Stringinterpolatie stelt je in staat waarden in een string in te voegen.\
   \ Het is handig voor het cre\xEBren van aangepaste berichten, het automatiseren\
   \ van\u2026"
-lastmod: '2024-02-25T18:49:48.304570-07:00'
+lastmod: '2024-03-11T00:14:24.799065-06:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt je in staat waarden in een string in te voegen.\
   \ Het is handig voor het cre\xEBren van aangepaste berichten, het automatiseren\

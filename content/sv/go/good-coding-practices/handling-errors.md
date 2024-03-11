@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:09.826289-07:00
 description: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felvillkor\
   \ i ditt program. Programmerare \xE4gnar sig \xE5t felhantering f\xF6r att s\xE4\
   kerst\xE4lla att deras\u2026"
-lastmod: '2024-02-25T18:49:35.736230-07:00'
+lastmod: '2024-03-11T00:14:10.705408-06:00'
 model: gpt-4-0125-preview
 summary: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felvillkor\
   \ i ditt program. Programmerare \xE4gnar sig \xE5t felhantering f\xF6r att s\xE4\

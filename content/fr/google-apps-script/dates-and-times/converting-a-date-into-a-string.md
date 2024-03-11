@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:48.670760-07:00
 description: "Convertir des dates en cha\xEEnes de caract\xE8res est une t\xE2che\
   \ fondamentale qui permet aux programmeurs de manipuler et d\u2019afficher des informations\
   \ de date\u2026"
-lastmod: '2024-02-25T18:49:54.094835-07:00'
+lastmod: '2024-03-11T00:14:31.236758-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir des dates en cha\xEEnes de caract\xE8res est une t\xE2che fondamentale\
   \ qui permet aux programmeurs de manipuler et d\u2019afficher des informations de\

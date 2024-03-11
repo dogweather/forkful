@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:57.906071-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 a pr\xE1tica de pedir dados ou\
   \ servi\xE7os de um servidor web usando o protocolo HTTP. Programadores fazem isso\
   \ para interagir com\u2026"
-lastmod: '2024-02-25T18:49:44.160004-07:00'
+lastmod: '2024-03-11T00:14:20.242855-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 a pr\xE1tica de pedir dados ou servi\xE7\
   os de um servidor web usando o protocolo HTTP. Programadores fazem isso para interagir\

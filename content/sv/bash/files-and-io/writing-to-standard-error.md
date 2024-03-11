@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:53.845583-07:00
 description: "Att skriva till standardfel (stderr) i Bash handlar om att dirigera\
   \ felmeddelanden eller annan viktig diagnostisk utdata separat fr\xE5n standardutdata\u2026"
-lastmod: '2024-02-25T18:49:36.413806-07:00'
+lastmod: '2024-03-11T00:14:11.480096-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Bash handlar om att dirigera felmeddelanden\
   \ eller annan viktig diagnostisk utdata separat fr\xE5n standardutdata\u2026"

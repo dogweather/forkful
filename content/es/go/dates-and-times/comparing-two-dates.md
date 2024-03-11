@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:38.151911-07:00
 description: "Comparar dos fechas en programaci\xF3n es una tarea fundamental que\
   \ permite a los desarrolladores evaluar la relaci\xF3n cronol\xF3gica entre las\
   \ fechas. Tales\u2026"
-lastmod: '2024-02-25T18:49:55.099246-07:00'
+lastmod: '2024-03-11T00:14:32.351667-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar dos fechas en programaci\xF3n es una tarea fundamental que permite\
   \ a los desarrolladores evaluar la relaci\xF3n cronol\xF3gica entre las fechas.\

@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:05.477065-07:00
 description: "Organizar el c\xF3digo en funciones consiste en descomponer tu c\xF3\
   digo en bloques reutilizables con prop\xF3sitos definidos. Lo hacemos para mantener\
   \ todo\u2026"
-lastmod: '2024-02-25T18:49:55.636085-07:00'
+lastmod: '2024-03-11T00:14:32.982700-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones consiste en descomponer tu c\xF3digo\
   \ en bloques reutilizables con prop\xF3sitos definidos. Lo hacemos para mantener\

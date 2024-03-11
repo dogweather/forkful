@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:49.178997-07:00
 description: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave\
   \ for programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse.\
   \ Det er vesentlig for\u2026"
-lastmod: '2024-02-25T18:49:38.510347-07:00'
+lastmod: '2024-03-11T00:14:13.793727-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave for\
   \ programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse. Det\

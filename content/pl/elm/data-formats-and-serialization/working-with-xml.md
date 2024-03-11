@@ -3,7 +3,7 @@ date: 2024-01-26 04:30:34.012860-07:00
 description: "Praca z XML oznacza analizowanie, transformowanie i generowanie dokument\xF3\
   w XML w Elm. Robi si\u0119 to, aby wsp\xF3\u0142dzia\u0142a\u0107 z wieloma serwisami\
   \ internetowymi i\u2026"
-lastmod: '2024-02-25T18:49:33.710560-07:00'
+lastmod: '2024-03-11T00:14:08.527002-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML oznacza analizowanie, transformowanie i generowanie dokument\xF3\
   w XML w Elm. Robi si\u0119 to, aby wsp\xF3\u0142dzia\u0142a\u0107 z wieloma serwisami\

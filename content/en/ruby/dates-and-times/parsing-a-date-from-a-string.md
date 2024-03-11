@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:37.831368-07:00
 description: "Parsing a date from a string is about converting text representing a\
   \ date into a `Date` or `DateTime` object that Ruby understands. Programmers do\
   \ this to\u2026"
-lastmod: '2024-02-25T18:49:56.996390-07:00'
+lastmod: '2024-03-11T00:14:34.447485-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string is about converting text representing a date\
   \ into a `Date` or `DateTime` object that Ruby understands. Programmers do this\

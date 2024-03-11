@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:51.410489-07:00
 description: "Un nouveau projet Arduino, c'est comme un tableau blanc pour un peintre.\
   \ On d\xE9marre des projets pour donner vie \xE0 nos id\xE9es, r\xE9soudre des probl\xE8\
   mes ou\u2026"
-lastmod: '2024-02-25T18:49:54.784550-07:00'
+lastmod: '2024-03-11T00:14:32.016305-06:00'
 model: gpt-4-1106-preview
 summary: "Un nouveau projet Arduino, c'est comme un tableau blanc pour un peintre.\
   \ On d\xE9marre des projets pour donner vie \xE0 nos id\xE9es, r\xE9soudre des probl\xE8\

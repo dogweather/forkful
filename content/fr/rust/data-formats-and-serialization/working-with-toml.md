@@ -3,7 +3,7 @@ date: 2024-01-26 04:26:11.605893-07:00
 description: "TOML est un langage de s\xE9rialisation de donn\xE9es lisible par l'homme,\
   \ souvent utilis\xE9 pour les configurations. Les programmeurs utilisent TOML pour\
   \ sa\u2026"
-lastmod: '2024-02-25T18:49:54.319307-07:00'
+lastmod: '2024-03-11T00:14:31.522827-06:00'
 model: gpt-4-0125-preview
 summary: "TOML est un langage de s\xE9rialisation de donn\xE9es lisible par l'homme,\
   \ souvent utilis\xE9 pour les configurations. Les programmeurs utilisent TOML pour\

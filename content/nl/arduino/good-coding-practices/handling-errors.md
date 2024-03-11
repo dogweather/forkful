@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:31.455171-07:00
 description: "Foutafhandeling in je programma's vangt de onvoorziene dingen op die\
   \ je proberen te laten struikelen. Je doet het om te voorkomen dat je Arduino een\u2026"
-lastmod: '2024-02-25T18:49:48.413039-07:00'
+lastmod: '2024-03-11T00:14:24.914141-06:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling in je programma's vangt de onvoorziene dingen op die je\
   \ proberen te laten struikelen. Je doet het om te voorkomen dat je Arduino een\u2026"

@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:31.438103-07:00
 description: "\u2026"
-lastmod: '2024-02-25T18:49:40.762339-07:00'
+lastmod: '2024-03-11T00:14:16.376448-06:00'
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "XML\u3068\u306E\u4F5C\u696D"

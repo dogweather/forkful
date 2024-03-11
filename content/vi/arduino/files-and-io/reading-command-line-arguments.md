@@ -7,7 +7,7 @@ description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3
   n m\u1ED9t ch\u01B0\u01A1ng tr\xECnh khi b\u1EA1n kh\u1EDFi \u0111\u1ED9ng n\xF3\
   \ t\u1EEB terminal ho\u1EB7c d\u1EA5u nh\u1EAFc l\u1EC7nh. C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn\u2026"
-lastmod: '2024-02-25T18:49:35.356338-07:00'
+lastmod: '2024-03-11T00:14:10.306950-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh\u0129\
   a l\xE0 l\u1EA5y d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBF\

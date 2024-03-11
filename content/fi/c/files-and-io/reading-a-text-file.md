@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:36.100839-07:00
 description: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista\
   \ j\xE4rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi\
   \ tai\u2026"
-lastmod: '2024-02-25T18:49:53.964276-07:00'
+lastmod: '2024-03-11T00:14:31.100774-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista j\xE4\
   rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi tai\u2026"

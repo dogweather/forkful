@@ -2,7 +2,7 @@
 date: 2024-01-26 01:11:59.313124-07:00
 description: "Organizzare il codice in funzioni divide il tuo script in blocchi riutilizzabili.\
   \ Si tratta di rendere il codice pulito, gestibile e meno soggetto a\u2026"
-lastmod: '2024-02-25T18:49:41.794043-07:00'
+lastmod: '2024-03-11T00:14:17.579327-06:00'
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni divide il tuo script in blocchi riutilizzabili.\
   \ Si tratta di rendere il codice pulito, gestibile e meno soggetto a\u2026"

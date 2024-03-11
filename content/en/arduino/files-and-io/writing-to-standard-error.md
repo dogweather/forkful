@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:44.248510-07:00
 description: "Writing to standard error (stderr) in Arduino programming involves directing\
   \ error messages and diagnostics to a separate channel, ensuring they don't mix\u2026"
-lastmod: '2024-02-25T18:49:56.774223-07:00'
+lastmod: '2024-03-11T00:14:34.204125-06:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Arduino programming involves directing\
   \ error messages and diagnostics to a separate channel, ensuring they don't mix\u2026"

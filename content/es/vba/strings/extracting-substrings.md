@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:20.790562-07:00
 description: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar\
   \ partes espec\xEDficas de una cadena basadas en criterios dados. Los programadores\u2026"
-lastmod: '2024-02-25T18:49:55.371833-07:00'
+lastmod: '2024-03-11T00:14:32.694738-06:00'
 model: gpt-4-0125-preview
 summary: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar\
   \ partes espec\xEDficas de una cadena basadas en criterios dados. Los programadores\u2026"

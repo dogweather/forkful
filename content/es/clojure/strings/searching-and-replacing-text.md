@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:53.712183-07:00
 description: "Buscar y reemplazar texto es una tarea com\xFAn en programaci\xF3n:\
   \ consiste en localizar cadenas espec\xEDficas y sustituirlas por otras. Los programadores\
   \ lo\u2026"
-lastmod: '2024-02-25T18:49:55.204298-07:00'
+lastmod: '2024-03-11T00:14:32.471854-06:00'
 model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es una tarea com\xFAn en programaci\xF3n: consiste\
   \ en localizar cadenas espec\xEDficas y sustituirlas por otras. Los programadores\

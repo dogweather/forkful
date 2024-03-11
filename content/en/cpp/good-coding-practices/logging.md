@@ -2,7 +2,7 @@
 date: 2024-01-25 02:03:14.629198-07:00
 description: "Logging in the context of programming is the process of recording events,\
   \ states, and information to a file or another output medium. Programmers log to\u2026"
-lastmod: '2024-02-25T18:49:56.801671-07:00'
+lastmod: '2024-03-11T00:14:34.232853-06:00'
 model: gpt-4-1106-preview
 summary: "Logging in the context of programming is the process of recording events,\
   \ states, and information to a file or another output medium. Programmers log to\u2026"

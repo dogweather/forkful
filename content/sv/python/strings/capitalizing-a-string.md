@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:16.105064-07:00
 description: "Att g\xF6ra en str\xE4ng med stor begynnelsebokstav inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener. Denna\
   \ operation\u2026"
-lastmod: '2024-02-25T18:49:35.802810-07:00'
+lastmod: '2024-03-11T00:14:10.776517-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra en str\xE4ng med stor begynnelsebokstav inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener. Denna\

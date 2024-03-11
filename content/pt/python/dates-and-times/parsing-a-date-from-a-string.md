@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:00.565448-07:00
 description: "Analisar uma data de uma string envolve converter informa\xE7\xF5es\
   \ textuais de data e hora em um objeto datetime ou formato estruturado equivalente.\
   \ Isso \xE9\u2026"
-lastmod: '2024-02-25T18:49:43.825567-07:00'
+lastmod: '2024-03-11T00:14:19.830808-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string envolve converter informa\xE7\xF5es textuais\
   \ de data e hora em um objeto datetime ou formato estruturado equivalente. Isso\

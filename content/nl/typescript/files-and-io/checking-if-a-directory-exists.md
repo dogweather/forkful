@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:02.549931-07:00
 description: "Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk\
   \ aanwezig is voordat je eruit leest of ernaar schrijft. Programmeurs doen\u2026"
-lastmod: '2024-02-25T18:49:47.910989-07:00'
+lastmod: '2024-03-11T00:14:24.382066-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk\
   \ aanwezig is voordat je eruit leest of ernaar schrijft. Programmeurs doen\u2026"

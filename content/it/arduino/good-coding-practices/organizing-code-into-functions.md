@@ -2,7 +2,7 @@
 date: 2024-01-26 01:08:48.003032-07:00
 description: "Organizzare il codice in funzioni significa spezzettare il tuo codice\
   \ in blocchi riutilizzabili, ognuno dei quali svolge un compito specifico. I\u2026"
-lastmod: '2024-02-25T18:49:41.547385-07:00'
+lastmod: '2024-03-11T00:14:17.306812-06:00'
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni significa spezzettare il tuo codice in\
   \ blocchi riutilizzabili, ognuno dei quali svolge un compito specifico. I\u2026"

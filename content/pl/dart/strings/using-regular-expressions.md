@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:19.845633-07:00
 description: "Wyra\u017Cenia regularne (regex) w Dart oferuj\u0105 pot\u0119\u017C\
   ny spos\xF3b na wyszukiwanie i manipulowanie ci\u0105gami znak\xF3w, umo\u017Cliwiaj\u0105\
   c programistom wykonywanie\u2026"
-lastmod: '2024-03-09T21:05:59.815416-07:00'
+lastmod: '2024-03-11T00:14:08.250366-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Dart oferuj\u0105 pot\u0119\u017Cny spos\xF3\
   b na wyszukiwanie i manipulowanie ci\u0105gami znak\xF3w, umo\u017Cliwiaj\u0105\

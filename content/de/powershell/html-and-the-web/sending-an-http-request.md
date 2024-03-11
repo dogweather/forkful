@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:10.141822-07:00
 description: "HTTP-Anfragen sind essentiell, um mit Webdiensten zu kommunizieren,\
   \ indem Daten gesendet und empfangen werden. Programmierer nutzen sie, um Informationen\u2026"
-lastmod: '2024-02-25T18:49:51.152498-07:00'
+lastmod: '2024-03-11T00:14:28.000579-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind essentiell, um mit Webdiensten zu kommunizieren, indem\
   \ Daten gesendet und empfangen werden. Programmierer nutzen sie, um Informationen\u2026"

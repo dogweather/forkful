@@ -4,7 +4,7 @@ description: "String interpolation is plugging variables into strings. Programme
   \ do it to create messages dynamically, merging text with data. \u0406\u043D\u0442\
   \u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\u044F\u0434\u043A\u0456\
   \u0432 -\u2026"
-lastmod: '2024-02-25T18:49:47.171748-07:00'
+lastmod: '2024-03-11T00:14:23.567655-06:00'
 model: gpt-4-1106-preview
 summary: "String interpolation is plugging variables into strings. Programmers do\
   \ it to create messages dynamically, merging text with data. \u0406\u043D\u0442\u0435\

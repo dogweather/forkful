@@ -3,7 +3,7 @@ date: 2024-01-25 03:39:55.199853-07:00
 description: "XML is a markup language for encoding documents in a way that is both\
   \ human- and machine-readable. It's key in web services, configuration files, and\
   \ data\u2026"
-lastmod: '2024-02-25T18:49:56.230604-07:00'
+lastmod: '2024-03-11T00:14:33.619885-06:00'
 model: gpt-4-1106-preview
 summary: "XML is a markup language for encoding documents in a way that is both human-\
   \ and machine-readable. It's key in web services, configuration files, and data\u2026"

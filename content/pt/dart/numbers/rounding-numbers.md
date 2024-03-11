@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:07.073671-07:00
 description: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para o\
   \ seu inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais.\
   \ Programadores\u2026"
-lastmod: '2024-03-09T21:06:10.624313-07:00'
+lastmod: '2024-03-11T00:14:19.958420-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para o seu\
   \ inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais. Programadores\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:22.944482-07:00
 description: "Een tekstbestand schrijven is het proces van het opslaan van gegevens\
   \ in een bestand in tekstformaat. Programmeurs doen dit om configuraties, logs,\
   \ code\u2026"
-lastmod: '2024-02-25T18:49:48.339139-07:00'
+lastmod: '2024-03-11T00:14:24.835628-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven is het proces van het opslaan van gegevens in\
   \ een bestand in tekstformaat. Programmeurs doen dit om configuraties, logs, code\u2026"

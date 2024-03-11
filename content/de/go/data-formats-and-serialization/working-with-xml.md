@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:00.012768-07:00
 description: "Die Arbeit mit XML in Go umfasst das Parsen (Lesen) und Generieren (Schreiben)\
   \ von XML-Dokumenten \u2013 ein Standardformat f\xFCr den strukturierten\u2026"
-lastmod: '2024-02-25T18:49:50.514472-07:00'
+lastmod: '2024-03-11T00:14:27.272552-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML in Go umfasst das Parsen (Lesen) und Generieren (Schreiben)\
   \ von XML-Dokumenten \u2013 ein Standardformat f\xFCr den strukturierten\u2026"

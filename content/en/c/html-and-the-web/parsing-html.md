@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:12.004223-07:00
 description: "Parsing HTML in C involves analyzing HTML documents to extract data,\
   \ structure, or specific parts efficiently, often as a precursor to data mining\
   \ or web\u2026"
-lastmod: '2024-02-25T18:49:56.946344-07:00'
+lastmod: '2024-03-11T00:14:34.392615-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in C involves analyzing HTML documents to extract data, structure,\
   \ or specific parts efficiently, often as a precursor to data mining or web\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:42.176575-07:00
 description: "Ohjelmistokehityksess\xE4 on usein tarpeen tarkistaa, olemassaoko hakemisto,\
   \ v\xE4ltt\xE4\xE4kseen virheit\xE4 yritt\xE4ess\xE4 p\xE4\xE4st\xE4 k\xE4siksi,\
   \ lukea tai kirjoittaa\u2026"
-lastmod: '2024-02-25T18:49:53.295573-07:00'
+lastmod: '2024-03-11T00:14:30.306111-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmistokehityksess\xE4 on usein tarpeen tarkistaa, olemassaoko hakemisto,\
   \ v\xE4ltt\xE4\xE4kseen virheit\xE4 yritt\xE4ess\xE4 p\xE4\xE4st\xE4 k\xE4siksi,\

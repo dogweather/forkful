@@ -10,7 +10,7 @@ description: "TypeScript\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC
   \ \uB370\uC774\uD130\uC5D0 \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\uC6A9\uB418\uB294\
   \ \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uAC04\uC12D\uD558\uC9C0 \uC54A\uACE0\
   \ \uBB38\uC81C\uB97C\u2026"
-lastmod: '2024-02-25T18:49:51.886557-07:00'
+lastmod: '2024-03-11T00:14:28.797831-06:00'
 model: gpt-4-0125-preview
 summary: "TypeScript\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\uAE30\
   \uB294 \uD658\uACBD\uC758 \uC624\uB958 \uCD9C\uB825 \uC2A4\uD2B8\uB9BC(\uC608: node.js\

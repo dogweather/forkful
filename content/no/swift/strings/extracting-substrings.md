@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:28.602465-07:00
 description: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\
   \ mer\u2026"
-lastmod: '2024-02-25T18:49:39.309951-07:00'
+lastmod: '2024-03-11T00:14:14.727189-06:00'
 model: gpt-4-1106-preview
 summary: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\

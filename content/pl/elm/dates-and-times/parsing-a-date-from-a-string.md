@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:26.516638-07:00
 description: "Analiza daty z ci\u0105gu znak\xF3w w Elm polega na konwertowaniu informacji\
   \ tekstowych przedstawiaj\u0105cych daty i czasy na format, kt\xF3ry Elm mo\u017C\
   e zrozumie\u0107 i\u2026"
-lastmod: '2024-02-25T18:49:33.695430-07:00'
+lastmod: '2024-03-11T00:14:08.510548-06:00'
 model: gpt-4-0125-preview
 summary: "Analiza daty z ci\u0105gu znak\xF3w w Elm polega na konwertowaniu informacji\
   \ tekstowych przedstawiaj\u0105cych daty i czasy na format, kt\xF3ry Elm mo\u017C\

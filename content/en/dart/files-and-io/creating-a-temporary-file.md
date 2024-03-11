@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:28.494623-07:00
 description: "Creating a temporary file in Dart involves generating a file that is\
   \ intended for short-term use, primarily for scenarios such as caching data, temporary\u2026"
-lastmod: '2024-03-09T21:06:23.371200-07:00'
+lastmod: '2024-03-11T00:14:33.696141-06:00'
 model: gpt-4-0125-preview
 summary: "Creating a temporary file in Dart involves generating a file that is intended\
   \ for short-term use, primarily for scenarios such as caching data, temporary\u2026"

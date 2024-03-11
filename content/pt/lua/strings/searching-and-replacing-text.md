@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:29.489867-07:00
 description: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias\
   \ de caracteres dentro de uma string e alter\xE1-las por outras. Programadores fazem\
   \ isso para\u2026"
-lastmod: '2024-02-25T18:49:44.315149-07:00'
+lastmod: '2024-03-11T00:14:20.410864-06:00'
 model: gpt-4-1106-preview
 summary: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias de\
   \ caracteres dentro de uma string e alter\xE1-las por outras. Programadores fazem\

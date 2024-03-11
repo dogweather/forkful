@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:50.846860-07:00
 description: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con un\
   \ servidor web para obtener, enviar o modificar datos. Lo hacemos todo el tiempo\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:55.883113-07:00'
+lastmod: '2024-03-11T00:14:33.238799-06:00'
 model: gpt-4-1106-preview
 summary: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con un servidor\
   \ web para obtener, enviar o modificar datos. Lo hacemos todo el tiempo para\u2026"

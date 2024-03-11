@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:16.603686-07:00
 description: "Dateien zu lesen bedeutet, den Inhalt von Textdateien zu erfassen und\
   \ zu verarbeiten. Programmierer machen das, um Daten zu analysieren, Konfigurationen\u2026"
-lastmod: '2024-02-25T18:49:51.376534-07:00'
+lastmod: '2024-03-11T00:14:28.234383-06:00'
 model: gpt-4-1106-preview
 summary: "Dateien zu lesen bedeutet, den Inhalt von Textdateien zu erfassen und zu\
   \ verarbeiten. Programmierer machen das, um Daten zu analysieren, Konfigurationen\u2026"

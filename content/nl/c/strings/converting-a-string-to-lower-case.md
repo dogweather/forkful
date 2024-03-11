@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:54:42.443172-07:00
 description: "Het omzetten van een tekenreeks naar kleine letters in C houdt in dat\
   \ alle hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun\u2026"
-lastmod: '2024-02-25T18:49:48.602163-07:00'
+lastmod: '2024-03-11T00:14:25.138105-06:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van een tekenreeks naar kleine letters in C houdt in dat alle\
   \ hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun\u2026"

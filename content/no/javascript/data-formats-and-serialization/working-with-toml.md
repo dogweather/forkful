@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:29.999267-07:00
 description: "TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan\
   \ man strukturerer konfigurasjonsfiler. Programmerere jobber med TOML fordi det\
   \ er\u2026"
-lastmod: '2024-02-25T18:49:39.384752-07:00'
+lastmod: '2024-03-11T00:14:14.807919-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan\
   \ man strukturerer konfigurasjonsfiler. Programmerere jobber med TOML fordi det\

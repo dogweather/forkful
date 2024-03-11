@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:14.234012-07:00
 description: "TOML, ou Tom's Obvious, Minimal Language (Langage Minimal et \xC9vident\
   \ de Tom), est un format de fichier de configuration facile \xE0 lire gr\xE2ce \xE0\
   \ sa\u2026"
-lastmod: '2024-03-09T21:06:21.263373-07:00'
+lastmod: '2024-03-11T00:14:31.432188-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, ou Tom's Obvious, Minimal Language (Langage Minimal et \xC9vident\
   \ de Tom), est un format de fichier de configuration facile \xE0 lire gr\xE2ce \xE0\

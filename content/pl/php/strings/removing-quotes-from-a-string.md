@@ -3,7 +3,7 @@ date: 2024-01-26 03:41:49.464968-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cuch\xF3w znak\xF3w w PHP\
   \ oznacza pozbywanie si\u0119 tych irytuj\u0105cych podw\xF3jnych (`\"`) lub pojedynczych\
   \ (`'`) znak\xF3w cudzys\u0142owu, kt\xF3re\u2026"
-lastmod: '2024-02-25T18:49:33.848887-07:00'
+lastmod: '2024-03-11T00:14:08.668833-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cuch\xF3w znak\xF3w w PHP oznacza\
   \ pozbywanie si\u0119 tych irytuj\u0105cych podw\xF3jnych (`\"`) lub pojedynczych\

@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:14.645183-07:00
 description: "Working with XML in C involves parsing, querying, and manipulating XML\
   \ documents using various libraries. Programmers engage with XML due to its\u2026"
-lastmod: '2024-02-25T18:49:56.970185-07:00'
+lastmod: '2024-03-11T00:14:34.419190-06:00'
 model: gpt-4-0125-preview
 summary: "Working with XML in C involves parsing, querying, and manipulating XML documents\
   \ using various libraries. Programmers engage with XML due to its\u2026"

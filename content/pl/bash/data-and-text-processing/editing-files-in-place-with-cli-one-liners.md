@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:39.062889-07:00
 description: "Wyobra\u017A sobie, \u017Ce w\u0142a\u015Bnie dowiedzia\u0142e\u015B\
   \ si\u0119, \u017Ce musisz przeprowadzi\u0107 masow\u0105 aktualizacj\u0119 kilku\
   \ plik\xF3w konfiguracyjnych znajduj\u0105cych si\u0119 na twoim serwerze.\u2026"
-lastmod: '2024-02-25T18:49:33.947405-07:00'
+lastmod: '2024-03-11T00:14:08.770990-06:00'
 model: gpt-4-0125-preview
 summary: "Wyobra\u017A sobie, \u017Ce w\u0142a\u015Bnie dowiedzia\u0142e\u015B si\u0119\
   , \u017Ce musisz przeprowadzi\u0107 masow\u0105 aktualizacj\u0119 kilku plik\xF3\

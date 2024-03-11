@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:15.506147-07:00
 description: "Organizowanie kodu w funkcje polega na rozbijaniu programu na wielokrotnie\
   \ u\u017Cywane, modu\u0142owe kawa\u0142ki identyfikowane przez nazw\u0119. Robimy\
   \ to, aby nasz kod\u2026"
-lastmod: '2024-02-25T18:49:33.557519-07:00'
+lastmod: '2024-03-11T00:14:08.365118-06:00'
 model: gpt-4-0125-preview
 summary: "Organizowanie kodu w funkcje polega na rozbijaniu programu na wielokrotnie\
   \ u\u017Cywane, modu\u0142owe kawa\u0142ki identyfikowane przez nazw\u0119. Robimy\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:52:15.287957-07:00
 description: "Printing debug output in Elixir involves displaying interim results\
   \ or variable values in the console. Programmers do this to track down bugs or to\u2026"
-lastmod: '2024-02-25T18:49:56.248326-07:00'
+lastmod: '2024-03-11T00:14:33.640341-06:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output in Elixir involves displaying interim results or variable\
   \ values in the console. Programmers do this to track down bugs or to\u2026"

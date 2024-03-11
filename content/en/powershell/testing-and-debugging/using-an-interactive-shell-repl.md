@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:47.927093-07:00
 description: "The interactive shell, or Read-Eval-Print Loop (REPL), lets you type\
   \ PowerShell commands and get immediate feedback. Programmers use it to test code\u2026"
-lastmod: '2024-02-25T18:49:56.724288-07:00'
+lastmod: '2024-03-11T00:14:34.153435-06:00'
 model: gpt-4-1106-preview
 summary: "The interactive shell, or Read-Eval-Print Loop (REPL), lets you type PowerShell\
   \ commands and get immediate feedback. Programmers use it to test code\u2026"

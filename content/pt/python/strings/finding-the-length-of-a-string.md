@@ -2,7 +2,7 @@
 date: 2024-01-20 17:48:08.401637-07:00
 description: "Descobrir o comprimento de uma string significa contar o n\xFAmero de\
   \ caracteres que ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
-lastmod: '2024-02-25T18:49:43.807055-07:00'
+lastmod: '2024-03-11T00:14:19.810746-06:00'
 model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string significa contar o n\xFAmero de caracteres\
   \ que ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"

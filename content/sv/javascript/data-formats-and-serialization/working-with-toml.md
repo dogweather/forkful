@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:53.298516-07:00
 description: "TOML, som st\xE5r f\xF6r Tom's Obvious, Minimal Language, definierar\
   \ hur konfigurationsfiler ska struktureras. Programmerare arbetar med TOML eftersom\
   \ det \xE4r\u2026"
-lastmod: '2024-02-25T18:49:36.631617-07:00'
+lastmod: '2024-03-11T00:14:11.716301-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r f\xF6r Tom's Obvious, Minimal Language, definierar hur\
   \ konfigurationsfiler ska struktureras. Programmerare arbetar med TOML eftersom\

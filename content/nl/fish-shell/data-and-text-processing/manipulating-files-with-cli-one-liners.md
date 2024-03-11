@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:30.171622-07:00
 description: "In de wereld van het programmeren, vooral wanneer je te maken hebt met\
   \ Linux- of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit\
   \ de\u2026"
-lastmod: '2024-02-25T18:49:48.567889-07:00'
+lastmod: '2024-03-11T00:14:25.080335-06:00'
 model: gpt-4-0125-preview
 summary: "In de wereld van het programmeren, vooral wanneer je te maken hebt met Linux-\
   \ of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit de\u2026"

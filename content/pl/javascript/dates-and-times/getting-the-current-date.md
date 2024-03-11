@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:01.999548-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w JavaScript jest podstawowym zadaniem,\
   \ obejmuj\u0105cym pobieranie i ewentualnie manipulowanie dzisiejsz\u0105 dat\u0105\
   \ i czasem. Programi\u015Bci\u2026"
-lastmod: '2024-02-25T18:49:34.180462-07:00'
+lastmod: '2024-03-11T00:14:09.017455-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w JavaScript jest podstawowym zadaniem,\
   \ obejmuj\u0105cym pobieranie i ewentualnie manipulowanie dzisiejsz\u0105 dat\u0105\

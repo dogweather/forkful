@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:57.368306-07:00
 description: "Czytanie pliku tekstowego to pobieranie danych zapisanych w pliku zapisanego\
   \ na dysku. Programi\u015Bci robi\u0105 to, by przetwarza\u0107, analizowa\u0107\
   \ dane, konfigurowa\u0107\u2026"
-lastmod: '2024-02-25T18:49:34.326039-07:00'
+lastmod: '2024-03-11T00:14:09.171676-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie pliku tekstowego to pobieranie danych zapisanych w pliku zapisanego\
   \ na dysku. Programi\u015Bci robi\u0105 to, by przetwarza\u0107, analizowa\u0107\

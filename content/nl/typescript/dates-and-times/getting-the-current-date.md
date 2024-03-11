@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:19.255255-07:00
 description: "De huidige datum in je code krijgen betekent het vastleggen van het\
   \ huidige moment tot op de dag. Programmeurs doen dit om gebeurtenissen te\u2026"
-lastmod: '2024-02-25T18:49:47.907194-07:00'
+lastmod: '2024-03-11T00:14:24.377740-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in je code krijgen betekent het vastleggen van het huidige\
   \ moment tot op de dag. Programmeurs doen dit om gebeurtenissen te\u2026"

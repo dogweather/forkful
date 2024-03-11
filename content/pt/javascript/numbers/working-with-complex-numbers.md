@@ -3,7 +3,7 @@ date: 2024-01-26 04:42:30.649773-07:00
 description: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma parte\
   \ imagin\xE1ria (como 3 + 4i). Eles aparecem em v\xE1rios problemas de programa\xE7\
   \xE3o, especialmente no\u2026"
-lastmod: '2024-02-25T18:49:44.573469-07:00'
+lastmod: '2024-03-11T00:14:20.691436-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma parte imagin\xE1\
   ria (como 3 + 4i). Eles aparecem em v\xE1rios problemas de programa\xE7\xE3o, especialmente\

@@ -6,7 +6,7 @@ description: "Vi\u1EC7c in ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i gi\
   ng nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i nh\u1EEFng m\u1EA9u b\xE1nh m\xEC trong\
   \ m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n: n\xF3 hi\u1EC3n th\u1ECB l\u1ED9 tr\xECnh c\u1EE7\
   a d\u1EEF li\u1EC7u v\xE0 lu\u1ED3ng l\xF4gic trong qu\xE1 tr\xECnh\u2026"
-lastmod: '2024-02-25T18:49:34.533323-07:00'
+lastmod: '2024-03-11T00:14:09.402940-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c in ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i gi\u1ED1\
   ng nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i nh\u1EEFng m\u1EA9u b\xE1nh m\xEC trong\

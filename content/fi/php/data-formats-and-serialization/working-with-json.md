@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:56.801945-07:00
 description: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti,\
   \ joka on ihmisten luettavissa ja kirjoitettavissa helposti, sek\xE4 koneiden j\xE4\
   sent\xE4m\xE4 ja\u2026"
-lastmod: '2024-02-25T18:49:53.588990-07:00'
+lastmod: '2024-03-11T00:14:30.629707-06:00'
 model: gpt-4-0125-preview
 summary: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti, joka\
   \ on ihmisten luettavissa ja kirjoitettavissa helposti, sek\xE4 koneiden j\xE4sent\xE4\

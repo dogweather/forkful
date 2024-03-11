@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:30.968796-07:00
 description: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og\
   \ h\xE5ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\
   \ data\u2026"
-lastmod: '2024-02-25T18:49:39.313888-07:00'
+lastmod: '2024-03-11T00:14:14.731082-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og h\xE5\
   ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\

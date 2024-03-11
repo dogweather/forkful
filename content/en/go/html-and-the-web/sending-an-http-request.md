@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:13.554198-07:00
 description: "Sending an HTTP request involves initiating a call from your Go application\
   \ to a web server, API, or any other HTTP-based service. Programmers do this to\u2026"
-lastmod: '2024-02-25T18:49:56.095544-07:00'
+lastmod: '2024-03-11T00:14:33.472610-06:00'
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request involves initiating a call from your Go application\
   \ to a web server, API, or any other HTTP-based service. Programmers do this to\u2026"

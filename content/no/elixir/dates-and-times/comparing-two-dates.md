@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:32.952034-07:00
 description: "Sammenligne to datoer er \xE5 vurdere deres forhold til hverandre -\
   \ f\xF8r, etter, eller samme dag. Programmerere trenger dette for \xE5 h\xE5ndtere\
   \ tidsavhengige\u2026"
-lastmod: '2024-02-25T18:49:38.682900-07:00'
+lastmod: '2024-03-11T00:14:13.983165-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenligne to datoer er \xE5 vurdere deres forhold til hverandre - f\xF8\
   r, etter, eller samme dag. Programmerere trenger dette for \xE5 h\xE5ndtere tidsavhengige\u2026"

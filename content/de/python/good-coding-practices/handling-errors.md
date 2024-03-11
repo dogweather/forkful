@@ -2,7 +2,7 @@
 date: 2024-01-26 00:58:17.232647-07:00
 description: "Fehlerbehandlung in Python (oder jeder anderen Programmiersprache) bedeutet,\
   \ mit dem Unerwarteten zu rechnen \u2013 es ist die Kunst, anmutig zu handhaben,\u2026"
-lastmod: '2024-02-25T18:49:50.585361-07:00'
+lastmod: '2024-03-11T00:14:27.349749-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in Python (oder jeder anderen Programmiersprache) bedeutet,\
   \ mit dem Unerwarteten zu rechnen \u2013 es ist die Kunst, anmutig zu handhaben,\u2026"

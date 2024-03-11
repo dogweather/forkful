@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:47.832364-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on ohjelmoijille\
   \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World!\"\
   \ -esimerkkiin. Se on\u2026"
-lastmod: '2024-02-25T18:49:53.040502-07:00'
+lastmod: '2024-03-11T00:14:29.987366-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on ohjelmoijille\
   \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World!\"\

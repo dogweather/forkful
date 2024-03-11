@@ -2,7 +2,7 @@
 date: 2024-01-26 04:27:22.475611-07:00
 description: "Trabajar con XML implica analizar, extraer y manipular datos en el formato\
   \ de Lenguaje de Marcado Extensible. Los programadores luchan con XML ya que es\u2026"
-lastmod: '2024-02-25T18:49:55.740979-07:00'
+lastmod: '2024-03-11T00:14:33.091918-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML implica analizar, extraer y manipular datos en el formato\
   \ de Lenguaje de Marcado Extensible. Los programadores luchan con XML ya que es\u2026"

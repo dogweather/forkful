@@ -2,7 +2,7 @@
 date: 2024-01-26 04:13:09.389595-07:00
 description: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar\
   \ trechos de c\xF3digo em tempo real. Programadores Elixir utilizam o REPL,\u2026"
-lastmod: '2024-02-25T18:49:43.900687-07:00'
+lastmod: '2024-03-11T00:14:19.918024-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar\
   \ trechos de c\xF3digo em tempo real. Programadores Elixir utilizam o REPL,\u2026"

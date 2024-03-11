@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:19.671365-07:00
 description: "Stringkonkatenering inneb\xE4r att s\xE4tta ihop textstr\xE4ngar till\
   \ en ny, l\xE4ngre str\xE4ng. Vi g\xF6r det f\xF6r att bygga meddelanden, skapa\
   \ dynamiska texter, eller\u2026"
-lastmod: '2024-02-25T18:49:36.158818-07:00'
+lastmod: '2024-03-11T00:14:11.216242-06:00'
 model: gpt-4-1106-preview
 summary: "Stringkonkatenering inneb\xE4r att s\xE4tta ihop textstr\xE4ngar till en\
   \ ny, l\xE4ngre str\xE4ng. Vi g\xF6r det f\xF6r att bygga meddelanden, skapa dynamiska\

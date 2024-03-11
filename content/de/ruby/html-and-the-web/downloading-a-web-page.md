@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:48.997964-07:00
 description: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das\
   \ Internet abzurufen. Programmierer tun dies, um Daten zu sammeln, automatisiert\
   \ Inhalte zu\u2026"
-lastmod: '2024-02-25T18:49:51.446333-07:00'
+lastmod: '2024-03-11T00:14:28.311850-06:00'
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das Internet\
   \ abzurufen. Programmierer tun dies, um Daten zu sammeln, automatisiert Inhalte\

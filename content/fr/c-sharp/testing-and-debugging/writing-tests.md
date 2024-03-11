@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:37.525125-07:00
 description: "\xC9crire des tests en C# implique de cr\xE9er des scripts automatis\xE9\
   s pour valider la fonctionnalit\xE9 de votre code, s'assurant qu'il se comporte\
   \ comme pr\xE9vu.\u2026"
-lastmod: '2024-02-25T18:49:54.518311-07:00'
+lastmod: '2024-03-11T00:14:31.740867-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en C# implique de cr\xE9er des scripts automatis\xE9\
   s pour valider la fonctionnalit\xE9 de votre code, s'assurant qu'il se comporte\

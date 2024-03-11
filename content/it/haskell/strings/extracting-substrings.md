@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:08.650962-07:00
 description: "Estrarre sottosequenze (o sottostringhe) significa prendere parti specifiche\
   \ di una stringa. Questo \xE8 utile per analisi, manipolazioni, e controllo di\u2026"
-lastmod: '2024-02-25T18:49:41.329234-07:00'
+lastmod: '2024-03-11T00:14:17.056496-06:00'
 model: gpt-4-1106-preview
 summary: "Estrarre sottosequenze (o sottostringhe) significa prendere parti specifiche\
   \ di una stringa. Questo \xE8 utile per analisi, manipolazioni, e controllo di\u2026"

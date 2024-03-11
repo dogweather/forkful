@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:47.830292-07:00
 description: "YAML, kt\xF3ry oznacza \"YAML Ain't Markup Language\" (YAML nie jest\
   \ j\u0119zykiem znacznik\xF3w), to standard serializacji danych czytelnych dla cz\u0142\
   owieka, kt\xF3ry mo\u017Ce\u2026"
-lastmod: '2024-02-25T18:49:34.282357-07:00'
+lastmod: '2024-03-11T00:14:09.126326-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, kt\xF3ry oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119\
   zykiem znacznik\xF3w), to standard serializacji danych czytelnych dla cz\u0142owieka,\

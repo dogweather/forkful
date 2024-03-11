@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:07.595558-07:00
 description: "Beregning av en dato i fremtiden eller fortiden inneb\xE6rer \xE5 legge\
   \ til eller trekke fra tid fra en n\xE5v\xE6rende dato. Programmerere bruker dette\
   \ for \xE5\u2026"
-lastmod: '2024-02-25T18:49:38.725381-07:00'
+lastmod: '2024-03-11T00:14:14.077085-06:00'
 model: gpt-4-1106-preview
 summary: "Beregning av en dato i fremtiden eller fortiden inneb\xE6rer \xE5 legge\
   \ til eller trekke fra tid fra en n\xE5v\xE6rende dato. Programmerere bruker dette\

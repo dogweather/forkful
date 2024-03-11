@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:57.969628-07:00
 description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle\
   \ alfabetske tegn i strengen til sin minuskul\xE6re (sm\xE5) form. Programm\xF8\
   rer gj\xF8r dette for\u2026"
-lastmod: '2024-02-25T18:49:38.576474-07:00'
+lastmod: '2024-03-11T00:14:13.866295-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle alfabetske\
   \ tegn i strengen til sin minuskul\xE6re (sm\xE5) form. Programm\xF8rer gj\xF8r\

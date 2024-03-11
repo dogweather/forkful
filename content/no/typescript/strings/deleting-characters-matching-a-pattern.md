@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:15.349400-07:00
 description: "Slette tegn som matcher et m\xF8nster handler om \xE5 finne og fjerne\
   \ bestemte sekvenser fra en tekststreng. Programmerere gj\xF8r dette for \xE5 rense\
   \ input,\u2026"
-lastmod: '2024-02-25T18:49:38.696525-07:00'
+lastmod: '2024-03-11T00:14:14.046718-06:00'
 model: gpt-4-1106-preview
 summary: "Slette tegn som matcher et m\xF8nster handler om \xE5 finne og fjerne bestemte\
   \ sekvenser fra en tekststreng. Programmerere gj\xF8r dette for \xE5 rense input,\u2026"

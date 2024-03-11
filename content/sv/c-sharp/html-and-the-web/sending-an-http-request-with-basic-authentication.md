@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:24.664117-07:00
 description: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
   r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\
   \ anv\xE4nds f\xF6r att bevisa\u2026"
-lastmod: '2024-02-25T18:49:36.211762-07:00'
+lastmod: '2024-03-11T00:14:11.275996-06:00'
 model: gpt-4-1106-preview
 summary: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
   r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\

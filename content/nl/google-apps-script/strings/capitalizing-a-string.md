@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:48:45.880465-07:00
 description: "Het kapitaliseren van een string houdt in dat de invoer wordt aangepast\
   \ zodat het eerste teken een hoofdletter is en de rest kleine letters blijven, wat\u2026"
-lastmod: '2024-02-25T18:49:47.709927-07:00'
+lastmod: '2024-03-11T00:14:24.122226-06:00'
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een string houdt in dat de invoer wordt aangepast\
   \ zodat het eerste teken een hoofdletter is en de rest kleine letters blijven, wat\u2026"

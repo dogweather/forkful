@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:41.113175-07:00
 description: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer\
   \ une cha\xEEne de texte en enlevant des \xE9l\xE9ments pr\xE9cis. Les d\xE9veloppeurs\
   \ font \xE7a pour\u2026"
-lastmod: '2024-02-25T18:49:54.457377-07:00'
+lastmod: '2024-03-11T00:14:31.670031-06:00'
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer une\
   \ cha\xEEne de texte en enlevant des \xE9l\xE9ments pr\xE9cis. Les d\xE9veloppeurs\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:04.372091-07:00
 description: "Het concatenen van strings betekent het aan elkaar plakken van twee\
   \ of meer stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"
-lastmod: '2024-02-25T18:49:48.057431-07:00'
+lastmod: '2024-03-11T00:14:24.537980-06:00'
 model: gpt-4-0125-preview
 summary: "Het concatenen van strings betekent het aan elkaar plakken van twee of meer\
   \ stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"

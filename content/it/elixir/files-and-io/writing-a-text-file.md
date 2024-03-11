@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:37.760458-07:00
 description: "Scrivere su un file di testo in Elixir \xE8 una competenza essenziale\
   \ per gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\u2026"
-lastmod: '2024-02-25T18:49:41.029624-07:00'
+lastmod: '2024-03-11T00:14:16.664225-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Elixir \xE8 una competenza essenziale per\
   \ gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\u2026"

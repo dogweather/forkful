@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:07.410917-07:00
 description: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\xE3\
   o definida, frequentemente para n\xFAmeros inteiros. Programadores arredondam para\
   \ simplificar\u2026"
-lastmod: '2024-02-25T18:49:44.282830-07:00'
+lastmod: '2024-03-11T00:14:20.375779-06:00'
 model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\xE3\
   o definida, frequentemente para n\xFAmeros inteiros. Programadores arredondam para\

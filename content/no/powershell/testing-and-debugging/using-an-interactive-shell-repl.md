@@ -3,7 +3,7 @@ date: 2024-01-26 04:16:52.245545-07:00
 description: "Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg\
   \ skrive PowerShell-kommandoer og f\xE5 umiddelbar tilbakemelding. Programmerere\
   \ bruker det\u2026"
-lastmod: '2024-02-25T18:49:39.196356-07:00'
+lastmod: '2024-03-11T00:14:14.606108-06:00'
 model: gpt-4-0125-preview
 summary: "Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg skrive\
   \ PowerShell-kommandoer og f\xE5 umiddelbar tilbakemelding. Programmerere bruker\

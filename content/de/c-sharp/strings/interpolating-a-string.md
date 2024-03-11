@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-25 17:06:56.306880-07:00
 description: "Die Zeichenketteninterpolation in C# erm\xF6glicht es Ihnen, einen neuen\
   \ String zu erstellen, indem Ausdr\xFCcke innerhalb eines Zeichenketten-Literals\u2026"
-lastmod: '2024-02-25T18:49:50.935152-07:00'
+lastmod: '2024-03-11T00:14:27.769866-06:00'
 model: gpt-4-0125-preview
 summary: "Die Zeichenketteninterpolation in C# erm\xF6glicht es Ihnen, einen neuen\
   \ String zu erstellen, indem Ausdr\xFCcke innerhalb eines Zeichenketten-Literals\u2026"

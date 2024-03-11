@@ -3,7 +3,7 @@ date: 2024-01-26 01:08:36.963109-07:00
 description: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en\
   \ bloques reutilizables, cada uno realizando una tarea espec\xEDfica. Los programadores\
   \ hacen\u2026"
-lastmod: '2024-02-25T18:49:55.810357-07:00'
+lastmod: '2024-03-11T00:14:33.161051-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en bloques\
   \ reutilizables, cada uno realizando una tarea espec\xEDfica. Los programadores\

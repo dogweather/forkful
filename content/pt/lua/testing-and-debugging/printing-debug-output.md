@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:13.833590-07:00
 description: "Debug print \xE9 a pr\xE1tica de exibir informa\xE7\xF5es no console\
   \ para entender o que est\xE1 acontecendo no c\xF3digo. Programadores usam isso\
   \ para rastrear bugs ou\u2026"
-lastmod: '2024-02-25T18:49:44.331788-07:00'
+lastmod: '2024-03-11T00:14:20.430218-06:00'
 model: gpt-4-1106-preview
 summary: "Debug print \xE9 a pr\xE1tica de exibir informa\xE7\xF5es no console para\
   \ entender o que est\xE1 acontecendo no c\xF3digo. Programadores usam isso para\

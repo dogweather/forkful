@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:14.809323-07:00
 description: "Att organisera kod i funktioner i Dart handlar om att definiera \xE5\
   teranv\xE4ndbara kodblock som utf\xF6r specifika uppgifter, typiskt genom att ta\
   \ emot indata,\u2026"
-lastmod: '2024-03-09T21:06:02.374417-07:00'
+lastmod: '2024-03-11T00:14:10.950415-06:00'
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i Dart handlar om att definiera \xE5teranv\xE4\
   ndbara kodblock som utf\xF6r specifika uppgifter, typiskt genom att ta emot indata,\u2026"

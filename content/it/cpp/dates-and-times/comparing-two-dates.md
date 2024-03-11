@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:19.222161-07:00
 description: "Comparare due date permette di stabilire quale avviene prima o dopo.\
   \ \xC8 essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi."
-lastmod: '2024-02-25T18:49:41.592839-07:00'
+lastmod: '2024-03-11T00:14:17.356883-06:00'
 model: gpt-4-1106-preview
 summary: "Comparare due date permette di stabilire quale avviene prima o dopo. \xC8\
   \ essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi."

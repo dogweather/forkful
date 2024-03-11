@@ -2,7 +2,7 @@
 date: 2024-01-20 17:47:17.968040-07:00
 description: "Encontrar o comprimento de uma string significa descobrir quantos caracteres\
   \ ela possui. Programadores fazem isso para validar entradas, manipular texto e\u2026"
-lastmod: '2024-02-25T18:49:43.849468-07:00'
+lastmod: '2024-03-11T00:14:19.858042-06:00'
 model: gpt-4-1106-preview
 summary: "Encontrar o comprimento de uma string significa descobrir quantos caracteres\
   \ ela possui. Programadores fazem isso para validar entradas, manipular texto e\u2026"

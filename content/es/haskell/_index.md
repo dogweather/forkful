@@ -1,7 +1,7 @@
 ---
 title: 'Haskell: Open Source Coding Tutoriales'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-10 18:56:13.510859-06:00
+lastmod: 2024-03-11 00:18:08.557696-06:00
 description: 'Haskell: Iniciando, Cadenas de Texto, Números, Estructuras de datos,
   Buenas prácticas de programación, Archivos y Entrada/Salida, Fechas y horas,…'
 summary: 'Haskell: Iniciando, Cadenas de Texto, Números, Estructuras de datos, Buenas

@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:45.450160-07:00
 description: "Yhdist\xE4mme merkkijonoja luodaksemme uusia tekstej\xE4. T\xE4t\xE4\
   \ kutsutaan konkatenoinniksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta saadaan\
   \ kokoonpannut viestit tai\u2026"
-lastmod: '2024-02-25T18:49:53.274057-07:00'
+lastmod: '2024-03-11T00:14:30.282658-06:00'
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia tekstej\xE4. T\xE4t\xE4 kutsutaan\
   \ konkatenoinniksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta saadaan kokoonpannut\

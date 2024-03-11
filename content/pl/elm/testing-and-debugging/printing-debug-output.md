@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:24.722324-07:00
 description: "Debugowanie, czyli proces \u015Bledzenia i usuwania b\u0142\u0119d\xF3\
   w, cz\u0119sto wymaga od programisty wy\u015Bwietlania danych pomocniczych. W Elm\
   \ robimy to, by szybciej\u2026"
-lastmod: '2024-02-25T18:49:33.688496-07:00'
+lastmod: '2024-03-11T00:14:08.503079-06:00'
 model: gpt-4-1106-preview
 summary: "Debugowanie, czyli proces \u015Bledzenia i usuwania b\u0142\u0119d\xF3w,\
   \ cz\u0119sto wymaga od programisty wy\u015Bwietlania danych pomocniczych. W Elm\

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:45.946647-07:00
 description: "Parsing HTML is about extracting data or information from HTML content,\
   \ a common task when dealing with web data. Programmers do this to automate the\u2026"
-lastmod: '2024-02-25T18:49:56.907412-07:00'
+lastmod: '2024-03-11T00:14:34.350165-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML is about extracting data or information from HTML content,\
   \ a common task when dealing with web data. Programmers do this to automate the\u2026"

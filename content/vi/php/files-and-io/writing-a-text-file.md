@@ -7,7 +7,7 @@ description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP 
   y ch\u1EE7. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1\
   u n\xE0y \u0111\u1EC3 ghi nh\u1EADt k\xFD d\u1EEF li\u1EC7u, c\xE0i \u0111\u1EB7\
   t c\u1EA5u\u2026"
-lastmod: '2024-02-25T18:49:35.135556-07:00'
+lastmod: '2024-03-11T00:14:10.074997-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP l\xE0\
   \ \u0111\u1EC3 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p tr\xEAn m\xE1\

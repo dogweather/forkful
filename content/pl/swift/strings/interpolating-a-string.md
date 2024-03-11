@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:00.488180-07:00
 description: "Interpolacja string\xF3w to wstawienie warto\u015Bci zmiennych lub wyra\u017C\
   e\u0144 wewn\u0105trz stringu. Robimy to, by \u0142atwo tworzy\u0107 personalizowane\
   \ wiadomo\u015Bci i dynamicznie\u2026"
-lastmod: '2024-02-25T18:49:34.113350-07:00'
+lastmod: '2024-03-11T00:14:08.945027-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja string\xF3w to wstawienie warto\u015Bci zmiennych lub wyra\u017C\
   e\u0144 wewn\u0105trz stringu. Robimy to, by \u0142atwo tworzy\u0107 personalizowane\

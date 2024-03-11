@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:40.212838-07:00
 description: "YAML, joka tulee sanoista \"YAML Ain't Markup Language\", on ihmisen\
   \ luettavissa oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n yleisesti\u2026"
-lastmod: '2024-02-25T18:49:53.096490-07:00'
+lastmod: '2024-03-11T00:14:30.046676-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, joka tulee sanoista \"YAML Ain't Markup Language\", on ihmisen luettavissa\
   \ oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n yleisesti\u2026"

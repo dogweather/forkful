@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:32.457392-07:00
 description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans les cha\xEEnes de caract\xE8res est crucial pour la validation des donn\xE9\
   es, leur\u2026"
-lastmod: '2024-03-09T21:06:21.225828-07:00'
+lastmod: '2024-03-11T00:14:31.387030-06:00'
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans les cha\xEEnes de caract\xE8res est crucial pour la validation des donn\xE9\

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:20:31.338600-07:00
 description: "TOML to akronim od Tom's Obvious, Minimal Language, format pliku konfiguracyjnego,\
   \ kt\xF3ry jest \u0142atwy do odczytu dzi\u0119ki swojej przejrzystej semantyce.\u2026"
-lastmod: '2024-02-25T18:49:33.797174-07:00'
+lastmod: '2024-03-11T00:14:08.616101-06:00'
 model: gpt-4-0125-preview
 summary: "TOML to akronim od Tom's Obvious, Minimal Language, format pliku konfiguracyjnego,\
   \ kt\xF3ry jest \u0142atwy do odczytu dzi\u0119ki swojej przejrzystej semantyce.\u2026"

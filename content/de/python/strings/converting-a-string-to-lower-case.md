@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:09.376917-07:00
 description: "Um einen String in Kleinbuchstaben umzuwandeln, ver\xE4ndert man jeden\
   \ Gro\xDFbuchstaben in seinem \xC4quivalent in Kleinbuchstaben. Dies ist n\xFCtzlich\
   \ f\xFCr die\u2026"
-lastmod: '2024-02-25T18:49:50.565863-07:00'
+lastmod: '2024-03-11T00:14:27.327897-06:00'
 model: gpt-4-1106-preview
 summary: "Um einen String in Kleinbuchstaben umzuwandeln, ver\xE4ndert man jeden Gro\xDF\
   buchstaben in seinem \xC4quivalent in Kleinbuchstaben. Dies ist n\xFCtzlich f\xFC\

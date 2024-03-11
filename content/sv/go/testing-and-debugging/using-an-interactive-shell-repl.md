@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:10:23.439501-07:00
 description: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), l\xE5ter dig\
   \ experimentera med Go-kod i realtid, genom att k\xF6ra kommandon och f\xE5 omedelbar\u2026"
-lastmod: '2024-02-25T18:49:35.729832-07:00'
+lastmod: '2024-03-11T00:14:10.698640-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), l\xE5ter dig experimentera\
   \ med Go-kod i realtid, genom att k\xF6ra kommandon och f\xE5 omedelbar\u2026"

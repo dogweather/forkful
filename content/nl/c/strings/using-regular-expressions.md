@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:10:49.880931-07:00
 description: "Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten\
   \ te vinden en strings te manipuleren met behulp van gedefinieerde patronen.\u2026"
-lastmod: '2024-02-25T18:49:48.605184-07:00'
+lastmod: '2024-03-11T00:14:25.141226-06:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten\
   \ te vinden en strings te manipuleren met behulp van gedefinieerde patronen.\u2026"

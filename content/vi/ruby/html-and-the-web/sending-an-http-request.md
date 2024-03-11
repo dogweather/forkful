@@ -6,7 +6,7 @@ description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP c\xF3 ngh\u0129a l\xE0 y\xE
   u c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\xE0i nguy\xEAn tr\xEAn web. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1\
   ng t\xE1c v\u1EDBi c\xE1c API, l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB web,\u2026"
-lastmod: '2024-02-25T18:49:35.671611-07:00'
+lastmod: '2024-03-11T00:14:10.638368-06:00'
 model: gpt-4-0125-preview
 summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP c\xF3 ngh\u0129a l\xE0 y\xEAu c\u1EA7\
   u d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\xE0i nguy\xEAn tr\xEAn web. C\xE1c l\u1EAD\

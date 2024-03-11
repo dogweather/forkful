@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:37.563231-07:00
 description: "Obtenir la date actuelle en Dart implique de demander au syst\xE8me\
   \ la date et l'heure actuelles. Cette fonctionnalit\xE9 est couramment utilis\xE9\
   e dans les\u2026"
-lastmod: '2024-03-09T21:06:21.251495-07:00'
+lastmod: '2024-03-11T00:14:31.417353-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Dart implique de demander au syst\xE8me la date\
   \ et l'heure actuelles. Cette fonctionnalit\xE9 est couramment utilis\xE9e dans\

@@ -6,7 +6,7 @@ description: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n, `stderr`, xu\u1EA5t th\x
   ng b\xE1o l\u1ED7i ri\xEAng bi\u1EC7t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, `stdout`.\
   \ C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng `stderr` \u0111\u1EC3 b\xE1\
   o c\xE1o l\u1ED7i m\xE0 kh\xF4ng\u2026"
-lastmod: '2024-02-25T18:49:35.245826-07:00'
+lastmod: '2024-03-11T00:14:10.192333-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n, `stderr`, xu\u1EA5t th\xF4ng b\xE1\
   o l\u1ED7i ri\xEAng bi\u1EC7t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, `stdout`. C\xE1\

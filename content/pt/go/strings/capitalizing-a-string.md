@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:35.201642-07:00
 description: "Capitalizar uma string envolve transformar o primeiro caractere de uma\
   \ string dada em mai\xFAscula, se ele estiver em min\xFAscula, garantindo que a\
   \ string se\u2026"
-lastmod: '2024-02-25T18:49:43.705933-07:00'
+lastmod: '2024-03-11T00:14:19.701342-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve transformar o primeiro caractere de uma string\
   \ dada em mai\xFAscula, se ele estiver em min\xFAscula, garantindo que a string\

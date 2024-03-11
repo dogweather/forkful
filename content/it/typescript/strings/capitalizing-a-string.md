@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:40.794443-07:00
 description: "Capitalizzare una stringa comporta modificare il primo carattere di\
   \ una data stringa in maiuscolo se \xE8 in minuscolo, lasciando spesso inalterata\
   \ la\u2026"
-lastmod: '2024-02-25T18:49:41.037607-07:00'
+lastmod: '2024-03-11T00:14:16.720298-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa comporta modificare il primo carattere di una\
   \ data stringa in maiuscolo se \xE8 in minuscolo, lasciando spesso inalterata la\u2026"

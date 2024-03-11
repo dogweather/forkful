@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:54:35.628910-07:00
 description: "In Visual Basic for Applications (VBA), is het ophalen van de huidige\
   \ datum een veelvoorkomende taak die programmeurs in staat stelt om dynamisch met\u2026"
-lastmod: '2024-02-25T18:49:47.992063-07:00'
+lastmod: '2024-03-11T00:14:24.467258-06:00'
 model: gpt-4-0125-preview
 summary: "In Visual Basic for Applications (VBA), is het ophalen van de huidige datum\
   \ een veelvoorkomende taak die programmeurs in staat stelt om dynamisch met\u2026"

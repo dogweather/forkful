@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:24.380582-07:00
 description: "I programmering inneb\xE4r 'konkatenering av str\xE4ngar' att sm\xE4\
   lta samman tv\xE5 eller fler textstycken. Vi g\xF6r det f\xF6r att skapa meningsfulla\
   \ meddelanden, bygga\u2026"
-lastmod: '2024-02-25T18:49:35.855134-07:00'
+lastmod: '2024-03-11T00:14:10.831714-06:00'
 model: gpt-4-1106-preview
 summary: "I programmering inneb\xE4r 'konkatenering av str\xE4ngar' att sm\xE4lta\
   \ samman tv\xE5 eller fler textstycken. Vi g\xF6r det f\xF6r att skapa meningsfulla\

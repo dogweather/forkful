@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:07.334748-07:00
 description: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4\
   \ tietoja tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon\
   \ tai\u2026"
-lastmod: '2024-02-25T18:49:53.821678-07:00'
+lastmod: '2024-03-11T00:14:30.954360-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4 tietoja\
   \ tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon tai\u2026"

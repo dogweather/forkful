@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:04.206562-07:00
 description: "Working with CSV files in Ruby provides a straightforward approach to\
   \ handle tabular data. Programmers often engage in this practice for data parsing,\u2026"
-lastmod: '2024-02-25T18:49:57.007573-07:00'
+lastmod: '2024-03-11T00:14:34.459194-06:00'
 model: gpt-4-0125-preview
 summary: "Working with CSV files in Ruby provides a straightforward approach to handle\
   \ tabular data. Programmers often engage in this practice for data parsing,\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:55.630004-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin on teht\xE4vien pilkkominen uudelleenk\xE4\
   ytett\xE4viksi osiksi. T\xE4m\xE4 tekee koodista siistimm\xE4n, v\xE4hemm\xE4n virhealttiin\
   \ ja\u2026"
-lastmod: '2024-02-25T18:49:53.820816-07:00'
+lastmod: '2024-03-11T00:14:30.953474-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin on teht\xE4vien pilkkominen uudelleenk\xE4\
   ytett\xE4viksi osiksi. T\xE4m\xE4 tekee koodista siistimm\xE4n, v\xE4hemm\xE4n virhealttiin\

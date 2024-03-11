@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:21.987700-07:00
 description: "Parsear una fecha de un string en Dart implica convertir la representaci\xF3\
   n textual de fechas y horas en un objeto `DateTime`. Esta operaci\xF3n es esencial\u2026"
-lastmod: '2024-03-09T21:06:22.336124-07:00'
+lastmod: '2024-03-11T00:14:32.583647-06:00'
 model: gpt-4-0125-preview
 summary: "Parsear una fecha de un string en Dart implica convertir la representaci\xF3\
   n textual de fechas y horas en un objeto `DateTime`. Esta operaci\xF3n es esencial\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-27 16:21:03.416741-07:00
 description: "Im Bereich der Programmierung, insbesondere beim Umgang mit Linux- oder\
   \ Unix-Umgebungen, ist die Manipulation von Dateien direkt \xFCber die\u2026"
-lastmod: '2024-02-25T18:49:51.354704-07:00'
+lastmod: '2024-03-11T00:14:28.210585-06:00'
 model: gpt-4-0125-preview
 summary: "Im Bereich der Programmierung, insbesondere beim Umgang mit Linux- oder\
   \ Unix-Umgebungen, ist die Manipulation von Dateien direkt \xFCber die\u2026"

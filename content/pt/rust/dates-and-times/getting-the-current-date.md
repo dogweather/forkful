@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:50.309025-07:00
 description: "Recuperar a data atual em Rust \xE9 uma tarefa comum para atividades\
   \ como registro (logging), opera\xE7\xF5es baseadas em tempo, ou simplesmente para\
   \ exibir a\u2026"
-lastmod: '2024-02-25T18:49:43.999203-07:00'
+lastmod: '2024-03-11T00:14:20.069509-06:00'
 model: gpt-4-0125-preview
 summary: "Recuperar a data atual em Rust \xE9 uma tarefa comum para atividades como\
   \ registro (logging), opera\xE7\xF5es baseadas em tempo, ou simplesmente para exibir\

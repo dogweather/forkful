@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:36.590957-07:00
 description: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja w wielu zadaniach\
   \ programistycznych, pozwalaj\u0105ca na warunkowe dzia\u0142ania w oparciu o obecno\u015B\
   \u0107 lub\u2026"
-lastmod: '2024-02-25T18:49:33.831876-07:00'
+lastmod: '2024-03-11T00:14:08.652025-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja w wielu zadaniach\
   \ programistycznych, pozwalaj\u0105ca na warunkowe dzia\u0142ania w oparciu o obecno\u015B\

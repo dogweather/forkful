@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:49.515398-07:00
 description: "Zamiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 (kapitalizacja)\
   \ w programowaniu polega na konwersji pierwszego znaku ci\u0105gu na wielk\u0105\
   \ liter\u0119, je\u015Bli ju\u017C\u2026"
-lastmod: '2024-02-25T18:49:33.711597-07:00'
+lastmod: '2024-03-11T00:14:08.528158-06:00'
 model: gpt-4-0125-preview
 summary: "Zamiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 (kapitalizacja)\
   \ w programowaniu polega na konwersji pierwszego znaku ci\u0105gu na wielk\u0105\

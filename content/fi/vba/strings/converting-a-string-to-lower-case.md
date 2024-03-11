@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:44.476013-07:00
 description: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
   \ suurten kirjainten muuntamista niiden pieniksi vastineiksi. T\xE4m\xE4 prosessi\
   \ on\u2026"
-lastmod: '2024-02-25T18:49:53.310204-07:00'
+lastmod: '2024-03-11T00:14:30.322163-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
   \ suurten kirjainten muuntamista niiden pieniksi vastineiksi. T\xE4m\xE4 prosessi\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:46:31.247637-07:00
 description: "Komplexa tal, best\xE5ende av en reell del och en imagin\xE4r del (vanligtvis\
   \ skrivna som a + bi), m\xF6jligg\xF6r ber\xE4kningar som \xE4r opraktiska eller\
   \ om\xF6jliga med\u2026"
-lastmod: '2024-02-25T18:49:35.945453-07:00'
+lastmod: '2024-03-11T00:14:10.984441-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal, best\xE5ende av en reell del och en imagin\xE4r del (vanligtvis\
   \ skrivna som a + bi), m\xF6jligg\xF6r ber\xE4kningar som \xE4r opraktiska eller\

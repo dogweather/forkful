@@ -3,7 +3,7 @@ date: 2024-01-26 00:54:37.810763-07:00
 description: "La gestion des erreurs est la mani\xE8re dont votre code traite les\
   \ probl\xE8mes qui surviennent pendant l'ex\xE9cution \u2014 comme g\xE9rer un impr\xE9\
   vu sans le laisser\u2026"
-lastmod: '2024-02-25T18:49:54.480223-07:00'
+lastmod: '2024-03-11T00:14:31.696757-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs est la mani\xE8re dont votre code traite les probl\xE8\
   mes qui surviennent pendant l'ex\xE9cution \u2014 comme g\xE9rer un impr\xE9vu sans\

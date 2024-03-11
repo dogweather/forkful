@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:07.030179-07:00
 description: "En la programaci\xF3n en C, leer argumentos de la l\xEDnea de comando\
   \ permite a los programas aceptar entradas directamente desde el terminal, mejorando\
   \ la\u2026"
-lastmod: '2024-02-25T18:49:56.030383-07:00'
+lastmod: '2024-03-11T00:14:33.400439-06:00'
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n en C, leer argumentos de la l\xEDnea de comando permite\
   \ a los programas aceptar entradas directamente desde el terminal, mejorando la\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:35.103944-07:00
 description: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\
   \ en\u2026"
-lastmod: '2024-02-25T18:49:38.820681-07:00'
+lastmod: '2024-03-11T00:14:14.179476-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6rer\
   \ \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\

@@ -5,7 +5,7 @@ date: 2024-01-28 22:04:53.438951-07:00
 description: "Het lezen van een tekstbestand gaat over het trekken van data uit een\
   \ bestand op schijf naar je programma om ermee te werken. Programmeurs doen dit\
   \ om\u2026"
-lastmod: '2024-02-25T18:49:48.463322-07:00'
+lastmod: '2024-03-11T00:14:24.968632-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van een tekstbestand gaat over het trekken van data uit een bestand\
   \ op schijf naar je programma om ermee te werken. Programmeurs doen dit om\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:00.467844-07:00
 description: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipulering\
   \ av XML-dokumenter ved bruk av ulike biblioteker. Programmerere arbeider med XML\
   \ p\xE5 grunn\u2026"
-lastmod: '2024-02-25T18:49:39.476159-07:00'
+lastmod: '2024-03-11T00:14:14.909782-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipulering av\
   \ XML-dokumenter ved bruk av ulike biblioteker. Programmerere arbeider med XML p\xE5\

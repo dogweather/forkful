@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:32.977714-07:00
 description: "Searching and replacing text in Dart involves examining strings to find\
   \ certain patterns or sequences of characters and substituting them with new\u2026"
-lastmod: '2024-03-09T21:06:23.346094-07:00'
+lastmod: '2024-03-11T00:14:33.663981-06:00'
 model: gpt-4-0125-preview
 summary: "Searching and replacing text in Dart involves examining strings to find\
   \ certain patterns or sequences of characters and substituting them with new\u2026"

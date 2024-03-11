@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:36.678485-07:00
 description: "\"Loggen\" is het bijhouden van een register van gebeurtenissen, transacties\
   \ of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs\u2026"
-lastmod: '2024-02-25T18:49:48.412042-07:00'
+lastmod: '2024-03-11T00:14:24.913132-06:00'
 model: gpt-4-0125-preview
 summary: "\"Loggen\" is het bijhouden van een register van gebeurtenissen, transacties\
   \ of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs\u2026"

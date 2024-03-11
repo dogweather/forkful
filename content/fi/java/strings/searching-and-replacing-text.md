@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:06.109199-07:00
 description: "Tekstin etsiminen ja korvaaminen on tapa l\xF6yt\xE4\xE4 merkkijono\
   \ ja korvata se toisella. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 p\xE4\xE4st\xE4\
   kseen eroon vanhentuneesta koodista,\u2026"
-lastmod: '2024-02-25T18:49:53.353251-07:00'
+lastmod: '2024-03-11T00:14:30.370357-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen on tapa l\xF6yt\xE4\xE4 merkkijono ja korvata\
   \ se toisella. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 p\xE4\xE4st\xE4kseen eroon\

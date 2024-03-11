@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:17:24.883529-07:00
 description: "Regul\xE4re Ausdr\xFCcke in der Programmierung erm\xF6glichen das Mustervergleichen\
   \ und die Manipulation von Zeichenketten basierend auf spezifischen Mustern.\u2026"
-lastmod: '2024-02-25T18:49:51.059560-07:00'
+lastmod: '2024-03-11T00:14:27.902949-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke in der Programmierung erm\xF6glichen das Mustervergleichen\
   \ und die Manipulation von Zeichenketten basierend auf spezifischen Mustern.\u2026"

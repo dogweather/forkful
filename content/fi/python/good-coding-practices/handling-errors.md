@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:22.955289-07:00
 description: "Virheenk\xE4sittely Pythonissa (tai miss\xE4 tahansa ohjelmointikieless\xE4\
   ) on odottamatonta odottamista \u2013 se on taitoa hallita tilanteita sulavasti,\
   \ kun asiat\u2026"
-lastmod: '2024-02-25T18:49:53.125166-07:00'
+lastmod: '2024-03-11T00:14:30.077452-06:00'
 model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely Pythonissa (tai miss\xE4 tahansa ohjelmointikieless\xE4\
   ) on odottamatonta odottamista \u2013 se on taitoa hallita tilanteita sulavasti,\

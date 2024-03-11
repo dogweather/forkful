@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:34.464910-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung beinhaltet\
   \ das Anh\xE4ngen eines Benutzernamens und Passworts an eine Anfrage, um die Identit\xE4\
   t des\u2026"
-lastmod: '2024-03-09T21:06:17.575311-07:00'
+lastmod: '2024-03-11T00:14:27.474266-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung beinhaltet das\
   \ Anh\xE4ngen eines Benutzernamens und Passworts an eine Anfrage, um die Identit\xE4\

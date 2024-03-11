@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:36.254656-07:00
 description: "Att tolka HTML inneb\xE4r processen att bryta ner och tolka strukturen\
   \ av HTML-inneh\xE5ll, typiskt f\xF6r att extrahera specifik data eller hantera\
   \ detta inneh\xE5ll\u2026"
-lastmod: '2024-02-25T18:49:36.564913-07:00'
+lastmod: '2024-03-11T00:14:11.643776-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r processen att bryta ner och tolka strukturen av\
   \ HTML-inneh\xE5ll, typiskt f\xF6r att extrahera specifik data eller hantera detta\

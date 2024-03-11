@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:39.136816-07:00
 description: "Organizzare il codice in funzioni permette di suddividere le attivit\xE0\
   \ in parti riutilizzabili, rendendo il codice pi\xF9 ordinato e pi\xF9 facile da\
   \ mantenere.\u2026"
-lastmod: '2024-02-25T18:49:41.665324-07:00'
+lastmod: '2024-03-11T00:14:17.435772-06:00'
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni permette di suddividere le attivit\xE0\
   \ in parti riutilizzabili, rendendo il codice pi\xF9 ordinato e pi\xF9 facile da\

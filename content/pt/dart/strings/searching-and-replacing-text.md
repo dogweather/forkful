@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:38.810348-07:00
 description: "Buscar e substituir texto em Dart envolve examinar strings para encontrar\
   \ padr\xF5es ou sequ\xEAncias de caracteres e substitu\xED-los por novo conte\xFA\
   do. Essa\u2026"
-lastmod: '2024-03-09T21:06:10.615278-07:00'
+lastmod: '2024-03-11T00:14:19.945880-06:00'
 model: gpt-4-0125-preview
 summary: "Buscar e substituir texto em Dart envolve examinar strings para encontrar\
   \ padr\xF5es ou sequ\xEAncias de caracteres e substitu\xED-los por novo conte\xFA\

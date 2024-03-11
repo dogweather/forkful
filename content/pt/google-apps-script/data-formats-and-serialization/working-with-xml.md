@@ -5,7 +5,7 @@ date: 2024-02-01 22:06:36.230390-07:00
 description: "Trabalhar com XML no Google Apps Script permite que programadores fa\xE7\
   am o parse, manipulem e gerem dados XML, essencial para servi\xE7os web e configura\xE7\
   \xF5es.\u2026"
-lastmod: '2024-02-25T18:49:43.798011-07:00'
+lastmod: '2024-03-11T00:14:19.801071-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML no Google Apps Script permite que programadores fa\xE7\
   am o parse, manipulem e gerem dados XML, essencial para servi\xE7os web e configura\xE7\

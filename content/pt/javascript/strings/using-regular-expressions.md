@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:00.895562-07:00
 description: "Express\xF5es regulares (regex) em JavaScript s\xE3o padr\xF5es usados\
   \ para combinar sequ\xEAncias de caracteres em strings. Programadores as usam para\
   \ buscar,\u2026"
-lastmod: '2024-02-25T18:49:44.569717-07:00'
+lastmod: '2024-03-11T00:14:20.687486-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em JavaScript s\xE3o padr\xF5es usados para\
   \ combinar sequ\xEAncias de caracteres em strings. Programadores as usam para buscar,\u2026"

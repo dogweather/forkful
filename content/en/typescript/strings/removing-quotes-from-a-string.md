@@ -2,7 +2,7 @@
 date: 2024-01-25 20:50:23.943509-07:00
 description: "Removing quotes from a string means stripping out the surrounding single\
   \ (`'`) or double (`\"`) quote characters that define string literals in code.\u2026"
-lastmod: '2024-02-25T18:49:56.271986-07:00'
+lastmod: '2024-03-11T00:14:33.706855-06:00'
 model: gpt-4-1106-preview
 summary: "Removing quotes from a string means stripping out the surrounding single\
   \ (`'`) or double (`\"`) quote characters that define string literals in code.\u2026"

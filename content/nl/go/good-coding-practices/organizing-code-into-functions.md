@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:59:34.325902-07:00
 description: "Het organiseren van code in functies in Go omvat het opsplitsen van\
   \ code in herbruikbare, modulaire blokken die specifieke taken uitvoeren. Deze aanpak\u2026"
-lastmod: '2024-02-25T18:49:47.690069-07:00'
+lastmod: '2024-03-11T00:14:24.101255-06:00'
 model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies in Go omvat het opsplitsen van code\
   \ in herbruikbare, modulaire blokken die specifieke taken uitvoeren. Deze aanpak\u2026"

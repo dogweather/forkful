@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:25.428983-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w C++ jest podstawowym zadaniem dla\
   \ program\xF3w, kt\xF3re musz\u0105 przetwarza\u0107 lub wy\u015Bwietla\u0107 daty\
   \ w oparciu o zegar systemowy. Jest to\u2026"
-lastmod: '2024-02-25T18:49:34.095306-07:00'
+lastmod: '2024-03-11T00:14:08.924263-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w C++ jest podstawowym zadaniem dla program\xF3\
   w, kt\xF3re musz\u0105 przetwarza\u0107 lub wy\u015Bwietla\u0107 daty w oparciu\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:37.674346-07:00
 description: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer\
   \ en majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\
   \ pour s'assurer\u2026"
-lastmod: '2024-02-25T18:49:54.015279-07:00'
+lastmod: '2024-03-11T00:14:31.154159-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer en\
   \ majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\

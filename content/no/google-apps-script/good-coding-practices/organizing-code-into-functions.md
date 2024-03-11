@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:57.574102-07:00
 description: "\xC5 organisere kode i funksjoner handler om \xE5 strukturere Google\
   \ Apps Script-koden din ved \xE5 separere logiske segmenter i distinkte blokker,\
   \ hver med ansvar\u2026"
-lastmod: '2024-02-25T18:49:38.551241-07:00'
+lastmod: '2024-03-11T00:14:13.838128-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 strukturere Google Apps\
   \ Script-koden din ved \xE5 separere logiske segmenter i distinkte blokker, hver\

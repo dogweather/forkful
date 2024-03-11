@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:12.375608-07:00
 description: "Kapitalizacja \u0142a\u0144cucha polega na zamianie pierwszego znaku\
   \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli jest\
   \ ona pisana ma\u0142\u0105 liter\u0105, zachowuj\u0105c przy tym\u2026"
-lastmod: '2024-02-25T18:49:34.067862-07:00'
+lastmod: '2024-03-11T00:14:08.894087-06:00'
 model: gpt-4-0125-preview
 summary: "Kapitalizacja \u0142a\u0144cucha polega na zamianie pierwszego znaku ka\u017C\
   dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli jest ona pisana\

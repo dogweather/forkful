@@ -3,7 +3,7 @@ date: 2024-01-26 00:50:58.750284-07:00
 description: "El manejo de errores trata sobre c\xF3mo gestionar lo inesperado en\
   \ los programas, como un portero que lidiar con los alborotadores. A los programadores\
   \ les\u2026"
-lastmod: '2024-02-25T18:49:55.225584-07:00'
+lastmod: '2024-03-11T00:14:32.493997-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores trata sobre c\xF3mo gestionar lo inesperado en los\
   \ programas, como un portero que lidiar con los alborotadores. A los programadores\

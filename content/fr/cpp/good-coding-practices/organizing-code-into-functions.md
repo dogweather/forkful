@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:01.153070-07:00
 description: "D\xE9couper le code en fonctions signifie diviser votre code en morceaux\
   \ plus petits et r\xE9utilisables. Nous le faisons pour \xE9viter la r\xE9p\xE9\
   tition, pour rendre\u2026"
-lastmod: '2024-02-25T18:49:54.829580-07:00'
+lastmod: '2024-03-11T00:14:32.066212-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9couper le code en fonctions signifie diviser votre code en morceaux\
   \ plus petits et r\xE9utilisables. Nous le faisons pour \xE9viter la r\xE9p\xE9\

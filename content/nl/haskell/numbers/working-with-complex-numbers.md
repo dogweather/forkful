@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:35.512437-07:00
 description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel,\
   \ zijn essentieel in verschillende computationele velden zoals engineering, natuurkunde\
   \ en\u2026"
-lastmod: '2024-02-25T18:49:48.184729-07:00'
+lastmod: '2024-03-11T00:14:24.674765-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel, zijn\
   \ essentieel in verschillende computationele velden zoals engineering, natuurkunde\

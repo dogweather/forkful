@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:24.157999-07:00
 description: "Organizar c\xF3digo em fun\xE7\xF5es em Haskell significa decompor seu\
   \ c\xF3digo em blocos nomeados reutiliz\xE1veis. Por qu\xEA? Isso mant\xE9m seu\
   \ c\xF3digo DRY (Don't Repeat\u2026"
-lastmod: '2024-02-25T18:49:44.252091-07:00'
+lastmod: '2024-03-11T00:14:20.342211-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar c\xF3digo em fun\xE7\xF5es em Haskell significa decompor seu c\xF3\
   digo em blocos nomeados reutiliz\xE1veis. Por qu\xEA? Isso mant\xE9m seu c\xF3digo\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:19.603019-07:00
 description: "Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties\
   \ in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie,\u2026"
-lastmod: '2024-02-25T18:49:48.436285-07:00'
+lastmod: '2024-03-11T00:14:24.939052-06:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties\
   \ in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie,\u2026"

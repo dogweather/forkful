@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:00.358262-07:00
 description: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle\
   \ Gro\xDFbuchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben\
   \ zu\u2026"
-lastmod: '2024-02-25T18:49:51.388784-07:00'
+lastmod: '2024-03-11T00:14:28.247050-06:00'
 model: gpt-4-0125-preview
 summary: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle Gro\xDF\
   buchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben zu\u2026"

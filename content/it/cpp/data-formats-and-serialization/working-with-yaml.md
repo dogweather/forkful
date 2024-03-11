@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "Lavorare con YAML significa manipolare un linguaggio di serializzazione\
   \ dati che punta sulla leggibilit\xE0 umana. I programmatori lo usano perch\xE9\
   \ \xE8 comodo\u2026"
-lastmod: '2024-03-09T21:11:26.276635-07:00'
+lastmod: '2024-03-11T00:14:17.365401-06:00'
 model: unknown
 summary: "Lavorare con YAML significa manipolare un linguaggio di serializzazione\
   \ dati che punta sulla leggibilit\xE0 umana. I programmatori lo usano perch\xE9\

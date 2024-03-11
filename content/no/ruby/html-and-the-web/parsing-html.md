@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:17.966953-07:00
 description: "Parsing av HTML betyr \xE5 rive fra hverandre en bit HTML-kode for \xE5\
   \ forst\xE5 dens struktur og innhold. Programmerere gj\xF8r dette for \xE5 ekstrahere\
   \ data,\u2026"
-lastmod: '2024-02-25T18:49:39.493589-07:00'
+lastmod: '2024-03-11T00:14:14.929080-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML betyr \xE5 rive fra hverandre en bit HTML-kode for \xE5\
   \ forst\xE5 dens struktur og innhold. Programmerere gj\xF8r dette for \xE5 ekstrahere\

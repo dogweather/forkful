@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:25:31.388613-07:00
 description: "YAML-tiedostojen k\xE4sittelyyn kuuluu YAML-tiedostojen (YAML Ain't\
   \ Markup Language) j\xE4sent\xE4minen ja manipulointi, jotka ovat konfiguraatiotiedostoissa\u2026"
-lastmod: '2024-02-25T18:49:53.921612-07:00'
+lastmod: '2024-03-11T00:14:31.057052-06:00'
 model: gpt-4-0125-preview
 summary: "YAML-tiedostojen k\xE4sittelyyn kuuluu YAML-tiedostojen (YAML Ain't Markup\
   \ Language) j\xE4sent\xE4minen ja manipulointi, jotka ovat konfiguraatiotiedostoissa\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:34.572124-07:00
 description: "HTML parsen betekent graven door de opmaak om gegevens zoals tekst,\
   \ links of andere elementen te extraheren. We doen dit om te interageren met of\u2026"
-lastmod: '2024-02-25T18:49:48.021628-07:00'
+lastmod: '2024-03-11T00:14:24.499999-06:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent graven door de opmaak om gegevens zoals tekst, links\
   \ of andere elementen te extraheren. We doen dit om te interageren met of\u2026"

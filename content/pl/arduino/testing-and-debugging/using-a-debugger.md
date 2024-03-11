@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:39.575932-07:00
 description: "Debugger to narz\u0119dzie, kt\xF3re pomaga wyeliminowa\u0107 b\u0142\
   \u0119dy w kodzie, pozwalaj\u0105c na jego zatrzymanie, przeszukanie i odkrycie,\
   \ co tak naprawd\u0119 dzieje si\u0119 w\u2026"
-lastmod: '2024-02-25T18:49:34.047685-07:00'
+lastmod: '2024-03-11T00:14:08.872910-06:00'
 model: gpt-4-0125-preview
 summary: "Debugger to narz\u0119dzie, kt\xF3re pomaga wyeliminowa\u0107 b\u0142\u0119\
   dy w kodzie, pozwalaj\u0105c na jego zatrzymanie, przeszukanie i odkrycie, co tak\

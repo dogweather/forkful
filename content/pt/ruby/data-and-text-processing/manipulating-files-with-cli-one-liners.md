@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:38.799797-07:00
 description: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
   \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\
   \ um m\xE9todo\u2026"
-lastmod: '2024-02-25T18:49:44.707038-07:00'
+lastmod: '2024-03-11T00:14:20.834718-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
   \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\

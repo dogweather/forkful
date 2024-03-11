@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:29.321030-07:00
 description: "En el desarrollo de software, a menudo es necesario verificar si un\
   \ directorio existe para evitar errores al intentar acceder, leer o escribir archivos.\u2026"
-lastmod: '2024-02-25T18:49:55.354737-07:00'
+lastmod: '2024-03-11T00:14:32.676463-06:00'
 model: gpt-4-0125-preview
 summary: "En el desarrollo de software, a menudo es necesario verificar si un directorio\
   \ existe para evitar errores al intentar acceder, leer o escribir archivos.\u2026"

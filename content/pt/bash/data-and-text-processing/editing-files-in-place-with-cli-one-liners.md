@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:50.596326-07:00
 description: "Imagine que voc\xEA acabou de descobrir que precisa fazer uma atualiza\xE7\
   \xE3o em lote em v\xE1rios arquivos de configura\xE7\xE3o no seu servidor. Voc\xEA\
   \ poderia abrir cada\u2026"
-lastmod: '2024-02-25T18:49:44.368128-07:00'
+lastmod: '2024-03-11T00:14:20.469182-06:00'
 model: gpt-4-0125-preview
 summary: "Imagine que voc\xEA acabou de descobrir que precisa fazer uma atualiza\xE7\
   \xE3o em lote em v\xE1rios arquivos de configura\xE7\xE3o no seu servidor. Voc\xEA\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:05.838311-07:00
 description: "Merkkijonon pituuden selvitt\xE4minen Visual Basic for Applications\
   \ (VBA) -ohjelmoinnissa tarkoittaa sen sis\xE4lt\xE4mien merkkien lukum\xE4\xE4\
   r\xE4n m\xE4\xE4ritt\xE4mist\xE4.\u2026"
-lastmod: '2024-02-25T18:49:53.314319-07:00'
+lastmod: '2024-03-11T00:14:30.327052-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon pituuden selvitt\xE4minen Visual Basic for Applications (VBA)\
   \ -ohjelmoinnissa tarkoittaa sen sis\xE4lt\xE4mien merkkien lukum\xE4\xE4r\xE4n\

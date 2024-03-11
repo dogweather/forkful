@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:48.597374-07:00
 description: "L'analyse HTML dans Google Apps Script consiste \xE0 extraire des donn\xE9\
   es de contenu HTML, ce qui est particuli\xE8rement utile lors de l'interaction avec\
   \ des\u2026"
-lastmod: '2024-02-25T18:49:54.078875-07:00'
+lastmod: '2024-03-11T00:14:31.220561-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse HTML dans Google Apps Script consiste \xE0 extraire des donn\xE9\
   es de contenu HTML, ce qui est particuli\xE8rement utile lors de l'interaction avec\

@@ -7,7 +7,7 @@ description: "\u4E3A\u6B64\u5E38\u7528\u7684\u51FD\u6570\u662F `<time.h>` \u5E93
   \u683C\u5F0F\u8BF4\u660E\u7B26\uFF0C\u4EE5\u591A\u79CD\u65B9\u5F0F\u683C\u5F0F\u5316\
   \u65E5\u671F\u548C\u65F6\u95F4\u3002\u4EE5\u4E0B\u662F\u4E00\u4E2A\u5FEB\u901F\u793A\
   \u4F8B\uFF1A ```c #include <stdio.h> #include <time.h> int main() { char dateStr[100];\u2026"
-lastmod: '2024-02-25T18:49:45.891037-07:00'
+lastmod: '2024-03-11T00:14:22.144872-06:00'
 model: gpt-4-0125-preview
 summary: "\u4E3A\u6B64\u5E38\u7528\u7684\u51FD\u6570\u662F `<time.h>` \u5E93\u4E2D\
   \u7684 `strftime` \u51FD\u6570\u3002\u5B83\u5141\u8BB8\u4F60\u901A\u8FC7\u6307\u5B9A\

@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:52.083730-07:00
 description: "HTTP-foresp\xF8rsler med grunnleggende autentisering lar klienter bevise\
   \ sin identitet til serveren ved hjelp av brukernavn og passord. Programmerere bruker\u2026"
-lastmod: '2024-02-25T18:49:39.320546-07:00'
+lastmod: '2024-03-11T00:14:14.738504-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-foresp\xF8rsler med grunnleggende autentisering lar klienter bevise\
   \ sin identitet til serveren ved hjelp av brukernavn og passord. Programmerere bruker\u2026"

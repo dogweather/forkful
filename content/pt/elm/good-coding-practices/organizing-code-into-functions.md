@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:34.654351-07:00
 description: "Jogar todo o seu c\xF3digo em uma grande pilha? M\xE1 ideia. Dividi-lo\
   \ em fun\xE7\xF5es? Boa ideia. Isso mant\xE9m o seu c\xF3digo em Elm limpo, reutiliz\xE1\
   vel e mais f\xE1cil\u2026"
-lastmod: '2024-02-25T18:49:44.125829-07:00'
+lastmod: '2024-03-11T00:14:20.207735-06:00'
 model: gpt-4-1106-preview
 summary: "Jogar todo o seu c\xF3digo em uma grande pilha? M\xE1 ideia. Dividi-lo em\
   \ fun\xE7\xF5es? Boa ideia. Isso mant\xE9m o seu c\xF3digo em Elm limpo, reutiliz\xE1\

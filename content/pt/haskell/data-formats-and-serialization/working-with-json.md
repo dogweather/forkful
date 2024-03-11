@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:48.248286-07:00
 description: "Trabalhar com JSON (JavaScript Object Notation) em Haskell envolve analisar\
   \ dados JSON em tipos Haskell e converter tipos Haskell de volta para JSON.\u2026"
-lastmod: '2024-02-25T18:49:44.267643-07:00'
+lastmod: '2024-03-11T00:14:20.359234-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) em Haskell envolve analisar\
   \ dados JSON em tipos Haskell e converter tipos Haskell de volta para JSON.\u2026"

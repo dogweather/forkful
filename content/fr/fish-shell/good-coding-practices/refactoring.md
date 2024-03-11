@@ -2,7 +2,7 @@
 date: 2024-01-26 01:18:04.666224-07:00
 description: "La refactorisation est le processus de restructuration du code existant\
   \ sans changer son comportement externe afin d'am\xE9liorer les attributs non\u2026"
-lastmod: '2024-02-25T18:49:54.959872-07:00'
+lastmod: '2024-03-11T00:14:32.205946-06:00'
 model: gpt-4-0125-preview
 summary: "La refactorisation est le processus de restructuration du code existant\
   \ sans changer son comportement externe afin d'am\xE9liorer les attributs non\u2026"

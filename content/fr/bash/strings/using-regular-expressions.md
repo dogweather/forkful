@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:52.302471-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) dans Bash vous permettent de\
   \ rechercher, manipuler et g\xE9rer des cha\xEEnes de caract\xE8res et des fichiers\
   \ en fonction de\u2026"
-lastmod: '2024-02-25T18:49:54.673800-07:00'
+lastmod: '2024-03-11T00:14:31.910698-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) dans Bash vous permettent de rechercher,\
   \ manipuler et g\xE9rer des cha\xEEnes de caract\xE8res et des fichiers en fonction\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:37.761230-07:00
 description: "Na programa\xE7\xE3o com Rust, trabalhar com YAML (YAML Ain't Markup\
   \ Language) refere-se a analisar e gerar dados no formato YAML, um padr\xE3o de\
   \ serializa\xE7\xE3o de\u2026"
-lastmod: '2024-02-25T18:49:44.008821-07:00'
+lastmod: '2024-03-11T00:14:20.080665-06:00'
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o com Rust, trabalhar com YAML (YAML Ain't Markup Language)\
   \ refere-se a analisar e gerar dados no formato YAML, um padr\xE3o de serializa\xE7\

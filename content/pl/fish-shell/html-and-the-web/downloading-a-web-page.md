@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:05.141254-07:00
 description: "\u015Aci\u0105ganie strony internetowej to proces zapisywania zawarto\u015B\
   ci z internetu na lokalnym dysku. Programi\u015Bci to robi\u0105, by analizowa\u0107\
   \ dane, testowa\u0107 aplikacje\u2026"
-lastmod: '2024-02-25T18:49:34.213371-07:00'
+lastmod: '2024-03-11T00:14:09.052920-06:00'
 model: gpt-4-1106-preview
 summary: "\u015Aci\u0105ganie strony internetowej to proces zapisywania zawarto\u015B\
   ci z internetu na lokalnym dysku. Programi\u015Bci to robi\u0105, by analizowa\u0107\

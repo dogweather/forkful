@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:17.830923-07:00
 description: "YAML, short for \"YAML Ain't Markup Language\", is a human-friendly\
   \ data serialization standard that can be used for all programming languages. Programmers\u2026"
-lastmod: '2024-02-25T18:49:56.588517-07:00'
+lastmod: '2024-03-11T00:14:34.010915-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, short for \"YAML Ain't Markup Language\", is a human-friendly data\
   \ serialization standard that can be used for all programming languages. Programmers\u2026"

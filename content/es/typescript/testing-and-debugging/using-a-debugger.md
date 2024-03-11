@@ -3,7 +3,7 @@ date: 2024-01-26 04:10:58.945322-07:00
 description: "Un depurador es una herramienta que le permite examinar y cambiar los\
   \ entresijos de su c\xF3digo mientras se ejecuta. Los programadores lo utilizan\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:55.304166-07:00'
+lastmod: '2024-03-11T00:14:32.623541-06:00'
 model: gpt-4-0125-preview
 summary: "Un depurador es una herramienta que le permite examinar y cambiar los entresijos\
   \ de su c\xF3digo mientras se ejecuta. Los programadores lo utilizan para\u2026"

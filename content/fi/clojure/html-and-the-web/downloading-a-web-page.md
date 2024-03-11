@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:52.850732-07:00
 description: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"
-lastmod: '2024-02-25T18:49:53.158297-07:00'
+lastmod: '2024-03-11T00:14:30.112197-06:00'
 model: gpt-4-1106-preview
 summary: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"

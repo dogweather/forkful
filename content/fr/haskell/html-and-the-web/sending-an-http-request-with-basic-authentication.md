@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:40.513552-07:00
 description: "L\u2019envoi d\u2019une requ\xEAte HTTP avec authentification basique\
   \ consiste \xE0 transmettre \xE0 un serveur des identifiants (nom d\u2019utilisateur\
   \ et mot de passe) encod\xE9s\u2026"
-lastmod: '2024-02-25T18:49:54.556518-07:00'
+lastmod: '2024-03-11T00:14:31.782577-06:00'
 model: gpt-4-1106-preview
 summary: "L\u2019envoi d\u2019une requ\xEAte HTTP avec authentification basique consiste\
   \ \xE0 transmettre \xE0 un serveur des identifiants (nom d\u2019utilisateur et mot\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:56.382469-07:00
 description: "Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious,\
   \ Minimal Language) data met Haskell. Programmeurs doen dit om gemakkelijk\u2026"
-lastmod: '2024-02-25T18:49:48.213698-07:00'
+lastmod: '2024-03-11T00:14:24.706101-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious, Minimal\
   \ Language) data met Haskell. Programmeurs doen dit om gemakkelijk\u2026"

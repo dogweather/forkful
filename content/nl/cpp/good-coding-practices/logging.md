@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:38.735984-07:00
 description: "Loggen in de context van programmeren is het proces van het vastleggen\
   \ van gebeurtenissen, toestanden en informatie in een bestand of een ander\u2026"
-lastmod: '2024-02-25T18:49:48.452748-07:00'
+lastmod: '2024-03-11T00:14:24.956644-06:00'
 model: gpt-4-0125-preview
 summary: "Loggen in de context van programmeren is het proces van het vastleggen van\
   \ gebeurtenissen, toestanden en informatie in een bestand of een ander\u2026"

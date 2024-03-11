@@ -6,7 +6,7 @@ date: 2024-01-28 23:01:28.693984-07:00
 description: "Att organisera kod i funktioner handlar om att bunta ihop bitar av skript\
   \ f\xF6r att g\xF6ra specifika uppgifter. Vi g\xF6r det eftersom det g\xF6r koden\
   \ enklare att\u2026"
-lastmod: '2024-02-25T18:49:36.658983-07:00'
+lastmod: '2024-03-11T00:14:11.744645-06:00'
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner handlar om att bunta ihop bitar av skript\
   \ f\xF6r att g\xF6ra specifika uppgifter. Vi g\xF6r det eftersom det g\xF6r koden\

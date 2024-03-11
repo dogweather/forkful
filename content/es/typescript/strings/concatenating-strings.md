@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:37.738477-07:00
 description: "Concatenar cadenas es simplemente juntar dos o m\xE1s trozos de texto\
   \ en uno solo. Lo hacemos porque a veces necesitamos construir mensajes personalizados\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:55.291862-07:00'
+lastmod: '2024-03-11T00:14:32.610472-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar cadenas es simplemente juntar dos o m\xE1s trozos de texto en\
   \ uno solo. Lo hacemos porque a veces necesitamos construir mensajes personalizados\

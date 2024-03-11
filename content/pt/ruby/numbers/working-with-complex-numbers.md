@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:43.000414-07:00
 description: "N\xFAmeros complexos, compostos por uma parte real e uma imagin\xE1\
   ria (como 3+4i), s\xE3o fundamentais na engenharia e na f\xEDsica. Programadores\
   \ trabalham com eles\u2026"
-lastmod: '2024-02-25T18:49:44.704119-07:00'
+lastmod: '2024-03-11T00:14:20.831561-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, compostos por uma parte real e uma imagin\xE1ria (como\
   \ 3+4i), s\xE3o fundamentais na engenharia e na f\xEDsica. Programadores trabalham\

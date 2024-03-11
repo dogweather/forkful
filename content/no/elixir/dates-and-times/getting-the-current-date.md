@@ -6,7 +6,7 @@ date: 2024-02-03 19:09:27.907362-07:00
 description: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang\
   \ til systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\
   \ eller\u2026"
-lastmod: '2024-02-25T18:49:38.680865-07:00'
+lastmod: '2024-03-11T00:14:13.981020-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang til\
   \ systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\

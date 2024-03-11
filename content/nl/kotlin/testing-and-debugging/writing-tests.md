@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:11.932403-07:00
 description: "Testen schrijven betekent code scripten om te checken of andere code\
   \ goed werkt. Programmeurs doen dit om vroegtijdig fouten op te sporen, tijd te\u2026"
-lastmod: '2024-02-25T18:49:48.110741-07:00'
+lastmod: '2024-03-11T00:14:24.594891-06:00'
 model: gpt-4-0125-preview
 summary: "Testen schrijven betekent code scripten om te checken of andere code goed\
   \ werkt. Programmeurs doen dit om vroegtijdig fouten op te sporen, tijd te\u2026"

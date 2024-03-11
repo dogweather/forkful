@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:52:46.529419-07:00
 description: "Een webpagina downloaden in Visual Basic for Applications (VBA) betekent\
   \ het ophalen van de HTML-inhoud van een webpagina van het internet. Programmeurs\u2026"
-lastmod: '2024-02-25T18:49:47.979760-07:00'
+lastmod: '2024-03-11T00:14:24.454873-06:00'
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden in Visual Basic for Applications (VBA) betekent\
   \ het ophalen van de HTML-inhoud van een webpagina van het internet. Programmeurs\u2026"

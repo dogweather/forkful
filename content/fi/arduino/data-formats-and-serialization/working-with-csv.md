@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:08.375240-07:00
 description: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely Arduinossa k\xE4\
   sitt\xE4\xE4 lukemisen ja kirjoittamisen CSV-tiedostoihin, joita yleisesti s\xE4\
   ilytet\xE4\xE4n SD-\u2026"
-lastmod: '2024-02-25T18:49:53.755787-07:00'
+lastmod: '2024-03-11T00:14:30.874289-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely Arduinossa k\xE4\
   sitt\xE4\xE4 lukemisen ja kirjoittamisen CSV-tiedostoihin, joita yleisesti s\xE4\

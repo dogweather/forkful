@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:17.356845-07:00
 description: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 lese\
   \ fra og skrive til rene tekstfiler som lagrer tabul\xE6re data. Programmerere gj\xF8\
   r dette for\u2026"
-lastmod: '2024-02-25T18:49:38.779795-07:00'
+lastmod: '2024-03-11T00:14:14.135103-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 lese fra\
   \ og skrive til rene tekstfiler som lagrer tabul\xE6re data. Programmerere gj\xF8\

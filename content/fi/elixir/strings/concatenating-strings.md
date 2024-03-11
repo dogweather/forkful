@@ -2,7 +2,7 @@
 date: 2024-01-27 10:43:51.256076-07:00
 description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
   \ liitt\xE4mist\xE4 yhteen muodostamaan yksi tekstikappale. Saatat tarvita tekstien\u2026"
-lastmod: '2024-02-25T18:49:53.192555-07:00'
+lastmod: '2024-03-11T00:14:30.148920-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
   \ liitt\xE4mist\xE4 yhteen muodostamaan yksi tekstikappale. Saatat tarvita tekstien\u2026"

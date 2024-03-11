@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:21.958692-07:00
 description: "Att arbeta med CSV (Comma-Separated Values, komma-separerade v\xE4rden)\
   \ i JavaScript inneb\xE4r att tolka eller generera CSV-filer f\xF6r att antingen\
   \ importera\u2026"
-lastmod: '2024-02-25T18:49:36.630624-07:00'
+lastmod: '2024-03-11T00:14:11.715258-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma-Separated Values, komma-separerade v\xE4rden)\
   \ i JavaScript inneb\xE4r att tolka eller generera CSV-filer f\xF6r att antingen\

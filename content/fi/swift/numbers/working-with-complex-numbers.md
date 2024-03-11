@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:48.712610-07:00
 description: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kuten\
   \ 3 + 4i). Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 Swiftiss\xE4 teht\xE4viin, kuten\
   \ signaalink\xE4sittely,\u2026"
-lastmod: '2024-02-25T18:49:53.809796-07:00'
+lastmod: '2024-03-11T00:14:30.941380-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kuten 3 +\
   \ 4i). Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 Swiftiss\xE4 teht\xE4viin, kuten\

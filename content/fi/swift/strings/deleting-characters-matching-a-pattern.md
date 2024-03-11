@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:14.076075-07:00
 description: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tarkoitetaan\
   \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.800550-07:00'
+lastmod: '2024-03-11T00:14:30.930902-06:00'
 model: gpt-4-1106-preview
 summary: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tarkoitetaan\
   \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat\u2026"

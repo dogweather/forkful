@@ -2,7 +2,7 @@
 date: 2024-01-26 01:08:27.465647-07:00
 description: "Das Protokollieren in der Programmierung gleicht dem F\xFChren eines\
   \ Tagebuchs f\xFCr Ihre Anwendung. Es ist die systematische Aufzeichnung von Ereignissen,\u2026"
-lastmod: '2024-02-25T18:49:51.453403-07:00'
+lastmod: '2024-03-11T00:14:28.319600-06:00'
 model: gpt-4-1106-preview
 summary: "Das Protokollieren in der Programmierung gleicht dem F\xFChren eines Tagebuchs\
   \ f\xFCr Ihre Anwendung. Es ist die systematische Aufzeichnung von Ereignissen,\u2026"

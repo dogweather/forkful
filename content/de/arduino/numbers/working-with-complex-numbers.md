@@ -2,7 +2,7 @@
 date: 2024-01-26 04:36:51.380777-07:00
 description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil,\
   \ \xFCblicherweise dargestellt als `a + bi`. Sie sind entscheidend f\xFCr einige\u2026"
-lastmod: '2024-02-25T18:49:51.190906-07:00'
+lastmod: '2024-03-11T00:14:28.039159-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, \xFC\
   blicherweise dargestellt als `a + bi`. Sie sind entscheidend f\xFCr einige\u2026"

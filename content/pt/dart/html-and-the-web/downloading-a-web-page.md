@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:42.431726-07:00
 description: "Baixar uma p\xE1gina web envolve buscar o conte\xFAdo de uma p\xE1gina\
   \ web atrav\xE9s de sua URL para processamento ou armazenamento. Programadores fazem\
   \ isso para\u2026"
-lastmod: '2024-03-09T21:06:10.627875-07:00'
+lastmod: '2024-03-11T00:14:19.962878-06:00'
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina web envolve buscar o conte\xFAdo de uma p\xE1gina web\
   \ atrav\xE9s de sua URL para processamento ou armazenamento. Programadores fazem\

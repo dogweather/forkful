@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:30.156239-07:00
 description: "Organiser le code en fonctions signifie d\xE9composer le monstre qu'est\
   \ un programme en morceaux g\xE9rables, chacun effectuant une t\xE2che distincte.\
   \ Les\u2026"
-lastmod: '2024-02-25T18:49:54.393060-07:00'
+lastmod: '2024-03-11T00:14:31.600807-06:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions signifie d\xE9composer le monstre qu'est\
   \ un programme en morceaux g\xE9rables, chacun effectuant une t\xE2che distincte.\

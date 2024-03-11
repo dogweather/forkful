@@ -2,7 +2,7 @@
 date: 2024-01-26 04:45:46.646232-07:00
 description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil\
   \ (wie 3 + 4i). Programmierer verwenden sie in Swift f\xFCr Aufgaben wie Signalverarbeitung,\u2026"
-lastmod: '2024-02-25T18:49:51.270508-07:00'
+lastmod: '2024-03-11T00:14:28.122313-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil (wie\
   \ 3 + 4i). Programmierer verwenden sie in Swift f\xFCr Aufgaben wie Signalverarbeitung,\u2026"

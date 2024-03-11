@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:29.724641-07:00
 description: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum betyder att man\
   \ l\xE4gger till eller drar ifr\xE5n dagar till ett givet datum. Programmerare g\xF6\
   r det f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:36.410876-07:00'
+lastmod: '2024-03-11T00:14:11.477058-06:00'
 model: gpt-4-1106-preview
 summary: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum betyder att man l\xE4\
   gger till eller drar ifr\xE5n dagar till ett givet datum. Programmerare g\xF6r det\

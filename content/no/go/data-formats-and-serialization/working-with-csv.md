@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:11:40.532356-07:00
 description: "Comma-Separated Values (CSV)-formatet er allestedsn\xE6rv\xE6rende for\
   \ datautveksling p\xE5 grunn av sin enkelhet og enkel integrasjon med de fleste\u2026"
-lastmod: '2024-02-25T18:49:38.522906-07:00'
+lastmod: '2024-03-11T00:14:13.808199-06:00'
 model: gpt-4-0125-preview
 summary: "Comma-Separated Values (CSV)-formatet er allestedsn\xE6rv\xE6rende for datautveksling\
   \ p\xE5 grunn av sin enkelhet og enkel integrasjon med de fleste\u2026"

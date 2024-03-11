@@ -3,7 +3,7 @@ date: 2024-01-26 04:21:02.619679-07:00
 description: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's\
   \ Obvious, Minimal Language) med hj\xE4lp av Elixir. Programmerare anv\xE4nder det\
   \ f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:35.932611-07:00'
+lastmod: '2024-03-11T00:14:10.922871-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's Obvious,\
   \ Minimal Language) med hj\xE4lp av Elixir. Programmerare anv\xE4nder det f\xF6\

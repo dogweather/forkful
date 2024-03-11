@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:50.123627-07:00
 description: "\xC5 finne lengden p\xE5 en String i Dart handler om \xE5 bestemme antallet\
   \ kodeenheter (i hovedsak antallet tegn hvis man tenker p\xE5 det p\xE5 en forenklet\
   \ m\xE5te) i en\u2026"
-lastmod: '2024-03-09T21:06:05.237360-07:00'
+lastmod: '2024-03-11T00:14:14.005935-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en String i Dart handler om \xE5 bestemme antallet\
   \ kodeenheter (i hovedsak antallet tegn hvis man tenker p\xE5 det p\xE5 en forenklet\

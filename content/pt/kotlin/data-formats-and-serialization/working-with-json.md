@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:03.945968-07:00
 description: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a\
   \ an\xE1lise e gera\xE7\xE3o de dados JSON. Programadores fazem isso para trocar\
   \ dados facilmente\u2026"
-lastmod: '2024-02-25T18:49:44.184379-07:00'
+lastmod: '2024-03-11T00:14:20.269714-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a an\xE1\
   lise e gera\xE7\xE3o de dados JSON. Programadores fazem isso para trocar dados facilmente\u2026"

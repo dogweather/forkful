@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:48:49.669678-07:00
 description: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manipuler\
   \ des objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement.\u2026"
-lastmod: '2024-02-25T18:49:54.097093-07:00'
+lastmod: '2024-03-11T00:14:31.239010-06:00'
 model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manipuler des\
   \ objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement.\u2026"

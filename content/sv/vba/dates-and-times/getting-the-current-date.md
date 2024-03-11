@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:41.733519-07:00
 description: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det en vanlig uppgift\
   \ att h\xE4mta aktuellt datum, vilket m\xF6jligg\xF6r f\xF6r programmerare att dynamiskt\
   \ arbeta med\u2026"
-lastmod: '2024-02-25T18:49:36.049432-07:00'
+lastmod: '2024-03-11T00:14:11.096877-06:00'
 model: gpt-4-0125-preview
 summary: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det en vanlig uppgift att\
   \ h\xE4mta aktuellt datum, vilket m\xF6jligg\xF6r f\xF6r programmerare att dynamiskt\

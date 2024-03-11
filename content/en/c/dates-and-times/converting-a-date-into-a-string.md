@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:03.941196-07:00
 description: "Converting a date into a string in C involves translating a date structure\
   \ or timestamp into a human-readable format. Programmers often perform this task\u2026"
-lastmod: '2024-02-25T18:49:56.958424-07:00'
+lastmod: '2024-03-11T00:14:34.406899-06:00'
 model: gpt-4-0125-preview
 summary: "Converting a date into a string in C involves translating a date structure\
   \ or timestamp into a human-readable format. Programmers often perform this task\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:11.636584-07:00
 description: "\xC5 kapitalisere en streng i programmering refererer ofte til \xE5\
   \ konvertere det f\xF8rste tegnet i en streng til stor bokstav og resten til sm\xE5\
   \ bokstaver.\u2026"
-lastmod: '2024-02-25T18:49:39.477243-07:00'
+lastmod: '2024-03-11T00:14:14.910963-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng i programmering refererer ofte til \xE5 konvertere\
   \ det f\xF8rste tegnet i en streng til stor bokstav og resten til sm\xE5 bokstaver.\u2026"

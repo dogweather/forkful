@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:11.313304-07:00
 description: "En programmation, cr\xE9er un fichier temporaire, c'est un peu comme\
   \ prendre des notes sur un bout de papier effa\xE7able. On fait \xE7a pour stocker\
   \ des donn\xE9es\u2026"
-lastmod: '2024-02-25T18:49:55.061429-07:00'
+lastmod: '2024-03-11T00:14:32.312161-06:00'
 model: gpt-4-1106-preview
 summary: "En programmation, cr\xE9er un fichier temporaire, c'est un peu comme prendre\
   \ des notes sur un bout de papier effa\xE7able. On fait \xE7a pour stocker des donn\xE9\

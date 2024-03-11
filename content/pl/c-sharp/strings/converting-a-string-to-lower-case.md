@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:03.379665-07:00
 description: "Zmienianie ci\u0105gu znak\xF3w na ma\u0142e litery to proces zamiany\
   \ wszystkich wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Programi\u015B\
   ci to robi\u0105, aby\u2026"
-lastmod: '2024-02-25T18:49:33.759983-07:00'
+lastmod: '2024-03-11T00:14:08.577517-06:00'
 model: gpt-4-1106-preview
 summary: "Zmienianie ci\u0105gu znak\xF3w na ma\u0142e litery to proces zamiany wszystkich\
   \ wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Programi\u015Bci\

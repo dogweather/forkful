@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:30.887939-07:00
 description: "\xC5 skrive en tekstfil i C inneb\xE6rer \xE5 opprette eller \xE5pne\
   \ en fil i skrivemodus og deretter bruke Cs fil-I/O-funksjoner for \xE5 lagre tekstdata\
   \ i den.\u2026"
-lastmod: '2024-02-25T18:49:39.469748-07:00'
+lastmod: '2024-03-11T00:14:14.902944-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i C inneb\xE6rer \xE5 opprette eller \xE5pne en\
   \ fil i skrivemodus og deretter bruke Cs fil-I/O-funksjoner for \xE5 lagre tekstdata\

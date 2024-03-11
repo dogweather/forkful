@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:48.533187-07:00
 description: "Att kontrollera om en mapp finns i Google Apps Script inneb\xE4r att\
   \ verifiera n\xE4rvaron av en mapp inom Google Drive. Programmerare utf\xF6r ofta\
   \ denna kontroll\u2026"
-lastmod: '2024-02-25T18:49:35.791019-07:00'
+lastmod: '2024-03-11T00:14:10.763915-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns i Google Apps Script inneb\xE4r att verifiera\
   \ n\xE4rvaron av en mapp inom Google Drive. Programmerare utf\xF6r ofta denna kontroll\u2026"

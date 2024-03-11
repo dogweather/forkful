@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:37.678241-07:00
 description: "Dans Visual Basic pour Applications (VBA), r\xE9cup\xE9rer la date actuelle\
   \ est une t\xE2che courante qui permet aux programmeurs de travailler dynamiquement\
   \ avec\u2026"
-lastmod: '2024-02-25T18:49:54.352133-07:00'
+lastmod: '2024-03-11T00:14:31.557013-06:00'
 model: gpt-4-0125-preview
 summary: "Dans Visual Basic pour Applications (VBA), r\xE9cup\xE9rer la date actuelle\
   \ est une t\xE2che courante qui permet aux programmeurs de travailler dynamiquement\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:07.871410-07:00
 description: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
   \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\
   \ Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.317419-07:00'
+lastmod: '2024-03-11T00:14:30.330425-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
   \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\

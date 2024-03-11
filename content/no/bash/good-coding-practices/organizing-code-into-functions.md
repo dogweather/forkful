@@ -2,7 +2,7 @@
 date: 2024-01-26 01:09:40.462112-07:00
 description: "\xC5 dele opp kode i funksjoner betyr \xE5 bryte ned skript i mindre,\
   \ gjenbrukbare blokker som gj\xF8r spesifikke oppgaver. Det gj\xF8r koden mer oversiktlig,\u2026"
-lastmod: '2024-02-25T18:49:39.153435-07:00'
+lastmod: '2024-03-11T00:14:14.554999-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 dele opp kode i funksjoner betyr \xE5 bryte ned skript i mindre, gjenbrukbare\
   \ blokker som gj\xF8r spesifikke oppgaver. Det gj\xF8r koden mer oversiktlig,\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:56:08.357079-07:00
 description: "Refactoring in Dart ist der Prozess des Umstrukturierens bestehenden\
   \ Codes, ohne dessen externes Verhalten zu \xE4ndern, mit dem Ziel, seine interne\u2026"
-lastmod: '2024-03-09T21:06:17.583731-07:00'
+lastmod: '2024-03-11T00:14:27.484602-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in Dart ist der Prozess des Umstrukturierens bestehenden Codes,\
   \ ohne dessen externes Verhalten zu \xE4ndern, mit dem Ziel, seine interne\u2026"

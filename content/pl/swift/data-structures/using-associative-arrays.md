@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:18.512552-07:00
 description: "Tablice asocjacyjne, znane w Swift jako s\u0142owniki, pozwalaj\u0105\
   \ przechowywa\u0107 i zarz\u0105dza\u0107 danymi w postaci par klucz-warto\u015B\
   \u0107. Programi\u015Bci u\u017Cywaj\u0105 ich do\u2026"
-lastmod: '2024-02-25T18:49:34.120340-07:00'
+lastmod: '2024-03-11T00:14:08.952428-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane w Swift jako s\u0142owniki, pozwalaj\u0105 przechowywa\u0107\
   \ i zarz\u0105dza\u0107 danymi w postaci par klucz-warto\u015B\u0107. Programi\u015B\

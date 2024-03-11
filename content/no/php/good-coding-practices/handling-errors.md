@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:56.195757-07:00
 description: "Feilh\xE5ndtering i PHP dreier seg om \xE5 h\xE5ndtere og respondere\
   \ p\xE5 tilstander som forstyrrer det normale programflytet, som manglende filer\
   \ eller d\xE5rlig\u2026"
-lastmod: '2024-02-25T18:49:39.066410-07:00'
+lastmod: '2024-03-11T00:14:14.460777-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering i PHP dreier seg om \xE5 h\xE5ndtere og respondere p\xE5\
   \ tilstander som forstyrrer det normale programflytet, som manglende filer eller\

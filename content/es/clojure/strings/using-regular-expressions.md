@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:16:19.641755-07:00
 description: "Las expresiones regulares, una herramienta poderosa para el emparejamiento\
   \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de\u2026"
-lastmod: '2024-02-25T18:49:55.208822-07:00'
+lastmod: '2024-03-11T00:14:32.476420-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares, una herramienta poderosa para el emparejamiento\
   \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de\u2026"

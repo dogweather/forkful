@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:09.625047-07:00
 description: "String-Interpolation erm\xF6glicht es, Variablen und Ausdr\xFCcke direkt\
   \ in Strings einzuf\xFCgen, was den Code lesbarer und die String-Konstruktion einfacher\u2026"
-lastmod: '2024-02-25T18:49:50.894629-07:00'
+lastmod: '2024-03-11T00:14:27.725872-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablen und Ausdr\xFCcke direkt\
   \ in Strings einzuf\xFCgen, was den Code lesbarer und die String-Konstruktion einfacher\u2026"

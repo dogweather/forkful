@@ -2,7 +2,7 @@
 date: 2024-01-26 03:47:39.571618-07:00
 description: "Usar un depurador significa iniciar una herramienta que te permite observar\
   \ dentro de tu programa en ejecuci\xF3n para entender qu\xE9 est\xE1 sucediendo\u2026"
-lastmod: '2024-02-25T18:49:55.849707-07:00'
+lastmod: '2024-03-11T00:14:33.202563-06:00'
 model: gpt-4-0125-preview
 summary: "Usar un depurador significa iniciar una herramienta que te permite observar\
   \ dentro de tu programa en ejecuci\xF3n para entender qu\xE9 est\xE1 sucediendo\u2026"

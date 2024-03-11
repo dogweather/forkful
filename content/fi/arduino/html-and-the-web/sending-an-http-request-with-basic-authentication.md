@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:50.771459-07:00
 description: "HTTP-pyynt\xF6 perusautentikoinnilla l\xE4hett\xE4\xE4 tietoa palvelimelle\
   \ suojattuna. Se on turvallinen tapa p\xE4\xE4st\xE4 k\xE4siksi API:hin tai palveluun,\
   \ joka vaatii\u2026"
-lastmod: '2024-02-25T18:49:53.734456-07:00'
+lastmod: '2024-03-11T00:14:30.850672-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 perusautentikoinnilla l\xE4hett\xE4\xE4 tietoa palvelimelle\
   \ suojattuna. Se on turvallinen tapa p\xE4\xE4st\xE4 k\xE4siksi API:hin tai palveluun,\

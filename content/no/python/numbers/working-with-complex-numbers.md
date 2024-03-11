@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:31.371734-07:00
 description: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er\
   \ reelle tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`). I programmering\
   \ bruker vi\u2026"
-lastmod: '2024-02-25T18:49:38.583186-07:00'
+lastmod: '2024-03-11T00:14:13.873649-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er reelle\
   \ tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`). I programmering bruker\

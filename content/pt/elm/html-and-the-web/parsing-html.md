@@ -2,7 +2,7 @@
 date: 2024-01-20 15:31:15.808761-07:00
 description: "O parsing de HTML \xE9 o processo de converter strings de HTML em uma\
   \ estrutura que possa ser manipulada e acessada pelo seu programa Elm. Programadores\u2026"
-lastmod: '2024-03-09T21:11:28.903040-07:00'
+lastmod: '2024-03-11T00:14:20.199330-06:00'
 model: unknown
 summary: "O parsing de HTML \xE9 o processo de converter strings de HTML em uma estrutura\
   \ que possa ser manipulada e acessada pelo seu programa Elm. Programadores\u2026"

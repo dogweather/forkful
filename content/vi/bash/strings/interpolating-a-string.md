@@ -6,7 +6,7 @@ description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n gi\xE1 tr\u1E
   \ v\xE0o m\u1ED9t chu\u1ED7i. N\xF3 r\u1EA5t ti\u1EC7n l\u1EE3i cho vi\u1EC7c t\u1EA1\
   o ra c\xE1c tin nh\u1EAFn t\xF9y ch\u1EC9nh, t\u1EF1 \u0111\u1ED9ng h\xF3a l\u1EC7\
   nh v\xE0 vi\u1EBFt k\u1ECBch b\u1EA3n nh\u01B0 m\u1ED9t\u2026"
-lastmod: '2024-02-25T18:49:35.202805-07:00'
+lastmod: '2024-03-11T00:14:10.146729-06:00'
 model: gpt-4-0125-preview
 summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n gi\xE1 tr\u1ECB v\xE0\
   o m\u1ED9t chu\u1ED7i. N\xF3 r\u1EA5t ti\u1EC7n l\u1EE3i cho vi\u1EC7c t\u1EA1o\

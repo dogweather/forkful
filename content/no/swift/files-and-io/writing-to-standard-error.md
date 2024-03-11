@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:49.154571-07:00
 description: "Skriving til standardfeil (stderr) handler om \xE5 lede programmets\
   \ feilmeldinger eller diagnostiske utdata til en separat str\xF8m, forskjellig fra\u2026"
-lastmod: '2024-02-25T18:49:39.337231-07:00'
+lastmod: '2024-03-11T00:14:14.756690-06:00'
 model: gpt-4-0125-preview
 summary: "Skriving til standardfeil (stderr) handler om \xE5 lede programmets feilmeldinger\
   \ eller diagnostiske utdata til en separat str\xF8m, forskjellig fra\u2026"

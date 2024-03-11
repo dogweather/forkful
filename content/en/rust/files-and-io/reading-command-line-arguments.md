@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:02.616433-07:00
 description: Reading command line arguments in Rust lets programs take user input
   on launch. It's key for custom behavior without a GUI.
-lastmod: '2024-02-25T18:49:56.333440-07:00'
+lastmod: '2024-03-11T00:14:33.771453-06:00'
 model: gpt-4-1106-preview
 summary: Reading command line arguments in Rust lets programs take user input on launch.
   It's key for custom behavior without a GUI.

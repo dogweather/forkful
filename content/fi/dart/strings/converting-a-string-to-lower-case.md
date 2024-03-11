@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:54:03.921177-07:00
 description: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka\
   \ k\xE4sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\u2026"
-lastmod: '2024-03-09T21:06:20.168499-07:00'
+lastmod: '2024-03-11T00:14:30.187827-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka k\xE4\
   sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\u2026"

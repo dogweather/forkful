@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:55.945859-07:00
 description: "Uuden projektin aloittaminen Google Apps Scriptiss\xE4 (GAS) tarkoittaa\
   \ komentosarjatiedoston alustamista Google-ekosysteemiss\xE4 (Google Drive, Docs,\
   \ Sheets\u2026"
-lastmod: '2024-02-25T18:49:53.075038-07:00'
+lastmod: '2024-03-11T00:14:30.024471-06:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Google Apps Scriptiss\xE4 (GAS) tarkoittaa\
   \ komentosarjatiedoston alustamista Google-ekosysteemiss\xE4 (Google Drive, Docs,\

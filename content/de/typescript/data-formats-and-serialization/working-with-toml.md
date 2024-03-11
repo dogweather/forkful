@@ -3,7 +3,7 @@ date: 2024-01-26 04:27:04.148803-07:00
 description: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
   \ ist ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML. Programmierer\
   \ nutzen es\u2026"
-lastmod: '2024-02-25T18:49:50.722686-07:00'
+lastmod: '2024-03-11T00:14:27.545172-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, ist\
   \ ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML. Programmierer nutzen\

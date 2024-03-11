@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:52.616688-07:00
 description: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 obtenir\
   \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\u2026"
-lastmod: '2024-02-25T18:49:54.793493-07:00'
+lastmod: '2024-03-11T00:14:32.025849-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 obtenir\
   \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:01.178678-07:00
 description: "Come\xE7ar um novo projeto \xE9 dar o pontap\xE9 inicial no desenvolvimento\
   \ de uma ideia de software. Programadores iniciam projetos para transformar conceitos\
   \ em\u2026"
-lastmod: '2024-02-25T18:49:44.372902-07:00'
+lastmod: '2024-03-11T00:14:20.474285-06:00'
 model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 dar o pontap\xE9 inicial no desenvolvimento\
   \ de uma ideia de software. Programadores iniciam projetos para transformar conceitos\

@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:14.729179-07:00
 description: "String interpolation in Visual Basic for Applications (VBA) refers to\
   \ the process of embedding variables or expressions within a string literal, allowing\u2026"
-lastmod: '2024-02-25T18:49:56.344431-07:00'
+lastmod: '2024-03-11T00:14:33.783779-06:00'
 model: gpt-4-0125-preview
 summary: "String interpolation in Visual Basic for Applications (VBA) refers to the\
   \ process of embedding variables or expressions within a string literal, allowing\u2026"

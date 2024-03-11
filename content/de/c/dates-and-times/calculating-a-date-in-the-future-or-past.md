@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:52.671845-07:00
 description: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfasst\
   \ das Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen,\
   \ Monaten\u2026"
-lastmod: '2024-02-25T18:49:51.416877-07:00'
+lastmod: '2024-03-11T00:14:28.278285-06:00'
 model: gpt-4-0125-preview
 summary: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfasst das\
   \ Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen, Monaten\u2026"

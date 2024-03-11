@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:05:21.964052-07:00
 description: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Datei\
   \ auf Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\u2026"
-lastmod: '2024-02-25T18:49:51.421123-07:00'
+lastmod: '2024-03-11T00:14:28.282929-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Datei auf\
   \ Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\u2026"

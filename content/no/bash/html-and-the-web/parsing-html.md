@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:30.519934-07:00
 description: "\xC5 parse HTML betyr \xE5 sile gjennom strukturen og innholdet i en\
   \ HTML-fil for \xE5 trekke ut informasjon. Programmerere gj\xF8r det for \xE5 f\xE5\
   \ tilgang til data,\u2026"
-lastmod: '2024-02-25T18:49:39.145760-07:00'
+lastmod: '2024-03-11T00:14:14.547052-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 parse HTML betyr \xE5 sile gjennom strukturen og innholdet i en HTML-fil\
   \ for \xE5 trekke ut informasjon. Programmerere gj\xF8r det for \xE5 f\xE5 tilgang\

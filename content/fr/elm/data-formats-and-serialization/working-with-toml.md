@@ -3,7 +3,7 @@ date: 2024-01-26 04:21:09.614536-07:00
 description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un langage\
   \ de s\xE9rialisation de donn\xE9es. Les programmeurs Elm l'utilisent pour g\xE9\
   rer les donn\xE9es\u2026"
-lastmod: '2024-02-25T18:49:54.454387-07:00'
+lastmod: '2024-03-11T00:14:31.666637-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un langage\
   \ de s\xE9rialisation de donn\xE9es. Les programmeurs Elm l'utilisent pour g\xE9\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:57.344496-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res permet de la manipuler\
   \ comme texte, simplifiant l\u2019affichage et le stockage. Les programmeurs font\
   \ cette\u2026"
-lastmod: '2024-02-25T18:49:54.653235-07:00'
+lastmod: '2024-03-11T00:14:31.888530-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la manipuler\
   \ comme texte, simplifiant l\u2019affichage et le stockage. Les programmeurs font\

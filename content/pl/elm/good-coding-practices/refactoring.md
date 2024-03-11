@@ -3,7 +3,7 @@ date: 2024-01-26 01:17:55.596907-07:00
 description: "Refaktoryzacja to w zasadzie wiosenne sprz\u0105tanie w Twojej bazie\
   \ kodu - chodzi o restrukturyzacj\u0119 istniej\u0105cego kodu bez zmiany jego zewn\u0119\
   trznego\u2026"
-lastmod: '2024-02-25T18:49:33.694380-07:00'
+lastmod: '2024-03-11T00:14:08.509499-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to w zasadzie wiosenne sprz\u0105tanie w Twojej bazie kodu\
   \ - chodzi o restrukturyzacj\u0119 istniej\u0105cego kodu bez zmiany jego zewn\u0119\

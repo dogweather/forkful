@@ -2,7 +2,7 @@
 date: 2024-01-26 01:06:36.916059-07:00
 description: "Das Protokollieren ist die Praxis, Ereignisse, Fehler und andere signifikante\
   \ Datenpunkte aufzuzeichnen, die im Lebenszyklus einer Softwareanwendung\u2026"
-lastmod: '2024-02-25T18:49:51.075100-07:00'
+lastmod: '2024-03-11T00:14:27.919789-06:00'
 model: gpt-4-1106-preview
 summary: "Das Protokollieren ist die Praxis, Ereignisse, Fehler und andere signifikante\
   \ Datenpunkte aufzuzeichnen, die im Lebenszyklus einer Softwareanwendung\u2026"

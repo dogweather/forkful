@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:07.908091-07:00
 description: "Checking whether a directory exists in C involves querying the file\
   \ system to verify if a specific path leads to a directory. Programmers often perform\u2026"
-lastmod: '2024-02-25T18:49:56.961345-07:00'
+lastmod: '2024-03-11T00:14:34.410041-06:00'
 model: gpt-4-0125-preview
 summary: "Checking whether a directory exists in C involves querying the file system\
   \ to verify if a specific path leads to a directory. Programmers often perform\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:46.110331-07:00
 description: "Feilh\xE5ndtering g\xE5r ut p\xE5 \xE5 forvente det uventede i koden\
   \ - \xE5 h\xE5ndtere feil og problemer p\xE5 en smidig m\xE5te uten \xE5 krasje.\
   \ Programmerere gj\xF8r dette for \xE5\u2026"
-lastmod: '2024-02-25T18:49:39.503223-07:00'
+lastmod: '2024-03-11T00:14:14.939655-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering g\xE5r ut p\xE5 \xE5 forvente det uventede i koden - \xE5\
   \ h\xE5ndtere feil og problemer p\xE5 en smidig m\xE5te uten \xE5 krasje. Programmerere\

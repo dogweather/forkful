@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:05:24.306445-07:00
 description: "Capitalizzare una stringa in C# comporta la conversione del primo carattere\
   \ di una stringa in maiuscolo, se gi\xE0 non lo \xE8. Questa modifica pu\xF2 essere\u2026"
-lastmod: '2024-02-25T18:49:41.283535-07:00'
+lastmod: '2024-03-11T00:14:17.002998-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in C# comporta la conversione del primo carattere\
   \ di una stringa in maiuscolo, se gi\xE0 non lo \xE8. Questa modifica pu\xF2 essere\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:58:56.727153-07:00
 description: "Het lezen van commandoregelargumenten in Google Apps Script is een beetje\
   \ een verkeerde benaming, omdat, in tegenstelling tot traditionele command-line\u2026"
-lastmod: '2024-02-25T18:49:47.743304-07:00'
+lastmod: '2024-03-11T00:14:24.157914-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten in Google Apps Script is een beetje\
   \ een verkeerde benaming, omdat, in tegenstelling tot traditionele command-line\u2026"

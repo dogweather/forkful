@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:10:48.252436-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) bieten eine M\xF6glichkeit, Zeichenfolgen\
   \ anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren. Programmierer\u2026"
-lastmod: '2024-02-25T18:49:51.391975-07:00'
+lastmod: '2024-03-11T00:14:28.250390-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) bieten eine M\xF6glichkeit, Zeichenfolgen\
   \ anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren. Programmierer\u2026"

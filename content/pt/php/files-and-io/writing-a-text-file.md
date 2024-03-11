@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:44.222670-07:00
 description: "Escrever um arquivo de texto em PHP envolve criar ou abrir um arquivo\
   \ e inserir conte\xFAdo nele. Programadores fazem isso para persistir dados, como\u2026"
-lastmod: '2024-02-25T18:49:44.306127-07:00'
+lastmod: '2024-03-11T00:14:20.400503-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em PHP envolve criar ou abrir um arquivo e\
   \ inserir conte\xFAdo nele. Programadores fazem isso para persistir dados, como\u2026"

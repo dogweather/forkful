@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:22.003528-07:00
 description: "Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i wprowadzeniu\
   \ do niego tre\u015Bci tekstowej, co jest powszechnym zadaniem do przechowywania\u2026"
-lastmod: '2024-02-25T18:49:33.747713-07:00'
+lastmod: '2024-03-11T00:14:08.565525-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i wprowadzeniu\
   \ do niego tre\u015Bci tekstowej, co jest powszechnym zadaniem do przechowywania\u2026"

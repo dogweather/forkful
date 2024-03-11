@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:45.467398-07:00
 description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely Google Apps\
   \ Scriptill\xE4 sis\xE4lt\xE4\xE4 tekstimuotoisten tiedostojen lukemisen, muokkaamisen\
   \ ja\u2026"
-lastmod: '2024-02-25T18:49:53.098624-07:00'
+lastmod: '2024-03-11T00:14:30.048970-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely Google Apps Scriptill\xE4\
   \ sis\xE4lt\xE4\xE4 tekstimuotoisten tiedostojen lukemisen, muokkaamisen ja\u2026"

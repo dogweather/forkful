@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:58.312217-07:00
 description: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie jednostki\
   \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programi\u015Bci u\u017Cywaj\u0105\
   \ ich do\u2026"
-lastmod: '2024-02-25T18:49:34.078775-07:00'
+lastmod: '2024-03-11T00:14:08.905705-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie jednostki\
   \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programi\u015Bci u\u017Cywaj\u0105\

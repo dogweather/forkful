@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:24.159803-07:00
 description: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 ohjelmoinnissa\
   \ usein. Syyt voivat olla k\xE4ytt\xE4j\xE4n muistuttaminen, ajan kulumisen seuranta,\
   \ tai\u2026"
-lastmod: '2024-02-25T18:49:53.828419-07:00'
+lastmod: '2024-03-11T00:14:30.961374-06:00'
 model: gpt-4-1106-preview
 summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 ohjelmoinnissa\
   \ usein. Syyt voivat olla k\xE4ytt\xE4j\xE4n muistuttaminen, ajan kulumisen seuranta,\

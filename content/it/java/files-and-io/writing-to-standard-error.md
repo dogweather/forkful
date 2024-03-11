@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:33:40.778268-07:00
 description: "Scrivere su standard error (stderr) implica l'invio di messaggi di errore\
   \ e diagnostica alla console o al terminale. I programmatori lo fanno per separare\u2026"
-lastmod: '2024-02-25T18:49:41.193548-07:00'
+lastmod: '2024-03-11T00:14:16.894289-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) implica l'invio di messaggi di errore\
   \ e diagnostica alla console o al terminale. I programmatori lo fanno per separare\u2026"

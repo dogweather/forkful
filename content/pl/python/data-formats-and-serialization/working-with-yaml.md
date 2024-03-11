@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:38.060045-07:00
 description: "YAML, czyli YAML Ain't Markup Language, to format serializacji danych\
   \ czytelny dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105 YAML dla plik\xF3\
   w konfiguracyjnych,\u2026"
-lastmod: '2024-02-25T18:49:33.396442-07:00'
+lastmod: '2024-03-11T00:14:08.144568-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, czyli YAML Ain't Markup Language, to format serializacji danych czytelny\
   \ dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105 YAML dla plik\xF3w konfiguracyjnych,\u2026"

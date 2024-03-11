@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:05:20.190125-07:00
 description: "Trasformare la prima lettera di una stringa in maiuscolo, garantendo\
   \ che il resto delle lettere rimanga in minuscolo, \xE8 ci\xF2 che viene definito\u2026"
-lastmod: '2024-02-25T18:49:41.323852-07:00'
+lastmod: '2024-03-11T00:14:17.049938-06:00'
 model: gpt-4-0125-preview
 summary: "Trasformare la prima lettera di una stringa in maiuscolo, garantendo che\
   \ il resto delle lettere rimanga in minuscolo, \xE8 ci\xF2 che viene definito\u2026"

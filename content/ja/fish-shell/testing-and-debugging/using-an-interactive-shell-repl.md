@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 04:14:17.046743-07:00
 description: "REPL\u3001\u3059\u306A\u308F\u3061Read-Eval-Print\u2026"
-lastmod: '2024-02-25T18:49:40.681702-07:00'
+lastmod: '2024-03-11T00:14:16.286639-06:00'
 model: gpt-4-0125-preview
 summary: "REPL\u3001\u3059\u306A\u308F\u3061Read-Eval-Print\u2026"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\

@@ -3,7 +3,7 @@ date: 2024-01-26 00:37:19.924186-07:00
 description: "Felhantering i dina program f\xE5ngar de ov\xE4ntade ting som f\xF6\
   rs\xF6ker s\xE4tta k\xE4ppar i hjulet. Du g\xF6r det f\xF6r att h\xE5lla din Arduino\
   \ fr\xE5n att sm\xE4lta ned n\xE4r det\u2026"
-lastmod: '2024-02-25T18:49:36.490056-07:00'
+lastmod: '2024-03-11T00:14:11.563017-06:00'
 model: gpt-4-1106-preview
 summary: "Felhantering i dina program f\xE5ngar de ov\xE4ntade ting som f\xF6rs\xF6\
   ker s\xE4tta k\xE4ppar i hjulet. Du g\xF6r det f\xF6r att h\xE5lla din Arduino fr\xE5\

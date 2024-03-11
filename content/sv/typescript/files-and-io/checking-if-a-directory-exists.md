@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:45.468259-07:00
 description: "Att kontrollera om en mapp finns i TypeScript \xE4r n\xF6dv\xE4ndigt\
   \ f\xF6r filhanteringsuppgifter, s\xE5som att l\xE4sa fr\xE5n eller skriva data\
   \ till filer, f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:35.965923-07:00'
+lastmod: '2024-03-11T00:14:11.008541-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns i TypeScript \xE4r n\xF6dv\xE4ndigt f\xF6\
   r filhanteringsuppgifter, s\xE5som att l\xE4sa fr\xE5n eller skriva data till filer,\

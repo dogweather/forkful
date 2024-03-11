@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:51.367491-07:00
 description: "Capitalizing a string in C# involves converting the first character\
   \ of a string to uppercase if it isn't already. This alteration can be crucial for\u2026"
-lastmod: '2024-02-25T18:49:56.517762-07:00'
+lastmod: '2024-03-11T00:14:33.936605-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in C# involves converting the first character of a\
   \ string to uppercase if it isn't already. This alteration can be crucial for\u2026"

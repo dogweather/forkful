@@ -3,7 +3,7 @@ date: 2024-01-26 03:36:51.439399-07:00
 description: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere omstrukturerer for \xE5\
   \u2026"
-lastmod: '2024-02-25T18:49:39.504098-07:00'
+lastmod: '2024-03-11T00:14:14.940658-06:00'
 model: gpt-4-0125-preview
 summary: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere omstrukturerer for \xE5\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:31:20.478869-07:00
 description: "Calculating a date in the future or past means finding a specific date\
   \ before or after a known one. Programmers do this for features like reminders,\u2026"
-lastmod: '2024-02-25T18:49:56.506819-07:00'
+lastmod: '2024-03-11T00:14:33.925871-06:00'
 model: gpt-4-1106-preview
 summary: "Calculating a date in the future or past means finding a specific date before\
   \ or after a known one. Programmers do this for features like reminders,\u2026"

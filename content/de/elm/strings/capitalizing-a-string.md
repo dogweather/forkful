@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:04:51.586702-07:00
 description: "Das Kapitalisieren eines Strings beinhaltet die Umwandlung des Anfangsbuchstabens\
   \ eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der Rest in\u2026"
-lastmod: '2024-02-25T18:49:50.852266-07:00'
+lastmod: '2024-03-11T00:14:27.681137-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings beinhaltet die Umwandlung des Anfangsbuchstabens\
   \ eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der Rest in\u2026"

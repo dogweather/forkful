@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:39.523964-07:00
 description: "Het lezen van commandoregelargumenten in Dart stelt programmeurs in\
   \ staat om direct gegevens in de console in te voeren bij het uitvoeren van een\
   \ Dart-\u2026"
-lastmod: '2024-03-09T21:06:14.703139-07:00'
+lastmod: '2024-03-11T00:14:24.337958-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten in Dart stelt programmeurs in staat\
   \ om direct gegevens in de console in te voeren bij het uitvoeren van een Dart-\u2026"

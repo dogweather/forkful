@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:14.560312-07:00
 description: "\xC9crire des tests en C implique de cr\xE9er des programmes ou des\
   \ fonctions auxiliaires plus petits qui v\xE9rifient automatiquement la fonctionnalit\xE9\
   \ de votre\u2026"
-lastmod: '2024-02-25T18:49:55.000183-07:00'
+lastmod: '2024-03-11T00:14:32.247844-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en C implique de cr\xE9er des programmes ou des fonctions\
   \ auxiliaires plus petits qui v\xE9rifient automatiquement la fonctionnalit\xE9\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:02.771376-07:00
 description: "Die Arbeit mit XML in C umfasst das Parsen, Abfragen und Manipulieren\
   \ von XML-Dokumenten unter Verwendung verschiedener Bibliotheken. Programmierer\u2026"
-lastmod: '2024-02-25T18:49:51.428611-07:00'
+lastmod: '2024-03-11T00:14:28.290936-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML in C umfasst das Parsen, Abfragen und Manipulieren von\
   \ XML-Dokumenten unter Verwendung verschiedener Bibliotheken. Programmierer\u2026"

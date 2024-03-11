@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:52.071439-07:00
 description: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkkopalveluiden\
   \ kanssa. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 haalimaan dataa tai l\xE4hett\xE4\
   m\xE4\xE4n sit\xE4 palvelimelle."
-lastmod: '2024-02-25T18:49:53.812504-07:00'
+lastmod: '2024-03-11T00:14:30.944336-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkkopalveluiden\
   \ kanssa. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 haalimaan dataa tai l\xE4hett\xE4\

@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:34.973151-07:00
 description: "Att l\xE4sa en textfil i Dart inneb\xE4r att man f\xE5r tillg\xE5ng\
   \ till och h\xE4mtar data fr\xE5n filer som \xE4r lagrade p\xE5 filsystemet. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: '2024-03-09T21:06:02.385177-07:00'
+lastmod: '2024-03-11T00:14:10.963678-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Dart inneb\xE4r att man f\xE5r tillg\xE5ng till\
   \ och h\xE4mtar data fr\xE5n filer som \xE4r lagrade p\xE5 filsystemet. Programmerare\

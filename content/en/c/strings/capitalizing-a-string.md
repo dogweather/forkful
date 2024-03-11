@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:09.051331-07:00
 description: "Capitalizing a string in C involves converting the first character of\
   \ each word in a given string to uppercase if it is a lowercase letter. Programmers\u2026"
-lastmod: '2024-02-25T18:49:56.933193-07:00'
+lastmod: '2024-03-11T00:14:34.376398-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in C involves converting the first character of each\
   \ word in a given string to uppercase if it is a lowercase letter. Programmers\u2026"

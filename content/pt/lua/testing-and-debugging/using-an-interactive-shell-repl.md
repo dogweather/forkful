@@ -3,7 +3,7 @@ date: 2024-01-26 04:16:05.712166-07:00
 description: "REPL significa Read-Eval-Print Loop (La\xE7o de Ler-Avaliar-Imprimir),\
   \ um ambiente interativo onde voc\xEA pode testar c\xF3digo rapidamente. Programadores\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:44.330874-07:00'
+lastmod: '2024-03-11T00:14:20.429233-06:00'
 model: gpt-4-0125-preview
 summary: "REPL significa Read-Eval-Print Loop (La\xE7o de Ler-Avaliar-Imprimir), um\
   \ ambiente interativo onde voc\xEA pode testar c\xF3digo rapidamente. Programadores\

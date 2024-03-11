@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:27.928375-07:00
 description: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-Dich-Fix-Dich-Prozess:\
   \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine\u2026"
-lastmod: '2024-02-25T18:49:51.014797-07:00'
+lastmod: '2024-03-11T00:14:27.856309-06:00'
 model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-Dich-Fix-Dich-Prozess:\
   \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine\u2026"

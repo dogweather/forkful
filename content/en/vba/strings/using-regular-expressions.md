@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:21.737007-07:00
 description: "Regular expressions (regex) in Visual Basic for Applications (VBA) provide\
   \ a powerful way to search, match, and manipulate strings. Programmers use them\u2026"
-lastmod: '2024-02-25T18:49:56.348094-07:00'
+lastmod: '2024-03-11T00:14:33.787387-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Visual Basic for Applications (VBA) provide\
   \ a powerful way to search, match, and manipulate strings. Programmers use them\u2026"

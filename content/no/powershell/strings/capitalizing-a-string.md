@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:04.268461-07:00
 description: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5\
   \ transformere det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten\
   \ av strengen\u2026"
-lastmod: '2024-02-25T18:49:39.174586-07:00'
+lastmod: '2024-03-11T00:14:14.577810-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5 transformere\
   \ det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten av strengen\u2026"

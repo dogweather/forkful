@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:00.310952-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Bashissa k\xE4sitt\xE4\
   \xE4 sis\xE4\xE4nrakennettujen komentojen k\xE4ytt\xE4misen p\xE4iv\xE4m\xE4\xE4\
   r\xE4n ja ajan n\xE4ytt\xE4miseen eri muodoissa. Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.661060-07:00'
+lastmod: '2024-03-11T00:14:30.706056-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Bashissa k\xE4sitt\xE4\xE4\
   \ sis\xE4\xE4nrakennettujen komentojen k\xE4ytt\xE4misen p\xE4iv\xE4m\xE4\xE4r\xE4\

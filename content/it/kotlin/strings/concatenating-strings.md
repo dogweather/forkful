@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:29.229748-07:00
 description: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno solo.\
   \ Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output."
-lastmod: '2024-02-25T18:49:41.250320-07:00'
+lastmod: '2024-03-11T00:14:16.959437-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno solo.\
   \ Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output."

@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:18.550648-07:00
 description: "String interpolation is the process of injecting variable values directly\
   \ into strings, often for creating meaningful messages without cumbersome\u2026"
-lastmod: '2024-03-09T21:06:23.346836-07:00'
+lastmod: '2024-03-11T00:14:33.664868-06:00'
 model: gpt-4-0125-preview
 summary: "String interpolation is the process of injecting variable values directly\
   \ into strings, often for creating meaningful messages without cumbersome\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:00.581148-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta PHP:ss\xE4\
   \ tarkoittaa tekstin, joka edustaa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 ja/tai aikaa, muuntamista\
   \ PHP:n `DateTime`-objektiksi tai\u2026"
-lastmod: '2024-02-25T18:49:53.577623-07:00'
+lastmod: '2024-03-11T00:14:30.617439-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta PHP:ss\xE4 tarkoittaa\
   \ tekstin, joka edustaa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 ja/tai aikaa, muuntamista\

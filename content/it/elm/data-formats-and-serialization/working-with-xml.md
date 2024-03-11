@@ -2,7 +2,7 @@
 date: 2024-01-26 04:30:25.363273-07:00
 description: "Lavorare con XML significa analizzare, trasformare e generare documenti\
   \ XML in Elm. Si fa per interagire con molti servizi web e sistemi legacy che usano\u2026"
-lastmod: '2024-02-25T18:49:41.240923-07:00'
+lastmod: '2024-03-11T00:14:16.948450-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con XML significa analizzare, trasformare e generare documenti\
   \ XML in Elm. Si fa per interagire con molti servizi web e sistemi legacy che usano\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:38.451775-07:00
 description: "Les arguments de ligne de commande sont les donn\xE9es que vous balancez\
   \ \xE0 votre programme au d\xE9marrage. Les programmeurs s'en servent pour customiser\u2026"
-lastmod: '2024-02-25T18:49:54.530045-07:00'
+lastmod: '2024-03-11T00:14:31.753510-06:00'
 model: gpt-4-1106-preview
 summary: "Les arguments de ligne de commande sont les donn\xE9es que vous balancez\
   \ \xE0 votre programme au d\xE9marrage. Les programmeurs s'en servent pour customiser\u2026"

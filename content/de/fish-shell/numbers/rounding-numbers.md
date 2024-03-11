@@ -3,7 +3,7 @@ date: 2024-01-26 03:43:56.513453-07:00
 description: "Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um\
   \ Ihre Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer\
   \ tun\u2026"
-lastmod: '2024-02-25T18:49:51.352723-07:00'
+lastmod: '2024-03-11T00:14:28.208652-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um Ihre\
   \ Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer tun\u2026"

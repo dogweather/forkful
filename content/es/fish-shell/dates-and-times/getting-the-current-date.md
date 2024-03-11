@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:21.651043-07:00
 description: "Obtener la fecha actual en programaci\xF3n es una tarea fundamental\
   \ que te permite recuperar y manipular los datos de fecha y hora del sistema. En\
   \ tareas de\u2026"
-lastmod: '2024-02-25T18:49:55.981462-07:00'
+lastmod: '2024-03-11T00:14:33.349335-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en programaci\xF3n es una tarea fundamental que\
   \ te permite recuperar y manipular los datos de fecha y hora del sistema. En tareas\

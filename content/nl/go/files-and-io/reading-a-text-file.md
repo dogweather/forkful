@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:06:11.449159-07:00
 description: "Het lezen van een tekstbestand in Go omvat het openen en ophalen van\
   \ inhoud uit een bestand opgeslagen op schijf voor verwerking of analyse. Programmeurs\u2026"
-lastmod: '2024-02-25T18:49:47.701890-07:00'
+lastmod: '2024-03-11T00:14:24.113518-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van een tekstbestand in Go omvat het openen en ophalen van inhoud\
   \ uit een bestand opgeslagen op schijf voor verwerking of analyse. Programmeurs\u2026"

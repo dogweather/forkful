@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:58.924132-07:00
 description: "Escribir pruebas en la programaci\xF3n implica crear procedimientos\
   \ espec\xEDficos para validar la funcionalidad y rendimiento de tus segmentos de\
   \ c\xF3digo,\u2026"
-lastmod: '2024-02-25T18:49:55.387539-07:00'
+lastmod: '2024-03-11T00:14:32.711283-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en la programaci\xF3n implica crear procedimientos espec\xED\
   ficos para validar la funcionalidad y rendimiento de tus segmentos de c\xF3digo,\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:05.601096-07:00
 description: "Tempor\xE4ra filer \xE4r tempor\xE4ra lagerplatser f\xF6r data som anv\xE4\
   nds under programk\xF6rningen och som ofta raderas efter\xE5t. Programmerare skapar\
   \ dem f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:36.672981-07:00'
+lastmod: '2024-03-11T00:14:11.759925-06:00'
 model: gpt-4-1106-preview
 summary: "Tempor\xE4ra filer \xE4r tempor\xE4ra lagerplatser f\xF6r data som anv\xE4\
   nds under programk\xF6rningen och som ofta raderas efter\xE5t. Programmerare skapar\

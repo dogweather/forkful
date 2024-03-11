@@ -3,7 +3,7 @@ date: 2024-01-26 04:10:21.316599-07:00
 description: "U\u017Cycie debugera to jak przyznanie sobie rentgenowskiego wzroku,\
   \ aby zajrze\u0107 do wykonania twojego kodu. Programi\u015Bci robi\u0105 to, aby\
   \ wykry\u0107 b\u0142\u0119dy, zrozumie\u0107\u2026"
-lastmod: '2024-02-25T18:49:33.556574-07:00'
+lastmod: '2024-03-11T00:14:08.364118-06:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cycie debugera to jak przyznanie sobie rentgenowskiego wzroku, aby\
   \ zajrze\u0107 do wykonania twojego kodu. Programi\u015Bci robi\u0105 to, aby wykry\u0107\

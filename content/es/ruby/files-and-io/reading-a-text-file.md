@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:17.330043-07:00
 description: "Leer un archivo de texto en Ruby significa que tu programa carga el\
   \ contenido del archivo para trabajar con \xE9l. Los programadores hacen esto para\u2026"
-lastmod: '2024-02-25T18:49:56.075694-07:00'
+lastmod: '2024-03-11T00:14:33.450175-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en Ruby significa que tu programa carga el contenido\
   \ del archivo para trabajar con \xE9l. Los programadores hacen esto para\u2026"

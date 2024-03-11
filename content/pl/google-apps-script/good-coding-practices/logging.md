@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:15.760202-07:00
 description: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze\u0144\
   , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu.\
   \ Programi\u015Bci robi\u0105 to w\u2026"
-lastmod: '2024-02-25T18:49:33.334141-07:00'
+lastmod: '2024-03-11T00:14:08.081045-06:00'
 model: gpt-4-0125-preview
 summary: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze\u0144\
   , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu.\

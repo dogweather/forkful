@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:10.326828-07:00
 description: "Escrever para o erro padr\xE3o em C envolve direcionar mensagens de\
   \ erro e informa\xE7\xF5es de diagn\xF3stico para um fluxo separado da sa\xEDda\
   \ principal do programa.\u2026"
-lastmod: '2024-02-25T18:49:44.684268-07:00'
+lastmod: '2024-03-11T00:14:20.809682-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o em C envolve direcionar mensagens de erro\
   \ e informa\xE7\xF5es de diagn\xF3stico para um fluxo separado da sa\xEDda principal\

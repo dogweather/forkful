@@ -8,7 +8,7 @@ description: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30(Command line argument
   \uC744 \uBC1B\uC544 \uCEE4\uC2A4\uD130\uB9C8\uC774\uC988\uB41C \uD589\uB3D9\uC744\
   \ \uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-02-25T18:49:52.312686-07:00'
+lastmod: '2024-03-11T00:14:29.239110-06:00'
 model: gpt-4-1106-preview
 summary: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30(Command line arguments reading)\uB294\
   \ \uC0AC\uC6A9\uC790\uAC00 \uD504\uB85C\uADF8\uB7A8\uC744 \uC2DC\uC791\uD560 \uB54C\

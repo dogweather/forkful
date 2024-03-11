@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:38.024526-07:00
 description: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w (String) w Dart\
   \ polega na okre\u015Bleniu liczby jednostek kodu (w zasadzie liczby znak\xF3w,\
   \ je\u015Bli my\u015Ble\u0107 o tym uproszczonymi\u2026"
-lastmod: '2024-03-09T21:05:59.816464-07:00'
+lastmod: '2024-03-11T00:14:08.251608-06:00'
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w (String) w Dart polega\
   \ na okre\u015Bleniu liczby jednostek kodu (w zasadzie liczby znak\xF3w, je\u015B\

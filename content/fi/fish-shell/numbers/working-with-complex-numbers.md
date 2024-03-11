@@ -3,7 +3,7 @@ date: 2024-01-26 04:40:01.518867-07:00
 description: "Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista\
   \ kaksiulotteiseen kompleksitasoon. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla\
   \ kuten\u2026"
-lastmod: '2024-02-25T18:49:53.893845-07:00'
+lastmod: '2024-03-11T00:14:31.028371-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista kaksiulotteiseen\
   \ kompleksitasoon. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten\u2026"

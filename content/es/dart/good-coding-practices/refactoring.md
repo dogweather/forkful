@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:50.912313-07:00
 description: "La refactorizaci\xF3n en Dart es el proceso de reestructurar c\xF3digo\
   \ existente sin cambiar su comportamiento externo, dirigido a mejorar su estructura\u2026"
-lastmod: '2024-03-09T21:06:22.335213-07:00'
+lastmod: '2024-03-11T00:14:32.582566-06:00'
 model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n en Dart es el proceso de reestructurar c\xF3digo existente\
   \ sin cambiar su comportamiento externo, dirigido a mejorar su estructura\u2026"

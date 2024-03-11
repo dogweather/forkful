@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:42.539707-07:00
 description: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis votre\
   \ application Go vers un serveur web, une API ou tout autre service bas\xE9 sur\
   \ HTTP. Les\u2026"
-lastmod: '2024-02-25T18:49:54.030803-07:00'
+lastmod: '2024-03-11T00:14:31.170399-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis votre application\
   \ Go vers un serveur web, une API ou tout autre service bas\xE9 sur HTTP. Les\u2026"

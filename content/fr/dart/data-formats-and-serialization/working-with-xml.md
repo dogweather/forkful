@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:57:43.513828-07:00
 description: "Travailler avec XML en Dart implique l'analyse, l'interrogation et la\
   \ modification de documents XML, un processus crucial pour les applications qui\u2026"
-lastmod: '2024-03-09T21:06:21.264417-07:00'
+lastmod: '2024-03-11T00:14:31.433396-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en Dart implique l'analyse, l'interrogation et la modification\
   \ de documents XML, un processus crucial pour les applications qui\u2026"

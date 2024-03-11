@@ -2,7 +2,7 @@
 date: 2024-01-19
 description: "YAML er et dataformat for \xE5 skrive konfigurasjoner lett leslig for\
   \ mennesker. Programmerere bruker det for \xE5 h\xE5ndtere konfigurasjoner og datautveksling."
-lastmod: '2024-03-09T21:11:23.414482-07:00'
+lastmod: '2024-03-11T00:14:14.276229-06:00'
 model: unknown
 summary: "YAML er et dataformat for \xE5 skrive konfigurasjoner lett leslig for mennesker.\
   \ Programmerere bruker det for \xE5 h\xE5ndtere konfigurasjoner og datautveksling."

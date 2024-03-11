@@ -3,7 +3,7 @@ date: 2024-01-26 04:44:14.642879-07:00
 description: "Liczby zespolone, czyli te posiadaj\u0105ce cz\u0119\u015B\u0107 rzeczywist\u0105\
   \ i urojon\u0105 (jak 3 + 4i), s\u0105 niezb\u0119dne w takich dziedzinach jak in\u017C\
   ynieria, fizyka i data science.\u2026"
-lastmod: '2024-02-25T18:49:33.990530-07:00'
+lastmod: '2024-03-11T00:14:08.815568-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, czyli te posiadaj\u0105ce cz\u0119\u015B\u0107 rzeczywist\u0105\
   \ i urojon\u0105 (jak 3 + 4i), s\u0105 niezb\u0119dne w takich dziedzinach jak in\u017C\

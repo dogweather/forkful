@@ -5,7 +5,7 @@ date: 2024-02-01 22:06:48.441875-07:00
 description: "XML:n k\xE4sittely Google Apps Scriptill\xE4 mahdollistaa ohjelmoijien\
   \ j\xE4sent\xE4\xE4, manipuloida ja luoda XML-dataa, mik\xE4 on olennaista verkkopalveluille\
   \ ja\u2026"
-lastmod: '2024-02-25T18:49:53.100705-07:00'
+lastmod: '2024-03-11T00:14:30.051112-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Google Apps Scriptill\xE4 mahdollistaa ohjelmoijien j\xE4\
   sent\xE4\xE4, manipuloida ja luoda XML-dataa, mik\xE4 on olennaista verkkopalveluille\

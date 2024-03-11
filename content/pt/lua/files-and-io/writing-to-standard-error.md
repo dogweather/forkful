@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:41.522942-07:00
 description: "Escrever no erro padr\xE3o (stderr) trata de direcionar mensagens de\
   \ erro e sa\xEDdas de diagn\xF3stico para um canal separado, distinto da sa\xED\
   da padr\xE3o (stdout).\u2026"
-lastmod: '2024-02-25T18:49:44.345315-07:00'
+lastmod: '2024-03-11T00:14:20.444757-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) trata de direcionar mensagens de erro\
   \ e sa\xEDdas de diagn\xF3stico para um canal separado, distinto da sa\xEDda padr\xE3\

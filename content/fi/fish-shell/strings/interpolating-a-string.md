@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:39.852104-07:00
 description: "Interpolointi yhdist\xE4\xE4 muuttujat ja teksti\xE4 yhdeksi merkkijonoksi.\
   \ Koodarit hy\xF6dynt\xE4v\xE4t t\xE4t\xE4 luodakseen dynaamista dataa tai viestej\xE4\
   \ k\xE4ytt\xE4jille."
-lastmod: '2024-02-25T18:49:53.885742-07:00'
+lastmod: '2024-03-11T00:14:31.020657-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolointi yhdist\xE4\xE4 muuttujat ja teksti\xE4 yhdeksi merkkijonoksi.\
   \ Koodarit hy\xF6dynt\xE4v\xE4t t\xE4t\xE4 luodakseen dynaamista dataa tai viestej\xE4\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:28.648025-07:00
 description: "Att s\xF6ka och ers\xE4tta text i programmering underl\xE4ttar modifiering\
   \ och hantering av str\xE4ngar, vilket \xE4r en grundl\xE4ggande uppgift i datahantering\
   \ och\u2026"
-lastmod: '2024-02-25T18:49:35.710743-07:00'
+lastmod: '2024-03-11T00:14:10.679466-06:00'
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i programmering underl\xE4ttar modifiering\
   \ och hantering av str\xE4ngar, vilket \xE4r en grundl\xE4ggande uppgift i datahantering\

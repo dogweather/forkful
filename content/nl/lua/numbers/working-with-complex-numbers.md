@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:09.861026-07:00
 description: "Complexe getallen breiden het idee van de eendimensionale getallenlijn\
   \ uit tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.\u2026"
-lastmod: '2024-02-25T18:49:48.270175-07:00'
+lastmod: '2024-03-11T00:14:24.763013-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen breiden het idee van de eendimensionale getallenlijn uit\
   \ tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.\u2026"

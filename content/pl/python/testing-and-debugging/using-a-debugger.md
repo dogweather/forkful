@@ -3,7 +3,7 @@ date: 2024-01-26 04:09:04.557774-07:00
 description: "\"U\u017Cywanie debugera\" polega na krok po kroku przegl\u0105daniu\
   \ kodu Pythona, aby odkrywa\u0107 b\u0142\u0119dy i rozumie\u0107 zachowanie. Robimy\
   \ to, poniewa\u017C jest to znacznie\u2026"
-lastmod: '2024-02-25T18:49:33.379790-07:00'
+lastmod: '2024-03-11T00:14:08.127538-06:00'
 model: gpt-4-0125-preview
 summary: "\"U\u017Cywanie debugera\" polega na krok po kroku przegl\u0105daniu kodu\
   \ Pythona, aby odkrywa\u0107 b\u0142\u0119dy i rozumie\u0107 zachowanie. Robimy\

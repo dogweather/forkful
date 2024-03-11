@@ -3,7 +3,7 @@ date: 2024-01-26 01:18:56.548129-07:00
 description: "Refaktorisering \xE4r processen att omstrukturera befintlig datorkod\u2014\
   \xE4ndra faktoriseringen\u2014utan att \xE4ndra dess externa beteende. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: '2024-02-25T18:49:36.090594-07:00'
+lastmod: '2024-03-11T00:14:11.141304-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorkod\u2014\
   \xE4ndra faktoriseringen\u2014utan att \xE4ndra dess externa beteende. Programmerare\

@@ -3,7 +3,7 @@ date: 2024-01-26 00:54:30.500222-07:00
 description: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los problemas\
   \ que surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla\
   \ caer. Los\u2026"
-lastmod: '2024-02-25T18:49:55.515239-07:00'
+lastmod: '2024-03-11T00:14:32.850884-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los problemas que\
   \ surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla caer.\

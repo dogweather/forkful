@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:51:13.418154-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Transformation\
   \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente.\u2026"
-lastmod: '2024-02-25T18:49:50.769565-07:00'
+lastmod: '2024-03-11T00:14:27.594312-06:00'
 model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Transformation\
   \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:17.918755-07:00
 description: HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht.
   Programmierer nutzen sie, um Daten zu holen, zu sendeln, und mit APIs zu interagieren.
-lastmod: '2024-02-25T18:49:50.615627-07:00'
+lastmod: '2024-03-11T00:14:27.381862-06:00'
 model: gpt-4-1106-preview
 summary: HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht. Programmierer
   nutzen sie, um Daten zu holen, zu sendeln, und mit APIs zu interagieren.

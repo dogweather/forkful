@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:46.318612-07:00
 description: "Verificar se um diret\xF3rio existe em Clojure envolve verificar a presen\xE7\
   a de um diret\xF3rio no sistema de arquivos a partir de sua aplica\xE7\xE3o Clojure.\
   \ Esta\u2026"
-lastmod: '2024-02-25T18:49:43.872335-07:00'
+lastmod: '2024-03-11T00:14:19.885179-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Clojure envolve verificar a presen\xE7\
   a de um diret\xF3rio no sistema de arquivos a partir de sua aplica\xE7\xE3o Clojure.\

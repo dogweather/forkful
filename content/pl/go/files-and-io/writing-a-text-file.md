@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:01.365411-07:00
 description: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywaniu\
   \ ci\u0105g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
-lastmod: '2024-02-25T18:49:33.297372-07:00'
+lastmod: '2024-03-11T00:14:08.044813-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywaniu ci\u0105\
   g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym. Programi\u015Bci robi\u0105\

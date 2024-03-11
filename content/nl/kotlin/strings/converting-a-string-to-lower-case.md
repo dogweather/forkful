@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:36.255126-07:00
 description: "Het converteren van een string naar kleine letters betekent dat elk\
   \ teken in de string een kleine letter wordt. Programmeurs doen dit voor consistentie\u2026"
-lastmod: '2024-02-25T18:49:48.094198-07:00'
+lastmod: '2024-03-11T00:14:24.577620-06:00'
 model: gpt-4-0125-preview
 summary: "Het converteren van een string naar kleine letters betekent dat elk teken\
   \ in de string een kleine letter wordt. Programmeurs doen dit voor consistentie\u2026"

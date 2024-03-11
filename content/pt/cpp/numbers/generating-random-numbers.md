@@ -3,7 +3,7 @@ date: 2024-01-27 20:33:01.244547-07:00
 description: "A gera\xE7\xE3o de n\xFAmeros aleat\xF3rios na programa\xE7\xE3o envolve\
   \ criar sequ\xEAncias de n\xFAmeros que n\xE3o possuem uma ordem ou padr\xE3o previs\xED\
   veis. Os programadores\u2026"
-lastmod: '2024-02-25T18:49:44.493329-07:00'
+lastmod: '2024-03-11T00:14:20.603838-06:00'
 model: gpt-4-0125-preview
 summary: "A gera\xE7\xE3o de n\xFAmeros aleat\xF3rios na programa\xE7\xE3o envolve\
   \ criar sequ\xEAncias de n\xFAmeros que n\xE3o possuem uma ordem ou padr\xE3o previs\xED\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:07.705985-07:00
 description: "Att ta bort tecken som matchar ett specifikt m\xF6nster \xE4r en teknik\
   \ som anv\xE4nds f\xF6r att rensa eller formatera str\xE4ngar i programmering. I\
   \ sammanhanget av\u2026"
-lastmod: '2024-02-25T18:49:35.756616-07:00'
+lastmod: '2024-03-11T00:14:10.727521-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster \xE4r en teknik\
   \ som anv\xE4nds f\xF6r att rensa eller formatera str\xE4ngar i programmering. I\

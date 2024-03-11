@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:39.714256-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de sua\
   \ aplica\xE7\xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado\
   \ em HTTP.\u2026"
-lastmod: '2024-02-25T18:49:43.721376-07:00'
+lastmod: '2024-03-11T00:14:19.717252-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de sua aplica\xE7\
   \xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado em HTTP.\u2026"

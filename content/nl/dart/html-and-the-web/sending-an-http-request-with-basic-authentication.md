@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:26.546035-07:00
 description: "Een HTTP-verzoek versturen met basale authenticatie houdt in dat een\
   \ gebruikersnaam en wachtwoord aan een verzoek worden toegevoegd om de identiteit\
   \ van\u2026"
-lastmod: '2024-03-09T21:06:14.688540-07:00'
+lastmod: '2024-03-11T00:14:24.320591-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen met basale authenticatie houdt in dat een gebruikersnaam\
   \ en wachtwoord aan een verzoek worden toegevoegd om de identiteit van\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:04.966750-07:00
 description: "Werken met complexe getallen in programmeren betreft het manipuleren\
   \ van getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\u2026"
-lastmod: '2024-02-25T18:49:47.677857-07:00'
+lastmod: '2024-03-11T00:14:24.088270-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met complexe getallen in programmeren betreft het manipuleren van\
   \ getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\u2026"

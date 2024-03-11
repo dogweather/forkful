@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:05:17.825846-07:00
 description: "Capitalizar uma string envolve transformar a primeira letra de uma string\
   \ dada em mai\xFAscula, enquanto garante que as restantes letras permane\xE7am em\u2026"
-lastmod: '2024-02-25T18:49:44.230503-07:00'
+lastmod: '2024-03-11T00:14:20.318831-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve transformar a primeira letra de uma string\
   \ dada em mai\xFAscula, enquanto garante que as restantes letras permane\xE7am em\u2026"

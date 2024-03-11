@@ -6,7 +6,7 @@ description: "Substring \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u091
   \ \u0907\u0938\u0947 use \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0921\u0947\
   \u091F\u093E \u0915\u094B analyze \u0915\u0930\u0928\u0947, manipulate \u0915\u0930\
   \u0928\u0947 \u092F\u093E \u0915\u093F\u0938\u0940 specific text \u0915\u094B\u2026"
-lastmod: '2024-02-25T18:49:49.956061-07:00'
+lastmod: '2024-03-11T00:14:26.688995-06:00'
 model: gpt-4-1106-preview
 summary: "Substring \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0915\u093F\
   \u0938\u0940 string \u0915\u093E \u090F\u0915 \u091B\u094B\u091F\u093E \u0939\u093F\

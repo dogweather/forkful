@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:07.105007-07:00
 description: "Code in Funktionen in Dart zu organisieren bedeutet, wiederverwendbare\
   \ Codebl\xF6cke zu definieren, die spezifische Aufgaben ausf\xFChren, typischerweise\u2026"
-lastmod: '2024-03-09T21:06:17.581052-07:00'
+lastmod: '2024-03-11T00:14:27.481261-06:00'
 model: gpt-4-0125-preview
 summary: "Code in Funktionen in Dart zu organisieren bedeutet, wiederverwendbare Codebl\xF6\
   cke zu definieren, die spezifische Aufgaben ausf\xFChren, typischerweise\u2026"

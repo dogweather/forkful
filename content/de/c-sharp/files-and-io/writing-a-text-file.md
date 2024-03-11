@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:30.284041-07:00
 description: "Das Schreiben einer Textdatei in C# beinhaltet das programmgesteuerte\
   \ Erstellen oder Modifizieren von Textdateien im Dateisystem - eine grundlegende\u2026"
-lastmod: '2024-02-25T18:49:50.966026-07:00'
+lastmod: '2024-03-11T00:14:27.802769-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in C# beinhaltet das programmgesteuerte Erstellen\
   \ oder Modifizieren von Textdateien im Dateisystem - eine grundlegende\u2026"

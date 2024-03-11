@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:37.767881-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Dart handler om \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe p\xE5 en angitt bane i filsystemet f\xF8r man\
   \ utf\xF8rer operasjoner\u2026"
-lastmod: '2024-03-09T21:06:05.259549-07:00'
+lastmod: '2024-03-11T00:14:14.032999-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Dart handler om \xE5 verifisere tilstedev\xE6\
   relsen av en mappe p\xE5 en angitt bane i filsystemet f\xF8r man utf\xF8rer operasjoner\u2026"

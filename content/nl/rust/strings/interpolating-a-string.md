@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:10.904229-07:00
 description: String interpolatie voegt variabelen direct in strings in. Het maakt
   het bouwen van strings soepel en leesbaar, en vermijdt onhandige aaneenschakelingen.
-lastmod: '2024-02-25T18:49:47.924328-07:00'
+lastmod: '2024-03-11T00:14:24.396363-06:00'
 model: gpt-4-0125-preview
 summary: String interpolatie voegt variabelen direct in strings in. Het maakt het
   bouwen van strings soepel en leesbaar, en vermijdt onhandige aaneenschakelingen.

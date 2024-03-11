@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:04:46.993584-07:00
 description: "Le espressioni regolari (regex) in Visual Basic for Applications (VBA)\
   \ offrono un modo potente per cercare, corrispondere e manipolare stringhe. I\u2026"
-lastmod: '2024-02-25T18:49:41.125392-07:00'
+lastmod: '2024-03-11T00:14:16.818346-06:00'
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in Visual Basic for Applications (VBA) offrono\
   \ un modo potente per cercare, corrispondere e manipolare stringhe. I\u2026"

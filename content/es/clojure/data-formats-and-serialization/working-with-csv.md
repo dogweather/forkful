@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:03.050226-07:00
 description: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
   \ y generar datos de texto estructurados como filas y columnas, similar a los datos\u2026"
-lastmod: '2024-02-25T18:49:55.240173-07:00'
+lastmod: '2024-03-11T00:14:32.508984-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
   \ y generar datos de texto estructurados como filas y columnas, similar a los datos\u2026"

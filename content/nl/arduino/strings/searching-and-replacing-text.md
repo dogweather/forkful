@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:04.294119-07:00
 description: "Tekst zoeken en vervangen stelt je in staat om specifieke tekens of\
   \ reeksen te vinden in een tekst en deze te vervangen door iets anders. Programmeurs\u2026"
-lastmod: '2024-02-25T18:49:48.391382-07:00'
+lastmod: '2024-03-11T00:14:24.891817-06:00'
 model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen stelt je in staat om specifieke tekens of reeksen\
   \ te vinden in een tekst en deze te vervangen door iets anders. Programmeurs\u2026"

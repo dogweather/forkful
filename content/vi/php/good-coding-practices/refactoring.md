@@ -6,7 +6,7 @@ description: "Refactoring l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i m\xE3 
   y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
   i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn refactor \u0111\u1EC3 c\u1EA3i thi\u1EC7\
   n c\xE1c thu\u1ED9c t\xEDnh\u2026"
-lastmod: '2024-02-25T18:49:35.122715-07:00'
+lastmod: '2024-03-11T00:14:10.061589-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i m\xE3 m\xE1\
   y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\

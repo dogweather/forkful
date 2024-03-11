@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:31.505464-07:00
 description: "Writing tests in programming involves creating and running scripts that\
   \ verify the code behaves as expected under various conditions. Programmers do it\
   \ to\u2026"
-lastmod: '2024-02-25T18:49:56.610377-07:00'
+lastmod: '2024-03-11T00:14:34.034321-06:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in programming involves creating and running scripts that\
   \ verify the code behaves as expected under various conditions. Programmers do it\

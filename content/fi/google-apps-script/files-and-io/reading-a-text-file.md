@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:24.650408-07:00
 description: "Tekstitiedoston lukeminen Google Apps Scriptill\xE4 (GAS) sis\xE4lt\xE4\
   \xE4 p\xE4\xE4syn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka\
   \ on tallennettu\u2026"
-lastmod: '2024-02-25T18:49:53.093318-07:00'
+lastmod: '2024-03-11T00:14:30.043451-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen Google Apps Scriptill\xE4 (GAS) sis\xE4lt\xE4\xE4\
   \ p\xE4\xE4syn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka\

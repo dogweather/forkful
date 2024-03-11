@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:48.249504-07:00
 description: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Bash handlar\
   \ om att bearbeta och manipulera tabellformaterade data lagrade i ren textformat.\
   \ Detta \xE4r\u2026"
-lastmod: '2024-02-25T18:49:36.419784-07:00'
+lastmod: '2024-03-11T00:14:11.486553-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Bash handlar om att\
   \ bearbeta och manipulera tabellformaterade data lagrade i ren textformat. Detta\

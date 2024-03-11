@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:39.219358-07:00
 description: "Los n\xFAmeros complejos constan de una parte real y una parte imaginaria,\
   \ representados como `a + bi` donde `i` es la ra\xEDz cuadrada de `-1`. Los\u2026"
-lastmod: '2024-02-25T18:49:56.007364-07:00'
+lastmod: '2024-03-11T00:14:33.376593-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos constan de una parte real y una parte imaginaria,\
   \ representados como `a + bi` donde `i` es la ra\xEDz cuadrada de `-1`. Los\u2026"

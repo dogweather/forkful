@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:05.609809-07:00
 description: "Verificar se um diret\xF3rio existe em C# envolve verificar a presen\xE7\
   a de uma pasta em um caminho especificado no sistema de arquivos. Programadores\
   \ fazem\u2026"
-lastmod: '2024-02-25T18:49:44.219487-07:00'
+lastmod: '2024-03-11T00:14:20.307287-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em C# envolve verificar a presen\xE7\
   a de uma pasta em um caminho especificado no sistema de arquivos. Programadores\

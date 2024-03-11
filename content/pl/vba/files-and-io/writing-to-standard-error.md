@@ -5,7 +5,7 @@ date: 2024-02-01 22:09:28.111324-07:00
 description: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
   \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\
   nie od standardowego\u2026"
-lastmod: '2024-02-25T18:49:33.615107-07:00'
+lastmod: '2024-03-11T00:14:08.425980-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
   \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\

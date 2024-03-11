@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:29.972768-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica envolve\
   \ anexar um nome de usu\xE1rio e senha a uma requisi\xE7\xE3o para verificar a identidade\
   \ do usu\xE1rio.\u2026"
-lastmod: '2024-03-09T21:06:10.628762-07:00'
+lastmod: '2024-03-11T00:14:19.963992-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica envolve\
   \ anexar um nome de usu\xE1rio e senha a uma requisi\xE7\xE3o para verificar a identidade\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:59.283394-07:00
 description: "PHP:ss\xE4 v\xE4liaikaisen tiedoston luonta mahdollistaa datan tilap\xE4\
   inen tallennus. Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4, siirtoa tai\
   \ turvallisuuden\u2026"
-lastmod: '2024-02-25T18:49:53.587040-07:00'
+lastmod: '2024-03-11T00:14:30.627381-06:00'
 model: gpt-4-1106-preview
 summary: "PHP:ss\xE4 v\xE4liaikaisen tiedoston luonta mahdollistaa datan tilap\xE4\
   inen tallennus. Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4, siirtoa tai\

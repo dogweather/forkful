@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:41.696549-07:00
 description: "Att organisera kod i funktioner i Visual Basic for Applications (VBA)\
   \ inneb\xE4r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda\
   \ som\u2026"
-lastmod: '2024-02-25T18:49:36.044142-07:00'
+lastmod: '2024-03-11T00:14:11.091307-06:00'
 model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i Visual Basic for Applications (VBA) inneb\xE4\
   r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda som\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:24:18.978698-07:00
 description: "\xC5 arbeide med TOML inneb\xE6rer parsing og generering av TOML (Toms\
   \ Obvious, Minimal Language)-data med Lua. Programmerere benytter TOML for\u2026"
-lastmod: '2024-02-25T18:49:39.126107-07:00'
+lastmod: '2024-03-11T00:14:14.525997-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med TOML inneb\xE6rer parsing og generering av TOML (Toms Obvious,\
   \ Minimal Language)-data med Lua. Programmerere benytter TOML for\u2026"

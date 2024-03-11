@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:37.393100-07:00
 description: "\u0429\u043E \u0442\u0430\u043A\u0435 \u0442\u0430 \u043D\u0430\u0432\
   \u0456\u0449\u043E? Sending an HTTP request is how we ask the internet for data\
   \ or actions. Programmers do it to interact with web services, fetch\u2026"
-lastmod: '2024-02-25T18:49:46.415935-07:00'
+lastmod: '2024-03-11T00:14:22.771403-06:00'
 model: gpt-4-1106-preview
 summary: "\u0429\u043E \u0442\u0430\u043A\u0435 \u0442\u0430 \u043D\u0430\u0432\u0456\
   \u0449\u043E? Sending an HTTP request is how we ask the internet for data or actions.\

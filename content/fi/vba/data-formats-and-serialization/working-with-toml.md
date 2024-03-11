@@ -5,7 +5,7 @@ date: 2024-02-01 22:06:44.247893-07:00
 description: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language (Tomin ilmeinen,\
   \ minimalistinen kieli), on datan sarjoitustapa, jota k\xE4ytet\xE4\xE4n p\xE4\xE4\
   asiassa\u2026"
-lastmod: '2024-02-25T18:49:53.349229-07:00'
+lastmod: '2024-03-11T00:14:30.365354-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language (Tomin ilmeinen, minimalistinen\
   \ kieli), on datan sarjoitustapa, jota k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:43.797135-07:00
 description: "Das Extrahieren von Teilzeichenketten (Substrings) hei\xDFt, spezifische\
   \ Teile aus einem String herauszuschnippeln. Programmierer machen das, um bestimmte\u2026"
-lastmod: '2024-02-25T18:49:51.435088-07:00'
+lastmod: '2024-03-11T00:14:28.298846-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilzeichenketten (Substrings) hei\xDFt, spezifische\
   \ Teile aus einem String herauszuschnippeln. Programmierer machen das, um bestimmte\u2026"

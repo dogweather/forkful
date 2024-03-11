@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:40.808448-07:00
 description: "Een debugger gebruiken betekent dat je gespecialiseerde tools gebruikt\
   \ om code te testen en te diagnosticeren. Programmeurs doen dit om bugs te pletten,\u2026"
-lastmod: '2024-02-25T18:49:48.154184-07:00'
+lastmod: '2024-03-11T00:14:24.640704-06:00'
 model: gpt-4-0125-preview
 summary: "Een debugger gebruiken betekent dat je gespecialiseerde tools gebruikt om\
   \ code te testen en te diagnosticeren. Programmeurs doen dit om bugs te pletten,\u2026"

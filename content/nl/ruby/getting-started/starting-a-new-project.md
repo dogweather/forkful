@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:49.479567-07:00
 description: "Een nieuw project starten is als het planten van een zaadje in je digitale\
   \ tuin - je begint een frisse bundel idee\xEBn, en zet deze om in code die iets\u2026"
-lastmod: '2024-02-25T18:49:48.661481-07:00'
+lastmod: '2024-03-11T00:14:25.202490-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten is als het planten van een zaadje in je digitale\
   \ tuin - je begint een frisse bundel idee\xEBn, en zet deze om in code die iets\u2026"

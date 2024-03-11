@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:58.007157-07:00
 description: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF8\
   rsel ved oppstart. Vi bruker det for \xE5 tilpasse kj\xF8ringen av koden uten \xE5\
   \ endre selve\u2026"
-lastmod: '2024-02-25T18:49:38.903010-07:00'
+lastmod: '2024-03-11T00:14:14.270908-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF8rsel\
   \ ved oppstart. Vi bruker det for \xE5 tilpasse kj\xF8ringen av koden uten \xE5\

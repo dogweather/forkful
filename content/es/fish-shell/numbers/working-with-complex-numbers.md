@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:44.886565-07:00
 description: "Los n\xFAmeros complejos ampl\xEDan la idea de las l\xEDneas num\xE9\
   ricas unidimensionales a un plano complejo bidimensional. Los programadores los\
   \ utilizan en campos\u2026"
-lastmod: '2024-02-25T18:49:55.963016-07:00'
+lastmod: '2024-03-11T00:14:33.329001-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos ampl\xEDan la idea de las l\xEDneas num\xE9ricas\
   \ unidimensionales a un plano complejo bidimensional. Los programadores los utilizan\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:10.058812-07:00
 description: "Eine interaktive Shell, auch bekannt als Read-Eval-Print Loop (REPL),\
   \ erm\xF6glicht es Programmierern, Ausdr\xFCcke oder Code einzugeben und sofort\
   \ Ergebnisse\u2026"
-lastmod: '2024-02-25T18:49:51.404474-07:00'
+lastmod: '2024-03-11T00:14:28.264626-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell, auch bekannt als Read-Eval-Print Loop (REPL), erm\xF6\
   glicht es Programmierern, Ausdr\xFCcke oder Code einzugeben und sofort Ergebnisse\u2026"

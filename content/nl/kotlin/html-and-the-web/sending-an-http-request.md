@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:32.209352-07:00
 description: "Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen\
   \ of je iets te geven. Programmeurs doen dit om te interacteren met webservices,\u2026"
-lastmod: '2024-02-25T18:49:48.104005-07:00'
+lastmod: '2024-03-11T00:14:24.587908-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen of\
   \ je iets te geven. Programmeurs doen dit om te interacteren met webservices,\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:25.939076-07:00
 description: "L'interpolazione di stringhe permette di inserire variabili o espressioni\
   \ direttamente all'interno di una stringa di testo. I programmatori la usano per\u2026"
-lastmod: '2024-02-25T18:49:41.245041-07:00'
+lastmod: '2024-03-11T00:14:16.953179-06:00'
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe permette di inserire variabili o espressioni\
   \ direttamente all'interno di una stringa di testo. I programmatori la usano per\u2026"

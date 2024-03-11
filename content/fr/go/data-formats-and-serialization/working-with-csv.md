@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:37.701172-07:00
 description: "Le format des valeurs s\xE9par\xE9es par des virgules (CSV) est omnipr\xE9\
   sent pour l'\xE9change de donn\xE9es en raison de sa simplicit\xE9 et de sa facilit\xE9\
   \ d'int\xE9gration\u2026"
-lastmod: '2024-02-25T18:49:54.059003-07:00'
+lastmod: '2024-03-11T00:14:31.199423-06:00'
 model: gpt-4-0125-preview
 summary: "Le format des valeurs s\xE9par\xE9es par des virgules (CSV) est omnipr\xE9\
   sent pour l'\xE9change de donn\xE9es en raison de sa simplicit\xE9 et de sa facilit\xE9\

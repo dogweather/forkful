@@ -3,7 +3,7 @@ date: 2024-01-26 00:50:58.841439-07:00
 description: "Virheiden k\xE4sittely C#:ssa on yll\xE4tt\xE4v\xE4n hallintaa\u2014\
   kuten kompastuminen omiin keng\xE4nnauhoihisi. Ohjelmat voivat kompastua huonoihin\
   \ tietoihin tai\u2026"
-lastmod: '2024-02-25T18:49:53.495161-07:00'
+lastmod: '2024-03-11T00:14:30.528363-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely C#:ssa on yll\xE4tt\xE4v\xE4n hallintaa\u2014kuten\
   \ kompastuminen omiin keng\xE4nnauhoihisi. Ohjelmat voivat kompastua huonoihin tietoihin\

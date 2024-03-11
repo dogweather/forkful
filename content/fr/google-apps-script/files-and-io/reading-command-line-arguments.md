@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:58:52.008390-07:00
 description: "Lire les arguments de ligne de commande dans Google Apps Script est\
   \ un peu un abus de langage, car contrairement aux interfaces de ligne de commande\u2026"
-lastmod: '2024-02-25T18:49:54.099391-07:00'
+lastmod: '2024-03-11T00:14:31.241184-06:00'
 model: gpt-4-0125-preview
 summary: "Lire les arguments de ligne de commande dans Google Apps Script est un peu\
   \ un abus de langage, car contrairement aux interfaces de ligne de commande\u2026"

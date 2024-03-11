@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:53.819565-07:00
 description: "Das Herunterladen einer Webseite bedeutet, die Inhalte einer URL zu\
   \ fetchen, um sie lokal zu verarbeiten oder anzusehen. Programmierer machen das,\
   \ um\u2026"
-lastmod: '2024-02-25T18:49:50.739355-07:00'
+lastmod: '2024-03-11T00:14:27.562543-06:00'
 model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet, die Inhalte einer URL zu fetchen,\
   \ um sie lokal zu verarbeiten oder anzusehen. Programmierer machen das, um\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 03:42:33.095435-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe bort de\
   \ omliggende enkle (`'`) eller doble (`\"`) anf\xF8rselstegnene som definerer strengliteraler\
   \ i\u2026"
-lastmod: '2024-02-25T18:49:38.700072-07:00'
+lastmod: '2024-03-11T00:14:14.050550-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe bort de omliggende\
   \ enkle (`'`) eller doble (`\"`) anf\xF8rselstegnene som definerer strengliteraler\

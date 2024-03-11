@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:36.994591-07:00
 description: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
   \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\
   \ le flux\u2026"
-lastmod: '2024-02-25T18:49:54.269166-07:00'
+lastmod: '2024-03-11T00:14:31.469843-06:00'
 model: gpt-4-0125-preview
 summary: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
   \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\

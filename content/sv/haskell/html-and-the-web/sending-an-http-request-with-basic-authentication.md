@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:50.047790-07:00
 description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
   \ inneb\xE4r att du inkluderar anv\xE4ndarnamn och l\xF6senord i f\xF6rfr\xE5gningen\
   \ f\xF6r att f\xE5 tillg\xE5ng till\u2026"
-lastmod: '2024-02-25T18:49:36.254221-07:00'
+lastmod: '2024-03-11T00:14:11.320828-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
   r att du inkluderar anv\xE4ndarnamn och l\xF6senord i f\xF6rfr\xE5gningen f\xF6\

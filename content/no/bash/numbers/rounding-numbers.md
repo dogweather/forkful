@@ -2,7 +2,7 @@
 date: 2024-01-26 03:42:59.130157-07:00
 description: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi\
   \ som er god nok for en gitt kontekst. Programmerere runder av tall for \xE5 forenkle\u2026"
-lastmod: '2024-02-25T18:49:39.140422-07:00'
+lastmod: '2024-03-11T00:14:14.541190-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi som\
   \ er god nok for en gitt kontekst. Programmerere runder av tall for \xE5 forenkle\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:55.431163-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to technika\
   \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu.\
   \ W kontek\u015Bcie Google\u2026"
-lastmod: '2024-02-25T18:49:33.306810-07:00'
+lastmod: '2024-03-11T00:14:08.054281-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to technika\
   \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu.\

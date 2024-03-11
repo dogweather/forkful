@@ -5,7 +5,7 @@ date: 2024-01-28 21:58:38.671149-07:00
 description: "Het cre\xEBren van een tijdelijk bestand betekent het maken van een\
   \ bestand dat niet hoeft te blijven bestaan nadat je klaar bent met het gebruiken\
   \ ervan.\u2026"
-lastmod: '2024-02-25T18:49:47.789888-07:00'
+lastmod: '2024-03-11T00:14:24.206333-06:00'
 model: gpt-4-0125-preview
 summary: "Het cre\xEBren van een tijdelijk bestand betekent het maken van een bestand\
   \ dat niet hoeft te blijven bestaan nadat je klaar bent met het gebruiken ervan.\u2026"

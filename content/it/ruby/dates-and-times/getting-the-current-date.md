@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:50.710274-07:00
 description: "Ottenere la data corrente \xE8 un compito essenziale in quasi ogni impresa\
   \ di programmazione, dal registrare le attivit\xE0 in un'applicazione al generare\u2026"
-lastmod: '2024-02-25T18:49:41.798885-07:00'
+lastmod: '2024-03-11T00:14:17.584564-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente \xE8 un compito essenziale in quasi ogni impresa\
   \ di programmazione, dal registrare le attivit\xE0 in un'applicazione al generare\u2026"

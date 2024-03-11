@@ -3,7 +3,7 @@ date: 2024-01-26 03:39:40.437962-07:00
 description: "Supprimer les guillemets d'une cha\xEEne signifie \xE9liminer tout marque\
   \ de citation\u2014simple (' '), double (\" \"), ou les deux\u2014des donn\xE9es\
   \ textuelles. Les\u2026"
-lastmod: '2024-02-25T18:49:54.375218-07:00'
+lastmod: '2024-03-11T00:14:31.579930-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie \xE9liminer tout marque\
   \ de citation\u2014simple (' '), double (\" \"), ou les deux\u2014des donn\xE9es\

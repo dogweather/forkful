@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:04.934666-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z autoryzacj\u0105 podstawow\u0105\
   \ to proces, w kt\xF3rym przesy\u0142amy nasze dane uwierzytelniaj\u0105ce (login\
   \ i has\u0142o) w nag\u0142\xF3wku \u017C\u0105dania HTTP, aby\u2026"
-lastmod: '2024-02-25T18:49:34.169684-07:00'
+lastmod: '2024-03-11T00:14:09.005726-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z autoryzacj\u0105 podstawow\u0105\
   \ to proces, w kt\xF3rym przesy\u0142amy nasze dane uwierzytelniaj\u0105ce (login\

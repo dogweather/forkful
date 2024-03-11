@@ -2,7 +2,7 @@
 date: 2024-01-26 04:45:10.098871-07:00
 description: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4ren\
   \ Teil (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik.\u2026"
-lastmod: '2024-02-25T18:49:51.439782-07:00'
+lastmod: '2024-03-11T00:14:28.304257-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4ren Teil\
   \ (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik.\u2026"

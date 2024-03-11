@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:23.285344-07:00
 description: "Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle\
   \ Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend\u2026"
-lastmod: '2024-02-25T18:49:51.166258-07:00'
+lastmod: '2024-03-11T00:14:28.013960-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle\
   \ Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend\u2026"

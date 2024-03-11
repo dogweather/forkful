@@ -3,7 +3,7 @@ date: 2024-01-26 04:44:58.769828-07:00
 description: "Liczby z\u0142o\u017Cone to zbi\xF3r liczb postaci `a + bi`, gdzie `a`\
   \ i `b` s\u0105 liczbami rzeczywistymi, a `i` jest jednostk\u0105 urojon\u0105 (`i^2\
   \ = -1`). W programowaniu\u2026"
-lastmod: '2024-02-25T18:49:33.368560-07:00'
+lastmod: '2024-03-11T00:14:08.116018-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby z\u0142o\u017Cone to zbi\xF3r liczb postaci `a + bi`, gdzie `a` i\
   \ `b` s\u0105 liczbami rzeczywistymi, a `i` jest jednostk\u0105 urojon\u0105 (`i^2\

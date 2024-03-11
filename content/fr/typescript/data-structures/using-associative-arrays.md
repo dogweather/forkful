@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:16.607957-07:00
 description: "Les tableaux associatifs, ou objets en TypeScript, vous permettent d'utiliser\
   \ des cha\xEEnes de caract\xE8res (ou cl\xE9s) pour acc\xE9der aux paires de valeurs.\
   \ Les\u2026"
-lastmod: '2024-02-25T18:49:54.246161-07:00'
+lastmod: '2024-03-11T00:14:31.445064-06:00'
 model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou objets en TypeScript, vous permettent d'utiliser\
   \ des cha\xEEnes de caract\xE8res (ou cl\xE9s) pour acc\xE9der aux paires de valeurs.\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:43.251886-07:00
 description: "I Elixir anv\xE4nder vi str\xE4nginterpolering f\xF6r att effektivt\
   \ bygga en str\xE4ng med variabler eller uttryck. Programmerare g\xF6r detta f\xF6\
   r att spara tid, \xF6ka\u2026"
-lastmod: '2024-02-25T18:49:35.893581-07:00'
+lastmod: '2024-03-11T00:14:10.882606-06:00'
 model: gpt-4-1106-preview
 summary: "I Elixir anv\xE4nder vi str\xE4nginterpolering f\xF6r att effektivt bygga\
   \ en str\xE4ng med variabler eller uttryck. Programmerare g\xF6r detta f\xF6r att\

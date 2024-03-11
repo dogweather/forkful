@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:10:43.098002-07:00
 description: "Las expresiones regulares (regex) ofrecen una manera de buscar, coincidir\
   \ y manipular cadenas utilizando patrones definidos. Los programadores las\u2026"
-lastmod: '2024-02-25T18:49:56.003205-07:00'
+lastmod: '2024-03-11T00:14:33.372325-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) ofrecen una manera de buscar, coincidir\
   \ y manipular cadenas utilizando patrones definidos. Los programadores las\u2026"

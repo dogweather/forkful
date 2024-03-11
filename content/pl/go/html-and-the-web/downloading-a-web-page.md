@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:11.579804-07:00
 description: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML strony\
   \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS. Programi\u015Bci\
   \ cz\u0119sto robi\u0105 to w\u2026"
-lastmod: '2024-02-25T18:49:33.274551-07:00'
+lastmod: '2024-03-11T00:14:08.021061-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML strony\
   \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS. Programi\u015Bci\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:44.094051-07:00
 description: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8\
   rre filsystemet for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere\
   \ utf\xF8rer\u2026"
-lastmod: '2024-02-25T18:49:39.465540-07:00'
+lastmod: '2024-03-11T00:14:14.898207-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8rre filsystemet\
   \ for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere utf\xF8\

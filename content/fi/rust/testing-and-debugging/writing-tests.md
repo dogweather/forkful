@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:35.986100-07:00
 description: "Testien kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 automaattisten tarkistusten\
   \ luomisen varmistamaan, ett\xE4 koodisi toimii odotetulla tavalla. Ohjelmoijat\
   \ tekev\xE4t\u2026"
-lastmod: '2024-02-25T18:49:53.285008-07:00'
+lastmod: '2024-03-11T00:14:30.294536-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 automaattisten tarkistusten\
   \ luomisen varmistamaan, ett\xE4 koodisi toimii odotetulla tavalla. Ohjelmoijat\

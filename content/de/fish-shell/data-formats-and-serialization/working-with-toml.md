@@ -3,7 +3,7 @@ date: 2024-01-26 04:21:19.576908-07:00
 description: "TOML ist ein Konfigurationsdateiformat, das f\xFCr Menschen leicht zu\
   \ lesen und zu schreiben ist und von Maschinen einfach geparst und generiert werden\
   \ kann.\u2026"
-lastmod: '2024-02-25T18:49:51.382600-07:00'
+lastmod: '2024-03-11T00:14:28.240489-06:00'
 model: gpt-4-0125-preview
 summary: "TOML ist ein Konfigurationsdateiformat, das f\xFCr Menschen leicht zu lesen\
   \ und zu schreiben ist und von Maschinen einfach geparst und generiert werden kann.\u2026"

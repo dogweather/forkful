@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:01:14.240737-07:00
 description: "Afronden van getallen in programmeren gaat over het benaderen van een\
   \ getal tot het dichtstbijzijnde gehele getal of tot een bepaald aantal decimalen.\u2026"
-lastmod: '2024-02-25T18:49:47.975602-07:00'
+lastmod: '2024-03-11T00:14:24.450609-06:00'
 model: gpt-4-0125-preview
 summary: "Afronden van getallen in programmeren gaat over het benaderen van een getal\
   \ tot het dichtstbijzijnde gehele getal of tot een bepaald aantal decimalen.\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:47.105141-07:00
 description: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (VBA)\
   \ implique de configurer un environnement au sein d'une application h\xF4te, comme\
   \ Excel,\u2026"
-lastmod: '2024-02-25T18:49:54.341149-07:00'
+lastmod: '2024-03-11T00:14:31.545772-06:00'
 model: gpt-4-0125-preview
 summary: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (VBA) implique\
   \ de configurer un environnement au sein d'une application h\xF4te, comme Excel,\u2026"

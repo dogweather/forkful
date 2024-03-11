@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:14.190781-07:00
 description: "Verificare se una cartella esiste \xE8 un compito fondamentale nella\
   \ programmazione PHP, poich\xE9 permette di verificare la presenza di una directory\
   \ prima di\u2026"
-lastmod: '2024-02-25T18:49:41.393633-07:00'
+lastmod: '2024-03-11T00:14:17.130883-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una cartella esiste \xE8 un compito fondamentale nella programmazione\
   \ PHP, poich\xE9 permette di verificare la presenza di una directory prima di\u2026"

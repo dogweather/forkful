@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:16.539737-07:00
 description: "Ler argumentos da linha de comando \xE9 o ato de pegar informa\xE7\xF5\
   es digitadas pelo usu\xE1rio quando eles executam seu programa. Programadores fazem\
   \ isso para\u2026"
-lastmod: '2024-02-25T18:49:44.261717-07:00'
+lastmod: '2024-03-11T00:14:20.353045-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando \xE9 o ato de pegar informa\xE7\xF5es\
   \ digitadas pelo usu\xE1rio quando eles executam seu programa. Programadores fazem\

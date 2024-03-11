@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:16.688800-07:00
 description: "Lesing av tekstfiler lar programmereren hente data utenfor appen. Det\
   \ er n\xF8dvendig for lagring, konfigurasjoner, eller for \xE5 arbeide med brukergenerert\u2026"
-lastmod: '2024-02-25T18:49:39.338176-07:00'
+lastmod: '2024-03-11T00:14:14.757709-06:00'
 model: gpt-4-1106-preview
 summary: "Lesing av tekstfiler lar programmereren hente data utenfor appen. Det er\
   \ n\xF8dvendig for lagring, konfigurasjoner, eller for \xE5 arbeide med brukergenerert\u2026"

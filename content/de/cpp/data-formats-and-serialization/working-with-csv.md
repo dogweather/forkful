@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:26.999899-07:00
 description: "Die Arbeit mit CSV (Comma Separated Values)-Dateien dreht sich um die\
   \ Verarbeitung und Manipulation von Daten, die in einem einfachen Textformat\u2026"
-lastmod: '2024-02-25T18:49:51.257334-07:00'
+lastmod: '2024-03-11T00:14:28.108643-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV (Comma Separated Values)-Dateien dreht sich um die Verarbeitung\
   \ und Manipulation von Daten, die in einem einfachen Textformat\u2026"

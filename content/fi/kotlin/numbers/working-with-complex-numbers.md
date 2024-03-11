@@ -3,7 +3,7 @@ date: 2024-01-26 04:43:44.149456-07:00
 description: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4\
   m\xE4\xE4n negatiivisten lukujen neli\xF6juuret, miss\xE4 'imaginaariyksikk\xF6\
   ' i on -1:n neli\xF6juuri. Ohjelmoijat\u2026"
-lastmod: '2024-02-25T18:49:53.441900-07:00'
+lastmod: '2024-03-11T00:14:30.469292-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4m\xE4\
   \xE4n negatiivisten lukujen neli\xF6juuret, miss\xE4 'imaginaariyksikk\xF6' i on\

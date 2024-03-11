@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:36.860617-07:00
 description: "Interpolointi tarkoittaa muuttujien arvojen yhdist\xE4mist\xE4 merkkijonoon.\
   \ Koodarit k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten viestien luomiseen ja koodin selkeyden\u2026"
-lastmod: '2024-02-25T18:49:53.555555-07:00'
+lastmod: '2024-03-11T00:14:30.593846-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolointi tarkoittaa muuttujien arvojen yhdist\xE4mist\xE4 merkkijonoon.\
   \ Koodarit k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten viestien luomiseen ja koodin selkeyden\u2026"

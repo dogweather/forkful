@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:22.413063-07:00
 description: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour\
   \ d\xE9velopper une application. Les programmeurs font \xE7a pour organiser le code,\
   \ g\xE9rer les\u2026"
-lastmod: '2024-02-25T18:49:54.170001-07:00'
+lastmod: '2024-03-11T00:14:31.314832-06:00'
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour d\xE9\
   velopper une application. Les programmeurs font \xE7a pour organiser le code, g\xE9\

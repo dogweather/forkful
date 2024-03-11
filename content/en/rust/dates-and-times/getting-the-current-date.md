@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:38.356621-07:00
 description: "Retrieving the current date in Rust is a common task for tasks such\
   \ as logging, time-based operations, or simply displaying the date. Unlike some\u2026"
-lastmod: '2024-02-25T18:49:56.329140-07:00'
+lastmod: '2024-03-11T00:14:33.766964-06:00'
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in Rust is a common task for tasks such as logging,\
   \ time-based operations, or simply displaying the date. Unlike some\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:41:51.982600-07:00
 description: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
   \ nel testo, togliendo ci\xF2 che non serve. I programmatori lo fanno per semplificare\u2026"
-lastmod: '2024-02-25T18:49:40.955479-07:00'
+lastmod: '2024-03-11T00:14:16.584406-06:00'
 model: gpt-4-1106-preview
 summary: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
   \ nel testo, togliendo ci\xF2 che non serve. I programmatori lo fanno per semplificare\u2026"

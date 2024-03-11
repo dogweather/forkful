@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:15:48.947086-07:00
 description: "Las expresiones regulares (regex) son secuencias de caracteres que definen\
   \ patrones de b\xFAsqueda, principalmente utilizados para la coincidencia y\u2026"
-lastmod: '2024-02-25T18:49:55.796114-07:00'
+lastmod: '2024-03-11T00:14:33.145790-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son secuencias de caracteres que definen\
   \ patrones de b\xFAsqueda, principalmente utilizados para la coincidencia y\u2026"

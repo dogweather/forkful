@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:22.654809-07:00
 description: "Writing to standard error in Visual Basic for Applications (VBA) involves\
   \ directing error messages or diagnostics apart from standard output, usually to\u2026"
-lastmod: '2024-02-25T18:49:56.371283-07:00'
+lastmod: '2024-03-11T00:14:33.811494-06:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error in Visual Basic for Applications (VBA) involves\
   \ directing error messages or diagnostics apart from standard output, usually to\u2026"

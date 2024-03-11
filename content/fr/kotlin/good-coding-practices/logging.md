@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:28.410978-07:00
 description: "La journalisation, dans son essence, est la pratique d'enregistrer des\
   \ \xE9v\xE9nements et des donn\xE9es provenant d'une application logicielle vers\
   \ une sortie\u2026"
-lastmod: '2024-02-25T18:49:54.479187-07:00'
+lastmod: '2024-03-11T00:14:31.695315-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation, dans son essence, est la pratique d'enregistrer des \xE9\
   v\xE9nements et des donn\xE9es provenant d'une application logicielle vers une sortie\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:22.442067-07:00
 description: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine\
   \ Weise, die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist. Sie ist\
   \ ein\u2026"
-lastmod: '2024-02-25T18:49:50.641882-07:00'
+lastmod: '2024-03-11T00:14:27.409039-06:00'
 model: gpt-4-0125-preview
 summary: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine Weise,\
   \ die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist. Sie ist ein\u2026"

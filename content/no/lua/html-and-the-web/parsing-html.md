@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:43.590611-07:00
 description: "Parsing av HTML inneb\xE6rer \xE5 trekke ut data og informasjon fra\
   \ HTML-dokumenter, noe som er avgj\xF8rende for webskraping, dataanalyse og\u2026"
-lastmod: '2024-02-25T18:49:39.100252-07:00'
+lastmod: '2024-03-11T00:14:14.497962-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML inneb\xE6rer \xE5 trekke ut data og informasjon fra HTML-dokumenter,\
   \ noe som er avgj\xF8rende for webskraping, dataanalyse og\u2026"

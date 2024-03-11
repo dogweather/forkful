@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:26.960869-07:00
 description: "\xC5 analysere en dato fra en streng i Arduino involverer \xE5 trekke\
   \ ut og konvertere datokomponentene (\xE5r, m\xE5ned, dag) fra en tekstlig representasjon\
   \ til et\u2026"
-lastmod: '2024-02-25T18:49:39.246909-07:00'
+lastmod: '2024-03-11T00:14:14.658766-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Arduino involverer \xE5 trekke ut\
   \ og konvertere datokomponentene (\xE5r, m\xE5ned, dag) fra en tekstlig representasjon\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:25.023138-07:00
 description: "La concat\xE9nation de cha\xEEnes c'est, simplement, la fusion de deux\
   \ textes en un seul. On le fait souvent pour construire des messages ou combiner\
   \ des\u2026"
-lastmod: '2024-02-25T18:49:54.287928-07:00'
+lastmod: '2024-03-11T00:14:31.489280-06:00'
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes c'est, simplement, la fusion de deux textes\
   \ en un seul. On le fait souvent pour construire des messages ou combiner des\u2026"

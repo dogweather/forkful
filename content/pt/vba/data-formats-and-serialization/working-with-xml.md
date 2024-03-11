@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:31.551790-07:00
 description: "Trabalhar com XML em Visual Basic for Applications (VBA) envolve analisar,\
   \ criar e modificar documentos XML dentro do contexto das aplica\xE7\xF5es do Microsoft\u2026"
-lastmod: '2024-02-25T18:49:44.059382-07:00'
+lastmod: '2024-03-11T00:14:20.134166-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML em Visual Basic for Applications (VBA) envolve analisar,\
   \ criar e modificar documentos XML dentro do contexto das aplica\xE7\xF5es do Microsoft\u2026"

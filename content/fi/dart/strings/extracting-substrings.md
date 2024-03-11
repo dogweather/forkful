@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:06.067553-07:00
 description: "Merkkijonojen osien erottelu liittyy tiettyjen merkkijonojen osien noutamiseen\
   \ niiden sijainnin tai mallien perusteella. Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
-lastmod: '2024-03-09T21:06:20.170402-07:00'
+lastmod: '2024-03-11T00:14:30.190003-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen osien erottelu liittyy tiettyjen merkkijonojen osien noutamiseen\
   \ niiden sijainnin tai mallien perusteella. Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"

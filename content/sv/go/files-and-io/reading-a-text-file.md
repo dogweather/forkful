@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:09.117702-07:00
 description: "Att l\xE4sa en textfil i Go inneb\xE4r att f\xE5 tillg\xE5ng till och\
   \ h\xE4mta inneh\xE5ll fr\xE5n en fil som \xE4r lagrad p\xE5 disk f\xF6r bearbetning\
   \ eller analys. Programmerare\u2026"
-lastmod: '2024-02-25T18:49:35.746937-07:00'
+lastmod: '2024-03-11T00:14:10.716422-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Go inneb\xE4r att f\xE5 tillg\xE5ng till och h\xE4\
   mta inneh\xE5ll fr\xE5n en fil som \xE4r lagrad p\xE5 disk f\xF6r bearbetning eller\

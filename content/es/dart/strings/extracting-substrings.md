@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:59.549185-07:00
 description: "Extraer subcadenas se trata de recuperar partes espec\xEDficas de una\
   \ cadena bas\xE1ndose en sus posiciones o patrones. Los programadores hacen esto\
   \ para tareas\u2026"
-lastmod: '2024-03-09T21:06:22.316874-07:00'
+lastmod: '2024-03-11T00:14:32.560788-06:00'
 model: gpt-4-0125-preview
 summary: "Extraer subcadenas se trata de recuperar partes espec\xEDficas de una cadena\
   \ bas\xE1ndose en sus posiciones o patrones. Los programadores hacen esto para tareas\u2026"

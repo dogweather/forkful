@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:56:07.545406-07:00
 description: "Loggning i Visual Basic for Applications (VBA) inneb\xE4r att man spelar\
   \ in information om ett programs k\xF6rtidsbeteende till en fil, konsol eller databas.\u2026"
-lastmod: '2024-02-25T18:49:36.045201-07:00'
+lastmod: '2024-03-11T00:14:11.092426-06:00'
 model: gpt-4-0125-preview
 summary: "Loggning i Visual Basic for Applications (VBA) inneb\xE4r att man spelar\
   \ in information om ett programs k\xF6rtidsbeteende till en fil, konsol eller databas.\u2026"

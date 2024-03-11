@@ -3,7 +3,7 @@ date: 2024-01-26 01:03:27.732027-07:00
 description: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 haciendo:\
   \ un diario, por as\xED decirlo, pero para el c\xF3digo. Los programadores lo hacen\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:55.977520-07:00'
+lastmod: '2024-03-11T00:14:33.345108-06:00'
 model: gpt-4-1106-preview
 summary: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 haciendo:\
   \ un diario, por as\xED decirlo, pero para el c\xF3digo. Los programadores lo hacen\

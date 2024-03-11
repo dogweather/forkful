@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:15.954553-07:00
 description: "Lese kommandolinjeargumenter betyr \xE5 hente inn data som brukeren\
   \ gir n\xE5r de kj\xF8rer programmet ditt. Det gj\xF8r vi for \xE5 gi fleksibilitet\
   \ og tilpasse\u2026"
-lastmod: '2024-02-25T18:49:39.030653-07:00'
+lastmod: '2024-03-11T00:14:14.421799-06:00'
 model: gpt-4-1106-preview
 summary: "Lese kommandolinjeargumenter betyr \xE5 hente inn data som brukeren gir\
   \ n\xE5r de kj\xF8rer programmet ditt. Det gj\xF8r vi for \xE5 gi fleksibilitet\

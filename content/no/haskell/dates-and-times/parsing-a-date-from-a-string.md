@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:35.934828-07:00
 description: "\xC5 analysere en dato fra en streng i Haskell inneb\xE6rer \xE5 konvertere\
   \ tekstuelle representasjoner av datoer til et strukturert format som programmet\
   \ kan\u2026"
-lastmod: '2024-02-25T18:49:39.023685-07:00'
+lastmod: '2024-03-11T00:14:14.414402-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Haskell inneb\xE6rer \xE5 konvertere\
   \ tekstuelle representasjoner av datoer til et strukturert format som programmet\

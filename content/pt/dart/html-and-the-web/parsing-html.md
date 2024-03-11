@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:53.200638-07:00
 description: "Analisar (ou \"parsear\") HTML na programa\xE7\xE3o envolve extrair\
   \ dados de documentos HTML. Os programadores fazem isso para interagir com ou raspar\
   \ conte\xFAdo da\u2026"
-lastmod: '2024-03-09T21:06:10.627015-07:00'
+lastmod: '2024-03-11T00:14:19.961803-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar (ou \"parsear\") HTML na programa\xE7\xE3o envolve extrair dados\
   \ de documentos HTML. Os programadores fazem isso para interagir com ou raspar conte\xFA\

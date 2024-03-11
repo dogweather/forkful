@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:00.465967-07:00
 description: "En PowerShell, comprobar si un directorio existe es una tarea com\xFA\
   n que ayuda a los scripts a tomar decisiones basadas en la estructura del sistema\
   \ de\u2026"
-lastmod: '2024-02-25T18:49:55.778648-07:00'
+lastmod: '2024-03-11T00:14:33.127181-06:00'
 model: gpt-4-0125-preview
 summary: "En PowerShell, comprobar si un directorio existe es una tarea com\xFAn que\
   \ ayuda a los scripts a tomar decisiones basadas en la estructura del sistema de\u2026"

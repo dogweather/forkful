@@ -6,7 +6,7 @@ description: "Logging trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c ghi l\u1EA1
   \ c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i, ho\u1EB7c c\xE1c t\xECnh hu\u1ED1ng \u0111\
   \xE1ng ch\xFA \xFD trong qu\xE1 tr\xECnh runtime. L\u1EADp tr\xECnh vi\xEAn l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1\u2026"
-lastmod: '2024-02-25T18:49:34.424066-07:00'
+lastmod: '2024-03-11T00:14:09.276589-06:00'
 model: gpt-4-0125-preview
 summary: "Logging trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i c\xE1\
   c s\u1EF1 ki\u1EC7n, l\u1ED7i, ho\u1EB7c c\xE1c t\xECnh hu\u1ED1ng \u0111\xE1ng\

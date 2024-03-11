@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:16.458369-07:00
 description: "L'\xE9criture sur l'erreur standard (stderr) en Bash consiste \xE0 diriger\
   \ les messages d'erreur ou toute sortie de diagnostic importante s\xE9par\xE9e de\
   \ la sortie\u2026"
-lastmod: '2024-02-25T18:49:54.702221-07:00'
+lastmod: '2024-03-11T00:14:31.940570-06:00'
 model: gpt-4-0125-preview
 summary: "L'\xE9criture sur l'erreur standard (stderr) en Bash consiste \xE0 diriger\
   \ les messages d'erreur ou toute sortie de diagnostic importante s\xE9par\xE9e de\

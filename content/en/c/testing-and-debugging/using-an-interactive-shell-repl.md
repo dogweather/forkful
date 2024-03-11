@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:02.783417-07:00
 description: "An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows\
   \ programmers to type in expressions or code and immediately see results,\u2026"
-lastmod: '2024-02-25T18:49:56.949889-07:00'
+lastmod: '2024-03-11T00:14:34.396918-06:00'
 model: gpt-4-0125-preview
 summary: "An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows\
   \ programmers to type in expressions or code and immediately see results,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:25.346022-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Visual Basic\
   \ para Aplicaciones (VBA) se trata de acceder a recursos web que est\xE1n protegidos\
   \ por\u2026"
-lastmod: '2024-02-25T18:49:55.383243-07:00'
+lastmod: '2024-03-11T00:14:32.706908-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Visual Basic\
   \ para Aplicaciones (VBA) se trata de acceder a recursos web que est\xE1n protegidos\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:45.511524-07:00
 description: "\xC5 skrive tester i PowerShell involverer \xE5 lage skript som automatisk\
   \ validerer funksjonaliteten til PowerShell-koden din, for \xE5 sikre at den oppf\xF8\
   rer seg\u2026"
-lastmod: '2024-02-25T18:49:39.198207-07:00'
+lastmod: '2024-03-11T00:14:14.607818-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i PowerShell involverer \xE5 lage skript som automatisk\
   \ validerer funksjonaliteten til PowerShell-koden din, for \xE5 sikre at den oppf\xF8\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:33:43.001779-07:00
 description: "XML:n kanssa ty\xF6skentelyn yhteydess\xE4 k\xE4sitell\xE4\xE4n XML-dokumentteja\
   \ koodin avulla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n lukeakseen, kirjoittaakseen\
   \ ja muokatakseen\u2026"
-lastmod: '2024-02-25T18:49:53.632488-07:00'
+lastmod: '2024-03-11T00:14:30.674814-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n kanssa ty\xF6skentelyn yhteydess\xE4 k\xE4sitell\xE4\xE4n XML-dokumentteja\
   \ koodin avulla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n lukeakseen, kirjoittaakseen\

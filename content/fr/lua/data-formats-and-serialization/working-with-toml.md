@@ -3,7 +3,7 @@ date: 2024-01-26 04:24:49.360483-07:00
 description: "Travailler avec TOML implique d'analyser et de g\xE9n\xE9rer des donn\xE9\
   es TOML (Tom's Obvious, Minimal Language) avec Lua. Les programmeurs utilisent TOML\
   \ pour\u2026"
-lastmod: '2024-02-25T18:49:54.665318-07:00'
+lastmod: '2024-03-11T00:14:31.901621-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec TOML implique d'analyser et de g\xE9n\xE9rer des donn\xE9\
   es TOML (Tom's Obvious, Minimal Language) avec Lua. Les programmeurs utilisent TOML\

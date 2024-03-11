@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:46.068460-07:00
 description: "Webbisivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
   . Ohjelmoijat lataavat sivuja datan ker\xE4\xE4miseen, API-vasteiden tarkistamiseen\
   \ ja\u2026"
-lastmod: '2024-02-25T18:49:53.567519-07:00'
+lastmod: '2024-03-11T00:14:30.606692-06:00'
 model: gpt-4-1106-preview
 summary: "Webbisivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
   . Ohjelmoijat lataavat sivuja datan ker\xE4\xE4miseen, API-vasteiden tarkistamiseen\

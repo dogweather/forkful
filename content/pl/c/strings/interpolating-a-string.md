@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:44.845358-07:00
 description: "Interpolacja ci\u0105g\xF3w, w programowaniu, polega na tworzeniu ci\u0105\
   g\xF3w przez osadzanie wyra\u017Ce\u0144 wewn\u0105trz dos\u0142ownych ci\u0105\
   g\xF3w znak\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: '2024-02-25T18:49:34.243814-07:00'
+lastmod: '2024-03-11T00:14:09.085122-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w, w programowaniu, polega na tworzeniu ci\u0105\
   g\xF3w przez osadzanie wyra\u017Ce\u0144 wewn\u0105trz dos\u0142ownych ci\u0105\

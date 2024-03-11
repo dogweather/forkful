@@ -2,7 +2,7 @@
 date: 2024-01-25 20:50:36.208411-07:00
 description: "Using a debugger in Elixir involves stepping through your code, inspecting\
   \ variables, and tracking flows to squash bugs. Programmers do it to make sense\u2026"
-lastmod: '2024-02-25T18:49:56.249958-07:00'
+lastmod: '2024-03-11T00:14:33.642145-06:00'
 model: gpt-4-1106-preview
 summary: "Using a debugger in Elixir involves stepping through your code, inspecting\
   \ variables, and tracking flows to squash bugs. Programmers do it to make sense\u2026"

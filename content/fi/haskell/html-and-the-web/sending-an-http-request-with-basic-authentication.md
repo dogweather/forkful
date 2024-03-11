@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 18:02:08.531738-07:00
 description: null
-lastmod: '2024-02-25T18:49:53.528564-07:00'
+lastmod: '2024-03-11T00:14:30.564436-06:00'
 model: gpt-4-1106-preview
 summary: null
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"

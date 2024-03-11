@@ -3,7 +3,7 @@ date: 2024-01-26 00:57:35.390988-07:00
 description: "Tratar erros em Swift significa antecipar e responder a problemas que\
   \ surgem quando seu c\xF3digo \xE9 executado. Fazemos isso para controlar o caos\u2014\
   evitando\u2026"
-lastmod: '2024-02-25T18:49:44.545344-07:00'
+lastmod: '2024-03-11T00:14:20.660189-06:00'
 model: gpt-4-1106-preview
 summary: "Tratar erros em Swift significa antecipar e responder a problemas que surgem\
   \ quando seu c\xF3digo \xE9 executado. Fazemos isso para controlar o caos\u2014\

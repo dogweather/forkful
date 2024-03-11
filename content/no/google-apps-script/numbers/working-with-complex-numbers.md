@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:42.909564-07:00
 description: "Komplekse tall, representert som en kombinasjon av reelle og imagin\xE6\
   re enheter (f.eks. 3 + 4i), er grunnleggende i ulike beregningsproblemer, spesielt\u2026"
-lastmod: '2024-02-25T18:49:38.538341-07:00'
+lastmod: '2024-03-11T00:14:13.824759-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, representert som en kombinasjon av reelle og imagin\xE6\
   re enheter (f.eks. 3 + 4i), er grunnleggende i ulike beregningsproblemer, spesielt\u2026"

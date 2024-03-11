@@ -3,7 +3,7 @@ date: 2024-01-26 01:12:02.421873-07:00
 description: "\xC5 gruppere kode i funksjoner er \xE5 bryte ned oppgaver i gjenbrukbare\
   \ deler. Det gj\xF8r koden ren, mindre utsatt for feil, og enklere \xE5 feils\xF8\
   ke eller\u2026"
-lastmod: '2024-02-25T18:49:39.326136-07:00'
+lastmod: '2024-03-11T00:14:14.744805-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 gruppere kode i funksjoner er \xE5 bryte ned oppgaver i gjenbrukbare\
   \ deler. Det gj\xF8r koden ren, mindre utsatt for feil, og enklere \xE5 feils\xF8\

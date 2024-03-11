@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:00.393780-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
   \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\
   \ lokitiedostojen\u2026"
-lastmod: '2024-02-25T18:49:53.744071-07:00'
+lastmod: '2024-03-11T00:14:30.861472-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
   \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\

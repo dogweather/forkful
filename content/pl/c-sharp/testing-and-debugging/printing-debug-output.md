@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:31.645237-07:00
 description: "Debugowanie to proces \u015Bledzenia, co si\u0119 dzieje w programie.\
   \ Programi\u015Bci drukuj\u0105 informacje debugowania, \u017Ceby \u0142atwiej znale\u017A\
   \u0107 i naprawi\u0107 b\u0142\u0119dy."
-lastmod: '2024-02-25T18:49:33.775589-07:00'
+lastmod: '2024-03-11T00:14:08.593961-06:00'
 model: gpt-4-1106-preview
 summary: "Debugowanie to proces \u015Bledzenia, co si\u0119 dzieje w programie. Programi\u015B\
   ci drukuj\u0105 informacje debugowania, \u017Ceby \u0142atwiej znale\u017A\u0107\

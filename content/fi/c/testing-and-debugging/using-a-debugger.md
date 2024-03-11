@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:10:22.395197-07:00
 description: "C-kielen debuggerit ovat erikoisty\xF6kaluja, jotka mahdollistavat ohjelmoijille\
   \ koodin vaiheittaisen suorituksen seurannan, muuttujien tarkastelun ja\u2026"
-lastmod: '2024-02-25T18:49:53.950327-07:00'
+lastmod: '2024-03-11T00:14:31.086532-06:00'
 model: gpt-4-0125-preview
 summary: "C-kielen debuggerit ovat erikoisty\xF6kaluja, jotka mahdollistavat ohjelmoijille\
   \ koodin vaiheittaisen suorituksen seurannan, muuttujien tarkastelun ja\u2026"

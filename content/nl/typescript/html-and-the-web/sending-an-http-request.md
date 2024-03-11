@@ -5,7 +5,7 @@ date: 2024-01-28 22:07:41.249158-07:00
 description: "Het verzenden van een HTTP-verzoek is hoe je programma gegevens van\
   \ een server vraagt of gegevens naar een server stuurt. Programmeurs doen dit omdat\
   \ het\u2026"
-lastmod: '2024-02-25T18:49:47.893829-07:00'
+lastmod: '2024-03-11T00:14:24.363229-06:00'
 model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek is hoe je programma gegevens van een\
   \ server vraagt of gegevens naar een server stuurt. Programmeurs doen dit omdat\

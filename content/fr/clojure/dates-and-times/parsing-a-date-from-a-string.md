@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:46.830937-07:00
 description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Clojure\
   \ consiste \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures\
   \ en une forme\u2026"
-lastmod: '2024-02-25T18:49:54.178485-07:00'
+lastmod: '2024-03-11T00:14:31.323548-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Clojure\
   \ consiste \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures\

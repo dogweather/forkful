@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:21.903918-07:00
 description: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
   o (REPL), permite que voc\xEA experimente c\xF3digo Go em tempo real, executando\
   \ comandos e obtendo\u2026"
-lastmod: '2024-02-25T18:49:43.726652-07:00'
+lastmod: '2024-03-11T00:14:19.722854-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o (REPL),\
   \ permite que voc\xEA experimente c\xF3digo Go em tempo real, executando comandos\

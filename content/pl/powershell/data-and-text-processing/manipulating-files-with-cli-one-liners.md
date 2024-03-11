@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:32.865679-07:00
 description: "Manipulowanie plikami przy u\u017Cyciu jednolinijkowc\xF3w CLI w PowerShell\
   \ to sprawa szybkiej zmiany, przenoszenia lub uzyskiwania danych pliku bezpo\u015B\
   rednio z\u2026"
-lastmod: '2024-02-25T18:49:33.993405-07:00'
+lastmod: '2024-03-11T00:14:08.818488-06:00'
 model: gpt-4-0125-preview
 summary: "Manipulowanie plikami przy u\u017Cyciu jednolinijkowc\xF3w CLI w PowerShell\
   \ to sprawa szybkiej zmiany, przenoszenia lub uzyskiwania danych pliku bezpo\u015B\

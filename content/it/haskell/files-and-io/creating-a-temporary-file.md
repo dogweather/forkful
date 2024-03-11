@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:24.022202-07:00
 description: "Creare un file temporaneo significa generare un file per uso temporaneo,\
   \ di solito destinato a contenere dati che servono solo durante l'esecuzione di\
   \ un\u2026"
-lastmod: '2024-02-25T18:49:41.357519-07:00'
+lastmod: '2024-03-11T00:14:17.088356-06:00'
 model: gpt-4-1106-preview
 summary: "Creare un file temporaneo significa generare un file per uso temporaneo,\
   \ di solito destinato a contenere dati che servono solo durante l'esecuzione di\

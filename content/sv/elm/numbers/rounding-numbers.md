@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:31.616300-07:00
 description: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\xE4\
   rmaste hela v\xE4rde eller till ett angivet antal decimaler. Programmerare avrundar\
   \ f\xF6r att\u2026"
-lastmod: '2024-02-25T18:49:36.118983-07:00'
+lastmod: '2024-03-11T00:14:11.171916-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\xE4rmaste\
   \ hela v\xE4rde eller till ett angivet antal decimaler. Programmerare avrundar f\xF6\

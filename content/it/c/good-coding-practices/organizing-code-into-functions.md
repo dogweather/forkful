@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:59:02.284697-07:00
 description: "Organizzare il codice in funzioni in C comporta la suddivisione di compiti\
   \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili. Questa pratica\u2026"
-lastmod: '2024-02-25T18:49:41.750333-07:00'
+lastmod: '2024-03-11T00:14:17.533396-06:00'
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni in C comporta la suddivisione di compiti\
   \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili. Questa pratica\u2026"

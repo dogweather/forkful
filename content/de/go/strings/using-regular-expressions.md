@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:11.270779-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) werden in der Programmierung verwendet,\
   \ um nach Mustern zu suchen, \xDCbereinstimmungen zu finden und Zeichenketten basierend\
   \ auf\u2026"
-lastmod: '2024-02-25T18:49:50.477927-07:00'
+lastmod: '2024-03-11T00:14:27.234023-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) werden in der Programmierung verwendet,\
   \ um nach Mustern zu suchen, \xDCbereinstimmungen zu finden und Zeichenketten basierend\

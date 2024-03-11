@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:14.672410-07:00
 description: "Wyci\u0105ganie podci\u0105g\xF3w to pobieranie okre\u015Blonych fragment\xF3\
   w z ca\u0142ego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\
   \ danymi, weryfikowa\u0107 formaty lub po\u2026"
-lastmod: '2024-02-25T18:49:33.849924-07:00'
+lastmod: '2024-03-11T00:14:08.669877-06:00'
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie podci\u0105g\xF3w to pobieranie okre\u015Blonych fragment\xF3\
   w z ca\u0142ego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\

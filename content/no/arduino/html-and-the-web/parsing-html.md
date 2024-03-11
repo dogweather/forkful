@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:38.987176-07:00
 description: "Parsing av HTML i Arduino-prosjekter handler om \xE5 trekke ut informasjon\
   \ fra nettsider. Programmerere gj\xF8r dette for \xE5 muliggj\xF8re interaksjon\
   \ mellom deres\u2026"
-lastmod: '2024-02-25T18:49:39.236007-07:00'
+lastmod: '2024-03-11T00:14:14.646884-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i Arduino-prosjekter handler om \xE5 trekke ut informasjon\
   \ fra nettsider. Programmerere gj\xF8r dette for \xE5 muliggj\xF8re interaksjon\

@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:24.306143-07:00
 description: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l\xE5\
   dor \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem. Vi g\xF6r detta\
   \ f\xF6r att undvika\u2026"
-lastmod: '2024-02-25T18:49:36.217511-07:00'
+lastmod: '2024-03-11T00:14:11.282176-06:00'
 model: gpt-4-1106-preview
 summary: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l\xE5dor\
   \ \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem. Vi g\xF6r detta\

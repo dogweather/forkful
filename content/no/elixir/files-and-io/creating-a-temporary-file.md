@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:49.687813-07:00
 description: "Midlertidige filer brukes for \xE5 midlertidig lagre data som trengs\
   \ under en prosess. Programmerere lager slike filer for \xE5 unng\xE5 \xE5 belaste\
   \ hukommelsen og\u2026"
-lastmod: '2024-02-25T18:49:38.689520-07:00'
+lastmod: '2024-03-11T00:14:13.990509-06:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer brukes for \xE5 midlertidig lagre data som trengs under\
   \ en prosess. Programmerere lager slike filer for \xE5 unng\xE5 \xE5 belaste hukommelsen\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:32.977797-07:00
 description: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo\
   \ manejables que validan la funcionalidad y el comportamiento de tu aplicaci\xF3\
   n. Los\u2026"
-lastmod: '2024-02-25T18:49:55.089782-07:00'
+lastmod: '2024-03-11T00:14:32.341988-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo manejables\
   \ que validan la funcionalidad y el comportamiento de tu aplicaci\xF3n. Los\u2026"

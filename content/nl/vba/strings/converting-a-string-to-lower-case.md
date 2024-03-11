@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:51:21.770445-07:00
 description: "Het omzetten van een tekenreeks naar kleine letters omvat het transformeren\
   \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"
-lastmod: '2024-02-25T18:49:47.967036-07:00'
+lastmod: '2024-03-11T00:14:24.442272-06:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van een tekenreeks naar kleine letters omvat het transformeren\
   \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"

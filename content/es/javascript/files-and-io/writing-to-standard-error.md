@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:25.499262-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en JavaScript se trata de\
   \ dirigir mensajes de error o cualquier informaci\xF3n cr\xEDtica a un flujo espec\xED\
   fico y\u2026"
-lastmod: '2024-02-25T18:49:55.944006-07:00'
+lastmod: '2024-03-11T00:14:33.308057-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en JavaScript se trata de dirigir\
   \ mensajes de error o cualquier informaci\xF3n cr\xEDtica a un flujo espec\xEDfico\

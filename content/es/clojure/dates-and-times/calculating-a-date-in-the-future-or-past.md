@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:40.944773-07:00
 description: "Calcular una fecha en el futuro o pasado es b\xE1sicamente sumar o restar\
   \ d\xEDas a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:55.231366-07:00'
+lastmod: '2024-03-11T00:14:32.499971-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado es b\xE1sicamente sumar o restar\
   \ d\xEDas a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos\

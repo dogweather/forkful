@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:00.018751-07:00
 description: "Omvandling av en textstr\xE4ng till gemener inneb\xE4r att alla versaler\
   \ i en text blir sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder detta f\xF6r att\
   \ standardisera text\u2026"
-lastmod: '2024-02-25T18:49:36.153971-07:00'
+lastmod: '2024-03-11T00:14:11.210963-06:00'
 model: gpt-4-1106-preview
 summary: "Omvandling av en textstr\xE4ng till gemener inneb\xE4r att alla versaler\
   \ i en text blir sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder detta f\xF6r att\

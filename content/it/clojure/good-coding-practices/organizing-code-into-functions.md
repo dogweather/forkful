@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:26.778631-07:00
 description: "Organizzare il codice in funzioni significa impacchettare blocchi di\
   \ codice che compiono compiti specifici. Fare ci\xF2 rende il tuo codice pulito,\
   \ pi\xF9\u2026"
-lastmod: '2024-02-25T18:49:40.976043-07:00'
+lastmod: '2024-03-11T00:14:16.607235-06:00'
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni significa impacchettare blocchi di codice\
   \ che compiono compiti specifici. Fare ci\xF2 rende il tuo codice pulito, pi\xF9\

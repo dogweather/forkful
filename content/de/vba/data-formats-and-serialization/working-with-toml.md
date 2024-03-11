@@ -5,7 +5,7 @@ date: 2024-02-01 22:06:18.544798-07:00
 description: "TOML, was f\xFCr Toms Offensichtliche, Minimale Sprache steht, ist ein\
   \ Daten-Serialisierungsformat, das haupts\xE4chlich f\xFCr Konfigurationsdateien\
   \ verwendet\u2026"
-lastmod: '2024-02-25T18:49:50.809454-07:00'
+lastmod: '2024-03-11T00:14:27.636092-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, was f\xFCr Toms Offensichtliche, Minimale Sprache steht, ist ein Daten-Serialisierungsformat,\
   \ das haupts\xE4chlich f\xFCr Konfigurationsdateien verwendet\u2026"

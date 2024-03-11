@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:38.055700-07:00
 description: "I Elixir kan uttrekking av delstrenger hjelpe deg \xE5 f\xE5 ut spesifikk\
   \ info fra tekststr\xF8mmer. Du gj\xF8r det fordi du kanskje trenger \xE5 bearbeide\
   \ eller\u2026"
-lastmod: '2024-02-25T18:49:38.660181-07:00'
+lastmod: '2024-03-11T00:14:13.957707-06:00'
 model: gpt-4-1106-preview
 summary: "I Elixir kan uttrekking av delstrenger hjelpe deg \xE5 f\xE5 ut spesifikk\
   \ info fra tekststr\xF8mmer. Du gj\xF8r det fordi du kanskje trenger \xE5 bearbeide\

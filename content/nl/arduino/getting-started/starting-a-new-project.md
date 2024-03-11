@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:08.503347-07:00
 description: "Een nieuw project starten op Arduino betekent het initialiseren van\
   \ een nieuwe schets, het canvas voor je code. Programmeurs doen dit om leven te\
   \ blazen\u2026"
-lastmod: '2024-02-25T18:49:48.407077-07:00'
+lastmod: '2024-03-11T00:14:24.908051-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten op Arduino betekent het initialiseren van een\
   \ nieuwe schets, het canvas voor je code. Programmeurs doen dit om leven te blazen\u2026"

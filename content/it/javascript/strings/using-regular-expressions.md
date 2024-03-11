@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:12.320242-07:00
 description: "Le espressioni regolari (regex) in JavaScript sono pattern utilizzati\
   \ per abbinare combinazioni di caratteri nelle stringhe. I programmatori le usano\
   \ per\u2026"
-lastmod: '2024-02-25T18:49:41.650618-07:00'
+lastmod: '2024-03-11T00:14:17.419220-06:00'
 model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in JavaScript sono pattern utilizzati per\
   \ abbinare combinazioni di caratteri nelle stringhe. I programmatori le usano per\u2026"

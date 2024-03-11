@@ -2,7 +2,7 @@
 date: 2024-01-26 04:36:00.017800-07:00
 description: "XML, forkortet for eXtensible Markup Language, er som en ordrik fetter\
   \ av JSON. Du vil st\xF8te p\xE5 XML n\xE5r du h\xE5ndterer eldre systemer, bedriftsprogramvare,\u2026"
-lastmod: '2024-02-25T18:49:38.781663-07:00'
+lastmod: '2024-03-11T00:14:14.137241-06:00'
 model: gpt-4-0125-preview
 summary: "XML, forkortet for eXtensible Markup Language, er som en ordrik fetter av\
   \ JSON. Du vil st\xF8te p\xE5 XML n\xE5r du h\xE5ndterer eldre systemer, bedriftsprogramvare,\u2026"

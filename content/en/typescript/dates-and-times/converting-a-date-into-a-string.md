@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:38.018725-07:00
 description: Converting a date to a string changes the date object into a text format.
   Programmers do this for readability, storage, or to display dates to users.
-lastmod: '2024-02-25T18:49:56.292424-07:00'
+lastmod: '2024-03-11T00:14:33.728378-06:00'
 model: gpt-4-1106-preview
 summary: Converting a date to a string changes the date object into a text format.
   Programmers do this for readability, storage, or to display dates to users.

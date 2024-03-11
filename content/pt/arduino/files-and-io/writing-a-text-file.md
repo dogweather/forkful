@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:51.275753-07:00
 description: "Escrever um arquivo de texto no Arduino envolve salvar dados em um arquivo\
   \ em um cart\xE3o SD ou m\xF3dulo de armazenamento semelhante, muitas vezes para\
   \ fins\u2026"
-lastmod: '2024-02-25T18:49:44.474499-07:00'
+lastmod: '2024-03-11T00:14:20.584375-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto no Arduino envolve salvar dados em um arquivo\
   \ em um cart\xE3o SD ou m\xF3dulo de armazenamento semelhante, muitas vezes para\

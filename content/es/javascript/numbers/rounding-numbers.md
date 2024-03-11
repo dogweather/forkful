@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:00.448057-07:00
 description: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
   mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:55.923307-07:00'
+lastmod: '2024-03-11T00:14:33.283937-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
   mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\

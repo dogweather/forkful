@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:00.496655-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Bashissa\
   \ tarkoittaa p\xE4iv\xE4m\xE4\xE4r\xE4tiedon poimimista ja muuntamista tekstiaineistosta\
   \ muotoon, jota Bash voi k\xE4sitell\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.659912-07:00'
+lastmod: '2024-03-11T00:14:30.704868-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Bashissa tarkoittaa\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon poimimista ja muuntamista tekstiaineistosta muotoon,\

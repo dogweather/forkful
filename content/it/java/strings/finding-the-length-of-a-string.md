@@ -2,7 +2,7 @@
 date: 2024-01-20 17:47:44.852128-07:00
 description: "Determinare la lunghezza di una stringa significa scoprire quanti caratteri\
   \ contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o\u2026"
-lastmod: '2024-02-25T18:49:41.170065-07:00'
+lastmod: '2024-03-11T00:14:16.868027-06:00'
 model: gpt-4-1106-preview
 summary: "Determinare la lunghezza di una stringa significa scoprire quanti caratteri\
   \ contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:27:02.978089-07:00
 description: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
   \ joka on samankaltainen kuin JSON tai YAML. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
-lastmod: '2024-02-25T18:49:53.264048-07:00'
+lastmod: '2024-03-11T00:14:30.272002-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
   \ joka on samankaltainen kuin JSON tai YAML. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 22:09:10.503262-07:00
 description: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the-fly\
   \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn. Ze zijn\
   \ de\u2026"
-lastmod: '2024-02-25T18:49:48.531468-07:00'
+lastmod: '2024-03-11T00:14:25.041746-06:00'
 model: gpt-4-0125-preview
 summary: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the-fly\
   \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn. Ze zijn\

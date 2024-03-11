@@ -2,7 +2,7 @@
 date: 2024-01-26 04:17:07.400294-07:00
 description: "Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle Lire-\xC9\
   valuer-Imprimer), vous permet de tester du code en temps r\xE9el. Les programmeurs\u2026"
-lastmod: '2024-02-25T18:49:55.044079-07:00'
+lastmod: '2024-03-11T00:14:32.293704-06:00'
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle Lire-\xC9valuer-Imprimer),\
   \ vous permet de tester du code en temps r\xE9el. Les programmeurs\u2026"

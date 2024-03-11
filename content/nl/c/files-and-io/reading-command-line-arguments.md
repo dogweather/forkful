@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:06:12.801397-07:00
 description: "In C-programmering maakt het lezen van commandoregelargumenten het mogelijk\
   \ dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de\u2026"
-lastmod: '2024-02-25T18:49:48.631570-07:00'
+lastmod: '2024-03-11T00:14:25.169402-06:00'
 model: gpt-4-0125-preview
 summary: "In C-programmering maakt het lezen van commandoregelargumenten het mogelijk\
   \ dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de\u2026"

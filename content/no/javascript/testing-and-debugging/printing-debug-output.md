@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:55.826173-07:00
 description: "\xC5 skrive ut feils\xF8kingsdata, eller \"debug output\", lar utviklere\
   \ se hva som skjer i koden under kj\xF8ring. Vi gj\xF8r det for \xE5 forst\xE5 feil,\
   \ optimalisere\u2026"
-lastmod: '2024-02-25T18:49:39.364526-07:00'
+lastmod: '2024-03-11T00:14:14.785773-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 skrive ut feils\xF8kingsdata, eller \"debug output\", lar utviklere\
   \ se hva som skjer i koden under kj\xF8ring. Vi gj\xF8r det for \xE5 forst\xE5 feil,\

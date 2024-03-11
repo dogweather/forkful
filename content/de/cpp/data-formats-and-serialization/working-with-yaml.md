@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:32.112091-07:00
 description: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFC\
   r Menschen lesbaren Daten-Serialisierungsformat. Programmierer nutzen es f\xFCr\u2026"
-lastmod: '2024-02-25T18:49:51.255205-07:00'
+lastmod: '2024-03-11T00:14:28.106512-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFCr Menschen\
   \ lesbaren Daten-Serialisierungsformat. Programmierer nutzen es f\xFCr\u2026"

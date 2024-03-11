@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:45:04.577701-07:00
 description: '#'
-lastmod: '2024-02-25T18:49:51.225020-07:00'
+lastmod: '2024-03-11T00:14:28.075854-06:00'
 model: gpt-4-1106-preview
 summary: '#'
 title: Teilstrings extrahieren

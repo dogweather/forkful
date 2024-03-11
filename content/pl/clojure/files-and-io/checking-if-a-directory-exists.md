@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:20.801101-07:00
 description: "Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecno\u015B\
   ci katalogu systemu plik\xF3w z poziomu aplikacji Clojure. Zadanie to jest kluczowe\u2026"
-lastmod: '2024-02-25T18:49:33.434942-07:00'
+lastmod: '2024-03-11T00:14:08.183474-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecno\u015B\
   ci katalogu systemu plik\xF3w z poziomu aplikacji Clojure. Zadanie to jest kluczowe\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:09.824858-07:00
 description: "Starting a new Java project means setting up a space where your code\
   \ will live and grow. Programmers do it to solve problems, create tools, or just\
   \ for\u2026"
-lastmod: '2024-02-25T18:49:46.563691-07:00'
+lastmod: '2024-03-11T00:14:22.928677-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new Java project means setting up a space where your code will\
   \ live and grow. Programmers do it to solve problems, create tools, or just for\u2026"

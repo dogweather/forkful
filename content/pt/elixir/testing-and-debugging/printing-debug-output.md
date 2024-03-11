@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:25.227074-07:00
 description: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 como espiar dentro do seu\
   \ c\xF3digo enquanto ele executa, para ver o valor das vari\xE1veis e o fluxo do\
   \ programa. Os\u2026"
-lastmod: '2024-02-25T18:49:43.901604-07:00'
+lastmod: '2024-03-11T00:14:19.918990-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 como espiar dentro do seu c\xF3\
   digo enquanto ele executa, para ver o valor das vari\xE1veis e o fluxo do programa.\

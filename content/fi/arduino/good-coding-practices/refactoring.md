@@ -3,7 +3,7 @@ date: 2024-01-26 01:17:02.262412-07:00
 description: "Refaktorointi on prosessi, jossa koodiasi ty\xF6stet\xE4\xE4n uudelleen\
   \ parantaaksesi sen rakennetta ja luettavuutta muuttamatta ulkoista k\xE4ytt\xE4\
   ytymist\xE4 tai\u2026"
-lastmod: '2024-02-25T18:49:53.741720-07:00'
+lastmod: '2024-03-11T00:14:30.859051-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorointi on prosessi, jossa koodiasi ty\xF6stet\xE4\xE4n uudelleen\
   \ parantaaksesi sen rakennetta ja luettavuutta muuttamatta ulkoista k\xE4ytt\xE4\

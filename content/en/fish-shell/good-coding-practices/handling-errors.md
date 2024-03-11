@@ -2,7 +2,7 @@
 date: 2024-01-21 21:19:23.845730-07:00
 description: Error handling lets your script deal with the unexpected gracefully.
   We do it to manage failure without turning our user's hair gray.
-lastmod: '2024-02-25T18:49:56.916338-07:00'
+lastmod: '2024-03-11T00:14:34.359330-06:00'
 model: gpt-4-1106-preview
 summary: Error handling lets your script deal with the unexpected gracefully. We do
   it to manage failure without turning our user's hair gray.

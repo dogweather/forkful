@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:17.270913-07:00
 description: "Arbeid med CSV (Comma Separated Values)-filer handler om \xE5 behandle\
   \ og manipulere data lagret i et enkelt tekstformat, der hver linje i teksten\u2026"
-lastmod: '2024-02-25T18:49:39.301603-07:00'
+lastmod: '2024-03-11T00:14:14.717862-06:00'
 model: gpt-4-0125-preview
 summary: "Arbeid med CSV (Comma Separated Values)-filer handler om \xE5 behandle og\
   \ manipulere data lagret i et enkelt tekstformat, der hver linje i teksten\u2026"

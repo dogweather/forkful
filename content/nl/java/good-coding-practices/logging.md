@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:52.941240-07:00
 description: "Loggen is in essentie het proces van het vastleggen van gebeurtenissen\
   \ die plaatsvinden binnen een softwareapplicatie. Programmeurs loggen deze\u2026"
-lastmod: '2024-02-25T18:49:48.030433-07:00'
+lastmod: '2024-03-11T00:14:24.509340-06:00'
 model: gpt-4-0125-preview
 summary: "Loggen is in essentie het proces van het vastleggen van gebeurtenissen die\
   \ plaatsvinden binnen een softwareapplicatie. Programmeurs loggen deze\u2026"

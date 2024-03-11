@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:23.193443-07:00
 description: "Command line argumenten lezen stelt je Python script in staat om netjes\
   \ om te gaan met gebruikersinvoer vanuit de terminal. Waarom? Wel, omdat\u2026"
-lastmod: '2024-02-25T18:49:47.785637-07:00'
+lastmod: '2024-03-11T00:14:24.202462-06:00'
 model: gpt-4-0125-preview
 summary: "Command line argumenten lezen stelt je Python script in staat om netjes\
   \ om te gaan met gebruikersinvoer vanuit de terminal. Waarom? Wel, omdat\u2026"

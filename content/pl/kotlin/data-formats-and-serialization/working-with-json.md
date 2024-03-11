@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:10.890579-07:00
 description: "Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie\
   \ i generowanie danych JSON. Programi\u015Bci robi\u0105 to, aby \u0142atwo wymienia\u0107\
   \ dane\u2026"
-lastmod: '2024-02-25T18:49:33.750833-07:00'
+lastmod: '2024-03-11T00:14:08.568743-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie\
   \ i generowanie danych JSON. Programi\u015Bci robi\u0105 to, aby \u0142atwo wymienia\u0107\

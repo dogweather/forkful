@@ -6,7 +6,7 @@ description: "String interpolation \u092E\u0947\u0902 \u0939\u092E variables \u0
   \u0947 \u0915\u094B\u0921 read \u0915\u0930\u0928\u093E \u0914\u0930 write \u0915\
   \u0930\u0928\u093E \u0926\u094B\u0928\u094B\u0902 \u0906\u0938\u093E\u0928 \u0939\
   \u094B \u091C\u093E\u0924\u093E \u0939\u0948\u0964\u2026"
-lastmod: '2024-02-25T18:49:50.020706-07:00'
+lastmod: '2024-03-11T00:14:26.758010-06:00'
 model: gpt-4-1106-preview
 summary: "String interpolation \u092E\u0947\u0902 \u0939\u092E variables \u0914\u0930\
   \ expressions \u0915\u094B straightway strings \u0915\u0947 \u0905\u0902\u0926\u0930\

@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:33.253982-07:00
 description: "Uuden projektin aloittaminen Dartissa k\xE4sitt\xE4\xE4 ymp\xE4rist\xF6\
   n pystytt\xE4misen, joka edesauttaa tehokasta kehityst\xE4, testausta ja julkaisua.\
   \ Ohjelmoijat\u2026"
-lastmod: '2024-03-09T21:06:20.181567-07:00'
+lastmod: '2024-03-11T00:14:30.203224-06:00'
 model: gpt-4-0125-preview
 summary: "Uuden projektin aloittaminen Dartissa k\xE4sitt\xE4\xE4 ymp\xE4rist\xF6\
   n pystytt\xE4misen, joka edesauttaa tehokasta kehityst\xE4, testausta ja julkaisua.\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:08.721524-07:00
 description: "\"Travailler avec XML\" se r\xE9f\xE8re au processus de lecture, cr\xE9\
   ation et modification de fichiers XML (eXtensible Markup Language) en utilisant\
   \ la\u2026"
-lastmod: '2024-02-25T18:49:54.151990-07:00'
+lastmod: '2024-03-11T00:14:31.295619-06:00'
 model: gpt-4-0125-preview
 summary: "\"Travailler avec XML\" se r\xE9f\xE8re au processus de lecture, cr\xE9\
   ation et modification de fichiers XML (eXtensible Markup Language) en utilisant\

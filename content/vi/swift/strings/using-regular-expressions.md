@@ -6,7 +6,7 @@ description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, ho\u1EB7c regex, l\xE0 nh\u1EEFn
   \ m\u1EABu \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm k\u1EBFt h\u1EE3\
   p c\xE1c k\xFD t\u1EF1 trong chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\
   \ d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9nh s\u1EEDa,\u2026"
-lastmod: '2024-02-25T18:49:35.430251-07:00'
+lastmod: '2024-03-11T00:14:10.385451-06:00'
 model: gpt-4-0125-preview
 summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, ho\u1EB7c regex, l\xE0 nh\u1EEFng m\u1EAB\
   u \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm k\u1EBFt h\u1EE3p c\xE1\

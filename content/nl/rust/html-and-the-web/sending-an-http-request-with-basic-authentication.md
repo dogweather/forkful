@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:26.012978-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie betekent dat\
   \ er een gebruikersnaam en wachtwoord in de aanvraagheader worden gestopt om te\u2026"
-lastmod: '2024-02-25T18:49:47.937938-07:00'
+lastmod: '2024-03-11T00:14:24.411116-06:00'
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie betekent dat er\
   \ een gebruikersnaam en wachtwoord in de aanvraagheader worden gestopt om te\u2026"

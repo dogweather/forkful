@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:52:35.314383-07:00
 description: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
   \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"
-lastmod: '2024-02-25T18:49:48.001069-07:00'
+lastmod: '2024-03-11T00:14:24.477102-06:00'
 model: gpt-4-0125-preview
 summary: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
   \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"

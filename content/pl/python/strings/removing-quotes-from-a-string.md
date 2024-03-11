@@ -3,7 +3,7 @@ date: 2024-01-26 03:42:23.511559-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cucha znak\xF3w zazwyczaj\
   \ oznacza usuwanie zb\u0119dnych podw\xF3jnych (\") lub pojedynczych (') znak\xF3\
   w cudzys\u0142owu. Programi\u015Bci robi\u0105 to w\u2026"
-lastmod: '2024-02-25T18:49:33.362344-07:00'
+lastmod: '2024-03-11T00:14:08.109457-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cucha znak\xF3w zazwyczaj oznacza\
   \ usuwanie zb\u0119dnych podw\xF3jnych (\") lub pojedynczych (') znak\xF3w cudzys\u0142\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:42.187548-07:00
 description: "A interpola\xE7\xE3o de strings permite misturar trechos de texto com\
   \ c\xF3digo Ruby, para criar uma string \xFAnica de forma din\xE2mica. Programadores\
   \ usam essa\u2026"
-lastmod: '2024-02-25T18:49:44.696713-07:00'
+lastmod: '2024-03-11T00:14:20.823395-06:00'
 model: gpt-4-1106-preview
 summary: "A interpola\xE7\xE3o de strings permite misturar trechos de texto com c\xF3\
   digo Ruby, para criar uma string \xFAnica de forma din\xE2mica. Programadores usam\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:36.937646-07:00
 description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
   \ de convertir du texte en un objet Date. Cette op\xE9ration est fondamentale pour\
   \ les\u2026"
-lastmod: '2024-02-25T18:49:54.482164-07:00'
+lastmod: '2024-03-11T00:14:31.699518-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
   \ de convertir du texte en un objet Date. Cette op\xE9ration est fondamentale pour\

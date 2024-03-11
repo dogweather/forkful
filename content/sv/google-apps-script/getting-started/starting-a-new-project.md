@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:46.215722-07:00
 description: "Att starta ett nytt projekt i Google Apps Script (GAS) inneb\xE4r att\
   \ man initialiserar en skriptfil inom Googles ekosystem (Google Drive, Dokument,\u2026"
-lastmod: '2024-02-25T18:49:35.775862-07:00'
+lastmod: '2024-03-11T00:14:10.748019-06:00'
 model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i Google Apps Script (GAS) inneb\xE4r att man\
   \ initialiserar en skriptfil inom Googles ekosystem (Google Drive, Dokument,\u2026"

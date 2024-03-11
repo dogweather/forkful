@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:16.164284-07:00
 description: "Sammenligning av to datoer handler om \xE5 finne ut hvilken som kommer\
   \ f\xF8r eller etter, eller om de er like. Programmerere gj\xF8r det for \xE5 h\xE5\
   ndtere\u2026"
-lastmod: '2024-02-25T18:49:38.724436-07:00'
+lastmod: '2024-03-11T00:14:14.075942-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenligning av to datoer handler om \xE5 finne ut hvilken som kommer f\xF8\
   r eller etter, eller om de er like. Programmerere gj\xF8r det for \xE5 h\xE5ndtere\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:35.460269-07:00
 description: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar\
   \ `a` en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`).\
   \ In\u2026"
-lastmod: '2024-02-25T18:49:47.764328-07:00'
+lastmod: '2024-03-11T00:14:24.180194-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar `a`\
   \ en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`). In\u2026"

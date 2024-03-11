@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:03.765315-07:00
 description: "Zapisywanie do pliku tekstowego w Ruby jest podstawow\u0105 operacj\u0105\
   , kt\xF3ra pozwala na trwa\u0142e przechowywanie wyj\u015Bcia i danych, umo\u017C\
   liwiaj\u0105c p\xF3\u017Aniejszy dost\u0119p\u2026"
-lastmod: '2024-02-25T18:49:34.327030-07:00'
+lastmod: '2024-03-11T00:14:09.172698-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie do pliku tekstowego w Ruby jest podstawow\u0105 operacj\u0105\
   , kt\xF3ra pozwala na trwa\u0142e przechowywanie wyj\u015Bcia i danych, umo\u017C\

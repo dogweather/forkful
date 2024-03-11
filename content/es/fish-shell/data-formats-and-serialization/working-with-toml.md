@@ -3,7 +3,7 @@ date: 2024-01-26 04:21:19.944616-07:00
 description: "TOML es un formato de archivo de configuraci\xF3n, f\xE1cil de leer\
   \ y escribir para los humanos, y f\xE1cil de analizar y generar para las m\xE1quinas.\
   \ Los\u2026"
-lastmod: '2024-02-25T18:49:55.993946-07:00'
+lastmod: '2024-03-11T00:14:33.362361-06:00'
 model: gpt-4-0125-preview
 summary: "TOML es un formato de archivo de configuraci\xF3n, f\xE1cil de leer y escribir\
   \ para los humanos, y f\xE1cil de analizar y generar para las m\xE1quinas. Los\u2026"

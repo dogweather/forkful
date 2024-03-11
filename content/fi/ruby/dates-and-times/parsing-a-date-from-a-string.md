@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:24.572929-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
   \ tekstin, joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista `Date`-\
   \ tai `DateTime`-objektiksi, jonka Ruby ymm\xE4rt\xE4\xE4.\u2026"
-lastmod: '2024-02-25T18:49:53.999807-07:00'
+lastmod: '2024-03-11T00:14:31.137678-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstin,\
   \ joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista `Date`- tai `DateTime`-objektiksi,\

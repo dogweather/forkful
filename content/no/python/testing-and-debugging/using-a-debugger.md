@@ -3,7 +3,7 @@ date: 2024-01-26 04:08:56.813966-07:00
 description: "\"\xC5 bruke en feils\xF8ker\" handler om \xE5 steg-for-steg g\xE5 gjennom\
   \ Python-koden din for \xE5 avdekke feil og forst\xE5 oppf\xF8rsel. Vi gj\xF8r det\
   \ fordi det er mye enklere\u2026"
-lastmod: '2024-02-25T18:49:38.593784-07:00'
+lastmod: '2024-03-11T00:14:13.885108-06:00'
 model: gpt-4-0125-preview
 summary: "\"\xC5 bruke en feils\xF8ker\" handler om \xE5 steg-for-steg g\xE5 gjennom\
   \ Python-koden din for \xE5 avdekke feil og forst\xE5 oppf\xF8rsel. Vi gj\xF8r det\

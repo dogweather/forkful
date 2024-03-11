@@ -5,7 +5,7 @@ date: 2024-01-28 21:59:01.596003-07:00
 description: "Het verwijderen van tekens die overeenkomen met een bepaald patroon\
   \ gaat over het wegstrippen van ongewenste delen van je strings \u2014 denk aan\
   \ het opschonen\u2026"
-lastmod: '2024-02-25T18:49:48.346752-07:00'
+lastmod: '2024-03-11T00:14:24.843827-06:00'
 model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een bepaald patroon gaat\
   \ over het wegstrippen van ongewenste delen van je strings \u2014 denk aan het opschonen\u2026"

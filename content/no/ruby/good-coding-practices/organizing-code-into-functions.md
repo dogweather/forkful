@@ -2,7 +2,7 @@
 date: 2024-01-26 01:11:46.688282-07:00
 description: "\xC5 organisere kode i funksjoner deler scriptet ditt inn i gjenbrukbare\
   \ deler. Det handler om \xE5 gj\xF8re koden din ren, h\xE5ndterbar og mindre feilutsatt.\u2026"
-lastmod: '2024-02-25T18:49:39.501172-07:00'
+lastmod: '2024-03-11T00:14:14.937238-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner deler scriptet ditt inn i gjenbrukbare\
   \ deler. Det handler om \xE5 gj\xF8re koden din ren, h\xE5ndterbar og mindre feilutsatt.\u2026"

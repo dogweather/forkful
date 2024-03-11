@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:03.289938-07:00
 description: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
   \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"
-lastmod: '2024-02-25T18:49:47.977682-07:00'
+lastmod: '2024-03-11T00:14:24.452767-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
   \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"

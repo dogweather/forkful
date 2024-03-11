@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:49.338473-07:00
 description: "Att avrunda tal inneb\xE4r att justera dem till det n\xE4rmaste hela\
   \ talet eller en br\xE5kdel med viss precision. Programmerare avrundar tal f\xF6\
   r att f\xF6renkla\u2026"
-lastmod: '2024-02-25T18:49:35.988898-07:00'
+lastmod: '2024-03-11T00:14:11.033107-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att justera dem till det n\xE4rmaste hela talet\
   \ eller en br\xE5kdel med viss precision. Programmerare avrundar tal f\xF6r att\

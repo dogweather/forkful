@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:40.961868-07:00
 description: "Att skriva tester i Elm inneb\xE4r att skapa testfall f\xF6r att verifiera\
   \ riktigheten av din Elm-kod, s\xE4kerst\xE4llande att den fungerar som f\xF6rv\xE4\
   ntat.\u2026"
-lastmod: '2024-02-25T18:49:36.127203-07:00'
+lastmod: '2024-03-11T00:14:11.181509-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Elm inneb\xE4r att skapa testfall f\xF6r att verifiera\
   \ riktigheten av din Elm-kod, s\xE4kerst\xE4llande att den fungerar som f\xF6rv\xE4\

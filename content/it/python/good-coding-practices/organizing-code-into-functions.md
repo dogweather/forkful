@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:11.990763-07:00
 description: "Organizzare il codice in funzioni consiste nel suddividere il codice\
   \ in blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice\
   \ pi\xF9\u2026"
-lastmod: '2024-02-25T18:49:40.934632-07:00'
+lastmod: '2024-03-11T00:14:16.561862-06:00'
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni consiste nel suddividere il codice in\
   \ blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice\

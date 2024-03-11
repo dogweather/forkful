@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:48.915717-07:00
 description: "Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to,\
   \ aby modyfikowa\u0107 dane, poprawia\u0107 b\u0142\u0119dy, czy te\u017C dostosowywa\u0107\
   \ ci\u0105gi znak\xF3w pod\u2026"
-lastmod: '2024-02-25T18:49:33.757413-07:00'
+lastmod: '2024-03-11T00:14:08.575233-06:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to, aby\
   \ modyfikowa\u0107 dane, poprawia\u0107 b\u0142\u0119dy, czy te\u017C dostosowywa\u0107\

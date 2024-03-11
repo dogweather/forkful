@@ -3,7 +3,7 @@ date: 2024-01-26 04:46:13.085499-07:00
 description: "Los n\xFAmeros complejos, que constan de una parte real y una parte\
   \ imaginaria (generalmente escritos como a + bi), abren la puerta a c\xE1lculos\
   \ que son\u2026"
-lastmod: '2024-02-25T18:49:55.294064-07:00'
+lastmod: '2024-03-11T00:14:32.612831-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, que constan de una parte real y una parte imaginaria\
   \ (generalmente escritos como a + bi), abren la puerta a c\xE1lculos que son\u2026"

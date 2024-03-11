@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:29.172102-07:00
 description: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n\
   \ de computadoras, involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a\
   \ un n\xFAmero\u2026"
-lastmod: '2024-02-25T18:49:55.127455-07:00'
+lastmod: '2024-03-11T00:14:32.380192-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n de computadoras,\
   \ involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a un n\xFAmero\u2026"

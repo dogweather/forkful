@@ -2,7 +2,7 @@
 date: 2024-01-25 02:04:02.274630-07:00
 description: "Logging in programming is like keeping a diary for your application.\
   \ It's the systematic recording of events, messages, and data points that give you\u2026"
-lastmod: '2024-02-25T18:49:56.993555-07:00'
+lastmod: '2024-03-11T00:14:34.444200-06:00'
 model: gpt-4-1106-preview
 summary: "Logging in programming is like keeping a diary for your application. It's\
   \ the systematic recording of events, messages, and data points that give you\u2026"

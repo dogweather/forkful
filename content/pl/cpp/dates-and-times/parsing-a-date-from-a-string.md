@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:55.322604-07:00
 description: "Parsowanie daty ze stringa polega na interpretacji formatu ci\u0105\
   gu znak\xF3w w celu wyodr\u0119bnienia sk\u0142adnik\xF3w daty, takich jak dzie\u0144\
   , miesi\u0105c i rok. Programi\u015Bci\u2026"
-lastmod: '2024-02-25T18:49:34.094178-07:00'
+lastmod: '2024-03-11T00:14:08.922956-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa polega na interpretacji formatu ci\u0105gu znak\xF3\
   w w celu wyodr\u0119bnienia sk\u0142adnik\xF3w daty, takich jak dzie\u0144, miesi\u0105\

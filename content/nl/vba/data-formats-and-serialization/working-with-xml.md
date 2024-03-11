@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:47.430484-07:00
 description: "Werken met XML in Visual Basic for Applications (VBA) houdt in het parsen,\
   \ cre\xEBren en wijzigen van XML-documenten binnen de context van Microsoft Office-\u2026"
-lastmod: '2024-02-25T18:49:48.006042-07:00'
+lastmod: '2024-03-11T00:14:24.482905-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML in Visual Basic for Applications (VBA) houdt in het parsen,\
   \ cre\xEBren en wijzigen van XML-documenten binnen de context van Microsoft Office-\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:22.258942-07:00
 description: "Remover caracteres que correspondem a um padr\xE3o espec\xEDfico de\
   \ strings em C trata-se de eliminar todas as inst\xE2ncias de certos caracteres\
   \ que se encaixam\u2026"
-lastmod: '2024-02-25T18:49:44.649128-07:00'
+lastmod: '2024-03-11T00:14:20.772608-06:00'
 model: gpt-4-0125-preview
 summary: "Remover caracteres que correspondem a um padr\xE3o espec\xEDfico de strings\
   \ em C trata-se de eliminar todas as inst\xE2ncias de certos caracteres que se encaixam\u2026"

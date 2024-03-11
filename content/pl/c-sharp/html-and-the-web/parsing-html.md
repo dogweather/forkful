@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:57.411408-07:00
 description: "Parsowanie HTML w programowaniu polega na analizie struktury dokumentu\
   \ HTML, co pozwala na ekstrakcj\u0119, manipulacj\u0119 i interakcj\u0119 z jego\
   \ zawarto\u015Bci\u0105\u2026"
-lastmod: '2024-02-25T18:49:33.770819-07:00'
+lastmod: '2024-03-11T00:14:08.589040-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w programowaniu polega na analizie struktury dokumentu HTML,\
   \ co pozwala na ekstrakcj\u0119, manipulacj\u0119 i interakcj\u0119 z jego zawarto\u015B\

@@ -3,7 +3,7 @@ date: 2024-01-26 00:57:50.564283-07:00
 description: "Gestire gli errori significa aspettarsi l'inaspettato; \xE8 il modo\
   \ in cui ci comportiamo quando le cose vanno male nel nostro codice. Lo facciamo\
   \ per\u2026"
-lastmod: '2024-02-25T18:49:41.060352-07:00'
+lastmod: '2024-03-11T00:14:16.745870-06:00'
 model: gpt-4-1106-preview
 summary: "Gestire gli errori significa aspettarsi l'inaspettato; \xE8 il modo in cui\
   \ ci comportiamo quando le cose vanno male nel nostro codice. Lo facciamo per\u2026"

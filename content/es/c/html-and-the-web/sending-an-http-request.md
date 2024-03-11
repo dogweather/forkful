@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:33.576318-07:00
 description: "Enviar una solicitud HTTP implica crear y enviar una solicitud a un\
   \ servidor web para recuperar o enviar datos. Los programadores hacen esto en C\
   \ para\u2026"
-lastmod: '2024-02-25T18:49:56.010577-07:00'
+lastmod: '2024-03-11T00:14:33.379904-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP implica crear y enviar una solicitud a un servidor\
   \ web para recuperar o enviar datos. Los programadores hacen esto en C para\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:53.218856-07:00
 description: "\xC5 konvertere en streng til sm\xE5 bokstaver i C inneb\xE6rer \xE5\
   \ transformere alle store bokstaver i en gitt streng til deres tilsvarende sm\xE5\
   \ bokstaver.\u2026"
-lastmod: '2024-02-25T18:49:39.434806-07:00'
+lastmod: '2024-03-11T00:14:14.862852-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i C inneb\xE6rer \xE5 transformere\
   \ alle store bokstaver i en gitt streng til deres tilsvarende sm\xE5 bokstaver.\u2026"

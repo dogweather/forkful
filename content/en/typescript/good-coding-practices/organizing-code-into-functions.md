@@ -3,7 +3,7 @@ date: 2024-01-25 03:00:11.560491-07:00
 description: "Organizing code into functions means chunking your code into reusable,\
   \ modular blocks. We do this to keep things DRY (Don't Repeat Yourself), making\
   \ code\u2026"
-lastmod: '2024-02-25T18:49:56.287404-07:00'
+lastmod: '2024-03-11T00:14:33.723072-06:00'
 model: gpt-4-1106-preview
 summary: "Organizing code into functions means chunking your code into reusable, modular\
   \ blocks. We do this to keep things DRY (Don't Repeat Yourself), making code\u2026"

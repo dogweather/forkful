@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:44.655521-07:00
 description: "\xC5 finne lengden p\xE5 en streng i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer \xE5 bestemme antall tegn den inneholder. Programmerere utf\xF8rer\
   \ ofte denne\u2026"
-lastmod: '2024-02-25T18:49:38.791244-07:00'
+lastmod: '2024-03-11T00:14:14.148071-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en streng i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer \xE5 bestemme antall tegn den inneholder. Programmerere utf\xF8rer\

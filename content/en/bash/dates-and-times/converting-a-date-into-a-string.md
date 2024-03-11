@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:51.086129-07:00
 description: "Converting a date to a string means turning it into text that represents\
   \ the date. We do this to format dates for humans to read or to prepare them for\u2026"
-lastmod: '2024-02-25T18:49:56.693717-07:00'
+lastmod: '2024-03-11T00:14:34.121714-06:00'
 model: gpt-4-1106-preview
 summary: "Converting a date to a string means turning it into text that represents\
   \ the date. We do this to format dates for humans to read or to prepare them for\u2026"

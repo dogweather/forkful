@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:21.689540-07:00
 description: "Regul\xE6re uttrykk (regex) i Java lar deg definere spesifikke m\xF8\
   nstre for \xE5 s\xF8ke, manipulere eller validere strenger i koden din. Programmerere\
   \ bruker dem\u2026"
-lastmod: '2024-02-25T18:49:38.835900-07:00'
+lastmod: '2024-03-11T00:14:14.196302-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Java lar deg definere spesifikke m\xF8nstre\
   \ for \xE5 s\xF8ke, manipulere eller validere strenger i koden din. Programmerere\

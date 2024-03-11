@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:43.615107-07:00
 description: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der\
   \ Eingabe, so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest\
   \ klein bleibt.\u2026"
-lastmod: '2024-02-25T18:49:50.515543-07:00'
+lastmod: '2024-03-11T00:14:27.273956-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der Eingabe,\
   \ so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest klein\

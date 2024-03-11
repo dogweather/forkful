@@ -3,7 +3,7 @@ date: 2024-01-26 04:38:50.779159-07:00
 description: "N\xFAmeros complexos ampliam os n\xFAmeros reais com uma parte adicional,\
   \ a unidade imagin\xE1ria 'i'. Programadores os utilizam em v\xE1rias \xE1reas,\
   \ incluindo\u2026"
-lastmod: '2024-02-25T18:49:43.852348-07:00'
+lastmod: '2024-03-11T00:14:19.862384-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos ampliam os n\xFAmeros reais com uma parte adicional,\
   \ a unidade imagin\xE1ria 'i'. Programadores os utilizam em v\xE1rias \xE1reas,\

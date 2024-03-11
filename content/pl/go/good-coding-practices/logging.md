@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:59:15.984431-07:00
 description: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji\
   \ o wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i\u2026"
-lastmod: '2024-02-25T18:49:33.283631-07:00'
+lastmod: '2024-03-11T00:14:08.031182-06:00'
 model: gpt-4-0125-preview
 summary: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji o\
   \ wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:06.658918-07:00
 description: "Code in Funktionen zu organisieren bedeutet, das Unget\xFCm eines Programms\
   \ in handliche St\xFCcke zu zerlegen, von denen jedes eine bestimmte Aufgabe erf\xFC\
   llt.\u2026"
-lastmod: '2024-02-25T18:49:50.832751-07:00'
+lastmod: '2024-03-11T00:14:27.660765-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren bedeutet, das Unget\xFCm eines Programms\
   \ in handliche St\xFCcke zu zerlegen, von denen jedes eine bestimmte Aufgabe erf\xFC\

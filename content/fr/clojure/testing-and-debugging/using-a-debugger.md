@@ -3,7 +3,7 @@ date: 2024-01-26 03:48:15.191496-07:00
 description: "Utiliser un d\xE9bogueur signifie que vous vous \xE9quipez d'une loupe\
   \ pour scruter votre code. Les programmeurs font cela pour \xE9craser les bugs,\
   \ comprendre le\u2026"
-lastmod: '2024-02-25T18:49:54.173735-07:00'
+lastmod: '2024-03-11T00:14:31.318695-06:00'
 model: gpt-4-0125-preview
 summary: "Utiliser un d\xE9bogueur signifie que vous vous \xE9quipez d'une loupe pour\
   \ scruter votre code. Les programmeurs font cela pour \xE9craser les bugs, comprendre\

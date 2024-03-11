@@ -3,7 +3,7 @@ date: 2024-01-26 01:46:58.572681-07:00
 description: "Refatora\xE7\xE3o \xE9 a arte de ajustar o c\xF3digo existente para\
   \ melhorar sua estrutura, legibilidade e efici\xEAncia sem alterar seu comportamento\
   \ externo.\u2026"
-lastmod: '2024-02-25T18:49:44.337405-07:00'
+lastmod: '2024-03-11T00:14:20.436462-06:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 a arte de ajustar o c\xF3digo existente para melhorar\
   \ sua estrutura, legibilidade e efici\xEAncia sem alterar seu comportamento externo.\u2026"

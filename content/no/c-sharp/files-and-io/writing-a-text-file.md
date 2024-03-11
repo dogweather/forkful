@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:49.654045-07:00
 description: "\xC5 skrive en tekstfil i C# involverer \xE5 programmert skape eller\
   \ endre tekstfiler p\xE5 filsystemet - en grunnleggende oppgave for mange applikasjoner,\
   \ slik\u2026"
-lastmod: '2024-02-25T18:49:38.989537-07:00'
+lastmod: '2024-03-11T00:14:14.375900-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i C# involverer \xE5 programmert skape eller endre\
   \ tekstfiler p\xE5 filsystemet - en grunnleggende oppgave for mange applikasjoner,\

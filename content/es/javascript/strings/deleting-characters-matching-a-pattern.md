@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:50.226398-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n es como hacer una\
   \ limpieza en tu texto, manteniendo solo lo que necesitas. Los programadores lo\
   \ hacen para\u2026"
-lastmod: '2024-02-25T18:49:55.912547-07:00'
+lastmod: '2024-03-11T00:14:33.272426-06:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es como hacer una limpieza\
   \ en tu texto, manteniendo solo lo que necesitas. Los programadores lo hacen para\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:30.011559-07:00
 description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data\
   \ eller en annan resurs. Programmerare g\xF6r detta f\xF6r att integrera olika webbtj\xE4\
   nster, h\xE4mta\u2026"
-lastmod: '2024-02-25T18:49:35.904892-07:00'
+lastmod: '2024-03-11T00:14:10.894471-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data eller\
   \ en annan resurs. Programmerare g\xF6r detta f\xF6r att integrera olika webbtj\xE4\

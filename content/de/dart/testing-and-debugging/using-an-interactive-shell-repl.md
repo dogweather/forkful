@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:51.249184-07:00
 description: "Eine interaktive Shell (REPL - Read-Evaluate-Print Loop) f\xFCr Dart\
   \ erm\xF6glicht es Programmierern, Dart-Code Zeile f\xFCr Zeile dynamisch zu tippen\
   \ und\u2026"
-lastmod: '2024-03-09T21:06:17.577152-07:00'
+lastmod: '2024-03-11T00:14:27.476622-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell (REPL - Read-Evaluate-Print Loop) f\xFCr Dart erm\xF6\
   glicht es Programmierern, Dart-Code Zeile f\xFCr Zeile dynamisch zu tippen und\u2026"

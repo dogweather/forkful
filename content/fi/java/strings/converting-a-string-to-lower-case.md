@@ -2,7 +2,7 @@
 date: 2024-01-20 17:38:45.419134-07:00
 description: "Muuttaa stringin pieniksi kirjaimiksi. Teemme n\xE4in muun muassa tiedon\
   \ normalisointiin ja vertailuihin, jolloin isot kirjaimet eiv\xE4t vaikuta tulokseen."
-lastmod: '2024-02-25T18:49:53.354940-07:00'
+lastmod: '2024-03-11T00:14:30.372280-06:00'
 model: gpt-4-1106-preview
 summary: "Muuttaa stringin pieniksi kirjaimiksi. Teemme n\xE4in muun muassa tiedon\
   \ normalisointiin ja vertailuihin, jolloin isot kirjaimet eiv\xE4t vaikuta tulokseen."

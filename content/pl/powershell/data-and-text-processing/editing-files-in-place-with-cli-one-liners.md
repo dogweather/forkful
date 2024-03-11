@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:55.275241-07:00
 description: "Edycja plik\xF3w w miejscu za pomoc\u0105 jednolinijkowych polece\u0144\
   \ CLI w PowerShellu polega na dokonywaniu bezpo\u015Brednich modyfikacji plik\xF3\
   w z linii polece\u0144, bez\u2026"
-lastmod: '2024-02-25T18:49:33.994425-07:00'
+lastmod: '2024-03-11T00:14:08.819500-06:00'
 model: gpt-4-0125-preview
 summary: "Edycja plik\xF3w w miejscu za pomoc\u0105 jednolinijkowych polece\u0144\
   \ CLI w PowerShellu polega na dokonywaniu bezpo\u015Brednich modyfikacji plik\xF3\

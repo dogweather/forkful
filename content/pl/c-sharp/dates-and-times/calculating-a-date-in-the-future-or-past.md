@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:33.019139-07:00
 description: "Co to jest obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142\
   o\u015Bci? To po prostu wyliczanie nowej daty, dodaj\u0105c lub odejmuj\u0105c czas\
   \ od danej daty pocz\u0105tkowej.\u2026"
-lastmod: '2024-02-25T18:49:33.786600-07:00'
+lastmod: '2024-03-11T00:14:08.605102-06:00'
 model: gpt-4-1106-preview
 summary: "Co to jest obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015B\
   ci? To po prostu wyliczanie nowej daty, dodaj\u0105c lub odejmuj\u0105c czas od\

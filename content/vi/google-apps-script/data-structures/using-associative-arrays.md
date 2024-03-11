@@ -6,7 +6,7 @@ description: "M\u1EA3ng li\xEAn k\u1EBFt, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u
   n nh\u01B0 l\xE0 \u0111\u1ED1i t\u01B0\u1EE3ng trong Google Apps Script (m\u1ED9\
   t bi\u1EBFn th\u1EC3 c\u1EE7a JavaScript), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh\
   \ vi\xEAn t\u1EA1o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp\u2026"
-lastmod: '2024-02-25T18:49:34.405490-07:00'
+lastmod: '2024-03-11T00:14:09.256093-06:00'
 model: gpt-4-0125-preview
 summary: "M\u1EA3ng li\xEAn k\u1EBFt, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBFn\
   \ nh\u01B0 l\xE0 \u0111\u1ED1i t\u01B0\u1EE3ng trong Google Apps Script (m\u1ED9\

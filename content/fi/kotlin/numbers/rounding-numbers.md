@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:48.568987-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn tarkkuuteen. Ohjelmoijat tekev\xE4\
   t niin parantaakseen\u2026"
-lastmod: '2024-02-25T18:49:53.442825-07:00'
+lastmod: '2024-03-11T00:14:30.470441-06:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
   \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn tarkkuuteen. Ohjelmoijat tekev\xE4\

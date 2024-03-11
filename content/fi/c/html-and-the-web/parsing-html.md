@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:51.773219-07:00
 description: "HTML:n j\xE4sent\xE4minen C-kielell\xE4 k\xE4sitt\xE4\xE4 HTML-dokumenttien\
   \ analysoimisen tehokkaasti datan, rakenteen tai tiettyjen osien poimimiseksi, usein\
   \ datan\u2026"
-lastmod: '2024-02-25T18:49:53.942674-07:00'
+lastmod: '2024-03-11T00:14:31.079091-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen C-kielell\xE4 k\xE4sitt\xE4\xE4 HTML-dokumenttien\
   \ analysoimisen tehokkaasti datan, rakenteen tai tiettyjen osien poimimiseksi, usein\

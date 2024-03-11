@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:08.481933-07:00
 description: "Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, jeden\
   \ Gro\xDFbuchstaben in seinen entsprechenden Kleinbuchstaben zu \xFCberf\xFChren.\
   \ Das sorgt f\xFCr\u2026"
-lastmod: '2024-02-25T18:49:51.263788-07:00'
+lastmod: '2024-03-11T00:14:28.115410-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, jeden Gro\xDF\
   buchstaben in seinen entsprechenden Kleinbuchstaben zu \xFCberf\xFChren. Das sorgt\

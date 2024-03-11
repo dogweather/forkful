@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:54.974536-07:00
 description: "Att skriva till en textfil i Fish Shell g\xF6r att du kan lagra data\
   \ p\xE5 ett best\xE4ndigt s\xE4tt, vilket m\xF6jligg\xF6r enkel h\xE4mtning eller\
   \ manipulation av data\u2026"
-lastmod: '2024-02-25T18:49:36.671994-07:00'
+lastmod: '2024-03-11T00:14:11.758820-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Fish Shell g\xF6r att du kan lagra data p\xE5\
   \ ett best\xE4ndigt s\xE4tt, vilket m\xF6jligg\xF6r enkel h\xE4mtning eller manipulation\

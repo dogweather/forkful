@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:00.900171-07:00
 description: "Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer\
   \ Datei in unserem Programm verwenden. Wir machen das, um Daten zu verarbeiten,\
   \ die in\u2026"
-lastmod: '2024-02-25T18:49:51.251666-07:00'
+lastmod: '2024-03-11T00:14:28.103494-06:00'
 model: gpt-4-1106-preview
 summary: "Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer Datei\
   \ in unserem Programm verwenden. Wir machen das, um Daten zu verarbeiten, die in\u2026"

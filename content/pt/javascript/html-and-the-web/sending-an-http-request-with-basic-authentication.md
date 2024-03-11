@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:10.606316-07:00
 description: "Enviar um pedido HTTP com autentica\xE7\xE3o b\xE1sica significa incluir\
   \ credenciais de usu\xE1rio e senha codificados em base-64 no cabe\xE7alho do pedido.\u2026"
-lastmod: '2024-02-25T18:49:44.579150-07:00'
+lastmod: '2024-03-11T00:14:20.697515-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar um pedido HTTP com autentica\xE7\xE3o b\xE1sica significa incluir\
   \ credenciais de usu\xE1rio e senha codificados em base-64 no cabe\xE7alho do pedido.\u2026"

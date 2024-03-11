@@ -6,7 +6,7 @@ date: 2024-01-28 03:00:49.630402-07:00
 description: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4\
   lt\xF6\xE4,\u2026"
-lastmod: '2024-02-25T18:49:53.854522-07:00'
+lastmod: '2024-03-11T00:14:30.990065-06:00'
 model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista. Ohjelmoijat\
   \ tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4lt\xF6\

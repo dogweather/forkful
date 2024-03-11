@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:02.668831-07:00
 description: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer des\
   \ t\xE2ches complexes en blocs de code plus petits et r\xE9utilisables. Cette pratique\
   \ am\xE9liore la\u2026"
-lastmod: '2024-02-25T18:49:55.002307-07:00'
+lastmod: '2024-03-11T00:14:32.250016-06:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer des t\xE2\
   ches complexes en blocs de code plus petits et r\xE9utilisables. Cette pratique\

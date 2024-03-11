@@ -2,7 +2,7 @@
 date: 2024-01-26 04:25:30.285670-07:00
 description: "TOML, som er kort for Toms Opplagte, Minimale Spr\xE5k, er et data serialiseringsformat\
   \ i slekt med JSON eller YAML, men har som m\xE5l \xE5 v\xE6re enkelt og\u2026"
-lastmod: '2024-02-25T18:49:38.611921-07:00'
+lastmod: '2024-03-11T00:14:13.904882-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, som er kort for Toms Opplagte, Minimale Spr\xE5k, er et data serialiseringsformat\
   \ i slekt med JSON eller YAML, men har som m\xE5l \xE5 v\xE6re enkelt og\u2026"

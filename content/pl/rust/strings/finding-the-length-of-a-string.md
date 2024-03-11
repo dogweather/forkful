@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:16.742453-07:00
 description: "Co i dlaczego? Sprawdzanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3\
   w, to po prostu spos\xF3b, by wiedzie\u0107 ile znak\xF3w zawiera. Programi\u015B\
   ci robi\u0105 to, by np. walidowa\u0107 dane\u2026"
-lastmod: '2024-02-25T18:49:33.542534-07:00'
+lastmod: '2024-03-11T00:14:08.348266-06:00'
 model: gpt-4-1106-preview
 summary: "Co i dlaczego? Sprawdzanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3\
   w, to po prostu spos\xF3b, by wiedzie\u0107 ile znak\xF3w zawiera. Programi\u015B\

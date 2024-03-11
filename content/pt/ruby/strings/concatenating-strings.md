@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:37.531758-07:00
 description: "Concatenar strings \xE9 o processo de juntar duas ou mais strings para\
   \ formar uma \xFAnica. Programadores fazem isso para construir mensagens, gerar\
   \ sa\xEDdas\u2026"
-lastmod: '2024-02-25T18:49:44.702188-07:00'
+lastmod: '2024-03-11T00:14:20.829403-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 o processo de juntar duas ou mais strings para formar\
   \ uma \xFAnica. Programadores fazem isso para construir mensagens, gerar sa\xED\

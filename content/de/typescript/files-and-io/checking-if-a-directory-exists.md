@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:43.908869-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, ist\
   \ f\xFCr Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder\
   \ das Schreiben\u2026"
-lastmod: '2024-02-25T18:49:50.713874-07:00'
+lastmod: '2024-03-11T00:14:27.536090-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, ist f\xFC\
   r Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben\u2026"

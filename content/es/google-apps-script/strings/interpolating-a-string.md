@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:13.857282-07:00
 description: "La interpolaci\xF3n de cadenas en Google Apps Script permite la incrustaci\xF3\
   n din\xE1mica de expresiones dentro de las cadenas, facilitando la creaci\xF3n de\
   \ c\xF3digo\u2026"
-lastmod: '2024-02-25T18:49:55.117709-07:00'
+lastmod: '2024-03-11T00:14:32.370239-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas en Google Apps Script permite la incrustaci\xF3\
   n din\xE1mica de expresiones dentro de las cadenas, facilitando la creaci\xF3n de\

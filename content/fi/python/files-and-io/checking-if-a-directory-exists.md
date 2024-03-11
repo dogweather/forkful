@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:15.888586-07:00
 description: "Hakemiston olemassaolon tarkistaminen Pythonissa merkitsee kansion l\xE4\
   sn\xE4olon varmistamista tiedostoj\xE4rjestelm\xE4ss\xE4 ennen sellaisia toimintoja\
   \ kuin\u2026"
-lastmod: '2024-02-25T18:49:53.132176-07:00'
+lastmod: '2024-03-11T00:14:30.084851-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Pythonissa merkitsee kansion l\xE4\
   sn\xE4olon varmistamista tiedostoj\xE4rjestelm\xE4ss\xE4 ennen sellaisia toimintoja\

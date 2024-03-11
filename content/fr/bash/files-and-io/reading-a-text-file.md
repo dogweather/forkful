@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:39.725483-07:00
 description: "Lire un fichier texte, c'est parcourir et manipuler le contenu stock\xE9\
   . Les programmeurs le font pour traiter des donn\xE9es, configurer des logiciels,\
   \ et\u2026"
-lastmod: '2024-02-25T18:49:54.703214-07:00'
+lastmod: '2024-03-11T00:14:31.941568-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est parcourir et manipuler le contenu stock\xE9\
   . Les programmeurs le font pour traiter des donn\xE9es, configurer des logiciels,\

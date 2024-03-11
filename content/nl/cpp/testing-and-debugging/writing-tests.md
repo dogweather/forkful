@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:39.406062-07:00
 description: "Het schrijven van tests controleert of je code doet wat het moet doen,\
   \ en vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en\
   \ om\u2026"
-lastmod: '2024-02-25T18:49:48.449837-07:00'
+lastmod: '2024-03-11T00:14:24.953629-06:00'
 model: gpt-4-0125-preview
 summary: "Het schrijven van tests controleert of je code doet wat het moet doen, en\
   \ vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en om\u2026"

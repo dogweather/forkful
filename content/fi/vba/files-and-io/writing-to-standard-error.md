@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:09:23.884760-07:00
 description: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa\
   \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen\u2026"
-lastmod: '2024-02-25T18:49:53.341913-07:00'
+lastmod: '2024-03-11T00:14:30.357204-06:00'
 model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa\
   \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen\u2026"

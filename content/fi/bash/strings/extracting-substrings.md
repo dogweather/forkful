@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:03.252593-07:00
 description: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista\
   \ ja k\xE4ytt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitsevat t\xF6\
   ihin vain osan datasta."
-lastmod: '2024-02-25T18:49:53.638693-07:00'
+lastmod: '2024-03-11T00:14:30.681906-06:00'
 model: gpt-4-1106-preview
 summary: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista ja\
   \ k\xE4ytt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitsevat t\xF6\

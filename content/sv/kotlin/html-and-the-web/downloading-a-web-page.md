@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:34.310436-07:00
 description: "Att ladda ner en webbsida inneb\xE4r att extrahera inneh\xE5llet fr\xE5\
   n en URL och f\xE5 det i textformat. Programmerare g\xF6r detta f\xF6r att h\xE4\
   mta data, \xF6vervaka\u2026"
-lastmod: '2024-02-25T18:49:36.166080-07:00'
+lastmod: '2024-03-11T00:14:11.224151-06:00'
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att extrahera inneh\xE5llet fr\xE5\
   n en URL och f\xE5 det i textformat. Programmerare g\xF6r detta f\xF6r att h\xE4\

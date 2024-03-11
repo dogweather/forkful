@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:18.232717-07:00
 description: "Les expressions r\xE9guli\xE8res en C++ sont des s\xE9quences de caract\xE8\
   res qui d\xE9finissent un motif de recherche, utilis\xE9 pour la correspondance\
   \ ou la\u2026"
-lastmod: '2024-02-25T18:49:54.814249-07:00'
+lastmod: '2024-03-11T00:14:32.048204-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res en C++ sont des s\xE9quences de caract\xE8\
   res qui d\xE9finissent un motif de recherche, utilis\xE9 pour la correspondance\

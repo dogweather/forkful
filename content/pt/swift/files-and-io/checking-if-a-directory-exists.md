@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:39.157233-07:00
 description: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 essencial\
   \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift. Esta\
   \ tarefa\u2026"
-lastmod: '2024-02-25T18:49:44.552238-07:00'
+lastmod: '2024-03-11T00:14:20.668693-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 essencial\
   \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift. Esta\

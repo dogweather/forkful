@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:26.574168-07:00
 description: "Utdrag av substringer er n\xE5r du henter en del av en streng. Programmerere\
   \ gj\xF8r dette for \xE5 manipulere og analysere tekst, som \xE5 hente ut et brukernavn\
   \ fra\u2026"
-lastmod: '2024-02-25T18:49:39.047821-07:00'
+lastmod: '2024-03-11T00:14:14.439868-06:00'
 model: gpt-4-1106-preview
 summary: "Utdrag av substringer er n\xE5r du henter en del av en streng. Programmerere\
   \ gj\xF8r dette for \xE5 manipulere og analysere tekst, som \xE5 hente ut et brukernavn\

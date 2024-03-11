@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:21.556543-07:00
 description: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u2014\
   \ gestionar los errores y problemas con gracia sin que se caiga la aplicaci\xF3\
   n. Los\u2026"
-lastmod: '2024-02-25T18:49:56.066068-07:00'
+lastmod: '2024-03-11T00:14:33.440155-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u2014 gestionar\
   \ los errores y problemas con gracia sin que se caiga la aplicaci\xF3n. Los\u2026"

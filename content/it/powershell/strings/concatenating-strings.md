@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:41.130191-07:00
 description: "Unire le stringhe, o concatenazione, significa attaccare una stringa\
   \ alla fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file,\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:41.494105-07:00'
+lastmod: '2024-03-11T00:14:17.245506-06:00'
 model: gpt-4-1106-preview
 summary: "Unire le stringhe, o concatenazione, significa attaccare una stringa alla\
   \ fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file,\

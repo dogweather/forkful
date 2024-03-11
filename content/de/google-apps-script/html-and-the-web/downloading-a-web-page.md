@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:45.024696-07:00
 description: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das\
   \ Abrufen des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie\
   \ zum\u2026"
-lastmod: '2024-02-25T18:49:50.532486-07:00'
+lastmod: '2024-03-11T00:14:27.292070-06:00'
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das Abrufen\
   \ des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie zum\u2026"

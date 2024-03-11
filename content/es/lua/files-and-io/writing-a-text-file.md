@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:28.241627-07:00
 description: "Escribir en un archivo de texto en Lua implica crear o abrir un archivo\
   \ en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta\u2026"
-lastmod: '2024-02-25T18:49:55.691809-07:00'
+lastmod: '2024-03-11T00:14:33.040721-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en un archivo de texto en Lua implica crear o abrir un archivo\
   \ en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:13.461909-07:00
 description: "Sammenligne to datoer betyr \xE5 finne ut om de er identiske, eller\
   \ hvilken som kommer f\xF8r eller etter den andre. Dette er kritisk i oppgaver som\
   \ sortering\u2026"
-lastmod: '2024-02-25T18:49:38.858249-07:00'
+lastmod: '2024-03-11T00:14:14.221731-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenligne to datoer betyr \xE5 finne ut om de er identiske, eller hvilken\
   \ som kommer f\xF8r eller etter den andre. Dette er kritisk i oppgaver som sortering\u2026"

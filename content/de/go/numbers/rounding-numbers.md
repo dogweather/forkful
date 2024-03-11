@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:07:43.280775-07:00
 description: "Das Runden von Zahlen geht darum, den Wert einer Zahl auf die n\xE4\
   chste ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen.\u2026"
-lastmod: '2024-02-25T18:49:50.483222-07:00'
+lastmod: '2024-03-11T00:14:27.239684-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen geht darum, den Wert einer Zahl auf die n\xE4chste\
   \ ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen.\u2026"

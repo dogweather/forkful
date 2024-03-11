@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:26.800581-07:00
 description: "In Fish Shell, troviamo la lunghezza di una stringa per sapere quanti\
   \ caratteri contiene. Quest'operazione \xE8 utile nella manipolazione dei testi\
   \ e nella\u2026"
-lastmod: '2024-02-25T18:49:41.691689-07:00'
+lastmod: '2024-03-11T00:14:17.468771-06:00'
 model: gpt-4-1106-preview
 summary: "In Fish Shell, troviamo la lunghezza di una stringa per sapere quanti caratteri\
   \ contiene. Quest'operazione \xE8 utile nella manipolazione dei testi e nella\u2026"

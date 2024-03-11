@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:30.881461-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w pozwala programistom konwertowa\u0107\
   \ tekstowe reprezentacje dat na obiekty `Date` w JavaScript, u\u0142atwiaj\u0105\
   c operacje\u2026"
-lastmod: '2024-02-25T18:49:34.179392-07:00'
+lastmod: '2024-03-11T00:14:09.016297-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w pozwala programistom konwertowa\u0107\
   \ tekstowe reprezentacje dat na obiekty `Date` w JavaScript, u\u0142atwiaj\u0105\

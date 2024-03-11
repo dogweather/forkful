@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:10.438361-07:00
 description: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 simplesmente\
   \ a arte de selecionar certos trechos de uma string baseado em regras e dizer adeus\
   \ a eles.\u2026"
-lastmod: '2024-02-25T18:49:44.694885-07:00'
+lastmod: '2024-03-11T00:14:20.821492-06:00'
 model: gpt-4-1106-preview
 summary: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 simplesmente a\
   \ arte de selecionar certos trechos de uma string baseado em regras e dizer adeus\

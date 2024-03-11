@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:55.100865-07:00
 description: "YAML, j\u0119zyk serializacji danych zaprojektowany by by\u0107 przyjazny\
   \ dla cz\u0142owieka, jest cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\
   \ komunikacji\u2026"
-lastmod: '2024-02-25T18:49:33.529358-07:00'
+lastmod: '2024-03-11T00:14:08.333963-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, j\u0119zyk serializacji danych zaprojektowany by by\u0107 przyjazny\
   \ dla cz\u0142owieka, jest cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\

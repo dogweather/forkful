@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:53.069348-07:00
 description: "CSV-tiedostojen (pilkuilla erotettujen arvojen) k\xE4sittelyyn kuuluu\
   \ tietojen lukemista ja kirjoittamista n\xE4ihin tiedostoihin, mik\xE4 on yleinen\
   \ tarve\u2026"
-lastmod: '2024-02-25T18:49:53.222595-07:00'
+lastmod: '2024-03-11T00:14:30.179908-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotettujen arvojen) k\xE4sittelyyn kuuluu tietojen\
   \ lukemista ja kirjoittamista n\xE4ihin tiedostoihin, mik\xE4 on yleinen tarve\u2026"

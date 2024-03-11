@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:37.166560-07:00
 description: "Konwersja daty do ci\u0105gu znak\xF3w pozwala zaprezentowa\u0107 informacje\
   \ o czasie w zrozumia\u0142ym formacie. Programi\u015Bci robi\u0105 to, by u\u0142\
   atwi\u0107 u\u017Cytkownikom odczytanie\u2026"
-lastmod: '2024-02-25T18:49:33.563586-07:00'
+lastmod: '2024-03-11T00:14:08.371697-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja daty do ci\u0105gu znak\xF3w pozwala zaprezentowa\u0107 informacje\
   \ o czasie w zrozumia\u0142ym formacie. Programi\u015Bci robi\u0105 to, by u\u0142\

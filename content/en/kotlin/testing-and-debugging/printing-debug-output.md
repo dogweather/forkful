@@ -2,7 +2,7 @@
 date: 2024-01-20 17:52:54.008715-07:00
 description: "Printing debug output is basically the programmer's way of sneaking\
   \ a peek at what's going on inside their code in real-time. It's crucial for tracking\u2026"
-lastmod: '2024-02-25T18:49:56.496858-07:00'
+lastmod: '2024-03-11T00:14:33.915996-06:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output is basically the programmer's way of sneaking a peek\
   \ at what's going on inside their code in real-time. It's crucial for tracking\u2026"

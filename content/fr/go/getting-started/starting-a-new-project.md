@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:25.888371-07:00
 description: "Commencer un nouveau projet en Go implique de configurer un espace de\
   \ travail et de l'initialiser avec les modules Go n\xE9cessaires. Les programmeurs\
   \ font\u2026"
-lastmod: '2024-02-25T18:49:54.035104-07:00'
+lastmod: '2024-03-11T00:14:31.175012-06:00'
 model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en Go implique de configurer un espace de travail\
   \ et de l'initialiser avec les modules Go n\xE9cessaires. Les programmeurs font\u2026"

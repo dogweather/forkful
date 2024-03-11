@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:49.797191-07:00
 description: "YAML, un linguaggio di serializzazione dati progettato per essere amichevole\
   \ per l'utente, \xE8 spesso utilizzato per file di configurazione, messaggistica\u2026"
-lastmod: '2024-02-25T18:49:41.072920-07:00'
+lastmod: '2024-03-11T00:14:16.759745-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, un linguaggio di serializzazione dati progettato per essere amichevole\
   \ per l'utente, \xE8 spesso utilizzato per file di configurazione, messaggistica\u2026"

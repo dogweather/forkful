@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 18:02:07.876945-07:00
 description: null
-lastmod: '2024-02-25T18:49:39.361854-07:00'
+lastmod: '2024-03-11T00:14:14.782982-06:00'
 model: gpt-4-1106-preview
 summary: null
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"

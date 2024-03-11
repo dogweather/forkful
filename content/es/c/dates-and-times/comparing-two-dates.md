@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:25.254573-07:00
 description: "Comparar dos fechas en C implica determinar la relaci\xF3n cronol\xF3\
   gica entre ellas: si una fecha precede a la otra o si son iguales. Esta capacidad\
   \ es\u2026"
-lastmod: '2024-02-25T18:49:56.027187-07:00'
+lastmod: '2024-03-11T00:14:33.396986-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar dos fechas en C implica determinar la relaci\xF3n cronol\xF3gica\
   \ entre ellas: si una fecha precede a la otra o si son iguales. Esta capacidad es\u2026"

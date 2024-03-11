@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:23.975646-07:00
 description: "Extraer subcadenas en C implica crear una cadena m\xE1s peque\xF1a (subcadena)\
   \ a partir de una cadena m\xE1s grande bas\xE1ndose en criterios especificados,\
   \ como la\u2026"
-lastmod: '2024-02-25T18:49:56.002162-07:00'
+lastmod: '2024-03-11T00:14:33.371091-06:00'
 model: gpt-4-0125-preview
 summary: "Extraer subcadenas en C implica crear una cadena m\xE1s peque\xF1a (subcadena)\
   \ a partir de una cadena m\xE1s grande bas\xE1ndose en criterios especificados,\

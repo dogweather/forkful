@@ -6,7 +6,7 @@ description: "YAML l\xE0 m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u
   \u1ECDc v\u1EDBi con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
   ng n\xF3 cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, trao \u0111\u1ED5i d\u1EEF li\u1EC7\
   u gi\u1EEFa c\xE1c ng\xF4n ng\u1EEF, v\xE0 h\u01A1n n\u1EEFa b\u1EDFi v\xEC\u2026"
-lastmod: '2024-02-25T18:49:34.671038-07:00'
+lastmod: '2024-03-11T00:14:09.604988-06:00'
 model: gpt-4-0125-preview
 summary: "YAML l\xE0 m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECD\
   c v\u1EDBi con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\

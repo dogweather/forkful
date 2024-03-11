@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:46.891725-07:00
 description: "La capitalisation d'une cha\xEEne de caract\xE8res implique de convertir\
   \ la premi\xE8re lettre de la cha\xEEne en majuscule tout en s'assurant que le reste\
   \ des\u2026"
-lastmod: '2024-02-25T18:49:54.194333-07:00'
+lastmod: '2024-03-11T00:14:31.340561-06:00'
 model: gpt-4-0125-preview
 summary: "La capitalisation d'une cha\xEEne de caract\xE8res implique de convertir\
   \ la premi\xE8re lettre de la cha\xEEne en majuscule tout en s'assurant que le reste\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:08.674992-07:00
 description: "Interpolar uma string \xE9 o ato de integrar vari\xE1veis e express\xF5\
   es dentro de uma string. Programadores fazem isso porque \xE9 uma maneira din\xE2\
   mica e flex\xEDvel\u2026"
-lastmod: '2024-02-25T18:49:44.316063-07:00'
+lastmod: '2024-03-11T00:14:20.411969-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 o ato de integrar vari\xE1veis e express\xF5\
   es dentro de uma string. Programadores fazem isso porque \xE9 uma maneira din\xE2\

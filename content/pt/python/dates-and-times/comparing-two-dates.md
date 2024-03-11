@@ -2,7 +2,7 @@
 date: 2024-01-20 17:33:33.701596-07:00
 description: "Comparar duas datas \xE9 verificar as suas diferen\xE7as, seja em dias,\
   \ meses, anos ou segundos. Programadores fazem isso para realizar tarefas como validar\u2026"
-lastmod: '2024-02-25T18:49:43.828783-07:00'
+lastmod: '2024-03-11T00:14:19.834137-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 verificar as suas diferen\xE7as, seja em dias,\
   \ meses, anos ou segundos. Programadores fazem isso para realizar tarefas como validar\u2026"

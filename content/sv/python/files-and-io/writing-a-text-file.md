@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:04.693224-07:00
 description: "Att skriva till en textfil i Python \xE4r en grundl\xE4ggande uppgift\
   \ som inneb\xE4r att skapa eller \xF6ppna en fil f\xF6r att sedan l\xE4gga till\
   \ eller skriva \xF6ver text.\u2026"
-lastmod: '2024-02-25T18:49:35.838713-07:00'
+lastmod: '2024-03-11T00:14:10.813852-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva till en textfil i Python \xE4r en grundl\xE4ggande uppgift som\
   \ inneb\xE4r att skapa eller \xF6ppna en fil f\xF6r att sedan l\xE4gga till eller\

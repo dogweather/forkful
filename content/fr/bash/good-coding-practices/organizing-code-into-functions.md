@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:02.789254-07:00
 description: "Diviser le code en fonctions signifie d\xE9composer les scripts en blocs\
   \ plus petits, r\xE9utilisables, qui r\xE9alisent des t\xE2ches sp\xE9cifiques.\
   \ Cela rend le code\u2026"
-lastmod: '2024-02-25T18:49:54.691437-07:00'
+lastmod: '2024-03-11T00:14:31.929706-06:00'
 model: gpt-4-1106-preview
 summary: "Diviser le code en fonctions signifie d\xE9composer les scripts en blocs\
   \ plus petits, r\xE9utilisables, qui r\xE9alisent des t\xE2ches sp\xE9cifiques.\

@@ -3,7 +3,7 @@ date: 2024-01-20 15:14:14.752219-07:00
 description: "Saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4 tarkoittaa kellonaikaan sidotun\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon hy\xF6dynt\xE4mist\xE4. K\xE4yt\xE4mme t\xE4t\xE4\
   \ toiminnallisuutta esimerkiksi lokeissa,\u2026"
-lastmod: '2024-03-09T21:11:38.723927-07:00'
+lastmod: '2024-03-11T00:14:30.441976-06:00'
 model: unknown
 summary: "Saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4 tarkoittaa kellonaikaan sidotun\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon hy\xF6dynt\xE4mist\xE4. K\xE4yt\xE4mme t\xE4t\xE4\

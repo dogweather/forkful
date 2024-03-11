@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:43.239130-07:00
 description: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve reestruturar o c\xF3\
   digo existente sem alterar seu comportamento externo, visando melhorar atributos\
   \ n\xE3o funcionais, como\u2026"
-lastmod: '2024-02-25T18:49:44.675819-07:00'
+lastmod: '2024-03-11T00:14:20.800729-06:00'
 model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve reestruturar o c\xF3digo\
   \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:38.076474-07:00
 description: "W PowerShellu argumenty wiersza polece\u0144 to dane przekazywane do\
   \ skryptu przy jego wywo\u0142ywaniu. Programi\u015Bci u\u017Cywaj\u0105 ich, by\
   \ dostosowa\u0107 dzia\u0142anie skryptu\u2026"
-lastmod: '2024-02-25T18:49:34.015678-07:00'
+lastmod: '2024-03-11T00:14:08.840428-06:00'
 model: gpt-4-1106-preview
 summary: "W PowerShellu argumenty wiersza polece\u0144 to dane przekazywane do skryptu\
   \ przy jego wywo\u0142ywaniu. Programi\u015Bci u\u017Cywaj\u0105 ich, by dostosowa\u0107\

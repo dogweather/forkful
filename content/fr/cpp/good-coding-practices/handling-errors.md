@@ -3,7 +3,7 @@ date: 2024-01-26 00:50:03.931001-07:00
 description: "G\xE9rer les erreurs implique de planifier pour les cas o\xF9 les choses\
   \ tournent mal. C'est essentiel car cela aide \xE0 \xE9viter les plantages et rend\
   \ votre\u2026"
-lastmod: '2024-02-25T18:49:54.831512-07:00'
+lastmod: '2024-03-11T00:14:32.068411-06:00'
 model: gpt-4-1106-preview
 summary: "G\xE9rer les erreurs implique de planifier pour les cas o\xF9 les choses\
   \ tournent mal. C'est essentiel car cela aide \xE0 \xE9viter les plantages et rend\

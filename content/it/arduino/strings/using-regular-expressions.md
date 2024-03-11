@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "Le espressioni regolari consentono di analizzare le stringhe di testo\
   \ per cercare modelli. I programmatori le utilizzano per validare l\u2019input,\
   \ estrarre\u2026"
-lastmod: '2024-03-09T21:11:26.208223-07:00'
+lastmod: '2024-03-11T00:14:17.292222-06:00'
 model: unknown
 summary: "Le espressioni regolari consentono di analizzare le stringhe di testo per\
   \ cercare modelli. I programmatori le utilizzano per validare l\u2019input, estrarre\u2026"

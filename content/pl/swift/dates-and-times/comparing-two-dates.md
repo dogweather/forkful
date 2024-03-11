@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:53.911764-07:00
 description: "(Po co i dlaczego?) Por\xF3wnywanie dat pozwala okre\u015Bli\u0107,\
   \ kt\xF3ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza. Programi\u015B\
   ci robi\u0105 to, by zarz\u0105dza\u0107 czasem i\u2026"
-lastmod: '2024-02-25T18:49:34.139875-07:00'
+lastmod: '2024-03-11T00:14:08.973765-06:00'
 model: gpt-4-1106-preview
 summary: "(Po co i dlaczego?) Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt\xF3\
   ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza. Programi\u015B\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:54.411229-07:00
 description: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ ao escrever scripts que interagem com o sistema de arquivos, garantindo que seu\
   \ programa opere\u2026"
-lastmod: '2024-02-25T18:49:44.343316-07:00'
+lastmod: '2024-03-11T00:14:20.442661-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
   \ ao escrever scripts que interagem com o sistema de arquivos, garantindo que seu\

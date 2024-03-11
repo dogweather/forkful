@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:51.880988-07:00
 description: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
   \u015B\u0107 urojon\u0105 (jak 3 + 4i). Programi\u015Bci u\u017Cywaj\u0105 ich w\
   \ Swift do zada\u0144 takich jak przetwarzanie sygna\u0142\xF3w,\u2026"
-lastmod: '2024-02-25T18:49:34.121546-07:00'
+lastmod: '2024-03-11T00:14:08.953624-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
   \u015B\u0107 urojon\u0105 (jak 3 + 4i). Programi\u015Bci u\u017Cywaj\u0105 ich w\

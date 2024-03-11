@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:38.265179-07:00
 description: "Das Lesen einer Textdatei in Dart beinhaltet den Zugriff auf und das\
   \ Abrufen von Daten aus auf dem Dateisystem gespeicherten Dateien. Programmierer\
   \ tun\u2026"
-lastmod: '2024-03-09T21:06:17.591842-07:00'
+lastmod: '2024-03-11T00:14:27.495045-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in Dart beinhaltet den Zugriff auf und das Abrufen\
   \ von Daten aus auf dem Dateisystem gespeicherten Dateien. Programmierer tun\u2026"

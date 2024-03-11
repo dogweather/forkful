@@ -2,7 +2,7 @@
 date: 2024-01-26 04:31:53.537139-07:00
 description: "Att arbeta med XML i Haskell inneb\xE4r att tolka, manipulera och generera\
   \ XML-strukturer. Programmerare hanterar XML f\xF6r att interagera med m\xE5nga\u2026"
-lastmod: '2024-02-25T18:49:36.280374-07:00'
+lastmod: '2024-03-11T00:14:11.348894-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Haskell inneb\xE4r att tolka, manipulera och generera\
   \ XML-strukturer. Programmerare hanterar XML f\xF6r att interagera med m\xE5nga\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:00.780914-07:00
 description: "Att tolka (parse:a) HTML i Visual Basic for Applications (VBA) inneb\xE4\
   r att extrahera specifik information fr\xE5n ett HTML-dokument. Programmerare g\xF6\
   r det\u2026"
-lastmod: '2024-02-25T18:49:36.035359-07:00'
+lastmod: '2024-03-11T00:14:11.081977-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka (parse:a) HTML i Visual Basic for Applications (VBA) inneb\xE4\
   r att extrahera specifik information fr\xE5n ett HTML-dokument. Programmerare g\xF6\

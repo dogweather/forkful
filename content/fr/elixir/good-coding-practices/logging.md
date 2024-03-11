@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:35.248928-07:00
 description: "La journalisation dans le d\xE9veloppement de logiciels est la technique\
   \ permettant d'enregistrer les \xE9v\xE9nements qui se produisent pendant l'ex\xE9\
   cution d'un\u2026"
-lastmod: '2024-02-25T18:49:54.217265-07:00'
+lastmod: '2024-03-11T00:14:31.365607-06:00'
 model: gpt-4-1106-preview
 summary: "La journalisation dans le d\xE9veloppement de logiciels est la technique\
   \ permettant d'enregistrer les \xE9v\xE9nements qui se produisent pendant l'ex\xE9\

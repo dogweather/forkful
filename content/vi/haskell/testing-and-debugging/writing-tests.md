@@ -6,7 +6,7 @@ description: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u
   \xFAng c\xF4ng vi\u1EC7c m\xE0 n\xF3 c\u1EA7n l\xE0m hay kh\xF4ng. Testing gi\xFA\
   p b\u1EAFt l\u1ED7i, h\u1ED7 tr\u1EE3 b\u1EA3o tr\xEC code, v\xE0 \u0111\u1EA3m\
   \ b\u1EA3o c\xE1c thay \u0111\u1ED5i kh\xF4ng\u2026"
-lastmod: '2024-02-25T18:49:35.060795-07:00'
+lastmod: '2024-03-11T00:14:09.996640-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u0111\xFA\
   ng c\xF4ng vi\u1EC7c m\xE0 n\xF3 c\u1EA7n l\xE0m hay kh\xF4ng. Testing gi\xFAp b\u1EAF\

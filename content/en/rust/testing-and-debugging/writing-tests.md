@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:39.537072-07:00
 description: "Writing tests in Rust involves creating automated checks to ensure your\
   \ code performs as expected. Programmers do this to catch bugs early, facilitate\u2026"
-lastmod: '2024-02-25T18:49:56.322819-07:00'
+lastmod: '2024-03-11T00:14:33.760544-06:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in Rust involves creating automated checks to ensure your\
   \ code performs as expected. Programmers do this to catch bugs early, facilitate\u2026"

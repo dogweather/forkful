@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:17.565958-07:00
 description: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol) to\
   \ spos\xF3b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami\
   \ w Internecie. Robimy to, \u017Ceby pobra\u0107\u2026"
-lastmod: '2024-02-25T18:49:33.371541-07:00'
+lastmod: '2024-03-11T00:14:08.119007-06:00'
 model: gpt-4-1106-preview
 summary: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol) to spos\xF3\
   b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami w Internecie.\

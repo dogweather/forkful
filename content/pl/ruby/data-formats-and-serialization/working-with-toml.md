@@ -3,7 +3,7 @@ date: 2024-01-26 04:25:53.853171-07:00
 description: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu\
   \ dzi\u0119ki swojej jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105 TOML do\
   \ zarz\u0105dzania konfiguracjami\u2026"
-lastmod: '2024-02-25T18:49:34.331840-07:00'
+lastmod: '2024-03-11T00:14:09.177957-06:00'
 model: gpt-4-0125-preview
 summary: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu\
   \ dzi\u0119ki swojej jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105 TOML do\

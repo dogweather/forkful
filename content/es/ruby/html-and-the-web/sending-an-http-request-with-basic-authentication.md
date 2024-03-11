@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:37.637918-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso\
   \ de acceso a recursos web que requieren verificaci\xF3n de usuario y contrase\xF1\
   a. Los\u2026"
-lastmod: '2024-02-25T18:49:56.058680-07:00'
+lastmod: '2024-03-11T00:14:33.432227-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso de\
   \ acceso a recursos web que requieren verificaci\xF3n de usuario y contrase\xF1\

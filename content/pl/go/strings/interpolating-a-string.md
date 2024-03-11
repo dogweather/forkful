@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:40.659650-07:00
 description: "Interpolacja \u0142a\u0144cuch\xF3w to metoda konstruowania \u0142a\u0144\
   cuch\xF3w, kt\xF3re w\u0142\u0105czaj\u0105 zmienne, umo\u017Cliwiaj\u0105c dynamiczne\
   \ tworzenie \u0142a\u0144cuch\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: '2024-02-25T18:49:33.258833-07:00'
+lastmod: '2024-03-11T00:14:08.002657-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w to metoda konstruowania \u0142a\u0144\
   cuch\xF3w, kt\xF3re w\u0142\u0105czaj\u0105 zmienne, umo\u017Cliwiaj\u0105c dynamiczne\

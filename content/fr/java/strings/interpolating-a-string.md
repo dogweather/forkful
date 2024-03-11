@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:11.019923-07:00
 description: "(L'interpolation de cha\xEEnes : Quoi et Pourquoi ?) L'interpolation\
   \ de cha\xEEnes permet d'ins\xE9rer des valeurs variables dans des textes fixes.\
   \ C'est pratique\u2026"
-lastmod: '2024-02-25T18:49:54.373253-07:00'
+lastmod: '2024-03-11T00:14:31.577594-06:00'
 model: gpt-4-1106-preview
 summary: "(L'interpolation de cha\xEEnes : Quoi et Pourquoi ?) L'interpolation de\
   \ cha\xEEnes permet d'ins\xE9rer des valeurs variables dans des textes fixes. C'est\

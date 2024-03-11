@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:33.541352-07:00
 description: "Wyra\u017Cenia regularne (regex) s\u0105 pot\u0119\u017Cnym narz\u0119\
   dziem do przetwarzania tekstu, pozwalaj\u0105c programistom na wyszukiwanie, dopasowywanie\
   \ i manipulowanie ci\u0105gami\u2026"
-lastmod: '2024-02-25T18:49:33.718705-07:00'
+lastmod: '2024-03-11T00:14:08.535636-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) s\u0105 pot\u0119\u017Cnym narz\u0119dziem\
   \ do przetwarzania tekstu, pozwalaj\u0105c programistom na wyszukiwanie, dopasowywanie\

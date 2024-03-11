@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:14.143267-07:00
 description: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."
-lastmod: '2024-02-25T18:49:53.649952-07:00'
+lastmod: '2024-03-11T00:14:30.694526-06:00'
 model: gpt-4-1106-preview
 summary: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."

@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:33.731743-07:00
 description: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma nova.\
   \ Programadores fazem isso para montar mensagens, caminhos de arquivos, consultas\
   \ SQL,\u2026"
-lastmod: '2024-02-25T18:49:44.279798-07:00'
+lastmod: '2024-03-11T00:14:20.372621-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma nova. Programadores\
   \ fazem isso para montar mensagens, caminhos de arquivos, consultas SQL,\u2026"

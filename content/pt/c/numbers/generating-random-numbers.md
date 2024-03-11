@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:13.823779-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios em C envolve a cria\xE7\xE3o de valores\
   \ que s\xE3o imprevis\xEDveis e seguem uma distribui\xE7\xE3o espec\xEDfica, como\
   \ uniforme ou normal. Essa\u2026"
-lastmod: '2024-02-25T18:49:44.661982-07:00'
+lastmod: '2024-03-11T00:14:20.786101-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em C envolve a cria\xE7\xE3o de valores que\
   \ s\xE3o imprevis\xEDveis e seguem uma distribui\xE7\xE3o espec\xEDfica, como uniforme\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:06.302738-07:00
 description: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5\
   \ en nettside via HTTP/HTTPS-protokollen. Programmerere gj\xF8r ofte dette for web\
   \ scraping,\u2026"
-lastmod: '2024-02-25T18:49:38.497482-07:00'
+lastmod: '2024-03-11T00:14:13.779944-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5 en\
   \ nettside via HTTP/HTTPS-protokollen. Programmerere gj\xF8r ofte dette for web\

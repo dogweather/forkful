@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:49.412606-07:00
 description: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din;\
   \ det er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle\
   \ datapunkter som\u2026"
-lastmod: '2024-02-25T18:49:39.065311-07:00'
+lastmod: '2024-03-11T00:14:14.459796-06:00'
 model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din; det\
   \ er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle datapunkter\

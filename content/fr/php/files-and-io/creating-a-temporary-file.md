@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:04.515571-07:00
 description: "La cr\xE9ation d'un fichier temporaire permet de stocker des donn\xE9\
   es de mani\xE8re \xE9ph\xE9m\xE8re pendant l\u2019ex\xE9cution d\u2019un script.\
   \ Les programmeurs utilisent des\u2026"
-lastmod: '2024-02-25T18:49:54.619118-07:00'
+lastmod: '2024-03-11T00:14:31.849984-06:00'
 model: gpt-4-1106-preview
 summary: "La cr\xE9ation d'un fichier temporaire permet de stocker des donn\xE9es\
   \ de mani\xE8re \xE9ph\xE9m\xE8re pendant l\u2019ex\xE9cution d\u2019un script.\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:32.647378-07:00
 description: "YAML, co oznacza YAML Ain't Markup Language (YAML to nie j\u0119zyk\
   \ znacznik\xF3w), jest intensywnie u\u017Cywany w Ruby dla plik\xF3w konfiguracyjnych\
   \ oraz serializacji\u2026"
-lastmod: '2024-02-25T18:49:34.328652-07:00'
+lastmod: '2024-03-11T00:14:09.174454-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza YAML Ain't Markup Language (YAML to nie j\u0119zyk znacznik\xF3\
   w), jest intensywnie u\u017Cywany w Ruby dla plik\xF3w konfiguracyjnych oraz serializacji\u2026"

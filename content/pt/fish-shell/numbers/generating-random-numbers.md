@@ -3,7 +3,7 @@ date: 2024-01-27 20:33:37.400261-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental em programa\xE7\
   \xE3o, usada para tudo desde amostragem de dados at\xE9 o desenvolvimento de jogos.\
   \ No Fish Shell,\u2026"
-lastmod: '2024-02-25T18:49:44.616617-07:00'
+lastmod: '2024-03-11T00:14:20.738114-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental em programa\xE7\
   \xE3o, usada para tudo desde amostragem de dados at\xE9 o desenvolvimento de jogos.\

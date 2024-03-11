@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:37.775217-07:00
 description: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery w j\u0119\
   zyku C polega na przekszta\u0142ceniu wszystkich wielkich liter w danym \u0142a\u0144\
   cuchu na odpowiadaj\u0105ce im ma\u0142e litery.\u2026"
-lastmod: '2024-02-25T18:49:34.244940-07:00'
+lastmod: '2024-03-11T00:14:09.086298-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery w j\u0119zyku\
   \ C polega na przekszta\u0142ceniu wszystkich wielkich liter w danym \u0142a\u0144\

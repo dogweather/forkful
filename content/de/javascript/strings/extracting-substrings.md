@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:05.459832-07:00
 description: "Das Extrahieren von Teilzeichenketten bedeutet, bestimmte Teile einer\
   \ Zeichenkette (String) herauszuziehen. Programmierer tun das, um mit spezifischen\u2026"
-lastmod: '2024-02-25T18:49:51.305820-07:00'
+lastmod: '2024-03-11T00:14:28.158913-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilzeichenketten bedeutet, bestimmte Teile einer Zeichenkette\
   \ (String) herauszuziehen. Programmierer tun das, um mit spezifischen\u2026"

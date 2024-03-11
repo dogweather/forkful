@@ -5,7 +5,7 @@ date: 2024-02-01 22:06:51.862755-07:00
 description: "XML:n k\xE4sittely Visual Basic for Applicationsissa (VBA) sis\xE4lt\xE4\
   \xE4 XML-dokumenttien j\xE4sent\xE4misen, luomisen ja muokkaamisen Microsoft Office\
   \ -sovellusten\u2026"
-lastmod: '2024-02-25T18:49:53.350295-07:00'
+lastmod: '2024-03-11T00:14:30.366464-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Visual Basic for Applicationsissa (VBA) sis\xE4lt\xE4\
   \xE4 XML-dokumenttien j\xE4sent\xE4misen, luomisen ja muokkaamisen Microsoft Office\

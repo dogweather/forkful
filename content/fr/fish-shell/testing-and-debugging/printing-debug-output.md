@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:19.451321-07:00
 description: "L'affichage de sorties de d\xE9bogage, c'est exposer les entrailles\
   \ de votre code \u2013 voir ce qu'il se passe en temps r\xE9el. Les d\xE9veloppeurs\
   \ le font pour\u2026"
-lastmod: '2024-02-25T18:49:54.954138-07:00'
+lastmod: '2024-03-11T00:14:32.199356-06:00'
 model: gpt-4-1106-preview
 summary: "L'affichage de sorties de d\xE9bogage, c'est exposer les entrailles de votre\
   \ code \u2013 voir ce qu'il se passe en temps r\xE9el. Les d\xE9veloppeurs le font\

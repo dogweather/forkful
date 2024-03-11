@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:51.419531-07:00
 description: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-representasjon\
   \ til en lesbar tekststreng. Programmerere gj\xF8r dette for \xE5 vise datoen i\
   \ et format som\u2026"
-lastmod: '2024-02-25T18:49:39.159936-07:00'
+lastmod: '2024-03-11T00:14:14.562188-06:00'
 model: gpt-4-1106-preview
 summary: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-representasjon\
   \ til en lesbar tekststreng. Programmerere gj\xF8r dette for \xE5 vise datoen i\

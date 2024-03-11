@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:51.672818-07:00
 description: "Ottenere la data corrente in Java \xE8 un'operazione fondamentale che\
   \ consente ai programmatori di manipolare gli oggetti data per operazioni quali\
   \ il\u2026"
-lastmod: '2024-02-25T18:49:41.187988-07:00'
+lastmod: '2024-03-11T00:14:16.888096-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Java \xE8 un'operazione fondamentale che consente\
   \ ai programmatori di manipolare gli oggetti data per operazioni quali il\u2026"

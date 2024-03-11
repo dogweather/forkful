@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:50.968236-07:00
 description: "Controllare se una directory esiste \xE8 un'operazione fondamentale\
   \ quando si scrivono script che interagiscono con il filesystem, garantendo che\
   \ il proprio\u2026"
-lastmod: '2024-02-25T18:49:41.434118-07:00'
+lastmod: '2024-03-11T00:14:17.180170-06:00'
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale quando\
   \ si scrivono script che interagiscono con il filesystem, garantendo che il proprio\u2026"

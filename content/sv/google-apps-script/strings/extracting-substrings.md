@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:07.739278-07:00
 description: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en str\xE4\
   ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan. Programmerare\
   \ g\xF6r\u2026"
-lastmod: '2024-02-25T18:49:35.762875-07:00'
+lastmod: '2024-03-11T00:14:10.733490-06:00'
 model: gpt-4-0125-preview
 summary: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en str\xE4\
   ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan. Programmerare\

@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:31.510584-07:00
 description: "Inviare una richiesta HTTP significa chiedere dati a un server web.\
   \ I programmatori lo fanno per interagire con servizi web, come recuperare dati\
   \ o\u2026"
-lastmod: '2024-02-25T18:49:41.617341-07:00'
+lastmod: '2024-03-11T00:14:17.383736-06:00'
 model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP significa chiedere dati a un server web. I programmatori\
   \ lo fanno per interagire con servizi web, come recuperare dati o\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:02.320492-07:00
 description: "Scrivere test in Clojure, cos\xEC come in altri linguaggi di programmazione,\
   \ comporta la creazione di codice dedicato per verificare che il tuo codice\u2026"
-lastmod: '2024-02-25T18:49:40.974150-07:00'
+lastmod: '2024-03-11T00:14:16.605298-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in Clojure, cos\xEC come in altri linguaggi di programmazione,\
   \ comporta la creazione di codice dedicato per verificare che il tuo codice\u2026"

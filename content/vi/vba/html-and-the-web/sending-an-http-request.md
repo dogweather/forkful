@@ -6,7 +6,7 @@ description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Visual Basi
   \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0o c\xE1c t\xE0\
   i nguy\xEAn web ho\u1EB7c d\u1ECBch v\u1EE5 web m\u1ED9t c\xE1ch l\u1EADp tr\xEC\
   nh b\u1EB1ng\u2026"
-lastmod: '2024-02-25T18:49:34.765237-07:00'
+lastmod: '2024-03-11T00:14:09.691077-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Visual Basic for\
   \ Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEA\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:32:44.616684-07:00
 description: "Praca z XML obejmuje parsowanie, kwerendowanie i manipulowanie dokumentami\
   \ XML za pomoc\u0105 Javy. Programi\u015Bci robi\u0105 to dla wymiany danych, zarz\u0105\
   dzania\u2026"
-lastmod: '2024-02-25T18:49:33.667489-07:00'
+lastmod: '2024-03-11T00:14:08.480902-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML obejmuje parsowanie, kwerendowanie i manipulowanie dokumentami\
   \ XML za pomoc\u0105 Javy. Programi\u015Bci robi\u0105 to dla wymiany danych, zarz\u0105\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:09.294631-07:00
 description: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\"\
   \ consiste \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les\
   \ d\xE9veloppeurs \xE0\u2026"
-lastmod: '2024-02-25T18:49:54.037279-07:00'
+lastmod: '2024-03-11T00:14:31.177327-06:00'
 model: gpt-4-0125-preview
 summary: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\" consiste\
   \ \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les d\xE9\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:26.743101-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet, tai regex, ovat merkkijonoja, jotka\
   \ muodostavat haun kaavan ja joita k\xE4ytet\xE4\xE4n usein merkkijonojen etsimiseen\
   \ tai manipulointiin.\u2026"
-lastmod: '2024-02-25T18:49:53.805956-07:00'
+lastmod: '2024-03-11T00:14:30.937131-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet, tai regex, ovat merkkijonoja, jotka muodostavat\
   \ haun kaavan ja joita k\xE4ytet\xE4\xE4n usein merkkijonojen etsimiseen tai manipulointiin.\u2026"

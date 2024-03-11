@@ -5,7 +5,7 @@ date: 2024-01-30 19:12:32.693538-07:00
 description: "Associativa arrayer i PHP \xE4r som superladdade listor d\xE4r varje\
   \ element kan n\xE5s genom att anv\xE4nda ett l\xE4sbart nyckelv\xE4rde ist\xE4\
   llet f\xF6r bara siffror.\u2026"
-lastmod: '2024-02-25T18:49:36.291789-07:00'
+lastmod: '2024-03-11T00:14:11.361512-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer i PHP \xE4r som superladdade listor d\xE4r varje element\
   \ kan n\xE5s genom att anv\xE4nda ett l\xE4sbart nyckelv\xE4rde ist\xE4llet f\xF6\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:33.094944-07:00
 description: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na weryfikacji\
   \ obecno\u015Bci folderu w Google Drive. Programi\u015Bci cz\u0119sto wykonuj\u0105\
   \ to\u2026"
-lastmod: '2024-02-25T18:49:33.342988-07:00'
+lastmod: '2024-03-11T00:14:08.090423-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na weryfikacji\
   \ obecno\u015Bci folderu w Google Drive. Programi\u015Bci cz\u0119sto wykonuj\u0105\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:45.133861-07:00
 description: "Comparar datas \xE9 verificar a rela\xE7\xE3o temporal entre elas -\
   \ qual \xE9 mais cedo ou mais tarde. Programadores fazem isso para ordenar eventos,\
   \ validar\u2026"
-lastmod: '2024-02-25T18:49:44.509459-07:00'
+lastmod: '2024-03-11T00:14:20.621481-06:00'
 model: gpt-4-1106-preview
 summary: "Comparar datas \xE9 verificar a rela\xE7\xE3o temporal entre elas - qual\
   \ \xE9 mais cedo ou mais tarde. Programadores fazem isso para ordenar eventos, validar\u2026"

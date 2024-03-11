@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:09.754270-07:00
 description: "Criar um arquivo tempor\xE1rio significa fazer um arquivo que \xE9 destinado\
   \ a ser usado por um curto per\xEDodo de tempo, geralmente durante a execu\xE7\xE3\
   o de um\u2026"
-lastmod: '2024-02-25T18:49:43.835648-07:00'
+lastmod: '2024-03-11T00:14:19.841817-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio significa fazer um arquivo que \xE9 destinado\
   \ a ser usado por um curto per\xEDodo de tempo, geralmente durante a execu\xE7\xE3\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:06:52.999073-07:00
 description: "Eliminar las comillas de una cadena en C implica extraer el contenido\
   \ textual sin las comillas simples (' ') o dobles (\" \") que la encapsulan. Este\u2026"
-lastmod: '2024-02-25T18:49:56.001117-07:00'
+lastmod: '2024-03-11T00:14:33.369974-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena en C implica extraer el contenido textual\
   \ sin las comillas simples (' ') o dobles (\" \") que la encapsulan. Este\u2026"

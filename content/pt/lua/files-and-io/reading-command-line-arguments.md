@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:20.435559-07:00
 description: "Ler argumentos de linha de comando em Lua significa pegar dados inseridos\
   \ diretamente quando voc\xEA executa seu script. Programadores fazem isso para tornar\u2026"
-lastmod: '2024-02-25T18:49:44.344313-07:00'
+lastmod: '2024-03-11T00:14:20.443715-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos de linha de comando em Lua significa pegar dados inseridos\
   \ diretamente quando voc\xEA executa seu script. Programadores fazem isso para tornar\u2026"

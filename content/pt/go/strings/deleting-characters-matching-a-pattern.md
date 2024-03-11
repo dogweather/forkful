@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:36.220955-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9\
   \ sobre remover certos caracteres ou sequ\xEAncias de caracteres de strings, com\
   \ base em regras\u2026"
-lastmod: '2024-02-25T18:49:43.707499-07:00'
+lastmod: '2024-03-11T00:14:19.702746-06:00'
 model: gpt-4-0125-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 sobre\
   \ remover certos caracteres ou sequ\xEAncias de caracteres de strings, com base\

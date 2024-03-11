@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:45.131610-07:00
 description: "Verificar se um diret\xF3rio existe em Kotlin envolve verificar a presen\xE7\
   a de um diret\xF3rio em um caminho especificado. Programadores realizam essa tarefa\u2026"
-lastmod: '2024-02-25T18:49:44.177088-07:00'
+lastmod: '2024-03-11T00:14:20.261795-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Kotlin envolve verificar a presen\xE7\
   a de um diret\xF3rio em um caminho especificado. Programadores realizam essa tarefa\u2026"

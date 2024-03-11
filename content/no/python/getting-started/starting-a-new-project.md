@@ -6,7 +6,7 @@ date: 2024-02-22 17:29:57.476585-07:00
 description: "\xC5 starte et nytt prosjekt i Python handler om \xE5 sette opp et strukturert,\
   \ vedlikeholdbart rammeverk fra starten. Programmerere gj\xF8r dette for \xE5 sikre\
   \ at\u2026"
-lastmod: '2024-02-25T18:49:38.589757-07:00'
+lastmod: '2024-03-11T00:14:13.881131-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i Python handler om \xE5 sette opp et strukturert,\
   \ vedlikeholdbart rammeverk fra starten. Programmerere gj\xF8r dette for \xE5 sikre\

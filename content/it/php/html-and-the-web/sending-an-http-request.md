@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:10.630040-07:00
 description: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web per\
   \ prendere o mandare informazioni. I programmatori lo fanno per interagire con API,\
   \ servizi\u2026"
-lastmod: '2024-02-25T18:49:41.376579-07:00'
+lastmod: '2024-03-11T00:14:17.110210-06:00'
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web per prendere\
   \ o mandare informazioni. I programmatori lo fanno per interagire con API, servizi\u2026"

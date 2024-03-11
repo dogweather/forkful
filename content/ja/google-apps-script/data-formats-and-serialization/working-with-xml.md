@@ -3,7 +3,7 @@ changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:44.315732-07:00
 description: "Google Apps\u2026"
-lastmod: '2024-02-25T18:49:39.629688-07:00'
+lastmod: '2024-03-11T00:14:15.098070-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps\u2026"
 title: "XML\u3068\u306E\u4F5C\u696D"

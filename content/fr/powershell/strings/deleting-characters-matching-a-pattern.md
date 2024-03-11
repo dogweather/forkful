@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:57.790307-07:00
 description: "Supprimer des caract\xE8res selon un motif, c'est utiliser une r\xE8\
   gle ou un mod\xE8le pour identifier et retirer certains \xE9l\xE9ments d'une cha\xEE\
   ne de caract\xE8res.\u2026"
-lastmod: '2024-02-25T18:49:54.712335-07:00'
+lastmod: '2024-03-11T00:14:31.951158-06:00'
 model: gpt-4-1106-preview
 summary: "Supprimer des caract\xE8res selon un motif, c'est utiliser une r\xE8gle\
   \ ou un mod\xE8le pour identifier et retirer certains \xE9l\xE9ments d'une cha\xEE\

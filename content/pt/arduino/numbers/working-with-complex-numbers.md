@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:05.609660-07:00
 description: "N\xFAmeros complexos possuem uma parte real e uma parte imagin\xE1ria,\
   \ tipicamente escritos como `a + bi`. Eles s\xE3o vitais para alguns projetos com\
   \ Arduino que\u2026"
-lastmod: '2024-02-25T18:49:44.451276-07:00'
+lastmod: '2024-03-11T00:14:20.559333-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos possuem uma parte real e uma parte imagin\xE1ria, tipicamente\
   \ escritos como `a + bi`. Eles s\xE3o vitais para alguns projetos com Arduino que\u2026"

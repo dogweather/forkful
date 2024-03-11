@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:04.694659-07:00
 description: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
   \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\
   \ web,\u2026"
-lastmod: '2024-02-25T18:49:40.994719-07:00'
+lastmod: '2024-03-11T00:14:16.626682-06:00'
 model: gpt-4-0125-preview
 summary: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
   \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\

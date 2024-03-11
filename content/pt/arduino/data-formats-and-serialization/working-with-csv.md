@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:18:52.425541-07:00
 description: "Trabalhar com arquivos CSV (Comma-Separated Values - Valores Separados\
   \ por V\xEDrgula) no Arduino envolve ler e escrever em arquivos CSV geralmente\u2026"
-lastmod: '2024-02-25T18:49:44.478710-07:00'
+lastmod: '2024-03-11T00:14:20.588947-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Comma-Separated Values - Valores Separados por\
   \ V\xEDrgula) no Arduino envolve ler e escrever em arquivos CSV geralmente\u2026"

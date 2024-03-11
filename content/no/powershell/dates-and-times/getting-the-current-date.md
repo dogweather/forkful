@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:25.480314-07:00
 description: "\xC5 hente dagens dato i PowerShell handler om \xE5 hente systemets\
   \ n\xE5v\xE6rende dato og tid. Denne operasjonen er fundamental for oppgaver som\
   \ logging,\u2026"
-lastmod: '2024-02-25T18:49:39.205408-07:00'
+lastmod: '2024-03-11T00:14:14.615740-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente dagens dato i PowerShell handler om \xE5 hente systemets n\xE5\
   v\xE6rende dato og tid. Denne operasjonen er fundamental for oppgaver som logging,\u2026"

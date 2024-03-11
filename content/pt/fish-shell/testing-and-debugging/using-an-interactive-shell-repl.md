@@ -3,7 +3,7 @@ date: 2024-01-26 04:13:54.470592-07:00
 description: "REPL, ou Loop de Ler-Avaliar-Imprimir, \xE9 um ambiente de programa\xE7\
   \xE3o interativo que recebe entradas \xFAnicas do usu\xE1rio, executa-as e retorna\
   \ o resultado.\u2026"
-lastmod: '2024-02-25T18:49:44.624380-07:00'
+lastmod: '2024-03-11T00:14:20.746659-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, ou Loop de Ler-Avaliar-Imprimir, \xE9 um ambiente de programa\xE7\xE3\
   o interativo que recebe entradas \xFAnicas do usu\xE1rio, executa-as e retorna o\

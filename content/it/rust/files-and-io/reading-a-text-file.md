@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:26.857450-07:00
 description: "Leggere un file di testo in Rust significa prendere una sequenza di\
   \ caratteri da un file e usarli nel programma. Lo facciamo principalmente per elaborare\u2026"
-lastmod: '2024-02-25T18:49:41.110248-07:00'
+lastmod: '2024-03-11T00:14:16.801404-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo in Rust significa prendere una sequenza di caratteri\
   \ da un file e usarli nel programma. Lo facciamo principalmente per elaborare\u2026"

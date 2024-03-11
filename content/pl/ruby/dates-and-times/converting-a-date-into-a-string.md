@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:31.281257-07:00
 description: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces przekszta\u0142\
   cania obiektu daty w czytelny tekst. Programi\u015Bci robi\u0105 to, \u017Ceby u\u0142\
   atwi\u0107 wy\u015Bwietlanie dat\u2026"
-lastmod: '2024-02-25T18:49:34.320149-07:00'
+lastmod: '2024-03-11T00:14:09.164644-06:00'
 model: gpt-4-1106-preview
 summary: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces przekszta\u0142\
   cania obiektu daty w czytelny tekst. Programi\u015Bci robi\u0105 to, \u017Ceby u\u0142\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:06:34.422093-07:00
 description: "TOML, co oznacza Tom's Obvious, Minimal Language, to format serializacji\
   \ danych g\u0142\xF3wnie stosowany w plikach konfiguracyjnych. Programi\u015Bci\
   \ wykorzystuj\u0105\u2026"
-lastmod: '2024-02-25T18:49:33.622588-07:00'
+lastmod: '2024-03-11T00:14:08.433756-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, co oznacza Tom's Obvious, Minimal Language, to format serializacji\
   \ danych g\u0142\xF3wnie stosowany w plikach konfiguracyjnych. Programi\u015Bci\

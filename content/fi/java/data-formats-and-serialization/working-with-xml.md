@@ -3,7 +3,7 @@ date: 2024-01-26 04:32:35.888627-07:00
 description: "XML:n kanssa ty\xF6skentely k\xE4sitt\xE4\xE4 XML-dokumenttien j\xE4\
   sent\xE4misen, kyselyiden tekemisen ja manipuloinnin Java-kielell\xE4. Ohjelmoijat\
   \ tekev\xE4t t\xE4t\xE4\u2026"
-lastmod: '2024-02-25T18:49:53.390616-07:00'
+lastmod: '2024-03-11T00:14:30.411987-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n kanssa ty\xF6skentely k\xE4sitt\xE4\xE4 XML-dokumenttien j\xE4sent\xE4\
   misen, kyselyiden tekemisen ja manipuloinnin Java-kielell\xE4. Ohjelmoijat tekev\xE4\

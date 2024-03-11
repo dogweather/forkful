@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:36.328771-07:00
 description: "Escrever testes em PowerShell envolve criar scripts que validam automaticamente\
   \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte\u2026"
-lastmod: '2024-02-25T18:49:44.419229-07:00'
+lastmod: '2024-03-11T00:14:20.525081-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em PowerShell envolve criar scripts que validam automaticamente\
   \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte\u2026"

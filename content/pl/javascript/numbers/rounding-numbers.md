@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:32.564069-07:00
 description: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blonym\
   \ miejscu w liczbie. Programi\u015Bci zaokr\u0105glaj\u0105 w celu kontrolowania\
   \ dok\u0142adno\u015Bci, zarz\u0105dzania pami\u0119ci\u0105\u2026"
-lastmod: '2024-02-25T18:49:34.164744-07:00'
+lastmod: '2024-03-11T00:14:08.999755-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blonym miejscu\
   \ w liczbie. Programi\u015Bci zaokr\u0105glaj\u0105 w celu kontrolowania dok\u0142\

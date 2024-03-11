@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:12.808260-07:00
 description: "Att ta bort tecken som matchar ett specifikt m\xF6nster i str\xE4ngar\
   \ \xE4r avg\xF6rande f\xF6r datavalidering, sanering, eller n\xE4r text f\xF6rbereds\
   \ f\xF6r vidare\u2026"
-lastmod: '2024-03-09T21:06:02.353354-07:00'
+lastmod: '2024-03-11T00:14:10.926101-06:00'
 model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster i str\xE4ngar \xE4\
   r avg\xF6rande f\xF6r datavalidering, sanering, eller n\xE4r text f\xF6rbereds f\xF6\

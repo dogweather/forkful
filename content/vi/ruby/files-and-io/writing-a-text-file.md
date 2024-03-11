@@ -6,7 +6,7 @@ description: "Vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Ruby ng
   a l\xE0 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p tr\xEAn h\u1EC7 th\u1ED1\
   ng c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 duy tr\xEC d\u1EEF li\u1EC7u, ghi\u2026"
-lastmod: '2024-02-25T18:49:35.699925-07:00'
+lastmod: '2024-03-11T00:14:10.668304-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Ruby ngh\u0129\
   a l\xE0 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p tr\xEAn h\u1EC7 th\u1ED1\

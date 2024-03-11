@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:04.760061-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na poproszeniu serwera\
   \ o dane lub zasoby. Programi\u015Bci robi\u0105 to, aby komunikowa\u0107 si\u0119\
   \ z aplikacjami internetowymi, pobiera\u0107\u2026"
-lastmod: '2024-02-25T18:49:34.081592-07:00'
+lastmod: '2024-03-11T00:14:08.908816-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na poproszeniu serwera o dane\
   \ lub zasoby. Programi\u015Bci robi\u0105 to, aby komunikowa\u0107 si\u0119 z aplikacjami\

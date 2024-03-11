@@ -3,7 +3,7 @@ date: 2024-01-26 03:43:21.079956-07:00
 description: "Zaokr\u0105glanie liczb to redukcja liczby dziesi\u0119tnej do najbli\u017C\
   szej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po przecinku.\
   \ Programi\u015Bci zaokr\u0105glaj\u0105\u2026"
-lastmod: '2024-02-25T18:49:34.038748-07:00'
+lastmod: '2024-03-11T00:14:08.863816-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb to redukcja liczby dziesi\u0119tnej do najbli\u017C\
   szej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po przecinku.\

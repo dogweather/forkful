@@ -3,7 +3,7 @@ date: 2024-01-26 04:10:01.993126-07:00
 description: "Utiliser un d\xE9bogueur, c'est comme se donner une vision aux rayons\
   \ X pour jeter un coup d'\u0153il \xE0 l'ex\xE9cution de votre code. Les programmeurs\
   \ le font pour\u2026"
-lastmod: '2024-02-25T18:49:54.300279-07:00'
+lastmod: '2024-03-11T00:14:31.502238-06:00'
 model: gpt-4-0125-preview
 summary: "Utiliser un d\xE9bogueur, c'est comme se donner une vision aux rayons X\
   \ pour jeter un coup d'\u0153il \xE0 l'ex\xE9cution de votre code. Les programmeurs\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:52.289727-07:00
 description: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalistyczny\
   \ J\u0119zyk Toma). Jest u\u017Cywany dla plik\xF3w konfiguracyjnych, poniewa\u017C\
   \ jest \u0142atwy do\u2026"
-lastmod: '2024-02-25T18:49:33.752864-07:00'
+lastmod: '2024-03-11T00:14:08.570850-06:00'
 model: gpt-4-0125-preview
 summary: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalistyczny\
   \ J\u0119zyk Toma). Jest u\u017Cywany dla plik\xF3w konfiguracyjnych, poniewa\u017C\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:53.764215-07:00
 description: "Drukowanie komunikat\xF3w debugowania to wy\u015Bwietlanie informacji\
   \ o dzia\u0142aniu programu podczas jego wykonania. Programi\u015Bci to robi\u0105\
   , by \u0142atwiej zrozumie\u0107\u2026"
-lastmod: '2024-02-25T18:49:33.907528-07:00'
+lastmod: '2024-03-11T00:14:08.730501-06:00'
 model: gpt-4-1106-preview
 summary: "Drukowanie komunikat\xF3w debugowania to wy\u015Bwietlanie informacji o\
   \ dzia\u0142aniu programu podczas jego wykonania. Programi\u015Bci to robi\u0105\

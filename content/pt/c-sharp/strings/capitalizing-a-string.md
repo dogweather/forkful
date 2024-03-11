@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:18.501914-07:00
 description: "Capitalizar uma string em C# envolve converter o primeiro caractere\
   \ de uma string para mai\xFAscula, caso ele j\xE1 n\xE3o seja. Essa altera\xE7\xE3\
   o pode ser crucial\u2026"
-lastmod: '2024-02-25T18:49:44.188366-07:00'
+lastmod: '2024-03-11T00:14:20.274042-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string em C# envolve converter o primeiro caractere de uma\
   \ string para mai\xFAscula, caso ele j\xE1 n\xE3o seja. Essa altera\xE7\xE3o pode\

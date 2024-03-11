@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:08.096430-07:00
 description: "Sending an HTTP request involves creating and dispatching a request\
   \ to a web server to retrieve or submit data. Programmers do this in C to interact\
   \ with\u2026"
-lastmod: '2024-02-25T18:49:56.945481-07:00'
+lastmod: '2024-03-11T00:14:34.391291-06:00'
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request involves creating and dispatching a request to a\
   \ web server to retrieve or submit data. Programmers do this in C to interact with\u2026"

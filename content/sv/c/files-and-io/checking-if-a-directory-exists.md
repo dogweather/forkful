@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:53:05.368505-07:00
 description: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5\
   gar filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"
-lastmod: '2024-02-25T18:49:36.713599-07:00'
+lastmod: '2024-03-11T00:14:11.803435-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5gar\
   \ filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"

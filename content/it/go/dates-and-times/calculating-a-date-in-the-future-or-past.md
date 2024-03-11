@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:52:48.138647-07:00
 description: "Calcolare una data nel futuro o nel passato in Go comporta la manipolazione\
   \ dei valori di data e ora per determinare un punto specifico relativo a una\u2026"
-lastmod: '2024-02-25T18:49:40.853161-07:00'
+lastmod: '2024-03-11T00:14:16.472957-06:00'
 model: gpt-4-0125-preview
 summary: "Calcolare una data nel futuro o nel passato in Go comporta la manipolazione\
   \ dei valori di data e ora per determinare un punto specifico relativo a una\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:18:58.542423-07:00
 description: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language, \xE9 um formato\
   \ de serializa\xE7\xE3o de dados. Os programadores curtem pela sua simplicidade\
   \ e legibilidade;\u2026"
-lastmod: '2024-02-25T18:49:44.395413-07:00'
+lastmod: '2024-03-11T00:14:20.499205-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language, \xE9 um formato\
   \ de serializa\xE7\xE3o de dados. Os programadores curtem pela sua simplicidade\

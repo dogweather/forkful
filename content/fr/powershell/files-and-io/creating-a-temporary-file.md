@@ -2,7 +2,7 @@
 date: 2024-01-20 17:41:07.232622-07:00
 description: "Cr\xE9er un fichier temporaire, c'est faire un fichier qu'on utilisera\
   \ juste un court moment. Les programmeurs le font pour stocker des donn\xE9es provisoires\u2026"
-lastmod: '2024-02-25T18:49:54.760945-07:00'
+lastmod: '2024-03-11T00:14:31.991566-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est faire un fichier qu'on utilisera juste\
   \ un court moment. Les programmeurs le font pour stocker des donn\xE9es provisoires\u2026"

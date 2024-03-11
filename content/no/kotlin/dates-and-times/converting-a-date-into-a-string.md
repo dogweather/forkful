@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:44.306442-07:00
 description: "\xC5 konvertere en dato til en streng er \xE5 omdanne et Date-objekt\
   \ til en tekstrepresentasjon. Vi gj\xF8r dette for \xE5 gj\xF8re datoer leselige\
   \ for mennesker eller\u2026"
-lastmod: '2024-02-25T18:49:38.940585-07:00'
+lastmod: '2024-03-11T00:14:14.316852-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng er \xE5 omdanne et Date-objekt til\
   \ en tekstrepresentasjon. Vi gj\xF8r dette for \xE5 gj\xF8re datoer leselige for\

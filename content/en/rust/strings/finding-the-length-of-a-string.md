@@ -2,7 +2,7 @@
 date: 2024-01-20 17:48:16.602904-07:00
 description: "Finding the length of a string means counting the number of characters\
   \ it contains. Programmers do this to validate, format, or process text data\u2026"
-lastmod: '2024-02-25T18:49:56.311899-07:00'
+lastmod: '2024-03-11T00:14:33.748753-06:00'
 model: gpt-4-1106-preview
 summary: "Finding the length of a string means counting the number of characters it\
   \ contains. Programmers do this to validate, format, or process text data\u2026"

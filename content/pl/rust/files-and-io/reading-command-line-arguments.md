@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:06.134737-07:00
 description: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wprowadzonych\
   \ przez u\u017Cytkownika podczas wywo\u0142ywania programu. Programi\u015Bci u\u017C\
   ywaj\u0105 tego, by\u2026"
-lastmod: '2024-02-25T18:49:33.567482-07:00'
+lastmod: '2024-03-11T00:14:08.375726-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wprowadzonych\
   \ przez u\u017Cytkownika podczas wywo\u0142ywania programu. Programi\u015Bci u\u017C\

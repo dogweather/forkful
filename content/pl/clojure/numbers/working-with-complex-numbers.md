@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:13.454494-07:00
 description: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste o dodatkow\u0105\
   \ cz\u0119\u015B\u0107, jednostk\u0119 urojon\u0105 'i'. Programi\u015Bci u\u017C\
   ywaj\u0105 ich w r\xF3\u017Cnych dziedzinach, w tym w\u2026"
-lastmod: '2024-02-25T18:49:33.413334-07:00'
+lastmod: '2024-03-11T00:14:08.161574-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste o dodatkow\u0105 cz\u0119\
   \u015B\u0107, jednostk\u0119 urojon\u0105 'i'. Programi\u015Bci u\u017Cywaj\u0105\

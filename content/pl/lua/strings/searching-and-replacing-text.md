@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:14.774707-07:00
 description: "Wyszukiwanie i zamiana tekstu to podstawy manipulacji ci\u0105gami.\
   \ Programi\u015Bci u\u017Cywaj\u0105 tych technik do edycji danych, automatyzacji\
   \ poprawek i przetwarzania\u2026"
-lastmod: '2024-02-25T18:49:33.889185-07:00'
+lastmod: '2024-03-11T00:14:08.712230-06:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to podstawy manipulacji ci\u0105gami. Programi\u015B\
   ci u\u017Cywaj\u0105 tych technik do edycji danych, automatyzacji poprawek i przetwarzania\u2026"

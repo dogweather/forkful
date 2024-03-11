@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:30.513813-07:00
 description: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolve\
   \ a uni\xE3o de duas ou mais strings em uma \xFAnica entidade. Esta \xE9 uma tarefa\
   \ fundamental na\u2026"
-lastmod: '2024-02-25T18:49:44.023200-07:00'
+lastmod: '2024-03-11T00:14:20.096977-06:00'
 model: gpt-4-0125-preview
 summary: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolve a uni\xE3\
   o de duas ou mais strings em uma \xFAnica entidade. Esta \xE9 uma tarefa fundamental\

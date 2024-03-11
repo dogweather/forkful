@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:47.777144-07:00
 description: "Konkatenacja w Visual Basic for Applications (VBA) polega na \u0142\u0105\
   czeniu dw\xF3ch lub wi\u0119cej ci\u0105g\xF3w znak\xF3w w jedn\u0105 jednostk\u0119\
   . Jest to podstawowe zadanie w\u2026"
-lastmod: '2024-02-25T18:49:33.587888-07:00'
+lastmod: '2024-03-11T00:14:08.397515-06:00'
 model: gpt-4-0125-preview
 summary: "Konkatenacja w Visual Basic for Applications (VBA) polega na \u0142\u0105\
   czeniu dw\xF3ch lub wi\u0119cej ci\u0105g\xF3w znak\xF3w w jedn\u0105 jednostk\u0119\

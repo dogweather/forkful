@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:14.807790-07:00
 description: "Tekst zoeken en vervangen betekent specifieke tekenreeksen in een tekstblok\
   \ omwisselen met andere. Programmeurs doen dit voor taken zoals het herstellen\u2026"
-lastmod: '2024-02-25T18:49:48.261409-07:00'
+lastmod: '2024-03-11T00:14:24.753982-06:00'
 model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen betekent specifieke tekenreeksen in een tekstblok\
   \ omwisselen met andere. Programmeurs doen dit voor taken zoals het herstellen\u2026"

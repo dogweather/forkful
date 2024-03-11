@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:30.101099-07:00
 description: "\u0421\u0443\u0442\u044C \u0442\u0430 \u041F\u0440\u0438\u0447\u0438\
   \u043D\u0438? Sending HTTP requests is how your Ruby program talks to the web; it's\
   \ like asking a question and awaiting the answer. Programmers do this\u2026"
-lastmod: '2024-02-25T18:49:47.620426-07:00'
+lastmod: '2024-03-11T00:14:24.028692-06:00'
 model: gpt-4-1106-preview
 summary: "\u0421\u0443\u0442\u044C \u0442\u0430 \u041F\u0440\u0438\u0447\u0438\u043D\
   \u0438? Sending HTTP requests is how your Ruby program talks to the web; it's like\

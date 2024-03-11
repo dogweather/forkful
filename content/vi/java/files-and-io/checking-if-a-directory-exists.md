@@ -6,7 +6,7 @@ description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA
   i kh\xF4ng c\xF3 ngh\u0129a l\xE0 x\xE1c minh th\u01B0 m\u1EE5c \u0111\xF3 c\xF3\
   \ m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n c\u1ED1 g\u1EAFng \u0111\u1ECDc ho\u1EB7\
   c ghi c\xE1c t\u1EC7p v\xE0o trong \u0111\xF3. L\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: '2024-02-25T18:49:34.848009-07:00'
+lastmod: '2024-03-11T00:14:09.774678-06:00'
 model: gpt-4-0125-preview
 summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4\
   ng c\xF3 ngh\u0129a l\xE0 x\xE1c minh th\u01B0 m\u1EE5c \u0111\xF3 c\xF3 m\u1EB7\

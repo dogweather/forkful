@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:03.604406-07:00
 description: "Verificar si un directorio existe en C# implica comprobar la presencia\
   \ de una carpeta en una ruta especificada en el sistema de archivos. Los\u2026"
-lastmod: '2024-02-25T18:49:55.562248-07:00'
+lastmod: '2024-03-11T00:14:32.903023-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en C# implica comprobar la presencia de\
   \ una carpeta en una ruta especificada en el sistema de archivos. Los\u2026"

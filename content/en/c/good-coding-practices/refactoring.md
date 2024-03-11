@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:13.202592-07:00
 description: "Refactoring in programming involves restructuring existing code without\
   \ changing its external behavior, aiming to improve nonfunctional attributes such\
   \ as\u2026"
-lastmod: '2024-02-25T18:49:56.955810-07:00'
+lastmod: '2024-03-11T00:14:34.403948-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in programming involves restructuring existing code without\
   \ changing its external behavior, aiming to improve nonfunctional attributes such\

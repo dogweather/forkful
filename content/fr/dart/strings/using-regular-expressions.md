@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:05.260213-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) en Dart offrent un moyen puissant\
   \ de rechercher et de manipuler des cha\xEEnes de caract\xE8res, permettant aux\
   \ programmeurs\u2026"
-lastmod: '2024-03-09T21:06:21.231851-07:00'
+lastmod: '2024-03-11T00:14:31.393977-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en Dart offrent un moyen puissant\
   \ de rechercher et de manipuler des cha\xEEnes de caract\xE8res, permettant aux\

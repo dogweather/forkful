@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:27.244641-07:00
 description: "Escribir pruebas en Python implica crear scripts automatizados para\
   \ validar la correcci\xF3n de tu c\xF3digo. Los programadores hacen esto para asegurarse\
   \ de\u2026"
-lastmod: '2024-02-25T18:49:55.181148-07:00'
+lastmod: '2024-03-11T00:14:32.446609-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en Python implica crear scripts automatizados para validar\
   \ la correcci\xF3n de tu c\xF3digo. Los programadores hacen esto para asegurarse\

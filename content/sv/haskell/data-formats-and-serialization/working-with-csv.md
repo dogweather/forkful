@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:04.591923-07:00
 description: "Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerade\
   \ v\xE4rden) inneb\xE4r att tolka och generera filer som lagrar tabul\xE4r data\
   \ i ett enkelt,\u2026"
-lastmod: '2024-02-25T18:49:36.278279-07:00'
+lastmod: '2024-03-11T00:14:11.346713-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerade\
   \ v\xE4rden) inneb\xE4r att tolka och generera filer som lagrar tabul\xE4r data\

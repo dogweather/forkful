@@ -2,7 +2,7 @@
 date: 2024-01-26 00:52:54.803645-07:00
 description: "Manejar errores en C# es acerca de gestionar lo inesperado, como tropezar\
   \ con los cordones de tus zapatos. Los programas pueden tropezarse con datos\u2026"
-lastmod: '2024-02-25T18:49:55.555618-07:00'
+lastmod: '2024-03-11T00:14:32.895968-06:00'
 model: gpt-4-1106-preview
 summary: "Manejar errores en C# es acerca de gestionar lo inesperado, como tropezar\
   \ con los cordones de tus zapatos. Los programas pueden tropezarse con datos\u2026"

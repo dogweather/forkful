@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:35.718335-07:00
 description: "Organizzare il codice in funzioni con Dart significa definire blocchi\
   \ di codice riutilizzabili che eseguono compiti specifici, ricevendo tipicamente\
   \ in\u2026"
-lastmod: '2024-03-09T21:06:07.682944-07:00'
+lastmod: '2024-03-11T00:14:16.698567-06:00'
 model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni con Dart significa definire blocchi di\
   \ codice riutilizzabili che eseguono compiti specifici, ricevendo tipicamente in\u2026"

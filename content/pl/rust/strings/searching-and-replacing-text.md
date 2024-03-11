@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:41.582020-07:00
 description: "Wyszukiwanie i zamiana tekstu to standardowe akcje przetwarzaj\u0105\
   ce \u0142a\u0144cuchy znak\xF3w - znajdujemy fragment tekstu i podmieniamy go na\
   \ inny. Programi\u015Bci robi\u0105\u2026"
-lastmod: '2024-02-25T18:49:33.536583-07:00'
+lastmod: '2024-03-11T00:14:08.341842-06:00'
 model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to standardowe akcje przetwarzaj\u0105ce \u0142\
   a\u0144cuchy znak\xF3w - znajdujemy fragment tekstu i podmieniamy go na inny. Programi\u015B\

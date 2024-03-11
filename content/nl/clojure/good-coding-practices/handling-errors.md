@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:54.897664-07:00
 description: "Foutafhandeling gaat over het beheren van het onverwachte in programma's\
   \ - zoals een uitsmijter die te maken heeft met lastpakken. Programmeurs houden\
   \ van\u2026"
-lastmod: '2024-02-25T18:49:47.820381-07:00'
+lastmod: '2024-03-11T00:14:24.238902-06:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling gaat over het beheren van het onverwachte in programma's\
   \ - zoals een uitsmijter die te maken heeft met lastpakken. Programmeurs houden\

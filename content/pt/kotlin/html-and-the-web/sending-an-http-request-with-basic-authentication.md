@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:21.681785-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de usu\xE1rio e senha codificadas em base64 no cabe\xE7alho\
   \ da requisi\xE7\xE3o.\u2026"
-lastmod: '2024-02-25T18:49:44.162742-07:00'
+lastmod: '2024-03-11T00:14:20.246077-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ incluir credenciais de usu\xE1rio e senha codificadas em base64 no cabe\xE7alho\

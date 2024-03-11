@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:37.213336-07:00
 description: "Baixar uma p\xE1gina da web significa copiar o seu conte\xFAdo da internet\
   \ para o seu computador. Programadores fazem isso para analisar dados, testar\u2026"
-lastmod: '2024-02-25T18:49:44.371069-07:00'
+lastmod: '2024-03-11T00:14:20.472255-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web significa copiar o seu conte\xFAdo da internet\
   \ para o seu computador. Programadores fazem isso para analisar dados, testar\u2026"

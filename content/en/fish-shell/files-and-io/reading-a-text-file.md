@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:14.326383-07:00
 description: "Reading a text file is grabbing the data within a file for processing.\
   \ Programmers do it to extract information, configure apps, parse logs, or just\
   \ feed\u2026"
-lastmod: '2024-02-25T18:49:56.925531-07:00'
+lastmod: '2024-03-11T00:14:34.368003-06:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file is grabbing the data within a file for processing. Programmers\
   \ do it to extract information, configure apps, parse logs, or just feed\u2026"

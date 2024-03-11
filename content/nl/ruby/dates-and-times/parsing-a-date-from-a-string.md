@@ -5,7 +5,7 @@ date: 2024-01-28 22:04:45.846938-07:00
 description: "Een datum ontleden betekent een tekenreeks vertalen naar iets wat de\
   \ computer begrijpt\u2014zoals een echt datumobject. Programmeurs doen dit omdat\
   \ we vaak\u2026"
-lastmod: '2024-02-25T18:49:48.670386-07:00'
+lastmod: '2024-03-11T00:14:25.211592-06:00'
 model: gpt-4-0125-preview
 summary: "Een datum ontleden betekent een tekenreeks vertalen naar iets wat de computer\
   \ begrijpt\u2014zoals een echt datumobject. Programmeurs doen dit omdat we vaak\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:43.381394-07:00
 description: "Editar archivos en su lugar con l\xEDneas de comando individuales (CLI,\
   \ por sus siglas en ingl\xE9s Interface de L\xEDnea de Comando) en Ruby te permite\
   \ modificar\u2026"
-lastmod: '2024-02-25T18:49:56.055008-07:00'
+lastmod: '2024-03-11T00:14:33.428036-06:00'
 model: gpt-4-0125-preview
 summary: "Editar archivos en su lugar con l\xEDneas de comando individuales (CLI,\
   \ por sus siglas en ingl\xE9s Interface de L\xEDnea de Comando) en Ruby te permite\

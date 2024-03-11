@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:27.957010-07:00
 description: "\xC5 jobbe med CSV (Comma Separated Values) inneb\xE6rer parsing og\
   \ generering av filer som lagrer tabelldata i et enkelt, klartekstformat. Dette\
   \ er vanlig\u2026"
-lastmod: '2024-02-25T18:49:38.909668-07:00'
+lastmod: '2024-03-11T00:14:14.278500-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV (Comma Separated Values) inneb\xE6rer parsing og generering\
   \ av filer som lagrer tabelldata i et enkelt, klartekstformat. Dette er vanlig\u2026"

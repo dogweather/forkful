@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:54.050359-07:00
 description: "\xC9crire un fichier texte en PHP implique de cr\xE9er ou d'ouvrir un\
   \ fichier et d'y ins\xE9rer du contenu. Les programmeurs font cela pour persister\
   \ des donn\xE9es,\u2026"
-lastmod: '2024-02-25T18:49:54.618119-07:00'
+lastmod: '2024-03-11T00:14:31.848976-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en PHP implique de cr\xE9er ou d'ouvrir un fichier\
   \ et d'y ins\xE9rer du contenu. Les programmeurs font cela pour persister des donn\xE9\

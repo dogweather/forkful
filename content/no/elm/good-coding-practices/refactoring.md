@@ -3,7 +3,7 @@ date: 2024-01-26 01:17:49.474716-07:00
 description: "Refaktorering er i bunn og grunn \xE5 gj\xF8re en v\xE5rrengj\xF8ring\
   \ i koden din \u2013 det handler om \xE5 restrukturere eksisterende kode uten \xE5\
   \ endre dens eksterne\u2026"
-lastmod: '2024-02-25T18:49:38.896718-07:00'
+lastmod: '2024-03-11T00:14:14.263048-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering er i bunn og grunn \xE5 gj\xF8re en v\xE5rrengj\xF8ring i\
   \ koden din \u2013 det handler om \xE5 restrukturere eksisterende kode uten \xE5\

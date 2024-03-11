@@ -3,7 +3,7 @@ date: 2024-01-26 03:38:03.531104-07:00
 description: "Eliminar las comillas de una cadena en C# significa que est\xE1s sacando\
   \ esos molestos caracteres de comillas dobles (`\"`) o simples (`'`) que envuelven\
   \ tu\u2026"
-lastmod: '2024-02-25T18:49:55.537334-07:00'
+lastmod: '2024-03-11T00:14:32.875101-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena en C# significa que est\xE1s sacando\
   \ esos molestos caracteres de comillas dobles (`\"`) o simples (`'`) que envuelven\

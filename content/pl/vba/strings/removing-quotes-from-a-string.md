@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:30.638725-07:00
 description: "Usuwanie cudzys\u0142ow\xF3w ze stringa w VBA polega na eliminacji wyst\u0105\
   pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu,\
   \ kt\xF3re mog\u0105 znajdowa\u0107 si\u0119\u2026"
-lastmod: '2024-02-25T18:49:33.583443-07:00'
+lastmod: '2024-03-11T00:14:08.392889-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa w VBA polega na eliminacji wyst\u0105\
   pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu,\

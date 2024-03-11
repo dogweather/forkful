@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:47.131325-07:00
 description: "\xC5 skrive til en tekstfil i Fish Shell lar deg lagre data vedvarende,\
   \ noe som gj\xF8r det enkelt \xE5 hente eller manipulere data enten av samme Fish-script\u2026"
-lastmod: '2024-02-25T18:49:39.423083-07:00'
+lastmod: '2024-03-11T00:14:14.850045-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Fish Shell lar deg lagre data vedvarende,\
   \ noe som gj\xF8r det enkelt \xE5 hente eller manipulere data enten av samme Fish-script\u2026"

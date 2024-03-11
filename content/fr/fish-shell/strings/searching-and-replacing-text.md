@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:51.581798-07:00
 description: "La recherche et remplacement de texte, c'est simplement trouver des\
   \ bouts de texte et les troquer contre autre chose. Les programmeurs le font pour\u2026"
-lastmod: '2024-02-25T18:49:54.935103-07:00'
+lastmod: '2024-03-11T00:14:32.178034-06:00'
 model: gpt-4-1106-preview
 summary: "La recherche et remplacement de texte, c'est simplement trouver des bouts\
   \ de texte et les troquer contre autre chose. Les programmeurs le font pour\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:08.478122-07:00
 description: "Escribir pruebas en C++ implica crear programas peque\xF1os y aut\xF3\
   nomos que verifican autom\xE1ticamente el comportamiento de secciones de tu base\
   \ de c\xF3digo.\u2026"
-lastmod: '2024-02-25T18:49:55.848700-07:00'
+lastmod: '2024-03-11T00:14:33.201557-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en C++ implica crear programas peque\xF1os y aut\xF3nomos\
   \ que verifican autom\xE1ticamente el comportamiento de secciones de tu base de\

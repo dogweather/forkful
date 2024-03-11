@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:51.342769-07:00
 description: "Format warto\u015Bci rozdzielanych przecinkami (CSV) jest wszechobecny\
   \ w wymianie danych ze wzgl\u0119du na swoj\u0105 prostot\u0119 i \u0142atwo\u015B\
   \u0107 integracji z wi\u0119kszo\u015Bci\u0105\u2026"
-lastmod: '2024-02-25T18:49:33.301774-07:00'
+lastmod: '2024-03-11T00:14:08.049285-06:00'
 model: gpt-4-0125-preview
 summary: "Format warto\u015Bci rozdzielanych przecinkami (CSV) jest wszechobecny w\
   \ wymianie danych ze wzgl\u0119du na swoj\u0105 prostot\u0119 i \u0142atwo\u015B\

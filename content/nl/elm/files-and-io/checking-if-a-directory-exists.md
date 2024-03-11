@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:15.787744-07:00
 description: "Controleren of een directory bestaat betekent bevestigen of een specifiek\
   \ map pad aanwezig is in het bestandssysteem. Programmeurs doen dit om fouten te\u2026"
-lastmod: '2024-02-25T18:49:48.079810-07:00'
+lastmod: '2024-03-11T00:14:24.562629-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat betekent bevestigen of een specifiek\
   \ map pad aanwezig is in het bestandssysteem. Programmeurs doen dit om fouten te\u2026"

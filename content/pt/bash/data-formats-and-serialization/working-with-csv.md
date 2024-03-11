@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:40.153847-07:00
 description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) no Bash\
   \ \xE9 sobre processar e manipular dados tabulares armazenados em formato de texto\
   \ simples.\u2026"
-lastmod: '2024-02-25T18:49:44.394379-07:00'
+lastmod: '2024-03-11T00:14:20.498166-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) no Bash \xE9\
   \ sobre processar e manipular dados tabulares armazenados em formato de texto simples.\u2026"

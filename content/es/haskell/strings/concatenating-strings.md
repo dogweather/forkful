@@ -2,7 +2,7 @@
 date: 2024-01-20 17:34:49.613199-07:00
 description: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s cadenas\
   \ para formar una nueva. Los programadores concatenan cadenas para construir mensajes,\u2026"
-lastmod: '2024-02-25T18:49:55.581432-07:00'
+lastmod: '2024-03-11T00:14:32.924391-06:00'
 model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s cadenas\
   \ para formar una nueva. Los programadores concatenan cadenas para construir mensajes,\u2026"

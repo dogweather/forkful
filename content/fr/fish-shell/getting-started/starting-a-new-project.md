@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:26.347536-07:00
 description: "D\xE9marrer un nouveau projet, c'est partir de z\xE9ro pour cr\xE9er\
   \ quelque chose de fonctionnel. Pourquoi ? Pour r\xE9soudre un probl\xE8me, apprendre\
   \ ou simplement\u2026"
-lastmod: '2024-02-25T18:49:54.952297-07:00'
+lastmod: '2024-03-11T00:14:32.197396-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est partir de z\xE9ro pour cr\xE9er quelque\
   \ chose de fonctionnel. Pourquoi ? Pour r\xE9soudre un probl\xE8me, apprendre ou\

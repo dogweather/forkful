@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:54.214516-07:00
 description: "Utiliser un d\xE9bogueur signifie avoir recours \xE0 des outils sp\xE9\
   cialis\xE9s pour tester et diagnostiquer du code. Les programmeurs le font pour\
   \ \xE9liminer les\u2026"
-lastmod: '2024-02-25T18:49:54.519324-07:00'
+lastmod: '2024-03-11T00:14:31.742061-06:00'
 model: gpt-4-0125-preview
 summary: "Utiliser un d\xE9bogueur signifie avoir recours \xE0 des outils sp\xE9cialis\xE9\
   s pour tester et diagnostiquer du code. Les programmeurs le font pour \xE9liminer\

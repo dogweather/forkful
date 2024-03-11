@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:57.147731-07:00
 description: "Transformer une date en cha\xEEne de caract\xE8res permet de la formater\
   \ pour l'affichage. Les d\xE9veloppeurs font cela pour des raisons de lisibilit\xE9\
   \ et pour\u2026"
-lastmod: '2024-02-25T18:49:54.610676-07:00'
+lastmod: '2024-03-11T00:14:31.841542-06:00'
 model: gpt-4-1106-preview
 summary: "Transformer une date en cha\xEEne de caract\xE8res permet de la formater\
   \ pour l'affichage. Les d\xE9veloppeurs font cela pour des raisons de lisibilit\xE9\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:06:49.503462-07:00
 description: "Afronden van getallen gaat over het aanpassen van een waarde naar het\
   \ dichtstbijzijnde geheel getal of opgegeven decimale plaats. Programmeurs ronden\u2026"
-lastmod: '2024-02-25T18:49:48.357548-07:00'
+lastmod: '2024-03-11T00:14:24.855269-06:00'
 model: gpt-4-0125-preview
 summary: "Afronden van getallen gaat over het aanpassen van een waarde naar het dichtstbijzijnde\
   \ geheel getal of opgegeven decimale plaats. Programmeurs ronden\u2026"

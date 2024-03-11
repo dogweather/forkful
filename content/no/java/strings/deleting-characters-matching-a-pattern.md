@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:32.731276-07:00
 description: "Slettes matchende tegn er \xE5 fjerne bestemte sekvenser av tegn fra\
   \ en streng, basert p\xE5 et m\xF8nster. Programmerere gj\xF8r dette for \xE5 rense\
   \ data, forenkle\u2026"
-lastmod: '2024-02-25T18:49:38.830286-07:00'
+lastmod: '2024-03-11T00:14:14.190370-06:00'
 model: gpt-4-1106-preview
 summary: "Slettes matchende tegn er \xE5 fjerne bestemte sekvenser av tegn fra en\
   \ streng, basert p\xE5 et m\xF8nster. Programmerere gj\xF8r dette for \xE5 rense\

@@ -3,7 +3,7 @@ date: 2024-01-26 03:38:43.233353-07:00
 description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res consiste \xE0\
   \ enlever ces fameux guillemets simples (' ') ou doubles (\" \") de vos donn\xE9\
   es textuelles. Les\u2026"
-lastmod: '2024-02-25T18:49:54.937831-07:00'
+lastmod: '2024-03-11T00:14:32.180835-06:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res consiste \xE0 enlever\
   \ ces fameux guillemets simples (' ') ou doubles (\" \") de vos donn\xE9es textuelles.\

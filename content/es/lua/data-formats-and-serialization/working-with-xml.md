@@ -3,7 +3,7 @@ date: 2024-01-26 04:33:32.705377-07:00
 description: "Trabajar con XML implica analizar y manipular documentos XML usando\
   \ c\xF3digo. Los programadores hacen esto para leer, escribir y modificar datos\
   \ en un\u2026"
-lastmod: '2024-02-25T18:49:55.697786-07:00'
+lastmod: '2024-03-11T00:14:33.047151-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML implica analizar y manipular documentos XML usando c\xF3\
   digo. Los programadores hacen esto para leer, escribir y modificar datos en un\u2026"

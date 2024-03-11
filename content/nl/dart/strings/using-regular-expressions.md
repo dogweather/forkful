@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:57:11.013736-07:00
 description: "Reguliere expressies (regex) in Dart bieden een krachtige manier om\
   \ te zoeken en te manipuleren met strings, waardoor programmeurs complexe\u2026"
-lastmod: '2024-03-09T21:06:14.679837-07:00'
+lastmod: '2024-03-11T00:14:24.308752-06:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) in Dart bieden een krachtige manier om te zoeken\
   \ en te manipuleren met strings, waardoor programmeurs complexe\u2026"

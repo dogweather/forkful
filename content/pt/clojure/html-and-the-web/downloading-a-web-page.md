@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:48.609855-07:00
 description: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo da\
   \ internet para o seu computador. Programadores fazem isso para coletar dados, automatizar\u2026"
-lastmod: '2024-02-25T18:49:43.856996-07:00'
+lastmod: '2024-03-11T00:14:19.867634-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo da internet\
   \ para o seu computador. Programadores fazem isso para coletar dados, automatizar\u2026"

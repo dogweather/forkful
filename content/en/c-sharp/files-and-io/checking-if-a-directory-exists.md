@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:42.891176-07:00
 description: "Checking if a directory exists in C# involves verifying the presence\
   \ of a folder at a specified path in the file system. Programmers do this to avoid\u2026"
-lastmod: '2024-02-25T18:49:56.546759-07:00'
+lastmod: '2024-03-11T00:14:33.966350-06:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists in C# involves verifying the presence of\
   \ a folder at a specified path in the file system. Programmers do this to avoid\u2026"

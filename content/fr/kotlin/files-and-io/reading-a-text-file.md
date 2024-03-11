@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:38.362988-07:00
 description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans\
   \ notre code. C'est crucial pour g\xE9rer les donn\xE9es configurables, les sauvegardes\
   \ ou\u2026"
-lastmod: '2024-02-25T18:49:54.489975-07:00'
+lastmod: '2024-03-11T00:14:31.708469-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans notre\
   \ code. C'est crucial pour g\xE9rer les donn\xE9es configurables, les sauvegardes\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:39:12.372251-07:00
 description: "Muuttaa merkkijono pieniksi kirjaimiksi. Tehd\xE4\xE4n johdonmukaisuuden\
   \ ja vertailun helpottamiseksi."
-lastmod: '2024-02-25T18:49:53.229109-07:00'
+lastmod: '2024-03-11T00:14:30.235148-06:00'
 model: gpt-4-1106-preview
 summary: "Muuttaa merkkijono pieniksi kirjaimiksi. Tehd\xE4\xE4n johdonmukaisuuden\
   \ ja vertailun helpottamiseksi."

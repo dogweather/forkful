@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:49.074131-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, einem\
   \ Server deine Identit\xE4t zu best\xE4tigen, indem du Benutzername und Passwort\
   \ kodiert\u2026"
-lastmod: '2024-02-25T18:49:50.988613-07:00'
+lastmod: '2024-03-11T00:14:27.828352-06:00'
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, einem\
   \ Server deine Identit\xE4t zu best\xE4tigen, indem du Benutzername und Passwort\

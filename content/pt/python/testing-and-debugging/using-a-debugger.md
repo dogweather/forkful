@@ -3,7 +3,7 @@ date: 2024-01-26 04:08:54.084302-07:00
 description: "\"Usar um depurador\" significa percorrer o seu c\xF3digo Python para\
   \ descobrir erros e entender o comportamento. Fazemos isso porque \xE9 muito mais\
   \ f\xE1cil do que\u2026"
-lastmod: '2024-02-25T18:49:43.820616-07:00'
+lastmod: '2024-03-11T00:14:19.825191-06:00'
 model: gpt-4-0125-preview
 summary: "\"Usar um depurador\" significa percorrer o seu c\xF3digo Python para descobrir\
   \ erros e entender o comportamento. Fazemos isso porque \xE9 muito mais f\xE1cil\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:30.281347-07:00
 description: "\xC5 kapitalisere en streng i Rust inneb\xE6rer \xE5 endre strengen\
   \ slik at dens f\xF8rste bokstav er stor hvis det er en bokstav, mens resten av\
   \ strengen forblir\u2026"
-lastmod: '2024-02-25T18:49:38.736643-07:00'
+lastmod: '2024-03-11T00:14:14.089680-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 kapitalisere en streng i Rust inneb\xE6rer \xE5 endre strengen slik\
   \ at dens f\xF8rste bokstav er stor hvis det er en bokstav, mens resten av strengen\

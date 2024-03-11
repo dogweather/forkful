@@ -3,7 +3,7 @@ date: 2024-01-20 15:14:19.510193-07:00
 description: "Ottenere la data attuale significa catturare il momento presente in\
   \ termini di giorno, mese e anno. I programmatori lo fanno per tracciare eventi,\
   \ gestire\u2026"
-lastmod: '2024-03-09T21:11:25.889755-07:00'
+lastmod: '2024-03-11T00:14:16.932811-06:00'
 model: unknown
 summary: "Ottenere la data attuale significa catturare il momento presente in termini\
   \ di giorno, mese e anno. I programmatori lo fanno per tracciare eventi, gestire\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:57.152608-07:00
 description: "Regul\xE6re uttrykk (regex) i JavaScript er m\xF8nstre som brukes for\
   \ \xE5 samsvare med tegnkombinasjoner i strenger. Programmerere bruker dem til \xE5\
   \ s\xF8ke, utvinne\u2026"
-lastmod: '2024-02-25T18:49:39.352736-07:00'
+lastmod: '2024-03-11T00:14:14.773186-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i JavaScript er m\xF8nstre som brukes for \xE5\
   \ samsvare med tegnkombinasjoner i strenger. Programmerere bruker dem til \xE5 s\xF8\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:22.783074-07:00
 description: "Comparare due date significa verificare qual \xE8 la pi\xF9 recente\
   \ o calcolare la differenza temporale tra di esse. I programmatori lo fanno per\
   \ gestire\u2026"
-lastmod: '2024-02-25T18:49:41.473469-07:00'
+lastmod: '2024-03-11T00:14:17.223953-06:00'
 model: gpt-4-1106-preview
 summary: "Comparare due date significa verificare qual \xE8 la pi\xF9 recente o calcolare\
   \ la differenza temporale tra di esse. I programmatori lo fanno per gestire\u2026"

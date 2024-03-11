@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:13.829313-07:00
 description: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
   \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\u2026"
-lastmod: '2024-02-25T18:49:33.617209-07:00'
+lastmod: '2024-03-11T00:14:08.428147-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
   \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\u2026"

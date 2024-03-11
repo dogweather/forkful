@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:46.768749-07:00
 description: "Att kontrollera om en katalog finns i JavaScript \xE4r avg\xF6rande\
   \ f\xF6r filhanteringsuppgifter, vilket m\xF6jligg\xF6r f\xF6r skript att verifiera\
   \ katalogens n\xE4rvaro\u2026"
-lastmod: '2024-02-25T18:49:36.622637-07:00'
+lastmod: '2024-03-11T00:14:11.706795-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i JavaScript \xE4r avg\xF6rande f\xF6\
   r filhanteringsuppgifter, vilket m\xF6jligg\xF6r f\xF6r skript att verifiera katalogens\

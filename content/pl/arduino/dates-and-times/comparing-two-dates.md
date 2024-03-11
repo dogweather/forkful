@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:29.281269-07:00
 description: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest wcze\u015B\
   niejsza lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby \u015Bledzi\u0107\
   \ czas, zarz\u0105dza\u0107 wydarzeniami, lub\u2026"
-lastmod: '2024-02-25T18:49:34.055644-07:00'
+lastmod: '2024-03-11T00:14:08.881481-06:00'
 model: gpt-4-1106-preview
 summary: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest wcze\u015B\
   niejsza lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby \u015Bledzi\u0107\

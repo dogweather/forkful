@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:58.257257-07:00
 description: "Iniciar un nuevo proyecto es como plantar una semilla digital; es la\
   \ base desde la cual tu idea crecer\xE1 y tomar\xE1 forma. Los programadores empiezan\u2026"
-lastmod: '2024-02-25T18:49:55.630935-07:00'
+lastmod: '2024-03-11T00:14:32.977852-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es como plantar una semilla digital; es la base\
   \ desde la cual tu idea crecer\xE1 y tomar\xE1 forma. Los programadores empiezan\u2026"

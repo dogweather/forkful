@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:22.512990-07:00
 description: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique\
   \ d'acc\xE9der programmatiquement et d'extraire le contenu d'un fichier texte depuis\
   \ une\u2026"
-lastmod: '2024-02-25T18:49:54.360532-07:00'
+lastmod: '2024-03-11T00:14:31.564988-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique d'acc\xE9\
   der programmatiquement et d'extraire le contenu d'un fichier texte depuis une\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:28.045815-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla sis\xE4lt\xE4\
   \xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan koodaamisen pyynn\xF6n otsikkoon suojattujen\
   \ resurssien k\xE4ytt\xF6\xF6n.\u2026"
-lastmod: '2024-02-25T18:49:53.073980-07:00'
+lastmod: '2024-03-11T00:14:30.023373-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla sis\xE4lt\xE4\xE4\
   \ k\xE4ytt\xE4j\xE4nimen ja salasanan koodaamisen pyynn\xF6n otsikkoon suojattujen\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:56.522794-07:00
 description: "Enviar uma solicita\xE7\xE3o HTTP em Visual Basic for Applications (VBA)\
   \ envolve acessar programaticamente recursos ou servi\xE7os web fazendo solicita\xE7\
   \xF5es via\u2026"
-lastmod: '2024-02-25T18:49:44.028747-07:00'
+lastmod: '2024-03-11T00:14:20.102656-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar uma solicita\xE7\xE3o HTTP em Visual Basic for Applications (VBA)\
   \ envolve acessar programaticamente recursos ou servi\xE7os web fazendo solicita\xE7\

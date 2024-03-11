@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:26.607005-07:00
 description: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hora\
   \ atual do sistema. Esta opera\xE7\xE3o \xE9 fundamental para tarefas como registrar,\
   \ cronometrar\u2026"
-lastmod: '2024-02-25T18:49:44.426044-07:00'
+lastmod: '2024-03-11T00:14:20.532329-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hora atual\
   \ do sistema. Esta opera\xE7\xE3o \xE9 fundamental para tarefas como registrar,\

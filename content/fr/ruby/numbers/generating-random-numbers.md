@@ -3,7 +3,7 @@ date: 2024-01-27 20:34:51.392934-07:00
 description: "G\xE9n\xE9rer des nombres al\xE9atoires en Ruby implique la cr\xE9ation\
   \ de nombres qui ne peuvent pas \xEAtre pr\xE9dits logiquement, essentiel pour des\
   \ sc\xE9narios tels que\u2026"
-lastmod: '2024-02-25T18:49:55.036408-07:00'
+lastmod: '2024-03-11T00:14:32.285332-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Ruby implique la cr\xE9ation\
   \ de nombres qui ne peuvent pas \xEAtre pr\xE9dits logiquement, essentiel pour des\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:26:08.068017-07:00
 description: "TOML \xE9 um formato de arquivo de configura\xE7\xE3o que \xE9 f\xE1\
   cil de ler devido \xE0 sua clareza sem\xE2ntica. Programadores usam TOML para gerenciar\
   \ configura\xE7\xF5es de\u2026"
-lastmod: '2024-02-25T18:49:44.748658-07:00'
+lastmod: '2024-03-11T00:14:20.864780-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE9 um formato de arquivo de configura\xE7\xE3o que \xE9 f\xE1cil\
   \ de ler devido \xE0 sua clareza sem\xE2ntica. Programadores usam TOML para gerenciar\

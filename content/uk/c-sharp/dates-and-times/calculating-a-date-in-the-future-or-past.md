@@ -2,7 +2,7 @@
 date: 2024-01-20 17:28:30.640954-07:00
 description: Calculating a future or past date is manipulating a current date to get
   another date. Programmers do it to manage events, deadlines, or schedules.
-lastmod: '2024-02-25T18:49:46.791435-07:00'
+lastmod: '2024-03-11T00:14:23.168409-06:00'
 model: gpt-4-1106-preview
 summary: Calculating a future or past date is manipulating a current date to get another
   date. Programmers do it to manage events, deadlines, or schedules.

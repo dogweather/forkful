@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:00.054838-07:00
 description: "Transformer une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
   res en minuscules. Les d\xE9veloppeurs le font pour standardiser les entr\xE9es\
   \ et faciliter\u2026"
-lastmod: '2024-02-25T18:49:54.502095-07:00'
+lastmod: '2024-03-11T00:14:31.722004-06:00'
 model: gpt-4-1106-preview
 summary: "Transformer une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
   res en minuscules. Les d\xE9veloppeurs le font pour standardiser les entr\xE9es\
