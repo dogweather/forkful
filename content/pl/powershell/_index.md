@@ -1,11 +1,11 @@
 ---
 title: 'PowerShell: Samouczki programowania open source'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-09 10:55:55.445192-07:00
-description: Rozpoczynanie pracy, Ciągi Znaków, Liczby, Struktury Danych, Dobre praktyki
-  programowania, Pliki i operacje wejścia-wyjścia, Daty i czasy, Przetwarzanie…
-summary: Rozpoczynanie pracy, Ciągi Znaków, Liczby, Struktury Danych, Dobre praktyki
-  programowania, Pliki i operacje wejścia-wyjścia, Daty i czasy, Przetwarzanie…
+lastmod: 2024-03-10 18:56:26.118556-06:00
+description: 'PowerShell: Rozpoczynanie pracy, Ciągi Znaków, Liczby, Struktury Danych,
+  Dobre praktyki programowania, Pliki i operacje wejścia-wyjścia, Daty i czasy,…'
+summary: 'PowerShell: Rozpoczynanie pracy, Ciągi Znaków, Liczby, Struktury Danych,
+  Dobre praktyki programowania, Pliki i operacje wejścia-wyjścia, Daty i czasy,…'
 cascade:
   images:
   - /languages/powershell.jpeg

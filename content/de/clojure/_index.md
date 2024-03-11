@@ -1,11 +1,11 @@
 ---
 title: 'Clojure: Das open-source coding-Cookbook'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-09 10:55:41.573345-07:00
-description: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
-  Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in der…
-summary: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen, Gute
-  Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in der…
+lastmod: 2024-03-10 18:56:10.797835-06:00
+description: 'Clojure: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
+  Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in…'
+summary: 'Clojure: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
+  Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in…'
 cascade:
   images:
   - /languages/clojure.jpeg

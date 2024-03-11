@@ -1,11 +1,11 @@
 ---
 title: 'Elixir: Open Source Coding Tutoriales'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-09 10:55:43.799984-07:00
-description: Iniciando, Cadenas de Texto, Números, Estructuras de datos, Buenas prácticas
-  de programación, Archivos y Entrada/Salida, Fechas y horas, Procesamiento de…
-summary: Iniciando, Cadenas de Texto, Números, Estructuras de datos, Buenas prácticas
-  de programación, Archivos y Entrada/Salida, Fechas y horas, Procesamiento de…
+lastmod: 2024-03-10 18:56:13.266717-06:00
+description: 'Elixir: Iniciando, Cadenas de Texto, Números, Estructuras de datos,
+  Buenas prácticas de programación, Archivos y Entrada/Salida, Fechas y horas,…'
+summary: 'Elixir: Iniciando, Cadenas de Texto, Números, Estructuras de datos, Buenas
+  prácticas de programación, Archivos y Entrada/Salida, Fechas y horas,…'
 cascade:
   images:
   - /languages/elixir.jpeg

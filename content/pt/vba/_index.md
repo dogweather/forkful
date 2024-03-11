@@ -1,11 +1,12 @@
 ---
 title: 'Visual Basic for Applications: Tutoriais de Programação Open Source'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-09 10:55:56.827123-07:00
-description: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas
-  de Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…
-summary: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas de
-  Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…
+lastmod: 2024-03-10 18:56:27.640016-06:00
+description: 'Visual Basic for Applications: Introdução ao Programação, Cadeias de
+  Caracteres, Números, Estruturas de Dados, Boas Práticas de Codificação, Arquivos
+  e…'
+summary: 'Visual Basic for Applications: Introdução ao Programação, Cadeias de Caracteres,
+  Números, Estruturas de Dados, Boas Práticas de Codificação, Arquivos e…'
 cascade:
   images:
   - /languages/vba.jpeg
