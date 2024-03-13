@@ -1,58 +1,63 @@
 ---
-date: 2024-01-20 17:58:25.147824-07:00
-description: (
-lastmod: '2024-03-11T00:14:23.776893-06:00'
-model: gpt-4-1106-preview
-summary: (
+changelog:
+- 2024-03-13, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-13 16:16:02.436980-06:00
+description: "\u041F\u043E\u0448\u0443\u043A \u0456 \u0437\u0430\u043C\u0456\u043D\
+  \u0430 \u0442\u0435\u043A\u0441\u0442\u0443 \u043E\u0437\u043D\u0430\u0447\u0430\
+  \u0454 \u0437\u043D\u0430\u0445\u043E\u0434\u0436\u0435\u043D\u043D\u044F \u043F\
+  \u0435\u0432\u043D\u0438\u0445 \u043F\u0456\u0434\u0440\u044F\u0434\u043A\u0456\u0432\
+  \ \u0456 \u0457\u0445\u043D\u044E \u0437\u0430\u043C\u0456\u043D\u0443 \u043D\u0430\
+  \ \u0449\u043E\u0441\u044C \u043D\u043E\u0432\u0435. \u041D\u0430\u0432\u0456\u0449\
+  \u043E \u0446\u0435 \u0440\u043E\u0431\u0438\u0442\u0438? \u0426\u0435 \u0441\u043A\
+  \u0440\u0456\u0437\u044C: \u0432\u0438\u043F\u0440\u0430\u0432\u043B\u0435\u043D\
+  \u043D\u044F \u043F\u043E\u043C\u0438\u043B\u043E\u043A \u0443 \u0434\u043E\u043A\
+  \u0443\u043C\u0435\u043D\u0442\u0456,\u2026"
+lastmod: '2024-03-13T16:16:28.481328-06:00'
+model: gpt-4-0125-preview
+summary: "\u041F\u043E\u0448\u0443\u043A \u0456 \u0437\u0430\u043C\u0456\u043D\u0430\
+  \ \u0442\u0435\u043A\u0441\u0442\u0443 \u043E\u0437\u043D\u0430\u0447\u0430\u0454\
+  \ \u0437\u043D\u0430\u0445\u043E\u0434\u0436\u0435\u043D\u043D\u044F \u043F\u0435\
+  \u0432\u043D\u0438\u0445 \u043F\u0456\u0434\u0440\u044F\u0434\u043A\u0456\u0432\
+  \ \u0456 \u0457\u0445\u043D\u044E \u0437\u0430\u043C\u0456\u043D\u0443 \u043D\u0430\
+  \ \u0449\u043E\u0441\u044C \u043D\u043E\u0432\u0435. \u041D\u0430\u0432\u0456\u0449\
+  \u043E \u0446\u0435 \u0440\u043E\u0431\u0438\u0442\u0438? \u0426\u0435 \u0441\u043A\
+  \u0440\u0456\u0437\u044C: \u0432\u0438\u043F\u0440\u0430\u0432\u043B\u0435\u043D\
+  \u043D\u044F \u043F\u043E\u043C\u0438\u043B\u043E\u043A \u0443 \u0434\u043E\u043A\
+  \u0443\u043C\u0435\u043D\u0442\u0456,\u2026"
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(## Що і Чому?)
-Searching and replacing text in JavaScript is about finding strings and swapping them out. Programmers do it to change data, clean it up, or manipulate content dynamically.
+## Що і чому?
+Пошук і заміна тексту означає знаходження певних підрядків і їхню заміну на щось нове. Навіщо це робити? Це скрізь: виправлення помилок у документі, удосконалення коду або пакетне редагування даних.
 
-## How to:
-(## Як робити:)
-Here's a basic example. We've got a string and we want to replace "cat" with "dog".
+## Як це зробити:
+В JavaScript для цього є `String.prototype.replace()`. Передайте рядок або регулярний вираз і заміну. Ось швидкий і нехитрий приклад:
 
 ```javascript
-let text = "The quick brown cat jumps over the lazy dog.";
-let newText = text.replace("cat", "dog");
-console.log(newText); // Output: The quick brown dog jumps over the lazy dog.
+let str = "I love to code in JavaScript!";
+let newStr = str.replace("JavaScript", "TypeScript");
+console.log(newStr); // Виводить: I love to code in TypeScript!
 ```
 
-Now, let's say we want to replace all occurrences, not just the first one:
+Тепер, з регулярним виразом для глобальних замін:
 
 ```javascript
-let text = "Cat: An animal. Cat: Also a pet.";
-let newText = text.replaceAll("Cat", "Dog");
-console.log(newText); // Output: Dog: An animal. Dog: Also a pet.
+let story = "The quick brown fox jumps over the lazy dog. The fox is clever.";
+let newStory = story.replace(/fox/g, "cat");
+console.log(newStory); // Виводить: The quick brown cat jumps over the lazy dog. The cat is clever.
 ```
 
-RegEx time! What if our search is complex? RegEx to the rescue:
+## Поглиблено
+Озираючись назад, `String.prototype.replace()` є в JS з самого початку — часів Netscape 2. А тепер, ES6 приніс нам шаблонні літерали та стрілкові функції, які ще більше полегшили роботу з регулярними виразами завдяки більш стислому та зрозумілому коду.
 
-```javascript
-let text = "I have 2 apples and 5 oranges.";
-let newText = text.replace(/\d+/g, (match) => match * 2);
-console.log(newText); // Output: I have 4 apples and 10 oranges.
-```
+Альтернативи? Звичайно. Якщо ви працюєте з обробкою тексту великого масштабу, ви можете перейти на потоки Node.js або використовувати зовнішні бібліотеки для обробки складних патернів, ефективності та продуктивності.
 
-## Deep Dive
-(## Поглиблений Розділ)
-Searching and replacing text has been around since the earliest days of computing. JavaScript handles this using the `.replace()` and `.replaceAll()` methods, with the latter being added in ES2021 for convenience in replacing all occurrences without a RegEx.
+Що стосується впровадження, сама `replace()` є простою. Але регулярні вирази можуть стати складними. Починайте з простого, вивчіть спеціальні символи (`.` відповідає будь-якому символу, `*` для повторюваних патернів) та тестуйте за допомогою таких інструментів як regex101.
 
-There are alternatives to `.replace()` and `.replaceAll()`, like splitting a string into an array, modifying the elements, and then joining them back together. But these methods are more verbose and can be less efficient.
-
-From an implementation perspective, regex-based searching in JavaScript is powerful but can cost performance if overused or misused. So, understanding RegEx is crucial for complex string operations.
-
-## See Also
-(## Дивіться також)
-Check out these resources to learn more:
-
-- MDN Web Docs on String replace(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
-- MDN Web Docs on String replaceAll(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
-- RegExp Patterns: https://www.regular-expressions.info/javascript.html
-- JavaScript String Manipulation Guide: https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-javascript
+## Дивіться також
+- Документація MDN про replace: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+- Regex101 для тестування виразів: https://regex101.com/
+- Інформація про регулярні вирази в JavaScript: https://javascript.info/regexp-introduction

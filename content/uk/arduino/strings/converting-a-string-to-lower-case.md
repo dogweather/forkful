@@ -1,11 +1,29 @@
 ---
-date: 2024-01-20 17:37:47.281819-07:00
-description: "Converting a string to lower case means changing all uppercase letters\
-  \ in the text to their lowercase equivalents. Programmers often do this for\u2026"
-lastmod: '2024-03-11T00:14:23.568678-06:00'
-model: gpt-4-1106-preview
-summary: "Converting a string to lower case means changing all uppercase letters in\
-  \ the text to their lowercase equivalents. Programmers often do this for\u2026"
+changelog:
+- 2024-03-13, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-13 16:16:03.020133-06:00
+description: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F\
+  \ \u0440\u044F\u0434\u043A\u0430 \u0432 \u043D\u0438\u0436\u043D\u0456\u0439 \u0440\
+  \u0435\u0433\u0456\u0441\u0442\u0440 \u0437\u043C\u0456\u043D\u044E\u0454 \u0432\
+  \u0441\u0456 \u0432\u0435\u043B\u0438\u043A\u0456 \u043B\u0456\u0442\u0435\u0440\
+  \u0438 \u0432 \u0442\u0435\u043A\u0441\u0442\u0456 \u043D\u0430 \u0457\u0445\u043D\
+  \u0456 \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u043D\u0438\u043A\u0438\
+  \ \u0443 \u043D\u0438\u0436\u043D\u044C\u043E\u043C\u0443 \u0440\u0435\u0433\u0456\
+  \u0441\u0442\u0440\u0456. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\
+  \u0442\u0438 \u0440\u043E\u0431\u043B\u044F\u0442\u044C \u0446\u0435 \u0434\u043B\
+  \u044F \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\u2026"
+lastmod: '2024-03-13T16:16:28.278311-06:00'
+model: gpt-4-0125-preview
+summary: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F\
+  \ \u0440\u044F\u0434\u043A\u0430 \u0432 \u043D\u0438\u0436\u043D\u0456\u0439 \u0440\
+  \u0435\u0433\u0456\u0441\u0442\u0440 \u0437\u043C\u0456\u043D\u044E\u0454 \u0432\
+  \u0441\u0456 \u0432\u0435\u043B\u0438\u043A\u0456 \u043B\u0456\u0442\u0435\u0440\
+  \u0438 \u0432 \u0442\u0435\u043A\u0441\u0442\u0456 \u043D\u0430 \u0457\u0445\u043D\
+  \u0456 \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u043D\u0438\u043A\u0438\
+  \ \u0443 \u043D\u0438\u0436\u043D\u044C\u043E\u043C\u0443 \u0440\u0435\u0433\u0456\
+  \u0441\u0442\u0440\u0456. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\
+  \u0442\u0438 \u0440\u043E\u0431\u043B\u044F\u0442\u044C \u0446\u0435 \u0434\u043B\
+  \u044F \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\u2026"
 title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0440\
   \u044F\u0434\u043A\u0430 \u0443 \u043D\u0438\u0436\u043D\u0456\u0439 \u0440\u0435\
   \u0433\u0456\u0441\u0442\u0440"
@@ -13,26 +31,32 @@ title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F
 
 {{< edit_this_page >}}
 
-## What & Why? (## Що і Чому?)
-Converting a string to lower case means changing all uppercase letters in the text to their lowercase equivalents. Programmers often do this for consistency, especially when comparing or processing text data.
+## Що і чому?
+Перетворення рядка в нижній регістр змінює всі великі літери в тексті на їхні відповідники у нижньому регістрі. Програмісти роблять це для забезпечення консистентності, особливо при порівнянні рядків або стандартизації вхідних даних.
 
-## How to: (## Як зробити:)
-```arduino
-String original = "Hello, Ukraine!";
-String lowercase = original.toLowerCase();
+## Як це зробити:
+Об'єкт `String` в Arduino має зручний метод `toLowerCase()`. Викличте його для вашого рядка, і ось воно, все в нижньому регістрі.
 
-Serial.begin(9600);
-Serial.println(lowercase); // prints "hello, ukraine!"
+```Arduino
+void setup() {
+  Serial.begin(9600);
+  String message = "Hello, World!";
+  message.toLowerCase();
+  Serial.println(message);  // Виведе: hello, world!
+}
+
+void loop() {
+  // Тут нічого робити не потрібно.
+}
 ```
+Запустіть ваш Serial Monitor, і ви побачите "hello, world!" виведене на екран.
 
-## Deep Dive (## Поглиблений аналіз)
-Lowercasing strings has been essential in computing since its early days when data storage and comparison needed standardization. In Arduino, the `String` object's `toLowerCase()` method makes this task easy. Alternatives, like using ASCII manipulation, are cumbersome and rarely used.
+## Поглиблений огляд
+Історично, робота з текстом часто включала облік верхнього та нижнього регістру. Операції введення даних, пошуку та сортування зазвичай ігнорують регістр, щоб зменшити помилки користувача і збільшити надійність. В інших мовах, як-от C, ви б ітерували кожен символ і конвертували їх індивідуально, використовуючи стандартні функції бібліотеки. В Arduino об'єкти `String` обгортають цю функціональність для спрощення використання.
 
-When you use `toLowerCase()`, it internally loops through each character, checking if it's uppercase. If so, it calculates the lowercase version based on ASCII values. It's simple and efficient for Arduino projects where memory and processing power need careful management.
+Альтернативи? Звичайно. Ви могли б використовувати `toLowerCase()` для масиву символів `char`, але вам доведеться пройтися через кожен символ і конвертувати його за допомогою `tolower()` з `<ctype.h>`. Якщо вас турбують пам'ять та продуктивність, розгляньте можливість використання масивів символів замість об'єктів `String` та візьміть контроль з вашою власною логікою перетворення в нижній регістр.
 
-Remember, lowercasing only applies to alphabetic characters; numbers and symbols are unaffected.
-
-## See Also (## Дивіться також):
-- Arduino's official `String` reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/tolowercase/
-- C++ `transform` and `tolower`: a more complex but versatile method, for interested programmers: https://en.cppreference.com/w/cpp/algorithm/transform
-- Unicode consideration for non-ASCII characters (advanced topic): https://unicode.org/reports/tr21/tr21-5.html
+## Дивіться також
+- Сторінка посилання `String` Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Бібліотека C++ `<cctype>` для операцій з символами: http://www.cplusplus.com/reference/cctype/
+- Щоб зрозуміти, як працює порівняння рядків і чому ігнорування регістра може бути важливим, погляньте на: https://en.wikipedia.org/wiki/String_(computer_science)#Comparison

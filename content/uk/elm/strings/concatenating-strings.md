@@ -1,54 +1,80 @@
 ---
-date: 2024-01-20 17:34:34.976016-07:00
-description: (
-lastmod: '2024-03-11T00:14:22.987777-06:00'
-model: gpt-4-1106-preview
-summary: (
-title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\
-  \u043A\u0456\u0432"
+changelog:
+- 2024-03-13, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-13 16:16:07.407651-06:00
+description: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0456\u044F\
+  \ \u0440\u044F\u0434\u043A\u0456\u0432 - \u0446\u0435 \u0437'\u0454\u0434\u043D\u0430\
+  \u043D\u043D\u044F \u0434\u0432\u043E\u0445 \u0430\u0431\u043E \u0431\u0456\u043B\
+  \u044C\u0448\u0435 \u0447\u0430\u0441\u0442\u0438\u043D \u0442\u0435\u043A\u0441\
+  \u0442\u0443 \u0440\u0430\u0437\u043E\u043C. \u0426\u0435 \u0442\u0430\u043A\u043E\
+  \u0436 \u0431\u0430\u0437\u043E\u0432\u043E \u0456 \u043D\u0435\u043E\u0431\u0445\
+  \u0456\u0434\u043D\u043E, \u044F\u043A \u0456 \u0432\u0438\u043A\u043E\u0440\u0438\
+  \u0441\u0442\u0430\u043D\u043D\u044F \u0441\u043A\u043E\u0442\u0447\u0443, \u0434\
+  \u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0447\u0438 \u0432\u0430\u043C \u0441\
+  \u0442\u0432\u043E\u0440\u044E\u0432\u0430\u0442\u0438\u2026"
+lastmod: '2024-03-13T16:16:27.713097-06:00'
+model: gpt-4-0125-preview
+summary: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0456\u044F\
+  \ \u0440\u044F\u0434\u043A\u0456\u0432 - \u0446\u0435 \u0437'\u0454\u0434\u043D\u0430\
+  \u043D\u043D\u044F \u0434\u0432\u043E\u0445 \u0430\u0431\u043E \u0431\u0456\u043B\
+  \u044C\u0448\u0435 \u0447\u0430\u0441\u0442\u0438\u043D \u0442\u0435\u043A\u0441\
+  \u0442\u0443 \u0440\u0430\u0437\u043E\u043C. \u0426\u0435 \u0442\u0430\u043A\u043E\
+  \u0436 \u0431\u0430\u0437\u043E\u0432\u043E \u0456 \u043D\u0435\u043E\u0431\u0445\
+  \u0456\u0434\u043D\u043E, \u044F\u043A \u0456 \u0432\u0438\u043A\u043E\u0440\u0438\
+  \u0441\u0442\u0430\u043D\u043D\u044F \u0441\u043A\u043E\u0442\u0447\u0443, \u0434\
+  \u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0447\u0438 \u0432\u0430\u043C \u0441\
+  \u0442\u0432\u043E\u0440\u044E\u0432\u0430\u0442\u0438\u2026"
+title: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0456\u044F \u0440\
+  \u044F\u0434\u043A\u0456\u0432"
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(## Що і Чому?)
+## Що і чому?
+Конкатенація рядків - це з'єднання двох або більше частин тексту разом. Це також базово і необхідно, як і використання скотчу, дозволяючи вам створювати нові рядки на льоту для відображення повідомлень, створення шаблонів та багато іншого.
 
-Concatenating strings is about sticking two or more pieces of text together. We do it to build new strings from existing ones, like names or messages.
-
-(З'єднання рядків полягає в склеюванні двох або більше шматків тексту. Ми робимо це, щоб створити нові рядки з існуючих, як от імена чи повідомлення.)
-
-## How to:
-(## Як це зробити:)
+## Як це зробити:
+В Elm є чудовий оператор `(++)`, щоб нас виручити:
 
 ```Elm
 greeting : String
-greeting = "Привіт, "
+greeting =
+    "Привіт, " ++ "світе!"
 
-name : String
-name = "Андрію!"
-
-fullGreeting : String
-fullGreeting = greeting ++ name
-
--- Output: "Привіт, Андрію!"
+-- "Привіт, світе!"
 ```
 
-(Сповнене привітання: "Привіт, Андрію!")
+Але іноді у вас є купка частин. Не панікуйте, `++` можна ланцюжком з'єднувати:
 
-## Deep Dive
-(## Поглиблений Розгляд)
+```Elm
+fullName : String
+fullName =
+    "Elm" ++ " " ++ "Lang"
 
-Long ago, concatenating strings could be costly because of memory manipulations. In Elm, `++` is used for concatenation, and it's handled efficiently under the hood. Alternatives like StringBuilder in other languages are not necessary in Elm because of its functional nature and immutable strings. Those features guarantee that string manipulations don't cause side-effects or unnecessary performance hits.
+-- "Elm Lang"
+```
 
-(Давно, з'єднування рядків могло бути вартісним через маніпуляції з пам'яттю. В Elm, для з'єднання використовують `++`, і це ефективно обробляється під капотом. Альтернативи на зразок StringBuilder у інших мовах не потрібні в Elm через його функціональну сутність та незмінні рядки. Ці особливості гарантують, що маніпуляції з рядками не призводять до побічних ефектів чи непотрібних ударів по продуктивності.)
+І для списків рядків `String.join` буде вашим другом:
 
-## See Also
-(## Дивіться Також)
+```Elm
+words : List String
+words =
+    ["Приєднуйтесь", "до", "клубу", "Elm"]
 
-- Elm Official Documentation on String: https://package.elm-lang.org/packages/elm/core/latest/String
-- Elm Strings Guide: https://elmprogramming.com/strings.html
-- Elm Discourse for Community Support: https://discourse.elm-lang.org/
+sentence : String
+sentence =
+    String.join " " words
 
-(Офіційна Документація Elm по Рядках: https://package.elm-lang.org/packages/elm/core/latest/String
-Посібник Elm по Рядкам: https://elmprogramming.com/strings.html
-Elm Discourse для підтримки спільноти: https://discourse.elm-lang.org/)
+-- "Приєднуйтесь до клубу Elm"
+```
+
+## Поглиблений аналіз
+В давні часи ви часто з'єднували рядки з складними функціями в інших мовах. В Elm, це завжди було легко завдяки оператору `(++)`. Якщо ви дійсно з'єднуєте багато, ефективність може стати на заваді; використання `(++)` на довгих рядках може бути повільнішим, тому що Elm має пройти через весь рядок зліва від `(++)` кожного разу.
+
+Також існує "інтерполяція" в деяких мовах, але Elm не підтримує інтерполяцію рядків. Однак не хвилюйтесь, `(++)` та `String.join` нас врятує.
+
+Під капотом, коли Elm з'єднує, він намагається це робити розумно, часто використовуючи оптимізовані операції JavaScript, оскільки в кінцевому підсумку Elm компілюється в JavaScript. Так що, навіть якщо `(++)` може здатися простим, за лаштунками відбувається деяка хитрість, щоб тримати речі швидкими.
+
+## Дивіться також
+- Офіційна документація Elm про рядки: https://package.elm-lang.org/packages/elm/core/latest/String
+- Посібник Elm, де ви можете дізнатися більше про рядки: https://guide.elm-lang.org/strings/
