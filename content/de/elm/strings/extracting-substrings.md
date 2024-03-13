@@ -1,20 +1,22 @@
 ---
 date: 2024-01-20 17:45:35.858143-07:00
-description: (
-lastmod: '2024-03-11T00:14:27.686787-06:00'
+description: "Extrahieren von Teilzeichenketten bedeutet, spezifische Teile aus einem\
+  \ l\xE4ngeren String herauszunehmen. Programmierer machen das, um mit Daten zu\u2026"
+lastmod: '2024-03-13T15:43:03.016429-06:00'
 model: gpt-4-1106-preview
-summary: (
+summary: "Extrahieren von Teilzeichenketten bedeutet, spezifische Teile aus einem\
+  \ l\xE4ngeren String herauszunehmen. Programmierer machen das, um mit Daten zu\u2026"
 title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(## Was & Warum?)
+## Was & Warum?
+
 Extrahieren von Teilzeichenketten bedeutet, spezifische Teile aus einem längeren String herauszunehmen. Programmierer machen das, um mit Daten zu jonglieren, Nutzereingaben zu verarbeiten oder einfach spezifische Informationen aus einem Text zu filtern.
 
-## How to:
-(## Anleitung:)
+## Anleitung:
+
 Elm bietet verschiedene Funktionen, um mit Strings zu arbeiten. Hier ein paar Beispiele, wie man Teilzeichenketten extrahiert:
 
 ```Elm
@@ -40,14 +42,14 @@ main =
     -- Hier könnte die Logik zum Anzeigen von `part1` und `part2` folgen, z.B. in einer HTML-View
 ```
 
-## Deep Dive:
-(## Hintergründe:)
+## Hintergründe:
+
 Die Funktion `String.slice` in Elm ist ähnlich zu JavaScript's `substring` und hat ihre Wurzeln in den Anfängen der stringverarbeitenden Vorgängerprogrammiersprachen. Es ist zuverlässig, aber Achtung: Elm ist 0-basiert, d.h. der Startindex fürs Extrahieren ist 0, nicht 1. Alternativen wie `String.left` und `String.right` bieten noch andere Wege, um an Anfang oder Ende eines Strings zu schneiden, ohne die genauen Indizes zu benötigen.
 
 Ein wichtiger Punkt ist auch die Performance – bei großen Strings kann das Extrahieren von Teilstrings aufgrund der internen Repräsentation von Strings in Elm und anderen Sprachen aufwändiger werden. Immer daran denken, das nur bei Bedarf zu machen.
 
-## See Also:
-(## Siehe auch:)
+## Siehe auch:
+
 - Elm's `String` Modul Dokumentation: https://package.elm-lang.org/packages/elm/core/latest/String
 - Elm Programmierleitfäden: https://guide.elm-lang.org/
 - Weiterführende Artikel zur Stringmanipulation in funktionalen Sprachen.
