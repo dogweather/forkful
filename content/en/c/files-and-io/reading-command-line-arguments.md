@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:02.171992-07:00
 description: "In C programming, reading command line arguments allows programs to\
   \ accept inputs right from the terminal, enhancing flexibility and usability.\u2026"
-lastmod: '2024-03-11T00:14:34.410922-06:00'
+lastmod: '2024-03-13T22:45:00.524947-06:00'
 model: gpt-4-0125-preview
 summary: "In C programming, reading command line arguments allows programs to accept\
   \ inputs right from the terminal, enhancing flexibility and usability.\u2026"

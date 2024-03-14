@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:29.538316-07:00
 description: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie danych\
   \ JSON z ci\u0105g\xF3w znak\xF3w na obiekty Dart i odwrotnie, co jest powszechnym\
   \ zadaniem w\u2026"
-lastmod: '2024-03-11T00:14:08.288664-06:00'
+lastmod: '2024-03-13T22:44:35.116177-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie danych JSON\
   \ z ci\u0105g\xF3w znak\xF3w na obiekty Dart i odwrotnie, co jest powszechnym zadaniem\

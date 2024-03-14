@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:13.881470-07:00
 description: "Convertir una fecha en una cadena de texto permite mostrarla o procesarla\
   \ de manera legible para humanos. Los programadores lo hacen para interactuar con\u2026"
-lastmod: '2024-03-11T00:14:33.167437-06:00'
+lastmod: '2024-03-13T22:44:59.344989-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una fecha en una cadena de texto permite mostrarla o procesarla\
   \ de manera legible para humanos. Los programadores lo hacen para interactuar con\u2026"

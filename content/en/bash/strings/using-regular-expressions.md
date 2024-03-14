@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:48.376116-07:00
 description: "Regular expressions (regex) in Bash allow you to search, manipulate,\
   \ and handle strings and files based on specific patterns. Programmers use regex\
   \ for\u2026"
-lastmod: '2024-03-11T00:14:34.100085-06:00'
+lastmod: '2024-03-13T22:45:00.234108-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Bash allow you to search, manipulate, and\
   \ handle strings and files based on specific patterns. Programmers use regex for\u2026"

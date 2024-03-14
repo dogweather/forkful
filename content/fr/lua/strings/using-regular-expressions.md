@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:25.104872-07:00
 description: "Les expressions r\xE9guli\xE8res en programmation permettent de rechercher\
   \ et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs sp\xE9\
   cifiques. Les\u2026"
-lastmod: '2024-03-11T00:14:31.864700-06:00'
+lastmod: '2024-03-13T22:44:57.914519-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res en programmation permettent de rechercher\
   \ et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs sp\xE9\

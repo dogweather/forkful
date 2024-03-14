@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:54.426121-07:00
 description: "Searching and replacing text in strings is a common task in programming,\
   \ often used to process and manipulate data. It's crucial for refining content,\u2026"
-lastmod: '2024-03-11T00:14:33.704099-06:00'
+lastmod: '2024-03-13T22:44:59.844907-06:00'
 model: gpt-4-1106-preview
 summary: "Searching and replacing text in strings is a common task in programming,\
   \ often used to process and manipulate data. It's crucial for refining content,\u2026"

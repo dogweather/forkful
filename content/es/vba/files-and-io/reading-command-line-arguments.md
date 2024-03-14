@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:11.738958-07:00
 description: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic para\
   \ Aplicaciones (VBA) implica acceder a los par\xE1metros pasados a tu programa al\
   \ ejecutarse.\u2026"
-lastmod: '2024-03-11T00:14:32.724408-06:00'
+lastmod: '2024-03-13T22:44:58.910319-06:00'
 model: gpt-4-0125-preview
 summary: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic para Aplicaciones\
   \ (VBA) implica acceder a los par\xE1metros pasados a tu programa al ejecutarse.\u2026"

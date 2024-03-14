@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:05:51.657593-07:00
 description: "Ler um arquivo de texto em Go envolve acessar e recuperar conte\xFA\
   do de um arquivo armazenado no disco para processamento ou an\xE1lise. Programadores\u2026"
-lastmod: '2024-03-11T00:14:19.741120-06:00'
+lastmod: '2024-03-13T22:44:46.079675-06:00'
 model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto em Go envolve acessar e recuperar conte\xFAdo de\
   \ um arquivo armazenado no disco para processamento ou an\xE1lise. Programadores\u2026"

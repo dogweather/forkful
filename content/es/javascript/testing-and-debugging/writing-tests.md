@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:03.015066-07:00
 description: "Escribir pruebas en JavaScript se refiere a la pr\xE1ctica de crear\
   \ scripts automatizados que ejecutan tu c\xF3digo para asegurarse de que se comporte\
   \ como se\u2026"
-lastmod: '2024-03-11T00:14:33.293955-06:00'
+lastmod: '2024-03-13T22:44:59.462273-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en JavaScript se refiere a la pr\xE1ctica de crear scripts\
   \ automatizados que ejecutan tu c\xF3digo para asegurarse de que se comporte como\

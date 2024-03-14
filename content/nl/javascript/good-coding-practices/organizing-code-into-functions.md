@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:00.948515-07:00
 description: "Code organiseren in functies verdeelt taken in herbruikbare stukken,\
   \ waardoor de code schoner en beter onderhoudbaar wordt. Dit doen we om redundantie\
   \ te\u2026"
-lastmod: '2024-03-11T00:14:25.045776-06:00'
+lastmod: '2024-03-13T22:44:51.207411-06:00'
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies verdeelt taken in herbruikbare stukken, waardoor\
   \ de code schoner en beter onderhoudbaar wordt. Dit doen we om redundantie te\u2026"

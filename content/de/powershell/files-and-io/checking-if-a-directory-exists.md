@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:42.579423-07:00
 description: "In PowerShell ist die \xDCberpr\xFCfung, ob ein Verzeichnis existiert,\
   \ eine h\xE4ufige Aufgabe, die Skripte dabei unterst\xFCtzt, Entscheidungen basierend\
   \ auf der\u2026"
-lastmod: '2024-03-11T00:14:28.017754-06:00'
+lastmod: '2024-03-13T22:44:54.118036-06:00'
 model: gpt-4-0125-preview
 summary: "In PowerShell ist die \xDCberpr\xFCfung, ob ein Verzeichnis existiert, eine\
   \ h\xE4ufige Aufgabe, die Skripte dabei unterst\xFCtzt, Entscheidungen basierend\

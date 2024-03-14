@@ -2,7 +2,7 @@
 date: 2024-01-26 04:16:37.517542-07:00
 description: "La shell interactiva, o Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), te permite escribir comandos de PowerShell y obtener\u2026"
-lastmod: '2024-03-11T00:14:33.114232-06:00'
+lastmod: '2024-03-13T22:44:59.293872-06:00'
 model: gpt-4-0125-preview
 summary: "La shell interactiva, o Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), te permite escribir comandos de PowerShell y obtener\u2026"

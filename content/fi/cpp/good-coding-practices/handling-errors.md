@@ -3,7 +3,7 @@ date: 2024-01-26 00:50:13.044951-07:00
 description: "Virheiden k\xE4sittely tarkoittaa suunnitelmien tekemist\xE4 silloin,\
   \ kun asiat menev\xE4t pieleen. Se on t\xE4rke\xE4\xE4, koska se auttaa v\xE4ltt\xE4\
   m\xE4\xE4n kaatumisia ja tekee\u2026"
-lastmod: '2024-03-11T00:14:30.910109-06:00'
+lastmod: '2024-03-13T22:44:56.872627-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely tarkoittaa suunnitelmien tekemist\xE4 silloin, kun\
   \ asiat menev\xE4t pieleen. Se on t\xE4rke\xE4\xE4, koska se auttaa v\xE4ltt\xE4\

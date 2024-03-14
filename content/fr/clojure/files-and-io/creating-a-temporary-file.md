@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:59.029938-07:00
 description: "Cr\xE9er un fichier temporaire, c'est produire un fichier destin\xE9\
   \ \xE0 une utilisation courte et unique. Les programmeurs le font pour stocker des\
   \ donn\xE9es\u2026"
-lastmod: '2024-03-11T00:14:31.334172-06:00'
+lastmod: '2024-03-13T22:44:57.302370-06:00'
 model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est produire un fichier destin\xE9 \xE0\
   \ une utilisation courte et unique. Les programmeurs le font pour stocker des donn\xE9\

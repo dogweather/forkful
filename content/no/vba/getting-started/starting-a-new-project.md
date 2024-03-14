@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:55.992414-07:00
 description: "\xC5 starte et nytt prosjekt i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 sette opp et milj\xF8 innenfor en vertsapplikasjon, som Excel, for \xE5\
   \ automatisere\u2026"
-lastmod: '2024-03-11T00:14:14.159634-06:00'
+lastmod: '2024-03-13T22:44:40.620554-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 starte et nytt prosjekt i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 sette opp et milj\xF8 innenfor en vertsapplikasjon, som Excel, for \xE5\

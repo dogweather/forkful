@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:14.581182-07:00
 description: "Tests in der Programmierung zu schreiben, bedeutet, Skripte zu erstellen\
   \ und auszuf\xFChren, die \xFCberpr\xFCfen, ob der Code sich unter verschiedenen\
   \ Bedingungen\u2026"
-lastmod: '2024-03-11T00:14:27.874354-06:00'
+lastmod: '2024-03-13T22:44:53.975877-06:00'
 model: gpt-4-0125-preview
 summary: "Tests in der Programmierung zu schreiben, bedeutet, Skripte zu erstellen\
   \ und auszuf\xFChren, die \xFCberpr\xFCfen, ob der Code sich unter verschiedenen\

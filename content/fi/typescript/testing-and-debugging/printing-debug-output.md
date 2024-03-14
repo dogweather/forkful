@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:39.278370-07:00
 description: "Kehitt\xE4ess\xE4 p\xE4\xE4see joskus p\xE4lk\xE4h\xE4st\xE4 tulostamalla\
   \ debug-tietoa, joka valottaa ohjelman tilaa reaaliajassa. Se auttaa bongaamaan\
   \ virheet ja ymm\xE4rt\xE4m\xE4\xE4n\u2026"
-lastmod: '2024-03-11T00:14:30.250988-06:00'
+lastmod: '2024-03-13T22:44:56.317964-06:00'
 model: gpt-4-1106-preview
 summary: "Kehitt\xE4ess\xE4 p\xE4\xE4see joskus p\xE4lk\xE4h\xE4st\xE4 tulostamalla\
   \ debug-tietoa, joka valottaa ohjelman tilaa reaaliajassa. Se auttaa bongaamaan\

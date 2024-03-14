@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:32.697106-07:00
 description: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente innholdet p\xE5 en\
   \ nettside via dens URL for behandling eller lagring. Programmerere gj\xF8r dette\
   \ for \xE5 trekke ut\u2026"
-lastmod: '2024-03-11T00:14:14.014906-06:00'
+lastmod: '2024-03-13T22:44:40.485980-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente innholdet p\xE5 en nettside\
   \ via dens URL for behandling eller lagring. Programmerere gj\xF8r dette for \xE5\

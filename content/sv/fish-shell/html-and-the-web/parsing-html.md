@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:19.925987-07:00
 description: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
   \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata. Programmerare\u2026"
-lastmod: '2024-03-11T00:14:11.736564-06:00'
+lastmod: '2024-03-13T22:44:38.335557-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
   \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata. Programmerare\u2026"

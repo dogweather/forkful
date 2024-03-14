@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:31.405398-07:00
 description: "Analizar HTML en Clojure implica extraer informaci\xF3n de documentos\
   \ HTML de manera program\xE1tica. Los programadores hacen esto para acceder, manipular\
   \ o\u2026"
-lastmod: '2024-03-11T00:14:32.484338-06:00'
+lastmod: '2024-03-13T22:44:58.654431-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML en Clojure implica extraer informaci\xF3n de documentos HTML\
   \ de manera program\xE1tica. Los programadores hacen esto para acceder, manipular\

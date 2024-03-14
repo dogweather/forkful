@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:46.443122-07:00
 description: "Avrunding av tall betyr \xE5 kutte av desimalene til en bestemt n\xF8\
   yaktighet, ofte til hele tall. Programmerere runder av for \xE5 forenkle beregninger,\
   \ forbedre\u2026"
-lastmod: '2024-03-11T00:14:14.446406-06:00'
+lastmod: '2024-03-13T22:44:40.880789-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall betyr \xE5 kutte av desimalene til en bestemt n\xF8yaktighet,\
   \ ofte til hele tall. Programmerere runder av for \xE5 forenkle beregninger, forbedre\u2026"

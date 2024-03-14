@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:13.695964-07:00
 description: "Nettsider lastes ned for \xE5 hente og bruke data eller innhold uten\
   \ en nettleser. Programmerere gj\xF8r dette for \xE5 analysere informasjonen, teste\
   \ nettsider\u2026"
-lastmod: '2024-03-11T00:14:14.782167-06:00'
+lastmod: '2024-03-13T22:44:41.182706-06:00'
 model: gpt-4-1106-preview
 summary: "Nettsider lastes ned for \xE5 hente og bruke data eller innhold uten en\
   \ nettleser. Programmerere gj\xF8r dette for \xE5 analysere informasjonen, teste\

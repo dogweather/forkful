@@ -2,7 +2,7 @@
 date: 2024-01-26 04:29:00.132074-07:00
 description: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on sek\xE4\
   \ ihmis- ett\xE4 koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa,\u2026"
-lastmod: '2024-03-11T00:14:30.139051-06:00'
+lastmod: '2024-03-13T22:44:56.208495-06:00'
 model: gpt-4-0125-preview
 summary: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on sek\xE4\
   \ ihmis- ett\xE4 koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa,\u2026"

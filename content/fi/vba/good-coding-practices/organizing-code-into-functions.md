@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:48.087391-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications\
   \ (VBA) -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin\
   \ osiin, joita\u2026"
-lastmod: '2024-03-11T00:14:30.344509-06:00'
+lastmod: '2024-03-13T22:44:56.406766-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications (VBA)\
   \ -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin osiin,\

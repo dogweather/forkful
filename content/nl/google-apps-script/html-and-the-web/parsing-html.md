@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:57:20.435928-07:00
 description: "HTML parsen in Google Apps Script houdt in dat je gegevens uit HTML-content\
   \ haalt, wat vooral handig is bij interactie met webpagina's of op web\u2026"
-lastmod: '2024-03-11T00:14:24.138346-06:00'
+lastmod: '2024-03-13T22:44:50.328842-06:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen in Google Apps Script houdt in dat je gegevens uit HTML-content\
   \ haalt, wat vooral handig is bij interactie met webpagina's of op web\u2026"

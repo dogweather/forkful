@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:30.644052-07:00
 description: "Les fichiers CSV (Comma-Separated Values, ou valeurs s\xE9par\xE9es\
   \ par des virgules) sont un format d'\xE9change de donn\xE9es courant qui repr\xE9\
   sente des donn\xE9es\u2026"
-lastmod: '2024-03-11T00:14:31.761492-06:00'
+lastmod: '2024-03-13T22:44:57.812507-06:00'
 model: gpt-4-0125-preview
 summary: "Les fichiers CSV (Comma-Separated Values, ou valeurs s\xE9par\xE9es par\
   \ des virgules) sont un format d'\xE9change de donn\xE9es courant qui repr\xE9sente\

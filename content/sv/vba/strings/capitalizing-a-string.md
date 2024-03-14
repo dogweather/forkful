@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:29.826256-07:00
 description: "Att skriva om en str\xE4ng med stora bokst\xE4ver i Visual Basic for\
   \ Applications (VBA) inneb\xE4r att konvertera det f\xF6rsta tecknet i varje ord\
   \ i en str\xE4ng till\u2026"
-lastmod: '2024-03-11T00:14:11.064913-06:00'
+lastmod: '2024-03-13T22:44:37.724749-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva om en str\xE4ng med stora bokst\xE4ver i Visual Basic for Applications\
   \ (VBA) inneb\xE4r att konvertera det f\xF6rsta tecknet i varje ord i en str\xE4\

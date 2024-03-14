@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:47.561112-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng i Bash inneb\xE4r att extrahera\
   \ och konvertera datuminformation fr\xE5n textdata till ett format som Bash kan\
   \ manipulera\u2026"
-lastmod: '2024-03-11T00:14:11.472750-06:00'
+lastmod: '2024-03-13T22:44:38.091594-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Bash inneb\xE4r att extrahera\
   \ och konvertera datuminformation fr\xE5n textdata till ett format som Bash kan\

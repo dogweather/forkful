@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:37.247519-07:00
 description: "Trabajar con n\xFAmeros complejos en programaci\xF3n implica manipular\
   \ n\xFAmeros que tienen tanto una parte real como una imaginaria, t\xEDpicamente\
   \ expresados como\u2026"
-lastmod: '2024-03-11T00:14:32.330919-06:00'
+lastmod: '2024-03-13T22:44:58.460488-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con n\xFAmeros complejos en programaci\xF3n implica manipular n\xFA\
   meros que tienen tanto una parte real como una imaginaria, t\xEDpicamente expresados\

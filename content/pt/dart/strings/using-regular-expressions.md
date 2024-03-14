@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:57:11.561042-07:00
 description: "Express\xF5es regulares (regex) em Dart oferecem uma maneira poderosa\
   \ de buscar e manipular strings, permitindo que programadores realizem tarefas complexas\u2026"
-lastmod: '2024-03-11T00:14:19.951719-06:00'
+lastmod: '2024-03-13T22:44:46.270619-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Dart oferecem uma maneira poderosa de\
   \ buscar e manipular strings, permitindo que programadores realizem tarefas complexas\u2026"

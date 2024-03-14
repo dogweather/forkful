@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:36.273929-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le\
   \ syst\xE8me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0\
   \ un r\xE9pertoire. Les\u2026"
-lastmod: '2024-03-11T00:14:32.259883-06:00'
+lastmod: '2024-03-13T22:44:58.388201-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le syst\xE8\
   me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0 un r\xE9\

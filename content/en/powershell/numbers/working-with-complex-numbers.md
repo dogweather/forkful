@@ -2,7 +2,7 @@
 date: 2024-01-25 03:00:03.460077-07:00
 description: "Complex numbers, the ones with a real part and an imaginary part (like\
   \ 3 + 4i), are vital in fields like engineering, physics, and data science.\u2026"
-lastmod: '2024-03-11T00:14:34.143982-06:00'
+lastmod: '2024-03-13T22:45:00.276606-06:00'
 model: gpt-4-1106-preview
 summary: "Complex numbers, the ones with a real part and an imaginary part (like 3\
   \ + 4i), are vital in fields like engineering, physics, and data science.\u2026"

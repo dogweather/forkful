@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:15.990853-07:00
 description: "Analisar uma data a partir de uma string em Dart envolve a convers\xE3\
   o da representa\xE7\xE3o textual de datas e horas em um objeto `DateTime`. Essa\
   \ opera\xE7\xE3o \xE9\u2026"
-lastmod: '2024-03-11T00:14:19.975505-06:00'
+lastmod: '2024-03-13T22:44:46.291871-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Dart envolve a convers\xE3o\
   \ da representa\xE7\xE3o textual de datas e horas em um objeto `DateTime`. Essa\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:13.807649-07:00
 description: "\xC5 arbeide med CSV-filer i Ruby gir en grei tiln\xE6rming for \xE5\
   \ h\xE5ndtere tabelldata. Programmerere engasjerer seg ofte i denne praksisen for\
   \ dataparsing,\u2026"
-lastmod: '2024-03-11T00:14:14.955367-06:00'
+lastmod: '2024-03-13T22:44:41.356142-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med CSV-filer i Ruby gir en grei tiln\xE6rming for \xE5 h\xE5\
   ndtere tabelldata. Programmerere engasjerer seg ofte i denne praksisen for dataparsing,\u2026"

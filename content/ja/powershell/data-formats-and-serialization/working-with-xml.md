@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 04:34:23.947178-07:00
 description: "XML\u3092\u6271\u3046\u3053\u3068\u306F\u3001eXtensible Markup\u2026"
-lastmod: '2024-03-11T00:14:16.019424-06:00'
+lastmod: '2024-03-13T22:44:42.469097-06:00'
 model: gpt-4-0125-preview
 summary: "XML\u3092\u6271\u3046\u3053\u3068\u306F\u3001eXtensible Markup\u2026"
 title: "XML\u306E\u6271\u3044\u65B9"

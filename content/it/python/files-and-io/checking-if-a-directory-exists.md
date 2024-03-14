@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:12.741764-07:00
 description: "Controllare se una directory esiste in Python significa verificare la\
   \ presenza di una cartella nel filesystem prima di eseguire operazioni come leggere\
   \ o\u2026"
-lastmod: '2024-03-11T00:14:16.571005-06:00'
+lastmod: '2024-03-13T22:44:43.015569-06:00'
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in Python significa verificare la presenza\
   \ di una cartella nel filesystem prima di eseguire operazioni come leggere o\u2026"

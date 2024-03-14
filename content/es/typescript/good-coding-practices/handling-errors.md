@@ -3,7 +3,7 @@ date: 2024-01-26 00:58:10.232860-07:00
 description: "El manejo de errores se refiere a esperar lo inesperado; es c\xF3mo\
   \ administramos cuando las cosas van mal en nuestro c\xF3digo. Lo hacemos para evitar\
   \ bloqueos\u2026"
-lastmod: '2024-03-11T00:14:32.626508-06:00'
+lastmod: '2024-03-13T22:44:58.809189-06:00'
 model: gpt-4-1106-preview
 summary: "El manejo de errores se refiere a esperar lo inesperado; es c\xF3mo administramos\
   \ cuando las cosas van mal en nuestro c\xF3digo. Lo hacemos para evitar bloqueos\u2026"

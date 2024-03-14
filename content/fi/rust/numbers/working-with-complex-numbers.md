@@ -2,7 +2,7 @@
 date: 2024-01-26 04:45:36.042858-07:00
 description: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisi\xE4\
   \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa.\u2026"
-lastmod: '2024-03-11T00:14:30.284791-06:00'
+lastmod: '2024-03-13T22:44:56.350797-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisi\xE4\
   \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa.\u2026"

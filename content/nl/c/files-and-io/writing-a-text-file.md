@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:30.019326-07:00
 description: "Een tekstbestand schrijven in C houdt in dat je een bestand maakt of\
   \ opent in schrijfmodus en vervolgens de bestands-I/O-functies van C gebruikt om\u2026"
-lastmod: '2024-03-11T00:14:25.172519-06:00'
+lastmod: '2024-03-13T22:44:51.310033-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in C houdt in dat je een bestand maakt of opent\
   \ in schrijfmodus en vervolgens de bestands-I/O-functies van C gebruikt om\u2026"

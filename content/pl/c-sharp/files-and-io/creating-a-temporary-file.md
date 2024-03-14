@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:21.159985-07:00
 description: "Tworzenie tymczasowych plik\xF3w to chwilowe przechowywanie danych,\
   \ kt\xF3re s\u0105 potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci robi\u0105\
   \ to, by obs\u0142u\u017Cy\u0107 dane, kt\xF3re\u2026"
-lastmod: '2024-03-11T00:14:08.611392-06:00'
+lastmod: '2024-03-13T22:44:35.428236-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowych plik\xF3w to chwilowe przechowywanie danych, kt\xF3\
   re s\u0105 potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci robi\u0105 to,\

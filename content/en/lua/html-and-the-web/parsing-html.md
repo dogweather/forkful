@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:44.853028-07:00
 description: "Parsing HTML involves extracting data and information from HTML documents,\
   \ which is crucial for web scraping, data analysis, and automation tasks.\u2026"
-lastmod: '2024-03-11T00:14:34.067935-06:00'
+lastmod: '2024-03-13T22:45:00.203506-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML involves extracting data and information from HTML documents,\
   \ which is crucial for web scraping, data analysis, and automation tasks.\u2026"

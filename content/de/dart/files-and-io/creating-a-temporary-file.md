@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:11.475931-07:00
 description: "Die Erstellung einer tempor\xE4ren Datei in Dart beinhaltet das Generieren\
   \ einer Datei, die f\xFCr die kurzfristige Nutzung vorgesehen ist, haupts\xE4chlich\
   \ f\xFCr\u2026"
-lastmod: '2024-03-11T00:14:27.497203-06:00'
+lastmod: '2024-03-13T22:44:53.602112-06:00'
 model: gpt-4-0125-preview
 summary: "Die Erstellung einer tempor\xE4ren Datei in Dart beinhaltet das Generieren\
   \ einer Datei, die f\xFCr die kurzfristige Nutzung vorgesehen ist, haupts\xE4chlich\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:17.796189-07:00
 description: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xED\
   ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas.\
   \ Los\u2026"
-lastmod: '2024-03-11T00:14:33.366718-06:00'
+lastmod: '2024-03-13T22:44:59.528843-06:00'
 model: gpt-4-0125-preview
 summary: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xED\
   ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas.\

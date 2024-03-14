@@ -3,7 +3,7 @@ date: 2024-01-20 15:30:39.019288-07:00
 description: "L'analyse (parsing) du HTML permet de lire et de manipuler le contenu\
   \ d'une page web. Les programmeurs le font pour extraire des donn\xE9es, automatiser\
   \ des\u2026"
-lastmod: '2024-03-11T00:14:31.312031-06:00'
+lastmod: '2024-03-13T22:44:57.280165-06:00'
 model: unknown
 summary: "L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une\
   \ page web. Les programmeurs le font pour extraire des donn\xE9es, automatiser des\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:22.718891-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) sont un outil puissant pour\
   \ le traitement de texte, permettant aux programmeurs de rechercher, correspondre\
   \ et\u2026"
-lastmod: '2024-03-11T00:14:31.676634-06:00'
+lastmod: '2024-03-13T22:44:57.726196-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) sont un outil puissant pour le\
   \ traitement de texte, permettant aux programmeurs de rechercher, correspondre et\u2026"

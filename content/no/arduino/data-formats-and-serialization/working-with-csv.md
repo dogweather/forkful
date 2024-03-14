@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:11.315551-07:00
 description: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Arduino involverer\
   \ lesing fra og skriving til CSV-filer som vanligvis lagres p\xE5 et SD-kort, noe\
   \ som\u2026"
-lastmod: '2024-03-11T00:14:14.673027-06:00'
+lastmod: '2024-03-13T22:44:41.080722-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Arduino involverer\
   \ lesing fra og skriving til CSV-filer som vanligvis lagres p\xE5 et SD-kort, noe\

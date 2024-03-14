@@ -2,7 +2,7 @@
 date: 2024-01-26 03:47:35.372668-07:00
 description: "Die Verwendung eines Debuggers in Bash bedeutet, Tools zu nutzen, um\
   \ Probleme in Ihren Skripten zu testen und zu finden, wie das Einfangen von Fehlern,\u2026"
-lastmod: '2024-03-11T00:14:27.963917-06:00'
+lastmod: '2024-03-13T22:44:54.064162-06:00'
 model: gpt-4-0125-preview
 summary: "Die Verwendung eines Debuggers in Bash bedeutet, Tools zu nutzen, um Probleme\
   \ in Ihren Skripten zu testen und zu finden, wie das Einfangen von Fehlern,\u2026"

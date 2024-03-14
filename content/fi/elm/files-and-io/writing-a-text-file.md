@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:10.712298-07:00
 description: "Tekstitiedoston kirjoittaminen Elm-kielell\xE4 sis\xE4lt\xE4\xE4 tekstuaalisen\
   \ datan luomisen ja tallentamisen tiedostoon Elm-sovelluksesta. Ohjelmoijat tarvitsevat\u2026"
-lastmod: '2024-03-11T00:14:30.450428-06:00'
+lastmod: '2024-03-13T22:44:56.507121-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Elm-kielell\xE4 sis\xE4lt\xE4\xE4 tekstuaalisen\
   \ datan luomisen ja tallentamisen tiedostoon Elm-sovelluksesta. Ohjelmoijat tarvitsevat\u2026"

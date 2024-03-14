@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:33.820467-07:00
 description: "Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwa\u0142\
   ego przeznaczonego do u\u017Cytku kr\xF3tkoterminowego, g\u0142\xF3wnie do zada\u0144\
   \ takich jak\u2026"
-lastmod: '2024-03-11T00:14:08.045908-06:00'
+lastmod: '2024-03-13T22:44:34.874559-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwa\u0142\
   ego przeznaczonego do u\u017Cytku kr\xF3tkoterminowego, g\u0142\xF3wnie do zada\u0144\

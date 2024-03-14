@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:38.412972-07:00
 description: "Tempor\xE4re Dateien dienen zum vor\xFCbergehenden Speichern von Daten.\
   \ Sie werden verwendet, wenn man Daten w\xE4hrend der Ausf\xFChrung eines Programms\
   \ kurzzeitig\u2026"
-lastmod: '2024-03-11T00:14:28.064552-06:00'
+lastmod: '2024-03-13T22:44:54.162776-06:00'
 model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien dienen zum vor\xFCbergehenden Speichern von Daten.\
   \ Sie werden verwendet, wenn man Daten w\xE4hrend der Ausf\xFChrung eines Programms\

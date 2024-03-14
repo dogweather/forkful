@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:47.280284-07:00
 description: "String-Interpolation erm\xF6glicht es uns, Variablen oder Ausdr\xFC\
   cke innerhalb eines Strings einzuf\xFCgen. Das ist praktisch, um dynamische Inhalte\
   \ zu erzeugen,\u2026"
-lastmod: '2024-03-11T00:14:27.413226-06:00'
+lastmod: '2024-03-13T22:44:53.448979-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es uns, Variablen oder Ausdr\xFCcke innerhalb\
   \ eines Strings einzuf\xFCgen. Das ist praktisch, um dynamische Inhalte zu erzeugen,\u2026"

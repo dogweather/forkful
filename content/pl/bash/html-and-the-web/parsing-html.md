@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:40.226667-07:00
 description: "Parsowanie HTML oznacza przeszukiwanie struktury i zawarto\u015Bci pliku\
   \ HTML w celu wydobycia informacji. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
   \ dost\u0119p do danych,\u2026"
-lastmod: '2024-03-11T00:14:08.773495-06:00'
+lastmod: '2024-03-13T22:44:35.582822-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML oznacza przeszukiwanie struktury i zawarto\u015Bci pliku\
   \ HTML w celu wydobycia informacji. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\

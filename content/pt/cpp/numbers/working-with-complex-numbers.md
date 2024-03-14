@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:49.477082-07:00
 description: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma unidade\
   \ imagin\xE1ria, representada como 'i', onde i^2 = -1. Programadores os utilizam\
   \ para\u2026"
-lastmod: '2024-03-11T00:14:20.601870-06:00'
+lastmod: '2024-03-13T22:44:46.873723-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma unidade\
   \ imagin\xE1ria, representada como 'i', onde i^2 = -1. Programadores os utilizam\

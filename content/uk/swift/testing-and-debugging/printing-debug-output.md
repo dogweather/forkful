@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:16.117047-07:00
 description: "Printing debug output is displaying temporary messages in the console\
   \ to check if the code works right. Programmers do it to track variables, understand\u2026"
-lastmod: '2024-03-11T00:14:23.734836-06:00'
+lastmod: '2024-03-13T22:44:49.922972-06:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output is displaying temporary messages in the console to\
   \ check if the code works right. Programmers do it to track variables, understand\u2026"

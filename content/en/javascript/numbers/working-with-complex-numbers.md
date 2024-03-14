@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:38.100386-07:00
 description: "Complex numbers are numbers with a real and an imaginary part (like\
   \ 3 + 4i). They crop up in various programming problems, especially in signal\u2026"
-lastmod: '2024-03-11T00:14:34.300369-06:00'
+lastmod: '2024-03-13T22:45:00.427908-06:00'
 model: gpt-4-1106-preview
 summary: "Complex numbers are numbers with a real and an imaginary part (like 3 +\
   \ 4i). They crop up in various programming problems, especially in signal\u2026"

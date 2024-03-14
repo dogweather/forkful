@@ -5,7 +5,7 @@ date: 2024-01-28 21:59:55.067717-07:00
 description: "De lengte van een string vinden, betekent bepalen hoeveel karakters\
   \ deze bevat. Programmeurs doen dit om invoer te valideren, limieten af te dwingen\
   \ of\u2026"
-lastmod: '2024-03-11T00:14:24.265562-06:00'
+lastmod: '2024-03-13T22:44:50.452916-06:00'
 model: gpt-4-0125-preview
 summary: "De lengte van een string vinden, betekent bepalen hoeveel karakters deze\
   \ bevat. Programmeurs doen dit om invoer te valideren, limieten af te dwingen of\u2026"

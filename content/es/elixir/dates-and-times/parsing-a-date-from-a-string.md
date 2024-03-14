@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-28 02:05:05.416869-07:00
 description: "Convertir una fecha de un string se trata de tomar texto, como \"2023-04-05\"\
   , y convertirlo a un formato de fecha que tu programa pueda entender y usar.\u2026"
-lastmod: '2024-03-11T00:14:32.538040-06:00'
+lastmod: '2024-03-13T22:44:58.711625-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir una fecha de un string se trata de tomar texto, como \"2023-04-05\"\
   , y convertirlo a un formato de fecha que tu programa pueda entender y usar.\u2026"

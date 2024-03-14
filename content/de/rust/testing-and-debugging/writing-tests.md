@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:03.704943-07:00
 description: "Das Schreiben von Tests in Rust umfasst das Erstellen automatisierter\
   \ \xDCberpr\xFCfungen, um sicherzustellen, dass Ihr Code wie erwartet funktioniert.\u2026"
-lastmod: '2024-03-11T00:14:27.567152-06:00'
+lastmod: '2024-03-13T22:44:53.676298-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Rust umfasst das Erstellen automatisierter \xDC\
   berpr\xFCfungen, um sicherzustellen, dass Ihr Code wie erwartet funktioniert.\u2026"

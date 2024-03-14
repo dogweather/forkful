@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:05.745460-07:00
 description: "Foutafhandeling in PHP gaat over het beheren van en reageren op situaties\
   \ die de normale gang van een programma verstoren, zoals ontbrekende bestanden of\u2026"
-lastmod: '2024-03-11T00:14:24.733918-06:00'
+lastmod: '2024-03-13T22:44:50.903021-06:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling in PHP gaat over het beheren van en reageren op situaties\
   \ die de normale gang van een programma verstoren, zoals ontbrekende bestanden of\u2026"

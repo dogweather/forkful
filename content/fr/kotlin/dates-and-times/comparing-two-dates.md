@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:21.365582-07:00
 description: "Comparer deux dates, c'est v\xE9rifier laquelle est plus t\xF4t ou plus\
   \ tard, ou si elles sont les m\xEAmes. Les programmeurs le font pour trier les \xE9\
   v\xE9nements,\u2026"
-lastmod: '2024-03-11T00:14:31.702704-06:00'
+lastmod: '2024-03-13T22:44:57.753414-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est v\xE9rifier laquelle est plus t\xF4t ou plus\
   \ tard, ou si elles sont les m\xEAmes. Les programmeurs le font pour trier les \xE9\

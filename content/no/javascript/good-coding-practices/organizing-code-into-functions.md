@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:08.478503-07:00
 description: "\xC5 organisere kode i funksjoner bryter opp oppgaver i gjenbrukbare\
   \ deler, noe som gj\xF8r koden ryddigere og lettere \xE5 vedlikeholde. Vi gj\xF8\
   r dette for \xE5\u2026"
-lastmod: '2024-03-11T00:14:14.788924-06:00'
+lastmod: '2024-03-13T22:44:41.189016-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner bryter opp oppgaver i gjenbrukbare deler,\
   \ noe som gj\xF8r koden ryddigere og lettere \xE5 vedlikeholde. Vi gj\xF8r dette\

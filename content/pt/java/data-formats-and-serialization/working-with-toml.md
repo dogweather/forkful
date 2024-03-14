@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:12.297447-07:00
 description: "TOML significa Tom's Obvious, Minimal Language (Linguagem M\xEDnima\
   \ e \xD3bvia do Tom). \xC9 um formato de serializa\xE7\xE3o de dados usado para\
   \ arquivos de\u2026"
-lastmod: '2024-03-11T00:14:20.180239-06:00'
+lastmod: '2024-03-13T22:44:46.480250-06:00'
 model: gpt-4-0125-preview
 summary: "TOML significa Tom's Obvious, Minimal Language (Linguagem M\xEDnima e \xD3\
   bvia do Tom). \xC9 um formato de serializa\xE7\xE3o de dados usado para arquivos\

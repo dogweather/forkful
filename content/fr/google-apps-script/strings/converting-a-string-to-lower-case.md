@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:49.586224-07:00
 description: "Convertir une cha\xEEne en minuscules avec Google Apps Script, un langage\
   \ de script bas\xE9 sur le cloud pour automatiser des t\xE2ches \xE0 travers les\
   \ produits\u2026"
-lastmod: '2024-03-11T00:14:31.207657-06:00'
+lastmod: '2024-03-13T22:44:57.168819-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir une cha\xEEne en minuscules avec Google Apps Script, un langage\
   \ de script bas\xE9 sur le cloud pour automatiser des t\xE2ches \xE0 travers les\

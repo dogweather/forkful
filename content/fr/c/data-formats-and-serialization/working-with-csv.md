@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:38.327069-07:00
 description: "Dans le domaine de la programmation, travailler avec des fichiers CSV\
   \ (Valeurs S\xE9par\xE9es par des Virgules) implique de lire et d'\xE9crire des\
   \ donn\xE9es dans\u2026"
-lastmod: '2024-03-11T00:14:32.268705-06:00'
+lastmod: '2024-03-13T22:44:58.397094-06:00'
 model: gpt-4-0125-preview
 summary: "Dans le domaine de la programmation, travailler avec des fichiers CSV (Valeurs\
   \ S\xE9par\xE9es par des Virgules) implique de lire et d'\xE9crire des donn\xE9\

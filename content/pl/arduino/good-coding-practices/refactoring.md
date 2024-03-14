@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:44.467176-07:00
 description: "Refaktoryzacja to proces przerabiania kodu w celu poprawy jego struktury\
   \ i czytelno\u015Bci, bez zmiany zewn\u0119trznego zachowania lub funkcjonalno\u015B\
   ci.\u2026"
-lastmod: '2024-03-11T00:14:08.877146-06:00'
+lastmod: '2024-03-13T22:44:35.679649-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces przerabiania kodu w celu poprawy jego struktury\
   \ i czytelno\u015Bci, bez zmiany zewn\u0119trznego zachowania lub funkcjonalno\u015B\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:31.160543-07:00
 description: "Merkkijonojen interpolaatio on menetelm\xE4, jolla rakennetaan merkkijonoja,\
   \ joihin sis\xE4llytet\xE4\xE4n muuttujia, mahdollistaen dynaamisen merkkijonon\
   \ luomisen.\u2026"
-lastmod: '2024-03-11T00:14:29.960159-06:00'
+lastmod: '2024-03-13T22:44:56.035511-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen interpolaatio on menetelm\xE4, jolla rakennetaan merkkijonoja,\
   \ joihin sis\xE4llytet\xE4\xE4n muuttujia, mahdollistaen dynaamisen merkkijonon\

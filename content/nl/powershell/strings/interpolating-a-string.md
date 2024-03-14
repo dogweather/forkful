@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:17.456291-07:00
 description: "String interpolatie schuift waarden in een stringtemplate zoals stukken\
   \ van een puzzel, waardoor strings dynamisch worden en de code schoner. Programmeurs\u2026"
-lastmod: '2024-03-11T00:14:24.845900-06:00'
+lastmod: '2024-03-13T22:44:51.012426-06:00'
 model: gpt-4-0125-preview
 summary: "String interpolatie schuift waarden in een stringtemplate zoals stukken\
   \ van een puzzel, waardoor strings dynamisch worden en de code schoner. Programmeurs\u2026"

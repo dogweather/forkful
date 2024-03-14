@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:40.521591-07:00
 description: "Code organiseren in functies gaat over het structureren van je Google\
   \ Apps Script code door logische segmenten te scheiden in duidelijke blokken, elk\
   \ met\u2026"
-lastmod: '2024-03-11T00:14:24.147063-06:00'
+lastmod: '2024-03-13T22:44:50.337494-06:00'
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies gaat over het structureren van je Google Apps\
   \ Script code door logische segmenten te scheiden in duidelijke blokken, elk met\u2026"

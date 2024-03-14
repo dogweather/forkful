@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "Wyra\u017Cenia regularne to wzorce u\u017Cywane do wyszukiwania i manipulowania\
   \ tekstami. Programi\u015Bci u\u017Cywaj\u0105 ich, bo pozwalaj\u0105 na zaawansowane\
   \ przetwarzanie tekstu\u2026"
-lastmod: '2024-03-11T00:14:09.041458-06:00'
+lastmod: '2024-03-13T22:44:35.828793-06:00'
 model: unknown
 summary: "Wyra\u017Cenia regularne to wzorce u\u017Cywane do wyszukiwania i manipulowania\
   \ tekstami. Programi\u015Bci u\u017Cywaj\u0105 ich, bo pozwalaj\u0105 na zaawansowane\

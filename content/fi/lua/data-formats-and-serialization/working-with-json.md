@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:26.897980-07:00
 description: "JSONin k\xE4sittely Luassa k\xE4sitt\xE4\xE4 JSON-muotoiltujen merkkijonojen\
   \ j\xE4sent\xE4misen Lua-taulukoihin ja p\xE4invastoin, mik\xE4 mahdollistaa helpon\
   \ datan vaihdon\u2026"
-lastmod: '2024-03-11T00:14:30.671409-06:00'
+lastmod: '2024-03-13T22:44:56.717862-06:00'
 model: gpt-4-0125-preview
 summary: "JSONin k\xE4sittely Luassa k\xE4sitt\xE4\xE4 JSON-muotoiltujen merkkijonojen\
   \ j\xE4sent\xE4misen Lua-taulukoihin ja p\xE4invastoin, mik\xE4 mahdollistaa helpon\

@@ -2,7 +2,7 @@
 date: 2024-01-25 03:00:00.122618-07:00
 description: "Rounding numbers means tweaking a value to its nearest integer or specified\
   \ precision. Devs do it to simplify, conform to real-world constraints, or\u2026"
-lastmod: '2024-03-11T00:14:34.222123-06:00'
+lastmod: '2024-03-13T22:45:00.353082-06:00'
 model: gpt-4-1106-preview
 summary: "Rounding numbers means tweaking a value to its nearest integer or specified\
   \ precision. Devs do it to simplify, conform to real-world constraints, or\u2026"

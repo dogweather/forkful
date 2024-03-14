@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:40.063687-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um arquivo que\
   \ \xE9 destinado a ser usado por um curto per\xEDodo de tempo ou para uma tarefa\
   \ espec\xEDfica.\u2026"
-lastmod: '2024-03-11T00:14:20.033002-06:00'
+lastmod: '2024-03-13T22:44:46.345456-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um arquivo que \xE9\
   \ destinado a ser usado por um curto per\xEDodo de tempo ou para uma tarefa espec\xED\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:10.943435-07:00
 description: "\xC5 finne lengden p\xE5 en streng betyr \xE5 bestemme antall tegn den\
   \ inneholder. Programmere gj\xF8r dette for \xE5 validere inndata, strukturere tekst,\
   \ eller for \xE5\u2026"
-lastmod: '2024-03-11T00:14:14.490653-06:00'
+lastmod: '2024-03-13T22:44:40.921080-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 finne lengden p\xE5 en streng betyr \xE5 bestemme antall tegn den inneholder.\
   \ Programmere gj\xF8r dette for \xE5 validere inndata, strukturere tekst, eller\

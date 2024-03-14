@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:37.901356-07:00
 description: "HTML parsen betekent het verwerken en analyseren van de structuur en\
   \ inhoud van HTML-code. Programmeurs doen dit om websites te schrapen, gegevens\
   \ te\u2026"
-lastmod: '2024-03-11T00:14:24.723704-06:00'
+lastmod: '2024-03-13T22:44:50.892669-06:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent het verwerken en analyseren van de structuur en inhoud\
   \ van HTML-code. Programmeurs doen dit om websites te schrapen, gegevens te\u2026"

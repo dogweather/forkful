@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:28.010121-07:00
 description: "Interpola\xE7\xE3o de strings \xE9 o processo de inserir valores de\
   \ vari\xE1veis dentro de uma string. Programadores utilizam isso para facilitar\
   \ a constru\xE7\xE3o de\u2026"
-lastmod: '2024-03-11T00:14:20.138445-06:00'
+lastmod: '2024-03-13T22:44:46.442708-06:00'
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de strings \xE9 o processo de inserir valores de vari\xE1\
   veis dentro de uma string. Programadores utilizam isso para facilitar a constru\xE7\

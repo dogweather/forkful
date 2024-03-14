@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:49.172721-07:00
 description: "Trabalhar com XML em Elixir significa analisar, criar e manipular dados\
   \ XML. Programadores lidam com XML porque ele \xE9 amplamente utilizado em servi\xE7\
   os\u2026"
-lastmod: '2024-03-11T00:14:19.942554-06:00'
+lastmod: '2024-03-13T22:44:46.262232-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com XML em Elixir significa analisar, criar e manipular dados\
   \ XML. Programadores lidam com XML porque ele \xE9 amplamente utilizado em servi\xE7\

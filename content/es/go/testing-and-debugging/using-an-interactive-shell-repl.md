@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:10:07.836157-07:00
 description: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus\
   \ siglas en ingl\xE9s), te permite experimentar con c\xF3digo de Go en tiempo real,\u2026"
-lastmod: '2024-03-11T00:14:32.339801-06:00'
+lastmod: '2024-03-13T22:44:58.469249-06:00'
 model: gpt-4-0125-preview
 summary: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), te permite experimentar con c\xF3digo de Go en tiempo real,\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:44.690394-07:00
 description: "Textsuche und -ersatz ist das Auffinden und Modifizieren von Zeichenfolgen\
   \ in einem Text. Programmierer nutzen dies, um Daten zu korrigieren, zu\u2026"
-lastmod: '2024-03-11T00:14:28.294627-06:00'
+lastmod: '2024-03-13T22:44:54.383268-06:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz ist das Auffinden und Modifizieren von Zeichenfolgen\
   \ in einem Text. Programmierer nutzen dies, um Daten zu korrigieren, zu\u2026"

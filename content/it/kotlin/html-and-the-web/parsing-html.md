@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:18.980108-07:00
 description: "Parsare l'HTML significa sezionare il markup di una pagina web in qualcosa\
   \ che un programma pu\xF2 capire e manipolare. I programmatori eseguono il parsing\u2026"
-lastmod: '2024-03-11T00:14:16.965875-06:00'
+lastmod: '2024-03-13T22:44:43.389193-06:00'
 model: gpt-4-0125-preview
 summary: "Parsare l'HTML significa sezionare il markup di una pagina web in qualcosa\
   \ che un programma pu\xF2 capire e manipolare. I programmatori eseguono il parsing\u2026"

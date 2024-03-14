@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:47.895478-07:00
 description: "Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa ty\xF6\
   skentely on YAML-muodossa olevan datan j\xE4sent\xE4misen ja tuottamisen k\xE4sittelemist\xE4\
   . YAML\u2026"
-lastmod: '2024-03-11T00:14:30.312104-06:00'
+lastmod: '2024-03-13T22:44:56.377575-06:00'
 model: gpt-4-0125-preview
 summary: "Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa ty\xF6skentely\
   \ on YAML-muodossa olevan datan j\xE4sent\xE4misen ja tuottamisen k\xE4sittelemist\xE4\

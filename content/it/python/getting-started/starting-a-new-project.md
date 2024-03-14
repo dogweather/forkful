@@ -5,7 +5,7 @@ changelog:
 date: 2024-02-22 17:31:02.639168-07:00
 description: "Avviare un nuovo progetto in Python significa impostare sin dall'inizio\
   \ una struttura organizzata e mantenibile. I programmatori fanno ci\xF2 per garantire\u2026"
-lastmod: '2024-03-11T00:14:16.556067-06:00'
+lastmod: '2024-03-13T22:44:43.001446-06:00'
 model: gpt-4-0125-preview
 summary: "Avviare un nuovo progetto in Python significa impostare sin dall'inizio\
   \ una struttura organizzata e mantenibile. I programmatori fanno ci\xF2 per garantire\u2026"

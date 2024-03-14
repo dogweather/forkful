@@ -9,7 +9,7 @@ description: "Text search \u0914\u0930 replace \u0915\u093E \u092E\u0924\u0932\u
   \u092F\u093E\u0902\u0936\u094B\u0902 \u0938\u0947 \u092C\u0926\u0932 \u0926\u0947\
   \u0928\u093E\u0964 Programmers \u0907\u0938\u0947 \u0921\u093E\u091F\u093E \u0915\
   \u094B\u2026"
-lastmod: '2024-03-11T00:14:25.397690-06:00'
+lastmod: '2024-03-13T22:44:51.564087-06:00'
 model: gpt-4-1106-preview
 summary: "Text search \u0914\u0930 replace \u0915\u093E \u092E\u0924\u0932\u092C \u0939\
   \u0948, \u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u092E\u0947\

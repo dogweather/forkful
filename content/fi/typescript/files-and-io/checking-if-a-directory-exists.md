@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:53.087265-07:00
 description: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleellinen\
   \ osa tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\u2026"
-lastmod: '2024-03-11T00:14:30.262871-06:00'
+lastmod: '2024-03-13T22:44:56.329363-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleellinen osa\
   \ tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\u2026"

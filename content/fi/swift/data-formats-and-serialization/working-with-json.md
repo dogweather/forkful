@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:14.636963-07:00
 description: "JSON:n k\xE4ytt\xE4minen Swiftiss\xE4 tarkoittaa kevyen datanvaihtoformaatin\
   \ k\xE4sittely\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t JSONia datan siirt\xE4miseen\
   \ palvelimen ja web-\u2026"
-lastmod: '2024-03-11T00:14:30.970103-06:00'
+lastmod: '2024-03-13T22:44:56.928421-06:00'
 model: gpt-4-0125-preview
 summary: "JSON:n k\xE4ytt\xE4minen Swiftiss\xE4 tarkoittaa kevyen datanvaihtoformaatin\
   \ k\xE4sittely\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t JSONia datan siirt\xE4miseen\

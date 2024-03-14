@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:06.334761-07:00
 description: "\xC5 utvinne substringer inneb\xE6rer \xE5 ta en del av en streng -\
   \ i hovedsak \xE5 skape en ny streng fra en del av en eksisterende streng. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: '2024-03-11T00:14:13.819197-06:00'
+lastmod: '2024-03-13T22:44:40.302122-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 utvinne substringer inneb\xE6rer \xE5 ta en del av en streng - i hovedsak\
   \ \xE5 skape en ny streng fra en del av en eksisterende streng. Programmerere gj\xF8\

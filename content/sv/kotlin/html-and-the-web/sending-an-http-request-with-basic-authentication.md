@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:24.949096-07:00
 description: "Skicka en HTTP-f\xF6rfr\xE5gan med basic-autentisering inneb\xE4r att\
   \ koda ihop anv\xE4ndarnamn och l\xF6senord och skicka med det i en f\xF6rfr\xE5\
   gans `Authorization`\u2026"
-lastmod: '2024-03-11T00:14:11.225140-06:00'
+lastmod: '2024-03-13T22:44:37.870927-06:00'
 model: gpt-4-1106-preview
 summary: "Skicka en HTTP-f\xF6rfr\xE5gan med basic-autentisering inneb\xE4r att koda\
   \ ihop anv\xE4ndarnamn och l\xF6senord och skicka med det i en f\xF6rfr\xE5gans\

@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:51.265561-07:00
 description: "Organizing code into functions chunks out tasks into reusable pieces,\
   \ making code cleaner and more maintainable. We do this to reduce redundancy, make\u2026"
-lastmod: '2024-03-11T00:14:34.311444-06:00'
+lastmod: '2024-03-13T22:45:00.438734-06:00'
 model: gpt-4-1106-preview
 summary: "Organizing code into functions chunks out tasks into reusable pieces, making\
   \ code cleaner and more maintainable. We do this to reduce redundancy, make\u2026"

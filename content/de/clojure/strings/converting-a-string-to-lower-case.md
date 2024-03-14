@@ -2,7 +2,7 @@
 date: 2024-01-20 17:38:03.144323-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben\
   \ in einem Text in ihre entsprechende kleine Form zu \xFCbertragen. Programmierer\u2026"
-lastmod: '2024-03-11T00:14:27.372037-06:00'
+lastmod: '2024-03-13T22:44:53.407411-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben\
   \ in einem Text in ihre entsprechende kleine Form zu \xFCbertragen. Programmierer\u2026"

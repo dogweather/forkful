@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:21.617718-07:00
 description: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des portions\
   \ sp\xE9cifiques d'une cha\xEEne en fonction de leurs positions. Les programmeurs\
   \ r\xE9alisent\u2026"
-lastmod: '2024-03-11T00:14:31.161121-06:00'
+lastmod: '2024-03-13T22:44:57.120759-06:00'
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des portions sp\xE9\
   cifiques d'une cha\xEEne en fonction de leurs positions. Les programmeurs r\xE9\

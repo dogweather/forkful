@@ -2,7 +2,7 @@
 date: 2024-01-26 04:38:32.135728-07:00
 description: "Komplexe Zahlen erweitern die reellen Zahlen um einen zus\xE4tzlichen\
   \ Teil, die imagin\xE4re Einheit 'i'. Programmierer verwenden sie in verschiedenen\u2026"
-lastmod: '2024-03-11T00:14:27.379048-06:00'
+lastmod: '2024-03-13T22:44:53.413887-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die reellen Zahlen um einen zus\xE4tzlichen Teil,\
   \ die imagin\xE4re Einheit 'i'. Programmierer verwenden sie in verschiedenen\u2026"

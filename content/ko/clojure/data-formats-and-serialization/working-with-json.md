@@ -8,7 +8,7 @@ description: "Clojure\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\
   \uB85C \uBCC0\uD658\uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4\
   . \uC774 \uC791\uC5C5\uC740 \uC6F9 \uC11C\uBE44\uC2A4, API, \uADF8\uB9AC\uACE0 \uAD6C\
   \uC870\uD654\uB41C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD3EC\uB9F7\uC73C\uB85C\u2026"
-lastmod: '2024-03-11T00:14:28.607629-06:00'
+lastmod: '2024-03-13T22:44:54.692420-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB294\
   \ \uAC83\uC740 JSON \uBB38\uC790\uC5F4\uC744 Clojure \uB370\uC774\uD130 \uAD6C\uC870\

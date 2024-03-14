@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:50.085046-07:00
 description: "YAML, uma linguagem de serializa\xE7\xE3o de dados projetada para ser\
   \ amig\xE1vel para humanos, \xE9 frequentemente usada para arquivos de configura\xE7\
   \xE3o, mensagens\u2026"
-lastmod: '2024-03-11T00:14:20.034202-06:00'
+lastmod: '2024-03-13T22:44:46.346464-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, uma linguagem de serializa\xE7\xE3o de dados projetada para ser amig\xE1\
   vel para humanos, \xE9 frequentemente usada para arquivos de configura\xE7\xE3o,\

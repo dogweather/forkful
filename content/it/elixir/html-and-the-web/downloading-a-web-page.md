@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:45.385316-07:00
 description: "Scaricare una pagina web significa copiare i suoi contenuti dal server\
   \ a un dispositivo locale; i programmatori lo fanno per analizzare dati, testare\u2026"
-lastmod: '2024-03-11T00:14:16.643720-06:00'
+lastmod: '2024-03-13T22:44:43.082548-06:00'
 model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa copiare i suoi contenuti dal server a\
   \ un dispositivo locale; i programmatori lo fanno per analizzare dati, testare\u2026"

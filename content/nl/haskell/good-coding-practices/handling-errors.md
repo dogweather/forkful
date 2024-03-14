@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:57.797759-07:00
 description: "Foutenafhandeling in programmeren gaat over het beheren van het onverwachte\u2014\
   zaken die mis kunnen gaan. Programmeurs doen dit om ervoor te zorgen dat hun\u2026"
-lastmod: '2024-03-11T00:14:24.688801-06:00'
+lastmod: '2024-03-13T22:44:50.859758-06:00'
 model: gpt-4-0125-preview
 summary: "Foutenafhandeling in programmeren gaat over het beheren van het onverwachte\u2014\
   zaken die mis kunnen gaan. Programmeurs doen dit om ervoor te zorgen dat hun\u2026"

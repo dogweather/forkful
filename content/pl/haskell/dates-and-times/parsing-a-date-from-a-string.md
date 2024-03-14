@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:30.196058-07:00
 description: "Przetwarzanie daty z ci\u0105gu znak\xF3w w Haskellu polega na przekszta\u0142\
   ceniu tekstowych reprezentacji dat na strukturalny format, kt\xF3ry program mo\u017C\
   e\u2026"
-lastmod: '2024-03-11T00:14:08.646694-06:00'
+lastmod: '2024-03-13T22:44:35.461718-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w w Haskellu polega na przekszta\u0142\
   ceniu tekstowych reprezentacji dat na strukturalny format, kt\xF3ry program mo\u017C\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:06.655131-07:00
 description: "Loggen is in feite te vergelijken met het bijhouden van een dagboek\
   \ voor je code; het is het registreren van gebeurtenissen, fouten en andere significante\u2026"
-lastmod: '2024-03-11T00:14:24.732911-06:00'
+lastmod: '2024-03-13T22:44:50.902022-06:00'
 model: gpt-4-0125-preview
 summary: "Loggen is in feite te vergelijken met het bijhouden van een dagboek voor\
   \ je code; het is het registreren van gebeurtenissen, fouten en andere significante\u2026"

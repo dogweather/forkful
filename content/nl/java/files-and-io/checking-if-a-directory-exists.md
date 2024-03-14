@@ -5,7 +5,7 @@ date: 2024-01-28 21:55:55.034884-07:00
 description: "Controleren of een directory bestaat betekent verifi\xEBren dat deze\
   \ er is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs\
   \ doen dit\u2026"
-lastmod: '2024-03-11T00:14:24.517410-06:00'
+lastmod: '2024-03-13T22:44:50.697020-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat betekent verifi\xEBren dat deze er\
   \ is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs doen\

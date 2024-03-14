@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:05:50.332933-07:00
 description: "Leggere un file di testo in Go comporta l'accesso e il recupero del\
   \ contenuto da un file memorizzato su disco per l'elaborazione o l'analisi. I\u2026"
-lastmod: '2024-03-11T00:14:16.477501-06:00'
+lastmod: '2024-03-13T22:44:42.926911-06:00'
 model: gpt-4-0125-preview
 summary: "Leggere un file di testo in Go comporta l'accesso e il recupero del contenuto\
   \ da un file memorizzato su disco per l'elaborazione o l'analisi. I\u2026"

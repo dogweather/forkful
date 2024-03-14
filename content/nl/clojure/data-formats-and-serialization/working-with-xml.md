@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:10.439480-07:00
 description: "XML is een opmaaktaal voor het coderen van documenten op een wijze die\
   \ zowel door mensen als machines gelezen kan worden. Het is cruciaal in webservices,\u2026"
-lastmod: '2024-03-11T00:14:24.255989-06:00'
+lastmod: '2024-03-13T22:44:50.444259-06:00'
 model: gpt-4-0125-preview
 summary: "XML is een opmaaktaal voor het coderen van documenten op een wijze die zowel\
   \ door mensen als machines gelezen kan worden. Het is cruciaal in webservices,\u2026"

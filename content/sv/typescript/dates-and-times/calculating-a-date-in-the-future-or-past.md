@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:06.068723-07:00
 description: "Ber\xE4kning av datum handlar om att ta reda p\xE5 exakta framtida eller\
   \ f\xF6rflutna tidpunkter baserat p\xE5 nuvarande datum. Programmerare g\xF6r detta\
   \ f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:11.007341-06:00'
+lastmod: '2024-03-13T22:44:37.669398-06:00'
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av datum handlar om att ta reda p\xE5 exakta framtida eller\
   \ f\xF6rflutna tidpunkter baserat p\xE5 nuvarande datum. Programmerare g\xF6r detta\

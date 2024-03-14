@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:00:18.919233-07:00
 description: "De lengte van een tekst vinden betekent uitzoeken hoeveel tekens deze\
   \ bevat. Programmeurs doen dit om invoer te valideren, tekst te manipuleren of\u2026"
-lastmod: '2024-03-11T00:14:24.759884-06:00'
+lastmod: '2024-03-13T22:44:50.928472-06:00'
 model: gpt-4-0125-preview
 summary: "De lengte van een tekst vinden betekent uitzoeken hoeveel tekens deze bevat.\
   \ Programmeurs doen dit om invoer te valideren, tekst te manipuleren of\u2026"

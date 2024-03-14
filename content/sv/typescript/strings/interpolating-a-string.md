@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:40.946194-07:00
 description: "Stringinterpolering \xE4r att smidigt b\xE4dda in variabler eller uttryck\
   \ i str\xE4ngar. Vi g\xF6r det f\xF6r att bygga dynamiska texter enklare och f\xF6\
   r att koden ska\u2026"
-lastmod: '2024-03-11T00:14:10.975979-06:00'
+lastmod: '2024-03-13T22:44:37.642489-06:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolering \xE4r att smidigt b\xE4dda in variabler eller uttryck\
   \ i str\xE4ngar. Vi g\xF6r det f\xF6r att bygga dynamiska texter enklare och f\xF6\

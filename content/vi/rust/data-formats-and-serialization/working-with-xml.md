@@ -6,7 +6,7 @@ description: "XML, vi\u1EBFt t\u1EAFt c\u1EE7a eXtensible Markup Language, gi\u1
   ng nh\u01B0 anh em h\u1ECD d\xE0i d\xF2ng c\u1EE7a JSON. B\u1EA1n s\u1EBD ph\u1EA3\
   i \u0111\u1ED1i m\u1EB7t v\u1EDBi XML khi l\xE0m vi\u1EC7c v\u1EDBi c\xE1c h\u1EC7\
   \ th\u1ED1ng c\u0169, ph\u1EA7n\u2026"
-lastmod: '2024-03-11T00:14:09.669678-06:00'
+lastmod: '2024-03-13T22:44:36.408376-06:00'
 model: gpt-4-0125-preview
 summary: "XML, vi\u1EBFt t\u1EAFt c\u1EE7a eXtensible Markup Language, gi\u1ED1ng\
   \ nh\u01B0 anh em h\u1ECD d\xE0i d\xF2ng c\u1EE7a JSON. B\u1EA1n s\u1EBD ph\u1EA3\

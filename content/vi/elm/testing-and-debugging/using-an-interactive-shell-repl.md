@@ -7,7 +7,7 @@ description: "V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL) l\xE0
   n gi\u1EA3n, x\u1EED l\xFD t\u1EEBng \u0111\u1EA7u v\xE0o c\u1EE7a ng\u01B0\u1EDD\
   i d\xF9ng, \u0111\xE1nh gi\xE1 ch\xFAng, v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3 v\u1EC1\
   \ cho\u2026"
-lastmod: '2024-03-11T00:14:09.815997-06:00'
+lastmod: '2024-03-13T22:44:36.546440-06:00'
 model: gpt-4-0125-preview
 summary: "V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL) l\xE0 m\u1ED9\
   t m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c \u0111\u01A1\

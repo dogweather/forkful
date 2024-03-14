@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:50.561381-07:00
 description: "Descargar una p\xE1gina web es traer el contenido de una URL a tu aplicaci\xF3\
   n. Lo hacemos para procesar, mostrar o analizar datos en nuestras apps."
-lastmod: '2024-03-11T00:14:33.241025-06:00'
+lastmod: '2024-03-13T22:44:59.415392-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es traer el contenido de una URL a tu aplicaci\xF3\
   n. Lo hacemos para procesar, mostrar o analizar datos en nuestras apps."

@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:53.742658-07:00
 description: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental\
   \ que implica transformar todos los caracteres de una cadena dada a sus equivalentes\
   \ en\u2026"
-lastmod: '2024-03-11T00:14:32.558569-06:00'
+lastmod: '2024-03-13T22:44:58.734144-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental que\
   \ implica transformar todos los caracteres de una cadena dada a sus equivalentes\

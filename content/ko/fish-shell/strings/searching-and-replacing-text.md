@@ -7,7 +7,7 @@ description: "(\"What & Why?\") \uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uC
   \ \uC624\uB958\uB97C \uC218\uC815\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744\
   \ \uC790\uC8FC \uC2E4\uD589\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-11T00:14:29.756805-06:00'
+lastmod: '2024-03-13T22:44:55.831662-06:00'
 model: gpt-4-1106-preview
 summary: "(\"What & Why?\") \uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294\
   \ \uD2B9\uC815 \uB2E8\uC5B4\uB098 \uBB38\uC7A5\uC744 \uB2E4\uB978 \uAC83\uC73C\uB85C\

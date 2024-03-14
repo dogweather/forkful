@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:48.139581-07:00
 description: "Concatenar cadenas implica combinar dos o m\xE1s cadenas en una sola.\
   \ Los programadores hacen esto para construir din\xE1micamente mensajes, URLs o\
   \ cualquier\u2026"
-lastmod: '2024-03-11T00:14:32.376892-06:00'
+lastmod: '2024-03-13T22:44:58.515470-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas implica combinar dos o m\xE1s cadenas en una sola. Los\
   \ programadores hacen esto para construir din\xE1micamente mensajes, URLs o cualquier\u2026"

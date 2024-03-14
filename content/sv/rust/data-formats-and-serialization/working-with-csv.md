@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:33.326934-07:00
 description: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) handlar om att\
   \ l\xE4sa fr\xE5n och skriva till vanliga textfiler som lagrar tabelldata. Programmerare\
   \ g\xF6r\u2026"
-lastmod: '2024-03-11T00:14:11.061836-06:00'
+lastmod: '2024-03-13T22:44:37.721861-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) handlar om att l\xE4\
   sa fr\xE5n och skriva till vanliga textfiler som lagrar tabelldata. Programmerare\

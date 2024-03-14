@@ -3,7 +3,7 @@ date: 2024-01-26 04:27:24.753960-07:00
 description: "TOML, en f\xF6rkortning f\xF6r Toms Obvious, Minimal Language, \xE4\
   r ett format f\xF6r serialisering av data som liknar JSON eller YAML. Programmerare\
   \ anv\xE4nder det p\xE5\u2026"
-lastmod: '2024-03-11T00:14:11.018731-06:00'
+lastmod: '2024-03-13T22:44:37.679391-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, en f\xF6rkortning f\xF6r Toms Obvious, Minimal Language, \xE4r ett\
   \ format f\xF6r serialisering av data som liknar JSON eller YAML. Programmerare\

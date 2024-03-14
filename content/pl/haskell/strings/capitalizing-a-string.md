@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:26.277432-07:00
 description: "Capitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszej litery\
   \ danego ci\u0105gu na wielk\u0105 liter\u0119, przy jednoczesnym zapewnieniu, \u017C\
   e reszta liter pozostanie\u2026"
-lastmod: '2024-03-11T00:14:08.618603-06:00'
+lastmod: '2024-03-13T22:44:35.434583-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszej litery\
   \ danego ci\u0105gu na wielk\u0105 liter\u0119, przy jednoczesnym zapewnieniu, \u017C\

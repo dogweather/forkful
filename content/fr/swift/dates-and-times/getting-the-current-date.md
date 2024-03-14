@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:56.994228-07:00
 description: "Obtenir la date actuelle en Swift implique l'utilisation de la classe\
   \ `Date` pour acc\xE9der \xE0 la date et \xE0 l'heure auxquelles l'application est\
   \ ex\xE9cut\xE9e.\u2026"
-lastmod: '2024-03-11T00:14:32.115135-06:00'
+lastmod: '2024-03-13T22:44:58.234529-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Swift implique l'utilisation de la classe `Date`\
   \ pour acc\xE9der \xE0 la date et \xE0 l'heure auxquelles l'application est ex\xE9\

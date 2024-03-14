@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:29.537183-07:00
 description: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine\
   \ fungerer som forventet gjennom automatiserte sjekker. Programmerere gj\xF8r det\
   \ for \xE5 fange\u2026"
-lastmod: '2024-03-11T00:14:14.407527-06:00'
+lastmod: '2024-03-13T22:44:40.845210-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine fungerer\
   \ som forventet gjennom automatiserte sjekker. Programmerere gj\xF8r det for \xE5\

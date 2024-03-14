@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:59.855425-07:00
 description: "Wypisywanie do standardowego b\u0142\u0119du (stderr) dotyczy przekazywania\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego strumienia, odr\u0119\
   bnego od\u2026"
-lastmod: '2024-03-11T00:14:08.563496-06:00'
+lastmod: '2024-03-13T22:44:35.381582-06:00'
 model: gpt-4-0125-preview
 summary: "Wypisywanie do standardowego b\u0142\u0119du (stderr) dotyczy przekazywania\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego strumienia, odr\u0119\

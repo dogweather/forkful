@@ -6,7 +6,7 @@ date: 2024-01-28 21:24:07.519332-07:00
 description: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\xE4\
   llytet\xE4\xE4n osaksi merkkijonoliteraaleja. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ dynaamisesti arvojen\u2026"
-lastmod: '2024-03-11T00:14:30.055653-06:00'
+lastmod: '2024-03-13T22:44:56.129418-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\xE4llytet\xE4\
   \xE4n osaksi merkkijonoliteraaleja. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisesti\

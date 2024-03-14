@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:46.268553-07:00
 description: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEE\
   nes de caract\xE8res automagiquement. Les devs le font pour corriger des erreurs,\
   \ mettre \xE0\u2026"
-lastmod: '2024-03-11T00:14:32.274304-06:00'
+lastmod: '2024-03-13T22:44:58.402578-06:00'
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEEnes de\
   \ caract\xE8res automagiquement. Les devs le font pour corriger des erreurs, mettre\

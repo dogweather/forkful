@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:28.565315-07:00
 description: "Mit\xE4 ja miksi? Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6\
   yd\xE4lt\xE4 alkavan sovelluskehyksen rakentamista. Koodarit aloittavat uusia projekteja\
   \ testatakseen\u2026"
-lastmod: '2024-03-11T00:14:31.128906-06:00'
+lastmod: '2024-03-13T22:44:57.087257-06:00'
 model: gpt-4-1106-preview
 summary: "Mit\xE4 ja miksi? Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4\
   lt\xE4 alkavan sovelluskehyksen rakentamista. Koodarit aloittavat uusia projekteja\

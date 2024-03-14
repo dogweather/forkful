@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:36.192561-07:00
 description: "Praca z JSON w Fish Shell polega na analizowaniu i generowaniu danych\
   \ JSON, co jest powszechnym zadaniem podczas konfiguracji aplikacji, interakcji\
   \ z API\u2026"
-lastmod: '2024-03-11T00:14:09.076877-06:00'
+lastmod: '2024-03-13T22:44:35.863115-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON w Fish Shell polega na analizowaniu i generowaniu danych JSON,\
   \ co jest powszechnym zadaniem podczas konfiguracji aplikacji, interakcji z API\u2026"

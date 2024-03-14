@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:21.464213-07:00
 description: "Avviare un nuovo progetto in Ruby significa creare una base da cui partire\
   \ per sviluppare la tua applicazione. I programmatori lo fanno per ordinare il\u2026"
-lastmod: '2024-03-11T00:14:17.574708-06:00'
+lastmod: '2024-03-13T22:44:44.052115-06:00'
 model: gpt-4-1106-preview
 summary: "Avviare un nuovo progetto in Ruby significa creare una base da cui partire\
   \ per sviluppare la tua applicazione. I programmatori lo fanno per ordinare il\u2026"

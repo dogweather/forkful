@@ -2,7 +2,7 @@
 date: 2024-01-26 01:11:38.203546-07:00
 description: "Code in Funktionen zu organisieren bedeutet, Ihren Code in wiederverwendbare\
   \ Bl\xF6cke mit definierten Zwecken zu unterteilen. Wir tun dies, um Ordnung zu\u2026"
-lastmod: '2024-03-11T00:14:27.876384-06:00'
+lastmod: '2024-03-13T22:44:53.977960-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren bedeutet, Ihren Code in wiederverwendbare\
   \ Bl\xF6cke mit definierten Zwecken zu unterteilen. Wir tun dies, um Ordnung zu\u2026"

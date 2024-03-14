@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:56:21.609348-07:00
 description: "Uudelleenj\xE4rjest\xE4minen (Refactoring) Dart-kieless\xE4 on olemassa\
   \ olevan koodin uudelleenrakenteellistamisen prosessi muuttamatta sen ulkoista\u2026"
-lastmod: '2024-03-11T00:14:30.211850-06:00'
+lastmod: '2024-03-13T22:44:56.280052-06:00'
 model: gpt-4-0125-preview
 summary: "Uudelleenj\xE4rjest\xE4minen (Refactoring) Dart-kieless\xE4 on olemassa\
   \ olevan koodin uudelleenrakenteellistamisen prosessi muuttamatta sen ulkoista\u2026"

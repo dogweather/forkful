@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:49.107608-07:00
 description: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skrivet\
   \ som `a + bi`. De \xE4r avg\xF6rande f\xF6r vissa matematikintensiva Arduino-projekt\
   \ som\u2026"
-lastmod: '2024-03-11T00:14:11.548908-06:00'
+lastmod: '2024-03-13T22:44:38.162192-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skrivet\
   \ som `a + bi`. De \xE4r avg\xF6rande f\xF6r vissa matematikintensiva Arduino-projekt\

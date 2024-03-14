@@ -3,7 +3,7 @@ date: 2024-01-26 04:24:12.699271-07:00
 description: "TOML:n kanssa ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-tietojen (Tom\u2019\
   s Obvious, Minimal Language) j\xE4sent\xE4misen ja tuottamisen Lualla. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4\u2026"
-lastmod: '2024-03-11T00:14:30.673706-06:00'
+lastmod: '2024-03-13T22:44:56.719938-06:00'
 model: gpt-4-0125-preview
 summary: "TOML:n kanssa ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-tietojen (Tom\u2019\
   s Obvious, Minimal Language) j\xE4sent\xE4misen ja tuottamisen Lualla. Ohjelmoijat\

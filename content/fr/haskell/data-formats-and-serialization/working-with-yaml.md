@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:31.811991-07:00
 description: "YAML, abr\xE9viation de \"YAML Ain't Markup Language\" (YAML n'est pas\
   \ un langage de balisage), est une norme de s\xE9rialisation de donn\xE9es conviviale\
   \ pour les\u2026"
-lastmod: '2024-03-11T00:14:31.803902-06:00'
+lastmod: '2024-03-13T22:44:57.855035-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, abr\xE9viation de \"YAML Ain't Markup Language\" (YAML n'est pas un\
   \ langage de balisage), est une norme de s\xE9rialisation de donn\xE9es conviviale\

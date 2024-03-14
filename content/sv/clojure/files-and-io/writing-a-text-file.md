@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:37.359114-07:00
 description: "Att skriva en textfil i Clojure involverar att skapa eller \xE4ndra\
   \ filer f\xF6r att spara data utanf\xF6r din applikation, vilket m\xF6jligg\xF6\
   r best\xE4ndighet,\u2026"
-lastmod: '2024-03-11T00:14:10.870828-06:00'
+lastmod: '2024-03-13T22:44:37.543487-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Clojure involverar att skapa eller \xE4ndra filer\
   \ f\xF6r att spara data utanf\xF6r din applikation, vilket m\xF6jligg\xF6r best\xE4\

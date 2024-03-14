@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:36.128761-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to metoda zabezpieczenia, dzi\u0119ki kt\xF3rej serwer mo\u017Ce zweryfikowa\u0107\
   \ to\u017Csamo\u015B\u0107 u\u017Cytkownika za pomoc\u0105 loginu i\u2026"
-lastmod: '2024-03-11T00:14:08.214266-06:00'
+lastmod: '2024-03-13T22:44:35.041872-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
   \ to metoda zabezpieczenia, dzi\u0119ki kt\xF3rej serwer mo\u017Ce zweryfikowa\u0107\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:17.175378-07:00
 description: "Imprimir sa\xEDdas de depura\xE7\xE3o em Visual Basic for Applications\
   \ (VBA) envolve colocar estrategicamente instru\xE7\xF5es de impress\xE3o dentro\
   \ do seu c\xF3digo para\u2026"
-lastmod: '2024-03-11T00:14:20.109559-06:00'
+lastmod: '2024-03-13T22:44:46.415141-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o em Visual Basic for Applications (VBA)\
   \ envolve colocar estrategicamente instru\xE7\xF5es de impress\xE3o dentro do seu\

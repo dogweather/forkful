@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:34.631789-07:00
 description: "Travailler avec JSON (JavaScript Object Notation) implique de parser\
   \ des donn\xE9es JSON \xE0 partir de cha\xEEnes de caract\xE8res vers des objets\
   \ Dart et vice\u2026"
-lastmod: '2024-03-11T00:14:31.430023-06:00'
+lastmod: '2024-03-13T22:44:57.414523-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON (JavaScript Object Notation) implique de parser des\
   \ donn\xE9es JSON \xE0 partir de cha\xEEnes de caract\xE8res vers des objets Dart\

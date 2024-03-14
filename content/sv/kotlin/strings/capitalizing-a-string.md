@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:41.449257-07:00
 description: "Att kapitalisera en str\xE4ng i programmering inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i str\xE4ngen till versal om det inte redan \xE4r det, vilket\
   \ \xE4r anv\xE4ndbart\u2026"
-lastmod: '2024-03-11T00:14:11.206294-06:00'
+lastmod: '2024-03-13T22:44:37.854825-06:00'
 model: gpt-4-0125-preview
 summary: "Att kapitalisera en str\xE4ng i programmering inneb\xE4r att konvertera\
   \ det f\xF6rsta tecknet i str\xE4ngen till versal om det inte redan \xE4r det, vilket\

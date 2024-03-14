@@ -2,7 +2,7 @@
 date: 2024-01-20 17:38:58.061103-07:00
 description: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
   \ alfab\xE9ticos de una cadena de texto a su equivalente en min\xFAsculas. Los\u2026"
-lastmod: '2024-03-11T00:14:33.097028-06:00'
+lastmod: '2024-03-13T22:44:59.277214-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
   \ alfab\xE9ticos de una cadena de texto a su equivalente en min\xFAsculas. Los\u2026"

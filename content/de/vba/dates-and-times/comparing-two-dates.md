@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:51:15.804032-07:00
 description: "Das Vergleichen von zwei Daten in Visual Basic for Applications (VBA)\
   \ beinhaltet die Bestimmung ihrer chronologischen Beziehung zueinander. Programmierer\u2026"
-lastmod: '2024-03-11T00:14:27.623898-06:00'
+lastmod: '2024-03-13T22:44:53.732105-06:00'
 model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in Visual Basic for Applications (VBA) beinhaltet\
   \ die Bestimmung ihrer chronologischen Beziehung zueinander. Programmierer\u2026"

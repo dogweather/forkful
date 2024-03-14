@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:35.715519-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w Visual\
   \ Basic for Applications (VBA) polega na identyfikowaniu, a nast\u0119pnie usuwaniu\
   \ znak\xF3w lub ci\u0105g\xF3w,\u2026"
-lastmod: '2024-03-11T00:14:08.388091-06:00'
+lastmod: '2024-03-13T22:44:35.213004-06:00'
 model: gpt-4-0125-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w Visual Basic\
   \ for Applications (VBA) polega na identyfikowaniu, a nast\u0119pnie usuwaniu znak\xF3\

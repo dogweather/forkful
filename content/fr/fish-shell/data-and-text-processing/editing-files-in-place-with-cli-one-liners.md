@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:44.363202-07:00
 description: "Modifier des fichiers sur place avec des lignes de commande est une\
   \ pratique qui consiste \xE0 apporter des modifications directement aux fichiers\
   \ depuis la\u2026"
-lastmod: '2024-03-11T00:14:32.191367-06:00'
+lastmod: '2024-03-13T22:44:58.320122-06:00'
 model: gpt-4-0125-preview
 summary: "Modifier des fichiers sur place avec des lignes de commande est une pratique\
   \ qui consiste \xE0 apporter des modifications directement aux fichiers depuis la\u2026"

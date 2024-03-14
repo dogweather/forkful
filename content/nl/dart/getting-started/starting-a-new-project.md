@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:56:31.314321-07:00
 description: "Een nieuw project starten in Dart omvat het opzetten van een omgeving\
   \ die bevorderlijk is voor effici\xEBnte ontwikkeling, testen en implementatie.\u2026"
-lastmod: '2024-03-11T00:14:24.321637-06:00'
+lastmod: '2024-03-13T22:44:50.505555-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Dart omvat het opzetten van een omgeving die\
   \ bevorderlijk is voor effici\xEBnte ontwikkeling, testen en implementatie.\u2026"

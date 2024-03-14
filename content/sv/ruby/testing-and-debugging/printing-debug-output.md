@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:32.788516-07:00
 description: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r vi spottar ut text till konsolen\
   \ f\xF6r att se vad som h\xE4nder i v\xE5r kod. Programmerare g\xF6r detta f\xF6\
   r att snabbt hitta och\u2026"
-lastmod: '2024-03-11T00:14:11.840535-06:00'
+lastmod: '2024-03-13T22:44:38.433522-06:00'
 model: gpt-4-1106-preview
 summary: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r vi spottar ut text till konsolen\
   \ f\xF6r att se vad som h\xE4nder i v\xE5r kod. Programmerare g\xF6r detta f\xF6\

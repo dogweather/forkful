@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:55.575805-07:00
 description: "De lengte van een reeks vinden betekent het tellen van het aantal karakters\
   \ erin. Programmeurs doen dit om invoer te valideren, buffers te dimensioneren\u2026"
-lastmod: '2024-03-11T00:14:25.074277-06:00'
+lastmod: '2024-03-13T22:44:51.236129-06:00'
 model: gpt-4-0125-preview
 summary: "De lengte van een reeks vinden betekent het tellen van het aantal karakters\
   \ erin. Programmeurs doen dit om invoer te valideren, buffers te dimensioneren\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:10.068881-07:00
 description: "Printing debug output in Ruby is like leaving breadcrumb trails in your\
   \ code to track variable values and program flow. Programmers do it to catch bugs\
   \ by\u2026"
-lastmod: '2024-03-11T00:14:34.440618-06:00'
+lastmod: '2024-03-13T22:45:00.553308-06:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output in Ruby is like leaving breadcrumb trails in your\
   \ code to track variable values and program flow. Programmers do it to catch bugs\

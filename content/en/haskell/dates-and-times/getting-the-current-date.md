@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:31.376532-07:00
 description: "Retrieving the current date in Haskell involves obtaining the system's\
   \ current time and transforming it into a readable date format. Programmers do this\u2026"
-lastmod: '2024-03-11T00:14:34.002120-06:00'
+lastmod: '2024-03-13T22:45:00.138036-06:00'
 model: gpt-4-0125-preview
 summary: "Retrieving the current date in Haskell involves obtaining the system's current\
   \ time and transforming it into a readable date format. Programmers do this\u2026"

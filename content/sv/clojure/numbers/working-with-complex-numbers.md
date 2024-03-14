@@ -2,7 +2,7 @@
 date: 2024-01-26 04:38:46.696347-07:00
 description: "Komplexa tal utvidgar de reella talen med en ytterligare del, den imagin\xE4\
   ra enheten 'i'. Programmerare anv\xE4nder dem inom olika omr\xE5den, inklusive\u2026"
-lastmod: '2024-03-11T00:14:10.833770-06:00'
+lastmod: '2024-03-13T22:44:37.519450-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar de reella talen med en ytterligare del, den imagin\xE4\
   ra enheten 'i'. Programmerare anv\xE4nder dem inom olika omr\xE5den, inklusive\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:23.280188-07:00
 description: "Reading a text file in programming lets your code absorb data, like\
   \ pouring coffee into your brain in the morning. We do it to feed programs information\u2026"
-lastmod: '2024-03-11T00:14:34.008269-06:00'
+lastmod: '2024-03-13T22:45:00.144113-06:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file in programming lets your code absorb data, like pouring\
   \ coffee into your brain in the morning. We do it to feed programs information\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:06.431996-07:00
 description: "Strenginterpolering lar deg sette inn variabler eller uttrykk inni en\
   \ tekststreng. Det gj\xF8r det enklere \xE5 bygge dynamiske tekster, og holder koden\
   \ ryddig\u2026"
-lastmod: '2024-03-11T00:14:14.387951-06:00'
+lastmod: '2024-03-13T22:44:40.827099-06:00'
 model: gpt-4-1106-preview
 summary: "Strenginterpolering lar deg sette inn variabler eller uttrykk inni en tekststreng.\
   \ Det gj\xF8r det enklere \xE5 bygge dynamiske tekster, og holder koden ryddig\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:20.346733-07:00
 description: "En Rust, afficher des informations de d\xE9bogage, c'est montrer l'\xE9\
   tat d'une variable ou ce qui se passe dans un programme. \xC7a aide les d\xE9veloppeurs\
   \ \xE0\u2026"
-lastmod: '2024-03-11T00:14:31.500236-06:00'
+lastmod: '2024-03-13T22:44:57.484592-06:00'
 model: gpt-4-1106-preview
 summary: "En Rust, afficher des informations de d\xE9bogage, c'est montrer l'\xE9\
   tat d'une variable ou ce qui se passe dans un programme. \xC7a aide les d\xE9veloppeurs\

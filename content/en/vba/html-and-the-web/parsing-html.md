@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:17.204068-07:00
 description: "Parsing HTML in Visual Basic for Applications (VBA) involves extracting\
   \ specific information from an HTML document. Programmers do it to automate the\u2026"
-lastmod: '2024-03-11T00:14:33.794525-06:00'
+lastmod: '2024-03-13T22:44:59.932364-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in Visual Basic for Applications (VBA) involves extracting\
   \ specific information from an HTML document. Programmers do it to automate the\u2026"

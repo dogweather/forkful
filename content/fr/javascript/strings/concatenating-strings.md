@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:24.579938-07:00
 description: "La concat\xE9nation de cha\xEEnes est le processus de raccordement de\
   \ deux cha\xEEnes de texte ou plus en une seule. Les programmeurs le font pour construire\
   \ des\u2026"
-lastmod: '2024-03-11T00:14:32.140704-06:00'
+lastmod: '2024-03-13T22:44:58.266209-06:00'
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes est le processus de raccordement de deux\
   \ cha\xEEnes de texte ou plus en une seule. Les programmeurs le font pour construire\

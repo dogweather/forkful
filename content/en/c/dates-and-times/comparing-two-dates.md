@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:07.787303-07:00
 description: "Comparing two dates in C involves determining the chronological relationship\
   \ between them -- whether one date precedes the other or if they are the same.\u2026"
-lastmod: '2024-03-11T00:14:34.407947-06:00'
+lastmod: '2024-03-13T22:45:00.522323-06:00'
 model: gpt-4-0125-preview
 summary: "Comparing two dates in C involves determining the chronological relationship\
   \ between them -- whether one date precedes the other or if they are the same.\u2026"

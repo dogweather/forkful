@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:54.669989-07:00
 description: "Iniciar um projeto novo \xE9 como montar o quebra-cabe\xE7a do zero\
   \ \u2013 voc\xEA tem um monte de pe\xE7as (ideias) e precisa junt\xE1-las. Programadores\
   \ fazem isso para\u2026"
-lastmod: '2024-03-11T00:14:20.247103-06:00'
+lastmod: '2024-03-13T22:44:46.542248-06:00'
 model: gpt-4-1106-preview
 summary: "Iniciar um projeto novo \xE9 como montar o quebra-cabe\xE7a do zero \u2013\
   \ voc\xEA tem um monte de pe\xE7as (ideias) e precisa junt\xE1-las. Programadores\

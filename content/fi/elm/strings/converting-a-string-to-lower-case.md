@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:07.352035-07:00
 description: "\"Mit\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. K\xE4\
   ytet\xE4\xE4n yhdenmukaistamaan dataa, esimerkiksi vertailuun tai sy\xF6tteen k\xE4\
   sittelyyn."
-lastmod: '2024-03-11T00:14:30.417286-06:00'
+lastmod: '2024-03-13T22:44:56.475305-06:00'
 model: gpt-4-1106-preview
 summary: "\"Mit\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. K\xE4ytet\xE4\
   \xE4n yhdenmukaistamaan dataa, esimerkiksi vertailuun tai sy\xF6tteen k\xE4sittelyyn."

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:29:10.377899-07:00
 description: "XML (eXtensible Markup Language) handlar om att strukturera data i ett\
   \ l\xE4sbart format. Programmerare jonglerar med XML f\xF6r konfiguration, datautbyte\u2026"
-lastmod: '2024-03-11T00:14:11.302135-06:00'
+lastmod: '2024-03-13T22:44:37.938006-06:00'
 model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) handlar om att strukturera data i ett l\xE4\
   sbart format. Programmerare jonglerar med XML f\xF6r konfiguration, datautbyte\u2026"

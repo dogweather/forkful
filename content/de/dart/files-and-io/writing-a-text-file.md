@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:42.594043-07:00
 description: "Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder\
   \ Modifizieren von Dateien auf der Festplatte, um Daten in einem lesbaren Format\
   \ zu\u2026"
-lastmod: '2024-03-11T00:14:27.496113-06:00'
+lastmod: '2024-03-13T22:44:53.601053-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder Modifizieren\
   \ von Dateien auf der Festplatte, um Daten in einem lesbaren Format zu\u2026"

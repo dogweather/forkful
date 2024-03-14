@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:51.232226-07:00
 description: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Bashu polega na\
   \ przekszta\u0142ceniu pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, pozostawiaj\u0105\
   c reszt\u0119 ci\u0105gu bez zmian.\u2026"
-lastmod: '2024-03-11T00:14:08.754754-06:00'
+lastmod: '2024-03-13T22:44:35.565784-06:00'
 model: gpt-4-0125-preview
 summary: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Bashu polega na przekszta\u0142\
   ceniu pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, pozostawiaj\u0105\

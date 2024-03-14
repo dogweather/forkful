@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:55.456151-07:00
 description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des informations textuelles sur la date et l'heure en un objet\
   \ datetime ou un\u2026"
-lastmod: '2024-03-11T00:14:31.280073-06:00'
+lastmod: '2024-03-13T22:44:57.246601-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir des informations textuelles sur la date et l'heure en un objet\

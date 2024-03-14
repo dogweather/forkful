@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:39.954536-07:00
 description: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 modifier la\
   \ premi\xE8re lettre d'un mot ou d'une phrase enti\xE8re en majuscule, tout en gardant\
   \ le reste des\u2026"
-lastmod: '2024-03-11T00:14:31.385830-06:00'
+lastmod: '2024-03-13T22:44:57.355028-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 modifier la premi\xE8\
   re lettre d'un mot ou d'une phrase enti\xE8re en majuscule, tout en gardant le reste\

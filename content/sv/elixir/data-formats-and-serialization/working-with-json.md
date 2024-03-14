@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:06.928922-07:00
 description: "Att arbeta med JSON inneb\xE4r att tolka JSON-formaterade str\xE4ngar\
   \ till datastrukturer som Elixir kan manipulera, och serialisera Elixir datastrukturer\u2026"
-lastmod: '2024-03-11T00:14:10.920720-06:00'
+lastmod: '2024-03-13T22:44:37.588921-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON inneb\xE4r att tolka JSON-formaterade str\xE4ngar till\
   \ datastrukturer som Elixir kan manipulera, och serialisera Elixir datastrukturer\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:22.303704-07:00
 description: "Tekstitiedostoon kirjoittaminen C++:lla sis\xE4lt\xE4\xE4 tiedoston\
   \ luomisen tai avaamisen ja sitten datan kirjoittamisen siihen, mik\xE4 on perustavaa\
   \ laatua oleva\u2026"
-lastmod: '2024-03-11T00:14:30.922249-06:00'
+lastmod: '2024-03-13T22:44:56.883752-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen C++:lla sis\xE4lt\xE4\xE4 tiedoston luomisen\
   \ tai avaamisen ja sitten datan kirjoittamisen siihen, mik\xE4 on perustavaa laatua\

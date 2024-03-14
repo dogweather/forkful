@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:45.740781-07:00
 description: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en place\
   \ les bases du code. Les programmeurs font \xE7a pour structurer et organiser leurs\
   \ id\xE9es\u2026"
-lastmod: '2024-03-11T00:14:31.453711-06:00'
+lastmod: '2024-03-13T22:44:57.437701-06:00'
 model: gpt-4-1106-preview
 summary: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en place les\
   \ bases du code. Les programmeurs font \xE7a pour structurer et organiser leurs\

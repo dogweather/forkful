@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:54.171443-07:00
 description: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
   . Se on hy\xF6dyllist\xE4, kun halutaan aikatauluttaa tapahtumia, muistuttaa deadlineista\
   \ tai seurata\u2026"
-lastmod: '2024-03-11T00:14:31.050250-06:00'
+lastmod: '2024-03-13T22:44:57.008490-06:00'
 model: gpt-4-1106-preview
 summary: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
   . Se on hy\xF6dyllist\xE4, kun halutaan aikatauluttaa tapahtumia, muistuttaa deadlineista\

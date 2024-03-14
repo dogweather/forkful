@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:05.329581-07:00
 description: "G\xE9rer les erreurs en Go implique de reconna\xEEtre et de r\xE9pondre\
   \ aux conditions d'erreur dans votre programme. Les programmeurs s'engagent dans\
   \ la gestion\u2026"
-lastmod: '2024-03-11T00:14:31.182933-06:00'
+lastmod: '2024-03-13T22:44:57.142144-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9rer les erreurs en Go implique de reconna\xEEtre et de r\xE9pondre\
   \ aux conditions d'erreur dans votre programme. Les programmeurs s'engagent dans\

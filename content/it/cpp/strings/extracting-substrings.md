@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:24.400898-07:00
 description: "Estrarre sottosequenze di stringhe significa prelevare parti di testo\
   \ da una stringa pi\xF9 grande. Questo \xE8 utile per analizzare i dati, manipolare\
   \ il testo\u2026"
-lastmod: '2024-03-11T00:14:17.333613-06:00'
+lastmod: '2024-03-13T22:44:43.715440-06:00'
 model: gpt-4-1106-preview
 summary: "Estrarre sottosequenze di stringhe significa prelevare parti di testo da\
   \ una stringa pi\xF9 grande. Questo \xE8 utile per analizzare i dati, manipolare\

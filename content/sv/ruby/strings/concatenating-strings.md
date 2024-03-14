@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:32.461820-07:00
 description: "Att konkatenera str\xE4ngar inneb\xE4r att sammanfoga tv\xE5 eller flera\
   \ textstycken till en. Programmerare g\xF6r detta f\xF6r att bygga dynamiska texter\
   \ eller\u2026"
-lastmod: '2024-03-11T00:14:11.826668-06:00'
+lastmod: '2024-03-13T22:44:38.420584-06:00'
 model: gpt-4-1106-preview
 summary: "Att konkatenera str\xE4ngar inneb\xE4r att sammanfoga tv\xE5 eller flera\
   \ textstycken till en. Programmerare g\xF6r detta f\xF6r att bygga dynamiska texter\

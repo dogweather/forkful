@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:08.777954-07:00
 description: "Das Schreiben von Tests in TypeScript umfasst das Erstellen automatisierter\
   \ Skripte, um die Funktionalit\xE4t und Richtigkeit Ihres Codes zu \xFCberpr\xFC\
   fen.\u2026"
-lastmod: '2024-03-11T00:14:27.525317-06:00'
+lastmod: '2024-03-13T22:44:53.634671-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in TypeScript umfasst das Erstellen automatisierter\
   \ Skripte, um die Funktionalit\xE4t und Richtigkeit Ihres Codes zu \xFCberpr\xFC\

@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:40.914376-07:00
 description: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\xE1\
   s cadenas en una. Los programadores hacen esto para manipular datos de texto f\xE1\
   cilmente,\u2026"
-lastmod: '2024-03-11T00:14:32.564149-06:00'
+lastmod: '2024-03-13T22:44:58.740154-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\xE1s cadenas\
   \ en una. Los programadores hacen esto para manipular datos de texto f\xE1cilmente,\u2026"

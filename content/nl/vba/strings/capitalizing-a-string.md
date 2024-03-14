@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:17.211219-07:00
 description: "Het kapitaliseren van een tekenreeks in Visual Basic for Applications\
   \ (VBA) houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in\
   \ een\u2026"
-lastmod: '2024-03-11T00:14:24.437813-06:00'
+lastmod: '2024-03-13T22:44:50.619265-06:00'
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een tekenreeks in Visual Basic for Applications (VBA)\
   \ houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in een\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:11.258966-07:00
 description: "Raggruppare il codice in funzioni significa scomporre compiti in blocchi\
   \ riutilizzabili. Ci\xF2 rende il codice pi\xF9 pulito, meno incline a errori e\
   \ pi\xF9\u2026"
-lastmod: '2024-03-11T00:14:17.392383-06:00'
+lastmod: '2024-03-13T22:44:43.775575-06:00'
 model: gpt-4-0125-preview
 summary: "Raggruppare il codice in funzioni significa scomporre compiti in blocchi\
   \ riutilizzabili. Ci\xF2 rende il codice pi\xF9 pulito, meno incline a errori e\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:38.848348-07:00
 description: "Lire les arguments de la ligne de commande en Dart permet aux programmeurs\
   \ d'entrer des donn\xE9es directement dans la console lors de l'ex\xE9cution d'un\u2026"
-lastmod: '2024-03-11T00:14:31.423395-06:00'
+lastmod: '2024-03-13T22:44:57.407546-06:00'
 model: gpt-4-0125-preview
 summary: "Lire les arguments de la ligne de commande en Dart permet aux programmeurs\
   \ d'entrer des donn\xE9es directement dans la console lors de l'ex\xE9cution d'un\u2026"

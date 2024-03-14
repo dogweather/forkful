@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:50.780530-07:00
 description: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme antall\
   \ tegn den inneholder. Programmerere utf\xF8rer rutinemessig denne operasjonen for\
   \ \xE5 manipulere\u2026"
-lastmod: '2024-03-11T00:14:13.770649-06:00'
+lastmod: '2024-03-13T22:44:40.256981-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme antall\
   \ tegn den inneholder. Programmerere utf\xF8rer rutinemessig denne operasjonen for\

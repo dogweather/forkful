@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:52.865597-07:00
 description: "Att f\xF6rstora en str\xE4ng inneb\xE4r att \xE4ndra str\xE4ngen s\xE5\
   \ att dess f\xF6rsta tecken \xE4r en versal, medan resten av str\xE4ngen f\xF6rblir\
   \ of\xF6r\xE4ndrad. Programmerare utf\xF6r\u2026"
-lastmod: '2024-03-11T00:14:10.822020-06:00'
+lastmod: '2024-03-13T22:44:37.508729-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xF6rstora en str\xE4ng inneb\xE4r att \xE4ndra str\xE4ngen s\xE5 att\
   \ dess f\xF6rsta tecken \xE4r en versal, medan resten av str\xE4ngen f\xF6rblir\

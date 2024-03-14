@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:43.605468-07:00
 description: "Wyra\u017Cenia regularne to pot\u0119\u017Cne narz\u0119dzie do dopasowywania\
   \ wzorc\xF3w i manipulowania danymi, niezb\u0119dne w zadaniach przetwarzania tekstu,\
   \ takich jak walidacja\u2026"
-lastmod: '2024-03-11T00:14:08.157225-06:00'
+lastmod: '2024-03-13T22:44:34.984249-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne to pot\u0119\u017Cne narz\u0119dzie do dopasowywania\
   \ wzorc\xF3w i manipulowania danymi, niezb\u0119dne w zadaniach przetwarzania tekstu,\

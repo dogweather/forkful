@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:15.616698-07:00
 description: "Obtener la fecha actual en PHP es una tarea fundamental que te permite\
   \ recuperar y manipular la fecha y la hora del sistema. Esto es crucial para\u2026"
-lastmod: '2024-03-11T00:14:32.987902-06:00'
+lastmod: '2024-03-13T22:44:59.171141-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en PHP es una tarea fundamental que te permite recuperar\
   \ y manipular la fecha y la hora del sistema. Esto es crucial para\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:14.572989-07:00
 description: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications\
   \ (VBA) inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng\
   \ til stor\u2026"
-lastmod: '2024-03-11T00:14:14.138500-06:00'
+lastmod: '2024-03-13T22:44:40.599488-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications (VBA)\
   \ inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng til\

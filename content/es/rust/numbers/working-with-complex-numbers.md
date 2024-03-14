@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:11.371647-07:00
 description: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria,\
   \ y son cruciales en varios campos como la ingenier\xEDa, f\xEDsica y gr\xE1ficos\
   \ por\u2026"
-lastmod: '2024-03-11T00:14:32.656283-06:00'
+lastmod: '2024-03-13T22:44:58.840491-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria, y\
   \ son cruciales en varios campos como la ingenier\xEDa, f\xEDsica y gr\xE1ficos\

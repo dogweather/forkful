@@ -6,7 +6,7 @@ description: "Ch\u1EC9nh s\u1EEDa t\u1EC7p t\u1EA1i ch\u1ED7 b\u1EB1ng c\xE1c d\
   ng l\u1EC7nh CLI l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n thay \u0111\u1ED5i tr\u1EF1\
   c ti\u1EBFp \u0111\u1ED1i v\u1EDBi c\xE1c t\u1EC7p t\u1EEB d\xF2ng l\u1EC7nh, kh\xF4\
   ng c\u1EA7n m\u1EDF ch\xFAng trong tr\xECnh so\u1EA1n th\u1EA3o\u2026"
-lastmod: '2024-03-11T00:14:10.514889-06:00'
+lastmod: '2024-03-13T22:44:37.205144-06:00'
 model: gpt-4-0125-preview
 summary: "Ch\u1EC9nh s\u1EEDa t\u1EC7p t\u1EA1i ch\u1ED7 b\u1EB1ng c\xE1c d\xF2ng\
   \ l\u1EC7nh CLI l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n thay \u0111\u1ED5i tr\u1EF1\

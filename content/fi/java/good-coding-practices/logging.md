@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:09.093186-07:00
 description: "Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tapahtuvat\
   \ ohjelmiston sis\xE4ll\xE4. Ohjelmoijat lokittavat n\xE4it\xE4 tapahtumia ker\xE4\
   t\xE4kseen\u2026"
-lastmod: '2024-03-11T00:14:30.392472-06:00'
+lastmod: '2024-03-13T22:44:56.451470-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tapahtuvat\
   \ ohjelmiston sis\xE4ll\xE4. Ohjelmoijat lokittavat n\xE4it\xE4 tapahtumia ker\xE4\

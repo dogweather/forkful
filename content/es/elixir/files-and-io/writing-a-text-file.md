@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:32.030416-07:00
 description: "Escribir en un archivo de texto en Elixir es una habilidad esencial\
   \ para los desarrolladores, permitiendo la persistencia de datos, registro o exportaci\xF3\
   n\u2026"
-lastmod: '2024-03-11T00:14:32.547012-06:00'
+lastmod: '2024-03-13T22:44:58.721417-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en un archivo de texto en Elixir es una habilidad esencial para\
   \ los desarrolladores, permitiendo la persistencia de datos, registro o exportaci\xF3\

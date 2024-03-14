@@ -2,7 +2,7 @@
 date: 2024-01-26 04:22:56.627481-07:00
 description: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
   \ di Tom). \xC8 un formato di serializzazione dei dati utilizzato per i file di\u2026"
-lastmod: '2024-03-11T00:14:16.901503-06:00'
+lastmod: '2024-03-13T22:44:43.332408-06:00'
 model: gpt-4-0125-preview
 summary: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
   \ di Tom). \xC8 un formato di serializzazione dei dati utilizzato per i file di\u2026"

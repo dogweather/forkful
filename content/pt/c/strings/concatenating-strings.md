@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:46.405581-07:00
 description: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de duas\
   \ ou mais strings de ponta a ponta para formar uma nova string. Os programadores\
   \ realizam essa\u2026"
-lastmod: '2024-03-11T00:14:20.781357-06:00'
+lastmod: '2024-03-13T22:44:47.040843-06:00'
 model: gpt-4-0125-preview
 summary: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de duas ou mais\
   \ strings de ponta a ponta para formar uma nova string. Os programadores realizam\

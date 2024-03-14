@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:39.528908-07:00
 description: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym\
   \ tworzeniem lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym\
   \ zadaniem dla wielu\u2026"
-lastmod: '2024-03-11T00:14:08.610315-06:00'
+lastmod: '2024-03-13T22:44:35.427183-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym tworzeniem\
   \ lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym zadaniem\

@@ -2,7 +2,7 @@
 date: 2024-01-26 00:51:34.885160-07:00
 description: "Manejar errores significa escribir c\xF3digo que pueda anticipar y lidiar\
   \ con situaciones problem\xE1ticas. Los programadores lo hacen para prevenir fallas,\u2026"
-lastmod: '2024-03-11T00:14:32.805405-06:00'
+lastmod: '2024-03-13T22:44:59.000490-06:00'
 model: gpt-4-1106-preview
 summary: "Manejar errores significa escribir c\xF3digo que pueda anticipar y lidiar\
   \ con situaciones problem\xE1ticas. Los programadores lo hacen para prevenir fallas,\u2026"

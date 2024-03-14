@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:08.798500-07:00
 description: "G\xE9rer les erreurs en Dart consiste \xE0 anticiper et g\xE9rer les\
   \ exceptions qui surviennent pendant l'ex\xE9cution du programme pour am\xE9liorer\
   \ la fiabilit\xE9 et\u2026"
-lastmod: '2024-03-11T00:14:31.413977-06:00'
+lastmod: '2024-03-13T22:44:57.398552-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9rer les erreurs en Dart consiste \xE0 anticiper et g\xE9rer les exceptions\
   \ qui surviennent pendant l'ex\xE9cution du programme pour am\xE9liorer la fiabilit\xE9\

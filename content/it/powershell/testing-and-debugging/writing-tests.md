@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:34.408779-07:00
 description: "Scrivere test in PowerShell comporta la creazione di script che validano\
   \ automaticamente la funzionalit\xE0 del vostro codice PowerShell, garantendo che\
   \ si\u2026"
-lastmod: '2024-03-11T00:14:17.258844-06:00'
+lastmod: '2024-03-13T22:44:43.646129-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in PowerShell comporta la creazione di script che validano\
   \ automaticamente la funzionalit\xE0 del vostro codice PowerShell, garantendo che\

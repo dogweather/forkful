@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:57.583063-07:00
 description: "Refactoren is de kunst van het aanpassen van bestaande code om de structuur,\
   \ leesbaarheid en effici\xEBntie ervan te verbeteren, zonder het externe gedrag\u2026"
-lastmod: '2024-03-11T00:14:24.777773-06:00'
+lastmod: '2024-03-13T22:44:50.945813-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoren is de kunst van het aanpassen van bestaande code om de structuur,\
   \ leesbaarheid en effici\xEBntie ervan te verbeteren, zonder het externe gedrag\u2026"

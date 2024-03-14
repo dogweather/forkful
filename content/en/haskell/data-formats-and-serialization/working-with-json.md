@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:17.276514-07:00
 description: "Working with JSON (JavaScript Object Notation) in Haskell involves parsing\
   \ JSON data into Haskell types and converting Haskell types back into JSON.\u2026"
-lastmod: '2024-03-11T00:14:34.011773-06:00'
+lastmod: '2024-03-13T22:45:00.147648-06:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) in Haskell involves parsing\
   \ JSON data into Haskell types and converting Haskell types back into JSON.\u2026"

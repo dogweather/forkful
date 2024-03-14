@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:57.583005-07:00
 description: "Die Arbeit mit JSON in Elm dreht sich um das Dekodieren von JSON-Daten\
   \ in Elm-Typen und das Kodieren von Elm-Werten zur\xFCck in JSON. Dieser Prozess\
   \ ist\u2026"
-lastmod: '2024-03-11T00:14:27.718976-06:00'
+lastmod: '2024-03-13T22:44:53.826890-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON in Elm dreht sich um das Dekodieren von JSON-Daten in\
   \ Elm-Typen und das Kodieren von Elm-Werten zur\xFCck in JSON. Dieser Prozess ist\u2026"

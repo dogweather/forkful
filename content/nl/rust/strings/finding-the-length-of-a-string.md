@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:00:37.664476-07:00
 description: "De lengte van een string vinden betekent het tellen van het aantal tekens\
   \ dat het bevat. Programmeurs doen dit om tekstgegevens effici\xEBnt te valideren,\u2026"
-lastmod: '2024-03-11T00:14:24.401517-06:00'
+lastmod: '2024-03-13T22:44:50.585057-06:00'
 model: gpt-4-0125-preview
 summary: "De lengte van een string vinden betekent het tellen van het aantal tekens\
   \ dat het bevat. Programmeurs doen dit om tekstgegevens effici\xEBnt te valideren,\u2026"

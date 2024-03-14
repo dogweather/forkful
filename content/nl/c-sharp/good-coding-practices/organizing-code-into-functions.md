@@ -5,7 +5,7 @@ date: 2024-01-28 22:02:51.565220-07:00
 description: "Code in functies opdelen is als LEGO-stenen sorteren in bakken\u2014\
   het maakt het vinden en gebruiken ervan gemakkelijker. We doen dit om herhaling\
   \ te\u2026"
-lastmod: '2024-03-11T00:14:24.641993-06:00'
+lastmod: '2024-03-13T22:44:50.815749-06:00'
 model: gpt-4-0125-preview
 summary: "Code in functies opdelen is als LEGO-stenen sorteren in bakken\u2014het\
   \ maakt het vinden en gebruiken ervan gemakkelijker. We doen dit om herhaling te\u2026"

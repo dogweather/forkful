@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:38.369523-07:00
 description: "En la programaci\xF3n con Rust, trabajar con YAML (YAML Ain't Markup\
   \ Language) consiste en analizar y generar datos en formato YAML, un est\xE1ndar\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:32.682724-06:00'
+lastmod: '2024-03-13T22:44:58.867071-06:00'
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n con Rust, trabajar con YAML (YAML Ain't Markup Language)\
   \ consiste en analizar y generar datos en formato YAML, un est\xE1ndar de\u2026"

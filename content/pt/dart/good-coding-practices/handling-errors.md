@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:12.478008-07:00
 description: "O tratamento de erros em Dart consiste em antecipar e gerir exce\xE7\
   \xF5es que surgem durante a execu\xE7\xE3o do programa para aumentar a confiabilidade\
   \ e\u2026"
-lastmod: '2024-03-11T00:14:19.973313-06:00'
+lastmod: '2024-03-13T22:44:46.289763-06:00'
 model: gpt-4-0125-preview
 summary: "O tratamento de erros em Dart consiste em antecipar e gerir exce\xE7\xF5\
   es que surgem durante a execu\xE7\xE3o do programa para aumentar a confiabilidade\

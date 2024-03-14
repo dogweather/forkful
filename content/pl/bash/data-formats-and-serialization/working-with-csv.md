@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:18:45.511560-07:00
 description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci rozdzielone\
   \ przecinkami) w Bashu polega na przetwarzaniu i manipulowaniu danymi tabelarycznymi\u2026"
-lastmod: '2024-03-11T00:14:08.800000-06:00'
+lastmod: '2024-03-13T22:44:35.607816-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci rozdzielone\
   \ przecinkami) w Bashu polega na przetwarzaniu i manipulowaniu danymi tabelarycznymi\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:49.834649-07:00
 description: "L'avvio di un nuovo progetto in Visual Basic for Applications (VBA)\
   \ comporta l'installazione di un ambiente all'interno di un'applicazione host, come\u2026"
-lastmod: '2024-03-11T00:14:16.830605-06:00'
+lastmod: '2024-03-13T22:44:43.263350-06:00'
 model: gpt-4-0125-preview
 summary: "L'avvio di un nuovo progetto in Visual Basic for Applications (VBA) comporta\
   \ l'installazione di un ambiente all'interno di un'applicazione host, come\u2026"

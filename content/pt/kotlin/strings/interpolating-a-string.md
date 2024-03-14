@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:04.199468-07:00
 description: "Interpola\xE7\xE3o de strings \xE9 a substitui\xE7\xE3o de vari\xE1\
   veis ou express\xF5es dentro de uma string por seus valores. Programadores fazem\
   \ isso para montar strings\u2026"
-lastmod: '2024-03-11T00:14:20.231507-06:00'
+lastmod: '2024-03-13T22:44:46.527805-06:00'
 model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de strings \xE9 a substitui\xE7\xE3o de vari\xE1veis\
   \ ou express\xF5es dentro de uma string por seus valores. Programadores fazem isso\

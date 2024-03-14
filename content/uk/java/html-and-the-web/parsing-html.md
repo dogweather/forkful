@@ -2,7 +2,7 @@
 date: 2024-01-20 15:32:11.518269-07:00
 description: Parsing HTML means extracting data from HTML files. Programmers do this
   to interact with web content, automate tasks, or scrape data.
-lastmod: '2024-03-11T00:14:22.925031-06:00'
+lastmod: '2024-03-13T22:44:49.076348-06:00'
 model: unknown
 summary: Parsing HTML means extracting data from HTML files. Programmers do this to
   interact with web content, automate tasks, or scrape data.

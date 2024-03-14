@@ -3,7 +3,7 @@ date: 2024-01-26 04:41:34.836612-07:00
 description: "N\xFAmeros complexos, consistindo em uma parte real e uma parte imagin\xE1\
   ria, s\xE3o essenciais em diversos campos computacionais como engenharia, f\xED\
   sica e\u2026"
-lastmod: '2024-03-11T00:14:20.329852-06:00'
+lastmod: '2024-03-13T22:44:46.619390-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, consistindo em uma parte real e uma parte imagin\xE1\
   ria, s\xE3o essenciais em diversos campos computacionais como engenharia, f\xED\

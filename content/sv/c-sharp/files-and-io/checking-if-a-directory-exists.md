@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:11.740296-07:00
 description: "Att kontrollera om en katalog finns i C# inneb\xE4r att man verifierar\
   \ n\xE4rvaron av en mapp p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
-lastmod: '2024-03-11T00:14:11.291445-06:00'
+lastmod: '2024-03-13T22:44:37.927812-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i C# inneb\xE4r att man verifierar n\xE4\
   rvaron av en mapp p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare g\xF6\

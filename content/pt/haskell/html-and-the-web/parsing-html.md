@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:11.815629-07:00
 description: "Analisar HTML em Haskell permite extrair dados, manipular conte\xFA\
   do HTML ou interagir com p\xE1ginas web programaticamente. Essa opera\xE7\xE3o \xE9\
   \ essencial para\u2026"
-lastmod: '2024-03-11T00:14:20.333947-06:00'
+lastmod: '2024-03-13T22:44:46.623149-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML em Haskell permite extrair dados, manipular conte\xFAdo HTML\
   \ ou interagir com p\xE1ginas web programaticamente. Essa opera\xE7\xE3o \xE9 essencial\

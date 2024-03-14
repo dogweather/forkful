@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:44.625538-07:00
 description: "Merkkijonojen alijonojen erottaminen Visual Basic for Applicationsissa\
   \ (VBA) sis\xE4lt\xE4\xE4 tiettyjen osien erist\xE4misen merkkijonosta annettujen\
   \ kriteerien\u2026"
-lastmod: '2024-03-11T00:14:30.324325-06:00'
+lastmod: '2024-03-13T22:44:56.388646-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen alijonojen erottaminen Visual Basic for Applicationsissa (VBA)\
   \ sis\xE4lt\xE4\xE4 tiettyjen osien erist\xE4misen merkkijonosta annettujen kriteerien\u2026"

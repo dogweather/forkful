@@ -9,7 +9,7 @@ description: "PowerShell\uC774 JSON(JavaScript Object Notation)\uACFC \uD1B5\uD5
   \uD658\uC744 \uC704\uD55C \uC77C\uBC18\uC801\uC778 \uD615\uC2DD\uC785\uB2C8\uB2E4\
   . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uAC00\uBCBC\uC6B4 \uD2B9\uC131\uACFC\
   \ \uC5B8\uC5B4 \uB3C5\uB9BD\uC801\uC778 \uC131\uACA9\u2026"
-lastmod: '2024-03-11T00:14:29.501676-06:00'
+lastmod: '2024-03-13T22:44:55.577918-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShell\uC774 JSON(JavaScript Object Notation)\uACFC \uD1B5\uD569\uB418\
   \uB294 \uAC83\uC740 JSON \uB370\uC774\uD130\uB97C \uD30C\uC2F1(\uC77D\uAE30)\uD558\

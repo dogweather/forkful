@@ -7,7 +7,7 @@ description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4(sub
   \ \uC785\uB825\uC744 \uCC98\uB9AC\uD560 \uACBD\uC6B0\uC5D0 \uC790\uC8FC \uC0AC\uC6A9\
   \uB418\uC8E0."
 isCJKLanguage: true
-lastmod: '2024-03-11T00:14:28.819799-06:00'
+lastmod: '2024-03-13T22:44:54.898860-06:00'
 model: gpt-4-1106-preview
 summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4(substrings)\uC744\
   \ \uCD94\uCD9C\uD558\uB294 \uAC83\uC740 \uBB38\uC790\uC5F4\uC758 \uD2B9\uC815 \uBD80\

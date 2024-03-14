@@ -2,7 +2,7 @@
 date: 2024-01-20 17:38:56.648204-07:00
 description: "Pourquoi convertir des cha\xEEnes en minuscules ? Simple : pour uniformiser\
   \ les donn\xE9es. \xC7a aide \xE0 comparer, trier ou rechercher sans souci de casse."
-lastmod: '2024-03-11T00:14:31.256896-06:00'
+lastmod: '2024-03-13T22:44:57.221500-06:00'
 model: gpt-4-1106-preview
 summary: "Pourquoi convertir des cha\xEEnes en minuscules ? Simple : pour uniformiser\
   \ les donn\xE9es. \xC7a aide \xE0 comparer, trier ou rechercher sans souci de casse."

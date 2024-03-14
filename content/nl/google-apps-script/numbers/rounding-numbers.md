@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:55.899784-07:00
 description: "Afronden van getallen, een fundamenteel concept in computerprogrammering,\
   \ betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of\u2026"
-lastmod: '2024-03-11T00:14:24.135076-06:00'
+lastmod: '2024-03-13T22:44:50.325657-06:00'
 model: gpt-4-0125-preview
 summary: "Afronden van getallen, een fundamenteel concept in computerprogrammering,\
   \ betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of\u2026"

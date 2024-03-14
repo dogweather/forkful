@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:18.587561-07:00
 description: "Converting a date to a string in Rust lets us display dates in a human-readable\
   \ format. We do this for UIs, logs, or any place where people need to make\u2026"
-lastmod: '2024-03-11T00:14:33.767887-06:00'
+lastmod: '2024-03-13T22:44:59.906483-06:00'
 model: gpt-4-1106-preview
 summary: "Converting a date to a string in Rust lets us display dates in a human-readable\
   \ format. We do this for UIs, logs, or any place where people need to make\u2026"

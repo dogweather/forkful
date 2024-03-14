@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:57.556542-07:00
 description: "(Kiedy i dlaczego?) Przekszta\u0142canie daty na \u0142a\u0144cuch znak\xF3\
   w to proces formatowania obiektu daty w spos\xF3b czytelny dla cz\u0142owieka. Programi\u015B\
   ci to robi\u0105, aby\u2026"
-lastmod: '2024-03-11T00:14:08.467179-06:00'
+lastmod: '2024-03-13T22:44:35.289208-06:00'
 model: gpt-4-1106-preview
 summary: "(Kiedy i dlaczego?) Przekszta\u0142canie daty na \u0142a\u0144cuch znak\xF3\
   w to proces formatowania obiektu daty w spos\xF3b czytelny dla cz\u0142owieka. Programi\u015B\

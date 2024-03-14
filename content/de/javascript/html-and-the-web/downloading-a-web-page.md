@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:09.768864-07:00
 description: "Herunterladen einer Webseite bedeutet, den Content dieser Seite programmatisch\
   \ zu holen. Programmierer tun das, um Daten zu scrapen, Inhalte offline zu\u2026"
-lastmod: '2024-03-11T00:14:28.169441-06:00'
+lastmod: '2024-03-13T22:44:54.265158-06:00'
 model: gpt-4-1106-preview
 summary: "Herunterladen einer Webseite bedeutet, den Content dieser Seite programmatisch\
   \ zu holen. Programmierer tun das, um Daten zu scrapen, Inhalte offline zu\u2026"

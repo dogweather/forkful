@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:17.445683-07:00
 description: "Pisanie do standardowego b\u0142\u0119du w j\u0119zyku C polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i informacji diagnostycznych do oddzielnego\
   \ strumienia, r\xF3\u017Cnego od\u2026"
-lastmod: '2024-03-11T00:14:09.121755-06:00'
+lastmod: '2024-03-13T22:44:35.904348-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du w j\u0119zyku C polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i informacji diagnostycznych do oddzielnego\

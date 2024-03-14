@@ -2,7 +2,7 @@
 date: 2024-01-26 04:23:16.652484-07:00
 description: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalny J\u0119\
   zyk Toma). Jest to format serializacji danych u\u017Cywany w plikach konfiguracyjnych.\u2026"
-lastmod: '2024-03-11T00:14:08.479930-06:00'
+lastmod: '2024-03-13T22:44:35.302206-06:00'
 model: gpt-4-0125-preview
 summary: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalny J\u0119\
   zyk Toma). Jest to format serializacji danych u\u017Cywany w plikach konfiguracyjnych.\u2026"

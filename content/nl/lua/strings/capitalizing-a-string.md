@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:09.093862-07:00
 description: "Het kapitaliseren van een tekenreeks betekent het met een hoofdletter\
   \ schrijven van de eerste letter van elk woord. Programmeurs doen dit voor\u2026"
-lastmod: '2024-03-11T00:14:24.751953-06:00'
+lastmod: '2024-03-13T22:44:50.920807-06:00'
 model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een tekenreeks betekent het met een hoofdletter schrijven\
   \ van de eerste letter van elk woord. Programmeurs doen dit voor\u2026"

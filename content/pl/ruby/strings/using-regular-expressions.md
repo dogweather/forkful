@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:23.837602-07:00
 description: "Wyra\u017Cenia regularne (regex) w Ruby to wzorce u\u017Cywane do dopasowywania\
   \ kombinacji znak\xF3w w ci\u0105gach tekstowych, co umo\u017Cliwia programistom\
   \ efektywne\u2026"
-lastmod: '2024-03-11T00:14:09.139461-06:00'
+lastmod: '2024-03-13T22:44:35.920814-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Ruby to wzorce u\u017Cywane do dopasowywania\
   \ kombinacji znak\xF3w w ci\u0105gach tekstowych, co umo\u017Cliwia programistom\

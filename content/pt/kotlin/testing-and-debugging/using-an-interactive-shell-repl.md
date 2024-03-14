@@ -2,7 +2,7 @@
 date: 2024-01-26 04:15:44.795715-07:00
 description: "Um REPL (Read-Eval-Print Loop - Ciclo de Ler-Avaliar-Imprimir) \xE9\
   \ um ambiente de programa\xE7\xE3o de computadores interativo e simples. Os programadores\u2026"
-lastmod: '2024-03-11T00:14:20.248108-06:00'
+lastmod: '2024-03-13T22:44:46.543164-06:00'
 model: gpt-4-0125-preview
 summary: "Um REPL (Read-Eval-Print Loop - Ciclo de Ler-Avaliar-Imprimir) \xE9 um ambiente\
   \ de programa\xE7\xE3o de computadores interativo e simples. Os programadores\u2026"

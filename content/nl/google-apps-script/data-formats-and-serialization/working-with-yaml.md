@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:06:51.382058-07:00
 description: "YAML, dat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare gegevensserialisatiestandaard die vaak wordt gebruikt voor\u2026"
-lastmod: '2024-03-11T00:14:24.163419-06:00'
+lastmod: '2024-03-13T22:44:50.353968-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, dat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare gegevensserialisatiestandaard die vaak wordt gebruikt voor\u2026"

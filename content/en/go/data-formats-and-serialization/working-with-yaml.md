@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:19.379220-07:00
 description: "Working with YAML in Go involves parsing YAML (YAML Ain't Markup Language)\
   \ files, a human-friendly data serialization standard, into Go data structures\u2026"
-lastmod: '2024-03-11T00:14:33.496151-06:00'
+lastmod: '2024-03-13T22:44:59.649309-06:00'
 model: gpt-4-0125-preview
 summary: "Working with YAML in Go involves parsing YAML (YAML Ain't Markup Language)\
   \ files, a human-friendly data serialization standard, into Go data structures\u2026"

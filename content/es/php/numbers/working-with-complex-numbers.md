@@ -3,7 +3,7 @@ date: 2024-01-26 04:43:24.939807-07:00
 description: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria,\
   \ usualmente escritos como `a + bi`. Son cruciales en matem\xE1ticas avanzadas,\
   \ f\xEDsica,\u2026"
-lastmod: '2024-03-11T00:14:32.971157-06:00'
+lastmod: '2024-03-13T22:44:59.154605-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria, usualmente\
   \ escritos como `a + bi`. Son cruciales en matem\xE1ticas avanzadas, f\xEDsica,\u2026"

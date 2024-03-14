@@ -3,7 +3,7 @@ date: 2024-01-26 03:37:54.779338-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien\
   \ karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehd\xE4 t\xE4\
   m\xE4n\u2026"
-lastmod: '2024-03-11T00:14:30.680857-06:00'
+lastmod: '2024-03-13T22:44:56.726137-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien\
   \ karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehd\xE4 t\xE4\

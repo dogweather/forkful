@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:54:19.228175-07:00
 description: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
   \ un objet `time.Time` en un format de cha\xEEne lisible. Les programmeurs effectuent\u2026"
-lastmod: '2024-03-11T00:14:31.187307-06:00'
+lastmod: '2024-03-13T22:44:57.146827-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
   \ un objet `time.Time` en un format de cha\xEEne lisible. Les programmeurs effectuent\u2026"

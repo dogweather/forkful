@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:35.385289-07:00
 description: "Iniciar um novo projeto em Dart envolve a configura\xE7\xE3o de um ambiente\
   \ prop\xEDcio ao desenvolvimento, teste e implementa\xE7\xE3o eficientes. Programadores\
   \ iniciam\u2026"
-lastmod: '2024-03-11T00:14:19.965263-06:00'
+lastmod: '2024-03-13T22:44:46.282358-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Dart envolve a configura\xE7\xE3o de um ambiente\
   \ prop\xEDcio ao desenvolvimento, teste e implementa\xE7\xE3o eficientes. Programadores\

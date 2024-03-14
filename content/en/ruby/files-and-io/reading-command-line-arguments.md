@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:37.926451-07:00
 description: "Reading command-line arguments in Ruby allows scripts to take input\
   \ right when they're run, like configuring options or passing data. Programmers\
   \ use them\u2026"
-lastmod: '2024-03-11T00:14:34.452854-06:00'
+lastmod: '2024-03-13T22:45:00.565435-06:00'
 model: gpt-4-1106-preview
 summary: "Reading command-line arguments in Ruby allows scripts to take input right\
   \ when they're run, like configuring options or passing data. Programmers use them\u2026"

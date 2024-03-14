@@ -3,7 +3,7 @@ date: 2024-01-26 04:35:54.886971-07:00
 description: "XML, abbreviazione di eXtensible Markup Language, \xE8 come il cugino\
   \ prolisso di JSON. Ti troverai a lottare con l'XML quando avrai a che fare con\
   \ sistemi\u2026"
-lastmod: '2024-03-11T00:14:16.809078-06:00'
+lastmod: '2024-03-13T22:44:43.242825-06:00'
 model: gpt-4-0125-preview
 summary: "XML, abbreviazione di eXtensible Markup Language, \xE8 come il cugino prolisso\
   \ di JSON. Ti troverai a lottare con l'XML quando avrai a che fare con sistemi\u2026"

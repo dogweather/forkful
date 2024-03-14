@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:33.097898-07:00
 description: "L'interpolation de cha\xEEnes dans Visual Basic pour Applications (VBA)\
   \ fait r\xE9f\xE9rence au processus d'int\xE9gration de variables ou d'expressions\
   \ au sein d'une\u2026"
-lastmod: '2024-03-11T00:14:31.528636-06:00'
+lastmod: '2024-03-13T22:44:57.537552-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes dans Visual Basic pour Applications (VBA)\
   \ fait r\xE9f\xE9rence au processus d'int\xE9gration de variables ou d'expressions\

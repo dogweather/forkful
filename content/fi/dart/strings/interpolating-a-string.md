@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:54:53.074955-07:00
 description: "Merkkijonojen interpolaatio on prosessi, jossa muuttujien arvot lis\xE4\
   t\xE4\xE4n suoraan merkkijonoihin, usein merkityksellisten viestien luomiseksi ilman\u2026"
-lastmod: '2024-03-11T00:14:30.186769-06:00'
+lastmod: '2024-03-13T22:44:56.255489-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen interpolaatio on prosessi, jossa muuttujien arvot lis\xE4\
   t\xE4\xE4n suoraan merkkijonoihin, usein merkityksellisten viestien luomiseksi ilman\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:18.322254-07:00
 description: "String interpolation slides values into a string template like pieces\
   \ of a puzzle, making strings dynamic and code cleaner. Programmers use it to insert\u2026"
-lastmod: '2024-03-11T00:14:34.136734-06:00'
+lastmod: '2024-03-13T22:45:00.269540-06:00'
 model: gpt-4-1106-preview
 summary: "String interpolation slides values into a string template like pieces of\
   \ a puzzle, making strings dynamic and code cleaner. Programmers use it to insert\u2026"

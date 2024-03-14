@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:22.817555-07:00
 description: "Zaczynamy nowy projekt Rust, by stworzy\u0107 \u015Bwie\u017Ce oprogramowanie\
   \ od podstaw. Programi\u015Bci robi\u0105 to dla realizacji unikalnych pomys\u0142\
   \xF3w lub eksperymentowania z\u2026"
-lastmod: '2024-03-11T00:14:08.359803-06:00'
+lastmod: '2024-03-13T22:44:35.185368-06:00'
 model: gpt-4-1106-preview
 summary: "Zaczynamy nowy projekt Rust, by stworzy\u0107 \u015Bwie\u017Ce oprogramowanie\
   \ od podstaw. Programi\u015Bci robi\u0105 to dla realizacji unikalnych pomys\u0142\

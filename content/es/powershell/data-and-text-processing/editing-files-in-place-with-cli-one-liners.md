@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:49.785598-07:00
 description: "Editar archivos en el lugar con l\xEDneas de comando (CLI) de una sola\
   \ l\xEDnea en PowerShell se trata de hacer modificaciones directas a los archivos\
   \ desde la\u2026"
-lastmod: '2024-03-11T00:14:33.108168-06:00'
+lastmod: '2024-03-13T22:44:59.288237-06:00'
 model: gpt-4-0125-preview
 summary: "Editar archivos en el lugar con l\xEDneas de comando (CLI) de una sola l\xED\
   nea en PowerShell se trata de hacer modificaciones directas a los archivos desde\

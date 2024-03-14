@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:00.779959-07:00
 description: "Leer argumentos de l\xEDnea de comando en Go implica extraer los argumentos\
   \ proporcionados a un programa durante su invocaci\xF3n desde el terminal o la l\xED\
   nea\u2026"
-lastmod: '2024-03-11T00:14:32.354947-06:00'
+lastmod: '2024-03-13T22:44:58.485044-06:00'
 model: gpt-4-0125-preview
 summary: "Leer argumentos de l\xEDnea de comando en Go implica extraer los argumentos\
   \ proporcionados a un programa durante su invocaci\xF3n desde el terminal o la l\xED\

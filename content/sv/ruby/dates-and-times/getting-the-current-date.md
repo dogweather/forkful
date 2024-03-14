@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:39.283869-07:00
 description: "Att h\xE4mta det aktuella datumet \xE4r en v\xE4sentlig uppgift i n\xE4\
   stan alla programmeringsprojekt, fr\xE5n att logga aktiviteter i en applikation\
   \ till att generera\u2026"
-lastmod: '2024-03-11T00:14:11.848966-06:00'
+lastmod: '2024-03-13T22:44:38.441818-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet \xE4r en v\xE4sentlig uppgift i n\xE4\
   stan alla programmeringsprojekt, fr\xE5n att logga aktiviteter i en applikation\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:27:30.326247-07:00
 description: "Travailler avec XML implique d'analyser, d'extraire et de manipuler\
   \ des donn\xE9es au format Extensible Markup Language. Les programmeurs se d\xE9\
   battent avec\u2026"
-lastmod: '2024-03-11T00:14:31.948845-06:00'
+lastmod: '2024-03-13T22:44:58.023870-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique d'analyser, d'extraire et de manipuler des\
   \ donn\xE9es au format Extensible Markup Language. Les programmeurs se d\xE9battent\

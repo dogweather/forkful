@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:19.399530-07:00
 description: "(Suppression de caract\xE8res correspondant \xE0 un motif) Dans la programmation,\
   \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait\u2026"
-lastmod: '2024-03-11T00:14:32.088360-06:00'
+lastmod: '2024-03-13T22:44:58.198213-06:00'
 model: gpt-4-1106-preview
 summary: "(Suppression de caract\xE8res correspondant \xE0 un motif) Dans la programmation,\
   \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait\u2026"

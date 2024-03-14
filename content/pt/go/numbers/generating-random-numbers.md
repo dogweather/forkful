@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:21.362678-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o trata de criar uma\
   \ sequ\xEAncia de n\xFAmeros que n\xE3o possa ser prevista de maneira razo\xE1vel\
   \ melhor do que por acaso.\u2026"
-lastmod: '2024-03-11T00:14:19.716138-06:00'
+lastmod: '2024-03-13T22:44:46.056049-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o trata de criar uma sequ\xEA\
   ncia de n\xFAmeros que n\xE3o possa ser prevista de maneira razo\xE1vel melhor do\

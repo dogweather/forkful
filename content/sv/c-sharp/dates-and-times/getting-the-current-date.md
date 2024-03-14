@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:25.562023-07:00
 description: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuella\
   \ datum- och tidsuppgifter fr\xE5n systemet. Programmerare beh\xF6ver ofta tillg\xE5\
   ng till denna\u2026"
-lastmod: '2024-03-11T00:14:11.287179-06:00'
+lastmod: '2024-03-13T22:44:37.923748-06:00'
 model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuella datum-\
   \ och tidsuppgifter fr\xE5n systemet. Programmerare beh\xF6ver ofta tillg\xE5ng\

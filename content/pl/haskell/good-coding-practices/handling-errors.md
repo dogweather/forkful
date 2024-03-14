@@ -3,7 +3,7 @@ date: 2024-01-26 00:54:06.914645-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na zarz\u0105\
   dzaniu niespodziewanymi sytuacjami\u2014rzeczami, kt\xF3re mog\u0105 p\xF3j\u015B\
   \u0107 nie tak. Programi\u015Bci robi\u0105 to, aby zapewni\u0107,\u2026"
-lastmod: '2024-03-11T00:14:08.644696-06:00'
+lastmod: '2024-03-13T22:44:35.459712-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na zarz\u0105dzaniu\
   \ niespodziewanymi sytuacjami\u2014rzeczami, kt\xF3re mog\u0105 p\xF3j\u015B\u0107\

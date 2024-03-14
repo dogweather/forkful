@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:05.509187-07:00
 description: "Comparar dos fechas en Google Apps Script, un derivado de JavaScript\
   \ dise\xF1ado para la suite de aplicaciones de Google, es una tarea esencial para\
   \ los\u2026"
-lastmod: '2024-03-11T00:14:32.410844-06:00'
+lastmod: '2024-03-13T22:44:58.560845-06:00'
 model: gpt-4-0125-preview
 summary: "Comparar dos fechas en Google Apps Script, un derivado de JavaScript dise\xF1\
   ado para la suite de aplicaciones de Google, es una tarea esencial para los\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:28.935864-07:00
 description: "Starting a new project in Rust means setting up a basic structure so\
   \ your code has a place to live. Programmers kick off new projects to solve problems,\u2026"
-lastmod: '2024-03-11T00:14:33.757615-06:00'
+lastmod: '2024-03-13T22:44:59.896433-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project in Rust means setting up a basic structure so your\
   \ code has a place to live. Programmers kick off new projects to solve problems,\u2026"

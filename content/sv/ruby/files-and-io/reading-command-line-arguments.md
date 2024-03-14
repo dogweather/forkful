@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:42.038014-07:00
 description: "Att l\xE4sa kommandoradsargument \xE4r processen att f\xE5nga data som\
   \ anv\xE4ndaren skickar in till ditt program fr\xE5n terminalen. Vi g\xF6r det f\xF6\
   r att till\xE5ta\u2026"
-lastmod: '2024-03-11T00:14:11.854065-06:00'
+lastmod: '2024-03-13T22:44:38.447112-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa kommandoradsargument \xE4r processen att f\xE5nga data som anv\xE4\
   ndaren skickar in till ditt program fr\xE5n terminalen. Vi g\xF6r det f\xF6r att\

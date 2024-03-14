@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:53.962916-07:00
 description: "Las expresiones regulares (regex) en Bash te permiten buscar, manipular\
   \ y manejar cadenas de caracteres y archivos bas\xE1ndote en patrones espec\xED\
   ficos. Los\u2026"
-lastmod: '2024-03-11T00:14:33.054907-06:00'
+lastmod: '2024-03-13T22:44:59.234411-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Bash te permiten buscar, manipular\
   \ y manejar cadenas de caracteres y archivos bas\xE1ndote en patrones espec\xED\

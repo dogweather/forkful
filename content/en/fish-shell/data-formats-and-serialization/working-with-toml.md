@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:31.938698-07:00
 description: "TOML is a config file format, easy for humans to read and write, and\
   \ easy for machines to parse and generate. Programmers work with TOML for clear,\u2026"
-lastmod: '2024-03-11T00:14:34.374381-06:00'
+lastmod: '2024-03-13T22:45:00.494927-06:00'
 model: gpt-4-1106-preview
 summary: "TOML is a config file format, easy for humans to read and write, and easy\
   \ for machines to parse and generate. Programmers work with TOML for clear,\u2026"

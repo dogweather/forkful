@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:52.642342-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin Go:ssa tarkoittaa koodin jakamista\
   \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyj\xE4\
   \ teht\xE4vi\xE4.\u2026"
-lastmod: '2024-03-11T00:14:29.981985-06:00'
+lastmod: '2024-03-13T22:44:56.056579-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin Go:ssa tarkoittaa koodin jakamista\
   \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyj\xE4\

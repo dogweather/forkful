@@ -2,7 +2,7 @@
 date: 2024-01-26 00:51:16.957302-07:00
 description: "Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit\
   \ Problemen umgehen kann, wenn etwas schief geht. Programmierer machen das, um\u2026"
-lastmod: '2024-03-11T00:14:27.705161-06:00'
+lastmod: '2024-03-13T22:44:53.812551-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit Problemen\
   \ umgehen kann, wenn etwas schief geht. Programmierer machen das, um\u2026"

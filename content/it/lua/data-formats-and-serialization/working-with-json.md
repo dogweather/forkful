@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:14.389597-07:00
 description: "Lavorare con JSON in Lua comporta l'analisi di stringhe in formato JSON\
   \ per trasformarle in tabelle Lua e viceversa, consentendo un facile scambio di\
   \ dati\u2026"
-lastmod: '2024-03-11T00:14:17.188204-06:00'
+lastmod: '2024-03-13T22:44:43.578372-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con JSON in Lua comporta l'analisi di stringhe in formato JSON\
   \ per trasformarle in tabelle Lua e viceversa, consentendo un facile scambio di\

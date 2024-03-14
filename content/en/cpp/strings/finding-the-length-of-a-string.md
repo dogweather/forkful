@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:04.612161-07:00
 description: "Finding the length of a string means determining how many characters\
   \ it contains. Programmers do this to validate input, set up loops, or prepare data\
   \ for\u2026"
-lastmod: '2024-03-11T00:14:34.218661-06:00'
+lastmod: '2024-03-13T22:45:00.349725-06:00'
 model: gpt-4-1106-preview
 summary: "Finding the length of a string means determining how many characters it\
   \ contains. Programmers do this to validate input, set up loops, or prepare data\

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:59.191386-07:00
 description: "Regular expressions (regex) in Ruby are patterns used to match character\
   \ combinations in strings, enabling developers to search for, match, and manipulate\u2026"
-lastmod: '2024-03-11T00:14:34.426634-06:00'
+lastmod: '2024-03-13T22:45:00.539542-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Ruby are patterns used to match character\
   \ combinations in strings, enabling developers to search for, match, and manipulate\u2026"

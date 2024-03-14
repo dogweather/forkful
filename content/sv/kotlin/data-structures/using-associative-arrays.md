@@ -5,7 +5,7 @@ date: 2024-01-30 19:11:51.350289-07:00
 description: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som lagrar\
   \ nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6r att effektivt organisera\
   \ och h\xE4mta\u2026"
-lastmod: '2024-03-11T00:14:11.217342-06:00'
+lastmod: '2024-03-13T22:44:37.864385-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som lagrar nyckel-v\xE4\
   rdepar. Programmerare anv\xE4nder dem f\xF6r att effektivt organisera och h\xE4\

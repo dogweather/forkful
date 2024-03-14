@@ -2,7 +2,7 @@
 date: 2024-01-30 18:57:12.418860-07:00
 description: "Associative arrays, or objects in TypeScript, let you use strings (or\
   \ keys) to access value pairs. Programmers use them for more dynamic data access\u2026"
-lastmod: '2024-03-11T00:14:33.711316-06:00'
+lastmod: '2024-03-13T22:44:59.851984-06:00'
 model: gpt-4-0125-preview
 summary: "Associative arrays, or objects in TypeScript, let you use strings (or keys)\
   \ to access value pairs. Programmers use them for more dynamic data access\u2026"

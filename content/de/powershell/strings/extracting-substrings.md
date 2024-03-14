@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:47.858971-07:00
 description: "Das Extrahieren von Teilzeichenketten erm\xF6glicht es, bestimmte Abschnitte\
   \ eines Strings zu isolieren und zu verwenden. Programmierer machen das, um Daten\u2026"
-lastmod: '2024-03-11T00:14:27.990716-06:00'
+lastmod: '2024-03-13T22:44:54.090624-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilzeichenketten erm\xF6glicht es, bestimmte Abschnitte\
   \ eines Strings zu isolieren und zu verwenden. Programmierer machen das, um Daten\u2026"

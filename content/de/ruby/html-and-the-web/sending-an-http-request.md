@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:25.063817-07:00
 description: "Das Senden einer HTTP-Anfrage ist ein zentraler Bestandteil des Web,\
   \ bei dem Daten von oder zu einem Server \xFCbertragen werden. Programmierer nutzen\
   \ das,\u2026"
-lastmod: '2024-03-11T00:14:28.309924-06:00'
+lastmod: '2024-03-13T22:44:54.397430-06:00'
 model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage ist ein zentraler Bestandteil des Web, bei\
   \ dem Daten von oder zu einem Server \xFCbertragen werden. Programmierer nutzen\

@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:53.046161-07:00
 description: "In software development, it's often necessary to check if a directory\
   \ exists to avoid errors when attempting to access, read, or write files. Rust,\
   \ being\u2026"
-lastmod: '2024-03-11T00:14:33.770567-06:00'
+lastmod: '2024-03-13T22:44:59.909178-06:00'
 model: gpt-4-0125-preview
 summary: "In software development, it's often necessary to check if a directory exists\
   \ to avoid errors when attempting to access, read, or write files. Rust, being\u2026"

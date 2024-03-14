@@ -3,7 +3,7 @@ date: 2024-01-26 00:50:07.844104-07:00
 description: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattomat\
   \ asiat, jotka yritt\xE4v\xE4t kaataa suunnitelmasi. Sen tarkoitus on est\xE4\xE4\
   \ Arduinoasi\u2026"
-lastmod: '2024-03-11T00:14:30.857894-06:00'
+lastmod: '2024-03-13T22:44:56.831109-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattomat asiat,\
   \ jotka yritt\xE4v\xE4t kaataa suunnitelmasi. Sen tarkoitus on est\xE4\xE4 Arduinoasi\u2026"

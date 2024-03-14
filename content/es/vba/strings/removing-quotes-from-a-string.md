@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:18.978096-07:00
 description: "Eliminar comillas de una cadena en VBA implica quitar instancias de\
   \ comillas simples (`'`) o dobles (`\"`) que pueden encapsular o estar incrustadas\
   \ dentro\u2026"
-lastmod: '2024-03-11T00:14:32.693607-06:00'
+lastmod: '2024-03-13T22:44:58.878864-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena en VBA implica quitar instancias de comillas\
   \ simples (`'`) o dobles (`\"`) que pueden encapsular o estar incrustadas dentro\u2026"

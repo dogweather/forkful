@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:20.714393-07:00
 description: "Tekstin lukeminen tiedostosta on yksinkertaisesti tiedon hakemista levylt\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyn, analysoinnin tai tulosten\u2026"
-lastmod: '2024-03-11T00:14:30.582304-06:00'
+lastmod: '2024-03-13T22:44:56.631912-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstin lukeminen tiedostosta on yksinkertaisesti tiedon hakemista levylt\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyn, analysoinnin tai tulosten\u2026"

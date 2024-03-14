@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:34.955331-07:00
 description: "Organizing code into functions is about wrapping up chunks of code that\
   \ perform specific tasks and giving them a name. It's done to make code reusable,\u2026"
-lastmod: '2024-03-11T00:14:34.156954-06:00'
+lastmod: '2024-03-13T22:45:00.289403-06:00'
 model: gpt-4-1106-preview
 summary: "Organizing code into functions is about wrapping up chunks of code that\
   \ perform specific tasks and giving them a name. It's done to make code reusable,\u2026"

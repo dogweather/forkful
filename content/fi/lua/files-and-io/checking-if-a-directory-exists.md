@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:55.183791-07:00
 description: "Hakemiston olemassaolon tarkistaminen on perusoperaatio, kun kirjoitetaan\
   \ skriptej\xE4, jotka vuorovaikuttavat tiedostoj\xE4rjestelm\xE4n kanssa. Se varmistaa,\u2026"
-lastmod: '2024-03-11T00:14:30.664512-06:00'
+lastmod: '2024-03-13T22:44:56.711141-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perusoperaatio, kun kirjoitetaan\
   \ skriptej\xE4, jotka vuorovaikuttavat tiedostoj\xE4rjestelm\xE4n kanssa. Se varmistaa,\u2026"

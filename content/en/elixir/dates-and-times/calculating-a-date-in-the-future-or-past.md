@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:50.638459-07:00
 description: "Figuring out a future or past date involves computing a date that is\
   \ so many days, months, or years from a specific point in time. Programmers often\
   \ need\u2026"
-lastmod: '2024-03-11T00:14:33.651096-06:00'
+lastmod: '2024-03-13T22:44:59.794379-06:00'
 model: gpt-4-1106-preview
 summary: "Figuring out a future or past date involves computing a date that is so\
   \ many days, months, or years from a specific point in time. Programmers often need\u2026"

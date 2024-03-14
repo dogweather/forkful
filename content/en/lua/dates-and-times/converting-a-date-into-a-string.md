@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:46.946180-07:00
 description: "Converting a date to a string is about changing how date/time data is\
   \ displayed. Programmers do this for readability, localization, or formatting\u2026"
-lastmod: '2024-03-11T00:14:34.080374-06:00'
+lastmod: '2024-03-13T22:45:00.215825-06:00'
 model: gpt-4-1106-preview
 summary: "Converting a date to a string is about changing how date/time data is displayed.\
   \ Programmers do this for readability, localization, or formatting\u2026"

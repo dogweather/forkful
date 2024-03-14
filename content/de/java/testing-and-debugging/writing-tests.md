@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:50.255026-07:00
 description: "Das Schreiben von Tests in Java besteht darin, zu \xFCberpr\xFCfen,\
   \ ob Ihr Code sich unter verschiedenen Bedingungen wie erwartet verh\xE4lt. Programmierer\u2026"
-lastmod: '2024-03-11T00:14:27.658802-06:00'
+lastmod: '2024-03-13T22:44:53.766431-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Java besteht darin, zu \xFCberpr\xFCfen, ob Ihr\
   \ Code sich unter verschiedenen Bedingungen wie erwartet verh\xE4lt. Programmierer\u2026"

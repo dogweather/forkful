@@ -2,7 +2,7 @@
 date: 2024-01-26 04:43:03.728446-07:00
 description: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiastki\
   \ kwadratowe z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\u2026"
-lastmod: '2024-03-11T00:14:08.539952-06:00'
+lastmod: '2024-03-13T22:44:35.358714-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiastki kwadratowe\
   \ z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\u2026"

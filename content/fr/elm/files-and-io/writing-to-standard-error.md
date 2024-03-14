@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:00.326327-07:00
 description: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 rediriger les\
   \ messages d'erreur et les diagnostics s\xE9par\xE9ment du r\xE9sultat principal\
   \ du programme, qui va\u2026"
-lastmod: '2024-03-11T00:14:31.658916-06:00'
+lastmod: '2024-03-13T22:44:57.707261-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 rediriger les messages\
   \ d'erreur et les diagnostics s\xE9par\xE9ment du r\xE9sultat principal du programme,\

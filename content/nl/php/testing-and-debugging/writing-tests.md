@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:06.039009-07:00
 description: "Testen controleert of je code doet wat het moet doen. Het bespaart tijd\
   \ door vroegtijdig fouten op te vangen en zorgt ervoor dat code-wijzigingen niets\u2026"
-lastmod: '2024-03-11T00:14:24.729772-06:00'
+lastmod: '2024-03-13T22:44:50.899004-06:00'
 model: gpt-4-0125-preview
 summary: "Testen controleert of je code doet wat het moet doen. Het bespaart tijd\
   \ door vroegtijdig fouten op te vangen en zorgt ervoor dat code-wijzigingen niets\u2026"

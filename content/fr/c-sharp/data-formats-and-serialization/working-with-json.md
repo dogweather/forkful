@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:08.675285-07:00
 description: "Travailler avec le JSON (JavaScript Object Notation) implique l'analyse,\
   \ la g\xE9n\xE9ration et l'interrogation de donn\xE9es JSON, ce qui en fait une\
   \ comp\xE9tence\u2026"
-lastmod: '2024-03-11T00:14:31.760215-06:00'
+lastmod: '2024-03-13T22:44:57.811274-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec le JSON (JavaScript Object Notation) implique l'analyse,\
   \ la g\xE9n\xE9ration et l'interrogation de donn\xE9es JSON, ce qui en fait une\

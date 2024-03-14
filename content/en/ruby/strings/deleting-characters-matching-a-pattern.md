@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:52.715524-07:00
 description: "Deleting characters matching a pattern in strings is about surgically\
   \ removing bits you don't need, like stripping hashtags from tweets. Programmers\
   \ do it\u2026"
-lastmod: '2024-03-11T00:14:34.421133-06:00'
+lastmod: '2024-03-13T22:45:00.534456-06:00'
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in strings is about surgically removing\
   \ bits you don't need, like stripping hashtags from tweets. Programmers do it\u2026"

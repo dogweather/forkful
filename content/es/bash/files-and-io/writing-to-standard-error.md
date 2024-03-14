@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:09.597875-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir\
   \ mensajes de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola\
   \ de la\u2026"
-lastmod: '2024-03-11T00:14:33.083796-06:00'
+lastmod: '2024-03-13T22:44:59.263457-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir mensajes\
   \ de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola de la\u2026"

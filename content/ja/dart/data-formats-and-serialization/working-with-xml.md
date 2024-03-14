@@ -3,7 +3,7 @@ changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:36.620168-07:00
 description: "\u2026"
-lastmod: '2024-03-11T00:14:15.332911-06:00'
+lastmod: '2024-03-13T22:44:41.733022-06:00'
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u300CXML\u3068\u306E\u4F5C\u696D\u300D"

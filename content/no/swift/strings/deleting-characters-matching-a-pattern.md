@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:02.287182-07:00
 description: "Sletting av tegn som matcher et m\xF8nster er prosessen der vi fjerner\
   \ spesifikke tegn eller sekvenser av tegn fra en streng. Vi gj\xF8r dette for \xE5\
   \ rense data,\u2026"
-lastmod: '2024-03-11T00:14:14.722185-06:00'
+lastmod: '2024-03-13T22:44:41.126612-06:00'
 model: gpt-4-1106-preview
 summary: "Sletting av tegn som matcher et m\xF8nster er prosessen der vi fjerner spesifikke\
   \ tegn eller sekvenser av tegn fra en streng. Vi gj\xF8r dette for \xE5 rense data,\u2026"

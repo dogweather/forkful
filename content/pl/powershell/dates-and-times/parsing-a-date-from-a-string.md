@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:09.966714-07:00
 description: "Parsowanie daty z ci\u0105gu tekstowego polega na rozpoznawaniu i konwersji\
   \ zapisanych dat w formie tekstowej na typ danych daty, kt\xF3ry PowerShell mo\u017C\
   e\u2026"
-lastmod: '2024-03-11T00:14:08.833837-06:00'
+lastmod: '2024-03-13T22:44:35.639378-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu tekstowego polega na rozpoznawaniu i konwersji\
   \ zapisanych dat w formie tekstowej na typ danych daty, kt\xF3ry PowerShell mo\u017C\

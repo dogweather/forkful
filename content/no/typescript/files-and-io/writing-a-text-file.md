@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:47.329796-07:00
 description: "\xC5 skrive en tekstfil i TypeScript er en kritisk ferdighet for datalagring,\
   \ konfigurasjoner eller logggenerering. Programmerere utf\xF8rer ofte denne oppgaven\u2026"
-lastmod: '2024-03-11T00:14:14.081728-06:00'
+lastmod: '2024-03-13T22:44:40.550037-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i TypeScript er en kritisk ferdighet for datalagring,\
   \ konfigurasjoner eller logggenerering. Programmerere utf\xF8rer ofte denne oppgaven\u2026"

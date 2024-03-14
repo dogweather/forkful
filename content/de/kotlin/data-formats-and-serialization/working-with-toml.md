@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:40.352463-07:00
 description: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache. Es wird f\xFC\
   r Konfigurationsdateien verwendet, weil es f\xFCr Menschen leicht zu lesen und zu\
   \ schreiben\u2026"
-lastmod: '2024-03-11T00:14:27.764413-06:00'
+lastmod: '2024-03-13T22:44:53.869586-06:00'
 model: gpt-4-0125-preview
 summary: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache. Es wird f\xFC\
   r Konfigurationsdateien verwendet, weil es f\xFCr Menschen leicht zu lesen und zu\

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:30.784691-07:00
 description: "Writing to a text file in Lua involves creating or opening a file in\
   \ write mode, then using file operations to insert text. This is a fundamental\u2026"
-lastmod: '2024-03-11T00:14:34.086575-06:00'
+lastmod: '2024-03-13T22:45:00.221992-06:00'
 model: gpt-4-0125-preview
 summary: "Writing to a text file in Lua involves creating or opening a file in write\
   \ mode, then using file operations to insert text. This is a fundamental\u2026"

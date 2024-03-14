@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:58.105345-07:00
 description: "Lire un fichier texte en C++, c'est acc\xE9der au contenu d'un fichier\
   \ stock\xE9 sur votre disque dur, ligne par ligne ou en bloc. Les programmeurs le\
   \ font pour\u2026"
-lastmod: '2024-03-11T00:14:32.078462-06:00'
+lastmod: '2024-03-13T22:44:58.185014-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte en C++, c'est acc\xE9der au contenu d'un fichier stock\xE9\
   \ sur votre disque dur, ligne par ligne ou en bloc. Les programmeurs le font pour\u2026"

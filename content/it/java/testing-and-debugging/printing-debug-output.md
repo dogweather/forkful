@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:40.724246-07:00
 description: "Stampare output di debug significa mostrare informazioni temporanee\
   \ di log mentre un programma \xE8 in esecuzione. Programmatori lo fanno per capire\
   \ cosa sta\u2026"
-lastmod: '2024-03-11T00:14:16.879880-06:00'
+lastmod: '2024-03-13T22:44:43.311428-06:00'
 model: gpt-4-1106-preview
 summary: "Stampare output di debug significa mostrare informazioni temporanee di log\
   \ mentre un programma \xE8 in esecuzione. Programmatori lo fanno per capire cosa\

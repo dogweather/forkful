@@ -6,7 +6,7 @@ description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong PowerShell ch\u1EC9 l\xE
   \ l\u1EA5y \xFD t\u01B0\u1EDFng c\u1EE7a h\u1EC7 th\u1ED1ng v\u1EC1 ng\xE0y h\xF4\
   m nay. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
   \ \u0111\xE1nh d\u1EA5u th\u1EDDi gian trong c\xE1c b\u1EA3n\u2026"
-lastmod: '2024-03-11T00:14:10.245077-06:00'
+lastmod: '2024-03-13T22:44:36.950161-06:00'
 model: gpt-4-0125-preview
 summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong PowerShell ch\u1EC9 l\xE0 l\u1EA5\
   y \xFD t\u01B0\u1EDFng c\u1EE7a h\u1EC7 th\u1ED1ng v\u1EC1 ng\xE0y h\xF4m nay. L\u1EAD\

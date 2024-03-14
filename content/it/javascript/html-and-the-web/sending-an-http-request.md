@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:54.425630-07:00
 description: "Mandare una richiesta HTTP consente al tuo codice JavaScript di comunicare\
   \ con un server web e scambiare dati. I programmatori lo fanno per ottenere nuovi\u2026"
-lastmod: '2024-03-11T00:14:17.426812-06:00'
+lastmod: '2024-03-13T22:44:43.808902-06:00'
 model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP consente al tuo codice JavaScript di comunicare\
   \ con un server web e scambiare dati. I programmatori lo fanno per ottenere nuovi\u2026"

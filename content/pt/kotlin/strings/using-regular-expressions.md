@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:32.989217-07:00
 description: "Express\xF5es regulares (regex) s\xE3o uma ferramenta poderosa para\
   \ o processamento de texto, permitindo que programadores busquem, correspondam e\
   \ manipulem\u2026"
-lastmod: '2024-03-11T00:14:20.235335-06:00'
+lastmod: '2024-03-13T22:44:46.531453-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) s\xE3o uma ferramenta poderosa para o processamento\
   \ de texto, permitindo que programadores busquem, correspondam e manipulem\u2026"

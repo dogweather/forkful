@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:26.131664-07:00
 description: "Att skriva med stor bokstav i en str\xE4ng i C# inneb\xE4r att omvandla\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal om det inte redan \xE4r det.\
   \ Denna \xE4ndring kan\u2026"
-lastmod: '2024-03-11T00:14:11.255265-06:00'
+lastmod: '2024-03-13T22:44:37.896353-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva med stor bokstav i en str\xE4ng i C# inneb\xE4r att omvandla\
   \ det f\xF6rsta tecknet i en str\xE4ng till versal om det inte redan \xE4r det.\

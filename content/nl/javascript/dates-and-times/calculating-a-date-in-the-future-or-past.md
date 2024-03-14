@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:51.363685-07:00
 description: "Het berekenen van een toekomstige of verleden datum betekent het vinden\
   \ van een datum een aantal dagen, weken, maanden of jaren vanaf een bepaald punt.\u2026"
-lastmod: '2024-03-11T00:14:25.053860-06:00'
+lastmod: '2024-03-13T22:44:51.215693-06:00'
 model: gpt-4-0125-preview
 summary: "Het berekenen van een toekomstige of verleden datum betekent het vinden\
   \ van een datum een aantal dagen, weken, maanden of jaren vanaf een bepaald punt.\u2026"

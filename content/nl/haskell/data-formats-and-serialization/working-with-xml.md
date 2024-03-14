@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:41.562649-07:00
 description: "Werken met XML in Haskell omvat het parsen, manipuleren en genereren\
   \ van XML-structuren. Programmeurs gaan om met XML om te interacteren met tal van\u2026"
-lastmod: '2024-03-11T00:14:24.707101-06:00'
+lastmod: '2024-03-13T22:44:50.876632-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML in Haskell omvat het parsen, manipuleren en genereren van\
   \ XML-structuren. Programmeurs gaan om met XML om te interacteren met tal van\u2026"

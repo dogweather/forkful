@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:02.716920-07:00
 description: "Att l\xE4sa en textfil inneb\xE4r att inh\xE4mta textdata fr\xE5n en\
   \ fil p\xE5 din h\xE5rddisk. Programmerare g\xF6r det f\xF6r att behandla och anv\xE4\
   nda data, som\u2026"
-lastmod: '2024-03-11T00:14:11.056592-06:00'
+lastmod: '2024-03-13T22:44:37.716824-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att inh\xE4mta textdata fr\xE5n en fil\
   \ p\xE5 din h\xE5rddisk. Programmerare g\xF6r det f\xF6r att behandla och anv\xE4\

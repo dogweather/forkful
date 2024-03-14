@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:13.414518-07:00
 description: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout de\
   \ bois d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:31.816456-06:00'
+lastmod: '2024-03-13T22:44:57.866505-06:00'
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout de bois\
   \ d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne de\u2026"

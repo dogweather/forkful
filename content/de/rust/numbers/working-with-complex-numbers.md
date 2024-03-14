@@ -2,7 +2,7 @@
 date: 2024-01-26 04:45:10.090048-07:00
 description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil\
   \ und sind in verschiedenen Bereichen wie Ingenieurwesen, Physik und Computergrafik\u2026"
-lastmod: '2024-03-11T00:14:27.557856-06:00'
+lastmod: '2024-03-13T22:44:53.666817-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil und\
   \ sind in verschiedenen Bereichen wie Ingenieurwesen, Physik und Computergrafik\u2026"

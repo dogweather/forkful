@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:55.880390-07:00
 description: String interpolation lets you inject variables directly into strings.
   It makes code cleaner and easier to read by avoiding clunky string concatenation.
-lastmod: '2024-03-11T00:14:33.822565-06:00'
+lastmod: '2024-03-13T22:44:59.960051-06:00'
 model: gpt-4-1106-preview
 summary: String interpolation lets you inject variables directly into strings. It
   makes code cleaner and easier to read by avoiding clunky string concatenation.

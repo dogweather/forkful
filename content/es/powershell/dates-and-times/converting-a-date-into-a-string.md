@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:37.544050-07:00
 description: "Convertir una fecha en cadena permite presentarla en un formato legible\
   \ o espec\xEDfico. Los programadores lo hacen para mejorar la interfaz de usuario,\u2026"
-lastmod: '2024-03-11T00:14:33.124325-06:00'
+lastmod: '2024-03-13T22:44:59.303722-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una fecha en cadena permite presentarla en un formato legible\
   \ o espec\xEDfico. Los programadores lo hacen para mejorar la interfaz de usuario,\u2026"

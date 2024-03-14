@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:21.928942-07:00
 description: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir un\
   \ fichier en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de\
   \ C pour\u2026"
-lastmod: '2024-03-11T00:14:32.264243-06:00'
+lastmod: '2024-03-13T22:44:58.392562-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir un fichier\
   \ en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de C pour\u2026"

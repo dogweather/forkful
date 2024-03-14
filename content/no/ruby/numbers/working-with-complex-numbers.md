@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:10.825948-07:00
 description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (som\
   \ 3+4i), er en grunnpilar i ingeni\xF8rfag og fysikk. Programmerere jobber med dem\
   \ i\u2026"
-lastmod: '2024-03-11T00:14:14.922530-06:00'
+lastmod: '2024-03-13T22:44:41.309740-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (som 3+4i),\
   \ er en grunnpilar i ingeni\xF8rfag og fysikk. Programmerere jobber med dem i\u2026"

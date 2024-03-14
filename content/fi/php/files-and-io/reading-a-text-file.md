@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:07.792215-07:00
 description: "Lukemalla tekstitiedostoja, PHP:ss\xE4 voimme k\xE4sitell\xE4 dataa\
   \ suoraan l\xE4hdemuodossaan. T\xE4m\xE4 on t\xE4rke\xE4\xE4, koska se mahdollistaa\
   \ tiedon dynaamisen hankkimisen\u2026"
-lastmod: '2024-03-11T00:14:30.625371-06:00'
+lastmod: '2024-03-13T22:44:56.673153-06:00'
 model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedostoja, PHP:ss\xE4 voimme k\xE4sitell\xE4 dataa suoraan\
   \ l\xE4hdemuodossaan. T\xE4m\xE4 on t\xE4rke\xE4\xE4, koska se mahdollistaa tiedon\

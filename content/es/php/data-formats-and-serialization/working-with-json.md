@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:02.551400-07:00
 description: "JSON, o Notaci\xF3n de Objetos de JavaScript, es un formato ligero de\
   \ intercambio de datos que es f\xE1cil de leer y escribir para los humanos, y f\xE1\
   cil de\u2026"
-lastmod: '2024-03-11T00:14:32.998978-06:00'
+lastmod: '2024-03-13T22:44:59.181812-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, o Notaci\xF3n de Objetos de JavaScript, es un formato ligero de intercambio\
   \ de datos que es f\xE1cil de leer y escribir para los humanos, y f\xE1cil de\u2026"

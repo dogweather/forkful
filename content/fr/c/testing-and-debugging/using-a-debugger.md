@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:44.935969-07:00
 description: "Les d\xE9bogueurs en C sont des outils sp\xE9cialis\xE9s qui permettent\
   \ aux d\xE9veloppeurs de parcourir leur code pas \xE0 pas, d'inspecter les variables\
   \ et de\u2026"
-lastmod: '2024-03-11T00:14:32.248932-06:00'
+lastmod: '2024-03-13T22:44:58.377191-06:00'
 model: gpt-4-0125-preview
 summary: "Les d\xE9bogueurs en C sont des outils sp\xE9cialis\xE9s qui permettent\
   \ aux d\xE9veloppeurs de parcourir leur code pas \xE0 pas, d'inspecter les variables\

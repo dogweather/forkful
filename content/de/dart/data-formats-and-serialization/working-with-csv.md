@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:57:28.180583-07:00
 description: "Die Arbeit mit CSV-Dateien (Comma Separated Values) beinhaltet das Parsen\
   \ und Generieren von Textdateien, bei denen jede Zeile Werte enth\xE4lt, die durch\u2026"
-lastmod: '2024-03-11T00:14:27.500419-06:00'
+lastmod: '2024-03-13T22:44:53.605715-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Comma Separated Values) beinhaltet das Parsen\
   \ und Generieren von Textdateien, bei denen jede Zeile Werte enth\xE4lt, die durch\u2026"

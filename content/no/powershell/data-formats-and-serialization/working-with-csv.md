@@ -5,7 +5,7 @@ date: 2024-02-03 19:20:53.731117-07:00
 description: "\xC5 jobbe med CSV-filer (Comma-Separated Values) er en vanlig oppgave\
   \ for \xE5 h\xE5ndtere og manipulere data i en strukturert, tabellform. Programmerere\
   \ utf\xF8rer\u2026"
-lastmod: '2024-03-11T00:14:14.628200-06:00'
+lastmod: '2024-03-13T22:44:41.039341-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma-Separated Values) er en vanlig oppgave for\
   \ \xE5 h\xE5ndtere og manipulere data i en strukturert, tabellform. Programmerere\

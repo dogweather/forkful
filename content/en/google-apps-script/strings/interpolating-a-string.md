@@ -2,7 +2,7 @@
 date: 2024-02-01 21:12:04.828275-07:00
 description: "String interpolation in Google Apps Script allows for dynamic embedding\
   \ of expressions within strings, facilitating the creation of more readable and\u2026"
-lastmod: '2024-03-11T00:14:33.503879-06:00'
+lastmod: '2024-03-13T22:44:59.656763-06:00'
 model: gpt-4-0125-preview
 summary: "String interpolation in Google Apps Script allows for dynamic embedding\
   \ of expressions within strings, facilitating the creation of more readable and\u2026"

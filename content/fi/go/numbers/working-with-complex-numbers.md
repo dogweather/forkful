@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:14.145333-07:00
 description: "Ohjelmoinnissa kompleksilukujen k\xE4sitteleminen sis\xE4lt\xE4\xE4\
   \ lukujen manipulointia, joilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa, tyypillisesti\
   \ ilmaistuna\u2026"
-lastmod: '2024-03-11T00:14:29.968851-06:00'
+lastmod: '2024-03-13T22:44:56.043824-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa kompleksilukujen k\xE4sitteleminen sis\xE4lt\xE4\xE4 lukujen\
   \ manipulointia, joilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa, tyypillisesti\

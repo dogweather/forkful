@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:02.508790-07:00
 description: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen,\
   \ aus einem String entfernen. Wir machen das, um unerw\xFCnschte Daten zu s\xE4\
   ubern\u2026"
-lastmod: '2024-03-11T00:14:28.293504-06:00'
+lastmod: '2024-03-13T22:44:54.382279-06:00'
 model: gpt-4-1106-preview
 summary: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen,\
   \ aus einem String entfernen. Wir machen das, um unerw\xFCnschte Daten zu s\xE4\

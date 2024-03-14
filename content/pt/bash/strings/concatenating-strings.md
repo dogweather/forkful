@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:00.499087-07:00
 description: "Concatenar strings \xE9 o ato de juntar texto em peda\xE7os, criando\
   \ uma \xFAnica sequ\xEAncia cont\xEDnua. Programadores fazem isso para montar mensagens,\
   \ gerar\u2026"
-lastmod: '2024-03-11T00:14:20.462802-06:00'
+lastmod: '2024-03-13T22:44:46.742848-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 o ato de juntar texto em peda\xE7os, criando uma\
   \ \xFAnica sequ\xEAncia cont\xEDnua. Programadores fazem isso para montar mensagens,\

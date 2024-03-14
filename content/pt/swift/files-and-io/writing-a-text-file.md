@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:35.938895-07:00
 description: "Escrever um arquivo de texto em Swift permite armazenar persistentemente\
   \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\u2026"
-lastmod: '2024-03-11T00:14:20.672731-06:00'
+lastmod: '2024-03-13T22:44:46.939092-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Swift permite armazenar persistentemente\
   \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\u2026"

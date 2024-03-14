@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:42.416439-07:00
 description: "Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji\
   \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105. Programi\u015B\
   ci wykonuj\u0105 to zadanie, aby\u2026"
-lastmod: '2024-03-11T00:14:08.561442-06:00'
+lastmod: '2024-03-13T22:44:35.379603-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji obecno\u015B\
   ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105. Programi\u015Bci wykonuj\u0105\

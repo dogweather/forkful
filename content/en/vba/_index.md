@@ -1,7 +1,7 @@
 ---
 title: 'Visual Basic for Applications: Open Source Coding Cookbook'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-11 00:18:07.906155-06:00
+lastmod: 2024-03-13 22:45:59.645012-06:00
 description: 'Visual Basic for Applications: Getting Started, Strings, Numbers, Data
   Structures, Good Coding Practices, Files and I/O, Dates and Times, Data and Text…'
 summary: 'Visual Basic for Applications: Getting Started, Strings, Numbers, Data Structures,

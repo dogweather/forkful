@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:51.558220-07:00
 description: "W Elm, wysy\u0142anie zapytania HTTP to spos\xF3b na po\u0142\u0105\
   czenie si\u0119 z serwerem i pobranie lub wys\u0142anie danych. Programi\u015Bci\
   \ robi\u0105 to, aby ich aplikacje mog\u0142y\u2026"
-lastmod: '2024-03-11T00:14:08.496911-06:00'
+lastmod: '2024-03-13T22:44:35.318644-06:00'
 model: gpt-4-1106-preview
 summary: "W Elm, wysy\u0142anie zapytania HTTP to spos\xF3b na po\u0142\u0105czenie\
   \ si\u0119 z serwerem i pobranie lub wys\u0142anie danych. Programi\u015Bci robi\u0105\

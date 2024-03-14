@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:58.995631-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es no Dart consiste em definir blocos\
   \ de c\xF3digo reutiliz\xE1veis que realizam tarefas espec\xEDficas, normalmente\
   \ recebendo entradas,\u2026"
-lastmod: '2024-03-11T00:14:19.970854-06:00'
+lastmod: '2024-03-13T22:44:46.287624-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es no Dart consiste em definir blocos\
   \ de c\xF3digo reutiliz\xE1veis que realizam tarefas espec\xEDficas, normalmente\

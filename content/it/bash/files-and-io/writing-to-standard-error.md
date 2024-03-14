@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:14.302404-07:00
 description: "Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi\
   \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"
-lastmod: '2024-03-11T00:14:17.227802-06:00'
+lastmod: '2024-03-13T22:44:43.616033-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi\
   \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"

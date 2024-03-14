@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:37.430639-07:00
 description: "Att l\xE4sa en textfil i Visual Basic for Applications (VBA) involverar\
   \ att programm\xE4ssigt komma \xE5t och extrahera inneh\xE5llet i en textfil fr\xE5\
   n inom en\u2026"
-lastmod: '2024-03-11T00:14:11.105405-06:00'
+lastmod: '2024-03-13T22:44:37.761909-06:00'
 model: gpt-4-0125-preview
 summary: "Att l\xE4sa en textfil i Visual Basic for Applications (VBA) involverar\
   \ att programm\xE4ssigt komma \xE5t och extrahera inneh\xE5llet i en textfil fr\xE5\

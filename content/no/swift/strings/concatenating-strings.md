@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:25.929319-07:00
 description: "I Swift smelter vi sammen strenger for \xE5 skape nye setninger eller\
   \ setningselementer. Vi gj\xF8r det blant annet for \xE5 dynamisk generere tekst,\
   \ som\u2026"
-lastmod: '2024-03-11T00:14:14.730112-06:00'
+lastmod: '2024-03-13T22:44:41.134066-06:00'
 model: gpt-4-1106-preview
 summary: "I Swift smelter vi sammen strenger for \xE5 skape nye setninger eller setningselementer.\
   \ Vi gj\xF8r det blant annet for \xE5 dynamisk generere tekst, som\u2026"

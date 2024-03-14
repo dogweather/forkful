@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:17.368162-07:00
 description: "Praca z plikami CSV w Ruby umo\u017Cliwia proste podej\u015Bcie do obs\u0142\
   ugi danych tabelarycznych. Programi\u015Bci cz\u0119sto anga\u017Cuj\u0105 si\u0119\
   \ w t\u0119 praktyk\u0119 do parsowania,\u2026"
-lastmod: '2024-03-11T00:14:09.176893-06:00'
+lastmod: '2024-03-13T22:44:35.954651-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV w Ruby umo\u017Cliwia proste podej\u015Bcie do obs\u0142\
   ugi danych tabelarycznych. Programi\u015Bci cz\u0119sto anga\u017Cuj\u0105 si\u0119\

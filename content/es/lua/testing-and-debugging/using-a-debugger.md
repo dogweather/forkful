@@ -3,7 +3,7 @@ date: 2024-01-26 03:50:37.554018-07:00
 description: "Un depurador es una herramienta que te permite inspeccionar y controlar\
   \ la ejecuci\xF3n de un programa, facilitando la identificaci\xF3n de donde las\
   \ cosas van\u2026"
-lastmod: '2024-03-11T00:14:33.025631-06:00'
+lastmod: '2024-03-13T22:44:59.206471-06:00'
 model: gpt-4-0125-preview
 summary: "Un depurador es una herramienta que te permite inspeccionar y controlar\
   \ la ejecuci\xF3n de un programa, facilitando la identificaci\xF3n de donde las\

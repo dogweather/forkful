@@ -5,7 +5,7 @@ date: 2024-03-08 21:58:04.247327-07:00
 description: "I numeri complessi, consistendo di una parte reale e una immaginaria\
   \ (solitamente indicati come a + bi), estendono il concetto dei numeri adimensionali\
   \ a\u2026"
-lastmod: '2024-03-11T00:14:16.685201-06:00'
+lastmod: '2024-03-13T22:44:43.122581-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi, consistendo di una parte reale e una immaginaria (solitamente\
   \ indicati come a + bi), estendono il concetto dei numeri adimensionali a\u2026"

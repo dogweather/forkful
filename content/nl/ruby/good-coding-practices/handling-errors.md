@@ -6,7 +6,7 @@ date: 2024-01-28 22:01:36.860258-07:00
 description: "Foutafhandeling gaat over het verwachten van het onverwachte in code\
   \ - fouten en problemen gracieus beheren zonder te crashen. Programmeurs doen dit\
   \ om de\u2026"
-lastmod: '2024-03-11T00:14:25.209606-06:00'
+lastmod: '2024-03-13T22:44:51.346216-06:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling gaat over het verwachten van het onverwachte in code - fouten\
   \ en problemen gracieus beheren zonder te crashen. Programmeurs doen dit om de\u2026"

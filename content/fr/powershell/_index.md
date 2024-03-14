@@ -1,7 +1,7 @@
 ---
 title: 'PowerShell: Tutoriels de Programmation Open Source'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-11 00:18:11.333787-06:00
+lastmod: 2024-03-13 22:46:03.315262-06:00
 description: 'PowerShell: Premiers Pas en Programmation, Chaînes de caractères, Nombres,
   Structures de données, Bonnes Pratiques de Programmation, Fichiers et…'
 summary: 'PowerShell: Premiers Pas en Programmation, Chaînes de caractères, Nombres,

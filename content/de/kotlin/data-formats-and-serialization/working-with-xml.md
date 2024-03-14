@@ -2,7 +2,7 @@
 date: 2024-01-26 04:32:43.294909-07:00
 description: "Die Arbeit mit XML umfasst das Parsen, Erstellen und Manipulieren von\
   \ XML-Dokumenten \u2013 einer Auszeichnungssprache f\xFCr die Datenspeicherung und\u2026"
-lastmod: '2024-03-11T00:14:27.765397-06:00'
+lastmod: '2024-03-13T22:44:53.870525-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst das Parsen, Erstellen und Manipulieren von XML-Dokumenten\
   \ \u2013 einer Auszeichnungssprache f\xFCr die Datenspeicherung und\u2026"

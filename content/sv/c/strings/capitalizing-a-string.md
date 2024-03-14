@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:58.190284-07:00
 description: "Att g\xF6ra en str\xE4ng versal i C inneb\xE4r att konvertera det f\xF6\
   rsta tecknet i varje ord i en given str\xE4ng till versal om det \xE4r en gemen\
   \ bokstav.\u2026"
-lastmod: '2024-03-11T00:14:11.766464-06:00'
+lastmod: '2024-03-13T22:44:38.363747-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra en str\xE4ng versal i C inneb\xE4r att konvertera det f\xF6\
   rsta tecknet i varje ord i en given str\xE4ng till versal om det \xE4r en gemen\

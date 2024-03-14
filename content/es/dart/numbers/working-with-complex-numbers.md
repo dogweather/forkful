@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:37.673029-07:00
 description: "Los n\xFAmeros complejos, compuestos por una parte real y una parte\
   \ imaginaria (generalmente denotados como a + bi), extienden el concepto de los\
   \ n\xFAmeros sin\u2026"
-lastmod: '2024-03-11T00:14:32.566269-06:00'
+lastmod: '2024-03-13T22:44:58.742692-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, compuestos por una parte real y una parte imaginaria\
   \ (generalmente denotados como a + bi), extienden el concepto de los n\xFAmeros\

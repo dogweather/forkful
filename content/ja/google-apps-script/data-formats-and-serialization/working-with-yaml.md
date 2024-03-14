@@ -3,7 +3,7 @@ changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:23.291954-07:00
 description: "YAML\u306F\u300CYAML Ain\u2019t Markup\u2026"
-lastmod: '2024-03-11T00:14:15.093159-06:00'
+lastmod: '2024-03-13T22:44:41.472850-06:00'
 model: gpt-4-0125-preview
 summary: "YAML\u306F\u300CYAML Ain\u2019t Markup\u2026"
 title: "YAML\u3068\u306E\u4F5C\u696D"

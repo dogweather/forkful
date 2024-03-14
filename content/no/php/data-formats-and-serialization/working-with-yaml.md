@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:24.787610-07:00
 description: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
   \ data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler.\u2026"
-lastmod: '2024-03-11T00:14:14.474674-06:00'
+lastmod: '2024-03-13T22:44:40.906533-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
   \ data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler.\u2026"

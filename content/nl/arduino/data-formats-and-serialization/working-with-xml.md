@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:09.192811-07:00
 description: "Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,\
   \ die meestal afkomstig zijn van web-API's of configuratiebestanden.\u2026"
-lastmod: '2024-03-11T00:14:24.930640-06:00'
+lastmod: '2024-03-13T22:44:51.095055-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,\
   \ die meestal afkomstig zijn van web-API's of configuratiebestanden.\u2026"

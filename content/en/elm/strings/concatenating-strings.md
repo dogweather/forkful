@@ -2,7 +2,7 @@
 date: 2024-01-20 17:34:24.812334-07:00
 description: "Concatenating strings means sticking two or more pieces of text together.\
   \ It's as basic and essential as using duct tape, allowing you to create new\u2026"
-lastmod: '2024-03-11T00:14:33.867237-06:00'
+lastmod: '2024-03-13T22:45:00.002077-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking two or more pieces of text together.\
   \ It's as basic and essential as using duct tape, allowing you to create new\u2026"

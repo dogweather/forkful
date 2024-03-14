@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:13.565804-07:00
 description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu c\xF3digo\
   \ em blocos reutiliz\xE1veis e modulares. Fazemos isso para manter as coisas DRY\
   \ (Do not Repeat\u2026"
-lastmod: '2024-03-11T00:14:20.017950-06:00'
+lastmod: '2024-03-13T22:44:46.331592-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu c\xF3digo em\
   \ blocos reutiliz\xE1veis e modulares. Fazemos isso para manter as coisas DRY (Do\

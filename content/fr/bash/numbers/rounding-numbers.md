@@ -3,7 +3,7 @@ date: 2024-01-26 03:42:42.016457-07:00
 description: "Arrondir les nombres signifie \xE9liminer les d\xE9cimales pour arriver\
   \ \xE0 une valeur plus simple qui est suffisamment bonne pour un contexte donn\xE9\
   . Les\u2026"
-lastmod: '2024-03-11T00:14:31.915999-06:00'
+lastmod: '2024-03-13T22:44:57.986081-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres signifie \xE9liminer les d\xE9cimales pour arriver\
   \ \xE0 une valeur plus simple qui est suffisamment bonne pour un contexte donn\xE9\

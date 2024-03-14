@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:07:21.364953-07:00
 description: "Das Runden von Zahlen ist der Prozess der Anpassung der Ziffern einer\
   \ Zahl, um deren Genauigkeit nach bestimmten Regeln zu verringern, entweder in\u2026"
-lastmod: '2024-03-11T00:14:28.255963-06:00'
+lastmod: '2024-03-13T22:44:54.346668-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist der Prozess der Anpassung der Ziffern einer Zahl,\
   \ um deren Genauigkeit nach bestimmten Regeln zu verringern, entweder in\u2026"

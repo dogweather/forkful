@@ -3,7 +3,7 @@ date: 2024-01-20 14:56:20.679011-07:00
 description: "Att kontrollera om en katalog finns \xE4r processen att verifiera en\
   \ s\xF6kv\xE4gs existens i filsystemet. Programmerare g\xF6r detta f\xF6r att f\xF6\
   rs\xE4kra sig om att\u2026"
-lastmod: '2024-03-11T00:14:11.193634-06:00'
+lastmod: '2024-03-13T22:44:37.843742-06:00'
 model: unknown
 summary: "Att kontrollera om en katalog finns \xE4r processen att verifiera en s\xF6\
   kv\xE4gs existens i filsystemet. Programmerare g\xF6r detta f\xF6r att f\xF6rs\xE4\

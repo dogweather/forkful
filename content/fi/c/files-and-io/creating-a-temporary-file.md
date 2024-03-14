@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:19.548604-07:00
 description: "V\xE4liaikaistiedoston luominen C:ss\xE4 tarkoittaa tiedoston generointia,\
   \ joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, yleens\xE4 datank\xE4sittelyn\
   \ tai s\xE4ilytyksen\u2026"
-lastmod: '2024-03-11T00:14:31.102920-06:00'
+lastmod: '2024-03-13T22:44:57.061430-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE4liaikaistiedoston luominen C:ss\xE4 tarkoittaa tiedoston generointia,\
   \ joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, yleens\xE4 datank\xE4sittelyn\

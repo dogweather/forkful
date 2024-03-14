@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:35.735646-07:00
 description: "Debug-tuloste auttaa n\xE4kem\xE4\xE4n, mit\xE4 ohjelmaasi tapahtuu\
   \ ajon aikana. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 virheiden etsimiseen ja ohjelman\
   \ k\xE4ytt\xE4ytymisen\u2026"
-lastmod: '2024-03-11T00:14:30.950384-06:00'
+lastmod: '2024-03-13T22:44:56.909493-06:00'
 model: gpt-4-1106-preview
 summary: "Debug-tuloste auttaa n\xE4kem\xE4\xE4n, mit\xE4 ohjelmaasi tapahtuu ajon\
   \ aikana. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 virheiden etsimiseen ja ohjelman\

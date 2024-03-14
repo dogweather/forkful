@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:15.532259-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica adjuntar\
   \ un nombre de usuario y contrase\xF1a a una solicitud para verificar la identidad\
   \ del\u2026"
-lastmod: '2024-03-11T00:14:32.572720-06:00'
+lastmod: '2024-03-13T22:44:58.750620-06:00'
 model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica adjuntar\
   \ un nombre de usuario y contrase\xF1a a una solicitud para verificar la identidad\

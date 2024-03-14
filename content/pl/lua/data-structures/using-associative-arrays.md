@@ -5,7 +5,7 @@ date: 2024-01-30 19:12:07.716226-07:00
 description: "Tablice asocjacyjne to jak tajne u\u015Bciski d\u0142oni dla danych\
   \ w Lua \u2014 zamiast samych numer\xF3w ustawiaj\u0105cych si\u0119 pos\u0142usznie\
   \ wed\u0142ug indeksu, Twoje klucze mog\u0105\u2026"
-lastmod: '2024-03-11T00:14:08.720426-06:00'
+lastmod: '2024-03-13T22:44:35.533000-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne to jak tajne u\u015Bciski d\u0142oni dla danych w Lua\
   \ \u2014 zamiast samych numer\xF3w ustawiaj\u0105cych si\u0119 pos\u0142usznie wed\u0142\

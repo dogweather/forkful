@@ -6,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma-Separated Val
   \ trong Google Apps Script bao g\u1ED3m vi\u1EC7c \u0111\u1ECDc, s\u1EEDa \u0111\
   \u1ED5i v\xE0 ghi c\xE1c t\u1EC7p v\u0103n b\u1EA3n thu\u1EA7n t\xFAy, n\u01A1i\
   \ m\u1ED7i d\xF2ng \u0111\u1EA1i\u2026"
-lastmod: '2024-03-11T00:14:09.299111-06:00'
+lastmod: '2024-03-13T22:44:36.070638-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma-Separated Values) trong\
   \ Google Apps Script bao g\u1ED3m vi\u1EC7c \u0111\u1ECDc, s\u1EEDa \u0111\u1ED5\

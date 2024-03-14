@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:46.843881-07:00
 description: "Criar um arquivo tempor\xE1rio em Google Apps Script envolve gerar um\
   \ arquivo destinado ao uso de curto prazo, tipicamente para processamento intermedi\xE1\
   rio\u2026"
-lastmod: '2024-03-11T00:14:19.795196-06:00'
+lastmod: '2024-03-13T22:44:46.130125-06:00'
 model: gpt-4-0125-preview
 summary: "Criar um arquivo tempor\xE1rio em Google Apps Script envolve gerar um arquivo\
   \ destinado ao uso de curto prazo, tipicamente para processamento intermedi\xE1\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:54:54.159451-07:00
 description: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
   \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"
-lastmod: '2024-03-11T00:14:24.080839-06:00'
+lastmod: '2024-03-13T22:44:50.273985-06:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
   \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:32.896705-07:00
 description: "Pisanie test\xF3w w programowaniu polega na tworzeniu i uruchamianiu\
   \ skrypt\xF3w, kt\xF3re weryfikuj\u0105, czy kod zachowuje si\u0119 zgodnie z oczekiwaniami\
   \ w r\xF3\u017Cnych\u2026"
-lastmod: '2024-03-11T00:14:08.686201-06:00'
+lastmod: '2024-03-13T22:44:35.500908-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu i uruchamianiu skrypt\xF3\
   w, kt\xF3re weryfikuj\u0105, czy kod zachowuje si\u0119 zgodnie z oczekiwaniami\

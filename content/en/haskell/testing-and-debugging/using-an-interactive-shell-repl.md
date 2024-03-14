@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:41.583758-07:00
 description: "An interactive shell, or REPL (Read-Eval-Print Loop), in Haskell lets\
   \ you run code snippets live. It's a playground for quick feedback, testing functions,\u2026"
-lastmod: '2024-03-11T00:14:33.994121-06:00'
+lastmod: '2024-03-13T22:45:00.130048-06:00'
 model: gpt-4-1106-preview
 summary: "An interactive shell, or REPL (Read-Eval-Print Loop), in Haskell lets you\
   \ run code snippets live. It's a playground for quick feedback, testing functions,\u2026"

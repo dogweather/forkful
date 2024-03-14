@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:53.636093-07:00
 description: "Een HTTP-verzoek verzenden met basisauthenticatie voegt een beveiligingslaag\
   \ toe door om een gebruikersnaam en wachtwoord te vragen. Programmeurs\u2026"
-lastmod: '2024-03-11T00:14:24.907062-06:00'
+lastmod: '2024-03-13T22:44:51.072395-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden met basisauthenticatie voegt een beveiligingslaag\
   \ toe door om een gebruikersnaam en wachtwoord te vragen. Programmeurs\u2026"

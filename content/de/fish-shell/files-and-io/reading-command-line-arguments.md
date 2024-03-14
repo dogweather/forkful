@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:58.940638-07:00
 description: "Das Lesen von Befehlszeilenargumenten erlaubt es Skripten, verschiedene\
   \ Eingaben zu verarbeiten und anzupassen. Programmierer nutzen dies, um flexible\
   \ und\u2026"
-lastmod: '2024-03-11T00:14:28.232309-06:00'
+lastmod: '2024-03-13T22:44:54.324356-06:00'
 model: gpt-4-1106-preview
 summary: "Das Lesen von Befehlszeilenargumenten erlaubt es Skripten, verschiedene\
   \ Eingaben zu verarbeiten und anzupassen. Programmierer nutzen dies, um flexible\

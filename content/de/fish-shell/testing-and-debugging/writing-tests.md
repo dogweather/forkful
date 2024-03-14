@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:28.195044-07:00
 description: "Das Schreiben von Tests in Fish Shell beinhaltet das Erstellen von Skripten,\
   \ die automatisch Ihren Code ausf\xFChren, um sein Verhalten gegen\xFCber erwarteten\u2026"
-lastmod: '2024-03-11T00:14:28.219534-06:00'
+lastmod: '2024-03-13T22:44:54.312993-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Fish Shell beinhaltet das Erstellen von Skripten,\
   \ die automatisch Ihren Code ausf\xFChren, um sein Verhalten gegen\xFCber erwarteten\u2026"

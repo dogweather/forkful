@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:10.353005-07:00
 description: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere det\
   \ f\xF8rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5\
   \ bokstaver,\u2026"
-lastmod: '2024-03-11T00:14:14.675166-06:00'
+lastmod: '2024-03-13T22:44:41.082810-06:00'
 model: gpt-4-0125-preview
 summary: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere det f\xF8\
   rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5 bokstaver,\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:09.738568-07:00
 description: "Tworzenie pliku tekstowego w Bashu pozwala na automatyzacj\u0119 przechowywania\
   \ danych, logowania, ustawie\u0144 konfiguracyjnych i wielu innych. Jest to podstawowa\u2026"
-lastmod: '2024-03-11T00:14:08.795647-06:00'
+lastmod: '2024-03-13T22:44:35.603713-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w Bashu pozwala na automatyzacj\u0119 przechowywania\
   \ danych, logowania, ustawie\u0144 konfiguracyjnych i wielu innych. Jest to podstawowa\u2026"

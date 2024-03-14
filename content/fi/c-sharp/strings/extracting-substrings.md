@@ -2,7 +2,7 @@
 date: 2024-01-20 17:45:32.722945-07:00
 description: "Substringit ovat jonoista poimittuja osia. K\xE4ytt\xE4m\xE4ll\xE4 niit\xE4\
   , voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan."
-lastmod: '2024-03-11T00:14:30.508984-06:00'
+lastmod: '2024-03-13T22:44:56.562428-06:00'
 model: gpt-4-1106-preview
 summary: "Substringit ovat jonoista poimittuja osia. K\xE4ytt\xE4m\xE4ll\xE4 niit\xE4\
   , voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan."

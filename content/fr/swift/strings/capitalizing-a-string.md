@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:30.601140-07:00
 description: "Capitaliser une cha\xEEne de caract\xE8res en Swift modifie la cha\xEE\
   ne donn\xE9e de mani\xE8re que son premier caract\xE8re soit en majuscule et les\
   \ caract\xE8res restants\u2026"
-lastmod: '2024-03-11T00:14:32.087125-06:00'
+lastmod: '2024-03-13T22:44:58.196721-06:00'
 model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne de caract\xE8res en Swift modifie la cha\xEEne\
   \ donn\xE9e de mani\xE8re que son premier caract\xE8re soit en majuscule et les\

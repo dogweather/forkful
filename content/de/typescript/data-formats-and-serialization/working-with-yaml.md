@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:56.764311-07:00
 description: "YAML, eine zur Datenserialisierung entworfene Sprache, die benutzerfreundlich\
   \ sein soll, wird oft f\xFCr Konfigurationsdateien, Interprozesskommunikation und\u2026"
-lastmod: '2024-03-11T00:14:27.542012-06:00'
+lastmod: '2024-03-13T22:44:53.650618-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, eine zur Datenserialisierung entworfene Sprache, die benutzerfreundlich\
   \ sein soll, wird oft f\xFCr Konfigurationsdateien, Interprozesskommunikation und\u2026"

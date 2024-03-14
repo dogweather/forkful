@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:02.491997-07:00
 description: "JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat,\
   \ das vor allem in Webanwendungen f\xFCr den Datenaustausch zwischen Clients\u2026"
-lastmod: '2024-03-11T00:14:28.336484-06:00'
+lastmod: '2024-03-13T22:44:54.421815-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat,\
   \ das vor allem in Webanwendungen f\xFCr den Datenaustausch zwischen Clients\u2026"

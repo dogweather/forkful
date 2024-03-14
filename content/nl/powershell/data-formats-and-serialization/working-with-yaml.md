@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:50.051203-07:00
 description: "YAML is een gebruiksvriendelijk data serialisatieformaat. Programmeurs\
   \ gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en\u2026"
-lastmod: '2024-03-11T00:14:24.884619-06:00'
+lastmod: '2024-03-13T22:44:51.050528-06:00'
 model: gpt-4-0125-preview
 summary: "YAML is een gebruiksvriendelijk data serialisatieformaat. Programmeurs gebruiken\
   \ het voor configuratiebestanden, gegevensuitwisseling tussen talen en\u2026"

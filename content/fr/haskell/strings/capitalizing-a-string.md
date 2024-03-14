@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:20.716714-07:00
 description: "Mettre une cha\xEEne en capitale implique de transformer la premi\xE8\
   re lettre d'une cha\xEEne donn\xE9e en majuscule tout en s'assurant que les autres\
   \ lettres\u2026"
-lastmod: '2024-03-11T00:14:31.764811-06:00'
+lastmod: '2024-03-13T22:44:57.815801-06:00'
 model: gpt-4-0125-preview
 summary: "Mettre une cha\xEEne en capitale implique de transformer la premi\xE8re\
   \ lettre d'une cha\xEEne donn\xE9e en majuscule tout en s'assurant que les autres\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:32.803090-07:00
 description: "String-interpolointi tarkoittaa muuttujien yhdist\xE4mist\xE4 merkkijonoon.\
   \ Se tekee koodista luettavampaa ja dynaamista, koska voit muodostaa merkkijonon\u2026"
-lastmod: '2024-03-11T00:14:30.277013-06:00'
+lastmod: '2024-03-13T22:44:56.343087-06:00'
 model: gpt-4-1106-preview
 summary: "String-interpolointi tarkoittaa muuttujien yhdist\xE4mist\xE4 merkkijonoon.\
   \ Se tekee koodista luettavampaa ja dynaamista, koska voit muodostaa merkkijonon\u2026"

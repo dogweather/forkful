@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:00.207331-07:00
 description: "\xC5 runde av tall betyr \xE5 justere dem til en spesifisert grad av\
   \ presisjon. Programmerere gj\xF8r dette for \xE5 forenkle tall for lesbarhet, for\
   \ \xE5 m\xF8te visse\u2026"
-lastmod: '2024-03-11T00:14:14.201939-06:00'
+lastmod: '2024-03-13T22:44:40.661402-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 justere dem til en spesifisert grad av presisjon.\
   \ Programmerere gj\xF8r dette for \xE5 forenkle tall for lesbarhet, for \xE5 m\xF8\

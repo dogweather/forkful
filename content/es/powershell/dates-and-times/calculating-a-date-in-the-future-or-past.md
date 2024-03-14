@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:52.730962-07:00
 description: "Calcular fechas futuras o pasadas implica a\xF1adir o quitar d\xEDas,\
   \ meses o a\xF1os a una fecha dada. Los programadores lo hacen para automatizar\
   \ recordatorios,\u2026"
-lastmod: '2024-03-11T00:14:33.126182-06:00'
+lastmod: '2024-03-13T22:44:59.305657-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular fechas futuras o pasadas implica a\xF1adir o quitar d\xEDas, meses\
   \ o a\xF1os a una fecha dada. Los programadores lo hacen para automatizar recordatorios,\u2026"

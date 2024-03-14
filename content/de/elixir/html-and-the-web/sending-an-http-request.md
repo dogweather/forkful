@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:17.117840-07:00
 description: "HTTP-Anfragen senden bedeutet, dass Daten \xFCber das Internet von einem\
   \ Client zu einem Server \xFCbermittelt werden. Programmierer nutzen dies, um\u2026"
-lastmod: '2024-03-11T00:14:27.424194-06:00'
+lastmod: '2024-03-13T22:44:53.504760-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen senden bedeutet, dass Daten \xFCber das Internet von einem\
   \ Client zu einem Server \xFCbermittelt werden. Programmierer nutzen dies, um\u2026"

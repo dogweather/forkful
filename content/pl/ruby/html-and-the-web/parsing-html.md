@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:30.336201-07:00
 description: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kawa\u0142\
   ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107. Programi\u015B\
   ci robi\u0105 to w celu wydobycia\u2026"
-lastmod: '2024-03-11T00:14:09.149963-06:00'
+lastmod: '2024-03-13T22:44:35.930661-06:00'
 model: gpt-4-0125-preview
 summary: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kawa\u0142\
   ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107. Programi\u015B\

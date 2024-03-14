@@ -6,7 +6,7 @@ description: "Debuggers trong C l\xE0 nh\u1EEFng c\xF4ng c\u1EE5 chuy\xEAn bi\u1
   t cho ph\xE9p c\xE1c nh\xE0 ph\xE1t tri\u1EC3n \u0111i qua t\u1EEBng d\xF2ng code\
   \ c\u1EE7a h\u1ECD, ki\u1EC3m tra c\xE1c bi\u1EBFn v\xE0 theo d\xF5i lu\u1ED3ng\
   \ th\u1EF1c thi. Qu\xE1\u2026"
-lastmod: '2024-03-11T00:14:10.586885-06:00'
+lastmod: '2024-03-13T22:44:37.274313-06:00'
 model: gpt-4-0125-preview
 summary: "Debuggers trong C l\xE0 nh\u1EEFng c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t cho\
   \ ph\xE9p c\xE1c nh\xE0 ph\xE1t tri\u1EC3n \u0111i qua t\u1EEBng d\xF2ng code c\u1EE7\

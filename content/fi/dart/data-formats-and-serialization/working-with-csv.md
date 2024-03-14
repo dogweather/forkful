@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:24.534428-07:00
 description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\
   \xE4 teksti-tiedostojen j\xE4sennyksen ja luonnin, miss\xE4 jokainen rivi sis\xE4\
   lt\xE4\xE4 pilkuilla erotettuja\u2026"
-lastmod: '2024-03-11T00:14:30.227309-06:00'
+lastmod: '2024-03-13T22:44:56.295965-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\xE4\
   \ teksti-tiedostojen j\xE4sennyksen ja luonnin, miss\xE4 jokainen rivi sis\xE4lt\xE4\

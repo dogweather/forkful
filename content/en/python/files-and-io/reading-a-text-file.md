@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:55.075228-07:00
 description: "Reading a text file in Python is grabbing data from a file that's accessible\
   \ on your disk or over a network. Programmers read files to use the stored data\u2026"
-lastmod: '2024-03-11T00:14:33.573476-06:00'
+lastmod: '2024-03-13T22:44:59.723433-06:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file in Python is grabbing data from a file that's accessible\
   \ on your disk or over a network. Programmers read files to use the stored data\u2026"

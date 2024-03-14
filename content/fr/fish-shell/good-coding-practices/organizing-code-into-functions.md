@@ -6,7 +6,7 @@ date: 2024-01-28 23:01:33.191826-07:00
 description: "Organiser le code en fonctions consiste \xE0 regrouper des morceaux\
   \ de script pour r\xE9aliser des t\xE2ches sp\xE9cifiques. Nous le faisons parce\
   \ que cela rend le\u2026"
-lastmod: '2024-03-11T00:14:32.202659-06:00'
+lastmod: '2024-03-13T22:44:58.330710-06:00'
 model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions consiste \xE0 regrouper des morceaux de script\
   \ pour r\xE9aliser des t\xE2ches sp\xE9cifiques. Nous le faisons parce que cela\

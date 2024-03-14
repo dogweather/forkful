@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:15.896313-07:00
 description: "Parsowanie HTML polega na wydobywaniu danych lub informacji z tre\u015B\
   ci HTML, co jest powszechnym zadaniem podczas pracy z danymi internetowymi. Programi\u015B\
   ci\u2026"
-lastmod: '2024-03-11T00:14:09.051870-06:00'
+lastmod: '2024-03-13T22:44:35.838978-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML polega na wydobywaniu danych lub informacji z tre\u015B\
   ci HTML, co jest powszechnym zadaniem podczas pracy z danymi internetowymi. Programi\u015B\

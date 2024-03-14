@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:24.978556-07:00
 description: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvitsee\
   \ tehd\xE4 er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi.\
   \ Voisit avata\u2026"
-lastmod: '2024-03-11T00:14:30.691149-06:00'
+lastmod: '2024-03-13T22:44:56.735472-06:00'
 model: gpt-4-0125-preview
 summary: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvitsee tehd\xE4\
   \ er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi. Voisit\

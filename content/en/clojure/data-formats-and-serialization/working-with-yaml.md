@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:13.563232-07:00
 description: "YAML, a recursive acronym for \"YAML Ain't Markup Language,\" is a human-readable\
   \ data serialization format used for configuration files and data exchange\u2026"
-lastmod: '2024-03-11T00:14:33.616166-06:00'
+lastmod: '2024-03-13T22:44:59.763632-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, a recursive acronym for \"YAML Ain't Markup Language,\" is a human-readable\
   \ data serialization format used for configuration files and data exchange\u2026"

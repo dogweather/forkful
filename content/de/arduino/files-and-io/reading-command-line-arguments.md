@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:13.479512-07:00
 description: "Beim Lesen von Befehlszeilenargumenten geht es darum, Parameter an ein\
   \ Programm zu \xFCbergeben, wenn es gestartet wird. Programmierer nutzen das, um\
   \ die\u2026"
-lastmod: '2024-03-11T00:14:28.059808-06:00'
+lastmod: '2024-03-13T22:44:54.158763-06:00'
 model: gpt-4-1106-preview
 summary: "Beim Lesen von Befehlszeilenargumenten geht es darum, Parameter an ein Programm\
   \ zu \xFCbergeben, wenn es gestartet wird. Programmierer nutzen das, um die\u2026"

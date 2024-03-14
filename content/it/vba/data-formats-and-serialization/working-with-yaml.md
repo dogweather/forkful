@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:30.675722-07:00
 description: "YAML, che sta per \"YAML Ain't Markup Language\" (YAML non \xE8 un linguaggio\
   \ di markup), \xE8 un linguaggio di serializzazione dati leggibile dall'uomo\u2026"
-lastmod: '2024-03-11T00:14:16.854119-06:00'
+lastmod: '2024-03-13T22:44:43.286020-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, che sta per \"YAML Ain't Markup Language\" (YAML non \xE8 un linguaggio\
   \ di markup), \xE8 un linguaggio di serializzazione dati leggibile dall'uomo\u2026"

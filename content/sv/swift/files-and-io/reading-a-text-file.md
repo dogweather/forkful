@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:06.767651-07:00
 description: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
   \ i en fil p\xE5 disken. Programmerare g\xF6r detta f\xF6r att anv\xE4nda data,\
   \ konfigurera\u2026"
-lastmod: '2024-03-11T00:14:11.665285-06:00'
+lastmod: '2024-03-13T22:44:38.268242-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
   \ i en fil p\xE5 disken. Programmerare g\xF6r detta f\xF6r att anv\xE4nda data,\

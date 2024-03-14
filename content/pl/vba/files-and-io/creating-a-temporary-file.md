@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:52:17.450264-07:00
 description: "Tworzenie tymczasowego pliku w Visual Basic for Applications (VBA) polega\
   \ na programowym generowaniu pliku do kr\xF3tkoterminowego u\u017Cytku, typowo dla\u2026"
-lastmod: '2024-03-11T00:14:08.429224-06:00'
+lastmod: '2024-03-13T22:44:35.253231-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Visual Basic for Applications (VBA) polega\
   \ na programowym generowaniu pliku do kr\xF3tkoterminowego u\u017Cytku, typowo dla\u2026"

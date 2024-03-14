@@ -3,7 +3,7 @@ date: 2024-01-26 01:00:59.806423-07:00
 description: "En C#, vous pouvez utiliser l'espace de noms int\xE9gr\xE9 `System.Diagnostics`\
   \ ou des biblioth\xE8ques tierces comme NLog ou log4net. Voici un exemple rapide\
   \ en\u2026"
-lastmod: '2024-03-11T00:14:31.743961-06:00'
+lastmod: '2024-03-13T22:44:57.794481-06:00'
 model: gpt-4-1106-preview
 summary: "En C#, vous pouvez utiliser l'espace de noms int\xE9gr\xE9 `System.Diagnostics`\
   \ ou des biblioth\xE8ques tierces comme NLog ou log4net. Voici un exemple rapide\

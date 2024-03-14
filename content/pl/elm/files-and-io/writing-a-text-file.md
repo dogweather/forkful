@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:01.014806-07:00
 description: "Tworzenie pliku tekstowego w Elm polega na tworzeniu i zapisywaniu danych\
   \ tekstowych do pliku z aplikacji Elm. Programi\u015Bci cz\u0119sto musz\u0105 generowa\u0107\
   \ raporty,\u2026"
-lastmod: '2024-03-11T00:14:08.520540-06:00'
+lastmod: '2024-03-13T22:44:35.340196-06:00'
 model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w Elm polega na tworzeniu i zapisywaniu danych\
   \ tekstowych do pliku z aplikacji Elm. Programi\u015Bci cz\u0119sto musz\u0105 generowa\u0107\

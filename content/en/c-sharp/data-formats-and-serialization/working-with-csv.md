@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:28.377238-07:00
 description: "CSV (Comma-Separated Values) files are a common data exchange format\
   \ that represents tabular data in plain text, using commas to separate individual\u2026"
-lastmod: '2024-03-11T00:14:33.973557-06:00'
+lastmod: '2024-03-13T22:45:00.109637-06:00'
 model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) files are a common data exchange format that\
   \ represents tabular data in plain text, using commas to separate individual\u2026"

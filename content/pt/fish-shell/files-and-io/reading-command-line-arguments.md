@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:04.604035-07:00
 description: "Ler argumentos da linha de comandos \xE9 pegar as informa\xE7\xF5es\
   \ que um usu\xE1rio digita quando executa seu script. Programadores fazem isso para\
   \ permitir que os\u2026"
-lastmod: '2024-03-11T00:14:20.760906-06:00'
+lastmod: '2024-03-13T22:44:47.021108-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comandos \xE9 pegar as informa\xE7\xF5es que\
   \ um usu\xE1rio digita quando executa seu script. Programadores fazem isso para\

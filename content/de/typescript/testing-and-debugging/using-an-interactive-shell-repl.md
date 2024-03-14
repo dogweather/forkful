@@ -3,7 +3,7 @@ date: 2024-01-26 04:18:21.503230-07:00
 description: "Ein Read-Eval-Print-Loop (REPL) ist eine Programmierumgebung, die einzelne\
   \ Benutzereingaben annimmt, ausf\xFChrt und das Ergebnis an den Benutzer zur\xFC\
   ckgibt.\u2026"
-lastmod: '2024-03-11T00:14:27.523193-06:00'
+lastmod: '2024-03-13T22:44:53.632763-06:00'
 model: gpt-4-0125-preview
 summary: "Ein Read-Eval-Print-Loop (REPL) ist eine Programmierumgebung, die einzelne\
   \ Benutzereingaben annimmt, ausf\xFChrt und das Ergebnis an den Benutzer zur\xFC\

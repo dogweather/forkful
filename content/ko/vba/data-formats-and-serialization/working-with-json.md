@@ -9,7 +9,7 @@ description: "JSON(JavaScript Object Notation)\uC740 \uC0AC\uB78C\uC774 \uC77D\u
   \uBC84\uC640 \uC6F9 \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uAC04\uC758 \uB370\uC774\
   \uD130\uB97C \uC804\uC1A1\uD558\uAC70\uB098 \uB2E4\uC591\uD55C \uD504\uB85C\uADF8\
   \uB798\uBC0D \uD658\uACBD\uC5D0\uC11C, \uC608\uB97C \uB4E4\uC5B4 Visual Basic\u2026"
-lastmod: '2024-03-11T00:14:28.935287-06:00'
+lastmod: '2024-03-13T22:44:55.015784-06:00'
 model: gpt-4-0125-preview
 summary: "JSON(JavaScript Object Notation)\uC740 \uC0AC\uB78C\uC774 \uC77D\uACE0 \uC4F0\
   \uAE30 \uC26C\uC6B0\uBA70, \uAE30\uACC4\uAC00 \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:40.363259-07:00
 description: "Wyra\u017Cenia regularne (regex) w PHP to wzorce u\u017Cywane do dopasowywania\
   \ kombinacji znak\xF3w w ci\u0105gach, co pozwala na zaawansowane operacje wyszukiwania\
   \ i\u2026"
-lastmod: '2024-03-11T00:14:08.670889-06:00'
+lastmod: '2024-03-13T22:44:35.486606-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w PHP to wzorce u\u017Cywane do dopasowywania\
   \ kombinacji znak\xF3w w ci\u0105gach, co pozwala na zaawansowane operacje wyszukiwania\

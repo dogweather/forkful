@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:26.054129-07:00
 description: "Descobrir o comprimento de uma string \xE9 saber quantos caracteres\
   \ ela tem. Programadores fazem isso para validar dados, limitar input, ou otimizar\
   \ espa\xE7os\u2026"
-lastmod: '2024-03-11T00:14:20.732918-06:00'
+lastmod: '2024-03-13T22:44:46.995200-06:00'
 model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string \xE9 saber quantos caracteres ela\
   \ tem. Programadores fazem isso para validar dados, limitar input, ou otimizar espa\xE7\

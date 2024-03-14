@@ -2,7 +2,7 @@
 date: 2024-01-26 04:44:11.447709-07:00
 description: "I numeri complessi, quelli con una parte reale e una parte immaginaria\
   \ (come 3 + 4i), sono fondamentali in ambiti come l'ingegneria, la fisica e la\u2026"
-lastmod: '2024-03-11T00:14:17.247588-06:00'
+lastmod: '2024-03-13T22:44:43.635204-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi, quelli con una parte reale e una parte immaginaria (come\
   \ 3 + 4i), sono fondamentali in ambiti come l'ingegneria, la fisica e la\u2026"

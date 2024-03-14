@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:16.908334-07:00
 description: "Writing a text file in C# involves programmatically creating or modifying\
   \ text files on the file system - a fundamental task for many applications, such\u2026"
-lastmod: '2024-03-11T00:14:33.969907-06:00'
+lastmod: '2024-03-13T22:45:00.105987-06:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in C# involves programmatically creating or modifying\
   \ text files on the file system - a fundamental task for many applications, such\u2026"

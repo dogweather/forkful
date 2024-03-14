@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:46.602487-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pour\
   \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\
   \ la pr\xE9sence\u2026"
-lastmod: '2024-03-11T00:14:32.164434-06:00'
+lastmod: '2024-03-13T22:44:58.291108-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pour\
   \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\

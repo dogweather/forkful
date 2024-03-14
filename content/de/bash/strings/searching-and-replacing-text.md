@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:04.977692-07:00
 description: "Text suchen und ersetzen erm\xF6glicht es uns, Inhalte in Dateien schnell\
   \ zu finden und zu modifizieren. Programmierer nutzen dies h\xE4ufig, um Bugs zu\u2026"
-lastmod: '2024-03-11T00:14:27.941629-06:00'
+lastmod: '2024-03-13T22:44:54.042651-06:00'
 model: gpt-4-1106-preview
 summary: "Text suchen und ersetzen erm\xF6glicht es uns, Inhalte in Dateien schnell\
   \ zu finden und zu modifizieren. Programmierer nutzen dies h\xE4ufig, um Bugs zu\u2026"

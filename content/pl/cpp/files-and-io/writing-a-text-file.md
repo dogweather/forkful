@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:23.974570-07:00
 description: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
   \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"
-lastmod: '2024-03-11T00:14:08.933339-06:00'
+lastmod: '2024-03-13T22:44:35.731127-06:00'
 model: gpt-4-0125-preview
 summary: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
   \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"

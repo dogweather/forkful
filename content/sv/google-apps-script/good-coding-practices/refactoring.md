@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:52.934781-07:00
 description: "Refaktorisering i programmeringslexikonet refererar till processen att\
   \ omstrukturera befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess\
   \ externa\u2026"
-lastmod: '2024-03-11T00:14:10.756953-06:00'
+lastmod: '2024-03-13T22:44:37.447951-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering i programmeringslexikonet refererar till processen att omstrukturera\
   \ befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess externa\u2026"

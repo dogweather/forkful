@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:46.129941-07:00
 description: "Convertir una cadena a min\xFAsculas en Google Apps Script, un lenguaje\
   \ de scripting basado en la nube para automatizar tareas a trav\xE9s de productos\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:32.371363-06:00'
+lastmod: '2024-03-13T22:44:58.507617-06:00'
 model: gpt-4-0125-preview
 summary: "Convertir una cadena a min\xFAsculas en Google Apps Script, un lenguaje\
   \ de scripting basado en la nube para automatizar tareas a trav\xE9s de productos\

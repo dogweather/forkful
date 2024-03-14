@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:57.462583-07:00
 description: "Het afhandelen van fouten in C# gaat over het beheren van het onverwachte\u2014\
   zoals struikelen over je veters. Programma's kunnen struikelen over slechte\u2026"
-lastmod: '2024-03-11T00:14:24.644346-06:00'
+lastmod: '2024-03-13T22:44:50.817636-06:00'
 model: gpt-4-0125-preview
 summary: "Het afhandelen van fouten in C# gaat over het beheren van het onverwachte\u2014\
   zoals struikelen over je veters. Programma's kunnen struikelen over slechte\u2026"

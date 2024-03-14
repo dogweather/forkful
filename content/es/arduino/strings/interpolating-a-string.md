@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:12.175783-07:00
 description: "La interpolaci\xF3n de cadenas permite insertar valores de variables\
   \ dentro de una cadena de texto, creando as\xED una cadena compuesta din\xE1micamente.\u2026"
-lastmod: '2024-03-11T00:14:33.141949-06:00'
+lastmod: '2024-03-13T22:44:59.320761-06:00'
 model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas permite insertar valores de variables dentro\
   \ de una cadena de texto, creando as\xED una cadena compuesta din\xE1micamente.\u2026"

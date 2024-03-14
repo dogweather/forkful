@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:27.875527-07:00
 description: "Att s\xF6ka och ers\xE4tta text handlar om att hitta specifika textstr\xE4\
   ngar och byta ut dem mot andra. Programmerare g\xF6r det f\xF6r att uppdatera data,\
   \ refactora\u2026"
-lastmod: '2024-03-11T00:14:10.824480-06:00'
+lastmod: '2024-03-13T22:44:37.510660-06:00'
 model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text handlar om att hitta specifika textstr\xE4\
   ngar och byta ut dem mot andra. Programmerare g\xF6r det f\xF6r att uppdatera data,\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:06.425337-07:00
 description: "In Lua, concatenare le stringhe significa unirle per formare un testo\
   \ continuo. Questo \xE8 utile per comporre messaggi, costruire query, o semplicemente\
   \ per\u2026"
-lastmod: '2024-03-11T00:14:17.154113-06:00'
+lastmod: '2024-03-13T22:44:43.550125-06:00'
 model: gpt-4-1106-preview
 summary: "In Lua, concatenare le stringhe significa unirle per formare un testo continuo.\
   \ Questo \xE8 utile per comporre messaggi, costruire query, o semplicemente per\u2026"

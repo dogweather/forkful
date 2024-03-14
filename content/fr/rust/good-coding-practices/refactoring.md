@@ -2,7 +2,7 @@
 date: 2024-01-26 03:36:47.775602-07:00
 description: "Le remaniement de code (ou refactoring) est le processus de restructuration\
   \ du code informatique existant\u2014changer la facturation\u2014sans modifier son\u2026"
-lastmod: '2024-03-11T00:14:31.506519-06:00'
+lastmod: '2024-03-13T22:44:57.491002-06:00'
 model: gpt-4-0125-preview
 summary: "Le remaniement de code (ou refactoring) est le processus de restructuration\
   \ du code informatique existant\u2014changer la facturation\u2014sans modifier son\u2026"

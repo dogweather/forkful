@@ -2,7 +2,7 @@
 date: 2024-01-26 03:46:08.581499-07:00
 description: "Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen\
   \ Wert anzun\xE4hern. Programmierer runden Zahlen ab, um Ergebnisse zu vereinfachen,\u2026"
-lastmod: '2024-03-11T00:14:27.336390-06:00'
+lastmod: '2024-03-13T22:44:53.373362-06:00'
 model: gpt-4-0125-preview
 summary: "Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen Wert\
   \ anzun\xE4hern. Programmierer runden Zahlen ab, um Ergebnisse zu vereinfachen,\u2026"

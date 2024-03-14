@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:38.931659-07:00
 description: "Escrever testes em C++ envolve criar pequenos programas autossuficientes\
   \ que verificam automaticamente o comportamento de se\xE7\xF5es do seu c\xF3digo.\
   \ Os\u2026"
-lastmod: '2024-03-11T00:14:20.612487-06:00'
+lastmod: '2024-03-13T22:44:46.883077-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em C++ envolve criar pequenos programas autossuficientes\
   \ que verificam automaticamente o comportamento de se\xE7\xF5es do seu c\xF3digo.\

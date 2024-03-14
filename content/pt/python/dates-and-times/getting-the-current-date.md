@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:27.091886-07:00
 description: "Buscar a data atual em Python \xE9 uma opera\xE7\xE3o fundamental para\
   \ muitas aplica\xE7\xF5es, como registros (logging), an\xE1lise de dados e tomada\
   \ de decis\xF5es baseadas\u2026"
-lastmod: '2024-03-11T00:14:19.832110-06:00'
+lastmod: '2024-03-13T22:44:46.164846-06:00'
 model: gpt-4-0125-preview
 summary: "Buscar a data atual em Python \xE9 uma opera\xE7\xE3o fundamental para muitas\
   \ aplica\xE7\xF5es, como registros (logging), an\xE1lise de dados e tomada de decis\xF5\

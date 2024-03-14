@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:24.067493-07:00
 description: "Escrever testes em programa\xE7\xE3o envolve criar pequenas pe\xE7as\
   \ separadas de c\xF3digo para verificar automaticamente se diferentes partes da\
   \ sua aplica\xE7\xE3o\u2026"
-lastmod: '2024-03-11T00:14:20.431225-06:00'
+lastmod: '2024-03-13T22:44:46.712417-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em programa\xE7\xE3o envolve criar pequenas pe\xE7as separadas\
   \ de c\xF3digo para verificar automaticamente se diferentes partes da sua aplica\xE7\

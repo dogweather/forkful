@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:53.258137-07:00
 description: "Web-sivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datan ker\xE4\xE4miseen, sis\xE4\
   ll\xF6n analysointiin tai\u2026"
-lastmod: '2024-03-11T00:14:30.289787-06:00'
+lastmod: '2024-03-13T22:44:56.355591-06:00'
 model: gpt-4-1106-preview
 summary: "Web-sivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datan ker\xE4\xE4miseen, sis\xE4\

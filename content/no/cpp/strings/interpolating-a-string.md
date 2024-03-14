@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:49.396969-07:00
 description: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i\
   \ en streng. Det gj\xF8r koden mer lesbar og lar oss lett bygge dynamiske meldinger."
-lastmod: '2024-03-11T00:14:14.678424-06:00'
+lastmod: '2024-03-13T22:44:41.085625-06:00'
 model: gpt-4-1106-preview
 summary: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i en streng.\
   \ Det gj\xF8r koden mer lesbar og lar oss lett bygge dynamiske meldinger."

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:40:49.732780-07:00
 description: "Crear un archivo temporal implica generar un archivo destinado a un\
   \ uso a corto plazo. Los programadores lo hacen para manejar datos de manera transitoria\u2026"
-lastmod: '2024-03-11T00:14:33.132597-06:00'
+lastmod: '2024-03-13T22:44:59.311606-06:00'
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal implica generar un archivo destinado a un uso\
   \ a corto plazo. Los programadores lo hacen para manejar datos de manera transitoria\u2026"

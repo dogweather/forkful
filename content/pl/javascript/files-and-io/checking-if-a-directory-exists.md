@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:48.880318-07:00
 description: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zada\u0144\
   \ manipulacji plikami. Pozwala skryptom zweryfikowa\u0107 obecno\u015B\u0107 katalogu\
   \ przed\u2026"
-lastmod: '2024-03-11T00:14:09.021744-06:00'
+lastmod: '2024-03-13T22:44:35.810792-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zada\u0144\
   \ manipulacji plikami. Pozwala skryptom zweryfikowa\u0107 obecno\u015B\u0107 katalogu\

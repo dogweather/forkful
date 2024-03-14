@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:46.897329-07:00
 description: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej (zwykle oznaczane jako a + bi), rozszerzaj\u0105 koncepcj\u0119 liczb\
   \ bezwymiarowych na przestrze\u0144\u2026"
-lastmod: '2024-03-11T00:14:08.255051-06:00'
+lastmod: '2024-03-13T22:44:35.084390-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej (zwykle oznaczane jako a + bi), rozszerzaj\u0105 koncepcj\u0119 liczb\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:17.948438-07:00
 description: "Code organiseren in functies betekent dat je je code opdeelt in herbruikbare,\
   \ modulaire blokken. We doen dit om dingen DRY (Don't Repeat Yourself) te\u2026"
-lastmod: '2024-03-11T00:14:24.372412-06:00'
+lastmod: '2024-03-13T22:44:50.556395-06:00'
 model: gpt-4-0125-preview
 summary: "Code organiseren in functies betekent dat je je code opdeelt in herbruikbare,\
   \ modulaire blokken. We doen dit om dingen DRY (Don't Repeat Yourself) te\u2026"

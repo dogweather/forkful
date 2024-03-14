@@ -2,7 +2,7 @@
 date: 2024-01-26 04:12:11.714086-07:00
 description: "Ein REPL oder Read-Eval-Print Loop erm\xF6glicht es Ihnen, C#-Code zu\
   \ tippen und diesen interaktiv auszuf\xFChren. Programmierer nutzen es f\xFCr schnelle\u2026"
-lastmod: '2024-03-11T00:14:27.785984-06:00'
+lastmod: '2024-03-13T22:44:53.889861-06:00'
 model: gpt-4-0125-preview
 summary: "Ein REPL oder Read-Eval-Print Loop erm\xF6glicht es Ihnen, C#-Code zu tippen\
   \ und diesen interaktiv auszuf\xFChren. Programmierer nutzen es f\xFCr schnelle\u2026"

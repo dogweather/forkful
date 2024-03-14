@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:19.508926-07:00
 description: "Starting a new project in Elm is about setting up a clean slate for\
   \ building reliable web apps. Programmers do it to capitalize on Elm's simplicity\
   \ and\u2026"
-lastmod: '2024-03-11T00:14:33.875372-06:00'
+lastmod: '2024-03-13T22:45:00.010545-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project in Elm is about setting up a clean slate for building\
   \ reliable web apps. Programmers do it to capitalize on Elm's simplicity and\u2026"

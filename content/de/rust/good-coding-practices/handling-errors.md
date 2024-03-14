@@ -2,7 +2,7 @@
 date: 2024-01-26 00:57:14.337443-07:00
 description: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge\
   \ schiefgehen. Entwickler machen das, um das Unerwartete zu handhaben, und um\u2026"
-lastmod: '2024-03-11T00:14:27.571360-06:00'
+lastmod: '2024-03-13T22:44:53.680095-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge schiefgehen.\
   \ Entwickler machen das, um das Unerwartete zu handhaben, und um\u2026"

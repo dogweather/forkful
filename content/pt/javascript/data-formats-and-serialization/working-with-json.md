@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de\
   \ dados. Programadores utilizam JSON para transferir e armazenar dados de maneira\
   \ simples\u2026"
-lastmod: '2024-03-11T00:14:20.720211-06:00'
+lastmod: '2024-03-13T22:44:46.983523-06:00'
 model: unknown
 summary: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de dados.\
   \ Programadores utilizam JSON para transferir e armazenar dados de maneira simples\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:07.719599-07:00
 description: "Tests schrijven is het cre\xEBren van code die controleert of je software\
   \ werkt zoals gepland. Programmeurs testen om bugs vroeg te vangen, kwaliteit te\u2026"
-lastmod: '2024-03-11T00:14:24.998700-06:00'
+lastmod: '2024-03-13T22:44:51.160605-06:00'
 model: gpt-4-0125-preview
 summary: "Tests schrijven is het cre\xEBren van code die controleert of je software\
   \ werkt zoals gepland. Programmeurs testen om bugs vroeg te vangen, kwaliteit te\u2026"

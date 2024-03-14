@@ -5,7 +5,7 @@ date: 2024-02-03 18:00:12.766394-07:00
 description: "Parsowanie daty ze stringa w j\u0119zyku C polega na konwersji tekstowych\
   \ reprezentacji dat na format, kt\xF3ry programy mog\u0105 bardziej efektywnie manipulowa\u0107\
   \ i\u2026"
-lastmod: '2024-03-11T00:14:09.113760-06:00'
+lastmod: '2024-03-13T22:44:35.896737-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa w j\u0119zyku C polega na konwersji tekstowych\
   \ reprezentacji dat na format, kt\xF3ry programy mog\u0105 bardziej efektywnie manipulowa\u0107\

@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:08.169838-07:00
 description: "Avrundning av tal handlar om att justera v\xE4rdet av ett tal till det\
   \ n\xE4rmaste hela talet eller till ett specifikt antal decimaler. Programmerare\
   \ g\xF6r detta\u2026"
-lastmod: '2024-03-11T00:14:10.691004-06:00'
+lastmod: '2024-03-13T22:44:37.386530-06:00'
 model: gpt-4-0125-preview
 summary: "Avrundning av tal handlar om att justera v\xE4rdet av ett tal till det n\xE4\
   rmaste hela talet eller till ett specifikt antal decimaler. Programmerare g\xF6\

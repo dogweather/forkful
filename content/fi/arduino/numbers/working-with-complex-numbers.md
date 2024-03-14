@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:48.404629-07:00
 description: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa, ja ne ilmaistaan\
   \ yleens\xE4 muodossa `a + bi`. Ne ovat elint\xE4rkeit\xE4 joissakin matematiikkaa\
   \ vaativissa\u2026"
-lastmod: '2024-03-11T00:14:30.843890-06:00'
+lastmod: '2024-03-13T22:44:56.819164-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa, ja ne ilmaistaan\
   \ yleens\xE4 muodossa `a + bi`. Ne ovat elint\xE4rkeit\xE4 joissakin matematiikkaa\

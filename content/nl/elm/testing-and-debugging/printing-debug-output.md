@@ -5,7 +5,7 @@ date: 2024-01-28 22:04:35.206884-07:00
 description: "Debugoutput afdrukken in Elm gaat over het weergeven van waarden in\
   \ de console om te begrijpen wat er in je code gebeurt. We doen dit om bugs op te\
   \ sporen\u2026"
-lastmod: '2024-03-11T00:14:24.549960-06:00'
+lastmod: '2024-03-13T22:44:50.727488-06:00'
 model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken in Elm gaat over het weergeven van waarden in de console\
   \ om te begrijpen wat er in je code gebeurt. We doen dit om bugs op te sporen\u2026"

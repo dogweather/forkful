@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:21.353731-07:00
 description: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu best\xE4\
   tigen, ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist. Programmierer\
   \ machen dies,\u2026"
-lastmod: '2024-03-11T00:14:27.712143-06:00'
+lastmod: '2024-03-13T22:44:53.819599-06:00'
 model: gpt-4-0125-preview
 summary: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu best\xE4tigen,\
   \ ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist. Programmierer machen\

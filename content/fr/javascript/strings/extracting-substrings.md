@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:48.246349-07:00
 description: "Extraire des sous-cha\xEEnes, c'est s\xE9lectionner des bouts sp\xE9\
   cifiques d'une cha\xEEne de caract\xE8res. On le fait pour analyser, manipuler ou\
   \ valider des donn\xE9es\u2026"
-lastmod: '2024-03-11T00:14:32.137715-06:00'
+lastmod: '2024-03-13T22:44:58.263215-06:00'
 model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est s\xE9lectionner des bouts sp\xE9cifiques\
   \ d'une cha\xEEne de caract\xE8res. On le fait pour analyser, manipuler ou valider\

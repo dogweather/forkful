@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:02.320628-07:00
 description: "Starting a new project in C involves setting up a foundational code\
   \ structure and environment to efficiently manage development tasks. Programmers\
   \ do it\u2026"
-lastmod: '2024-03-11T00:14:34.395906-06:00'
+lastmod: '2024-03-13T22:45:00.512167-06:00'
 model: gpt-4-0125-preview
 summary: "Starting a new project in C involves setting up a foundational code structure\
   \ and environment to efficiently manage development tasks. Programmers do it\u2026"

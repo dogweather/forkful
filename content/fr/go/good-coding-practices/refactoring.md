@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:57.774564-07:00
 description: "Le refactoring en programmation implique de restructurer le code informatique\
   \ existant \u2014 changer le fa\xE7onnage \u2014 sans modifier son comportement\
   \ externe.\u2026"
-lastmod: '2024-03-11T00:14:31.183974-06:00'
+lastmod: '2024-03-13T22:44:57.143188-06:00'
 model: gpt-4-0125-preview
 summary: "Le refactoring en programmation implique de restructurer le code informatique\
   \ existant \u2014 changer le fa\xE7onnage \u2014 sans modifier son comportement\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:51.974936-07:00
 description: "Att g\xF6ra det f\xF6rsta tecknet i en str\xE4ng till versal i Bash\
   \ involverar att omvandla det f\xF6rsta tecknet av str\xE4ngen till stort bokstav\
   \ medan resten av\u2026"
-lastmod: '2024-03-11T00:14:11.443043-06:00'
+lastmod: '2024-03-13T22:44:38.064091-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra det f\xF6rsta tecknet i en str\xE4ng till versal i Bash involverar\
   \ att omvandla det f\xF6rsta tecknet av str\xE4ngen till stort bokstav medan resten\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:09.638947-07:00
 description: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6r\
   \ att matcha teckenkombinationer i str\xE4ngar. Programmerare anv\xE4nder dem f\xF6\
   r att s\xF6ka, redigera eller\u2026"
-lastmod: '2024-03-11T00:14:10.734805-06:00'
+lastmod: '2024-03-13T22:44:37.427336-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6r att\
   \ matcha teckenkombinationer i str\xE4ngar. Programmerare anv\xE4nder dem f\xF6\

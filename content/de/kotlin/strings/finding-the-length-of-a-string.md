@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:35.832577-07:00
 description: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viele\
   \ Zeichen er enth\xE4lt. Wir brauchen das, um Textdaten zu validieren, zu schneiden\
   \ oder\u2026"
-lastmod: '2024-03-11T00:14:27.730700-06:00'
+lastmod: '2024-03-13T22:44:53.838266-06:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viele\
   \ Zeichen er enth\xE4lt. Wir brauchen das, um Textdaten zu validieren, zu schneiden\

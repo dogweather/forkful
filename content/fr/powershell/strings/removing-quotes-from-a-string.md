@@ -2,7 +2,7 @@
 date: 2024-01-26 03:40:59.041802-07:00
 description: "Retirer les guillemets d'une cha\xEEne dans PowerShell \xE9limine les\
   \ marques de citation simple (`'`) ou double (`\"`) entourant votre texte. Les programmeurs\u2026"
-lastmod: '2024-03-11T00:14:31.955217-06:00'
+lastmod: '2024-03-13T22:44:58.030639-06:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne dans PowerShell \xE9limine les marques\
   \ de citation simple (`'`) ou double (`\"`) entourant votre texte. Les programmeurs\u2026"

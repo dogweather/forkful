@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:18.773359-07:00
 description: "Sending an HTTP request is the way your Arduino talks to the web, like\
   \ asking a server to send back some data. Programmers do it to let their Arduino\u2026"
-lastmod: '2024-03-11T00:14:34.187366-06:00'
+lastmod: '2024-03-13T22:45:00.319254-06:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is the way your Arduino talks to the web, like asking\
   \ a server to send back some data. Programmers do it to let their Arduino\u2026"

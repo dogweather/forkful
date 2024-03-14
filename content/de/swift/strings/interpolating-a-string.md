@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:57.174846-07:00
 description: "String-Interpolation erm\xF6glicht es, Variablen, Konstanten und Ausdr\xFC\
   cke in Strings einzubetten, indem man ihren Wert in eine Zeichenkette einbettet.\u2026"
-lastmod: '2024-03-11T00:14:28.114472-06:00'
+lastmod: '2024-03-13T22:44:54.212222-06:00'
 model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablen, Konstanten und Ausdr\xFC\
   cke in Strings einzubetten, indem man ihren Wert in eine Zeichenkette einbettet.\u2026"

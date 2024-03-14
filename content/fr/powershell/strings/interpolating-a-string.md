@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:17.807415-07:00
 description: "Interpoler une cha\xEEne, c'est ins\xE9rer des valeurs de variables\
   \ directement dedans. C'est utilis\xE9 pour composer des messages ou des commandes\
   \ de fa\xE7on\u2026"
-lastmod: '2024-03-11T00:14:31.953234-06:00'
+lastmod: '2024-03-13T22:44:58.028628-06:00'
 model: gpt-4-1106-preview
 summary: "Interpoler une cha\xEEne, c'est ins\xE9rer des valeurs de variables directement\
   \ dedans. C'est utilis\xE9 pour composer des messages ou des commandes de fa\xE7\

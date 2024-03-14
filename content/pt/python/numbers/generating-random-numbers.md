@@ -3,7 +3,7 @@ date: 2024-01-27 20:34:53.990766-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o podem\
   \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\
   \ para o\u2026"
-lastmod: '2024-03-11T00:14:19.815946-06:00'
+lastmod: '2024-03-13T22:44:46.149606-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o podem\
   \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\

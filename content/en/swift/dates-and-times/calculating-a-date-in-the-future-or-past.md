@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:09.878769-07:00
 description: "Ever needed to find a date in the past or future? Programmatically,\
   \ we often calculate dates for deadlines, reminders, or events. Knowing how takes\
   \ the\u2026"
-lastmod: '2024-03-11T00:14:34.279459-06:00'
+lastmod: '2024-03-13T22:45:00.408144-06:00'
 model: gpt-4-1106-preview
 summary: "Ever needed to find a date in the past or future? Programmatically, we often\
   \ calculate dates for deadlines, reminders, or events. Knowing how takes the\u2026"

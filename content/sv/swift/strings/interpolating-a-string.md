@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:35.717719-07:00
 description: "Interpolering av str\xE4ngar i Swift inneb\xE4r att du blandar variabler,\
   \ konstanter, litteraler och uttryck inuti en str\xE4ng. Det g\xF6r kod mer l\xE4\
   sbar och\u2026"
-lastmod: '2024-03-11T00:14:11.631488-06:00'
+lastmod: '2024-03-13T22:44:38.237654-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ngar i Swift inneb\xE4r att du blandar variabler,\
   \ konstanter, litteraler och uttryck inuti en str\xE4ng. Det g\xF6r kod mer l\xE4\

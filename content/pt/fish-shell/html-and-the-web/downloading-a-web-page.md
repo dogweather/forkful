@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:04.387439-07:00
 description: "Baixar uma p\xE1gina da web \xE9, basicamente, capturar todo o conte\xFA\
   do de uma URL para que voc\xEA possa v\xEA-lo offline ou manipul\xE1-lo programaticamente.\u2026"
-lastmod: '2024-03-11T00:14:20.743667-06:00'
+lastmod: '2024-03-13T22:44:47.004832-06:00'
 model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9, basicamente, capturar todo o conte\xFA\
   do de uma URL para que voc\xEA possa v\xEA-lo offline ou manipul\xE1-lo programaticamente.\u2026"

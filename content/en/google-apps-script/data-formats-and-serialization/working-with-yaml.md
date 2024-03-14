@@ -2,7 +2,7 @@
 date: 2024-02-01 21:11:59.655738-07:00
 description: "YAML, which stands for \"YAML Ain't Markup Language,\" is a human-readable\
   \ data serialization standard that is commonly used for configuration files and\u2026"
-lastmod: '2024-03-11T00:14:33.537047-06:00'
+lastmod: '2024-03-13T22:44:59.688325-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, which stands for \"YAML Ain't Markup Language,\" is a human-readable\
   \ data serialization standard that is commonly used for configuration files and\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:57.308394-07:00
 description: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
   \ en spesifikk dato ved \xE5 legge til eller trekke fra et visst antall dager, m\xE5\
   neder eller\u2026"
-lastmod: '2024-03-11T00:14:14.896967-06:00'
+lastmod: '2024-03-13T22:44:41.286532-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
   \ en spesifikk dato ved \xE5 legge til eller trekke fra et visst antall dager, m\xE5\

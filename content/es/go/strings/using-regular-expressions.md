@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:08.047393-07:00
 description: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan\
   \ para buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos.\
   \ Los\u2026"
-lastmod: '2024-03-11T00:14:32.326400-06:00'
+lastmod: '2024-03-13T22:44:58.455924-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan para\
   \ buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos. Los\u2026"

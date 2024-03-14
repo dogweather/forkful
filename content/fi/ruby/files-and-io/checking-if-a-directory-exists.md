@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:15.570706-07:00
 description: "Tarkistamalla, onko hakemisto olemassa Rubylla, ohjelmoijat voivat varmistaa\
   \ hakemiston olemassaolon ennen toimintojen, kuten tiedostojen lukemisen tai\u2026"
-lastmod: '2024-03-11T00:14:31.142775-06:00'
+lastmod: '2024-03-13T22:44:57.101631-06:00'
 model: gpt-4-0125-preview
 summary: "Tarkistamalla, onko hakemisto olemassa Rubylla, ohjelmoijat voivat varmistaa\
   \ hakemiston olemassaolon ennen toimintojen, kuten tiedostojen lukemisen tai\u2026"

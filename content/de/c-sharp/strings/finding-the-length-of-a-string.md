@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:03.985386-07:00
 description: "Die L\xE4nge eines Strings zu bestimmen bedeutet, die Anzahl der Zeichen\
   \ zu z\xE4hlen, die er enth\xE4lt. Das ist n\xFCtzlich, um Text zu verarbeiten,\
   \ Grenzen zu\u2026"
-lastmod: '2024-03-11T00:14:27.775205-06:00'
+lastmod: '2024-03-13T22:44:53.879375-06:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu bestimmen bedeutet, die Anzahl der Zeichen\
   \ zu z\xE4hlen, die er enth\xE4lt. Das ist n\xFCtzlich, um Text zu verarbeiten,\

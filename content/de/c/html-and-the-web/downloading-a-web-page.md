@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:41.870104-07:00
 description: "Das Herunterladen einer Webseite in C beinhaltet den programmatischen\
   \ Zugriff auf den Inhalt einer Webseite \xFCber das Internet und das lokale Speichern\
   \ zur\u2026"
-lastmod: '2024-03-11T00:14:28.260812-06:00'
+lastmod: '2024-03-13T22:44:54.350889-06:00'
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in C beinhaltet den programmatischen Zugriff\
   \ auf den Inhalt einer Webseite \xFCber das Internet und das lokale Speichern zur\u2026"

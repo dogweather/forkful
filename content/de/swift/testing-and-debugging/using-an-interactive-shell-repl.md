@@ -2,7 +2,7 @@
 date: 2024-01-26 04:17:49.451611-07:00
 description: "Die Verwendung einer interaktiven Shell oder einer Read-Eval-Print-Schleife\
   \ (REPL) erm\xF6glicht es Ihnen, interaktiv zu programmieren. Programmierer nutzen\u2026"
-lastmod: '2024-03-11T00:14:28.129746-06:00'
+lastmod: '2024-03-13T22:44:54.227188-06:00'
 model: gpt-4-0125-preview
 summary: "Die Verwendung einer interaktiven Shell oder einer Read-Eval-Print-Schleife\
   \ (REPL) erm\xF6glicht es Ihnen, interaktiv zu programmieren. Programmierer nutzen\u2026"

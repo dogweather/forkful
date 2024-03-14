@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:08.046152-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico de\
   \ cadenas en C se trata de remover todas las instancias de ciertos caracteres que\
   \ cumplen con\u2026"
-lastmod: '2024-03-11T00:14:33.365599-06:00'
+lastmod: '2024-03-13T22:44:59.527713-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico de cadenas\
   \ en C se trata de remover todas las instancias de ciertos caracteres que cumplen\

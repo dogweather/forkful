@@ -10,7 +10,7 @@ description: "Arduino \u092E\u0947\u0902 CSV (Comma-Separated Values) \u092B\u09
   \ \u092A\u0922\u093C\u0928\u0947 \u0914\u0930 \u0909\u0928\u092E\u0947\u0902 \u0932\
   \u093F\u0916\u0928\u0947 \u0915\u094B \u0936\u093E\u092E\u093F\u0932 \u0915\u0930\
   \u0924\u093E \u0939\u0948, \u091C\u094B\u2026"
-lastmod: '2024-03-11T00:14:26.748554-06:00'
+lastmod: '2024-03-13T22:44:52.812440-06:00'
 model: gpt-4-0125-preview
 summary: "Arduino \u092E\u0947\u0902 CSV (Comma-Separated Values) \u092B\u093C\u093E\
   \u0907\u0932\u094B\u0902 \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\

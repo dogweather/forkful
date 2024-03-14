@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:54.798102-07:00
 description: "Escrever em um arquivo de texto em Ruby \xE9 uma opera\xE7\xE3o fundamental\
   \ que permite armazenar sa\xEDdas e dados de forma persistente, possibilitando o\
   \ acesso ou a\u2026"
-lastmod: '2024-03-11T00:14:20.859334-06:00'
+lastmod: '2024-03-13T22:44:47.113386-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Ruby \xE9 uma opera\xE7\xE3o fundamental\
   \ que permite armazenar sa\xEDdas e dados de forma persistente, possibilitando o\

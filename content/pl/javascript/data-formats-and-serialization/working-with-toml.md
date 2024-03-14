@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:45.329890-07:00
 description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, okre\u015Bla, jak\
   \ strukturowa\u0107 pliki konfiguracyjne. Programi\u015Bci korzystaj\u0105 z TOML,\
   \ poniewa\u017C jest \u0142atwy do\u2026"
-lastmod: '2024-03-11T00:14:09.031938-06:00'
+lastmod: '2024-03-13T22:44:35.819745-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, okre\u015Bla, jak strukturowa\u0107\
   \ pliki konfiguracyjne. Programi\u015Bci korzystaj\u0105 z TOML, poniewa\u017C jest\

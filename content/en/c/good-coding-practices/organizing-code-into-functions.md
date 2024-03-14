@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:02.611930-07:00
 description: "Organizing code into functions in C involves breaking down complex tasks\
   \ into smaller, reusable blocks of code. This practice enhances readability,\u2026"
-lastmod: '2024-03-11T00:14:34.401080-06:00'
+lastmod: '2024-03-13T22:45:00.516382-06:00'
 model: gpt-4-0125-preview
 summary: "Organizing code into functions in C involves breaking down complex tasks\
   \ into smaller, reusable blocks of code. This practice enhances readability,\u2026"

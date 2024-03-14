@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:53.412695-07:00
 description: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des donn\xE9\
   es directement de celui qui lance votre script. Les programmeurs font \xE7a pour\u2026"
-lastmod: '2024-03-11T00:14:31.468843-06:00'
+lastmod: '2024-03-13T22:44:57.453512-06:00'
 model: gpt-4-1106-preview
 summary: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des donn\xE9\
   es directement de celui qui lance votre script. Les programmeurs font \xE7a pour\u2026"

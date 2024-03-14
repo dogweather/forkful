@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:49.820978-07:00
 description: "Textsuche und -ersetzung ist das schnelle Auffinden und Austauschen\
   \ von spezifischen Zeichenketten im Code. Programmierer nutzen das, um Fehler zu\u2026"
-lastmod: '2024-03-11T00:14:28.198717-06:00'
+lastmod: '2024-03-13T22:44:54.293454-06:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersetzung ist das schnelle Auffinden und Austauschen von\
   \ spezifischen Zeichenketten im Code. Programmierer nutzen das, um Fehler zu\u2026"

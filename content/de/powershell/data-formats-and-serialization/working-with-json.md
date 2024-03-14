@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:24.090170-07:00
 description: "Die Integration von PowerShell mit JSON (JavaScript Object Notation)\
   \ bezieht sich auf das Parsen (Lesen) und Generieren (Schreiben) von JSON-Daten,\
   \ einem\u2026"
-lastmod: '2024-03-11T00:14:28.024666-06:00'
+lastmod: '2024-03-13T22:44:54.124847-06:00'
 model: gpt-4-0125-preview
 summary: "Die Integration von PowerShell mit JSON (JavaScript Object Notation) bezieht\
   \ sich auf das Parsen (Lesen) und Generieren (Schreiben) von JSON-Daten, einem\u2026"

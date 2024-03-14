@@ -2,7 +2,7 @@
 date: 2024-01-26 04:44:09.636982-07:00
 description: "Komplexa tal, de med en reell del och en imagin\xE4r del (som 3 + 4i),\
   \ \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6rsvetenskap, fysik och data vetenskap.\u2026"
-lastmod: '2024-03-11T00:14:11.500913-06:00'
+lastmod: '2024-03-13T22:44:38.118219-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal, de med en reell del och en imagin\xE4r del (som 3 + 4i), \xE4\
   r avg\xF6rande inom omr\xE5den som ingenj\xF6rsvetenskap, fysik och data vetenskap.\u2026"

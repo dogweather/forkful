@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:19.741445-07:00
 description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C\
   \ inneb\xE4r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader\
   \ med\u2026"
-lastmod: '2024-03-11T00:14:11.786283-06:00'
+lastmod: '2024-03-13T22:44:38.382265-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C inneb\xE4\
   r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader med\u2026"

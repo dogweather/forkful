@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:28.360233-07:00
 description: String concatenation is sticking strings end-to-end to make a new one.
   We do it to construct messages, generate output, or work with text dynamically.
-lastmod: '2024-03-11T00:14:33.749596-06:00'
+lastmod: '2024-03-13T22:44:59.888541-06:00'
 model: gpt-4-1106-preview
 summary: String concatenation is sticking strings end-to-end to make a new one. We
   do it to construct messages, generate output, or work with text dynamically.

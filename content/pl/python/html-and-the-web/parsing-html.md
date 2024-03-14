@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:50.370614-07:00
 description: "Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej\
   \ w celu wyodr\u0119bnienia okre\u015Blonych informacji lub element\xF3w, co jest\
   \ powszechnym\u2026"
-lastmod: '2024-03-11T00:14:08.120051-06:00'
+lastmod: '2024-03-13T22:44:34.947229-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej w\
   \ celu wyodr\u0119bnienia okre\u015Blonych informacji lub element\xF3w, co jest\

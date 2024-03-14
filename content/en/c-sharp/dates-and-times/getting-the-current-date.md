@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:38.771485-07:00
 description: "Getting the current date in C# involves fetching the current date and\
   \ time details from the system. Programmers often need to access this information\
   \ for\u2026"
-lastmod: '2024-03-11T00:14:33.962651-06:00'
+lastmod: '2024-03-13T22:45:00.098691-06:00'
 model: gpt-4-0125-preview
 summary: "Getting the current date in C# involves fetching the current date and time\
   \ details from the system. Programmers often need to access this information for\u2026"

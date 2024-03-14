@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:45.200620-07:00
 description: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\xE4\
   \ on oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin.\
   \ T\xE4m\xE4 teht\xE4v\xE4\u2026"
-lastmod: '2024-03-11T00:14:30.962338-06:00'
+lastmod: '2024-03-13T22:44:56.921024-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\xE4 on\
   \ oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin.\

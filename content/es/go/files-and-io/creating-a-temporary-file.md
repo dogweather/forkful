@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:03.749342-07:00
 description: "Crear un archivo temporal en Go permite generar un archivo no persistente\
   \ dise\xF1ado para uso a corto plazo, principalmente para tareas como almacenar\
   \ datos\u2026"
-lastmod: '2024-03-11T00:14:32.359498-06:00'
+lastmod: '2024-03-13T22:44:58.490851-06:00'
 model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en Go permite generar un archivo no persistente\
   \ dise\xF1ado para uso a corto plazo, principalmente para tareas como almacenar\

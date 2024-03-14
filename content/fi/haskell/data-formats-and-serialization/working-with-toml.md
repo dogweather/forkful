@@ -3,7 +3,7 @@ date: 2024-01-26 04:22:44.683304-07:00
 description: "TOML:lla ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-datan (Tom's Obvious,\
   \ Minimal Language) j\xE4sent\xE4misen ja luomisen Haskellilla. Ohjelmoijat tekev\xE4\
   t sen helposti\u2026"
-lastmod: '2024-03-11T00:14:30.588330-06:00'
+lastmod: '2024-03-13T22:44:56.637731-06:00'
 model: gpt-4-0125-preview
 summary: "TOML:lla ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-datan (Tom's Obvious, Minimal\
   \ Language) j\xE4sent\xE4misen ja luomisen Haskellilla. Ohjelmoijat tekev\xE4t sen\

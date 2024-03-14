@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:38.912985-07:00
 description: "Pisanie test\xF3w w Elm polega na tworzeniu przypadk\xF3w testowych\
   \ w celu zweryfikowania poprawno\u015Bci kodu Elm, zapewniaj\u0105c, \u017Ce dzia\u0142\
   a on zgodnie z\u2026"
-lastmod: '2024-03-11T00:14:08.504103-06:00'
+lastmod: '2024-03-13T22:44:35.325261-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Elm polega na tworzeniu przypadk\xF3w testowych w celu\
   \ zweryfikowania poprawno\u015Bci kodu Elm, zapewniaj\u0105c, \u017Ce dzia\u0142\

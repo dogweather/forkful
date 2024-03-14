@@ -6,7 +6,7 @@ description: "Trong Ruby, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7
   \ th\xE0nh ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i t\u1EA5\
   t c\u1EA3 c\xE1c ch\u1EEF c\xE1i vi\u1EBFt hoa trong chu\u1ED7i th\xE0nh c\xE1c\
   \ ch\u1EEF c\xE1i vi\u1EBFt th\u01B0\u1EDDng t\u01B0\u01A1ng\u2026"
-lastmod: '2024-03-11T00:14:10.620814-06:00'
+lastmod: '2024-03-13T22:44:37.315018-06:00'
 model: gpt-4-0125-preview
 summary: "Trong Ruby, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0\
   nh ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i t\u1EA5t\

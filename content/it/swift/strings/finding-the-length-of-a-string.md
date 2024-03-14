@@ -2,7 +2,7 @@
 date: 2024-01-20 17:48:33.683215-07:00
 description: "In Swift, conoscere la lunghezza di una stringa significa sapere quanti\
   \ caratteri contiene. I programmatori lo fanno per validare input, manipolare testo,\u2026"
-lastmod: '2024-03-11T00:14:17.378003-06:00'
+lastmod: '2024-03-13T22:44:43.761284-06:00'
 model: gpt-4-1106-preview
 summary: "In Swift, conoscere la lunghezza di una stringa significa sapere quanti\
   \ caratteri contiene. I programmatori lo fanno per validare input, manipolare testo,\u2026"

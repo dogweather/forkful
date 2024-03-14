@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:24.667467-07:00
 description: "L'interpolation de cha\xEEne est une m\xE9thode pour construire des\
   \ cha\xEEnes qui incorporent des variables, permettant la cr\xE9ation dynamique\
   \ de cha\xEEnes. Les\u2026"
-lastmod: '2024-03-11T00:14:31.157712-06:00'
+lastmod: '2024-03-13T22:44:57.117217-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEne est une m\xE9thode pour construire des cha\xEE\
   nes qui incorporent des variables, permettant la cr\xE9ation dynamique de cha\xEE\

@@ -5,7 +5,7 @@ date: 2024-01-30 19:11:23.817917-07:00
 description: "Assoziative Arrays, oder wie sie in JavaScript genauer bekannt sind,\
   \ Objekte, erm\xF6glichen es Ihnen, Schl\xFCssel mit Werten zu verbinden. Das ist\
   \ besonders\u2026"
-lastmod: '2024-03-11T00:14:28.163144-06:00'
+lastmod: '2024-03-13T22:44:54.259189-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oder wie sie in JavaScript genauer bekannt sind, Objekte,\
   \ erm\xF6glichen es Ihnen, Schl\xFCssel mit Werten zu verbinden. Das ist besonders\u2026"

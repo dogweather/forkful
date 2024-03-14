@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:05.224032-07:00
 description: "Zamiana liter na wielkie (kapitalizacja) w ci\u0105gu znak\xF3w polega\
   \ na zmodyfikowaniu pierwszej litery s\u0142owa lub ca\u0142ego zdania na wielk\u0105\
   \ liter\u0119, pozostawiaj\u0105c\u2026"
-lastmod: '2024-03-11T00:14:08.241746-06:00'
+lastmod: '2024-03-13T22:44:35.070694-06:00'
 model: gpt-4-0125-preview
 summary: "Zamiana liter na wielkie (kapitalizacja) w ci\u0105gu znak\xF3w polega na\
   \ zmodyfikowaniu pierwszej litery s\u0142owa lub ca\u0142ego zdania na wielk\u0105\

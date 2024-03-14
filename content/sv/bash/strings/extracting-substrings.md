@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:18.425262-07:00
 description: "Extrahering av substr\xE4ngar inneb\xE4r att plocka ut specifika delar\
   \ ur en l\xE4ngre textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att manipulera\
   \ och bearbeta data,\u2026"
-lastmod: '2024-03-11T00:14:11.449279-06:00'
+lastmod: '2024-03-13T22:44:38.069702-06:00'
 model: gpt-4-1106-preview
 summary: "Extrahering av substr\xE4ngar inneb\xE4r att plocka ut specifika delar ur\
   \ en l\xE4ngre textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att manipulera och\

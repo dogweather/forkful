@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:55.852652-07:00
 description: "\xC9crire un fichier texte avec Arduino implique de sauvegarder des\
   \ donn\xE9es dans un fichier sur une carte SD ou un module de stockage similaire,\
   \ souvent dans\u2026"
-lastmod: '2024-03-11T00:14:32.034335-06:00'
+lastmod: '2024-03-13T22:44:58.133639-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte avec Arduino implique de sauvegarder des donn\xE9\
   es dans un fichier sur une carte SD ou un module de stockage similaire, souvent\

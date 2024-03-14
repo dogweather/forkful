@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:37.962413-07:00
 description: "Konvertering av dato til streng gj\xF8r datoen menneskeleselig. Programmerere\
   \ trenger dette for \xE5 vise datoer i apper og logger som folk faktisk forst\xE5\
   r."
-lastmod: '2024-03-11T00:14:14.751748-06:00'
+lastmod: '2024-03-13T22:44:41.153581-06:00'
 model: gpt-4-1106-preview
 summary: "Konvertering av dato til streng gj\xF8r datoen menneskeleselig. Programmerere\
   \ trenger dette for \xE5 vise datoer i apper og logger som folk faktisk forst\xE5\

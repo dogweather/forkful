@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:01:16.804335-07:00
 description: "La recherche et le remplacement de texte dans Visual Basic pour Applications\
   \ (VBA) sont essentiels pour \xE9diter des documents, des feuilles de calcul et\u2026"
-lastmod: '2024-03-11T00:14:31.527473-06:00'
+lastmod: '2024-03-13T22:44:57.534456-06:00'
 model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte dans Visual Basic pour Applications\
   \ (VBA) sont essentiels pour \xE9diter des documents, des feuilles de calcul et\u2026"

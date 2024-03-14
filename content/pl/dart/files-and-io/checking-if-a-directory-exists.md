@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:03.432847-07:00
 description: "Sprawdzanie, czy katalog istnieje w j\u0119zyku Dart, polega na weryfikacji\
   \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
   \ plik\xF3w przed wykonaniem\u2026"
-lastmod: '2024-03-11T00:14:08.279983-06:00'
+lastmod: '2024-03-13T22:44:35.107796-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku Dart, polega na weryfikacji\
   \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\

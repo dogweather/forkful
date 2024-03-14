@@ -3,7 +3,7 @@ date: 2024-01-26 00:59:29.574352-07:00
 description: "Lokitus on k\xE4yt\xE4nt\xF6, jossa ohjelman suoritusprosessien tapahtumat,\
   \ virheet ja muu merkitt\xE4v\xE4 tieto tallennetaan tiedostoon tai tulostevirtaan.\
   \ Ohjelmoijat\u2026"
-lastmod: '2024-03-11T00:14:30.701975-06:00'
+lastmod: '2024-03-13T22:44:56.745611-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on k\xE4yt\xE4nt\xF6, jossa ohjelman suoritusprosessien tapahtumat,\
   \ virheet ja muu merkitt\xE4v\xE4 tieto tallennetaan tiedostoon tai tulostevirtaan.\

@@ -3,7 +3,7 @@ date: 2024-01-26 00:53:30.636622-07:00
 description: "Feilh\xE5ndtering betyr \xE5 skrive kode som forventer og h\xE5ndterer\
   \ at ting g\xE5r galt. Programm\xF8rer gj\xF8r dette for \xE5 gj\xF8re programvaren\
   \ robust, for \xE5 forhindre\u2026"
-lastmod: '2024-03-11T00:14:14.215972-06:00'
+lastmod: '2024-03-13T22:44:40.673954-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering betyr \xE5 skrive kode som forventer og h\xE5ndterer at\
   \ ting g\xE5r galt. Programm\xF8rer gj\xF8r dette for \xE5 gj\xF8re programvaren\

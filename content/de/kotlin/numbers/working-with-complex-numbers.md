@@ -2,7 +2,7 @@
 date: 2024-01-26 04:42:36.965924-07:00
 description: "Komplexe Zahlen erweitern unser Zahlensystem um die Quadratwurzeln negativer\
   \ Zahlen, wobei die 'imagin\xE4re' Einheit i gleich der Quadratwurzel von -1 ist.\u2026"
-lastmod: '2024-03-11T00:14:27.733611-06:00'
+lastmod: '2024-03-13T22:44:53.840952-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern unser Zahlensystem um die Quadratwurzeln negativer\
   \ Zahlen, wobei die 'imagin\xE4re' Einheit i gleich der Quadratwurzel von -1 ist.\u2026"

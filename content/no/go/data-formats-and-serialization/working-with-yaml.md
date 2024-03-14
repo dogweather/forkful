@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:45.965929-07:00
 description: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ain't\
   \ Markup Language) filer, en menneskevennlig standard for dataserielisering, inn\
   \ i Go\u2026"
-lastmod: '2024-03-11T00:14:13.805899-06:00'
+lastmod: '2024-03-13T22:44:40.289929-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ain't Markup\
   \ Language) filer, en menneskevennlig standard for dataserielisering, inn i Go\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:43.834640-07:00
 description: "Convertir una cadena a min\xFAsculas transforma todos los caracteres\
   \ alfab\xE9ticos en su equivalente en min\xFAsculas. Esto es \xFAtil para uniformizar\
   \ datos,\u2026"
-lastmod: '2024-03-11T00:14:32.828634-06:00'
+lastmod: '2024-03-13T22:44:59.022953-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas transforma todos los caracteres alfab\xE9\
   ticos en su equivalente en min\xFAsculas. Esto es \xFAtil para uniformizar datos,\u2026"

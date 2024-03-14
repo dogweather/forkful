@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:36.793597-07:00
 description: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4.\
   \ Tarvitaan esimerkiksi m\xE4\xE4ritt\xE4m\xE4\xE4n er\xE4p\xE4ivi\xE4 tai ajastamaan\
   \ tapahtumia."
-lastmod: '2024-03-11T00:14:30.916476-06:00'
+lastmod: '2024-03-13T22:44:56.878945-06:00'
 model: gpt-4-1106-preview
 summary: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4. Tarvitaan\
   \ esimerkiksi m\xE4\xE4ritt\xE4m\xE4\xE4n er\xE4p\xE4ivi\xE4 tai ajastamaan tapahtumia."

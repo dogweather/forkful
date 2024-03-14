@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:28.705676-07:00
 description: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery polega na zmianie\
   \ wszystkich wielkich liter w napisie na ich ma\u0142e odpowiedniki. Programi\u015B\
   ci robi\u0105 to, by ujednolici\u0107\u2026"
-lastmod: '2024-03-11T00:14:09.038389-06:00'
+lastmod: '2024-03-13T22:44:35.825581-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery polega na zmianie wszystkich\
   \ wielkich liter w napisie na ich ma\u0142e odpowiedniki. Programi\u015Bci robi\u0105\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:57.492309-07:00
 description: Searching and replacing text lets you find strings and swap them out.
   Programmers use it to update code, refactor, or change data quickly.
-lastmod: '2024-03-11T00:14:33.978363-06:00'
+lastmod: '2024-03-13T22:45:00.114180-06:00'
 model: gpt-4-1106-preview
 summary: Searching and replacing text lets you find strings and swap them out. Programmers
   use it to update code, refactor, or change data quickly.

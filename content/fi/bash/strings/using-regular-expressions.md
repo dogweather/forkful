@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:16:13.089329-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Bashissa mahdollistavat merkkijonojen\
   \ ja tiedostojen etsimisen, manipuloinnin ja k\xE4sittelyn tiettyjen mallien perusteella.\u2026"
-lastmod: '2024-03-11T00:14:30.682917-06:00'
+lastmod: '2024-03-13T22:44:56.727989-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Bashissa mahdollistavat merkkijonojen\
   \ ja tiedostojen etsimisen, manipuloinnin ja k\xE4sittelyn tiettyjen mallien perusteella.\u2026"

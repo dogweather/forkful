@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-30 19:11:38.852432-07:00
 description: "Associatieve arrays, of woordenboeken, in Haskell gaan helemaal over\
   \ het koppelen van sleutels aan waarden voor snelle opzoekingen en effici\xEBnt\u2026"
-lastmod: '2024-03-11T00:14:24.673676-06:00'
+lastmod: '2024-03-13T22:44:50.845113-06:00'
 model: gpt-4-0125-preview
 summary: "Associatieve arrays, of woordenboeken, in Haskell gaan helemaal over het\
   \ koppelen van sleutels aan waarden voor snelle opzoekingen en effici\xEBnt\u2026"

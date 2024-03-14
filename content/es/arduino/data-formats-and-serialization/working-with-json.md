@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:33.473104-07:00
 description: "JSON, que significa Notaci\xF3n de Objetos JavaScript, es un formato\
   \ ligero de intercambio de datos, lo que lo hace perfecto para almacenamiento de\
   \ datos o\u2026"
-lastmod: '2024-03-11T00:14:33.177542-06:00'
+lastmod: '2024-03-13T22:44:59.355676-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, que significa Notaci\xF3n de Objetos JavaScript, es un formato ligero\
   \ de intercambio de datos, lo que lo hace perfecto para almacenamiento de datos\

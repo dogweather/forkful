@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-28 03:00:43.691521-07:00
 description: "L'analyse (parsing) HTML consiste \xE0 extraire des donn\xE9es des documents\
   \ HTML. Les programmeurs le font pour interagir avec ou manipuler le contenu web,\u2026"
-lastmod: '2024-03-11T00:14:32.147038-06:00'
+lastmod: '2024-03-13T22:44:58.273308-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse (parsing) HTML consiste \xE0 extraire des donn\xE9es des documents\
   \ HTML. Les programmeurs le font pour interagir avec ou manipuler le contenu web,\u2026"

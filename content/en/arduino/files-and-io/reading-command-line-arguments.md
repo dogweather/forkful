@@ -2,7 +2,7 @@
 date: 2024-01-20 17:55:35.017411-07:00
 description: "Reading command line arguments means grabbing the data passed to a program\
   \ when you start it from a terminal or command prompt. Programmers use arguments\u2026"
-lastmod: '2024-03-11T00:14:34.203258-06:00'
+lastmod: '2024-03-13T22:45:00.334856-06:00'
 model: gpt-4-1106-preview
 summary: "Reading command line arguments means grabbing the data passed to a program\
   \ when you start it from a terminal or command prompt. Programmers use arguments\u2026"

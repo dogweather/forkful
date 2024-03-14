@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:57:58.913275-07:00
 description: "Escrever um arquivo de texto em Dart envolve criar ou modificar arquivos\
   \ no disco para armazenar dados de forma leg\xEDvel. Programadores fazem isso para\u2026"
-lastmod: '2024-03-11T00:14:19.985490-06:00'
+lastmod: '2024-03-13T22:44:46.301429-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Dart envolve criar ou modificar arquivos\
   \ no disco para armazenar dados de forma leg\xEDvel. Programadores fazem isso para\u2026"

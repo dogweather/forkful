@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:34.896501-07:00
 description: "Att skicka en HTTP-beg\xE4ran med Basic-autentisering inneb\xE4r att\
   \ man legitimerar sig mot en server med anv\xE4ndarnamn och l\xF6senord kodat i\
   \ base64.\u2026"
-lastmod: '2024-03-11T00:14:11.177179-06:00'
+lastmod: '2024-03-13T22:44:37.828903-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran med Basic-autentisering inneb\xE4r att man\
   \ legitimerar sig mot en server med anv\xE4ndarnamn och l\xF6senord kodat i base64.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 18:04:17.199205-07:00
 description: "D\xE9marrer un nouveau projet, c'est comme planter une graine num\xE9\
   rique : on l'arrose de code et elle pousse pour devenir une application. Les programmeurs\u2026"
-lastmod: '2024-03-11T00:14:32.292724-06:00'
+lastmod: '2024-03-13T22:44:58.420662-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est comme planter une graine num\xE9rique\
   \ : on l'arrose de code et elle pousse pour devenir une application. Les programmeurs\u2026"

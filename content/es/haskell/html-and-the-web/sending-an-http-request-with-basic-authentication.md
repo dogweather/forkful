@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:00.518598-07:00
 description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica incluir\
   \ credenciales de usuario (usuario y contrase\xF1a) en una solicitud para acceder\
   \ a recursos\u2026"
-lastmod: '2024-03-11T00:14:32.932229-06:00'
+lastmod: '2024-03-13T22:44:59.118677-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica incluir\
   \ credenciales de usuario (usuario y contrase\xF1a) en una solicitud para acceder\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:07:33.044836-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun\
   \ merkkijonon alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"
-lastmod: '2024-03-11T00:14:29.962271-06:00'
+lastmod: '2024-03-13T22:44:56.037569-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun merkkijonon\
   \ alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"

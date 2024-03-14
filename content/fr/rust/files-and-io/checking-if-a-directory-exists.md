@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:37.614608-07:00
 description: "Dans le d\xE9veloppement de logiciels, il est souvent n\xE9cessaire\
   \ de v\xE9rifier si un r\xE9pertoire existe pour \xE9viter les erreurs lors de la\
   \ tentative d'acc\xE8s, de\u2026"
-lastmod: '2024-03-11T00:14:31.513223-06:00'
+lastmod: '2024-03-13T22:44:57.498341-06:00'
 model: gpt-4-0125-preview
 summary: "Dans le d\xE9veloppement de logiciels, il est souvent n\xE9cessaire de v\xE9\
   rifier si un r\xE9pertoire existe pour \xE9viter les erreurs lors de la tentative\

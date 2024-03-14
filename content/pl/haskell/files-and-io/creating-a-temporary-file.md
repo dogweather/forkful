@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:24.484283-07:00
 description: "Tworzenie tymczasowych plik\xF3w to proces generowania plik\xF3w, kt\xF3\
   re istniej\u0105 tylko przez kr\xF3tki czas, zazwyczaj do przechowania danych mi\u0119\
   dzyoperacyjnych.\u2026"
-lastmod: '2024-03-11T00:14:08.657187-06:00'
+lastmod: '2024-03-13T22:44:35.472760-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowych plik\xF3w to proces generowania plik\xF3w, kt\xF3\
   re istniej\u0105 tylko przez kr\xF3tki czas, zazwyczaj do przechowania danych mi\u0119\

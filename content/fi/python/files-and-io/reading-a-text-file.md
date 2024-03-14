@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:09.181652-07:00
 description: "Lukeminen tarkoittaa tiedoston datan siirt\xE4mist\xE4 ohjelmasi k\xE4\
   ytt\xF6\xF6n. Ohjelmoijat lukevat tekstitiedostoja, koska niist\xE4 saa t\xE4rke\xE4\
   \xE4 tietoa \u2013 asetukset,\u2026"
-lastmod: '2024-03-11T00:14:30.088057-06:00'
+lastmod: '2024-03-13T22:44:56.160949-06:00'
 model: gpt-4-1106-preview
 summary: "Lukeminen tarkoittaa tiedoston datan siirt\xE4mist\xE4 ohjelmasi k\xE4ytt\xF6\
   \xF6n. Ohjelmoijat lukevat tekstitiedostoja, koska niist\xE4 saa t\xE4rke\xE4\xE4\

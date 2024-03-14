@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:15.783024-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller handling\
   \ fra en webserver. Programmerere gj\xF8r det for \xE5 integrere nettjenester og\
   \ hente data dynamisk."
-lastmod: '2024-03-11T00:14:14.298828-06:00'
+lastmod: '2024-03-13T22:44:40.747120-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller handling fra\
   \ en webserver. Programmerere gj\xF8r det for \xE5 integrere nettjenester og hente\

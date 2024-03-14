@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:47.151032-07:00
 description: "I programvareutvikling er det ofte n\xF8dvendig \xE5 sjekke om en mappe\
   \ eksisterer for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5 f\xE5 tilgang til,\
   \ lese, eller skrive filer.\u2026"
-lastmod: '2024-03-11T00:14:14.125711-06:00'
+lastmod: '2024-03-13T22:44:40.588416-06:00'
 model: gpt-4-0125-preview
 summary: "I programvareutvikling er det ofte n\xF8dvendig \xE5 sjekke om en mappe\
   \ eksisterer for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5 f\xE5 tilgang til,\

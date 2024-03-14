@@ -5,7 +5,7 @@ date: 2024-02-03 18:13:15.274995-07:00
 description: "Att arbeta med XML i Go inneb\xE4r att tolka (l\xE4sa) och generera\
   \ (skriva) XML-dokument \u2013 ett standardformat f\xF6r utbyte av strukturerad\
   \ data. Programmerare\u2026"
-lastmod: '2024-03-11T00:14:10.724661-06:00'
+lastmod: '2024-03-13T22:44:37.418348-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Go inneb\xE4r att tolka (l\xE4sa) och generera (skriva)\
   \ XML-dokument \u2013 ett standardformat f\xF6r utbyte av strukturerad data. Programmerare\u2026"

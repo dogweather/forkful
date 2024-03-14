@@ -3,7 +3,7 @@ date: 2024-01-26 01:08:45.825534-07:00
 description: "Registrar logs \xE9 como manter um di\xE1rio para a sua aplica\xE7\xE3\
   o; \xE9 a pr\xE1tica de gravar eventos, erros e outros dados pertinentes durante\
   \ a execu\xE7\xE3o.\u2026"
-lastmod: '2024-03-11T00:14:20.065121-06:00'
+lastmod: '2024-03-13T22:44:46.374024-06:00'
 model: gpt-4-1106-preview
 summary: "Registrar logs \xE9 como manter um di\xE1rio para a sua aplica\xE7\xE3o;\
   \ \xE9 a pr\xE1tica de gravar eventos, erros e outros dados pertinentes durante\

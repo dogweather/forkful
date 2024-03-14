@@ -2,7 +2,7 @@
 date: 2024-01-20 15:32:05.303264-07:00
 description: "Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne\
   \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"
-lastmod: '2024-03-11T00:14:16.875003-06:00'
+lastmod: '2024-03-13T22:44:43.306808-06:00'
 model: unknown
 summary: "Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne\
   \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"

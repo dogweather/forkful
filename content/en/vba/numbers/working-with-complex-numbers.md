@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:18.778843-07:00
 description: "Working with complex numbers involves performing mathematical operations\
   \ on numbers that have both a real part and an imaginary part. Programmers often\u2026"
-lastmod: '2024-03-11T00:14:33.790944-06:00'
+lastmod: '2024-03-13T22:44:59.928948-06:00'
 model: gpt-4-0125-preview
 summary: "Working with complex numbers involves performing mathematical operations\
   \ on numbers that have both a real part and an imaginary part. Programmers often\u2026"

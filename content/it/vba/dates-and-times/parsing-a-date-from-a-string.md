@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:48.771439-07:00
 description: "Analizzare una data da una stringa in Visual Basic for Applications\
   \ (VBA) consiste nel convertire un testo che rappresenta una data in un tipo di\
   \ dati\u2026"
-lastmod: '2024-03-11T00:14:16.840476-06:00'
+lastmod: '2024-03-13T22:44:43.273586-06:00'
 model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa in Visual Basic for Applications (VBA)\
   \ consiste nel convertire un testo che rappresenta una data in un tipo di dati\u2026"

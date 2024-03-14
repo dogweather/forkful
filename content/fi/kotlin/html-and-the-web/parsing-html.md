@@ -3,7 +3,7 @@ date: 2024-01-20 15:32:28.787617-07:00
 description: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin\
   \ muuttamista rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6\
   dyksi. Koodaajat\u2026"
-lastmod: '2024-03-11T00:14:30.473516-06:00'
+lastmod: '2024-03-13T22:44:56.528422-06:00'
 model: unknown
 summary: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin muuttamista\
   \ rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6dyksi. Koodaajat\u2026"

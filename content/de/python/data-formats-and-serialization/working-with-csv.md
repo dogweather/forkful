@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:48.364723-07:00
 description: "Die Arbeit mit CSV (Comma-Separated Values, durch Kommas getrennte Werte)\
   \ umfasst das Lesen von und das Schreiben in CSV-Dateien, einem g\xE4ngigen Format\u2026"
-lastmod: '2024-03-11T00:14:27.364895-06:00'
+lastmod: '2024-03-13T22:44:53.400939-06:00'
 model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV (Comma-Separated Values, durch Kommas getrennte Werte)\
   \ umfasst das Lesen von und das Schreiben in CSV-Dateien, einem g\xE4ngigen Format\u2026"

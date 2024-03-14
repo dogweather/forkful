@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:44.477376-07:00
 description: "Lire les arguments de ligne de commande permet \xE0 vos scripts Python\
   \ de prendre des donn\xE9es directement depuis le terminal. Les programmeurs utilisent\
   \ cela\u2026"
-lastmod: '2024-03-11T00:14:31.286269-06:00'
+lastmod: '2024-03-13T22:44:57.252753-06:00'
 model: gpt-4-1106-preview
 summary: "Lire les arguments de ligne de commande permet \xE0 vos scripts Python de\
   \ prendre des donn\xE9es directement depuis le terminal. Les programmeurs utilisent\

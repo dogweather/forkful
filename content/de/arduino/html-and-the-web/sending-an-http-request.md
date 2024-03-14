@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:51.582090-07:00
 description: "HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren\
   \ \u2013 so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-\u2026"
-lastmod: '2024-03-11T00:14:28.041963-06:00'
+lastmod: '2024-03-13T22:44:54.141777-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren \u2013\
   \ so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-\u2026"

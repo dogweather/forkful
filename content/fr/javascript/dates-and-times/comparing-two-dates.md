@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:19.088451-07:00
 description: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique. On le\
   \ fait pour trier des \xE9v\xE8nements, programmer des rappels, ou calculer des\
   \ dur\xE9es."
-lastmod: '2024-03-11T00:14:32.162513-06:00'
+lastmod: '2024-03-13T22:44:58.289204-06:00'
 model: gpt-4-1106-preview
 summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique. On le fait\
   \ pour trier des \xE9v\xE8nements, programmer des rappels, ou calculer des dur\xE9\

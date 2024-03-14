@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:54:33.436627-07:00
 description: "De huidige datum krijgen in Google Apps Script gaat over het ophalen\
   \ van de live datum en tijd, een gebruikelijke taak voor het automatiseren van taken,\u2026"
-lastmod: '2024-03-11T00:14:24.152359-06:00'
+lastmod: '2024-03-13T22:44:50.342989-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum krijgen in Google Apps Script gaat over het ophalen van\
   \ de live datum en tijd, een gebruikelijke taak voor het automatiseren van taken,\u2026"

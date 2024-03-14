@@ -3,7 +3,7 @@ date: 2024-01-27 20:35:24.753946-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o \xE9 sobre criar\
   \ valores num\xE9ricos n\xE3o determin\xEDsticos ou imprevis\xEDveis. Programadores\
   \ usam n\xFAmeros aleat\xF3rios por\u2026"
-lastmod: '2024-03-11T00:14:20.648013-06:00'
+lastmod: '2024-03-13T22:44:46.916559-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o \xE9 sobre criar valores\
   \ num\xE9ricos n\xE3o determin\xEDsticos ou imprevis\xEDveis. Programadores usam\

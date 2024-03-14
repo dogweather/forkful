@@ -2,7 +2,7 @@
 date: 2024-01-20 17:41:35.654283-07:00
 description: "Kun puhumme merkkien poistamisesta kuvioon pohjautuen, tarkoitamme tietynlaisen\
   \ datan siivoamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan\u2026"
-lastmod: '2024-03-11T00:14:30.831836-06:00'
+lastmod: '2024-03-13T22:44:56.809505-06:00'
 model: gpt-4-1106-preview
 summary: "Kun puhumme merkkien poistamisesta kuvioon pohjautuen, tarkoitamme tietynlaisen\
   \ datan siivoamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan\u2026"

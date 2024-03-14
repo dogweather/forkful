@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:00.609836-07:00
 description: "D\xE9marrer un nouveau projet, c'est mettre la premi\xE8re pierre \xE0\
   \ votre \xE9difice num\xE9rique. Les programmeurs le font pour concr\xE9tiser une\
   \ id\xE9e, apprendre une\u2026"
-lastmod: '2024-03-11T00:14:31.688298-06:00'
+lastmod: '2024-03-13T22:44:57.739664-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet, c'est mettre la premi\xE8re pierre \xE0 votre\
   \ \xE9difice num\xE9rique. Les programmeurs le font pour concr\xE9tiser une id\xE9\

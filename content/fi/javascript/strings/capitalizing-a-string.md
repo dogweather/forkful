@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:46.247668-07:00
 description: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen isoksi kirjaimeksi\
   \ pit\xE4en loput merkit ennallaan tarkoittaa merkkijonon alkukirjaimen suurentamista.\
   \ T\xE4t\xE4\u2026"
-lastmod: '2024-03-11T00:14:30.974658-06:00'
+lastmod: '2024-03-13T22:44:56.933094-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen isoksi kirjaimeksi pit\xE4\
   en loput merkit ennallaan tarkoittaa merkkijonon alkukirjaimen suurentamista. T\xE4\

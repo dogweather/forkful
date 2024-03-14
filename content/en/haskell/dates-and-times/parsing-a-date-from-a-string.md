@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:40.407752-07:00
 description: "Parsing a date from a string in Haskell involves converting textual\
   \ representations of dates into a structured format that the program can manipulate.\u2026"
-lastmod: '2024-03-11T00:14:34.001241-06:00'
+lastmod: '2024-03-13T22:45:00.137102-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Haskell involves converting textual representations\
   \ of dates into a structured format that the program can manipulate.\u2026"

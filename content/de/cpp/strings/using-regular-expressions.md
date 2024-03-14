@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:16:08.242879-07:00
 description: "Regul\xE4re Ausdr\xFCcke in C++ sind Zeichenfolgen, die ein Suchmuster\
   \ definieren, genutzt f\xFCr Zeichenkettenabgleiche oder -manipulation. Programmierer\u2026"
-lastmod: '2024-03-11T00:14:28.076659-06:00'
+lastmod: '2024-03-13T22:44:54.174619-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke in C++ sind Zeichenfolgen, die ein Suchmuster definieren,\
   \ genutzt f\xFCr Zeichenkettenabgleiche oder -manipulation. Programmierer\u2026"

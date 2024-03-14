@@ -2,7 +2,7 @@
 date: 2024-01-26 03:45:57.137329-07:00
 description: "Avrunding av tall betyr \xE5 justere dem til n\xE6rmeste heltall eller\
   \ angitt desimalplass. Det er en grunnpilar i programmering for \xE5 redusere kompleksitet,\u2026"
-lastmod: '2024-03-11T00:14:14.494664-06:00'
+lastmod: '2024-03-13T22:44:40.925002-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding av tall betyr \xE5 justere dem til n\xE6rmeste heltall eller angitt\
   \ desimalplass. Det er en grunnpilar i programmering for \xE5 redusere kompleksitet,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:36.706359-07:00
 description: "Pisanie test\xF3w w Bashu obejmuje tworzenie skrypt\xF3w testowych w\
   \ celu weryfikacji funkcjonalno\u015Bci twoich skrypt\xF3w Bash. Programi\u015B\
   ci przeprowadzaj\u0105 testy,\u2026"
-lastmod: '2024-03-11T00:14:08.779474-06:00'
+lastmod: '2024-03-13T22:44:35.588560-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Bashu obejmuje tworzenie skrypt\xF3w testowych w celu\
   \ weryfikacji funkcjonalno\u015Bci twoich skrypt\xF3w Bash. Programi\u015Bci przeprowadzaj\u0105\

@@ -3,7 +3,7 @@ date: 2024-01-26 03:44:22.228952-07:00
 description: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych,\
   \ aby upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\
   ci robi\u0105 to dla\u2026"
-lastmod: '2024-03-11T00:14:09.046517-06:00'
+lastmod: '2024-03-13T22:44:35.833838-06:00'
 model: gpt-4-0125-preview
 summary: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych, aby\
   \ upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:22.423840-07:00
 description: "Testien kirjoittaminen JavaScriptill\xE4 viittaa automatisoitujen skriptien\
   \ luomiseen, jotka ajavat koodiasi varmistaakseen sen toimivan odotetulla tavalla.\u2026"
-lastmod: '2024-03-11T00:14:30.995808-06:00'
+lastmod: '2024-03-13T22:44:56.953297-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen JavaScriptill\xE4 viittaa automatisoitujen skriptien\
   \ luomiseen, jotka ajavat koodiasi varmistaakseen sen toimivan odotetulla tavalla.\u2026"

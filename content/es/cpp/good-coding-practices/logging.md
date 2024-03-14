@@ -3,7 +3,7 @@ date: 2024-01-26 01:00:34.141394-07:00
 description: "El registro (logging) en el contexto de la programaci\xF3n es el proceso\
   \ de grabar eventos, estados e informaci\xF3n en un archivo u otro medio de salida.\
   \ Los\u2026"
-lastmod: '2024-03-11T00:14:33.204505-06:00'
+lastmod: '2024-03-13T22:44:59.381736-06:00'
 model: gpt-4-1106-preview
 summary: "El registro (logging) en el contexto de la programaci\xF3n es el proceso\
   \ de grabar eventos, estados e informaci\xF3n en un archivo u otro medio de salida.\

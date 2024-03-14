@@ -2,7 +2,7 @@
 date: 2024-01-20 17:45:49.829968-07:00
 description: "Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat\
   \ tekev\xE4t t\xE4t\xE4 tietojen j\xE4sentelyyn, tietokantojen k\xE4sittelyyn ja\u2026"
-lastmod: '2024-03-11T00:14:30.145933-06:00'
+lastmod: '2024-03-13T22:44:56.215417-06:00'
 model: gpt-4-1106-preview
 summary: "Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat\
   \ tekev\xE4t t\xE4t\xE4 tietojen j\xE4sentelyyn, tietokantojen k\xE4sittelyyn ja\u2026"

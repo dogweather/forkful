@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:34.499120-07:00
 description: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Visual Basic for Applications\
   \ (VBA) to proces zmiany typu danych daty na format \u0142a\u0144cucha znak\xF3\
   w. Programi\u015Bci cz\u0119sto\u2026"
-lastmod: '2024-03-11T00:14:08.420380-06:00'
+lastmod: '2024-03-13T22:44:35.244517-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Visual Basic for Applications\
   \ (VBA) to proces zmiany typu danych daty na format \u0142a\u0144cucha znak\xF3\

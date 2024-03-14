@@ -3,7 +3,7 @@ date: 2024-01-26 04:17:07.129036-07:00
 description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht\
   \ es, Code in Echtzeit zu testen. Programmierer nutzen sie, um zu experimentieren,\
   \ Fehler\u2026"
-lastmod: '2024-03-11T00:14:28.314607-06:00'
+lastmod: '2024-03-13T22:44:54.402034-06:00'
 model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht es,\
   \ Code in Echtzeit zu testen. Programmierer nutzen sie, um zu experimentieren, Fehler\u2026"

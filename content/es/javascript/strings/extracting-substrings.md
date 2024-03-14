@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:11.614329-07:00
 description: "Extraer subcadenas es tomar trozos espec\xEDficos de una cadena de texto.\
   \ Los programadores lo hacen para analizar y manipular datos, como mostrar solo\
   \ un\u2026"
-lastmod: '2024-03-11T00:14:33.277539-06:00'
+lastmod: '2024-03-13T22:44:59.447883-06:00'
 model: gpt-4-1106-preview
 summary: "Extraer subcadenas es tomar trozos espec\xEDficos de una cadena de texto.\
   \ Los programadores lo hacen para analizar y manipular datos, como mostrar solo\

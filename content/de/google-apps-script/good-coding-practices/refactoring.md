@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:00:33.060270-07:00
 description: "Refactoring im Programmierlexikon bezieht sich auf den Prozess des Umstrukturierens\
   \ bestehenden Computer-Codes \u2013 das \xC4ndern der Faktorierung ohne \xC4nderung\u2026"
-lastmod: '2024-03-11T00:14:27.303443-06:00'
+lastmod: '2024-03-13T22:44:53.343207-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring im Programmierlexikon bezieht sich auf den Prozess des Umstrukturierens\
   \ bestehenden Computer-Codes \u2013 das \xC4ndern der Faktorierung ohne \xC4nderung\u2026"

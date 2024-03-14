@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:00.193610-07:00
 description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man letar\
   \ igenom en textstr\xE4ng och tar bort specifika tecken eller sekvenser av tecken.\u2026"
-lastmod: '2024-03-11T00:14:11.397995-06:00'
+lastmod: '2024-03-13T22:44:38.022687-06:00'
 model: gpt-4-1106-preview
 summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man letar igenom\
   \ en textstr\xE4ng och tar bort specifika tecken eller sekvenser av tecken.\u2026"

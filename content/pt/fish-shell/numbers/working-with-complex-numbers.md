@@ -2,7 +2,7 @@
 date: 2024-01-26 04:40:05.191192-07:00
 description: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidimensionais\
   \ para um plano complexo bidimensional. Programadores os usam em campos como\u2026"
-lastmod: '2024-03-11T00:14:20.736192-06:00'
+lastmod: '2024-03-13T22:44:46.997982-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidimensionais\
   \ para um plano complexo bidimensional. Programadores os usam em campos como\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:32.744521-07:00
 description: "Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata\
   \ dalla tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato\u2026"
-lastmod: '2024-03-11T00:14:16.454310-06:00'
+lastmod: '2024-03-13T22:44:42.904650-06:00'
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata dalla\
   \ tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato\u2026"

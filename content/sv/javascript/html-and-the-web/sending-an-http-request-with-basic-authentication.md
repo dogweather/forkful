@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:18.603497-07:00
 description: "Att skicka en HTTP-f\xF6rfr\xE5gan med basic authentication inneb\xE4\
   r att man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat med base64,\
   \ f\xF6r att autentisera\u2026"
-lastmod: '2024-03-11T00:14:11.691102-06:00'
+lastmod: '2024-03-13T22:44:38.293129-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med basic authentication inneb\xE4r att\
   \ man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat med base64, f\xF6\

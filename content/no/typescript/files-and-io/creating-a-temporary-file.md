@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:48.721078-07:00
 description: "\xC5 lage en midlertidig fil er en m\xE5te \xE5 lagre data midlertidig\
   \ under kj\xF8ring av et program. Programmerere gj\xF8r dette for \xE5 behandle\
   \ data uten \xE5 p\xE5virke\u2026"
-lastmod: '2024-03-11T00:14:14.082762-06:00'
+lastmod: '2024-03-13T22:44:40.551024-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lage en midlertidig fil er en m\xE5te \xE5 lagre data midlertidig under\
   \ kj\xF8ring av et program. Programmerere gj\xF8r dette for \xE5 behandle data uten\

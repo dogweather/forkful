@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:25.613161-07:00
 description: "Pobieranie aktualnej daty w programowaniu jest kluczowym zadaniem dla\
   \ wielu aplikacji, w tym zapisywania log\xF3w, znakowania czasu zdarze\u0144 czy\
   \ planowania\u2026"
-lastmod: '2024-03-11T00:14:08.738827-06:00'
+lastmod: '2024-03-13T22:44:35.550550-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w programowaniu jest kluczowym zadaniem dla wielu\
   \ aplikacji, w tym zapisywania log\xF3w, znakowania czasu zdarze\u0144 czy planowania\u2026"

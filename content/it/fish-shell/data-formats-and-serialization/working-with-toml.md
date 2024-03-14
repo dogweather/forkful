@@ -2,7 +2,7 @@
 date: 2024-01-26 04:21:29.031538-07:00
 description: "TOML \xE8 un formato di file di configurazione, facile da leggere e\
   \ scrivere per gli umani, e facile da analizzare e generare per le macchine. I\u2026"
-lastmod: '2024-03-11T00:14:17.505574-06:00'
+lastmod: '2024-03-13T22:44:43.884240-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE8 un formato di file di configurazione, facile da leggere e scrivere\
   \ per gli umani, e facile da analizzare e generare per le macchine. I\u2026"

@@ -6,7 +6,7 @@ date: 2024-02-03 19:09:36.803762-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Elixirissa k\xE4sitt\xE4\
   \xE4 j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tiedon saavuttamisen,\
   \ yleinen teht\xE4v\xE4 lokitukseen, datan leimaamiseen\u2026"
-lastmod: '2024-03-11T00:14:30.168035-06:00'
+lastmod: '2024-03-13T22:44:56.237609-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Elixirissa k\xE4sitt\xE4\xE4\
   \ j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tiedon saavuttamisen, yleinen\

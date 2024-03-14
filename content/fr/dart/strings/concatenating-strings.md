@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:39.701703-07:00
 description: "La concat\xE9nation de cha\xEEnes de caract\xE8res en programmation\
   \ consiste \xE0 combiner deux cha\xEEnes ou plus en une seule. Les programmeurs\
   \ font cela pour\u2026"
-lastmod: '2024-03-11T00:14:31.396332-06:00'
+lastmod: '2024-03-13T22:44:57.375048-06:00'
 model: gpt-4-0125-preview
 summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res en programmation consiste\
   \ \xE0 combiner deux cha\xEEnes ou plus en une seule. Les programmeurs font cela\

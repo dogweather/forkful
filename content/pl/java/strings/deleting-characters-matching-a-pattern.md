@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:19.378194-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja string\xF3\
   w, \u017Ceby pasowa\u0142y do naszych danych lub by\u0142y praktyczne. Robimy to,\
   \ by oczy\u015Bci\u0107 tekst z\u2026"
-lastmod: '2024-03-11T00:14:08.437452-06:00'
+lastmod: '2024-03-13T22:44:35.261152-06:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja string\xF3w, \u017C\
   eby pasowa\u0142y do naszych danych lub by\u0142y praktyczne. Robimy to, by oczy\u015B\

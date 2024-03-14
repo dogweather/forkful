@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:38.884079-07:00
 description: "En programmation Bash, v\xE9rifier si un r\xE9pertoire existe est un\
   \ m\xE9canisme de contr\xF4le essentiel utilis\xE9 pour v\xE9rifier la pr\xE9sence\
   \ d'un r\xE9pertoire avant\u2026"
-lastmod: '2024-03-11T00:14:31.938526-06:00'
+lastmod: '2024-03-13T22:44:58.012847-06:00'
 model: gpt-4-0125-preview
 summary: "En programmation Bash, v\xE9rifier si un r\xE9pertoire existe est un m\xE9\
   canisme de contr\xF4le essentiel utilis\xE9 pour v\xE9rifier la pr\xE9sence d'un\

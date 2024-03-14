@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:03.418853-07:00
 description: "Att manipulera filer med CLI (kommandoradsgr\xE4nssnitt) one-liners\
   \ inneb\xE4r att anv\xE4nda Bash-skript eller kommandon f\xF6r att utf\xF6ra \xE5\
   tg\xE4rder p\xE5 filer, som att\u2026"
-lastmod: '2024-03-11T00:14:11.457741-06:00'
+lastmod: '2024-03-13T22:44:38.077354-06:00'
 model: gpt-4-0125-preview
 summary: "Att manipulera filer med CLI (kommandoradsgr\xE4nssnitt) one-liners inneb\xE4\
   r att anv\xE4nda Bash-skript eller kommandon f\xF6r att utf\xF6ra \xE5tg\xE4rder\

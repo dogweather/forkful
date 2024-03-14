@@ -3,7 +3,7 @@ date: 2024-01-26 00:58:56.810940-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu na nieoczekiwane;\
   \ to, jak zarz\u0105dzamy sytuacjami, gdy co\u015B idzie nie tak w naszym kodzie.\
   \ Robimy to, aby unikn\u0105\u0107 awarii\u2026"
-lastmod: '2024-03-11T00:14:08.320104-06:00'
+lastmod: '2024-03-13T22:44:35.146828-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu na nieoczekiwane;\
   \ to, jak zarz\u0105dzamy sytuacjami, gdy co\u015B idzie nie tak w naszym kodzie.\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:33:00.303210-07:00
 description: "XML:n k\xE4sittelyyn kuuluu XML-dokumenttien j\xE4sent\xE4minen, luominen\
   \ ja manipulointi \u2013 merkint\xE4kieli datan tallennukseen ja siirtoon. Ohjelmoijat\
   \ tekev\xE4t\u2026"
-lastmod: '2024-03-11T00:14:30.501553-06:00'
+lastmod: '2024-03-13T22:44:56.555623-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittelyyn kuuluu XML-dokumenttien j\xE4sent\xE4minen, luominen\
   \ ja manipulointi \u2013 merkint\xE4kieli datan tallennukseen ja siirtoon. Ohjelmoijat\

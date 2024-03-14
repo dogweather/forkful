@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:32.651950-07:00
 description: "HTML in C zu parsen umfasst die Analyse von HTML-Dokumenten, um Daten,\
   \ Strukturen oder spezifische Teile effizient zu extrahieren, oft als Vorl\xE4ufer\
   \ des\u2026"
-lastmod: '2024-03-11T00:14:28.259485-06:00'
+lastmod: '2024-03-13T22:44:54.349824-06:00'
 model: gpt-4-0125-preview
 summary: "HTML in C zu parsen umfasst die Analyse von HTML-Dokumenten, um Daten, Strukturen\
   \ oder spezifische Teile effizient zu extrahieren, oft als Vorl\xE4ufer des\u2026"

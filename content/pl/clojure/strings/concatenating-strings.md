@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:08.533320-07:00
 description: "\u0141\u0105czenie string\xF3w to po prostu sklejanie ich ko\u0144c\xF3\
   w, tworz\u0105c jeden d\u0142u\u017Cszy tekst. Programi\u015Bci robi\u0105 to, \u017C\
   eby skonstruowa\u0107 wiadomo\u015Bci, dynamiczne URL-e czy\u2026"
-lastmod: '2024-03-11T00:14:08.159362-06:00'
+lastmod: '2024-03-13T22:44:34.986431-06:00'
 model: gpt-4-1106-preview
 summary: "\u0141\u0105czenie string\xF3w to po prostu sklejanie ich ko\u0144c\xF3\
   w, tworz\u0105c jeden d\u0142u\u017Cszy tekst. Programi\u015Bci robi\u0105 to, \u017C\

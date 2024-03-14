@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:35.126616-07:00
 description: "Regul\xE6re uttrykk (regex) i Elixir brukes for \xE5 s\xF8ke, matche\
   \ og manipulere strenger basert p\xE5 spesifikke m\xF8nstre. Programmerere benytter\
   \ seg av regex for\u2026"
-lastmod: '2024-03-11T00:14:13.958685-06:00'
+lastmod: '2024-03-13T22:44:40.433477-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Elixir brukes for \xE5 s\xF8ke, matche og\
   \ manipulere strenger basert p\xE5 spesifikke m\xF8nstre. Programmerere benytter\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:06:55.617845-07:00
 description: "Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden\
   \ Computer-Codes - das \xC4ndern der Faktorisierung - ohne dessen externes\u2026"
-lastmod: '2024-03-11T00:14:27.255032-06:00'
+lastmod: '2024-03-13T22:44:53.297220-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden\
   \ Computer-Codes - das \xC4ndern der Faktorisierung - ohne dessen externes\u2026"

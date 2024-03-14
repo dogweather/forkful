@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:06.420064-07:00
 description: "En la programaci\xF3n, obtener la fecha actual es una tarea fundamental\
   \ que permite a los desarrolladores acceder, mostrar o manipular la fecha actual\
   \ dentro\u2026"
-lastmod: '2024-03-11T00:14:32.854104-06:00'
+lastmod: '2024-03-13T22:44:59.046578-06:00'
 model: gpt-4-0125-preview
 summary: "En la programaci\xF3n, obtener la fecha actual es una tarea fundamental\
   \ que permite a los desarrolladores acceder, mostrar o manipular la fecha actual\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:54:34.827225-07:00
 description: "Leggere un file di testo significa caricare e interpretare il suo contenuto\
   \ tramite il nostro codice. Lo facciamo perch\xE9 spesso abbiamo bisogno di\u2026"
-lastmod: '2024-03-11T00:14:16.940330-06:00'
+lastmod: '2024-03-13T22:44:43.366811-06:00'
 model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa caricare e interpretare il suo contenuto\
   \ tramite il nostro codice. Lo facciamo perch\xE9 spesso abbiamo bisogno di\u2026"

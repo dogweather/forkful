@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:44.742859-07:00
 description: "Att skriva tester i Bash inneb\xE4r att skapa testfall f\xF6r att validera\
   \ funktionaliteten hos dina Bash-skript. Programmerare genomf\xF6r tester f\xF6\
   r att\u2026"
-lastmod: '2024-03-11T00:14:11.466907-06:00'
+lastmod: '2024-03-13T22:44:38.085969-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Bash inneb\xE4r att skapa testfall f\xF6r att validera\
   \ funktionaliteten hos dina Bash-skript. Programmerare genomf\xF6r tester f\xF6\

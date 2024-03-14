@@ -2,7 +2,7 @@
 date: 2024-01-26 04:08:41.031083-07:00
 description: "Usar un depurador significa establecer puntos de interrupci\xF3n, avanzar\
   \ paso a paso por tu c\xF3digo, observar variables e inspeccionar el estado de tu\u2026"
-lastmod: '2024-03-11T00:14:33.117218-06:00'
+lastmod: '2024-03-13T22:44:59.296751-06:00'
 model: gpt-4-0125-preview
 summary: "Usar un depurador significa establecer puntos de interrupci\xF3n, avanzar\
   \ paso a paso por tu c\xF3digo, observar variables e inspeccionar el estado de tu\u2026"

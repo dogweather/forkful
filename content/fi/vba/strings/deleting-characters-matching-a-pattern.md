@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:52:35.724499-07:00
 description: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
   \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\u2026"
-lastmod: '2024-03-11T00:14:30.318646-06:00'
+lastmod: '2024-03-13T22:44:56.383532-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
   \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\u2026"

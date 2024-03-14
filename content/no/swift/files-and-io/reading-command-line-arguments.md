@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:41.481245-07:00
 description: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 input\
   \ de f\xE5r n\xE5r de startes fra terminalen. Programmerere bruker dette til \xE5\
   \ tilpasse\u2026"
-lastmod: '2024-03-11T00:14:14.755735-06:00'
+lastmod: '2024-03-13T22:44:41.157408-06:00'
 model: gpt-4-1106-preview
 summary: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 input de\
   \ f\xE5r n\xE5r de startes fra terminalen. Programmerere bruker dette til \xE5 tilpasse\u2026"

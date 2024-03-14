@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:04.807127-07:00
 description: "Printing debug output is about generating temporary, informative log\
   \ messages that can help programmers understand the flow and state of a program\
   \ during\u2026"
-lastmod: '2024-03-11T00:14:34.397833-06:00'
+lastmod: '2024-03-13T22:45:00.513874-06:00'
 model: gpt-4-0125-preview
 summary: "Printing debug output is about generating temporary, informative log messages\
   \ that can help programmers understand the flow and state of a program during\u2026"

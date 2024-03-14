@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:02.639723-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w to cz\u0119ste zadanie podczas\
   \ pracy z danymi wprowadzanymi przez u\u017Cytkownika lub odczytywaniem danych z\
   \ plik\xF3w. Polega to na\u2026"
-lastmod: '2024-03-11T00:14:08.369452-06:00'
+lastmod: '2024-03-13T22:44:35.194954-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w to cz\u0119ste zadanie podczas pracy\
   \ z danymi wprowadzanymi przez u\u017Cytkownika lub odczytywaniem danych z plik\xF3\

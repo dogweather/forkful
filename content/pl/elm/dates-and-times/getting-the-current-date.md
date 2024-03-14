@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:19.415342-07:00
 description: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C\u0105\
   cej daty kalendarzowej z systemu. Robimy to, aby oznacza\u0107 czas wydarze\u0144\
   , planowa\u0107 zadania lub \u015Bledzi\u0107\u2026"
-lastmod: '2024-03-11T00:14:08.511888-06:00'
+lastmod: '2024-03-13T22:44:35.332407-06:00'
 model: gpt-4-0125-preview
 summary: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C\u0105\
   cej daty kalendarzowej z systemu. Robimy to, aby oznacza\u0107 czas wydarze\u0144\

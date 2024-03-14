@@ -2,7 +2,7 @@
 date: 2024-01-25 02:03:04.575535-07:00
 description: "Logging is the process of recording application events and data output\
   \ during runtime. Programmers log to diagnose bugs, monitor software performance,\u2026"
-lastmod: '2024-03-11T00:14:33.958883-06:00'
+lastmod: '2024-03-13T22:45:00.095267-06:00'
 model: gpt-4-1106-preview
 summary: "Logging is the process of recording application events and data output during\
   \ runtime. Programmers log to diagnose bugs, monitor software performance,\u2026"

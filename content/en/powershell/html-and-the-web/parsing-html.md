@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:00.218296-07:00
 description: "Parsing HTML in PowerShell is about dissecting HTML content to extract\
   \ specific data or to automate web-related tasks. Programmers do it to interact\
   \ with\u2026"
-lastmod: '2024-03-11T00:14:34.149664-06:00'
+lastmod: '2024-03-13T22:45:00.282032-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing HTML in PowerShell is about dissecting HTML content to extract specific\
   \ data or to automate web-related tasks. Programmers do it to interact with\u2026"

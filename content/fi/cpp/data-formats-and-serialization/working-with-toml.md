@@ -3,7 +3,7 @@ date: 2024-01-26 04:19:48.386676-07:00
 description: "TOML (Tom's Obvious, Minimal Language) on datan serialisointiformaatti,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t\u2026"
-lastmod: '2024-03-11T00:14:30.927829-06:00'
+lastmod: '2024-03-13T22:44:56.888967-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) on datan serialisointiformaatti,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\

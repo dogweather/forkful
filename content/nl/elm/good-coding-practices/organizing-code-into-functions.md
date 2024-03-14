@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:07.501883-07:00
 description: "Al je code in \xE9\xE9n grote hoop gooien? Slecht idee. Het onderverdelen\
   \ in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger\
   \ om\u2026"
-lastmod: '2024-03-11T00:14:24.553278-06:00'
+lastmod: '2024-03-13T22:44:50.730541-06:00'
 model: gpt-4-0125-preview
 summary: "Al je code in \xE9\xE9n grote hoop gooien? Slecht idee. Het onderverdelen\
   \ in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger\

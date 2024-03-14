@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:48.037680-07:00
 description: "Das aktuelle Datum in Arduino-Projekten zu bekommen, beinhaltet das\
   \ Abrufen von Echtzeitinformationen, die f\xFCr das Logging, Zeitstempeln oder das\
   \ Planen\u2026"
-lastmod: '2024-03-11T00:14:28.054785-06:00'
+lastmod: '2024-03-13T22:44:54.153940-06:00'
 model: gpt-4-0125-preview
 summary: "Das aktuelle Datum in Arduino-Projekten zu bekommen, beinhaltet das Abrufen\
   \ von Echtzeitinformationen, die f\xFCr das Logging, Zeitstempeln oder das Planen\u2026"

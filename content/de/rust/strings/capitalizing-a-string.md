@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:29.754150-07:00
 description: "Das Gro\xDFschreiben eines Strings in Rust involviert das Modifizieren\
   \ des Strings, sodass sein erstes Zeichen ein Gro\xDFbuchstabe ist, falls es sich\
   \ um einen\u2026"
-lastmod: '2024-03-11T00:14:27.547117-06:00'
+lastmod: '2024-03-13T22:44:53.655990-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings in Rust involviert das Modifizieren des\
   \ Strings, sodass sein erstes Zeichen ein Gro\xDFbuchstabe ist, falls es sich um\

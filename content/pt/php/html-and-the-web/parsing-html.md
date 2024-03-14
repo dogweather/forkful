@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:33.579895-07:00
 description: "Analisar HTML com PHP envolve extrair informa\xE7\xF5es espec\xEDficas\
   \ de documentos HTML. Programadores realizam essa tarefa para automatizar a extra\xE7\
   \xE3o de dados,\u2026"
-lastmod: '2024-03-11T00:14:20.378791-06:00'
+lastmod: '2024-03-13T22:44:46.665187-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML com PHP envolve extrair informa\xE7\xF5es espec\xEDficas de\
   \ documentos HTML. Programadores realizam essa tarefa para automatizar a extra\xE7\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:44:33.506016-07:00
 description: "Komplexe Zahlen sind eine Menge von Zahlen der Form `a + bi`, wobei\
   \ `a` und `b` reelle Zahlen sind und `i` die imagin\xE4re Einheit ist (`i^2 = -1`).\
   \ In der\u2026"
-lastmod: '2024-03-11T00:14:27.335429-06:00'
+lastmod: '2024-03-13T22:44:53.372432-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen sind eine Menge von Zahlen der Form `a + bi`, wobei `a`\
   \ und `b` reelle Zahlen sind und `i` die imagin\xE4re Einheit ist (`i^2 = -1`).\

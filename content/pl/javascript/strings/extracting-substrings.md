@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:16.805106-07:00
 description: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w, czyli ekstrakcja konkretnych\
   \ cz\u0119\u015Bci z tekstu, to chleb powszedni w programowaniu. Robimy to, by manipulowa\u0107\
   \ danymi, walidowa\u0107\u2026"
-lastmod: '2024-03-11T00:14:08.993307-06:00'
+lastmod: '2024-03-13T22:44:35.785503-06:00'
 model: gpt-4-1106-preview
 summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w, czyli ekstrakcja konkretnych\
   \ cz\u0119\u015Bci z tekstu, to chleb powszedni w programowaniu. Robimy to, by manipulowa\u0107\

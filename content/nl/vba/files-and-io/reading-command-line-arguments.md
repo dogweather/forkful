@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:59:25.990569-07:00
 description: "Het lezen van commandoregelargumenten in Visual Basic for Applications\
   \ (VBA) houdt in dat je toegang krijgt tot parameters die aan je programma worden\u2026"
-lastmod: '2024-03-11T00:14:24.472588-06:00'
+lastmod: '2024-03-13T22:44:50.652517-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten in Visual Basic for Applications (VBA)\
   \ houdt in dat je toegang krijgt tot parameters die aan je programma worden\u2026"

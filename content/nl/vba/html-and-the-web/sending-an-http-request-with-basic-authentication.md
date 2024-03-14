@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:26.826001-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie in Visual\
   \ Basic for Applications (VBA) gaat over het toegang krijgen tot webbronnen die\
   \ zijn\u2026"
-lastmod: '2024-03-11T00:14:24.455878-06:00'
+lastmod: '2024-03-13T22:44:50.636421-06:00'
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie in Visual Basic\
   \ for Applications (VBA) gaat over het toegang krijgen tot webbronnen die zijn\u2026"

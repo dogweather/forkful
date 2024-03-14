@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:18.659554-07:00
 description: "Starting a new project in Visual Basic for Applications (VBA) involves\
   \ setting up an environment within a host application, like Excel, to automate tasks\u2026"
-lastmod: '2024-03-11T00:14:33.797363-06:00'
+lastmod: '2024-03-13T22:44:59.935023-06:00'
 model: gpt-4-0125-preview
 summary: "Starting a new project in Visual Basic for Applications (VBA) involves setting\
   \ up an environment within a host application, like Excel, to automate tasks\u2026"

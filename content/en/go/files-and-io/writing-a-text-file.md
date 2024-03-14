@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:11.072930-07:00
 description: "Writing a text file in Go involves creating and writing strings of data\
   \ into a new or existing text file. Programmers do this to persist data, such as\u2026"
-lastmod: '2024-03-11T00:14:33.494385-06:00'
+lastmod: '2024-03-13T22:44:59.647554-06:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in Go involves creating and writing strings of data\
   \ into a new or existing text file. Programmers do this to persist data, such as\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:47:01.045782-07:00
 description: "Contar caracteres de un texto es \xFAtil para validar entradas y manejar\
   \ datos precisamente. Los programadores lo hacen todo el tiempo para delimitar,\u2026"
-lastmod: '2024-03-11T00:14:32.477458-06:00'
+lastmod: '2024-03-13T22:44:58.647601-06:00'
 model: gpt-4-1106-preview
 summary: "Contar caracteres de un texto es \xFAtil para validar entradas y manejar\
   \ datos precisamente. Los programadores lo hacen todo el tiempo para delimitar,\u2026"

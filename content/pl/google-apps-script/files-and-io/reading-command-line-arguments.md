@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:32.993768-07:00
 description: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
   \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\
   w linii polece\u0144 w\u2026"
-lastmod: '2024-03-11T00:14:08.091548-06:00'
+lastmod: '2024-03-13T22:44:34.920252-06:00'
 model: gpt-4-0125-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
   \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:17.502954-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng i Elm inneb\xE4r att konvertera\
   \ textuell information som representerar datum och tider till ett format som Elm\
   \ kan f\xF6rst\xE5\u2026"
-lastmod: '2024-03-11T00:14:11.188028-06:00'
+lastmod: '2024-03-13T22:44:37.838889-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Elm inneb\xE4r att konvertera\
   \ textuell information som representerar datum och tider till ett format som Elm\

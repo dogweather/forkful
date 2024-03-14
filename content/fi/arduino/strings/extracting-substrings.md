@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:23.705683-07:00
 description: "Subjektit ovat osajonoja alkuper\xE4isest\xE4 tekstijonosta. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4 tiedon rajaamiseen ja k\xE4sittelyyn pienemmiss\xE4\
   \ p\xE4tkiss\xE4."
-lastmod: '2024-03-11T00:14:30.837614-06:00'
+lastmod: '2024-03-13T22:44:56.814100-06:00'
 model: gpt-4-1106-preview
 summary: "Subjektit ovat osajonoja alkuper\xE4isest\xE4 tekstijonosta. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4 tiedon rajaamiseen ja k\xE4sittelyyn pienemmiss\xE4\

@@ -2,7 +2,7 @@
 date: 2024-01-27 20:26:11.777055-07:00
 description: "Generating random numbers in Bash provides a way to introduce unpredictability\
   \ in scripts, which is essential for tasks like generating secure passwords,\u2026"
-lastmod: '2024-03-11T00:14:34.105653-06:00'
+lastmod: '2024-03-13T22:45:00.239183-06:00'
 model: gpt-4-0125-preview
 summary: "Generating random numbers in Bash provides a way to introduce unpredictability\
   \ in scripts, which is essential for tasks like generating secure passwords,\u2026"

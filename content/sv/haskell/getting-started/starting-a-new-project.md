@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:36.765293-07:00
 description: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en ny kodbas\
   \ fr\xE5n grunden. Programmerare g\xF6r det f\xF6r att skapa unika l\xF6sningar\
   \ eller utforska nya id\xE9er."
-lastmod: '2024-03-11T00:14:11.321853-06:00'
+lastmod: '2024-03-13T22:44:37.955829-06:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en ny kodbas fr\xE5\
   n grunden. Programmerare g\xF6r det f\xF6r att skapa unika l\xF6sningar eller utforska\

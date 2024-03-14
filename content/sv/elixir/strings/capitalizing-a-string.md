@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:51.369389-07:00
 description: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor handlar om att omvandla\
   \ str\xE4ngens f\xF6rsta bokstav till versal samtidigt som man s\xE4kerst\xE4ller\
   \ att resten av\u2026"
-lastmod: '2024-03-11T00:14:10.878888-06:00'
+lastmod: '2024-03-13T22:44:37.550451-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor handlar om att omvandla\
   \ str\xE4ngens f\xF6rsta bokstav till versal samtidigt som man s\xE4kerst\xE4ller\

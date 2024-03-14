@@ -5,7 +5,7 @@ date: 2024-02-03 19:28:02.138748-07:00
 description: "Escrever em um arquivo de texto em Haskell trata-se de criar ou atualizar\
   \ arquivos com conte\xFAdo textual de forma program\xE1tica. Os programadores fazem\
   \ isso\u2026"
-lastmod: '2024-03-11T00:14:20.355989-06:00'
+lastmod: '2024-03-13T22:44:46.643572-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Haskell trata-se de criar ou atualizar\
   \ arquivos com conte\xFAdo textual de forma program\xE1tica. Os programadores fazem\

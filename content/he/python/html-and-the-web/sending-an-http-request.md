@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:20.079942-07:00
 description: "HTTP requests are how we ask for stuff on the web. Programmers send\
   \ them to get data, post data, and interact with web services. Essential for web\u2026"
-lastmod: '2024-03-11T00:14:12.045370-06:00'
+lastmod: '2024-03-13T22:44:38.630335-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP requests are how we ask for stuff on the web. Programmers send them\
   \ to get data, post data, and interact with web services. Essential for web\u2026"

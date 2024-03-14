@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:56.011394-07:00
 description: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Dart jest cz\u0119stym\
   \ zadaniem, gdy potrzebujemy wy\u015Bwietli\u0107 informacje o dacie i godzinie\
   \ w formacie czytelnym dla\u2026"
-lastmod: '2024-03-11T00:14:08.276353-06:00'
+lastmod: '2024-03-13T22:44:35.104264-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Dart jest cz\u0119stym zadaniem,\
   \ gdy potrzebujemy wy\u015Bwietli\u0107 informacje o dacie i godzinie w formacie\

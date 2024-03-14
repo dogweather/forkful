@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:28.666190-07:00
 description: "Het verkrijgen van de huidige datum in de programmering stelt ons in\
   \ staat om bij te houden wanneer dingen gebeuren. We hebben tijdstempels nodig voor\u2026"
-lastmod: '2024-03-11T00:14:24.779891-06:00'
+lastmod: '2024-03-13T22:44:50.947834-06:00'
 model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in de programmering stelt ons in staat\
   \ om bij te houden wanneer dingen gebeuren. We hebben tijdstempels nodig voor\u2026"

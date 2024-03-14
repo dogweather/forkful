@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:19.129102-07:00
 description: "I Swift inneb\xE4r att skapa en tempor\xE4r fil att du skapar en fil\
   \ som bara ska finnas d\xE4r under ett kort \xF6gonblick, ofta inom ramen f\xF6\
   r en process eller\u2026"
-lastmod: '2024-03-11T00:14:11.667395-06:00'
+lastmod: '2024-03-13T22:44:38.270624-06:00'
 model: gpt-4-1106-preview
 summary: "I Swift inneb\xE4r att skapa en tempor\xE4r fil att du skapar en fil som\
   \ bara ska finnas d\xE4r under ett kort \xF6gonblick, ofta inom ramen f\xF6r en\

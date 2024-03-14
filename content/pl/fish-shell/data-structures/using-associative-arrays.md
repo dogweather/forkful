@@ -5,7 +5,7 @@ date: 2024-01-30 19:10:59.015234-07:00
 description: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0107\
   \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\
   \ informacji za pomoc\u0105\u2026"
-lastmod: '2024-03-11T00:14:09.044455-06:00'
+lastmod: '2024-03-13T22:44:35.831843-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0107\
   \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\

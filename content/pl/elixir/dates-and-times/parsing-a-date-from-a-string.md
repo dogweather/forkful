@@ -6,7 +6,7 @@ date: 2024-01-28 02:05:16.016190-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu\
   \ tekstu, takiego jak \"2023-04-05\", na format daty, kt\xF3ry Tw\xF3j program mo\u017C\
   e zrozumie\u0107 i z kt\xF3rym\u2026"
-lastmod: '2024-03-11T00:14:08.224913-06:00'
+lastmod: '2024-03-13T22:44:35.053238-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu tekstu,\
   \ takiego jak \"2023-04-05\", na format daty, kt\xF3ry Tw\xF3j program mo\u017C\

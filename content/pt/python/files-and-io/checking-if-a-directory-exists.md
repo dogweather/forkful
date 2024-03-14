@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:13.860175-07:00
 description: "Verificar se um diret\xF3rio existe em Python consiste em confirmar\
   \ a presen\xE7a de uma pasta no sistema de arquivos antes de realizar opera\xE7\xF5\
   es como ler ou\u2026"
-lastmod: '2024-03-11T00:14:19.836260-06:00'
+lastmod: '2024-03-13T22:44:46.168612-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Python consiste em confirmar a presen\xE7\
   a de uma pasta no sistema de arquivos antes de realizar opera\xE7\xF5es como ler\

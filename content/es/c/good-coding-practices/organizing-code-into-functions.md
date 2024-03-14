@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:04.386107-07:00
 description: "Organizar el c\xF3digo en funciones en C implica descomponer tareas\
   \ complejas en bloques de c\xF3digo m\xE1s peque\xF1os y reutilizables. Esta pr\xE1\
   ctica mejora la\u2026"
-lastmod: '2024-03-11T00:14:33.389554-06:00'
+lastmod: '2024-03-13T22:44:59.551620-06:00'
 model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones en C implica descomponer tareas complejas\
   \ en bloques de c\xF3digo m\xE1s peque\xF1os y reutilizables. Esta pr\xE1ctica mejora\

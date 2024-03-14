@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:27.415894-07:00
 description: "Working with CSV (Comma-Separated Values) files involves parsing and\
   \ generating text data organized into rows and columns, using commas to separate\u2026"
-lastmod: '2024-03-11T00:14:34.090193-06:00'
+lastmod: '2024-03-13T22:45:00.225473-06:00'
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) files involves parsing and generating\
   \ text data organized into rows and columns, using commas to separate\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:17.364203-07:00
 description: "JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych,\
   \ \u0142atwy do odczytania i zapisania przez ludzi, jak r\xF3wnie\u017C \u0142atwy\
   \ do przetwarzania\u2026"
-lastmod: '2024-03-11T00:14:08.705909-06:00'
+lastmod: '2024-03-13T22:44:35.518927-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych,\
   \ \u0142atwy do odczytania i zapisania przez ludzi, jak r\xF3wnie\u017C \u0142atwy\

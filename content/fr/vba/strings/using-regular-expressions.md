@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:04:47.180514-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) dans Visual Basic pour Applications\
   \ (VBA) offrent un moyen puissant de rechercher, correspondre et manipuler des\u2026"
-lastmod: '2024-03-11T00:14:31.533105-06:00'
+lastmod: '2024-03-13T22:44:57.543597-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) dans Visual Basic pour Applications\
   \ (VBA) offrent un moyen puissant de rechercher, correspondre et manipuler des\u2026"

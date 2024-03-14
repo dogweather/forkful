@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:12.263164-07:00
 description: "Na programa\xE7\xE3o em C, a leitura de argumentos da linha de comando\
   \ permite que os programas aceitem entradas diretamente do terminal, aumentando\
   \ a\u2026"
-lastmod: '2024-03-11T00:14:20.808608-06:00'
+lastmod: '2024-03-13T22:44:47.066727-06:00'
 model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o em C, a leitura de argumentos da linha de comando permite\
   \ que os programas aceitem entradas diretamente do terminal, aumentando a\u2026"

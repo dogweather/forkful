@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:05:54.207773-07:00
 description: "Refactoring is in wezen het grote schoonmaak houden van je codebasis\
   \ - het gaat over het herstructureren van bestaande code zonder het externe gedrag\u2026"
-lastmod: '2024-03-11T00:14:24.556334-06:00'
+lastmod: '2024-03-13T22:44:50.733526-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring is in wezen het grote schoonmaak houden van je codebasis - het\
   \ gaat over het herstructureren van bestaande code zonder het externe gedrag\u2026"

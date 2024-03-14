@@ -3,7 +3,7 @@ date: 2024-01-26 04:15:25.695092-07:00
 description: "Un REPL (Bucle de Leer-Evaluar-Imprimir) es una consola interactiva\
   \ que procesa entradas individuales del usuario, ejecuta c\xF3digo y devuelve el\
   \ resultado.\u2026"
-lastmod: '2024-03-11T00:14:32.754212-06:00'
+lastmod: '2024-03-13T22:44:58.939161-06:00'
 model: gpt-4-0125-preview
 summary: "Un REPL (Bucle de Leer-Evaluar-Imprimir) es una consola interactiva que\
   \ procesa entradas individuales del usuario, ejecuta c\xF3digo y devuelve el resultado.\u2026"

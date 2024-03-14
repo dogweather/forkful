@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:54:30.517120-07:00
 description: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
   \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur\u2026"
-lastmod: '2024-03-11T00:14:27.305754-06:00'
+lastmod: '2024-03-13T22:44:53.345482-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
   \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur\u2026"

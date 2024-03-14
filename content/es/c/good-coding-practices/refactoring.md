@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:06:45.177129-07:00
 description: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
   \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\u2026"
-lastmod: '2024-03-11T00:14:33.392718-06:00'
+lastmod: '2024-03-13T22:44:59.554943-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
   \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\u2026"

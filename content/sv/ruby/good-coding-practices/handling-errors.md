@@ -3,7 +3,7 @@ date: 2024-01-26 00:58:51.828169-07:00
 description: "Felhantering handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade i kod\
   \ \u2014 att hantera misstag och problem smidigt utan att krascha. Programmerare\
   \ g\xF6r det f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:11.845613-06:00'
+lastmod: '2024-03-13T22:44:38.438442-06:00'
 model: gpt-4-1106-preview
 summary: "Felhantering handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade i kod \u2014\
   \ att hantera misstag och problem smidigt utan att krascha. Programmerare g\xF6\

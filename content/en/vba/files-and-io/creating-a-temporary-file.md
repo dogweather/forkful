@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:30.239855-07:00
 description: "Creating a temporary file in Visual Basic for Applications (VBA) involves\
   \ programmatically generating a file for short-term use, typically for data\u2026"
-lastmod: '2024-03-11T00:14:33.814154-06:00'
+lastmod: '2024-03-13T22:44:59.951816-06:00'
 model: gpt-4-0125-preview
 summary: "Creating a temporary file in Visual Basic for Applications (VBA) involves\
   \ programmatically generating a file for short-term use, typically for data\u2026"

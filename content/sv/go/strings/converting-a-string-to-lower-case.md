@@ -5,7 +5,7 @@ date: 2024-02-03 17:54:54.150774-07:00
 description: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
   \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\
   r uppgifter som\u2026"
-lastmod: '2024-03-11T00:14:10.681815-06:00'
+lastmod: '2024-03-13T22:44:37.377996-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
   \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:48:55.267746-07:00
 description: "Verificar si un directorio existe en Visual Basic para Aplicaciones\
   \ (VBA) se trata de confirmar la presencia de una carpeta dentro del sistema de\
   \ archivos\u2026"
-lastmod: '2024-03-11T00:14:32.723315-06:00'
+lastmod: '2024-03-13T22:44:58.909226-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Visual Basic para Aplicaciones (VBA)\
   \ se trata de confirmar la presencia de una carpeta dentro del sistema de archivos\u2026"

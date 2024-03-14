@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:36.412245-07:00
 description: "Regul\xE6re uttrykk, et kraftfullt verkt\xF8y for m\xF8nstersammenligning\
   \ og databehandling, er essensielle i tekstbehandlingsoppgaver slik som \xE5 validere\
   \ inndata,\u2026"
-lastmod: '2024-03-11T00:14:13.914426-06:00'
+lastmod: '2024-03-13T22:44:40.392723-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk, et kraftfullt verkt\xF8y for m\xF8nstersammenligning\
   \ og databehandling, er essensielle i tekstbehandlingsoppgaver slik som \xE5 validere\

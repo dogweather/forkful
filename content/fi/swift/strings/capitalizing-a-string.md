@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:38.132051-07:00
 description: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa annettua\
   \ merkkijonoa siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit\
   \ ovat\u2026"
-lastmod: '2024-03-11T00:14:30.929751-06:00'
+lastmod: '2024-03-13T22:44:56.890961-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa annettua merkkijonoa\
   \ siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit ovat\u2026"

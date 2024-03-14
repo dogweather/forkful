@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:31.642041-07:00
 description: "Envoyer une requ\xEAte HTTP permet \xE0 votre programme d'obtenir ou\
   \ d'envoyer des donn\xE9es sur le web. C'est essentiel pour interagir avec des API,\
   \ des services\u2026"
-lastmod: '2024-03-11T00:14:31.267054-06:00'
+lastmod: '2024-03-13T22:44:57.232209-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre programme d'obtenir ou d'envoyer\
   \ des donn\xE9es sur le web. C'est essentiel pour interagir avec des API, des services\u2026"

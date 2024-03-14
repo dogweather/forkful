@@ -2,7 +2,7 @@
 date: 2024-01-27 16:20:39.704908-07:00
 description: "Manipular arquivos com CLI (Interface de Linha de Comando) com one-liners\
   \ envolve usar scripts ou comandos Bash para realizar a\xE7\xF5es em arquivos, como\u2026"
-lastmod: '2024-03-11T00:14:20.468028-06:00'
+lastmod: '2024-03-13T22:44:46.747598-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular arquivos com CLI (Interface de Linha de Comando) com one-liners\
   \ envolve usar scripts ou comandos Bash para realizar a\xE7\xF5es em arquivos, como\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:31.480111-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification basique c\u2019\
   est ins\xE9rer vos identifiants dans une requ\xEAte pour acc\xE9der \xE0 des ressources\
   \ prot\xE9g\xE9es. Les\u2026"
-lastmod: '2024-03-11T00:14:32.291705-06:00'
+lastmod: '2024-03-13T22:44:58.419661-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification basique c\u2019est\
   \ ins\xE9rer vos identifiants dans une requ\xEAte pour acc\xE9der \xE0 des ressources\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:11:02.639712-07:00
 description: "TOML staat voor Tom's Obvious, Minimal Language. Het wordt gebruikt\
   \ voor configuratiebestanden omdat het makkelijk te lezen en te schrijven is voor\u2026"
-lastmod: '2024-03-11T00:14:24.615136-06:00'
+lastmod: '2024-03-13T22:44:50.791085-06:00'
 model: gpt-4-0125-preview
 summary: "TOML staat voor Tom's Obvious, Minimal Language. Het wordt gebruikt voor\
   \ configuratiebestanden omdat het makkelijk te lezen en te schrijven is voor\u2026"

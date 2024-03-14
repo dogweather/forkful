@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:11:39.938643-07:00
 description: "Das Format der durch Kommas getrennten Werte (CSV) ist aufgrund seiner\
   \ Einfachheit und der einfachen Integration in die meisten Programmiersprachen,\u2026"
-lastmod: '2024-03-11T00:14:27.270200-06:00'
+lastmod: '2024-03-13T22:44:53.312197-06:00'
 model: gpt-4-0125-preview
 summary: "Das Format der durch Kommas getrennten Werte (CSV) ist aufgrund seiner Einfachheit\
   \ und der einfachen Integration in die meisten Programmiersprachen,\u2026"

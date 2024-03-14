@@ -3,7 +3,7 @@ date: 2024-01-26 00:51:56.387782-07:00
 description: "Feilh\xE5ndtering lar skriptet ditt takle det uventede p\xE5 en n\xE5\
   dig m\xE5te. Vi gj\xF8r det for \xE5 h\xE5ndtere feil uten \xE5 gj\xF8re brukernes\
   \ h\xE5r gr\xE5tt."
-lastmod: '2024-03-11T00:14:14.838256-06:00'
+lastmod: '2024-03-13T22:44:41.234390-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering lar skriptet ditt takle det uventede p\xE5 en n\xE5dig\
   \ m\xE5te. Vi gj\xF8r det for \xE5 h\xE5ndtere feil uten \xE5 gj\xF8re brukernes\

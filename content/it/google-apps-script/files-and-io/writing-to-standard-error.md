@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:09:04.693879-07:00
 description: "La scrittura su standard error (stderr) nei linguaggi di programmazione\
   \ riguarda l'indirizzamento dei messaggi di errore e delle diagnostiche su un flusso\u2026"
-lastmod: '2024-03-11T00:14:16.527122-06:00'
+lastmod: '2024-03-13T22:44:42.974202-06:00'
 model: gpt-4-0125-preview
 summary: "La scrittura su standard error (stderr) nei linguaggi di programmazione\
   \ riguarda l'indirizzamento dei messaggi di errore e delle diagnostiche su un flusso\u2026"

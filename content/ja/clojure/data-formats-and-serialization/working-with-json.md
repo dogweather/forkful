@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:27.593174-07:00
 description: "Clojure\u3067JSON\uFF08JavaScript Object\u2026"
-lastmod: '2024-03-11T00:14:15.216186-06:00'
+lastmod: '2024-03-13T22:44:41.585434-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure\u3067JSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"

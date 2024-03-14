@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:23.043281-07:00
 description: "Escrever para o erro padr\xE3o (stderr) em Rust \xE9 sobre direcionar\
   \ mensagens de erro e diagn\xF3sticos para o console separadamente da sa\xEDda padr\xE3\
   o (stdout). Os\u2026"
-lastmod: '2024-03-11T00:14:20.075839-06:00'
+lastmod: '2024-03-13T22:44:46.384028-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) em Rust \xE9 sobre direcionar mensagens\
   \ de erro e diagn\xF3sticos para o console separadamente da sa\xEDda padr\xE3o (stdout).\

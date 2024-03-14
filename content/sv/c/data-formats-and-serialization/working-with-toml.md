@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:36.154562-07:00
 description: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett konfigurationsfilformat\
   \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\
   \ anv\xE4nder det\u2026"
-lastmod: '2024-03-11T00:14:11.813842-06:00'
+lastmod: '2024-03-13T22:44:38.409333-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett konfigurationsfilformat\
   \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\

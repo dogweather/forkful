@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:12.877505-07:00
 description: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter du\
   \ code qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application.\
   \ Les programmeurs\u2026"
-lastmod: '2024-03-11T00:14:32.108072-06:00'
+lastmod: '2024-03-13T22:44:58.226452-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter du code\
   \ qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application.\

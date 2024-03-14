@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:58.501537-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe dans Elixir consiste \xE0 confirmer\
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 dans le syst\xE8\
   me de fichiers. Les\u2026"
-lastmod: '2024-03-11T00:14:31.373991-06:00'
+lastmod: '2024-03-13T22:44:57.342908-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans Elixir consiste \xE0 confirmer\
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 dans le syst\xE8\

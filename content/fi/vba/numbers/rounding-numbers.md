@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:17.890727-07:00
 description: "Numeroiden py\xF6rist\xE4minen ohjelmoinnissa tarkoittaa numeron likim\xE4\
   \xE4r\xE4ist\xE4 py\xF6rist\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn\
   \ desimaalipaikkojen m\xE4\xE4r\xE4\xE4n.\u2026"
-lastmod: '2024-03-11T00:14:30.331688-06:00'
+lastmod: '2024-03-13T22:44:56.394930-06:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen ohjelmoinnissa tarkoittaa numeron likim\xE4\
   \xE4r\xE4ist\xE4 py\xF6rist\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn\

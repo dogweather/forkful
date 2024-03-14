@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:02.633189-07:00
 description: "La journalisation en programmation consiste \xE0 enregistrer des \xE9\
   v\xE9nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution. Les\
   \ programmeurs le\u2026"
-lastmod: '2024-03-11T00:14:31.230812-06:00'
+lastmod: '2024-03-13T22:44:57.193421-06:00'
 model: gpt-4-0125-preview
 summary: "La journalisation en programmation consiste \xE0 enregistrer des \xE9v\xE9\
   nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution. Les programmeurs\

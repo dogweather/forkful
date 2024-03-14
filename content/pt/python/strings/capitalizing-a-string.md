@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:09.142599-07:00
 description: "Capitalizar uma string significa converter o primeiro caractere de uma\
   \ string para mai\xFAscula e o restante para min\xFAscula. Esta opera\xE7\xE3o \xE9\
   \ comumente usada\u2026"
-lastmod: '2024-03-11T00:14:19.802282-06:00'
+lastmod: '2024-03-13T22:44:46.136835-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string significa converter o primeiro caractere de uma string\
   \ para mai\xFAscula e o restante para min\xFAscula. Esta opera\xE7\xE3o \xE9 comumente\

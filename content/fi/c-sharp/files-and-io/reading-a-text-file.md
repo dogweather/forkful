@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:58.254534-07:00
 description: "Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelmasi\
   \ k\xE4ytt\xF6\xF6n. T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6n taito tiedon k\xE4sittely\xE4\
   , s\xE4ilytyst\xE4 ja analysointia\u2026"
-lastmod: '2024-03-11T00:14:30.539176-06:00'
+lastmod: '2024-03-13T22:44:56.591437-06:00'
 model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelmasi\
   \ k\xE4ytt\xF6\xF6n. T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6n taito tiedon k\xE4sittely\xE4\

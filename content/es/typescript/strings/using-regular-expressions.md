@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:18:31.146428-07:00
 description: "Las expresiones regulares, o regex, son una herramienta poderosa para\
   \ coincidencia de patrones y b\xFAsqueda en programaci\xF3n. Los programadores utilizan\u2026"
-lastmod: '2024-03-11T00:14:32.608565-06:00'
+lastmod: '2024-03-13T22:44:58.789523-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares, o regex, son una herramienta poderosa para coincidencia\
   \ de patrones y b\xFAsqueda en programaci\xF3n. Los programadores utilizan\u2026"

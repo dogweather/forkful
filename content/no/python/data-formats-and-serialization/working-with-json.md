@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:21.834026-07:00
 description: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer parsing\
   \ av JSON-formatterte strenger til Python-objekter og omvendt. Dette er avgj\xF8\
   rende for web-\u2026"
-lastmod: '2024-03-11T00:14:13.902648-06:00'
+lastmod: '2024-03-13T22:44:40.382327-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer parsing av\
   \ JSON-formatterte strenger til Python-objekter og omvendt. Dette er avgj\xF8rende\

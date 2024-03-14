@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:27.453997-07:00
 description: "L'analyse (parsing) d'une date \xE0 partir d'une cha\xEEne de caract\xE8\
   res dans Arduino consiste \xE0 extraire et \xE0 convertir les composants de la date\
   \ (ann\xE9e, mois,\u2026"
-lastmod: '2024-03-11T00:14:32.024485-06:00'
+lastmod: '2024-03-13T22:44:58.123144-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse (parsing) d'une date \xE0 partir d'une cha\xEEne de caract\xE8\
   res dans Arduino consiste \xE0 extraire et \xE0 convertir les composants de la date\

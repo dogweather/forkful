@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:47.117770-07:00
 description: "Working with XML in Elixir means parsing, creating, and manipulating\
   \ XML data. Programmers tackle XML because it's widespread in web services, config\u2026"
-lastmod: '2024-03-11T00:14:33.661144-06:00'
+lastmod: '2024-03-13T22:44:59.804108-06:00'
 model: gpt-4-1106-preview
 summary: "Working with XML in Elixir means parsing, creating, and manipulating XML\
   \ data. Programmers tackle XML because it's widespread in web services, config\u2026"

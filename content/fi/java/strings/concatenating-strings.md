@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:54.818501-07:00
 description: "Stringin yhdist\xE4minen eli konkatenointi tarkoittaa useampien tekstip\xE4\
   tkien yhdist\xE4mist\xE4 yhdeksi. Sit\xE4 k\xE4ytet\xE4\xE4n, koska halutaan rakentaa\
   \ dynaamisia\u2026"
-lastmod: '2024-03-11T00:14:30.377273-06:00'
+lastmod: '2024-03-13T22:44:56.436734-06:00'
 model: gpt-4-1106-preview
 summary: "Stringin yhdist\xE4minen eli konkatenointi tarkoittaa useampien tekstip\xE4\
   tkien yhdist\xE4mist\xE4 yhdeksi. Sit\xE4 k\xE4ytet\xE4\xE4n, koska halutaan rakentaa\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:14:44.763602-07:00
 description: "Scrivere test in C comporta la creazione di programmi o funzioni ausiliari\
   \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice. I\u2026"
-lastmod: '2024-03-11T00:14:17.531159-06:00'
+lastmod: '2024-03-13T22:44:44.002321-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in C comporta la creazione di programmi o funzioni ausiliari\
   \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice. I\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:00.064764-07:00
 description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
   \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"
-lastmod: '2024-03-11T00:14:28.262162-06:00'
+lastmod: '2024-03-13T22:44:54.352080-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
   \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"

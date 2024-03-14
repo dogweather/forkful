@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:38.513860-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w programowaniu to podstawowe zadanie,\
   \ kt\xF3re pozwala na pobieranie i manipulowanie danymi dotycz\u0105cymi daty i\
   \ czasu systemu. W\u2026"
-lastmod: '2024-03-11T00:14:09.065529-06:00'
+lastmod: '2024-03-13T22:44:35.852231-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w programowaniu to podstawowe zadanie,\
   \ kt\xF3re pozwala na pobieranie i manipulowanie danymi dotycz\u0105cymi daty i\

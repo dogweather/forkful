@@ -3,7 +3,7 @@ date: 2024-01-27 20:35:03.378023-07:00
 description: "Generar n\xFAmeros aleatorios en Ruby implica crear n\xFAmeros que no\
   \ pueden ser predichos l\xF3gicamente, esencial para escenarios como simulaciones,\
   \ criptograf\xEDa\u2026"
-lastmod: '2024-03-11T00:14:33.425757-06:00'
+lastmod: '2024-03-13T22:44:59.585605-06:00'
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en Ruby implica crear n\xFAmeros que no pueden\
   \ ser predichos l\xF3gicamente, esencial para escenarios como simulaciones, criptograf\xED\

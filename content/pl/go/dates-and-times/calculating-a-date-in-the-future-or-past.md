@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:56.743439-07:00
 description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci w\
   \ Go polega na manipulowaniu warto\u015Bciami daty i czasu, aby okre\u015Bli\u0107\
   \ konkretny punkt wzgl\u0119dem podanej daty.\u2026"
-lastmod: '2024-03-11T00:14:08.039261-06:00'
+lastmod: '2024-03-13T22:44:34.867405-06:00'
 model: gpt-4-0125-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci w Go polega\
   \ na manipulowaniu warto\u015Bciami daty i czasu, aby okre\u015Bli\u0107 konkretny\

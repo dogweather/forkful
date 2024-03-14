@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:44.953177-07:00
 description: "Es ist wesentlich in JavaScript zu \xFCberpr\xFCfen, ob ein Verzeichnis\
   \ existiert, um Aufgaben der Dateimanipulation durchzuf\xFChren. Dadurch k\xF6nnen\
   \ Skripte die\u2026"
-lastmod: '2024-03-11T00:14:28.185413-06:00'
+lastmod: '2024-03-13T22:44:54.280829-06:00'
 model: gpt-4-0125-preview
 summary: "Es ist wesentlich in JavaScript zu \xFCberpr\xFCfen, ob ein Verzeichnis\
   \ existiert, um Aufgaben der Dateimanipulation durchzuf\xFChren. Dadurch k\xF6nnen\

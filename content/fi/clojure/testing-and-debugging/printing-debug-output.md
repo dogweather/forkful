@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:37.337410-07:00
 description: "Printtaus debuggaustarkoituksiin on virheiden j\xE4ljityst\xE4 koodista\
   \ tulostusten avulla. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4, koska se auttaa ymm\xE4\
   rt\xE4m\xE4\xE4n, miss\xE4 homma\u2026"
-lastmod: '2024-03-11T00:14:30.116170-06:00'
+lastmod: '2024-03-13T22:44:56.186953-06:00'
 model: gpt-4-1106-preview
 summary: "Printtaus debuggaustarkoituksiin on virheiden j\xE4ljityst\xE4 koodista\
   \ tulostusten avulla. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4, koska se auttaa ymm\xE4\

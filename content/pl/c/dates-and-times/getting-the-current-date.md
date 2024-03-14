@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:23.451971-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w j\u0119zyku C wi\u0105\u017Ce si\u0119\
   \ z wykorzystaniem standardowej biblioteki C do pobrania i sformatowania bie\u017C\
   \u0105cej daty i czasu systemu.\u2026"
-lastmod: '2024-03-11T00:14:09.114901-06:00'
+lastmod: '2024-03-13T22:44:35.897833-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w j\u0119zyku C wi\u0105\u017Ce si\u0119\
   \ z wykorzystaniem standardowej biblioteki C do pobrania i sformatowania bie\u017C\

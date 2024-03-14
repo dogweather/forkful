@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:18.230632-07:00
 description: "Cr\xE9er un fichier temporaire en Visual Basic pour Applications (VBA)\
   \ consiste \xE0 g\xE9n\xE9rer programmatiquement un fichier pour un usage \xE0 court\
   \ terme,\u2026"
-lastmod: '2024-03-11T00:14:31.567360-06:00'
+lastmod: '2024-03-13T22:44:57.603755-06:00'
 model: gpt-4-0125-preview
 summary: "Cr\xE9er un fichier temporaire en Visual Basic pour Applications (VBA) consiste\
   \ \xE0 g\xE9n\xE9rer programmatiquement un fichier pour un usage \xE0 court terme,\u2026"

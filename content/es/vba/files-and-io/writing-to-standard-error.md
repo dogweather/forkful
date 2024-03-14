@@ -5,7 +5,7 @@ date: 2024-02-01 22:09:07.731731-07:00
 description: "Escribir en el error est\xE1ndar en Visual Basic para Aplicaciones (VBA)\
   \ implica dirigir mensajes de error o diagn\xF3sticos aparte de la salida est\xE1\
   ndar,\u2026"
-lastmod: '2024-03-11T00:14:32.725496-06:00'
+lastmod: '2024-03-13T22:44:58.911403-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar en Visual Basic para Aplicaciones (VBA)\
   \ implica dirigir mensajes de error o diagn\xF3sticos aparte de la salida est\xE1\

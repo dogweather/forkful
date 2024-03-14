@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:58.003232-07:00
 description: "T\xE9l\xE9charger une page Web, c'est r\xE9cup\xE9rer le contenu accessible\
   \ en ligne pour l'utiliser ou le stocker localement. Les programmeurs font \xE7\
   a pour\u2026"
-lastmod: '2024-03-11T00:14:32.194853-06:00'
+lastmod: '2024-03-13T22:44:58.323323-06:00'
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page Web, c'est r\xE9cup\xE9rer le contenu accessible\
   \ en ligne pour l'utiliser ou le stocker localement. Les programmeurs font \xE7\

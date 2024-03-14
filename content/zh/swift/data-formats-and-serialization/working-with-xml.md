@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 04:36:10.513673-07:00
 description: null
-lastmod: '2024-03-11T00:14:21.990437-06:00'
+lastmod: '2024-03-13T22:44:48.185927-06:00'
 model: gpt-4-0125-preview
 summary: null
 title: "\u5904\u7406XML"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:14.329153-07:00
 description: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstu,\
   \ kt\xF3ry reprezentuje dat\u0119, na obiekt `Date` lub `DateTime`, kt\xF3ry jest\
   \ zrozumia\u0142y dla Ruby.\u2026"
-lastmod: '2024-03-11T00:14:09.162258-06:00'
+lastmod: '2024-03-13T22:44:35.941771-06:00'
 model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstu, kt\xF3\
   ry reprezentuje dat\u0119, na obiekt `Date` lub `DateTime`, kt\xF3ry jest zrozumia\u0142\

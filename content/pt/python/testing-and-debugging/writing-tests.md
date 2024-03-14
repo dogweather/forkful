@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:31.846122-07:00
 description: "Escrever testes em Python envolve a cria\xE7\xE3o de scripts automatizados\
   \ para validar a corre\xE7\xE3o do seu c\xF3digo. Programadores fazem isso para\
   \ garantir que\u2026"
-lastmod: '2024-03-11T00:14:19.824191-06:00'
+lastmod: '2024-03-13T22:44:46.157511-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em Python envolve a cria\xE7\xE3o de scripts automatizados\
   \ para validar a corre\xE7\xE3o do seu c\xF3digo. Programadores fazem isso para\

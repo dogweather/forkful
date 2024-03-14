@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:26.613644-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng i Arduino inneb\xE4r att extrahera\
   \ och konvertera datumkomponenterna (\xE5r, m\xE5nad, dag) fr\xE5n en textuell representation\
   \ till\u2026"
-lastmod: '2024-03-11T00:14:11.565078-06:00'
+lastmod: '2024-03-13T22:44:38.176636-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Arduino inneb\xE4r att extrahera\
   \ och konvertera datumkomponenterna (\xE5r, m\xE5nad, dag) fr\xE5n en textuell representation\

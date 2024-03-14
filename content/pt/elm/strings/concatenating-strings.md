@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:43.441174-07:00
 description: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Programadores\
   \ fazem isso para montar senten\xE7as, mensagens, ou combinar dados de forma din\xE2\
   mica."
-lastmod: '2024-03-11T00:14:20.192914-06:00'
+lastmod: '2024-03-13T22:44:46.491931-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Programadores\
   \ fazem isso para montar senten\xE7as, mensagens, ou combinar dados de forma din\xE2\

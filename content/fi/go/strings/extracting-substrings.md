@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:54.076270-07:00
 description: "Merkkijonojen osien poimiminen k\xE4sitt\xE4\xE4 tiettyjen merkkijonojen\
   \ osien hakemisen niiden sijaintien perusteella. Ohjelmoijat suorittavat t\xE4t\xE4\
   \ toimenpidett\xE4\u2026"
-lastmod: '2024-03-11T00:14:29.963338-06:00'
+lastmod: '2024-03-13T22:44:56.038611-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonojen osien poimiminen k\xE4sitt\xE4\xE4 tiettyjen merkkijonojen\
   \ osien hakemisen niiden sijaintien perusteella. Ohjelmoijat suorittavat t\xE4t\xE4\

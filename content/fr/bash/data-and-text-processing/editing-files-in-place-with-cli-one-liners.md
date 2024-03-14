@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:18.345278-07:00
 description: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une\
   \ mise \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur\
   \ votre\u2026"
-lastmod: '2024-03-11T00:14:31.919271-06:00'
+lastmod: '2024-03-13T22:44:57.990032-06:00'
 model: gpt-4-0125-preview
 summary: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une mise\
   \ \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur votre\u2026"

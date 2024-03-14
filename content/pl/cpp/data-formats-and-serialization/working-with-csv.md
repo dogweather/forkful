@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:41.119953-07:00
 description: "Praca z plikami CSV (Comma Separated Values - Warto\u015Bci Oddzielone\
   \ Przecinkami) dotyczy przetwarzania i manipulowania danymi przechowywanymi w prostym\u2026"
-lastmod: '2024-03-11T00:14:08.938368-06:00'
+lastmod: '2024-03-13T22:44:35.735194-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma Separated Values - Warto\u015Bci Oddzielone Przecinkami)\
   \ dotyczy przetwarzania i manipulowania danymi przechowywanymi w prostym\u2026"

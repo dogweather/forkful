@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:11.964307-07:00
 description: "Deletar caracteres que seguem um padr\xE3o \xE9 como tirar ervas daninhas\
   \ do seu jardim de strings; \xE0s vezes, voc\xEA s\xF3 precisa de tulipas, n\xE3\
   o de dente-de-le\xE3o.\u2026"
-lastmod: '2024-03-11T00:14:19.850355-06:00'
+lastmod: '2024-03-13T22:44:46.181630-06:00'
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que seguem um padr\xE3o \xE9 como tirar ervas daninhas\
   \ do seu jardim de strings; \xE0s vezes, voc\xEA s\xF3 precisa de tulipas, n\xE3\

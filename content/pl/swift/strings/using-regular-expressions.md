@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:30.430938-07:00
 description: "Wyra\u017Cenia regularne, czyli regex, to sekwencje znak\xF3w, kt\xF3\
   re tworz\u0105 wzorzec wyszukiwania, cz\u0119sto u\u017Cywane do zada\u0144 dopasowywania\
   \ lub manipulacji ci\u0105gami\u2026"
-lastmod: '2024-03-11T00:14:08.949027-06:00'
+lastmod: '2024-03-13T22:44:35.744849-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne, czyli regex, to sekwencje znak\xF3w, kt\xF3re\
   \ tworz\u0105 wzorzec wyszukiwania, cz\u0119sto u\u017Cywane do zada\u0144 dopasowywania\

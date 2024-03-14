@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:30.745140-07:00
 description: "Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalaj\u0105\
   cy zamieni\u0107 pewne wyra\u017Cenia czy ci\u0105gi znak\xF3w na inne. Programi\u015B\
   ci u\u017Cywaj\u0105 tego,\u2026"
-lastmod: '2024-03-11T00:14:09.134488-06:00'
+lastmod: '2024-03-13T22:44:35.916067-06:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalaj\u0105\
   cy zamieni\u0107 pewne wyra\u017Cenia czy ci\u0105gi znak\xF3w na inne. Programi\u015B\

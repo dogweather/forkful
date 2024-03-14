@@ -6,7 +6,7 @@ description: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE
   \ chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n HTML th\xE0nh m\u1ED9t c\u1EA5u tr\xFA\
   c d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3\
   \ t\u01B0\u01A1ng t\xE1c \u0111\u01B0\u1EE3c. C\xE1c l\u1EADp tr\xECnh\u2026"
-lastmod: '2024-03-11T00:14:09.810267-06:00'
+lastmod: '2024-03-13T22:44:36.541168-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 chuy\u1EC3\
   n \u0111\u1ED5i v\u0103n b\u1EA3n HTML th\xE0nh m\u1ED9t c\u1EA5u tr\xFAc d\u1EEF\

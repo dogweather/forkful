@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:04.920468-07:00
 description: "Een HTTP-verzoek versturen is een manier om te communiceren met web\
   \ servers om data op te halen of formulieren in te dienen. Programmeurs doen dit\
   \ om te\u2026"
-lastmod: '2024-03-11T00:14:24.813445-06:00'
+lastmod: '2024-03-13T22:44:50.979257-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen is een manier om te communiceren met web servers\
   \ om data op te halen of formulieren in te dienen. Programmeurs doen dit om te\u2026"

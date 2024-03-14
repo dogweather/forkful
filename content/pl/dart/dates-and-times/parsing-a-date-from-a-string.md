@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:21.066965-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowaniu\
   \ tekstowego przedstawienia dat i czas\xF3w na obiekt `DateTime`. Operacja ta jest\
   \ niezb\u0119dna dla\u2026"
-lastmod: '2024-03-11T00:14:08.273830-06:00'
+lastmod: '2024-03-13T22:44:35.101924-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowaniu tekstowego\
   \ przedstawienia dat i czas\xF3w na obiekt `DateTime`. Operacja ta jest niezb\u0119\

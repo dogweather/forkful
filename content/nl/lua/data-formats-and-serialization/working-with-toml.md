@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:54.389349-07:00
 description: "Werken met TOML houdt het parsen en genereren van TOML (Tom's Obvious,\
   \ Minimal Language) gegevens met Lua in. Programmeurs gebruiken TOML voor\u2026"
-lastmod: '2024-03-11T00:14:24.793136-06:00'
+lastmod: '2024-03-13T22:44:50.960341-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met TOML houdt het parsen en genereren van TOML (Tom's Obvious, Minimal\
   \ Language) gegevens met Lua in. Programmeurs gebruiken TOML voor\u2026"

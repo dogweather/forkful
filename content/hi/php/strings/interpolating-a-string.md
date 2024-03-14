@@ -7,7 +7,7 @@ description: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \
   \ \u092A\u0922\u093C\u0928\u0947 \u0914\u0930 \u0932\u093F\u0916\u0928\u0947 \u092E\
   \u0947\u0902 \u0906\u0938\u093E\u0928\u0940 \u0939\u094B\u0924\u0940 \u0939\u0948\
   \ \u0915\u094D\u092F\u094B\u0902\u0915\u093F \u092F\u0939 variable\u2026"
-lastmod: '2024-03-11T00:14:26.372423-06:00'
+lastmod: '2024-03-13T22:44:52.453078-06:00'
 model: gpt-4-1106-preview
 summary: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\u0948\
   \ \u091C\u093F\u0938\u092E\u0947\u0902 \u0939\u092E PHP variables \u0915\u094B \u0938\

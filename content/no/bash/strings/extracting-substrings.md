@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:56.986546-07:00
 description: "Utdrag av strenger er \xE5 hente deler fra en tekststreng. Programmerere\
   \ gj\xF8r det for \xE5 jobbe med spesifikke datasegmenter, validere input, eller\
   \ manipulere\u2026"
-lastmod: '2024-03-11T00:14:14.534534-06:00'
+lastmod: '2024-03-13T22:44:40.961385-06:00'
 model: gpt-4-1106-preview
 summary: "Utdrag av strenger er \xE5 hente deler fra en tekststreng. Programmerere\
   \ gj\xF8r det for \xE5 jobbe med spesifikke datasegmenter, validere input, eller\

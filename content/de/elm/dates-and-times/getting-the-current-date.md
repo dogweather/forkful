@@ -2,7 +2,7 @@
 date: 2024-01-20 15:14:15.658251-07:00
 description: "Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane\
   \ Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen\u2026"
-lastmod: '2024-03-11T00:14:27.708360-06:00'
+lastmod: '2024-03-13T22:44:53.815907-06:00'
 model: unknown
 summary: "Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane\
   \ Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen\u2026"

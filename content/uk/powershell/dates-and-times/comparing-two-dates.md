@@ -2,7 +2,7 @@
 date: 2024-01-20 17:33:37.125073-07:00
 description: Comparing two dates means checking which one comes first or if they're
   the same. Programmers do this to manage events, sort records, or check durations.
-lastmod: '2024-03-11T00:14:23.541412-06:00'
+lastmod: '2024-03-13T22:44:49.670951-06:00'
 model: gpt-4-1106-preview
 summary: Comparing two dates means checking which one comes first or if they're the
   same. Programmers do this to manage events, sort records, or check durations.

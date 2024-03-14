@@ -3,7 +3,7 @@ date: 2024-01-26 04:42:01.243846-07:00
 description: "Los n\xFAmeros complejos son n\xFAmeros con una parte real y una parte\
   \ imaginaria (como 3 + 4i). Aparecen en varios problemas de programaci\xF3n, especialmente\
   \ en\u2026"
-lastmod: '2024-03-11T00:14:33.282969-06:00'
+lastmod: '2024-03-13T22:44:59.452749-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos son n\xFAmeros con una parte real y una parte imaginaria\
   \ (como 3 + 4i). Aparecen en varios problemas de programaci\xF3n, especialmente\

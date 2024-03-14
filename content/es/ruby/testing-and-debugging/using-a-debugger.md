@@ -3,7 +3,7 @@ date: 2024-01-26 04:09:30.774007-07:00
 description: "Utilizar un depurador en Ruby otorga a los programadores un superpoder\
   \ para pausar su c\xF3digo, inspeccionar variables y avanzar a trav\xE9s de su c\xF3\
   digo l\xEDnea\u2026"
-lastmod: '2024-03-11T00:14:33.437208-06:00'
+lastmod: '2024-03-13T22:44:59.595866-06:00'
 model: gpt-4-0125-preview
 summary: "Utilizar un depurador en Ruby otorga a los programadores un superpoder para\
   \ pausar su c\xF3digo, inspeccionar variables y avanzar a trav\xE9s de su c\xF3\

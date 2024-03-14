@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:10:06.147087-07:00
 description: "Un shell interactivo, tambi\xE9n conocido como un bucle Leer-Evaluar-Imprimir\
   \ (REPL, por sus siglas en ingl\xE9s), permite a los programadores escribir\u2026"
-lastmod: '2024-03-11T00:14:33.385214-06:00'
+lastmod: '2024-03-13T22:44:59.547377-06:00'
 model: gpt-4-0125-preview
 summary: "Un shell interactivo, tambi\xE9n conocido como un bucle Leer-Evaluar-Imprimir\
   \ (REPL, por sus siglas en ingl\xE9s), permite a los programadores escribir\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:56.370471-07:00
 description: "Een tekstbestand schrijven in PHP gaat over het opslaan van gegevens\
   \ naar een bestand op de server. Programmeurs doen dit vaak voor datalogging,\u2026"
-lastmod: '2024-03-11T00:14:24.745021-06:00'
+lastmod: '2024-03-13T22:44:50.914164-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in PHP gaat over het opslaan van gegevens naar\
   \ een bestand op de server. Programmeurs doen dit vaak voor datalogging,\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:43.201264-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet einfach, alle\
   \ Gro\xDFbuchstaben in eine Zeichenkette in ihre kleinen Pendants zu \xFCberf\xFC\
   hren.\u2026"
-lastmod: '2024-03-11T00:14:27.815099-06:00'
+lastmod: '2024-03-13T22:44:53.918342-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet einfach, alle Gro\xDF\
   buchstaben in eine Zeichenkette in ihre kleinen Pendants zu \xFCberf\xFChren.\u2026"

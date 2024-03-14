@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:08.134217-07:00
 description: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att\
   \ matcha dem mot ett m\xF6nster. Programmerare g\xF6r detta f\xF6r att st\xE4da\
   \ data, validera input eller\u2026"
-lastmod: '2024-03-11T00:14:11.817404-06:00'
+lastmod: '2024-03-13T22:44:38.412772-06:00'
 model: gpt-4-1106-preview
 summary: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att matcha\
   \ dem mot ett m\xF6nster. Programmerare g\xF6r detta f\xF6r att st\xE4da data, validera\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:05:18.041201-07:00
 description: "\xC5 jobbe med CSV-filer (Comma Separated Values) involverer lesing\
   \ fra eller skriving til rene tekstfiler der datafeltene er adskilt med kommaer.\u2026"
-lastmod: '2024-03-11T00:14:14.185437-06:00'
+lastmod: '2024-03-13T22:44:40.646253-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma Separated Values) involverer lesing fra\
   \ eller skriving til rene tekstfiler der datafeltene er adskilt med kommaer.\u2026"

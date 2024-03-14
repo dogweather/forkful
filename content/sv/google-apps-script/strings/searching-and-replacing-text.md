@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:28.251797-07:00
 description: "Att s\xF6ka och ers\xE4tta text i Google Apps Script inneb\xE4r att\
   \ man programmeringsm\xE4ssigt identifierar specifika str\xE4ngar i ett dokument,\
   \ kalkylblad eller\u2026"
-lastmod: '2024-03-11T00:14:10.728688-06:00'
+lastmod: '2024-03-13T22:44:37.421644-06:00'
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i Google Apps Script inneb\xE4r att man\
   \ programmeringsm\xE4ssigt identifierar specifika str\xE4ngar i ett dokument, kalkylblad\

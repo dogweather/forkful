@@ -6,7 +6,7 @@ description: "Trong l\u0129nh v\u1EF1c l\u1EADp tr\xECnh, \u0111\u1EB7c bi\u1EC7
   \ l\xE0 khi l\xE0m vi\u1EC7c v\u1EDBi m\xF4i tr\u01B0\u1EDDng Linux ho\u1EB7c Unix,\
   \ vi\u1EC7c thao t\xE1c t\u1EC7p tin tr\u1EF1c ti\u1EBFp t\u1EEB giao di\u1EC7n\
   \ d\xF2ng l\u1EC7nh (CLI) kh\xF4ng ch\u1EC9\u2026"
-lastmod: '2024-03-11T00:14:10.513387-06:00'
+lastmod: '2024-03-13T22:44:37.203686-06:00'
 model: gpt-4-0125-preview
 summary: "Trong l\u0129nh v\u1EF1c l\u1EADp tr\xECnh, \u0111\u1EB7c bi\u1EC7t l\xE0\
   \ khi l\xE0m vi\u1EC7c v\u1EDBi m\xF4i tr\u01B0\u1EDDng Linux ho\u1EB7c Unix, vi\u1EC7\

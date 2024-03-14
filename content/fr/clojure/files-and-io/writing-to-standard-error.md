@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:41.088451-07:00
 description: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 diriger les messages\
   \ d'erreur et les diagnostics vers le flux stderr, s\xE9par\xE9ment de la sortie\
   \ standard\u2026"
-lastmod: '2024-03-11T00:14:31.330915-06:00'
+lastmod: '2024-03-13T22:44:57.299390-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 diriger les messages\
   \ d'erreur et les diagnostics vers le flux stderr, s\xE9par\xE9ment de la sortie\

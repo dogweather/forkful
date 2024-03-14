@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:11.732888-07:00
 description: "Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van\
   \ een webserver, om gegevens te vragen of aan te bieden. Programmeurs doen dit om\
   \ te\u2026"
-lastmod: '2024-03-11T00:14:24.991482-06:00'
+lastmod: '2024-03-13T22:44:51.153519-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van een\
   \ webserver, om gegevens te vragen of aan te bieden. Programmeurs doen dit om te\u2026"

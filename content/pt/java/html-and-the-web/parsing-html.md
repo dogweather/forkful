@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:22.695390-07:00
 description: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair dados\
   \ como texto, links ou outros elementos. Fazemos isso para interagir com ou raspar\
   \ conte\xFAdo\u2026"
-lastmod: '2024-03-11T00:14:20.150601-06:00'
+lastmod: '2024-03-13T22:44:46.453920-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair dados como\
   \ texto, links ou outros elementos. Fazemos isso para interagir com ou raspar conte\xFA\

@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:02.015237-07:00
 description: "Converting a string to lowercase is a fundamental operation that enables\
   \ uniformity and consistency in text processing, essential for tasks like case-\u2026"
-lastmod: '2024-03-11T00:14:33.462383-06:00'
+lastmod: '2024-03-13T22:44:59.619541-06:00'
 model: gpt-4-0125-preview
 summary: "Converting a string to lowercase is a fundamental operation that enables\
   \ uniformity and consistency in text processing, essential for tasks like case-\u2026"

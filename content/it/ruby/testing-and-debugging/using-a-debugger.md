@@ -3,7 +3,7 @@ date: 2024-01-26 04:09:47.739381-07:00
 description: "Usare un debugger in Ruby fornisce ai programmatori un superpotere:\
   \ mettere in pausa il loro codice, ispezionare le variabili e passare attraverso\
   \ il loro\u2026"
-lastmod: '2024-03-11T00:14:17.578363-06:00'
+lastmod: '2024-03-13T22:44:44.055712-06:00'
 model: gpt-4-0125-preview
 summary: "Usare un debugger in Ruby fornisce ai programmatori un superpotere: mettere\
   \ in pausa il loro codice, ispezionare le variabili e passare attraverso il loro\u2026"

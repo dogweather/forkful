@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:12.055367-07:00
 description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en\
   \ cadenas de texto es crucial para la validaci\xF3n de datos, la sanitizaci\xF3\
   n o cuando se prepara\u2026"
-lastmod: '2024-03-11T00:14:32.555362-06:00'
+lastmod: '2024-03-13T22:44:58.730150-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en cadenas\
   \ de texto es crucial para la validaci\xF3n de datos, la sanitizaci\xF3n o cuando\

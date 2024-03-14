@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:12.932403-07:00
 description: "Obter a data atual em PHP \xE9 uma tarefa fundamental que permite recuperar\
   \ e manipular a data e a hora do sistema. Isso \xE9 crucial para fun\xE7\xF5es como\u2026"
-lastmod: '2024-03-11T00:14:20.392063-06:00'
+lastmod: '2024-03-13T22:44:46.677734-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em PHP \xE9 uma tarefa fundamental que permite recuperar\
   \ e manipular a data e a hora do sistema. Isso \xE9 crucial para fun\xE7\xF5es como\u2026"

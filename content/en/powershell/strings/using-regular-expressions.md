@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:01.274172-07:00
 description: "Regular expressions (regex) are sequences of characters that form a\
   \ search pattern, primarily used for string searching and manipulation. Programmers\u2026"
-lastmod: '2024-03-11T00:14:34.140455-06:00'
+lastmod: '2024-03-13T22:45:00.273121-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions (regex) are sequences of characters that form a search\
   \ pattern, primarily used for string searching and manipulation. Programmers\u2026"

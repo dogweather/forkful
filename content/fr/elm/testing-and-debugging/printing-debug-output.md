@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:19.416586-07:00
 description: "Qu'est-ce que c'est l'impression de d\xE9bogage ? C\u2019est l\u2019\
   art de balancer des infos dans la console pour comprendre ce qui se passe dans ton\
   \ code. Pourquoi\u2026"
-lastmod: '2024-03-11T00:14:31.643796-06:00'
+lastmod: '2024-03-13T22:44:57.691821-06:00'
 model: gpt-4-1106-preview
 summary: "Qu'est-ce que c'est l'impression de d\xE9bogage ? C\u2019est l\u2019art\
   \ de balancer des infos dans la console pour comprendre ce qui se passe dans ton\

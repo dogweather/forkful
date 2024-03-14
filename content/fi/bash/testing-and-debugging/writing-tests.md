@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:41.161254-07:00
 description: "Testien kirjoittaminen Bashissa k\xE4sitt\xE4\xE4 testitapausten skriptaamisen\
   \ Bash-skriptien toiminnallisuuden varmistamiseksi. Ohjelmoijat suorittavat testej\xE4\
   \u2026"
-lastmod: '2024-03-11T00:14:30.699151-06:00'
+lastmod: '2024-03-13T22:44:56.742867-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Bashissa k\xE4sitt\xE4\xE4 testitapausten skriptaamisen\
   \ Bash-skriptien toiminnallisuuden varmistamiseksi. Ohjelmoijat suorittavat testej\xE4\

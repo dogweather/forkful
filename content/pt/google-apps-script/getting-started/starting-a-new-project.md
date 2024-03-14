@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:48.381222-07:00
 description: "Iniciar um novo projeto no Google Apps Script (GAS) envolve a inicializa\xE7\
   \xE3o de um arquivo de script dentro do ecossistema do Google (Google Drive, Docs,\u2026"
-lastmod: '2024-03-11T00:14:19.772802-06:00'
+lastmod: '2024-03-13T22:44:46.108259-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto no Google Apps Script (GAS) envolve a inicializa\xE7\
   \xE3o de um arquivo de script dentro do ecossistema do Google (Google Drive, Docs,\u2026"

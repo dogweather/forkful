@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:57.663092-07:00
 description: "Analizar HTML en Rust se trata de extraer datos de documentos HTML,\
   \ lo cual es esencial para el web scraping, la extracci\xF3n de datos o la construcci\xF3\
   n de\u2026"
-lastmod: '2024-03-11T00:14:32.660083-06:00'
+lastmod: '2024-03-13T22:44:58.844313-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML en Rust se trata de extraer datos de documentos HTML, lo cual\
   \ es esencial para el web scraping, la extracci\xF3n de datos o la construcci\xF3\

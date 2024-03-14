@@ -3,7 +3,7 @@ date: 2024-01-26 04:41:45.423847-07:00
 description: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del, \xE4\
   r grundl\xE4ggande inom olika ber\xE4kningsf\xE4lt som teknik, fysik och signalbehandling.\
   \ Programmerare\u2026"
-lastmod: '2024-03-11T00:14:11.314655-06:00'
+lastmod: '2024-03-13T22:44:37.949298-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del, \xE4r grundl\xE4\
   ggande inom olika ber\xE4kningsf\xE4lt som teknik, fysik och signalbehandling. Programmerare\u2026"

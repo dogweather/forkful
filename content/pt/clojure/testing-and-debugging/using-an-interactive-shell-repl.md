@@ -3,7 +3,7 @@ date: 2024-01-26 04:13:04.143132-07:00
 description: "REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambiente\
   \ de programa\xE7\xE3o para testar dinamicamente c\xF3digo Clojure peda\xE7o por\
   \ peda\xE7o. Programadores o\u2026"
-lastmod: '2024-03-11T00:14:19.870837-06:00'
+lastmod: '2024-03-13T22:44:46.198359-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambiente\
   \ de programa\xE7\xE3o para testar dinamicamente c\xF3digo Clojure peda\xE7o por\

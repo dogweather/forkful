@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:58.137512-07:00
 description: "Calcular una fecha en el futuro o pasado es simplemente ajustar una\
   \ fecha dada por cierta cantidad de tiempo. Programadores lo hacen para funciones\
   \ como\u2026"
-lastmod: '2024-03-11T00:14:33.446244-06:00'
+lastmod: '2024-03-13T22:44:59.604388-06:00'
 model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado es simplemente ajustar una fecha\
   \ dada por cierta cantidad de tiempo. Programadores lo hacen para funciones como\u2026"

@@ -3,7 +3,7 @@ date: 2024-03-08 21:33:34.209785-07:00
 description: "Sending an HTTP request with basic authentication involves attaching\
   \ a username and password to a request to verify the user's identity. Programmers\
   \ use\u2026"
-lastmod: '2024-03-11T00:14:33.677493-06:00'
+lastmod: '2024-03-13T22:44:59.820560-06:00'
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request with basic authentication involves attaching a username\
   \ and password to a request to verify the user's identity. Programmers use\u2026"

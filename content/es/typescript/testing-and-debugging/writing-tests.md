@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:40.782813-07:00
 description: "Escribir pruebas en TypeScript implica crear scripts automatizados para\
   \ verificar la funcionalidad y la correcci\xF3n de tu c\xF3digo. Los programadores\
   \ lo\u2026"
-lastmod: '2024-03-11T00:14:32.622508-06:00'
+lastmod: '2024-03-13T22:44:58.804519-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en TypeScript implica crear scripts automatizados para\
   \ verificar la funcionalidad y la correcci\xF3n de tu c\xF3digo. Los programadores\

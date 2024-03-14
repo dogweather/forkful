@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:35.309560-07:00
 description: "Los n\xFAmeros complejos extienden los n\xFAmeros reales al a\xF1adir\
   \ una unidad imaginaria, representada como 'i', donde i\xB2 = -1. Los programadores\
   \ los utilizan\u2026"
-lastmod: '2024-03-11T00:14:33.192055-06:00'
+lastmod: '2024-03-13T22:44:59.369469-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos extienden los n\xFAmeros reales al a\xF1adir una\
   \ unidad imaginaria, representada como 'i', donde i\xB2 = -1. Los programadores\

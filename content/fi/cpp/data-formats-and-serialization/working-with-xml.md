@@ -3,7 +3,7 @@ date: 2024-01-26 04:28:24.545351-07:00
 description: "XML:n (laajennettava merkint\xE4kieli) kanssa ty\xF6skentely tarkoittaa\
   \ XML-tietojen j\xE4sent\xE4mist\xE4, luomista ja manipulointia. Ohjelmoijat hallinnoivat\
   \ XML-\u2026"
-lastmod: '2024-03-11T00:14:30.928755-06:00'
+lastmod: '2024-03-13T22:44:56.889960-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n (laajennettava merkint\xE4kieli) kanssa ty\xF6skentely tarkoittaa\
   \ XML-tietojen j\xE4sent\xE4mist\xE4, luomista ja manipulointia. Ohjelmoijat hallinnoivat\

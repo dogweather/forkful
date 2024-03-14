@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:48.293256-07:00
 description: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje funkcje\
   \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole. Programi\u015B\
   ci robi\u0105 to,\u2026"
-lastmod: '2024-03-11T00:14:08.640707-06:00'
+lastmod: '2024-03-13T22:44:35.455450-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje funkcje\
   \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole. Programi\u015B\

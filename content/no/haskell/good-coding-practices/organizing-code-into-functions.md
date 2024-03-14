@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:49.130642-07:00
 description: "\xC5 organisere kode i funksjoner i Haskell betyr \xE5 bryte ned koden\
   \ din i gjenbrukbare, navngitte blokker. Hvorfor? Det holder koden din DRY (Don't\
   \ Repeat\u2026"
-lastmod: '2024-03-11T00:14:14.409779-06:00'
+lastmod: '2024-03-13T22:44:40.847293-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner i Haskell betyr \xE5 bryte ned koden din\
   \ i gjenbrukbare, navngitte blokker. Hvorfor? Det holder koden din DRY (Don't Repeat\u2026"

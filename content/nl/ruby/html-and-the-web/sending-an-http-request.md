@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:51.071997-07:00
 description: "Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron\
   \ op het web. Programmeurs doen dit om te communiceren met API's, webinhoud te\u2026"
-lastmod: '2024-03-11T00:14:25.198164-06:00'
+lastmod: '2024-03-13T22:44:51.334677-06:00'
 model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron op\
   \ het web. Programmeurs doen dit om te communiceren met API's, webinhoud te\u2026"

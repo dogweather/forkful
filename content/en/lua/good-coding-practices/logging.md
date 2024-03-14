@@ -2,7 +2,7 @@
 date: 2024-01-25 02:35:15.240906-07:00
 description: "Logging is the practice of recording events, errors, and other significant\
   \ data points that occur within a software application's lifecycle. Programmers\u2026"
-lastmod: '2024-03-11T00:14:34.075973-06:00'
+lastmod: '2024-03-13T22:45:00.211533-06:00'
 model: gpt-4-1106-preview
 summary: "Logging is the practice of recording events, errors, and other significant\
   \ data points that occur within a software application's lifecycle. Programmers\u2026"

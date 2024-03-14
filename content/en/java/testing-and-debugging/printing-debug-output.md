@@ -2,7 +2,7 @@
 date: 2024-01-20 17:52:49.178700-07:00
 description: "Printing debug output is tossing little bread crumbs of information\
   \ into the console to track down bugs. It's quick, dirty, and effective for\u2026"
-lastmod: '2024-03-11T00:14:33.837581-06:00'
+lastmod: '2024-03-13T22:44:59.974755-06:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output is tossing little bread crumbs of information into\
   \ the console to track down bugs. It's quick, dirty, and effective for\u2026"

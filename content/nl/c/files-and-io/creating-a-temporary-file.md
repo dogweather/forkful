@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:25.757161-07:00
 description: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een\
   \ bestand dat bedoeld is om voor een korte duur gebruikt te worden, meestal als\
   \ kladruimte\u2026"
-lastmod: '2024-03-11T00:14:25.173752-06:00'
+lastmod: '2024-03-13T22:44:51.311087-06:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een bestand\
   \ dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte\u2026"

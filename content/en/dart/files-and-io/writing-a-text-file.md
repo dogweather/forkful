@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:37.309271-07:00
 description: "Writing a text file in Dart involves creating or modifying files on\
   \ the disk to store data in a readable format. Programmers do it to save application\u2026"
-lastmod: '2024-03-11T00:14:33.695045-06:00'
+lastmod: '2024-03-13T22:44:59.837012-06:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in Dart involves creating or modifying files on the\
   \ disk to store data in a readable format. Programmers do it to save application\u2026"

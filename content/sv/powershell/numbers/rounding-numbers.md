@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:31.386364-07:00
 description: "Att avrunda tal handlar om att justera ett v\xE4rde till n\xE4rmaste\
   \ heltal eller angiven decimalplats. Programmerare avrundar tal f\xF6r att f\xF6\
   renkla data,\u2026"
-lastmod: '2024-03-11T00:14:11.502058-06:00'
+lastmod: '2024-03-13T22:44:38.119159-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal handlar om att justera ett v\xE4rde till n\xE4rmaste heltal\
   \ eller angiven decimalplats. Programmerare avrundar tal f\xF6r att f\xF6renkla\

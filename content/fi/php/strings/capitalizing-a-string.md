@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:05:59.961944-07:00
 description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun tekstin ensimm\xE4\
   isen merkin muuttamista suuraakkoseksi, varmistetaan, ett\xE4 lauseet, otsikot tai\u2026"
-lastmod: '2024-03-11T00:14:30.590475-06:00'
+lastmod: '2024-03-13T22:44:56.639575-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun tekstin ensimm\xE4\
   isen merkin muuttamista suuraakkoseksi, varmistetaan, ett\xE4 lauseet, otsikot tai\u2026"

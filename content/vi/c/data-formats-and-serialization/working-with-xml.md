@@ -6,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML trong C bao g\u1ED3m vi\u1EC7c ph\xE
   n t\xEDch c\xFA ph\xE1p, truy v\u1EA5n v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i\
   \ li\u1EC7u XML s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n kh\xE1c nhau. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn\u2026"
-lastmod: '2024-03-11T00:14:10.613937-06:00'
+lastmod: '2024-03-13T22:44:37.300479-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong C bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED\
   ch c\xFA ph\xE1p, truy v\u1EA5n v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i li\u1EC7\

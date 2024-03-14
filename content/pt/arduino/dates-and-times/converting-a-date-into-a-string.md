@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:53.747386-07:00
 description: "Converter datas em strings permite que voc\xEA exiba ou armazene datas\
   \ de forma leg\xEDvel. Programadores fazem isso para facilitar a leitura e o processamento\u2026"
-lastmod: '2024-03-11T00:14:20.577421-06:00'
+lastmod: '2024-03-13T22:44:46.850256-06:00'
 model: gpt-4-1106-preview
 summary: "Converter datas em strings permite que voc\xEA exiba ou armazene datas de\
   \ forma leg\xEDvel. Programadores fazem isso para facilitar a leitura e o processamento\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:48.339093-07:00
 description: "Extraire des sous-cha\xEEnes consiste \xE0 prendre une portion d'une\
   \ cha\xEEne de caract\xE8res - en cr\xE9ant essentiellement une nouvelle cha\xEE\
   ne \xE0 partir d'une partie\u2026"
-lastmod: '2024-03-11T00:14:31.209991-06:00'
+lastmod: '2024-03-13T22:44:57.171831-06:00'
 model: gpt-4-0125-preview
 summary: "Extraire des sous-cha\xEEnes consiste \xE0 prendre une portion d'une cha\xEE\
   ne de caract\xE8res - en cr\xE9ant essentiellement une nouvelle cha\xEEne \xE0 partir\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:08:50.396923-07:00
 description: "\"Usare un debugger\" significa esaminare passo dopo passo il proprio\
   \ codice Python per scoprire bug e comprendere il comportamento. Lo facciamo perch\xE9\
   \ \xE8\u2026"
-lastmod: '2024-03-11T00:14:16.560806-06:00'
+lastmod: '2024-03-13T22:44:43.005613-06:00'
 model: gpt-4-0125-preview
 summary: "\"Usare un debugger\" significa esaminare passo dopo passo il proprio codice\
   \ Python per scoprire bug e comprendere il comportamento. Lo facciamo perch\xE9\

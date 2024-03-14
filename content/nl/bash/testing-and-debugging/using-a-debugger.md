@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:39.681061-07:00
 description: "Een debugger in Bash gebruiken betekent het inzetten van tools om te\
   \ testen en problemen in je scripts te vinden, zoals het vangen van bugs die je\
   \ code\u2026"
-lastmod: '2024-03-11T00:14:24.821600-06:00'
+lastmod: '2024-03-13T22:44:50.987367-06:00'
 model: gpt-4-0125-preview
 summary: "Een debugger in Bash gebruiken betekent het inzetten van tools om te testen\
   \ en problemen in je scripts te vinden, zoals het vangen van bugs die je code\u2026"

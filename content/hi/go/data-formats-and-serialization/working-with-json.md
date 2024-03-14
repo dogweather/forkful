@@ -10,7 +10,7 @@ description: "Go \u092E\u0947\u0902 JSON (JavaScript Object Notation) \u0915\u09
   \u0917 \u0914\u0930 \u0921\u093F\u0915\u094B\u0921\u093F\u0902\u0917 \u0915\u0930\
   \u0928\u0947 \u0915\u0940 \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E\
   \ \u0915\u094B \u0936\u093E\u092E\u093F\u0932\u2026"
-lastmod: '2024-03-11T00:14:25.305338-06:00'
+lastmod: '2024-03-13T22:44:51.473138-06:00'
 model: gpt-4-0125-preview
 summary: "Go \u092E\u0947\u0902 JSON (JavaScript Object Notation) \u0915\u0947 \u0938\
   \u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E Go \u0921\u0947\u091F\u093E\

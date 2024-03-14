@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:18.567037-07:00
 description: "Starting a new project means setting up a fresh programming environment\
   \ for your code. Programmers do it to kick off development with a clean slate and\u2026"
-lastmod: '2024-03-11T00:14:33.598016-06:00'
+lastmod: '2024-03-13T22:44:59.746267-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project means setting up a fresh programming environment\
   \ for your code. Programmers do it to kick off development with a clean slate and\u2026"

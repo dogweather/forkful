@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:24.788856-07:00
 description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura\
   \ e escrita de arquivos CSV, um formato comum de troca de dados usado devido \xE0\
   \ sua\u2026"
-lastmod: '2024-03-11T00:14:20.036381-06:00'
+lastmod: '2024-03-13T22:44:46.348579-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura e\
   \ escrita de arquivos CSV, um formato comum de troca de dados usado devido \xE0\

@@ -3,7 +3,7 @@ date: 2024-01-26 03:36:54.208592-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 strippe\
   \ vekk eventuelle forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn\
   \ som omslutter teksten.\u2026"
-lastmod: '2024-03-11T00:14:14.636329-06:00'
+lastmod: '2024-03-13T22:44:41.046836-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 strippe vekk\
   \ eventuelle forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som\

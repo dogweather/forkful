@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:11.899120-07:00
 description: "YAML, which stands for YAML Ain't Markup Language, is extensively used\
   \ in Ruby for configuration files and data serialization due to its human-readable\u2026"
-lastmod: '2024-03-11T00:14:34.457434-06:00'
+lastmod: '2024-03-13T22:45:00.569747-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, which stands for YAML Ain't Markup Language, is extensively used in\
   \ Ruby for configuration files and data serialization due to its human-readable\u2026"

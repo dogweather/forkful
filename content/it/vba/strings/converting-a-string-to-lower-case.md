@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:51:12.228024-07:00
 description: "Convertire una stringa in minuscolo implica trasformare tutti i caratteri\
   \ maiuscoli di una stringa nei loro equivalenti minuscoli. Questo processo \xE8\u2026"
-lastmod: '2024-03-11T00:14:16.814864-06:00'
+lastmod: '2024-03-13T22:44:43.248514-06:00'
 model: gpt-4-0125-preview
 summary: "Convertire una stringa in minuscolo implica trasformare tutti i caratteri\
   \ maiuscoli di una stringa nei loro equivalenti minuscoli. Questo processo \xE8\u2026"

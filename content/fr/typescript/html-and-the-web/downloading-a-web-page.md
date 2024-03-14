@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:47.888949-07:00
 description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer ses donn\xE9es\
   \ (HTML, CSS, scripts) pour les manipuler ou les stocker. Les programmeurs le font\
   \ pour analyser le\u2026"
-lastmod: '2024-03-11T00:14:31.451760-06:00'
+lastmod: '2024-03-13T22:44:57.435525-06:00'
 model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer ses donn\xE9es (HTML,\
   \ CSS, scripts) pour les manipuler ou les stocker. Les programmeurs le font pour\

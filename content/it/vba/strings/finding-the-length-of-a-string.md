@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:48.888531-07:00
 description: "Trovare la lunghezza di una stringa in Visual Basic for Applications\
   \ (VBA) implica determinare il numero di caratteri che contiene. I programmatori\u2026"
-lastmod: '2024-03-11T00:14:16.819440-06:00'
+lastmod: '2024-03-13T22:44:43.252790-06:00'
 model: gpt-4-0125-preview
 summary: "Trovare la lunghezza di una stringa in Visual Basic for Applications (VBA)\
   \ implica determinare il numero di caratteri che contiene. I programmatori\u2026"

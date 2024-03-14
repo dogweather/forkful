@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:31.655800-07:00
 description: "Writing tests in TypeScript involves creating automated scripts to verify\
   \ the functionality and correctness of your code. Programmers do it to ensure\u2026"
-lastmod: '2024-03-11T00:14:33.721310-06:00'
+lastmod: '2024-03-13T22:44:59.862150-06:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in TypeScript involves creating automated scripts to verify\
   \ the functionality and correctness of your code. Programmers do it to ensure\u2026"

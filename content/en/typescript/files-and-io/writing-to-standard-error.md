@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:34.228225-07:00
 description: "In TypeScript, writing to standard error (stderr) is a process of sending\
   \ error messages or logs directly to the error output stream of the environment\u2026"
-lastmod: '2024-03-11T00:14:33.732863-06:00'
+lastmod: '2024-03-13T22:44:59.873267-06:00'
 model: gpt-4-0125-preview
 summary: "In TypeScript, writing to standard error (stderr) is a process of sending\
   \ error messages or logs directly to the error output stream of the environment\u2026"

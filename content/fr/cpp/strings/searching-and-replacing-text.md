@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:22.984759-07:00
 description: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
   nes sp\xE9cifiques dans un texte et de les remplacer par d'autres. Les programmeurs\u2026"
-lastmod: '2024-03-11T00:14:32.043245-06:00'
+lastmod: '2024-03-13T22:44:58.144610-06:00'
 model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
   nes sp\xE9cifiques dans un texte et de les remplacer par d'autres. Les programmeurs\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:55:38.315921-07:00
 description: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar informaci\xF3\
   n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\u2026"
-lastmod: '2024-03-11T00:14:32.714492-06:00'
+lastmod: '2024-03-13T22:44:58.900424-06:00'
 model: gpt-4-0125-preview
 summary: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar informaci\xF3\
   n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\u2026"

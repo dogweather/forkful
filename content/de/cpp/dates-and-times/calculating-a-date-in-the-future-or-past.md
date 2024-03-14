@@ -2,7 +2,7 @@
 date: 2024-01-20 17:30:47.808419-07:00
 description: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezieht\
   \ sich darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln.\u2026"
-lastmod: '2024-03-11T00:14:28.099602-06:00'
+lastmod: '2024-03-13T22:44:54.197920-06:00'
 model: gpt-4-1106-preview
 summary: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezieht sich\
   \ darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln.\u2026"

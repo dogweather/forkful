@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:17.631758-07:00
 description: "Leer un archivo de texto en programaci\xF3n implica acceder y obtener\
   \ el contenido almacenado en un archivo. Los programadores lo hacen para procesar\
   \ o\u2026"
-lastmod: '2024-03-11T00:14:32.951467-06:00'
+lastmod: '2024-03-13T22:44:59.135835-06:00'
 model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en programaci\xF3n implica acceder y obtener el\
   \ contenido almacenado en un archivo. Los programadores lo hacen para procesar o\u2026"

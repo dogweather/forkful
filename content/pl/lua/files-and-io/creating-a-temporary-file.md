@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:43.619873-07:00
 description: "Tworzenie tymczasowego pliku pozwala na przechowanie danych, kt\xF3\
   re s\u0105 potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci wykorzystuj\u0105\
   \ je dla zada\u0144 takich jak\u2026"
-lastmod: '2024-03-11T00:14:08.748124-06:00'
+lastmod: '2024-03-13T22:44:35.559452-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowego pliku pozwala na przechowanie danych, kt\xF3re s\u0105\
   \ potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci wykorzystuj\u0105 je dla\

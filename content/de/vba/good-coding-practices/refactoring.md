@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:59:56.109271-07:00
 description: "Refactoring in der Programmierung beinhaltet das Modifizieren der Struktur\
   \ des Codes, ohne dessen Verhalten zu \xE4ndern, um Aspekte wie Lesbarkeit,\u2026"
-lastmod: '2024-03-11T00:14:27.619322-06:00'
+lastmod: '2024-03-13T22:44:53.727450-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring in der Programmierung beinhaltet das Modifizieren der Struktur\
   \ des Codes, ohne dessen Verhalten zu \xE4ndern, um Aspekte wie Lesbarkeit,\u2026"

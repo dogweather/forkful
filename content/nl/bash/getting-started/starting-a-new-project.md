@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:20.857753-07:00
 description: "Een nieuw project starten betekent vaak het cre\xEBren van een mappenstructuur\
   \ en initi\xEBle bestanden - een beetje zoals het leggen van de fundering van een\u2026"
-lastmod: '2024-03-11T00:14:24.817534-06:00'
+lastmod: '2024-03-13T22:44:50.983167-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent vaak het cre\xEBren van een mappenstructuur\
   \ en initi\xEBle bestanden - een beetje zoals het leggen van de fundering van een\u2026"

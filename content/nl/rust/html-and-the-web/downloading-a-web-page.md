@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:12.308327-07:00
 description: "Een webpagina downloaden betekent het verzamelen van de gegevens die\
   \ het bevat. Programmeurs doen dit om informatie te verkrijgen, tests te automatiseren,\u2026"
-lastmod: '2024-03-11T00:14:24.410139-06:00'
+lastmod: '2024-03-13T22:44:50.592891-06:00'
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het verzamelen van de gegevens die het\
   \ bevat. Programmeurs doen dit om informatie te verkrijgen, tests te automatiseren,\u2026"

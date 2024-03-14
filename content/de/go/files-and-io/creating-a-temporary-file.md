@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:11.086599-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei in Go erm\xF6glicht die Generierung\
   \ einer nicht-persistenten Datei, die f\xFCr den kurzfristigen Gebrauch bestimmt\
   \ ist,\u2026"
-lastmod: '2024-03-11T00:14:27.266909-06:00'
+lastmod: '2024-03-13T22:44:53.309004-06:00'
 model: gpt-4-0125-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei in Go erm\xF6glicht die Generierung\
   \ einer nicht-persistenten Datei, die f\xFCr den kurzfristigen Gebrauch bestimmt\

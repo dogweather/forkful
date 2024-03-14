@@ -3,7 +3,7 @@ date: 2024-01-26 04:09:45.451144-07:00
 description: "\xC5 bruke en debugger i Ruby gir programmerere en superkraft til \xE5\
   \ pause koden sin, inspisere variabler, og g\xE5 gjennom koden sin linje for linje.\
   \ Folk gj\xF8r\u2026"
-lastmod: '2024-03-11T00:14:14.936162-06:00'
+lastmod: '2024-03-13T22:44:41.332864-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 bruke en debugger i Ruby gir programmerere en superkraft til \xE5 pause\
   \ koden sin, inspisere variabler, og g\xE5 gjennom koden sin linje for linje. Folk\

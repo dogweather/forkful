@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:29.389292-07:00
 description: "Komennon rivin argumenttien lukeminen Google Apps Scriptiss\xE4 on hieman\
   \ harhaanjohtavaa, sill\xE4 toisin kuin perinteisiss\xE4 komentorivik\xE4ytt\xF6\
   liittymiss\xE4\u2026"
-lastmod: '2024-03-11T00:14:30.041262-06:00'
+lastmod: '2024-03-13T22:44:56.115122-06:00'
 model: gpt-4-0125-preview
 summary: "Komennon rivin argumenttien lukeminen Google Apps Scriptiss\xE4 on hieman\
   \ harhaanjohtavaa, sill\xE4 toisin kuin perinteisiss\xE4 komentorivik\xE4ytt\xF6\

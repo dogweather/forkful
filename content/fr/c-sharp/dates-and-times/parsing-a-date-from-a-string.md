@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:45.603181-07:00
 description: "Analyser une date \xE0 partir d'une cha\xEEne en C# consiste \xE0 convertir\
   \ des repr\xE9sentations textuelles de dates et d'heures en un objet `DateTime`.\
   \ Cela est\u2026"
-lastmod: '2024-03-11T00:14:31.747064-06:00'
+lastmod: '2024-03-13T22:44:57.797937-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne en C# consiste \xE0 convertir\
   \ des repr\xE9sentations textuelles de dates et d'heures en un objet `DateTime`.\

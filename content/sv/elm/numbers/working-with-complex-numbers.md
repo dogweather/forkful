@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:35.364350-07:00
 description: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, som\
   \ `a + bi` d\xE4r `i` \xE4r kvadratroten av -1. De \xE4r avg\xF6rande inom omr\xE5\
   den som\u2026"
-lastmod: '2024-03-11T00:14:11.170995-06:00'
+lastmod: '2024-03-13T22:44:37.823224-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, som `a\
   \ + bi` d\xE4r `i` \xE4r kvadratroten av -1. De \xE4r avg\xF6rande inom omr\xE5\

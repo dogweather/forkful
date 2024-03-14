@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:48.145401-07:00
 description: "Descobrir o tamanho de uma string significa saber quantos caracteres\
   \ ela possui. Programadores fazem isso para manipular texto de forma eficiente,\
   \ validar\u2026"
-lastmod: '2024-03-11T00:14:20.556332-06:00'
+lastmod: '2024-03-13T22:44:46.830562-06:00'
 model: gpt-4-1106-preview
 summary: "Descobrir o tamanho de uma string significa saber quantos caracteres ela\
   \ possui. Programadores fazem isso para manipular texto de forma eficiente, validar\u2026"

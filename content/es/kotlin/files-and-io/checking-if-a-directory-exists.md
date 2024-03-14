@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:37.683391-07:00
 description: "Comprobar si un directorio existe en Kotlin implica verificar la presencia\
   \ de un directorio en una ruta especificada. Los programadores realizan esta\u2026"
-lastmod: '2024-03-11T00:14:32.857999-06:00'
+lastmod: '2024-03-13T22:44:59.050314-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en Kotlin implica verificar la presencia\
   \ de un directorio en una ruta especificada. Los programadores realizan esta\u2026"

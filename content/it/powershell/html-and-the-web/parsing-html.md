@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:42.232453-07:00
 description: "Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML\
   \ per estrarre dati specifici o per automatizzare compiti relativi al web. I\u2026"
-lastmod: '2024-03-11T00:14:17.253145-06:00'
+lastmod: '2024-03-13T22:44:43.640663-06:00'
 model: gpt-4-0125-preview
 summary: "Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML per\
   \ estrarre dati specifici o per automatizzare compiti relativi al web. I\u2026"

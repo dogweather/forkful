@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:49.490954-07:00
 description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans\
   \ votre script PHP. On fait \xE7a pour acc\xE9der aux donn\xE9es, configurer des\
   \ param\xE8tres,\u2026"
-lastmod: '2024-03-11T00:14:31.847973-06:00'
+lastmod: '2024-03-13T22:44:57.897749-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans votre\
   \ script PHP. On fait \xE7a pour acc\xE9der aux donn\xE9es, configurer des param\xE8\

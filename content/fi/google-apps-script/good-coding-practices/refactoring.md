@@ -5,7 +5,7 @@ date: 2024-02-01 22:00:25.381901-07:00
 description: "Ohjelmoinnin sanastossa refaktorointi viittaa olemassa olevan tietokonekoodin\
   \ uudelleenj\xE4rjest\xE4miseen\u2014muuttamalla sen toteutusta muuttamatta sen\
   \ ulkoista\u2026"
-lastmod: '2024-03-11T00:14:30.033307-06:00'
+lastmod: '2024-03-13T22:44:56.107115-06:00'
 model: gpt-4-0125-preview
 summary: "Ohjelmoinnin sanastossa refaktorointi viittaa olemassa olevan tietokonekoodin\
   \ uudelleenj\xE4rjest\xE4miseen\u2014muuttamalla sen toteutusta muuttamatta sen\

@@ -3,7 +3,7 @@ date: 2024-01-26 03:50:12.306170-07:00
 description: "Zanurzenie si\u0119 w debugger to wszystko o krokowym przechodzeniu\
   \ przez kod, obserwowaniu jak dzia\u0142aj\u0105 mechanizmy i \u0142apaniu tych\
   \ irytuj\u0105cych b\u0142\u0119d\xF3w na\u2026"
-lastmod: '2024-03-11T00:14:08.550987-06:00'
+lastmod: '2024-03-13T22:44:35.369484-06:00'
 model: gpt-4-0125-preview
 summary: "Zanurzenie si\u0119 w debugger to wszystko o krokowym przechodzeniu przez\
   \ kod, obserwowaniu jak dzia\u0142aj\u0105 mechanizmy i \u0142apaniu tych irytuj\u0105\

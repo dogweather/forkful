@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:17.276500-07:00
 description: "Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren\
   \ spezifischer Teilstrings innerhalb eines gr\xF6\xDFeren Strings und deren Substituierung\u2026"
-lastmod: '2024-03-11T00:14:28.244880-06:00'
+lastmod: '2024-03-13T22:44:54.336151-06:00'
 model: gpt-4-0125-preview
 summary: "Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren spezifischer\
   \ Teilstrings innerhalb eines gr\xF6\xDFeren Strings und deren Substituierung\u2026"

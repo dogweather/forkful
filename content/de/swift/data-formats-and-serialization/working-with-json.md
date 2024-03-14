@@ -2,7 +2,7 @@
 date: 2024-01-19
 description: "JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch\
   \ von Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert,\u2026"
-lastmod: '2024-03-11T00:14:28.149113-06:00'
+lastmod: '2024-03-13T22:44:54.246077-06:00'
 model: unknown
 summary: "JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch von\
   \ Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert,\u2026"

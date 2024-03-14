@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:47.116903-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in PHP sind Muster, die verwendet werden,\
   \ um Zeichenkombinationen in Zeichenketten abzugleichen, wodurch komplexe Such-\
   \ und\u2026"
-lastmod: '2024-03-11T00:14:27.860999-06:00'
+lastmod: '2024-03-13T22:44:53.962650-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in PHP sind Muster, die verwendet werden,\
   \ um Zeichenkombinationen in Zeichenketten abzugleichen, wodurch komplexe Such-\

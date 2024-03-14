@@ -2,7 +2,7 @@
 date: 2024-01-26 04:27:30.551953-07:00
 description: "Travailler avec le XML sur Arduino implique l'analyse et la manipulation\
   \ des donn\xE9es XML, g\xE9n\xE9ralement issues d'API web ou de fichiers de configuration.\u2026"
-lastmod: '2024-03-11T00:14:32.039946-06:00'
+lastmod: '2024-03-13T22:44:58.140270-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec le XML sur Arduino implique l'analyse et la manipulation\
   \ des donn\xE9es XML, g\xE9n\xE9ralement issues d'API web ou de fichiers de configuration.\u2026"

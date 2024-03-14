@@ -5,7 +5,7 @@ date: 2024-01-28 22:12:45.292662-07:00
 description: "Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als\
   \ leesbare tekst, met behulp van een karaktercodering zoals UTF-8. Programmeurs\
   \ doen\u2026"
-lastmod: '2024-03-11T00:14:25.014480-06:00'
+lastmod: '2024-03-13T22:44:51.176306-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als leesbare\
   \ tekst, met behulp van een karaktercodering zoals UTF-8. Programmeurs doen\u2026"

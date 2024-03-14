@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:58:37.185184-07:00
 description: "Leer un archivo de texto en Visual Basic para Aplicaciones (VBA) involucra\
   \ acceder y extraer program\xE1ticamente el contenido de un archivo de texto desde\u2026"
-lastmod: '2024-03-11T00:14:32.726755-06:00'
+lastmod: '2024-03-13T22:44:58.912471-06:00'
 model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en Visual Basic para Aplicaciones (VBA) involucra\
   \ acceder y extraer program\xE1ticamente el contenido de un archivo de texto desde\u2026"

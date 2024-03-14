@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:51.328411-07:00
 description: "Imprimir datos de depuraci\xF3n significa mostrar informaci\xF3n \xFA\
   til para entender qu\xE9 hace tu c\xF3digo. Los programadores lo hacen para rastrear\
   \ errores y\u2026"
-lastmod: '2024-03-11T00:14:33.340533-06:00'
+lastmod: '2024-03-13T22:44:59.504210-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir datos de depuraci\xF3n significa mostrar informaci\xF3n \xFAtil\
   \ para entender qu\xE9 hace tu c\xF3digo. Los programadores lo hacen para rastrear\

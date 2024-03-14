@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:52.263272-07:00
 description: "Verificare l'esistenza di una directory significa determinare la presenza\
   \ di una directory in un percorso specificato prima di eseguire operazioni come\u2026"
-lastmod: '2024-03-11T00:14:17.359139-06:00'
+lastmod: '2024-03-13T22:44:43.742110-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare l'esistenza di una directory significa determinare la presenza\
   \ di una directory in un percorso specificato prima di eseguire operazioni come\u2026"

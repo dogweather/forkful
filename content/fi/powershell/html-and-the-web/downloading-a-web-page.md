@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:36.922313-07:00
 description: "Lataaminen on verkkosivun datan siirt\xE4mist\xE4 paikalliselle koneelle.\
   \ Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4 tai automatisointia varten."
-lastmod: '2024-03-11T00:14:30.739700-06:00'
+lastmod: '2024-03-13T22:44:56.781233-06:00'
 model: gpt-4-1106-preview
 summary: "Lataaminen on verkkosivun datan siirt\xE4mist\xE4 paikalliselle koneelle.\
   \ Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4 tai automatisointia varten."

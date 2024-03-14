@@ -3,7 +3,7 @@ date: 2024-01-26 04:44:37.522091-07:00
 description: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skrivna\
   \ som `a + bi`. De \xE4r avg\xF6rande inom avancerad matematik, fysik, ingenj\xF6\
   rsvetenskap och\u2026"
-lastmod: '2024-03-11T00:14:11.362659-06:00'
+lastmod: '2024-03-13T22:44:37.990405-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skrivna som\
   \ `a + bi`. De \xE4r avg\xF6rande inom avancerad matematik, fysik, ingenj\xF6rsvetenskap\

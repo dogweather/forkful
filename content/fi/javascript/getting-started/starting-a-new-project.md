@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:59.534442-07:00
 description: "Aloitettaessa uusi projekti, luot pohjan koodille. Programmoijat aloittavat\
   \ uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai\u2026"
-lastmod: '2024-03-11T00:14:30.993021-06:00'
+lastmod: '2024-03-13T22:44:56.950605-06:00'
 model: gpt-4-1106-preview
 summary: "Aloitettaessa uusi projekti, luot pohjan koodille. Programmoijat aloittavat\
   \ uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai\u2026"

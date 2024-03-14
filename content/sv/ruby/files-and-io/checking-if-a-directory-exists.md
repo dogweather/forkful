@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:17.757912-07:00
 description: "Att kontrollera om en katalog finns i Ruby l\xE5ter programmerare verifiera\
   \ n\xE4rvaron av en katalog innan de utf\xF6r operationer som att l\xE4sa filer\
   \ eller skapa\u2026"
-lastmod: '2024-03-11T00:14:11.853046-06:00'
+lastmod: '2024-03-13T22:44:38.446035-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns i Ruby l\xE5ter programmerare verifiera\
   \ n\xE4rvaron av en katalog innan de utf\xF6r operationer som att l\xE4sa filer\

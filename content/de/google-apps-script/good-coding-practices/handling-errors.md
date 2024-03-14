@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:56.139757-07:00
 description: "Fehlerbehandlung in Google Apps Script bedeutet, Ausnahmen oder Fehler,\
   \ die w\xE4hrend der Ausf\xFChrung des Skripts auftreten, zu vorhersehen, abzufangen\
   \ und\u2026"
-lastmod: '2024-03-11T00:14:27.302333-06:00'
+lastmod: '2024-03-13T22:44:53.342108-06:00'
 model: gpt-4-0125-preview
 summary: "Fehlerbehandlung in Google Apps Script bedeutet, Ausnahmen oder Fehler,\
   \ die w\xE4hrend der Ausf\xFChrung des Skripts auftreten, zu vorhersehen, abzufangen\

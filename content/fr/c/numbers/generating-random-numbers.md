@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:04.454607-07:00
 description: "G\xE9n\xE9rer des nombres al\xE9atoires en C implique de cr\xE9er des\
   \ valeurs impr\xE9visibles et suivant une distribution sp\xE9cifique, telle que\
   \ uniforme ou normale.\u2026"
-lastmod: '2024-03-11T00:14:32.238994-06:00'
+lastmod: '2024-03-13T22:44:58.367123-06:00'
 model: gpt-4-0125-preview
 summary: "G\xE9n\xE9rer des nombres al\xE9atoires en C implique de cr\xE9er des valeurs\
   \ impr\xE9visibles et suivant une distribution sp\xE9cifique, telle que uniforme\

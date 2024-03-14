@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:32.805926-07:00
 description: "Escrever um arquivo de texto em Clojure envolve criar ou modificar arquivos\
   \ para salvar dados fora de sua aplica\xE7\xE3o, possibilitando persist\xEAncia,\u2026"
-lastmod: '2024-03-11T00:14:19.889520-06:00'
+lastmod: '2024-03-13T22:44:46.214785-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Clojure envolve criar ou modificar arquivos\
   \ para salvar dados fora de sua aplica\xE7\xE3o, possibilitando persist\xEAncia,\u2026"

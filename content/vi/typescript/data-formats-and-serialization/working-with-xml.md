@@ -6,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED
   \ c\xFA ph\xE1p, thao t\xE1c v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u XML b\u1EB1ng c\xE1\
   ch s\u1EED d\u1EE5ng l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn x\u1EED\
   \ l\xFD XML \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7u\u2026"
-lastmod: '2024-03-11T00:14:09.610448-06:00'
+lastmod: '2024-03-13T22:44:36.351844-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
   \ ph\xE1p, thao t\xE1c v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u XML b\u1EB1ng c\xE1ch s\u1EED\

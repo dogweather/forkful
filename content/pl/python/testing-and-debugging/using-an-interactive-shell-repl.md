@@ -3,7 +3,7 @@ date: 2024-01-26 04:17:14.218478-07:00
 description: "REPL, czyli P\u0119tla Czytaj-Wykonaj-Drukuj, to \u015Brodowisko programistyczne,\
   \ kt\xF3re przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i\
   \ zwraca wynik\u2026"
-lastmod: '2024-03-11T00:14:08.124510-06:00'
+lastmod: '2024-03-13T22:44:34.951131-06:00'
 model: gpt-4-0125-preview
 summary: "REPL, czyli P\u0119tla Czytaj-Wykonaj-Drukuj, to \u015Brodowisko programistyczne,\
   \ kt\xF3re przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i\

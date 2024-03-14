@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:19.552143-07:00
 description: "\xC5 starte et nytt prosjekt betyr \xE5 initialisere en ren arbeidsflate\
   \ for koding. Programmerere gj\xF8r dette for \xE5 f\xE5 en strukturert begynnelse\
   \ og unng\xE5 rot\u2026"
-lastmod: '2024-03-11T00:14:14.932058-06:00'
+lastmod: '2024-03-13T22:44:41.328974-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt betyr \xE5 initialisere en ren arbeidsflate\
   \ for koding. Programmerere gj\xF8r dette for \xE5 f\xE5 en strukturert begynnelse\

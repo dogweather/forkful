@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:55.115619-07:00
 description: "Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla\
   \ tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai\u2026"
-lastmod: '2024-03-11T00:14:30.865429-06:00'
+lastmod: '2024-03-13T22:44:56.837885-06:00'
 model: gpt-4-0125-preview
 summary: "Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla\
   \ tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:32:19.814733-07:00
 description: "Travailler avec XML implique d'analyser, d'interroger et de manipuler\
   \ des documents XML avec Java. Les programmeurs le font pour l'\xE9change de donn\xE9\
   es, la\u2026"
-lastmod: '2024-03-11T00:14:31.621364-06:00'
+lastmod: '2024-03-13T22:44:57.669869-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML implique d'analyser, d'interroger et de manipuler des\
   \ documents XML avec Java. Les programmeurs le font pour l'\xE9change de donn\xE9\

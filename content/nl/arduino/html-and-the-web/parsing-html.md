@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:26.234218-07:00
 description: "HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te\
   \ extraheren - zoals het schrapen van een telefoonnummer van een contactpagina.\
   \ Waarom\u2026"
-lastmod: '2024-03-11T00:14:24.905103-06:00'
+lastmod: '2024-03-13T22:44:51.070484-06:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te extraheren\
   \ - zoals het schrapen van een telefoonnummer van een contactpagina. Waarom\u2026"

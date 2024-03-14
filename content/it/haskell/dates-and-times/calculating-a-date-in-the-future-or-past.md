@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:21.252897-07:00
 description: "Calcolare una data nel futuro o nel passato \xE8 una pratica comune\
   \ in programmazione, utile per gestire eventi, scadenze e funzionalit\xE0 legate\
   \ al tempo. I\u2026"
-lastmod: '2024-03-11T00:14:17.082037-06:00'
+lastmod: '2024-03-13T22:44:43.488654-06:00'
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato \xE8 una pratica comune in programmazione,\
   \ utile per gestire eventi, scadenze e funzionalit\xE0 legate al tempo. I\u2026"

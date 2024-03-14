@@ -2,7 +2,7 @@
 date: 2024-01-20 17:45:17.466899-07:00
 description: "Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte eines\
   \ Strings zu isolieren. Programmierer machen das, um Daten zu manipulieren, zu\u2026"
-lastmod: '2024-03-11T00:14:27.416101-06:00'
+lastmod: '2024-03-13T22:44:53.451700-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte eines Strings\
   \ zu isolieren. Programmierer machen das, um Daten zu manipulieren, zu\u2026"

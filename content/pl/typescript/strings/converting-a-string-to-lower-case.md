@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:30.330469-07:00
 description: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142cenie\
   \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze. Robimy to,\
   \ by ujednolici\u0107 dane\u2026"
-lastmod: '2024-03-11T00:14:08.297917-06:00'
+lastmod: '2024-03-13T22:44:35.125325-06:00'
 model: gpt-4-1106-preview
 summary: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142cenie\
   \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze. Robimy to,\

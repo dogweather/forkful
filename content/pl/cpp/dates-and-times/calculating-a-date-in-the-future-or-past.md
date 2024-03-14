@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:33.161906-07:00
 description: "Obliczanie daty w przesz\u0142o\u015Bci lub przysz\u0142o\u015Bci to\
   \ okre\u015Blenie nowego momentu w czasie wzgl\u0119dem znanego punktu odniesienia.\
   \ Programi\u015Bci wykorzystuj\u0105 t\u0119\u2026"
-lastmod: '2024-03-11T00:14:08.927635-06:00'
+lastmod: '2024-03-13T22:44:35.726219-06:00'
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przesz\u0142o\u015Bci lub przysz\u0142o\u015Bci to okre\u015B\
   lenie nowego momentu w czasie wzgl\u0119dem znanego punktu odniesienia. Programi\u015B\

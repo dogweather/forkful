@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:00.704047-07:00
 description: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteellisella\
   \ yksik\xF6ll\xE4 'i'. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 useilla alueilla,\
   \ mukaan lukien\u2026"
-lastmod: '2024-03-11T00:14:30.107115-06:00'
+lastmod: '2024-03-13T22:44:56.178505-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteellisella\
   \ yksik\xF6ll\xE4 'i'. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 useilla alueilla,\

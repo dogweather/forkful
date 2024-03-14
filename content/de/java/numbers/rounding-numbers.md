@@ -2,7 +2,7 @@
 date: 2024-01-26 03:44:55.168734-07:00
 description: "Zahlen runden bedeutet, sie an einen bestimmten Genauigkeitsgrad anzupassen.\
   \ Programmierer tun dies, um Zahlen f\xFCr die Lesbarkeit zu vereinfachen,\u2026"
-lastmod: '2024-03-11T00:14:27.650261-06:00'
+lastmod: '2024-03-13T22:44:53.758131-06:00'
 model: gpt-4-0125-preview
 summary: "Zahlen runden bedeutet, sie an einen bestimmten Genauigkeitsgrad anzupassen.\
   \ Programmierer tun dies, um Zahlen f\xFCr die Lesbarkeit zu vereinfachen,\u2026"

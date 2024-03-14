@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:01.373528-07:00
 description: "Tekstitiedoston kirjoittaminen Arduinolla tarkoittaa datan tallentamista\
   \ tiedostoon SD-kortilla tai vastaavalla tallennusmoduulilla, usein datan\u2026"
-lastmod: '2024-03-11T00:14:30.869904-06:00'
+lastmod: '2024-03-13T22:44:56.841636-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Arduinolla tarkoittaa datan tallentamista\
   \ tiedostoon SD-kortilla tai vastaavalla tallennusmoduulilla, usein datan\u2026"

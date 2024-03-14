@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:31.231648-07:00
 description: "Obter a data atual em Go \xE9 uma tarefa fundamental para programadores,\
   \ semelhante ao \"Ol\xE1, Mundo!\" em sua onipresen\xE7a. \xC9 essencial para tarefas\
   \ que v\xE3o\u2026"
-lastmod: '2024-03-11T00:14:19.733512-06:00'
+lastmod: '2024-03-13T22:44:46.072411-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em Go \xE9 uma tarefa fundamental para programadores,\
   \ semelhante ao \"Ol\xE1, Mundo!\" em sua onipresen\xE7a. \xC9 essencial para tarefas\

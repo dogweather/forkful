@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:44.578850-07:00
 description: "Att skriva en textfil i Dart inneb\xE4r att skapa eller \xE4ndra filer\
   \ p\xE5 disken f\xF6r att lagra data i ett l\xE4sbart format. Programmerare g\xF6\
   r det f\xF6r att spara\u2026"
-lastmod: '2024-03-11T00:14:10.964814-06:00'
+lastmod: '2024-03-13T22:44:37.632230-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Dart inneb\xE4r att skapa eller \xE4ndra filer p\xE5\
   \ disken f\xF6r att lagra data i ett l\xE4sbart format. Programmerare g\xF6r det\

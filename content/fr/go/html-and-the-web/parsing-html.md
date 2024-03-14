@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:51.113839-07:00
 description: "L'analyse du HTML en Go consiste \xE0 examiner le contenu des fichiers\
   \ HTML pour extraire des donn\xE9es, manipuler la structure, ou convertir le HTML\
   \ dans\u2026"
-lastmod: '2024-03-11T00:14:31.171542-06:00'
+lastmod: '2024-03-13T22:44:57.130894-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML en Go consiste \xE0 examiner le contenu des fichiers HTML\
   \ pour extraire des donn\xE9es, manipuler la structure, ou convertir le HTML dans\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:38.354320-07:00
 description: "En programmation, mettre en majuscule une cha\xEEne de caract\xE8res\
   \ consiste \xE0 convertir son premier caract\xE8re en majuscule s'il ne l'est pas\
   \ d\xE9j\xE0, ce qui est\u2026"
-lastmod: '2024-03-11T00:14:31.668723-06:00'
+lastmod: '2024-03-13T22:44:57.717727-06:00'
 model: gpt-4-0125-preview
 summary: "En programmation, mettre en majuscule une cha\xEEne de caract\xE8res consiste\
   \ \xE0 convertir son premier caract\xE8re en majuscule s'il ne l'est pas d\xE9j\xE0\

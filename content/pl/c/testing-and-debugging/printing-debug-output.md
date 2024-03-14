@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:19.134146-07:00
 description: "Drukowanie danych diagnostycznych polega na generowaniu tymczasowych,\
   \ informacyjnych komunikat\xF3w logowania, kt\xF3re mog\u0105 pom\xF3c programistom\
   \ zrozumie\u0107\u2026"
-lastmod: '2024-03-11T00:14:09.105698-06:00'
+lastmod: '2024-03-13T22:44:35.889355-06:00'
 model: gpt-4-0125-preview
 summary: "Drukowanie danych diagnostycznych polega na generowaniu tymczasowych, informacyjnych\
   \ komunikat\xF3w logowania, kt\xF3re mog\u0105 pom\xF3c programistom zrozumie\u0107\

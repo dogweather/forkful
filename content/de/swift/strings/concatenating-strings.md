@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:38.699307-07:00
 description: "String-Konkatenation verbindet Textst\xFCcke zu einem Ganzen. Entwickler\
   \ nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen\u2026"
-lastmod: '2024-03-11T00:14:28.120202-06:00'
+lastmod: '2024-03-13T22:44:54.217771-06:00'
 model: gpt-4-1106-preview
 summary: "String-Konkatenation verbindet Textst\xFCcke zu einem Ganzen. Entwickler\
   \ nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen\u2026"

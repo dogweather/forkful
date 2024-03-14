@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:21.728359-07:00
 description: "Scrivere sullo standard error (stderr) nella programmazione Arduino\
   \ comporta indirizzare messaggi di errore e diagnostica su un canale separato,\u2026"
-lastmod: '2024-03-11T00:14:17.318144-06:00'
+lastmod: '2024-03-13T22:44:43.698959-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere sullo standard error (stderr) nella programmazione Arduino comporta\
   \ indirizzare messaggi di errore e diagnostica su un canale separato,\u2026"

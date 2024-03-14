@@ -2,7 +2,7 @@
 date: 2024-01-25 03:39:32.458446-07:00
 description: "TOML is a config file format that's easy to read due to its clear semantics.\
   \ Programmers use TOML to manage app configs and data serialization without the\u2026"
-lastmod: '2024-03-11T00:14:34.460086-06:00'
+lastmod: '2024-03-13T22:45:00.572588-06:00'
 model: gpt-4-1106-preview
 summary: "TOML is a config file format that's easy to read due to its clear semantics.\
   \ Programmers use TOML to manage app configs and data serialization without the\u2026"

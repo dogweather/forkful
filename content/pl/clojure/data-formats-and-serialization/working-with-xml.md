@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:27.152667-07:00
 description: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do kodowania dokument\xF3\
   w w spos\xF3b czytelny zar\xF3wno dla cz\u0142owieka, jak i maszyny. Ma kluczowe\
   \ znaczenie w us\u0142ugach\u2026"
-lastmod: '2024-03-11T00:14:08.195141-06:00'
+lastmod: '2024-03-13T22:44:35.022180-06:00'
 model: gpt-4-0125-preview
 summary: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do kodowania dokument\xF3w\
   \ w spos\xF3b czytelny zar\xF3wno dla cz\u0142owieka, jak i maszyny. Ma kluczowe\

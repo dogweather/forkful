@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:39.524966-07:00
 description: "Het vinden van de lengte van een string in Visual Basic for Applications\
   \ (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren\u2026"
-lastmod: '2024-03-11T00:14:24.446347-06:00'
+lastmod: '2024-03-13T22:44:50.627286-06:00'
 model: gpt-4-0125-preview
 summary: "Het vinden van de lengte van een string in Visual Basic for Applications\
   \ (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren\u2026"

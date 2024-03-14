@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:41.083160-07:00
 description: "Het parsen van HTML in C omvat het analyseren van HTML-documenten om\
   \ gegevens, structuur of specifieke onderdelen effici\xEBnt te extraheren, vaak\
   \ als\u2026"
-lastmod: '2024-03-11T00:14:25.150341-06:00'
+lastmod: '2024-03-13T22:44:51.288743-06:00'
 model: gpt-4-0125-preview
 summary: "Het parsen van HTML in C omvat het analyseren van HTML-documenten om gegevens,\
   \ structuur of specifieke onderdelen effici\xEBnt te extraheren, vaak als\u2026"

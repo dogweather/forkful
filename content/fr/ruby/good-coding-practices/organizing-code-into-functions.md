@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:29.912702-07:00
 description: "Organiser le code en fonctions divise votre script en blocs r\xE9utilisables.\
   \ Il s'agit de rendre votre code propre, g\xE9rable et moins sujet aux bugs. Le\
   \ code\u2026"
-lastmod: '2024-03-11T00:14:32.297770-06:00'
+lastmod: '2024-03-13T22:44:58.425470-06:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions divise votre script en blocs r\xE9utilisables.\
   \ Il s'agit de rendre votre code propre, g\xE9rable et moins sujet aux bugs. Le\

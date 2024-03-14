@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:26.280428-07:00
 description: Downloading a web page means grabbing the HTML content from a URL. Programmers
   do this to process, analyze or display the content in a different context.
-lastmod: '2024-03-11T00:14:12.946222-06:00'
+lastmod: '2024-03-13T22:44:39.478242-06:00'
 model: gpt-4-1106-preview
 summary: Downloading a web page means grabbing the HTML content from a URL. Programmers
   do this to process, analyze or display the content in a different context.

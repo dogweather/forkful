@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:03.698352-07:00
 description: "Un depurador es una herramienta que te ayuda a aplastar errores en tu\
   \ c\xF3digo permiti\xE9ndote pausar, indagar y descubrir qu\xE9 est\xE1 pasando\
   \ realmente bajo el\u2026"
-lastmod: '2024-03-11T00:14:33.160027-06:00'
+lastmod: '2024-03-13T22:44:59.337804-06:00'
 model: gpt-4-0125-preview
 summary: "Un depurador es una herramienta que te ayuda a aplastar errores en tu c\xF3\
   digo permiti\xE9ndote pausar, indagar y descubrir qu\xE9 est\xE1 pasando realmente\

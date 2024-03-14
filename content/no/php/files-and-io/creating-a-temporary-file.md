@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:53.285695-07:00
 description: "Midlertidige filer lar oss lagre data midlertidig under kj\xF8ring av\
   \ et program. Programmerere bruker dem for \xE5 h\xE5ndtere store datastr\xF8mmer,\
   \ redusere\u2026"
-lastmod: '2024-03-11T00:14:14.473623-06:00'
+lastmod: '2024-03-13T22:44:40.905611-06:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer lar oss lagre data midlertidig under kj\xF8ring av et\
   \ program. Programmerere bruker dem for \xE5 h\xE5ndtere store datastr\xF8mmer,\

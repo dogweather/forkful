@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:09.066272-07:00
 description: "Ler um arquivo de texto em C envolve abrir um arquivo no seu sistema\
   \ para extrair informa\xE7\xF5es e manipul\xE1-las ou exibi-las conforme necess\xE1\
   rio.\u2026"
-lastmod: '2024-03-11T00:14:20.810791-06:00'
+lastmod: '2024-03-13T22:44:47.068827-06:00'
 model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto em C envolve abrir um arquivo no seu sistema para\
   \ extrair informa\xE7\xF5es e manipul\xE1-las ou exibi-las conforme necess\xE1rio.\u2026"

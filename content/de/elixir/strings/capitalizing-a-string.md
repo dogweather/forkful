@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:49.285021-07:00
 description: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben des\
   \ Strings in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird, dass\
   \ alle anderen\u2026"
-lastmod: '2024-03-11T00:14:27.410152-06:00'
+lastmod: '2024-03-13T22:44:53.445813-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben des Strings\
   \ in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird, dass alle anderen\u2026"

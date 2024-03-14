@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:26.633104-07:00
 description: "\xBFVolcar todo tu c\xF3digo en un gran mont\xF3n? Mala idea. \xBFDividirlo\
   \ en funciones? Buena idea. Mantiene tu c\xF3digo Elm limpio, reutilizable y m\xE1\
   s f\xE1cil de\u2026"
-lastmod: '2024-03-11T00:14:32.803431-06:00'
+lastmod: '2024-03-13T22:44:58.998467-06:00'
 model: gpt-4-1106-preview
 summary: "\xBFVolcar todo tu c\xF3digo en un gran mont\xF3n? Mala idea. \xBFDividirlo\
   \ en funciones? Buena idea. Mantiene tu c\xF3digo Elm limpio, reutilizable y m\xE1\

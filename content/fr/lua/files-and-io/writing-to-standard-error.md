@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:45.687361-07:00
 description: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les\
   \ messages d'erreur et les sorties de diagnostic vers un canal distinct, diff\xE9\
   rent de la\u2026"
-lastmod: '2024-03-11T00:14:31.893981-06:00'
+lastmod: '2024-03-13T22:44:57.955226-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les messages\
   \ d'erreur et les sorties de diagnostic vers un canal distinct, diff\xE9rent de\

@@ -3,7 +3,7 @@ date: 2024-01-26 04:10:50.973196-07:00
 description: "U\u017Cycie debugera oznacza wykorzystanie specjalistycznych narz\u0119\
   dzi do testowania i inspekcji twojego kodu podczas jego wykonania. To wa\u017Cne,\
   \ poniewa\u017C pozwala\u2026"
-lastmod: '2024-03-11T00:14:08.965210-06:00'
+lastmod: '2024-03-13T22:44:35.759517-06:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cycie debugera oznacza wykorzystanie specjalistycznych narz\u0119\
   dzi do testowania i inspekcji twojego kodu podczas jego wykonania. To wa\u017Cne,\

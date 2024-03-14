@@ -5,7 +5,7 @@ date: 2024-02-01 22:04:16.176985-07:00
 description: "Una consola interactiva, o Bucle Leer-Evaluar-Imprimir (REPL por sus\
   \ siglas en ingl\xE9s), permite a los usuarios introducir comandos, ejecutarlos\
   \ y ver los\u2026"
-lastmod: '2024-03-11T00:14:32.709074-06:00'
+lastmod: '2024-03-13T22:44:58.895036-06:00'
 model: gpt-4-0125-preview
 summary: "Una consola interactiva, o Bucle Leer-Evaluar-Imprimir (REPL por sus siglas\
   \ en ingl\xE9s), permite a los usuarios introducir comandos, ejecutarlos y ver los\u2026"

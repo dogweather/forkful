@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:35.077059-07:00
 description: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9change\
   \ de donn\xE9es qui est facile \xE0 lire et \xE0 \xE9crire pour les humains, et\
   \ facile \xE0 analyser et\u2026"
-lastmod: '2024-03-11T00:14:31.852301-06:00'
+lastmod: '2024-03-13T22:44:57.902039-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9change\
   \ de donn\xE9es qui est facile \xE0 lire et \xE0 \xE9crire pour les humains, et\

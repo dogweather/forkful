@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:39.403985-07:00
 description: "Parsowanie HTML polega na rozbijaniu zawarto\u015Bci HTML na co\u015B\
   , co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015Bci robi\u0105\
   \ to w celu wyodr\u0119bniania danych,\u2026"
-lastmod: '2024-03-11T00:14:08.909880-06:00'
+lastmod: '2024-03-13T22:44:35.710650-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML polega na rozbijaniu zawarto\u015Bci HTML na co\u015B, co\
   \ program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015Bci robi\u0105\

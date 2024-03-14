@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:16.203847-07:00
 description: "Het organiseren van code in functies gaat over het opsplitsen van je\
   \ code in herbruikbare blokken met gedefinieerde doeleinden. We doen dit om dingen\u2026"
-lastmod: '2024-03-11T00:14:24.731890-06:00'
+lastmod: '2024-03-13T22:44:50.901030-06:00'
 model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies gaat over het opsplitsen van je code\
   \ in herbruikbare blokken met gedefinieerde doeleinden. We doen dit om dingen\u2026"

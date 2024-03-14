@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:03.073034-07:00
 description: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapytaniem\
   \ systemu o aktualn\u0105 dat\u0119 i czas. Ta funkcjonalno\u015B\u0107 jest powszechnie\
   \ u\u017Cywana w aplikacjach do\u2026"
-lastmod: '2024-03-11T00:14:08.275045-06:00'
+lastmod: '2024-03-13T22:44:35.103012-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapytaniem\
   \ systemu o aktualn\u0105 dat\u0119 i czas. Ta funkcjonalno\u015B\u0107 jest powszechnie\

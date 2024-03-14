@@ -3,7 +3,7 @@ date: 2024-01-26 04:33:18.961514-07:00
 description: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami\
   \ XML - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych.\
   \ Programi\u015Bci robi\u0105\u2026"
-lastmod: '2024-03-11T00:14:08.571835-06:00'
+lastmod: '2024-03-13T22:44:35.389534-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami XML\
   \ - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych. Programi\u015B\

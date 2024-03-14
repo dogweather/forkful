@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:26.486727-07:00
 description: "Het verkrijgen van de huidige datum in Python betekent het ophalen van\
   \ de live datum van het systeem waarop het draait. Programmeurs doen dit voor het\u2026"
-lastmod: '2024-03-11T00:14:24.197524-06:00'
+lastmod: '2024-03-13T22:44:50.387107-06:00'
 model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in Python betekent het ophalen van de\
   \ live datum van het systeem waarop het draait. Programmeurs doen dit voor het\u2026"

@@ -9,7 +9,7 @@ description: "Google Apps Script (GAS) \u092E\u0947\u0902 \u090F\u0915 \u0928\u0
   \u094D\u0930 (Google Drive, Docs, Sheets, \u0906\u0926\u093F) \u092E\u0947\u0902\
   \ \u090F\u0915 \u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\u091F \u092B\u093C\
   \u093E\u0907\u0932 \u0915\u094B\u2026"
-lastmod: '2024-03-11T00:14:25.346853-06:00'
+lastmod: '2024-03-13T22:44:51.513582-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script (GAS) \u092E\u0947\u0902 \u090F\u0915 \u0928\u0908 \u092A\
   \u0930\u093F\u092F\u094B\u091C\u0928\u093E \u0936\u0941\u0930\u0942 \u0915\u0930\

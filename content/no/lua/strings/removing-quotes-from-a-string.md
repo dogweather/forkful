@@ -3,7 +3,7 @@ date: 2024-01-26 03:40:28.062487-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de\
   \ doble eller enkle anf\xF8rselstegnene som omfavner teksten din. Kodingsfolk gj\xF8\
   r dette for \xE5\u2026"
-lastmod: '2024-03-11T00:14:14.487660-06:00'
+lastmod: '2024-03-13T22:44:40.918265-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de doble\
   \ eller enkle anf\xF8rselstegnene som omfavner teksten din. Kodingsfolk gj\xF8r\

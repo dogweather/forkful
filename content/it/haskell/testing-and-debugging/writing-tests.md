@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:46.390929-07:00
 description: "Scrivere test in Haskell consiste nell'assicurarsi che le tue funzioni\
   \ funzionino come previsto attraverso controlli automatizzati. I programmatori lo\u2026"
-lastmod: '2024-03-11T00:14:17.071428-06:00'
+lastmod: '2024-03-13T22:44:43.478719-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in Haskell consiste nell'assicurarsi che le tue funzioni funzionino\
   \ come previsto attraverso controlli automatizzati. I programmatori lo\u2026"

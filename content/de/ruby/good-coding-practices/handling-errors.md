@@ -2,7 +2,7 @@
 date: 2024-01-26 00:57:03.472496-07:00
 description: "Fehlerbehandlung geht darum, in Codes das Unerwartete zu erwarten \u2013\
   \ Fehler und Probleme anmutig zu managen, ohne dass das Programm abst\xFCrzt. Entwickler\u2026"
-lastmod: '2024-03-11T00:14:28.320712-06:00'
+lastmod: '2024-03-13T22:44:54.407827-06:00'
 model: gpt-4-1106-preview
 summary: "Fehlerbehandlung geht darum, in Codes das Unerwartete zu erwarten \u2013\
   \ Fehler und Probleme anmutig zu managen, ohne dass das Programm abst\xFCrzt. Entwickler\u2026"

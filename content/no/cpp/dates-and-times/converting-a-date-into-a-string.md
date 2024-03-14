@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:29.708905-07:00
 description: "Konvertering av en dato til en streng inneb\xE6rer \xE5 endre datotypen\
   \ fra \u2018date\u2019 (dato) til \u2018string\u2019 (tekststreng) for visning eller\
   \ lagring. Dette gj\xF8res for\u2026"
-lastmod: '2024-03-11T00:14:14.704956-06:00'
+lastmod: '2024-03-13T22:44:41.111444-06:00'
 model: gpt-4-1106-preview
 summary: "Konvertering av en dato til en streng inneb\xE6rer \xE5 endre datotypen\
   \ fra \u2018date\u2019 (dato) til \u2018string\u2019 (tekststreng) for visning eller\

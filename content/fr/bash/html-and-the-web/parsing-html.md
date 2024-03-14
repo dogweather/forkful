@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:35.591596-07:00
 description: "L'analyse du HTML implique de passer au crible la structure et le contenu\
   \ d'un fichier HTML pour en extraire des informations. Les programmeurs le font\u2026"
-lastmod: '2024-03-11T00:14:31.921740-06:00'
+lastmod: '2024-03-13T22:44:57.992279-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML implique de passer au crible la structure et le contenu\
   \ d'un fichier HTML pour en extraire des informations. Les programmeurs le font\u2026"

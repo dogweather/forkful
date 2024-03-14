@@ -2,7 +2,7 @@
 date: 2024-01-20 17:34:55.212749-07:00
 description: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma nova string. Programadores fazem isso para manipular texto, construir\u2026"
-lastmod: '2024-03-11T00:14:20.327841-06:00'
+lastmod: '2024-03-13T22:44:46.617455-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma nova string. Programadores fazem isso para manipular texto, construir\u2026"

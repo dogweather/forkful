@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:43.952308-07:00
 description: "Scrivere sull'errore standard (stderr) consiste nel dirigere i messaggi\
   \ di errore o l'output di diagnostica del tuo programma su un flusso separato,\u2026"
-lastmod: '2024-03-11T00:14:17.403135-06:00'
+lastmod: '2024-03-13T22:44:43.785924-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere sull'errore standard (stderr) consiste nel dirigere i messaggi\
   \ di errore o l'output di diagnostica del tuo programma su un flusso separato,\u2026"

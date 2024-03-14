@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:00.273360-07:00
 description: "Sammenkjeding av strenger handler om \xE5 sl\xE5 sammen tekster til\
   \ \xE9n. Programmerere gj\xF8r dette for \xE5 bygge setninger, vise data og kombinere\
   \ brukerinput."
-lastmod: '2024-03-11T00:14:14.394102-06:00'
+lastmod: '2024-03-13T22:44:40.832902-06:00'
 model: gpt-4-1106-preview
 summary: "Sammenkjeding av strenger handler om \xE5 sl\xE5 sammen tekster til \xE9\
   n. Programmerere gj\xF8r dette for \xE5 bygge setninger, vise data og kombinere\

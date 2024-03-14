@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:57.891942-07:00
 description: "Szukanie i zamiana tekstu to zmiana fragment\xF3w tekstu na inne. Programi\u015B\
   ci robi\u0105 to dla automatyzacji, edycji danych i naprawy b\u0142\u0119d\xF3w."
-lastmod: '2024-03-11T00:14:08.989363-06:00'
+lastmod: '2024-03-13T22:44:35.781786-06:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to zmiana fragment\xF3w tekstu na inne. Programi\u015B\
   ci robi\u0105 to dla automatyzacji, edycji danych i naprawy b\u0142\u0119d\xF3w."

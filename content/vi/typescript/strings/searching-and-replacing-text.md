@@ -7,7 +7,7 @@ description: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n t
   p tr\xECnh, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3\
   \ x\u1EED l\xFD v\xE0 thao t\xE1c d\u1EEF li\u1EC7u. \u0110i\u1EC1u n\xE0y r\u1EA5\
   t\u2026"
-lastmod: '2024-03-11T00:14:09.554920-06:00'
+lastmod: '2024-03-13T22:44:36.299088-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong chu\u1ED7\
   i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn trong l\u1EADp tr\xECnh,\

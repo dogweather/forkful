@@ -3,7 +3,7 @@ date: 2024-01-26 03:37:17.071093-07:00
 description: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\
   \ rydde\u2026"
-lastmod: '2024-03-11T00:14:14.748259-06:00'
+lastmod: '2024-03-13T22:44:41.150420-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\

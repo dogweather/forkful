@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:10.267180-07:00
 description: "Zmiana stringa na ma\u0142e litery to prosty proces, gdzie wszystkie\
   \ litery w napisie s\u0105 konwertowane na ich ma\u0142e odpowiedniki. Programi\u015B\
   ci robi\u0105 to, by\u2026"
-lastmod: '2024-03-11T00:14:08.945992-06:00'
+lastmod: '2024-03-13T22:44:35.741954-06:00'
 model: gpt-4-1106-preview
 summary: "Zmiana stringa na ma\u0142e litery to prosty proces, gdzie wszystkie litery\
   \ w napisie s\u0105 konwertowane na ich ma\u0142e odpowiedniki. Programi\u015Bci\

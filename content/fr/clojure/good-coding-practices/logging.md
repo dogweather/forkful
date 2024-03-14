@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:03.261837-07:00
 description: "Le logging est en quelque sorte l'\xE9quivalent logiciel du journal\
   \ de bord d'un navire ; c'est un moyen d'enregistrer les \xE9v\xE9nements qui se\
   \ produisent\u2026"
-lastmod: '2024-03-11T00:14:31.320537-06:00'
+lastmod: '2024-03-13T22:44:57.288916-06:00'
 model: gpt-4-1106-preview
 summary: "Le logging est en quelque sorte l'\xE9quivalent logiciel du journal de bord\
   \ d'un navire ; c'est un moyen d'enregistrer les \xE9v\xE9nements qui se produisent\u2026"

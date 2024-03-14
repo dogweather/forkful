@@ -2,7 +2,7 @@
 date: 2024-02-03 17:50:09.115308-07:00
 description: "Handling errors in Go involves recognizing and responding to error conditions\
   \ in your program. Programmers engage in error handling to ensure their\u2026"
-lastmod: '2024-03-11T00:14:33.484069-06:00'
+lastmod: '2024-03-13T22:44:59.637763-06:00'
 model: gpt-4-0125-preview
 summary: "Handling errors in Go involves recognizing and responding to error conditions\
   \ in your program. Programmers engage in error handling to ensure their\u2026"

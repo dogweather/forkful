@@ -6,7 +6,7 @@ description: "\uB300\uD654\uD615 \uC258 \uB610\uB294 REPL(Read-Eval-Print Loop)\
   \ \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 IEx(Interactive Elixir)\uB77C\uACE0\
   \ \uBD88\uB9AC\uB294 REPL\uC744 \uC2E4\uD5D8, \uB514\uBC84\uAE45 \uBC0F \uC5B8\uC5B4\
   \ \uD559\uC2B5\uC744 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
-lastmod: '2024-03-11T00:14:28.640298-06:00'
+lastmod: '2024-03-13T22:44:54.723973-06:00'
 model: gpt-4-0125-preview
 summary: "\uB300\uD654\uD615 \uC258 \uB610\uB294 REPL(Read-Eval-Print Loop)\uC740\
   \ \uC2E4\uC2DC\uAC04\uC73C\uB85C \uCF54\uB4DC \uC2A4\uB2C8\uD3AB\uC744 \uC2DC\uB3C4\

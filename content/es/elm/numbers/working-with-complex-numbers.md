@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:38.640596-07:00
 description: "Los n\xFAmeros complejos son una combinaci\xF3n de n\xFAmeros reales\
   \ y n\xFAmeros imaginarios, como `a + bi` donde `i` es la ra\xEDz cuadrada de -1.\
   \ Son clave en campos\u2026"
-lastmod: '2024-03-11T00:14:32.790985-06:00'
+lastmod: '2024-03-13T22:44:58.973321-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos son una combinaci\xF3n de n\xFAmeros reales y n\xFA\
   meros imaginarios, como `a + bi` donde `i` es la ra\xEDz cuadrada de -1. Son clave\

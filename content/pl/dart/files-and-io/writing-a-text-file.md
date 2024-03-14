@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:59.564994-07:00
 description: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu\
   \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym. Programi\u015B\
   ci\u2026"
-lastmod: '2024-03-11T00:14:08.284716-06:00'
+lastmod: '2024-03-13T22:44:35.112675-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu\
   \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym. Programi\u015B\

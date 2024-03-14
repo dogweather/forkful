@@ -5,7 +5,7 @@ date: 2024-02-03 17:57:38.810480-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen C-kieless\xE4 tarkoittaa\
   \ standardin C-kirjaston hy\xF6dynt\xE4mist\xE4 j\xE4rjestelm\xE4n nykyisen ajan\
   \ ja p\xE4iv\xE4m\xE4\xE4r\xE4n noutamiseen ja\u2026"
-lastmod: '2024-03-11T00:14:31.092856-06:00'
+lastmod: '2024-03-13T22:44:57.051469-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen C-kieless\xE4 tarkoittaa standardin\
   \ C-kirjaston hy\xF6dynt\xE4mist\xE4 j\xE4rjestelm\xE4n nykyisen ajan ja p\xE4iv\xE4\

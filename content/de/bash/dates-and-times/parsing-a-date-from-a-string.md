@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:13:39.708621-07:00
 description: "Das Parsen eines Datums aus einem String in Bash beinhaltet das Extrahieren\
   \ und Konvertieren von Datumsinformationen aus Textdaten in ein Format, das Bash\u2026"
-lastmod: '2024-03-11T00:14:27.968692-06:00'
+lastmod: '2024-03-13T22:44:54.068779-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Bash beinhaltet das Extrahieren\
   \ und Konvertieren von Datumsinformationen aus Textdaten in ein Format, das Bash\u2026"

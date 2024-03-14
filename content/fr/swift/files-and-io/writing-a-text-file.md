@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:35.075063-07:00
 description: "\xC9crire un fichier texte en Swift vous permet de stocker de mani\xE8\
   re persistante des donn\xE9es de cha\xEEne de caract\xE8res dans le syst\xE8me de\
   \ fichiers, ce qui est\u2026"
-lastmod: '2024-03-11T00:14:32.123265-06:00'
+lastmod: '2024-03-13T22:44:58.247156-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Swift vous permet de stocker de mani\xE8re\
   \ persistante des donn\xE9es de cha\xEEne de caract\xE8res dans le syst\xE8me de\

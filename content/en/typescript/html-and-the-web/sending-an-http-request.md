@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:32.545074-07:00
 description: "Sending an HTTP request is how your program asks for data from a server\
   \ or sends data to one. Programmers do it because it's the cornerstone of\u2026"
-lastmod: '2024-03-11T00:14:33.715029-06:00'
+lastmod: '2024-03-13T22:44:59.856012-06:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is how your program asks for data from a server\
   \ or sends data to one. Programmers do it because it's the cornerstone of\u2026"

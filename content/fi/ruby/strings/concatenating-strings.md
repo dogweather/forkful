@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:51.522305-07:00
 description: "Yhdist\xE4mme merkkijonoja eli \"stringej\xE4\" saumattomasti yhteen.\
   \ T\xE4h\xE4n on syyns\xE4: n\xE4ytet\xE4\xE4n k\xE4ytt\xE4j\xE4lle kustomoituja\
   \ viestej\xE4, rakennetaan dynaamista dataa\u2026"
-lastmod: '2024-03-11T00:14:31.118095-06:00'
+lastmod: '2024-03-13T22:44:57.076769-06:00'
 model: gpt-4-1106-preview
 summary: "Yhdist\xE4mme merkkijonoja eli \"stringej\xE4\" saumattomasti yhteen. T\xE4\
   h\xE4n on syyns\xE4: n\xE4ytet\xE4\xE4n k\xE4ytt\xE4j\xE4lle kustomoituja viestej\xE4\

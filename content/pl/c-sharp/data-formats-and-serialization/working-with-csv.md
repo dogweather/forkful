@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:16.462698-07:00
 description: "Pliki CSV (Comma-Separated Values, warto\u015Bci rozdzielane przecinkami)\
   \ s\u0105 powszechnym formatem wymiany danych, kt\xF3ry przedstawia dane tabelaryczne\
   \ w postaci\u2026"
-lastmod: '2024-03-11T00:14:08.614953-06:00'
+lastmod: '2024-03-13T22:44:35.431420-06:00'
 model: gpt-4-0125-preview
 summary: "Pliki CSV (Comma-Separated Values, warto\u015Bci rozdzielane przecinkami)\
   \ s\u0105 powszechnym formatem wymiany danych, kt\xF3ry przedstawia dane tabelaryczne\

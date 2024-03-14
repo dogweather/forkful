@@ -3,7 +3,7 @@ date: 2024-01-26 03:40:05.828595-07:00
 description: "Rimuovere le virgolette da una stringa significa togliere tutti i segni\
   \ di virgolettatura\u2014sia singoli (' ') che doppi (\" \")\u2014che fanno parte\
   \ dei dati della\u2026"
-lastmod: '2024-03-11T00:14:17.055517-06:00'
+lastmod: '2024-03-13T22:44:43.463509-06:00'
 model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa togliere tutti i segni\
   \ di virgolettatura\u2014sia singoli (' ') che doppi (\" \")\u2014che fanno parte\

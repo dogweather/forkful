@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:37.060608-07:00
 description: "\xC5 lese kommandolinjeargumenter betyr \xE5 hente input direkte fra\
   \ terminalen n\xE5r du starter et program. Programmerere gj\xF8r dette for \xE5\
   \ tillate\u2026"
-lastmod: '2024-03-11T00:14:13.941239-06:00'
+lastmod: '2024-03-13T22:44:40.417057-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 lese kommandolinjeargumenter betyr \xE5 hente input direkte fra terminalen\
   \ n\xE5r du starter et program. Programmerere gj\xF8r dette for \xE5 tillate\u2026"

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:27.757892-07:00
 description: "Writing tests in Haskell is about ensuring your functions work as expected\
   \ through automated checks. Programmers do it to catch bugs early, facilitate\u2026"
-lastmod: '2024-03-11T00:14:33.995910-06:00'
+lastmod: '2024-03-13T22:45:00.131731-06:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in Haskell is about ensuring your functions work as expected\
   \ through automated checks. Programmers do it to catch bugs early, facilitate\u2026"

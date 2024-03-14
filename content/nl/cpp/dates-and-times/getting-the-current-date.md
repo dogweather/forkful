@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:00:56.160251-07:00
 description: "Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:\
   \ denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te\u2026"
-lastmod: '2024-03-11T00:14:24.960670-06:00'
+lastmod: '2024-03-13T22:44:51.123169-06:00'
 model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:\
   \ denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te\u2026"

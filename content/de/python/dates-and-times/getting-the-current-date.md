@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:27.296648-07:00
 description: "Das Abrufen des aktuellen Datums in Python ist eine Grundoperation f\xFC\
   r viele Anwendungen, wie Protokollierung, Datenanalyse und zeitbasierte\u2026"
-lastmod: '2024-03-11T00:14:27.352863-06:00'
+lastmod: '2024-03-13T22:44:53.389407-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Python ist eine Grundoperation f\xFC\
   r viele Anwendungen, wie Protokollierung, Datenanalyse und zeitbasierte\u2026"

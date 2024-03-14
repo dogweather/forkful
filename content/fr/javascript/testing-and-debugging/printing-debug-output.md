@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:55.237695-07:00
 description: "L'affichage de messages de d\xE9bogage, c'est \xE9crire des infos dans\
   \ la console pour comprendre ce qui se passe dans le code. On le fait parce que\
   \ personne\u2026"
-lastmod: '2024-03-11T00:14:32.151917-06:00'
+lastmod: '2024-03-13T22:44:58.278538-06:00'
 model: gpt-4-1106-preview
 summary: "L'affichage de messages de d\xE9bogage, c'est \xE9crire des infos dans la\
   \ console pour comprendre ce qui se passe dans le code. On le fait parce que personne\u2026"

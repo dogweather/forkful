@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:35.373338-07:00
 description: "(Quoi et Pourquoi ?) Cr\xE9er un fichier temporaire, c\u2019est comme\
   \ prendre des notes sur un bout de papier qu\u2019on jette apr\xE8s usage. Les programmeurs\
   \ en ont\u2026"
-lastmod: '2024-03-11T00:14:31.897233-06:00'
+lastmod: '2024-03-13T22:44:57.959160-06:00'
 model: gpt-4-1106-preview
 summary: "(Quoi et Pourquoi ?) Cr\xE9er un fichier temporaire, c\u2019est comme prendre\
   \ des notes sur un bout de papier qu\u2019on jette apr\xE8s usage. Les programmeurs\

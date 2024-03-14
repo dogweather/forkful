@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:36.638367-07:00
 description: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Bash consiste \xE0\
   \ extraire et convertir les informations de date \xE0 partir de donn\xE9es textuelles\
   \ en un format\u2026"
-lastmod: '2024-03-11T00:14:31.933745-06:00'
+lastmod: '2024-03-13T22:44:58.007776-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Bash consiste \xE0 extraire\
   \ et convertir les informations de date \xE0 partir de donn\xE9es textuelles en\

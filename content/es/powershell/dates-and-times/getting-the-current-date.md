@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:21.865010-07:00
 description: "Obtener la fecha actual en PowerShell trata sobre recuperar la fecha\
   \ y hora actuales del sistema. Esta operaci\xF3n es fundamental para tareas como\
   \ el\u2026"
-lastmod: '2024-03-11T00:14:33.123307-06:00'
+lastmod: '2024-03-13T22:44:59.302527-06:00'
 model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en PowerShell trata sobre recuperar la fecha y hora\
   \ actuales del sistema. Esta operaci\xF3n es fundamental para tareas como el\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:08:55.145628-07:00
 description: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-kod\
   \ f\xF6r att hitta buggar och f\xF6rst\xE5 beteenden. Vi g\xF6r det eftersom det\
   \ \xE4r mycket enklare \xE4n\u2026"
-lastmod: '2024-03-11T00:14:10.799431-06:00'
+lastmod: '2024-03-13T22:44:37.487630-06:00'
 model: gpt-4-0125-preview
 summary: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-kod\
   \ f\xF6r att hitta buggar och f\xF6rst\xE5 beteenden. Vi g\xF6r det eftersom det\

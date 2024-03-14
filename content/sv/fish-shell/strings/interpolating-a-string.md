@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:48.153851-07:00
 description: "Interpolering av en str\xE4ng inneb\xE4r att du dynamiskt stoppar in\
   \ data i en str\xE4ng. Programmerare g\xF6r detta f\xF6r att skr\xE4ddarsy meddelanden,\
   \ skapa dynamiska\u2026"
-lastmod: '2024-03-11T00:14:11.721760-06:00'
+lastmod: '2024-03-13T22:44:38.321651-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av en str\xE4ng inneb\xE4r att du dynamiskt stoppar in data\
   \ i en str\xE4ng. Programmerare g\xF6r detta f\xF6r att skr\xE4ddarsy meddelanden,\

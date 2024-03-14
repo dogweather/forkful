@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:10.074658-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Fish Shell existiert, erm\xF6\
   glicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von\u2026"
-lastmod: '2024-03-11T00:14:28.231298-06:00'
+lastmod: '2024-03-13T22:44:54.323382-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Fish Shell existiert, erm\xF6\
   glicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von\u2026"

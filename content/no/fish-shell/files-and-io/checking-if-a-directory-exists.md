@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:21.172837-07:00
 description: "\xC5 sjekke om en katalog eksisterer i Fish Shell gj\xF8r det mulig\
   \ for skript \xE5 ta beslutninger basert p\xE5 tilstedev\xE6relsen eller frav\xE6\
   ret av katalogstrukturer,\u2026"
-lastmod: '2024-03-11T00:14:14.845859-06:00'
+lastmod: '2024-03-13T22:44:41.241881-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog eksisterer i Fish Shell gj\xF8r det mulig for\
   \ skript \xE5 ta beslutninger basert p\xE5 tilstedev\xE6relsen eller frav\xE6ret\

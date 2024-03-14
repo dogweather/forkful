@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:44.083688-07:00
 description: "Pobieranie bie\u017C\u0105cej daty w Google Apps Script dotyczy uzyskania\
   \ aktualnej daty i godziny, co jest powszechnym zadaniem przy automatyzacji zada\u0144\
   ,\u2026"
-lastmod: '2024-03-11T00:14:08.085716-06:00'
+lastmod: '2024-03-13T22:44:34.914838-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie bie\u017C\u0105cej daty w Google Apps Script dotyczy uzyskania\
   \ aktualnej daty i godziny, co jest powszechnym zadaniem przy automatyzacji zada\u0144\

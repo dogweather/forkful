@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:22:49.311491-07:00
 description: "JSON:n k\xE4sittely Elm:ss\xE4 tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi\
   \ ja Elm-arvojen enkoodaamista takaisin JSON:ksi. T\xE4m\xE4 prosessi on ratkaisevan\u2026"
-lastmod: '2024-03-11T00:14:30.453615-06:00'
+lastmod: '2024-03-13T22:44:56.510403-06:00'
 model: gpt-4-0125-preview
 summary: "JSON:n k\xE4sittely Elm:ss\xE4 tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi\
   \ ja Elm-arvojen enkoodaamista takaisin JSON:ksi. T\xE4m\xE4 prosessi on ratkaisevan\u2026"

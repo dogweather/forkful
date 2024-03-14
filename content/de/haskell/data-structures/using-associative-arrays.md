@@ -6,7 +6,7 @@ date: 2024-01-30 19:11:29.496372-07:00
 description: "Assoziative Arrays oder W\xF6rterb\xFCcher in Haskell handeln davon,\
   \ Schl\xFCssel mit Werten f\xFCr schnelle Nachschlageoperationen und effizientes\
   \ Datenmanagement zu\u2026"
-lastmod: '2024-03-11T00:14:27.821152-06:00'
+lastmod: '2024-03-13T22:44:53.924000-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays oder W\xF6rterb\xFCcher in Haskell handeln davon, Schl\xFC\
   ssel mit Werten f\xFCr schnelle Nachschlageoperationen und effizientes Datenmanagement\

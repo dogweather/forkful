@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:01.742452-07:00
 description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visual\
   \ Basic for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie\
   \ zawiera. Programi\u015Bci cz\u0119sto wykonuj\u0105\u2026"
-lastmod: '2024-03-11T00:14:08.396321-06:00'
+lastmod: '2024-03-13T22:44:35.221322-06:00'
 model: gpt-4-0125-preview
 summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visual Basic\
   \ for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie zawiera.\

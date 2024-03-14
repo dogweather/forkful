@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:57.870387-07:00
 description: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour en\
   \ saisir la structure et le contenu. Les programmeurs le font pour extraire des\
   \ donn\xE9es,\u2026"
-lastmod: '2024-03-11T00:14:32.289538-06:00'
+lastmod: '2024-03-13T22:44:58.417566-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour en saisir\
   \ la structure et le contenu. Les programmeurs le font pour extraire des donn\xE9\

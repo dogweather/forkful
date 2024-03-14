@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:03:04.285810-07:00
 description: "Een nieuw project starten in Google Apps Script (GAS) houdt in dat je\
   \ een scriptbestand initialiseert binnen het Google-ecosysteem (Google Drive,\u2026"
-lastmod: '2024-03-11T00:14:24.141523-06:00'
+lastmod: '2024-03-13T22:44:50.332205-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Google Apps Script (GAS) houdt in dat je een\
   \ scriptbestand initialiseert binnen het Google-ecosysteem (Google Drive,\u2026"

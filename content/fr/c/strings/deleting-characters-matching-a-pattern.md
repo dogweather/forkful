@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:15.960274-07:00
 description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans les cha\xEEnes en C consiste \xE0 retirer toutes les instances de certains\
   \ caract\xE8res\u2026"
-lastmod: '2024-03-11T00:14:32.225258-06:00'
+lastmod: '2024-03-13T22:44:58.353183-06:00'
 model: gpt-4-0125-preview
 summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
   \ dans les cha\xEEnes en C consiste \xE0 retirer toutes les instances de certains\

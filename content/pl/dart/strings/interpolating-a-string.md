@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:53.009756-07:00
 description: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to proces wstrzykiwania\
   \ warto\u015Bci zmiennych bezpo\u015Brednio w \u0142a\u0144cuchy znak\xF3w, cz\u0119\
   sto w celu tworzenia znacz\u0105cych komunikat\xF3w\u2026"
-lastmod: '2024-03-11T00:14:08.245686-06:00'
+lastmod: '2024-03-13T22:44:35.074603-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to proces wstrzykiwania warto\u015B\
   ci zmiennych bezpo\u015Brednio w \u0142a\u0144cuchy znak\xF3w, cz\u0119sto w celu\

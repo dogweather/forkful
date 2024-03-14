@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:09:51.705003-07:00
 description: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende oppgave\
   \ som involverer \xE5 hente og muligens manipulere dagens dato og tid. Programmerere\u2026"
-lastmod: '2024-03-11T00:14:14.794308-06:00'
+lastmod: '2024-03-13T22:44:41.193944-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende oppgave\
   \ som involverer \xE5 hente og muligens manipulere dagens dato og tid. Programmerere\u2026"

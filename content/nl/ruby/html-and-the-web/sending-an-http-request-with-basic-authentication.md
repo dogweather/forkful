@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:18.799169-07:00
 description: "In Ruby, een HTTP-verzoek verzenden met basisverificatie houdt in dat\
   \ je een gebruikersnaam en wachtwoord aan je verzoekheader toevoegt. Programmeurs\
   \ doen\u2026"
-lastmod: '2024-03-11T00:14:25.201299-06:00'
+lastmod: '2024-03-13T22:44:51.337747-06:00'
 model: gpt-4-0125-preview
 summary: "In Ruby, een HTTP-verzoek verzenden met basisverificatie houdt in dat je\
   \ een gebruikersnaam en wachtwoord aan je verzoekheader toevoegt. Programmeurs doen\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:08.184251-07:00
 description: "Debug-tulostus auttaa ymm\xE4rt\xE4m\xE4\xE4n ohjelman toimintaa. Koodareita\
   \ se auttaa paikkaamaan bugeja ja varmistamaan koodin toimivuuden."
-lastmod: '2024-03-11T00:14:30.072759-06:00'
+lastmod: '2024-03-13T22:44:56.146235-06:00'
 model: gpt-4-1106-preview
 summary: "Debug-tulostus auttaa ymm\xE4rt\xE4m\xE4\xE4n ohjelman toimintaa. Koodareita\
   \ se auttaa paikkaamaan bugeja ja varmistamaan koodin toimivuuden."

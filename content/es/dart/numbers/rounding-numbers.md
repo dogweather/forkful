@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:35.055946-07:00
 description: "Redondear n\xFAmeros es el proceso de ajustar un n\xFAmero a su n\xFA\
   mero entero m\xE1s cercano o a un n\xFAmero especificado de decimales. Los programadores\
   \ a menudo\u2026"
-lastmod: '2024-03-11T00:14:32.567392-06:00'
+lastmod: '2024-03-13T22:44:58.744137-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros es el proceso de ajustar un n\xFAmero a su n\xFAmero\
   \ entero m\xE1s cercano o a un n\xFAmero especificado de decimales. Los programadores\

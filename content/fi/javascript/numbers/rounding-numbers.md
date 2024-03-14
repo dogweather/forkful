@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:05.694752-07:00
 description: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan poistoa\
   \ luvusta tietyn pisteen j\xE4lkeen. Ohjelmoijat py\xF6rist\xE4v\xE4t hallitakseen\
   \ tarkkuutta, hallinnoidakseen\u2026"
-lastmod: '2024-03-11T00:14:30.987199-06:00'
+lastmod: '2024-03-13T22:44:56.944739-06:00'
 model: gpt-4-0125-preview
 summary: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan poistoa luvusta\
   \ tietyn pisteen j\xE4lkeen. Ohjelmoijat py\xF6rist\xE4v\xE4t hallitakseen tarkkuutta,\

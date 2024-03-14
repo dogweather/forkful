@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:53.221031-07:00
 description: "Het starten van een nieuw project in TypeScript draait allemaal om het\
   \ opzetten van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"
-lastmod: '2024-03-11T00:14:24.367187-06:00'
+lastmod: '2024-03-13T22:44:50.551389-06:00'
 model: gpt-4-0125-preview
 summary: "Het starten van een nieuw project in TypeScript draait allemaal om het opzetten\
   \ van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"

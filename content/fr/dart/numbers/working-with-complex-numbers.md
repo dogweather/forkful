@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:41.645879-07:00
 description: "Les nombres complexes, constitu\xE9s d'une partie r\xE9elle et d'une\
   \ partie imaginaire (g\xE9n\xE9ralement not\xE9s sous la forme a + bi), \xE9tendent\
   \ le concept des\u2026"
-lastmod: '2024-03-11T00:14:31.398529-06:00'
+lastmod: '2024-03-13T22:44:57.382679-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes, constitu\xE9s d'une partie r\xE9elle et d'une partie\
   \ imaginaire (g\xE9n\xE9ralement not\xE9s sous la forme a + bi), \xE9tendent le\

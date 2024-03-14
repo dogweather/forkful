@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:37.450159-07:00
 description: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um arquivo que\
   \ s\xF3 \xE9 necess\xE1rio durante a execu\xE7\xE3o tempor\xE1ria de um programa.\
   \ Os programadores fazem isso\u2026"
-lastmod: '2024-03-11T00:14:20.267265-06:00'
+lastmod: '2024-03-13T22:44:46.561327-06:00'
 model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um arquivo que s\xF3\
   \ \xE9 necess\xE1rio durante a execu\xE7\xE3o tempor\xE1ria de um programa. Os programadores\

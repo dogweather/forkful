@@ -5,7 +5,7 @@ date: 2024-03-08 21:58:02.628473-07:00
 description: "XML:n k\xE4sittely Dartissa sis\xE4lt\xE4\xE4 XML-dokumenttien j\xE4\
   sennyksen, kyselyn ja muokkauksen, joka on olennainen prosessi sovelluksille, jotka\
   \ ovat\u2026"
-lastmod: '2024-03-11T00:14:30.229471-06:00'
+lastmod: '2024-03-13T22:44:56.298056-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Dartissa sis\xE4lt\xE4\xE4 XML-dokumenttien j\xE4sennyksen,\
   \ kyselyn ja muokkauksen, joka on olennainen prosessi sovelluksille, jotka ovat\u2026"

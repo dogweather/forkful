@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:17:12.216046-07:00
 description: "Las expresiones regulares (regex) en JavaScript son patrones utilizados\
   \ para buscar combinaciones de caracteres en cadenas. Los programadores las usan\u2026"
-lastmod: '2024-03-11T00:14:33.278512-06:00'
+lastmod: '2024-03-13T22:44:59.448879-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en JavaScript son patrones utilizados\
   \ para buscar combinaciones de caracteres en cadenas. Los programadores las usan\u2026"

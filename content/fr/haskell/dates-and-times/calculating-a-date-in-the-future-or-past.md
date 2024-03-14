@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:04.597615-07:00
 description: "Calculer une date dans le futur ou le pass\xE9 permet de d\xE9terminer\
   \ un jour sp\xE9cifique \xE0 partir d'une date donn\xE9e. Les programmeurs le font\
   \ souvent pour des\u2026"
-lastmod: '2024-03-11T00:14:31.796578-06:00'
+lastmod: '2024-03-13T22:44:57.847814-06:00'
 model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 permet de d\xE9terminer un\
   \ jour sp\xE9cifique \xE0 partir d'une date donn\xE9e. Les programmeurs le font\

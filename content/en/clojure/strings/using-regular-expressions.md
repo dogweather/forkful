@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:47.953382-07:00
 description: "Regular expressions, a powerful tool for pattern matching and data manipulation,\
   \ are essential in text processing tasks such as validating input,\u2026"
-lastmod: '2024-03-11T00:14:33.587447-06:00'
+lastmod: '2024-03-13T22:44:59.736421-06:00'
 model: gpt-4-0125-preview
 summary: "Regular expressions, a powerful tool for pattern matching and data manipulation,\
   \ are essential in text processing tasks such as validating input,\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-27 16:20:32.344618-07:00
 description: "Manipuler des fichiers avec des lignes de commande CLI (Interface de\
   \ Ligne de Commande) implique l'utilisation de scripts Bash ou de commandes pour\u2026"
-lastmod: '2024-03-11T00:14:31.918125-06:00'
+lastmod: '2024-03-13T22:44:57.988856-06:00'
 model: gpt-4-0125-preview
 summary: "Manipuler des fichiers avec des lignes de commande CLI (Interface de Ligne\
   \ de Commande) implique l'utilisation de scripts Bash ou de commandes pour\u2026"

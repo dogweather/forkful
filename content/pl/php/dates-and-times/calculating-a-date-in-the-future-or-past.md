@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:14.134465-07:00
 description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
   \ spos\xF3b na ustalenie, jaki dzie\u0144 b\u0119dzie za X dni, lub jaki by\u0142\
   \ Y dni temu. Programi\u015Bci robi\u0105 to, by\u2026"
-lastmod: '2024-03-11T00:14:08.697268-06:00'
+lastmod: '2024-03-13T22:44:35.510884-06:00'
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to spos\xF3\
   b na ustalenie, jaki dzie\u0144 b\u0119dzie za X dni, lub jaki by\u0142 Y dni temu.\

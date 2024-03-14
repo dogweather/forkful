@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:29.378046-07:00
 description: "Express\xF5es regulares, uma ferramenta poderosa para correspond\xEA\
   ncia de padr\xF5es e manipula\xE7\xE3o de dados, s\xE3o essenciais em tarefas de\
   \ processamento de texto\u2026"
-lastmod: '2024-03-11T00:14:19.856708-06:00'
+lastmod: '2024-03-13T22:44:46.187152-06:00'
 model: gpt-4-0125-preview
 summary: "Express\xF5es regulares, uma ferramenta poderosa para correspond\xEAncia\
   \ de padr\xF5es e manipula\xE7\xE3o de dados, s\xE3o essenciais em tarefas de processamento\

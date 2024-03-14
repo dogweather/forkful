@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:07.151129-07:00
 description: "Commencer un nouveau projet PHP, c'est partir sur une feuille blanche,\
   \ coder quelque chose d'unique. Les programmeurs le font pour r\xE9soudre des probl\xE8\
   mes,\u2026"
-lastmod: '2024-03-11T00:14:31.829790-06:00'
+lastmod: '2024-03-13T22:44:57.879332-06:00'
 model: gpt-4-1106-preview
 summary: "Commencer un nouveau projet PHP, c'est partir sur une feuille blanche, coder\
   \ quelque chose d'unique. Les programmeurs le font pour r\xE9soudre des probl\xE8\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:20.906047-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Rubyn kieless\xE4 ovat malleja,\
   \ joita k\xE4ytet\xE4\xE4n merkkijonojen merkkiyhdistelmien vastaavuuden etsimiseen,\
   \ mahdollistaen\u2026"
-lastmod: '2024-03-11T00:14:31.116118-06:00'
+lastmod: '2024-03-13T22:44:57.074862-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Rubyn kieless\xE4 ovat malleja,\
   \ joita k\xE4ytet\xE4\xE4n merkkijonojen merkkiyhdistelmien vastaavuuden etsimiseen,\

@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:07.606182-07:00
 description: "En el \xE1mbito de la programaci\xF3n, especialmente cuando se trata\
   \ de entornos Linux o Unix, manipular archivos directamente desde la interfaz de\
   \ l\xEDnea de\u2026"
-lastmod: '2024-03-11T00:14:33.332172-06:00'
+lastmod: '2024-03-13T22:44:59.496563-06:00'
 model: gpt-4-0125-preview
 summary: "En el \xE1mbito de la programaci\xF3n, especialmente cuando se trata de\
   \ entornos Linux o Unix, manipular archivos directamente desde la interfaz de l\xED\

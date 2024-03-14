@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:07:23.046191-07:00
 description: "Het versturen van een HTTP-verzoek haalt gegevens op van een webserver.\
   \ Programmeurs doen dit om te interageren met webservices, informatie te verzamelen\u2026"
-lastmod: '2024-03-11T00:14:24.946323-06:00'
+lastmod: '2024-03-13T22:44:51.109582-06:00'
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek haalt gegevens op van een webserver.\
   \ Programmeurs doen dit om te interageren met webservices, informatie te verzamelen\u2026"

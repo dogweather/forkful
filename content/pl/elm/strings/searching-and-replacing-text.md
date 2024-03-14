@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:44.333418-07:00
 description: "\"Co i dlaczego?\" Szukanie i zamiana tekstu to podstawowe operacje\
   \ pozwalaj\u0105ce na lokalizowanie wzorc\xF3w w tek\u015Bcie oraz ich modyfikacj\u0119\
   . Programi\u015Bci u\u017Cywaj\u0105\u2026"
-lastmod: '2024-03-11T00:14:08.484318-06:00'
+lastmod: '2024-03-13T22:44:35.306162-06:00'
 model: gpt-4-1106-preview
 summary: "\"Co i dlaczego?\" Szukanie i zamiana tekstu to podstawowe operacje pozwalaj\u0105\
   ce na lokalizowanie wzorc\xF3w w tek\u015Bcie oraz ich modyfikacj\u0119. Programi\u015B\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:10.979143-07:00
 description: "Tekstitiedostoon kirjoittaminen Pythonissa on perusteht\xE4v\xE4, joka\
   \ sis\xE4lt\xE4\xE4 tiedoston luomisen tai avaamisen ja sitten tekstin lis\xE4\xE4\
   misen tai\u2026"
-lastmod: '2024-03-11T00:14:30.089010-06:00'
+lastmod: '2024-03-13T22:44:56.161881-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Pythonissa on perusteht\xE4v\xE4, joka sis\xE4\
   lt\xE4\xE4 tiedoston luomisen tai avaamisen ja sitten tekstin lis\xE4\xE4misen tai\u2026"

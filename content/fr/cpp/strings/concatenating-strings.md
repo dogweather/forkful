@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:08.315368-07:00
 description: "La concat\xE9nation des cha\xEEnes, c'est quand on fusionne deux textes\
   \ en un seul. Les d\xE9veloppeurs la font pour construire des messages dynamiques,\
   \ g\xE9rer des\u2026"
-lastmod: '2024-03-11T00:14:32.050949-06:00'
+lastmod: '2024-03-13T22:44:58.153050-06:00'
 model: gpt-4-1106-preview
 summary: "La concat\xE9nation des cha\xEEnes, c'est quand on fusionne deux textes\
   \ en un seul. Les d\xE9veloppeurs la font pour construire des messages dynamiques,\

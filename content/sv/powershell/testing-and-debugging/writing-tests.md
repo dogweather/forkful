@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:40.125826-07:00
 description: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automatiskt\
   \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\
   \ att den beter\u2026"
-lastmod: '2024-03-11T00:14:11.513912-06:00'
+lastmod: '2024-03-13T22:44:38.129427-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automatiskt\
   \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\

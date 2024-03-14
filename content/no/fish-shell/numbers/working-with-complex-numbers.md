@@ -2,7 +2,7 @@
 date: 2024-01-26 04:39:59.559297-07:00
 description: "Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt\
   \ komplekst plan. Programmerere bruker dem innen felt som ingeni\xF8rvitenskap,\u2026"
-lastmod: '2024-03-11T00:14:14.821910-06:00'
+lastmod: '2024-03-13T22:44:41.218882-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt\
   \ komplekst plan. Programmerere bruker dem innen felt som ingeni\xF8rvitenskap,\u2026"

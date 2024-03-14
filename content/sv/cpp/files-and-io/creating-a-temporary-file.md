@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:55.355167-07:00
 description: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar\
   \ data p\xE5 disk. Programmerare g\xF6r detta f\xF6r att hantera stora datam\xE4\
   ngder, h\xE5lla p\xE5 anv\xE4ndardata\u2026"
-lastmod: '2024-03-11T00:14:11.621404-06:00'
+lastmod: '2024-03-13T22:44:38.228755-06:00'
 model: gpt-4-1106-preview
 summary: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar data\
   \ p\xE5 disk. Programmerare g\xF6r detta f\xF6r att hantera stora datam\xE4ngder,\

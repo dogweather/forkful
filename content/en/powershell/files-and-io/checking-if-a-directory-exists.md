@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:29.170384-07:00
 description: "In PowerShell, checking if a directory exists is a common task that\
   \ helps scripts make decisions based on filesystem structure\u2014such as avoiding\
   \ errors by\u2026"
-lastmod: '2024-03-11T00:14:34.165288-06:00'
+lastmod: '2024-03-13T22:45:00.297459-06:00'
 model: gpt-4-0125-preview
 summary: "In PowerShell, checking if a directory exists is a common task that helps\
   \ scripts make decisions based on filesystem structure\u2014such as avoiding errors\

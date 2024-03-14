@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:48.263773-07:00
 description: "Zaczynanie nowego projektu to jak otwieranie pustej ksi\u0105\u017C\
   ki, na kt\xF3rej stronach mo\u017Cesz napisa\u0107 dowolny kod. Programi\u015Bci\
   \ rozpoczynaj\u0105 nowe projekty, aby\u2026"
-lastmod: '2024-03-11T00:14:08.313007-06:00'
+lastmod: '2024-03-13T22:44:35.139562-06:00'
 model: gpt-4-1106-preview
 summary: "Zaczynanie nowego projektu to jak otwieranie pustej ksi\u0105\u017Cki, na\
   \ kt\xF3rej stronach mo\u017Cesz napisa\u0107 dowolny kod. Programi\u015Bci rozpoczynaj\u0105\

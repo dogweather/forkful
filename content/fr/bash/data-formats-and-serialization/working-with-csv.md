@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:42.615807-07:00
 description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ dans Bash consiste \xE0 traiter et manipuler des donn\xE9es tabulaires stock\xE9\
   es au format\u2026"
-lastmod: '2024-03-11T00:14:31.946769-06:00'
+lastmod: '2024-03-13T22:44:58.021789-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
   \ dans Bash consiste \xE0 traiter et manipuler des donn\xE9es tabulaires stock\xE9\

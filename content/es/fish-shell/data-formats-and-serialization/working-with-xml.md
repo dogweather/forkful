@@ -2,7 +2,7 @@
 date: 2024-01-26 04:30:02.801762-07:00
 description: "Trabajar con XML significa manipular datos en un formato estructurado\
   \ y omnipresente utilizado en configuraciones, mensajer\xEDa y m\xE1s. Los programadores\u2026"
-lastmod: '2024-03-11T00:14:33.363294-06:00'
+lastmod: '2024-03-13T22:44:59.525610-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML significa manipular datos en un formato estructurado y\
   \ omnipresente utilizado en configuraciones, mensajer\xEDa y m\xE1s. Los programadores\u2026"

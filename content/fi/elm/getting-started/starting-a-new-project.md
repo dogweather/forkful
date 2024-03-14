@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:21.500746-07:00
 description: "Uuden projektin aloittaminen Elm:ss\xE4 tarkoittaa perustan luontia,\
   \ josta projektisi kasvaa. Koodaajat aloittavat uusia projekteja vaaliakseen uusia\
   \ ideoita\u2026"
-lastmod: '2024-03-11T00:14:30.431630-06:00'
+lastmod: '2024-03-13T22:44:56.489152-06:00'
 model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen Elm:ss\xE4 tarkoittaa perustan luontia, josta\
   \ projektisi kasvaa. Koodaajat aloittavat uusia projekteja vaaliakseen uusia ideoita\u2026"

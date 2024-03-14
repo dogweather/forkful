@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:42.747543-07:00
 description: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
   \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\
   \ les\u2026"
-lastmod: '2024-03-11T00:14:31.546907-06:00'
+lastmod: '2024-03-13T22:44:57.579637-06:00'
 model: gpt-4-0125-preview
 summary: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
   \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\

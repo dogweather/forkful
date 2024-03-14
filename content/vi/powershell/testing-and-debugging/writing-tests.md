@@ -6,7 +6,7 @@ description: "Vi\u1EBFt th\u1EED nghi\u1EC7m trong l\u1EADp tr\xECnh ngh\u0129a 
   \ t\u1EA1o ra c\xE1c k\u1ECBch b\u1EA3n ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\
   n c\xF3 ch\u1EA1y \u0111\xFAng kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
   m vi\u1EC7c n\xE0y \u0111\u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i\u2026"
-lastmod: '2024-03-11T00:14:10.235173-06:00'
+lastmod: '2024-03-13T22:44:36.941184-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EBFt th\u1EED nghi\u1EC7m trong l\u1EADp tr\xECnh ngh\u0129a l\xE0\
   \ t\u1EA1o ra c\xE1c k\u1ECBch b\u1EA3n ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\

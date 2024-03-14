@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:12.197401-07:00
 description: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tietoa\
   \ ohjelman suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4\
   \ ja\u2026"
-lastmod: '2024-03-11T00:14:29.983045-06:00'
+lastmod: '2024-03-13T22:44:56.057643-06:00'
 model: gpt-4-0125-preview
 summary: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tietoa ohjelman\
   \ suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4 ja\u2026"

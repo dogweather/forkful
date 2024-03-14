@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:16.691373-07:00
 description: "Zmiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery oznacza przekszta\u0142\
   cenie wszystkich wielkich liter w danym ci\u0105gu na ich odpowiedniki w dolnym\
   \ rejestrowie.\u2026"
-lastmod: '2024-03-11T00:14:08.343810-06:00'
+lastmod: '2024-03-13T22:44:35.170914-06:00'
 model: gpt-4-1106-preview
 summary: "Zmiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery oznacza przekszta\u0142\
   cenie wszystkich wielkich liter w danym ci\u0105gu na ich odpowiedniki w dolnym\

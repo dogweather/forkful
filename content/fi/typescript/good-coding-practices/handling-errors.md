@@ -3,7 +3,7 @@ date: 2024-01-26 00:58:43.438968-07:00
 description: "Virheiden k\xE4sittely on odottamattoman odottamista; kyse on siit\xE4\
   , miten selvit\xE4\xE4n, kun koodissamme tapahtuu odottamattomia virheit\xE4. Sen\
   \ avulla pyrimme\u2026"
-lastmod: '2024-03-11T00:14:30.255760-06:00'
+lastmod: '2024-03-13T22:44:56.322577-06:00'
 model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely on odottamattoman odottamista; kyse on siit\xE4,\
   \ miten selvit\xE4\xE4n, kun koodissamme tapahtuu odottamattomia virheit\xE4. Sen\

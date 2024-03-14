@@ -2,7 +2,7 @@
 date: 2024-01-20 18:00:23.507324-07:00
 description: "HTTP-Anfragen sind das Mittel, um mit Webdiensten zu reden. Programmierer\
   \ nutzen sie, um Daten zu holen oder zu senden, APIs zu nutzen oder Webseiten-\u2026"
-lastmod: '2024-03-11T00:14:27.338263-06:00'
+lastmod: '2024-03-13T22:44:53.375198-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind das Mittel, um mit Webdiensten zu reden. Programmierer\
   \ nutzen sie, um Daten zu holen oder zu senden, APIs zu nutzen oder Webseiten-\u2026"

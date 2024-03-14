@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:55:10.298643-07:00
 description: "La gestione degli errori in Visual Basic for Applications (VBA) si riferisce\
   \ al processo di anticipazione, rilevazione e risoluzione di errori di\u2026"
-lastmod: '2024-03-11T00:14:16.838256-06:00'
+lastmod: '2024-03-13T22:44:43.271242-06:00'
 model: gpt-4-0125-preview
 summary: "La gestione degli errori in Visual Basic for Applications (VBA) si riferisce\
   \ al processo di anticipazione, rilevazione e risoluzione di errori di\u2026"

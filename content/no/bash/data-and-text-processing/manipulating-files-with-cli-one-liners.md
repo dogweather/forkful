@@ -3,7 +3,7 @@ date: 2024-01-27 16:20:59.504230-07:00
 description: "Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers\
   \ kommandoer involverer bruk av Bash-skript eller kommandoer for \xE5 utf\xF8re\
   \ handlinger p\xE5\u2026"
-lastmod: '2024-03-11T00:14:14.543366-06:00'
+lastmod: '2024-03-13T22:44:40.969220-06:00'
 model: gpt-4-0125-preview
 summary: "Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers kommandoer\
   \ involverer bruk av Bash-skript eller kommandoer for \xE5 utf\xF8re handlinger\

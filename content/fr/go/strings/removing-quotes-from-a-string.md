@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:09.794660-07:00
 description: "Retirer les guillemets d'une cha\xEEne en Go consiste \xE0 \xE9liminer\
   \ les guillemets de d\xE9but et de fin (`\"` ou `'`) d'une cha\xEEne donn\xE9e.\
   \ Les programmeurs ont\u2026"
-lastmod: '2024-03-11T00:14:31.159948-06:00'
+lastmod: '2024-03-13T22:44:57.119667-06:00'
 model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne en Go consiste \xE0 \xE9liminer les\
   \ guillemets de d\xE9but et de fin (`\"` ou `'`) d'une cha\xEEne donn\xE9e. Les\

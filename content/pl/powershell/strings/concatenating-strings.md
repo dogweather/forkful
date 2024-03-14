@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:17.521422-07:00
 description: "Concatenation to \u0142\u0105czenie kilku string\xF3w w jeden. Programi\u015B\
   ci robi\u0105 to, by sk\u0142ada\u0107 tekst z r\xF3\u017Cnych cz\u0119\u015Bci,\
   \ np. tworz\u0105c wiadomo\u015Bci czy dynamiczne tre\u015Bci."
-lastmod: '2024-03-11T00:14:08.813469-06:00'
+lastmod: '2024-03-13T22:44:35.619773-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenation to \u0142\u0105czenie kilku string\xF3w w jeden. Programi\u015B\
   ci robi\u0105 to, by sk\u0142ada\u0107 tekst z r\xF3\u017Cnych cz\u0119\u015Bci,\

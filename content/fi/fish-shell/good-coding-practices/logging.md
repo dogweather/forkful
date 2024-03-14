@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:56.950758-07:00
 description: "Lokitus on olennaisesti sit\xE4, ett\xE4 kirjaat yl\xF6s, mit\xE4 sovelluksesi\
   \ tekee \u2013 voisi sanoa, ett\xE4 se on p\xE4iv\xE4kirja, mutta koodille. Ohjelmoijat\
   \ tekev\xE4t niin\u2026"
-lastmod: '2024-03-11T00:14:31.043075-06:00'
+lastmod: '2024-03-13T22:44:57.001337-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on olennaisesti sit\xE4, ett\xE4 kirjaat yl\xF6s, mit\xE4 sovelluksesi\
   \ tekee \u2013 voisi sanoa, ett\xE4 se on p\xE4iv\xE4kirja, mutta koodille. Ohjelmoijat\

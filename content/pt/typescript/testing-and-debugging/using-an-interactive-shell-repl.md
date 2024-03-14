@@ -3,7 +3,7 @@ date: 2024-01-26 04:18:36.000737-07:00
 description: "Um Read-Eval-Print-Loop (REPL) \xE9 um ambiente de programa\xE7\xE3\
   o que recebe entradas \xFAnicas do usu\xE1rio, executa-as e retorna o resultado\
   \ para o usu\xE1rio.\u2026"
-lastmod: '2024-03-11T00:14:20.013637-06:00'
+lastmod: '2024-03-13T22:44:46.327712-06:00'
 model: gpt-4-0125-preview
 summary: "Um Read-Eval-Print-Loop (REPL) \xE9 um ambiente de programa\xE7\xE3o que\
   \ recebe entradas \xFAnicas do usu\xE1rio, executa-as e retorna o resultado para\

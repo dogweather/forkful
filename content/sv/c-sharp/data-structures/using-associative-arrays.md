@@ -5,7 +5,7 @@ date: 2024-01-30 19:10:16.994809-07:00
 description: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra och\
   \ hantera par av nycklar och v\xE4rden. De \xE4r ditt f\xF6rstahandsval n\xE4r du\
   \ beh\xF6ver h\xE4mta v\xE4rden\u2026"
-lastmod: '2024-03-11T00:14:11.267348-06:00'
+lastmod: '2024-03-13T22:44:37.906042-06:00'
 model: gpt-4-0125-preview
 summary: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra och hantera\
   \ par av nycklar och v\xE4rden. De \xE4r ditt f\xF6rstahandsval n\xE4r du beh\xF6\

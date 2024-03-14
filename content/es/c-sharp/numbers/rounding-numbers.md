@@ -2,7 +2,7 @@
 date: 2024-01-26 03:43:32.278305-07:00
 description: "Redondear n\xFAmeros significa ajustarlos al lugar de valor especificado\
   \ m\xE1s cercano\u2014piensa en simplificarlos a una forma m\xE1s simple. Los programadores\u2026"
-lastmod: '2024-03-11T00:14:32.882781-06:00'
+lastmod: '2024-03-13T22:44:59.073451-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa ajustarlos al lugar de valor especificado\
   \ m\xE1s cercano\u2014piensa en simplificarlos a una forma m\xE1s simple. Los programadores\u2026"

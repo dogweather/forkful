@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:20.178233-07:00
 description: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, manipulowanie\
   \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi.\
   \ Operacja\u2026"
-lastmod: '2024-03-11T00:14:08.634597-06:00'
+lastmod: '2024-03-13T22:44:35.449452-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, manipulowanie\
   \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi.\

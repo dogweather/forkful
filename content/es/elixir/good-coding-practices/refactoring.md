@@ -2,7 +2,7 @@
 date: 2024-01-26 01:17:42.166022-07:00
 description: "Refactorizar es el proceso de reestructurar el c\xF3digo existente sin\
   \ cambiar su comportamiento externo, con el objetivo de mejorar atributos no funcionales\u2026"
-lastmod: '2024-03-11T00:14:32.536966-06:00'
+lastmod: '2024-03-13T22:44:58.710553-06:00'
 model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de reestructurar el c\xF3digo existente sin cambiar\
   \ su comportamiento externo, con el objetivo de mejorar atributos no funcionales\u2026"

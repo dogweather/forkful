@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:42.685677-07:00
 description: "Crear un archivo temporal es hacer un fichero que s\xF3lo necesitas\
   \ durante el tiempo de ejecuci\xF3n de tu programa. Los programadores lo hacen para\
   \ almacenar\u2026"
-lastmod: '2024-03-11T00:14:33.217576-06:00'
+lastmod: '2024-03-13T22:44:59.394259-06:00'
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es hacer un fichero que s\xF3lo necesitas durante\
   \ el tiempo de ejecuci\xF3n de tu programa. Los programadores lo hacen para almacenar\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 04:46:22.655713-07:00
 description: "N\xFAmeros complexos, consistindo de uma parte real e uma parte imagin\xE1\
   ria (normalmente escritos como a + bi), possibilitam c\xE1lculos que s\xE3o impratic\xE1\
   veis ou\u2026"
-lastmod: '2024-03-11T00:14:20.004835-06:00'
+lastmod: '2024-03-13T22:44:46.319856-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, consistindo de uma parte real e uma parte imagin\xE1\
   ria (normalmente escritos como a + bi), possibilitam c\xE1lculos que s\xE3o impratic\xE1\

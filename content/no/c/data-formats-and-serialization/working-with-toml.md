@@ -5,7 +5,7 @@ date: 2024-02-03 18:12:28.515710-07:00
 description: "TOML (Toms Opplagte, Minimale Spr\xE5k) er et konfigurasjonsfilformat\
   \ som er lett \xE5 lese p\xE5 grunn av sine klare semantikk. Programmerere bruker\
   \ det for\u2026"
-lastmod: '2024-03-11T00:14:14.908681-06:00'
+lastmod: '2024-03-13T22:44:41.297245-06:00'
 model: gpt-4-0125-preview
 summary: "TOML (Toms Opplagte, Minimale Spr\xE5k) er et konfigurasjonsfilformat som\
   \ er lett \xE5 lese p\xE5 grunn av sine klare semantikk. Programmerere bruker det\

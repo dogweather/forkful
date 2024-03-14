@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:52.649198-07:00
 description: "Debugging er prosessen med \xE5 finne og fikse feil i koden. Vi printer\
   \ debug output for \xE5 se hva som faktisk skjer n\xE5r koden kj\xF8rer, noe som\
   \ hjelper oss \xE5\u2026"
-lastmod: '2024-03-11T00:14:14.065950-06:00'
+lastmod: '2024-03-13T22:44:40.534777-06:00'
 model: gpt-4-1106-preview
 summary: "Debugging er prosessen med \xE5 finne og fikse feil i koden. Vi printer\
   \ debug output for \xE5 se hva som faktisk skjer n\xE5r koden kj\xF8rer, noe som\

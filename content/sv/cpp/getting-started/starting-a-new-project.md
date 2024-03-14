@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:03.368814-07:00
 description: "Starta ett nytt projekt betyder att kicka ig\xE5ng en helt fr\xE4sch\
   \ kodkodbas fr\xE5n nollpunkt. Programmerare g\xF6r detta f\xF6r att f\xF6rverkliga\
   \ nya id\xE9er, l\xF6sa unika\u2026"
-lastmod: '2024-03-11T00:14:11.600250-06:00'
+lastmod: '2024-03-13T22:44:38.209805-06:00'
 model: gpt-4-1106-preview
 summary: "Starta ett nytt projekt betyder att kicka ig\xE5ng en helt fr\xE4sch kodkodbas\
   \ fr\xE5n nollpunkt. Programmerare g\xF6r detta f\xF6r att f\xF6rverkliga nya id\xE9\

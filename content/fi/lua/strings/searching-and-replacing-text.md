@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:20.094070-07:00
 description: "Etsim\xE4ll\xE4 ja korvaamalla teksti\xE4 voit muokata merkkijonoja\
   \ nopeasti. Koodareille t\xE4m\xE4 on keskeist\xE4, kun p\xE4ivitet\xE4\xE4n dataa\
   \ tai siistit\xE4\xE4n sy\xF6tett\xE4."
-lastmod: '2024-03-11T00:14:30.635979-06:00'
+lastmod: '2024-03-13T22:44:56.683234-06:00'
 model: gpt-4-1106-preview
 summary: "Etsim\xE4ll\xE4 ja korvaamalla teksti\xE4 voit muokata merkkijonoja nopeasti.\
   \ Koodareille t\xE4m\xE4 on keskeist\xE4, kun p\xE4ivitet\xE4\xE4n dataa tai siistit\xE4\

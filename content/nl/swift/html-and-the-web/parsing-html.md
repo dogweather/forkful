@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:49.408510-07:00
 description: "HTML parsen betekent het filteren door de soep van code van een website\
   \ om nuttige brokjes te vinden \u2014 tekst, links, afbeeldingen, etc. Programmeurs\
   \ doen\u2026"
-lastmod: '2024-03-11T00:14:24.992478-06:00'
+lastmod: '2024-03-13T22:44:51.154594-06:00'
 model: gpt-4-0125-preview
 summary: "HTML parsen betekent het filteren door de soep van code van een website\
   \ om nuttige brokjes te vinden \u2014 tekst, links, afbeeldingen, etc. Programmeurs\

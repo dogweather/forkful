@@ -5,7 +5,7 @@ changelog:
 date: 2024-01-28 01:59:23.503759-07:00
 description: "Das Parsen eines Datums aus einem String bedeutet, Text wie \u201E2023-04-05\u201C\
   \ zu nehmen und ihn in ein Datumformat umzuwandeln, das Ihr Programm verstehen und\u2026"
-lastmod: '2024-03-11T00:14:27.436962-06:00'
+lastmod: '2024-03-13T22:44:53.543841-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String bedeutet, Text wie \u201E2023-04-05\u201C\
   \ zu nehmen und ihn in ein Datumformat umzuwandeln, das Ihr Programm verstehen und\u2026"

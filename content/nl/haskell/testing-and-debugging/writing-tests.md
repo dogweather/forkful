@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:20.596911-07:00
 description: "Tests schrijven controleert of code doet wat het moet doen. Testen vangt\
   \ bugs op, helpt bij het onderhouden van code en zorgt ervoor dat wijzigingen niets\u2026"
-lastmod: '2024-03-11T00:14:24.684836-06:00'
+lastmod: '2024-03-13T22:44:50.855929-06:00'
 model: gpt-4-0125-preview
 summary: "Tests schrijven controleert of code doet wat het moet doen. Testen vangt\
   \ bugs op, helpt bij het onderhouden van code en zorgt ervoor dat wijzigingen niets\u2026"

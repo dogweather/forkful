@@ -6,7 +6,7 @@ description: "XML(eXtensible Markup Language)\uC740 \uB370\uC774\uD130\uB97C \uC
   \uC740 \uC124\uC815, \uC571 \uAC04 \uB370\uC774\uD130 \uAD50\uD658, \uADF8\uB9AC\
   \uACE0 SOAP\uC774\uB098 \uC6F9 API\uC640 \uAC19\uC740 \uC0AC\uC591\uC744 \uC694\uAD6C\
   \uD560 \uB54C XML\uC744 \uB2E4\uB8F9\uB2C8\uB2E4."
-lastmod: '2024-03-11T00:14:29.190119-06:00'
+lastmod: '2024-03-13T22:44:55.270569-06:00'
 model: gpt-4-0125-preview
 summary: "XML(eXtensible Markup Language)\uC740 \uB370\uC774\uD130\uB97C \uC77D\uAE30\
   \ \uC26C\uC6B4 \uD615\uC2DD\uC73C\uB85C \uAD6C\uC870\uD654\uD558\uB294 \uAC83\uC5D0\

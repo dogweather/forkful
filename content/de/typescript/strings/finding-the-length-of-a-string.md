@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:23.395302-07:00
 description: "Die L\xE4nge eines Strings in TypeScript zu finden, bedeutet, zu ermitteln,\
   \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das h\xE4ufig\
   \ tun, um\u2026"
-lastmod: '2024-03-11T00:14:27.512149-06:00'
+lastmod: '2024-03-13T22:44:53.622679-06:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings in TypeScript zu finden, bedeutet, zu ermitteln,\
   \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das h\xE4ufig\

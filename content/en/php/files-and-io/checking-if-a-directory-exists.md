@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:39.871634-07:00
 description: "Checking if a directory exists is a fundamental task in PHP programming,\
   \ as it allows you to verify the presence of a directory before performing\u2026"
-lastmod: '2024-03-11T00:14:34.044316-06:00'
+lastmod: '2024-03-13T22:45:00.180235-06:00'
 model: gpt-4-0125-preview
 summary: "Checking if a directory exists is a fundamental task in PHP programming,\
   \ as it allows you to verify the presence of a directory before performing\u2026"

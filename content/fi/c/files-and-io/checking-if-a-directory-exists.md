@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:52:47.546781-07:00
 description: "Hakemiston olemassaolon tarkistaminen C:ss\xE4 tarkoittaa tiedostoj\xE4\
   rjestelm\xE4n kysely\xE4 erityisen polun johtamisesta hakemistoon. Ohjelmoijat suorittavat\u2026"
-lastmod: '2024-03-11T00:14:31.097505-06:00'
+lastmod: '2024-03-13T22:44:57.056250-06:00'
 model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen C:ss\xE4 tarkoittaa tiedostoj\xE4\
   rjestelm\xE4n kysely\xE4 erityisen polun johtamisesta hakemistoon. Ohjelmoijat suorittavat\u2026"

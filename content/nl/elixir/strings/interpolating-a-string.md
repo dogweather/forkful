@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:49.007946-07:00
 description: "Stringinterpolatie stelt je in staat om variabelen of berekeningen in\
   \ een string in te voegen. Het is handig voor het dynamisch opbouwen van strings\u2026"
-lastmod: '2024-03-11T00:14:24.260651-06:00'
+lastmod: '2024-03-13T22:44:50.448180-06:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt je in staat om variabelen of berekeningen in een\
   \ string in te voegen. Het is handig voor het dynamisch opbouwen van strings\u2026"

@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:39.871728-07:00
 description: "Downloading a web page involves fetching the content of a web page via\
   \ its URL for processing or storage. Programmers do this to extract information,\u2026"
-lastmod: '2024-03-11T00:14:33.676439-06:00'
+lastmod: '2024-03-13T22:44:59.819698-06:00'
 model: gpt-4-0125-preview
 summary: "Downloading a web page involves fetching the content of a web page via its\
   \ URL for processing or storage. Programmers do this to extract information,\u2026"

@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:29.906466-07:00
 description: "Organizing code into functions in Dart is about defining reusable blocks\
   \ of code that perform specific tasks, typically receiving inputs, processing data,\u2026"
-lastmod: '2024-03-11T00:14:33.682896-06:00'
+lastmod: '2024-03-13T22:44:59.825662-06:00'
 model: gpt-4-0125-preview
 summary: "Organizing code into functions in Dart is about defining reusable blocks\
   \ of code that perform specific tasks, typically receiving inputs, processing data,\u2026"

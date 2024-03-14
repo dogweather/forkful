@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:41.333882-07:00
 description: "Searching and replacing text in files: it's swapping out words or phrases\
   \ for others. Programmers use it to update code, fix errors, or alter data across\u2026"
-lastmod: '2024-03-11T00:14:34.135817-06:00'
+lastmod: '2024-03-13T22:45:00.268682-06:00'
 model: gpt-4-1106-preview
 summary: "Searching and replacing text in files: it's swapping out words or phrases\
   \ for others. Programmers use it to update code, fix errors, or alter data across\u2026"

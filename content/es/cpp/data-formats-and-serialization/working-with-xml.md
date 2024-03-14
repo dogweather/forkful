@@ -2,7 +2,7 @@
 date: 2024-01-26 04:28:24.856024-07:00
 description: "Trabajar con XML significa analizar, crear y manipular datos XML (Lenguaje\
   \ de Marcado Extensible). Los programadores manejan XML para gestionar el\u2026"
-lastmod: '2024-03-11T00:14:33.223233-06:00'
+lastmod: '2024-03-13T22:44:59.399336-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML significa analizar, crear y manipular datos XML (Lenguaje\
   \ de Marcado Extensible). Los programadores manejan XML para gestionar el\u2026"

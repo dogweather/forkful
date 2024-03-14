@@ -3,7 +3,7 @@ date: 2024-01-20 17:59:55.549167-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem\
   \ \u2013 pytasz, serwer odpowiada. Programi\u015Bci robi\u0105 to, aby pobiera\u0107\
   \ dane, wysy\u0142a\u0107 informacje lub\u2026"
-lastmod: '2024-03-11T00:14:08.542924-06:00'
+lastmod: '2024-03-13T22:44:35.361809-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem \u2013\
   \ pytasz, serwer odpowiada. Programi\u015Bci robi\u0105 to, aby pobiera\u0107 dane,\

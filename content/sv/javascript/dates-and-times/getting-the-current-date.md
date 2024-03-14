@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:51.312064-07:00
 description: "Att h\xE4mta det aktuella datumet i JavaScript \xE4r en grundl\xE4ggande\
   \ uppgift som inneb\xE4r att h\xE4mta och m\xF6jligen manipulera dagens datum och\
   \ tid. Programmerare\u2026"
-lastmod: '2024-03-11T00:14:11.702372-06:00'
+lastmod: '2024-03-13T22:44:38.303747-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i JavaScript \xE4r en grundl\xE4ggande\
   \ uppgift som inneb\xE4r att h\xE4mta och m\xF6jligen manipulera dagens datum och\

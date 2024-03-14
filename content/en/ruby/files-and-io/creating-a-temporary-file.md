@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:58.724651-07:00
 description: "In Ruby, creating a temporary file helps protect sensitive data and\
   \ manage fleeting storage needs. Programmers use it for secure, short-term file\
   \ handling\u2026"
-lastmod: '2024-03-11T00:14:34.456580-06:00'
+lastmod: '2024-03-13T22:45:00.568891-06:00'
 model: gpt-4-1106-preview
 summary: "In Ruby, creating a temporary file helps protect sensitive data and manage\
   \ fleeting storage needs. Programmers use it for secure, short-term file handling\u2026"

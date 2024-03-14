@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:12.160471-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, by twoja aplikacja\
   \ PHP porozumiewa\u0142a si\u0119 z innymi serwerami \u2013 to jak wys\u0142anie\
   \ listu w cyfrowym \u015Bwiecie. Programi\u015Bci\u2026"
-lastmod: '2024-03-11T00:14:08.678810-06:00'
+lastmod: '2024-03-13T22:44:35.493997-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, by twoja aplikacja PHP\
   \ porozumiewa\u0142a si\u0119 z innymi serwerami \u2013 to jak wys\u0142anie listu\

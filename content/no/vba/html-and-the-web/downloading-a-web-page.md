@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:32.546651-07:00
 description: "\xC5 laste ned en nettside i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 hente HTML-innholdet p\xE5 en nettside fra Internett. Programmerere utf\xF8\
   rer ofte\u2026"
-lastmod: '2024-03-11T00:14:14.157247-06:00'
+lastmod: '2024-03-13T22:44:40.618163-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 hente HTML-innholdet p\xE5 en nettside fra Internett. Programmerere utf\xF8\

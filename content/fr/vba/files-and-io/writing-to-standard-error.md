@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:58.401563-07:00
 description: "\xC9crire sur l'erreur standard en Visual Basic pour Applications (VBA)\
   \ consiste \xE0 diriger les messages d'erreur ou les diagnostics \xE0 part de la\
   \ sortie\u2026"
-lastmod: '2024-03-11T00:14:31.563873-06:00'
+lastmod: '2024-03-13T22:44:57.599723-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard en Visual Basic pour Applications (VBA)\
   \ consiste \xE0 diriger les messages d'erreur ou les diagnostics \xE0 part de la\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:01:32.246607-07:00
 description: "Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert\
   \ eine Anfrage an einen externen Webserver oder eine API zu stellen.\u2026"
-lastmod: '2024-03-11T00:14:27.289902-06:00'
+lastmod: '2024-03-13T22:44:53.330391-06:00'
 model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert\
   \ eine Anfrage an einen externen Webserver oder eine API zu stellen.\u2026"

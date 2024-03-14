@@ -3,7 +3,7 @@ date: 2024-01-26 00:54:00.536647-07:00
 description: "La gestion des erreurs en programmation consiste \xE0 g\xE9rer l'inattendu\u2014\
   les choses qui peuvent mal tourner. Les programmeurs le font pour s'assurer que\
   \ leurs\u2026"
-lastmod: '2024-03-11T00:14:31.790475-06:00'
+lastmod: '2024-03-13T22:44:57.841616-06:00'
 model: gpt-4-1106-preview
 summary: "La gestion des erreurs en programmation consiste \xE0 g\xE9rer l'inattendu\u2014\
   les choses qui peuvent mal tourner. Les programmeurs le font pour s'assurer que\

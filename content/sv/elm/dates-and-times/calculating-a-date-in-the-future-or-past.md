@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:43.331723-07:00
 description: "Ber\xE4kning av datum i framtiden eller f\xF6rflutna handlar om att\
   \ hitta en specifik tidspunkt f\xF6re eller efter ett k\xE4nt datum. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:11.192618-06:00'
+lastmod: '2024-03-13T22:44:37.842806-06:00'
 model: gpt-4-1106-preview
 summary: "Ber\xE4kning av datum i framtiden eller f\xF6rflutna handlar om att hitta\
   \ en specifik tidspunkt f\xF6re eller efter ett k\xE4nt datum. Programmerare g\xF6\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:19.449615-07:00
 description: "Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer\
   \ kleineren Zeichenkette (Teilzeichenkette) aus einer gr\xF6\xDFeren Zeichenkette\
   \ basierend\u2026"
-lastmod: '2024-03-11T00:14:28.249271-06:00'
+lastmod: '2024-03-13T22:44:54.340372-06:00'
 model: gpt-4-0125-preview
 summary: "Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer kleineren\
   \ Zeichenkette (Teilzeichenkette) aus einer gr\xF6\xDFeren Zeichenkette basierend\u2026"

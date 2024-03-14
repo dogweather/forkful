@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:11.371835-07:00
 description: "Working with JSON in the Fish Shell involves parsing and generating\
   \ JSON data, a common task for configuring applications, API interaction, and\u2026"
-lastmod: '2024-03-11T00:14:34.372111-06:00'
+lastmod: '2024-03-13T22:45:00.493218-06:00'
 model: gpt-4-0125-preview
 summary: "Working with JSON in the Fish Shell involves parsing and generating JSON\
   \ data, a common task for configuring applications, API interaction, and\u2026"

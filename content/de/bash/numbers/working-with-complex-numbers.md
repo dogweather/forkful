@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:38.624690-07:00
 description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil.\
   \ Programmierer nutzen sie in Bereichen wie Signalverarbeitung, Quantenmechanik\
   \ und\u2026"
-lastmod: '2024-03-11T00:14:27.950525-06:00'
+lastmod: '2024-03-13T22:44:54.051489-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil. Programmierer\
   \ nutzen sie in Bereichen wie Signalverarbeitung, Quantenmechanik und\u2026"

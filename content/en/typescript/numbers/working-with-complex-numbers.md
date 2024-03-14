@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:56.973374-07:00
 description: "Complex numbers, consisting of a real part and an imaginary part (usually\
   \ written as a + bi), unlock calculations impractical or impossible with just\u2026"
-lastmod: '2024-03-11T00:14:33.712390-06:00'
+lastmod: '2024-03-13T22:44:59.852842-06:00'
 model: gpt-4-1106-preview
 summary: "Complex numbers, consisting of a real part and an imaginary part (usually\
   \ written as a + bi), unlock calculations impractical or impossible with just\u2026"

@@ -6,7 +6,7 @@ description: "Trong PowerShell, vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\
   t chu\u1ED7i ngh\u0129a l\xE0 \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1\
   \ m\xE0 n\xF3 ch\u1EE9a. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
   c n\xE0y \u0111\u1EC3 x\xE1c nh\u1EADn \u0111\u1EA7u v\xE0o, thao\u2026"
-lastmod: '2024-03-11T00:14:10.214244-06:00'
+lastmod: '2024-03-13T22:44:36.921432-06:00'
 model: gpt-4-0125-preview
 summary: "Trong PowerShell, vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9\
   t chu\u1ED7i ngh\u0129a l\xE0 \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1\

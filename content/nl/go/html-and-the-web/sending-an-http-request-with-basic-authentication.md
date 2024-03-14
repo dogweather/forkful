@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:10.998048-07:00
 description: "Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt\
   \ in dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam\
   \ en\u2026"
-lastmod: '2024-03-11T00:14:24.094556-06:00'
+lastmod: '2024-03-13T22:44:50.287136-06:00'
 model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt in\
   \ dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam en\u2026"

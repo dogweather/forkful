@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:58.554797-07:00
 description: "\xC5 starte et nytt prosjekt betyr \xE5 opprette grunnmuren for softwareutvikling.\
   \ Programmerere gj\xF8r dette for \xE5 organisere kode, dele arbeid med andre, og\
   \ for\u2026"
-lastmod: '2024-03-11T00:14:14.549969-06:00'
+lastmod: '2024-03-13T22:44:40.975571-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 starte et nytt prosjekt betyr \xE5 opprette grunnmuren for softwareutvikling.\
   \ Programmerere gj\xF8r dette for \xE5 organisere kode, dele arbeid med andre, og\

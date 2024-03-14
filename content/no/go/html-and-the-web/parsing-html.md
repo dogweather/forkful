@@ -5,7 +5,7 @@ date: 2024-02-03 17:59:57.885317-07:00
 description: "Parsing av HTML i Go inneb\xE6rer \xE5 analysere innholdet i HTML-filer\
   \ for \xE5 ekstrahere data, manipulere strukturen, eller for \xE5 konvertere HTML\
   \ til andre\u2026"
-lastmod: '2024-03-11T00:14:13.778862-06:00'
+lastmod: '2024-03-13T22:44:40.264298-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing av HTML i Go inneb\xE6rer \xE5 analysere innholdet i HTML-filer\
   \ for \xE5 ekstrahere data, manipulere strukturen, eller for \xE5 konvertere HTML\

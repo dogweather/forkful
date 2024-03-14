@@ -2,7 +2,7 @@
 date: 2024-01-26 00:49:52.602267-07:00
 description: "Manejar errores significa planificar para cuando las cosas salen mal.\
   \ Es vital porque ayuda a evitar fallos y hace que tu software sea robusto y amigable\u2026"
-lastmod: '2024-03-11T00:14:33.205469-06:00'
+lastmod: '2024-03-13T22:44:59.382675-06:00'
 model: gpt-4-1106-preview
 summary: "Manejar errores significa planificar para cuando las cosas salen mal. Es\
   \ vital porque ayuda a evitar fallos y hace que tu software sea robusto y amigable\u2026"

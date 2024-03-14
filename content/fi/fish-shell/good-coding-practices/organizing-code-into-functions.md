@@ -6,7 +6,7 @@ date: 2024-01-28 23:02:32.082544-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skriptist\xE4\
   \ tiettyj\xE4 teht\xE4vi\xE4 varten. Teemme sen, koska se tekee koodista helpommin\
   \ luettavaa,\u2026"
-lastmod: '2024-03-11T00:14:31.042076-06:00'
+lastmod: '2024-03-13T22:44:57.000344-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skriptist\xE4\
   \ tiettyj\xE4 teht\xE4vi\xE4 varten. Teemme sen, koska se tekee koodista helpommin\

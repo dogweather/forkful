@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:38.681256-07:00
 description: "Calculer la longueur d'une cha\xEEne de caract\xE8res, c'est simplement\
   \ compter les caract\xE8res qu'elle contient. Les programmeurs ont besoin de cette\
   \ info pour\u2026"
-lastmod: '2024-03-11T00:14:31.583576-06:00'
+lastmod: '2024-03-13T22:44:57.629176-06:00'
 model: gpt-4-1106-preview
 summary: "Calculer la longueur d'une cha\xEEne de caract\xE8res, c'est simplement\
   \ compter les caract\xE8res qu'elle contient. Les programmeurs ont besoin de cette\

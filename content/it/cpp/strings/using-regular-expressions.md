@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "Le espressioni regolari (regexp) servono a trovare pattern di testo\
   \ con regole specifiche. I programmatori le usano per validazione dati, ricerca\
   \ e\u2026"
-lastmod: '2024-03-11T00:14:17.334559-06:00'
+lastmod: '2024-03-13T22:44:43.716366-06:00'
 model: unknown
 summary: "Le espressioni regolari (regexp) servono a trovare pattern di testo con\
   \ regole specifiche. I programmatori le usano per validazione dati, ricerca e\u2026"

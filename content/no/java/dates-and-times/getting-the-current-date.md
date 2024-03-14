@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:09:53.813741-07:00
 description: "\xC5 skaffe den n\xE5v\xE6rende datoen i Java er en fundamental operasjon\
   \ som lar programmerere manipulere datoobjekter for operasjoner som logging,\u2026"
-lastmod: '2024-03-11T00:14:14.219417-06:00'
+lastmod: '2024-03-13T22:44:40.676871-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skaffe den n\xE5v\xE6rende datoen i Java er en fundamental operasjon\
   \ som lar programmerere manipulere datoobjekter for operasjoner som logging,\u2026"

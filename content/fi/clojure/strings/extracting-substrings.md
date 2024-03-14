@@ -2,7 +2,7 @@
 date: 2024-01-20 17:45:32.720898-07:00
 description: "Merkkijonojen poimiminen tarkoittaa osan ottamista isommasta merkkijonosta.\
   \ Ohjelmoijat tekev\xE4t n\xE4in datan muokkaamiseksi tai hy\xF6dyllisen informaation\u2026"
-lastmod: '2024-03-11T00:14:30.101643-06:00'
+lastmod: '2024-03-13T22:44:56.173813-06:00'
 model: gpt-4-1106-preview
 summary: "Merkkijonojen poimiminen tarkoittaa osan ottamista isommasta merkkijonosta.\
   \ Ohjelmoijat tekev\xE4t n\xE4in datan muokkaamiseksi tai hy\xF6dyllisen informaation\u2026"

@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:33.912976-07:00
 description: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to podstawowa operacja\
   \ polegaj\u0105ca na przekszta\u0142ceniu wszystkich znak\xF3w w danym ci\u0105\
   gu na ich odpowiedniki w ma\u0142ych\u2026"
-lastmod: '2024-03-11T00:14:08.246819-06:00'
+lastmod: '2024-03-13T22:44:35.075975-06:00'
 model: gpt-4-0125-preview
 summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to podstawowa operacja\
   \ polegaj\u0105ca na przekszta\u0142ceniu wszystkich znak\xF3w w danym ci\u0105\

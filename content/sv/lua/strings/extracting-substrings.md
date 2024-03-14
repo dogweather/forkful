@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:24.114316-07:00
 description: "Att extrahera delstr\xE4ngar inneb\xE4r att plocka ut specifika, mindre\
   \ delar fr\xE5n en l\xE4ngre textstr\xE4ng. Vi g\xF6r det f\xF6r att bearbeta, analysera\
   \ eller manipulera\u2026"
-lastmod: '2024-03-11T00:14:11.403026-06:00'
+lastmod: '2024-03-13T22:44:38.027346-06:00'
 model: gpt-4-1106-preview
 summary: "Att extrahera delstr\xE4ngar inneb\xE4r att plocka ut specifika, mindre\
   \ delar fr\xE5n en l\xE4ngre textstr\xE4ng. Vi g\xF6r det f\xF6r att bearbeta, analysera\

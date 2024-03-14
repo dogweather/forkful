@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:00.865969-07:00
 description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll via\
   \ internet. Programmerare g\xF6r det f\xF6r att analysera webbinneh\xE5ll, samla\
   \ data, eller f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:10.989963-06:00'
+lastmod: '2024-03-13T22:44:37.654933-06:00'
 model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll via internet.\
   \ Programmerare g\xF6r det f\xF6r att analysera webbinneh\xE5ll, samla data, eller\

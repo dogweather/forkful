@@ -7,7 +7,7 @@ description: "YAML (YAML Ain't Markup Language)\uC740 \uB370\uC774\uD130\uB97C \
   \ \uC218 \uC788\uB3C4\uB85D \uD558\uAE30 \uC704\uD574 YAML\uC744 \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-11T00:14:29.058561-06:00'
+lastmod: '2024-03-13T22:44:55.139952-06:00'
 model: unknown
 summary: "YAML (YAML Ain't Markup Language)\uC740 \uB370\uC774\uD130\uB97C \uD45C\uD604\
   \uD558\uAE30 \uC704\uD55C \uC778\uAC04 \uCE5C\uD654\uC801\uC778 \uD615\uC2DD\uC785\

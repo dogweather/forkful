@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:07:32.608222-07:00
 description: "Komplexe Zahlen, die als Kombination aus reellen und imagin\xE4ren Einheiten\
   \ dargestellt werden (z.B. 3 + 4i), sind grundlegend f\xFCr verschiedene\u2026"
-lastmod: '2024-03-11T00:14:27.286708-06:00'
+lastmod: '2024-03-13T22:44:53.327236-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, die als Kombination aus reellen und imagin\xE4ren Einheiten\
   \ dargestellt werden (z.B. 3 + 4i), sind grundlegend f\xFCr verschiedene\u2026"

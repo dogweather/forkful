@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:54:01.340309-07:00
 description: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
   \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"
-lastmod: '2024-03-11T00:14:32.328731-06:00'
+lastmod: '2024-03-13T22:44:58.458227-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
   \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"

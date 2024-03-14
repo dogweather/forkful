@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:29.563630-07:00
 description: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
   \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de\u2026"
-lastmod: '2024-03-11T00:14:33.018639-06:00'
+lastmod: '2024-03-13T22:44:59.199606-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
   \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de\u2026"

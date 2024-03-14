@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:35.701221-07:00
 description: "Interpolering av str\xE4ngar handlar om att stoppa in variabler eller\
   \ uttryck direkt i en textstr\xE4ng. Det sparas tid och \xF6kar l\xE4sbarheten i\
   \ din kod genom att\u2026"
-lastmod: '2024-03-11T00:14:11.492745-06:00'
+lastmod: '2024-03-13T22:44:38.110335-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ngar handlar om att stoppa in variabler eller uttryck\
   \ direkt i en textstr\xE4ng. Det sparas tid och \xF6kar l\xE4sbarheten i din kod\

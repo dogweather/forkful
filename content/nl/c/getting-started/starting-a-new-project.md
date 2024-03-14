@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:10.956522-07:00
 description: "Een nieuw project in C starten, betekent het opzetten van een fundamentele\
   \ code-structuur en omgeving om ontwikkelingstaken effici\xEBnt te beheren.\u2026"
-lastmod: '2024-03-11T00:14:25.153842-06:00'
+lastmod: '2024-03-13T22:44:51.291890-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project in C starten, betekent het opzetten van een fundamentele\
   \ code-structuur en omgeving om ontwikkelingstaken effici\xEBnt te beheren.\u2026"

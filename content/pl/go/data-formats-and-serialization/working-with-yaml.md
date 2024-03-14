@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:47.911420-07:00
 description: "Praca z YAML w Go polega na parsowaniu plik\xF3w YAML (YAML Ain't Markup\
   \ Language), czyli ludzko-przyjaznego standardu serializacji danych, na struktury\u2026"
-lastmod: '2024-03-11T00:14:08.047027-06:00'
+lastmod: '2024-03-13T22:44:34.875656-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z YAML w Go polega na parsowaniu plik\xF3w YAML (YAML Ain't Markup\
   \ Language), czyli ludzko-przyjaznego standardu serializacji danych, na struktury\u2026"

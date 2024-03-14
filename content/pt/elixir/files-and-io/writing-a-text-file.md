@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:38.478600-07:00
 description: "Escrever em um arquivo de texto em Elixir \xE9 uma habilidade essencial\
   \ para desenvolvedores, permitindo a persist\xEAncia de dados, registro (logging)\
   \ ou\u2026"
-lastmod: '2024-03-11T00:14:19.935961-06:00'
+lastmod: '2024-03-13T22:44:46.256265-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever em um arquivo de texto em Elixir \xE9 uma habilidade essencial\
   \ para desenvolvedores, permitindo a persist\xEAncia de dados, registro (logging)\

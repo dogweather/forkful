@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:17.982887-07:00
 description: "Loggning i programmering inneb\xE4r att man registrerar h\xE4ndelser,\
   \ fel eller anm\xE4rkningsv\xE4rda f\xF6reteelser under k\xF6rning. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:10.754793-06:00'
+lastmod: '2024-03-13T22:44:37.445878-06:00'
 model: gpt-4-0125-preview
 summary: "Loggning i programmering inneb\xE4r att man registrerar h\xE4ndelser, fel\
   \ eller anm\xE4rkningsv\xE4rda f\xF6reteelser under k\xF6rning. Programmerare g\xF6\

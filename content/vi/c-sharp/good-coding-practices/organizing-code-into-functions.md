@@ -6,7 +6,7 @@ description: "Chia code th\xE0nh c\xE1c h\xE0m gi\u1ED1ng nh\u01B0 vi\u1EC7c s\u
   p x\u1EBFp c\xE1c vi\xEAn LEGO v\xE0o trong c\xE1c h\u1ED9p \u2014 l\xE0m cho vi\u1EC7\
   c t\xECm ki\u1EBFm v\xE0 s\u1EED d\u1EE5ng ch\xFAng tr\u1EDF n\xEAn d\u1EC5 d\xE0\
   ng h\u01A1n. Ch\xFAng ta l\xE0m\u2026"
-lastmod: '2024-03-11T00:14:09.940673-06:00'
+lastmod: '2024-03-13T22:44:36.664815-06:00'
 model: gpt-4-0125-preview
 summary: "Chia code th\xE0nh c\xE1c h\xE0m gi\u1ED1ng nh\u01B0 vi\u1EC7c s\u1EAFp\
   \ x\u1EBFp c\xE1c vi\xEAn LEGO v\xE0o trong c\xE1c h\u1ED9p \u2014 l\xE0m cho vi\u1EC7\

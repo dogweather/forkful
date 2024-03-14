@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:27.678766-07:00
 description: "Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista\
   \ odotetulla tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4 vikojen\u2026"
-lastmod: '2024-03-11T00:14:30.388968-06:00'
+lastmod: '2024-03-13T22:44:56.448704-06:00'
 model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista odotetulla\
   \ tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4 vikojen\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:06.437284-07:00
 description: "Buscar e substituir texto na programa\xE7\xE3o facilita a modifica\xE7\
   \xE3o e gest\xE3o de strings, o que \xE9 uma tarefa fundamental na manipula\xE7\xE3\
   o de dados e\u2026"
-lastmod: '2024-03-11T00:14:19.703997-06:00'
+lastmod: '2024-03-13T22:44:46.044498-06:00'
 model: gpt-4-0125-preview
 summary: "Buscar e substituir texto na programa\xE7\xE3o facilita a modifica\xE7\xE3\
   o e gest\xE3o de strings, o que \xE9 uma tarefa fundamental na manipula\xE7\xE3\

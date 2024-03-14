@@ -6,7 +6,7 @@ description: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong Visual Basic cho \u1EE8ng d
   ng (VBA) bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED1i quan h\u1EC7 theo\
   \ th\u1EE9 t\u1EF1 th\u1EDDi gian gi\u1EEFa ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEA\
   n th\u1EF1c\u2026"
-lastmod: '2024-03-11T00:14:09.712673-06:00'
+lastmod: '2024-03-13T22:44:36.449407-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong Visual Basic cho \u1EE8ng d\u1EE5\
   ng (VBA) bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED1i quan h\u1EC7 theo\

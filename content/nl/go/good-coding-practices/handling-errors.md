@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:58:27.696470-07:00
 description: "Foutafhandeling in Go houdt in het herkennen en reageren op foutcondities\
   \ in je programma. Programmeurs doen aan foutafhandeling om ervoor te zorgen dat\u2026"
-lastmod: '2024-03-11T00:14:24.103290-06:00'
+lastmod: '2024-03-13T22:44:50.295341-06:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling in Go houdt in het herkennen en reageren op foutcondities\
   \ in je programma. Programmeurs doen aan foutafhandeling om ervoor te zorgen dat\u2026"

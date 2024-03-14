@@ -5,7 +5,7 @@ date: 2024-01-28 21:56:01.807548-07:00
 description: "Een toekomstige of verleden datum berekenen gaat over het aanpassen\
   \ van een huidige datum om te zien welke dag het zal zijn, bijvoorbeeld over 10\
   \ dagen,\u2026"
-lastmod: '2024-03-11T00:14:24.380980-06:00'
+lastmod: '2024-03-13T22:44:50.564746-06:00'
 model: gpt-4-0125-preview
 summary: "Een toekomstige of verleden datum berekenen gaat over het aanpassen van\
   \ een huidige datum om te zien welke dag het zal zijn, bijvoorbeeld over 10 dagen,\u2026"

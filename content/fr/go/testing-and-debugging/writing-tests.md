@@ -5,7 +5,7 @@ date: 2024-02-03 18:15:07.495181-07:00
 description: "\xC9crire des tests en Go consiste \xE0 cr\xE9er de petits morceaux\
   \ de code g\xE9rables qui valident la fonctionnalit\xE9 et le comportement de votre\
   \ application. Les\u2026"
-lastmod: '2024-03-11T00:14:31.178523-06:00'
+lastmod: '2024-03-13T22:44:57.137759-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Go consiste \xE0 cr\xE9er de petits morceaux de code\
   \ g\xE9rables qui valident la fonctionnalit\xE9 et le comportement de votre application.\

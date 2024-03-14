@@ -3,7 +3,7 @@ date: 2024-01-25 03:00:01.692945-07:00
 description: "Rounding numbers means adjusting them to the nearest whole number or\
   \ to a specified degree of precision. Programmers round numbers to simplify, to\
   \ match\u2026"
-lastmod: '2024-03-11T00:14:34.431389-06:00'
+lastmod: '2024-03-13T22:45:00.544060-06:00'
 model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to the nearest whole number or to\
   \ a specified degree of precision. Programmers round numbers to simplify, to match\u2026"

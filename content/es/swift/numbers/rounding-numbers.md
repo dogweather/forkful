@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:53.768510-07:00
 description: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una\
   \ precisi\xF3n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados.\
   \ Los programadores\u2026"
-lastmod: '2024-03-11T00:14:33.236859-06:00'
+lastmod: '2024-03-13T22:44:59.411549-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una precisi\xF3\
   n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados. Los programadores\u2026"

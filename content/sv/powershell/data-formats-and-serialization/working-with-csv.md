@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:20:52.009439-07:00
 description: "Att arbeta med CSV-filer (Comma-Separated Values) \xE4r en vanlig uppgift\
   \ f\xF6r att hantera och manipulera data i en strukturerad, tabellform. Programmerare\u2026"
-lastmod: '2024-03-11T00:14:11.534445-06:00'
+lastmod: '2024-03-13T22:44:38.148409-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma-Separated Values) \xE4r en vanlig uppgift\
   \ f\xF6r att hantera och manipulera data i en strukturerad, tabellform. Programmerare\u2026"

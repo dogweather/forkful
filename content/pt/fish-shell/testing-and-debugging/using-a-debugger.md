@@ -3,7 +3,7 @@ date: 2024-01-26 03:48:41.528340-07:00
 description: "Usar um depurador \xE9 tudo sobre esmagar bugs \u2014 os erros desagrad\xE1\
   veis e sugadores de tempo no seu c\xF3digo. Programadores depuram porque querem\
   \ encontrar e\u2026"
-lastmod: '2024-03-11T00:14:20.749764-06:00'
+lastmod: '2024-03-13T22:44:47.010484-06:00'
 model: gpt-4-0125-preview
 summary: "Usar um depurador \xE9 tudo sobre esmagar bugs \u2014 os erros desagrad\xE1\
   veis e sugadores de tempo no seu c\xF3digo. Programadores depuram porque querem\

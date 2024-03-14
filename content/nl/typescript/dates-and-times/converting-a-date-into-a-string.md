@@ -5,7 +5,7 @@ date: 2024-01-28 21:57:22.489091-07:00
 description: "Een datum omzetten naar een tekenreeks verandert het datumobject naar\
   \ een tekstformaat. Programmeurs doen dit voor leesbaarheid, opslag, of om datums\
   \ aan\u2026"
-lastmod: '2024-03-11T00:14:24.378904-06:00'
+lastmod: '2024-03-13T22:44:50.562697-06:00'
 model: gpt-4-0125-preview
 summary: "Een datum omzetten naar een tekenreeks verandert het datumobject naar een\
   \ tekstformaat. Programmeurs doen dit voor leesbaarheid, opslag, of om datums aan\u2026"

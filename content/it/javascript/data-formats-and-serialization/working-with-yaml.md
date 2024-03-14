@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:35.761279-07:00
 description: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 un formato di\
   \ serializzazione dei dati leggibile dall'uomo. Gli sviluppatori lo utilizzano spesso\
   \ per\u2026"
-lastmod: '2024-03-11T00:14:17.453503-06:00'
+lastmod: '2024-03-13T22:44:43.833944-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 un formato di serializzazione\
   \ dei dati leggibile dall'uomo. Gli sviluppatori lo utilizzano spesso per\u2026"

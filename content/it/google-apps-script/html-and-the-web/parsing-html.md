@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:18.398961-07:00
 description: "L'analisi dell'HTML in Google Apps Script comporta l'estrazione di dati\
   \ da contenuti HTML, il che \xE8 particolarmente utile quando si interagisce con\
   \ pagine\u2026"
-lastmod: '2024-03-11T00:14:16.505372-06:00'
+lastmod: '2024-03-13T22:44:42.952455-06:00'
 model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML in Google Apps Script comporta l'estrazione di dati\
   \ da contenuti HTML, il che \xE8 particolarmente utile quando si interagisce con\

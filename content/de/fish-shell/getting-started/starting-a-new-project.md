@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:45.968857-07:00
 description: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
   \ um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Probleml\xF6sungen\
   \ zu\u2026"
-lastmod: '2024-03-11T00:14:28.216671-06:00'
+lastmod: '2024-03-13T22:44:54.310234-06:00'
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
   \ um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Probleml\xF6sungen\

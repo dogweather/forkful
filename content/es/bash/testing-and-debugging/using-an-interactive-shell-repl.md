@@ -2,7 +2,7 @@
 date: 2024-01-26 04:11:05.859846-07:00
 description: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno de programaci\xF3\
   n de computadoras simple e interactivo. Los programadores lo utilizan para\u2026"
-lastmod: '2024-03-11T00:14:33.068982-06:00'
+lastmod: '2024-03-13T22:44:59.248256-06:00'
 model: gpt-4-0125-preview
 summary: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno de programaci\xF3\
   n de computadoras simple e interactivo. Los programadores lo utilizan para\u2026"

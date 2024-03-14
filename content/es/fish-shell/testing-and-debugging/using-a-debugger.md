@@ -2,7 +2,7 @@
 date: 2024-01-26 03:48:34.192288-07:00
 description: "Usar un depurador se trata de aplastar bugs, esos desagradables y consumidores\
   \ de tiempo errores en tu c\xF3digo. Los programadores depuran porque quieren\u2026"
-lastmod: '2024-03-11T00:14:33.342779-06:00'
+lastmod: '2024-03-13T22:44:59.506121-06:00'
 model: gpt-4-0125-preview
 summary: "Usar un depurador se trata de aplastar bugs, esos desagradables y consumidores\
   \ de tiempo errores en tu c\xF3digo. Los programadores depuran porque quieren\u2026"

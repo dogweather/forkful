@@ -3,7 +3,7 @@ date: 2024-01-26 04:45:33.215638-07:00
 description: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej (jak 3+4i), s\u0105 podstaw\u0105 w in\u017Cynierii i fizyce. Programi\u015B\
   ci pracuj\u0105 z nimi przy\u2026"
-lastmod: '2024-03-11T00:14:09.143673-06:00'
+lastmod: '2024-03-13T22:44:35.924794-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
   \ i urojonej (jak 3+4i), s\u0105 podstaw\u0105 w in\u017Cynierii i fizyce. Programi\u015B\

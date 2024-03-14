@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:05.816405-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Elixir existiert, bezieht\
   \ sich darauf, die Anwesenheit eines Verzeichnisses an einem bestimmten Pfad im\
   \ Dateisystem\u2026"
-lastmod: '2024-03-11T00:14:27.442130-06:00'
+lastmod: '2024-03-13T22:44:53.549918-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Elixir existiert, bezieht sich\
   \ darauf, die Anwesenheit eines Verzeichnisses an einem bestimmten Pfad im Dateisystem\u2026"

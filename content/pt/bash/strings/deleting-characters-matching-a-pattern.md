@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:43.307365-07:00
 description: "Apagar caracteres que correspondem a um padr\xE3o s\xE3o t\xE9cnicas\
   \ usadas para limpar strings - eliminar o que n\xE3o \xE9 necess\xE1rio ou formatar\
   \ texto. Programadores\u2026"
-lastmod: '2024-03-11T00:14:20.455058-06:00'
+lastmod: '2024-03-13T22:44:46.735365-06:00'
 model: gpt-4-1106-preview
 summary: "Apagar caracteres que correspondem a um padr\xE3o s\xE3o t\xE9cnicas usadas\
   \ para limpar strings - eliminar o que n\xE3o \xE9 necess\xE1rio ou formatar texto.\

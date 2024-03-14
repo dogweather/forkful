@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:59.824597-07:00
 description: "Escrever no erro padr\xE3o (stderr) em Elixir \xE9 um m\xE9todo de direcionar\
   \ mensagens de erro e diagn\xF3sticos separadamente do output principal (stdout).\
   \ Os\u2026"
-lastmod: '2024-03-11T00:14:19.933959-06:00'
+lastmod: '2024-03-13T22:44:46.254340-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) em Elixir \xE9 um m\xE9todo de direcionar\
   \ mensagens de erro e diagn\xF3sticos separadamente do output principal (stdout).\

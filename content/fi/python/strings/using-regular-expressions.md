@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:21.268634-07:00
 description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
   \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t niit\xE4 tekstin\u2026"
-lastmod: '2024-03-11T00:14:30.059619-06:00'
+lastmod: '2024-03-13T22:44:56.133589-06:00'
 model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
   \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat k\xE4ytt\xE4v\xE4\

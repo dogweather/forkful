@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:36.671081-07:00
 description: "Vamos falar sobre impress\xE3o de sa\xEDdas de depura\xE7\xE3o: \xE9\
   \ colocar na tela informa\xE7\xF5es do que est\xE1 rolando no seu c\xF3digo. Fazemos\
   \ isso para saber o que est\xE1\u2026"
-lastmod: '2024-03-11T00:14:20.654806-06:00'
+lastmod: '2024-03-13T22:44:46.922957-06:00'
 model: gpt-4-1106-preview
 summary: "Vamos falar sobre impress\xE3o de sa\xEDdas de depura\xE7\xE3o: \xE9 colocar\
   \ na tela informa\xE7\xF5es do que est\xE1 rolando no seu c\xF3digo. Fazemos isso\

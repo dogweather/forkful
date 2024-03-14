@@ -2,7 +2,7 @@
 date: 2024-01-20 17:40:46.544865-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es einem Programm,\
   \ Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen.\u2026"
-lastmod: '2024-03-11T00:14:27.933166-06:00'
+lastmod: '2024-03-13T22:44:54.034546-06:00'
 model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es einem Programm,\
   \ Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen.\u2026"

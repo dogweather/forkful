@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:50.086938-07:00
 description: "Att dela upp kod i funktioner inneb\xE4r att man karvar upp sin kod\
   \ i mindre, \xE5teranv\xE4ndbara bitar. Vi g\xF6r det f\xF6r att undvika upprepning,\
   \ g\xF6ra v\xE5r kod\u2026"
-lastmod: '2024-03-11T00:14:11.605879-06:00'
+lastmod: '2024-03-13T22:44:38.214535-06:00'
 model: gpt-4-1106-preview
 summary: "Att dela upp kod i funktioner inneb\xE4r att man karvar upp sin kod i mindre,\
   \ \xE5teranv\xE4ndbara bitar. Vi g\xF6r det f\xF6r att undvika upprepning, g\xF6\

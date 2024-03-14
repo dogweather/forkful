@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:44.375687-07:00
 description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel\
   \ (gewoonlijk aangeduid als a + bi), breiden het concept van de dimensieloze getallen\
   \ uit\u2026"
-lastmod: '2024-03-11T00:14:24.314367-06:00'
+lastmod: '2024-03-13T22:44:50.498323-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (gewoonlijk\
   \ aangeduid als a + bi), breiden het concept van de dimensieloze getallen uit\u2026"

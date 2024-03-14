@@ -5,7 +5,7 @@ date: 2024-02-03 19:14:23.623733-07:00
 description: "Analizar una fecha de un string implica convertir texto en un objeto\
   \ Date. Esta operaci\xF3n es fundamental para aplicaciones que interact\xFAan con\
   \ fechas\u2026"
-lastmod: '2024-03-11T00:14:32.852985-06:00'
+lastmod: '2024-03-13T22:44:59.045537-06:00'
 model: gpt-4-0125-preview
 summary: "Analizar una fecha de un string implica convertir texto en un objeto Date.\
   \ Esta operaci\xF3n es fundamental para aplicaciones que interact\xFAan con fechas\u2026"

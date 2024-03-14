@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:09:31.392926-07:00
 description: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa automatiserade\
   \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\u2026"
-lastmod: '2024-03-11T00:14:10.751449-06:00'
+lastmod: '2024-03-13T22:44:37.442659-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa automatiserade\
   \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\u2026"

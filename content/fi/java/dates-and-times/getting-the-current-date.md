@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:51.519459-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Javassa on perustoiminto,\
   \ jonka avulla ohjelmoijat voivat k\xE4sitell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4objekteja\
   \ toiminnoissa, kuten lokitukset,\u2026"
-lastmod: '2024-03-11T00:14:30.396957-06:00'
+lastmod: '2024-03-13T22:44:56.455743-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Javassa on perustoiminto,\
   \ jonka avulla ohjelmoijat voivat k\xE4sitell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4objekteja\

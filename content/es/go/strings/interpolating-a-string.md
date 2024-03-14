@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:22.687173-07:00
 description: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas\
   \ que incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los\
   \ programadores\u2026"
-lastmod: '2024-03-11T00:14:32.322196-06:00'
+lastmod: '2024-03-13T22:44:58.451447-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas que\
   \ incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los programadores\u2026"

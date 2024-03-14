@@ -3,7 +3,7 @@ date: 2024-01-26 01:17:38.434192-07:00
 description: "Le remaniement (Refactoring) est le processus de restructuration du\
   \ code informatique existant sans en changer le comportement externe, visant \xE0\
   \ am\xE9liorer\u2026"
-lastmod: '2024-03-11T00:14:31.322465-06:00'
+lastmod: '2024-03-13T22:44:57.290942-06:00'
 model: gpt-4-0125-preview
 summary: "Le remaniement (Refactoring) est le processus de restructuration du code\
   \ informatique existant sans en changer le comportement externe, visant \xE0 am\xE9\

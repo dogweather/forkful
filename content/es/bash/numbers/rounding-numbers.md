@@ -2,7 +2,7 @@
 date: 2024-01-26 03:42:37.095687-07:00
 description: "Redondear n\xFAmeros significa cortar los decimales a un valor m\xE1\
   s simple que es suficientemente bueno para un contexto dado. Los programadores redondean\u2026"
-lastmod: '2024-03-11T00:14:33.060139-06:00'
+lastmod: '2024-03-13T22:44:59.239290-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa cortar los decimales a un valor m\xE1s simple\
   \ que es suficientemente bueno para un contexto dado. Los programadores redondean\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:23:07.498386-07:00
 description: "Trabajar con JSON en Lua implica analizar cadenas formateadas en JSON\
   \ hacia y desde tablas de Lua, facilitando el intercambio de datos entre aplicaciones\u2026"
-lastmod: '2024-03-11T00:14:33.044149-06:00'
+lastmod: '2024-03-13T22:44:59.223973-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON en Lua implica analizar cadenas formateadas en JSON hacia\
   \ y desde tablas de Lua, facilitando el intercambio de datos entre aplicaciones\u2026"

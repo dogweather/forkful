@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:00.409067-07:00
 description: "Escrever para o erro padr\xE3o (stderr) na programa\xE7\xE3o Arduino\
   \ envolve direcionar mensagens de erro e diagn\xF3sticos para um canal separado,\
   \ garantindo que\u2026"
-lastmod: '2024-03-11T00:14:20.582339-06:00'
+lastmod: '2024-03-13T22:44:46.855012-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o (stderr) na programa\xE7\xE3o Arduino envolve\
   \ direcionar mensagens de erro e diagn\xF3sticos para um canal separado, garantindo\

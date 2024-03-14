@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:57.465657-07:00
 description: "Regulj\xE4ra uttryck (regex) i Fish Shell g\xF6r det m\xF6jligt f\xF6\
   r dig att s\xF6ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6\
   nster. Programmerare\u2026"
-lastmod: '2024-03-11T00:14:11.725761-06:00'
+lastmod: '2024-03-13T22:44:38.325499-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i Fish Shell g\xF6r det m\xF6jligt f\xF6r dig\
   \ att s\xF6ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster.\

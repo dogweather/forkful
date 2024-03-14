@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:34.051813-07:00
 description: "Parsowanie HTML w Go polega na analizowaniu zawarto\u015Bci plik\xF3\
   w HTML w celu ekstrakcji danych, manipulacji struktur\u0105 lub konwersji HTML na\
   \ inne formaty.\u2026"
-lastmod: '2024-03-11T00:14:08.019617-06:00'
+lastmod: '2024-03-13T22:44:34.847998-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Go polega na analizowaniu zawarto\u015Bci plik\xF3w HTML\
   \ w celu ekstrakcji danych, manipulacji struktur\u0105 lub konwersji HTML na inne\

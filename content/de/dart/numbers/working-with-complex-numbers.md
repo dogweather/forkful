@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:37.098847-07:00
 description: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rteil\
   \ (\xFCblicherweise als a + bi dargestellt), erweitern das Konzept der dimensionslosen\
   \ Zahlen\u2026"
-lastmod: '2024-03-11T00:14:27.467427-06:00'
+lastmod: '2024-03-13T22:44:53.573965-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rteil (\xFC\
   blicherweise als a + bi dargestellt), erweitern das Konzept der dimensionslosen\

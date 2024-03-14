@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:02.513900-07:00
 description: "Visual Basic for Applications (VBA) -ohjelmoinnissa nykyisen p\xE4iv\xE4\
   m\xE4\xE4r\xE4n noutaminen on yleinen teht\xE4v\xE4, joka mahdollistaa ohjelmoijien\
   \ dynaamisen\u2026"
-lastmod: '2024-03-11T00:14:30.350430-06:00'
+lastmod: '2024-03-13T22:44:56.412094-06:00'
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications (VBA) -ohjelmoinnissa nykyisen p\xE4iv\xE4\
   m\xE4\xE4r\xE4n noutaminen on yleinen teht\xE4v\xE4, joka mahdollistaa ohjelmoijien\

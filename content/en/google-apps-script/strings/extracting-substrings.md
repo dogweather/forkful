@@ -2,7 +2,7 @@
 date: 2024-02-01 21:11:56.433402-07:00
 description: "Extracting substrings involves taking a portion of a string - essentially\
   \ creating a new string from part of an existing one. Programmers do this for a\u2026"
-lastmod: '2024-03-11T00:14:33.507056-06:00'
+lastmod: '2024-03-13T22:44:59.659851-06:00'
 model: gpt-4-0125-preview
 summary: "Extracting substrings involves taking a portion of a string - essentially\
   \ creating a new string from part of an existing one. Programmers do this for a\u2026"

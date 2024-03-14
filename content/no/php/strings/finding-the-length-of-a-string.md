@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:47.154812-07:00
 description: "Strenglengde handler om \xE5 telle antall tegn i en tekst. Vi gj\xF8\
   r dette for \xE5 validere inndata, bearbeide tekst, og for \xE5 limitere lengden\
   \ p\xE5 en output."
-lastmod: '2024-03-11T00:14:14.442084-06:00'
+lastmod: '2024-03-13T22:44:40.876783-06:00'
 model: gpt-4-1106-preview
 summary: "Strenglengde handler om \xE5 telle antall tegn i en tekst. Vi gj\xF8r dette\
   \ for \xE5 validere inndata, bearbeide tekst, og for \xE5 limitere lengden p\xE5\

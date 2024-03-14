@@ -2,7 +2,7 @@
 date: 2024-01-20 17:34:34.955581-07:00
 description: Concatenare le stringhe significa unirle in una sola. Lo facciamo per
   creare frasi o valori che necessitano di parti dinamiche e statiche insieme.
-lastmod: '2024-03-11T00:14:17.336337-06:00'
+lastmod: '2024-03-13T22:44:43.718336-06:00'
 model: gpt-4-1106-preview
 summary: Concatenare le stringhe significa unirle in una sola. Lo facciamo per creare
   frasi o valori che necessitano di parti dinamiche e statiche insieme.

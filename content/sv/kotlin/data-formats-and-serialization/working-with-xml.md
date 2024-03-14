@@ -3,7 +3,7 @@ date: 2024-01-26 04:33:20.516165-07:00
 description: "Att arbeta med XML inneb\xE4r att tolka, skapa och manipulera XML-dokument\
   \ \u2013 ett m\xE4rkspr\xE5k f\xF6r lagring och \xF6verf\xF6ring av data. Programmerare\
   \ g\xF6r detta\u2026"
-lastmod: '2024-03-11T00:14:11.253880-06:00'
+lastmod: '2024-03-13T22:44:37.895321-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att tolka, skapa och manipulera XML-dokument\
   \ \u2013 ett m\xE4rkspr\xE5k f\xF6r lagring och \xF6verf\xF6ring av data. Programmerare\

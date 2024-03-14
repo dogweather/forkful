@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:36.079734-07:00
 description: "Gestire gli errori in PowerShell significa prevedere gli imprevisti\
   \ e gestirli in modo fluido. I programmatori lo fanno per prevenire crash e fornire\
   \ agli\u2026"
-lastmod: '2024-03-11T00:14:17.263487-06:00'
+lastmod: '2024-03-13T22:44:43.650092-06:00'
 model: gpt-4-1106-preview
 summary: "Gestire gli errori in PowerShell significa prevedere gli imprevisti e gestirli\
   \ in modo fluido. I programmatori lo fanno per prevenire crash e fornire agli\u2026"

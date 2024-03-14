@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:17.280527-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelmasi jakamista\
   \ uudelleenk\xE4ytett\xE4viin, modulaarisiin palasiin, joita kutsutaan nimell\xE4\
   . Teemme sen\u2026"
-lastmod: '2024-03-11T00:14:30.296775-06:00'
+lastmod: '2024-03-13T22:44:56.362164-06:00'
 model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelmasi jakamista uudelleenk\xE4\
   ytett\xE4viin, modulaarisiin palasiin, joita kutsutaan nimell\xE4. Teemme sen\u2026"

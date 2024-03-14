@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:30.468890-07:00
 description: "HTML parseren betekent het extraheren van informatie uit HTML-documenten.\
   \ Programmeurs doen dit om programmatisch met webinhoud om te gaan, gegevens te\u2026"
-lastmod: '2024-03-11T00:14:24.633377-06:00'
+lastmod: '2024-03-13T22:44:50.807784-06:00'
 model: gpt-4-0125-preview
 summary: "HTML parseren betekent het extraheren van informatie uit HTML-documenten.\
   \ Programmeurs doen dit om programmatisch met webinhoud om te gaan, gegevens te\u2026"

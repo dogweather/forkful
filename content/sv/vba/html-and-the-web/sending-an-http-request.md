@@ -5,7 +5,7 @@ date: 2024-02-01 22:03:55.222065-07:00
 description: "Att skicka en HTTP-beg\xE4ran i Visual Basic for Applications (VBA)\
   \ inneb\xE4r att man programmatiskt tillg\xE5r webbresurser eller webbtj\xE4nster\
   \ genom att g\xF6ra\u2026"
-lastmod: '2024-03-11T00:14:11.080840-06:00'
+lastmod: '2024-03-13T22:44:37.739479-06:00'
 model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-beg\xE4ran i Visual Basic for Applications (VBA) inneb\xE4\
   r att man programmatiskt tillg\xE5r webbresurser eller webbtj\xE4nster genom att\

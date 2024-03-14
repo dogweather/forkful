@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:05:02.466354-07:00
 description: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin,\
   \ ett\xE4 sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t\u2026"
-lastmod: '2024-03-11T00:14:30.096116-06:00'
+lastmod: '2024-03-13T22:44:56.168640-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin, ett\xE4\
   \ sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t\u2026"

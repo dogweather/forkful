@@ -3,7 +3,7 @@ date: 2024-01-20 17:44:51.299002-07:00
 description: "Descargar una p\xE1gina web es obtener el contenido HTML de una URL\
   \ espec\xEDfica. Los programadores hacen esto para analizar datos, probar aplicaciones\
   \ y\u2026"
-lastmod: '2024-03-11T00:14:32.661077-06:00'
+lastmod: '2024-03-13T22:44:58.845309-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es obtener el contenido HTML de una URL espec\xED\
   fica. Los programadores hacen esto para analizar datos, probar aplicaciones y\u2026"

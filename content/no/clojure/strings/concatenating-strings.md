@@ -2,7 +2,7 @@
 date: 2024-01-20 17:34:25.627131-07:00
 description: "I programmering er det \xE5 sette sammen strenger, kalt konkatenering,\
   \ rett og slett \xE5 smelte sammen tekster. Vi gj\xF8r det for \xE5 bygge opp dynamiske\u2026"
-lastmod: '2024-03-11T00:14:13.916474-06:00'
+lastmod: '2024-03-13T22:44:40.394580-06:00'
 model: gpt-4-1106-preview
 summary: "I programmering er det \xE5 sette sammen strenger, kalt konkatenering, rett\
   \ og slett \xE5 smelte sammen tekster. Vi gj\xF8r det for \xE5 bygge opp dynamiske\u2026"

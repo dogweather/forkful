@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:36.064244-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w w PowerShell polega na przewidywaniu\
   \ nieprzewidzianych sytuacji i zarz\u0105dzaniu nimi w spos\xF3b p\u0142ynny. Programi\u015B\
   ci robi\u0105 to, aby zapobiec\u2026"
-lastmod: '2024-03-11T00:14:08.831547-06:00'
+lastmod: '2024-03-13T22:44:35.637286-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w PowerShell polega na przewidywaniu nieprzewidzianych\
   \ sytuacji i zarz\u0105dzaniu nimi w spos\xF3b p\u0142ynny. Programi\u015Bci robi\u0105\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:35:03.400584-07:00
 description: "Concatenating strings means smushing them together end to end. Programmers\
   \ do it when they need to stitch together bits of text to form a new string, like\u2026"
-lastmod: '2024-03-11T00:14:33.984933-06:00'
+lastmod: '2024-03-13T22:45:00.120755-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenating strings means smushing them together end to end. Programmers\
   \ do it when they need to stitch together bits of text to form a new string, like\u2026"

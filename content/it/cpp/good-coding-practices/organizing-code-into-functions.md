@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:04.980036-07:00
 description: "Suddividere il codice in funzioni significa suddividere il codice in\
   \ parti pi\xF9 piccole e riutilizzabili. Lo facciamo per evitare ripetizioni, rendere\
   \ il\u2026"
-lastmod: '2024-03-11T00:14:17.349500-06:00'
+lastmod: '2024-03-13T22:44:43.732233-06:00'
 model: gpt-4-1106-preview
 summary: "Suddividere il codice in funzioni significa suddividere il codice in parti\
   \ pi\xF9 piccole e riutilizzabili. Lo facciamo per evitare ripetizioni, rendere\

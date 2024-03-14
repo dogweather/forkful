@@ -2,7 +2,7 @@
 date: 2024-01-20 17:59:59.071111-07:00
 description: "Sending an HTTP request is like asking a web server to do something\
   \ or give you something. Programmers do it to interact with web services, pull data,\u2026"
-lastmod: '2024-03-11T00:14:33.910657-06:00'
+lastmod: '2024-03-13T22:45:00.045730-06:00'
 model: gpt-4-1106-preview
 summary: "Sending an HTTP request is like asking a web server to do something or give\
   \ you something. Programmers do it to interact with web services, pull data,\u2026"

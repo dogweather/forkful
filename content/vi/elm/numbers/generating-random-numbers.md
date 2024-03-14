@@ -7,7 +7,7 @@ description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Elm bao g\u1ED
   m vi\u1EC7c s\u1EED d\u1EE5ng module `Random` \u0111\u1EC3 s\u1EA3n xu\u1EA5t s\u1ED1\
   \ gi\u1EA3 ng\u1EABu nhi\xEAn, r\u1EA5t h\u1EEFu \xEDch cho nhi\u1EC1u t\xE1c v\u1EE5\
   \ nh\u01B0 tr\xF2 ch\u01A1i, m\xF4 ph\u1ECFng,\u2026"
-lastmod: '2024-03-11T00:14:09.807295-06:00'
+lastmod: '2024-03-13T22:44:36.538505-06:00'
 model: gpt-4-0125-preview
 summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Elm bao g\u1ED3m vi\u1EC7\
   c s\u1EED d\u1EE5ng module `Random` \u0111\u1EC3 s\u1EA3n xu\u1EA5t s\u1ED1 gi\u1EA3\

@@ -3,7 +3,7 @@ date: 2024-02-01 21:12:02.062998-07:00
 description: "Sending an HTTP request in Google Apps Script is about programmatically\
   \ making a call to an external web server or API. Programmers do this to retrieve\
   \ or\u2026"
-lastmod: '2024-03-11T00:14:33.514447-06:00'
+lastmod: '2024-03-13T22:44:59.667150-06:00'
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request in Google Apps Script is about programmatically\
   \ making a call to an external web server or API. Programmers do this to retrieve\

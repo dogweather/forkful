@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:14.075150-07:00
 description: "Scrivere un file di testo in Bash consente di automatizzare la memorizzazione\
   \ dei dati, il logging, le impostazioni di configurazione e altro. \xC8 una\u2026"
-lastmod: '2024-03-11T00:14:17.229901-06:00'
+lastmod: '2024-03-13T22:44:43.617943-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Bash consente di automatizzare la memorizzazione\
   \ dei dati, il logging, le impostazioni di configurazione e altro. \xC8 una\u2026"

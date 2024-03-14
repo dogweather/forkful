@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:57.989081-07:00
 description: "\xC9crire des tests en Clojure, tout comme dans d'autres langages de\
   \ programmation, implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre\
   \ code principal\u2026"
-lastmod: '2024-03-11T00:14:31.317723-06:00'
+lastmod: '2024-03-13T22:44:57.286023-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Clojure, tout comme dans d'autres langages de programmation,\
   \ implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre code principal\u2026"

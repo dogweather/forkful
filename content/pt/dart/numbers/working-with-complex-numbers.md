@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:59.221328-07:00
 description: "N\xFAmeros complexos, consistindo de uma parte real e uma imagin\xE1\
   ria (normalmente denotados como a + bi), estendem o conceito dos n\xFAmeros sem\
   \ dimens\xE3o para\u2026"
-lastmod: '2024-03-11T00:14:19.957175-06:00'
+lastmod: '2024-03-13T22:44:46.274871-06:00'
 model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos, consistindo de uma parte real e uma imagin\xE1ria\
   \ (normalmente denotados como a + bi), estendem o conceito dos n\xFAmeros sem dimens\xE3\

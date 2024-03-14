@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:28.192156-07:00
 description: "Comparing dates lets you determine the relationship between two points\
   \ in time. It's essential for checking expirations, scheduling tasks, or measuring\u2026"
-lastmod: '2024-03-11T00:14:23.167395-06:00'
+lastmod: '2024-03-13T22:44:49.309689-06:00'
 model: gpt-4-1106-preview
 summary: "Comparing dates lets you determine the relationship between two points in\
   \ time. It's essential for checking expirations, scheduling tasks, or measuring\u2026"

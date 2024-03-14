@@ -7,7 +7,7 @@ description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th
   \ k\xFD t\u1EF1 in hoa trong v\u0103n b\u1EA3n th\xE0nh c\xE1c k\xFD t\u1EF1 t\u01B0\
   \u01A1ng \u0111\u01B0\u01A1ng \u1EDF d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EAD\
   p tr\xECnh\u2026"
-lastmod: '2024-03-11T00:14:09.914551-06:00'
+lastmod: '2024-03-13T22:44:36.639859-06:00'
 model: gpt-4-0125-preview
 summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
   \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\

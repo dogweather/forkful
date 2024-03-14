@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:51.458605-07:00
 description: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben\
   \ klein. Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"
-lastmod: '2024-03-11T00:14:27.770947-06:00'
+lastmod: '2024-03-13T22:44:53.875344-06:00'
 model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein.\
   \ Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"

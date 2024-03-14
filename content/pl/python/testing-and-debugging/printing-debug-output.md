@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:31.370053-07:00
 description: "Drukowanie wynik\xF3w debugowania to pokazywanie warto\u015Bci zmiennych,\
   \ stanu aplikacji, czy akcji w konsoli. Programi\u015Bci robi\u0105 to, aby szybko\
   \ diagnozowa\u0107\u2026"
-lastmod: '2024-03-11T00:14:08.125486-06:00'
+lastmod: '2024-03-13T22:44:34.952085-06:00'
 model: gpt-4-1106-preview
 summary: "Drukowanie wynik\xF3w debugowania to pokazywanie warto\u015Bci zmiennych,\
   \ stanu aplikacji, czy akcji w konsoli. Programi\u015Bci robi\u0105 to, aby szybko\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:39.427792-07:00
 description: "Att skriva tester i Fish Shell inneb\xE4r att skapa skript som automatiskt\
   \ k\xF6r din kod f\xF6r att validera dess beteende mot f\xF6rv\xE4ntade resultat.\
   \ Denna praxis\u2026"
-lastmod: '2024-03-11T00:14:11.742471-06:00'
+lastmod: '2024-03-13T22:44:38.341673-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva tester i Fish Shell inneb\xE4r att skapa skript som automatiskt\
   \ k\xF6r din kod f\xF6r att validera dess beteende mot f\xF6rv\xE4ntade resultat.\

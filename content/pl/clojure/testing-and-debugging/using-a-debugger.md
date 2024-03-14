@@ -3,7 +3,7 @@ date: 2024-01-26 03:48:26.454487-07:00
 description: "U\u017Cywanie debugera oznacza, \u017Ce wyposa\u017Casz si\u0119 w lup\u0119\
   , aby przyjrze\u0107 si\u0119 swojemu kodowi. Programi\u015Bci robi\u0105 to, by\
   \ wypleni\u0107 b\u0142\u0119dy, zrozumie\u0107 przep\u0142yw oraz\u2026"
-lastmod: '2024-03-11T00:14:08.172780-06:00'
+lastmod: '2024-03-13T22:44:35.000635-06:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cywanie debugera oznacza, \u017Ce wyposa\u017Casz si\u0119 w lup\u0119\
   , aby przyjrze\u0107 si\u0119 swojemu kodowi. Programi\u015Bci robi\u0105 to, by\

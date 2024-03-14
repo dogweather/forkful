@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:13.889275-07:00
 description: "Een nieuw project starten betekent het opzetten van de basis voor je\
   \ codebase. Programmeurs doen dit om het ontwikkelingsproces op gang te brengen,\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:24.950439-06:00'
+lastmod: '2024-03-13T22:44:51.113309-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het opzetten van de basis voor je codebase.\
   \ Programmeurs doen dit om het ontwikkelingsproces op gang te brengen, de\u2026"

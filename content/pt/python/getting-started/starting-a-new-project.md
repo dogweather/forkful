@@ -6,7 +6,7 @@ date: 2024-02-22 17:30:12.949979-07:00
 description: "Iniciar um novo projeto em Python \xE9 sobre configurar uma estrutura\
   \ organizada e sustent\xE1vel desde o in\xEDcio. Os programadores fazem isso para\
   \ garantir que\u2026"
-lastmod: '2024-03-11T00:14:19.821131-06:00'
+lastmod: '2024-03-13T22:44:46.154552-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Python \xE9 sobre configurar uma estrutura organizada\
   \ e sustent\xE1vel desde o in\xEDcio. Os programadores fazem isso para garantir\

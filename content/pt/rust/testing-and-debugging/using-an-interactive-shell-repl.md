@@ -3,7 +3,7 @@ date: 2024-01-26 04:18:02.220639-07:00
 description: "Um shell interativo Rust, ou REPL (Read-Eval-Print Loop - Leitura, Avalia\xE7\
   \xE3o, Impress\xE3o, em la\xE7o), permite que voc\xEA execute c\xF3digo Rust em\
   \ tempo real,\u2026"
-lastmod: '2024-03-11T00:14:20.059946-06:00'
+lastmod: '2024-03-13T22:44:46.369255-06:00'
 model: gpt-4-0125-preview
 summary: "Um shell interativo Rust, ou REPL (Read-Eval-Print Loop - Leitura, Avalia\xE7\
   \xE3o, Impress\xE3o, em la\xE7o), permite que voc\xEA execute c\xF3digo Rust em\

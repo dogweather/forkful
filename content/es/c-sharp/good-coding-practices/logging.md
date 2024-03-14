@@ -2,7 +2,7 @@
 date: 2024-01-26 01:00:24.457971-07:00
 description: "El registro (logging) es el proceso de grabar eventos de aplicaciones\
   \ y salida de datos durante el tiempo de ejecuci\xF3n. Los programadores realizan\u2026"
-lastmod: '2024-03-11T00:14:32.895013-06:00'
+lastmod: '2024-03-13T22:44:59.084404-06:00'
 model: gpt-4-1106-preview
 summary: "El registro (logging) es el proceso de grabar eventos de aplicaciones y\
   \ salida de datos durante el tiempo de ejecuci\xF3n. Los programadores realizan\u2026"

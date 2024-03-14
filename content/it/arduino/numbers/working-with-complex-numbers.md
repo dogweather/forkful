@@ -2,7 +2,7 @@
 date: 2024-01-26 04:36:58.626099-07:00
 description: "I numeri complessi hanno una parte reale e una immaginaria, tipicamente\
   \ scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto\u2026"
-lastmod: '2024-03-11T00:14:17.296166-06:00'
+lastmod: '2024-03-13T22:44:43.677220-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi hanno una parte reale e una immaginaria, tipicamente\
   \ scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto\u2026"

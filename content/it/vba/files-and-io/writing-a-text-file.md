@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:10.670784-07:00
 description: "Scrivere un file di testo in Visual Basic for Applications (VBA) implica\
   \ la creazione, modifica o aggiunta di dati testuali ai file, un compito\u2026"
-lastmod: '2024-03-11T00:14:16.851738-06:00'
+lastmod: '2024-03-13T22:44:43.283548-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Visual Basic for Applications (VBA) implica\
   \ la creazione, modifica o aggiunta di dati testuali ai file, un compito\u2026"

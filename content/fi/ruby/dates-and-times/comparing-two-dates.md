@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:03.021498-07:00
 description: "Vertailemme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme\
   \ niiden j\xE4rjestyksen tai aikaeron. T\xE4m\xE4 on k\xE4yt\xE4nn\xF6llist\xE4\
   \ sovelluksissa, jotka seuraavat m\xE4\xE4r\xE4aikoja,\u2026"
-lastmod: '2024-03-11T00:14:31.140833-06:00'
+lastmod: '2024-03-13T22:44:57.099704-06:00'
 model: gpt-4-1106-preview
 summary: "Vertailemme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme niiden\
   \ j\xE4rjestyksen tai aikaeron. T\xE4m\xE4 on k\xE4yt\xE4nn\xF6llist\xE4 sovelluksissa,\

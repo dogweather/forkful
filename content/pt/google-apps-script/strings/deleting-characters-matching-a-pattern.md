@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:02.378480-07:00
 description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9\
   \ uma t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No\
   \ contexto do Google Apps\u2026"
-lastmod: '2024-03-11T00:14:19.752898-06:00'
+lastmod: '2024-03-13T22:44:46.089490-06:00'
 model: gpt-4-0125-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 uma\
   \ t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No contexto\

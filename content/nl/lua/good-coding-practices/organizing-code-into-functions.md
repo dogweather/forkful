@@ -5,7 +5,7 @@ date: 2024-01-28 22:03:06.815827-07:00
 description: "Het organiseren van code in functies gaat over het opsplitsen van je\
   \ scriptwerk in hapklare brokken\u2014denk aan functionele LEGO-blokken. We doen\
   \ dit voor\u2026"
-lastmod: '2024-03-11T00:14:24.774785-06:00'
+lastmod: '2024-03-13T22:44:50.942911-06:00'
 model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies gaat over het opsplitsen van je scriptwerk\
   \ in hapklare brokken\u2014denk aan functionele LEGO-blokken. We doen dit voor\u2026"

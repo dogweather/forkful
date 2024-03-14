@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:37.457758-07:00
 description: String interpolation allows us to insert variables into strings. It's
   a swift, clean way to construct strings - essentials in coding.
-lastmod: '2024-03-11T00:14:23.707575-06:00'
+lastmod: '2024-03-13T22:44:49.895099-06:00'
 model: gpt-4-1106-preview
 summary: String interpolation allows us to insert variables into strings. It's a swift,
   clean way to construct strings - essentials in coding.

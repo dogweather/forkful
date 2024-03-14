@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:15.392420-07:00
 description: "Regul\xE6re uttrykk i C++ er sekvenser av tegn som definerer et s\xF8\
   kem\xF8nster, brukt for strengs\xF8king eller manipulasjon. Programmerere bruker\
   \ dem til oppgaver\u2026"
-lastmod: '2024-03-11T00:14:14.682528-06:00'
+lastmod: '2024-03-13T22:44:41.089330-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk i C++ er sekvenser av tegn som definerer et s\xF8kem\xF8\
   nster, brukt for strengs\xF8king eller manipulasjon. Programmerere bruker dem til\

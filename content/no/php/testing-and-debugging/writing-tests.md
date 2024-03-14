@@ -5,7 +5,7 @@ date: 2024-02-03 19:31:19.975870-07:00
 description: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage og kj\xF8\
   re skript som verifiserer at koden oppf\xF8rer seg som forventet under ulike forhold.\
   \ Programmerere\u2026"
-lastmod: '2024-03-11T00:14:14.456518-06:00'
+lastmod: '2024-03-13T22:44:40.890241-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage og kj\xF8re skript\
   \ som verifiserer at koden oppf\xF8rer seg som forventet under ulike forhold. Programmerere\u2026"

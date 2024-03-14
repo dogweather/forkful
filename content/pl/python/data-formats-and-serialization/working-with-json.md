@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:11.705240-07:00
 description: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie ci\u0105\
   g\xF3w sformatowanych w JSON na obiekty Pythona i odwrotnie. Jest to kluczowe dla\
   \ rozwoju\u2026"
-lastmod: '2024-03-11T00:14:08.145632-06:00'
+lastmod: '2024-03-13T22:44:34.972571-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie ci\u0105g\xF3\
   w sformatowanych w JSON na obiekty Pythona i odwrotnie. Jest to kluczowe dla rozwoju\u2026"

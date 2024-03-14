@@ -5,7 +5,7 @@ date: 2024-01-28 21:59:02.878533-07:00
 description: "Karakters die een patroon matchen verwijderen in een string betekent\
   \ het vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om\
   \ tekst\u2026"
-lastmod: '2024-03-11T00:14:24.394364-06:00'
+lastmod: '2024-03-13T22:44:50.578039-06:00'
 model: gpt-4-0125-preview
 summary: "Karakters die een patroon matchen verwijderen in een string betekent het\
   \ vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om tekst\u2026"

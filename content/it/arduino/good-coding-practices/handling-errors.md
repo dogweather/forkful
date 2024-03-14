@@ -3,7 +3,7 @@ date: 2024-01-26 00:36:47.059117-07:00
 description: "La gestione degli errori nei tuoi programmi cattura gli imprevisti che\
   \ cercheranno di farti inciampare. Si fa per evitare che il tuo Arduino vada in\
   \ tilt\u2026"
-lastmod: '2024-03-11T00:14:17.308777-06:00'
+lastmod: '2024-03-13T22:44:43.689881-06:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori nei tuoi programmi cattura gli imprevisti che cercheranno\
   \ di farti inciampare. Si fa per evitare che il tuo Arduino vada in tilt\u2026"

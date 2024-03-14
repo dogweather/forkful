@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:38.570923-07:00
 description: "HTML in Haskell zu parsen, erm\xF6glicht es Ihnen, Daten zu extrahieren,\
   \ HTML-Inhalte zu manipulieren oder programmgesteuert mit Webseiten zu interagieren.\u2026"
-lastmod: '2024-03-11T00:14:27.826238-06:00'
+lastmod: '2024-03-13T22:44:53.929360-06:00'
 model: gpt-4-0125-preview
 summary: "HTML in Haskell zu parsen, erm\xF6glicht es Ihnen, Daten zu extrahieren,\
   \ HTML-Inhalte zu manipulieren oder programmgesteuert mit Webseiten zu interagieren.\u2026"

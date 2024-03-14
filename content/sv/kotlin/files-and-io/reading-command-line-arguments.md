@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:16.894419-07:00
 description: "Kommandoradsargument l\xE5ter program veta vad anv\xE4ndaren vill direkt\
   \ vid start. De anv\xE4nds f\xF6r att skr\xE4ddarsy programk\xF6rningen utan en\
   \ massa fr\xE5gor efter\u2026"
-lastmod: '2024-03-11T00:14:11.243922-06:00'
+lastmod: '2024-03-13T22:44:37.886471-06:00'
 model: gpt-4-1106-preview
 summary: "Kommandoradsargument l\xE5ter program veta vad anv\xE4ndaren vill direkt\
   \ vid start. De anv\xE4nds f\xF6r att skr\xE4ddarsy programk\xF6rningen utan en\

@@ -6,7 +6,7 @@ description: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Haskell bao g\u1ED3m vi\u1EC7c
   n t\xEDch c\xFA ph\xE1p, thao t\xE1c v\xE0 t\u1EA1o c\u1EA5u tr\xFAc XML. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn x\u1EED l\xFD XML \u0111\u1EC3 t\u01B0\u01A1ng t\xE1\
   c v\u1EDBi nhi\u1EC1u \u1EE9ng d\u1EE5ng\u2026"
-lastmod: '2024-03-11T00:14:10.024841-06:00'
+lastmod: '2024-03-13T22:44:36.743040-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Haskell bao g\u1ED3m vi\u1EC7c ph\xE2\
   n t\xEDch c\xFA ph\xE1p, thao t\xE1c v\xE0 t\u1EA1o c\u1EA5u tr\xFAc XML. C\xE1\

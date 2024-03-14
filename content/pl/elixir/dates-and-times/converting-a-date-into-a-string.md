@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:19.672607-07:00
 description: "Konwersja daty na \u0142a\u0144cuch znak\xF3w pozwala na \u0142atw\u0105\
   \ prezentacj\u0119 i archiwizacj\u0119 danych czasowych. Programi\u015Bci robi\u0105\
   \ to, aby u\u0142atwi\u0107 ludziom czytanie i\u2026"
-lastmod: '2024-03-11T00:14:08.227185-06:00'
+lastmod: '2024-03-13T22:44:35.055704-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w pozwala na \u0142atw\u0105\
   \ prezentacj\u0119 i archiwizacj\u0119 danych czasowych. Programi\u015Bci robi\u0105\

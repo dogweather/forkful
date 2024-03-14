@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:53.851895-07:00
 description: "Las expresiones regulares en programaci\xF3n son secuencias de caracteres\
   \ que definen un patr\xF3n de b\xFAsqueda, t\xEDpicamente empleadas para la b\xFA\
   squeda y\u2026"
-lastmod: '2024-03-11T00:14:32.922419-06:00'
+lastmod: '2024-03-13T22:44:59.109414-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares en programaci\xF3n son secuencias de caracteres\
   \ que definen un patr\xF3n de b\xFAsqueda, t\xEDpicamente empleadas para la b\xFA\

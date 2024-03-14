@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:34.687650-07:00
 description: "Writing to standard error (stderr) involves outputting error messages\
   \ and diagnostics to the console or terminal. Programmers do it to separate error\u2026"
-lastmod: '2024-03-11T00:14:33.850512-06:00'
+lastmod: '2024-03-13T22:44:59.986667-06:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) involves outputting error messages and\
   \ diagnostics to the console or terminal. Programmers do it to separate error\u2026"

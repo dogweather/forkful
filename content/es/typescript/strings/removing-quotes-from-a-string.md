@@ -2,7 +2,7 @@
 date: 2024-01-26 03:42:09.443511-07:00
 description: "Eliminar comillas de una cadena significa quitar los caracteres de comillas\
   \ simples (`'`) o dobles (`\"`) que rodean y definen literales de cadena en el\u2026"
-lastmod: '2024-03-11T00:14:32.606647-06:00'
+lastmod: '2024-03-13T22:44:58.787218-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena significa quitar los caracteres de comillas\
   \ simples (`'`) o dobles (`\"`) que rodean y definen literales de cadena en el\u2026"

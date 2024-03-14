@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:21.866227-07:00
 description: "Le \"print debugging\" consiste \xE0 afficher des infos dans la console\
   \ pour comprendre ce qui se passe dans le code. On l'utilise parce que c'est simple\
   \ et\u2026"
-lastmod: '2024-03-11T00:14:31.273132-06:00'
+lastmod: '2024-03-13T22:44:57.238902-06:00'
 model: gpt-4-1106-preview
 summary: "Le \"print debugging\" consiste \xE0 afficher des infos dans la console\
   \ pour comprendre ce qui se passe dans le code. On l'utilise parce que c'est simple\

@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:19.016616-07:00
 description: "Organiser son code en fonctions, c'est fractionner le script en morceaux\
   \ digestes\u2014comme des blocs LEGO fonctionnels. On le fait pour la clart\xE9\
   , la\u2026"
-lastmod: '2024-03-11T00:14:31.882352-06:00'
+lastmod: '2024-03-13T22:44:57.942309-06:00'
 model: gpt-4-1106-preview
 summary: "Organiser son code en fonctions, c'est fractionner le script en morceaux\
   \ digestes\u2014comme des blocs LEGO fonctionnels. On le fait pour la clart\xE9\

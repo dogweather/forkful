@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:37.913460-07:00
 description: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire des\
   \ informations des pages Web. Les programmeurs font cela pour permettre \xE0 leurs\u2026"
-lastmod: '2024-03-11T00:14:32.013338-06:00'
+lastmod: '2024-03-13T22:44:58.107167-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire des informations\
   \ des pages Web. Les programmeurs font cela pour permettre \xE0 leurs\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:42:02.952252-07:00
 description: "Deletar caracteres que seguem um padr\xE3o espec\xEDfico \xE9 basicamente\
   \ filtrar texto. Programadores fazem isso para limpar dados, validar input ou simplificar\u2026"
-lastmod: '2024-03-11T00:14:20.183864-06:00'
+lastmod: '2024-03-13T22:44:46.483256-06:00'
 model: gpt-4-1106-preview
 summary: "Deletar caracteres que seguem um padr\xE3o espec\xEDfico \xE9 basicamente\
   \ filtrar texto. Programadores fazem isso para limpar dados, validar input ou simplificar\u2026"

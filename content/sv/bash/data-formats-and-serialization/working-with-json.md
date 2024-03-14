@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:34.205684-07:00
 description: "Att arbeta med JSON i Bash-programmering inneb\xE4r att tolka, extrahera\
   \ och manipulera JSON-data direkt fr\xE5n kommandoraden. Programmerare g\xF6r ofta\
   \ detta f\xF6r\u2026"
-lastmod: '2024-03-11T00:14:11.485328-06:00'
+lastmod: '2024-03-13T22:44:38.103428-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Bash-programmering inneb\xE4r att tolka, extrahera\
   \ och manipulera JSON-data direkt fr\xE5n kommandoraden. Programmerare g\xF6r ofta\

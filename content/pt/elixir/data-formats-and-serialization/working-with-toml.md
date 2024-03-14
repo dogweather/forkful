@@ -2,7 +2,7 @@
 date: 2024-01-26 04:20:57.740470-07:00
 description: "Trabalhar com TOML significa analisar e gerar dados TOML (Tom's Obvious,\
   \ Minimal Language) usando Elixir. Os programadores o utilizam para manipular\u2026"
-lastmod: '2024-03-11T00:14:19.941620-06:00'
+lastmod: '2024-03-13T22:44:46.261333-06:00'
 model: gpt-4-0125-preview
 summary: "Trabalhar com TOML significa analisar e gerar dados TOML (Tom's Obvious,\
   \ Minimal Language) usando Elixir. Os programadores o utilizam para manipular\u2026"

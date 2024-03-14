@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:26.040114-07:00
 description: "Ler argumentos da linha de comando \xE9 pegar informa\xE7\xF5es diretamente\
   \ quando iniciamos um programa. Programadores fazem isso para customizar a execu\xE7\
   \xE3o do\u2026"
-lastmod: '2024-03-11T00:14:20.581328-06:00'
+lastmod: '2024-03-13T22:44:46.854039-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando \xE9 pegar informa\xE7\xF5es diretamente\
   \ quando iniciamos um programa. Programadores fazem isso para customizar a execu\xE7\

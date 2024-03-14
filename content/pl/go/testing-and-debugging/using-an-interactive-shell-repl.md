@@ -5,7 +5,7 @@ date: 2024-02-03 18:10:42.246940-07:00
 description: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REPL),\
   \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\
   \ komendy i otrzymuj\u0105c\u2026"
-lastmod: '2024-03-11T00:14:08.025059-06:00'
+lastmod: '2024-03-13T22:44:34.853069-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REPL),\
   \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\

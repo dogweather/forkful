@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:57.947780-07:00
 description: "Stringinterpolering l\xE5ter dig spr\xE4nga in variabler direkt i en\
   \ str\xE4ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamisk text snabbt\
   \ och smidigt."
-lastmod: '2024-03-11T00:14:11.306425-06:00'
+lastmod: '2024-03-13T22:44:37.941731-06:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolering l\xE5ter dig spr\xE4nga in variabler direkt i en str\xE4\
   ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamisk text snabbt och smidigt."

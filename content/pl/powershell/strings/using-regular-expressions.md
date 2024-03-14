@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:50.252319-07:00
 description: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w formuj\u0105\
   ce wzorzec wyszukiwania, g\u0142\xF3wnie u\u017Cywane do wyszukiwania ci\u0105g\xF3\
   w znak\xF3w i ich manipulacji.\u2026"
-lastmod: '2024-03-11T00:14:08.811346-06:00'
+lastmod: '2024-03-13T22:44:35.617748-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w formuj\u0105ce wzorzec\
   \ wyszukiwania, g\u0142\xF3wnie u\u017Cywane do wyszukiwania ci\u0105g\xF3w znak\xF3\

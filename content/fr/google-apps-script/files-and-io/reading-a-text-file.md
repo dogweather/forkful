@@ -5,7 +5,7 @@ date: 2024-02-01 21:59:08.475940-07:00
 description: "Lire un fichier texte avec Google Apps Script (GAS) implique d'acc\xE9\
   der et d'extraire des donn\xE9es textuelles \xE0 partir de fichiers stock\xE9s dans\
   \ Google Drive\u2026"
-lastmod: '2024-03-11T00:14:31.243520-06:00'
+lastmod: '2024-03-13T22:44:57.207206-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte avec Google Apps Script (GAS) implique d'acc\xE9der\
   \ et d'extraire des donn\xE9es textuelles \xE0 partir de fichiers stock\xE9s dans\

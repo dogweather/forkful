@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:12.316430-07:00
 description: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4,\
   \ koska sovelluksemme tarvitsevat ajankohtaisia tietoja ajanhallintaan, muistutuksiin\
   \ tai\u2026"
-lastmod: '2024-03-11T00:14:31.005713-06:00'
+lastmod: '2024-03-13T22:44:56.963276-06:00'
 model: gpt-4-1106-preview
 summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4, koska\
   \ sovelluksemme tarvitsevat ajankohtaisia tietoja ajanhallintaan, muistutuksiin\

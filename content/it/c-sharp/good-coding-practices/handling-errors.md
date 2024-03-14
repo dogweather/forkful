@@ -2,7 +2,7 @@
 date: 2024-01-26 00:50:10.744079-07:00
 description: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
   \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"
-lastmod: '2024-03-11T00:14:17.029715-06:00'
+lastmod: '2024-03-13T22:44:43.441044-06:00'
 model: gpt-4-1106-preview
 summary: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
   \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"

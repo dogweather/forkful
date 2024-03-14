@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:52.101052-07:00
 description: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos\
   \ desenvolvedores acompanhar o passo a passo do seu c\xF3digo, inspecionar vari\xE1\
   veis e\u2026"
-lastmod: '2024-03-11T00:14:20.796299-06:00'
+lastmod: '2024-03-13T22:44:47.055160-06:00'
 model: gpt-4-0125-preview
 summary: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos desenvolvedores\
   \ acompanhar o passo a passo do seu c\xF3digo, inspecionar vari\xE1veis e\u2026"

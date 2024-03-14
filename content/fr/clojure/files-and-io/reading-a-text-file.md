@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:47.761549-07:00
 description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser. Les\
   \ programmeurs le font pour traiter des donn\xE9es, configurer des programmes ou\u2026"
-lastmod: '2024-03-11T00:14:31.331956-06:00'
+lastmod: '2024-03-13T22:44:57.300378-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser. Les programmeurs\
   \ le font pour traiter des donn\xE9es, configurer des programmes ou\u2026"

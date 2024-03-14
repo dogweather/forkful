@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany danych\
   \ w aplikacjach. Programi\u015Bci u\u017Cywaj\u0105 go, \u017Ceby \u0142atwo serwisy\
   \ mog\u0142y si\u0119 \"dogadywa\u0107\" z\u2026"
-lastmod: '2024-03-11T00:14:08.983074-06:00'
+lastmod: '2024-03-13T22:44:35.775954-06:00'
 model: unknown
 summary: "Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany danych\
   \ w aplikacjach. Programi\u015Bci u\u017Cywaj\u0105 go, \u017Ceby \u0142atwo serwisy\

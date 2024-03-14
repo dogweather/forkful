@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:01.239378-07:00
 description: "Stringinterpolatie stelt je in staat om variabelen direct in een string\
   \ in te bedden, zodat het meer leest als normale tekst. Programmeurs gebruiken het\u2026"
-lastmod: '2024-03-11T00:14:24.531738-06:00'
+lastmod: '2024-03-13T22:44:50.710616-06:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt je in staat om variabelen direct in een string\
   \ in te bedden, zodat het meer leest als normale tekst. Programmeurs gebruiken het\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:44.072532-07:00
 description: "Pobieranie strony internetowej w Visual Basic for Applications (VBA)\
   \ polega na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\
   ci\u2026"
-lastmod: '2024-03-11T00:14:08.405456-06:00'
+lastmod: '2024-03-13T22:44:35.230352-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w Visual Basic for Applications (VBA) polega\
   \ na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\

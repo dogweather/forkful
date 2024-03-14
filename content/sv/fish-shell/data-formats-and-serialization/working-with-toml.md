@@ -3,7 +3,7 @@ date: 2024-01-26 04:21:57.576465-07:00
 description: "TOML \xE4r ett config-filformat, enkelt f\xF6r m\xE4nniskor att l\xE4\
   sa och skriva, samt enkelt f\xF6r maskiner att tolka och generera. Programmerare\
   \ arbetar med TOML\u2026"
-lastmod: '2024-03-11T00:14:11.764305-06:00'
+lastmod: '2024-03-13T22:44:38.361622-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE4r ett config-filformat, enkelt f\xF6r m\xE4nniskor att l\xE4sa\
   \ och skriva, samt enkelt f\xF6r maskiner att tolka och generera. Programmerare\

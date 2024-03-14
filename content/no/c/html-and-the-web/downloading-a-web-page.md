@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:01.166716-07:00
 description: "\xC5 laste ned en nettside i C inneb\xE6rer \xE5 programmert f\xE5 tilgang\
   \ til innholdet p\xE5 en nettside over internett og lagre det lokalt for behandling\
   \ eller\u2026"
-lastmod: '2024-03-11T00:14:14.877740-06:00'
+lastmod: '2024-03-13T22:44:41.270521-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 laste ned en nettside i C inneb\xE6rer \xE5 programmert f\xE5 tilgang\
   \ til innholdet p\xE5 en nettside over internett og lagre det lokalt for behandling\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:43.847714-07:00
 description: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE4\
   jille, sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\u2026"
-lastmod: '2024-03-11T00:14:30.175846-06:00'
+lastmod: '2024-03-13T22:44:56.245224-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE4jille,\
   \ sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\u2026"

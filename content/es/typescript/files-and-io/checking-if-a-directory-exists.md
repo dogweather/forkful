@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:38.793021-07:00
 description: "Comprobar si un directorio existe en TypeScript es esencial para tareas\
   \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\u2026"
-lastmod: '2024-03-11T00:14:32.633680-06:00'
+lastmod: '2024-03-13T22:44:58.816770-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en TypeScript es esencial para tareas\
   \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:21.637050-07:00
 description: "Att l\xE4sa en textfil inneb\xE4r att f\xE5 inneh\xE5llet fr\xE5n filen\
   \ in i v\xE5rt program. Programmerare g\xF6r detta f\xF6r att hantera data, konfigurera\
   \ system eller f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:10.869626-06:00'
+lastmod: '2024-03-13T22:44:37.542357-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att f\xE5 inneh\xE5llet fr\xE5n filen\
   \ in i v\xE5rt program. Programmerare g\xF6r detta f\xF6r att hantera data, konfigurera\

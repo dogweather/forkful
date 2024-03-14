@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:13.892292-07:00
 description: "Das Parsen von HTML in Google Apps Script beinhaltet das Extrahieren\
   \ von Daten aus HTML-Inhalten, was besonders n\xFCtzlich ist, wenn man mit Webseiten\
   \ oder\u2026"
-lastmod: '2024-03-11T00:14:27.290974-06:00'
+lastmod: '2024-03-13T22:44:53.331418-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Google Apps Script beinhaltet das Extrahieren von\
   \ Daten aus HTML-Inhalten, was besonders n\xFCtzlich ist, wenn man mit Webseiten\

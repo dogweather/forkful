@@ -4,7 +4,7 @@ description: "Comparing two dates means checking how they relate: is one earlier
   \ later, or the same as the other? Programmers compare dates to schedule events,\
   \ track\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-11T00:14:15.143232-06:00'
+lastmod: '2024-03-13T22:44:41.516038-06:00'
 model: gpt-4-1106-preview
 summary: "Comparing two dates means checking how they relate: is one earlier, later,\
   \ or the same as the other? Programmers compare dates to schedule events, track\u2026"

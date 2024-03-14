@@ -2,7 +2,7 @@
 date: 2024-01-26 01:07:01.248634-07:00
 description: "Lokitus on pohjimmiltaan tapa kirjata tapahtumia ja tietoja ohjelmistosovelluksesta\
   \ ulkoiseen l\xE4hteeseen, kuten tiedostoon tai konsolille. Ohjelmoijat\u2026"
-lastmod: '2024-03-11T00:14:30.482304-06:00'
+lastmod: '2024-03-13T22:44:56.537422-06:00'
 model: gpt-4-1106-preview
 summary: "Lokitus on pohjimmiltaan tapa kirjata tapahtumia ja tietoja ohjelmistosovelluksesta\
   \ ulkoiseen l\xE4hteeseen, kuten tiedostoon tai konsolille. Ohjelmoijat\u2026"

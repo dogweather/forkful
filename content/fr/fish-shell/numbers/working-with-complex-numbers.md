@@ -3,7 +3,7 @@ date: 2024-01-26 04:39:49.601534-07:00
 description: "Les nombres complexes \xE9tendent l'id\xE9e de lignes num\xE9riques\
   \ unidimensionnelles \xE0 un plan complexe bidimensionnel. Les programmeurs les\
   \ utilisent dans des\u2026"
-lastmod: '2024-03-11T00:14:32.186924-06:00'
+lastmod: '2024-03-13T22:44:58.315545-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent l'id\xE9e de lignes num\xE9riques unidimensionnelles\
   \ \xE0 un plan complexe bidimensionnel. Les programmeurs les utilisent dans des\u2026"

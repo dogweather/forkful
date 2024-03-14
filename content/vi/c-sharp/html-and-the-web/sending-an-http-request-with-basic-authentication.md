@@ -6,7 +6,7 @@ description: "Ch\xFAng ta g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c
   c c\u01A1 b\u1EA3n \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEAn \u0111\
   \u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EB1ng c\xE1ch bao g\u1ED3m th\xF4ng tin \u0111\
   \u0103ng nh\u1EADp c\u1EE7a ng\u01B0\u1EDDi d\xF9ng trong\u2026"
-lastmod: '2024-03-11T00:14:09.932429-06:00'
+lastmod: '2024-03-13T22:44:36.657113-06:00'
 model: gpt-4-0125-preview
 summary: "Ch\xFAng ta g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
   c c\u01A1 b\u1EA3n \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEAn \u0111\

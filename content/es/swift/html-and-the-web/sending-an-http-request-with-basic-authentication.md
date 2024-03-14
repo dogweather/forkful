@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:50.753772-07:00
 description: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica es simplemente\
   \ una manera de asegurar que la comunicaci\xF3n entre un cliente y un servidor sea\
   \ privada.\u2026"
-lastmod: '2024-03-11T00:14:33.242101-06:00'
+lastmod: '2024-03-13T22:44:59.416299-06:00'
 model: gpt-4-1106-preview
 summary: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica es simplemente\
   \ una manera de asegurar que la comunicaci\xF3n entre un cliente y un servidor sea\

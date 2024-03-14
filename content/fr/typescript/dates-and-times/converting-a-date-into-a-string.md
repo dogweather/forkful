@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:00.585021-07:00
 description: "En TypeScript, convertir une date en cha\xEEne de caract\xE8res permet\
   \ de la formater pour l'affichage. Les programmeurs font cela pour am\xE9liorer\
   \ la lisibilit\xE9\u2026"
-lastmod: '2024-03-11T00:14:31.464946-06:00'
+lastmod: '2024-03-13T22:44:57.449177-06:00'
 model: gpt-4-1106-preview
 summary: "En TypeScript, convertir une date en cha\xEEne de caract\xE8res permet de\
   \ la formater pour l'affichage. Les programmeurs font cela pour am\xE9liorer la\

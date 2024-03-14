@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:02.026260-07:00
 description: "Verificar se um diret\xF3rio existe em Go \xE9 cr\xEDtico para aplica\xE7\
   \xF5es que interagem com o sistema de arquivos, para evitar erros ao tentar acessar\
   \ ou modificar\u2026"
-lastmod: '2024-03-11T00:14:19.737853-06:00'
+lastmod: '2024-03-13T22:44:46.076547-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Go \xE9 cr\xEDtico para aplica\xE7\
   \xF5es que interagem com o sistema de arquivos, para evitar erros ao tentar acessar\

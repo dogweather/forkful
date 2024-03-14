@@ -2,7 +2,7 @@
 date: 2024-01-26 04:30:44.214195-07:00
 description: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, strukturerat\
   \ format som anv\xE4nds i konfigurationer, meddelanden och mer. Programmerare\u2026"
-lastmod: '2024-03-11T00:14:11.765228-06:00'
+lastmod: '2024-03-13T22:44:38.362499-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, strukturerat\
   \ format som anv\xE4nds i konfigurationer, meddelanden och mer. Programmerare\u2026"

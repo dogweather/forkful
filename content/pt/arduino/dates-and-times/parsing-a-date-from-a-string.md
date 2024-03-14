@@ -5,7 +5,7 @@ date: 2024-02-03 19:13:28.555788-07:00
 description: "Analisar uma data a partir de uma string no Arduino envolve extrair\
   \ e converter os componentes da data (ano, m\xEAs, dia) de uma representa\xE7\xE3\
   o textual para\u2026"
-lastmod: '2024-03-11T00:14:20.575193-06:00'
+lastmod: '2024-03-13T22:44:46.848106-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string no Arduino envolve extrair e converter\
   \ os componentes da data (ano, m\xEAs, dia) de uma representa\xE7\xE3o textual para\u2026"

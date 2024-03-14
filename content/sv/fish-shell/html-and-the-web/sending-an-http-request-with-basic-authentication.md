@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:34.892666-07:00
 description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb\xE4\
   r att du \xF6verf\xF6r inloggningsuppgifter (anv\xE4ndarnamn och l\xF6senord) i\
   \ klartext, kodat med\u2026"
-lastmod: '2024-03-11T00:14:11.738508-06:00'
+lastmod: '2024-03-13T22:44:38.337759-06:00'
 model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb\xE4\
   r att du \xF6verf\xF6r inloggningsuppgifter (anv\xE4ndarnamn och l\xF6senord) i\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:31:13.270606-07:00
 description: "Escrever testes em JavaScript refere-se \xE0 pr\xE1tica de criar scripts\
   \ automatizados que executam o seu c\xF3digo para garantir que ele se comporte conforme\u2026"
-lastmod: '2024-03-11T00:14:20.701409-06:00'
+lastmod: '2024-03-13T22:44:46.966076-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever testes em JavaScript refere-se \xE0 pr\xE1tica de criar scripts\
   \ automatizados que executam o seu c\xF3digo para garantir que ele se comporte conforme\u2026"

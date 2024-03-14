@@ -3,7 +3,7 @@ date: 2024-01-20 17:57:00.657515-07:00
 description: "Czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi\
   \ Python na przyjmowanie danych z zewn\u0105trz, kiedy jest uruchamiany. Robimy\
   \ to, gdy chcemy, aby\u2026"
-lastmod: '2024-03-11T00:14:08.139028-06:00'
+lastmod: '2024-03-13T22:44:34.965906-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi Python\
   \ na przyjmowanie danych z zewn\u0105trz, kiedy jest uruchamiany. Robimy to, gdy\

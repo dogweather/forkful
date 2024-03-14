@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:10.590064-07:00
 description: "Escrever um arquivo de texto em Java envolve utilizar as capacidades\
   \ da linguagem para criar e escrever conte\xFAdo em arquivos no sistema de arquivos.\u2026"
-lastmod: '2024-03-11T00:14:20.173649-06:00'
+lastmod: '2024-03-13T22:44:46.474132-06:00'
 model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Java envolve utilizar as capacidades da\
   \ linguagem para criar e escrever conte\xFAdo em arquivos no sistema de arquivos.\u2026"

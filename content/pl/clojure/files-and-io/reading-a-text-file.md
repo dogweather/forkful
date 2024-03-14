@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:00.831350-07:00
 description: "(Co i dlaczego?) Czytanie pliku tekstowego to pobieranie jego zawarto\u015B\
   ci do pami\u0119ci programu. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\
   \ danymi, wy\u015Bwietli\u0107 je\u2026"
-lastmod: '2024-03-11T00:14:08.187282-06:00'
+lastmod: '2024-03-13T22:44:35.014544-06:00'
 model: gpt-4-1106-preview
 summary: "(Co i dlaczego?) Czytanie pliku tekstowego to pobieranie jego zawarto\u015B\
   ci do pami\u0119ci programu. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\

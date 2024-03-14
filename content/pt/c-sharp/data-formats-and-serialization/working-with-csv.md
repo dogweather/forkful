@@ -5,7 +5,7 @@ date: 2024-02-03 19:19:33.425761-07:00
 description: "CSV (Valores Separados por V\xEDrgula) s\xE3o arquivos de um formato\
   \ comum de troca de dados que representam dados tabulares em texto simples, usando\
   \ v\xEDrgulas\u2026"
-lastmod: '2024-03-11T00:14:20.315720-06:00'
+lastmod: '2024-03-13T22:44:46.606215-06:00'
 model: gpt-4-0125-preview
 summary: "CSV (Valores Separados por V\xEDrgula) s\xE3o arquivos de um formato comum\
   \ de troca de dados que representam dados tabulares em texto simples, usando v\xED\

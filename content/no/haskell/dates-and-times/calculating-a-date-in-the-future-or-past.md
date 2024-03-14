@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:08.714034-07:00
 description: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 finne\
   \ en bestemt dag f\xF8r eller etter en kjent dato. Programmerere gj\xF8r dette for\
   \ \xE5 h\xE5ndtere\u2026"
-lastmod: '2024-03-11T00:14:14.419082-06:00'
+lastmod: '2024-03-13T22:44:40.856018-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 finne en\
   \ bestemt dag f\xF8r eller etter en kjent dato. Programmerere gj\xF8r dette for\

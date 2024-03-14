@@ -10,7 +10,7 @@ description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u091
   \ \u0936\u092C\u094D\u0926 \u0915\u0947 \u092A\u0939\u0932\u0947 \u0905\u0915\u094D\
   \u0937\u0930 \u0915\u094B \u0905\u092A\u0930\u0915\u0947\u0938 \u092E\u0947\u0902\
   \ \u092C\u0926\u0932\u0928\u093E \u091C\u092C\u0915\u093F \u0936\u0947\u0937\u2026"
-lastmod: '2024-03-11T00:14:25.898876-06:00'
+lastmod: '2024-03-13T22:44:52.006617-06:00'
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u0915 \u0938\
   \u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u0915\u0948\u092A\u093F\

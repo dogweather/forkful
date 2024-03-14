@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:56:49.517361-07:00
 description: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip of\
   \ het ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"
-lastmod: '2024-03-11T00:14:25.008004-06:00'
+lastmod: '2024-03-13T22:44:51.170196-06:00'
 model: gpt-4-0125-preview
 summary: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip of het\
   \ ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"

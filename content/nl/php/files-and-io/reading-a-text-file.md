@@ -5,7 +5,7 @@ date: 2024-01-28 22:05:25.231198-07:00
 description: "Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen\
   \ en in je script brengen. Programmeurs doen dit om gegevensopslag, configuratie\
   \ te\u2026"
-lastmod: '2024-03-11T00:14:24.744044-06:00'
+lastmod: '2024-03-13T22:44:50.913213-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen en in\
   \ je script brengen. Programmeurs doen dit om gegevensopslag, configuratie te\u2026"

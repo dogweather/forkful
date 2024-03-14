@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:39.592562-07:00
 description: "Regulj\xE4ra uttryck (regex) i Elixir anv\xE4nds f\xF6r att s\xF6ka,\
   \ matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
   \ anv\xE4nder regex f\xF6r\u2026"
-lastmod: '2024-03-11T00:14:10.886756-06:00'
+lastmod: '2024-03-13T22:44:37.556938-06:00'
 model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck (regex) i Elixir anv\xE4nds f\xF6r att s\xF6ka, matcha\
   \ och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare anv\xE4\

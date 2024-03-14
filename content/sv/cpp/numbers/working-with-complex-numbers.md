@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:56.219595-07:00
 description: "Komplexa tal utvidgar de reella talen genom att l\xE4gga till en imagin\xE4\
   r enhet, representerad som 'i', d\xE4r i^2 = -1. Programmerare anv\xE4nder dem f\xF6\
   r\u2026"
-lastmod: '2024-03-11T00:14:11.593054-06:00'
+lastmod: '2024-03-13T22:44:38.203050-06:00'
 model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar de reella talen genom att l\xE4gga till en imagin\xE4\
   r enhet, representerad som 'i', d\xE4r i^2 = -1. Programmerare anv\xE4nder dem f\xF6\

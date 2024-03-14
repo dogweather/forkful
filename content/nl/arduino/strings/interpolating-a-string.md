@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:01.075148-07:00
 description: "String interpolatie betreft het mengen van variabelen met tekst. Programmeurs\
   \ doen dit om strings on-the-fly te bouwen, waardoor de output dynamisch en\u2026"
-lastmod: '2024-03-11T00:14:24.892785-06:00'
+lastmod: '2024-03-13T22:44:51.058755-06:00'
 model: gpt-4-0125-preview
 summary: "String interpolatie betreft het mengen van variabelen met tekst. Programmeurs\
   \ doen dit om strings on-the-fly te bouwen, waardoor de output dynamisch en\u2026"

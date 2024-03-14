@@ -3,7 +3,7 @@ date: 2024-01-26 01:08:33.244094-07:00
 description: "Att organisera kod i funktioner inneb\xE4r att dela upp koden i \xE5\
   teranv\xE4ndbara delar, d\xE4r varje del utf\xF6r ett specifikt jobb. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:11.560609-06:00'
+lastmod: '2024-03-13T22:44:38.172655-06:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner inneb\xE4r att dela upp koden i \xE5teranv\xE4\
   ndbara delar, d\xE4r varje del utf\xF6r ett specifikt jobb. Programmerare g\xF6\

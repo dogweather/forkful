@@ -5,7 +5,7 @@ date: 2024-01-28 21:56:17.938032-07:00
 description: "Controleren of een map bestaat betekent bevestigen of een map aanwezig\
   \ is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen voordat\
   \ ze\u2026"
-lastmod: '2024-03-11T00:14:25.216651-06:00'
+lastmod: '2024-03-13T22:44:51.360177-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat betekent bevestigen of een map aanwezig is\
   \ in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen voordat ze\u2026"

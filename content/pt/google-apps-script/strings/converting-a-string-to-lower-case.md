@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:27.270324-07:00
 description: "Converter uma string para letras min\xFAsculas no Google Apps Script,\
   \ uma linguagem de script baseada na nuvem para automatiza\xE7\xE3o de tarefas atrav\xE9\
   s dos\u2026"
-lastmod: '2024-03-11T00:14:19.756583-06:00'
+lastmod: '2024-03-13T22:44:46.092958-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma string para letras min\xFAsculas no Google Apps Script, uma\
   \ linguagem de script baseada na nuvem para automatiza\xE7\xE3o de tarefas atrav\xE9\

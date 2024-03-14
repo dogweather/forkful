@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:12.105091-07:00
 description: "Organizzare il codice in funzioni significa racchiudere blocchi di codice\
   \ che svolgono specifiche attivit\xE0 e assegnare loro un nome. Si fa per rendere\
   \ il\u2026"
-lastmod: '2024-03-11T00:14:17.261092-06:00'
+lastmod: '2024-03-13T22:44:43.648166-06:00'
 model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni significa racchiudere blocchi di codice\
   \ che svolgono specifiche attivit\xE0 e assegnare loro un nome. Si fa per rendere\

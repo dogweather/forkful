@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:25:19.013433-07:00
 description: "Elm no tiene soporte incorporado para YAML, un formato de serializaci\xF3\
   n de datos a menudo utilizado para archivos de configuraci\xF3n o compartir datos,\u2026"
-lastmod: '2024-03-11T00:14:32.818443-06:00'
+lastmod: '2024-03-13T22:44:59.013873-06:00'
 model: gpt-4-0125-preview
 summary: "Elm no tiene soporte incorporado para YAML, un formato de serializaci\xF3\
   n de datos a menudo utilizado para archivos de configuraci\xF3n o compartir datos,\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:45.537260-07:00
 description: "\xC9crire des tests en Haskell, c'est s'assurer que vos fonctions fonctionnent\
   \ comme pr\xE9vu gr\xE2ce \xE0 des v\xE9rifications automatis\xE9es. Les programmeurs\
   \ le font\u2026"
-lastmod: '2024-03-11T00:14:31.786560-06:00'
+lastmod: '2024-03-13T22:44:57.837654-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Haskell, c'est s'assurer que vos fonctions fonctionnent\
   \ comme pr\xE9vu gr\xE2ce \xE0 des v\xE9rifications automatis\xE9es. Les programmeurs\

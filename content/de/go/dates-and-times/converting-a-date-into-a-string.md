@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:54:14.111126-07:00
 description: "Das Umwandeln eines Datums in einen String in Go beinhaltet die Transformation\
   \ eines `time.Time` Objekts in ein lesbares String-Format. Programmierer\u2026"
-lastmod: '2024-03-11T00:14:27.258310-06:00'
+lastmod: '2024-03-13T22:44:53.300417-06:00'
 model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Datums in einen String in Go beinhaltet die Transformation\
   \ eines `time.Time` Objekts in ein lesbares String-Format. Programmierer\u2026"

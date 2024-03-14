@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:41:32.401596-07:00
 description: ''
-lastmod: '2024-03-11T00:14:09.173572-06:00'
+lastmod: '2024-03-13T22:44:35.951695-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: Tworzenie pliku tymczasowego

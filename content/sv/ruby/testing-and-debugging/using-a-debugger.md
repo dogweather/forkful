@@ -3,7 +3,7 @@ date: 2024-01-26 04:09:53.031444-07:00
 description: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att\
   \ pausa sin kod, inspektera variabler och stega igenom sin kod rad f\xF6r rad. Folk\
   \ g\xF6r det\u2026"
-lastmod: '2024-03-11T00:14:11.842639-06:00'
+lastmod: '2024-03-13T22:44:38.435467-06:00'
 model: gpt-4-0125-preview
 summary: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att pausa\
   \ sin kod, inspektera variabler och stega igenom sin kod rad f\xF6r rad. Folk g\xF6\

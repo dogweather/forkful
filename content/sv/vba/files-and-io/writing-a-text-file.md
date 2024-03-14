@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:30.673710-07:00
 description: "Att skriva en textfil i Visual Basic for Applications (VBA) inneb\xE4\
   r att skapa, \xE4ndra eller l\xE4gga till textdata i filer, en grundl\xE4ggande\
   \ uppgift f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:11.106578-06:00'
+lastmod: '2024-03-13T22:44:37.763160-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Visual Basic for Applications (VBA) inneb\xE4r att\
   \ skapa, \xE4ndra eller l\xE4gga till textdata i filer, en grundl\xE4ggande uppgift\

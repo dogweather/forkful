@@ -3,7 +3,7 @@ date: 2024-01-26 03:41:37.397621-07:00
 description: "\xC5 fjerne anf\xF8rselstegn fra en streng i PowerShell fjerner enkle\
   \ (`'`) eller doble (`\"`) anf\xF8rselstegn som er lagt rundt teksten din. Programmerere\
   \ trenger\u2026"
-lastmod: '2024-03-11T00:14:14.582855-06:00'
+lastmod: '2024-03-13T22:44:41.004574-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i PowerShell fjerner enkle (`'`)\
   \ eller doble (`\"`) anf\xF8rselstegn som er lagt rundt teksten din. Programmerere\

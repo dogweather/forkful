@@ -3,7 +3,7 @@ date: 2024-01-26 04:40:10.764379-07:00
 description: "Liczby zespolone rozszerzaj\u0105 pomys\u0142 jednowymiarowej linii\
   \ liczbowej o dwuwymiarow\u0105 p\u0142aszczyzn\u0119 zespolon\u0105. Programi\u015B\
   ci u\u017Cywaj\u0105 ich w dziedzinach takich jak\u2026"
-lastmod: '2024-03-11T00:14:09.045530-06:00'
+lastmod: '2024-03-13T22:44:35.832889-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 pomys\u0142 jednowymiarowej linii liczbowej\
   \ o dwuwymiarow\u0105 p\u0142aszczyzn\u0119 zespolon\u0105. Programi\u015Bci u\u017C\

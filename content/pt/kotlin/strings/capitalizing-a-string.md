@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:40.227377-07:00
 description: "Capitalizar uma string na programa\xE7\xE3o envolve converter o primeiro\
   \ caractere da string em mai\xFAsculo, caso ele n\xE3o seja, o que \xE9 \xFAtil\
   \ para formatar\u2026"
-lastmod: '2024-03-11T00:14:20.228207-06:00'
+lastmod: '2024-03-13T22:44:46.524802-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string na programa\xE7\xE3o envolve converter o primeiro\
   \ caractere da string em mai\xFAsculo, caso ele n\xE3o seja, o que \xE9 \xFAtil\

@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:40.161345-07:00
 description: "Att avrunda tal, ett grundl\xE4ggande koncept inom dataprogrammering,\
   \ inneb\xE4r att justera ett tal till dess n\xE4rmaste heltal eller till ett angivet\
   \ antal\u2026"
-lastmod: '2024-03-11T00:14:10.740707-06:00'
+lastmod: '2024-03-13T22:44:37.432578-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal, ett grundl\xE4ggande koncept inom dataprogrammering, inneb\xE4\
   r att justera ett tal till dess n\xE4rmaste heltal eller till ett angivet antal\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:57.796549-07:00
 description: "Complexe getallen, bestaande uit een re\xEBel deel en een imaginair\
   \ deel (meestal geschreven als a + bi), maken berekeningen die onpraktisch of onmogelijk\u2026"
-lastmod: '2024-03-11T00:14:24.359984-06:00'
+lastmod: '2024-03-13T22:44:50.543933-06:00'
 model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel deel en een imaginair deel\
   \ (meestal geschreven als a + bi), maken berekeningen die onpraktisch of onmogelijk\u2026"

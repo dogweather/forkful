@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:49.826009-07:00
 description: "L'interpolazione di stringhe in Ruby permette di inserire dinamicamente\
   \ valori all'interno di una stringa. I programmatori la usano per costruire stringhe\u2026"
-lastmod: '2024-03-11T00:14:17.558698-06:00'
+lastmod: '2024-03-13T22:44:44.035725-06:00'
 model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe in Ruby permette di inserire dinamicamente\
   \ valori all'interno di una stringa. I programmatori la usano per costruire stringhe\u2026"

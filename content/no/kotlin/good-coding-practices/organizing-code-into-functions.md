@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:54.816217-07:00
 description: "\xC5 organisere koden i funksjoner betyr \xE5 dele programmet ditt opp\
   \ i gjenbrukbare deler, hver som h\xE5ndterer en spesifikk oppgave. Vi gj\xF8r dette\
   \ for \xE5 gj\xF8re\u2026"
-lastmod: '2024-03-11T00:14:14.309486-06:00'
+lastmod: '2024-03-13T22:44:40.756345-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 organisere koden i funksjoner betyr \xE5 dele programmet ditt opp i\
   \ gjenbrukbare deler, hver som h\xE5ndterer en spesifikk oppgave. Vi gj\xF8r dette\

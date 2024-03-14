@@ -3,7 +3,7 @@ date: 2024-01-26 04:29:08.275957-07:00
 description: "XML er et merkespr\xE5k for koding av dokumenter p\xE5 en m\xE5te som\
   \ er lesbar b\xE5de for mennesker og maskiner. Det er n\xF8kkel i webtjenester,\
   \ konfigurasjonsfiler\u2026"
-lastmod: '2024-03-11T00:14:13.950564-06:00'
+lastmod: '2024-03-13T22:44:40.426062-06:00'
 model: gpt-4-0125-preview
 summary: "XML er et merkespr\xE5k for koding av dokumenter p\xE5 en m\xE5te som er\
   \ lesbar b\xE5de for mennesker og maskiner. Det er n\xF8kkel i webtjenester, konfigurasjonsfiler\u2026"

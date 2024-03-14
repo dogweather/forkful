@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:26:04.976972-07:00
 description: "YAML, lyhennys sanoista \"YAML Ain't Markup Language\", on ihmisen luettavissa\
   \ oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n usein asetustiedostoissa\u2026"
-lastmod: '2024-03-11T00:14:30.670314-06:00'
+lastmod: '2024-03-13T22:44:56.716796-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, lyhennys sanoista \"YAML Ain't Markup Language\", on ihmisen luettavissa\
   \ oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n usein asetustiedostoissa\u2026"

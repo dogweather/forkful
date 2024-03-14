@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:58:12.466959-07:00
 description: "Ler um arquivo de texto com o Google Apps Script (GAS) envolve acessar\
   \ e extrair dados de texto de arquivos armazenados no Google Drive ou outro\u2026"
-lastmod: '2024-03-11T00:14:19.792925-06:00'
+lastmod: '2024-03-13T22:44:46.128002-06:00'
 model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto com o Google Apps Script (GAS) envolve acessar e\
   \ extrair dados de texto de arquivos armazenados no Google Drive ou outro\u2026"

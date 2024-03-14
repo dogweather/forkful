@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:08.774994-07:00
 description: "Reguliere expressies, of regex, is een krachtig patroonzoek- en -matchinghulpmiddel\
   \ in programmeren. Programmeurs gebruiken regex voor taken zoals het\u2026"
-lastmod: '2024-03-11T00:14:24.355833-06:00'
+lastmod: '2024-03-13T22:44:50.539871-06:00'
 model: gpt-4-0125-preview
 summary: "Reguliere expressies, of regex, is een krachtig patroonzoek- en -matchinghulpmiddel\
   \ in programmeren. Programmeurs gebruiken regex voor taken zoals het\u2026"

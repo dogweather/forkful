@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:14.746064-07:00
 description: "\xC5 s\xF8ke og erstatte tekst i programmering letter modifikasjon og\
   \ h\xE5ndtering av tekststrenger, som er en grunnleggende oppgave i databehandling\
   \ og\u2026"
-lastmod: '2024-03-11T00:14:13.762972-06:00'
+lastmod: '2024-03-13T22:44:40.248985-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 s\xF8ke og erstatte tekst i programmering letter modifikasjon og h\xE5\
   ndtering av tekststrenger, som er en grunnleggende oppgave i databehandling og\u2026"

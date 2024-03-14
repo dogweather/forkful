@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:29.063582-07:00
 description: "Schrijven naar standaardfout (`stderr`) betekent het verzenden van foutmeldingen\
   \ en diagnostiek naar een aparte stroom, los van reguliere uitvoer\u2026"
-lastmod: '2024-03-11T00:14:24.967547-06:00'
+lastmod: '2024-03-13T22:44:51.129589-06:00'
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (`stderr`) betekent het verzenden van foutmeldingen\
   \ en diagnostiek naar een aparte stroom, los van reguliere uitvoer\u2026"

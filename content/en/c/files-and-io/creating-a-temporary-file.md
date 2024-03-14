@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:22.461341-07:00
 description: "Creating a temporary file in C involves generating a file that is meant\
   \ to be used for a short duration, usually as scratch space for data processing\
   \ or\u2026"
-lastmod: '2024-03-11T00:14:34.414742-06:00'
+lastmod: '2024-03-13T22:45:00.528438-06:00'
 model: gpt-4-0125-preview
 summary: "Creating a temporary file in C involves generating a file that is meant\
   \ to be used for a short duration, usually as scratch space for data processing\

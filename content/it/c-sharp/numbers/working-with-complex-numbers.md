@@ -3,7 +3,7 @@ date: 2024-01-26 04:38:17.387910-07:00
 description: "I numeri complessi ampliano il nostro sistema numerico includendo i\
   \ numeri immaginari, permettendoci di risolvere equazioni che non hanno soluzioni\
   \ reali.\u2026"
-lastmod: '2024-03-11T00:14:17.015546-06:00'
+lastmod: '2024-03-13T22:44:43.428092-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi ampliano il nostro sistema numerico includendo i numeri\
   \ immaginari, permettendoci di risolvere equazioni che non hanno soluzioni reali.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:32:24.569574-07:00
 description: "Confrontare due date significa stabilire quale sia precedente, successiva\
   \ o se coincidano. Lo si fa per tracciare intervalli di tempo, gestire eventi e\u2026"
-lastmod: '2024-03-11T00:14:17.314163-06:00'
+lastmod: '2024-03-13T22:44:43.695187-06:00'
 model: gpt-4-1106-preview
 summary: "Confrontare due date significa stabilire quale sia precedente, successiva\
   \ o se coincidano. Lo si fa per tracciare intervalli di tempo, gestire eventi e\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-27 16:20:52.144967-07:00
 description: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga di\
   \ Comando) in Ruby ti consente di modificare i file direttamente dal tuo terminale,\u2026"
-lastmod: '2024-03-11T00:14:17.570033-06:00'
+lastmod: '2024-03-13T22:44:44.047319-06:00'
 model: gpt-4-0125-preview
 summary: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga di Comando)\
   \ in Ruby ti consente di modificare i file direttamente dal tuo terminale,\u2026"

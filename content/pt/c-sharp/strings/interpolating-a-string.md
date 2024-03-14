@@ -5,7 +5,7 @@ date: 2024-02-25 17:06:50.981967-07:00
 description: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string\
   \ incluindo express\xF5es dentro de um literal de string, facilitando a formata\xE7\
   \xE3o e a\u2026"
-lastmod: '2024-03-11T00:14:20.277409-06:00'
+lastmod: '2024-03-13T22:44:46.570454-06:00'
 model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string incluindo\
   \ express\xF5es dentro de um literal de string, facilitando a formata\xE7\xE3o e\

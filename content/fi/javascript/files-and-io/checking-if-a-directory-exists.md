@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:50.658188-07:00
 description: "Tiedoston olemassaolon tarkistaminen JavaScriptill\xE4 on olennainen\
   \ osa tiedostojen k\xE4sittelyteht\xE4vi\xE4, mik\xE4 mahdollistaa skriptien varmistaa\
   \ kansion\u2026"
-lastmod: '2024-03-11T00:14:31.006697-06:00'
+lastmod: '2024-03-13T22:44:56.964257-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedoston olemassaolon tarkistaminen JavaScriptill\xE4 on olennainen osa\
   \ tiedostojen k\xE4sittelyteht\xE4vi\xE4, mik\xE4 mahdollistaa skriptien varmistaa\

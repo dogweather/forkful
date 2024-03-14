@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:08:57.339456-07:00
 description: "\xC5 skrive tester i Google Apps Script (GAS) handler om \xE5 lage automatiserte\
   \ skript for \xE5 verifisere oppf\xF8rselen til kodene dine, og sikre at de fungerer\u2026"
-lastmod: '2024-03-11T00:14:13.835835-06:00'
+lastmod: '2024-03-13T22:44:40.317949-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Google Apps Script (GAS) handler om \xE5 lage automatiserte\
   \ skript for \xE5 verifisere oppf\xF8rselen til kodene dine, og sikre at de fungerer\u2026"

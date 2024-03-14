@@ -3,7 +3,7 @@ date: 2024-01-20 17:50:17.479268-07:00
 description: "Interpolacja string\xF3w pozwala na wstawienie warto\u015Bci zmiennych\
   \ bezpo\u015Brednio w ci\u0105g tekstowy. Programi\u015Bci u\u017Cywaj\u0105 jej,\
   \ aby \u0142atwiej formatowa\u0107 wiadomo\u015Bci i\u2026"
-lastmod: '2024-03-11T00:14:08.897321-06:00'
+lastmod: '2024-03-13T22:44:35.698959-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolacja string\xF3w pozwala na wstawienie warto\u015Bci zmiennych bezpo\u015B\
   rednio w ci\u0105g tekstowy. Programi\u015Bci u\u017Cywaj\u0105 jej, aby \u0142\

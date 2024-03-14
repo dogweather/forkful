@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:13.137785-07:00
 description: "W PowerShellu sprawdzanie, czy katalog istnieje, jest cz\u0119stym zadaniem,\
   \ kt\xF3re pomaga skryptom podejmowa\u0107 decyzje na podstawie struktury systemu\
   \ plik\xF3w -\u2026"
-lastmod: '2024-03-11T00:14:08.839346-06:00'
+lastmod: '2024-03-13T22:44:35.644380-06:00'
 model: gpt-4-0125-preview
 summary: "W PowerShellu sprawdzanie, czy katalog istnieje, jest cz\u0119stym zadaniem,\
   \ kt\xF3re pomaga skryptom podejmowa\u0107 decyzje na podstawie struktury systemu\

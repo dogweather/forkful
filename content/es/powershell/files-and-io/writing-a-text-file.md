@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:28:52.554308-07:00
 description: "Escribir un archivo de texto en PowerShell implica crear y manipular\
   \ archivos basados en texto, lo cual es una operaci\xF3n fundamental para el registro,\u2026"
-lastmod: '2024-03-11T00:14:33.131584-06:00'
+lastmod: '2024-03-13T22:44:59.310612-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en PowerShell implica crear y manipular archivos\
   \ basados en texto, lo cual es una operaci\xF3n fundamental para el registro,\u2026"

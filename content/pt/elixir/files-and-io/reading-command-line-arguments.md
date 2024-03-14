@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:52.862037-07:00
 description: "Ler argumentos da linha de comando permite que programas em Elixir recebam\
   \ dados externos quando s\xE3o iniciados, tornando-os customiz\xE1veis e flex\xED\
   veis.\u2026"
-lastmod: '2024-03-11T00:14:19.932943-06:00'
+lastmod: '2024-03-13T22:44:46.253360-06:00'
 model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando permite que programas em Elixir recebam\
   \ dados externos quando s\xE3o iniciados, tornando-os customiz\xE1veis e flex\xED\

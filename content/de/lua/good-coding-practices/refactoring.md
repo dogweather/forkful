@@ -2,7 +2,7 @@
 date: 2024-01-26 01:46:05.847630-07:00
 description: "Refactoring ist die Kunst, bestehenden Code so zu \xFCberarbeiten, dass\
   \ seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein\u2026"
-lastmod: '2024-03-11T00:14:27.921610-06:00'
+lastmod: '2024-03-13T22:44:54.023424-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist die Kunst, bestehenden Code so zu \xFCberarbeiten, dass\
   \ seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein\u2026"

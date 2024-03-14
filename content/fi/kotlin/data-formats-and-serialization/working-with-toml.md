@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:42.916722-07:00
 description: "TOML tarkoittaa Tom's Obvious, Minimal Language -kielt\xE4. Sit\xE4\
   \ k\xE4ytet\xE4\xE4n konfiguraatiotiedostoihin, koska se on ihmisten luettavissa\
   \ ja kirjoitettavissa\u2026"
-lastmod: '2024-03-11T00:14:30.500598-06:00'
+lastmod: '2024-03-13T22:44:56.554705-06:00'
 model: gpt-4-0125-preview
 summary: "TOML tarkoittaa Tom's Obvious, Minimal Language -kielt\xE4. Sit\xE4 k\xE4\
   ytet\xE4\xE4n konfiguraatiotiedostoihin, koska se on ihmisten luettavissa ja kirjoitettavissa\u2026"

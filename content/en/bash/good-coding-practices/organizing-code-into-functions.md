@@ -2,7 +2,7 @@
 date: 2024-01-25 02:59:53.827268-07:00
 description: "Splitting code into functions means breaking down scripts into smaller,\
   \ reusable blocks that do specific tasks. It makes the code cleaner, more\u2026"
-lastmod: '2024-03-11T00:14:34.116513-06:00'
+lastmod: '2024-03-13T22:45:00.249723-06:00'
 model: gpt-4-1106-preview
 summary: "Splitting code into functions means breaking down scripts into smaller,\
   \ reusable blocks that do specific tasks. It makes the code cleaner, more\u2026"

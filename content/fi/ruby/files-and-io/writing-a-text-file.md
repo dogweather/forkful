@@ -5,7 +5,7 @@ date: 2024-02-03 19:29:03.851304-07:00
 description: "Tekstitiedostoon kirjoittaminen Rubylla on perustoiminto, jonka avulla\
   \ voit tallentaa tulosteita ja tietoja pysyv\xE4sti, mahdollistaen datan my\xF6\
   hemp\xE4\xE4\u2026"
-lastmod: '2024-03-11T00:14:31.146646-06:00'
+lastmod: '2024-03-13T22:44:57.106102-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Rubylla on perustoiminto, jonka avulla voit\
   \ tallentaa tulosteita ja tietoja pysyv\xE4sti, mahdollistaen datan my\xF6hemp\xE4\

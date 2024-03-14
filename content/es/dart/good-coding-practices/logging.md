@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:58.882439-07:00
 description: "El registro en Dart se refiere al proceso de grabaci\xF3n de varios\
   \ niveles de informaci\xF3n durante la ejecuci\xF3n de un programa. Los programadores\
   \ lo hacen\u2026"
-lastmod: '2024-03-11T00:14:32.580235-06:00'
+lastmod: '2024-03-13T22:44:58.759129-06:00'
 model: gpt-4-0125-preview
 summary: "El registro en Dart se refiere al proceso de grabaci\xF3n de varios niveles\
   \ de informaci\xF3n durante la ejecuci\xF3n de un programa. Los programadores lo\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:23.496288-07:00
 description: "Procurar e substituir texto em PHP \xE9 como mudar uma palavra espec\xED\
   fica em um livro inteiro. Programadores fazem isso para atualizar dados, corrigir\
   \ erros\u2026"
-lastmod: '2024-03-11T00:14:20.365705-06:00'
+lastmod: '2024-03-13T22:44:46.652492-06:00'
 model: gpt-4-1106-preview
 summary: "Procurar e substituir texto em PHP \xE9 como mudar uma palavra espec\xED\
   fica em um livro inteiro. Programadores fazem isso para atualizar dados, corrigir\

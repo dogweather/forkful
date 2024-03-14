@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:29.518801-07:00
 description: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
   \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\
   \ er med sm\xE5\u2026"
-lastmod: '2024-03-11T00:14:14.720925-06:00'
+lastmod: '2024-03-13T22:44:41.125618-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
   \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\

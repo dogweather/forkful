@@ -3,7 +3,7 @@ date: 2024-01-20 17:43:04.326707-07:00
 description: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att du selektivt\
   \ raderar delar av en str\xE4ng baserat p\xE5 specifika kriterier, s\xE5som alla\
   \ siffror eller\u2026"
-lastmod: '2024-03-11T00:14:11.629432-06:00'
+lastmod: '2024-03-13T22:44:38.235805-06:00'
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att du selektivt\
   \ raderar delar av en str\xE4ng baserat p\xE5 specifika kriterier, s\xE5som alla\

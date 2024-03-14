@@ -3,7 +3,7 @@ date: 2024-01-26 04:36:37.615153-07:00
 description: "Les nombres complexes poss\xE8dent une partie r\xE9elle et une partie\
   \ imaginaire, g\xE9n\xE9ralement \xE9crites comme `a + bi`. Ils sont essentiels\
   \ pour certains projets\u2026"
-lastmod: '2024-03-11T00:14:32.009134-06:00'
+lastmod: '2024-03-13T22:44:58.102696-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes poss\xE8dent une partie r\xE9elle et une partie imaginaire,\
   \ g\xE9n\xE9ralement \xE9crites comme `a + bi`. Ils sont essentiels pour certains\

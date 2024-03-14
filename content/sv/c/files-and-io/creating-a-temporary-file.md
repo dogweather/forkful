@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:51.091691-07:00
 description: "Att skapa en tempor\xE4r fil i C inneb\xE4r att generera en fil som\
   \ \xE4r avsedd att anv\xE4ndas under en kort tid, vanligtvis som skr\xE4putrymme\
   \ f\xF6r databehandling\u2026"
-lastmod: '2024-03-11T00:14:11.809101-06:00'
+lastmod: '2024-03-13T22:44:38.404495-06:00'
 model: gpt-4-0125-preview
 summary: "Att skapa en tempor\xE4r fil i C inneb\xE4r att generera en fil som \xE4\
   r avsedd att anv\xE4ndas under en kort tid, vanligtvis som skr\xE4putrymme f\xF6\

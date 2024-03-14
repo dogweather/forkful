@@ -3,7 +3,7 @@ date: 2024-01-26 03:42:16.092336-07:00
 description: "Supprimer les guillemets d'une cha\xEEne en Rust consiste \xE0 \xE9\
   liminer les caract\xE8res de guillemets superflus qui pourraient \xEAtre imbriqu\xE9\
   s autour de vos\u2026"
-lastmod: '2024-03-11T00:14:31.484949-06:00'
+lastmod: '2024-03-13T22:44:57.469257-06:00'
 model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne en Rust consiste \xE0 \xE9liminer\
   \ les caract\xE8res de guillemets superflus qui pourraient \xEAtre imbriqu\xE9s\

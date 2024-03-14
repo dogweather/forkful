@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:58.548786-07:00
 description: "\"Mit\xE4 ja Miksi?\" Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4t merkkijonoksi\
   \ tarkoittaa p\xE4iv\xE4m\xE4\xE4r\xE4n esitt\xE4mist\xE4 luettavassa muodossa.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta\u2026"
-lastmod: '2024-03-11T00:14:30.443025-06:00'
+lastmod: '2024-03-13T22:44:56.500131-06:00'
 model: gpt-4-1106-preview
 summary: "\"Mit\xE4 ja Miksi?\" Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4t merkkijonoksi\
   \ tarkoittaa p\xE4iv\xE4m\xE4\xE4r\xE4n esitt\xE4mist\xE4 luettavassa muodossa.\

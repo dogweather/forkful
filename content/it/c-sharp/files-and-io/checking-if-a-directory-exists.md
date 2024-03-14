@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:06.823694-07:00
 description: "Controllare se una directory esiste in C# implica verificare la presenza\
   \ di una cartella in un percorso specificato nel file system. I programmatori lo\u2026"
-lastmod: '2024-03-11T00:14:17.037577-06:00'
+lastmod: '2024-03-13T22:44:43.447996-06:00'
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in C# implica verificare la presenza\
   \ di una cartella in un percorso specificato nel file system. I programmatori lo\u2026"

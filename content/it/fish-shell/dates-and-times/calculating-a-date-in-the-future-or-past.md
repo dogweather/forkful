@@ -3,7 +3,7 @@ date: 2024-01-20 17:30:46.587676-07:00
 description: "Calcolare una data nel futuro o nel passato significa semplicemente\
   \ aggiungere o sottrarre giorni a una data esistente. I programmatori fanno ci\xF2\
   \ per\u2026"
-lastmod: '2024-03-11T00:14:17.494823-06:00'
+lastmod: '2024-03-13T22:44:43.872847-06:00'
 model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato significa semplicemente aggiungere\
   \ o sottrarre giorni a una data esistente. I programmatori fanno ci\xF2 per\u2026"

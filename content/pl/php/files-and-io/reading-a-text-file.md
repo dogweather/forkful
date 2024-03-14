@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:57.683300-07:00
 description: "Czytanie pliku tekstowego to proces pobierania danych zawartych w pliku\
   \ tekstowym do dalszego przetwarzania. Programi\u015Bci robi\u0105 to, by obs\u0142\
   ugiwa\u0107\u2026"
-lastmod: '2024-03-11T00:14:08.701664-06:00'
+lastmod: '2024-03-13T22:44:35.514941-06:00'
 model: gpt-4-1106-preview
 summary: "Czytanie pliku tekstowego to proces pobierania danych zawartych w pliku\
   \ tekstowym do dalszego przetwarzania. Programi\u015Bci robi\u0105 to, by obs\u0142\

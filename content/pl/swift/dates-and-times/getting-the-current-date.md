@@ -5,7 +5,7 @@ date: 2024-02-03 19:11:19.542755-07:00
 description: "Pobieranie aktualnej daty w j\u0119zyku Swift polega na u\u017Cyciu\
   \ klasy `Date`, aby uzyska\u0107 dost\u0119p do daty i czasu, w kt\xF3rym aplikacja\
   \ jest uruchamiana.\u2026"
-lastmod: '2024-03-11T00:14:08.971669-06:00'
+lastmod: '2024-03-13T22:44:35.765220-06:00'
 model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w j\u0119zyku Swift polega na u\u017Cyciu klasy\
   \ `Date`, aby uzyska\u0107 dost\u0119p do daty i czasu, w kt\xF3rym aplikacja jest\

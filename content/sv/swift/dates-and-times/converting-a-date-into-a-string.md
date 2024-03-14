@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:35.676739-07:00
 description: "Omvandling av datum till str\xE4ng inneb\xE4r att ta ett datumobjekt\
   \ och g\xF6ra om det till l\xE4sbar text. Detta g\xF6rs f\xF6r att visa datum f\xF6\
   r anv\xE4ndare eller f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:11.658985-06:00'
+lastmod: '2024-03-13T22:44:38.262401-06:00'
 model: gpt-4-1106-preview
 summary: "Omvandling av datum till str\xE4ng inneb\xE4r att ta ett datumobjekt och\
   \ g\xF6ra om det till l\xE4sbar text. Detta g\xF6rs f\xF6r att visa datum f\xF6\

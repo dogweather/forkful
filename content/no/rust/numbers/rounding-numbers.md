@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:56.343049-07:00
 description: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste hele tall\
   \ eller en br\xF8kdel med en viss presisjon. Programmerere runder av tall for \xE5\
   \ forenkle verdier for\u2026"
-lastmod: '2024-03-11T00:14:14.103126-06:00'
+lastmod: '2024-03-13T22:44:40.569050-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste hele tall eller\
   \ en br\xF8kdel med en viss presisjon. Programmerere runder av tall for \xE5 forenkle\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:05:16.950022-07:00
 description: "Das Gro\xDFschreiben eines Strings beinhaltet die Umwandlung des ersten\
   \ Buchstabens eines gegebenen Strings in einen Gro\xDFbuchstaben, w\xE4hrend sichergestellt\u2026"
-lastmod: '2024-03-11T00:14:27.810743-06:00'
+lastmod: '2024-03-13T22:44:53.914448-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Umwandlung des ersten\
   \ Buchstabens eines gegebenen Strings in einen Gro\xDFbuchstaben, w\xE4hrend sichergestellt\u2026"

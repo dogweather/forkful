@@ -5,7 +5,7 @@ date: 2024-03-08 21:54:40.310443-07:00
 description: "Das Abrufen des aktuellen Datums in Dart beinhaltet eine Anfrage an\
   \ das System nach dem aktuellen Datum und der Uhrzeit. Diese Funktionalit\xE4t wird\
   \ h\xE4ufig\u2026"
-lastmod: '2024-03-11T00:14:27.487049-06:00'
+lastmod: '2024-03-13T22:44:53.592375-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Dart beinhaltet eine Anfrage an das\
   \ System nach dem aktuellen Datum und der Uhrzeit. Diese Funktionalit\xE4t wird\

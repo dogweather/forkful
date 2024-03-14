@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:06.523323-07:00
 description: "Omforming av strenger til sm\xE5 bokstaver betyr \xE5 konvertere alle\
   \ tegn i en streng til deres tilsvarende sm\xE5 bokstavform. Programmerere gj\xF8\
   r dette for data-\u2026"
-lastmod: '2024-03-11T00:14:14.679444-06:00'
+lastmod: '2024-03-13T22:44:41.086489-06:00'
 model: gpt-4-1106-preview
 summary: "Omforming av strenger til sm\xE5 bokstaver betyr \xE5 konvertere alle tegn\
   \ i en streng til deres tilsvarende sm\xE5 bokstavform. Programmerere gj\xF8r dette\

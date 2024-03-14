@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:53.222145-07:00
 description: "Organizowanie kodu w funkcje oznacza podzielenie programu-potwora na\
   \ zarz\u0105dzalne kawa\u0142ki, z kt\xF3rych ka\u017Cdy pe\u0142ni odr\u0119bne\
   \ zadanie. Programi\u015Bci robi\u0105 to, aby\u2026"
-lastmod: '2024-03-11T00:14:08.460988-06:00'
+lastmod: '2024-03-13T22:44:35.282767-06:00'
 model: gpt-4-1106-preview
 summary: "Organizowanie kodu w funkcje oznacza podzielenie programu-potwora na zarz\u0105\
   dzalne kawa\u0142ki, z kt\xF3rych ka\u017Cdy pe\u0142ni odr\u0119bne zadanie. Programi\u015B\

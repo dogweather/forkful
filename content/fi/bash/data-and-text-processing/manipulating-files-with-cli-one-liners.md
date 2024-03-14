@@ -3,7 +3,7 @@ date: 2024-01-27 16:21:19.902608-07:00
 description: "Tiedostojen k\xE4sittely komentorivilt\xE4 (CLI, Command Line Interface)\
   \ yksirivisill\xE4 komennoilla tarkoittaa Bash-skriptien tai -komentojen k\xE4ytt\xF6\
   \xE4\u2026"
-lastmod: '2024-03-11T00:14:30.689960-06:00'
+lastmod: '2024-03-13T22:44:56.734429-06:00'
 model: gpt-4-0125-preview
 summary: "Tiedostojen k\xE4sittely komentorivilt\xE4 (CLI, Command Line Interface)\
   \ yksirivisill\xE4 komennoilla tarkoittaa Bash-skriptien tai -komentojen k\xE4ytt\xF6\

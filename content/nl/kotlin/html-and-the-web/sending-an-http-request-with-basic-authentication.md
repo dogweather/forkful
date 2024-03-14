@@ -5,7 +5,7 @@ date: 2024-01-28 22:08:06.885023-07:00
 description: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie\
   \ op een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier\
   \ om te\u2026"
-lastmod: '2024-03-11T00:14:24.590841-06:00'
+lastmod: '2024-03-13T22:44:50.767337-06:00'
 model: gpt-4-0125-preview
 summary: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie op\
   \ een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier om\

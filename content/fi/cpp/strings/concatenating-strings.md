@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:30.696372-07:00
 description: "Stringien yhdist\xE4minen tarkoittaa yksinkertaisesti kahden tai useamman\
   \ merkkijonon liitt\xE4mist\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi\
   \ muodostaakseen\u2026"
-lastmod: '2024-03-11T00:14:30.887680-06:00'
+lastmod: '2024-03-13T22:44:56.857118-06:00'
 model: gpt-4-1106-preview
 summary: "Stringien yhdist\xE4minen tarkoittaa yksinkertaisesti kahden tai useamman\
   \ merkkijonon liitt\xE4mist\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi\

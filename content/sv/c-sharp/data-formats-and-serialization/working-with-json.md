@@ -5,7 +5,7 @@ date: 2024-02-03 19:22:14.487609-07:00
 description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att parse:a,\
   \ generera och fr\xE5ga JSON-data, vilket g\xF6r det till en kritisk f\xE4rdighet\
   \ f\xF6r modern\u2026"
-lastmod: '2024-03-11T00:14:11.298892-06:00'
+lastmod: '2024-03-13T22:44:37.934790-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att parse:a,\
   \ generera och fr\xE5ga JSON-data, vilket g\xF6r det till en kritisk f\xE4rdighet\

@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:44.156330-07:00
 description: "Parsing a date from a string in Elixir involves converting text representations\
   \ of dates and times into Elixir's native date structures, allowing for more\u2026"
-lastmod: '2024-03-11T00:14:33.647018-06:00'
+lastmod: '2024-03-13T22:44:59.790626-06:00'
 model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Elixir involves converting text representations\
   \ of dates and times into Elixir's native date structures, allowing for more\u2026"

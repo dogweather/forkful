@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:13.448689-07:00
 description: "Converting a date to a string in Elixir turns the date from a struct\
   \ into a readable series of characters for display or storage. Programmers do it\
   \ to\u2026"
-lastmod: '2024-03-11T00:14:33.649195-06:00'
+lastmod: '2024-03-13T22:44:59.792472-06:00'
 model: gpt-4-1106-preview
 summary: "Converting a date to a string in Elixir turns the date from a struct into\
   \ a readable series of characters for display or storage. Programmers do it to\u2026"

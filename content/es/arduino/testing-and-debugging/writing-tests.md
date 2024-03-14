@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:29.588196-07:00
 description: "Escribir pruebas en el entorno de Arduino se refiere al proceso de crear\
   \ pruebas automatizadas que validan la funcionalidad de tu c\xF3digo en dispositivos\u2026"
-lastmod: '2024-03-11T00:14:33.158986-06:00'
+lastmod: '2024-03-13T22:44:59.336808-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir pruebas en el entorno de Arduino se refiere al proceso de crear\
   \ pruebas automatizadas que validan la funcionalidad de tu c\xF3digo en dispositivos\u2026"

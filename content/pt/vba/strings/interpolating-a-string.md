@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:40.129537-07:00
 description: "Interpola\xE7\xE3o de string em Visual Basic for Applications (VBA)\
   \ refere-se ao processo de embutir vari\xE1veis ou express\xF5es dentro de uma literal\
   \ de string,\u2026"
-lastmod: '2024-03-11T00:14:20.090178-06:00'
+lastmod: '2024-03-13T22:44:46.396411-06:00'
 model: gpt-4-0125-preview
 summary: "Interpola\xE7\xE3o de string em Visual Basic for Applications (VBA) refere-se\
   \ ao processo de embutir vari\xE1veis ou express\xF5es dentro de uma literal de\

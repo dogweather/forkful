@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:33.615488-07:00
 description: "JavaScript scripts often need input\u2014the kind you pass along when\
   \ you run them. Reading command line arguments lets a program act on that input,\
   \ tailoring\u2026"
-lastmod: '2024-03-11T00:14:23.829140-06:00'
+lastmod: '2024-03-13T22:44:50.020317-06:00'
 model: gpt-4-1106-preview
 summary: "JavaScript scripts often need input\u2014the kind you pass along when you\
   \ run them. Reading command line arguments lets a program act on that input, tailoring\u2026"

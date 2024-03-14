@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:13:01.919353-07:00
 description: "HTML zu parsen bedeutet, ein St\xFCck HTML-Code zu zerlegen, um seine\
   \ Struktur und seinen Inhalt zu erfassen. Programmierer machen das, um Daten zu\u2026"
-lastmod: '2024-03-11T00:14:28.310907-06:00'
+lastmod: '2024-03-13T22:44:54.398413-06:00'
 model: gpt-4-0125-preview
 summary: "HTML zu parsen bedeutet, ein St\xFCck HTML-Code zu zerlegen, um seine Struktur\
   \ und seinen Inhalt zu erfassen. Programmierer machen das, um Daten zu\u2026"

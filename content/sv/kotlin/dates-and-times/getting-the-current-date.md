@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:15.094121-07:00
 description: "I programmering \xE4r att f\xE5 fram dagens datum en grundl\xE4ggande\
   \ uppgift som m\xF6jligg\xF6r f\xF6r utvecklare att f\xE5 tillg\xE5ng till, visa\
   \ eller manipulera det aktuella\u2026"
-lastmod: '2024-03-11T00:14:11.238631-06:00'
+lastmod: '2024-03-13T22:44:37.881667-06:00'
 model: gpt-4-0125-preview
 summary: "I programmering \xE4r att f\xE5 fram dagens datum en grundl\xE4ggande uppgift\
   \ som m\xF6jligg\xF6r f\xF6r utvecklare att f\xE5 tillg\xE5ng till, visa eller manipulera\

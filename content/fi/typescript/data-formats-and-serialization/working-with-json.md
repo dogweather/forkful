@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:43.080864-07:00
 description: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa sis\xE4lt\xE4\
   \xE4 JSON-datan j\xE4sent\xE4mist\xE4 edestakaisin TypeScriptiss\xE4 k\xE4ytett\xE4\
   v\xE4\xE4n muotoon. Ohjelmoijat\u2026"
-lastmod: '2024-03-11T00:14:30.269930-06:00'
+lastmod: '2024-03-13T22:44:56.336374-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa sis\xE4lt\xE4\xE4\
   \ JSON-datan j\xE4sent\xE4mist\xE4 edestakaisin TypeScriptiss\xE4 k\xE4ytett\xE4\

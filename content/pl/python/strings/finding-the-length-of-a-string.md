@@ -3,7 +3,7 @@ date: 2024-01-20 17:48:11.871397-07:00
 description: "Zliczanie znak\xF3w w ci\u0105gu znak\xF3w to podstawa. Programi\u015B\
   ci robi\u0105 to, by wiedzie\u0107, ile danych maj\u0105 przed sob\u0105 \u2013\
   \ czy to waliduj\u0105c input, formatuj\u0105c tekst, czy\u2026"
-lastmod: '2024-03-11T00:14:08.112668-06:00'
+lastmod: '2024-03-13T22:44:34.939747-06:00'
 model: gpt-4-1106-preview
 summary: "Zliczanie znak\xF3w w ci\u0105gu znak\xF3w to podstawa. Programi\u015Bci\
   \ robi\u0105 to, by wiedzie\u0107, ile danych maj\u0105 przed sob\u0105 \u2013 czy\

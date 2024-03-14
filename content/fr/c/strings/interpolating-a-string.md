@@ -5,7 +5,7 @@ date: 2024-02-03 17:58:19.558373-07:00
 description: "L'interpolation de cha\xEEnes, en programmation, implique la construction\
   \ de cha\xEEnes de caract\xE8res en int\xE9grant des expressions \xE0 l'int\xE9\
   rieur de cha\xEEnes\u2026"
-lastmod: '2024-03-11T00:14:32.227616-06:00'
+lastmod: '2024-03-13T22:44:58.355707-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolation de cha\xEEnes, en programmation, implique la construction\
   \ de cha\xEEnes de caract\xE8res en int\xE9grant des expressions \xE0 l'int\xE9\

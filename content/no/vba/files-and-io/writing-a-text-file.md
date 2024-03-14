@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:24.685030-07:00
 description: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
   \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\
   \ oppgave\u2026"
-lastmod: '2024-03-11T00:14:14.180543-06:00'
+lastmod: '2024-03-13T22:44:40.641426-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
   \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\

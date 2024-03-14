@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:10.612838-07:00
 description: "We send an HTTP request with basic authentication to access protected\
   \ resources by including user credentials in the request header. Programmers use\
   \ it\u2026"
-lastmod: '2024-03-11T00:14:33.952522-06:00'
+lastmod: '2024-03-13T22:45:00.088380-06:00'
 model: gpt-4-1106-preview
 summary: "We send an HTTP request with basic authentication to access protected resources\
   \ by including user credentials in the request header. Programmers use it\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:24.557245-07:00
 description: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
   \ dans notre programme. Les programmeurs le font pour manipuler des donn\xE9es,\
   \ configurer\u2026"
-lastmod: '2024-03-11T00:14:31.800842-06:00'
+lastmod: '2024-03-13T22:44:57.851947-06:00'
 model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
   \ dans notre programme. Les programmeurs le font pour manipuler des donn\xE9es,\

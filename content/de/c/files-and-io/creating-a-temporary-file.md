@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:18.781310-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei in C bedeutet, eine Datei zu\
   \ generieren, die f\xFCr eine kurze Dauer gedacht ist, \xFCblicherweise als Zwischenspeicher\
   \ f\xFCr\u2026"
-lastmod: '2024-03-11T00:14:28.285218-06:00'
+lastmod: '2024-03-13T22:44:54.374262-06:00'
 model: gpt-4-0125-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei in C bedeutet, eine Datei zu generieren,\
   \ die f\xFCr eine kurze Dauer gedacht ist, \xFCblicherweise als Zwischenspeicher\

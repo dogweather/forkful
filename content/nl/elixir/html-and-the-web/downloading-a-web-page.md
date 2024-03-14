@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:58:55.981178-07:00
 description: "Een webpagina downloaden betekent het ophalen van de inhoud ervan via\
   \ het internet\u2014essentieel, wat je browser doet. Programmeurs doen dit om\u2026"
-lastmod: '2024-03-11T00:14:24.273915-06:00'
+lastmod: '2024-03-13T22:44:50.460816-06:00'
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het ophalen van de inhoud ervan via het\
   \ internet\u2014essentieel, wat je browser doet. Programmeurs doen dit om\u2026"

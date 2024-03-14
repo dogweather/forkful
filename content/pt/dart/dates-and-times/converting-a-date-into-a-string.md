@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:57.127309-07:00
 description: "Converter uma data em uma string em Dart \xE9 uma tarefa comum quando\
   \ voc\xEA precisa exibir informa\xE7\xF5es de data e hora em um formato leg\xED\
   vel por humanos, ou\u2026"
-lastmod: '2024-03-11T00:14:19.977758-06:00'
+lastmod: '2024-03-13T22:44:46.294039-06:00'
 model: gpt-4-0125-preview
 summary: "Converter uma data em uma string em Dart \xE9 uma tarefa comum quando voc\xEA\
   \ precisa exibir informa\xE7\xF5es de data e hora em um formato leg\xEDvel por humanos,\

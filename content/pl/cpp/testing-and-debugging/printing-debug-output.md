@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:57.399643-07:00
 description: "Drukowanie informacji debug jest jak dziennik programisty. Pomaga \u015B\
   ledzi\u0107 co si\u0119 dzieje w kodzie \u2014 kiedy, gdzie i dlaczego. Programi\u015B\
   ci u\u017Cywaj\u0105 tej\u2026"
-lastmod: '2024-03-11T00:14:08.915086-06:00'
+lastmod: '2024-03-13T22:44:35.715522-06:00'
 model: gpt-4-1106-preview
 summary: "Drukowanie informacji debug jest jak dziennik programisty. Pomaga \u015B\
   ledzi\u0107 co si\u0119 dzieje w kodzie \u2014 kiedy, gdzie i dlaczego. Programi\u015B\

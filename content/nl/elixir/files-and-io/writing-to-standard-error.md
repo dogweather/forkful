@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:16.228291-07:00
 description: "Schrijven naar de standaardfout (`stderr`) betekent het uitvoeren van\
   \ tekst die geen deel uitmaakt van de hoofdprogrammagegevens, maar die fouten of\u2026"
-lastmod: '2024-03-11T00:14:24.292018-06:00'
+lastmod: '2024-03-13T22:44:50.478478-06:00'
 model: gpt-4-0125-preview
 summary: "Schrijven naar de standaardfout (`stderr`) betekent het uitvoeren van tekst\
   \ die geen deel uitmaakt van de hoofdprogrammagegevens, maar die fouten of\u2026"

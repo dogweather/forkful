@@ -5,7 +5,7 @@ description: "String interpolation \u090F\u0915 method \u0939\u0948 \u091C\u093F
   \ \u092E\u0947\u0902 directly \u0907\u0928\u094D\u0938\u0930\u094D\u091F \u0915\u0930\
   \ \u0938\u0915\u0924\u0947 \u0939\u0948\u0902. \u092F\u0947 programmers \u0915\u094B\
   \ repetitive string\u2026"
-lastmod: '2024-03-11T00:14:26.911892-06:00'
+lastmod: '2024-03-13T22:44:52.966561-06:00'
 model: gpt-4-1106-preview
 summary: "String interpolation \u090F\u0915 method \u0939\u0948 \u091C\u093F\u0938\
   \u0938\u0947 \u0939\u092E variables \u0914\u0930 expressions \u0915\u094B strings\

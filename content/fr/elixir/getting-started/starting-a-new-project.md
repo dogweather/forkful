@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:15.779659-07:00
 description: "Le d\xE9marrage d'un nouveau projet, c'est un peu aller \xE0 l'aventure\
   \ avec Elixir : on commence avec une id\xE9e et des outils pour cr\xE9er quelque\
   \ chose d'utile\u2026"
-lastmod: '2024-03-11T00:14:31.359608-06:00'
+lastmod: '2024-03-13T22:44:57.327735-06:00'
 model: gpt-4-1106-preview
 summary: "Le d\xE9marrage d'un nouveau projet, c'est un peu aller \xE0 l'aventure\
   \ avec Elixir : on commence avec une id\xE9e et des outils pour cr\xE9er quelque\

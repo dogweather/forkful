@@ -5,7 +5,7 @@ date: 2024-01-28 21:59:41.441612-07:00
 description: "Bestanden ter plaatse bewerken met CLI one-liners in PowerShell gaat\
   \ over het direct wijzigen van bestanden vanaf de opdrachtregel, zonder de noodzaak\
   \ om\u2026"
-lastmod: '2024-03-11T00:14:24.858397-06:00'
+lastmod: '2024-03-13T22:44:51.024962-06:00'
 model: gpt-4-0125-preview
 summary: "Bestanden ter plaatse bewerken met CLI one-liners in PowerShell gaat over\
   \ het direct wijzigen van bestanden vanaf de opdrachtregel, zonder de noodzaak om\u2026"

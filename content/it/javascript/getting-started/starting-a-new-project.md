@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:59.259362-07:00
 description: "Partire con un nuovo progetto JavaScript significa gettare le basi per\
   \ un\u2019applicazione. I programmatori lo fanno per trasformare idee in realt\xE0\
   \ digitale,\u2026"
-lastmod: '2024-03-11T00:14:17.430960-06:00'
+lastmod: '2024-03-13T22:44:43.812843-06:00'
 model: gpt-4-1106-preview
 summary: "Partire con un nuovo progetto JavaScript significa gettare le basi per un\u2019\
   applicazione. I programmatori lo fanno per trasformare idee in realt\xE0 digitale,\u2026"

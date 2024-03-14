@@ -9,7 +9,7 @@ description: "CSV\uFF08Comma-Separated Values\uFF09\u306F\u30C7\u30FC\u30BF\u309
   \u3067\u4E92\u63DB\u6027\u3092\u6301\u305F\u305B\u308B\u305F\u3081\u306B\u4F7F\u3044\
   \u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-11T00:14:15.443461-06:00'
+lastmod: '2024-03-13T22:44:41.853442-06:00'
 model: unknown
 summary: "CSV\uFF08Comma-Separated Values\uFF09\u306F\u30C7\u30FC\u30BF\u3092\u4FDD\
   \u5B58\u3059\u308B\u306E\u306B\u3088\u304F\u4F7F\u308F\u308C\u308B\u30B7\u30F3\u30D7\

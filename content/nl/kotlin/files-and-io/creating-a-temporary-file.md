@@ -5,7 +5,7 @@ date: 2024-01-28 21:58:20.033308-07:00
 description: "Een tijdelijk bestand aanmaken is het cre\xEBren van een bestand dat\
   \ bedoeld is om op korte termijn op je bestandssysteem te leven, vaak voor dingen\
   \ zoals\u2026"
-lastmod: '2024-03-11T00:14:24.611115-06:00'
+lastmod: '2024-03-13T22:44:50.787154-06:00'
 model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand aanmaken is het cre\xEBren van een bestand dat bedoeld\
   \ is om op korte termijn op je bestandssysteem te leven, vaak voor dingen zoals\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:24.925853-07:00
 description: "Controllare se una directory esiste \xE8 un'operazione fondamentale\
   \ in molti compiti di programmazione, permettendo di eseguire azioni condizionali\
   \ basate\u2026"
-lastmod: '2024-03-11T00:14:17.083210-06:00'
+lastmod: '2024-03-13T22:44:43.489646-06:00'
 model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale in molti\
   \ compiti di programmazione, permettendo di eseguire azioni condizionali basate\u2026"

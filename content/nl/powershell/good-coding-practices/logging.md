@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:02:45.905587-07:00
 description: "Loggen is in feite een broodkruimelspoor achterlaten door je code -\
   \ het is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait.\u2026"
-lastmod: '2024-03-11T00:14:24.870493-06:00'
+lastmod: '2024-03-13T22:44:51.036159-06:00'
 model: gpt-4-0125-preview
 summary: "Loggen is in feite een broodkruimelspoor achterlaten door je code - het\
   \ is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait.\u2026"

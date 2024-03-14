@@ -10,7 +10,7 @@ description: "Google Apps Script \u092E\u0947\u0902 CSV (Comma-Separated Values)
   \ \u0915\u0930\u0928\u0947, \u0914\u0930 \u0932\u093F\u0916\u0928\u0947 \u0915\u093E\
   \ \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E \u0939\u0948 \u091C\u0939\
   \u093E\u0901\u2026"
-lastmod: '2024-03-11T00:14:25.388099-06:00'
+lastmod: '2024-03-13T22:44:51.555023-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script \u092E\u0947\u0902 CSV (Comma-Separated Values) \u092B\
   \u093E\u0907\u0932\u094B\u0902 \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E\

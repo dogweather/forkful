@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:28.687588-07:00
 description: "Att arbeta med JSON i Lua inneb\xE4r att tolka JSON-formaterade str\xE4\
   ngar till Lua-tabeller och tv\xE4rtom, vilket m\xF6jligg\xF6r enkel data\xF6verf\xF6\
   ring mellan Lua-\u2026"
-lastmod: '2024-03-11T00:14:11.438520-06:00'
+lastmod: '2024-03-13T22:44:38.060162-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Lua inneb\xE4r att tolka JSON-formaterade str\xE4\
   ngar till Lua-tabeller och tv\xE4rtom, vilket m\xF6jligg\xF6r enkel data\xF6verf\xF6\

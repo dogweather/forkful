@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:15.642805-07:00
 description: "Leer un archivo de texto en C involucra abrir un archivo en tu sistema\
   \ para extraer informaci\xF3n y manipularla o mostrarla seg\xFAn sea necesario.\
   \ Los\u2026"
-lastmod: '2024-03-11T00:14:33.402595-06:00'
+lastmod: '2024-03-13T22:44:59.564818-06:00'
 model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en C involucra abrir un archivo en tu sistema para\
   \ extraer informaci\xF3n y manipularla o mostrarla seg\xFAn sea necesario. Los\u2026"

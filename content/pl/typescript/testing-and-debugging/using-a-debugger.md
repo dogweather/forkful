@@ -3,7 +3,7 @@ date: 2024-01-26 04:11:28.219967-07:00
 description: "Debugger to narz\u0119dzie, kt\xF3re pozwala bada\u0107 i modyfikowa\u0107\
   \ wewn\u0119trzne dzia\u0142anie kodu podczas jego wykonywania. Programi\u015Bci\
   \ u\u017Cywaj\u0105 go do znajdowania i\u2026"
-lastmod: '2024-03-11T00:14:08.317122-06:00'
+lastmod: '2024-03-13T22:44:35.143625-06:00'
 model: gpt-4-0125-preview
 summary: "Debugger to narz\u0119dzie, kt\xF3re pozwala bada\u0107 i modyfikowa\u0107\
   \ wewn\u0119trzne dzia\u0142anie kodu podczas jego wykonywania. Programi\u015Bci\

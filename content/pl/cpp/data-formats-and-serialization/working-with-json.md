@@ -5,7 +5,7 @@ date: 2024-02-03 19:21:56.795905-07:00
 description: "JSON (JavaScript Object Notation) to lekki format s\u0142u\u017C\u0105\
   cy do przechowywania i transportowania danych, co czyni go doskona\u0142ym medium\
   \ do wymiany danych\u2026"
-lastmod: '2024-03-11T00:14:08.937145-06:00'
+lastmod: '2024-03-13T22:44:35.734153-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) to lekki format s\u0142u\u017C\u0105cy\
   \ do przechowywania i transportowania danych, co czyni go doskona\u0142ym medium\

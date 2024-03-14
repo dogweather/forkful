@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:06.879237-07:00
 description: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string, tipo\
   \ cortar s\xF3 um peda\xE7o do texto. Programadores fazem isso para manipular e\
   \ usar informa\xE7\xF5es\u2026"
-lastmod: '2024-03-11T00:14:20.686491-06:00'
+lastmod: '2024-03-13T22:44:46.951919-06:00'
 model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string, tipo\
   \ cortar s\xF3 um peda\xE7o do texto. Programadores fazem isso para manipular e\

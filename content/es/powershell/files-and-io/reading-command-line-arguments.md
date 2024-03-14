@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:36.282960-07:00
 description: "Leer argumentos de la l\xEDnea de comandos permite a los scripts de\
   \ PowerShell recibir informaci\xF3n externa al ejecutarse. Los programadores usan\
   \ esta t\xE9cnica\u2026"
-lastmod: '2024-03-11T00:14:33.128220-06:00'
+lastmod: '2024-03-13T22:44:59.307659-06:00'
 model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite a los scripts de PowerShell\
   \ recibir informaci\xF3n externa al ejecutarse. Los programadores usan esta t\xE9\

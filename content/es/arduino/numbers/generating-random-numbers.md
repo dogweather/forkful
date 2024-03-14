@@ -2,7 +2,7 @@
 date: 2024-01-27 20:32:31.200700-07:00
 description: "Generar n\xFAmeros aleatorios en proyectos de Arduino involucra producir\
   \ valores que son impredecibles por dise\xF1o, crucial para aplicaciones como juegos,\u2026"
-lastmod: '2024-03-11T00:14:33.151952-06:00'
+lastmod: '2024-03-13T22:44:59.330102-06:00'
 model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en proyectos de Arduino involucra producir\
   \ valores que son impredecibles por dise\xF1o, crucial para aplicaciones como juegos,\u2026"

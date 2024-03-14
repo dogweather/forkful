@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:15.492126-07:00
 description: "Writing a text file in PHP involves creating or opening a file and inserting\
   \ content into it. Programmers do this to persist data, like user-generated\u2026"
-lastmod: '2024-03-11T00:14:34.048281-06:00'
+lastmod: '2024-03-13T22:45:00.183658-06:00'
 model: gpt-4-0125-preview
 summary: "Writing a text file in PHP involves creating or opening a file and inserting\
   \ content into it. Programmers do this to persist data, like user-generated\u2026"

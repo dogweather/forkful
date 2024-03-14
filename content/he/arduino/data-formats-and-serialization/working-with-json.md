@@ -10,7 +10,7 @@ description: "JSON, \u05D0\u05D5 JavaScript Object Notation, \u05D4\u05D5\u05D0 
   \ \u05EA\u05E6\u05D5\u05E8\u05D4 \u05D1\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\
   \u05DD \u05E9\u05DC Arduino. \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05DE\u05E9\u05EA\
   \u05DE\u05E9\u05D9\u05DD \u05D1\u05D5\u2026"
-lastmod: '2024-03-11T00:14:13.292241-06:00'
+lastmod: '2024-03-13T22:44:39.803120-06:00'
 model: gpt-4-0125-preview
 summary: "JSON, \u05D0\u05D5 JavaScript Object Notation, \u05D4\u05D5\u05D0 \u05E4\
   \u05D5\u05E8\u05DE\u05D8 \u05DC\u05D4\u05D7\u05DC\u05E4\u05EA \u05E0\u05EA\u05D5\

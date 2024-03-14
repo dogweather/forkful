@@ -10,7 +10,7 @@ description: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Python\uC5D0\uC11C \uC0AC\uC804(di
   \ \uC694\uC18C\uC5D0 \uB300\uD55C \uC811\uADFC\uC758 \uD6A8\uC728\uC131\uACFC \uBCF5\
   \uC7A1\uD55C \uB370\uC774\uD130 \uAD6C\uC870\uB97C \uD45C\uD604\uD558\uB294 \uC720\
   \uC5F0\uC131\u2026"
-lastmod: '2024-03-11T00:14:28.501865-06:00'
+lastmod: '2024-03-13T22:44:54.586849-06:00'
 model: gpt-4-0125-preview
 summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Python\uC5D0\uC11C \uC0AC\uC804(dictionary)\uC73C\
   \uB85C \uC54C\uB824\uC838 \uC788\uC73C\uBA70, \uD0A4(keys)\uB97C \uAC12(values)\uC5D0\

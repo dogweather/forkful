@@ -9,7 +9,7 @@ description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85
   \uD130 \uAD6C\uC870\uB85C\uC758 \uC26C\uC6B4 \uB9E4\uD551\uC73C\uB85C \uC778\uD574\
   , \uB2E4\uC591\uD55C \uD504\uB85C\uADF8\uB798\uBC0D \uD658\uACBD\uC744 \uD3EC\uD568\
   \uD558\uC5EC Visual Basic for\u2026"
-lastmod: '2024-03-11T00:14:28.938436-06:00'
+lastmod: '2024-03-13T22:44:55.019020-06:00'
 model: gpt-4-0125-preview
 summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C, \uC8FC\
   \uB85C \uC124\uC815 \uD30C\uC77C\uC5D0 \uC0AC\uC6A9\uB418\uB294 \uB370\uC774\uD130\

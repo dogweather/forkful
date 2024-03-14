@@ -2,7 +2,7 @@
 date: 2024-03-08 21:34:07.187133-07:00
 description: "Calculating a date in the future or past is a common task for programmers,\
   \ dealing with scheduling, reminders, or any feature that depends on date\u2026"
-lastmod: '2024-03-11T00:14:33.690198-06:00'
+lastmod: '2024-03-13T22:44:59.832692-06:00'
 model: gpt-4-0125-preview
 summary: "Calculating a date in the future or past is a common task for programmers,\
   \ dealing with scheduling, reminders, or any feature that depends on date\u2026"

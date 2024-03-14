@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:53.552439-07:00
 description: "La impresi\xF3n de mensajes de depuraci\xF3n es simplemente mostrar\
   \ informaci\xF3n en la consola para entender qu\xE9 est\xE1 pasando en tu c\xF3\
   digo. Los programadores lo\u2026"
-lastmod: '2024-03-11T00:14:32.935077-06:00'
+lastmod: '2024-03-13T22:44:59.121406-06:00'
 model: gpt-4-1106-preview
 summary: "La impresi\xF3n de mensajes de depuraci\xF3n es simplemente mostrar informaci\xF3\
   n en la consola para entender qu\xE9 est\xE1 pasando en tu c\xF3digo. Los programadores\

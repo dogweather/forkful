@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:37.703598-07:00
 description: "Lire un fichier texte en Go implique d'acc\xE9der et de r\xE9cup\xE9\
   rer le contenu d'un fichier stock\xE9 sur disque pour le traiter ou l'analyser.\
   \ Les programmeurs\u2026"
-lastmod: '2024-03-11T00:14:31.193846-06:00'
+lastmod: '2024-03-13T22:44:57.153744-06:00'
 model: gpt-4-0125-preview
 summary: "Lire un fichier texte en Go implique d'acc\xE9der et de r\xE9cup\xE9rer\
   \ le contenu d'un fichier stock\xE9 sur disque pour le traiter ou l'analyser. Les\

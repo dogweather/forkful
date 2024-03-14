@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:19.863343-07:00
 description: "De huidige datum in Clojure krijgen betekent het ophalen van de huidige\
   \ kalenderdatum waarop uw programma draait. Programmeurs pikken de datum op om\u2026"
-lastmod: '2024-03-11T00:14:24.242037-06:00'
+lastmod: '2024-03-13T22:44:50.430722-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in Clojure krijgen betekent het ophalen van de huidige\
   \ kalenderdatum waarop uw programma draait. Programmeurs pikken de datum op om\u2026"

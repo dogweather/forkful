@@ -3,7 +3,7 @@ date: 2024-01-26 03:45:41.398731-07:00
 description: "Avrunding er \xE5 klippe av st\xF8yen etter et visst punkt i et tall.\
   \ Programmerere avrunder for \xE5 kontrollere presisjon, h\xE5ndtere minne, eller\
   \ gj\xF8re output\u2026"
-lastmod: '2024-03-11T00:14:14.778325-06:00'
+lastmod: '2024-03-13T22:44:41.179008-06:00'
 model: gpt-4-0125-preview
 summary: "Avrunding er \xE5 klippe av st\xF8yen etter et visst punkt i et tall. Programmerere\
   \ avrunder for \xE5 kontrollere presisjon, h\xE5ndtere minne, eller gj\xF8re output\u2026"

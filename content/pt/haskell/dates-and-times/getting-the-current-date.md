@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:32.341210-07:00
 description: "Obter a data atual em Haskell envolve obter o tempo atual do sistema\
   \ e transform\xE1-lo em um formato de data leg\xEDvel. Os programadores fazem isso\
   \ para\u2026"
-lastmod: '2024-03-11T00:14:20.347610-06:00'
+lastmod: '2024-03-13T22:44:46.635619-06:00'
 model: gpt-4-0125-preview
 summary: "Obter a data atual em Haskell envolve obter o tempo atual do sistema e transform\xE1\
   -lo em um formato de data leg\xEDvel. Os programadores fazem isso para\u2026"

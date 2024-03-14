@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:53:50.811772-07:00
 description: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDC\
   bersetzung einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"
-lastmod: '2024-03-11T00:14:28.275817-06:00'
+lastmod: '2024-03-13T22:44:54.365134-06:00'
 model: gpt-4-0125-preview
 summary: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDCbersetzung\
   \ einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"

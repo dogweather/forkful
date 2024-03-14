@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:27:00.940280-07:00
 description: "Escribir un archivo de texto en Bash te permite automatizar el almacenamiento\
   \ de datos, el registro, la configuraci\xF3n de ajustes, y m\xE1s. Es una habilidad\u2026"
-lastmod: '2024-03-11T00:14:33.085762-06:00'
+lastmod: '2024-03-13T22:44:59.265637-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Bash te permite automatizar el almacenamiento\
   \ de datos, el registro, la configuraci\xF3n de ajustes, y m\xE1s. Es una habilidad\u2026"

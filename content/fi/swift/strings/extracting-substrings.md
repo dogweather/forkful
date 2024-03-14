@@ -3,7 +3,7 @@ date: 2024-01-20 17:46:46.561603-07:00
 description: "Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta.\
   \ K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 vain\
   \ tietyn osan\u2026"
-lastmod: '2024-03-11T00:14:30.936139-06:00'
+lastmod: '2024-03-13T22:44:56.896430-06:00'
 model: gpt-4-1106-preview
 summary: "Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta.\
   \ K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 vain\

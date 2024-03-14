@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:57.283863-07:00
 description: "Ladataan nettisivua ohjelmassa, eli haetaan sen sis\xE4lt\xF6\xE4 koodilla.\
   \ Se on hy\xF6dyllist\xE4, kun tarvitaan automaattista tiedonkeruuta tai halutaan\u2026"
-lastmod: '2024-03-11T00:14:30.946443-06:00'
+lastmod: '2024-03-13T22:44:56.905884-06:00'
 model: gpt-4-1106-preview
 summary: "Ladataan nettisivua ohjelmassa, eli haetaan sen sis\xE4lt\xF6\xE4 koodilla.\
   \ Se on hy\xF6dyllist\xE4, kun tarvitaan automaattista tiedonkeruuta tai halutaan\u2026"

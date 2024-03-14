@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:43.656117-07:00
 description: "Chercher et remplacer du texte est essentiel pour modifier des cha\xEE\
   nes de caract\xE8res. Les programmeurs l'utilisent pour corriger des erreurs, mettre\
   \ \xE0\u2026"
-lastmod: '2024-03-11T00:14:31.482128-06:00'
+lastmod: '2024-03-13T22:44:57.466543-06:00'
 model: gpt-4-1106-preview
 summary: "Chercher et remplacer du texte est essentiel pour modifier des cha\xEEnes\
   \ de caract\xE8res. Les programmeurs l'utilisent pour corriger des erreurs, mettre\

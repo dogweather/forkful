@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:19:48.660182-07:00
 description: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing\
   \ og generering av filer som lagrer tabelldata i et enkelt, tekstbasert format.\u2026"
-lastmod: '2024-03-11T00:14:14.429945-06:00'
+lastmod: '2024-03-13T22:44:40.865935-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing og\
   \ generering av filer som lagrer tabelldata i et enkelt, tekstbasert format.\u2026"

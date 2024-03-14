@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:48:53.503797-07:00
 description: "Comprobar si un directorio existe en Google Apps Script implica verificar\
   \ la presencia de una carpeta dentro de Google Drive. Los programadores a menudo\u2026"
-lastmod: '2024-03-11T00:14:32.413193-06:00'
+lastmod: '2024-03-13T22:44:58.563725-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en Google Apps Script implica verificar\
   \ la presencia de una carpeta dentro de Google Drive. Los programadores a menudo\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:06.697703-07:00
 description: "Das Abrufen des aktuellen Datums in der Programmierung ist eine entscheidende\
   \ Aufgabe f\xFCr eine Vielzahl von Anwendungen, einschlie\xDFlich Logging,\u2026"
-lastmod: '2024-03-11T00:14:27.923895-06:00'
+lastmod: '2024-03-13T22:44:54.025492-06:00'
 model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in der Programmierung ist eine entscheidende\
   \ Aufgabe f\xFCr eine Vielzahl von Anwendungen, einschlie\xDFlich Logging,\u2026"

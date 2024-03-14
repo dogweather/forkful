@@ -3,7 +3,7 @@ date: 2024-01-26 00:54:55.941128-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b, w jaki Tw\xF3j kod radzi\
   \ sobie z problemami, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonywania - jak\
   \ z\u0142apanie krzywej pi\u0142ki bez upuszczenia\u2026"
-lastmod: '2024-03-11T00:14:08.554157-06:00'
+lastmod: '2024-03-13T22:44:35.372450-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b, w jaki Tw\xF3j kod radzi\
   \ sobie z problemami, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonywania - jak\

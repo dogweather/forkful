@@ -6,7 +6,7 @@ description: "S\u1ED1 ph\u1EE9c l\xE0 m\u1ED9t t\u1EADp h\u1EE3p c\xE1c s\u1ED1 
   \ d\u1EA1ng `a + bi`, n\u01A1i `a` v\xE0 `b` l\xE0 c\xE1c s\u1ED1 th\u1EF1c, v\xE0\
   \ `i` l\xE0 \u0111\u01A1n v\u1ECB \u1EA3o (`i^2 = -1`). Trong l\u1EADp tr\xECnh,\
   \ ch\xFAng ta s\u1EED d\u1EE5ng ch\xFAng\u2026"
-lastmod: '2024-03-11T00:14:09.319172-06:00'
+lastmod: '2024-03-13T22:44:36.088639-06:00'
 model: gpt-4-0125-preview
 summary: "S\u1ED1 ph\u1EE9c l\xE0 m\u1ED9t t\u1EADp h\u1EE3p c\xE1c s\u1ED1 c\xF3\
   \ d\u1EA1ng `a + bi`, n\u01A1i `a` v\xE0 `b` l\xE0 c\xE1c s\u1ED1 th\u1EF1c, v\xE0\

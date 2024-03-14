@@ -3,7 +3,7 @@ date: 2024-01-26 01:11:41.458153-07:00
 description: "Organiser le code en fonctions consiste \xE0 envelopper des blocs de\
   \ code qui accomplissent des t\xE2ches sp\xE9cifiques et \xE0 leur attribuer un\
   \ nom. Cela est fait\u2026"
-lastmod: '2024-03-11T00:14:31.976085-06:00'
+lastmod: '2024-03-13T22:44:58.054762-06:00'
 model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions consiste \xE0 envelopper des blocs de code\
   \ qui accomplissent des t\xE2ches sp\xE9cifiques et \xE0 leur attribuer un nom.\

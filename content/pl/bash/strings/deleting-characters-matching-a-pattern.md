@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:47.344450-07:00
 description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca w Bashu to oczyszczanie\
   \ ci\u0105gu znak\xF3w z niepotrzebnych element\xF3w. Programi\u015Bci u\u017Cywaj\u0105\
   \ tej metody dla uproszczenia\u2026"
-lastmod: '2024-03-11T00:14:08.756006-06:00'
+lastmod: '2024-03-13T22:44:35.566822-06:00'
 model: gpt-4-1106-preview
 summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca w Bashu to oczyszczanie ci\u0105\
   gu znak\xF3w z niepotrzebnych element\xF3w. Programi\u015Bci u\u017Cywaj\u0105 tej\

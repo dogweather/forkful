@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:41.462216-07:00
 description: "Att skapa en tempor\xE4r fil inneb\xE4r att f\xF6rse ett program med\
   \ en fil som bara existerar under dess k\xF6rtid, och som oftast raderas automatiskt.\
   \ Programmerare\u2026"
-lastmod: '2024-03-11T00:14:11.152825-06:00'
+lastmod: '2024-03-13T22:44:37.806397-06:00'
 model: gpt-4-1106-preview
 summary: "Att skapa en tempor\xE4r fil inneb\xE4r att f\xF6rse ett program med en\
   \ fil som bara existerar under dess k\xF6rtid, och som oftast raderas automatiskt.\

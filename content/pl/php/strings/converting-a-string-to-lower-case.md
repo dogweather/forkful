@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:09.138522-07:00
 description: "Zamiana tekstu na ma\u0142e litery to proces przekszta\u0142cania wszystkich\
   \ znak\xF3w w \u0142a\u0144cuchu na ich odpowiedniki w dolnym rejestrowie. Programi\u015B\
   ci robi\u0105 to dla\u2026"
-lastmod: '2024-03-11T00:14:08.667804-06:00'
+lastmod: '2024-03-13T22:44:35.483610-06:00'
 model: gpt-4-1106-preview
 summary: "Zamiana tekstu na ma\u0142e litery to proces przekszta\u0142cania wszystkich\
   \ znak\xF3w w \u0142a\u0144cuchu na ich odpowiedniki w dolnym rejestrowie. Programi\u015B\

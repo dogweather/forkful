@@ -5,7 +5,7 @@ date: 2024-02-01 21:57:45.722762-07:00
 description: "Parsowanie daty ze \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142\
   ceniu tekstu reprezentuj\u0105cego dat\u0119 na obiekt daty, co umo\u017Cliwia programistom\
   \ wykonywanie operacji\u2026"
-lastmod: '2024-03-11T00:14:08.084533-06:00'
+lastmod: '2024-03-13T22:44:34.913685-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty ze \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142\
   ceniu tekstu reprezentuj\u0105cego dat\u0119 na obiekt daty, co umo\u017Cliwia programistom\

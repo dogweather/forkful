@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:32:43.697794-07:00
 description: "Scrivere sull'errore standard (stderr) riguarda l'indirizzare messaggi\
   \ di errore e diagnostiche allo stream stderr, separato dall'output standard\u2026"
-lastmod: '2024-03-11T00:14:16.618538-06:00'
+lastmod: '2024-03-13T22:44:43.058630-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere sull'errore standard (stderr) riguarda l'indirizzare messaggi di\
   \ errore e diagnostiche allo stream stderr, separato dall'output standard\u2026"

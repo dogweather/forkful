@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:37.423534-07:00
 description: "Pobranie aktualnej daty w Haskellu polega na uzyskaniu bie\u017C\u0105\
   cego czasu systemu i przekszta\u0142ceniu go na czytelny format daty. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
-lastmod: '2024-03-11T00:14:08.647798-06:00'
+lastmod: '2024-03-13T22:44:35.462836-06:00'
 model: gpt-4-0125-preview
 summary: "Pobranie aktualnej daty w Haskellu polega na uzyskaniu bie\u017C\u0105cego\
   \ czasu systemu i przekszta\u0142ceniu go na czytelny format daty. Programi\u015B\

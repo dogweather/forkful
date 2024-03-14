@@ -3,7 +3,7 @@ changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:03.194542-07:00
 description: "\u300CGoogle Apps\u2026"
-lastmod: '2024-03-11T00:14:15.075831-06:00'
+lastmod: '2024-03-13T22:44:41.460622-06:00'
 model: gpt-4-0125-preview
 summary: "\u300CGoogle Apps\u2026"
 title: "\u4E8C\u3064\u306E\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"

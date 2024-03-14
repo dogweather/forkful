@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:21.582496-07:00
 description: "Descargar una p\xE1gina web significa guardar el contenido HTML en tu\
   \ PC. Los programadores lo hacen para procesar la info offline, testear o automatizar\u2026"
-lastmod: '2024-03-11T00:14:33.066213-06:00'
+lastmod: '2024-03-13T22:44:59.245431-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa guardar el contenido HTML en tu PC.\
   \ Los programadores lo hacen para procesar la info offline, testear o automatizar\u2026"

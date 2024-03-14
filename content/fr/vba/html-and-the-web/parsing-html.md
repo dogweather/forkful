@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:57:12.879172-07:00
 description: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA)\
   \ consiste \xE0 extraire des informations sp\xE9cifiques d'un document HTML. Les\u2026"
-lastmod: '2024-03-11T00:14:31.542165-06:00'
+lastmod: '2024-03-13T22:44:57.555642-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA) consiste\
   \ \xE0 extraire des informations sp\xE9cifiques d'un document HTML. Les\u2026"

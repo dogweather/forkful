@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:06.787921-07:00
 description: "Code in Funktionen zu organisieren ist, wie LEGO-Steine in Beh\xE4lter\
   \ zu sortieren \u2013 es macht das Finden und Verwenden einfacher. Wir tun dies,\
   \ um\u2026"
-lastmod: '2024-03-11T00:14:27.789778-06:00'
+lastmod: '2024-03-13T22:44:53.893597-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren ist, wie LEGO-Steine in Beh\xE4lter zu\
   \ sortieren \u2013 es macht das Finden und Verwenden einfacher. Wir tun dies, um\u2026"

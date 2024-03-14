@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:08:22.906309-07:00
 description: "Inviare una richiesta HTTP implica creare e inviare una richiesta a\
   \ un server web per recuperare o inviare dati. I programmatori lo fanno in C per\u2026"
-lastmod: '2024-03-11T00:14:17.523787-06:00'
+lastmod: '2024-03-13T22:44:43.924692-06:00'
 model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP implica creare e inviare una richiesta a un server\
   \ web per recuperare o inviare dati. I programmatori lo fanno in C per\u2026"

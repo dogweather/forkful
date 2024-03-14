@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:00:01.144022-07:00
 description: "Parsear una fecha de un string en Go implica convertir la fecha representada\
   \ como texto en un formato m\xE1s utilizable (por ejemplo, `time.Time`). Los\u2026"
-lastmod: '2024-03-11T00:14:32.348490-06:00'
+lastmod: '2024-03-13T22:44:58.478441-06:00'
 model: gpt-4-0125-preview
 summary: "Parsear una fecha de un string en Go implica convertir la fecha representada\
   \ como texto en un formato m\xE1s utilizable (por ejemplo, `time.Time`). Los\u2026"

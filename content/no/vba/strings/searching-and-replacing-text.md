@@ -5,7 +5,7 @@ date: 2024-02-01 22:01:26.126638-07:00
 description: "S\xF8king og erstatning av tekst i Visual Basic for Applications (VBA)\
   \ er vesentlig for \xE5 programmert redigere dokumenter, regneark og databaser.\
   \ Denne\u2026"
-lastmod: '2024-03-11T00:14:14.141069-06:00'
+lastmod: '2024-03-13T22:44:40.601764-06:00'
 model: gpt-4-0125-preview
 summary: "S\xF8king og erstatning av tekst i Visual Basic for Applications (VBA) er\
   \ vesentlig for \xE5 programmert redigere dokumenter, regneark og databaser. Denne\u2026"

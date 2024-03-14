@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:13.502573-07:00
 description: "Manejar errores en la programaci\xF3n se trata de esperar lo inesperado.\
   \ Es el arte de planificar para cuando las cosas no salen como se espera y as\xED\
   \ poder\u2026"
-lastmod: '2024-03-11T00:14:33.028509-06:00'
+lastmod: '2024-03-13T22:44:59.209332-06:00'
 model: gpt-4-1106-preview
 summary: "Manejar errores en la programaci\xF3n se trata de esperar lo inesperado.\
   \ Es el arte de planificar para cuando las cosas no salen como se espera y as\xED\

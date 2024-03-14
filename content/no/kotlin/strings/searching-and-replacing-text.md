@@ -3,7 +3,7 @@ date: 2024-01-20 17:58:07.002828-07:00
 description: "\"S\xF8k og erstatt\" er en grunnstein i programmering. Det brukes for\
   \ \xE5 finne og bytte ut spesifikke tekststrenger, noe som gir oss muligheten til\
   \ \xE5 oppdatere\u2026"
-lastmod: '2024-03-11T00:14:14.284601-06:00'
+lastmod: '2024-03-13T22:44:40.735510-06:00'
 model: gpt-4-1106-preview
 summary: "\"S\xF8k og erstatt\" er en grunnstein i programmering. Det brukes for \xE5\
   \ finne og bytte ut spesifikke tekststrenger, noe som gir oss muligheten til \xE5\

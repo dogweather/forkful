@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:14.328162-07:00
 description: "Elm n\xE3o possui suporte nativo para YAML, um formato de serializa\xE7\
   \xE3o de dados frequentemente utilizado para arquivos de configura\xE7\xE3o ou compartilhamento\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:20.222610-06:00'
+lastmod: '2024-03-13T22:44:46.519766-06:00'
 model: gpt-4-0125-preview
 summary: "Elm n\xE3o possui suporte nativo para YAML, um formato de serializa\xE7\xE3\
   o de dados frequentemente utilizado para arquivos de configura\xE7\xE3o ou compartilhamento\

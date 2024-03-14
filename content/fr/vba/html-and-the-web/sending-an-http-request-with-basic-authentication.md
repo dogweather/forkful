@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:23.656253-07:00
 description: "Envoyer une requ\xEAte HTTP avec authentification de base dans Visual\
   \ Basic pour Applications (VBA) consiste \xE0 acc\xE9der aux ressources web prot\xE9\
   g\xE9es par des\u2026"
-lastmod: '2024-03-11T00:14:31.544556-06:00'
+lastmod: '2024-03-13T22:44:57.566025-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec authentification de base dans Visual Basic\
   \ pour Applications (VBA) consiste \xE0 acc\xE9der aux ressources web prot\xE9g\xE9\

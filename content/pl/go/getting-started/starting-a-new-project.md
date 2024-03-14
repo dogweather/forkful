@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:39.405400-07:00
 description: "Rozpocz\u0119cie nowego projektu w Go wi\u0105\u017Ce si\u0119 z przygotowaniem\
   \ obszaru roboczego i zainicjowaniem go przy pomocy niezb\u0119dnych modu\u0142\xF3\
   w Go. Programi\u015Bci robi\u0105 to\u2026"
-lastmod: '2024-03-11T00:14:08.023731-06:00'
+lastmod: '2024-03-13T22:44:34.851711-06:00'
 model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w Go wi\u0105\u017Ce si\u0119 z przygotowaniem\
   \ obszaru roboczego i zainicjowaniem go przy pomocy niezb\u0119dnych modu\u0142\xF3\

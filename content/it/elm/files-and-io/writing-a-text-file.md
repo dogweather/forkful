@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:54.979915-07:00
 description: "Scrivere un file di testo in Elm comporta la creazione e il salvataggio\
   \ di dati testuali in un file da un'applicazione Elm. Spesso, ai programmatori \xE8\
   \u2026"
-lastmod: '2024-03-11T00:14:16.941351-06:00'
+lastmod: '2024-03-13T22:44:43.367874-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Elm comporta la creazione e il salvataggio\
   \ di dati testuali in un file da un'applicazione Elm. Spesso, ai programmatori \xE8\

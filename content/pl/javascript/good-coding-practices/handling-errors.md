@@ -3,7 +3,7 @@ date: 2024-01-26 00:54:39.654739-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b zarz\u0105dzania sytuacjami,\
   \ gdy w kodzie pojawiaj\u0105 si\u0119 problemy. Jest kluczowa, poniewa\u017C pozwala\
   \ programom na \u0142agodne awarie i\u2026"
-lastmod: '2024-03-11T00:14:09.014145-06:00'
+lastmod: '2024-03-13T22:44:35.803981-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b zarz\u0105dzania sytuacjami,\
   \ gdy w kodzie pojawiaj\u0105 si\u0119 problemy. Jest kluczowa, poniewa\u017C pozwala\

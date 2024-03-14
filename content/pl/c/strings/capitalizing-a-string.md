@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:49.159489-07:00
 description: "Zamiana ci\u0105gu na wielkie litery w j\u0119zyku C obejmuje przekszta\u0142\
   cenie pierwszej litery ka\u017Cdego s\u0142owa w danym ci\u0105gu na wielk\u0105\
   \ liter\u0119, je\u015Bli jest to ma\u0142a\u2026"
-lastmod: '2024-03-11T00:14:09.081208-06:00'
+lastmod: '2024-03-13T22:44:35.867140-06:00'
 model: gpt-4-0125-preview
 summary: "Zamiana ci\u0105gu na wielkie litery w j\u0119zyku C obejmuje przekszta\u0142\
   cenie pierwszej litery ka\u017Cdego s\u0142owa w danym ci\u0105gu na wielk\u0105\

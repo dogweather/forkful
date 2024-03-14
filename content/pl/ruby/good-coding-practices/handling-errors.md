@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:47.327439-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu nieoczekiwanego\
   \ w kodzie \u2014 zarz\u0105dzaniu pomy\u0142kami i problemami w spos\xF3b \u0142\
   agodny, bez awarii. Programi\u015Bci robi\u0105 to, by\u2026"
-lastmod: '2024-03-11T00:14:09.160247-06:00'
+lastmod: '2024-03-13T22:44:35.939728-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu nieoczekiwanego w\
   \ kodzie \u2014 zarz\u0105dzaniu pomy\u0142kami i problemami w spos\xF3b \u0142\

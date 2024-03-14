@@ -5,7 +5,7 @@ date: 2024-02-03 18:06:13.036628-07:00
 description: "Ler argumentos de linha de comando em Go envolve extrair os argumentos\
   \ fornecidos a um programa durante sua invoca\xE7\xE3o a partir do terminal ou prompt\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:19.738955-06:00'
+lastmod: '2024-03-13T22:44:46.077619-06:00'
 model: gpt-4-0125-preview
 summary: "Ler argumentos de linha de comando em Go envolve extrair os argumentos fornecidos\
   \ a um programa durante sua invoca\xE7\xE3o a partir do terminal ou prompt de\u2026"

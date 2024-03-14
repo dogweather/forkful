@@ -3,7 +3,7 @@ date: 2024-01-20 17:40:06.788192-07:00
 description: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry istnieje\
   \ tylko na czas dzia\u0142ania aplikacji. Programi\u015Bci u\u017Cywaj\u0105 tej\
   \ techniki, aby\u2026"
-lastmod: '2024-03-11T00:14:08.521677-06:00'
+lastmod: '2024-03-13T22:44:35.341251-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry istnieje\
   \ tylko na czas dzia\u0142ania aplikacji. Programi\u015Bci u\u017Cywaj\u0105 tej\

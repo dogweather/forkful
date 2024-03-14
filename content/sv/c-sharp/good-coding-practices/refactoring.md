@@ -3,7 +3,7 @@ date: 2024-01-26 01:17:55.774090-07:00
 description: "Refaktorering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess yttre beteende. Programmerare g\xF6r det f\xF6r att rensa\
   \ upp kod,\u2026"
-lastmod: '2024-03-11T00:14:11.285055-06:00'
+lastmod: '2024-03-13T22:44:37.921688-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess yttre beteende. Programmerare g\xF6r det f\xF6r att rensa\

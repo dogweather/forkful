@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:12:01.342313-07:00
 description: "Parser du HTML en Elm consiste \xE0 extraire des informations de documents\
   \ HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui\u2026"
-lastmod: '2024-03-11T00:14:31.638930-06:00'
+lastmod: '2024-03-13T22:44:57.686771-06:00'
 model: gpt-4-0125-preview
 summary: "Parser du HTML en Elm consiste \xE0 extraire des informations de documents\
   \ HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui\u2026"

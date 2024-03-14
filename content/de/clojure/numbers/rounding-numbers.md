@@ -3,7 +3,7 @@ date: 2024-01-26 03:43:30.134244-07:00
 description: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zahl\
   \ oder auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie\
   \ f\xFCr die\u2026"
-lastmod: '2024-03-11T00:14:27.379984-06:00'
+lastmod: '2024-03-13T22:44:53.414789-06:00'
 model: gpt-4-0125-preview
 summary: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zahl oder\
   \ auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie f\xFC\

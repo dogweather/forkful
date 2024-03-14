@@ -5,7 +5,7 @@ date: 2024-02-03 18:07:20.247917-07:00
 description: "Arrondir les nombres est le processus d'ajustement des chiffres d'un\
   \ nombre pour r\xE9duire sa pr\xE9cision selon certaines r\xE8gles, soit vers le\
   \ nombre entier\u2026"
-lastmod: '2024-03-11T00:14:32.237853-06:00'
+lastmod: '2024-03-13T22:44:58.365972-06:00'
 model: gpt-4-0125-preview
 summary: "Arrondir les nombres est le processus d'ajustement des chiffres d'un nombre\
   \ pour r\xE9duire sa pr\xE9cision selon certaines r\xE8gles, soit vers le nombre\

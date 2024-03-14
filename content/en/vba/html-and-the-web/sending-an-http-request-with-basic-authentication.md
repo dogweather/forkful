@@ -2,7 +2,7 @@
 date: 2024-02-01 21:31:06.379954-07:00
 description: "Sending an HTTP request with basic authentication in Visual Basic for\
   \ Applications (VBA) is about accessing web resources that are protected by username\u2026"
-lastmod: '2024-03-11T00:14:33.796407-06:00'
+lastmod: '2024-03-13T22:44:59.934099-06:00'
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request with basic authentication in Visual Basic for Applications\
   \ (VBA) is about accessing web resources that are protected by username\u2026"

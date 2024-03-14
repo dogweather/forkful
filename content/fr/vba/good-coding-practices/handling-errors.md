@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:25.183006-07:00
 description: "La gestion des erreurs dans Visual Basic pour Applications (VBA) fait\
   \ r\xE9f\xE9rence au processus d'anticipation, de d\xE9tection et de r\xE9solution\
   \ des erreurs de\u2026"
-lastmod: '2024-03-11T00:14:31.553683-06:00'
+lastmod: '2024-03-13T22:44:57.588566-06:00'
 model: gpt-4-0125-preview
 summary: "La gestion des erreurs dans Visual Basic pour Applications (VBA) fait r\xE9\
   f\xE9rence au processus d'anticipation, de d\xE9tection et de r\xE9solution des\

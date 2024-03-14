@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:55.217255-07:00
 description: "Zapisywanie do pliku tekstowego w Fish Shell umo\u017Cliwia trwa\u0142\
   e przechowywanie danych, co u\u0142atwia ich p\xF3\u017Aniejsze pobieranie lub manipulowanie,\
   \ zar\xF3wno przez\u2026"
-lastmod: '2024-03-11T00:14:09.073829-06:00'
+lastmod: '2024-03-13T22:44:35.860156-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie do pliku tekstowego w Fish Shell umo\u017Cliwia trwa\u0142e\
   \ przechowywanie danych, co u\u0142atwia ich p\xF3\u017Aniejsze pobieranie lub manipulowanie,\

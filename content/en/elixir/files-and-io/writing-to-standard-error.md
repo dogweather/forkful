@@ -2,7 +2,7 @@
 date: 2024-02-03 19:03:30.310441-07:00
 description: "Writing to standard error (stderr) in Elixir is a method of directing\
   \ error messages and diagnostics separate from the main output (stdout). Programmers\u2026"
-lastmod: '2024-03-11T00:14:33.653918-06:00'
+lastmod: '2024-03-13T22:44:59.797174-06:00'
 model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Elixir is a method of directing error\
   \ messages and diagnostics separate from the main output (stdout). Programmers\u2026"

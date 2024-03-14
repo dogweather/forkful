@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:50.128202-07:00
 description: "Att starta ett nytt projekt \xE4r att skapa en tom duk f\xF6r att koda\
   \ n\xE5got fr\xE5n grunden. Programmerare g\xF6r detta f\xF6r att oms\xE4tta id\xE9\
   er i verklighet, l\xF6sa\u2026"
-lastmod: '2024-03-11T00:14:11.692110-06:00'
+lastmod: '2024-03-13T22:44:38.294107-06:00'
 model: gpt-4-1106-preview
 summary: "Att starta ett nytt projekt \xE4r att skapa en tom duk f\xF6r att koda n\xE5\
   got fr\xE5n grunden. Programmerare g\xF6r detta f\xF6r att oms\xE4tta id\xE9er i\

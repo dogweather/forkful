@@ -5,7 +5,7 @@ date: 2024-02-01 21:50:01.032263-07:00
 description: "Por\xF3wnywanie dw\xF3ch dat w Visual Basic for Applications (VBA) polega\
   \ na okre\u015Bleniu ich chronologicznego zwi\u0105zku wzgl\u0119dem siebie. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
-lastmod: '2024-03-11T00:14:08.421517-06:00'
+lastmod: '2024-03-13T22:44:35.245619-06:00'
 model: gpt-4-0125-preview
 summary: "Por\xF3wnywanie dw\xF3ch dat w Visual Basic for Applications (VBA) polega\
   \ na okre\u015Bleniu ich chronologicznego zwi\u0105zku wzgl\u0119dem siebie. Programi\u015B\

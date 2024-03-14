@@ -2,7 +2,7 @@
 date: 2024-01-20 17:51:53.163763-07:00
 description: "Interpolating a string involves inserting variables into a string literal.\
   \ Programmers do it to construct strings dynamically, making it easier to include\u2026"
-lastmod: '2024-03-11T00:14:34.253668-06:00'
+lastmod: '2024-03-13T22:45:00.383433-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolating a string involves inserting variables into a string literal.\
   \ Programmers do it to construct strings dynamically, making it easier to include\u2026"

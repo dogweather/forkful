@@ -3,7 +3,7 @@ date: 2024-01-20 17:28:33.483973-07:00
 description: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen\
   \ es, Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4\
   en. Programmierer\u2026"
-lastmod: '2024-03-11T00:14:27.797578-06:00'
+lastmod: '2024-03-13T22:44:53.901649-06:00'
 model: gpt-4-1106-preview
 summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
   \ Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4en.\

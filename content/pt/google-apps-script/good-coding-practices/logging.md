@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:39.597087-07:00
 description: "Registrar eventos, erros ou ocorr\xEAncias not\xE1veis durante a execu\xE7\
   \xE3o de um programa \xE9 o que constitui o logging na programa\xE7\xE3o. Programadores\
   \ fazem isso\u2026"
-lastmod: '2024-03-11T00:14:19.780094-06:00'
+lastmod: '2024-03-13T22:44:46.115300-06:00'
 model: gpt-4-0125-preview
 summary: "Registrar eventos, erros ou ocorr\xEAncias not\xE1veis durante a execu\xE7\
   \xE3o de um programa \xE9 o que constitui o logging na programa\xE7\xE3o. Programadores\

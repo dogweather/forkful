@@ -5,7 +5,7 @@ date: 2024-02-03 19:09:59.912331-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen JavaScriptill\xE4 on perusteht\xE4\
   v\xE4, johon kuuluu t\xE4m\xE4n p\xE4iv\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan\
   \ noutaminen ja mahdollisesti manipulointi.\u2026"
-lastmod: '2024-03-11T00:14:31.002839-06:00'
+lastmod: '2024-03-13T22:44:56.960291-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen JavaScriptill\xE4 on perusteht\xE4\
   v\xE4, johon kuuluu t\xE4m\xE4n p\xE4iv\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan\

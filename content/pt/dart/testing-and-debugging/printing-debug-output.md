@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:36.265343-07:00
 description: "Imprimir sa\xEDdas de depura\xE7\xE3o em Dart consiste em exibir informa\xE7\
   \xF5es no console durante a execu\xE7\xE3o, permitindo que os desenvolvedores acompanhem\
   \ o fluxo da\u2026"
-lastmod: '2024-03-11T00:14:19.967481-06:00'
+lastmod: '2024-03-13T22:44:46.284476-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir sa\xEDdas de depura\xE7\xE3o em Dart consiste em exibir informa\xE7\
   \xF5es no console durante a execu\xE7\xE3o, permitindo que os desenvolvedores acompanhem\

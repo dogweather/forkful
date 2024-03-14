@@ -5,7 +5,7 @@ date: 2024-02-03 19:24:37.460158-07:00
 description: "Lavorare con JSON in Swift significa occuparsi di un formato di dati\
   \ leggero per lo scambio di dati. I programmatori usano JSON per trasmettere dati\
   \ tra\u2026"
-lastmod: '2024-03-11T00:14:17.408217-06:00'
+lastmod: '2024-03-13T22:44:43.791275-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con JSON in Swift significa occuparsi di un formato di dati leggero\
   \ per lo scambio di dati. I programmatori usano JSON per trasmettere dati tra\u2026"

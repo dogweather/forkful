@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:50.837566-07:00
 description: "Trouver la longueur d'une cha\xEEne en PHP, c'est compter le nombre\
   \ de caract\xE8res qu'elle contient. Les programmeurs en ont besoin pour valider\
   \ des saisies,\u2026"
-lastmod: '2024-03-11T00:14:31.818630-06:00'
+lastmod: '2024-03-13T22:44:57.868632-06:00'
 model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne en PHP, c'est compter le nombre de caract\xE8\
   res qu'elle contient. Les programmeurs en ont besoin pour valider des saisies,\u2026"

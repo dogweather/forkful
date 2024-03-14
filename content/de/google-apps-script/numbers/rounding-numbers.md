@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:02:45.565432-07:00
 description: "Das Runden von Zahlen, ein grundlegendes Konzept in der Computerprogrammierung,\
   \ beinhaltet die Anpassung einer Zahl auf die n\xE4chstgelegene ganze Zahl oder\u2026"
-lastmod: '2024-03-11T00:14:27.287772-06:00'
+lastmod: '2024-03-13T22:44:53.328298-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen, ein grundlegendes Konzept in der Computerprogrammierung,\
   \ beinhaltet die Anpassung einer Zahl auf die n\xE4chstgelegene ganze Zahl oder\u2026"

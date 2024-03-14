@@ -5,7 +5,7 @@ date: 2024-02-01 21:56:22.166036-07:00
 description: "L'organisation du code en fonctions dans Visual Basic pour Applications\
   \ (VBA) implique de d\xE9composer un programme en pi\xE8ces plus petites et g\xE9\
   rables,\u2026"
-lastmod: '2024-03-11T00:14:31.551358-06:00'
+lastmod: '2024-03-13T22:44:57.585464-06:00'
 model: gpt-4-0125-preview
 summary: "L'organisation du code en fonctions dans Visual Basic pour Applications\
   \ (VBA) implique de d\xE9composer un programme en pi\xE8ces plus petites et g\xE9\

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:37:51.443419-07:00
 description: "Convertir une cha\xEEne en minuscules, c'est transformer tous ses caract\xE8\
   res en leur \xE9quivalent minuscule. On le fait pour unifier les donn\xE9es avant\u2026"
-lastmod: '2024-03-11T00:14:32.045261-06:00'
+lastmod: '2024-03-13T22:44:58.146902-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous ses caract\xE8\
   res en leur \xE9quivalent minuscule. On le fait pour unifier les donn\xE9es avant\u2026"

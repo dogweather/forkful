@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:07.778209-07:00
 description: "Ein neues Projekt zu starten, bedeutet, dass du in C# von Grund auf\
   \ etwas Eigenes erschaffst. Programmierer tun das, um neue Ideen umzusetzen, Probleme\
   \ zu\u2026"
-lastmod: '2024-03-11T00:14:27.785072-06:00'
+lastmod: '2024-03-13T22:44:53.888965-06:00'
 model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten, bedeutet, dass du in C# von Grund auf etwas\
   \ Eigenes erschaffst. Programmierer tun das, um neue Ideen umzusetzen, Probleme\

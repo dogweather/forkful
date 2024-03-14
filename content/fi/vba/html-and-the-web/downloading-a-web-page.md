@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:18.475025-07:00
 description: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla\
   \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4. Ohjelmoijat\u2026"
-lastmod: '2024-03-11T00:14:30.336750-06:00'
+lastmod: '2024-03-13T22:44:56.399199-06:00'
 model: gpt-4-0125-preview
 summary: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla\
   \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4. Ohjelmoijat\u2026"

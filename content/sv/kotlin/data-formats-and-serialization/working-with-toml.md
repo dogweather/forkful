@@ -3,7 +3,7 @@ date: 2024-01-26 04:23:56.123907-07:00
 description: "TOML st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k. Det anv\xE4nds\
   \ f\xF6r konfigurationsfiler eftersom det \xE4r l\xE4tt att l\xE4sa och skriva f\xF6\
   r m\xE4nniskor, samtidigt som\u2026"
-lastmod: '2024-03-11T00:14:11.252772-06:00'
+lastmod: '2024-03-13T22:44:37.894373-06:00'
 model: gpt-4-0125-preview
 summary: "TOML st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k. Det anv\xE4nds f\xF6\
   r konfigurationsfiler eftersom det \xE4r l\xE4tt att l\xE4sa och skriva f\xF6r m\xE4\

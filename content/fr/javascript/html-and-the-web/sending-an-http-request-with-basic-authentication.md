@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:57.632330-07:00
 description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
   \ transmettre des identifiants (login/mot de passe) encod\xE9s en Base64 dans l'en-t\xEA\
   te d'une\u2026"
-lastmod: '2024-03-11T00:14:32.149066-06:00'
+lastmod: '2024-03-13T22:44:58.275272-06:00'
 model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est transmettre\
   \ des identifiants (login/mot de passe) encod\xE9s en Base64 dans l'en-t\xEAte d'une\u2026"

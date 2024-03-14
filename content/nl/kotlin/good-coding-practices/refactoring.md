@@ -5,7 +5,7 @@ date: 2024-01-28 22:06:12.024104-07:00
 description: "Refactoring is het proces van het aanpassen van bestaande code om de\
   \ structuur, leesbaarheid, en prestatie te verbeteren zonder het externe gedrag\
   \ te\u2026"
-lastmod: '2024-03-11T00:14:24.599983-06:00'
+lastmod: '2024-03-13T22:44:50.776315-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring is het proces van het aanpassen van bestaande code om de structuur,\
   \ leesbaarheid, en prestatie te verbeteren zonder het externe gedrag te\u2026"

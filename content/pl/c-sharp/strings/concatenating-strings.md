@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:15.756437-07:00
 description: "Konkatenacja \u0142a\u0144cuch\xF3w to klejenie razem dw\xF3ch lub wi\u0119\
   cej tekst\xF3w. Robimy to, by budowa\u0107 komunikaty, tworzy\u0107 dynamiczne tre\u015B\
   ci czy po prostu \u0142\u0105czy\u0107 info."
-lastmod: '2024-03-13T16:01:58.991499-06:00'
+lastmod: '2024-03-13T22:44:35.400040-06:00'
 model: gpt-4-1106-preview
 summary: "Konkatenacja \u0142a\u0144cuch\xF3w to klejenie razem dw\xF3ch lub wi\u0119\
   cej tekst\xF3w. Robimy to, by budowa\u0107 komunikaty, tworzy\u0107 dynamiczne tre\u015B\

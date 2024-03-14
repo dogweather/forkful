@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:06.730575-07:00
 description: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
   \ em uma s\xF3. Programadores fazem isso para construir mensagens, gerar sa\xED\
   das\u2026"
-lastmod: '2024-03-11T00:14:20.599908-06:00'
+lastmod: '2024-03-13T22:44:46.871831-06:00'
 model: gpt-4-1106-preview
 summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
   \ em uma s\xF3. Programadores fazem isso para construir mensagens, gerar sa\xED\

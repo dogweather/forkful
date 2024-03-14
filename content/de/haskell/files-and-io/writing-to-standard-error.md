@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:33:16.677103-07:00
 description: "Das Schreiben auf Standard Error (stderr) in Haskell erm\xF6glicht es\
   \ Programmen, ihre Ausgabe zwischen normalen Ergebnissen und Fehlermeldungen zu\u2026"
-lastmod: '2024-03-11T00:14:27.844574-06:00'
+lastmod: '2024-03-13T22:44:53.947283-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standard Error (stderr) in Haskell erm\xF6glicht es Programmen,\
   \ ihre Ausgabe zwischen normalen Ergebnissen und Fehlermeldungen zu\u2026"

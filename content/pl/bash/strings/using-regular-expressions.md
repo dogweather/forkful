@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:01.393800-07:00
 description: "Wyra\u017Cenia regularne (regex) w Bashu pozwalaj\u0105 na przeszukiwanie,\
   \ manipulowanie i obs\u0142ug\u0119 ci\u0105g\xF3w znak\xF3w oraz plik\xF3w na podstawie\
   \ okre\u015Blonych wzorc\xF3w.\u2026"
-lastmod: '2024-03-11T00:14:08.762188-06:00'
+lastmod: '2024-03-13T22:44:35.572595-06:00'
 model: gpt-4-0125-preview
 summary: "Wyra\u017Cenia regularne (regex) w Bashu pozwalaj\u0105 na przeszukiwanie,\
   \ manipulowanie i obs\u0142ug\u0119 ci\u0105g\xF3w znak\xF3w oraz plik\xF3w na podstawie\

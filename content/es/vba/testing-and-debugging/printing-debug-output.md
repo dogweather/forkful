@@ -5,7 +5,7 @@ date: 2024-02-01 21:58:23.486510-07:00
 description: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones\
   \ (VBA) implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro\
   \ de su c\xF3digo\u2026"
-lastmod: '2024-03-11T00:14:32.710176-06:00'
+lastmod: '2024-03-13T22:44:58.896112-06:00'
 model: gpt-4-0125-preview
 summary: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones (VBA)\
   \ implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro de su\

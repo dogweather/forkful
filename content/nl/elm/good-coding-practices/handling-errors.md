@@ -5,7 +5,7 @@ date: 2024-01-28 22:01:34.674924-07:00
 description: "Foutafhandeling betekent het schrijven van code die kan anticiperen\
   \ op en omgaan met dingen die misgaan. Programmeurs doen dit om crashes te voorkomen,\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:24.555364-06:00'
+lastmod: '2024-03-13T22:44:50.732579-06:00'
 model: gpt-4-0125-preview
 summary: "Foutafhandeling betekent het schrijven van code die kan anticiperen op en\
   \ omgaan met dingen die misgaan. Programmeurs doen dit om crashes te voorkomen,\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:25:35.493084-07:00
 description: "YAML, abreviatura de YAML Ain't Markup Language (YAML No es un Lenguaje\
   \ de Marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
-lastmod: '2024-03-11T00:14:33.312538-06:00'
+lastmod: '2024-03-13T22:44:59.478742-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, abreviatura de YAML Ain't Markup Language (YAML No es un Lenguaje\
   \ de Marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:05.509124-07:00
 description: "Convertir une cha\xEEne de caract\xE8res en minuscules, \xE7a veut dire\
   \ transformer tous les caract\xE8res majuscules en leur \xE9quivalents en bas de\
   \ casse. On le fait\u2026"
-lastmod: '2024-03-11T00:14:31.483987-06:00'
+lastmod: '2024-03-13T22:44:57.468321-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir une cha\xEEne de caract\xE8res en minuscules, \xE7a veut dire\
   \ transformer tous les caract\xE8res majuscules en leur \xE9quivalents en bas de\

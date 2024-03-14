@@ -5,7 +5,7 @@ date: 2024-02-03 19:08:08.698753-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe en Ruby permet aux programmeurs\
   \ de confirmer la pr\xE9sence d'un r\xE9pertoire avant d'effectuer des op\xE9rations\
   \ comme la\u2026"
-lastmod: '2024-03-11T00:14:32.307108-06:00'
+lastmod: '2024-03-13T22:44:58.435032-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe en Ruby permet aux programmeurs de\
   \ confirmer la pr\xE9sence d'un r\xE9pertoire avant d'effectuer des op\xE9rations\

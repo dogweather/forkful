@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:16.089729-07:00
 description: "Het omzetten van een datum naar een tekenreeks betekent het veranderen\
   \ van een datumobject in een platte-tekstformaat. Programmeurs doen dit voor\u2026"
-lastmod: '2024-03-11T00:14:24.737950-06:00'
+lastmod: '2024-03-13T22:44:50.907261-06:00'
 model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een tekenreeks betekent het veranderen van\
   \ een datumobject in een platte-tekstformaat. Programmeurs doen dit voor\u2026"

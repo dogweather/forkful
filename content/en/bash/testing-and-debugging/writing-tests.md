@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:14.344920-07:00
 description: "Writing tests in Bash involves scripting test cases to validate the\
   \ functionality of your Bash scripts. Programmers conduct tests to ensure their\
   \ scripts\u2026"
-lastmod: '2024-03-11T00:14:34.114786-06:00'
+lastmod: '2024-03-13T22:45:00.248016-06:00'
 model: gpt-4-0125-preview
 summary: "Writing tests in Bash involves scripting test cases to validate the functionality\
   \ of your Bash scripts. Programmers conduct tests to ensure their scripts\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:35.086469-07:00
 description: "PowerShells integration med JSON (JavaScript Object Notation) handlar\
   \ om att tolka (l\xE4sa) och generera (skriva) JSON-data, ett gemensamt format f\xF6\
   r\u2026"
-lastmod: '2024-03-11T00:14:11.533296-06:00'
+lastmod: '2024-03-13T22:44:38.147352-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShells integration med JSON (JavaScript Object Notation) handlar om\
   \ att tolka (l\xE4sa) och generera (skriva) JSON-data, ett gemensamt format f\xF6\

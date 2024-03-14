@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:51.052696-07:00
 description: "Een debugger is een hulpmiddel waarmee je de interne werking van je\
   \ code kunt onderzoeken en wijzigen terwijl deze wordt uitgevoerd. Programmeurs\u2026"
-lastmod: '2024-03-11T00:14:24.371367-06:00'
+lastmod: '2024-03-13T22:44:50.555406-06:00'
 model: gpt-4-0125-preview
 summary: "Een debugger is een hulpmiddel waarmee je de interne werking van je code\
   \ kunt onderzoeken en wijzigen terwijl deze wordt uitgevoerd. Programmeurs\u2026"

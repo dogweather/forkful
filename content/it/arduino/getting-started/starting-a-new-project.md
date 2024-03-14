@@ -2,7 +2,7 @@
 date: 2024-01-20 18:02:45.058934-07:00
 description: "Iniziare un nuovo progetto Arduino significa scrivere codice per far\
   \ interagire hardware e software. I programmatori lo fanno per creare prototipi,\u2026"
-lastmod: '2024-03-11T00:14:17.303048-06:00'
+lastmod: '2024-03-13T22:44:43.684282-06:00'
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto Arduino significa scrivere codice per far interagire\
   \ hardware e software. I programmatori lo fanno per creare prototipi,\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:48:46.037737-07:00
 description: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
   \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"
-lastmod: '2024-03-11T00:14:19.789288-06:00'
+lastmod: '2024-03-13T22:44:46.124604-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
   \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"

@@ -8,7 +8,7 @@ description: "Visual Basic for Applications(VBA)\uC5D0\uC11C XML\uC744 \uB2E4\uB
   \uC131\uD558\uACE0, \uC218\uC815\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\
   \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 Office \uC751\uC6A9 \uD504\uB85C\
   \uADF8\uB7A8\uC744 XML\uC744 \uC0DD\uC131\uD558\uB294 \uC6F9\u2026"
-lastmod: '2024-03-11T00:14:28.940027-06:00'
+lastmod: '2024-03-13T22:44:55.020849-06:00'
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294\
   \ \uAC83\uC740 Microsoft Office \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC758 \uB9E5\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:41.259093-07:00
 description: "Tworzenie tymczasowego pliku to spos\xF3b na zapis tymczasowych danych\
   \ potrzebnych podczas dzia\u0142ania skryptu czy programu. Programi\u015Bci robi\u0105\
   \ to, by nie\u2026"
-lastmod: '2024-03-11T00:14:08.796667-06:00'
+lastmod: '2024-03-13T22:44:35.604701-06:00'
 model: gpt-4-1106-preview
 summary: "Tworzenie tymczasowego pliku to spos\xF3b na zapis tymczasowych danych potrzebnych\
   \ podczas dzia\u0142ania skryptu czy programu. Programi\u015Bci robi\u0105 to, by\

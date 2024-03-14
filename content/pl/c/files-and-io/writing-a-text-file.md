@@ -5,7 +5,7 @@ date: 2024-02-03 18:14:47.757607-07:00
 description: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub\
   \ otwarciu pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015B\
   cia/wyj\u015Bcia plik\xF3w\u2026"
-lastmod: '2024-03-11T00:14:09.123995-06:00'
+lastmod: '2024-03-13T22:44:35.906476-06:00'
 model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub otwarciu\
   \ pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015Bcia/wyj\u015B\

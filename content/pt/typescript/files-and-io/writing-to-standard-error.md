@@ -5,7 +5,7 @@ date: 2024-02-03 19:34:40.545678-07:00
 description: "Em TypeScript, escrever para o erro padr\xE3o (stderr) \xE9 um processo\
   \ de enviar mensagens de erro ou logs diretamente para o fluxo de sa\xEDda de erro\
   \ do\u2026"
-lastmod: '2024-03-11T00:14:20.029878-06:00'
+lastmod: '2024-03-13T22:44:46.342435-06:00'
 model: gpt-4-0125-preview
 summary: "Em TypeScript, escrever para o erro padr\xE3o (stderr) \xE9 um processo\
   \ de enviar mensagens de erro ou logs diretamente para o fluxo de sa\xEDda de erro\

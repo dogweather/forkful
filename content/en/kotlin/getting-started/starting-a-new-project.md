@@ -3,7 +3,7 @@ date: 2024-01-20 18:03:50.401549-07:00
 description: "Starting a new project means setting up the initial structure and vital\
   \ files you\u2019ll need for your application. Programmers initiate new projects\
   \ to kick\u2026"
-lastmod: '2024-03-11T00:14:33.914186-06:00'
+lastmod: '2024-03-13T22:45:00.049247-06:00'
 model: gpt-4-1106-preview
 summary: "Starting a new project means setting up the initial structure and vital\
   \ files you\u2019ll need for your application. Programmers initiate new projects\

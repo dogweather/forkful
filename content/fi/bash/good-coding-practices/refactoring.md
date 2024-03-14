@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:48.865245-07:00
 description: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen\
   \ muuttamisen prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4\
   rke\xE4 k\xE4yt\xE4nt\xF6\u2026"
-lastmod: '2024-03-11T00:14:30.703814-06:00'
+lastmod: '2024-03-13T22:44:56.747402-06:00'
 model: gpt-4-0125-preview
 summary: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen muuttamisen\
   \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4rke\xE4\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:00:01.464406-07:00
 description: "Das Parsen eines Datums aus einem String in C involviert die Umwandlung\
   \ von textuellen Datumsdarstellungen in ein Format, mit dem Programme effektiver\u2026"
-lastmod: '2024-03-11T00:14:28.273694-06:00'
+lastmod: '2024-03-13T22:44:54.362805-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in C involviert die Umwandlung\
   \ von textuellen Datumsdarstellungen in ein Format, mit dem Programme effektiver\u2026"

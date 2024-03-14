@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:20.835334-07:00
 description: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pierwszego\
   \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery.\
   \ Operacja ta jest powszechnie\u2026"
-lastmod: '2024-03-11T00:14:08.103894-06:00'
+lastmod: '2024-03-13T22:44:34.931388-06:00'
 model: gpt-4-0125-preview
 summary: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pierwszego\
   \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery.\

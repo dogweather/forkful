@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:43.521867-07:00
 description: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati\
   \ leggero che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine\
   \ da\u2026"
-lastmod: '2024-03-11T00:14:16.855324-06:00'
+lastmod: '2024-03-13T22:44:43.287518-06:00'
 model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati leggero\
   \ che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine da\u2026"

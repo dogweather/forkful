@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:18.947563-07:00
 description: "Regul\xE6re uttrykk (regex) i Bash lar deg s\xF8ke, manipulere, og h\xE5\
   ndtere strenger og filer basert p\xE5 spesifikke m\xF8nstre. Programmerere bruker\
   \ regex for\u2026"
-lastmod: '2024-03-11T00:14:14.535516-06:00'
+lastmod: '2024-03-13T22:44:40.962323-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i Bash lar deg s\xF8ke, manipulere, og h\xE5\
   ndtere strenger og filer basert p\xE5 spesifikke m\xF8nstre. Programmerere bruker\

@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:36.385050-07:00
 description: "Controleren of een directory bestaat in C betekent het opvragen van\
   \ het bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory\
   \ leidt.\u2026"
-lastmod: '2024-03-11T00:14:25.168261-06:00'
+lastmod: '2024-03-13T22:44:51.306033-06:00'
 model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat in C betekent het opvragen van het\
   \ bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory leidt.\u2026"

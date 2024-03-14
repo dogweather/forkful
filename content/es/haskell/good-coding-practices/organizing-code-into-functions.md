@@ -3,7 +3,7 @@ date: 2024-01-26 01:10:34.869104-07:00
 description: "Organizar el c\xF3digo en funciones en Haskell significa descomponer\
   \ tu c\xF3digo en bloques reutilizables y nombrados. \xBFPor qu\xE9? Esto mantiene\
   \ tu c\xF3digo DRY\u2026"
-lastmod: '2024-03-11T00:14:32.938310-06:00'
+lastmod: '2024-03-13T22:44:59.124232-06:00'
 model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones en Haskell significa descomponer tu\
   \ c\xF3digo en bloques reutilizables y nombrados. \xBFPor qu\xE9? Esto mantiene\

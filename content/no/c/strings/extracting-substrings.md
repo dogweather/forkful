@@ -5,7 +5,7 @@ date: 2024-02-03 17:56:22.928270-07:00
 description: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre streng\
   \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde.\
   \ Programmerere\u2026"
-lastmod: '2024-03-11T00:14:14.865334-06:00'
+lastmod: '2024-03-13T22:44:41.259371-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre streng\
   \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde.\

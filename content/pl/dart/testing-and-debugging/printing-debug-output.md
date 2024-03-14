@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:32.162054-07:00
 description: "Wypisywanie danych diagnostycznych w Dart polega na wy\u015Bwietlaniu\
   \ informacji w konsoli podczas dzia\u0142ania programu, co pozwala programistom\
   \ \u015Bledzi\u0107 przep\u0142yw\u2026"
-lastmod: '2024-03-11T00:14:08.265189-06:00'
+lastmod: '2024-03-13T22:44:35.094292-06:00'
 model: gpt-4-0125-preview
 summary: "Wypisywanie danych diagnostycznych w Dart polega na wy\u015Bwietlaniu informacji\
   \ w konsoli podczas dzia\u0142ania programu, co pozwala programistom \u015Bledzi\u0107\

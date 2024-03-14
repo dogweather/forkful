@@ -3,7 +3,7 @@ date: 2024-01-26 00:56:40.804817-07:00
 description: "Tratar erros no PowerShell significa prever os percal\xE7os e gerenci\xE1\
   -los de maneira suave. Programadores fazem isso para prevenir falhas e fornecer\
   \ aos\u2026"
-lastmod: '2024-03-11T00:14:20.529086-06:00'
+lastmod: '2024-03-13T22:44:46.804334-06:00'
 model: gpt-4-1106-preview
 summary: "Tratar erros no PowerShell significa prever os percal\xE7os e gerenci\xE1\
   -los de maneira suave. Programadores fazem isso para prevenir falhas e fornecer\

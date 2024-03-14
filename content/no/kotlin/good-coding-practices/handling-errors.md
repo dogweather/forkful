@@ -3,7 +3,7 @@ date: 2024-01-26 00:55:33.131050-07:00
 description: "H\xE5ndtering av feil er hvordan koden din takler problemer som oppst\xE5\
   r under utf\xF8relse\u2014som \xE5 fange en kurveball uten \xE5 miste den. Programmerere\
   \ gj\xF8r dette\u2026"
-lastmod: '2024-03-11T00:14:14.312254-06:00'
+lastmod: '2024-03-13T22:44:40.758343-06:00'
 model: gpt-4-1106-preview
 summary: "H\xE5ndtering av feil er hvordan koden din takler problemer som oppst\xE5\
   r under utf\xF8relse\u2014som \xE5 fange en kurveball uten \xE5 miste den. Programmerere\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:36.425983-07:00
 description: "Argumentos de linha de comando s\xE3o informa\xE7\xF5es que voc\xEA\
   \ passa para o seu script quando o executa. Programadores usam isso para tornar\
   \ os scripts mais\u2026"
-lastmod: '2024-03-11T00:14:20.537371-06:00'
+lastmod: '2024-03-13T22:44:46.812193-06:00'
 model: gpt-4-1106-preview
 summary: "Argumentos de linha de comando s\xE3o informa\xE7\xF5es que voc\xEA passa\
   \ para o seu script quando o executa. Programadores usam isso para tornar os scripts\

@@ -3,7 +3,7 @@ date: 2024-01-26 00:50:21.970698-07:00
 description: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem dar\
   \ errado e lidar com isso de maneira elegante. Por qu\xEA? Bom, isso mant\xE9m seu\
   \ script\u2026"
-lastmod: '2024-03-11T00:14:20.481508-06:00'
+lastmod: '2024-03-13T22:44:46.760156-06:00'
 model: gpt-4-1106-preview
 summary: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem dar errado\
   \ e lidar com isso de maneira elegante. Por qu\xEA? Bom, isso mant\xE9m seu script\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:34:03.820693-07:00
 description: "Das Schreiben auf den Standardfehler (stderr) in PHP bedeutet, Fehlermeldungen\
   \ oder Diagnosen getrennt von der Standardausgabe (stdout) zu leiten, was\u2026"
-lastmod: '2024-03-11T00:14:27.887048-06:00'
+lastmod: '2024-03-13T22:44:53.988738-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) in PHP bedeutet, Fehlermeldungen\
   \ oder Diagnosen getrennt von der Standardausgabe (stdout) zu leiten, was\u2026"

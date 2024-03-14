@@ -5,7 +5,7 @@ date: 2024-02-03 19:25:01.323280-07:00
 description: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119\
   zykiem znacznik\xF3w), to format serializacji danych zrozumia\u0142y dla cz\u0142\
   owieka. Programi\u015Bci\u2026"
-lastmod: '2024-03-11T00:14:08.612569-06:00'
+lastmod: '2024-03-13T22:44:35.429246-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119zykiem\
   \ znacznik\xF3w), to format serializacji danych zrozumia\u0142y dla cz\u0142owieka.\

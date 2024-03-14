@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:53.562527-07:00
 description: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
   \ n\xE4r man skriver skript som interagerar med filsystemet, f\xF6r att s\xE4kerst\xE4\
   lla att ditt\u2026"
-lastmod: '2024-03-11T00:14:11.430687-06:00'
+lastmod: '2024-03-13T22:44:38.053302-06:00'
 model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
   \ n\xE4r man skriver skript som interagerar med filsystemet, f\xF6r att s\xE4kerst\xE4\

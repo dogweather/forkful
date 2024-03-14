@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:30.586517-07:00
 description: "HTTP-pyynt\xF6 perusautentikaatiolla on web-palvelimelle l\xE4hetetty\
   \ pyynt\xF6, jossa on k\xE4ytt\xE4j\xE4tunnus ja salasana. Koodarit k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 yksinkertaiseen\u2026"
-lastmod: '2024-03-11T00:14:30.156917-06:00'
+lastmod: '2024-03-13T22:44:56.226493-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-pyynt\xF6 perusautentikaatiolla on web-palvelimelle l\xE4hetetty pyynt\xF6\
   , jossa on k\xE4ytt\xE4j\xE4tunnus ja salasana. Koodarit k\xE4ytt\xE4v\xE4t t\xE4\

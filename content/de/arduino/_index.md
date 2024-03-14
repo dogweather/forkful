@@ -1,7 +1,7 @@
 ---
 title: 'Arduino: Das open-source coding-Cookbook'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-11 00:18:05.508983-06:00
+lastmod: 2024-03-13 22:45:57.094559-06:00
 description: 'Arduino: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
   Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in…'
 summary: 'Arduino: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,

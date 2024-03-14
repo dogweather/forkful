@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:09.347259-07:00
 description: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de texto\
   \ al final de otra. Los programadores lo hacen para construir mensajes, combinar\
   \ datos\u2026"
-lastmod: '2024-03-11T00:14:33.012600-06:00'
+lastmod: '2024-03-13T22:44:59.193936-06:00'
 model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de texto\
   \ al final de otra. Los programadores lo hacen para construir mensajes, combinar\

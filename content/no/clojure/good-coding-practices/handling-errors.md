@@ -2,7 +2,7 @@
 date: 2024-01-26 00:51:08.699993-07:00
 description: "Feilh\xE5ndtering dreier seg om \xE5 h\xE5ndtere det uventede i programmer\u2014\
   ligner p\xE5 en d\xF8rvakt som takler br\xE5kmakere. Programmerere liker det problemfritt;\u2026"
-lastmod: '2024-03-11T00:14:13.932776-06:00'
+lastmod: '2024-03-13T22:44:40.409430-06:00'
 model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering dreier seg om \xE5 h\xE5ndtere det uventede i programmer\u2014\
   ligner p\xE5 en d\xF8rvakt som takler br\xE5kmakere. Programmerere liker det problemfritt;\u2026"

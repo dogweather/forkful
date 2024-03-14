@@ -2,7 +2,7 @@
 date: 2024-01-26 04:27:34.691183-07:00
 description: "XML:n k\xE4sittelyyn kuuluu j\xE4sennys, tietojen poiminta ja manipulointi\
   \ Laajennettavassa Merkint\xE4kieless\xE4 (Extensible Markup Language). Ohjelmoijat\u2026"
-lastmod: '2024-03-11T00:14:30.719995-06:00'
+lastmod: '2024-03-13T22:44:56.762909-06:00'
 model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittelyyn kuuluu j\xE4sennys, tietojen poiminta ja manipulointi\
   \ Laajennettavassa Merkint\xE4kieless\xE4 (Extensible Markup Language). Ohjelmoijat\u2026"

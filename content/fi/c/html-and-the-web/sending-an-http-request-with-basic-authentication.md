@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:23.228746-07:00
 description: "HTTP-pyynt\xF6 perusautentikaatiolla C-kielell\xE4 l\xE4hett\xE4minen\
   \ tarkoittaa HTTP-pyynn\xF6n muodostamista, joka sis\xE4lt\xE4\xE4 Authorization-otsakkeen\
   \ k\xE4ytt\xE4j\xE4tiedot\u2026"
-lastmod: '2024-03-11T00:14:31.081263-06:00'
+lastmod: '2024-03-13T22:44:57.039984-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynt\xF6 perusautentikaatiolla C-kielell\xE4 l\xE4hett\xE4minen tarkoittaa\
   \ HTTP-pyynn\xF6n muodostamista, joka sis\xE4lt\xE4\xE4 Authorization-otsakkeen\

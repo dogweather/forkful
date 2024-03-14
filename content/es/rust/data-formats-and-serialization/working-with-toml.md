@@ -2,7 +2,7 @@
 date: 2024-01-26 04:25:53.837180-07:00
 description: "TOML es un lenguaje de serializaci\xF3n de datos legible por humanos,\
   \ a menudo utilizado para configuraciones. Los programadores usan TOML por su simplicidad\u2026"
-lastmod: '2024-03-11T00:14:32.685974-06:00'
+lastmod: '2024-03-13T22:44:58.870139-06:00'
 model: gpt-4-0125-preview
 summary: "TOML es un lenguaje de serializaci\xF3n de datos legible por humanos, a\
   \ menudo utilizado para configuraciones. Los programadores usan TOML por su simplicidad\u2026"

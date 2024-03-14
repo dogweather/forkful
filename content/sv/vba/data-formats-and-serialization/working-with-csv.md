@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:49.977988-07:00
 description: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att l\xE4\
   sa fr\xE5n eller skriva till vanliga textfiler d\xE4r dataf\xE4lten \xE4r separerade\
   \ med kommatecken.\u2026"
-lastmod: '2024-03-11T00:14:11.111439-06:00'
+lastmod: '2024-03-13T22:44:37.767729-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att l\xE4sa\
   \ fr\xE5n eller skriva till vanliga textfiler d\xE4r dataf\xE4lten \xE4r separerade\

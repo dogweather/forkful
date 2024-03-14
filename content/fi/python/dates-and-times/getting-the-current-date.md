@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:10:37.943062-07:00
 description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Pythonissa on perustoiminto\
   \ monille sovelluksille, kuten lokitiedostoille, data-analyysille ja aikaan perustuvalle\u2026"
-lastmod: '2024-03-11T00:14:30.080607-06:00'
+lastmod: '2024-03-13T22:44:56.153947-06:00'
 model: gpt-4-0125-preview
 summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Pythonissa on perustoiminto\
   \ monille sovelluksille, kuten lokitiedostoille, data-analyysille ja aikaan perustuvalle\u2026"

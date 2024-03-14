@@ -2,7 +2,7 @@
 date: 2024-01-20 17:43:04.314656-07:00
 description: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tietty\xE4\
   \ kaavaa. Ohjelmoijat tekev\xE4t sen, koska se auttaa puhdistamaan ja muokkaamaan\u2026"
-lastmod: '2024-03-11T00:14:30.722137-06:00'
+lastmod: '2024-03-13T22:44:56.764986-06:00'
 model: gpt-4-1106-preview
 summary: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tietty\xE4\
   \ kaavaa. Ohjelmoijat tekev\xE4t sen, koska se auttaa puhdistamaan ja muokkaamaan\u2026"

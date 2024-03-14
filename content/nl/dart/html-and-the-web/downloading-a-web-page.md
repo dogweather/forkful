@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:54:34.878241-07:00
 description: "Een webpagina downloaden houdt in dat de inhoud van een webpagina via\
   \ de URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om\u2026"
-lastmod: '2024-03-11T00:14:24.319599-06:00'
+lastmod: '2024-03-13T22:44:50.503550-06:00'
 model: gpt-4-0125-preview
 summary: "Een webpagina downloaden houdt in dat de inhoud van een webpagina via de\
   \ URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om\u2026"

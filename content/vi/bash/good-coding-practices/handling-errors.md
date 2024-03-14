@@ -6,7 +6,7 @@ description: "X\u1EED l\xFD l\u1ED7i trong k\u1ECBch b\u1EA3n Bash l\xE0 vi\u1EC
   c l\u01B0\u1EDDng tr\u01B0\u1EDBc nh\u1EEFng t\xECnh hu\u1ED1ng c\xF3 th\u1EC3 \u0111\
   i sai v\xE0 x\u1EED l\xFD ch\xFAng m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng. T\u1EA1i\
   \ sao \u01B0? Ch\xE0, n\xF3 gi\u1EEF cho k\u1ECBch b\u1EA3n\u2026"
-lastmod: '2024-03-11T00:14:10.179589-06:00'
+lastmod: '2024-03-13T22:44:36.888940-06:00'
 model: gpt-4-0125-preview
 summary: "X\u1EED l\xFD l\u1ED7i trong k\u1ECBch b\u1EA3n Bash l\xE0 vi\u1EC7c l\u01B0\
   \u1EDDng tr\u01B0\u1EDBc nh\u1EEFng t\xECnh hu\u1ED1ng c\xF3 th\u1EC3 \u0111i sai\

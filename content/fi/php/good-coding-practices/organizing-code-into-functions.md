@@ -3,7 +3,7 @@ date: 2024-01-26 01:12:01.663197-07:00
 description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodin jaottelua uudelleenk\xE4\
   ytett\xE4viksi lohkoiksi m\xE4\xE4riteltyine tarkoituksineen. Teemme niin pit\xE4\
   \xE4ksemme asiat\u2026"
-lastmod: '2024-03-11T00:14:30.613537-06:00'
+lastmod: '2024-03-13T22:44:56.661344-06:00'
 model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodin jaottelua uudelleenk\xE4\
   ytett\xE4viksi lohkoiksi m\xE4\xE4riteltyine tarkoituksineen. Teemme niin pit\xE4\

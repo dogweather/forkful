@@ -2,7 +2,7 @@
 date: 2024-01-20 18:03:58.829742-07:00
 description: "Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi\
   \ del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere\u2026"
-lastmod: '2024-03-11T00:14:17.114966-06:00'
+lastmod: '2024-03-13T22:44:43.517294-06:00'
 model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi\
   \ del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere\u2026"

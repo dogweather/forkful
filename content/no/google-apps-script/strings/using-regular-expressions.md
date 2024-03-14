@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 22:05:34.342973-07:00
 description: "Regul\xE6re uttrykk (regex) er m\xF8nstre brukt til \xE5 matche kombinasjoner\
   \ av tegn i strenger. Programmerere bruker dem til s\xF8king, redigering eller\u2026"
-lastmod: '2024-03-11T00:14:13.820309-06:00'
+lastmod: '2024-03-13T22:44:40.303165-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre brukt til \xE5 matche kombinasjoner\
   \ av tegn i strenger. Programmerere bruker dem til s\xF8king, redigering eller\u2026"

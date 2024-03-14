@@ -3,7 +3,7 @@ date: 2024-01-26 04:37:47.304130-07:00
 description: "Les nombres complexes \xE9tendent les nombres r\xE9els en ajoutant une\
   \ unit\xE9 imaginaire, repr\xE9sent\xE9e par 'i', o\xF9 i^2 = -1. Les programmeurs\
   \ les utilisent pour\u2026"
-lastmod: '2024-03-11T00:14:32.053131-06:00'
+lastmod: '2024-03-13T22:44:58.155503-06:00'
 model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent les nombres r\xE9els en ajoutant une unit\xE9\
   \ imaginaire, repr\xE9sent\xE9e par 'i', o\xF9 i^2 = -1. Les programmeurs les utilisent\

@@ -5,7 +5,7 @@ date: 2024-01-28 22:05:12.895532-07:00
 description: "Het lezen van command line argumenten stelt scripts in staat om zich\
   \ anders te gedragen op basis van invoer van buiten de code. Programmeurs gebruiken\
   \ ze\u2026"
-lastmod: '2024-03-11T00:14:24.879671-06:00'
+lastmod: '2024-03-13T22:44:51.045654-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van command line argumenten stelt scripts in staat om zich anders\
   \ te gedragen op basis van invoer van buiten de code. Programmeurs gebruiken ze\u2026"

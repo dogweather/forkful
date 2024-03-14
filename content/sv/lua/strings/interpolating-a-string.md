@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:34.331300-07:00
 description: "Stringinterpolering inneb\xE4r att du injicerar variabler direkt i en\
   \ textstr\xE4ng. Programmerare anv\xE4nder det f\xF6r att enkelt bygga dynamiska\
   \ meddelanden eller\u2026"
-lastmod: '2024-03-11T00:14:11.400090-06:00'
+lastmod: '2024-03-13T22:44:38.024519-06:00'
 model: gpt-4-1106-preview
 summary: "Stringinterpolering inneb\xE4r att du injicerar variabler direkt i en textstr\xE4\
   ng. Programmerare anv\xE4nder det f\xF6r att enkelt bygga dynamiska meddelanden\

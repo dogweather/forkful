@@ -3,7 +3,7 @@ date: 2024-01-20 18:02:55.198465-07:00
 description: "D\xE9marrer un nouveau projet C#, c\u2019est cr\xE9er une base pour\
   \ transformer vos id\xE9es en code op\xE9rationnel. Les programmeurs se lancent\
   \ dans de nouveaux projets\u2026"
-lastmod: '2024-03-11T00:14:31.737966-06:00'
+lastmod: '2024-03-13T22:44:57.788077-06:00'
 model: gpt-4-1106-preview
 summary: "D\xE9marrer un nouveau projet C#, c\u2019est cr\xE9er une base pour transformer\
   \ vos id\xE9es en code op\xE9rationnel. Les programmeurs se lancent dans de nouveaux\

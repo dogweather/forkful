@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:52.784475-07:00
 description: "La gestion des erreurs dans Google Apps Script consiste \xE0 pr\xE9\
   voir, attraper et r\xE9pondre aux exceptions ou erreurs qui surviennent pendant\
   \ l'ex\xE9cution du\u2026"
-lastmod: '2024-03-11T00:14:31.231946-06:00'
+lastmod: '2024-03-13T22:44:57.194503-06:00'
 model: gpt-4-0125-preview
 summary: "La gestion des erreurs dans Google Apps Script consiste \xE0 pr\xE9voir,\
   \ attraper et r\xE9pondre aux exceptions ou erreurs qui surviennent pendant l'ex\xE9\

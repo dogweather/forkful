@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:53.082612-07:00
 description: "\xC5 sette stor forbokstav i en streng i Bash inneb\xE6rer \xE5 omdanne\
   \ det f\xF8rste tegnet i strengen til en stor bokstav, mens resten av strengen forblir\
   \ uendret.\u2026"
-lastmod: '2024-03-11T00:14:14.527990-06:00'
+lastmod: '2024-03-13T22:44:40.955797-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i Bash inneb\xE6rer \xE5 omdanne\
   \ det f\xF8rste tegnet i strengen til en stor bokstav, mens resten av strengen forblir\

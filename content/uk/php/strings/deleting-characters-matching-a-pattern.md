@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:48.171162-07:00
 description: "Deleting characters matching a pattern means we\u2019re getting rid\
   \ of specific letters or symbols based on rules\u2014like tossing out all vowels\
   \ from a sentence.\u2026"
-lastmod: '2024-03-11T00:14:23.264487-06:00'
+lastmod: '2024-03-13T22:44:49.404037-06:00'
 model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern means we\u2019re getting rid of specific\
   \ letters or symbols based on rules\u2014like tossing out all vowels from a sentence.\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:46:02.169662-07:00
 description: "Das Extrahieren von Teilstrings bezieht sich darauf, spezifische Segmente\
   \ eines Strings in Haskell herauszuschneiden. Programmierer nutzen es, um\u2026"
-lastmod: '2024-03-11T00:14:27.817056-06:00'
+lastmod: '2024-03-13T22:44:53.920233-06:00'
 model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings bezieht sich darauf, spezifische Segmente\
   \ eines Strings in Haskell herauszuschneiden. Programmierer nutzen es, um\u2026"

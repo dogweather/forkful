@@ -5,7 +5,7 @@ date: 2024-02-01 22:05:34.838312-07:00
 description: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\
   \xE4 lukemista tai kirjoittamista yksinkertaisiin tekstitiedostoihin, joissa tietokent\xE4\
   t ovat\u2026"
-lastmod: '2024-03-11T00:14:30.364263-06:00'
+lastmod: '2024-03-13T22:44:56.424873-06:00'
 model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\xE4\
   \ lukemista tai kirjoittamista yksinkertaisiin tekstitiedostoihin, joissa tietokent\xE4\

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:35:47.930337-07:00
 description: "Trabajar con XML significa analizar y generar datos XML en Swift. Los\
   \ programadores hacen esto para el intercambio de datos, especialmente cuando se\u2026"
-lastmod: '2024-03-11T00:14:33.270428-06:00'
+lastmod: '2024-03-13T22:44:59.441003-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML significa analizar y generar datos XML en Swift. Los programadores\
   \ hacen esto para el intercambio de datos, especialmente cuando se\u2026"

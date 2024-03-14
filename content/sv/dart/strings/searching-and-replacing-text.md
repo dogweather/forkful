@@ -5,7 +5,7 @@ date: 2024-03-08 21:56:19.007172-07:00
 description: "Att s\xF6ka och ers\xE4tta text i Dart inneb\xE4r att unders\xF6ka str\xE4\
   ngar f\xF6r att hitta vissa m\xF6nster eller teckenf\xF6ljder och substituera dem\
   \ med nytt inneh\xE5ll.\u2026"
-lastmod: '2024-03-11T00:14:10.927202-06:00'
+lastmod: '2024-03-13T22:44:37.595056-06:00'
 model: gpt-4-0125-preview
 summary: "Att s\xF6ka och ers\xE4tta text i Dart inneb\xE4r att unders\xF6ka str\xE4\
   ngar f\xF6r att hitta vissa m\xF6nster eller teckenf\xF6ljder och substituera dem\

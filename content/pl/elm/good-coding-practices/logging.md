@@ -3,7 +3,7 @@ date: 2024-01-26 01:02:26.774028-07:00
 description: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144 i danych wyj\u015B\
   ciowych z dzia\u0142aj\u0105cego oprogramowania, mo\u017Cna to potraktowa\u0107\
   \ jako dziennik\u2026"
-lastmod: '2024-03-11T00:14:08.507443-06:00'
+lastmod: '2024-03-13T22:44:35.328166-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144 i danych wyj\u015B\
   ciowych z dzia\u0142aj\u0105cego oprogramowania, mo\u017Cna to potraktowa\u0107\

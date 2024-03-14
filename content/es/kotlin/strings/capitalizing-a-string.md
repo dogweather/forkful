@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:35.098660-07:00
 description: "Capitalizar una cadena en programaci\xF3n implica convertir el primer\
   \ car\xE1cter de la cadena a may\xFAsculas si a\xFAn no lo est\xE1, lo cual es \xFA\
   til para formatear\u2026"
-lastmod: '2024-03-11T00:14:32.823862-06:00'
+lastmod: '2024-03-13T22:44:59.018895-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en programaci\xF3n implica convertir el primer car\xE1\
   cter de la cadena a may\xFAsculas si a\xFAn no lo est\xE1, lo cual es \xFAtil para\

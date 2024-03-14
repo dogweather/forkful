@@ -6,7 +6,7 @@ date: 2024-01-28 02:05:29.095545-07:00
 description: "Analisar uma data de uma string trata-se de pegar um texto, como \"\
   2023-04-05\", e convert\xEA-lo em um formato de data que seu programa possa entender\
   \ e\u2026"
-lastmod: '2024-03-11T00:14:19.926458-06:00'
+lastmod: '2024-03-13T22:44:46.247419-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string trata-se de pegar um texto, como \"2023-04-05\"\
   , e convert\xEA-lo em um formato de data que seu programa possa entender e\u2026"

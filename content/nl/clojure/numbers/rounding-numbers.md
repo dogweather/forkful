@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:06:42.589811-07:00
 description: "Getallen afronden gaat over het aanpassen van een getal naar het dichtstbijzijnde\
   \ geheel of naar een bepaalde decimale precisie. We ronden getallen af om\u2026"
-lastmod: '2024-03-11T00:14:24.225049-06:00'
+lastmod: '2024-03-13T22:44:50.414098-06:00'
 model: gpt-4-0125-preview
 summary: "Getallen afronden gaat over het aanpassen van een getal naar het dichtstbijzijnde\
   \ geheel of naar een bepaalde decimale precisie. We ronden getallen af om\u2026"

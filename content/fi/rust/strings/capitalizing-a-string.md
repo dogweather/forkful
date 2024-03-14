@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:33.208382-07:00
 description: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
   \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"
-lastmod: '2024-03-11T00:14:30.273961-06:00'
+lastmod: '2024-03-13T22:44:56.340317-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
   \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"

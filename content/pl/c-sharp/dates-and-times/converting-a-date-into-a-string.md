@@ -3,7 +3,7 @@ date: 2024-01-20 17:36:20.953632-07:00
 description: "Konwersja daty na ci\u0105g znak\xF3w to spos\xF3b na zmian\u0119 formatu\
   \ `DateTime` na tekst. Programi\u015Bci robi\u0105 to, by \u0142atwo wy\u015Bwietla\u0107\
   \ i przechowywa\u0107 informacje o dacie\u2026"
-lastmod: '2024-03-11T00:14:08.603117-06:00'
+lastmod: '2024-03-13T22:44:35.419833-06:00'
 model: gpt-4-1106-preview
 summary: "Konwersja daty na ci\u0105g znak\xF3w to spos\xF3b na zmian\u0119 formatu\
   \ `DateTime` na tekst. Programi\u015Bci robi\u0105 to, by \u0142atwo wy\u015Bwietla\u0107\

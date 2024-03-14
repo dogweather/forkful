@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:17:22.762608-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) sind ein m\xE4chtiges Werkzeug zur\
   \ Textverarbeitung, das es Programmierern erm\xF6glicht, mit fortgeschrittenen\u2026"
-lastmod: '2024-03-11T00:14:27.729643-06:00'
+lastmod: '2024-03-13T22:44:53.837237-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind ein m\xE4chtiges Werkzeug zur Textverarbeitung,\
   \ das es Programmierern erm\xF6glicht, mit fortgeschrittenen\u2026"

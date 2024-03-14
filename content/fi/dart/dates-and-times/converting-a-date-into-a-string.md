@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:58.234697-07:00
 description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Dart-kieless\xE4\
   \ on yleinen teht\xE4v\xE4, kun tarvitsee n\xE4ytt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4\
   r\xE4- ja aikatietoja ihmisluettavassa muodossa tai kun\u2026"
-lastmod: '2024-03-11T00:14:30.215285-06:00'
+lastmod: '2024-03-13T22:44:56.283456-06:00'
 model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Dart-kieless\xE4 on\
   \ yleinen teht\xE4v\xE4, kun tarvitsee n\xE4ytt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\

@@ -2,7 +2,7 @@
 date: 2024-01-20 15:37:14.737512-07:00
 description: "Dato-parsing fra en streng betyr \xE5 konvertere tekst til et `Date`-objekt.\
   \ Programmerere gj\xF8r dette for \xE5 h\xE5ndtere datoer og tider p\xE5 en standardisert,\u2026"
-lastmod: '2024-03-11T00:14:14.314546-06:00'
+lastmod: '2024-03-13T22:44:40.760187-06:00'
 model: unknown
 summary: "Dato-parsing fra en streng betyr \xE5 konvertere tekst til et `Date`-objekt.\
   \ Programmerere gj\xF8r dette for \xE5 h\xE5ndtere datoer og tider p\xE5 en standardisert,\u2026"

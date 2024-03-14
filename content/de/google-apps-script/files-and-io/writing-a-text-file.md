@@ -5,7 +5,7 @@ date: 2024-02-01 22:07:50.660039-07:00
 description: "Das Schreiben einer Textdatei in Google Apps Script erm\xF6glicht es\
   \ Entwicklern, Daten dauerhaft zu speichern, sodass sie f\xFCr zuk\xFCnftige Verwendungen\
   \ oder\u2026"
-lastmod: '2024-03-11T00:14:27.314523-06:00'
+lastmod: '2024-03-13T22:44:53.354023-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Google Apps Script erm\xF6glicht es Entwicklern,\
   \ Daten dauerhaft zu speichern, sodass sie f\xFCr zuk\xFCnftige Verwendungen oder\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:41:53.714586-07:00
 description: "I numeri complessi estendono la linea dei numeri reali attraverso l'aggiunta\
   \ di un'unit\xE0 immaginaria, `i`, dove `i^2 = -1`. Sono fondamentali in campi\u2026"
-lastmod: '2024-03-11T00:14:16.871173-06:00'
+lastmod: '2024-03-13T22:44:43.303130-06:00'
 model: gpt-4-0125-preview
 summary: "I numeri complessi estendono la linea dei numeri reali attraverso l'aggiunta\
   \ di un'unit\xE0 immaginaria, `i`, dove `i^2 = -1`. Sono fondamentali in campi\u2026"

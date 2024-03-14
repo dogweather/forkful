@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:25.520436-07:00
 description: "Die Suche und das Ersetzen von Text in der Programmierung erleichtert\
   \ die Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe\
   \ bei\u2026"
-lastmod: '2024-03-11T00:14:27.227940-06:00'
+lastmod: '2024-03-13T22:44:53.270912-06:00'
 model: gpt-4-0125-preview
 summary: "Die Suche und das Ersetzen von Text in der Programmierung erleichtert die\
   \ Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe bei\u2026"

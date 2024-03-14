@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:25:49.285943-07:00
 description: "Lavorare con YAML implica analizzare e manipolare file YAML (YAML Ain't\
   \ Markup Language), un formato di serializzazione dei dati utilizzato per file di\u2026"
-lastmod: '2024-03-11T00:14:17.502300-06:00'
+lastmod: '2024-03-13T22:44:43.880059-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con YAML implica analizzare e manipolare file YAML (YAML Ain't\
   \ Markup Language), un formato di serializzazione dei dati utilizzato per file di\u2026"

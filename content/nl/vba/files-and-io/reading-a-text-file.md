@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:58:38.268810-07:00
 description: "Een tekstbestand lezen in Visual Basic for Applications (VBA) betekent\
   \ programmatisch toegang krijgen tot en het extraheren van de inhoud van een\u2026"
-lastmod: '2024-03-11T00:14:24.474895-06:00'
+lastmod: '2024-03-13T22:44:50.654883-06:00'
 model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in Visual Basic for Applications (VBA) betekent programmatisch\
   \ toegang krijgen tot en het extraheren van de inhoud van een\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:44:18.283149-07:00
 description: "Descargar una p\xE1gina web significa obtener su HTML, datos y multimedia.\
   \ Los programadores lo hacen para an\xE1lisis de datos, pruebas o copias de seguridad."
-lastmod: '2024-03-11T00:14:33.288654-06:00'
+lastmod: '2024-03-13T22:44:59.457603-06:00'
 model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa obtener su HTML, datos y multimedia.\
   \ Los programadores lo hacen para an\xE1lisis de datos, pruebas o copias de seguridad."

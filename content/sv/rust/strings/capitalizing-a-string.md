@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:36.443516-07:00
 description: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Rust inneb\xE4\
   r att modifiera str\xE4ngen s\xE5 att dess f\xF6rsta tecken blir en stor bokstav\
   \ om det \xE4r en bokstav,\u2026"
-lastmod: '2024-03-11T00:14:11.020860-06:00'
+lastmod: '2024-03-13T22:44:37.681306-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Rust inneb\xE4r att\
   \ modifiera str\xE4ngen s\xE5 att dess f\xF6rsta tecken blir en stor bokstav om\

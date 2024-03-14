@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:35.530689-07:00
 description: "Crear un archivo temporal en Arduino es cuesti\xF3n de trabajar con\
   \ almacenamiento temporal de datos durante la ejecuci\xF3n del programa. Programadores\
   \ usan\u2026"
-lastmod: '2024-03-11T00:14:33.175386-06:00'
+lastmod: '2024-03-13T22:44:59.353051-06:00'
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal en Arduino es cuesti\xF3n de trabajar con almacenamiento\
   \ temporal de datos durante la ejecuci\xF3n del programa. Programadores usan\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:54:58.472223-07:00
 description: "La interpolaci\xF3n de cadenas es el proceso de inyectar valores de\
   \ variables directamente en cadenas de texto, a menudo para crear mensajes significativos\u2026"
-lastmod: '2024-03-11T00:14:32.557521-06:00'
+lastmod: '2024-03-13T22:44:58.732967-06:00'
 model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es el proceso de inyectar valores de variables\
   \ directamente en cadenas de texto, a menudo para crear mensajes significativos\u2026"

@@ -8,7 +8,7 @@ description: "CLI(Command Line Interface) \uD55C \uC904 \uBA85\uB839\uC744 \uC0A
   \uC220\uC740 \uBE60\uB978 \uC218\uC815, \uC77C\uAD04 \uC5C5\uB370\uC774\uD2B8 \uB610\
   \uB294 \uBC18\uBCF5 \uC791\uC5C5 \uC790\uB3D9\uD654\uC5D0 \uB9E4\uC6B0 \uC720\uC6A9\
   \uD558\uC5EC\u2026"
-lastmod: '2024-03-11T00:14:29.913506-06:00'
+lastmod: '2024-03-13T22:44:55.988977-06:00'
 model: gpt-4-0125-preview
 summary: "CLI(Command Line Interface) \uD55C \uC904 \uBA85\uB839\uC744 \uC0AC\uC6A9\
   \uD55C Ruby\uC758 \uD30C\uC77C \uD604\uC7A5 \uD3B8\uC9D1\uC740 \uC5D0\uB514\uD130\

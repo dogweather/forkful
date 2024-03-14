@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:55:14.277339-07:00
 description: "Een string kapitaliseren betekent elk karakter veranderen in een hoofdletter.\
   \ Programmeurs doen dit voor consistentie, met name in gebruikersinterfaces of\u2026"
-lastmod: '2024-03-11T00:14:24.889601-06:00'
+lastmod: '2024-03-13T22:44:51.055689-06:00'
 model: gpt-4-0125-preview
 summary: "Een string kapitaliseren betekent elk karakter veranderen in een hoofdletter.\
   \ Programmeurs doen dit voor consistentie, met name in gebruikersinterfaces of\u2026"

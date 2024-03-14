@@ -3,7 +3,7 @@ date: 2024-01-25 02:54:33.067718-07:00
 description: "Kicking off a new PHP project means setting up a foundation to build\
   \ your web app or script. We do it to start fresh, structure our ideas into code,\
   \ and\u2026"
-lastmod: '2024-03-11T00:14:34.031719-06:00'
+lastmod: '2024-03-13T22:45:00.167364-06:00'
 model: gpt-4-1106-preview
 summary: "Kicking off a new PHP project means setting up a foundation to build your\
   \ web app or script. We do it to start fresh, structure our ideas into code, and\u2026"

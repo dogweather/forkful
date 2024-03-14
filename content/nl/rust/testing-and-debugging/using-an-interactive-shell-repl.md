@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:09:30.755852-07:00
 description: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je\
   \ Rust-code direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"
-lastmod: '2024-03-11T00:14:24.413094-06:00'
+lastmod: '2024-03-13T22:44:50.595770-06:00'
 model: gpt-4-0125-preview
 summary: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je Rust-code\
   \ direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"

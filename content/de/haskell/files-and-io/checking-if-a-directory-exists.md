@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:07:30.368099-07:00
 description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
   \ Operation bei vielen Programmieraufgaben. Es erm\xF6glicht bedingte Aktionen basierend\u2026"
-lastmod: '2024-03-11T00:14:27.842595-06:00'
+lastmod: '2024-03-13T22:44:53.945354-06:00'
 model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
   \ Operation bei vielen Programmieraufgaben. Es erm\xF6glicht bedingte Aktionen basierend\u2026"

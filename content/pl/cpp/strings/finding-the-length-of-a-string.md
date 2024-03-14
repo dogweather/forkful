@@ -3,7 +3,7 @@ date: 2024-01-20 17:47:33.452863-07:00
 description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w to spos\xF3\
   b na okre\u015Blenie, ile znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105\
   \ to, aby manipulowa\u0107 tekstami, walidowa\u0107\u2026"
-lastmod: '2024-03-11T00:14:08.902462-06:00'
+lastmod: '2024-03-13T22:44:35.703875-06:00'
 model: gpt-4-1106-preview
 summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w to spos\xF3\
   b na okre\u015Blenie, ile znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105\

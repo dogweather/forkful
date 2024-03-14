@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:02.431175-07:00
 description: "Envoyer une requ\xEAte HTTP avec authentification de base en Go implique\
   \ d'ajouter un en-t\xEAte d'autorisation \xE0 votre requ\xEAte qui comprend un nom\u2026"
-lastmod: '2024-03-11T00:14:31.173856-06:00'
+lastmod: '2024-03-13T22:44:57.133052-06:00'
 model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec authentification de base en Go implique\
   \ d'ajouter un en-t\xEAte d'autorisation \xE0 votre requ\xEAte qui comprend un nom\u2026"

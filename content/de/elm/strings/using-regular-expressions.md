@@ -5,7 +5,7 @@ date: 2024-02-03 19:16:33.183553-07:00
 description: "Regul\xE4re Ausdr\xFCcke (regex) in der Programmierung sind Muster,\
   \ die zum Abgleichen von Zeichenkombinationen in Strings verwendet werden. In Elm,\
   \ genau wie\u2026"
-lastmod: '2024-03-11T00:14:27.687580-06:00'
+lastmod: '2024-03-13T22:44:53.794762-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in der Programmierung sind Muster, die\
   \ zum Abgleichen von Zeichenkombinationen in Strings verwendet werden. In Elm, genau\

@@ -2,7 +2,7 @@
 date: 2024-01-20 15:13:49.092090-07:00
 description: "Getting the current date in Elm means fetching the current calendar\
   \ date from the system. We do this to timestamp events, schedule tasks, or track\u2026"
-lastmod: '2024-03-11T00:14:33.884833-06:00'
+lastmod: '2024-03-13T22:45:00.020209-06:00'
 model: unknown
 summary: "Getting the current date in Elm means fetching the current calendar date\
   \ from the system. We do this to timestamp events, schedule tasks, or track\u2026"

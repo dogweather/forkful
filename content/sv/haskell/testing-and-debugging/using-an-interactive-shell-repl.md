@@ -3,7 +3,7 @@ date: 2024-01-26 04:14:55.960533-07:00
 description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5\
   ter dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\
   \ av\u2026"
-lastmod: '2024-03-11T00:14:11.323029-06:00'
+lastmod: '2024-03-13T22:44:37.956700-06:00'
 model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5ter\
   \ dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\

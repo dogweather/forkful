@@ -5,7 +5,7 @@ date: 2024-02-01 21:53:09.362745-07:00
 description: "L'estrazione di sottostringhe in Visual Basic for Applications (VBA)\
   \ implica l'isolamento di parti specifiche di una stringa in base a criteri dati.\
   \ I\u2026"
-lastmod: '2024-03-11T00:14:16.817229-06:00'
+lastmod: '2024-03-13T22:44:43.250739-06:00'
 model: gpt-4-0125-preview
 summary: "L'estrazione di sottostringhe in Visual Basic for Applications (VBA) implica\
   \ l'isolamento di parti specifiche di una stringa in base a criteri dati. I\u2026"

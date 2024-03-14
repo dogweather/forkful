@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:10.110164-07:00
 description: "Zaczynaj\u0105c nowy projekt, programi\u015Bci tworz\u0105 grunt pod\
   \ sw\xF3j kod - to jak u\u0142ozenie fundament\xF3w pod dom. Robi\u0105 to, bo dobrze\
   \ przygotowany start to klucz do\u2026"
-lastmod: '2024-03-11T00:14:08.682787-06:00'
+lastmod: '2024-03-13T22:44:35.497842-06:00'
 model: gpt-4-1106-preview
 summary: "Zaczynaj\u0105c nowy projekt, programi\u015Bci tworz\u0105 grunt pod sw\xF3\
   j kod - to jak u\u0142ozenie fundament\xF3w pod dom. Robi\u0105 to, bo dobrze przygotowany\

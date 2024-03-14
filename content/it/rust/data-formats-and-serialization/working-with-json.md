@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:24:07.227746-07:00
 description: "Lavorare con JSON (JavaScript Object Notation) in Rust consiste nell'analizzare\
   \ i dati JSON per trasformarli in strutture dati Rust e serializzare le\u2026"
-lastmod: '2024-03-11T00:14:16.805893-06:00'
+lastmod: '2024-03-13T22:44:43.239954-06:00'
 model: gpt-4-0125-preview
 summary: "Lavorare con JSON (JavaScript Object Notation) in Rust consiste nell'analizzare\
   \ i dati JSON per trasformarli in strutture dati Rust e serializzare le\u2026"

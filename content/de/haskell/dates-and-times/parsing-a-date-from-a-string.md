@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:14:20.163479-07:00
 description: "Das Parsen eines Datums aus einem String in Haskell beinhaltet die Umwandlung\
   \ von textuellen Darstellungen von Daten in ein strukturiertes Format, das das\u2026"
-lastmod: '2024-03-11T00:14:27.837789-06:00'
+lastmod: '2024-03-13T22:44:53.940643-06:00'
 model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Haskell beinhaltet die Umwandlung\
   \ von textuellen Darstellungen von Daten in ein strukturiertes Format, das das\u2026"

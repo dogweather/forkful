@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:44.011820-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Kotlin inneb\xE6rer \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe p\xE5 en spesifisert sti. Programmerere utf\xF8\
   rer denne oppgaven\u2026"
-lastmod: '2024-03-11T00:14:14.320650-06:00'
+lastmod: '2024-03-13T22:44:40.765485-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Kotlin inneb\xE6rer \xE5 verifisere\
   \ tilstedev\xE6relsen av en mappe p\xE5 en spesifisert sti. Programmerere utf\xF8\

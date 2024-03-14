@@ -2,7 +2,7 @@
 date: 2024-01-26 03:41:58.646941-07:00
 description: "Eliminar las comillas de una cadena significa quitar cualquier marca\
   \ de comillas que encierre el contenido. Hacemos esto para sanear entradas, preparar\u2026"
-lastmod: '2024-03-11T00:14:33.229479-06:00'
+lastmod: '2024-03-13T22:44:59.404942-06:00'
 model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena significa quitar cualquier marca de\
   \ comillas que encierre el contenido. Hacemos esto para sanear entradas, preparar\u2026"

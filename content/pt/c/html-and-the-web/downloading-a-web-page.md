@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:49.745769-07:00
 description: "Baixar uma p\xE1gina da web em C envolve acessar programaticamente o\
   \ conte\xFAdo de uma p\xE1gina da web pela internet e salv\xE1-lo localmente para\
   \ processamento ou\u2026"
-lastmod: '2024-03-11T00:14:20.789439-06:00'
+lastmod: '2024-03-13T22:44:47.048562-06:00'
 model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina da web em C envolve acessar programaticamente o conte\xFA\
   do de uma p\xE1gina da web pela internet e salv\xE1-lo localmente para processamento\

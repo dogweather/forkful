@@ -2,7 +2,7 @@
 date: 2024-01-26 00:54:10.457494-07:00
 description: "La gestione degli errori nella programmazione riguarda la gestione dell'inaspettato\
   \ \u2014 cose che possono andare storte. I programmatori lo fanno per\u2026"
-lastmod: '2024-03-11T00:14:17.075422-06:00'
+lastmod: '2024-03-13T22:44:43.482599-06:00'
 model: gpt-4-1106-preview
 summary: "La gestione degli errori nella programmazione riguarda la gestione dell'inaspettato\
   \ \u2014 cose che possono andare storte. I programmatori lo fanno per\u2026"

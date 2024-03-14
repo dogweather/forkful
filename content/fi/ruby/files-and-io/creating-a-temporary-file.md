@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:12.377061-07:00
 description: "Luodaan tilap\xE4isi\xE4 tiedostoja, kun tarvitsemme v\xE4liaikaisen\
   \ s\xE4ilytyspaikan datalle, joka h\xE4vi\xE4\xE4 ohjelman suorituksen p\xE4\xE4\
   tytty\xE4. T\xE4m\xE4 on k\xE4tev\xE4\xE4, koska\u2026"
-lastmod: '2024-03-11T00:14:31.147825-06:00'
+lastmod: '2024-03-13T22:44:57.107208-06:00'
 model: gpt-4-1106-preview
 summary: "Luodaan tilap\xE4isi\xE4 tiedostoja, kun tarvitsemme v\xE4liaikaisen s\xE4\
   ilytyspaikan datalle, joka h\xE4vi\xE4\xE4 ohjelman suorituksen p\xE4\xE4tytty\xE4\

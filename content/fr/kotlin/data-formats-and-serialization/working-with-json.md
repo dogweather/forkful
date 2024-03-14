@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:02.097915-07:00
 description: "Travailler avec JSON (JavaScript Object Notation) en Kotlin implique\
   \ l'analyse et la g\xE9n\xE9ration de donn\xE9es JSON. Les programmeurs font cela\
   \ pour \xE9changer\u2026"
-lastmod: '2024-03-11T00:14:31.712995-06:00'
+lastmod: '2024-03-13T22:44:57.764065-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec JSON (JavaScript Object Notation) en Kotlin implique l'analyse\
   \ et la g\xE9n\xE9ration de donn\xE9es JSON. Les programmeurs font cela pour \xE9\

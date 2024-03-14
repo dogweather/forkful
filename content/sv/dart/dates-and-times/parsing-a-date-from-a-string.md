@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:40.500839-07:00
 description: "Att tolka ett datum fr\xE5n en str\xE4ng i Dart inneb\xE4r att konvertera\
   \ textrepresentation av datum och tider till ett `DateTime`-objekt. Denna operation\
   \ \xE4r\u2026"
-lastmod: '2024-03-11T00:14:10.954770-06:00'
+lastmod: '2024-03-13T22:44:37.622331-06:00'
 model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Dart inneb\xE4r att konvertera\
   \ textrepresentation av datum och tider till ett `DateTime`-objekt. Denna operation\

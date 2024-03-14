@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:00.731732-07:00
 description: "Travailler avec XML en C implique l'analyse, la requ\xEAte et la manipulation\
   \ de documents XML \xE0 l'aide de diverses biblioth\xE8ques. Les programmeurs se\u2026"
-lastmod: '2024-03-11T00:14:32.271003-06:00'
+lastmod: '2024-03-13T22:44:58.399426-06:00'
 model: gpt-4-0125-preview
 summary: "Travailler avec XML en C implique l'analyse, la requ\xEAte et la manipulation\
   \ de documents XML \xE0 l'aide de diverses biblioth\xE8ques. Les programmeurs se\u2026"

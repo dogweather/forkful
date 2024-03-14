@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:40.654561-07:00
 description: "Ler argumentos de linha de comando em Dart permite que programadores\
   \ insiram dados diretamente no console ao executar um programa Dart, aumentando\
   \ sua\u2026"
-lastmod: '2024-03-11T00:14:19.982286-06:00'
+lastmod: '2024-03-13T22:44:46.298285-06:00'
 model: gpt-4-0125-preview
 summary: "Ler argumentos de linha de comando em Dart permite que programadores insiram\
   \ dados diretamente no console ao executar um programa Dart, aumentando sua\u2026"

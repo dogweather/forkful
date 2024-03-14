@@ -2,7 +2,7 @@
 date: 2024-01-26 03:43:48.869077-07:00
 description: "Redondear n\xFAmeros consiste en eliminar los decimales para simplificar\
   \ tus datos o ajustarlos a formatos espec\xEDficos. Los programadores lo hacen para\u2026"
-lastmod: '2024-03-11T00:14:33.330053-06:00'
+lastmod: '2024-03-13T22:44:59.494694-06:00'
 model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros consiste en eliminar los decimales para simplificar\
   \ tus datos o ajustarlos a formatos espec\xEDficos. Los programadores lo hacen para\u2026"

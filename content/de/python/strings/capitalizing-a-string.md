@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:12.463759-07:00
 description: "Das Gro\xDFschreiben eines Strings bedeutet, das erste Zeichen eines\
   \ Strings in Gro\xDFbuchstaben umzuwandeln und den Rest in Kleinbuchstaben. Diese\
   \ Operation\u2026"
-lastmod: '2024-03-11T00:14:27.323086-06:00'
+lastmod: '2024-03-13T22:44:53.361545-06:00'
 model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings bedeutet, das erste Zeichen eines Strings\
   \ in Gro\xDFbuchstaben umzuwandeln und den Rest in Kleinbuchstaben. Diese Operation\u2026"

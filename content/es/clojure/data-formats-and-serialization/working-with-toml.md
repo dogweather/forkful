@@ -3,7 +3,7 @@ date: 2024-01-26 04:20:30.292412-07:00
 description: "Trabajar con TOML significa que est\xE1s manejando datos en un formato\
   \ minimalista \"Tom's Obvious, Minimal Language\" (Lenguaje Minimalista y Obvio\
   \ de Tom),\u2026"
-lastmod: '2024-03-11T00:14:32.510001-06:00'
+lastmod: '2024-03-13T22:44:58.682303-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con TOML significa que est\xE1s manejando datos en un formato minimalista\
   \ \"Tom's Obvious, Minimal Language\" (Lenguaje Minimalista y Obvio de Tom),\u2026"

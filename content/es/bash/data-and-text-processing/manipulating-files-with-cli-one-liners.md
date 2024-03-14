@@ -2,7 +2,7 @@
 date: 2024-01-27 16:20:37.987173-07:00
 description: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de Comando)\
   \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\u2026"
-lastmod: '2024-03-11T00:14:33.062184-06:00'
+lastmod: '2024-03-13T22:44:59.241192-06:00'
 model: gpt-4-0125-preview
 summary: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de Comando)\
   \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\u2026"

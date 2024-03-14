@@ -3,7 +3,7 @@ date: 2024-01-20 17:52:05.835018-07:00
 description: "Mik\xE4 & Miksi? Debug-tulosteiden printtaaminen on koodin tulostamista,\
   \ n\xE4hd\xE4ksemme mit\xE4 siell\xE4 tapahtuu. K\xE4yt\xE4mme sit\xE4 virheiden\
   \ j\xE4ljitt\xE4miseen ja ohjelman\u2026"
-lastmod: '2024-03-11T00:14:30.523517-06:00'
+lastmod: '2024-03-13T22:44:56.575558-06:00'
 model: gpt-4-1106-preview
 summary: "Mik\xE4 & Miksi? Debug-tulosteiden printtaaminen on koodin tulostamista,\
   \ n\xE4hd\xE4ksemme mit\xE4 siell\xE4 tapahtuu. K\xE4yt\xE4mme sit\xE4 virheiden\

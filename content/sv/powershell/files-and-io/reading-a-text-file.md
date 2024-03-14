@@ -3,7 +3,7 @@ date: 2024-01-20 17:55:10.157345-07:00
 description: "Att l\xE4sa en textfil inneb\xE4r att h\xE4mta information lagrad som\
   \ text och att g\xF6ra den l\xE4sbar f\xF6r skript eller program. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
-lastmod: '2024-03-11T00:14:11.529054-06:00'
+lastmod: '2024-03-13T22:44:38.143026-06:00'
 model: gpt-4-1106-preview
 summary: "Att l\xE4sa en textfil inneb\xE4r att h\xE4mta information lagrad som text\
   \ och att g\xF6ra den l\xE4sbar f\xF6r skript eller program. Programmerare g\xF6\

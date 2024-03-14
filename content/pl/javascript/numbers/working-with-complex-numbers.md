@@ -3,7 +3,7 @@ date: 2024-01-26 04:42:27.641406-07:00
 description: "Liczby zespolone to liczby maj\u0105ce cz\u0119\u015B\u0107 rzeczywist\u0105\
   \ i urojon\u0105 (jak 3 + 4i). Pojawiaj\u0105 si\u0119 one w r\xF3\u017Cnych problemach\
   \ programistycznych, zw\u0142aszcza w\u2026"
-lastmod: '2024-03-11T00:14:08.998755-06:00'
+lastmod: '2024-03-13T22:44:35.790445-06:00'
 model: gpt-4-0125-preview
 summary: "Liczby zespolone to liczby maj\u0105ce cz\u0119\u015B\u0107 rzeczywist\u0105\
   \ i urojon\u0105 (jak 3 + 4i). Pojawiaj\u0105 si\u0119 one w r\xF3\u017Cnych problemach\

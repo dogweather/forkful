@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:05.561298-07:00
 description: "Printing debug output is chucking info onto your screen to see what's\
   \ up with your code. Programmers do it to track down gremlins in the machine\u2014\
   bugs."
-lastmod: '2024-03-11T00:14:34.072446-06:00'
+lastmod: '2024-03-13T22:45:00.207966-06:00'
 model: gpt-4-1106-preview
 summary: "Printing debug output is chucking info onto your screen to see what's up\
   \ with your code. Programmers do it to track down gremlins in the machine\u2014\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:30:09.949230-07:00
 description: "Das Schreiben von Tests in C# beinhaltet das Erstellen von automatisierten\
   \ Skripten, um die Funktionalit\xE4t Ihres Codes zu validieren und sicherzustellen,\u2026"
-lastmod: '2024-03-11T00:14:27.787794-06:00'
+lastmod: '2024-03-13T22:44:53.891662-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in C# beinhaltet das Erstellen von automatisierten\
   \ Skripten, um die Funktionalit\xE4t Ihres Codes zu validieren und sicherzustellen,\u2026"

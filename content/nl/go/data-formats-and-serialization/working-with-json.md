@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:12:00.926256-07:00
 description: "Werken met JSON (JavaScript Object Notation) in Go houdt in dat er gegevens\
   \ worden gecodeerd en gedecodeerd tussen Go datastructuren en het JSON-formaat.\u2026"
-lastmod: '2024-03-11T00:14:24.117870-06:00'
+lastmod: '2024-03-13T22:44:50.309341-06:00'
 model: gpt-4-0125-preview
 summary: "Werken met JSON (JavaScript Object Notation) in Go houdt in dat er gegevens\
   \ worden gecodeerd en gedecodeerd tussen Go datastructuren en het JSON-formaat.\u2026"

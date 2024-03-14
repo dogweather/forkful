@@ -3,7 +3,7 @@ date: 2024-01-20 17:33:58.012649-07:00
 description: "String-Konkatenation ist das Aneinanderh\xE4ngen von Zeichenketten.\
   \ Programmierer nutzen das, um Inhalte dynamisch zu generieren, Daten zu formatieren\
   \ oder\u2026"
-lastmod: '2024-03-11T00:14:27.948443-06:00'
+lastmod: '2024-03-13T22:44:54.049399-06:00'
 model: gpt-4-1106-preview
 summary: "String-Konkatenation ist das Aneinanderh\xE4ngen von Zeichenketten. Programmierer\
   \ nutzen das, um Inhalte dynamisch zu generieren, Daten zu formatieren oder\u2026"

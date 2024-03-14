@@ -5,7 +5,7 @@ date: 2024-02-03 18:05:53.767429-07:00
 description: "Tekstitiedoston lukeminen Go-kielell\xE4 sis\xE4lt\xE4\xE4 sis\xE4ll\xF6\
   n hakemisen ja noutamisen levylt\xE4 tallennetusta tiedostosta k\xE4sittely\xE4\
   \ tai analysointia varten.\u2026"
-lastmod: '2024-03-11T00:14:29.994969-06:00'
+lastmod: '2024-03-13T22:44:56.069254-06:00'
 model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen Go-kielell\xE4 sis\xE4lt\xE4\xE4 sis\xE4ll\xF6\
   n hakemisen ja noutamisen levylt\xE4 tallennetusta tiedostosta k\xE4sittely\xE4\

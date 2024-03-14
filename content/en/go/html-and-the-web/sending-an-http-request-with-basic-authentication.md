@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:05.379308-07:00
 description: "Sending an HTTP request with basic authentication in Go involves adding\
   \ an authorization header to your request that includes a username and password\
   \ in\u2026"
-lastmod: '2024-03-11T00:14:33.475452-06:00'
+lastmod: '2024-03-13T22:44:59.630698-06:00'
 model: gpt-4-0125-preview
 summary: "Sending an HTTP request with basic authentication in Go involves adding\
   \ an authorization header to your request that includes a username and password\

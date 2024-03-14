@@ -3,7 +3,7 @@ date: 2024-01-26 03:44:54.593241-07:00
 description: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chstgelegene ganze\
   \ Zahl oder eine angegebene Dezimalstelle anzupassen. Programmierer runden Zahlen,\
   \ um die\u2026"
-lastmod: '2024-03-11T00:14:27.823141-06:00'
+lastmod: '2024-03-13T22:44:53.925873-06:00'
 model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chstgelegene ganze Zahl\
   \ oder eine angegebene Dezimalstelle anzupassen. Programmierer runden Zahlen, um\

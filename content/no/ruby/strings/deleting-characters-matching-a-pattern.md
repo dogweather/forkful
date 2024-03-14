@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:52.951576-07:00
 description: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8nster\
   \ for \xE5 rense strenger - for \xE5 fjerne u\xF8nskede karakterer eller formatere\
   \ data.\u2026"
-lastmod: '2024-03-11T00:14:14.912056-06:00'
+lastmod: '2024-03-13T22:44:41.300370-06:00'
 model: gpt-4-1106-preview
 summary: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8nster for\
   \ \xE5 rense strenger - for \xE5 fjerne u\xF8nskede karakterer eller formatere data.\u2026"

@@ -5,7 +5,7 @@ date: 2024-01-28 21:57:48.216931-07:00
 description: "Een string naar kleine letters omzetten betekent het transformeren van\
   \ alle letters in de tekst naar hun kleine lettertegenhangers. Programmeurs doen\
   \ dit\u2026"
-lastmod: '2024-03-11T00:14:24.667703-06:00'
+lastmod: '2024-03-13T22:44:50.839353-06:00'
 model: gpt-4-0125-preview
 summary: "Een string naar kleine letters omzetten betekent het transformeren van alle\
   \ letters in de tekst naar hun kleine lettertegenhangers. Programmeurs doen dit\u2026"

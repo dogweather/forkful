@@ -2,7 +2,7 @@
 date: 2024-01-20 17:33:09.503368-07:00
 description: "In Haskell, confrontare due date significa verificare se una \xE8 prima,\
   \ dopo o allo stesso momento dell'altra. Questo \xE8 utile per ordinare eventi\u2026"
-lastmod: '2024-03-11T00:14:17.081114-06:00'
+lastmod: '2024-03-13T22:44:43.487695-06:00'
 model: gpt-4-1106-preview
 summary: "In Haskell, confrontare due date significa verificare se una \xE8 prima,\
   \ dopo o allo stesso momento dell'altra. Questo \xE8 utile per ordinare eventi\u2026"

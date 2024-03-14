@@ -5,7 +5,7 @@ date: 2024-01-30 19:10:07.903619-07:00
 description: "Assoziative Arrays, oder W\xF6rterb\xFCcher in C#, erm\xF6glichen es\
   \ Ihnen, Schl\xFCssel-Wert-Paare zu speichern und zu verwalten. Sie sind Ihre erste\
   \ Wahl, wenn Sie\u2026"
-lastmod: '2024-03-11T00:14:27.777152-06:00'
+lastmod: '2024-03-13T22:44:53.881232-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oder W\xF6rterb\xFCcher in C#, erm\xF6glichen es Ihnen,\
   \ Schl\xFCssel-Wert-Paare zu speichern und zu verwalten. Sie sind Ihre erste Wahl,\

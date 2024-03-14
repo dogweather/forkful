@@ -5,7 +5,7 @@ date: 2024-01-30 19:13:11.228743-07:00
 description: "Arrays associativos, ou objetos no TypeScript, permitem que voc\xEA\
   \ utilize strings (ou chaves) para acessar pares de valor. Programadores os usam\
   \ para\u2026"
-lastmod: '2024-03-11T00:14:20.003485-06:00'
+lastmod: '2024-03-13T22:44:46.318868-06:00'
 model: gpt-4-0125-preview
 summary: "Arrays associativos, ou objetos no TypeScript, permitem que voc\xEA utilize\
   \ strings (ou chaves) para acessar pares de valor. Programadores os usam para\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 17:53:10.983749-07:00
 description: "Sprawdzenie, czy katalog istnieje w Go, jest kluczowe dla aplikacji\
   \ interaktywnie wsp\xF3\u0142pracuj\u0105cych z systemem plik\xF3w, aby unikn\u0105\
   \u0107 b\u0142\u0119d\xF3w przy pr\xF3bie\u2026"
-lastmod: '2024-03-11T00:14:08.040406-06:00'
+lastmod: '2024-03-13T22:44:34.868543-06:00'
 model: gpt-4-0125-preview
 summary: "Sprawdzenie, czy katalog istnieje w Go, jest kluczowe dla aplikacji interaktywnie\
   \ wsp\xF3\u0142pracuj\u0105cych z systemem plik\xF3w, aby unikn\u0105\u0107 b\u0142\

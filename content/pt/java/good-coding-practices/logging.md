@@ -3,7 +3,7 @@ date: 2024-01-26 01:06:54.382755-07:00
 description: "A log\xEDstica \xE9 essencialmente o processo de grava\xE7\xE3o de eventos\
   \ que ocorrem dentro de uma aplica\xE7\xE3o de software. Os programadores registram\
   \ esses eventos\u2026"
-lastmod: '2024-03-11T00:14:20.159981-06:00'
+lastmod: '2024-03-13T22:44:46.462410-06:00'
 model: gpt-4-1106-preview
 summary: "A log\xEDstica \xE9 essencialmente o processo de grava\xE7\xE3o de eventos\
   \ que ocorrem dentro de uma aplica\xE7\xE3o de software. Os programadores registram\

@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:33.574673-07:00
 description: "**TOML**, ou *Tom's Obvious, Minimal Language* (Linguagem M\xEDnima\
   \ e \xD3bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o que \xE9\
   \ f\xE1cil de ler devido \xE0 sua\u2026"
-lastmod: '2024-03-11T00:14:19.991138-06:00'
+lastmod: '2024-03-13T22:44:46.306932-06:00'
 model: gpt-4-0125-preview
 summary: "**TOML**, ou *Tom's Obvious, Minimal Language* (Linguagem M\xEDnima e \xD3\
   bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o que \xE9 f\xE1cil\

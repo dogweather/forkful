@@ -2,7 +2,7 @@
 date: 2024-01-20 17:41:57.682674-07:00
 description: "\"Mik\xE4 ja miksi?\" Kun puhutaan merkkien poistamisesta kuvion mukaisesti\
   \ Elixiriss\xE4, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista\u2026"
-lastmod: '2024-03-11T00:14:30.141298-06:00'
+lastmod: '2024-03-13T22:44:56.210441-06:00'
 model: gpt-4-1106-preview
 summary: "\"Mik\xE4 ja miksi?\" Kun puhutaan merkkien poistamisesta kuvion mukaisesti\
   \ Elixiriss\xE4, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:57.350233-07:00
 description: "Wielk\u0105 liter\u0105 zaczyna si\u0119 ka\u017Cde s\u0142owo w zdaniu,\
   \ modyfikuj\u0105c pierwszy znak ka\u017Cdego s\u0142owa na wielk\u0105 liter\u0119\
   , jednocze\u015Bnie zapewniaj\u0105c, \u017Ce pozosta\u0142e s\u0105 ma\u0142e.\u2026"
-lastmod: '2024-03-11T00:14:08.710132-06:00'
+lastmod: '2024-03-13T22:44:35.522987-06:00'
 model: gpt-4-0125-preview
 summary: "Wielk\u0105 liter\u0105 zaczyna si\u0119 ka\u017Cde s\u0142owo w zdaniu,\
   \ modyfikuj\u0105c pierwszy znak ka\u017Cdego s\u0142owa na wielk\u0105 liter\u0119\

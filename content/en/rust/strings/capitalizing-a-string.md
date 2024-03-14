@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:35.615679-07:00
 description: "Capitalizing a string in Rust involves modifying the string so that\
   \ its first character is uppercase if it's a letter, while leaving the rest of the\u2026"
-lastmod: '2024-03-11T00:14:33.741314-06:00'
+lastmod: '2024-03-13T22:44:59.880965-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizing a string in Rust involves modifying the string so that its\
   \ first character is uppercase if it's a letter, while leaving the rest of the\u2026"

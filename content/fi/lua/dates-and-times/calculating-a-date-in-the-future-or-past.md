@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:24.723669-07:00
 description: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
   . Koodarit tekev\xE4t t\xE4t\xE4 ajoituksen, m\xE4\xE4r\xE4aikojen ja tapahtumaseurannan\
   \ vuoksi."
-lastmod: '2024-03-11T00:14:30.663598-06:00'
+lastmod: '2024-03-13T22:44:56.710234-06:00'
 model: gpt-4-1106-preview
 summary: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
   . Koodarit tekev\xE4t t\xE4t\xE4 ajoituksen, m\xE4\xE4r\xE4aikojen ja tapahtumaseurannan\

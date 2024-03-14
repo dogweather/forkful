@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:47.544593-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w JavaScript polega\
   \ na kierowaniu komunikat\xF3w o b\u0142\u0119dach lub jakichkolwiek wa\u017Cnych\
   \ informacji do specyficznego,\u2026"
-lastmod: '2024-03-11T00:14:09.023823-06:00'
+lastmod: '2024-03-13T22:44:35.812752-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w JavaScript polega na\
   \ kierowaniu komunikat\xF3w o b\u0142\u0119dach lub jakichkolwiek wa\u017Cnych informacji\

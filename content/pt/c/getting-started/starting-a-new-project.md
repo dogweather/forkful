@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:09.346967-07:00
 description: "Iniciar um novo projeto em C envolve configurar uma estrutura de c\xF3\
   digo base e ambiente para gerenciar de forma eficiente as tarefas de desenvolvimento.\u2026"
-lastmod: '2024-03-11T00:14:20.791765-06:00'
+lastmod: '2024-03-13T22:44:47.050760-06:00'
 model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em C envolve configurar uma estrutura de c\xF3digo\
   \ base e ambiente para gerenciar de forma eficiente as tarefas de desenvolvimento.\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:12:53.692433-07:00
 description: "In Haskell is het schrijven naar een tekstbestand alles over het opslaan\
   \ van data in een bestand. Programmeurs doen dit om data tussen sessies te bewaren,\u2026"
-lastmod: '2024-03-11T00:14:24.701111-06:00'
+lastmod: '2024-03-13T22:44:50.870886-06:00'
 model: gpt-4-0125-preview
 summary: "In Haskell is het schrijven naar een tekstbestand alles over het opslaan\
   \ van data in een bestand. Programmeurs doen dit om data tussen sessies te bewaren,\u2026"

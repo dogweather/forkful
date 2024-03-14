@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:17.772198-07:00
 description: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144, kt\xF3re\
   \ maj\u0105 miejsce w aplikacji programowej. Programi\u015Bci loguj\u0105 te zdarzenia,\
   \ aby zbiera\u0107 informacje\u2026"
-lastmod: '2024-03-11T00:14:08.461962-06:00'
+lastmod: '2024-03-13T22:44:35.283711-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144, kt\xF3re maj\u0105\
   \ miejsce w aplikacji programowej. Programi\u015Bci loguj\u0105 te zdarzenia, aby\

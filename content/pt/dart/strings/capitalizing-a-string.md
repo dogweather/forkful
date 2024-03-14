@@ -5,7 +5,7 @@ date: 2024-03-08 21:53:52.918660-07:00
 description: "Colocar em mai\xFAscula uma string envolve modificar a primeira letra\
   \ de uma palavra ou de uma frase inteira para mai\xFAscula, mantendo o resto dos\
   \ caracteres\u2026"
-lastmod: '2024-03-11T00:14:19.943625-06:00'
+lastmod: '2024-03-13T22:44:46.263178-06:00'
 model: gpt-4-0125-preview
 summary: "Colocar em mai\xFAscula uma string envolve modificar a primeira letra de\
   \ uma palavra ou de uma frase inteira para mai\xFAscula, mantendo o resto dos caracteres\u2026"

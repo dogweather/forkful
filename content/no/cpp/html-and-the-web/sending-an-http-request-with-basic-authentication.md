@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:29.225274-07:00
 description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ at du inkluderer brukernavn og passord for \xE5 f\xE5 tilgang til en beskyttet\
   \ ressurs p\xE5 et\u2026"
-lastmod: '2024-03-11T00:14:14.693011-06:00'
+lastmod: '2024-03-13T22:44:41.099647-06:00'
 model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ at du inkluderer brukernavn og passord for \xE5 f\xE5 tilgang til en beskyttet\

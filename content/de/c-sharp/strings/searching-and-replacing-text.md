@@ -2,7 +2,7 @@
 date: 2024-01-20 17:57:37.581623-07:00
 description: "Textsuche und -ersatz sind im Kern das Auffinden und Ersetzen von Zeichenfolgen\
   \ in einer gr\xF6\xDFeren Textmenge. Programmierer nutzen diese Operation, um\u2026"
-lastmod: '2024-03-11T00:14:27.768804-06:00'
+lastmod: '2024-03-13T22:44:53.873423-06:00'
 model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz sind im Kern das Auffinden und Ersetzen von Zeichenfolgen\
   \ in einer gr\xF6\xDFeren Textmenge. Programmierer nutzen diese Operation, um\u2026"

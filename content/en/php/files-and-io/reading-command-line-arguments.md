@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:36.994318-07:00
 description: "Reading command line arguments in PHP means grabbing inputs passed to\
   \ your script when it's run in the console. Programmers do it to make their scripts\u2026"
-lastmod: '2024-03-11T00:14:34.045319-06:00'
+lastmod: '2024-03-13T22:45:00.181120-06:00'
 model: gpt-4-1106-preview
 summary: "Reading command line arguments in PHP means grabbing inputs passed to your\
   \ script when it's run in the console. Programmers do it to make their scripts\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 17:52:31.753821-07:00
 description: "Verificar si un directorio existe en C implica consultar el sistema\
   \ de archivos para verificar si una ruta espec\xEDfica conduce a un directorio.\
   \ Los\u2026"
-lastmod: '2024-03-11T00:14:33.399175-06:00'
+lastmod: '2024-03-13T22:44:59.561602-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en C implica consultar el sistema de archivos\
   \ para verificar si una ruta espec\xEDfica conduce a un directorio. Los\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:33:44.419303-07:00
 description: "Comparing two dates is like asking, \"Which came first, the chicken\
   \ or the egg?\" but with calendar dates. Programmers do it to sort events, trigger\u2026"
-lastmod: '2024-03-11T00:14:34.278580-06:00'
+lastmod: '2024-03-13T22:45:00.407304-06:00'
 model: gpt-4-1106-preview
 summary: "Comparing two dates is like asking, \"Which came first, the chicken or the\
   \ egg?\" but with calendar dates. Programmers do it to sort events, trigger\u2026"

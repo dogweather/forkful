@@ -2,7 +2,7 @@
 date: 2024-01-20 17:50:13.004065-07:00
 description: String interpolation is mixing variables with text. Programmers do it
   to build strings on-the-fly, making output dynamic and readable.
-lastmod: '2024-03-11T00:14:34.177876-06:00'
+lastmod: '2024-03-13T22:45:00.309739-06:00'
 model: gpt-4-1106-preview
 summary: String interpolation is mixing variables with text. Programmers do it to
   build strings on-the-fly, making output dynamic and readable.

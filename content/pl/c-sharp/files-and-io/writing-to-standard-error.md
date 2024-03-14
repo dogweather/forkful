@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:58.760847-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) w C# polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki oddzielnie od regularnego wyj\u015B\
   cia (stdout), aby\u2026"
-lastmod: '2024-03-11T00:14:08.608255-06:00'
+lastmod: '2024-03-13T22:44:35.424765-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w C# polega na kierowaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki oddzielnie od regularnego wyj\u015B\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:03.719435-07:00
 description: "Att g\xF6ra om en str\xE4ng s\xE5 att f\xF6rsta bokstaven \xE4r stor\
   \ och resten sm\xE5 \xE4r en vanlig metoder f\xF6r att formatera namn eller titlar.\
   \ Det inneb\xE4r att man \xE4ndrar\u2026"
-lastmod: '2024-03-11T00:14:10.726141-06:00'
+lastmod: '2024-03-13T22:44:37.419476-06:00'
 model: gpt-4-0125-preview
 summary: "Att g\xF6ra om en str\xE4ng s\xE5 att f\xF6rsta bokstaven \xE4r stor och\
   \ resten sm\xE5 \xE4r en vanlig metoder f\xF6r att formatera namn eller titlar.\

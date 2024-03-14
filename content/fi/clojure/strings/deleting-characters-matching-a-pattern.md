@@ -3,7 +3,7 @@ date: 2024-01-20 17:42:00.366256-07:00
 description: "Mik\xE4 ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti\
   \ on datan siistimist\xE4. Tehd\xE4\xE4n n\xE4timp\xE4\xE4, helpommin k\xE4sitelt\xE4\
   v\xE4\xE4."
-lastmod: '2024-03-11T00:14:30.097271-06:00'
+lastmod: '2024-03-13T22:44:56.169630-06:00'
 model: gpt-4-1106-preview
 summary: "Mik\xE4 ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti\
   \ on datan siistimist\xE4. Tehd\xE4\xE4n n\xE4timp\xE4\xE4, helpommin k\xE4sitelt\xE4\

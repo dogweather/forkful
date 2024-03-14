@@ -3,7 +3,7 @@ date: 2024-01-26 04:26:03.030000-07:00
 description: "TOML \xE4r ett konfigurationsfilformat som \xE4r l\xE4tt att l\xE4sa\
   \ p\xE5 grund av dess tydliga semantik. Programmerare anv\xE4nder TOML f\xF6r att\
   \ hantera appkonfigurationer\u2026"
-lastmod: '2024-03-11T00:14:11.862559-06:00'
+lastmod: '2024-03-13T22:44:38.455615-06:00'
 model: gpt-4-0125-preview
 summary: "TOML \xE4r ett konfigurationsfilformat som \xE4r l\xE4tt att l\xE4sa p\xE5\
   \ grund av dess tydliga semantik. Programmerare anv\xE4nder TOML f\xF6r att hantera\

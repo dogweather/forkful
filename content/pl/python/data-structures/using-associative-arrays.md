@@ -5,7 +5,7 @@ date: 2024-01-30 19:12:51.192241-07:00
 description: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105\
   \ klucze na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015B\
   ledzenie danych za pomoc\u0105\u2026"
-lastmod: '2024-03-11T00:14:08.114751-06:00'
+lastmod: '2024-03-13T22:44:34.941833-06:00'
 model: gpt-4-0125-preview
 summary: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105 klucze\
   \ na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015Bledzenie\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:12:44.099667-07:00
 description: "L'analyse du HTML implique l'\xE9tude du code HTML d'une page web pour\
   \ extraire des informations ou des \xE9l\xE9ments sp\xE9cifiques, une t\xE2che commune\
   \ pour le web\u2026"
-lastmod: '2024-03-11T00:14:31.268051-06:00'
+lastmod: '2024-03-13T22:44:57.233315-06:00'
 model: gpt-4-0125-preview
 summary: "L'analyse du HTML implique l'\xE9tude du code HTML d'une page web pour extraire\
   \ des informations ou des \xE9l\xE9ments sp\xE9cifiques, une t\xE2che commune pour\

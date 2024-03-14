@@ -2,7 +2,7 @@
 date: 2024-02-01 21:30:21.237397-07:00
 description: "Working with CSV (Comma Separated Values) files involves reading from\
   \ or writing to plain text files where data fields are separated by commas.\u2026"
-lastmod: '2024-03-11T00:14:33.816809-06:00'
+lastmod: '2024-03-13T22:44:59.954483-06:00'
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma Separated Values) files involves reading from or\
   \ writing to plain text files where data fields are separated by commas.\u2026"

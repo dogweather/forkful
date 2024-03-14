@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:09:11.823074-07:00
 description: "Att starta ett nytt projekt i C inneb\xE4r att man s\xE4tter upp en\
   \ grundl\xE4ggande kodstruktur och milj\xF6 f\xF6r att effektivt hantera utvecklingsuppgifter.\u2026"
-lastmod: '2024-03-11T00:14:11.787413-06:00'
+lastmod: '2024-03-13T22:44:38.383367-06:00'
 model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i C inneb\xE4r att man s\xE4tter upp en grundl\xE4\
   ggande kodstruktur och milj\xF6 f\xF6r att effektivt hantera utvecklingsuppgifter.\u2026"

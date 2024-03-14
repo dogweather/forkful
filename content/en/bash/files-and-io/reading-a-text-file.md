@@ -2,7 +2,7 @@
 date: 2024-01-20 17:53:45.419439-07:00
 description: "Reading a text file means getting the content from a file into your\
   \ script. Programmers do it to work with data, configuration, or to automate systems\u2026"
-lastmod: '2024-03-11T00:14:34.126921-06:00'
+lastmod: '2024-03-13T22:45:00.259929-06:00'
 model: gpt-4-1106-preview
 summary: "Reading a text file means getting the content from a file into your script.\
   \ Programmers do it to work with data, configuration, or to automate systems\u2026"

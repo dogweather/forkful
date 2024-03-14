@@ -5,7 +5,7 @@ date: 2024-01-30 19:12:05.402289-07:00
 description: "Assosiative tabeller er som hemmelige h\xE5ndtrykk for data i Lua\u2014\
   istedenfor bare tall som f\xF8lger trofast etter indeks, kan n\xF8klene dine v\xE6\
   re hva som helst,\u2026"
-lastmod: '2024-03-11T00:14:14.492630-06:00'
+lastmod: '2024-03-13T22:44:40.923120-06:00'
 model: gpt-4-0125-preview
 summary: "Assosiative tabeller er som hemmelige h\xE5ndtrykk for data i Lua\u2014\
   istedenfor bare tall som f\xF8lger trofast etter indeks, kan n\xF8klene dine v\xE6\

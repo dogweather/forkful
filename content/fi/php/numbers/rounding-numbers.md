@@ -2,7 +2,7 @@
 date: 2024-01-26 03:45:52.393156-07:00
 description: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien poistamista tiettyyn\
   \ tarkkuuteen, usein kokonaislukuihin. Ohjelmoijat py\xF6rist\xE4v\xE4t yksinkertaistaakseen\u2026"
-lastmod: '2024-03-11T00:14:30.602429-06:00'
+lastmod: '2024-03-13T22:44:56.650659-06:00'
 model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien poistamista tiettyyn\
   \ tarkkuuteen, usein kokonaislukuihin. Ohjelmoijat py\xF6rist\xE4v\xE4t yksinkertaistaakseen\u2026"

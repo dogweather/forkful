@@ -3,7 +3,7 @@ date: 2024-01-26 03:46:02.082417-07:00
 description: "Att avrunda tal inneb\xE4r att klippa av decimalerna till en inst\xE4\
   lld precision, ofta till hela tal. Programmerare avrundar f\xF6r att f\xF6renkla\
   \ ber\xE4kningar,\u2026"
-lastmod: '2024-03-11T00:14:11.363875-06:00'
+lastmod: '2024-03-13T22:44:37.991342-06:00'
 model: gpt-4-0125-preview
 summary: "Att avrunda tal inneb\xE4r att klippa av decimalerna till en inst\xE4lld\
   \ precision, ofta till hela tal. Programmerare avrundar f\xF6r att f\xF6renkla ber\xE4\

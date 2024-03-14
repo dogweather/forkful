@@ -5,7 +5,7 @@ date: 2024-02-03 19:26:22.901371-07:00
 description: "YAML, ou YAML Ain't Markup Language, \xE9 uma linguagem de serializa\xE7\
   \xE3o de dados leg\xEDvel por humanos. Programadores frequentemente a utilizam para\
   \ arquivos\u2026"
-lastmod: '2024-03-11T00:14:20.542687-06:00'
+lastmod: '2024-03-13T22:44:46.817082-06:00'
 model: gpt-4-0125-preview
 summary: "YAML, ou YAML Ain't Markup Language, \xE9 uma linguagem de serializa\xE7\
   \xE3o de dados leg\xEDvel por humanos. Programadores frequentemente a utilizam para\

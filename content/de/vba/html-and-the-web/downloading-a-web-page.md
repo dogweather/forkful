@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:27.711655-07:00
 description: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
   \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"
-lastmod: '2024-03-11T00:14:27.607751-06:00'
+lastmod: '2024-03-13T22:44:53.716399-06:00'
 model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
   \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"

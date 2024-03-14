@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:04:54.073574-07:00
 description: "Het lezen van commandoregelargumenten stelt scripts in staat zich anders\
   \ te gedragen op basis van gebruikersinvoer. Het is hoe scripts veelzijdig kunnen\u2026"
-lastmod: '2024-03-11T00:14:24.832679-06:00'
+lastmod: '2024-03-13T22:44:50.999271-06:00'
 model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten stelt scripts in staat zich anders\
   \ te gedragen op basis van gebruikersinvoer. Het is hoe scripts veelzijdig kunnen\u2026"

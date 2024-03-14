@@ -5,7 +5,7 @@ date: 2024-03-08 21:55:21.864828-07:00
 description: "Att hantera fel i Dart handlar om att f\xF6rutse och hantera undantag\
   \ som uppst\xE5r under programk\xF6rning f\xF6r att \xF6ka tillf\xF6rlitligheten\
   \ och anv\xE4ndbarheten.\u2026"
-lastmod: '2024-03-11T00:14:10.952581-06:00'
+lastmod: '2024-03-13T22:44:37.620223-06:00'
 model: gpt-4-0125-preview
 summary: "Att hantera fel i Dart handlar om att f\xF6rutse och hantera undantag som\
   \ uppst\xE5r under programk\xF6rning f\xF6r att \xF6ka tillf\xF6rlitligheten och\

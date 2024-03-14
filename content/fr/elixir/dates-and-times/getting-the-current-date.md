@@ -6,7 +6,7 @@ date: 2024-02-03 19:09:22.252498-07:00
 description: "Obtenir la date actuelle en Elixir implique d'acc\xE9der aux informations\
   \ de date et d'heure du syst\xE8me, une t\xE2che courante pour la journalisation,\
   \ le\u2026"
-lastmod: '2024-03-11T00:14:31.369786-06:00'
+lastmod: '2024-03-13T22:44:57.338798-06:00'
 model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Elixir implique d'acc\xE9der aux informations\
   \ de date et d'heure du syst\xE8me, une t\xE2che courante pour la journalisation,\

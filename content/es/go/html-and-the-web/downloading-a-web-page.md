@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:57.836066-07:00
 description: "Descargar una p\xE1gina web trata de obtener el contenido HTML de una\
   \ p\xE1gina web a trav\xE9s del protocolo HTTP/HTTPS. Los programadores a menudo\
   \ hacen esto\u2026"
-lastmod: '2024-03-11T00:14:32.336516-06:00'
+lastmod: '2024-03-13T22:44:58.465954-06:00'
 model: gpt-4-0125-preview
 summary: "Descargar una p\xE1gina web trata de obtener el contenido HTML de una p\xE1\
   gina web a trav\xE9s del protocolo HTTP/HTTPS. Los programadores a menudo hacen\

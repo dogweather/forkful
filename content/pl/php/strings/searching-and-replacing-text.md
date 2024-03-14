@@ -2,7 +2,7 @@
 date: 2024-01-20 17:58:24.683887-07:00
 description: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: lokalizujemy\
   \ fragmenty ci\u0105g\xF3w znak\xF3w i podmieniamy je na inne. Czemu? By automatycznie\u2026"
-lastmod: '2024-03-11T00:14:08.665849-06:00'
+lastmod: '2024-03-13T22:44:35.481525-06:00'
 model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: lokalizujemy\
   \ fragmenty ci\u0105g\xF3w znak\xF3w i podmieniamy je na inne. Czemu? By automatycznie\u2026"

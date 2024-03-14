@@ -2,7 +2,7 @@
 date: 2024-01-25 02:03:45.600637-07:00
 description: "Logging in software development is the technique of recording events\
   \ that occur while a program is running, typically to a file or external system.\u2026"
-lastmod: '2024-03-11T00:14:33.643957-06:00'
+lastmod: '2024-03-13T22:44:59.788086-06:00'
 model: gpt-4-1106-preview
 summary: "Logging in software development is the technique of recording events that\
   \ occur while a program is running, typically to a file or external system.\u2026"

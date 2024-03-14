@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:17:23.495514-07:00
 description: "Regul\xE6re uttrykk (regex) er et kraftig verkt\xF8y for tekstbehandling,\
   \ som lar programmerere s\xF8ke, matche og manipulere strenger med avanserte\u2026"
-lastmod: '2024-03-11T00:14:14.290116-06:00'
+lastmod: '2024-03-13T22:44:40.740102-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er et kraftig verkt\xF8y for tekstbehandling,\
   \ som lar programmerere s\xF8ke, matche og manipulere strenger med avanserte\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:52:29.307418-07:00
 description: "Verificare se una directory esiste in C implica interrogare il file\
   \ system per verificare se un determinato percorso conduce a una directory. I\u2026"
-lastmod: '2024-03-11T00:14:17.543172-06:00'
+lastmod: '2024-03-13T22:44:44.016074-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in C implica interrogare il file system\
   \ per verificare se un determinato percorso conduce a una directory. I\u2026"

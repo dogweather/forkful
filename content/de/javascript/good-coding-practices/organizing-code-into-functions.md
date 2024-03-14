@@ -2,7 +2,7 @@
 date: 2024-01-26 01:10:55.622364-07:00
 description: "Code in Funktionen zu organisieren unterteilt Aufgaben in wiederverwendbare\
   \ Teile, macht den Code sauberer und leichter wartbar. Wir tun dies, um\u2026"
-lastmod: '2024-03-11T00:14:28.176254-06:00'
+lastmod: '2024-03-13T22:44:54.271518-06:00'
 model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren unterteilt Aufgaben in wiederverwendbare\
   \ Teile, macht den Code sauberer und leichter wartbar. Wir tun dies, um\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 03:42:25.143167-07:00
 description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien\
   \ yksitt\xE4isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista,\
   \ jotka\u2026"
-lastmod: '2024-03-11T00:14:30.235989-06:00'
+lastmod: '2024-03-13T22:44:56.303554-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien yksitt\xE4\
   isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka\u2026"

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:32.489874-07:00
 description: "Scrivere test in Bash comporta la creazione di script per casi di test\
   \ al fine di convalidare la funzionalit\xE0 dei vostri script Bash. I programmatori\u2026"
-lastmod: '2024-03-11T00:14:17.214748-06:00'
+lastmod: '2024-03-13T22:44:43.603137-06:00'
 model: gpt-4-0125-preview
 summary: "Scrivere test in Bash comporta la creazione di script per casi di test al\
   \ fine di convalidare la funzionalit\xE0 dei vostri script Bash. I programmatori\u2026"

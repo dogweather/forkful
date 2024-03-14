@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:14.251709-07:00
 description: "TOML, eli Tom's Obvious, Minimal Language, on konfigurointitiedostomuoto,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t\u2026"
-lastmod: '2024-03-11T00:14:30.228380-06:00'
+lastmod: '2024-03-13T22:44:56.297029-06:00'
 model: gpt-4-0125-preview
 summary: "TOML, eli Tom's Obvious, Minimal Language, on konfigurointitiedostomuoto,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\

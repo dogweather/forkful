@@ -5,7 +5,7 @@ date: 2024-01-28 21:56:40.819320-07:00
 description: "Het vergelijken van twee datums betekent controleren hoe ze zich tot\
   \ elkaar verhouden\u2014is de ene eerder, later of op het exacte zelfde moment als\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:24.649884-06:00'
+lastmod: '2024-03-13T22:44:50.822444-06:00'
 model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums betekent controleren hoe ze zich tot elkaar\
   \ verhouden\u2014is de ene eerder, later of op het exacte zelfde moment als de\u2026"

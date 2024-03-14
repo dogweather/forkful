@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:01:06.052192-07:00
 description: "De huidige datum in JavaScript verkrijgen, is het vastleggen van de\
   \ datum en tijd van de huidige dag. Programmeurs doen dit voor zaken zoals tijdstempels,\u2026"
-lastmod: '2024-03-11T00:14:25.050913-06:00'
+lastmod: '2024-03-13T22:44:51.212782-06:00'
 model: gpt-4-0125-preview
 summary: "De huidige datum in JavaScript verkrijgen, is het vastleggen van de datum\
   \ en tijd van de huidige dag. Programmeurs doen dit voor zaken zoals tijdstempels,\u2026"

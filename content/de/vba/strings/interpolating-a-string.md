@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:55:26.669784-07:00
 description: "Stringinterpolation in Visual Basic f\xFCr Applikationen (VBA) bezieht\
   \ sich auf den Prozess, Variablen oder Ausdr\xFCcke in einem String-Literal einzubetten,\u2026"
-lastmod: '2024-03-11T00:14:27.593246-06:00'
+lastmod: '2024-03-13T22:44:53.702197-06:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolation in Visual Basic f\xFCr Applikationen (VBA) bezieht sich\
   \ auf den Prozess, Variablen oder Ausdr\xFCcke in einem String-Literal einzubetten,\u2026"

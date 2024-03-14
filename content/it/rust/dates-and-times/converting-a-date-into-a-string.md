@@ -3,7 +3,7 @@ date: 2024-01-20 17:37:32.570042-07:00
 description: "Convertire una data in una stringa significa rappresentare la data come\
   \ testo. Lo facciamo perch\xE9 \xE8 pi\xF9 facile da leggere per gli umani e perch\xE9\
   \ \xE8 un\u2026"
-lastmod: '2024-03-11T00:14:16.795280-06:00'
+lastmod: '2024-03-13T22:44:43.229941-06:00'
 model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa rappresentare la data come\
   \ testo. Lo facciamo perch\xE9 \xE8 pi\xF9 facile da leggere per gli umani e perch\xE9\

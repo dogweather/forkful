@@ -3,7 +3,7 @@ date: 2024-01-20 17:38:26.948599-07:00
 description: "Convertir un `string` a min\xFAsculas significa cambiar todas las letras\
   \ may\xFAsculas de una cadena de texto a su versi\xF3n en min\xFAsculas. Esto se\
   \ hace a menudo\u2026"
-lastmod: '2024-03-11T00:14:32.874147-06:00'
+lastmod: '2024-03-13T22:44:59.065743-06:00'
 model: gpt-4-1106-preview
 summary: "Convertir un `string` a min\xFAsculas significa cambiar todas las letras\
   \ may\xFAsculas de una cadena de texto a su versi\xF3n en min\xFAsculas. Esto se\

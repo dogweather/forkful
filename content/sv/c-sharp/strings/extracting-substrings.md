@@ -3,7 +3,7 @@ date: 2024-01-20 17:45:33.968163-07:00
 description: "I programmering \xE4r 'substring' en delstr\xE4ng fr\xE5n en annan str\xE4\
   ng. Vi extraherar substrings f\xF6r att man\xF6vrera specifika textsegment \u2013\
   \ till exempel, f\xF6r\u2026"
-lastmod: '2024-03-11T00:14:11.262229-06:00'
+lastmod: '2024-03-13T22:44:37.902098-06:00'
 model: gpt-4-1106-preview
 summary: "I programmering \xE4r 'substring' en delstr\xE4ng fr\xE5n en annan str\xE4\
   ng. Vi extraherar substrings f\xF6r att man\xF6vrera specifika textsegment \u2013\

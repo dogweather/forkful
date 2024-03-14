@@ -5,7 +5,7 @@ date: 2024-02-03 19:07:43.569620-07:00
 description: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para\
   \ tarefas de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a\
   \ presen\xE7a do\u2026"
-lastmod: '2024-03-11T00:14:20.712581-06:00'
+lastmod: '2024-03-13T22:44:46.976583-06:00'
 model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para tarefas\
   \ de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a presen\xE7\

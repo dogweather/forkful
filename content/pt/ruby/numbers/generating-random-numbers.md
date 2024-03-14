@@ -3,7 +3,7 @@ date: 2024-01-27 20:34:54.698927-07:00
 description: "Gerar n\xFAmeros aleat\xF3rios em Ruby envolve criar n\xFAmeros que\
   \ n\xE3o podem ser previstos logicamente, essencial para cen\xE1rios como simula\xE7\
   \xF5es, criptografia e\u2026"
-lastmod: '2024-03-11T00:14:20.833682-06:00'
+lastmod: '2024-03-13T22:44:47.089512-06:00'
 model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios em Ruby envolve criar n\xFAmeros que n\xE3\
   o podem ser previstos logicamente, essencial para cen\xE1rios como simula\xE7\xF5\

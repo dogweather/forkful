@@ -3,7 +3,7 @@ date: 2024-01-20 18:01:02.259689-07:00
 description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
   \ pozwala Arduino komunikowa\u0107 si\u0119 z zabezpieczonymi serwerami. Programi\u015B\
   ci u\u017Cywaj\u0105 tej metody, aby\u2026"
-lastmod: '2024-03-11T00:14:08.868783-06:00'
+lastmod: '2024-03-13T22:44:35.672073-06:00'
 model: gpt-4-1106-preview
 summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem pozwala\
   \ Arduino komunikowa\u0107 si\u0119 z zabezpieczonymi serwerami. Programi\u015B\

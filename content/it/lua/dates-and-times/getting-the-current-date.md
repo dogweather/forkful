@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:10.154747-07:00
 description: "Il recupero della data corrente nella programmazione \xE8 un compito\
   \ cruciale per una moltitudine di applicazioni, inclusi i registri degli eventi,\
   \ la\u2026"
-lastmod: '2024-03-11T00:14:17.175125-06:00'
+lastmod: '2024-03-13T22:44:43.567847-06:00'
 model: gpt-4-0125-preview
 summary: "Il recupero della data corrente nella programmazione \xE8 un compito cruciale\
   \ per una moltitudine di applicazioni, inclusi i registri degli eventi, la\u2026"

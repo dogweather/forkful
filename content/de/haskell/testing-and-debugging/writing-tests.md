@@ -5,7 +5,7 @@ date: 2024-02-03 19:30:37.210856-07:00
 description: "Tests in Haskell zu schreiben, dient dazu, sicherzustellen, dass Ihre\
   \ Funktionen wie erwartet durch automatisierte \xDCberpr\xFCfungen arbeiten. Entwickler\
   \ tun\u2026"
-lastmod: '2024-03-11T00:14:27.832050-06:00'
+lastmod: '2024-03-13T22:44:53.934885-06:00'
 model: gpt-4-0125-preview
 summary: "Tests in Haskell zu schreiben, dient dazu, sicherzustellen, dass Ihre Funktionen\
   \ wie erwartet durch automatisierte \xDCberpr\xFCfungen arbeiten. Entwickler tun\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-19
 description: "Skriving til standard feil (stderr) lar deg rapportere feil uten \xE5\
   \ blande det med hovedutdata. Programmerere bruker det til \xE5 skille normal output\
   \ fra\u2026"
-lastmod: '2024-03-11T00:14:14.271970-06:00'
+lastmod: '2024-03-13T22:44:40.725097-06:00'
 model: unknown
 summary: "Skriving til standard feil (stderr) lar deg rapportere feil uten \xE5 blande\
   \ det med hovedutdata. Programmerere bruker det til \xE5 skille normal output fra\u2026"

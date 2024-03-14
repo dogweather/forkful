@@ -3,7 +3,7 @@ date: 2024-01-26 00:53:15.582051-07:00
 description: "Att hantera fel i programmering handlar om att f\xF6rvalta det ov\xE4\
   ntade\u2014saker som kan g\xE5 fel. Programmerare g\xF6r detta f\xF6r att s\xE4\
   kerst\xE4lla att deras program\u2026"
-lastmod: '2024-03-11T00:14:11.329134-06:00'
+lastmod: '2024-03-13T22:44:37.962251-06:00'
 model: gpt-4-1106-preview
 summary: "Att hantera fel i programmering handlar om att f\xF6rvalta det ov\xE4ntade\u2014\
   saker som kan g\xE5 fel. Programmerare g\xF6r detta f\xF6r att s\xE4kerst\xE4lla\

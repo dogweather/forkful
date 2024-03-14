@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:08:13.690683-07:00
 description: "Een nieuw C# project starten betekent het opzetten van een nieuwe oplossing\
   \ en projectbestanden die je code structureren. Programmeurs beginnen nieuwe\u2026"
-lastmod: '2024-03-11T00:14:24.636493-06:00'
+lastmod: '2024-03-13T22:44:50.810661-06:00'
 model: gpt-4-0125-preview
 summary: "Een nieuw C# project starten betekent het opzetten van een nieuwe oplossing\
   \ en projectbestanden die je code structureren. Programmeurs beginnen nieuwe\u2026"

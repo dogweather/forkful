@@ -3,7 +3,7 @@ date: 2024-01-20 17:34:47.179639-07:00
 description: "P\xE5 norsk: Hva og hvorfor? Konkatenering av strenger er \xE5 sl\xE5\
   \ sammen to eller flere tekster til \xE9n. Vi gj\xF8r dette for \xE5 bygge dynamiske\
   \ beskjeder, filbaner\u2026"
-lastmod: '2024-03-11T00:14:14.819791-06:00'
+lastmod: '2024-03-13T22:44:41.216961-06:00'
 model: gpt-4-1106-preview
 summary: "P\xE5 norsk: Hva og hvorfor? Konkatenering av strenger er \xE5 sl\xE5 sammen\
   \ to eller flere tekster til \xE9n. Vi gj\xF8r dette for \xE5 bygge dynamiske beskjeder,\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:31:28.404885-07:00
 description: "Laskemme p\xE4iv\xE4m\xE4\xE4ri\xE4 tulevaisuudessa tai menneisyydess\xE4\
   \ hallitaksemme aikatauluja ja m\xE4\xE4ritt\xE4ksemme m\xE4\xE4r\xE4aikoja. Ohjelmoijat\
   \ tekev\xE4t sen\u2026"
-lastmod: '2024-03-11T00:14:30.621793-06:00'
+lastmod: '2024-03-13T22:44:56.669642-06:00'
 model: gpt-4-1106-preview
 summary: "Laskemme p\xE4iv\xE4m\xE4\xE4ri\xE4 tulevaisuudessa tai menneisyydess\xE4\
   \ hallitaksemme aikatauluja ja m\xE4\xE4ritt\xE4ksemme m\xE4\xE4r\xE4aikoja. Ohjelmoijat\

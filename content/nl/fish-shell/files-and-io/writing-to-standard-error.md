@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:13:15.531251-07:00
 description: "Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostiek\
   \ los van de hoofdoutput. Programmeurs gebruiken dit om problemen te rapporteren\u2026"
-lastmod: '2024-03-11T00:14:25.123954-06:00'
+lastmod: '2024-03-13T22:44:51.263560-06:00'
 model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostiek\
   \ los van de hoofdoutput. Programmeurs gebruiken dit om problemen te rapporteren\u2026"

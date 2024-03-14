@@ -6,7 +6,7 @@ date: 2024-01-28 21:23:59.921095-07:00
 description: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017C\
   e\u0144 wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\
   \ jej do dynamicznego wstawiania warto\u015Bci do ci\u0105g\xF3w\u2026"
-lastmod: '2024-03-11T00:14:08.107411-06:00'
+lastmod: '2024-03-13T22:44:34.934628-06:00'
 model: gpt-4-0125-preview
 summary: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017Ce\u0144\
   \ wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\

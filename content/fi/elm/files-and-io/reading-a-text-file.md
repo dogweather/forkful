@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:31.428466-07:00
 description: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4lt\xE4m\xE4n tekstimateriaalin\
   \ tuomista ohjelman k\xE4ytt\xF6\xF6n. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, koska\
   \ tiedostojen\u2026"
-lastmod: '2024-03-11T00:14:30.449471-06:00'
+lastmod: '2024-03-13T22:44:56.506190-06:00'
 model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4lt\xE4m\xE4n tekstimateriaalin\
   \ tuomista ohjelman k\xE4ytt\xF6\xF6n. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, koska\

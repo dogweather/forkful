@@ -2,7 +2,7 @@
 date: 2024-01-20 18:01:05.824648-07:00
 description: "HTTP-Anfragen mit Basisauthentifizierung erlauben es einem Client, sich\
   \ mit Benutzername und Passwort gegen\xFCber einem Server zu authentifizieren.\u2026"
-lastmod: '2024-03-11T00:14:27.784158-06:00'
+lastmod: '2024-03-13T22:44:53.888063-06:00'
 model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basisauthentifizierung erlauben es einem Client, sich\
   \ mit Benutzername und Passwort gegen\xFCber einem Server zu authentifizieren.\u2026"

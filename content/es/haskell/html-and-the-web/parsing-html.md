@@ -3,7 +3,7 @@ date: 2024-01-20 15:32:11.698577-07:00
 description: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido\
   \ de una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\
   \ lo\u2026"
-lastmod: '2024-03-11T00:14:32.930315-06:00'
+lastmod: '2024-03-13T22:44:59.116873-06:00'
 model: unknown
 summary: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido de\
   \ una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\

@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:49.435927-07:00
 description: "Interpolar uma string \xE9 o processo de inserir valores de vari\xE1\
   veis dentro de uma string literal. Programadores fazem isso para construir strings\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:19.996622-06:00'
+lastmod: '2024-03-13T22:44:46.311923-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolar uma string \xE9 o processo de inserir valores de vari\xE1veis\
   \ dentro de uma string literal. Programadores fazem isso para construir strings\

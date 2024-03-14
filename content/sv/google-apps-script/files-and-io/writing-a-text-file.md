@@ -5,7 +5,7 @@ date: 2024-02-01 22:08:15.701884-07:00
 description: "Att skriva en textfil i Google Apps Script m\xF6jligg\xF6r f\xF6r utvecklare\
   \ att lagra data best\xE4ndigt, vilket g\xF6r det \xE5tkomligt f\xF6r framtida anv\xE4\
   ndning eller\u2026"
-lastmod: '2024-03-11T00:14:10.768572-06:00'
+lastmod: '2024-03-13T22:44:37.458810-06:00'
 model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Google Apps Script m\xF6jligg\xF6r f\xF6r utvecklare\
   \ att lagra data best\xE4ndigt, vilket g\xF6r det \xE5tkomligt f\xF6r framtida anv\xE4\

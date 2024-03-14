@@ -3,7 +3,7 @@ date: 2024-02-03 19:02:47.182335-07:00
 description: "Getting the current date in Swift involves using the `Date` class to\
   \ access the date and time that the app is being run. Programmers need to fetch\
   \ the\u2026"
-lastmod: '2024-03-11T00:14:34.276801-06:00'
+lastmod: '2024-03-13T22:45:00.405594-06:00'
 model: gpt-4-0125-preview
 summary: "Getting the current date in Swift involves using the `Date` class to access\
   \ the date and time that the app is being run. Programmers need to fetch the\u2026"

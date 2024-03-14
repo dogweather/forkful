@@ -3,7 +3,7 @@ date: 2024-02-03 19:03:07.378496-07:00
 description: "Working with CSV (Comma-Separated Values) involves reading from and\
   \ writing to CSV files, a common data exchange format used due to its simplicity\
   \ and\u2026"
-lastmod: '2024-03-11T00:14:33.738220-06:00'
+lastmod: '2024-03-13T22:44:59.878411-06:00'
 model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) involves reading from and writing\
   \ to CSV files, a common data exchange format used due to its simplicity and\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:03.249739-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w w Google Apps Script dotyczy przewidywania,\
   \ przechwytywania i reagowania na wyj\u0105tki lub b\u0142\u0119dy, kt\xF3re wyst\u0119\
   puj\u0105 podczas wykonywania skryptu.\u2026"
-lastmod: '2024-03-11T00:14:08.082222-06:00'
+lastmod: '2024-03-13T22:44:34.911254-06:00'
 model: gpt-4-0125-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Google Apps Script dotyczy przewidywania,\
   \ przechwytywania i reagowania na wyj\u0105tki lub b\u0142\u0119dy, kt\xF3re wyst\u0119\

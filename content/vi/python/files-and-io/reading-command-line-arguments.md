@@ -6,7 +6,7 @@ description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho p
   p m\xE3 Python c\u1EE7a b\u1EA1n t\u01B0\u01A1ng t\xE1c t\u1ED1t v\u1EDBi c\xE1\
   c \u0111\u1EA7u v\xE0o c\u1EE7a ng\u01B0\u1EDDi d\xF9ng t\u1EEB terminal. T\u1EA1\
   i sao? V\xEC linh ho\u1EA1t l\xE0 ch\xECa kh\xF3a; ng\u01B0\u1EDDi\u2026"
-lastmod: '2024-03-11T00:14:09.360842-06:00'
+lastmod: '2024-03-13T22:44:36.117841-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
   p m\xE3 Python c\u1EE7a b\u1EA1n t\u01B0\u01A1ng t\xE1c t\u1ED1t v\u1EDBi c\xE1\

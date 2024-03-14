@@ -6,7 +6,7 @@ description: "Ghi log l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i h\xE0nh vi, l\u1ED7i v\
   \ c\xE1c th\xF4ng tin quan tr\u1ECDng kh\xE1c c\u1EE7a \u1EE9ng d\u1EE5ng v\xE0\
   o m\u1ED9t ph\u01B0\u01A1ng ti\u1EC7n l\u01B0u tr\u1EEF l\xE2u d\xE0i, nh\u01B0\
   \ t\u1EC7p tin ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\u2026"
-lastmod: '2024-03-11T00:14:10.408320-06:00'
+lastmod: '2024-03-13T22:44:37.106404-06:00'
 model: gpt-4-0125-preview
 summary: "Ghi log l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i h\xE0nh vi, l\u1ED7i v\xE0 c\xE1\
   c th\xF4ng tin quan tr\u1ECDng kh\xE1c c\u1EE7a \u1EE9ng d\u1EE5ng v\xE0o m\u1ED9\

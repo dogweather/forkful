@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:02.668344-07:00
 description: "Datum in String umwandeln bedeutet, ein Datum in eine lesbare Zeichenkette\
   \ zu verwandeln. Das ist praktisch f\xFCr Ausgaben, Speicherung oder um\u2026"
-lastmod: '2024-03-11T00:14:27.439135-06:00'
+lastmod: '2024-03-13T22:44:53.546773-06:00'
 model: gpt-4-1106-preview
 summary: "Datum in String umwandeln bedeutet, ein Datum in eine lesbare Zeichenkette\
   \ zu verwandeln. Das ist praktisch f\xFCr Ausgaben, Speicherung oder um\u2026"

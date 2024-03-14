@@ -5,7 +5,7 @@ date: 2024-02-03 18:09:26.853368-07:00
 description: "Att starta ett nytt projekt i Go inneb\xE4r att s\xE4tta upp en arbetsyta\
   \ och initiera den med n\xF6dv\xE4ndiga Go-moduler. Programmerare g\xF6r detta f\xF6\
   r att organisera\u2026"
-lastmod: '2024-03-11T00:14:10.697567-06:00'
+lastmod: '2024-03-13T22:44:37.392842-06:00'
 model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i Go inneb\xE4r att s\xE4tta upp en arbetsyta\
   \ och initiera den med n\xF6dv\xE4ndiga Go-moduler. Programmerare g\xF6r detta f\xF6\

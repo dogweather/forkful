@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:36.449614-07:00
 description: "Deleting characters matching a specific pattern in strings is crucial\
   \ for data validation, sanitization, or when preparing text for further processing.\u2026"
-lastmod: '2024-03-11T00:14:33.663095-06:00'
+lastmod: '2024-03-13T22:44:59.806114-06:00'
 model: gpt-4-0125-preview
 summary: "Deleting characters matching a specific pattern in strings is crucial for\
   \ data validation, sanitization, or when preparing text for further processing.\u2026"

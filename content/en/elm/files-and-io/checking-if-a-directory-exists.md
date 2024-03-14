@@ -2,7 +2,7 @@
 date: 2024-01-20 14:56:09.311344-07:00
 description: "Checking if a directory exists means confirming whether a specific folder\
   \ path is present in the file system. Programmers do it to avoid errors when\u2026"
-lastmod: '2024-03-11T00:14:33.888427-06:00'
+lastmod: '2024-03-13T22:45:00.023804-06:00'
 model: unknown
 summary: "Checking if a directory exists means confirming whether a specific folder\
   \ path is present in the file system. Programmers do it to avoid errors when\u2026"

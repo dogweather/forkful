@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:30.493145-07:00
 description: "Praca z XML w Dart polega na analizowaniu, kwerendowaniu i modyfikowaniu\
   \ dokument\xF3w XML, co jest kluczowe dla aplikacji wchodz\u0105cych w interakcje\
   \ z\u2026"
-lastmod: '2024-03-11T00:14:08.292065-06:00'
+lastmod: '2024-03-13T22:44:35.119803-06:00'
 model: gpt-4-0125-preview
 summary: "Praca z XML w Dart polega na analizowaniu, kwerendowaniu i modyfikowaniu\
   \ dokument\xF3w XML, co jest kluczowe dla aplikacji wchodz\u0105cych w interakcje\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:11:54.128179-07:00
 description: "Analyser du HTML signifie d\xE9composer le contenu HTML en quelque chose\
   \ qu'un programme peut comprendre et manipuler. Les programmeurs font cela pour\u2026"
-lastmod: '2024-03-11T00:14:32.057313-06:00'
+lastmod: '2024-03-13T22:44:58.159336-06:00'
 model: gpt-4-0125-preview
 summary: "Analyser du HTML signifie d\xE9composer le contenu HTML en quelque chose\
   \ qu'un programme peut comprendre et manipuler. Les programmeurs font cela pour\u2026"

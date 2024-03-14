@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:52.973469-07:00
 description: "L\xE4sa en textfil i Haskell \xE4r att inh\xE4mta data fr\xE5n en fil\
   \ p\xE5 din enhet. Vi g\xF6r det f\xF6r att tillgodose program med information som\
   \ konfigurationer,\u2026"
-lastmod: '2024-03-11T00:14:11.340786-06:00'
+lastmod: '2024-03-13T22:44:37.972168-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil i Haskell \xE4r att inh\xE4mta data fr\xE5n en fil p\xE5\
   \ din enhet. Vi g\xF6r det f\xF6r att tillgodose program med information som konfigurationer,\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 01:16:45.489684-07:00
 description: "Refactoring ist der Prozess der \xDCberarbeitung Ihres Codes, um seine\
   \ Struktur und Lesbarkeit zu verbessern, ohne das externe Verhalten oder die\u2026"
-lastmod: '2024-03-11T00:14:28.052633-06:00'
+lastmod: '2024-03-13T22:44:54.151826-06:00'
 model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess der \xDCberarbeitung Ihres Codes, um seine Struktur\
   \ und Lesbarkeit zu verbessern, ohne das externe Verhalten oder die\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:14.349750-07:00
 description: "Midlertidige filer er som papptallerkener; du bruker dem en gang, s\xE5\
   \ kaster du dem vekk. Programmerere lager slike filer for \xE5 lagre data midlertidig\
   \ uten\u2026"
-lastmod: '2024-03-11T00:14:13.900625-06:00'
+lastmod: '2024-03-13T22:44:40.380359-06:00'
 model: gpt-4-1106-preview
 summary: "Midlertidige filer er som papptallerkener; du bruker dem en gang, s\xE5\
   \ kaster du dem vekk. Programmerere lager slike filer for \xE5 lagre data midlertidig\

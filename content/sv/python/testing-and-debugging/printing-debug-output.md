@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:08.069507-07:00
 description: "Att skriva ut debuginformation inneb\xE4r att visa vad som h\xE4nder\
   \ i din kod under k\xF6rningen. Programmerare g\xF6r detta f\xF6r att f\xF6rst\xE5\
   \ fl\xF6det, hitta buggar och\u2026"
-lastmod: '2024-03-11T00:14:10.797372-06:00'
+lastmod: '2024-03-13T22:44:37.485685-06:00'
 model: gpt-4-1106-preview
 summary: "Att skriva ut debuginformation inneb\xE4r att visa vad som h\xE4nder i din\
   \ kod under k\xF6rningen. Programmerare g\xF6r detta f\xF6r att f\xF6rst\xE5 fl\xF6\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:58:32.601714-07:00
 description: "String-Interpolation ist eine Methode, um Strings zu konstruieren, die\
   \ Variablen einbetten, was die dynamische Erstellung von Strings erm\xF6glicht.\u2026"
-lastmod: '2024-03-11T00:14:27.229200-06:00'
+lastmod: '2024-03-13T22:44:53.272088-06:00'
 model: gpt-4-0125-preview
 summary: "String-Interpolation ist eine Methode, um Strings zu konstruieren, die Variablen\
   \ einbetten, was die dynamische Erstellung von Strings erm\xF6glicht.\u2026"

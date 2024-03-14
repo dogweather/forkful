@@ -3,7 +3,7 @@ date: 2024-01-20 18:04:15.206156-07:00
 description: "Rozpocz\u0119cie nowego projektu programistycznego to jak otwarcie pustej\
   \ ksi\u0119gi i decydowanie, co b\u0119dzie w niej napisane. Programi\u015Bci rozpoczynaj\u0105\
   \ nowe\u2026"
-lastmod: '2024-03-11T00:14:09.152621-06:00'
+lastmod: '2024-03-13T22:44:35.933116-06:00'
 model: gpt-4-1106-preview
 summary: "Rozpocz\u0119cie nowego projektu programistycznego to jak otwarcie pustej\
   \ ksi\u0119gi i decydowanie, co b\u0119dzie w niej napisane. Programi\u015Bci rozpoczynaj\u0105\

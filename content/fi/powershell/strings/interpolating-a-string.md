@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:43.245769-07:00
 description: "Interpoloinnissa yhdistet\xE4\xE4n muuttujia ja kiinte\xE4\xE4 teksti\xE4\
   \ yhdeksi merkkijonoksi. Koodarit k\xE4ytt\xE4v\xE4t t\xE4t\xE4 menetelm\xE4\xE4\
   \ siksi, ett\xE4 se tekee koodista\u2026"
-lastmod: '2024-03-11T00:14:30.724042-06:00'
+lastmod: '2024-03-13T22:44:56.766768-06:00'
 model: gpt-4-1106-preview
 summary: "Interpoloinnissa yhdistet\xE4\xE4n muuttujia ja kiinte\xE4\xE4 teksti\xE4\
   \ yhdeksi merkkijonoksi. Koodarit k\xE4ytt\xE4v\xE4t t\xE4t\xE4 menetelm\xE4\xE4\

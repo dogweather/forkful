@@ -3,7 +3,7 @@ date: 2024-01-26 03:47:24.742508-07:00
 description: "Usare un debugger in Bash significa sfruttare strumenti per testare\
   \ e trovare problemi nei vostri script, come catturare bug che fanno crashare il\
   \ vostro\u2026"
-lastmod: '2024-03-11T00:14:17.215916-06:00'
+lastmod: '2024-03-13T22:44:43.604098-06:00'
 model: gpt-4-0125-preview
 summary: "Usare un debugger in Bash significa sfruttare strumenti per testare e trovare\
   \ problemi nei vostri script, come catturare bug che fanno crashare il vostro\u2026"

@@ -5,7 +5,7 @@ date: 2024-02-03 19:18:08.789897-07:00
 description: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden,\
   \ um Kombinationen von Zeichen in Zeichenketten zu finden. Programmierer nutzen\
   \ sie f\xFCr die\u2026"
-lastmod: '2024-03-11T00:14:27.331021-06:00'
+lastmod: '2024-03-13T22:44:53.368186-06:00'
 model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden, um Kombinationen\
   \ von Zeichen in Zeichenketten zu finden. Programmierer nutzen sie f\xFCr die\u2026"

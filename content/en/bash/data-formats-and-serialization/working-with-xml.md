@@ -3,7 +3,7 @@ date: 2024-01-25 03:39:52.357960-07:00
 description: "Working with XML involves parsing, extracting, and manipulating data\
   \ in the Extensible Markup Language format. Programmers wrestle with XML since it's\
   \ a\u2026"
-lastmod: '2024-03-11T00:14:34.133086-06:00'
+lastmod: '2024-03-13T22:45:00.266021-06:00'
 model: gpt-4-1106-preview
 summary: "Working with XML involves parsing, extracting, and manipulating data in\
   \ the Extensible Markup Language format. Programmers wrestle with XML since it's\

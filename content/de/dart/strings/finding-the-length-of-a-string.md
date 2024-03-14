@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:54:42.511163-07:00
 description: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl der\
   \ Codeeinheiten (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet)\u2026"
-lastmod: '2024-03-11T00:14:27.463987-06:00'
+lastmod: '2024-03-13T22:44:53.570581-06:00'
 model: gpt-4-0125-preview
 summary: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl der Codeeinheiten\
   \ (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet)\u2026"

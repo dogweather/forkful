@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:09:13.729724-07:00
 description: "Ottenere la data corrente in C# implica il recupero dei dettagli della\
   \ data e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di\u2026"
-lastmod: '2024-03-11T00:14:17.033561-06:00'
+lastmod: '2024-03-13T22:44:43.444373-06:00'
 model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in C# implica il recupero dei dettagli della data\
   \ e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di\u2026"

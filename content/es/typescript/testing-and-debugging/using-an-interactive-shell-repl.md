@@ -3,7 +3,7 @@ date: 2024-01-26 04:18:22.962589-07:00
 description: "Un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9\
   s) es un entorno de programaci\xF3n que toma entradas individuales del usuario,\
   \ las ejecuta y\u2026"
-lastmod: '2024-03-11T00:14:32.620504-06:00'
+lastmod: '2024-03-13T22:44:58.802265-06:00'
 model: gpt-4-0125-preview
 summary: "Un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9s) es\
   \ un entorno de programaci\xF3n que toma entradas individuales del usuario, las\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:10:21.943436-07:00
 description: "Att h\xE4mta det aktuella datumet i programmering \xE4r en avg\xF6rande\
   \ uppgift f\xF6r en m\xE4ngd applikationer, inklusive loggning, tidsst\xE4mpling\
   \ av h\xE4ndelser eller\u2026"
-lastmod: '2024-03-11T00:14:11.426089-06:00'
+lastmod: '2024-03-13T22:44:38.049120-06:00'
 model: gpt-4-0125-preview
 summary: "Att h\xE4mta det aktuella datumet i programmering \xE4r en avg\xF6rande\
   \ uppgift f\xF6r en m\xE4ngd applikationer, inklusive loggning, tidsst\xE4mpling\

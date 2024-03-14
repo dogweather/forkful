@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:52.803757-07:00
 description: "V\xE9rifier si un r\xE9pertoire existe consiste \xE0 d\xE9terminer la\
   \ pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 avant de r\xE9aliser\
   \ des op\xE9rations telles que lire\u2026"
-lastmod: '2024-03-11T00:14:32.075356-06:00'
+lastmod: '2024-03-13T22:44:58.179340-06:00'
 model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe consiste \xE0 d\xE9terminer la pr\xE9\
   sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 avant de r\xE9aliser des\

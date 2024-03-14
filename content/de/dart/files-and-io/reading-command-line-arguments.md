@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:55:44.797705-07:00
 description: "Das Lesen von Befehlszeilenargumenten in Dart erm\xF6glicht es Programmierern,\
   \ Daten direkt in die Konsole einzugeben, wenn ein Dart-Programm ausgef\xFChrt\u2026"
-lastmod: '2024-03-11T00:14:27.492767-06:00'
+lastmod: '2024-03-13T22:44:53.598008-06:00'
 model: gpt-4-0125-preview
 summary: "Das Lesen von Befehlszeilenargumenten in Dart erm\xF6glicht es Programmierern,\
   \ Daten direkt in die Konsole einzugeben, wenn ein Dart-Programm ausgef\xFChrt\u2026"

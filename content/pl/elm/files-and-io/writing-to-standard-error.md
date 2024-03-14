@@ -5,7 +5,7 @@ date: 2024-02-03 19:33:09.547436-07:00
 description: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na przekierowywaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnozy odseparowane od g\u0142\xF3wnego\
   \ wyj\u015Bcia programu, kt\xF3re\u2026"
-lastmod: '2024-03-11T00:14:08.518276-06:00'
+lastmod: '2024-03-13T22:44:35.338198-06:00'
 model: gpt-4-0125-preview
 summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na przekierowywaniu\
   \ komunikat\xF3w o b\u0142\u0119dach i diagnozy odseparowane od g\u0142\xF3wnego\

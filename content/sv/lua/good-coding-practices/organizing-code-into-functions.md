@@ -2,7 +2,7 @@
 date: 2024-01-26 01:11:46.286566-07:00
 description: "Att organisera kod i funktioner handlar om att dela upp ditt skriptande\
   \ i mindre bitar\u2014t\xE4nk funktionella LEGO-block. Vi g\xF6r det f\xF6r tydlighet,\u2026"
-lastmod: '2024-03-11T00:14:11.420747-06:00'
+lastmod: '2024-03-13T22:44:38.043956-06:00'
 model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att dela upp ditt skriptande\
   \ i mindre bitar\u2014t\xE4nk funktionella LEGO-block. Vi g\xF6r det f\xF6r tydlighet,\u2026"

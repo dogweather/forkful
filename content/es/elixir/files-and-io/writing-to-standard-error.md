@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:54.427919-07:00
 description: "Escribir en el error est\xE1ndar (stderr) en Elixir es un m\xE9todo\
   \ para dirigir mensajes de error y diagn\xF3sticos por separado de la salida principal\
   \ (stdout).\u2026"
-lastmod: '2024-03-11T00:14:32.545059-06:00'
+lastmod: '2024-03-13T22:44:58.719318-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Elixir es un m\xE9todo para\
   \ dirigir mensajes de error y diagn\xF3sticos por separado de la salida principal\

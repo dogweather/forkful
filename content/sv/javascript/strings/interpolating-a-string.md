@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:14.346851-07:00
 description: "Interpolering av str\xE4ngar l\xE5ter dig infoga variabler eller uttryck\
   \ direkt i en str\xE4ng. Det f\xF6renklar och g\xF6r koden mer l\xE4sbar n\xE4r\
   \ du beh\xF6ver bygga\u2026"
-lastmod: '2024-03-11T00:14:11.677138-06:00'
+lastmod: '2024-03-13T22:44:38.279570-06:00'
 model: gpt-4-1106-preview
 summary: "Interpolering av str\xE4ngar l\xE5ter dig infoga variabler eller uttryck\
   \ direkt i en str\xE4ng. Det f\xF6renklar och g\xF6r koden mer l\xE4sbar n\xE4r\

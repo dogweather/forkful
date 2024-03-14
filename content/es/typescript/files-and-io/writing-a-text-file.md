@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:28.365833-07:00
 description: "Escribir un archivo de texto en TypeScript es una habilidad cr\xEDtica\
   \ para la persistencia de datos, configuraciones o generaci\xF3n de registros. Los\u2026"
-lastmod: '2024-03-11T00:14:32.637818-06:00'
+lastmod: '2024-03-13T22:44:58.821465-06:00'
 model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en TypeScript es una habilidad cr\xEDtica para\
   \ la persistencia de datos, configuraciones o generaci\xF3n de registros. Los\u2026"

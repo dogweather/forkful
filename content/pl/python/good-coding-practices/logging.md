@@ -3,7 +3,7 @@ date: 2024-01-26 01:09:09.622104-07:00
 description: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji, podczas dzia\u0142\
   ania programu, dostarczaj\u0105c \u015Blad okruszk\xF3w do analizy post mortem oraz\
   \ monitorowania w\u2026"
-lastmod: '2024-03-11T00:14:08.129442-06:00'
+lastmod: '2024-03-13T22:44:34.956265-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji, podczas dzia\u0142\
   ania programu, dostarczaj\u0105c \u015Blad okruszk\xF3w do analizy post mortem oraz\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:15:05.014970-07:00
 description: "Parsowanie daty z ci\u0105gu znak\xF3w w PHP polega na konwersji tekstu,\
   \ kt\xF3ry przedstawia dat\u0119 i/lub czas, na obiekt `DateTime` PHP lub inne formaty\
   \ daty/czasu.\u2026"
-lastmod: '2024-03-11T00:14:08.693000-06:00'
+lastmod: '2024-03-13T22:44:35.506813-06:00'
 model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu znak\xF3w w PHP polega na konwersji tekstu,\
   \ kt\xF3ry przedstawia dat\u0119 i/lub czas, na obiekt `DateTime` PHP lub inne formaty\

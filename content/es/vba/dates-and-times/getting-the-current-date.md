@@ -5,7 +5,7 @@ date: 2024-02-01 21:54:36.505375-07:00
 description: "En Visual Basic para Aplicaciones (VBA), recuperar la fecha actual es\
   \ una tarea com\xFAn que permite a los programadores trabajar din\xE1micamente con\
   \ fechas en\u2026"
-lastmod: '2024-03-11T00:14:32.718741-06:00'
+lastmod: '2024-03-13T22:44:58.904661-06:00'
 model: gpt-4-0125-preview
 summary: "En Visual Basic para Aplicaciones (VBA), recuperar la fecha actual es una\
   \ tarea com\xFAn que permite a los programadores trabajar din\xE1micamente con fechas\

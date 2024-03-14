@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:02.176373-07:00
 description: "Das Schreiben von Tests in Swift umfasst das Erstellen und Ausf\xFC\
   hren von Code, der die Korrektheit anderer Codeeinheiten in Ihrer Anwendung \xFC\
   berpr\xFCft.\u2026"
-lastmod: '2024-03-11T00:14:28.131636-06:00'
+lastmod: '2024-03-13T22:44:54.229016-06:00'
 model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Swift umfasst das Erstellen und Ausf\xFChren\
   \ von Code, der die Korrektheit anderer Codeeinheiten in Ihrer Anwendung \xFCberpr\xFC\

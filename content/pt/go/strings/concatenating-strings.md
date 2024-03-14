@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:53:53.869805-07:00
 description: "Concatenar strings envolve unir duas ou mais strings de ponta a ponta\
   \ para formar uma nova string. Os programadores fazem isso para gerar texto\u2026"
-lastmod: '2024-03-11T00:14:19.711650-06:00'
+lastmod: '2024-03-13T22:44:46.051885-06:00'
 model: gpt-4-0125-preview
 summary: "Concatenar strings envolve unir duas ou mais strings de ponta a ponta para\
   \ formar uma nova string. Os programadores fazem isso para gerar texto\u2026"

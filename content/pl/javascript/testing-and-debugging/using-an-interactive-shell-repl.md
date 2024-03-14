@@ -3,7 +3,7 @@ date: 2024-01-26 04:15:42.127682-07:00
 description: "Interaktywne pow\u0142oki, czyli REPL-y (Read-Eval-Print Loops - P\u0119\
   tle Czytaj-Wykonaj-Wypisz), pozwalaj\u0105 na bie\u017C\u0105co uruchamia\u0107\
   \ kod, testowa\u0107 funkcje, algorytmy\u2026"
-lastmod: '2024-03-11T00:14:09.007734-06:00'
+lastmod: '2024-03-13T22:44:35.798136-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywne pow\u0142oki, czyli REPL-y (Read-Eval-Print Loops - P\u0119\
   tle Czytaj-Wykonaj-Wypisz), pozwalaj\u0105 na bie\u017C\u0105co uruchamia\u0107\

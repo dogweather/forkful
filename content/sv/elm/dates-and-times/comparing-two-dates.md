@@ -3,7 +3,7 @@ date: 2024-01-20 17:32:42.846437-07:00
 description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras ordning\
   \ och tidsintervall \u2013 \xE4r det ena f\xF6re det andra, samtidigt, eller hur\
   \ l\xE5ng tid \xE4r det emellan?\u2026"
-lastmod: '2024-03-11T00:14:11.191595-06:00'
+lastmod: '2024-03-13T22:44:37.841831-06:00'
 model: gpt-4-1106-preview
 summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras ordning och\
   \ tidsintervall \u2013 \xE4r det ena f\xF6re det andra, samtidigt, eller hur l\xE5\

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:52.632009-07:00
 description: "Kompleksiluvut koostuvat reaaliosasta ja imagin\xE4\xE4riosasta, jotka\
   \ esitet\xE4\xE4n muodossa `a + bi`, miss\xE4 `i` on luvun `-1` neli\xF6juuri. Ohjelmoijat\u2026"
-lastmod: '2024-03-11T00:14:31.074699-06:00'
+lastmod: '2024-03-13T22:44:57.032920-06:00'
 model: gpt-4-0125-preview
 summary: "Kompleksiluvut koostuvat reaaliosasta ja imagin\xE4\xE4riosasta, jotka esitet\xE4\
   \xE4n muodossa `a + bi`, miss\xE4 `i` on luvun `-1` neli\xF6juuri. Ohjelmoijat\u2026"

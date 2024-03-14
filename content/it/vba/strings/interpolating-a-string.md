@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:40.606740-07:00
 description: "L'interpolazione di stringhe in Visual Basic for Applications (VBA)\
   \ si riferisce al processo di incorporazione di variabili o espressioni all'interno\
   \ di\u2026"
-lastmod: '2024-03-11T00:14:16.813752-06:00'
+lastmod: '2024-03-13T22:44:43.247317-06:00'
 model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe in Visual Basic for Applications (VBA) si riferisce\
   \ al processo di incorporazione di variabili o espressioni all'interno di\u2026"

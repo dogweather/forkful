@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:03:03.938405-07:00
 description: "Loggen is in wezen de software-equivalent van een scheepsjournaal; het\
   \ is een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een\u2026"
-lastmod: '2024-03-11T00:14:24.237872-06:00'
+lastmod: '2024-03-13T22:44:50.426618-06:00'
 model: gpt-4-0125-preview
 summary: "Loggen is in wezen de software-equivalent van een scheepsjournaal; het is\
   \ een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-26 04:31:42.415524-07:00
 description: "Trabajar con XML en Haskell implica analizar, manipular y generar estructuras\
   \ XML. Los programadores manejan XML para interactuar con numerosas\u2026"
-lastmod: '2024-03-11T00:14:32.958759-06:00'
+lastmod: '2024-03-13T22:44:59.142688-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con XML en Haskell implica analizar, manipular y generar estructuras\
   \ XML. Los programadores manejan XML para interactuar con numerosas\u2026"

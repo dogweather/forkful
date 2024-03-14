@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:53:14.834838-07:00
 description: "Att extrahera delstr\xE4ngar i Visual Basic for Applications (VBA) inneb\xE4\
   r att isolera specifika delar av en str\xE4ng baserat p\xE5 givna kriterier. Programmerare\u2026"
-lastmod: '2024-03-11T00:14:11.071962-06:00'
+lastmod: '2024-03-13T22:44:37.731142-06:00'
 model: gpt-4-0125-preview
 summary: "Att extrahera delstr\xE4ngar i Visual Basic for Applications (VBA) inneb\xE4\
   r att isolera specifika delar av en str\xE4ng baserat p\xE5 givna kriterier. Programmerare\u2026"

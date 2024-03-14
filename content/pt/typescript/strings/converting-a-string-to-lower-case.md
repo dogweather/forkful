@@ -2,7 +2,7 @@
 date: 2024-01-20 17:39:27.028159-07:00
 description: "Converter uma string para min\xFAsculas \xE9 basicamente transformar\
   \ todos os caracteres de uma frase ou palavra para o formato de letra pequena. Programadores\u2026"
-lastmod: '2024-03-11T00:14:19.997546-06:00'
+lastmod: '2024-03-13T22:44:46.312831-06:00'
 model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas \xE9 basicamente transformar todos\
   \ os caracteres de uma frase ou palavra para o formato de letra pequena. Programadores\u2026"

@@ -2,7 +2,7 @@
 date: 2024-01-20 17:48:08.923746-07:00
 description: "Die L\xE4nge eines Strings herauszufinden bedeutet, die Anzahl der enthaltenen\
   \ Zeichen zu z\xE4hlen. Programmierer tun dies, um Eingaben zu validieren,\u2026"
-lastmod: '2024-03-11T00:14:27.332082-06:00'
+lastmod: '2024-03-13T22:44:53.369135-06:00'
 model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings herauszufinden bedeutet, die Anzahl der enthaltenen\
   \ Zeichen zu z\xE4hlen. Programmierer tun dies, um Eingaben zu validieren,\u2026"

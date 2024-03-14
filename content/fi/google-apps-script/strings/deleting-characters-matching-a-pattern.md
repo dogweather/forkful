@@ -5,7 +5,7 @@ date: 2024-02-01 21:52:09.013346-07:00
 description: "Merkkien poistaminen, jotka vastaavat tietty\xE4 mallia, on tekniikka,\
   \ jota k\xE4ytet\xE4\xE4n merkkijonojen puhdistamiseen tai muotoiluun ohjelmoinnissa.\
   \ Google Apps\u2026"
-lastmod: '2024-03-11T00:14:30.005325-06:00'
+lastmod: '2024-03-13T22:44:56.079044-06:00'
 model: gpt-4-0125-preview
 summary: "Merkkien poistaminen, jotka vastaavat tietty\xE4 mallia, on tekniikka, jota\
   \ k\xE4ytet\xE4\xE4n merkkijonojen puhdistamiseen tai muotoiluun ohjelmoinnissa.\

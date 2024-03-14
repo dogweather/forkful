@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 18:13:53.473297-07:00
 description: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del, representert\
   \ som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse\u2026"
-lastmod: '2024-03-11T00:14:14.871560-06:00'
+lastmod: '2024-03-13T22:44:41.264745-06:00'
 model: gpt-4-0125-preview
 summary: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del, representert\
   \ som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse\u2026"

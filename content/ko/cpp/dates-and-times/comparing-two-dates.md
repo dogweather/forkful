@@ -8,7 +8,7 @@ description: "(\uBB34\uC5C7\uACFC \uC65C?) \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD5
   \uAC04\uCC28 \uACC4\uC0B0, \uC77C\uC815 \uAD00\uB9AC \uB4F1\uC744 \uC704\uD574\uC11C\
   \uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-11T00:14:29.613277-06:00'
+lastmod: '2024-03-13T22:44:55.687277-06:00'
 model: gpt-4-1106-preview
 summary: "(\uBB34\uC5C7\uACFC \uC65C?) \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\
   \uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC A\uAC00 B\uBCF4\uB2E4 \uC774\uC804, \uB3D9\

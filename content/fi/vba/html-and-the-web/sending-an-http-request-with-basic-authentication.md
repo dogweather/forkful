@@ -5,7 +5,7 @@ date: 2024-02-01 22:02:41.981893-07:00
 description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Visual Basic\
   \ for Applications (VBA) -ohjelmassa liittyy verkkoresurssien k\xE4ytt\xE4miseen,\
   \ jotka on suojattu\u2026"
-lastmod: '2024-03-11T00:14:30.337928-06:00'
+lastmod: '2024-03-13T22:44:56.400216-06:00'
 model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Visual Basic for\
   \ Applications (VBA) -ohjelmassa liittyy verkkoresurssien k\xE4ytt\xE4miseen, jotka\

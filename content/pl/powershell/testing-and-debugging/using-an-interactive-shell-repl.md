@@ -3,7 +3,7 @@ date: 2024-01-26 04:16:47.726459-07:00
 description: "Interaktywna pow\u0142oka, czyli p\u0119tla Read-Eval-Print (REPL),\
   \ pozwala na wprowadzanie polece\u0144 PowerShell i uzyskiwanie natychmiastowego\
   \ odzewu. Programi\u015Bci\u2026"
-lastmod: '2024-03-11T00:14:08.825370-06:00'
+lastmod: '2024-03-13T22:44:35.631359-06:00'
 model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli p\u0119tla Read-Eval-Print (REPL), pozwala\
   \ na wprowadzanie polece\u0144 PowerShell i uzyskiwanie natychmiastowego odzewu.\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:27:15.272345-07:00
 description: "\xC9crire dans un fichier texte en C++ implique de cr\xE9er ou d'ouvrir\
   \ un fichier, puis d'y \xE9crire des donn\xE9es, ce qui est une t\xE2che fondamentale\
   \ pour les\u2026"
-lastmod: '2024-03-11T00:14:32.079480-06:00'
+lastmod: '2024-03-13T22:44:58.186663-06:00'
 model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en C++ implique de cr\xE9er ou d'ouvrir\
   \ un fichier, puis d'y \xE9crire des donn\xE9es, ce qui est une t\xE2che fondamentale\

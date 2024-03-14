@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:56:49.779768-07:00
 description: "Assoziative Arrays in Dart, allgemein bekannt als Maps, sind Datenstrukturen,\
   \ die Daten in Schl\xFCssel-Wert-Paaren speichern. Sie erm\xF6glichen es\u2026"
-lastmod: '2024-03-11T00:14:27.466306-06:00'
+lastmod: '2024-03-13T22:44:53.572873-06:00'
 model: gpt-4-0125-preview
 summary: "Assoziative Arrays in Dart, allgemein bekannt als Maps, sind Datenstrukturen,\
   \ die Daten in Schl\xFCssel-Wert-Paaren speichern. Sie erm\xF6glichen es\u2026"

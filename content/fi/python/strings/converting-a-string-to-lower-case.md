@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:18.249088-07:00
 description: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 teksti\
   \ on yhdenmukainen ja vertailukelpoinen. T\xE4m\xE4 on hy\xF6dyllist\xE4 erityisesti\
   \ tietojen\u2026"
-lastmod: '2024-03-11T00:14:30.056644-06:00'
+lastmod: '2024-03-13T22:44:56.130439-06:00'
 model: gpt-4-1106-preview
 summary: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 teksti\
   \ on yhdenmukainen ja vertailukelpoinen. T\xE4m\xE4 on hy\xF6dyllist\xE4 erityisesti\

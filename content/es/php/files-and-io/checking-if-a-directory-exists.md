@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:23.286826-07:00
 description: "Comprobar si un directorio existe es una tarea fundamental en la programaci\xF3\
   n PHP, ya que te permite verificar la presencia de un directorio antes de\u2026"
-lastmod: '2024-03-11T00:14:32.991658-06:00'
+lastmod: '2024-03-13T22:44:59.174803-06:00'
 model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe es una tarea fundamental en la programaci\xF3\
   n PHP, ya que te permite verificar la presencia de un directorio antes de\u2026"

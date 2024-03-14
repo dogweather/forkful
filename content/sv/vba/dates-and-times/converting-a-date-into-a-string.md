@@ -5,7 +5,7 @@ date: 2024-02-01 21:51:02.575194-07:00
 description: "Att konvertera ett datum till en str\xE4ng i Visual Basic for Applications\
   \ (VBA) \xE4r en process som anv\xE4nds f\xF6r att \xE4ndra datatypen f\xF6r ett\
   \ datum till\u2026"
-lastmod: '2024-03-11T00:14:11.097991-06:00'
+lastmod: '2024-03-13T22:44:37.755509-06:00'
 model: gpt-4-0125-preview
 summary: "Att konvertera ett datum till en str\xE4ng i Visual Basic for Applications\
   \ (VBA) \xE4r en process som anv\xE4nds f\xF6r att \xE4ndra datatypen f\xF6r ett\

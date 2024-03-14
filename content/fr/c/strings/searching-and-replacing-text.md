@@ -5,7 +5,7 @@ date: 2024-02-03 18:08:11.461639-07:00
 description: "La recherche et le remplacement de texte en C consiste \xE0 identifier\
   \ des sous-cha\xEEnes sp\xE9cifiques au sein d'une cha\xEEne plus grande et \xE0\
   \ les substituer par\u2026"
-lastmod: '2024-03-11T00:14:32.226474-06:00'
+lastmod: '2024-03-13T22:44:58.354373-06:00'
 model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte en C consiste \xE0 identifier des\
   \ sous-cha\xEEnes sp\xE9cifiques au sein d'une cha\xEEne plus grande et \xE0 les\

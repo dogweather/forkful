@@ -2,7 +2,7 @@
 date: 2024-01-20 17:56:40.503373-07:00
 description: "Reading command line arguments lets your Python script play nice with\
   \ user inputs from the terminal. Why? Well, because flexibility is key; users can\u2026"
-lastmod: '2024-03-11T00:14:33.571396-06:00'
+lastmod: '2024-03-13T22:44:59.721572-06:00'
 model: gpt-4-1106-preview
 summary: "Reading command line arguments lets your Python script play nice with user\
   \ inputs from the terminal. Why? Well, because flexibility is key; users can\u2026"

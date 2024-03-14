@@ -5,7 +5,7 @@ date: 2024-02-03 19:04:48.107457-07:00
 description: "Das Kapitalisieren eines Strings in Bash beinhaltet die Umwandlung des\
   \ ersten Buchstabens des Strings in einen Gro\xDFbuchstaben, w\xE4hrend der Rest\
   \ des\u2026"
-lastmod: '2024-03-11T00:14:27.939236-06:00'
+lastmod: '2024-03-13T22:44:54.040636-06:00'
 model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in Bash beinhaltet die Umwandlung des ersten\
   \ Buchstabens des Strings in einen Gro\xDFbuchstaben, w\xE4hrend der Rest des\u2026"

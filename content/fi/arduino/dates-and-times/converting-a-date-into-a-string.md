@@ -3,7 +3,7 @@ date: 2024-01-20 17:35:46.940612-07:00
 description: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on tapa esitt\xE4\
   \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4 helposti luettavassa formaatissa. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n, jotta voidaan tallentaa,\u2026"
-lastmod: '2024-03-11T00:14:30.862591-06:00'
+lastmod: '2024-03-13T22:44:56.835182-06:00'
 model: gpt-4-1106-preview
 summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on tapa esitt\xE4\
   \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4 helposti luettavassa formaatissa. Ohjelmoijat tekev\xE4\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:06:01.646920-07:00
 description: "\xC5 gj\xF8re om en streng til stor forbokstav inneb\xE6rer \xE5 endre\
   \ det f\xF8rste tegnet i gitt tekst til stor bokstav, for \xE5 sikre at setninger,\
   \ titler eller\u2026"
-lastmod: '2024-03-11T00:14:14.433408-06:00'
+lastmod: '2024-03-13T22:44:40.868805-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 gj\xF8re om en streng til stor forbokstav inneb\xE6rer \xE5 endre det\
   \ f\xF8rste tegnet i gitt tekst til stor bokstav, for \xE5 sikre at setninger, titler\

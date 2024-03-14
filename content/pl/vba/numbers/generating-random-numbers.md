@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:43.855562-07:00
 description: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
   liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\
   \ takimi jak\u2026"
-lastmod: '2024-03-11T00:14:08.402002-06:00'
+lastmod: '2024-03-13T22:44:35.227144-06:00'
 model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
   liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\

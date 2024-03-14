@@ -6,7 +6,7 @@ date: 2024-01-28 03:00:45.330676-07:00
 description: "Analisar HTML significa extrair dados de documentos HTML. Programadores\
   \ fazem isso para interagir com ou manipular conte\xFAdo da web, automatizar a extra\xE7\
   \xE3o\u2026"
-lastmod: '2024-03-11T00:14:20.695593-06:00'
+lastmod: '2024-03-13T22:44:46.960485-06:00'
 model: gpt-4-0125-preview
 summary: "Analisar HTML significa extrair dados de documentos HTML. Programadores\
   \ fazem isso para interagir com ou manipular conte\xFAdo da web, automatizar a extra\xE7\

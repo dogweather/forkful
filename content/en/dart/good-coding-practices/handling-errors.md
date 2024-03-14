@@ -2,7 +2,7 @@
 date: 2024-03-08 21:33:51.623284-07:00
 description: "Handling errors in Dart is about anticipating and managing exceptions\
   \ that arise during program execution to enhance reliability and usability.\u2026"
-lastmod: '2024-03-11T00:14:33.684640-06:00'
+lastmod: '2024-03-13T22:44:59.827352-06:00'
 model: gpt-4-0125-preview
 summary: "Handling errors in Dart is about anticipating and managing exceptions that\
   \ arise during program execution to enhance reliability and usability.\u2026"

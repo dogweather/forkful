@@ -3,7 +3,7 @@ date: 2024-01-26 00:51:15.300791-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w oznacza pisanie kodu, kt\xF3ry mo\u017C\
   e poradzi\u0107 sobie z sytuacjami, kiedy co\u015B p\xF3jdzie nie tak. Programi\u015B\
   ci robi\u0105 to, aby zapobiec awariom i aby\u2026"
-lastmod: '2024-03-11T00:14:08.222742-06:00'
+lastmod: '2024-03-13T22:44:35.050835-06:00'
 model: gpt-4-1106-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w oznacza pisanie kodu, kt\xF3ry mo\u017C\
   e poradzi\u0107 sobie z sytuacjami, kiedy co\u015B p\xF3jdzie nie tak. Programi\u015B\

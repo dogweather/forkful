@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:29:29.592467-07:00
 description: "Testen in Bash bedeutet, Testf\xE4lle zu scripten, um die Funktionalit\xE4\
   t Ihrer Bash-Skripte zu validieren. Programmierer f\xFChren Tests durch, um\u2026"
-lastmod: '2024-03-11T00:14:27.962810-06:00'
+lastmod: '2024-03-13T22:44:54.063187-06:00'
 model: gpt-4-0125-preview
 summary: "Testen in Bash bedeutet, Testf\xE4lle zu scripten, um die Funktionalit\xE4\
   t Ihrer Bash-Skripte zu validieren. Programmierer f\xFChren Tests durch, um\u2026"

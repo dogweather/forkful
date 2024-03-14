@@ -5,7 +5,7 @@ date: 2024-02-03 19:17:36.979692-07:00
 description: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
   res qui forment un motif de recherche, principalement utilis\xE9es pour la recherche\
   \ et la\u2026"
-lastmod: '2024-03-11T00:14:31.957403-06:00'
+lastmod: '2024-03-13T22:44:58.032789-06:00'
 model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
   res qui forment un motif de recherche, principalement utilis\xE9es pour la recherche\

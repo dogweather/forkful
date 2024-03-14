@@ -5,7 +5,7 @@ date: 2024-02-03 19:23:14.746508-07:00
 description: "Att arbeta med JSON (JavaScript Object Notation) i Kotlin inneb\xE4\
   r att tolka och generera JSON-data. Programmerare g\xF6r detta f\xF6r att enkelt\
   \ utbyta data\u2026"
-lastmod: '2024-03-11T00:14:11.250507-06:00'
+lastmod: '2024-03-13T22:44:37.892333-06:00'
 model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) i Kotlin inneb\xE4r att\
   \ tolka och generera JSON-data. Programmerare g\xF6r detta f\xF6r att enkelt utbyta\

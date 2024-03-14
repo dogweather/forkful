@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:55:43.813371-07:00
 description: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
   \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"
-lastmod: '2024-03-11T00:14:32.242279-06:00'
+lastmod: '2024-03-13T22:44:58.370464-06:00'
 model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
   \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"

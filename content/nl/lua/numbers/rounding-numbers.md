@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:06:55.242693-07:00
 description: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde geheel\
   \ getal of gespecificeerde decimale plaats. Het is een basisprincipe in\u2026"
-lastmod: '2024-03-11T00:14:24.763984-06:00'
+lastmod: '2024-03-13T22:44:50.932391-06:00'
 model: gpt-4-0125-preview
 summary: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde geheel\
   \ getal of gespecificeerde decimale plaats. Het is een basisprincipe in\u2026"

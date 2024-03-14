@@ -3,7 +3,7 @@ date: 2024-01-20 17:56:51.570171-07:00
 description: "Komennon rivilt\xE4 argumenttien lukeminen mahdollistaa k\xE4ytt\xE4\
   j\xE4n sy\xF6tt\xE4m\xE4n tiedon hakemisen ohjelmallesi. K\xE4yt\xE4mme sit\xE4\
   , koska haluamme ohjelman toimivan\u2026"
-lastmod: '2024-03-11T00:14:30.307167-06:00'
+lastmod: '2024-03-13T22:44:56.372670-06:00'
 model: gpt-4-1106-preview
 summary: "Komennon rivilt\xE4 argumenttien lukeminen mahdollistaa k\xE4ytt\xE4j\xE4\
   n sy\xF6tt\xE4m\xE4n tiedon hakemisen ohjelmallesi. K\xE4yt\xE4mme sit\xE4, koska\

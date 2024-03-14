@@ -3,7 +3,7 @@ date: 2024-01-20 17:51:00.270311-07:00
 description: "L'interpolation de cha\xEEnes, c'est injecter des variables dans du\
   \ texte. On le fait pour faciliter la formation de messages dynamiques et la lecture\
   \ du\u2026"
-lastmod: '2024-03-11T00:14:31.672231-06:00'
+lastmod: '2024-03-13T22:44:57.721602-06:00'
 model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEnes, c'est injecter des variables dans du texte.\
   \ On le fait pour faciliter la formation de messages dynamiques et la lecture du\u2026"

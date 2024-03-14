@@ -3,7 +3,7 @@ date: 2024-01-20 17:53:16.389298-07:00
 description: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil para\
   \ entender qu\xE9 est\xE1 pasando en tu programa. Los programadores lo hacen para\
   \ rastrear errores\u2026"
-lastmod: '2024-03-11T00:14:33.023584-06:00'
+lastmod: '2024-03-13T22:44:59.204450-06:00'
 model: gpt-4-1106-preview
 summary: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil para\
   \ entender qu\xE9 est\xE1 pasando en tu programa. Los programadores lo hacen para\

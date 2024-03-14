@@ -3,7 +3,7 @@ date: 2024-01-20 18:00:33.130433-07:00
 description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir dados ou enviar\
   \ dados para um servidor web. Programadores fazem isso para interagir com APIs,\
   \ para buscar\u2026"
-lastmod: '2024-03-11T00:14:20.649021-06:00'
+lastmod: '2024-03-13T22:44:46.917501-06:00'
 model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir dados ou enviar\
   \ dados para um servidor web. Programadores fazem isso para interagir com APIs,\

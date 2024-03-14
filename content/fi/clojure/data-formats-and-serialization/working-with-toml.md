@@ -2,7 +2,7 @@
 date: 2024-01-26 04:20:32.032181-07:00
 description: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dataa\
   \ Minimaalisessa \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua\u2026"
-lastmod: '2024-03-11T00:14:30.138117-06:00'
+lastmod: '2024-03-13T22:44:56.207586-06:00'
 model: gpt-4-0125-preview
 summary: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dataa Minimaalisessa\
   \ \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua\u2026"

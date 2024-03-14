@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:43.270650-07:00
 description: "No Visual Basic for Applications (VBA), recuperar a data atual \xE9\
   \ uma tarefa comum que permite aos programadores trabalhar dinamicamente com datas\
   \ em suas\u2026"
-lastmod: '2024-03-11T00:14:20.118513-06:00'
+lastmod: '2024-03-13T22:44:46.423756-06:00'
 model: gpt-4-0125-preview
 summary: "No Visual Basic for Applications (VBA), recuperar a data atual \xE9 uma\
   \ tarefa comum que permite aos programadores trabalhar dinamicamente com datas em\

@@ -5,7 +5,7 @@ date: 2024-02-01 21:49:02.481398-07:00
 description: "\xC5 sjekke om en mappe eksisterer i Google Apps Script inneb\xE6rer\
   \ \xE5 bekrefte tilstedev\xE6relsen av en mappe inne i Google Drive. Programmerere\
   \ utf\xF8rer ofte\u2026"
-lastmod: '2024-03-11T00:14:13.848455-06:00'
+lastmod: '2024-03-13T22:44:40.331402-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Google Apps Script inneb\xE6rer \xE5\
   \ bekrefte tilstedev\xE6relsen av en mappe inne i Google Drive. Programmerere utf\xF8\

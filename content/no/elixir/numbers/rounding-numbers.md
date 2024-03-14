@@ -3,7 +3,7 @@ date: 2024-01-26 03:43:46.757764-07:00
 description: "\xC5 avrunde tall betyr \xE5 justere dem til en n\xE6rliggende verdi\
   \ for enkelhets skyld eller for \xE5 matche en viss presisjon. Det er nyttig for\
   \ \xE5 forbedre\u2026"
-lastmod: '2024-03-11T00:14:13.964183-06:00'
+lastmod: '2024-03-13T22:44:40.438237-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall betyr \xE5 justere dem til en n\xE6rliggende verdi for\
   \ enkelhets skyld eller for \xE5 matche en viss presisjon. Det er nyttig for \xE5\

@@ -5,7 +5,7 @@ date: 2024-02-03 19:05:02.277461-07:00
 description: "Capitalizar uma string em Bash envolve transformar o primeiro caractere\
   \ da string para mai\xFAscula, mantendo o resto da string inalterado. Esta t\xE9\
   cnica \xE9\u2026"
-lastmod: '2024-03-11T00:14:20.453999-06:00'
+lastmod: '2024-03-13T22:44:46.734341-06:00'
 model: gpt-4-0125-preview
 summary: "Capitalizar uma string em Bash envolve transformar o primeiro caractere\
   \ da string para mai\xFAscula, mantendo o resto da string inalterado. Esta t\xE9\

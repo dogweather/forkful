@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:10.282374-07:00
 description: "Crear un archivo temporal es como abrir un cuaderno para apuntes r\xE1\
   pidos que sabes que no necesitar\xE1s despu\xE9s. Los programadores lo hacen para\
   \ guardar\u2026"
-lastmod: '2024-03-11T00:14:33.452307-06:00'
+lastmod: '2024-03-13T22:44:59.610137-06:00'
 model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es como abrir un cuaderno para apuntes r\xE1pidos\
   \ que sabes que no necesitar\xE1s despu\xE9s. Los programadores lo hacen para guardar\u2026"

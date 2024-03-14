@@ -5,7 +5,7 @@ date: 2024-02-01 21:55:21.561575-07:00
 description: "Obs\u0142uga b\u0142\u0119d\xF3w w Visual Basic dla Aplikacji (VBA)\
   \ odnosi si\u0119 do procesu przewidywania, wykrywania i rozwi\u0105zywania b\u0142\
   \u0119d\xF3w programowania, aplikacji lub\u2026"
-lastmod: '2024-03-11T00:14:08.415818-06:00'
+lastmod: '2024-03-13T22:44:35.240226-06:00'
 model: gpt-4-0125-preview
 summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Visual Basic dla Aplikacji (VBA) odnosi\
   \ si\u0119 do procesu przewidywania, wykrywania i rozwi\u0105zywania b\u0142\u0119\

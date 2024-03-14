@@ -3,7 +3,7 @@ date: 2024-02-03 17:50:20.086094-07:00
 description: "Calculating a date in the future or past involves determining a specific\
   \ date by adding or subtracting a certain number of days, months, or years from\
   \ a\u2026"
-lastmod: '2024-03-11T00:14:34.408884-06:00'
+lastmod: '2024-03-13T22:45:00.523212-06:00'
 model: gpt-4-0125-preview
 summary: "Calculating a date in the future or past involves determining a specific\
   \ date by adding or subtracting a certain number of days, months, or years from\

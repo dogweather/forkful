@@ -3,7 +3,7 @@ date: 2024-01-20 17:41:07.153656-07:00
 description: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht die vor\xFCbergehende\
   \ Speicherung von Daten w\xE4hrend der Ausf\xFChrung eines Programms. Programmierer\
   \ nutzen sie\u2026"
-lastmod: '2024-03-11T00:14:27.583472-06:00'
+lastmod: '2024-03-13T22:44:53.692212-06:00'
 model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht die vor\xFCbergehende\
   \ Speicherung von Daten w\xE4hrend der Ausf\xFChrung eines Programms. Programmierer\

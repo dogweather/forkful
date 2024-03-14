@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-25 17:06:50.580373-07:00
 description: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
   ren door expressies binnen een stringliteral op te nemen, waardoor het\u2026"
-lastmod: '2024-03-11T00:14:24.620522-06:00'
+lastmod: '2024-03-13T22:44:50.795991-06:00'
 model: gpt-4-0125-preview
 summary: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
   ren door expressies binnen een stringliteral op te nemen, waardoor het\u2026"

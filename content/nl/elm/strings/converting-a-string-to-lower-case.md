@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:42.217793-07:00
 description: "Een string converteren naar kleine letters betekent dat alle alfabetische\
   \ tekens worden omgezet naar hun kleine lettervorm. Programmeurs doen dit vaak\u2026"
-lastmod: '2024-03-11T00:14:24.532905-06:00'
+lastmod: '2024-03-13T22:44:50.711730-06:00'
 model: gpt-4-0125-preview
 summary: "Een string converteren naar kleine letters betekent dat alle alfabetische\
   \ tekens worden omgezet naar hun kleine lettervorm. Programmeurs doen dit vaak\u2026"

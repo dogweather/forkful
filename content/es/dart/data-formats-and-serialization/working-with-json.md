@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:08.717863-07:00
 description: "Trabajar con JSON (Notaci\xF3n de Objeto de JavaScript) implica analizar\
   \ datos JSON desde cadenas hacia objetos Dart y viceversa, una tarea com\xFAn en\
   \ el\u2026"
-lastmod: '2024-03-11T00:14:32.596999-06:00'
+lastmod: '2024-03-13T22:44:58.777604-06:00'
 model: gpt-4-0125-preview
 summary: "Trabajar con JSON (Notaci\xF3n de Objeto de JavaScript) implica analizar\
   \ datos JSON desde cadenas hacia objetos Dart y viceversa, una tarea com\xFAn en\

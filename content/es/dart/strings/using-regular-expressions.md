@@ -5,7 +5,7 @@ date: 2024-03-08 21:57:06.079939-07:00
 description: "Las expresiones regulares (regex) en Dart ofrecen una forma poderosa\
   \ de buscar y manipular cadenas, permitiendo a los programadores realizar tareas\
   \ de\u2026"
-lastmod: '2024-03-11T00:14:32.561861-06:00'
+lastmod: '2024-03-13T22:44:58.737633-06:00'
 model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Dart ofrecen una forma poderosa de\
   \ buscar y manipular cadenas, permitiendo a los programadores realizar tareas de\u2026"

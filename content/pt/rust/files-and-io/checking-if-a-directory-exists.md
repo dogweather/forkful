@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:41.790894-07:00
 description: "No desenvolvimento de software, \xE9 frequentemente necess\xE1rio verificar\
   \ se um diret\xF3rio existe para evitar erros ao tentar acessar, ler ou escrever\u2026"
-lastmod: '2024-03-11T00:14:20.073803-06:00'
+lastmod: '2024-03-13T22:44:46.382055-06:00'
 model: gpt-4-0125-preview
 summary: "No desenvolvimento de software, \xE9 frequentemente necess\xE1rio verificar\
   \ se um diret\xF3rio existe para evitar erros ao tentar acessar, ler ou escrever\u2026"

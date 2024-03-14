@@ -3,7 +3,7 @@ date: 2024-01-20 17:54:27.664942-07:00
 description: "L\xE4sa en textfil inneb\xE4r att tillg\xE5 och anv\xE4nda inneh\xE5\
   llet i en fil i textformat. Programmerare g\xF6r detta f\xF6r att hantera konfigurationer,\
   \ skript, eller\u2026"
-lastmod: '2024-03-11T00:14:11.757676-06:00'
+lastmod: '2024-03-13T22:44:38.355577-06:00'
 model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil inneb\xE4r att tillg\xE5 och anv\xE4nda inneh\xE5llet\
   \ i en fil i textformat. Programmerare g\xF6r detta f\xF6r att hantera konfigurationer,\

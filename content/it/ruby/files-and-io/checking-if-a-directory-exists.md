@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:13.361153-07:00
 description: "Verificare se una directory esiste in Ruby permette ai programmatori\
   \ di verificare la presenza di una directory prima di eseguire operazioni come la\u2026"
-lastmod: '2024-03-11T00:14:17.588527-06:00'
+lastmod: '2024-03-13T22:44:44.065240-06:00'
 model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Ruby permette ai programmatori di\
   \ verificare la presenza di una directory prima di eseguire operazioni come la\u2026"

@@ -3,7 +3,7 @@ date: 2024-01-26 01:16:33.640729-07:00
 description: "Refaktorisering \xE4r processen d\xE4r du omarbetar din kod f\xF6r att\
   \ f\xF6rb\xE4ttra dess struktur och l\xE4sbarhet utan att \xE4ndra det externa beteendet\
   \ eller\u2026"
-lastmod: '2024-03-11T00:14:11.564000-06:00'
+lastmod: '2024-03-13T22:44:38.175596-06:00'
 model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen d\xE4r du omarbetar din kod f\xF6r att f\xF6\
   rb\xE4ttra dess struktur och l\xE4sbarhet utan att \xE4ndra det externa beteendet\

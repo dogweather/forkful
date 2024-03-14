@@ -3,7 +3,7 @@ date: 2024-01-20 17:39:11.663863-07:00
 description: "Zmienianie string\xF3w na ma\u0142e litery to proces konwersji wszystkich\
   \ znak\xF3w w \u0142a\u0144cuchu tekstowym na ich ma\u0142e odpowiedniki. Programi\u015B\
   ci to robi\u0105 g\u0142\xF3wnie, aby\u2026"
-lastmod: '2024-03-11T00:14:09.136403-06:00'
+lastmod: '2024-03-13T22:44:35.917871-06:00'
 model: gpt-4-1106-preview
 summary: "Zmienianie string\xF3w na ma\u0142e litery to proces konwersji wszystkich\
   \ znak\xF3w w \u0142a\u0144cuchu tekstowym na ich ma\u0142e odpowiedniki. Programi\u015B\

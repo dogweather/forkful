@@ -5,7 +5,7 @@ date: 2024-02-03 18:11:39.349340-07:00
 description: "I programmeringsverdenen inneb\xE6rer arbeid med CSV-filer (kommaseparerte\
   \ verdier) \xE5 lese fra og skrive data til tekstfiler organisert i rader, der hver\
   \ rad\u2026"
-lastmod: '2024-03-11T00:14:14.907572-06:00'
+lastmod: '2024-03-13T22:44:41.296186-06:00'
 model: gpt-4-0125-preview
 summary: "I programmeringsverdenen inneb\xE6rer arbeid med CSV-filer (kommaseparerte\
   \ verdier) \xE5 lese fra og skrive data til tekstfiler organisert i rader, der hver\

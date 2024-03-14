@@ -3,7 +3,7 @@ date: 2024-01-26 01:07:36.402883-07:00
 description: "Logowanie, w najwi\u0119kszym skr\xF3cie, przypomina prowadzenie dziennika\
   \ dla Twojej aplikacji \u2013 rejestruje zdarzenia, b\u0142\u0119dy i inne znacz\u0105\
   ce akcje, kt\xF3re maj\u0105\u2026"
-lastmod: '2024-03-11T00:14:09.013004-06:00'
+lastmod: '2024-03-13T22:44:35.802984-06:00'
 model: gpt-4-1106-preview
 summary: "Logowanie, w najwi\u0119kszym skr\xF3cie, przypomina prowadzenie dziennika\
   \ dla Twojej aplikacji \u2013 rejestruje zdarzenia, b\u0142\u0119dy i inne znacz\u0105\

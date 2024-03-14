@@ -3,7 +3,7 @@ date: 2024-01-26 00:37:06.996309-07:00
 description: "O tratamento de erros em seus programas captura as coisas imprevistas\
   \ que tentar\xE3o te atrapalhar. Voc\xEA faz isso para evitar que seu Arduino entre\
   \ em\u2026"
-lastmod: '2024-03-11T00:14:20.573042-06:00'
+lastmod: '2024-03-13T22:44:46.846161-06:00'
 model: gpt-4-1106-preview
 summary: "O tratamento de erros em seus programas captura as coisas imprevistas que\
   \ tentar\xE3o te atrapalhar. Voc\xEA faz isso para evitar que seu Arduino entre\

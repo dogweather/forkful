@@ -3,7 +3,7 @@ date: 2024-01-26 04:44:57.310747-07:00
 description: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginaria\
   \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica. Los programadores\
   \ trabajan\u2026"
-lastmod: '2024-03-11T00:14:33.423648-06:00'
+lastmod: '2024-03-13T22:44:59.583695-06:00'
 model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginaria\
   \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica. Los programadores\

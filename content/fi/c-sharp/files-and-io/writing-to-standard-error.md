@@ -5,7 +5,7 @@ date: 2024-02-03 19:32:48.274918-07:00
 description: "C#:ssa vakiovirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
   \ ja diagnostiikkatietojen ohjaamista erill\xE4\xE4n s\xE4\xE4nn\xF6llisest\xE4\
   \ tulosteesta (stdout)\u2026"
-lastmod: '2024-03-11T00:14:30.538104-06:00'
+lastmod: '2024-03-13T22:44:56.590386-06:00'
 model: gpt-4-0125-preview
 summary: "C#:ssa vakiovirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
   \ ja diagnostiikkatietojen ohjaamista erill\xE4\xE4n s\xE4\xE4nn\xF6llisest\xE4\

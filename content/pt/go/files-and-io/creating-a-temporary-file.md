@@ -5,7 +5,7 @@ date: 2024-02-03 17:55:26.288743-07:00
 description: "Criar um arquivo tempor\xE1rio em Go permite a gera\xE7\xE3o de um arquivo\
   \ n\xE3o persistente projetado para uso de curto prazo, principalmente para tarefas\
   \ como\u2026"
-lastmod: '2024-03-11T00:14:19.743295-06:00'
+lastmod: '2024-03-13T22:44:46.081770-06:00'
 model: gpt-4-0125-preview
 summary: "Criar um arquivo tempor\xE1rio em Go permite a gera\xE7\xE3o de um arquivo\
   \ n\xE3o persistente projetado para uso de curto prazo, principalmente para tarefas\
