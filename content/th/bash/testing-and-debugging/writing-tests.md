@@ -1,0 +1,84 @@
+---
+changelog:
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 21:53:52.929315-06:00
+description: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E17\u0E14\u0E2A\u0E2D\
+  \u0E1A\u0E43\u0E19 Bash \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07\u0E01\u0E32\u0E23\
+  \u0E40\u0E02\u0E35\u0E22\u0E19\u0E2A\u0E04\u0E23\u0E34\u0E1B\u0E15\u0E4C\u0E40\u0E04\
+  \u0E2A\u0E17\u0E14\u0E25\u0E2D\u0E07\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E15\u0E23\u0E27\
+  \u0E08\u0E2A\u0E2D\u0E1A\u0E1F\u0E31\u0E07\u0E01\u0E4C\u0E0A\u0E31\u0E19\u0E01\u0E32\
+  \u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E02\u0E2D\u0E07\u0E2A\u0E04\u0E23\u0E34\u0E1B\
+  \u0E15\u0E4C Bash \u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13\u2026"
+lastmod: '2024-03-17T21:57:56.400908-06:00'
+model: gpt-4-0125-preview
+summary: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E17\u0E14\u0E2A\u0E2D\
+  \u0E1A\u0E43\u0E19 Bash \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07\u0E01\u0E32\u0E23\
+  \u0E40\u0E02\u0E35\u0E22\u0E19\u0E2A\u0E04\u0E23\u0E34\u0E1B\u0E15\u0E4C\u0E40\u0E04\
+  \u0E2A\u0E17\u0E14\u0E25\u0E2D\u0E07\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E15\u0E23\u0E27\
+  \u0E08\u0E2A\u0E2D\u0E1A\u0E1F\u0E31\u0E07\u0E01\u0E4C\u0E0A\u0E31\u0E19\u0E01\u0E32\
+  \u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E02\u0E2D\u0E07\u0E2A\u0E04\u0E23\u0E34\u0E1B\
+  \u0E15\u0E4C Bash \u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13\u2026"
+title: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E01\u0E32\u0E23\u0E17\u0E14\
+  \u0E2A\u0E2D\u0E1A"
+---
+
+{{< edit_this_page >}}
+
+## อะไรและทำไม?
+การเขียนทดสอบใน Bash หมายถึงการเขียนสคริปต์เคสทดลองเพื่อตรวจสอบฟังก์ชันการทำงานของสคริปต์ Bash ของคุณ โปรแกรมเมอร์ทำการทดสอบเพื่อให้แน่ใจว่าสคริปต์ของพวกเขาทำงานได้ตามที่คาดหวังภายใต้เงื่อนไขต่างๆ จับผิดพลาดและบั๊กก่อนการปรับใช้
+
+## วิธีทำ:
+Bash ไม่มีกรอบการทดสอบที่สร้างขึ้นมาเองในตัว แต่คุณสามารถเขียนฟังก์ชันทดสอบง่ายๆได้ สำหรับการทดสอบที่ซับซ้อนขึ้น เครื่องมือของบุคคลที่สามเช่น `bats-core` ได้รับความนิยม
+
+### ตัวอย่างการทดสอบพื้นฐานใน Pure Bash:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "ทดสอบผ่าน"
+    return 0
+  else
+    echo "ทดสอบไม่ผ่าน. คาดหวัง '$expected_output', ได้รับ '$result'"
+    return 1
+  fi
+}
+
+# เรียกใช้ฟังก์ชันทดสอบ
+test_example_function
+```
+ผลลัพธ์ตัวอย่าง:
+```
+ทดสอบผ่าน
+```
+
+### การใช้ `bats-core` สำหรับการทดสอบ:
+เริ่มแรก, ติดตั้ง `bats-core` มักจะทำได้ผ่าน package manager หรือโดยการโคลน repository ของมัน
+
+จากนั้น, เขียนการทดสอบของคุณในไฟล์ `.bats` ที่แยกจากกัน
+
+```bash
+# ไฟล์: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "ทดสอบฟังก์ชันตัวอย่าง" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
+```
+เพื่อทำการทดสอบ, เพียงแค่เรียกใช้ไฟล์ `.bats`:
+```bash
+bats example_function.bats
+```
+ผลลัพธ์ตัวอย่าง:
+```
+ ✓ ทดสอบฟังก์ชันตัวอย่าง
+
+1 การทดสอบ, 0 ความล้มเหลว
+```
+
+วิธีนี้ช่วยให้คุณสามารถรวมการทดสอบเข้ากับกระบวนการพัฒนาของคุณได้อย่างง่ายดาย ทำให้มั่นใจได้ในความเชื่อถือได้และความมั่นคงของสคริปต์ Bash ของคุณ

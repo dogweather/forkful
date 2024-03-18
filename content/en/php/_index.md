@@ -1,7 +1,7 @@
 ---
 title: 'PHP: Open Source Coding Cookbook'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-17 18:45:47.253729-06:00
+lastmod: 2024-03-17 21:59:34.893020-06:00
 description: 'PHP: Getting Started, Strings, Numbers, Data Structures, Good Coding
   Practices, Files and I/O, Dates and Times, Data and Text Processing, Testing and…'
 summary: 'PHP: Getting Started, Strings, Numbers, Data Structures, Good Coding Practices,

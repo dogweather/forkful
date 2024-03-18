@@ -1,0 +1,105 @@
+---
+changelog:
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 21:54:13.319202-06:00
+description: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E17\u0E14\u0E2A\u0E2D\
+  \u0E1A\u0E43\u0E19 TypeScript \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07\u0E01\u0E32\
+  \u0E23\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E2A\u0E04\u0E23\u0E34\u0E1B\u0E15\u0E4C\u0E2D\
+  \u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E22\
+  \u0E37\u0E19\u0E22\u0E31\u0E19\u0E1F\u0E31\u0E07\u0E01\u0E4C\u0E0A\u0E31\u0E19\u0E01\
+  \u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E41\u0E25\u0E30\u0E04\u0E27\u0E32\u0E21\
+  \u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E42\u0E04\u0E49\u0E14\
+  \u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13\u2026"
+lastmod: '2024-03-17T21:57:55.948570-06:00'
+model: gpt-4-0125-preview
+summary: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E17\u0E14\u0E2A\u0E2D\
+  \u0E1A\u0E43\u0E19 TypeScript \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07\u0E01\u0E32\
+  \u0E23\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E2A\u0E04\u0E23\u0E34\u0E1B\u0E15\u0E4C\u0E2D\
+  \u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E22\
+  \u0E37\u0E19\u0E22\u0E31\u0E19\u0E1F\u0E31\u0E07\u0E01\u0E4C\u0E0A\u0E31\u0E19\u0E01\
+  \u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E41\u0E25\u0E30\u0E04\u0E27\u0E32\u0E21\
+  \u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E42\u0E04\u0E49\u0E14\
+  \u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13\u2026"
+title: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E01\u0E32\u0E23\u0E17\u0E14\
+  \u0E2A\u0E2D\u0E1A"
+---
+
+{{< edit_this_page >}}
+
+## อะไรและทำไม?
+การเขียนทดสอบใน TypeScript หมายถึงการสร้างสคริปต์อัตโนมัติเพื่อยืนยันฟังก์ชันการทำงานและความถูกต้องของโค้ดของคุณ โปรแกรมเมอร์ทำเช่นนี้เพื่อให้แน่ใจถึงความน่าเชื่อถือ จับบั๊กได้อย่างรวดเร็ว และช่วยให้โค้ดสามารถบำรุงรักษาได้โดยง่ายเมื่อโตขึ้น เนื่องจากการพิมพ์แบบคงที่ของ TypeScript เพิ่มระดับของความคาดเดาได้ให้กับการทดสอบ JavaScript
+
+## วิธีการ:
+TypeScript ทำงานร่วมกับเฟรมเวิร์กการทดสอบ JavaScript ส่วนใหญ่ได้อย่างลงตัว เพื่อการสาธิต เราจะใช้ Jest, เฟรมเวิร์กการทดสอบที่ได้รับความนิยม เนื่องจากมีการตั้งค่าเริ่มต้นศูนย์สำหรับโปรเจกต์ TypeScript
+
+ก่อนอื่น ตรวจสอบให้แน่ใจว่าคุณมี Jest และประเภท TypeScript ที่จำเป็นต้องติดตั้งไว้:
+
+```bash
+npm install --save-dev jest typescript ts-jest @types/jest
+```
+
+ต่อไป ตั้งค่า Jest ให้ทำงานร่วมกับ TypeScript โดยการแก้ไข `jest.config.js` หรือหากสร้างใหม่:
+
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+
+ตอนนี้ มาเขียนฟังก์ชั่นและการทดสอบสำหรับฟังก์ชั่นนั้น เป็นต้นว่า มีไฟล์ `sum.ts` ด้วยฟังก์ชั่นดังต่อไปนี้:
+
+```typescript
+// sum.ts
+export function sum(a: number, b: number): number {
+  return a + b;
+}
+```
+
+สร้างไฟล์ทดสอบชื่อ `sum.test.ts`:
+
+```typescript
+// sum.test.ts
+import { sum } from './sum';
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+
+รันการทดสอบของคุณด้วย:
+
+```bash
+npx jest
+```
+
+ผลลัพธ์ตัวอย่างที่บ่งชี้การทดสอบผ่านควรมีลักษณะดังนี้:
+
+```plaintext
+ PASS  ./sum.test.ts
+  ✓ adds 1 + 2 to equal 3 (2 ms)
+```
+
+สำหรับโค้ดแบบ asynchronous Jest รองรับด้วย `async/await` สมมติว่าคุณมีฟังก์ชั่น `fetchData` แบบ asynchronous:
+
+```typescript
+// asyncFunctions.ts
+export async function fetchData(): Promise<string> {
+  return "data";
+}
+```
+
+การทดสอบของคุณโดยใช้ฟังก์ชั่นแบบ asynchronous:
+
+```typescript
+// asyncFunctions.test.ts
+import { fetchData } from './asyncFunctions';
+
+test('fetches data successfully', async () => {
+  expect(await fetchData()).toBe('data');
+});
+```
+
+เมื่อรันการทดสอบ เจสต์จะรอให้พรอมิสทำงานเสร็จ ทดสอบการดำเนินการแบบ asynchronous ได้อย่างถูกต้อง
+
+จำไว้ว่า การทดสอบที่มีประสิทธิภาพรวมถึงการเขียนการทดสอบหลายครั้งสำหรับสถานการณ์ที่แตกต่างกัน รวมถึงกรณีขอบ เพื่อให้แน่ใจว่าโค้ด TypeScript ของคุณทำงานตามที่คาดไว้

@@ -1,0 +1,97 @@
+---
+changelog:
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 21:49:49.660247-06:00
+description: "\u0E01\u0E32\u0E23\u0E41\u0E22\u0E01\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\
+  \ HTML \u0E40\u0E1B\u0E47\u0E19\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E02\u0E2D\u0E07\
+  \u0E01\u0E32\u0E23\u0E14\u0E36\u0E07\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E2B\u0E23\
+  \u0E37\u0E2D\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\
+  \u0E40\u0E19\u0E37\u0E49\u0E2D\u0E2B\u0E32 HTML \u0E0B\u0E36\u0E48\u0E07\u0E40\u0E1B\
+  \u0E47\u0E19\u0E07\u0E32\u0E19\u0E17\u0E35\u0E48\u0E1E\u0E1A\u0E1A\u0E48\u0E2D\u0E22\
+  \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E15\u0E49\u0E2D\u0E07\u0E08\u0E31\u0E14\u0E01\u0E32\
+  \u0E23\u0E01\u0E31\u0E1A\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E40\u0E27\u0E47\u0E1A\
+  \u2026"
+lastmod: '2024-03-17T21:57:56.643267-06:00'
+model: gpt-4-0125-preview
+summary: "\u0E01\u0E32\u0E23\u0E41\u0E22\u0E01\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\
+  \ HTML \u0E40\u0E1B\u0E47\u0E19\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E02\u0E2D\u0E07\
+  \u0E01\u0E32\u0E23\u0E14\u0E36\u0E07\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E2B\u0E23\
+  \u0E37\u0E2D\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\
+  \u0E40\u0E19\u0E37\u0E49\u0E2D\u0E2B\u0E32 HTML \u0E0B\u0E36\u0E48\u0E07\u0E40\u0E1B\
+  \u0E47\u0E19\u0E07\u0E32\u0E19\u0E17\u0E35\u0E48\u0E1E\u0E1A\u0E1A\u0E48\u0E2D\u0E22\
+  \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E15\u0E49\u0E2D\u0E07\u0E08\u0E31\u0E14\u0E01\u0E32\
+  \u0E23\u0E01\u0E31\u0E1A\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E40\u0E27\u0E47\u0E1A\
+  \u2026"
+title: "\u0E01\u0E32\u0E23\u0E27\u0E34\u0E40\u0E04\u0E23\u0E32\u0E30\u0E2B\u0E4C HTML"
+---
+
+{{< edit_this_page >}}
+
+## อะไรและทำไม?
+
+การแยกข้อมูล HTML เป็นเรื่องของการดึงข้อมูลหรือข้อมูลออกจากเนื้อหา HTML ซึ่งเป็นงานที่พบบ่อยเมื่อต้องจัดการกับข้อมูลเว็บ โปรแกรมเมอร์ทำเช่นนี้เพื่อให้สามารถดึงข้อมูลจากเว็บไซต์โดยอัตโนมัติสำหรับงานเช่นการตักเตือนข้อมูลเว็บ, การทำเหมืองข้อมูล, หรือการทดสอบอัตโนมัติ
+
+## วิธีการ:
+
+Shell Fish โดยส่วนใหญ่ไม่ได้ถูกออกแบบมาสำหรับการแยกข้อมูล HTML โดยตรง อย่างไรก็ตาม มันโดดเด่นในการเชื่อมต่อเครื่องมือ Unix เช่น `curl`, `grep`, `sed`, `awk`, หรือใช้เครื่องมือเฉพาะทางเช่น `pup` หรือ `beautifulsoup` ในสคริปต์ Python ด้านล่างเป็นตัวอย่างที่แสดงวิธีใช้เครื่องมือเหล่านี้จากภายใน Shell Fish เพื่อแยกข้อมูล HTML
+
+### การใช้ `curl` และ `grep`:
+การดึงเนื้อหา HTML และการดึงข้อมูลบรรทัดที่มีลิงก์:
+
+```fish
+curl -s https://example.com | grep -oP '(?<=href=")[^"]*'
+```
+
+ผลลัพธ์:
+```
+/page1.html
+/page2.html
+...
+```
+
+### การใช้ `pup` (เครื่องมือที่ใช้บรรทัดคำสั่งสำหรับแยกข้อมูล HTML):
+
+ขั้นแรก ตรวจสอบให้แน่ใจว่า `pup` ถูกติดตั้งแล้ว หลังจากนั้นคุณสามารถใช้มันเพื่อดึงข้อมูลองค์ประกอบตามแท็ก, ไอดี, คลาส, ฯลฯ
+
+```fish
+curl -s https://example.com | pup 'a attr{href}'
+```
+
+ผลลัพธ์ คล้ายกับตัวอย่าง `grep`, จะแสดงรายการแอตทริบิวต์ href ของแท็ก `<a>`.
+
+### ด้วยสคริปต์ Python และ `beautifulsoup`:
+
+ในขณะที่ Fish เองไม่สามารถแยกข้อมูล HTML ได้โดยตรง มันสามารถรวมตัวกับสคริปต์ Python ได้อย่างราบรื่น ด้านล่างเป็นตัวอย่างที่กระชับซึ่งใช้ Python กับ `BeautifulSoup` เพื่อแยกและดึงข้อมูลหัวเรื่องจาก HTML ตรวจสอบให้แน่ใจว่าคุณมี `beautifulsoup4` และ `requests` ติดตั้งในสภาพแวดล้อม Python ของคุณ
+
+**parse_html.fish**
+
+```fish
+function parse_html -a url
+    python -c "
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(sys.argv[1])
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = soup.find_all('title')
+
+for title in titles:
+    print(title.get_text())
+" $url
+end
+```
+
+การใช้งาน:
+
+```fish
+parse_html 'https://example.com'
+```
+
+ผลลัพธ์:
+```
+Example Domain
+```
+
+แต่ละวิธีการเหล่านี้ให้บริการสำหรับกรณีการใช้งานและขนาดความซับซ้อนที่แตกต่างกัน ตั้งแต่การจัดการข้อความในบรรทัดคำสั่งที่ง่ายไปจนถึงพลังการแยกข้อมูลเต็มรูปแบบของ `beautifulsoup` ในสคริปต์ Python ขึ้นอยู่กับความต้องการของคุณและความซับซ้อนของโครงสร้าง HTML คุณอาจเลือกใช้ไปป์ไลน์ Unix ที่ตรงไปตรงมาหรือแนวทางสคริปต์ที่มีพลังมากขึ้น

@@ -1,0 +1,13 @@
+---
+title: 'Visual Basic for Applications: คู่มือการเขียนโปรแกรมโอเพนซอร์ส'
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-03-17 21:59:56.720296-06:00
+description: 'Visual Basic for Applications: เริ่มต้นใช้งาน, สตริง, ตัวเลข, โครงสร้างข้อมูล,
+  การเขียนโค้ดที่ดี, ไฟล์และ I/O, วันที่และเวลา, การประมวลผลข้อมูลและข้อความ,…'
+summary: 'Visual Basic for Applications: เริ่มต้นใช้งาน, สตริง, ตัวเลข, โครงสร้างข้อมูล,
+  การเขียนโค้ดที่ดี, ไฟล์และ I/O, วันที่และเวลา, การประมวลผลข้อมูลและข้อความ,…'
+cascade:
+  images:
+  - /languages/vba.jpeg
+  programming_language: Visual Basic for Applications
+---

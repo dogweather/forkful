@@ -1,0 +1,66 @@
+---
+changelog:
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 21:54:15.505335-06:00
+description: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E02\u0E49\u0E2D\u0E04\
+  \u0E27\u0E32\u0E21\u0E25\u0E07\u0E43\u0E19 standard error (stderr) \u0E04\u0E37\u0E2D\
+  \u0E01\u0E32\u0E23\u0E19\u0E33\u0E02\u0E49\u0E2D\u0E1C\u0E34\u0E14\u0E1E\u0E25\u0E32\
+  \u0E14\u0E41\u0E25\u0E30\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E01\u0E32\u0E23\u0E27\
+  \u0E34\u0E19\u0E34\u0E08\u0E09\u0E31\u0E22\u0E44\u0E1B\u0E22\u0E31\u0E07\u0E0A\u0E48\
+  \u0E2D\u0E07\u0E17\u0E32\u0E07\u0E1E\u0E34\u0E40\u0E28\u0E29\u0E17\u0E35\u0E48\u0E41\
+  \u0E22\u0E01\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01 standard output (stdout)\u2026"
+lastmod: '2024-03-17T21:57:56.370619-06:00'
+model: gpt-4-0125-preview
+summary: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E02\u0E49\u0E2D\u0E04\
+  \u0E27\u0E32\u0E21\u0E25\u0E07\u0E43\u0E19 standard error (stderr) \u0E04\u0E37\u0E2D\
+  \u0E01\u0E32\u0E23\u0E19\u0E33\u0E02\u0E49\u0E2D\u0E1C\u0E34\u0E14\u0E1E\u0E25\u0E32\
+  \u0E14\u0E41\u0E25\u0E30\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E01\u0E32\u0E23\u0E27\
+  \u0E34\u0E19\u0E34\u0E08\u0E09\u0E31\u0E22\u0E44\u0E1B\u0E22\u0E31\u0E07\u0E0A\u0E48\
+  \u0E2D\u0E07\u0E17\u0E32\u0E07\u0E1E\u0E34\u0E40\u0E28\u0E29\u0E17\u0E35\u0E48\u0E41\
+  \u0E22\u0E01\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01 standard output (stdout)\u2026"
+title: "\u0E01\u0E32\u0E23\u0E40\u0E02\u0E35\u0E22\u0E19\u0E44\u0E1B\u0E22\u0E31\u0E07\
+  \u0E02\u0E49\u0E2D\u0E1C\u0E34\u0E14\u0E1E\u0E25\u0E32\u0E14\u0E21\u0E32\u0E15\u0E23\
+  \u0E10\u0E32\u0E19"
+---
+
+{{< edit_this_page >}}
+
+## อะไรและทำไม?
+การเขียนข้อความลงใน standard error (stderr) คือการนำข้อผิดพลาดและข้อมูลการวินิจฉัยไปยังช่องทางพิเศษที่แยกออกจาก standard output (stdout) โปรแกรมเมอร์ทำสิ่งนี้เพื่อแยกข้อมูลผลลัพธ์ปกติของโปรแกรมออกจากข้อมูลข้อผิดพลาด ซึ่งช่วยให้กระบวนการดีบักและบันทึกข้อมูลง่ายขึ้น
+
+## วิธีการ:
+ใน Lua, การเขียนไปยัง stderr สามารถทำได้โดยใช้ฟังก์ชัน `io.stderr:write()` นี่คือวิธีที่คุณสามารถเขียนข้อความแสดงข้อผิดพลาดไปยัง standard error:
+
+```lua
+io.stderr:write("Error: Invalid input.\n")
+```
+
+หากคุณต้องการแสดงผลแปรหรือรวมข้อมูลหลายชิ้นในการเขียน สามารถทำได้โดยการต่อข้อความภายในฟังก์ชัน write:
+
+```lua
+local errorMessage = "Invalid input."
+io.stderr:write("Error: " .. errorMessage .. "\n")
+```
+
+**ผลลัพธ์ตัวอย่างบน stderr:**
+```
+Error: Invalid input.
+```
+
+สำหรับสถานการณ์ที่ซับซ้อนกว่าหรือเมื่อทำงานกับแอปพลิเคชันขนาดใหญ่ คุณอาจพิจารณาใช้ไลบรารีบันทึกข้อความจากบุคคลที่สาม เช่น LuaLogging ด้วย LuaLogging คุณสามารถนำข้อมูลบันทึกไปยังจุดหมายปลายทางต่างๆ รวมถึง stderr นี่คือตัวอย่างเบื้องต้น:
+
+ก่อนอื่น ตรวจสอบให้แน่ใจว่าติดตั้ง LuaLogging โดยใช้ LuaRocks:
+
+```
+luarocks install lualogging
+```
+
+จากนั้น เพื่อเขียนข้อความแสดงข้อผิดพลาดไปยัง stderr โดยใช้ LuaLogging:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Error: Invalid input.")
+```
+
+วิธีนี้นำเสนอข้อได้เปรียบของการบันทึกข้อมูลที่มาตรฐานทั่วทั้งแอปพลิเคชัน โดยมีความยืดหยุ่นในการตั้งระดับของบันทึกข้อมูล (เช่น ERROR, WARN, INFO) ผ่าน API ที่ง่ายดาย

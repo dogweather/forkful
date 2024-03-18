@@ -1,0 +1,103 @@
+---
+changelog:
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 21:52:54.314285-06:00
+description: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A JSON\
+  \ (JavaScript Object Notation) \u0E43\u0E19 Rust \u0E40\u0E1B\u0E47\u0E19\u0E40\u0E23\
+  \u0E37\u0E48\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E41\u0E1B\u0E25\u0E07\
+  \u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25 JSON \u0E40\u0E02\u0E49\u0E32\u0E2A\u0E39\u0E48\
+  \u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E02\u0E49\u0E2D\u0E21\u0E39\
+  \u0E25\u0E02\u0E2D\u0E07 Rust \u0E41\u0E25\u0E30\u0E01\u0E32\u0E23\u0E2A\u0E23\u0E49\
+  \u0E32\u0E07\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E02\u0E49\u0E2D\
+  \u0E21\u0E39\u0E25\u0E02\u0E2D\u0E07 Rust\u2026"
+lastmod: '2024-03-17T21:57:56.016242-06:00'
+model: gpt-4-0125-preview
+summary: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A JSON\
+  \ (JavaScript Object Notation) \u0E43\u0E19 Rust \u0E40\u0E1B\u0E47\u0E19\u0E40\u0E23\
+  \u0E37\u0E48\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E41\u0E1B\u0E25\u0E07\
+  \u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25 JSON \u0E40\u0E02\u0E49\u0E32\u0E2A\u0E39\u0E48\
+  \u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E02\u0E49\u0E2D\u0E21\u0E39\
+  \u0E25\u0E02\u0E2D\u0E07 Rust \u0E41\u0E25\u0E30\u0E01\u0E32\u0E23\u0E2A\u0E23\u0E49\
+  \u0E32\u0E07\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E02\u0E49\u0E2D\
+  \u0E21\u0E39\u0E25\u0E02\u0E2D\u0E07 Rust\u2026"
+title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A JSON"
+---
+
+{{< edit_this_page >}}
+
+## อะไรและทำไม?
+
+การทำงานกับ JSON (JavaScript Object Notation) ใน Rust เป็นเรื่องของการแปลงข้อมูล JSON เข้าสู่โครงสร้างข้อมูลของ Rust และการสร้างโครงสร้างข้อมูลของ Rust กลับเป็น JSON โปรแกรมเมอร์ทำสิ่งนี้เพื่อให้สามารถทำงานร่วมกันกับเว็บ API ไฟล์การตั้งค่า หรือรูปแบบการแลกเปลี่ยนข้อมูลใด ๆ ที่ใช้ JSON ซึ่งเนื่องด้วยรูปแบบที่เบาและอ่านได้ง่าย
+
+## วิธีการ:
+
+เพื่อทำงานกับ JSON ใน Rust ต้องใช้ `crate serde` ร่วมกับ `serde_json` เพื่อการสร้างและการแปลงข้อมูล ให้แน่ใจว่าคุณได้รวมเหล่านี้ในไฟล์ `Cargo.toml` ของคุณ:
+
+```toml
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+```
+
+### ตัวอย่างที่ 1: การแปลงข้อมูล JSON เป็น Struct ของ Rust
+
+กำหนดโครงสร้าง Struct ของ Rust และใช้ derive macros สำหรับ `Deserialize` และ `Serialize`:
+
+```rust
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
+struct User {
+    id: u32,
+    name: String,
+    email: String,
+}
+
+fn main() {
+    let json_data = r#"
+        {
+            "id": 1,
+            "name": "Jane Doe",
+            "email": "jane.doe@example.com"
+        }
+    "#;
+
+    let user: User = serde_json::from_str(json_data).unwrap();
+
+    println!("รหัสผู้ใช้: {}", user.id);
+    println!("ชื่อผู้ใช้: {}", user.name);
+    println!("อีเมลผู้ใช้: {}", user.email);
+}
+```
+
+**ผลลัพธ์:**
+
+```
+รหัสผู้ใช้: 1
+ชื่อผู้ใช้: Jane Doe
+อีเมลผู้ใช้: jane.doe@example.com
+```
+
+### ตัวอย่างที่ 2: การสร้าง Struct ของ Rust เป็นข้อมูล JSON
+
+ใช้โครงสร้าง Struct `User` เดิม:
+
+```rust
+let user = User {
+    id: 1,
+    name: "Jane Doe".to_string(),
+    email: "jane.doe@example.com".to_string(),
+};
+
+let json_data = serde_json::to_string(&user).unwrap();
+
+println!("{}", json_data);
+```
+
+**ผลลัพธ์:**
+
+```json
+{"id":1,"name":"Jane Doe","email":"jane.doe@example.com"}
+```
+
+ตัวอย่างเหล่านี้แสดงขั้นตอนพื้นฐานของการแปลงข้อมูล JSON เป็นโครงสร้างของ Rust และการสร้างโครงสร้างของ Rust กลับเป็นสตริง JSON Serde ให้เครื่องมือที่หลากหลายสำหรับการทำงานกับ JSON รวมถึงการจัดการกับฟิลด์ที่ไม่บังคับ การซ้อนโครงสร้างที่ซับซ้อน และประเภทข้อมูลที่ JSON ไม่รองรับโดยตรง
