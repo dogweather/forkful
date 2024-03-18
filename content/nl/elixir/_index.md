@@ -1,7 +1,7 @@
 ---
 title: 'Elixir: Open Source Programmeren Tutorials'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-13 22:46:10.687287-06:00
+lastmod: 2024-03-17 18:45:59.486057-06:00
 description: 'Elixir: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
   Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking, Testen…'
 summary: 'Elixir: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,

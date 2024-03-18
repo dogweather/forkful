@@ -1,7 +1,7 @@
 ---
 title: 'C#: Das open-source coding-Cookbook'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-13 22:45:57.301644-06:00
+lastmod: 2024-03-17 18:45:45.123563-06:00
 description: 'C#: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
   Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in der…'
 summary: 'C#: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,

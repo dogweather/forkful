@@ -1,7 +1,7 @@
 ---
 title: 'Ruby: Tutoriels de Programmation Open Source'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-13 22:46:03.418258-06:00
+lastmod: 2024-03-17 18:45:51.668971-06:00
 description: 'Ruby: Premiers Pas en Programmation, Chaînes de caractères, Nombres,
   Structures de données, Bonnes Pratiques de Programmation, Fichiers et…'
 summary: 'Ruby: Premiers Pas en Programmation, Chaînes de caractères, Nombres, Structures
