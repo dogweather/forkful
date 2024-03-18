@@ -1,5 +1,5 @@
 import os
-from time import sleep
+from time import sleep, time
 
 import requests
 from rich import print
@@ -13,8 +13,9 @@ if not API_TOKEN:
     raise ValueError("Please set the GITHUB_API_TOKEN environment variable")
 
 
+
 def count_github_repositories(search_term: str) -> int:
-    sleep(2.1)  # Sleep for 2 seconds to avoid hitting the rate limit
+    start_time = time()
     
     # Prepare the headers and query parameters
     headers = {
@@ -31,9 +32,16 @@ def count_github_repositories(search_term: str) -> int:
         raise ValueError(f"Failed to perform the search: {response.status_code}")
 
     data = response.json()
+    
+    # Ensure a 2 second delay between requests
+    elapsed_time = time() - start_time
+    sleep_time   = max(0, 2.1 - elapsed_time)
+    sleep(sleep_time)  
+
     return data['total_count']
 
-# Code to read datasets/a-language-list.yaml and perform the search for each item:
+
+# Read datasets/a-language-list.yaml and perform the search for each item:
 with open('datasets/a-language-list.yaml') as f:
     language_file = yaml.safe_load(f)
 
