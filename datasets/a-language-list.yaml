@@ -1,28 +1,37 @@
 languages:
+  - Afrikaans
   - Akan
   - Amharic
   - Arabic
+  - Armenian
   - Assamese
   - Awadhi
   - Azerbaijani
   - Balochi
+  - Bangla
   - Belarusian
   - Bengali
   - Bhojpuri
+  - Bulgarian
   - Burmese
   - Cantonese
+  - Catalan
   - Cebuano
   - Chewa
   - Chhattisgarhi
   - Chinese
   - Chittagonian
   - Czech
+  - Danish
   - Deccan
   - Dhundhari
   - Dutch
   - English
   - Estonian
   - Ewe
+  - Farsi
+  - Fijian
+  - Filipino
   - Finnish
   - French
   - Fula
@@ -52,18 +61,21 @@ languages:
   - Konkani
   - Korean
   - Kurdish
+  - Latin
   - Lahnda
-  - Madurese
-  - Magahi
+  - Latvian
+  - Lithuanian
   - Maithili
   - Malagasy
+  - Malay
   - Malayalam
-  - Mandarin Chinese
+  - Mandarin
   - Marathi
   - Marwari
   - Mossi
   - Nepali
-  - Odia
+  - Norwegian
+  - Oriya
   - Oromo
   - Pashto
   - Persian
@@ -93,6 +105,7 @@ languages:
   - Uyghur
   - Uzbek
   - Vietnamese
+  - Welsh
   - Xhosa
   - Yiddish
   - Yoruba

@@ -47,4 +47,4 @@ with open('datasets/a-language-list.yaml') as f:
 
 for language in language_file['languages']:
     search_term = f'topic:{language}'
-    print(language, count_github_repositories(search_term))
+    print(count_github_repositories(search_term), language)
