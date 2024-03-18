@@ -1,7 +1,7 @@
 ---
 title: 'Rust: Åpen kildekode programmeringsveiledninger'
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-13 22:46:12.759902-06:00
+lastmod: 2024-03-17 18:46:01.708371-06:00
 description: 'Rust: Kom i gang, Strenger, Tall, Datastrukturer, Gode kodeteknikker,
   Filer og I/U, Datoer og tider, Data og tekstbehandling, Testing og feilsøking,…'
 summary: 'Rust: Kom i gang, Strenger, Tall, Datastrukturer, Gode kodeteknikker, Filer

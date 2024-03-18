@@ -1,0 +1,89 @@
+---
+changelog:
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 18:18:33.595877-06:00
+description: "\u09AE\u09CC\u09B2\u09BF\u0995 \u09AA\u09CD\u09B0\u09AE\u09BE\u09A3\u09C0\
+  \u0995\u09B0\u09A3 \u09B8\u09B9 HTTP \u0985\u09A8\u09C1\u09B0\u09CB\u09A7 \u09AA\
+  \u09BE\u09A0\u09BE\u09A8\u09CB \u098F\u0995\u099F\u09BF \u09A8\u09BF\u09B0\u09BE\
+  \u09AA\u09A4\u09CD\u09A4\u09BE \u09B8\u09CD\u09A4\u09B0 \u09AF\u09CB\u0997 \u0995\
+  \u09B0\u09C7 \u09AF\u09BE \u098F\u0995\u099F\u09BF \u09AC\u09CD\u09AF\u09AC\u09B9\
+  \u09BE\u09B0\u0995\u09BE\u09B0\u09C0 \u09A8\u09BE\u09AE \u098F\u09AC\u0982 \u09AA\
+  \u09BE\u09B8\u0993\u09AF\u09BC\u09BE\u09B0\u09CD\u09A1 \u099A\u09BE\u09AF\u09BC\u0964\
+  \ \u09AA\u09CD\u09B0\u09CB\u0997\u09CD\u09B0\u09BE\u09AE\u09BE\u09B0\u09B0\u09BE\
+  \ \u098F\u099F\u09BF \u0995\u09C7\u09AC\u09B2 \u0985\u09A8\u09C1\u09AE\u09CB\u09A6\
+  \u09BF\u09A4\u2026"
+lastmod: '2024-03-17T18:47:44.322409-06:00'
+model: gpt-4-0125-preview
+summary: "\u09AE\u09CC\u09B2\u09BF\u0995 \u09AA\u09CD\u09B0\u09AE\u09BE\u09A3\u09C0\
+  \u0995\u09B0\u09A3 \u09B8\u09B9 HTTP \u0985\u09A8\u09C1\u09B0\u09CB\u09A7 \u09AA\
+  \u09BE\u09A0\u09BE\u09A8\u09CB \u098F\u0995\u099F\u09BF \u09A8\u09BF\u09B0\u09BE\
+  \u09AA\u09A4\u09CD\u09A4\u09BE \u09B8\u09CD\u09A4\u09B0 \u09AF\u09CB\u0997 \u0995\
+  \u09B0\u09C7 \u09AF\u09BE \u098F\u0995\u099F\u09BF \u09AC\u09CD\u09AF\u09AC\u09B9\
+  \u09BE\u09B0\u0995\u09BE\u09B0\u09C0 \u09A8\u09BE\u09AE \u098F\u09AC\u0982 \u09AA\
+  \u09BE\u09B8\u0993\u09AF\u09BC\u09BE\u09B0\u09CD\u09A1 \u099A\u09BE\u09AF\u09BC\u0964\
+  \ \u09AA\u09CD\u09B0\u09CB\u0997\u09CD\u09B0\u09BE\u09AE\u09BE\u09B0\u09B0\u09BE\
+  \ \u098F\u099F\u09BF \u0995\u09C7\u09AC\u09B2 \u0985\u09A8\u09C1\u09AE\u09CB\u09A6\
+  \u09BF\u09A4\u2026"
+title: "\u09AC\u09C7\u09B8\u09BF\u0995 \u0985\u09A5\u09C7\u09A8\u09CD\u099F\u09BF\u0995\
+  \u09C7\u09B6\u09A8 \u09B8\u09B9 HTTP \u09B0\u09BF\u0995\u09C1\u09DF\u09C7\u09B8\u09CD\
+  \u099F \u09AA\u09CD\u09B0\u09C7\u09B0\u09A3"
+---
+
+{{< edit_this_page >}}
+
+## কি এবং কেন?
+মৌলিক প্রমাণীকরণ সহ HTTP অনুরোধ পাঠানো একটি নিরাপত্তা স্তর যোগ করে যা একটি ব্যবহারকারী নাম এবং পাসওয়ার্ড চায়। প্রোগ্রামাররা এটি কেবল অনুমোদিত ব্যবহারকারীদের জন্য আটকে দেওয়া APIs বা ওয়েব পরিষেবাগুলিতে প্রবেশ করার জন্য ব্যবহার করে।
+
+## কিভাবে:
+এটি একটি অ্যার্ডুইনোতে ঘটানোর জন্য, আপনাকে প্রথমে প্রয়োজনীয় লাইব্রেরিগুলি সংযুক্তি করা দরকার - সাধারণত ESP8266 এর জন্য `<ESP8266WiFi.h>` বা ESP32 এর জন্য `<WiFi.h>`, এবং প্রমাণীকরণ বিবরণ এনকোড করার জন্য `<Base64.h>`। এখানে একটি খালি-খালি স্নিপেট দেওয়া হল আপনাকে শুরু করার জন্য:
+
+```Arduino
+#include <ESP8266WiFi.h>
+#include <Base64.h>
+
+const char* ssid = "yourSSID";
+const char* password = "yourPassword";
+const char* server = "your.server.com";
+const char* authUser = "user";
+const char* authPass = "pass";
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  
+  String auth = "Basic " + base64::encode(String(authUser) + ":" + String(authPass));
+
+  WiFiClient client;
+  if (client.connect(server, 80)) {
+    client.println("GET /route HTTP/1.1");
+    client.print("Host: ");
+    client.println(server);
+    client.println("Authorization: " + auth);
+    client.println("Connection: close");
+    client.println();
+  }
+}
+
+void loop() {
+  // আপনার নিয়মিত কোড এখানে
+}
+```
+
+চালানোর সময়, অ্যার্ডুইনো নির্দিষ্ট সার্ভারে প্রমাণীকরণগুলি সহ সংযুক্ত হবে এবং সুরক্ষিত কন্টেন্ট আনবে।
+
+## গভীরে যাওয়া
+
+HTTP মৌলিক প্রমাণীকরণ 1996 সালে RFC 2617 দ্বারা সংজ্ঞায়িত ওয়েবের প্রাথমিক দিনগুলিতে ছিল। এটি সাধারণ: ব্যবহারকারী নাম এবং পাসওয়ার্ডকে base64 এ এনকোড করা এবং একটি HTTP হেডারে যোগ করা। এটি সবচেয়ে নিরাপদ পদ্ধতি নয় (কারণ base64 সহজেই উলটানো যেতে পারে), কিন্তু কম ঝুঁকি বা অভ্যন্তরীণ টুলের জন্য এটি সরল।
+
+আছে বিকল্প, যেমন ডাইজেস্ট অ্যাক্সেস প্রমাণীকরণ বা OAuth, যা আরও নিরাপদ, কিন্তু তারা রিসোর্সের উপর ভারী - একটি ছোট অ্যার্ডুইনোতে বিবেচনা করার বিষয়।
+
+বাস্তবায়নের জন্য, মনে রাখবেন যে base64 এনকোডিং cred-এর আকার প্রায় 33% বাড়িয়ে দেয়, এবং অ্যার্ডুইনোর মেমরি সীমিত। সাথে সাথে, যদি আপনি ইন্টারনেটের মাধ্যমে creds পাঠান তবে SSL/TLS (HTTPS) ব্যবহার করে আপনার সার্ভার নিশ্চিত করুন এড়ানোর জন্য।
+
+## দেখুন সেও
+- [মৌলিক অ্যাক্সেস প্রমাণীকরণে উইকিপিডিয়া](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [আপনার HTTP অনুরোধ নিরাপদ রাখুন](https://arduino.cc/en/Tutorial/WebClientRepeating)
