@@ -1,0 +1,78 @@
+---
+title:                "টমল নিয়ে কাজ করা"
+date:                  2024-03-17T18:30:19.908251-06:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-17, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## কি এবং কেন?
+
+TOML হল Tom's Obvious, Minimal Language এর সংক্ষেপ, যা একটি কনফিগুরেশন ফাইল ফরম্যাট যা এর স্পষ্ট সেমান্টিক্সের কারণে পড়া সহজ। প্রোগ্রামাররা সিস্টেমের মধ্যে ডাটা আদান-প্রদান সহজ করার জন্য এবং মানব পঠনীয়তা এবং মেশিন পার্সেবিলিটির মধ্যে একটি সমতুল্য ভারসাম্য তৈরি করার কারণে কনফিগ ফাইলের জন্য এটি ব্যবহার করে।
+
+## কিভাবে:
+
+প্রথমে, `Tomlyn` এর মতো একটি TOML পার্সার ইনস্টল করুন। আপনার প্যাকেজ ম্যানেজার ব্যবহার করুন:
+
+```csharp
+dotnet add package Tomlyn
+```
+
+পরবর্তী, একটি TOML ফাইল পার্স করুন:
+
+```csharp
+using Tomlyn;
+using Tomlyn.Model;
+using System;
+
+var tomlContent = @"
+[owner]
+name = 'Tom Preston-Werner'
+dob = 1979-05-27T07:32:00Z";
+
+var tomlTable = Toml.Parse(tomlContent).ToModel();
+
+Console.WriteLine($"Owner: {tomlTable["owner"]["name"]}");
+// আউটপুট:
+// Owner: Tom Preston-Werner
+```
+
+এখন, TOML তৈরি এবং লেখা:
+
+```csharp
+using Tomlyn;
+using Tomlyn.Syntax;
+using System;
+using System.IO;
+
+var doc = new DocumentSyntax
+{
+    Tables =
+    {
+        new TableSyntax("owner")
+        {
+            Items =
+            {
+                { "name", "Tom Preston-Werner" },
+                { "dob", "1979-05-27T07:32:00Z" }
+            }
+        }
+    }
+};
+
+var tomlString = doc.ToString();
+File.WriteAllText("config.toml", tomlString);
+Console.WriteLine("TOML config.toml এ লেখা হয়েছে");
+// আউটপুট:
+// TOML config.toml এ লেখা হয়েছে
+```
+
+## গভীর ডাইভ:
+
+TOML টি 2013 সালের দিকে GitHub এর সহ-প্রতিষ্ঠাতা, Tom Preston-Werner কর্তৃক তৈরি করা হয়েছিল, YAML এবং JSON এর মতো বিদ্যমান ফর্ম্যাটের সীমাবদ্ধতার বিপরীতে কনফিগারেশন সেটিংসে একটি প্রতিক্রিয়া হিসেবে। এটি বিশেষত কনফিগগুলির জন্য সরল এবং অস্পষ্টতামুক্ত থাকার উপর জোর দেয়।
+
+বিকল্প কনফিগ ফর্ম্যাটে রয়েছে YAML, JSON, এবং XML। তবে, TOML মানুষের জন্য আরও বন্ধুত্বপূর্ণ হিসেবে প্রকাশ পায়, বিশেষ করে কনফিগারেশন ফাইলের ক্ষেত্রে যেখানে হাতে সম্পাদনা সাধারণ। JSON, যদিও ব্যাপকভাবে ব্যবহৃত, জটিল কনফিগের জন্য কম পঠনীয় এবং XML বাগাঢ়াবাজ। YAML, যদিও পঠনীয়তায় অনুরূপ, ধূসর স্থানের ভারী ব্যবহার এবং নির্দিষ্ট সামগ্রীর সাথে নিরাপত্তা ঝুঁকিতে জটিল হতে পারে।
+
+বাস্তবায়নের দিক দিয়ে, TOML একটি হ্যাশ টেবিলে পরিষ্কারভাবে ম্যাপিং করার উপর মনোনিবেশ করে, ডেটা এক্স

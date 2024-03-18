@@ -1,0 +1,63 @@
+---
+title:                "HTTP অনুরোধ প্রেরণ করা"
+date:                  2024-03-17T18:17:44.539315-06:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-17, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## কি এবং কেন?
+
+একটি HTTP অনুরোধ পাঠানো হচ্ছে আপনার জাভাস্ক্রিপ্ট কোডের সাথে একটি সার্ভারের যোগাযোগ স্থাপনের উপায়। এটি ডেটা আদান-প্রদান, সম্পদ আনতে বা সার্ভারে ডেটা প্রক্রিয়া করার জন্য ইত্যাদি করা হয়।
+
+## কিভাবে:
+
+জাভাস্ক্রিপ্ট অনুরোধ পাঠানোর জন্য `fetch` API ব্যবহার করে। এখানে একটি সিম্পল GET অনুরোধ কিভাবে করতে হয় তা দেখানো হল:
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(err => console.error('ত্রুটি:', err));
+```
+
+আউটপুট হবে URL থেকে JSON ডেটা। সহজ, তাই না?
+
+এবং একটি POST অনুরোধের জন্য:
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(err => console.error('ত্রুটি:', err));
+```
+
+এটি নতুন ডেটা পাঠায় এবং সার্ভারের প্রতিসাদ দেখায়।
+
+## গভীর ডুব
+
+HTTP অনুরোধ ওয়েবের শুরু থেকেই আছে—HTML ফর্মগুলি চিন্তা করুন। XMLHttpRequest (XHR) একসময় জাভাস্ক্রিপ্টে অনুরোধ পাঠানোর জন্য যাওয়া-আসা পদ্ধতি ছিল, কিন্তু এটি জটিল।
+
+`fetch` এর প্রবেশ, একটি আধুনিক পদ্ধতি যা প্রমিস-ভিত্তিক, এবং পরিষ্কার ও আরো মজবুত করে তোলে। XHR এর বিপরীতে, `fetch` একটি একক, একীভূত API এ উভয় অনুরোধ এবং প্রতিক্রিয়াগুলিকে সামলায় এবং ভাষার মধ্যে নির্মিত, কোন লাইব্রেরির প্রয়োজন নেই।
+
+বিকল্প? অবশ্যই। Axios বা jQuery's Ajax মতো লাইব্রেরিগুলি এখনও ব্যবহার করা হয়। তারা কিছু সিনট্যাকটিক মিষ্টি এবং নির্দিষ্ট বৈশিষ্ট্যের জন্য কাজের উপায় প্রদান করে, কিন্তু `fetch` হল নেটিভ এবং সাধারণত এগিয়ে যাওয়ার পথ।
+
+বাস্তবায়ন বিস্তারিত? ত্রুটি সামলানো, বিভিন্ন প্রতিক্রিয়া প্রকার নিয়ে কাজ করা এবং ক্রস-অরিজিন রিসোর্স শেয়ারিং (CORS) নিয়মাবলীর সম্পর্কে সচেতন থাকা মনে রাখবেন।
+
+## আরও দেখুন
+
+- MDN `fetch` API ডকুমেন্টেশন: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- জাভাস্ক্রিপ্টে প্রমিস ব্যবহার করা: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+- CORS সম্পর্কে জানুন: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS

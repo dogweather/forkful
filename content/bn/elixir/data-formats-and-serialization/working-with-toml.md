@@ -1,0 +1,56 @@
+---
+title:                "টমল নিয়ে কাজ করা"
+date:                  2024-03-17T18:30:33.475978-06:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-17, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## কি & কেন?
+
+Elixir ব্যবহার করে TOML নিয়ে কাজ করা মানে হল TOML (Tom's Obvious, Minimal Language) ডাটা পার্স করা এবং জেনারেট করা। প্রোগ্রামাররা কনফিগারেশন ফাইল হ্যান্ডল করার জন্য এটি ব্যবহার করেন কারণ TOML পড়া সহজ, পার্স করা সহজ এবং এটি একটি হ্যাশ ডাটা স্ট্রাকচারের সঙ্গে ভাল ম্যাপ করে।
+
+## কিভাবে:
+প্রথমে, আপনার mix ডিপেন্ডেন্সিগুলিতে একটি TOML parser যোগ করুন। এই উদাহরণটি `toml-elixir` ব্যবহার করে:
+
+```elixir
+def deps do
+  [
+    {:toml_elixir, "~> 2.0"}
+  ]
+end
+```
+
+একটি TOML ফাইল পড়ুন:
+
+```elixir
+{:ok, toml_data} = File.read("config.toml")
+{:ok, parsed_data} = TomlElixir.parse(toml_data)
+```
+
+Elixir ডাটাকে TOML এ রূপান্তর করতে:
+
+```elixir
+data = %{title: "TOML Example", owner: %{name: "Tom Preston-Werner"}}
+toml_string = TomlElixir.encode(data)
+```
+
+নমুনা আউটপুট:
+
+```elixir
+"title = \"TOML Example\"\n\n[owner]\nname = \"Tom Preston-Werner\"\n"
+```
+
+## গভীর ডুব
+TOML কনফিগারেশন ফাইলের জন্য ব্যবহারের জন্য Tom Preston-Werner, GitHub-এর সহ-প্রতিষ্ঠাতার দ্বারা তৈরি করা হয়েছিল। এটি ডিজাইন করা হয়েছিল XML এর চেয়ে সরল এবং YAML এর চেয়ে সংক্ষিপ্ত হওয়ার সাথে সাথে ধারাবাহিকতা বজায় রাখার জন্য।
+
+বিকল্পগুলি অন্তর্ভুক্ত করে JSON, YAML, এবং INI ফাইল, প্রতিটির মানব পাঠযোগ্যতা এবং ডাটা স্ট্রাকচার সামঞ্জস্যে তাদের নিজস্ব বিনিময়। TOML টেবিলার ডাটা এবং নেস্টেড ডাটা গ্রুপিং স্পষ্টভাবে প্রতিনিধিত্বে সেরা করে তোলে।
+
+Elixir-এ, TOML হ্যান্ডলিং ডিকোডিং এবং এনকোডিং লাইব্রেরিগুলিতে নির্ভর করে, যা TOML স্ট্রিংগুলিকে Elixir ম্যাপগুলিতে এবং বিপরীতে রূপান্তরিত করে। পার্সিং TOML-এর সিনট্যাক্স নিয়মগুলির সাথে মিলে যায় এবং Elixir-এর ডেটা টাইপগুলিতে রূপান্তর করে। এনকোডিং এর বিপরীত হয়, এটি Elixir-এর ডেটা টাইপগুলিকে বৈধ TOML সিনট্যাক্সে ম্যাপ করে।
+
+## আরও দেখুন
+- TOML ভাষা: https://toml.io/en/
+- `toml-elixir` GitHub রিপোজিটরি: https://github.com/bitwalker/toml-elixir
+- `toml-elixir`ের Hex প্যাকেজের বিস্তারিত: https://hex.pm/packages/toml_elixir

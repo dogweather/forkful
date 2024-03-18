@@ -1,0 +1,106 @@
+---
+title:                "বর্তমান তারিখ পেতে"
+date:                  2024-03-17T17:50:58.098384-06:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-17, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## কি এবং কেন?
+প্রোগ্রামিংয়ে, বর্তমান তারিখ পাওয়া একটি মৌলিক কাজ যা ডেভেলপারদের তাদের অ্যাপ্লিকেশনের মধ্যে বর্তমান তারিখ অ্যাক্সেস, প্রদর্শন, বা ম্যানিপুলেট করতে সক্ষম করে। এই ক্ষমতা ঘটনাবলী লগ করা এবং সময়-মোহর দেওয়া থেকে শুরু করে তারিখের উপর ভিত্তি করে গণনা পর্যন্ত সবকিছুর জন্য অপরিহার্য।
+
+## কিভাবে:
+
+### স্ট্যান্ডার্ড কোটলিন ব্যবহার করে
+কোটলিনের নিজের কোন তারিখ এবং সময় API নেই, কিন্তু এটি এই ফাংশনালিটির জন্য জাভা স্ট্যান্ডার্ড লাইব্রেরিকে নির্ভর করে। এখানে আপনি কীভাবে বর্তমান তারিখ পেতে পারেন:
+
+```kotlin
+import java.time.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("আজকের তারিখ: $today")
+}
+```
+
+**নমুনা আউটপুট:**
+```
+আজকের তারিখ: 2023-04-05
+```
+
+### java.util.Date ব্যবহার করে
+তারিখ এবং সময় উভয়ই প্রয়োজন হলে, আপনি হয়ত `java.util.Date` পছন্দ করতে পারেন।
+
+```kotlin
+import java.util.Date
+
+fun main() {
+    val currentDate = Date()
+    println("বর্তমান তারিখ ও সময়: $currentDate")
+}
+```
+
+**নমুনা আউটপুট:**
+```
+বর্তমান তারিখ ও সময়: বুধ এপ্রি 05 15:20:45 GMT 2023
+```
+
+### Joda-Time লাইব্রেরি ব্যবহার করে
+জাভা 8 নতুন তারিখ এবং সময় API চালু করার আগে, Joda-Time জাভা এবং কোটলিনে তারিখ-সময় অপারেশনের জন্য ডি-ফ্যাক্টো স্ট্যান্ডার্ড ছিল। যদিও এটি অনেক প্রজেক্টের জন্য আর প্রয়োজনীয় নয়, কিছু প্রজেক্ট এটি লেগ্যাসি কারণ বা ব্যক্তিগত পছন্দের জন্য এখনও ব্যবহার করতে পারে।
+
+আপনার প্রকল্পের build.gradle ফাইলে Joda-Time লাইব্রেরি যোগ করুন:
+```
+implementation 'joda-time:joda-time:2.10.10'
+```
+
+```kotlin
+import org.joda.time.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("আজকের তারিখ: $today")
+}
+```
+
+**নমুনা আউটপুট:**
+```
+আজকের তারিখ: 2023-04-05
+```
+
+### অ্যান্ড্রয়েডের জন্য ThreeTenABP ব্যবহার করা
+অ্যান্ড্রয়েড ডেভেলপমেন্টের জন্য, অ্যান্ড্রয়েড API লেভেল 26 এর আগের সংস্করণের জন্য Java Time API এর ব্যাকপোর্ট ব্যবহার করা হিসেবে ThreeTen Android Backport Project ব্যবহার করা প্রস্তাবিত।
+
+আপনার অ্যাপের build.gradle ফাইলে ডিপেন্ডেন্সি যোগ করুন:
+```
+implementation 'com.jakewharton.threetenabp:threetenabp:1.3.1'
+```
+
+এটি আপনার Application ক্লাসে ইনিশিয়ালাইজ করুন:
+```kotlin
+import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
+
+class MyApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        AndroidThreeTen.init(this)
+    }
+}
+```
+
+তারপর, আপনি এটি এরকম ব্যবহার করতে পারেন:
+```kotlin
+import org.threeten.bp.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("আজকের তারিখ: $today")
+}
+```
+
+**নমুনা আউটপুট:**
+```
+আজকের তারিখ: 2023-04-05
+```

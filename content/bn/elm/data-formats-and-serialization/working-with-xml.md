@@ -1,0 +1,70 @@
+---
+title:                "XML এর সাথে কাজ করা"
+date:                  2024-03-17T18:36:27.490738-06:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-17, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## কি এবং কেন?
+XML এর সাথে কাজ করা মানে Elm-এ XML নথিপত্র পারসিং, রূপান্তর এবং তৈরি করা। এটি সুনির্দিষ্ট ওয়েব সেবা এবং অধিকাংশ পুরানো সিস্টেমের সাথে মিথস্ক্রিয়া করার জন্য করা হয়, যেগুলি XML-কে তাদের ডেটা ফর্ম্যাট হিসেবে ব্যবহার করে।
+
+## কিভাবে:
+Elm-এ, আপনি `elm/xml` প্যাকেজ ব্যবহার করে XML নিয়ে কাজ করবেন। এখানে XML স্নিপেট পারসিংয়ের একটি দ্রুত উদাহরণ দেখা যাক:
+
+```Elm
+import Xml.Decode exposing (..)
+import Xml.Decode.Pipeline exposing (..)
+
+xmlString = """
+<book id="123">
+    <title>Elm in Action</title>
+    <author>Robin Heggelund Hansen</author>
+</book>
+"""
+
+type alias Book =
+    { id : String
+    , title : String
+    , author : String
+    }
+
+bookDecoder : Decoder Book
+bookDecoder =
+    decode Book
+        |> required "id" (attribute "id")
+        |> required "title" (child "title" (content text))
+        |> required "author" (child "author" (content text))
+
+case Xml.Decode.fromString bookDecoder xmlString of
+    Ok book ->
+        -- এখানে ডিকোড করা বইয়ের সাথে কিছু করুন
+        Debug.toString book
+
+    Err error ->
+        -- ত্রুটিগুলি সামলান
+        Debug.toString error
+```
+
+ধরা যাক ত্রুটি না থাকার ক্ষেত্রে, নমুনা আউটপুট:
+
+```Elm
+"{ id = \"123\", title = \"Elm in Action\", author = \"Robin Heggelund Hansen\" }"
+```
+
+## গভীর ডাইভ
+XML (eXtensible Markup Language) ৯০-এর দশকের শেষের দিকে আবির্ভাব হয়েছিল, যখন ওয়েব মূলত টেক্সট-ভারী ছিল এবং ডেটা বহনের জন্য একটি গঠনমূলক, তবে নমনীয় উপায়ের প্রয়োজন ছিল। বাগাড়ম্বর এবং জটিলতার কারণে, XML কিছুটা জায়গা হারিয়েছে JSON-এর কাছে। তবে, XML বিশেষ করে এন্টারপ্রাইজ পরিবেশ বা যেমন SOAP প্রোটোকলে এখনও প্রচলিত।
+
+Elm-এর XML-এর প্রতি দৃষ্টিভঙ্গি কার্যকারিতা এবং টাইপ-নিরাপদ। `elm/xml` প্যাকেজ ব্যবহার করা মানে Elm-এর স্পষ্টতা এবং বিশ্বাসযোগ্যতা-ভিত্তিক দর্শনকে গ্রহণ করা। পারসিং ক্ষেত্রে, প্যাকেজটি একধিক ডিকোডার প্রদান করে যা আপনি XML কাঠামো সামলানোর জন্য রচনা করতে পারেন।
+
+JavaScript-এর DOMParser বা Python-এর ElementTree এর মতো বিকল্পগুলির তুলনায়, Elm-এর পদ্ধতি আরও বহুলাংশে মনে হতে পারে কিন্তু নিরাপত্তা নিশ্চিত করে। কোনো রানটাইম ব্যতিক্রম নেই যদি ক্ষেত্রগুলি অনুপস্থিত থাকে বা টাইপ অমিল থাকে; যদি কিছু অসংগতি থাকে, আপনি একটি কম্পাইল-সময়ের ত্রুটি পাবেন।
+
+`elm/xml` ডিকোড ফাংশনগুলি XML নোডগুলিকে Elm টাইপে ম্যাপিং করতে নির্ভর করে। আপনি আপনার ডেটার আকারকে প্রতিফলিত করে এমন ডিকোডারগুলি তৈরি করেন, যাতে আপনার Elm অ্যাপ্লিকেশন XML-কে তার নিজের অভ্যন্তরীণ ডেটা কাঠামোর মতো করে সামলানো নিশ্চিত করা হয়৷
+
+XML তৈরি করা Elm-এ কম সাধারণ হলেও, `elm/xml`-এর বিপরীত `Xml.Encode` এর মাধ্যমে সম্ভব।
+
+## আরও দেখুন
+- XML মানসিকতা যা JSON-এর উপর Elm গাইডেও প্রযোজ্য: [https://guide.elm-lang.org/interop/json.html](https://guide.elm-lang.org/interop/json.html)
+- XML নিজের উপর গভীর বোঝার জন্য W3C-এর XML মানদণ্ড: [https://www.w3.org/XML/](https://www.w3.org/XML/)

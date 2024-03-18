@@ -1,0 +1,54 @@
+---
+title:                "দুটি তারিখ তুলনা করা"
+date:                  2024-03-17T17:45:30.785797-06:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-17, OpenAIModel.GPT_4_TURBO, translated from English
+---
+
+{{< edit_this_page >}}
+
+## কি এবং কেন?
+
+দুটি তারিখের তুলনা মানে একটি অপরটির আগে কিনা বা পরে কিনা, অথবা তারা যদি একই মুহূর্তে থাকে তা যাচাই করা। প্রোগ্রামাররা এই কাজ করে যেমন ইভেন্ট সাজানো, সিডিউলিং, এবং তারিখের মধ্যে সময়ের ব্যবধান পরীক্ষা করার জন্য।
+
+## কিভাবে:
+
+```Kotlin
+আমদানি java.time.LocalDate
+
+মুখ্য ফাংশন() {
+    ভ্যাল date1 = LocalDate.of(2023, 4, 10)
+    ভ্যাল date2 = LocalDate.of(2023, 5, 15)
+
+    println(date1.isBefore(date2))  // সত্য
+    println(date1.isAfter(date2))   // মিথ্যা
+    println(date1.isEqual(date2))   // মিথ্যা
+
+    // compareTo ব্যবহার করে তুলনা
+    println(date1.compareTo(date2)) // যদি date1 date2 এর আগে হয় তাহলে -1
+}
+```
+
+নমুনা আউটপুট:
+
+```
+সত্য
+মিথ্যা
+মিথ্যা
+-1
+```
+
+## গভীরে ডাইভ
+
+ঐতিহাসিকভাবে, জাভা `Date` এবং `Calendar` শ্রেণী সরবরাহ করেছে কিন্তু তারা খুব ব্যবহারকারী-বান্ধব ছিল না। কোটলিন এর অধীনে অনুরূপ শ্রেণী ব্যবহার করে কিন্তু জাভা ৮ এ প্রবর্তিত `java.time` প্যাকেজ ব্যবহার করার জন্য উৎসাহিত করে, যা বেশি স্পষ্টতা এবং উপযোগিতা প্রদান করে।
+
+এল্টারনেটিভ হিসেবে `Instant` টাইমস্ট্যাম্পের জন্য, `ZonedDateTime` সময়-জোন নির্দিষ্ট তারিখের জন্য, অথবা জোডা-টাইম মত তৃতীয়-পক্ষের লাইব্রেরি ব্যবহার করা যেতে পারে। বাস্তবায়নের বিস্তারিত মনে রাখা—`Instant` একটি পারম্পরিক Unix টাইমস্ট্যাম্প ব্যবহার করে যেখানে `LocalDate` এটিকে লুকানো এবং সময় বা সময় অঞ্চল ছাড়া একটি ধারণাগত দিনের সাথে ব্যবহার করে।
+
+কোন শ্রেণী আপনার চাহিদা সবচেয়ে ভালোভাবে পূরণ করে তা জানা জরুরি। `LocalDate` বেশিরভাগ তারিখের তুলনা জন্য ঠিক আছে, কিন্তু নির্দিষ্ট মুহূর্তের তুলনার জন্য, `ZonedDateTime` বা `Instant` বিবেচনা করুন।
+
+## আরও দেখুন
+
+- তারিখ এবং সময় উপর অফিসিয়াল কোটলিন ডকুমেন্টেশন: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/)
+- জাভা ৮ তারিখ এবং সময় গাইড: [https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+- জোডা-টাইম লাইব্রেরি: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)

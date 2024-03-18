@@ -1,0 +1,77 @@
+---
+title:                "JSON এর সাথে কাজ করা"
+date:                  2024-03-17T18:29:34.551435-06:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-17, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## কি এবং কেন?
+Kotlin-এ JSON (JavaScript Object Notation) এর সাথে কাজ করা মানে JSON ডাটা পার্স এবং জেনারেট করা। প্রোগ্রামাররা এটি করে থাকেন একটি অ্যাপ্লিকেশনের বিভিন্ন স্তরের মধ্যে বা ওয়েব সার্ভিস সহ ডাটা আদান-প্রদান সহজ করার জন্য, JSON এর হালকা ও মানব-পাঠযোগ্য ফরম্যাটের কারণে।
+
+## কিভাবে:
+Kotlin স্বয়ংক্রিয় ভাবে JSON-এর জন্য কোনো সাপোর্ট অন্তর্ভুক্ত করে না কিন্তু `Gson` (গুগল দ্বারা) এবং `Kotlinx.serialization` (JetBrains দ্বারা) এর মতো তৃতীয় পক্ষের লাইব্রেরির শক্তিশালী বৈশিষ্ট্যগুলো ব্যবহার করে। এখানে আপনি JSON এর সাথে কাজ করার জন্য উভয়কে কিভাবে ব্যবহার করতে পারেন তা দেখানো হলো।
+
+### Gson ব্যবহার করে
+আপনার `build.gradle` ফাইলে Gson নির্ভরতা যোগ করুন:
+```kotlin
+implementation 'com.google.code.gson:gson:2.8.9'
+```
+
+JSON স্ট্রিং থেকে অবজেক্টে এবং তার বিপরীতে পার্স করা:
+```kotlin
+import com.google.gson.Gson
+
+// ডেটা ক্লাস নির্ধারণ
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val gson = Gson()
+
+    // Serialize
+    val json = gson.toJson(User("John Doe", 30))
+    println(json)  // আউটপুট: {"name":"John Doe","age":30}
+
+    // Deserialize
+    val user: User = gson.fromJson(json, User::class.java)
+    println(user)  // আউটপুট: User(name=John Doe, age=30)
+}
+```
+
+### Kotlinx.serialization ব্যবহার করে
+প্রথমে, আপনার `build.gradle`-এ নির্ভরতা অন্তর্ভুক্ত করুন:
+```kotlin
+implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3"
+```
+
+এরপর, আপনার বিল্ড স্ক্রিপ্টের শীর্ষে `kotlinx-serialization` প্লাগিন প্রয়োগ করুন:
+```kotlin
+plugins {
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
+}
+```
+
+Kotlinx.serialization ব্যবহারে সিরিয়ালাইজ করা এবং ডি-সিরিয়ালাইজ করা:
+```kotlin
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+// একটি সিরিয়ালাইজযোগ্য ডেটা ক্লাস নির্ধারণ
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    // Serialize
+    val json = Json.encodeToString(User("Jane Doe", 28))
+    println(json)  // আউটপুট: {"name":"Jane Doe","age":28}
+
+    // Deserialize
+    val user = Json.decodeFromString<User>(json)
+    println(user)  // আউটপুট: User(name=Jane Doe, age=28)
+}
+```
+
+Gson এবং Kotlinx.serialization উভয়েই Kotlin অ্যাপ্লিকেশনে JSON এর সাথে কাজ করা সহজ করে, একটি অন্যটির উপরে পছন্দ করা আপনার নির্দিষ্ট প্রকল্প প্রয়োজনীয়তা ও ব্যক্তিগত পছন্দের উপর নির্ভর করে।

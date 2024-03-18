@@ -1,0 +1,75 @@
+---
+title:                "HTTP অনুরোধ প্রেরণ করা"
+date:                  2024-03-17T18:18:22.164114-06:00
+model:                 gpt-4-0125-preview
+changelog:
+  - 2024-03-17, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## কি এবং কেন?
+
+HTTP রিকুয়েস্ট পাঠানো হল এমন একটি প্রক্রিয়া যার মাধ্যমে একটি প্রোগ্রাম সার্ভার থেকে ডেটা চাই। প্রোগ্রামাররা ওয়েব সার্ভিস, APIs, অথবা কেবলমাত্র ওয়েব পেজের কন্টেন্ট আনতে এটি করে থাকেন।
+
+## কিভাবে:
+
+PHP এর `cURL` লাইব্রেরির মাধ্যমে HTTP রিকুয়েস্ট হ্যান্ডেল করার একটি চমৎকার উপায় রয়েছে। তবে নতুন প্রজন্মের একটি উপায় হল `file_get_contents` ব্যবহার করা সহজ GET রিকুয়েস্টের জন্য, অথবা `stream_context_create` ব্যবহার করা POST রিকুয়েস্টের জন্য। এখানে দুটির একটি দ্রুত পরিচয় দেওয়া হলো।
+
+### GET রিকুয়েস্টের সাথে file_get_contents():
+```php
+// যে URL এ হিট করছেন
+$url = "http://example.com/api";
+
+// একটি GET রিকুয়েস্ট পারফর্ম করার জন্য file_get_contents ব্যবহার করুন
+$response = file_get_contents($url);
+
+// আপনি কি পেয়েছেন দেখতে আউটপুট ডাম্প করুন
+var_dump($response);
+```
+
+### POST রিকুয়েস্টের সাথে stream_context_create():
+```php
+// যে URL এ পোস্ট করছেন
+$url = "http://example.com/api";
+
+// যে ডেটা আপনি পাঠাচ্ছেন
+$data = http_build_query([
+    'foo' => 'bar',
+    'baz' => 'qux',
+]);
+
+// স্ট্রিম কনটেক্সট অপশন
+$options = [
+    'http' => [
+        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method'  => 'POST',
+        'content' => $data,
+    ],
+];
+
+// একটি স্ট্রিম কনটেক্সট তৈরি করুন
+$context  = stream_context_create($options);
+
+// POST রিকুয়েস্ট পারফর্ম করুন এবং প্রতিক্রিয়াটি একটি ভেরিয়েবলে রাখুন
+$result = file_get_contents($url, false, $context);
+
+// আপনি কি পেয়েছেন দেখুন
+var_dump($result);
+```
+
+## গভীর ডুব
+
+প্রাথমিক দিকে, PHP HTTP রিকুয়েস্টের জন্য `fsockopen()` ছিল জনপ্রিয়। এটি একটু জটিল ছিল, তবে কাজ সম্পন্ন করতে পারত। তারপর `cURL` আগমন ঘটে, এটি এখনও শক্তিশালী এবং ব্যাপকভাবে ব্যবহৃত, বিশেষ করে জটিল অপারেশনের জন্য। তবে মাঝে মাঝে, আপনার শুধুমাত্র একটি স্ট্রিং কাটার জন্য চেইনস প্রয়োজন হয় না। সেই ক্ষেত্রে `file_get_contents()` এবং `stream_context_create()` উজ্জ্বল হয়ে ওঠে।
+
+`file_get_contents()` সম্পর্কে একটি মূল বিষয় হল এর সহজতা। সাধারণ GET রিকুয়েস্টের জন্য এটি আদর্শ। কিন্তু যদি আপনার POST ডেটা প্রয়োজন হয়? `stream_context_create()` এর প্রবেশ ঘটে। এই ছোট্ট মুক্তা আপনাকে হেডার, মেথড এবং আরও অনেকের সাথে আপনার HTTP রিকুয়েস্ট সুনিপুণভাবে সাজাতে দেয়।
+
+অভ্যন্তরে, `file_get_contents()` এবং `stream_context_create()` PHP এর স্ট্রিম র‌্যাপারগুলি ব্যবহার করে। এগুলি `fsockopen()` দ্বারা হ্যান্ডেল করা নিম্ন-স্তরের সকেট অপারেশনগুলিকে প্রতিস্থাপন করে।
+
+একটি দুর্বলতা? ত্রুটি হ্যান্ডলিং কঠিন হতে পারে। যদি কিছু ভুল হয়, এই ফাংশনগুলি `cURL` এর চেয়ে কম ক্ষমাশীল। যদি আপনার বিস্তারিত প্রতিক্রিয়ার তথ্য প্রয়োজন হয় অথবা জটিল HTTP কাজের মোকাবেলা করতে হয়, `cURL` এর সাথে থাকা বিবেচনা করুন।
+
+## আরও দেখুন
+
+- cURL এর অফিসিয়াল PHP ডক: [https://www.php.net/manual/en/book.curl.php](https://www.php.net/manual/en/book.curl.php)
+- PHP স্ট্রিম কন্টেক্সটস: [https://www.php.net/manual/en/context.php](https://www.php.net/manual/en/context.php)
+- HTTP কন্টেক্সট অপশনস: [https://www.php.net/manual/en/context.http.php](https://www.php.net/manual/en/context.http.php)
