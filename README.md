@@ -24,27 +24,27 @@ This repo contains all the [Forkful](https://forkful.ai) pages starting at [`/co
 
 ## World Languages
 
-Is there a language we should add? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
+[Bangla](https://forkful.ai/bn/),
+[English](https://forkful.ai/en),
+[Finnish](https://forkful.ai/fi),
+[French](https://forkful.ai/fr),
+[Dutch](https://forkful.ai/nl),
+[German](https://forkful.ai/de),
+[Hebrew](https://forkful.ai/he),
+[Hindi](https://forkful.ai/hi),
+[Italian](https://forkful.ai/it),
+[Japanese](https://forkful.ai/ja),
+[Korean](https://forkful.ai/ko),
+[Mandarin](https://forkful.ai/zh),
+[Norwegian](https://forkful.ai/no),
+[Polish](https://forkful.ai/pl),
+[Portuguese](https://forkful.ai/pt),
+[Russian](https://forkful.ai/ru),
+[Spanish](https://forkful.ai/es),
+[Swedish](https://forkful.ai/sv),
+[Thai](https://forkful.ai/th/),
+[Ukrainian](https://forkful.ai/uk),
+[Vietnamese](https://forkful.ai/vi).
 
-* [Bangla](https://forkful.ai/bn/)
-* [English](https://forkful.ai/en)
-* [Finnish](https://forkful.ai/fi)
-* [French](https://forkful.ai/fr)
-* [Dutch](https://forkful.ai/nl)
-* [German](https://forkful.ai/de)
-* [Hebrew](https://forkful.ai/he)
-* [Hindi](https://forkful.ai/hi)
-* [Italian](https://forkful.ai/it)
-* [Japanese](https://forkful.ai/ja)
-* [Korean](https://forkful.ai/ko)
-* [Mandarin](https://forkful.ai/zh)
-* [Norwegian](https://forkful.ai/no)
-* [Polish](https://forkful.ai/pl)
-* [Portuguese](https://forkful.ai/pt)
-* [Russian](https://forkful.ai/ru)
-* [Spanish](https://forkful.ai/es)
-* [Swedish](https://forkful.ai/sv)
-* [Thai](https://forkful.ai/th/)
-* [Ukrainian](https://forkful.ai/uk)
-* [Vietnamese](https://forkful.ai/vi)
+Is there a language that should be added? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
 
