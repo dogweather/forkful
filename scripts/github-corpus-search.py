@@ -22,12 +22,11 @@ def count_github_repositories(search_term: str) -> int:
     response = requests.get(REPO_SEARCH_ENDPOINT, headers=headers, params=params)
 
     # Check the response status
-    if response.status_code == 200:
-        data = response.json()
-        return data['total_count']
-        print(f"Total repositories found: {total_count}")
-    else:
+    if response.status_code != 200:
         raise ValueError(f"Failed to perform the search: {response.status_code}")
+
+    data = response.json()
+    return data['total_count']
 
 
 # Example usage with a search term
