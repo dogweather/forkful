@@ -43,7 +43,7 @@ This repo contains all the [Forkful](https://forkful.ai) pages starting at [`/co
 [Spanish](https://forkful.ai/es),
 [Swedish](https://forkful.ai/sv),
 [Thai](https://forkful.ai/th/),
-[Ukrainian](https://forkful.ai/uk),
+[Ukrainian](https://forkful.ai/uk), and
 [Vietnamese](https://forkful.ai/vi).
 
 Is there a language that should be added? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
