@@ -1,9 +1,13 @@
 ---
-title:                "একটি অস্থায়ী ফাইল তৈরি করা"
-date:                  2024-03-17T17:47:03.009124-06:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-17, OpenAIModel.GPT_4_TURBO, translated from English
+- 2024-03-17, OpenAIModel.GPT_4_TURBO, translated from English
+date: 2024-03-17 17:47:03.009124-06:00
+description: null
+lastmod: '2024-03-17T18:47:43.968535-06:00'
+model: gpt-4-0125-preview
+summary: null
+title: "\u098F\u0995\u099F\u09BF \u0985\u09B8\u09CD\u09A5\u09BE\u09AF\u09BC\u09C0\
+  \ \u09AB\u09BE\u0987\u09B2 \u09A4\u09C8\u09B0\u09BF \u0995\u09B0\u09BE"
 ---
 
 {{< edit_this_page >}}

@@ -1,9 +1,23 @@
 ---
-title:                "নতুন প্রকল্প শুরু করা"
-date:                  2024-03-17T18:21:04.221315-06:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-17, gpt-4-0125-preview, translated from English
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 18:21:04.221315-06:00
+description: "Google Apps Script (GAS) \u098F \u09A8\u09A4\u09C1\u09A8 \u09AA\u09CD\
+  \u09B0\u0995\u09B2\u09CD\u09AA \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09BE \u09AE\
+  \u09BE\u09A8\u09C7 Google ecosystem (Google Drive, Docs, Sheets, \u0987\u09A4\u09CD\
+  \u09AF\u09BE\u09A6\u09BF) \u098F\u09B0 \u09AE\u09A7\u09CD\u09AF\u09C7 \u098F\u0995\
+  \u099F\u09BF \u09B8\u09CD\u0995\u09CD\u09B0\u09BF\u09AA\u09CD\u099F \u09AB\u09BE\
+  \u0987\u09B2 \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09BE \u09AF\u09BE\u2026"
+lastmod: '2024-03-17T18:47:43.525097-06:00'
+model: gpt-4-0125-preview
+summary: "Google Apps Script (GAS) \u098F \u09A8\u09A4\u09C1\u09A8 \u09AA\u09CD\u09B0\
+  \u0995\u09B2\u09CD\u09AA \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09BE \u09AE\u09BE\
+  \u09A8\u09C7 Google ecosystem (Google Drive, Docs, Sheets, \u0987\u09A4\u09CD\u09AF\
+  \u09BE\u09A6\u09BF) \u098F\u09B0 \u09AE\u09A7\u09CD\u09AF\u09C7 \u098F\u0995\u099F\
+  \u09BF \u09B8\u09CD\u0995\u09CD\u09B0\u09BF\u09AA\u09CD\u099F \u09AB\u09BE\u0987\
+  \u09B2 \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09BE \u09AF\u09BE\u2026"
+title: "\u09A8\u09A4\u09C1\u09A8 \u09AA\u09CD\u09B0\u0995\u09B2\u09CD\u09AA \u09B6\
+  \u09C1\u09B0\u09C1 \u0995\u09B0\u09BE"
 ---
 
 {{< edit_this_page >}}

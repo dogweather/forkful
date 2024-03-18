@@ -1,9 +1,25 @@
 ---
-title:                "JSON এর সাথে কাজ করা"
-date:                  2024-03-17T18:29:32.925517-06:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-17, gpt-4-0125-preview, translated from English
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 18:29:32.925517-06:00
+description: "PowerShell \u098F\u09B0 JSON (JavaScript Object Notation) \u098F\u09B0\
+  \ \u09B8\u09BE\u09A5\u09C7 \u098F\u0995\u09C0\u09AD\u09C2\u09A4\u0995\u09B0\u09A3\
+  \ \u09B9\u09B2 JSON \u09A1\u09BE\u099F\u09BE \u09AA\u09BE\u09B0\u09CD\u09B8 \u0995\
+  \u09B0\u09BE (\u09AA\u09A1\u09BC\u09BE) \u098F\u09AC\u0982 \u099C\u09C7\u09A8\u09BE\
+  \u09B0\u09C7\u099F \u0995\u09B0\u09BE (\u09B2\u09C7\u0996\u09BE) \u09A8\u09BF\u09AF\
+  \u09BC\u09C7, \u09AF\u09BE \u0993\u09AF\u09BC\u09C7\u09AC\u09C7 \u09A1\u09BE\u099F\
+  \u09BE \u09AC\u09BF\u09A8\u09BF\u09AE\u09AF\u09BC\u09C7\u09B0\u2026"
+lastmod: '2024-03-17T18:47:44.300247-06:00'
+model: gpt-4-0125-preview
+summary: "PowerShell \u098F\u09B0 JSON (JavaScript Object Notation) \u098F\u09B0 \u09B8\
+  \u09BE\u09A5\u09C7 \u098F\u0995\u09C0\u09AD\u09C2\u09A4\u0995\u09B0\u09A3 \u09B9\
+  \u09B2 JSON \u09A1\u09BE\u099F\u09BE \u09AA\u09BE\u09B0\u09CD\u09B8 \u0995\u09B0\
+  \u09BE (\u09AA\u09A1\u09BC\u09BE) \u098F\u09AC\u0982 \u099C\u09C7\u09A8\u09BE\u09B0\
+  \u09C7\u099F \u0995\u09B0\u09BE (\u09B2\u09C7\u0996\u09BE) \u09A8\u09BF\u09AF\u09BC\
+  \u09C7, \u09AF\u09BE \u0993\u09AF\u09BC\u09C7\u09AC\u09C7 \u09A1\u09BE\u099F\u09BE\
+  \ \u09AC\u09BF\u09A8\u09BF\u09AE\u09AF\u09BC\u09C7\u09B0\u2026"
+title: "JSON \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\
+  \u09BE"
 ---
 
 {{< edit_this_page >}}

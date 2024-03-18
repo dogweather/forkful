@@ -1,9 +1,23 @@
 ---
-title:                "JSON এর সাথে কাজ করা"
-date:                  2024-03-17T18:36:26.512612-06:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-17, gpt-4-0125-preview, translated from English
+- 2024-03-17, gpt-4-0125-preview, translated from English
+date: 2024-03-17 18:36:26.512612-06:00
+description: "Haskell \u098F JSON (JavaScript Object Notation) \u098F\u09B0 \u09B8\
+  \u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\u09BE \u09AE\u09BE\u09A8\u09C7\
+  \ \u09B9\u09B2\u09CB JSON \u09A1\u09C7\u099F\u09BE \u0995\u09C7 Haskell \u099F\u09BE\
+  \u0987\u09AA\u09C7 \u09AA\u09BE\u09B0\u09CD\u09B8 \u0995\u09B0\u09BE \u098F\u09AC\
+  \u0982 Haskell \u099F\u09BE\u0987\u09AA \u0997\u09C1\u09B2\u09CB\u0995\u09C7 \u0986\
+  \u09AC\u09BE\u09B0 JSON \u098F \u09B0\u09C2\u09AA\u09BE\u09A8\u09CD\u09A4\u09B0\u2026"
+lastmod: '2024-03-17T18:47:44.106835-06:00'
+model: gpt-4-0125-preview
+summary: "Haskell \u098F JSON (JavaScript Object Notation) \u098F\u09B0 \u09B8\u09BE\
+  \u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\u09BE \u09AE\u09BE\u09A8\u09C7 \u09B9\
+  \u09B2\u09CB JSON \u09A1\u09C7\u099F\u09BE \u0995\u09C7 Haskell \u099F\u09BE\u0987\
+  \u09AA\u09C7 \u09AA\u09BE\u09B0\u09CD\u09B8 \u0995\u09B0\u09BE \u098F\u09AC\u0982\
+  \ Haskell \u099F\u09BE\u0987\u09AA \u0997\u09C1\u09B2\u09CB\u0995\u09C7 \u0986\u09AC\
+  \u09BE\u09B0 JSON \u098F \u09B0\u09C2\u09AA\u09BE\u09A8\u09CD\u09A4\u09B0\u2026"
+title: "JSON \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\
+  \u09BE"
 ---
 
 {{< edit_this_page >}}
