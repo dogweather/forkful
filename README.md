@@ -14,9 +14,12 @@ In a nutshell, a sort of pair-programmer for technical documentation. This seems
 1. A capybara (me)
 2. Open source contributors (you)
 3. AI (OpenAI GPT-4 Turbo)
+
+## 22,575 Coding Recipes
  
-* **Multilingual**: **21** world languages
-* **Polyglot**: **24** programming languages
+* **21** world languages
+* **25** programming languages
+* **43** topics
 
 ---
 
