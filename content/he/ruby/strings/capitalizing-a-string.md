@@ -1,65 +1,45 @@
 ---
+title:                "הפיכת מחרוזת לאותיות גדולות"
+date:                  2024-03-25T17:32:21.737099-06:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-02-03, gpt-4-0125-preview, translated from English
-date: 2024-02-03 19:06:37.437229-07:00
-description: "\u05D4\u05E4\u05D9\u05DB\u05EA \u05DE\u05D7\u05E8\u05D5\u05D6\u05EA\
-  \ \u05DC\u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05E8\u05D0\u05E9\u05D9\u05D5\u05EA\
-  \ \u05D1\u05EA\u05DB\u05E0\u05D5\u05EA \u05E4\u05D9\u05E8\u05D5\u05E9\u05D4 \u05DC\
-  \u05D4\u05DE\u05E8\u05D4 \u05E9\u05DC \u05D4\u05EA\u05D5 \u05D4\u05E8\u05D0\u05E9\
-  \u05D5\u05DF \u05D1\u05DE\u05D7\u05E8\u05D5\u05D6\u05EA \u05DC\u05D0\u05D5\u05EA\
-  \ \u05D2\u05D3\u05D5\u05DC\u05D4 \u05D5\u05D0\u05EA \u05E9\u05D0\u05E8 \u05D4\u05D0\
-  \u05D5\u05EA\u05D9\u05D5\u05EA \u05DC\u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05E7\
-  \u05D8\u05E0\u05D5\u05EA. \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05E2\u05D5\u05E9\
-  \u05D9\u05DD \u05D6\u05D0\u05EA \u05DE\u05E1\u05D9\u05D1\u05D5\u05EA \u05DB\u05DE\
-  \u05D5 \u05D4\u05EA\u05D0\u05DE\u05D4 \u05DC\u05DE\u05D5\u05E1\u05DB\u05DE\u05D5\
-  \u05EA\u2026"
-lastmod: '2024-03-13T22:44:40.172989-06:00'
-model: gpt-4-0125-preview
-summary: "\u05D4\u05E4\u05D9\u05DB\u05EA \u05DE\u05D7\u05E8\u05D5\u05D6\u05EA \u05DC\
-  \u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05E8\u05D0\u05E9\u05D9\u05D5\u05EA \u05D1\
-  \u05EA\u05DB\u05E0\u05D5\u05EA \u05E4\u05D9\u05E8\u05D5\u05E9\u05D4 \u05DC\u05D4\
-  \u05DE\u05E8\u05D4 \u05E9\u05DC \u05D4\u05EA\u05D5 \u05D4\u05E8\u05D0\u05E9\u05D5\
-  \u05DF \u05D1\u05DE\u05D7\u05E8\u05D5\u05D6\u05EA \u05DC\u05D0\u05D5\u05EA \u05D2\
-  \u05D3\u05D5\u05DC\u05D4 \u05D5\u05D0\u05EA \u05E9\u05D0\u05E8 \u05D4\u05D0\u05D5\
-  \u05EA\u05D9\u05D5\u05EA \u05DC\u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05E7\u05D8\
-  \u05E0\u05D5\u05EA. \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05E2\u05D5\u05E9\u05D9\
-  \u05DD \u05D6\u05D0\u05EA \u05DE\u05E1\u05D9\u05D1\u05D5\u05EA \u05DB\u05DE\u05D5\
-  \ \u05D4\u05EA\u05D0\u05DE\u05D4 \u05DC\u05DE\u05D5\u05E1\u05DB\u05DE\u05D5\u05EA\
-  \u2026"
-title: "\u05D4\u05D2\u05D3\u05DC\u05EA \u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05D1\
-  \u05DE\u05D7\u05E8\u05D5\u05D6\u05EA"
+  - 2024-03-25, dogweather, edited and tested
+  - 2024-03-25, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הפיכת מחרוזת לאותיות ראשיות בתכנות פירושה להמרה של התו הראשון במחרוזת לאות גדולה ואת שאר האותיות לאותיות קטנות. תכנתים עושים זאת מסיבות כמו התאמה למוסכמות ניסוח, הפיכת הפלטים לקריאים יותר, או הבטחת עקביות נתונים לצורך השוואות ואחסון.
+הון המילה במחרוזת זה לרוב אומר להמיר את התו הראשון במחרוזת לאות רישית ואת השאר לאותיות קטנות. אבל לעיתים זה יכול גם להוביל רק לוודא שהתו הראשון הוא באות רישית תוך השארת שאר המחרוזת ללא שינוי. באמת, לדעתי, זה מונח די מעורפל.
 
-## איך לעשות זאת:
-Ruby מספקת שיטות ישירות למניפולציית מחרוזות, כולל הפיכה לאותיות ראשיות. הנה איך אפשר להפוך מחרוזת לאותיות ראשיות ב-Ruby:
+## איך לעשות:
+רובי מספקת [שיטות ישירות לניפוי מחרוזות](https://docs.ruby-lang.org/en/3.3/String.html), כולל הון המילה:
 
 ```ruby
-# שיטה מובנית של Ruby
-string = "hello world"
+# פונקציה מובנית ברובי
+string = "hello WORLD"
 capitalized_string = string.capitalize
 puts capitalized_string # => "Hello world"
 ```
 
-שיטת ה`.capitalize` של Ruby נוחה אבל משפיעה רק על האות הראשונה. לשליטה רבה יותר או להפיכת כל מילה במחרוזת לאות ראשית (הידועה כ-case כותרת), ייתכן שתרצה להשתמש בשיטת ה`titleize` מהרחבת ActiveSupport של Rails, או ליישם אותה בעצמך:
+נוח מאוד.
+
+המתודה `.capitalize` של רובי נוחה, אך מהפכת את האות הראשונה לאות רישית בלבד. לשליטה רבה יותר או כדי להון כל מילה במחרוזת (מוכר גם כמקרה הכותרת), אולי תרצו להשתמש במתודה `titleize` מרחבת התוספות של Rails ActiveSupport, או ליישם זאת בעצמכם:
 
 ```ruby
-# שימוש ב'titleize' של ActiveSupport ב-Rails
+# שימוש ב-'titleize' מ-ActiveSupport ב-Rails
 require 'active_support/core_ext/string/inflections'
 string = "hello world"
 puts string.titleize # => "Hello World"
 ```
 
-אם אינך משתמש ב-Rails או מעדיף פתרון רובי טהור, הנה איך תוכל להפוך כל מילה במחרוזת לאות ראשית:
-
 ```ruby
+# פתרון עשוי בבית
 string = "hello world"
 capitalized_each_word = string.split.map(&:capitalize).join(' ')
 puts capitalized_each_word # => "Hello World"
 ```
 
-שיטה זו מחלקת את המחרוזת למערך של מילים, מרימה את כל אחת מהן לאות ראשית, ולאחר מכן מחברת אותן בחזרה יחדיו בעזרת רווח.
+המתודה הזו פוצלת את המחרוזת למערך של מילים, מונה כל אחת מהן, ולאחר מכן מצרפת אותן בחזרה יחד עם רווח.
+
+אישית, אני לוקח את הרעיון הזה הרבה יותר רחוק בקוד שלי. כתבתי את המתודה [`titleize` שלי שכוללת בחשבון מילים קטנות כמו "a" ו-"the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).
