@@ -11,8 +11,6 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 ---
 
-{{< edit_this_page >}}
-
 ## What & Why?
 Capitalizing a string usually means converting the first character of a string to uppercase and the rest to lowercase. But sometimes it can mean just making sure that the first character is uppercase while leaving the rest of the string unchanged. Honestly, in my opinion, it's a somewhat vague term.
 

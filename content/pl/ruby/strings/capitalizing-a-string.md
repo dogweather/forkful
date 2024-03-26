@@ -1,30 +1,35 @@
 ---
-title:                "Zamiana liter w ciągu na wielkie"
-date:                  2024-03-25T17:32:29.927702-06:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-25, dogweather, edited and tested
-  - 2024-03-25, gpt-4-0125-preview, translated from English
+- 2024-03-25, dogweather, edited and tested
+- 2024-03-25, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:29.358527-07:00
+description: "Capitalizacja stringa oznacza zwykle przekszta\u0142cenie pierwszego\
+  \ znaku stringa na wielk\u0105 liter\u0119, a reszty na ma\u0142e litery. Ale czasami\
+  \ mo\u017Ce to oznacza\u0107 po\u2026"
+lastmod: '2024-03-25T19:22:10.053897-06:00'
+model: gpt-4-0125-preview
+summary: "Capitalizacja stringa oznacza zwykle przekszta\u0142cenie pierwszego znaku\
+  \ stringa na wielk\u0105 liter\u0119, a reszty na ma\u0142e litery. Ale czasami\
+  \ mo\u017Ce to oznacza\u0107 po\u2026"
+title: "Zamiana ma\u0142ych liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Zazwyczaj wielką literą piszemy pierwszy znak ciągu, a resztę zmniejszamy. Ale czasem może to oznaczać po prostu upewnienie się, że pierwsza litera jest wielka, pozostawiając resztę ciągu bez zmian. Szczerze mówiąc, moim zdaniem, jest to termin dość niejasny.
+## Co i Dlaczego?
+Capitalizacja stringa oznacza zwykle przekształcenie pierwszego znaku stringa na wielką literę, a reszty na małe litery. Ale czasami może to oznaczać po prostu upewnienie się, że pierwsza litera jest wielka, pozostawiając resztę stringa bez zmian. Szczerze mówiąc, moim zdaniem, to dość niejasny termin.
 
 ## Jak to zrobić:
-Ruby oferuje [proste metody manipulacji ciągami](https://docs.ruby-lang.org/en/3.3/String.html), w tym kapitalizację:
+Ruby dostarcza [prostych metod do manipulacji stringami](https://docs.ruby-lang.org/en/3.3/String.html), w tym capitalizacji:
 
 ```ruby
-# Wbudowana metoda Ruby
+# Wbudowana metoda Ruby'ego
 string = "hello WORLD"
 capitalized_string = string.capitalize
 puts capitalized_string # => "Hello world"
 ```
 
-Bardzo wygodne.
+Bardzo przydatne.
 
-Metoda `.capitalize` Ruby jest wygodna, ale zmienia na wielką literę tylko pierwszą literę. Dla większej kontroli lub aby kapitalizować każde słowo w ciągu (znane jako styl tytułowy), możesz chcieć użyć metody `titleize` z rozszerzenia ActiveSupport Rails, lub zaimplementować ją samodzielnie:
+Metoda `.capitalize` w Ruby jest wygodna, ale zamienia na wielką literę tylko pierwszą literę. Dla większej kontroli lub aby zmienić każde słowo w stringu na wielką literę (znane jako "title case"), możesz chcieć użyć metody `titleize` z rozszerzenia Rails ActiveSupport, lub zaimplementować ją samodzielnie:
 
 ```ruby
 # Użycie 'titleize' z ActiveSupport w Rails
@@ -34,12 +39,12 @@ puts string.titleize # => "Hello World"
 ```
 
 ```ruby
-# Rozwiązanie własne
+# Rozwiązanie własnoręczne
 string = "hello world"
 capitalized_each_word = string.split.map(&:capitalize).join(' ')
 puts capitalized_each_word # => "Hello World"
 ```
 
-Ta metoda dzieli ciąg na tablicę słów, kapitalizuje każde z nich, a następnie łączy je z powrotem razem z odstępem.
+Ta metoda dzieli string na tablicę słów, zamienia każde z nich na wielką literę, a następnie łączy je z powrotem razem z przestrzenią.
 
-Osobiście w swoim kodzie posuwam tę ideę dużo dalej. Napisałem własną metodę [`titleize`, która uwzględnia małe słówka takie jak "a" i "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).
+Osobiście, w moim kodzie idę z tym pomysłem o wiele dalej. Napisałem własną metodę [`titleize`, która uwzględnia małe słowa takie jak "a" i "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).
