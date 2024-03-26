@@ -1,45 +1,48 @@
 ---
-title:                "Capitalizando una cadena de texto"
-date:                  2024-03-25T17:31:51.230740-06:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-25, dogweather, edited and tested
-  - 2024-03-25, gpt-4-0125-preview, translated from English
+- 2024-03-25, dogweather, edited and tested
+- 2024-03-25, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:29.358527-07:00
+description: "Capitalizar una cadena generalmente significa convertir el primer car\xE1\
+  cter de una cadena a may\xFAsculas y el resto a min\xFAsculas. Pero a veces puede\u2026"
+lastmod: '2024-03-25T19:21:56.267612-06:00'
+model: gpt-4-0125-preview
+summary: "Capitalizar una cadena generalmente significa convertir el primer car\xE1\
+  cter de una cadena a may\xFAsculas y el resto a min\xFAsculas. Pero a veces puede\u2026"
+title: Capitalizando una cadena de texto
 ---
 
-{{< edit_this_page >}}
-
-## ¿Qué y por qué?
-Capitalizar una cadena generalmente significa convertir el primer carácter de una cadena a mayúscula y el resto a minúsculas. Pero a veces puede significar sólo asegurarse de que el primer carácter está en mayúscula mientras que el resto de la cadena permanece sin cambios. Honestamente, en mi opinión, es un término algo vago.
+## ¿Qué y Por Qué?
+Capitalizar una cadena generalmente significa convertir el primer carácter de una cadena a mayúsculas y el resto a minúsculas. Pero a veces puede significar simplemente asegurarse de que el primer carácter está en mayúscula mientras se deja el resto de la cadena sin cambios. Honestamente, en mi opinión, es un término algo vago.
 
 ## Cómo hacerlo:
-Ruby ofrece [métodos directos para la manipulación de cadenas](https://docs.ruby-lang.org/es/3.3/String.html), incluyendo la capitalización:
+Ruby proporciona [métodos directos para la manipulación de cadenas](https://docs.ruby-lang.org/es/3.3/String.html), incluida la capitalización:
 
 ```ruby
 # Método incorporado de Ruby
-cadena = "hola MUNDO"
-cadena_capitalizada = cadena.capitalize
-puts cadena_capitalizada # => "Hola mundo"
+string = "hello WORLD"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
 Muy práctico.
 
-El método `.capitalize` de Ruby es conveniente pero solo convierte a mayúscula la primera letra. Para tener más control o para capitalizar cada palabra en una cadena (conocido como caso de título), es posible que quieras usar el método `titleize` de la extensión ActiveSupport de Rails, o implementarlo tú mismo:
+El método `.capitalize` de Ruby es conveniente pero solo convierte en mayúscula la primera letra. Para tener más control o para capitalizar cada palabra en una cadena (conocido como caso de título), podrías querer usar el método `titleize` de la extensión ActiveSupport de Rails, o implementarlo tú mismo:
 
 ```ruby
 # Usando 'titleize' de ActiveSupport en Rails
 require 'active_support/core_ext/string/inflections'
-cadena = "hola mundo"
-puts cadena.titleize # => "Hola Mundo"
+string = "hello world"
+puts string.titleize # => "Hello World"
 ```
 
 ```ruby
 # Una solución casera
-cadena = "hola mundo"
-capitalizada_cada_palabra = cadena.split.map(&:capitalize).join(' ')
-puts capitalizada_cada_palabra # => "Hola Mundo"
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
 ```
 
-Este método divide la cadena en un arreglo de palabras, capitaliza cada una, y luego las une de nuevo con un espacio.
+Este método divide la cadena en un arreglo de palabras, capitaliza cada una, luego las une de nuevo con un espacio.
 
-Personalmente, llevo esta idea mucho más allá en mi código. Escribí mi propio [método `titleize` que tiene en cuenta palabras pequeñas como "a" y "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).
+Personalmente, llevo esta idea mucho más lejos en mi código. Escribí mi propio [método `titleize` que tiene en cuenta palabras pequeñas como "a" y "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).

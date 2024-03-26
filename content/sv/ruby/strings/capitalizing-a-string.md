@@ -1,19 +1,24 @@
 ---
-title:                "Gör om en sträng till versaler"
-date:                  2024-03-25T17:32:00.737598-06:00
-model:                 gpt-4-0125-preview
 changelog:
-  - 2024-03-25, dogweather, edited and tested
-  - 2024-03-25, gpt-4-0125-preview, translated from English
+- 2024-03-25, dogweather, edited and tested
+- 2024-03-25, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:29.358527-07:00
+description: "Att versalisera en str\xE4ng betyder vanligtvis att omvandla det f\xF6\
+  rsta tecknet i en str\xE4ng till versal (stort bokstav) och resten till gemener\
+  \ (sm\xE5\u2026"
+lastmod: '2024-03-25T19:21:58.553462-06:00'
+model: gpt-4-0125-preview
+summary: "Att versalisera en str\xE4ng betyder vanligtvis att omvandla det f\xF6rsta\
+  \ tecknet i en str\xE4ng till versal (stort bokstav) och resten till gemener (sm\xE5\
+  \u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
-{{< edit_this_page >}}
-
 ## Vad & Varför?
-Att skriva med stor bokstav innebär vanligtvis att konvertera det första tecknet i en sträng till versal och resten till gemen. Men ibland kan det innebära att bara se till att det första tecknet är en versal medan resten av strängen förblir oförändrad. Ärligt talat, enligt min åsikt, är det en något vag term.
+Att versalisera en sträng betyder vanligtvis att omvandla det första tecknet i en sträng till versal (stort bokstav) och resten till gemener (små bokstäver). Men ibland kan det innebära att endast försäkra sig om att det första tecknet är en versal medan resten av strängen förblir oförändrad. Ärligt talat, i min åsikt, är det en ganska vag term.
 
-## Hur gör man:
-Ruby erbjuder [enkla metoder för strängmanipulation](https://docs.ruby-lang.org/en/3.3/String.html), inklusive att göra stor bokstav:
+## Hur:
+Ruby tillhandahåller [rakvägade metoder för strängmanipulering](https://docs.ruby-lang.org/en/3.3/String.html), inklusive kapitalisering:
 
 ```ruby
 # Rubys inbyggda metod
@@ -24,7 +29,7 @@ puts capitalized_string # => "Hello world"
 
 Mycket praktiskt.
 
-Rubys `.capitalize`-metod är bekväm men gör bara första bokstaven stor. För mer kontroll eller för att skriva varje ord i en sträng med stor bokstav (känt som titelform), kanske du vill använda `titleize`-metoden från Rails ActiveSupport-tillägget, eller implementera den själv:
+Rubys `.capitalize` metod är bekväm, men gör bara det första bokstaven stor. För mer kontroll eller för att kapitalisera varje ord i en sträng (känt som titel-fall), kanske du vill använda `titleize` metoden från Rails ActiveSupport-tillägget, eller implementera det själv:
 
 ```ruby
 # Använda ActiveSupports 'titleize' i Rails
@@ -34,12 +39,12 @@ puts string.titleize # => "Hello World"
 ```
 
 ```ruby
-# En egen lösning
+# En hemmagjord lösning
 string = "hello world"
 capitalized_each_word = string.split.map(&:capitalize).join(' ')
 puts capitalized_each_word # => "Hello World"
 ```
 
-Denna metod delar strängen till en array av ord, gör varje ord med stor bokstav och sedan fogar ihop dem igen med ett mellanrum.
+Denna metod delar upp strängen i en array av ord, gör varje ett av dem stort, sedan sammanfogar dem återigen med ett mellanrum.
 
-Personligen tar jag denna idé mycket längre i min kod. Jag skrev min egen [`titleize`-metod som tar hänsyn till små ord som "a" och "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).
+Personligen tar jag denna idé mycket längre i min kod. Jag skrev min egen [`titleize` metod som tar hänsyn till små ord som "a" och "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).
