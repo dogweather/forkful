@@ -1,65 +1,45 @@
 ---
+title:                "Viết hoa chuỗi ký tự"
+date:                  2024-03-25T17:32:04.009200-06:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-01-28, gpt-4-0125-preview, translated from English
-date: 2024-01-28 21:56:25.419629-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 l\xE0m\
-  \ cho k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn vi\u1EBFt hoa v\xE0 ph\u1EA7n c\xF2n l\u1EA1\
-  i vi\u1EBFt th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng \u0111\u1EA7u ra\u2026"
-lastmod: '2024-03-13T22:44:37.302000-06:00'
-model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 l\xE0m cho\
-  \ k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn vi\u1EBFt hoa v\xE0 ph\u1EA7n c\xF2n l\u1EA1\
-  i vi\u1EBFt th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng \u0111\u1EA7u ra\u2026"
-title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+  - 2024-03-25, dogweather, edited and tested
+  - 2024-03-25, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
+## Cái Gì & Tại Sao?
+Việc viết hoa một chuỗi thường có nghĩa là chuyển ký tự đầu tiên của chuỗi thành chữ in hoa và phần còn lại thành chữ thường. Nhưng đôi khi nó có thể chỉ đơn giản là đảm bảo ký tự đầu tiên được viết hoa trong khi để phần còn lại của chuỗi không thay đổi. Thành thực mà nói, theo ý kiến của tôi, đây là một thuật ngữ hơi mơ hồ.
 
-Việc viết hoa một chuỗi nghĩa là làm cho ký tự đầu tiên viết hoa và phần còn lại viết thường. Các lập trình viên thực hiện điều này để định dạng đầu ra cho nhất quán hoặc để đáp ứng một số tiêu chuẩn dữ liệu.
+## Làm Thế Nào:
+Ruby cung cấp [những phương thức trực tiếp để thao tác chuỗi](https://docs.ruby-lang.org/en/3.3/String.html), bao gồm cả việc viết hoa:
 
-## Cách thực hiện:
-
-Trong Ruby, bạn viết hoa một chuỗi với phương thức `.capitalize`:
-
-```Ruby
-puts "hello world".capitalize  # Đầu ra: "Hello world"
+```ruby
+# Phương thức có sẵn của Ruby
+string = "hello WORLD"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-Để viết hoa tất cả các từ trong một chuỗi, sử dụng:
+Rất tiện lợi.
 
-```Ruby
-puts "hello world".split.map(&:capitalize).join(' ')  # Đầu ra: "Hello World"
+Phương thức `.capitalize` của Ruby rất thuận tiện nhưng nó chỉ viết hoa chữ cái đầu tiên. Để kiểm soát nhiều hơn hoặc viết hoa từng từ trong một chuỗi (còn được biết đến là chữ cái đầu của từng từ viết hoa), bạn có thể muốn sử dụng phương thức `titleize` từ mở rộng ActiveSupport của Rails, hoặc tự triển khai nó:
+
+```ruby
+# Sử dụng 'titleize' của ActiveSupport trong Rails
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
 ```
 
-Lưu ý rằng `.capitalize` chỉ ảnh hưởng đến từ đầu tiên:
-
-```Ruby
-puts "hello WORLD".capitalize  # Đầu ra: "Hello world"
+```ruby
+# Một giải pháp tự làm
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
 ```
 
-## Đi sâu hơn
+Phương pháp này chia chuỗi thành một mảng các từ, viết hoa từng từ, sau đó nối chúng lại với nhau bằng một khoảng trắng.
 
-Việc viết hoa chuỗi đã trở nên cần thiết kể từ khi máy tính bắt đầu tương tác với con người. Nó đảm bảo các danh từ riêng và câu bắt đầu một cách chính xác, đáp ứng các tiêu chuẩn ngữ pháp.
-
-Trong một số ngôn ngữ như Ruby, `.capitalize` được tích hợp sẵn. Ngôn ngữ khác cần các hàm tùy chỉnh hoặc thư viện. Phương thức trong Ruby cũng chuyển phần còn lại của chuỗi về dạng thường, điều này có thể thấy trong các ví dụ trên.
-
-Một phương án thay thế trong Ruby là sử dụng phương thức `titleize` từ các phương thức `ActiveSupport::Inflector`, chủ yếu được sử dụng trong Rails:
-
-```Ruby
-require 'active_support/core_ext/string/inflector'
-puts "hello world".titleize  # Đầu ra: "Hello World"
-```
-
-Tuy nhiên, `titleize` nặng hơn và không phải là một phần của thư viện chuẩn của Ruby.
-
-Về mặt triển khai, khi bạn gọi `.capitalize`, Ruby tạo một chuỗi mới với ký tự đầu tiên được chuyển thành chữ hoa và phần còn lại thành chữ thường. Nó rất tiện lợi để đảm bảo định dạng nhất quán trong giao diện người dùng và xử lý dữ liệu.
-
-## Xem thêm
-
-- Tài liệu của Ruby về `.capitalize`: [Tài liệu Ruby - capitalize](https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize)
-- Về `ActiveSupport::Inflector` và `titleize`: [API Dock - titleize](https://apidock.com/rails/String/titleize)
-- Để tìm hiểu về các phương thức chuỗi khác của Ruby: [Tài liệu Ruby - String](https://ruby-doc.org/core-2.7.0/String.html)
+Cá nhân tôi, tôi đã áp dụng ý tưởng này nhiều hơn trong mã của mình. Tôi đã viết phương thức [`titleize` của riêng mình, mà còn xem xét đến những từ nhỏ như "a" và "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).

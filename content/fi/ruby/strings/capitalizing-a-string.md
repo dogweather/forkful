@@ -1,46 +1,45 @@
 ---
+title:                "Merkkijonon käyttäminen isolla alkukirjaimella"
+date:                  2024-03-25T17:31:57.214652-06:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-02-03, gpt-4-0125-preview, translated from English
-date: 2024-02-03 19:06:21.983477-07:00
-description: "Merkkijonon alkukirjaimen suurentaminen ohjelmoinnissa viittaa yleens\xE4\
-  \ ensimm\xE4isen merkin muuntamiseen suuraakkoseksi ja lopun pienaakkosiksi. Ohjelmoijat\u2026"
-lastmod: '2024-03-13T22:44:57.068424-06:00'
-model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen suurentaminen ohjelmoinnissa viittaa yleens\xE4\
-  \ ensimm\xE4isen merkin muuntamiseen suuraakkoseksi ja lopun pienaakkosiksi. Ohjelmoijat\u2026"
-title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+  - 2024-03-25, dogweather, edited and tested
+  - 2024-03-25, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Merkkijonon alkukirjaimen suurentaminen ohjelmoinnissa viittaa yleensä ensimmäisen merkin muuntamiseen suuraakkoseksi ja lopun pienaakkosiksi. Ohjelmoijat tekevät näin syistä kuten noudattaakseen nimeämiskonventioita, parantaakseen tulosteiden luettavuutta tai varmistaakseen tietojen johdonmukaisuuden vertailuissa ja tallennuksessa.
+## Mikä & Miksi?
+Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa yleensä merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi ja lopun pieniksi kirjaimiksi. Joskus se voi kuitenkin tarkoittaa vain varmistamista, että ensimmäinen merkki on iso kirjain, jättäen lopun merkkijonon muuttumattomaksi. Rehellisesti sanottuna, mielestäni se on hieman epämääräinen termi.
 
-## Miten:
-Ruby tarjoaa suoraviivaisia ​​metodeja merkkijonojen käsittelyyn, mukaan lukien alkukirjaimen suurentaminen. Näin voit suurentaa merkkijonon alkukirjaimen Rubylla:
+## Kuinka:
+Ruby tarjoaa [suoraviivaisia menetelmiä merkkijonon käsittelyyn](https://docs.ruby-lang.org/en/3.3/String.html), mukaan lukien alkukirjaimen suurentaminen:
 
 ```ruby
 # Rubyn sisäänrakennettu metodi
-string = "hello world"
+string = "hello WORLD"
 capitalized_string = string.capitalize
 puts capitalized_string # => "Hello world"
 ```
 
-Rubyn `.capitalize` metodi on kätevä, mutta se vaikuttaa vain ensimmäiseen kirjaimeen. Jos haluat enemmän hallintaa tai suurentaa jokaisen sanan alkukirjaimen merkkijonossa (tunnetaan nimellä nimiraja), saatat haluta käyttää `titleize` metodia Railsin ActiveSupport-laajennuksesta, tai toteuttaa sen itse:
+Erittäin kätevää.
+
+Rubyn `.capitalize` metodi on kätevä, mutta se tekee isoksi vain ensimmäisen kirjaimen. Jos haluat enemmän kontrollia tai haluat muuttaa jokaisen sanan alkukirjaimen isoksi (tunnettu nimellä nimikekirjoitus), saatat haluta käyttää Rails ActiveSupport -laajennuksen `titleize` metodia tai toteuttaa sen itse:
 
 ```ruby
-# Käyttäen ActiveSupportin 'titleize' Railsissa
+# Käyttäen ActiveSupportin 'titleize' metodia Railsissa
 require 'active_support/core_ext/string/inflections'
 string = "hello world"
 puts string.titleize # => "Hello World"
 ```
 
-Jos et käytä Railsia tai suosit puhdasta Ruby-ratkaisua, tässä on miten saatat suurentaa jokaisen sanan alkukirjaimen merkkijonossa:
-
 ```ruby
+# Kotitekoinen ratkaisu
 string = "hello world"
 capitalized_each_word = string.split.map(&:capitalize).join(' ')
 puts capitalized_each_word # => "Hello World"
 ```
 
-Tämä menetelmä jakaa merkkijonon sanalistan, suurentaa jokaisen sanan alkukirjaimen, ja liittää ne sitten takaisin yhteen välilyönnillä.
+Tämä menetelmä jakaa merkkijonon sanojen taulukoksi, suurentaa jokaisen sanan alkukirjaimen ja yhdistää ne sitten takaisin yhteen välilyönnin kera.
+
+Henkilökohtaisesti vien tämän idean paljon pidemmälle koodissani. Kirjoitin oman [`titleize` metodini, joka ottaa huomioon pienet sanat kuten "a" ja "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).

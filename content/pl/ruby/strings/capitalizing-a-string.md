@@ -1,48 +1,45 @@
 ---
+title:                "Zamiana liter w ciągu na wielkie"
+date:                  2024-03-25T17:32:29.927702-06:00
+model:                 gpt-4-0125-preview
 changelog:
-- 2024-02-03, gpt-4-0125-preview, translated from English
-date: 2024-02-03 19:06:18.103640-07:00
-description: "Kapitalizacja ci\u0105gu znak\xF3w w programowaniu cz\u0119sto odnosi\
-  \ si\u0119 do zamiany pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, a\
-  \ reszt\u0119 na ma\u0142e litery. Programi\u015Bci\u2026"
-lastmod: '2024-03-13T22:44:35.914107-06:00'
-model: gpt-4-0125-preview
-summary: "Kapitalizacja ci\u0105gu znak\xF3w w programowaniu cz\u0119sto odnosi si\u0119\
-  \ do zamiany pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119\
-  \ na ma\u0142e litery. Programi\u015Bci\u2026"
-title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+  - 2024-03-25, dogweather, edited and tested
+  - 2024-03-25, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Kapitalizacja ciągu znaków w programowaniu często odnosi się do zamiany pierwszego znaku ciągu na wielką literę, a resztę na małe litery. Programiści robią to z powodów takich jak przestrzeganie konwencji nazewnictwa, poprawa czytelności wyników lub zapewnienie spójności danych dla porównań i przechowywania.
+Zazwyczaj wielką literą piszemy pierwszy znak ciągu, a resztę zmniejszamy. Ale czasem może to oznaczać po prostu upewnienie się, że pierwsza litera jest wielka, pozostawiając resztę ciągu bez zmian. Szczerze mówiąc, moim zdaniem, jest to termin dość niejasny.
 
 ## Jak to zrobić:
-Ruby oferuje proste metody manipulacji ciągami znaków, w tym kapitalizację. Oto jak można zamienić ciąg na kapitałki w Ruby:
+Ruby oferuje [proste metody manipulacji ciągami](https://docs.ruby-lang.org/en/3.3/String.html), w tym kapitalizację:
 
 ```ruby
 # Wbudowana metoda Ruby
-string = "hello world"
+string = "hello WORLD"
 capitalized_string = string.capitalize
 puts capitalized_string # => "Hello world"
 ```
 
-Metoda `.capitalize` w Ruby jest wygodna, ale wpływa tylko na pierwszą literę. Dla większej kontroli lub aby zamienić każde słowo w ciągu na kapitałki (znane jako styl tytułowy), możesz chcieć użyć metody `titleize` z rozszerzenia Rails ActiveSupport, lub zaimplementować ją samodzielnie:
+Bardzo wygodne.
+
+Metoda `.capitalize` Ruby jest wygodna, ale zmienia na wielką literę tylko pierwszą literę. Dla większej kontroli lub aby kapitalizować każde słowo w ciągu (znane jako styl tytułowy), możesz chcieć użyć metody `titleize` z rozszerzenia ActiveSupport Rails, lub zaimplementować ją samodzielnie:
 
 ```ruby
-# Używanie 'titleize' z ActiveSupport w Rails
+# Użycie 'titleize' z ActiveSupport w Rails
 require 'active_support/core_ext/string/inflections'
 string = "hello world"
 puts string.titleize # => "Hello World"
 ```
 
-Jeśli nie używasz Rails lub preferujesz czyste rozwiązanie w Ruby, oto jak możesz zamienić każde słowo w ciągu na kapitałki:
-
 ```ruby
+# Rozwiązanie własne
 string = "hello world"
 capitalized_each_word = string.split.map(&:capitalize).join(' ')
 puts capitalized_each_word # => "Hello World"
 ```
 
-Ta metoda dzieli ciąg na tablicę słów, zamienia każde z nich na kapitałki, a następnie łączy je z powrotem razem z przestrzenią.
+Ta metoda dzieli ciąg na tablicę słów, kapitalizuje każde z nich, a następnie łączy je z powrotem razem z odstępem.
+
+Osobiście w swoim kodzie posuwam tę ideę dużo dalej. Napisałem własną metodę [`titleize`, która uwzględnia małe słówka takie jak "a" i "the"](https://github.com/public-law/law_string/blob/master/lib/law_string.rb).
