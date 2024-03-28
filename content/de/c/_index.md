@@ -1,7 +1,8 @@
 ---
 title: 'C: Das open-source coding-Cookbook'
+type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-17 21:59:32.626995-06:00
+lastmod: 2024-03-27 20:05:52.058269-06:00
 description: 'C: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
   Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in der…'
 summary: 'C: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
