@@ -1,2 +1,3 @@
 ---
+type: page_chapter
 ---
