@@ -1,8 +1,9 @@
 ---
 title: 'Elm: Tutoriais de Programação Open Source'
+linkTitle: Elm
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 20:06:11.647991-06:00
+lastmod: 2024-03-27 21:26:11.082304-06:00
 description: 'Elm: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas
   de Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…'
 summary: 'Elm: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas
