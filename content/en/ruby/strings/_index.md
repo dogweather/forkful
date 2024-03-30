@@ -1,5 +1,6 @@
 ---
 type: page_chapter
+date: 2024-03-30
 ---
 
 In my opinion, Ruby's strings are pretty much the height of working with text. 99% of what I want to do with strings turns about to be a built-in method.
