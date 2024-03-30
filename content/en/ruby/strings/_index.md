@@ -19,4 +19,4 @@ puts "Hello, Ruby World!"
 ```
 
 Very few programming languages enable a fluent working style like that.    
-— [Robb](https://forkful.com/en/about)
+— [Robb](https://forkful.ai/en/about)
