@@ -1,6 +1,6 @@
 what-and-why:
   using-a-debugger:
-    author: Robert
+    github-author: dogweather
     text: |
       Debugger helfen Ihnen, den "Fluss" Ihres Programms zu verstehen;
       sie stellen sicher, dass seine Logik wie erwartet abläuft. Zum Beispiel,

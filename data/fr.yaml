@@ -1,6 +1,6 @@
 what-and-why:
   using-a-debugger:
-    author: Robert
+    github-author: dogweather
     text: |
       Les débogueurs vous aident à comprendre le "flux" de votre programme;
       en s'assurant que sa logique se déroule comme prévu. Par exemple,
