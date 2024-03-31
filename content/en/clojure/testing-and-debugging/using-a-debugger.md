@@ -1,20 +1,16 @@
 ---
-date: 2024-01-25 20:50:12.035385-07:00
-description: "Using a debugger means you're equipping yourself with a magnifying glass\
-  \ to scrutinize your code. Programmers do this to squash bugs, understand flow,\
-  \ and\u2026"
-lastmod: '2024-03-13T22:44:59.749735-06:00'
-model: gpt-4-1106-preview
-summary: "Using a debugger means you're equipping yourself with a magnifying glass\
-  \ to scrutinize your code. Programmers do this to squash bugs, understand flow,\
-  \ and\u2026"
-title: Using a debugger
+title:   Using a debugger
+date:    2024-01-25 20:50:12.035385-07:00
+lastmod: 2024-03-31
+model:   gpt-4-1106-preview
+summary: Debuggers help understand your program's "flow"; making sure its logic plays out as expected.
+description: Debuggers help understand your program's "flow"; making sure its logic plays out as expected.
+What and Why: |
+  Debuggers help you understand your program's "flow"; making sure its logic plays out as expected. For example, you can see the values of your variables at any point in the code. 
+
+  I find them useful for the most difficult bugs. IMO, their helpfulness really depends on the particular language, your personal working style, the quality of the debugging tool itself. —Robert
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Using a debugger means you're equipping yourself with a magnifying glass to scrutinize your code. Programmers do this to squash bugs, understand flow, and make sure their logic plays out as expected.
 
 ## How to:
 Clojure leans on the Java Virtual Machine (JVM), so a lot of debugging happens with Java tools. One such tool is `CIDER`, a powerhouse package for Clojure development in Emacs, which has solid debugging capabilities. Let's dive in:

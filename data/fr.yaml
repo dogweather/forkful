@@ -1,0 +1,13 @@
+what-and-why:
+  using-a-debugger:
+    author: Robert
+    text: |
+      Les débogueurs vous aident à comprendre le "flux" de votre programme;
+      en s'assurant que sa logique se déroule comme prévu. Par exemple,
+      vous pouvez voir les valeurs de vos variables à n'importe quel point du
+      code.
+
+      Je les trouve utiles pour les bugs les plus difficiles. À mon avis,
+      leur utilité dépend vraiment du langage particulier,
+      de votre style de travail personnel, de la qualité de l'outil de débogage
+      lui-même.
