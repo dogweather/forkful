@@ -10,11 +10,6 @@ summary: "Using a debugger means employing a tool to test and fix bugs in your c
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Using a debugger means employing a tool to test and fix bugs in your code. Programmers do it to understand the flow of their applications, pinpoint the sources of errors, and verify logic under execution.
-
 ## How to:
 Let's say you've got a simple Java program that's acting up, and you can't figure out why. Here’s how you’d fire up a debugger using Eclipse, one of the popular IDEs for Java development:
 

@@ -9,14 +9,7 @@ summary: "Debugging in Google Apps Script (GAS) involves the process of identify
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-
-Debugging in Google Apps Script (GAS) involves the process of identifying and removing errors from scripts intended to automate Google Apps or build web applications. Programmers debug to ensure their code executes as expected, enhancing reliability and performance in applications.
-
 ## How to:
-
 Google Apps Script provides a built-in debugger within the Apps Script Editor to help troubleshoot scripts. Here's how to initiate and use the debugger:
 
 1. **Open your script in the Apps Script Editor.**
@@ -50,7 +43,6 @@ While debugging, the Apps Script Editor allows you to:
 - **Inspect the call stack** to trace function calls.
 
 ## Deep Dive
-
 Debugging in Google Apps Script, like in any other programming environment, is essential for creating error-free applications. Introduced early in the development of GAS, the built-in debugger offers fundamental capabilities to inspect and fix code incrementally. While it provides basic debugging features akin to those found in more mature environments like Visual Studio Code or IntelliJ, it may fall short for complex debugging scenarios. For example, its capabilities to inspect asynchronous call backs or manage heavy script executions could be limiting.
 
 For complex debugging needs, developers might resort to alternative methods such as extensive logging (using `Logger.log()`) or even deploying as a web app to inspect behavior in a real-world scenario. However, the simplicity and integration of GAS's debugger within the Apps Script Editor make it an invaluable first step for troubleshooting and understanding script behavior. Notably, with Google's continuous updates and enhancements to Apps Script, the debugging experience is steadily improving, offering more sophisticated tools and options over time. This evolution reflects Google's commitment to making Apps Script a more powerful and accessible platform for developers from diverse backgrounds.

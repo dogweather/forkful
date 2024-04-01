@@ -9,13 +9,7 @@ summary: "A debugger is a tool that lets you examine and change the inner workin
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-A debugger is a tool that lets you examine and change the inner workings of your code while it runs. Programmers use it to squash bugs by stepping through their code, inspecting variables, and understanding the flow of their program.
-
 ## How to:
-
 To get cracking with a debugger in TypeScript, all you need is a supported IDE (like Visual Studio Code) and a `launch.json` configuration. Here's a quick example for a Node.js application:
 
 ```TypeScript
@@ -50,7 +44,6 @@ To debug this, create a `launch.json` file under the `.vscode` folder:
 Then, set a breakpoint in your `greet` function by clicking on the left-hand side of the line number in your IDE. Hit F5 to start debugging, and watch your app pause at the breakpoint. You can now hover over variables, watch expressions, and step through your code with ease.
 
 ## Deep Dive
-
 Back in the day before integrated development environments (IDEs) got slick, debugging was often done with print statements (a.k.a `console.log` debugging). It worked, kind of, but was like trying to find a needle in a haystack blindfolded.
 
 Modern debuggers are like a Swiss Army knife for troubleshooting. With the evolution of TypeScript and Node.js, there are various debuggers available, from the built-in Node.js inspector to browser dev tools for client-side debugging.
@@ -58,7 +51,6 @@ Modern debuggers are like a Swiss Army knife for troubleshooting. With the evolu
 The Node.js inspector works by attaching to your running application; it communicates over the Chrome DevTools Protocol, turning your Chrome browser into a mighty debugging console. This integration allows for a visually interactive and detailed debugging session, compared to traditional command-line debugging practices.
 
 ## See Also
-
 For a little extra reading and some pro-tips, check out:
 
 - [TypeScript Debugging in Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-debugging)

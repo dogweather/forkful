@@ -9,11 +9,6 @@ summary: "Using a debugger is all about squashing bugs\u2014the nasty, time-suck
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Using a debugger is all about squashing bugs—the nasty, time-sucking errors in your code. Programmers debug because they want to find and fix issues efficiently, understand code flow, and get a clearer picture of what their code is really doing.
-
 ## How to:
 Fish doesn't have a built-in debugger like some other shells, but you can use external tools like `gdb` for debugging compiled programs or `fish -d` for running fish with debug output at different levels. Let's roll with `fish -d`:
 

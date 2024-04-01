@@ -9,11 +9,6 @@ summary: "Using a debugger means tapping into specialized tools to test and diag
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Using a debugger means tapping into specialized tools to test and diagnose code. Programmers do it to squash bugs, understand code flow, and ensure their code behaves as expected—it's like having a microscope for your code's brain.
-
 ## How to:
 Imagine you've got a tiny program that's not acting right:
 

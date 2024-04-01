@@ -9,11 +9,6 @@ summary: "Using a debugger means tapping into specialized tools to test and insp
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Using a debugger means tapping into specialized tools to test and inspect your code as it runs. It's a big deal because it lets you see what's going on under the hood, find bugs, and understand your code's behavior better.
-
 ## How to:
 To use the debugger in Xcode (the IDE for Swift), you can set breakpoints, inspect variables, and watch expressions. Here's an example:
 

@@ -11,11 +11,6 @@ summary: "Using a debugger means tapping into specialized tools that let you pee
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Using a debugger means tapping into specialized tools that let you peek under the hood of your code, watching it run step by step. Programmers do this to squash bugs, optimize performance, and understand code behavior.
-
 ## How to:
 Here's a bit of JavaScript code that's not behaving as expected:
 

@@ -9,11 +9,6 @@ summary: "Debugging in Elm involves identifying and removing errors from your co
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Debugging in Elm involves identifying and removing errors from your code. Programmers do it to ensure their applications work correctly and to improve code quality. Elm's strong type system catches many issues at compile-time, but runtime debugging tools are essential for ironing out logic errors and unexpected behaviors.
-
 ## How to:
 Elm doesn't have a built-in debugger in the traditional sense that, say, JavaScript does with browser dev tools. However, the Elm community has built tools to fill this gap. Here's how you can use `elm-debug-transformer` to debug your Elm app:
 

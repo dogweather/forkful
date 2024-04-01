@@ -9,14 +9,7 @@ summary: "Using a debugger in Visual Basic for Applications (VBA) involves runni
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-
-Using a debugger in Visual Basic for Applications (VBA) involves running your code step-by-step to inspect its execution flow and variable states. This process is crucial for identifying and fixing errors in your code, ultimately ensuring it performs as expected.
-
 ## How to:
-
 In VBA, the debugger is integral to the Visual Basic Editor (VBE). Here's how you can leverage it:
 
 1. **Setting Breakpoints**: Click in the left margin next to the code line you're interested in, or place your cursor on the line and press F9. This tells VBA to pause execution when it reaches this point.
@@ -57,7 +50,6 @@ In VBA, the debugger is integral to the Visual Basic Editor (VBE). Here's how yo
     Here, we've manually queried the `counter` variable after each iteration.
 
 ## Deep Dive:
-
 The debugger in VBA, while robust, is part of a broader tradition of debugging tools in programming languages, evolving significantly from its early predecessors. Introduced with the first versions of VBA, it aimed to provide developers with a simple yet powerful set of tools for code inspection and correction. Over time, enhancements have included conditional breakpoints, improved watch capabilities, and integration with the Excel interface for more intuitive data inspection.
 
 However, compared to modern Integrated Development Environments (IDEs) like Visual Studio or Eclipse, VBA's debugging tools may seem basic. These modern IDEs offer more sophisticated features such as real-time variable inspection, advanced breakpoints, and integrated unit testing frameworks. While these alternatives provide more comprehensive debugging experiences, the simplicity and directness of VBA's debugger remain well-suited to the specific context of automating and scripting within Microsoft Office applications.

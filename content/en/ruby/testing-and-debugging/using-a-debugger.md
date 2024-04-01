@@ -10,14 +10,7 @@ summary: "Using a debugger in Ruby gives programmers a superpower to pause their
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-
-Using a debugger in Ruby gives programmers a superpower to pause their code, inspect variables, and step through their code line by line. Folks do it to squash bugs, understand code flow, and to see exactly what their written spells (code) are doing when the magic happens—or doesn't.
-
 ## How to:
-
 Ruby comes with a built-in debugger called `byebug`. First, include `byebug` in your Gemfile and run `bundle install`. Then, plop `byebug` right where you want your program to take a breather.
 
 ```Ruby
@@ -57,7 +50,6 @@ Sample output would give you a prompt looking like this:
 ```
 
 ## Deep Dive:
-
 Way back before `byebug`, Rubyists used `debugger` and `pry`. The latter, `pry`, is more than a debugger; it's a powerful REPL that can also be used for debugging with the `binding.pry` breakpoint.
 
 Alternatives to Ruby's `byebug` include `pry-byebug`, which combines `pry` with `byebug` functionality, and `ruby-debug`, which is an older gem not actively maintained.
@@ -65,7 +57,6 @@ Alternatives to Ruby's `byebug` include `pry-byebug`, which combines `pry` with 
 When you invoke `byebug`, the debugger suspends your code execution and gives you a peek into the runtime. You can see and change variables, jump to different points in the code, and even run some Ruby code line by line. It's kinda like having time-travel abilities for your Ruby code.
 
 ## See Also:
-
 - Byebug GitHub Repository: [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - Pry Documentation: [https://github.com/pry/pry](https://github.com/pry/pry)
 - A Guide to Debugging Rails Apps: [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

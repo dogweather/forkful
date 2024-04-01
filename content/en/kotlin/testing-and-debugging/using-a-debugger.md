@@ -9,11 +9,6 @@ summary: "Diving into a debugger is all about stepping through your code, watchi
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Diving into a debugger is all about stepping through your code, watching the gears turn and catching those pesky bugs red-handed. Programmers use debuggers because they're the detective tools that help us figure out where things go wrong without pulling out our hair.
-
 ## How to:
 Here's a little taste of debugging in Kotlin with IntelliJ IDEA - the Sherlock Holmes of IDEs:
 
