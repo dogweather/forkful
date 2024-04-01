@@ -9,7 +9,7 @@ what-and-why:
       you can see the values of your variables at any point in 
       the code. 
 
-      I find them useful for the most difficult bugs. IMO, 
+      I find them useful only for the most difficult bugs. IMO, 
       their helpfulness really depends on the particular language, 
-      your personal working style, the quality of the debugging
+      your personal working style, and the quality of the debugging
       tool itself.
