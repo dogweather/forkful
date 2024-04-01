@@ -11,11 +11,6 @@ summary: "Duiken in een debugger gaat helemaal over het doorlopen van je code, h
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Duiken in een debugger gaat helemaal over het doorlopen van je code, het bekijken van de draaiende radertjes en het op heterdaad betrappen van die vervelende bugs. Programmeurs gebruiken debuggers omdat het de detectivegereedschappen zijn die ons helpen uit te vogelen waar dingen misgaan zonder ons haar uit te trekken.
-
 ## Hoe te:
 Hier is een voorproefje van het debuggen in Kotlin met IntelliJ IDEA - de Sherlock Holmes van IDE's:
 

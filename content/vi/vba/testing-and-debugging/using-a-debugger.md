@@ -15,14 +15,7 @@ summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Visual Basi
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-
-Sử dụng một trình gỡ lỗi trong Visual Basic for Applications (VBA) bao gồm việc chạy mã của bạn từng bước một để kiểm tra luồng thực thi và trạng thái của các biến. Quá trình này rất quan trọng để xác định và sửa chữa lỗi trong mã của bạn, cuối cùng đảm bảo nó hoạt động như mong đợi.
-
 ## Cách thực hiện:
-
 Trong VBA, trình gỡ lỗi là một phần không thể thiếu của Visual Basic Editor (VBE). Dưới đây là cách bạn có thể tận dụng nó:
 
 1. **Đặt Điểm Dừng (Breakpoints)**: Nhấp vào lề bên trái cạnh dòng mã bạn quan tâm, hoặc đặt con trỏ của bạn trên dòng đó và nhấn F9. Điều này báo cho VBA biết để tạm dừng thực thi khi nó đến điểm này.
@@ -63,7 +56,6 @@ Trong VBA, trình gỡ lỗi là một phần không thể thiếu của Visual 
     Ở đây, chúng tôi đã thủ công truy vấn biến `counter` sau mỗi lần lặp.
 
 ## Sâu hơn nữa:
-
 Trình gỡ lỗi trong VBA, mặc dù mạnh mẽ, là một phần của truyền thống rộng lớn hơn về các công cụ gỡ lỗi trong các ngôn ngữ lập trình, phát triển đáng kể từ những người tiền nhiệm đầu tiên của nó. Được giới thiệu với các phiên bản đầu tiên của VBA, nó nhằm mục đích cung cấp cho các nhà phát triển một bộ công cụ đơn giản nhưng mạnh mẽ để kiểm tra và sửa chữa mã. Theo thời gian, các cải tiến đã bao gồm các điểm dừng có điều kiện, khả năng giám sát được cải thiện và tích hợp với giao diện Excel cho việc kiểm tra dữ liệu trực quan hơn.
 
 Tuy nhiên, so với các Môi trường Phát triển Tích hợp (IDE) hiện đại như Visual Studio hay Eclipse, các công cụ gỡ lỗi của VBA có thể cảm thấy cơ bản. Những IDE hiện đại này cung cấp các tính năng tinh vi hơn như kiểm tra biến thời gian thực, điểm dừng nâng cao và khung thử nghiệm đơn vị tích hợp. Mặc dù những lựa chọn thay thế này cung cấp trải nghiệm gỡ lỗi toàn diện hơn, nhưng sự đơn giản và trực tiếp của trình gỡ lỗi VBA vẫn phù hợp với bối cảnh cụ thể của tự động hóa và kịch bản trong các ứng dụng Microsoft Office.

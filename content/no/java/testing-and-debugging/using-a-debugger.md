@@ -11,11 +11,6 @@ summary: "\xC5 bruke en debugger betyr \xE5 benytte et verkt\xF8y for \xE5 teste
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en debugger betyr å benytte et verktøy for å teste og fikse feil i koden din. Programmerere gjør dette for å forstå flyten i applikasjonene sine, identifisere kildene til feil, og verifisere logikken under utførelse.
-
 ## Hvordan:
 La oss si at du har et enkelt Java-program som oppfører seg merkelig, og du kan ikke finne ut hvorfor. Her er hvordan du ville fyrt opp en debugger ved å bruke Eclipse, en av de populære IDE-ene for Java-utvikling:
 

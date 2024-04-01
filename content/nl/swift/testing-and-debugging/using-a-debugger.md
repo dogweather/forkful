@@ -11,11 +11,6 @@ summary: "Een debugger gebruiken betekent het inzetten van gespecialiseerde tool
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger gebruiken betekent het inzetten van gespecialiseerde tools om je code te testen en te inspecteren terwijl deze draait. Het is een belangrijke zaak omdat het je laat zien wat er onder de motorkap gebeurt, bugs vinden, en je codegedrag beter begrijpen.
-
 ## Hoe te:
 Om de debugger in Xcode (de IDE voor Swift) te gebruiken, kun je breakpoints instellen, variabelen inspecteren en expressies volgen. Hier is een voorbeeld:
 

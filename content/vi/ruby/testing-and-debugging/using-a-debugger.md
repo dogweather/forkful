@@ -15,14 +15,7 @@ summary: "S\u1EED d\u1EE5ng debugger trong Ruby mang l\u1EA1i cho l\u1EADp tr\xE
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-
-Sử dụng debugger trong Ruby mang lại cho lập trình viên một siêu năng lực để tạm dừng mã của họ, kiểm tra các biến và bước qua mã của họ từng dòng một. Mọi người làm điều này để xóa bỏ lỗi, hiểu luồng mã và để xem chính xác điều gì đang xảy ra với mã (phép thuật) mà họ đã viết khi ma thuật được thực hiện - hoặc không.
-
 ## Cách thực hiện:
-
 Ruby đi kèm với một debugger tích hợp sẵn có tên là `byebug`. Đầu tiên, bao gồm `byebug` trong Gemfile của bạn và chạy `bundle install`. Sau đó, thả `byebug` ngay tại chỗ bạn muốn chương trình của mình tạm dừng.
 
 ```Ruby
@@ -62,7 +55,6 @@ var local
 ```
 
 ## Sâu hơn:
-
 Trước `byebug`, người dùng Ruby đã sử dụng `debugger` và `pry`. Cái sau, `pry`, hơn một debugger; nó là một REPL mạnh mẽ cũng có thể được sử dụng để debug với điểm ngắt `binding.pry`.
 
 Các phương án thay thế cho `byebug` của Ruby bao gồm `pry-byebug`, kết hợp chức năng `pry` với `byebug`, và `ruby-debug`, là một gem cũ không được bảo trì tích cực.
@@ -70,7 +62,6 @@ Các phương án thay thế cho `byebug` của Ruby bao gồm `pry-byebug`, k�
 Khi bạn kích hoạt `byebug`, debugger tạm dừng việc thực thi mã của bạn và cho phép bạn nhìn qua quá trình thực thi. Bạn có thể thấy và thay đổi các biến, nhảy đến các điểm khác nhau trong mã, và thậm chí chạy một số dòng mã Ruby từng dòng một. Nó giống như có khả năng du hành thời gian với mã Ruby của bạn.
 
 ## Xem thêm:
-
 - Kho GitHub của Byebug: [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - Tài liệu về Pry: [https://github.com/pry/pry](https://github.com/pry/pry)
 - Hướng dẫn Debug các Ứng dụng Rails: [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

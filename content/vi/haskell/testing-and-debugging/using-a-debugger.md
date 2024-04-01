@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 r\u1ED1i c\xF3 ngh\u0129a 
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái Gì và Tại Sao?
-Sử dụng một trình gỡ rối có nghĩa là đi sâu vào mã của bạn với những công cụ được thiết kế để kiểm tra, tạm dừng và thao tác một chương trình trong quá trình thực thi. Lập trình viên làm điều này để truy tìm lỗi, hiểu luồng chương trình và đảm bảo mã của họ đang thực hiện chính xác những gì họ mong đợi.
-
 ## Làm Thế Nào:
 Hãy cùng khám phá GHCi, môi trường tương tác của Haskell có thể hoạt động như một trình gỡ rối cơ bản. Bạn khởi động nó với mã Haskell của mình và bắt đầu tìm hiểu xung quanh. Dưới đây là một ví dụ:
 

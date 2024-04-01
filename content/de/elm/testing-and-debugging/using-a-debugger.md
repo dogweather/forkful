@@ -9,11 +9,6 @@ summary: "Das Debuggen in Elm beinhaltet das Identifizieren und Entfernen von Fe
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Das Debuggen in Elm beinhaltet das Identifizieren und Entfernen von Fehlern aus Ihrem Code. Programmierer machen das, um sicherzustellen, dass ihre Anwendungen korrekt funktionieren und um die Codequalität zu verbessern. Elm's starkes Typsystem fängt viele Probleme zur Compile-Zeit auf, aber Runtime-Debugging-Tools sind wesentlich, um logische Fehler und unerwartete Verhaltensweisen auszubügeln.
-
 ## Wie:
 Elm hat keinen eingebauten Debugger im traditionellen Sinn, wie es beispielsweise JavaScript mit Browser-Entwicklertools tut. Jedoch hat die Elm-Community Tools entwickelt, um diese Lücke zu schließen. Hier ist, wie Sie `elm-debug-transformer` nutzen können, um Ihre Elm-App zu debuggen:
 

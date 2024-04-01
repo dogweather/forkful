@@ -11,11 +11,6 @@ summary: "\xC5 bruke en feils\xF8ker betyr \xE5 ta i bruk spesialiserte verkt\xF
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en feilsøker betyr å ta i bruk spesialiserte verktøy for å teste og diagnostisere kode. Programutviklere gjør det for å knuse feil, forstå kodeflyten og sikre at koden oppfører seg som forventet – det er som å ha et mikroskop for hjernen til koden din.
-
 ## Hvordan:
 Forestil deg at du har et lite program som ikke oppfører seg riktig:
 

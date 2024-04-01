@@ -11,11 +11,6 @@ summary: "Usar um depurador significa acessar ferramentas especializadas para te
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Por Quê?
-Usar um depurador significa acessar ferramentas especializadas para testar e diagnosticar código. Programadores fazem isso para eliminar bugs, entender o fluxo do código e garantir que seu código se comporta conforme esperado — é como ter um microscópio para o cérebro do seu código.
-
 ## Como fazer:
 Imagine que você tem um programinha que não está agindo corretamente:
 

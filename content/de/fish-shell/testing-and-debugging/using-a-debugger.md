@@ -10,11 +10,6 @@ summary: "Die Verwendung eines Debuggers dreht sich alles um das Zerquetschen vo
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Die Verwendung eines Debuggers dreht sich alles um das Zerquetschen von Bugs – die gemeinen, zeitfressenden Fehler in Ihrem Code. Programmierer debuggen, weil sie Probleme effizient finden und beheben wollen, den Code-Fluss verstehen und ein klareres Bild davon erhalten möchten, was ihr Code wirklich tut.
-
 ## Wie:
 Fish hat keinen eingebauten Debugger wie einige andere Shells, aber Sie können externe Tools wie `gdb` für das Debuggen von kompilierten Programmen oder `fish -d` zum Ausführen von Fish mit Debug-Ausgabe auf unterschiedlichen Ebenen nutzen. Lassen Sie uns mit `fish -d` loslegen:
 

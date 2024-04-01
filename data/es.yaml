@@ -1,0 +1,13 @@
+what-and-why:
+  using-a-debugger:
+    github-author: dogweather
+    text: |
+      Los depuradores te ayudan a entender el "flujo" de tu programa;
+      asegurando que su lógica se desarrolle como se espera. Por ejemplo,
+      puedes ver los valores de tus variables en cualquier punto del
+      código.
+
+      Los encuentro útiles para los errores más difíciles. En mi opinión,
+      su utilidad realmente depende del lenguaje específico,
+      tu estilo de trabajo personal, la calidad de la herramienta de depuración
+      en sí.

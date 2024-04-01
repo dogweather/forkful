@@ -10,11 +10,6 @@ summary: "Utilizzare un debugger significa sfruttare strumenti specializzati che
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cos'è e Perché?
-Utilizzare un debugger significa sfruttare strumenti specializzati che consentono di guardare sotto il cofano del proprio codice, osservandolo passo dopo passo. I programmatori fanno ciò per schiacciare bug, ottimizzare le prestazioni e comprendere il comportamento del codice.
-
 ## Come fare:
 Ecco un po' di codice JavaScript che non si comporta come previsto:
 

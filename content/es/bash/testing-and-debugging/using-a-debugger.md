@@ -11,11 +11,6 @@ summary: "Usar un depurador en Bash significa aprovechar herramientas para proba
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## ¿Qué y por qué?
-Usar un depurador en Bash significa aprovechar herramientas para probar y encontrar problemas en tus scripts, como atrapar errores que hacen que tu código se bloquee o se comporte de manera incorrecta de forma sigilosa. Los programadores lo hacen porque es mucho más inteligente capturar errores antes de que causen estragos en un entorno en vivo.
-
 ## Cómo hacerlo:
 Bash no viene con un depurador incorporado como algunos otros lenguajes, pero puedes usar comandos integrados como `set -x` para rastrear lo que está sucediendo. O, para una mejora, está `bashdb`, un depurador apropiado para avanzar paso a paso por tu código. Aquí hay un vistazo:
 

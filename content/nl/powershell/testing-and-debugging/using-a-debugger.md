@@ -11,11 +11,6 @@ summary: "Het gebruiken van een debugger betekent het instellen van breakpoints,
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Het gebruiken van een debugger betekent het instellen van breakpoints, stap voor stap door je code heen lopen, variabelen bekijken, en de staat van je programma inspecteren terwijl het draait. Het is een game-changer voor programmeurs omdat het bugs exact lokaliseert en ons helpt te begrijpen wat onze code daadwerkelijk doet.
-
 ## Hoe te:
 In PowerShell kun je scripts debuggen met de ingebouwde PowerShell Integrated Scripting Environment (ISE) of Visual Studio Code (VS Code) met de PowerShell-extensie. Hier is hoe je breakpoints in beide kunt gebruiken:
 

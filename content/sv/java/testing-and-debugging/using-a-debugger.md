@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en debugger inneb\xE4r att man anv\xE4nder ett verktyg 
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en debugger innebär att man använder ett verktyg för att testa och rätta till buggar i koden. Programmerare gör det för att förstå flödet i sina applikationer, identifiera felkällor och verifiera logik under körning.
-
 ## Hur man gör:
 Låt säga att du har ett enkelt Java-program som strular, och du kan inte lista ut varför. Här är hur du skulle starta en debugger med Eclipse, en av de populära IDE:erna för Java-utveckling:
 

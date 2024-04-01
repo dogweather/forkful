@@ -10,11 +10,6 @@ summary: "Usar un depurador significa aprovechar herramientas especializadas que
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## Qué y Por Qué
-Usar un depurador significa aprovechar herramientas especializadas que te permiten echar un vistazo bajo el capó de tu código, observándolo ejecutarse paso a paso. Los programadores hacen esto para aplastar errores, optimizar el rendimiento y entender el comportamiento del código.
-
 ## Cómo hacerlo:
 Aquí tienes un fragmento de código en JavaScript que no se está comportando como se esperaba:
 

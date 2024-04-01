@@ -11,11 +11,6 @@ summary: "Ein Debugger wird eingesetzt, um spezialisierte Werkzeuge zu nutzen, m
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Ein Debugger wird eingesetzt, um spezialisierte Werkzeuge zu nutzen, mit denen Ihr Code während der Ausführung getestet und inspiziert werden kann. Das ist eine große Sache, denn es ermöglicht Ihnen, unter die Haube zu schauen, Fehler zu finden und das Verhalten Ihres Codes besser zu verstehen.
-
 ## Wie man:
 Um den Debugger in Xcode (der IDE für Swift) zu verwenden, können Sie Haltepunkte setzen, Variablen inspizieren und Ausdrücke überwachen. Hier ist ein Beispiel:
 

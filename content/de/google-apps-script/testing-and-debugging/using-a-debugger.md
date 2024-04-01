@@ -11,14 +11,7 @@ summary: "Das Debuggen in Google Apps Script (GAS) umfasst den Prozess der Ident
 title: Einen Debugger verwenden
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-
-Das Debuggen in Google Apps Script (GAS) umfasst den Prozess der Identifikation und Entfernung von Fehlern in Skripten, die dazu bestimmt sind, Google Apps zu automatisieren oder Webanwendungen zu erstellen. Programmierer debuggen, um sicherzustellen, dass ihr Code wie erwartet ausgeführt wird, was Zuverlässigkeit und Leistungsfähigkeit in Anwendungen verbessert.
-
 ## Wie:
-
 Google Apps Script stellt einen integrierten Debugger innerhalb des Apps Script-Editors bereit, um beim Troubleshooting von Skripten zu helfen. Hier ist, wie Sie den Debugger initiieren und verwenden:
 
 1. **Öffnen Sie Ihr Skript im Apps Script-Editor.**
@@ -52,7 +45,6 @@ Während des Debuggens ermöglicht Ihnen der Apps Script-Editor:
 - **Den Aufrufstapel zu inspizieren**, um Funktionsaufrufe nachzuverfolgen.
 
 ## Vertiefung
-
 Wie in jeder anderen Programmierumgebung ist das Debuggen in Google Apps Script unerlässlich für die Erstellung fehlerfreier Anwendungen. Der integrierte Debugger, der früh in der Entwicklung von GAS eingeführt wurde, bietet grundlegende Fähigkeiten, um Code schrittweise zu inspizieren und zu korrigieren. Obwohl er grundlegende Debugging-Funktionen bietet, die jenen in ausgereifteren Umgebungen wie Visual Studio Code oder IntelliJ ähnlich sind, könnte er für komplexe Debugging-Szenarien zu kurz greifen. Zum Beispiel könnten seine Fähigkeiten, asynchrone Callbacks zu inspizieren oder schwere Skriptausführungen zu verwalten, begrenzt sein.
 
 Für komplexe Debugging-Bedürfnisse könnten Entwickler auf alternative Methoden wie umfangreiches Logging (mit `Logger.log()`) oder sogar das Deployment als Web-App zurückgreifen, um das Verhalten in einem realen Szenario zu inspizieren. Dennoch macht die Einfachheit und Integration des GAS-Debuggers im Apps Script-Editor ihn zu einem unschätzbaren ersten Schritt für die Fehlerbehebung und das Verständnis des Skriptverhaltens. Insbesondere mit den kontinuierlichen Updates und Verbesserungen von Google an Apps Script verbessert sich die Debugging-Erfahrung stetig und bietet im Laufe der Zeit ausgefeiltere Tools und Optionen. Diese Entwicklung spiegelt Googles Engagement wider, Apps Script zu einer leistungsstärkeren und zugänglicheren Plattform für Entwickler aus unterschiedlichsten Bereichen zu machen.

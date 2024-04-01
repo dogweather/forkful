@@ -11,14 +11,7 @@ summary: "Rubyssa debuggerin k\xE4ytt\xF6 antaa ohjelmoijille supervoiman pys\xE
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-
-Rubyssa debuggerin käyttö antaa ohjelmoijille supervoiman pysäyttää koodinsa, tarkastella muuttujia ja käydä läpi koodiaan rivi riviltä. Ihmiset tekevät sitä virheiden korjaamiseksi, koodin kulun ymmärtämiseksi ja nähdäkseen tarkalleen, mitä heidän kirjoittamansa loitsut (koodi) tekevät, kun taika tapahtuu – tai ei tapahdu.
-
 ## Kuinka:
-
 Ruby sisältää sisäänrakennetun debuggerin nimeltä `byebug`. Lisää ensin `byebug` Gemfile-tiedostoosi ja suorita `bundle install`. Sitten, pudota `byebug` juuri siihen kohtaan ohjelmaasi, missä haluat ohjelmasi hengähtävän.
 
 ```Ruby
@@ -58,7 +51,6 @@ Esimerkkituloste antaisi sinulle kehotteen, joka näyttää tältä:
 ```
 
 ## Syvä sukellus:
-
 Kauan ennen `byebug`ia, Rubyistit käyttivät `debugger`ia ja `pry`ä. Jälkimmäinen, `pry`, on enemmän kuin debuggeri; se on tehokas REPL, jota voidaan myös käyttää debuggauksessa `binding.pry`-katkaisukohdan avulla.
 
 Vaihtoehtoja Rubyn `byebug`ille sisältävät `pry-byebug`, joka yhdistää `pry`n ja `byebug`in toiminnallisuudet, ja `ruby-debug`, joka on vanhempi gem eikä sitä ylläpidetä aktiivisesti.
@@ -66,7 +58,6 @@ Vaihtoehtoja Rubyn `byebug`ille sisältävät `pry-byebug`, joka yhdistää `pry
 Kun kutsut `byebug`ia, debuggeri keskeyttää koodisi suorituksen ja antaa sinulle kurkistuksen suoritukseen. Voit nähdä ja muuttaa muuttujia, hypätä eri kohtiin koodissa ja jopa suorittaa joitakin Ruby-koodirivejä riviltä. Se on vähän kuin aikamatkailukyvyn omaaminen Ruby-koodillesi.
 
 ## Katso myös:
-
 - Byebug GitHub-repositorio: [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - Pry dokumentaatio: [https://github.com/pry/pry](https://github.com/pry/pry)
 - Opas Rails-sovellusten debuggaamiseen: [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

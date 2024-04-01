@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Bash c\xF3 
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì và Tại sao?
-Sử dụng một trình gỡ lỗi trong Bash có nghĩa là sử dụng các công cụ để kiểm tra và tìm lỗi trong các script của bạn, chẳng hạn như bắt lỗi làm sập mã của bạn hoặc khiến nó hoạt động không đúng cách một cách lén lút. Các lập trình viên làm điều này vì nó thông minh hơn nhiều khi bắt lỗi trước khi chúng gây ra hậu quả trong môi trường trực tiếp.
-
 ## Cách thực hiện:
 Bash không có trình gỡ lỗi tích hợp sẵn giống như một số ngôn ngữ khác, nhưng bạn có thể sử dụng các lệnh tích hợp như `set -x` để theo dõi những gì đang xảy ra. Hoặc, để nâng cấp, có `bashdb`, một trình gỡ lỗi thích hợp để bước qua mã của bạn. Đây là một cái nhìn sơ qua:
 

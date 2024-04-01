@@ -11,13 +11,7 @@ summary: "En debugger er et verkt\xF8y som lar deg unders\xF8ke og endre det ind
 title: "\xC5 bruke en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-En debugger er et verktøy som lar deg undersøke og endre det indre arbeidet i koden din mens den kjører. Programmerere bruker den til å knuse feil ved å gå gjennom koden sin, inspisere variabler og forstå flyten i programmet sitt.
-
 ## Hvordan:
-
 For å komme i gang med en debugger i TypeScript, trenger du bare et støttet IDE (som Visual Studio Code) og en `launch.json`-konfigurasjon. Her er et kjapt eksempel for en Node.js-applikasjon:
 
 ```TypeScript
@@ -52,7 +46,6 @@ For å feilsøke dette, opprett en `launch.json`-fil under `.vscode`-mappen:
 Deretter setter du et brytepunkt i din `greet`-funksjon ved å klikke på venstre side av linjenummeret i IDEen din. Trykk F5 for å starte feilsøkingen, og se at appen din pauser ved brytepunktet. Du kan nå holde musepekeren over variabler, følge med på uttrykk og stegvis gå gjennom koden din med letthet.
 
 ## Dypdykk
-
 Tilbake i tiden før integrerte utviklingsmiljøer (IDEer) ble glatte, ble feilsøking ofte gjort med utskriftsuttrykk (kjent som `console.log`-feilsøking). Det fungerte, på en måte, men det var som å prøve å finne en nål i en høystakk med bind for øynene.
 
 Moderne feilsøkere er som en sveitserkniv for feilsøking. Med utviklingen av TypeScript og Node.js finnes det ulike feilsøkere tilgjengelig, fra den innebygde Node.js-inspektøren til nettleserutviklerverktøy for feilsøking på klientsiden.
@@ -60,7 +53,6 @@ Moderne feilsøkere er som en sveitserkniv for feilsøking. Med utviklingen av T
 Node.js-inspektøren fungerer ved å koble seg til din kjørende applikasjon; den kommuniserer over Chrome DevTools-protokollen, noe som gjør Chrome-nettleseren din til en kraftig feilsøkingskonsoll. Denne integrasjonen tillater en visuelt interaktiv og detaljert feilsøkingssesjon, sammenlignet med tradisjonelle kommandolinje-feilsøkingspraksiser.
 
 ## Se også
-
 For litt ekstra lesing og noen pro-tips, sjekk ut:
 
 - [TypeScript-feilsøking i Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-debugging)

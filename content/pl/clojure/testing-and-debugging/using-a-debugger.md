@@ -11,11 +11,6 @@ summary: "U\u017Cywanie debugera oznacza, \u017Ce wyposa\u017Casz si\u0119 w lup
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Używanie debugera oznacza, że wyposażasz się w lupę, aby przyjrzeć się swojemu kodowi. Programiści robią to, by wyplenić błędy, zrozumieć przepływ oraz zapewnić, że ich logika działa zgodnie z oczekiwaniami.
-
 ## Jak to zrobić:
 Clojure opiera się na Maszynie Wirtualnej Javy (JVM), więc wiele debugowania odbywa się za pomocą narzędzi Java. Jednym z takich narzędzi jest `CIDER`, potężny pakiet do rozwoju Clojure w Emacs, który posiada solidne możliwości debugowania. Zanurkujmy:
 

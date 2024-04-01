@@ -11,11 +11,6 @@ summary: "Usare un debugger significa immergersi nel proprio codice con strument
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa e Perché?
-Usare un debugger significa immergersi nel proprio codice con strumenti progettati per ispezionare, mettere in pausa e manipolare un programma durante la sua esecuzione. I programmatori lo fanno per inseguire bug, comprendere il flusso del programma e assicurarsi che il loro codice stia facendo esattamente ciò che si aspettano.
-
 ## Come fare:
 Facciamo una passeggiata con GHCi, l'ambiente interattivo di Haskell che può fungere da debugger di base. Lo avvii con il tuo codice Haskell e inizi a curiosare. Ecco un esempio:
 

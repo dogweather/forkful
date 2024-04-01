@@ -15,14 +15,7 @@ summary: "Vi\u1EC7c s\u1EED d\u1EE5ng debugger trong l\u1EADp tr\xECnh Go bao g\
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-
-Việc sử dụng debugger trong lập trình Go bao gồm việc ứng dụng các công cụ hoặc tính năng để kiểm tra và chỉnh sửa trạng thái của chương trình đang chạy nhằm hiểu rõ hơn về hành vi của nó hoặc xác định các vấn đề. Lập trình viên làm điều này nhằm tìm và sửa lỗi một cách hiệu quả, tối ưu hóa hiệu suất và đảm bảo tính chính xác của mã của họ.
-
 ## Làm thế nào:
-
 Go cung cấp một tiện ích tích hợp cho việc gỡ lỗi gọi là `delve`. Đây là một công cụ gỡ lỗi đầy đủ tính năng cho phép bạn thực hiện chương trình Go từng bước một, kiểm tra các biến trong chương trình và đánh giá các biểu thức.
 
 Để bắt đầu, bạn cần phải cài đặt `delve` trước. Bạn có thể làm điều này bằng cách chạy:
@@ -80,7 +73,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Sử dụng những lệnh này, bạn có thể từng bước đi qua chương trình của mình, kiểm tra trạng thái của nó khi bạn thực hiện để hiểu cách nó hoạt động và xác định bất kỳ vấn đề nào.
 
 ## Sâu hơn nữa
-
 Việc chọn `delve` là công cụ gỡ lỗi của sự lựa chọn cho Go thay vì các công cụ truyền thống như GDB (GNU Debugger) chủ yếu là do bản chất của mô hình thực thi và thời gian chạy của Go. GDB ban đầu không được thiết kế với thời gian chạy của Go trong tâm trí, khiến `delve` trở thành lựa chọn phù hợp hơn cho các nhà phát triển Go. `Delve` được thiết kế đặc biệt cho Go, cung cấp một trải nghiệm gỡ lỗi trực quan hơn cho các Go routine, kênh và các cấu trúc đặc thù của Go khác.
 
 Hơn nữa, `delve` hỗ trợ một loạt các tính năng vượt trội so với các tính năng cơ bản của GDB khi làm việc với các chương trình Go. Điều này bao gồm nhưng không giới hạn ở: gắn vào các quy trình đang chạy để gỡ lỗi; các điểm dừng có điều kiện; và đánh giá các biểu thức phức tạp có thể liên quan đến các nguyên tắc đồng thời của Go.

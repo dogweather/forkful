@@ -12,11 +12,6 @@ summary: "Een debugger gebruiken betekent het inzetten van een hulpmiddel om te 
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger gebruiken betekent het inzetten van een hulpmiddel om te testen en fouten in je code te herstellen. Programmeurs doen dit om de stroom van hun applicaties te begrijpen, de bronnen van fouten aan te wijzen, en de logica tijdens de uitvoering te verifiëren.
-
 ## Hoe:
 Stel je voor dat je een eenvoudig Java-programma hebt dat problemen veroorzaakt, en je kunt niet uitvogelen waarom. Zo zou je een debugger starten met Eclipse, een van de populaire IDE's voor Java-ontwikkeling:
 

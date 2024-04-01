@@ -11,11 +11,6 @@ summary: "Un d\xE9bogueur est un outil qui aide les programmeurs \xE0 comprendre
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-Un débogueur est un outil qui aide les programmeurs à comprendre ce que leur code fait réellement lorsqu'il s'exécute. C'est la loupe qui nous permet de zoomer sur les bugs—ces problèmes agaçants causant l'échec de nos programmes ou produisant des réponses incorrectes—et de les éliminer. Nous utilisons des débogueurs parce qu'ils nous font économiser des heures d'impressions et de conjectures.
-
 ## Comment faire :
 PHP est fourni avec un débogueur interactif appelé Xdebug. Voici comment l'utiliser.
 

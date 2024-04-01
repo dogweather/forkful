@@ -13,11 +13,6 @@ summary: "Een debugger gebruiken betekent dat je gespecialiseerde tools inzet di
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger gebruiken betekent dat je gespecialiseerde tools inzet die je een kijkje onder de motorkap van je code geven, door het stap voor stap uit te voeren te bekijken. Programmeurs doen dit om bugs te verwijderen, de prestaties te optimaliseren en het gedrag van de code te begrijpen.
-
 ## Hoe:
 Hier is een stukje JavaScript-code dat zich niet gedraagt zoals verwacht:
 

@@ -11,11 +11,6 @@ summary: "Usar um depurador significa que voc\xEA est\xE1 se equipando com uma l
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que e Por Quê?
-Usar um depurador significa que você está se equipando com uma lupa para examinar seu código. Os programadores fazem isso para eliminar bugs, entender o fluxo e garantir que sua lógica funcione conforme o esperado.
-
 ## Como:
 Clojure se apoia na Máquina Virtual Java (JVM), então muito da depuração acontece com ferramentas Java. Uma dessas ferramentas é o `CIDER`, um pacote poderoso para desenvolvimento em Clojure no Emacs, que possui capacidades sólidas de depuração. Vamos mergulhar:
 

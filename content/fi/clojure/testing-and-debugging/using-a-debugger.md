@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa, ett\xE4 varustaudut suurennus
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä ja miksi?
-Debuggerin käyttäminen tarkoittaa, että varustaudut suurennuslasilla tarkastelemaan koodiasi. Ohjelmoijat tekevät tämän paikatakseen bugeja, ymmärtääkseen virtausta ja varmistaakseen, että heidän logiikkansa toimii odotetulla tavalla.
-
 ## Kuinka:
 Clojure nojaa Java Virtuaalikoneeseen (JVM), joten suuri osa debuggauksesta tapahtuu Java-työkaluilla. Yksi tällainen työkalu on `CIDER`, tehokas paketti Clojure-kehitykseen Emacsissa, jolla on vankat debuggauskyvyt. Sukellamme sisään:
 

@@ -11,11 +11,6 @@ summary: "Using a debugger means setting breakpoints, stepping through your code
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Using a debugger means setting breakpoints, stepping through your code, watching variables, and inspecting the state of your program as it runs. It's a game-changer for programmers because it pinpoints bugs and helps us understand what our code is really up to.
-
 ## How to:
 In PowerShell, you can debug scripts using the built-in PowerShell Integrated Scripting Environment (ISE) or Visual Studio Code (VS Code) with the PowerShell extension. Here's how to use breakpoints in both:
 

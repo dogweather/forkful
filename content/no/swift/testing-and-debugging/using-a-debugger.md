@@ -11,11 +11,6 @@ summary: "\xC5 bruke en feils\xF8ker betyr \xE5 utnytte spesialiserte verkt\xF8y
 title: "\xC5 bruke en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en feilsøker betyr å utnytte spesialiserte verktøy for å teste og inspisere koden din mens den kjører. Det er en stor sak fordi det lar deg se hva som foregår under panseret, finne feil og forstå koden din bedre.
-
 ## Hvordan:
 For å bruke feilsøkeren i Xcode (IDE for Swift), kan du sette brytepunkter, inspisere variabler og se på uttrykk. Her er et eksempel:
 

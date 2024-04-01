@@ -11,11 +11,6 @@ summary: "Ein Debugger ist ein Werkzeug, das Ihnen erlaubt, die Ausf\xFChrung ei
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Ein Debugger ist ein Werkzeug, das Ihnen erlaubt, die Ausführung eines Programms zu inspizieren und zu kontrollieren. Dadurch wird es einfach, genau zu bestimmen, wo die Dinge schiefgehen. Programmierer nutzen Debugger, um Bugs zu beseitigen, den Codefluss zu verstehen und um sicherzustellen, dass ihr Code so sauber wie eine Pfeife ist.
-
 ## Wie:
 Lua kommt nicht mit einem eingebauten Debugger, aber Sie können externe Debugger verwenden, wie zum Beispiel ZeroBrane Studio. Hier ist ein Vorgeschmack darauf, wie man damit arbeitet:
 

@@ -10,11 +10,6 @@ summary: "\"Usar un depurador\" se trata de avanzar paso a paso por tu c\xF3digo
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## Qué y Por Qué
-"Usar un depurador" se trata de avanzar paso a paso por tu código Python para descubrir errores y entender el comportamiento. Lo hacemos porque es mucho más fácil que simplemente adivinar dónde salieron mal las cosas, y nos ahorra horas en el purgatorio de las declaraciones de impresión.
-
 ## Cómo hacerlo:
 Desglosemos el uso de `pdb`, el depurador integrado de Python. Imagina un archivo, `buggy.py`, con un error difícil de encontrar:
 

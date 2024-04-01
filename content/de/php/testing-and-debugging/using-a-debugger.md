@@ -11,11 +11,6 @@ summary: "Ein Debugger ist ein Werkzeug, das Programmierern hilft zu verstehen, 
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Ein Debugger ist ein Werkzeug, das Programmierern hilft zu verstehen, was ihr Code tatsächlich macht, während er ausgeführt wird. Es ist die Lupe, die uns erlaubt, uns auf Fehler zu fokussieren – diese nervigen Probleme, die unsere Programme abstürzen lassen oder falsche Antworten ausspucken – und sie zu beseitigen. Wir verwenden Debugger, weil sie uns Stunden von Print-Befehlen und Ratespielen ersparen.
-
 ## Wie geht das:
 PHP wird mit einem interaktiven Debugger namens Xdebug geliefert. So verwenden Sie ihn.
 

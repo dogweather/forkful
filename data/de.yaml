@@ -1,0 +1,13 @@
+what-and-why:
+  using-a-debugger:
+    github-author: dogweather
+    text: |
+      Debugger helfen Ihnen, den "Fluss" Ihres Programms zu verstehen;
+      sie stellen sicher, dass seine Logik wie erwartet abläuft. Zum Beispiel,
+      können Sie die Werte Ihrer Variablen an jedem Punkt im
+      Code sehen.
+
+      Ich finde sie nützlich für die schwierigsten Fehler. Meiner Meinung nach
+      hängt ihre Nützlichkeit wirklich von der spezifischen Sprache ab,
+      Ihrem persönlichen Arbeitsstil, der Qualität des Debugging-
+      Werkzeugs selbst.

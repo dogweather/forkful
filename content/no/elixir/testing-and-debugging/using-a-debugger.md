@@ -11,11 +11,6 @@ summary: "\xC5 bruke en debugger i Elixir inneb\xE6rer \xE5 stegge gjennom koden
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & hvorfor?
-Å bruke en debugger i Elixir innebærer å stegge gjennom koden din, inspisere variabler og spore flyter for å knuse feil. Programmerere gjør dette for å forstå det uventede og sikre at applikasjonene deres oppfører seg som designet.
-
 ## Hvordan:
 Elixir leveres med en innebygd grafisk feilsøker kalt `:debugger`. For å bruke den, må du starte den og koble til din kjørende prosess.
 

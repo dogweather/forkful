@@ -12,14 +12,7 @@ summary: "Een debugger gebruiken in Visual Basic for Applications (VBA) houdt in
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-
-Een debugger gebruiken in Visual Basic for Applications (VBA) houdt in dat je je code stap voor stap uitvoert om de uitvoeringsstroom en de status van variabelen te inspecteren. Dit proces is cruciaal voor het identificeren en herstellen van fouten in je code, uiteindelijk om te zorgen dat deze presteert zoals verwacht.
-
 ## Hoe te:
-
 In VBA is de debugger een integraal onderdeel van de Visual Basic Editor (VBE). Zo kun je er gebruik van maken:
 
 1. **Breekpunten instellen**: Klik in de linkermarge naast de code regel waarin je geïnteresseerd bent, of plaats je cursor op de regel en druk op F9. Dit vertelt VBA om de uitvoering te pauzeren wanneer het dit punt bereikt.
@@ -60,7 +53,6 @@ In VBA is de debugger een integraal onderdeel van de Visual Basic Editor (VBE). 
     Hier hebben we handmatig de `teller` variabele opgevraagd na elke iteratie.
 
 ## Diepgaande duik:
-
 De debugger in VBA, hoewel robuust, maakt deel uit van een bredere traditie van debugtools in programmeertalen, aanzienlijk geëvolueerd vanaf zijn vroege voorgangers. Geïntroduceerd met de eerste versies van VBA, was het bedoeld om ontwikkelaars te voorzien van een eenvoudige maar krachtige set van tools voor code-inspectie en -correctie. In de loop van de tijd hebben verbeteringen voorwaardelijke breekpunten, verbeterde watch mogelijkheden en integratie met de Excel-interface voor een intuïtievere data-inspectie omvat.
 
 Echter, vergeleken met moderne Integrated Development Environments (IDE's) zoals Visual Studio of Eclipse, kunnen de debugtools van VBA basisch lijken. Deze moderne IDE's bieden geavanceerdere functies zoals real-time variabele inspectie, geavanceerde breekpunten en geïntegreerde unit testing frameworks. Hoewel deze alternatieven een meer omvattende debugervaring bieden, blijven de eenvoud en directheid van VBA's debugger goed geschikt voor de specifieke context van automatisering en scripting binnen Microsoft Office-applicaties.

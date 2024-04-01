@@ -9,11 +9,6 @@ summary: "\"Using a debugger\" is about stepping through your Python code to unc
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-"Using a debugger" is about stepping through your Python code to uncover bugs and understand behavior. We do it because it's a heck of a lot easier than just guessing where things went wrong, and it saves us hours of print statement purgatory.
-
 ## How to:
 Let's break down using `pdb`, Python's built-in debugger. Imagine a file, `buggy.py`, with a sneaky bug:
 

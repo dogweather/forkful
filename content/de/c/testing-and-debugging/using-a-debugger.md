@@ -13,14 +13,7 @@ summary: "Debugger in C sind spezialisierte Werkzeuge, die es Entwicklern erm\xF
 title: Verwenden eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-
-Debugger in C sind spezialisierte Werkzeuge, die es Entwicklern ermöglichen, Schritt für Schritt durch ihren Code zu gehen, Variablen zu überprüfen und den Ausführungsfluss zu überwachen. Dieser Prozess ist integraler Bestandteil der Identifizierung und Behebung von Fehlern, um sicherzustellen, dass der Code wie erwartet funktioniert.
-
 ## Wie geht das:
-
 GDB (GNU Debugger) ist der am häufigsten verwendete Debugger für die C-Programmierung. Hier ist eine kurze Anleitung zur Verwendung von GDB zum Debuggen eines einfachen C-Programms.
 
 Zuerst kompilieren Sie Ihr C-Programm mit dem `-g` Flag, um Debugging-Informationen einzuschließen:
@@ -78,7 +71,6 @@ $3 = 2
 Dies demonstriert die Untersuchung des Zustands und des Ablaufs eines einfachen Programms.
 
 ## Vertiefung
-
 Das Konzept des Debuggings hat sich seit den frühen Tagen der Programmierung erheblich weiterentwickelt, als physische Fehler (buchstäbliche Insekten) Probleme in mechanischen Computern verursachen konnten. Heute bieten Debugger wie GDB ausgefeilt Funktionen über das grundlegende Schritt-für-Schritt-Durchgehen und Variableninspektion hinaus, wie das Rückwärtsdebugging (Ausführen des Programms rückwärts), bedingte Haltepunkte und Skripting für automatisierte Debugging-Aufgaben.
 
 Obwohl GDB leistungsfähig und weit verbreitet ist, kann es für Anfänger dicht und herausfordernd sein. Alternative Debugging-Werkzeuge und IDEs (integrierte Entwicklungsumgebungen) wie Visual Studio Code, CLion oder Eclipse bieten benutzerfreundlichere Schnittstellen für das Debuggen von C-Code, oft mit visuellen Hilfen und intuitiveren Steuerelementen. Diese Alternativen bieten möglicherweise nicht die volle Funktionalität von GDB, können aber für Neulinge in der C-Programmierung zugänglicher sein.

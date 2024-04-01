@@ -15,11 +15,6 @@ summary: "Vi\u1EC7c s\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong E
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-Việc sử dụng một trình gỡ lỗi trong Elixir bao gồm việc bước từng dòng mã, kiểm tra các biến, và theo dõi quy trình để tìm và sửa lỗi. Các lập trình viên thực hiện điều này để hiểu những điều không mong đợi và đảm bảo các ứng dụng của họ hoạt động như mong đợi.
-
 ## Làm thế nào:
 Elixir đi kèm với một trình gỡ lỗi đồ họa tích hợp sẵn có tên là `:debugger`. Để sử dụng nó, bạn cần bắt đầu nó và kết nối với quá trình đang chạy của bạn.
 

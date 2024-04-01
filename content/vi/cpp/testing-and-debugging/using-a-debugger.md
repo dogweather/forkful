@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng m\u1ED9t debugger c\xF3 ngh\u0129a l\xE0 kh\u1EDFi \
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì & Tại sao?
-Sử dụng một debugger có nghĩa là khởi động một công cụ cho phép bạn nhìn vào bên trong chương trình đang chạy của mình để hiểu rõ điều gì đang thực sự xảy ra. Lập trình viên làm điều này để tìm và loại bỏ lỗi—những vấn đề phiền toái khiến mã của bạn hoạt động không như mong đợi hoặc bị sập.
-
 ## Làm thế nào:
 C++ tích hợp với các debugger như GDB hay debugger của Visual Studio. Dưới đây là một ví dụ nhỏ sử dụng GDB:
 

@@ -11,11 +11,6 @@ summary: "En feils\xF8ker er et verkt\xF8y som lar deg inspisere og kontrollere 
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-En feilsøker er et verktøy som lar deg inspisere og kontrollere utførelsen av et program, noe som gjør det enkelt å finne ut hvor ting går galt. Programmerere bruker feilsøkere til å knuse feil, forstå kodeflyt, og for å sikre at koden deres er så ren som en fløyte.
-
 ## Hvordan:
 Lua kommer ikke med en innebygd feilsøker, men du kan bruke eksterne feilsøkere, som ZeroBrane Studio. Her er en smakebit på hvordan du ville jobbet med det:
 

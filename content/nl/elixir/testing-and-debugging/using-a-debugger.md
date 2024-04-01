@@ -12,11 +12,6 @@ summary: "Het gebruik van een debugger in Elixir omvat het stapsgewijs doorlopen
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Het gebruik van een debugger in Elixir omvat het stapsgewijs doorlopen van je code, het inspecteren van variabelen en het volgen van stromen om bugs te verpletteren. Programmeurs doen dit om het onverwachte te begrijpen en ervoor te zorgen dat hun applicaties zich gedragen zoals ontworpen.
-
 ## Hoe te:
 Elixir wordt geleverd met een ingebouwde grafische debugger genaamd `:debugger`. Om het te gebruiken, moet je het starten en koppelen aan je lopend proces.
 

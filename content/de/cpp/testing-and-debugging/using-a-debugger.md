@@ -9,11 +9,6 @@ summary: "Einen Debugger zu verwenden bedeutet, ein Werkzeug zu starten, das es 
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Einen Debugger zu verwenden bedeutet, ein Werkzeug zu starten, das es Ihnen ermöglicht, in Ihr laufendes Programm zu schauen, um zu verstehen, was wirklich passiert. Programmierer tun dies, um Fehler zu finden und zu beheben – diese nervigen Probleme, die dazu führen, dass Ihr Code sich unerwartet verhält oder abstürzt.
-
 ## Wie geht das:
 C++ integriert sich mit Debuggern wie GDB oder dem Visual Studio Debugger. Hier ist ein kurzes Beispiel mit GDB:
 

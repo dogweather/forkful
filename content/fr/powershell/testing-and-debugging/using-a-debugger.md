@@ -11,11 +11,6 @@ summary: "Utiliser un d\xE9bogueur signifie d\xE9finir des points d'arr\xEAt, pa
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-Utiliser un débogueur signifie définir des points d'arrêt, parcourir votre code pas à pas, observer les variables et inspecter l'état de votre programme pendant son exécution. C'est un changement de jeu pour les programmeurs car cela localise les bugs et nous aide à comprendre ce que notre code fait réellement.
-
 ## Comment faire :
 Dans PowerShell, vous pouvez déboguer des scripts en utilisant l'Environnement de Scripting Intégré de PowerShell (ISE) intégré ou Visual Studio Code (VS Code) avec l'extension PowerShell. Voici comment utiliser les points d'arrêt dans les deux :
 

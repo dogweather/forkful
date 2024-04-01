@@ -9,11 +9,6 @@ summary: "Depurar en Elm implica identificar y eliminar errores de tu c\xF3digo.
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## Qué y Por Qué?
-Depurar en Elm implica identificar y eliminar errores de tu código. Los programadores lo hacen para asegurarse de que sus aplicaciones funcionen correctamente y para mejorar la calidad del código. El sistema de tipos fuertes de Elm atrapa muchos problemas en tiempo de compilación, pero las herramientas de depuración en tiempo de ejecución son esenciales para resolver errores de lógica y comportamientos inesperados.
-
 ## Cómo hacerlo:
 Elm no tiene un depurador integrado en el sentido tradicional que, digamos, JavaScript tiene con las herramientas de desarrollo del navegador. Sin embargo, la comunidad de Elm ha creado herramientas para llenar este vacío. Así es cómo puedes usar `elm-debug-transformer` para depurar tu aplicación Elm:
 

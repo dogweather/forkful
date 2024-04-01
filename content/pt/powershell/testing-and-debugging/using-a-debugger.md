@@ -11,11 +11,6 @@ summary: "Usar um depurador significa definir pontos de interrup\xE7\xE3o, acomp
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que e Por Que?
-Usar um depurador significa definir pontos de interrupção, acompanhar os passos do seu código, observar variáveis e inspecionar o estado do seu programa enquanto ele é executado. É um divisor de águas para programadores porque localiza bugs e nos ajuda a entender o que nosso código realmente está fazendo.
-
 ## Como fazer:
 No PowerShell, você pode depurar scripts usando o Ambiente de Scripting Integrado do PowerShell (ISE) ou o Visual Studio Code (VS Code) com a extensão do PowerShell. Veja como usar pontos de interrupção em ambos:
 

@@ -11,11 +11,6 @@ summary: "Un debugger \xE8 uno strumento che consente di ispezionare e controlla
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa & Perché?
-Un debugger è uno strumento che consente di ispezionare e controllare l'esecuzione di un programma, facilitando l'identificazione dei punti in cui le cose vanno storte. I programmmatori utilizzano i debugger per scovare bug, comprendere il flusso del codice e assicurarsi che il loro codice sia pulito come un fischio.
-
 ## Come fare:
 Lua non è dotato di un debugger integrato, ma è possibile utilizzare debugger esterni, come ZeroBrane Studio. Ecco un assaggio di come si lavora con esso:
 

@@ -11,11 +11,6 @@ summary: "L'uso di un debugger riguarda lo schiacciare i bug\u2014gli errori fas
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa & Perché?
-L'uso di un debugger riguarda lo schiacciare i bug—gli errori fastidiosi e che consumano tempo nel tuo codice. I programmatori eseguono il debug perché vogliono trovare e risolvere i problemi in modo efficiente, comprendere il flusso del codice, e ottenere un quadro più chiaro di cosa il loro codice stia effettivamente facendo.
-
 ## Come fare:
 Fish non dispone di un debugger integrato come altre shell, ma puoi utilizzare strumenti esterni come `gdb` per il debug di programmi compilati o `fish -d` per eseguire fish con l'output di debug a diversi livelli. Procediamo con `fish -d`:
 

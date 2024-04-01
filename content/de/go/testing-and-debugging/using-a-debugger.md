@@ -11,14 +11,7 @@ summary: "Die Verwendung eines Debuggers in der Go-Programmierung beinhaltet den
 title: Verwenden eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-
-Die Verwendung eines Debuggers in der Go-Programmierung beinhaltet den Einsatz von Tools oder Funktionen, um den Zustand eines laufenden Programms zu inspizieren und zu modifizieren, um sein Verhalten zu verstehen oder Probleme zu diagnostizieren. Programmierer tun dies, um effizient Bugs zu finden und zu beheben, die Leistung zu optimieren und die Richtigkeit ihres Codes zu gewährleisten.
-
 ## Wie:
-
 Go bietet eine integrierte Einrichtung für das Debugging namens `delve`. Es ist ein voll ausgestattetes Debugging-Tool, das es Ihnen ermöglicht, Go-Programme Schritt für Schritt auszuführen, Programmvariablen zu inspizieren und Ausdrücke zu bewerten.
 
 Zu Beginn müssen Sie zunächst `delve` installieren. Dies können Sie tun, indem Sie folgendes ausführen:
@@ -76,7 +69,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Mit diesen Befehlen können Sie durch Ihr Programm schreiten, den Zustand inspizieren und verstehen, wie es sich verhält, und Probleme identifizieren.
 
 ## Tiefere Einblicke
-
 Die Wahl von `delve` als Go's bevorzugtem Debugging-Tool gegenüber traditionellen Tools wie GDB (GNU Debugger) liegt hauptsächlich in der Natur des Ausführungsmodells und der Laufzeitumgebung von Go. GDB wurde ursprünglich nicht mit der Go-Laufzeit im Hinterkopf entworfen, was `delve` zu einer geeigneteren Wahl für Go-Entwickler macht. `Delve` ist speziell für Go konzipiert und bietet ein intuitiveres Debugging-Erlebnis für Go-Routinen, Kanäle und andere spezifische Go-Konstrukte.
 
 Darüber hinaus unterstützt `delve` eine breite Palette von Funktionen, die über die von GDB angebotenen Grundfunktionen für Go-Programme hinausgehen. Dazu gehören unter anderem: das Anhängen an laufende Prozesse zum Debuggen; bedingte Haltepunkte; und das Bewerten komplexer Ausdrücke, die Go's Parallelitätsprimitiven einschließen können.

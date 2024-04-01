@@ -13,11 +13,6 @@ summary: "Debuggen in Elm betreft het identificeren en verwijderen van fouten ui
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Debuggen in Elm betreft het identificeren en verwijderen van fouten uit je code. Programmeurs doen dit om te zorgen dat hun applicaties correct werken en om de codekwaliteit te verbeteren. Elm's sterke typesysteem vangt veel problemen op tijdens het compileren, maar tools voor runtime debugging zijn essentieel voor het gladstrijken van logische fouten en onverwachte gedragingen.
-
 ## Hoe te:
 Elm heeft niet een ingebouwde debugger in de traditionele zin zoals JavaScript dat bijvoorbeeld heeft met browserontwikkelaarstools. Echter, de Elm-gemeenschap heeft tools ontwikkeld om dit gat op te vullen. Hier is hoe je `elm-debug-transformer` kunt gebruiken om je Elm-app te debuggen:
 

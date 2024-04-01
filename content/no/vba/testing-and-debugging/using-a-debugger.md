@@ -13,14 +13,7 @@ summary: "\xC5 bruke en feils\xF8ker i Visual Basic for Applications (VBA) inneb
 title: Bruker en debugger
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-
-Å bruke en feilsøker i Visual Basic for Applications (VBA) innebærer å kjøre koden din steg for steg for å inspisere utførelsesflyten og variabeltilstandene. Denne prosessen er avgjørende for å identifisere og fikse feil i koden din, noe som i siste ende sikrer at den fungerer som forventet.
-
 ## Hvordan:
-
 I VBA er feilsøkeren en integrert del av Visual Basic Editor (VBE). Slik kan du utnytte den:
 
 1. **Å sette brytepunkter**: Klikk i venstre marg ved siden av kodelinjen du er interessert i, eller plasser markøren på linjen og trykk F9. Dette forteller VBA å pause utførelsen når den når dette punktet.
@@ -61,7 +54,6 @@ I VBA er feilsøkeren en integrert del av Visual Basic Editor (VBE). Slik kan du
     Her har vi manuelt spurt om `counter`-variabelen etter hver iterasjon.
 
 ## Dypdykk:
-
 Feilsøkeren i VBA, selv om den er robust, er del av en større tradisjon med feilsøkingsverktøy i programmeringsspråk, og har utviklet seg betydelig fra sine tidlige forgjengere. Introdusert med de første versjonene av VBA, hadde den som mål å gi utviklere et enkelt, men likevel kraftig sett med verktøy for kodeinspeksjon og rettelse. Over tid har forbedringer inkludert betingede brytepunkter, forbedrede overvåkningsfunksjoner og integrasjon med Excel-grensesnittet for mer intuitiv datainspeksjon.
 
 Men sammenlignet med moderne integrerte utviklingsmiljøer (IDEer) som Visual Studio eller Eclipse, kan VBA sine feilsøkingsverktøy virke grunnleggende. Disse moderne IDEene tilbyr mer sofistikerte funksjoner som sanntidsvariabelinspeksjon, avanserte brytepunkter og integrerte enhetstestrammer. Mens disse alternativene gir mer omfattende feilsøkingsopplevelser, forblir enkelheten og direktheten til VBA sin feilsøker godt egnet til den spesifikke konteksten av automatisering og skripting innenfor Microsoft Office-applikasjoner.

@@ -13,14 +13,7 @@ summary: "Utiliser un d\xE9bogueur en programmation Go implique l'utilisation d'
 title: "Utiliser un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-
-Utiliser un débogueur en programmation Go implique l'utilisation d'outils ou de fonctionnalités pour inspecter et modifier l'état d'un programme en cours d'exécution afin de comprendre son comportement ou diagnostiquer des problèmes. Les programmeurs font cela pour trouver et corriger efficacement des bugs, optimiser les performances et assurer la correction de leur code.
-
 ## Comment faire :
-
 Go fournit une facilité intégrée pour le débogage appelée `delve`. C'est un outil de débogage complet qui vous permet d'exécuter des programmes Go pas à pas, d'inspecter les variables du programme et d'évaluer des expressions.
 
 Pour commencer, vous devez d'abord installer `delve`. Vous pouvez le faire en exécutant :
@@ -78,7 +71,6 @@ Breakpoint 1 at 0x49ekcf3 for main.main() ./main.go:6
 En utilisant ces commandes, vous pouvez progresser pas à pas dans votre programme, inspectant l'état au fur et à mesure pour comprendre comment il se comporte et identifier tout problème.
 
 ## Approfondissement
-
 Le choix de `delve` comme outil de débogage de prédilection pour Go, en préférence aux outils traditionnels comme GDB (GNU Debugger), est principalement dû à la nature du modèle d'exécution et du runtime de Go. GDB n'a pas été conçu initialement avec le runtime de Go à l'esprit, rendant `delve` un choix plus adapté pour les développeurs Go. `Delve` est spécifiquement conçu pour Go, offrant une expérience de débogage plus intuitive pour les routines Go, les canaux et autres constructions spécifiques à Go.
 
 De plus, `delve` prend en charge un large éventail de fonctionnalités allant au-delà de celles offertes par GDB de base lors du travail avec des programmes Go. Celles-ci incluent, mais ne se limitent pas à : l’attachement à des processus en cours pour le débogage ; les points d'arrêt conditionnels ; et l’évaluation d’expressions complexes pouvant impliquer les primitives de concurrence de Go.

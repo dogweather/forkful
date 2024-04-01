@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xF6 tarkoittaa katkaisukohtien asettamista, koodin
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttö tarkoittaa katkaisukohtien asettamista, koodin läpikäyntiä askel askeleelta, muuttujien tarkkailua ja ohjelman tilan tarkastelua sen suorituksen aikana. Se on ohjelmoijille merkittävä muutos, koska se paikantaa bugeja ja auttaa meitä ymmärtämään, mitä koodimme todella tekee.
-
 ## Kuinka:
 PowerShellissa voit debugata skriptejä käyttämällä sisäänrakennettua PowerShell Integrated Scripting Environment (ISE) -ympäristöä tai Visual Studio Code (VS Code) -ohjelmaa PowerShell-laajennuksen kanssa. Näin käytät katkaisukohtia molemmissa:
 

@@ -11,11 +11,6 @@ summary: "Debugger to narz\u0119dzie, kt\xF3re pomaga programistom zrozumie\u010
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Debugger to narzędzie, które pomaga programistom zrozumieć, co ich kod faktycznie robi podczas wykonywania. To jest ta lupa, która pozwala nam przybliżać się do błędów - tych irytujących problemów powodujących, że nasze programy się zawieszają lub wypluwają złe odpowiedzi - i zgniatać je. Używamy debuggerów, ponieważ oszczędzają nam one godziny pracy z instrukcjami print i grami na zgadywanie.
-
 ## Jak to zrobić:
 PHP jest wyposażony w interaktywny debugger zwany Xdebug. Oto jak go używać.
 

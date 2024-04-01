@@ -11,11 +11,6 @@ summary: "\"\xC5 bruke en feils\xF8ker\" handler om \xE5 steg-for-steg g\xE5 gje
 title: "\xC5 bruke en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-"Å bruke en feilsøker" handler om å steg-for-steg gå gjennom Python-koden din for å avdekke feil og forstå oppførsel. Vi gjør det fordi det er mye enklere enn å bare gjette hvor ting gikk galt, og det sparer oss for timer av print-setning-purgatoriet.
-
 ## Hvordan:
 La oss bryte ned bruken av `pdb`, Pythons innebygde feilsøker. Forestill deg en fil, `buggy.py`, med en lur feil:
 

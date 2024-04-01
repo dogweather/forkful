@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng c\
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì & Tại sao?
-Sử dụng debugger có nghĩa là sử dụng các công cụ chuyên biệt để kiểm tra và kiểm soát mã của bạn khi nó chạy. Điều này thực sự quan trọng bởi vì nó cho phép bạn thấy những gì đang diễn ra bên dưới "nắp máy", tìm lỗi và hiểu rõ hơn về hành vi của mã.
-
 ## Làm thế nào:
 Để sử dụng debugger trong Xcode (môi trường phát triển tích hợp dành cho Swift), bạn có thể đặt điểm dừng (breakpoints), kiểm tra biến và theo dõi biểu thức. Dưới đây là một ví dụ:
 

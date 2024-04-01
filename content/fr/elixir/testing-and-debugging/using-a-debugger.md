@@ -11,11 +11,6 @@ summary: "Utiliser un d\xE9bogueur avec Elixir consiste \xE0 parcourir votre cod
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et Pourquoi ?
-Utiliser un débogueur avec Elixir consiste à parcourir votre code pas à pas, inspecter les variables et suivre les flux pour écraser les bugs. Les programmeurs le font pour donner un sens à l'inattendu et s'assurer que leurs applications se comportent comme prévu.
-
 ## Comment faire :
 Elixir est livré avec un débogueur graphique intégré appelé `:debugger`. Pour l'utiliser, vous devrez le démarrer et vous attacher à votre processus en cours d'exécution.
 

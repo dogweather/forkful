@@ -15,14 +15,7 @@ summary: "Qu\xE1 tr\xECnh g\u1EE1 l\u1ED7i trong Google Apps Script (GAS) bao g\
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-
-Quá trình gỡ lỗi trong Google Apps Script (GAS) bao gồm việc xác định và loại bỏ lỗi từ các kịch bản được thiết kế để tự động hóa Google Apps hoặc xây dựng ứng dụng web. Lập trình viên gỡ lỗi để đảm bảo mã của họ thực thi như mong đợi, nâng cao độ tin cậy và hiệu suất trong ứng dụng.
-
 ## Làm thế nào:
-
 Google Apps Script cung cấp một trình gỡ lỗi tích hợp sẵn trong Trình Biên Tập Apps Script để giúp khắc phục sự cố kịch bản. Dưới đây là cách khởi chạy và sử dụng trình gỡ lỗi:
 
 1. **Mở kịch bản của bạn trong Trình Biên Tập Apps Script.**
@@ -56,7 +49,6 @@ Trong khi gỡ lỗi, Trình Biên Tập Apps Script cho phép bạn:
 - **Kiểm tra ngăn xếp cuộc gọi** để truy vết các cuộc gọi hàm.
 
 ## Sâu hơn
-
 Gỡ lỗi trong Google Apps Script, như trong bất kỳ môi trường lập trình nào khác, là thiết yếu để tạo ra các ứng dụng không lỗi. Được giới thiệu sớm trong quá trình phát triển của GAS, trình gỡ lỗi tích hợp sẵn cung cấp các khả năng cơ bản để kiểm tra và sửa mã từng bước. Mặc dù nó cung cấp các tính năng gỡ lỗi cơ bản tương tự như những môi trường chín muồi hơn như Visual Studio Code hay IntelliJ, nó có thể không đủ mạnh cho các tình huống gỡ lỗi phức tạp. Ví dụ, khả năng kiểm tra các cuộc gọi bất đồng bộ hoặc quản lý việc thực thi kịch bản nặng có thể bị hạn chế.
 
 Đối với nhu cầu gỡ lỗi phức tạp, lập trình viên có thể tìm đến các phương pháp thay thế như lưu trữ mở rộng (sử dụng `Logger.log()`) hoặc thậm chí triển khai dưới dạng một ứng dụng web để kiểm tra hành vi trong một tình huống thực tế. Tuy nhiên, sự đơn giản và tích hợp của trình gỡ lỗi GAS trong Trình Biên Tập Apps Script làm cho nó trở thành bước đầu tiên quý báu để khắc phục sự cố và hiểu biết về hành vi kịch bản. Đáng chú ý, với sự cập nhật liên tục và cải thiện từ Google đối với Apps Script, trải nghiệm gỡ lỗi đang dần cải thiện, cung cấp nhiều công cụ và lựa chọn tinh vi hơn theo thời gian. Sự phát triển này phản ánh cam kết của Google trong việc biến Apps Script thành một nền tảng mạnh mẽ và dễ tiếp cận hơn cho các lập trình viên từ nhiều lĩnh vực khác nhau.

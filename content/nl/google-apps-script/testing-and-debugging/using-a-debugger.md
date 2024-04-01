@@ -11,14 +11,7 @@ summary: "Debuggen in Google Apps Script (GAS) betreft het proces van het identi
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-
-Debuggen in Google Apps Script (GAS) betreft het proces van het identificeren en verwijderen van fouten uit scripts die bedoeld zijn om Google Apps te automatiseren of webapplicaties te bouwen. Programmeurs debuggen om ervoor te zorgen dat hun code uitvoert zoals verwacht, wat de betrouwbaarheid en prestaties van applicaties verbetert.
-
 ## Hoe te:
-
 Google Apps Script biedt een ingebouwde debugger binnen de Apps Script Editor om scripts te helpen troubleshooten. Hier is hoe je de debugger initieert en gebruikt:
 
 1. **Open je script in de Apps Script Editor.**
@@ -52,7 +45,6 @@ Tijdens het debuggen stelt de Apps Script Editor je in staat om:
 - **De call stack te inspecteren** om functieaanroepen te traceren.
 
 ## Diepere Duik
-
 Debuggen in Google Apps Script, net als in elke andere programmeeromgeving, is essentieel voor het creëren van foutloze applicaties. Geïntroduceerd in de vroege ontwikkeling van GAS, biedt de ingebouwde debugger fundamentele mogelijkheden om code stapsgewijs te inspecteren en te repareren. Hoewel het basisfuncties voor debuggen biedt, vergelijkbaar met die in meer volwassen omgevingen zoals Visual Studio Code of IntelliJ, kan het tekortschieten voor complexe debugscenario's. Zo kunnen de mogelijkheden om asynchrone callbacks te inspecteren of het beheren van zware scriptuitvoeringen beperkend zijn.
 
 Voor complexe debugbehoeften zouden ontwikkelaars kunnen overgaan op alternatieve methoden zoals uitgebreide logging (met `Logger.log()`) of zelfs deployeren als een webapp om gedrag in een realistisch scenario te inspecteren. Echter, de eenvoud en integratie van GAS's debugger binnen de Apps Script Editor maken het een onschatbare eerste stap voor het troubleshooten en begrijpen van scriptgedrag. Opvallend is dat met de continue updates en verbeteringen van Google aan Apps Script, de debug-ervaring gestaag verbetert en biedt mettertijd geavanceerdere tools en opties. Deze evolutie weerspiegelt Google's toewijding om Apps Script een krachtiger en toegankelijker platform te maken voor ontwikkelaars van diverse achtergronden.

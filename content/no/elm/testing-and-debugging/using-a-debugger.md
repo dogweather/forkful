@@ -11,11 +11,6 @@ summary: "Feils\xF8king i Elm involverer \xE5 identifisere og fjerne feil fra ko
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Feilsøking i Elm involverer å identifisere og fjerne feil fra koden din. Programmerere gjør det for å sikre at applikasjonene deres fungerer korrekt og for å forbedre kodekvaliteten. Elms sterke typesystem fanger opp mange problemer ved kompileringstid, men verktøy for feilsøking under kjøretid er essensielle for å rette ut logiske feil og uventede oppførsler.
-
 ## Hvordan:
 Elm har ikke en innebygd feilsøker i tradisjonell forstand som, si, JavaScript gjør med nettleserutviklingsverktøy. Imidlertid har Elm-samfunnet utviklet verktøy for å fylle dette gapet. Slik kan du bruke `elm-debug-transformer` for å feilsøke Elm-appen din:
 

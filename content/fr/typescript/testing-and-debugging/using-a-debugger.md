@@ -9,13 +9,7 @@ summary: "Un d\xE9bogueur est un outil qui vous permet d'examiner et de modifier
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-Un débogueur est un outil qui vous permet d'examiner et de modifier le fonctionnement interne de votre code pendant son exécution. Les programmeurs l'utilisent pour éliminer les bugs en parcourant leur code pas à pas, en inspectant les variables et en comprenant le flux de leur programme.
-
 ## Comment faire :
-
 Pour commencer avec un débogueur en TypeScript, tout ce dont vous avez besoin est un IDE pris en charge (comme Visual Studio Code) et une configuration `launch.json`. Voici un exemple rapide pour une application Node.js :
 
 ```TypeScript
@@ -50,7 +44,6 @@ Pour déboguer ceci, créez un fichier `launch.json` sous le dossier `.vscode` :
 Ensuite, placez un point d'arrêt dans votre fonction `greet` en cliquant sur le côté gauche du numéro de ligne dans votre IDE. Appuyez sur F5 pour commencer le débogage, et regardez votre application se mettre en pause au point d'arrêt. Vous pouvez maintenant survoler les variables, observer les expressions et parcourir votre code avec aisance.
 
 ## Plongée Profonde
-
 Dans le passé, avant que les environnements de développement intégrés (IDE) ne deviennent élégants, le débogage se faisait souvent avec des instructions d'impression (connues sous le nom de débogage `console.log`). Cela fonctionnait, d'une certaine manière, mais c'était comme chercher une aiguille dans une botte de foin les yeux bandés.
 
 Les débogueurs modernes sont comme un couteau suisse pour le dépannage. Avec l'évolution de TypeScript et Node.js, divers débogueurs sont disponibles, allant de l'inspecteur Node.js intégré aux outils de développement de navigateur pour le débogage côté client.
@@ -58,7 +51,6 @@ Les débogueurs modernes sont comme un couteau suisse pour le dépannage. Avec l
 L'inspecteur Node.js fonctionne en se connectant à votre application en cours d'exécution ; il communique via le protocole Chrome DevTools, transformant votre navigateur Chrome en une puissante console de débogage. Cette intégration permet une session de débogage visuellement interactive et détaillée, par rapport aux pratiques de débogage en ligne de commande traditionnelles.
 
 ## Voir Aussi
-
 Pour un peu de lecture supplémentaire et quelques conseils de pro, consultez :
 
 - [Débogage TypeScript dans Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-debugging)

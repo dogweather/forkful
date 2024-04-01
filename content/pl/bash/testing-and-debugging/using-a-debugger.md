@@ -11,11 +11,6 @@ summary: "U\u017Cycie debugera w Bashu oznacza wykorzystywanie narz\u0119dzi do 
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Użycie debugera w Bashu oznacza wykorzystywanie narzędzi do testowania i znajdowania problemów w skryptach, takich jak pułapki na błędy, które powodują awarie kodu lub podstępnie sprawiają, że zachowuje się nieprawidłowo. Programiści robią to, ponieważ znacznie inteligentniej jest wyłapać błędy przed tym, jak spowodują chaos w środowisku produkcyjnym.
-
 ## Jak to zrobić:
 Bash nie jest wyposażony w wbudowany debugger, tak jak niektóre inne języki, ale można użyć wbudowanych poleceń takich jak `set -x`, aby śledzić, co się dzieje. Lub, jako ulepszenie, jest dostępny `bashdb`, właściwy debugger umożliwiający krok po kroku przeglądać kod. Oto mały podgląd:
 

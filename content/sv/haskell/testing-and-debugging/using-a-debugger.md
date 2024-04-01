@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en fels\xF6kare inneb\xE4r att dyka ner i koden med ver
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en felsökare innebär att dyka ner i koden med verktyg utformade för att inspektera, pausa och manipulera ett program under körning. Programmerare gör detta för att jaga buggar, förstå programflödet och försäkra sig om att deras kod gör exakt det de förväntar sig.
-
 ## Hur gör man:
 Låt oss ta en promenad med GHCi, Haskell's interaktiva miljö som kan fungera som en grundläggande felsökare. Du startar den med din Haskell-kod och börjar utforska. Här är ett exempel:
 

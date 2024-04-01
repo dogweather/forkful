@@ -13,14 +13,7 @@ summary: "Go-ohjelmoinnissa virheenj\xE4ljityksen k\xE4ytt\xF6 tarkoittaa ty\xF6
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä ja miksi?
-
-Go-ohjelmoinnissa virheenjäljityksen käyttö tarkoittaa työkalujen tai ominaisuuksien hyödyntämistä ohjelman tilan tarkasteluun ja muokkaamiseen sen käyttäytymisen ymmärtämiseksi tai ongelmien diagnosoimiseksi. Ohjelmoijat tekevät näin tehokkaasti löytääkseen ja korjatakseen bugeja, optimoidakseen suorituskykyä ja varmistaakseen koodinsa oikeellisuuden.
-
 ## Kuinka:
-
 Go tarjoaa sisäänrakennetun virheenjäljitystyökalun nimeltä `delve`. Se on täysiverinen virheenjäljitystyökalu, jonka avulla voit suorittaa Go-ohjelmia askel askeleelta, tarkastella ohjelman muuttujia ja arvioida lausekkeita.
 
 Aloittaaksesi sinun täytyy ensin asentaa `delve`. Voit tehdä sen suorittamalla:
@@ -78,7 +71,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Näiden komentojen avulla voit astua läpi ohjelmasi, tarkastellen sen tilaa ymmärtääksesi sen käyttäytymistä ja tunnistaaksesi mahdolliset ongelmat.
 
 ## Syväsukellus
-
 `Delve`-valinta Go:n virheenjäljitystyökaluksi perinteisten työkalujen, kuten GDB:n (GNU Debugger), sijaan johtuu pääasiassa Go:n suoritusmallista ja ajonaikaisesta ympäristöstä. GDB:tä ei alun perin suunniteltu Go:n ajonaikaisen ympäristön huomioon ottamiseksi, mikä tekee `delvestä` sopivamman valinnan Go-kehittäjille. `Delve` on suunniteltu nimenomaan Go:lle ja tarjoaa intuitiivisemman virheenjäljityskokemuksen Go-rutiineille, kanaville ja muille Go-erityisille rakenteille.
 
 Lisäksi `delve` tukee laajaa ominaisuuksien kirjoa, joita perus-GDB ei tarjoa työskennellessä Go-ohjelmien kanssa. Näihin kuuluu, mutta ei rajoitu: kiinnittyminen käynnissä oleviin prosesseihin virheenjäljitystä varten; ehdolliset keskeytyskohdat; ja monimutkaisten lausekkeiden arviointi, jotka voivat sisältää Go:n rinnakkaisuusprimitiivejä.

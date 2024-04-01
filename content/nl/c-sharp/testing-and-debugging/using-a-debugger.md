@@ -11,11 +11,6 @@ summary: "Een debugger gebruiken betekent dat je gespecialiseerde tools gebruikt
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger gebruiken betekent dat je gespecialiseerde tools gebruikt om code te testen en te diagnosticeren. Programmeurs doen dit om bugs te pletten, de stroom van code te begrijpen en te zorgen dat hun code zich gedraagt zoals verwacht - het is alsof je een microscoop voor de hersenen van je code hebt.
-
 ## Hoe te:
 Stel je voor dat je een klein programma hebt dat zich niet goed gedraagt:
 

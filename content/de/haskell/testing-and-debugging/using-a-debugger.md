@@ -10,11 +10,6 @@ summary: "Ein Debugger wird verwendet, um tief in Ihren Code einzutauchen, mit W
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Ein Debugger wird verwendet, um tief in Ihren Code einzutauchen, mit Werkzeugen, die darauf ausgelegt sind, ein Programm während der Ausführung zu inspizieren, anzuhalten und zu manipulieren. Programmierer tun dies, um Fehlern nachzujagen, den Programmablauf zu verstehen und sicherzustellen, dass ihr Code genau das tut, was sie erwarten.
-
 ## Wie man es macht:
 Lassen Sie uns einen Spaziergang mit GHCi machen, Haskeals interaktiver Umgebung, die als einfacher Debugger fungieren kann. Sie starten es mit Ihrem Haskell-Code und beginnen herumzustochern. Hier ist ein Beispiel:
 

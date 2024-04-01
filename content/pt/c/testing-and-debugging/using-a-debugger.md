@@ -12,14 +12,7 @@ summary: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos de
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Quê e Por Quê?
-
-Depuradores em C são ferramentas especializadas que permitem aos desenvolvedores acompanhar o passo a passo do seu código, inspecionar variáveis e monitorar o fluxo de execução. Este processo é integral para identificar e corrigir bugs, garantindo que o código se comporte conforme o esperado.
-
 ## Como fazer:
-
 GDB (GNU Debugger) é o depurador mais comumente usado para a programação em C. Aqui está um guia breve sobre como usar o GDB para depurar um programa simples em C.
 
 Primeiro, compile seu programa C com a flag `-g` para incluir informações de depuração:
@@ -77,7 +70,6 @@ $3 = 2
 Isso demonstra examinar o estado e o fluxo de um programa simples.
 
 ## Aprofundamento
-
 O conceito de depuração evoluiu significativamente desde os primórdios da programação, onde bugs físicos (insetos literais) poderiam causar problemas em computadores mecânicos. Hoje, depuradores como o GDB oferecem recursos sofisticados além da simples execução passo a passo e inspeção de variáveis, como a depuração reversa (executando o programa para trás), pontos de interrupção condicionais e scripts para tarefas de depuração automatizadas.
 
 Enquanto o GDB é poderoso e amplamente usado, pode ser denso e desafiador para iniciantes. Ferramentas de depuração alternativas e IDEs (Ambientes de Desenvolvimento Integrados) como Visual Studio Code, CLion ou Eclipse oferecem interfaces mais amigáveis para a depuração do código C, frequentemente integrando auxílios visuais e controles mais intuitivos. Essas alternativas podem não oferecer toda a profundidade de funcionalidade do GDB, mas podem ser mais acessíveis para novatos na programação C.

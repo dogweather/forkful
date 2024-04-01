@@ -15,11 +15,6 @@ summary: "Debugger l\xE0 m\u1ED9t c\xF4ng c\u1EE5 cho ph\xE9p b\u1EA1n ki\u1EC3m
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-Debugger là một công cụ cho phép bạn kiểm tra và kiểm soát việc thực thi của một chương trình, giúp dễ dàng xác định vấn đề xảy ra ở đâu. Lập trình viên sử dụng debugger để loại bỏ lỗi, hiểu dòng chảy của mã, và đảm bảo rằng mã của họ sạch sẽ như còi săn.
-
 ## Làm thế nào:
 Lua không đi kèm với debugger tích hợp sẵn, nhưng bạn có thể sử dụng các debugger bên ngoài, như ZeroBrane Studio. Dưới đây là một ví dụ về cách bạn làm việc với nó:
 

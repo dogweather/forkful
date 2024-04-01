@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa erikoisty\xF6kalujen k\xE4ytt\
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttäminen tarkoittaa erikoistyökalujen käyttöä koodin testaamiseen ja diagnostiikkaan. Ohjelmoijat tekevät niin virheiden löytämiseksi, koodivirran ymmärtämiseksi ja varmistaakseen, että heidän koodinsa toimii odotetusti – se on kuin olisi mikroskooppi koodisi aivoille.
-
 ## Kuinka:
 Kuvittele, että sinulla on pieni ohjelma, joka ei toimi oikein:
 

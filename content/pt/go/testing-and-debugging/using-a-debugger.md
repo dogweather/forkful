@@ -13,14 +13,7 @@ summary: "Utilizar um depurador na programa\xE7\xE3o em Go envolve o uso de ferr
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Por Quê?
-
-Utilizar um depurador na programação em Go envolve o uso de ferramentas ou recursos para inspecionar e modificar o estado de um programa em execução para entender seu comportamento ou diagnosticar problemas. Os programadores fazem isso para encontrar e corrigir bugs de forma eficiente, otimizar o desempenho e garantir a correção de seu código.
-
 ## Como fazer:
-
 Go oferece uma facilidade integrada para depuração chamada `delve`. É uma ferramenta de depuração completa que permite executar programas em Go passo a passo, inspecionar variáveis do programa e avaliar expressões.
 
 Para começar, você deve primeiro instalar o `delve`. Você pode fazer isso executando:
@@ -78,7 +71,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Usando esses comandos, você pode percorrer seu programa passo a passo, inspecionando o estado à medida que avança para entender como ele se comporta e identificar quaisquer problemas.
 
 ## Aprofundamento
-
 A escolha do `delve` como a ferramenta de depuração de eleição para Go, em vez de ferramentas tradicionais como o GDB (GNU Debugger), deve-se principalmente à natureza do modelo de execução e do tempo de execução do Go. O GDB não foi inicialmente projetado com o tempo de execução do Go em mente, tornando o `delve` uma escolha mais adequada para desenvolvedores em Go. `Delve` é projetado especificamente para Go, oferecendo uma experiência de depuração mais intuitiva para rotinas Go, canais e outros construtos específicos do Go.
 
 Além disso, `delve` suporta uma ampla gama de recursos além daqueles oferecidos pelo GDB básico ao trabalhar com programas Go. Estes incluem, mas não estão limitados a: anexar a processos em execução para depuração; pontos de interrupção condicionais; e avaliar expressões complexas que podem envolver primitivos de concorrência do Go.

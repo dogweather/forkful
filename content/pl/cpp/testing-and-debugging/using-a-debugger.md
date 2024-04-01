@@ -11,11 +11,6 @@ summary: "U\u017Cycie debugera oznacza uruchomienie narz\u0119dzia, kt\xF3re poz
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Użycie debugera oznacza uruchomienie narzędzia, które pozwala zajrzeć do wnętrza działającego programu, aby zrozumieć, co się w nim naprawdę dzieje. Programiści robią to, aby znaleźć i usunąć błędy – te irytujące problemy, które powodują, że kod zachowuje się nieoczekiwanie lub się zawiesza.
-
 ## Jak to zrobić:
 C++ integruje się z debuggerami, takimi jak GDB czy debugger Visual Studio. Oto przykład użycia GDB:
 

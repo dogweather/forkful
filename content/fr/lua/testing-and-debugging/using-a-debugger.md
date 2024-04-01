@@ -11,11 +11,6 @@ summary: "Un d\xE9bogueur est un outil qui vous permet d'inspecter et de contr\x
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et pourquoi ?
-Un débogueur est un outil qui vous permet d'inspecter et de contrôler l'exécution d'un programme, facilitant ainsi la détection des problèmes. Les programmeurs utilisent des débogueurs pour éliminer les bugs, comprendre le flux du code et s'assurer que leur code est impeccable.
-
 ## Comment faire :
 Lua n'est pas fourni avec un débogueur intégré, mais vous pouvez utiliser des débogueurs externes, comme ZeroBrane Studio. Voici un aperçu de la façon dont vous travailleriez avec :
 

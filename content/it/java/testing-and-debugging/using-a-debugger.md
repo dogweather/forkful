@@ -9,11 +9,6 @@ summary: "Utilizzare un debugger significa impiegare uno strumento per testare e
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa e Perché?
-Utilizzare un debugger significa impiegare uno strumento per testare e correggere gli errori nel proprio codice. I programmatori lo fanno per comprendere il flusso delle loro applicazioni, identificare le fonti di errori e verificare la logica in esecuzione.
-
 ## Come fare:
 Diciamo che hai un semplice programma Java che si comporta male, e non riesci a capire perché. Ecco come potresti avviare un debugger usando Eclipse, uno degli IDE più popolari per lo sviluppo Java:
 

@@ -11,11 +11,6 @@ summary: "\xC5 bruke en feils\xF8ker betyr \xE5 tappe inn i spesialiserte verkt\
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en feilsøker betyr å tappe inn i spesialiserte verktøy som lar deg titte under panseret på koden din, og se den kjøre steg for steg. Programmerere gjør dette for å knuse feil, optimalisere ytelse og forstå kodeoppførsel.
-
 ## Hvordan:
 Her er et stykke JavaScript-kode som ikke oppfører seg som forventet:
 

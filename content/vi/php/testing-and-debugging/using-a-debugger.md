@@ -15,11 +15,6 @@ summary: "Debugger l\xE0 m\u1ED9t c\xF4ng c\u1EE5 gi\xFAp l\u1EADp tr\xECnh vi\x
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì & Tại Sao?
-Debugger là một công cụ giúp lập trình viên hiểu rõ hơn về việc code của họ thực sự đang thực hiện những gì khi nó chạy. Đó là chiếc kính lúp giúp chúng ta phóng to các lỗi - những vấn đề gây ra sự cố hoặc đưa ra những câu trả lời sai trong chương trình của chúng tôi và xử lý chúng. Chúng tôi sử dụng debugger bởi vì chúng tiết kiệm hàng giờ đồng hồ lập trình và trò chơi đoán mò.
-
 ## Làm thế nào:
 PHP đi kèm với một debugger tương tác có tên là Xdebug. Dưới đây là cách sử dụng nó.
 

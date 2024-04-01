@@ -13,14 +13,7 @@ summary: "\xC5 bruke en debugger i Go-programmering involverer \xE5 benytte verk
 title: "Bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-
-Å bruke en debugger i Go-programmering involverer å benytte verktøy eller funksjoner for å inspisere og endre tilstanden til et kjørende program for å forstå oppførselen eller diagnostisere problemer. Programmere gjør dette for å effektivt finne og fikse feil, optimalisere ytelse og sikre riktigheten av koden sin.
-
 ## Hvordan:
-
 Go tilbyr en innebygd fasilitet for feilsøking kalt `delve`. Det er et fullverdig feilsøkingsverktøy som lar deg utføre Go-programmer steg for steg, inspisere programvariabler og evaluere uttrykk.
 
 For å starte, må du først installere `delve`. Dette kan du gjøre ved å kjøre:
@@ -78,7 +71,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Ved å bruke disse kommandoene kan du stegvis gå gjennom programmet ditt, inspisere tilstanden underveis for å forstå hvordan det oppfører seg, og identifisere eventuelle problemer.
 
 ## Dypdykk
-
 Valget av `delve` som Go sin foretrukne feilsøkingsverktøy fremfor tradisjonelle verktøy som GDB (GNU Debugger), skyldes hovedsakelig Go sin utførelsesmodell og kjøretid. GDB var ikke opprinnelig designet med Go-kjøretiden i tankene, noe som gjør `delve` til et mer passende valg for Go-utviklere. `Delve` er spesielt designet for Go og tilbyr en mer intuitiv feilsøkingsopplevelse for Go-rutiner, kanaler og andre Go-spesifikke konstruksjoner.
 
 Videre støtter `delve` et bredt spekter av funksjoner utover det som tilbys av grunnleggende GDB når man jobber med Go-programmer. Disse inkluderer, men er ikke begrenset til: å feste seg til kjørende prosesser for feilsøking; betingede brytepunkter; og evaluering av komplekse uttrykk som kan involvere Go’s samtidighetsprimitiver.

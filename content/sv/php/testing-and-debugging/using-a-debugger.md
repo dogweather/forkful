@@ -11,11 +11,6 @@ summary: "En debugger \xE4r ett verktyg som hj\xE4lper programmerare att f\xF6rs
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-En debugger är ett verktyg som hjälper programmerare att förstå vad deras kod faktiskt gör när den körs. Det är förstoringsglaset som låter oss zooma in på buggar—de där irriterande problemen som får våra program att krascha eller spotta ut felaktiga svar—och krossa dem. Vi använder debuggers för att de sparar oss timmar av utskriftsuttalanden och gissningslekar.
-
 ## Hur man gör:
 PHP levereras med en interaktiv debugger som kallas Xdebug. Så här använder du den.
 

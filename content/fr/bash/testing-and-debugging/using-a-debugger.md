@@ -11,11 +11,6 @@ summary: "Utiliser un d\xE9bogueur en Bash signifie utiliser des outils pour tes
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et Pourquoi ?
-Utiliser un débogueur en Bash signifie utiliser des outils pour tester et trouver des problèmes dans vos scripts, comme piéger des bugs qui font planter votre code ou qui le font mal se comporter de manière sournoise. Les programmeurs le font parce qu'il est bien plus judicieux de capturer les erreurs avant qu'elles ne provoquent des ravages dans un environnement en direct.
-
 ## Comment faire :
 Bash n'est pas fourni avec un débogueur intégré comme certains autres langages, mais vous pouvez utiliser des commandes intégrées comme `set -x` pour tracer ce qui se passe. Ou, pour une amélioration, il y a `bashdb`, un véritable débogueur pour parcourir votre code pas à pas. Voici un aperçu :
 

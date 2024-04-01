@@ -11,11 +11,6 @@ summary: "Zanurzenie si\u0119 w debugger to wszystko o krokowym przechodzeniu pr
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Zanurzenie się w debugger to wszystko o krokowym przechodzeniu przez kod, obserwowaniu jak działają mechanizmy i łapaniu tych irytujących błędów na gorącym uczynku. Programiści używają debuggerów, ponieważ są to narzędzia detektywistyczne, które pomagają nam zrozumieć, gdzie pojawiają się problemy, bez wyrywania sobie włosów z głowy.
-
 ## Jak to zrobić:
 Oto mała próbka debugowania w Kotlinie z IntelliJ IDEA - Sherlocku Holmesie wśród IDE:
 

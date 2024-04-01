@@ -11,16 +11,10 @@ summary: "L'utilisation d'un d\xE9bogueur avec Dart permet aux programmeurs d'ex
 title: "Utiliser un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-
-L'utilisation d'un débogueur avec Dart permet aux programmeurs d'examiner méthodiquement leur code en définissant des points d'arrêt, en parcourant l'exécution pas à pas et en inspectant les variables. Ce processus est essentiel pour identifier et corriger les bugs de manière efficace, ce qui en fait un outil indispensable dans le cycle de développement.
-
 ## Comment faire :
 
-### Débogage Basique :
 
+### Débogage Basique :
 **1. Définir des Points d'Arrêt :**
 
 Pour définir un point d'arrêt, cliquez simplement sur la marge gauche de la ligne de code dans votre IDE (par exemple, Visual Studio Code ou Android Studio) où vous souhaitez que l'exécution se suspende.
@@ -45,7 +39,6 @@ Une fois l'exécution suspendue, survolez les variables pour voir leurs valeurs 
 Utilisez les commandes de pas par-dessus, de pas dans et de pas hors dans votre IDE pour naviguer dans votre code une ligne ou fonction à la fois.
 
 ### Débogage Avancé avec Observatory :
-
 Dart inclut un outil appelé Observatory pour le débogage et le profilage des applications Dart. Il est particulièrement utile pour les applications fonctionnant sur la Dart VM.
 
 **Accéder à Observatory :**
@@ -59,7 +52,6 @@ dart --observe votre_programme.dart
 Cette commande affiche une URL dans la console, que vous pouvez ouvrir dans un navigateur web pour accéder au débogueur Observatory.
 
 ### Utilisation de Bibliothèques Tierces Populaires :
-
 Pour le débogage des applications Flutter, le package `flutter_devtools` fournit une suite d'outils de performance et de débogage qui s'intègrent à la fois avec la Dart VM et Flutter.
 
 **Installation :**
@@ -82,7 +74,6 @@ flutter pub global run devtools
 Ensuite, démarrez votre application Flutter en mode débogage. DevTools propose des fonctionnalités telles que l'inspecteur Flutter pour l'analyse de l'arbre de widgets, et le profileur réseau pour surveiller l'activité réseau.
 
 ### Exemple de Sortie :
-
 En atteignant un point d'arrêt, votre IDE peut afficher les valeurs des variables et les traces de pile comme ceci :
 
 ```

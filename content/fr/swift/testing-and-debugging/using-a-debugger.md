@@ -11,11 +11,6 @@ summary: "Utiliser un d\xE9bogueur signifie recourir \xE0 des outils sp\xE9ciali
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-Utiliser un débogueur signifie recourir à des outils spécialisés pour tester et inspecter votre code pendant son exécution. C'est important car cela vous permet de voir ce qui se passe sous le capot, de trouver des bugs, et de mieux comprendre le comportement de votre code.
-
 ## Comment faire :
 Pour utiliser le débogueur dans Xcode (l'IDE pour Swift), vous pouvez définir des points d'arrêt, inspecter des variables et observer des expressions. Voici un exemple :
 

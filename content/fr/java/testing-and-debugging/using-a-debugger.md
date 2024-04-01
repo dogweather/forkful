@@ -9,11 +9,6 @@ summary: "Utiliser un d\xE9bogueur signifie employer un outil pour tester et cor
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-Utiliser un débogueur signifie employer un outil pour tester et corriger les bugs dans votre code. Les programmeurs le font pour comprendre le flux de leurs applications, identifier les sources d'erreurs, et vérifier la logique sous exécution.
-
 ## Comment faire :
 Disons que vous avez un simple programme Java qui pose problème, et vous ne pouvez pas comprendre pourquoi. Voici comment vous lanceriez un débogueur en utilisant Eclipse, l'un des IDE populaires pour le développement Java :
 

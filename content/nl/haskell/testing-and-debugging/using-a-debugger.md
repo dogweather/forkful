@@ -11,11 +11,6 @@ summary: "Een debugger gebruiken betekent diep duiken in je code met hulpmiddele
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger gebruiken betekent diep duiken in je code met hulpmiddelen die zijn ontworpen om te inspecteren, te pauzeren en een programma tijdens de uitvoering te manipuleren. Programmeurs doen dit om fouten op te sporen, de programmastroom te begrijpen en ervoor te zorgen dat hun code precies doet wat ze verwachten.
-
 ## Hoe:
 Laten we een wandeling maken met GHCi, Haskell's interactieve omgeving die kan dienen als een basale debugger. Je start het op met je Haskell-code en begint rond te neuzen. Hier is een voorbeeld:
 

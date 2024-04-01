@@ -9,11 +9,6 @@ summary: "Vianj\xE4ljitys Elm:ss\xE4 tarkoittaa virheiden tunnistamista ja poist
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä ja miksi?
-Vianjäljitys Elm:ssä tarkoittaa virheiden tunnistamista ja poistamista koodistasi. Ohjelmoijat tekevät sitä varmistaakseen, että heidän sovelluksensa toimivat oikein ja parantaakseen koodin laatua. Elmin vahva tyyppijärjestelmä nappaa kiinni monia ongelmia käännösaikana, mutta ajonaikaiset vianjäljitystyökalut ovat olennaisen tärkeitä loogisten virheiden ja odottamattomien käyttäytymisten silittämiseen.
-
 ## Kuinka:
 Elm ei sisällä kääntäjään sisään rakennettua vianjäljitintä perinteisessä mielessä, kuten esimerkiksi JavaScript tarjoaa selaimen kehittäjätyökaluissa. Kuitenkin Elm-yhteisö on rakentanut työkaluja tämän aukon täyttämiseksi. Näin voit käyttää `elm-debug-transformer` -työkalua Elm-sovelluksesi vianjäljitykseen:
 

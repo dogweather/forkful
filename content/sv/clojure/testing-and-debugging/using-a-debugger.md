@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en debugger inneb\xE4r att du utrustar dig sj\xE4lv med
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en debugger innebär att du utrustar dig själv med ett förstoringsglas för att granska din kod. Programmerare gör detta för att krossa buggar, förstå flöden och försäkra sig om att deras logik fungerar som förväntat.
-
 ## Hur man gör:
 Clojure stödjer sig på Java Virtual Machine (JVM), så mycket av felsökningen sker med Java-verktyg. Ett sådant verktyg är `CIDER`, ett kraftfullt paket för Clojure-utveckling i Emacs, som har gedigna felsökningsförmågor. Låt oss dyka in:
 

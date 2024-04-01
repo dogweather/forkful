@@ -9,11 +9,6 @@ summary: "\xC5 bruke en debugger handler om \xE5 knuse feil\u2014de ekle, tidssl
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en debugger handler om å knuse feil—de ekle, tidsslukende feilene i koden din. Programmerere debugger fordi de vil finne og fikse problemer effektivt, forstå kodeflyten, og få et klarere bilde av hva koden deres egentlig gjør.
-
 ## Hvordan:
 Fish har ikke en innebygd debugger som noen andre skall har, men du kan bruke eksterne verktøy som `gdb` for debugging av kompilerte programmer eller `fish -d` for å kjøre fish med debug-utdata på forskjellige nivåer. La oss gå videre med `fish -d`:
 

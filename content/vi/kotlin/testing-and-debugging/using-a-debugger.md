@@ -15,11 +15,6 @@ summary: "Vi\u1EC7c l\u1EB7n s\xE2u v\xE0o debugger l\xE0 \u0111\u1EC3 b\u01B0\u
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-Việc lặn sâu vào debugger là để bước qua từng dòng code, quan sát cách thức hoạt động và bắt gặp những lỗi khó chịu đang quậy phá. Lập trình viên sử dụng debugger bởi vì đó là công cụ thám tử giúp chúng ta tìm ra vấn đề ở đâu mà không cần phải tức tóc.
-
 ## Cách thực hiện:
 Dưới đây là một vài ví dụ về việc debug trong Kotlin với IntelliJ IDEA - Sherlock Holmes của các IDE:
 

@@ -11,11 +11,6 @@ summary: "U\u017Cycie debugera oznacza wykorzystanie specjalistycznych narz\u011
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co & Dlaczego?
-Użycie debugera oznacza wykorzystanie specjalistycznych narzędzi do testowania i inspekcji twojego kodu podczas jego wykonania. To ważne, ponieważ pozwala zobaczyć, co dzieje się w tle, znaleźć błędy i lepiej zrozumieć zachowanie twojego kodu.
-
 ## Jak używać:
 Aby użyć debugera w Xcode (IDE dla Swift), możesz ustawić punkty przerwania, inspektować zmienne i obserwować wyrażenia. Oto przykład:
 

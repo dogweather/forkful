@@ -11,11 +11,6 @@ summary: "Korzystanie z debugera oznacza zag\u0142\u0119bianie si\u0119 w Tw\xF3
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i Dlaczego?
-Korzystanie z debugera oznacza zagłębianie się w Twój kod przy użyciu narzędzi zaprojektowanych do inspekcji, wstrzymywania i manipulowania programem w trakcie jego wykonania. Programiści robią to, aby śledzić błędy, rozumieć przepływ programu i upewnić się, że ich kod robi dokładnie to, czego oczekują.
-
 ## Jak to zrobić:
 Wybierzmy się na spacer z GHCi, interaktywnym środowiskiem Haskella, które może pełnić funkcję podstawowego debugera. Wystartuj go ze swoim kodem Haskell i zacznij eksplorować. Oto przykład:
 

@@ -13,14 +13,7 @@ summary: "Debuggers i C \xE4r specialiserade verktyg som g\xF6r det m\xF6jligt f
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-
-Debuggers i C är specialiserade verktyg som gör det möjligt för utvecklare att stega igenom sin kod, inspektera variabler och övervaka exekveringsflödet. Denna process är avgörande för att identifiera och åtgärda buggar, samt för att säkerställa att koden fungerar som förväntat.
-
 ## Hur gör man:
-
 GDB (GNU Debugger) är den mest använda debuggern för C-programmering. Här är en kort guide om hur man använder GDB för att felsöka ett enkelt C-program.
 
 Först, kompilera ditt C-program med flaggan `-g` för att inkludera debugginginformation:
@@ -78,7 +71,6 @@ $3 = 2
 Detta demonstrerar undersökningen av tillståndet och flödet i ett enkelt program.
 
 ## Fördjupning
-
 Konceptet med felsökning har utvecklats avsevärt sedan programmeringens tidiga dagar, där fysiska buggar (bokstavliga insekter) kunde orsaka problem i mekaniska datorer. Idag erbjuder debuggers som GDB sofistikerade funktioner utöver grundläggande stegning och variabelinspektion, såsom omvänd felsökning (att exekvera programmet bakåt), villkorliga brytpunkter och skriptning för automatiserade felsökningsuppgifter.
 
 Även om GDB är kraftfullt och mycket använt, kan det vara tätt och utmanande för nybörjare. Alternativa felsökningsverktyg och IDE:er (Integrated Development Environments) som Visual Studio Code, CLion eller Eclipse erbjuder mer användarvänliga gränssnitt för felsökning av C-kod, ofta med visuella hjälpmedel och mer intuitiva kontroller. Dessa alternativ kanske inte erbjuder fullt så djup funktionalitet som GDB, men kan vara mer tillgängliga för nykomlingar till C-programmering.

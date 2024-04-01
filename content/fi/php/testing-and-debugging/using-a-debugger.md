@@ -11,11 +11,6 @@ summary: "Debuggeri on ty\xF6kalu, joka auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä ja Miksi?
-Debuggeri on työkalu, joka auttaa ohjelmoijia ymmärtämään, mitä heidän koodinsa todellisuudessa tekee sen suorittaessa. Se on suurennuslasi, joka mahdollistaa virheiden—niiden kiusallisten ongelmien, jotka saavat ohjelmamme kaatumaan tai antamaan vääriä vastauksia—tarkastelun ja korjaamisen. Debuggerien käyttö säästää meiltä tunteja tulostuslauseiden ja arvailupelien parissa.
-
 ## Miten:
 PHP:ssä on interaktiivinen debuggeri nimeltään Xdebug. Näin sitä käytetään.
 

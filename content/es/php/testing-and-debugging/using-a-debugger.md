@@ -11,11 +11,6 @@ summary: "Un depurador es una herramienta que ayuda a los programadores a entend
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## ¿Qué y por qué?
-Un depurador es una herramienta que ayuda a los programadores a entender qué está haciendo su código realmente mientras se ejecuta. Es la lupa que nos permite acercarnos a los errores—esos problemas molestos que hacen que nuestros programas se cierren o arrojen respuestas incorrectas—y aplastarlos. Utilizamos depuradores porque nos ahorran horas de declaraciones de impresión y juegos de adivinanzas.
-
 ## Cómo hacerlo:
 PHP viene con un depurador interactivo llamado Xdebug. Así es como se usa.
 

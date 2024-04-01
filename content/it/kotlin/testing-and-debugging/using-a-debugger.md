@@ -10,11 +10,6 @@ summary: "Immergersi in un debugger consiste nel passare attraverso il proprio c
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa & Perché?
-Immergersi in un debugger consiste nel passare attraverso il proprio codice, osservare gli ingranaggi in azione e catturare quei fastidiosi bug con le mani nel sacco. I programmatori usano i debugger perché sono gli strumenti di indagine che ci aiutano a scoprire dove le cose vanno storte senza strapparci i capelli.
-
 ## Come fare:
 Ecco un assaggio del debugging in Kotlin con IntelliJ IDEA - lo Sherlock Holmes degli IDE:
 

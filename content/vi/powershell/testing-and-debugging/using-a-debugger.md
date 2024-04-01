@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i c\xF3 ngh\u0129a 
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì & Tại Sao?
-Sử dụng một trình gỡ lỗi có nghĩa là thiết lập điểm dừng, bước qua mã của bạn, theo dõi các biến, và kiểm tra trạng thái của chương trình của bạn khi nó chạy. Đó là một sự thay đổi lớn đối với lập trình viên bởi vì nó xác định lỗi và giúp chúng ta hiểu rõ hơn về những gì mã của chúng ta thực sự làm.
-
 ## Làm thế nào:
 Trong PowerShell, bạn có thể gỡ lỗi script sử dụng PowerShell Integrated Scripting Environment (ISE) tích hợp sẵn hoặc Visual Studio Code (VS Code) với tiện ích mở rộng PowerShell. Dưới đây là cách sử dụng điểm dừng trong cả hai:
 

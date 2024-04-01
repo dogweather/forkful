@@ -11,11 +11,6 @@ summary: "U\u017Cywanie debugera to nic innego jak t\u0119pienie b\u0142\u0119d\
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i Dlaczego?
-Używanie debugera to nic innego jak tępienie błędów – tych nieprzyjemnych, pochłaniających czas błędów w twoim kodzie. Programiści debugują, ponieważ chcą wydajnie znajdować i naprawiać problemy, rozumieć przepływ kodu, a także mieć jaśniejszy obraz tego, co ich kod tak naprawdę robi.
-
 ## Jak to zrobić:
 Fish nie ma wbudowanego debugera, tak jak niektóre inne shelle, ale można używać zewnętrznych narzędzi takich jak `gdb` do debugowania skompilowanych programów lub `fish -d` do uruchamiania fisha z wyjściem diagnostycznym na różnych poziomach. Spróbujmy z `fish -d`:
 

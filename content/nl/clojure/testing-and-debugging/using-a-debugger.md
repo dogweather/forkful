@@ -11,11 +11,6 @@ summary: "Een debugger gebruiken betekent dat je jezelf uitrust met een vergroot
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger gebruiken betekent dat je jezelf uitrust met een vergrootglas om je code nauwkeurig te onderzoeken. Programmeurs doen dit om fouten te verpletteren, de flow te begrijpen en ervoor te zorgen dat hun logica zoals verwacht verloopt.
-
 ## Hoe:
 Clojure leunt op de Java Virtuele Machine (JVM), dus veel debuggen gebeurt met Java-tools. Een dergelijke tool is `CIDER`, een krachtig pakket voor Clojure-ontwikkeling in Emacs, dat solide debugmogelijkheden heeft. Laten we erin duiken:
 

@@ -11,11 +11,6 @@ summary: "Debugger on ty\xF6kalu, jonka avulla voit tarkastella ja ohjata ohjelm
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä ja miksi?
-Debugger on työkalu, jonka avulla voit tarkastella ja ohjata ohjelman suoritusta, mikä tekee virheiden paikallistamisesta helppoa. Ohjelmoijat käyttävät debuggereita matojen murskaamiseen, koodivirran ymmärtämiseen ja varmistaakseen, että heidän koodinsa on niin puhdasta kuin pilli.
-
 ## Kuinka:
 Lua ei sisällä sisäänrakennettua debuggeria, mutta voit käyttää ulkoisia, kuten ZeroBrane Studio. Tässä maistiainen siitä, miten sen kanssa työskentelisit:
 

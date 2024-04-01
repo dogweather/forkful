@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng debugger ch\xEDnh l\xE0 qu\xE1 tr\xECnh \u0111i qua 
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì và Tại sao?
-Sử dụng debugger chính là quá trình đi qua từng dòng code Python của bạn để tìm lỗi và hiểu rõ hành vi của chương trình. Chúng ta làm điều này vì nó dễ dàng hơn nhiều so với việc chỉ đoán xem vấn đề xuất phát từ đâu, và nó giúp chúng ta tiết kiệm hàng giờ đồng hồ ngồi nhìn vào màn hình với những dòng print.
-
 ## Làm thế nào:
 Hãy cùng phân tích cách sử dụng `pdb`, debugger có sẵn của Python. Hãy tưởng tượng một file có tên là `buggy.py`, chứa một lỗi khó tìm:
 

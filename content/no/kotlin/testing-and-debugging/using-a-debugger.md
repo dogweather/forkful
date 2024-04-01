@@ -10,11 +10,6 @@ summary: "\xC5 dykke ned i en feils\xF8ker handler om \xE5 steg-for-steg g\xE5 g
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å dykke ned i en feilsøker handler om å steg-for-steg gå gjennom koden din, se tannhjulene dreie og fange de irriterende feilene på fersk gjerning. Programmerere bruker feilsøkere fordi de er detektivverktøyene som hjelper oss med å finne ut hvor ting går galt uten å rive av oss håret.
-
 ## Hvordan:
 Her er en liten smakebit på feilsøking i Kotlin med IntelliJ IDEA - Sherlock Holmes av IDEer:
 

@@ -10,11 +10,6 @@ summary: "L'uso di un debugger in Elixir comporta l'esecuzione passo passo del c
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa & Perché?
-L'uso di un debugger in Elixir comporta l'esecuzione passo passo del codice, l'ispezione delle variabili e il tracciamento dei flussi per eliminare gli errori. I programmatori lo fanno per dare un senso all'inaspettato e garantire che le loro applicazioni si comportino come progettato.
-
 ## Come fare:
 Elixir viene fornito con un debugger grafico integrato chiamato `:debugger`. Per usarlo, è necessario avviarlo e collegarsi al processo in esecuzione.
 

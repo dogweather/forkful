@@ -11,11 +11,6 @@ summary: "Debugger to narz\u0119dzie, kt\xF3re pozwala inspekcjonowa\u0107 i kon
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Debugger to narzędzie, które pozwala inspekcjonować i kontrolować wykonanie programu, ułatwiając wskazanie momentu, kiedy coś idzie nie tak. Programiści używają debuggerów do usuwania błędów, zrozumienia przepływu kodu oraz aby upewnić się, że ich kod jest czysty jak gwizdek.
-
 ## Jak to zrobić:
 Lua nie posiada wbudowanego debuggera, ale można używać zewnętrznych, na przykład ZeroBrane Studio. Oto mała próbka pracy z nim:
 

@@ -11,11 +11,6 @@ summary: "Debugowanie w Elm polega na identyfikacji i usuwaniu b\u0142\u0119d\xF
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Debugowanie w Elm polega na identyfikacji i usuwaniu błędów z kodu. Programiści robią to, aby zapewnić poprawne działanie swoich aplikacji i poprawić jakość kodu. Silny system typów Elm łapie wiele problemów w czasie kompilacji, ale narzędzia do debugowania w czasie wykonania są niezbędne do wygładzania błędów logicznych i niespodziewanych zachowań.
-
 ## Jak to zrobić:
 Elm nie posiada wbudowanego debugera w tradycyjnym sensie, w jaki ma to miejsce np. w JavaScript z narzędziami deweloperskimi przeglądarki. Jednakże społeczność Elm stworzyła narzędzia wypełniające tę lukę. Oto jak możesz użyć `elm-debug-transformer` do debugowania twojej aplikacji Elm:
 

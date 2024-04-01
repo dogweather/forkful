@@ -12,14 +12,7 @@ summary: "Een debugger gebruiken in Ruby geeft programmeurs een superkracht om h
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-
-Een debugger gebruiken in Ruby geeft programmeurs een superkracht om hun code te pauzeren, variabelen te inspecteren en stap voor stap door hun code te lopen. Mensen doen dit om bugs te verpletteren, de codeflow te begrijpen, en om precies te zien wat hun geschreven spreuken (code) doen wanneer de magie gebeurt - of niet.
-
 ## Hoe:
-
 Ruby wordt geleverd met een ingebouwde debugger genaamd `byebug`. Voeg eerst `byebug` toe aan je Gemfile en voer `bundle install` uit. Plaats vervolgens `byebug` precies waar je wilt dat je programma een pauze neemt.
 
 ```Ruby
@@ -59,7 +52,6 @@ Een voorbeeldoutput zou je een prompt geven die er zo uitziet:
 ```
 
 ## Dieper duiken:
-
 Lang voor `byebug`, gebruikten Rubyisten `debugger` en `pry`. De laatste, `pry`, is meer dan een debugger; het is een krachtige REPL die ook gebruikt kan worden voor debugging met het breakpoint `binding.pry`.
 
 Alternatieven voor Ruby's `byebug` zijn onder andere `pry-byebug`, dat `pry` combineert met de functionaliteit van `byebug`, en `ruby-debug`, een oudere gem die niet actief wordt onderhouden.
@@ -67,7 +59,6 @@ Alternatieven voor Ruby's `byebug` zijn onder andere `pry-byebug`, dat `pry` com
 Wanneer je `byebug` aanroept, pauzeert de debugger je code uitvoering en geeft je een kijkje in de runtime. Je kunt variabelen zien en veranderen, naar verschillende punten in de code springen en zelfs wat Ruby-code regel voor regel uitvoeren. Het is een beetje alsof je tijdsreisvaardigheden hebt voor je Ruby-code.
 
 ## Zie ook:
-
 - Byebug GitHub-repository: [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - Pry Documentatie: [https://github.com/pry/pry](https://github.com/pry/pry)
 - Een gids voor het debuggen van Rails Apps: [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

@@ -11,11 +11,6 @@ summary: "Korzystanie z debugera oznacza si\u0119gni\u0119cie po specjalistyczne
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Korzystanie z debugera oznacza sięgnięcie po specjalistyczne narzędzia, które pozwalają zajrzeć pod maskę kodu, obserwując jego działanie krok po kroku. Programiści robią to, aby wyłapywać błędy, optymalizować wydajność i rozumieć zachowanie kodu.
-
 ## Jak to zrobić:
 Oto fragment kodu JavaScript, który nie działa zgodnie z oczekiwaniami:
 

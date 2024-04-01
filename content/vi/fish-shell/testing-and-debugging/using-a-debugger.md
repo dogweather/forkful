@@ -15,11 +15,6 @@ summary: "Vi\u1EC7c s\u1EED d\u1EE5ng debugger ch\u1EE7 y\u1EBFu \u0111\u1EC3 \"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-Việc sử dụng debugger chủ yếu để "diệt bug" - những lỗi khó chịu, hút mất thời gian trong mã của bạn. Các lập trình viên debug vì họ muốn tìm và sửa các vấn đề một cách hiệu quả, hiểu được luồng mã, và có được cái nhìn rõ ràng hơn về những gì mã của họ thực sự đang làm.
-
 ## Làm thế nào:
 Fish không có debugger tích hợp sẵn như một số shell khác, nhưng bạn có thể sử dụng các công cụ bên ngoài như `gdb` để debug các chương trình đã biên dịch hoặc `fish -d` để chạy fish với đầu ra debug ở các mức độ khác nhau. Chúng ta cùng thử với `fish -d`:
 

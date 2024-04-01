@@ -10,11 +10,6 @@ summary: "Usar um depurador significa utilizar ferramentas especializadas para t
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Por Quê?
-Usar um depurador significa utilizar ferramentas especializadas para testar e inspecionar seu código à medida que ele é executado. Isso é importante porque permite ver o que está acontecendo por baixo dos panos, encontrar bugs e compreender melhor o comportamento do seu código.
-
 ## Como fazer:
 Para usar o depurador no Xcode (o IDE para Swift), você pode definir pontos de interrupção, inspecionar variáveis e observar expressões. Veja um exemplo:
 

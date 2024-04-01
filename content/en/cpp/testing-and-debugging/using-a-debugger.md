@@ -10,11 +10,6 @@ summary: "Using a debugger means firing up a tool that lets you peek inside your
 title: Using a debugger
 ---
 
-{{< edit_this_page >}}
-
-## What & Why?
-Using a debugger means firing up a tool that lets you peek inside your running program to understand what's really happening. Programmers do this to find and squash bugs—those pesky issues that cause your code to behave unexpectedly or crash.
-
 ## How to:
 C++ integrates with debuggers like GDB or the Visual Studio debugger. Here's a bitesize example using GDB:
 

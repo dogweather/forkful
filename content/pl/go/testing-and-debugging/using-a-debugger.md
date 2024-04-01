@@ -13,14 +13,7 @@ summary: "U\u017Cywanie debugera w programowaniu w Go polega na wykorzystaniu na
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i Dlaczego?
-
-Używanie debugera w programowaniu w Go polega na wykorzystaniu narzędzi lub funkcji do inspekcji i modyfikacji stanu działającego programu w celu zrozumienia jego zachowań lub diagnozowania problemów. Programiści robią to, aby efektywnie znajdować i naprawiać błędy, optymalizować wydajność oraz zapewniać poprawność swojego kodu.
-
 ## Jak to zrobić:
-
 Go oferuje wbudowaną funkcjonalność do debugowania o nazwie `delve`. Jest to pełnoprawne narzędzie debugujące, które umożliwia wykonanie programów w Go krok po kroku, inspekcję zmiennych programu oraz ocenę wyrażeń.
 
 Aby zacząć, musisz najpierw zainstalować `delve`. Możesz to zrobić, wykonując:
@@ -78,7 +71,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Za pomocą tych poleceń możesz krok po kroku przeglądać swój program, inspekcjonując stan w miarę postępu, aby zrozumieć, jak się zachowuje i identyfikować ewentualne problemy.
 
 ## Dogłębna analiza
-
 Wybór `delve` jako narzędzia do debugowania w Go zamiast tradycyjnych narzędzi takich jak GDB (GNU Debugger) wynika głównie z natury modelu wykonania i środowiska uruchomieniowego Go. GDB nie został początkowo zaprojektowany z myślą o środowisku uruchomieniowym Go, co sprawia, że `delve` jest bardziej odpowiednim wyborem dla deweloperów w Go. `Delve` jest specjalnie zaprojektowany dla Go, oferując bardziej intuicyjne doświadczenie debugowania dla gorutyn, kanałów i innych konstrukcji specyficznych dla Go.
 
 Ponadto, `delve` obsługuje szeroki zakres funkcji, wykraczających poza te oferowane przez podstawowy GDB podczas pracy z programami w Go. Obejmują one, między innymi: dołączanie do działających procesów w celu debugowania; warunkowe punkty przerwania; oraz ocenianie skomplikowanych wyrażeń, które mogą obejmować prymitywy współbieżności Go.

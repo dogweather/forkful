@@ -11,11 +11,6 @@ summary: "Een debugger is een hulpmiddel waarmee je de uitvoering van een progra
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger is een hulpmiddel waarmee je de uitvoering van een programma kunt inspecteren en controleren, wat het makkelijk maakt om te ontdekken waar dingen misgaan. Programmeurs gebruiken debuggers om bugs te verpletteren, de codeflow te begrijpen en om ervoor te zorgen dat hun code zo schoon is als een fluitje.
-
 ## Hoe:
 Lua komt niet met een ingebouwde debugger, maar je kunt externe debuggers gebruiken, zoals ZeroBrane Studio. Hier is een voorproefje van hoe je ermee zou werken:
 

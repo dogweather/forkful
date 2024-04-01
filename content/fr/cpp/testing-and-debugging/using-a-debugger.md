@@ -11,11 +11,6 @@ summary: "Utiliser un d\xE9bogueur signifie lancer un outil qui vous permet de j
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et pourquoi ?
-Utiliser un débogueur signifie lancer un outil qui vous permet de jeter un œil à l'intérieur de votre programme en cours d'exécution pour comprendre ce qui se passe réellement. Les programmeurs font cela pour trouver et éliminer les bugs - ces problèmes agaçants qui provoquent un comportement inattendu de votre code ou le font planter.
-
 ## Comment faire :
 C++ s'intègre avec des débogueurs tels que GDB ou le débogueur de Visual Studio. Voici un petit exemple utilisant GDB :
 

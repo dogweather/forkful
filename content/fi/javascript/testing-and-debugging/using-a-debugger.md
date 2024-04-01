@@ -10,11 +10,6 @@ summary: "Debuggerin k\xE4ytt\xF6 tarkoittaa erikoisty\xF6kaluihin tutustumista,
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttö tarkoittaa erikoistyökaluihin tutustumista, jotka antavat sinun kurkata koodisi konepellin alle ja seurata sen suoritusta askel askeleelta. Ohjelmoijat tekevät näin paikatakseen bugeja, optimoidakseen suorituskykyä ja ymmärtääkseen koodin käyttäytymistä.
-
 ## Kuinka:
 Tässä on hieman JavaScript-koodia, joka ei toimi odotetulla tavalla:
 

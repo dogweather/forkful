@@ -15,16 +15,10 @@ summary: "S\u1EED d\u1EE5ng debugger trong Dart cho ph\xE9p c\xE1c l\u1EADp tr\x
 title: "S\u1EED d\u1EE5ng m\u1ED9t c\xF4ng c\u1EE5 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì và Tại sao?
-
-Sử dụng debugger trong Dart cho phép các lập trình viên kiểm tra một cách có phương pháp mã của họ bằng cách đặt các điểm dừng, theo dõi từng bước thực thi và kiểm tra các biến. Quá trình này rất cần thiết để xác định và sửa chữa lỗi hiệu quả, do đó, nó là một công cụ không thể thiếu trong chu kỳ phát triển phần mềm.
-
 ## Làm thế nào:
 
-### Gỡ lỗi Cơ bản:
 
+### Gỡ lỗi Cơ bản:
 **1. Đặt điểm dừng:**
 
 Để đặt một điểm dừng, chỉ cần nhấp vào lề bên trái của dòng code trong IDE của bạn (ví dụ, Visual Studio Code hoặc Android Studio) nơi bạn muốn thực thi tạm dừng.
@@ -49,7 +43,6 @@ Khi thực thi bị tạm dừng, di chuột qua các biến để xem giá tr�
 Sử dụng các lệnh bước qua, bước vào, và bước ra trong IDE của bạn để điều hướng qua code của bạn từng dòng hoặc hàm một.
 
 ### Gỡ lỗi Nâng cao với Observatory:
-
 Dart bao gồm một công cụ gọi là Observatory cho việc gỡ lỗi và phân tích hiệu suất các ứng dụng Dart. Nó đặc biệt hữu ích cho các ứng dụng chạy trên Dart VM.
 
 **Truy cập Observatory:**
@@ -63,7 +56,6 @@ dart --observe your_program.dart
 Lệnh này in một URL ra console, mà bạn có thể mở trong trình duyệt web để truy cập vào debugger Observatory.
 
 ### Sử dụng Thư viện của Bên thứ ba Phổ biến:
-
 Để gỡ lỗi các ứng dụng Flutter, gói `flutter_devtools` cung cấp một bộ công cụ hiệu suất và gỡ lỗi tích hợp với cả Dart VM và Flutter.
 
 **Cài đặt:**
@@ -86,7 +78,6 @@ flutter pub global run devtools
 Sau đó, bắt đầu ứng dụng Flutter của bạn trong chế độ debug. DevTools cung cấp các tính năng như Flutter inspector cho phân tích cây widget, và mạng profiler để giám sát hoạt động mạng.
 
 ### Mẫu Đầu ra:
-
 Khi gặp một điểm dừng, IDE của bạn có thể hiển thị giá trị biến và truy vết ngăn xếp như sau:
 
 ```
