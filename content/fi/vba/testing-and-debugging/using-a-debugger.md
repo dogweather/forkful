@@ -11,14 +11,7 @@ summary: "Debuggerin k\xE4ytt\xE4minen Visual Basic for Applications (VBA) -ohje
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-
-Debuggerin käyttäminen Visual Basic for Applications (VBA) -ohjelmoinnissa käsittää koodisi suorittamista vaiheittain sen toteutusvirran ja muuttujatilojen tarkastamiseksi. Tämä prosessi on ratkaisevan tärkeää virheiden tunnistamisessa ja korjaamisessa koodissasi, varmistaen lopulta sen odotetun suorituskyvyn.
-
 ## Kuinka:
-
 VBA:ssa debuggeri on olennainen osa Visual Basic Editoria (VBE). Näin voit hyödyntää sitä:
 
 1. **Keskeytyskohtien asettaminen**: Klikkaa vasemmassa reunassa olevaa koodiriviä, josta olet kiinnostunut, tai siirrä kursorisi riville ja paina F9. Tämä käskee VBA:n keskeyttämään suorituksen tähän kohtaan saavuttaessa.
@@ -59,7 +52,6 @@ Kun saavutat keskeytyskohdan ja suoritat rivi riviltä käyttämällä F8, Väli
 Tässä olemme manuaalisesti tiedustelleet `counter`-muuttujaa jokaisen iteraation jälkeen.
 
 ## Syväsukellus:
-
 Vaikka VBA:n debuggeri on robusti, se on osa laajempaa debuggaustyökalujen perinnettä ohjelmointikielissä, ja se on kehittynyt merkittävästi varhaisista edeltäjistään. Sitä esiteltiin VBA:n ensimmäisissä versioissa tavoitteena tarjota kehittäjille yksinkertaiset, mutta voimakkaat työkalut koodin tarkasteluun ja korjaukseen. Ajan myötä parannuksia ovat sisältäneet ehdolliset keskeytyskohdat, parannetut tarkkailumahdollisuudet ja integraatio Excel-käyttöliittymään intuitiivisemman datan tarkastelun mahdollistamiseksi.
 
 Kuitenkin verrattuna moderniin Integroituihin Kehitysympäristöihin (IDEs), kuten Visual Studioon tai Eclipseen, VBA:n debuggaustyökalut voivat vaikuttaa perustavanlaatuisilta. Nämä modernit IDEt tarjoavat hienostuneempia ominaisuuksia, kuten reaaliaikaisen muuttujan tarkastelun, kehittyneet keskeytyskohdat ja integroidut yksikkötestauskehykset. Vaikka nämä vaihtoehdot tarjoavat kattavamman debuggauskokemuksen, VBA:n debuggerin yksinkertaisuus ja suoraviivaisuus sopivat hyvin sen erityiseen kontekstiin, joka liittyy Microsoft Officen sovellusten automatisointiin ja skriptaukseen.

@@ -11,11 +11,6 @@ summary: "\"Usare un debugger\" significa esaminare passo dopo passo il proprio 
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa & Perché?
-"Usare un debugger" significa esaminare passo dopo passo il proprio codice Python per scoprire bug e comprendere il comportamento. Lo facciamo perché è decisamente più facile che cercare di indovinare dove sono andate storte le cose, e ci risparmia ore di purgatorio con gli statement di stampa.
-
 ## Come fare:
 Vediamo come utilizzare `pdb`, il debugger integrato di Python. Immagina un file, `buggy.py`, con un bug subdolo:
 

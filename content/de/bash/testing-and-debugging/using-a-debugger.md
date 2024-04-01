@@ -9,11 +9,6 @@ summary: "Die Verwendung eines Debuggers in Bash bedeutet, Tools zu nutzen, um P
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Die Verwendung eines Debuggers in Bash bedeutet, Tools zu nutzen, um Probleme in Ihren Skripten zu testen und zu finden, wie das Einfangen von Fehlern, die Ihren Code zum Absturz bringen oder ihn heimlich fehlverhalten lassen. Programmierer tun dies, weil es weitaus klüger ist, Fehler zu erkennen, bevor sie in einer Live-Umgebung Chaos anrichten.
-
 ## Wie geht das:
 Bash kommt nicht mit einem eingebauten Debugger wie einige andere Sprachen, aber Sie können eingebaute Befehle wie `set -x` verwenden, um nachzuvollziehen, was passiert. Oder, für ein Upgrade, gibt es `bashdb`, einen richtigen Debugger, um durch Ihren Code zu schreiten. Hier ist ein Einblick:
 

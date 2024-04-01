@@ -13,16 +13,10 @@ summary: "\xC5 bruke en debugger i Dart lar programmerere systematisk unders\xF8
 title: Bruke en debugger
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-
-Å bruke en debugger i Dart lar programmerere systematisk undersøke koden deres ved å sette brytepunkter, gå gjennom utførelsen steg for steg og inspisere variabler. Denne prosessen er essensiell for å identifisere og fikse feil effektivt, og gjør det derfor til et uunnværlig verktøy i utviklingssyklusen.
-
 ## Hvordan:
 
-### Grunnleggende feilsøking:
 
+### Grunnleggende feilsøking:
 **1. Sette brytepunkter:**
 
 For å sette et brytepunkt, klikk på venstre marg av kodelinjen i din IDE (f.eks., Visual Studio Code eller Android Studio) der du vil at utførelsen skal pause.
@@ -47,7 +41,6 @@ Når utførelsen er pauset, hold musepekeren over variabler for å se deres nåv
 Bruk kommandoene for å steg over, steg inn i, og steg ut av i din IDE for å navigere gjennom koden din en linje eller funksjon om gangen.
 
 ### Avansert feilsøking med Observatory:
-
 Dart inkluderer et verktøy kalt Observatory for feilsøking og profilering av Dart-applikasjoner. Det er spesielt nyttig for applikasjoner som kjører på Dart VM.
 
 **Tilgang til Observatory:**
@@ -61,7 +54,6 @@ dart --observe ditt_program.dart
 Denne kommandoen skriver ut en URL til konsollen, som du kan åpne i en nettleser for å få tilgang til Observatory-feilsøkeren.
 
 ### Bruke populære tredjepartsbiblioteker:
-
 For feilsøking av Flutter-applikasjoner, tilbyr `flutter_devtools`-pakken et sett med ytelses- og feilsøkingsverktøy som integrerer med både Dart VM og Flutter.
 
 **Installasjon:**
@@ -84,7 +76,6 @@ flutter pub global run devtools
 Deretter starter du din Flutter-applikasjon i feilsøkingsmodus. DevTools tilbyr funksjoner som Flutter-inspektøren for widgettreaksanalyse og nettverksprofilering for overvåking av nettverksaktivitet.
 
 ### Eksempel på utdata:
-
 Når du treffer et brytepunkt, kan din IDE vise variabelverdier og stakksporinger slik:
 
 ```

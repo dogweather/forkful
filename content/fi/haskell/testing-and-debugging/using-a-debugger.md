@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa koodisi syv\xE4llist\xE4 tutki
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttäminen tarkoittaa koodisi syvällistä tutkimista työkaluilla, jotka on suunniteltu tarkastelemaan, keskeyttämään ja manipuloimaan ohjelmaa sen suorituksen aikana. Ohjelmoijat tekevät niin jäljittääkseen ohjelmavirheitä, ymmärtääkseen ohjelman kulun ja varmistaakseen, että heidän koodinsa tekee juuri sen, mitä he odottavat.
-
 ## Kuinka:
 Kävellään läpi GHCi:n kanssa, Haskellin interaktiivisen ympäristön, joka voi toimia perusdebuggerina. Käynnistät sen Haskell-koodisi kanssa ja alat tutkia sitä. Tässä on esimerkki:
 

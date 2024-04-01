@@ -11,14 +11,7 @@ summary: "U\u017Cycie debugera w Visual Basic dla Aplikacji (VBA) polega na krok
 title: Korzystanie z debuggera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-
-Użycie debugera w Visual Basic dla Aplikacji (VBA) polega na krokowym uruchamianiu kodu w celu inspekcji jego przepływu wykonania i stanów zmiennych. Proces ten jest kluczowy dla identyfikacji i naprawy błędów w kodzie, co w końcu zapewnia jego oczekiwaną wydajność.
-
 ## Jak to zrobić:
-
 W VBA debugger jest integralną częścią Edytora Visual Basic (VBE). Oto jak możesz z niego korzystać:
 
 1. **Ustawianie punktów przerwania**: Kliknij w lewym marginesie obok linii kodu, który Cię interesuje, lub umieść kursor na linii i naciśnij F9. Powoduje to zatrzymanie wykonania VBA w tym miejscu.
@@ -59,7 +52,6 @@ W VBA debugger jest integralną częścią Edytora Visual Basic (VBE). Oto jak m
     Tutaj, ręcznie zapytaliśmy o zmienną `counter` po każdej iteracji.
 
 ## Pogłębiona analiza:
-
 Debugger w VBA, choć solidny, jest częścią szerszej tradycji narzędzi do debugowania w językach programowania, rozwijając się znacznie od swoich wczesnych poprzedników. Wprowadzony z pierwszymi wersjami VBA, miał na celu zapewnienie programistom prostego, ale potężnego zestawu narzędzi do inspekcji i korekty kodu. Z czasem ulepszenia obejmowały warunkowe punkty przerwania, ulepszone możliwości obserwacji i integrację z interfejsem Excela dla bardziej intuicyjnej inspekcji danych.
 
 Jednak w porównaniu do nowoczesnych Zintegrowanych Środowisk Programistycznych (IDE), takich jak Visual Studio czy Eclipse, narzędzia debugowania VBA mogą wydawać się podstawowe. Te nowoczesne IDE oferują bardziej zaawansowane funkcje, takie jak inspekcja zmiennych w czasie rzeczywistym, zaawansowane punkty przerwania i zintegrowane ramy testowania jednostkowego. Mimo że te alternatywy oferują bardziej kompleksowe doświadczenia z debugowaniem, prostota i bezpośredniość debuggera VBA pozostają dobrze dostosowane do konkretnego kontekstu automatyzacji i tworzenia skryptów w aplikacjach Microsoft Office.

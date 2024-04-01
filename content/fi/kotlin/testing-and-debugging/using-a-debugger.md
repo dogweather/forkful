@@ -11,11 +11,6 @@ summary: "Sukeltaminen debuggerin maailmaan on kaikkea muuta kuin koodisi l\xE4p
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä ja miksi?
-Sukeltaminen debuggerin maailmaan on kaikkea muuta kuin koodisi läpikäyntiä askel askeleelta, koneiston pyörittämistä ja niiden kiusallisten virheiden kiinniottamista itse teosta. Ohjelmoijat käyttävät debuggereita, koska ne ovat etsivätyökaluja, jotka auttavat meitä selvittämään, missä asiat menevät pieleen repimättä hiuksiamme päästä.
-
 ## Kuinka:
 Tässä on pieni maistiainen Kotlinin debuggaamisesta IntelliJ IDEA:ssa - IDEiden Sherlock Holmes:
 

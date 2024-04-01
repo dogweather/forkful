@@ -11,11 +11,6 @@ summary: "En debugger \xE4r ett verktyg som l\xE5ter dig inspektera och kontroll
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-En debugger är ett verktyg som låter dig inspektera och kontrollera utförandet av ett program, vilket gör det enkelt att identifiera var saker går fel. Programmerare använder debuggers för att krossa buggar, förstå kodflödet, och för att säkerställa att deras kod är så ren som en visselpipa.
-
 ## Hur gör man:
 Lua kommer inte med en inbyggd debugger, men du kan använda externa sådana, som ZeroBrane Studio. Här är en smakprov på hur du skulle arbeta med den:
 

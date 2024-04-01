@@ -13,14 +13,7 @@ summary: "Usar un depurador en la programaci\xF3n Go implica emplear herramienta
 title: Utilizando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## Qué y Por Qué?
-
-Usar un depurador en la programación Go implica emplear herramientas o características para inspeccionar y modificar el estado de un programa en ejecución para entender su comportamiento o diagnosticar problemas. Los programadores hacen esto para encontrar y corregir errores de manera eficiente, optimizar el rendimiento y asegurar la corrección de su código.
-
 ## Cómo hacerlo:
-
 Go proporciona una facilidad incorporada para la depuración llamada `delve`. Es una herramienta de depuración completa que te permite ejecutar programas Go paso a paso, inspeccionar variables del programa y evaluar expresiones.
 
 Para comenzar, primero debes instalar `delve`. Puedes hacerlo ejecutando:
@@ -78,7 +71,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Usando estos comandos, puedes avanzar por tu programa, inspeccionando el estado a medida que avanzas para entender cómo se comporta e identificar cualquier problema.
 
 ## Estudio Profundo
-
 La elección de `delve` como la herramienta de depuración de elección para Go sobre herramientas tradicionales como GDB (GNU Debugger) se debe principalmente a la naturaleza del modelo de ejecución y el tiempo de ejecución de Go. GDB no fue diseñado inicialmente teniendo en mente el tiempo de ejecución de Go, lo que hace que `delve` sea una opción más adecuada para los desarrolladores de Go. `Delve` está específicamente diseñado para Go, ofreciendo una experiencia de depuración más intuitiva para las goroutines de Go, canales y otros constructos específicos de Go.
 
 Además, `delve` soporta una amplia gama de características más allá de las ofrecidas por GDB básico al trabajar con programas Go. Estas incluyen, pero no se limitan a: adjuntar a procesos en ejecución para depuración; puntos de interrupción condicionales; y evaluando expresiones complejas que pueden involucrar primitivas de concurrencia de Go.

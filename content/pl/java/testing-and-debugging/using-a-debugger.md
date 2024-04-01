@@ -11,11 +11,6 @@ summary: "U\u017Cycie debugera oznacza wykorzystanie narz\u0119dzia do testowani
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Użycie debugera oznacza wykorzystanie narzędzia do testowania i naprawiania błędów w kodzie. Programiści robią to, aby zrozumieć przepływ swoich aplikacji, wskazać źródła błędów i zweryfikować logikę podczas wykonania.
-
 ## Jak to zrobić:
 Załóżmy, że masz prosty program Java, który działa niepoprawnie, i nie możesz zrozumieć dlaczego. Oto jak uruchomić debuger przy użyciu Eclipse, jednego z popularnych środowisk IDE do rozwoju aplikacji Java:
 

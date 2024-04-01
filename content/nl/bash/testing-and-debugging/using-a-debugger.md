@@ -12,11 +12,6 @@ summary: "Een debugger in Bash gebruiken betekent het inzetten van tools om te t
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger in Bash gebruiken betekent het inzetten van tools om te testen en problemen in je scripts te vinden, zoals het vangen van bugs die je code laten crashen of stiekem verkeerd laten werken. Programmeurs doen dit omdat het veel slimmer is om fouten te vangen voordat ze chaos veroorzaken in een live omgeving.
-
 ## Hoe:
 Bash wordt niet geleverd met een ingebouwde debugger zoals sommige andere talen, maar je kunt ingebouwde commando's gebruiken zoals `set -x` om te traceren wat er gebeurt. Of, voor een upgrade, is er `bashdb`, een echte debugger om stap voor stap door je code te gaan. Hier is een voorproefje:
 

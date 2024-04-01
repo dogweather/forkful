@@ -19,11 +19,6 @@ summary: "\u4F7F\u7528\u8C03\u8BD5\u5668\u610F\u5473\u7740\u8BBE\u7F6E\u65AD\u70
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
-{{< edit_this_page >}}
-
-## 什么 & 为什么？
-使用调试器意味着设置断点、逐步执行代码、观察变量以及在程序运行时检查其状态。对程序员来说，这改变了游戏规则，因为它能精确地定位到错误并帮助我们理解我们的代码实际上在做什么。
-
 ## 如何操作：
 在 PowerShell 中，您可以使用内置的 PowerShell Integrated Scripting Environment (ISE) 或带有 PowerShell 扩展的 Visual Studio Code (VS Code) 来调试脚本。以下是在两者中使用断点的方法：
 

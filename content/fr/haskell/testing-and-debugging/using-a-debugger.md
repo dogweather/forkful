@@ -11,11 +11,6 @@ summary: "Utiliser un d\xE9bogueur signifie plonger dans votre code avec des out
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et pourquoi ?
-Utiliser un débogueur signifie plonger dans votre code avec des outils conçus pour inspecter, interrompre et manipuler un programme en cours d'exécution. Les programmeurs le font pour traquer les bogues, comprendre le flux du programme et s'assurer que leur code fait exactement ce qu'ils attendent.
-
 ## Comment faire :
 Prenons une promenade avec GHCi, l'environnement interactif de Haskell qui peut agir comme un débogueur de base. Vous le lancez avec votre code Haskell et commencez à explorer. Voici un exemple :
 

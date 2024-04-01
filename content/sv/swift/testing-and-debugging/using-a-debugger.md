@@ -10,11 +10,6 @@ summary: "Att anv\xE4nda en fels\xF6kare inneb\xE4r att man anv\xE4nder sig av s
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en felsökare innebär att man använder sig av specialiserade verktyg för att testa och inspektera sin kod medan den körs. Det är viktigt eftersom det låter dig se vad som händer under huven, hitta buggar och förstå ditt kods beteende bättre.
-
 ## Hur:
 För att använda felsökaren i Xcode (den integrerade utvecklingsmiljön för Swift), kan du sätta brytpunkter, inspektera variabler och se över uttryck. Här är ett exempel:
 

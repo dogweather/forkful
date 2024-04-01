@@ -10,11 +10,6 @@ summary: "Usar um depurador significa mergulhar no seu c\xF3digo com ferramentas
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Quê & Porquê?
-Usar um depurador significa mergulhar no seu código com ferramentas projetadas para inspecionar, pausar e manipular um programa durante a execução. Os programadores fazem isso para caçar bugs, entender o fluxo do programa e garantir que o código esteja fazendo exatamente o que esperam.
-
 ## Como fazer:
 Vamos passear com o GHCi, o ambiente interativo do Haskell que pode atuar como um depurador básico. Você o inicia com o seu código Haskell e começa a explorar. Aqui está um exemplo:
 

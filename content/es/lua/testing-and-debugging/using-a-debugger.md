@@ -11,11 +11,6 @@ summary: "Un depurador es una herramienta que te permite inspeccionar y controla
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## ¿Qué y por qué?
-Un depurador es una herramienta que te permite inspeccionar y controlar la ejecución de un programa, facilitando la identificación de donde las cosas van mal. Los programadores utilizan depuradores para eliminar errores, entender el flujo del código y asegurar que su código esté limpio como un silbato.
-
 ## Cómo hacerlo:
 Lua no viene con un depurador integrado, pero puedes usar otros externos, como ZeroBrane Studio. Aquí tienes una muestra de cómo trabajarías con él:
 

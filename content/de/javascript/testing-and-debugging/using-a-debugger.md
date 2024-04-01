@@ -10,11 +10,6 @@ summary: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu n
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu nutzen, mit denen man unter die Haube seines Codes schauen und ihn Schritt für Schritt beobachten kann. Programmierer tun dies, um Fehler zu finden und zu beheben, die Leistung zu optimieren und das Verhalten des Codes zu verstehen.
-
 ## Wie geht das:
 Hier ein Stück JavaScript-Code, das sich nicht wie erwartet verhält:
 

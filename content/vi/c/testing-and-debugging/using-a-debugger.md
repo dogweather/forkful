@@ -15,14 +15,7 @@ summary: "Debuggers trong C l\xE0 nh\u1EEFng c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì & Tại sao?
-
-Debuggers trong C là những công cụ chuyên biệt cho phép các nhà phát triển đi qua từng dòng code của họ, kiểm tra các biến và theo dõi luồng thực thi. Quá trình này rất quan trọng để xác định và sửa chữa lỗi, đảm bảo rằng code hoạt động như mong đợi.
-
 ## Làm thế nào:
-
 GDB (GNU Debugger) là công cụ debugger được sử dụng phổ biến nhất cho lập trình C. Dưới đây là hướng dẫn ngắn gọn về việc sử dụng GDB để gỡ lỗi một chương trình C đơn giản.
 
 Trước tiên, biên dịch chương trình C của bạn với cờ `-g` để bao gồm thông tin gỡ lỗi:
@@ -80,7 +73,6 @@ $3 = 2
 Điều này minh họa việc xem xét trạng thái và luồng của một chương trình đơn giản.
 
 ## Tìm hiểu sâu hơn
-
 Khái niệm về gỡ lỗi đã phát triển đáng kể kể từ những ngày đầu của lập trình, nơi mà các lỗi vật lý (côn trùng thực sự) có thể gây ra vấn đề trong máy tính cơ học. Ngày nay, những trình gỡ lỗi như GDB cung cấp những tính năng tiên tiến hơn ngoài việc bước qua và kiểm tra biến, chẳng hạn như gỡ lỗi ngược (thực thi chương trình theo hướng ngược lại), điểm dừng có điều kiện, và viết kịch bản cho các nhiệm vụ gỡ lỗi tự động.
 
 Mặc dù GDB mạnh mẽ và được sử dụng rộng rãi, nó có thể phức tạp và khó khăn cho người mới bắt đầu. Các công cụ và môi trường phát triển tích hợp (IDEs) thay thế như Visual Studio Code, CLion, hoặc Eclipse cung cấp các giao diện thân thiện hơn cho việc gỡ lỗi mã C, thường kết hợp các phụ trợ trực quan và điều khiển trực quan hơn. Những sự thay thế này có thể không cung cấp đầy đủ chiều sâu chức năng của GDB nhưng có thể dễ tiếp cận hơn với người mới bắt đầu lập trình C.

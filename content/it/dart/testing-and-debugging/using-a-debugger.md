@@ -11,16 +11,10 @@ summary: "Utilizzare un debugger in Dart permette ai programmatori di esaminare 
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa & Perché?
-
-Utilizzare un debugger in Dart permette ai programmatori di esaminare metodicamente il loro codice impostando breakpoint, eseguendo passo dopo passo l'esecuzione e ispezionando le variabili. Questo processo è essenziale per identificare e correggere gli errori in modo efficiente, rendendolo uno strumento indispensabile nel ciclo di sviluppo.
-
 ## Come fare:
 
-### Debugging di Base:
 
+### Debugging di Base:
 **1. Impostare i Breakpoint:**
 
 Per impostare un breakpoint, è sufficiente fare clic sul margine sinistro della riga di codice nel proprio IDE (ad es., Visual Studio Code o Android Studio) dove si desidera che l'esecuzione si interrompa.
@@ -45,7 +39,6 @@ Una volta interrotta l'esecuzione, passare con il mouse sulle variabili per vede
 Utilizzare i comandi di passaggio oltre, entrata e uscita nel proprio IDE per navigare attraverso il codice una riga o funzione alla volta.
 
 ### Debugging Avanzato con Observatory:
-
 Dart include uno strumento chiamato Observatory per il debugging e il profiling delle applicazioni Dart. È particolarmente utile per le applicazioni in esecuzione sulla VM Dart.
 
 **Accesso a Observatory:**
@@ -59,7 +52,6 @@ dart --observe your_program.dart
 Questo comando stampa un URL nella console, che è possibile aprire in un browser web per accedere al debugger di Observatory.
 
 ### Utilizzo di Librerie di Terze Parti Popolari:
-
 Per il debugging delle applicazioni Flutter, il pacchetto `flutter_devtools` offre un insieme di strumenti di performance e di debugging che si integrano sia con la VM Dart che con Flutter.
 
 **Installazione:**
@@ -82,7 +74,6 @@ flutter pub global run devtools
 Quindi, avviare l'applicazione Flutter in modalità debug. DevTools offre funzionalità come l'ispettore Flutter per l'analisi dell'albero dei widget e il profiler di rete per monitorare l'attività di rete.
 
 ### Output di Esempio:
-
 Una volta raggiunto un breakpoint, l'IDE potrebbe visualizzare i valori delle variabili e i tracciati dello stack in questo modo:
 
 ```

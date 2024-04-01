@@ -11,11 +11,6 @@ summary: "\"Debuggerin k\xE4ytt\xF6\" tarkoittaa Python-koodisi l\xE4pik\xE4ymis
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-"Debuggerin käyttö" tarkoittaa Python-koodisi läpikäymistä askel askeleelta virheiden löytämiseksi ja toiminnan ymmärtämiseksi. Teemme niin, koska se on paljon helpompaa kuin vain arvailu, missä asiat menivät pieleen, ja se säästää meidät tuntikausilta tulostuslauseiden purgatoriosta.
-
 ## Kuinka:
 Käydään läpi `pdb`:n, Pythonin sisäänrakennetun debuggerin, käyttö. Kuvittele tiedosto, `buggy.py`, jossa on ovela bugi:
 

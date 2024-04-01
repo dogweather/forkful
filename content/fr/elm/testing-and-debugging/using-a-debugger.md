@@ -11,11 +11,6 @@ summary: "D\xE9boguer en Elm consiste \xE0 identifier et \xE0 \xE9liminer les er
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et Pourquoi ?
-Déboguer en Elm consiste à identifier et à éliminer les erreurs de votre code. Les programmeurs le font pour s'assurer que leurs applications fonctionnent correctement et pour améliorer la qualité du code. Le système de types solides d'Elm intercepte de nombreux problèmes au moment de la compilation, mais les outils de débogage en temps d'exécution sont essentiels pour éliminer les erreurs logiques et les comportements inattendus.
-
 ## Comment faire :
 Elm n'a pas de débogueur intégré au sens traditionnel, comme le fait, par exemple, JavaScript avec les outils de développement du navigateur. Cependant, la communauté Elm a développé des outils pour combler cette lacune. Voici comment vous pouvez utiliser `elm-debug-transformer` pour déboguer votre application Elm :
 

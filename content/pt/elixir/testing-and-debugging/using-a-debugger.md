@@ -11,11 +11,6 @@ summary: "Usar um depurador em Elixir envolve percorrer seu c\xF3digo, inspecion
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Por Quê?
-Usar um depurador em Elixir envolve percorrer seu código, inspecionar variáveis e rastrear fluxos para eliminar bugs. Os programadores fazem isso para entender o inesperado e garantir que suas aplicações se comportem conforme o projetado.
-
 ## Como usar:
 O Elixir vem com um depurador gráfico embutido chamado `:debugger`. Para usá-lo, você precisará iniciá-lo e anexá-lo ao seu processo em execução.
 

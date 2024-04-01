@@ -11,11 +11,6 @@ summary: "Een debugger gebruiken draait allemaal om het pletten van bugs\u2014de
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger gebruiken draait allemaal om het pletten van bugs—de vervelende, tijdrovende fouten in je code. Programmeurs debuggen omdat ze problemen efficiënt willen vinden en oplossen, de codeflow willen begrijpen en een duidelijker beeld willen krijgen van wat hun code daadwerkelijk doet.
-
 ## Hoe te:
 Fish heeft geen ingebouwde debugger zoals sommige andere shells, maar je kunt externe hulpmiddelen zoals `gdb` gebruiken voor het debuggen van gecompileerde programma's of `fish -d` voor het uitvoeren van fish met debug output op verschillende niveaus. Laten we doorgaan met `fish -d`:
 

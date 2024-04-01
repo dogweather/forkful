@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en debugger handlar allt om att krossa buggar \u2013 de
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en debugger handlar allt om att krossa buggar – de otäcka, tidsödande felen i din kod. Programmerare felsöker eftersom de vill hitta och fixa problem effektivt, förstå kodbeteenden, och få en klarare bild av vad deras kod faktiskt gör.
-
 ## Hur man gör:
 Fish har inte en inbyggd debugger som vissa andra skal, men du kan använda externa verktyg som `gdb` för att debugga kompilerade program eller `fish -d` för att köra fish med debug-utdata på olika nivåer. Låt oss köra med `fish -d`:
 

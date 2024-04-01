@@ -11,11 +11,6 @@ summary: "Plonger dans un d\xE9bogueur, c'est tout simplement parcourir votre co
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-Plonger dans un débogueur, c'est tout simplement parcourir votre code pas à pas, observer les rouages en action et attraper ces ennuyeux bugs sur le fait. Les programmeurs utilisent des débogueurs car ce sont les outils de détective qui nous aident à comprendre où les choses tournent mal sans nous arracher les cheveux.
-
 ## Comment faire :
 Voici un petit avant-goût du débogage en Kotlin avec IntelliJ IDEA - le Sherlock Holmes des IDEs :
 

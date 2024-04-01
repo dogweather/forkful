@@ -11,14 +11,7 @@ summary: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat 
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-
-Bij het programmeren in Go gebruikmaken van een debugger houdt in dat je tools of functies gebruikt om de staat van een draaiend programma te inspecteren en te wijzigen, om zo het gedrag ervan te begrijpen of problemen op te sporen. Programmeurs doen dit om efficiënt bugs te vinden en op te lossen, de prestaties te optimaliseren en de correctheid van hun code te waarborgen.
-
 ## Hoe te:
-
 Go biedt een ingebouwde faciliteit voor debugging genaamd `delve`. Het is een volledig uitgerust debugginggereedschap waarmee je Go-programma's stap voor stap kunt uitvoeren, programmavariabelen kunt inspecteren en uitdrukkingen kunt evalueren.
 
 Om te beginnen, moet je eerst `delve` installeren. Dit kun je doen door uit te voeren:
@@ -76,7 +69,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Met behulp van deze commando's kun je stapsgewijs door je programma gaan, de staat inspecteren terwijl je verder gaat om te begrijpen hoe het zich gedraagt, en eventuele problemen identificeren.
 
 ## Diepgaand
-
 De keuze voor `delve` als het debuggereedschap bij uitstek voor Go, boven traditionele gereedschappen zoals GDB (GNU Debugger), komt voornamelijk vanwege de aard van Go's uitvoeringsmodel en runtime. GDB was oorspronkelijk niet ontworpen met de Go-runtime in gedachten, wat `delve` een geschiktere keuze maakt voor Go-ontwikkelaars. `Delve` is specifiek ontworpen voor Go en biedt een intuïtievere debug-ervaring voor Go-routines, kanalen en andere Go-specifieke constructies.
 
 Verder ondersteunt `delve` een breed scala aan functies die verder gaan dan wat de basis GDB biedt bij het werken met Go-programma's. Deze omvatten, maar zijn niet beperkt tot: het hechten aan lopende processen voor debugging; conditionele breekpunten; en het evalueren van complexe uitdrukkingen die mogelijk Go's concurrency-primitieven omvatten.

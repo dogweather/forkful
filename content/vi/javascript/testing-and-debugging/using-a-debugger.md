@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 t\u1EADn d\u1EE5ng c
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-Sử dụng debugger có nghĩa là tận dụng các công cụ chuyên biệt giúp bạn có cái nhìn sâu vào bên trong mã của mình, theo dõi nó chạy từng bước một. Lập trình viên làm điều này để tìm và xóa lỗi, tối ưu hóa hiệu suất và hiểu rõ hơn về hành vi của mã.
-
 ## Cách thực hiện:
 Dưới đây là một đoạn mã JavaScript không hoạt động như mong đợi:
 

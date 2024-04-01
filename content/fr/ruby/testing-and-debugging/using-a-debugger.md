@@ -9,14 +9,7 @@ summary: "Utiliser un d\xE9bogueur en Ruby donne aux programmeurs un super-pouvo
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et pourquoi ?
-
-Utiliser un débogueur en Ruby donne aux programmeurs un super-pouvoir pour mettre en pause leur code, inspecter les variables, et parcourir leur code ligne par ligne. Les gens le font pour écraser des bugs, comprendre le flux du code, et voir exactement ce que leurs sortilèges écrits (code) font quand la magie opère — ou pas.
-
 ## Comment faire :
-
 Ruby est livré avec un débogueur intégré appelé `byebug`. Tout d'abord, incluez `byebug` dans votre Gemfile et exécutez `bundle install`. Ensuite, placez `byebug` juste là où vous voulez que votre programme prenne une pause.
 
 ```Ruby
@@ -56,7 +49,6 @@ Un exemple de sortie vous donnera une invite ressemblant à ceci :
 ```
 
 ## Plongée profonde :
-
 Bien avant `byebug`, les Rubyistes utilisaient `debugger` et `pry`. Ce dernier, `pry`, est plus qu'un débogueur ; c'est un REPL puissant qui peut également être utilisé pour le débogage avec le point d'arrêt `binding.pry`.
 
 Les alternatives au `byebug` de Ruby incluent `pry-byebug`, qui combine la fonctionnalité de `pry` et de `byebug`, et `ruby-debug`, qui est un ancien gem qui n'est plus activement maintenu.
@@ -64,7 +56,6 @@ Les alternatives au `byebug` de Ruby incluent `pry-byebug`, qui combine la fonct
 Lorsque vous invoquez `byebug`, le débogueur suspend l'exécution de votre code et vous donne un aperçu de l'exécution. Vous pouvez voir et changer les variables, sauter à différents points du code, et même exécuter du code Ruby ligne par ligne. C'est un peu comme avoir des capacités de voyage dans le temps pour votre code Ruby.
 
 ## Voir aussi :
-
 - Répertoire GitHub de Byebug : [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - Documentation de Pry : [https://github.com/pry/pry](https://github.com/pry/pry)
 - Un guide pour déboguer les applications Rails : [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

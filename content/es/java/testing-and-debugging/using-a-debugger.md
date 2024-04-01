@@ -11,11 +11,6 @@ summary: "Usar un depurador significa emplear una herramienta para probar y corr
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## Qué y Por Qué
-Usar un depurador significa emplear una herramienta para probar y corregir errores en tu código. Los programadores lo hacen para entender el flujo de sus aplicaciones, identificar las fuentes de errores y verificar la lógica bajo ejecución.
-
 ## Cómo hacerlo:
 Digamos que tienes un programa Java sencillo que está actuando de manera extraña, y no puedes descubrir por qué. Así es cómo iniciarías un depurador usando Eclipse, uno de los IDEs más populares para el desarrollo en Java:
 

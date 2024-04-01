@@ -11,11 +11,6 @@ summary: "\xC5 bruke en debugger betyr \xE5 starte et verkt\xF8y som lar deg kik
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva og hvorfor?
-Å bruke en debugger betyr å starte et verktøy som lar deg kikke inn i ditt kjørende program for å forstå hva som egentlig skjer. Programmere gjør dette for å finne og utrydde feil—de irriterende problemene som får koden din til å oppføre seg uventet eller krasje.
-
 ## Hvordan:
 C++ integreres med debuggere som GDB eller Visual Studio-debuggeren. Her er et lite eksempel med bruk av GDB:
 

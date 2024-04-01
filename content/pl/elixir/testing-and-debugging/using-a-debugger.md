@@ -11,11 +11,6 @@ summary: "U\u017Cywanie debugera w Elixirze polega na przest\u0119powaniu przez 
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Używanie debugera w Elixirze polega na przestępowaniu przez kod, inspekcji zmiennych i śledzeniu przepływów w celu zgniecenia błędów. Programiści robią to, aby zrozumieć nieoczekiwane zachowanie i zapewnić, że ich aplikacje działają zgodnie z zamierzeniem.
-
 ## Jak to zrobić:
 Elixir jest dostarczany z wbudowanym graficznym debuggerem o nazwie `:debugger`. Aby go użyć, musisz go uruchomić i dołączyć do działającego procesu.
 

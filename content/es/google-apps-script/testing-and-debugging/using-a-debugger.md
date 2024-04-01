@@ -13,14 +13,7 @@ summary: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## ¿Qué y por qué?
-
-Depurar en Google Apps Script (GAS) implica el proceso de identificación y eliminación de errores de los scripts destinados a automatizar Google Apps o construir aplicaciones web. Los programadores depuran para asegurar que su código se ejecute como se espera, mejorando la fiabilidad y rendimiento en las aplicaciones.
-
 ## Cómo:
-
 Google Apps Script proporciona un depurador integrado dentro del Editor de Apps Script para ayudar a solucionar problemas en los scripts. Así es como se inicia y se usa el depurador:
 
 1. **Abre tu script en el Editor de Apps Script.**
@@ -54,7 +47,6 @@ Mientras depuras, el Editor de Apps Script te permite:
 - **Inspeccionar la pila de llamadas** para rastrear las llamadas a funciones.
 
 ## Análisis Profundo
-
 Depurar en Google Apps Script, como en cualquier otro entorno de programación, es esencial para crear aplicaciones libres de errores. Introducido al principio del desarrollo de GAS, el depurador integrado ofrece capacidades fundamentales para inspeccionar y corregir el código de manera incremental. Aunque proporciona características de depuración básicas similares a las encontradas en entornos más maduros como Visual Studio Code o IntelliJ, puede quedarse corto para escenarios de depuración complejos. Por ejemplo, sus capacidades para inspeccionar llamadas asincrónicas o manejar ejecuciones de scripts pesados podrían ser limitantes.
 
 Para necesidades de depuración complejas, los desarrolladores podrían recurrir a métodos alternativos como la creación extensiva de registros (usando `Logger.log()`) o incluso desplegando como una aplicación web para inspeccionar el comportamiento en un escenario real. Sin embargo, la simplicidad e integración del depurador de GAS dentro del Editor de Apps Script lo convierte en un primer paso invaluable para la solución de problemas y el entendimiento del comportamiento del script. Notablemente, con las actualizaciones y mejoras continuas de Google a Apps Script, la experiencia de depuración está mejorando constantemente, ofreciendo herramientas y opciones más sofisticadas con el tiempo. Esta evolución refleja el compromiso de Google de hacer de Apps Script una plataforma más poderosa y accesible para desarrolladores de diversos orígenes.

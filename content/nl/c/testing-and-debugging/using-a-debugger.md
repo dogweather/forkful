@@ -12,14 +12,7 @@ summary: "Debuggers in C zijn gespecialiseerde tools die ontwikkelaars in staat 
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-
-Debuggers in C zijn gespecialiseerde tools die ontwikkelaars in staat stellen om stap voor stap door hun code te gaan, variabelen te inspecteren en de uitvoeringsstroom te volgen. Dit proces is essentieel voor het identificeren en oplossen van bugs, om ervoor te zorgen dat de code zich gedraagt zoals verwacht.
-
 ## Hoe:
-
 GDB (GNU Debugger) is de meest gebruikte debugger voor C-programmering. Hier is een beknopte handleiding voor het gebruik van GDB om een eenvoudig C-programma te debuggen.
 
 Compileer eerst je C-programma met de `-g` vlag om debuginformatie op te nemen:
@@ -77,7 +70,6 @@ $3 = 2
 Dit demonstreert het onderzoeken van de staat en stroom van een eenvoudig programma.
 
 ## Diepgaande Duik
-
 Het concept van debuggen is aanzienlijk geëvolueerd sinds de vroege dagen van programmeren, waar fysieke bugs (letterlijke insecten) problemen konden veroorzaken in mechanische computers. Tegenwoordig bieden debuggers zoals GDB geavanceerde functies die verder gaan dan basisstap- en variabele-inspectie, zoals reverse debugging (het programma achterwaarts uitvoeren), voorwaardelijke breekpunten, en scripting voor geautomatiseerde debuggingtaken.
 
 Hoewel GDB krachtig en veelgebruikt is, kan het dicht en uitdagend zijn voor beginners. Alternatieve debuggingtools en IDE's (Integrated Development Environments) zoals Visual Studio Code, CLion of Eclipse bieden gebruiksvriendelijkere interfaces voor het debuggen van C-code, en integreren vaak visuele hulpmiddelen en intuïtievere bediening. Deze alternatieven bieden misschien niet de volledige diepte van functionaliteit van GDB, maar kunnen toegankelijker zijn voor nieuwkomers in C-programmering.

@@ -11,11 +11,6 @@ summary: "Usare un debugger significa equipaggiarsi con una lente d'ingrandiment
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Che cosa & Perché?
-Usare un debugger significa equipaggiarsi con una lente d'ingrandimento per scrutare il proprio codice. I programmatori fanno ciò per schiacciare i bug, comprendere il flusso e assicurarsi che la loro logica si svolga come previsto.
-
 ## Come fare:
 Clojure si appoggia alla Java Virtual Machine (JVM), quindi molte operazioni di debug avvengono con strumenti Java. Uno di questi strumenti è `CIDER`, un pacchetto molto potente per lo sviluppo in Clojure su Emacs, che ha solide capacità di debugging. Facciamo un tuffo:
 

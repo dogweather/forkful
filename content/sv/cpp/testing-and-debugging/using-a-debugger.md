@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en debugger inneb\xE4r att starta ett verktyg som l\xE5
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en debugger innebär att starta ett verktyg som låter dig titta in i ditt körande program för att förstå vad som verkligen händer. Programmerare gör detta för att hitta och squashar buggar—de där irriterande problemen som får din kod att bete sig oväntat eller krascha.
-
 ## Hur gör man:
 C++ integreras med debuggers som GDB eller Visual Studio-debuggern. Här är ett litet exempel med GDB:
 

@@ -11,11 +11,6 @@ summary: "Utiliser un d\xE9bogueur signifie recourir \xE0 des outils sp\xE9ciali
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-Utiliser un débogueur signifie recourir à des outils spécialisés qui vous permettent de jeter un coup d'œil sous le capot de votre code, en le regardant s'exécuter étape par étape. Les programmeurs font cela pour écraser les bugs, optimiser les performances et comprendre le comportement du code.
-
 ## Comment faire :
 Voici un peu de code JavaScript qui ne se comporte pas comme prévu :
 

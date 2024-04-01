@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ytt\xF6\xE4 k
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttäminen tarkoittaa työkalun käyttöä koodisi testaamiseen ja virheiden korjaamiseen. Ohjelmoijat tekevät näin ymmärtääkseen sovellustensa virtauksen, paikantaakseen virheiden lähteet ja varmistaakseen suorituksenalaisen logiikan.
-
 ## Miten:
 Oletetaan, että sinulla on yksinkertainen Java-ohjelma, joka temppuilee, etkä voi keksiä miksi. Tässä on, miten käynnistäisit debuggerin käyttämällä Eclipseä, joka on yksi suosituimmista IDEistä Java-kehityksessä:
 

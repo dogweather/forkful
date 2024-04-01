@@ -23,11 +23,6 @@ summary: "\uB514\uBC84\uAC70\uB97C \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \
 title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
-{{< edit_this_page >}}
-
-## 무엇 & 왜?
-디버거를 사용한다는 것은 중단점을 설정하고, 코드를 단계별로 실행하며, 변수를 확인하고 프로그램의 상태를 검사하는 것을 의미합니다. 이는 프로그래머에게 게임 체인저이며, 버그를 찾아주고 우리의 코드가 실제로 무엇을 하고 있는지 이해하는 데 도움이 됩니다.
-
 ## 사용 방법:
 PowerShell에서는 내장된 PowerShell 통합 스크립팅 환경(ISE)이나 PowerShell 확장 기능을 가진 Visual Studio Code(VS Code)를 사용하여 스크립트를 디버깅할 수 있습니다. 다음은 두 환경에서 중단점을 사용하는 방법입니다:
 

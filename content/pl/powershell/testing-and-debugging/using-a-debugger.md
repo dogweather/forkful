@@ -11,11 +11,6 @@ summary: "U\u017Cywanie debugera oznacza ustawianie punkt\xF3w przerwania, przeg
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Używanie debugera oznacza ustawianie punktów przerwania, przeglądanie kodu krok po kroku, obserwowanie zmiennych oraz inspekcję stanu programu podczas jego wykonania. Dla programistów jest to zmiana gry, ponieważ pozwala na zlokalizowanie błędów i lepsze zrozumienie działania naszego kodu.
-
 ## Jak to zrobić:
 W PowerShellu możesz debugować skrypty za pomocą wbudowanego środowiska PowerShell Integrated Scripting Environment (ISE) lub Visual Studio Code (VS Code) z rozszerzeniem PowerShell. Oto jak używać punktów przerwania w obu przypadkach:
 

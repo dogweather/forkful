@@ -11,11 +11,6 @@ summary: "Fels\xF6kning i Elm involverar att identifiera och ta bort fel fr\xE5n
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Felsökning i Elm involverar att identifiera och ta bort fel från din kod. Programmerare gör detta för att säkerställa att deras applikationer fungerar korrekt och för att förbättra kodkvaliteten. Elms strikta typsystem fångar många problem vid kompileringstid, men verktyg för felsökning vid körningstid är nödvändiga för att rätta till logiska fel och oväntade beteenden.
-
 ## Hur man gör:
 Elm har inte en inbyggd felsökare i traditionell mening som, säg, JavaScript har med webbläsarens utvecklarverktyg. Dock har Elm-gemenskapen byggt verktyg för att fylla detta gap. Så här kan du använda `elm-debug-transformer` för att felsöka din Elm-app:
 

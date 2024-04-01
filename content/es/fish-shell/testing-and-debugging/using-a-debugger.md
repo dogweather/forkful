@@ -9,11 +9,6 @@ summary: "Usar un depurador se trata de aplastar bugs, esos desagradables y cons
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## ¿Qué y Por Qué?
-Usar un depurador se trata de aplastar bugs, esos desagradables y consumidores de tiempo errores en tu código. Los programadores depuran porque quieren encontrar y arreglar problemas de manera eficiente, entender el flujo del código y obtener una imagen más clara de lo que su código realmente está haciendo.
-
 ## Cómo hacerlo:
 Fish no tiene un depurador integrado como otras shells, pero puedes usar herramientas externas como `gdb` para depurar programas compilados o `fish -d` para ejecutar fish con salida de depuración en diferentes niveles. Vamos a proceder con `fish -d`:
 

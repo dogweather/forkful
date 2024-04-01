@@ -23,14 +23,7 @@ summary: "\u05E9\u05D9\u05DE\u05D5\u05E9 \u05D1\u05DE\u05E0\u05E4\u05D4 \u05E9\u
 title: "\u05E9\u05D9\u05DE\u05D5\u05E9 \u05D1\u05D3\u05D9\u05D1\u05D0\u05D2\u05E8"
 ---
 
-{{< edit_this_page >}}
-
-## מה ולמה?
-
-שימוש במנפה שגיאות (debugger) ברובי מעניק למתכנתים כוח-על להשהות את הקוד שלהם, לבחון משתנים ולעבור על הקוד שלהם שורה אחר שורה. אנשים עושים זאת כדי לדכא באגים, להבין את זרימת הקוד ולראות בדיוק מה השפות הכתובות (הקוד) שלהם עושות כשהקסם קורה - או לא.
-
 ## איך לעשות:
-
 רובי מגיעה עם מנפה שגיאות מובנה בשם `byebug`. ראשית, כלול את `byebug` בקובץ Gemfile שלך והרץ `bundle install`. לאחר מכן, שחוק את `byebug` בדיוק במקום בו אתה רוצה שהתוכנית שלך תעשה הפסקה.
 
 ```Ruby
@@ -70,7 +63,6 @@ var local
 ```
 
 ## צלילה עמוקה:
-
 הרבה לפני `byebug`, תכנתני רובי (Rubyists) השתמשו ב`debugger` וב`pry`. האחרון, `pry`, הוא יותר מפורש שגיאות; הוא REPL חזק שניתן גם להשתמש בו לאיתור באגים עם נקודת השביתה `binding.pry`.
 
 חלופות ל`byebug` של רובי כוללות את `pry-byebug`, שמשלב בין `pry` לתכונות של `byebug`, ואת `ruby-debug`, שהוא גימ יותר ישן שאינו מתוחזק באופן פעיל.
@@ -78,7 +70,6 @@ var local
 כאשר אתה קורא ל`byebug`, הפורש שגיאות משהה את ביצוע הקוד שלך ונותן לך הצצה לתוך זמן הריצה. אתה יכול לראות ולשנות משתנים, לקפוץ לנקודות שונות בקוד, ואף להריץ קוד רובי שורה אחר שורה. זה כמו להיות בעל יכולות זמן-נסיעה לקוד שלך ברובי.
 
 ## ראה גם:
-
 - מאגר ה-GitHub של Byebug: [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - תיעוד Pry: [https://github.com/pry/pry](https://github.com/pry/pry)
 - מדריך לאיתור שגיאות באפליקציות Rails: [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

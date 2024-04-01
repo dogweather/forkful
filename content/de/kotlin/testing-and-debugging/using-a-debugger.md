@@ -10,11 +10,6 @@ summary: "Sich in einen Debugger einzuarbeiten bedeutet, Schritt f\xFCr Schritt 
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Sich in einen Debugger einzuarbeiten bedeutet, Schritt für Schritt durch den Code zu gehen, die Abläufe zu beobachten und diese lästigen Fehler auf frischer Tat zu ertappen. Programmierer nutzen Debugger, weil sie die Detektivwerkzeuge sind, die uns helfen herauszufinden, wo die Dinge schiefgehen, ohne uns die Haare raufen zu müssen.
-
 ## Wie:
 Hier ist ein kleiner Vorgeschmack darauf, wie man in Kotlin mit IntelliJ IDEA debuggt - dem Sherlock Holmes der IDEs:
 

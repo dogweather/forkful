@@ -19,11 +19,6 @@ summary: "\"\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30\"\uB294 Python \uCF54\uB
 title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
-{{< edit_this_page >}}
-
-## 무엇 & 왜?
-"디버거 사용하기"는 Python 코드를 단계별로 진행하며 버그를 찾고 행동을 이해하는 과정입니다. 추측만 하며 어디서 문제가 발생했는지 찾는 것보다 훨씬 쉬우며, 이는 우리에게 수시간의 print 문 지옥에서 벗어나게 해 줍니다.
-
 ## 방법:
 Python의 내장 디버거인 `pdb` 사용을 살펴봅시다. `buggy.py`라는 파일에 까다로운 버그가 있는 상황을 상상해 봅시다:
 

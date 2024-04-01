@@ -11,11 +11,6 @@ summary: "\xC5 bruke en feils\xF8ker betyr \xE5 dykke inn i koden din med verkt\
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en feilsøker betyr å dykke inn i koden din med verktøy designet for å inspisere, pause og manipulere et program midt i utførelsen. Programmerere gjør dette for å jakte på feil, forstå programflyt og sørge for at koden deres gjør nøyaktig det de forventer.
-
 ## Hvordan:
 La oss ta en tur med GHCi, Haskell sitt interaktive miljø som kan fungere som en grunnleggende feilsøker. Du fyrer det opp med Haskell-koden din og begynner å undersøke. Her er et eksempel:
 

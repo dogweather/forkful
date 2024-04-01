@@ -11,11 +11,6 @@ summary: "Utiliser un d\xE9bogueur signifie que vous vous \xE9quipez d'une loupe
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et Pourquoi ?
-Utiliser un débogueur signifie que vous vous équipez d'une loupe pour scruter votre code. Les programmeurs font cela pour écraser les bugs, comprendre le flux et s'assurer que leur logique se déroule comme prévu.
-
 ## Comment faire :
 Clojure repose sur la Machine Virtuelle Java (JVM), donc beaucoup de débogage se fait avec des outils Java. Un de ces outils est `CIDER`, un package puissant pour le développement Clojure dans Emacs, qui possède de solides capacités de débogage. Plongeons-nous dedans :
 

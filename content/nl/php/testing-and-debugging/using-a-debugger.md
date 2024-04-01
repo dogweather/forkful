@@ -11,11 +11,6 @@ summary: "Een debugger is een hulpmiddel dat programmeurs helpt te begrijpen wat
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger is een hulpmiddel dat programmeurs helpt te begrijpen wat hun code daadwerkelijk doet terwijl deze wordt uitgevoerd. Het is de vergrootglas dat ons in staat stelt in te zoomen op bugs—die vervelende problemen die ervoor zorgen dat onze programma's crashen of verkeerde antwoorden uitspugen—en ze te verpletteren. We gebruiken debuggers omdat ze ons uren van printstatements en giswerk besparen.
-
 ## Hoe te gebruiken:
 PHP wordt geleverd met een interactieve debugger genaamd Xdebug. Zo gebruik je het.
 

@@ -13,14 +13,7 @@ summary: "Fels\xF6kning i Google Apps Script (GAS) inneb\xE4r processen att iden
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-
-Felsökning i Google Apps Script (GAS) innebär processen att identifiera och avlägsna fel från skript avsedda att automatisera Google Appar eller bygga webbapplikationer. Programmerare felsöker för att säkerställa att deras kod utförs som förväntat, vilket förbättrar tillförlitligheten och prestandan i applikationer.
-
 ## Hur man gör:
-
 Google Apps Script erbjuder en inbyggd felsökare inom Apps Script Editor för att hjälpa till att felsöka skript. Så här initierar och använder du felsökaren:
 
 1. **Öppna ditt skript i Apps Script Editor.**
@@ -54,7 +47,6 @@ Under felsökningen tillåter Apps Script Editor dig att:
 - **Inspektera anropsstacken** för att spåra funktionsanrop.
 
 ## Fördjupning
-
 Felsökning i Google Apps Script, liksom i vilken annan programmeringsmiljö som helst, är avgörande för att skapa felfria applikationer. Introducerad tidigt i utvecklingen av GAS erbjuder den inbyggda felsökaren grundläggande funktioner för att inspektera och åtgärda kod inkrementellt. Medan den erbjuder grundläggande felsökningsfunktioner liknande de som finns i mer mogna miljöer som Visual Studio Code eller IntelliJ, kan den vara begränsad för komplexa felsökningsscenarier. Till exempel kan dess förmåga att inspektera asynkrona återanrop eller hantera tunga skriptexekveringar vara begränsande.
 
 För komplexa felsökningsbehov kan utvecklare behöva ta till alternativa metoder såsom omfattande loggning (med `Logger.log()`) eller till och med distribuera som en webbapp för att inspektera beteende i ett verkligt scenario. Dock är enkelheten och integrationen av GAS:s felsökare inom Apps Script Editor ett ovärderligt första steg för felsökning och förståelse av skriptbeteende. Märkbart är att med Googles kontinuerliga uppdateringar och förbättringar till Apps Script förbättras felsökningsupplevelsen stadigt och erbjuder mer sofistikerade verktyg och alternativ över tiden. Denna utveckling återspeglar Googles åtagande att göra Apps Script till en kraftfullare och mer tillgänglig plattform för utvecklare från olika bakgrunder.

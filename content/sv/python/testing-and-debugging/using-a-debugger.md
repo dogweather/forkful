@@ -11,11 +11,6 @@ summary: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-"Att använda en debugger" innebär att stega igenom din Python-kod för att hitta buggar och förstå beteenden. Vi gör det eftersom det är mycket enklare än att bara gissa var saker har gått fel, och det sparar oss timmar av primitiv felsökning med print-satser.
-
 ## Hur man gör:
 Låt oss bryta ner användningen av `pdb`, Pythons inbyggda debugger. Föreställ dig en fil, `buggy.py`, med en listig bugg:
 

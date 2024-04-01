@@ -25,14 +25,7 @@ summary: "\u30C7\u30D0\u30C3\u30AC\u3092\u4F7F\u7528\u3059\u308B\u3053\u3068\u30
 title: "\u30C7\u30D0\u30C3\u30AC\u30FC\u306E\u4F7F\u3044\u65B9"
 ---
 
-{{< edit_this_page >}}
-
-## 何となぜ？
-
-デバッガを使用することは、コード実行の内部をX線で見るようなものです。プログラマはバグを特定、プログラムの流れを理解し、コードが極めてクリアであることを確認するためにこれを行います。まるで、どこでつまずいたかを正確に指摘してくれる友人のようなものです。
-
 ## 使い方:
-
 Rustは様々なデバッガをサポートしていますが、GNU/Linuxでは `gdb`、macOSでは `lldb` が一般的です。`rust-gdb` や `rust-lldb` を使用することもできます。これらはRustの値をきれいに表示するラッパーです。一例を見てみましょう:
 
 ```Rust
@@ -66,7 +59,6 @@ $2 = 1
 ```
 
 ## 詳細な解説
-
 デバッグはパンチカードの時代からある古い技術で、その進化は神の恵みです。Rustは、システムレベルの特性を持つ言語であるため、GDBやLLDBとの統合を備えた独自のツールを提供しています。
 
 Rustコードをデバッグする別の方法には、統合開発環境（IDE）を使用し、内蔵されているデバッガを活用する方法があり、これがより直感的であると感じる人もいます。人気のあるIDEには、Rustプラグイン付きのCLionや、Rust拡張機能付きのVisual Studio Codeがあります。
@@ -74,7 +66,6 @@ Rustコードをデバッグする別の方法には、統合開発環境（IDE�
 実装に関しては、Rustはこれらのデバッガが理解できるデバッグシンボルを生成します。これは、コードをステップ実行し、ブレークポイントを設定し、変数を検査する際に非常に重要です。
 
 ## 参照
-
 - デバッグに関するRustのドキュメント: https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#guidelines-for-error-handling
 - Rust By Exampleによるエラーとデバッグの解説: https://doc.rust-lang.org/rust-by-example/error.html
 - VS CodeのRust拡張機能を動かすRust言語サーバー (RLS): https://github.com/rust-lang/rls

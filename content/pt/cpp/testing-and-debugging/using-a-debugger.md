@@ -10,11 +10,6 @@ summary: "Usar um depurador significa ativar uma ferramenta que permite espiar d
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Por Quê?
-Usar um depurador significa ativar uma ferramenta que permite espiar dentro do seu programa em execução para entender o que realmente está acontecendo. Programadores fazem isso para encontrar e eliminar bugs — aqueles problemas irritantes que fazem seu código se comportar de forma inesperada ou travar.
-
 ## Como fazer:
 C++ se integra com depuradores como o GDB ou o depurador do Visual Studio. Aqui está um pequeno exemplo usando o GDB:
 
@@ -39,7 +34,6 @@ int main() {
 Uma vez que você iniciou o GDB, você pode definir pontos de interrupção, acompanhar o código passo a passo, inspecionar variáveis e muito mais. Se executar o exemplo acima, você verá seu programa travar devido à divisão por zero.
 
 ## Mergulho Profundo
-
 A depuração tem suas raízes nos primeiros dias da programação, onde remover literalmente bugs (insetos!) do hardware era necessário. Desde então, as ferramentas de depuração evoluíram para softwares complexos e poderosos, críticos para o desenvolvimento.
 
 Alternativas ao GDB para C++ incluem o LLDB, bem como depuradores integrados às IDEs como os do Visual Studio, CLion ou Eclipse. Esses ambientes modernos fornecem interfaces gráficas que tornam a depuração menos intimidadora.

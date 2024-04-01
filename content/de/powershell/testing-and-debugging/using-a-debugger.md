@@ -9,11 +9,6 @@ summary: "Ein Debugger wird verwendet, um Haltepunkte zu setzen, schrittweise du
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Ein Debugger wird verwendet, um Haltepunkte zu setzen, schrittweise durch den Code zu gehen, Variablen zu beobachten und den Zustand Ihres Programms während der Ausführung zu inspizieren. Es ist ein Spielwechsler für Programmierer, da es Bugs genau identifiziert und uns hilft zu verstehen, was unser Code wirklich macht.
-
 ## Wie geht das:
 In PowerShell können Sie Skripte mithilfe der eingebauten PowerShell Integrated Scripting Environment (ISE) oder Visual Studio Code (VS Code) mit der PowerShell-Erweiterung debuggen. So verwenden Sie Haltepunkte in beiden:
 

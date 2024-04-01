@@ -13,16 +13,10 @@ summary: "Usar un depurador en Dart permite a los programadores examinar met\xF3
 title: Usando un depurador
 ---
 
-{{< edit_this_page >}}
-
-## ¿Qué y Por Qué?
-
-Usar un depurador en Dart permite a los programadores examinar metódicamente su código estableciendo puntos de interrupción, avanzando paso a paso en la ejecución e inspeccionando variables. Este proceso es esencial para identificar y solucionar errores eficientemente, lo que lo convierte en una herramienta indispensable en el ciclo de desarrollo.
-
 ## Cómo:
 
-### Depuración Básica:
 
+### Depuración Básica:
 **1. Establecer Puntos de Interrupción:**
 
 Para establecer un punto de interrupción, simplemente haz clic en el margen izquierdo de la línea de código en tu IDE (p. ej., Visual Studio Code o Android Studio) donde deseas que se pause la ejecución.
@@ -47,7 +41,6 @@ Una vez que la ejecución se haya pausado, pasa el cursor sobre las variables pa
 Usa los comandos de avanzar sobre, avanzar dentro y avanzar fuera en tu IDE para navegar por tu código una línea o función a la vez.
 
 ### Depuración Avanzada con Observatory:
-
 Dart incluye una herramienta llamada Observatory para la depuración y el perfilado de aplicaciones Dart. Es particularmente útil para aplicaciones que se ejecutan en la VM de Dart.
 
 **Accediendo a Observatory:**
@@ -61,7 +54,6 @@ dart --observe tu_programa.dart
 Este comando imprime una URL en la consola, la cual puedes abrir en un navegador web para acceder al depurador Observatory.
 
 ### Uso de Bibliotecas de Terceros Populares:
-
 Para la depuración de aplicaciones Flutter, el paquete `flutter_devtools` proporciona un conjunto de herramientas de rendimiento y depuración que se integran tanto con la VM de Dart como con Flutter.
 
 **Instalación:**
@@ -84,7 +76,6 @@ flutter pub global run devtools
 Luego, inicia tu aplicación Flutter en modo de depuración. DevTools proporciona características como el inspector de Flutter para análisis del árbol de widgets y el perfilador de red para monitorear la actividad de la red.
 
 ### Salida de Ejemplo:
-
 Al llegar a un punto de interrupción, tu IDE podría mostrar valores de variables y rastreos de pila de la siguiente manera:
 
 ```

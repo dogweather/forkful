@@ -13,14 +13,7 @@ summary: "Att anv\xE4nda en fels\xF6kare i Go-programmering inneb\xE4r att man a
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-
-Att använda en felsökare i Go-programmering innebär att man använder verktyg eller funktioner för att inspektera och modifiera tillståndet hos ett körande program för att förstå dess beteende eller diagnostisera problem. Programmerare gör detta för att effektivt hitta och åtgärda buggar, optimera prestanda och säkerställa korrighet i sin kod.
-
 ## Hur man gör:
-
 Go erbjuder en inbyggd möjlighet för felsökning som kallas `delve`. Det är ett fullfjädrat felsökningsverktyg som tillåter dig att exekvera Go-program steg för steg, inspektera programvariabler och utvärdera uttryck.
 
 För att börja måste du först installera `delve`. Detta kan du göra genom att köra:
@@ -78,7 +71,6 @@ Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
 Med dessa kommandon kan du stega igenom ditt program, inspektera tillståndet efterhand för att förstå hur det beter sig och identifiera eventuella problem.
 
 ## Fördjupning
-
 Valet av `delve` som Go:s föredragna felsökningsverktyg framför traditionella verktyg som GDB (GNU Debugger) beror framför allt på Go:s exekveringsmodell och körningstid. GDB designades inte från början med Go:s körningstid i åtanke, vilket gör `delve` till ett mer lämpligt val för Go-utvecklare. `Delve` är specifikt utformat för Go och erbjuder en mer intuitiv felsökningsupplevelse för Go-rutiner, kanaler och andra Go-specifika konstruktioner.
 
 Dessutom stöder `delve` ett brett utbud av funktioner utöver de som erbjuds av grundläggande GDB när man arbetar med Go-program. Dessa inkluderar men är inte begränsade till: att koppla till körande processer för felsökning; villkorliga brytpunkter; och att utvärdera komplexa uttryck som kan involvera Go:s samtidighetsprimitiver.

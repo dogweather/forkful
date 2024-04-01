@@ -10,14 +10,7 @@ summary: "Usare un debugger in Ruby fornisce ai programmatori un superpotere: me
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa e Perché?
-
-Usare un debugger in Ruby fornisce ai programmatori un superpotere: mettere in pausa il loro codice, ispezionare le variabili e passare attraverso il loro codice linea per linea. La gente lo fa per schiacciare bug, capire il flusso del codice e per vedere esattamente cosa stanno facendo i loro incantesimi scritti (codice) quando la magia avviene—o non avviene.
-
 ## Come fare:
-
 Ruby viene fornito con un debugger integrato chiamato `byebug`. Prima, includi `byebug` nel tuo Gemfile e esegui `bundle install`. Quindi, piazza `byebug` esattamente dove vuoi che il tuo programma faccia una pausa.
 
 ```Ruby
@@ -57,7 +50,6 @@ Un esempio di output ti presenterà un prompt che appare così:
 ```
 
 ## Approfondimento:
-
 Molto tempo fa, prima di `byebug`, i Rubyisti usavano `debugger` e `pry`. Quest'ultimo, `pry`, è più di un debugger; è un potente REPL che può anche essere utilizzato per il debug con il punto di interruzione `binding.pry`.
 
 Alternative al `byebug` di Ruby includono `pry-byebug`, che combina `pry` con la funzionalità di `byebug`, e `ruby-debug`, che è un vecchio gem non più attivamente mantenuto.
@@ -65,7 +57,6 @@ Alternative al `byebug` di Ruby includono `pry-byebug`, che combina `pry` con la
 Quando invochi `byebug`, il debugger sospende l'esecuzione del tuo codice e ti offre uno sguardo sull'esecuzione. Puoi vedere e cambiare variabili, saltare a diversi punti nel codice, e persino eseguire del codice Ruby linea per linea. È un po' come avere capacità di viaggiare nel tempo per il tuo codice Ruby.
 
 ## Vedi Anche:
-
 - Repository GitHub di Byebug: [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - Documentazione di Pry: [https://github.com/pry/pry](https://github.com/pry/pry)
 - Una Guida al Debugging delle App Rails: [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

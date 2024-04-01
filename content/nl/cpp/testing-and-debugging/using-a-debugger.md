@@ -11,11 +11,6 @@ summary: "Een debugger gebruiken betekent het opstarten van een hulpmiddel waarm
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-Een debugger gebruiken betekent het opstarten van een hulpmiddel waarmee je binnenin je lopende programma kunt kijken om te begrijpen wat er echt gebeurt. Programmeurs doen dit om bugs te vinden en te verhelpen—die vervelende problemen die ervoor zorgen dat je code zich onverwacht gedraagt of crasht.
-
 ## Hoe:
 C++ integreert met debuggers zoals GDB of de Visual Studio debugger. Hier is een hapklare voorbeeld met GDB:
 

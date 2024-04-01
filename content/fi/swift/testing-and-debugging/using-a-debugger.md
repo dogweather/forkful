@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa erikoistuneiden ty\xF6kalujen 
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttäminen tarkoittaa erikoistuneiden työkalujen hyödyntämistä koodisi testaamiseen ja tarkasteluun sen suorituksen aikana. Se on iso juttu, koska se antaa sinun nähdä, mitä konepellin alla tapahtuu, löytää bugeja ja ymmärtää paremmin koodisi käyttäytymistä.
-
 ## Kuinka:
 Xcode-debuggerin (Swiftin IDE) käyttämiseen voit asettaa keskeytyskohtia, tarkastaa muuttujia ja seurata lausekkeita. Tässä on esimerkki:
 

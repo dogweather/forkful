@@ -9,11 +9,6 @@ summary: "Mergulhar em um depurador \xE9 tudo sobre percorrer seu c\xF3digo, obs
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Por Quê?
-Mergulhar em um depurador é tudo sobre percorrer seu código, observar as engrenagens funcionando e pegar aqueles erros esquivos em flagrante. Os programadores usam depuradores porque são as ferramentas de detetive que nos ajudam a descobrir onde as coisas dão errado sem arrancar os cabelos.
-
 ## Como Fazer:
 Aqui vai uma pequena amostra de depuração em Kotlin com IntelliJ IDEA - o Sherlock Holmes dos IDEs:
 

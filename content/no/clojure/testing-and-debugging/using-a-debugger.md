@@ -11,11 +11,6 @@ summary: "\xC5 bruke en debugger betyr at du utstyrer deg selv med et forst\xF8r
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en debugger betyr at du utstyrer deg selv med et forstørrelsesglass for å granske koden din. Programmerere gjør dette for å knuse feil, forstå flyt og forsikre seg om at logikken deres utfolder seg som forventet.
-
 ## Hvordan:
 Clojure støtter seg på Java Virtual Machine (JVM), så mye av feilsøkingen skjer med Java-verktøy. Et slikt verktøy er `CIDER`, en kraftpakkepakke for Clojure-utvikling i Emacs, som har solide feilsøkingskapasiteter. La oss dykke inn:
 

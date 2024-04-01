@@ -11,14 +11,7 @@ summary: "U\u017Cycie debugera to jak przyznanie sobie rentgenowskiego wzroku, a
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-
-Użycie debugera to jak przyznanie sobie rentgenowskiego wzroku, aby zajrzeć do wykonania twojego kodu. Programiści robią to, aby wykryć błędy, zrozumieć przepływ programu i upewnić się, że ich kod jest czysty jak gwizdek. To jak posiadanie kumpla, który wskazuje dokładnie, gdzie się potknąłeś.
-
 ## Jak to zrobić:
-
 Rust wspiera różne debugery, ale popularnym jest `gdb` dla GNU/Linuxa lub `lldb` dla macOS. Można także użyć `rust-gdb` lub `rust-lldb`, które są wrapperami, formatującymi wartości Rusta w przyjazny sposób. Oto przykład:
 
 ```Rust
@@ -52,7 +45,6 @@ $2 = 1
 ```
 
 ## Pogłębiona analiza
-
 Debugowanie istnieje od czasów starych jak świat kart perforowanych, a jego ewolucja okazała się być darem niebios. Rust dostarcza własne narzędzia z integracjami dla GDB i LLDB ze względu na systemowy charakter języka.
 
 Alternatywy dla debugowania kodu Rusta obejmują używanie zintegrowanych środowisk deweloperskich (IDE) ze wbudowanymi debuggerami, które niektórzy uważają za bardziej intuicyjne. Popularne to CLion z pluginem Rusta lub Visual Studio Code z rozszerzeniem Rusta.
@@ -60,7 +52,6 @@ Alternatywy dla debugowania kodu Rusta obejmują używanie zintegrowanych środo
 Jeśli chodzi o implementację, Rust generuje symbole debugowania, które te debugery rozumieją, co jest kluczowe do przestępowania przez kod, ustawiania punktów przerwania i inspekcji zmiennych bez tracenia zmysłów.
 
 ## Zobacz także
-
 - Rust Book o debugowaniu: https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#guidelines-for-error-handling
 - Podejście Rust By Example do błędów i debugowania: https://doc.rust-lang.org/rust-by-example/error.html
 - Rust Language Server (RLS), który napędza rozszerzenie Rusta w VS Code: https://github.com/rust-lang/rls

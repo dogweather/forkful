@@ -11,11 +11,6 @@ summary: "L'utilisation d'un d\xE9bogueur est essentiellement une question d'\xE
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-L'utilisation d'un débogueur est essentiellement une question d'élimination des bugs – ces erreurs répugnantes et chronophages dans votre code. Les programmeurs déboguent parce qu'ils veulent trouver et réparer les problèmes de manière efficace, comprendre le flux du code, et obtenir une image plus claire de ce que leur code fait réellement.
-
 ## Comment faire :
 Fish n'a pas de débogueur intégré comme certains autres shells, mais vous pouvez utiliser des outils externes comme `gdb` pour le débogage de programmes compilés ou `fish -d` pour exécuter fish avec une sortie de débogage à différents niveaux. Procedons avec `fish -d` :
 

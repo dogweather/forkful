@@ -9,11 +9,6 @@ summary: "Utilizzare un debugger significa avviare uno strumento che ti consente
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa e Perché?
-Utilizzare un debugger significa avviare uno strumento che ti consente di guardare dentro il tuo programma in esecuzione per capire cosa sta realmente accadendo. I programmatori fanno ciò per trovare ed eliminare i bug, ovvero quei fastidiosi problemi che causano comportamenti inaspettati del codice o crash.
-
 ## Come fare:
 C++ si integra con debugger come GDB o il debugger di Visual Studio. Ecco un esempio semplice utilizzando GDB:
 

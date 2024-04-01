@@ -10,11 +10,6 @@ summary: "Att dyka in i en debugger handlar allt om att stega igenom din kod, se
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att dyka in i en debugger handlar allt om att stega igenom din kod, se kugghjulen snurra och fånga de där eländiga buggarna på bar gärning. Programmerare använder debuggerare eftersom de är detektivverktygen som hjälper oss att räkna ut var saker går fel utan att riva av oss håret.
-
 ## Hur man gör:
 Här är en liten försmak av felsökning i Kotlin med IntelliJ IDEA - Sherlock Holmes bland IDE:er:
 

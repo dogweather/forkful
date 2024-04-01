@@ -9,11 +9,6 @@ summary: "Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben vo
 title: Einsatz eines Debuggers
 ---
 
-{{< edit_this_page >}}
-
-## Was & Warum?
-Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben von Fehlern im Code einzusetzen. Programmierer tun dies, um den Ablauf ihrer Anwendungen zu verstehen, die Ursachen von Fehlern zu ermitteln und die Logik während der Ausführung zu überprüfen.
-
 ## Wie geht das:
 Angenommen, Sie haben ein einfaches Java-Programm, das Probleme macht, und Sie können nicht herausfinden, warum. So würden Sie einen Debugger mit Eclipse starten, einer der beliebten IDEs für die Java-Entwicklung:
 

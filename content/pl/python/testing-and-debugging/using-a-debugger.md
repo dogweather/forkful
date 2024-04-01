@@ -11,11 +11,6 @@ summary: "\"U\u017Cywanie debugera\" polega na krok po kroku przegl\u0105daniu k
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-"Używanie debugera" polega na krok po kroku przeglądaniu kodu Pythona, aby odkrywać błędy i rozumieć zachowanie. Robimy to, ponieważ jest to znacznie łatwiejsze niż zgadywanie, gdzie coś poszło nie tak, i oszczędza nam to godzin spędzonych na męce z instrukcjami print.
-
 ## Jak to zrobić:
 Przedstawmy sposób użycia `pdb`, wbudowanego debugera Pythona. Wyobraź sobie plik, `buggy.py`, z trudnym do zauważenia błędem:
 

@@ -11,14 +11,7 @@ summary: "Le d\xE9bogage dans Google Apps Script (GAS) implique le processus d'i
 title: "Utiliser un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-
-Le débogage dans Google Apps Script (GAS) implique le processus d'identification et de suppression des erreurs des scripts destinés à automatiser les Google Apps ou à construire des applications web. Les programmeurs déboguent pour garantir que leur code s'exécute comme prévu, améliorant ainsi la fiabilité et la performance des applications.
-
 ## Comment faire :
-
 Google Apps Script propose un débogueur intégré dans l'éditeur Apps Script pour aider à dépanner les scripts. Voici comment initier et utiliser le débogueur :
 
 1. **Ouvrez votre script dans l’éditeur Apps Script.**
@@ -52,7 +45,6 @@ Pendant le débogage, l'éditeur Apps Script vous permet de :
 - **Inspecter la pile d'appels** pour tracer les appels de fonctions.
 
 ## Examen approfondi
-
 Déboguer dans Google Apps Script, comme dans tout autre environnement de programmation, est essentiel pour créer des applications sans erreur. Introduit dès le début du développement de GAS, le débogueur intégré offre des capacités fondamentales pour inspecter et corriger le code progressivement. Bien qu’il fournisse des fonctionnalités de débogage de base semblables à celles trouvées dans des environnements plus matures comme Visual Studio Code ou IntelliJ, il peut être limité pour des scénarios de débogage complexes. Par exemple, ses capacités à inspecter les appels asynchrones ou à gérer l'exécution de scripts lourds pourraient être limitantes.
 
 Pour des besoins de débogage complexes, les développeurs pourraient recourir à des méthodes alternatives telles que l'utilisation extensive de journaux (avec `Logger.log()`) ou même le déploiement en tant qu'application web pour inspecter le comportement dans un scénario réel. Cependant, la simplicité et l'intégration du débogueur de GAS au sein de l'éditeur Apps Script en font une première étape inestimable pour le dépannage et la compréhension du comportement du script. Notamment, avec les mises à jour et les améliorations continues de Google à Apps Script, l'expérience de débogage s'améliore régulièrement, offrant des outils et des options plus sophistiqués au fil du temps. Cette évolution reflète l'engagement de Google à faire d'Apps Script une plateforme plus puissante et accessible pour les développeurs de divers horizons.

@@ -17,11 +17,6 @@ summary: "G\u1EE1 l\u1ED7i trong Elm bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBn
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì & Tại sao?
-Gỡ lỗi trong Elm bao gồm việc xác định và loại bỏ lỗi từ code của bạn. Lập trình viên thực hiện điều này để đảm bảo rằng các ứng dụng của họ hoạt động chính xác và để cải thiện chất lượng code. Hệ thống kiểu mạnh mẽ của Elm bắt được nhiều vấn đề ngay tại thời điểm biên dịch, nhưng các công cụ gỡ lỗi thời gian chạy là thiết yếu để làm phẳng các lỗi logic và hành vi không mong muốn.
-
 ## Cách thức:
 Elm không có bộ gỡ lỗi tích hợp trong bản thân nó theo nghĩa truyền thống như, ví dụ, JavaScript với công cụ phát triển trình duyệt. Tuy nhiên, cộng đồng Elm đã xây dựng các công cụ để lấp đầy khoảng trống này. Dưới đây là cách bạn có thể sử dụng `elm-debug-transformer` để gỡ lỗi ứng dụng Elm của bạn:
 

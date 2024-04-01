@@ -12,14 +12,7 @@ summary: "Feils\xF8king i Google Apps Script (GAS) involverer prosessen med \xE5
 title: Bruker en debugger
 ---
 
-{{< edit_this_page >}}
-
-## Hva og hvorfor?
-
-Feilsøking i Google Apps Script (GAS) involverer prosessen med å identifisere og fjerne feil fra skript som er ment for å automatisere Google Apps eller bygge webapplikasjoner. Programmerere feilsøker for å sikre at koden deres utfører som forventet, noe som forbedrer påliteligheten og ytelsen i applikasjoner.
-
 ## Hvordan:
-
 Google Apps Script tilbyr en innebygd feilsøker i Apps Script Editor for å hjelpe med å feilsøke skript. Her er hvordan du starter og bruker feilsøkeren:
 
 1. **Åpne skriptet ditt i Apps Script Editor.**
@@ -53,7 +46,6 @@ Mens du feilsøker, tillater Apps Script Editor deg å:
 - **Inspeksjon av kallstakken** for å spore funksjonskall.
 
 ## Dypdykk
-
 Feilsøking i Google Apps Script, som i ethvert annet programmeringsmiljø, er avgjørende for å skape feilfrie applikasjoner. Introdsuert tidlig i utviklingen av GAS, tilbyr den innebygde feilsøkeren grunnleggende evner til å inspisere og rette koden inkrementelt. Selv om den tilbyr grunnleggende feilsøkingsfunksjoner lik de som finnes i mer modne miljøer som Visual Studio Code eller IntelliJ, kan den være begrensende for komplekse feilsøkningsscenarioer. For eksempel, dens evner til å inspisere asynkrone tilbakeslag eller håndtere tunge skriptutførelser kunne være begrensende.
 
 For komplekse feilsøkingsbehov, kan utviklere ty til alternative metoder som omfattende logging (ved bruk av `Logger.log()`) eller til og med distribuere som en webapplikasjon for å inspisere oppførselen i et virkelig scenario. Imidlertid gjør enkelheten og integreringen av GAS's feilsøker innen Apps Script Editor den til et uvurderlig første skritt for feilsøking og forståelse av skriptatferd. Merkbart med Googles kontinuerlige oppdateringer og forbedringer til Apps Script, forbedres feilsøkingserfaringen stadig, og tilbyr mer sofistikerte verktøy og alternativer over tid. Denne utviklingen reflekterer Googles forpliktelse til å gjøre Apps Script til en kraftigere og mer tilgjengelig plattform for utviklere fra ulike bakgrunner.

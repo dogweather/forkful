@@ -11,14 +11,7 @@ summary: "C-kielen debuggerit ovat erikoisty\xF6kaluja, jotka mahdollistavat ohj
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mitä & Miksi?
-
-C-kielen debuggerit ovat erikoistyökaluja, jotka mahdollistavat ohjelmoijille koodin vaiheittaisen suorituksen seurannan, muuttujien tarkastelun ja suoritusvirran monitoroinnin. Tämä prosessi on olennainen osa virheiden tunnistamisessa ja korjaamisessa, varmistamassa, että koodi toimii odotetulla tavalla.
-
 ## Kuinka:
-
 GDB (GNU Debugger) on yleisimmin käytetty debuggeri C-ohjelmoinnissa. Tässä on lyhyt opas GDB:n käyttöön yksinkertaisen C-ohjelman debuggaamiseen.
 
 Ensin, käännä C-ohjelmasi `-g`-lipulla sisällyttääksesi debuggaustiedot:
@@ -76,7 +69,6 @@ $3 = 2
 Tämä osoittaa, miten tutkia yksinkertaisen ohjelman tilaa ja suoritusvirtaa.
 
 ## Syväsukellus
-
 Debuggauksen käsite on kehittynyt merkittävästi ohjelmoinnin alkuaikojen jälkeen, jolloin fyysiset hyönteiset (kirjaimelliset bugit) saattoivat aiheuttaa ongelmia mekaanisissa tietokoneissa. Nykyään debuggerit, kuten GDB, tarjoavat edistyneitä ominaisuuksia perus askeltamisen ja muuttujien tarkastelun lisäksi, kuten käänteisdebuggaus (ohjelman suorittaminen taaksepäin), ehdolliset keskeytyskohdat ja skriptaus automatisoituja debuggaustehtäviä varten.
 
 Vaikka GDB on tehokas ja laajalti käytetty, se voi olla tiheä ja haastava aloittelijoille. Vaihtoehtoiset debuggaustyökalut ja IDEt (Integroidut Kehitysympäristöt), kuten Visual Studio Code, CLion tai Eclipse, tarjoavat käyttäjäystävällisempiä käyttöliittymiä C-koodin debuggaamiseen, usein integroiden visuaalisia apuvälineitä ja intuitiivisempia hallintamekanismeja. Nämä vaihtoehdot eivät ehkä tarjoa GDB:n täyttä toiminnallisuuden syvyyttä, mutta voivat olla saavutettavampia C-ohjelmoinnin uusille tulokkaille.

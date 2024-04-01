@@ -13,14 +13,7 @@ summary: "Les d\xE9bogueurs en C sont des outils sp\xE9cialis\xE9s qui permetten
 title: "Utiliser un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi et pourquoi ?
-
-Les débogueurs en C sont des outils spécialisés qui permettent aux développeurs de parcourir leur code pas à pas, d'inspecter les variables et de surveiller le flux d'exécution. Ce processus est essentiel pour identifier et corriger les bugs, en s'assurant que le code se comporte comme prévu.
-
 ## Comment faire :
-
 GDB (GNU Debugger) est le débogueur le plus couramment utilisé pour la programmation en C. Voici un guide rapide sur l'utilisation de GDB pour déboguer un simple programme en C.
 
 D'abord, compilez votre programme C avec le drapeau `-g` pour inclure les informations de débogage :
@@ -78,7 +71,6 @@ $3 = 2
 Cela démontre l'examen de l'état et du flux d'un programme simple.
 
 ## Plongée profonde
-
 Le concept de débogage a considérablement évolué depuis les débuts de la programmation, où des bugs physiques (insectes littéraux) pouvaient causer des problèmes dans les ordinateurs mécaniques. Aujourd'hui, des débogueurs comme GDB offrent des fonctionnalités sophistiquées au-delà des étapes de base et de l'inspection des variables, telles que le débogage inverse (exécuter le programme à l'envers), les points d'arrêt conditionnels et le scriptage pour les tâches de débogage automatisées.
 
 Alors que GDB est puissant et largement utilisé, il peut être dense et difficile pour les débutants. Des outils de débogage alternatifs et des IDE (Environnements de Développement Intégrés) tels que Visual Studio Code, CLion ou Eclipse offrent des interfaces plus conviviales pour le débogage du code C, intégrant souvent des aides visuelles et des contrôles plus intuitifs. Ces alternatives peuvent ne pas offrir toute la profondeur fonctionnelle de GDB, mais peuvent être plus accessibles aux nouveaux venus en programmation C.

@@ -11,14 +11,7 @@ summary: "Debuggerin k\xE4ytt\xE4minen on kuin antaisi itsellesi r\xF6ntgenn\xE4
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä ja miksi?
-
-Debuggerin käyttäminen on kuin antaisi itsellesi röntgennäön kurkistaa koodisi suoritukseen. Ohjelmoijat tekevät sen bongatakseen bugeja, ymmärtääkseen ohjelman kulun ja varmistaakseen, että heidän koodinsa on puhdas kuin pilli. Se on kuin olisi kaveri, joka osoittaa tarkalleen, missä kompastuit.
-
 ## Kuinka:
-
 Rust tukee useita debuggereita, mutta yleinen on `gdb` GNU/Linuxille tai `lldb` macOS:lle. Saatat myös käyttää `rust-gdb`:tä tai `rust-lldb`:tä, jotka ovat kääreitä, jotka tulostavat Rust-arvot kauniisti. Tässä esimerkki:
 
 ```Rust
@@ -52,7 +45,6 @@ $2 = 1
 ```
 
 ## Syväluotaus
-
 Debuggaus on ollut olemassa jo *vanhoista hyvistä ajoista* lähtien, kun käytettiin reikäkortteja, ja sen kehitys on ollut Jumalan lahja. Rust tarjoaa omat työkalunsa GDB:n ja LLDB:n integraatioilla johtuen kielen järjestelmätason luonteesta.
 
 Vaihtoehtoja Rust-koodin debuggaukselle sisältävät integroitujen kehitysympäristöjen (IDE) käytön niiden sisäänrakennettujen debuggerien kanssa, jotka jotkut löytävät intuitiivisemmiksi. Suosittuja ovat CLion Rust-lisäosan kanssa tai Visual Studio Code Rust-laajennuksen kanssa.
@@ -60,7 +52,6 @@ Vaihtoehtoja Rust-koodin debuggaukselle sisältävät integroitujen kehitysympä
 Toteutuksen osalta Rust tuottaa debug-symboleita, joita nämä debuggerit ymmärtävät, mikä on elintärkeää koodin läpi kulkemisessa, katkaisupisteiden asettamisessa ja muuttujien tarkastelussa menettämättä järkeäsi.
 
 ## Katso myös
-
 - Rust-kirja Debuggauksesta: https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#guidelines-for-error-handling
 - Rust By Example:n näkemys Virheistä ja Debuggauksesta: https://doc.rust-lang.org/rust-by-example/error.html
 - The Rust Language Server (RLS), joka tekee mahdolliseksi VS Code:n Rust-laajennuksen: https://github.com/rust-lang/rls

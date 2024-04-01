@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xF6 on kaikki virheiden\u2014\xE4rsytt\xE4vien, ai
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä ja miksi?
-Debuggerin käyttö on kaikki virheiden—ärsyttävien, aikaa vievien koodivirheiden—poistamista. Ohjelmoijat käyttävät vianetsintää, koska he haluavat löytää ja korjata ongelmat tehokkaasti, ymmärtää koodin kulun ja saada selkeämmän kuvan siitä, mitä heidän koodinsa todella tekee.
-
 ## Kuinka:
 Fish ei sisällä sisäänrakennettua debuggeria kuten jotkin muut komentorivitulkki, mutta voit käyttää ulkoisia työkaluja kuten `gdb` kompiloitujen ohjelmien debuggaamiseen tai `fish -d` ajamaan fishiä debug-tulostuksella eri tasoilla. Käytetään `fish -d`:
 

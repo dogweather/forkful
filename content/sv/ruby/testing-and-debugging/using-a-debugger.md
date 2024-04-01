@@ -11,14 +11,7 @@ summary: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att 
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-
-Att använda en debugger i Ruby ger programmerare en superkraft att pausa sin kod, inspektera variabler och stega igenom sin kod rad för rad. Folk gör det för att krossa buggar, förstå kodflöde och för att se exakt vad deras skrivna trollformler (kod) gör när magin händer—eller inte.
-
 ## Hur man gör:
-
 Ruby kommer med en inbyggd debugger som heter `byebug`. Först, inkludera `byebug` i din Gemfile och kör `bundle install`. Sedan, placera `byebug` precis där du vill att ditt program ska ta en paus.
 
 ```Ruby
@@ -58,7 +51,6 @@ Exempelutdata skulle ge dig en uppmaning som ser ut så här:
 ```
 
 ## Fördjupning:
-
 Långt tillbaka före `byebug`, använde Rubyister `debugger` och `pry`. Den senare, `pry`, är mer än en debugger; det är en kraftfull REPL som också kan användas för debugging med brytpunkten `binding.pry`.
 
 Alternativ till Rubys `byebug` inkluderar `pry-byebug`, som kombinerar `pry` med `byebug`-funktionalitet, och `ruby-debug`, som är en äldre juvel som inte aktivt underhålls.
@@ -66,7 +58,6 @@ Alternativ till Rubys `byebug` inkluderar `pry-byebug`, som kombinerar `pry` med
 När du anropar `byebug`, pausar debuggern din kodexekvering och ger dig en titt på körningen. Du kan se och ändra variabler, hoppa till olika punkter i koden och till och med köra lite Ruby-kod rad för rad. Det är lite som att ha tidsreseförmågor för din Ruby-kod.
 
 ## Se också:
-
 - Byebug GitHub Repository: [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - Pry Dokumentation: [https://github.com/pry/pry](https://github.com/pry/pry)
 - En guide till att debugga Rails-appar: [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

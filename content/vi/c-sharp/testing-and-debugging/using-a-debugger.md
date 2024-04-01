@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng debugger (tr\xECnh g\u1EE1 r\u1ED1i) c\xF3 ngh\u0129
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Gì và Tại sao?
-Sử dụng debugger (trình gỡ rối) có nghĩa là tận dụng các công cụ chuyên biệt để kiểm tra và chẩn đoán code. Các lập trình viên làm việc này để tìm và sửa lỗi, hiểu luồng code, và đảm bảo code của họ hoạt động như mong đợi - giống như việc bạn có một kính hiển vi cho bộ não của code.
-
 ## Cách thức:
 Hãy tưởng tượng bạn có một chương trình nhỏ không hoạt động đúng như mong đợi:
 

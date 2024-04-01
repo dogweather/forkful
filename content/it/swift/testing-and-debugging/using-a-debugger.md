@@ -9,11 +9,6 @@ summary: "Usare un debugger significa utilizzare strumenti specializzati per tes
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa & Perché?
-Usare un debugger significa utilizzare strumenti specializzati per testare e ispezionare il tuo codice mentre viene eseguito. È importante perché ti permette di vedere cosa succede sotto il cofano, trovare bug e capire meglio il comportamento del tuo codice.
-
 ## Come fare:
 Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi impostare breakpoint, ispezionare variabili ed esaminare espressioni. Eccoti un esempio:
 

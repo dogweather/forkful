@@ -11,14 +11,7 @@ summary: "U\u017Cywanie debugera w Ruby daje programistom supermoc, umo\u017Cliw
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i Dlaczego?
-
-Używanie debugera w Ruby daje programistom supermoc, umożliwiającą zatrzymanie ich kodu, inspekcję zmiennych oraz krok po kroku przeglądanie ich kodu. Ludzie robią to, aby wyeliminować błędy, zrozumieć przepływ kodu oraz, aby zobaczyć dokładnie, co ich zaklęcia (kod) robią, kiedy magia działa — albo i nie.
-
 ## Jak to zrobić:
-
 Ruby jest wyposażony w wbudowany debugger o nazwie `byebug`. Najpierw, dołącz `byebug` do swojego Gemfile i uruchom `bundle install`. Następnie, umieść `byebug` dokładnie tam, gdzie chcesz, aby Twój program zrobił przerwę.
 
 ```Ruby
@@ -58,7 +51,6 @@ Przykładowy wynik da Ci monit wyglądający tak:
 ```
 
 ## Dogłębna analiza:
-
 Dawno temu, przed `byebug`, Rubyści używali `debugger` i `pry`. Ten drugi, `pry`, jest czymś więcej niż debuggerem; to potężne REPL, które również może być używane do debugowania z punktem przerwania `binding.pry`.
 
 Alternatywy dla `byebug` w Ruby to między innymi `pry-byebug`, który łączy funkcjonalność `pry` z `byebug`, oraz `ruby-debug`, który jest starszym gemem nieutrzymywanym aktywnie.
@@ -66,7 +58,6 @@ Alternatywy dla `byebug` w Ruby to między innymi `pry-byebug`, który łączy f
 Kiedy wywołasz `byebug`, debugger zawiesza wykonanie Twojego kodu i daje Ci wgląd w czasie wykonania. Możesz zobaczyć i zmienić zmienne, przeskoczyć do różnych miejsc w kodzie, a nawet uruchomić niektóre linie kodu Ruby krok po kroku. To trochę jak posiadanie zdolności podróżowania w czasie dla Twojego kodu Ruby.
 
 ## Zobacz także:
-
 - Repozytorium Byebug na GitHubie: [https://github.com/deivid-rodriguez/byebug](https://github.com/deivid-rodriguez/byebug)
 - Dokumentacja Pry: [https://github.com/pry/pry](https://github.com/pry/pry)
 - Przewodnik po debugowaniu aplikacji Rails: [https://guides.rubyonrails.org/debugging_rails_applications.html](https://guides.rubyonrails.org/debugging_rails_applications.html)

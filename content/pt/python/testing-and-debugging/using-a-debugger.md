@@ -11,11 +11,6 @@ summary: "\"Usar um depurador\" significa percorrer o seu c\xF3digo Python para 
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Por Quê?
-"Usar um depurador" significa percorrer o seu código Python para descobrir erros e entender o comportamento. Fazemos isso porque é muito mais fácil do que apenas adivinhar onde as coisas deram errado, e nos poupa horas do purgatório de instruções print.
-
 ## Como Fazer:
 Vamos detalhar como usar o `pdb`, o depurador embutido do Python. Imagine um arquivo, `buggy.py`, com um erro difícil de encontrar:
 

@@ -11,14 +11,7 @@ summary: "Utilizzare un debugger in Visual Basic for Applications (VBA) comporta
 title: Utilizzo di un debugger
 ---
 
-{{< edit_this_page >}}
-
-## Cosa & Perché?
-
-Utilizzare un debugger in Visual Basic for Applications (VBA) comporta l'esecuzione del proprio codice passo dopo passo per ispezionarne il flusso di esecuzione e lo stato delle variabili. Questo processo è cruciale per identificare e correggere gli errori nel codice, garantendo infine che esso funzioni come previsto.
-
 ## Come fare:
-
 In VBA, il debugger è integrato nell'Editor di Visual Basic (VBE). Ecco come puoi sfruttarlo:
 
 1. **Impostazione dei punti di interruzione**: Fai clic nel margine a sinistra accanto alla linea di codice che ti interessa, o posiziona il tuo cursore sulla linea e premi F9. Questo dice a VBA di interrompere l'esecuzione quando raggiunge questo punto.
@@ -59,7 +52,6 @@ In VBA, il debugger è integrato nell'Editor di Visual Basic (VBE). Ecco come pu
     Qui, abbiamo interrogato manualmente la variabile `counter` dopo ogni iterazione.
 
 ## Approfondimento:
-
 Il debugger in VBA, sebbene robusto, fa parte di una tradizione più ampia di strumenti di debug nei linguaggi di programmazione, evolvendosi notevolmente dai suoi primi predecessori. Introdotti con le prime versioni di VBA, miravano a fornire agli sviluppatori un insieme di strumenti semplice ma potente per l'ispezione e la correzione del codice. Nel tempo, i miglioramenti hanno incluso punti di interruzione condizionali, capacità di controllo migliorate e l'integrazione con l'interfaccia di Excel per un'ispezione dei dati più intuitiva.
 
 Tuttavia, rispetto agli ambienti di sviluppo integrato (IDE) moderni come Visual Studio o Eclipse, gli strumenti di debugging di VBA possono sembrare basilari. Questi IDE moderni offrono funzionalità più sofisticate come l'ispezione delle variabili in tempo reale, punti di interruzione avanzati e framework di test unitari integrati. Mentre queste alternative forniscono esperienze di debug più complete, la semplicità e la direttezza del debugger di VBA rimangono ben adattate al contesto specifico dell'automazione e della creazione di script all'interno delle applicazioni di Microsoft Office.

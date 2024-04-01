@@ -19,16 +19,10 @@ summary: "\u5728 Dart \u4E2D\u4F7F\u7528\u8C03\u8BD5\u5668\u5141\u8BB8\u7A0B\u5E
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
-{{< edit_this_page >}}
-
-## 什么 & 为什么？
-
-在 Dart 中使用调试器允许程序员通过设置断点、逐步执行和检查变量，有条理地检查他们的代码。这个过程对于高效地识别和修复错误至关重要，因此它是开发生命周期中不可或缺的工具。
-
 ## 如何操作：
 
-### 基础调试：
 
+### 基础调试：
 **1. 设置断点：**
 
 要设置一个断点，只需在您希望执行暂停的代码行的左边距中单击（例如，在 Visual Studio Code 或 Android Studio 中）。
@@ -53,7 +47,6 @@ void main() {
 使用您的 IDE 中的跳过（step over）、跳入（step into）和跳出（step out）命令，逐行或逐函数地导航通过您的代码。
 
 ### 使用 Observatory 进行高级调试：
-
 Dart 包括一个叫做 Observatory 的工具，用于调试和分析 Dart 应用程序。它对于运行在 Dart VM 上的应用程序特别有用。
 
 **访问 Observatory：**
@@ -67,7 +60,6 @@ dart --observe your_program.dart
 此命令会将一个 URL 打印到控制台，您可以在 Web 浏览器中打开此 URL 以访问 Observatory 调试器。
 
 ### 使用流行的第三方库：
-
 对于调试 Flutter 应用程序，`flutter_devtools` 包提供了一套性能和调试工具，与 Dart VM 和 Flutter 都集成。
 
 **安装：**
@@ -90,7 +82,6 @@ flutter pub global run devtools
 然后，以调试模式启动您的 Flutter 应用程序。DevTools 提供的功能，如 Flutter 检查器用于部件树分析，和网络分析器用于监控网络活动。
 
 ### 样本输出：
-
 当触发一个断点时，您的 IDE 可能会像这样显示变量值和堆栈跟踪：
 
 ```

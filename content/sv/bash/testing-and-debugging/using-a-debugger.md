@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en debugger i Bash inneb\xE4r att utnyttja verktyg f\xF
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en debugger i Bash innebär att utnyttja verktyg för att testa och hitta problem i dina skript, såsom att fånga buggar som kraschar din kod eller på ett listigt sätt får den att missköta sig. Programmerare gör det eftersom det är mycket smartare att fånga fel innan de orsakar kaos i en livemiljö.
-
 ## Hur man gör:
 Bash kommer inte med en inbyggd debugger som vissa andra språk, men du kan använda inbyggda kommandon som `set -x` för att spåra vad som händer. Eller, för en uppgradering, finns det `bashdb`, en riktig debugger för att stega igenom din kod. Här är en titt:
 

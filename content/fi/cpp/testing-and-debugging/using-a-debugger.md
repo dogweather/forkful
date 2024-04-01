@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ynnist\xE4mis
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttäminen tarkoittaa työkalun käynnistämistä, joka antaa sinun kurkistaa käynnissä olevan ohjelmasi sisään ymmärtääksesi, mitä todella tapahtuu. Ohjelmoijat tekevät tämän löytääkseen ja nujertaakseen bugeja—niitä ärsyttäviä ongelmia, jotka saavat koodisi käyttäytymään odottamattomasti tai kaatumaan.
-
 ## Kuinka:
 C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debuggerin kanssa. Tässä on pieni esimerkki GDB:n käytöstä:
 

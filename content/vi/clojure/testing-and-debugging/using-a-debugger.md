@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i c\xF3 ngh\u0129a 
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-Sử dụng một trình gỡ lỗi có nghĩa là bạn đã trang bị cho mình một chiếc kính lúp để xem xét mã của mình. Các lập trình viên làm điều này để loại bỏ lỗi, hiểu dòng chảy, và đảm bảo logic của họ diễn ra như mong đợi.
-
 ## Làm thế nào:
 Clojure dựa vào Máy ảo Java (JVM), vì vậy nhiều việc gỡ lỗi được thực hiện với các công cụ Java. Một công cụ như thế là `CIDER`, một gói mạnh mẽ cho phát triển Clojure trong Emacs, có khả năng gỡ lỗi vững chắc. Cùng khám phá:
 

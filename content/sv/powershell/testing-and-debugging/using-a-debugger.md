@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en debugger inneb\xE4r att s\xE4tta brytpunkter, stega 
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en debugger innebär att sätta brytpunkter, stega igenom din kod, övervaka variabler och inspektera tillståndet i ditt program när det körs. Det är en omvälvande sak för programmerare eftersom det pekar ut buggar och hjälper oss att förstå vad vår kod verkligen håller på med.
-
 ## Hur till:
 I PowerShell kan du felsöka skript med den inbyggda PowerShell Integrated Scripting Environment (ISE) eller Visual Studio Code (VS Code) med PowerShell-tillägget. Så här använder du brytpunkter i båda:
 

@@ -13,16 +13,10 @@ summary: "U\u017Cycie debugera w Darcie pozwala programistom metodycznie zbada\u
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-
-Użycie debugera w Darcie pozwala programistom metodycznie zbadać swój kod poprzez ustawianie punktów przerwania, krokowe przechodzenie przez wykonanie i inspekcję zmiennych. Proces ten jest niezbędny do identyfikowania i naprawiania błędów w sposób efektywny, czyniąc go niezastąpionym narzędziem w cyklu życia rozwoju.
-
 ## Jak to zrobić:
 
-### Podstawowe debugowanie:
 
+### Podstawowe debugowanie:
 **1. Ustawianie punktów przerwania:**
 
 Aby ustawić punkt przerwania, wystarczy kliknąć na lewym marginesie linii kodu w swoim IDE (np. Visual Studio Code lub Android Studio), gdzie chcesz, aby wykonanie zostało wstrzymane.
@@ -47,7 +41,6 @@ Gdy wykonanie jest wstrzymane, najedź kursorem na zmienne, aby zobaczyć ich ak
 Użyj poleceń krok dalej, krok do środka i krok na zewnątrz w swoim IDE, aby nawigować przez swój kod linia po linii lub funkcja po funkcji.
 
 ### Zaawansowane debugowanie z użyciem Observatory:
-
 Dart zawiera narzędzie o nazwie Observatory do debugowania i profilowania aplikacji Dart. Jest szczególnie przydatne dla aplikacji działających na Dart VM.
 
 **Dostęp do Observatory:**
@@ -61,7 +54,6 @@ dart --observe your_program.dart
 To polecenie wyświetla URL w konsoli, który możesz otworzyć w przeglądarce internetowej, aby uzyskać dostęp do debugera Observatory.
 
 ### Używanie popularnych bibliotek stron trzecich:
-
 Do debugowania aplikacji Flutter pakiet `flutter_devtools` oferuje zestaw narzędzi do analizy wydajności i debugowania, które integrują się zarówno z Dart VM, jak i Flutter.
 
 **Instalacja:**
@@ -84,7 +76,6 @@ flutter pub global run devtools
 Następnie uruchom swoją aplikację Flutter w trybie debugowania. DevTools oferuje funkcje takie jak inspektor Fluttera do analizy drzewa widgetów i profilera sieci do monitorowania aktywności sieciowej.
 
 ### Przykładowe wyjście:
-
 Po trafieniu na punkt przerwania, twoje IDE może wyświetlić wartości zmiennych i ślady stosu w ten sposób:
 
 ```

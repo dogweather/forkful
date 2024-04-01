@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xE4minen Elixiriss\xE4 sis\xE4lt\xE4\xE4 koodisi l
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttäminen Elixirissä sisältää koodisi läpikäymistä askel askeleelta, muuttujien tarkastelua ja virtojen seurantaa virheiden korjaamiseksi. Ohjelmoijat tekevät sen ymmärtääkseen odottamatonta ja varmistaakseen, että heidän sovelluksensa toimivat suunnitellusti.
-
 ## Kuinka:
 Elixir sisältää sisäänrakennetun graafisen debuggerin nimeltään `:debugger`. Käyttääksesi sitä, sinun tarvitsee käynnistää se ja liittää se käynnissä olevaan prosessiisi.
 

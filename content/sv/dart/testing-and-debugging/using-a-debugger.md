@@ -12,16 +12,10 @@ summary: "Att anv\xE4nda en fels\xF6kare i Dart l\xE5ter programmerare metodiskt
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad och varför?
-
-Att använda en felsökare i Dart låter programmerare metodiskt granska sin kod genom att sätta brytpunkter, stega igenom exekveringen och inspektera variabler. Denna process är avgörande för att identifiera och åtgärda buggar effektivt, vilket gör den till ett oumbärligt verktyg i utvecklingscykeln.
-
 ## Hur man gör:
 
-### Grundläggande felsökning:
 
+### Grundläggande felsökning:
 **1. Ställa in brytpunkter:**
 
 För att ställa in en brytpunkt, klicka helt enkelt på vänsterkanten av koden på den rad i din IDE (t.ex. Visual Studio Code eller Android Studio) där du vill att exekveringen ska pausa.
@@ -46,7 +40,6 @@ När exekveringen är pausad, håll muspekaren över variablerna för att se der
 Använd kommandona stega över, stega in i och stega ut ur i din IDE för att navigera genom din kod en rad eller funktion i taget.
 
 ### Avancerad felsökning med Observatory:
-
 Dart inkluderar ett verktyg som heter Observatory för felsökning och profilering av Dart-applikationer. Det är särskilt användbart för applikationer som körs på Dart VM.
 
 **Åtkomst till Observatory:**
@@ -60,7 +53,6 @@ dart --observe ditt_program.dart
 Detta kommando skriver ut en URL till konsolen, som du kan öppna i en webbläsare för att komma åt felsökaren Observatory.
 
 ### Använda populära tredjepartsbibliotek:
-
 För felsökning av Flutter-applikationer, erbjuder paketet `flutter_devtools` en uppsättning prestanda- och felsökningsverktyg som integrerar med både Dart VM och Flutter.
 
 **Installation:**
@@ -83,7 +75,6 @@ flutter pub global run devtools
 Starta sedan din Flutter-applikation i debug-läge. DevTools erbjuder funktioner som Flutter-inspektören för analys av widget-träd, och nätverksprofilern för övervakning av nätverksaktivitet.
 
 ### Exempelutskrift:
-
 Vid träff på en brytpunkt kan din IDE visa variabelvärden och stackspårningar så här:
 
 ```

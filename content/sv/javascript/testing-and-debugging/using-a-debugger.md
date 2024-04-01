@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en debugger inneb\xE4r att man nyttjar specialiserade v
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad & Varför?
-Att använda en debugger innebär att man nyttjar specialiserade verktyg för att kunna titta in under huven på sin kod, och se hur den körs steg för steg. Programmerare gör detta för att krossa buggar, optimera prestanda och förstå kodens beteende.
-
 ## Hur man gör:
 Här är en bit JavaScript-kod som inte beter sig som förväntat:
 

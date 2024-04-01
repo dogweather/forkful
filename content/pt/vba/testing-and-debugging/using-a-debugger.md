@@ -13,14 +13,7 @@ summary: "Usar um depurador no Visual Basic para Aplica\xE7\xF5es (VBA) envolve 
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Por Que?
-
-Usar um depurador no Visual Basic para Aplicações (VBA) envolve executar o seu código passo a passo para inspecionar seu fluxo de execução e o estado das variáveis. Esse processo é crucial para identificar e corrigir erros no seu código, garantindo, em última análise, que ele funcione conforme esperado.
-
 ## Como fazer:
-
 No VBA, o depurador é parte integrante do Editor do Visual Basic (VBE). Veja como você pode aproveitá-lo:
 
 1. **Definindo Pontos de Interrupção**: Clique na margem esquerda ao lado da linha de código que lhe interessa, ou coloque o cursor na linha e pressione F9. Isso indica ao VBA para pausar a execução quando chegar a este ponto.
@@ -61,7 +54,6 @@ No VBA, o depurador é parte integrante do Editor do Visual Basic (VBE). Veja co
     Aqui, consultamos manualmente a variável `contador` após cada iteração.
 
 ## Aprofundamento:
-
 O depurador no VBA, embora robusto, faz parte de uma tradição mais ampla de ferramentas de depuração em linguagens de programação, evoluindo significativamente desde seus predecessores iniciais. Introduzido nas primeiras versões do VBA, visava fornecer aos desenvolvedores um conjunto de ferramentas simples, porém poderosas, para inspeção e correção de código. Com o tempo, as melhorias incluíram pontos de interrupção condicionais, capacidades de observação aprimoradas e integração com a interface do Excel para inspeção de dados mais intuitiva.
 
 No entanto, comparado com os Ambientes de Desenvolvimento Integrados (IDEs) modernos, como o Visual Studio ou o Eclipse, as ferramentas de depuração do VBA podem parecer básicas. Esses IDEs modernos oferecem recursos mais sofisticados, como inspeção de variáveis em tempo real, pontos de interrupção avançados e frameworks integrados de testes unitários. Embora essas alternativas ofereçam experiências de depuração mais abrangentes, a simplicidade e direção das ferramentas de depuração do VBA permanecem bem adaptadas ao contexto específico de automação e script dentro das aplicações do Microsoft Office.

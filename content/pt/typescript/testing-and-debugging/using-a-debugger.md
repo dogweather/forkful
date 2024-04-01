@@ -9,13 +9,7 @@ summary: "Um depurador \xE9 uma ferramenta que permite examinar e alterar os mec
 title: Usando um depurador
 ---
 
-{{< edit_this_page >}}
-
-## O Que & Porquê?
-Um depurador é uma ferramenta que permite examinar e alterar os mecanismos internos do seu código enquanto ele é executado. Os programadores usam para eliminar erros, avançando passo a passo pelo seu código, inspecionando variáveis e compreendendo o fluxo do seu programa.
-
 ## Como Fazer:
-
 Para começar a usar um depurador em TypeScript, tudo o que você precisa é de uma IDE suportada (como o Visual Studio Code) e uma configuração `launch.json`. Aqui está um exemplo rápido para uma aplicação Node.js:
 
 ```TypeScript
@@ -50,7 +44,6 @@ Para depurar isso, crie um arquivo `launch.json` sob a pasta `.vscode`:
 Depois, defina um ponto de interrupção na sua função `greet` clicando do lado esquerdo do número da linha no seu IDE. Pressione F5 para começar a depurar e observe sua aplicação pausar no ponto de interrupção. Agora você pode passar o mouse sobre as variáveis, observar expressões e avançar pelo seu código com facilidade.
 
 ## Mergulho Profundo
-
 Antigamente, antes dos ambientes de desenvolvimento integrado (IDEs) se tornarem sofisticados, a depuração era frequentemente realizada com declarações de impressão (a.k.a depuração `console.log`). Funcionava, mais ou menos, mas era como tentar encontrar uma agulha no palheiro vendado.
 
 Os depuradores modernos são como um canivete suíço para a solução de problemas. Com a evolução do TypeScript e do Node.js, existem vários depuradores disponíveis, desde o inspetor embutido do Node.js até as ferramentas de desenvolvedor do navegador para depuração do lado do cliente.
@@ -58,7 +51,6 @@ Os depuradores modernos são como um canivete suíço para a solução de proble
 O inspetor do Node.js funciona anexando-se à sua aplicação em execução; ele se comunica através do Protocolo do DevTools do Chrome, transformando seu navegador Chrome em um poderoso console de depuração. Esta integração permite uma sessão de depuração visualmente interativa e detalhada, em comparação com as tradicionais práticas de depuração via linha de comando.
 
 ## Veja Também
-
 Para uma leitura extra e algumas dicas profissionais, confira:
 
 - [Depuração de TypeScript no Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-debugging)

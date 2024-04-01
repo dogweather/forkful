@@ -11,11 +11,6 @@ summary: "Att anv\xE4nda en debugger i Elixir inneb\xE4r att stega igenom din ko
 title: "Att anv\xE4nda en debugger"
 ---
 
-{{< edit_this_page >}}
-
-## Vad och Varför?
-Att använda en debugger i Elixir innebär att stega igenom din kod, inspektera variabler och spåra flöden för att krossa buggar. Programmerare gör det för att förstå det oväntade och försäkra sig om att deras applikationer beter sig som avsett.
-
 ## Hur gör man:
 Elixir levereras med en inbyggd grafisk debugger som heter `:debugger`. För att använda den behöver du starta den och koppla upp dig mot din körande process.
 

@@ -11,11 +11,6 @@ summary: "\xC5 bruke en feils\xF8ker betyr \xE5 sette brytepunkter, g\xE5 gjenno
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en feilsøker betyr å sette brytepunkter, gå gjennom koden din trinn for trinn, overvåke variabler og inspisere tilstanden til programmet ditt mens det kjører. Det er et vendepunkt for programmerere fordi det peker på feil og hjelper oss å forstå hva koden vår faktisk gjør.
-
 ## Hvordan:
 I PowerShell kan du feilsøke skript ved å bruke den innebygde PowerShell Integrated Scripting Environment (ISE) eller Visual Studio Code (VS Code) med PowerShell-utvidelsen. Slik bruker du brytepunkter i begge:
 

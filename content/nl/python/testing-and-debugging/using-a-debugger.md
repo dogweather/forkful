@@ -12,11 +12,6 @@ summary: "\"Een debugger gebruiken\" gaat over het stapsgewijs doorlopen van je 
 title: Een debugger gebruiken
 ---
 
-{{< edit_this_page >}}
-
-## Wat & Waarom?
-"Een debugger gebruiken" gaat over het stapsgewijs doorlopen van je Python-code om bugs te ontdekken en het gedrag te begrijpen. We doen dit omdat het veel makkelijker is dan gewoon raden waar dingen fout gingen, en het bespaart ons uren van printverklaring purgatorium.
-
 ## Hoe:
 Laten we het gebruik van `pdb`, Python's ingebouwde debugger, uiteenzetten. Stel je een bestand voor, `buggy.py`, met een stiekeme bug:
 

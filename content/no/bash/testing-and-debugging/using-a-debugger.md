@@ -11,11 +11,6 @@ summary: "\xC5 bruke en feils\xF8ker i Bash betyr \xE5 utnytte verkt\xF8y for \x
 title: "\xC5 bruke en feils\xF8ker"
 ---
 
-{{< edit_this_page >}}
-
-## Hva & Hvorfor?
-Å bruke en feilsøker i Bash betyr å utnytte verktøy for å teste og finne problemer i skriptene dine, som å fange feil som får koden din til å krasje eller i smug får den til å oppføre seg feil. Programmerere gjør dette fordi det er mye smartere å fange opp feil før de skaper kaos i et live miljø.
-
 ## Hvordan:
 Bash kommer ikke med en innebygd feilsøker som noen andre språk, men du kan bruke innebygde kommandoer som `set -x` for å spore hva som skjer. Eller, for en oppgradering, er det `bashdb`, en ordentlig feilsøker for å gå gjennom koden din. Her er en titt:
 

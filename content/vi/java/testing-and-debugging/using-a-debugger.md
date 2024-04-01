@@ -15,11 +15,6 @@ summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng m\
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
-{{< edit_this_page >}}
-
-## Cái gì & Tại sao?
-Sử dụng debugger có nghĩa là sử dụng một công cụ để kiểm tra và sửa lỗi trong mã của bạn. Lập trình viên làm điều này để hiểu dòng chảy của ứng dụng của họ, xác định nguồn gốc của lỗi, và xác minh logic dưới sự thực thi.
-
 ## Cách thực hiện:
 Giả sử bạn có một chương trình Java đơn giản đang gặp sự cố, và bạn không thể hiểu tại sao. Dưới đây là cách bạn khởi động một debugger sử dụng Eclipse, một trong những IDE phổ biến cho phát triển Java:
 

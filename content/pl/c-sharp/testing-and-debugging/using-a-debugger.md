@@ -11,11 +11,6 @@ summary: "U\u017Cywanie debugera oznacza korzystanie ze specjalistycznych narz\u
 title: Korzystanie z debugera
 ---
 
-{{< edit_this_page >}}
-
-## Co i dlaczego?
-Używanie debugera oznacza korzystanie ze specjalistycznych narzędzi do testowania i diagnozowania kodu. Programiści robią to, aby wyeliminować błędy, zrozumieć przepływ kodu i upewnić się, że ich kod działa zgodnie z oczekiwaniami – to jak posiadanie mikroskopu dla mózgu kodu.
-
 ## Jak to zrobić:
 Wyobraź sobie, że masz mały program, który nie działa prawidłowo:
 

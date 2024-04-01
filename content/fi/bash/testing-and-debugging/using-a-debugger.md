@@ -11,11 +11,6 @@ summary: "Debuggerin k\xE4ytt\xE4minen Bashissa tarkoittaa ty\xF6kaluihin turvau
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-Debuggerin käyttäminen Bashissa tarkoittaa työkaluihin turvautumista skriptien testaamiseksi ja ongelmien löytämiseksi, kuten virheiden nappaamista, jotka kaatavat koodisi tai hiipivästi saavat sen käyttäytymään väärin. Ohjelmoijat tekevät niin, koska virheiden havaitseminen ennen niiden aiheuttamaa tuhoa live-ympäristössä on paljon fiksumpaa.
-
 ## Miten:
 Bash ei sisällä sisäänrakennettua debuggeria kuten jotkin muut kielet, mutta voit käyttää sisäänrakennettuja komentoja kuten `set -x` seurataksesi, mitä tapahtuu. Tai, parannuksena, on olemassa `bashdb`, asianmukainen debuggeri koodin läpikäymiseen. Tässä esikatsaus:
 

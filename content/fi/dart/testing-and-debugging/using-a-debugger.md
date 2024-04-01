@@ -12,16 +12,10 @@ summary: "Debuggerin k\xE4ytt\xF6 Dartissa mahdollistaa ohjelmoijien koodinsa me
 title: "Debuggerin k\xE4ytt\xF6"
 ---
 
-{{< edit_this_page >}}
-
-## Mikä & Miksi?
-
-Debuggerin käyttö Dartissa mahdollistaa ohjelmoijien koodinsa metoodisen tarkastelun asettamalla katkaisukohtia, seuraamalla suorituksen kulkua ja tarkastelemalla muuttujia. Tämä prosessi on olennainen osa virheiden tunnistamista ja korjaamista tehokkaasti, mikä tekee siitä korvaamattoman työkalun kehityskierrossa.
-
 ## Kuinka:
 
-### Perusvirheenkorjaus:
 
+### Perusvirheenkorjaus:
 **1. Katkaisukohtien asettaminen:**
 
 Asettaaksesi katkaisukohdan, klikkaa vain koodirivin vasenta reunaa IDE:ssäsi (esim. Visual Studio Code tai Android Studio), jossa haluat suorituksen pysähtyvän.
@@ -46,7 +40,6 @@ Kun suoritus on pysähtynyt, vie hiiri muuttujien päälle nähdäksesi niiden n
 Käytä IDE:ssäsi yksi askel yli, yksi askel sisään ja yksi askel ulos -komentoja navigoidaksesi koodisi läpi yhden rivin tai funktion kerrallaan.
 
 ### Edistynyt virheenkorjaus Observatorion avulla:
-
 Dart sisältää työkalun nimeltä Observatory virheenkorjaukseen ja Dart-sovellusten profilointiin. Se on erityisen hyödyllinen sovelluksille, jotka ajetaan Dart VM:llä.
 
 **Observatorion käyttöönottaminen:**
@@ -60,7 +53,6 @@ dart --observe ohjelmasi.dart
 Tämä komento tulostaa URL-osoitteen konsoliin, jonka voit avata verkkoselaimessa päästäksesi käsiksi Observatory-virheenkorjaukseen.
 
 ### Suosittujen kolmansien osapuolien kirjastojen käyttö:
-
 Flutter-sovellusten virheenkorjaukseen `flutter_devtools`-paketti tarjoaa joukon suorituskyky- ja virheenkorjaustyökaluja, jotka integroituvat sekä Dart VM:n että Flutterin kanssa.
 
 **Asennus:**
@@ -83,7 +75,6 @@ flutter pub global run devtools
 Aloita sen jälkeen Flutter-sovelluksesi virheenkorjaustilassa. DevTools tarjoaa ominaisuuksia, kuten Flutter-inspektorin widget-puun analysointiin ja verkkoprofiilin verkkotoiminnan seurantaan.
 
 ### Esimerkki tuloste:
-
 Kun osuma tapahtuu katkaisukohdassa, IDE saattaa näyttää muuttujien arvot ja pinon jäljet näin:
 
 ```

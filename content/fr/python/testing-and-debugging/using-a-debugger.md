@@ -11,11 +11,6 @@ summary: "\"Utiliser un d\xE9bogueur\" consiste \xE0 parcourir pas \xE0 pas votr
 title: "Utilisation d'un d\xE9bogueur"
 ---
 
-{{< edit_this_page >}}
-
-## Quoi & Pourquoi ?
-"Utiliser un débogueur" consiste à parcourir pas à pas votre code Python pour découvrir des bugs et comprendre le comportement. Nous le faisons parce que c’est beaucoup plus simple que de deviner où les choses ont mal tourné, et cela nous épargne des heures de purgatoire avec des instructions print.
-
 ## Comment faire :
 Décortiquons l’utilisation de `pdb`, le débogueur intégré de Python. Imaginez un fichier, `buggy.py`, avec un bug sournois :
 
