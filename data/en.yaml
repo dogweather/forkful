@@ -1,7 +1,8 @@
 what-and-why:
+  title: What and Why
+  
   using-a-debugger:
     github-author: dogweather
-    title: Using a Debugger
     text: |
       Debuggers help you understand your program's "flow"; 
       making sure its logic plays out as expected. For example, 
