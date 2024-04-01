@@ -2,14 +2,12 @@
 date: 2024-01-20 17:54:55.075228-07:00
 description: "Reading a text file in Python is grabbing data from a file that's accessible\
   \ on your disk or over a network. Programmers read files to use the stored data\u2026"
-lastmod: '2024-03-13T22:44:59.723433-06:00'
+lastmod: '2024-04-01'
 model: gpt-4-1106-preview
 summary: "Reading a text file in Python is grabbing data from a file that's accessible\
   \ on your disk or over a network. Programmers read files to use the stored data\u2026"
 title: Reading a text file
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file in Python is grabbing data from a file that's accessible on your disk or over a network. Programmers read files to use the stored data (like configurations, user input, logs, etc.) within their applications.
@@ -25,12 +23,6 @@ with open('example.txt', 'r') as file:
 with open('example.txt', 'r') as file:
     for line in file:
         print(line.strip())
-```
-
-Sample output:
-```
-This is the first line of the file.
-And this is the second line.
 ```
 
 ## Deep Dive
